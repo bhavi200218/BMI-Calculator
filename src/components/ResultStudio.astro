@@ -98,9 +98,9 @@ const translations = {
 const t = (translations as any)[lang] || translations.en;
 ---
 
-<div id="resultStudio" class="glass-card animate-in min-h-[500px] flex flex-col justify-between shadow-2xl border-2 border-[var(--border)]">
+<div id="resultStudio" class="glass-card animate-in min-h-[500px] flex flex-col shadow-2xl border-2 border-[var(--border)] overflow-hidden">
   <!-- Initial State -->
-  <div id="initialState" class="flex flex-col items-center justify-center h-full text-[var(--muted-foreground)] space-y-8 py-24">
+  <div id="initialState" class="flex-1 flex flex-col items-center justify-center text-[var(--muted-foreground)] space-y-8 py-20 text-center">
     <div class="w-24 h-24 border-2 border-dashed border-[var(--border)] rounded-full flex items-center justify-center animate-pulse">
         <svg class="w-10 h-10 outline-none opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
     </div>
@@ -108,7 +108,7 @@ const t = (translations as any)[lang] || translations.en;
   </div>
 
   <!-- Result State -->
-  <div id="resultContent" class="hidden space-y-12 h-full p-8 md:p-12">
+  <div id="resultContent" class="hidden flex-1 flex flex-col space-y-12 h-full p-8 md:p-12">
     <div class="flex items-center justify-between">
         <h3 class="text-xs font-black uppercase tracking-[0.3em] text-[var(--foreground)]">{t.title}</h3>
         <span id="categoryLabel" class="px-5 py-2 bg-[var(--accent)] text-[var(--foreground)] text-xs font-black uppercase tracking-widest rounded-full shadow-lg">--</span>
