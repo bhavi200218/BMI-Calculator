@@ -1,0 +1,71 @@
+---
+const { currentLocale } = Astro;
+const lang = currentLocale || 'en';
+
+const content = {
+  en: {
+    title: "The Ultimate Guide to Body Mass Index (BMI)",
+    intro: "Body Mass Index (BMI) is a foundational health metric used worldwide. Whether you are using lbs and inches or the metric system, understanding your BMI is the first step toward data-driven wellness. At BMI PRO, we provide the most accurate BMI for men, women, and adults of all ages.",
+    h1: "Calculating BMI with Lbs and Inches",
+    p1: "In the United States, the standard formula for BMI calculation uses pounds and inches: (weight (lb) / [height (in)]² ) x 703. While the math can be tedious, our professional-grade calculator automates this process, providing instant results that align with CDC guidelines for adult weight categories.",
+    h2: "The Limitations of BMI: What to Watch Out For",
+    p2: "It is essential to understand that BMI is not a diagnostic tool. A person may have a 'high' BMI but have a very low body fat percentage—think of elite athletes and bodybuilders. Because muscle is denser than fat, BMI may overestimate body fat in highly muscular individuals. Conversely, it might underestimate body fat in older persons or those who have lost muscle mass (sarcopenia). This is why BMI PRO provides a range and context, rather than just a raw score.",
+    h3: "Beyond the Number: Waist Circumference and Health",
+    p3: "While BMI provides a broad overview, many health experts recommend looking at waist circumference as a secondary measure. Abdominal fat, often called visceral fat, is more metabolically active and carries a higher risk for health complications than fat stored elsewhere. If your BMI is in the overweight range, but your waist circumference is within healthy limits, your overall risk might be lower than someone with the same BMI but a higher waist measurement.",
+    h4: "How to Improve Your BMI Score Safely",
+    p4: "Transitioning to a healthier BMI is a journey of consistency, not speed. Focus on a balanced diet rich in whole foods—vegetables, lean proteins, and complex carbohydrates. Combine this with at least 150 minutes of moderate-intensity aerobic activity per week, such as brisk walking or swimming. Strength training is also vital, as it builds muscle mass, which increases your basal metabolic rate (BMR), helping your body burn more calories even at rest.",
+    h5: "BMI in Elderly Populations",
+    p5: "As we age, our body composition naturally changes. For individuals over the age of 65, a slightly higher BMI (between 23 and 27) may actually be beneficial, as it provides a nutritional reserve during illness and helps protect against bone fractures and osteoporosis. Our adult BMI calculator is designed to provide perspective, but we always recommend discussing your results with a geriatric specialist if you are in this age bracket.",
+    h6: "Getting the Most Accurate Measurements",
+    p6: "To get the most out of BMI PRO, accuracy in your input is key. For height, stand barefoot with your back against a wall and heels touching the corner. For weight, measure yourself first thing in the morning after using the bathroom but before eating breakfast. Consistency in when and how you measure ensures that the trends you see in your BMI are reflective of real changes in your health profile.",
+    conclusion: "BMI PRO is designed to be your precision partner in this journey. By providing accurate, instant calculations, we empower you to track your progress and make informed decisions with your healthcare provider. Your health is your most valuable asset—treat it with the precision it deserves."
+  }
+};
+
+const t = content[lang as keyof typeof content] || content.en;
+---
+
+<section class="max-w-4xl mx-auto py-24 px-6 border-t border-[var(--border)] overflow-hidden">
+    <div class="space-y-12">
+        <div class="space-y-4">
+            <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--muted-foreground)] opacity-50">Deep Health Analysis</h2>
+            <h3 class="text-5xl font-black tracking-tighter uppercase leading-[0.9]">{t.title}</h3>
+        </div>
+
+        <div class="columns-1 md:columns-2 gap-12 space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed font-bold opacity-80">
+            <p class="break-inside-avoid">{t.intro}</p>
+            
+            <div class="break-inside-avoid space-y-4">
+                <h4 class="text-[var(--foreground)] uppercase text-xl font-black">{t.h1}</h4>
+                <p>{t.p1}</p>
+            </div>
+
+            <div class="break-inside-avoid space-y-4">
+                <h4 class="text-[var(--foreground)] uppercase text-xl font-black">{t.h2}</h4>
+                <p>{t.p2}</p>
+            </div>
+
+            <div class="break-inside-avoid space-y-4">
+                <h4 class="text-[var(--foreground)] uppercase text-xl font-black">{t.h3}</h4>
+                <p>{t.p3}</p>
+            </div>
+
+            <div class="break-inside-avoid space-y-4">
+                <h4 class="text-[var(--foreground)] uppercase text-xl font-black">{t.h4}</h4>
+                <p>{t.p4}</p>
+            </div>
+
+            <div class="break-inside-avoid space-y-4">
+                <h4 class="text-[var(--foreground)] uppercase text-xl font-black">{t.h5}</h4>
+                <p>{t.p5}</p>
+            </div>
+
+            <div class="break-inside-avoid space-y-4">
+                <h4 class="text-[var(--foreground)] uppercase text-xl font-black">{t.h6}</h4>
+                <p>{t.p6}</p>
+            </div>
+
+            <p class="break-inside-avoid italic border-l-4 border-[var(--border)] pl-6 py-2">{t.conclusion}</p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+---
+
+<Layout title="About Us | BMI PRO">
+    <Navbar />
+    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-16">
+        <div class="space-y-4">
+            <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                Return Home
+            </a>
+            <h1 class="text-6xl font-black tracking-tighter uppercase">About Us</h1>
+        </div>
+
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-xl font-bold">
+            <p>
+                BMI PRO is a precision health tool designed for those who prioritize data-driven wellness.
+            </p>
+
+            <div class="pt-4 space-y-4 text-[var(--foreground)]">
+                <!-- Removed 'uppercase' to allow natural casing -->
+                <p class="text-4xl font-black tracking-tighter">
+                    Bhawanshi Dosi <span class="text-lg opacity-40 font-bold ml-2">(Owner)</span>
+                </p>
+                <div class="pt-2">
+                    <a href="https://www.linkedin.com/in/bhawanshi-dosi" target="_blank" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline">
+                        LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>

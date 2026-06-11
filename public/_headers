@@ -1,0 +1,21 @@
+# Noindex the preview/pages.dev domain to avoid duplicate content SEO issues
+# Note: Replace project.pages.dev with your actual pages.dev URL if different
+https://bmi-calculator-premium.pages.dev/*
+  X-Robots-Tag: noindex
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: upgrade-insecure-requests
+
+# Cache static assets for a long time
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.svg
+  Cache-Control: public, max-age=604800
+
+/icon.svg
+  Cache-Control: public, max-age=604800

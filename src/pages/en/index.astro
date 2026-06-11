@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import BMICalculator from '../../components/BMICalculator.astro';
+import ResultStudio from '../../components/ResultStudio.astro';
+import HealthContent from '../../components/HealthContent.astro';
+import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout 
+	title="BMI PRO | World-Class Precision BMI Calculator"
+	description="Calculate BMI, BMR, and body composition with accuracy. The ultimate precision health instrument for data-driven wellness."
+>
+	<Navbar />
+	
+	<main class="pt-32 pb-20 px-6">
+		<!-- Downsized Hero Section - Focusing on the Tool -->
+		<div class="max-w-4xl mx-auto text-center space-y-4 mb-16 animate-in">
+			<div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[var(--muted)] border border-[var(--border)] text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
+				Premium Health Analytics
+			</div>
+			<h1 class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--foreground)] uppercase">
+				Accuracy in Every Metric.
+			</h1>
+			<p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto font-bold opacity-60">
+				Precision metrics for the modern enthusiast. Calculated using clinical-grade formulas.
+			</p>
+		</div>
+
+		<!-- Calculator & Result Section - THE HIGHLIGHT -->
+		<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-stretch mb-32 relative z-10">
+            <!-- Subtle glow/emphasis can be added here if needed -->
+			<BMICalculator />
+			<ResultStudio />
+		</div>
+
+		<HealthContent />
+		<DeepHealthSEO />
+	</main>
+</Layout>
+
+<style is:global>
+	@keyframes fadeIn {
+		from { opacity: 0; transform: translateY(10px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+	.animate-in {
+		animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+	}
+</style>

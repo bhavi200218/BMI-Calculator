@@ -1,0 +1,225 @@
+---
+const { currentLocale } = Astro;
+const lang = currentLocale || 'en';
+
+const translations = {
+  "en": {
+    "title": "Your Health Profile",
+    "initial": "Waiting for calculation...",
+    "bmi": "BMI Score",
+    "bmr": "BMR (Resting)",
+    "tdee": "Daily Calories",
+    "ideal": "Ideal Weight",
+    "fat": "Est. Body Fat",
+    "copy": "Copy Report",
+    "export": "Share Result",
+    "under": "Underweight",
+    "normal": "Healthy Weight",
+    "over": "Overweight",
+    "obese": "Obese"
+  },
+  "es": {
+    "title": "Tu Perfil de Salud",
+    "initial": "Esperando el calculo...",
+    "bmi": "Puntuacion IMC",
+    "bmr": "MBR (Reposo)",
+    "tdee": "Calorias Diarias",
+    "ideal": "Peso Ideal",
+    "fat": "Grasa Corp. Est.",
+    "copy": "Copiar Reporte",
+    "export": "Compartir",
+    "under": "Bajo Peso",
+    "normal": "Peso Saludable",
+    "over": "Sobrepeso",
+    "obese": "Obesidad"
+  },
+  "fr": {
+    "title": "Votre Profil de Santé",
+    "initial": "En attente de calcul...",
+    "bmi": "Score IMC",
+    "bmr": "MB (Repos)",
+    "tdee": "Calories Quotidiennes",
+    "ideal": "Poids Idéal",
+    "fat": "Graisse Corp. Est.",
+    "copy": "Copier Rapport",
+    "export": "Partager",
+    "under": "Sous-poids",
+    "normal": "Poids Santé",
+    "over": "Surpoids",
+    "obese": "Obésité"
+  },
+  "de": {
+    "title": "Ihr Gesundheitsprofil",
+    "initial": "Warte auf Berechnung...",
+    "bmi": "BMI-Wert",
+    "bmr": "Grundumsatz",
+    "tdee": "Tagesbedarf",
+    "ideal": "Idealgewicht",
+    "fat": "Körperfett (Gesch.)",
+    "copy": "Bericht Kopieren",
+    "export": "Teilen",
+    "under": "Untergewicht",
+    "normal": "Normalgewicht",
+    "over": "Übergewicht",
+    "obese": "Adipositas"
+  },
+  "ko": {
+    "title": "건강 프로필",
+    "initial": "계산을 기다리는 중...",
+    "bmi": "BMI 점수",
+    "bmr": "기초대사량",
+    "tdee": "일일 칼로리",
+    "ideal": "이상 체중",
+    "fat": "체지방 추정",
+    "copy": "보고서 복사",
+    "export": "공유",
+    "under": "저체중",
+    "normal": "정상 체중",
+    "over": "과체중",
+    "obese": "비만"
+  },
+  "hi": {
+    "title": "आपका स्वास्थ्य विवरण",
+    "initial": "गणना की प्रतीक्षा है...",
+    "bmi": "बीएमआई स्कोर",
+    "bmr": "बीएमआर (आराम)",
+    "tdee": "दैनिक कैलोरी",
+    "ideal": "आदर्श वजन",
+    "fat": "कुल शारीरिक वसा",
+    "copy": "रिपोर्ट कॉपी करें",
+    "export": "साझा करें",
+    "under": "कम वजन",
+    "normal": "स्वस्थ वजन",
+    "over": "अधिक वजन",
+    "obese": "मोटापा"
+  }
+};
+
+const t = (translations as any)[lang] || translations.en;
+---
+
+<div id="resultStudio" class="glass-card animate-in min-h-[500px] flex flex-col justify-between shadow-2xl border-2 border-[var(--border)]">
+  <!-- Initial State -->
+  <div id="initialState" class="flex flex-col items-center justify-center h-full text-[var(--muted-foreground)] space-y-8 py-24">
+    <div class="w-24 h-24 border-2 border-dashed border-[var(--border)] rounded-full flex items-center justify-center animate-pulse">
+        <svg class="w-10 h-10 outline-none opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+    </div>
+    <p class="text-sm font-black uppercase tracking-[0.4em] opacity-40">{t.initial}</p>
+  </div>
+
+  <!-- Result State -->
+  <div id="resultContent" class="hidden space-y-12 h-full p-8 md:p-12">
+    <div class="flex items-center justify-between">
+        <h3 class="text-xs font-black uppercase tracking-[0.3em] text-[var(--foreground)]">{t.title}</h3>
+        <span id="categoryLabel" class="px-5 py-2 bg-[var(--accent)] text-[var(--foreground)] text-xs font-black uppercase tracking-widest rounded-full shadow-lg">--</span>
+    </div>
+
+    <!-- Main Score View -->
+    <div class="text-center space-y-8">
+      <div class="relative inline-block">
+        <div id="bmiDisplay" class="text-[10rem] font-black tracking-tighter leading-none text-[var(--foreground)]">--.-</div>
+        <div class="text-sm font-black uppercase tracking-[0.5em] text-[var(--foreground)] mt-8">{t.bmi}</div>
+      </div>
+      
+      <!-- BMI Scale -->
+      <div class="relative h-3 bg-[var(--muted)] rounded-full overflow-hidden mt-16 border-2 border-[var(--border)]">
+        <div id="scaleMarker" class="absolute top-0 bottom-0 w-8 bg-[var(--accent)] shadow-2xl transition-all duration-1000 ease-out rounded-full border-2 border-[var(--background)]" style="left: 0%"></div>
+      </div>
+      <div class="flex justify-between text-[11px] font-black uppercase tracking-widest text-[var(--foreground)] mt-6 px-1">
+        <span>{t.under}</span>
+        <span class="text-[var(--accent)]">{t.normal}</span>
+        <span>{t.over}</span>
+        <span>{t.obese}</span>
+      </div>
+    </div>
+
+    <!-- Grid of Stats -->
+    <div class="grid grid-cols-2 gap-8">
+      <div class="p-8 rounded-3xl bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
+        <div class="text-xs font-black uppercase tracking-widest text-[var(--foreground)]">{t.bmr}</div>
+        <div id="bmrDisplay" class="text-4xl font-black tracking-tight">---- <span class="text-base font-medium opacity-30 lowercase">kcal</span></div>
+      </div>
+      <div class="p-8 rounded-3xl bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
+        <div class="text-xs font-black uppercase tracking-widest text-[var(--foreground)]">{t.tdee}</div>
+        <div id="tdeeDisplay" class="text-4xl font-black tracking-tight">---- <span class="text-base font-medium opacity-30 lowercase">kcal</span></div>
+      </div>
+      <div class="p-8 rounded-3xl bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
+        <div class="text-xs font-black uppercase tracking-widest text-[var(--foreground)]">{t.ideal}</div>
+        <div id="idealDisplay" class="text-4xl font-black tracking-tight">--.- <span class="text-base font-medium opacity-30 lowercase">kg</span></div>
+      </div>
+      <div class="p-8 rounded-3xl bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
+        <div class="text-xs font-black uppercase tracking-widest text-[var(--foreground)]">{t.fat}</div>
+        <div id="fatDisplay" class="text-4xl font-black tracking-tight">--.- <span class="text-base font-medium opacity-30 lowercase">%</span></div>
+      </div>
+    </div>
+
+    <div class="flex gap-6 pt-8">
+      <button id="copyBtn" class="flex-1 py-5 px-8 rounded-2xl bg-[var(--muted)] border-2 border-[var(--border)] text-xs font-black uppercase tracking-widest hover:bg-[var(--border)] transition-all flex items-center justify-center gap-4">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
+        {t.copy}
+      </button>
+      <button id="shareBtn" class="flex-1 py-5 px-8 rounded-2xl bg-[var(--foreground)] text-[var(--background)] text-xs font-black uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-4 shadow-xl">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+        {t.export}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  window.addEventListener('bmiCalculated', (e) => {
+    const { bmi, bmr, tdee, idealWeight, bodyFat } = e.detail;
+    
+    document.getElementById('initialState').classList.add('hidden');
+    const resultContent = document.getElementById('resultContent');
+    resultContent.classList.remove('hidden');
+    resultContent.classList.add('animate-in');
+
+    const bmiNum = parseFloat(bmi);
+    document.getElementById('bmiDisplay').innerText = bmi;
+    document.getElementById('bmrDisplay').innerHTML = `${bmr} <span class="text-base font-medium opacity-30">kcal</span>`;
+    document.getElementById('tdeeDisplay').innerHTML = `${tdee} <span class="text-base font-medium opacity-30">kcal</span>`;
+    document.getElementById('idealDisplay').innerHTML = `${idealWeight} <span class="text-base font-medium opacity-30">kg</span>`;
+    document.getElementById('fatDisplay').innerHTML = `${bodyFat} <span class="text-base font-medium opacity-30">%</span>`;
+
+    let percent = ((bmiNum - 15) / (40 - 15)) * 100;
+    percent = Math.min(Math.max(percent, 0), 96);
+    document.getElementById('scaleMarker').style.left = `${percent}%`;
+
+    const categories = {
+        en: { under: 'Underweight', normal: 'Healthy Weight', over: 'Overweight', obese: 'Obese' },
+        hi: { under: 'कम वजन', normal: 'स्वस्थ वजन', over: 'अधिक वजन', obese: 'मोटापा' },
+        es: { under: 'Bajo Peso', normal: 'Peso Saludable', over: 'Sobrepeso', obese: 'Obese' }
+    };
+    const lang = document.documentElement.lang || 'en';
+    const currentCat = categories[lang] || categories.en;
+
+    let category = '';
+    if (bmiNum < 18.5) { category = currentCat.under; }
+    else if (bmiNum < 25) { category = currentCat.normal; }
+    else if (bmiNum < 30) { category = currentCat.over; }
+    else { category = currentCat.obese; }
+
+    const label = document.getElementById('categoryLabel');
+    label.innerText = category;
+    
+    document.getElementById('shareBtn').onclick = async () => {
+      const shareData = {
+        title: 'BMI PRO Report',
+        text: `My BMI Report: ${bmi} (${category}). BMR: ${bmr} kcal. Check yours at BMI PRO!`,
+        url: window.location.href
+      };
+      try { await navigator.share(shareData); } catch (err) {}
+    };
+
+    document.getElementById('copyBtn').onclick = () => {
+      const report = `BMI Report:\nBMI: ${bmi}\nCategory: ${category}\nBMR: ${bmr} kcal\nTDEE: ${tdee} kcal\nIdeal Weight: ${idealWeight} kg\nBody Fat: ${bodyFat}%`;
+      navigator.clipboard.writeText(report).then(() => {
+        const btn = document.getElementById('copyBtn');
+        const originalHTML = btn.innerHTML;
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerHTML = originalHTML, 2000);
+      });
+    };
+  });
+</script>

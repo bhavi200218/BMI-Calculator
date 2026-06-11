@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import BMICalculator from '../../components/BMICalculator.astro';
+import ResultStudio from '../../components/ResultStudio.astro';
+import HealthContent from '../../components/HealthContent.astro';
+---
+
+<Layout 
+	title="बीएमआई प्रो | सटीक बॉडी मास इंडेक्स और स्वास्थ्य विश्लेषण"
+	description="बीएमआई, बीएमआर और शरीर संरचना की सटीक गणना करें। डेटा-संचालित तंदुरुस्ती के लिए परम स्वास्थ्य उपकरण।"
+>
+	<Navbar />
+	
+	<main class="pt-32 pb-20 px-6">
+		<!-- Downsized Hero for Tool Focus -->
+		<div class="max-w-4xl mx-auto text-center space-y-4 mb-16 animate-in">
+			<div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[var(--muted)] border border-[var(--border)] text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
+				प्रीमियम स्वास्थ्य विश्लेषण
+			</div>
+			<h1 class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--foreground)] uppercase">
+				सटीक गणनाएँ।
+			</h1>
+			<p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto font-bold opacity-60">
+				आधुनिक स्वास्थ्य प्रेमियों के लिए सटीक हेल्थ मेट्रिक्स।
+			</p>
+		</div>
+
+		<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-stretch mb-32 relative z-10">
+			<BMICalculator />
+			<ResultStudio />
+		</div>
+
+		<HealthContent />
+	</main>
+</Layout>

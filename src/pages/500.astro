@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<Layout title="500 - Server Error | BMI Calculator Pro">
+    <Navbar />
+    <main class="h-screen flex flex-col items-center justify-center space-y-6">
+        <div class="space-y-2 text-center">
+            <h1 class="text-9xl font-black tracking-tighter opacity-10">500</h1>
+            <p class="text-xl font-bold uppercase tracking-widest text-[var(--muted-foreground)]">Internal Server Error</p>
+        </div>
+        <p class="text-sm text-[var(--muted-foreground)] opacity-50 max-w-md text-center font-bold">
+            We are experiencing a momentary lapse in our precision metrics. Our engineers are investigating.
+        </p>
+        <a href="/" class="btn-primary max-w-xs px-10">Back to Dashboard</a>
+    </main>
+</Layout>

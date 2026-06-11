@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+---
+
+<Layout title="Terms & Conditions | BMI PRO">
+    <Navbar />
+    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-12">
+        <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+            Return Home
+        </a>
+        <h1 class="text-5xl font-black tracking-tighter uppercase">Terms and Conditions</h1>
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-6 font-bold">
+            <p>By using this website, you agree to our terms of service.</p>
+        </div>
+    </main>
+</Layout>

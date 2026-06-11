@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', 'Outfit', system-ui, sans-serif;
+}
+
+:root {
+  /* Light Theme - Summer Pastel Sea */
+  --background: #FFF9D2;
+  --foreground: #121212;
+  --muted: #FFEBCC;
+  --muted-foreground: #444444;
+  --border: #BFDDF0;
+  --accent: #8CC0EB;
+  --card: #FFFFFF;
+  --radius: 0.75rem;
+}
+
+.dark {
+  /* Dark Theme - Monochromatic Minimalism (STRICT) */
+  --background: #121212;
+  --foreground: #E0E0E0;
+  --muted: #1A1A1A;
+  --muted-foreground: #B0B0B0;
+  --border: #444444;
+  --accent: #888888;
+  --card: #181818;
+}
+
+@layer base {
+  * {
+    @apply border-[var(--border)];
+  }
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] font-sans antialiased transition-colors duration-200 min-h-screen relative;
+    
+    /* Ultra-subtle Dot Pattern */
+    background-image: radial-gradient(var(--border) 0.8px, transparent 0.8px);
+    background-size: 30px 30px;
+    background-attachment: fixed;
+  }
+  
+  body::before {
+    content: "";
+    @apply absolute inset-0 -z-10 opacity-[0.15] pointer-events-none;
+    background-image: linear-gradient(var(--border) 0.5px, transparent 0.5px), linear-gradient(90deg, var(--border) 0.5px, transparent 0.5px);
+    background-size: 100px 100px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tighter font-black uppercase;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-[var(--card)] border border-[var(--border)] rounded-[var(--radius)] shadow-sm;
+  }
+  
+  .matte-input {
+    @apply w-full bg-[var(--muted)] border border-[var(--border)] rounded-lg px-5 py-4 text-base text-[var(--foreground)] focus:ring-1 focus:ring-[var(--accent)] transition-all outline-none font-bold placeholder:opacity-30;
+  }
+
+  .btn-primary {
+    @apply px-10 py-5 bg-[var(--foreground)] text-[var(--background)] rounded-lg font-black uppercase tracking-[0.2em] text-xs hover:opacity-90 active:scale-[0.98] transition-all;
+    box-shadow: none !important;
+    border: none;
+  }
+
+  .badge {
+    @apply px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.2em] border border-[var(--border)] bg-[var(--muted)];
+  }
+}
+
+.animate-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.99); }
+  to { opacity: 1; opacity: 1; transform: scale(1); }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

@@ -1,0 +1,150 @@
+---
+const { currentLocale } = Astro;
+const lang = currentLocale || 'en';
+
+const content: Record<string, any> = {
+  en: {
+    faqTitle: 'Frequently Asked Questions',
+    faq: [
+      { q: 'How is BMI calculated?', a: 'BMI is calculated by dividing weight in kilograms by the square of height in meters. In the US, it is often calculated using the formula: (weight in pounds / height in inches squared) × 703. Our calculator handles both systems instantly.' },
+      { q: 'What is a healthy BMI for a woman?', a: 'For adult women, a healthy BMI ranges from 18.5 to 24.9. However, BMI is a screening tool and does not account for muscle mass or distribution, which can be significant during different life stages.' },
+      { q: 'What is the BMI for 5\'4" female?', a: 'A BMI score depends on weight. For a 5\'4" female, a healthy weight range (BMI 18.5-24.9) is approximately 108 to 145 lbs. You can use our calculator for your exact weight.' },
+      { q: 'Is BMI accurate if you have muscle?', a: 'BMI does not distinguish between muscle and fat. Highly muscular individuals, like athletes, may have a "high" BMI despite having low body fat, which is one of the primary limitations of the metric.' },
+      { q: 'Is 25 a good BMI?', a: 'A BMI of 25 is technically the threshold for the "Overweight" category (25.0–29.9). However, it is very close to the healthy range, and factors like waist circumference and physical activity levels should be considered.' }
+    ],
+    sections: [
+      { title: 'Understanding Your Body Mass Index (BMI)', text: 'Body Mass Index (BMI) is a vital metric used by health professionals worldwide to screen for weight-related health risks. By analyzing the relationship between your height and weight, BMI provides a baseline understanding of whether you fall within a healthy range.' },
+      { title: 'How is BMI Calculated?', text: 'In the metric system, BMI is your weight in kilograms divided by your height in meters squared (kg/m²). Our calculator handles these conversions instantly, providing you with a precise score in seconds.' }
+    ]
+  },
+  es: {
+    faqTitle: 'Preguntas Frecuentes',
+    faq: [
+      { q: '¿Qué es el IMC?', a: 'El Índice de Masa Corporal (IMC) es el peso de una persona en kilogramos dividido por el cuadrado de la altura en metros. Es un método económico y sencillo para categorizar el peso.' },
+      { q: '¿Es el IMC preciso para atletas?', a: 'El IMC puede sobreestimar la grasa corporal en atletas y personas musculosas porque no distingue entre músculo y grasa.' },
+      { q: '¿Con qué frecuencia debo calcular mi IMC?', a: 'Se recomienda verificar el IMC una vez al mes para seguir tendencias de peso, pero siempre consulte con un médico.' },
+      { q: '¿Cuál es un IMC saludable?', a: 'Un IMC entre 18.5 y 24.9 se considera saludable para la mayoría de los adultos.' },
+      { q: '¿Puede el IMC medir la grasa corporal?', a: 'No directamente. El IMC mide el exceso de peso corporal. Sin embargo, se correlaciona fuertemente con los niveles de grasa corporal.' }
+    ],
+    sections: [
+      { title: 'Entendiendo Tu Índice de Masa Corporal (IMC)', text: 'El IMC es una métrica vital utilizada por profesionales de la salud en todo el mundo para detectar riesgos de salud relacionados con el peso.' },
+      { title: '¿Cómo se Calcula el IMC?', text: 'En el sistema métrico, el IMC es tu peso en kilogramos dividido por tu altura en metros al cuadrado (kg/m²). Nuestra calculadora maneja estas conversiones al instante.' }
+    ]
+  },
+  fr: {
+    faqTitle: 'Questions Fréquemment Posées',
+    faq: [
+      { q: 'Qu\'est-ce que l\'IMC ?', a: 'L\'indice de masse corporelle (IMC) est le poids d\'une personne en kilogrammes divisé par le carré de sa taille en mètres. C\'est une méthode simple pour catégoriser le poids.' },
+      { q: 'L\'IMC est-il précis pour les athlètes ?', a: 'L\'IMC peut surestimer la graisse corporelle chez les athlètes car il ne distingue pas les muscles de la graisse.' },
+      { q: 'À quelle fréquence calculer son IMC ?', a: 'Il est recommandé de vérifier son IMC une fois par mois. Consultez toujours un médecin pour une évaluation professionnelle.' },
+      { q: 'Quel est un IMC sain ?', a: 'Un IMC entre 18,5 et 24,9 est considéré sain pour la plupart des adultes.' },
+      { q: 'L\'IMC peut-il mesurer la graisse corporelle ?', a: 'Pas directement. L\'IMC mesure l\'excès de poids corporel plutôt que l\'excès de graisse. Cependant il y est fortement corrélé.' }
+    ],
+    sections: [
+      { title: 'Comprendre Votre Indice de Masse Corporelle (IMC)', text: 'L\'IMC est une mesure essentielle utilisée par les professionnels de santé du monde entier pour dépister les risques liés au poids.' },
+      { title: 'Comment l\'IMC est-il calculé ?', text: 'Dans le système métrique, l\'IMC est votre poids en kilogrammes divisé par votre taille en mètres au carré (kg/m²). Notre calculateur effectue ces conversions instantanément.' }
+    ]
+  },
+  de: {
+    faqTitle: 'Häufig Gestellte Fragen',
+    faq: [
+      { q: 'Was ist der BMI?', a: 'Der Body-Mass-Index (BMI) ist das Körpergewicht einer Person in Kilogramm geteilt durch das Quadrat der Körpergröße in Metern. Er ist eine einfache Methode zur Gewichtsklassifizierung.' },
+      { q: 'Ist der BMI für Athleten genau?', a: 'Der BMI kann den Körperfettanteil bei Athleten überschätzen, da er nicht zwischen Muskel und Fett unterscheidet.' },
+      { q: 'Wie oft sollte ich meinen BMI berechnen?', a: 'Es wird empfohlen, den BMI einmal monatlich zu prüfen. Konsultieren Sie immer einen Arzt für eine professionelle Bewertung.' },
+      { q: 'Was ist ein gesunder BMI?', a: 'Ein BMI zwischen 18,5 und 24,9 gilt für die meisten Erwachsenen als gesund.' },
+      { q: 'Kann der BMI Körperfett messen?', a: 'Nicht direkt. Der BMI misst überschüssiges Körpergewicht, korreliert aber stark mit dem Körperfettanteil.' }
+    ],
+    sections: [
+      { title: 'Ihren Body-Mass-Index (BMI) Verstehen', text: 'Der BMI ist eine wichtige Kennzahl, die von Gesundheitsfachleuten weltweit zur Erkennung gewichtsbedingter Gesundheitsrisiken verwendet wird.' },
+      { title: 'Wie wird der BMI berechnet?', text: 'Im metrischen System ist der BMI Ihr Gewicht in Kilogramm geteilt durch Ihre Körpergröße in Metern zum Quadrat (kg/m²). Unser Rechner führt diese Berechnungen sofort durch.' }
+    ]
+  },
+  ko: {
+    faqTitle: '자주 묻는 질문',
+    faq: [
+      { q: 'BMI란 무엇인가요?', a: 'BMI(체질량지수)는 체중(kg)을 키(m)의 제곱으로 나눈 값입니다. 저체중, 정상, 과체중, 비만을 구분하는 간편한 지표입니다.' },
+      { q: '운동선수에게도 BMI가 정확한가요?', a: 'BMI는 근육과 지방을 구분하지 못해 근육질 운동선수의 체지방을 과대평가할 수 있습니다.' },
+      { q: 'BMI를 얼마나 자주 계산해야 하나요?', a: '체중 변화를 추적하기 위해 월 1회 확인을 권장합니다. 전문적인 평가는 항상 의사와 상담하세요.' },
+      { q: '건강한 BMI는 얼마인가요?', a: '대부분의 성인에게 18.5~24.9의 BMI가 건강한 범위로 간주됩니다.' },
+      { q: 'BMI로 체지방을 측정할 수 있나요?', a: '직접적으로는 불가능합니다. BMI는 체지방보다 체중 과잉을 측정하지만, 대부분의 사람에서 체지방과 강한 상관관계가 있습니다.' }
+    ],
+    sections: [
+      { title: '체질량지수(BMI) 이해하기', text: 'BMI는 전 세계 건강 전문가들이 체중 관련 건강 위험을 선별하는 데 사용하는 중요한 지표입니다. 키와 체중의 관계를 분석하여 건강 범위 내에 있는지 파악할 수 있습니다.' },
+      { title: 'BMI는 어떻게 계산하나요?', text: '미터법에서 BMI는 체중(kg)을 키(m)의 제곱으로 나눈 값(kg/m²)입니다. 우리 계산기는 즉시 정확한 결과를 제공합니다.' }
+    ]
+  },
+  hi: {
+    faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
+    faq: [
+      { q: 'बीएमआई (BMI) क्या है?', a: 'बॉडी मास इंडेक्स (बीएमआई) किसी व्यक्ति का वजन किलोग्राम में उसकी ऊंचाई के मीटर वर्ग से विभाजित होता है। यह वजन श्रेणी की पहचान करने का एक सस्ता और आसान तरीका है।' },
+      { q: 'क्या बीएमआई एथलीटों के लिए सटीक है?', a: 'बीएमआई एथलीटों में शरीर की चर्बी को अधिक आंक सकता है क्योंकि यह मांसपेशियों और चर्बी के बीच अंतर नहीं करता है।' },
+      { q: 'मुझे अपना बीएमआई कितनी बार जांचना चाहिए?', a: 'वजन के रुझान पर नज़र रखने के लिए महीने में एक बार अपना बीएमआई जांचने की सलाह दी जाती है।' },
+      { q: 'स्वस्थ बीएमआई क्या है?', a: 'अधिकांश वयस्कों के लिए 18.5 और 24.9 के बीच बीएमआई को स्वस्थ माना जाता है।' },
+      { q: 'क्या बीएमआई शरीर की चर्बी को सीधे माप सकता है?', a: 'सीधे तौर पर नहीं। बीएमआई अतिरिक्त शरीर के वजन का माप है, हालांकि यह शरीर की चर्बी के स्तर के साथ दृढ़ता से संबंधित है।' }
+    ],
+    sections: [
+      { title: 'अपने बॉडी मास इंडेक्स (बीएमआई) को समझना', text: 'बीएमआई दुनिया भर में स्वास्थ्य पेशेवरों द्वारा वजन से संबंधित स्वास्थ्य जोखिमों की जांच के लिए उपयोग किया जाने वाला एक महत्वपूर्ण मापदंड है।' },
+      { title: 'बीएमआई की गणना कैसे की जाती है?', text: 'मीट्रिक प्रणाली में, यह मीटर वर्ग में आपकी ऊंचाई से विभाजित किलोग्राम में आपका वजन है (किग्रा/मी²)। हमारा कैलकुलेटर कुछ ही सेकंड में सटीक स्कोर देता है।' }
+    ]
+  }
+};
+
+const t = content[lang] || content.en;
+
+// Generate JSON-LD for FAQs
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": t.faq.map((item: { q: string; a: string }) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+
+<section id="insights" class="max-w-4xl mx-auto space-y-20 py-20 px-6 scroll-mt-24">
+  <div class="space-y-16">
+    {t.sections.map((section: { title: string; text: string }) => (
+      <div class="space-y-6">
+        <h2 class="text-3xl font-black tracking-tight text-[var(--foreground)] leading-tight uppercase">
+          {section.title}
+        </h2>
+        <p class="text-lg text-[var(--muted-foreground)] leading-relaxed font-bold opacity-60">
+          {section.text}
+        </p>
+      </div>
+    ))}
+  </div>
+
+  <div id="faq" class="space-y-10 border-t border-[var(--border)] pt-20 scroll-mt-24">
+    <h2 class="text-3xl font-black tracking-tighter text-center uppercase tracking-[0.2em]">{t.faqTitle}</h2>
+    <div class="space-y-6">
+      {t.faq.map((item: { q: string; a: string }) => (
+        <details class="group glass-card hover:bg-[var(--muted)] transition-all cursor-pointer overflow-hidden border-2 border-[var(--border)]">
+          <summary class="flex justify-between items-center font-black text-lg p-6 md:p-8 select-none list-none uppercase tracking-tight">
+            <span class="pr-8">{item.q}</span>
+            <span class="text-zinc-400 group-open:rotate-180 transition-transform flex-shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-8 md:px-8 md:pb-10 text-[var(--muted-foreground)] leading-relaxed font-bold border-t-2 border-[var(--border)] pt-6 opacity-70">
+            {item.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

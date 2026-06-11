@@ -1,0 +1,123 @@
+---
+import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+	keywords?: string;
+	ogImage?: string;
+	canonicalURL?: string;
+}
+
+const { 
+	title, 
+	description = "Use our premium BMI calculator for accurate results for men, women, and adults. Get personalized health insights instantly with our easy-to-use tool.",
+	keywords = "bmi calculator, bmi calculator for women, bmi calculator for men, adult bmi calculator, calculate bmi lbs, bmi chart for age, is bmi accurate, normal bmi range, body mass index calculator, health analytics",
+	ogImage = "/og-image.jpg",
+	canonicalURL = Astro.url.href
+} = Astro.props;
+
+const { currentLocale } = Astro;
+---
+
+<!doctype html>
+<html lang={currentLocale} class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<!-- Favicons -->
+		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<meta name="apple-mobile-web-app-title" content="bmi" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={ogImage} />
+		
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+		<!-- JSON-LD Structured Data -->
+		<script is:inline type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"name": "BMI Calculator Pro",
+				"url": "https://bmicalculatorpro.com",
+				"potentialAction": {
+					"@type": "SearchAction",
+					"target": "https://bmicalculatorpro.com/search?q={search_term_string}",
+					"query-input": "required name=search_term_string"
+				}
+			}
+		</script>
+		<script is:inline type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"name": "BMI Calculator Pro",
+				"url": "https://bmicalculatorpro.com",
+				"logo": "https://bmicalculatorpro.com/favicon.svg"
+			}
+		</script>
+
+		<slot name="json-ld" />
+
+		<!-- Analytics Placeholder -->
+		<!-- Replace GA_MEASUREMENT_ID with your actual ID -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PV2BV0XWRL"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-PV2BV0XWRL');
+		</script>
+
+		<!-- AdSense Placeholder -->
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+		<script is:inline>
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark';
+				}
+				return 'light';
+			})();
+
+			if (theme === 'light') {
+				document.documentElement.classList.remove('dark');
+			} else {
+				document.documentElement.classList.add('dark');
+			}
+
+			window.localStorage.setItem('theme', theme);
+		</script>
+	</head>
+	<body class="min-h-screen">
+		<slot />
+		<Footer />
+	</body>
+</html>
