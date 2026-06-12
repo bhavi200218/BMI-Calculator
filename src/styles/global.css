@@ -5,26 +5,26 @@
 }
 
 :root {
-  /* Light Theme - Summer Pastel Sea */
-  --background: #FFF9D2;
-  --foreground: #121212;
-  --muted: #FFEBCC;
-  --muted-foreground: #444444;
-  --border: #BFDDF0;
-  --accent: #8CC0EB;
+  /* Premium Light Theme (Inspired by Adviz Experts) */
+  --background: #FDFBF8;
+  --foreground: #1A1A1A;
+  --muted: #F9F7F4;
+  --muted-foreground: #777777;
+  --border: #E8E5E0;
+  --accent: #C9A96E;
   --card: #FFFFFF;
   --radius: 0.75rem;
 }
 
 .dark {
-  /* Dark Theme - Monochromatic Minimalism (STRICT) */
-  --background: #121212;
-  --foreground: #E0E0E0;
-  --muted: #1A1A1A;
-  --muted-foreground: #B0B0B0;
-  --border: #444444;
-  --accent: #888888;
-  --card: #181818;
+  /* Premium Dark Theme (Inspired by ObsidianOS) */
+  --background: #111113;
+  --foreground: #FAFAFA;
+  --muted: #18181B;
+  --muted-foreground: #A1A1AA;
+  --border: #27272A;
+  --accent: #FF700A;
+  --card: #18181B;
 }
 
 @layer base {
@@ -33,18 +33,6 @@
   }
   body {
     @apply bg-[var(--background)] text-[var(--foreground)] font-sans antialiased transition-colors duration-200 min-h-screen relative;
-    
-    /* Ultra-subtle Dot Pattern */
-    background-image: radial-gradient(var(--border) 0.8px, transparent 0.8px);
-    background-size: 30px 30px;
-    background-attachment: fixed;
-  }
-  
-  body::before {
-    content: "";
-    @apply absolute inset-0 -z-10 opacity-[0.15] pointer-events-none;
-    background-image: linear-gradient(var(--border) 0.5px, transparent 0.5px), linear-gradient(90deg, var(--border) 0.5px, transparent 0.5px);
-    background-size: 100px 100px;
   }
 
   h1, h2, h3, h4, h5, h6 {
