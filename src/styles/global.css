@@ -33,6 +33,20 @@
   }
   body {
     @apply bg-[var(--background)] text-[var(--foreground)] font-sans antialiased transition-colors duration-200 min-h-screen relative;
+    
+    /* Subtle Wavy Spiral Geometric Pattern */
+    background-image: 
+      url("data:image/svg+xml,%3Csvg width='1000' height='1000' viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A96E' stroke-width='0.5' stroke-opacity='0.1'%3E%3Cpath d='M500 500c50-20 100 20 100 80s-80 120-160 120-140-100-140-200 120-220 260-220 300 160 300 340-180 380-420 380-460-240-460-500 260-540 600-540 640 320 640 700-340 740-740 740-780-400-780-840 420-880 920-880'/%3E%3Cpath d='M500 500c60-30 120 30 120 100s-100 150-200 150-180-120-180-250 150-280 320-280 380 200 380 420-220 480-520 480-580-300-580-620 320-680 740-680 800 400 800 880-420 940-920 940'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-attachment: fixed;
+    background-size: 100%;
+  }
+
+  /* Adjust wavy pattern for dark mode */
+  .dark body {
+    background-image: 
+      url("data:image/svg+xml,%3Csvg width='1000' height='1000' viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23FF700A' stroke-width='0.5' stroke-opacity='0.05'%3E%3Cpath d='M500 500c50-20 100 20 100 80s-80 120-160 120-140-100-140-200 120-220 260-220 300 160 300 340-180 380-420 380-460-240-460-500 260-540 600-540 640 320 640 700-340 740-740 740-780-400-780-840 420-880 920-880'/%3E%3Cpath d='M500 500c60-30 120 30 120 100s-100 150-200 150-180-120-180-250 150-280 320-280 380 200 380 420-220 480-520 480-580-300-580-620 320-680 740-680 800 400 800 880-420 940-920 940'/%3E%3C/g%3E%3C/svg%3E");
   }
 
   h1, h2, h3, h4, h5, h6 {
