@@ -1,7 +1,10 @@
 # Noindex the preview/pages.dev domain to avoid duplicate content SEO issues
 # Note: Replace project.pages.dev with your actual pages.dev URL if different
-https://bmi-calculator-premium.pages.dev/*
+https://real-bmi-calculator.pages.dev/*
   X-Robots-Tag: noindex
+
+https://realbmicalculator.com/*
+  X-Robots-Tag: all, index, follow
 
 /*
   X-Frame-Options: DENY
