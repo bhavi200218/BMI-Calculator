@@ -1,15 +1,15 @@
 {
-  "name": "BMI PRO",
-  "short_name": "BMI",
+  "name": "Real BMI Calculator",
+  "short_name": "Real BMI",
   "icons": [
     {
       "src": "/icon.svg",
-      "sizes": "512x512",
+      "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#000000",
   "background_color": "#ffffff",
   "display": "standalone"
 }

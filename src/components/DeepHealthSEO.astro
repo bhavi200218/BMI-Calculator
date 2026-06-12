@@ -19,6 +19,23 @@ const content = {
     h6: "Getting the Most Accurate Measurements",
     p6: "To get the most out of Real BMI, accuracy in your input is key. For height, stand barefoot with your back against a wall and heels touching the corner. For weight, measure yourself first thing in the morning after using the bathroom but before eating breakfast. Consistency in when and how you measure ensures that the trends you see in your BMI are reflective of real changes in your health profile.",
     conclusion: "Real BMI is designed to be your precision partner in this journey. By providing accurate, instant calculations, we empower you to track your progress and make informed decisions with your healthcare provider. Your health is your most valuable asset, so treat it with the precision it deserves."
+  },
+  hi: {
+    title: "बॉडी मास इंडेक्स (बीएमआई) के लिए गाइड",
+    intro: "बॉडी मास इंडेक्स (BMI) दुनिया भर में इस्तेमाल किया जाने वाला एक बुनियादी स्वास्थ्य मीट्रिक है। चाहे आप एलबीएस और इंच का उपयोग कर रहे हों या मेट्रिक्स सिस्टम का, अपने बीएमआई को समझना डेटा-संचालित तंदुरुस्ती की दिशा में पहला कदम है। रियल बीएमआई में, हम सभी उम्र के पुरुषों, महिलाओं और वयस्कों के लिए सबसे सटीक बीएमआई प्रदान करते हैं।",
+    h1: "एलबीएस और इंच के साथ बीएमआई की गणना",
+    p1: "संयुक्त राज्य अमेरिका में, बीएमआई गणना के लिए मानक फॉर्मूला पाउंड और इंच का उपयोग करता है: (वजन (lb) / [ऊंचाई (in)]² ) x 703। जबकि गणित थकाऊ हो सकता है, हमारा पेशेवर-ग्रेड कैलकुलेटर इस प्रक्रिया को स्वचालित करता है।",
+    h2: "बीएमआई की सीमाएं: क्या ध्यान रखें",
+    p2: "यह समझना आवश्यक है कि बीएमआई एक नैदानिक उपकरण नहीं है। एक व्यक्ति का बीएमआई 'उच्च' हो सकता है लेकिन उनके शरीर में वसा का प्रतिशत बहुत कम हो सकता है, जैसे कि एथलीटों के साथ। क्योंकि मांसपेशियां वसा से अधिक घनी होती हैं।",
+    h3: "संख्या से परे: कमर की परिधि और स्वास्थ्य",
+    p3: "जबकि रियल बीएमआई एक व्यापक अवलोकन प्रदान करता है, कई स्वास्थ्य विशेषज्ञ कमर की परिधि को एक माध्यमिक उपाय के रूप में देखने की सलाह देते हैं। पेट की चर्बी स्वास्थ्य जटिलताओं के लिए उच्च जोखिम पैदा करती है।",
+    h4: "अपना बीएमआई स्कोर सुरक्षित रूप से कैसे सुधारें",
+    p4: "स्वस्थ बीएमआई में संक्रमण निरंतरता की यात्रा है, गति की नहीं। सब्जियों, दुबले प्रोटीन और जटिल कार्बोहाइड्रेट से भरपूर संतुलित आहार पर ध्यान दें। साप्ताहिक कम से कम 150 मिनट की शारीरिक गतिविधि करें।",
+    h5: "बुजुर्ग आबादी में बीएमआई",
+    p5: "जैसे-जैसे हमारी उम्र बढ़ती है, हमारे शरीर की संरचना स्वाभाविक रूप से बदलती है। 65 वर्ष से अधिक उम्र के व्यक्तियों के लिए, थोड़ा अधिक बीएमआई (23 और 27 के बीच) वास्तव में फायदेमंद हो सकता है।",
+    h6: "सबसे सटीक माप प्राप्त करना",
+    p6: "रियल बीएमआई का अधिकतम लाभ उठाने के लिए, आपके इनपुट में सटीकता महत्वपूर्ण है। ऊंचाई के लिए, नंगे पैर खड़े हों। वजन के लिए, सुबह सबसे पहले अपना माप लें।",
+    conclusion: "रियल बीएमआई इस यात्रा में आपका सटीक साथी बनने के लिए डिज़ाइन किया गया है। सटीक गणना प्रदान करके, हम आपको अपनी प्रगति को ट्रैक करने के लिए सशक्त बनाते हैं।"
   }
 };
 
@@ -27,9 +44,15 @@ const t = content[lang as keyof typeof content] || content.en;
 
 <section class="max-w-4xl mx-auto py-24 px-6 border-t border-[var(--border)] overflow-hidden">
     <div class="space-y-12">
-        <div class="space-y-4">
-            <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--muted-foreground)] opacity-50">Deep Health Analysis</h2>
-            <h3 class="text-5xl font-black tracking-tighter uppercase leading-[0.9]">{t.title}</h3>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+            <div class="space-y-4 flex-1">
+                <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--muted-foreground)] opacity-50">Deep Health Analysis</h2>
+                <h3 class="text-5xl font-black tracking-tighter uppercase leading-[0.9]">{t.title}</h3>
+            </div>
+            <div class="relative w-32 h-32 flex-shrink-0">
+                <img src="/seo-light.png" alt="Health Analytics" class="w-full h-full object-contain dark:hidden" />
+                <img src="/seo-dark.png" alt="Health Analytics" class="w-full h-full object-contain hidden dark:block" />
+            </div>
         </div>
 
         <div class="columns-1 md:columns-2 gap-12 space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed font-bold opacity-80">
@@ -69,3 +92,5 @@ const t = content[lang as keyof typeof content] || content.en;
         </div>
     </div>
 </section>
+
+</style>

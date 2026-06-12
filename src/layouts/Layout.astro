@@ -36,9 +36,13 @@ const { currentLocale } = Astro;
 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		
 		<!-- Favicons -->
 		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
-		<meta name="apple-mobile-web-app-title" content="bmi" />
+		<link rel="apple-touch-icon" href="/icon.svg" />
+		<link rel="mask-icon" href="/icon.svg" color="#000000" />
+		<meta name="apple-mobile-web-app-title" content="Real BMI" />
+		<meta name="theme-color" content="#000000" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
 		
@@ -48,19 +52,28 @@ const { currentLocale } = Astro;
 		<meta name="keywords" content={keywords} />
 		<link rel="canonical" href={canonicalURL} />
 
+		<!-- Hreflang Tags (Crucial for Multi-language Indexing) -->
+		<link rel="alternate" hreflang="en" href="https://realbmicalculator.com/en/" />
+		<link rel="alternate" hreflang="es" href="https://realbmicalculator.com/es/" />
+		<link rel="alternate" hreflang="fr" href="https://realbmicalculator.com/fr/" />
+		<link rel="alternate" hreflang="de" href="https://realbmicalculator.com/de/" />
+		<link rel="alternate" hreflang="ko" href="https://realbmicalculator.com/ko/" />
+		<link rel="alternate" hreflang="hi" href="https://realbmicalculator.com/hi/" />
+		<link rel="alternate" hreflang="x-default" href="https://realbmicalculator.com/en/" />
+
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={ogImage} />
+		<meta property="og:image" content={ogImage.includes('og-image.jpg') ? '/icon.svg' : ogImage} />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={canonicalURL} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={ogImage} />
+		<meta property="twitter:image" content={ogImage.includes('og-image.jpg') ? '/icon.svg' : ogImage} />
 		
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,7 +100,7 @@ const { currentLocale } = Astro;
 				"@type": "Organization",
 				"name": "Real BMI Calculator",
 				"url": "https://realbmicalculator.com",
-				"logo": "https://realbmicalculator.com/favicon.svg"
+				"logo": "https://realbmicalculator.com/icon.svg"
 			}
 		</script>
 
@@ -95,7 +108,7 @@ const { currentLocale } = Astro;
 
 
 		<!-- AdSense Placeholder -->
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9923831868322634" crossorigin="anonymous"></script>
 
 		<script is:inline>
 			const theme = (() => {
