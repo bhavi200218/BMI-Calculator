@@ -24,6 +24,16 @@ const { currentLocale } = Astro;
 <!doctype html>
 <html lang={currentLocale} class="scroll-smooth">
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-9D3TJCYP4R');
+		</script>
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<!-- Favicons -->
@@ -62,11 +72,11 @@ const { currentLocale } = Astro;
 			{
 				"@context": "https://schema.org",
 				"@type": "WebSite",
-				"name": "BMI Calculator Pro",
-				"url": "https://bmicalculatorpro.com",
+				"name": "Real BMI Calculator",
+				"url": "https://realbmicalculator.com",
 				"potentialAction": {
 					"@type": "SearchAction",
-					"target": "https://bmicalculatorpro.com/search?q={search_term_string}",
+					"target": "https://realbmicalculator.com/search?q={search_term_string}",
 					"query-input": "required name=search_term_string"
 				}
 			}
@@ -75,23 +85,14 @@ const { currentLocale } = Astro;
 			{
 				"@context": "https://schema.org",
 				"@type": "Organization",
-				"name": "BMI Calculator Pro",
-				"url": "https://bmicalculatorpro.com",
-				"logo": "https://bmicalculatorpro.com/favicon.svg"
+				"name": "Real BMI Calculator",
+				"url": "https://realbmicalculator.com",
+				"logo": "https://realbmicalculator.com/favicon.svg"
 			}
 		</script>
 
 		<slot name="json-ld" />
 
-		<!-- Analytics Placeholder -->
-		<!-- Replace GA_MEASUREMENT_ID with your actual ID -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PV2BV0XWRL"></script>
-		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-PV2BV0XWRL');
-		</script>
 
 		<!-- AdSense Placeholder -->
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>

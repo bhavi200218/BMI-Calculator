@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://bmicalculatorpro.com',
+  site: 'https://realbmicalculator.com',
   integrations: [sitemap()],
   i18n: {
     defaultLocale: 'en',

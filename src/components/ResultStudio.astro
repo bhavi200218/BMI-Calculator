@@ -205,8 +205,8 @@ const t = (translations as any)[lang] || translations.en;
     
     document.getElementById('shareBtn').onclick = async () => {
       const shareData = {
-        title: 'BMI PRO Report',
-        text: `My BMI Report: ${bmi} (${category}). BMR: ${bmr} kcal. Check yours at BMI PRO!`,
+        title: 'Real BMI Report',
+        text: `My BMI Report: ${bmi} (${category}). BMR: ${bmr} kcal. Check yours at Real BMI!`,
         url: window.location.href
       };
       try { await navigator.share(shareData); } catch (err) {}

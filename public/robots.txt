@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bmicalculatorpro.com/sitemap.xml
+Sitemap: https://realbmicalculator.com/sitemap.xml
