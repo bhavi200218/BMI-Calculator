@@ -12,13 +12,39 @@ interface Props {
 
 const { 
 	title, 
-	description = "Use our premium BMI calculator for accurate results for men, women, and adults. Get personalized health insights instantly with our easy-to-use tool.",
-	keywords = "bmi calculator, bmi calculator for women, bmi calculator for men, adult bmi calculator, calculate bmi lbs, bmi chart for age, is bmi accurate, normal bmi range, body mass index calculator, health analytics",
-	ogImage = "/seo-dark.png",
-	canonicalURL = Astro.url.href
+	description = "Free online BMI calculator. Calculate BMI, BMR, and body composition instantly with Real BMI Calculator. The ultimate precision health instrument for data-driven wellness.",
+	keywords = "bmi calculator, real bmi, calculate bmi, bmi calculator for women, bmi calculator for men, adult bmi calculator, calculate bmi lbs, bmi chart for age, body mass index calculator, health analytics",
+	ogImage = "/seo-dark.png"
 } = Astro.props;
 
+const canonicalURL = new URL(Astro.url.pathname, 'https://realbmicalculator.com').href;
 const { currentLocale } = Astro;
+
+// HowTo Schema for BMI Calculation
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate BMI",
+  "description": "Step-by-step guide on how to calculate your Body Mass Index (BMI).",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "text": "Measure your weight in kilograms or pounds.",
+      "name": "Measure Weight"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Measure your height in centimeters or inches.",
+      "name": "Measure Height"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Input the data into the Real BMI Calculator to get instant results.",
+      "name": "Calculate"
+    }
+  ],
+  "totalTime": "PT1M"
+};
 ---
 
 <!doctype html>
@@ -96,6 +122,7 @@ const { currentLocale } = Astro;
 				}
 			}
 		</script>
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 		<script is:inline type="application/ld+json">
 			{
 				"@context": "https://schema.org",
