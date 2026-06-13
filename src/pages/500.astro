@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 ---
 
-<Layout title="500 - Server Error | Real BMI Calculator">
+<Layout title="500 Error | Internal Server Error | Real BMI">
     <Navbar />
     <main class="h-screen flex flex-col items-center justify-center space-y-6">
         <div class="space-y-2 text-center">
@@ -13,6 +13,6 @@ import Navbar from '../components/Navbar.astro';
         <p class="text-sm text-[var(--muted-foreground)] opacity-50 max-w-md text-center font-bold">
             We are experiencing a momentary lapse in our precision metrics. Our engineers are investigating.
         </p>
-        <a href="/" class="btn-primary max-w-xs px-10">Back to Dashboard</a>
+        <a href="/en" class="px-10 py-5 bg-[var(--foreground)] text-[var(--background)] rounded-2xl font-black uppercase tracking-widest text-xs hover:brightness-95 active:scale-95 transition-all shadow-xl inline-block">Return to Calculator</a>
     </main>
 </Layout>

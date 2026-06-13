@@ -59,15 +59,18 @@ const currentLangDisplay = langNames[lang] || lang;
           class="absolute right-0 top-full mt-2 w-44 glass-card p-2 space-y-0.5 shadow-2xl border border-[var(--border)] rounded-xl hidden"
           role="menu"
         >
-          {Object.entries(langNames).map(([code, name]) => (
-            <a
-              href={`/${code}`}
-              class={`flex items-center gap-2 px-4 py-2.5 text-[11px] font-black uppercase hover:bg-[var(--muted)] rounded-lg transition-colors text-[var(--foreground)] ${code === lang ? 'bg-[var(--muted)]' : ''}`}
-              role="menuitem"
-            >
-              {name}
-            </a>
-          ))}
+          {Object.entries(langNames).map(([code, name]) => {
+            const path = Astro.url.pathname.replace(/^\/[a-z]{2}\//, `/${code}/`).replace(/^\/[a-z]{2}$/, `/${code}/`);
+            return (
+              <a
+                href={path}
+                class={`flex items-center gap-2 px-4 py-2.5 text-[11px] font-black uppercase hover:bg-[var(--muted)] rounded-lg transition-colors text-[var(--foreground)] ${code === lang ? 'bg-[var(--muted)]' : ''}`}
+                role="menuitem"
+              >
+                {name}
+              </a>
+            );
+          })}
         </div>
       </div>
 

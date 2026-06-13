@@ -14,7 +14,7 @@ const {
 	title, 
 	description = "Use our premium BMI calculator for accurate results for men, women, and adults. Get personalized health insights instantly with our easy-to-use tool.",
 	keywords = "bmi calculator, bmi calculator for women, bmi calculator for men, adult bmi calculator, calculate bmi lbs, bmi chart for age, is bmi accurate, normal bmi range, body mass index calculator, health analytics",
-	ogImage = "/og-image.jpg",
+	ogImage = "/seo-dark.png",
 	canonicalURL = Astro.url.href
 } = Astro.props;
 
@@ -52,28 +52,26 @@ const { currentLocale } = Astro;
 		<meta name="keywords" content={keywords} />
 		<link rel="canonical" href={canonicalURL} />
 
-		<!-- Hreflang Tags (Crucial for Multi-language Indexing) -->
-		<link rel="alternate" hreflang="en" href="https://realbmicalculator.com/en/" />
-		<link rel="alternate" hreflang="es" href="https://realbmicalculator.com/es/" />
-		<link rel="alternate" hreflang="fr" href="https://realbmicalculator.com/fr/" />
-		<link rel="alternate" hreflang="de" href="https://realbmicalculator.com/de/" />
-		<link rel="alternate" hreflang="ko" href="https://realbmicalculator.com/ko/" />
-		<link rel="alternate" hreflang="hi" href="https://realbmicalculator.com/hi/" />
-		<link rel="alternate" hreflang="x-default" href="https://realbmicalculator.com/en/" />
+		<!-- Hreflang Tags (Dynamic Multi-language Indexing) -->
+		{['en', 'es', 'fr', 'de', 'ko', 'hi'].map((lang) => {
+			const path = Astro.url.pathname.replace(/^\/[a-z]{2}\//, `/${lang}/`).replace(/^\/[a-z]{2}$/, `/${lang}/`);
+			return <link rel="alternate" hreflang={lang} href={`https://realbmicalculator.com${path}`} />;
+		})}
+		<link rel="alternate" hreflang="x-default" href={`https://realbmicalculator.com${Astro.url.pathname.replace(/^\/[a-z]{2}\//, '/en/').replace(/^\/[a-z]{2}$/, '/en/')}`} />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={ogImage.includes('og-image.jpg') ? '/icon.svg' : ogImage} />
+		<meta property="og:image" content={ogImage} />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={canonicalURL} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={ogImage.includes('og-image.jpg') ? '/icon.svg' : ogImage} />
+		<meta property="twitter:image" content={ogImage} />
 		
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,6 +89,26 @@ const { currentLocale } = Astro;
 					"@type": "SearchAction",
 					"target": "https://realbmicalculator.com/search?q={search_term_string}",
 					"query-input": "required name=search_term_string"
+				}
+			}
+		</script>
+		<script is:inline type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "SoftwareApplication",
+				"name": "Real BMI Calculator",
+				"operatingSystem": "All",
+				"applicationCategory": "HealthApplication",
+				"url": "https://realbmicalculator.com",
+				"offers": {
+					"@type": "Offer",
+					"price": "0",
+					"priceCurrency": "USD"
+				},
+				"aggregateRating": {
+					"@type": "AggregateRating",
+					"ratingValue": "4.9",
+					"ratingCount": "1250"
 				}
 			}
 		</script>

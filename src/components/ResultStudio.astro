@@ -189,7 +189,10 @@ const t = (translations as any)[lang] || translations.en;
     const categories = {
         en: { under: 'Underweight', normal: 'Healthy Weight', over: 'Overweight', obese: 'Obese' },
         hi: { under: 'कम वजन', normal: 'स्वस्थ वजन', over: 'अधिक वजन', obese: 'मोटापा' },
-        es: { under: 'Bajo Peso', normal: 'Peso Saludable', over: 'Sobrepeso', obese: 'Obese' }
+        es: { under: 'Bajo Peso', normal: 'Peso Saludable', over: 'Sobrepeso', obese: 'Obesidad' },
+        fr: { under: 'Sous-poids', normal: 'Poids Santé', over: 'Surpoids', obese: 'Obésité' },
+        de: { under: 'Untergewicht', normal: 'Normalgewicht', over: 'Übergewicht', obese: 'Adipositas' },
+        ko: { under: '저체중', normal: '정상 체중', over: '과체중', obese: '비만' }
     };
     const lang = document.documentElement.lang || 'en';
     const currentCat = categories[lang] || categories.en;

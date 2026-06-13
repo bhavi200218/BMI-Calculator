@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<Layout title="404 - Page Not Found | Real BMI">
+    <Navbar />
+    <main class="min-h-screen flex flex-col items-center justify-center p-6 text-center">
+        <h1 class="text-[12rem] font-black tracking-tighter opacity-10 leading-none">404</h1>
+        <div class="space-y-6 -mt-20 relative z-10">
+            <h2 class="text-4xl font-black uppercase tracking-tighter">Lost in Metric Space?</h2>
+            <p class="text-lg text-[var(--muted-foreground)] max-w-md mx-auto font-bold opacity-60">
+                The health data you're looking for doesn't exist. Let's get you back to the precision instrument.
+            </p>
+            <div class="pt-6">
+                <a href="/en" class="px-10 py-5 bg-[var(--foreground)] text-[var(--background)] rounded-2xl font-black uppercase tracking-widest text-xs hover:brightness-95 active:scale-95 transition-all shadow-xl inline-block">
+                    Return to Calculator
+                </a>
+            </div>
+        </div>
+    </main>
+</Layout>
