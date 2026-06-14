@@ -11,14 +11,38 @@ interface Props {
 }
 
 const { 
-	title, 
-	description = "Free online BMI calculator. Calculate BMI, BMR, and body composition instantly with Real BMI Calculator. The ultimate precision health instrument for data-driven wellness.",
-	keywords = "bmi calculator, real bmi, calculate bmi, bmi calculator for women, bmi calculator for men, adult bmi calculator, calculate bmi lbs, bmi chart for age, body mass index calculator, health analytics",
+	title = "Real BMI Calculator – Most Accurate Body Mass Index Tool", 
+	description = "Use the Real BMI Calculator for the most accurate results. Calculate your Body Mass Index (BMI), BMR, and TDEE instantly. Trusted global health instrument for precision wellness tracking.",
+	keywords = "bmi calculator, real bmi calculator, body mass index, bmi calculator for men, bmi calculator for women, accurate bmi calculator, weight loss calculator, health tracker, bmr calculator",
 	ogImage = "/seo-dark.png"
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, 'https://realbmicalculator.com').href;
 const { currentLocale } = Astro;
+
+// FAQ Schema for Search Snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the most accurate BMI calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Real BMI Calculator is designed for maximum precision, using international health standards to calculate Body Mass Index, BMR, and TDEE instantly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is BMI calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BMI is calculated by dividing an individual's weight in kilograms by the square of their height in meters (kg/m²). For imperial units, the formula is (weight (lb) / height (in)²) x 703."
+      }
+    }
+  ]
+};
 
 // HowTo Schema for BMI Calculation
 const howToSchema = {
@@ -128,6 +152,7 @@ const howToSchema = {
 				}
 			}
 		</script>
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 		<script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 		<script is:inline type="application/ld+json">
 			{
