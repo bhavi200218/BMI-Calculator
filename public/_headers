@@ -4,7 +4,7 @@ https://real-bmi-calculator.pages.dev/*
   X-Robots-Tag: noindex
 
 https://realbmicalculator.com/*
-  X-Robots-Tag: all, index, follow
+  X-Robots-Tag: index, follow
 
 /*
   X-Frame-Options: DENY
