@@ -65,10 +65,11 @@ const howToSchema = {
 		
 		<!-- Favicons -->
 		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<link rel="shortcut icon" href="/icon.svg" />
 		<link rel="apple-touch-icon" href="/icon.svg" />
 		<link rel="mask-icon" href="/icon.svg" color="#000000" />
 		<meta name="apple-mobile-web-app-title" content="Real BMI" />
-		<meta name="theme-color" content="#000000" />
+		<meta name="theme-color" content="#FDFBF8" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
 		
@@ -77,16 +78,19 @@ const howToSchema = {
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords} />
 		<link rel="canonical" href={canonicalURL} />
+		<meta name="author" content="Real BMI" />
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
 		<!-- Hreflang Tags (Dynamic Multi-language Indexing) -->
 		{['en', 'es', 'fr', 'de', 'ko', 'hi'].map((lang) => {
 			const path = Astro.url.pathname.replace(/^\/[a-z]{2}\//, `/${lang}/`).replace(/^\/[a-z]{2}$/, `/${lang}/`);
 			return <link rel="alternate" hreflang={lang} href={`https://realbmicalculator.com${path}`} />;
 		})}
-		<link rel="alternate" hreflang="x-default" href={`https://realbmicalculator.com${Astro.url.pathname.replace(/^\/[a-z]{2}\//, '/en/').replace(/^\/[a-z]{2}$/, '/en/')}`} />
+		<link rel="alternate" hreflang="x-default" href={`https://realbmicalculator.com/en/`} />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Real BMI Calculator" />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
