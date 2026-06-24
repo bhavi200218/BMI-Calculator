@@ -4,33 +4,43 @@ import Navbar from '../../components/Navbar.astro';
 import BMICalculator from '../../components/BMICalculator.astro';
 import ResultStudio from '../../components/ResultStudio.astro';
 import HealthContent from '../../components/HealthContent.astro';
+import LatestArticles from '../../components/LatestArticles.astro';
 import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 ---
 
 <Layout 
-	title="Calculadora de IMC Real | Herramienta precisa de IMC y BMR"
-	description="Calculadora de IMC en línea gratuita. Calcule su IMC, BMR y composición corporal al instante con Real BMI Calculator."
+	title="Calculadora de IMC – Real BMI | Mediciones de Salud Precisas"
+	description="Mida su salud con precisión con Real BMI Calculator. Cálculo instantáneo de IMC, TDEE y BMR."
 >
 	<Navbar />
-	<main class="pt-32 pb-20 px-6">
-		<div class="max-w-4xl mx-auto text-center space-y-4 mb-16 animate-in">
-			<div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[var(--muted)] border border-[var(--border)] text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
+	
+	<main class="pt-24 md:pt-32 pb-20 px-4 md:px-6 relative">
+		<!-- Hero Section -->
+		<div class="max-w-7xl mx-auto text-center space-y-4 mb-16 md:mb-20 animate-in">
+			<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--muted)] border border-[var(--border)] text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.25em] text-[var(--accent)]">
 				Análisis de Salud Premium
 			</div>
-			<h1 class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--foreground)] uppercase">
-				Calculadora de IMC – Real BMI
+			
+			<!-- Mobile Responsive Title -->
+			<h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-[var(--foreground)] uppercase leading-tight md:whitespace-nowrap px-2">
+				Calculadora de IMC – Verifique su Índice de Masa Corporal
 			</h1>
-			<p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto font-bold opacity-60">
-				Métricas de precisión para el entusiasta moderno. Calculadas con fórmulas de grado clínico.
+			
+			<p class="text-xs sm:text-sm md:text-lg text-[var(--muted-foreground)] leading-relaxed max-w-4xl mx-auto font-bold opacity-60 px-4">
+				Obtenga resultados instantáneos con la calculadora Real BMI de nivel profesional, diseñada para la precisión clínica.
 			</p>
 		</div>
 
-		<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-stretch mb-32 relative z-10">
+		<!-- Calculator & Result Section -->
+		<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch mb-32 relative z-10">
 			<BMICalculator />
 			<ResultStudio />
 		</div>
 
-		<HealthContent />
-		<DeepHealthSEO />
+		<div class="max-w-7xl mx-auto space-y-24 md:space-y-32">
+			<LatestArticles />
+			<HealthContent />
+			<DeepHealthSEO />
+		</div>
 	</main>
 </Layout>

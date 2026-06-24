@@ -1,0 +1,55 @@
+---
+const articles = [
+  {
+    category: 'GUIDE',
+    title: 'BMI Chart for Men and Women',
+    text: 'Understand the healthy BMI range for men and women with our detailed chart...',
+    link: '/en/blog/bmi-chart-for-men-women'
+  },
+  {
+    category: 'RESEARCH',
+    title: 'Healthy BMI Range for Indians',
+    text: 'Learn about the modified healthy BMI ranges tailored specifically for Indian adults...',
+    link: '/en/blog/healthy-bmi-range-indians'
+  },
+  {
+    category: 'ADOLESCENCE',
+    title: 'BMI Calculator for Teens',
+    text: 'Understand how BMI is calculated for teens and children using percentiles...',
+    link: '/en/blog/bmi-calculator-teens'
+  }
+];
+---
+
+<section class="space-y-12 py-20">
+  <div class="flex items-center justify-between">
+    <div class="space-y-2">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter uppercase text-[var(--foreground)]">Latest Health & Wellness Articles</h2>
+      <div class="h-1 w-20 bg-[var(--accent)]"></div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    {articles.map(article => (
+      <a href={article.link} class="group">
+        <div class="glass-card p-8 h-full border-2 border-[var(--border)] group-hover:border-[var(--accent)] transition-all duration-500 shadow-sm hover:shadow-xl hover:-translate-y-2">
+          <div class="flex flex-col h-full space-y-6">
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--accent)]">{article.category}</span>
+            <h3 class="text-2xl font-black tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors leading-tight uppercase">
+              {article.title}
+            </h3>
+            <p class="text-sm text-[var(--muted-foreground)] font-bold opacity-60 leading-relaxed line-clamp-3">
+              {article.text}
+            </p>
+            <div class="pt-4 mt-auto">
+               <span class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 group-hover:gap-4 transition-all">
+                 Read Article
+                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+               </span>
+            </div>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

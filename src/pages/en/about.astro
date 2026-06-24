@@ -8,43 +8,46 @@ import Navbar from '../../components/Navbar.astro';
     description="Learn about the mission behind Real BMI. Built by Bhawanshi Dosi to provide precision health metrics and data-driven wellness insights."
 >
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-16">
-        <div class="space-y-4">
-            <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                Return Home
-            </a>
-            <h1 class="text-6xl font-black tracking-tighter uppercase">About Us</h1>
-        </div>
-
-        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-xl font-bold">
-            <div class="space-y-6">
-                <p>
-                    Hi, I'm <span class="text-[var(--foreground)]">Bhawanshi Dosi</span>. 
-                </p>
-                <p>
-                    I didn't just build Real BMI to be another calculator on the internet. I built it because I believe that health is the most personal journey anyone can take, and that journey deserves better than "approximate" numbers.
-                </p>
-                <p>
-                    My mission was to create a precision instrument that provides users with the most accurate predictions possible. I wanted to build something that feels like a professional medical tool but remains accessible to everyone, everywhere. 
-                </p>
-                <p>
-                    Whether you're trying to reach a goal or just checking in on your wellness, I want Real BMI to be the partner you can trust. Every line of code was written with your health and accuracy in mind, because you deserve to know exactly where you stand.
-                </p>
+    <main class="pt-40 pb-20 px-6 min-h-screen">
+        <div class="max-w-4xl mx-auto glass-card p-8 md:p-16 space-y-12 border-2 border-[var(--border)]">
+            <div class="space-y-4">
+                <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--accent)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    Return Home
+                </a>
+                <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase text-[var(--foreground)]">About Us</h1>
+                <p class="text-xs font-black uppercase tracking-[0.3em] text-[var(--accent)]">Empowering Health Precision</p>
             </div>
 
-            <div class="pt-8 space-y-4 text-[var(--foreground)] border-t border-[var(--border)]">
-                <p class="text-3xl font-black tracking-tighter">
-                    Let's Connect
-                </p>
-                <p class="text-lg opacity-60">
-                    If you have any questions or just want to share your health journey, feel free to reach out.
-                </p>
-                <div class="pt-2">
-                    <a href="https://www.linkedin.com/in/bhawanshi-dosi" target="_blank" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline group">
-                        LinkedIn Profile
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                    </a>
+            <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-bold opacity-70">
+                <div class="space-y-6">
+                    <p>
+                        Hi, I'm <span class="text-[var(--foreground)]">Bhawanshi Dosi</span>. 
+                    </p>
+                    <p>
+                        I didn't just build Real BMI to be another calculator on the internet. I built it because I believe that health is the most personal journey anyone can take, and that journey deserves better than "approximate" numbers.
+                    </p>
+                    <p>
+                        My mission was to create a precision instrument that provides users with the most accurate predictions possible. I wanted to build something that feels like a professional medical tool but remains accessible to everyone, everywhere. 
+                    </p>
+                    <p>
+                        Whether you're trying to reach a goal or just checking in on your wellness, I want Real BMI to be the partner you can trust. Every line of code was written with your health and accuracy in mind, because you deserve to know exactly where you stand.
+                    </p>
+                </div>
+
+                <div class="pt-8 space-y-4 text-[var(--foreground)] border-t border-[var(--border)]">
+                    <p class="text-3xl font-black tracking-tighter">
+                        Let's Connect
+                    </p>
+                    <p class="text-lg opacity-60">
+                        If you have any questions or just want to share your health journey, feel free to reach out.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://www.linkedin.com/in/bhawanshi-dosi" target="_blank" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline group">
+                            LinkedIn Profile
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

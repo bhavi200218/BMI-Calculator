@@ -5,91 +5,75 @@
 }
 
 :root {
-  /* Premium Light Theme (Inspired by Adviz Experts) */
-  --background: #FDFBF8;
-  --foreground: #1A1A1A;
-  --muted: #F9F7F4;
-  --muted-foreground: #777777;
-  --border: #E8E5E0;
-  --accent: #C9A96E;
-  --card: #FFFFFF;
-  --radius: 0.75rem;
+  --background: #f4f4f4;
+  --foreground: #1a1a1a;
+  --muted: #e5e7eb;
+  --muted-foreground: #4b5563;
+  --border: #d1d5db;
+  --accent: #007a7a;
+  --accent-foreground: #ffffff;
+  --input: #ffffff;
+  --card: rgba(255, 255, 255, 0.95);
+  --radius: 2.5rem;
 }
 
 .dark {
-  /* Premium Dark Theme (Inspired by ObsidianOS) */
-  --background: #111113;
-  --foreground: #FAFAFA;
-  --muted: #18181B;
-  --muted-foreground: #A1A1AA;
-  --border: #27272A;
-  --accent: #FF700A;
-  --card: #18181B;
+  --background: #121826;
+  --foreground: #f8fafc;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --border: #334155;
+  --accent: #2dd4bf;
+  --accent-foreground: #0f172a;
+  --input: #1e293b;
+  --card: rgba(15, 23, 42, 0.95);
 }
 
 @layer base {
-  * {
-    @apply border-[var(--border)];
-  }
   body {
-    @apply bg-[var(--background)] text-[var(--foreground)] font-sans antialiased transition-colors duration-200 min-h-screen relative;
-    
-    /* Subtle Wavy Spiral Geometric Pattern */
+    @apply bg-[var(--background)] text-[var(--foreground)] font-sans antialiased;
     background-image: 
-      url("data:image/svg+xml,%3Csvg width='1000' height='1000' viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A96E' stroke-width='0.5' stroke-opacity='0.1'%3E%3Cpath d='M500 500c50-20 100 20 100 80s-80 120-160 120-140-100-140-200 120-220 260-220 300 160 300 340-180 380-420 380-460-240-460-500 260-540 600-540 640 320 640 700-340 740-740 740-780-400-780-840 420-880 920-880'/%3E%3Cpath d='M500 500c60-30 120 30 120 100s-100 150-200 150-180-120-180-250 150-280 320-280 380 200 380 420-220 480-520 480-580-300-580-620 320-680 740-680 800 400 800 880-420 940-920 940'/%3E%3C/g%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: top right;
+      radial-gradient(at 0% 0%, hsla(180, 100%, 50%, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(45, 100%, 50%, 0.03) 0px, transparent 50%);
     background-attachment: fixed;
-    background-size: 100%;
-  }
-
-  /* Adjust wavy pattern for dark mode */
-  .dark body {
-    background-image: 
-      url("data:image/svg+xml,%3Csvg width='1000' height='1000' viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23FF700A' stroke-width='0.5' stroke-opacity='0.05'%3E%3Cpath d='M500 500c50-20 100 20 100 80s-80 120-160 120-140-100-140-200 120-220 260-220 300 160 300 340-180 380-420 380-460-240-460-500 260-540 600-540 640 320 640 700-340 740-740 740-780-400-780-840 420-880 920-880'/%3E%3Cpath d='M500 500c60-30 120 30 120 100s-100 150-200 150-180-120-180-250 150-280 320-280 380 200 380 420-220 480-520 480-580-300-580-620 320-680 740-680 800 400 800 880-420 940-920 940'/%3E%3C/g%3E%3C/svg%3E");
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tighter font-black uppercase;
   }
 }
 
-@layer components {
-  .glass-card {
-    @apply bg-[var(--card)] border border-[var(--border)] rounded-[var(--radius)] shadow-sm;
-  }
-  
-  .matte-input {
-    @apply w-full bg-[var(--muted)] border border-[var(--border)] rounded-lg px-5 py-4 text-base text-[var(--foreground)] focus:ring-1 focus:ring-[var(--accent)] transition-all outline-none font-bold placeholder:opacity-30;
-  }
-
-  .btn-primary {
-    @apply px-10 py-5 bg-[var(--foreground)] text-[var(--background)] rounded-lg font-black uppercase tracking-[0.2em] text-xs hover:opacity-90 active:scale-[0.98] transition-all;
-    box-shadow: none !important;
-    border: none;
-  }
-
-  .badge {
-    @apply px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.2em] border border-[var(--border)] bg-[var(--muted)];
-  }
+.glass-card {
+  background: var(--card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: var(--radius);
 }
 
-.animate-in {
-  animation: fadeIn 0.4s ease-out forwards;
+/* Light Mode Gradient */
+.calc-btn-gradient {
+  background: linear-gradient(135deg, #007a7a, #c9a44c) !important;
+  color: white !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 122, 122, 0.5) !important;
+  border: none !important;
+}
+
+/* Precise Dark Mode Override */
+.dark .calc-btn-gradient {
+  background: linear-gradient(135deg, #059669, #3b82f6) !important;
+  color: white !important;
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.4) !important;
+}
+
+.calc-btn-gradient:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.matte-input {
+  @apply w-full bg-[var(--input)] border-2 border-[var(--border)] focus:border-[var(--accent)] outline-none transition-all;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.99); }
-  to { opacity: 1; opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+.animate-in {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }

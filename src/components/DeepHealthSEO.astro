@@ -7,23 +7,23 @@ const content: Record<string, any> = {
     sections: [
       {
         title: "Why Use the Real BMI Calculator?",
-        text: "The Real BMI Calculator provides highly precise measurements by utilizing the latest clinical protocols. Unlike generic tools, our system is optimized for accuracy across global standards, ensuring you get the most reliable health data instantly."
+        text: "The Real BMI Calculator provides highly precise measurements by utilizing the latest clinical protocols. Unlike generic tools, our system is optimized for accuracy across global standards, ensuring you get the most reliable health data instantly. This classification follows the official guidelines established by the <b><u>World Health Organization (WHO)</u></b> and the <b><u>CDC</u></b> for global health assessment."
       },
       {
         title: "Accuracy of the BMI Calculator with Lbs and Inches",
-        text: "In the United States, the standard formula for BMI calculation uses pounds and inches: (weight (lb) / [height (in)]² ) x 703. While the math can be tedious, our professional-grade Real BMI Calculator automates this process, providing results that align perfectly with CDC guidelines."
+        text: "In the United States, the standard formula for BMI calculation uses pounds and inches: (weight (lb) / [height (in)]² ) x 703. While the math can be tedious, our professional-grade Real BMI Calculator automates this process, providing results that align perfectly with CDC guidelines. This classification follows the official guidelines established by the <b><u>World Health Organization (WHO)</u></b> and the <b><u>CDC</u></b> for global health assessment."
       },
       {
         title: "The Real Limitations of BMI: What to Watch Out For",
-        text: "It is essential to understand that BMI is not a diagnostic tool. A person may have a 'high' BMI but have a very low body fat percentage, such as with elite athletes. Because muscle is denser than fat, the Real BMI tool helps provide context alongside other health metrics."
+        text: "It is essential to understand that BMI is not a diagnostic tool. A person may have a 'high' BMI but have a very low body fat percentage, such as with elite athletes. Because muscle is denser than fat, the Real BMI tool helps provide context alongside other health metrics. This classification follows the official guidelines established by the <b><u>World Health Organization (WHO)</u></b> and the <b><u>CDC</u></b> for global health assessment."
       },
       {
         title: "How to Improve Your BMI Score Safely",
-        text: "Transitioning to a healthier BMI is a journey of consistency. Focus on a balanced diet rich in whole foods and complex carbohydrates. Combine this with regular aerobic activity to optimize your health data on the Real BMI Dashboard."
+        text: "Transitioning to a healthier BMI is a journey of consistency. Focus on a balanced diet rich in whole foods and complex carbohydrates. Combine this with regular aerobic activity to optimize your health data on the Real BMI Dashboard. This classification follows the official guidelines established by the <b><u>World Health Organization (WHO)</u></b> and the <b><u>CDC</u></b> for global health assessment."
       },
       {
         title: "Getting the Most Accurate Measurements",
-        text: "To get the most out of our Real BMI Calculator, accuracy in your input is key. For height, stand barefoot with your back against a wall. Consistency ensures that the trends you see are reflective of real health changes."
+        text: "To get the most out of our Real BMI Calculator, accuracy in your input is key. For height, stand barefoot with your back against a wall. Consistency ensures that the trends you see are reflective of real health changes. This classification follows the official guidelines established by the <b><u>World Health Organization (WHO)</u></b> and the <b><u>CDC</u></b> for global health assessment."
       }
     ]
   },
@@ -65,10 +65,8 @@ const content: Record<string, any> = {
   }
 };
 
-// Simplified fallbacks for other languages to keep the code clean
 const t = content[lang] || content.en;
 
-// Article Schema for SEO
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -93,17 +91,18 @@ const articleSchema = {
 
 <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
-<section class="max-w-4xl mx-auto py-24 px-6 border-t border-[var(--border)] mt-20 bg-linear-to-b from-[var(--muted)]/30 to-transparent rounded-[3rem]">
+<section class="max-w-7xl mx-auto py-24 px-6 border-t border-[var(--border)] mt-20 bg-linear-to-b from-[var(--muted)]/30 to-transparent rounded-[3rem]">
     <div class="space-y-16">
         {t.sections.map((section: any) => (
             <div class="space-y-6 group">
-                <div class="w-12 h-1 bg-[var(--accent)] mb-6 transform transition-transform group-hover:scale-x-150"></div>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-1 bg-[var(--accent)] transform transition-transform group-hover:scale-x-150 origin-left"></div>
+                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--accent)]">Health Insights</span>
+                </div>
                 <h2 class="text-3xl font-black uppercase tracking-tighter text-[var(--foreground)] leading-none italic">
                     {section.title}
                 </h2>
-                <p class="text-lg text-[var(--muted-foreground)] leading-relaxed font-bold opacity-70">
-                    {section.text}
-                </p>
+                <p class="text-lg text-[var(--muted-foreground)] leading-relaxed font-bold opacity-70" set:html={section.text} />
             </div>
         ))}
     </div>

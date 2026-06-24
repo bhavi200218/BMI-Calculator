@@ -8,17 +8,28 @@ import Navbar from '../../components/Navbar.astro';
     description="Important medical disclaimer for Real BMI users. Our results are informational and not a substitute for professional medical advice."
 >
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-12 text-center">
-        <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform w-fit mx-auto">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-            Return Home
-        </a>
-        <h1 class="text-5xl font-black tracking-tighter uppercase">Medical Disclaimer</h1>
-        <div class="glass-card bg-[var(--muted)] border-[var(--border)] p-12 space-y-8">
-            <p class="text-2xl font-black text-[var(--foreground)] uppercase tracking-widest">Legal Health Notice</p>
-            <p class="text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto text-lg font-bold opacity-80">
-                The content on Real BMI is for informational purposes only.
-            </p>
+    <main class="pt-40 pb-20 px-6 min-h-screen">
+        <div class="max-w-4xl mx-auto glass-card p-8 md:p-16 space-y-12 border-2 border-[var(--border)]">
+            <div class="space-y-4">
+                <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--accent)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    Return Home
+                </a>
+                <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase text-[var(--foreground)]">Medical Disclaimer</h1>
+                <p class="text-xs font-black uppercase tracking-[0.3em] text-[var(--accent)]">Notice of Information</p>
+            </div>
+
+            <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-8 text-lg md:text-xl font-bold opacity-70">
+                <p>
+                    The content on <span class="text-[var(--foreground)]">Real BMI</span> is for informational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment.
+                </p>
+                <p>
+                    Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. 
+                </p>
+                <div class="pt-8 border-t border-[var(--border)] italic opacity-60 text-lg leading-relaxed">
+                    "Precision data is a guide, not a prescription." — Real BMI
+                </div>
+            </div>
         </div>
     </main>
 </Layout>

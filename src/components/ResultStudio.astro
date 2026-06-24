@@ -135,19 +135,19 @@ const t = (translations as any)[lang] || translations.en;
 
     <!-- Grid of Stats -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
-      <div class="p-6 md:p-8 rounded-3xl bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
+      <div class="p-6 md:p-8 rounded-[2rem] bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
         <div class="text-xs font-black uppercase tracking-widest text-[var(--foreground)]">{t.bmr}</div>
         <div id="bmrDisplay" class="text-3xl md:text-4xl font-black tracking-tight">---- <span class="text-base font-medium opacity-30 lowercase">kcal</span></div>
       </div>
-      <div class="p-6 md:p-8 rounded-3xl bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
+      <div class="p-6 md:p-8 rounded-[2rem] bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
         <div class="text-xs font-black uppercase tracking-widest text-[var(--foreground)]">{t.tdee}</div>
         <div id="tdeeDisplay" class="text-3xl md:text-4xl font-black tracking-tight">---- <span class="text-base font-medium opacity-30 lowercase">kcal</span></div>
       </div>
-      <div class="p-6 md:p-8 rounded-3xl bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
+      <div class="p-6 md:p-8 rounded-[2rem] bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
         <div class="text-xs font-black uppercase tracking-widest text-[var(--foreground)]">{t.ideal}</div>
         <div id="idealDisplay" class="text-3xl md:text-4xl font-black tracking-tight">--.- <span class="text-base font-medium opacity-30 lowercase">kg</span></div>
       </div>
-      <div class="p-6 md:p-8 rounded-3xl bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
+      <div class="p-6 md:p-8 rounded-[2rem] bg-[var(--muted)] border-2 border-[var(--border)] space-y-4">
         <div class="text-xs font-black uppercase tracking-widest text-[var(--foreground)]">{t.fat}</div>
         <div id="fatDisplay" class="text-3xl md:text-4xl font-black tracking-tight">--.- <span class="text-base font-medium opacity-30 lowercase">%</span></div>
       </div>
@@ -176,10 +176,21 @@ const t = (translations as any)[lang] || translations.en;
     resultContent.classList.add('animate-in');
 
     const bmiNum = parseFloat(bmi);
+    const currentUnit = window.localStorage.getItem('bmiUnit') || 'metric';
+    const isImperial = currentUnit === 'imperial';
+
     document.getElementById('bmiDisplay').innerText = bmi;
     document.getElementById('bmrDisplay').innerHTML = `${bmr} <span class="text-base font-medium opacity-30">kcal</span>`;
     document.getElementById('tdeeDisplay').innerHTML = `${tdee} <span class="text-base font-medium opacity-30">kcal</span>`;
-    document.getElementById('idealDisplay').innerHTML = `${idealWeight} <span class="text-base font-medium opacity-30">kg</span>`;
+    
+    // Convert idealWeight if in imperial mode
+    let displayedIdealWeight = idealWeight;
+    let unitLabel = 'kg';
+    if (isImperial) {
+      displayedIdealWeight = (parseFloat(idealWeight) * 2.20462).toFixed(1);
+      unitLabel = 'lbs';
+    }
+    document.getElementById('idealDisplay').innerHTML = `${displayedIdealWeight} <span class="text-base font-medium opacity-30">${unitLabel}</span>`;
     document.getElementById('fatDisplay').innerHTML = `${bodyFat} <span class="text-base font-medium opacity-30">%</span>`;
 
     let percent = ((bmiNum - 15) / (40 - 15)) * 100;
@@ -216,7 +227,7 @@ const t = (translations as any)[lang] || translations.en;
     };
 
     document.getElementById('copyBtn').onclick = () => {
-      const report = `BMI Report:\nBMI: ${bmi}\nCategory: ${category}\nBMR: ${bmr} kcal\nTDEE: ${tdee} kcal\nIdeal Weight: ${idealWeight} kg\nBody Fat: ${bodyFat}%`;
+      const report = `BMI Report:\nBMI: ${bmi}\nCategory: ${category}\nBMR: ${bmr} kcal\nTDEE: ${tdee} kcal\nIdeal Weight: ${displayedIdealWeight} ${unitLabel}\nBody Fat: ${bodyFat}%`;
       navigator.clipboard.writeText(report).then(() => {
         const btn = document.getElementById('copyBtn');
         const originalHTML = btn.innerHTML;

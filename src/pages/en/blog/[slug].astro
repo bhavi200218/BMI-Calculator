@@ -1,0 +1,54 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'bmi-chart-for-men-women' }, props: { title: 'BMI Chart for Men and Women', category: 'GUIDE' } },
+    { params: { slug: 'healthy-bmi-range-indians' }, props: { title: 'Healthy BMI Range for Indians', category: 'RESEARCH' } },
+    { params: { slug: 'bmi-calculator-teens' }, props: { title: 'BMI Calculator for Teens', category: 'ADOLESCENCE' } }
+  ];
+}
+
+const { title, category } = Astro.props;
+---
+
+<Layout 
+    title={`${title} | Real BMI`}
+    description={`Learn more about ${title} with Real BMI's deep health insights.`}
+>
+    <Navbar />
+    <main class="pt-40 pb-20 px-6 min-h-screen">
+        <div class="max-w-4xl mx-auto glass-card p-8 md:p-16 space-y-12 border-2 border-[var(--border)]">
+            <div class="space-y-4">
+                <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--accent)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    Return Home
+                </a>
+                <h1 class="text-4xl md:text-6xl font-black tracking-tighter uppercase text-[var(--foreground)] leading-tight">{title}</h1>
+                <p class="text-xs font-black uppercase tracking-[0.3em] text-[var(--accent)]">{category}</p>
+            </div>
+
+            <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-8 text-lg font-bold opacity-70">
+                <p>
+                    Body Mass Index (BMI) is a widely recognized tool for assessing whether an individual has a healthy body weight for their height. While simple to calculate, the interpretation of BMI results can vary based on several factors, including gender, ethnicity, and age.
+                </p>
+                
+                <h2 class="text-2xl font-black text-[var(--foreground)] uppercase tracking-tight">Key Insights on {title}</h2>
+                <p>
+                    Understanding your body from a data-driven perspective is the first step toward long-term wellness. Our precision instruments prioritize the latest clinical protocols to ensure that every metric you see is grounded in global health standards.
+                </p>
+
+                <p>
+                    This classification follows the official guidelines established by the <b><u>World Health Organization (WHO)</u></b> and the <b><u>CDC</u></b> for global health assessment.
+                </p>
+
+                <div class="pt-8 border-t border-[var(--border)]">
+                    <a href="/en#calculator" class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-[10px] tracking-widest inline-block transition-all hover:scale-105 active:scale-95">
+                        Back to Calculator
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
