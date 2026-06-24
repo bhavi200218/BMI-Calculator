@@ -254,6 +254,19 @@ const t = translations[lang] || translations.en;
 
     window.dispatchEvent(new CustomEvent('bmiCalculated', { detail: result }));
 
+    // Scroll to Result on Mobile - Fixed with Timeout and Target
+    if (window.innerWidth < 1024) {
+      setTimeout(() => {
+        const resultSection = document.getElementById('bmiDisplay');
+        if (resultSection) {
+          resultSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+          });
+        }
+      }, 100);
+    }
+
     // Add to History
     sessionHistory.unshift({ bmi: result.bmi, date: new Date().toLocaleTimeString() });
     sessionHistory = sessionHistory.slice(0, 3);

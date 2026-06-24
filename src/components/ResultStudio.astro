@@ -125,11 +125,11 @@ const t = (translations as any)[lang] || translations.en;
       <div class="relative h-3 bg-[var(--muted)] rounded-full overflow-hidden mt-16 border-2 border-[var(--border)]">
         <div id="scaleMarker" class="absolute top-0 bottom-0 w-8 bg-[var(--accent)] shadow-2xl transition-all duration-1000 ease-out rounded-full border-2 border-[var(--background)]" style="left: 0%"></div>
       </div>
-      <div class="flex justify-between text-[10px] md:text-[11px] font-black uppercase tracking-widest text-[var(--foreground)] mt-6 px-1">
-        <span>{t.under}</span>
-        <span class="text-[var(--accent)]">{t.normal}</span>
-        <span>{t.over}</span>
-        <span>{t.obese}</span>
+      <div class="flex justify-between text-[8px] sm:text-[10px] md:text-[11px] font-black uppercase tracking-tighter sm:tracking-widest text-[var(--foreground)] mt-6 px-1 gap-2">
+        <span class="flex-1 text-left">{t.under}</span>
+        <span class="flex-1 text-center text-[var(--accent)]">{t.normal}</span>
+        <span class="flex-1 text-right">{t.over}</span>
+        <span class="flex-1 text-right">{t.obese}</span>
       </div>
     </div>
 
