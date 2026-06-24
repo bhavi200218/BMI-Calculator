@@ -5,75 +5,91 @@
 }
 
 :root {
-  --background: #f4f4f4;
+  --background: #ffffff;
   --foreground: #1a1a1a;
-  --muted: #e5e7eb;
+  --muted: #f8fafc;
   --muted-foreground: #4b5563;
-  --border: #d1d5db;
+  --border: #f1f5f9;
   --accent: #007a7a;
   --accent-foreground: #ffffff;
   --input: #ffffff;
-  --card: rgba(255, 255, 255, 0.95);
+  --card: rgba(255, 255, 255, 0.9);
   --radius: 2.5rem;
 }
 
 .dark {
-  --background: #121826;
+  --background: #0f172a;
   --foreground: #f8fafc;
   --muted: #1e293b;
   --muted-foreground: #94a3b8;
-  --border: #334155;
+  --border: #1e293b;
   --accent: #2dd4bf;
   --accent-foreground: #0f172a;
   --input: #1e293b;
-  --card: rgba(15, 23, 42, 0.95);
+  --card: rgba(15, 23, 42, 0.85);
 }
 
 @layer base {
   body {
     @apply bg-[var(--background)] text-[var(--foreground)] font-sans antialiased;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  /* Professional Geometric Background Pattern - Subtle & Centered */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
     background-image: 
-      radial-gradient(at 0% 0%, hsla(180, 100%, 50%, 0.03) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(45, 100%, 50%, 0.03) 0px, transparent 50%);
-    background-attachment: fixed;
+      radial-gradient(circle at center, transparent 0%, var(--background) 100%),
+      radial-gradient(circle at 2px 2px, var(--border) 1px, transparent 0);
+    background-size: 100% 100%, 48px 48px;
+    opacity: 0.8;
+  }
+
+  /* Centered Subtle Geometric Circles (The "Target" feel) */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 1200px;
+    height: 1200px;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='1200' height='1200' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23007a7a' stroke-opacity='0.04' stroke-width='1'%3E%3Ccircle cx='600' cy='600' r='100'/%3E%3Ccircle cx='600' cy='600' r='250'/%3E%3Ccircle cx='600' cy='600' r='400'/%3E%3Ccircle cx='600' cy='600' r='550'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    transition: background-image 0.3s ease;
+  }
+
+  .dark body::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='1200' height='1200' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232dd4bf' stroke-opacity='0.03' stroke-width='1'%3E%3Ccircle cx='600' cy='600' r='150'/%3E%3Ccircle cx='600' cy='600' r='300'/%3E%3Ccircle cx='600' cy='600' r='450'/%3E%3C/g%3E%3C/svg%3E");
   }
 }
 
 .glass-card {
   background: var(--card);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
 }
 
-/* Light Mode Gradient */
 .calc-btn-gradient {
   background: linear-gradient(135deg, #007a7a, #c9a44c) !important;
   color: white !important;
   box-shadow: 0 10px 30px -10px rgba(0, 122, 122, 0.5) !important;
-  border: none !important;
 }
 
-/* Precise Dark Mode Override */
 .dark .calc-btn-gradient {
   background: linear-gradient(135deg, #059669, #3b82f6) !important;
-  color: white !important;
   box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.4) !important;
-}
-
-.calc-btn-gradient:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
-}
-
-.matte-input {
-  @apply w-full bg-[var(--input)] border-2 border-[var(--border)] focus:border-[var(--accent)] outline-none transition-all;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-in {
-  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
