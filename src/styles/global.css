@@ -83,6 +83,24 @@
   border-radius: var(--radius);
 }
 
+.matte-input {
+  width: 100%;
+  background-color: var(--muted);
+  border: 2px solid var(--border);
+  color: var(--foreground);
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.matte-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(0, 122, 122, 0.15);
+}
+
+.dark .matte-input:focus {
+  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.25);
+}
+
 .calc-btn-gradient {
   background: linear-gradient(135deg, #007a7a, #c9a44c) !important;
   color: white !important;

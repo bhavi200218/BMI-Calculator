@@ -78,7 +78,7 @@ const t = translations[lang] || translations.en;
       <div class="space-y-4">
         <label id="weightLabel" class="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]">{t.weight_kg}</label>
         <div class="relative">
-          <input type="number" id="weight" placeholder="70" required class="matte-input px-6 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
+          <input type="number" id="weight" placeholder="70" required class="matte-input w-full px-6 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
         </div>
       </div>
 
@@ -88,17 +88,17 @@ const t = translations[lang] || translations.en;
         
         <!-- Metric Height -->
         <div id="metricHeightGroup" class="relative">
-          <input type="number" id="height" placeholder="175" required class="matte-input px-6 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
+          <input type="number" id="height" placeholder="175" required class="matte-input w-full px-6 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
         </div>
 
         <!-- Imperial Height (Hidden by default) -->
         <div id="imperialHeightGroup" class="hidden grid grid-cols-2 gap-4">
           <div class="relative">
-             <input type="number" id="heightFt" placeholder="5" class="matte-input px-6 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
+             <input type="number" id="heightFt" placeholder="5" class="matte-input w-full pl-6 pr-10 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
              <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-black opacity-30">FT</span>
           </div>
           <div class="relative">
-             <input type="number" id="heightIn" placeholder="9" class="matte-input px-6 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
+             <input type="number" id="heightIn" placeholder="9" class="matte-input w-full pl-6 pr-10 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
              <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-black opacity-30">IN</span>
           </div>
         </div>
@@ -110,7 +110,7 @@ const t = translations[lang] || translations.en;
       <div class="space-y-4">
         <label class="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]">{t.age}</label>
         <div class="relative">
-          <input type="number" id="age" placeholder="25" required class="matte-input px-6 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
+          <input type="number" id="age" placeholder="25" required class="matte-input w-full px-6 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
         </div>
       </div>
       <div class="space-y-4">
