@@ -9,40 +9,108 @@ import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 ---
 
 <Layout 
-	title="Real BMI 계산기 | 정확한 BMI 및 BMR 도구"
-	description="무료 온라인 BMI 계산기. Real BMI 계산기로 BMI, BMR 및 체성분을 즉시 계산하세요."
+	title="BMI 계산기 | Real BMI – 정밀 건강 도구"
+	description="BMI, BMR 및 TDEE를 즉시 계산하세요. 무료, 개인정보 보호, 임상 정확도."
 >
 	<Navbar />
-	<main class="pt-32 pb-20 px-6">
-		<div class="max-w-4xl mx-auto text-center space-y-4 mb-16 animate-in">
-			<div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[var(--muted)] border border-[var(--border)] text-[10px] font-black uppercase tracking-[0.2em] text-[var(--accent)]">
-				프리미엄 건강 분석
+	
+	<main class="pb-20 relative overflow-x-hidden">
+
+		<!-- ═══════════════════  HERO  ═══════════════════ -->
+		<section class="pt-26 md:pt-30 pb-8 md:pb-10 px-4 md:px-6">
+			<div class="max-w-7xl mx-auto">
+
+				<!-- Eyebrow pill -->
+				<div class="flex justify-center mb-6 animate-in" style="animation-delay:0ms">
+					<span class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+						정밀 건강 분석
+					</span>
+				</div>
+
+				<!-- Main headline -->
+				<div class="text-center space-y-4 mb-8 animate-in" style="animation-delay:60ms">
+					<h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-bold uppercase tracking-tight leading-[1.1] text-[var(--foreground)]">
+						몸을 알자. <span class="text-[var(--accent)]">건강을 지배하자.</span>
+					</h1>
+					<p class="text-sm md:text-base lg:text-lg text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto font-sans font-medium px-4">
+						BMI, BMR, TDEE 및 이상 체중을 즉시 계산하세요 — 가입 없이, 다운로드 없이.<br class="hidden md:block"/>
+						<strong class="text-[var(--foreground)]">WHO & CDC</strong> 임상 지침 표준을 완벽히 적용하였습니다.
+					</p>
+				</div>
+
+				<!-- Stats strip -->
+				<div class="flex flex-wrap justify-center gap-8 md:gap-14 mb-10 md:mb-12 animate-in" style="animation-delay:120ms">
+					{[
+						{ value: 'WHO', label: '표준' },
+						{ value: '6+', label: '언어' },
+						{ value: '100%', label: '개인정보' },
+						{ value: '5초', label: '결과' },
+					].map(s => (
+						<div class="text-center space-y-1.5">
+							<div class="text-3xl md:text-4xl font-display font-bold text-[var(--foreground)]">{s.value}</div>
+							<div class="text-xs font-display font-semibold tracking-[0.2em] uppercase text-[var(--muted-foreground)]">{s.label}</div>
+						</div>
+					))}
+				</div>
+
+				<!-- Calculator & Result -->
+				<div class="grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch animate-in" style="animation-delay:180ms">
+					<BMICalculator />
+					<ResultStudio />
+				</div>
 			</div>
-			<h1 class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--foreground)] uppercase">
-				BMI 계산기 – Real BMI
-			</h1>
-			<p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto font-bold opacity-60">
-				현대 건강 애호가를 위한 정밀 지표. 임상적으로 검증된 공식으로 계산됩니다.
-			</p>
+		</section>
+
+		<!-- ═══════════════════  USER STORIES  ═══════════════════ -->
+		<section class="px-4 md:px-6 py-20 md:py-28">
+			<div class="max-w-7xl mx-auto">
+				<div class="mb-14 space-y-4">
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">중요성</p>
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase leading-[0.95] text-[var(--foreground)]">
+						당신의 피트니스 여정,<br/>당신의 방식
+					</h2>
+					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
+						우리는 건강 도구가 귀하를 판단하지 않고 강화해야 한다고 믿습니다. 모든 수치는 WHO 임상 데이터에 근거합니다.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+					{[
+						{ num: '01', text: '내가 목표를 달성하고 싶을 때,', highlight: '단순한 숫자가 아닌 진짜 건강 데이터를 확인하고 싶습니다.' },
+						{ num: '02', text: '동기부여가 떨어지더라도,', highlight: '좌절감 없이 언제든 중단한 지점부터 다시 기분 좋게 시작하고 싶습니다.' },
+						{ num: '03', text: '계산을 시작하려 할 때,', highlight: '가입 없이 완전 무료로 활용할 수 있어 진입 장벽이 없어야 합니다.' },
+						{ num: '04', text: '의사나 코치 없이 홀로 훈련할 때,', highlight: '잘못된 지식에 의존하지 않도록 WHO 공식 표준 기준을 알고 싶습니다.' },
+						{ num: '05', text: '집에서 편안하게 몸 상태를 체크할 때,', highlight: '정확한 BMR, TDEE 및 체지방 통계를 직접 간편하게 얻기를 원합니다.' },
+					].map(item => (
+						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
+							<div class="text-3xl md:text-4xl font-display font-bold text-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity">{item.num}</div>
+							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+								{item.text}
+								<span class="text-[var(--foreground)] font-semibold block mt-1">{item.highlight}</span>
+							</p>
+						</div>
+					))}
+					<!-- Brand box -->
+					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6">
+						<div class="space-y-2">
+							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-70">제공처</p>
+							<p class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase">REAL BMI</p>
+						</div>
+						<p class="text-sm font-medium opacity-80 leading-relaxed">임상 정확도와 프리미엄 디자인의 만남. 몇 초 만에 건강 지표를 계산해 보세요.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ═══════════════════  ARTICLES & HEALTH CONTENT  ═══════════════════ -->
+		<div class="px-4 md:px-6">
+			<div class="max-w-7xl mx-auto space-y-24 md:space-y-32">
+				<LatestArticles />
+				<HealthContent />
+				<DeepHealthSEO />
+			</div>
 		</div>
 
-		<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-stretch mb-32 relative z-10">
-			<BMICalculator />
-			<ResultStudio />
-		</div>
-
-		<LatestArticles />
-		<HealthContent />
-		<DeepHealthSEO />
 	</main>
 </Layout>
-
-<style is:global>
-	@keyframes fadeIn {
-		from { opacity: 0; transform: translateY(10px); }
-		to { opacity: 1; transform: translateY(0); }
-	}
-	.animate-in {
-		animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-	}
-</style>

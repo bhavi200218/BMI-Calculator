@@ -9,38 +9,108 @@ import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 ---
 
 <Layout 
-	title="बीएमआई कैलकुलेटर – रियल बीएमआई | सटीक स्वास्थ्य माप"
-	description="रियल बीएमआई कैलकुलेटर के साथ अपने स्वास्थ्य की सटीक माप करें। बीएमआई, बीएमआर और टीटीईई की तुरंत गणना।"
+	title="बीएमआई कैलकुलेटर | Real BMI – सटीक स्वास्थ्य उपकरण"
+	description="बीएमआई, बीएमआर और टीडीईई तुरंत गणना करें। मुफ़्त, निजी और नैदानिक सटीकता के साथ।"
 >
 	<Navbar />
 	
-	<main class="pt-24 md:pt-32 pb-20 px-4 md:px-6 relative">
-		<!-- Hero Section -->
-		<div class="max-w-7xl mx-auto text-center space-y-4 mb-16 md:mb-20 animate-in">
-			<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--muted)] border border-[var(--border)] text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.25em] text-[var(--accent)]">
-				प्रीमियम स्वास्थ्य विश्लेषण
+	<main class="pb-20 relative overflow-x-hidden">
+
+		<!-- ═══════════════════  HERO  ═══════════════════ -->
+		<section class="pt-26 md:pt-30 pb-8 md:pb-10 px-4 md:px-6">
+			<div class="max-w-7xl mx-auto">
+
+				<!-- Eyebrow pill -->
+				<div class="flex justify-center mb-6 animate-in" style="animation-delay:0ms">
+					<span class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+						सटीक स्वास्थ्य विश्लेषण
+					</span>
+				</div>
+
+				<!-- Main headline -->
+				<div class="text-center space-y-4 mb-8 animate-in" style="animation-delay:60ms">
+					<h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-bold uppercase tracking-tight leading-[1.1] text-[var(--foreground)]">
+						अपने शरीर को जानें। <span class="text-[var(--accent)]">अपनी सेहत पर राज करें।</span>
+					</h1>
+					<p class="text-sm md:text-base lg:text-lg text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto font-sans font-medium px-4">
+						बीएमआई, बीएमआर, टीडीईई और आदर्श वजन तुरंत जानें — बिना रजिस्ट्रेशन, बिना डाउनलोड।<br class="hidden md:block"/>
+						यह गणना पूर्णतः <strong class="text-[var(--foreground)]">WHO और CDC</strong> मानकों पर आधारित है।
+					</p>
+				</div>
+
+				<!-- Stats strip -->
+				<div class="flex flex-wrap justify-center gap-8 md:gap-14 mb-10 md:mb-12 animate-in" style="animation-delay:120ms">
+					{[
+						{ value: 'WHO', label: 'मानक' },
+						{ value: '6+', label: 'भाषाएं' },
+						{ value: '100%', label: 'निजी' },
+						{ value: '5 सेकेंड', label: 'परिणाम' },
+					].map(s => (
+						<div class="text-center space-y-1.5">
+							<div class="text-3xl md:text-4xl font-display font-bold text-[var(--foreground)]">{s.value}</div>
+							<div class="text-xs font-display font-semibold tracking-[0.2em] uppercase text-[var(--muted-foreground)]">{s.label}</div>
+						</div>
+					))}
+				</div>
+
+				<!-- Calculator & Result -->
+				<div class="grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch animate-in" style="animation-delay:180ms">
+					<BMICalculator />
+					<ResultStudio />
+				</div>
 			</div>
-			
-			<!-- Mobile Responsive Title -->
-			<h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-[var(--foreground)] uppercase leading-tight md:whitespace-nowrap px-2">
-				बीएमआई कैलकुलेटर – अपने बॉडी मास इंडेक्स की जाँच करें
-			</h1>
-			
-			<p class="text-xs sm:text-sm md:text-lg text-[var(--muted-foreground)] leading-relaxed max-w-4xl mx-auto font-bold opacity-60 px-4">
-				व्यावसायिक स्तर के रियल बीएमआई कैलकुलेटर के साथ तुरंत परिणाम प्राप्त करें, जिसे नैदानिक सटीकता के लिए डिज़ाइन किया गया है।
-			</p>
+		</section>
+
+		<!-- ═══════════════════  USER STORIES  ═══════════════════ -->
+		<section class="px-4 md:px-6 py-20 md:py-28">
+			<div class="max-w-7xl mx-auto">
+				<div class="mb-14 space-y-4">
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">यह क्यों मायने रखता है</p>
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase leading-[0.95] text-[var(--foreground)]">
+						आपका फिटनेस सफर,<br/>आपके नियम
+					</h2>
+					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
+						हमारा मानना है कि स्वास्थ्य उपकरण आपको सशक्त बनाने के लिए होने चाहिए, न कि आपको जज करने के लिए। प्रत्येक गणना WHO डेटा पर आधारित है।
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+					{[
+						{ num: '01', text: 'जब मैं आकार में आने का निर्णय लेता हूं,', highlight: 'मैं लक्ष्य तक पहुँचने का एक प्रभावी तरीका चाहता हूँ, ताकि मैं वास्तविक परिणाम देख सकूँ — केवल नंबर नहीं।' },
+						{ num: '02', text: 'जब मेरा उत्साह कम हो जाता है,', highlight: 'मैं शुरुआत से शुरू किये बिना वहीं से वापस आना चाहता हूँ जहाँ से मैंने छोड़ा था, ताकि मेरी मेहनत बेकार न जाये।' },
+						{ num: '03', text: 'जब मैं वर्कआउट शुरू करने की योजना बनाता हूँ,', highlight: 'मैं चाहता हूँ कि यह मुफ़्त हो और इसमें ज़ीरो साइन-अप की आवश्यकता हो, ताकि कोई रुकावट न हो।' },
+						{ num: '04', text: 'जब मैं बिना कोच के ट्रेन करता हूँ,', highlight: 'मैं WHO क्लिनिकल डेटा द्वारा सही तकनीक सीखना चाहता हूँ, ताकि मैं कोई गलती न करूँ।' },
+						{ num: '05', text: 'जब मैं घर पर अपनी सेहत की जांच करता हूँ,', highlight: 'मैं सटीक बीएमआर, टीडीईई और शरीर में वसा का अनुमान चाहता हूँ, ताकि मैं सक्रिय और सूचित रह सकूँ।' },
+					].map(item => (
+						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
+							<div class="text-3xl md:text-4xl font-display font-bold text-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity">{item.num}</div>
+							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+								{item.text}
+								<span class="text-[var(--foreground)] font-semibold block mt-1">{item.highlight}</span>
+							</p>
+						</div>
+					))}
+					<!-- Brand box -->
+					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6">
+						<div class="space-y-2">
+							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-70">संचालित</p>
+							<p class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase">REAL BMI</p>
+						</div>
+						<p class="text-sm font-medium opacity-80 leading-relaxed">सटीक नैदानिक गणना और प्रीमियम डिज़ाइन। कुछ ही सेकंड में अपने स्वास्थ्य मेट्रिक्स की गणना करें।</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ═══════════════════  ARTICLES & HEALTH CONTENT  ═══════════════════ -->
+		<div class="px-4 md:px-6">
+			<div class="max-w-7xl mx-auto space-y-24 md:space-y-32">
+				<LatestArticles />
+				<HealthContent />
+				<DeepHealthSEO />
+			</div>
 		</div>
 
-		<!-- Calculator & Result Section -->
-		<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch mb-32 relative z-10">
-			<BMICalculator />
-			<ResultStudio />
-		</div>
-
-		<div class="max-w-7xl mx-auto space-y-24 md:space-y-32">
-			<LatestArticles />
-			<HealthContent />
-			<DeepHealthSEO />
-		</div>
 	</main>
 </Layout>

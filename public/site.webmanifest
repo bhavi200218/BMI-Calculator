@@ -3,13 +3,13 @@
   "short_name": "Real BMI",
   "icons": [
     {
-      "src": "/icon.svg",
+      "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ],
-  "theme_color": "#FDFBF8",
-  "background_color": "#FDFBF8",
+  "theme_color": "#E8674A",
+  "background_color": "#0B1617",
   "display": "standalone"
 }

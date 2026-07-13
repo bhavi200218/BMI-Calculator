@@ -9,40 +9,108 @@ import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 ---
 
 <Layout 
-	title="Calculateur d'IMC | Calculez votre indice de masse corporelle en ligne"
-	description="Calculez votre IMC avec précision grâce à notre calculateur d'indice de masse corporelle premium. Idéal pour les hommes, les femmes et les adultes."
+	title="Calculateur IMC | Real BMI – Outil de Santé de Précision"
+	description="Calculez votre IMC, BMR et TDEE instantanément. Gratuit, privé et cliniquement précis."
 >
 	<Navbar />
-	<main class="pt-32 pb-20 px-6">
-		<div class="max-w-4xl mx-auto text-center space-y-4 mb-16 animate-in">
-			<div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[var(--muted)] border border-[var(--border)] text-[10px] font-black uppercase tracking-[0.2em] text-[var(--accent)]">
-				Analyse de Santé Premium
+	
+	<main class="pb-20 relative overflow-x-hidden">
+
+		<!-- ═══════════════════  HERO  ═══════════════════ -->
+		<section class="pt-26 md:pt-30 pb-8 md:pb-10 px-4 md:px-6">
+			<div class="max-w-7xl mx-auto">
+
+				<!-- Eyebrow pill -->
+				<div class="flex justify-center mb-6 animate-in" style="animation-delay:0ms">
+					<span class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+						Analyse de Santé de Précision
+					</span>
+				</div>
+
+				<!-- Main headline -->
+				<div class="text-center space-y-4 mb-8 animate-in" style="animation-delay:60ms">
+					<h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-bold uppercase tracking-tight leading-[1.1] text-[var(--foreground)]">
+						Connaissez votre corps. <span class="text-[var(--accent)]">Maîtrisez votre santé.</span>
+					</h1>
+					<p class="text-sm md:text-base lg:text-lg text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto font-sans font-medium px-4">
+						Calculez votre IMC, BMR, TDEE et poids idéal instantanément — sans inscription, sans téléchargement.<br class="hidden md:block"/>
+						Basé sur les normes cliniques reconnues de l' <strong class="text-[var(--foreground)]">OMS et du CDC</strong>.
+					</p>
+				</div>
+
+				<!-- Stats strip -->
+				<div class="flex flex-wrap justify-center gap-8 md:gap-14 mb-10 md:mb-12 animate-in" style="animation-delay:120ms">
+					{[
+						{ value: 'OMS', label: 'Standard' },
+						{ value: '6+', label: 'Langues' },
+						{ value: '100%', label: 'Privé' },
+						{ value: '5s', label: 'Résultats' },
+					].map(s => (
+						<div class="text-center space-y-1.5">
+							<div class="text-3xl md:text-4xl font-display font-bold text-[var(--foreground)]">{s.value}</div>
+							<div class="text-xs font-display font-semibold tracking-[0.2em] uppercase text-[var(--muted-foreground)]">{s.label}</div>
+						</div>
+					))}
+				</div>
+
+				<!-- Calculator & Result -->
+				<div class="grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch animate-in" style="animation-delay:180ms">
+					<BMICalculator />
+					<ResultStudio />
+				</div>
 			</div>
-			<h1 class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--foreground)] uppercase">
-				Calculateur d'IMC – Real BMI
-			</h1>
-			<p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto font-bold opacity-60">
-				Des métriques précises pour l'amateur de santé moderne. Calculées à l'aide de formules cliniquement validées.
-			</p>
+		</section>
+
+		<!-- ═══════════════════  USER STORIES  ═══════════════════ -->
+		<section class="px-4 md:px-6 py-20 md:py-28">
+			<div class="max-w-7xl mx-auto">
+				<div class="mb-14 space-y-4">
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Pourquoi ça compte</p>
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase leading-[0.95] text-[var(--foreground)]">
+						Votre parcours fitness,<br/>vos règles
+					</h2>
+					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
+						Nous croyons que les outils de santé doivent vous encourager, pas vous juger. Chaque calcul s'appuie sur des références de l'OMS.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+					{[
+						{ num: '01', text: 'Quand je décide de me remettre en forme,', highlight: 'je veux un moyen efficace d\'atteindre un but, pour voir de vrais résultats — pas juste des chiffres.' },
+						{ num: '02', text: 'Quand ma motivation baisse,', highlight: 'je veux revenir sans devoir tout reprendre à zéro, pour ne pas perdre mes acquis.' },
+						{ num: '03', text: 'Quand je prévois de commencer l\'entraînement,', highlight: 'je veux que ce soit gratuit et sans inscription, pour éliminer toute barrière.' },
+						{ num: '04', text: 'Quand je m\'entraîne sans coach,', highlight: 'je veux des standards cliniques vérifiés de l\'OMS, afin d\'éviter les erreurs.' },
+						{ num: '05', text: 'Quand je vérifie ma condition à la maison,', highlight: 'je veux des estimations précises de mon BMR, mon TDEE et mon gras corporel pour rester informé.' },
+					].map(item => (
+						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
+							<div class="text-3xl md:text-4xl font-display font-bold text-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity">{item.num}</div>
+							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+								{item.text}
+								<span class="text-[var(--foreground)] font-semibold block mt-1">{item.highlight}</span>
+							</p>
+						</div>
+					))}
+					<!-- Brand box -->
+					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6">
+						<div class="space-y-2">
+							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-70">Propulsé par</p>
+							<p class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase">REAL BMI</p>
+						</div>
+						<p class="text-sm font-medium opacity-80 leading-relaxed">Précision clinique et design premium. Calculez vos indicateurs de santé en quelques secondes.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ═══════════════════  ARTICLES & HEALTH CONTENT  ═══════════════════ -->
+		<div class="px-4 md:px-6">
+			<div class="max-w-7xl mx-auto space-y-24 md:space-y-32">
+				<LatestArticles />
+				<HealthContent />
+				<DeepHealthSEO />
+			</div>
 		</div>
 
-		<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-stretch mb-32 relative z-10">
-			<BMICalculator />
-			<ResultStudio />
-		</div>
-
-		<LatestArticles />
-		<HealthContent />
-		<DeepHealthSEO />
 	</main>
 </Layout>
-
-<style is:global>
-	@keyframes fadeIn {
-		from { opacity: 0; transform: translateY(10px); }
-		to { opacity: 1; transform: translateY(0); }
-	}
-	.animate-in {
-		animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-	}
-</style>

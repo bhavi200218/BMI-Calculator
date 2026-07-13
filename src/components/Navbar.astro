@@ -12,61 +12,62 @@ const langNames: Record<string, string> = {
 };
 
 const nav: Record<string, Record<string, string>> = {
-  en: { home: 'Home', calculator: 'Calculator', insights: 'Health Insights', faq: 'FAQ' },
+  en: { home: 'Home', calculator: 'Calculator', insights: 'Insights', faq: 'FAQ' },
   es: { home: 'Inicio', calculator: 'Calculadora', insights: 'Información', faq: 'FAQ' },
   fr: { home: 'Accueil', calculator: 'Calculateur', insights: 'Santé', faq: 'FAQ' },
   de: { home: 'Startseite', calculator: 'Rechner', insights: 'Gesundheit', faq: 'FAQ' },
   ko: { home: '홈', calculator: '계산기', insights: '건강 정보', faq: 'FAQ' },
-  hi: { home: 'होम', calculator: 'कैलकुलेटर', insights: 'स्वास्थ्य जानकारी', faq: 'FAQ' }
+  hi: { home: 'होम', calculator: 'कैलकुलेटर', insights: 'जानकारी', faq: 'FAQ' }
 };
 
 const t = nav[lang] || nav.en;
 const currentLangDisplay = langNames[lang] || lang;
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-xl">
-  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-    <div class="flex items-center gap-4">
-      <a href={`/${lang}`} class="flex items-center gap-2 group">
-        <span class="font-black text-2xl tracking-tighter text-[var(--foreground)] uppercase">REAL BMI</span>
-      </a>
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl">
+  <div class="flex items-center justify-between px-5 h-14 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)]">
+
+    <!-- Logo -->
+    <a href={`/${lang}`} class="flex items-center gap-2 shrink-0">
+      <div class="w-7 h-7 rounded-lg bg-[var(--accent)] flex items-center justify-center">
+        <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+        </svg>
+      </div>
+      <span class="font-display font-bold text-sm uppercase tracking-tight text-[var(--foreground)]">Real BMI</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-3 lg:gap-5">
+      <a href={`/${lang}#calculator`} class="nav-link">{t.calculator}</a>
+      <a href={`/${lang}#insights`} class="nav-link">{t.insights}</a>
+      <a href={`/${lang}#faq`} class="nav-link">{t.faq}</a>
     </div>
 
-    <!-- Desktop Nav -->
-    <div class="hidden md:flex items-center gap-10">
-      <a href={`/${lang}#calculator`} class="text-xs font-black uppercase tracking-widest text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">{t.calculator}</a>
-      <a href={`/${lang}#insights`} class="text-xs font-black uppercase tracking-widest text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">{t.insights}</a>
-      <a href={`/${lang}#faq`} class="text-xs font-black uppercase tracking-widest text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">{t.faq}</a>
-    </div>
-
-    <div class="flex items-center gap-4">
-      <!-- Language Dropdown - Click based -->
+    <!-- Right Controls -->
+    <div class="flex items-center gap-3">
+      <!-- Lang Dropdown -->
       <div class="relative" id="langDropdownWrapper">
-        <button
-          id="langDropdownBtn"
-          class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest bg-[var(--muted)] px-4 py-2.5 rounded-lg border border-[var(--border)] min-w-[110px] justify-between text-[var(--foreground)] hover:bg-[var(--border)] transition-colors"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
+        <button id="langDropdownBtn"
+          class="flex items-center gap-1.5 text-[10px] font-display font-semibold uppercase tracking-wider bg-[var(--muted)] px-3 py-2 rounded-xl border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)] transition-colors duration-200 cursor-pointer"
+          aria-haspopup="true" aria-expanded="false">
           <span id="langCurrentLabel">{currentLangDisplay}</span>
-          <svg class="w-3. h-3 opacity-60 flex-shrink-0 transition-transform duration-200" id="langChevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-2.5 h-2.5 opacity-50 transition-transform duration-200" id="langChevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
 
-        <div
-          id="langDropdownMenu"
-          class="absolute right-0 top-full mt-2 w-44 glass-card p-2 space-y-0.5 shadow-2xl border border-[var(--border)] rounded-xl hidden"
-          role="menu"
-        >
+        <div id="langDropdownMenu"
+          class="absolute right-0 top-full mt-2 w-44 rounded-xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)] p-1.5 space-y-0.5 hidden"
+          role="menu">
           {Object.entries(langNames).map(([code, name]) => {
-            const path = Astro.url.pathname.replace(/^\/[a-z]{2}\//, `/${code}/`).replace(/^\/[a-z]{2}$/, `/${code}/`);
+            const path = Astro.url.pathname
+              .replace(/^\/[a-z]{2}\//, `/${code}/`)
+              .replace(/^\/[a-z]{2}$/, `/${code}/`);
             return (
-              <a
-                href={path}
-                class={`flex items-center gap-2 px-4 py-2.5 text-[11px] font-black uppercase hover:bg-[var(--muted)] rounded-lg transition-colors text-[var(--foreground)] ${code === lang ? 'bg-[var(--muted)]' : ''}`}
-                role="menuitem"
-              >
+              <a href={path}
+                class={`flex items-center gap-2 px-3 py-2.5 text-[11px] font-display font-semibold uppercase tracking-wider rounded-lg hover:bg-[var(--muted)] transition-colors text-[var(--foreground)] cursor-pointer ${code === lang ? 'bg-[var(--muted)]' : ''}`}
+                role="menuitem">
                 {name}
               </a>
             );
@@ -74,18 +75,14 @@ const currentLangDisplay = langNames[lang] || lang;
         </div>
       </div>
 
-      <!-- Theme Toggle - Sun / Moon -->
-      <button
-        id="themeToggleBtn"
-        class="p-2.5 border border-[var(--border)] rounded-full hover:bg-[var(--muted)] transition-colors relative w-10 h-10 flex items-center justify-center"
-        aria-label="Toggle Theme"
-      >
-        <!-- Sun icon (shown in dark mode to switch to light) -->
-        <svg id="sunIcon" class="w-5 h-5 absolute transition-all duration-300 text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Theme Toggle -->
+      <button id="themeToggleBtn"
+        class="w-9 h-9 rounded-xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
+        aria-label="Toggle Theme">
+        <svg id="sunIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
         </svg>
-        <!-- Moon icon (shown in light mode to switch to dark) -->
-        <svg id="moonIcon" class="w-5 h-5 absolute transition-all duration-300 text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg id="moonIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
       </button>
@@ -93,24 +90,47 @@ const currentLangDisplay = langNames[lang] || lang;
   </div>
 </nav>
 
+<style>
+  .nav-link {
+    padding: 0.5rem 1.1rem;
+    border-radius: 0.6rem;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted-foreground);
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .nav-link:hover {
+    color: var(--foreground);
+    background: var(--muted);
+  }
+
+  #sunIcon, #moonIcon {
+    transition: opacity 0.2s ease, transform 0.25s ease;
+  }
+
+  #langDropdownMenu {
+    animation: dropIn 0.15s ease-out;
+  }
+  @keyframes dropIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
 <script is:inline>
-  // ── Theme Logic ──────────────────────────────────────────────
   function applyTheme(isDark) {
     const sun = document.getElementById('sunIcon');
     const moon = document.getElementById('moonIcon');
     if (!sun || !moon) return;
     if (isDark) {
-      // dark mode: show sun (click to go light)
-      sun.style.opacity = '1';
-      sun.style.transform = 'scale(1) rotate(0deg)';
-      moon.style.opacity = '0';
-      moon.style.transform = 'scale(0.5) rotate(90deg)';
+      sun.style.opacity = '1'; sun.style.transform = 'scale(1) rotate(0deg)';
+      moon.style.opacity = '0'; moon.style.transform = 'scale(0.5) rotate(90deg)';
     } else {
-      // light mode: show moon (click to go dark)
-      moon.style.opacity = '1';
-      moon.style.transform = 'scale(1) rotate(0deg)';
-      sun.style.opacity = '0';
-      sun.style.transform = 'scale(0.5) rotate(-90deg)';
+      moon.style.opacity = '1'; moon.style.transform = 'scale(1) rotate(0deg)';
+      sun.style.opacity = '0'; sun.style.transform = 'scale(0.5) rotate(-90deg)';
     }
   }
 
@@ -132,69 +152,19 @@ const currentLangDisplay = langNames[lang] || lang;
     };
   }
 
-  // ── Language Dropdown Logic ──────────────────────────────────
   function attachLangDropdown() {
     const btn = document.getElementById('langDropdownBtn');
     const menu = document.getElementById('langDropdownMenu');
     const chevron = document.getElementById('langChevron');
     if (!btn || !menu) return;
-
     let isOpen = false;
-
-    function openMenu() {
-      isOpen = true;
-      menu.classList.remove('hidden');
-      chevron && (chevron.style.transform = 'rotate(180deg)');
-      btn.setAttribute('aria-expanded', 'true');
-    }
-
-    function closeMenu() {
-      isOpen = false;
-      menu.classList.add('hidden');
-      chevron && (chevron.style.transform = 'rotate(0deg)');
-      btn.setAttribute('aria-expanded', 'false');
-    }
-
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      isOpen ? closeMenu() : openMenu();
-    });
-
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (!btn.contains(e.target) && !menu.contains(e.target)) {
-        closeMenu();
-      }
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
+    const open = () => { isOpen = true; menu.classList.remove('hidden'); chevron && (chevron.style.transform = 'rotate(180deg)'); btn.setAttribute('aria-expanded', 'true'); };
+    const close = () => { isOpen = false; menu.classList.add('hidden'); chevron && (chevron.style.transform = 'rotate(0deg)'); btn.setAttribute('aria-expanded', 'false'); };
+    btn.addEventListener('click', (e) => { e.stopPropagation(); isOpen ? close() : open(); });
+    document.addEventListener('click', (e) => { if (!btn.contains(e.target) && !menu.contains(e.target)) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
   }
 
-  // Init on load
-  initTheme();
-  attachThemeToggle();
-  attachLangDropdown();
-
-  // Re-init after Astro page transitions
-  document.addEventListener('astro:after-swap', () => {
-    initTheme();
-    attachThemeToggle();
-    attachLangDropdown();
-  });
+  initTheme(); attachThemeToggle(); attachLangDropdown();
+  document.addEventListener('astro:after-swap', () => { initTheme(); attachThemeToggle(); attachLangDropdown(); });
 </script>
-
-<style>
-  #sunIcon, #moonIcon {
-    transition: opacity 0.25s ease, transform 0.3s ease;
-  }
-  #langDropdownMenu {
-    animation: dropIn 0.15s ease-out;
-  }
-  @keyframes dropIn {
-    from { opacity: 0; transform: translateY(-6px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-</style>

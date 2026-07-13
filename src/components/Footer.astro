@@ -4,7 +4,7 @@ const { currentLocale } = Astro;
 const lang = currentLocale || 'en';
 
 interface FooterTranslation {
-  description: string;
+  tagline: string;
   quickLinks: string;
   legalStatus: string;
   legalText: string;
@@ -14,56 +14,56 @@ interface FooterTranslation {
 
 const footerTranslations: Record<string, FooterTranslation> = {
   en: {
-    description: 'The Real BMI Calculator is the ultimate precision health tool for calculating BMI, BMR, and body composition. Built for absolute accuracy and privacy.',
+    tagline: 'The most accurate, privacy-first BMI calculator on the web. Built for real results, not ads.',
     quickLinks: 'Quick Links',
-    legalStatus: 'Medical Disclaimer',
-    legalText: 'Results from the Real BMI Calculator are for informational purposes only. Not a medical substitute.',
-    copyright: `© ${year} REAL BMI`,
+    legalStatus: 'Disclaimer',
+    legalText: 'Results are for informational purposes only. Not a substitute for professional medical advice.',
+    copyright: `© ${year} Real BMI Calculator`,
     links: [
-      { name: 'About Us', href: `/en/about` },
-      { name: 'Contact Us', href: `/en/contact` },
+      { name: 'About', href: `/en/about` },
+      { name: 'Contact', href: `/en/contact` },
       { name: 'Privacy Policy', href: `/en/privacy-policy` },
       { name: 'Terms & Conditions', href: `/en/terms-conditions` },
-      { name: 'Medical Disclaimer', href: `/en/disclaimer` },
+      { name: 'Disclaimer', href: `/en/disclaimer` },
       { name: 'BMI Calculator', href: `/en#calculator` },
     ]
   },
   es: {
-    description: 'La herramienta de salud de precisión definitiva para calcular el IMC, BMR y composición corporal. Construida para la precisión, privacidad y facilidad de uso.',
+    tagline: 'La calculadora de IMC más precisa y privada de la web.',
     quickLinks: 'Enlaces Rápidos',
     legalStatus: 'Aviso Legal',
-    legalText: 'Los resultados son solo para fines informativos. No sustituyen el consejo médico profesional.',
-    copyright: `© ${year} BMI CALCULATOR.`,
+    legalText: 'Los resultados son solo informativos. No sustituyen el consejo médico profesional.',
+    copyright: `© ${year} Real BMI Calculator`,
     links: [
       { name: 'Sobre Nosotros', href: `/es/about` },
-      { name: 'Contáctanos', href: `/es/contact` },
-      { name: 'Política de Privacidad', href: `/es/privacy-policy` },
-      { name: 'Términos y Condiciones', href: `/es/terms-conditions` },
+      { name: 'Contacto', href: `/es/contact` },
+      { name: 'Privacidad', href: `/es/privacy-policy` },
+      { name: 'Términos', href: `/es/terms-conditions` },
       { name: 'Aviso Médico', href: `/es/disclaimer` },
       { name: 'Calculadora IMC', href: `/es#calculator` },
     ]
   },
   fr: {
-    description: 'L\'outil de santé de précision ultime pour calculer l\'IMC, le métabolisme de base et la composition corporelle. Conçu pour la précision et la facilité d\'utilisation.',
+    tagline: 'La calculatrice IMC la plus précise et respectueuse de la vie privée.',
     quickLinks: 'Liens Rapides',
     legalStatus: 'Mentions Légales',
-    legalText: 'Les résultats sont fournis à titre informatif uniquement. Ils ne remplacent pas les conseils médicaux professionnels.',
-    copyright: `© ${year} BMI CALCULATOR.`,
+    legalText: 'Les résultats sont fournis à titre informatif uniquement.',
+    copyright: `© ${year} Real BMI Calculator`,
     links: [
       { name: 'À Propos', href: `/fr/about` },
-      { name: 'Contactez-Nous', href: `/fr/contact` },
-      { name: 'Politique de Confidentialité', href: `/fr/privacy-policy` },
-      { name: 'Termes et Conditions', href: `/fr/terms-conditions` },
-      { name: 'Avertissement Médical', href: `/fr/disclaimer` },
+      { name: 'Contact', href: `/fr/contact` },
+      { name: 'Confidentialité', href: `/fr/privacy-policy` },
+      { name: 'Conditions', href: `/fr/terms-conditions` },
+      { name: 'Avertissement', href: `/fr/disclaimer` },
       { name: 'Calculateur IMC', href: `/fr#calculator` },
     ]
   },
   de: {
-    description: 'Das ultimative Präzisions-Gesundheitswerkzeug zur Berechnung von BMI, Grundumsatz und Körperzusammensetzung. Entwickelt für Genauigkeit, Datenschutz und einfache Bedienung.',
+    tagline: 'Der genaueste und datenschutzfreundlichste BMI-Rechner im Web.',
     quickLinks: 'Schnelllinks',
     legalStatus: 'Rechtlicher Hinweis',
-    legalText: 'Die Ergebnisse dienen nur zu Informationszwecken. Kein Ersatz für professionellen medizinischen Rat.',
-    copyright: `© ${year} BMI CALCULATOR.`,
+    legalText: 'Die Ergebnisse dienen nur zu Informationszwecken.',
+    copyright: `© ${year} Real BMI Calculator`,
     links: [
       { name: 'Über Uns', href: `/de/about` },
       { name: 'Kontakt', href: `/de/contact` },
@@ -74,32 +74,32 @@ const footerTranslations: Record<string, FooterTranslation> = {
     ]
   },
   ko: {
-    description: 'BMI, 기초대사량 및 체성분을 계산하기 위한 궁극의 정밀 건강 도구입니다. 정확성, 개인정보 보호 및 사용 편의성을 위해 제작되었습니다.',
+    tagline: '가장 정확하고 개인정보를 보호하는 BMI 계산기.',
     quickLinks: '빠른 링크',
     legalStatus: '법적 고지',
-    legalText: '결과는 정보 제공 목적으로만 사용됩니다. 전문적인 의학적 조언을 대체하지 않습니다.',
-    copyright: `© ${year} BMI CALCULATOR.`,
+    legalText: '결과는 정보 제공 목적으로만 사용됩니다.',
+    copyright: `© ${year} Real BMI Calculator`,
     links: [
       { name: '회사 소개', href: `/ko/about` },
       { name: '문의하기', href: `/ko/contact` },
       { name: '개인정보 처리방침', href: `/ko/privacy-policy` },
       { name: '이용약관', href: `/ko/terms-conditions` },
-      { name: '의학적 면책 조항', href: `/ko/disclaimer` },
+      { name: '의학적 면책', href: `/ko/disclaimer` },
       { name: 'BMI 계산기', href: `/ko#calculator` },
     ]
   },
   hi: {
-    description: 'बीएमआई, बीएमआर और शरीर संरचना की गणना के लिए परम सटीक स्वास्थ्य उपकरण। सटीकता, गोपनीयता और उपयोग में आसानी के लिए बनाया गया।',
+    tagline: 'वेब पर सबसे सटीक और गोपनीयता-प्रथम बीएमआई कैलकुलेटर।',
     quickLinks: 'त्वरित लिंक',
     legalStatus: 'कानूनी स्थिति',
-    legalText: 'परिणाम केवल सूचनात्मक उद्देश्यों के लिए हैं। पेशेवर चिकित्सा सलाह का विकल्प नहीं।',
-    copyright: `© ${year} BMI CALCULATOR.`,
+    legalText: 'परिणाम केवल सूचनात्मक उद्देश्यों के लिए हैं।',
+    copyright: `© ${year} Real BMI Calculator`,
     links: [
       { name: 'हमारे बारे में', href: `/hi/about` },
       { name: 'संपर्क करें', href: `/hi/contact` },
       { name: 'गोपनीयता नीति', href: `/hi/privacy-policy` },
       { name: 'नियम और शर्तें', href: `/hi/terms-conditions` },
-      { name: 'चिकित्सा अस्वीकरण', href: `/hi/disclaimer` },
+      { name: 'अस्वीकरण', href: `/hi/disclaimer` },
       { name: 'बीएमआई कैलकुलेटर', href: `/hi#calculator` },
     ]
   }
@@ -108,37 +108,67 @@ const footerTranslations: Record<string, FooterTranslation> = {
 const ft = footerTranslations[lang] || footerTranslations.en;
 ---
 
-<footer class="border-t border-[var(--border)] py-16 bg-[var(--muted)]">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-16 text-left">
-    <div class="space-y-8 col-span-2">
-      <div class="flex items-center gap-2">
-        <span class="font-black tracking-tighter uppercase text-lg">REAL BMI</span>
+<footer class="border-t border-[var(--border)] bg-[var(--muted)] mt-10">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- Top row: brand + links -->
+    <div class="grid md:grid-cols-12 gap-10 mb-12">
+
+      <!-- Brand block (5 cols) -->
+      <div class="md:col-span-5 space-y-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+            </svg>
+          </div>
+          <span class="font-display font-bold text-lg uppercase tracking-tight text-[var(--foreground)]">Real BMI</span>
+        </div>
+        <p class="text-base text-[var(--muted-foreground)] leading-relaxed font-semibold">
+          {ft.tagline}
+        </p>
+        <!-- Badges -->
+        <div class="flex flex-wrap gap-2.5">
+          {['WHO Standard', 'No Signup', '6 Languages', '100% Private'].map(b => (
+            <span class="text-[10px] sm:text-[11px] font-display font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full border border-[var(--border)] text-[var(--muted-foreground)] bg-[var(--card)]/50">{b}</span>
+          ))}
+        </div>
       </div>
-      <p class="text-base text-[var(--muted-foreground)] max-w-sm leading-relaxed font-bold opacity-60">
-        {ft.description}
-      </p>
+
+      <!-- Spacer -->
+      <div class="hidden md:block md:col-span-1"></div>
+
+      <!-- Quick Links (3 cols) -->
+      <div class="md:col-span-3 space-y-5">
+        <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.quickLinks}</p>
+        <ul class="space-y-3.5">
+          {ft.links.map(link => (
+            <li>
+              <a href={link.href} class="text-base font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 flex items-center gap-2 group">
+                <span class="w-1.5 h-1.5 rounded-full bg-[var(--border)] group-hover:bg-[var(--accent)] transition-colors"></span>
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Legal (3 cols) -->
+      <div class="md:col-span-3 space-y-5">
+        <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.legalStatus}</p>
+        <p class="text-sm text-[var(--muted-foreground)] leading-relaxed font-semibold">
+          {ft.legalText}
+        </p>
+      </div>
     </div>
 
-    <div class="space-y-8 col-span-2 md:col-span-1">
-      <h3 class="text-xs font-black uppercase tracking-[0.3em] text-[var(--foreground)]">{ft.quickLinks}</h3>
-      <ul class="grid grid-cols-2 gap-x-8 gap-y-4">
-        {ft.links.map(link => (
-          <li>
-            <a href={link.href} class="text-sm font-bold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors inline-block group">
-              <span class="border-b border-transparent group-hover:border-[var(--foreground)] transition-all pb-0.5">{link.name}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <div class="space-y-8">
-      <h3 class="text-xs font-black uppercase tracking-[0.3em] text-[var(--foreground)]">{ft.legalStatus}</h3>
-      <p class="text-xs text-[var(--muted-foreground)] leading-relaxed italic font-bold opacity-70">
-        {ft.legalText}
-        <br/><br/>
-        <span class="text-[var(--foreground)] font-black uppercase">{ft.copyright}</span>
-      </p>
+    <!-- Bottom bar -->
+    <div class="border-t border-[var(--border)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs md:text-sm font-display font-bold uppercase tracking-widest text-[var(--muted-foreground)]">{ft.copyright}</p>
+      <div class="flex items-center gap-1.5">
+        <span class="text-xs font-sans font-medium text-[var(--muted-foreground)] opacity-60">Built with precision &</span>
+        <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      </div>
     </div>
   </div>
 </footer>

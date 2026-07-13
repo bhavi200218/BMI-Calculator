@@ -129,10 +129,10 @@ const howToSchema = {
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
-		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
+		<link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 		<noscript>
-			<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 		</noscript>
 
 		<!-- JSON-LD Structured Data -->
@@ -188,10 +188,7 @@ const howToSchema = {
 				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
 					return localStorage.getItem('theme');
 				}
-				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-					return 'dark';
-				}
-				return 'light';
+				return 'dark';
 			})();
 
 			if (theme === 'light') {
@@ -202,11 +199,46 @@ const howToSchema = {
 
 			window.localStorage.setItem('theme', theme);
 		</script>
+		<style is:global>
+			.bg-slide {
+				opacity: 0;
+				transition: opacity 1.5s ease-in-out;
+			}
+			.bg-slide.active {
+				opacity: 0.18;
+			}
+			.dark .bg-slide.active {
+				opacity: 0.28;
+			}
+		</style>
 	</head>
-	<body class="min-h-screen">
+	<body class="min-h-screen relative">
+		<!-- Dynamic Shifting Background Slideshow -->
+		<div id="bg-slideshow" class="fixed inset-0 pointer-events-none z-[-2] overflow-hidden bg-[var(--background)]">
+			<div class="bg-slide active absolute inset-0 bg-cover bg-center" style="background-image: url('/images/bg/2.jpg');"></div>
+			<div class="bg-slide absolute inset-0 bg-cover bg-center" style="background-image: url('/images/bg/4.jpg');"></div>
+			<!-- Warm tint overlay for light theme blending -->
+			<div class="absolute inset-0 bg-[var(--background)] opacity-40 dark:opacity-20"></div>
+		</div>
+
 		<slot />
 		<Footer />
 		
+		<!-- Background Slideshow Script -->
+		<script is:inline>
+			(function() {
+				let currentSlide = 0;
+				const slides = document.querySelectorAll('#bg-slideshow .bg-slide');
+				if (slides.length <= 1) return;
+
+				setInterval(() => {
+					slides[currentSlide].classList.remove('active');
+					currentSlide = (currentSlide + 1) % slides.length;
+					slides[currentSlide].classList.add('active');
+				}, 4000);
+			})();
+		</script>
+
 		<!-- AdSense -->
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9923831868322634" crossorigin="anonymous"></script>
 	</body>

@@ -6,49 +6,61 @@ const content: Record<string, any> = {
   en: {
     faqTitle: 'Frequently Asked Questions',
     faq: [
-      { q: 'How is BMI calculated?', a: 'BMI is calculated by dividing weight in kilograms by the square of height in meters. In the US, it is often calculated using the formula: (weight in pounds / height in inches squared) × 703. Our calculator handles both systems instantly.' },
-      { q: 'What is a healthy BMI for a woman?', a: 'For adult women, a healthy BMI ranges from 18.5 to 24.9. However, BMI is a screening tool and does not account for muscle mass or distribution, which can be significant during different life stages.' },
-      { q: 'What is the BMI for 5\'4" female?', a: 'A BMI score depends on weight. For a 5\'4" female, a healthy weight range (BMI 18.5-24.9) is approximately 108 to 145 lbs. You can use our calculator for your exact weight.' },
-      { q: 'Is BMI accurate if you have muscle?', a: 'BMI does not distinguish between muscle and fat. Highly muscular individuals, like athletes, may have a "high" BMI despite having low body fat, which is one of the primary limitations of the metric.' },
-      { q: 'Is 25 a good BMI?', a: 'A BMI of 25 is technically the threshold for the "Overweight" category (25.0–29.9). However, it is very close to the healthy range, and factors like waist circumference and physical activity levels should be considered.' }
+      { q: 'How is BMI calculated?', a: 'BMI is your weight in kilograms divided by the square of your height in meters. For imperial units, the formula is (weight in pounds ÷ height in inches²) × 703. Our calculator processes both instantly for maximum comfort.' },
+      { q: 'What is a healthy BMI for a woman?', a: 'For adult women, a healthy BMI range is between 18.5 and 24.9. However, please note that BMI does not differentiate between muscle mass and body fat. A very fit athlete might register a high BMI despite having low body fat.' },
+      { q: 'Is BMI accurate for muscular people or athletes?', a: 'No, it is not fully accurate for this demographic. BMI cannot distinguish weight from muscle versus weight from fat. As a result, bodybuilders, weightlifters, and athletes often display an "overweight" or "obese" BMI score while maintaining excellent health and minimal fat. In such cases, measuring waist circumference or body-fat percentage is recommended.' },
+      { q: 'What does a BMI of 25 mean?', a: 'A BMI of exactly 25.0 marks the dividing line between a healthy weight and the overweight classification. It is a signal to review other metrics like cardiovascular fitness, activity levels, and waist-to-hip ratio to get a realistic view of health risks.' },
+      { q: 'What is BMR and why does it matter?', a: 'Basal Metabolic Rate (BMR) represents the total number of calories your body needs to perform basic, life-sustaining functions (such as breathing, circulation, and cell production) while at complete rest. Knowing your BMR helps you determine the baseline calorie intake required to maintain, lose, or gain weight.' },
+      { q: 'What is TDEE and how is it active?', a: 'Total Daily Energy Expenditure (TDEE) is an estimation of how many calories you burn per day once exercise, sport, and daily activity are factored in. It is derived by multiplying your BMR by your physical activity multiplier.' },
     ],
     sections: [
-      { title: 'Understanding Your Body Mass Index (BMI)', text: 'Body Mass Index (BMI) is a vital metric used by health professionals worldwide to screen for weight-related health risks. By analyzing the relationship between your height and weight, Real BMIvides a baseline understanding of whether you fall within a healthy range.' },
-      { title: 'How is BMI Calculated?', text: 'In the metric system, BMI is your weight in kilograms divided by your height in meters squared (kg/m²). Our calculator handles these conversions instantly, providing you with a precise score in seconds.' },
-      { title: 'Expert Health Analytics: The Real BMI Guide', text: 'Comprehensive clinical insights and classification data powered by the Real BMI Calculator engine.' }
+      { title: 'Understanding Your Body Mass Index', text: 'Body Mass Index (BMI) is a valuable, internationally recognized screening standard used by healthcare professionals worldwide. It groups your weight category relative to your height, giving you a quick reference point for metabolic and cardiovascular disease risks. Real BMI Calculator pairs this score with the standard classifications from the World Health Organization (WHO) and Centers for Disease Control (CDC) to offer you direct, clinical context.' },
+      { title: 'How BMI, BMR & TDEE Connect Together', text: 'Your BMI indicates if your weight falls within a balanced window. Your BMR reveals the baseline metabolic energy your organs require at absolute rest. Finally, your TDEE integrates daily physical activities, showing you the exact calories required to maintain your current weight. Combining these three pillars gives you a comprehensive, customized map of your energy balance and weight-management path.' },
     ],
-    whoTableTitle: 'WHO BMI Classification Table',
+    whoTableTitle: 'WHO BMI Classification Standards',
     whoTable: [
-      { category: 'Underweight', range: '< 18.5', risk: 'Low', status: 'underweight' },
-      { category: 'Normal Weight', range: '18.5 – 24.9', risk: 'Minimal', status: 'normal' },
-      { category: 'Overweight', range: '25.0 – 29.9', risk: 'Increased', status: 'overweight' },
-      { category: 'Obesity Class I', range: '30.0 – 34.9', risk: 'High', status: 'obesity-1' },
-      { category: 'Obesity Class II', range: '35.0 – 39.9', risk: 'Very High', status: 'obesity-2' }
+      { category: 'Underweight', range: '< 18.5', risk: 'Low (Increased Nutri. Risk)', status: 'underweight' },
+      { category: 'Normal Weight', range: '18.5 – 24.9', risk: 'Minimal (Optimal Health)', status: 'normal' },
+      { category: 'Overweight', range: '25.0 – 29.9', risk: 'Increased (Caution Recommended)', status: 'overweight' },
+      { category: 'Obesity Class I', range: '30.0 – 34.9', risk: 'High (Moderate Risk)', status: 'obesity-1' },
+      { category: 'Obesity Class II', range: '35.0 – 39.9', risk: 'Very High (Severe Risk)', status: 'obesity-2' },
+      { category: 'Obesity Class III', range: '≥ 40.0', risk: 'Extremely High (Acute Risk)', status: 'obesity-3' },
     ]
   },
   es: {
     faqTitle: 'Preguntas Frecuentes',
     faq: [
-      { q: '¿Qué es el IMC?', a: 'El Índice de Masa Corporal (IMC) es el peso de una persona en kilogramos dividido por el cuadrado de la altura en metros.' },
-      { q: '¿Es el IMC preciso para atletas?', a: 'El IMC puede sobreestimar la grasa corporal en atletas porque no distingue entre músculo y grasa.' }
+      { q: '¿Cómo se calcula el IMC?', a: 'El IMC se calcula dividiendo el peso en kilogramos por el cuadrado de la altura en metros. Nuestra herramienta realiza este cálculo automáticamente para los sistemas métrico e imperial.' },
+      { q: '¿Es el IMC adecuado para atletas y personas musculosas?', a: 'No del todo. El IMC no mide la grasa corporal de forma directa y no diferencia entre masa muscular y tejido graso. Los deportistas con mucha masa muscular pueden dar resultados de "sobrepeso" sin tener exceso de grasa.' },
+      { q: '¿Qué es el metabolismo basal (BMR) Y el TDEE?', a: 'El BMR es el gasto calórico de tu cuerpo en descanso absoluto. El TDEE es la energía diaria consumida incluyendo tus niveles de actividad física diaria.' },
     ],
     sections: [
-      { title: 'Entendiendo Tu Índice de Masa Corporal (IMC)', text: 'El IMC es una métrica vital utilizada por profesionales de la salud en todo el mundo para detectar riesgos de salud relacionados con el peso.' },
-      { title: '¿Cómo se Calcula el IMC?', text: 'En el sistema métrico, el IMC es tu peso en kilograms dividido por tu altura en metros al cuadrado (kg/m²).' }
+      { title: 'Entendiendo Tu Índice de Masa Corporal', text: 'El Índice de Masa Corporal (IMC) es un estándar clínico simplificado pero de gran utilidad médica para estimar si tu peso se encuentra dentro de niveles saludables. Real BMI Calculator utiliza escalas oficiales de la OMS para guiarte en tu estado nutricional.' },
+      { title: 'La Sinergia de IMC, BMR y TDEE', text: 'El IMC te indica tu categoría general de peso, el BMR describe los requerimientos de tu metabolismo celular en reposo, y el TDEE te indica el consumo calórico diario para planificar objetivos de déficit, mantenimiento o superávit.' }
     ]
   },
   hi: {
     faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
     faq: [
-      { q: 'बीएमआई (BMI) क्या है?', a: 'बॉडी मास इंडेक्स (बीएमआई) किसी व्यक्ति का वजन किलोग्राम में उसकी ऊंचाई के मीटर वर्ग से विभाजित होता है।' }
+      { q: 'बीएमआई (BMI) की गणना कैसे की जाती है?', a: 'बीएमआई = वजन (किलोग्राम) ÷ ऊंचाई² (मीटर)। हमारे कैलकुलेटर में आप मेट्रिक और इंपीरियल दोनों प्रणालियों का तुरंत उपयोग कर सकते हैं।' },
+      { q: 'क्या धावकों और बॉडीबिल्डर्स के लिए बीएमआई सही उत्तर देता है?', a: 'नहीं, बीएमआई शरीर में मांसपेशियों (मसल मास) और वसा के बीच का अंतर नहीं बता सकता। इसलिए भारी फिटनेस वाले एथलीटों का बीएमआई स्कोर सामान्य से अधिक दिख सकता है।' },
     ],
     sections: [
-      { title: 'अपने बॉडी मास इंडेक्स (बीएमआई) को समझना', text: 'बीएमआई दुनिया भर में स्वास्थ्य पेशेवरों द्वारा वजन से संबंधित स्वास्थ्य जोखिमों की जांच के लिए उपयोग किया जाने वाला एक महत्वपूर्ण मापदंड है।' }
+      { title: 'बॉडी मास इंडेक्स को गहराई से समझें', text: 'बॉडी मास इंडेक्स (बीएमआई) वजन और ऊंचाई का एक अनुपात है जो स्वास्थ्य विशेषज्ञों को शारीरिक संरचना का आकलन करने में मदद करता है। चिकित्सक इसका उपयोग हृदय और पोषण संबंधी बुनियादी जांच के लिए करते हैं।' }
     ]
-  }
+  },
 };
 
-const t = content[lang] || content.en;
+// Elegant fallback to English for translations or sub-keys
+const activeContent = content[lang] || content.en;
+const t = {
+  ...content.en,
+  ...activeContent,
+  // Merge lists to preserve English if translated sub-lists are incomplete
+  faq: activeContent.faq && activeContent.faq.length >= 3 ? activeContent.faq : content.en.faq,
+  sections: activeContent.sections && activeContent.sections.length >= 2 ? activeContent.sections : content.en.sections,
+  whoTable: activeContent.whoTable || content.en.whoTable,
+};
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -56,63 +68,74 @@ const faqSchema = {
   "mainEntity": t.faq.map((item: { q: string; a: string }) => ({
     "@type": "Question",
     "name": item.q,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": item.a
-    }
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
   }))
 };
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
+<section id="insights" class="max-w-7xl mx-auto space-y-24 md:space-y-32 py-16 md:py-24 scroll-mt-28">
 
-<section id="insights" class="max-w-7xl mx-auto space-y-20 py-20 px-4 md:px-6 scroll-mt-24">
-  <div class="space-y-16">
-    {t.sections.map((section: { title: string; text: string }) => (
-      <div class="space-y-6">
-        <h2 class="text-2xl md:text-3xl font-black tracking-tight text-[var(--foreground)] leading-tight uppercase">
-          {section.title}
-        </h2>
-        <p class="text-sm md:text-lg text-[var(--muted-foreground)] leading-relaxed font-bold opacity-60">
+  <!-- ═══════════════════  HEALTH INSIGHTS  ═══════════════════ -->
+  <div class="grid md:grid-cols-2 gap-8 md:gap-10">
+    {t.sections.map((section: { title: string; text: string }, idx: number) => (
+      <div class="p-8 md:p-10 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] hover:shadow-[var(--shadow-card)] transition-all duration-300 space-y-6 flex flex-col justify-between group relative overflow-hidden">
+        
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Insight 0{idx + 1}</p>
+            <div class="w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--muted-foreground)] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] group-hover:text-white transition-all duration-300">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-display font-bold uppercase leading-tight text-[var(--foreground)]">
+            {section.title}
+          </h2>
+          <div class="h-1 w-12 bg-[var(--accent)] rounded-full group-hover:w-20 transition-all duration-300"></div>
+        </div>
+        <p class="text-base text-[var(--muted-foreground)] leading-relaxed font-medium pt-4 border-t border-[var(--border)]/40">
           {section.text}
         </p>
       </div>
     ))}
   </div>
 
+  <!-- ═══════════════════  WHO TABLE  ═══════════════════ -->
   {t.whoTable && (
     <div class="space-y-10 border-t border-[var(--border)] pt-20">
-      <h2 class="text-2xl md:text-3xl font-black tracking-tight text-[var(--foreground)] leading-tight uppercase relative inline-block">
-        {t.whoTableTitle}
-        <div class="absolute -bottom-2 left-0 w-1/3 h-1 bg-[var(--accent)]"></div>
-      </h2>
-      
-      <!-- Responsive Table Container -->
-      <div class="glass-card overflow-hidden border-2 border-[var(--border)]">
+      <div class="space-y-3">
+        <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">WHO Standards</p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+          {t.whoTableTitle}
+        </h2>
+        <p class="text-base text-[var(--muted-foreground)] max-w-2xl font-medium">
+          The World Health Organization (WHO) breaks BMI scores down into categorized target ranges to mark health and nutritional indicators.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-soft)] overflow-hidden">
         <div class="overflow-x-auto">
-          <table class="w-full text-left border-collapse min-w-[500px]">
+          <table class="w-full text-left min-w-[500px] border-collapse">
             <thead>
-              <tr class="bg-[var(--muted)] border-b-2 border-[var(--border)]">
-                <th class="p-4 md:p-6 text-[10px] md:text-xs font-black uppercase tracking-widest opacity-60">BMI Category</th>
-                <th class="p-4 md:p-6 text-[10px] md:text-xs font-black uppercase tracking-widest opacity-60">BMI Range (kg/m²)</th>
-                <th class="p-4 md:p-6 text-[10px] md:text-xs font-black uppercase tracking-widest opacity-60">Health Risk Level</th>
+              <tr class="bg-[var(--muted)] border-b border-[var(--border)]">
+                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">Classification Category</th>
+                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">BMI Range Box</th>
+                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">Est. Health Risk Level</th>
               </tr>
             </thead>
             <tbody>
               {t.whoTable.map((row: any, i: number) => (
-                <tr class={`border-b border-[var(--border)] last:border-0 ${i % 2 === 1 ? 'bg-[var(--muted)]/50' : ''}`}>
-                  <td class="p-4 md:p-6 font-black text-[var(--foreground)] uppercase text-xs md:text-sm">{row.category}</td>
-                  <td class="p-4 md:p-6 font-bold text-[var(--muted-foreground)] opacity-80 text-xs md:text-sm">{row.range}</td>
-                  <td class="p-4 md:p-6">
-                    <span class={`text-[9px] md:text-[10px] font-black uppercase tracking-[0.1em] md:tracking-[0.2em] px-2 py-1 md:px-3 md:py-1 rounded-md border border-current ${
-                      row.status === 'normal' ? 'text-emerald-500' : 
-                      row.status === 'underweight' ? 'text-sky-500' :
-                      row.status === 'overweight' ? 'text-amber-500' :
-                      'text-rose-500'
-                    }`}>
-                      {row.risk}
-                    </span>
+                <tr class={`border-b border-[var(--border)] last:border-0 transition-colors hover:bg-[var(--muted)]/50 ${i % 2 === 1 ? 'bg-[var(--muted)]/20' : ''}`}>
+                  <td class="px-6 py-5 font-display font-bold text-[var(--foreground)] uppercase text-sm">{row.category}</td>
+                  <td class="px-6 py-5 font-sans text-[var(--foreground)] text-sm font-semibold">{row.range}</td>
+                  <td class="px-6 py-5">
+                    <span class={`text-[10px] font-display font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border ${
+                      row.status === 'normal'      ? 'border-emerald-500/30 text-emerald-500 bg-emerald-500/5' :
+                      row.status === 'underweight' ? 'border-sky-500/30 text-sky-500 bg-sky-500/5' :
+                      row.status === 'overweight'  ? 'border-amber-500/30 text-amber-500 bg-amber-500/5' :
+                                                     'border-rose-500/30 text-rose-500 bg-rose-500/5'
+                    }`}>{row.risk}</span>
                   </td>
                 </tr>
               ))}
@@ -123,18 +146,28 @@ const faqSchema = {
     </div>
   )}
 
-  <div id="faq" class="space-y-10 border-t border-[var(--border)] pt-20 scroll-mt-24">
-    <h2 class="text-2xl md:text-3xl font-black tracking-tighter text-center uppercase tracking-[0.2em]">{t.faqTitle}</h2>
-    <div class="space-y-4 md:space-y-6">
+  <!-- ═══════════════════  FAQ ACCORDION  ═══════════════════ -->
+  <div id="faq" class="space-y-12 border-t border-[var(--border)] pt-20 scroll-mt-28">
+    <div class="space-y-3 text-center">
+      <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Help Center</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase text-[var(--foreground)]">{t.faqTitle}</h2>
+      <p class="text-base text-[var(--muted-foreground)] max-w-xl mx-auto font-medium">
+        Everything you need to know about BMI calculations, metabolic ratios, accuracy, and athletic measurements.
+      </p>
+    </div>
+
+    <div class="space-y-4 max-w-7xl mx-auto">
       {t.faq.map((item: { q: string; a: string }) => (
-        <details class="group glass-card hover:bg-[var(--muted)] transition-all cursor-pointer overflow-hidden border-2 border-[var(--border)]">
-          <summary class="flex justify-between items-center font-black text-sm md:text-lg p-6 md:p-8 select-none list-none uppercase tracking-tight">
-            <span class="pr-6 md:pr-8">{item.q}</span>
-            <span class="text-zinc-400 group-open:rotate-180 transition-transform flex-shrink-0">
-                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        <details class="group rounded-xl border-[1.5px] border-[var(--border)] bg-[var(--card)] overflow-hidden cursor-pointer hover:border-[var(--accent)] transition-all duration-200 shadow-[var(--shadow-soft)]">
+          <summary class="flex justify-between items-center font-display font-semibold text-base py-5 px-6 select-none list-none uppercase tracking-tight text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">
+            <span class="pr-8">{item.q}</span>
+            <span class="text-[var(--muted-foreground)] group-open:rotate-180 transition-transform duration-200 flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
             </span>
           </summary>
-          <div class="px-6 pb-6 md:px-8 md:pb-10 text-[var(--muted-foreground)] leading-relaxed font-bold border-t-2 border-[var(--border)] pt-4 md:pt-6 opacity-70 text-xs md:text-base">
+          <div class="px-6 pb-6 text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium border-t border-[var(--border)]/60 pt-4 bg-[var(--muted)]/10">
             {item.a}
           </div>
         </details>
@@ -144,7 +177,5 @@ const faqSchema = {
 </section>
 
 <style>
-  summary::-webkit-details-marker {
-    display: none;
-  }
+  summary::-webkit-details-marker { display: none; }
 </style>

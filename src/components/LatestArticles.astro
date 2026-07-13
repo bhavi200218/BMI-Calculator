@@ -2,51 +2,68 @@
 const articles = [
   {
     category: 'GUIDE',
+    readTime: '5 min read',
     title: 'BMI Chart for Men and Women',
-    text: 'Understand the healthy BMI range for men and women with our detailed chart...',
+    text: 'Understand the healthy BMI range for men and women with our research-backed chart and clinical guidelines.',
     link: '/en/blog/bmi-chart-for-men-women'
   },
   {
     category: 'RESEARCH',
+    readTime: '7 min read',
     title: 'Healthy BMI Range for Indians',
-    text: 'Learn about the modified healthy BMI ranges tailored specifically for Indian adults...',
+    text: 'Learn about the modified healthy BMI ranges tailored specifically for Indian adults per recent studies.',
     link: '/en/blog/healthy-bmi-range-indians'
   },
   {
     category: 'ADOLESCENCE',
+    readTime: '4 min read',
     title: 'BMI Calculator for Teens',
-    text: 'Understand how BMI is calculated for teens and children using percentiles...',
+    text: 'Understand how BMI is calculated for teens and children using age-adjusted percentiles.',
     link: '/en/blog/bmi-calculator-teens'
   }
 ];
 ---
 
-<section class="space-y-12 py-20">
-  <div class="flex items-center justify-between">
+<section class="space-y-10 py-10">
+  <!-- Section Header -->
+  <div class="flex items-start justify-between gap-4 flex-wrap">
     <div class="space-y-2">
-      <h2 class="text-3xl md:text-5xl font-black tracking-tighter uppercase text-[var(--foreground)]">Latest Health & Wellness Articles</h2>
-      <div class="h-1 w-20 bg-[var(--accent)]"></div>
+      <p class="text-[10px] font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Health Library</p>
+      <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase text-[var(--foreground)] leading-tight">
+        Latest Articles
+      </h2>
     </div>
+    <div class="h-px flex-1 mt-6 self-start hidden md:block bg-gradient-to-r from-[var(--border)] to-transparent"></div>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-8">
+  <!-- Article Cards -->
+  <div class="grid md:grid-cols-3 gap-5">
     {articles.map(article => (
-      <a href={article.link} class="group">
-        <div class="glass-card p-8 h-full border-2 border-[var(--border)] group-hover:border-[var(--accent)] transition-all duration-500 shadow-sm hover:shadow-xl hover:-translate-y-2">
-          <div class="flex flex-col h-full space-y-6">
-            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--accent)]">{article.category}</span>
-            <h3 class="text-2xl font-black tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors leading-tight uppercase">
-              {article.title}
-            </h3>
-            <p class="text-sm text-[var(--muted-foreground)] font-bold opacity-60 leading-relaxed line-clamp-3">
-              {article.text}
-            </p>
-            <div class="pt-4 mt-auto">
-               <span class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 group-hover:gap-4 transition-all">
-                 Read Article
-                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-               </span>
-            </div>
+      <a href={article.link} class="group block">
+        <div class="h-full p-7 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-5
+          hover:border-[var(--accent)] hover:-translate-y-1.5 hover:shadow-[var(--shadow-accent)]
+          transition-all duration-300 cursor-pointer">
+
+          <div class="flex items-center justify-between">
+            <span class="text-[9px] font-display font-semibold uppercase tracking-[0.3em] px-3 py-1 rounded-full border border-[var(--accent)] text-[var(--accent)]">
+              {article.category}
+            </span>
+            <span class="text-[9px] font-sans text-[var(--muted-foreground)] opacity-50">{article.readTime}</span>
+          </div>
+
+          <h3 class="text-lg font-display font-bold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors duration-200 uppercase">
+            {article.title}
+          </h3>
+
+          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed font-medium opacity-70 line-clamp-3">
+            {article.text}
+          </p>
+
+          <div class="flex items-center gap-2 text-[10px] font-display font-semibold uppercase tracking-widest text-[var(--foreground)] group-hover:text-[var(--accent)] group-hover:gap-3 transition-all duration-200 pt-2">
+            <span>Read Article</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </div>
         </div>
       </a>

@@ -4,47 +4,56 @@ const lang = currentLocale || 'en';
 
 const translations: Record<string, any> = {
   en: {
-    title: 'Precision Calculator',
-    weight_kg: 'Weight (kg)',
-    weight_lb: 'Weight (lbs)',
-    height_cm: 'Height (cm)',
-    height_ft: 'Height (ft)',
-    height_in: 'Height (in)',
-    age: 'Age (Years)',
-    gender: 'Gender',
+    title: 'BMI Calculator',
+    subtitle: 'Precision Health Tool',
+    weight_kg: 'Weight',
+    weight_lb: 'Weight',
+    height_cm: 'Height',
+    height_ft: 'Height',
+    height_in: 'Height',
+    age: 'Age',
+    gender: 'Biological Sex',
     metric: 'Metric',
     imperial: 'Imperial',
-    calculate: 'Calculate BMI',
+    calculate: 'Calculate My BMI',
     male: 'Male',
     female: 'Female',
     history: 'Recent Sessions',
-    error: 'Please fill all fields.'
+    error: 'Please fill all fields.',
+    weight_unit_kg: 'kg',
+    weight_unit_lb: 'lbs',
+    height_unit_cm: 'cm',
   },
   es: {
-    title: 'Calculadora de Precisión',
-    weight_kg: 'Peso (kg)',
-    weight_lb: 'Peso (lbs)',
-    height_cm: 'Altura (cm)',
-    height_ft: 'Altura (ft)',
-    height_in: 'Altura (in)',
-    age: 'Edad (Años)',
-    gender: 'Género',
+    title: 'Calculadora IMC',
+    subtitle: 'Herramienta de Salud',
+    weight_kg: 'Peso',
+    weight_lb: 'Peso',
+    height_cm: 'Altura',
+    height_ft: 'Altura',
+    height_in: 'Altura',
+    age: 'Edad',
+    gender: 'Sexo',
     metric: 'Métrico',
     imperial: 'Imperial',
     calculate: 'Calcular IMC',
     male: 'Masculino',
     female: 'Femenino',
     history: 'Sesiones Recientes',
-    error: 'Por favor complete todos los campos.'
+    error: 'Por favor complete todos los campos.',
+    weight_unit_kg: 'kg',
+    weight_unit_lb: 'lbs',
+    height_unit_cm: 'cm',
   },
   hi: {
-    title: 'सटीक कैलकुलेटर',
-    weight_kg: 'वजन (किग्रा)',
-    weight_lb: 'वजन (पाउंड)',
-    height_cm: 'लंबाई (सेमी)',
-    height_ft: 'लंबाई (फुट)',
-    height_in: 'लंबाई (इंच)',
-    age: 'उम्र (वर्ष)',
+    title: 'बीएमआई कैलकुलेटर',
+    subtitle: 'स्वास्थ्य उपकरण',
+    weight_kg: 'वजन',
+    weight_lb: 'वजन',
+    height_cm: 'ऊंचाई',
+    height_ft: 'ऊंचाई',
+    height_in: 'ऊंचाई',
+    age: 'आयु',
     gender: 'लिंग',
     metric: 'मीट्रिक',
     imperial: 'इंपीरियल',
@@ -52,112 +61,150 @@ const translations: Record<string, any> = {
     male: 'पुरुष',
     female: 'महिला',
     history: 'हाल के सत्र',
-    error: 'कृपया सभी फ़ील्ड भरें।'
+    error: 'कृपया सभी फ़ील्ड भरें।',
+    weight_unit_kg: 'किग्रा',
+    weight_unit_lb: 'पाउंड',
+    height_unit_cm: 'सेमी',
   }
 };
 
 const t = translations[lang] || translations.en;
 ---
 
-<div id="calculator" class="glass-card p-6 md:p-10 space-y-10 h-full scroll-mt-24 border-2 border-[var(--border)] shadow-sm">
-  <div class="flex items-center justify-between gap-4">
-    <h2 class="text-xs font-black uppercase tracking-[0.2em] text-[var(--foreground)]">{t.title}</h2>
-    <div class="inline-flex p-1 bg-[var(--muted)] rounded-xl border border-[var(--border)]">
-      <button data-unit="metric" class="unit-btn active px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all">
-        {t.metric}
-      </button>
-      <button data-unit="imperial" class="unit-btn px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all">
-        {t.imperial}
-      </button>
+<div id="calculator" class="melove-card p-7 md:p-10 space-y-8 h-full scroll-mt-28">
+  
+  <!-- Header -->
+  <div class="space-y-2">
+    <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.subtitle}</p>
+    <div class="flex items-center justify-between gap-4">
+      <h2 class="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{t.title}</h2>
+      <!-- Unit Toggle -->
+      <div class="p-1 bg-[var(--muted)] rounded-xl border border-[var(--border)] flex">
+        <button data-unit="metric" class="unit-btn active px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer">
+          {t.metric}
+        </button>
+        <button data-unit="imperial" class="unit-btn px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer text-[var(--muted-foreground)]">
+          {t.imperial}
+        </button>
+      </div>
     </div>
   </div>
 
-  <div class="space-y-8">
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Weight Group -->
-      <div class="space-y-4">
-        <label id="weightLabel" class="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]">{t.weight_kg}</label>
-        <div class="relative">
-          <input type="number" id="weight" placeholder="70" required class="matte-input w-full px-6 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
+  <div class="space-y-6">
+    <!-- Weight & Height -->
+    <div class="grid grid-cols-2 gap-4">
+      <!-- Weight -->
+      <div class="space-y-2">
+        <label id="weightLabel" class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
+          <span>{t.weight_kg}</span>
+          <span id="weightUnit" class="text-[var(--accent)]">{t.weight_unit_kg}</span>
+        </label>
+        <input type="number" id="weight" placeholder="70" required
+          class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+          inputmode="decimal" />
+      </div>
+
+      <!-- Height (Metric) -->
+      <div id="metricHeightWrapper" class="space-y-2">
+        <label id="heightLabel" class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
+          <span>{t.height_cm}</span>
+          <span id="heightUnit" class="text-[var(--accent)]">{t.height_unit_cm}</span>
+        </label>
+        <div id="metricHeightGroup" class="relative">
+          <input type="number" id="height" placeholder="175" required
+            class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+            inputmode="decimal" />
         </div>
       </div>
 
-      <!-- Height Group -->
-      <div class="space-y-4">
-        <label id="heightLabel" class="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]">{t.height_cm}</label>
-        
-        <!-- Metric Height -->
-        <div id="metricHeightGroup" class="relative">
-          <input type="number" id="height" placeholder="175" required class="matte-input w-full px-6 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
-        </div>
-
-        <!-- Imperial Height (Hidden by default) -->
-        <div id="imperialHeightGroup" class="hidden grid grid-cols-2 gap-4">
+      <!-- Height (Imperial) -->
+      <div id="imperialHeightWrapper" class="hidden col-span-2 space-y-2">
+        <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{t.height_ft}</label>
+        <div id="imperialHeightGroup" class="grid grid-cols-2 gap-3">
           <div class="relative">
-             <input type="number" id="heightFt" placeholder="5" class="matte-input w-full pl-6 pr-10 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
-             <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-black opacity-30">FT</span>
+            <input type="number" id="heightFt" placeholder="5"
+              class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+              inputmode="decimal" />
+            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)]">FT</span>
           </div>
           <div class="relative">
-             <input type="number" id="heightIn" placeholder="9" class="matte-input w-full pl-6 pr-10 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
-             <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-black opacity-30">IN</span>
+            <input type="number" id="heightIn" placeholder="9"
+              class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+              inputmode="decimal" />
+            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)]">IN</span>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Age & Gender -->
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="space-y-4">
-        <label class="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]">{t.age}</label>
-        <div class="relative">
-          <input type="number" id="age" placeholder="25" required class="matte-input w-full px-6 py-4 placeholder:opacity-20 font-black text-lg rounded-[1.5rem]" />
-        </div>
+    <div class="grid grid-cols-2 gap-4">
+      <!-- Age -->
+      <div class="space-y-2">
+        <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{t.age}</label>
+        <input type="number" id="age" placeholder="25" required
+          class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+          inputmode="numeric" />
       </div>
-      <div class="space-y-4">
-        <label class="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]">{t.gender}</label>
-        <div class="grid grid-cols-2 gap-3">
-          <button data-gender="male" class="gender-btn active py-4 px-6 rounded-[1.5rem] border-2 border-[var(--border)] text-[10px] font-black uppercase tracking-widest transition-all">
+      <!-- Gender -->
+      <div class="space-y-2">
+        <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{t.gender}</label>
+        <div class="grid grid-cols-2 gap-2 h-[56px]">
+          <button data-gender="male" class="gender-btn active h-full rounded-[var(--radius-sm)] border-[1.5px] border-[var(--border)] text-xs font-display font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer">
             {t.male}
           </button>
-          <button data-gender="female" class="gender-btn py-4 px-6 rounded-[1.5rem] border-2 border-[var(--border)] bg-transparent text-[10px] font-black uppercase tracking-widest transition-all">
+          <button data-gender="female" class="gender-btn h-full rounded-[var(--radius-sm)] border-[1.5px] border-[var(--border)] text-xs font-display font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer text-[var(--muted-foreground)]">
             {t.female}
           </button>
         </div>
       </div>
     </div>
 
-    <button id="calcBtn" class="w-full py-6 rounded-[2rem] calc-btn-gradient font-black uppercase text-sm tracking-[0.3em] transition-all mt-4">
+    <!-- Calculate Button -->
+    <button id="calcBtn" class="w-full py-5 rounded-[var(--radius)] calc-btn-gradient font-display font-bold uppercase text-base tracking-[0.25em] cursor-pointer">
       {t.calculate}
     </button>
   </div>
 
-  <div id="history" class="pt-10 border-t-2 border-[var(--border)]">
-     <h3 class="text-[9px] font-black uppercase tracking-[0.3em] text-[var(--foreground)] mb-6 uppercase">{t.history}</h3>
-     <div id="historyList" class="space-y-3"></div>
+  <!-- Session History -->
+  <div id="history" class="pt-6 border-t border-[var(--border)]">
+    <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--muted-foreground)] mb-4">{t.history}</p>
+    <div id="historyList" class="space-y-2"></div>
   </div>
 </div>
 
 <style>
-  .unit-btn.active {
-    background: linear-gradient(135deg, #007a7a, #c9a44c);
-    color: white;
-    box-shadow: 0 4px 12px rgba(0, 122, 122, 0.2);
+  .melove-card {
+    background: var(--card);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: box-shadow 0.2s ease;
   }
-  
-  .dark .unit-btn.active {
-    background: linear-gradient(135deg, #064e3b, #1e3a8a, #3b82f6);
+
+  .unit-btn.active {
+    background: var(--accent);
+    color: var(--accent-foreground);
+    box-shadow: 0 2px 10px rgba(232, 103, 74, 0.3);
+  }
+
+  .unit-btn:not(.active):hover {
+    color: var(--foreground);
+    background: var(--border);
   }
 
   .gender-btn.active {
-    background: linear-gradient(135deg, #007a7a, #c9a44c);
-    color: white;
-    box-shadow: 0 10px 30px -10px rgba(0, 122, 122, 0.5);
-    border: none;
+    background: var(--accent);
+    color: var(--accent-foreground);
+    border-color: var(--accent);
+    box-shadow: 0 4px 16px -4px rgba(232, 103, 74, 0.4);
   }
 
-  .dark .gender-btn.active {
-    background: linear-gradient(135deg, #064e3b, #1e3a8a, #3b82f6);
-    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.5);
+  .gender-btn:not(.active):hover {
+    border-color: var(--muted-foreground);
+    color: var(--foreground);
   }
 </style>
 
@@ -166,52 +213,82 @@ const t = translations[lang] || translations.en;
   let currentGender = 'male';
   let sessionHistory = [];
 
-  const translations = {
-    en: { weight: 'Current Weight', height: 'Current Height', kg: '(kg)', lbs: '(lbs)', cm: '(cm)', ftin: '(ft/in)' },
-    hi: { weight: 'वर्तमान वजन', height: 'वर्तमान ऊंचाई', kg: '(किग्रा)', lbs: '(पाउंड)', cm: '(सेमी)', ftin: '(फुट/इंच)' },
-    es: { weight: 'Peso Actual', height: 'Altura Actual', kg: '(kg)', lbs: '(lbs)', cm: '(cm)', ftin: '(ft/in)' }
+  const unitLabels = {
+    en: { kg: 'kg', lbs: 'lbs', cm: 'cm', ft: 'ft', inch: 'in' },
+    hi: { kg: 'किग्रा', lbs: 'पाउंड', cm: 'सेमी', ft: 'फुट', inch: 'इंच' },
+    es: { kg: 'kg', lbs: 'lbs', cm: 'cm', ft: 'ft', inch: 'in' }
   };
+  const getLang = () => document.documentElement.lang || 'en';
+  const getUL = () => unitLabels[getLang()] || unitLabels.en;
 
-  const getT = () => translations[document.documentElement.lang || 'en'] || translations.en;
+  function setUnit(unit) {
+    currentUnit = unit;
+    
+    document.querySelectorAll('.unit-btn').forEach(btn => {
+      if (btn.dataset.unit === currentUnit) {
+        btn.classList.add('active');
+        btn.classList.remove('text-[var(--muted-foreground)]');
+      } else {
+        btn.classList.remove('active');
+        btn.classList.add('text-[var(--muted-foreground)]');
+      }
+    });
 
-  // Toggle Units
+    const ul = getUL();
+    const metricWrapper = document.getElementById('metricHeightWrapper');
+    const imperialWrapper = document.getElementById('imperialHeightWrapper');
+    const weightUnit = document.getElementById('weightUnit');
+    const heightUnit = document.getElementById('heightUnit');
+
+    if (metricWrapper && imperialWrapper) {
+      if (currentUnit === 'metric') {
+        metricWrapper.classList.remove('hidden');
+        imperialWrapper.classList.add('hidden');
+        imperialWrapper.classList.remove('col-span-2');
+        if (weightUnit) weightUnit.textContent = ul.kg;
+        if (heightUnit) heightUnit.textContent = ul.cm;
+      } else {
+        metricWrapper.classList.add('hidden');
+        imperialWrapper.classList.remove('hidden');
+        imperialWrapper.classList.add('col-span-2');
+        if (weightUnit) weightUnit.textContent = ul.lbs;
+        if (heightUnit) heightUnit.textContent = '';
+      }
+    }
+    localStorage.setItem('bmiUnit', currentUnit);
+    window.dispatchEvent(new CustomEvent('bmiUnitChanged', { detail: { unit: currentUnit } }));
+  }
+
+  // Setup Unit click events
   document.querySelectorAll('.unit-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentUnit = btn.dataset.unit;
-
-      const t = getT();
-      const weightLabel = document.getElementById('weightLabel');
-      const heightLabel = document.getElementById('heightLabel');
-      const metricHeight = document.getElementById('metricHeightGroup');
-      const imperialHeight = document.getElementById('imperialHeightGroup');
-
-      if (currentUnit === 'metric') {
-        weightLabel.innerText = `${t.weight} ${t.kg}`;
-        heightLabel.innerText = `${t.height} ${t.cm}`;
-        metricHeight.classList.remove('hidden');
-        imperialHeight.classList.add('hidden');
-      } else {
-        weightLabel.innerText = `${t.weight} ${t.lbs}`;
-        heightLabel.innerText = `${t.height} ${t.ftin}`;
-        metricHeight.classList.add('hidden');
-        imperialHeight.classList.remove('hidden');
-      }
-      window.localStorage.setItem('bmiUnit', currentUnit);
+      setUnit(btn.dataset.unit);
     });
   });
 
-  // Toggle Gender
+  // Initialize
+  function initUnit() {
+    const storedUnit = localStorage.getItem('bmiUnit') || 'metric';
+    setUnit(storedUnit);
+  }
+
+  initUnit();
+  document.addEventListener('astro:after-swap', initUnit);
+
+  // Gender toggle
   document.querySelectorAll('.gender-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.gender-btn').forEach(b => {
+        b.classList.remove('active');
+        b.classList.add('text-[var(--muted-foreground)]');
+      });
       btn.classList.add('active');
+      btn.classList.remove('text-[var(--muted-foreground)]');
       currentGender = btn.dataset.gender;
     });
   });
 
-  // Calculation Logic
+  // Calculate
   document.getElementById('calcBtn').addEventListener('click', () => {
     let weight = parseFloat(document.getElementById('weight').value);
     let age = parseInt(document.getElementById('age').value);
@@ -226,20 +303,17 @@ const t = translations[lang] || translations.en;
       let ft = parseFloat(document.getElementById('heightFt').value) || 0;
       let inch = parseFloat(document.getElementById('heightIn').value) || 0;
       if (!weight || (!ft && !inch) || !age) { alert('Please fill all fields'); return; }
-      // lbs to kg
       let weightKg = weight * 0.453592;
-      // ft/in to meters
       let totalInches = (ft * 12) + inch;
       heightM = totalInches * 0.0254;
       bmi = weightKg / (heightM * heightM);
-      weight = weightKg; // For other formula calculations
+      weight = weightKg;
     }
 
-    // Formulas
-    const bmr = currentGender === 'male' 
+    const bmr = currentGender === 'male'
       ? 10 * weight + 6.25 * (heightM * 100) - 5 * age + 5
       : 10 * weight + 6.25 * (heightM * 100) - 5 * age - 161;
-    
+
     const tdee = bmr * 1.2;
     const idealWeight = 22 * (heightM * heightM);
     const bodyFat = (1.20 * bmi) + (0.23 * age) - (currentGender === 'male' ? 16.2 : 5.4);
@@ -254,31 +328,24 @@ const t = translations[lang] || translations.en;
 
     window.dispatchEvent(new CustomEvent('bmiCalculated', { detail: result }));
 
-    // Scroll to Result on Mobile - Fixed with Timeout and Target
     if (window.innerWidth < 1024) {
       setTimeout(() => {
-        const resultSection = document.getElementById('bmiDisplay');
-        if (resultSection) {
-          resultSection.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'center' 
-          });
-        }
+        const el = document.getElementById('bmiDisplay');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 100);
     }
 
-    // Add to History
     sessionHistory.unshift({ bmi: result.bmi, date: new Date().toLocaleTimeString() });
     sessionHistory = sessionHistory.slice(0, 3);
-    updateHistoryUI();
+    updateHistory();
   });
 
-  function updateHistoryUI() {
+  function updateHistory() {
     const list = document.getElementById('historyList');
     list.innerHTML = sessionHistory.map(item => `
-      <div class="flex justify-between items-center p-4 rounded-2xl bg-[var(--muted)]/50 border border-[var(--border)] text-[10px] font-black uppercase tracking-widest">
-        <span class="text-[var(--accent)]">BMI: ${item.bmi}</span>
-        <span class="opacity-30">${item.date}</span>
+      <div class="flex justify-between items-center px-4 py-3 rounded-[var(--radius-sm)] bg-[var(--muted)] border border-[var(--border)]">
+        <span class="text-[10px] font-display font-semibold uppercase tracking-widest text-[var(--accent)]">BMI ${item.bmi}</span>
+        <span class="text-[10px] font-sans text-[var(--muted-foreground)] opacity-60">${item.date}</span>
       </div>
     `).join('');
   }
