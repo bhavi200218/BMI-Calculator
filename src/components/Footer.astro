@@ -1,4 +1,6 @@
 ---
+import { calculators } from '../utils/calculators';
+
 const year = new Date().getFullYear();
 const { currentLocale } = Astro;
 const lang = currentLocale || 'en';
@@ -6,6 +8,7 @@ const lang = currentLocale || 'en';
 interface FooterTranslation {
   tagline: string;
   quickLinks: string;
+  healthTools?: string;
   legalStatus: string;
   legalText: string;
   copyright: string;
@@ -16,8 +19,9 @@ const footerTranslations: Record<string, FooterTranslation> = {
   en: {
     tagline: 'The most accurate, privacy-first BMI calculator on the web. Built for real results, not ads.',
     quickLinks: 'Quick Links',
+    healthTools: 'Health Tools',
     legalStatus: 'Disclaimer',
-    legalText: 'Results are for informational purposes only. Not a substitute for professional medical advice.',
+    legalText: '',
     copyright: `© ${year} Real BMI Calculator`,
     links: [
       { name: 'About', href: `/en/about` },
@@ -25,14 +29,20 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Privacy Policy', href: `/en/privacy-policy` },
       { name: 'Terms & Conditions', href: `/en/terms-conditions` },
       { name: 'Disclaimer', href: `/en/disclaimer` },
-      { name: 'BMI Calculator', href: `/en#calculator` },
+    ],
+    healthToolsLinks: [
+      { name: 'BMI Calculator', href: `/en#calculator`, color: 'bg-[var(--accent)]' },
+      { name: 'BMR Calculator', href: `/en/bmr-calculator`, color: 'bg-blue-500' },
+      { name: 'Body Fat Calculator', href: `/en/body-fat-calculator`, color: 'bg-green-500' },
+      { name: 'TDEE Calculator', href: `/en/tdee-calculator`, color: 'bg-purple-500' },
     ]
   },
   es: {
     tagline: 'La calculadora de IMC más precisa y privada de la web.',
     quickLinks: 'Enlaces Rápidos',
+    healthTools: 'Herramientas de Salud',
     legalStatus: 'Aviso Legal',
-    legalText: 'Los resultados son solo informativos. No sustituyen el consejo médico profesional.',
+    legalText: '',
     copyright: `© ${year} Real BMI Calculator`,
     links: [
       { name: 'Sobre Nosotros', href: `/es/about` },
@@ -40,14 +50,20 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Privacidad', href: `/es/privacy-policy` },
       { name: 'Términos', href: `/es/terms-conditions` },
       { name: 'Aviso Médico', href: `/es/disclaimer` },
-      { name: 'Calculadora IMC', href: `/es#calculator` },
+    ],
+    healthToolsLinks: [
+      { name: 'Calculadora IMC', href: `/es#calculator`, color: 'bg-[var(--accent)]' },
+      { name: 'Calculadora BMR', href: `/es/bmr-calculator`, color: 'bg-blue-500' },
+      { name: 'Calculadora Grasa', href: `/es/body-fat-calculator`, color: 'bg-green-500' },
+      { name: 'Calculadora TDEE', href: `/es/tdee-calculator`, color: 'bg-purple-500' },
     ]
   },
   fr: {
     tagline: 'La calculatrice IMC la plus précise et respectueuse de la vie privée.',
     quickLinks: 'Liens Rapides',
+    healthTools: 'Outils de Santé',
     legalStatus: 'Mentions Légales',
-    legalText: 'Les résultats sont fournis à titre informatif uniquement.',
+    legalText: '',
     copyright: `© ${year} Real BMI Calculator`,
     links: [
       { name: 'À Propos', href: `/fr/about` },
@@ -55,14 +71,20 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Confidentialité', href: `/fr/privacy-policy` },
       { name: 'Conditions', href: `/fr/terms-conditions` },
       { name: 'Avertissement', href: `/fr/disclaimer` },
-      { name: 'Calculateur IMC', href: `/fr#calculator` },
+    ],
+    healthToolsLinks: [
+      { name: 'Calculateur IMC', href: `/fr#calculator`, color: 'bg-[var(--accent)]' },
+      { name: 'Calculateur BMR', href: `/fr/bmr-calculator`, color: 'bg-blue-500' },
+      { name: 'Calculateur Graisse', href: `/fr/body-fat-calculator`, color: 'bg-green-500' },
+      { name: 'Calculateur TDEE', href: `/fr/tdee-calculator`, color: 'bg-purple-500' },
     ]
   },
   de: {
     tagline: 'Der genaueste und datenschutzfreundlichste BMI-Rechner im Web.',
     quickLinks: 'Schnelllinks',
+    healthTools: 'Gesundheits-Tools',
     legalStatus: 'Rechtlicher Hinweis',
-    legalText: 'Die Ergebnisse dienen nur zu Informationszwecken.',
+    legalText: '',
     copyright: `© ${year} Real BMI Calculator`,
     links: [
       { name: 'Über Uns', href: `/de/about` },
@@ -70,14 +92,20 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Datenschutz', href: `/de/privacy-policy` },
       { name: 'Nutzungsbedingungen', href: `/de/terms-conditions` },
       { name: 'Medizinischer Hinweis', href: `/de/disclaimer` },
-      { name: 'BMI Rechner', href: `/de#calculator` },
+    ],
+    healthToolsLinks: [
+      { name: 'BMI-Rechner', href: `/de#calculator`, color: 'bg-[var(--accent)]' },
+      { name: 'BMR-Rechner', href: `/de/bmr-calculator`, color: 'bg-blue-500' },
+      { name: 'Körperfett-Rechner', href: `/de/body-fat-calculator`, color: 'bg-green-500' },
+      { name: 'TDEE-Rechner', href: `/de/tdee-calculator`, color: 'bg-purple-500' },
     ]
   },
   ko: {
     tagline: '가장 정확하고 개인정보를 보호하는 BMI 계산기.',
     quickLinks: '빠른 링크',
+    healthTools: '건강 도구',
     legalStatus: '법적 고지',
-    legalText: '결과는 정보 제공 목적으로만 사용됩니다.',
+    legalText: '',
     copyright: `© ${year} Real BMI Calculator`,
     links: [
       { name: '회사 소개', href: `/ko/about` },
@@ -85,14 +113,20 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: '개인정보 처리방침', href: `/ko/privacy-policy` },
       { name: '이용약관', href: `/ko/terms-conditions` },
       { name: '의학적 면책', href: `/ko/disclaimer` },
-      { name: 'BMI 계산기', href: `/ko#calculator` },
+    ],
+    healthToolsLinks: [
+      { name: 'BMI 계산기', href: `/ko#calculator`, color: 'bg-[var(--accent)]' },
+      { name: 'BMR 계산기', href: `/ko/bmr-calculator`, color: 'bg-blue-500' },
+      { name: '체지방 계산기', href: `/ko/body-fat-calculator`, color: 'bg-green-500' },
+      { name: 'TDEE 계산기', href: `/ko/tdee-calculator`, color: 'bg-purple-500' },
     ]
   },
   hi: {
     tagline: 'वेब पर सबसे सटीक और गोपनीयता-प्रथम बीएमआई कैलकुलेटर।',
     quickLinks: 'त्वरित लिंक',
+    healthTools: 'स्वास्थ्य उपकरण',
     legalStatus: 'कानूनी स्थिति',
-    legalText: 'परिणाम केवल सूचनात्मक उद्देश्यों के लिए हैं।',
+    legalText: '',
     copyright: `© ${year} Real BMI Calculator`,
     links: [
       { name: 'हमारे बारे में', href: `/hi/about` },
@@ -100,75 +134,85 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'गोपनीयता नीति', href: `/hi/privacy-policy` },
       { name: 'नियम और शर्तें', href: `/hi/terms-conditions` },
       { name: 'अस्वीकरण', href: `/hi/disclaimer` },
-      { name: 'बीएमआई कैलकुलेटर', href: `/hi#calculator` },
+    ],
+    healthToolsLinks: [
+      { name: 'बीएमआई कैलकुलेटर', href: `/hi#calculator`, color: 'bg-[var(--accent)]' },
+      { name: 'बीएमआर कैलकुलेटर', href: `/hi/bmr-calculator`, color: 'bg-blue-500' },
+      { name: 'बॉडी फैट कैलकुलेटर', href: `/hi/body-fat-calculator`, color: 'bg-green-500' },
+      { name: 'टीडीईई कैलकुलेटर', href: `/hi/tdee-calculator`, color: 'bg-purple-500' },
     ]
   }
 };
 
 const ft = footerTranslations[lang] || footerTranslations.en;
+const healthToolsLabel = ft.healthTools || 'Health Tools';
+const toolColors = ['bg-[var(--accent)]','bg-blue-500','bg-green-500','bg-purple-500','bg-orange-500','bg-pink-500','bg-sky-500','bg-emerald-500','bg-amber-500','bg-violet-500','bg-cyan-500','bg-fuchsia-500','bg-lime-500','bg-rose-500','bg-indigo-500'];
+const healthToolsLinks = calculators.map((calc, index) => ({
+  name: calc.name[lang] || calc.name['en'],
+  href: `/${lang}/${calc.slug}`,
+  color: toolColors[index % toolColors.length]
+}));
 ---
 
 <footer class="border-t border-[var(--border)] bg-[var(--muted)] mt-10">
-  <div class="max-w-7xl mx-auto px-6 py-16">
+  <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6">
 
     <!-- Top row: brand + links -->
-    <div class="grid md:grid-cols-12 gap-10 mb-12">
+    <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[220px_minmax(0,1fr)_240px] mb-4">
 
-      <!-- Brand block (5 cols) -->
-      <div class="md:col-span-5 space-y-5">
-        <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-lg bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
+      <!-- Brand block -->
+      <div class="space-y-1 mb-5 sm:mb-0">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-[var(--accent)] flex items-center justify-center">
             <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
             </svg>
           </div>
-          <span class="font-display font-bold text-lg uppercase tracking-tight text-[var(--foreground)]">Real BMI</span>
+          <span class="font-display font-bold text-sm uppercase tracking-tight text-[var(--foreground)]">Real BMI</span>
         </div>
-        <p class="text-base text-[var(--muted-foreground)] leading-relaxed font-semibold">
+        <p class="mt-2 text-sm text-[var(--muted-foreground)] leading-snug font-medium max-w-[220px]">
           {ft.tagline}
         </p>
-        <!-- Badges -->
-        <div class="flex flex-wrap gap-2.5">
-          {['WHO Standard', 'No Signup', '6 Languages', '100% Private'].map(b => (
-            <span class="text-[10px] sm:text-[11px] font-display font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full border border-[var(--border)] text-[var(--muted-foreground)] bg-[var(--card)]/50">{b}</span>
+      </div>
+
+      <!-- Health Tools Hub -->
+      <div class="space-y-1 md:col-start-2 md:justify-self-end md:pr-4 lg:col-auto">
+        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{healthToolsLabel}</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-3 gap-y-2">
+          {healthToolsLinks.map(link => (
+            <a href={link.href} class="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 truncate">
+              {link.name}
+            </a>
           ))}
         </div>
       </div>
 
-      <!-- Spacer -->
-      <div class="hidden md:block md:col-span-1"></div>
+      {ft.legalText && (
+        <div class="space-y-2 lg:col-start-3">
+          <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.legalStatus}</p>
+          <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">
+            {ft.legalText}
+          </p>
+        </div>
+      )}
 
-      <!-- Quick Links (3 cols) -->
-      <div class="md:col-span-3 space-y-5">
-        <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.quickLinks}</p>
-        <ul class="space-y-3.5">
+      <!-- Quick Links -->
+      <div class="space-y-1 lg:col-span-1 lg:justify-self-end md:col-start-2 md:justify-self-start md:pl-0 mt-4 sm:mt-0">
+        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.quickLinks}</p>
+        <div class="grid gap-y-2 gap-x-3">
           {ft.links.map(link => (
-            <li>
-              <a href={link.href} class="text-base font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 flex items-center gap-2 group">
-                <span class="w-1.5 h-1.5 rounded-full bg-[var(--border)] group-hover:bg-[var(--accent)] transition-colors"></span>
-                {link.name}
-              </a>
-            </li>
+            <a href={link.href} class="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200">
+              {link.name}
+            </a>
           ))}
-        </ul>
-      </div>
-
-      <!-- Legal (3 cols) -->
-      <div class="md:col-span-3 space-y-5">
-        <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.legalStatus}</p>
-        <p class="text-sm text-[var(--muted-foreground)] leading-relaxed font-semibold">
-          {ft.legalText}
-        </p>
+        </div>
       </div>
     </div>
 
     <!-- Bottom bar -->
-    <div class="border-t border-[var(--border)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-xs md:text-sm font-display font-bold uppercase tracking-widest text-[var(--muted-foreground)]">{ft.copyright}</p>
-      <div class="flex items-center gap-1.5">
-        <span class="text-xs font-sans font-medium text-[var(--muted-foreground)] opacity-60">Built with precision &</span>
-        <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-      </div>
+    <div class="border-t border-[var(--border)] pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[var(--muted-foreground)]">
+      <p class="font-semibold uppercase tracking-[0.2em]">{ft.copyright}</p>
+      <span class="opacity-70 text-[0.95rem]">Built with privacy-first health analytics.</span>
     </div>
   </div>
 </footer>

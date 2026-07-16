@@ -95,13 +95,14 @@ const articleSchema = {
     <div class="space-y-16">
         {t.sections.map((section: any) => (
             <div class="space-y-6 group">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-1 bg-[var(--accent)] transform transition-transform group-hover:scale-x-150 origin-left"></div>
-                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--accent)]">Health Insights</span>
-                </div>
-                <h2 class="text-3xl font-black uppercase tracking-tighter text-[var(--foreground)] leading-none italic">
-                    {section.title}
-                </h2>
+                <div class="space-y-2">
+            <div class="flex items-center gap-4">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--accent)]">Health Insights</span>
+            </div>
+        </div>
+        <h2 class="text-3xl font-black uppercase tracking-tighter text-[var(--foreground)] leading-tight italic">
+            {section.title}
+        </h2>
                 <p class="text-lg text-[var(--muted-foreground)] leading-relaxed font-bold opacity-70" set:html={section.text} />
             </div>
         ))}

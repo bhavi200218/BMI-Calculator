@@ -9,35 +9,8 @@ interface Props {
 const { currentSlug, lang } = Astro.props;
 ---
 
-<div class="space-y-6">
-  <div class="px-2">
-    <h3 class="text-xs font-display font-semibold uppercase tracking-[0.25em] text-[var(--accent)] mb-2">
-      {
-        {
-          en: 'Health Tools Hub',
-          es: 'Calculadoras de Salud',
-          fr: 'Outils de Santé',
-          de: 'Gesundheitsrechner',
-          ko: '건강 도구 허브',
-          hi: 'स्वास्थ्य उपकरण सूची'
-        }[lang]
-      }
-    </h3>
-    <p class="text-xs text-[var(--muted-foreground)] opacity-70">
-      {
-        {
-          en: 'Calculate key body metrics instantly.',
-          es: 'Calcula métricas clave al instante.',
-          fr: 'Simulez vos indicateurs clés.',
-          de: 'Körperdaten direkt berechnen.',
-          ko: '핵심 건강 수치를 즉시 계산하세요.',
-          hi: 'शरीर के आवश्यक मापों की गणना करें।'
-        }[lang]
-      }
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 max-h-[480px] lg:max-h-[600px] overflow-y-auto pr-1 melove-scrollbar">
+<div class="space-y-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 max-h-[520px] overflow-y-auto pr-1 melove-scrollbar">
     {calculators.map(calc => {
       const isActive = calc.slug === currentSlug;
       const url = `/${lang}/${calc.slug}`;

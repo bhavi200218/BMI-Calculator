@@ -277,7 +277,7 @@ const t = (translations as any)[lang] || translations.en;
       navigator.clipboard.writeText(report).then(() => {
         const btn = document.getElementById('copyBtn');
         const orig = btn.innerHTML;
-        btn.textContent = '✓ Copied!';
+        btn.innerHTML = `<svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> ✓ Copied!`;
         setTimeout(() => btn.innerHTML = orig, 2000);
       });
     };

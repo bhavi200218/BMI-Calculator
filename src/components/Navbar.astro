@@ -12,20 +12,30 @@ const langNames: Record<string, string> = {
 };
 
 const nav: Record<string, Record<string, string>> = {
-  en: { home: 'Home', calculator: 'Calculator', insights: 'Insights', faq: 'FAQ' },
-  es: { home: 'Inicio', calculator: 'Calculadora', insights: 'Información', faq: 'FAQ' },
-  fr: { home: 'Accueil', calculator: 'Calculateur', insights: 'Santé', faq: 'FAQ' },
-  de: { home: 'Startseite', calculator: 'Rechner', insights: 'Gesundheit', faq: 'FAQ' },
-  ko: { home: '홈', calculator: '계산기', insights: '건강 정보', faq: 'FAQ' },
-  hi: { home: 'होम', calculator: 'कैलकुलेटर', insights: 'जानकारी', faq: 'FAQ' }
+  en: { home: 'Home', tools: 'Health Tools', insights: 'Insights', faq: 'FAQ' },
+  es: { home: 'Inicio', tools: 'Herramientas', insights: 'Información', faq: 'FAQ' },
+  fr: { home: 'Accueil', tools: 'Outils', insights: 'Santé', faq: 'FAQ' },
+  de: { home: 'Startseite', tools: 'Werkzeuge', insights: 'Gesundheit', faq: 'FAQ' },
+  ko: { home: '홈', tools: '건강 도구', insights: '건강 정보', faq: 'FAQ' },
+  hi: { home: 'होम', tools: 'स्वास्थ्य उपकरण', insights: 'जानकारी', faq: 'FAQ' }
+};
+
+const healthToolsNames: Record<string, Record<string, string>> = {
+  en: { bmi: 'BMI Calculator', bmr: 'BMR Calculator', bodyFat: 'Body Fat Calculator', tdee: 'TDEE Calculator' },
+  es: { bmi: 'Calculadora IMC', bmr: 'Calculadora BMR', bodyFat: 'Calculadora Grasa', tdee: 'Calculadora TDEE' },
+  fr: { bmi: 'Calculateur IMC', bmr: 'Calculateur BMR', bodyFat: 'Calculateur Graisse', tdee: 'Calculateur TDEE' },
+  de: { bmi: 'BMI-Rechner', bmr: 'BMR-Rechner', bodyFat: 'Körperfett-Rechner', tdee: 'TDEE-Rechner' },
+  ko: { bmi: 'BMI 계산기', bmr: 'BMR 계산기', bodyFat: '체지방 계산기', tdee: 'TDEE 계산기' },
+  hi: { bmi: 'बीएमआई कैलकुलेटर', bmr: 'बीएमआर कैलकुलेटर', bodyFat: 'बॉडी फैट कैलकुलेटर', tdee: 'टीडीईई कैलकुलेटर' }
 };
 
 const t = nav[lang] || nav.en;
 const currentLangDisplay = langNames[lang] || lang;
+const healthTools = healthToolsNames[lang] || healthToolsNames.en;
 ---
 
-<nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl">
-  <div class="flex items-center justify-between px-5 h-14 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)]">
+<nav class="fixed inset-x-4 top-4 z-50 max-w-5xl mx-auto">
+  <div class="flex items-center justify-between px-4 sm:px-5 h-14 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)]">
 
     <!-- Logo -->
     <a href={`/${lang}`} class="flex items-center gap-2 shrink-0">
@@ -38,54 +48,103 @@ const currentLangDisplay = langNames[lang] || lang;
     </a>
 
     <!-- Desktop Links -->
-    <div class="hidden md:flex items-center gap-3 lg:gap-5">
-      <a href={`/${lang}#calculator`} class="nav-link">{t.calculator}</a>
+    <div class="hidden lg:flex items-center gap-3 lg:gap-5">
+      <a href={`/${lang}`} class="nav-link">{t.home}</a>
       <a href={`/${lang}#insights`} class="nav-link">{t.insights}</a>
       <a href={`/${lang}#faq`} class="nav-link">{t.faq}</a>
     </div>
 
     <!-- Right Controls -->
     <div class="flex items-center gap-3">
-      <!-- Lang Dropdown -->
-      <div class="relative" id="langDropdownWrapper">
-        <button id="langDropdownBtn"
-          class="flex items-center gap-1.5 text-[10px] font-display font-semibold uppercase tracking-wider bg-[var(--muted)] px-3 py-2 rounded-xl border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)] transition-colors duration-200 cursor-pointer"
-          aria-haspopup="true" aria-expanded="false">
-          <span id="langCurrentLabel">{currentLangDisplay}</span>
-          <svg class="w-2.5 h-2.5 opacity-50 transition-transform duration-200" id="langChevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+      <div class="hidden sm:flex items-center gap-3">
+        <!-- Lang Dropdown -->
+        <div class="relative" id="langDropdownWrapper">
+          <button id="langDropdownBtn"
+            class="flex items-center gap-1.5 text-[10px] font-display font-semibold uppercase tracking-wider bg-[var(--muted)] px-3 py-2 rounded-xl border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)] transition-colors duration-200 cursor-pointer"
+            aria-haspopup="true" aria-expanded="false">
+            <span id="langCurrentLabel">{currentLangDisplay}</span>
+            <svg class="w-2.5 h-2.5 opacity-50 transition-transform duration-200" id="langChevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <div id="langDropdownMenu"
+            class="absolute right-0 top-full mt-2 w-44 rounded-xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)] p-1.5 space-y-0.5 hidden"
+            role="menu">
+            {Object.entries(langNames).map(([code, name]) => {
+              const path = Astro.url.pathname
+                .replace(/^\/[a-z]{2}\//, `/${code}/`)
+                .replace(/^\/[a-z]{2}$/, `/${code}/`);
+              return (
+                <a href={path}
+                  class={`flex items-center gap-2 px-3 py-2.5 text-[11px] font-display font-semibold uppercase tracking-wider rounded-lg hover:bg-[var(--muted)] transition-colors text-[var(--foreground)] cursor-pointer ${code === lang ? 'bg-[var(--muted)]' : ''}`}
+                  role="menuitem">
+                  {name}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button id="themeToggleBtn"
+          class="w-9 h-9 rounded-xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
+          aria-label="Toggle Theme">
+          <svg id="sunIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
+          </svg>
+          <svg id="moonIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
           </svg>
         </button>
+      </div>
 
-        <div id="langDropdownMenu"
-          class="absolute right-0 top-full mt-2 w-44 rounded-xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)] p-1.5 space-y-0.5 hidden"
-          role="menu">
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="lg:hidden w-9 h-9 rounded-2xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
+        aria-label="Toggle Menu">
+        <svg class="w-5 h-5 text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden absolute right-4 top-full z-40 w-[min(80vw,12rem)] rounded-3xl border border-[var(--border)] bg-[var(--background)]/98 backdrop-blur-xl hidden flex-col items-stretch gap-3 p-3 shadow-[var(--shadow-card)]">
+      <button id="closeMobileMenu" class="self-end w-9 h-9 rounded-full border border-[var(--border)] bg-[var(--muted)] flex items-center justify-center cursor-pointer">
+        <svg class="w-4 h-4 text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      
+      <a href={`/${lang}`} class="w-full rounded-3xl bg-[var(--card)] px-3 py-2 text-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+        {t.home}
+      </a>
+      <a href={`/${lang}#insights`} class="w-full rounded-3xl bg-[var(--card)] px-3 py-2 text-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+        {t.insights}
+      </a>
+      <a href={`/${lang}#faq`} class="w-full rounded-3xl bg-[var(--card)] px-3 py-2 text-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+        {t.faq}</a>
+
+      <button id="themeToggleBtnMobile" class="w-full rounded-3xl border border-[var(--border)] bg-[var(--muted)] px-3 py-2 text-center text-[0.8rem] font-display font-semibold uppercase tracking-[0.12em] text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">
+        Toggle dark / light
+      </button>
+
+      <div class="w-full rounded-3xl border border-[var(--border)] bg-[var(--card)] p-3">
+        <p class="text-[10px] font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] mb-2">Language</p>
+        <div class="grid grid-cols-2 gap-2">
           {Object.entries(langNames).map(([code, name]) => {
             const path = Astro.url.pathname
               .replace(/^\/[a-z]{2}\//, `/${code}/`)
               .replace(/^\/[a-z]{2}$/, `/${code}/`);
             return (
               <a href={path}
-                class={`flex items-center gap-2 px-3 py-2.5 text-[11px] font-display font-semibold uppercase tracking-wider rounded-lg hover:bg-[var(--muted)] transition-colors text-[var(--foreground)] cursor-pointer ${code === lang ? 'bg-[var(--muted)]' : ''}`}
-                role="menuitem">
+                class="rounded-2xl border border-[var(--border)] bg-[var(--muted)] px-3 py-2 text-center text-[12px] font-display font-semibold uppercase tracking-[0.12em] text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">
                 {name}
               </a>
             );
           })}
         </div>
       </div>
-
-      <!-- Theme Toggle -->
-      <button id="themeToggleBtn"
-        class="w-9 h-9 rounded-xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
-        aria-label="Toggle Theme">
-        <svg id="sunIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
-        </svg>
-        <svg id="moonIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-        </svg>
-      </button>
     </div>
   </div>
 </nav>
@@ -143,13 +202,16 @@ const currentLangDisplay = langNames[lang] || lang;
   }
 
   function attachThemeToggle() {
-    const btn = document.getElementById('themeToggleBtn');
-    if (!btn) return;
-    btn.onclick = () => {
+    const desktopBtn = document.getElementById('themeToggleBtn');
+    const mobileBtn = document.getElementById('themeToggleBtnMobile');
+    const toggleTheme = () => {
       const isDark = document.documentElement.classList.toggle('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
       applyTheme(isDark);
     };
+
+    if (desktopBtn) desktopBtn.onclick = toggleTheme;
+    if (mobileBtn) mobileBtn.onclick = toggleTheme;
   }
 
   function attachLangDropdown() {
@@ -165,6 +227,23 @@ const currentLangDisplay = langNames[lang] || lang;
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
   }
 
-  initTheme(); attachThemeToggle(); attachLangDropdown();
-  document.addEventListener('astro:after-swap', () => { initTheme(); attachThemeToggle(); attachLangDropdown(); });
+
+  function attachMobileMenu() {
+    const btn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('closeMobileMenu');
+    
+    if (!btn || !mobileMenu || !closeBtn) return;
+    
+    let isOpen = false;
+    const open = () => { isOpen = true; mobileMenu.classList.remove('hidden'); mobileMenu.classList.add('flex'); };
+    const close = () => { isOpen = false; mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); };
+    
+    btn.addEventListener('click', (e) => { e.stopPropagation(); isOpen ? close() : open(); });
+    closeBtn.addEventListener('click', (e) => { e.stopPropagation(); close(); });
+    document.addEventListener('click', (e) => { if (!btn.contains(e.target) && !mobileMenu.contains(e.target)) close(); });
+  }
+
+  initTheme(); attachThemeToggle(); attachLangDropdown(); attachMobileMenu();
+  document.addEventListener('astro:after-swap', () => { initTheme(); attachThemeToggle(); attachLangDropdown(); attachMobileMenu(); });
 </script>

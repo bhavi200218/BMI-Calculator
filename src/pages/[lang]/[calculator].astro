@@ -3,7 +3,6 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import UniversalCalculator from '../../components/UniversalCalculator.astro';
 import CalculatorResult from '../../components/CalculatorResult.astro';
-import HubSidebar from '../../components/HubSidebar.astro';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
 
 // Define static paths for all 15 calculators across 6 languages
@@ -67,20 +66,10 @@ const webAppSchema = {
         </p>
       </div>
 
-      <!-- Core Hub Layout -->
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
-        
-        <!-- Sidebar Selector column (Span 1) -->
-        <aside class="lg:col-span-1 glass-card p-6 animate-in" style="animation-delay:100ms">
-          <HubSidebar currentSlug={calc.slug} lang={lang} />
-        </aside>
-
-        <!-- Main Interactive Calculator Area (Span 3: Calculator Left, Result Right) -->
-        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch animate-in" style="animation-delay:150ms">
-          <UniversalCalculator calculator={calc} lang={lang} />
-          <CalculatorResult lang={lang} />
-        </div>
-
+      <!-- Main Calculator Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch animate-in" style="animation-delay:100ms">
+        <UniversalCalculator calculator={calc} lang={lang} />
+        <CalculatorResult lang={lang} />
       </div>
 
     </div>
