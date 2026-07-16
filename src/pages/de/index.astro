@@ -6,11 +6,12 @@ import ResultStudio from '../../components/ResultStudio.astro';
 import HealthContent from '../../components/HealthContent.astro';
 import LatestArticles from '../../components/LatestArticles.astro';
 import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
+import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
 ---
 
 <Layout 
-	title="BMI Rechner | Real BMI – Präzises Gesundheitswerkzeug"
-	description="Berechnen Sie Ihren BMI, BMR und TDEE sofort. Kostenlos, privat und klinisch präzise."
+	title="BMI Rechner - Präziser BMI, BMR & TDEE | Real BMI"
+	description="Berechnen Sie Ihren BMI, BMR und TDEE sofort mit klinischer Präzision. Kostenloser, privater und präziser Rechner basierend auf WHO- und CDC-Richtlinien."
 >
 	<Navbar />
 	
@@ -54,11 +55,8 @@ import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 					))}
 				</div>
 
-				<!-- Calculator & Result -->
-				<div class="grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch animate-in" style="animation-delay:180ms">
-					<BMICalculator />
-					<ResultStudio />
-				</div>
+				<!-- Interactive Calculator Hub -->
+				<HomepageHubWrapper lang="de" />
 			</div>
 		</section>
 

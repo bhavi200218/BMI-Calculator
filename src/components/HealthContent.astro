@@ -85,9 +85,6 @@ const faqSchema = {
         <div class="space-y-4">
           <div class="flex items-center justify-between">
             <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Insight 0{idx + 1}</p>
-            <div class="w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--muted-foreground)] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] group-hover:text-white transition-all duration-300">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-            </div>
           </div>
           <h2 class="text-2xl md:text-3xl font-display font-bold uppercase leading-tight text-[var(--foreground)]">
             {section.title}
@@ -114,7 +111,29 @@ const faqSchema = {
         </p>
       </div>
 
-      <div class="rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-soft)] overflow-hidden">
+      <!-- Mobile Cards Version -->
+      <div class="block sm:hidden space-y-4">
+        {t.whoTable.map((row: any, i: number) => (
+          <div class={`p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-sm ${i % 2 === 1 ? 'bg-[var(--muted)]/20' : ''}`}>
+            <div class="flex justify-between items-center gap-3">
+              <span class="font-display font-bold text-[var(--foreground)] uppercase text-sm">{row.category}</span>
+              <span class={`text-[9px] font-display font-semibold uppercase tracking-widest px-3 py-1 rounded-full border ${
+                row.status === 'normal'      ? 'border-emerald-500/30 text-emerald-500 bg-emerald-500/5' :
+                row.status === 'underweight' ? 'border-sky-500/30 text-sky-500 bg-sky-500/5' :
+                row.status === 'overweight'  ? 'border-amber-500/30 text-amber-500 bg-amber-500/5' :
+                                               'border-rose-500/30 text-rose-500 bg-rose-500/5'
+              }`}>{row.risk}</span>
+            </div>
+            <div class="flex justify-between items-center text-xs border-t border-[var(--border)] pt-2">
+              <span class="text-[var(--muted-foreground)]">BMI Range</span>
+              <span class="font-sans font-bold text-[var(--foreground)]">{row.range}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Desktop Table Version -->
+      <div class="hidden sm:block rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-soft)] overflow-hidden">
         <div class="overflow-x-auto">
           <table class="w-full text-left min-w-[500px] border-collapse">
             <thead>

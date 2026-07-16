@@ -6,10 +6,11 @@ import ResultStudio from '../../components/ResultStudio.astro';
 import HealthContent from '../../components/HealthContent.astro';
 import LatestArticles from '../../components/LatestArticles.astro';
 import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
+import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
 ---
 
 <Layout 
-	title="BMI Calculator | Real BMI – Most Accurate Body Mass Index Tool"
+	title="Free BMI Calculator - Accurate BMI, BMR & Body Fat | Real BMI"
 	description="Free Professional BMI Calculator. Get instant clinical results for BMI, BMR, and TDEE. Accurate measurements for men, women, and athletes."
 >
 	<Navbar />
@@ -54,11 +55,8 @@ import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 					))}
 				</div>
 
-				<!-- Calculator & Result -->
-				<div class="grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch animate-in" style="animation-delay:180ms">
-					<BMICalculator />
-					<ResultStudio />
-				</div>
+				<!-- Interactive Calculator Hub -->
+				<HomepageHubWrapper lang="en" />
 			</div>
 		</section>
 

@@ -1,0 +1,583 @@
+---
+import type { CalculatorConfig, Locale } from '../utils/calculators';
+import { getCalculatorTranslations } from '../utils/calculators';
+
+interface Props {
+  calculator: CalculatorConfig;
+  lang: Locale;
+}
+
+const { calculator, lang } = Astro.props;
+const t = getCalculatorTranslations(lang);
+
+// Setup localized labels
+const metricLabel = { en: 'Metric', es: 'Métrico', fr: 'Métrique', de: 'Metrisch', ko: '미터법', hi: 'मीट्रिक' }[lang];
+const imperialLabel = { en: 'Imperial', es: 'Imperial', fr: 'Impérial', de: 'Imperial', ko: '야드파운드법', hi: 'इंपीरियल' }[lang];
+---
+
+<div id={`calculator-${calculator.slug}`} data-slug={calculator.slug} class="melove-card p-7 md:p-10 space-y-8 h-full scroll-mt-28">
+  
+  <!-- Header -->
+  <div class="space-y-2">
+    <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{calculator.name[lang] || calculator.name['en']}</p>
+    <div class="flex items-center justify-between gap-4">
+      <h2 class="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        {calculator.name[lang] || calculator.name['en']}
+      </h2>
+      <!-- Unit Toggle -->
+      <div class="p-1 bg-[var(--muted)] rounded-xl border border-[var(--border)] flex">
+        <button id={`unitBtnMetric-${calculator.slug}`} data-unit="metric" class="unit-btn active px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer">
+          {metricLabel}
+        </button>
+        <button id={`unitBtnImperial-${calculator.slug}`} data-unit="imperial" class="unit-btn px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer text-[var(--muted-foreground)]">
+          {imperialLabel}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="space-y-6">
+    <!-- Render Form Inputs -->
+    {calculator.inputs.map(input => {
+      const labelStr = input.label[lang] || input.label['en'];
+      
+      // Select input
+      if (input.type === 'select') {
+        return (
+          <div class="space-y-2">
+            <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{labelStr}</label>
+            <select id={`input-${calculator.slug}-${input.id}`} class="matte-input w-full px-4 py-3.5 text-base font-bold rounded-[var(--radius-sm)] cursor-pointer h-[56px] border-[1.5px] border-[var(--border)] bg-[var(--input)] text-[var(--foreground)]">
+              {input.options?.map(opt => (
+                <option value={opt.value} class="bg-[var(--card)] text-[var(--foreground)] font-bold">
+                  {opt.label[lang] || opt.label['en']}
+                </option>
+              ))}
+            </select>
+          </div>
+        );
+      }
+
+      // Height with Metric/Imperial templates
+      if (input.id === 'height') {
+        const cmLabel = { en: 'cm', es: 'cm', fr: 'cm', de: 'cm', ko: 'cm', hi: 'सेमी' }[lang];
+        const ftLabel = { en: 'ft', es: 'ft', fr: 'ft', de: 'ft', ko: 'ft', hi: 'फुट' }[lang];
+        const inLabel = { en: 'in', es: 'in', fr: 'in', de: 'in', ko: '인치', hi: 'इंच' }[lang];
+        return (
+          <div class="space-y-2">
+            <!-- Metric Height -->
+            <div id={`metricHeightGroup-${calculator.slug}`} class="space-y-2">
+              <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
+                <span>{labelStr}</span>
+                <span class="text-[var(--accent)]">{cmLabel}</span>
+              </label>
+              <input type="number" id={`input-${calculator.slug}-height`} placeholder={input.placeholder || '175'} required
+                class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+                inputmode="decimal" />
+            </div>
+
+            <!-- Imperial Height -->
+            <div id={`imperialHeightGroup-${calculator.slug}`} class="hidden space-y-2">
+              <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{labelStr}</label>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="relative">
+                  <input type="number" id={`input-${calculator.slug}-height-ft`} placeholder="5"
+                    class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+                    inputmode="decimal" />
+                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)] uppercase">{ftLabel}</span>
+                </div>
+                <div class="relative">
+                  <input type="number" id={`input-${calculator.slug}-height-in`} placeholder="9"
+                    class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+                    inputmode="decimal" />
+                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)] uppercase">{inLabel}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      // Weight with Metric/Imperial templates
+      if (input.id === 'weight') {
+        const kgLabel = { en: 'kg', es: 'kg', fr: 'kg', de: 'kg', ko: 'kg', hi: 'किग्रा' }[lang];
+        const lbLabel = { en: 'lbs', es: 'lbs', fr: 'lbs', de: 'lbs', ko: 'lbs', hi: 'पाउंड' }[lang];
+        return (
+          <div class="space-y-2">
+            <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
+              <span>{labelStr}</span>
+              <span id={`weightUnitLabel-${calculator.slug}`} class="text-[var(--accent)]">{kgLabel}</span>
+            </label>
+            <input type="number" id={`input-${calculator.slug}-weight`} placeholder={input.placeholder || '70'} required
+              class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+              inputmode="decimal" />
+          </div>
+        );
+      }
+
+      // Other unit-dependent numeric dimensions (waist, hip, neck)
+      if (['waist', 'hip', 'neck'].includes(input.id)) {
+        const cmLabel = { en: 'cm', es: 'cm', fr: 'cm', de: 'cm', ko: 'cm', hi: 'सेमी' }[lang];
+        const inLabel = { en: 'in', es: 'in', fr: 'in', de: 'in', ko: '인치', hi: 'इंच' }[lang];
+        return (
+          <div class="space-y-2">
+            <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
+              <span>{labelStr}</span>
+              <span id={`unitLabel-${calculator.slug}-${input.id}`} class="text-[var(--accent)]" data-metric-unit={cmLabel} data-imperial-unit={inLabel}>{cmLabel}</span>
+            </label>
+            <input type="number" id={`input-${calculator.slug}-${input.id}`} placeholder={input.placeholder || '80'} required
+              class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+              inputmode="decimal" />
+          </div>
+        );
+      }
+
+      // Default Numeric input
+      return (
+        <div class="space-y-2">
+          <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{labelStr}</label>
+          <input type="number" id={`input-${calculator.slug}-${input.id}`} placeholder={input.placeholder || '25'} required
+            class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+            inputmode="numeric" />
+        </div>
+      );
+    })}
+
+    <!-- Calculate Button -->
+    <button id={`runCalcBtn-${calculator.slug}`} class="w-full py-5 rounded-[var(--radius)] calc-btn-gradient font-display font-bold uppercase text-base tracking-[0.25em] cursor-pointer">
+      {t.calcBtn}
+    </button>
+  </div>
+
+</div>
+
+<style>
+  .melove-card {
+    background: var(--card);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .unit-btn.active {
+    background: var(--accent);
+    color: var(--accent-foreground);
+    box-shadow: 0 2px 10px rgba(232, 103, 74, 0.3);
+  }
+
+  .unit-btn:not(.active):hover {
+    color: var(--foreground);
+    background: var(--border);
+  }
+</style>
+
+<script is:inline define:vars={{ slug: calculator.slug }}>
+  (function() {
+    let currentUnitSystem = 'metric';
+
+    function applyUnitSystem(system) {
+      currentUnitSystem = system;
+
+      // Toggle active classes on unit switch buttons
+      const btnMetric = document.getElementById('unitBtnMetric-' + slug);
+      const btnImperial = document.getElementById('unitBtnImperial-' + slug);
+
+      if (btnMetric && btnImperial) {
+        if (system === 'metric') {
+          btnMetric.classList.add('active');
+          btnMetric.classList.remove('text-[var(--muted-foreground)]');
+          btnImperial.classList.remove('active');
+          btnImperial.classList.add('text-[var(--muted-foreground)]');
+        } else {
+          btnImperial.classList.add('active');
+          btnImperial.classList.remove('text-[var(--muted-foreground)]');
+          btnMetric.classList.remove('active');
+          btnMetric.classList.add('text-[var(--muted-foreground)]');
+        }
+      }
+
+      // Weight Labels
+      const wLabel = document.getElementById('weightUnitLabel-' + slug);
+      if (wLabel) {
+        wLabel.textContent = system === 'metric' ? 'kg' : 'lbs';
+      }
+
+      // Height Sections
+      const metricHeight = document.getElementById('metricHeightGroup-' + slug);
+      const imperialHeight = document.getElementById('imperialHeightGroup-' + slug);
+      if (metricHeight && imperialHeight) {
+        if (system === 'metric') {
+          metricHeight.classList.remove('hidden');
+          imperialHeight.classList.add('hidden');
+        } else {
+          metricHeight.classList.add('hidden');
+          imperialHeight.classList.remove('hidden');
+        }
+      }
+
+      // Other dimensions (waist, hip, neck)
+      ['waist', 'hip', 'neck'].forEach(id => {
+        const label = document.getElementById(`unitLabel-${slug}-${id}`);
+        if (label) {
+          label.textContent = system === 'metric' ? label.dataset.metricUnit : label.dataset.imperialUnit;
+        }
+      });
+
+      localStorage.setItem('bmiUnit', system);
+    }
+
+    // Bind Switch Clicks
+    const mBtn = document.getElementById('unitBtnMetric-' + slug);
+    const iBtn = document.getElementById('unitBtnImperial-' + slug);
+    if (mBtn) mBtn.addEventListener('click', () => applyUnitSystem('metric'));
+    if (iBtn) iBtn.addEventListener('click', () => applyUnitSystem('imperial'));
+
+    // Initialize
+    function initUserUnit() {
+      const stored = localStorage.getItem('bmiUnit') || 'metric';
+      applyUnitSystem(stored);
+    }
+    initUserUnit();
+
+    // Recheck on page load transition
+    document.addEventListener('astro:after-swap', initUserUnit);
+
+    // Client Side Calculation Engine
+    const calcBtn = document.getElementById('runCalcBtn-' + slug);
+    if (calcBtn) {
+      calcBtn.addEventListener('click', () => {
+        // Gather inputs
+        const inputs = {};
+        const errorList = [];
+
+        // Helper to get element values
+        const val = (id) => {
+          const el = document.getElementById(`input-${slug}-${id}`);
+          return el ? el.value.trim() : '';
+        };
+
+        // Grab general inputs
+        const ageVal = val('age');
+        const genderVal = val('gender');
+        const activityVal = val('activity');
+        const goalVal = val('goal');
+        
+        // Core Dimensions & Units handling
+        let heightCm = 0;
+        let weightKg = 0;
+
+        // Weight
+        const wRaw = parseFloat(val('weight')) || 0;
+        if (wRaw <= 0 && document.getElementById(`input-${slug}-weight`)) {
+          errorList.push('Weight');
+        }
+        if (currentUnitSystem === 'imperial') {
+          weightKg = wRaw * 0.453592;
+        } else {
+          weightKg = wRaw;
+        }
+
+        // Height
+        if (document.getElementById(`metricHeightGroup-${slug}`)) {
+          if (currentUnitSystem === 'metric') {
+            const hRaw = parseFloat(val('height')) || 0;
+            if (hRaw <= 0) errorList.push('Height');
+            heightCm = hRaw;
+          } else {
+            const ft = parseFloat(document.getElementById(`input-${slug}-height-ft`).value) || 0;
+            const inch = parseFloat(document.getElementById(`input-${slug}-height-in`).value) || 0;
+            if (ft <= 0 && inch <= 0) errorList.push('Height');
+            heightCm = ((ft * 12) + inch) * 2.54;
+          }
+        }
+
+        // General numbers
+        const ageNum = parseInt(ageVal) || 25;
+        if (ageNum <= 0 && document.getElementById(`input-${slug}-age`)) {
+          errorList.push('Age');
+        }
+
+        // Waist, neck, hip (imperial to metric checks)
+        let waistCm = parseFloat(val('waist')) || 0;
+        let neckCm = parseFloat(val('neck')) || 0;
+        let hipCm = parseFloat(val('hip')) || 0;
+
+        if (currentUnitSystem === 'imperial') {
+          waistCm = waistCm * 2.54;
+          neckCm = neckCm * 2.54;
+          hipCm = hipCm * 2.54;
+        }
+
+        if (errorList.length > 0) {
+          alert('Please fill out all fields correctly.');
+          return;
+        }
+
+        // Calculate outcomes dynamically based on slug
+        let calculated = null;
+        const isM = genderVal === 'female' ? false : true;
+
+        if (slug === 'bmi-calculator') {
+          const hM = heightCm / 100;
+          const bmi = weightKg / (hM * hM);
+          const ideal = 22 * (hM * hM);
+          const bodyFat = (1.20 * bmi) + (0.23 * ageNum) - (isM ? 16.2 : 5.4);
+
+          let cat = { en: 'Normal', es: 'Saludable', fr: 'Normal', de: 'Normal', ko: '정상', hi: 'सामान्य' };
+          if (bmi < 18.5) cat = { en: 'Underweight', es: 'Bajo Peso', fr: 'Sous-poids', de: 'Untergewicht', ko: '저체중', hi: 'कम वजन' };
+          else if (bmi >= 25 && bmi < 30) cat = { en: 'Overweight', es: 'Sobrepeso', fr: 'Surpoids', de: 'Übergewicht', ko: '과체중', hi: 'अधिक वजन' };
+          else if (bmi >= 30) cat = { en: 'Obese', es: 'Obesidad', fr: 'Obésité', de: 'Adipositas', ko: '비만', hi: 'मोटापा' };
+
+          calculated = {
+            primary: { value: bmi.toFixed(1), label: { en: 'BMI Score', es: 'Puntaje de IMC', fr: 'Score d\'IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' } },
+            secondary: [
+              { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: cat.en },
+              { label: { en: 'Est. Body Fat', es: 'Grasa Estimada', fr: 'Graisse Corp. Est.', de: 'Körperfett', ko: '체지방률', hi: 'अनुमानित वसा' }, value: bodyFat.toFixed(1), unit: '%' },
+              { label: { en: 'Ideal Weight', es: 'Peso Ideal', fr: 'Poids Idéal', de: 'Idealgewicht', ko: '이상적인 체중', hi: 'आदर्श वजन' }, value: (currentUnitSystem === 'imperial' ? ideal * 2.20462 : ideal).toFixed(1), unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' }
+            ]
+          };
+        } 
+        else if (slug === 'bmr-calculator') {
+          const bmr = isM
+            ? (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) + 5
+            : (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) - 161;
+
+          calculated = {
+            primary: { value: Math.round(bmr), label: { en: 'BMR Calories', es: 'BMR Calorías', fr: 'Calories BMR', de: 'BMR Grundumsatz', ko: '기초대사량 BMR', hi: 'बीएमआर कैलोरी' }, unit: 'kcal/day' },
+            secondary: [
+              { label: { en: 'Sedentary Burn', es: 'Quema Sedentaria', fr: 'Combustion Sédentaire', de: 'Ruhebedarf', ko: '비활동 기초 소모', hi: 'गतिहीन कैलोरी बर्न' }, value: Math.round(bmr * 1.2), unit: 'kcal' },
+              { label: { en: 'Moderate Burn', es: 'Quema Moderada', fr: 'Combustion Modérée', de: 'Mäßiger Bedarf', ko: '보통 활동 소모', hi: 'मध्यम कैलोरी बर्न' }, value: Math.round(bmr * 1.55), unit: 'kcal' }
+            ]
+          };
+        } 
+        else if (slug === 'tdee-calculator') {
+          const act = parseFloat(activityVal) || 1.2;
+          const bmr = isM
+            ? (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) + 5
+            : (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) - 161;
+          const tdee = bmr * act;
+
+          calculated = {
+            primary: { value: Math.round(tdee), label: { en: 'Daily TDEE Calories', es: 'TDEE Calorías Diarias', fr: 'Calories TDEE', de: 'TDEE Tagesbedarf', ko: '일일 칼로리 소모량', hi: 'दैनिक टीडीईई कैलोरी' }, unit: 'kcal/day' },
+            secondary: [
+              { label: { en: 'Basal Metabolic Rate', es: 'BMR Base', fr: 'Métabolisme de Base', de: 'Grundumsatz BMR', ko: '기초대사량', hi: 'बेसल मेटाबॉलिक रेट' }, value: Math.round(bmr), unit: 'kcal' },
+              { label: { en: 'Bulking Goal', es: 'Ganar Peso Goal', fr: 'Prise de masse', de: 'Kalorienüberschuss', ko: '벌크업 목표', hi: 'बल्किंग लक्ष्य' }, value: Math.round(tdee + 500), unit: 'kcal' },
+              { label: { en: 'Cutting Goal', es: 'Bajar peso Goal', fr: 'Sèche musculaire', de: 'Definieren/Abnehmen', ko: '데피니션 목표', hi: 'कटिंग लक्ष्य' }, value: Math.round(tdee - 500), unit: 'kcal' }
+            ]
+          };
+        } 
+        else if (slug === 'body-fat-calculator') {
+          let fat = 0;
+          if (isM) {
+            const diff = waistCm - neckCm;
+            if (diff > 0) {
+              fat = 495 / (1.0324 - 0.19077 * Math.log10(diff) + 0.15456 * Math.log10(heightCm)) - 450;
+            }
+          } else {
+            const diff = waistCm + hipCm - neckCm;
+            if (diff > 0) {
+              fat = 495 / (1.29579 - 0.35004 * Math.log10(diff) + 0.22100 * Math.log10(heightCm)) - 450;
+            }
+          }
+          fat = Math.max(2, Math.min(fat, 60));
+          const fatM = weightKg * (fat / 100);
+          const dFatM = currentUnitSystem === 'imperial' ? fatM * 2.20462 : fatM;
+
+          calculated = {
+            primary: { value: fat.toFixed(1), label: { en: 'Body Fat', es: 'Porcentaje de Grasa', fr: 'Taux de Matière Grasse', de: 'Körperfettanteil', ko: '체지방량 비율', hi: 'शारीरिक वसा प्रतिशत' }, unit: '%' },
+            secondary: [
+              { label: { en: 'Fat Mass', es: 'Masa Grasa', fr: 'Masse Grasse', de: 'Fettmasse', ko: '지방 질량', hi: 'वसा द्रव्यमान' }, value: dFatM.toFixed(1), unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
+              { label: { en: 'Lean Mass Ratio', es: 'Masa Magra', fr: 'Masse Maigre', de: 'Fettfreie Masse', ko: '제지방체중', hi: 'लीन मास अनुपात' }, value: (100 - fat).toFixed(1), unit: '%' }
+            ]
+          };
+        } 
+        else if (slug === 'lean-body-mass-calculator') {
+          const lbm = isM
+            ? 0.407 * weightKg + 0.267 * heightCm - 19.2
+            : 0.252 * weightKg + 0.473 * heightCm - 48.3;
+          const l = Math.max(0, lbm);
+          const fat = weightKg - l;
+
+          const dL = currentUnitSystem === 'imperial' ? l * 2.20462 : l;
+          const dF = currentUnitSystem === 'imperial' ? fat * 2.20462 : fat;
+
+          calculated = {
+            primary: { value: dL.toFixed(1), label: { en: 'Lean Body Mass', es: 'Masa Corporal Magra', fr: 'Masse Maigre', de: 'Fettfreie Masse', ko: '제지방 실량', hi: 'लीन बॉडी mass' }, unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
+            secondary: [
+              { label: { en: 'Fat Mass', es: 'Masa Grasa', fr: 'Masse Grasse', de: 'Fettmasse', ko: '지방 질량', hi: 'वसा द्रव्यमान' }, value: dF.toFixed(1), unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
+              { label: { en: 'Lean Mass Ratio', es: 'Proporción de Masa Magra', fr: 'Proportion de Masse Maigre', de: 'Prozentualer LBM', ko: '제지방 비율', hi: 'लीन मास अनुपात' }, value: ((l / weightKg) * 100).toFixed(1), unit: '%' }
+            ]
+          };
+        } 
+        else if (slug === 'ideal-weight-calculator') {
+          const hInches = heightCm / 2.54;
+          const over5Ft = Math.max(0, hInches - 60);
+
+          const devine = isM ? 50.0 + (2.3 * over5Ft) : 45.5 + (2.3 * over5Ft);
+          const robinson = isM ? 52.0 + (1.9 * over5Ft) : 49.0 + (1.7 * over5Ft);
+
+          const dDev = currentUnitSystem === 'imperial' ? devine * 2.20462 : devine;
+          const dRob = currentUnitSystem === 'imperial' ? robinson * 2.20462 : robinson;
+
+          calculated = {
+            primary: { value: dDev.toFixed(1), label: { en: 'Ideal Weight (Devine)', es: 'Peso Ideal (Devine)', fr: 'Poids Idéal (Devine)', de: 'Gewicht (Devine)', ko: '권장 권고 체중(Devine)', hi: 'आदर्श वजन (Devine)' }, unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
+            secondary: [
+              { label: { en: 'Robinson Formula', es: 'Fórmula Robinson', fr: 'Formule Robinson', de: 'Robinson-Formel', ko: '로빈슨 공식 결과', hi: 'रॉबीन्सन फॉर्मूला' }, value: dRob.toFixed(1), unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' }
+            ]
+          };
+        } 
+        else if (slug === 'calorie-calculator') {
+          const act = parseFloat(activityVal) || 1.2;
+          const bmr = isM
+            ? (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) + 5
+            : (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) - 161;
+          const tdee = bmr * act;
+
+          let targetCal = tdee;
+          if (goalVal === 'lose') targetCal = tdee - 500;
+          else if (goalVal === 'gain') targetCal = tdee + 500;
+
+          calculated = {
+            primary: { value: Math.round(targetCal), label: { en: 'Target Daily Calories', es: 'Objetivo Diario Calorías', fr: 'Objectif Calorique Journalier', de: 'Tägliche Zielkalorien', ko: '목표 일일 칼로리 수치', hi: 'लक्षित दैनिक कैलोरी' }, unit: 'kcal/day' },
+            secondary: [
+              { label: { en: 'Maintenance (TDEE)', es: 'Mantenimiento', fr: 'Maintenance', de: 'Erhaltungskalorien', ko: '유지 에너지(TDEE)', hi: 'रक्षित कैलोरी' }, value: Math.round(tdee), unit: 'kcal' },
+              { label: { en: 'Basal Burn (BMR)', es: 'Metabolismo Basal', fr: 'Métabolisme de Base', de: 'Grundumsatz BMR', ko: '기초적인 대사 에너지(BMR)', hi: 'बेसल बर्न (BMR)' }, value: Math.round(bmr), unit: 'kcal' }
+            ]
+          };
+        } 
+        else if (slug === 'protein-intake-calculator') {
+          let factor = 1.6;
+          if (goalVal === 'lose') factor = 2.0;
+          else if (goalVal === 'gain') factor = 2.2;
+
+          const protein = weightKg * factor;
+
+          calculated = {
+            primary: { value: Math.round(protein), label: { en: 'Protein Target', es: 'Objetivo de Proteína', fr: 'Objectif Protéines', de: 'Zielzufuhr Eiweiß', ko: '목표 단백질 중량', hi: 'प्रोटीन लक्ष्य' }, unit: 'g/day' },
+            secondary: [
+              { label: { en: 'Minimum Threshold', es: 'Consumo Mínimo', fr: 'Seuil Minimum', de: 'Mindestbedarf (DGE)', ko: '최소 단백질 권장량', hi: 'न्यूनतम सीमा' }, value: Math.round(weightKg * 0.8), unit: 'g' },
+              { label: { en: 'Athletic Intake', es: 'Consumo Atlético', fr: 'Athlètes Actifs', de: 'Leistungssportler', ko: '활동성 집중 섭취량', hi: 'एथलेटिक सेवन' }, value: Math.round(weightKg * 2.4), unit: 'g' }
+            ]
+          };
+        } 
+        else if (slug === 'water-intake-calculator') {
+          let waterMl = weightKg * 35;
+          if (activityVal === 'active') waterMl += 750;
+
+          calculated = {
+            primary: { value: (waterMl / 1000).toFixed(2), label: { en: 'Water Target', es: 'Objetivo de Agua', fr: 'Objectif d\'Hydratation', de: 'Täglicher Wasserbedarf', ko: '목표 수분 섭취량', hi: 'पानी का लक्ष्य' }, unit: 'Liters/day' },
+            secondary: [
+              { label: { en: 'Standard Glasses (250ml)', es: 'Vasos Estándar (250ml)', fr: 'Verres Standards', de: 'Gläser (250ml)', ko: '일반 컵 횟수 (250ml)', hi: 'मानक गिलास (250 मिली)' }, value: Math.round(waterMl / 250) }
+            ]
+          };
+        } 
+        else if (slug === 'macro-calculator') {
+          const act = parseFloat(activityVal) || 1.2;
+          const bmr = isM
+            ? (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) + 5
+            : (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) - 161;
+          const tdee = bmr * act;
+
+          let carbsPct = 0.4, protPct = 0.3, fatPct = 0.3;
+          if (goalVal === 'lowcarb') { carbsPct = 0.2; protPct = 0.4; fatPct = 0.4; }
+          else if (goalVal === 'highprotein') { carbsPct = 0.35; protPct = 0.4; fatPct = 0.25; }
+
+          const carbG = (tdee * carbsPct) / 4;
+          const protG = (tdee * protPct) / 4;
+          const fatG = (tdee * fatPct) / 9;
+
+          calculated = {
+            primary: { value: Math.round(tdee), label: { en: 'Daily Calories Target', es: 'Calorías Objetivo', fr: 'Calories Cibles', de: 'Tagesbedarf Kalorien', ko: '하루 소비 점수', hi: 'दैनिक कैलोरी लक्ष्य' }, unit: 'kcal/day' },
+            secondary: [
+              { label: { en: 'Carbohydrates', es: 'Carbohidratos', fr: 'Glucides', de: 'Kohlenhydrate', ko: '탄수화물', hi: 'कार्बोहाइड्रेट' }, value: Math.round(carbG), unit: 'g' },
+              { label: { en: 'Protein', es: 'Proteínas', fr: 'Protéines', de: 'Protein (Eiweiß)', ko: '단백질', hi: 'प्रोटीन' }, value: Math.round(protG), unit: 'g' },
+              { label: { en: 'Fat', es: 'Grasas', fr: 'Lipides', de: 'Fett', ko: '지방', hi: 'वसा' }, value: Math.round(fatG), unit: 'g' }
+            ]
+          };
+        } 
+        else if (slug === 'waist-to-hip-ratio-calculator') {
+          const whr = waistCm / hipCm;
+          let risk = { en: 'Low', es: 'Bajo', fr: 'Faible', de: 'Gering', ko: '낮음', hi: 'कम' };
+          if (isM) {
+            if (whr >= 0.9 && whr < 1.0) risk = { en: 'Moderate', es: 'Moderado', fr: 'Modéré', de: 'Mäßig', ko: '보통', hi: 'मध्यम' };
+            else if (whr >= 1.0) risk = { en: 'High', es: 'Alto', fr: 'Élevé', de: 'Hoch', ko: '높음', hi: 'उच्च' };
+          } else {
+            if (whr >= 0.8 && whr < 0.85) risk = { en: 'Moderate', es: 'Moderado', fr: 'Modéré', de: 'Mäßig', ko: '보통', hi: 'मध्यम' };
+            else if (whr >= 0.85) risk = { en: 'High', es: 'Alto', fr: 'Élevé', de: 'Hoch', ko: '높음', hi: 'उच्च' };
+          }
+
+          calculated = {
+            primary: { value: whr.toFixed(2), label: { en: 'Waist-to-Hip Ratio', es: 'Proporción Cintura-Cadera', fr: 'Rapport WHR', de: 'Taille-Hüft-Verhältnis', ko: '허리 대비 엉덩이 비', hi: 'कमर से कूल्हे का अनुपात' } },
+            secondary: [
+              { label: { en: 'Health Risk Level', es: 'Nivel de Riesgo', fr: 'Niveau de Risque', de: 'Risikostufe', ko: '비만 신체 리스크', hi: 'स्वास्थ्य जोखिम स्तर' }, value: risk.en }
+            ]
+          };
+        } 
+        else if (slug === 'body-surface-area-calculator') {
+          const bsa = Math.sqrt((heightCm * weightKg) / 3600);
+
+          calculated = {
+            primary: { value: bsa.toFixed(2), label: { en: 'Body Surface Area', es: 'Superficie Corporal', fr: 'Surface Corporelle', de: 'Körperoberfläche', ko: '체표면적 수치', hi: 'बॉडी सरफेस एरिया' }, unit: 'm²' },
+            secondary: [
+              { label: { en: 'Weight Input', es: 'Peso Registrado', fr: 'Poids Entré', de: 'Eingegebenes Gewicht', ko: '몸무게 설정값', hi: 'वजन इनपुट' }, value: weightKg.toFixed(1), unit: 'kg' },
+              { label: { en: 'Height Input', es: 'Altura Registrada', fr: 'Taille Entrée', de: 'Eingegebene Größe', ko: '신장 설정값', hi: 'ऊंचाई इनपुट' }, value: heightCm.toFixed(1), unit: 'cm' }
+            ]
+          };
+        } 
+        else if (slug === 'heart-rate-zone-calculator') {
+          const maxHr = 220 - ageNum;
+
+          calculated = {
+            primary: { value: maxHr, label: { en: 'Max Heart Rate', es: 'Frecuencia Cardíaca Máxima', fr: 'Fréquence Cardiaque Max', de: 'Maximale Herzfrequenz', ko: '최대 심박수', hi: 'अधिकतम हार्ट रेट' }, unit: 'bpm' },
+            secondary: [
+              { label: { en: 'Fat Burn (60-70%)', es: 'Zona Quema Grasa (60-70%)', fr: 'Brule Graisse (60-70%)', de: 'Fettverbrennung (60-70%)', ko: '체지방 연소 구간 (60-70%)', hi: 'फैट बर्न (60-70%)' }, value: `${Math.round(maxHr * 0.6)} - ${Math.round(maxHr * 0.7)}`, unit: 'bpm' },
+              { label: { en: 'Aerobic (70-80%)', es: 'Zona Cardio (70-80%)', fr: 'Cardio (70-80%)', de: 'Fitness/Ausdauer (70-80%)', ko: '유산소 운동 구간 (70-80%)', hi: 'एरोबिक (70-80%)' }, value: `${Math.round(maxHr * 0.7)} - ${Math.round(maxHr * 0.8)}`, unit: 'bpm' }
+            ]
+          };
+        } 
+        else if (slug === 'one-rep-max-calculator') {
+          const liftW = parseFloat(val('weight')) || 0;
+          const reps = parseInt(ageVal) || 1;
+          const oneRepMax = liftW * (1 + (reps / 30));
+
+          calculated = {
+            primary: { value: Math.round(oneRepMax), label: { en: 'Estimated 1RM', es: '1RM Estimado', fr: '1RM Estimé', de: 'Berechneter 1RM', ko: '추정 1RM 무게', hi: 'अनुमानित 1RM' }, unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
+            secondary: [
+              { label: { en: '85% Maximum (approx 5-6 Reps)', es: '85% del Máximo', fr: '85% de la force', de: '85% der Maximalkraft', ko: '85% 훈련 무게 (5~6회)', hi: '85% अधिकतम' }, value: Math.round(oneRepMax * 0.85), unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' }
+            ]
+          };
+        } 
+        else if (slug === 'pregnancy-weight-gain-calculator') {
+          const curW = parseFloat(val('weight')) || 0;
+          const preW = parseFloat(val('height')) || 0;
+          const week = parseInt(ageVal) || 1;
+
+          const diff = curW - preW;
+          const minGain = (week / 40) * 11.5;
+          const maxGain = (week / 40) * 16.0;
+
+          calculated = {
+            primary: { value: diff.toFixed(1), label: { en: 'Current Gain', es: 'Ganancia Actual', fr: 'Gain Actuel', de: 'Aktuelle Zunahme', ko: '현재 증량 무게', hi: 'वर्तमान वजन बढ़ना' }, unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
+            secondary: [
+              { label: { en: 'Target Range for Week', es: 'Rango Recomendado para la Semana', fr: 'Fourchette Cible pour la Semaine', de: 'Empfohlene Zunahme für diese Woche', ko: '해당 주수의 적정 권장 범위', hi: 'सप्ताह के लिए लक्षित सीमा' }, value: `${minGain.toFixed(1)} - ${maxGain.toFixed(1)}`, unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' }
+            ]
+          };
+        }
+
+        if (calculated) {
+          window.dispatchEvent(new CustomEvent('calculationCompleted', { detail: calculated }));
+
+          // Scroll to result on mobile
+          if (window.innerWidth < 1024) {
+            setTimeout(() => {
+              const el = document.getElementById('resultStudio');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+          }
+        }
+      });
+    }
+  })();
+</script>

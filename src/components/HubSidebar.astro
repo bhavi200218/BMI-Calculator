@@ -1,0 +1,83 @@
+---
+import { calculators, type Locale } from '../utils/calculators';
+
+interface Props {
+  currentSlug: string;
+  lang: Locale;
+}
+
+const { currentSlug, lang } = Astro.props;
+---
+
+<div class="space-y-6">
+  <div class="px-2">
+    <h3 class="text-xs font-display font-semibold uppercase tracking-[0.25em] text-[var(--accent)] mb-2">
+      {
+        {
+          en: 'Health Tools Hub',
+          es: 'Calculadoras de Salud',
+          fr: 'Outils de Santé',
+          de: 'Gesundheitsrechner',
+          ko: '건강 도구 허브',
+          hi: 'स्वास्थ्य उपकरण सूची'
+        }[lang]
+      }
+    </h3>
+    <p class="text-xs text-[var(--muted-foreground)] opacity-70">
+      {
+        {
+          en: 'Calculate key body metrics instantly.',
+          es: 'Calcula métricas clave al instante.',
+          fr: 'Simulez vos indicateurs clés.',
+          de: 'Körperdaten direkt berechnen.',
+          ko: '핵심 건강 수치를 즉시 계산하세요.',
+          hi: 'शरीर के आवश्यक मापों की गणना करें।'
+        }[lang]
+      }
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 max-h-[480px] lg:max-h-[600px] overflow-y-auto pr-1 melove-scrollbar">
+    {calculators.map(calc => {
+      const isActive = calc.slug === currentSlug;
+      const url = `/${lang}/${calc.slug}`;
+      const name = calc.name[lang] || calc.name['en'];
+      
+      return (
+        <a href={url} class={`flex items-center justify-between p-4 rounded-[var(--radius-sm)] border text-left transition-all duration-200 hover:-translate-y-0.5 cursor-pointer ${
+          isActive 
+            ? 'bg-[var(--accent)] border-[var(--accent)] text-[var(--accent-foreground)] shadow-[var(--shadow-accent)]' 
+            : 'bg-[var(--card)] border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--card-hover)]'
+        }`}>
+          <div class="space-y-0.5 pr-2">
+            <p class="text-sm font-display font-bold uppercase tracking-tight line-clamp-1">{name}</p>
+            <p class={`text-[10px] line-clamp-1 font-sans ${isActive ? 'text-[var(--accent-foreground)]/80' : 'text-[var(--muted-foreground)]'}`}>
+              {calc.description[lang] || calc.description['en']}
+            </p>
+          </div>
+          <svg class={`w-4 h-4 shrink-0 transition-transform ${isActive ? 'translate-x-0.5' : 'opacity-40 group-hover:translate-x-0.5'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      );
+    })}
+  </div>
+</div>
+
+<style>
+  /* Custom scrollbar matching MELOVE styles */
+  .melove-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  .melove-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .melove-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 99px;
+  }
+  .melove-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+  }
+</style>

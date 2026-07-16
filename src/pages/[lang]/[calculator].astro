@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import UniversalCalculator from '../../components/UniversalCalculator.astro';
+import CalculatorResult from '../../components/CalculatorResult.astro';
+import HubSidebar from '../../components/HubSidebar.astro';
+import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
+
+// Define static paths for all 15 calculators across 6 languages
+export function getStaticPaths() {
+  const paths: any[] = [];
+  for (const lang of locales) {
+    for (const calc of calculators) {
+      paths.push({
+        params: { lang, calculator: calc.slug },
+        props: { calc, lang }
+      });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  calc: CalculatorConfig;
+  lang: Locale;
+}
+
+const { calc, lang } = Astro.props;
+
+const pageTitle = calc.title[lang] || calc.title['en'];
+const pageDesc = calc.description[lang] || calc.description['en'];
+const canonicalUrl = `https://realbmicalculator.com/${lang}/${calc.slug}`;
+
+// WebApplication Schema for SEO
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": calc.name[lang] || calc.name['en'],
+  "url": canonicalUrl,
+  "description": pageDesc,
+  "applicationCategory": "HealthApplication",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
+  "operatingSystem": "All"
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDesc}
+  canonicalURL={canonicalUrl}
+>
+  <!-- Inject WebApplication JSON-LD dynamically inside Layout context -->
+  <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} slot="json-ld"></script>
+  
+  <Navbar />
+  
+  <main class="pt-26 md:pt-30 pb-20 px-4 md:px-6 relative overflow-x-hidden">
+    <div class="max-w-7xl mx-auto space-y-12">
+      
+      <!-- Top Header text -->
+      <div class="text-center space-y-4 max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] animate-in" style="animation-delay:0ms">
+          {calc.name[lang] || calc.name['en']}
+        </h1>
+        <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-sans font-medium animate-in max-w-2xl mx-auto" style="animation-delay:50ms">
+          {pageDesc} Built for quick health analytics and compliance. Real-time computations.
+        </p>
+      </div>
+
+      <!-- Core Hub Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+        
+        <!-- Sidebar Selector column (Span 1) -->
+        <aside class="lg:col-span-1 glass-card p-6 animate-in" style="animation-delay:100ms">
+          <HubSidebar currentSlug={calc.slug} lang={lang} />
+        </aside>
+
+        <!-- Main Interactive Calculator Area (Span 3: Calculator Left, Result Right) -->
+        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch animate-in" style="animation-delay:150ms">
+          <UniversalCalculator calculator={calc} lang={lang} />
+          <CalculatorResult lang={lang} />
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</Layout>

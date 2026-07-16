@@ -14,10 +14,12 @@ const {
 	title = "BMI Calculator | Real BMI – Most Accurate Body Mass Index Tool", 
 	description = "Calculate your Body Mass Index (BMI) with clinical precision. Real BMI Calculator provides instant results for BMI, BMR, and TDEE. Perfect for men, women, and athletes following WHO & CDC standards.",
 	keywords = "bmi calculator, real bmi calculator, body mass index calculator, bmi calculator for men, bmi calculator for women, accurate bmi calculator, calculate bmi, bmi chart, health calculator, bmr calculator, tdee calculator, weight loss tracker",
-	ogImage = "/seo-dark.png"
+	ogImage = "/seo-dark.png",
+	canonicalURL: customCanonicalURL
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, 'https://realbmicalculator.com').href;
+const canonicalURL = customCanonicalURL || new URL(Astro.url.pathname, 'https://realbmicalculator.com').href;
+const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `https://realbmicalculator.com${ogImage}`;
 const { currentLocale } = Astro;
 
 // FAQ Schema for Search Snippets
@@ -89,6 +91,7 @@ const howToSchema = {
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		
 		<!-- Favicons -->
+		<link rel="icon" href="/favicon.ico" sizes="any" />
 		<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'%3E%3Crect width='32' height='32' rx='8' fill='%23E8674A'/%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z' fill='white' transform='translate(4, 4)'/%3E%3C/svg%3E" />
 		<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'%3E%3Crect width='32' height='32' rx='8' fill='%23E8674A'/%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z' fill='white' transform='translate(4, 4)'/%3E%3C/svg%3E" />
 		<meta name="apple-mobile-web-app-title" content="Real BMI" />
@@ -117,14 +120,14 @@ const howToSchema = {
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={ogImage} />
+		<meta property="og:image" content={ogImageAbsolute} />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={canonicalURL} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={ogImage} />
+		<meta property="twitter:image" content={ogImageAbsolute} />
 		
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -177,7 +180,7 @@ const howToSchema = {
 				"@type": "Organization",
 				"name": "Real BMI Calculator",
 				"url": "https://realbmicalculator.com",
-				"logo": "https://realbmicalculator.com/icon.svg"
+				"logo": "https://realbmicalculator.com/favicon.svg"
 			}
 		</script>
 

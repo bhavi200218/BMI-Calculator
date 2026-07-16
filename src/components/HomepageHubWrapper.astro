@@ -1,0 +1,175 @@
+---
+import type { Locale } from '../utils/calculators';
+import { calculators, getCalculatorTranslations } from '../utils/calculators';
+import UniversalCalculator from './UniversalCalculator.astro';
+import CalculatorResult from './CalculatorResult.astro';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = getCalculatorTranslations(lang);
+
+// Localized helper text for selector
+const selectorLabel = {
+  en: 'Choose Health Tool',
+  es: 'Seleccionar herramienta',
+  fr: 'Choisir un outil',
+  de: 'Rechner auswählen',
+  ko: '건강 도구 선택',
+  hi: 'स्वास्थ्य उपकरण चुनें'
+}[lang];
+
+const selectLabel = {
+  en: '── Select a Calculator ──',
+  es: '── Selecciona una calculadora ──',
+  fr: '── Choisir un calculateur ──',
+  de: '── Rechner auswählen ──',
+  ko: '── 분석 계산기 선택 ──',
+  hi: '── एक कैलकुलेटर चुनें ──'
+}[lang];
+---
+
+<div class="space-y-8 animate-in" style="animation-delay: 150ms;">
+  
+  <!-- Interactive Selector Options -->
+  <div class="space-y-4">
+    <div class="flex items-center justify-between">
+      <h3 class="text-sm font-display font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">
+        {selectorLabel}
+      </h3>
+    </div>
+
+    <!-- Dropdown for Mobile -->
+    <div class="block md:hidden relative">
+      <select id="calculatorDropdownSelector" class="matte-input w-full px-4 py-3.5 text-base font-bold rounded-[var(--radius-sm)] cursor-pointer h-[56px] border-[1.5px] border-[var(--border)] bg-[var(--input)] text-[var(--foreground)]">
+        <option value="" disabled selected>{selectLabel}</option>
+        {calculators.map(calc => (
+          <option value={calc.slug}>
+            {calc.name[lang] || calc.name['en']}
+          </option>
+        ))}
+      </select>
+    </div>
+
+    <!-- Horizontal Pill Scrollbar / Grid for Desktops -->
+    <div class="hidden md:grid grid-cols-3 lg:grid-cols-5 gap-3">
+      {calculators.map(calc => (
+        <button
+          data-slug={calc.slug}
+          class="calc-tab-btn p-4 rounded-xl border text-center transition-all duration-300 cursor-pointer flex flex-col justify-center items-center gap-1.5 h-[90px] border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)]/50 hover:bg-[var(--muted)] hover:text-[var(--foreground)]"
+        >
+          <span class="text-sm font-display font-bold uppercase tracking-tight line-clamp-2">
+            {calc.name[lang] || calc.name['en']}
+          </span>
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <!-- Main Calculator Form & Result Studio Layout -->
+  <div id="calculatorFormGrid" class="hidden grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch pt-6 border-t border-[var(--border)]/40 scroll-mt-28">
+    <!-- Calculator Forms Container -->
+    <div class="relative w-full">
+      {calculators.map(calc => (
+        <div 
+          id={`calc-wrapper-${calc.slug}`} 
+          class="calc-wrapper-item w-full hidden"
+        >
+          <UniversalCalculator calculator={calc} lang={lang} />
+        </div>
+      ))}
+    </div>
+
+    <!-- Result Studio (Unified) -->
+    <div class="h-full">
+      <CalculatorResult lang={lang} />
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .calc-tab-btn {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    let activeSlug = null;
+
+    function switchCalculator(slug) {
+      if (!slug) return;
+
+      const gridContainer = document.getElementById('calculatorFormGrid');
+      if (gridContainer) {
+        gridContainer.classList.remove('hidden');
+      }
+
+      // Hide old one
+      if (activeSlug) {
+        const oldWrapper = document.getElementById('calc-wrapper-' + activeSlug);
+        if (oldWrapper) oldWrapper.classList.add('hidden');
+      }
+
+      // Show new one
+      const newWrapper = document.getElementById('calc-wrapper-' + slug);
+      if (newWrapper) {
+        newWrapper.classList.remove('hidden');
+      }
+
+      // Update Desktop Tabs visual state
+      const tabs = document.querySelectorAll('.calc-tab-btn');
+      tabs.forEach(tab => {
+        const tabSlug = tab.getAttribute('data-slug');
+        if (tabSlug === slug) {
+          tab.classList.add('border-[var(--accent)]', 'bg-[var(--accent)]/10', 'text-[var(--foreground)]', 'shadow-[var(--shadow-accent)]');
+          tab.classList.remove('border-[var(--border)]', 'bg-[var(--card)]', 'text-[var(--muted-foreground)]');
+        } else {
+          tab.classList.remove('border-[var(--accent)]', 'bg-[var(--accent)]/10', 'text-[var(--foreground)]', 'shadow-[var(--shadow-accent)]');
+          tab.classList.add('border-[var(--border)]', 'bg-[var(--card)]', 'text-[var(--muted-foreground)]');
+        }
+      });
+
+      // Sync Mobile Dropdown selection
+      const dropdown = document.getElementById('calculatorDropdownSelector');
+      if (dropdown) {
+        dropdown.value = slug;
+      }
+
+      // Reset result studio state to waiting if switching tools
+      if (slug !== activeSlug) {
+        window.dispatchEvent(new CustomEvent('calculationCompleted', { detail: null }));
+      }
+
+      activeSlug = slug;
+
+      // Scroll smoothly to form grid if not already in view
+      if (gridContainer) {
+        setTimeout(() => {
+          gridContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
+      }
+    }
+
+    // Set Up Desktop Tab Listeners
+    const tabs = document.querySelectorAll('.calc-tab-btn');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const slug = tab.getAttribute('data-slug');
+        switchCalculator(slug);
+      });
+    });
+
+    // Set Up Mobile Dropdown Listener
+    const dropdown = document.getElementById('calculatorDropdownSelector');
+    if (dropdown) {
+      dropdown.addEventListener('change', (e) => {
+        switchCalculator(e.target.value);
+      });
+    }
+  })();
+</script>

@@ -1,0 +1,152 @@
+---
+import { getCalculatorTranslations, type Locale } from '../utils/calculators';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = getCalculatorTranslations(lang);
+---
+
+<div id="resultStudio" class="melove-result-card flex flex-col h-full overflow-hidden">
+
+  <!-- ── INITIAL STATE ─────────────────────────── -->
+  <div id="initialState" class="flex-1 flex flex-col items-center justify-center gap-6 p-10 text-center min-h-[300px]">
+    <div class="w-20 h-20 rounded-full border-2 border-dashed border-[var(--border)] flex items-center justify-center">
+      <svg class="w-8 h-8 text-[var(--muted-foreground)] opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    </div>
+    <div class="space-y-3">
+      <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.metricsTitle}</p>
+      <p class="text-base text-[var(--muted-foreground)] font-medium opacity-70">{t.waiting}</p>
+    </div>
+  </div>
+
+  <!-- ── RESULT STATE ──────────────────────────── -->
+  <div id="resultContent" class="hidden flex-1 flex flex-col">
+
+    <!-- Top Bar -->
+    <div class="flex items-center justify-between gap-4 p-8 md:px-10 md:pt-10 pb-5 border-b border-[var(--border)]">
+      <div>
+        <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.metricsTitle}</p>
+        <h3 id="resultHeaderLabel" class="text-2xl font-display font-bold uppercase text-[var(--foreground)]">--</h3>
+      </div>
+      <span id="primaryUnitLabel" class="px-5 py-2 rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] text-xs font-display font-semibold uppercase tracking-widest whitespace-nowrap shadow-[var(--shadow-accent)]">
+        --
+      </span>
+    </div>
+
+    <!-- Big Score Display -->
+    <div class="flex-1 flex flex-col justify-between p-7 md:px-10 md:pb-10 space-y-8">
+
+      <div class="text-center py-4">
+        <div id="primaryDisplay" class="text-[5.5rem] md:text-[6.5rem] font-display font-bold tracking-tighter leading-none text-[var(--foreground)]">
+          --
+        </div>
+        <p id="primaryNameLabel" class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--muted-foreground)] mt-4">--</p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div id="secondaryGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Rendered dynamically on custom event -->
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="grid grid-cols-2 gap-4 pt-2">
+        <button id="copyBtn" class="py-5 rounded-[var(--radius-sm)] bg-[var(--muted)] border-[1.5px] border-[var(--border)] text-xs font-display font-semibold uppercase tracking-widest hover:border-[var(--accent)] hover:bg-[var(--card-hover)] transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer">
+          <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+          {lang === 'es' ? 'Copiar' : lang === 'fr' ? 'Copier' : lang === 'de' ? 'Kopieren' : lang === 'ko' ? '복사' : lang === 'hi' ? 'कॉपी करें' : 'Copy'}
+        </button>
+        <button id="shareBtn" class="py-5 rounded-[var(--radius-sm)] bg-[var(--foreground)] text-[var(--background)] text-xs font-display font-semibold uppercase tracking-widest hover:opacity-85 transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer shadow-[var(--shadow-card)]">
+          <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+          {lang === 'es' ? 'Compartir' : lang === 'fr' ? 'Partager' : lang === 'de' ? 'Teilen' : lang === 'ko' ? '공유' : lang === 'hi' ? 'साझा करें' : 'Share'}
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .melove-result-card {
+    background: var(--card);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: box-shadow 0.2s ease;
+    min-height: 480px;
+  }
+</style>
+
+<script is:inline>
+  let lastCalcResult = null;
+
+  window.addEventListener('calculationCompleted', (e) => {
+    lastCalcResult = e.detail;
+    renderCalcOutput();
+  });
+
+  function renderCalcOutput() {
+    if (!lastCalcResult) return;
+    const { primary, secondary } = lastCalcResult;
+
+    document.getElementById('initialState').classList.add('hidden');
+    const rc = document.getElementById('resultContent');
+    rc.classList.remove('hidden');
+    rc.classList.add('animate-in');
+
+    const lang = document.documentElement.lang || 'en';
+    const primaryLabel = primary.label[lang] || primary.label['en'];
+
+    document.getElementById('resultHeaderLabel').textContent = primaryLabel;
+    document.getElementById('primaryUnitLabel').textContent = primary.unit || '';
+    document.getElementById('primaryDisplay').textContent = primary.value;
+    document.getElementById('primaryNameLabel').textContent = primaryLabel;
+
+    const grid = document.getElementById('secondaryGrid');
+    grid.innerHTML = secondary.map(s => {
+      const label = s.label[lang] || s.label['en'];
+      const valStr = s.value;
+      const unitStr = s.unit ? `<span class="text-xs font-sans font-medium opacity-40">${s.unit}</span>` : '';
+      return `
+        <div class="p-5 rounded-[var(--radius-sm)] bg-[var(--muted)] border border-[var(--border)] space-y-1.5 hover:border-[var(--accent)] transition-colors duration-200">
+          <p class="text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)] opacity-70">${label}</p>
+          <p class="text-xl font-display font-bold text-[var(--foreground)]">
+            ${valStr} ${unitStr}
+          </p>
+        </div>
+      `;
+    }).join('');
+
+    // Share Click
+    document.getElementById('shareBtn').onclick = async () => {
+      try {
+        await navigator.share({
+          title: primaryLabel,
+          text: `${primaryLabel}: ${primary.value} ${primary.unit || ''}`,
+          url: location.href
+        });
+      } catch {}
+    };
+
+    // Copy Click
+    document.getElementById('copyBtn').onclick = () => {
+      let report = `${primaryLabel}: ${primary.value} ${primary.unit || ''}\n`;
+      secondary.forEach(s => {
+        const label = s.label[lang] || s.label['en'];
+        report += `${label}: ${s.value} ${s.unit || ''}\n`;
+      });
+
+      navigator.clipboard.writeText(report).then(() => {
+        const btn = document.getElementById('copyBtn');
+        const orig = btn.innerHTML;
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => btn.innerHTML = orig, 2000);
+      });
+    };
+  }
+</script>
