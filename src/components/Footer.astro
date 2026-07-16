@@ -24,8 +24,8 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalText: '',
     copyright: `© ${year} Real BMI Calculator`,
     links: [
-      { name: 'About', href: `/en/about` },
-      { name: 'Contact', href: `/en/contact` },
+      { name: 'About Us', href: `/en/about` },
+      { name: 'Contact Us', href: `/en/contact` },
       { name: 'Privacy Policy', href: `/en/privacy-policy` },
       { name: 'Terms & Conditions', href: `/en/terms-conditions` },
       { name: 'Disclaimer', href: `/en/disclaimer` },
@@ -158,7 +158,7 @@ const healthToolsLinks = calculators.map((calc, index) => ({
   <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6">
 
     <!-- Top row: brand + links -->
-    <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[220px_minmax(0,1fr)_240px] mb-4">
+    <div class="grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-[220px_minmax(0,1fr)_240px] lg:gap-x-10 mb-4">
 
       <!-- Brand block -->
       <div class="space-y-1 mb-5 sm:mb-0">
@@ -176,8 +176,8 @@ const healthToolsLinks = calculators.map((calc, index) => ({
       </div>
 
       <!-- Health Tools Hub -->
-      <div class="space-y-1 md:col-start-2 md:justify-self-end md:pr-4 lg:col-auto">
-        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{healthToolsLabel}</p>
+      <div class="space-y-1 lg:justify-self-end lg:self-start md:pr-4">
+        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] mb-4">{healthToolsLabel}</p>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-3 gap-y-2">
           {healthToolsLinks.map(link => (
             <a href={link.href} class="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 truncate">
@@ -189,7 +189,7 @@ const healthToolsLinks = calculators.map((calc, index) => ({
 
       {ft.legalText && (
         <div class="space-y-2 lg:col-start-3">
-          <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.legalStatus}</p>
+          <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] mb-4">{ft.legalStatus}</p>
           <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">
             {ft.legalText}
           </p>
@@ -197,8 +197,8 @@ const healthToolsLinks = calculators.map((calc, index) => ({
       )}
 
       <!-- Quick Links -->
-      <div class="space-y-1 lg:col-span-1 lg:justify-self-end md:col-start-2 md:justify-self-start md:pl-0 mt-4 sm:mt-0">
-        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.quickLinks}</p>
+      <div class="space-y-1 lg:justify-self-end lg:self-start mt-4 sm:mt-0">
+        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] mb-4">{ft.quickLinks}</p>
         <div class="grid gap-y-2 gap-x-3">
           {ft.links.map(link => (
             <a href={link.href} class="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200">
