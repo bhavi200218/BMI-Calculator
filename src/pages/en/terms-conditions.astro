@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
@@ -8,38 +9,33 @@ import Navbar from '../../components/Navbar.astro';
     description="Review the terms and conditions for using the Real BMI precision health calculator."
 >
     <Navbar />
-    <main class="pt-40 pb-20 px-6 min-h-screen">
-        <div class="max-w-4xl mx-auto glass-card p-8 md:p-16 space-y-12 border-2 border-[var(--border)]">
-            <div class="space-y-4">
-                <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--accent)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                    Return Home
-                </a>
-                <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase text-[var(--foreground)]">Terms and Conditions</h1>
-                <p class="text-xs font-black uppercase tracking-[0.3em] text-[var(--accent)]">Professional Standards</p>
-            </div>
-
-            <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-medium opacity-85">
-                <p>
-                    These Terms and Conditions govern your use of <span class="text-[var(--foreground)]">Real BMI</span>. By accessing our calculators and content, you agree to these terms and acknowledge that our service is provided for informational and educational purposes.
-                </p>
-                <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Use of the Service</h2>
-                <p>
-                    You may use Real BMI to explore BMI, BMR, TDEE, and body composition estimates. The tool is intended for personal health awareness and should not be used as a substitute for professional medical advice.
-                </p>
-                <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Accuracy & Limitations</h2>
-                <p>
-                    Our calculators are built to deliver precise estimates, but individual results may vary. Real BMI is not a medical device, and the output should be used alongside professional guidance.
-                </p>
-                <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Intellectual Property</h2>
-                <p>
-                    All content, design, and calculator logic on Real BMI are protected by copyright and may not be copied or republished without permission.
-                </p>
-                <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Changes to Terms</h2>
-                <p>
-                    We may update these terms over time. Continued use of the site after changes indicates your acceptance of the revised terms.
-                </p>
-            </div>
+    <PageShell
+        title="Terms & Conditions"
+        eyebrow="Professional standards"
+        description="Review the terms of use for Real BMI’s calculators, health tools, and privacy-forward experience."
+        returnUrl="/en"
+        returnLabel="Home"
+    >
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-medium opacity-85">
+            <p>
+                These Terms and Conditions govern your use of <span class="text-[var(--foreground)]">Real BMI</span>. By accessing our calculators and content, you agree to these terms and acknowledge that our service is provided for informational and educational purposes.
+            </p>
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Use of the Service</h2>
+            <p>
+                You may use Real BMI to explore BMI, BMR, TDEE, and body composition estimates. The tool is intended for personal health awareness and should not be used as a substitute for professional medical advice.
+            </p>
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Accuracy & Limitations</h2>
+            <p>
+                Our calculators are built to deliver precise estimates, but individual results may vary. Real BMI is not a medical device, and the output should be used alongside professional guidance.
+            </p>
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Intellectual Property</h2>
+            <p>
+                All content, design, and calculator logic on Real BMI are protected by copyright and may not be copied or republished without permission.
+            </p>
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Changes to Terms</h2>
+            <p>
+                We may update these terms over time. Continued use of the site after changes indicates your acceptance of the revised terms.
+            </p>
         </div>
-    </main>
+    </PageShell>
 </Layout>

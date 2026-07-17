@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import PageShell from '../components/PageShell.astro';
+---
+
+<Layout
+    title="Editorial Policy | Real BMI"
+    description="Read Real BMI's editorial policy for evidence-based health content, transparent review, and independent medical guidance." 
+>
+    <Navbar />
+    <PageShell
+        title="Editorial Policy"
+        eyebrow="Evidence-based health publishing standards"
+        description="Real BMI publishes health content with clear editorial oversight, source transparency, and evidence-based review."
+        returnUrl="/en"
+        returnLabel="Home"
+    >
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-medium opacity-85">
+            <p>
+                Real BMI is committed to publishing health content that is accurate, transparent, and aligned with international public health guidelines. Our editorial approach is designed for a global audience and prioritizes trust, expertise, and well-sourced medical guidance.
+            </p>
+
+            <h2>Content Review & Accuracy</h2>
+            <p>
+                All health statements, calculator descriptions, and wellness insights on Real BMI are reviewed against trusted references from organizations such as the World Health Organization (WHO), the Centers for Disease Control and Prevention (CDC), and peer-reviewed medical literature. We regularly update content to reflect the latest guidance in health measurement and lifestyle science.
+            </p>
+
+            <h2>Editorial Independence</h2>
+            <p>
+                Editorial decisions at Real BMI are made independently of any advertising or third-party sponsorship. Our health calculators and articles are written to empower users with factual information, not to promote products or services.
+            </p>
+
+            <h2>Authoritativeness & Expertise</h2>
+            <p>
+                Real BMI's analytical tools and explanations are built on evidence-based formulas recognized by healthcare authorities. When describing BMI, BMR, TDEE, and body composition, we clearly communicate limitations, clinical relevance, and how each measure should be interpreted responsibly.
+            </p>
+
+            <h2>Global Health Standards</h2>
+            <p>
+                Real BMI is designed for worldwide users. The platform uses globally recognized health benchmarks and avoids region-specific assumptions. Calculations and insights are presented so they remain relevant across different populations and measurement systems.
+            </p>
+
+            <h2>Transparency</h2>
+            <p>
+                We disclose our sources, medical disclaimers, and privacy practices openly. This editorial policy is part of our effort to make Real BMI a trustworthy health resource for users seeking reliable body measurement tools and wellness guidance.
+            </p>
+        </div>
+    </PageShell>
+</Layout>

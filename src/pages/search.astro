@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import PageShell from '../components/PageShell.astro';
+
+const query = Astro.url.searchParams.get('q') || '';
+const sanitizedQuery = query.trim();
+const pageTitle = sanitizedQuery ? `Search results for “${sanitizedQuery}” | Real BMI` : 'Search Real BMI | Health Calculator Search';
+const pageDescription = 'Find BMI, BMR, TDEE, and body composition tools across Real BMI.';
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Navbar />
+  <PageShell
+    title="Search Real BMI"
+    eyebrow="Calculator search"
+    description="Locate the right BMI, BMR, TDEE, body fat, and wellness tools across our site."
+    returnUrl="/en"
+    returnLabel="Home"
+  >
+    <div class="space-y-8">
+      <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+        <p class="text-xs uppercase tracking-[0.28em] font-semibold text-[var(--accent)]">Search query</p>
+        <p class="mt-3 text-lg font-semibold text-[var(--foreground)]">{sanitizedQuery || 'No query entered'}</p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <a href="/en/bmi-calculator" class="block rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 text-[var(--foreground)] hover:border-[var(--accent)] transition-all">
+          <p class="text-sm uppercase tracking-[0.2em] font-black">BMI Calculator</p>
+          <p class="mt-3 text-base text-[var(--muted-foreground)]">Instant BMI results, health categories, and global screening.</p>
+        </a>
+        <a href="/en/tdee-calculator" class="block rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 text-[var(--foreground)] hover:border-[var(--accent)] transition-all">
+          <p class="text-sm uppercase tracking-[0.2em] font-black">TDEE Calculator</p>
+          <p class="mt-3 text-base text-[var(--muted-foreground)]">Find your total daily energy needs for maintenance, loss, or gain.</p>
+        </a>
+        <a href="/en/body-fat-calculator" class="block rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 text-[var(--foreground)] hover:border-[var(--accent)] transition-all">
+          <p class="text-sm uppercase tracking-[0.2em] font-black">Body Fat</p>
+          <p class="mt-3 text-base text-[var(--muted-foreground)]">Assess body composition with a professional-style estimate.</p>
+        </a>
+        <a href="/en/editorial-policy" class="block rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 text-[var(--foreground)] hover:border-[var(--accent)] transition-all">
+          <p class="text-sm uppercase tracking-[0.2em] font-black">Editorial Policy</p>
+          <p class="mt-3 text-base text-[var(--muted-foreground)]">Learn how Real BMI ensures accurate and trustworthy health content.</p>
+        </a>
+      </div>
+    </div>
+  </PageShell>
+</Layout>

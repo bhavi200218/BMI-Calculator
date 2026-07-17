@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+const { lang } = Astro.params;
+const pageTitle = 'Editorial Policy | Real BMI';
+const pageDescription = 'Read Real BMI’s editorial policy for evidence-based health content, transparent review, and medical guidance.';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'ko' } },
+    { params: { lang: 'hi' } }
+  ];
+}
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Navbar />
+  <PageShell
+    title="Editorial Policy"
+    eyebrow="Evidence-based health content"
+    description="Learn how Real BMI writes and reviews trusted health content across languages and regions."
+    returnUrl={`/${lang}`}
+    returnLabel="Home"
+  >
+    <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90 space-y-8">
+      <p>Real BMI publishes health information with care, accuracy, and transparency. Our editorial process is based on international public health standards and medical best practices.</p>
+      <h2>Accuracy and review</h2>
+      <p>We align our calculator formulas and educational text with resources from WHO, CDC, NIH, and clinical guidance. Content is reviewed to ensure it reflects recognized health definitions, measurement methods, and limitations.</p>
+      <h2>Independence</h2>
+      <p>Editorial decisions are made without influence from advertising or product sponsorship. Real BMI’s mission is to provide factual wellness tools, not to promote specific brands or treatments.</p>
+      <h2>Expertise</h2>
+      <p>Our site combines technical accuracy in BMI, BMR, TDEE, and body composition with clear user guidance. We describe when a metric is for screening only and when further clinical evaluation is recommended.</p>
+      <h2>Trust and transparency</h2>
+      <p>Real BMI publishes medical disclaimers, sources, privacy details, and editorial policies openly so users can trust the health advice they read and the tools they use.</p>
+    </div>
+  </PageShell>
+</Layout>

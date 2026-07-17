@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
@@ -8,46 +9,47 @@ import Navbar from '../../components/Navbar.astro';
     description="Contact the Real BMI Calculator team for support, feedback, or questions about our precision health tools. Get help with BMI, BMR, TDEE calculations."
 >
     <Navbar />
-    <main class="pt-32 pb-20 px-6 max-w-4xl mx-auto space-y-12">
-        <div class="space-y-4">
-            <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--accent)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                Return Home
-            </a>
-            <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase text-[var(--foreground)]">Contact Us</h1>
-            <p class="text-xs font-black uppercase tracking-[0.3em] text-[var(--accent)]">Get In Touch</p>
+    <PageShell
+      title="Contact Us"
+      eyebrow="Support for Real BMI"
+      description="Reach out for help with calculators, accuracy questions, and health insight requests."
+      returnUrl="/en"
+      returnLabel="Home"
+    >
+      <div class="grid gap-10 lg:grid-cols-[1.45fr_0.85fr] items-start">
+        <div class="space-y-8">
+          <div class="space-y-5 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+            <p>Need help understanding your BMI, BMR, TDEE, body fat, or nutrition estimates? Our team is ready to support your wellness journey with clear answers and fast guidance.</p>
+            <p>For questions about calculator accuracy, methodology, or how to interpret your results, send a message with the tool name and your goal.</p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-xs uppercase tracking-[0.28em] font-semibold text-[var(--accent)]">Email</p>
+              <p class="mt-3 text-base font-semibold text-[var(--foreground)]">vecna312002@gmail.com</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-xs uppercase tracking-[0.28em] font-semibold text-[var(--accent)]">Response time</p>
+              <p class="mt-3 text-base font-semibold text-[var(--foreground)]">Typically within 24 hours on business days</p>
+            </div>
+          </div>
+
+          <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+            <h2 class="text-2xl font-black text-[var(--foreground)]">What to include</h2>
+            <p class="mt-3 text-base text-[var(--muted-foreground)] leading-relaxed">Please include the calculator name, your current goal, and any specific question so we can respond with the most useful advice.</p>
+          </div>
         </div>
-        
-        <div class="glass-card p-10 space-y-8 border-2 border-[var(--border)]">
-            <div class="space-y-4">
-                <h2 class="text-3xl font-black tracking-tighter uppercase">Contact & Support</h2>
-                <p class="text-xl font-black tracking-tight text-[var(--foreground)]">Real BMI Calculator</p>
-                <p class="text-sm font-black uppercase tracking-widest opacity-40">Precision health tools support</p>
-            </div>
 
-            <p class="text-lg text-[var(--muted-foreground)] leading-relaxed font-medium opacity-80">
-                Have questions about BMI, BMR, TDEE, body fat, or our nutrition calculators? Our team is here to help you understand the results, improve your health tracking, and use Real BMI with confidence.
-            </p>
-
-            <div class="space-y-4">
-                <p class="text-lg text-[var(--muted-foreground)] leading-relaxed font-medium opacity-80">
-                    For support, feedback, or product inquiries, please contact us at:
-                </p>
-                <a href="mailto:vecna312002@gmail.com" class="inline-flex items-center gap-3 text-lg font-black text-[var(--foreground)] hover:opacity-70 transition-opacity group">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                    vecna312002@gmail.com
-                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                </a>
-                <p class="text-sm text-[var(--muted-foreground)] opacity-70">
-                    Please include the calculator name and your question to help us respond faster.
-                </p>
-            </div>
-
-            <div class="pt-6 border-t border-[var(--border)]">
-                <p class="text-sm text-[var(--muted-foreground)] opacity-70">
-                    Real BMI delivers evidence-based health tracking and educational insights. This site is not a substitute for medical advice.
-                </p>
-            </div>
-        </div>
-    </main>
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)]">
+          <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Contact details</p>
+          <h2 class="mt-4 text-3xl font-black text-[var(--foreground)]">Email support</h2>
+          <p class="mt-4 text-sm leading-relaxed text-[var(--muted-foreground)]">Use the form below to connect with our health support team for product questions, calculator guidance, or general feedback.</p>
+          <a href="mailto:vecna312002@gmail.com" class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">Email vecna312002@gmail.com</a>
+          <div class="mt-8 space-y-3 text-sm text-[var(--muted-foreground)] leading-relaxed">
+            <p><strong>Note:</strong> This is the best way to receive calculator support and product feedback.</p>
+            <p>All inquiries are reviewed by our team to improve accuracy and usability across the site.</p>
+          </div>
+        </aside>
+      </div>
+    </PageShell>
 </Layout>

@@ -22,7 +22,21 @@ const canonicalURL = customCanonicalURL || new URL(Astro.url.pathname, 'https://
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `https://realbmicalculator.com${ogImage}`;
 const { currentLocale } = Astro;
 
-// FAQ Schema for Search Snippets
+const pagePath = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumbItems = [];
+if (pagePath.length > 0) {
+  const segments = pagePath[0] && ['en', 'es', 'fr', 'de', 'ko', 'hi'].includes(pagePath[0]) ? pagePath.slice(1) : pagePath;
+  segments.forEach((segment, index) => {
+    const name = segment.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+    breadcrumbItems.push({
+      '@type': 'ListItem',
+      position: index + 2,
+      name,
+      item: `https://realbmicalculator.com${Astro.url.pathname.split('/').slice(0, index + 1 + (pagePath[0] && ['en', 'es', 'fr', 'de', 'ko', 'hi'].includes(pagePath[0]) ? 1 : 0)).join('/')}`
+    });
+  });
+}
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -43,6 +57,20 @@ const faqSchema = {
         "text": "BMI is calculated by dividing an individual's weight in kilograms by the square of their height in meters (kg/m²). For imperial units, the formula is (weight (lb) / height (in)²) x 703."
       }
     }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://realbmicalculator.com"
+    },
+    ...breadcrumbItems
   ]
 };
 
@@ -92,8 +120,9 @@ const howToSchema = {
 		
 		<!-- Favicons -->
 		<link rel="icon" href="/favicon.ico" sizes="any" />
-		<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'%3E%3Crect width='32' height='32' rx='8' fill='%23E8674A'/%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z' fill='white' transform='translate(4, 4)'/%3E%3C/svg%3E" />
-		<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'%3E%3Crect width='32' height='32' rx='8' fill='%23E8674A'/%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z' fill='white' transform='translate(4, 4)'/%3E%3C/svg%3E" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<meta name="apple-mobile-web-app-title" content="Real BMI" />
 		<meta name="theme-color" content="#E8674A" />
 		<link rel="manifest" href="/site.webmanifest" />
@@ -152,6 +181,7 @@ const howToSchema = {
 				}
 			}
 		</script>
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 		<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 		<script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 		<script is:inline type="application/ld+json">
@@ -180,7 +210,10 @@ const howToSchema = {
 				"@type": "Organization",
 				"name": "Real BMI Calculator",
 				"url": "https://realbmicalculator.com",
-				"logo": "https://realbmicalculator.com/favicon.svg"
+				"logo": "https://realbmicalculator.com/favicon.svg",
+				"sameAs": [
+					"https://www.linkedin.com/in/bhawanshi-dosi"
+				]
 			}
 		</script>
 
@@ -218,8 +251,8 @@ const howToSchema = {
 	<body class="min-h-screen relative">
 		<!-- Dynamic Shifting Background Slideshow -->
 		<div id="bg-slideshow" class="fixed inset-0 pointer-events-none z-[-2] overflow-hidden bg-[var(--background)]">
-			<div class="bg-slide active absolute inset-0 bg-cover bg-center" style="background-image: url('/images/bg/2.jpg');"></div>
-			<div class="bg-slide absolute inset-0 bg-cover bg-center" style="background-image: url('/images/bg/4.jpg');"></div>
+			<div class="bg-slide active absolute inset-0 bg-cover bg-center" style="background-image: url('/images/bg/2.webp');"></div>
+			<div class="bg-slide absolute inset-0 bg-cover bg-center" style="background-image: url('/images/bg/4.webp');"></div>
 			<!-- Warm tint overlay for light theme blending -->
 			<div class="absolute inset-0 bg-[var(--background)] opacity-40 dark:opacity-20"></div>
 		</div>

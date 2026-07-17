@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+const { lang } = Astro.params;
+const pageTitle = 'Sources | Real BMI';
+const pageDescription = 'Browse Real BMI’s trusted medical sources for BMI, BMR, TDEE, and body composition health information.';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'ko' } },
+    { params: { lang: 'hi' } }
+  ];
+}
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Navbar />
+  <PageShell
+    title="Sources"
+    eyebrow="Verified references"
+    description="Browse the trusted medical sources behind Real BMI's calculators and health guidance."
+    returnUrl={`/${lang}`}
+    returnLabel="Home"
+  >
+    <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90 space-y-8">
+      <p>Our tools are grounded in publicly available health science. We reference global agencies and clinical sources to keep our calculations reliable and broadly applicable.</p>
+      <ul class="list-disc pl-5 space-y-3">
+        <li><strong>World Health Organization (WHO):</strong> BMI thresholds and international classifications.</li>
+        <li><strong>Centers for Disease Control and Prevention (CDC):</strong> BMI formulas and guidance for adult health.</li>
+        <li><strong>National Institutes of Health (NIH):</strong> metabolic rate and energy expenditure context.</li>
+        <li><strong>American College of Sports Medicine (ACSM):</strong> exercise and calorie burn frameworks.</li>
+        <li><strong>Peer-reviewed medical literature:</strong> evidence on BMI limitations and health risk interpretation.</li>
+      </ul>
+      <h2>Methodology</h2>
+      <p>Real BMI calculates Body Mass Index with the standard formula and converts imperial measurements using the recognized factor of 703. BMR and TDEE values are derived using widely accepted metabolic formulas and activity multipliers.</p>
+      <h2>Use case</h2>
+      <p>BMI is a global screening tool, not a medical diagnosis. Real BMI encourages users to combine these results with lifestyle data and, when appropriate, seek professional evaluation for personalized health decisions.</p>
+    </div>
+  </PageShell>
+</Layout>

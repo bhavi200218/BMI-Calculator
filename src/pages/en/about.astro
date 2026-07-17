@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
@@ -8,72 +9,55 @@ import Navbar from '../../components/Navbar.astro';
     description="Discover the mission behind Real BMI Calculator. Built by Bhawanshi Dosi to provide clinical-grade health metrics, accurate BMI calculations, and data-driven wellness insights using WHO standards."
 >
     <Navbar />
-    <main class="pt-40 pb-20 px-6 min-h-screen">
-        <div class="max-w-4xl mx-auto glass-card p-8 md:p-16 space-y-12 border-2 border-[var(--border)]">
-            <div class="space-y-4">
-                <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--accent)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                    Return Home
-                </a>
-                <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase text-[var(--foreground)]">About Real BMI</h1>
-                <p class="text-xs font-black uppercase tracking-[0.3em] text-[var(--accent)]">Precision Health Analytics Platform</p>
+    <PageShell
+      title="About Real BMI"
+      eyebrow="Precision Health Analytics Platform"
+      description="Real BMI enables trusted BMI, BMR, TDEE and body composition tracking with clinical standards and global health guidance."
+      returnUrl="/en"
+      returnLabel="Home"
+    >
+      <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
+        <div class="space-y-10">
+          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+            <p><strong>Real BMI Calculator</strong> was developed by <strong>Bhawanshi Dosi</strong> to provide precision health tools that empower people to understand their body and make informed wellness decisions.</p>
+            <p>We build clinically-informed calculators using global health standards from the <strong>WHO</strong> and <strong>CDC</strong>, so users can trust the results without sacrificing privacy.</p>
+            <p>Real BMI offers a complete suite of health analysis: Body Mass Index, Basal Metabolic Rate, Total Daily Energy Expenditure, and body composition guidance designed for modern wellness planning.</p>
+            <p>All calculations are performed instantly in the browser. We do not store your personal health data on our servers, so your results remain private and secure.</p>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Clinical accuracy</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Built on evidence-based formulas and global benchmarks.</p>
             </div>
-
-            <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-bold opacity-70">
-                <div class="space-y-6">
-                    <p>
-                        <span class="text-[var(--foreground)]">Real BMI Calculator</span> was developed by <span class="text-[var(--foreground)]">Bhawanshi Dosi</span>, a Full Stack Developer dedicated to creating precision health tools that empower individuals to take control of their wellness journey.
-                    </p>
-                    <p>
-                        Our mission is to provide clinical-grade health metrics that are accessible to everyone. We believe that accurate health data shouldn't be limited to medical professionals or expensive consultations. That's why we built Real BMI using internationally recognized standards from the <span class="text-[var(--foreground)]">World Health Organization (WHO)</span> and <span class="text-[var(--foreground)]">Centers for Disease Control (CDC)</span>.
-                    </p>
-                    <p>
-                        Real BMI goes beyond simple calculations. Our platform provides comprehensive health analysis including Body Mass Index (BMI), Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and body fat percentage estimates. Each calculation is designed to give you actionable insights for your fitness goals.
-                    </p>
-                    <p>
-                        Privacy is at the core of our design. All calculations happen instantly on your device – we never store your personal health data on our servers. Your health journey remains yours alone, supported by tools you can trust.
-                    </p>
-                </div>
-
-                <div class="pt-8 space-y-6 text-[var(--foreground)] border-t border-[var(--border)]">
-                    <p class="text-3xl font-black tracking-tighter">
-                        Our Commitment
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <p class="text-xl font-black uppercase tracking-wider">Clinical Accuracy</p>
-                            <p class="text-base opacity-60">Using WHO and CDC standards for reliable health metrics</p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="text-xl font-black uppercase tracking-wider">Complete Privacy</p>
-                            <p class="text-base opacity-60">No data storage – calculations happen on your device</p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="text-xl font-black uppercase tracking-wider">Global Accessibility</p>
-                            <p class="text-base opacity-60">Available in 6 languages for worldwide users</p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="text-xl font-black uppercase tracking-wider">Comprehensive Analysis</p>
-                            <p class="text-base opacity-60">BMI, BMR, TDEE, and body fat calculations in one tool</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-8 space-y-4 text-[var(--foreground)] border-t border-[var(--border)]">
-                    <p class="text-3xl font-black tracking-tighter">
-                        Get In Touch
-                    </p>
-                    <p class="text-lg opacity-60">
-                        Have questions about our health calculator or want to provide feedback? We'd love to hear from you.
-                    </p>
-                    <div class="pt-2">
-                        <a href="https://www.linkedin.com/in/bhawanshi-dosi" target="_blank" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline group">
-                            Connect on LinkedIn
-                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                        </a>
-                    </div>
-                </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Privacy-first</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Calculator inputs stay on your device, never on our servers.</p>
             </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Global by design</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Designed for international users and multiple measurement systems.</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Actionable insight</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Practical BMI and metabolic analysis for healthier choices.</p>
+            </div>
+          </div>
         </div>
-    </main>
+
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)]">
+          <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">What we offer</p>
+          <h2 class="mt-4 text-3xl font-black text-[var(--foreground)]">Trusted health metrics</h2>
+          <p class="mt-4 text-base leading-relaxed text-[var(--muted-foreground)]">Real BMI is built to help people compare their health numbers against accepted medical standards and understand what the numbers mean.</p>
+
+          <div class="mt-8 space-y-4 text-sm text-[var(--muted-foreground)] leading-relaxed">
+            <p><strong>Accurate results:</strong> Reliable BMI, BMR, TDEE and body fat insights.</p>
+            <p><strong>Immediate privacy:</strong> No personal inputs are stored or shared.</p>
+            <p><strong>Clear guidance:</strong> Designed for people looking for practical health tools, not vague buzzwords.</p>
+          </div>
+
+          <a href="/en/contact" class="mt-8 inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">Contact support</a>
+        </aside>
+      </div>
+    </PageShell>
 </Layout>

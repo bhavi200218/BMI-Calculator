@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
@@ -8,34 +9,21 @@ import Navbar from '../../components/Navbar.astro';
     description="Important medical disclaimer for Real BMI users. Our results are informational and not a substitute for professional medical advice."
 >
     <Navbar />
-    <main class="pt-40 pb-20 px-6 min-h-screen">
-        <div class="max-w-4xl mx-auto glass-card p-8 md:p-16 space-y-12 border-2 border-[var(--border)]">
-            <div class="space-y-4">
-                <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--accent)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                    Return Home
-                </a>
-                <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase text-[var(--foreground)]">Medical Disclaimer</h1>
-                <p class="text-xs font-black uppercase tracking-[0.3em] text-[var(--accent)]">Notice of Information</p>
-            </div>
-
-            <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-medium opacity-85">
-                <p>
-                    The information provided by <span class="text-[var(--foreground)]">Real BMI</span> is intended for general health awareness and informational use only. It does not replace personalized medical advice.
-                </p>
-                <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Not Medical Advice</h2>
-                <p>
-                    Our BMI, BMR, and TDEE estimates are educational tools. They are not diagnostic and should not be used to make health decisions without consulting a qualified healthcare professional.
-                </p>
-                <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Consult Your Provider</h2>
-                <p>
-                    If you have any health concerns or questions about your results, please speak with a physician or registered dietitian. Your individual health circumstances are unique.
-                </p>
-                <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Limitation of Liability</h2>
-                <p>
-                    Real BMI is not responsible for decisions made based on calculator results. Use the site as a resource to support your wellness goals, not as a medical treatment plan.
-                </p>
-            </div>
-        </div>
-    </main>
+    <PageShell
+      title="Medical Disclaimer"
+      eyebrow="Important health notice"
+      description="Understand how Real BMI provides educational health estimates and why you should consult a qualified professional for medical decisions."
+      returnUrl="/en"
+      returnLabel="Home"
+    >
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+        <p>The information provided by <strong>Real BMI</strong> is intended for general health awareness and informational use only. It does not replace personalized medical advice.</p>
+        <h2>Not medical advice</h2>
+        <p>Our BMI, BMR, and TDEE estimates are educational tools. They are not diagnostic and should not be used to make health decisions without consulting a qualified healthcare professional.</p>
+        <h2>Consult your provider</h2>
+        <p>If you have any health concerns or questions about your results, please speak with a physician or registered dietitian. Your individual health circumstances are unique.</p>
+        <h2>Limitation of liability</h2>
+        <p>Real BMI is not responsible for decisions made based on calculator results. Use the site as a resource to support your wellness goals, not as a medical treatment plan.</p>
+      </div>
+    </PageShell>
 </Layout>

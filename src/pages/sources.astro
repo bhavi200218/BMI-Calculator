@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import PageShell from '../components/PageShell.astro';
+---
+
+<Layout
+    title="Sources | Real BMI"
+    description="Real BMI health sources and references for BMI, BMR, TDEE, and body composition calculations." 
+>
+    <Navbar />
+    <PageShell
+        title="Sources"
+        eyebrow="Verified medical references"
+        description="Explore the trusted clinical and public health sources behind Real BMI’s calculators and wellness guidance."
+        returnUrl="/en"
+        returnLabel="Home"
+    >
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-medium opacity-85">
+            <p>
+                The Real BMI Calculator follows established methods and global guidelines for the most reliable health calculations and classifications.
+            </p>
+
+            <ul>
+                <li><strong>World Health Organization (WHO)</strong> — BMI classification and global health risk categories.</li>
+                <li><strong>Centers for Disease Control and Prevention (CDC)</strong> — BMI formulas and adult health standards.</li>
+                <li><strong>American College of Sports Medicine (ACSM)</strong> — guidance on metabolic rate and energy expenditure.</li>
+                <li><strong>NIH National Heart, Lung, and Blood Institute</strong> — body composition and cardiovascular health context.</li>
+                <li><strong>Journal of the American Medical Association (JAMA)</strong> — evidence for how BMI should be interpreted across populations.</li>
+            </ul>
+
+            <h2>Calculator Methodology</h2>
+            <p>
+                BMI is calculated using the standard formula: weight ÷ height². For imperial units, Real BMI converts pounds and inches using the recognized factor of 703. BMR and TDEE calculations are based on accepted metabolic formulas and activity-level multipliers used by healthcare professionals.
+            </p>
+
+            <h2>Health Guidance</h2>
+            <p>
+                Our site emphasizes that BMI is a screening measure and not a diagnostic tool. Users are encouraged to consider additional markers such as body composition, waist-to-hip ratio, and overall lifestyle when interpreting their results.
+            </p>
+        </div>
+    </PageShell>
+</Layout>

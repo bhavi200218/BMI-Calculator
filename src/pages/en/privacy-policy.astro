@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
@@ -8,38 +9,27 @@ import Navbar from '../../components/Navbar.astro';
     description="Read our privacy policy. Real BMI ensures your health data remains private and is never stored on our servers."
 >
     <Navbar />
-    <main class="pt-40 pb-20 px-6 min-h-screen">
-        <div class="max-w-4xl mx-auto glass-card p-8 md:p-16 space-y-12 border-2 border-[var(--border)]">
-            <div class="space-y-4">
-                <a href="/en" class="text-[10px] font-black uppercase tracking-widest text-[var(--accent)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                    Return Home
-                </a>
-                <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase text-[var(--foreground)]">Privacy Policy</h1>
-                <p class="text-xs font-black uppercase tracking-[0.3em] text-[var(--accent)]">Your Data, Your Privacy</p>
-            </div>
+    <PageShell
+      title="Privacy Policy"
+      eyebrow="Your data, your privacy"
+      description="Learn how Real BMI protects your input data and keeps all calculations private and secure."
+      returnUrl="/en"
+      returnLabel="Home"
+    >
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+        <p>At <strong>Real BMI</strong>, we take your privacy seriously. Our BMI, BMR, TDEE, and body composition calculators are designed so that your personal inputs remain on your device and never get stored on our servers.</p>
 
-            <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-medium opacity-85">
-                <p>
-                    At <span class="text-[var(--foreground)]">Real BMI</span>, we take your privacy seriously. Our BMI, BMR, TDEE, and body composition calculators are designed so that your personal inputs remain on your device and never get stored on our servers.
-                </p>
-                <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">What We Collect</h2>
-                <p>
-                    We do not collect, store, or share your height, weight, age, or health inputs. The calculations are performed locally in your browser, making Real BMI a privacy-first health tool.
-                </p>
-                <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">How We Use Data</h2>
-                <p>
-                    Only anonymous usage patterns may be collected for product improvement. This helps us refine calculator accuracy, improve user experience, and optimize the site without compromising your personal health information.
-                </p>
-                <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Third-Party Services</h2>
-                <p>
-                    We do not sell or trade your data. Any analytics we use are aggregated and anonymized. We may use standard web services for hosting and performance, but these do not receive your calculator inputs.
-                </p>
-                <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Security</h2>
-                <p>
-                    We strive to keep Real BMI secure with modern web practices. If you have questions about privacy or security, contact us and we will respond quickly.
-                </p>
-            </div>
-        </div>
-    </main>
+        <h2>What we collect</h2>
+        <p>We do not collect, store, or share your height, weight, age, or health inputs. The calculations are performed locally in your browser, making Real BMI a privacy-first health tool.</p>
+
+        <h2>How we use data</h2>
+        <p>Only anonymous usage patterns may be collected for product improvement. This helps us refine calculator accuracy, improve user experience, and optimize the site without compromising your personal health information.</p>
+
+        <h2>Third-party services</h2>
+        <p>We do not sell or trade your data. Any analytics we use are aggregated and anonymized. We may use standard web services for hosting and performance, but these do not receive your calculator inputs.</p>
+
+        <h2>Security</h2>
+        <p>We strive to keep Real BMI secure with modern web practices. If you have questions about privacy or security, contact us and we will respond quickly.</p>
+      </div>
+    </PageShell>
 </Layout>

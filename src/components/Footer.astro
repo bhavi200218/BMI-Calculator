@@ -26,6 +26,8 @@ const footerTranslations: Record<string, FooterTranslation> = {
     links: [
       { name: 'About Us', href: `/en/about` },
       { name: 'Contact Us', href: `/en/contact` },
+      { name: 'Editorial Policy', href: `/en/editorial-policy` },
+      { name: 'Sources', href: `/en/sources` },
       { name: 'Privacy Policy', href: `/en/privacy-policy` },
       { name: 'Terms & Conditions', href: `/en/terms-conditions` },
       { name: 'Disclaimer', href: `/en/disclaimer` },
@@ -47,6 +49,8 @@ const footerTranslations: Record<string, FooterTranslation> = {
     links: [
       { name: 'Sobre Nosotros', href: `/es/about` },
       { name: 'Contacto', href: `/es/contact` },
+      { name: 'Política Editorial', href: `/es/editorial-policy` },
+      { name: 'Fuentes', href: `/es/sources` },
       { name: 'Privacidad', href: `/es/privacy-policy` },
       { name: 'Términos', href: `/es/terms-conditions` },
       { name: 'Aviso Médico', href: `/es/disclaimer` },
@@ -68,6 +72,8 @@ const footerTranslations: Record<string, FooterTranslation> = {
     links: [
       { name: 'À Propos', href: `/fr/about` },
       { name: 'Contact', href: `/fr/contact` },
+      { name: 'Politique Éditoriale', href: `/fr/editorial-policy` },
+      { name: 'Sources', href: `/fr/sources` },
       { name: 'Confidentialité', href: `/fr/privacy-policy` },
       { name: 'Conditions', href: `/fr/terms-conditions` },
       { name: 'Avertissement', href: `/fr/disclaimer` },
@@ -89,6 +95,8 @@ const footerTranslations: Record<string, FooterTranslation> = {
     links: [
       { name: 'Über Uns', href: `/de/about` },
       { name: 'Kontakt', href: `/de/contact` },
+      { name: 'Redaktionsrichtlinie', href: `/de/editorial-policy` },
+      { name: 'Quellen', href: `/de/sources` },
       { name: 'Datenschutz', href: `/de/privacy-policy` },
       { name: 'Nutzungsbedingungen', href: `/de/terms-conditions` },
       { name: 'Medizinischer Hinweis', href: `/de/disclaimer` },
@@ -110,6 +118,8 @@ const footerTranslations: Record<string, FooterTranslation> = {
     links: [
       { name: '회사 소개', href: `/ko/about` },
       { name: '문의하기', href: `/ko/contact` },
+      { name: '편집 정책', href: `/ko/editorial-policy` },
+      { name: '출처', href: `/ko/sources` },
       { name: '개인정보 처리방침', href: `/ko/privacy-policy` },
       { name: '이용약관', href: `/ko/terms-conditions` },
       { name: '의학적 면책', href: `/ko/disclaimer` },
@@ -131,6 +141,8 @@ const footerTranslations: Record<string, FooterTranslation> = {
     links: [
       { name: 'हमारे बारे में', href: `/hi/about` },
       { name: 'संपर्क करें', href: `/hi/contact` },
+      { name: 'संपादकीय नीति', href: `/hi/editorial-policy` },
+      { name: 'स्रोत', href: `/hi/sources` },
       { name: 'गोपनीयता नीति', href: `/hi/privacy-policy` },
       { name: 'नियम और शर्तें', href: `/hi/terms-conditions` },
       { name: 'अस्वीकरण', href: `/hi/disclaimer` },
@@ -155,13 +167,13 @@ const healthToolsLinks = calculators.map((calc, index) => ({
 ---
 
 <footer class="border-t border-[var(--border)] bg-[var(--muted)] mt-10">
-  <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6">
+  <div class="max-w-6xl mx-auto px-4 py-8 sm:px-6">
 
     <!-- Top row: brand + links -->
-    <div class="grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-[220px_minmax(0,1fr)_240px] lg:gap-x-10 mb-4">
+    <div class="grid gap-8 lg:grid-cols-[220px_minmax(320px,1fr)_240px] items-start mb-4">
 
       <!-- Brand block -->
-      <div class="space-y-1 mb-5 sm:mb-0">
+      <div class="space-y-3">
         <div class="flex items-center gap-2">
           <div class="w-7 h-7 rounded-lg bg-[var(--accent)] flex items-center justify-center">
             <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -175,10 +187,9 @@ const healthToolsLinks = calculators.map((calc, index) => ({
         </p>
       </div>
 
-      <!-- Health Tools Hub -->
-      <div class="space-y-1 lg:justify-self-end lg:self-start md:pr-4">
-        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] mb-4">{healthToolsLabel}</p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-3 gap-y-2">
+      <div class="space-y-3">
+        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{healthToolsLabel}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
           {healthToolsLinks.map(link => (
             <a href={link.href} class="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 truncate">
               {link.name}
@@ -187,25 +198,23 @@ const healthToolsLinks = calculators.map((calc, index) => ({
         </div>
       </div>
 
-      {ft.legalText && (
-        <div class="space-y-2 lg:col-start-3">
-          <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] mb-4">{ft.legalStatus}</p>
-          <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">
-            {ft.legalText}
-          </p>
-        </div>
-      )}
-
-      <!-- Quick Links -->
-      <div class="space-y-1 lg:justify-self-end lg:self-start mt-4 sm:mt-0">
-        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] mb-4">{ft.quickLinks}</p>
-        <div class="grid gap-y-2 gap-x-3">
+      <div class="space-y-3">
+        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.quickLinks}</p>
+        <div class="grid gap-2">
           {ft.links.map(link => (
             <a href={link.href} class="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200">
               {link.name}
             </a>
           ))}
         </div>
+        {ft.legalText ? (
+          <div class="space-y-3 pt-4 border-t border-[var(--border)]">
+            <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.legalStatus}</p>
+            <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">
+              {ft.legalText}
+            </p>
+          </div>
+        ) : null}
       </div>
     </div>
 
