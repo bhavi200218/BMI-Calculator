@@ -5,4 +5,4 @@ Disallow: /private/
 Disallow: /api/
 
 # Sitemaps
-Sitemap: https://realbmicalculator.com/sitemap-index.xml
+Sitemap: https://realbmicalculator.com/sitemap.xml
