@@ -3,8 +3,167 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import PageShell from '../../components/PageShell.astro';
 const { lang } = Astro.params;
-const pageTitle = 'Editorial Policy | Real BMI';
-const pageDescription = 'Read Real BMI’s editorial policy for evidence-based health content, transparent review, and medical guidance.';
+
+const pageData = {
+  en: {
+    pageTitle: 'Editorial Policy | Real BMI',
+    pageDescription: 'Read Real BMI’s editorial policy for evidence-based health content, transparent review, and medical guidance.',
+    title: 'Editorial Policy',
+    eyebrow: 'Evidence-based health content',
+    description: 'Learn how Real BMI writes and reviews trusted health content across languages and regions.',
+    homeLabel: 'Home',
+    sections: [
+      {
+        heading: 'Accuracy and review',
+        body: 'We align our calculator formulas and educational text with resources from WHO, CDC, NIH, and clinical guidance. Content is reviewed to ensure it reflects recognized health definitions, measurement methods, and limitations.'
+      },
+      {
+        heading: 'Independence',
+        body: 'Editorial decisions are made without influence from advertising or product sponsorship. Real BMI’s mission is to provide factual wellness tools, not to promote specific brands or treatments.'
+      },
+      {
+        heading: 'Expertise',
+        body: 'Our site combines technical accuracy in BMI, BMR, TDEE, and body composition with clear user guidance. We describe when a metric is for screening only and when further clinical evaluation is recommended.'
+      },
+      {
+        heading: 'Trust and transparency',
+        body: 'Real BMI publishes medical disclaimers, sources, privacy details, and editorial policies openly so users can trust the health advice they read and the tools they use.'
+      }
+    ]
+  },
+  es: {
+    pageTitle: 'Política Editorial | Real BMI',
+    pageDescription: 'Lea la política editorial de Real BMI sobre contenido de salud basado en evidencia, revisión transparente y orientación médica.',
+    title: 'Política Editorial',
+    eyebrow: 'Contenido de salud basado en evidencia',
+    description: 'Descubra cómo Real BMI redacta y revisa contenido de salud confiable en varios idiomas y regiones.',
+    homeLabel: 'Inicio',
+    sections: [
+      {
+        heading: 'Precisión y revisión',
+        body: 'Alineamos nuestras fórmulas de calculadora y el texto educativo con recursos de la OMS, CDC, NIH y guías clínicas. El contenido se revisa para garantizar que refleje definiciones de salud reconocidas, métodos de medición y limitaciones.'
+      },
+      {
+        heading: 'Independencia',
+        body: 'Las decisiones editoriales se toman sin influencia de publicidad o patrocinios. La misión de Real BMI es ofrecer herramientas de bienestar basadas en hechos, no promocionar marcas o tratamientos específicos.'
+      },
+      {
+        heading: 'Experiencia',
+        body: 'Nuestro sitio combina precisión técnica en BMI, BMR, TDEE y composición corporal con orientación clara para el usuario. Describimos cuándo una métrica es solo para detección y cuándo se recomienda una evaluación clínica adicional.'
+      },
+      {
+        heading: 'Confianza y transparencia',
+        body: 'Real BMI publica declaraciones médicas, fuentes, detalles de privacidad y políticas editoriales abiertamente para que los usuarios confíen en el asesoramiento de salud que leen y en las herramientas que utilizan.'
+      }
+    ]
+  },
+  fr: {
+    pageTitle: 'Politique éditoriale | Real BMI',
+    pageDescription: 'Lisez la politique éditoriale de Real BMI pour un contenu santé basé sur des preuves, une relecture transparente et des conseils médicaux.',
+    title: 'Politique éditoriale',
+    eyebrow: 'Contenu de santé fondé sur des preuves',
+    description: 'Découvrez comment Real BMI rédige et révise un contenu santé fiable dans différentes langues et régions.',
+    homeLabel: 'Accueil',
+    sections: [
+      {
+        heading: 'Précision et relecture',
+        body: 'Nous alignons nos formules de calcul et les textes éducatifs avec les ressources de l’OMS, du CDC, des NIH et des guides cliniques. Le contenu est relu pour garantir qu’il reflète des définitions de santé reconnues, des méthodes de mesure et des limites.'
+      },
+      {
+        heading: 'Indépendance',
+        body: 'Les décisions éditoriales sont prises sans influence publicitaire ou sponsorisation. La mission de Real BMI est de fournir des outils de bien-être factuels, et non de promouvoir des marques ou traitements spécifiques.'
+      },
+      {
+        heading: 'Expertise',
+        body: 'Notre site combine précision technique en BMI, BMR, TDEE et composition corporelle avec des conseils clairs. Nous expliquons quand une métrique est uniquement de dépistage et quand une évaluation clinique supplémentaire est recommandée.'
+      },
+      {
+        heading: 'Confiance et transparence',
+        body: 'Real BMI publie ouvertement des avertissements médicaux, des sources, des détails de confidentialité et des politiques éditoriales afin que les utilisateurs puissent faire confiance aux conseils de santé qu’ils lisent et aux outils qu’ils utilisent.'
+      }
+    ]
+  },
+  de: {
+    pageTitle: 'Redaktionsrichtlinie | Real BMI',
+    pageDescription: 'Lesen Sie die Redaktionsrichtlinie von Real BMI für evidenzbasierte Gesundheitsinhalte, transparente Prüfung und medizinische Leitlinien.',
+    title: 'Redaktionsrichtlinie',
+    eyebrow: 'Evidenzbasierte Gesundheitsinhalte',
+    description: 'Erfahren Sie, wie Real BMI vertrauenswürdige Gesundheitsinhalte in mehreren Sprachen und Regionen erstellt und überprüft.',
+    homeLabel: 'Startseite',
+    sections: [
+      {
+        heading: 'Genauigkeit und Prüfung',
+        body: 'Wir stimmen unsere Rechenformeln und erklärenden Texte mit Ressourcen der WHO, CDC, NIH und klinischen Leitlinien ab. Inhalte werden überprüft, um sicherzustellen, dass sie anerkannte Gesundheitsdefinitionen, Messmethoden und Einschränkungen widerspiegeln.'
+      },
+      {
+        heading: 'Unabhängigkeit',
+        body: 'Redaktionelle Entscheidungen werden ohne Einfluss von Werbung oder Produktsponsoring getroffen. Die Mission von Real BMI ist es, sachliche Wellness-Tools bereitzustellen, nicht bestimmte Marken oder Behandlungen zu fördern.'
+      },
+      {
+        heading: 'Fachwissen',
+        body: 'Unsere Seite kombiniert technische Genauigkeit bei BMI, BMR, TDEE und Körperzusammensetzung mit klaren Benutzeranleitungen. Wir erläutern, wann eine Kennzahl nur zur Vorsorge dient und wann eine klinische Bewertung empfohlen wird.'
+      },
+      {
+        heading: 'Vertrauen und Transparenz',
+        body: 'Real BMI veröffentlicht medizinische Hinweise, Quellen, Datenschutzdetails und redaktionelle Richtlinien offen, damit Benutzer den Gesundheitsrat vertrauen können, den sie lesen, und den Tools, die sie nutzen.'
+      }
+    ]
+  },
+  ko: {
+    pageTitle: '편집 방침 | Real BMI',
+    pageDescription: '증거 기반 건강 콘텐츠, 투명한 검토 및 의료 지침에 대한 Real BMI의 편집 방침을 읽어보세요.',
+    title: '편집 방침',
+    eyebrow: '증거 기반 건강 콘텐츠',
+    description: 'Real BMI가 다양한 언어와 지역에서 신뢰할 수 있는 건강 콘텐츠를 어떻게 작성하고 검토하는지 알아보세요.',
+    homeLabel: '홈',
+    sections: [
+      {
+        heading: '정확성 및 검토',
+        body: '우리는 계산기 공식과 교육 텍스트를 WHO, CDC, NIH 및 임상 지침의 자료와 일치시킵니다. 콘텐츠는 인정된 건강 정의, 측정 방법 및 제한 사항을 반영하는지 검토됩니다.'
+      },
+      {
+        heading: '독립성',
+        body: '편집 결정은 광고나 제품 후원의 영향을 받지 않고 이루어집니다. Real BMI의 목표는 특정 브랜드나 치료법을 홍보하는 것이 아니라 사실 기반 웰빙 도구를 제공하는 것입니다.'
+      },
+      {
+        heading: '전문성',
+        body: '우리 사이트는 BMI, BMR, TDEE 및 체성분에 대한 기술적 정확성과 명확한 사용자 지침을 결합합니다. 우리는 언제 지표가 스크리닝용인지, 추가 임상 평가가 권장되는지 설명합니다.'
+      },
+      {
+        heading: '신뢰와 투명성',
+        body: 'Real BMI는 의료 고지, 출처, 개인정보 세부 사항 및 편집 정책을 공개하여 사용자가 읽는 건강 조언과 사용하는 도구를 신뢰할 수 있도록 합니다.'
+      }
+    ]
+  },
+  hi: {
+    pageTitle: 'संपादकीय नीति | Real BMI',
+    pageDescription: 'प्रमाण-आधारित स्वास्थ्य सामग्री, पारदर्शी समीक्षा और चिकित्सा मार्गदर्शन के लिए Real BMI की संपादकीय नीति पढ़ें।',
+    title: 'संपादकीय नीति',
+    eyebrow: 'प्रमाण-आधारित स्वास्थ्य सामग्री',
+    description: 'जानें कि Real BMI कैसे विभिन्न भाषाओं और क्षेत्रों में विश्वसनीय स्वास्थ्य सामग्री लिखता और समीक्षा करता है।',
+    homeLabel: 'होम',
+    sections: [
+      {
+        heading: 'सटीकता और समीक्षा',
+        body: 'हम अपने कैलकुलेटर सूत्र और शैक्षिक पाठ को WHO, CDC, NIH और क्लिनिकल मार्गदर्शिकाओं के संसाधनों के साथ संरेखित करते हैं। सामग्री की समीक्षा यह सुनिश्चित करने के लिए की जाती है कि यह मान्यता प्राप्त स्वास्थ्य परिभाषाओं, माप विधियों और सीमाओं को दर्शाती है।'
+      },
+      {
+        heading: 'स्वतंत्रता',
+        body: 'संपादकीय निर्णय विज्ञापन या उत्पाद प्रायोजन के प्रभाव के बिना लिए जाते हैं। Real BMI का मिशन तथ्य-आधारित वेलनेस टूल प्रदान करना है, न कि विशिष्ट ब्रांड या उपचारों को बढ़ावा देना।'
+      },
+      {
+        heading: 'विशेषज्ञता',
+        body: 'हमारी साइट BMI, BMR, TDEE और शरीर संरचना में तकनीकी सटीकता को स्पष्ट उपयोगकर्ता मार्गदर्शन के साथ जोड़ती है। हम बताते हैं कि कब कोई मीट्रिक केवल स्क्रीनिंग के लिए है और कब आगे की क्लिनिकल जांच की सिफारिश की जाती है।'
+      },
+      {
+        heading: 'विश्वास और पारदर्शिता',
+        body: 'Real BMI चिकित्सा अस्वीकरण, स्रोत, गोपनीयता विवरण और संपादकीय नीतियों को खुले रूप से प्रकाशित करता है ताकि उपयोगकर्ता उस स्वास्थ्य सलाह और उपकरणों पर भरोसा कर सकें जिन्हें वे पढ़ते हैं।'
+      }
+    ]
+  }
+};
+
+const copy = pageData[lang] || pageData.en;
 
 export function getStaticPaths() {
   return [
@@ -18,25 +177,22 @@ export function getStaticPaths() {
 }
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout title={copy.pageTitle} description={copy.pageDescription}>
   <Navbar />
   <PageShell
-    title="Editorial Policy"
-    eyebrow="Evidence-based health content"
-    description="Learn how Real BMI writes and reviews trusted health content across languages and regions."
+    title={copy.title}
+    eyebrow={copy.eyebrow}
+    description={copy.description}
     returnUrl={`/${lang}`}
-    returnLabel="Home"
+    returnLabel={copy.homeLabel}
   >
     <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90 space-y-8">
-      <p>Real BMI publishes health information with care, accuracy, and transparency. Our editorial process is based on international public health standards and medical best practices.</p>
-      <h2>Accuracy and review</h2>
-      <p>We align our calculator formulas and educational text with resources from WHO, CDC, NIH, and clinical guidance. Content is reviewed to ensure it reflects recognized health definitions, measurement methods, and limitations.</p>
-      <h2>Independence</h2>
-      <p>Editorial decisions are made without influence from advertising or product sponsorship. Real BMI’s mission is to provide factual wellness tools, not to promote specific brands or treatments.</p>
-      <h2>Expertise</h2>
-      <p>Our site combines technical accuracy in BMI, BMR, TDEE, and body composition with clear user guidance. We describe when a metric is for screening only and when further clinical evaluation is recommended.</p>
-      <h2>Trust and transparency</h2>
-      <p>Real BMI publishes medical disclaimers, sources, privacy details, and editorial policies openly so users can trust the health advice they read and the tools they use.</p>
+      {copy.sections.map((section) => (
+        <>
+          <h2>{section.heading}</h2>
+          <p>{section.body}</p>
+        </>
+      ))}
     </div>
   </PageShell>
 </Layout>

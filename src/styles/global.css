@@ -5,7 +5,7 @@
   --font-display: 'Cabin Condensed', 'Outfit', sans-serif;
 }
 
-/* ── MELOVE Light Mode (Sand / Warm Cream) ─────────────── */
+
 :root {
   --background: #FAF6F0;
   --foreground: #0B1617;
@@ -27,7 +27,7 @@
   --glow-accent: 0 0 80px rgba(232, 103, 74, 0.08);
 }
 
-/* ── MELOVE Dark Mode (Deep Forest Teal) ──────────────── */
+
 .dark {
   --background: #091212;
   --foreground: #FCFAF7;
@@ -58,7 +58,7 @@
     overflow-x: hidden;
   }
 
-  /* Subtle dot-grid background */
+  
   body::before {
     content: "";
     position: fixed;
@@ -70,7 +70,7 @@
     opacity: 0.5;
   }
 
-  /* Centered warm glow orb */
+  
   body::after {
     content: "";
     position: fixed;
@@ -85,7 +85,7 @@
   }
 }
 
-/* ── Glass Card ────────────────────────────────────────── */
+
 .glass-card {
   background: var(--card);
   backdrop-filter: blur(24px);
@@ -101,7 +101,7 @@
   box-shadow: var(--shadow-card);
 }
 
-/* ── Inputs ────────────────────────────────────────────── */
+
 .matte-input {
   width: 100%;
   background-color: var(--input);
@@ -122,7 +122,7 @@
   opacity: 0.4;
 }
 
-/* ── Buttons ───────────────────────────────────────────── */
+
 .calc-btn-gradient {
   background: var(--accent) !important;
   color: var(--accent-foreground) !important;
@@ -140,7 +140,7 @@
   transform: translateY(0) scale(0.98) !important;
 }
 
-/* ── Animate-in ────────────────────────────────────────── */
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
@@ -150,7 +150,7 @@
   animation: fadeUp 0.5s ease forwards;
 }
 
-/* ── Accent glow on dark ───────────────────────────────── */
+
 .dark .accent-glow {
   text-shadow: 0 0 30px rgba(232, 103, 74, 0.5);
 }

@@ -30,6 +30,15 @@ const pageTitle = calc.title[lang] || calc.title['en'];
 const pageDesc = calc.description[lang] || calc.description['en'];
 const canonicalUrl = `https://realbmicalculator.com/${lang}/${calc.slug}`;
 
+const localizedIntro = {
+  en: 'Built for quick health analytics and compliance. Real-time computations.',
+  es: 'Diseñado para análisis rápidos de salud y cumplimiento. Cálculos en tiempo real.',
+  fr: 'Conçu pour des analyses de santé rapides et conformes. Calculs en temps réel.',
+  de: 'Entwickelt für schnelle Gesundheitsanalysen und Compliance. Echtzeitberechnungen.',
+  ko: '빠른 건강 분석과 규정 준수를 위해 설계되었습니다. 실시간 계산 제공.',
+  hi: 'तेज़ स्वास्थ्य विश्लेषण और अनुपालन के लिए बनाया गया। वास्तविक समय में गणना।'
+};
+
 // WebApplication Schema for SEO
 const webAppSchema = {
   "@context": "https://schema.org",
@@ -62,7 +71,7 @@ const webAppSchema = {
           {calc.name[lang] || calc.name['en']}
         </h1>
         <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-sans font-medium animate-in max-w-2xl mx-auto" style="animation-delay:50ms">
-          {pageDesc} Built for quick health analytics and compliance. Real-time computations.
+          {pageDesc} {localizedIntro[lang] || localizedIntro.en}
         </p>
       </div>
 

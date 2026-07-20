@@ -56,7 +56,7 @@ const healthTools = healthToolsNames[lang] || healthToolsNames.en;
 
     <!-- Right Controls -->
     <div class="flex items-center gap-3">
-      <div class="hidden sm:flex items-center gap-3">
+      <div class="flex items-center gap-3">
         <!-- Lang Dropdown -->
         <div class="relative" id="langDropdownWrapper">
           <button id="langDropdownBtn"
@@ -88,7 +88,7 @@ const healthTools = healthToolsNames[lang] || healthToolsNames.en;
 
         <!-- Theme Toggle -->
         <button id="themeToggleBtn"
-          class="w-9 h-9 rounded-xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
+          class="hidden lg:flex w-9 h-9 rounded-xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
           aria-label="Toggle Theme">
           <svg id="sunIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
@@ -98,6 +98,17 @@ const healthTools = healthToolsNames[lang] || healthToolsNames.en;
           </svg>
         </button>
       </div>
+
+      <!-- Mobile Theme Toggle (next to hamburger) -->
+      <button id="mobileThemeToggleBtn" class="lg:hidden mr-2 w-9 h-9 rounded-xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
+        aria-label="Toggle Theme">
+        <svg id="mobileSunIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
+        </svg>
+        <svg id="mobileMoonIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
 
       <!-- Mobile Menu Button -->
       <button id="mobileMenuBtn" class="lg:hidden w-9 h-9 rounded-2xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
@@ -125,26 +136,7 @@ const healthTools = healthToolsNames[lang] || healthToolsNames.en;
       <a href={`/${lang}#faq`} class="w-full rounded-3xl bg-[var(--card)] px-3 py-2 text-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
         {t.faq}</a>
 
-      <button id="themeToggleBtnMobile" class="w-full rounded-3xl border border-[var(--border)] bg-[var(--muted)] px-3 py-2 text-center text-[0.8rem] font-display font-semibold uppercase tracking-[0.12em] text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">
-        Toggle dark / light
-      </button>
-
-      <div class="w-full rounded-3xl border border-[var(--border)] bg-[var(--card)] p-3">
-        <p class="text-[10px] font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] mb-2">Language</p>
-        <div class="grid grid-cols-2 gap-2">
-          {Object.entries(langNames).map(([code, name]) => {
-            const path = Astro.url.pathname
-              .replace(/^\/[a-z]{2}\//, `/${code}/`)
-              .replace(/^\/[a-z]{2}$/, `/${code}/`);
-            return (
-              <a href={path}
-                class="rounded-2xl border border-[var(--border)] bg-[var(--muted)] px-3 py-2 text-center text-[12px] font-display font-semibold uppercase tracking-[0.12em] text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">
-                {name}
-              </a>
-            );
-          })}
-        </div>
-      </div>
+      <!-- Mobile menu simplified: removed theme toggle and language selection (moved to navbar dropdown) -->
     </div>
   </div>
 </nav>
@@ -183,13 +175,23 @@ const healthTools = healthToolsNames[lang] || healthToolsNames.en;
   function applyTheme(isDark) {
     const sun = document.getElementById('sunIcon');
     const moon = document.getElementById('moonIcon');
-    if (!sun || !moon) return;
+    const mobileSun = document.getElementById('mobileSunIcon');
+    const mobileMoon = document.getElementById('mobileMoonIcon');
+    // apply to both desktop and mobile icons when present
+    const setState = (elOn, elOff) => {
+      if (elOn) { elOn.style.opacity = '1'; elOn.style.transform = 'scale(1) rotate(0deg)'; }
+      if (elOff) { elOff.style.opacity = '0'; elOff.style.transform = 'scale(0.5) rotate(90deg)'; }
+    };
+    const setInverse = (elOn, elOff) => {
+      if (elOn) { elOn.style.opacity = '1'; elOn.style.transform = 'scale(1) rotate(0deg)'; }
+      if (elOff) { elOff.style.opacity = '0'; elOff.style.transform = 'scale(0.5) rotate(-90deg)'; }
+    };
     if (isDark) {
-      sun.style.opacity = '1'; sun.style.transform = 'scale(1) rotate(0deg)';
-      moon.style.opacity = '0'; moon.style.transform = 'scale(0.5) rotate(90deg)';
+      setState(sun, moon);
+      setState(mobileSun, mobileMoon);
     } else {
-      moon.style.opacity = '1'; moon.style.transform = 'scale(1) rotate(0deg)';
-      sun.style.opacity = '0'; sun.style.transform = 'scale(0.5) rotate(-90deg)';
+      setInverse(moon, sun);
+      setInverse(mobileMoon, mobileSun);
     }
   }
 
@@ -203,7 +205,7 @@ const healthTools = healthToolsNames[lang] || healthToolsNames.en;
 
   function attachThemeToggle() {
     const desktopBtn = document.getElementById('themeToggleBtn');
-    const mobileBtn = document.getElementById('themeToggleBtnMobile');
+    const mobileBtn = document.getElementById('themeToggleBtnMobile') || document.getElementById('mobileThemeToggleBtn');
     const toggleTheme = () => {
       const isDark = document.documentElement.classList.toggle('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');

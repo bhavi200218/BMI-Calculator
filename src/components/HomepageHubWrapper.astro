@@ -29,6 +29,44 @@ const selectLabel = {
   ko: '분석 계산기 선택',
   hi: 'एक कैलकुलेटर चुनें'
 }[lang];
+
+// Return an inline minimal SVG string per calculator slug
+const getIcon = (slug) => {
+  switch (slug) {
+    case 'bmi-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="3"/><path d="M5 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/></svg>`;
+    case 'bmr-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s4 4 4 8-2 6-4 8-4-2-4-6 2-10 4-10z"/></svg>`;
+    case 'tdee-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>`;
+    case 'body-fat-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-6 6-6 10a6 6 0 0 0 12 0c0-4-6-10-6-10z"/></svg>`;
+    case 'lean-body-mass-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/></svg>`;
+    case 'ideal-weight-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20s4-6 8-6 8 6 8 6"/></svg>`;
+    case 'calorie-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s4 4 4 8-2 6-4 8-4-2-4-6 2-10 4-10z"/></svg>`;
+    case 'protein-intake-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v6"/><path d="M11 2v6"/><path d="M5 21h14"/></svg>`;
+    case 'water-intake-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-4 4-4 8a4 4 0 0 0 8 0c0-4-4-8-4-8z"/></svg>`;
+    case 'macro-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M6 6v12"/><path d="M12 4v16"/><path d="M18 8v8"/></svg>`;
+    case 'waist-to-hip-ratio-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="8" ry="4"/></svg>`;
+    case 'body-surface-area-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>`;
+    case 'heart-rate-zone-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-2 5-3-10-2 5H2"/></svg>`;
+    case 'one-rep-max-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="12" x2="23" y2="12"/><rect x="3" y="9" width="2" height="6" rx="1"/><rect x="19" y="9" width="2" height="6" rx="1"/></svg>`;
+    case 'pregnancy-weight-gain-calculator':
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 21c2-4 6-6 7-6s5 2 7 6"/></svg>`;
+    default:
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/></svg>`;
+  }
+}
 ---
 
 <div class="space-y-8 animate-in" style="animation-delay: 150ms;">
@@ -53,18 +91,42 @@ const selectLabel = {
       </select>
     </div>
 
-    <!-- Horizontal Pill Scrollbar / Grid for Desktops -->
-    <div class="hidden md:grid grid-cols-3 lg:grid-cols-5 gap-3">
-      {calculators.map(calc => (
-        <button
-          data-slug={calc.slug}
-          class="calc-tab-btn p-4 rounded-xl border text-center transition-all duration-300 cursor-pointer flex flex-col justify-center items-center gap-1.5 h-[90px] border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)]/50 hover:bg-[var(--muted)] hover:text-[var(--foreground)]"
-        >
-          <span class="text-sm font-display font-bold uppercase tracking-tight line-clamp-2">
-            {calc.name[lang] || calc.name['en']}
-          </span>
-        </button>
-      ))}
+    <!-- Horizontal Pill Scrollbar / Grid for Desktops (grouped with icons) -->
+    <div class="hidden md:block">
+      <div class="grid grid-cols-3 gap-3 mb-4">
+        <div class="col-span-3 text-sm font-display font-semibold uppercase text-[var(--accent)]">Core Calculators</div>
+        {calculators.filter(c=>['bmi-calculator','bmr-calculator','tdee-calculator','body-fat-calculator','lean-body-mass-calculator'].includes(c.slug)).map(calc => (
+          <button
+            data-slug={calc.slug}
+            class="calc-tab-btn p-4 rounded-xl border text-center transition-all duration-300 cursor-pointer flex flex-col justify-center items-center gap-1.5 h-[90px] border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)]/50 hover:bg-[var(--muted)] hover:text-[var(--foreground)]"
+          >
+            <span class="w-8 h-8 mb-2 inline-flex items-center justify-center text-[var(--accent)]" set:html={getIcon(calc.slug)}></span>
+            <span class="text-sm font-display font-bold uppercase tracking-tight line-clamp-2">
+              {calc.name[lang] || calc.name['en']}
+            </span>
+          </button>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 mb-4">
+        <div class="col-span-3 text-sm font-display font-semibold uppercase text-[var(--accent)]">Performance & Goals</div>
+        {calculators.filter(c=>['ideal-weight-calculator','calorie-calculator','protein-intake-calculator','water-intake-calculator','macro-calculator'].includes(c.slug)).map(calc => (
+          <button data-slug={calc.slug} class="calc-tab-btn p-4 rounded-xl border text-center transition-all duration-300 cursor-pointer flex flex-col justify-center items-center gap-1.5 h-[90px] border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)]/50 hover:bg-[var(--muted)] hover:text-[var(--foreground)]">
+            <span class="w-8 h-8 mb-2 inline-flex items-center justify-center text-[var(--accent)]" set:html={getIcon(calc.slug)}></span>
+            <span class="text-sm font-display font-bold uppercase tracking-tight line-clamp-2">{calc.name[lang] || calc.name['en']}</span>
+          </button>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <div class="col-span-3 text-sm font-display font-semibold uppercase text-[var(--accent)]">Specialty Metrics</div>
+        {calculators.filter(c=>['waist-to-hip-ratio-calculator','body-surface-area-calculator','heart-rate-zone-calculator','one-rep-max-calculator','pregnancy-weight-gain-calculator'].includes(c.slug)).map(calc => (
+          <button data-slug={calc.slug} class="calc-tab-btn p-4 rounded-xl border text-center transition-all duration-300 cursor-pointer flex flex-col justify-center items-center gap-1.5 h-[90px] border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)]/50 hover:bg-[var(--muted)] hover:text-[var(--foreground)]">
+            <span class="w-8 h-8 mb-2 inline-flex items-center justify-center text-[var(--accent)]" set:html={getIcon(calc.slug)}></span>
+            <span class="text-sm font-display font-bold uppercase tracking-tight line-clamp-2">{calc.name[lang] || calc.name['en']}</span>
+          </button>
+        ))}
+      </div>
     </div>
   </div>
 
