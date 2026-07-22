@@ -87,7 +87,7 @@ const backToCalculatorLabels = {
       returnLabel={homeLabels[lang] || homeLabels.en}
     >
       <div class="space-y-10 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium opacity-90">
-        {articleBody.map((paragraph) => (
+        {articleBody.map((paragraph: string) => (
           <p>{paragraph}</p>
         ))}
 
