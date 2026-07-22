@@ -13,6 +13,7 @@ interface FooterTranslation {
   legalText: string;
   copyright: string;
   links: { name: string; href: string }[];
+  healthToolsLinks?: { name: string; href: string; color: string }[];
 }
 
 const footerTranslations: Record<string, FooterTranslation> = {
@@ -166,8 +167,8 @@ const healthToolsLinks = calculators.map((calc, index) => ({
 }));
 ---
 
-<footer class="border-t border-[var(--border)] bg-[var(--muted)] mt-10">
-  <div class="max-w-6xl mx-auto px-4 py-8 sm:px-6">
+<footer class="border-t border-[var(--border)] bg-[var(--muted)]/40 mt-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
     <!-- Top row: brand + links -->
     <div class="grid gap-8 lg:grid-cols-[220px_minmax(320px,1fr)_240px] items-start mb-4">

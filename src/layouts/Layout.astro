@@ -23,7 +23,7 @@ const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `https://realbmic
 const { currentLocale } = Astro;
 
 const pagePath = Astro.url.pathname.split('/').filter(Boolean);
-const breadcrumbItems = [];
+const breadcrumbItems: any[] = [];
 if (pagePath.length > 0) {
   const segments = pagePath[0] && ['en', 'es', 'fr', 'de', 'ko', 'hi'].includes(pagePath[0]) ? pagePath.slice(1) : pagePath;
   segments.forEach((segment, index) => {
@@ -145,11 +145,13 @@ const howToSchema = {
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
 		<!-- Hreflang Tags (Dynamic Multi-language Indexing) -->
-		{['en', 'es', 'fr', 'de', 'ko', 'hi'].map((lang) => {
-			const path = Astro.url.pathname.replace(/^\/[a-z]{2}\//, `/${lang}/`).replace(/^\/[a-z]{2}$/, `/${lang}/`);
-			return <link rel="alternate" hreflang={lang} href={`https://realbmicalculator.com${path}`} />;
+		{['en', 'es', 'fr', 'de', 'ko', 'hi'].map((l) => {
+			const currentPath = Astro.url.pathname;
+			const cleanPath = currentPath.replace(/^\/(en|es|fr|de|ko|hi)(\/|$)/, '/');
+			const targetPath = cleanPath === '/' ? `/${l}/` : `/${l}${cleanPath.startsWith('/') ? cleanPath : '/' + cleanPath}`;
+			return <link rel="alternate" hreflang={l} href={`https://realbmicalculator.com${targetPath}`} />;
 		})}
-		<link rel="alternate" hreflang="x-default" href={`https://realbmicalculator.com/en/`} />
+		<link rel="alternate" hreflang="x-default" href="https://realbmicalculator.com/en/" />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
@@ -215,6 +217,25 @@ const howToSchema = {
 		<script is:inline type="application/ld+json">
 			{
 				"@context": "https://schema.org",
+				"@type": "MedicalWebPage",
+				"name": "Body Mass Index (BMI) Clinical Reference & Calculator",
+				"url": "https://realbmicalculator.com",
+				"aspect": ["Diagnosis", "Prevention", "Overview"],
+				"medicalAudience": "Patient",
+				"citation": [
+					"https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
+					"https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html"
+				],
+				"code": {
+					"@type": "MedicalCode",
+					"code": "Z68",
+					"codingSystem": "ICD-10-CM"
+				}
+			}
+		</script>
+		<script is:inline type="application/ld+json">
+			{
+				"@context": "https://schema.org",
 				"@type": "Organization",
 				"name": "Real BMI Calculator",
 				"url": "https://realbmicalculator.com",
@@ -246,28 +267,28 @@ const howToSchema = {
 		<style is:global>
 			.bg-slide {
 				opacity: 0;
-				filter: blur(5px);
-				transform: scale(1.03);
+				filter: blur(4px);
+				transform: scale(1.02);
 				transition: opacity 1.5s ease-in-out;
 			}
 			.bg-slide.active {
-				opacity: 0.55;
+				opacity: 0.75;
 			}
 			.dark .bg-slide {
 				filter: blur(3px);
 			}
 			.dark .bg-slide.active {
-				opacity: 0.35;
+				opacity: 0.45;
 			}
 		</style>
 	</head>
 	<body class="min-h-screen relative">
-		<!-- Dynamic Shifting Background Slideshow -->
-		<div id="bg-slideshow" class="fixed inset-0 pointer-events-none z-[-2] overflow-hidden bg-[var(--background)]">
-			<div class="bg-slide active absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg/2.webp');"></div>
-			<div class="bg-slide absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg/4.webp');"></div>
+		<!-- Full-Screen Edge-to-Edge Background Image -->
+		<div id="bg-slideshow" class="fixed inset-0 w-screen h-screen pointer-events-none z-[-2] overflow-hidden bg-[var(--background)]">
+			<div class="bg-slide active absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg/2.webp'); background-size: cover; background-position: center;"></div>
+			<div class="bg-slide absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg/4.webp'); background-size: cover; background-position: center;"></div>
 			<!-- Subtle tint overlay for theme blending -->
-			<div class="absolute inset-0 bg-[var(--background)] opacity-15 dark:opacity-25"></div>
+			<div class="absolute inset-0 bg-[var(--background)] opacity-10 dark:opacity-20"></div>
 		</div>
 
 		<slot />

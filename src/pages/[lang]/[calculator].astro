@@ -3,6 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import UniversalCalculator from '../../components/UniversalCalculator.astro';
 import CalculatorResult from '../../components/CalculatorResult.astro';
+import HealthContent from '../../components/HealthContent.astro';
+import LatestArticles from '../../components/LatestArticles.astro';
+import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
+import HubGrid from '../../components/HubGrid.astro';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
 
 // Define static paths for all 15 calculators across 6 languages
@@ -63,7 +67,7 @@ const webAppSchema = {
   <Navbar />
   
   <main class="pt-26 md:pt-30 pb-20 px-4 md:px-6 relative overflow-x-hidden">
-    <div class="max-w-7xl mx-auto space-y-12">
+    <div class="max-w-7xl mx-auto space-y-16">
       
       <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm font-medium text-[var(--muted-foreground)]">
         <a href={`/${lang}`} class="hover:text-[var(--accent)] transition-colors">Home</a>
@@ -87,6 +91,14 @@ const webAppSchema = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch animate-in" style="animation-delay:100ms">
         <UniversalCalculator calculator={calc} lang={lang} />
         <CalculatorResult lang={lang} />
+      </div>
+
+      <!-- Extended Content & Clinical Knowledge Base for Search Indexing -->
+      <div class="pt-16 border-t border-[var(--border)] space-y-24">
+        <LatestArticles />
+        <HealthContent />
+        <DeepHealthSEO />
+        <HubGrid lang={lang} />
       </div>
 
     </div>

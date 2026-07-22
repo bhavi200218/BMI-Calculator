@@ -2,7 +2,9 @@
 import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import PageShell from '../../../components/PageShell.astro';
+import HubGrid from '../../../components/HubGrid.astro';
 import { blogArticles } from '../../../utils/blogArticles';
+import { type Locale } from '../../../utils/calculators';
 
 export function getStaticPaths() {
   const supportedLocales = ['en', 'es', 'fr', 'de', 'ko', 'hi'];
@@ -15,13 +17,41 @@ export function getStaticPaths() {
 }
 
 const { params } = Astro;
-const lang = params.lang || 'en';
+const lang = (params.lang || 'en') as Locale;
 const { slug } = params;
 const article = blogArticles[slug] || blogArticles['bmi-chart-for-men-women'];
 const articleTitle = article.title[lang] || article.title.en;
 const articleCategory = article.category[lang] || article.category.en;
 const articleDescription = article.description[lang] || article.description.en;
 const articleBody = article.body[lang] || article.body.en;
+
+const canonicalUrl = `https://realbmicalculator.com/${lang}/blog/${slug}`;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": articleTitle,
+  "description": articleDescription,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalUrl
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Real BMI Health Editorial Team",
+    "url": `https://realbmicalculator.com/${lang}/about`
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Real BMI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://realbmicalculator.com/favicon.svg"
+    }
+  },
+  "datePublished": "2026-01-01",
+  "dateModified": new Date().toISOString().split('T')[0]
+};
 
 const homeLabels = {
   en: 'Home',
@@ -45,7 +75,9 @@ const backToCalculatorLabels = {
 <Layout 
     title={`${articleTitle} | Real BMI`}
     description={articleDescription}
+    canonicalURL={canonicalUrl}
 >
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="json-ld"></script>
     <Navbar />
     <PageShell
       title={articleTitle}
@@ -59,10 +91,14 @@ const backToCalculatorLabels = {
           <p>{paragraph}</p>
         ))}
 
-        <div class="pt-8 border-t border-[var(--border)]">
+        <div class="pt-8 border-t border-[var(--border)] flex flex-wrap items-center justify-between gap-4">
           <a href={`/${lang}#calculator`} class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-[10px] tracking-widest inline-block transition-all hover:scale-105 active:scale-95">
             {backToCalculatorLabels[lang] || backToCalculatorLabels.en}
           </a>
+        </div>
+
+        <div class="pt-12 border-t border-[var(--border)]">
+          <HubGrid lang={lang} />
         </div>
       </div>
     </PageShell>

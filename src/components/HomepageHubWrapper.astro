@@ -73,7 +73,7 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
     <div class="hidden md:block space-y-5">
       <div class="calc-group space-y-3">
         <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.core}</div>
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
           {calculators.filter(c=>['bmi-calculator','bmr-calculator','tdee-calculator','body-fat-calculator','lean-body-mass-calculator'].includes(c.slug)).map(calc => (
             <button
               data-slug={calc.slug}
@@ -91,7 +91,7 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
 
       <div class="calc-group space-y-3">
         <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.performance}</div>
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
           {calculators.filter(c=>['ideal-weight-calculator','calorie-calculator','protein-intake-calculator','water-intake-calculator','macro-calculator'].includes(c.slug)).map(calc => (
             <button
               data-slug={calc.slug}
@@ -109,7 +109,7 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
 
       <div class="calc-group space-y-3">
         <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.specialty}</div>
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
           {calculators.filter(c=>['waist-to-hip-ratio-calculator','body-surface-area-calculator','heart-rate-zone-calculator','one-rep-max-calculator','pregnancy-weight-gain-calculator'].includes(c.slug)).map(calc => (
             <button
               data-slug={calc.slug}
