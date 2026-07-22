@@ -60,32 +60,30 @@ import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  USER STORIES (MELOVE-style)  ═══════════════════ -->
+		<!-- ═══════════════════  WHY PEOPLE USE REAL BMI  ═══════════════════ -->
 		<section class="px-4 md:px-6 py-20 md:py-28">
 			<div class="max-w-7xl mx-auto">
 				<div class="mb-14 space-y-4">
-					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Why It Matters</p>
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Why People Choose It</p>
 					<h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase leading-[0.95] text-[var(--foreground)]">
-						Your Fitness Journey,<br/>Your Rules
+						Clarity for your health goals
 					</h2>
 					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
-						We believe health tools should empower you — not judge you. Every calculation is backed by WHO data and designed for your real-world goals.
+						Whether you are tracking progress, planning nutrition, or preparing for a check-in with a clinician, Real BMI gives you fast, practical context grounded in trusted standards.
 					</p>
 				</div>
 
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 					{[
-						{ num: '01', text: 'When I decide to get in shape,', highlight: 'I want an effective way to reach a goal, so I can see real results — not just numbers.' },
-						{ num: '02', text: 'When my motivation drops,', highlight: 'I want to come back without starting over from scratch, so I don\'t lose everything I\'ve built.' },
-						{ num: '03', text: 'When I plan to start working out,', highlight: 'I want it to be free and require zero sign-up, so there\'s no barrier to entry.' },
-						{ num: '04', text: 'When I train without a coach,', highlight: 'I want to learn proper technique backed by WHO clinical data, so I don\'t get it wrong.' },
-						{ num: '05', text: 'When I check my health at home,', highlight: 'I want accurate BMR, TDEE, and body-fat estimates, so I can stay active and informed.' },
+						{ title: 'A reliable starting point', description: 'Get a clear baseline for BMI, BMR, TDEE, and ideal weight without filling out a long form.' },
+						{ title: 'Private by design', description: 'Use the calculator on any device and keep your health data to yourself — no account needed.' },
+						{ title: 'Built on trusted guidance', description: 'Results are presented with WHO and CDC-aligned reference ranges so the context feels more meaningful.' },
+						{ title: 'Useful for everyday planning', description: 'Make smarter nutrition decisions, set realistic goals, and review progress with less guesswork.' },
 					].map(item => (
 						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
-							<div class="text-3xl md:text-4xl font-display font-bold text-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity">{item.num}</div>
+							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
 							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
-								{item.text}
-								<span class="text-[var(--foreground)] font-semibold block mt-1">{item.highlight}</span>
+								{item.description}
 							</p>
 						</div>
 					))}
@@ -95,7 +93,7 @@ import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
 							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-70">Powered by</p>
 							<p class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase">REAL BMI</p>
 						</div>
-						<p class="text-sm font-medium opacity-80 leading-relaxed">Clinical precision meets beautiful design. Calculate your health metrics in seconds.</p>
+						<p class="text-sm font-medium opacity-80 leading-relaxed">Clinical precision meets beautiful design. Health insights that are quick, clear, and easy to trust.</p>
 					</div>
 				</div>
 			</div>

@@ -22,11 +22,8 @@ const { currentSlug, lang } = Astro.props;
             ? 'bg-[var(--accent)] border-[var(--accent)] text-[var(--accent-foreground)] shadow-[var(--shadow-accent)]' 
             : 'bg-[var(--card)] border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--card-hover)]'
         }`}>
-          <div class="space-y-0.5 pr-2">
+          <div class="pr-2">
             <p class="text-sm font-display font-bold uppercase tracking-tight line-clamp-1">{name}</p>
-            <p class={`text-[10px] line-clamp-1 font-sans ${isActive ? 'text-[var(--accent-foreground)]/80' : 'text-[var(--muted-foreground)]'}`}>
-              {calc.description[lang] || calc.description['en']}
-            </p>
           </div>
           <svg class={`w-4 h-4 shrink-0 transition-transform ${isActive ? 'translate-x-0.5' : 'opacity-40 group-hover:translate-x-0.5'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

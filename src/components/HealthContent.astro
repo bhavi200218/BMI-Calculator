@@ -1,66 +1,238 @@
 ---
+import { type Locale } from '../utils/calculators';
+
 const { currentLocale } = Astro;
-const lang = currentLocale || 'en';
+const lang = (currentLocale || 'en') as Locale;
+
+const reviewBadge: Record<string, string> = {
+  en: 'Medically reviewed by our health editorial team • Updated July 2026',
+  es: 'Revisado por nuestro equipo editorial de salud • Actualizado en julio de 2026',
+  fr: 'Vérifié par notre équipe éditoriale santé • Mis à jour en juillet 2026',
+  de: 'Von unserem gesundheitlichen Redaktionsteam geprüft • Aktualisiert Juli 2026',
+  ko: '건강 편집 팀이 검토했습니다 • 2026년 7월 업데이트',
+  hi: 'हमारे स्वास्थ्य संपादकीय दल द्वारा चिकित्सा समीक्षा की गई • जुलाई 2026 को अपडेट'
+};
 
 const content: Record<string, any> = {
   en: {
+    insightSub: 'Health Insights',
+    whoSub: 'WHO Standards',
+    whoTableTitle: 'WHO BMI Classification Standards',
+    whoDesc: 'The World Health Organization (WHO) breaks BMI scores down into categorized target ranges to mark health and nutritional indicators.',
+    colCategory: 'Classification Category',
+    colRange: 'BMI Range Box',
+    colRisk: 'Est. Health Risk Level',
+    sourcesTitle: 'Sources & References',
+    sourcesSubtitle: 'Standards based on official WHO & CDC global guidelines.',
+    whoLink: 'WHO Obesity Guidance',
+    cdcLink: 'CDC BMI Guide',
+    helpCenter: 'Help Center',
     faqTitle: 'Frequently Asked Questions',
-    faq: [
-      { q: 'How is BMI calculated?', a: 'BMI is your weight in kilograms divided by the square of your height in meters. For imperial units, the formula is (weight in pounds ÷ height in inches²) × 703. Our calculator processes both instantly for maximum comfort.' },
-      { q: 'What is a healthy BMI for a woman?', a: 'For adult women, a healthy BMI range is between 18.5 and 24.9. However, please note that BMI does not differentiate between muscle mass and body fat. A very fit athlete might register a high BMI despite having low body fat.' },
-      { q: 'Is BMI accurate for muscular people or athletes?', a: 'No, it is not fully accurate for this demographic. BMI cannot distinguish weight from muscle versus weight from fat. As a result, bodybuilders, weightlifters, and athletes often display an "overweight" or "obese" BMI score while maintaining excellent health and minimal fat. In such cases, measuring waist circumference or body-fat percentage is recommended.' },
-      { q: 'What does a BMI of 25 mean?', a: 'A BMI of exactly 25.0 marks the dividing line between a healthy weight and the overweight classification. It is a signal to review other metrics like cardiovascular fitness, activity levels, and waist-to-hip ratio to get a realistic view of health risks.' },
-      { q: 'What is BMR and why does it matter?', a: 'Basal Metabolic Rate (BMR) represents the total number of calories your body needs to perform basic, life-sustaining functions (such as breathing, circulation, and cell production) while at complete rest. Knowing your BMR helps you determine the baseline calorie intake required to maintain, lose, or gain weight.' },
-      { q: 'What is TDEE and how is it active?', a: 'Total Daily Energy Expenditure (TDEE) is an estimation of how many calories you burn per day once exercise, sport, and daily activity are factored in. It is derived by multiplying your BMR by your physical activity multiplier.' },
-    ],
+    faqSubtitle: 'Everything you need to know about BMI calculations, metabolic ratios, accuracy, and athletic measurements.',
     sections: [
       { title: 'Understanding Your Body Mass Index', text: 'Body Mass Index (BMI) is a valuable, internationally recognized screening standard used by healthcare professionals worldwide. It groups your weight category relative to your height, giving you a quick reference point for metabolic and cardiovascular disease risks. Real BMI Calculator pairs this score with the standard classifications from the World Health Organization (WHO) and Centers for Disease Control (CDC) to offer you direct, clinical context.' },
-      { title: 'How BMI, BMR & TDEE Connect Together', text: 'Your BMI indicates if your weight falls within a balanced window. Your BMR reveals the baseline metabolic energy your organs require at absolute rest. Finally, your TDEE integrates daily physical activities, showing you the exact calories required to maintain your current weight. Combining these three pillars gives you a comprehensive, customized map of your energy balance and weight-management path.' },
+      { title: 'How BMI, BMR & TDEE Connect Together', text: 'Your BMI indicates if your weight falls within a balanced window. Your BMR reveals the baseline metabolic energy your organs require at absolute rest. Finally, your TDEE integrates daily physical activities, showing you the exact calories required to maintain your current weight. Combining these three pillars gives you a comprehensive, customized map of your energy balance and weight-management path.' }
     ],
-    whoTableTitle: 'WHO BMI Classification Standards',
     whoTable: [
       { category: 'Underweight', range: '< 18.5', risk: 'Low (Increased Nutri. Risk)', status: 'underweight' },
       { category: 'Normal Weight', range: '18.5 – 24.9', risk: 'Minimal (Optimal Health)', status: 'normal' },
       { category: 'Overweight', range: '25.0 – 29.9', risk: 'Increased (Caution Recommended)', status: 'overweight' },
       { category: 'Obesity Class I', range: '30.0 – 34.9', risk: 'High (Moderate Risk)', status: 'obesity-1' },
       { category: 'Obesity Class II', range: '35.0 – 39.9', risk: 'Very High (Severe Risk)', status: 'obesity-2' },
-      { category: 'Obesity Class III', range: '≥ 40.0', risk: 'Extremely High (Acute Risk)', status: 'obesity-3' },
-    ]
-  },
-  es: {
-    faqTitle: 'Preguntas Frecuentes',
-    faq: [
-      { q: '¿Cómo se calcula el IMC?', a: 'El IMC se calcula dividiendo el peso en kilogramos por el cuadrado de la altura en metros. Nuestra herramienta realiza este cálculo automáticamente para los sistemas métrico e imperial.' },
-      { q: '¿Es el IMC adecuado para atletas y personas musculosas?', a: 'No del todo. El IMC no mide la grasa corporal de forma directa y no diferencia entre masa muscular y tejido graso. Los deportistas con mucha masa muscular pueden dar resultados de "sobrepeso" sin tener exceso de grasa.' },
-      { q: '¿Qué es el metabolismo basal (BMR) Y el TDEE?', a: 'El BMR es el gasto calórico de tu cuerpo en descanso absoluto. El TDEE es la energía diaria consumida incluyendo tus niveles de actividad física diaria.' },
+      { category: 'Obesity Class III', range: '≥ 40.0', risk: 'Extremely High (Acute Risk)', status: 'obesity-3' }
     ],
-    sections: [
-      { title: 'Entendiendo Tu Índice de Masa Corporal', text: 'El Índice de Masa Corporal (IMC) es un estándar clínico simplificado pero de gran utilidad médica para estimar si tu peso se encuentra dentro de niveles saludables. Real BMI Calculator utiliza escalas oficiales de la OMS para guiarte en tu estado nutricional.' },
-      { title: 'La Sinergia de IMC, BMR y TDEE', text: 'El IMC te indica tu categoría general de peso, el BMR describe los requerimientos de tu metabolismo celular en reposo, y el TDEE te indica el consumo calórico diario para planificar objetivos de déficit, mantenimiento o superávit.' }
+    faq: [
+      { q: 'How is BMI calculated?', a: 'BMI compares your weight and height using a simple formula. In metric units, it is weight in kilograms divided by height in meters squared; in imperial units, the formula is weight in pounds divided by height in inches squared, multiplied by 703.' },
+      { q: 'What is a healthy BMI for a woman?', a: 'For most adults, a healthy BMI range is 18.5 to 24.9. That said, body composition matters, so a muscular build can still land above that range without carrying excess body fat.' },
+      { q: 'Is BMI accurate for muscular people or athletes?', a: 'BMI is a screening tool, not a diagnosis. It can overestimate body fat in muscular people and underestimate it in others, so it works best alongside waist size, activity levels, and overall health patterns.' },
+      { q: 'What does a BMI of 25 mean?', a: 'A BMI of 25 sits at the threshold between the healthy range and the overweight category. It is a signal to review waist circumference, exercise habits, and lifestyle factors rather than treating a single number as a verdict.' },
+      { q: 'What is BMR and why does it matter?', a: 'BMR is the energy your body uses at rest to support breathing, circulation, and basic organ function. It helps estimate the calories needed to maintain weight or adjust it intentionally.' },
+      { q: 'What is TDEE and why does it matter?', a: 'TDEE estimates how many calories you burn in a day once movement and exercise are included. It is especially helpful for planning nutrition around maintenance, fat loss, or muscle gain.' }
     ]
   },
   hi: {
+    insightSub: 'स्वास्थ्य अंतर्दृष्टि',
+    whoSub: 'डब्ल्यूएचओ (WHO) मानक',
+    whoTableTitle: 'डब्ल्यूएचओ बीएमआई वर्गीकरण मानक',
+    whoDesc: 'विश्व स्वास्थ्य संगठन (WHO) पोषण और स्वास्थ्य संकेतकों का आकलन करने के लिए बीएमआई स्कोर को लक्षित श्रेणियों में वर्गीकृत करता है।',
+    colCategory: 'वर्गीकरण श्रेणी',
+    colRange: 'बीएमआई सीमा',
+    colRisk: 'अनुमानित स्वास्थ्य जोखिम',
+    sourcesTitle: 'स्रोत और संदर्भ',
+    sourcesSubtitle: 'डब्ल्यूएचओ (WHO) और सीडीसी (CDC) के आधिकारिक वैश्विक दिशानिर्देशों पर आधारित मानक।',
+    whoLink: 'डब्ल्यूएचओ मोटापा गाइड',
+    cdcLink: 'सीडीसी बीएमआई गाइड',
+    helpCenter: 'सहायता केंद्र',
     faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
-    faq: [
-      { q: 'बीएमआई (BMI) की गणना कैसे की जाती है?', a: 'बीएमआई = वजन (किलोग्राम) ÷ ऊंचाई² (मीटर)। हमारे कैलकुलेटर में आप मेट्रिक और इंपीरियल दोनों प्रणालियों का तुरंत उपयोग कर सकते हैं।' },
-      { q: 'क्या धावकों और बॉडीबिल्डर्स के लिए बीएमआई सही उत्तर देता है?', a: 'नहीं, बीएमआई शरीर में मांसपेशियों (मसल मास) और वसा के बीच का अंतर नहीं बता सकता। इसलिए भारी फिटनेस वाले एथलीटों का बीएमआई स्कोर सामान्य से अधिक दिख सकता है।' },
-    ],
+    faqSubtitle: 'बीएमआई गणना, चयापचय अनुपात, सटीकता और एथलेटिक माप के बारे में जो कुछ भी आपको जानना आवश्यक है।',
     sections: [
-      { title: 'बॉडी मास इंडेक्स को गहराई से समझें', text: 'बॉडी मास इंडेक्स (बीएमआई) वजन और ऊंचाई का एक अनुपात है जो स्वास्थ्य विशेषज्ञों को शारीरिक संरचना का आकलन करने में मदद करता है। चिकित्सक इसका उपयोग हृदय और पोषण संबंधी बुनियादी जांच के लिए करते हैं।' }
+      { title: 'बॉडी मास इंडेक्स (BMI) को गहराई से समझें', text: 'बॉडी मास इंडेक्स (बीएमआई) दुनिया भर के स्वास्थ्य विशेषज्ञों द्वारा उपयोग किया जाने वाला एक अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त जांच मानक है। यह आपकी ऊंचाई के अनुपात में आपके वजन की श्रेणी को वर्गीकृत करता है, जिससे हृदय और चयापचय संबंधी जोखिमों का त्वरित संदर्भ मिलता है। Real BMI कैलकुलेटर विश्व स्वास्थ्य संगठन (WHO) और CDC के आधिकारिक मानकों के आधार पर सटीक विश्लेषण प्रदान करता है।' },
+      { title: 'बीएमआई, बीएमआर और टीडीईई का परस्पर संबंध', text: 'आपका बीएमआई (BMI) यह दर्शाता है कि आपका वजन संतुलित सीमा में है या नहीं। आपका बीएमआर (BMR) विश्राम अवस्था में आपके अंगों द्वारा आवश्यक बेसल ऊर्जा को उजागर करता है। अंत में, आपका टीडीईई (TDEE) दैनिक गतिविधियों को जोड़कर वजन बनाए रखने के लिए आवश्यक सटीक कैलोरी बताता है।' }
+    ],
+    whoTable: [
+      { category: 'कम वजन (Underweight)', range: '< 18.5', risk: 'कम (पोषण संबंधी जोखिम)', status: 'underweight' },
+      { category: 'सामान्य वजन (Normal Weight)', range: '18.5 – 24.9', risk: 'न्यूनतम (उत्तम स्वास्थ्य)', status: 'normal' },
+      { category: 'अधिक वजन (Overweight)', range: '25.0 – 29.9', risk: 'बढ़ा हुआ (सावधानी आवश्यक)', status: 'overweight' },
+      { category: 'मोटापा श्रेणी I (Obesity I)', range: '30.0 – 34.9', risk: 'उच्च (मध्यम जोखिम)', status: 'obesity-1' },
+      { category: 'मोटापा श्रेणी II (Obesity II)', range: '35.0 – 39.9', risk: 'अत्यधिक उच्च (गंभीर जोखिम)', status: 'obesity-2' },
+      { category: 'मोटापा श्रेणी III (Obesity III)', range: '≥ 40.0', risk: 'अत्यंत गंभीर (तीव्र जोखिम)', status: 'obesity-3' }
+    ],
+    faq: [
+      { q: 'बीएमआई (BMI) की गणना कैसे की जाती है?', a: 'बीएमआई = वजन (किलोग्राम) ÷ ऊंचाई² (मीटर)। इंपीरियल इकाइयों में: (वजन पाउंड ÷ ऊंचाई इंच²) × 703। हमारा कैलकुलेटर दोनों प्रणालियों में तुरंत गणना करता है।' },
+      { q: 'महिलाओं के लिए स्वस्थ बीएमआई क्या है?', a: 'अधिकांश वयस्कों के लिए स्वस्थ बीएमआई सीमा 18.5 से 24.9 है। हालांकि, शरीर की संरचना मायने रखती है, इसलिए मांसपेशियों वाले शरीर में बिना अतिरिक्त वसा के भी स्कोर अधिक हो सकता है।' },
+      { q: 'क्या धावकों और बॉडीबिल्डर्स के लिए बीएमआई सटीक है?', a: 'बीएमआई एक प्राथमिक जांच उपकरण है, निदान नहीं। यह मांसपेशियों वाले एथलीटों में शरीर की वसा का अधिक अनुमान लगा सकता है, इसलिए इसे कमर की परिधि और जीवन शैली के साथ देखना चाहिए।' },
+      { q: '25 बीएमआई का क्या अर्थ है?', a: '25 का बीएमआई सामान्य सीमा और अधिक वजन श्रेणी के बीच की सीमा पर है। यह एक संख्या को अंतिम फैसला मानने के बजाय कमर के आकार और व्यायाम की आदतों की समीक्षा करने का संकेत है।' },
+      { q: 'बीएमआर (BMR) क्या है और यह क्यों महत्वपूर्ण है?', a: 'बीएमआर वह ऊर्जा है जिसका उपयोग आपका शरीर सांस लेने और अंग संचालन के लिए विश्राम की स्थिति में करता है। यह वजन बनाए रखने या बदलने के लिए कैलोरी आवश्यकताओं का अनुमान लगाने में मदद करता है।' },
+      { q: 'टीडीईई (TDEE) क्या है और यह क्यों महत्वपूर्ण है?', a: 'टीडीईई अनुमान लगाता है कि आप शारीरिक गतिविधि और व्यायाम सहित एक दिन में कितनी कैलोरी बर्न करते हैं। यह वजन घटाने या मांसपेशियों के निर्माण के लिए पोषण योजना बनाने में सहायक है।' }
     ]
   },
+  es: {
+    insightSub: 'Información de Salud',
+    whoSub: 'Estándares OMS',
+    whoTableTitle: 'Estándares de Clasificación de IMC de la OMS',
+    whoDesc: 'La Organización Mundial de la Salud (OMS) clasifica los valores de IMC en rangos objetivo para evaluar indicadores nutricionales y de salud.',
+    colCategory: 'Categoría de Clasificación',
+    colRange: 'Rango de IMC',
+    colRisk: 'Nivel de Riesgo Estimado',
+    sourcesTitle: 'Fuentes y Referencias',
+    sourcesSubtitle: 'Estándares basados en directrices oficiales de la OMS y los CDC.',
+    whoLink: 'Guía de Obesidad de la OMS',
+    cdcLink: 'Guía de IMC de los CDC',
+    helpCenter: 'Centro de Ayuda',
+    faqTitle: 'Preguntas Frecuentes',
+    faqSubtitle: 'Todo lo que necesitas saber sobre cálculos de IMC, índices metabólicos, precisión y mediciones atléticas.',
+    sections: [
+      { title: 'Entendiendo Tu Índice de Masa Corporal', text: 'El Índice de Masa Corporal (IMC) es un estándar clínico internacional para estimar si tu peso se encuentra dentro de niveles saludables. Real BMI Calculator utiliza escalas oficiales de la OMS y los CDC para guiarte en tu estado nutricional.' },
+      { title: 'La Sinergia de IMC, BMR y TDEE', text: 'El IMC te indica tu categoría general de peso, el BMR describe los requerimientos de tu metabolismo celular en reposo, y el TDEE te indica el consumo calórico diario para planificar objetivos de déficit, mantenimiento o superávit.' }
+    ],
+    whoTable: [
+      { category: 'Bajo Peso', range: '< 18.5', risk: 'Bajo (Riesgo Nutricional)', status: 'underweight' },
+      { category: 'Peso Normal', range: '18.5 – 24.9', risk: 'Mínimo (Salud Óptima)', status: 'normal' },
+      { category: 'Sobrepeso', range: '25.0 – 29.9', risk: 'Aumentado (Precaución)', status: 'overweight' },
+      { category: 'Obesidad Clase I', range: '30.0 – 34.9', risk: 'Alto (Riesgo Moderado)', status: 'obesity-1' },
+      { category: 'Obesidad Clase II', range: '35.0 – 39.9', risk: 'Muy Alto (Riesgo Grave)', status: 'obesity-2' },
+      { category: 'Obesidad Clase III', range: '≥ 40.0', risk: 'Extremadamente Alto (Riesgo Agudo)', status: 'obesity-3' }
+    ],
+    faq: [
+      { q: '¿Cómo se calcula el IMC?', a: 'El IMC se calcula dividiendo el peso en kg por la altura en metros al cuadrado. Nuestra herramienta realiza este cálculo automáticamente.' },
+      { q: '¿Cuál es un IMC saludable para una mujer?', a: 'Para la mayoría de los adultos, el rango saludable es de 18.5 a 24.9.' },
+      { q: '¿Es el IMC adecuado para atletas?', a: 'El IMC es una herramienta de detección. Puede sobreestimar la grasa en personas musculosas.' },
+      { q: '¿Qué significa un IMC de 25?', a: 'Un IMC de 25 está en el límite entre el rango saludable y el sobrepeso.' },
+      { q: '¿Qué es el BMR y por qué importa?', a: 'El BMR es la energía que tu cuerpo gasta en reposo para mantener funciones vitales básicas.' },
+      { q: '¿Qué es el TDEE y por qué importa?', a: 'El TDEE calcula cuántas calorías quemas al día incluyendo el ejercicio diario.' }
+    ]
+  },
+  fr: {
+    insightSub: 'Aperçus Santé',
+    whoSub: 'Normes OMS',
+    whoTableTitle: 'Normes de Classification de l\'IMC selon l\'OMS',
+    whoDesc: 'L\'Organisation mondiale de la Santé (OMS) divise les scores d\'IMC en plages cibles pour évaluer la santé et la nutrition.',
+    colCategory: 'Catégorie de Classification',
+    colRange: 'Plage d\'IMC',
+    colRisk: 'Niveau de Risque Estimé',
+    sourcesTitle: 'Sources et Références',
+    sourcesSubtitle: 'Normes basées sur les directives officielles de l\'OMS et du CDC.',
+    whoLink: 'Guide de l\'OMS sur l\'Obésité',
+    cdcLink: 'Guide IMC du CDC',
+    helpCenter: 'Centre d\'Aide',
+    faqTitle: 'Foire Aux Questions',
+    faqSubtitle: 'Tout ce que vous devez savoir sur le calcul de l\'IMC, le métabolisme, la précision et les mesures sportives.',
+    sections: [
+      { title: 'Comprendre Votre Indice de Masse Corporelle', text: 'L\'indice de masse corporelle (IMC) est un standard de dépistage reconnu à l\'échelle internationale par les professionnels de santé.' },
+      { title: 'Comment l\'IMC, le BMR et le TDEE Interagissent', text: 'Votre IMC indique si votre poids est équilibré, le BMR votre métabolisme de base au repos, et le TDEE vos dépenses caloriques totales quotidiennes.' }
+    ],
+    whoTable: [
+      { category: 'Sous-poids', range: '< 18.5', risk: 'Faible (Risque Nutritionnel)', status: 'underweight' },
+      { category: 'Poids Normal', range: '18.5 – 24.9', risk: 'Minimal (Santé Optimale)', status: 'normal' },
+      { category: 'Surpoids', range: '25.0 – 29.9', risk: 'Accru (Prudence Recommandée)', status: 'overweight' },
+      { category: 'Obésité Classe I', range: '30.0 – 34.9', risk: 'Élevé (Risque Modéré)', status: 'obesity-1' },
+      { category: 'Obésité Classe II', range: '35.0 – 39.9', risk: 'Très Élevé (Risque Sévère)', status: 'obesity-2' },
+      { category: 'Obésité Classe III', range: '≥ 40.0', risk: 'Extrêmement Élevé (Risque Aigu)', status: 'obesity-3' }
+    ],
+    faq: [
+      { q: 'Comment l\'IMC est-il calculé ?', a: 'L\'IMC divise le poids en kg par la taille en mètres au carré.' },
+      { q: 'Quel est l\'IMC sain pour une femme ?', a: 'Pour la plupart des adultes, un IMC sain se situe entre 18.5 et 24.9.' },
+      { q: 'L\'IMC est-il précis pour les sportifs ?', a: 'L\'IMC est un outil de dépistage qui peut surestimer la masse grasse des athlètes.' },
+      { q: 'Que signifie un IMC de 25 ?', a: 'Un IMC de 25 marque la limite entre poids normal et surpoids.' },
+      { q: 'Qu\'est-ce que le BMR ?', a: 'Le BMR représente les calories indispensables au fonctionnement des organes au repos.' },
+      { q: 'Qu\'est-ce que le TDEE ?', a: 'Le TDEE estime votre dépense énergétique quotidienne totale avec l\'activité physique.' }
+    ]
+  },
+  de: {
+    insightSub: 'Gesundheitseinblicke',
+    whoSub: 'WHO-Standards',
+    whoTableTitle: 'WHO BMI-Klassifizierungsstandards',
+    whoDesc: 'Die Weltgesundheitsorganisation (WHO) unterteilt BMI-Werte in Zielbereiche zur Beurteilung von Gesundheitsindikatoren.',
+    colCategory: 'Klassifizierungskategorie',
+    colRange: 'BMI-Bereich',
+    colRisk: 'Geschätztes Gesundheitsrisiko',
+    sourcesTitle: 'Quellen & Referenzen',
+    sourcesSubtitle: 'Standards basierend auf offiziellen WHO- und CDC-Richtlinien.',
+    whoLink: 'WHO Adipositas-Leitfaden',
+    cdcLink: 'CDC BMI-Leitfaden',
+    helpCenter: 'Hilfe-Center',
+    faqTitle: 'Häufig Gestellte Fragen',
+    faqSubtitle: 'Alles, was Sie über BMI-Berechnungen, Stoffwechselraten, Genauigkeit und sportliche Messungen wissen müssen.',
+    sections: [
+      { title: 'Ihren Body-Mass-Index Verstehen', text: 'Der Body-Mass-Index (BMI) ist ein international anerkannter Screening-Standard zur Beurteilung Ihres Gewichts.' },
+      { title: 'Wie BMI, BMR & TDEE Zusammenhängen', text: 'Ihr BMI zeigt, ob Ihr Gewicht ausgewogen ist, Ihr BMR beschreibt den Grundumsatz, und der TDEE berechnet den Gesamtkalorienbedarf.' }
+    ],
+    whoTable: [
+      { category: 'Untergewicht', range: '< 18.5', risk: 'Niedrig (Erhöhter Nährstoffbedarf)', status: 'underweight' },
+      { category: 'Normalgewicht', range: '18.5 – 24.9', risk: 'Minimal (Optimale Gesundheit)', status: 'normal' },
+      { category: 'Übergewicht', range: '25.0 – 29.9', risk: 'Erhöht (Vorsicht Empfohlen)', status: 'overweight' },
+      { category: 'Adipositas Klasse I', range: '30.0 – 34.9', risk: 'Hoch (Mäßiges Risiko)', status: 'obesity-1' },
+      { category: 'Adipositas Klasse II', range: '35.0 – 39.9', risk: 'Sehr Hoch (Schweres Risiko)', status: 'obesity-2' },
+      { category: 'Adipositas Klasse III', range: '≥ 40.0', risk: 'Extrem Hoch (Akutes Risiko)', status: 'obesity-3' }
+    ],
+    faq: [
+      { q: 'Wie wird der BMI berechnet?', a: 'Gewicht in kg geteilt durch Körpergröße in Metern zum Quadrat.' },
+      { q: 'Was ist ein gesunder BMI für Frauen?', a: 'Ein gesunder BMI liegt für die meisten Erwachsenen zwischen 18,5 und 24,9.' },
+      { q: 'Ist der BMI für Sportler geeignet?', a: 'Der BMI unterscheidet nicht zwischen Muskelmasse und Fettgewebe.' },
+      { q: 'Was bedeutet ein BMI von 25?', a: 'Ein BMI von 25 liegt an der Schwelle zum Übergewicht.' },
+      { q: 'Was ist der BMR?', a: 'Der BMR ist der Kalorienbedarf Ihres Körpers im absoluten Ruhezustand.' },
+      { q: 'Was ist der TDEE?', a: 'Der TDEE beschreibt den täglichen Gesamtkalorienverbrauch inklusive Bewegung.' }
+    ]
+  },
+  ko: {
+    insightSub: '건강 인사이트',
+    whoSub: 'WHO 표준 기준',
+    whoTableTitle: 'WHO BMI 분류 표준 기준',
+    whoDesc: '세계보건기구(WHO)는 건강 및 영양 지표를 평가하기 위해 BMI 점수를 범주별 목표 범위로 분류합니다.',
+    colCategory: '분류 카테고리',
+    colRange: 'BMI 범위',
+    colRisk: '추정 건강 위험도',
+    sourcesTitle: '출처 및 참고 문헌',
+    sourcesSubtitle: '공식 WHO 및 CDC 글로벌 지침을 기반으로 한 표준입니다.',
+    whoLink: 'WHO 비만 지침',
+    cdcLink: 'CDC BMI 지침',
+    helpCenter: '도움말 센터',
+    faqTitle: '자주 묻는 질문',
+    faqSubtitle: 'BMI 계산, 대사율, 정확도 및 운동 선수 측정에 대해 알아야 할 모든 것.',
+    sections: [
+      { title: '체질량지수(BMI) 이해하기', text: '체질량지수(BMI)는 전 세계 의료 전문가들이 사용하는 국제적인 스크리닝 표준입니다.' },
+      { title: 'BMI, BMR, TDEE의 상호 연관성', text: 'BMI는 체중의 균형 상태를, BMR은 휴식 상태의 기초 대사량을, TDEE는 활동량을 포함한 필요 칼로리를 보여줍니다.' }
+    ],
+    whoTable: [
+      { category: '저체중', range: '< 18.5', risk: '낮음 (영양 위험 증가)', status: 'underweight' },
+      { category: '정상 체중', range: '18.5 – 24.9', risk: '최소 (최적의 건강 상태)', status: 'normal' },
+      { category: '과체중', range: '25.0 – 29.9', risk: '증가 (주의 필요)', status: 'overweight' },
+      { category: '비만 1단계', range: '30.0 – 34.9', risk: '높음 (중등도 위험)', status: 'obesity-1' },
+      { category: '비만 2단계', range: '35.0 – 39.9', risk: '매우 높음 (심각한 위험)', status: 'obesity-2' },
+      { category: '비만 3단계', range: '≥ 40.0', risk: '극도로 높음 (고위험군)', status: 'obesity-3' }
+    ],
+    faq: [
+      { q: 'BMI는 어떻게 계산되나요?', a: 'BMI는 체중(kg)을 키(m)의 제곱으로 나눈 값입니다.' },
+      { q: '여성의 건강한 BMI는 얼마인가요?', a: '일반 성인의 경우 18.5에서 24.9 사이가 건강한 범주입니다.' },
+      { q: '근육 질량이 많은 사람에게도 BMI가 정확한가요?', a: '운동선수의 경우 BMI가 실제보다 높게 측정될 수 있습니다.' },
+      { q: 'BMI 25는 무엇을 의미하나요?', a: 'BMI 25는 정상 범위와 과체중의 경계선입니다.' },
+      { q: 'BMR이란 무엇인가요?', a: 'BMR은 휴식 상태에서 필요한 기초 에너지입니다.' },
+      { q: 'TDEE란 무엇인가요?', a: 'TDEE는 하루 총 에너지 소비량입니다.' }
+    ]
+  }
 };
 
-// Elegant fallback to English for translations or sub-keys
-const activeContent = content[lang] || content.en;
-const t = {
-  ...content.en,
-  ...activeContent,
-  // Merge lists to preserve English if translated sub-lists are incomplete
-  faq: activeContent.faq && activeContent.faq.length >= 3 ? activeContent.faq : content.en.faq,
-  sections: activeContent.sections && activeContent.sections.length >= 2 ? activeContent.sections : content.en.sections,
-  whoTable: activeContent.whoTable || content.en.whoTable,
-};
+const t = content[lang] || content.en;
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -75,7 +247,7 @@ const faqSchema = {
 
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-<section id="insights" class="max-w-7xl mx-auto space-y-24 md:space-y-32 py-16 md:py-24 scroll-mt-28">
+<section id="insights" class="max-w-7xl mx-auto space-y-20 md:space-y-28 py-12 md:py-20 scroll-mt-28">
 
   <!-- ═══════════════════  HEALTH INSIGHTS  ═══════════════════ -->
   <div class="grid md:grid-cols-2 gap-8 md:gap-10">
@@ -84,7 +256,7 @@ const faqSchema = {
         
         <div class="space-y-4">
           <div class="flex items-center justify-between">
-            <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Insight 0{idx + 1}</p>
+            <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.insightSub} 0{idx + 1}</p>
           </div>
           <h2 class="text-2xl md:text-3xl font-display font-bold uppercase leading-tight text-[var(--foreground)]">
             {section.title}
@@ -98,16 +270,16 @@ const faqSchema = {
     ))}
   </div>
 
-  <!-- ═══════════════════  WHO TABLE  ═══════════════════ -->
+  <!-- ═══════════════════  WHO TABLE & SOURCES  ═══════════════════ -->
   {t.whoTable && (
-    <div class="space-y-10 border-t border-[var(--border)] pt-20">
+    <div class="space-y-8 border-t border-[var(--border)] pt-16">
       <div class="space-y-3">
-        <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">WHO Standards</p>
+        <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.whoSub}</p>
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
           {t.whoTableTitle}
         </h2>
         <p class="text-base text-[var(--muted-foreground)] max-w-2xl font-medium">
-          The World Health Organization (WHO) breaks BMI scores down into categorized target ranges to mark health and nutritional indicators.
+          {t.whoDesc}
         </p>
       </div>
 
@@ -117,15 +289,15 @@ const faqSchema = {
           <div class={`p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-sm ${i % 2 === 1 ? 'bg-[var(--muted)]/20' : ''}`}>
             <div class="flex justify-between items-center gap-3">
               <span class="font-display font-bold text-[var(--foreground)] uppercase text-sm">{row.category}</span>
-              <span class={`text-[9px] font-display font-semibold uppercase tracking-widest px-3 py-1 rounded-full border ${
-                row.status === 'normal'      ? 'border-emerald-500/30 text-emerald-500 bg-emerald-500/5' :
+              <span class={`text-[10px] font-display font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full border ${
+                row.status === 'normal'      ? 'border-emerald-600/50 text-emerald-950 dark:text-emerald-200 bg-emerald-500/20' :
                 row.status === 'underweight' ? 'border-sky-500/30 text-sky-500 bg-sky-500/5' :
                 row.status === 'overweight'  ? 'border-amber-500/30 text-amber-500 bg-amber-500/5' :
                                                'border-rose-500/30 text-rose-500 bg-rose-500/5'
               }`}>{row.risk}</span>
             </div>
             <div class="flex justify-between items-center text-xs border-t border-[var(--border)] pt-2">
-              <span class="text-[var(--muted-foreground)]">BMI Range</span>
+              <span class="text-[var(--muted-foreground)]">{t.colRange}</span>
               <span class="font-sans font-bold text-[var(--foreground)]">{row.range}</span>
             </div>
           </div>
@@ -138,9 +310,9 @@ const faqSchema = {
           <table class="w-full text-left min-w-[500px] border-collapse">
             <thead>
               <tr class="bg-[var(--muted)] border-b border-[var(--border)]">
-                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">Classification Category</th>
-                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">BMI Range Box</th>
-                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">Est. Health Risk Level</th>
+                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colCategory}</th>
+                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colRange}</th>
+                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colRisk}</th>
               </tr>
             </thead>
             <tbody>
@@ -149,11 +321,11 @@ const faqSchema = {
                   <td class="px-6 py-5 font-display font-bold text-[var(--foreground)] uppercase text-sm">{row.category}</td>
                   <td class="px-6 py-5 font-sans text-[var(--foreground)] text-sm font-semibold">{row.range}</td>
                   <td class="px-6 py-5">
-                    <span class={`text-[10px] font-display font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border ${
-                      row.status === 'normal'      ? 'border-emerald-500/30 text-emerald-500 bg-emerald-500/5' :
-                      row.status === 'underweight' ? 'border-sky-500/30 text-sky-500 bg-sky-500/5' :
-                      row.status === 'overweight'  ? 'border-amber-500/30 text-amber-500 bg-amber-500/5' :
-                                                     'border-rose-500/30 text-rose-500 bg-rose-500/5'
+                    <span class={`text-[10px] font-display font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full border ${
+                      row.status === 'normal'      ? 'border-emerald-600/40 text-emerald-800 dark:text-emerald-300 bg-emerald-500/15' :
+                      row.status === 'underweight' ? 'border-sky-600/40 text-sky-800 dark:text-sky-300 bg-sky-500/15' :
+                      row.status === 'overweight'  ? 'border-amber-600/40 text-amber-900 dark:text-amber-300 bg-amber-500/15' :
+                                                     'border-rose-600/40 text-rose-800 dark:text-rose-300 bg-rose-500/15'
                     }`}>{row.risk}</span>
                   </td>
                 </tr>
@@ -162,16 +334,34 @@ const faqSchema = {
           </table>
         </div>
       </div>
+
+      <!-- Sources & References Box -->
+      <div class="rounded-xl border border-[var(--border)] bg-[var(--card)]/80 p-5 md:p-6 shadow-[var(--shadow-soft)] flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.25em] text-[var(--accent)]">{t.sourcesTitle}</p>
+          <p class="text-xs text-[var(--muted-foreground)] mt-1 font-medium">{t.sourcesSubtitle}</p>
+        </div>
+        <div class="flex flex-wrap gap-2.5">
+          <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-4 py-1.5 text-xs font-semibold text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors bg-[var(--muted)]/30">
+            <span>{t.whoLink}</span>
+            <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+          <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-4 py-1.5 text-xs font-semibold text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors bg-[var(--muted)]/30">
+            <span>{t.cdcLink}</span>
+            <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
   )}
 
   <!-- ═══════════════════  FAQ ACCORDION  ═══════════════════ -->
   <div id="faq" class="space-y-12 border-t border-[var(--border)] pt-20 scroll-mt-28">
     <div class="space-y-3 text-center">
-      <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Help Center</p>
+      <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.helpCenter}</p>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase text-[var(--foreground)]">{t.faqTitle}</h2>
       <p class="text-base text-[var(--muted-foreground)] max-w-xl mx-auto font-medium">
-        Everything you need to know about BMI calculations, metabolic ratios, accuracy, and athletic measurements.
+        {t.faqSubtitle}
       </p>
     </div>
 

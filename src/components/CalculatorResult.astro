@@ -21,6 +21,9 @@ const t = getCalculatorTranslations(lang);
     <div class="space-y-3">
       <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.metricsTitle}</p>
       <p class="text-base text-[var(--muted-foreground)] font-medium opacity-70">{t.waiting}</p>
+      <p class="text-sm text-[var(--muted-foreground)]/80 font-medium max-w-sm mx-auto">
+        {lang === 'es' ? 'Elige una calculadora, introduce tus datos y obtén una vista instantánea de tu salud.' : lang === 'fr' ? 'Choisissez un outil, saisissez vos données et obtenez un aperçu instantané de votre santé.' : lang === 'de' ? 'Wählen Sie einen Rechner, geben Sie Ihre Daten ein und erhalten Sie sofort einen klaren Überblick.' : lang === 'ko' ? '계산기를 선택하고 정보를 입력하면 즉시 건강 상태를 확인할 수 있습니다.' : lang === 'hi' ? 'एक कैलकुलेटर चुनें, जानकारी भरें और तुरंत एक स्पष्ट स्वास्थ्य अवलोकन देखें।' : 'Choose a calculator, enter your details, and get an instant health snapshot.'}
+      </p>
     </div>
   </div>
 
@@ -85,13 +88,26 @@ const t = getCalculatorTranslations(lang);
 <script is:inline>
   let lastCalcResult = null;
 
+  function resetResultState() {
+    const initialState = document.getElementById('initialState');
+    const rc = document.getElementById('resultContent');
+    if (initialState) initialState.classList.remove('hidden');
+    if (rc) {
+      rc.classList.add('hidden');
+      rc.classList.remove('animate-in');
+    }
+  }
+
   window.addEventListener('calculationCompleted', (e) => {
     lastCalcResult = e.detail;
     renderCalcOutput();
   });
 
   function renderCalcOutput() {
-    if (!lastCalcResult) return;
+    if (!lastCalcResult) {
+      resetResultState();
+      return;
+    }
     const { primary, secondary } = lastCalcResult;
 
     document.getElementById('initialState').classList.add('hidden');

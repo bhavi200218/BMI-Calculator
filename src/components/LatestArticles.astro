@@ -1,72 +1,266 @@
 ---
-const articles = [
-  {
-    category: 'GUIDE',
-    readTime: '5 min read',
-    title: 'BMI Chart for Men and Women',
-    text: 'Understand the healthy BMI range for men and women with our research-backed chart and clinical guidelines.',
-    link: '/en/blog/bmi-chart-for-men-women'
+import { type Locale } from '../utils/calculators';
+
+const { currentLocale } = Astro;
+const lang = (currentLocale || 'en') as Locale;
+
+const labels: Record<string, any> = {
+  en: {
+    library: 'Health Library',
+    latest: 'Latest Articles',
+    reviewed: 'Medically reviewed by health editorial team',
+    readArticle: 'Read Article',
   },
-  {
-    category: 'RESEARCH',
-    readTime: '7 min read',
-    title: 'Healthy BMI Range for Indians',
-    text: 'Learn about the modified healthy BMI ranges tailored specifically for Indian adults per recent studies.',
-    link: '/en/blog/healthy-bmi-range-indians'
+  es: {
+    library: 'Biblioteca de Salud',
+    latest: 'Últimos Artículos',
+    reviewed: 'Revisado médicamente por equipo editorial de salud',
+    readArticle: 'Leer Artículo',
   },
-  {
-    category: 'ADOLESCENCE',
-    readTime: '4 min read',
-    title: 'BMI Calculator for Teens',
-    text: 'Understand how BMI is calculated for teens and children using age-adjusted percentiles.',
-    link: '/en/blog/bmi-calculator-teens'
-  }
-];
+  fr: {
+    library: 'Bibliothèque Santé',
+    latest: 'Derniers Articles',
+    reviewed: 'Vérifié médicalement par l\'équipe éditoriale santé',
+    readArticle: 'Lire l\'Article',
+  },
+  de: {
+    library: 'Gesundheitsbibliothek',
+    latest: 'Neueste Artikel',
+    reviewed: 'Medizinisch geprüft vom Redaktionsteam',
+    readArticle: 'Artikel Lesen',
+  },
+  ko: {
+    library: '건강 라이브러리',
+    latest: '최신 아티클',
+    reviewed: '의학 편집 팀이 검토함',
+    readArticle: '아티클 읽기',
+  },
+  hi: {
+    library: 'स्वास्थ्य पुस्तकालय',
+    latest: 'नवीनतम लेख',
+    reviewed: 'स्वास्थ्य संपादकीय दल द्वारा चिकित्सा समीक्षा की गई',
+    readArticle: 'लेख पढ़ें',
+  },
+};
+
+const articlesData: Record<string, any[]> = {
+  en: [
+    {
+      category: "GUIDE",
+      readTime: "5 min read",
+      updated: "Updated July 2026",
+      title: "BMI Chart for Men and Women",
+      text: "Understand the healthy BMI range for men and women with our research-backed chart and clinical guidelines.",
+      slug: "bmi-chart-for-men-women",
+    },
+    {
+      category: "RESEARCH",
+      readTime: "7 min read",
+      updated: "Updated July 2026",
+      title: "Healthy BMI Range for Indians",
+      text: "Learn about the modified healthy BMI ranges tailored specifically for Indian adults per recent studies.",
+      slug: "healthy-bmi-range-indians",
+    },
+    {
+      category: "ADOLESCENCE",
+      readTime: "4 min read",
+      updated: "Updated July 2026",
+      title: "BMI Calculator for Teens",
+      text: "Understand how BMI is calculated for teens and children using age-adjusted percentiles.",
+      slug: "bmi-calculator-teens",
+    },
+  ],
+  es: [
+    {
+      category: "GUÍA",
+      readTime: "5 min de lectura",
+      updated: "Actualizado Julio 2026",
+      title: "Tabla de IMC para Hombres y Mujeres",
+      text: "Comprende el rango saludable de IMC para hombres y mujeres con nuestra tabla respaldada por investigación clínica.",
+      slug: "bmi-chart-for-men-women",
+    },
+    {
+      category: "INVESTIGACIÓN",
+      readTime: "7 min de lectura",
+      updated: "Actualizado Julio 2026",
+      title: "Rango de IMC Saludable para la Población India",
+      text: "Conoce los rangos adaptados de IMC saludable para adultos según estudios clínicos recientes.",
+      slug: "healthy-bmi-range-indians",
+    },
+    {
+      category: "ADOLESCENCIA",
+      readTime: "4 min de lectura",
+      updated: "Actualizado Julio 2026",
+      title: "Calculadora de IMC para Adolescentes",
+      text: "Aprende cómo se calcula el IMC para adolescentes y niños usando percentiles ajustados por edad.",
+      slug: "bmi-calculator-teens",
+    },
+  ],
+  fr: [
+    {
+      category: "GUIDE",
+      readTime: "5 min de lecture",
+      updated: "Mis à jour Juillet 2026",
+      title: "Tableau d'IMC pour Hommes et Femmes",
+      text: "Comprenez la plage d'IMC saine pour hommes et femmes grâce à notre tableau médical basé sur la recherche.",
+      slug: "bmi-chart-for-men-women",
+    },
+    {
+      category: "RECHERCHE",
+      readTime: "7 min de lecture",
+      updated: "Mis à jour Juillet 2026",
+      title: "Plage d'IMC Saine pour la Population Indienne",
+      text: "Découvrez les plages d'IMC adaptées spécifiquement aux adultes d'après des études médicales récents.",
+      slug: "healthy-bmi-range-indians",
+    },
+    {
+      category: "ADOLESCENCE",
+      readTime: "4 min de lecture",
+      updated: "Mis à jour Juillet 2026",
+      title: "Calculateur d'IMC pour Adolescents",
+      text: "Découvrez comment l'IMC est calculé pour les adolescents et les enfants à l'aide de percentiles ajustés.",
+      slug: "bmi-calculator-teens",
+    },
+  ],
+  de: [
+    {
+      category: "LEITFADEN",
+      readTime: "5 min Lesezeit",
+      updated: "Aktualisiert Juli 2026",
+      title: "BMI-Tabelle für Männer und Frauen",
+      text: "Verstehen Sie den gesunden BMI-Bereich für Männer und Frauen anhand unserer wissenschaftlich fundierten Tabelle.",
+      slug: "bmi-chart-for-men-women",
+    },
+    {
+      category: "FORSCHUNG",
+      readTime: "7 min Lesezeit",
+      updated: "Aktualisiert Juli 2026",
+      title: "Gesunder BMI-Bereich für Indische Erwachsene",
+      text: "Erfahren Sie mehr über die angepassten BMI-Bereiche speziell für indische Erwachsene laut neuen klinischen Studien.",
+      slug: "healthy-bmi-range-indians",
+    },
+    {
+      category: "JUGEND",
+      readTime: "4 min Lesezeit",
+      updated: "Aktualisiert Juli 2026",
+      title: "BMI-Rechner für Jugendliche",
+      text: "Verstehen Sie, wie der BMI für Jugendliche und Kinder mit altersbereinigten Perzentilen berechnet wird.",
+      slug: "bmi-calculator-teens",
+    },
+  ],
+  ko: [
+    {
+      category: "가이드",
+      readTime: "5분 읽기",
+      updated: "2026년 7월 업데이트",
+      title: "남성 및 여성용 BMI 차트",
+      text: "연구 기반 차트와 임상 지침을 통해 남성과 여성의 건강한 BMI 범위를 이해하세요.",
+      slug: "bmi-chart-for-men-women",
+    },
+    {
+      category: "연구",
+      readTime: "7분 읽기",
+      updated: "2026년 7월 업데이트",
+      title: "인도인을 위한 건강한 BMI 범위",
+      text: "최근 연구에 따른 인도 성인 전용 맞춤형 건강 BMI 범위를 알아보세요.",
+      slug: "healthy-bmi-range-indians",
+    },
+    {
+      category: "청소년",
+      readTime: "4분 읽기",
+      updated: "2026년 7월 업데이트",
+      title: "청소년을 위한 BMI 계산기",
+      text: "연령 조정 백분위를 사용하여 청소년과 어린이의 BMI가 어떻게 계산되는지 알아보세요.",
+      slug: "bmi-calculator-teens",
+    },
+  ],
+  hi: [
+    {
+      category: "मार्गदर्शिका",
+      readTime: "5 मिनट पठन",
+      updated: "जुलाई 2026 को अपडेट किया गया",
+      title: "पुरुषों और महिलाओं के लिए बीएमआई चार्ट",
+      text: "हमारे शोध-आधारित चार्ट और नैदानिक दिशा-निर्देशों के साथ पुरुषों और महिलाओं के लिए स्वस्थ बीएमआई सीमा को समझें।",
+      slug: "bmi-chart-for-men-women",
+    },
+    {
+      category: "अनुसंधान",
+      readTime: "7 मिनट पठन",
+      updated: "जुलाई 2026 को अपडेट किया गया",
+      title: "भारतीयों के लिए स्वस्थ बीएमआई सीमा",
+      text: "हाल के अध्ययनों के अनुसार विशेष रूप से भारतीय वयस्कों के लिए तैयार की गई संशोधित स्वस्थ बीएमआई सीमाओं के बारे में जानें।",
+      slug: "healthy-bmi-range-indians",
+    },
+    {
+      category: "किशोरावस्था",
+      readTime: "4 मिनट पठन",
+      updated: "जुलाई 2026 को अपडेट किया गया",
+      title: "किशोरों के लिए बीएमआई कैलकुलेटर",
+      text: "आयु-समायोजित प्रतिशतकों का उपयोग करके किशोरों और बच्चों के लिए बीएमआई की गणना कैसे की जाती है, समझें।",
+      slug: "bmi-calculator-teens",
+    },
+  ],
+};
+
+const t = labels[lang] || labels.en;
+const articles = articlesData[lang] || articlesData.en;
 ---
 
-<section class="space-y-10 py-10">
+<section class="space-y-6 py-6">
   <!-- Section Header -->
-  <div class="flex items-start justify-between gap-4 flex-wrap">
-    <div class="space-y-2">
-      <p class="text-[10px] font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Health Library</p>
+  <div class="flex items-center justify-between gap-4 flex-wrap pb-2 border-b border-[var(--border)]/60">
+    <div class="space-y-1">
+      <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">
+        {t.library}
+      </p>
       <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase text-[var(--foreground)] leading-tight">
-        Latest Articles
+        {t.latest}
       </h2>
     </div>
-    <div class="h-px flex-1 mt-6 self-start hidden md:block bg-gradient-to-r from-[var(--border)] to-transparent"></div>
+    <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-[11px] font-display font-semibold text-[var(--muted-foreground)]">
+      <span class="w-2 h-2 rounded-full bg-[var(--accent)]"></span>
+      {t.reviewed}
+    </div>
   </div>
 
   <!-- Article Cards -->
-  <div class="grid md:grid-cols-3 gap-5">
-    {articles.map(article => (
-      <a href={article.link} class="group block">
-        <div class="h-full p-7 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-5
-          hover:border-[var(--accent)] hover:-translate-y-1.5 hover:shadow-[var(--shadow-accent)]
-          transition-all duration-300 cursor-pointer">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {
+      articles.map((article) => (
+        <a href={`/${lang}/blog/${article.slug}`} class="group block h-full">
+          <div class="h-full p-6 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-4 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-[var(--shadow-accent)] transition-all duration-300 cursor-pointer">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-display font-semibold uppercase tracking-[0.2em] px-2.5 py-1 rounded-full border border-[var(--accent)]/40 text-[var(--accent)] bg-[var(--accent)]/5">
+                  {article.category}
+                </span>
+                <span class="text-[11px] font-sans font-medium text-[var(--muted-foreground)]">
+                  {article.readTime}
+                </span>
+              </div>
 
-          <div class="flex items-center justify-between">
-            <span class="text-[9px] font-display font-semibold uppercase tracking-[0.3em] px-3 py-1 rounded-full border border-[var(--accent)] text-[var(--accent)]">
-              {article.category}
-            </span>
-            <span class="text-[9px] font-sans text-[var(--muted-foreground)] opacity-50">{article.readTime}</span>
+              <div class="text-[10px] font-display font-semibold uppercase tracking-[0.15em] text-[var(--muted-foreground)]/80">
+                {article.updated}
+              </div>
+
+              <h3 class="text-lg md:text-xl font-display font-bold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors duration-200 uppercase">
+                {article.title}
+              </h3>
+
+              <p class="text-sm text-[var(--muted-foreground)] leading-relaxed font-medium opacity-80 line-clamp-3">
+                {article.text}
+              </p>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-wider text-[var(--accent)] group-hover:gap-3 transition-all duration-200 pt-3 border-t border-[var(--border)]/40">
+              <span>{t.readArticle}</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
           </div>
-
-          <h3 class="text-lg font-display font-bold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors duration-200 uppercase">
-            {article.title}
-          </h3>
-
-          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed font-medium opacity-70 line-clamp-3">
-            {article.text}
-          </p>
-
-          <div class="flex items-center gap-2 text-[10px] font-display font-semibold uppercase tracking-widest text-[var(--foreground)] group-hover:text-[var(--accent)] group-hover:gap-3 transition-all duration-200 pt-2">
-            <span>Read Article</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </div>
-        </div>
-      </a>
-    ))}
+        </a>
+      ))
+    }
   </div>
 </section>

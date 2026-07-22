@@ -1,6 +1,7 @@
 ---
 import type { CalculatorConfig, Locale } from '../utils/calculators';
 import { getCalculatorTranslations } from '../utils/calculators';
+import { bmiReferenceModes } from '../utils/bmiReference.js';
 
 interface Props {
   calculator: CalculatorConfig;
@@ -13,6 +14,7 @@ const t = getCalculatorTranslations(lang);
 // Setup localized labels
 const metricLabel = { en: 'Metric', es: 'Métrico', fr: 'Métrique', de: 'Metrisch', ko: '미터법', hi: 'मीट्रिक' }[lang];
 const imperialLabel = { en: 'Imperial', es: 'Imperial', fr: 'Impérial', de: 'Imperial', ko: '야드파운드법', hi: 'इंपीरियल' }[lang];
+const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence', de: 'Referenz', ko: '기준', hi: 'संदर्भ' }[lang];
 ---
 
 <div id={`calculator-${calculator.slug}`} data-slug={calculator.slug} class="melove-card p-7 md:p-10 space-y-8 h-full scroll-mt-28">
@@ -37,6 +39,23 @@ const imperialLabel = { en: 'Imperial', es: 'Imperial', fr: 'Impérial', de: 'Im
   </div>
 
   <div class="space-y-6">
+    {calculator.slug === 'bmi-calculator' && (
+      <div class="space-y-2">
+        <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
+          <span>{bmiReferenceLabel}</span>
+          <span class="text-[var(--accent)] text-[10px]">{lang === 'hi' ? 'एशियन / भारतीय' : lang === 'es' ? 'Asiático / indio' : lang === 'fr' ? 'Asiatique / indien' : lang === 'de' ? 'Asiatisch / indisch' : lang === 'ko' ? '아시아 / 인도' : 'Asian / Indian'}</span>
+        </label>
+        <div class="grid grid-cols-2 gap-3 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--muted)] p-1">
+          <button type="button" id={`bmiRefStandard-${calculator.slug}`} data-bmi-ref="standard" class="bmi-ref-btn rounded-lg px-3 py-2 text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer bg-[var(--accent)] text-[var(--accent-foreground)]">
+            {lang === 'hi' ? 'WHO / वैश्विक' : lang === 'es' ? 'OMS / mundial' : lang === 'fr' ? 'OMS / mondial' : lang === 'de' ? 'WHO / global' : lang === 'ko' ? 'WHO / 전 세계' : 'WHO / Global'}
+          </button>
+          <button type="button" id={`bmiRefAsian-${calculator.slug}`} data-bmi-ref="asian-indian" class="bmi-ref-btn rounded-lg px-3 py-2 text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer text-[var(--muted-foreground)]">
+            {lang === 'hi' ? 'एशियन / भारतीय' : lang === 'es' ? 'Asiático / indio' : lang === 'fr' ? 'Asiatique / indien' : lang === 'de' ? 'Asiatisch / indisch' : lang === 'ko' ? '아시아 / 인도' : 'Asian / Indian'}
+          </button>
+        </div>
+      </div>
+    )}
+
     <!-- Render Form Inputs -->
     {calculator.inputs.map(input => {
       const labelStr = input.label[lang] || input.label['en'];
@@ -176,6 +195,7 @@ const imperialLabel = { en: 'Imperial', es: 'Imperial', fr: 'Impérial', de: 'Im
 <script is:inline define:vars={{ slug: calculator.slug }}>
   (function() {
     let currentUnitSystem = 'metric';
+    let currentBmiReference = 'standard';
 
     function applyUnitSystem(system) {
       currentUnitSystem = system;
@@ -228,16 +248,43 @@ const imperialLabel = { en: 'Imperial', es: 'Imperial', fr: 'Impérial', de: 'Im
       localStorage.setItem('bmiUnit', system);
     }
 
+    function applyBmiReference(mode) {
+      currentBmiReference = mode;
+      const standardBtn = document.getElementById('bmiRefStandard-' + slug);
+      const asianBtn = document.getElementById('bmiRefAsian-' + slug);
+      if (standardBtn && asianBtn) {
+        const activeClass = 'bg-[var(--accent)] text-[var(--accent-foreground)]';
+        const inactiveClass = 'text-[var(--muted-foreground)]';
+        if (mode === 'asian-indian') {
+          asianBtn.className = asianBtn.className.replace(inactiveClass, activeClass).replace(activeClass, activeClass);
+          standardBtn.className = standardBtn.className.replace(activeClass, inactiveClass).replace(inactiveClass, inactiveClass);
+        } else {
+          standardBtn.className = standardBtn.className.replace(inactiveClass, activeClass).replace(activeClass, activeClass);
+          asianBtn.className = asianBtn.className.replace(activeClass, inactiveClass).replace(inactiveClass, inactiveClass);
+        }
+      }
+      localStorage.setItem('bmiReferenceMode', mode);
+    }
+
     // Bind Switch Clicks
     const mBtn = document.getElementById('unitBtnMetric-' + slug);
     const iBtn = document.getElementById('unitBtnImperial-' + slug);
     if (mBtn) mBtn.addEventListener('click', () => applyUnitSystem('metric'));
     if (iBtn) iBtn.addEventListener('click', () => applyUnitSystem('imperial'));
 
+    if (slug === 'bmi-calculator') {
+      const standardBtn = document.getElementById('bmiRefStandard-' + slug);
+      const asianBtn = document.getElementById('bmiRefAsian-' + slug);
+      if (standardBtn) standardBtn.addEventListener('click', () => applyBmiReference('standard'));
+      if (asianBtn) asianBtn.addEventListener('click', () => applyBmiReference('asian-indian'));
+    }
+
     // Initialize
     function initUserUnit() {
       const stored = localStorage.getItem('bmiUnit') || 'metric';
+      const storedRef = localStorage.getItem('bmiReferenceMode') || 'standard';
       applyUnitSystem(stored);
+      if (slug === 'bmi-calculator') applyBmiReference(storedRef);
     }
     initUserUnit();
 
@@ -324,16 +371,20 @@ const imperialLabel = { en: 'Imperial', es: 'Imperial', fr: 'Impérial', de: 'Im
           const bmi = weightKg / (hM * hM);
           const ideal = 22 * (hM * hM);
           const bodyFat = (1.20 * bmi) + (0.23 * ageNum) - (isM ? 16.2 : 5.4);
-
-          let cat = { en: 'Normal', es: 'Saludable', fr: 'Normal', de: 'Normal', ko: '정상', hi: 'सामान्य' };
-          if (bmi < 18.5) cat = { en: 'Underweight', es: 'Bajo Peso', fr: 'Sous-poids', de: 'Untergewicht', ko: '저체중', hi: 'कम वजन' };
-          else if (bmi >= 25 && bmi < 30) cat = { en: 'Overweight', es: 'Sobrepeso', fr: 'Surpoids', de: 'Übergewicht', ko: '과체중', hi: 'अधिक वजन' };
-          else if (bmi >= 30) cat = { en: 'Obese', es: 'Obesidad', fr: 'Obésité', de: 'Adipositas', ko: '비만', hi: 'मोटापा' };
+          const reference = bmiReferenceModes[currentBmiReference] || bmiReferenceModes.standard;
+          const classification = bmi < reference.thresholds.underweight
+            ? { key: 'underweight', label: { en: 'Underweight', es: 'Bajo Peso', fr: 'Sous-poids', de: 'Untergewicht', ko: '저체중', hi: 'कम वजन' } }
+            : bmi < reference.thresholds.healthyEnd
+              ? { key: 'healthy', label: { en: 'Healthy', es: 'Saludable', fr: 'Sain', de: 'Gesund', ko: '정상', hi: 'स्वस्थ' } }
+              : bmi < reference.thresholds.obeseStart
+                ? { key: 'overweight', label: { en: 'Overweight', es: 'Sobrepeso', fr: 'Surpoids', de: 'Übergewicht', ko: '과체중', hi: 'अधिक वजन' } }
+                : { key: 'obese', label: { en: 'Obese', es: 'Obesidad', fr: 'Obésité', de: 'Adipositas', ko: '비만', hi: 'मोटापा' } };
 
           calculated = {
             primary: { value: bmi.toFixed(1), label: { en: 'BMI Score', es: 'Puntaje de IMC', fr: 'Score d\'IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' } },
             secondary: [
-              { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: cat.en },
+              { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: classification.label[lang] || classification.label.en },
+              { label: { en: 'Reference', es: 'Referencia', fr: 'Référence', de: 'Referenz', ko: '기준', hi: 'संदर्भ' }, value: reference.shortLabel },
               { label: { en: 'Est. Body Fat', es: 'Grasa Estimada', fr: 'Graisse Corp. Est.', de: 'Körperfett', ko: '체지방률', hi: 'अनुमानित वसा' }, value: bodyFat.toFixed(1), unit: '%' },
               { label: { en: 'Ideal Weight', es: 'Peso Ideal', fr: 'Poids Idéal', de: 'Idealgewicht', ko: '이상적인 체중', hi: 'आदर्श वजन' }, value: (currentUnitSystem === 'imperial' ? ideal * 2.20462 : ideal).toFixed(1), unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' }
             ]

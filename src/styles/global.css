@@ -16,8 +16,8 @@
   --accent-hover: #D45437;
   --accent-foreground: #ffffff;
   --input: #F3ECE2;
-  --card: rgba(254, 252, 249, 0.98);
-  --card-hover: rgba(246, 241, 233, 0.98);
+  --card: rgba(254, 252, 249, 0.88);
+  --card-hover: rgba(246, 241, 233, 0.92);
   --radius: 1.5rem;
   --radius-sm: 1rem;
   --radius-lg: 2rem;
@@ -67,7 +67,7 @@
     pointer-events: none;
     background-image: radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0);
     background-size: 36px 36px;
-    opacity: 0.5;
+    opacity: 0.25;
   }
 
   

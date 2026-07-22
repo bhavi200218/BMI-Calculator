@@ -4,30 +4,32 @@ const lang = currentLocale || 'en';
 
 const content: Record<string, any> = {
   en: {
+    eyebrow: "Health Insights",
     sections: [
       {
         title: "Why Use the Real BMI Calculator?",
-        text: "The Real BMI Calculator provides highly precise measurements by utilizing the latest clinical protocols. Unlike generic tools, our system is optimized for accuracy across global standards, ensuring you get the most reliable health data instantly. This classification follows the official guidelines established by the <b><u>World Health Organization (WHO)</u></b> and the <b><u>CDC</u></b> for global health assessment."
+        text: "The Real BMI Calculator provides highly precise measurements by utilizing the latest clinical protocols. Unlike generic tools, our system is optimized for accuracy across global standards, ensuring you get reliable health data instantly."
       },
       {
         title: "Accuracy of the BMI Calculator with Lbs and Inches",
-        text: "In the United States, the standard formula for BMI calculation uses pounds and inches: (weight (lb) / [height (in)]² ) x 703. While the math can be tedious, our professional-grade Real BMI Calculator automates this process, providing results that align perfectly with CDC guidelines. This classification follows the official guidelines established by the <b><u>World Health Organization (WHO)</u></b> and the <b><u>CDC</u></b> for global health assessment."
+        text: "In the United States, the standard formula for BMI calculation uses pounds and inches: (weight (lb) / [height (in)]² ) x 703. Our professional-grade calculator automates this process, providing results that align with CDC guidelines."
       },
       {
         title: "The Real Limitations of BMI: What to Watch Out For",
-        text: "It is essential to understand that BMI is not a diagnostic tool. A person may have a 'high' BMI but have a very low body fat percentage, such as with elite athletes. Because muscle is denser than fat, the Real BMI tool helps provide context alongside other health metrics. This classification follows the official guidelines established by the <b><u>World Health Organization (WHO)</u></b> and the <b><u>CDC</u></b> for global health assessment."
+        text: "It is essential to understand that BMI is a screening tool rather than a comprehensive diagnostic. Elite athletes may have a higher BMI due to muscle density despite low body fat percentage."
       },
       {
         title: "How to Improve Your BMI Score Safely",
-        text: "Transitioning to a healthier BMI is a journey of consistency. Focus on a balanced diet rich in whole foods and complex carbohydrates. Combine this with regular aerobic activity to optimize your health data on the Real BMI Dashboard. This classification follows the official guidelines established by the <b><u>World Health Organization (WHO)</u></b> and the <b><u>CDC</u></b> for global health assessment."
+        text: "Transitioning to a healthier BMI score requires consistent habits. Focus on balanced nutrition rich in whole foods and complex carbohydrates, combined with regular aerobic activity."
       },
       {
         title: "Getting the Most Accurate Measurements",
-        text: "To get the most out of our Real BMI Calculator, accuracy in your input is key. For height, stand barefoot with your back against a wall. Consistency ensures that the trends you see are reflective of real health changes. This classification follows the official guidelines established by the <b><u>World Health Organization (WHO)</u></b> and the <b><u>CDC</u></b> for global health assessment."
+        text: "For accurate results, ensure precise inputs. Stand barefoot with your back against a wall when measuring height, and weigh yourself at a consistent time each day."
       }
     ]
   },
   hi: {
+    eyebrow: "स्वास्थ्य अंतर्दृष्टि",
     sections: [
       {
         title: "Lbs और Inches के साथ बीएमआई की गणना",
@@ -48,6 +50,7 @@ const content: Record<string, any> = {
     ]
   },
   es: {
+    eyebrow: "Información de Salud",
     sections: [
       {
         title: "Cálculo del IMC con Libras y Pulgadas",
@@ -60,6 +63,57 @@ const content: Record<string, any> = {
       {
         title: "Más Allá del Número: Circunferencia de Cintura",
         text: "La grasa abdominal, a menudo llamada grasa visceral, es más activa metabólicamente y conlleva un mayor riesgo para la salud que la grasa almacenada en otros lugares."
+      }
+    ]
+  },
+  fr: {
+    eyebrow: "Aperçus Santé",
+    sections: [
+      {
+        title: "Pourquoi Utiliser le Calculateur Real BMI ?",
+        text: "Le calculateur Real BMI fournit des mesures hautement précises en utilisant les derniers protocoles cliniques. Notre système est optimisé pour garantir des données de santé fiables instantanément."
+      },
+      {
+        title: "Précision du Calculateur d'IMC en Livres et Pouces",
+        text: "Dans le système impérial, la formule standard utilise les livres et les pouces. Notre calculateur automatise ce processus selon les recommandations des CDC."
+      },
+      {
+        title: "Les Limites de l'IMC : Ce Qu'il Faut Savoir",
+        text: "Il est essentiel de comprendre que l'IMC est un outil de dépistage. Les athlètes peuvent avoir un IMC plus élevé en raison de leur densité musculaire."
+      }
+    ]
+  },
+  de: {
+    eyebrow: "Gesundheitseinblicke",
+    sections: [
+      {
+        title: "Warum den Real BMI-Rechner Nutzen?",
+        text: "Der Real BMI-Rechner bietet hochpräzise Messungen nach aktuellen klinischen Standards für sofortige und verlässliche Gesundheitsdaten."
+      },
+      {
+        title: "Genauigkeit mit Pfund und Zoll",
+        text: "Im US-System basiert die Berechnung auf Pfund und Zoll. Unser professioneller Rechner führt diesen Prozess automatisch aus."
+      },
+      {
+        title: "Grenzen des BMI",
+        text: "Der BMI ist ein Erstbeurteilungsinstrument. Bei Leistungssportlern kann Muskelmasse zu einem höheren BMI-Wert führen."
+      }
+    ]
+  },
+  ko: {
+    eyebrow: "건강 인사이트",
+    sections: [
+      {
+        title: "Real BMI 계산기를 사용하는 이유",
+        text: "Real BMI 계산기는 최신 임상 프로토콜을 활용하여 정밀한 측정을 제공하며 글로벌 표준에 맞춰 신뢰할 수 있는 데이터를 제공합니다."
+      },
+      {
+        title: "파운드 및 인치 측정의 정확도",
+        text: "미국 표준 공식인 파운드와 인치 계산도 저희 계산기가 자동으로 처리하여 CDC 지침에 부합하는 결과를 산출합니다."
+      },
+      {
+        title: "BMI의 한계점",
+        text: "BMI는 단순 선별 도구입니다. 근육량이 많은 운동선수의 경우 체지방률이 낮아도 BMI 점수가 높게 나타날 수 있습니다."
       }
     ]
   }
@@ -97,7 +151,7 @@ const articleSchema = {
             <div class="space-y-6 group">
                 <div class="space-y-2">
             <div class="flex items-center gap-4">
-                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--accent)]">Health Insights</span>
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--accent)]">{t.eyebrow}</span>
             </div>
         </div>
         <h2 class="text-3xl font-black uppercase tracking-tighter text-[var(--foreground)] leading-tight italic">

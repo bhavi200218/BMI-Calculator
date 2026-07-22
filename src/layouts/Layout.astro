@@ -43,18 +43,26 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is the most accurate BMI calculator?",
+      "name": "How is BMI calculated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Real BMI Calculator is designed for maximum precision, using international health standards to calculate Body Mass Index, BMR, and TDEE instantly."
+        "text": "BMI compares your weight and height using a simple formula, and the Real BMI Calculator can process metric or imperial units instantly."
       }
     },
     {
       "@type": "Question",
-      "name": "How is BMI calculated?",
+      "name": "What is a healthy BMI range?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BMI is calculated by dividing an individual's weight in kilograms by the square of their height in meters (kg/m²). For imperial units, the formula is (weight (lb) / height (in)²) x 703."
+        "text": "For most adults, a healthy BMI range is 18.5 to 24.9, while some health professionals use a lower threshold for Asian and Indian populations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is BMI accurate for athletes or muscular people?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BMI is a useful screening tool, but it can overestimate body fat in muscular individuals and should be paired with waist circumference and other measurements."
       }
     }
   ]
@@ -238,23 +246,28 @@ const howToSchema = {
 		<style is:global>
 			.bg-slide {
 				opacity: 0;
+				filter: blur(5px);
+				transform: scale(1.03);
 				transition: opacity 1.5s ease-in-out;
 			}
 			.bg-slide.active {
-				opacity: 0.18;
+				opacity: 0.55;
+			}
+			.dark .bg-slide {
+				filter: blur(3px);
 			}
 			.dark .bg-slide.active {
-				opacity: 0.28;
+				opacity: 0.35;
 			}
 		</style>
 	</head>
 	<body class="min-h-screen relative">
 		<!-- Dynamic Shifting Background Slideshow -->
 		<div id="bg-slideshow" class="fixed inset-0 pointer-events-none z-[-2] overflow-hidden bg-[var(--background)]">
-			<div class="bg-slide active absolute inset-0 bg-cover bg-center" style="background-image: url('/images/bg/2.webp');"></div>
-			<div class="bg-slide absolute inset-0 bg-cover bg-center" style="background-image: url('/images/bg/4.webp');"></div>
-			<!-- Warm tint overlay for light theme blending -->
-			<div class="absolute inset-0 bg-[var(--background)] opacity-40 dark:opacity-20"></div>
+			<div class="bg-slide active absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg/2.webp');"></div>
+			<div class="bg-slide absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg/4.webp');"></div>
+			<!-- Subtle tint overlay for theme blending -->
+			<div class="absolute inset-0 bg-[var(--background)] opacity-15 dark:opacity-25"></div>
 		</div>
 
 		<slot />
