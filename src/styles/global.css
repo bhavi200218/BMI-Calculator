@@ -7,24 +7,24 @@
 
 
 :root {
-  --background: #FAF6F0;
-  --foreground: #0B1617;
-  --muted: #F3EFE9;
-  --muted-foreground: #4B5E5E;
-  --border: #E8E2D7;
-  --accent: #E8674A;
-  --accent-hover: #D45437;
+  --background: #FAF8F5;
+  --foreground: #0F172A;
+  --muted: #F1ECE3;
+  --muted-foreground: #475569;
+  --border: #E2DDD3;
+  --accent: #FF5A36;
+  --accent-hover: #E04826;
   --accent-foreground: #ffffff;
-  --input: #F3ECE2;
-  --card: rgba(254, 252, 249, 0.88);
-  --card-hover: rgba(246, 241, 233, 0.92);
+  --input: #F4F0E8;
+  --card: rgba(255, 255, 255, 0.88);
+  --card-hover: rgba(255, 255, 255, 0.98);
   --radius: 1.5rem;
   --radius-sm: 1rem;
   --radius-lg: 2rem;
-  --shadow-soft: 0 4px 24px -6px rgba(11, 22, 23, 0.06);
-  --shadow-card: 0 8px 32px -8px rgba(11, 22, 23, 0.1);
-  --shadow-accent: 0 8px 32px -6px rgba(232, 103, 74, 0.25);
-  --glow-accent: 0 0 80px rgba(232, 103, 74, 0.08);
+  --shadow-soft: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 20px 40px -15px rgba(15, 23, 42, 0.09);
+  --shadow-accent: 0 10px 30px -5px rgba(255, 90, 54, 0.32);
+  --glow-accent: 0 0 80px rgba(255, 90, 54, 0.12);
 }
 
 
@@ -49,10 +49,13 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color: var(--foreground);
   }
 
   body {
-    @apply bg-[var(--background)] text-[var(--foreground)] font-sans antialiased;
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;
@@ -61,19 +64,7 @@
   
 
 
-  
-  body::after {
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 800px;
-    height: 800px;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(circle, rgba(232, 103, 74, 0.06) 0%, transparent 70%);
-    transform: translate(-50%, -50%);
-  }
+  /* body::after radial glow removed */
 }
 
 
@@ -109,8 +100,8 @@
 }
 
 .matte-input::placeholder {
-  color: var(--muted-foreground);
-  opacity: 0.4;
+  color: #64748B;
+  opacity: 0.85;
 }
 
 

@@ -158,9 +158,9 @@ const t = translations[lang] || translations.en;
     <div class="grid grid-cols-2 gap-4">
       <!-- Weight -->
       <div class="space-y-2">
-        <label id="weightLabel" class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
+        <label id="weightLabel" class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] flex items-center justify-between">
           <span>{t.weight_kg}</span>
-          <span id="weightUnit" class="text-[var(--accent)]">{t.weight_unit_kg}</span>
+          <span id="weightUnit" class="text-[var(--accent)] font-bold">{t.weight_unit_kg}</span>
         </label>
         <input type="number" id="weight" placeholder="70" required
           class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
@@ -169,9 +169,9 @@ const t = translations[lang] || translations.en;
 
       <!-- Height (Metric) -->
       <div id="metricHeightWrapper" class="space-y-2">
-        <label id="heightLabel" class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
+        <label id="heightLabel" class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] flex items-center justify-between">
           <span>{t.height_cm}</span>
-          <span id="heightUnit" class="text-[var(--accent)]">{t.height_unit_cm}</span>
+          <span id="heightUnit" class="text-[var(--accent)] font-bold">{t.height_unit_cm}</span>
         </label>
         <div id="metricHeightGroup" class="relative">
           <input type="number" id="height" placeholder="175" required
@@ -182,7 +182,7 @@ const t = translations[lang] || translations.en;
 
       <!-- Height (Imperial) -->
       <div id="imperialHeightWrapper" class="hidden col-span-2 space-y-2">
-        <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{t.height_ft}</label>
+        <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{t.height_ft}</label>
         <div id="imperialHeightGroup" class="grid grid-cols-2 gap-3">
           <div class="relative">
             <input type="number" id="heightFt" placeholder="5"
@@ -204,14 +204,14 @@ const t = translations[lang] || translations.en;
     <div class="grid grid-cols-2 gap-4">
       <!-- Age -->
       <div class="space-y-2">
-        <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{t.age}</label>
+        <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{t.age}</label>
         <input type="number" id="age" placeholder="25" required
           class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
           inputmode="numeric" />
       </div>
       <!-- Gender -->
       <div class="space-y-2">
-        <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{t.gender}</label>
+        <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{t.gender}</label>
         <div class="grid grid-cols-2 gap-2 h-[56px]">
           <button data-gender="male" class="gender-btn active h-full rounded-[var(--radius-sm)] border-[1.5px] border-[var(--border)] text-xs font-display font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer">
             {t.male}
@@ -272,6 +272,7 @@ const t = translations[lang] || translations.en;
 </style>
 
 <script is:inline>
+(function() {
   let currentUnit = 'metric';
   let currentGender = 'male';
   let sessionHistory = [];
@@ -322,50 +323,33 @@ const t = translations[lang] || translations.en;
     window.dispatchEvent(new CustomEvent('bmiUnitChanged', { detail: { unit: currentUnit } }));
   }
 
-  // Setup Unit click events
-  document.querySelectorAll('.unit-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      setUnit(btn.dataset.unit);
-    });
-  });
+  function runBmiCalculation() {
+    const wEl = document.getElementById('weight');
+    const aEl = document.getElementById('age');
+    let weightVal = wEl ? wEl.value.trim() : '';
+    let ageVal = aEl ? aEl.value.trim() : '';
 
-  // Initialize
-  function initUnit() {
-    const storedUnit = localStorage.getItem('bmiUnit') || 'metric';
-    setUnit(storedUnit);
-  }
+    let weight = weightVal ? parseFloat(weightVal) : 70;
+    let age = ageVal ? parseInt(ageVal) : 25;
+    if (isNaN(weight) || weight <= 0) weight = 70;
+    if (isNaN(age) || age <= 0) age = 25;
 
-  initUnit();
-  document.addEventListener('astro:after-swap', initUnit);
-
-  // Gender toggle
-  document.querySelectorAll('.gender-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.gender-btn').forEach(b => {
-        b.classList.remove('active');
-        b.classList.add('text-[var(--muted-foreground)]');
-      });
-      btn.classList.add('active');
-      btn.classList.remove('text-[var(--muted-foreground)]');
-      currentGender = btn.dataset.gender;
-    });
-  });
-
-  // Calculate
-  document.getElementById('calcBtn').addEventListener('click', () => {
-    let weight = parseFloat(document.getElementById('weight').value);
-    let age = parseInt(document.getElementById('age').value);
     let bmi, heightM;
 
     if (currentUnit === 'metric') {
-      let heightCm = parseFloat(document.getElementById('height').value);
-      if (!weight || !heightCm || !age) { alert('Please fill all fields'); return; }
+      const hEl = document.getElementById('height');
+      let heightVal = hEl ? hEl.value.trim() : '';
+      let heightCm = heightVal ? parseFloat(heightVal) : 175;
+      if (isNaN(heightCm) || heightCm <= 0) heightCm = 175;
       heightM = heightCm / 100;
       bmi = weight / (heightM * heightM);
     } else {
-      let ft = parseFloat(document.getElementById('heightFt').value) || 0;
-      let inch = parseFloat(document.getElementById('heightIn').value) || 0;
-      if (!weight || (!ft && !inch) || !age) { alert('Please fill all fields'); return; }
+      const ftEl = document.getElementById('heightFt');
+      const inEl = document.getElementById('heightIn');
+      let ftVal = ftEl ? ftEl.value.trim() : '';
+      let inVal = inEl ? inEl.value.trim() : '';
+      let ft = ftVal ? parseFloat(ftVal) : 5;
+      let inch = inVal ? parseFloat(inVal) : 9;
       let weightKg = weight * 0.453592;
       let totalInches = (ft * 12) + inch;
       heightM = totalInches * 0.0254;
@@ -389,11 +373,24 @@ const t = translations[lang] || translations.en;
       bodyFat: bodyFat.toFixed(1)
     };
 
+    const catStr = parseFloat(result.bmi) < 18.5 ? 'Underweight' : parseFloat(result.bmi) < 25 ? 'Healthy' : parseFloat(result.bmi) < 30 ? 'Overweight' : 'Obese';
     window.dispatchEvent(new CustomEvent('bmiCalculated', { detail: result }));
+    window.dispatchEvent(new CustomEvent('calculationCompleted', {
+      detail: {
+        primary: { value: result.bmi, label: { en: 'BMI Score', es: 'Puntaje de IMC', fr: 'Score d\'IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' } },
+        secondary: [
+          { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: catStr },
+          { label: { en: 'Resting Metabolism (BMR)', es: 'Metabolismo Basal', fr: 'Métabolisme de Base', de: 'Grundumsatz BMR', ko: '기초대사량', hi: 'बेसल मेटाबॉलिज्म' }, value: result.bmr, unit: 'kcal' },
+          { label: { en: 'Daily Energy (TDEE)', es: 'Energía Diaria', fr: 'Énergie Quotidienne', de: 'Tagesbedarf TDEE', ko: '일일 목표', hi: 'दैनिक ऊर्जा' }, value: result.tdee, unit: 'kcal' },
+          { label: { en: 'Est. Body Fat', es: 'Grasa Estimada', fr: 'Graisse Corp. Est.', de: 'Körperfett', ko: '체지방률', hi: 'अनुमानित वसा' }, value: result.bodyFat, unit: '%' },
+          { label: { en: 'Ideal Weight', es: 'Peso Ideal', fr: 'Poids Idéal', de: 'Idealgewicht', ko: '이상적인 체중', hi: 'आदर्श वजन' }, value: result.idealWeight, unit: currentUnit === 'imperial' ? 'lbs' : 'kg' }
+        ]
+      }
+    }));
 
     if (window.innerWidth < 1024) {
       setTimeout(() => {
-        const el = document.getElementById('bmiDisplay');
+        const el = document.getElementById('bmiDisplay') || document.getElementById('resultStudio');
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 100);
     }
@@ -401,10 +398,11 @@ const t = translations[lang] || translations.en;
     sessionHistory.unshift({ bmi: result.bmi, date: new Date().toLocaleTimeString() });
     sessionHistory = sessionHistory.slice(0, 3);
     updateHistory();
-  });
+  }
 
   function updateHistory() {
     const list = document.getElementById('historyList');
+    if (!list) return;
     list.innerHTML = sessionHistory.map(item => `
       <div class="flex justify-between items-center px-4 py-3 rounded-[var(--radius-sm)] bg-[var(--muted)] border border-[var(--border)]">
         <span class="text-[10px] font-display font-semibold uppercase tracking-widest text-[var(--accent)]">BMI ${item.bmi}</span>
@@ -412,4 +410,38 @@ const t = translations[lang] || translations.en;
       </div>
     `).join('');
   }
+
+  // Global event delegation for clicks
+  document.addEventListener('click', (e) => {
+    const calcBtn = e.target.closest('#calcBtn');
+    if (calcBtn) {
+      e.preventDefault();
+      runBmiCalculation();
+      return;
+    }
+
+    const unitBtn = e.target.closest('.unit-btn');
+    if (unitBtn && unitBtn.dataset.unit) {
+      setUnit(unitBtn.dataset.unit);
+      return;
+    }
+
+    const genderBtn = e.target.closest('.gender-btn');
+    if (genderBtn && genderBtn.dataset.gender) {
+      document.querySelectorAll('.gender-btn').forEach(b => {
+        b.classList.remove('active');
+        b.classList.add('text-[var(--muted-foreground)]');
+      });
+      genderBtn.classList.add('active');
+      genderBtn.classList.remove('text-[var(--muted-foreground)]');
+      currentGender = genderBtn.dataset.gender;
+      return;
+    }
+  });
+
+  // Init unit on load
+  const storedUnit = localStorage.getItem('bmiUnit') || 'metric';
+  setUnit(storedUnit);
+  document.addEventListener('astro:after-swap', () => setUnit(localStorage.getItem('bmiUnit') || 'metric'));
+})();
 </script>

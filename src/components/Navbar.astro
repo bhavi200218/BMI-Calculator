@@ -150,7 +150,7 @@ const healthTools = healthToolsNames[lang] || healthToolsNames.en;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--muted-foreground);
+    color: var(--foreground);
     transition: color 0.15s ease, background 0.15s ease;
   }
   .nav-link:hover {
@@ -197,8 +197,7 @@ const healthTools = healthToolsNames[lang] || healthToolsNames.en;
 
   function initTheme() {
     const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = stored === 'dark' || (!stored && prefersDark);
+    const isDark = stored !== 'light';
     document.documentElement.classList.toggle('dark', isDark);
     applyTheme(isDark);
   }

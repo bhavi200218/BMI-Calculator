@@ -39,22 +39,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
   </div>
 
   <div class="space-y-6">
-    {calculator.slug === 'bmi-calculator' && (
-      <div class="space-y-2">
-        <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
-          <span>{bmiReferenceLabel}</span>
-          <span class="text-[var(--accent)] text-[10px]">{lang === 'hi' ? 'एशियन / भारतीय' : lang === 'es' ? 'Asiático / indio' : lang === 'fr' ? 'Asiatique / indien' : lang === 'de' ? 'Asiatisch / indisch' : lang === 'ko' ? '아시아 / 인도' : 'Asian / Indian'}</span>
-        </label>
-        <div class="grid grid-cols-2 gap-3 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--muted)] p-1">
-          <button type="button" id={`bmiRefStandard-${calculator.slug}`} data-bmi-ref="standard" class="bmi-ref-btn rounded-lg px-3 py-2 text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer bg-[var(--accent)] text-[var(--accent-foreground)]">
-            {lang === 'hi' ? 'WHO / वैश्विक' : lang === 'es' ? 'OMS / mundial' : lang === 'fr' ? 'OMS / mondial' : lang === 'de' ? 'WHO / global' : lang === 'ko' ? 'WHO / 전 세계' : 'WHO / Global'}
-          </button>
-          <button type="button" id={`bmiRefAsian-${calculator.slug}`} data-bmi-ref="asian-indian" class="bmi-ref-btn rounded-lg px-3 py-2 text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer text-[var(--muted-foreground)]">
-            {lang === 'hi' ? 'एशियन / भारतीय' : lang === 'es' ? 'Asiático / indio' : lang === 'fr' ? 'Asiatique / indien' : lang === 'de' ? 'Asiatisch / indisch' : lang === 'ko' ? '아시아 / 인도' : 'Asian / Indian'}
-          </button>
-        </div>
-      </div>
-    )}
+
 
     <!-- Render Form Inputs -->
     {calculator.inputs.map(input => {
@@ -64,7 +49,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
       if (input.type === 'select') {
         return (
           <div class="space-y-2">
-            <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{labelStr}</label>
+            <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{labelStr}</label>
             <select id={`input-${calculator.slug}-${input.id}`} class="matte-input w-full px-4 py-3.5 text-base font-bold rounded-[var(--radius-sm)] cursor-pointer h-[56px] border-[1.5px] border-[var(--border)] bg-[var(--input)] text-[var(--foreground)]">
               {input.options?.map(opt => (
                 <option value={opt.value} class="bg-[var(--card)] text-[var(--foreground)] font-bold">
@@ -85,9 +70,9 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           <div class="space-y-2">
             <!-- Metric Height -->
             <div id={`metricHeightGroup-${calculator.slug}`} class="space-y-2">
-              <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
+              <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] flex items-center justify-between">
                 <span>{labelStr}</span>
-                <span class="text-[var(--accent)]">{cmLabel}</span>
+                <span class="text-[var(--accent)] font-bold">{cmLabel}</span>
               </label>
               <input type="number" id={`input-${calculator.slug}-height`} placeholder={input.placeholder || '175'} required
                 class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
@@ -96,7 +81,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
 
             <!-- Imperial Height -->
             <div id={`imperialHeightGroup-${calculator.slug}`} class="hidden space-y-2">
-              <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{labelStr}</label>
+              <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{labelStr}</label>
               <div class="grid grid-cols-2 gap-3">
                 <div class="relative">
                   <input type="number" id={`input-${calculator.slug}-height-ft`} placeholder="5"
@@ -122,9 +107,9 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         const lbLabel = { en: 'lbs', es: 'lbs', fr: 'lbs', de: 'lbs', ko: 'lbs', hi: 'पाउंड' }[lang];
         return (
           <div class="space-y-2">
-            <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
+            <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] flex items-center justify-between">
               <span>{labelStr}</span>
-              <span id={`weightUnitLabel-${calculator.slug}`} class="text-[var(--accent)]">{kgLabel}</span>
+              <span id={`weightUnitLabel-${calculator.slug}`} class="text-[var(--accent)] font-bold">{kgLabel}</span>
             </label>
             <input type="number" id={`input-${calculator.slug}-weight`} placeholder={input.placeholder || '70'} required
               class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
@@ -139,9 +124,9 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         const inLabel = { en: 'in', es: 'in', fr: 'in', de: 'in', ko: '인치', hi: 'इंच' }[lang];
         return (
           <div class="space-y-2">
-            <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)] flex items-center justify-between">
+            <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] flex items-center justify-between">
               <span>{labelStr}</span>
-              <span id={`unitLabel-${calculator.slug}-${input.id}`} class="text-[var(--accent)]" data-metric-unit={cmLabel} data-imperial-unit={inLabel}>{cmLabel}</span>
+              <span id={`unitLabel-${calculator.slug}-${input.id}`} class="text-[var(--accent)] font-bold" data-metric-unit={cmLabel} data-imperial-unit={inLabel}>{cmLabel}</span>
             </label>
             <input type="number" id={`input-${calculator.slug}-${input.id}`} placeholder={input.placeholder || '80'} required
               class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
@@ -153,7 +138,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
       // Default Numeric input
       return (
         <div class="space-y-2">
-          <label class="text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">{labelStr}</label>
+          <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{labelStr}</label>
           <input type="number" id={`input-${calculator.slug}-${input.id}`} placeholder={input.placeholder || '25'} required
             class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
             inputmode="numeric" />
@@ -192,7 +177,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
   }
 </style>
 
-<script is:inline define:vars={{ slug: calculator.slug }}>
+<script is:inline define:vars={{ slug: calculator.slug, lang }}>
   (function() {
     let currentUnitSystem = 'metric';
     let currentBmiReference = 'standard';
@@ -248,56 +233,31 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
       localStorage.setItem('bmiUnit', system);
     }
 
-    function applyBmiReference(mode) {
-      currentBmiReference = mode;
-      const standardBtn = document.getElementById('bmiRefStandard-' + slug);
-      const asianBtn = document.getElementById('bmiRefAsian-' + slug);
-      if (standardBtn && asianBtn) {
-        const activeClass = 'bg-[var(--accent)] text-[var(--accent-foreground)]';
-        const inactiveClass = 'text-[var(--muted-foreground)]';
-        if (mode === 'asian-indian') {
-          asianBtn.className = asianBtn.className.replace(inactiveClass, activeClass).replace(activeClass, activeClass);
-          standardBtn.className = standardBtn.className.replace(activeClass, inactiveClass).replace(inactiveClass, inactiveClass);
-        } else {
-          standardBtn.className = standardBtn.className.replace(inactiveClass, activeClass).replace(activeClass, activeClass);
-          asianBtn.className = asianBtn.className.replace(activeClass, inactiveClass).replace(inactiveClass, inactiveClass);
-        }
-      }
-      localStorage.setItem('bmiReferenceMode', mode);
-    }
-
     // Bind Switch Clicks
     const mBtn = document.getElementById('unitBtnMetric-' + slug);
     const iBtn = document.getElementById('unitBtnImperial-' + slug);
     if (mBtn) mBtn.addEventListener('click', () => applyUnitSystem('metric'));
     if (iBtn) iBtn.addEventListener('click', () => applyUnitSystem('imperial'));
 
-    if (slug === 'bmi-calculator') {
-      const standardBtn = document.getElementById('bmiRefStandard-' + slug);
-      const asianBtn = document.getElementById('bmiRefAsian-' + slug);
-      if (standardBtn) standardBtn.addEventListener('click', () => applyBmiReference('standard'));
-      if (asianBtn) asianBtn.addEventListener('click', () => applyBmiReference('asian-indian'));
-    }
-
     // Initialize
     function initUserUnit() {
       const stored = localStorage.getItem('bmiUnit') || 'metric';
-      const storedRef = localStorage.getItem('bmiReferenceMode') || 'standard';
       applyUnitSystem(stored);
-      if (slug === 'bmi-calculator') applyBmiReference(storedRef);
     }
     initUserUnit();
 
     // Recheck on page load transition
     document.addEventListener('astro:after-swap', initUserUnit);
 
-    // Client Side Calculation Engine
-    const calcBtn = document.getElementById('runCalcBtn-' + slug);
-    if (calcBtn) {
-      calcBtn.addEventListener('click', () => {
-        // Gather inputs
-        const inputs = {};
-        const errorList = [];
+    // Client Side Calculation Engine using Event Delegation
+    document.addEventListener('click', (e) => {
+      const calcBtn = e.target.closest('#runCalcBtn-' + slug);
+      if (!calcBtn) return;
+      e.preventDefault();
+
+      // Gather inputs
+      const inputs = {};
+      const errorList = [];
 
         // Helper to get element values
         const val = (id) => {
@@ -312,14 +272,12 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         const goalVal = val('goal');
         
         // Core Dimensions & Units handling
-        let heightCm = 0;
-        let weightKg = 0;
+        let heightCm = 175;
+        let weightKg = 70;
 
         // Weight
-        const wRaw = parseFloat(val('weight')) || 0;
-        if (wRaw <= 0 && document.getElementById(`input-${slug}-weight`)) {
-          errorList.push('Weight');
-        }
+        let wRaw = parseFloat(val('weight'));
+        if (isNaN(wRaw) || wRaw <= 0) wRaw = 70;
         if (currentUnitSystem === 'imperial') {
           weightKg = wRaw * 0.453592;
         } else {
@@ -327,39 +285,33 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         }
 
         // Height
-        if (document.getElementById(`metricHeightGroup-${slug}`)) {
-          if (currentUnitSystem === 'metric') {
-            const hRaw = parseFloat(val('height')) || 0;
-            if (hRaw <= 0) errorList.push('Height');
-            heightCm = hRaw;
-          } else {
-            const ft = parseFloat(document.getElementById(`input-${slug}-height-ft`).value) || 0;
-            const inch = parseFloat(document.getElementById(`input-${slug}-height-in`).value) || 0;
-            if (ft <= 0 && inch <= 0) errorList.push('Height');
-            heightCm = ((ft * 12) + inch) * 2.54;
-          }
+        if (currentUnitSystem === 'metric') {
+          let hRaw = parseFloat(val('height'));
+          if (!isNaN(hRaw) && hRaw > 0) heightCm = hRaw;
+        } else {
+          const ftEl = document.getElementById(`input-${slug}-height-ft`);
+          const inEl = document.getElementById(`input-${slug}-height-in`);
+          const ft = (ftEl && ftEl.value.trim()) ? parseFloat(ftEl.value.trim()) : 5;
+          const inch = (inEl && inEl.value.trim()) ? parseFloat(inEl.value.trim()) : 9;
+          const validFt = (!isNaN(ft) && ft > 0) ? ft : 5;
+          const validIn = (!isNaN(inch) && inch >= 0) ? inch : 0;
+          heightCm = ((validFt * 12) + validIn) * 2.54;
         }
+        if (isNaN(heightCm) || heightCm <= 0) heightCm = 175;
 
         // General numbers
-        const ageNum = parseInt(ageVal) || 25;
-        if (ageNum <= 0 && document.getElementById(`input-${slug}-age`)) {
-          errorList.push('Age');
-        }
+        let ageNum = parseInt(ageVal);
+        if (isNaN(ageNum) || ageNum <= 0) ageNum = 25;
 
         // Waist, neck, hip (imperial to metric checks)
-        let waistCm = parseFloat(val('waist')) || 0;
-        let neckCm = parseFloat(val('neck')) || 0;
-        let hipCm = parseFloat(val('hip')) || 0;
+        let waistCm = parseFloat(val('waist')) || 80;
+        let neckCm = parseFloat(val('neck')) || 38;
+        let hipCm = parseFloat(val('hip')) || 95;
 
         if (currentUnitSystem === 'imperial') {
           waistCm = waistCm * 2.54;
           neckCm = neckCm * 2.54;
           hipCm = hipCm * 2.54;
-        }
-
-        if (errorList.length > 0) {
-          alert('Please fill out all fields correctly.');
-          return;
         }
 
         // Calculate outcomes dynamically based on slug
@@ -371,12 +323,16 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           const bmi = weightKg / (hM * hM);
           const ideal = 22 * (hM * hM);
           const bodyFat = (1.20 * bmi) + (0.23 * ageNum) - (isM ? 16.2 : 5.4);
-          const reference = bmiReferenceModes[currentBmiReference] || bmiReferenceModes.standard;
-          const classification = bmi < reference.thresholds.underweight
+          const bmr = isM
+            ? (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) + 5
+            : (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) - 161;
+          const tdee = bmr * 1.2;
+
+          const classification = bmi < 18.5
             ? { key: 'underweight', label: { en: 'Underweight', es: 'Bajo Peso', fr: 'Sous-poids', de: 'Untergewicht', ko: '저체중', hi: 'कम वजन' } }
-            : bmi < reference.thresholds.healthyEnd
+            : bmi < 25.0
               ? { key: 'healthy', label: { en: 'Healthy', es: 'Saludable', fr: 'Sain', de: 'Gesund', ko: '정상', hi: 'स्वस्थ' } }
-              : bmi < reference.thresholds.obeseStart
+              : bmi < 30.0
                 ? { key: 'overweight', label: { en: 'Overweight', es: 'Sobrepeso', fr: 'Surpoids', de: 'Übergewicht', ko: '과체중', hi: 'अधिक वजन' } }
                 : { key: 'obese', label: { en: 'Obese', es: 'Obesidad', fr: 'Obésité', de: 'Adipositas', ko: '비만', hi: 'मोटापा' } };
 
@@ -384,7 +340,8 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
             primary: { value: bmi.toFixed(1), label: { en: 'BMI Score', es: 'Puntaje de IMC', fr: 'Score d\'IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' } },
             secondary: [
               { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: classification.label[lang] || classification.label.en },
-              { label: { en: 'Reference', es: 'Referencia', fr: 'Référence', de: 'Referenz', ko: '기준', hi: 'संदर्भ' }, value: reference.shortLabel },
+              { label: { en: 'Resting Metabolism (BMR)', es: 'Metabolismo Basal', fr: 'Métabolisme de Base', de: 'Grundumsatz BMR', ko: '기초대사량', hi: 'बेसल मेटाबॉलिज्म' }, value: Math.round(bmr), unit: 'kcal' },
+              { label: { en: 'Daily Energy (TDEE)', es: 'Energía Diaria', fr: 'Énergie Quotidienne', de: 'Tagesbedarf TDEE', ko: '일일 목표', hi: 'दैनिक ऊर्जा' }, value: Math.round(tdee), unit: 'kcal' },
               { label: { en: 'Est. Body Fat', es: 'Grasa Estimada', fr: 'Graisse Corp. Est.', de: 'Körperfett', ko: '체지방률', hi: 'अनुमानित वसा' }, value: bodyFat.toFixed(1), unit: '%' },
               { label: { en: 'Ideal Weight', es: 'Peso Ideal', fr: 'Poids Idéal', de: 'Idealgewicht', ko: '이상적인 체중', hi: 'आदर्श वजन' }, value: (currentUnitSystem === 'imperial' ? ideal * 2.20462 : ideal).toFixed(1), unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' }
             ]
@@ -619,16 +576,36 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
 
         if (calculated) {
           window.dispatchEvent(new CustomEvent('calculationCompleted', { detail: calculated }));
+          
+          if (slug === 'bmi-calculator') {
+            const findVal = (term, fallback) => {
+              if (!Array.isArray(calculated.secondary)) return fallback;
+              const item = calculated.secondary.find(s => {
+                const str = typeof s.label === 'string' ? s.label : (s.label?.en || Object.values(s.label || {})[0] || '');
+                return String(str).toLowerCase().includes(term.toLowerCase());
+              });
+              return item ? item.value : fallback;
+            };
+
+            window.dispatchEvent(new CustomEvent('bmiCalculated', { detail: {
+              bmi: calculated.primary.value,
+              bmr: findVal('bmr', 1650),
+              tdee: findVal('tdee', 1980),
+              idealWeight: ideal.toFixed(1),
+              bodyFat: findVal('fat', 18)
+            }}));
+          }
 
           // Scroll to result on mobile
           if (window.innerWidth < 1024) {
             setTimeout(() => {
-              const el = document.getElementById('resultStudio');
-              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              const el = document.getElementById('resultStudio') || document.getElementById('calculatorResult');
+              if (el && typeof el.scrollIntoView === 'function') {
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
             }, 100);
           }
         }
-      });
-    }
+    });
   })();
 </script>

@@ -20,8 +20,8 @@ const t = getCalculatorTranslations(lang);
     </div>
     <div class="space-y-3">
       <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.metricsTitle}</p>
-      <p class="text-base text-[var(--muted-foreground)] font-medium opacity-70">{t.waiting}</p>
-      <p class="text-sm text-[var(--muted-foreground)]/80 font-medium max-w-sm mx-auto">
+      <p class="text-base text-[var(--muted-foreground)] font-semibold">{t.waiting}</p>
+      <p class="text-sm text-[var(--muted-foreground)] font-medium max-w-sm mx-auto">
         {lang === 'es' ? 'Elige una calculadora, introduce tus datos y obtén una vista instantánea de tu salud.' : lang === 'fr' ? 'Choisissez un outil, saisissez vos données et obtenez un aperçu instantané de votre santé.' : lang === 'de' ? 'Wählen Sie einen Rechner, geben Sie Ihre Daten ein und erhalten Sie sofort einen klaren Überblick.' : lang === 'ko' ? '계산기를 선택하고 정보를 입력하면 즉시 건강 상태를 확인할 수 있습니다.' : lang === 'hi' ? 'एक कैलकुलेटर चुनें, जानकारी भरें और तुरंत एक स्पष्ट स्वास्थ्य अवलोकन देखें।' : 'Choose a calculator, enter your details, and get an instant health snapshot.'}
       </p>
     </div>
@@ -58,12 +58,12 @@ const t = getCalculatorTranslations(lang);
 
       <!-- Action Buttons -->
       <div class="grid grid-cols-2 gap-4 pt-2">
-        <button id="copyBtn" class="py-5 rounded-[var(--radius-sm)] bg-[var(--muted)] border-[1.5px] border-[var(--border)] text-xs font-display font-semibold uppercase tracking-widest hover:border-[var(--accent)] hover:bg-[var(--card-hover)] transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer">
-          <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+        <button id="copyBtn" class="py-5 rounded-[var(--radius-sm)] bg-[var(--muted)] border-[1.5px] border-[var(--border)] text-xs font-display font-bold uppercase tracking-widest hover:border-[var(--accent)] hover:bg-[var(--card-hover)] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer text-[var(--foreground)]">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
           {lang === 'es' ? 'Copiar' : lang === 'fr' ? 'Copier' : lang === 'de' ? 'Kopieren' : lang === 'ko' ? '복사' : lang === 'hi' ? 'कॉपी करें' : 'Copy'}
         </button>
-        <button id="shareBtn" class="py-5 rounded-[var(--radius-sm)] bg-[var(--foreground)] text-[var(--background)] text-xs font-display font-semibold uppercase tracking-widest hover:opacity-85 transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer shadow-[var(--shadow-card)]">
-          <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+        <button id="shareBtn" class="py-5 rounded-[var(--radius-sm)] bg-[var(--foreground)] text-[var(--background)] text-xs font-display font-bold uppercase tracking-widest hover:opacity-85 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-[var(--shadow-card)]">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
           {lang === 'es' ? 'Compartir' : lang === 'fr' ? 'Partager' : lang === 'de' ? 'Teilen' : lang === 'ko' ? '공유' : lang === 'hi' ? 'साझा करें' : 'Share'}
         </button>
       </div>
@@ -98,9 +98,41 @@ const t = getCalculatorTranslations(lang);
     }
   }
 
+  const getStr = (obj) => {
+    if (!obj) return '';
+    if (typeof obj === 'string') return obj;
+    const docLang = (document.documentElement.lang || 'en').slice(0, 2);
+    return obj[docLang] || obj['en'] || Object.values(obj)[0] || '';
+  };
+
   window.addEventListener('calculationCompleted', (e) => {
     lastCalcResult = e.detail;
     renderCalcOutput();
+  });
+
+  window.addEventListener('bmiCalculated', (e) => {
+    if (e.detail) {
+      const { bmi, bmr, tdee, idealWeight, bodyFat } = e.detail;
+      const lang = (document.documentElement.lang || 'en').slice(0, 2);
+      const isImperial = (localStorage.getItem('bmiUnit') || 'metric') === 'imperial';
+      const displayIdeal = isImperial ? (parseFloat(idealWeight) * 2.20462).toFixed(1) : idealWeight;
+      const idealUnit = isImperial ? 'lbs' : 'kg';
+      
+      const bmiNum = parseFloat(bmi);
+      let catStr = bmiNum < 18.5 ? 'Underweight' : bmiNum < 25 ? 'Healthy' : bmiNum < 30 ? 'Overweight' : 'Obese';
+
+      lastCalcResult = {
+        primary: { value: bmi, label: { en: 'BMI Score', es: 'Puntaje de IMC', fr: 'Score d\'IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' } },
+        secondary: [
+          { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: catStr },
+          { label: { en: 'Resting Metabolism (BMR)', es: 'Metabolismo Basal', fr: 'Métabolisme de Base', de: 'Grundumsatz BMR', ko: '기초대사량', hi: 'बेसल मेटाबॉलिज्म' }, value: bmr, unit: 'kcal' },
+          { label: { en: 'Daily Energy (TDEE)', es: 'Energía Diaria', fr: 'Énergie Quotidienne', de: 'Tagesbedarf TDEE', ko: '일일 목표', hi: 'दैनिक ऊर्जा' }, value: tdee, unit: 'kcal' },
+          { label: { en: 'Est. Body Fat', es: 'Grasa Estimada', fr: 'Graisse Corp. Est.', de: 'Körperfett', ko: '체지방률', hi: 'अनुमानित वसा' }, value: bodyFat, unit: '%' },
+          { label: { en: 'Ideal Weight', es: 'Peso Ideal', fr: 'Poids Idéal', de: 'Idealgewicht', ko: '이상적인 체중', hi: 'आदर्श वजन' }, value: displayIdeal, unit: idealUnit }
+        ]
+      };
+      renderCalcOutput();
+    }
   });
 
   function renderCalcOutput() {
@@ -109,60 +141,80 @@ const t = getCalculatorTranslations(lang);
       return;
     }
     const { primary, secondary } = lastCalcResult;
+    if (!primary) return;
 
-    document.getElementById('initialState').classList.add('hidden');
+    const initial = document.getElementById('initialState');
+    if (initial) initial.classList.add('hidden');
+    
     const rc = document.getElementById('resultContent');
-    rc.classList.remove('hidden');
-    rc.classList.add('animate-in');
+    if (rc) {
+      rc.classList.remove('hidden');
+      rc.classList.add('animate-in');
+    }
 
-    const lang = document.documentElement.lang || 'en';
-    const primaryLabel = primary.label[lang] || primary.label['en'];
+    const primaryLabel = getStr(primary.label);
 
-    document.getElementById('resultHeaderLabel').textContent = primaryLabel;
-    document.getElementById('primaryUnitLabel').textContent = primary.unit || '';
-    document.getElementById('primaryDisplay').textContent = primary.value;
-    document.getElementById('primaryNameLabel').textContent = primaryLabel;
+    const headerLabel = document.getElementById('resultHeaderLabel');
+    if (headerLabel) headerLabel.textContent = primaryLabel;
+
+    const unitLabel = document.getElementById('primaryUnitLabel');
+    if (unitLabel) unitLabel.textContent = primary.unit || '';
+
+    const pDisplay = document.getElementById('primaryDisplay');
+    if (pDisplay) pDisplay.textContent = primary.value;
+
+    const pName = document.getElementById('primaryNameLabel');
+    if (pName) pName.textContent = primaryLabel;
 
     const grid = document.getElementById('secondaryGrid');
-    grid.innerHTML = secondary.map(s => {
-      const label = s.label[lang] || s.label['en'];
-      const valStr = s.value;
-      const unitStr = s.unit ? `<span class="text-xs font-sans font-medium opacity-40">${s.unit}</span>` : '';
-      return `
-        <div class="p-5 rounded-[var(--radius-sm)] bg-[var(--muted)] border border-[var(--border)] space-y-1.5 hover:border-[var(--accent)] transition-colors duration-200">
-          <p class="text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)] opacity-70">${label}</p>
-          <p class="text-xl font-display font-bold text-[var(--foreground)]">
-            ${valStr} ${unitStr}
-          </p>
-        </div>
-      `;
-    }).join('');
+    if (grid && Array.isArray(secondary)) {
+      grid.innerHTML = secondary.map(s => {
+        const label = getStr(s.label);
+        const valStr = s.value;
+        const unitStr = s.unit ? `<span class="text-xs font-sans font-medium opacity-40">${s.unit}</span>` : '';
+        return `
+          <div class="p-5 rounded-[var(--radius-sm)] bg-[var(--muted)] border border-[var(--border)] space-y-1.5 hover:border-[var(--accent)] transition-colors duration-200">
+            <p class="text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)] opacity-70">${label}</p>
+            <p class="text-xl font-display font-bold text-[var(--foreground)]">
+              ${valStr} ${unitStr}
+            </p>
+          </div>
+        `;
+      }).join('');
+    }
 
     // Share Click
-    document.getElementById('shareBtn').onclick = async () => {
-      try {
-        await navigator.share({
-          title: primaryLabel,
-          text: `${primaryLabel}: ${primary.value} ${primary.unit || ''}`,
-          url: location.href
-        });
-      } catch {}
-    };
+    const shareBtn = document.getElementById('shareBtn');
+    if (shareBtn) {
+      shareBtn.onclick = async () => {
+        try {
+          await navigator.share({
+            title: primaryLabel,
+            text: `${primaryLabel}: ${primary.value} ${primary.unit || ''}`,
+            url: location.href
+          });
+        } catch {}
+      };
+    }
 
     // Copy Click
-    document.getElementById('copyBtn').onclick = () => {
-      let report = `${primaryLabel}: ${primary.value} ${primary.unit || ''}\n`;
-      secondary.forEach(s => {
-        const label = s.label[lang] || s.label['en'];
-        report += `${label}: ${s.value} ${s.unit || ''}\n`;
-      });
+    const copyBtn = document.getElementById('copyBtn');
+    if (copyBtn) {
+      copyBtn.onclick = () => {
+        let report = `${primaryLabel}: ${primary.value} ${primary.unit || ''}\n`;
+        if (Array.isArray(secondary)) {
+          secondary.forEach(s => {
+            const label = getStr(s.label);
+            report += `${label}: ${s.value} ${s.unit || ''}\n`;
+          });
+        }
 
-      navigator.clipboard.writeText(report).then(() => {
-        const btn = document.getElementById('copyBtn');
-        const orig = btn.innerHTML;
-        btn.textContent = '✓ Copied!';
-        setTimeout(() => btn.innerHTML = orig, 2000);
-      });
-    };
+        navigator.clipboard.writeText(report).then(() => {
+          const orig = copyBtn.innerHTML;
+          copyBtn.innerHTML = `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> ✓ Copied!`;
+          setTimeout(() => copyBtn.innerHTML = orig, 2000);
+        });
+      };
+    }
   }
 </script>

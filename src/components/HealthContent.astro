@@ -263,7 +263,7 @@ const faqSchema = {
           </h2>
           <div class="h-1 w-12 bg-[var(--accent)] rounded-full group-hover:w-20 transition-all duration-300"></div>
         </div>
-        <p class="text-base text-[var(--muted-foreground)] leading-relaxed font-medium pt-4 border-t border-[var(--border)]/40">
+        <p class="text-base text-[var(--muted-foreground)] leading-relaxed font-medium pt-2">
           {section.text}
         </p>
       </div>
@@ -272,7 +272,7 @@ const faqSchema = {
 
   <!-- ═══════════════════  WHO TABLE & SOURCES  ═══════════════════ -->
   {t.whoTable && (
-    <div class="space-y-8 border-t border-[var(--border)] pt-16">
+    <div class="space-y-8 pt-12">
       <div class="space-y-3">
         <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.whoSub}</p>
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
@@ -290,10 +290,10 @@ const faqSchema = {
             <div class="flex justify-between items-center gap-3">
               <span class="font-display font-bold text-[var(--foreground)] uppercase text-sm">{row.category}</span>
               <span class={`text-[10px] font-display font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full border ${
-                row.status === 'normal'      ? 'border-emerald-600/50 text-emerald-950 dark:text-emerald-200 bg-emerald-500/20' :
-                row.status === 'underweight' ? 'border-sky-500/30 text-sky-500 bg-sky-500/5' :
-                row.status === 'overweight'  ? 'border-amber-500/30 text-amber-500 bg-amber-500/5' :
-                                               'border-rose-500/30 text-rose-500 bg-rose-500/5'
+                row.status === 'normal'      ? 'border-emerald-500/40 dark:border-emerald-500/50 text-emerald-950 dark:text-emerald-200 bg-emerald-100/90 dark:bg-emerald-950/60' :
+                row.status === 'underweight' ? 'border-sky-500/40 dark:border-sky-500/50 text-sky-950 dark:text-sky-200 bg-sky-100/90 dark:bg-sky-950/60' :
+                row.status === 'overweight'  ? 'border-amber-500/40 dark:border-amber-500/50 text-amber-950 dark:text-amber-200 bg-amber-100/90 dark:bg-amber-950/60' :
+                                               'border-rose-500/40 dark:border-rose-500/50 text-rose-950 dark:text-rose-200 bg-rose-100/90 dark:bg-rose-950/60'
               }`}>{row.risk}</span>
             </div>
             <div class="flex justify-between items-center text-xs border-t border-[var(--border)] pt-2">
@@ -322,10 +322,10 @@ const faqSchema = {
                   <td class="px-6 py-5 font-sans text-[var(--foreground)] text-sm font-semibold">{row.range}</td>
                   <td class="px-6 py-5">
                     <span class={`text-[10px] font-display font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full border ${
-                      row.status === 'normal'      ? 'border-emerald-600/40 text-emerald-800 dark:text-emerald-300 bg-emerald-500/15' :
-                      row.status === 'underweight' ? 'border-sky-600/40 text-sky-800 dark:text-sky-300 bg-sky-500/15' :
-                      row.status === 'overweight'  ? 'border-amber-600/40 text-amber-900 dark:text-amber-300 bg-amber-500/15' :
-                                                     'border-rose-600/40 text-rose-800 dark:text-rose-300 bg-rose-500/15'
+                      row.status === 'normal'      ? 'border-emerald-500/40 dark:border-emerald-500/50 text-emerald-950 dark:text-emerald-200 bg-emerald-100/90 dark:bg-emerald-950/60' :
+                      row.status === 'underweight' ? 'border-sky-500/40 dark:border-sky-500/50 text-sky-950 dark:text-sky-200 bg-sky-100/90 dark:bg-sky-950/60' :
+                      row.status === 'overweight'  ? 'border-amber-500/40 dark:border-amber-500/50 text-amber-950 dark:text-amber-200 bg-amber-100/90 dark:bg-amber-950/60' :
+                                                     'border-rose-500/40 dark:border-rose-500/50 text-rose-950 dark:text-rose-200 bg-rose-100/90 dark:bg-rose-950/60'
                     }`}>{row.risk}</span>
                   </td>
                 </tr>
@@ -356,7 +356,7 @@ const faqSchema = {
   )}
 
   <!-- ═══════════════════  FAQ ACCORDION  ═══════════════════ -->
-  <div id="faq" class="space-y-12 border-t border-[var(--border)] pt-20 scroll-mt-28">
+  <div id="faq" class="space-y-12 pt-12 scroll-mt-28">
     <div class="space-y-3 text-center">
       <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.helpCenter}</p>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase text-[var(--foreground)]">{t.faqTitle}</h2>
