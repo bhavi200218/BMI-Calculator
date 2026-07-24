@@ -220,12 +220,31 @@ const howToSchema = {
 				"@type": "MedicalWebPage",
 				"name": "Body Mass Index (BMI) Clinical Reference & Calculator",
 				"url": "https://realbmicalculator.com",
+				"inLanguage": "en",
 				"aspect": ["Diagnosis", "Prevention", "Overview"],
 				"medicalAudience": "Patient",
 				"citation": [
 					"https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
 					"https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html"
 				],
+				"author": {
+					"@type": "Organization",
+					"name": "Real BMI Clinical Editorial Board",
+					"url": "https://realbmicalculator.com/en/editorial-policy"
+				},
+				"publisher": {
+					"@type": "Organization",
+					"name": "Real BMI Calculator",
+					"url": "https://realbmicalculator.com",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://realbmicalculator.com/favicon.png"
+					}
+				},
+				"speakable": {
+					"@type": "SpeakableSpecification",
+					"cssSelector": ["h1", "p"]
+				},
 				"code": {
 					"@type": "MedicalCode",
 					"code": "Z68",
