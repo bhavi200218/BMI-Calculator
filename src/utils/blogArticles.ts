@@ -1,175 +1,292 @@
 export const blogArticles: Record<string, any> = {
   'bmi-chart-for-men-women': {
     title: {
-      en: 'BMI Chart for Men and Women',
-      es: 'Gráfico de IMC para Hombres y Mujeres',
-      fr: 'Tableau d’IMC pour Hommes et Femmes',
-      de: 'BMI-Tabelle für Männer und Frauen',
-      ko: '남성과 여성을 위한 BMI 차트',
-      hi: 'पुरुषों और महिलाओं के लिए BMI चार्ट'
+      en: 'What is a Healthy BMI for Men and Women? (Official WHO Chart)',
+      es: '¿Cuál es un IMC Saludable para Hombres y Mujeres? (Tabla Oficial de la OMS)',
+      fr: 'Quel est un IMC Sain pour les Hommes et les Femmes ? (Tableau Officiel OMS)',
+      de: 'Was ist ein gesunder BMI für Männer und Frauen? (Offizielle WHO-Tabelle)',
+      ko: '남성과 여성을 위한 건강한 BMI는 얼마인가요? (공식 WHO 차트)',
+      hi: 'पुरुषों और महिलाओं के लिए स्वस्थ BMI क्या है? (आधिकारिक WHO चार्ट)'
     },
     category: {
-      en: 'Guides',
-      es: 'Guía',
-      fr: 'Guide',
-      de: 'Leitfaden',
-      ko: '가이드',
-      hi: 'गाइड'
+      en: 'Clinical Guides',
+      es: 'Guías Clínicas',
+      fr: 'Guides Cliniques',
+      de: 'Klinische Leitfäden',
+      ko: '임상 가이드',
+      hi: 'नैदानिक गाइड'
     },
     description: {
-      en: 'Compare healthy BMI ranges for men and women in one easy-to-read chart.',
-      es: 'Compara los rangos saludables de IMC para hombres y mujeres en un solo gráfico fácil de leer.',
-      fr: 'Comparez les plages d’IMC saines pour les hommes et les femmes dans un seul tableau clair.',
-      de: 'Vergleichen Sie gesunde BMI-Bereiche für Männer und Frauen in einer leicht verständlichen Tabelle.',
-      ko: '남성과 여성의 건강한 BMI 범위를 한눈에 볼 수 있는 차트로 비교하세요.',
-      hi: 'पुरुषों और महिलाओं के लिए स्वस्थ BMI सीमाओं की तुलना एक सरल चार्ट में करें।'
+      en: 'Compare official WHO & CDC healthy BMI ranges for adult men and women with interactive weight classification tables.',
+      es: 'Compara los rangos saludables de IMC de la OMS y los CDC para hombres y mujeres adultos con tablas clasificatorias.',
+      fr: 'Comparez les plages d’IMC saines de l’OMS et du CDC pour hommes et femmes adultes avec tableaux interactifs.',
+      de: 'Vergleichen Sie offizielle WHO- und CDC-BMI-Bereiche für erwachsene Männer und Frauen.',
+      ko: '성인 남성과 여성을 위한 공식 WHO 및 CDC 건강 BMI 범위를 비교하세요.',
+      hi: 'वयस्क पुरुषों और महिलाओं के लिए आधिकारिक WHO एवं CDC स्वस्थ BMI सीमाओं की तुलना करें।'
     },
     body: {
       en: [
-        'Body Mass Index (BMI) is a standardized measure used to compare weight relative to height. It helps identify whether a person is underweight, healthy, overweight, or obese in broad, evidence-based categories.',
-        'Men and women often carry weight differently, so the same BMI score may carry different health implications depending on body composition and fat distribution.',
-        'Use this chart alongside other measurements like waist circumference, activity levels, and muscle mass to make more informed wellness decisions.'
+        'Body Mass Index (BMI) is an internationally recognized medical screening standard that evaluates a person’s weight in relation to their height (kg/m²). Healthcare providers and international organizations like the World Health Organization (WHO) use BMI to classify individuals into underweight, normal weight, overweight, and obesity classes.',
+        'Although the standard BMI formula is identical for both men and women, physiological differences mean body composition varies significantly. Adult women naturally possess higher essential body fat percentages than men at identical BMI levels, whereas men carry greater skeletal muscle density.',
+        'Standard WHO BMI Cut-offs for Adults: Underweight is defined as BMI below 18.5; Healthy Weight ranges between 18.5 and 24.9; Overweight is classified between 25.0 and 29.9; and Obesity Class I begins at 30.0.',
+        'To get an accurate breakdown of your own measurements, use the free Real BMI Calculator to process metric or imperial values instantly according to clinical standards.'
       ],
       es: [
-        'El índice de masa corporal (IMC) es una medida estándar que se utiliza para comparar el peso en relación con la altura. Ayuda a identificar si una persona está con bajo peso, en un rango saludable, con sobrepeso o con obesidad.',
-        'Hombres y mujeres suelen almacenar el peso de manera diferente, por lo que el mismo resultado de IMC puede tener implicaciones de salud distintas según la composición corporal.',
-        'Utiliza este gráfico junto con otras mediciones como la circunferencia de la cintura, el nivel de actividad y la masa muscular para tomar decisiones de bienestar mejor informadas.'
+        'El Índice de Masa Corporal (IMC) es un estándar médico internacional que evalúa el peso en relación con la altura (kg/m²).',
+        'Aunque la fórmula es igual para hombres y mujeres, las mujeres poseen naturalmente un mayor porcentaje de grasa corporal esencial.',
+        'Clasificación OMS: Bajo peso (<18.5), Normal (18.5–24.9), Sobrepeso (25.0–29.9) y Obesidad (≥30.0).',
+        'Calcula tu IMC preciso con nuestra herramienta Real BMI Calculator.'
       ],
       fr: [
-        'L’indice de masse corporelle (IMC) est une mesure standardisée utilisée pour comparer le poids par rapport à la taille. Il aide à identifier si une personne est en insuffisance pondérale, dans une plage saine, en surpoids ou en obésité.',
-        'Les hommes et les femmes portent souvent le poids différemment, de sorte que le même score d’IMC peut avoir des implications de santé différentes selon la composition corporelle.',
-        'Utilisez ce tableau avec d’autres mesures comme le tour de taille, le niveau d’activité et la masse musculaire pour prendre des décisions de santé plus éclairées.'
+        'L’indice de masse corporelle (IMC) est une norme médicale internationale pour évaluer le poids par rapport à la taille (kg/m²).',
+        'Bien que la formule soit la même, les femmes possèdent naturellement un pourcentage de graisse essentielle plus élevé.',
+        'Seuils OMS : Sous-poids (<18.5), Normal (18.5–24.9), Surpoids (25.0–29.9), Obésité (≥30.0).',
+        'Utilisez le calculateur Real BMI pour obtenir vos résultats précis.'
       ],
       de: [
-        'Der Body-Mass-Index (BMI) ist ein standardisiertes Maß, um das Gewicht in Relation zur Körpergröße zu vergleichen. Er hilft zu erkennen, ob eine Person untergewichtig, gesund, übergewichtig oder fettleibig ist.',
-        'Männer und Frauen neigen dazu, Gewicht unterschiedlich zu tragen, daher kann der gleiche BMI-Wert je nach Körperzusammensetzung und Fettverteilung unterschiedliche gesundheitliche Bedeutungen haben.',
-        'Verwenden Sie dieses Diagramm zusammen mit anderen Messungen wie Taillenumfang, Aktivitätsniveau und Muskelmasse, um fundiertere Entscheidungen zur Gesundheit zu treffen.'
+        'Der Body-Mass-Index (BMI) ist ein medizinischer Standard zur Beurteilung des Gewichts im Verhältnis zur Größe (kg/m²).',
+        'WHO-Klassifizierung: Untergewicht (<18,5), Normalgewicht (18,5–24,9), Übergewicht (25,0–29,9), Adipositas (≥30,0).',
+        'Nutzen Sie unseren kostenlosen Real BMI-Rechner für präzise Ergebnisse.'
       ],
       ko: [
-        '체질량지수(BMI)는 몸무게를 키에 대한 표준화된 방법으로 비교하는 지표입니다. 이것은 체중이 저체중, 정상, 과체중 또는 비만 중 어떤 범위에 속하는지 식별하는 데 도움이 됩니다.',
-        '남성과 여성은 체중을 다르게 분포시키는 경향이 있으므로 동일한 BMI 점수가 체성분과 지방 분포에 따라 다른 건강 의미를 가질 수 있습니다.',
-        '이 차트를 허리 둘레, 활동 수준 및 근육량과 같은 다른 측정값과 함께 사용하여 더 현명한 웰니스 결정을 내리세요.'
+        '체질량지수(BMI)는 키 대비 체중을 평가하는 국제 의료 표준입니다 (kg/m²).',
+        'WHO 표준 분류: 저체중(<18.5), 정상(18.5–24.9), 과체중(25.0–29.9), 비만(≥30.0).',
+        '공식 Real BMI 계산기로 즉시 정밀한 수치를 확인하세요.'
       ],
       hi: [
-        'बॉडी मास इंडेक्स (BMI) एक मानकीकृत माप है जो ऊँचाई के सापेक्ष वजन की तुलना करने में मदद करता है। यह संकेत देता है कि कोई व्यक्ति कम वजन, स्वस्थ, अधिक वजन या मोटापा वर्ग में है।',
-        'पुरुष और महिलाओं का वजन आमतौर पर अलग-अलग वितरित होता है, इसलिए वही BMI स्कोर शरीर संरचना और वसा वितरण के आधार पर अलग स्वास्थ्य संकेत दे सकता है।',
-        'इस चार्ट का उपयोग कमर की परिधि, गतिविधि स्तर और मांसपेशी द्रव्यमान जैसी अन्य मापों के साथ मिलाकर अधिक जानकारीपूर्ण स्वास्थ्य निर्णय लें।'
+        'बॉडी मास इंडेक्स (BMI) एक अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त मेडिकल स्क्रीनिंग मानक है जो ऊंचाई के सापेक्ष वजन (kg/m²) का मूल्यांकन करता है।',
+        'WHO मानक वर्गीकरण: कम वजन (<18.5), सामान्य वजन (18.5–24.9), अधिक वजन (25.0–29.9), और मोटापा (≥30.0)।',
+        'सटीक और नैदानिक परिणाम प्राप्त करने के लिए हमारे मुफ़्त Real BMI Calculator का उपयोग करें।'
+      ]
+    }
+  },
+  'bmi-calculator-formula-guide': {
+    title: {
+      en: 'BMI Calculator in kg & cm vs. lbs & inches (Formula & Calculation Guide)',
+      es: 'Calculadora de IMC en kg/cm vs. lbs/pulgadas (Guía de Fórmulas)',
+      fr: 'Calculateur d’IMC en kg/cm vs lbs/pouces (Formules & Guide)',
+      de: 'BMI Rechner in kg/cm vs. lbs/Zoll (Formel-Leitfaden)',
+      ko: 'kg/cm 및 lbs/인치 BMI 계산기 (공식 및 계산 가이드)',
+      hi: 'kg & cm बनाम lbs & inches में बीएमआई कैलकुलेटर (फॉर्मूला & गाइड)'
+    },
+    category: {
+      en: 'Calculations & Math',
+      es: 'Cálculos y Matemáticas',
+      fr: 'Calculs & Mathématiques',
+      de: 'Berechnungen & Mathematik',
+      ko: '계산 및 수학',
+      hi: 'गणना और फॉर्मूला'
+    },
+    description: {
+      en: 'Learn how to calculate your BMI step-by-step using metric units (kilograms and meters) or imperial units (pounds and inches).',
+      es: 'Aprende a calcular tu IMC paso a paso usando el sistema métrico (kg y metros) o el sistema imperial (libras e pulgadas).',
+      fr: 'Apprenez à calculer votre IMC étape par étape en unités métriques (kg et mètres) ou impériales (livres et pouces).',
+      de: 'Lernen Sie Schritt für Schritt, wie Sie Ihren BMI im metrischen oder imperialen System berechnen.',
+      ko: '미터법(kg 및 m) 또는 야드파운드법(lbs 및 in)을 사용하여 BMI를 계산하는 방법을 알아보세요.',
+      hi: 'मीट्रिक (किलोग्राम और सेंटीमीटर) या इंपीरियल (पाउंड और इंच) में बीएमआई की गणना करने का फॉर्मूला समझें।'
+    },
+    body: {
+      en: [
+        'Calculating Body Mass Index (BMI) accurately requires applying the correct mathematical ratio between your body weight and height.',
+        'Metric BMI Formula: In metric systems, BMI equals weight in kilograms divided by height in meters squared: BMI = weight (kg) / [height (m)]². For example, a person weighing 70 kg with a height of 1.75 m calculates: 70 / (1.75 x 1.75) = 22.86 (Healthy Weight).',
+        'Imperial BMI Formula: In imperial units, the formula scales pounds and inches using a conversion constant of 703: BMI = [weight (lbs) / height (inches)²] x 703. For example, 150 lbs at 68 inches evaluates to: (150 / 4624) x 703 = 22.8 (Healthy Weight).',
+        'Instead of manual arithmetic, our automated Real BMI Calculator processes both metric (kg/cm) and imperial (lbs/in) units seamlessly, returning instant BMR and TDEE health analytics.'
+      ],
+      es: [
+        'Fórmula Métrica: IMC = peso (kg) / [altura (m)]².',
+        'Fórmula Imperial: IMC = [peso (lb) / altura (pulgadas)²] x 703.',
+        'Usa Real BMI Calculator para obtener tus cálculos instantáneos sin errores manuales.'
+      ],
+      fr: [
+        'Formule Métrique : IMC = poids (kg) / [taille (m)]².',
+        'Formule Impériale : IMC = [poids (lbs) / taille (pouces)²] x 703.',
+        'Calculez votre IMC automatiquement avec Real BMI Calculator.'
+      ],
+      de: [
+        'Metrische Formel: BMI = Gewicht (kg) / [Größe (m)]².',
+        'Imperiale Formel: BMI = [Gewicht (lbs) / Größe (Zoll)²] x 703.',
+        'Nutzen Sie den Real BMI-Rechner für automatische Echtzeit-Ergebnisse.'
+      ],
+      ko: [
+        '미터법 공식: BMI = 체중(kg) / [키(m)]².',
+        '야드파운드법 공식: BMI = [체중(lbs) / 키(in)²] x 703.',
+        '수동 계산 대신 Real BMI 계산기를 사용하여 즉시 결과를 확인하세요.'
+      ],
+      hi: [
+        'मीट्रिक फॉर्मूला: BMI = वजन (kg) ÷ [ऊंचाई (m)]²।',
+        'इंपीरियल फॉर्मूला: BMI = [वजन (lbs) ÷ ऊंचाई (इंच)²] × 703।',
+        'मैन्युअल गणना की बजाय Real BMI Calculator से 5 सेकंड में सटीक परिणाम प्राप्त करें।'
       ]
     }
   },
   'healthy-bmi-range-indians': {
     title: {
-      en: 'Healthy BMI Range for Indians',
-      es: 'Rango Saludable de IMC para Indios',
-      fr: 'Plage d’IMC Saine pour les Indiens',
-      de: 'Gesunder BMI-Bereich für Inder',
-      ko: '인도인을 위한 건강한 BMI 범위',
-      hi: 'भारतीयों के लिए स्वस्थ BMI रेंज'
+      en: 'Asian & Indian BMI Cut-Off Ranges (Why 23 is Overweight in India)',
+      es: 'Rangos de IMC para Poblaciones Asiáticas e Indias (Por qué 23 es Sobrepeso)',
+      fr: 'Plages d’IMC pour les Populations Asiatiques et Indiennes',
+      de: 'BMI-Bereiche für asiatische und indische Bevölkerungen',
+      ko: '아시아인 및 인도인을 위한 BMI 수정 기준 (왜 23부터 과체중인가)',
+      hi: 'भारतीयों और एशियाई लोगों के लिए बीएमआई सीमा (भारत में 23 पर ही ओवरवेट क्यों?)'
     },
     category: {
-      en: 'Research',
-      es: 'Investigación',
-      fr: 'Recherche',
-      de: 'Forschung',
-      ko: '연구',
-      hi: 'अनुसंधान'
+      en: 'South Asian Cardiology Research',
+      es: 'Investigación Cardiológica',
+      fr: 'Recherche Cardiologique',
+      de: 'Kardiologische Forschung',
+      ko: '심장학 연구',
+      hi: 'कार्डियोलॉजी अनुसंधान'
     },
     description: {
-      en: 'Understand the healthy BMI thresholds tailored to Indian adults and the reasoning behind regional adjustments.',
-      es: 'Comprende los umbrales saludables de IMC adaptados a adultos indios y la razón detrás de los ajustes regionales.',
-      fr: 'Comprenez les seuils IMC sains adaptés aux adultes indiens et les raisons des ajustements régionaux.',
-      de: 'Verstehen Sie die gesunden BMI-Grenzwerte für indische Erwachsene und die Gründe für regionale Anpassungen.',
-      ko: '인도 성인을 위한 건강한 BMI 기준과 지역별 조정 이유를 알아보세요.',
-      hi: 'भारतीय वयस्कों के लिए स्वस्थ BMI मानदंड और क्षेत्रीय समायोजन के पीछे की वजहें समझें।'
+      en: 'Understand the consensus guidelines from WHO South-East Asia that set a lower healthy BMI threshold (18.5-22.9) for Indian and Asian populations.',
+      es: 'Comprende las directrices de la OMS para el sudeste asiático que establecen un umbral de IMC más bajo (18.5-22.9) para indios y asiáticos.',
+      fr: 'Comprenez les directives de l’OMS Asie du Sud-Est définissant un seuil d’IMC plus bas (18.5-22.9) pour les populations indiennes.',
+      de: 'Verstehen Sie die WHO-Richtlinien für Südostasien mit niedrigeren BMI-Grenzwerten (18,5–22,9).',
+      ko: '아시아인을 위한 낮은 BMI 건강 기준(18.5-22.9)과 WHO 남아시아 지침을 알아봅니다.',
+      hi: 'डब्ल्यूएचओ दक्षिण-पूर्व एशिया दिशानिर्देशों को समझें जो भारतीय वयस्कों के लिए स्वस्थ बीएमआई सीमा 18.5 से 22.9 निर्धारित करते हैं।'
     },
     body: {
       en: [
-        'Recent studies indicate that some Indian adults may face metabolic risk at lower BMI thresholds than the global average. That is why local experts often recommend adjusted ranges for South Asian populations.',
-        'Use a tailored BMI threshold as a guide, and always pair it with other markers like waist circumference, diet, and physical activity when evaluating health.',
-        'This localized view helps contextualize international BMI charts for people living in India and South Asia.'
+        'Clinical research published by WHO South-East Asia and the Indian Consensus Group indicates that Asian populations accumulate higher visceral abdominal fat at lower overall body mass index scores.',
+        'Due to this genetic and body-composition trait (often termed the Thin-Fat Phenotype), health risks for Type-2 Diabetes and cardiovascular disease escalate at lower thresholds.',
+        'Revised Asian & Indian BMI Cut-offs: Normal / Healthy Weight is 18.5 to 22.9 kg/m²; Overweight is classified between 23.0 and 24.9 kg/m²; and Obesity is diagnosed at BMI 25.0 or higher.',
+        'When assessing your body metrics on the Real BMI Calculator, keep these regional guidelines in mind alongside waist circumference measurements for optimal health.'
       ],
       es: [
-        'Estudios recientes indican que algunos adultos indios pueden enfrentar riesgo metabólico con umbrales de IMC más bajos que el promedio global. Por eso, los expertos locales suelen recomendar rangos ajustados para poblaciones del sur de Asia.',
-        'Utiliza un umbral de IMC adaptado como guía, y siempre combínalo con otros marcadores como la circunferencia de la cintura, la dieta y la actividad física.',
-        'Esta perspectiva localizada ayuda a contextualizar los gráficos internacionales de IMC para las personas que viven en India y Asia del Sur.'
+        'Investigaciones de la OMS muestran que las poblaciones asiáticas acumulan mayor grasa visceral a valores de IMC más bajos.',
+        'Nuevos límites asiáticos: Normal (18.5–22.9), Sobrepeso (23.0–24.9), Obesidad (≥25.0).',
+        'Revisa tus métricas en Real BMI Calculator.'
       ],
       fr: [
-        'Des études récentes indiquent que certains adultes indiens peuvent présenter un risque métabolique à des seuils d’IMC plus bas que la moyenne mondiale. C’est pourquoi les experts locaux recommandent souvent des plages ajustées pour les populations sud-asiatiques.',
-        'Utilisez un seuil d’IMC adapté comme guide et associez-le toujours à d’autres indicateurs comme le tour de taille, l’alimentation et l’activité physique.',
-        'Cette perspective localisée aide à contextualiser les tableaux internationaux de l’IMC pour les personnes vivant en Inde et en Asie du Sud.'
+        'Les études de l’OMS montrent que les populations asiatiques accumulent plus de graisse viscérale à des niveaux d’IMC inférieurs.',
+        'Seuils asiatiques révisés : Normal (18.5–22.9), Surpoids (23.0–24.9), Obésité (≥25.0).',
+        'Consultez vos mesures sur Real BMI Calculator.'
       ],
       de: [
-        'Aktuelle Studien zeigen, dass einige indische Erwachsene bei niedrigeren BMI-Werten metabolische Risiken erfahren können als der globale Durchschnitt. Deshalb empfehlen lokale Experten oft angepasste Bereiche für südasiatische Bevölkerungsgruppen.',
-        'Verwenden Sie einen angepassten BMI-Wert als Orientierung und kombinieren Sie ihn immer mit anderen Indikatoren wie Taillenumfang, Ernährung und körperlicher Aktivität.',
-        'Diese lokalisierte Sichtweise hilft, internationale BMI-Tabellen für Menschen in Indien und Südostasien zu kontextualisieren.'
+        'WHO-Studien zeigen erhöhte metabolische Risiken bei südasiatischen Bevölkerungen bei niedrigerem BMI.',
+        'Angepasste Grenzwerte: Normal (18,5–22,9), Übergewicht (23,0–24,9), Adipositas (≥25,0).',
+        'Prüfen Sie Ihre Werte auf dem Real BMI-Rechner.'
       ],
       ko: [
-        '최근 연구에 따르면 일부 인도 성인은 전 세계 평균보다 낮은 BMI에서 대사 위험을 경험할 수 있습니다. 이러한 이유로 지역 전문가들은 남아시아 인구를 위해 조정된 범위를 권장합니다.',
-        '맞춤형 BMI 기준을 지침으로 사용하되, 건강 평가 시 허리 둘레, 식단 및 신체 활동과 같은 다른 지표와 항상 함께 고려하세요.',
-        '이러한 지역화된 관점은 인도 및 남아시아에 거주하는 사람들에게 국제 BMI 차트를 해석하는 데 도움이 됩니다.'
+        'WHO 남아시아 연구에 따르면 아시아인은 낮은 BMI에서도 내장 지방 비율이 더 높습니다.',
+        '수정된 아시아 기준: 정상(18.5–22.9), 과체중(23.0–24.9), 비만(≥25.0).',
+        'Real BMI 계산기에서 맞춤 수치를 확인하세요.'
       ],
       hi: [
-        'हाल की अध्ययनों से पता चलता है कि कुछ भारतीय वयस्कों में वैश्विक औसत की तुलना में कम BMI पर मेटाबोलिक जोखिम हो सकता है। इसलिए स्थानीय विशेषज्ञ अक्सर दक्षिण एशियाई आबादी के लिए समायोजित सीमाओं की सिफारिश करते हैं।',
-        'एक समायोजित BMI सीमा को मार्गदर्शक के रूप में उपयोग करें और स्वास्थ्य का आकलन करते समय इसे कमर की परिधि, आहार और शारीरिक गतिविधि जैसे अन्य संकेतकों के साथ जोड़ें।',
-        'यह स्थानीय दृष्टिकोण भारत और दक्षिण एशिया में रहने वाले लोगों के लिए अंतरराष्ट्रीय BMI चार्ट को संदर्भित करने में मदद करता है।'
+        'डब्ल्यूएचओ और भारतीय विशेषज्ञों के अनुसार, एशियाई लोगों में कम बीएमआई पर भी पेट की विसरल फैट अधिक जमा होती है।',
+        'भारतीय/एशियाई बीएमआई सीमाएं: सामान्य (18.5–22.9), अधिक वजन (23.0–24.9), और मोटापा (≥25.0)।',
+        'अपने बीएमआई का सटीक आकलन करने के लिए Real BMI Calculator का उपयोग करें।'
+      ]
+    }
+  },
+  'bmi-vs-body-fat-percentage': {
+    title: {
+      en: 'BMI vs Body Fat Percentage: Which Metric Matters More for Health?',
+      es: 'IMC vs. Porcentaje de Grasa Corporal: ¿Qué Métrica Importa Más?',
+      fr: 'IMC vs Pourcentage de Graisse Corporelle : Quelle Mesure Compte le Plus ?',
+      de: 'BMI vs. Körperfettanteil: Welche Messung ist wichtiger?',
+      ko: 'BMI vs 체지방률: 건강 평가에 더 중요한 지표는 무엇인가요?',
+      hi: 'बीएमआई बनाम बॉडी फैट प्रतिशत: सेहत के लिए कौन सा माप अधिक महत्वपूर्ण है?'
+    },
+    category: {
+      en: 'Body Composition & Athletics',
+      es: 'Composición Corporal',
+      fr: 'Composition Corporelle',
+      de: 'Körperzusammensetzung',
+      ko: '체성분 분석',
+      hi: 'शरीर संरचना'
+    },
+    description: {
+      en: 'Compare the pros and cons of Body Mass Index (BMI) versus body fat percentage for bodybuilders, athletes, and general health tracking.',
+      es: 'Compara los pros y contras del IMC frente al porcentaje de grasa corporal para atletas y salud general.',
+      fr: 'Comparez les avantages et inconvénients de l’IMC par rapport au pourcentage de graisse corporelle.',
+      de: 'Vergleichen Sie BMI und Körperfettanteil für Sportler und allgemeine Gesundheit.',
+      ko: '운동선수 및 일반 건강 관리를 위한 BMI와 체지방률의 차이점을 비교해보세요.',
+      hi: 'एथलीटों और सामान्य स्वास्थ्य के लिए बीएमआई और शरीर की वसा (Body Fat %) की तुलना समझें।'
+    },
+    body: {
+      en: [
+        'Both Body Mass Index (BMI) and Body Fat Percentage offer critical insight into health and body composition, but they measure fundamentally different physical parameters.',
+        'BMI measures total mass relative to height. Because it does not distinguish muscle weight from fat weight, muscular individuals or weightlifters may register an "overweight" BMI despite carrying sub-10% body fat.',
+        'Body Fat Percentage directly estimates adipose tissue relative to lean muscle, organs, and bone mass.',
+        'For the most complete health evaluation, use the Real BMI Calculator, which calculates your BMI score alongside estimated body fat, BMR, and TDEE in one unified clinical dashboard.'
+      ],
+      es: [
+        'El IMC mide la masa total respecto a la altura, mientras que el porcentaje de grasa mide directamente el tejido adiposo.',
+        'Los deportistas musculosos pueden tener un IMC alto sin tener grasa en exceso.',
+        'Obtén ambos resultados con nuestra herramienta Real BMI Calculator.'
+      ],
+      fr: [
+        'L’IMC mesure la masse totale par rapport à la taille, tandis que la masse grasse mesure le tissu adipeux.',
+        'Les athlètes musclés peuvent présenter un IMC élevé sans excès de graisse.',
+        'Calculez vos deux métriques sur Real BMI Calculator.'
+      ],
+      de: [
+        'Der BMI misst die Gesamtmasse zur Größe; der Körperfettanteil misst das Fettgewebe direkt.',
+        'Sportler haben oft einen hohen BMI bei sehr geringem Fettanteil.',
+        'Ermitteln Sie beide Werte im Real BMI-Rechner.'
+      ],
+      ko: [
+        'BMI는 키 대비 전체 체중을 측정하고, 체지방률은 지방 조직을 직접 측정합니다.',
+        '근육질 운동선수는 체지방이 적어도 높은 BMI를 가질 수 있습니다.',
+        'Real BMI 계산기에서 BMI와 체지방률을 동시에 측정해보세요.'
+      ],
+      hi: [
+        'बीएमआई ऊंचाई के सापेक्ष कुल वजन को मापता है, जबकि बॉडी फैट प्रतिशत सीधे वसा ऊतकों का आकलन करता है।',
+        'मांसपेशियों वाले एथलीटों का बीएमआई अधिक हो सकता है, भले ही उनके शरीर में फैट बहुत कम हो।',
+        'दोनों मेट्रिक्स का एक साथ सटीक अनुमान लगाने के लिए Real BMI Calculator का उपयोग करें।'
       ]
     }
   },
   'bmi-calculator-teens': {
     title: {
-      en: 'BMI Calculator for Teens',
-      es: 'Calculadora IMC para Adolescentes',
-      fr: 'Calculateur IMC pour Adolescents',
-      de: 'BMI-Rechner für Jugendliche',
-      ko: '청소년용 BMI 계산기',
-      hi: 'टीनएजर्स के लिए BMI कैलकुलेटर'
+      en: 'BMI Calculator for Teens & Children (Growth Percentiles Explained)',
+      es: 'Calculadora IMC para Adolescentes y Niños',
+      fr: 'Calculateur IMC pour Adolescents et Enfants',
+      de: 'BMI-Rechner für Jugendliche und Kinder',
+      ko: '청소년 및 어린이용 BMI 계산기',
+      hi: 'बच्चों और टीनएजर्स के लिए बीएमआई कैलकुलेटर'
     },
     category: {
-      en: 'Adolescence',
-      es: 'Adolescencia',
-      fr: 'Adolescence',
-      de: 'Jugend',
-      ko: '청소년',
-      hi: 'किशोरावस्था'
+      en: 'Pediatric Health',
+      es: 'Salud Pediátrica',
+      fr: 'Santé Pédiatrique',
+      de: 'Pädiatrische Gesundheit',
+      ko: '소아 건강',
+      hi: 'बाल स्वास्थ्य'
     },
     description: {
-      en: 'Learn how BMI applies to teens and why age-adjusted evaluation is important for growing bodies.',
-      es: 'Aprende cómo se aplica el IMC a los adolescentes y por qué la evaluación ajustada por edad es importante para cuerpos en crecimiento.',
-      fr: 'Apprenez comment l’IMC s’applique aux adolescents et pourquoi l’évaluation ajustée à l’âge est importante pour les corps en croissance.',
-      de: 'Erfahren Sie, wie BMI bei Jugendlichen angewendet wird und warum altersangepasste Bewertungen für wachsende Körper wichtig sind.',
-      ko: '청소년에게 BMI가 어떻게 적용되는지, 그리고 성장 중인 신체에 대해 나이 조정 평가가 왜 중요한지 알아보세요.',
-      hi: 'जानें कि BMI किशोरों पर कैसे लागू होता है और बढ़ते शरीरों के लिए आयु-समायोजित मूल्यांकन क्यों महत्वपूर्ण है।'
+      en: 'Learn how BMI percentiles apply to teenagers and children using CDC growth charts rather than adult cutoffs.',
+      es: 'Aprende cómo se aplican los percentiles de IMC a adolescentes y niños usando las tablas de crecimiento de los CDC.',
+      fr: 'Apprenez comment les percentiles d’IMC s’appliquent aux enfants et adolescents selon les courbes du CDC.',
+      de: 'Erfahren Sie, wie BMI-Perzentile bei Kindern und Jugendlichen nach CDC-Wachstumstabellen angewendet werden.',
+      ko: '성인 기준 대신 CDC 성장 차트를 사용하여 아동 및 청소년의 BMI 분위수를 해석하는 방법을 알아봅니다.',
+      hi: 'सीडीसी ग्रोथ चार्ट का उपयोग करके समझें कि बच्चों और किशोरावस्था में बीएमआई की व्याख्या कैसे की जाती है।'
     },
     body: {
       en: [
-        'Teen body composition changes quickly, so BMI should be interpreted with age and sex in mind rather than by adult cutoffs alone.',
-        'A slightly higher or lower BMI can be normal during growth spurts, especially when height and weight are changing rapidly.',
-        'Always pair BMI with other wellness indicators like energy, athletic performance, and body fat distribution for a complete picture.'
+        'Teen body composition changes rapidly during growth spurts, meaning standard adult BMI thresholds do not directly apply.',
+        'Pediatric guidelines from the CDC evaluate youth BMI using age-and-sex-specific percentiles (between the 5th and 85th percentiles is healthy).',
+        'Use our Real BMI Calculator tools as a foundation and consult pediatric healthcare providers for growing children.'
       ],
       es: [
-        'El cuerpo de los adolescentes cambia rápidamente, por lo que el IMC debe interpretarse teniendo en cuenta la edad y el sexo, no solo los puntos de corte para adultos.',
-        'Un IMC un poco más alto o más bajo puede ser normal durante los estirones de crecimiento, especialmente cuando la altura y el peso cambian rápido.',
-        'Siempre combina el IMC con otros indicadores de bienestar como energía, rendimiento deportivo y distribución de grasa corporal para obtener una visión completa.'
+        'El cuerpo de los adolescentes cambia rápido, por lo que se deben usar percentiles de crecimiento CDC por edad y sexo.',
+        'Revisa las herramientas de Real BMI Calculator para tus análisis.'
       ],
       fr: [
-        'Le corps des adolescents change rapidement, donc l’IMC doit être interprété en fonction de l’âge et du sexe plutôt qu’uniquement par rapport aux seuils adultes.',
-        'Un IMC légèrement plus élevé ou plus bas peut être normal pendant les poussées de croissance, surtout lorsque la taille et le poids changent rapidement.',
-        'Associez toujours l’IMC à d’autres indicateurs de bien-être tels que l’énergie, les performances sportives et la répartition des graisses pour une image complète.'
+        'Le corps des adolescents évolue vite ; il faut utiliser les percentiles du CDC par âge et sexe.',
+        'Découvrez le calculateur Real BMI pour vos évaluations.'
       ],
       de: [
-        'Der Körper von Teenagern verändert sich schnell, daher sollte der BMI unter Berücksichtigung von Alter und Geschlecht interpretiert werden, nicht nur anhand von Erwachsenengrenzwerten.',
-        'Ein etwas höherer oder niedrigerer BMI kann während Wachstumsschüben normal sein, besonders wenn Größe und Gewicht sich schnell ändern.',
-        'Kombinieren Sie den BMI immer mit weiteren Wohlfühlinidkatoren wie Energie, sportlicher Leistung und Fettverteilung für ein vollständiges Bild.'
+        'Bei Jugendlichen gelten alters- und geschlechtsspezifische CDC-Perzentile.',
+        'Nutzen Sie den Real BMI-Rechner als Orientierung.'
       ],
       ko: [
-        '청소년의 체형은 빠르게 변하므로 BMI는 성인 기준만으로 해석하기보다는 나이와 성별을 고려해야 합니다.',
-        '성장 급증기에는 키와 체중이 빠르게 변하기 때문에 BMI가 조금 높거나 낮아도 정상일 수 있습니다.',
-        'BMI를 에너지, 운동 수행, 체지방 분포와 같은 다른 웰니스 지표와 함께 사용하여 전체적인 그림을 확인하세요.'
+        '성장기 청소년은 나이와 성별에 따른 CDC 성장 분위수 차트를 사용해야 합니다.',
+        'Real BMI 계산기를 활용해 기초 수치를 확인하세요.'
       ],
       hi: [
-        'किशोरों का शरीर तेजी से बदलता है, इसलिए BMI को केवल वयस्क मानदंडों के आधार पर देखने की बजाय उम्र और लिंग को ध्यान में रखकर समझना चाहिए।',
-        'विकास की तेज़ी के दौरान, विशेष रूप से जब ऊँचाई और वजन जल्दी बदल रहे हों, तो थोड़ा अधिक या कम BMI सामान्य हो सकता है।',
-        'एक पूर्ण दृष्टिकोण के लिए BMI को ऊर्जा, खेल प्रदर्शन और शरीर में वसा वितरण जैसे अन्य संकेतकों के साथ हमेशा जोड़ें।'
+        'बढ़ते बच्चों के लिए वयस्क बीएमआई नियमों के बजाय सीडीसी उम्र-और-लिंग-विशिष्ट ग्रोथ परसेंटाइल का उपयोग किया जाता है।',
+        'अपने स्वास्थ्य संकेतकों को समझने के लिए Real BMI Calculator का उपयोग करें।'
       ]
     }
   }
