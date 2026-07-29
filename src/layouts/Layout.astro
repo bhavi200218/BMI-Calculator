@@ -11,9 +11,9 @@ interface Props {
 }
 
 const { 
-	title = "BMI Calculator | Real BMI – Most Accurate Body Mass Index Tool", 
+	title = "BMI (Body Mass Index) Calculator & Clinical Guide | Real BMI", 
 	description = "Calculate your Body Mass Index (BMI) with clinical precision. Real BMI Calculator provides instant results for BMI, BMR, and TDEE. Perfect for men, women, and athletes following WHO & CDC standards.",
-	keywords = "bmi calculator, real bmi calculator, body mass index calculator, bmi calculator for men, bmi calculator for women, accurate bmi calculator, calculate bmi, bmi chart, health calculator, bmr calculator, tdee calculator, weight loss tracker",
+	keywords = "bmi, body mass index, what is bmi, bmi calculator, real bmi calculator, real bmi tool, bmi chart, bmi scale, calculate bmi, bmi calculator for men, bmi calculator for women, bmr calculator, tdee calculator",
 	ogImage = "/seo-dark.png",
 	canonicalURL: customCanonicalURL
 } = Astro.props;
@@ -183,6 +183,7 @@ const howToSchema = {
 				"@context": "https://schema.org",
 				"@type": "WebSite",
 				"name": "Real BMI Calculator",
+				"alternateName": ["Real BMI", "Real BMI Tool", "Real BMI App", "Real BMI Calculator Online"],
 				"url": "https://realbmicalculator.com",
 				"potentialAction": {
 					"@type": "SearchAction",
@@ -199,6 +200,7 @@ const howToSchema = {
 				"@context": "https://schema.org",
 				"@type": "SoftwareApplication",
 				"name": "Real BMI Calculator",
+				"alternateName": ["Real BMI", "Real BMI Tool", "Real BMI App"],
 				"operatingSystem": "All",
 				"applicationCategory": "HealthApplication",
 				"url": "https://realbmicalculator.com",
@@ -218,7 +220,7 @@ const howToSchema = {
 			{
 				"@context": "https://schema.org",
 				"@type": "MedicalWebPage",
-				"name": "Body Mass Index (BMI) Clinical Reference & Calculator",
+				"name": "Real BMI Calculator - Body Mass Index Clinical Reference & Tool",
 				"url": "https://realbmicalculator.com",
 				"inLanguage": "en",
 				"aspect": ["Diagnosis", "Prevention", "Overview"],
@@ -262,6 +264,16 @@ const howToSchema = {
 				"sameAs": [
 					"https://www.linkedin.com/in/bhawanshi-dosi"
 				]
+			}
+		</script>
+		<script is:inline type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "DefinedTerm",
+				"name": "Body Mass Index",
+				"alternateName": ["BMI", "Quetelet index"],
+				"description": "A value derived from the mass and height of a person, defined as the body mass divided by the square of the body height (kg/m²). Used to categorize underweight, healthy weight, overweight, and obesity.",
+				"inDefinedTermSet": "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight"
 			}
 		</script>
 
