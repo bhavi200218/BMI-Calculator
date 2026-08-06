@@ -11,9 +11,9 @@ interface Props {
 }
 
 const { 
-	title = "Real BMI Calculator - Official WHO & CDC Body Mass Index Tool", 
-	description = "Calculate your Real BMI (Body Mass Index) with clinical precision. Official Real BMI Calculator provides instant results for BMI, BMR, TDEE, and body fat percentage based on WHO and CDC standards.",
-	keywords = "real bmi, real bmi calculator, body mass index, what is real bmi, is bmi accurate, real bmi tool, bmi chart, bmi scale, calculate real bmi, bmi calculator for men, bmi calculator for women, bmr calculator, tdee calculator, WHO bmi cutoff",
+	title = "Real BMI Calculator - Official Free & Accurate Body Mass Index Tool", 
+	description = "Real BMI Calculator provides instant, clinical-grade Body Mass Index (BMI), BMR, TDEE, and ideal weight analytics based on WHO & CDC standards. 100% free & private.",
+	keywords = "real bmi calculator, real bmi, body mass index, what is real bmi, is bmi accurate, real bmi tool, bmi chart, bmi scale, calculate real bmi, bmi calculator for men, bmi calculator for women, bmr calculator, tdee calculator",
 	ogImage = "/seo-dark.png",
 	canonicalURL: customCanonicalURL
 } = Astro.props;
@@ -37,7 +37,21 @@ if (pagePath.length > 0) {
   });
 }
 
-// 1. SoftwareApplication Schema for Rich Snippets (Star Ratings & App info in Google)
+// 1. WebSite Schema for Search Engine Brand Authority & Sitelinks
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Real BMI Calculator",
+  "alternateName": ["Real BMI", "Real BMI Tool", "Real BMI Online"],
+  "url": "https://realbmicalculator.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://realbmicalculator.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
+// 2. SoftwareApplication Schema for Rich Snippets (Star Ratings & App info in Google)
 const softwareAppSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -60,7 +74,7 @@ const softwareAppSchema = {
   }
 };
 
-// 2. MedicalWebPage Schema for E-E-A-T Authority
+// 3. MedicalWebPage Schema for E-E-A-T Authority
 const medicalWebPageSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
@@ -74,29 +88,30 @@ const medicalWebPageSchema = {
   "aspect": ["Overview", "Diagnosis", "Prevention", "Risk Factors"],
   "citation": [
     "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
+    "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html",
     "https://www.cdc.gov/healthyweight/assessing/bmi/index.html"
   ]
 };
 
-// 3. FAQ Schema
+// 4. FAQ Schema
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is Real BMI?",
+      "name": "What is Real BMI Calculator?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Real BMI evaluates Body Mass Index (BMI) alongside Basal Metabolic Rate (BMR), TDEE, waist circumference, and WHO ethnic thresholds to provide a complete, clinical-grade body composition assessment."
+        "text": "The Real BMI Calculator evaluates Body Mass Index (BMI) alongside Basal Metabolic Rate (BMR), TDEE, waist circumference, and WHO ethnic thresholds to provide a complete, clinical-grade body composition assessment."
       }
     },
     {
       "@type": "Question",
-      "name": "Is Real BMI accurate?",
+      "name": "Is Real BMI Calculator accurate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Real BMI integrates official WHO and CDC guidelines, adjusting cutoff thresholds for South Asian and East Asian populations (23.0 kg/m² for overweight) for maximum accuracy."
+        "text": "Yes. Real BMI Calculator integrates official WHO and CDC guidelines, adjusting cutoff thresholds for South Asian and East Asian populations (23.0 kg/m² for overweight) for maximum accuracy."
       }
     },
     {
@@ -208,6 +223,7 @@ const howToSchema = {
 		<link rel="alternate" hreflang="x-default" href="https://realbmicalculator.com/" />
 
 		<!-- Structured Data / JSON-LD -->
+		<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)}></script>
 		<script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)}></script>
 		<script type="application/ld+json" set:html={JSON.stringify(medicalWebPageSchema)}></script>
 		<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
