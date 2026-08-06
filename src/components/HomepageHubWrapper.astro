@@ -73,8 +73,8 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
     <div class="hidden md:block space-y-5">
       <div class="calc-group space-y-3">
         <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.core}</div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-          {calculators.filter(c=>['bmi-calculator','bmr-calculator','tdee-calculator','body-fat-calculator','lean-body-mass-calculator'].includes(c.slug)).map(calc => (
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+          {calculators.filter(c=>['bmi-calculator','new-bmi-calculator','diabetes-risk-calculator','bmr-calculator','tdee-calculator','body-fat-calculator'].includes(c.slug)).map(calc => (
             <button
               data-slug={calc.slug}
               data-category={getCategory(calc.slug)}

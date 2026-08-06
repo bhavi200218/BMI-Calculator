@@ -1,0 +1,284 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+
+const translations: Record<string, any> = {
+  en: {
+    badge: "Global IDF & WHO Clinical Standards",
+    title: "BMI, Type 2 Diabetes Risk & Ethnic Thresholds",
+    subtitle: "Understanding your Body Mass Index (BMI = kg/m²) in relation to metabolic health, visceral fat, and global screening guidelines.",
+    formulaTitle: "Official BMI Formula",
+    formulaText: "BMI = weight (kg) ÷ height² (m²)",
+    formulaNote: "BMI calculates weight relative to height squared. While a universal screening metric, international clinical guidelines from the WHO & IDF emphasize that BMI does not directly diagnose body fatness or individual metabolic health.",
+    cards: [
+      {
+        icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
+        title: "South Asian & Asian Risk Cutoff (23 kg/m²)",
+        desc: "Clinical evidence from the WHO and International Diabetes Federation (IDF) shows South Asian, East Asian, and Arab populations face increased risk of Type 2 Diabetes and cardiovascular disease at lower BMI levels. Overweight risk begins at 23 kg/m² rather than 25 kg/m²."
+      },
+      {
+        icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+        title: "Waist Circumference & Visceral Fat",
+        desc: "Abdominal adiposity carries a significantly higher risk for Type 2 Diabetes than subcutaneous limb fat. Increased risk starts at >94 cm (37 in) for men and >80 cm (31.5 in) for women."
+      },
+      {
+        icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+        title: "BMI Clinical Screening Limitations",
+        desc: "BMI does not distinguish between dense muscle mass, bone density, and adipose fat. Muscular athletes, pregnant women, and elderly individuals require comprehensive clinical evaluations."
+      }
+    ],
+    riskMatrixTitle: "Diabetes & Weight Category Risk Matrix",
+    matrixHeaders: ["BMI Category", "Standard Range", "South Asian / Asian Cutoff", "Diabetes & Health Risk Level"],
+    matrixRows: [
+      { cat: "Underweight", std: "< 18.5 kg/m²", asian: "< 18.5 kg/m²", risk: "Low (Increased risk for nutrient deficiency)", status: "normal" },
+      { cat: "Normal Weight", std: "18.5 – 24.9 kg/m²", asian: "18.5 – 22.9 kg/m²", risk: "Lowest Risk Baseline", status: "normal" },
+      { cat: "Increased Risk (Overweight)", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "Moderate Risk for Type 2 Diabetes", status: "warning" },
+      { cat: "High Risk (Obesity)", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "High to Very High Diabetes Risk", status: "danger" }
+    ],
+    disclaimer: "Official Note: This tool provides initial screening information based on international standards (IDF Guidelines & WHO Standards). It does not constitute a formal diagnosis or replace individualized consultation with a healthcare provider."
+  },
+  hi: {
+    badge: "अंतर्राष्ट्रीय IDF एवं WHO गाइडलाइंस अनुसार",
+    title: "बीएमआई, टाइप 2 डायबिटीज जोखिम एवं वैश्विक सीमाएं",
+    subtitle: "अपने बॉडी मास इंडेक्स (BMI = kg/m²) को मेटाबॉलिक स्वास्थ्य, पेट की वसा और जनसंख्या-विशिष्ट स्क्रीनिंग दिशानिर्देशों के संदर्भ में समझें।",
+    formulaTitle: "आधिकारिक बीएमआई फॉर्मूला",
+    formulaText: "BMI = वजन (किग्रा) ÷ ऊंचाई² (मीटर²)",
+    formulaNote: "बीएमआई ऊंचाई के वर्ग के सापेक्ष वजन की गणना करता है। अंतर्राष्ट्रीय मधुमेह महासंघ (IDF) और डब्ल्यूएचओ इस बात पर जोर देते हैं कि बीएमआई सीधे शरीर की वसा या व्यक्तिगत मेटाबॉलिक स्वास्थ्य का निदान नहीं करता है।",
+    cards: [
+      {
+        icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
+        title: "दक्षिण एशियाई एवं एशियाई जोखिम सीमा (23 kg/m²)",
+        desc: "डब्ल्यूएचओ और अंतर्राष्ट्रीय मधुमेह महासंघ (IDF) के क्लिनिकल साक्ष्य बताते हैं कि दक्षिण एशियाई और एशियाई आबादी में कम बीएमआई (23 kg/m²) पर ही टाइप 2 डायबिटीज और हृदय रोग का जोखिम बढ़ जाता है।"
+      },
+      {
+        icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+        title: "कमर की परिधि एवं विसरल फैट",
+        desc: "पेट के अंगों के आसपास जमा विसरल वसा टाइप 2 डायबिटीज के जोखिम को काफी बढ़ा देती है। पुरुषों के लिए >94 सेमी और महिलाओं के लिए >80 सेमी पर जोखिम बढ़ जाता है।"
+      },
+      {
+        icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+        title: "बीएमआई की नैदानिक सीमाएं",
+        desc: "बीएमआई घनी मांसपेशियों और वसा के बीच अंतर नहीं करता है। एथलीटों, गर्भवती महिलाओं और बुजुर्गों के लिए व्यापक चिकित्सीय मूल्यांकन आवश्यक है।"
+      }
+    ],
+    riskMatrixTitle: "डायबिटीज एवं वजन श्रेणी जोखिम तालिका",
+    matrixHeaders: ["बीएमआई श्रेणी", "मानक सीमा", "एशियाई कटऑफ", "डायबिटीज एवं स्वास्थ्य जोखिम स्तर"],
+    matrixRows: [
+      { cat: "कम वजन (Underweight)", std: "< 18.5 kg/m²", asian: "< 18.5 kg/m²", risk: "कम (पोषक तत्वों की कमी का जोखिम)", status: "normal" },
+      { cat: "सामान्य वजन (Normal)", std: "18.5 – 24.9 kg/m²", asian: "18.5 – 22.9 kg/m²", risk: "न्यूनतम जोखिम", status: "normal" },
+      { cat: "अधिक वजन (Overweight)", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "टाइप 2 डायबिटीज का मध्यम जोखिम", status: "warning" },
+      { cat: "मोटापा (Obesity)", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "उच्च से अत्यधिक उच्च जोखिम", status: "danger" }
+    ],
+    disclaimer: "आधिकारिक टिप्पणी: यह उपकरण अंतर्राष्ट्रीय मानकों (IDF गाइडलाइंस एवं डब्ल्यूएचओ) के आधार पर प्रारंभिक जानकारी प्रदान करता है। यह डॉक्टरी सलाह का विकल्प नहीं है।"
+  },
+  es: {
+    badge: "Normas Clínicas FID y OMS",
+    title: "IMC, Riesgo de Diabetes Tipo 2 y Umbrales Étnicos",
+    subtitle: "Comprende tu Índice de Masa Corporal en relación con la salud metabólica y las pautas internacionales de detección.",
+    formulaTitle: "Fórmula Oficial del IMC",
+    formulaText: "IMC = peso (kg) ÷ altura² (m²)",
+    formulaNote: "El IMC calcula el peso en relación con la altura al cuadrado. Las pautas de la OMS enfatizan que el IMC no diagnostica directamente la grasa metabólica.",
+    cards: [
+      { icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z", title: "Límite de Riesgo Asiático (23 kg/m²)", desc: "Las poblaciones asiáticas enfrentan un mayor riesgo de diabetes tipo 2 con IMC más bajo (23 kg/m²)." },
+      { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", title: "Circunferencia de Cintura y Grasa Visceral", desc: "La adiposidad abdominal conlleva un riesgo significativamente mayor para la diabetes tipo 2." },
+      { icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", title: "Limitaciones del IMC", desc: "El IMC no distingue entre masa muscular densa y grasa adiposa." }
+    ],
+    riskMatrixTitle: "Matriz de Riesgo de Diabetes y Categoría de Peso",
+    matrixHeaders: ["Categoría IMC", "Rango Estándar", "Límite Asiático", "Nivel de Riesgo"],
+    matrixRows: [
+      { cat: "Bajo Peso", std: "< 18.5 kg/m²", asian: "< 18.5 kg/m²", risk: "Bajo Riesgo", status: "normal" },
+      { cat: "Peso Normal", std: "18.5 – 24.9 kg/m²", asian: "18.5 – 22.9 kg/m²", risk: "Riesgo Mínimo", status: "normal" },
+      { cat: "Sobrepeso", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "Riesgo Moderado Diabetes Tipo 2", status: "warning" },
+      { cat: "Obesidad", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "Riesgo Alto a Muy Alto", status: "danger" }
+    ],
+    disclaimer: "Nota Oficial: Esta herramienta se basa en pautas de la FID y la OMS."
+  },
+  fr: {
+    badge: "Normes Cliniques FID & OMS",
+    title: "IMC, Risque de Diabète de Type 2 & Seuils Ethniques",
+    subtitle: "Comprenez votre IMC en relation avec la santé métabolique et les directives internationales.",
+    formulaTitle: "Formule Officielle de l'IMC",
+    formulaText: "IMC = poids (kg) ÷ taille² (m²)",
+    formulaNote: "L'IMC calcule le poids par rapport à la taille au carré. Les directives de l'OMS soulignent que l'IMC ne diagnostique pas directement la graisse.",
+    cards: [
+      { icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z", title: "Seuil de Risque Asiatique (23 kg/m²)", desc: "Les populations asiatiques font face à un risque élevé de diabète avec un IMC plus faible (23 kg/m²)." },
+      { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", title: "Tour de Taille & Graisse Viscérale", desc: "L'adiposité abdominale présente un risque supérieur pour le diabète de type 2." },
+      { icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", title: "Limites Cliniques de l'IMC", desc: "L'IMC ne distingue pas la masse musculaire de la graisse." }
+    ],
+    riskMatrixTitle: "Matrice de Risque de Diabète et Catégorie de Poids",
+    matrixHeaders: ["Catégorie IMC", "Plage Standard", "Seuil Asiatique", "Niveau de Risque"],
+    matrixRows: [
+      { cat: "Insuffisance Pondérale", std: "< 18.5 kg/m²", asian: "< 18.5 kg/m²", risk: "Faible Risque", status: "normal" },
+      { cat: "Poids Normal", std: "18.5 – 24.9 kg/m²", asian: "18.5 – 22.9 kg/m²", risk: "Risque Minimal", status: "normal" },
+      { cat: "Surpoids", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "Risque Modéré Diabète Type 2", status: "warning" },
+      { cat: "Obésité", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "Risque Élevé à Très Élevé", status: "danger" }
+    ],
+    disclaimer: "Note Officielle : Cet outil s'aligne sur les normes de la FID et de l'OMS."
+  },
+  de: {
+    badge: "Klinische Standards von IDF & WHO",
+    title: "BMI, Typ-2-Diabetes-Risiko & Ethnische Schwellenwerte",
+    subtitle: "Verstehen Sie Ihren Body-Mass-Index im Hinblick auf die Stoffwechselgesundheit und internationale Richtlinien.",
+    formulaTitle: "Offizielle BMI-Formel",
+    formulaText: "BMI = Gewicht (kg) ÷ Höhe² (m²)",
+    formulaNote: "Der BMI berechnet das Gewicht im Verhältnis zur Höhe im Quadrat.",
+    cards: [
+      { icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z", title: "Asiatischer Risikoschwellenwert (23 kg/m²)", desc: "Asiatische Populationen tragen bereits bei einem niedrigeren BMI (23 kg/m²) ein erhöhtes Diabetes-Risiko." },
+      { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", title: "Taillenumfang & Viszeralfett", desc: "Bauchfett stellt ein deutlich höheres Risiko für Typ-2-Diabetes dar." },
+      { icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", title: "Grenzen des BMI", desc: "Der BMI unterscheidet nicht zwischen Muskelmasse und Fettgewebe." }
+    ],
+    riskMatrixTitle: "Diabetes-Risiko-Matrix",
+    matrixHeaders: ["BMI-Kategorie", "Standardbereich", "Asiatischer Wert", "Diabetes-Risiko"],
+    matrixRows: [
+      { cat: "Untergewicht", std: "< 18.5 kg/m²", asian: "< 18.5 kg/m²", risk: "Niedriges Risiko", status: "normal" },
+      { cat: "Normalgewicht", std: "18.5 – 24.9 kg/m²", asian: "18.5 – 22.9 kg/m²", risk: "Minimales Risiko", status: "normal" },
+      { cat: "Übergewicht", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "Moderate Typ-2-Diabetes-Risiko", status: "warning" },
+      { cat: "Adipositas", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "Hohes bis Sehr Hohes Risiko", status: "danger" }
+    ],
+    disclaimer: "Offizieller Hinweis: Orientiert sich an IDF- und WHO-Standards."
+  },
+  ko: {
+    badge: "IDF 및 WHO 임상 표준",
+    title: "BMI, 제2형 당뇨병 위험 및 인종별 선별 임계값",
+    subtitle: "대사 건강 및 국제 선별 지침과 관련하여 체질량지수(BMI)를 이해하세요.",
+    formulaTitle: "공식 BMI 계산 공식",
+    formulaText: "BMI = 체중 (kg) ÷ 키² (m²)",
+    formulaNote: "BMI는 신장의 제곱 대비 체중을 산출합니다.",
+    cards: [
+      { icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z", title: "아시아인 위험 기준 (23 kg/m²)", desc: "아시아인은 더 낮은 BMI(23 kg/m²) 수준에서 제2형 당뇨병 위험이 증가합니다." },
+      { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", title: "허리둘레 및 내장지방", desc: "복부 비만은 제2형 당뇨병에 훨씬 더 높은 위험을 초래합니다." },
+      { icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", title: "BMI 임상 한계", desc: "BMI는 근육량과 지방을 구별하지 못합니다." }
+    ],
+    riskMatrixTitle: "당뇨병 및 체중 범주 위험 행렬",
+    matrixHeaders: ["BMI 범주", "표준 범위", "아시아인 기준", "당뇨병 위험 수준"],
+    matrixRows: [
+      { cat: "저체중", std: "< 18.5 kg/m²", asian: "< 18.5 kg/m²", risk: "낮은 위험", status: "normal" },
+      { cat: "정상 체중", std: "18.5 – 24.9 kg/m²", asian: "18.5 – 22.9 kg/m²", risk: "최소 위험 기준", status: "normal" },
+      { cat: "과체중", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "중등도 당뇨 위험", status: "warning" },
+      { cat: "비만", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "높음 내지 매우 높은 위험", status: "danger" }
+    ],
+    disclaimer: "공식 참고 사항: IDF 및 WHO 표준에 기반합니다."
+  }
+};
+
+const t = translations[lang] || translations.en;
+---
+
+<section class="my-12 px-4 md:px-6 max-w-7xl mx-auto">
+  <div class="rounded-3xl border border-[var(--border)] bg-gradient-to-b from-[var(--card)] to-[var(--muted)]/20 p-6 sm:p-10 shadow-sm space-y-8">
+    
+    <!-- Header -->
+    <div class="space-y-3 max-w-3xl">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-semibold uppercase tracking-wider">
+        <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
+        {t.badge}
+      </span>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        {t.title}
+      </h2>
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+        {t.subtitle}
+      </p>
+    </div>
+
+    <!-- Formula Box -->
+    <div class="p-5 sm:p-6 rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="space-y-1">
+        <div class="text-xs font-display font-semibold uppercase tracking-widest text-[var(--accent)]">{t.formulaTitle}</div>
+        <div class="text-lg sm:text-xl font-mono font-bold text-[var(--foreground)]">{t.formulaText}</div>
+      </div>
+      <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium max-w-lg leading-snug">
+        {t.formulaNote}
+      </p>
+    </div>
+
+    <!-- 3 Core Clinical Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {t.cards.map((card: any) => (
+        <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 transition-all duration-200 hover:border-[var(--accent)]/40 hover:shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)]">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d={card.icon} />
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-bold text-[var(--foreground)]">{card.title}</h3>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{card.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Risk Matrix Table -->
+    <div class="space-y-4">
+      <h3 class="text-base sm:text-xl font-display font-bold uppercase tracking-tight leading-snug break-words text-[var(--foreground)]">
+        {t.riskMatrixTitle}
+      </h3>
+      <!-- Desktop Table (hidden on mobile) -->
+      <div class="hidden md:block overflow-x-auto rounded-2xl border border-[var(--border)] bg-[var(--card)]">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-[var(--muted)]/50 text-[var(--foreground)] font-display font-bold uppercase tracking-wider border-b border-[var(--border)]">
+            <tr>
+              {t.matrixHeaders.map((head: string) => (
+                <th class="p-3.5 sm:p-4">{head}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-medium text-[var(--muted-foreground)]">
+            {t.matrixRows.map((row: any) => (
+              <tr class="hover:bg-[var(--muted)]/20 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-[var(--foreground)]">{row.cat}</td>
+                <td class="p-3.5 sm:p-4 font-mono">{row.std}</td>
+                <td class="p-3.5 sm:p-4 font-mono text-[var(--accent)] font-semibold">{row.asian}</td>
+                <td class="p-3.5 sm:p-4">
+                  <span class={`inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold ${
+                    row.status === 'danger' ? 'bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/30' :
+                    row.status === 'warning' ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30' :
+                    'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30'
+                  }`}>
+                    {row.risk}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile Stacked Card Matrix (No side scroller on mobile) -->
+      <div class="md:hidden space-y-3">
+        {t.matrixRows.map((row: any) => (
+          <div class="p-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2 text-xs font-medium">
+            <div class="flex items-center justify-between border-b border-[var(--border)]/40 pb-2">
+              <span class="font-bold text-[var(--foreground)] font-display uppercase">{row.cat}</span>
+              <span class={`inline-block px-2 py-0.5 rounded-full text-[11px] font-semibold ${
+                row.status === 'danger' ? 'bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/30' :
+                row.status === 'warning' ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30' :
+                'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30'
+              }`}>
+                {row.risk}
+              </span>
+            </div>
+            <div class="space-y-1 pt-0.5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-[var(--muted-foreground)]">Standard Cutoff:</span>
+                <span class="font-mono font-semibold text-[var(--foreground)]">{row.std}</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-[var(--muted-foreground)]">Asian / Ethnic Cutoff:</span>
+                <span class="font-mono font-semibold text-[var(--accent)]">{row.asian}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Medical Note -->
+    <p class="text-xs text-[var(--muted-foreground)] italic font-medium pt-2 border-t border-[var(--border)]/40">
+      {t.disclaimer}
+    </p>
+
+  </div>
+</section>

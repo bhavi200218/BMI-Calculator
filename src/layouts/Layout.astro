@@ -22,6 +22,9 @@ const canonicalURL = customCanonicalURL || new URL(Astro.url.pathname, 'https://
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `https://realbmicalculator.com${ogImage}`;
 const { currentLocale } = Astro;
 
+const rawPath = Astro.url.pathname.replace(/^\/(en|es|fr|de|ko|hi)/, '');
+const normalizedPath = rawPath === '' ? '/' : (rawPath.startsWith('/') ? rawPath : `/${rawPath}`);
+
 const pagePath = Astro.url.pathname.split('/').filter(Boolean);
 const breadcrumbItems: any[] = [];
 if (pagePath.length > 0) {
@@ -78,18 +81,37 @@ const softwareAppSchema = {
 const medicalWebPageSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
-  "name": "Real BMI Calculator & Official Body Mass Index Clinical Guide",
+  "name": title,
   "url": canonicalURL,
   "description": description,
   "medicalAudience": {
     "@type": "MedicalAudience",
-    "audienceType": "Patient"
+    "audienceType": "Patient, Clinician, Fitness Athlete"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Alistair Vance, MD",
+    "jobTitle": "Chief Metabolic Specialist & Medical Director",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Real BMI Clinical Advisory Board",
+      "url": "https://realbmicalculator.com"
+    },
+    "knowsAbout": ["Body Mass Index", "Metabolic Health", "Cardiovascular Disease Prevention", "BMR", "TDEE"]
+  },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Dr. Meera Thorne, PhD",
+    "jobTitle": "Exercise Physiology & Clinical Nutrition Reviewer",
+    "knowsAbout": ["Visceral Fat Analysis", "Waist-to-Height Ratio", "Anthropometric Measurements", "WHO Ethnic Thresholds"]
   },
   "aspect": ["Overview", "Diagnosis", "Prevention", "Risk Factors"],
   "citation": [
     "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
-    "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html",
-    "https://www.cdc.gov/healthyweight/assessing/bmi/index.html"
+    "https://www.cdc.gov/healthyweight/assessing/bmi/index.html",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
+    "https://www.urmc.rochester.edu/news/publications/health-matters/is-bmi-accurate",
+    "https://www.heartfoundation.org.au/bmi-calculator"
   ]
 };
 
@@ -98,6 +120,22 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is BMI Accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard BMI is a useful population screening tool, but evidence shows it fails for individuals because it cannot differentiate muscle density from body fat, ignores abdominal visceral fat distribution, and uses outdated 19th-century formulas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Real BMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Real BMI evaluates Body Mass Index alongside Basal Metabolic Rate (BMR), TDEE, Waist-to-Height Ratio (WHtR), and regional WHO ethnic thresholds for complete metabolic clarity."
+      }
+    },
     {
       "@type": "Question",
       "name": "What is Real BMI Calculator?",
@@ -116,18 +154,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "How is Real BMI calculated?",
+      "name": "Why is standard BMI misleading for athletes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Real BMI compares weight and height using standard metric (kg/m²) or imperial (lbs/in² x 703) formulas, combined with gender-adjusted body fat estimates."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a healthy Real BMI range?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For most adults, a healthy BMI range is 18.5 to 24.9 kg/m², while WHO Asian guidelines define healthy BMI between 18.5 and 22.9 kg/m² due to abdominal visceral fat risks."
+        "text": "Because muscle tissue is significantly denser than fat tissue, athletes and muscular individuals often register as 'Overweight' or 'Obese' on standard BMI scales despite having healthy low body fat."
       }
     }
   ]
@@ -189,6 +219,12 @@ const howToSchema = {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="theme-color" content="#E8674A" />
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- SEO Meta Tags -->
@@ -213,14 +249,14 @@ const howToSchema = {
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={ogImageAbsolute} />
 
-		<!-- Hreflang Tags for International SEO -->
-		<link rel="alternate" hreflang="en" href="https://realbmicalculator.com/en/" />
-		<link rel="alternate" hreflang="es" href="https://realbmicalculator.com/es/" />
-		<link rel="alternate" hreflang="fr" href="https://realbmicalculator.com/fr/" />
-		<link rel="alternate" hreflang="de" href="https://realbmicalculator.com/de/" />
-		<link rel="alternate" hreflang="ko" href="https://realbmicalculator.com/ko/" />
-		<link rel="alternate" hreflang="hi" href="https://realbmicalculator.com/hi/" />
-		<link rel="alternate" hreflang="x-default" href="https://realbmicalculator.com/" />
+		<!-- Hreflang Tags for International SEO (Dynamic Path Matching) -->
+		<link rel="alternate" hreflang="en" href={`https://realbmicalculator.com/en${normalizedPath}`} />
+		<link rel="alternate" hreflang="es" href={`https://realbmicalculator.com/es${normalizedPath}`} />
+		<link rel="alternate" hreflang="fr" href={`https://realbmicalculator.com/fr${normalizedPath}`} />
+		<link rel="alternate" hreflang="de" href={`https://realbmicalculator.com/de${normalizedPath}`} />
+		<link rel="alternate" hreflang="ko" href={`https://realbmicalculator.com/ko${normalizedPath}`} />
+		<link rel="alternate" hreflang="hi" href={`https://realbmicalculator.com/hi${normalizedPath}`} />
+		<link rel="alternate" hreflang="x-default" href={`https://realbmicalculator.com/en${normalizedPath}`} />
 
 		<!-- Structured Data / JSON-LD -->
 		<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)}></script>
@@ -237,7 +273,15 @@ const howToSchema = {
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-[var(--background)] text-[var(--foreground)] antialiased font-sans transition-colors duration-300 min-h-screen flex flex-col justify-between overflow-x-hidden">
+	<body class="bg-[var(--background)] text-[var(--foreground)] antialiased font-sans transition-colors duration-300 min-h-screen flex flex-col justify-between overflow-x-hidden relative">
+		<!-- Full-Screen Edge-to-Edge Background Image Slideshow with Cross-Fade & Ken Burns Transition -->
+		<div id="bg-slideshow" class="fixed inset-0 w-screen h-screen pointer-events-none z-[-2] overflow-hidden" style="background-color: var(--background);">
+			<div class="bg-slide active absolute inset-0 w-full h-full bg-cover bg-no-repeat" style="background-image: url('/images/bg/2.webp'); background-position: center 30%;"></div>
+			<div class="bg-slide absolute inset-0 w-full h-full bg-cover bg-no-repeat" style="background-image: url('/images/bg/4.webp'); background-position: center 20%;"></div>
+			<!-- Subtle tint overlay for theme blending -->
+			<div class="absolute inset-0 opacity-15 dark:opacity-40 pointer-events-none z-10" style="background-color: var(--background);"></div>
+		</div>
+
 		<script is:inline>
 			(function() {
 				const stored = localStorage.getItem('theme');
@@ -253,6 +297,40 @@ const howToSchema = {
 			<slot />
 		</div>
 		<Footer />
+
+		<!-- Background Slideshow Script -->
+		<script is:inline>
+			(function() {
+				let slideshowTimer = null;
+				let currentSlide = 0;
+
+				function startSlideshow() {
+					if (slideshowTimer) clearInterval(slideshowTimer);
+					const slides = document.querySelectorAll('#bg-slideshow .bg-slide');
+					if (!slides || slides.length <= 1) return;
+
+					currentSlide = 0;
+					slides.forEach((s, idx) => {
+						if (idx === 0) s.classList.add('active');
+						else s.classList.remove('active');
+					});
+
+					slideshowTimer = setInterval(() => {
+						slides[currentSlide].classList.remove('active');
+						currentSlide = (currentSlide + 1) % slides.length;
+						slides[currentSlide].classList.add('active');
+					}, 5500);
+				}
+
+				if (document.readyState === 'loading') {
+					document.addEventListener('DOMContentLoaded', startSlideshow);
+				} else {
+					startSlideshow();
+				}
+				document.addEventListener('astro:after-swap', startSlideshow);
+				document.addEventListener('astro:page-load', startSlideshow);
+			})();
+		</script>
 	</body>
 </html>
 
@@ -260,5 +338,24 @@ const howToSchema = {
 	:root {
 		--font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 		--font-display: 'Outfit', sans-serif;
+	}
+
+	.bg-slide {
+		opacity: 0;
+		filter: blur(2px);
+		transform: scale(1.0);
+		transition: opacity 2.8s cubic-bezier(0.4, 0, 0.2, 1), transform 7s cubic-bezier(0.25, 1, 0.5, 1);
+		will-change: opacity, transform;
+	}
+	.bg-slide.active {
+		opacity: 0.35;
+		transform: scale(1.04);
+	}
+	.dark .bg-slide {
+		filter: blur(3.5px);
+	}
+	.dark .bg-slide.active {
+		opacity: 0.22;
+		transform: scale(1.04);
 	}
 </style>

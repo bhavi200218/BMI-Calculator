@@ -93,6 +93,84 @@ export const calculators: CalculatorConfig[] = [
     }
   },
   {
+    slug: 'new-bmi-calculator',
+    name: { en: 'New 3D BMI Tool', es: 'Nuevo IMC 3D', fr: 'Nouvel IMC 3D', de: 'Neuer 3D-BMI', ko: '새로운 3D BMI', hi: 'नया 3D बीएमआई' },
+    title: { en: 'New Height-Adjusted BMI Calculator – 3D Volume Scaling (1.3 x kg / m²·⁵)', es: 'Calculadora del Nuevo IMC Ajustado por Altura', fr: 'Nouveau Calculateur d\'IMC Ajusté à la Taille', de: 'Neuer Höhenbereinigter BMI-Rechner', ko: '신장 보정 새로운 3D BMI 계산기', hi: 'नया 3D ऊंचाई-समायोजित बीएमआई कैलकुलेटर' },
+    description: { en: 'Calculate your 3D height-adjusted BMI using the 2.5 exponent formula (1.3 × weight / height²·⁵) to eliminate height distortion for tall and short adults.', es: 'Calcula tu IMC 3D ajustado por altura.', fr: 'Calculez votre IMC 3D ajusté à la taille.', de: 'Berechnen Sie Ihren höhenbereinigten 3D-BMI.', ko: '키 왜곡을 수정한 새로운 3D BMI를 계산하세요.', hi: '2.5 घात फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) के साथ अपने 3D ऊंचाई-समायोजित बीएमआई की तुरंत गणना करें।' },
+    inputs: [
+      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
+      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
+      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
+      { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
+    ],
+    calculate: (inputs, system) => {
+      let w = parseFloat(inputs.weight) || 0;
+      let h = parseFloat(inputs.height) || 0;
+      if (system === 'imperial') {
+        w = w * 0.453592;
+        h = h * 2.54;
+      }
+      const hM = h / 100;
+      const stdBmi = w / (hM * hM);
+      const newBmi = (1.3 * w) / Math.pow(hM, 2.5);
+      const diff = newBmi - stdBmi;
+
+      return {
+        primary: { value: newBmi.toFixed(1), label: { en: '3D Height-Adjusted BMI', es: 'IMC 3D Ajustado', fr: 'IMC 3D Ajusté', de: '3D-Höhen-BMI', ko: '3D 신장 보정 BMI', hi: '3D ऊंचाई-समायोजित बीएमआई' } },
+        secondary: [
+          { label: { en: 'Standard BMI', es: 'IMC Estándar', fr: 'IMC Standard', de: 'Standard-BMI', ko: '표준 BMI', hi: 'मानक बीएमआई' }, value: stdBmi.toFixed(1) },
+          { label: { en: 'Height Correction', es: 'Corrección Altura', fr: 'Correction Taille', de: 'Höhenkorrektur', ko: '신장 보정 차이', hi: 'ऊंचाई सुधार' }, value: (diff >= 0 ? '+' : '') + diff.toFixed(1), unit: 'pts' }
+        ]
+      };
+    }
+  },
+  {
+    slug: 'diabetes-risk-calculator',
+    name: { en: 'Diabetes Risk Tool', es: 'Riesgo Diabetes', fr: 'Risque Diabète', de: 'Diabetes-Risiko', ko: '당뇨 위험도', hi: 'डायबिटीज रिस्क' },
+    title: { en: 'Type 2 Diabetes Risk Calculator – IDF & WHO Global Guidelines', es: 'Calculadora de Riesgo de Diabetes Tipo 2', fr: 'Calculateur de Risque de Diabète de Type 2', de: 'Typ-2-Diabetes-Risiko-Rechner', ko: '제2형 당뇨병 위험도 계산기', hi: 'टाइप 2 डायबिटीज जोखिम कैलकुलेटर - अंतर्राष्ट्रीय IDF एवं WHO मानक' },
+    description: { en: 'Assess your Type 2 Diabetes screening risk based on BMI, waist circumference, age, and Asian/South Asian ethnicity cutoffs aligned with global IDF & WHO standards.', es: 'Evalúa tu riesgo de diabetes tipo 2 según IMC y circunferencia de cintura.', fr: 'Évaluez votre risque de diabète de type 2 selon l\'IMC et le tour de taille.', de: 'Bewerten Sie Ihr Typ-2-Diabetes-Risiko nach BMI und Taillenumfang.', ko: 'BMI 및 허리둘레 기준 제2형 당뇨 위험도를 측정하세요.', hi: 'बीएमआई, कमर की परिधि और एशियाई कटऑफ के आधार पर टाइप 2 डायबिटीज जोखिम का आकलन करें।' },
+    inputs: [
+      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
+      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
+      { id: 'waist', label: L.waist, type: 'number', placeholder: '85' },
+      { id: 'age', label: L.age, type: 'number', placeholder: '35' },
+      { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
+    ],
+    calculate: (inputs, system) => {
+      let w = parseFloat(inputs.weight) || 0;
+      let h = parseFloat(inputs.height) || 0;
+      let waist = parseFloat(inputs.waist) || 0;
+      if (system === 'imperial') {
+        w = w * 0.453592;
+        h = h * 2.54;
+        waist = waist * 2.54;
+      }
+      const hM = h / 100;
+      const bmi = w / (hM * hM);
+      const isM = inputs.gender === 'male';
+      const age = parseInt(inputs.age) || 35;
+      
+      const waistLimit = isM ? 94 : 80;
+      const waistHigh = isM ? 102 : 88;
+      
+      let riskScore = 'Low Risk';
+      if (bmi >= 27.5 || waist >= waistHigh || (bmi >= 23 && waist >= waistLimit && age >= 40)) {
+        riskScore = 'High Risk';
+      } else if (bmi >= 23 || waist >= waistLimit || age >= 45) {
+        riskScore = 'Moderate Risk';
+      }
+
+      return {
+        primary: { value: riskScore, label: { en: 'Diabetes Risk Status', es: 'Estado Riesgo Diabetes', fr: 'Statut Risque Diabète', de: 'Diabetes-Risikostatus', ko: '당뇨 위험도 상태', hi: 'डायबिटीज जोखिम स्थिति' } },
+        secondary: [
+          { label: { en: 'BMI Score', es: 'Puntaje IMC', fr: 'Score IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' }, value: bmi.toFixed(1) },
+          { label: { en: 'Asian Cutoff', es: 'Umbral Asiático', fr: 'Seuil Asiatique', de: 'Asien-Schwellenwert', ko: '아시아인 기준', hi: 'एशियाई कटऑफ' }, value: '23.0 kg/m²' },
+          { label: { en: 'Waist Risk', es: 'Riesgo Cintura', fr: 'Risque Tour Taille', de: 'Taillenrisiko', ko: '허리둘레 위험', hi: 'कमर का जोखिम' }, value: waist >= waistLimit ? 'Elevated' : 'Optimal' }
+        ]
+      };
+    }
+  },
+  {
     slug: 'bmr-calculator',
     name: { en: 'BMR Calculator', es: 'Calculadora de BMR', fr: 'Calculateur de BMR', de: 'BMR-Rechner', ko: 'BMR 계산기', hi: 'बीएमआर कैलकुलेटर' },
     title: { en: 'Accurate BMR Calculator - Basal Metabolic Rate', es: 'Calculadora de BMR y Metabolismo Basal', fr: 'Calculateur de BMR de Précision', de: 'BMR-Rechner und Grundumsatz', ko: 'BMR 계산기 - 기초대사량', hi: 'बीएमआर कैलकुलेटर - बेसल मेटाबॉलिक रेट' },

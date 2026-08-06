@@ -2,49 +2,93 @@
 import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import PageShell from '../../../components/PageShell.astro';
+import HubGrid from '../../../components/HubGrid.astro';
+import { blogArticles } from '../../../utils/blogArticles';
 
 export function getStaticPaths() {
-  return [
-    { params: { slug: 'bmi-chart-for-men-women' }, props: { title: 'BMI Chart for Men and Women', category: 'Guides' } },
-    { params: { slug: 'healthy-bmi-range-indians' }, props: { title: 'Healthy BMI Range for Indians', category: 'Research' } },
-    { params: { slug: 'bmi-calculator-teens' }, props: { title: 'BMI Calculator for Teens', category: 'Adolescence' } }
-  ];
+  return Object.keys(blogArticles).map((slug) => ({
+    params: { slug }
+  }));
 }
 
-const { title, category } = Astro.props;
+const { slug } = Astro.params;
+const article = blogArticles[slug as string] || blogArticles['what-is-bmi'];
+const lang = 'en';
+
+const articleTitle = article.title[lang] || article.title.en;
+const articleCategory = article.category ? (article.category[lang] || article.category.en) : 'Health';
+const articleDescription = article.description[lang] || article.description.en;
+const articleContentHtml = article.contentHtml ? (article.contentHtml[lang] || article.contentHtml.en) : null;
+const articleBody = article.body ? (article.body[lang] || article.body.en) : [];
+
+const canonicalUrl = `https://realbmicalculator.com/en/blog/${slug}`;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": articleTitle,
+  "description": articleDescription,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalUrl
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Real BMI Health Editorial Team",
+    "url": "https://realbmicalculator.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Real BMI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://realbmicalculator.com/favicon.svg"
+    }
+  },
+  "datePublished": "2026-01-01",
+  "dateModified": new Date().toISOString().split('T')[0]
+};
 ---
 
 <Layout 
-    title={`${title} | Real BMI`}
-    description={`Learn more about ${title} with Real BMI's deep health insights.`}
+    title={`${articleTitle} | Real BMI (2026)`}
+    description={articleDescription}
+    canonicalURL={canonicalUrl}
 >
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="json-ld"></script>
     <Navbar />
     <PageShell
-      title={title}
-      eyebrow={category}
-      description="Detailed health articles and research-backed calculator guidance for BMI and metabolic awareness."
-      returnUrl="/en"
-      returnLabel="Home"
+      title={articleTitle}
+      eyebrow={articleCategory}
+      description={articleDescription}
+      returnUrl="/en/blog"
+      returnLabel="Back to Articles"
     >
-      <div class="space-y-10 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium opacity-90">
-        <p>Body Mass Index (BMI) is a standardized measure used worldwide to compare weight relative to height. It is one of the fastest ways to understand whether a person is underweight, healthy, overweight, or obese, but it is best used as part of a broader health assessment.</p>
+      <article class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
+        {articleContentHtml ? (
+          <div set:html={articleContentHtml} />
+        ) : (
+          <div class="space-y-6">
+            {articleBody.map((paragraph: string) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        )}
 
-        <h2>Why BMI matters</h2>
-        <p>Men and women carry weight differently, and BMI is a useful starting point for identifying major health patterns. While it does not directly measure body fat, it helps highlight when a bodyweight falls outside of clinically recognized ranges.</p>
-
-        <h2>Use the BMI chart with care</h2>
-        <p>The BMI chart is designed to make insights immediate and actionable. Use it together with the Real BMI Calculator to compare your result against trusted global thresholds from the World Health Organization (WHO) and the Centers for Disease Control and Prevention (CDC).</p>
-
-        <h2>Practical health guidance</h2>
-        <p>Your BMI result is a useful health signal, not a diagnosis. For people with higher muscle mass, athletes, or those with unique body composition, BMI should be combined with other metrics such as body fat percentage, waist-to-hip ratio, and metabolic health.</p>
-
-        <p>This classification follows official global guidelines from the <strong>World Health Organization (WHO)</strong> and the <strong>CDC</strong>, ensuring you are viewing the metric through a modern, evidence-based lens.</p>
-
-        <div class="pt-8 border-t border-[var(--border)]">
-          <a href="/en#calculator" class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-[10px] tracking-widest inline-block transition-all hover:scale-105 active:scale-95">
-            Back to Calculator
+        <!-- Natural In-Article Call to Action (CTA) Box -->
+        <div class="my-12 p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border-2 border-[var(--accent)]/30 shadow-xl text-center space-y-4 not-prose">
+          <h3 class="text-2xl font-bold font-display uppercase tracking-tight text-[var(--foreground)]">Want to know your BMI?</h3>
+          <p class="text-base text-[var(--muted-foreground)] max-w-xl mx-auto font-sans">
+            Use our free <a href="/calculator" class="text-[var(--accent)] underline font-bold hover:text-[var(--foreground)] transition-colors">BMI Calculator</a> to get your result in seconds.
+          </p>
+          <a href="/calculator" class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105 active:scale-95 shadow-lg text-white">
+            Calculate My BMI Now →
           </a>
         </div>
-      </div>
+
+        <div class="pt-12 border-t border-[var(--border)] not-prose">
+          <HubGrid lang="en" />
+        </div>
+      </article>
     </PageShell>
 </Layout>

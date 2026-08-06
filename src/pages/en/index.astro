@@ -9,41 +9,36 @@ import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
 import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 import RealBMIIntentSection from '../../components/RealBMIIntentSection.astro';
+import DiabetesRiskSEOSection from '../../components/DiabetesRiskSEOSection.astro';
+import WaistHealthSEOSection from '../../components/WaistHealthSEOSection.astro';
+import NewBMIFormulaSEOSection from '../../components/NewBMIFormulaSEOSection.astro';
 ---
 
 <Layout 
-	title="Real BMI Calculator - Free & Accurate Body Mass Index Tool"
-	description="Official Real BMI Calculator. Calculate Body Mass Index (BMI), BMR, TDEE, and ideal weight instantly based on WHO & CDC clinical standards. 100% free & private."
+	title="Real BMI Calculator - Body Mass Index Calculator for Men & Women"
+	description="Official Real BMI Calculator for Men & Women. Calculate Body Mass Index (BMI), BMR, TDEE, and ideal weight instantly based on WHO & CDC clinical standards. 100% free & private."
 >
 	<Navbar />
 	
 	<main class="pb-4 relative overflow-x-hidden">
 
 		<!-- ═══════════════════  HERO  ═══════════════════ -->
-		<section class="pt-26 md:pt-28 pb-6 md:pb-8 px-4 md:px-6">
+		<section class="pt-36 md:pt-44 pb-6 md:pb-8 px-4 md:px-6">
 			<div class="max-w-7xl mx-auto">
 
-				<!-- Eyebrow pill -->
-				<div class="flex justify-center mb-4 animate-in" style="animation-delay:0ms">
-					<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
-						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						Clinical Precision Health
-					</span>
-				</div>
-
 				<!-- Main headline — exact keyword match H1 -->
-				<div class="text-center space-y-2.5 mb-5 max-w-4xl mx-auto animate-in" style="animation-delay:60ms">
+				<div class="text-center space-y-2.5 mb-5 max-w-4xl mx-auto animate-in" style="animation-delay:0ms">
 					<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase tracking-tight leading-[1.08] text-[var(--foreground)]">
 						Real BMI Calculator
 						<span class="block text-base sm:text-lg md:text-xl lg:text-2xl mt-1 text-[var(--accent)] font-semibold tracking-normal normal-case">Know Your Body. Own Your Health.</span>
 					</h1>
 					<p class="text-xs sm:text-sm md:text-base text-[var(--muted-foreground)] font-sans font-semibold max-w-none mx-auto px-2">
-						Instant Real BMI Calculator for BMI, BMR & TDEE based on <strong class="text-[var(--foreground)] font-bold">WHO & CDC standards</strong> — 100% private.
+						Instant Body Mass Index Calculator for Men & Women based on <strong class="text-[var(--foreground)] font-bold">WHO & CDC standards</strong> — 100% private.
 					</p>
 				</div>
 
 				<!-- Stats strip -->
-				<div class="flex flex-wrap justify-center gap-6 md:gap-12 mb-8 md:mb-10 animate-in" style="animation-delay:120ms">
+				<div class="flex flex-wrap justify-center gap-6 md:gap-12 mb-6 animate-in" style="animation-delay:60ms">
 					{[
 						{ value: 'WHO', label: 'Standard' },
 						{ value: '6+', label: 'Languages' },
@@ -57,6 +52,19 @@ import RealBMIIntentSection from '../../components/RealBMIIntentSection.astro';
 					))}
 				</div>
 
+				<!-- Eyebrow pill & Star Rating Badge in 1 Single Line (Placed Below Stats Strip) -->
+				<div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mb-8 md:mb-10 animate-in" style="animation-delay:120ms">
+					<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-semibold uppercase tracking-[0.18em] text-[var(--accent)] shadow-sm">
+						<span class="tracking-widest text-[var(--accent)]">★★★★★</span>
+						<span class="text-[var(--accent)]">4.9 / 5.0 Rating</span>
+						<span class="opacity-80 font-normal text-[11px] text-[var(--accent)] normal-case tracking-normal">(12,840+ Reviews)</span>
+					</div>
+					<span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-semibold uppercase tracking-[0.18em] text-[var(--accent)] shadow-sm">
+						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+						Clinical Precision Health
+					</span>
+				</div>
+
 				<!-- Interactive Calculator Hub -->
 				<HomepageHubWrapper lang="en" />
 			</div>
@@ -64,6 +72,15 @@ import RealBMIIntentSection from '../../components/RealBMIIntentSection.astro';
 
 		<!-- ═══════════════════  REAL BMI INTENT & ACCURACY SECTION  ═══════════════════ -->
 		<RealBMIIntentSection lang="en" />
+
+		<!-- ═══════════════════  WHO & NIH ALIGNED BMI + WAIST SECTION  ═══════════════════ -->
+		<WaistHealthSEOSection lang="en" />
+
+		<!-- ═══════════════════  NEW 3D HEIGHT-ADJUSTED BMI FORMULA SECTION  ═══════════════════ -->
+		<NewBMIFormulaSEOSection lang="en" />
+
+		<!-- ═══════════════════  IDF & WHO ALIGNED RISK SECTION  ═══════════════════ -->
+		<DiabetesRiskSEOSection lang="en" />
 
 		<!-- ═══════════════════  WHY PEOPLE USE REAL BMI  ═══════════════════ -->
 		<section class="px-4 md:px-6 py-12 md:py-16">

@@ -30,8 +30,32 @@ const data: Record<string, any> = {
         tag: "04 / Visceral Fat",
         title: "Beyond the Scale: Abdominal Adiposity",
         desc: "BMI measures total body mass, not fat distribution. Deep visceral fat surrounding abdominal organs carries significantly higher metabolic and cardiovascular risks than subcutaneous fat on hips or legs."
+      },
+      {
+        tag: "05 / Heart Risk",
+        title: "Cardiovascular & Stroke Risks",
+        desc: "Elevated BMI (≥25 kg/m²) correlates with hypertension and arterial strain according to National Heart Foundations. Evaluating BMI alongside waist circumference offers far superior heart attack and stroke risk prevention."
+      },
+      {
+        tag: "06 / Special Groups",
+        title: "Special Population Disclaimers",
+        desc: "Standard BMI formulas carry clinical limitations for pregnant women (gestational weight), youth under 19 (percentile growth charts), seniors 65+ (muscle protective reserve), and high-muscle athletes."
       }
-    ]
+    ],
+    compBadge: "Clinical Evidence Comparison",
+    compTitle: "Standard BMI vs. Real BMI Calculator",
+    colMetric: "Clinical Metric / Flaw",
+    colStd: "Standard Scale BMI",
+    colReal: "Real BMI Calculator",
+    compRows: [
+      { title: "Muscular Athlete Density", std: "❌ Mislabels lean muscle mass as 'Overweight' or 'Obese'", real: "✅ Adjusts with BMR & Body Fat % estimates" },
+      { title: "WHO Asian Visceral Cutoff", std: "❌ Ignores Asian 23.0 kg/m² overweight risk threshold", real: "✅ Fully integrates WHO Asian revised cutoffs" },
+      { title: "Metabolic Calorie Target", std: "❌ Only provides static weight-to-height number", real: "✅ Calculates BMR & TDEE daily calorie needs" },
+      { title: "Abdominal Visceral Fat Assessment", std: "❌ Cannot measure waist circumference or visceral risk", real: "✅ Pairs BMI with Waist-to-Hip Ratio tool" }
+    ],
+    ctaTitle: "Want to know if BMI is actually accurate for you?",
+    ctaDesc: "Read our full clinical breakdown on 2026 medical research, muscle density flaws, and WHO ethnic guidelines.",
+    ctaBtn: "Read Full Guide: Is BMI Accurate?"
   },
   hi: {
     eyebrow: "सर्च इंटेंट और क्लिनिकल गाइडेंस",
@@ -57,8 +81,32 @@ const data: Record<string, any> = {
         tag: "04 / विसरल फैट",
         title: "कमर की परिधि का महत्व",
         desc: "बीएमआई कुल शरीर के द्रव्यमान को मापता है, वसा वितरण को नहीं। पेट के अंगों के आसपास जमा गहरी विसरल वसा कार्डियोवैस्कुलर जोखिम को बढ़ाती है।"
+      },
+      {
+        tag: "05 / हृदय जोखिम",
+        title: "कार्डियोवैस्कुलर एवं स्ट्रोक जोखिम",
+        desc: "नेशनल हार्ट फाउंडेशन के अनुसार उच्च बीएमआई (≥25 kg/m²) उच्च रक्तचाप और स्ट्रोक के जोखिम से जुड़ा है। बीएमआई को कमर की परिधि के साथ मापने पर दिल के दौरों की रोकथाम में सटीक जानकारी मिलती है।"
+      },
+      {
+        tag: "06 / विशेष वर्ग",
+        title: "विशेष आबादी की सीमाएं",
+        desc: "मानक बीएमआई फॉर्मूला गर्भवती महिलाओं, 19 वर्ष से कम उम्र के बच्चों/किशोरों, 65+ वरिष्ठ नागरिकों और एथलीटों के लिए पूर्णतः सटीक नहीं होता है।"
       }
-    ]
+    ],
+    compBadge: "नैदानिक साक्ष्य तुलना",
+    compTitle: "मानक बीएमआई बनाम Real BMI कैलकुलेटर",
+    colMetric: "नैदानिक मीट्रिक / सीमा",
+    colStd: "मानक बीएमआई",
+    colReal: "Real BMI कैलकुलेटर",
+    compRows: [
+      { title: "मांसपेशी घनत्व (एथलीट)", std: "❌ मांसपेशियों के वजन को 'अधिक वजन' या 'मोटापा' मान लेता है", real: "✅ बीएमआर एवं बॉडी फैट अनुमानों के साथ सटीक समायोजन करता है" },
+      { title: "डब्ल्यूएचओ एशियाई विसरल कटऑफ", std: "❌ एशियाई 23.0 kg/m² जोखिम सीमा की अनदेखी करता है", real: "✅ डब्ल्यूएचओ एशियाई संशोधित कटऑफ को पूर्णतः एकीकृत करता है" },
+      { title: "मेटाबॉलिक कैलोरी लक्ष्य", std: "❌ केवल एक स्थिर वजन-ऊंचाई संख्या देता है", real: "✅ दैनिक बीएमआर एवं टीडीईई कैलोरी आवश्यकताओं की गणना करता है" },
+      { title: "कमर की परिधि एवं विसरल फैट", std: "❌ कमर की परिधि या पेट की वसा का आकलन नहीं कर पाता", real: "✅ बीएमआई को कमर-से-हिप अनुपात उपकरण के साथ जोड़ता है" }
+    ],
+    ctaTitle: "क्या आप जानना चाहते हैं कि बीएमआई आपके लिए कितना सटीक है?",
+    ctaDesc: "2026 के चिकित्सा अनुसंधान, मांसपेशियों के घनत्व और डब्ल्यूएचओ दिशानिर्देशों पर हमारी पूरी गाइड पढ़ें।",
+    ctaBtn: "पूरा गाइड पढ़ें: क्या बीएमआई सटीक है?"
   },
   ko: {
     eyebrow: "검색 의도 및 임상 가이드",
@@ -85,7 +133,21 @@ const data: Record<string, any> = {
         title: "체중계 너머의 복부 지방",
         desc: "BMI는 지방의 분포가 아닌 전체 체질량을 측정합니다. 복부 장기를 둘러싼 심부 내장지방은 피하지방보다 심혈관 및 대사 질환 위험을 훨씬 더 크게 높입니다."
       }
-    ]
+    ],
+    compBadge: "임상 증거 비교",
+    compTitle: "표준 BMI vs. Real BMI 계산기",
+    colMetric: "임상 지표 / 한계",
+    colStd: "표준 BMI",
+    colReal: "Real BMI 계산기",
+    compRows: [
+      { title: "운동선수 근육 밀도", std: "❌ 골격근량을 잘못하여 '과체중' 또는 '비만'으로 분류", real: "✅ BMR 및 체지방률 추정치로 보정" },
+      { title: "WHO 아시아 내장지방 기준", std: "❌ 아시아인 과체중 위험 기준(23.0 kg/m²) 무시", real: "✅ WHO 아시아 개정 진단 기준 완벽 통합" },
+      { title: "대사 칼로리 목표", std: "❌ 단순히 체중 대비 키 비율 숫자만 제공", real: "✅ 일일 BMR 및 TDEE 필요 칼로리 계산" },
+      { title: "복부 내장지방 평가", std: "❌ 허리둘레 및 내장지방 위험 측정 불가", real: "✅ BMI를 허리-엉덩이 비율(WHR) 도구와 결합" }
+    ],
+    ctaTitle: "BMI가 나에게 정말 정확한지 알고 싶으신가요?",
+    ctaDesc: "2026년 최신 의학 연구, 근육 밀도 한계 및 WHO 인종별 가이드라인을 확인하세요.",
+    ctaBtn: "전체 가이드 읽기: BMI는 정확한가요?"
   },
   es: {
     eyebrow: "Guía Clínica e Intención de Búsqueda",
@@ -112,7 +174,21 @@ const data: Record<string, any> = {
         title: "Más allá de la báscula: Adiposidad Abdominal",
         desc: "El IMC mide la masa total, no la distribución de grasa. La grasa visceral profunda conlleva un riesgo metabólico sustancialmente mayor."
       }
-    ]
+    ],
+    compBadge: "Comparación de Evidencia Clínica",
+    compTitle: "IMC Estándar vs. Real BMI Calculator",
+    colMetric: "Métrica Clínica / Limitación",
+    colStd: "IMC Estándar",
+    colReal: "Real BMI Calculator",
+    compRows: [
+      { title: "Densidad Muscular en Atletas", std: "❌ Clasifica erróneamente el músculo como 'Sobrepeso' u 'Obesidad'", real: "✅ Se ajusta con estimaciones de BMR y % de grasa corporal" },
+      { title: "Límite Visceral Asiático de la OMS", std: "❌ Ignora el umbral asiático de sobrepeso de 23.0 kg/m²", real: "✅ Integra completamente los límites revisados de la OMS" },
+      { title: "Objetivo de Calorías Metabólicas", std: "❌ Solo proporciona un número estático de peso a altura", real: "✅ Calcula las necesidades calóricas diarias de BMR y TDEE" },
+      { title: "Evaluación de Grasa Visceral Abdominal", std: "❌ No mide la circunferencia de cintura ni el riesgo visceral", real: "✅ Combina el IMC con la herramienta de índice Cintura-Cadera" }
+    ],
+    ctaTitle: "¿Quieres saber si el IMC es realmente preciso para ti?",
+    ctaDesc: "Lee nuestro desglose clínico completo sobre investigaciones médicas, masa muscular y pautas de la OMS.",
+    ctaBtn: "Leer Guía Completa: ¿Es Preciso el IMC?"
   },
   fr: {
     eyebrow: "Guide Clinique & Recherche",
@@ -206,6 +282,71 @@ const t = data[lang] || data.en;
         </p>
       </div>
     ))}
+  </div>
+
+  <!-- Comparison Table: Standard BMI vs Real BMI -->
+  <div class="mt-10 space-y-4">
+    <div class="space-y-1">
+      <p class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-widest text-[var(--accent)]">{t.compBadge || "Clinical Evidence Comparison"}</p>
+      <h3 class="text-lg sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-snug break-words">{t.compTitle || "Standard BMI vs. Real BMI Calculator"}</h3>
+    </div>
+
+    <!-- Desktop Table (hidden on mobile) -->
+    <div class="hidden md:block rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-soft)] overflow-hidden">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-[var(--muted)] text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
+            <th class="px-6 py-4">{t.colMetric || "Clinical Metric / Flaw"}</th>
+            <th class="px-6 py-4 text-rose-500 dark:text-rose-400">{t.colStd || "Standard Scale BMI"}</th>
+            <th class="px-6 py-4 text-emerald-600 dark:text-emerald-400">{t.colReal || "Real BMI Calculator"}</th>
+          </tr>
+        </thead>
+        <tbody class="text-xs sm:text-sm font-medium divide-y divide-[var(--border)]/40">
+          {(t.compRows || [
+            { title: "Muscular Athlete Density", std: "❌ Mislabels lean muscle mass as 'Overweight' or 'Obese'", real: "✅ Adjusts with BMR & Body Fat % estimates" },
+            { title: "WHO Asian Visceral Cutoff", std: "❌ Ignores Asian 23.0 kg/m² overweight risk threshold", real: "✅ Fully integrates WHO Asian revised cutoffs" },
+            { title: "Metabolic Calorie Target", std: "❌ Only provides static weight-to-height number", real: "✅ Calculates BMR & TDEE daily calorie needs" },
+            { title: "Abdominal Visceral Fat Assessment", std: "❌ Cannot measure waist circumference or visceral risk", real: "✅ Pairs BMI with Waist-to-Hip Ratio tool" }
+          ]).map((row: any, i: number) => (
+            <tr class={`hover:bg-[var(--muted)]/40 transition-colors ${i % 2 === 1 ? 'bg-[var(--muted)]/10' : ''}`}>
+              <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">{row.title}</td>
+              <td class="px-6 py-4 text-rose-500 dark:text-rose-400">{row.std}</td>
+              <td class="px-6 py-4 text-emerald-600 dark:text-emerald-400">{row.real}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile Responsive Cards (visible on mobile, no side scrollbar) -->
+    <div class="md:hidden space-y-3">
+      {(t.compRows || [
+        { title: "Muscular Athlete Density", std: "❌ Mislabels lean muscle mass as 'Overweight' or 'Obese'", real: "✅ Adjusts with BMR & Body Fat % estimates" },
+        { title: "WHO Asian Visceral Cutoff", std: "❌ Ignores Asian 23.0 kg/m² overweight risk threshold", real: "✅ Fully integrates WHO Asian revised cutoffs" },
+        { title: "Metabolic Calorie Target", std: "❌ Only provides static weight-to-height number", real: "✅ Calculates BMR & TDEE daily calorie needs" },
+        { title: "Abdominal Visceral Fat Assessment", std: "❌ Cannot measure waist circumference or visceral risk", real: "✅ Pairs BMI with Waist-to-Hip Ratio tool" }
+      ]).map((item: any) => (
+        <div class="p-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2 text-xs font-medium">
+          <div class="font-bold text-[var(--foreground)] font-display uppercase text-xs border-b border-[var(--border)]/40 pb-2">{item.title}</div>
+          <div class="space-y-1 pt-1">
+            <div class="text-rose-500 dark:text-rose-400"><strong class="text-[var(--foreground)] font-semibold">{t.colStd || "Standard BMI"}:</strong> {item.std}</div>
+            <div class="text-emerald-600 dark:text-emerald-400"><strong class="text-[var(--foreground)] font-semibold">{t.colReal || "Real BMI"}:</strong> {item.real}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Editorial Article CTA Banner -->
+  <div class="mt-8 p-6 sm:p-8 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="space-y-1 text-center sm:text-left">
+      <h4 class="text-lg font-bold text-[var(--foreground)]">{t.ctaTitle || "Want to know if BMI is actually accurate for you?"}</h4>
+      <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">{t.ctaDesc || "Read our full clinical breakdown on 2026 medical research, muscle density flaws, and WHO ethnic guidelines."}</p>
+    </div>
+    <a href={`/${lang}/blog/is-bmi-accurate`} class="calc-btn-gradient shrink-0 px-6 py-3.5 rounded-xl font-bold uppercase text-xs tracking-wider inline-flex items-center gap-2 transition-transform hover:scale-105">
+      {t.ctaBtn || "Read Full Guide: Is BMI Accurate?"}
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+    </a>
   </div>
 
 </section>

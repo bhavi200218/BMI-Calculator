@@ -1,0 +1,266 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+
+const translations: Record<string, any> = {
+  en: {
+    badge: "WHO & NIH Global Clinical Standards",
+    title: "BMI & Waist Circumference: The Dual Clinical Standard",
+    subtitle: "Why global medical institutions evaluate Body Mass Index (BMI) alongside Waist Circumference to detect hidden metabolic and cardiovascular risks.",
+    heroTitle: "Why BMI Alone Isn't the Whole Picture",
+    heroDesc: "Traditional Body Mass Index (BMI = kg/m²) is an essential population screening metric, but it cannot differentiate between muscle mass and visceral abdominal fat. Leading global medical authorities—including the World Health Organization (WHO) and National Institutes of Health (NIH)—recommend pairing BMI with waist circumference for a complete health risk evaluation.",
+    cards: [
+      {
+        title: "1. Central Obesity vs. Subcutaneous Fat",
+        desc: "Subcutaneous fat on arms or legs is relatively benign. In contrast, visceral abdominal fat ('central obesity') surrounds vital internal organs and secretes inflammatory cytokines that increase heart disease and Type 2 Diabetes risk."
+      },
+      {
+        title: "2. The 'Normal BMI' Central Obesity Paradox",
+        desc: "Up to 15% of adults with a 'Normal' BMI (18.5 – 24.9 kg/m²) carry excessive waist circumference. This hidden visceral adiposity carries metabolic risk profiles similar to clinical obesity."
+      },
+      {
+        title: "3. The 0.5 Waist-to-Height Rule",
+        desc: "Medical guidelines suggest keeping your waist circumference to less than half your height (Waist ÷ Height < 0.5). A ratio over 0.5 indicates increased cardiovascular strain regardless of body weight."
+      }
+    ],
+    tableTitle: "Combined BMI & Waist Circumference Health Risk Matrix",
+    tableHeaders: ["BMI Category", "BMI Range", "Men Waist ≤102cm / Women ≤88cm", "Men Waist >102cm / Women >88cm (High Waist)"],
+    tableRows: [
+      { cat: "Underweight", range: "< 18.5 kg/m²", lowRisk: "Low Risk", highRisk: "Increased Risk" },
+      { cat: "Normal Weight", range: "18.5 – 24.9 kg/m²", lowRisk: "Lowest Risk Baseline", highRisk: "Increased Risk (Central Adiposity)" },
+      { cat: "Overweight", range: "25.0 – 29.9 kg/m²", lowRisk: "Increased Risk", highRisk: "High Cardiovascular Risk" },
+      { cat: "Obesity Class I", range: "30.0 – 34.9 kg/m²", lowRisk: "High Risk", highRisk: "Very High Risk" },
+      { cat: "Obesity Class II & III", range: "≥ 35.0 kg/m²", lowRisk: "Very High Risk", highRisk: "Extremely High Risk" }
+    ],
+    disclaimer: "Medical Consensus Note: This screening matrix aligns with published standards from NIH & WHO global health guidelines. It serves as an educational risk indicator and does not replace professional medical diagnosis."
+  },
+  hi: {
+    badge: "WHO एवं NIH वैश्विक मानक अनुसार",
+    title: "बीएमआई एवं कमर की परिधि: संयुक्त नैदानिक मानक",
+    subtitle: "वैश्विक चिकित्सा संस्थान छिपे हुए चयापचय और हृदय जोखिमों का पता लगाने के लिए बॉडी मास इंडेक्स (BMI) के साथ कमर का आकार क्यों मापते हैं।",
+    heroTitle: "बीएमआई अकेला पूरा सच क्यों नहीं है?",
+    heroDesc: "पारंपरिक बॉडी मास इंडेक्स (BMI = kg/m²) एक महत्वपूर्ण प्राथमिक जांच मीट्रिक है, लेकिन यह मांसपेशियों और पेट के अंदरूनी विसरल फैट के बीच अंतर नहीं कर पाता है। एनआईएच (NIH) और डब्ल्यूएचओ (WHO) जैसे वैश्विक चिकित्सा संस्थान पूर्ण स्वास्थ्य मूल्यांकन के लिए बीएमआई के साथ कमर की परिधि मापने की सलाह देते हैं।",
+    cards: [
+      {
+        title: "1. पेट की विसरल वसा बनाम चमड़ी की वसा",
+        desc: "हाथ-पैरों पर जमा चमड़ी के नीचे की वसा कम हानिकारक होती है। इसके विपरीत, पेट के अंगों को घेरने वाली विसरल वसा (Central Obesity) हृदय रोग और टाइप 2 डायबिटीज का खतरा काफी बढ़ा देती है।"
+      },
+      {
+        title: "2. 'सामान्य बीएमआई' पर भी पेट की वसा का जोखिम",
+        desc: "सामान्य बीएमआई (18.5 – 24.9 kg/m²) वाले लगभग 15% लोगों में भी कमर का आकार अधिक हो सकता है। यह छिपा हुआ विसरल फैट मोटापे के समान ही स्वास्थ्य जोखिम पैदा करता है।"
+      },
+      {
+        title: "3. 0.5 कमर-से-ऊंचाई का नियम",
+        desc: "चिकित्सीय दिशानिर्देश सलाह देते हैं कि अपनी कमर का आकार अपनी ऊंचाई के आधे से कम रखें (कमर ÷ ऊंचाई < 0.5)। 0.5 से अधिक अनुपात हृदय पर दबाव का संकेत देता है।"
+      }
+    ],
+    tableTitle: "संयुक्त बीएमआई एवं कमर परिधि स्वास्थ्य जोखिम तालिका",
+    tableHeaders: ["बीएमआई श्रेणी", "बीएमआई सीमा", "पुरुष कमर ≤102cm / महिला ≤88cm", "पुरुष कमर >102cm / महिला >88cm (अधिक कमर)"],
+    tableRows: [
+      { cat: "कम वजन (Underweight)", range: "< 18.5 kg/m²", lowRisk: "कम जोखिम", highRisk: "बढ़ा हुआ जोखिम" },
+      { cat: "सामान्य वजन (Normal)", range: "18.5 – 24.9 kg/m²", lowRisk: "न्यूनतम जोखिम (उत्तम)", highRisk: "बढ़ा हुआ जोखिम (पेट की वसा)" },
+      { cat: "अधिक वजन (Overweight)", range: "25.0 – 29.9 kg/m²", lowRisk: "बढ़ा हुआ जोखिम", highRisk: "उच्च हृदय जोखिम" },
+      { cat: "मोटापा श्रेणी I (Obesity I)", range: "30.0 – 34.9 kg/m²", lowRisk: "उच्च जोखिम", highRisk: "अत्यधिक उच्च जोखिम" },
+      { cat: "मोटापा श्रेणी II और III", range: "≥ 35.0 kg/m²", lowRisk: "अत्यधिक उच्च जोखिम", highRisk: "अत्यंत गंभीर जोखिम" }
+    ],
+    disclaimer: "चिकित्सा सहमति टिप्पणी: यह तालिका एनआईएच और डब्ल्यूएचओ वैश्विक दिशानिर्देशों के आधार पर तैयार की गई है। यह डॉक्टरी सलाह का विकल्प नहीं है।"
+  },
+  es: {
+    badge: "Normas Clínicas Globales OMS y NIH",
+    title: "IMC y Circunferencia de Cintura: El Doble Estándar Clínico",
+    subtitle: "Por qué las instituciones médicas evalúan el Índice de Masa Corporal (IMC) junto con la circunferencia de cintura para detectar riesgos metabólicos y cardiovasculares.",
+    heroTitle: "¿Por qué el IMC por sí solo no es suficiente?",
+    heroDesc: "El IMC tradicional es una métrica de detección esencial, pero no distingue entre masa muscular y grasa abdominal visceral. Las autoridades médicas recomiendan evaluar el IMC junto con la cintura.",
+    cards: [
+      { title: "1. Obesidad Central vs. Grasa Subcutánea", desc: "La grasa visceral profunda alrededor de los órganos abdominales aumenta sustancialmente el riesgo de enfermedades cardíacas y Diabetes Tipo 2." },
+      { title: "2. La Paradoja del IMC Normal", desc: "Hasta un 15% de los adultos con IMC normal presentan circunferencia de cintura excesiva y adiposidad visceral oculta." },
+      { title: "3. La Regla del 0.5 Cintura-Altura", desc: "Mantén tu circunferencia de cintura en menos de la mitad de tu altura (Cintura ÷ Altura < 0.5)." }
+    ],
+    tableTitle: "Matriz de Riesgo para la Salud: IMC y Cintura",
+    tableHeaders: ["Categoría IMC", "Rango IMC", "Hombres ≤102cm / Mujeres ≤88cm", "Hombres >102cm / Mujeres >88cm"],
+    tableRows: [
+      { cat: "Bajo Peso", range: "< 18.5 kg/m²", lowRisk: "Bajo Riesgo", highRisk: "Riesgo Incrementado" },
+      { cat: "Peso Normal", range: "18.5 – 24.9 kg/m²", lowRisk: "Riesgo Mínimo (Línea de Base)", highRisk: "Riesgo Incrementado (Grasa Visceral)" },
+      { cat: "Sobrepeso", range: "25.0 – 29.9 kg/m²", lowRisk: "Riesgo Incrementado", highRisk: "Alto Riesgo Cardiovascular" },
+      { cat: "Obesidad Clase I", range: "30.0 – 34.9 kg/m²", lowRisk: "Alto Riesgo", highRisk: "Muy Alto Riesgo" },
+      { cat: "Obesidad Clase II y III", range: "≥ 35.0 kg/m²", lowRisk: "Muy Alto Riesgo", highRisk: "Riesgo Extremadamente Alto" }
+    ],
+    disclaimer: "Nota Médica: Esta matriz de evaluación se alinea con los estándares publicados por la OMS y los NIH."
+  },
+  fr: {
+    badge: "Normes Cliniques Globales OMS & NIH",
+    title: "IMC & Tour de Taille : Le Double Standard Clinique",
+    subtitle: "Pourquoi les institutions médicales évaluent l'Indice de Masse Corporelle (IMC) avec le tour de taille pour détecter les risques métaboliques.",
+    heroTitle: "Pourquoi l'IMC seul ne suffit pas",
+    heroDesc: "L'IMC traditionnel est une métrique essentielle mais ne distingue pas la masse musculaire de la graisse viscérale abdominale.",
+    cards: [
+      { title: "1. Obésité Centrale vs Graisse Sous-cutanée", desc: "La graisse viscérale abdominale profonde augmente considérablement les risques de maladie cardiaque et de diabète." },
+      { title: "2. Le Paradoxe de l'IMC Normal", desc: "Jusqu'à 15% des adultes avec un IMC normal présentent un tour de taille excessif et une graisse viscérale cachée." },
+      { title: "3. La Règle 0.5 Taille-Taille", desc: "Maintenez votre tour de taille à moins de la moitié de votre taille en hauteur (Taille ÷ Hauteur < 0.5)." }
+    ],
+    tableTitle: "Matrice de Risque de Santé : IMC & Tour de Taille",
+    tableHeaders: ["Catégorie IMC", "Plage IMC", "Hommes ≤102cm / Femmes ≤88cm", "Hommes >102cm / Femmes >88cm"],
+    tableRows: [
+      { cat: "Insuffisance Pondérale", range: "< 18.5 kg/m²", lowRisk: "Faible Risque", highRisk: "Risque Accru" },
+      { cat: "Poids Normal", range: "18.5 – 24.9 kg/m²", lowRisk: "Risque Minimal", highRisk: "Risque Accru (Graisse Viscérale)" },
+      { cat: "Surpoids", range: "25.0 – 29.9 kg/m²", lowRisk: "Risque Accru", highRisk: "Risque Cardiovasculaire Élevé" },
+      { cat: "Obésité Classe I", range: "30.0 – 34.9 kg/m²", lowRisk: "Risque Élevé", highRisk: "Très Haut Risque" },
+      { cat: "Obésité Classe II & III", range: "≥ 35.0 kg/m²", lowRisk: "Très Haut Risque", highRisk: "Risque Extrêmement Élevé" }
+    ],
+    disclaimer: "Note Médicale : Cette matrice de dépistage s'aligne sur les normes de l'OMS et des NIH."
+  },
+  de: {
+    badge: "Globale Klinische Standards der WHO & NIH",
+    title: "BMI & Taillenumfang: Der Doppelte Klinische Standard",
+    subtitle: "Warum medizinische Einrichtungen den Body-Mass-Index (BMI) zusammen mit dem Taillenumfang bewerten.",
+    heroTitle: "Warum der BMI alleine nicht das ganze Bild zeigt",
+    heroDesc: "Der traditionelle BMI ist eine wichtige Kennzahl, unterscheidet jedoch nicht zwischen Muskelmasse und viszeralem Bauchfett.",
+    cards: [
+      { title: "1. Zentrale Adipositas vs. Subkutanes Fett", desc: "Viszerales Bauchfett erhöht das Risiko für Herzerkrankungen und Typ-2-Diabetes erheblich." },
+      { title: "2. Das BMI-Normal-Paradoxon", desc: "Bis zu 15% der Erwachsenen mit 'normalem' BMI weisen einen übermäßigen Taillenumfang auf." },
+      { title: "3. Die 0,5-Taillen-Höhen-Regel", desc: "Halten Sie Ihren Taillenumfang auf weniger als die Hälfte Ihrer Körpergröße (Taille ÷ Höhe < 0,5)." }
+    ],
+    tableTitle: "Gesundheitsrisiko-Matrix: BMI & Taillenumfang",
+    tableHeaders: ["BMI-Kategorie", "BMI-Bereich", "Männer ≤102cm / Frauen ≤88cm", "Männer >102cm / Frauen >88cm"],
+    tableRows: [
+      { cat: "Untergewicht", range: "< 18.5 kg/m²", lowRisk: "Niedriges Risiko", highRisk: "Erhöhtes Risiko" },
+      { cat: "Normalgewicht", range: "18.5 – 24.9 kg/m²", lowRisk: "Minimales Risiko", highRisk: "Erhöhtes Risiko (Viszeralfett)" },
+      { cat: "Übergewicht", range: "25.0 – 29.9 kg/m²", lowRisk: "Erhöhtes Risiko", highRisk: "Hohes Herz-Kreislauf-Risiko" },
+      { cat: "Adipositas Klasse I", range: "30.0 – 34.9 kg/m²", lowRisk: "Hohes Risiko", highRisk: "Sehr Hohes Risiko" },
+      { cat: "Adipositas Klasse II & III", range: "≥ 35.0 kg/m²", lowRisk: "Sehr Hohes Risiko", highRisk: "Extrem Hohes Risiko" }
+    ],
+    disclaimer: "Medizinischer Hinweis: Diese Matrix orientiert sich an den Standards der WHO und NIH."
+  },
+  ko: {
+    badge: "WHO 및 NIH 글로벌 임상 표준",
+    title: "BMI 및 허리둘레: 이중 임상 진단 표준",
+    subtitle: "전 세계 의료 기관이 숨겨진 대사 및 심혈관 위험을 감지하기 위해 체질량지수(BMI)와 허리둘레를 함께 평가하는 이유.",
+    heroTitle: "BMI 단독 측정의 한계",
+    heroDesc: "전통적인 BMI는 중요한 선별 지표이지만 근육량과 복부 내장지방을 구분하지 못합니다.",
+    cards: [
+      { title: "1. 복부 비만 vs 피하 지방", desc: "복부 장기 주변의 깊은 내장지방은 심장 질환 및 제2형 당뇨병 위험을 크게 높입니다." },
+      { title: "2. 정상 BMI의 복부 비만 역설", desc: "정상 BMI 성인의 최대 15%가 과도한 허리둘레와 숨겨진 내장지방을 가지고 있습니다." },
+      { title: "3. 0.5 허리-신장 비율 법칙", desc: "허리둘레를 키의 절반 이하로 유지하세요 (허리둘레 ÷ 키 < 0.5)." }
+    ],
+    tableTitle: "BMI 및 허리둘레 건강 위험 행렬",
+    tableHeaders: ["BMI 범주", "BMI 범위", "남성 ≤102cm / 여성 ≤88cm", "남성 >102cm / 여성 >88cm"],
+    tableRows: [
+      { cat: "저체중", range: "< 18.5 kg/m²", lowRisk: "낮은 위험", highRisk: "위험 증가" },
+      { cat: "정상 체중", range: "18.5 – 24.9 kg/m²", lowRisk: "최소 위험 (기준)", highRisk: "위험 증가 (내장지방)" },
+      { cat: "과체중", range: "25.0 – 29.9 kg/m²", lowRisk: "위험 증가", highRisk: "높은 심혈관 위험" },
+      { cat: "1단계 비만", range: "30.0 – 34.9 kg/m²", lowRisk: "높은 위험", highRisk: "매우 높은 위험" },
+      { cat: "2단계 및 3단계 비만", range: "≥ 35.0 kg/m²", lowRisk: "매우 높은 위험", highRisk: "극도로 높은 위험" }
+    ],
+    disclaimer: "의학적 참고 사항: 이 스크리닝 행렬은 WHO 및 NIH 임상 표준에 따릅니다."
+  }
+};
+
+const t = translations[lang] || translations.en;
+---
+
+<section class="my-12 px-4 md:px-6 max-w-7xl mx-auto">
+  <div class="rounded-3xl border border-[var(--border)] bg-[var(--card)] p-6 sm:p-10 shadow-sm space-y-8">
+    
+    <!-- Top Pill & Title -->
+    <div class="space-y-3 max-w-3xl">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-semibold uppercase tracking-wider">
+        <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
+        {t.badge}
+      </span>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        {t.title}
+      </h2>
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+        {t.subtitle}
+      </p>
+    </div>
+
+    <!-- Hero Card Breakdown -->
+    <div class="p-6 rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 space-y-3">
+      <h3 class="text-lg font-display font-bold text-[var(--foreground)]">{t.heroTitle}</h3>
+      <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{t.heroDesc}</p>
+    </div>
+
+    <!-- 3 Core Medical Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {t.cards.map((card: any) => (
+        <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--muted)]/20 space-y-3 transition-all duration-200 hover:border-[var(--accent)]/40">
+          <h4 class="text-base font-display font-bold text-[var(--foreground)]">{card.title}</h4>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{card.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Combination Table -->
+    <div class="space-y-4">
+      <h3 class="text-base sm:text-xl font-display font-bold uppercase tracking-tight leading-snug break-words text-[var(--foreground)]">
+        {t.tableTitle}
+      </h3>
+    <!-- Combination Table (Desktop Table) -->
+    <div class="hidden md:block overflow-x-auto rounded-2xl border border-[var(--border)] bg-[var(--card)]">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead class="bg-[var(--muted)]/60 text-[var(--foreground)] font-display font-bold uppercase tracking-wider border-b border-[var(--border)]">
+          <tr>
+            {t.tableHeaders.map((head: string) => (
+              <th class="p-3.5 sm:p-4">{head}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-[var(--border)] font-medium text-[var(--muted-foreground)]">
+          {t.tableRows.map((row: any) => (
+            <tr class="hover:bg-[var(--muted)]/20 transition-colors">
+              <td class="p-3.5 sm:p-4 font-bold text-[var(--foreground)]">{row.cat}</td>
+              <td class="p-3.5 sm:p-4 font-mono">{row.range}</td>
+              <td class="p-3.5 sm:p-4">
+                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+                  {row.lowRisk}
+                </span>
+              </td>
+              <td class="p-3.5 sm:p-4">
+                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/30">
+                  {row.highRisk}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile Stacked Card Matrix (No side scrollbar on mobile) -->
+    <div class="md:hidden space-y-3">
+      {t.tableRows.map((row: any) => (
+        <div class="p-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2 text-xs font-medium">
+          <div class="flex items-center justify-between border-b border-[var(--border)]/40 pb-2">
+            <span class="font-bold text-[var(--foreground)] font-display uppercase">{row.cat}</span>
+            <span class="font-mono text-[var(--accent)] font-semibold">{row.range}</span>
+          </div>
+          <div class="space-y-1.5 pt-0.5">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-[var(--muted-foreground)]">Normal Waist:</span>
+              <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+                {row.lowRisk}
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-[var(--muted-foreground)]">Elevated Waist:</span>
+              <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/30">
+                {row.highRisk}
+              </span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    </div>
+
+    <!-- Medical Note -->
+    <p class="text-xs text-[var(--muted-foreground)] italic font-medium pt-2 border-t border-[var(--border)]/40">
+      {t.disclaimer}
+    </p>
+
+  </div>
+</section>

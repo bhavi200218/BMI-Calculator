@@ -31,7 +31,9 @@ const content: Record<string, any> = {
     faqSubtitle: 'Everything you need to know about BMI calculations, metabolic ratios, accuracy, and athletic measurements.',
     sections: [
       { title: 'Understanding Your Body Mass Index', text: 'Body Mass Index (BMI) is a valuable, internationally recognized screening standard used by healthcare professionals worldwide. It groups your weight category relative to your height, giving you a quick reference point for metabolic and cardiovascular disease risks. Real BMI Calculator pairs this score with the standard classifications from the World Health Organization (WHO) and Centers for Disease Control (CDC) to offer you direct, clinical context.' },
-      { title: 'How BMI, BMR & TDEE Connect Together', text: 'Your BMI indicates if your weight falls within a balanced window. Your BMR reveals the baseline metabolic energy your organs require at absolute rest. Finally, your TDEE integrates daily physical activities, showing you the exact calories required to maintain your current weight. Combining these three pillars gives you a comprehensive, customized map of your energy balance and weight-management path.' }
+      { title: 'How BMI, BMR & TDEE Connect Together', text: 'Your BMI indicates if your weight falls within a balanced window. Your BMR reveals the baseline metabolic energy your organs require at absolute rest. Finally, your TDEE integrates daily physical activities, showing you the exact calories required to maintain your current weight. Combining these three pillars gives you a comprehensive, customized map of your energy balance and weight-management path.' },
+      { title: 'BMI & Cardiovascular Health: Heart Risk, Blood Pressure & Stroke Prevention', text: 'Cardiovascular research from global health authorities (including WHO, AHA, and National Heart Foundations) emphasizes that while BMI is a key baseline indicator for heart disease, stroke, and hypertension, it should always be evaluated alongside waist circumference, blood pressure, and cholesterol levels. Real BMI Calculator bridges this gap by offering integrated Waist-to-Hip Ratio, Heart Rate Zones, BMR, and TDEE tools to provide a complete cardiovascular and metabolic risk profile.' },
+      { title: 'Type 2 Diabetes & Abdominal Adiposity Screening (Diabetes Canada Aligned)', text: 'According to Diabetes Canada and WHO clinical guidelines, elevated BMI (≥25.0 kg/m² or ≥23.0 kg/m² for Asian populations) and abdominal visceral adiposity directly correlate with increased risk of Type 2 Diabetes and Insulin Resistance. Monitoring your BMI alongside waist circumference offers early detection and vital metabolic risk prevention.' }
     ],
     whoTable: [
       { category: 'Underweight', range: '< 18.5', risk: 'Low (Increased Nutri. Risk)', status: 'underweight' },
@@ -44,6 +46,8 @@ const content: Record<string, any> = {
     faq: [
       { q: 'What is the difference between standard BMI and Real BMI?', a: 'Standard BMI calculates body mass strictly using height and weight. Real BMI integrates standard BMI with WHO & CDC reference tables, gender-adjusted body fat estimates, BMR, and TDEE to provide a complete, clinical-grade overview of your body composition.' },
       { q: 'How is BMI calculated?', a: 'BMI compares your weight and height using a simple formula: weight in kilograms divided by height in meters squared (kg/m²), or (weight in lbs / height in inches²) x 703 for imperial units.' },
+      { q: 'How does BMI relate to heart disease and stroke risk?', a: 'Elevated BMI levels (25.0 kg/m² and above) correlate with higher incidence of hypertension, high LDL cholesterol, and type-2 diabetes — all major contributing risk factors for coronary heart disease and stroke.' },
+      { q: 'Why is waist circumference important alongside BMI for heart health?', a: 'Excess abdominal visceral fat surrounding vital organs poses significantly greater cardiovascular risk than subcutaneous fat stored on limbs. Combining BMI with Waist-to-Hip ratio provides a far more accurate heart risk assessment.' },
       { q: 'What is a healthy BMI for men and women?', a: 'For most adults, a healthy BMI range is 18.5 to 24.9. However, WHO recommends a lower threshold of 18.5 to 22.9 for Asian and South Asian populations due to metabolic risk profiles.' },
       { q: 'Is BMI accurate for muscular people or athletes?', a: 'BMI is a screening tool, not a diagnostic measurement of body fat. Because dense muscle tissue weighs more than fat volume, muscular athletes may register a higher BMI score while maintaining very low body fat.' },
       { q: 'Why does WHO recommend lower BMI cutoffs for Asian populations?', a: 'Clinical research shows that South Asian and East Asian individuals tend to accumulate a higher percentage of abdominal visceral fat at lower body weights. Therefore, WHO defines overweight for Asian adults starting at 23.0 kg/m².' },
@@ -69,7 +73,9 @@ const content: Record<string, any> = {
     faqSubtitle: 'बीएमआई गणना, क्लिनिकल सटीकता, चयापचय दर और स्वास्थ्य दिशानिर्देशों के बारे में अक्सर पूछे जाने वाले प्रश्न।',
     sections: [
       { title: 'बॉडी मास इंडेक्स (BMI) को गहराई से समझें', text: 'बॉडी मास इंडेक्स (बीएमआई) दुनिया भर के स्वास्थ्य विशेषज्ञों द्वारा उपयोग किया जाने वाला एक अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त जांच मानक है। यह आपकी ऊंचाई के अनुपात में आपके वजन की श्रेणी को वर्गीकृत करता है, जिससे हृदय और चयापचय संबंधी जोखिमों का त्वरित संदर्भ मिलता है। Real BMI कैलकुलेटर विश्व स्वास्थ्य संगठन (WHO) और CDC के आधिकारिक मानकों के आधार पर सटीक विश्लेषण प्रदान करता है।' },
-      { title: 'बीएमआई, बीएमआर और टीडीईई का परस्पर संबंध', text: 'आपका बीएमआई (BMI) यह दर्शाता है कि आपका वजन संतुलित सीमा में है या नहीं। आपका बीएमआर (BMR) विश्राम अवस्था में आपके अंगों द्वारा आवश्यक बेसल ऊर्जा को उजागर करता है। अंत में, आपका टीडीईई (TDEE) दैनिक गतिविधियों को जोड़कर वजन बनाए रखने के लिए आवश्यक सटीक कैलोरी बताता है।' }
+      { title: 'बीएमआई, बीएमआर और टीडीईई का परस्पर संबंध', text: 'आपका बीएमआई (BMI) यह दर्शाता है कि आपका वजन संतुलित सीमा में है या नहीं। आपका बीएमआर (BMR) विश्राम अवस्था में आपके अंगों द्वारा आवश्यक बेसल ऊर्जा को उजागर करता है। अंत में, आपका टीडीईई (TDEE) दैनिक गतिविधियों को जोड़कर वजन बनाए रखने के लिए आवश्यक सटीक कैलोरी बताता है।' },
+      { title: 'हृदय स्वास्थ्य एवं स्ट्रोक की रोकथाम', text: 'डब्ल्यूएचओ और नेशनल हार्ट फाउंडेशन के अनुसार बीएमआई (BMI) हृदय रोग और स्ट्रोक के जोखिम का एक प्रमुख शुरुआती संकेतक है। इसे हमेशा कमर के आकार, रक्तचाप और कोलेस्ट्रॉल के साथ मापा जाना चाहिए।' },
+      { title: 'टाइप 2 डायबिटीज एवं विसरल वसा स्क्रीनिंग (डायबिटीज कनाडा मानक)', text: 'डायबिटीज कनाडा और डब्ल्यूएचओ (WHO) के दिशानिर्देशों के अनुसार, बढ़ा हुआ बीएमआई (≥25.0 kg/m² या एशियाई आबादी के लिए ≥23.0 kg/m²) और पेट की वसा सीधे टाइप 2 डायबिटीज और इंसुलिन प्रतिरोध के जोखिम को बढ़ाती है।' }
     ],
     whoTable: [
       { category: 'कम वजन (Underweight)', range: '< 18.5', risk: 'कम (पोषण संबंधी जोखिम)', status: 'underweight' },
@@ -107,7 +113,9 @@ const content: Record<string, any> = {
     faqSubtitle: 'Todo lo que necesitas saber sobre cálculos de IMC, índices metabólicos, precisión y mediciones atléticas.',
     sections: [
       { title: 'Entendiendo Tu Índice de Masa Corporal', text: 'El Índice de Masa Corporal (IMC) es un estándar clínico internacional para estimar si tu peso se encuentra dentro de niveles saludables. Real BMI Calculator utiliza escalas oficiales de la OMS y los CDC para guiarte en tu estado nutricional.' },
-      { title: 'La Sinergia de IMC, BMR y TDEE', text: 'El IMC te indica tu categoría general de peso, el BMR describe los requerimientos de tu metabolismo celular en reposo, y el TDEE te indica el consumo calórico diario para planificar objetivos de déficit, mantenimiento o superávit.' }
+      { title: 'La Sinergia de IMC, BMR y TDEE', text: 'El IMC te indica tu categoría general de peso, el BMR describe los requerimientos de tu metabolismo celular en reposo, y el TDEE te indica el consumo calórico diario para planificar objetivos de déficit, mantenimiento o superávit.' },
+      { title: 'Salud Cardiovascular y Prevención de Riesgos', text: 'La investigación de autoridades globales destaca que el IMC debe evaluarse junto con la circunferencia de cintura y la presión arterial para prevenir eventos cardiovasculares.' },
+      { title: 'Detección de Riesgo de Diabetes Tipo 2 (Norma Diabetes Canada)', text: 'Según los consensos de Diabetes Canada y la OMS, un IMC elevado y la grasa visceral abdominal aumentan directamente el riesgo de diabetes tipo 2 y resistencia a la insulina.' }
     ],
     whoTable: [
       { category: 'Bajo Peso', range: '< 18.5', risk: 'Bajo (Riesgo Nutricional)', status: 'underweight' },
@@ -143,7 +151,9 @@ const content: Record<string, any> = {
     faqSubtitle: 'Tout ce que vous devez savoir sur le calcul de l\'IMC, le métabolisme, la précision et les mesures sportives.',
     sections: [
       { title: 'Comprendre Votre Indice de Masse Corporelle', text: 'L\'indice de masse corporelle (IMC) est un standard de dépistage reconnu à l\'échelle internationale par les professionnels de santé.' },
-      { title: 'Comment l\'IMC, le BMR et le TDEE Interagissent', text: 'Votre IMC indique si votre poids est équilibré, le BMR votre métabolisme de base au repos, et le TDEE vos dépenses caloriques totales quotidiennes.' }
+      { title: 'Comment l\'IMC, le BMR et le TDEE Interagissent', text: 'Votre IMC indique si votre poids est équilibré, le BMR votre métabolisme de base au repos, et le TDEE vos dépenses caloriques totales quotidiennes.' },
+      { title: 'Santé Cardiovasculaire et Prévention', text: 'L\'évaluation de l\'IMC associée au tour de taille permet une détection précoce des risques cardiovasculaires.' },
+      { title: 'Dépistage du Diabète de Type 2 (Norme Diabetes Canada)', text: 'Un IMC élevé et la graisse viscérale abdominale augmentent le risque de diabète de type 2 et de résistance à l\'insuline.' }
     ],
     whoTable: [
       { category: 'Sous-poids', range: '< 18.5', risk: 'Faible (Risque Nutritionnel)', status: 'underweight' },
@@ -179,7 +189,9 @@ const content: Record<string, any> = {
     faqSubtitle: 'Alles, was Sie über BMI-Berechnungen, Stoffwechselraten, Genauigkeit und sportliche Messungen wissen müssen.',
     sections: [
       { title: 'Ihren Body-Mass-Index Verstehen', text: 'Der Body-Mass-Index (BMI) ist ein international anerkannter Screening-Standard zur Beurteilung Ihres Gewichts.' },
-      { title: 'Wie BMI, BMR & TDEE Zusammenhängen', text: 'Ihr BMI zeigt, ob Ihr Gewicht ausgewogen ist, Ihr BMR beschreibt den Grundumsatz, und der TDEE berechnet den Gesamtkalorienbedarf.' }
+      { title: 'Wie BMI, BMR & TDEE Zusammenhängen', text: 'Ihr BMI zeigt, ob Ihr Gewicht ausgewogen ist, Ihr BMR beschreibt den Grundumsatz, und der TDEE berechnet den Gesamtkalorienbedarf.' },
+      { title: 'Kardiovaskuläre Gesundheit & Prävention', text: 'Die Kombination von BMI und Taillenumfang ermöglicht die frühzeitige Erkennung von Bluthochdruck und Herzrisiken.' },
+      { title: 'Typ-2-Diabetes-Screening (Diabetes Canada Richtlinie)', text: 'Ein erhöhter BMI und viszerales Bauchfett stehen in direktem Zusammenhang mit einem erhöhten Risiko für Typ-2-Diabetes.' }
     ],
     whoTable: [
       { category: 'Untergewicht', range: '< 18.5', risk: 'Niedrig (Erhöhter Nährstoffbedarf)', status: 'underweight' },
@@ -215,7 +227,9 @@ const content: Record<string, any> = {
     faqSubtitle: 'BMI 계산, 대사율, 정확도 및 운동 선수 측정에 대해 알아야 할 모든 것.',
     sections: [
       { title: '체질량지수(BMI) 이해하기', text: '체질량지수(BMI)는 전 세계 의료 전문가들이 사용하는 국제적인 스크리닝 표준입니다.' },
-      { title: 'BMI, BMR, TDEE의 상호 연관성', text: 'BMI는 체중의 균형 상태를, BMR은 휴식 상태의 기초 대사량을, TDEE는 활동량을 포함한 필요 칼로리를 보여줍니다.' }
+      { title: 'BMI, BMR, TDEE의 상호 연관성', text: 'BMI는 체중의 균형 상태를, BMR은 휴식 상태의 기초 대사량을, TDEE는 활동량을 포함한 필요 칼로리를 보여줍니다.' },
+      { title: '심혈관 건강 및 위험 예방', text: 'BMI와 허리둘레를 함께 측정하면 심혈관 질환 및 고혈압 위험을 사전에 예방할 수 있습니다.' },
+      { title: '제2형 당뇨병 선별 검사 (Diabetes Canada 지침)', text: '높은 BMI와 복부 내장지방은 제2형 당뇨병 및 인슐린 저항성 위험을 직접적으로 높입니다.' }
     ],
     whoTable: [
       { category: '저체중', range: '< 18.5', risk: '낮음 (영양 위험 증가)', status: 'underweight' },
@@ -336,6 +350,102 @@ const faqSchema = {
               ))}
             </tbody>
           </table>
+        </div>
+      </div>
+
+      <!-- Age-Wise & Gender BMI Chart Section -->
+      <div class="pt-8 space-y-6">
+        <div class="space-y-2">
+          <p class="text-xs font-display font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">Age & Gender Guidelines</p>
+          <h3 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">BMI Chart for Men & Women by Age Group</h3>
+          <p class="text-sm text-[var(--muted-foreground)] font-medium max-w-2xl leading-relaxed">
+            Healthy Body Mass Index target ranges naturally shift as adults age due to changes in muscle density, bone mass, and body fat distribution.
+          </p>
+        </div>
+
+        <!-- Mobile Cards Version (Fits mobile screens 100% without horizontal overflow) -->
+        <div class="block sm:hidden space-y-3.5">
+          {[
+            { age: '18 – 24 Years', men: '19.0 – 24.0 kg/m²', women: '18.5 – 23.5 kg/m²', note: 'Peak Lean Mass & Metabolism' },
+            { age: '25 – 34 Years', men: '20.0 – 25.0 kg/m²', women: '19.5 – 24.5 kg/m²', note: 'Adult Baseline Standard Range' },
+            { age: '35 – 44 Years', men: '21.0 – 26.0 kg/m²', women: '20.5 – 25.5 kg/m²', note: 'Metabolic Maintenance Window' },
+            { age: '45 – 54 Years', men: '22.0 – 27.0 kg/m²', women: '21.5 – 26.5 kg/m²', note: 'Midlife Balance & Visceral Fat Watch' },
+            { age: '55 – 64 Years', men: '23.0 – 28.0 kg/m²', women: '22.5 – 27.5 kg/m²', note: 'Healthy Active Ageing Target' },
+            { age: '65+ Years',     men: '24.0 – 29.0 kg/m²', women: '23.5 – 28.5 kg/m²', note: 'Geriatric Protective Muscle Reserve' }
+          ].map((item, idx) => (
+            <div class={`p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-sm ${idx % 2 === 1 ? 'bg-[var(--muted)]/20' : ''}`}>
+              <div class="flex justify-between items-center gap-2 pb-1 border-b border-[var(--border)]/40">
+                <span class="font-display font-bold text-[var(--foreground)] uppercase text-sm">{item.age}</span>
+                <span class="text-[10px] font-display font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+                  {item.note}
+                </span>
+              </div>
+              <div class="grid grid-cols-2 gap-3 text-xs pt-1">
+                <div class="p-2.5 rounded-lg bg-[var(--muted)]/40 space-y-1">
+                  <span class="text-[10px] uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Men Ideal</span>
+                  <span class="font-bold text-[var(--accent)] text-xs block">{item.men}</span>
+                </div>
+                <div class="p-2.5 rounded-lg bg-[var(--muted)]/40 space-y-1">
+                  <span class="text-[10px] uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Women Ideal</span>
+                  <span class="font-bold text-[var(--accent)] text-xs block">{item.women}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Desktop Table Version (Used by Google for Featured Snippets) -->
+        <div class="hidden sm:block rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-soft)] overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left min-w-[550px] border-collapse">
+              <thead>
+                <tr class="bg-[var(--muted)] text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
+                  <th class="px-6 py-4">Age Bracket</th>
+                  <th class="px-6 py-4">Men Ideal BMI</th>
+                  <th class="px-6 py-4">Women Ideal BMI</th>
+                  <th class="px-6 py-4">Clinical Guidance</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm font-medium divide-y divide-[var(--border)]/40">
+                <tr class="hover:bg-[var(--muted)]/40 transition-colors">
+                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">18 – 24 Years</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">19.0 – 24.0 kg/m²</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">18.5 – 23.5 kg/m²</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Peak Lean Mass & Metabolism</td>
+                </tr>
+                <tr class="hover:bg-[var(--muted)]/40 transition-colors bg-[var(--muted)]/10">
+                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">25 – 34 Years</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">20.0 – 25.0 kg/m²</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">19.5 – 24.5 kg/m²</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Adult Baseline Standard Range</td>
+                </tr>
+                <tr class="hover:bg-[var(--muted)]/40 transition-colors">
+                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">35 – 44 Years</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">21.0 – 26.0 kg/m²</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">20.5 – 25.5 kg/m²</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Metabolic Maintenance Window</td>
+                </tr>
+                <tr class="hover:bg-[var(--muted)]/40 transition-colors bg-[var(--muted)]/10">
+                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">45 – 54 Years</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">22.0 – 27.0 kg/m²</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">21.5 – 26.5 kg/m²</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Midlife Balance & Visceral Fat Watch</td>
+                </tr>
+                <tr class="hover:bg-[var(--muted)]/40 transition-colors">
+                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">55 – 64 Years</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">23.0 – 28.0 kg/m²</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">22.5 – 27.5 kg/m²</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Healthy Active Ageing Target</td>
+                </tr>
+                <tr class="hover:bg-[var(--muted)]/40 transition-colors bg-[var(--muted)]/10">
+                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">65+ Years</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">24.0 – 29.0 kg/m²</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">23.5 – 28.5 kg/m²</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Geriatric Protective Muscle Reserve</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 

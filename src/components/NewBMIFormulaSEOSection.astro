@@ -1,0 +1,275 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+
+const translations: Record<string, any> = {
+  en: {
+    badge: "3D Mathematical Height-Correction Standard",
+    title: "Standard BMI vs. New Height-Adjusted BMI Formula",
+    subtitle: "Understanding why traditional BMI distorts readings for tall and short individuals, and how the 2.5 height-exponent formula corrects 3D body volume scaling.",
+    formulaTitle: "Standard vs. Height-Adjusted Math Formulas",
+    standardFormula: "Standard BMI = weight (kg) ÷ height² (m²)",
+    newFormula: "Height-Adjusted BMI = 1.3 × weight (kg) ÷ height²·⁵ (m²·⁵)",
+    formulaExplanation: "Standard BMI divides weight by height squared (2D scaling). However, humans grow three-dimensionally (volume). The 2.5 exponent scaling factor compensates for height distortion, offering fairer scores for tall and short people.",
+    cards: [
+      {
+        title: "Short Stature Impact (< 160 cm / 5'3\")",
+        desc: "Standard BMI tends to underestimate body fatness in shorter individuals because height² assumes smaller 2D volume. The 2.5 exponent formula provides a slightly higher, more realistic health score."
+      },
+      {
+        title: "Average Stature Alignment (169 – 175 cm)",
+        desc: "For adults near the global average height of 170 cm (5'7\"), standard BMI and 3D height-adjusted BMI yield virtually identical numbers (~0.0 difference)."
+      },
+      {
+        title: "Tall Stature Correction (> 183 cm / 6'0\")",
+        desc: "Standard BMI overestimates weight classification for tall individuals, frequently labeling lean tall adults as 'Overweight'. The 3D adjusted formula lowers the score by 1 to 2 points to account for frame length."
+      }
+    ],
+    tableTitle: "Height-Adjusted Score Comparison Matrix",
+    tableHeaders: ["Height Group", "Example Person", "Standard BMI (m²)", "Height-Adjusted BMI (m²·⁵)", "Formula Score Difference"],
+    tableRows: [
+      { height: "Short (152 cm / 5'0\")", example: "60 kg (132 lbs)", std: "26.0 (Overweight)", newBmi: "26.9 (Adjusted)", diff: "+ 0.9 points" },
+      { height: "Average (170 cm / 5'7\")", example: "70 kg (154 lbs)", std: "24.2 (Normal)", newBmi: "24.2 (Normal)", diff: "0.0 (Identical)" },
+      { height: "Tall (190 cm / 6'3\")", example: "90 kg (198 lbs)", std: "24.9 (Normal)", newBmi: "23.4 (Normal)", diff: "- 1.5 points" },
+      { height: "Very Tall (200 cm / 6'7\")", example: "105 kg (231 lbs)", std: "26.3 (Overweight)", newBmi: "24.3 (Normal)", diff: "- 2.0 points" }
+    ],
+    disclaimer: "Mathematical Consensus Note: The 2.5 exponent height adjustment is a mathematical refinement designed to reduce height-scaling distortion. Both metrics serve as clinical screening indicators."
+  },
+  hi: {
+    badge: "गणितीय 3D ऊंचाई-समायोजन मानक",
+    title: "मानक बीएमआई बनाम नया ऊंचाई-समायोजित बीएमआई फॉर्मूला",
+    subtitle: "समझें कि पारंपरिक बीएमआई लंबे और नाटे लोगों के लिए आंकड़े क्यों बिगाड़ता है, और 2.5 ऊंचाई-घात फॉर्मूला 3D शरीर के आकार को कैसे सटीक बनाता है।",
+    formulaTitle: "मानक बनाम ऊंचाई-समायोजित फॉर्मूला तुलना",
+    standardFormula: "मानक बीएमआई = वजन (किग्रा) ÷ ऊंचाई² (मीटर²)",
+    newFormula: "ऊंचाई-समायोजित बीएमआई = 1.3 × वजन (किग्रा) ÷ ऊंचाई²·⁵ (मीटर²·⁵)",
+    formulaExplanation: "मानक बीएमआई वजन को ऊंचाई के वर्ग (2D) से विभाजित करता है। लेकिन मनुष्य 3-आयामी (त्रिविमीय) रूप से बढ़ते हैं। 2.5 घात फॉर्मूला ऊंचाई के भ्रम को दूर करता है।",
+    cards: [
+      {
+        title: "कम ऊंचाई वाले लोगों पर प्रभाव (< 160 सेमी)",
+        desc: "मानक बीएमआई कम ऊंचाई वाले लोगों के शरीर की वसा को कम आंकता है। 2.5 घात फॉर्मूला थोड़ा अधिक और अधिक यथार्थवादी स्कोर प्रदान करता है।"
+      },
+      {
+        title: "औसत ऊंचाई संरेखण (169 – 175 सेमी)",
+        desc: "170 सेमी (5'7\") की औसत ऊंचाई वाले वयस्कों के लिए, मानक बीएमआई और 3D ऊंचाई-समायोजित बीएमआई लगभग समान परिणाम देते हैं।"
+      },
+      {
+        title: "लंबे लोगों के लिए सुधार (> 183 सेमी)",
+        desc: "मानक बीएमआई लंबे लोगों को अक्सर गलती से 'अधिक वजन' श्रेणी में डाल देता है। 3D समायोजित फॉर्मूला फ्रेम लंबाई के हिसाब से स्कोर को 1 से 2 अंक कम करता है।"
+      }
+    ],
+    tableTitle: "ऊंचाई-समायोजित बीएमआई तुलना तालिका",
+    tableHeaders: ["ऊंचाई वर्ग", "उदाहरण व्यक्ति", "मानक बीएमआई (m²)", "ऊंचाई-समायोजित बीएमआई (m²·⁵)", "स्कोर में अंतर"],
+    tableRows: [
+      { height: "कम ऊंचाई (152 सेमी)", example: "60 किग्रा", std: "26.0 (अधिक वजन)", newBmi: "26.9 (समायोजित)", diff: "+ 0.9 अंक" },
+      { height: "औसत ऊंचाई (170 सेमी)", example: "70 किग्रा", std: "24.2 (सामान्य)", newBmi: "24.2 (सामान्य)", diff: "0.0 (समान)" },
+      { height: "लंबे (190 सेमी)", example: "90 किग्रा", std: "24.9 (सामान्य)", newBmi: "23.4 (सामान्य)", diff: "- 1.5 अंक" },
+      { height: "अत्यधिक लंबे (200 सेमी)", example: "105 किग्रा", std: "26.3 (अधिक वजन)", newBmi: "24.3 (सामान्य)", diff: "- 2.0 अंक" }
+    ],
+    disclaimer: "गणितीय टिप्पणी: 2.5 घात ऊंचाई समायोजन एक गणितीय सुधार है जो ऊंचाई के कारण होने वाली त्रुटियों को कम करता है।"
+  },
+  es: {
+    badge: "Estándar Matemático 3D de Corrección por Altura",
+    title: "IMC Estándar vs. Nuevo IMC Ajustado por Altura",
+    subtitle: "Por qué el IMC tradicional distorsiona las lecturas para personas altas y bajas, y cómo la fórmula de exponente 2.5 corrige el volumen 3D.",
+    formulaTitle: "Fórmulas Matemáticas: IMC Estándar vs. Ajustado",
+    standardFormula: "IMC Estándar = peso (kg) ÷ altura² (m²)",
+    newFormula: "IMC Ajustado = 1.3 × peso (kg) ÷ altura²·⁵ (m²·⁵)",
+    formulaExplanation: "El IMC estándar escala en 2D (altura²). El factor de escala de exponente 2.5 compensa la distorsión volumétrica 3D.",
+    cards: [
+      { title: "Baja Estatura (< 160 cm)", desc: "El IMC estándar subestima la grasa en personas bajas. La fórmula 2.5 proporciona una puntuación más realista." },
+      { title: "Estatura Promedio (169 – 175 cm)", desc: "Para adultos cerca de 170 cm, el IMC estándar y el IMC 3D ajustado entregan números casi idénticos." },
+      { title: "Estatura Alta (> 183 cm)", desc: "El IMC estándar sobreestima el peso en adultos altos. La fórmula ajustada reduce el puntaje entre 1 y 2 puntos." }
+    ],
+    tableTitle: "Matriz Comparativa de IMC Ajustado por Altura",
+    tableHeaders: ["Grupo de Altura", "Ejemplo", "IMC Estándar (m²)", "IMC Ajustado 3D (m²·⁵)", "Diferencia"],
+    tableRows: [
+      { height: "Bajo (152 cm)", example: "60 kg", std: "26.0 (Sobrepeso)", newBmi: "26.9 (Ajustado)", diff: "+ 0.9 pts" },
+      { height: "Promedio (170 cm)", example: "70 kg", std: "24.2 (Normal)", newBmi: "24.2 (Normal)", diff: "0.0 (Idéntico)" },
+      { height: "Alto (190 cm)", example: "90 kg", std: "24.9 (Normal)", newBmi: "23.4 (Normal)", diff: "- 1.5 pts" },
+      { height: "Muy Alto (200 cm)", example: "105 kg", std: "26.3 (Sobrepeso)", newBmi: "24.3 (Normal)", diff: "- 2.0 pts" }
+    ],
+    disclaimer: "Nota Matemática: El ajuste por exponente 2.5 es un refinamiento matemático para reducir distorsiones de escala."
+  },
+  fr: {
+    badge: "Norme Mathématique 3D d'Ajustement à la Taille",
+    title: "IMC Standard vs Nouvel IMC Ajusté à la Taille",
+    subtitle: "Pourquoi l'IMC traditionnel fausse les résultats pour les personnes grandes et petites, et comment l'exposant 2.5 corrige le volume 3D.",
+    formulaTitle: "Formules Mathématiques : IMC Standard vs Ajusté",
+    standardFormula: "IMC Standard = poids (kg) ÷ taille² (m²)",
+    newFormula: "IMC Ajusté = 1.3 × poids (kg) ÷ taille²·⁵ (m²·⁵)",
+    formulaExplanation: "L'IMC standard divise le poids par la taille au carré (2D). L'exposant 2.5 compense la distorsion de taille.",
+    cards: [
+      { title: "Petite Taille (< 160 cm)", desc: "L'IMC standard sous-estime la graisse chez les personnes petites. La formule 2.5 offre un résultat plus réaliste." },
+      { title: "Taille Moyenne (169 – 175 cm)", desc: "Pour les adultes proches de 170 cm, l'IMC standard et l'IMC 3D ajusté donnent des chiffres identiques." },
+      { title: "Grande Taille (> 183 cm)", desc: "L'IMC standard surévalue la masse chez les personnes grandes. La formule ajustée réduit le score de 1 à 2 points." }
+    ],
+    tableTitle: "Matrice Comparative IMC Ajusté à la Taille",
+    tableHeaders: ["Groupe de Taille", "Exemple", "IMC Standard (m²)", "IMC Ajusté 3D (m²·⁵)", "Différence"],
+    tableRows: [
+      { height: "Petit (152 cm)", example: "60 kg", std: "26.0 (Surpoids)", newBmi: "26.9 (Ajusté)", diff: "+ 0.9 pts" },
+      { height: "Moyen (170 cm)", example: "70 kg", std: "24.2 (Normal)", newBmi: "24.2 (Normal)", diff: "0.0 (Identique)" },
+      { height: "Grand (190 cm)", example: "90 kg", std: "24.9 (Normal)", newBmi: "23.4 (Normal)", diff: "- 1.5 pts" },
+      { height: "Très Grand (200 cm)", example: "105 kg", std: "26.3 (Surpoids)", newBmi: "24.3 (Normal)", diff: "- 2.0 pts" }
+    ],
+    disclaimer: "Note Mathématique : L'ajustement à l'exposant 2.5 est un raffinement mathématique pour réduire les distorsions."
+  },
+  de: {
+    badge: "Mathematischer 3D-Höhenkorrektur-Standard",
+    title: "Standard-BMI vs. Neuer Höhenbereinigter BMI",
+    subtitle: "Warum der traditionelle BMI Werte für große und kleine Menschen verzerrt und wie der 2,5-Exponent 3D-Volumen korrigiert.",
+    formulaTitle: "Mathematische Formeln: Standard vs. Bereinigt",
+    standardFormula: "Standard-BMI = Gewicht (kg) ÷ Höhe² (m²)",
+    newFormula: "Höhen-BMI = 1.3 × Gewicht (kg) ÷ Höhe²·⁵ (m²·⁵)",
+    formulaExplanation: "Der 2,5-Exponent-Skalierungsfaktor kompensiert Höhenverzerrungen für fairere Werte.",
+    cards: [
+      { title: "Kleine Körpergröße (< 160 cm)", desc: "Der Standard-BMI unterschätzt das Fettgewebe bei kleineren Menschen. Die 2,5-Formel liefert realistischere Werte." },
+      { title: "Durchschnittliche Größe (169 – 175 cm)", desc: "Bei ca. 170 cm Körpergröße liefern Standard-BMI und 3D-Höhen-BMI nahezu identische Zahlen." },
+      { title: "Große Körpergröße (> 183 cm)", desc: "Der Standard-BMI stuft große Menschen oft fälschlicherweise als 'übergewichtig' ein. Der 3D-BMI korrigiert den Wert." }
+    ],
+    tableTitle: "Vergleichsmatrix: Höhenbereinigter BMI",
+    tableHeaders: ["Größengruppe", "Beispiel", "Standard-BMI (m²)", "3D-Höhen-BMI (m²·⁵)", "Differenz"],
+    tableRows: [
+      { height: "Klein (152 cm)", example: "60 kg", std: "26.0 (Übergewicht)", newBmi: "26.9 (Bereinigt)", diff: "+ 0.9 Pkt" },
+      { height: "Mittel (170 cm)", example: "70 kg", std: "24.2 (Normal)", newBmi: "24.2 (Normal)", diff: "0.0 (Identisch)" },
+      { height: "Groß (190 cm)", example: "90 kg", std: "24.9 (Normal)", newBmi: "23.4 (Normal)", diff: "- 1.5 Pkt" },
+      { height: "Sehr Groß (200 cm)", example: "105 kg", std: "26.3 (Übergewicht)", newBmi: "24.3 (Normal)", diff: "- 2.0 Pkt" }
+    ],
+    disclaimer: "Mathematischer Hinweis: Die 2,5-Exponent-Höhenanpassung ist eine mathematische Verfeinerung."
+  },
+  ko: {
+    badge: "3D 수학적 신장 보정 표준",
+    title: "표준 BMI vs. 새로운 신장 보정 3D BMI",
+    subtitle: "기존 BMI가 키가 크거나 작은 사람에게 왜곡을 일으키는 이유와 2.5 지수 공식이 3D 체적을 보정하는 방법.",
+    formulaTitle: "수학 공식: 표준 vs. 신장 보정 BMI",
+    standardFormula: "표준 BMI = 체중 (kg) ÷ 키² (m²)",
+    newFormula: "신장 보정 BMI = 1.3 × 체중 (kg) ÷ 키²·⁵ (m²·⁵)",
+    formulaExplanation: "2.5 지수 공식은 3D 신체 체적을 보정하여 키 왜곡을 줄입니다.",
+    cards: [
+      { title: "단신 그룹 (< 160 cm)", desc: "표준 BMI는 단신의 체지방을 과소평가하는 경향이 있습니다. 2.5 지수 공식은 더 현실적인 점수를 제공합니다." },
+      { title: "평균 신장 (169 – 175 cm)", desc: "170 cm 근처 성인의 경우 표준 BMI와 3D 신장 보정 BMI는 거의 동일합니다." },
+      { title: "장신 그룹 (> 183 cm)", desc: "표준 BMI는 장신 성인을 과체중으로 오인하기 쉽습니다. 보정 공식은 1~2점 낮은 적정 점수를 산출합니다." }
+    ],
+    tableTitle: "신장 보정 BMI 비교 행렬",
+    tableHeaders: ["신장 그룹", "예시", "표준 BMI (m²)", "3D 신장 보정 BMI (m²·⁵)", "점수 차이"],
+    tableRows: [
+      { height: "단신 (152 cm)", example: "60 kg", std: "26.0 (과체중)", newBmi: "26.9 (보정됨)", diff: "+ 0.9점" },
+      { height: "평균 (170 cm)", example: "70 kg", std: "24.2 (정상)", newBmi: "24.2 (정상)", diff: "0.0 (동일)" },
+      { height: "장신 (190 cm)", example: "90 kg", std: "24.9 (정상)", newBmi: "23.4 (정상)", diff: "- 1.5점" },
+      { height: "최장신 (200 cm)", example: "105 kg", std: "26.3 (과체중)", newBmi: "24.3 (정상)", diff: "- 2.0점" }
+    ],
+    disclaimer: "수학적 참고 사항: 2.5 지수 신장 보정은 키 왜곡을 줄이기 위한 수학적 보정 공식입니다."
+  }
+};
+
+const t = translations[lang] || translations.en;
+---
+
+<section class="my-12 px-4 md:px-6 max-w-7xl mx-auto">
+  <div class="rounded-3xl border border-[var(--border)] bg-[var(--card)] p-6 sm:p-10 shadow-sm space-y-8">
+    
+    <!-- Header -->
+    <div class="space-y-3 max-w-3xl">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-semibold uppercase tracking-wider">
+        <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
+        {t.badge}
+      </span>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        {t.title}
+      </h2>
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+        {t.subtitle}
+      </p>
+    </div>
+
+    <!-- Math Formula Box -->
+    <div class="p-6 rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 space-y-4">
+      <div class="text-xs font-display font-semibold uppercase tracking-widest text-[var(--accent)]">{t.formulaTitle}</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono font-bold text-sm sm:text-base">
+        <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)]">
+          {t.standardFormula}
+        </div>
+        <div class="p-3.5 rounded-xl border border-[var(--accent)]/40 bg-[var(--accent)]/10 text-[var(--accent)]">
+          {t.newFormula}
+        </div>
+      </div>
+      <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
+        {t.formulaExplanation}
+      </p>
+    </div>
+
+    <!-- 3 Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {t.cards.map((card: any) => (
+        <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--muted)]/20 space-y-3 transition-all duration-200 hover:border-[var(--accent)]/40">
+          <h3 class="text-base font-display font-bold text-[var(--foreground)]">{card.title}</h3>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{card.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="space-y-4">
+      <h3 class="text-base sm:text-xl font-display font-bold uppercase tracking-tight leading-snug break-words text-[var(--foreground)]">
+        {t.tableTitle}
+      </h3>
+      <!-- Desktop Table (hidden on mobile) -->
+      <div class="hidden md:block overflow-x-auto rounded-2xl border border-[var(--border)] bg-[var(--card)]">
+        <table class="w-full text-left text-xs sm:text-sm border-collapse">
+          <thead class="bg-[var(--muted)]/60 text-[var(--foreground)] font-display font-bold uppercase tracking-wider border-b border-[var(--border)]">
+            <tr>
+              {t.tableHeaders.map((head: string) => (
+                <th class="p-3.5 sm:p-4">{head}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-medium text-[var(--muted-foreground)]">
+            {t.tableRows.map((row: any) => (
+              <tr class="hover:bg-[var(--muted)]/20 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-[var(--foreground)]">{row.height}</td>
+                <td class="p-3.5 sm:p-4 font-mono">{row.example}</td>
+                <td class="p-3.5 sm:p-4">{row.std}</td>
+                <td class="p-3.5 sm:p-4 font-bold text-[var(--accent)]">{row.newBmi}</td>
+                <td class="p-3.5 sm:p-4 font-mono font-semibold text-emerald-600 dark:text-emerald-400">{row.diff}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile Stacked Card Matrix (No side scroller on mobile) -->
+      <div class="md:hidden space-y-3">
+        {t.tableRows.map((row: any) => (
+          <div class="p-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2 text-xs font-medium">
+            <div class="flex items-center justify-between border-b border-[var(--border)]/40 pb-2">
+              <span class="font-bold text-[var(--foreground)] font-display uppercase">{row.height}</span>
+              <span class="font-mono text-[var(--muted-foreground)]">{row.example}</span>
+            </div>
+            <div class="space-y-1.5 pt-0.5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-[var(--muted-foreground)]">Standard BMI:</span>
+                <span class="font-semibold text-[var(--foreground)]">{row.std}</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-[var(--muted-foreground)]">3D Adjusted BMI:</span>
+                <span class="font-bold text-[var(--accent)]">{row.newBmi}</span>
+              </div>
+              <div class="flex items-center justify-between text-xs pt-1 border-t border-[var(--border)]/30">
+                <span class="text-[var(--muted-foreground)]">Difference:</span>
+                <span class="font-mono font-semibold text-emerald-600 dark:text-emerald-400">{row.diff}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="text-xs text-[var(--muted-foreground)] italic font-medium pt-2 border-t border-[var(--border)]/40">
+      {t.disclaimer}
+    </p>
+
+  </div>
+</section>
