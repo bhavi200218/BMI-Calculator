@@ -4,183 +4,118 @@ const lang = currentLocale || 'en';
 
 const content: Record<string, any> = {
   en: {
-    eyebrow: "Clinical Guide",
+    eyebrow: "Clinical Health Guide",
+    title: "Understanding Real BMI: Official Body Mass Index & Clinical Accuracy",
     sections: [
       {
-        title: "BMI Calculator for Men & Women: Is There a Difference?",
-        text: "While the standard formula for calculating Body Mass Index (BMI) is identical for both men and women, body fat distribution and muscular density differ significantly between genders. Women naturally carry a higher percentage of essential body fat than men. Our BMI Calculator evaluates your results alongside gender-specific body fat estimations and WHO reference tables."
+        title: "What is 'Real BMI' and How Does it Differ From Weight Scales?",
+        text: "The term 'Real BMI' refers to assessing your Body Mass Index (BMI) alongside critical physiological metrics — including Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and waist circumference — rather than relying on weight alone. Traditional bathroom scales measure total mass but fail to distinguish between muscle, water, and visceral fat. Our Real BMI Calculator integrates official WHO and CDC guidelines to give you a complete, clinical-grade overview."
       },
       {
-        title: "BMI Calculation Formula: Metric (kg/cm) vs. Imperial (lbs/in)",
-        text: "Our online BMI Calculator supports both metric and imperial measurements. In metric, the formula is: <code>BMI = weight (kg) / [height (m)]²</code>. In imperial units, the formula is: <code>BMI = [weight (lb) / height (in)²] x 703</code>. Inputting accurate measurements guarantees precise clinical classifications."
+        title: "Is BMI Accurate for Everyone? The Athlete & Muscle Paradox",
+        text: "While standard Body Mass Index formulas (weight/height²) apply universally, muscle density differs significantly from adipose tissue. Muscular athletes or weightlifters may register as 'Overweight' or 'Obese' despite having low body fat percentage, because dense muscle weighs more than fat volume. Real BMI highlights these nuances and recommends pairing BMI with waist-to-height ratio for active individuals."
       },
       {
-        title: "Why Use the Real BMI Calculator?",
-        text: "The Real BMI Calculator provides highly precise measurements by utilizing the latest clinical protocols. Unlike generic tools, our system is optimized for accuracy across global standards, ensuring you get reliable health data instantly."
+        title: "Why WHO Recommends Lower BMI Thresholds for Asian & South Asian Populations",
+        text: "World Health Organization (WHO) clinical consensus recommends lower BMI cutoff thresholds for Asian and South Asian populations: 23.0 kg/m² for overweight (vs. 25.0 kg/m² standard) due to higher risk of visceral fat accumulation at lower body mass indexes. Real BMI automatically accounts for regional risk cutoffs."
       },
       {
-        title: "Accuracy of the BMI Calculator with Lbs and Inches",
-        text: "In the United States, the standard formula for BMI calculation uses pounds and inches: (weight (lb) / [height (in)]² ) x 703. Our professional-grade calculator automates this process, providing results that align with CDC guidelines."
+        title: "BMI Calculation Formula: Metric (kg/m²) vs. Imperial (lbs/in²)",
+        text: "Our online Real BMI Calculator supports both metric and imperial measurements. In metric, the formula is: <code>BMI = weight (kg) / [height (m)]²</code>. In imperial units, the formula is: <code>BMI = [weight (lb) / height (in)²] x 703</code>. Inputting accurate measurements guarantees precise clinical classifications."
       },
       {
-        title: "The Real Limitations of BMI: What to Watch Out For",
-        text: "It is essential to understand that BMI is a screening tool rather than a comprehensive diagnostic. Elite athletes may have a higher BMI due to muscle density despite low body fat percentage."
-      },
-      {
-        title: "How to Improve Your BMI Score Safely",
-        text: "Transitioning to a healthier BMI score requires consistent habits. Focus on balanced nutrition rich in whole foods and complex carbohydrates, combined with regular aerobic activity."
-      },
-      {
-        title: "Getting the Most Accurate Measurements",
-        text: "For accurate results, ensure precise inputs. Stand barefoot with your back against a wall when measuring height, and weigh yourself at a consistent time each day."
+        title: "How to Use Real BMI for Safe, Sustainable Weight Loss",
+        text: "Transitioning to a healthier Real BMI score requires consistent habits. Focus on a moderate calorie deficit (300 to 500 kcal below TDEE), balanced nutrition rich in whole foods, and regular resistance or aerobic exercise."
       }
     ]
   },
   hi: {
     eyebrow: "नैदानिक गाइड",
+    title: "Real BMI को समझें: आधिकारिक बॉडी मास इंडेक्स और सटीकता",
     sections: [
       {
-        title: "Lbs और Inches के साथ बीएमआई की गणना",
-        text: "संयुक्त राज्य अमेरिका में, बीएमआई गणना के लिए मानक फॉर्मूला पाउंड और इंच का उपयोग करता है। हमारा पेशेवर-ग्रेड कैलकुलेटर इस प्रक्रिया को स्वचालित करता है, जो वयस्क वजन श्रेणियों के लिए सीडीसी दिशानिर्देशों के साथ संरेखित त्वरित परिणाम प्रदान करता है।"
+        title: "'Real BMI' क्या है और यह साधारण तराजू से कैसे अलग है?",
+        title: "'Real BMI' क्या है?",
+        text: "'Real BMI' का तात्पर्य केवल वजन पर निर्भर रहने के बजाय बीएमआर (BMR), टीडीईई (TDEE) और कमर की परिधि के साथ बॉडी मास इंडेक्स का मूल्यांकन करना है। डब्ल्यूएचओ (WHO) और सीडीसी (CDC) मानकों के आधार पर हमारा कैलकुलेटर आपको सटीक नैदानिक परिणाम देता है।"
       },
       {
-        title: "बीएमआई की सीमाएं: किन बातों का ध्यान रखें",
-        text: "यह समझना आवश्यक है कि बीएमआई एक नैदानिक उपकरण नहीं है। एक व्यक्ति का बीएमआई 'उच्च' हो सकता है लेकिन शरीर में वसा का प्रतिशत बहुत कम हो सकता है, जैसे कि एथलीटों के मामले में। क्योंकि मांसपेशियाँ वसा से अधिक घनी होती हैं, इसलिए बीएमआई मांसपेशियों वाले व्यक्तियों में शरीर की वसा को अधिक आंक सकता है।"
+        title: "एशियाई और भारतीय आबादी के लिए कम बीएमआई सीमाएं क्यों हैं?",
+        text: "विश्व स्वास्थ्य संगठन (WHO) एशियाई आबादी के लिए 23.0 kg/m² को ओवरवेट सीमा मानता है क्योंकि कम वजन पर भी पेट के आंतरिक अंगों के आसपास वसा का जोखिम अधिक होता है।"
       },
       {
-        title: "संख्या से परे: कमर की परिधि और स्वास्थ्य",
-        text: "जबकि बीएमआई एक व्यापक अवलोकन प्रदान करता है, कई स्वास्थ्य विशेषज्ञ कमर की परिधि को एक माध्यमिक उपाय के रूप में देखने की सलाह देते हैं। पेट की वसा, जिसे अक्सर विसरल वसा कहा जाता है, अधिक चयापचय रूप से सक्रिय होती है और स्वास्थ्य जटिलताओं का उच्च जोखिम उठाती है।"
-      },
-      {
-        title: "अपने बीएमआई स्कोर को सुरक्षित रूप से कैसे सुधारें",
-        text: "एक स्वस्थ बीएमआई की ओर बढ़ना निरंतरता की यात्रा है, गति की नहीं। संतुलित आहार पर ध्यान दें जो संपूर्ण खाद्य पदार्थों, दुबले प्रोटीन और जटिल कार्बोहाइड्रेट से भरपूर हो। इसे प्रति सप्ताह कम से कम 150 मिनट की मध्यम तीव्रता वाली एरोबिक गतिविधि के साथ जोड़ें।"
-      }
-    ]
-  },
-  es: {
-    eyebrow: "Guía Clínica",
-    sections: [
-      {
-        title: "Cálculo del IMC con Libras y Pulgadas",
-        text: "En los Estados Unidos, la fórmula estándar utiliza libras y pulgadas. Nuestro calculador automatiza este proceso, proporcionando resultados instantáneos alineados con las guías de los CDC."
-      },
-      {
-        title: "Las Limitaciones del IMC: Qué Tener en Cuenta",
-        text: "Es esencial entender que el IMC no es una herramienta de diagnóstico. Los atletas pueden tener un IMC alto debido a la masa muscular, ya que el músculo es más denso que la grasa."
-      },
-      {
-        title: "Más Allá del Número: Circunferencia de Cintura",
-        text: "La grasa abdominal, a menudo llamada grasa visceral, es más activa metabólicamente y conlleva un mayor riesgo para la salud que la grasa almacenada en otros lugares."
-      }
-    ]
-  },
-  fr: {
-    eyebrow: "Guide Clinique",
-    sections: [
-      {
-        title: "Pourquoi Utiliser le Calculateur Real BMI ?",
-        text: "Le calculateur Real BMI fournit des mesures hautement précises en utilisant les derniers protocoles cliniques. Notre système est optimisé pour garantir des données de santé fiables instantanément."
-      },
-      {
-        title: "Précision du Calculateur d'IMC en Livres et Pouces",
-        text: "Dans le système impérial, la formule standard utilise les livres et les pouces. Notre calculateur automatise ce processus selon les recommandations des CDC."
-      },
-      {
-        title: "Les Limites de l'IMC : Ce Qu'il Faut Savoir",
-        text: "Il est essentiel de comprendre que l'IMC est un outil de dépistage. Les athlètes peuvent avoir un IMC plus élevé en raison de leur densité musculaire."
-      }
-    ]
-  },
-  de: {
-    eyebrow: "Klinischer Leitfaden",
-    sections: [
-      {
-        title: "Warum den Real BMI-Rechner Nutzen?",
-        text: "Der Real BMI-Rechner bietet hochpräzise Messungen nach aktuellen klinischen Standards für sofortige und verlässliche Gesundheitsdaten."
-      },
-      {
-        title: "Genauigkeit mit Pfund und Zoll",
-        text: "Im US-System basiert die Berechnung auf Pfund und Zoll. Unser professioneller Rechner führt diesen Prozess automatisch aus."
-      },
-      {
-        title: "Grenzen des BMI",
-        text: "Der BMI ist ein Erstbeurteilungsinstrument. Bei Leistungssportlern kann Muskelmasse zu einem höheren BMI-Wert führen."
+        title: "बीएमआई फॉर्मूला: मीट्रिक (kg/m²) बनाम इंपीरियल (lbs/in²)",
+        text: "मीट्रिक पद्धति में: <code>BMI = वजन (kg) / [ऊंचाई (m)]²</code>। इंपीरियल पद्धति में: <code>BMI = [वजन (lb) / ऊंचाई (in)²] x 703</code>।"
       }
     ]
   },
   ko: {
     eyebrow: "임상 가이드",
+    title: "Real BMI 이해하기: 공식 체질량지수 및 임상 정확도",
     sections: [
       {
-        title: "Real BMI 계산기를 사용하는 이유",
-        text: "Real BMI 계산기는 최신 임상 프로토콜을 활용하여 정밀한 측정을 제공하며 글로벌 표준에 맞춰 신뢰할 수 있는 데이터를 제공합니다."
+        title: "'Real BMI'란 무엇이며 일반 체중계와 어떻게 다른가요?",
+        text: "'Real BMI'는 단순 체중뿐만 아니라 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레를 종합하여 체성분을 정확히 평가하는 지표입니다. WHO 및 CDC 지침 기준 적용."
       },
       {
-        title: "파운드 및 인치 측정의 정확도",
-        text: "미국 표준 공식인 파운드와 인치 계산도 저희 계산기가 자동으로 처리하여 CDC 지침에 부합하는 결과를 산출합니다."
-      },
+        title: "아시아인을 위한 WHO 임상 진단 기준",
+        text: "세계보건기구(WHO) 아시아-태평양 지침에 따르면 아시아인은 낮은 체중에서도 내장지방 위험이 높아 과체중 기준을 23.0 kg/m²로 더 낮게 적용합니다."
+      }
+    ]
+  },
+  es: {
+    eyebrow: "Guía Clínica",
+    title: "Comprender el Real BMI: Índice de Masa Corporal y Precisión",
+    sections: [
       {
-        title: "BMI의 한계점",
-        text: "BMI는 단순 선별 도구입니다. 근육량이 많은 운동선수의 경우 체지방률이 낮아도 BMI 점수가 높게 나타날 수 있습니다."
+        title: "¿Qué es el 'Real BMI'?",
+        text: "El 'Real BMI' evalúa el índice de masa corporal junto con métricas como el Metabolismo Basal (BMR), el Gasto Energético Diario (TDEE) y la circunferencia de cintura."
+      }
+    ]
+  },
+  fr: {
+    eyebrow: "Guide Clinique",
+    title: "Comprendre le Real BMI : Indice de Masse Corporelle et Précision",
+    sections: [
+      {
+        title: "Qu'est-ce que le 'Real BMI' ?",
+        text: "Le terme 'Real BMI' évalue l'IMC en association avec le métabolisme de base (BMR), la dépense énergétique quotidienne (TDEE) et le tour de taille."
+      }
+    ]
+  },
+  de: {
+    eyebrow: "Klinische Leitlinien",
+    title: "Real BMI verstehen: Body-Mass-Index & Klinische Genauigkeit",
+    sections: [
+      {
+        title: "Was ist 'Real BMI'?",
+        text: "'Real BMI' bewertet den Body-Mass-Index zusammen mit Werten wie Grundumsatz (BMR), Gesamtenergieumsatz (TDEE) und Taifenumfang."
       }
     ]
   }
 };
 
 const t = content[lang] || content.en;
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  "headline": t.sections[0].title,
-  "description": t.sections[0].text,
-  "aspect": ["Overview", "Diagnosis", "Prevention"],
-  "medicalAudience": "Patient",
-  "citation": [
-    "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
-    "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
-    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/"
-  ],
-  "author": {
-    "@type": "Organization",
-    "name": "Real BMI Clinical Editorial Board",
-    "url": "https://realbmicalculator.com/en/editorial-policy"
-  },
-  "reviewedBy": {
-    "@type": "Organization",
-    "name": "Real BMI Board-Certified Health Specialists",
-    "url": "https://realbmicalculator.com/en/editorial-policy"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Real BMI",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://realbmicalculator.com/icon.svg"
-    }
-  },
-  "datePublished": "2026-01-01",
-  "dateModified": new Date().toISOString().split('T')[0]
-};
 ---
 
-<script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-
-<section class="max-w-7xl mx-auto py-6 sm:py-8 px-4 sm:px-6">
-  <!-- Single Section Header without line border -->
-  <div class="mb-6 flex items-center gap-2">
-    <span class="text-xs font-display font-bold uppercase tracking-[0.25em] text-[var(--accent)]">{t.eyebrow}</span>
-    <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+<section class="my-14 p-8 sm:p-10 rounded-3xl border border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-card)] space-y-8">
+  <div class="space-y-3">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
+      <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
+      {t.eyebrow}
+    </div>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-tight">
+      {t.title}
+    </h2>
   </div>
 
-  <!-- Articles List with Compact Spacing -->
-  <div class="space-y-6 sm:space-y-8">
-    {t.sections.map((section: any) => (
-      <div class="space-y-2 group">
-        <h2 class="text-lg sm:text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
-          {section.title}
-        </h2>
-        <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium" set:html={section.text} />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {t.sections.map((sec: any) => (
+      <div class="space-y-2.5">
+        <h3 class="text-lg sm:text-xl font-display font-bold uppercase text-[var(--foreground)] tracking-tight">
+          {sec.title}
+        </h3>
+        <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed" set:html={sec.text}>
+        </p>
       </div>
     ))}
   </div>

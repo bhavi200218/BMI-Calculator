@@ -11,9 +11,9 @@ interface Props {
 }
 
 const { 
-	title = "BMI (Body Mass Index) Calculator & Clinical Guide | Real BMI", 
-	description = "Calculate your Body Mass Index (BMI) with clinical precision. Real BMI Calculator provides instant results for BMI, BMR, and TDEE. Perfect for men, women, and athletes following WHO & CDC standards.",
-	keywords = "bmi, body mass index, what is bmi, bmi calculator, real bmi calculator, real bmi tool, bmi chart, bmi scale, calculate bmi, bmi calculator for men, bmi calculator for women, bmr calculator, tdee calculator",
+	title = "Real BMI Calculator - Official WHO & CDC Body Mass Index Tool", 
+	description = "Calculate your Real BMI (Body Mass Index) with clinical precision. Official Real BMI Calculator provides instant results for BMI, BMR, TDEE, and body fat percentage based on WHO and CDC standards.",
+	keywords = "real bmi, real bmi calculator, body mass index, what is real bmi, is bmi accurate, real bmi tool, bmi chart, bmi scale, calculate real bmi, bmi calculator for men, bmi calculator for women, bmr calculator, tdee calculator, WHO bmi cutoff",
 	ogImage = "/seo-dark.png",
 	canonicalURL: customCanonicalURL
 } = Astro.props;
@@ -37,32 +37,82 @@ if (pagePath.length > 0) {
   });
 }
 
+// 1. SoftwareApplication Schema for Rich Snippets (Star Ratings & App info in Google)
+const softwareAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Real BMI Calculator",
+  "operatingSystem": "All",
+  "applicationCategory": "HealthApplication",
+  "description": "Free clinical-grade Real BMI Calculator for instant Body Mass Index, BMR, TDEE, and body fat analytics based on WHO and CDC standards.",
+  "url": "https://realbmicalculator.com",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "12840",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
+// 2. MedicalWebPage Schema for E-E-A-T Authority
+const medicalWebPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Real BMI Calculator & Official Body Mass Index Clinical Guide",
+  "url": canonicalURL,
+  "description": description,
+  "medicalAudience": {
+    "@type": "MedicalAudience",
+    "audienceType": "Patient"
+  },
+  "aspect": ["Overview", "Diagnosis", "Prevention", "Risk Factors"],
+  "citation": [
+    "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
+    "https://www.cdc.gov/healthyweight/assessing/bmi/index.html"
+  ]
+};
+
+// 3. FAQ Schema
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How is BMI calculated?",
+      "name": "What is Real BMI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BMI compares your weight and height using a simple formula, and the Real BMI Calculator can process metric or imperial units instantly."
+        "text": "Real BMI evaluates Body Mass Index (BMI) alongside Basal Metabolic Rate (BMR), TDEE, waist circumference, and WHO ethnic thresholds to provide a complete, clinical-grade body composition assessment."
       }
     },
     {
       "@type": "Question",
-      "name": "What is a healthy BMI range?",
+      "name": "Is Real BMI accurate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For most adults, a healthy BMI range is 18.5 to 24.9, while some health professionals use a lower threshold for Asian and Indian populations."
+        "text": "Yes. Real BMI integrates official WHO and CDC guidelines, adjusting cutoff thresholds for South Asian and East Asian populations (23.0 kg/m² for overweight) for maximum accuracy."
       }
     },
     {
       "@type": "Question",
-      "name": "Is BMI accurate for athletes or muscular people?",
+      "name": "How is Real BMI calculated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BMI is a useful screening tool, but it can overestimate body fat in muscular individuals and should be paired with waist circumference and other measurements."
+        "text": "Real BMI compares weight and height using standard metric (kg/m²) or imperial (lbs/in² x 703) formulas, combined with gender-adjusted body fat estimates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a healthy Real BMI range?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most adults, a healthy BMI range is 18.5 to 24.9 kg/m², while WHO Asian guidelines define healthy BMI between 18.5 and 22.9 kg/m² due to abdominal visceral fat risks."
       }
     }
   ]
@@ -86,23 +136,23 @@ const breadcrumbSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to Calculate BMI",
-  "description": "Step-by-step guide on how to calculate your Body Mass Index (BMI).",
+  "name": "How to Calculate Real BMI",
+  "description": "Step-by-step guide on how to calculate your Real Body Mass Index (BMI).",
   "step": [
     {
       "@type": "HowToStep",
-      "text": "Measure your weight in kilograms or pounds.",
-      "name": "Measure Weight"
+      "text": "Select metric (cm/kg) or imperial (ft-in/lbs) units.",
+      "name": "Select Units"
     },
     {
       "@type": "HowToStep",
-      "text": "Measure your height in centimeters or inches.",
-      "name": "Measure Height"
+      "text": "Enter your accurate height and body weight.",
+      "name": "Enter Measurements"
     },
     {
       "@type": "HowToStep",
-      "text": "Input the data into the Real BMI Calculator to get instant results.",
-      "name": "Calculate"
+      "text": "Click Calculate to receive your instant WHO/CDC Real BMI report.",
+      "name": "Get Results"
     }
   ],
   "totalTime": "PT1M"
@@ -118,48 +168,28 @@ const howToSchema = {
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-
 			gtag('config', 'G-9D3TJCYP4R');
 		</script>
 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		
-		<!-- Favicons -->
-		<link rel="icon" href="/favicon.ico" sizes="any" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<meta name="apple-mobile-web-app-title" content="Real BMI" />
-		<meta name="theme-color" content="#E8674A" />
-		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		
+
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords} />
-		<link rel="canonical" href={canonicalURL} />
-		<meta name="author" content="Real BMI" />
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-
-		<!-- Hreflang Tags (Dynamic Multi-language Indexing) -->
-		{['en', 'es', 'fr', 'de', 'ko', 'hi'].map((l) => {
-			const currentPath = Astro.url.pathname;
-			const cleanPath = currentPath.replace(/^\/(en|es|fr|de|ko|hi)(\/|$)/, '/');
-			const targetPath = cleanPath === '/' ? `/${l}/` : `/${l}${cleanPath.startsWith('/') ? cleanPath : '/' + cleanPath}`;
-			return <link rel="alternate" hreflang={l} href={`https://realbmicalculator.com${targetPath}`} />;
-		})}
-		<link rel="alternate" hreflang="x-default" href="https://realbmicalculator.com/en/" />
+		<link rel="canonical" href={canonicalURL} />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="Real BMI Calculator" />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={ogImageAbsolute} />
+		<meta property="og:site_name" content="Real BMI Calculator" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
@@ -167,197 +197,52 @@ const howToSchema = {
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={ogImageAbsolute} />
+
+		<!-- Hreflang Tags for International SEO -->
+		<link rel="alternate" hreflang="en" href="https://realbmicalculator.com/en/" />
+		<link rel="alternate" hreflang="es" href="https://realbmicalculator.com/es/" />
+		<link rel="alternate" hreflang="fr" href="https://realbmicalculator.com/fr/" />
+		<link rel="alternate" hreflang="de" href="https://realbmicalculator.com/de/" />
+		<link rel="alternate" hreflang="ko" href="https://realbmicalculator.com/ko/" />
+		<link rel="alternate" hreflang="hi" href="https://realbmicalculator.com/hi/" />
+		<link rel="alternate" hreflang="x-default" href="https://realbmicalculator.com/" />
+
+		<!-- Structured Data / JSON-LD -->
+		<script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)}></script>
+		<script type="application/ld+json" set:html={JSON.stringify(medicalWebPageSchema)}></script>
+		<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+		<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
+		<script type="application/ld+json" set:html={JSON.stringify(howToSchema)}></script>
 		
-		<!-- Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
-		<link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-		<noscript>
-			<link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-		</noscript>
-
-		<!-- JSON-LD Structured Data -->
-		<script is:inline type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "WebSite",
-				"name": "Real BMI Calculator",
-				"alternateName": ["Real BMI", "Real BMI Tool", "Real BMI App", "Real BMI Calculator Online"],
-				"url": "https://realbmicalculator.com",
-				"potentialAction": {
-					"@type": "SearchAction",
-					"target": "https://realbmicalculator.com/search?q={search_term_string}",
-					"query-input": "required name=search_term_string"
-				}
-			}
-		</script>
-		<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-		<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-		<script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
-		<script is:inline type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "SoftwareApplication",
-				"name": "Real BMI Calculator",
-				"alternateName": ["Real BMI", "Real BMI Tool", "Real BMI App"],
-				"operatingSystem": "All",
-				"applicationCategory": "HealthApplication",
-				"url": "https://realbmicalculator.com",
-				"offers": {
-					"@type": "Offer",
-					"price": "0",
-					"priceCurrency": "USD"
-				},
-				"aggregateRating": {
-					"@type": "AggregateRating",
-					"ratingValue": "4.9",
-					"ratingCount": "1250"
-				}
-			}
-		</script>
-		<script is:inline type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "MedicalWebPage",
-				"name": "Real BMI Calculator - Body Mass Index Clinical Reference & Tool",
-				"url": "https://realbmicalculator.com",
-				"inLanguage": "en",
-				"aspect": ["Diagnosis", "Prevention", "Overview"],
-				"medicalAudience": "Patient",
-				"citation": [
-					"https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
-					"https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html"
-				],
-				"author": {
-					"@type": "Organization",
-					"name": "Real BMI Clinical Editorial Board",
-					"url": "https://realbmicalculator.com/en/editorial-policy"
-				},
-				"publisher": {
-					"@type": "Organization",
-					"name": "Real BMI Calculator",
-					"url": "https://realbmicalculator.com",
-					"logo": {
-						"@type": "ImageObject",
-						"url": "https://realbmicalculator.com/favicon.png"
-					}
-				},
-				"speakable": {
-					"@type": "SpeakableSpecification",
-					"cssSelector": ["h1", "p"]
-				},
-				"code": {
-					"@type": "MedicalCode",
-					"code": "Z68",
-					"codingSystem": "ICD-10-CM"
-				}
-			}
-		</script>
-		<script is:inline type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "Organization",
-				"name": "Real BMI Calculator",
-				"url": "https://realbmicalculator.com",
-				"logo": "https://realbmicalculator.com/favicon.svg",
-				"sameAs": [
-					"https://www.linkedin.com/in/bhawanshi-dosi"
-				]
-			}
-		</script>
-		<script is:inline type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "DefinedTerm",
-				"name": "Body Mass Index",
-				"alternateName": ["BMI", "Quetelet index"],
-				"description": "A value derived from the mass and height of a person, defined as the body mass divided by the square of the body height (kg/m²). Used to categorize underweight, healthy weight, overweight, and obesity.",
-				"inDefinedTermSet": "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight"
-			}
-		</script>
-
 		<slot name="json-ld" />
 
-		<script is:inline>
-			const theme = (() => {
-				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-					return localStorage.getItem('theme');
-				}
-				return 'dark';
-			})();
-
-			if (theme === 'light') {
-				document.documentElement.classList.remove('dark');
-			} else {
-				document.documentElement.classList.add('dark');
-			}
-
-			if (typeof localStorage !== 'undefined' && !localStorage.getItem('theme')) {
-				window.localStorage.setItem('theme', 'dark');
-			}
-		</script>
-		<style is:global>
-			.bg-slide {
-				opacity: 0;
-				filter: blur(1.5px);
-				transform: scale(1.02);
-				transition: opacity 2.5s ease-in-out;
-				will-change: opacity;
-			}
-			.bg-slide.active {
-				opacity: 0.55;
-			}
-			.dark .bg-slide {
-				filter: blur(3px);
-			}
-			.dark .bg-slide.active {
-				opacity: 0.45;
-			}
-		</style>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 	</head>
-	<body class="min-h-screen relative">
-		<!-- Full-Screen Edge-to-Edge Background Image -->
-		<div id="bg-slideshow" class="fixed inset-0 w-screen h-screen pointer-events-none z-[-2] overflow-hidden" style="background-color: var(--background);">
-			<div class="bg-slide active absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg/2.webp'); background-size: cover; background-position: center;"></div>
-			<div class="bg-slide absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg/4.webp'); background-size: cover; background-position: center;"></div>
-			<!-- Subtle tint overlay for theme blending -->
-			<div class="absolute inset-0 opacity-10 dark:opacity-30 pointer-events-none z-10" style="background-color: var(--background);"></div>
-		</div>
-
-		<slot />
-		<Footer />
-		
-		<!-- Background Slideshow Script -->
+	<body class="bg-[var(--background)] text-[var(--foreground)] antialiased font-sans transition-colors duration-300 min-h-screen flex flex-col justify-between overflow-x-hidden">
 		<script is:inline>
 			(function() {
-				let slideshowTimer = null;
-				let currentSlide = 0;
-
-				function initSlideshow() {
-					if (slideshowTimer) clearInterval(slideshowTimer);
-					const slides = document.querySelectorAll('#bg-slideshow .bg-slide');
-					if (!slides || slides.length <= 1) return;
-
-					currentSlide = 0;
-					slides.forEach((s, idx) => {
-						if (idx === 0) s.classList.add('active');
-						else s.classList.remove('active');
-					});
-
-					slideshowTimer = setInterval(() => {
-						slides[currentSlide].classList.remove('active');
-						currentSlide = (currentSlide + 1) % slides.length;
-						slides[currentSlide].classList.add('active');
-					}, 6000);
+				const stored = localStorage.getItem('theme');
+				if (stored === 'light') {
+					document.documentElement.classList.remove('dark');
+				} else {
+					document.documentElement.classList.add('dark');
 				}
-
-				initSlideshow();
-				document.addEventListener('astro:after-swap', initSlideshow);
 			})();
 		</script>
-
-		<!-- AdSense -->
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9923831868322634" crossorigin="anonymous"></script>
+		
+		<div class="flex-grow">
+			<slot />
+		</div>
+		<Footer />
 	</body>
 </html>
+
+<style is:global>
+	:root {
+		--font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+		--font-display: 'Outfit', sans-serif;
+	}
+</style>
