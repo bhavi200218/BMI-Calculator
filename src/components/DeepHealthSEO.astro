@@ -5,8 +5,12 @@ const lang = currentLocale || 'en';
 const content: Record<string, any> = {
   en: {
     eyebrow: "Clinical Health Guide",
-    title: "Understanding Real BMI: Official Body Mass Index & Clinical Accuracy",
+    title: "Body Mass Index (BMI) & Long-Term Health Risks: Official Guidance",
     sections: [
+      {
+        title: "Body Mass Index (BMI) & Cancer Risk: What Clinical Studies Show",
+        text: "According to published clinical guidelines by the American Cancer Society (ACS) and World Health Organization (WHO), maintaining a healthy Body Mass Index (BMI between 18.5 and 24.9 kg/m²) significantly lowers lifetime risk for metabolic disorders, cardiovascular disease, and at least 13 types of cancer. Elevated body weight, particularly abdominal visceral adiposity, alters hormone balance (such as insulin and estrogen) and promotes chronic inflammation. Real BMI provides immediate screening feedback aligned with these medical guidelines."
+      },
       {
         title: "What is 'Real BMI' and How Does it Differ From Weight Scales?",
         text: "The term 'Real BMI' refers to assessing your Body Mass Index (BMI) alongside critical physiological metrics — including Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and waist circumference — rather than relying on weight alone. Traditional bathroom scales measure total mass but fail to distinguish between muscle, water, and visceral fat. Our Real BMI Calculator integrates official WHO and CDC guidelines to give you a complete, clinical-grade overview."
@@ -31,8 +35,12 @@ const content: Record<string, any> = {
   },
   hi: {
     eyebrow: "नैदानिक गाइड",
-    title: "Real BMI को समझें: आधिकारिक बॉडी मास इंडेक्स और सटीकता",
+    title: "बॉडी मास इंडेक्स (BMI) और दीर्घकालिक स्वास्थ्य जोखिम: आधिकारिक गाइड",
     sections: [
+      {
+        title: "बीएमआई और कैंसर/चयापचय जोखिम: चिकित्सकीय अध्ययन क्या कहते हैं?",
+        text: "अमेरिकन कैंसर सोसाइटी (ACS) और विश्व स्वास्थ्य संगठन (WHO) के नैदानिक अध्ययनों के अनुसार, एक स्वस्थ बीएमआई (18.5 से 22.9 / 24.9 kg/m²) बनाए रखने से चयापचय विकारों और पुरानी बीमारियों का खतरा काफी कम हो जाता है।"
+      },
       {
         title: "'Real BMI' क्या है और यह साधारण तराजू से कैसे अलग है?",
         text: "'Real BMI' का तात्पर्य केवल वजन पर निर्भर रहने के बजाय बीएमआर (BMR), टीडीईई (TDEE) और कमर की परिधि के साथ बॉडी मास इंडेक्स का मूल्यांकन करना है। डब्ल्यूएचओ (WHO) और सीडीसी (CDC) मानकों के आधार पर हमारा कैलकुलेटर आपको सटीक नैदानिक परिणाम देता है।"
@@ -49,45 +57,45 @@ const content: Record<string, any> = {
   },
   ko: {
     eyebrow: "임상 가이드",
-    title: "Real BMI 이해하기: 공식 체질량지수 및 임상 정확도",
+    title: "체질량지수(BMI) 및 만성 질환 위험: 공식 가이드",
     sections: [
       {
-        title: "'Real BMI'란 무엇이며 일반 체중계와 어떻게 다른가요?",
-        text: "'Real BMI'는 단순 체중뿐만 아니라 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레를 종합하여 체성분을 정확히 평가하는 지표입니다. WHO 및 CDC 지침 기준 적용."
+        title: "BMI 및 암/대사 질환 위험: 임상 연구 결과",
+        text: "미국암학회(ACS) 및 세계보건기구(WHO) 연구에 따르면 적정 BMI(18.5~22.9/24.9 kg/m²)를 유지하는 것은 대사 질환 및 각종 성인병 위험을 크게 낮춥니다."
       },
       {
-        title: "아시아인을 위한 WHO 임상 진단 기준",
-        text: "세계보건기구(WHO) 아시아-태평양 지침에 따르면 아시아인은 낮은 체중에서도 내장지방 위험이 높아 과체중 기준을 23.0 kg/m²로 더 낮게 적용합니다."
+        title: "'Real BMI'란 무엇이며 일반 체중계와 어떻게 다른가요?",
+        text: "'Real BMI'는 단순 체중뿐만 아니라 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레를 종합하여 체성분을 정확히 평가하는 지표입니다."
       }
     ]
   },
   es: {
     eyebrow: "Guía Clínica",
-    title: "Comprender el Real BMI: Índice de Masa Corporal y Precisión",
+    title: "Índice de Masa Corporal (IMC) y Riesgos para la Salud",
     sections: [
       {
-        title: "¿Qué es el 'Real BMI'?",
-        text: "El 'Real BMI' evalúa el índice de masa corporal junto con métricas como el Metabolismo Basal (BMR), el Gasto Energético Diario (TDEE) y la circunferencia de cintura."
+        title: "IMC y Riesgo para la Salud según la ACS y OMS",
+        text: "Mantener un IMC saludable (entre 18.5 y 24.9 kg/m²) reduce significativamente los riesgos de enfermedades metabólicas y cardiovasculares."
       }
     ]
   },
   fr: {
     eyebrow: "Guide Clinique",
-    title: "Comprendre le Real BMI : Indice de Masse Corporelle et Précision",
+    title: "Indice de Masse Corporelle (IMC) et Risques pour la Santé",
     sections: [
       {
-        title: "Qu'est-ce que le 'Real BMI' ?",
-        text: "Le terme 'Real BMI' évalue l'IMC en association avec le métabolisme de base (BMR), la dépense énergétique quotidienne (TDEE) et le tour de taille."
+        title: "IMC et Risques pour la Santé (ACS et OMS)",
+        text: "Maintenir un IMC sain (entre 18,5 et 24,9 kg/m²) réduit considérablement les risques de maladies métaboliques."
       }
     ]
   },
   de: {
     eyebrow: "Klinische Leitlinien",
-    title: "Real BMI verstehen: Body-Mass-Index & Klinische Genauigkeit",
+    title: "Body-Mass-Index (BMI) & Gesundheitliche Risiken",
     sections: [
       {
-        title: "Was ist 'Real BMI'?",
-        text: "'Real BMI' bewertet den Body-Mass-Index zusammen mit Werten wie Grundumsatz (BMR), Gesamtenergieumsatz (TDEE) und Taifenumfang."
+        title: "BMI & Gesundheitsrisiken laut ACS & WHO",
+        text: "Ein gesunder BMI (zwischen 18,5 und 24,9 kg/m²) senkt das langfristige Risiko für Stoffwechselerkrankungen erheblich."
       }
     ]
   }

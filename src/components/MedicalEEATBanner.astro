@@ -9,7 +9,7 @@ const labels: Record<string, any> = {
   en: {
     reviewedTag: "Clinical E-E-A-T Standard",
     reviewedTitle: "Medically Reviewed & Scientifically Validated",
-    reviewedDesc: "All calculations, reference ranges, and health metrics are calibrated using official guidelines from the World Health Organization (WHO) and the Centers for Disease Control and Prevention (CDC).",
+    reviewedDesc: "All calculations, reference ranges, and health metrics are calibrated using official guidelines from the World Health Organization (WHO), American Cancer Society (ACS), and Centers for Disease Control and Prevention (CDC).",
     boardLabel: "Reviewed by",
     boardValue: "Real BMI Clinical Editorial Board",
     lastUpdated: "Updated: 2026 Clinical Protocols",
@@ -17,6 +17,7 @@ const labels: Record<string, any> = {
     sourcesTitle: "Primary Scientific Sources & Citations",
     sources: [
       { name: "WHO Obesity & Overweight Guidelines", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "World Health Organization" },
+      { name: "ACS Body Weight & Cancer Risk Standards", url: "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html", org: "American Cancer Society (ACS)" },
       { name: "CDC Adult BMI Clinical Standard", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "CDC National Center for Health Statistics" },
       { name: "NIH Body Composition Assessment", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/", org: "National Institutes of Health (PMC)" }
     ],
@@ -25,7 +26,7 @@ const labels: Record<string, any> = {
   hi: {
     reviewedTag: "नैदानिक E-E-A-T मानक",
     reviewedTitle: "चिकित्सकीय रूप से समीक्षित एवं वैज्ञानिक रूप से सत्यापित",
-    reviewedDesc: "सभी गणनाएं, संदर्भ श्रेणियां और स्वास्थ्य मेट्रिक्स विश्व स्वास्थ्य संगठन (WHO) और रोग नियंत्रण एवं रोकथाम केंद्र (CDC) के आधिकारिक दिशानिर्देशों का उपयोग करके कैलिब्रेट किए गए हैं।",
+    reviewedDesc: "सभी गणनाएं, संदर्भ श्रेणियां और स्वास्थ्य मेट्रिक्स विश्व स्वास्थ्य संगठन (WHO), अमेरिकन कैंसर सोसाइटी (ACS) और सीडीसी (CDC) के आधिकारिक दिशानिर्देशों का उपयोग करके कैलिब्रेट किए गए हैं।",
     boardLabel: "समीक्षा की गई:",
     boardValue: "Real BMI क्लिनिकल एडिटोरियल बोर्ड",
     lastUpdated: "अद्यतन: 2026 क्लिनिकल प्रोटोकॉल",
@@ -33,6 +34,7 @@ const labels: Record<string, any> = {
     sourcesTitle: "प्राथमिक वैज्ञानिक स्रोत और उद्धरण",
     sources: [
       { name: "डब्ल्यूएचओ मोटापा दिशानिर्देश", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "विश्व स्वास्थ्य संगठन" },
+      { name: "अमेरिकन कैंसर सोसाइटी वजन एवं स्वास्थ्य गाइड", url: "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html", org: "American Cancer Society (ACS)" },
       { name: "सीडीसी एडल्ट बीएमआई मानक", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "सीडीसी हेल्थ स्टैटिस्टिक्स" },
       { name: "एनआईएच शरीर संरचना मूल्यांकन", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/", org: "नेशनल इंस्टीट्यूट ऑफ हेल्थ" }
     ],
@@ -130,7 +132,7 @@ const t = labels[lang] || labels.en;
 
     </div>
 
-    <!-- Seamless Medical Disclaimer (No top border line) -->
+    <!-- Seamless Medical Disclaimer -->
     <div class="text-[11px] sm:text-xs text-[var(--muted-foreground)] font-sans leading-relaxed opacity-85 flex items-start gap-2 pt-2">
       <svg class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
