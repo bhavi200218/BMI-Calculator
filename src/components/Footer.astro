@@ -33,12 +33,6 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Terms & Conditions', href: `/en/terms-conditions` },
       { name: 'Disclaimer', href: `/en/disclaimer` },
     ],
-    healthToolsLinks: [
-      { name: 'BMI Calculator', href: `/en#calculator`, color: 'bg-[var(--accent)]' },
-      { name: 'BMR Calculator', href: `/en/bmr-calculator`, color: 'bg-blue-500' },
-      { name: 'Body Fat Calculator', href: `/en/body-fat-calculator`, color: 'bg-green-500' },
-      { name: 'TDEE Calculator', href: `/en/tdee-calculator`, color: 'bg-purple-500' },
-    ]
   },
   es: {
     tagline: 'La calculadora de IMC más precisa y privada de la web.',
@@ -56,12 +50,6 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Términos', href: `/es/terms-conditions` },
       { name: 'Aviso Médico', href: `/es/disclaimer` },
     ],
-    healthToolsLinks: [
-      { name: 'Calculadora IMC', href: `/es#calculator`, color: 'bg-[var(--accent)]' },
-      { name: 'Calculadora BMR', href: `/es/bmr-calculator`, color: 'bg-blue-500' },
-      { name: 'Calculadora Grasa', href: `/es/body-fat-calculator`, color: 'bg-green-500' },
-      { name: 'Calculadora TDEE', href: `/es/tdee-calculator`, color: 'bg-purple-500' },
-    ]
   },
   fr: {
     tagline: 'La calculatrice IMC la plus précise et respectueuse de la vie privée.',
@@ -79,12 +67,6 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Conditions', href: `/fr/terms-conditions` },
       { name: 'Avertissement', href: `/fr/disclaimer` },
     ],
-    healthToolsLinks: [
-      { name: 'Calculateur IMC', href: `/fr#calculator`, color: 'bg-[var(--accent)]' },
-      { name: 'Calculateur BMR', href: `/fr/bmr-calculator`, color: 'bg-blue-500' },
-      { name: 'Calculateur Graisse', href: `/fr/body-fat-calculator`, color: 'bg-green-500' },
-      { name: 'Calculateur TDEE', href: `/fr/tdee-calculator`, color: 'bg-purple-500' },
-    ]
   },
   de: {
     tagline: 'Der genaueste und datenschutzfreundlichste BMI-Rechner im Web.',
@@ -102,12 +84,6 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Nutzungsbedingungen', href: `/de/terms-conditions` },
       { name: 'Medizinischer Hinweis', href: `/de/disclaimer` },
     ],
-    healthToolsLinks: [
-      { name: 'BMI-Rechner', href: `/de#calculator`, color: 'bg-[var(--accent)]' },
-      { name: 'BMR-Rechner', href: `/de/bmr-calculator`, color: 'bg-blue-500' },
-      { name: 'Körperfett-Rechner', href: `/de/body-fat-calculator`, color: 'bg-green-500' },
-      { name: 'TDEE-Rechner', href: `/de/tdee-calculator`, color: 'bg-purple-500' },
-    ]
   },
   ko: {
     tagline: '가장 정확하고 개인정보를 보호하는 BMI 계산기.',
@@ -125,12 +101,6 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: '이용약관', href: `/ko/terms-conditions` },
       { name: '의학적 면책', href: `/ko/disclaimer` },
     ],
-    healthToolsLinks: [
-      { name: 'BMI 계산기', href: `/ko#calculator`, color: 'bg-[var(--accent)]' },
-      { name: 'BMR 계산기', href: `/ko/bmr-calculator`, color: 'bg-blue-500' },
-      { name: '체지방 계산기', href: `/ko/body-fat-calculator`, color: 'bg-green-500' },
-      { name: 'TDEE 계산기', href: `/ko/tdee-calculator`, color: 'bg-purple-500' },
-    ]
   },
   hi: {
     tagline: 'वेब पर सबसे सटीक और गोपनीयता-प्रथम बीएमआई कैलकुलेटर।',
@@ -148,26 +118,19 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'नियम और शर्तें', href: `/hi/terms-conditions` },
       { name: 'अस्वीकरण', href: `/hi/disclaimer` },
     ],
-    healthToolsLinks: [
-      { name: 'बीएमआई कैलकुलेटर', href: `/hi#calculator`, color: 'bg-[var(--accent)]' },
-      { name: 'बीएमआर कैलकुलेटर', href: `/hi/bmr-calculator`, color: 'bg-blue-500' },
-      { name: 'बॉडी फैट कैलकुलेटर', href: `/hi/body-fat-calculator`, color: 'bg-green-500' },
-      { name: 'टीडीईई कैलकुलेटर', href: `/hi/tdee-calculator`, color: 'bg-purple-500' },
-    ]
   }
 };
 
 const ft = footerTranslations[lang] || footerTranslations.en;
 const healthToolsLabel = ft.healthTools || 'Health Tools';
-const toolColors = ['bg-[var(--accent)]','bg-blue-500','bg-green-500','bg-purple-500','bg-orange-500','bg-pink-500','bg-sky-500','bg-emerald-500','bg-amber-500','bg-violet-500','bg-cyan-500','bg-fuchsia-500','bg-lime-500','bg-rose-500','bg-indigo-500'];
-const healthToolsLinks = calculators.map((calc, index) => ({
+
+const healthToolsLinks = calculators.map((calc) => ({
   name: calc.name[lang] || calc.name['en'],
-  href: `/${lang}/${calc.slug}`,
-  color: toolColors[index % toolColors.length]
+  href: `/${lang}/${calc.slug}`
 }));
 ---
 
-<footer class="bg-[var(--muted)]/40 mt-10">
+<footer class="bg-[var(--muted)]/40 mt-4 border-t border-[var(--border)]/40">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
     <!-- Top row: brand + links -->
@@ -188,6 +151,7 @@ const healthToolsLinks = calculators.map((calc, index) => ({
         </p>
       </div>
 
+      <!-- Health Tools -->
       <div class="space-y-3">
         <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{healthToolsLabel}</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
@@ -199,6 +163,7 @@ const healthToolsLinks = calculators.map((calc, index) => ({
         </div>
       </div>
 
+      <!-- Quick Links -->
       <div class="space-y-3">
         <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.quickLinks}</p>
         <div class="grid gap-2">
@@ -208,19 +173,11 @@ const healthToolsLinks = calculators.map((calc, index) => ({
             </a>
           ))}
         </div>
-        {ft.legalText ? (
-          <div class="space-y-3 pt-4">
-            <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.legalStatus}</p>
-            <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">
-              {ft.legalText}
-            </p>
-          </div>
-        ) : null}
       </div>
     </div>
 
     <!-- Bottom bar -->
-    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[var(--muted-foreground)]">
+    <div class="pt-6 border-t border-[var(--border)]/40 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[var(--muted-foreground)]">
       <p class="font-semibold uppercase tracking-[0.2em]">{ft.copyright}</p>
       <span class="font-medium text-[0.95rem]">Built with privacy-first health analytics.</span>
     </div>

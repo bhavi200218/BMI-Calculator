@@ -42,12 +42,14 @@ const content: Record<string, any> = {
       { category: 'Obesity Class III', range: '≥ 40.0', risk: 'Extremely High (Acute Risk)', status: 'obesity-3' }
     ],
     faq: [
-      { q: 'How is BMI calculated?', a: 'BMI compares your weight and height using a simple formula. In metric units, it is weight in kilograms divided by height in meters squared; in imperial units, the formula is weight in pounds divided by height in inches squared, multiplied by 703.' },
-      { q: 'What is a healthy BMI for a woman?', a: 'For most adults, a healthy BMI range is 18.5 to 24.9. That said, body composition matters, so a muscular build can still land above that range without carrying excess body fat.' },
-      { q: 'Is BMI accurate for muscular people or athletes?', a: 'BMI is a screening tool, not a diagnosis. It can overestimate body fat in muscular people and underestimate it in others, so it works best alongside waist size, activity levels, and overall health patterns.' },
-      { q: 'What does a BMI of 25 mean?', a: 'A BMI of 25 sits at the threshold between the healthy range and the overweight category. It is a signal to review waist circumference, exercise habits, and lifestyle factors rather than treating a single number as a verdict.' },
-      { q: 'What is BMR and why does it matter?', a: 'BMR is the energy your body uses at rest to support breathing, circulation, and basic organ function. It helps estimate the calories needed to maintain weight or adjust it intentionally.' },
-      { q: 'What is TDEE and why does it matter?', a: 'TDEE estimates how many calories you burn in a day once movement and exercise are included. It is especially helpful for planning nutrition around maintenance, fat loss, or muscle gain.' }
+      { q: 'What is the difference between standard BMI and Real BMI?', a: 'Standard BMI calculates body mass strictly using height and weight. Real BMI integrates standard BMI with WHO & CDC reference tables, gender-adjusted body fat estimates, BMR, and TDEE to provide a complete, clinical-grade overview of your body composition.' },
+      { q: 'How is BMI calculated?', a: 'BMI compares your weight and height using a simple formula: weight in kilograms divided by height in meters squared (kg/m²), or (weight in lbs / height in inches²) x 703 for imperial units.' },
+      { q: 'What is a healthy BMI for men and women?', a: 'For most adults, a healthy BMI range is 18.5 to 24.9. However, WHO recommends a lower threshold of 18.5 to 22.9 for Asian and South Asian populations due to metabolic risk profiles.' },
+      { q: 'Is BMI accurate for muscular people or athletes?', a: 'BMI is a screening tool, not a diagnostic measurement of body fat. Because dense muscle tissue weighs more than fat volume, muscular athletes may register a higher BMI score while maintaining very low body fat.' },
+      { q: 'Why does WHO recommend lower BMI cutoffs for Asian populations?', a: 'Clinical research shows that South Asian and East Asian individuals tend to accumulate a higher percentage of abdominal visceral fat at lower body weights. Therefore, WHO defines overweight for Asian adults starting at 23.0 kg/m².' },
+      { q: 'What does a BMI of 25 mean?', a: 'A BMI of 25 sits at the exact threshold between the healthy weight range and the overweight category. It serves as a practical reminder to assess waist circumference and physical activity habits.' },
+      { q: 'What is BMR and why does it matter?', a: 'BMR (Basal Metabolic Rate) is the energy your body expends at rest to support vital organ functions. Knowing your BMR helps establish baseline calorie requirements for weight management.' },
+      { q: 'What is TDEE and why does it matter?', a: 'TDEE (Total Daily Energy Expenditure) estimates the total calories burned daily including movement and exercise, serving as the blueprint for maintaining, losing, or gaining weight.' }
     ]
   },
   hi: {
@@ -64,7 +66,7 @@ const content: Record<string, any> = {
     cdcLink: 'सीडीसी बीएमआई गाइड',
     helpCenter: 'सहायता केंद्र',
     faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
-    faqSubtitle: 'बीएमआई गणना, चयापचय अनुपात, सटीकता और एथलेटिक माप के बारे में जो कुछ भी आपको जानना आवश्यक है।',
+    faqSubtitle: 'बीएमआई गणना, क्लिनिकल सटीकता, चयापचय दर और स्वास्थ्य दिशानिर्देशों के बारे में अक्सर पूछे जाने वाले प्रश्न।',
     sections: [
       { title: 'बॉडी मास इंडेक्स (BMI) को गहराई से समझें', text: 'बॉडी मास इंडेक्स (बीएमआई) दुनिया भर के स्वास्थ्य विशेषज्ञों द्वारा उपयोग किया जाने वाला एक अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त जांच मानक है। यह आपकी ऊंचाई के अनुपात में आपके वजन की श्रेणी को वर्गीकृत करता है, जिससे हृदय और चयापचय संबंधी जोखिमों का त्वरित संदर्भ मिलता है। Real BMI कैलकुलेटर विश्व स्वास्थ्य संगठन (WHO) और CDC के आधिकारिक मानकों के आधार पर सटीक विश्लेषण प्रदान करता है।' },
       { title: 'बीएमआई, बीएमआर और टीडीईई का परस्पर संबंध', text: 'आपका बीएमआई (BMI) यह दर्शाता है कि आपका वजन संतुलित सीमा में है या नहीं। आपका बीएमआर (BMR) विश्राम अवस्था में आपके अंगों द्वारा आवश्यक बेसल ऊर्जा को उजागर करता है। अंत में, आपका टीडीईई (TDEE) दैनिक गतिविधियों को जोड़कर वजन बनाए रखने के लिए आवश्यक सटीक कैलोरी बताता है।' }
@@ -78,12 +80,14 @@ const content: Record<string, any> = {
       { category: 'मोटापा श्रेणी III (Obesity III)', range: '≥ 40.0', risk: 'अत्यंत गंभीर (तीव्र जोखिम)', status: 'obesity-3' }
     ],
     faq: [
+      { q: 'मानक बीएमआई और Real BMI में क्या अंतर है?', a: 'मानक बीएमआई केवल ऊंचाई और वजन का उपयोग करता है। Real BMI बीएमआई को डब्ल्यूएचओ/सीडीसी दिशानिर्देशों, बीएमआर (BMR) और टीडीईई (TDEE) के साथ एकीकृत करके पूर्ण स्वास्थ्य विश्लेषण प्रदान करता है।' },
       { q: 'बीएमआई (BMI) की गणना कैसे की जाती है?', a: 'बीएमआई = वजन (किलोग्राम) ÷ ऊंचाई² (मीटर)। इंपीरियल इकाइयों में: (वजन पाउंड ÷ ऊंचाई इंच²) × 703। हमारा कैलकुलेटर दोनों प्रणालियों में तुरंत गणना करता है।' },
-      { q: 'महिलाओं के लिए स्वस्थ बीएमआई क्या है?', a: 'अधिकांश वयस्कों के लिए स्वस्थ बीएमआई सीमा 18.5 से 24.9 है। हालांकि, शरीर की संरचना मायने रखती है, इसलिए मांसपेशियों वाले शरीर में बिना अतिरिक्त वसा के भी स्कोर अधिक हो सकता है।' },
-      { q: 'क्या धावकों और बॉडीबिल्डर्स के लिए बीएमआई सटीक है?', a: 'बीएमआई एक प्राथमिक जांच उपकरण है, निदान नहीं। यह मांसपेशियों वाले एथलीटों में शरीर की वसा का अधिक अनुमान लगा सकता है, इसलिए इसे कमर की परिधि और जीवन शैली के साथ देखना चाहिए।' },
-      { q: '25 बीएमआई का क्या अर्थ है?', a: '25 का बीएमआई सामान्य सीमा और अधिक वजन श्रेणी के बीच की सीमा पर है। यह एक संख्या को अंतिम फैसला मानने के बजाय कमर के आकार और व्यायाम की आदतों की समीक्षा करने का संकेत है।' },
-      { q: 'बीएमआर (BMR) क्या है और यह क्यों महत्वपूर्ण है?', a: 'बीएमआर वह ऊर्जा है जिसका उपयोग आपका शरीर सांस लेने और अंग संचालन के लिए विश्राम की स्थिति में करता है। यह वजन बनाए रखने या बदलने के लिए कैलोरी आवश्यकताओं का अनुमान लगाने में मदद करता है।' },
-      { q: 'टीडीईई (TDEE) क्या है और यह क्यों महत्वपूर्ण है?', a: 'टीडीईई अनुमान लगाता है कि आप शारीरिक गतिविधि और व्यायाम सहित एक दिन में कितनी कैलोरी बर्न करते हैं। यह वजन घटाने या मांसपेशियों के निर्माण के लिए पोषण योजना बनाने में सहायक है।' }
+      { q: 'पुरुषों और महिलाओं के लिए स्वस्थ बीएमआई क्या है?', a: 'अधिकांश वयस्कों के लिए स्वस्थ बीएमआई सीमा 18.5 से 24.9 है। हालांकि, दक्षिण एशियाई आबादी के लिए डब्ल्यूएचओ 22.9 तक स्वस्थ सीमा मानता है।' },
+      { q: 'क्या मांसपेशियों वाले एथलीटों के लिए बीएमआई सटीक है?', a: 'बीएमआई एक प्राथमिक जांच उपकरण है, निदान नहीं। यह मांसपेशियों वाले एथलीटों में शरीर की वसा का अधिक अनुमान लगा सकता है, इसलिए इसे कमर की परिधि के साथ देखना चाहिए।' },
+      { q: 'दक्षिण एशियाई लोगों के लिए बीएमआई सीमाएं कम क्यों हैं?', a: 'अनुसंधान से पता चलता है कि एशियाई आबादी में कम वजन पर भी पेट की आंतरिक (विसरल) वसा जमा होने का खतरा अधिक होता है, इसलिए 23.0 kg/m² से अधिक वजन माना जाता है।' },
+      { q: '25 बीएमआई का क्या अर्थ है?', a: '25 का बीएमआई सामान्य सीमा और अधिक वजन श्रेणी के बीच की सीमा पर है। यह कमर के आकार और व्यायाम की आदतों की समीक्षा करने का संकेत है।' },
+      { q: 'बीएमआर (BMR) क्या है और यह क्यों महत्वपूर्ण है?', a: 'बीएमआर वह न्यूनतम ऊर्जा है जिसका उपयोग आपका शरीर विश्राम की स्थिति में सांस लेने और अंग संचालन के लिए करता है।' },
+      { q: 'टीडीईई (TDEE) क्या है और यह क्यों महत्वपूर्ण है?', a: 'टीडीईई अनुमान लगाता है कि आप शारीरिक गतिविधि और व्यायाम सहित एक दिन में कितनी कैलोरी बर्न करते हैं।' }
     ]
   },
   es: {
@@ -296,7 +300,7 @@ const faqSchema = {
                                                'border-rose-500/40 dark:border-rose-500/50 text-rose-950 dark:text-rose-200 bg-rose-100/90 dark:bg-rose-950/60'
               }`}>{row.risk}</span>
             </div>
-            <div class="flex justify-between items-center text-xs border-t border-[var(--border)] pt-2">
+            <div class="flex justify-between items-center text-xs pt-2">
               <span class="text-[var(--muted-foreground)]">{t.colRange}</span>
               <span class="font-sans font-bold text-[var(--foreground)]">{row.range}</span>
             </div>
@@ -309,7 +313,7 @@ const faqSchema = {
         <div class="overflow-x-auto">
           <table class="w-full text-left min-w-[500px] border-collapse">
             <thead>
-              <tr class="bg-[var(--muted)] border-b border-[var(--border)]">
+              <tr class="bg-[var(--muted)]">
                 <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colCategory}</th>
                 <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colRange}</th>
                 <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colRisk}</th>
@@ -317,7 +321,7 @@ const faqSchema = {
             </thead>
             <tbody>
               {t.whoTable.map((row: any, i: number) => (
-                <tr class={`border-b border-[var(--border)] last:border-0 transition-colors hover:bg-[var(--muted)]/50 ${i % 2 === 1 ? 'bg-[var(--muted)]/20' : ''}`}>
+                <tr class={`transition-colors hover:bg-[var(--muted)]/50 ${i % 2 === 1 ? 'bg-[var(--muted)]/20' : ''}`}>
                   <td class="px-6 py-5 font-display font-bold text-[var(--foreground)] uppercase text-sm">{row.category}</td>
                   <td class="px-6 py-5 font-sans text-[var(--foreground)] text-sm font-semibold">{row.range}</td>
                   <td class="px-6 py-5">
@@ -376,7 +380,7 @@ const faqSchema = {
               </svg>
             </span>
           </summary>
-          <div class="px-6 pb-6 text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium border-t border-[var(--border)]/60 pt-4 bg-[var(--muted)]/10">
+          <div class="px-6 pb-6 text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium pt-4 bg-[var(--muted)]/10">
             {item.a}
           </div>
         </details>

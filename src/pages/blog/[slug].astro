@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+import HubGrid from '../../components/HubGrid.astro';
+import { blogArticles } from '../../utils/blogArticles';
+
+export function getStaticPaths() {
+  return Object.keys(blogArticles).map((slug) => ({
+    params: { slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const article = blogArticles[slug as string] || blogArticles['what-is-bmi'];
+const lang = 'en';
+
+const articleTitle = article.title[lang] || article.title.en;
+const articleCategory = article.category[lang] || article.category.en;
+const articleDescription = article.description[lang] || article.description.en;
+const articleContentHtml = article.contentHtml ? (article.contentHtml[lang] || article.contentHtml.en) : null;
+const articleBody = article.body ? (article.body[lang] || article.body.en) : [];
+
+const canonicalUrl = `https://realbmicalculator.com/blog/${slug}`;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": articleTitle,
+  "description": articleDescription,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalUrl
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Real BMI Health Editorial Team",
+    "url": "https://realbmicalculator.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Real BMI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://realbmicalculator.com/favicon.svg"
+    }
+  },
+  "datePublished": "2026-01-01",
+  "dateModified": new Date().toISOString().split('T')[0]
+};
+---
+
+<Layout 
+    title={`${articleTitle} | Real BMI (2026)`}
+    description={articleDescription}
+    canonicalURL={canonicalUrl}
+>
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="json-ld"></script>
+    <Navbar />
+    <PageShell
+      title={articleTitle}
+      eyebrow={articleCategory}
+      description={articleDescription}
+      returnUrl="/blog"
+      returnLabel="All Articles"
+    >
+      <article class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
+        {articleContentHtml ? (
+          <div set:html={articleContentHtml} />
+        ) : (
+          <div class="space-y-6">
+            {articleBody.map((paragraph: string) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        )}
+
+        <!-- Natural In-Article Call to Action (CTA) Box -->
+        <div class="my-12 p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border-2 border-[var(--accent)]/30 shadow-xl text-center space-y-4 not-prose">
+          <h3 class="text-2xl font-bold font-display uppercase tracking-tight text-[var(--foreground)]">Want to know your BMI?</h3>
+          <p class="text-base text-[var(--muted-foreground)] max-w-xl mx-auto font-sans">
+            Use our free <a href="/calculator" class="text-[var(--accent)] underline font-bold hover:text-[var(--foreground)] transition-colors">BMI Calculator</a> to get your accurate clinical result in seconds with custom body weight analytics.
+          </p>
+          <a href="/calculator" class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105 active:scale-95 shadow-lg text-white">
+            Calculate My BMI Now →
+          </a>
+        </div>
+
+        <div class="pt-12 border-t border-[var(--border)] not-prose">
+          <HubGrid lang={lang} />
+        </div>
+      </article>
+    </PageShell>
+</Layout>

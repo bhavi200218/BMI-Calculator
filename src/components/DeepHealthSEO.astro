@@ -4,7 +4,7 @@ const lang = currentLocale || 'en';
 
 const content: Record<string, any> = {
   en: {
-    eyebrow: "Health Insights",
+    eyebrow: "Clinical Guide",
     sections: [
       {
         title: "BMI Calculator for Men & Women: Is There a Difference?",
@@ -37,7 +37,7 @@ const content: Record<string, any> = {
     ]
   },
   hi: {
-    eyebrow: "स्वास्थ्य अंतर्दृष्टि",
+    eyebrow: "नैदानिक गाइड",
     sections: [
       {
         title: "Lbs और Inches के साथ बीएमआई की गणना",
@@ -58,7 +58,7 @@ const content: Record<string, any> = {
     ]
   },
   es: {
-    eyebrow: "Información de Salud",
+    eyebrow: "Guía Clínica",
     sections: [
       {
         title: "Cálculo del IMC con Libras y Pulgadas",
@@ -75,7 +75,7 @@ const content: Record<string, any> = {
     ]
   },
   fr: {
-    eyebrow: "Aperçus Santé",
+    eyebrow: "Guide Clinique",
     sections: [
       {
         title: "Pourquoi Utiliser le Calculateur Real BMI ?",
@@ -92,7 +92,7 @@ const content: Record<string, any> = {
     ]
   },
   de: {
-    eyebrow: "Gesundheitseinblicke",
+    eyebrow: "Klinischer Leitfaden",
     sections: [
       {
         title: "Warum den Real BMI-Rechner Nutzen?",
@@ -109,7 +109,7 @@ const content: Record<string, any> = {
     ]
   },
   ko: {
-    eyebrow: "건강 인사이트",
+    eyebrow: "임상 가이드",
     sections: [
       {
         title: "Real BMI 계산기를 사용하는 이유",
@@ -131,12 +131,25 @@ const t = content[lang] || content.en;
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "MedicalWebPage",
   "headline": t.sections[0].title,
   "description": t.sections[0].text,
+  "aspect": ["Overview", "Diagnosis", "Prevention"],
+  "medicalAudience": "Patient",
+  "citation": [
+    "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
+    "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/"
+  ],
   "author": {
     "@type": "Organization",
-    "name": "Real BMI"
+    "name": "Real BMI Clinical Editorial Board",
+    "url": "https://realbmicalculator.com/en/editorial-policy"
+  },
+  "reviewedBy": {
+    "@type": "Organization",
+    "name": "Real BMI Board-Certified Health Specialists",
+    "url": "https://realbmicalculator.com/en/editorial-policy"
   },
   "publisher": {
     "@type": "Organization",
@@ -153,20 +166,22 @@ const articleSchema = {
 
 <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
-<section class="max-w-7xl mx-auto py-16 md:py-24 px-4 sm:px-6 mt-8">
-    <div class="space-y-16">
-        {t.sections.map((section: any) => (
-            <div class="space-y-6 group">
-                <div class="space-y-2">
-            <div class="flex items-center gap-4">
-                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--accent)]">{t.eyebrow}</span>
-            </div>
-        </div>
-        <h2 class="text-3xl font-black uppercase tracking-tighter text-[var(--foreground)] leading-tight italic">
-            {section.title}
+<section class="max-w-7xl mx-auto py-6 sm:py-8 px-4 sm:px-6">
+  <!-- Single Section Header without line border -->
+  <div class="mb-6 flex items-center gap-2">
+    <span class="text-xs font-display font-bold uppercase tracking-[0.25em] text-[var(--accent)]">{t.eyebrow}</span>
+    <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+  </div>
+
+  <!-- Articles List with Compact Spacing -->
+  <div class="space-y-6 sm:space-y-8">
+    {t.sections.map((section: any) => (
+      <div class="space-y-2 group">
+        <h2 class="text-lg sm:text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
+          {section.title}
         </h2>
-                <p class="text-lg text-[var(--muted-foreground)] leading-relaxed font-semibold" set:html={section.text} />
-            </div>
-        ))}
-    </div>
+        <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium" set:html={section.text} />
+      </div>
+    ))}
+  </div>
 </section>

@@ -1,0 +1,92 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import PageShell from '../../../components/PageShell.astro';
+import { blogArticles } from '../../../utils/blogArticles';
+import { locales, type Locale } from '../../../utils/calculators';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { params } = Astro;
+const lang = (params.lang || 'en') as Locale;
+
+const headers = {
+  en: { title: "BMI & Health Articles (2026 Guide)", desc: "Explore evidence-based guides on Body Mass Index (BMI), BMR, TDEE, protein intake, and WHO South Asian health thresholds." },
+  es: { title: "Artículos sobre IMC y Salud (Guía 2026)", desc: "Explora guías basadas en evidencia sobre el Índice de Masa Corporal (IMC), BMR, TDEE y estándares de salud de la OMS." },
+  fr: { title: "Articles sur l'IMC et la Santé (Guide 2026)", desc: "Explorez des guides fondés sur des preuves sur l'Indice de Masse Corporelle (IMC), le BMR, le TDEE et les normes OMS." },
+  de: { title: "BMI & Gesundheitsartikel (Leitfaden 2026)", desc: "Entdecken Sie evidenzbasierte Leitfäden zu Body-Mass-Index (BMI), BMR, TDEE und WHO-Gesundheitsstandards." },
+  ko: { title: "BMI 및 건강 아티클 (2026 가이드)", desc: "체질량지수(BMI), BMR, TDEE 및 WHO 건강 표준에 대한 증거 기반 가이드를 살펴보세요." },
+  hi: { title: "बीएमआई और स्वास्थ्य लेख (2026 गाइड)", desc: "बॉडी मास इंडेक्स (BMI), BMR, TDEE, प्रोटीन सेवन और WHO स्वास्थ्य मानकों पर आधारित लेख देखें।" }
+};
+
+const homeLabels = {
+  en: 'Home',
+  es: 'Inicio',
+  fr: 'Accueil',
+  de: 'Startseite',
+  ko: '홈',
+  hi: 'होम'
+};
+
+const h = headers[lang] || headers.en;
+
+const articleSlugs = Object.keys(blogArticles);
+const articlesList = articleSlugs.map(slug => {
+  const item = blogArticles[slug];
+  return {
+    slug,
+    title: item.title[lang] || item.title.en,
+    category: item.category ? (item.category[lang] || item.category.en) : 'Health',
+    description: item.description ? (item.description[lang] || item.description.en) : '',
+  };
+});
+---
+
+<Layout 
+  title={`${h.title} | Real BMI`}
+  description={h.desc}
+  canonicalURL={`https://realbmicalculator.com/${lang}/blog`}
+>
+  <Navbar />
+
+  <PageShell
+    title={h.title}
+    eyebrow="Clinical Articles"
+    description={h.desc}
+    returnUrl={`/${lang}`}
+    returnLabel={homeLabels[lang] || homeLabels.en}
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {articlesList.map(article => (
+        <a href={`/${lang}/blog/${article.slug}`} class="group block h-full">
+          <div class="h-full p-6 sm:p-7 rounded-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-4 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-display font-semibold tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/20">
+                  {article.category}
+                </span>
+                <span class="text-[11px] font-mono text-[var(--muted-foreground)]">2026 Guide</span>
+              </div>
+              <h2 class="text-xl font-display font-bold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors duration-200">
+                {article.title}
+              </h2>
+              <p class="text-sm text-[var(--muted-foreground)] leading-relaxed font-medium line-clamp-3">
+                {article.description}
+              </p>
+            </div>
+            <div class="flex items-center justify-between text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] pt-4 border-t border-[var(--border)]/40">
+              <span>Read Full Article</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </PageShell>
+</Layout>

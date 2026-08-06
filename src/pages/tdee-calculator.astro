@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import UniversalCalculator from '../components/UniversalCalculator.astro';
+import CalculatorResult from '../components/CalculatorResult.astro';
+import HealthContent from '../components/HealthContent.astro';
+import LatestArticles from '../components/LatestArticles.astro';
+import DeepHealthSEO from '../components/DeepHealthSEO.astro';
+import HubGrid from '../components/HubGrid.astro';
+import { calculators } from '../utils/calculators';
+
+const calc = calculators.find(c => c.slug === 'tdee-calculator') || calculators[2];
+const lang = 'en';
+
+const pageTitle = calc.title[lang];
+const pageDesc = calc.description[lang];
+const canonicalUrl = 'https://realbmicalculator.com/tdee-calculator';
+
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": calc.name[lang],
+  "url": canonicalUrl,
+  "description": pageDesc,
+  "applicationCategory": "HealthApplication",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
+  "operatingSystem": "All"
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDesc}
+  canonicalURL={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} slot="json-ld"></script>
+  
+  <Navbar />
+  
+  <main class="pt-26 md:pt-30 pb-20 px-4 md:px-6 relative overflow-x-hidden">
+    <div class="max-w-7xl mx-auto space-y-16">
+      
+      <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm font-medium text-[var(--muted-foreground)]">
+        <a href="/" class="hover:text-[var(--accent)] transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-[var(--foreground)]">{calc.name[lang]}</span>
+      </nav>
+
+      <div class="text-center space-y-4 max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] animate-in">
+          {calc.name[lang]}
+        </h1>
+        <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-sans font-medium animate-in max-w-2xl mx-auto">
+          {pageDesc} Estimate your Total Daily Energy Expenditure (TDEE) and maintenance calories.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch animate-in">
+        <UniversalCalculator calculator={calc} lang={lang} />
+        <CalculatorResult lang={lang} />
+      </div>
+
+      <div class="pt-12 space-y-20">
+        <LatestArticles />
+        <HealthContent />
+        <DeepHealthSEO />
+        <HubGrid lang={lang} />
+      </div>
+
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,211 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+
+const data: Record<string, any> = {
+  en: {
+    eyebrow: "Search Intent & Clinical Guidance",
+    mainTitle: "Is BMI Accurate? The Truth About 'Real BMI' vs Standard Weight Scales",
+    mainSubtitle: "While traditional Body Mass Index (BMI) is the world's most widely used health screening tool, millions of people ask: Is BMI actually accurate for my unique body type?",
+    cards: [
+      {
+        tag: "01 / Definition",
+        title: "What is 'Real BMI'?",
+        desc: "The term 'Real BMI' refers to assessing body mass index alongside complementary physiological metrics — including Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and waist circumference — rather than relying on weight alone."
+      },
+      {
+        tag: "02 / Muscle Density",
+        title: "The Muscular Athlete Paradox",
+        desc: "Standard BMI formulas (weight/height²) treat all mass equally. Muscular athletes or weightlifters often register as 'Overweight' or 'Obese' despite having low body fat percentage, because dense muscle weighs more than fat volume."
+      },
+      {
+        tag: "03 / Ethnic Thresholds",
+        title: "Asian & Regional Risk Guidelines",
+        desc: "World Health Organization (WHO) clinical consensus recommends lower BMI cutoff thresholds for Asian and South Asian populations: 23 kg/m² for overweight (vs. 25 kg/m² standard) due to higher risk of visceral fat at lower body mass."
+      },
+      {
+        tag: "04 / Visceral Fat",
+        title: "Beyond the Scale: Abdominal Adiposity",
+        desc: "BMI measures total body mass, not fat distribution. Deep visceral fat surrounding abdominal organs carries significantly higher metabolic and cardiovascular risks than subcutaneous fat on hips or legs."
+      }
+    ]
+  },
+  hi: {
+    eyebrow: "सर्च इंटेंट और क्लिनिकल गाइडेंस",
+    mainTitle: "क्या BMI सटीक है? 'Real BMI' बनाम मानक तराजू का सच",
+    mainSubtitle: "हालाँकि पारंपरिक बॉडी मास इंडेक्स (BMI) दुनिया का सबसे व्यापक रूप से इस्तेमाल किया जाने वाला स्वास्थ्य उपकरण है, फिर भी लाखों लोग पूछते हैं: क्या बीएमआई मेरे शरीर के प्रकार के लिए सटीक है?",
+    cards: [
+      {
+        tag: "01 / परिभाषा",
+        title: "'Real BMI' क्या है?",
+        desc: "'Real BMI' का तात्पर्य केवल वजन पर भरोसा करने के बजाय पूरक शारीरिक मीट्रिक - जिसमें बीएमआर (BMR), टीडीईई (TDEE) और कमर की परिधि शामिल है - के साथ बॉडी मास इंडेक्स का मूल्यांकन करना है।"
+      },
+      {
+        tag: "02 / मांसपेशी घनत्व",
+        title: "एथलीट पैराडॉक्स",
+        desc: "मानक बीएमआई फॉर्मूला सभी वजन को समान मानता है। मांसपेशियों वाले एथलीट अक्सर कम वसा प्रतिशत के बावजूद 'अधिक वजन' श्रेणी में आ सकते हैं, क्योंकि मांसपेशियां वसा से अधिक घनी होती हैं।"
+      },
+      {
+        tag: "03 / क्षेत्रीय मानक",
+        title: "एशियाई बीएमआई थ्रेसहोल्ड",
+        desc: "डब्ल्यूएचओ (WHO) एशियाई और दक्षिण एशियाई आबादी के लिए कम बीएमआई कटऑफ सीमा (23 kg/m²) की सिफारिश करता है क्योंकि कम वजन पर भी पेट की विसरल वसा का जोखिम अधिक होता है।"
+      },
+      {
+        tag: "04 / विसरल फैट",
+        title: "कमर की परिधि का महत्व",
+        desc: "बीएमआई कुल शरीर के द्रव्यमान को मापता है, वसा वितरण को नहीं। पेट के अंगों के आसपास जमा गहरी विसरल वसा कार्डियोवैस्कुलर जोखिम को बढ़ाती है।"
+      }
+    ]
+  },
+  ko: {
+    eyebrow: "검색 의도 및 임상 가이드",
+    mainTitle: "BMI는 정확한가요? 'Real BMI'와 표준 체중계의 진실",
+    mainSubtitle: "전통적인 체질량지수(BMI)가 세계에서 가장 널리 사용되는 건강 스크리닝 도구이지만, 많은 사람들이 내 체형에 BMI가 정확한지 궁금해합니다.",
+    cards: [
+      {
+        tag: "01 / 정의",
+        title: "'Real BMI'란 무엇인가요?",
+        desc: "'Real BMI'는 단지 체중뿐만 아니라 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레와 같은 상보적인 생리학적 지표를 종합하여 임상 수준의 체성분을 평가하는 것을 의미합니다."
+      },
+      {
+        tag: "02 / 근육 밀도",
+        title: "근육질 운동선수의 역설",
+        desc: "표준 BMI 공식(체중/키²)은 모든 질량을 동일하게 처리합니다. 근육질 운동선수는 체지방률이 낮음에도 불구하고 근육의 밀도가 높아 '과체중' 또는 '비만'으로 측정될 수 있습니다."
+      },
+      {
+        tag: "03 / 아시아 기준",
+        title: "아시아인 임상 진단 기준",
+        desc: "세계보건기구(WHO) 아시아-태평양 지침에 따르면 아시아인은 낮은 체중에서도 내장지방 축적 위험이 높아 과체중 기준을 23 kg/m²(서구 기준 25 kg/m²)로 더 낮게 적용합니다."
+      },
+      {
+        tag: "04 / 내장 지방",
+        title: "체중계 너머의 복부 지방",
+        desc: "BMI는 지방의 분포가 아닌 전체 체질량을 측정합니다. 복부 장기를 둘러싼 심부 내장지방은 피하지방보다 심혈관 및 대사 질환 위험을 훨씬 더 크게 높입니다."
+      }
+    ]
+  },
+  es: {
+    eyebrow: "Guía Clínica e Intención de Búsqueda",
+    mainTitle: "¿Es preciso el IMC? La verdad sobre el 'Real BMI'",
+    mainSubtitle: "Aunque el Índice de Masa Corporal (IMC) es la herramienta de salud más utilizada del mundo, millones de personas se preguntan si realmente se adapta a su tipo de cuerpo.",
+    cards: [
+      {
+        tag: "01 / Definición",
+        title: "¿Qué es el 'Real BMI'?",
+        desc: "El término 'Real BMI' evalúa el índice de masa corporal junto con métricas como el Metabolismo Basal (BMR), el Gasto Energético Diario (TDEE) y la circunferencia de cintura."
+      },
+      {
+        tag: "02 / Densidad Muscular",
+        title: "La Paradoja del Atleta Musculoso",
+        desc: "La fórmula estándar trata todo el peso por igual. Los atletas con alta masa muscular a menudo registran un IMC de 'Sobrepeso' a pesar de tener un bajo porcentaje de grasa."
+      },
+      {
+        tag: "03 / Umbrales Regionales",
+        title: "Pautas de Riesgo para Poblaciones Asiológicas",
+        desc: "La OMS recomienda un umbral de IMC de 23 kg/m² para sobrepeso en poblaciones asiáticas debido al mayor riesgo de grasa visceral a menor peso corporal."
+      },
+      {
+        tag: "04 / Grasa Visceral",
+        title: "Más allá de la báscula: Adiposidad Abdominal",
+        desc: "El IMC mide la masa total, no la distribución de grasa. La grasa visceral profunda conlleva un riesgo metabólico sustancialmente mayor."
+      }
+    ]
+  },
+  fr: {
+    eyebrow: "Guide Clinique & Recherche",
+    mainTitle: "L'IMC est-il précis ? La vérité sur le 'Real BMI'",
+    mainSubtitle: "Bien que l'Indice de Masse Corporelle (IMC) soit l'outil de santé le plus utilisé au monde, des millions de personnes s'interrogent sur sa précision.",
+    cards: [
+      {
+        tag: "01 / Définition",
+        title: "Qu'est-ce que le 'Real BMI' ?",
+        desc: "Le terme 'Real BMI' évalue l'IMC en association avec le métabolisme de base (BMR), la dépense énergétique quotidienne (TDEE) et le tour de taille."
+      },
+      {
+        tag: "02 / Densité Musculaire",
+        title: "Le Paradoxe du Sportif Musclé",
+        desc: "La formule standard traite toute la masse de façon identique. Les athlètes musclés sont souvent classés en 'Surpoids' malgré une masse grasse faible."
+      },
+      {
+        tag: "03 / Seuils Régionaux",
+        title: "Recommandations Asiatiques de l'OMS",
+        desc: "L'OMS recommande un seuil d'IMC de 23 kg/m² pour le surpoids chez les populations asiatiques en raison du risque accru de graisse viscérale."
+      },
+      {
+        tag: "04 / Graisse Viscérale",
+        title: "Au-delà de la Balance : Graisse Abdominale",
+        desc: "L'IMC mesure la masse totale, pas la répartition des graisses. La graisse viscérale profonde présente des risques cardiovasculaires supérieurs."
+      }
+    ]
+  },
+  de: {
+    eyebrow: "Klinische Leitlinien",
+    mainTitle: "Wie genau ist der BMI? Die Wahrheit über 'Real BMI'",
+    mainSubtitle: "Obwohl der Body-Mass-Index (BMI) das weltweit am häufigsten genutzte Screening-Tool ist, fragen sich Millionen Menschen nach seiner Genauigkeit.",
+    cards: [
+      {
+        tag: "01 / Definition",
+        title: "Was ist 'Real BMI'?",
+        desc: "'Real BMI' bewertet den Body-Mass-Index zusammen mit physiologischen Werten wie Grundumsatz (BMR), Gesamtenergieumsatz (TDEE) und Taifenumfang."
+      },
+      {
+        tag: "02 / Muskeldichte",
+        title: "Das Sportler-Paradoxon",
+        desc: "Die Standardformel bewertet jede Masse gleich. Muskulöse Sportler werden oft als 'Übergewichtig' eingestuft, obwohl ihr Körperfettanteil sehr niedrig ist."
+      },
+      {
+        tag: "03 / Asiatische Standards",
+        title: "Regionale WHO-Richtlinien",
+        desc: "Die WHO empfiehlt für asiatische Bevölkerungen einen niedrigeren Grenzwert von 23 kg/m² für Übergewicht wegen des höheren Risikos für viszerales Fett."
+      },
+      {
+        tag: "04 / Viszeralfett",
+        title: "Bauchfett & Gesundheit",
+        desc: "Der BMI misst die Gesamtmasse, nicht die Fettverteilung. Tiefes Bauchfett birgt deutlich höhere Stoffwechselrisiken als Unterhautfettgewebe."
+      }
+    ]
+  }
+};
+
+const t = data[lang] || data.en;
+---
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+  
+  <!-- Section Header -->
+  <div class="max-w-3xl space-y-3 mb-10">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
+      <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
+      {t.eyebrow}
+    </div>
+
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-[1.08]">
+      {t.mainTitle}
+    </h2>
+
+    <p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+      {t.mainSubtitle}
+    </p>
+  </div>
+
+  <!-- 4 Feature Cards Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {t.cards.map((card: any) => (
+      <div class="group relative p-7 sm:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-lg hover:-translate-y-1">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-[var(--accent)] opacity-80">
+          {card.tag}
+        </span>
+        <h3 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
+          {card.title}
+        </h3>
+        <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+          {card.desc}
+        </p>
+      </div>
+    ))}
+  </div>
+
+</section>
