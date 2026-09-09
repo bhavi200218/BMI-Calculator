@@ -347,6 +347,42 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
             ]
           };
         } 
+        else if (slug === 'new-bmi-calculator') {
+          const hM = heightCm / 100;
+          const stdBmi = weightKg / (hM * hM);
+          const newBmi = (1.3 * weightKg) / Math.pow(hM, 2.5);
+          const diff = newBmi - stdBmi;
+
+          calculated = {
+            primary: { value: newBmi.toFixed(1), label: { en: '3D Height-Adjusted BMI', es: 'IMC 3D Ajustado', fr: 'IMC 3D Ajusté', de: '3D-Höhen-BMI', ko: '3D 신장 보정 BMI', hi: '3D ऊंचाई-समायोजित बीएमआई' } },
+            secondary: [
+              { label: { en: 'Standard BMI', es: 'IMC Estándar', fr: 'IMC Standard', de: 'Standard-BMI', ko: '표준 BMI', hi: 'मानक बीएमआई' }, value: stdBmi.toFixed(1) },
+              { label: { en: 'Height Correction', es: 'Corrección Altura', fr: 'Correction Taille', de: 'Höhenkorrektur', ko: '신장 보정 차이', hi: 'ऊंचाई सुधार' }, value: (diff >= 0 ? '+' : '') + diff.toFixed(1), unit: 'pts' }
+            ]
+          };
+        }
+        else if (slug === 'diabetes-risk-calculator') {
+          const hM = heightCm / 100;
+          const bmi = weightKg / (hM * hM);
+          const waistLimit = isM ? 94 : 80;
+          const waistHigh = isM ? 102 : 88;
+
+          let riskScore = 'Low Risk';
+          if (bmi >= 27.5 || waistCm >= waistHigh || (bmi >= 23 && waistCm >= waistLimit && ageNum >= 40)) {
+            riskScore = 'High Risk';
+          } else if (bmi >= 23 || waistCm >= waistLimit || ageNum >= 45) {
+            riskScore = 'Moderate Risk';
+          }
+
+          calculated = {
+            primary: { value: riskScore, label: { en: 'Diabetes Risk Status', es: 'Estado Riesgo Diabetes', fr: 'Statut Risque Diabète', de: 'Diabetes-Risikostatus', ko: '당뇨 위험도 상태', hi: 'डायबिटीज जोखिम स्थिति' } },
+            secondary: [
+              { label: { en: 'BMI Score', es: 'Puntaje IMC', fr: 'Score IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' }, value: bmi.toFixed(1) },
+              { label: { en: 'Asian Cutoff', es: 'Umbral Asiático', fr: 'Seuil Asiatique', de: 'Asien-Schwellenwert', ko: '아시아인 기준', hi: 'एशियाई कटऑफ' }, value: '23.0 kg/m²' },
+              { label: { en: 'Waist Risk', es: 'Riesgo Cintura', fr: 'Risque Tour Taille', de: 'Taillenrisiko', ko: '허리둘레 위험', hi: 'कमर का जोखिम' }, value: waistCm >= waistLimit ? 'Elevated' : 'Optimal' }
+            ]
+          };
+        } 
         else if (slug === 'bmr-calculator') {
           const bmr = isM
             ? (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) + 5
