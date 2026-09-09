@@ -134,28 +134,28 @@ const translations: Record<string, any> = {
 const t = translations[lang] || translations.en;
 ---
 
-<div id="calculator" class="melove-card p-7 md:p-10 space-y-8 h-full scroll-mt-28">
+<div id="calculator" class="melove-card p-4 sm:p-6 md:p-10 space-y-6 sm:space-y-8 h-full scroll-mt-28 w-full max-w-full overflow-hidden">
   
   <!-- Header -->
   <div class="space-y-2">
     <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.subtitle}</p>
-    <div class="flex items-center justify-between gap-4">
-      <h2 class="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{t.title}</h2>
+    <div class="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] break-words">{t.title}</h2>
       <!-- Unit Toggle -->
-      <div class="p-1 bg-[var(--muted)] rounded-xl border border-[var(--border)] flex">
-        <button data-unit="metric" class="unit-btn active px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer">
+      <div class="p-1 bg-[var(--muted)] rounded-xl border border-[var(--border)] flex shrink-0">
+        <button data-unit="metric" class="unit-btn active px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-[11px] sm:text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer">
           {t.metric}
         </button>
-        <button data-unit="imperial" class="unit-btn px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer text-[var(--muted-foreground)]">
+        <button data-unit="imperial" class="unit-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-[11px] sm:text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer text-[var(--muted-foreground)]">
           {t.imperial}
         </button>
       </div>
     </div>
   </div>
 
-  <div class="space-y-6">
+  <div class="space-y-5 sm:space-y-6">
     <!-- Weight & Height -->
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 min-[400px]:grid-cols-2 gap-3.5 sm:gap-4">
       <!-- Weight -->
       <div class="space-y-2">
         <label id="weightLabel" class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] flex items-center justify-between">
@@ -163,7 +163,7 @@ const t = translations[lang] || translations.en;
           <span id="weightUnit" class="text-[var(--accent)] font-bold">{t.weight_unit_kg}</span>
         </label>
         <input type="number" id="weight" placeholder="70" required
-          class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+          class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
           inputmode="decimal" />
       </div>
 
@@ -175,48 +175,48 @@ const t = translations[lang] || translations.en;
         </label>
         <div id="metricHeightGroup" class="relative">
           <input type="number" id="height" placeholder="175" required
-            class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+            class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
             inputmode="decimal" />
         </div>
       </div>
 
       <!-- Height (Imperial) -->
-      <div id="imperialHeightWrapper" class="hidden col-span-2 space-y-2">
+      <div id="imperialHeightWrapper" class="hidden col-span-1 min-[400px]:col-span-2 space-y-2">
         <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{t.height_ft}</label>
-        <div id="imperialHeightGroup" class="grid grid-cols-2 gap-3">
+        <div id="imperialHeightGroup" class="grid grid-cols-2 gap-2 sm:gap-3">
           <div class="relative">
             <input type="number" id="heightFt" placeholder="5"
-              class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+              class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
               inputmode="decimal" />
-            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)]">FT</span>
+            <span class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)]">FT</span>
           </div>
           <div class="relative">
             <input type="number" id="heightIn" placeholder="9"
-              class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+              class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
               inputmode="decimal" />
-            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)]">IN</span>
+            <span class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)]">IN</span>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Age & Gender -->
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 min-[400px]:grid-cols-2 gap-3.5 sm:gap-4">
       <!-- Age -->
       <div class="space-y-2">
         <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{t.age}</label>
         <input type="number" id="age" placeholder="25" required
-          class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+          class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
           inputmode="numeric" />
       </div>
       <!-- Gender -->
       <div class="space-y-2">
         <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{t.gender}</label>
-        <div class="grid grid-cols-2 gap-2 h-[56px]">
-          <button data-gender="male" class="gender-btn active h-full rounded-[var(--radius-sm)] border-[1.5px] border-[var(--border)] text-xs font-display font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer">
+        <div class="grid grid-cols-2 gap-2 min-h-[48px] sm:h-[56px]">
+          <button data-gender="male" class="gender-btn active h-full rounded-[var(--radius-sm)] border-[1.5px] border-[var(--border)] text-[11px] sm:text-xs px-2 py-2 font-display font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer truncate">
             {t.male}
           </button>
-          <button data-gender="female" class="gender-btn h-full rounded-[var(--radius-sm)] border-[1.5px] border-[var(--border)] text-xs font-display font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer text-[var(--muted-foreground)]">
+          <button data-gender="female" class="gender-btn h-full rounded-[var(--radius-sm)] border-[1.5px] border-[var(--border)] text-[11px] sm:text-xs px-2 py-2 font-display font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer text-[var(--muted-foreground)] truncate">
             {t.female}
           </button>
         </div>
@@ -224,14 +224,14 @@ const t = translations[lang] || translations.en;
     </div>
 
     <!-- Calculate Button -->
-    <button id="calcBtn" class="w-full py-5 rounded-[var(--radius)] calc-btn-gradient font-display font-bold uppercase text-base tracking-[0.25em] cursor-pointer">
+    <button id="calcBtn" class="w-full py-4 sm:py-5 rounded-[var(--radius)] calc-btn-gradient font-display font-bold uppercase text-sm sm:text-base tracking-[0.2em] sm:tracking-[0.25em] cursor-pointer">
       {t.calculate}
     </button>
   </div>
 
   <!-- Session History -->
-  <div id="history" class="pt-6 border-t border-[var(--border)]">
-    <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--muted-foreground)] mb-4">{t.history}</p>
+  <div id="history" class="pt-5 sm:pt-6 border-t border-[var(--border)]">
+    <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--muted-foreground)] mb-3 sm:mb-4">{t.history}</p>
     <div id="historyList" class="space-y-2"></div>
   </div>
 </div>

@@ -17,28 +17,28 @@ const imperialLabel = { en: 'Imperial', es: 'Imperial', fr: 'Impérial', de: 'Im
 const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence', de: 'Referenz', ko: '기준', hi: 'संदर्भ' }[lang];
 ---
 
-<div id={`calculator-${calculator.slug}`} data-slug={calculator.slug} class="melove-card p-7 md:p-10 space-y-8 h-full scroll-mt-28">
+<div id={`calculator-${calculator.slug}`} data-slug={calculator.slug} class="melove-card p-4 sm:p-6 md:p-10 space-y-6 sm:space-y-8 h-full scroll-mt-28 w-full max-w-full overflow-hidden">
   
   <!-- Header -->
   <div class="space-y-2">
     <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{calculator.name[lang] || calculator.name['en']}</p>
-    <div class="flex items-center justify-between gap-4">
-      <h2 class="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+    <div class="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] break-words">
         {calculator.name[lang] || calculator.name['en']}
       </h2>
       <!-- Unit Toggle -->
-      <div class="p-1 bg-[var(--muted)] rounded-xl border border-[var(--border)] flex">
-        <button id={`unitBtnMetric-${calculator.slug}`} data-unit="metric" class="unit-btn active px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer">
+      <div class="p-1 bg-[var(--muted)] rounded-xl border border-[var(--border)] flex shrink-0">
+        <button id={`unitBtnMetric-${calculator.slug}`} data-unit="metric" class="unit-btn active px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-[11px] sm:text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer">
           {metricLabel}
         </button>
-        <button id={`unitBtnImperial-${calculator.slug}`} data-unit="imperial" class="unit-btn px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer text-[var(--muted-foreground)]">
+        <button id={`unitBtnImperial-${calculator.slug}`} data-unit="imperial" class="unit-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-[11px] sm:text-xs font-display font-semibold uppercase tracking-widest transition-all duration-200 cursor-pointer text-[var(--muted-foreground)]">
           {imperialLabel}
         </button>
       </div>
     </div>
   </div>
 
-  <div class="space-y-6">
+  <div class="space-y-5 sm:space-y-6">
 
 
     <!-- Render Form Inputs -->
@@ -50,7 +50,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         return (
           <div class="space-y-2">
             <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{labelStr}</label>
-            <select id={`input-${calculator.slug}-${input.id}`} class="matte-input w-full px-4 py-3.5 text-base font-bold rounded-[var(--radius-sm)] cursor-pointer h-[56px] border-[1.5px] border-[var(--border)] bg-[var(--input)] text-[var(--foreground)]">
+            <select id={`input-${calculator.slug}-${input.id}`} class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-sm sm:text-base font-bold rounded-[var(--radius-sm)] cursor-pointer h-[50px] sm:h-[56px] border-[1.5px] border-[var(--border)] bg-[var(--input)] text-[var(--foreground)]">
               {input.options?.map(opt => (
                 <option value={opt.value} class="bg-[var(--card)] text-[var(--foreground)] font-bold">
                   {opt.label[lang] || opt.label['en']}
@@ -75,25 +75,25 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
                 <span class="text-[var(--accent)] font-bold">{cmLabel}</span>
               </label>
               <input type="number" id={`input-${calculator.slug}-height`} placeholder={input.placeholder || '175'} required
-                class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+                class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
                 inputmode="decimal" />
             </div>
 
             <!-- Imperial Height -->
             <div id={`imperialHeightGroup-${calculator.slug}`} class="hidden space-y-2">
               <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{labelStr}</label>
-              <div class="grid grid-cols-2 gap-3">
+              <div class="grid grid-cols-2 gap-2 sm:gap-3">
                 <div class="relative">
                   <input type="number" id={`input-${calculator.slug}-height-ft`} placeholder="5"
-                    class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+                    class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
                     inputmode="decimal" />
-                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)] uppercase">{ftLabel}</span>
+                  <span class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)] uppercase">{ftLabel}</span>
                 </div>
                 <div class="relative">
                   <input type="number" id={`input-${calculator.slug}-height-in`} placeholder="9"
-                    class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+                    class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
                     inputmode="decimal" />
-                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)] uppercase">{inLabel}</span>
+                  <span class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)] uppercase">{inLabel}</span>
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
               <span id={`weightUnitLabel-${calculator.slug}`} class="text-[var(--accent)] font-bold">{kgLabel}</span>
             </label>
             <input type="number" id={`input-${calculator.slug}-weight`} placeholder={input.placeholder || '70'} required
-              class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+              class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
               inputmode="decimal" />
           </div>
         );
@@ -129,7 +129,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
               <span id={`unitLabel-${calculator.slug}-${input.id}`} class="text-[var(--accent)] font-bold" data-metric-unit={cmLabel} data-imperial-unit={inLabel}>{cmLabel}</span>
             </label>
             <input type="number" id={`input-${calculator.slug}-${input.id}`} placeholder={input.placeholder || '80'} required
-              class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+              class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
               inputmode="decimal" />
           </div>
         );
@@ -140,14 +140,14 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         <div class="space-y-2">
           <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{labelStr}</label>
           <input type="number" id={`input-${calculator.slug}-${input.id}`} placeholder={input.placeholder || '25'} required
-            class="matte-input w-full px-4 py-3.5 text-2xl font-bold rounded-[var(--radius-sm)]"
+            class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
             inputmode="numeric" />
         </div>
       );
     })}
 
     <!-- Calculate Button -->
-    <button id={`runCalcBtn-${calculator.slug}`} class="w-full py-5 rounded-[var(--radius)] calc-btn-gradient font-display font-bold uppercase text-base tracking-[0.25em] cursor-pointer">
+    <button id={`runCalcBtn-${calculator.slug}`} class="w-full py-4 sm:py-5 rounded-[var(--radius)] calc-btn-gradient font-display font-bold uppercase text-sm sm:text-base tracking-[0.2em] sm:tracking-[0.25em] cursor-pointer">
       {t.calcBtn}
     </button>
   </div>

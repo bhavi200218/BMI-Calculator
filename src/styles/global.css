@@ -76,11 +76,13 @@
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.glass-card:hover {
-  border-color: color-mix(in srgb, var(--border) 60%, var(--accent) 40%);
-  box-shadow: var(--shadow-card);
+.melove-card, .melove-result-card {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 
