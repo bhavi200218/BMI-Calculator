@@ -115,17 +115,49 @@ const medicalWebPageSchema = {
   ]
 };
 
-// 4. FAQ Schema
+// 4. FAQ Schema (Includes exact Google PAA "People Also Ask" Queries)
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "How do I find my real BMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can find your Real BMI by using an online clinical calculator that evaluates your Body Mass Index (weight / height²) alongside your Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and Waist-to-Height Ratio (WHtR) to account for muscle density, age, and visceral fat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the BMI calculator real?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, standard BMI calculators use an official clinical formula recognized by WHO and CDC. However, standard BMI only evaluates total body weight. The Real BMI Calculator expands on standard BMI by integrating body fat estimation, metabolic calorie targets, and regional WHO ethnic risk cutoffs for complete accuracy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which BMI is accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Real BMI assessment that combines standard BMI with Waist-to-Height Ratio (WHtR), BMR calorie needs, and revised WHO Asian cutoff thresholds (23.0 kg/m² for overweight) provides the most accurate clinical snapshot of overall health and abdominal fat risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a BMI of 25 realistic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, a BMI of 25.0 kg/m² represents the borderline between healthy weight and overweight under standard WHO guidelines. However, for muscular athletes, a BMI of 25 is realistic and healthy due to dense muscle mass, whereas for South Asian and East Asian populations, health risk begins earlier at 23.0 kg/m²."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Is BMI Accurate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Standard BMI is a useful population screening tool, but evidence shows it fails for individuals because it cannot differentiate muscle density from body fat, ignores abdominal visceral fat distribution, and uses outdated 19th-century formulas."
+        "text": "Standard BMI is a useful population screening tool, but evidence shows it fails for individuals because it cannot differentiate muscle density from body fat, ignores abdominal visceral fat distribution, and uses outdated formulas."
       }
     },
     {
@@ -142,14 +174,6 @@ const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The Real BMI Calculator evaluates Body Mass Index (BMI) alongside Basal Metabolic Rate (BMR), TDEE, waist circumference, and WHO ethnic thresholds to provide a complete, clinical-grade body composition assessment."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Real BMI Calculator accurate?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Real BMI Calculator integrates official WHO and CDC guidelines, adjusting cutoff thresholds for South Asian and East Asian populations (23.0 kg/m² for overweight) for maximum accuracy."
       }
     },
     {
