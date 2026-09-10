@@ -1,18 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
-<Layout title="Datenschutz | Real BMI">
+<Layout 
+    title="Datenschutzerklärung | Real BMI"
+    description="Lesen Sie unsere Datenschutzerklärung. Real BMI stellt sicher, dass Ihre Gesundheitsdaten privat bleiben und nie auf unseren Servern gespeichert werden."
+>
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-12">
-        <a href="/de" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-            Zurück zur Startseite
-        </a>
-        <h1 class="text-5xl font-black tracking-tighter uppercase">Datenschutz</h1>
-        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-6 font-bold">
-            <p>Ihr Datenschutz ist uns extrem wichtig.</p>
-        </div>
-    </main>
+    <PageShell
+      title="Datenschutzerklärung"
+      eyebrow="Ihre Daten, Ihre Privatsphäre"
+      description="Erfahren Sie, wie Real BMI Ihre Daten schützt und alle Berechnungen sicher auf Ihrem Gerät ausführt."
+      returnUrl="/de"
+      returnLabel="Startseite"
+    >
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+        <p>Bei <strong>Real BMI</strong> nehmen wir Ihren Datenschutz sehr ernst. Unsere BMI-, BMR- und TDEE-Rechner führen alle Berechnungen lokal in Ihrem Browser aus.</p>
+
+        <h2>Drittanbieter & Werbung</h2>
+        <p>Drittanbieter, einschließlich Google, verwenden Cookies zur Schaltung von Anzeigen auf Grundlage vorheriger Besuche des Nutzers auf unserer oder anderen Websites. Die Verwendung von Werbe-Cookies durch Google ermöglicht Google und seinen Partnern die Schaltung von Anzeigen auf Basis Ihrer Besuche auf unseren oder anderen Seiten im Internet.</p>
+        <p>Nutzer können personalisierte Werbung in den <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Google Anzeigeneinstellungen</a> oder auf <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a> deaktivieren.</p>
+      </div>
+    </PageShell>
 </Layout>

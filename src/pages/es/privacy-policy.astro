@@ -1,18 +1,33 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
-<Layout title="Política de Privacidad | Real BMI">
+<Layout 
+    title="Política de Privacidad | Real BMI"
+    description="Lee nuestra política de privacidad. Real BMI garantiza que tus datos de salud se mantengan privados y nunca se almacenen en nuestros servidores."
+>
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-12">
-        <a href="/es" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-            Volver al inicio
-        </a>
-        <h1 class="text-5xl font-black tracking-tighter uppercase">Política de Privacidad</h1>
-        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-6 font-bold">
-            <p>Tu privacidad es de suma importancia para nosotros. Esta política describe cómo manejamos tus datos.</p>
-        </div>
-    </main>
+    <PageShell
+      title="Política de Privacidad"
+      eyebrow="Tus datos, tu privacidad"
+      description="Descubre cómo Real BMI protege tus datos y mantiene todos los cálculos seguros y privados."
+      returnUrl="/es"
+      returnLabel="Inicio"
+    >
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+        <p>En <strong>Real BMI</strong>, nos tomamos tu privacidad muy en serio. Nuestras calculadoras de IMC, BMR, TDEE y composición corporal están diseñadas para que tus datos personales permanezcan en tu dispositivo y nunca se almacenen en nuestros servidores.</p>
+
+        <h2>Lo que recopilamos</h2>
+        <p>No recopilamos, almacenamos ni compartimos tu altura, peso, edad o datos de salud. Los cálculos se realizan localmente en tu navegador.</p>
+
+        <h2>Servicios de terceros y Publicidad</h2>
+        <p>No vendemos ni comercializamos tus datos. Los proveedores de terceros, incluido Google, utilizan cookies para mostrar anuncios basados en las visitas anteriores del usuario a este u otros sitios web. El uso de cookies de publicidad por parte de Google le permite a él y a sus socios mostrar anuncios basados en las visitas realizadas a sus sitios o a otros sitios de Internet.</p>
+        <p>Los usuarios pueden inhabilitar la publicidad personalizada consultando la <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Configuración de anuncios de Google</a> o visitando <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a>.</p>
+
+        <h2>Seguridad</h2>
+        <p>Nos esforzamos por mantener Real BMI seguro con prácticas web modernas. Si tienes preguntas, contáctanos y te responderemos rápidamente.</p>
+      </div>
+    </PageShell>
 </Layout>
