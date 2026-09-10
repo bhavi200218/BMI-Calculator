@@ -8,6 +8,7 @@ interface Props {
 	keywords?: string;
 	ogImage?: string;
 	canonicalURL?: string;
+	robots?: string;
 }
 
 const { 
@@ -15,7 +16,8 @@ const {
 	description = "Real BMI Calculator provides instant, clinical-grade Body Mass Index (BMI), BMR, TDEE, and ideal weight analytics based on WHO & CDC standards. 100% free & private.",
 	keywords = "real bmi calculator, real bmi, body mass index, what is real bmi, is bmi accurate, real bmi tool, bmi chart, bmi scale, calculate real bmi, bmi calculator for men, bmi calculator for women, bmr calculator, tdee calculator",
 	ogImage = "/seo-dark.png",
-	canonicalURL: customCanonicalURL
+	canonicalURL: customCanonicalURL,
+	robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 } = Astro.props;
 
 const canonicalURL = customCanonicalURL || new URL(Astro.url.pathname, 'https://realbmicalculator.com').href;
@@ -255,7 +257,7 @@ const howToSchema = {
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords} />
-		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+		<meta name="robots" content={robots} />
 		<link rel="canonical" href={canonicalURL} />
 
 		<!-- Open Graph / Facebook -->
