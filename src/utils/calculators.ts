@@ -94,9 +94,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'new-bmi-calculator',
-    name: { en: 'New 3D BMI Tool', es: 'Nuevo IMC 3D', fr: 'Nouvel IMC 3D', de: 'Neuer 3D-BMI', ko: '새로운 3D BMI', hi: 'नया 3D बीएमआई' },
-    title: { en: 'New Height-Adjusted BMI Calculator – 3D Volume Scaling (1.3 x kg / m²·⁵)', es: 'Calculadora del Nuevo IMC Ajustado por Altura', fr: 'Nouveau Calculateur d\'IMC Ajusté à la Taille', de: 'Neuer Höhenbereinigter BMI-Rechner', ko: '신장 보정 새로운 3D BMI 계산기', hi: 'नया 3D ऊंचाई-समायोजित बीएमआई कैलकुलेटर' },
-    description: { en: 'Calculate your 3D height-adjusted BMI using the 2.5 exponent formula (1.3 × weight / height²·⁵) to eliminate height distortion for tall and short adults.', es: 'Calcula tu IMC 3D ajustado por altura.', fr: 'Calculez votre IMC 3D ajusté à la taille.', de: 'Berechnen Sie Ihren höhenbereinigten 3D-BMI.', ko: '키 왜곡을 수정한 새로운 3D BMI를 계산하세요.', hi: '2.5 घात फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) के साथ अपने 3D ऊंचाई-समायोजित बीएमआई की तुरंत गणना करें।' },
+    name: { en: '3D BMI Calculator', es: 'Calculadora IMC 3D', fr: 'Calculateur IMC 3D', de: '3D BMI Rechner', ko: '3D BMI 계산기', hi: '3D बीएमआई कैलकुलेटर' },
+    title: { en: '3D BMI Calculator – Official 3D Body Mass Index Tool & Volume Scaling', es: 'Calculadora de IMC 3D Gratis - IMC 3D Body Visualizer & OMS 2026', fr: 'Calculateur d\'IMC 3D Gratuit - IMC 3D Body Scaling', de: '3D BMI Rechner - Kostenloser 3D Body Mass Index Tool', ko: '3D BMI 계산기 - 3D 체질량지수 및 체형 측정기', hi: '3D बीएमआई कैलकुलेटर - मुफ़्त 3D Body Mass Index Tool' },
+    description: { en: 'Free 3D BMI Calculator. Calculate height-adjusted 3D Body Mass Index (1.3 × weight / height²·⁵) with 3D body scaling to eliminate height distortion for tall & short adults.', es: 'Calculadora de IMC 3D (imc 3d body) gratis según la OMS. Calcula tu Índice de Masa Corporal 3D ajustado por altura.', fr: 'Calculateur d\'IMC 3D gratuit. Calculez votre IMC 3D ajusté à la taille (1.3 × poids / taille²·⁵).', de: 'Kostenloser 3D BMI Rechner (BMI Rechner 3D). Berechnen Sie Ihren höhenbereinigten 3D Body-Mass-Index.', ko: '무료 3D BMI 계산기. 키 왜곡을 수정한 새로운 3D 체질량지수를 2.5 공식으로 정확하게 계산하세요.', hi: '2.5 घात फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) के साथ अपने 3D ऊंचाई-समायोजित बीएमआई की तुरंत गणना करें।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
@@ -622,9 +622,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'one-rep-max-calculator',
-    name: { en: 'One Rep Max', es: 'Calculadora de 1RM', fr: 'Calculateur de 1RM', de: 'Maximalkraft Rechner (1RM)', ko: '1RM 계산기 (최대 들기)', hi: 'वन रेप मैक्स कैलकुलेटर' },
-    title: { en: 'One Rep Max Calculator - Strength Lift Diagnostic', es: 'Calculadora de Una Repetición Máxima (1RM)', fr: 'Calculateur de Charge Maximale 1RM', de: 'Maximalkraft-Rechner (1RM) Bankdrücken Kniebeugen', ko: '1RM 최대 근력 측정기', hi: 'वन रेप मैक्स कैलकुलेटर - स्ट्रेंथ लिफ्ट' },
-    description: { en: 'Estimate weight lifting 1RM strength capability.', es: 'Calcula tu capacidad máxima de levantamiento (1RM).', fr: 'Estimez votre force maximale pour 1 répétition.', de: 'Ermitteln Sie Ihre maximale Kraftleistung für 1 Rep.', ko: '웨이트 트레이닝 시 최대 한 번 들 수 있는 무게를 구합니다.', hi: 'वजन उठाने की 1RM ताकत क्षमता का अनुमान लगाएं।' },
+    name: { en: 'One Rep Max', es: 'Calculadora de 1RM', fr: 'Calculateur de 1RM', de: 'Maximalkraft Rechner (1RM)', ko: '1RM 측정기 (1RM 계산기)', hi: 'वन रेप मैक्स कैलकुलेटर' },
+    title: { en: 'One Rep Max Calculator - Strength Lift Diagnostic', es: 'Calculadora de Una Repetición Máxima (1RM)', fr: 'Calculateur de Charge Maximale 1RM', de: 'Maximalkraft-Rechner (1RM) Bankdrücken Kniebeugen', ko: '1RM 측정기 - 1RM 계산기 및 최대 근력 측정 (Epley 공식)', hi: 'वन रेप मैक्स कैलकुलेटर - स्ट्रेंथ लिफ्ट' },
+    description: { en: 'Estimate weight lifting 1RM strength capability using clinical Epley formulas.', es: 'Calcula tu capacidad máxima de levantamiento (1RM).', fr: 'Estimez votre force maximale pour 1 répétition.', de: 'Ermitteln Sie Ihre maximale Kraftleistung für 1 Rep.', ko: '1RM 측정기: 벤치프레스, 스쿼트, 데드리프트 등 웨이트 트레이닝 시 최대 한 번 들 수 있는 1RM 무게를 정확하게 계산하세요.', hi: 'वजन उठाने की 1RM ताकत क्षमता का अनुमान लगाएं।' },
     inputs: [
       { id: 'weight', label: { en: 'Weight Lifted', es: 'Peso Levantado', fr: 'Charge Soulevée', de: 'Gewicht', ko: '리프팅 무게', hi: 'उठाया गया वजन' }, type: 'number', placeholder: '100' },
       { id: 'age', label: { en: 'Reps', es: 'Repeticiones', fr: 'Répétitions', de: 'Wiederholungen', ko: '반복 횟수(Reps)', hi: 'रेप्स' }, type: 'number', placeholder: '5' }
