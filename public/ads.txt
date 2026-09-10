@@ -1,3 +1,2 @@
 # Real BMI Calculator - Google AdSense Authorized Digital Sellers (ads.txt)
-# Replace pub-0000000000000000 with your actual Google AdSense Publisher ID after approval.
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-6643535431949281, DIRECT, f08c47fec0942fa0
