@@ -540,9 +540,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'waist-to-hip-ratio-calculator',
-    name: { en: 'Waist-to-Hip Ratio', es: 'Relación Cintura-Cadera', fr: 'Rapport Taille-Hanche', de: 'Taille-Hüft-Verhältnis', ko: '허리 엉덩이 비율 계산기', hi: 'कमर से कूल्हे का अनुपात' },
-    title: { en: 'Waist-to-Hip Ratio Calculator - WHR Diagnostic', es: 'Calculadora de Relación Cintura-Cadera', fr: 'Calculateur de Rapport Taille-Hanche', de: 'Taille-Hüft-Verhältnis Rechner (WHR)', ko: '복부비만율 계산기 (WHR)', hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर' },
-    description: { en: 'Assess cardiovascular health risks using WHR.', es: 'Evalúa riesgos cardiovasculares con la relación cintura-cadera.', fr: 'Évaluez les risques cardiovasculaires avec le WHR.', de: 'Bewerten Sie kardiovaskuläre Risiken mit dem WHR.', ko: '복부 지방 분포 비율을 검사하여 예후를 진단합니다.', hi: 'WHR का उपयोग करके हृदय स्वास्थ्य जोखिमों का आकलन करें।' },
+    name: { en: 'Waist to Hip Ratio Calculator', es: 'Calculadora de Relación Cintura a Cadera', fr: 'Calculateur de Rapport Taille à Hanche', de: 'Taille-zu-Hüfte-Verhältnis Rechner', ko: '허리 엉덩이 비율 계산기 (WHR Calculator)', hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर' },
+    title: { en: 'Waist to Hip Ratio Calculator – WHO WHR Chart & Tool', es: 'Calculadora de Relación Cintura a Cadera - Tabla OMS WHR', fr: 'Calculateur de Rapport Taille à Hanche - Normes OMS WHR', de: 'Taille zu Hüfte Verhältnis Rechner – WHO WHR Tabelle', ko: '허리 엉덩이 비율 계산기 (Waist to Hip Ratio Calculator)', hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर - WHO WHR चार्ट' },
+    description: { en: 'Free Waist to Hip Ratio Calculator. Calculate your waist-to-hip ratio (WHR) instantly and assess abdominal obesity and health risk according to WHO standards.', es: 'Calculadora gratuita de relación cintura a cadera. Calcula tu WHR y evalúa el riesgo de obesidad abdominal según la OMS.', fr: 'Calculateur gratuit de rapport taille-hanche (WHR). Évaluez votre obésité abdominale selon les normes de l\'OMS.', de: 'Kostenloser Taille-zu-Hüfte-Verhältnis Rechner. Berechnen Sie Ihren WHR-Wert und bewerten Sie Ihr gesundheitliches Risiko nach WHO-Standards.', ko: '무료 허리 엉덩이 비율 계산기. WHR을 즉시 계산하고 WHO 표준에 따라 복부 비만 및 건강 위험을 진단하세요.', hi: 'मुफ़्त कमर से कूल्हे का अनुपात कैलकुलेटर। अपने WHR की तुरंत गणना करें और WHO मानकों के अनुसार पेट के मोटापे के जोखिम का आकलन करें।' },
     inputs: [
       { id: 'waist', label: L.waist, type: 'number', placeholder: '80' },
       { id: 'hip', label: L.hip, type: 'number', placeholder: '90' },

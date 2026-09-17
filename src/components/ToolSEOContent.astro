@@ -278,20 +278,24 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'waist-to-hip-ratio-calculator': {
     en: {
-      eyebrow: 'Cardiovascular Risk Metric',
-      title: 'Waist to Hip Ratio Calculator & WHR Calculator',
-      intro: 'Evaluate waist hip ratio health risk with our WHR Calculator. Assess central abdominal visceral fat test risk by comparing waist circumference to hip circumference.',
-      formulaTitle: 'WHR Calculator Formula',
-      formulaDesc: 'WHR = Waist Circumference / Hip Circumference',
-      tableTitle: 'WHO Waist Hip Ratio Health Risk Table',
+      eyebrow: 'WHO Clinical Visceral Fat Standard',
+      title: 'Waist to Hip Ratio Calculator & WHR Chart Tool',
+      intro: 'Calculate your waist to hip ratio instantly with our free Waist to Hip Ratio Calculator. Aligned with World Health Organization (WHO) abdominal obesity guidelines, determine your visceral fat distribution and cardiovascular risk level.',
+      formulaTitle: 'Official WHO Waist to Hip Ratio (WHR) Formula Equation',
+      formulaDesc: 'WHR = Waist Circumference (at narrowest point or navel) / Hip Circumference (at widest point of buttocks)',
+      formulaCode: 'WHR = Waist / Hip',
+      tableTitle: 'WHO Waist to Hip Ratio (WHR) Risk Categories & Chart',
       tableRows: [
-        { col1: 'Low Risk', col2: 'Men: < 0.90 | Women: < 0.80', col3: 'Optimal fat distribution' },
-        { col1: 'Moderate Risk', col2: 'Men: 0.90 – 0.99 | Women: 0.80 – 0.84', col3: 'Increased visceral fat' },
-        { col1: 'High Risk', col2: 'Men: ≥ 1.00 | Women: ≥ 0.85', col3: 'Elevated cardiovascular risk' }
+        { col1: 'Low Risk (Gynoid Pear Shape)', col2: 'Men: < 0.90 | Women: < 0.80', col3: 'Healthy subcutaneous fat distribution with low metabolic risk' },
+        { col1: 'Moderate Risk (Transition Zone)', col2: 'Men: 0.90 – 0.99 | Women: 0.80 – 0.84', col3: 'Moderate abdominal visceral fat accumulation' },
+        { col1: 'High Risk (Android Apple Shape)', col2: 'Men: ≥ 1.00 | Women: ≥ 0.85', col3: 'Substantial central obesity & elevated cardiovascular disease risk' }
       ],
       faqs: [
-        { question: 'What is a Waist to Hip Ratio Calculator (WHR Calculator)?', answer: 'A waist to hip ratio calculator measures body fat distribution. It assesses waist hip ratio health risk and serves as an abdominal visceral fat test.' },
-        { question: 'What WHR ratio indicates high cardiovascular risk?', answer: 'According to WHO, a WHR of 1.00 or higher for men or 0.85 or higher for women indicates high central obesity and elevated metabolic risk.' }
+        { question: 'What is the Waist to Hip Ratio Calculator?', answer: 'The Waist to Hip Ratio Calculator is an anthropometric screening tool that compares your waist measurement to your hip measurement to determine body fat distribution and assess abdominal visceral fat risk.' },
+        { question: 'How to calculate waist to hip ratio with the WHR formula?', answer: 'Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80.' },
+        { question: 'What is a healthy waist to hip ratio for men and women according to WHO?', answer: 'According to World Health Organization (WHO) guidelines, a healthy WHR is below 0.90 for men and below 0.80 for women.' },
+        { question: 'Why is waist to hip ratio a better indicator of heart disease than BMI?', answer: 'While BMI measures total body mass, Waist to Hip Ratio specifically measures central abdominal fat (visceral fat around internal organs), which directly correlates with arterial inflammation, Type 2 Diabetes, and heart disease.' },
+        { question: 'How to accurately measure waist and hip circumference for the WHR calculator?', answer: 'Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks.' }
       ]
     }
   },
