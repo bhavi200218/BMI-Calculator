@@ -374,9 +374,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'calorie-calculator',
-    name: { en: 'Calorie Calculator', es: 'Calculadora de Calorías', fr: 'Calculateur de Calories', de: 'Kalorienrechner', ko: '칼로리 계산기', hi: 'कैलोरी कैलकुलेटर' },
-    title: { en: 'Calorie Target Calculator - Daily Food Intake', es: 'Calculadora de Objetivo de Calorías Diarias', fr: 'Calculateur de Déficit & Surplus Calorique', de: 'Kalorienrechner Tagesbedarf bestimmen', ko: '섭취 칼로리 계산기', hi: 'कैलोरी लक्ष्य कैलकुलेटर' },
-    description: { en: 'Calculate target calories for fat loss or gain.', es: 'Calcula calorías necesarias para quemar grasa o ganar músculo.', fr: 'Calculez le déficit calorique pour perdre de la graisse.', de: 'Berechnen Sie Kalorienbedarf für Abnehmen oder Massephase.', ko: '체중 목표를 도달하기 위한 타겟 칼로리를 찾습니다.', hi: 'वजन घटाने या बढ़ाने के लिए लक्षित कैलोरी की गणना करें।' },
+    name: { en: 'Calorie Deficit Calculator', es: 'Calculadora de Déficit Calórico', fr: 'Calculateur de Déficit Calorique', de: 'Kaloriendefizit Rechner', ko: '칼로리 적자 계산기 (Calorie Deficit Calculator)', hi: 'कैलोरी घाटा कैलकुलेटर' },
+    title: { en: 'Calorie Deficit Calculator – Daily Deficit for Weight Loss', es: 'Calculadora de Déficit Calórico – Perder Peso de Forma Segura', fr: 'Calculateur de Déficit Calorique – Perte de Poids Rapide & Sûre', de: 'Kaloriendefizit Rechner – Täglicher Kalorienbedarf zum Abnehmen', ko: '무료 칼로리 적자 계산기 (Calorie Deficit Calculator)', hi: 'मुफ़्त कैलोरी घाटा कैलकुलेटर - वजन घटाने के लिए दैनिक कैलोरी घाटा' },
+    description: { en: 'Free Calorie Deficit Calculator. Calculate your exact daily calorie deficit for weight loss, maintenance calories (TDEE), resting metabolic burn (BMR), and safe fat loss rate.', es: 'Calculadora gratuita de déficit calórico. Calcula tu déficit calórico diario exacto para perder peso de manera sostenible en función de tu BMR y TDEE.', fr: 'Calculateur gratuit de déficit calorique. Calculez votre déficit calorique quotidien exact pour perdre du poids selon votre BMR et TDEE.', de: 'Kostenloser Kaloriendefizit-Rechner. Berechnen Sie Ihr exaktes tägliches Kaloriendefizit zum Abnehmen basierend auf Grundumsatz (BMR) und TDEE.', ko: '무료 칼로리 적자 계산기. 체중 감량을 위한 일일 칼로리 적자(Calorie Deficit), TDEE, BMR 및 안전한 지방 감량 수치를 계산하세요.', hi: 'मुफ़्त कैलोरी घाटा कैलकुलेटर। अपने BMR और TDEE के आधार पर सुरक्षित वजन घटाने के लिए अपने सटीक दैनिक कैलोरी घाटे (Calorie Deficit) की गणना करें।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
@@ -409,14 +409,26 @@ export const calculators: CalculatorConfig[] = [
       const tdee = bmr * act;
 
       let targetCal = tdee;
-      if (inputs.goal === 'lose') targetCal = tdee - 500;
-      else if (inputs.goal === 'gain') targetCal = tdee + 500;
+      let deficitVal = 0;
+      if (inputs.goal === 'lose') {
+        deficitVal = 500;
+        targetCal = tdee - deficitVal;
+      } else if (inputs.goal === 'gain') {
+        targetCal = tdee + 500;
+      }
+
+      const weeklyFatLoss = ((tdee - targetCal) * 7 / 7700);
+      const displayLoss = system === 'imperial' ? (weeklyFatLoss * 2.20462).toFixed(1) : weeklyFatLoss.toFixed(2);
+      const lossUnit = system === 'imperial' ? 'lbs/week' : 'kg/week';
+      const proteinGuard = Math.round(w * 2.0);
 
       return {
         primary: { value: Math.round(targetCal), label: { en: 'Target Daily Calories', es: 'Objetivo Diario Calorías', fr: 'Objectif Calorique Journalier', de: 'Tägliche Zielkalorien', ko: '목표 일일 칼로리 수치', hi: 'लक्षित दैनिक कैलोरी' }, unit: 'kcal/day' },
         secondary: [
-          { label: { en: 'Maintenance (TDEE)', es: 'Mantenimiento', fr: 'Maintenance', de: 'Erhaltungskalorien', ko: '유지 에너지(TDEE)', hi: 'रखरखाव (TDEE)' }, value: Math.round(tdee), unit: 'kcal' },
-          { label: { en: 'Basal Burn (BMR)', es: 'Metabolismo Basal', fr: 'Métabolisme de Base', de: 'Grundumsatz BMR', ko: '기초적인 대사 에너지(BMR)', hi: 'बेसल बर्न (BMR)' }, value: Math.round(bmr), unit: 'kcal' }
+          { label: { en: 'Daily Calorie Deficit', es: 'Déficit Calórico Diario', fr: 'Déficit Calorique Journalier', de: 'Tägliches Kaloriendefizit', ko: '일일 칼로리 적자', hi: 'दैनिक कैलोरी घाटा' }, value: Math.round(tdee - targetCal), unit: 'kcal/day' },
+          { label: { en: 'Est. Fat Loss Rate', es: 'Pérdida de Grasa Est.', fr: 'Taux de Perte de Graisse', de: 'Geschätzter Fettabbau', ko: '예상 체지방 감량률', hi: 'अनुमानित वसा हानि दर' }, value: displayLoss, unit: lossUnit },
+          { label: { en: 'Maintenance (TDEE)', es: 'Mantenimiento (TDEE)', fr: 'Maintenance (TDEE)', de: 'Erhaltungskalorien (TDEE)', ko: '유지 에너지 (TDEE)', hi: 'रखरखाव (TDEE)' }, value: Math.round(tdee), unit: 'kcal' },
+          { label: { en: 'Deficit Protein Target', es: 'Objetivo de Proteína', fr: 'Objectif Protéines Déficit', de: 'Protein-Ziel im Defizit', ko: '적자 시 단백질 목표', hi: 'घाटे में प्रोटीन लक्ष्य' }, value: proteinGuard, unit: 'g/day' }
         ]
       };
     }

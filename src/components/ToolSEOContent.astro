@@ -202,20 +202,25 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'calorie-calculator': {
     en: {
-      eyebrow: 'Caloric Balance Matrix',
-      title: 'Calorie Calculator & Calorie Deficit Calculator',
-      intro: 'Calculate calories for weight loss with our Calorie Calculator. Learn how many calories should I eat to lose weight using our built-in calorie deficit calculator.',
-      formulaTitle: 'Caloric Goal Equations',
-      formulaDesc: 'Fat Loss Deficit: TDEE - 500 kcal/day | Muscle Gain Surplus: TDEE + 300 to 500 kcal/day',
-      tableTitle: 'Calorie Deficit Outcomes & Weight Loss Speed',
+      eyebrow: 'Clinical Weight Loss Standard',
+      title: 'Calorie Deficit Calculator – Daily Calorie Target for Weight Loss',
+      intro: 'Use our free Calorie Deficit Calculator to calculate the exact daily calorie deficit required for sustainable fat loss. Based on Mifflin St Jeor BMR and Total Daily Energy Expenditure (TDEE), determine how many calories should I eat to lose weight safely without sacrificing lean muscle.',
+      formulaTitle: 'Calorie Deficit Calculation Formulas & Weight Loss Math',
+      formulaDesc: 'Daily Calorie Intake = TDEE - Target Deficit (300 to 750 kcal/day) | Weekly Fat Loss (kg) = (Daily Deficit × 7) / 7700 kcal',
+      formulaCode: 'Target Calories = [ (10 × W_kg) + (6.25 × H_cm) - (5 × Age) + S ] × Activity Multiplier - Daily Deficit',
+      tableTitle: 'Calorie Deficit Levels, Weekly Fat Loss Rates & Muscle Preservation Matrix',
       tableRows: [
-        { col1: 'Aggressive Cut (-20%)', col2: '~0.75 kg loss / week', col3: 'Preserve protein to prevent muscle loss' },
-        { col1: 'Moderate Cut (-15%)', col2: '~0.5 kg loss / week', col3: 'Optimal sustainable fat loss' },
-        { col1: 'Lean Bulk (+10%)', col2: '~0.25 kg gain / week', col3: 'Maximal muscle, minimal fat gain' }
+        { col1: 'Aggressive Cut (-25% Deficit)', col2: '~0.75 kg (1.6 lbs) loss / week', col3: 'Requires 2.0-2.4 g/kg protein to safeguard skeletal muscle' },
+        { col1: 'Moderate Cut (-20% Deficit)', col2: '~0.50 kg (1.1 lbs) loss / week', col3: 'Recommended clinical standard for sustainable fat loss' },
+        { col1: 'Mild Cut (-10% to -15% Deficit)', col2: '~0.25 to 0.35 kg loss / week', col3: 'Best for lean individuals & athletes preserving peak strength' },
+        { col1: 'Maintenance Baseline (0% Deficit)', col2: '0.00 kg loss / week', col3: 'Exact TDEE energy balance for weight stabilization' }
       ],
       faqs: [
-        { question: 'How many calories should I eat to lose weight on a calorie deficit calculator?', answer: 'A calorie deficit calculator subtracts 300 to 500 kcal from your TDEE. This yields calories for weight loss resulting in ~0.5 kg (1 lb) fat loss per week safely.' },
-        { question: 'What is a safe daily calorie deficit?', answer: 'A daily deficit of 500 kcal is clinically safe, preserving lean muscle while promoting steady fat loss.' }
+        { question: 'What is a calorie deficit and how does a calorie deficit calculator work?', answer: 'A calorie deficit occurs when daily energy intake is less than Total Daily Energy Expenditure (TDEE). The calorie deficit calculator computes your BMR using the Mifflin St Jeor equation, applies your physical activity multiplier to determine TDEE, and subtracts a target deficit (300 to 750 kcal/day) to induce steady fat oxidation.' },
+        { question: 'How many calories should I eat to lose 1 kg or 1 lb per week?', answer: 'One pound of body fat contains approximately 3,500 kcal (1 kg = ~7,700 kcal). A daily calorie deficit of 500 kcal creates a 3,500 kcal weekly deficit, producing ~0.45 kg (1 lb) of fat loss per week safely.' },
+        { question: 'What is a safe daily calorie deficit that won\'t ruin my metabolism?', answer: 'A daily deficit of 15% to 25% below TDEE (typically 300 to 500 kcal/day) is clinically optimal. This range promotes steady fat loss while preventing severe metabolic adaptation (starvation response) and protecting lean muscle tissue.' },
+        { question: 'How much protein should I eat while in a calorie deficit?', answer: 'During a calorie deficit, daily protein requirements increase to 1.8 – 2.4 grams per kilogram of body weight. Consuming higher protein prevents muscle breakdown (catabolism) and supports satiety.' },
+        { question: 'What should I do if my weight loss stalls in a calorie deficit?', answer: 'Weight loss stalls often stem from uncounted food calories, reduced non-exercise physical activity (NEAT), or cortisol-induced fluid retention. Re-calculate your TDEE at your new lower weight or take a 2-week maintenance diet break to reset metabolic rate.' }
       ]
     }
   },
