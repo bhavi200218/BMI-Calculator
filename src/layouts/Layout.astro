@@ -236,7 +236,7 @@ const howToSchema = {
 ---
 
 <!doctype html>
-<html lang={currentLocale} class="scroll-smooth">
+<html lang={currentLocale} class="dark scroll-smooth">
 	<head>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R"></script>
@@ -245,6 +245,18 @@ const howToSchema = {
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 			gtag('config', 'G-9D3TJCYP4R');
+		</script>
+
+		<!-- Theme Initialization (Runs synchronously before DOM render) -->
+		<script is:inline>
+			(function() {
+				const stored = localStorage.getItem('theme');
+				if (stored === 'light') {
+					document.documentElement.classList.remove('dark');
+				} else {
+					document.documentElement.classList.add('dark');
+				}
+			})();
 		</script>
 
 		<!-- Google AdSense -->
@@ -317,17 +329,6 @@ const howToSchema = {
 			<div class="absolute inset-0 opacity-15 dark:opacity-40 pointer-events-none z-10" style="background-color: var(--background);"></div>
 		</div>
 
-		<script is:inline>
-			(function() {
-				const stored = localStorage.getItem('theme');
-				if (stored === 'light') {
-					document.documentElement.classList.remove('dark');
-				} else {
-					document.documentElement.classList.add('dark');
-				}
-			})();
-		</script>
-		
 		<div class="flex-grow">
 			<slot />
 		</div>
