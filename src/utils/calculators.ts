@@ -204,9 +204,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'tdee-calculator',
-    name: { en: 'TDEE Calculator', es: 'Calculadora de TDEE', fr: 'Calculateur de TDEE', de: 'TDEE-Rechner', ko: 'TDEE 계산기', hi: 'टीडीईई कैलकुलेटर' },
-    title: { en: 'TDEE Calculator - Total Daily Energy Expenditure', es: 'Calculadora de TDEE y Gasto de Energía', fr: 'Calculateur de TDEE Précis', de: 'TDEE-Rechner Gesamtenergiebedarf', ko: 'TDEE 계산기 - 하루 칼로리 총량', hi: 'टीडीईई कैलकुलेटर - दैनिक ऊर्जा खर्च' },
-    description: { en: 'Find your total daily calorie maintenance burn.', es: 'Calcula tu gasto calórico diario total.', fr: 'Calculez votre dépense énergétique quotidienne totale.', de: 'Berechnen Sie Ihren täglichen Kalorienbedarf.', ko: '하루 소비 에너지 에너지 총량을 알아봅니다.', hi: 'अपने दैनिक संपूर्ण कैलोरी खर्च की गणना करें।' },
+    name: { en: 'Total Daily Energy Expenditure Calculator', es: 'Calculadora de Gasto Energético Total Diario (TDEE)', fr: 'Calculateur de Dépense Énergétique Totale (TDEE)', de: 'Gesamtenergiebedarf Rechner (TDEE)', ko: '총 일일 에너지 소비량 계산기 (Total Daily Energy Expenditure)', hi: 'कुल दैनिक ऊर्जा व्यय कैलकुलेटर' },
+    title: { en: 'Total Daily Energy Expenditure Calculator – TDEE Calculator', es: 'Calculadora de Gasto Energético Total Diario – TDEE Calculator', fr: 'Calculateur de Dépense Énergétique Totale – TDEE Calculator', de: 'Gesamtenergiebedarf Rechner – Total Daily Energy Expenditure (TDEE)', ko: '총 일일 에너지 소비량 계산기 (Total Daily Energy Expenditure Calculator)', hi: 'कुल दैनिक ऊर्जा व्यय कैलकुलेटर - TDEE Calculator' },
+    description: { en: 'Free Total Daily Energy Expenditure Calculator. Calculate your exact Total Daily Energy Expenditure (TDEE), maintenance calories, resting BMR burn, and daily caloric deficit or surplus goals.', es: 'Calculadora gratuita de gasto energético total diario (TDEE). Calcula tu TDEE exacto, calorías de mantenimiento y quema basal.', fr: 'Calculateur gratuit de dépense énergétique totale quotidienne (TDEE). Calculez vos calories de maintien et métabolisme de base.', de: 'Kostenloser Gesamtenergiebedarf-Rechner (TDEE). Berechnen Sie Ihren exakten täglichen Kalorienverbrauch und Grundumsatz.', ko: '무료 총 일일 에너지 소비량(TDEE) 계산기. 일일 유지 칼로리, 기초대사량(BMR) 및 체중 감량/증량 타겟 수치를 정확하게 계산하세요.', hi: 'मुफ़्त कुल दैनिक ऊर्जा व्यय कैलकुलेटर। अपने सटीक TDEE, रखरखाव कैलोरी, बेसल बीएमआर और वजन घटाने के लक्ष्यों की गणना करें।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
@@ -234,11 +234,11 @@ export const calculators: CalculatorConfig[] = [
       const tdee = bmr * act;
 
       return {
-        primary: { value: Math.round(tdee), label: { en: 'Daily TDEE Calories', es: 'TDEE Calorías Diarias', fr: 'Calories TDEE', de: 'TDEE Tagesbedarf', ko: '일일 칼로리 소모량', hi: 'दैनिक टीडीईई कैलोरी' }, unit: 'kcal/day' },
+        primary: { value: Math.round(tdee), label: { en: 'Total Daily Energy Expenditure', es: 'Gasto Energético Total Diario', fr: 'Dépense Énergétique Totale', de: 'Gesamtenergiebedarf (TDEE)', ko: '총 일일 에너지 소비량', hi: 'कुल दैनिक ऊर्जा व्यय' }, unit: 'kcal/day' },
         secondary: [
-          { label: { en: 'Basal Metabolic Rate', es: 'BMR Base', fr: 'Métabolisme de Base', de: 'Grundumsatz BMR', ko: '기초대사량', hi: 'बेसल मेटाबॉलिक रेट' }, value: Math.round(bmr), unit: 'kcal' },
-          { label: { en: 'Bulking Goal', es: 'Subir Peso Goal', fr: 'Prise de masse', de: 'Kalorienüberschuss', ko: '벌크업 목표', hi: 'बल्किंग लक्ष्य' }, value: Math.round(tdee + 500), unit: 'kcal' },
-          { label: { en: 'Cutting Goal', es: 'Bajar Peso Goal', fr: 'Sèche musculaire', de: 'Definieren/Abnehmen', ko: '데피니션 목표', hi: 'कटिंग लक्ष्य' }, value: Math.round(tdee - 500), unit: 'kcal' }
+          { label: { en: 'Basal Metabolic Rate (BMR)', es: 'Metabolismo Basal (BMR)', fr: 'Métabolisme de Base (BMR)', de: 'Grundumsatz (BMR)', ko: '기초대사량 (BMR)', hi: 'बेसल मेटाबॉलिक रेट' }, value: Math.round(bmr), unit: 'kcal' },
+          { label: { en: 'Fat Loss Target (-500 kcal)', es: 'Objetivo Pérdida de Grasa', fr: 'Objectif Perte de Graisse', de: 'Fettabbau-Ziel (-500 kcal)', ko: '체지방 감량 타겟', hi: 'वसा हानि लक्ष्य' }, value: Math.round(tdee - 500), unit: 'kcal' },
+          { label: { en: 'Muscle Gain Target (+300 kcal)', es: 'Objetivo Ganar Músculo', fr: 'Objectif Prise de Muscle', de: 'Muskelaufbau-Ziel (+300 kcal)', ko: '근육 증가 타겟', hi: 'मांसपेशी वृद्धि लक्ष्य' }, value: Math.round(tdee + 300), unit: 'kcal' }
         ]
       };
     }
