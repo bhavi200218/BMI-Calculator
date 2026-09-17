@@ -73,15 +73,15 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
     <div class="hidden md:block space-y-5">
       <div class="calc-group space-y-3">
         <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.core}</div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3">
           {calculators.filter(c=>['bmi-calculator','new-bmi-calculator','diabetes-risk-calculator','bmr-calculator','tdee-calculator','body-fat-calculator'].includes(c.slug)).map(calc => (
             <button
               data-slug={calc.slug}
               data-category={getCategory(calc.slug)}
               data-search={(calc.name[lang] || calc.name['en']) + ' ' + (calc.description[lang] || calc.description['en'])}
-              class="calc-tab-btn flex items-center justify-center h-14 rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)] hover:bg-[var(--muted)] hover:text-[var(--foreground)] transition-all duration-300 px-4 py-3 cursor-pointer shadow-xs"
+              class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)] hover:bg-[var(--muted)] hover:text-[var(--foreground)] transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs"
             >
-              <span class="text-sm md:text-base font-display font-bold uppercase text-center text-[var(--foreground)] tracking-wide">
+              <span class="text-xs sm:text-sm font-display font-bold uppercase text-center text-[var(--foreground)] tracking-tight leading-tight max-w-full text-balance break-words">
                 {calc.name[lang] || calc.name['en']}
               </span>
             </button>
@@ -91,15 +91,15 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
 
       <div class="calc-group space-y-3">
         <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.performance}</div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-3">
           {calculators.filter(c=>['ideal-weight-calculator','calorie-calculator','protein-intake-calculator','water-intake-calculator','macro-calculator'].includes(c.slug)).map(calc => (
             <button
               data-slug={calc.slug}
               data-category={getCategory(calc.slug)}
               data-search={(calc.name[lang] || calc.name['en']) + ' ' + (calc.description[lang] || calc.description['en'])}
-              class="calc-tab-btn flex items-center justify-center h-14 rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)] hover:bg-[var(--muted)] hover:text-[var(--foreground)] transition-all duration-300 px-4 py-3 cursor-pointer shadow-xs"
+              class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)] hover:bg-[var(--muted)] hover:text-[var(--foreground)] transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs"
             >
-              <span class="text-sm md:text-base font-display font-bold uppercase text-center text-[var(--foreground)] tracking-wide">
+              <span class="text-xs sm:text-sm font-display font-bold uppercase text-center text-[var(--foreground)] tracking-tight leading-tight max-w-full text-balance break-words">
                 {calc.name[lang] || calc.name['en']}
               </span>
             </button>
@@ -109,15 +109,15 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
 
       <div class="calc-group space-y-3">
         <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.specialty}</div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-3">
           {calculators.filter(c=>['waist-to-hip-ratio-calculator','body-surface-area-calculator','heart-rate-zone-calculator','one-rep-max-calculator','pregnancy-weight-gain-calculator'].includes(c.slug)).map(calc => (
             <button
               data-slug={calc.slug}
               data-category={getCategory(calc.slug)}
               data-search={(calc.name[lang] || calc.name['en']) + ' ' + (calc.description[lang] || calc.description['en'])}
-              class="calc-tab-btn flex items-center justify-center h-14 rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)] hover:bg-[var(--muted)] hover:text-[var(--foreground)] transition-all duration-300 px-4 py-3 cursor-pointer shadow-xs"
+              class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)] hover:bg-[var(--muted)] hover:text-[var(--foreground)] transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs"
             >
-              <span class="text-sm md:text-base font-display font-bold uppercase text-center text-[var(--foreground)] tracking-wide">
+              <span class="text-xs sm:text-sm font-display font-bold uppercase text-center text-[var(--foreground)] tracking-tight leading-tight max-w-full text-balance break-words">
                 {calc.name[lang] || calc.name['en']}
               </span>
             </button>
