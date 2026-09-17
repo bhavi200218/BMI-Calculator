@@ -129,21 +129,26 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'body-fat-calculator': {
     en: {
-      eyebrow: 'US Navy Anthropometric Method',
-      title: 'Body Fat Calculator & Navy Body Fat Calculator',
-      intro: 'Calculate body fat percentage accurately with our Navy Body Fat Calculator. Learn how to calculate body fat percentage using the official US Navy body fat formula and a flexible body fat tape measure.',
-      formulaTitle: 'US Navy Body Fat Formula Equations',
-      formulaDesc: 'Men: %Fat = 495 / [1.0324 - 0.19077(log10(waist-neck)) + 0.15456(log10(height))] - 450',
-      tableTitle: 'ACE Body Fat Percentage Normative Table',
+      eyebrow: 'US Navy Anthropometric Standard',
+      title: 'US Navy Body Fat Formula Calculator & Body Fat % Tool',
+      intro: 'Calculate your exact body fat percentage with our free US Navy Body Fat Formula Calculator. Learn how to calculate body fat percentage accurately using the official US Navy body fat formula equation and flexible body fat tape measure protocol.',
+      formulaTitle: 'US Navy Body Fat Formula Mathematical Equations',
+      formulaDesc: 'Men: %Fat = 495 / [1.0324 - 0.19077 × log10(waist - neck in cm) + 0.15456 × log10(height in cm)] - 450 | Women: %Fat = 495 / [1.29579 - 0.35004 × log10(waist + hip - neck in cm) + 0.22100 × log10(height in cm)] - 450',
+      formulaCode: 'Men: 495 / (1.0324 - 0.19077 log10(W-N) + 0.15456 log10(H)) - 450',
+      tableTitle: 'ACE Body Fat Percentage Normative Table & Categories',
       tableRows: [
-        { col1: 'Essential Fat', col2: 'Men: 2-5% | Women: 10-13%', col3: 'Required for physiological survival' },
-        { col1: 'Athletes', col2: 'Men: 6-13% | Women: 14-20%', col3: 'Lean athletic conditioning' },
-        { col1: 'Fitness', col2: 'Men: 14-17% | Women: 21-24%', col3: 'Optimal healthy range' },
-        { col1: 'Average', col2: 'Men: 18-24% | Women: 25-31%', col3: 'Standard population average' }
+        { col1: 'Essential Fat', col2: 'Men: 2% - 5% | Women: 10% - 13%', col3: 'Minimum physiological fat required for bodily functions' },
+        { col1: 'Athletes Category', col2: 'Men: 6% - 13% | Women: 14% - 20%', col3: 'Low body fat percentage common in competitive athletes' },
+        { col1: 'Fitness Level', col2: 'Men: 14% - 17% | Women: 21% - 24%', col3: 'Optimal lean athletic physique and health condition' },
+        { col1: 'Average Population', col2: 'Men: 18% - 24% | Women: 25% - 31%', col3: 'Standard acceptable body fat percentage for adults' },
+        { col1: 'Obese Classification', col2: 'Men: ≥ 25% | Women: ≥ 32%', col3: 'Increased clinical risk for metabolic syndrome' }
       ],
       faqs: [
-        { question: 'How to calculate body fat percentage using the Navy Body Fat Calculator?', answer: 'To use the navy body fat calculator, take tape measure readings around your neck, waist, and hips relative to height. The US Navy body fat formula converts these measurements into body fat percentage.' },
-        { question: 'How accurate is a body fat tape measure protocol?', answer: 'The US Navy body fat formula and tape measure protocol correlates within 1.5% to 3.0% accuracy compared to DEXA body composition scans.' }
+        { question: 'What is the US Navy Body Fat Formula Calculator?', answer: 'The US Navy Body Fat Formula Calculator is an anthropometric health tool developed by the Naval Health Research Center. It uses body circumferences (neck, waist, hip) and height to compute accurate body fat percentage.' },
+        { question: 'How to calculate body fat percentage using the US Navy body fat formula?', answer: 'To use the US Navy body fat formula calculator, measure your neck at the narrowest point, waist at the navel (horizontal), and hips at the widest point (for women). Input these measurements into our calculator to compute your body fat % instantly.' },
+        { question: 'How accurate is the US Navy body fat formula compared to DEXA?', answer: 'Clinical validation studies show that the US Navy body fat formula correlates within 1.5% to 3.0% of dual-energy X-ray absorptiometry (DEXA) scans, making it the most accurate tape measure protocol available.' },
+        { question: 'Where do I take tape measure readings for the Navy body fat formula?', answer: 'For men: measure neck circumference below the larynx and waist at navel height. For women: measure neck below larynx, waist at narrowest natural waistline, and hips at maximum protrusion of buttocks.' },
+        { question: 'What is a healthy body fat percentage range?', answer: 'According to the American Council on Exercise (ACE), a healthy fitness body fat percentage is 14%-17% for men and 21%-24% for women. Essential minimum body fat is 2-5% for men and 10-13% for women.' }
       ]
     }
   },

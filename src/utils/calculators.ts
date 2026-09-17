@@ -245,9 +245,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'body-fat-calculator',
-    name: { en: 'Body Fat Calculator', es: 'Calculadora de Grasa Corporal', fr: 'Calculateur de Graisse Corporelle', de: 'Körperfettrechner', ko: '체지방량 계산기', hi: 'शरीर वसा कैलकुलेटर' },
-    title: { en: 'US Navy Body Fat Calculator - Healthy Measurement', es: 'Calculadora de Grasa Corporal del Método Navy', fr: 'Calculateur de Graisse Corporelle Navy', de: 'Körperfettanteil-Rechner US Navy', ko: '체지방률 계산기 미 해군 공식 적용', hi: 'अमेरिकी नौसेना शारीरिक वसा कैलकुलेटर' },
-    description: { en: 'Calculate body fat percentage accurately.', es: 'Calcula tu porcentaje de grasa corporal según el método Navy.', fr: 'Calculez votre taux de masse grasse.', de: 'Bestimmen Sie Ihren Körperfettanteil.', ko: '체지방의 백분율 비율을 정밀 산출합니다.', hi: 'शरीर के वसा प्रतिशत को सटीक रूप से मापें।' },
+    name: { en: 'US Navy Body Fat Formula Calculator', es: 'Calculadora de Grasa Corporal Método Navy', fr: 'Calculateur de Graisse Corporelle US Navy', de: 'US Navy Körperfett Rechner', ko: '미 해군 체지방 공식 계산기', hi: 'यूएस नेवी बॉडी फैट फॉर्मूला कैलकुलेटर' },
+    title: { en: 'US Navy Body Fat Formula Calculator – Body Fat % Tool', es: 'Calculadora de Grasa Corporal Método US Navy - Porcentaje Preciso', fr: 'Calculateur de Graisse Corporelle Formule US Navy', de: 'US Navy Körperfettformel Rechner – Präzise Körperfett %', ko: '미 해군 체지방 공식 계산기 - 정확한 체지방률 측정', hi: 'यूएस नेवी बॉडी फैट फॉर्मूला कैलकुलेटर - शरीर वसा प्रतिशत' },
+    description: { en: 'Free US Navy Body Fat Formula Calculator. Calculate your body fat percentage accurately using the official US Navy body fat formula equation and tape measure method.', es: 'Calculadora gratuita de grasa corporal con la fórmula de la US Navy. Calcula tu porcentaje de grasa corporal con precisión.', fr: 'Calculateur gratuit de graisse corporelle selon la formule de la US Navy.', de: 'Kostenloser US Navy Körperfett-Rechner. Berechnen Sie Ihren Körperfettanteil präzise mit der offiziellen US Navy Formel.', ko: '무료 미 해군 체지방 공식 계산기. 공식 미 해군 공식을 사용하여 체지방률을 정확하게 계산하세요.', hi: 'मुफ़्त यूएस नेवी बॉडी फैट फॉर्मूला कैलकुलेटर। आधिकारिक यूएस नेवी बॉडी फैट फॉर्मूला का उपयोग करके अपने बॉडी फैट प्रतिशत की सटीक गणना करें।' },
     inputs: [
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
