@@ -310,22 +310,26 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'heart-rate-zone-calculator': {
     en: {
-      eyebrow: 'Cardio Training Protocol',
-      title: 'Heart Rate Zone Calculator & Target Heart Rate Tool',
-      intro: 'Find your fat burn heart rate zone with our Target Heart Rate Calculator. Using the Karvonen formula heart rate method, calculate max heart rate by age and optimize cardio workouts.',
-      formulaTitle: 'Karvonen Formula Heart Rate Equations',
-      formulaDesc: 'Max HR = 220 - Age | Target HR = [(Max HR - Resting HR) × %Intensity] + Resting HR',
-      tableTitle: 'The 5 Target Heart Rate Intensity Zones',
+      eyebrow: 'Karvonen Clinical Cardio Protocol',
+      title: 'Karvonen Heart Rate Zone Calculator & Target Heart Rate Tool',
+      intro: 'Calculate your personalized target cardio training zones with our free Karvonen Heart Rate Zone Calculator. Using the clinical Karvonen formula heart rate method and Heart Rate Reserve (HRR), optimize your fat burn heart rate zone and aerobic conditioning.',
+      formulaTitle: 'Clinical Karvonen Formula Mathematical Equation',
+      formulaDesc: 'Max HR = 220 - Age in years | Heart Rate Reserve (HRR) = Max HR - Resting HR | Target HR = Resting HR + [HRR × % Intensity]',
+      formulaCode: 'Target HR = RHR + [(220 - Age - RHR) × % Intensity]',
+      tableTitle: 'Karvonen 5-Zone Heart Rate Intensity Matrix',
       tableRows: [
-        { col1: 'Zone 1 (50-60%)', col2: 'Very Light / Warmup', col3: 'Active recovery & health' },
-        { col1: 'Zone 2 (60-70%)', col2: 'Fat Burn / Endurance', col3: 'Maximal fat oxidation & stamina' },
-        { col1: 'Zone 3 (70-80%)', col2: 'Aerobic / Fitness', col3: 'Cardiovascular efficiency' },
-        { col1: 'Zone 4 (80-90%)', col2: 'Anaerobic / Performance', col3: 'Lactate threshold enhancement' },
-        { col1: 'Zone 5 (90-100%)', col2: 'Maximum Effort', col3: 'Peak speed & sprint power' }
+        { col1: 'Zone 1 (50% - 60% HRR)', col2: 'Active Recovery / Warmup', col3: 'Promotes blood circulation & passive recovery' },
+        { col1: 'Zone 2 (60% - 70% HRR)', col2: 'Fat Burn & Aerobic Base', col3: 'Maximal fat oxidation & mitochondrial growth' },
+        { col1: 'Zone 3 (70% - 80% HRR)', col2: 'Aerobic Endurance / Fitness', col3: 'Improves cardiovascular efficiency & stamina' },
+        { col1: 'Zone 4 (80% - 90% HRR)', col2: 'Anaerobic / Lactate Threshold', col3: 'Increases high-intensity exercise tolerance' },
+        { col1: 'Zone 5 (90% - 100% HRR)', col2: 'Maximal VO2 Max Peak Power', col3: 'Neuromuscular speed & peak sprint conditioning' }
       ],
       faqs: [
-        { question: 'How to calculate fat burn heart rate zone with the Karvonen formula heart rate method?', answer: 'First calculate max heart rate by age (220 - age). Then apply the Karvonen formula: Target HR = [(Max HR - Resting HR) × %Intensity] + Resting HR to target your fat burn heart rate zone (60-70% intensity).' },
-        { question: 'Which heart rate zone burns the highest percentage of body fat?', answer: 'Zone 2 (60% to 70% of Max HR) oxidizes the highest relative percentage of calories from fat stores.' }
+        { question: 'What is the Karvonen Heart Rate Zone Calculator?', answer: 'The Karvonen Heart Rate Zone Calculator is an advanced cardiovascular training tool created by Dr. Martti Karvonen. Unlike basic age formulas, it incorporates your Resting Heart Rate (RHR) to calculate customized heart rate training zones based on your true Heart Rate Reserve (HRR).' },
+        { question: 'How to calculate target heart rate using the Karvonen formula?', answer: 'To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for fat burn). 4) Add your Resting HR back to get your target heart rate in BPM.' },
+        { question: 'Why is the Karvonen formula more accurate than traditional Max HR?', answer: 'Traditional formulas (220 - age) treat an athlete and a sedentary individual of the same age identically. The Karvonen formula accounts for individual fitness levels by factoring in Resting Heart Rate, yielding far more precise training zones.' },
+        { question: 'Which heart rate zone is best for fat burn?', answer: 'Karvonen Zone 2 (60% to 70% of Heart Rate Reserve) is the primary fat burn zone where fat oxidation is maximized relative to total calorie expenditure, building mitochondrial density and endurance.' },
+        { question: 'How do I measure my Resting Heart Rate (RHR) for the Karvonen calculator?', answer: 'Measure your pulse for 60 seconds immediately upon waking in the morning while resting calmly in bed before sitting up or taking caffeine.' }
       ]
     }
   },

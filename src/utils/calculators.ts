@@ -601,21 +601,30 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'heart-rate-zone-calculator',
-    name: { en: 'Heart Rate Zones', es: 'Zonas de Frecuencia Cardíaca', fr: 'Zones de Fréquence Cardiaque', de: 'Herzfrequenzzonen Rechner', ko: '심박수 zone 계산기', hi: 'हार्ट रेट ज़ोन कैलकुलेटर' },
-    title: { en: 'Target Heart Rate Zone Calculator - Fitness Training', es: 'Calculadora de Frecuencia Cardíaca Deportiva', fr: 'Calculateur de Zone de Fréquence Cardiaque', de: 'Kardio-Herzfrequenzzonen berechnen', ko: '운동용 타겟 심바크존 계산기', hi: 'लक्षित हार्ट रेट ज़ोन कैलकुलेटर' },
-    description: { en: 'Determine your exercise target heart rate zones.', es: 'Determina tus zonas de ritmo cardíaco para entrenar.', fr: 'Calculez vos zones d\'entraînement cardiaque.', de: 'Bestimmen Sie Ihre optimalen Trainingsbereiche.', ko: '운동 목표에 맞는 심박수 5단계를 구합니다.', hi: 'अपने व्यायाम के लिए लक्षित हार्ट रेट ज़ोन का निर्धारण करें।' },
+    name: { en: 'Karvonen Heart Rate Zone Calculator', es: 'Calculadora de Zonas Cardíacas Karvonen', fr: 'Calculateur de Zone Cardiaque Karvonen', de: 'Karvonen Herzfrequenzzonen Rechner', ko: 'Karvonen 심박수 zone 계산기', hi: 'कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर' },
+    title: { en: 'Karvonen Heart Rate Zone Calculator – Target Heart Rate Tool', es: 'Calculadora de Zonas de Frecuencia Cardíaca Fórmula Karvonen', fr: 'Calculateur de Zone de Fréquence Cardiaque Formule Karvonen', de: 'Karvonen-Formel Herzfrequenzzonen Rechner – Zielpuls', ko: 'Karvonen 공식 타겟 심박수 zone 계산기 (Karvonen HR Zone)', hi: 'कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर - टारगेट हार्ट रेट' },
+    description: { en: 'Free Karvonen Heart Rate Zone Calculator. Calculate your exercise target heart rate zones and fat burn zone using the clinical Karvonen formula and Heart Rate Reserve (HRR).', es: 'Calculadora gratuita de zonas de frecuencia cardíaca con la fórmula de Karvonen. Calcula tus zonas de entrenamiento y quema de grasa.', fr: 'Calculateur gratuit de zones de fréquence cardiaque selon la formule de Karvonen.', de: 'Kostenloser Karvonen-Formel Herzfrequenzzonen Rechner. Berechnen Sie Ihre Ziel-Pulsbereiche für Fettverbrennung und Ausdauer.', ko: '무료 Karvonen 공식 기반 타겟 심박수 zone 계산기. 임상 Karvonen 공식을 사용하여 유산소 및 체지방 연소 심박 구간을 계산하세요.', hi: 'मुफ़्त कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर। नैदानिक कार्वोनेन फॉर्मूला का उपयोग करके अपने व्यायाम के लक्षित हार्ट रेट ज़ोन की सटीक गणना करें।' },
     inputs: [
-      { id: 'age', label: L.age, type: 'number', placeholder: '25' }
+      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
+      { id: 'waist', label: { en: 'Resting Heart Rate (BPM)', es: 'Frecuencia Cardíaca en Reposo', fr: 'Fréquence Cardiaque Repos', de: 'Ruhepuls', ko: '안정시 심박수', hi: 'विश्राम हार्ट रेट' }, type: 'number', placeholder: '60' }
     ],
     calculate: (inputs) => {
       const age = parseInt(inputs.age) || 25;
+      const rhr = parseInt(inputs.waist) || 60; // using waist slot for resting hr
       const maxHr = 220 - age;
+      const hrr = Math.max(0, maxHr - rhr);
+
+      const zone2Min = Math.round(rhr + (hrr * 0.6));
+      const zone2Max = Math.round(rhr + (hrr * 0.7));
+      const zone3Min = Math.round(rhr + (hrr * 0.7));
+      const zone3Max = Math.round(rhr + (hrr * 0.8));
 
       return {
-        primary: { value: maxHr, label: { en: 'Max Heart Rate', es: 'Frecuencia Cardíaca Máxima', fr: 'Fréquence Cardiaque Max', de: 'Maximale Herzfrequenz', ko: '최대 심박수', hi: 'अधिकतम हार्ट रेट' }, unit: 'bpm' },
+        primary: { value: maxHr, label: { en: 'Max Heart Rate (HRmax)', es: 'Frecuencia Cardíaca Máxima', fr: 'Fréquence Cardiaque Max', de: 'Maximale Herzfrequenz', ko: '최대 심박수', hi: 'अधिकतम हार्ट रेट' }, unit: 'bpm' },
         secondary: [
-          { label: { en: 'Fat Burn (60-70%)', es: 'Zona Quema Grasa (60-70%)', fr: 'Brule Graisse (60-70%)', de: 'Fettverbrennung (60-70%)', ko: '체지방 연소 구간 (60-70%)', hi: 'फैट बर्न (60-70%)' }, value: `${Math.round(maxHr * 0.6)} - ${Math.round(maxHr * 0.7)}`, unit: 'bpm' },
-          { label: { en: 'Aerobic (70-80%)', es: 'Zona Cardio (70-80%)', fr: 'Cardio (70-80%)', de: 'Fitness/Ausdauer (70-80%)', ko: '유산소 운동 구간 (70-80%)', hi: 'एरोबिक (70-80%)' }, value: `${Math.round(maxHr * 0.7)} - ${Math.round(maxHr * 0.8)}`, unit: 'bpm' }
+          { label: { en: 'Karvonen Fat Burn (Zone 2)', es: 'Zona Quema Grasa (60-70%)', fr: 'Zone Brûle-Graisse (60-70%)', de: 'Fettverbrennung Zone 2', ko: 'Karvonen 지방 연소 구간', hi: 'कार्वोनेन फैट बर्न ज़ोन' }, value: `${zone2Min} - ${zone2Max}`, unit: 'bpm' },
+          { label: { en: 'Karvonen Aerobic (Zone 3)', es: 'Zona Cardio (70-80%)', fr: 'Zone Cardio (70-80%)', de: 'Aerobe Zone 3', ko: 'Karvonen 유산소 구간', hi: 'कार्वोनेन एरोबिक ज़ोन' }, value: `${zone3Min} - ${zone3Max}`, unit: 'bpm' },
+          { label: { en: 'Heart Rate Reserve (HRR)', es: 'Reserva de Frecuencia Cardíaca', fr: 'Réserve Cardiaque (HRR)', de: 'Herzfrequenzreserve', ko: '심박 예비능 (HRR)', hi: 'हार्ट रेट रिजर्व' }, value: hrr, unit: 'bpm' }
         ]
       };
     }
