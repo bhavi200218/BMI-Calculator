@@ -8,6 +8,7 @@ import LatestArticles from '../../components/LatestArticles.astro';
 import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import ToolSEOContent from '../../components/ToolSEOContent.astro';
 import ThreeDBodyVisualizer from '../../components/ThreeDBodyVisualizer.astro';
+import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
 import HubGrid from '../../components/HubGrid.astro';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
 
@@ -102,6 +103,7 @@ const webAppSchema = {
       <!-- Extended Content & Clinical Knowledge Base for Search Indexing -->
       <div class="pt-12 space-y-20">
         <ToolSEOContent slug={calc.slug} lang={lang} />
+        <EmbedWidgetBox lang={lang} />
         <LatestArticles />
         <HealthContent />
         <DeepHealthSEO />
