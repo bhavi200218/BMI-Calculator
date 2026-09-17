@@ -486,9 +486,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'macro-calculator',
-    name: { en: 'Macro Calculator', es: 'Calculadora de Macros', fr: 'Calculateur de Macros', de: 'Makronährstoffrechner', ko: '매크로 영양소 계산기', hi: 'मैक्रो कैलकुलेटर' },
-    title: { en: 'Macro Calculator - Carb, Protein & Fat Split', es: 'Calculadora de Macronutrientes y Dieta', fr: 'Calculateur de Macronutriments de Précision', de: 'Makroverteilung berechnen Proteine Kohlenhydrate', ko: '탄단지 스플릿 비율 계산기', hi: 'मैक्रो कैलकुलेटर - कार्ब, प्रोटीन और वसा' },
-    description: { en: 'Partition your calories into carbs, protein, and fat.', es: 'Divide tus calorías en carbohidratos, proteínas y grasas.', fr: 'Répartissez vos calories en glucides, protéines et graisses.', de: 'Verteilen Sie Ihre Kalorien auf Makronährstoffe.', ko: '타겟 칼로리를 탄수화물, 단백질, 지방 비율로 분할합니다.', hi: 'अपनी कैलोरी को कार्ब्स, प्रोटीन और वसा में विभाजित करें।' },
+    name: { en: 'Macro Calculator', es: 'Calculadora de Macros', fr: 'Calculateur de Macros', de: 'Makro Rechner', ko: '매크로 계산기', hi: 'मैक्रो कैलकुलेटर' },
+    title: { en: 'Macro Calculator – Free Macronutrient & IIFYM Ratio Tool', es: 'Calculadora de Macros Gratis - Macronutrientes y IIFYM', fr: 'Calculateur de Macros Gratuit - Glucides Protéines Lipides', de: 'Kostenloser Makro Rechner – IIFYM Makronährstoff-Verteilung', ko: '무료 매크로 계산기 (Macro Calculator & IIFYM Split)', hi: 'मुफ़्त मैक्रो कैलकुलेटर - मैक्रोन्यूट्रिएंट और IIFYM अनुपात' },
+    description: { en: 'Free Macro Calculator. Calculate your exact daily macronutrient split (carbs, protein, fat in grams) for muscle gain, weight loss, or IIFYM flexible dieting.', es: 'Calculadora de macros gratuita. Calcula tu distribución de macronutrientes (carbohidratos, proteínas y grasas) para perder peso o ganar músculo.', fr: 'Calculateur gratuit de macros. Calculez votre répartition exacte en macronutriments (glucides, protéines, lipides en grammes).', de: 'Kostenloser Makro-Rechner. Berechnen Sie Ihre exakte Makronährstoff-Verteilung (Kohlenhydrate, Eiweiß, Fett) für Muskelaufbau oder Abnehmen.', ko: '무료 매크로 계산기. 체중 감량, 근육 증가 및 IIFYM 식단을 위한 정확한 일일 탄단지 g(그램) 비율을 계산하세요.', hi: 'मुफ़्त मैक्रो कैलकुलेटर। वजन घटाने, मांसपेशियों के निर्माण या IIFYM फ्लेक्सिबल डाइट के लिए अपने दैनिक मैक्रोन्यूट्रिएंट विभाजन (कार्ब्स, प्रोटीन, वसा) की सटीक गणना करें।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },

@@ -259,20 +259,24 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'macro-calculator': {
     en: {
-      eyebrow: 'Macronutrient Split Model',
-      title: 'Macro Calculator & Macronutrient Calculator',
-      intro: 'Calculate your carb protein fat split with our Macronutrient Calculator. Determine your low carb macro split or custom iFit macros target for fitness goals.',
-      formulaTitle: 'Macro Ratio Protocols',
-      formulaDesc: 'Balanced: 40% C / 30% P / 30% F | Low Carb Split: 20% C / 40% P / 40% F | High Protein: 35% C / 40% P / 25% F',
-      tableTitle: 'Macronutrient Energy Density Chart',
+      eyebrow: 'Clinical Nutrition & IIFYM Protocol',
+      title: 'Macro Calculator & Macronutrient Ratio Tool',
+      intro: 'Calculate your exact daily carb, protein, and fat target in grams with our free Macro Calculator. Designed for IIFYM flexible dieting, bodybuilding, and body recomposition, determine your optimal macronutrient ratio split.',
+      formulaTitle: 'Macro Caloric Conversion Formulas',
+      formulaDesc: 'Carbohydrate Grams = (Total Calories × Carb %) / 4 | Protein Grams = (Total Calories × Protein %) / 4 | Fat Grams = (Total Calories × Fat %) / 9',
+      formulaCode: 'Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9',
+      tableTitle: 'Macronutrient Energy Density & Popular Dieting Ratios',
       tableRows: [
-        { col1: 'Carbohydrates', col2: '4 calories per gram', col3: 'Primary muscle glycogen fuel' },
-        { col1: 'Protein', col2: '4 calories per gram', col3: 'Muscle building & tissue repair' },
-        { col1: 'Dietary Fats', col2: '9 calories per gram', col3: 'Hormone production & cell function' }
+        { col1: 'Carbohydrates (4 kcal/g)', col2: 'Balanced: 40% | Low-Carb: 20% | High-Protein: 35%', col3: 'Primary fuel source for high-intensity muscular contractions & brain' },
+        { col1: 'Protein (4 kcal/g)', col2: 'Balanced: 30% | Low-Carb: 40% | High-Protein: 40%', col3: 'Essential for skeletal muscle protein synthesis & nitrogen balance' },
+        { col1: 'Dietary Fat (9 kcal/g)', col2: 'Balanced: 30% | Low-Carb: 40% | High-Protein: 25%', col3: 'Required for steroid hormone production (testosterone/estrogen) & cell membranes' }
       ],
       faqs: [
-        { question: 'How does a macro calculator partition carb protein fat split?', answer: 'A macro calculator converts daily calorie goals into specific gram targets based on your carb protein fat split (such as 40% carbs, 30% protein, 30% fat).' },
-        { question: 'What is a low carb macro split and iFit macros target?', answer: 'A low carb macro split (20% carbs, 40% protein, 40% fat) or iFit macros target optimizes fat oxidation while supplying high protein for muscle retention.' }
+        { question: 'What is a Macro Calculator?', answer: 'A Macro Calculator is a nutritional tool that divides your total daily caloric intake into specific gram amounts of carbohydrates, protein, and dietary fats based on your fitness goals.' },
+        { question: 'How to calculate macros in grams for weight loss or muscle gain?', answer: 'First calculate your TDEE (Total Daily Energy Expenditure). Multiply total calories by your target macro percentages (e.g., 40% carbs, 30% protein, 30% fat). Divide carbohydrate and protein calories by 4 and fat calories by 9 to get exact daily grams.' },
+        { question: 'What is IIFYM (If It Fits Your Macros)?', answer: 'IIFYM (If It Fits Your Macros) is a flexible dieting philosophy that allows you to eat any food as long as you meet your target daily grams of protein, carbohydrates, and fats calculated by a macro calculator.' },
+        { question: 'What is the best macro ratio for fat loss vs muscle building?', answer: 'For fat loss, a high-protein split (40% protein, 35% carbs, 25% fat) maximizes satiety and preserves lean muscle mass. For muscle building, a balanced split (40% carbs, 30% protein, 30% fat) provides abundant glycogen for intense lifts.' },
+        { question: 'How many calories are in 1 gram of carbs, protein, and fat?', answer: 'Carbohydrates contain 4 calories per gram, Protein contains 4 calories per gram, and Dietary Fat contains 9 calories per gram.' }
       ]
     }
   },
