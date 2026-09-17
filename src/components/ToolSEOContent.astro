@@ -67,20 +67,26 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'diabetes-risk-calculator': {
     en: {
-      eyebrow: 'IDF & WHO Clinical Screening',
-      title: 'Diabetes Risk Calculator & Type 2 Diabetes Risk Test',
-      intro: 'Evaluate your metabolic health with our Type 2 Diabetes Risk Calculator. Aligned with IDF diabetes screening standards and WHO guidelines, this tool analyzes BMI diabetes cutoff levels and visceral adiposity to answer "Am I at risk for diabetes?".',
-      formulaTitle: 'IDF Regional Waist Cutoffs',
-      formulaDesc: 'Men: ≥ 94 cm (Asian/South Asian: ≥ 90 cm) | Women: ≥ 80 cm',
-      tableTitle: 'IDF Diabetes Screening Risk Matrix',
+      eyebrow: 'WHO & IDF Clinical Standard',
+      title: 'Asian BMI Cutoff Calculator 23 & Type 2 Diabetes Risk Tool',
+      intro: 'Calculate your metabolic health risk with our free Asian BMI Cutoff Calculator 23. Following World Health Organization (WHO) and International Diabetes Federation (IDF) guidelines, evaluate why a BMI cutoff of 23.0 kg/m² marks the trigger point for overweight and Type 2 Diabetes risk in Asian populations.',
+      formulaTitle: 'WHO Asian BMI Cutoff Criteria & Waist Thresholds',
+      formulaDesc: 'Asian Overweight Cutoff: BMI ≥ 23.0 kg/m² | Asian Obesity Cutoff: BMI ≥ 27.5 kg/m² | Asian Waist Limit: Men ≥ 90 cm, Women ≥ 80 cm',
+      formulaCode: 'Asian Overweight: BMI 23.0 - 27.4 | Asian Obesity: BMI ≥ 27.5',
+      tableTitle: 'WHO Asian BMI Classification Matrix vs Western Baseline',
       tableRows: [
-        { col1: 'Optimal Risk', col2: 'BMI < 23.0 & Normal Waist', col3: 'Low metabolic risk' },
-        { col1: 'Moderate Risk', col2: 'BMI 23.0-27.4 or Elevated Waist', col3: 'Lifestyle intervention recommended' },
-        { col1: 'High Risk', col2: 'BMI ≥ 27.5 or High Waist', col3: 'Clinical blood glucose testing recommended' }
+        { col1: 'Underweight', col2: 'BMI < 18.5 kg/m²', col3: 'Malnutrition & bone density risk' },
+        { col1: 'Normal Healthy Weight', col2: 'BMI 18.5 – 22.9 kg/m²', col3: 'Optimal metabolic health profile' },
+        { col1: 'Asian Overweight Trigger (23)', col2: 'BMI 23.0 – 27.4 kg/m²', col3: 'Elevated visceral fat & insulin resistance trigger point' },
+        { col1: 'Asian Obesity Class I', col2: 'BMI 27.5 – 32.4 kg/m²', col3: 'High risk for Type 2 Diabetes & hypertension' },
+        { col1: 'Asian Obesity Class II', col2: 'BMI ≥ 32.5 kg/m²', col3: 'Very high clinical cardiovascular risk' }
       ],
       faqs: [
-        { question: 'How does this Diabetes Risk Calculator test for Type 2 Diabetes?', answer: 'This type 2 diabetes risk test evaluates body mass index alongside waist circumference following IDF diabetes screening protocols to answer "am i at risk for diabetes?".' },
-        { question: 'What is the BMI diabetes cutoff for Asian and South Asian populations?', answer: 'The IDF and WHO establish a lower BMI diabetes cutoff of 23.0 kg/m² and waist limit of 90 cm for Asian populations due to increased visceral fat prevalence.' }
+        { question: 'What is the Asian BMI Cutoff Calculator 23?', answer: 'The Asian BMI Cutoff Calculator 23 is a specialized health screening tool aligned with WHO and IDF clinical guidelines. It accounts for the higher percentage of body fat and visceral adiposity in Asian populations at lower BMI levels.' },
+        { question: 'Why is the Asian BMI cutoff set at 23 kg/m² instead of 25 kg/m²?', answer: 'Extensive World Health Organization (WHO) epidemiological studies revealed that South Asian, East Asian, and Southeast Asian individuals develop Type 2 Diabetes, cardiovascular disease, and fatty liver disease at a lower BMI cutoff of 23 kg/m², whereas Western populations trigger risk at 25 kg/m².' },
+        { question: 'How to calculate Type 2 Diabetes risk using the Asian BMI cutoff of 23?', answer: 'Divide your weight in kg by your height in meters squared. If your BMI is 23.0 kg/m² or higher, or your waist circumference exceeds 90 cm (men) / 80 cm (women), WHO recommends blood glucose screening for prediabetes.' },
+        { question: 'What are the waist circumference risk cutoffs for South Asian populations?', answer: 'According to the International Diabetes Federation (IDF), the abdominal obesity waist circumference cutoff for Asian men is 90 cm (35 inches) and for Asian women is 80 cm (31.5 inches).' },
+        { question: 'What steps should I take if my BMI score is 23 or higher?', answer: 'A BMI score of 23.0 to 27.4 is classified as Asian Overweight. Medical guidelines recommend adopting a balanced Mediterranean or low-glycemic diet, engaging in 150 minutes of aerobic exercise weekly, and scheduling an HbA1c blood test.' }
       ]
     }
   },
