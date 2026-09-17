@@ -221,20 +221,25 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'protein-intake-calculator': {
     en: {
-      eyebrow: 'Nutritional Intake Standard',
-      title: 'Protein Intake Calculator & Daily Protein Calculator',
-      intro: 'Calculate "how much protein do I need a day" using our Daily Protein Calculator. Set your exact protein target for muscle gain, fat loss, or daily nutrition.',
-      formulaTitle: 'Protein Target Factors',
-      formulaDesc: 'Sedentary: 0.8 g/kg | Active: 1.4-1.8 g/kg | Protein target for muscle gain: 1.6-2.2 g/kg',
-      tableTitle: 'Daily Protein Requirements by Goal',
+      eyebrow: 'ISSN Sports Nutrition Standard',
+      title: 'Protein Intake Calculator & Daily Protein Requirement Tool',
+      intro: 'Calculate "how much protein do I need a day" with our free Protein Intake Calculator. Aligned with International Society of Sports Nutrition (ISSN) guidelines, determine your exact daily protein target for muscle hypertrophy, fat loss, or optimal health.',
+      formulaTitle: 'Clinical Protein Intake Formula & Goal Multipliers',
+      formulaDesc: 'Sedentary Baseline: 0.8 g / kg | Endurance Athletes: 1.2 - 1.4 g / kg | Fat Loss & Muscle Retention: 1.8 - 2.4 g / kg | Muscle Growth (Hypertrophy): 1.6 - 2.2 g / kg',
+      formulaCode: 'Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)',
+      tableTitle: 'Daily Protein Requirements (g/kg) Matrix by Activity & Goal',
       tableRows: [
-        { col1: 'Sedentary Adult', col2: '0.8 g / kg body weight', col3: 'Prevent deficiency' },
-        { col1: 'Endurance Athlete', col2: '1.2 – 1.4 g / kg body weight', col3: 'Tissue repair & recovery' },
-        { col1: 'Strength / Muscle Growth', col2: '1.6 – 2.2 g / kg body weight', col3: 'Maximal muscle protein synthesis' }
+        { col1: 'Sedentary Adult Baseline', col2: '0.8 g / kg body weight', col3: 'Minimum RDA to prevent protein deficiency' },
+        { col1: 'Active Endurance Athlete', col2: '1.2 – 1.4 g / kg body weight', col3: 'Tissue repair & glycogen enzyme resynthesis' },
+        { col1: 'Muscle Growth (Hypertrophy)', col2: '1.6 – 2.2 g / kg body weight', col3: 'Maximal muscle protein synthesis (MPS) rate' },
+        { col1: 'Fat Loss Calorie Deficit (Aggressive)', col2: '2.0 – 2.4 g / kg body weight', col3: 'Protects lean skeletal muscle during energy restriction' }
       ],
       faqs: [
-        { question: 'How much protein do I need a day on this daily protein calculator?', answer: 'For general health, 0.8 g per kg of body weight is required. If your goal is muscle hypertrophy, set your protein target for muscle gain between 1.6 and 2.2 g/kg daily.' },
-        { question: 'Why increase protein intake during weight loss?', answer: 'Higher protein preserves lean skeletal muscle tissue and increases satiety during a calorie deficit.' }
+        { question: 'What is the Protein Intake Calculator?', answer: 'The Protein Intake Calculator is an evidence-based sports nutrition tool that calculates your daily protein requirement in grams based on body weight, fitness goals, and training intensity.' },
+        { question: 'How much protein do I need per day for muscle building vs weight loss?', answer: 'For muscle building, consume 1.6 to 2.2 grams of protein per kilogram of body weight. For fat loss during a calorie deficit, consume 2.0 to 2.4 g/kg to protect muscle tissue from breakdown.' },
+        { question: 'How to calculate daily protein requirement in grams per kg of body weight?', answer: 'Multiply your weight in kg by your target factor. For example, a 70 kg lifter aiming for muscle growth: 70 kg × 2.0 g/kg = 140 grams of protein daily.' },
+        { question: 'What are the best high-protein food sources to reach daily targets?', answer: 'Complete protein sources include chicken breast (31g/100g), Greek yogurt (10g/100g), eggs (6g/egg), whey protein (24g/scoop), salmon (22g/100g), tofu (8g/100g), and lentils (9g/100g cooked).' },
+        { question: 'Can eating high protein harm healthy kidneys?', answer: 'Clinical trials published in the Journal of Nutrition show that high-protein diets (up to 2.8 g/kg) do not impair renal function or kidney filtration in healthy individuals.' }
       ]
     }
   },

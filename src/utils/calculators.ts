@@ -423,9 +423,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'protein-intake-calculator',
-    name: { en: 'Protein Intake Calculator', es: 'Calculadora de Proteínas', fr: 'Calculateur de Protéines', de: 'Proteinrechner', ko: '단백질 섭취 계산기', hi: 'प्रोटीन सेवन कैलकुलेटर' },
-    title: { en: 'Daily Protein Calculator - Macro Fitness Target', es: 'Calculadora de Consumo de Proteína Recomendado', fr: 'Calculateur d\'Apport en Protéines', de: 'Proteinbedarfsrechner täglich bestimmen', ko: '단백질 섭취량 계산기', hi: 'दैनिक प्रोटीन कैलकुलेटर' },
-    description: { en: 'Calculate daily protein requirements.', es: 'Calcula los requerimientos diarios de proteínas.', fr: 'Calculez vos besoins quotidiens en protéines.', de: 'Berechnen Sie Ihren täglichen Eiweißbedarf.', ko: '하루 권장 단백질 섭취량을 알아봅니다.', hi: 'दैनिक प्रोटीन आवश्यकताओं की गणना करें।' },
+    name: { en: 'Protein Intake Calculator', es: 'Calculadora de Consumo de Proteínas', fr: 'Calculateur d\'Apport en Protéines', de: 'Täglicher Proteinbedarf Rechner', ko: '단백질 섭취량 계산기 (Protein Intake Calculator)', hi: 'प्रोटीन सेवन कैलकुलेटर' },
+    title: { en: 'Protein Intake Calculator – Free Daily Protein Target Tool', es: 'Calculadora de Consumo de Proteínas Diario por Peso', fr: 'Calculateur d\'Apport en Protéines Gratuit', de: 'Protein Intake Rechner – Täglicher Eiweißbedarf', ko: '무료 단백질 섭취량 계산기 (Protein Intake Calculator)', hi: 'मुफ़्त प्रोटीन सेवन कैलकुलेटर - दैनिक प्रोटीन लक्ष्य' },
+    description: { en: 'Free Protein Intake Calculator. Calculate how much protein do I need daily based on body weight, fitness goal (muscle gain, fat loss, maintenance), and activity level.', es: 'Calculadora gratuita de consumo de proteínas. Calcula cuánta proteína necesitas al día según tu peso y objetivos de masa muscular.', fr: 'Calculateur gratuit d\'apport en protéines. Calculez vos besoins quotidiens en protéines pour le muscle ou la perte de poids.', de: 'Kostenloser Protein Intake Rechner. Berechnen Sie Ihren täglichen Eiweißbedarf nach Körpergewicht und Fitnesszielen.', ko: '무료 단백질 섭취량 계산기. 근육 증가, 체중 감량 및 유지 목표에 맞는 일일 권장 단백질 섭취량(g)을 계산하세요.', hi: 'मुफ़्त प्रोटीन सेवन कैलकुलेटर। वजन घटाने, मांसपेशियों के निर्माण या रखरखाव के लिए अपने दैनिक प्रोटीन लक्ष्य की सटीक गणना करें।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'goal', label: L.goal, type: 'select', options: [
