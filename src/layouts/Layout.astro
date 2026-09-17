@@ -20,12 +20,16 @@ const {
 	robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 } = Astro.props;
 
-const canonicalURL = customCanonicalURL || new URL(Astro.url.pathname, 'https://realbmicalculator.com').href;
+const rawCanonical = customCanonicalURL || new URL(Astro.url.pathname, 'https://realbmicalculator.com').href;
+const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical}/`;
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `https://realbmicalculator.com${ogImage}`;
 const { currentLocale } = Astro;
 
 const rawPath = Astro.url.pathname.replace(/^\/(en|es|fr|de|ko|hi)/, '');
-const normalizedPath = rawPath === '' ? '/' : (rawPath.startsWith('/') ? rawPath : `/${rawPath}`);
+let normalizedPath = rawPath === '' ? '/' : (rawPath.startsWith('/') ? rawPath : `/${rawPath}`);
+if (!normalizedPath.endsWith('/')) {
+  normalizedPath += '/';
+}
 
 const pagePath = Astro.url.pathname.split('/').filter(Boolean);
 const breadcrumbItems: any[] = [];
@@ -33,11 +37,12 @@ if (pagePath.length > 0) {
   const segments = pagePath[0] && ['en', 'es', 'fr', 'de', 'ko', 'hi'].includes(pagePath[0]) ? pagePath.slice(1) : pagePath;
   segments.forEach((segment, index) => {
     const name = segment.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+    const rawItemUrl = `https://realbmicalculator.com${Astro.url.pathname.split('/').slice(0, index + 1 + (pagePath[0] && ['en', 'es', 'fr', 'de', 'ko', 'hi'].includes(pagePath[0]) ? 1 : 0)).join('/')}`;
     breadcrumbItems.push({
       '@type': 'ListItem',
       position: index + 2,
       name,
-      item: `https://realbmicalculator.com${Astro.url.pathname.split('/').slice(0, index + 1 + (pagePath[0] && ['en', 'es', 'fr', 'de', 'ko', 'hi'].includes(pagePath[0]) ? 1 : 0)).join('/')}`
+      item: rawItemUrl.endsWith('/') ? rawItemUrl : `${rawItemUrl}/`
     });
   });
 }

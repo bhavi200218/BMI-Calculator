@@ -28,7 +28,7 @@ const currentLangDisplay = langNames[lang] || lang;
   <div class="flex items-center justify-between px-4 sm:px-5 h-14 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)]">
 
     <!-- Logo -->
-    <a href={`/${lang}`} class="flex items-center gap-2 shrink-0">
+    <a href={`/${lang}/`} class="flex items-center gap-2 shrink-0">
       <div class="w-7 h-7 rounded-lg bg-[var(--accent)] flex items-center justify-center">
         <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
@@ -39,9 +39,9 @@ const currentLangDisplay = langNames[lang] || lang;
 
     <!-- Desktop Links -->
     <div class="hidden lg:flex items-center gap-3 lg:gap-5">
-      <a href={`/${lang}`} class="nav-link">{t.home}</a>
-      <a href="/calculator" class="nav-link">{t.calculators}</a>
-      <a href={`/${lang}/blog`} class="nav-link">{t.blog}</a>
+      <a href={`/${lang}/`} class="nav-link">{t.home}</a>
+      <a href={`/${lang}/bmi-calculator/`} class="nav-link">{t.calculators}</a>
+      <a href={`/${lang}/blog/`} class="nav-link">{t.blog}</a>
       <a href={`/${lang}/#insights`} class="nav-link">{t.insights}</a>
       <a href={`/${lang}/#faq`} class="nav-link">{t.faq}</a>
     </div>
@@ -64,9 +64,10 @@ const currentLangDisplay = langNames[lang] || lang;
             class="absolute right-0 top-full mt-2 w-44 rounded-xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)] p-1.5 space-y-0.5 hidden"
             role="menu">
             {Object.entries(langNames).map(([code, name]) => {
-              const path = Astro.url.pathname
+              const rawP = Astro.url.pathname
                 .replace(/^\/[a-z]{2}\//, `/${code}/`)
                 .replace(/^\/[a-z]{2}$/, `/${code}/`);
+              const path = rawP.endsWith('/') ? rawP : `${rawP}/`;
               return (
                 <a href={path}
                   class={`flex items-center gap-2 px-3 py-2.5 text-[11px] font-display font-semibold uppercase tracking-wider rounded-lg hover:bg-[var(--muted)] transition-colors text-[var(--foreground)] cursor-pointer ${code === lang ? 'bg-[var(--muted)]' : ''}`}
@@ -119,13 +120,13 @@ const currentLangDisplay = langNames[lang] || lang;
         </svg>
       </button>
       
-      <a href={`/${lang}`} class="w-full rounded-3xl bg-[var(--card)] px-3 py-2 text-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+      <a href={`/${lang}/`} class="w-full rounded-3xl bg-[var(--card)] px-3 py-2 text-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
         {t.home}
       </a>
-      <a href="/calculator" class="w-full rounded-3xl bg-[var(--card)] px-3 py-2 text-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+      <a href={`/${lang}/bmi-calculator/`} class="w-full rounded-3xl bg-[var(--card)] px-3 py-2 text-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
         {t.calculators}
       </a>
-      <a href={`/${lang}/blog`} class="w-full rounded-3xl bg-[var(--card)] px-3 py-2 text-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+      <a href={`/${lang}/blog/`} class="w-full rounded-3xl bg-[var(--card)] px-3 py-2 text-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
         {t.blog}
       </a>
       <a href={`/${lang}/#insights`} class="w-full rounded-3xl bg-[var(--card)] px-3 py-2 text-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">

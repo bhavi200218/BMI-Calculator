@@ -32,7 +32,7 @@ const { calc, lang } = Astro.props;
 
 const pageTitle = calc.title[lang] || calc.title['en'];
 const pageDesc = calc.description[lang] || calc.description['en'];
-const canonicalUrl = `https://realbmicalculator.com/${lang}/${calc.slug}`;
+const canonicalUrl = `https://realbmicalculator.com/${lang}/${calc.slug}/`;
 
 const localizedIntro = {
   en: 'Built for quick health analytics and compliance. Real-time computations.',
@@ -70,7 +70,7 @@ const webAppSchema = {
     <div class="max-w-7xl mx-auto space-y-16">
       
       <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm font-medium text-[var(--muted-foreground)]">
-        <a href={`/${lang}`} class="hover:text-[var(--accent)] transition-colors">Home</a>
+        <a href={`/${lang}/`} class="hover:text-[var(--accent)] transition-colors">Home</a>
         <span>/</span>
         <a href={`/${lang}/#calculator`} class="hover:text-[var(--accent)] transition-colors">Calculators</a>
         <span>/</span>
