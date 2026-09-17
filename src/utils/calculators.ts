@@ -456,9 +456,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'water-intake-calculator',
-    name: { en: 'Water Intake Calculator', es: 'Calculadora de Agua', fr: 'Calculateur d\'Eau', de: 'Wasserbedarfsrechner', ko: '수분 섭취 계산기', hi: 'पानी का सेवन कैलकुलेटर' },
-    title: { en: 'Water Intake Calculator - Daily Hydration Target', es: 'Calculadora de Consumo de Agua Diario', fr: 'Calculateur d\'Hydratation Journalier', de: 'Täglicher Wasserbedarf Rechner', ko: '하루 물 섭취량 계산기', hi: 'पानी का सेवन कैलकुलेटर - दैनिक हाइड्रेशन' },
-    description: { en: 'Compute your daily target hydration limit.', es: 'Calcula tu objetivo de hidratación corporal diario.', fr: 'Calculez vos besoins journaliers en eau.', de: 'Ermitteln Sie Ihre ideale tägliche Wassermenge.', ko: '하루 권장 물 마시기 목표를 계산합니다.', hi: 'अपने दैनिक लक्षित हाइड्रेशन सीमा की गणना करें।' },
+    name: { en: 'Daily Water Intake Calculator', es: 'Calculadora de Consumo de Agua Diario', fr: 'Calculateur d\'Hydratation Journalier', de: 'Täglicher Wasserbedarf Rechner', ko: '하루 물 섭취량 계산기', hi: 'दैनिक पानी का सेवन कैलकुलेटर' },
+    title: { en: 'Water Intake Calculator – Daily Hydration by Weight Tool', es: 'Calculadora de Consumo de Agua Diario por Peso', fr: 'Calculateur d\'Hydratation selon le Poids', de: 'Wasserbedarf Rechner nach Körpergewicht – Täglicher Zielwert', ko: '하루 물 섭취량 계산기 (Water Intake Calculator by Weight)', hi: 'पानी का सेवन कैलकुलेटर - वजन के अनुसार दैनिक हाइड्रेशन' },
+    description: { en: 'Free Water Intake Calculator. Calculate how much water should I drink daily based on body weight, activity level, and climate using clinical hydration formulas.', es: 'Calculadora gratuita de consumo de agua diario. Calcula cuánta agua debes beber al día según tu peso y actividad física.', fr: 'Calculateur gratuit d\'hydratation journalière. Découvrez combien d\'eau boire par jour selon votre poids.', de: 'Kostenloser Wasserbedarf-Rechner. Berechnen Sie, wie viel Wasser Sie täglich nach Körpergewicht und Aktivität trinken sollten.', ko: '무료 하루 물 섭취량 계산기. 체중과 활동량에 따라 매일 마셔야 하는 수분 섭취량을 계산하세요.', hi: 'मुफ़्त पानी का सेवन कैलकुलेटर। अपने वजन और गतिविधि स्तर के आधार पर जाने कि आपको प्रतिदिन कितना पानी पीना चाहिए।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'activity', label: L.activity, type: 'select', options: [

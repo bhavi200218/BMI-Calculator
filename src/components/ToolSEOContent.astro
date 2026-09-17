@@ -240,20 +240,25 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'water-intake-calculator': {
     en: {
-      eyebrow: 'Hydration Guidelines',
-      title: 'Water Intake Calculator & Daily Hydration Calculator',
-      intro: 'Find out "how much water should I drink per day" with our Daily Hydration Calculator. Compute target water intake by body weight and activity level.',
-      formulaTitle: 'Water Intake by Body Weight Formula',
-      formulaDesc: 'Daily Water (Liters) = [Weight (kg) × 35 ml] / 1000 + Exercise Addition (500-750 ml/hr)',
-      tableTitle: 'Hydration Benchmarks by Body Mass',
+      eyebrow: 'Clinical Hydration Standards',
+      title: 'Water Intake Calculator & Daily Hydration Target Tool',
+      intro: 'Calculate "how much water should I drink daily" with our free Water Intake Calculator. Using clinical hydration formulas based on body weight, activity level, and climate loss, determine your optimal fluid intake goal.',
+      formulaTitle: 'Clinical Water Intake by Body Weight Mathematical Equation',
+      formulaDesc: 'Baseline Water (Liters) = [Weight (kg) × 35 ml] / 1000 + Physical Activity Sweat Factor (500 ml to 1000 ml per hour of exercise)',
+      formulaCode: 'Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)',
+      tableTitle: 'Daily Water Intake Benchmarks by Body Weight (Liters & Glasses)',
       tableRows: [
-        { col1: 'Sedentary 70kg Adult', col2: '2.45 Liters / day', col3: '~10 standard glasses' },
-        { col1: 'Active 70kg Adult', col2: '3.20 Liters / day', col3: '~13 standard glasses' },
-        { col1: 'Heavy Exercise 90kg Adult', col2: '4.15 Liters / day', col3: '~17 standard glasses' }
+        { col1: 'Sedentary 50 kg Adult', col2: '1.75 Liters / day', col3: '~7 standard 250ml glasses' },
+        { col1: 'Sedentary 70 kg Adult', col2: '2.45 Liters / day', col3: '~10 standard 250ml glasses' },
+        { col1: 'Active 70 kg Athlete', col2: '3.20 Liters / day', col3: '~13 standard 250ml glasses' },
+        { col1: 'Heavy Exercise 90 kg Athlete', col2: '4.15 Liters / day', col3: '~17 standard 250ml glasses' }
       ],
       faqs: [
-        { question: 'How much water should I drink per day based on body weight?', answer: 'Our daily hydration calculator multiplies body weight (kg) by 35 ml to determine baseline water intake by body weight, adding extra fluids for workout sweat loss.' },
-        { question: 'Does coffee or tea count toward daily hydration?', answer: 'Yes, caffeinated beverages contribute toward fluid intake, though pure water remains the ideal hydration source.' }
+        { question: 'What is the Water Intake Calculator?', answer: 'The Water Intake Calculator is a daily health tool that determines your total recommended fluid consumption based on body weight, physical exertion, and environmental sweat loss.' },
+        { question: 'How much water should I drink per day based on body weight?', answer: 'A clinical rule of thumb is to drink 35 ml of water per kilogram of body weight daily (or approximately 0.5 ounces per pound of body weight), plus additional fluids during workout sessions.' },
+        { question: 'How to calculate daily water intake using the weight formula?', answer: 'Multiply your weight in kilograms by 35 ml (or weight in lbs by 0.5 oz). For a 70 kg person: 70 × 35 = 2,450 ml (2.45 Liters), which equals about 10 standard 250ml glasses of water.' },
+        { question: 'Does coffee, tea, or soda count toward my daily water intake?', answer: 'Yes, caffeinated beverages like tea and coffee contribute to fluid hydration. However, plain water remains the healthiest and most efficient source of cellular hydration.' },
+        { question: 'What are the early signs of dehydration and overhydration?', answer: 'Dehydration symptoms include dark yellow urine, fatigue, headaches, and dry mouth. Overhydration (hyponatremia) symptoms include clear urine accompanied by nausea and muscle cramps from diluted blood sodium.' }
       ]
     }
   },
