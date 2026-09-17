@@ -172,9 +172,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'bmr-calculator',
-    name: { en: 'BMR Calculator', es: 'Calculadora de BMR', fr: 'Calculateur de BMR', de: 'BMR-Rechner', ko: 'BMR 계산기', hi: 'बीएमआर कैलकुलेटर' },
-    title: { en: 'Mifflin St Jeor BMR Calculator – Basal Metabolic Rate Calculator', es: 'Calculadora BMR Mifflin St Jeor - Metabolismo Basal Preciso', fr: 'Calculateur BMR Mifflin St Jeor - Taux Métabolique de Base', de: 'Mifflin-St.Jeor BMR-Rechner – Grundumsatz Berechnen', ko: '미플린 스토어 BMR 계산기 - 기초대사량 계산기', hi: 'मिफ्लिन सेंट ज्योर बीएमआर कैलकुलेटर - बेसल मेटाबॉलिक रेट' },
-    description: { en: 'Free Mifflin St Jeor BMR Calculator. Calculate your exact Basal Metabolic Rate (BMR) using the clinical Mifflin-St Jeor equation to determine resting daily calorie burn.', es: 'Calculadora de BMR Mifflin St Jeor gratis. Calcula tu Metabolismo Basal (BMR) exacto usando la fórmula clínica de Mifflin-St Jeor.', fr: 'Calculateur de BMR Mifflin St Jeor gratuit. Calculez votre taux métabolique de base (BMR) exact.', de: 'Kostenloser Mifflin-St.Jeor BMR-Rechner. Berechnen Sie Ihren genauen Grundumsatz (BMR) mit der klinischen Formel.', ko: '무료 미플린 스토어 BMR 계산기. 임상 미플린 스토어 공식을 사용하여 기초대사량(BMR)을 정확하게 계산하세요.', hi: 'मुफ़्त मिफ्लिन सेंट ज्योर बीएमआर कैलकुलेटर। नैदानिक मिफ्लिन-सेंट ज्योर समीकरण का उपयोग करके अपने सटीक बेसल मेटाबॉलिक रेट की गणना करें।' },
+    name: { en: 'Basal Metabolic Rate Calculator', es: 'Calculadora de Tasa Metabólica Basal', fr: 'Calculateur de Taux Métabolique de Base', de: 'Grundumsatz Rechner (Basal Metabolic Rate)', ko: '기초대사량 계산기 (Basal Metabolic Rate Calculator)', hi: 'बेसल मेटाबॉलिक रेट कैलकुलेटर' },
+    title: { en: 'Basal Metabolic Rate Calculator – Mifflin St Jeor BMR Tool', es: 'Calculadora de Tasa Metabólica Basal – BMR Mifflin St Jeor', fr: 'Calculateur de Taux Métabolique de Base – BMR Mifflin St Jeor', de: 'Grundumsatz Rechner – Basal Metabolic Rate (BMR) Berechnen', ko: '무료 기초대사량 계산기 (Basal Metabolic Rate Calculator)', hi: 'मुफ़्त बेसल मेटाबॉलिक रेट कैलकुलेटर - BMR Calculator' },
+    description: { en: 'Free Basal Metabolic Rate Calculator. Calculate your exact Basal Metabolic Rate (BMR) using the clinical Mifflin-St Jeor equation to determine resting daily calorie burn.', es: 'Calculadora gratuita de tasa metabólica basal (BMR). Calcula tu metabolismo basal exacto con la fórmula clínica de Mifflin-St Jeor.', fr: 'Calculateur gratuit de taux métabolique de base (BMR). Calculez votre métabolisme de base exact avec la formule Mifflin-St Jeor.', de: 'Kostenloser Grundumsatz-Rechner (BMR). Berechnen Sie Ihren Grundumsatz präzise mit der klinischen Mifflin-St.Jeor Formel.', ko: '무료 기초대사량 계산기. 임상 Mifflin-St Jeor 공식을 사용하여 하루에 휴식 상태에서 소비하는 기초대사량(BMR)을 정확하게 계산하세요.', hi: 'मुफ़्त बेसल मेटाबॉलिक रेट कैलकुलेटर। Mifflin-St Jeor समीकरण का उपयोग करके अपने बेसल मेटाबॉलिक रेट (BMR) की सटीक गणना करें।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
@@ -194,10 +194,10 @@ export const calculators: CalculatorConfig[] = [
         : (10 * w) + (6.25 * h) - (5 * age) - 161;
 
       return {
-        primary: { value: Math.round(bmr), label: { en: 'BMR Calorie Goal', es: 'BMR Calorías', fr: 'Calories BMR', de: 'BMR Grundumsatz', ko: '기초대사량 BMR', hi: 'बीएमआर कैलोरी' }, unit: 'kcal/day' },
+        primary: { value: Math.round(bmr), label: { en: 'Basal Metabolic Rate (BMR)', es: 'Tasa Metabólica Basal (BMR)', fr: 'Taux Métabolique de Base (BMR)', de: 'Grundumsatz (BMR)', ko: '기초대사량 (BMR)', hi: 'बेसल मेटाबॉलिक रेट' }, unit: 'kcal/day' },
         secondary: [
-          { label: { en: 'Sedentary Burn', es: 'Quema Sedentaria', fr: 'Combustion Sédentaire', de: 'Ruhebedarf', ko: '비활동 기초 소모', hi: 'गतिहीन कैलोरी बर्न' }, value: Math.round(bmr * 1.2), unit: 'kcal' },
-          { label: { en: 'Moderate Burn', es: 'Quema Moderada', fr: 'Combustion Modérée', de: 'Mäßiger Bedarf', ko: '보통 활동 소모', hi: 'मध्यम कैलोरी बर्न' }, value: Math.round(bmr * 1.55), unit: 'kcal' }
+          { label: { en: 'Sedentary Burn (PAL 1.2)', es: 'Gasto Sedentario', fr: 'Combustion Sédentaire', de: 'Ruhebedarf (PAL 1.2)', ko: '비활동 총 소모량', hi: 'गतिहीन कैलोरी बर्न' }, value: Math.round(bmr * 1.2), unit: 'kcal' },
+          { label: { en: 'Moderate Active Burn (PAL 1.55)', es: 'Gasto Moderado', fr: 'Combustion Modérée', de: 'Mäßiger Bedarf (PAL 1.55)', ko: '보통 활동 총 소모량', hi: 'मध्यम एक्टिव कैलोरी' }, value: Math.round(bmr * 1.55), unit: 'kcal' }
         ]
       };
     }
