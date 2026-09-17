@@ -335,20 +335,26 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'one-rep-max-calculator': {
     en: {
-      eyebrow: 'Epley Strength Equation',
-      title: 'One Rep Max Calculator & 1RM Strength Tool',
-      intro: 'Calculate 1 rep max bench press, squat, and deadlift with our 1RM Calculator. Powered by the Epley 1RM formula, use this lift weight calculator to estimate peak strength safely.',
-      formulaTitle: 'Epley 1RM Formula Equation',
-      formulaDesc: '1RM = Weight Lifted × (1 + [Reps / 30])',
-      tableTitle: '1RM Percentage Training Intensity Scale',
+      eyebrow: 'Epley Clinical Strength Standard',
+      title: 'Epley 1RM Bench Press Calculator & 1 Rep Max Tool',
+      intro: 'Calculate your 1 rep max bench press, squat, and deadlift safely with our free Epley 1RM Bench Press Calculator. Powered by the official Epley 1RM formula equation, estimate your maximum lifting capacity without risking muscle tears or joint strain.',
+      formulaTitle: 'Official Epley 1RM Mathematical Formula Equation',
+      formulaDesc: '1RM = Weight Lifted in kg/lbs × (1 + [Reps Performed / 30]) | Brzycki 1RM = Weight Lifted × [36 / (37 - Reps)]',
+      formulaCode: '1RM = W × (1 + R / 30)',
+      tableTitle: '1RM Percentage Intensity Training Chart (Bench Press & Powerlifting)',
       tableRows: [
-        { col1: '100% 1RM', col2: '1 Repetition', col3: 'Peak maximal strength' },
-        { col1: '85% 1RM', col2: '5 – 6 Repetitions', col3: 'Hypertrophy & strength' },
-        { col1: '75% 1RM', col2: '10 Repetitions', col3: 'Muscular endurance & volume' }
+        { col1: '100% 1RM Baseline', col2: '1 Repetition', col3: 'Absolute peak single rep strength capacity' },
+        { col1: '90% 1RM Load', col2: '3 Repetitions', col3: 'Heavy strength building & neural adaptation' },
+        { col1: '85% 1RM Load', col2: '5 – 6 Repetitions', col3: 'Optimal hypertrophy & compound strength (5x5 protocols)' },
+        { col1: '75% 1RM Load', col2: '10 Repetitions', col3: 'Hypertrophy volume & metabolic conditioning' },
+        { col1: '65% 1RM Load', col2: '15 Repetitions', col3: 'Muscular endurance & active recovery sets' }
       ],
       faqs: [
-        { question: 'How to calculate 1 rep max bench press with the Epley 1RM formula?', answer: 'To calculate 1 rep max bench press without risking injury, perform submaximal reps (e.g. 5 reps at 80 kg). Our 1RM calculator uses the Epley 1RM formula: Weight × (1 + Reps/30) to compute your 1 rep max.' },
-        { question: 'Why use a lift weight calculator instead of testing max weight directly?', answer: 'Estimating 1RM with a lift weight calculator provides accurate training percentage targets while preventing joint strain and muscle tears.' }
+        { question: 'What is the Epley 1RM Bench Press Calculator?', answer: 'The Epley 1RM Bench Press Calculator is a strength assessment tool created by Boyd Epley in 1985. It calculates your maximum single-rep bench press (1RM) based on submaximal repetition performance, eliminating the need to attempt dangerous 1RM max attempts.' },
+        { question: 'How to calculate 1 rep max bench press using the Epley formula?', answer: 'To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press.' },
+        { question: 'How accurate is the Epley 1RM formula for bench press, squat, and deadlift?', answer: 'Sports science studies show that the Epley 1RM formula is accurate within ±2.5% for bench press and squat sets between 2 to 10 repetitions. For reps above 10, accuracy slightly overestimates 1RM capacity.' },
+        { question: 'What is the difference between Epley and Brzycki 1RM formulas?', answer: 'The Epley formula (1RM = W × [1 + R/30]) and Brzycki formula (1RM = W × [36 / (37 - R)]) are the two gold standards. Epley is slightly more accurate for lower rep ranges (1 to 6 reps), while Brzycki performs well up to 10 reps.' },
+        { question: 'Why should I use a 1RM calculator instead of testing max weight directly?', answer: 'Testing true 1RM max weight creates extreme spinal load and pectoral tendon shear force during heavy bench press attempts. An Epley 1RM calculator allows athletes to calculate target weights safely with lower weights.' }
       ]
     }
   },

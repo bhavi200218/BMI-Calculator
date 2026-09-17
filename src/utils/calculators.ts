@@ -631,24 +631,28 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'one-rep-max-calculator',
-    name: { en: 'One Rep Max', es: 'Calculadora de 1RM', fr: 'Calculateur de 1RM', de: 'Maximalkraft Rechner (1RM)', ko: '1RM 측정기 (1RM 계산기)', hi: 'वन रेप मैक्स कैलकुलेटर' },
-    title: { en: 'One Rep Max Calculator - Strength Lift Diagnostic', es: 'Calculadora de Una Repetición Máxima (1RM)', fr: 'Calculateur de Charge Maximale 1RM', de: 'Maximalkraft-Rechner (1RM) Bankdrücken Kniebeugen', ko: '1RM 측정기 - 1RM 계산기 및 최대 근력 측정 (Epley 공식)', hi: 'वन रेप मैक्स कैलकुलेटर - स्ट्रेंथ लिफ्ट' },
-    description: { en: 'Estimate weight lifting 1RM strength capability using clinical Epley formulas.', es: 'Calcula tu capacidad máxima de levantamiento (1RM).', fr: 'Estimez votre force maximale pour 1 répétition.', de: 'Ermitteln Sie Ihre maximale Kraftleistung für 1 Rep.', ko: '1RM 측정기: 벤치프레스, 스쿼트, 데드리프트 등 웨이트 트레이닝 시 최대 한 번 들 수 있는 1RM 무게를 정확하게 계산하세요.', hi: 'वजन उठाने की 1RM ताकत क्षमता का अनुमान लगाएं।' },
+    name: { en: 'Epley 1RM Bench Press Calculator', es: 'Calculadora 1RM Epley Press de Banca', fr: 'Calculateur 1RM Formule Epley Développé Couché', de: 'Epley 1RM Bankdrücken Rechner', ko: 'Epley 1RM 벤치프레스 계산기', hi: 'एपले 1RM बेंच प्रेस कैलकुलेटर' },
+    title: { en: 'Epley 1RM Bench Press Calculator – 1 Rep Max Tool', es: 'Calculadora 1RM Epley Press de Banca y Sentadilla', fr: 'Calculateur 1RM Epley Développé Couché', de: 'Epley 1RM Bankdrücken Rechner – Maximalkraft', ko: 'Epley 1RM 벤치프레스 계산기 (Epley 1RM Calculator)', hi: 'एपले 1RM बेंच प्रेस कैलकुलेटर - वन रेप मैक्स' },
+    description: { en: 'Free Epley 1RM Bench Press Calculator. Calculate your one rep max (1RM) bench press, squat, and deadlift using the official Epley 1RM formula equation.', es: 'Calculadora gratuita de 1RM con la fórmula de Epley para press de banca. Calcula tu peso máximo a una repetición.', fr: 'Calculateur gratuit de 1RM selon la formule d\'Epley pour le développé couché.', de: 'Kostenloser Epley 1RM Bankdrücken Rechner. Berechnen Sie Ihre Maximalkraft für 1 Rep mit der Epley-Formel.', ko: '무료 Epley 1RM 벤치프레스 계산기. 임상 Epley 1RM 공식을 사용하여 벤치프레스, 스쿼트, 데드리프트 1RM을 계산하세요.', hi: 'मुफ़्त एपले 1RM बेंच प्रेस कैलकुलेटर। आधिकारिक एपले 1RM फॉर्मूला का उपयोग करके अपने 1RM की सटीक गणना करें।' },
     inputs: [
       { id: 'weight', label: { en: 'Weight Lifted', es: 'Peso Levantado', fr: 'Charge Soulevée', de: 'Gewicht', ko: '리프팅 무게', hi: 'उठाया गया वजन' }, type: 'number', placeholder: '100' },
-      { id: 'age', label: { en: 'Reps', es: 'Repeticiones', fr: 'Répétitions', de: 'Wiederholungen', ko: '반복 횟수(Reps)', hi: 'रेप्स' }, type: 'number', placeholder: '5' }
+      { id: 'age', label: { en: 'Reps Performed', es: 'Repeticiones', fr: 'Répétitions', de: 'Wiederholungen', ko: '반복 횟수(Reps)', hi: 'रेप्स' }, type: 'number', placeholder: '5' }
     ],
     calculate: (inputs, system) => {
       const w = parseFloat(inputs.weight) || 0;
-      const r = parseInt(inputs.age) || 1; // using age input box for reps in 1RM
+      const r = parseInt(inputs.age) || 1;
 
-      // Epley Formula
-      const oneRepMax = w * (1 + (r / 30));
+      // Epley Formula: 1RM = W * (1 + R/30)
+      const epley1RM = w * (1 + (r / 30));
+      // Brzycki Formula: 1RM = W * (36 / (37 - R))
+      const brzycki1RM = r < 37 ? w * (36 / (37 - r)) : epley1RM;
 
       return {
-        primary: { value: Math.round(oneRepMax), label: { en: 'Estimated 1RM', es: '1RM Estimado', fr: '1RM Estimé', de: 'Berechneter 1RM', ko: '추정 1RM 무게', hi: 'अनुमानित 1RM' }, unit: system === 'imperial' ? 'lbs' : 'kg' },
+        primary: { value: Math.round(epley1RM), label: { en: 'Epley Estimated 1RM', es: '1RM Estimado Epley', fr: '1RM Estimé Epley', de: 'Epley 1RM Wert', ko: 'Epley 추정 1RM 무게', hi: 'एपले अनुमानित 1RM' }, unit: system === 'imperial' ? 'lbs' : 'kg' },
         secondary: [
-          { label: { en: '85% Maximum (approx 5-6 Reps)', es: '85% del Máximo', fr: '85% de la force', de: '85% der Maximalkraft', ko: '85% 훈련 무게 (5~6회)', hi: '85% अधिकतम' }, value: Math.round(oneRepMax * 0.85), unit: system === 'imperial' ? 'lbs' : 'kg' }
+          { label: { en: 'Brzycki Formula 1RM', es: '1RM Fórmula Brzycki', fr: '1RM Formule Brzycki', de: 'Brzycki 1RM Wert', ko: 'Brzycki 추정 1RM', hi: 'ब्रज़िकी 1RM' }, value: Math.round(brzycki1RM), unit: system === 'imperial' ? 'lbs' : 'kg' },
+          { label: { en: '85% 1RM (5-6 Rep Target)', es: '85% del Máximo (5-6 Reps)', fr: '85% du 1RM (5-6 Reps)', de: '85% 1RM (5-6 Wdh)', ko: '85% 훈련 무게 (5~6회)', hi: '85% 1RM Target' }, value: Math.round(epley1RM * 0.85), unit: system === 'imperial' ? 'lbs' : 'kg' },
+          { label: { en: '75% 1RM (10 Rep Target)', es: '75% del Máximo (10 Reps)', fr: '75% du 1RM (10 Reps)', de: '75% 1RM (10 Wdh)', ko: '75% 훈련 무게 (10회)', hi: '75% 1RM Target' }, value: Math.round(epley1RM * 0.75), unit: system === 'imperial' ? 'lbs' : 'kg' }
         ]
       };
     }
