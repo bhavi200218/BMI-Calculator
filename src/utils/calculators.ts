@@ -330,9 +330,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'ideal-weight-calculator',
-    name: { en: 'Devine Formula Ideal Weight Calculator', es: 'Calculadora de Peso Ideal Fórmula Devine', fr: 'Calculateur de Poids Idéal Formule Devine', de: 'Devine-Formel Idealgewicht Rechner', ko: 'Devine 공식 이상적인 체중 계산기', hi: 'डिवाइन फॉर्मूला आदर्श वजन कैलकुलेटर' },
-    title: { en: 'Devine Formula Ideal Weight Calculator – Ideal Body Weight Tool', es: 'Calculadora de Peso Ideal Fórmula Devine - Peso Saludable', fr: 'Calculateur de Poids Idéal Formule Devine', de: 'Devine-Formel Idealgewicht-Rechner – Gesunder Bereich', ko: 'Devine 공식 이상적인 체중 계산기 (Ideal Weight Tool)', hi: 'डिवाइन फॉर्मूला आदर्श वजन कैलकुलेटर - आइडियल बॉडी वेट' },
-    description: { en: 'Free Devine Formula Ideal Weight Calculator. Calculate what is my ideal weight for my height using the clinical Devine formula and Robinson IBW equations.', es: 'Calculadora gratuita de peso ideal con la fórmula de Devine. Encuentra tu peso corporal ideal según tu altura.', fr: 'Calculateur gratuit de poids idéal selon la formule de Devine. Découvrez votre poids idéal selon votre taille.', de: 'Kostenloser Devine-Formel Idealgewicht-Rechner. Berechnen Sie Ihr ideales Körpergewicht für Ihre Körpergröße.', ko: '무료 Devine 공식 기반 이상적인 체중 계산기. 키에 맞는 적정 권장 체중을 계산하세요.', hi: 'मुफ़्त डिवाइन फॉर्मूला आदर्श वजन कैलकुलेटर। अपनी ऊंचाई के लिए अपने आदर्श वजन की सटीक गणना करें।' },
+    name: { en: 'Ideal Weight Calculator', es: 'Calculadora de Peso Ideal', fr: 'Calculateur de Poids Idéal', de: 'Idealgewicht Rechner', ko: '이상 체중 계산기 (Ideal Weight Calculator)', hi: 'आदर्श वजन कैलकुलेटर' },
+    title: { en: 'Ideal Weight Calculator – Calculate Ideal Body Weight (IBW)', es: 'Calculadora de Peso Ideal – Peso Corporal Ideal (IBW)', fr: 'Calculateur de Poids Idéal – Calculer le Poids Idéal (IBW)', de: 'Idealgewicht Rechner – Ideales Körpergewicht (IBW) berechnen', ko: '무료 이상 체중 계산기 (Ideal Weight Calculator)', hi: 'मुफ़्त आदर्श वजन कैलकुलेटर - आइडियल बॉडी वेट (IBW) की गणना करें' },
+    description: { en: 'Free Ideal Weight Calculator. Calculate your exact Ideal Body Weight (IBW) based on height and gender using clinical Devine, Robinson, Miller, and Hamwi equations.', es: 'Calculadora gratuita de peso ideal. Calcula tu peso corporal ideal (IBW) según tu altura y género mediante las fórmulas clínicas de Devine y Robinson.', fr: 'Calculateur gratuit de poids idéal. Calculez votre poids idéal (IBW) selon votre taille avec les formules de Devine et Robinson.', de: 'Kostenloser Idealgewicht-Rechner. Berechnen Sie Ihr ideales Körpergewicht (IBW) nach Größe und Geschlecht mit den klinischen Devine- und Robinson-Formeln.', ko: '무료 이상 체중 계산기. Devine, Robinson 및 Miller 임상 공식을 사용하여 키와 성별에 따른 권장 체중(IBW)을 정확하게 계산하세요.', hi: 'मुफ़्त आदर्श वजन कैलकुलेटर। Devine और Robinson की नैदानिक ​​दरों का उपयोग करके अपनी ऊंचाई और लिंग के अनुसार अपने सटीक आदर्श शरीर के वजन की गणना करें।' },
     inputs: [
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
@@ -345,29 +345,30 @@ export const calculators: CalculatorConfig[] = [
       const hInches = h / 2.54;
       const over5Ft = Math.max(0, hInches - 60);
 
-      // Devine Formula
-      let devine = 0;
-      if (inputs.gender === 'male') {
-        devine = 50.0 + (2.3 * over5Ft);
-      } else {
-        devine = 45.5 + (2.3 * over5Ft);
-      }
+      // Devine Formula (1974)
+      const devine = inputs.gender === 'male' ? 50.0 + (2.3 * over5Ft) : 45.5 + (2.3 * over5Ft);
+      // Robinson Formula (1983)
+      const robinson = inputs.gender === 'male' ? 52.0 + (1.9 * over5Ft) : 49.0 + (1.7 * over5Ft);
+      // Miller Formula (1983)
+      const miller = inputs.gender === 'male' ? 56.2 + (1.41 * over5Ft) : 53.1 + (1.36 * over5Ft);
+      // Hamwi Formula (1964)
+      const hamwi = inputs.gender === 'male' ? 48.0 + (2.7 * over5Ft) : 45.5 + (2.2 * over5Ft);
 
-      // Robinson Formula
-      let robinson = 0;
-      if (inputs.gender === 'male') {
-        robinson = 52.0 + (1.9 * over5Ft);
-      } else {
-        robinson = 49.0 + (1.7 * over5Ft);
-      }
+      // WHO Healthy Weight Range (BMI 18.5 - 24.9)
+      const hM = h / 100;
+      const minBmiWeight = 18.5 * (hM * hM);
+      const maxBmiWeight = 24.9 * (hM * hM);
 
-      const displayDevine = system === 'imperial' ? devine / 0.453592 : devine;
-      const displayRobinson = system === 'imperial' ? robinson / 0.453592 : robinson;
+      const conv = (kgVal: number) => system === 'imperial' ? kgVal / 0.453592 : kgVal;
+      const unitStr = system === 'imperial' ? 'lbs' : 'kg';
 
       return {
-        primary: { value: displayDevine.toFixed(1), label: { en: 'Ideal Weight (Devine)', es: 'Peso Ideal (Devine)', fr: 'Poids Idéal (Devine)', de: 'Gewicht (Devine)', ko: '권장 권고 체중(Devine)', hi: 'आदर्श वजन (Devine)' }, unit: system === 'imperial' ? 'lbs' : 'kg' },
+        primary: { value: conv(devine).toFixed(1), label: { en: 'Ideal Body Weight (Devine)', es: 'Peso Ideal (Devine)', fr: 'Poids Idéal (Devine)', de: 'Idealgewicht (Devine)', ko: '권장 이상 체중 (Devine)', hi: 'आदर्श वजन (Devine)' }, unit: unitStr },
         secondary: [
-          { label: { en: 'Robinson Formula', es: 'Fórmula Robinson', fr: 'Formule Robinson', de: 'Robinson-Formel', ko: '로빈슨 공식 결과', hi: 'रॉबिन्सन फॉर्मूला' }, value: displayRobinson.toFixed(1), unit: system === 'imperial' ? 'lbs' : 'kg' }
+          { label: { en: 'Robinson Formula', es: 'Fórmula Robinson', fr: 'Formule Robinson', de: 'Robinson-Formel', ko: '로빈슨 공식 결과', hi: 'रॉबिन्सन फॉर्मूला' }, value: conv(robinson).toFixed(1), unit: unitStr },
+          { label: { en: 'Miller Formula', es: 'Fórmula Miller', fr: 'Formule Miller', de: 'Miller-Formel', ko: '밀러 공식 결과', hi: 'मिलर फॉर्मूला' }, value: conv(miller).toFixed(1), unit: unitStr },
+          { label: { en: 'Hamwi Formula', es: 'Fórmula Hamwi', fr: 'Formule Hamwi', de: 'Hamwi-Formel', ko: '함위 공식 결과', hi: 'हमवी फॉर्मूला' }, value: conv(hamwi).toFixed(1), unit: unitStr },
+          { label: { en: 'Healthy BMI Weight Range', es: 'Rango de Peso Saludable', fr: 'Plage de Poids Santé', de: 'Gesunder Gewichtsbereich', ko: '건강한 체중 범위', hi: 'स्वास्थ्यप्रद वजन सीमा' }, value: `${conv(minBmiWeight).toFixed(1)} - ${conv(maxBmiWeight).toFixed(1)}`, unit: unitStr }
         ]
       };
     }
