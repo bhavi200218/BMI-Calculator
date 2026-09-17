@@ -245,9 +245,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'body-fat-calculator',
-    name: { en: 'US Navy Body Fat Formula Calculator', es: 'Calculadora de Grasa Corporal Método Navy', fr: 'Calculateur de Graisse Corporelle US Navy', de: 'US Navy Körperfett Rechner', ko: '미 해군 체지방 공식 계산기', hi: 'यूएस नेवी बॉडी फैट फॉर्मूला कैलकुलेटर' },
-    title: { en: 'US Navy Body Fat Formula Calculator – Body Fat % Tool', es: 'Calculadora de Grasa Corporal Método US Navy - Porcentaje Preciso', fr: 'Calculateur de Graisse Corporelle Formule US Navy', de: 'US Navy Körperfettformel Rechner – Präzise Körperfett %', ko: '미 해군 체지방 공식 계산기 - 정확한 체지방률 측정', hi: 'यूएस नेवी बॉडी फैट फॉर्मूला कैलकुलेटर - शरीर वसा प्रतिशत' },
-    description: { en: 'Free US Navy Body Fat Formula Calculator. Calculate your body fat percentage accurately using the official US Navy body fat formula equation and tape measure method.', es: 'Calculadora gratuita de grasa corporal con la fórmula de la US Navy. Calcula tu porcentaje de grasa corporal con precisión.', fr: 'Calculateur gratuit de graisse corporelle selon la formule de la US Navy.', de: 'Kostenloser US Navy Körperfett-Rechner. Berechnen Sie Ihren Körperfettanteil präzise mit der offiziellen US Navy Formel.', ko: '무료 미 해군 체지방 공식 계산기. 공식 미 해군 공식을 사용하여 체지방률을 정확하게 계산하세요.', hi: 'मुफ़्त यूएस नेवी बॉडी फैट फॉर्मूला कैलकुलेटर। आधिकारिक यूएस नेवी बॉडी फैट फॉर्मूला का उपयोग करके अपने बॉडी फैट प्रतिशत की सटीक गणना करें।' },
+    name: { en: 'Navy Body Fat Calculator', es: 'Calculadora de Grasa Corporal Navy', fr: 'Calculateur de Graisse Corporelle Navy', de: 'Navy Körperfett Rechner', ko: '네이비 체지방 계산기 (Navy Body Fat Calculator)', hi: 'नेवी बॉडी फैट कैलकुलेटर' },
+    title: { en: 'Navy Body Fat Calculator – US Navy Body Fat Percentage Tool', es: 'Calculadora de Grasa Corporal Navy – Fórmula Oficial US Navy', fr: 'Calculateur de Graisse Corporelle Navy – Formule Officielle US Navy', de: 'Navy Körperfett Rechner – Offizielle US Navy Formel', ko: '무료 네이비 체지방 계산기 (Navy Body Fat Calculator)', hi: 'मुफ़्त नेवी बॉडी फैट कैलकुलेटर - बॉडी फैट प्रतिशत' },
+    description: { en: 'Free Navy Body Fat Calculator. Calculate your exact body fat percentage, fat mass, and lean mass using the official US Navy body fat formula and tape measure technique.', es: 'Calculadora gratuita de grasa corporal Navy. Calcula tu porcentaje de grasa corporal, masa grasa y masa magra con la fórmula oficial de la US Navy.', fr: 'Calculateur gratuit de graisse corporelle Navy. Calculez votre pourcentage de graisse corporelle, masse grasse et masse maigre avec la formule US Navy.', de: 'Kostenloser Navy Körperfett-Rechner. Berechnen Sie Ihren Körperfettanteil, Fettmasse und Muskelmasse präzise mit der offiziellen US Navy Formel.', ko: '무료 네이비 체지방 계산기. 공식 미 해군(US Navy) 체지방 측정 공식을 사용하여 체지방률(%), 체지방량, 제지방량을 정확하게 계산하세요.', hi: 'मुफ़्त नेवी बॉडी फैट कैलकुलेटर। आधिकारिक यूएस नेवी बॉडी फैट फॉर्मूला का उपयोग करके अपने बॉडी फैट प्रतिशत (%), वसा द्रव्यमान और लीन मास की सटीक गणना करें।' },
     inputs: [
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
@@ -282,10 +282,27 @@ export const calculators: CalculatorConfig[] = [
       }
       fat = Math.max(2, Math.min(fat, 60));
 
+      let category = 'Fitness';
+      const isMale = inputs.gender === 'male';
+      if (isMale) {
+        if (fat < 6) category = 'Essential Fat (2-5%)';
+        else if (fat < 14) category = 'Athletes (6-13%)';
+        else if (fat < 18) category = 'Fitness (14-17%)';
+        else if (fat < 25) category = 'Average (18-24%)';
+        else category = 'Obese (25%+)';
+      } else {
+        if (fat < 14) category = 'Essential Fat (10-13%)';
+        else if (fat < 21) category = 'Athletes (14-20%)';
+        else if (fat < 25) category = 'Fitness (21-24%)';
+        else if (fat < 32) category = 'Average (25-31%)';
+        else category = 'Obese (32%+)';
+      }
+
       return {
-        primary: { value: fat.toFixed(1), label: { en: 'Body Fat', es: 'Porcentaje de Grasa', fr: 'Taux de Matière Grasse', de: 'Körperfettanteil', ko: '체지방량 비율', hi: 'शारीरिक वसा प्रतिशत' }, unit: '%' },
+        primary: { value: fat.toFixed(1), label: { en: 'Body Fat Percentage', es: 'Porcentaje de Grasa', fr: 'Taux de Matière Grasse', de: 'Körperfettanteil', ko: '체지방률', hi: 'बॉडी फैट प्रतिशत' }, unit: '%' },
         secondary: [
-          { label: { en: 'Fat Mass', es: 'Masa Grasa', fr: 'Masse Grasse', de: 'Fettmasse', ko: '지방 질량', hi: 'वसा द्रव्यमान' }, value: 'Calculable', unit: 'kg/lbs' }
+          { label: { en: 'ACE Category', es: 'Categoría ACE', fr: 'Catégorie ACE', de: 'ACE-Kategorie', ko: 'ACE 분류 등급', hi: 'ACE श्रेणी' }, value: category, unit: '' },
+          { label: { en: 'US Navy Formula', es: 'Fórmula US Navy', fr: 'Formule US Navy', de: 'US Navy Formel', ko: '미 해군 공식 적용', hi: 'यूएस नेवी फॉर्मूला' }, value: 'Anthropometric Tape Method', unit: '' }
         ]
       };
     }
