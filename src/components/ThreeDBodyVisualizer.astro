@@ -1,0 +1,512 @@
+---
+import { type Locale } from '../utils/calculators';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+
+const labels = {
+  en: {
+    title: "Interactive 3D Body Visualizer",
+    subtitle: "Real-time 3D volume scaling based on Oxford 2.5 Power BMI Formula",
+    rotate: "Drag / Touch to Rotate 360°",
+    wireframe: "Wireframe 3D",
+    solid: "Solid 3D Mesh",
+    heatmap: "BMI Heatmap",
+    height: "Height",
+    weight: "Weight",
+    gender: "Gender",
+    male: "Male",
+    female: "Female",
+    reset: "Reset Camera"
+  },
+  es: {
+    title: "Visualizador Corporal 3D Interactivo",
+    subtitle: "Escalado volumétrico 3D en tiempo real según la fórmula Oxford 2.5",
+    rotate: "Arrastra para Rotar 360°",
+    wireframe: "Malla 3D",
+    solid: "Sólido 3D",
+    heatmap: "Mapa de Calor IMC",
+    height: "Altura",
+    weight: "Peso",
+    gender: "Género",
+    male: "Masculino",
+    female: "Femenino",
+    reset: "Reiniciar Cámara"
+  },
+  fr: {
+    title: "Visualiseur Corporel 3D Interactif",
+    subtitle: "Mise à l'échelle volumétrique 3D en temps réel selon la formule d'Oxford 2.5",
+    rotate: "Glissez pour faire pivoter à 360°",
+    wireframe: "Mode Fil de fer 3D",
+    solid: "Maillage 3D Solaire",
+    heatmap: "Carte de Chaleur IMC",
+    height: "Taille",
+    weight: "Poids",
+    gender: "Genre",
+    male: "Homme",
+    female: "Femme",
+    reset: "Réinitialiser Caméra"
+  },
+  de: {
+    title: "Interaktiver 3D-Körper-Visualisierer",
+    subtitle: "Echtzeit-3D-Volumenskalierung basierend auf der Oxford 2.5 Formel",
+    rotate: "Ziehen zum Drehen um 360°",
+    wireframe: "Drahtmodell 3D",
+    solid: "Solides 3D-Netz",
+    heatmap: "BMI-Heatmap",
+    height: "Größe",
+    weight: "Gewicht",
+    gender: "Geschlecht",
+    male: "Männlich",
+    female: "Weiblich",
+    reset: "Kamera zurücksetzen"
+  },
+  ko: {
+    title: "대화형 3D 체형 시각화 도구 (BMI Visualizer)",
+    subtitle: "옥스포드 2.5 체질량 공식을 적용한 실시간 3D 실루엣 스케일링",
+    rotate: "드래그하여 360° 회전",
+    wireframe: "3D 와이어프레임",
+    solid: "3D 솔리드 메쉬",
+    heatmap: "BMI 히트맵",
+    height: "신장",
+    weight: "체중",
+    gender: "성별",
+    male: "남성",
+    female: "여성",
+    reset: "시점 초기화"
+  },
+  hi: {
+    title: "इंटरएक्टिव 3D बॉडी विजुअलाइज़र",
+    subtitle: "ऑक्सफोर्ड 2.5 फॉर्मूला के आधार पर वास्तविक समय 3D वॉल्यूम स्केलिंग",
+    rotate: "360° घुमाने के लिए ड्रैग करें",
+    wireframe: "वायरफ्रेम 3D",
+    solid: "ठोस 3D मेश",
+    heatmap: "बीएमआई हीटमैप",
+    height: "ऊंचाई",
+    weight: "वजन",
+    gender: "लिंग",
+    male: "पुरुष",
+    female: "महिला",
+    reset: "कैमरा रीसेट"
+  }
+};
+
+const l = labels[lang] || labels.en;
+---
+
+<div class="my-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[var(--card)] via-[var(--background)] to-[var(--card)] border-2 border-[var(--accent)]/40 shadow-2xl space-y-6">
+  
+  <!-- Header -->
+  <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--border)]/60 pb-6">
+    <div class="space-y-1">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/30">
+        <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
+        3D Body Visualizer Canvas
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        {l.title}
+      </h3>
+      <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium">
+        {l.subtitle}
+      </p>
+    </div>
+
+    <!-- Mode Controls -->
+    <div class="flex flex-wrap items-center gap-2">
+      <button id="toggleWireframe3D" class="px-3 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--accent)]/20 text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer">
+        ⚡ {l.wireframe}
+      </button>
+      <button id="toggleHeatmap3D" class="px-3 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--accent)]/20 text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer">
+        🔥 {l.heatmap}
+      </button>
+      <button id="resetCam3D" class="px-3 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--accent)]/20 text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer">
+        🔄 {l.reset}
+      </button>
+    </div>
+  </div>
+
+  <!-- 3D Canvas Viewport & Controls Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+    
+    <!-- 3D Canvas Studio -->
+    <div class="lg:col-span-2 relative min-h-[420px] rounded-2xl bg-black/80 border border-[var(--border)] shadow-inner overflow-hidden flex items-center justify-center group">
+      
+      <!-- Interactive 3D Canvas -->
+      <canvas id="bodyCanvas3D" class="w-full h-full min-h-[400px] cursor-grab active:cursor-grabbing touch-none"></canvas>
+      
+      <!-- Overlay Instructions -->
+      <div class="absolute bottom-4 left-4 px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 text-white text-[11px] font-mono flex items-center gap-2 pointer-events-none">
+        <svg class="w-4 h-4 text-[var(--accent)] animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+        <span>{l.rotate}</span>
+      </div>
+
+      <!-- Live 3D Metrics Badge -->
+      <div class="absolute top-4 right-4 p-3 rounded-xl bg-black/70 backdrop-blur-md border border-white/10 text-right space-y-1">
+        <p class="text-[10px] font-display font-bold uppercase tracking-widest text-[var(--accent)]">Calculated 3D BMI</p>
+        <p id="badgeBmi3D" class="text-2xl font-black font-mono text-white">22.5</p>
+        <p id="badgeStatus3D" class="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">Healthy Weight</p>
+      </div>
+
+    </div>
+
+    <!-- Real-time 3D Shape Sliders -->
+    <div class="space-y-6 p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)]">
+      <h4 class="text-base font-display font-bold uppercase tracking-wide text-[var(--foreground)] border-b border-[var(--border)]/40 pb-3">
+        Real-time Body Shape Modeler
+      </h4>
+
+      <!-- Gender Selector -->
+      <div class="space-y-2">
+        <label class="text-xs font-display font-bold uppercase tracking-wider text-[var(--muted-foreground)]">{l.gender}</label>
+        <div class="grid grid-cols-2 gap-2">
+          <button id="btnGenderMale3D" class="py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[var(--accent)] bg-[var(--accent)] text-white shadow-md transition-all cursor-pointer">
+            {l.male}
+          </button>
+          <button id="btnGenderFemale3D" class="py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[var(--border)] bg-[var(--muted)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all cursor-pointer">
+            {l.female}
+          </button>
+        </div>
+      </div>
+
+      <!-- Height Slider -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center text-xs font-display font-bold uppercase">
+          <span class="text-[var(--muted-foreground)]">{l.height}</span>
+          <span id="valHeight3D" class="text-[var(--accent)] font-mono text-sm">175 cm</span>
+        </div>
+        <input type="range" id="sliderHeight3D" min="120" max="220" value="175" class="w-full accent-[var(--accent)] cursor-pointer" />
+      </div>
+
+      <!-- Weight Slider -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center text-xs font-display font-bold uppercase">
+          <span class="text-[var(--muted-foreground)]">{l.weight}</span>
+          <span id="valWeight3D" class="text-[var(--accent)] font-mono text-sm">70 kg</span>
+        </div>
+        <input type="range" id="sliderWeight3D" min="30" max="180" value="70" class="w-full accent-[var(--accent)] cursor-pointer" />
+      </div>
+
+      <!-- 3D Volume Ratio Indicator -->
+      <div class="p-4 rounded-xl bg-[var(--muted)]/50 border border-[var(--border)]/60 space-y-2">
+        <div class="flex justify-between items-center text-xs font-display font-bold uppercase">
+          <span class="text-[var(--muted-foreground)]">3D Volume Scaling (x2.5)</span>
+          <span id="valVolume3D" class="text-[var(--foreground)] font-mono">1.00x</span>
+        </div>
+        <div class="w-full bg-black/20 h-2 rounded-full overflow-hidden">
+          <div id="barVolume3D" class="h-full bg-gradient-to-r from-emerald-400 via-amber-400 to-rose-500 transition-all duration-300" style="width: 45%"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 3D Canvas Render Engine Script -->
+<script is:inline>
+(function() {
+  const canvas = document.getElementById('bodyCanvas3D');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  
+  // State
+  let heightCm = 175;
+  let weightKg = 70;
+  let gender = 'male';
+  let isWireframe = false;
+  let isHeatmap = false;
+  let rotationY = 0;
+  let isDragging = false;
+  let lastX = 0;
+
+  // Auto-fit Canvas Resolution
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * (window.devicePixelRatio || 1);
+    canvas.height = rect.height * (window.devicePixelRatio || 1);
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  // Compute 3D Metrics
+  function compute3D() {
+    const hM = heightCm / 100;
+    const stdBmi = weightKg / (hM * hM);
+    const newBmi = (1.3 * weightKg) / Math.pow(hM, 2.5);
+    
+    // Update Badge
+    const badgeBmi = document.getElementById('badgeBmi3D');
+    const badgeStatus = document.getElementById('badgeStatus3D');
+    const valHeight = document.getElementById('valHeight3D');
+    const valWeight = document.getElementById('valWeight3D');
+    const valVolume = document.getElementById('valVolume3D');
+    const barVolume = document.getElementById('barVolume3D');
+
+    if (badgeBmi) badgeBmi.textContent = newBmi.toFixed(1);
+    
+    if (badgeStatus) {
+      if (newBmi < 18.5) {
+        badgeStatus.textContent = 'Underweight';
+        badgeStatus.className = 'text-[11px] font-bold text-sky-400 uppercase tracking-wider';
+      } else if (newBmi < 25.0) {
+        badgeStatus.textContent = 'Healthy Weight';
+        badgeStatus.className = 'text-[11px] font-bold text-emerald-400 uppercase tracking-wider';
+      } else if (newBmi < 30.0) {
+        badgeStatus.textContent = 'Overweight';
+        badgeStatus.className = 'text-[11px] font-bold text-amber-400 uppercase tracking-wider';
+      } else {
+        badgeStatus.textContent = 'Obese Class';
+        badgeStatus.className = 'text-[11px] font-bold text-rose-500 uppercase tracking-wider';
+      }
+    }
+
+    if (valHeight) valHeight.textContent = heightCm + ' cm';
+    if (valWeight) valWeight.textContent = weightKg + ' kg';
+    
+    const volScale = newBmi / 22.5;
+    if (valVolume) valVolume.textContent = volScale.toFixed(2) + 'x';
+    if (barVolume) barVolume.style.width = Math.min(100, Math.max(10, (volScale / 2) * 100)) + '%';
+
+    return { newBmi, volScale };
+  }
+
+  // 3D Humanoid Skeleton Joint Nodes
+  function draw3DBody() {
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
+
+    const { newBmi, volScale } = compute3D();
+    
+    // Base dimensions
+    const scale = Math.min(W, H) / 450;
+    const centerX = W / 2;
+    const centerY = H / 2 + 20 * scale;
+
+    // Body Morph Parameters derived from Height & 3D BMI
+    const bodyHeightScale = (heightCm / 175);
+    const bodyWidthScale = Math.pow(volScale, 0.6);
+    const waistWidthScale = Math.pow(volScale, 0.85);
+
+    ctx.save();
+    ctx.translate(centerX, centerY);
+
+    // Color Theme based on Heatmap mode
+    let mainColor = isWireframe ? '#38bdf8' : (gender === 'male' ? '#e8674a' : '#ec4899');
+    if (isHeatmap) {
+      if (newBmi < 18.5) mainColor = '#38bdf8';
+      else if (newBmi < 25.0) mainColor = '#10b981';
+      else if (newBmi < 30.0) mainColor = '#f59e0b';
+      else mainColor = '#ef4444';
+    }
+
+    // 3D Rotation Transform Factor
+    const cosR = Math.cos(rotationY);
+    const sinR = Math.sin(rotationY);
+
+    // 3D Anatomical Cross-Section Ellipses
+    const sections = [
+      { y: -160 * bodyHeightScale, rX: 20, rY: 20, label: 'Head' },
+      { y: -130 * bodyHeightScale, rX: 10, rY: 8, label: 'Neck' },
+      { y: -100 * bodyHeightScale, rX: 55 * bodyWidthScale, rY: 30 * bodyWidthScale, label: 'Shoulders' },
+      { y: -50 * bodyHeightScale, rX: 50 * bodyWidthScale, rY: 28 * bodyWidthScale, label: 'Chest' },
+      { y: 0, rX: 42 * waistWidthScale, rY: 26 * waistWidthScale, label: 'Waist' },
+      { y: 40 * bodyHeightScale, rX: 48 * waistWidthScale, rY: 30 * waistWidthScale, label: 'Hips' },
+      { y: 100 * bodyHeightScale, rX: 22 * bodyWidthScale, rY: 20 * bodyWidthScale, label: 'Thighs' },
+      { y: 160 * bodyHeightScale, rX: 14 * bodyWidthScale, rY: 14 * bodyWidthScale, label: 'Calves' },
+      { y: 210 * bodyHeightScale, rX: 12, rY: 18, label: 'Feet' }
+    ];
+
+    // Render 3D Wireframe / Solid Latitudinal Rings
+    sections.forEach((sec, idx) => {
+      const radiusX = sec.rX * scale;
+      const radiusY = sec.rY * scale * 0.4;
+      const posY = sec.y * scale;
+
+      ctx.beginPath();
+      ctx.ellipse(0, posY, Math.abs(radiusX * cosR) + 5, radiusY + Math.abs(radiusX * sinR * 0.3), 0, 0, Math.PI * 2);
+
+      if (isWireframe) {
+        ctx.strokeStyle = mainColor;
+        ctx.lineWidth = 1.5 * scale;
+        ctx.setLineDash([4, 4]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      } else {
+        const grad = ctx.createRadialGradient(0, posY, 2, 0, posY, radiusX);
+        grad.addColorStop(0, '#ffffff');
+        grad.addColorStop(0.4, mainColor);
+        grad.addColorStop(1, '#000000');
+        ctx.fillStyle = grad;
+        ctx.globalAlpha = 0.85;
+        ctx.fill();
+        ctx.strokeStyle = mainColor;
+        ctx.lineWidth = 1 * scale;
+        ctx.stroke();
+        ctx.globalAlpha = 1.0;
+      }
+
+      // Connect 3D Longitudinal Contour Ribs
+      if (idx > 0) {
+        const prev = sections[idx - 1];
+        const prevY = prev.y * scale;
+        const prevRX = prev.rX * scale;
+
+        ctx.beginPath();
+        ctx.moveTo(-prevRX * cosR, prevY);
+        ctx.lineTo(-radiusX * cosR, posY);
+        ctx.moveTo(prevRX * cosR, prevY);
+        ctx.lineTo(radiusX * cosR, posY);
+
+        ctx.strokeStyle = mainColor;
+        ctx.lineWidth = isWireframe ? 1 : 2;
+        ctx.globalAlpha = 0.6;
+        ctx.stroke();
+        ctx.globalAlpha = 1.0;
+      }
+    });
+
+    // Render 3D Head Sphere
+    const headY = -160 * bodyHeightScale * scale;
+    ctx.beginPath();
+    ctx.arc(0, headY, 22 * scale, 0, Math.PI * 2);
+    if (isWireframe) {
+      ctx.strokeStyle = mainColor;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    } else {
+      const headGrad = ctx.createRadialGradient(-5, headY - 5, 2, 0, headY, 22 * scale);
+      headGrad.addColorStop(0, '#ffffff');
+      headGrad.addColorStop(0.5, mainColor);
+      headGrad.addColorStop(1, '#111111');
+      ctx.fillStyle = headGrad;
+      ctx.fill();
+    }
+
+    ctx.restore();
+
+    // Auto-rotation when not dragging
+    if (!isDragging) {
+      rotationY += 0.008;
+    }
+
+    requestAnimationFrame(draw3DBody);
+  }
+
+  // Event Listeners for Controls
+  const sliderH = document.getElementById('sliderHeight3D');
+  const sliderW = document.getElementById('sliderWeight3D');
+  const btnMale = document.getElementById('btnGenderMale3D');
+  const btnFemale = document.getElementById('btnGenderFemale3D');
+  const btnWireframe = document.getElementById('toggleWireframe3D');
+  const btnHeatmap = document.getElementById('toggleHeatmap3D');
+  const btnReset = document.getElementById('resetCam3D');
+
+  if (sliderH) {
+    sliderH.addEventListener('input', (e) => {
+      heightCm = parseFloat(e.target.value);
+    });
+  }
+
+  if (sliderW) {
+    sliderW.addEventListener('input', (e) => {
+      weightKg = parseFloat(e.target.value);
+    });
+  }
+
+  if (btnMale && btnFemale) {
+    btnMale.addEventListener('click', () => {
+      gender = 'male';
+      btnMale.className = 'py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[var(--accent)] bg-[var(--accent)] text-white shadow-md transition-all cursor-pointer';
+      btnFemale.className = 'py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[var(--border)] bg-[var(--muted)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all cursor-pointer';
+    });
+
+    btnFemale.addEventListener('click', () => {
+      gender = 'female';
+      btnFemale.className = 'py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[var(--accent)] bg-[var(--accent)] text-white shadow-md transition-all cursor-pointer';
+      btnMale.className = 'py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[var(--border)] bg-[var(--muted)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all cursor-pointer';
+    });
+  }
+
+  if (btnWireframe) {
+    btnWireframe.addEventListener('click', () => {
+      isWireframe = !isWireframe;
+      btnWireframe.classList.toggle('bg-[var(--accent)]');
+      btnWireframe.classList.toggle('text-white');
+    });
+  }
+
+  if (btnHeatmap) {
+    btnHeatmap.addEventListener('click', () => {
+      isHeatmap = !isHeatmap;
+      btnHeatmap.classList.toggle('bg-[var(--accent)]');
+      btnHeatmap.classList.toggle('text-white');
+    });
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      rotationY = 0;
+    });
+  }
+
+  // Mouse / Touch Drag to Rotate 3D Model
+  canvas.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    lastX = e.clientX;
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - lastX;
+    rotationY += deltaX * 0.01;
+    lastX = e.clientX;
+  });
+
+  canvas.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      isDragging = true;
+      lastX = e.touches[0].clientX;
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging || e.touches.length !== 1) return;
+    const deltaX = e.touches[0].clientX - lastX;
+    rotationY += deltaX * 0.01;
+    lastX = e.touches[0].clientX;
+  }, { passive: true });
+
+  // Listen to Global Calculation Event from Main Form
+  window.addEventListener('calculationCompleted', (e) => {
+    const inputH = document.getElementById('input-new-bmi-calculator-height');
+    const inputW = document.getElementById('input-new-bmi-calculator-weight');
+    if (inputH && inputH.value) {
+      heightCm = parseFloat(inputH.value);
+      if (sliderH) sliderH.value = heightCm;
+    }
+    if (inputW && inputW.value) {
+      weightKg = parseFloat(inputW.value);
+      if (sliderW) sliderW.value = weightKg;
+    }
+  });
+
+  // Start Animation Loop
+  draw3DBody();
+})();
+</script>

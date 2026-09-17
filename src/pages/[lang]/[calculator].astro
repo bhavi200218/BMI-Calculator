@@ -7,6 +7,7 @@ import HealthContent from '../../components/HealthContent.astro';
 import LatestArticles from '../../components/LatestArticles.astro';
 import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import ToolSEOContent from '../../components/ToolSEOContent.astro';
+import ThreeDBodyVisualizer from '../../components/ThreeDBodyVisualizer.astro';
 import HubGrid from '../../components/HubGrid.astro';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
 
@@ -93,6 +94,10 @@ const webAppSchema = {
         <UniversalCalculator calculator={calc} lang={lang} />
         <CalculatorResult lang={lang} />
       </div>
+
+      {calc.slug === 'new-bmi-calculator' && (
+        <ThreeDBodyVisualizer lang={lang} />
+      )}
 
       <!-- Extended Content & Clinical Knowledge Base for Search Indexing -->
       <div class="pt-12 space-y-20">
