@@ -172,20 +172,25 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'ideal-weight-calculator': {
     en: {
-      eyebrow: 'Devine & Robinson Formulas',
-      title: 'Ideal Weight Calculator & Ideal Body Weight Tool',
-      intro: 'Find out "what is my ideal weight for my height" using our free Ideal Weight Calculator. Based on the clinical Devine formula ideal weight and Robinson metrics, determine your target healthy weight range.',
-      formulaTitle: 'Devine Formula Ideal Weight Equation',
-      formulaDesc: 'Men: IBW = 50 kg + 2.3 kg per inch over 5 feet | Women: IBW = 45.5 kg + 2.3 kg per inch over 5 feet',
-      tableTitle: 'Clinical Ideal Weight Formulas Comparison',
+      eyebrow: 'Devine & Robinson Clinical Equations',
+      title: 'Devine Formula Ideal Weight Calculator & Ideal Body Weight Tool',
+      intro: 'Calculate "what is my ideal weight for my height" using our free Devine Formula Ideal Weight Calculator. Based on the gold-standard clinical Devine formula ideal weight and Robinson metrics, determine your target healthy weight baseline.',
+      formulaTitle: 'Clinical Devine Formula Ideal Weight Equations',
+      formulaDesc: 'Men: IBW = 50.0 kg + 2.3 kg × (height in inches - 60) | Women: IBW = 45.5 kg + 2.3 kg × (height in inches - 60)',
+      formulaCode: 'IBW (Men) = 50 + 2.3 × (H - 60) | IBW (Women) = 45.5 + 2.3 × (H - 60)',
+      tableTitle: 'Clinical Ideal Body Weight (IBW) Formulas Comparison',
       tableRows: [
-        { col1: 'Devine Formula', col2: 'Most widely used in pharmacology', col3: 'Optimal drug dosing standard' },
-        { col1: 'Robinson Formula', col2: 'Slightly higher weight for men', col3: 'Adjusted for modern frame sizes' },
-        { col1: 'Healthy Weight Range', col2: 'WHO BMI 18.5 – 24.9 kg/m²', col3: 'Broad population range' }
+        { col1: 'Devine Formula (1974)', col2: 'Men: 50kg + 2.3kg/inch | Women: 45.5kg + 2.3kg/inch', col3: 'Gold-standard standard in clinical pharmacology & medical dosing' },
+        { col1: 'Robinson Formula (1983)', col2: 'Men: 52kg + 1.9kg/inch | Women: 49kg + 1.7kg/inch', col3: 'Slightly adjusted baseline for modern average frame sizes' },
+        { col1: 'Miller Formula (1983)', col2: 'Men: 56.2kg + 1.41kg/inch | Women: 53.1kg + 1.36kg/inch', col3: 'Alternative clinical reference for taller individuals' },
+        { col1: 'WHO Healthy BMI Range', col2: 'BMI 18.5 kg/m² to 24.9 kg/m²', col3: 'Broad WHO physiological healthy weight range for height' }
       ],
       faqs: [
-        { question: 'What is my ideal weight for my height on this ideal body weight tool?', answer: 'Our ideal weight calculator uses the Devine formula ideal weight to calculate your target weight baseline. A healthy weight range corresponds to a WHO BMI of 18.5 to 24.9 kg/m².' },
-        { question: 'How does the Devine formula calculate ideal body weight?', answer: 'The Devine formula sets ideal weight at 50 kg for men and 45.5 kg for women, adding 2.3 kg for every inch of height over 5 feet.' }
+        { question: 'What is the Devine Formula Ideal Weight Calculator?', answer: 'The Devine Formula Ideal Weight Calculator is a clinical tool created by Dr. Ben J. Devine in 1974 to calculate Ideal Body Weight (IBW). It remains the most widely recognized formula used by physicians, dietitians, and pharmacologists worldwide.' },
+        { question: 'What is my ideal weight for my height according to the Devine formula?', answer: 'To calculate your ideal weight with the Devine formula: For Men, start with 50 kg for 5 feet of height and add 2.3 kg per inch above 5 feet. For Women, start with 45.5 kg for 5 feet and add 2.3 kg per inch above 5 feet.' },
+        { question: 'Why is the Devine formula used in medicine?', answer: 'The Devine formula ideal weight equation is the standard clinical benchmark used to calculate therapeutic drug dosages (such as clearance rates and antibiotic dosing) to avoid over-prescribing based solely on excess body fat.' },
+        { question: 'How does the Devine formula compare to the Robinson and Miller formulas?', answer: 'While all three calculate ideal body weight, the Devine formula is the universal clinical gold-standard. The Robinson formula gives slightly higher ideal weight estimates for women, while the Miller formula yields slightly lower estimates for taller adults.' },
+        { question: 'Is Ideal Body Weight (IBW) the same as healthy BMI range?', answer: 'Ideal Body Weight (IBW) provides a single target weight baseline based on frame height, whereas a healthy WHO BMI range (18.5 to 24.9 kg/m²) provides a broader weight range of approximately 15-20 kg suited for varying muscle and body frames.' }
       ]
     }
   },

@@ -330,9 +330,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'ideal-weight-calculator',
-    name: { en: 'Ideal Weight Calculator', es: 'Calculadora de Peso Ideal', fr: 'Calculateur de Poids Idéal', de: 'Idealgewicht-Rechner', ko: '이상적인 체중 계산기', hi: 'आदर्श वजन कैलकुलेटर' },
-    title: { en: 'Ideal Weight Calculator - Target Fitness Calculator', es: 'Calculadora de Peso Corporal Ideal', fr: 'Calculateur de Poids Idéal Médical', de: 'Rechner für das ideale Körpergewicht', ko: '적정 몸무게 계산기', hi: 'आदर्श शारीरिक वजन कैलकुलेटर' },
-    description: { en: 'Determine your healthiest weight range.', es: 'Determina tu rango de peso más saludable.', fr: 'Déterminez votre fourchette de poids de santé.', de: 'Bestimmen Sie Ihren gesunden Gewichtsbereich.', ko: '의학적으로 가장 건강한 권장 체중을 찾습니다.', hi: 'अपने सबसे स्वास्थ्यप्रद वजन सीमा का निर्धारण करें।' },
+    name: { en: 'Devine Formula Ideal Weight Calculator', es: 'Calculadora de Peso Ideal Fórmula Devine', fr: 'Calculateur de Poids Idéal Formule Devine', de: 'Devine-Formel Idealgewicht Rechner', ko: 'Devine 공식 이상적인 체중 계산기', hi: 'डिवाइन फॉर्मूला आदर्श वजन कैलकुलेटर' },
+    title: { en: 'Devine Formula Ideal Weight Calculator – Ideal Body Weight Tool', es: 'Calculadora de Peso Ideal Fórmula Devine - Peso Saludable', fr: 'Calculateur de Poids Idéal Formule Devine', de: 'Devine-Formel Idealgewicht-Rechner – Gesunder Bereich', ko: 'Devine 공식 이상적인 체중 계산기 (Ideal Weight Tool)', hi: 'डिवाइन फॉर्मूला आदर्श वजन कैलकुलेटर - आइडियल बॉडी वेट' },
+    description: { en: 'Free Devine Formula Ideal Weight Calculator. Calculate what is my ideal weight for my height using the clinical Devine formula and Robinson IBW equations.', es: 'Calculadora gratuita de peso ideal con la fórmula de Devine. Encuentra tu peso corporal ideal según tu altura.', fr: 'Calculateur gratuit de poids idéal selon la formule de Devine. Découvrez votre poids idéal selon votre taille.', de: 'Kostenloser Devine-Formel Idealgewicht-Rechner. Berechnen Sie Ihr ideales Körpergewicht für Ihre Körpergröße.', ko: '무료 Devine 공식 기반 이상적인 체중 계산기. 키에 맞는 적정 권장 체중을 계산하세요.', hi: 'मुफ़्त डिवाइन फॉर्मूला आदर्श वजन कैलकुलेटर। अपनी ऊंचाई के लिए अपने आदर्श वजन की सटीक गणना करें।' },
     inputs: [
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
