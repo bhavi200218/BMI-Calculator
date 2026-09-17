@@ -47,21 +47,21 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   'new-bmi-calculator': {
     en: {
       eyebrow: 'Oxford 3D Scaling Formula',
-      title: '2.5 Power BMI Formula Calculator & 3D BMI Tool',
-      intro: 'Our 2.5 Power BMI Formula Calculator applies Oxford mathematician Nick Trefethen 2.5 power equation (1.3 × weight / height²·⁵). Use this 2.5 power BMI formula calculator to get a height-adjusted 3D body mass index and interactive 3D body visualizer.',
-      formulaTitle: 'Oxford 2.5 Power BMI Formula Equation',
-      formulaDesc: '3D BMI = 1.3 × Weight (kg) / [Height (m)]².⁵',
+      title: 'Height Adjusted BMI Visualizer & 2.5 Power Formula Calculator',
+      intro: 'Our free Height Adjusted BMI Visualizer calculates your body mass index using Oxford mathematician Nick Trefethen 2.5 power formula (1.3 × weight / height²·⁵) to create an accurate 3D height adjusted BMI visualizer for tall and short adults.',
+      formulaTitle: 'Oxford 2.5 Power Height Adjusted Equation',
+      formulaDesc: '3D Height Adjusted BMI = 1.3 × Weight (kg) / [Height (m)]².⁵',
       formulaCode: '3D BMI = 1.3 × kg / m²·⁵',
-      tableTitle: 'Standard 2D BMI vs 2.5 Power BMI Formula Comparison',
+      tableTitle: 'Standard 2D BMI vs Height Adjusted BMI Visualizer Scale',
       tableRows: [
-        { col1: 'Short Adults (<160 cm)', col2: 'Standard BMI undercounts', col3: '2.5 Power BMI adds +0.5 to +1.5 pts' },
+        { col1: 'Short Adults (<160 cm)', col2: 'Standard BMI undercounts', col3: 'Height Adjusted BMI adds +0.5 to +1.5 pts' },
         { col1: 'Average Adults (170 cm)', col2: 'Identical rating', col3: '0 pts difference' },
-        { col1: 'Tall Adults (>185 cm)', col2: 'Standard BMI overcounts', col3: '2.5 Power BMI subtracts -1.0 to -2.0 pts' }
+        { col1: 'Tall Adults (>185 cm)', col2: 'Standard BMI overcounts', col3: 'Height Adjusted BMI subtracts -1.0 to -2.0 pts' }
       ],
       faqs: [
-        { question: 'What is the 2.5 Power BMI Formula Calculator?', answer: 'The 2.5 Power BMI Formula Calculator uses Oxford mathematician Nick Trefethen equation [3D BMI = 1.3 × Weight (kg) / Height (m)^2.5] to eliminate height distortion for tall and short individuals.' },
-        { question: 'What is the 3D BMI Calculator and how does 3D body mass index work?', answer: 'The 3D BMI calculator scales body mass to 2.5 dimensions (1.3 × weight / height²·⁵) to adjust for human body volume scaling and render an interactive 3D body visualizer.' },
-        { question: 'Why is height adjusted 2.5 power BMI formula more accurate for tall and short people?', answer: 'Human body volume scales cubically (3D), not quadratically (2D). The 2.5 power BMI formula eliminates artificial height penalties for tall individuals and undercounting for short individuals.' }
+        { question: 'What is the Height Adjusted BMI Visualizer?', answer: 'The Height Adjusted BMI Visualizer is an interactive 3D body preview tool that calculates your true body mass index using Oxford mathematician Nick Trefethen 2.5 power formula [3D BMI = 1.3 × Weight (kg) / Height (m)^2.5].' },
+        { question: 'What is the 2.5 Power BMI Formula Calculator?', answer: 'The 2.5 Power BMI Formula Calculator uses the Oxford height-adjusted equation (1.3 × weight / height²·⁵) to eliminate artificial height penalties for tall individuals and undercounting for short individuals.' },
+        { question: 'Why is a Height Adjusted BMI Visualizer more accurate for tall and short people?', answer: 'Human body volume scales cubically (in 3D), not quadratically (2D). The 2.5 power BMI formula eliminates artificial height penalties for tall individuals and undercounting for short individuals.' }
       ]
     }
   },
