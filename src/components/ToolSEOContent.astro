@@ -87,20 +87,21 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   'bmr-calculator': {
     en: {
       eyebrow: 'Mifflin-St Jeor Clinical Standard',
-      title: 'BMR Calculator & Basal Metabolic Rate Calculator',
-      intro: 'Calculate your baseline caloric needs with our accurate BMR Calculator. Using the validated Mifflin St Jeor formula, calculate how many calories do I burn at rest in 24 hours.',
-      formulaTitle: 'Mifflin St Jeor Formula for BMR',
+      title: 'Mifflin St Jeor BMR Calculator & Basal Metabolic Rate Tool',
+      intro: 'Our free Mifflin St Jeor BMR Calculator calculates your exact basal metabolic rate (BMR) using the clinical Mifflin-St Jeor formula. Find out how to calculate BMR and determine how many calories do I burn at rest in 24 hours.',
+      formulaTitle: 'Clinical Mifflin St Jeor BMR Formula Equation',
       formulaDesc: 'Men: BMR = (10 × wt kg) + (6.25 × ht cm) - (5 × age) + 5 | Women: BMR = (10 × wt kg) + (6.25 × ht cm) - (5 × age) - 161',
       formulaCode: 'BMR = 10W + 6.25H - 5A ± s',
-      tableTitle: 'Basal Metabolic Rate Energy Partitioning',
+      tableTitle: 'Mifflin St Jeor BMR Energy Expenditure Partitioning',
       tableRows: [
-        { col1: 'BMR Baseline', col2: '60% - 75% of TDEE', col3: 'Brain, liver, heart, kidney function' },
+        { col1: 'Mifflin St Jeor BMR Baseline', col2: '60% - 75% of TDEE', col3: 'Brain, liver, heart, kidney resting function' },
         { col1: 'Thermic Effect of Food (TEF)', col2: '10% of TDEE', col3: 'Digestion & nutrient processing' },
-        { col1: 'Physical Activity (NEAT/EAT)', col2: '15% - 30% of TDEE', col3: 'Movement and workout burn' }
+        { col1: 'Physical Activity (NEAT/EAT)', col2: '15% - 30% of TDEE', col3: 'Movement and workout calorie burn' }
       ],
       faqs: [
-        { question: 'What is a Basal Metabolic Rate Calculator and how to calculate BMR?', answer: 'A BMR calculator determines your basal metabolic rate using the Mifflin St Jeor formula to show exactly how many calories do I burn at rest to sustain vital bodily functions.' },
-        { question: 'What is the difference between BMR and TDEE?', answer: 'BMR measures resting caloric burn at zero movement. TDEE adds daily activity and exercise energy expenditure on top of BMR.' }
+        { question: 'What is the Mifflin St Jeor BMR Calculator?', answer: 'The Mifflin St Jeor BMR Calculator is the clinical gold-standard tool used by dietitians to calculate your exact Basal Metabolic Rate (BMR) and resting daily calorie burn without physical movement.' },
+        { question: 'How to calculate BMR with the Mifflin St Jeor formula?', answer: 'The Mifflin St Jeor BMR formula equation calculates resting burn: Men = (10 × weight kg) + (6.25 × height cm) - (5 × age) + 5; Women = (10 × weight kg) + (6.25 × height cm) - (5 × age) - 161.' },
+        { question: 'What is the difference between BMR and TDEE?', answer: 'BMR is your resting metabolic baseline calculated by the Mifflin St Jeor formula. TDEE adds your physical exercise and daily movement burn on top of BMR.' }
       ]
     }
   },

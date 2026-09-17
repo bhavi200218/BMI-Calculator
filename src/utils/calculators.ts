@@ -173,8 +173,8 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'bmr-calculator',
     name: { en: 'BMR Calculator', es: 'Calculadora de BMR', fr: 'Calculateur de BMR', de: 'BMR-Rechner', ko: 'BMR 계산기', hi: 'बीएमआर कैलकुलेटर' },
-    title: { en: 'Accurate BMR Calculator - Basal Metabolic Rate', es: 'Calculadora de BMR y Metabolismo Basal', fr: 'Calculateur de BMR de Précision', de: 'BMR-Rechner und Grundumsatz', ko: 'BMR 계산기 - 기초대사량', hi: 'बीएमआर कैलकुलेटर - बेसल मेटाबॉलिक रेट' },
-    description: { en: 'Determine your resting metabolic rate.', es: 'Determina tu metabolismo basal calórico.', fr: 'Calculez votre taux métabolique de base.', de: 'Ermitteln Sie Ihren kalorischen Grundumsatz.', ko: '기초 대사 에너지를 계산하세요.', hi: 'अपनी बेसल मेटाबॉलिक रेट को समझें।' },
+    title: { en: 'Mifflin St Jeor BMR Calculator – Basal Metabolic Rate Calculator', es: 'Calculadora BMR Mifflin St Jeor - Metabolismo Basal Preciso', fr: 'Calculateur BMR Mifflin St Jeor - Taux Métabolique de Base', de: 'Mifflin-St.Jeor BMR-Rechner – Grundumsatz Berechnen', ko: '미플린 스토어 BMR 계산기 - 기초대사량 계산기', hi: 'मिफ्लिन सेंट ज्योर बीएमआर कैलकुलेटर - बेसल मेटाबॉलिक रेट' },
+    description: { en: 'Free Mifflin St Jeor BMR Calculator. Calculate your exact Basal Metabolic Rate (BMR) using the clinical Mifflin-St Jeor equation to determine resting daily calorie burn.', es: 'Calculadora de BMR Mifflin St Jeor gratis. Calcula tu Metabolismo Basal (BMR) exacto usando la fórmula clínica de Mifflin-St Jeor.', fr: 'Calculateur de BMR Mifflin St Jeor gratuit. Calculez votre taux métabolique de base (BMR) exact.', de: 'Kostenloser Mifflin-St.Jeor BMR-Rechner. Berechnen Sie Ihren genauen Grundumsatz (BMR) mit der klinischen Formel.', ko: '무료 미플린 스토어 BMR 계산기. 임상 미플린 스토어 공식을 사용하여 기초대사량(BMR)을 정확하게 계산하세요.', hi: 'मुफ़्त मिफ्लिन सेंट ज्योर बीएमआर कैलकुलेटर। नैदानिक मिफ्लिन-सेंट ज्योर समीकरण का उपयोग करके अपने सटीक बेसल मेटाबॉलिक रेट की गणना करें।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
