@@ -7,7 +7,7 @@ import { blogArticles } from '../../../utils/blogArticles';
 import { type Locale } from '../../../utils/calculators';
 
 export function getStaticPaths() {
-  const supportedLocales = ['en', 'es', 'fr', 'de', 'ko', 'hi'];
+  const supportedLocales = ['es', 'fr', 'de', 'ko', 'hi'];
 
   return supportedLocales.flatMap((locale) =>
     Object.keys(blogArticles).map((slug) => ({
