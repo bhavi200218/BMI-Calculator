@@ -291,20 +291,25 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'body-surface-area-calculator': {
     en: {
-      eyebrow: 'Mosteller Clinical Formula',
-      title: 'Body Surface Area Calculator & BSA Calculator',
-      intro: 'Calculate body surface area square meters using our BSA Calculator. Powered by the Mosteller BSA formula, calculate total outer skin surface area for clinical dosing.',
-      formulaTitle: 'Mosteller BSA Formula Equation',
-      formulaDesc: 'BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ]',
-      tableTitle: 'Body Surface Area Square Meters Standards',
+      eyebrow: 'Mosteller & Du Bois Clinical Formulas',
+      title: 'Mosteller BSA Calculator Square Meters & Body Surface Area Tool',
+      intro: 'Calculate your exact body surface area square meters with our free Mosteller BSA Calculator. Powered by the clinical Mosteller BSA formula and Du Bois equations, compute total skin surface area (m²) for medical dosing and physiological indexing.',
+      formulaTitle: 'Mosteller BSA Formula Mathematical Equations',
+      formulaDesc: 'Mosteller BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ] | Du Bois BSA (m²) = 0.007184 × Height (cm)^0.725 × Weight (kg)^0.425',
+      formulaCode: 'BSA (m²) = √ ( (H × W) / 3600 )',
+      tableTitle: 'Body Surface Area Square Meters (m²) Clinical Standards',
       tableRows: [
-        { col1: 'Adult Women Average', col2: '1.60 m²', col3: 'Standard clinical baseline' },
-        { col1: 'Adult Men Average', col2: '1.90 m²', col3: 'Standard clinical baseline' },
-        { col1: 'Athletic Male Average', col2: '2.10 - 2.30 m²', col3: 'Elevated surface area' }
+        { col1: 'Adult Women Average', col2: '1.60 m²', col3: 'Standard adult female clinical reference' },
+        { col1: 'Adult Men Average', col2: '1.90 m²', col3: 'Standard adult male clinical reference' },
+        { col1: 'Tall Athletic Male Average', col2: '2.10 m² – 2.30 m²', col3: 'Elevated muscle mass & height surface area' },
+        { col1: 'Children (9-12 years)', col2: '1.07 m²', col3: 'Pediatric dosing baseline' }
       ],
       faqs: [
-        { question: 'How to calculate body surface area square meters using the Mosteller BSA formula?', answer: 'Our BSA calculator applies the Mosteller BSA formula: BSA (m²) = √[Height (cm) × Weight (kg) / 3600] to calculate body surface area square meters accurately.' },
-        { question: 'Why is BSA used instead of body weight in clinical medicine?', answer: 'BSA correlates more directly with metabolic clearance rates, cardiac output, and physiological fluid requirements than total body mass.' }
+        { question: 'What is the Mosteller BSA Calculator Square Meters?', answer: 'The Mosteller BSA Calculator Square Meters is a clinical health tool published by Dr. R.D. Mosteller in 1987. It calculates total body surface area (BSA) in square meters (m²) based on height and weight.' },
+        { question: 'How to calculate body surface area square meters using the Mosteller formula?', answer: 'To calculate BSA square meters with the Mosteller formula: Multiply height in cm by weight in kg, divide by 3600, and take the square root. For example, for 175 cm and 70 kg: √(175 × 70 / 3600) = √(3.4027) = 1.84 m².' },
+        { question: 'Why is the Mosteller formula preferred over Du Bois in medicine?', answer: 'The Mosteller BSA formula is widely preferred in oncology and cardiology because it is simplified, easy to memorize, and delivers near-identical accuracy to the complex exponential Du Bois formula.' },
+        { question: 'Why is BSA measured in square meters (m²) used for medication dosing?', answer: 'Body surface area in square meters correlates more accurately with glomerular filtration rate, cardiac output, and drug clearance rates than body weight alone, preventing toxic chemotherapy overdosing.' },
+        { question: 'What is the average body surface area for adults?', answer: 'The global clinical standard average body surface area is approximately 1.60 m² for adult women and 1.90 m² for adult men.' }
       ]
     }
   },

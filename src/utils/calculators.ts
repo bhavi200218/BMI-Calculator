@@ -573,9 +573,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'body-surface-area-calculator',
-    name: { en: 'Body Surface Area', es: 'Área de Superficie Corporal', fr: 'Surface Corporelle (BSA)', de: 'Körperoberfläche Rechner', ko: '체표면적 계산기 (BSA)', hi: 'बॉडी सरफेस एरिया कैलकुलेटर' },
-    title: { en: 'Body Surface Area Calculator - BSA Metric', es: 'Calculadora de Área de Superficie Corporal', fr: 'Calculateur de Surface Corporelle', de: 'Körperoberflächen-Rechner BSA', ko: 'BSA 체양표면적 산정기', hi: 'बॉडी सरफेस एरिया कैलकुलेटर - BSA मीट्रिक' },
-    description: { en: 'Calculate body surface area in square meters.', es: 'Calcula el área de superficie corporal en metros cuadrados.', fr: 'Calculez la surface corporelle en mètres carrés.', de: 'Berechnen Sie die Körperoberfläche in Quadratmetern.', ko: '총 평화 평수를 계산하여 약물 용량 등의 기준으로 씁니다.', hi: 'वर्ग मीटर में शरीर के सतह क्षेत्र की गणना करें।' },
+    name: { en: 'Mosteller BSA Calculator (Square Meters)', es: 'Calculadora BSA Método Mosteller (Metros Cuadrados)', fr: 'Calculateur BSA Formule Mosteller (Mètres Carrés)', de: 'Mosteller BSA Rechner (Quadratmeter)', ko: 'Mosteller 체표면적 계산기 (Square Meters BSA)', hi: 'मोस्टेलर BSA कैलकुलेटर (वर्ग मीटर)' },
+    title: { en: 'Mosteller BSA Calculator Square Meters – Body Surface Area Tool', es: 'Calculadora BSA Fórmula Mosteller en Metros Cuadrados (m²)', fr: 'Calculateur de Surface Corporelle BSA Formule Mosteller m²', de: 'Mosteller BSA Rechner Quadratmeter (m²) – Körperoberfläche', ko: 'Mosteller BSA 계산기 Square Meters (체표면적 계산기)', hi: 'मोस्टेलर BSA कैलकुलेटर square meters - बॉडी सरफेस एरिया' },
+    description: { en: 'Free Mosteller BSA Calculator Square Meters. Calculate your body surface area (BSA m²) accurately using the clinical Mosteller formula and Du Bois equations.', es: 'Calculadora gratuita de superficie corporal (BSA) en metros cuadrados con la fórmula de Mosteller.', fr: 'Calculateur gratuit de surface corporelle (BSA) en mètres carrés selon la formule de Mosteller.', de: 'Kostenloser Mosteller BSA Rechner in Quadratmetern. Berechnen Sie Ihre Körperoberfläche (m²) nach der Mosteller-Formel.', ko: '무료 Mosteller BSA 계산기 (Square Meters). 공식 Mosteller 및 Du Bois 공식을 사용하여 체표면적(m²)을 정확하게 계산하세요.', hi: 'मुफ़्त मोस्टेलर BSA कैलकुलेटर square meters। नैदानिक मोस्टेलर फॉर्मूला का उपयोग करके अपने शरीर के सतह क्षेत्र (m²) की सटीक गणना करें।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' }
@@ -587,14 +587,16 @@ export const calculators: CalculatorConfig[] = [
         w = w * 0.453592;
         h = h * 2.54;
       }
-      // Mosteller Formula
-      const bsa = Math.sqrt((h * w) / 3600);
+      // Mosteller Formula: BSA (m²) = sqrt((H * W) / 3600)
+      const bsaMosteller = Math.sqrt((h * w) / 3600);
+      // Du Bois Formula: BSA (m²) = 0.007184 * H^0.725 * W^0.425
+      const bsaDuBois = 0.007184 * Math.pow(h, 0.725) * Math.pow(w, 0.425);
 
       return {
-        primary: { value: bsa.toFixed(2), label: { en: 'Body Surface Area', es: 'Superficie Corporal', fr: 'Surface Corporelle', de: 'Körperoberfläche', ko: '체표면적 수치', hi: 'बॉडी सरफेस एरिया' }, unit: 'm²' },
+        primary: { value: bsaMosteller.toFixed(2), label: { en: 'Mosteller BSA', es: 'BSA Mosteller', fr: 'BSA Mosteller', de: 'Mosteller BSA', ko: 'Mosteller 체표면적', hi: 'मोस्टेलर BSA' }, unit: 'm²' },
         secondary: [
-          { label: { en: 'Weight Input', es: 'Peso Registrado', fr: 'Poids Entré', de: 'Eingegebenes Gewicht', ko: '몸무게 설정값', hi: 'वजन इनपुट' }, value: w.toFixed(1), unit: 'kg' },
-          { label: { en: 'Height Input', es: 'Altura Registrada', fr: 'Taille Entrée', de: 'Eingegebene Größe', ko: '신장 설정값', hi: 'ऊंचाई इनपुट' }, value: h.toFixed(1), unit: 'cm' }
+          { label: { en: 'Du Bois Formula BSA', es: 'BSA Fórmula Du Bois', fr: 'BSA Formule Du Bois', de: 'Du Bois BSA', ko: 'Du Bois 체표면적', hi: 'ड्यू बॉइस BSA' }, value: bsaDuBois.toFixed(2), unit: 'm²' },
+          { label: { en: 'Body Mass Index (BMI)', es: 'IMC de Referencia', fr: 'IMC Référence', de: 'BMI-Wert', ko: '참고 BMI', hi: 'बीएमआई संदर्भ' }, value: (w / Math.pow(h / 100, 2)).toFixed(1), unit: 'kg/m²' }
         ]
       };
     }
