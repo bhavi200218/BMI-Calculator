@@ -47,22 +47,25 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'new-bmi-calculator': {
     en: {
-      eyebrow: 'Oxford 3D Scaling Formula',
-      title: 'Height Adjusted BMI Visualizer & 2.5 Power Formula Calculator',
-      intro: 'Our free Height Adjusted BMI Visualizer calculates your body mass index using Oxford mathematician Nick Trefethen 2.5 power formula (1.3 × weight / height²·⁵) to create an accurate 3D height adjusted BMI visualizer for tall and short adults.',
-      formulaTitle: 'Oxford 2.5 Power Height Adjusted Equation',
-      formulaDesc: '3D Height Adjusted BMI = 1.3 × Weight (kg) / [Height (m)]².⁵',
+      eyebrow: 'Oxford 3D Body Visualizer & Scaling Standard',
+      title: '3D BMI Calculator & Height Adjusted 3D Body Visualizer',
+      intro: 'Our free 3D Body Visualizer and Height Adjusted BMI Calculator computes your body mass index using Oxford mathematician Nick Trefethen 2.5 power formula (1.3 × weight / height²·⁵). Preview your 3D body shape, mesh outline, and heatmap in real time with 360° interactive rotation.',
+      formulaTitle: 'Oxford 3D Height-Adjusted Exponent Equation',
+      formulaDesc: '3D Height-Adjusted BMI = 1.3 × Weight (kg) / [Height (m)]².⁵',
       formulaCode: '3D BMI = 1.3 × kg / m²·⁵',
-      tableTitle: 'Standard 2D BMI vs Height Adjusted BMI Visualizer Scale',
+      tableTitle: 'Standard 2D BMI vs 3D Height Adjusted BMI Visualizer Matrix',
       tableRows: [
-        { col1: 'Short Adults (<160 cm)', col2: 'Standard BMI undercounts', col3: 'Height Adjusted BMI adds +0.5 to +1.5 pts' },
-        { col1: 'Average Adults (170 cm)', col2: 'Identical rating', col3: '0 pts difference' },
-        { col1: 'Tall Adults (>185 cm)', col2: 'Standard BMI overcounts', col3: 'Height Adjusted BMI subtracts -1.0 to -2.0 pts' }
+        { col1: 'Short Adults (< 160 cm)', col2: 'Standard 2D BMI undercounts body fat', col3: '3D Height Adjusted BMI adds +0.5 to +1.5 pts' },
+        { col1: 'Average Stature (170 cm)', col2: 'Identical rating alignment', col3: '0.0 pts difference (Identical)' },
+        { col1: 'Tall Adults (> 185 cm)', col2: 'Standard 2D BMI overestimates overweight status', col3: '3D Height Adjusted BMI subtracts -1.0 to -2.0 pts' }
       ],
       faqs: [
-        { question: 'What is the Height Adjusted BMI Visualizer?', answer: 'The Height Adjusted BMI Visualizer is an interactive 3D body preview tool that calculates your true body mass index using Oxford mathematician Nick Trefethen 2.5 power formula [3D BMI = 1.3 × Weight (kg) / Height (m)^2.5].' },
-        { question: 'What is the 2.5 Power BMI Formula Calculator?', answer: 'The 2.5 Power BMI Formula Calculator uses the Oxford height-adjusted equation (1.3 × weight / height²·⁵) to eliminate artificial height penalties for tall individuals and undercounting for short individuals.' },
-        { question: 'Why is a Height Adjusted BMI Visualizer more accurate for tall and short people?', answer: 'Human body volume scales cubically (in 3D), not quadratically (2D). The 2.5 power BMI formula eliminates artificial height penalties for tall individuals and undercounting for short individuals.' }
+        { question: 'What is the 3D Body Visualizer & 3D BMI Calculator?', answer: 'The 3D Body Visualizer is an interactive 3D body preview tool that calculates your body mass index using Oxford mathematician Nick Trefethen 2.5 power formula [3D BMI = 1.3 × Weight (kg) / Height (m)^2.5] and renders a 360° interactive 3D body model.' },
+        { question: 'How is 3D BMI calculated and visualized?', answer: 'It calculates adult BMI as kilograms divided by height in meters raised to the 2.5 exponent factor. The result is visualized alongside an interactive 3D model avatar to provide visual proportion context.' },
+        { question: 'Why can two people with the same BMI look completely different in 3D?', answer: 'Standard BMI only measures weight relative to height and cannot differentiate muscle mass, bone density, or fat distribution. A 3D Body Visualizer shows proportion context that a single 2D number leaves out.' },
+        { question: 'What is the difference between standard BMI and 3D Height-Adjusted BMI?', answer: 'Human body volume scales cubically (3D), not quadratically (2D). Standard BMI divides by height squared (m²), which penalizes tall people and undercounts short people. The 2.5 exponent formula compensates for 3D body volume.' },
+        { question: 'Is a 3D Body Visualizer more accurate than a plain calculator?', answer: 'The 3D visualizer uses the Oxford 2.5 formula to reduce height-scaling distortion and adds visual proportion context, providing a more comprehensive screening aid than a simple number.' },
+        { question: 'Does the 3D Body Visualizer measure body fat percentage?', answer: 'No. The 3D Body Visualizer calculates height and weight relationships and renders a reference 3D outline. It is an educational screening tool, not a direct measure of body fat or medical diagnosis.' }
       ]
     }
   },
@@ -516,6 +519,21 @@ const faqSchema = {
           </p>
         </div>
       ))}
+    </div>
+  </div>
+
+  <!-- Authority Medical Reference Badges & External Citations -->
+  <div class="p-6 rounded-2xl bg-[var(--muted)]/40 border border-[var(--border)] space-y-3">
+    <div class="text-xs font-display font-bold uppercase tracking-widest text-[var(--accent)]">Official Clinical Reference & Evidence Sources</div>
+    <div class="flex flex-wrap gap-6 text-xs font-semibold text-[var(--muted-foreground)]">
+      <a href="https://www.cdc.gov/bmi/faq/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[var(--accent)] transition-colors underline decoration-[var(--accent)]/40 underline-offset-4">
+        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        CDC Adult BMI Guidelines, Screening Limits & Formula FAQ
+      </a>
+      <a href="https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[var(--accent)] transition-colors underline decoration-[var(--accent)]/40 underline-offset-4">
+        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        WHO Global Health Observatory Adult BMI Classification
+      </a>
     </div>
   </div>
 
