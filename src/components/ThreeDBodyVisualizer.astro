@@ -402,9 +402,9 @@ const l = labels[lang] || labels.en;
 
     ctx.restore();
 
-    // Auto-rotation when not dragging
+    // Micro auto-rotation when not dragging (ultra slow and steady so users can easily read the model)
     if (!isDragging) {
-      rotationY += 0.008;
+      rotationY += 0.0015;
     }
 
     requestAnimationFrame(draw3DBody);
@@ -502,19 +502,45 @@ const l = labels[lang] || labels.en;
     lastX = e.touches[0].clientX;
   }, { passive: true });
 
-  // Listen to Global Calculation Event from Main Form
-  window.addEventListener('calculationCompleted', (e) => {
-    const inputH = document.getElementById('input-new-bmi-calculator-height');
-    const inputW = document.getElementById('input-new-bmi-calculator-weight');
-    if (inputH && inputH.value) {
-      heightCm = parseFloat(inputH.value);
-      if (sliderH) sliderH.value = heightCm;
+  // Real-time Sync from Top Main Calculator Form
+  function syncFromTopForm() {
+    // Sync Height
+    const heightEl = document.querySelector('input[id*="-height"]:not([id*="-ft"]):not([id*="-in"])');
+    if (heightEl && heightEl.value) {
+      const hVal = parseFloat(heightEl.value);
+      if (!isNaN(hVal) && hVal > 0) {
+        heightCm = hVal;
+        if (sliderH) sliderH.value = heightCm;
+      }
     }
-    if (inputW && inputW.value) {
-      weightKg = parseFloat(inputW.value);
-      if (sliderW) sliderW.value = weightKg;
+
+    // Sync Weight
+    const weightEl = document.querySelector('input[id*="-weight"]');
+    if (weightEl && weightEl.value) {
+      const wVal = parseFloat(weightEl.value);
+      if (!isNaN(wVal) && wVal > 0) {
+        weightKg = wVal;
+        if (sliderW) sliderW.value = weightKg;
+      }
     }
-  });
+
+    // Sync Gender (Female -> Pink 3D Model)
+    const genderEl = document.querySelector('select[id*="-gender"]') || document.querySelector('input[name*="gender"]:checked');
+    if (genderEl && genderEl.value) {
+      const gVal = String(genderEl.value).toLowerCase();
+      if ((gVal === 'female' || gVal === 'f' || gVal === 'mujer' || gVal === 'femme') && gender !== 'female') {
+        if (btnFemale) btnFemale.click();
+      } else if ((gVal === 'male' || gVal === 'm' || gVal === 'hombre' || gVal === 'homme') && gender !== 'male') {
+        if (btnMale) btnMale.click();
+      }
+    }
+  }
+
+  // Listen to Global Form Inputs, Changes, and Calculation Events
+  window.addEventListener('calculationCompleted', syncFromTopForm);
+  document.addEventListener('change', syncFromTopForm);
+  document.addEventListener('input', syncFromTopForm);
+  setTimeout(syncFromTopForm, 300);
 
   // Start Animation Loop
   draw3DBody();
