@@ -3,6 +3,7 @@ import type { Locale } from '../utils/calculators';
 import { calculators, getCalculatorTranslations } from '../utils/calculators';
 import UniversalCalculator from './UniversalCalculator.astro';
 import CalculatorResult from './CalculatorResult.astro';
+import ThreeDBodyVisualizer from './ThreeDBodyVisualizer.astro';
 
 interface Props {
   lang: Locale;
@@ -146,6 +147,11 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
     </div>
   </div>
 
+  <!-- 3D Visualizer Container for Homepage (Visible when new-bmi-calculator is active) -->
+  <div id="homepage-3d-visualizer-container" class="hidden mt-8">
+    <ThreeDBodyVisualizer lang={lang} />
+  </div>
+
 </div>
 
 <style>
@@ -200,6 +206,16 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
       const newWrapper = document.getElementById('calc-wrapper-' + slug);
       if (newWrapper) {
         newWrapper.classList.remove('hidden');
+      }
+
+      // Toggle 3D Body Visualizer on Homepage when new-bmi-calculator is active
+      const threeDContainer = document.getElementById('homepage-3d-visualizer-container');
+      if (threeDContainer) {
+        if (slug === 'new-bmi-calculator') {
+          threeDContainer.classList.remove('hidden');
+        } else {
+          threeDContainer.classList.add('hidden');
+        }
       }
 
       // Update Desktop Tabs visual state

@@ -1,0 +1,188 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Real BMI Calculator Widget - Free Embeddable Tool"
+  description="Embed the official Real BMI Calculator on your website or blog for free."
+  robots="noindex, follow"
+>
+  <div class="w-full h-full p-4 md:p-6 bg-[var(--background)] text-[var(--foreground)] font-sans antialiased flex flex-col justify-between items-center box-border min-h-[550px]">
+    
+    <!-- Compact Widget Header -->
+    <div class="w-full text-center mb-4 space-y-1">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--muted)] border border-[var(--border)] text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        WHO & CDC Clinical Grade
+      </div>
+      <h2 class="text-xl md:text-2xl font-display font-extrabold uppercase text-[var(--foreground)] tracking-tight">
+        Real BMI Calculator
+      </h2>
+      <p class="text-xs text-[var(--muted-foreground)]">
+        Instant Body Mass Index, BMR & Ideal Weight Analytics
+      </p>
+    </div>
+
+    <!-- Widget Calculator Form -->
+    <div id="embed-widget-form" class="w-full max-w-md bg-[var(--card)]/90 backdrop-blur-md rounded-2xl border border-[var(--border)] p-4 md:p-5 shadow-xl space-y-4">
+      
+      <!-- Unit Toggle -->
+      <div class="flex rounded-xl bg-[var(--muted)] p-1 border border-[var(--border)] text-xs font-semibold">
+        <button type="button" id="embed-unit-metric" class="flex-1 py-1.5 rounded-lg bg-[var(--accent)] text-white shadow-sm transition-all cursor-pointer">Metric (cm/kg)</button>
+        <button type="button" id="embed-unit-imperial" class="flex-1 py-1.5 rounded-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all cursor-pointer">Imperial (ft-in/lbs)</button>
+      </div>
+
+      <!-- Inputs Grid -->
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Height Input -->
+        <div id="embed-height-metric-box" class="space-y-1">
+          <label class="block text-xs font-medium text-[var(--muted-foreground)]">Height (cm)</label>
+          <input type="number" id="embed-height-cm" value="175" min="50" max="250" class="w-full px-3 py-2 rounded-xl bg-[var(--background)] border border-[var(--border)] text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
+        </div>
+
+        <div id="embed-height-imperial-box" class="hidden grid-cols-2 gap-1.5">
+          <div class="space-y-1">
+            <label class="block text-xs font-medium text-[var(--muted-foreground)]">Ft</label>
+            <input type="number" id="embed-height-ft" value="5" min="1" max="8" class="w-full px-2 py-2 rounded-xl bg-[var(--background)] border border-[var(--border)] text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
+          </div>
+          <div class="space-y-1">
+            <label class="block text-xs font-medium text-[var(--muted-foreground)]">In</label>
+            <input type="number" id="embed-height-in" value="9" min="0" max="11" class="w-full px-2 py-2 rounded-xl bg-[var(--background)] border border-[var(--border)] text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
+          </div>
+        </div>
+
+        <!-- Weight Input -->
+        <div class="space-y-1">
+          <label id="embed-weight-label" class="block text-xs font-medium text-[var(--muted-foreground)]">Weight (kg)</label>
+          <input type="number" id="embed-weight" value="70" min="20" max="300" class="w-full px-3 py-2 rounded-xl bg-[var(--background)] border border-[var(--border)] text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
+        </div>
+      </div>
+
+      <!-- Calculate Button -->
+      <button type="button" id="embed-calc-btn" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-[var(--accent)] to-orange-500 text-white font-display font-bold text-sm uppercase tracking-wider shadow-lg hover:brightness-110 active:scale-[0.99] transition-all cursor-pointer">
+        Calculate Real BMI
+      </button>
+
+      <!-- Results Display Box -->
+      <div id="embed-result-box" class="hidden p-3 rounded-xl bg-[var(--background)]/80 border border-[var(--border)] text-center space-y-2 animate-in">
+        <div class="flex items-center justify-between text-xs border-b border-[var(--border)] pb-1.5">
+          <span class="text-[var(--muted-foreground)] font-medium">Your Real BMI:</span>
+          <span id="embed-bmi-value" class="text-xl font-extrabold text-[var(--accent)]">22.9</span>
+        </div>
+        <div class="flex items-center justify-between text-xs">
+          <span class="text-[var(--muted-foreground)] font-medium">Category:</span>
+          <span id="embed-bmi-category" class="font-bold text-emerald-400">Normal Weight</span>
+        </div>
+        <div class="flex items-center justify-between text-xs">
+          <span class="text-[var(--muted-foreground)] font-medium">Ideal Weight Range:</span>
+          <span id="embed-bmi-ideal" class="font-bold text-[var(--foreground)]">56 - 76 kg</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mandatory Footer Backlink for Viral SEO Link Equity -->
+    <div class="mt-4 text-center text-xs text-[var(--muted-foreground)] flex items-center justify-center gap-1.5">
+      <span>Powered by</span>
+      <a href="https://realbmicalculator.com" target="_blank" rel="noopener" class="font-bold text-[var(--accent)] hover:underline flex items-center gap-1">
+        Real BMI Calculator
+        <svg class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+    </div>
+
+  </div>
+</Layout>
+
+<script is:inline>
+  (function() {
+    let unit = 'metric';
+
+    const btnMetric = document.getElementById('embed-unit-metric');
+    const btnImperial = document.getElementById('embed-unit-imperial');
+    const boxHeightMetric = document.getElementById('embed-height-metric-box');
+    const boxHeightImperial = document.getElementById('embed-height-imperial-box');
+    const weightLabel = document.getElementById('embed-weight-label');
+    const weightInput = document.getElementById('embed-weight');
+    const calcBtn = document.getElementById('embed-calc-btn');
+    const resultBox = document.getElementById('embed-result-box');
+    const bmiVal = document.getElementById('embed-bmi-value');
+    const bmiCat = document.getElementById('embed-bmi-category');
+    const bmiIdeal = document.getElementById('embed-bmi-ideal');
+
+    function setUnit(newUnit) {
+      unit = newUnit;
+      if (unit === 'metric') {
+        btnMetric.className = 'flex-1 py-1.5 rounded-lg bg-[var(--accent)] text-white shadow-sm transition-all cursor-pointer';
+        btnImperial.className = 'flex-1 py-1.5 rounded-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all cursor-pointer';
+        boxHeightMetric.classList.remove('hidden');
+        boxHeightImperial.classList.add('hidden');
+        boxHeightImperial.classList.remove('grid');
+        weightLabel.textContent = 'Weight (kg)';
+        weightInput.value = '70';
+      } else {
+        btnImperial.className = 'flex-1 py-1.5 rounded-lg bg-[var(--accent)] text-white shadow-sm transition-all cursor-pointer';
+        btnMetric.className = 'flex-1 py-1.5 rounded-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all cursor-pointer';
+        boxHeightMetric.classList.add('hidden');
+        boxHeightImperial.classList.remove('hidden');
+        boxHeightImperial.classList.add('grid');
+        weightLabel.textContent = 'Weight (lbs)';
+        weightInput.value = '154';
+      }
+    }
+
+    btnMetric.addEventListener('click', () => setUnit('metric'));
+    btnImperial.addEventListener('click', () => setUnit('imperial'));
+
+    function calculate() {
+      let heightCm = 0;
+      let weightKg = 0;
+
+      if (unit === 'metric') {
+        heightCm = parseFloat(document.getElementById('embed-height-cm').value) || 175;
+        weightKg = parseFloat(weightInput.value) || 70;
+      } else {
+        const ft = parseFloat(document.getElementById('embed-height-ft').value) || 5;
+        const inch = parseFloat(document.getElementById('embed-height-in').value) || 9;
+        const totalInches = (ft * 12) + inch;
+        heightCm = totalInches * 2.54;
+        const weightLbs = parseFloat(weightInput.value) || 154;
+        weightKg = weightLbs * 0.453592;
+      }
+
+      if (heightCm <= 0 || weightKg <= 0) return;
+
+      const heightM = heightCm / 100;
+      const bmi = weightKg / (heightM * heightM);
+      const bmiRounded = bmi.toFixed(1);
+
+      bmiVal.textContent = bmiRounded;
+
+      let category = 'Normal Weight';
+      let colorClass = 'text-emerald-400';
+      if (bmi < 18.5) {
+        category = 'Underweight';
+        colorClass = 'text-sky-400';
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        category = 'Normal Weight';
+        colorClass = 'text-emerald-400';
+      } else if (bmi >= 25 && bmi < 29.9) {
+        category = 'Overweight';
+        colorClass = 'text-amber-400';
+      } else {
+        category = 'Obesity Class';
+        colorClass = 'text-rose-400';
+      }
+
+      bmiCat.textContent = category;
+      bmiCat.className = `font-bold ${colorClass}`;
+
+      const minWeight = (18.5 * (heightM * heightM)).toFixed(1);
+      const maxWeight = (24.9 * (heightM * heightM)).toFixed(1);
+      bmiIdeal.textContent = `${minWeight} - ${maxWeight} ${unit === 'metric' ? 'kg' : 'lbs (approx)'}`;
+
+      resultBox.classList.remove('hidden');
+    }
+
+    calcBtn.addEventListener('click', calculate);
+  })();
+</script>

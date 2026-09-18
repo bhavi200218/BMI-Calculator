@@ -13,116 +13,115 @@ interface FooterTranslation {
   legalText: string;
   copyright: string;
   links: { name: string; href: string }[];
-  healthToolsLinks?: { name: string; href: string; color: string }[];
 }
 
 const footerTranslations: Record<string, FooterTranslation> = {
   en: {
-    tagline: 'The most accurate, privacy-first BMI calculator on the web. Built for real results, not ads.',
+    tagline: 'Clinical-grade, privacy-first health analytics & BMI calculations based on WHO & CDC standards.',
     quickLinks: 'Quick Links',
-    healthTools: 'Health Tools',
-    legalStatus: 'Disclaimer',
+    healthTools: 'Health & Fitness Calculators',
+    legalStatus: 'Medical Disclaimer',
     legalText: '',
-    copyright: `© ${year} Real BMI Calculator`,
+    copyright: `© ${year} Real BMI Calculator. All rights reserved.`,
     links: [
       { name: 'About Us', href: `/en/about/` },
       { name: 'Contact Us', href: `/en/contact/` },
       { name: 'Editorial Policy', href: `/en/editorial-policy/` },
-      { name: 'Sources', href: `/en/sources/` },
+      { name: 'Sources & References', href: `/en/sources/` },
       { name: 'Privacy Policy', href: `/en/privacy-policy/` },
       { name: 'Terms & Conditions', href: `/en/terms-conditions/` },
-      { name: 'Disclaimer', href: `/en/disclaimer/` },
+      { name: 'Medical Disclaimer', href: `/en/disclaimer/` },
     ],
   },
   es: {
-    tagline: 'La calculadora de IMC más precisa y privada de la web.',
+    tagline: 'Calculadoras de salud y métricas de IMC de grado clínico basadas en los estándares de la OMS y CDC.',
     quickLinks: 'Enlaces Rápidos',
     healthTools: 'Herramientas de Salud',
-    legalStatus: 'Aviso Legal',
+    legalStatus: 'Aviso Médico',
     legalText: '',
-    copyright: `© ${year} Real BMI Calculator`,
+    copyright: `© ${year} Real BMI Calculator. Todos los derechos reservados.`,
     links: [
       { name: 'Sobre Nosotros', href: `/es/about/` },
       { name: 'Contacto', href: `/es/contact/` },
       { name: 'Política Editorial', href: `/es/editorial-policy/` },
-      { name: 'Fuentes', href: `/es/sources/` },
-      { name: 'Privacidad', href: `/es/privacy-policy/` },
-      { name: 'Términos', href: `/es/terms-conditions/` },
+      { name: 'Fuentes y Referencias', href: `/es/sources/` },
+      { name: 'Política de Privacidad', href: `/es/privacy-policy/` },
+      { name: 'Términos y Condiciones', href: `/es/terms-conditions/` },
       { name: 'Aviso Médico', href: `/es/disclaimer/` },
     ],
   },
   fr: {
-    tagline: 'La calculatrice IMC la plus précise et respectueuse de la vie privée.',
+    tagline: 'Calculatrices de santé et métriques IMC basées sur les normes OMS et CDC.',
     quickLinks: 'Liens Rapides',
-    healthTools: 'Outils de Santé',
-    legalStatus: 'Mentions Légales',
+    healthTools: 'Calculateurs de Santé',
+    legalStatus: 'Avertissement Médical',
     legalText: '',
-    copyright: `© ${year} Real BMI Calculator`,
+    copyright: `© ${year} Real BMI Calculator. Tous droits réservés.`,
     links: [
       { name: 'À Propos', href: `/fr/about/` },
       { name: 'Contact', href: `/fr/contact/` },
       { name: 'Politique Éditoriale', href: `/fr/editorial-policy/` },
-      { name: 'Sources', href: `/fr/sources/` },
-      { name: 'Confidentialité', href: `/fr/privacy-policy/` },
-      { name: 'Conditions', href: `/fr/terms-conditions/` },
-      { name: 'Avertissement', href: `/fr/disclaimer/` },
+      { name: 'Sources et Références', href: `/fr/sources/` },
+      { name: 'Politique de Confidentialité', href: `/fr/privacy-policy/` },
+      { name: 'Conditions Générales', href: `/fr/terms-conditions/` },
+      { name: 'Avertissement Médical', href: `/fr/disclaimer/` },
     ],
   },
   de: {
-    tagline: 'Der genaueste und datenschutzfreundlichste BMI-Rechner im Web.',
+    tagline: 'Klinische Gesundheitsrechner & BMI-Analysen nach WHO- und CDC-Standards.',
     quickLinks: 'Schnelllinks',
-    healthTools: 'Gesundheits-Tools',
-    legalStatus: 'Rechtlicher Hinweis',
+    healthTools: 'Gesundheits-Rechner',
+    legalStatus: 'Medizinischer Hinweis',
     legalText: '',
-    copyright: `© ${year} Real BMI Calculator`,
+    copyright: `© ${year} Real BMI Calculator. Alle Rechte vorbehalten.`,
     links: [
       { name: 'Über Uns', href: `/de/about/` },
       { name: 'Kontakt', href: `/de/contact/` },
       { name: 'Redaktionsrichtlinie', href: `/de/editorial-policy/` },
-      { name: 'Quellen', href: `/de/sources/` },
+      { name: 'Quellen & Referenzen', href: `/de/sources/` },
       { name: 'Datenschutz', href: `/de/privacy-policy/` },
       { name: 'Nutzungsbedingungen', href: `/de/terms-conditions/` },
       { name: 'Medizinischer Hinweis', href: `/de/disclaimer/` },
     ],
   },
   ko: {
-    tagline: '가장 정확하고 개인정보를 보호하는 BMI 계산기.',
+    tagline: 'WHO 및 CDC 표준에 기반한 개인정보 보호 임상 수준의 건강 계산기.',
     quickLinks: '빠른 링크',
-    healthTools: '건강 도구',
-    legalStatus: '법적 고지',
+    healthTools: '건강 계산기 도구',
+    legalStatus: '의학적 면책조항',
     legalText: '',
-    copyright: `© ${year} Real BMI Calculator`,
+    copyright: `© ${year} Real BMI Calculator. 모든 권리 보유.`,
     links: [
       { name: '회사 소개', href: `/ko/about/` },
       { name: '문의하기', href: `/ko/contact/` },
       { name: '편집 정책', href: `/ko/editorial-policy/` },
-      { name: '출처', href: `/ko/sources/` },
+      { name: '출처 및 참고문헌', href: `/ko/sources/` },
       { name: '개인정보 처리방침', href: `/ko/privacy-policy/` },
       { name: '이용약관', href: `/ko/terms-conditions/` },
-      { name: '의학적 면책', href: `/ko/disclaimer/` },
+      { name: '의학적 면책조항', href: `/ko/disclaimer/` },
     ],
   },
   hi: {
-    tagline: 'वेब पर सबसे सटीक और गोपनीयता-प्रथम बीएमआई कैलकुलेटर।',
+    tagline: 'WHO और CDC मानकों पर आधारित क्लिनिकल-ग्रेड, 100% सुरक्षित और सटीक स्वास्थ्य कैलकुलेटर।',
     quickLinks: 'त्वरित लिंक',
-    healthTools: 'स्वास्थ्य उपकरण',
-    legalStatus: 'कानूनी स्थिति',
+    healthTools: 'स्वास्थ्य एवं फिटनेस कैलकुलेटर',
+    legalStatus: 'चिकित्सा अस्वीकरण',
     legalText: '',
-    copyright: `© ${year} Real BMI Calculator`,
+    copyright: `© ${year} Real BMI Calculator। सर्वाधिकार सुरक्षित।`,
     links: [
       { name: 'हमारे बारे में', href: `/hi/about/` },
       { name: 'संपर्क करें', href: `/hi/contact/` },
       { name: 'संपादकीय नीति', href: `/hi/editorial-policy/` },
-      { name: 'स्रोत', href: `/hi/sources/` },
+      { name: 'स्रोत एवं संदर्भ', href: `/hi/sources/` },
       { name: 'गोपनीयता नीति', href: `/hi/privacy-policy/` },
       { name: 'नियम और शर्तें', href: `/hi/terms-conditions/` },
-      { name: 'अस्वीकरण', href: `/hi/disclaimer/` },
+      { name: 'चिकित्सा अस्वीकरण', href: `/hi/disclaimer/` },
     ],
   }
 };
 
 const ft = footerTranslations[lang] || footerTranslations.en;
-const healthToolsLabel = ft.healthTools || 'Health Tools';
+const healthToolsLabel = ft.healthTools || 'Health Calculators';
 
 const healthToolsLinks = calculators.map((calc) => ({
   name: calc.name[lang] || calc.name['en'],
@@ -130,56 +129,91 @@ const healthToolsLinks = calculators.map((calc) => ({
 }));
 ---
 
-<footer class="bg-[var(--muted)]/40 mt-4 border-t border-[var(--border)]/40">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<footer class="w-full bg-[var(--card)]/90 backdrop-blur-xl border-t border-[var(--border)] mt-16 pt-12 pb-8 text-[var(--foreground)] relative z-20">
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Top row: brand + links -->
-    <div class="grid gap-8 lg:grid-cols-[220px_minmax(320px,1fr)_240px] items-start mb-4">
+    <!-- Top Grid Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-[var(--border)]/60">
 
-      <!-- Brand block -->
-      <div class="space-y-3">
-        <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-[var(--accent)] flex items-center justify-center">
+      <!-- Column 1: Brand Info (3 cols) -->
+      <div class="lg:col-span-3 space-y-4">
+        <a href={`/${lang}/`} class="inline-flex items-center gap-2.5 group">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
             <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
             </svg>
           </div>
-          <span class="font-display font-bold text-sm uppercase tracking-tight text-[var(--foreground)]">Real BMI</span>
-        </div>
-        <p class="mt-2 text-sm text-[var(--muted-foreground)] leading-snug font-medium max-w-[220px]">
+          <span class="font-display font-extrabold text-lg uppercase tracking-tight text-[var(--foreground)]">
+            Real BMI <span class="text-[var(--accent)]">Calculator</span>
+          </span>
+        </a>
+
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
           {ft.tagline}
         </p>
+
+        <div class="pt-1 flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[var(--muted)] border border-[var(--border)] text-[11px] font-display font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            WHO & CDC Aligned
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[var(--muted)] border border-[var(--border)] text-[11px] font-display font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
+            100% Free & Private
+          </span>
+        </div>
       </div>
 
-      <!-- Health Tools -->
-      <div class="space-y-3">
-        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{healthToolsLabel}</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+      <!-- Column 2: Health Calculators Grid (6 cols) -->
+      <div class="lg:col-span-6 space-y-4">
+        <h4 class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] flex items-center gap-2">
+          <svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          {healthToolsLabel}
+        </h4>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2.5">
           {healthToolsLinks.map(link => (
-            <a href={link.href} class="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 truncate">
+            <a 
+              href={link.href} 
+              class="text-xs sm:text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 leading-snug whitespace-normal break-words hover:underline decoration-[var(--accent)]/40 underline-offset-4"
+            >
               {link.name}
             </a>
           ))}
         </div>
       </div>
 
-      <!-- Quick Links -->
-      <div class="space-y-3">
-        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{ft.quickLinks}</p>
-        <div class="grid gap-2">
+      <!-- Column 3: Quick Links & Legal (3 cols) -->
+      <div class="lg:col-span-3 space-y-4">
+        <h4 class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] flex items-center gap-2">
+          <svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+          {ft.quickLinks}
+        </h4>
+
+        <div class="flex flex-col gap-2">
           {ft.links.map(link => (
-            <a href={link.href} class="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200">
+            <a 
+              href={link.href} 
+              class="text-xs sm:text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 leading-snug whitespace-normal"
+            >
               {link.name}
             </a>
           ))}
         </div>
       </div>
+
     </div>
 
-    <!-- Bottom bar -->
-    <div class="pt-6 border-t border-[var(--border)]/40 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[var(--muted-foreground)]">
-      <p class="font-semibold uppercase tracking-[0.2em]">{ft.copyright}</p>
-      <span class="font-medium text-[0.95rem]">Built with privacy-first health analytics.</span>
+    <!-- Bottom Bar -->
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--muted-foreground)] font-medium">
+      <p class="font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+        {ft.copyright}
+      </p>
+      <div class="flex items-center gap-4">
+        <span class="opacity-80">Privacy-First Clinical Analytics</span>
+        <span class="opacity-40">•</span>
+        <a href={`/${lang}/disclaimer/`} class="hover:text-[var(--accent)] transition-colors font-semibold">Medical Disclaimer</a>
+      </div>
     </div>
+
   </div>
 </footer>
