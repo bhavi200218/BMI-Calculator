@@ -308,13 +308,16 @@ const l = labels[lang] || labels.en;
     ctx.save();
     ctx.translate(centerX, centerY);
 
-    // Color Theme based on Gender & Heatmap mode
-    let mainColor = isFemale ? '#ff3399' : '#00a3ff';
+    // Color Theme based on Gender, Wireframe & Heatmap mode
+    let mainColor = isFemale ? '#ff3399' : '#00a3ff'; // Default: Pink for Female, Electric Blue for Male
+    if (isWireframe) {
+      mainColor = '#38bdf8'; // Electric Cyan Wireframe
+    }
     if (isHeatmap) {
-      if (newBmi < 18.5) mainColor = '#38bdf8';
-      else if (newBmi < 25.0) mainColor = '#10b981';
-      else if (newBmi < 30.0) mainColor = '#f59e0b';
-      else mainColor = '#ef4444';
+      if (newBmi < 18.5) mainColor = '#38bdf8';      // Underweight (Sky Blue)
+      else if (newBmi < 25.0) mainColor = '#10b981'; // Healthy Weight (Emerald Green)
+      else if (newBmi < 30.0) mainColor = '#f59e0b'; // Overweight (Amber Yellow)
+      else mainColor = '#ef4444';                   // Obese (Crimson Red)
     }
 
     // 3D Rotation Transform Factor
@@ -345,7 +348,7 @@ const l = labels[lang] || labels.en;
 
       if (isWireframe) {
         ctx.strokeStyle = mainColor;
-        ctx.lineWidth = 1.5 * scale;
+        ctx.lineWidth = 1.8 * scale;
         ctx.setLineDash([4, 4]);
         ctx.stroke();
         ctx.setLineDash([]);
@@ -376,8 +379,8 @@ const l = labels[lang] || labels.en;
         ctx.lineTo(radiusX * cosR, posY);
 
         ctx.strokeStyle = mainColor;
-        ctx.lineWidth = isWireframe ? 1 : 2;
-        ctx.globalAlpha = 0.6;
+        ctx.lineWidth = isWireframe ? 1.2 : 2;
+        ctx.globalAlpha = 0.65;
         ctx.stroke();
         ctx.globalAlpha = 1.0;
       }
@@ -389,7 +392,7 @@ const l = labels[lang] || labels.en;
     ctx.arc(0, headY, 22 * scale, 0, Math.PI * 2);
     if (isWireframe) {
       ctx.strokeStyle = mainColor;
-      ctx.lineWidth = 1.5;
+      ctx.lineWidth = 1.8;
       ctx.stroke();
     } else {
       const headGrad = ctx.createRadialGradient(-5, headY - 5, 2, 0, headY, 22 * scale);
@@ -418,6 +421,24 @@ const l = labels[lang] || labels.en;
   const btnWireframe = document.getElementById('toggleWireframe3D');
   const btnHeatmap = document.getElementById('toggleHeatmap3D');
   const btnReset = document.getElementById('resetCam3D');
+
+  function updateModeButtonUI() {
+    if (btnWireframe) {
+      if (isWireframe) {
+        btnWireframe.className = 'px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-display font-black uppercase tracking-wider bg-sky-500 border border-sky-400 text-black shadow-lg shadow-sky-500/30 ring-2 ring-sky-400/50 transition-all cursor-pointer';
+      } else {
+        btnWireframe.className = 'px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl text-[11px] sm:text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--accent)]/20 text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer';
+      }
+    }
+
+    if (btnHeatmap) {
+      if (isHeatmap) {
+        btnHeatmap.className = 'px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-display font-black uppercase tracking-wider bg-gradient-to-r from-amber-500 to-rose-500 border border-rose-400 text-white shadow-lg shadow-rose-500/30 ring-2 ring-rose-400/50 transition-all cursor-pointer';
+      } else {
+        btnHeatmap.className = 'px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl text-[11px] sm:text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--accent)]/20 text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer';
+      }
+    }
+  }
 
   if (sliderH) {
     sliderH.addEventListener('input', (e) => {
@@ -448,22 +469,22 @@ const l = labels[lang] || labels.en;
   if (btnWireframe) {
     btnWireframe.addEventListener('click', () => {
       isWireframe = !isWireframe;
-      btnWireframe.classList.toggle('bg-[var(--accent)]');
-      btnWireframe.classList.toggle('text-white');
+      updateModeButtonUI();
     });
   }
 
   if (btnHeatmap) {
     btnHeatmap.addEventListener('click', () => {
       isHeatmap = !isHeatmap;
-      btnHeatmap.classList.toggle('bg-[var(--accent)]');
-      btnHeatmap.classList.toggle('text-white');
+      updateModeButtonUI();
     });
   }
 
   if (btnReset) {
     btnReset.addEventListener('click', () => {
       rotationY = 0;
+      btnReset.classList.add('bg-[var(--accent)]', 'text-white');
+      setTimeout(() => btnReset.classList.remove('bg-[var(--accent)]', 'text-white'), 250);
     });
   }
 
