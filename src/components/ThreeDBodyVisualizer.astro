@@ -324,27 +324,31 @@ const l = labels[lang] || labels.en;
     const cosR = Math.cos(rotationY);
     const sinR = Math.sin(rotationY);
 
-    // 3D Anatomical Cross-Section Ellipses
+    // 3D Anatomical Cross-Section Ellipses (width rX & depth rZ)
     const sections = [
-      { y: -160 * bodyHeightScale, rX: 20, rY: 20, label: 'Head' },
-      { y: -130 * bodyHeightScale, rX: 10, rY: 8, label: 'Neck' },
-      { y: -100 * bodyHeightScale, rX: shoulderWidth, rY: 28 * bodyWidthScale, label: 'Shoulders' },
-      { y: -50 * bodyHeightScale, rX: chestWidth, rY: 26 * bodyWidthScale, label: 'Chest' },
-      { y: 0, rX: waistWidth, rY: 24 * waistWidthScale, label: 'Waist' },
-      { y: 40 * bodyHeightScale, rX: hipWidth, rY: 32 * waistWidthScale, label: 'Hips' },
-      { y: 100 * bodyHeightScale, rX: (isFemale ? 24 : 22) * bodyWidthScale, rY: 20 * bodyWidthScale, label: 'Thighs' },
-      { y: 160 * bodyHeightScale, rX: 14 * bodyWidthScale, rY: 14 * bodyWidthScale, label: 'Calves' },
-      { y: 210 * bodyHeightScale, rX: 12, rY: 18, label: 'Feet' }
+      { y: -160 * bodyHeightScale, rX: 20, rZ: 20, label: 'Head' },
+      { y: -130 * bodyHeightScale, rX: 11, rZ: 11, label: 'Neck' },
+      { y: -100 * bodyHeightScale, rX: shoulderWidth, rZ: shoulderWidth * 0.52, label: 'Shoulders' },
+      { y: -50 * bodyHeightScale, rX: chestWidth, rZ: chestWidth * 0.62, label: 'Chest' },
+      { y: 0, rX: waistWidth, rZ: waistWidth * 0.68, label: 'Waist' },
+      { y: 40 * bodyHeightScale, rX: hipWidth, rZ: hipWidth * 0.65, label: 'Hips' },
+      { y: 100 * bodyHeightScale, rX: (isFemale ? 24 : 22) * bodyWidthScale, rZ: (isFemale ? 24 : 22) * bodyWidthScale * 0.85, label: 'Thighs' },
+      { y: 160 * bodyHeightScale, rX: 14 * bodyWidthScale, rZ: 14 * bodyWidthScale * 0.85, label: 'Calves' },
+      { y: 210 * bodyHeightScale, rX: 12, rZ: 18, label: 'Feet' }
     ];
 
-    // Render 3D Wireframe / Solid Latitudinal Rings
+    // Render True 3D Volumetric Latitudinal Rings
     sections.forEach((sec, idx) => {
-      const radiusX = sec.rX * scale;
-      const radiusY = sec.rY * scale * 0.4;
+      const rX = sec.rX * scale;
+      const rZ = sec.rZ * scale;
       const posY = sec.y * scale;
 
+      // True 3D Rotated Ellipse Projected Dimensions
+      const rProj = Math.sqrt(Math.pow(rX * cosR, 2) + Math.pow(rZ * sinR, 2));
+      const rTilt = Math.max(5 * scale, (rZ * Math.abs(cosR) + rX * Math.abs(sinR)) * 0.3);
+
       ctx.beginPath();
-      ctx.ellipse(0, posY, Math.abs(radiusX * cosR) + 5, radiusY + Math.abs(radiusX * sinR * 0.3), 0, 0, Math.PI * 2);
+      ctx.ellipse(0, posY, rProj, rTilt, 0, 0, Math.PI * 2);
 
       if (isWireframe) {
         ctx.strokeStyle = mainColor;
@@ -353,12 +357,12 @@ const l = labels[lang] || labels.en;
         ctx.stroke();
         ctx.setLineDash([]);
       } else {
-        const grad = ctx.createRadialGradient(0, posY, 2, 0, posY, radiusX);
+        const grad = ctx.createRadialGradient(-rProj * 0.2, posY - rTilt * 0.2, 2, 0, posY, rProj);
         grad.addColorStop(0, '#ffffff');
         grad.addColorStop(0.4, mainColor);
-        grad.addColorStop(1, '#000000');
+        grad.addColorStop(1, '#050505');
         ctx.fillStyle = grad;
-        ctx.globalAlpha = 0.85;
+        ctx.globalAlpha = 0.88;
         ctx.fill();
         ctx.strokeStyle = mainColor;
         ctx.lineWidth = 1 * scale;
@@ -366,21 +370,23 @@ const l = labels[lang] || labels.en;
         ctx.globalAlpha = 1.0;
       }
 
-      // Connect 3D Longitudinal Contour Ribs
+      // Connect 3D Longitudinal Contour Ribs along true 3D outer boundary
       if (idx > 0) {
         const prev = sections[idx - 1];
         const prevY = prev.y * scale;
         const prevRX = prev.rX * scale;
+        const prevRZ = prev.rZ * scale;
+        const prevRProj = Math.sqrt(Math.pow(prevRX * cosR, 2) + Math.pow(prevRZ * sinR, 2));
 
         ctx.beginPath();
-        ctx.moveTo(-prevRX * cosR, prevY);
-        ctx.lineTo(-radiusX * cosR, posY);
-        ctx.moveTo(prevRX * cosR, prevY);
-        ctx.lineTo(radiusX * cosR, posY);
+        ctx.moveTo(-prevRProj, prevY);
+        ctx.lineTo(-rProj, posY);
+        ctx.moveTo(prevRProj, prevY);
+        ctx.lineTo(rProj, posY);
 
         ctx.strokeStyle = mainColor;
-        ctx.lineWidth = isWireframe ? 1.2 : 2;
-        ctx.globalAlpha = 0.65;
+        ctx.lineWidth = isWireframe ? 1.3 : 2;
+        ctx.globalAlpha = 0.68;
         ctx.stroke();
         ctx.globalAlpha = 1.0;
       }
