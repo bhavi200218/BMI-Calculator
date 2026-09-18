@@ -111,13 +111,28 @@ const webAppSchema = {
       </div>
 
       <!-- Main Calculator Layout -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch animate-in" style="animation-delay:100ms">
-        <UniversalCalculator calculator={calc} lang={lang} />
-        <CalculatorResult lang={lang} />
-      </div>
+      {calc.slug === 'new-bmi-calculator' ? (
+        <div class="space-y-10 animate-in" style="animation-delay:100ms">
+          <!-- Primary Highlight: Calculator Inputs + 3D Visualizer Canvas Studio -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+            <div class="lg:col-span-5">
+              <UniversalCalculator calculator={calc} lang={lang} />
+            </div>
+            <div class="lg:col-span-7">
+              <ThreeDBodyVisualizer lang={lang} />
+            </div>
+          </div>
 
-      {calc.slug === 'new-bmi-calculator' && (
-        <ThreeDBodyVisualizer lang={lang} />
+          <!-- Secondary Result Snapshot Card (Positioned below main 3D diagram) -->
+          <div class="w-full max-w-4xl mx-auto">
+            <CalculatorResult lang={lang} />
+          </div>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch animate-in" style="animation-delay:100ms">
+          <UniversalCalculator calculator={calc} lang={lang} />
+          <CalculatorResult lang={lang} />
+        </div>
       )}
 
       <!-- Extended Content & Clinical Knowledge Base for Search Indexing -->
