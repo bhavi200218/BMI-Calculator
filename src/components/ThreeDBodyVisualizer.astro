@@ -294,16 +294,22 @@ const l = labels[lang] || labels.en;
     const centerX = W / 2;
     const centerY = H / 2 + 20 * scale;
 
-    // Body Morph Parameters derived from Height & 3D BMI
+    // Anatomical scale derived from Height, 3D BMI & Gender
+    const isFemale = gender === 'female';
     const bodyHeightScale = (heightCm / 175);
     const bodyWidthScale = Math.pow(volScale, 0.6);
     const waistWidthScale = Math.pow(volScale, 0.85);
 
+    const shoulderWidth = isFemale ? 44 * bodyWidthScale : 56 * bodyWidthScale;
+    const chestWidth = isFemale ? 46 * bodyWidthScale : 52 * bodyWidthScale;
+    const waistWidth = isFemale ? 34 * waistWidthScale : 44 * waistWidthScale;
+    const hipWidth = isFemale ? 56 * waistWidthScale : 46 * waistWidthScale;
+
     ctx.save();
     ctx.translate(centerX, centerY);
 
-    // Color Theme based on Heatmap mode
-    let mainColor = isWireframe ? '#38bdf8' : (gender === 'male' ? '#e8674a' : '#ec4899');
+    // Color Theme based on Gender & Heatmap mode
+    let mainColor = isFemale ? '#ff3399' : '#00a3ff';
     if (isHeatmap) {
       if (newBmi < 18.5) mainColor = '#38bdf8';
       else if (newBmi < 25.0) mainColor = '#10b981';
@@ -319,11 +325,11 @@ const l = labels[lang] || labels.en;
     const sections = [
       { y: -160 * bodyHeightScale, rX: 20, rY: 20, label: 'Head' },
       { y: -130 * bodyHeightScale, rX: 10, rY: 8, label: 'Neck' },
-      { y: -100 * bodyHeightScale, rX: 55 * bodyWidthScale, rY: 30 * bodyWidthScale, label: 'Shoulders' },
-      { y: -50 * bodyHeightScale, rX: 50 * bodyWidthScale, rY: 28 * bodyWidthScale, label: 'Chest' },
-      { y: 0, rX: 42 * waistWidthScale, rY: 26 * waistWidthScale, label: 'Waist' },
-      { y: 40 * bodyHeightScale, rX: 48 * waistWidthScale, rY: 30 * waistWidthScale, label: 'Hips' },
-      { y: 100 * bodyHeightScale, rX: 22 * bodyWidthScale, rY: 20 * bodyWidthScale, label: 'Thighs' },
+      { y: -100 * bodyHeightScale, rX: shoulderWidth, rY: 28 * bodyWidthScale, label: 'Shoulders' },
+      { y: -50 * bodyHeightScale, rX: chestWidth, rY: 26 * bodyWidthScale, label: 'Chest' },
+      { y: 0, rX: waistWidth, rY: 24 * waistWidthScale, label: 'Waist' },
+      { y: 40 * bodyHeightScale, rX: hipWidth, rY: 32 * waistWidthScale, label: 'Hips' },
+      { y: 100 * bodyHeightScale, rX: (isFemale ? 24 : 22) * bodyWidthScale, rY: 20 * bodyWidthScale, label: 'Thighs' },
       { y: 160 * bodyHeightScale, rX: 14 * bodyWidthScale, rY: 14 * bodyWidthScale, label: 'Calves' },
       { y: 210 * bodyHeightScale, rX: 12, rY: 18, label: 'Feet' }
     ];
@@ -428,13 +434,13 @@ const l = labels[lang] || labels.en;
   if (btnMale && btnFemale) {
     btnMale.addEventListener('click', () => {
       gender = 'male';
-      btnMale.className = 'py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[var(--accent)] bg-[var(--accent)] text-white shadow-md transition-all cursor-pointer';
+      btnMale.className = 'py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[#00a3ff] bg-[#00a3ff] text-white shadow-md transition-all cursor-pointer';
       btnFemale.className = 'py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[var(--border)] bg-[var(--muted)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all cursor-pointer';
     });
 
     btnFemale.addEventListener('click', () => {
       gender = 'female';
-      btnFemale.className = 'py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[var(--accent)] bg-[var(--accent)] text-white shadow-md transition-all cursor-pointer';
+      btnFemale.className = 'py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[#ff3399] bg-[#ff3399] text-white shadow-md transition-all cursor-pointer';
       btnMale.className = 'py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider border border-[var(--border)] bg-[var(--muted)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all cursor-pointer';
     });
   }
