@@ -129,52 +129,53 @@ const healthToolsLinks = calculators.map((calc) => ({
 }));
 ---
 
-<footer class="w-full bg-[var(--card)]/90 backdrop-blur-xl border-t border-[var(--border)] mt-16 pt-12 pb-8 text-[var(--foreground)] relative z-20">
+<footer class="w-full bg-[var(--card)]/90 backdrop-blur-xl border-t border-[var(--border)] mt-12 pt-8 pb-6 text-[var(--foreground)] relative z-20">
   <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Top Grid Section -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-[var(--border)]/60">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 pb-8 border-b border-[var(--border)]/60">
 
       <!-- Column 1: Brand Info (3 cols) -->
-      <div class="lg:col-span-3 space-y-4">
+      <div class="lg:col-span-3 space-y-3">
         <a href={`/${lang}/`} class="inline-flex items-center gap-2.5 group">
-          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
             </svg>
           </div>
-          <span class="font-display font-extrabold text-lg uppercase tracking-tight text-[var(--foreground)]">
+          <span class="font-display font-extrabold text-base uppercase tracking-tight text-[var(--foreground)]">
             Real BMI <span class="text-[var(--accent)]">Calculator</span>
           </span>
         </a>
 
-        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+        <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
           {ft.tagline}
         </p>
 
-        <div class="pt-1 flex flex-wrap gap-2">
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[var(--muted)] border border-[var(--border)] text-[11px] font-display font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
+        <div class="pt-0.5 flex flex-wrap gap-1.5">
+          <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[var(--muted)] border border-[var(--border)] text-[10px] font-display font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
             WHO & CDC Aligned
           </span>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[var(--muted)] border border-[var(--border)] text-[11px] font-display font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
+          <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[var(--muted)] border border-[var(--border)] text-[10px] font-display font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
             100% Free & Private
           </span>
         </div>
       </div>
 
       <!-- Column 2: Health Calculators Grid (6 cols) -->
-      <div class="lg:col-span-6 space-y-4">
-        <h4 class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] flex items-center gap-2">
-          <svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      <div class="lg:col-span-6 space-y-3">
+        <h4 class="text-xs font-display font-bold uppercase tracking-[0.15em] text-[var(--accent)] flex items-center gap-2">
+          <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
           {healthToolsLabel}
         </h4>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2.5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-1.5">
           {healthToolsLinks.map(link => (
             <a 
               href={link.href} 
-              class="text-xs sm:text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 leading-snug whitespace-normal break-words hover:underline decoration-[var(--accent)]/40 underline-offset-4"
+              class="text-xs font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 whitespace-nowrap overflow-hidden text-ellipsis hover:underline decoration-[var(--accent)]/40 underline-offset-2"
+              title={link.name}
             >
               {link.name}
             </a>
@@ -183,17 +184,18 @@ const healthToolsLinks = calculators.map((calc) => ({
       </div>
 
       <!-- Column 3: Quick Links & Legal (3 cols) -->
-      <div class="lg:col-span-3 space-y-4">
-        <h4 class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] flex items-center gap-2">
-          <svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+      <div class="lg:col-span-3 space-y-3">
+        <h4 class="text-xs font-display font-bold uppercase tracking-[0.15em] text-[var(--accent)] flex items-center gap-2">
+          <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
           {ft.quickLinks}
         </h4>
 
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-y-1.5">
           {ft.links.map(link => (
             <a 
               href={link.href} 
-              class="text-xs sm:text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 leading-snug whitespace-normal"
+              class="text-xs font-semibold text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors duration-200 whitespace-nowrap overflow-hidden text-ellipsis hover:underline decoration-[var(--accent)]/40 underline-offset-2"
+              title={link.name}
             >
               {link.name}
             </a>
@@ -204,11 +206,11 @@ const healthToolsLinks = calculators.map((calc) => ({
     </div>
 
     <!-- Bottom Bar -->
-    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--muted-foreground)] font-medium">
+    <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[var(--muted-foreground)] font-medium">
       <p class="font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
         {ft.copyright}
       </p>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
         <span class="opacity-80">Privacy-First Clinical Analytics</span>
         <span class="opacity-40">•</span>
         <a href={`/${lang}/disclaimer/`} class="hover:text-[var(--accent)] transition-colors font-semibold">Medical Disclaimer</a>
