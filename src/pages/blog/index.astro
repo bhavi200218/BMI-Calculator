@@ -30,7 +30,7 @@ const articles = Object.keys(blogArticles).map((slug) => {
   >
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
       {articles.map((art) => (
-        <a href={`/blog/${art.slug}`} class="group block h-full">
+        <a href={`/en/blog/${art.slug}/`} class="group block h-full">
           <div class="h-full p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-4 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
             <div class="space-y-3">
               <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-display font-semibold tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/20 truncate max-w-full">
