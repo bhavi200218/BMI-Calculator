@@ -96,7 +96,14 @@ export const calculators: CalculatorConfig[] = [
     slug: 'new-bmi-calculator',
     name: { en: '3D BMI Calculator', es: 'Calculadora IMC 3D', fr: 'Calculateur IMC 3D', de: '3D BMI Rechner', ko: '3D BMI 계산기', hi: '3D बीएमआई कैलकुलेटर' },
     title: { en: '3D BMI Calculator & 3D Body Visualizer – Free Interactive 3D Model', es: 'Calculadora de IMC 3D y Visualizador Corporal 3D Gratuito', fr: 'Calculateur IMC 3D et Visualiseur Corporel 3D Interactif', de: '3D BMI Rechner & Interaktiver 3D-Körper-Visualisierer', ko: '3D BMI 계산기 및 대화형 3D 체형 시각화 도구', hi: '3D बीएमआई कैलकुलेटर और 3D बॉडी विजुअलाइज़र' },
-    description: { en: 'Free 3D Body Visualizer & 3D BMI Calculator. Calculate your height-adjusted BMI and preview your 3D body model instantly using Oxford 2.5 power formula.', es: 'Visualizador corporal 3D y calculadora de IMC 3D gratis. Calcula tu IMC y visualiza tu modelo 3D al instante.', fr: 'Calculateur IMC 3D et visualiseur corporel 3D gratuit. Calculez votre IMC et prévisualisez votre modèle 3D.', de: 'Kostenloser 3D-Körper-Visualisierer und 3D-BMI-Rechner. Berechnen Sie Ihren BMI und visualisieren Sie Ihren Körper in 3D.', ko: '무료 3D 체형 시각화 도구 및 3D BMI 계산기. 키와 체중을 입력하여 3D 아바타를 실시간으로 확인하세요.', hi: 'मुफ़्त 3D बॉडी विजुअलाइज़र और 3D बीएमआई कैलकुलेटर। अपनी ऊंचाई और वजन दर्ज करके अपने 3D मॉडल का पूर्वावलोकन करें।' },
+    description: { 
+      en: 'Calculate your BMI and preview your interactive 3D body model instantly.', 
+      es: 'Calcula tu IMC y visualiza tu modelo corporal 3D al instante.', 
+      fr: 'Calculez votre IMC et prévisualisez votre modèle 3D instantanément.', 
+      de: 'Berechnen Sie Ihren BMI und visualisieren Sie Ihr 3D-Körpermodell sofort.', 
+      ko: 'BMI를 계산하고 3D 대화형 체형 아바타를 즉시 확인하세요.', 
+      hi: 'अपना BMI कैलकुलेट करें और 3D बॉडी मॉडल का पूर्वावलोकन तुरंत देखें।' 
+    },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
