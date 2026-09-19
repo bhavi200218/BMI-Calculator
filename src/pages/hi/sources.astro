@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+
+const sources = [
+  {
+    title: "डब्ल्यूएचओ बीएमआई एवं मोटापा दिशानिर्देश",
+    org: "विश्व स्वास्थ्य संगठन (WHO)",
+    url: "https://www.who.int/publications/i/item/9241544861",
+    desc: "बीएमआई श्रेणियों और स्वास्थ्य सीमाओं के लिए आधिकारिक रिपोर्ट।"
+  },
+  {
+    title: "एशियाई आबादी के लिए संशोधित बीएमआई कट-ऑफ",
+    org: "डब्ल्यूएचओ दक्षिण-पूर्व एशिया",
+    url: "https://www.who.int/publications/i/item/9290611717",
+    desc: "एशियाई आबादी में 23.0 kg/m² पर ओवरवेट जोखिम के लिए नैदानिक मानक।"
+  },
+  {
+    title: "सीडीसी एडल्ट बीएमआई मानक",
+    org: "सीडीसी (CDC)",
+    url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
+    desc: "बॉडी मास इंडेक्स गणना के लिए आधिकारिक सीडीसी मानक।"
+  }
+];
+---
+
+<Layout 
+    title="वैज्ञानिक स्रोत एवं उद्धरण | Real BMI"
+    description="Real BMI के गणना फॉर्मूलों, WHO और CDC मानकों के पीछे के वैज्ञानिक अध्ययनों और उद्धरणों को देखें।"
+>
+    <Navbar />
+    <PageShell
+      title="स्रोत एवं संदर्भ"
+      eyebrow="प्रमाण-आधारित स्वास्थ्य विज्ञान"
+      description="हमारे कैलकुलेटर के पीछे के प्राथमिक नैदानिक अध्ययन और अंतर्राष्ट्रीय दिशानिर्देश।"
+      returnUrl="/hi"
+      returnLabel="होम"
+    >
+      <div class="space-y-8">
+        <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+          Real BMI पर हर गणना और स्वास्थ्य जानकारी वैश्विक स्वास्थ्य संगठनों के प्रकाशित चिकित्सा साहित्य पर आधारित है।
+        </p>
+
+        <div class="grid gap-6">
+          {sources.map((src) => (
+            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs">
+              <div class="flex items-center justify-between gap-4 flex-wrap">
+                <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
+                  {src.org}
+                </span>
+                <a href={src.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline">
+                  प्रकाशन देखें →
+                </a>
+              </div>
+              <h2 class="text-xl font-display font-bold text-[var(--foreground)]">{src.title}</h2>
+              <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{src.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </PageShell>
+</Layout>

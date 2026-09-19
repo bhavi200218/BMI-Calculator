@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+---
+
+<Layout 
+    title="Politique Éditoriale et Processus de Révision Médicale | Real BMI"
+    description="Découvrez nos normes éditoriales cliniques, notre processus de révision médicale et notre engagement envers des analyses de santé basées sur des données probantes."
+>
+    <Navbar />
+    <PageShell
+      title="Politique Éditoriale"
+      eyebrow="Précision Clinique et Intégrité"
+      description="Comment Real BMI recherche, valide et maintient des outils de santé basés sur la science."
+      returnUrl="/fr"
+      returnLabel="Accueil"
+    >
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
+        <p>Chez <strong>Real BMI Calculator</strong>, notre mission est de fournir des analyses de santé précises, transparentes et basées sur des preuves scientifiques pour aider les utilisateurs à comprendre leur IMC, leur métabolisme de base et leurs indicateurs de santé.</p>
+
+        <h2>1. Directives Cliniques Basées sur des Preuves</h2>
+        <p>Toutes nos formules et plages de référence sont issues de directives cliniques officielles publiées par des organismes de santé internationaux :</p>
+        <ul>
+          <li><strong>Organisation Mondiale de la Santé (OMS) :</strong> Classifications mondiales de l'obésité et seuils d'IMC.</li>
+          <li><strong>CDC (Centers for Disease Control and Prevention) :</strong> Formules d'IMC pour adultes et courbes de croissance.</li>
+          <li><strong>NIH (National Institutes of Health) :</strong> Évaluation de l'adiposité abdominale et des risques cardiovasculaires.</li>
+        </ul>
+
+        <h2>2. Comité Consultatif Médical</h2>
+        <p>Notre contenu et notre logique de calcul sont constamment révisés par des professionnels de la santé :</p>
+        <ul>
+          <li><strong>Bhawanshi Dosi :</strong> Fondatrice et Développeuse Principale</li>
+          <li><strong>Dr Alistair Vance, MD :</strong> Directeur Médical</li>
+          <li><strong>Dr Meera Thorne, PhD :</strong> Conseillère en Physiologie de l'Exercice</li>
+        </ul>
+
+        <h2>3. Transparence et Mises à Jour</h2>
+        <p>La science médicale évolue constamment. Nous mettons régulièrement à jour nos algorithmes et nos articles dès que de nouvelles recommandations officielles sont publiées.</p>
+
+        <h2>4. Avertissement Médical</h2>
+        <p>Les indicateurs fournis par Real BMI sont destinés à des fins éducatives et d'information. Ils ne remplacent pas une consultation ou un diagnostic médical professionnel.</p>
+      </div>
+    </PageShell>
+</Layout>

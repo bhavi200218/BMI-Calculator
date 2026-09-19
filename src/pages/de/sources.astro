@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+
+const sources = [
+  {
+    title: "WHO Physical Status: Anwendung und Interpretation der Anthropometrie",
+    org: "Weltgesundheitsorganisation (WHO)",
+    url: "https://www.who.int/publications/i/item/9241544861",
+    desc: "Offizieller Bericht zur Festlegung globaler BMI-Kategorien und klinischer Richtwerte."
+  },
+  {
+    title: "CDC Erwachsenen-BMI Standard-Berechnung",
+    org: "Centers for Disease Control and Prevention (CDC)",
+    url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
+    desc: "Offizielle CDC-Formel zur Berechnung des Body-Mass-Index."
+  },
+  {
+    title: "Mifflin-St Jeor Formel für den Grundumsatz (BMR)",
+    org: "American Journal of Clinical Nutrition",
+    url: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    desc: "Klinische Standardformel zur Berechnung des Grundumsatzes."
+  }
+];
+---
+
+<Layout 
+    title="Wissenschaftliche Quellen & Referenzen | Real BMI"
+    description="Einblick in die wissenschaftlichen Studien und medizinischen Publikationen hinter den Berechnungen von Real BMI."
+>
+    <Navbar />
+    <PageShell
+      title="Quellen & Referenzen"
+      eyebrow="Evidenzbasierte Medizin"
+      description="Wissenschaftliche Studien und internationale Richtlinien hinter unseren Tools."
+      returnUrl="/de"
+      returnLabel="Startseite"
+    >
+      <div class="space-y-8">
+        <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+          Bei Real BMI basiert jede Formel und jeder Referenzbereich auf wissenschaftlicher Fachliteratur und offiziellen Leitlinien.
+        </p>
+
+        <div class="grid gap-6">
+          {sources.map((src) => (
+            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs hover:border-[var(--accent)]/40 transition-all">
+              <div class="flex items-center justify-between gap-4 flex-wrap">
+                <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
+                  {src.org}
+                </span>
+                <a 
+                  href={src.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
+                >
+                  Publikation ansehen
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+              </div>
+              <h2 class="text-xl font-display font-bold text-[var(--foreground)]">{src.title}</h2>
+              <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{src.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </PageShell>
+</Layout>

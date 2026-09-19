@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+
+const sources = [
+  {
+    title: "OMS État Physique : Utilisation et Interprétation de l'Anthropométrie",
+    org: "Organisation Mondiale de la Santé (OMS)",
+    url: "https://www.who.int/publications/i/item/9241544861",
+    desc: "Rapport officiel établissant les catégories mondiales d'indice de masse corporelle (IMC)."
+  },
+  {
+    title: "CDC Normes de Calcul de l'Indice de Masse Corporelle",
+    org: "Centers for Disease Control and Prevention (CDC)",
+    url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
+    desc: "Équations officielles du CDC pour le calcul de l'IMC chez l'adulte."
+  },
+  {
+    title: "Équation de Mifflin-St Jeor pour le Métabolisme de Base",
+    org: "American Journal of Clinical Nutrition",
+    url: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    desc: "Formule clinique de référence pour calculer le taux métabolique de base (BMR)."
+  }
+];
+---
+
+<Layout 
+    title="Sources Scientifiques et Références | Real BMI"
+    description="Consultez les publications scientifiques et les études médicales qui soutiennent les calculs et formules de Real BMI."
+>
+    <Navbar />
+    <PageShell
+      title="Sources et Références"
+      eyebrow="Science Médicale Basée sur des Preuves"
+      description="Études cliniques et directives internationales soutenant nos outils."
+      returnUrl="/fr"
+      returnLabel="Accueil"
+    >
+      <div class="space-y-8">
+        <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+          Chez Real BMI, chaque formule de calcul est basée sur de la littérature médicale évaluée par des pairs et sur des directives officielles.
+        </p>
+
+        <div class="grid gap-6">
+          {sources.map((src) => (
+            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs hover:border-[var(--accent)]/40 transition-all">
+              <div class="flex items-center justify-between gap-4 flex-wrap">
+                <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
+                  {src.org}
+                </span>
+                <a 
+                  href={src.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
+                >
+                  Voir la publication
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+              </div>
+              <h2 class="text-xl font-display font-bold text-[var(--foreground)]">{src.title}</h2>
+              <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{src.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </PageShell>
+</Layout>

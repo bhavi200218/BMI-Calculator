@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+---
+
+<Layout 
+    title="Redaktionsrichtlinie & Medizinischer Überprüfungsprozess | Real BMI"
+    description="Erfahren Sie mehr über die klinischen Redaktionsstandards von Real BMI, medizinische Überprüfungen und unsere wissenschaftlich fundierten Gesundheits-Tools."
+>
+    <Navbar />
+    <PageShell
+      title="Redaktionsrichtlinie"
+      eyebrow="Klinische Präzision & Integrität"
+      description="Wie Real BMI Evidenz-basierte Gesundheits-Tools und medizinische Inhalte recherchiert und validiert."
+      returnUrl="/de"
+      returnLabel="Startseite"
+    >
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
+        <p>Unsere Mission bei <strong>Real BMI Calculator</strong> ist es, präzise, transparente und Evidenz-basierte Analysen bereitzustellen, um Anwendern das Verständnis von BMI, Grundumsatz und allgemeinen Gesundheitsrisiken zu erleichtern.</p>
+
+        <h2>1. Evidenzbasierte klinische Richtlinien</h2>
+        <p>Alle Formeln und Referenzwerte basieren auf offiziellen Richtlinien internationaler Gesundheitsorganisationen:</p>
+        <ul>
+          <li><strong>Weltgesundheitsorganisation (WHO):</strong> Globale Adipositas-Klassifikationen und BMI-Grenzwerte.</li>
+          <li><strong>CDC (Centers for Disease Control and Prevention):</strong> Standardformeln für den Body-Mass-Index bei Erwachsenen.</li>
+          <li><strong>National Institutes of Health (NIH):</strong> Bewertung von Bauchfett und kardiovaskulärem Risiko.</li>
+        </ul>
+
+        <h2>2. Medizinischer Beirat & Redaktionsprüfung</h2>
+        <p>Inhalte und Berechnungslogiken werden regelmäßig von Experten geprüft:</p>
+        <ul>
+          <li><strong>Bhawanshi Dosi:</strong> Gründerin & Hauptentwicklerin</li>
+          <li><strong>Dr. Alistair Vance, MD:</strong> Medizinischer Direktor</li>
+          <li><strong>Dr. Meera Thorne, PhD:</strong> Beraterin für Leistungsphysiologie</li>
+        </ul>
+
+        <h2>3. Transparenz & Kontinuierliche Aktualisierungen</h2>
+        <p>Medizinisches Wissen entwickelt sich ständig weiter. Wir aktualisieren Rechner und Artikel regelmäßig bei neuen wissenschaftlichen Erkenntnissen.</p>
+
+        <h2>4. Medizinischer Hinweis</h2>
+        <p>Die von Real BMI bereitgestellten Kennzahlen dienen der Information und Bildungszwecken. Sie ersetzen keine professionelle medizinische Beratung oder Diagnose.</p>
+      </div>
+    </PageShell>
+</Layout>

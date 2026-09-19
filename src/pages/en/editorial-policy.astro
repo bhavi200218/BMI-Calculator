@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+---
+
+<Layout 
+    title="Editorial Policy & Medical Review Process | Real BMI"
+    description="Learn about Real BMI's clinical editorial standards, medical review process, evidence-based sources, and commitment to precision health analytics."
+>
+    <Navbar />
+    <PageShell
+      title="Editorial Policy"
+      eyebrow="Clinical Precision & Integrity"
+      description="How Real BMI researches, validates, and maintains evidence-based health tools and medical content."
+      returnUrl="/en"
+      returnLabel="Home"
+    >
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
+        <p>At <strong>Real BMI Calculator</strong>, our mission is to provide accurate, transparent, and evidence-based health analytics to help individuals understand their body mass index, basal metabolic rate, total daily energy expenditure, and overall health risk indicators.</p>
+
+        <h2>1. Evidence-Based Clinical Guidelines</h2>
+        <p>All formulas, reference ranges, and health metrics published on Real BMI are derived from official clinical guidelines established by leading global medical authorities, including:</p>
+        <ul>
+          <li><strong>World Health Organization (WHO):</strong> Global Obesity Classifications, South-East Asia Ethnic BMI Cut-offs (23.0 kg/m²), and Waist-to-Hip Ratio guidelines.</li>
+          <li><strong>Centers for Disease Control and Prevention (CDC):</strong> Adult BMI Formula Standard and Pediatric Growth Percentile Charts.</li>
+          <li><strong>National Institutes of Health (NIH) & National Heart Foundation:</strong> Abdominal Adiposity & Cardiovascular Risk Assessment.</li>
+          <li><strong>International Diabetes Federation (IDF):</strong> Ethnic Waist Circumference Thresholds for Type 2 Diabetes Screening.</li>
+        </ul>
+
+        <h2>2. Medical Advisory Board & Editorial Review</h2>
+        <p>Content and calculation logic are created and periodically reviewed by our team of health professionals and clinical data specialists:</p>
+        <ul>
+          <li><strong>Bhawanshi Dosi:</strong> Founder & Platform Developer</li>
+          <li><strong>Dr. Alistair Vance, MD:</strong> Chief Medical Director & Metabolic Health Reviewer</li>
+          <li><strong>Dr. Meera Thorne, PhD:</strong> Exercise Physiology & Anthropometrics Advisor</li>
+        </ul>
+
+        <h2>3. Transparency & Continuous Updates</h2>
+        <p>Medical knowledge evolves continuously. We regularly update our calculators, formula algorithms, and health articles as new consensus guidelines are published by global clinical institutions. Every article specifies its last updated date and citations.</p>
+
+        <h2>4. Independence & Commercial Integrity</h2>
+        <p>Real BMI operates as an independent health analytics tool. Our clinical guidance is completely free from commercial bias or pharmaceutical influence. Our goal is solely to provide accurate, actionable health data.</p>
+
+        <h2>5. Medical Disclaimer</h2>
+        <p>The metrics provided by Real BMI (including BMI, BMR, TDEE, and body fat percentage estimates) serve as initial educational screening tools and do not constitute formal medical diagnosis, clinical treatment, or individualized medical advice. Always consult a licensed healthcare provider for personal health concerns.</p>
+      </div>
+    </PageShell>
+</Layout>

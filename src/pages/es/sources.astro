@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+
+const sources = [
+  {
+    title: "OMS Estado Físico: Uso e Interpretación de la Antropometría",
+    org: "Organización Mundial de la Salud (OMS)",
+    url: "https://www.who.int/publications/i/item/9241544861",
+    desc: "Informe oficial que establece las categorías globales del índice de masa corporal (IMC) y puntos de corte clínicos."
+  },
+  {
+    title: "CDC Estándar de Índice de Masa Corporal para Adultos",
+    org: "Centros para el Control y la Prevención de Enfermedades (CDC)",
+    url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
+    desc: "Ecuación estándar oficial del CDC para el cálculo del IMC métrico e imperial en adultos."
+  },
+  {
+    title: "Nueva Ecuación Predictiva para el Gasto Energético en Reposo",
+    org: "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
+    url: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    desc: "Ecuación clínica de Mifflin-St Jeor para calcular la Tasa Metabólica Basal (BMR) con precisión clínica."
+  },
+  {
+    title: "Ecuación Logarítmica de Grasa Corporal de la Marina de EE. UU.",
+    org: "Naval Health Research Center (Hodgdon JA, Beckett WS)",
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/",
+    desc: "Ecuación de medición con cinta métrica correlacionada con escaneos DEXA."
+  }
+];
+---
+
+<Layout 
+    title="Fuentes Científicas y Citas | Real BMI"
+    description="Consulte las publicaciones científicas y los estudios médicos en los que se basan las fórmulas e indicadores de Real BMI."
+>
+    <Navbar />
+    <PageShell
+      title="Fuentes y Referencias"
+      eyebrow="Ciencia Médica Basada en Evidencia"
+      description="Estudios clínicos primarios y guías internacionales que respaldan nuestras calculadoras."
+      returnUrl="/es"
+      returnLabel="Inicio"
+    >
+      <div class="space-y-8">
+        <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+          En Real BMI, cada fórmula de cálculo y rango de referencia se basa en literatura médica revisada por pares y guías oficiales de organizaciones de salud globales.
+        </p>
+
+        <div class="grid gap-6">
+          {sources.map((src) => (
+            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs hover:border-[var(--accent)]/40 transition-all">
+              <div class="flex items-center justify-between gap-4 flex-wrap">
+                <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
+                  {src.org}
+                </span>
+                <a 
+                  href={src.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
+                >
+                  Ver Publicación
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+              </div>
+              <h2 class="text-xl font-display font-bold text-[var(--foreground)]">{src.title}</h2>
+              <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{src.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </PageShell>
+</Layout>

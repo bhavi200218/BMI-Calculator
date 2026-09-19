@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+
+const sources = [
+  {
+    title: "WHO 신체 상태: 인체측정학의 사용 및 해석",
+    org: "세계보건기구 (WHO)",
+    url: "https://www.who.int/publications/i/item/9241544861",
+    desc: "글로벌 체질량지수(BMI) 범주 및 임상 기준을 설정한 공식 보고서."
+  },
+  {
+    title: "CDC 성인 체질량지수 측정 표준",
+    org: "미국 질병통제예방센터 (CDC)",
+    url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
+    desc: "성인 BMI 계산을 위한 CDC 표준 방정식."
+  },
+  {
+    title: "휴식 시 에너지 소비량 예측 공식 (Mifflin-St Jeor)",
+    org: "American Journal of Clinical Nutrition",
+    url: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    desc: "기초대사량(BMR) 계산을 위한 표준 임상 공식."
+  }
+];
+---
+
+<Layout 
+    title="학술 출처 및 참고문헌 | Real BMI"
+    description="Real BMI 계산기 공식 및 건강 위험 평가의 바탕이 되는 주요 학술 문헌과 의학적 출처를 확인하세요."
+>
+    <Navbar />
+    <PageShell
+      title="출처 및 참고문헌"
+      eyebrow="근거 기반 보건 과학"
+      description="계산기 및 검사 도구를 뒷받침하는 임상 연구 및 글로벌 가이드라인."
+      returnUrl="/ko"
+      returnLabel="홈"
+    >
+      <div class="space-y-8">
+        <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+          Real BMI의 모든 계산 공식과 기준 범위는 동료 평가를 거친 의학 문헌 및 글로벌 보건 기구의 공식 지침에 기반합니다.
+        </p>
+
+        <div class="grid gap-6">
+          {sources.map((src) => (
+            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs hover:border-[var(--accent)]/40 transition-all">
+              <div class="flex items-center justify-between gap-4 flex-wrap">
+                <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
+                  {src.org}
+                </span>
+                <a 
+                  href={src.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
+                >
+                  논문/문서 보기
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+              </div>
+              <h2 class="text-xl font-display font-bold text-[var(--foreground)]">{src.title}</h2>
+              <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{src.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </PageShell>
+</Layout>

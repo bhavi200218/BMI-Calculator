@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+---
+
+<Layout 
+    title="Política Editorial y Proceso de Revisión Médica | Real BMI"
+    description="Conozca los estándares editoriales clínicos de Real BMI, el proceso de revisión médica y nuestro compromiso con el análisis de salud basado en evidencia."
+>
+    <Navbar />
+    <PageShell
+      title="Política Editorial"
+      eyebrow="Precisión Clínica e Integridad"
+      description="Cómo Real BMI investiga, valida y mantiene herramientas de salud y contenido médico basados en evidencia."
+      returnUrl="/es"
+      returnLabel="Inicio"
+    >
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
+        <p>En <strong>Real BMI Calculator</strong>, nuestra misión es proporcionar análisis de salud precisos, transparentes y basados en evidencia para ayudar a las personas a comprender su índice de masa corporal, tasa metabólica basal, gasto energético diario total y factores de riesgo para la salud.</p>
+
+        <h2>1. Directrices Clínicas Basadas en Evidencia</h2>
+        <p>Todas las fórmulas, rangos de referencia y métricas de salud publicadas en Real BMI provienen de directrices clínicas oficiales establecidas por organizaciones médicas globales:</p>
+        <ul>
+          <li><strong>Organización Mundial de la Salud (OMS):</strong> Clasificaciones globales de obesidad y umbrales del índice de masa corporal.</li>
+          <li><strong>Centros para el Control y la Prevención de Enfermedades (CDC):</strong> Estándar de fórmulas de IMC para adultos y gráficos de percentiles de crecimiento.</li>
+          <li><strong>Institutos Nacionales de Salud (NIH):</strong> Evaluación de adiposidad abdominal y riesgo cardiovascular.</li>
+        </ul>
+
+        <h2>2. Consejo Asesor Médico y Revisión Editorial</h2>
+        <p>El contenido y la lógica de cálculo son creados y revisados periódicamente por nuestro equipo de profesionales de la salud y especialistas en datos clínicos:</p>
+        <ul>
+          <li><strong>Bhawanshi Dosi:</strong> Fundadora y Desarrolladora Principal</li>
+          <li><strong>Dr. Alistair Vance, MD:</strong> Director Médico y Revisor de Salud Metabólica</li>
+          <li><strong>Dr. Meera Thorne, PhD:</strong> Asesora de Fisiología del Ejercicio y Antropometría</li>
+        </ul>
+
+        <h2>3. Transparencia y Actualizaciones Continuas</h2>
+        <p>El conocimiento médico evoluciona continuamente. Actualizamos regularmente nuestras calculadoras y artículos según se publican nuevas directrices por las instituciones clínicas internacionales.</p>
+
+        <h2>4. Independencia e Integridad Comercial</h2>
+        <p>Real BMI opera como una herramienta independiente de análisis de salud. Nuestra orientación clínica está completamente libre de sesgos comerciales o influencia farmacéutica.</p>
+
+        <h2>5. Aviso Médico</h2>
+        <p>Las métricas proporcionadas por Real BMI son herramientas de evaluación educativa y no constituyen un diagnóstico médico formal ni sustituyen la consulta con un profesional de la salud calificado.</p>
+      </div>
+    </PageShell>
+</Layout>

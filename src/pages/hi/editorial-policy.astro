@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+---
+
+<Layout 
+    title="संपादकीय नीति और नैदानिक समीक्षा प्रक्रिया | Real BMI"
+    description="Real BMI की संपादकीय नीति, नैदानिक समीक्षा प्रक्रिया और वैज्ञानिक स्रोतों के बारे में जानें।"
+>
+    <Navbar />
+    <PageShell
+      title="संपादकीय नीति"
+      eyebrow="नैदानिक सटीकता और निष्पक्षता"
+      description="Real BMI अपने स्वास्थ्य उपकरणों और लेखों का सत्यापन कैसे करता है।"
+      returnUrl="/hi"
+      returnLabel="होम"
+    >
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
+        <p><strong>Real BMI कैलकुलेटर</strong> का उद्देश्य विश्वसनीय, पारदर्शी और प्रमाण-आधारित स्वास्थ्य विश्लेषण प्रदान करना है ताकि हर व्यक्ति अपने बीएमआई, बीएमआर और टीडीईई को आसानी से समझ सके।</p>
+
+        <h2>1. अंतर्राष्ट्रीय नैदानिक मानक</h2>
+        <p>सभी फॉर्मूले और संदर्भ श्रेणियां विश्व स्वास्थ्य संगठन (WHO), ICMR (भारतीय चिकित्सा अनुसंधान परिषद) और CDC के आधिकारिक दिशानिर्देशों पर आधारित हैं।</p>
+
+        <h2>2. चिकित्सा समीक्षा बोर्ड</h2>
+        <p>सामग्री और गणना एल्गोरिदम की समीक्षा स्वास्थ्य विशेषज्ञों द्वारा की जाती है:</p>
+        <ul>
+          <li><strong>Bhawanshi Dosi:</strong> संस्थापक एवं डेवलपर्स</li>
+          <li><strong>Dr. Alistair Vance, MD:</strong> मुख्य चिकित्सा निदेशक</li>
+        </ul>
+
+        <h2>3. चिकित्सा अस्वीकरण</h2>
+        <p>Real BMI द्वारा प्रदान की गई जानकारी केवल प्राथमिक जांच और शैक्षिक उद्देश्य के लिए है। यह डॉक्टरी सलाह या व्यक्तिगत निदान का विकल्प नहीं है।</p>
+      </div>
+    </PageShell>
+</Layout>

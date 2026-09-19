@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+
+const sources = [
+  {
+    title: "WHO Physical Status: The Use and Interpretation of Anthropometry",
+    org: "World Health Organization (WHO)",
+    url: "https://www.who.int/publications/i/item/9241544861",
+    desc: "Official report establishing global body mass index (BMI) categories and clinical cutoff benchmarks for adults."
+  },
+  {
+    title: "WHO Consultation on Obesity in Asia: Redefining BMI Cut-offs",
+    org: "WHO Western Pacific Region & IOTF",
+    url: "https://www.who.int/publications/i/item/9290611717",
+    desc: "Clinical consensus establishing lower BMI cutoff of 23.0 kg/m² for overweight risk in Asian and South Asian populations."
+  },
+  {
+    title: "CDC Adult Body Mass Index: Clinical Screening Standards",
+    org: "Centers for Disease Control and Prevention (CDC)",
+    url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
+    desc: "Official CDC standard equation for metric and imperial adult body mass index calculation."
+  },
+  {
+    title: "A New Predictive Equation for Resting Energy Expenditure in Healthy Individuals",
+    org: "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
+    url: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    desc: "The clinical Mifflin-St Jeor formula equation for calculating Basal Metabolic Rate (BMR) with ±10% clinical accuracy."
+  },
+  {
+    title: "US Navy Anthropometric Logarithmic Body Fat Equation",
+    org: "Naval Health Research Center (Hodgdon JA, Beckett WS)",
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/",
+    desc: "Logarithmic tape measurement equation correlating body fat percentage within 1.5% to 3.0% of DEXA scans."
+  },
+  {
+    title: "IDF International Consensus Statement on Abdominal Obesity & Metabolic Syndrome",
+    org: "International Diabetes Federation (IDF)",
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
+    desc: "Clinical waist circumference thresholds (>90cm men, >80cm women for Asian populations) for visceral fat risk."
+  },
+  {
+    title: "Oxford 2.5 Exponent Height-Adjusted BMI Formula Proposal",
+    org: "University of Oxford (Prof. Nick Trefethen)",
+    url: "https://people.maths.ox.ac.uk/trefethen/bmi.html",
+    desc: "Mathematical refinement compensating for 3D body volume height scaling distortion."
+  }
+];
+---
+
+<Layout 
+    title="Scientific Sources & Citations | Real BMI Research Standards"
+    description="Review primary scientific citations, clinical studies, and medical research behind Real BMI's formulas, BMR, TDEE, and WHO benchmarks."
+>
+    <Navbar />
+    <PageShell
+      title="Sources & References"
+      eyebrow="Evidence-Based Health Science"
+      description="Primary clinical studies, international guidelines, and peer-reviewed literature behind our calculators."
+      returnUrl="/en"
+      returnLabel="Home"
+    >
+      <div class="space-y-8">
+        <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+          At Real BMI, every calculation formula, reference range, and health insight is rooted in peer-reviewed medical literature and official guidelines from global health organizations.
+        </p>
+
+        <div class="grid gap-6">
+          {sources.map((src) => (
+            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs hover:border-[var(--accent)]/40 transition-all">
+              <div class="flex items-center justify-between gap-4 flex-wrap">
+                <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
+                  {src.org}
+                </span>
+                <a 
+                  href={src.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
+                >
+                  View Publication
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+              </div>
+              <h2 class="text-xl font-display font-bold text-[var(--foreground)]">{src.title}</h2>
+              <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{src.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </PageShell>
+</Layout>
