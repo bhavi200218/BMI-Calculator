@@ -85,7 +85,7 @@ const webAppSchema = {
           {calc.slug === 'new-bmi-calculator' ? (lang === 'hi' ? '3D व्यू के साथ अपना BMI कैलकुलेट करें' : 'Calculate Your BMI with 3D View') : (calc.name[lang] || calc.name['en'])}
         </h1>
         <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-sans font-medium animate-in max-w-xl mx-auto" style="animation-delay:50ms">
-          {calc.slug === 'new-bmi-calculator' ? (calc.description[lang] || calc.description.en) : `${pageDesc} ${localizedIntro[lang] || localizedIntro.en}`}
+          {pageDesc}
         </p>
       </div>
 
