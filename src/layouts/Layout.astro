@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
+import { calculators } from '../utils/calculators';
 
 interface Props {
 	title: string;
@@ -36,7 +37,10 @@ const breadcrumbItems: any[] = [];
 if (pagePath.length > 0) {
   const segments = pagePath[0] && ['en', 'es', 'fr', 'de', 'ko', 'hi'].includes(pagePath[0]) ? pagePath.slice(1) : pagePath;
   segments.forEach((segment, index) => {
-    const name = segment.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+    const foundCalc = calculators.find((c: any) => c.slug === segment);
+    const name = foundCalc 
+      ? (foundCalc.name[currentLocale || 'en'] || foundCalc.name['en']) 
+      : segment.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
     const rawItemUrl = `https://realbmicalculator.com${Astro.url.pathname.split('/').slice(0, index + 1 + (pagePath[0] && ['en', 'es', 'fr', 'de', 'ko', 'hi'].includes(pagePath[0]) ? 1 : 0)).join('/')}`;
     breadcrumbItems.push({
       '@type': 'ListItem',

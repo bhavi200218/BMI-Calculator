@@ -93,7 +93,7 @@ export const calculators: CalculatorConfig[] = [
     }
   },
   {
-    slug: 'new-bmi-calculator',
+    slug: '3d-bmi-calculator',
     name: { en: '3D BMI Calculator', es: 'Calculadora IMC 3D', fr: 'Calculateur IMC 3D', de: '3D BMI Rechner', ko: '3D BMI 계산기', hi: '3D बीएमआई कैलकुलेटर' },
     title: { en: '3D BMI Calculator & 3D Body Visualizer – Free Interactive 3D Model', es: 'Calculadora de IMC 3D y Visualizador Corporal 3D Gratuito', fr: 'Calculateur IMC 3D et Visualiseur Corporel 3D Interactif', de: '3D BMI Rechner & Interaktiver 3D-Körper-Visualisierer', ko: '3D BMI 계산기 및 대화형 3D 체형 시각화 도구', hi: '3D बीएमआई कैलकुलेटर और 3D बॉडी विजुअलाइज़र' },
     description: { 
