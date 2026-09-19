@@ -26,58 +26,93 @@ export const blogArticles: Record<string, any> = {
     },
     contentHtml: {
       en: `
-        <h2>What is BMI?</h2>
-        <p>Body Mass Index (BMI) is a universal clinical screening metric that evaluates body weight relative to height (expressed as kg/m²). It helps healthcare professionals and individuals quickly determine weight categories.</p>
-        <h2>BMI Formula</h2>
-        <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed">
-          <p class="font-bold text-[var(--accent)] mb-2">Metric Formula (Kilograms & Meters):</p>
-          <p class="text-[var(--foreground)] font-bold">BMI = Weight (kg) / [Height (m)]²</p>
+        <h2>Overview of BMI for Indian & South Asian Populations</h2>
+        <p>Body Mass Index (BMI) is an internationally recognized clinical screening tool that measures total body mass relative to height squared (expressed as kg/m²). However, clinical consensus published by the <strong>World Health Organization (WHO)</strong>, the <strong>Indian Council of Medical Research (ICMR)</strong>, and the <strong>Diabetes India Consensus Group</strong> confirms that standard Western BMI cut-offs fail to diagnose health risks in South Asian individuals accurately.</p>
+        <p>In South Asian and Indian adults, metabolic disorders—such as Type 2 Diabetes, hypertension, fatty liver disease, and coronary artery disease—manifest at significantly lower BMI levels compared to Western populations. As a result, the WHO South-East Asia Regional Office established revised BMI classifications tailored specifically to Indian physiology.</p>
+
+        <h2>Why 23.0 kg/m² is Overweight in India (The WHO Asian Cut-off)</h2>
+        <p>Under Western BMI standards, a BMI of 25.0 kg/m² marks the start of the overweight category. However, for Indians and South Asians, clinical research shows that metabolic risk begins at a lower cutoff of <strong>23.0 kg/m²</strong>.</p>
+        <p>The primary driver behind this disparity is body composition: South Asian populations exhibit the <em>"Thin-Fat Phenotype"</em> (TOFI - Thin Outside, Fat Inside). Indian individuals tend to have a higher body fat percentage and greater abdominal visceral adiposity (deep internal fat surrounding abdominal organs) at identical BMI numbers compared to Caucasians, combined with lower skeletal muscle mass.</p>
+
+        <h2>WHO & ICMR Indian BMI Classification Chart</h2>
+        <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[var(--border)] bg-[var(--muted)] text-[var(--foreground)] font-bold">
+                <th class="p-3">Category</th>
+                <th class="p-3">Standard Western Cut-off</th>
+                <th class="p-3 text-[var(--accent)] font-extrabold">WHO Asian / Indian Cut-off</th>
+                <th class="p-3">Clinical Risk Profile</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--border)]">
+              <tr>
+                <td class="p-3 font-semibold">Underweight</td>
+                <td class="p-3 font-mono">&lt; 18.5 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">&lt; 18.5 kg/m²</td>
+                <td class="p-3">Nutritional deficiency &amp; low muscle density</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Normal / Healthy Weight</td>
+                <td class="p-3 font-mono">18.5 – 24.9 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 22.9 kg/m²</td>
+                <td class="p-3">Optimal metabolic baseline</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Overweight (Increased Risk)</td>
+                <td class="p-3 font-mono">25.0 – 29.9 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">23.0 – 27.4 kg/m²</td>
+                <td class="p-3">Moderate risk for Type 2 Diabetes &amp; fatty liver</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Obesity Class I (High Risk)</td>
+                <td class="p-3 font-mono">30.0 – 34.9 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">27.5 – 32.4 kg/m²</td>
+                <td class="p-3">High risk for cardiovascular strain &amp; hypertension</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Obesity Class II (Very High Risk)</td>
+                <td class="p-3 font-mono">≥ 35.0 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">≥ 32.5 kg/m²</td>
+                <td class="p-3">Severe clinical metabolic risk</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+
+        <h2>How to Calculate BMI for Indian Adults</h2>
+        <p>Calculating your BMI uses the standard metric equation:</p>
+        <div class="my-6 p-6 rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 font-mono text-sm leading-relaxed">
+          <p class="font-bold text-[var(--accent)] mb-1">Metric Formula Equation:</p>
+          <p class="text-[var(--foreground)] font-bold text-base">BMI = Weight (kg) / [Height (m)]²</p>
+          <p class="text-xs text-[var(--muted-foreground)] mt-2">Example: For an adult weighing 68 kg with a height of 170 cm (1.70 m): 68 / (1.70 × 1.70) = 23.53 kg/m² (Classified as Overweight under WHO Asian cut-offs).</p>
+        </div>
+
+        <h2>Waist Circumference Cut-offs for South Asians</h2>
+        <p>In addition to computing your BMI score, medical consensus strongly recommends measuring your waist circumference. Abdominal visceral fat carries a much stronger correlation with Type 2 Diabetes and heart disease than total scale weight.</p>
+        <ul>
+          <li><strong>Indian Men:</strong> High risk cutoff is <strong>&gt; 90 cm (35 inches)</strong></li>
+          <li><strong>Indian Women:</strong> High risk cutoff is <strong>&gt; 80 cm (31.5 inches)</strong></li>
+        </ul>
+        <p>If your BMI exceeds 23.0 kg/m² or your waist circumference exceeds these clinical thresholds, physicians recommend scheduling annual blood glucose (HbA1c) and lipid profile tests.</p>
+
+        <h2>Summary & Next Steps</h2>
+        <p>Maintaining a healthy BMI score between <strong>18.5 and 22.9 kg/m²</strong>, eating a whole-food diet rich in protein and fiber, and completing 150 minutes of aerobic and strength exercise weekly are essential for long-term health in South Asian adults.</p>
       `,
       hi: `
-        <h2>बीएमआई (BMI) क्या है?</h2>
-        <p>बॉडी मास इंडेक्स (BMI) एक अंतरराष्ट्रीय नैदानिक मापदंड है जो ऊंचाई के अनुपात में शरीर के वजन का मूल्यांकन करता है।</p>
-        <h2>बीएमआई फॉर्मूला (BMI Formula)</h2>
-        <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed">
-          <p class="font-bold text-[var(--accent)] mb-2">मीट्रिक फॉर्मूला (किलोग्राम और मीटर):</p>
-          <p class="text-[var(--foreground)] font-bold">BMI = वजन (kg) / [ऊंचाई (m)]²</p>
-        </div>
-      `,
-      ko: `
-        <h2>BMI(체질량지수)란 무엇인가요?</h2>
-        <p>체질량지수(BMI)는 키 대비 체중을 평가하는 글로벌 임상 스크리닝 지표(kg/m²)입니다.</p>
-        <h2>BMI 계산 공식</h2>
-        <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed">
-          <p class="font-bold text-[var(--accent)] mb-2">미터법 공식 (킬로그램 & 미터):</p>
-          <p class="text-[var(--foreground)] font-bold">BMI = 체중 (kg) / [키 (m)]²</p>
-        </div>
-      `,
-      de: `
-        <h2>Was ist der BMI?</h2>
-        <p>Der Body-Mass-Index (BMI) ist ein weltweit anerkannter klinischer Messwert zur Beurteilung des Körpergewichts im Verhältnis zur Körpergröße (kg/m²).</p>
-        <h2>BMI-Berechnungsformel</h2>
-        <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed">
-          <p class="font-bold text-[var(--accent)] mb-2">Metrische Formel (Kilogramm & Meter):</p>
-          <p class="text-[var(--foreground)] font-bold">BMI = Gewicht (kg) / [Größe (m)]²</p>
-        </div>
-      `,
-      es: `
-        <h2>¿Qué es el IMC?</h2>
-        <p>El Índice de Masa Corporal (IMC) es una métrica de evaluación clínica universal que evalúa el peso corporal en relación con la estatura (kg/m²).</p>
-        <h2>Fórmula del IMC</h2>
-        <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed">
-          <p class="font-bold text-[var(--accent)] mb-2">Fórmula Métrica (Kilogramos y Metros):</p>
-          <p class="text-[var(--foreground)] font-bold">IMC = Peso (kg) / [Estatura (m)]²</p>
-        </div>
-      `,
-      fr: `
-        <h2>Qu'est-ce que l'IMC ?</h2>
-        <p>L'Indice de Masse Corporelle (IMC) est un indicateur médical universel permettant d'évaluer le poids par rapport à la taille (kg/m²).</p>
-        <h2>Formule de Calcul de l'IMC</h2>
-        <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed">
-          <p class="font-bold text-[var(--accent)] mb-2">Formule Métrique (Kilogrammes & Mètres) :</p>
-          <p class="text-[var(--foreground)] font-bold">IMC = Poids (kg) / [Taille (m)]²</p>
-        </div>
+        <h2>भारतीयों के लिए बीएमआई का महत्व</h2>
+        <p>बॉडी मास इंडेक्स (BMI) एक अंतरराष्ट्रीय नैदानिक मापदंड है जो ऊंचाई के अनुपात में शरीर के वजन का मूल्यांकन करता है। हालांकि, विश्व स्वास्थ्य संगठन (WHO) और इंडियन काउंसिल ऑफ मेडिकल रिसर्च (ICMR) के अनुसार, भारतीयों के लिए बीएमआई की सीमाएं सामान्य पश्चिमी मानकों से अलग हैं।</p>
+        
+        <h2>भारत में 23.0 kg/m² पर ओवरवेट क्यों माना जाता है?</h2>
+        <p>पश्चिमी देशों में 25.0 kg/m² को ओवरवेट माना जाता है, लेकिन भारतीय आबादी में 23.0 kg/m² पर ही टाइप 2 डायबिटीज और हृदय रोग का खतरा शुरू हो जाता है। इसका मुख्य कारण <em>"थिन-फैट फेनोटाइप"</em> है, जिसमें वजन कम दिखने के बावजूद पेट के अंदरूनी अंगों में वसा (विस्कल फैट) अधिक जमा होती है।</p>
+
+        <h2>डब्ल्यूएचओ एशियाई बीएमआई तालिका</h2>
+        <ul>
+          <li><strong>कम वजन (Underweight):</strong> 18.5 kg/m² से कम</li>
+          <li><strong>सामान्य वजन (Normal Weight):</strong> 18.5 – 22.9 kg/m²</li>
+          <li><strong>अधिक वजन (Overweight):</strong> 23.0 – 27.4 kg/m²</li>
+          <li><strong>मोटापा (Obesity):</strong> 27.5 kg/m² या अधिक</li>
+        </ul>
       `
     }
   },
@@ -100,556 +135,239 @@ export const blogArticles: Record<string, any> = {
       fr: 'Bases Cliniques'
     },
     description: {
-      en: 'Understand Body Mass Index (BMI). Learn what BMI means, how it is calculated, official WHO categories, clinical limitations, and health implications.',
-      hi: 'बॉडी मास इंडेक्स (BMI) को विस्तार से समझें। बीएमआई का क्या अर्थ है, इसे कैसे मापा जाता है और इसका स्वास्थ्य महत्व क्या है।',
-      ko: '체질량지수(BMI)의 정의와 공식, WHO 공식 지침 범주, 임상적 한계점 및 건강 의미를 자세히 알아보세요.',
-      de: 'Verstehen Sie den Body-Mass-Index (BMI), offizielle WHO-Kategorien, klinische Grenzen und gesundheitliche Bedeutung.',
-      es: 'Comprende el Índice de Masa Corporal (IMC), categorías oficiales de la OMS, limitaciones clínicas e implicaciones para la salud.',
-      fr: 'Comprenez l\'Indice de Masse Corporelle (IMC), les catégories officielles de l\'OMS, les limites cliniques et les risques pour la santé.'
+      en: 'Comprehensive 2026 guide to Body Mass Index (BMI). Understand what BMI is, how it is calculated, WHO scale ranges, and what your score means.',
+      hi: 'बॉडी मास इंडेक्स (BMI) की संपूर्ण गाइड। जानें कि बीएमआई क्या है, इसकी गणना कैसे की जाती है और डब्ल्यूएचओ श्रेणियां।',
+      ko: '체질량지수(BMI) 2026 종합 가이드. BMI의 정의, 계산 법, WHO 진단 범주 및 점수의 의미.',
+      de: 'Umfassender BMI-Leitfaden 2026. Was der BMI ist, wie er berechnet wird und was Ihr Wert bedeutet.',
+      es: 'Guía completa sobre el Índice de Masa Corporal (IMC). Qué es, cómo se calcula y rangos de la OMS.',
+      fr: 'Guide complet sur l\'Indice de Masse Corporelle (IMC). Définition, calcul et plages de l\'OMS.'
     },
     contentHtml: {
       en: `
-        <h2>What is BMI (Body Mass Index)?</h2>
-        <p>Body Mass Index (BMI) is a standardized mathematical metric used worldwide by clinical practitioners to assess weight relative to height.</p>
-        <h2>WHO BMI Categories</h2>
-        <ul class="list-disc pl-6 space-y-2 my-4">
-          <li><strong>Underweight:</strong> &lt; 18.5 kg/m²</li>
-          <li><strong>Healthy Weight:</strong> 18.5 – 24.9 kg/m²</li>
-          <li><strong>Overweight:</strong> 25.0 – 29.9 kg/m²</li>
-          <li><strong>Obesity:</strong> ≥ 30.0 kg/m²</li>
+        <h2>What is Body Mass Index (BMI)?</h2>
+        <p><strong>Body Mass Index (BMI)</strong> is a statistical and clinical health screening metric that compares an adult's body weight to their height. Developed in the 19th century by Belgian mathematician and statistician <em>Adolphe Quetelet</em>, BMI provides a quick, standardized method to categorize individuals into distinct weight brackets: Underweight, Healthy Weight, Overweight, and Obese.</p>
+        <p>Today, major global medical organizations—including the <strong>World Health Organization (WHO)</strong> and the <strong>Centers for Disease Control and Prevention (CDC)</strong>—utilize BMI as an initial population screening tool to identify potential health risks associated with undernutrition or excess body fat.</p>
+
+        <h2>How is BMI Calculated? (The Official Formula)</h2>
+        <p>BMI is computed by dividing an individual's mass in kilograms by the square of their height in meters. It can also be calculated using imperial measurements (pounds and inches) with a conversion factor of 703.</p>
+
+        <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-4">
+          <div>
+            <p class="font-bold text-[var(--accent)] text-sm uppercase tracking-wider">1. Metric BMI Formula Equation:</p>
+            <p class="text-[var(--foreground)] font-mono font-bold text-lg">BMI = Weight (kg) ÷ [Height (m)]²</p>
+          </div>
+          <hr class="border-[var(--border)]" />
+          <div>
+            <p class="font-bold text-[var(--accent)] text-sm uppercase tracking-wider">2. Imperial BMI Formula Equation:</p>
+            <p class="text-[var(--foreground)] font-mono font-bold text-lg">BMI = [Weight (lbs) ÷ Height (inches)²] × 703</p>
+          </div>
+        </div>
+
+        <h2>WHO Adult BMI Scale & Health Categories</h2>
+        <p>For most general adult populations aged 20 and older, the World Health Organization classifies BMI scores into four major categories:</p>
+        
+        <ul>
+          <li><strong>Underweight (&lt; 18.5 kg/m²):</strong> Indicates low body mass relative to height. May correlate with nutrient deficiencies, compromised immune function, and lower bone density.</li>
+          <li><strong>Healthy Weight (18.5 – 24.9 kg/m²):</strong> Represents the statistically optimal weight range associated with the lowest overall mortality and chronic disease risk.</li>
+          <li><strong>Overweight (25.0 – 29.9 kg/m²):</strong> Indicates moderate excess body weight. Associated with elevated risk for Type 2 Diabetes, hypertension, and cardiovascular strain.</li>
+          <li><strong>Obesity Class I to III (≥ 30.0 kg/m²):</strong> Indicates significant excess adiposity requiring clinical monitoring for metabolic and cardiovascular conditions.</li>
         </ul>
+
+        <h2>What BMI Does Not Measure</h2>
+        <p>While BMI is highly effective for rapid population screening, it has recognized clinical limitations for individual diagnosis:</p>
+        <ol>
+          <li><strong>Does Not Differentiate Muscle from Fat:</strong> Muscle tissue is substantially denser than adipose fat. Muscular athletes often register high BMI scores despite having low body fat.</li>
+          <li><strong>Does Not Measure Fat Distribution:</strong> Abdominal visceral fat poses a much higher cardiovascular risk than subcutaneous fat on the hips or legs. BMI cannot measure waist circumference.</li>
+          <li><strong>Ignores Age and Sex Variances:</strong> Women naturally carry higher physiological fat levels than men, and older seniors naturally lose skeletal muscle mass.</li>
+        </ol>
+
+        <h2>How to Use BMI Effectively</h2>
+        <p>To get a complete view of your metabolic health, clinicians recommend pairing your BMI score with your <strong>Waist-to-Height Ratio (WHtR)</strong>, <strong>Basal Metabolic Rate (BMR)</strong>, and daily calorie expenditure (<strong>TDEE</strong>).</p>
       `,
       hi: `
-        <h2>बीएमआई (Body Mass Index) क्या है?</h2>
-        <p>बॉडी मास इंडेक्स (बीएमआई) दुनिया भर में डॉक्टरों द्वारा इस्तेमाल किया जाने वाला एक मापदंड है।</p>
-        <h2>डब्ल्यूएचओ (WHO) बीएमआई श्रेणियां</h2>
-        <ul class="list-disc pl-6 space-y-2 my-4">
-          <li><strong>कम वजन:</strong> 18.5 से कम</li>
-          <li><strong>सामान्य वजन:</strong> 18.5 – 24.9</li>
-          <li><strong>अधिक वजन:</strong> 25.0 – 29.9</li>
-          <li><strong>मोटापा:</strong> 30.0 या अधिक</li>
-        </ul>
-      `,
-      ko: `
-        <h2>BMI(체질량지수)의 정의</h2>
-        <p>체질량지수(BMI)는 키 대비 체중을 측정하는 세계적인 임상 기준입니다.</p>
-        <h2>WHO 기준 BMI 범주</h2>
-        <ul class="list-disc pl-6 space-y-2 my-4">
-          <li><strong>저체중:</strong> 18.5 미만</li>
-          <li><strong>정상 체중:</strong> 18.5 – 24.9 (아시아인 18.5 – 22.9)</li>
-          <li><strong>과체중:</strong> 25.0 – 29.9 (아시아인 23.0 – 24.9)</li>
-          <li><strong>비만:</strong> 30.0 이상</li>
-        </ul>
-      `,
-      de: `
-        <h2>Was ist der BMI (Body-Mass-Index)?</h2>
-        <p>Der Body-Mass-Index (BMI) ist ein standardisierter mathematischer Wert, der weltweit von Ärzten verwendet wird, um das Gewicht im Verhältnis zur Größe zu bewerten.</p>
-        <h2>WHO BMI-Kategorien</h2>
-        <ul class="list-disc pl-6 space-y-2 my-4">
-          <li><strong>Untergewicht:</strong> &lt; 18,5 kg/m²</li>
-          <li><strong>Normalgewicht:</strong> 18,5 – 24,9 kg/m²</li>
-          <li><strong>Übergewicht:</strong> 25,0 – 29,9 kg/m²</li>
-          <li><strong>Adipositas:</strong> ≥ 30,0 kg/m²</li>
-        </ul>
-      `,
-      es: `
-        <h2>¿Qué es el IMC (Índice de Masa Corporal)?</h2>
-        <p>El Índice de Masa Corporal (IMC) es una métrica matemática estandarizada utilizada en todo el mundo por profesionales médicos para evaluar el peso en relación con la estatura.</p>
-        <h2>Categorías de IMC de la OMS</h2>
-        <ul class="list-disc pl-6 space-y-2 my-4">
-          <li><strong>Bajo peso:</strong> &lt; 18.5 kg/m²</li>
-          <li><strong>Peso saludable:</strong> 18.5 – 24.9 kg/m²</li>
-          <li><strong>Sobrepeso:</strong> 25.0 – 29.9 kg/m²</li>
-          <li><strong>Obesidad:</strong> ≥ 30.0 kg/m²</li>
-        </ul>
-      `,
-      fr: `
-        <h2>Qu'est-ce que l'IMC (Indice de Masse Corporelle) ?</h2>
-        <p>L'Indice de Masse Corporelle (IMC) est un indicateur mathématique standardisé utilisé par les médecins pour évaluer le poids par rapport à la taille.</p>
-        <h2>Catégories d'IMC selon l'OMS</h2>
-        <ul class="list-disc pl-6 space-y-2 my-4">
-          <li><strong>Insuffisance pondérale :</strong> &lt; 18,5 kg/m²</li>
-          <li><strong>Poids normal :</strong> 18,5 – 24,9 kg/m²</li>
-          <li><strong>Surpoids :</strong> 25,0 – 29,9 kg/m²</li>
-          <li><strong>Obésité :</strong> ≥ 30,0 kg/m²</li>
+        <h2>बीएमआई (BMI) क्या है?</h2>
+        <p>बॉडी मास इंडेक्स (BMI) एक सांख्यिकीय और नैदानिक स्वास्थ्य उपकरण है जो व्यक्ति के वजन की तुलना उसकी ऊंचाई से करता है। विश्व स्वास्थ्य संगठन (WHO) और सीडीसी (CDC) इसका उपयोग पोषण और वजन संबंधी जोखिमों की जांच के लिए करते हैं।</p>
+
+        <h2>बीएमआई की गणना कैसे की जाती है?</h2>
+        <p>बीएमआई की गणना वजन (किग्रा में) को ऊंचाई के वर्ग (मीटर में) से विभाजित करके की जाती है:</p>
+        <p><strong>BMI = वजन (kg) ÷ [ऊंचाई (m)]²</strong></p>
+
+        <h2>डब्ल्यूएचओ बीएमआई श्रेणियां</h2>
+        <ul>
+          <li><strong>कम वजन (Underweight):</strong> 18.5 से कम</li>
+          <li><strong>सामान्य वजन (Healthy Weight):</strong> 18.5 से 24.9</li>
+          <li><strong>अधिक वजन (Overweight):</strong> 25.0 से 29.9</li>
+          <li><strong>मोटापा (Obesity):</strong> 30.0 या अधिक</li>
         </ul>
       `
     }
   },
 
-  'bmi-calculator-for-men': {
+  'is-bmi-accurate': {
     title: {
-      en: 'BMI Calculator for Men: Healthy Ranges, Muscle Mass & Chart Guide',
-      hi: 'पुरुषों के लिए बीएमआई कैलकुलेटर: स्वस्थ सीमा और संपूर्ण गाइड',
-      ko: '남성용 BMI 계산기: 건강 범위, 근육량 및 차트 가이드',
-      de: 'BMI-Rechner für Männer: Gesunde Bereiche, Muskelmasse & Leitfaden',
-      es: 'Calculadora de IMC para Hombres: Rangos Saludables y Masa Muscular',
-      fr: 'Calculateur d\'IMC pour Hommes : Plages Santé et Masse Musculaire'
+      en: 'Is BMI Accurate? Clinical Evidence, Flaws & Oxford 2.5 Power Formula',
+      hi: 'क्या बीएमआई सटीक है? नैदानिक साक्ष्य, सीमाएं और 2.5 घात फॉर्मूला',
+      ko: 'BMI는 정확한가요? 임상 증거, 한계 및 옥스포드 2.5 보정 공식',
+      de: 'Ist der BMI genau? Klinische Fakten, Mängel & Oxford 2.5 Formel',
+      es: '¿Es Preciso el IMC? Evidencia Clínica, Limitaciones y Fórmula 2.5',
+      fr: 'L\'IMC est-il Précis ? Preuves Cliniques, Limites et Formule 2.5'
     },
     category: {
-      en: 'Men\'s Health',
-      hi: 'पुरुष स्वास्थ्य',
-      ko: '남성 건강',
-      de: 'Männergesundheit',
-      es: 'Salud Masculina',
-      fr: 'Santé des Hommes'
+      en: 'Medical Debate',
+      hi: 'चिकित्सीय बहस',
+      ko: '의학적 논쟁',
+      de: 'Medizinische Analyse',
+      es: 'Debate Médico',
+      fr: 'Débat Médical'
     },
     description: {
-      en: 'Complete guide to BMI for men. Learn male body composition traits, healthy BMI ranges, muscle density factors, and get instant calculations.',
-      hi: 'पुरुषों के लिए बीएमआई की गाइड। पुरुषों के बॉडी कंपोज़िशन, मसल मास और बीएमआई चार्ट की पूरी जानकारी।',
-      ko: '남성을 위한 BMI 완벽 가이드. 남성 체성분 특징, 건강한 BMI 범위, 근육 밀도 요소 및 즉시 계산 방법.',
-      de: 'Vollständiger Leitfaden zum BMI für Männer. Erfahren Sie mehr über männliche Körperzusammensetzung, Muskeldichte und gesunde Bereiche.',
-      es: 'Guía completa del IMC para hombres. Aprende sobre composición corporal masculina, densidad muscular y rangos saludables.',
-      fr: 'Guide complet de l\'IMC pour hommes. Découvrez la composition corporelle masculine, la densité musculaire et les plages recommandées.'
+      en: 'Is BMI actually accurate for your body? Read 2026 medical evidence on muscle density flaws, Oxford height scaling formula, and WHO ethnic guidelines.',
+      hi: 'क्या बीएमआई आपके लिए सटीक है? मांसपेशियों के घनत्व, ऊंचाई के भ्रम और डब्ल्यूएचओ दिशानिर्देशों पर 2026 का साक्ष्य पढ़ें।',
+      ko: 'BMI가 내 몸에 정말 정확할까요? 근육 밀도 한계, 옥스포드 신장 보정 공식 및 2026 임상 연구 결과.',
+      de: 'Ist der BMI für Ihren Körper wirklich genau? Lesen Sie klinische Fakten zu Muskeldichte und Höhenskalierung.',
+      es: '¿Es el IMC realmente preciso para tu cuerpo? Lee la evidencia médica sobre densidad muscular y escala de altura.',
+      fr: 'L\'IMC est-il vraiment précis pour votre corps ? Découvrez les preuves médicales sur la masse musculaire et la taille.'
     },
     contentHtml: {
       en: `
-        <h2>Understanding BMI in Men</h2>
-        <p>Male physiological characteristics carry higher skeletal muscle mass and lower essential fat percentages than female biology.</p>
+        <h2>Is BMI Accurate? The Truth About Standard Weight Scales</h2>
+        <p>Millions of people calculate their Body Mass Index (BMI) daily and ask a fundamental question: <strong>Is BMI actually accurate for my unique body type?</strong></p>
+        <p>The short answer: <em>BMI is an excellent population-level screening metric, but it contains major mathematical and physiological flaws when applied to individual health evaluation.</em> Medical research published in journals such as the <em>Lancet</em> and <em>Nature Medicine</em> highlights key areas where standard BMI distorts reality.</p>
+
+        <h2>Flaw #1: The Muscular Athlete Paradox (Muscle vs. Adipose Fat)</h2>
+        <p>Standard BMI treats every kilogram of mass identically. However, skeletal muscle tissue is significantly denser and heavier per unit of volume than adipose fat tissue. As a result, bodybuilders, weightlifters, and muscular athletes frequently register as "Overweight" or "Obese" on standard BMI charts despite having extremely healthy low body fat levels (6–12%).</p>
+
+        <h2>Flaw #2: 2D Height Scaling Distortion & The Oxford 2.5 Formula</h2>
+        <p>The standard BMI formula (<code>weight / height²</code>) divides mass by height squared. Mathematically, dividing by height squared assumes human body volume scales in two dimensions (like a flat square). In reality, humans grow three-dimensionally.</p>
+        <p>Oxford mathematician <strong>Nick Trefethen</strong> demonstrated that standard 2D scaling penalizes tall adults (making tall people look heavier than they are) while undercounting fatness in short adults. He proposed the modernized <strong>3D Height-Adjusted BMI Formula</strong>:</p>
+
+        <div class="my-6 p-6 rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 font-mono text-sm leading-relaxed">
+          <p class="font-bold text-[var(--accent)] mb-1">Oxford 3D Height-Adjusted Equation:</p>
+          <p class="text-[var(--foreground)] font-bold text-base">3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵</p>
+        </div>
+
+        <h2>Flaw #3: Ignoring Abdominal Visceral Fat (Central Obesity)</h2>
+        <p>BMI measures total scale weight, not fat location. Subcutaneous fat stored on the hips or thighs is relatively benign. In contrast, <strong>visceral fat</strong> stored deep inside the abdominal cavity surrounding vital organs secretes inflammatory cytokines that directly cause cardiovascular disease and insulin resistance.</p>
+        <p>Up to 15% of adults with a "Normal" BMI have elevated waist circumferences, carrying significant hidden metabolic risk (the <em>"Normal Weight Obesity"</em> paradox).</p>
+
+        <h2>Flaw #4: Ignoring Ethnic Body Composition Differences</h2>
+        <p>World Health Organization (WHO) clinical data shows Asian and South Asian populations accumulate higher percentages of visceral fat at lower body mass indexes compared to Caucasians. This is why the WHO revised overweight cut-offs for Asian adults from 25.0 kg/m² down to <strong>23.0 kg/m²</strong>.</p>
+
+        <h2>What You Should Use Instead of Plain BMI</h2>
+        <p>Leading clinicians recommend evaluating three complementary metrics for a true health snapshot:</p>
+        <ol>
+          <li><strong>BMI Score:</strong> For baseline stature screening.</li>
+          <li><strong>Waist-to-Height Ratio (WHtR):</strong> Keep your waist circumference to less than half your height (Waist ÷ Height &lt; 0.5).</li>
+          <li><strong>BMR &amp; TDEE:</strong> To determine daily caloric intake needs.</li>
+        </ol>
       `,
       hi: `
-        <h2>पुरुषों में बीएमआई (BMI) को समझें</h2>
-        <p>महिलाओं की तुलना में पुरुषों में मांसपेशियों की मात्रा और हड्डियों का घनत्व अधिक होता है।</p>
-      `,
-      ko: `
-        <h2>남성의 BMI 이해하기</h2>
-        <p>남성은 골격근량이 많고 필수 체지방 비율이 낮으므로 근육 밀도를 함께 고려하는 것이 바람직합니다.</p>
-      `,
-      de: `
-        <h2>Den BMI bei Männern verstehen</h2>
-        <p>Männer besitzen im Durchschnitt eine höhere Muskelmasse und geringere essenzielle Fettanteile als Frauen. Bei sportlichen Männern sollte der BMI zusammen mit dem Taifenumfang betrachtet werden.</p>
-      `,
-      es: `
-        <h2>Comprender el IMC en Hombres</h2>
-        <p>Los hombres poseen una mayor masa muscular esquelética y menor porcentaje de grasa esencial. En hombres activos, se recomienda evaluar el IMC junto con la circunferencia de cintura.</p>
-      `,
-      fr: `
-        <h2>Comprendre l'IMC chez les Hommes</h2>
-        <p>Les hommes possèdent en moyenne une masse musculaire plus élevée et un pourcentage de graisse essentielle plus faible. Pour les sportifs, l'IMC doit être complété par le tour de taille.</p>
+        <h2>क्या बीएमआई (BMI) सटीक है?</h2>
+        <p>बीएमआई एक बेहतरीन प्राथमिक जांच मीट्रिक है, लेकिन जब इसे व्यक्तिगत स्वास्थ्य पर लागू किया जाता है तो इसमें कई शारीरिक और गणितीय सीमाएं पाई जाती हैं।</p>
+
+        <h2>बीएमआई की प्रमुख सीमाएं:</h2>
+        <ul>
+          <li><strong>मांसपेशियों और फैट में अंतर न करना:</strong> मांसपेशियां फैट से घनी होती हैं। एथलीट अक्सर कम फैट के बावजूद 'ओवरवेट' श्रेणी में आ जाते हैं।</li>
+          <li><strong>पेट की अंदरूनी वसा (Visceral Fat) की अनदेखी:</strong> बीएमआई यह नहीं बताता कि फैट कमर पर जमा है या पैरों पर।</li>
+          <li><strong>ऊंचाई का भ्रम:</strong> मानक फॉर्मूला लंबे लोगों को अधिक वजन का दिखाता है। इसके लिए ऑक्सफोर्ड 2.5 फॉर्मूला का उपयोग किया जाता है।</li>
+        </ul>
       `
     }
   },
 
-  'bmi-calculator-for-women': {
+  'bmr-vs-tdee-calculator': {
     title: {
-      en: 'BMI Calculator for Women: Essential Fat, Pregnancy & Health Ranges',
-      hi: 'महिलाओं के लिए बीएमआई कैलकुलेटर: स्वास्थ्य सीमाएं और गाइड',
-      ko: '여성용 BMI 계산기: 필수 지방, 임신 및 건강 범위',
-      de: 'BMI-Rechner für Frauen: Essentielles Fett, Schwangerschaft & Richtwerte',
-      es: 'Calculadora de IMC para Mujeres: Grasa Esencial y Rangos de Salud',
-      fr: 'Calculateur d\'IMC pour Femmes : Graisse Essentielle et Plages Santé'
+      en: 'BMR vs. TDEE Calculator: Key Differences & Weight Loss Math',
+      hi: 'बीएमआर बनाम टीडीईई कैलकुलेटर: मुख्य अंतर और वजन घटाने का फॉर्मूला',
+      ko: 'BMR vs TDEE 계산기: 핵심 차이점 및 다이어트 칼로리 계산',
+      de: 'BMR vs. TDEE Rechner: Unterschiede & Kalorienbedarf zum Abnehmen',
+      es: 'Calculadora de BMR vs TDEE: Diferencias y Cálculo de Calorías',
+      fr: 'Calculateur BMR vs TDEE : Différences et Calcul des Calories'
     },
     category: {
-      en: 'Women\'s Health',
-      hi: 'महिला स्वास्थ्य',
-      ko: '여성 건강',
-      de: 'Frauengesundheit',
-      es: 'Salud Femenina',
-      fr: 'Santé des Femmes'
+      en: 'Metabolic Science',
+      hi: 'चयापचय विज्ञान',
+      ko: '대사 과학',
+      de: 'Stoffwechselwissenschaft',
+      es: 'Ciencia Metabólica',
+      fr: 'Science Métabolique'
     },
     description: {
-      en: 'Comprehensive guide to BMI for women. Learn female essential fat percentages, hormonal shifts, pregnancy considerations, and healthy BMI charts.',
-      hi: 'महिलाओं के लिए बीएमआई की संपूर्ण गाइड। महिलाओं में आवश्यक वसा, हार्मोनल बदलाव और स्वस्थ वजन सीमा की जानकारी।',
-      ko: '여성을 위한 BMI 종합 가이드. 여성 필수 체지방률, 호르몬 변화, 임신 시 체중 관리 및 건강 가이드.',
-      de: 'Umfassender Leitfaden zum BMI für Frauen. Erfahren Sie mehr über essenziellen Fettanteil, hormonelle Veränderungen und Schwangerschaft.',
-      es: 'Guía completa sobre el IMC para mujeres. Aprende sobre porcentaje de grasa esencial, cambios hormonales y embarazo.',
-      fr: 'Guide complet sur l\'IMC pour les femmes. Découvrez les pourcentages de graisse essentielle, les variations hormonales et la grossesse.'
+      en: 'Understand the difference between BMR (Basal Metabolic Rate) and TDEE (Total Daily Energy Expenditure). Learn how to calculate daily deficit calories.',
+      hi: 'बीएमआर और टीडीईई के बीच अंतर समझें। जानें कि वजन घटाने के लिए दैनिक कैलोरी की गणना कैसे करें।',
+      ko: '기초대사량(BMR)과 일일 총 에너지 소비량(TDEE)의 차이점 및 칼로리 계산법.',
+      de: 'Verstehen Sie den Unterschied zwischen BMR und TDEE. Kalorienbedarf zum Abnehmen berechnen.',
+      es: 'Entiende la diferencia entre BMR y TDEE. Aprende a calcular el déficit calórico diario.',
+      fr: 'Comprenez la différence entre BMR et TDEE. Calculez votre déficit calorique quotidien.'
     },
     contentHtml: {
       en: `
-        <h2>Understanding BMI in Women</h2>
-        <p>Biologically, women carry higher essential body fat (10–13%) than men (2–5%) to support reproductive functions and hormonal balance.</p>
-      `,
-      hi: `
-        <h2>महिलाओं में बीएमआई (BMI) का महत्व</h2>
-        <p>प्रजनन और हार्मोनल संतुलन के लिए महिलाओं के शरीर में पुरुषों की तुलना में स्वाभाविक रूप से आवश्यक वसा का प्रतिशत अधिक होता है।</p>
-      `,
-      ko: `
-        <h2>여성의 BMI 이해하기</h2>
-        <p>여성은 호르몬 균형과 생식 기능을 위해 필수 체지방률(10~13%)이 높게 유지됩니다.</p>
-      `,
-      de: `
-        <h2>Den BMI bei Frauen verstehen</h2>
-        <p>Frauen besitzen von Natur aus einen höheren essenziellen Fettanteil (10–13%) als Männer (2–5%), um hormonelle Funktionen zu unterstützen.</p>
-      `,
-      es: `
-        <h2>Comprender el IMC en Mujeres</h2>
-        <p>Biológicamente, las mujeres poseen un mayor porcentaje de grasa esencial (10–13%) que los hombres para mantener el equilibrio hormonal.</p>
-      `,
-      fr: `
-        <h2>Comprendre l'IMC chez les Femmes</h2>
-        <p>Biologiquement, les femmes possèdent un taux de graisse essentielle plus élevé (10–13 %) que les hommes pour soutenir l'équilibre hormonal.</p>
-      `
-    }
-  },
+        <h2>Understanding BMR vs. TDEE</h2>
+        <p>When planning weight loss, muscle gain, or athletic performance, understanding energy expenditure is crucial. Two essential acronyms dominate metabolic nutrition: <strong>BMR</strong> and <strong>TDEE</strong>.</p>
 
-  'bmi-by-age': {
-    title: {
-      en: 'BMI by Age Chart: Children, Adults & Seniors Health Cut-offs',
-      hi: 'उम्र के अनुसार बीएमआई चार्ट: बच्चों, वयस्कों और बुजुर्गों के लिए गाइड',
-      ko: '연령별 BMI 차트: 어린이, 성인 및 노인 건강 기준',
-      de: 'BMI nach Alter: Altersabhängige Richtwerte für Kinder & Senioren',
-      es: 'Tabla de IMC por Edad: Niños, Adultos y Adultos Mayores',
-      fr: 'IMC par Âge : Enfants, Adultes et Seniors'
-    },
-    category: {
-      en: 'Age & Metrics',
-      hi: 'आयु एवं मापदंड',
-      ko: '연령 및 지표',
-      de: 'Alter & Metriken',
-      es: 'Edad y Métricas',
-      fr: 'Âge et Métriques'
-    },
-    description: {
-      en: 'Learn how age impacts BMI interpretation. View BMI charts by age for kids, teens, adults, and elderly seniors with WHO percentiles.',
-      hi: 'उम्र के अनुसार बीएमआई कैसे बदलता है। बच्चों, वयस्कों और बुजुर्गों के लिए बीएमआई चार्ट और स्वास्थ्य दिशानिर्देश।',
-      ko: '연령이 BMI 해석에 미치는 영향. 어린이, 청소년 백분위수 및 노년층 건강 BMI 범위 안내.',
-      de: 'Erfahren Sie, wie das Alter die BMI-Interpretation beeinflusst. BMI-Tabellen für Kinder, Erwachsene und Senioren.',
-      es: 'Aprende cómo afecta la edad a la interpretación del IMC. Tablas de IMC por edad para niños, adultos y mayores.',
-      fr: 'Découvrez l\'impact de l\'âge sur l\'interprétation de l\'IMC. Tableaux d\'IMC par âge pour enfants, adultes et seniors.'
-    },
-    contentHtml: {
-      en: `
-        <h2>How Age Alters BMI Interpretation</h2>
-        <p>For adults (20–65), fixed cut-offs apply. For children (2–19), age and sex percentiles are used.</p>
-      `,
-      hi: `
-        <h2>उम्र के साथ बीएमआई की व्याख्या</h2>
-        <p>20 से 65 वर्ष के वयस्कों के लिए मानक बीएमआई लागू होता है। बच्चों के लिए आयु पर्सेंटाइल उपयोग किया जाता है।</p>
-      `,
-      ko: `
-        <h2>연령에 따른 BMI 해석의 차이</h2>
-        <p>성인은 표준 범주를 적용하지만 소아 및 청소년은 백분위수를 사용합니다.</p>
-      `,
-      de: `
-        <h2>Wie das Alter den BMI beeinflusst</h2>
-        <p>Für Erwachsene gelten feste Grenzwerte. Bei Kindern und Jugendlichen (2–19 Jahre) werden Perzentilen nach Alter und Geschlecht verwendet.</p>
-      `,
-      es: `
-        <h2>Cómo Afecta la Edad al IMC</h2>
-        <p>En adultos se aplican límites fijos. En niños y adolescentes (2–19 años) se utilizan percentiles por edad y sexo.</p>
-      `,
-      fr: `
-        <h2>Comment l'Âge Influence l'IMC</h2>
-        <p>Chez les adultes, des seuils fixes s'appliquent. Chez les enfants (2–19 ans), on utilise des percentiles selon l'âge et le sexe.</p>
-      `
-    }
-  },
+        <h2>1. What is BMR (Basal Metabolic Rate)?</h2>
+        <p>Your <strong>Basal Metabolic Rate (BMR)</strong> is the absolute minimum number of calories your body burns in 24 hours while at complete rest in a thermo-neutral environment. BMR powers your vital life functions—including breathing, blood circulation, cellular repair, brain function, and body temperature regulation.</p>
+        <p>The clinical gold standard for computing BMR is the <strong>Mifflin-St Jeor Equation</strong>:</p>
 
-  'bmi-chart': {
-    title: {
-      en: 'BMI Chart 2026: Visual Weight Status Grid & Category Cut-offs',
-      hi: 'बीएमआई चार्ट 2026: वजन श्रेणी ग्रिड और विस्तृत कट-ऑफ',
-      ko: '2026 BMI 차트: 시각적 체중 범주 및 건강 기준',
-      de: 'BMI Tabelle 2026: Übersichtliche Gewichtstabelle & WHO-Kategorien',
-      es: 'Tabla de IMC 2026: Cuadrícula Visual de Peso y Categorías de la OMS',
-      fr: 'Tableau d\'IMC 2026 : Grille Visuelle des Catégories et Normes OMS'
-    },
-    category: {
-      en: 'Visual Reference',
-      hi: 'विजुअल संदर्भ',
-      ko: '시각적 참조',
-      de: 'Visuelle Referenz',
-      es: 'Referencia Visual',
-      fr: 'Référence Visuelle'
-    },
-    description: {
-      en: 'Complete visual BMI chart for men and women. View height vs weight grid, global vs Asian thresholds, and health risk indicators.',
-      hi: 'पुरुषों और महिलाओं के लिए बीएमआई चार्ट। ऊंचाई बनाम वजन ग्रिड, वैश्विक और भारतीय मानकों के साथ।',
-      ko: '남성과 여성을 위한 시각적 BMI 차트. 키와 체중 대비 비만도 범주 한눈에 확인.',
-      de: 'Vollständige visuelle BMI-Tabelle für Männer und Frauen. Körpergröße vs. Gewichtstabelle und Risikostufen.',
-      es: 'Tabla visual completa de IMC para hombres y mujeres. Cuadrícula de altura frente a peso y niveles de riesgo.',
-      fr: 'Tableau visuel complet d\'IMC pour hommes et femmes. Grille taille/poids et indicateurs de risque pour la santé.'
-    },
-    contentHtml: {
-      en: `
-        <h2>How to Read the BMI Chart</h2>
-        <p>Locate your height on the horizontal axis and your weight on the vertical axis to find your BMI classification.</p>
-      `,
-      hi: `
-        <h2>बीएमआई चार्ट को कैसे समझें</h2>
-        <p>अपनी ऊंचाई और वजन के आधार पर आप आसानी से अपनी बीएमआई श्रेणी जान सकते हैं।</p>
-      `,
-      ko: `
-        <h2>BMI 차트 읽는 방법</h2>
-        <p>키와 체중이 만나는 지점에서 자신의 BMI 범주를 쉽게 확인하세요.</p>
-      `,
-      de: `
-        <h2>Wie man die BMI-Tabelle liest</h2>
-        <p>Suchen Sie Ihre Körpergröße auf der horizontalen Achse und Ihr Gewicht auf der vertikalen Achse, um Ihre Kategorie abzulesen.</p>
-      `,
-      es: `
-        <h2>Cómo Leer la Tabla de IMC</h2>
-        <p>Encuentra tu estatura en el eje horizontal y tu peso en el eje vertical para determinar tu clasificación de peso.</p>
-      `,
-      fr: `
-        <h2>Comment Lire le Tableau d'IMC</h2>
-        <p>Repérez votre taille sur l'axe horizontal et votre poids sur l'axe vertical pour connaître votre catégorie de poids.</p>
-      `
-    }
-  },
+        <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed">
+          <p class="font-bold text-[var(--accent)] mb-1">Mifflin-St Jeor Equations:</p>
+          <p class="text-[var(--foreground)] font-bold">Men: BMR = (10 × weight kg) + (6.25 × height cm) - (5 × age yrs) + 5</p>
+          <p class="text-[var(--foreground)] font-bold mt-1">Women: BMR = (10 × weight kg) + (6.25 × height cm) - (5 × age yrs) - 161</p>
+        </div>
 
-  'healthy-weight-chart': {
-    title: {
-      en: 'Healthy Weight Chart by Height for Men & Women (kg & lbs)',
-      hi: 'ऊंचाई के अनुसार स्वस्थ वजन चार्ट: पुरुषों और महिलाओं के लिए',
-      ko: '신장별 적정 체중 차트: 남성 및 여성 (kg & lbs)',
-      de: 'Idealgewicht Tabelle nach Körpergröße für Männer & Frauen',
-      es: 'Tabla de Peso Saludable por Estatura para Hombres y Mujeres',
-      fr: 'Tableau du Poids Idéal selon la Taille pour Hommes et Femmes'
-    },
-    category: {
-      en: 'Weight Management',
-      hi: 'वजन प्रबंधन',
-      ko: '체중 관리',
-      de: 'Gewichtsmanagement',
-      es: 'Control de Peso',
-      fr: 'Gestion du Poids'
-    },
-    description: {
-      en: 'Find your ideal healthy weight target based on height. Includes metric (cm/kg) and imperial (ft-in/lbs) reference tables for adults.',
-      hi: 'अपनी ऊंचाई के अनुसार अपना आदर्श स्वस्थ वजन जानें। किलोग्राम और पाउंड में आसान संदर्भ तालिकाएं।',
-      ko: '키에 따른 이상적인 적정 체중 범위를 확인하세요. 미터법(cm/kg) 참조 표 제공.',
-      de: 'Finden Sie Ihr ideales Zielgewicht basierend auf Ihrer Körpergröße. Enthält Tabellen in kg und lbs.',
-      es: 'Encuentra tu peso ideal saludable según tu estatura. Incluye tablas de referencia en kg y lbs.',
-      fr: 'Trouvez votre poids idéal selon votre taille. Comprend des tableaux de référence en kg et lbs.'
-    },
-    contentHtml: {
-      en: `
-        <h2>Healthy Weight Range by Height</h2>
-        <p>Your ideal weight range is the weight band at which your BMI stays between 18.5 and 24.9.</p>
-      `,
-      hi: `
-        <h2>ऊंचाई के अनुसार सही वजन की तालिका</h2>
-        <p>वह वजन सीमा जहां आपका बीएमआई 18.5 से 22.9 के बीच रहता है, वह आपका आदर्श स्वस्थ वजन है।</p>
-      `,
-      ko: `
-        <h2>신장별 이상적인 적정 체중</h2>
-        <p>BMI 18.5 ~ 22.9 kg/m²를 유지하는 체중 구간이 가장 이상적인 적정 체중입니다.</p>
-      `,
-      de: `
-        <h2>Gesundes Gewicht nach Körpergröße</h2>
-        <p>Ihr idealer Gewichtsbereich ist der Bereich, in dem Ihr BMI zwischen 18,5 und 24,9 kg/m² liegt.</p>
-      `,
-      es: `
-        <h2>Rango de Peso Saludable por Estatura</h2>
-        <p>Tu rango de peso ideal es la franja en la que tu IMC se mantiene entre 18.5 y 24.9 kg/m².</p>
-      `,
-      fr: `
-        <h2>Plage de Poids Idéal selon la Taille</h2>
-        <p>Votre plage de poids idéal correspond à l'intervalle où votre IMC reste compris entre 18,5 et 24,9 kg/m².</p>
-      `
-    }
-  },
+        <h2>2. What is TDEE (Total Daily Energy Expenditure)?</h2>
+        <p>Your <strong>Total Daily Energy Expenditure (TDEE)</strong> is the total number of calories your body burns in 24 hours, accounting for BMR plus all physical movement, daily chores, work activity, and structured workout sessions.</p>
+        <p>TDEE is calculated by multiplying your BMR by a <strong>Physical Activity Level (PAL) Factor</strong>:</p>
 
-  'bmi-vs-body-fat': {
-    title: {
-      en: 'BMI vs. Body Fat Percentage: Key Differences & Which is Better?',
-      hi: 'बीएमआई बनाम बॉडी फैट प्रतिशत: मुख्य अंतर और कौन सा बेहतर है?',
-      ko: 'BMI vs 체지방률: 핵심 차이점과 더 정확한 지표는?',
-      de: 'BMI vs. Körperfettanteil: Unterschiede & was ist genauer?',
-      es: 'IMC vs. Porcentaje de Grasa Corporal: Diferencias Clave',
-      fr: 'IMC vs Pourcentage de Graisse Corporelle : Différences Clés'
-    },
-    category: {
-      en: 'Clinical Science',
-      hi: 'नैदानिक विज्ञान',
-      ko: '임상 과학',
-      de: 'Klinische Wissenschaft',
-      es: 'Ciencia Clínica',
-      fr: 'Science Clinique'
-    },
-    description: {
-      en: 'Compare BMI vs Body Fat Percentage. Learn differences in accuracy, muscle differentiation, visceral fat tracking, and practical health monitoring.',
-      hi: 'बीएमआई और बॉडी फैट प्रतिशत में तुलना। जानें कि मांसपेशियों और वसा के मापन में कौन सा उपकरण अधिक सटीक है।',
-      ko: 'BMI와 체지방률의 차이 비교. 정확도, 근육량 구분, 내장지방 측정 및 올바른 건강 관리 방법.',
-      de: 'Vergleichen Sie den BMI mit dem Körperfettanteil. Erfahren Sie mehr über Unterschiede in Genauigkeit und Muskelmasse.',
-      es: 'Compara el IMC con el porcentaje de grasa corporal. Diferencias en precisión, músculo y grasa visceral.',
-      fr: 'Comparez l\'IMC au pourcentage de graisse corporelle. Différences de précision et prise en compte du muscle.'
-    },
-    contentHtml: {
-      en: `
-        <h2>BMI vs Body Fat %</h2>
-        <p>BMI calculates total mass relative to height, while Body Fat Percentage measures the exact proportion of adipose tissue.</p>
-      `,
-      hi: `
-        <h2>बीएमआई बनाम बॉडी फैट %</h2>
-        <p>बीएमआई आपकी ऊंचाई के हिसाब से कुल वजन मापता है, जबकि बॉडी फैट प्रतिशत वसा की सटीक मात्रा बताता है।</p>
-      `,
-      ko: `
-        <h2>BMI와 체지방률 비교</h2>
-        <p>BMI는 체중 전체를 계산하며, 체지방률은 전체 체중 중 실제 지방 조직의 비율(%)을 직접 측정합니다.</p>
-      `,
-      de: `
-        <h2>BMI vs. Körperfettanteil</h2>
-        <p>Der BMI berechnet die Gesamtmasse relativ zur Größe, während der Körperfettanteil den genauen Anteil an Fettgewebe misst.</p>
-      `,
-      es: `
-        <h2>IMC vs. Porcentaje de Grasa Corporal</h2>
-        <p>El IMC evalúa la masa total según la estatura, mientras que el porcentaje de grasa mide la proporción exacta de tejido graso.</p>
-      `,
-      fr: `
-        <h2>IMC vs Pourcentage de Graisse Corporelle</h2>
-        <p>L'IMC évalue la masse totale par rapport à la taille, tandis que le pourcentage de graisse mesure la proportion exacte de tissu adipeux.</p>
-      `
-    }
-  },
+        <ul>
+          <li><strong>Sedentary (Desk Job, little exercise):</strong> TDEE = BMR × 1.200</li>
+          <li><strong>Lightly Active (1–3 workout days/week):</strong> TDEE = BMR × 1.375</li>
+          <li><strong>Moderately Active (3–5 workout days/week):</strong> TDEE = BMR × 1.550</li>
+          <li><strong>Very Active (6–7 heavy workout days/week):</strong> TDEE = BMR × 1.725</li>
+          <li><strong>Extra Active (Heavy physical labor / double sessions):</strong> TDEE = BMR × 1.900</li>
+        </ul>
 
-  'bmi-formula': {
-    title: {
-      en: 'BMI Formula: How to Calculate Body Mass Index Manually (kg/m² & lbs/in²)',
-      hi: 'बीएमआई फॉर्मूला: बॉडी मास इंडेक्स की गणना खुद कैसे करें',
-      ko: 'BMI 계산 공식: 체질량지수 직접 계산하는 방법',
-      de: 'BMI Formel: Body-Mass-Index manuell berechnen (kg/m² & lbs/in²)',
-      es: 'Fórmula del IMC: Cómo Calcular el Índice de Masa Corporal Manualmente',
-      fr: 'Formule de l\'IMC : Comment Calculer l\'Indice de Masse Corporelle Manuellement'
-    },
-    category: {
-      en: 'Mathematics',
-      hi: 'गणित एवं फॉर्मूला',
-      ko: '계산 공식',
-      de: 'Mathematische Formeln',
-      es: 'Fórmulas Matemáticas',
-      fr: 'Formules Mathématiques'
-    },
-    description: {
-      en: 'Step-by-step mathematical guide to calculating BMI. Includes metric formula, imperial formula, worked calculation examples, and conversion tables.',
-      hi: 'बीएमआई निकालने का गणितीय फॉर्मूला। किलोग्राम/मीटर और पाउंड/इंच दोनों तरीकों से आसान उदाहरण।',
-      ko: 'BMI 직접 계산을 위한 단계별 수학 공식 가이드. 미터법(kg/m²) 계산 예시 포함.',
-      de: 'Schritt-für-Schritt-Anleitung zur manuellen BMI-Berechnung mit metrischen und imperradialen Formeln.',
-      es: 'Guía paso a paso para calcular el IMC manualmente con fórmulas métricas e imperiales.',
-      fr: 'Guide pas à pas pour calculer l\'IMC manuellement avec les formules métriques et impériales.'
-    },
-    contentHtml: {
-      en: `
-        <h2>The Mathematical Formula for BMI</h2>
-        <p>In metric units: <code>BMI = weight (kg) / [height (m)]²</code>.</p>
-      `,
-      hi: `
-        <h2>बीएमआई निकालने का फॉर्मूला</h2>
-        <p>मीट्रिक पद्धति: <code>बीएमआई = वजन (किलोग्राम) ÷ [ऊंचाई (मीटर)]²</code></p>
-      `,
-      ko: `
-        <h2>BMI 계산 공식</h2>
-        <p>미터법 기준: <code>BMI = 체중 (kg) ÷ [키 (m)]²</code></p>
-      `,
-      de: `
-        <h2>Die mathematische Formel für den BMI</h2>
-        <p>Im metrischen System: <code>BMI = Gewicht (kg) / [Größe (m)]²</code>.</p>
-      `,
-      es: `
-        <h2>La Fórmula Matemática del IMC</h2>
-        <p>En unidades métricas: <code>IMC = peso (kg) / [estatura (m)]²</code>.</p>
-      `,
-      fr: `
-        <h2>La Formule Mathématique de l'IMC</h2>
-        <p>En unités métriques : <code>IMC = poids (kg) / [taille (m)]²</code>.</p>
-      `
-    }
-  },
+        <h2>BMR vs. TDEE Comparison Table</h2>
+        <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+                <th class="p-3">Feature</th>
+                <th class="p-3">BMR (Basal Metabolic Rate)</th>
+                <th class="p-3">TDEE (Total Daily Energy Expenditure)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--border)]">
+              <tr>
+                <td class="p-3 font-semibold">Definition</td>
+                <td class="p-3">Resting calorie burn to stay alive</td>
+                <td class="p-3">Total daily calories burned with movement</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Activity Factor</td>
+                <td class="p-3">Includes zero activity (Coma state)</td>
+                <td class="p-3">Multiplies BMR by PAL factor (1.2 to 1.9)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Usage Goal</td>
+                <td class="p-3">Absolute caloric intake floor</td>
+                <td class="p-3">Maintenance caloric target</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-  'calories-for-weight-loss': {
-    title: {
-      en: 'How Many Calories Should I Eat to Lose Weight? BMR & TDEE Guide',
-      hi: 'वजन घटाने के लिए कितनी कैलोरी खाएं? BMR और TDEE गाइड',
-      ko: '체중 감량을 위해 하루 몇 칼로리를 먹어야 할까요? BMR & TDEE 가이드',
-      de: 'Wie viele Kalorien zum Abnehmen? BMR & TDEE Kalorienrechner-Guide',
-      es: '¿Cuántas Calorías Debo Comer para Perder Peso? Guía de BMR y TDEE',
-      fr: 'Combien de Calories Consommer pour Perdre du Poids ? Guide BMR et TDEE'
-    },
-    category: {
-      en: 'Nutrition & Calories',
-      hi: 'पोषण एवं कैलोरी',
-      ko: '영양 및 칼로리',
-      de: 'Ernährung & Kalorien',
-      es: 'Nutrición y Calorías',
-      fr: 'Nutrition et Calories'
-    },
-    description: {
-      en: 'Calculate your daily calorie deficit for weight loss. Learn BMR, TDEE, macro ratios, safe deficit limits, and realistic weight loss rates.',
-      hi: 'वजन घटाने के लिए दैनिक कैलोरी घाटे (Calorie Deficit) की गणना करें। BMR, TDEE और सुरक्षित वजन घटाने की गाइड।',
-      ko: '체중 감량을 위한 일일 칼로리 적자(Calorie Deficit) 계산법. BMR, TDEE 및 건강한 칼로리 조절 가이드.',
-      de: 'Berechnen Sie Ihr Kaloriendefizit zum Abnehmen. Erfahren Sie mehr über BMR, TDEE und sichere Gewichtsreduktion.',
-      es: 'Calcula tu déficit calórico diario para perder peso. Aprende sobre BMR, TDEE y ritmos de pérdida de peso seguros.',
-      fr: 'Calculez votre déficit calorique quotidien pour perdre du poids. Apprenez le BMR, le TDEE et un rythme sain.'
-    },
-    contentHtml: {
-      en: `
-        <h2>Understanding Calorie Deficit for Weight Loss</h2>
-        <p>Maintain a daily calorie deficit of 300 to 500 kcal below your TDEE to achieve sustainable fat loss.</p>
+        <h2>How to Use TDEE for Weight Loss</h2>
+        <p>To lose fat safely without sacrificing lean skeletal muscle, consume <strong>300 to 500 calories below your TDEE</strong> daily. Never consume fewer calories than your BMR score for prolonged periods.</p>
       `,
       hi: `
-        <h2>वजन घटाने के लिए कैलोरी डेफिसिट</h2>
-        <p>सुरक्षित रूप से वजन घटाने के लिए अपने TDEE से 300 से 500 कैलोरी कम खाना सबसे प्रभावी तरीका है।</p>
-      `,
-      ko: `
-        <h2>체중 감량을 위한 칼로리 적자 원리</h2>
-        <p>지속 가능한 다이어트를 위해 TDEE보다 하루 300~500 kcal 적게 섭취하는 것을 권장합니다.</p>
-      `,
-      de: `
-        <h2>Das Kaloriendefizit zum Abnehmen verstehen</h2>
-        <p>Für eine nachhaltige Gewichtsabnahme empfiehlt sich ein tägliches Kaloriendefizit von 300 bis 500 kcal unter Ihrem TDEE.</p>
-      `,
-      es: `
-        <h2>Entender el Déficit Calórico para Perder Peso</h2>
-        <p>Para perder grasa de forma sostenible, mantén un déficit calórico diario de 300 a 500 kcal por debajo de tu TDEE.</p>
-      `,
-      fr: `
-        <h2>Comprendre le Déficit Calorique pour Perdre du Poids</h2>
-        <p>Pour une perte de poids durable, maintenez un déficit calorique quotidien de 300 à 500 kcal en dessous de votre TDEE.</p>
-      `
-    }
-  },
-
-  'protein-intake-calculator': {
-    title: {
-      en: 'How Much Protein Do You Need Per Day? Calorie & Fitness Targets',
-      hi: 'आपको प्रति दिन कितने प्रोटीन की आवश्यकता है? संपूर्ण गाइड',
-      ko: '하루에 얼마나 많은 단백질이 필요한가요? 목표별 단백질 가이드',
-      de: 'Wie viel Protein brauchen Sie pro Tag? Eiweißbedarf berechnen',
-      es: '¿Cuánta Proteína Necesitas al Día? Calculadora y Guía',
-      fr: 'Combien de Protéines par Jour ? Guide des Besoins en Protéines'
-    },
-    category: {
-      en: 'Nutrition Science',
-      hi: 'पोषण विज्ञान',
-      ko: '영양학',
-      de: 'Ernährungswissenschaft',
-      es: 'Ciencia Nutricional',
-      fr: 'Science de la Nutrition'
-    },
-    description: {
-      en: 'Determine your optimal daily protein intake based on weight, activity level, muscle building goals, or fat loss targets.',
-      hi: 'अपने वजन और कसरत के आधार पर अपने दैनिक प्रोटीन लक्ष्य की गणना करें। मांसपेशियों के निर्माण और वसा घटाने के लिए गाइड।',
-      ko: '체중, 활동량, 근육 증량 및 다이어트 목표에 맞는 최적의 일일 단백질 섭취량을 계산하세요.',
-      de: 'Ermitteln Sie Ihren optimalen täglichen Eiweißbedarf basierend auf Gewicht, Aktivität und Fitnesszielen.',
-      es: 'Determina tu ingesta diaria óptima de proteínas según tu peso, nivel de actividad y objetivos físicos.',
-      fr: 'Déterminez votre apport quotidien optimal en protéines en fonction de votre poids, activité et objectifs.'
-    },
-    contentHtml: {
-      en: `
-        <h2>Daily Protein Intake Guidelines</h2>
-        <p>Active adults require 1.2g to 2.0g protein per kg of bodyweight daily for muscle repair and recovery.</p>
-      `,
-      hi: `
-        <h2>दैनिक प्रोटीन की आवश्यकता</h2>
-        <p>नियमित व्यायाम करने वालों के लिए 1.2 से 2.0 ग्राम प्रति किलोग्राम अनुशंसित है।</p>
-      `,
-      ko: `
-        <h2>일일 권장 단백질 섭취량</h2>
-        <p>운동을 하거나 근육 증량을 목표로 하는 경우 체중 1 kg당 1.2g~2.0g의 단백질 섭취가 권장됩니다.</p>
-      `,
-      de: `
-        <h2>Täglicher Eiweißbedarf</h2>
-        <p>Sportlich aktive Personen benötigen täglich etwa 1,2 g bis 2,0 g Protein pro kg Körpergewicht für den Muskelaufbau.</p>
-      `,
-      es: `
-        <h2>Pautas de Ingesta Diaria de Proteínas</h2>
-        <p>Las personas activas necesitan de 1.2 g a 2.0 g de proteína por kg de peso corporal al día para la recuperación muscular.</p>
-      `,
-      fr: `
-        <h2>Recommandations d'Apport Quotidien en Protéines</h2>
-        <p>Les personnes actives ont besoin de 1,2 g à 2,0 g de protéines par kg de poids corporel par jour pour la récupération musculaire.</p>
+        <h2>बीएमआर (BMR) और टीडीईई (TDEE) में क्या अंतर है?</h2>
+        <p>वजन घटाने या बढ़ाने के लिए कैलोरी को समझना आवश्यक है। बीएमआर और टीडीईई आपके शरीर की ऊर्जा खपत को मापते हैं।</p>
+        
+        <ul>
+          <li><strong>BMR (बेसल मेटाबॉलिक रेट):</strong> विश्राम अवस्था में आपका शरीर जीवित रहने के लिए जितनी कैलोरी बर्न करता है।</li>
+          <li><strong>TDEE (टोटल डेली एनर्जी एक्सपेंडिचर):</strong> दिनभर की शारीरिक गतिविधियों और व्यायाम को मिलाकर कुल बर्न की गई कैलोरी।</li>
+        </ul>
       `
     }
   },
@@ -681,28 +399,67 @@ export const blogArticles: Record<string, any> = {
     },
     contentHtml: {
       en: `
-        <h2>Gender Differences in BMI Interpretation</h2>
-        <p>Women naturally carry a higher percentage of essential body fat than men at identical BMI values.</p>
+        <h2>Gender Differences in BMI & Body Composition</h2>
+        <p>Although standard Body Mass Index (BMI) formulas calculate height and weight identically for adult men and women, biological body composition differs significantly between sexes.</p>
+        <p>Women naturally carry higher essential fat levels (10–13%) than men (2–5%) to support reproductive functions, endocrine regulation, and childbearing. Men typically possess greater skeletal muscle mass and higher bone mineral density.</p>
+
+        <h2>Age-Adjusted BMI Target Chart for Adults</h2>
+        <p>As adults age, natural physiological changes occur: lean skeletal muscle mass slowly declines (sarcopenia) while body fat percentage tends to increase. Clinical guidelines suggest target healthy BMI windows shift upward slightly in older adults:</p>
+
+        <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+                <th class="p-3">Age Bracket</th>
+                <th class="p-3">Ideal Men BMI Range</th>
+                <th class="p-3">Ideal Women BMI Range</th>
+                <th class="p-3">Clinical Guidance</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--border)]">
+              <tr>
+                <td class="p-3 font-semibold">18 – 24 Years</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">19.0 – 24.0 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 23.5 kg/m²</td>
+                <td class="p-3">Peak skeletal mass &amp; baseline metabolic rate</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">25 – 34 Years</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">20.0 – 25.0 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">19.5 – 24.5 kg/m²</td>
+                <td class="p-3">Standard adult healthy baseline window</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">35 – 44 Years</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">21.0 – 26.0 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">20.5 – 25.5 kg/m²</td>
+                <td class="p-3">Metabolic maintenance &amp; active training phase</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">45 – 54 Years</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">22.0 – 27.0 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">21.5 – 26.5 kg/m²</td>
+                <td class="p-3">Midlife metabolic maintenance &amp; waist check</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">55 – 64 Years</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">23.0 – 28.0 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">22.5 – 27.5 kg/m²</td>
+                <td class="p-3">Healthy active ageing target</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">65+ Years</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">24.0 – 29.0 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">23.5 – 28.5 kg/m²</td>
+                <td class="p-3">Protective reserve against frailty &amp; bone loss</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       `,
       hi: `
-        <h2>बीएमआई व्याख्या में लिंग का अंतर</h2>
-        <p>भले ही बीएमआई फॉर्मूला समान है, महिलाओं में आवश्यक वसा का स्तर पुरुषों से अधिक होता है।</p>
-      `,
-      ko: `
-        <h2>성별에 따른 BMI 해석 차이</h2>
-        <p>동일한 BMI 지수라도 여성은 남성보다 높은 필수 체지방량을 보유합니다.</p>
-      `,
-      de: `
-        <h2>Geschlechtsspezifische Unterschiede beim BMI</h2>
-        <p>Frauen besitzen bei gleichem BMI von Natur aus einen höheren essenziellen Fettanteil als Männer.</p>
-      `,
-      es: `
-        <h2>Diferencias de Género en la Interpretación del IMC</h2>
-        <p>Las mujeres poseen de forma natural un porcentaje de grasa esencial mayor que los hombres con el mismo IMC.</p>
-      `,
-      fr: `
-        <h2>Différences de Genre dans l'Interprétation de l'IMC</h2>
-        <p>Les femmes possèdent naturellement un pourcentage de graisse essentielle plus élevé que les hommes à IMC égal.</p>
+        <h2>पुरुषों और महिलाओं के लिए बीएमआई चार्ट</h2>
+        <p>महिलाओं में प्राकृतिक रूप से पुरुषों की तुलना में अधिक वसा (10–13%) पाई जाती है। इसलिए दोनों के स्वास्थ्य लक्ष्यों में मामूली अंतर होता है।</p>
       `
     }
   },
@@ -735,27 +492,20 @@ export const blogArticles: Record<string, any> = {
     contentHtml: {
       en: `
         <h2>Why Asian Adults Require Lower BMI Thresholds</h2>
-        <p>Epidemiological research shows South Asian adults develop metabolic risk at lower body weights.</p>
+        <p>Extensive clinical studies conducted by the World Health Organization (WHO) revealed that South Asian adults develop metabolic disease risk—including Type 2 Diabetes, abdominal visceral fat, and hypertension—at lower body weights compared to European populations.</p>
+        
+        <h2>The Optimal Indian BMI Range: 18.5 to 22.9 kg/m²</h2>
+        <p>While Western standards consider 24.5 kg/m² healthy, the WHO South-East Asia Regional Office established that <strong>18.5 to 22.9 kg/m²</strong> represents the true healthy baseline for South Asian adults.</p>
+        
+        <ul>
+          <li><strong>Optimal Healthy Window:</strong> 18.5 – 22.9 kg/m²</li>
+          <li><strong>Overweight Risk Trigger:</strong> ≥ 23.0 kg/m²</li>
+          <li><strong>Obesity Class I Trigger:</strong> ≥ 27.5 kg/m²</li>
+        </ul>
       `,
       hi: `
-        <h2>भारतीयों के लिए कम बीएमआई सीमा क्यों आवश्यक है?</h2>
-        <p>अध्ययनों से पता चलता है कि कम वजन पर भी भारतीय शरीर में आंतरिक अंगों के आसपास वसा जमा होने का खतरा अधिक होता है।</p>
-      `,
-      ko: `
-        <h2>아시아인에게 낮은 BMI 기준이 필요한 이유</h2>
-        <p>아시아인은 낮은 체중에서도 내장지방 비율이 높아 대사 질환 위험이 더 빠르게 시작됩니다.</p>
-      `,
-      de: `
-        <h2>Warum asiatische Bevölkerungen niedrigere BMI-Grenzwerte benötigen</h2>
-        <p>Studien zeigen, dass Stoffwechselrisiken bei asiatischen Erwachsenen bereits bei geringerem Gewicht beginnen.</p>
-      `,
-      es: `
-        <h2>Por qué las Poblaciones Asiáticas Necesitan Límites de IMC Más Bajos</h2>
-        <p>Los estudios demuestran que los riesgos metabólicos comienzan con un peso menor en poblaciones asiáticas.</p>
-      `,
-      fr: `
-        <h2>Pourquoi les Populations Asiatiques ont des Seuils d'IMC Plus Bas</h2>
-        <p>Les études montrent que les risques métaboliques apparaissent à un poids plus faible chez les adultes asiatiques.</p>
+        <h2>भारतीयों के लिए स्वस्थ बीएमआई सीमा (18.5 – 22.9 kg/m²)</h2>
+        <p>शोध से पता चलता है कि भारतीयों के लिए 18.5 से 22.9 kg/m² का बीएमआई सबसे सुरक्षित और स्वस्थ माना जाता है।</p>
       `
     }
   },
@@ -787,193 +537,169 @@ export const blogArticles: Record<string, any> = {
     },
     contentHtml: {
       en: `
-        <h2>Pediatric BMI & Percentiles Explained</h2>
-        <p>In children and teens, BMI changes constantly with age and growth, evaluated using percentiles relative to peers.</p>
+        <h2>Pediatric BMI & CDC Percentiles Explained</h2>
+        <p>In children and teens (ages 2 through 19), body composition changes constantly with growth and differs markedly between boys and girls. Therefore, fixed adult BMI numbers (18.5, 25, 30) do not apply to youth.</p>
+        <p>Instead, pediatricians evaluate youth health using <strong>CDC Growth Chart Percentiles</strong>, comparing a child's BMI against peers of the exact same age and biological sex:</p>
+
+        <ul>
+          <li><strong>Underweight:</strong> Below the 5th percentile</li>
+          <li><strong>Healthy Weight:</strong> 5th percentile to less than the 85th percentile</li>
+          <li><strong>Overweight:</strong> 85th to less than the 95th percentile</li>
+          <li><strong>Obesity:</strong> Equal to or greater than the 95th percentile</li>
+        </ul>
       `,
       hi: `
         <h2>बच्चों और किशोरों में बीएमआई पर्सेंटाइल</h2>
-        <p>बच्चों और किशोरों का बीएमआई उम्र और लंबाई के साथ बदलता रहता है।</p>
-      `,
-      ko: `
-        <h2>소아 및 청소년 BMI 백분위수</h2>
-        <p>어린이와 청소년의 BMI는 성장에 따라 변하므로 동일 연령대 백분위수로 평가합니다.</p>
-      `,
-      de: `
-        <h2>BMI-Perzentilen bei Kindern und Jugendlichen</h2>
-        <p>Bei Kindern verändert sich der BMI mit dem Wachstum und wird anhand von Perzentilen im Vergleich zur Altersgruppe bewertet.</p>
-      `,
-      es: `
-        <h2>Percentiles de IMC en Niños y Adolescentes</h2>
-        <p>En niños y adolescentes, el IMC cambia constantemente con el crecimiento y se evalúa mediante percentiles por edad y sexo.</p>
-      `,
-      fr: `
-        <h2>Percentiles d'IMC chez les Enfants et Adolescents</h2>
-        <p>Chez les enfants et adolescents, l'IMC évolue avec la croissance et s'évalue à l'aide de percentiles par âge et sexe.</p>
+        <p>बच्चों में उम्र और लंबाई के साथ बीएमआई बदलता है, इसलिए वयस्कों का बीएमआई कट-ऑफ बच्चों पर लागू नहीं होता।</p>
       `
     }
   },
 
-  'is-bmi-accurate': {
+  'bmi-by-age': {
     title: {
-      en: 'Is BMI Accurate? New Evidence Says No | What is Real BMI? (2026 Guide)',
-      hi: 'क्या BMI सही है? नए मेडिकल सबूत कहते हैं नहीं | Real BMI क्या है? (2026 गाइड)',
-      ko: 'BMI는 정확할까? 의학 연구가 말하는 한계점과 Real BMI (2026 가이드)',
-      de: 'Ist der BMI genau? Neue medizinische Erkenntnisse & Real BMI (Leitfaden 2026)',
-      es: '¿Es preciso el IMC? Nuevas evidencias médicas y Real IMC (Guía 2026)',
-      fr: 'L\'IMC est-il précis ? Ce que disent les études médicales et Real IMC (Guide 2026)'
+      en: 'BMI by Age Chart: Children, Adults & Seniors Health Cut-offs',
+      hi: 'उम्र के अनुसार बीएमआई चार्ट: बच्चों, वयस्कों और बुजुर्गों के लिए गाइड',
+      ko: '연령별 BMI 차트: 어린이, 성인 및 노인 건강 기준',
+      de: 'BMI nach Alter: Altersabhängige Richtwerte für Kinder & Senioren',
+      es: 'Tabla de IMC por Edad: Niños, Adultos y Adultos Mayores',
+      fr: 'IMC par Âge : Enfants, Adultes et Seniors'
     },
     category: {
-      en: 'Clinical Research & Accuracy',
-      hi: 'नैदानिक अनुसंधान और सटीकता',
-      ko: '임상 연구 및 정확성',
-      de: 'Klinische Forschung & Genauigkeit',
-      es: 'Investigación Clínica y Precisión',
-      fr: 'Recherche Clinique & Précision'
+      en: 'Age & Metrics',
+      hi: 'आयु एवं मापदंड',
+      ko: '연령 및 지표',
+      de: 'Alter & Metriken',
+      es: 'Edad y Métricas',
+      fr: 'Santé et Âge'
     },
     description: {
-      en: 'Deep clinical analysis of BMI accuracy. Learn why standard BMI fails for muscle mass, fat distribution, and ethnicity, and discover how Real BMI provides true metabolic clarity.',
-      hi: 'बीएमआई की सटीकता पर गहरा नैदानिक विश्लेषण। जानें कि मानक बीएमआई मांसपेशियों, विसरल फैट और नस्ल के लिए क्यों विफल होता है, और Real BMI कैसे सही जानकारी देता है।',
-      ko: 'BMI의 임상적 한계와 정확성 분석. 근육량, 지방 분포, 인종별 차이점에 대한 의학적 연구와 Real BMI의 해결책 안내.',
-      de: 'Tiefgehende klinische Analyse der BMI-Genauigkeit. Warum der Standard-BMI bei Muskelmasse und Fettverteilung versagt.',
-      es: 'Análisis clínico sobre la precisión del IMC. Por qué el IMC estándar falla con la masa muscular y distribución de grasa.',
-      fr: 'Analyse clinique approfondie de la précision de l\'IMC. Pourquoi l\'IMC classique échoue avec la masse musculaire.'
+      en: 'Learn how age impacts BMI interpretation. View BMI charts by age for kids, teens, adults, and elderly seniors with WHO percentiles.',
+      hi: 'उम्र के अनुसार बीएमआई कैसे बदलता है। बच्चों, वयस्कों और बुजुर्गों के लिए बीएमआई चार्ट और स्वास्थ्य दिशानिर्देश।',
+      ko: '연령이 BMI 해석에 미치는 영향. 어린이, 청소년 백분위수 및 노년층 건강 BMI 범위 안내.',
+      de: 'Erfahren Sie, wie das Alter die BMI-Interpretation beeinflusst. BMI-Tabellen für Kinder, Erwachsene und Senioren.',
+      es: 'Aprende cómo afecta la edad a la interpretación del IMC. Tablas de IMC por edad para niños, adultos y mayores.',
+      fr: 'Découvrez l\'impact de l\'âge sur l\'interprétation de l\'IMC. Tableaux d\'IMC par âge pour enfants, adultes et seniors.'
     },
     contentHtml: {
       en: `
-        <div class="p-6 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 my-6">
-          <p class="font-bold text-lg text-[var(--foreground)] mb-2">Medically Reviewed & Clinical Summary</p>
-          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-            Standard Body Mass Index (BMI) calculated strictly as weight divided by height squared (kg/m²) is an imperfect single metric. While useful for large-scale population screening, recent medical evidence confirms that BMI fails to distinguish between muscle density and body fat, ignores abdominal visceral fat distribution, and oversimplifies health risk across different ethnic groups and age brackets.
-          </p>
-        </div>
-
-        <h2>The Origin of BMI: Why It Was Never Built for Individual Diagnosis</h2>
-        <p>
-          Body Mass Index was developed in the 1830s by <strong>Adolphe Quetelet</strong>, a Belgian astronomer, mathematician, and statistician. Quetelet created the formula (originally called the <em>Quetelet Index</em>) to analyze population-level statistical distribution for social science research — <strong>not as a clinical diagnostic tool for individual medical health</strong>.
-        </p>
-        <p>
-          In 1972, researcher Ancel Keys published a seminal study examining various weight-for-height indexes and coined the term "Body Mass Index". Keys explicitly stated that while BMI was statistically useful for broad epidemiological studies, it was inadequate for individual patient assessment.
-        </p>
-
-        <h2>5 Major Scientific Flaws of Standard BMI</h2>
-
-        <h3>1. The Muscular Athlete Paradox (Muscle vs. Fat Volume)</h3>
-        <p>
-          Standard BMI calculations treat all body weight identically. Muscle tissue has a density of approximately 1.06 g/mL, whereas adipose (fat) tissue has a density of roughly 0.90 g/mL. Because muscle is significantly denser than fat, muscular individuals, weightlifters, and athletes frequently register BMIs above 25.0 kg/m² ("Overweight") or 30.0 kg/m² ("Obese") despite maintaining low body fat percentages and excellent metabolic cardiovascular health.
-        </p>
-
-        <h3>2. Abdominal Adiposity & Visceral Fat Blindspot</h3>
-        <p>
-          BMI measures total body mass, not where fat is stored on the body. Clinical research demonstrates that deep <strong>visceral fat</strong> surrounding vital abdominal organs (liver, pancreas, kidneys) carries far higher risks of Type 2 diabetes, systemic inflammation, and cardiovascular disease compared to subcutaneous fat stored on the hips and thighs. A person with a "normal" BMI of 22.0 kg/m² who carries excess abdominal fat (sometimes termed "skinny fat" or normal-weight obesity) may face higher health risks than someone with a higher BMI whose fat is distributed subcutaneously.
-        </p>
-
-        <h3>3. Ethnic Cutoff Thresholds & Genetic Differences</h3>
-        <p>
-          Standard World Health Organization (WHO) BMI ranges (18.5 – 24.9 healthy; ≥25 overweight) were established primarily based on studies of Caucasian European and North American populations. However, scientific consensus from the WHO South-East Asia regional office confirms that Asian, South Asian, and East Asian populations develop metabolic diseases like diabetes and hypertension at significantly lower body weights.
-        </p>
-        <ul class="list-disc pl-6 space-y-2 my-4">
-          <li><strong>Standard Global Overweight Cutoff:</strong> 25.0 kg/m²</li>
-          <li><strong>Revised WHO Asian Overweight Cutoff:</strong> 23.0 kg/m²</li>
-          <li><strong>Revised WHO Asian Obesity Cutoff:</strong> 27.5 kg/m²</li>
-        </ul>
-
-        <h3>4. Age and Bone Density Variance</h3>
-        <p>
-          As adults age, natural loss of skeletal muscle mass (sarcopenia) often occurs alongside subtle increases in body fat percentage. Older adults (ages 65+) with a standard BMI in the lower "normal" range (e.g. 19 – 21 kg/m²) actually show higher mortality risks than older individuals with a slightly higher BMI (25 – 27 kg/m²), a phenomenon recognized in geriatrics.
-        </p>
-
-        <h3>5. The "Obesity Paradox" and Metabolic Health</h3>
-        <p>
-          Multiple large-scale observational studies published in major journals (such as <em>JAMA</em> and <em>The Lancet</em>) have demonstrated the "Obesity Paradox": individuals classified as mildly overweight by standard BMI often demonstrate equal or improved survival outcomes during chronic illnesses compared to normal-weight individuals, primarily because BMI fails to account for cardiorespiratory fitness, blood pressure, fasting glucose, and lipid profiles.
-        </p>
-
-        <h2>What is 'Real BMI' and How Does It Solve These Limitations?</h2>
-        <p>
-          The concept of <strong>'Real BMI'</strong> moves beyond the naive bathroom scale calculation. Real BMI evaluates your Body Mass Index in conjunction with complementary physiological metrics:
-        </p>
-
-        <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-            <h4 class="font-bold text-[var(--accent)] mb-1">1. Waist-to-Height Ratio (WHtR)</h4>
-            <p class="text-xs text-[var(--muted-foreground)]">Your waist circumference should be less than half your height (WHtR &lt; 0.50). This directly evaluates abdominal visceral fat risk regardless of scale weight.</p>
-          </div>
-          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-            <h4 class="font-bold text-[var(--accent)] mb-1">2. Basal Metabolic Rate (BMR)</h4>
-            <p class="text-xs text-[var(--muted-foreground)]">Calculates exact baseline calorie burn per day needed for organ function using Mifflin-St Jeor clinical equations.</p>
-          </div>
-          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-            <h4 class="font-bold text-[var(--accent)] mb-1">3. Total Daily Energy Expenditure (TDEE)</h4>
-            <p class="text-xs text-[var(--muted-foreground)]">Adjusts your caloric footprint based on actual daily physical activity levels and exercise volume.</p>
-          </div>
-          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-            <h4 class="font-bold text-[var(--accent)] mb-1">4. Body Fat Percentage & Lean Mass</h4>
-            <p class="text-xs text-[var(--muted-foreground)]">Differentiates active muscular density from total lipid weight to prevent false "overweight" misclassifications in active individuals.</p>
-          </div>
-        </div>
-
-        <h2>What Medical Experts Recommend</h2>
-        <p>
-          Leading medical organizations including the World Health Organization (WHO), Centers for Disease Control and Prevention (CDC), and American Heart Association (AHA) emphasize that BMI should only be used as an <strong>initial initial screening metric</strong>, not a standalone diagnostic outcome.
-        </p>
-        <p>
-          To get an accurate evaluation of your health, doctors recommend combining BMI with:
-        </p>
-        <ol class="list-decimal pl-6 space-y-2 my-4">
-          <li><strong>Waist Circumference Measurement:</strong> Keeping waist size below 35 inches (88 cm) for women and 40 inches (102 cm) for men (or 31.5 in / 35.5 in for Asian populations).</li>
-          <li><strong>Metabolic Panel Testing:</strong> Fasting blood glucose, HbA1c, triglycerides, and HDL/LDL cholesterol levels.</li>
-          <li><strong>Blood Pressure Monitoring:</strong> Evaluating resting blood pressure and cardiovascular fitness.</li>
-          <li><strong>Activity & Fitness Levels:</strong> Consistent aerobic exercise and resistance training.</li>
-        </ol>
-
-        <div class="mt-8 p-8 rounded-2xl border border-[var(--accent)] bg-gradient-to-br from-[var(--card)] to-[var(--accent)]/10 text-center">
-          <h3 class="text-xl font-bold mb-2">Calculate Your Real BMI with Clinical Analytics</h3>
-          <p class="text-sm text-[var(--muted-foreground)] mb-6 max-w-xl mx-auto">
-            Use the free Real BMI Calculator to compute your Body Mass Index, BMR, TDEE, and regional health thresholds in seconds.
-          </p>
-          <a href="/en#calculator" class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105">
-            Launch Real BMI Calculator
-          </a>
-        </div>
+        <h2>How Age Alters BMI Interpretation</h2>
+        <p>A person's age significantly influences body composition, muscle density, and fat storage. While fixed cut-offs apply to adults (ages 20 to 65), pediatricians use age-percentile charts for children (ages 2 to 19), and geriatricians recommend slightly higher BMI windows (24–28 kg/m²) for seniors over 65 to protect against frailty and osteoporosis.</p>
       `,
       hi: `
-        <div class="p-6 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 my-6">
-          <p class="font-bold text-lg text-[var(--foreground)] mb-2">चिकित्सकीय समीक्षा और मुख्य निष्कर्ष</p>
-          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-            मानक बॉडी मास इंडेक्स (BMI) जो केवल वजन/ऊंचाई² से निकाला जाता है, एक अधूरा पैमाना है। हालिया मेडिकल साक्ष्य पुष्टि करते हैं कि बीएमआई मांसपेशियों के घनत्व और वसा के बीच अंतर नहीं कर पाता है, पेट की विसरल वसा की अनदेखी करता है, और विभिन्न नस्लीय समूहों में स्वास्थ्य जोखिमों को सरल बना देता है।
-          </p>
-        </div>
+        <h2>उम्र के साथ बीएमआई में बदलाव</h2>
+        <p>उम्र बढ़ने के साथ मांसपेशियों की मात्रा और शरीर की वसा में बदलाव आता है। बुजुर्गों के लिए थोड़ा अधिक बीएमआई (24–28) सुरक्षित माना जाता है।</p>
+      `
+    }
+  },
 
-        <h2>बीएमआई की उत्पत्ति: यह व्यक्तिगत निदान के लिए कभी नहीं बना था</h2>
-        <p>
-          बॉडी मास इंडेक्स को 1830 के दशक में बेल्जियम के खगोलशास्त्री और गणितज्ञ <strong>अडोल्फ़ क्वेटलेट (Adolphe Quetelet)</strong> ने बनाया था। उन्होंने इस फॉर्मूले को सामाजिक विज्ञान अनुसंधान के लिए बनाया था — <strong>किसी व्यक्ति की व्यक्तिगत स्वास्थ्य स्थिति की जांच के लिए नहीं</strong>।
-        </p>
+  'bmi-chart': {
+    title: {
+      en: 'BMI Chart 2026: Visual Weight Status Grid & Category Cut-offs',
+      hi: 'बीएमआई चार्ट 2026: वजन श्रेणी ग्रिड और विस्तृत कट-ऑफ',
+      ko: '2026 BMI 차트: 시각적 체중 범주 및 건강 기준',
+      de: 'BMI Tabelle 2026: Übersichtliche Gewichtstabelle & WHO-Kategorien',
+      es: 'Tabla de IMC 2026: Cuadrícula Visual de Peso y Categorías de la OMS',
+      fr: 'Tableau d\'IMC 2026 : Grille Visuelle des Catégories et Normes OMS'
+    },
+    category: {
+      en: 'Visual Reference',
+      hi: 'विजुअल संदर्भ',
+      ko: '시각적 참조',
+      de: 'Visuelle Referenz',
+      es: 'Referencia Visual',
+      fr: 'Référence Visuelle'
+    },
+    description: {
+      en: 'Complete visual BMI chart for men and women. View height vs weight grid, global vs Asian thresholds, and health risk indicators.',
+      hi: 'पुरुषों और महिलाओं के लिए बीएमआई चार्ट। ऊंचाई बनाम वजन ग्रिड, वैश्विक और भारतीय मानकों के साथ।',
+      ko: '남성과 여성을 위한 시각적 BMI 차트. 키와 체중 대비 비만도 범주 한눈에 확인.',
+      de: 'Vollständige visuelle BMI-Tabelle für Männer und Frauen. Körpergröße vs. Gewichtstabelle und Risikostufen.',
+      es: 'Tabla visual completa de IMC para hombres y mujeres. Cuadrícula de altura frente a peso y niveles de riesgo.',
+      fr: 'Tableau visuel complet d\'IMC pour hommes et femmes. Grille taille/poids et indicateurs de risque pour la santé.'
+    },
+    contentHtml: {
+      en: `
+        <h2>Complete BMI Reference Chart</h2>
+        <p>The BMI chart grid helps adults quickly determine where their weight falls relative to height. Locate your height in inches or centimeters along the side and match it with your weight in pounds or kilograms.</p>
+      `,
+      hi: `
+        <h2>बीएमआई संदर्भ चार्ट 2026</h2>
+        <p>यह चार्ट आपकी ऊंचाई और वजन के आधार पर आपकी स्वास्थ्य श्रेणी को तुरंत जानने में मदद करता है।</p>
+      `
+    }
+  },
 
-        <h2>मानक बीएमआई की 5 बड़ी वैज्ञानिक कमियां</h2>
-        <h3>1. मांसपेशियों वाले एथलीट का विरोधाभास</h3>
-        <p>मांसपेशियां (muscle) वसा (fat) की तुलना में अधिक घनी होती हैं। इसीलिए बॉडीबिल्डरों और एथलीटों का वजन अधिक होने के कारण बीएमआई 25 से अधिक ("ओवरवेट") आ जाता है, भले ही उनके शरीर में फैट बहुत कम हो।</p>
+  'healthy-weight-chart': {
+    title: {
+      en: 'Healthy Weight Chart by Height for Men & Women (kg & lbs)',
+      hi: 'ऊंचाई के अनुसार स्वस्थ वजन चार्ट: पुरुषों और महिलाओं के लिए',
+      ko: '신장별 적정 체중 차트: 남성 및 여성 (kg & lbs)',
+      de: 'Idealgewicht Tabelle nach Körpergröße für Männer & Frauen',
+      es: 'Tabla de Peso Saludable por Estatura para Hombres y Mujeres',
+      fr: 'Tableau du Poids Idéal selon la Taille pour Hommes et Femmes'
+    },
+    category: {
+      en: 'Weight Management',
+      hi: 'वजन प्रबंधन',
+      ko: '체중 관리',
+      de: 'Gewichtsmanagement',
+      es: 'Control de Peso',
+      fr: 'Gestion du Poids'
+    },
+    description: {
+      en: 'Find your ideal healthy weight target based on height. Includes metric (cm/kg) and imperial (ft-in/lbs) reference tables for adults.',
+      hi: 'अपनी ऊंचाई के अनुसार अपना आदर्श स्वस्थ वजन जानें। किलोग्राम और पाउंड में आसान संदर्भ तालिकाएं।',
+      ko: '키에 따른 이상적인 적정 체중 범위를 확인하세요. 미터법(cm/kg) 참조 표 제공.',
+      de: 'Finden Sie Ihr ideales Zielgewicht basierend auf Ihrer Körpergröße. Enthält Tabellen in kg und lbs.',
+      es: 'Encuentra tu peso ideal saludable según tu estatura. Incluye tablas de referencia en kg y lbs.',
+      fr: 'Trouvez votre poids idéal selon votre taille. Comprend des tableaux de référence en kg et lbs.'
+    },
+    contentHtml: {
+      en: `
+        <h2>Healthy Weight Targets by Height</h2>
+        <p>Your ideal healthy weight range is the mass span at which your BMI stays between 18.5 and 24.9 kg/m². Using clinical formulas such as the Devine and Robinson equations, adults can set clear, realistic body weight goals.</p>
+      `,
+      hi: `
+        <h2>ऊंचाई के अनुसार स्वस्थ वजन की सीमा</h2>
+        <p>अपनी ऊंचाई के अनुसार सही वजन सीमा जानने से वजन प्रबंधन में आसानी होती है।</p>
+      `
+    }
+  },
 
-        <h3>2. पेट की विसरल फैट (Visceral Fat) की अनदेखी</h3>
-        <p>बीएमआई यह नहीं बताता कि फैट शरीर में कहाँ जमा है। पेट के अंगों के आसपास जमा गहरी विसरल वसा डायबिटीज और हृदय रोगों का सबसे बड़ा कारण होती है।</p>
-
-        <h3>3. एशियाई और क्षेत्रीय थ्रेसहोल्ड</h3>
-        <p>एशियाई आबादी में कम वजन पर ही बीएमआई जोखिम शुरू हो जाता है। डब्ल्यूएचओ ने एशियाई आबादी के लिए ओवरवेट कटऑफ 23 kg/m² तय किया है।</p>
-
-        <h3>4. उम्र और हड्डियों का घनत्व</h3>
-        <p>बुजुर्गों में मांसपेशियां कम और फैट अधिक होता है, जिससे सामान्य बीएमआई भी भ्रामक हो सकता है।</p>
-
-        <h3>5. मेटाबॉलिक हेल्थ और 'ऑबेसिटी पैराडॉक्स'</h3>
-        <p>मेडिकल अध्ययनों से पता चलता है कि ब्लड प्रेशर, शुगर और कोलेस्ट्रॉल बीएमआई से अधिक सटीक स्वास्थ्य संकेतक हैं।</p>
-
-        <h2>'Real BMI' क्या है?</h2>
-        <p>'Real BMI' का मतलब केवल तराजू के वजन पर निर्भर न रहकर BMR, TDEE, Waist-to-Height Ratio और फैट प्रतिशत का एक साथ मूल्यांकन करना है।</p>
-
-        <div class="mt-8 p-8 rounded-2xl border border-[var(--accent)] bg-gradient-to-br from-[var(--card)] to-[var(--accent)]/10 text-center">
-          <h3 class="text-xl font-bold mb-2">अपना Real BMI अभी कैलकुलेट करें</h3>
-          <p class="text-sm text-[var(--muted-foreground)] mb-6 max-w-xl mx-auto"> Real BMI कैलकुलेटर का उपयोग करके बीएमआई, बीएमआर और टीडीईई का सटीक विश्लेषण करें।</p>
-          <a href="/en#calculator" class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105">
-            Real BMI कैलकुलेटर खोलें
-          </a>
-        </div>
+  'bmi-vs-body-fat': {
+    title: {
+      en: 'BMI vs. Body Fat Percentage: Key Differences & Which is Better?',
+      hi: 'बीएमआई बनाम बॉडी फैट प्रतिशत: मुख्य अंतर और कौन सा बेहतर है?',
+      ko: 'BMI vs 체지방률: 핵심 차이점과 더 정확한 지표는?',
+      de: 'BMI vs. Körperfettanteil: Unterschiede & was ist genauer?',
+      es: 'IMC vs Porcentaje de Grasa Corporal: Diferencias Principales',
+      fr: 'IMC vs Pourcentage de Graisse Corporelle : Différences Clés'
+    },
+    category: {
+      en: 'Body Composition',
+      hi: 'शरीर संरचना',
+      ko: '체성분 분석',
+      de: 'Körperzusammensetzung',
+      es: 'Composición Corporal',
+      fr: 'Composition Corporelle'
+    },
+    description: {
+      en: 'Compare BMI score against Body Fat Percentage. Learn why body fat percentage provides a more accurate measure of athletic lean body mass.',
+      hi: 'बीएमआई और बॉडी फैट प्रतिशत की तुलना करें। जानें कि शारीरिक फिटनेस के लिए कौन सा मापदंड अधिक सटीक है।',
+      ko: 'BMI와 체지방률의 차이점 비교. 왜 체지방률이 근육량과 지방을 정확히 구분하는가?',
+      de: 'Vergleichen Sie den BMI mit dem Körperfettanteil. Welcher Messwert ist für Ihre Fitnessziele besser?',
+      es: 'Compara el IMC con el porcentaje de grasa corporal. Descubre cuál es más preciso para tus objetivos de salud.',
+      fr: 'Comparez l\'IMC au pourcentage de graisse corporelle. Découvrez quel indicateur est le plus précis.'
+    },
+    contentHtml: {
+      en: `
+        <h2>BMI vs. Body Fat Percentage: What is the Difference?</h2>
+        <p>While <strong>BMI</strong> measures total body mass relative to height, <strong>Body Fat Percentage (% Fat)</strong> calculates the exact proportion of total weight composed of adipose fat tissue versus lean body mass (skeletal muscle, bone, and water).</p>
+        <p>For active individuals, athletes, and fitness enthusiasts, Body Fat Percentage offers far superior insight into physical conditioning than scale weight alone.</p>
+      `,
+      hi: `
+        <h2>बीएमआई बनाम बॉडी फैट प्रतिशत</h2>
+        <p>बीएमआई कुल वजन को मापता है, जबकि बॉडी फैट प्रतिशत यह बताता है कि शरीर में कुल वजन का कितना हिस्सा फैट है।</p>
       `
     }
   }
