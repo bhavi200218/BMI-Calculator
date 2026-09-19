@@ -68,8 +68,8 @@ const webAppSchema = {
   
   <Navbar />
   
-  <main class="pt-26 md:pt-30 pb-20 px-4 md:px-6 relative overflow-x-hidden">
-    <div class="max-w-screen-2xl mx-auto space-y-16">
+  <main class="pt-20 md:pt-24 pb-16 px-4 md:px-8 lg:px-12 relative overflow-x-hidden w-full">
+    <div class="w-full space-y-12">
       
       <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm font-medium text-[var(--muted-foreground)]">
         <a href={`/${lang}/`} class="hover:text-[var(--accent)] transition-colors">Home</a>
@@ -125,7 +125,7 @@ const webAppSchema = {
       )}
 
       <!-- Extended Content & Clinical Knowledge Base for Search Indexing -->
-      <div class="pt-12 space-y-20">
+      <div class="pt-4 space-y-12">
         <ToolSEOContent slug={calc.slug} lang={lang} />
         <EmbedWidgetBox lang={lang} />
         <LatestArticles />
