@@ -112,16 +112,8 @@ const webAppSchema = {
 
       <!-- Main Calculator Layout -->
       {calc.slug === 'new-bmi-calculator' ? (
-        <div class="space-y-10 animate-in" style="animation-delay:100ms">
-          <!-- Primary Highlight: 3D Body Visualizer Canvas Studio (Full 100% Width) -->
-          <div class="w-full">
-            <ThreeDBodyVisualizer lang={lang} />
-          </div>
-
-          <!-- Secondary Result Snapshot Card (Positioned below main 3D diagram) -->
-          <div class="w-full max-w-4xl mx-auto">
-            <CalculatorResult lang={lang} />
-          </div>
+        <div class="w-full animate-in" style="animation-delay:100ms">
+          <ThreeDBodyVisualizer lang={lang} />
         </div>
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch animate-in" style="animation-delay:100ms">
