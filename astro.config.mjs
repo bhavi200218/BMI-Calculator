@@ -13,6 +13,7 @@ export default defineConfig({
       filter: (page) => {
         if (page === 'https://realbmicalculator.com/') return false;
         const path = page.replace('https://realbmicalculator.com', '');
+        if (path.startsWith('/embed/') || path.startsWith('/search/')) return false;
         const isRedirectAlias = ['/bmr-calculator/', '/body-fat-calculator/', '/calculator/', '/editorial-policy/', '/sources/', '/tdee-calculator/'].includes(path);
         return !isRedirectAlias;
       },
