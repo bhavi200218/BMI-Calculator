@@ -10,6 +10,12 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.8,
       lastmod: new Date(),
+      filter: (page) => {
+        if (page === 'https://realbmicalculator.com/') return false;
+        const path = page.replace('https://realbmicalculator.com', '');
+        const isRedirectAlias = ['/bmr-calculator/', '/body-fat-calculator/', '/calculator/', '/editorial-policy/', '/sources/', '/tdee-calculator/'].includes(path);
+        return !isRedirectAlias;
+      },
     }),
   ],
   i18n: {
