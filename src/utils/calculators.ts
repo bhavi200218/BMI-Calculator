@@ -97,12 +97,12 @@ export const calculators: CalculatorConfig[] = [
     name: { en: '3D BMI Calculator', es: 'Calculadora IMC 3D', fr: 'Calculateur IMC 3D', de: '3D BMI Rechner', ko: '3D BMI 계산기', hi: '3D बीएमआई कैलकुलेटर' },
     title: { en: '3D BMI Calculator & 3D Body Visualizer – Free Interactive 3D Model', es: 'Calculadora de IMC 3D y Visualizador Corporal 3D Gratuito', fr: 'Calculateur IMC 3D et Visualiseur Corporel 3D Interactif', de: '3D BMI Rechner & Interaktiver 3D-Körper-Visualisierer', ko: '3D BMI 계산기 및 대화형 3D 체형 시각화 도구', hi: '3D बीएमआई कैलकुलेटर और 3D बॉडी विजुअलाइज़र' },
     description: { 
-      en: 'Calculate your BMI and preview your interactive 3D body model instantly.', 
-      es: 'Calcula tu IMC y visualiza tu modelo corporal 3D al instante.', 
-      fr: 'Calculez votre IMC et prévisualisez votre modèle 3D instantanément.', 
-      de: 'Berechnen Sie Ihren BMI und visualisieren Sie Ihr 3D-Körpermodell sofort.', 
-      ko: 'BMI를 계산하고 3D 대화형 체형 아바타를 즉시 확인하세요.', 
-      hi: 'अपना BMI कैलकुलेट करें और 3D बॉडी मॉडल का पूर्वावलोकन तुरंत देखें।' 
+      en: 'Free 3D BMI Calculator & interactive 3D Body Visualizer. Calculate your Body Mass Index (BMI), ideal weight, and preview your 3D body avatar in real time.', 
+      es: 'Calculadora de IMC 3D gratuita y visualizador corporal 3D interactivo. Calcula tu índice de masa corporal y previsualiza tu silueta 3D en tiempo real.', 
+      fr: 'Calculateur d\'IMC 3D gratuit et visualiseur corporel 3D interactif. Calculez votre IMC et prévisualisez votre avatar 3D en temps réel.', 
+      de: 'Kostenloser 3D BMI Rechner & interaktiver 3D-Körper-Visualisierer. Berechnen Sie Ihren BMI und visualisieren Sie Ihr 3D-Körpermodell in Echtzeit.', 
+      ko: '무료 3D BMI 계산기 및 대화형 3D 체형 시각화 도구. 체질량지수를 계산하고 실시간으로 3D 아바타 실루엣을 확인하세요.', 
+      hi: 'मुफ़्त 3D बीएमआई कैलकुलेटर और इंटरएक्टिव 3D बॉडी विजुअलाइज़र। अपना बीएमआई (BMI) कैलकुलेट करें और 3D बॉडी मॉडल तुरंत देखें।' 
     },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },

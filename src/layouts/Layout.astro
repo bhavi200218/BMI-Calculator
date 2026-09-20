@@ -65,26 +65,19 @@ const webSiteSchema = {
   }
 };
 
-// 2. SoftwareApplication Schema for Rich Snippets (Star Ratings & App info in Google)
+// 2. SoftwareApplication Schema for Search Engines
 const softwareAppSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Real BMI Calculator",
   "operatingSystem": "All",
   "applicationCategory": "HealthApplication",
-  "description": "Free clinical-grade Real BMI Calculator for instant Body Mass Index, BMR, TDEE, and body fat analytics based on WHO and CDC standards.",
+  "description": "Free clinical-grade Real BMI Calculator for instant Body Mass Index, BMR, TDEE, and 3D body shape analytics based on WHO and CDC standards.",
   "url": "https://realbmicalculator.com",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "12840",
-    "bestRating": "5",
-    "worstRating": "1"
   }
 };
 
