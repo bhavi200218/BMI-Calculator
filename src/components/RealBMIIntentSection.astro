@@ -42,16 +42,16 @@ const data: Record<string, any> = {
         desc: "Standard BMI formulas carry clinical limitations for pregnant women (gestational weight), youth under 19 (percentile growth charts), seniors 65+ (muscle protective reserve), and high-muscle athletes."
       }
     ],
-    compBadge: "Clinical Evidence Comparison",
-    compTitle: "Standard BMI vs. Real BMI Calculator",
-    colMetric: "Clinical Metric / Flaw",
-    colStd: "Standard Scale BMI",
-    colReal: "Real BMI Calculator",
+    compBadge: "Health Analytics Overview",
+    compTitle: "Standard BMI & Complementary Health Indicators",
+    colMetric: "Health Metric",
+    colStd: "Standard Baseline Focus",
+    colReal: "What It Evaluates",
     compRows: [
-      { title: "Muscular Athlete Density", std: "❌ Mislabels lean muscle mass as 'Overweight' or 'Obese'", real: "✅ Adjusts with BMR & Body Fat % estimates" },
-      { title: "WHO Asian Visceral Cutoff", std: "❌ Ignores Asian 23.0 kg/m² overweight risk threshold", real: "✅ Fully integrates WHO Asian revised cutoffs" },
-      { title: "Metabolic Calorie Target", std: "❌ Only provides static weight-to-height number", real: "✅ Calculates BMR & TDEE daily calorie needs" },
-      { title: "Abdominal Visceral Fat Assessment", std: "❌ Cannot measure waist circumference or visceral risk", real: "✅ Pairs BMI with Waist-to-Hip Ratio tool" }
+      { title: "Standard BMI Score", std: "Weight relative to height²", real: "WHO & CDC population screening baseline" },
+      { title: "Waist-to-Height Ratio (WHtR)", std: "Central adiposity screening", real: "Abdominal visceral fat risk distribution" },
+      { title: "WHO Asian Cutoff Guidelines", std: "Ethnic threshold adjustment", real: "Revised 23.0 kg/m² overweight risk category" },
+      { title: "BMR & TDEE Metabolic Estimates", std: "Energy expenditure equations", real: "Estimated daily calorie maintenance requirements" }
     ],
     ctaTitle: "Want to know if BMI is actually accurate for you?",
     ctaDesc: "Read our full clinical breakdown on 2026 medical research, muscle density flaws, and WHO ethnic guidelines.",
