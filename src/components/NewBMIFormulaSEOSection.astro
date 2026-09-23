@@ -167,7 +167,7 @@ const translations: Record<string, any> = {
 const t = translations[lang] || translations.en;
 ---
 
-<section class="my-10 max-w-7xl mx-auto space-y-8">
+<section class="px-4 md:px-6 my-10 max-w-7xl mx-auto space-y-8">
     
     <!-- Header -->
     <div class="space-y-3 max-w-3xl">
@@ -184,13 +184,13 @@ const t = translations[lang] || translations.en;
     </div>
 
     <!-- Math Formula Box -->
-    <div class="p-6 rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 space-y-4">
+    <div class="p-4 sm:p-6 rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 space-y-4">
       <div class="text-xs font-display font-semibold uppercase tracking-widest text-[var(--accent)]">{t.formulaTitle}</div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono font-bold text-sm sm:text-base">
-        <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)]">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono font-bold text-xs sm:text-base">
+        <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] break-words">
           {t.standardFormula}
         </div>
-        <div class="p-3.5 rounded-xl border border-[var(--accent)]/40 bg-[var(--accent)]/10 text-[var(--accent)]">
+        <div class="p-3.5 rounded-xl border border-[var(--accent)]/40 bg-[var(--accent)]/10 text-[var(--accent)] break-words">
           {t.newFormula}
         </div>
       </div>
