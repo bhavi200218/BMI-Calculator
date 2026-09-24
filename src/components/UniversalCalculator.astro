@@ -102,16 +102,16 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
       }
 
       // Weight with Metric/Imperial templates
-      if (input.id === 'weight') {
+      if (input.id === 'weight' || input.id === 'preweight') {
         const kgLabel = { en: 'kg', es: 'kg', fr: 'kg', de: 'kg', ko: 'kg', hi: 'किग्रा' }[lang];
         const lbLabel = { en: 'lbs', es: 'lbs', fr: 'lbs', de: 'lbs', ko: 'lbs', hi: 'पाउंड' }[lang];
         return (
           <div class="space-y-2">
             <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] flex items-center justify-between">
               <span>{labelStr}</span>
-              <span id={`weightUnitLabel-${calculator.slug}`} class="text-[var(--accent)] font-bold">{kgLabel}</span>
+              <span id={`weightUnitLabel-${calculator.slug}-${input.id}`} class="text-[var(--accent)] font-bold">{kgLabel}</span>
             </label>
-            <input type="number" id={`input-${calculator.slug}-weight`} placeholder={input.placeholder || '70'} required
+            <input type="number" id={`input-${calculator.slug}-${input.id}`} placeholder={input.placeholder || '70'} required
               class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
               inputmode="decimal" />
           </div>
@@ -204,10 +204,9 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
       }
 
       // Weight Labels
-      const wLabel = document.getElementById('weightUnitLabel-' + slug);
-      if (wLabel) {
+      document.querySelectorAll(`[id^="weightUnitLabel-${slug}"]`).forEach(wLabel => {
         wLabel.textContent = system === 'metric' ? 'kg' : 'lbs';
-      }
+      });
 
       // Height Sections
       const metricHeight = document.getElementById('metricHeightGroup-' + slug);
