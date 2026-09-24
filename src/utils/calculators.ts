@@ -494,7 +494,7 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'water-intake-calculator',
     name: { en: 'Daily Water Intake Calculator', es: 'Calculadora de Consumo de Agua Diario', fr: 'Calculateur d\'Hydratation Journalier', de: 'Täglicher Wasserbedarf Rechner', ko: '하루 물 섭취량 계산기', hi: 'दैनिक पानी का सेवन कैलकुलेटर' },
-    title: { en: 'Water Intake Calculator – Daily Hydration by Weight Tool', es: 'Calculadora de Consumo de Agua Diario por Peso', fr: 'Calculateur d\'Hydratation selon le Poids', de: 'Wasserbedarf Rechner nach Körpergewicht – Täglicher Zielwert', ko: '하루 물 섭취량 계산기 (Water Intake Calculator by Weight)', hi: 'पानी का सेवन कैलकुलेटर - वजन के अनुसार दैनिक हाइड्रेशन' },
+    title: { en: 'Daily Water Intake Calculator – Hydration by Weight Tool', es: 'Calculadora de Consumo de Agua Diario por Peso', fr: 'Calculateur d\'Hydratation selon le Poids', de: 'Wasserbedarf Rechner nach Körpergewicht – Täglicher Zielwert', ko: '하루 물 섭취량 계산기 (Water Intake Calculator by Weight)', hi: 'दैनिक पानी का सेवन कैलकुलेटर - वजन के अनुसार हाइड्रेशन' },
     description: { en: 'Free Water Intake Calculator. Calculate how much water should I drink daily based on body weight, activity level, and climate using clinical hydration formulas.', es: 'Calculadora gratuita de consumo de agua diario. Calcula cuánta agua debes beber al día según tu peso y actividad física.', fr: 'Calculateur gratuit d\'hydratation journalière. Découvrez combien d\'eau boire par jour selon votre poids.', de: 'Kostenloser Wasserbedarf-Rechner. Berechnen Sie, wie viel Wasser Sie täglich nach Körpergewicht und Aktivität trinken sollten.', ko: '무료 하루 물 섭취량 계산기. 체중과 활동량에 따라 매일 마셔야 하는 수분 섭취량을 계산하세요.', hi: 'मुफ़्त पानी का सेवन कैलकुलेटर। अपने वजन और गतिविधि स्तर के आधार पर जाने कि आपको प्रतिदिन कितना पानी पीना चाहिए।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
@@ -578,8 +578,8 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'waist-to-hip-ratio-calculator',
     name: { en: 'Waist to Hip Ratio Calculator', es: 'Calculadora de Relación Cintura a Cadera', fr: 'Calculateur de Rapport Taille à Hanche', de: 'Taille-zu-Hüfte-Verhältnis Rechner', ko: '허리 엉덩이 비율 계산기 (WHR Calculator)', hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर' },
-    title: { en: 'Waist to Hip Ratio Calculator – WHO WHR Chart & Tool', es: 'Calculadora de Relación Cintura a Cadera - Tabla OMS WHR', fr: 'Calculateur de Rapport Taille à Hanche - Normes OMS WHR', de: 'Taille zu Hüfte Verhältnis Rechner – WHO WHR Tabelle', ko: '허리 엉덩이 비율 계산기 (Waist to Hip Ratio Calculator)', hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर - WHO WHR चार्ट' },
-    description: { en: 'Free Waist to Hip Ratio Calculator. Calculate your waist-to-hip ratio (WHR) instantly and assess abdominal obesity and health risk according to WHO standards.', es: 'Calculadora gratuita de relación cintura a cadera. Calcula tu WHR y evalúa el riesgo de obesidad abdominal según la OMS.', fr: 'Calculateur gratuit de rapport taille-hanche (WHR). Évaluez votre obésité abdominale selon les normes de l\'OMS.', de: 'Kostenloser Taille-zu-Hüfte-Verhältnis Rechner. Berechnen Sie Ihren WHR-Wert und bewerten Sie Ihr gesundheitliches Risiko nach WHO-Standards.', ko: '무료 허리 엉덩이 비율 계산기. WHR을 즉시 계산하고 WHO 표준에 따라 복부 비만 및 건강 위험을 진단하세요.', hi: 'मुफ़्त कमर से कूल्हे का अनुपात कैलकुलेटर। अपने WHR की तुरंत गणना करें और WHO मानकों के अनुसार पेट के मोटापे के जोखिम का आकलन करें।' },
+    title: { en: 'Waist to Hip Ratio Calculator – Free WHO WHR Chart & Tool', es: 'Calculadora de Relación Cintura a Cadera - Tabla OMS WHR', fr: 'Calculateur de Rapport Taille à Hanche - Normes OMS WHR', de: 'Taille zu Hüfte Verhältnis Rechner – WHO WHR Tabelle', ko: '허리 엉덩이 비율 계산기 (Waist to Hip Ratio Calculator)', hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर - WHO WHR चार्ट' },
+    description: { en: 'Free Waist to Hip Ratio Calculator. Calculate your exact Waist to Hip Ratio (WHR) instantly and assess abdominal obesity and body fat distribution based on WHO guidelines.', es: 'Calculadora gratuita de relación cintura a cadera. Calcula tu WHR y evalúa el riesgo de obesidad abdominal según la OMS.', fr: 'Calculateur gratuit de rapport taille-hanche (WHR). Évaluez votre obésité abdominale selon les normes de l\'OMS.', de: 'Kostenloser Taille-zu-Hüfte-Verhältnis Rechner. Berechnen Sie Ihren WHR-Wert und bewerten Sie Ihr gesundheitliches Risiko nach WHO-Standards.', ko: '무료 허리 엉덩이 비율 계산기. WHR을 즉시 계산하고 WHO 표준에 따라 복부 비만 및 건강 위험을 진단하세요.', hi: 'मुफ़्त कमर से कूल्हे का अनुपात कैलकुलेटर। अपने WHR की तुरंत गणना करें और WHO मानकों के अनुसार पेट के मोटापे के जोखिम का आकलन करें।' },
     inputs: [
       { id: 'waist', label: L.waist, type: 'number', placeholder: '80' },
       { id: 'hip', label: L.hip, type: 'number', placeholder: '90' },
@@ -610,9 +610,9 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'body-surface-area-calculator',
-    name: { en: 'Mosteller BSA Calculator (Square Meters)', es: 'Calculadora BSA Método Mosteller (Metros Cuadrados)', fr: 'Calculateur BSA Formule Mosteller (Mètres Carrés)', de: 'Mosteller BSA Rechner (Quadratmeter)', ko: 'Mosteller 체표면적 계산기 (Square Meters BSA)', hi: 'मोस्टेलर BSA कैलकुलेटर (वर्ग मीटर)' },
-    title: { en: 'Mosteller BSA Calculator Square Meters – Body Surface Area Tool', es: 'Calculadora BSA Fórmula Mosteller en Metros Cuadrados (m²)', fr: 'Calculateur de Surface Corporelle BSA Formule Mosteller m²', de: 'Mosteller BSA Rechner Quadratmeter (m²) – Körperoberfläche', ko: 'Mosteller BSA 계산기 Square Meters (체표면적 계산기)', hi: 'मोस्टेलर BSA कैलकुलेटर square meters - बॉडी सरफेस एरिया' },
-    description: { en: 'Free Mosteller BSA Calculator Square Meters. Calculate your body surface area (BSA m²) accurately using the clinical Mosteller formula and Du Bois equations.', es: 'Calculadora gratuita de superficie corporal (BSA) en metros cuadrados con la fórmula de Mosteller.', fr: 'Calculateur gratuit de surface corporelle (BSA) en mètres carrés selon la formule de Mosteller.', de: 'Kostenloser Mosteller BSA Rechner in Quadratmetern. Berechnen Sie Ihre Körperoberfläche (m²) nach der Mosteller-Formel.', ko: '무료 Mosteller BSA 계산기 (Square Meters). 공식 Mosteller 및 Du Bois 공식을 사용하여 체표면적(m²)을 정확하게 계산하세요.', hi: 'मुफ़्त मोस्टेलर BSA कैलकुलेटर square meters। नैदानिक मोस्टेलर फॉर्मूला का उपयोग करके अपने शरीर के सतह क्षेत्र (m²) की सटीक गणना करें।' },
+    name: { en: 'Mosteller BSA Calculator (Square Root Method)', es: 'Calculadora BSA Método Mosteller (Metros Cuadrados)', fr: 'Calculateur BSA Formule Mosteller (Mètres Carrés)', de: 'Mosteller BSA Rechner (Quadratmeter)', ko: 'Mosteller 체표면적 계산기 (Square Meters BSA)', hi: 'मोस्टेलर BSA कैलकुलेटर (वर्ग मीटर)' },
+    title: { en: 'Mosteller BSA Calculator (Square Root Method) – Body Surface Area m² Tool', es: 'Calculadora BSA Fórmula Mosteller en Metros Cuadrados (m²)', fr: 'Calculateur de Surface Corporelle BSA Formule Mosteller m²', de: 'Mosteller BSA Rechner Quadratmeter (m²) – Körperoberfläche', ko: 'Mosteller BSA 계산기 Square Meters (체표면적 계산기)', hi: 'मोस्टेलर BSA कैलकुलेटर square meters - बॉडी सरफेस एरिया' },
+    description: { en: 'Free Mosteller BSA Calculator (Square Root Method). Simplified calculation of body surface area in pediatric & adult clinical care using Mosteller [√((height cm × weight kg) / 3600)] & Du Bois formulas.', es: 'Calculadora gratuita de superficie corporal (BSA) en metros cuadrados con la fórmula de Mosteller.', fr: 'Calculateur gratuit de surface corporelle (BSA) en mètres carrés selon la formule de Mosteller.', de: 'Kostenloser Mosteller BSA Rechner in Quadratmetern. Berechnen Sie Ihre Körperoberfläche (m²) nach der Mosteller-Formel.', ko: '무료 Mosteller BSA 계산기 (Square Meters). 공식 Mosteller 및 Du Bois 공식을 사용하여 체표면적(m²)을 정확하게 계산하세요.', hi: 'मुफ़्त मोस्टेलर BSA कैलकुलेटर square meters। नैदानिक मोस्टेलर फॉर्मूला का उपयोग करके अपने शरीर के सतह क्षेत्र (m²) की सटीक गणना करें।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' }
@@ -641,8 +641,8 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'heart-rate-zone-calculator',
     name: { en: 'Karvonen Heart Rate Zone Calculator', es: 'Calculadora de Zonas Cardíacas Karvonen', fr: 'Calculateur de Zone Cardiaque Karvonen', de: 'Karvonen Herzfrequenzzonen Rechner', ko: 'Karvonen 심박수 zone 계산기', hi: 'कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर' },
-    title: { en: 'Karvonen Heart Rate Zone Calculator – Target Heart Rate Tool', es: 'Calculadora de Zonas de Frecuencia Cardíaca Fórmula Karvonen', fr: 'Calculateur de Zone de Fréquence Cardiaque Formule Karvonen', de: 'Karvonen-Formel Herzfrequenzzonen Rechner – Zielpuls', ko: 'Karvonen 공식 타겟 심박수 zone 계산기 (Karvonen HR Zone)', hi: 'कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर - टारगेट हार्ट रेट' },
-    description: { en: 'Free Karvonen Heart Rate Zone Calculator. Calculate your exercise target heart rate zones and fat burn zone using the clinical Karvonen formula and Heart Rate Reserve (HRR).', es: 'Calculadora gratuita de zonas de frecuencia cardíaca con la fórmula de Karvonen. Calcula tus zonas de entrenamiento y quema de grasa.', fr: 'Calculateur gratuit de zones de fréquence cardiaque selon la formule de Karvonen.', de: 'Kostenloser Karvonen-Formel Herzfrequenzzonen Rechner. Berechnen Sie Ihre Ziel-Pulsbereiche für Fettverbrennung und Ausdauer.', ko: '무료 Karvonen 공식 기반 타겟 심박수 zone 계산기. 임상 Karvonen 공식을 사용하여 유산소 및 체지방 연소 심박 구간을 계산하세요.', hi: 'मुफ़्त कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर। नैदानिक कार्वोनेन फॉर्मूला का उपयोग करके अपने व्यायाम के लक्षित हार्ट रेट ज़ोन की सटीक गणना करें।' },
+    title: { en: 'Karvonen Heart Rate Zone Calculator – Target Heart Rate (HRR)', es: 'Calculadora de Zonas de Frecuencia Cardíaca Fórmula Karvonen', fr: 'Calculateur de Zone de Fréquence Cardiaque Formule Karvonen', de: 'Karvonen-Formel Herzfrequenzzonen Rechner – Zielpuls', ko: 'Karvonen 공식 타겟 심박수 zone 계산기 (Karvonen HR Zone)', hi: 'कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर - टारगेट हार्ट रेट' },
+    description: { en: 'Free Karvonen Heart Rate Zone Calculator. Calculate all 5 target exercise heart rate zones, fat burn zone, and VO2 max using the clinical Karvonen formula and Heart Rate Reserve (HRR).', es: 'Calculadora gratuita de zonas de frecuencia cardíaca con la fórmula de Karvonen. Calcula tus zonas de entrenamiento y quema de grasa.', fr: 'Calculateur gratuit de zones de fréquence cardiaque selon la formule de Karvonen.', de: 'Kostenloser Karvonen-Formel Herzfrequenzzonen Rechner. Berechnen Sie Ihre Ziel-Pulsbereiche für Fettverbrennung und Ausdauer.', ko: '무료 Karvonen 공식 기반 타겟 심박수 zone 계산기. 임상 Karvonen 공식을 사용하여 유산소 및 체지방 연소 심박 구간을 계산하세요.', hi: 'मुफ़्त कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर। नैदानिक कार्वोनेन फॉर्मूला का उपयोग करके अपने व्यायाम के लक्षित हार्ट रेट ज़ोन की सटीक गणना करें।' },
     inputs: [
       { id: 'age', label: L.age, type: 'number', placeholder: '25' },
       { id: 'waist', label: { en: 'Resting Heart Rate (BPM)', es: 'Frecuencia Cardíaca en Reposo', fr: 'Fréquence Cardiaque Repos', de: 'Ruhepuls', ko: '안정시 심박수', hi: 'विश्राम हार्ट रेट' }, type: 'number', placeholder: '60' }
@@ -653,16 +653,26 @@ export const calculators: CalculatorConfig[] = [
       const maxHr = 220 - age;
       const hrr = Math.max(0, maxHr - rhr);
 
+      const zone1Min = Math.round(rhr + (hrr * 0.5));
+      const zone1Max = Math.round(rhr + (hrr * 0.6));
       const zone2Min = Math.round(rhr + (hrr * 0.6));
       const zone2Max = Math.round(rhr + (hrr * 0.7));
       const zone3Min = Math.round(rhr + (hrr * 0.7));
       const zone3Max = Math.round(rhr + (hrr * 0.8));
+      const zone4Min = Math.round(rhr + (hrr * 0.8));
+      const zone4Max = Math.round(rhr + (hrr * 0.9));
+      const zone5Min = Math.round(rhr + (hrr * 0.9));
+      const zone5Max = Math.round(rhr + (hrr * 1.0));
 
       return {
-        primary: { value: maxHr, label: { en: 'Max Heart Rate (HRmax)', es: 'Frecuencia Cardíaca Máxima', fr: 'Fréquence Cardiaque Max', de: 'Maximale Herzfrequenz', ko: '최대 심박수', hi: 'अधिकतम हार्ट रेट' }, unit: 'bpm' },
+        primary: { value: `${zone2Min} - ${zone2Max}`, label: { en: 'Fat Burn Zone (Zone 2)', es: 'Zona Quema Grasa (Zona 2)', fr: 'Zone Brûle-Graisse (Zone 2)', de: 'Fettverbrennung (Zone 2)', ko: '지방 연소 구간 (Zone 2)', hi: 'फैट बर्न ज़ोन (ज़ोन 2)' }, unit: 'bpm' },
         secondary: [
-          { label: { en: 'Karvonen Fat Burn (Zone 2)', es: 'Zona Quema Grasa (60-70%)', fr: 'Zone Brûle-Graisse (60-70%)', de: 'Fettverbrennung Zone 2', ko: 'Karvonen 지방 연소 구간', hi: 'कार्वोनेन फैट बर्न ज़ोन' }, value: `${zone2Min} - ${zone2Max}`, unit: 'bpm' },
-          { label: { en: 'Karvonen Aerobic (Zone 3)', es: 'Zona Cardio (70-80%)', fr: 'Zone Cardio (70-80%)', de: 'Aerobe Zone 3', ko: 'Karvonen 유산소 구간', hi: 'कार्वोनेन एरोबिक ज़ोन' }, value: `${zone3Min} - ${zone3Max}`, unit: 'bpm' },
+          { label: { en: 'Zone 1: Recovery (50-60%)', es: 'Zona 1: Recuperación (50-60%)', fr: 'Zone 1: Récupération (50-60%)', de: 'Zone 1: Regeneration (50-60%)', ko: 'Zone 1: 회복 (50-60%)', hi: 'ज़ोन 1: रिकवरी (50-60%)' }, value: `${zone1Min} - ${zone1Max}`, unit: 'bpm' },
+          { label: { en: 'Zone 2: Fat Burn (60-70%)', es: 'Zona 2: Quema Grasa (60-70%)', fr: 'Zone 2: Brûle-Graisse (60-70%)', de: 'Zone 2: Fettverbrennung (60-70%)', ko: 'Zone 2: 지방 연소 (60-70%)', hi: 'ज़ोन 2: फैट बर्न (60-70%)' }, value: `${zone2Min} - ${zone2Max}`, unit: 'bpm' },
+          { label: { en: 'Zone 3: Aerobic (70-80%)', es: 'Zona 3: Cardio (70-80%)', fr: 'Zone 3: Cardio (70-80%)', de: 'Zone 3: Aerob (70-80%)', ko: 'Zone 3: 유산소 (70-80%)', hi: 'ज़ोन 3: एरोबिक (70-80%)' }, value: `${zone3Min} - ${zone3Max}`, unit: 'bpm' },
+          { label: { en: 'Zone 4: Anaerobic (80-90%)', es: 'Zona 4: Anaeróbico (80-90%)', fr: 'Zone 4: Anaérobie (80-90%)', de: 'Zone 4: Anaerob (80-90%)', ko: 'Zone 4: 무산소 (80-90%)', hi: 'ज़ोन 4: एनएरोबिक (80-90%)' }, value: `${zone4Min} - ${zone4Max}`, unit: 'bpm' },
+          { label: { en: 'Zone 5: VO2 Max (90-100%)', es: 'Zona 5: Máximo (90-100%)', fr: 'Zone 5: VO2 Max (90-100%)', de: 'Zone 5: VO2 Max (90-100%)', ko: 'Zone 5: VO2 Max (90-100%)', hi: 'ज़ोन 5: VO2 मैक्स (90-100%)' }, value: `${zone5Min} - ${zone5Max}`, unit: 'bpm' },
+          { label: { en: 'Max Heart Rate (HRmax)', es: 'Frecuencia Cardíaca Máxima', fr: 'Fréquence Cardiaque Max', de: 'Maximale Herzfrequenz', ko: '최대 심박수', hi: 'अधिकतम हार्ट रेट' }, value: maxHr, unit: 'bpm' },
           { label: { en: 'Heart Rate Reserve (HRR)', es: 'Reserva de Frecuencia Cardíaca', fr: 'Réserve Cardiaque (HRR)', de: 'Herzfrequenzreserve', ko: '심박 예비능 (HRR)', hi: 'हार्ट रेट रिजर्व' }, value: hrr, unit: 'bpm' }
         ]
       };
@@ -671,8 +681,8 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'one-rep-max-calculator',
     name: { en: '1RM Bench Press Calculator', es: 'Calculadora 1RM Press de Banca', fr: 'Calculateur 1RM Développé Couché', de: '1RM Bankdrücken Rechner', ko: '1RM 측정기 (1 Rep Max 계산기)', hi: '1RM बेंच प्रेस कैलकुलेटर' },
-    title: { en: '1RM Calculator – Epley 1 Rep Max Bench Press Tool', es: 'Calculadora 1RM Epley Press de Banca y Sentadilla', fr: 'Calculateur 1RM Epley Développé Couché', de: 'Epley 1RM Bankdrücken Rechner – Maximalkraft', ko: '1RM 측정기 – 무료 Epley 1 Rep Max 벤치프레스 계산기', hi: 'एपले 1RM बेंच प्रेस कैलकुलेटर - वन रेप मैक्स' },
-    description: { en: 'Free 1RM Bench Press Calculator. Calculate your one rep max (1RM) bench press, squat, and deadlift using the official Epley 1RM formula equation.', es: 'Calculadora gratuita de 1RM con la fórmula de Epley para press de banca. Calcula tu peso máximo a una repetición.', fr: 'Calculateur gratuit de 1RM selon la formule d\'Epley pour le développé couché.', de: 'Kostenloser Epley 1RM Bankdrücken Rechner. Berechnen Sie Ihre Maximalkraft für 1 Rep mit der Epley-Formel.', ko: '무료 1RM 측정기 (1 Rep Max 계산기). 임상 Epley 1RM 공식을 사용하여 벤치프레스, 스쿼트, 데드리프트 1RM을 즉시 계산하세요.', hi: 'मुफ़्त एपले 1RM बेंच प्रेस कैलकुलेटर। आधिकारिक एपले 1RM फॉर्मूला का उपयोग करके अपने 1RM की सटीक गणना करें।' },
+    title: { en: '1RM Bench Press Calculator – One Rep Max (Epley & Brzycki)', es: 'Calculadora 1RM Epley Press de Banca y Sentadilla', fr: 'Calculateur 1RM Epley Développé Couché', de: 'Epley 1RM Bankdrücken Rechner – Maximalkraft', ko: '1RM 측정기 – 무료 Epley 1 Rep Max 벤치프레스 계산기', hi: '1RM बेंच प्रेस कैलकुलेटर - वन रेप मैक्स' },
+    description: { en: 'Free 1RM Bench Press Calculator. Calculate your one rep max (1RM) bench press, squat, and deadlift using the Epley, Brzycki, and Lander formula equations.', es: 'Calculadora gratuita de 1RM con la fórmula de Epley para press de banca. Calcula tu peso máximo a una repetición.', fr: 'Calculateur gratuit de 1RM selon la formule d\'Epley pour le développé couché.', de: 'Kostenloser Epley 1RM Bankdrücken Rechner. Berechnen Sie Ihre Maximalkraft für 1 Rep mit der Epley-Formel.', ko: '무료 1RM 측정기 (1 Rep Max 계산기). 임상 Epley 1RM 공식을 사용하여 벤치프레스, 스쿼트, 데드리프트 1RM을 즉시 계산하세요.', hi: 'मुफ़्त 1RM बेंच प्रेस कैलकुलेटर। आधिकारिक एपले 1RM फॉर्मूला का उपयोग करके अपने 1RM की सटीक गणना करें।' },
     inputs: [
       { id: 'weight', label: { en: 'Weight Lifted', es: 'Peso Levantado', fr: 'Charge Soulevée', de: 'Gewicht', ko: '리프팅 무게', hi: 'उठाया गया वजन' }, type: 'number', placeholder: '100' },
       { id: 'age', label: { en: 'Reps Performed', es: 'Repeticiones', fr: 'Répétitions', de: 'Wiederholungen', ko: '반복 횟수(Reps)', hi: 'रेप्स' }, type: 'number', placeholder: '5' }
@@ -685,22 +695,28 @@ export const calculators: CalculatorConfig[] = [
       const epley1RM = w * (1 + (r / 30));
       // Brzycki Formula: 1RM = W * (36 / (37 - R))
       const brzycki1RM = r < 37 ? w * (36 / (37 - r)) : epley1RM;
+      // Lander Formula: (100 * W) / (101.3 - 2.67123 * R)
+      const lander1RM = (100 * w) / Math.max(1, 101.3 - (2.67123 * r));
+
+      const unitStr = system === 'imperial' ? 'lbs' : 'kg';
 
       return {
-        primary: { value: Math.round(epley1RM), label: { en: 'Epley Estimated 1RM', es: '1RM Estimado Epley', fr: '1RM Estimé Epley', de: 'Epley 1RM Wert', ko: 'Epley 추정 1RM 무게', hi: 'एपले अनुमानित 1RM' }, unit: system === 'imperial' ? 'lbs' : 'kg' },
+        primary: { value: Math.round(epley1RM), label: { en: 'Epley Estimated 1RM Bench Press', es: '1RM Estimado Epley', fr: '1RM Estimé Epley', de: 'Epley 1RM Wert', ko: 'Epley 추정 1RM 무게', hi: 'एपले अनुमानित 1RM' }, unit: unitStr },
         secondary: [
-          { label: { en: 'Brzycki Formula 1RM', es: '1RM Fórmula Brzycki', fr: '1RM Formule Brzycki', de: 'Brzycki 1RM Wert', ko: 'Brzycki 추정 1RM', hi: 'ब्रज़िकी 1RM' }, value: Math.round(brzycki1RM), unit: system === 'imperial' ? 'lbs' : 'kg' },
-          { label: { en: '85% 1RM (5-6 Rep Target)', es: '85% del Máximo (5-6 Reps)', fr: '85% du 1RM (5-6 Reps)', de: '85% 1RM (5-6 Wdh)', ko: '85% 훈련 무게 (5~6회)', hi: '85% 1RM Target' }, value: Math.round(epley1RM * 0.85), unit: system === 'imperial' ? 'lbs' : 'kg' },
-          { label: { en: '75% 1RM (10 Rep Target)', es: '75% del Máximo (10 Reps)', fr: '75% du 1RM (10 Reps)', de: '75% 1RM (10 Wdh)', ko: '75% 훈련 무게 (10회)', hi: '75% 1RM Target' }, value: Math.round(epley1RM * 0.75), unit: system === 'imperial' ? 'lbs' : 'kg' }
+          { label: { en: 'Brzycki Formula 1RM', es: '1RM Fórmula Brzycki', fr: '1RM Formule Brzycki', de: 'Brzycki 1RM Wert', ko: 'Brzycki 추정 1RM', hi: 'ब्रज़िकी 1RM' }, value: Math.round(brzycki1RM), unit: unitStr },
+          { label: { en: 'Lander Formula 1RM', es: '1RM Fórmula Lander', fr: '1RM Formule Lander', de: 'Lander 1RM Wert', ko: 'Lander 추정 1RM', hi: 'लैंडर 1RM' }, value: Math.round(lander1RM), unit: unitStr },
+          { label: { en: '90% 1RM (3 Rep Heavy Load)', es: '90% del Máximo (3 Reps)', fr: '90% du 1RM (3 Reps)', de: '90% 1RM (3 Wdh)', ko: '90% 훈련 무게 (3회)', hi: '90% 1RM Target' }, value: Math.round(epley1RM * 0.90), unit: unitStr },
+          { label: { en: '85% 1RM (5 Rep Hypertrophy)', es: '85% del Máximo (5 Reps)', fr: '85% du 1RM (5 Reps)', de: '85% 1RM (5 Wdh)', ko: '85% 훈련 무게 (5회)', hi: '85% 1RM Target' }, value: Math.round(epley1RM * 0.85), unit: unitStr },
+          { label: { en: '75% 1RM (10 Rep Volume)', es: '75% del Máximo (10 Reps)', fr: '75% du 1RM (10 Reps)', de: '75% 1RM (10 Wdh)', ko: '75% 훈련 무게 (10회)', hi: '75% 1RM Target' }, value: Math.round(epley1RM * 0.75), unit: unitStr }
         ]
       };
     }
   },
   {
     slug: 'pregnancy-weight-gain-calculator',
-    name: { en: 'Pregnancy Weight Gain', es: 'Aumento de Peso en Embarazo', fr: 'Poids de Grossesse', de: 'Schwangerschaftsgewichtsrechner', ko: '임산부 체중 증가 계산기', hi: 'गर्भावस्था वजन बढ़ना कैलकुलेटर' },
-    title: { en: 'Pregnancy Weight Gain Guide & Calculator', es: 'Calculadora de Peso Saludable en Gestación', fr: 'Calculateur de Prise de Poids de Grossesse', de: 'Gewichtszunahme während der Schwangerschaft Rechner', ko: '임신 주수별 체중 증가 계산기', hi: 'गर्भावस्था के दौरान वजन बढ़ने का कैलकुलेटर' },
-    description: { en: 'Track recommended gestational weight accumulation.', es: 'Monitorea el aumento de peso recomendado en el embarazo.', fr: 'Suivez la prise de poids recommandée pendant la grossesse.', de: 'Verfolgen Sie die empfohlene Gewichtszunahme.', ko: '임신 후 아기와 산모의 주수별 권장 체중 증량을 측정합니다.', hi: 'गर्भावस्था के दौरान वजन बढ़ने की सीमा को ट्रैक करें।' },
+    name: { en: 'Pregnancy Weight Gain Calculator', es: 'Aumento de Peso en Embarazo', fr: 'Poids de Grossesse', de: 'Schwangerschaftsgewichtsrechner', ko: '임산부 체중 증가 계산기', hi: 'गर्भावस्था वजन बढ़ना कैलकुलेटर' },
+    title: { en: 'Pregnancy Weight Gain Calculator – Week-by-Week ACOG / IOM Tracker', es: 'Calculadora de Peso Saludable en Gestación', fr: 'Calculateur de Prise de Poids de Grossesse', de: 'Gewichtszunahme während der Schwangerschaft Rechner', ko: '임신 주수별 체중 증가 계산기', hi: 'गर्भावस्था के दौरान वजन बढ़ने का कैलकुलेटर' },
+    description: { en: 'Free Pregnancy Weight Gain Calculator aligned with ACOG & IOM clinical guidelines. Track week-by-week gestational weight accumulation by trimester and pre-pregnancy BMI.', es: 'Calculadora gratuita de peso saludable en gestación.', fr: 'Calculateur gratuit de prise de poids pendant la grossesse.', de: 'Kostenloser Gewichtszunahme während der Schwangerschaft Rechner.', ko: '무료 임신 주수별 체중 증가 계산기.', hi: 'मुफ़्त गर्भावस्था के दौरान वजन बढ़ने का कैलकुलेटर।' },
     inputs: [
       { id: 'weight', label: { en: 'Current Weight', es: 'Peso Actual', fr: 'Poids Actuel', de: 'Aktuelles Gewicht', ko: '현재 체중', hi: 'वर्तमान वजन' }, type: 'number', placeholder: '70' },
       { id: 'height', label: { en: 'Pre-pregnancy Weight', es: 'Peso Pre-embarazo', fr: 'Poids Avant Grossesse', de: 'Gewicht vor Schwangerschaft', ko: '임신 전 체중', hi: 'गर्भावस्था से पहले का वजन' }, type: 'number', placeholder: '60' },
@@ -709,21 +725,23 @@ export const calculators: CalculatorConfig[] = [
     calculate: (inputs, system) => {
       const curW = parseFloat(inputs.weight) || 0;
       const preW = parseFloat(inputs.height) || 0; // reusing height input box for pre-pregnancy weight
-      const week = parseInt(inputs.age) || 1;
+      const week = Math.min(40, Math.max(1, parseInt(inputs.age) || 1));
 
       const diff = curW - preW;
-      // Target based on week. Normal pre-pregnancy target is 11.5 - 16 kg (approx 25 - 35 lbs) total
-      const minGain = (week / 40) * 11.5;
-      const maxGain = (week / 40) * 16.0;
+      const isImperial = system === 'imperial';
+      const minTotal = isImperial ? 25 : 11.5;
+      const maxTotal = isImperial ? 35 : 16.0;
 
-      const displayDiff = system === 'imperial' ? diff : diff;
-      const targetMin = system === 'imperial' ? minGain : minGain;
-      const targetMax = system === 'imperial' ? maxGain : maxGain;
+      const minGain = (week / 40) * minTotal;
+      const maxGain = (week / 40) * maxTotal;
+
+      const unitStr = isImperial ? 'lbs' : 'kg';
 
       return {
-        primary: { value: displayDiff.toFixed(1), label: { en: 'Current Gain', es: 'Ganancia Actual', fr: 'Gain Actuel', de: 'Aktuelle Zunahme', ko: '현재 증량 무게', hi: 'वर्तमान वजन बढ़ना' }, unit: system === 'imperial' ? 'lbs' : 'kg' },
+        primary: { value: diff.toFixed(1), label: { en: 'Current Weight Gain', es: 'Ganancia Actual', fr: 'Gain Actuel', de: 'Aktuelle Zunahme', ko: '현재 증량 무게', hi: 'वर्तमान वजन बढ़ना' }, unit: unitStr },
         secondary: [
-          { label: { en: 'Target Range for Week', es: 'Rango Recomendado para la Semana', fr: 'Fourchette Cible pour la Semaine', de: 'Empfohlene Zunahme für diese Woche', ko: '해당 주수의 적정 권장 범위', hi: 'सप्ताह के लिए लक्षित सीमा' }, value: `${targetMin.toFixed(1)} - ${targetMax.toFixed(1)}`, unit: system === 'imperial' ? 'lbs' : 'kg' }
+          { label: { en: `Target Range for Week ${week}`, es: `Rango Recomendado para la Semana ${week}`, fr: `Fourchette Cible pour la Semaine ${week}`, de: `Empfohlene Zunahme für diese Woche ${week}`, ko: `${week}주차 적정 권장 범위`, hi: `सप्ताह ${week} के लिए लक्षित सीमा` }, value: `${minGain.toFixed(1)} - ${maxGain.toFixed(1)}`, unit: unitStr },
+          { label: { en: 'Total Recommended 40-Week Target', es: 'Meta Total Recomendada (40 Semanas)', fr: 'Objectif Total Recommandé (40 Semaines)', de: 'Gesamtziel für 40 Wochen', ko: '40주 전체 적정 권장 범위', hi: '40 सप्ताह का कुल लक्षित वजन' }, value: `${minTotal.toFixed(1)} - ${maxTotal.toFixed(1)}`, unit: unitStr }
         ]
       };
     }

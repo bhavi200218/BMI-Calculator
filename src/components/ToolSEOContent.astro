@@ -331,23 +331,25 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'body-surface-area-calculator': {
     en: {
-      eyebrow: 'Mosteller & Du Bois Equations',
-      title: 'Mosteller BSA Calculator Square Meters & Body Surface Area Tool',
-      intro: 'Calculate your estimated body surface area square meters with our free Mosteller BSA Calculator. Powered by the Mosteller BSA formula and Du Bois equations, compute total skin surface area (m²) for health indexing.',
-      formulaTitle: 'Mosteller BSA Formula Equations',
-      formulaDesc: 'Mosteller BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ] | Du Bois BSA (m²) = 0.007184 × Height (cm)^0.725 × Weight (kg)^0.425',
-      formulaCode: 'BSA (m²) = √ ( (H × W) / 3600 )',
-      tableTitle: 'Body Surface Area Square Meters (m²) Reference Standards',
+      eyebrow: 'Clinical Medical Mosteller & Du Bois Equations',
+      title: 'Mosteller BSA Calculator (Square Root Method) & Body Surface Area Tool',
+      intro: 'Body Surface Area (BSA) is a measure of the total outer surface area of the body, calculated using the Mosteller formula or square root method. Our free clinical Mosteller BSA Calculator supports dual unit conversion (cm, in, ft, kg, lb) and computes total skin surface area (m²) using Mosteller [((Height × Weight)/3600)^½] and Du Bois formulas for medical dosing and chemotherapy.',
+      formulaTitle: 'Mosteller BSA Formula Equations (Square Root, Power-of-Half & Multiplier Methods)',
+      formulaDesc: 'Mosteller BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ] = ( [Height(cm) × Weight(kg)] / 3600 )^½ = 0.016667 × Weight (kg)^0.5 × Height (cm)^0.5 | Du Bois BSA (m²) = 0.007184 × Height (cm)^0.725 × Weight (kg)^0.425',
+      formulaCode: 'BSA (m²) = [ (Height cm × Weight kg) / 3600 ]^½ = √ ( (H × W) / 3600 ) = 0.016667 × W^0.5 × H^0.5',
+      tableTitle: 'Body Surface Area Square Meters (m²) Pediatric & Adult Clinical Reference Standards',
       tableRows: [
-        { col1: 'Adult Women Average', col2: '1.60 m²', col3: 'Standard adult female reference' },
-        { col1: 'Adult Men Average', col2: '1.90 m²', col3: 'Standard adult male reference' },
-        { col1: 'Tall Athletic Male Average', col2: '2.10 m² – 2.30 m²', col3: 'Elevated muscle mass & height surface area' },
-        { col1: 'Children (9-12 years)', col2: '1.07 m²', col3: 'Pediatric reference baseline' }
+        { col1: 'Infants (0–12 months)', col2: '0.25 m² – 0.35 m²', col3: 'Pediatric neonatal clinical baseline' },
+        { col1: 'Toddlers (1–5 years)', col2: '0.50 m² – 0.70 m²', col3: 'Pediatric early childhood baseline' },
+        { col1: 'Children (9–12 years)', col2: '1.07 m²', col3: 'Pediatric middle childhood reference' },
+        { col1: 'Adult Women Average', col2: '1.60 m²', col3: 'Standard adult female clinical reference' },
+        { col1: 'Adult Men Average', col2: '1.90 m²', col3: 'Standard adult male clinical reference' },
+        { col1: 'Tall Athletic Male Average', col2: '2.10 m² – 2.30 m²', col3: 'Elevated muscle mass & height surface area' }
       ],
       faqs: [
-        { question: 'What is the Mosteller BSA Calculator Square Meters?', answer: 'The Mosteller BSA Calculator Square Meters is a health screening tool published by Dr. R.D. Mosteller in 1987. It calculates total body surface area (BSA) in square meters (m²) based on height and weight.' },
-        { question: 'How to calculate body surface area square meters using the Mosteller formula?', answer: 'To calculate BSA square meters with the Mosteller formula: Multiply height in cm by weight in kg, divide by 3600, and take the square root. For example, for 175 cm and 70 kg: √(175 × 70 / 3600) = √(3.4027) = 1.84 m².' },
-        { question: 'Why is the Mosteller formula widely used in health literature?', answer: 'The Mosteller BSA formula is widely used because it is simplified, easy to memorize, and delivers near-identical results to the complex exponential Du Bois formula.' },
+        { question: 'What is the Mosteller BSA Calculator Square Meters?', answer: 'Body Surface Area (BSA) is a measure of the total outer surface area of the body, calculated using the Mosteller formula or square root method. Published by Dr. R.D. Mosteller in the New England Journal of Medicine (1987), it computes BSA in m² using ([Height(cm) × Weight(kg)]/3600)^½ or 0.016667 × Weight^0.5 × Height^0.5.' },
+        { question: 'How to calculate body surface area square meters using the Mosteller formula?', answer: 'To calculate BSA square meters with the Mosteller formula: Multiply height in cm by weight in kg, divide by 3600, and take the square root or power of ½: ([Height(cm) × Weight(kg)]/3600)^½. For example, for 175 cm and 70 kg: √(175 × 70 / 3600) = √(3.4027) = 1.84 m².' },
+        { question: 'Why is the Mosteller formula used in chemotherapy dosing and clinical medicine?', answer: 'The Mosteller BSA formula is used in clinical oncology, nephrology, and burn fluid resuscitation because it simplifies complex exponential body surface area calculations while preserving extreme accuracy for drug dosing.' },
         { question: 'Why is BSA measured in square meters (m²)?', answer: 'Body surface area in square meters correlates closely with metabolic rate, cardiac output, and physiological clearance rates compared to body weight alone.' },
         { question: 'What is the average body surface area for adults?', answer: 'The average body surface area is approximately 1.60 m² for adult women and 1.90 m² for adult men.' }
       ]
@@ -417,8 +419,11 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Overweight (25.0-29.9)', col2: '7.0 – 11.5 kg (15 - 25 lbs)', col3: '~0.3 kg / week in 2nd/3rd trimester' }
       ],
       faqs: [
-        { question: 'How much weight should I gain on the pregnancy weight gain calculator?', answer: 'Target weight gain depends on pre-pregnancy BMI. Women with normal pre-pregnancy BMI (18.5–24.9) should aim to gain 11.5 to 16 kg (25 to 35 lbs) total.' },
-        { question: 'What is typical first trimester weight gain?', answer: 'Most women gain between 0.5 and 2.0 kg (1 to 4.5 lbs) during the first 12 weeks of pregnancy.' }
+        { question: 'What is the Pregnancy Weight Gain Calculator?', answer: 'The Pregnancy Weight Gain Calculator is an obstetric screening tool based on ACOG (American College of Obstetricians and Gynecologists) and IOM (Institute of Medicine) guidelines. It calculates recommended week-by-week gestational weight accumulation based on pre-pregnancy BMI.' },
+        { question: 'How to calculate healthy pregnancy weight gain week by week?', answer: 'To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters.' },
+        { question: 'How much total weight should you gain during pregnancy?', answer: 'According to IOM guidelines: Underweight (<18.5 BMI) should gain 28–40 lbs (12.5–18 kg); Normal BMI (18.5–24.9) should gain 25–35 lbs (11.5–16 kg); Overweight (25–29.9 BMI) should gain 15–25 lbs (7–11.5 kg); Obese (≥30 BMI) should gain 11–20 lbs (5–9 kg).' },
+        { question: 'What is typical first trimester weight gain?', answer: 'Most women gain between 0.5 and 2.0 kg (1 to 4.5 lbs) total during the first 12 weeks of pregnancy due to minimal fetal weight growth.' },
+        { question: 'Why does pre-pregnancy BMI affect gestational weight targets?', answer: 'Pre-pregnancy BMI determines metabolic energy reserves. Maternal-fetal health studies show tailored weight targets reduce risks of gestational diabetes, preeclampsia, macrosomia, and preterm delivery.' }
       ]
     }
   }
