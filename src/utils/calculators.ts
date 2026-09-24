@@ -95,14 +95,14 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: '3d-bmi-calculator',
     name: { en: '3D BMI Calculator', es: 'Calculadora IMC 3D', fr: 'Calculateur IMC 3D', de: '3D BMI Rechner', ko: '3D BMI 계산기', hi: '3D बीएमआई कैलकुलेटर' },
-    title: { en: '3D BMI Calculator & 3D Body Visualizer – Free Interactive 3D Model', es: 'Calculadora de IMC 3D y Visualizador Corporal 3D Gratuito', fr: 'Calculateur IMC 3D et Visualiseur Corporel 3D Interactif', de: '3D BMI Rechner & Interaktiver 3D-Körper-Visualisierer', ko: '3D BMI 계산기 및 대화형 3D 체형 시각화 도구', hi: '3D बीएमआई कैलकुलेटर और 3D बॉडी विजुअलाइज़र' },
+    title: { en: '3D BMI Calculator & 3D Body Visualizer by Height & Weight (360° Interactive Avatar)', es: 'Calculadora de IMC 3D y Visualizador Corporal 3D Gratuito (Modelo 360°)', fr: 'Calculateur IMC 3D et Visualiseur Corporel 3D Interactif (Avatar 360°)', de: '3D BMI Rechner & Interaktiver 3D-Körper-Visualisierer (360° Modell)', ko: '3D BMI 계산기 및 대화형 3D 체형 시각화 도구 (360° 아바타)', hi: '3D बीएमआई कैलकुलेटर और 3D बॉडी विजुअलाइज़र (360° इंटरएक्टिव अवतार)' },
     description: { 
-      en: 'Free 3D BMI Calculator & interactive 3D Body Visualizer. Calculate your Body Mass Index (BMI), ideal weight, and preview your 3D body avatar in real time.', 
-      es: 'Calculadora de IMC 3D gratuita y visualizador corporal 3D interactivo. Calcula tu índice de masa corporal y previsualiza tu silueta 3D en tiempo real.', 
-      fr: 'Calculateur d\'IMC 3D gratuit et visualiseur corporel 3D interactif. Calculez votre IMC et prévisualisez votre avatar 3D en temps réel.', 
-      de: 'Kostenloser 3D BMI Rechner & interaktiver 3D-Körper-Visualisierer. Berechnen Sie Ihren BMI und visualisieren Sie Ihr 3D-Körpermodell in Echtzeit.', 
-      ko: '무료 3D BMI 계산기 및 대화형 3D 체형 시각화 도구. 체질량지수를 계산하고 실시간으로 3D 아바타 실루엣을 확인하세요.', 
-      hi: 'मुफ़्त 3D बीएमआई कैलकुलेटर और इंटरएक्टिव 3D बॉडी विजुअलाइज़र। अपना बीएमआई (BMI) कैलकुलेट करें और 3D बॉडी मॉडल तुरंत देखें।' 
+      en: 'Free 3D Body Visualizer & 3D BMI Calculator. Calculate Body Mass Index (BMI), view 360° interactive front, side and back 3D avatar mesh, solid, wireframe & heatmap modes with Oxford 2.5 exponent scaling.', 
+      es: 'Calculadora de IMC 3D gratuita y visualizador corporal 3D interactivo. Calcula tu índice de masa corporal y previsualiza tu avatar 3D en 360° en tiempo real.', 
+      fr: 'Calculateur d\'IMC 3D gratuit et visualiseur corporel 3D interactif. Calculez votre IMC et prévisualisez votre avatar 3D à 360° en temps réel.', 
+      de: 'Kostenloser 3D BMI Rechner & interaktiver 3D-Körper-Visualisierer. Berechnen Sie Ihren BMI und visualisieren Sie Ihr 3D-Körpermodell in 360° Echtzeit.', 
+      ko: '무료 3D BMI 계산기 및 대화형 3D 체형 시각화 도구. 체질량지수를 계산하고 실시간 360° 3D 아바타 실루엣을 확인하세요.', 
+      hi: 'मुफ़्त 3D बीएमआई कैलकुलेटर और इंटरएक्टिव 3D बॉडी विजुअलाइज़र। 360° फ्रंट, साइड और बैक 3D अवतार मॉडल में अपना बीएमआई तुरंत देखें।' 
     },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
