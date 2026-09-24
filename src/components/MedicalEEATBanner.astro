@@ -7,13 +7,13 @@ const { lang = 'en' } = Astro.props;
 
 const labels: Record<string, any> = {
   en: {
-    reviewedTag: "Evidence-Based Health Standard",
+    reviewedTag: "Evidence-Based Health Standards",
     reviewedTitle: "Aligned with Official WHO & CDC Guidelines",
     reviewedDesc: "All calculations, reference ranges, and health metrics are calibrated using published guidelines from the World Health Organization (WHO), American Cancer Society (ACS), and Centers for Disease Control and Prevention (CDC).",
     boardLabel: "Reference Standards",
     boardValue: "WHO & CDC Guidelines",
     lastUpdated: "Updated: 2026 Reference Data",
-    icdCode: "ICD-10-CM Z68 Verified",
+    icdCode: "WHO & CDC Standards Aligned",
     sourcesTitle: "Primary Scientific Sources & Citations",
     sources: [
       { name: "WHO Obesity & Overweight Guidelines", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "World Health Organization" },
@@ -24,13 +24,13 @@ const labels: Record<string, any> = {
     disclaimer: "Medical Disclaimer: The Real BMI Calculator provides educational metrics (BMI, BMR, TDEE) and screening estimates based on population statistics. It does not replace individualized medical advice, clinical diagnosis, or treatment by a licensed physician."
   },
   hi: {
-    reviewedTag: "नैदानिक E-E-A-T मानक",
-    reviewedTitle: "चिकित्सकीय रूप से समीक्षित एवं वैज्ञानिक रूप से सत्यापित",
+    reviewedTag: "प्रमाण-आधारित स्वास्थ्य मानक",
+    reviewedTitle: "WHO एवं CDC आधिकारिक दिशानिर्देशों पर आधारित",
     reviewedDesc: "सभी गणनाएं, संदर्भ श्रेणियां और स्वास्थ्य मेट्रिक्स विश्व स्वास्थ्य संगठन (WHO), अमेरिकन कैंसर सोसाइटी (ACS) और सीडीसी (CDC) के आधिकारिक दिशानिर्देशों का उपयोग करके कैलिब्रेट किए गए हैं।",
-    boardLabel: "समीक्षा की गई",
-    boardValue: "Real BMI क्लिनिकल एडिटोरियल बोर्ड",
-    lastUpdated: "अद्यतन: 2026 क्लिनिकल प्रोटोकॉल",
-    icdCode: "ICD-10-CM Z68 सत्यापित",
+    boardLabel: "संदर्भ मानक",
+    boardValue: "Real BMI Editorial Board",
+    lastUpdated: "अद्यतन: 2026 संदर्भ डेटा",
+    icdCode: "WHO एवं CDC मानक संरेखित",
     sourcesTitle: "प्राथमिक वैज्ञानिक स्रोत और उद्धरण",
     sources: [
       { name: "डब्ल्यूएचओ मोटापा दिशानिर्देश", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "विश्व स्वास्थ्य संगठन" },
@@ -41,13 +41,13 @@ const labels: Record<string, any> = {
     disclaimer: "चिकित्सा अस्वीकरण: Real BMI कैलकुलेटर केवल शैक्षिक मीट्रिक और जनसंख्या आंकड़ों के आधार पर स्क्रीनिंग अनुमान प्रदान करता है। यह किसी लाइसेंस प्राप्त चिकित्सक द्वारा व्यक्तिगत चिकित्सा सलाह का स्थान नहीं लेता है।"
   },
   es: {
-    reviewedTag: "Estándar E-E-A-T Clínico",
-    reviewedTitle: "Revisado Médicamente y Validado Científicamente",
+    reviewedTag: "Estándar de Salud Basado en Evidencia",
+    reviewedTitle: "Alineado con las Directrices Oficiales de la OMS y los CDC",
     reviewedDesc: "Todos los cálculos y rangos de referencia se calibran según las pautas oficiales de la OMS, la Sociedad Americana del Cáncer (ACS) y los CDC.",
-    boardLabel: "Revisado por",
-    boardValue: "Consejo Editorial Clínico Real BMI",
-    lastUpdated: "Actualizado: Protocolos Clínicos 2026",
-    icdCode: "Verificado ICD-10-CM Z68",
+    boardLabel: "Estándares de Referencia",
+    boardValue: "Consejo Editorial Real BMI",
+    lastUpdated: "Actualizado: Datos de Referencia 2026",
+    icdCode: "Estándares OMS y CDC",
     sourcesTitle: "Fuentes Científicas Primarias y Citas",
     sources: [
       { name: "Pautas de Obesidad de la OMS", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "Organización Mundial de la Salud" },
@@ -58,13 +58,13 @@ const labels: Record<string, any> = {
     disclaimer: "Aviso Médico: Real BMI Calculator proporciona métricas educativas basadas en datos poblacionales. No reemplaza el consejo médico profesional."
   },
   fr: {
-    reviewedTag: "Norme E-E-A-T Clinique",
-    reviewedTitle: "Revu Médicalement et Validé Scientifiquement",
+    reviewedTag: "Norme de Santé Basée sur la Science",
+    reviewedTitle: "Aligné sur les Directives Officielles de l'OMS et des CDC",
     reviewedDesc: "Tous les calculs et plages de référence sont calibrés selon les directives officielles de l'OMS, de l'ACS et des CDC.",
-    boardLabel: "Revu par",
-    boardValue: "Comité Éditorial Clinique Real BMI",
-    lastUpdated: "Mis à jour: Protocoles Cliniques 2026",
-    icdCode: "Vérifié ICD-10-CM Z68",
+    boardLabel: "Normes de Référence",
+    boardValue: "Comité Éditorial Real BMI",
+    lastUpdated: "Mis à jour: Données 2026",
+    icdCode: "Normes OMS & CDC Alignées",
     sourcesTitle: "Sources Scientifiques Primaires et Citations",
     sources: [
       { name: "Directives de l'OMS sur l'Obésité", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "Organisation Mondiale de la Santé" },
@@ -75,13 +75,13 @@ const labels: Record<string, any> = {
     disclaimer: "Avertissement Médical: Real BMI Calculator fournit des métriques éducatives basées sur des statistiques démographiques. Il ne remplace pas l'avis d'un médecin."
   },
   de: {
-    reviewedTag: "Klinischer E-E-A-T Standard",
-    reviewedTitle: "Medizinisch Geprüft & Wissenschaftlich Validiert",
+    reviewedTag: "Evidenzbasierter Gesundheitsstandard",
+    reviewedTitle: "Ausgerichtet an offiziellen WHO- & CDC-Richtlinien",
     reviewedDesc: "Alle Berechnungen und Referenzbereiche werden nach offiziellen Richtlinien der WHO, ACS und CDC kalibriert.",
-    boardLabel: "Geprüft von",
-    boardValue: "Real BMI Klinisches Redaktionsboard",
-    lastUpdated: "Aktualisiert: Klinische Protokolle 2026",
-    icdCode: "ICD-10-CM Z68 Verifiziert",
+    boardLabel: "Referenzstandards",
+    boardValue: "Real BMI Redaktionsbeirat",
+    lastUpdated: "Aktualisiert: Referenzdaten 2026",
+    icdCode: "WHO & CDC Standards Ausgerichtet",
     sourcesTitle: "Primäre Wissenschaftliche Quellen & Zitate",
     sources: [
       { name: "WHO Adipositas-Richtlinien", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "Weltgesundheitsorganisation" },
@@ -92,13 +92,13 @@ const labels: Record<string, any> = {
     disclaimer: "Medizinischer Hinweis: Real BMI Calculator bietet Bildungsmetriken basierend auf Bevölkerungstatistiken. Er ersetzt keine ärztliche Beratung."
   },
   ko: {
-    reviewedTag: "임상 E-E-A-T 표준",
-    reviewedTitle: "의학적 검토 및 과학적 검증 완료",
+    reviewedTag: "근거 기반 건강 표준",
+    reviewedTitle: "공식 WHO 및 CDC 지침 준수",
     reviewedDesc: "모든 계산 및 건강 지표는 세계보건기구(WHO), 미국암학회(ACS) 및 CDC의 공식 지침에 따라 보정됩니다.",
-    boardLabel: "검토자",
-    boardValue: "Real BMI 임상 편집 위원회",
-    lastUpdated: "최신화: 2026 임상 프로토콜",
-    icdCode: "ICD-10-CM Z68 검증됨",
+    boardLabel: "참고 표준",
+    boardValue: "Real BMI 편집 위원회",
+    lastUpdated: "최신화: 2026 참조 데이터",
+    icdCode: "WHO 및 CDC 표준 준수",
     sourcesTitle: "주요 과학적 출처 및 인용",
     sources: [
       { name: "WHO 비만 지침", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "세계보건기구" },
