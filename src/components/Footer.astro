@@ -207,13 +207,16 @@ const healthToolsLinks = calculators.map((calc) => ({
 
     <!-- Bottom Bar -->
     <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[var(--muted-foreground)] font-medium">
-      <p class="font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
-        {ft.copyright}
-      </p>
+      <div class="space-y-0.5 text-center sm:text-left">
+        <p class="font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+          {ft.copyright}
+        </p>
+        <p class="text-[10px] text-[var(--muted-foreground)]/70 font-sans tracking-normal">
+          Designed & Developed by Bhawanshi Dosi - Daughter of Shalini Dosi, Sanjay Dosi
+        </p>
+      </div>
       <div class="flex items-center gap-3">
         <span class="opacity-80">Privacy-First Clinical Analytics</span>
-        <span class="opacity-40">•</span>
-        <a href={`/${lang}/disclaimer/`} class="hover:text-[var(--accent)] transition-colors font-semibold">Medical Disclaimer</a>
       </div>
     </div>
 
