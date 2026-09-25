@@ -5,12 +5,12 @@ const { currentLocale } = Astro;
 const lang = (currentLocale || 'en') as Locale;
 
 const reviewBadge: Record<string, string> = {
-  en: 'Medically reviewed by our health editorial team • Updated July 2026',
-  es: 'Revisado por nuestro equipo editorial de salud • Actualizado en julio de 2026',
-  fr: 'Vérifié par notre équipe éditoriale santé • Mis à jour en juillet 2026',
-  de: 'Von unserem gesundheitlichen Redaktionsteam geprüft • Aktualisiert Juli 2026',
-  ko: '건강 편집 팀이 검토했습니다 • 2026년 7월 업데이트',
-  hi: 'हमारे स्वास्थ्य संपादकीय दल द्वारा चिकित्सा समीक्षा की गई • जुलाई 2026 को अपडेट'
+  en: 'Reviewed against published health standards • Updated 2026',
+  es: 'Revisado según estándares de salud publicados • Actualizado en 2026',
+  fr: 'Vérifié selon les normes de santé publiées • Mis à jour en 2026',
+  de: 'Nach veröffentlichten Gesundheitsstandards geprüft • Aktualisiert 2026',
+  ko: '공표된 건강 지표에 따라 검토됨 • 2026년 업데이트',
+  hi: 'प्रकाशित स्वास्थ्य मानकों के अनुसार समीक्षित • 2026 को अपडेट'
 };
 
 const content: Record<string, any> = {
