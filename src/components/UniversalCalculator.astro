@@ -40,6 +40,12 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
 
   <div class="space-y-5 sm:space-y-6">
 
+    {calculator.slug === 'body-surface-area-calculator' && (
+      <div class="p-4 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-semibold leading-relaxed">
+        <strong>Important Warning:</strong> BSA is an estimate. Do not use this calculator to determine medication doses. Clinical dosing depends on the specific medication, indication, and professional medical guidance.
+      </div>
+    )}
+
 
     <!-- Render Form Inputs -->
     {calculator.inputs.map(input => {
@@ -112,6 +118,22 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
               <span id={`weightUnitLabel-${calculator.slug}-${input.id}`} class="text-[var(--accent)] font-bold">{kgLabel}</span>
             </label>
             <input type="number" id={`input-${calculator.slug}-${input.id}`} placeholder={input.placeholder || '70'} required
+              class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
+              inputmode="decimal" />
+          </div>
+        );
+      }
+
+      // Resting Heart Rate (BPM)
+      if (input.id === 'rhr') {
+        const bpmLabel = { en: 'BPM', es: 'BPM', fr: 'BPM', de: 'BPM', ko: 'BPM', hi: 'बीपीएम' }[lang];
+        return (
+          <div class="space-y-2">
+            <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)] flex items-center justify-between">
+              <span>{labelStr}</span>
+              <span class="text-[var(--accent)] font-bold">{bpmLabel}</span>
+            </label>
+            <input type="number" id={`input-${calculator.slug}-${input.id}`} placeholder={input.placeholder || '60'} required
               class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
               inputmode="decimal" />
           </div>

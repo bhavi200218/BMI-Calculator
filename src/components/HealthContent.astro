@@ -353,95 +353,58 @@ const faqSchema = {
         </div>
       </div>
 
-      <!-- Age-Wise & Gender BMI Chart Section -->
+      <!-- Standard WHO Adult Classification Section -->
       <div class="pt-8 space-y-6">
         <div class="space-y-2">
-          <p class="text-xs font-display font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">Age & Gender Guidelines</p>
-          <h3 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">BMI Chart for Men & Women by Age Group</h3>
+          <p class="text-xs font-display font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">WHO & CDC Reference Standards</p>
+          <h3 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">Standard Adult BMI Categories (WHO Aligned)</h3>
           <p class="text-sm text-[var(--muted-foreground)] font-medium max-w-2xl leading-relaxed">
-            Healthy Body Mass Index target ranges naturally shift as adults age due to changes in muscle density, bone mass, and body fat distribution.
+            Standard adult BMI classifications apply uniformly across all adult ages (18+) and biological sexes according to WHO and CDC guidelines. Observational research notes that older adults (65+) may benefit from maintaining a BMI near the upper end of normal (23–27 kg/m²) to protect against muscle mass loss.
           </p>
         </div>
 
-        <!-- Mobile Cards Version (Fits mobile screens 100% without horizontal overflow) -->
-        <div class="block sm:hidden space-y-3.5">
-          {[
-            { age: '18 – 24 Years', men: '19.0 – 24.0 kg/m²', women: '18.5 – 23.5 kg/m²', note: 'Peak Lean Mass & Metabolism' },
-            { age: '25 – 34 Years', men: '20.0 – 25.0 kg/m²', women: '19.5 – 24.5 kg/m²', note: 'Adult Baseline Standard Range' },
-            { age: '35 – 44 Years', men: '21.0 – 26.0 kg/m²', women: '20.5 – 25.5 kg/m²', note: 'Metabolic Maintenance Window' },
-            { age: '45 – 54 Years', men: '22.0 – 27.0 kg/m²', women: '21.5 – 26.5 kg/m²', note: 'Midlife Balance & Visceral Fat Watch' },
-            { age: '55 – 64 Years', men: '23.0 – 28.0 kg/m²', women: '22.5 – 27.5 kg/m²', note: 'Healthy Active Ageing Target' },
-            { age: '65+ Years',     men: '24.0 – 29.0 kg/m²', women: '23.5 – 28.5 kg/m²', note: 'Geriatric Protective Muscle Reserve' }
-          ].map((item, idx) => (
-            <div class={`p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-sm ${idx % 2 === 1 ? 'bg-[var(--muted)]/20' : ''}`}>
-              <div class="flex justify-between items-center gap-2 pb-1 border-b border-[var(--border)]/40">
-                <span class="font-display font-bold text-[var(--foreground)] uppercase text-sm">{item.age}</span>
-                <span class="text-[10px] font-display font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
-                  {item.note}
-                </span>
-              </div>
-              <div class="grid grid-cols-2 gap-3 text-xs pt-1">
-                <div class="p-2.5 rounded-lg bg-[var(--muted)]/40 space-y-1">
-                  <span class="text-[10px] uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Men Ideal</span>
-                  <span class="font-bold text-[var(--accent)] text-xs block">{item.men}</span>
-                </div>
-                <div class="p-2.5 rounded-lg bg-[var(--muted)]/40 space-y-1">
-                  <span class="text-[10px] uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Women Ideal</span>
-                  <span class="font-bold text-[var(--accent)] text-xs block">{item.women}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <!-- Desktop Table Version (Used by Google for Featured Snippets) -->
-        <div class="hidden sm:block rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-soft)] overflow-hidden">
+        <!-- Desktop Table Version (WHO Standard) -->
+        <div class="rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-soft)] overflow-hidden">
           <div class="overflow-x-auto">
             <table class="w-full text-left min-w-[550px] border-collapse">
               <thead>
                 <tr class="bg-[var(--muted)] text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-                  <th class="px-6 py-4">Age Bracket</th>
-                  <th class="px-6 py-4">Men Ideal BMI</th>
-                  <th class="px-6 py-4">Women Ideal BMI</th>
-                  <th class="px-6 py-4">Informational Reference Note</th>
+                  <th class="px-6 py-4">BMI Category</th>
+                  <th class="px-6 py-4">Standard Cutoff Range</th>
+                  <th class="px-6 py-4">Asian Population Threshold</th>
+                  <th class="px-6 py-4">Health Guidance Note</th>
                 </tr>
               </thead>
               <tbody class="text-sm font-medium divide-y divide-[var(--border)]/40">
                 <tr class="hover:bg-[var(--muted)]/40 transition-colors">
-                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">18 – 24 Years</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">19.0 – 24.0 kg/m²</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">18.5 – 23.5 kg/m²</td>
-                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Peak Lean Mass & Metabolism</td>
+                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">Underweight</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">&lt; 18.5 kg/m²</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">&lt; 18.5 kg/m²</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">May indicate nutritional deficit or lean mass depletion.</td>
                 </tr>
                 <tr class="hover:bg-[var(--muted)]/40 transition-colors bg-[var(--muted)]/10">
-                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">25 – 34 Years</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">20.0 – 25.0 kg/m²</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">19.5 – 24.5 kg/m²</td>
-                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Adult Baseline Standard Range</td>
+                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">Healthy Weight</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">18.5 – 24.9 kg/m²</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">18.5 – 22.9 kg/m²</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Optimal baseline associated with lower cardiometabolic risk.</td>
                 </tr>
                 <tr class="hover:bg-[var(--muted)]/40 transition-colors">
-                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">35 – 44 Years</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">21.0 – 26.0 kg/m²</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">20.5 – 25.5 kg/m²</td>
-                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Metabolic Maintenance Window</td>
+                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">Overweight</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">25.0 – 29.9 kg/m²</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">23.0 – 27.4 kg/m²</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Increased risk window; check waist circumference & activity.</td>
                 </tr>
                 <tr class="hover:bg-[var(--muted)]/40 transition-colors bg-[var(--muted)]/10">
-                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">45 – 54 Years</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">22.0 – 27.0 kg/m²</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">21.5 – 26.5 kg/m²</td>
-                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Midlife Balance & Visceral Fat Watch</td>
+                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">Obesity Class I</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">30.0 – 34.9 kg/m²</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">27.5 – 32.4 kg/m²</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Elevated risk for metabolic complications.</td>
                 </tr>
                 <tr class="hover:bg-[var(--muted)]/40 transition-colors">
-                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">55 – 64 Years</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">23.0 – 28.0 kg/m²</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">22.5 – 27.5 kg/m²</td>
-                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Healthy Active Ageing Target</td>
-                </tr>
-                <tr class="hover:bg-[var(--muted)]/40 transition-colors bg-[var(--muted)]/10">
-                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">65+ Years</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">24.0 – 29.0 kg/m²</td>
-                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">23.5 – 28.5 kg/m²</td>
-                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Geriatric Protective Muscle Reserve</td>
+                  <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">Obesity Class II+</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">&ge; 35.0 kg/m²</td>
+                  <td class="px-6 py-4 font-semibold text-[var(--accent)]">&ge; 32.5 kg/m²</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">High clinical relevance for lifestyle & clinical interventions.</td>
                 </tr>
               </tbody>
             </table>

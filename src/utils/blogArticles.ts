@@ -410,48 +410,42 @@ export const blogArticles: Record<string, any> = {
           <table class="w-full text-left border-collapse text-sm">
             <thead>
               <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-                <th class="p-3">Age Bracket</th>
-                <th class="p-3">Ideal Men BMI Range</th>
-                <th class="p-3">Ideal Women BMI Range</th>
-                <th class="p-3">Clinical Guidance</th>
+                <th class="p-3">BMI Category</th>
+                <th class="p-3">Standard Adult Cutoff</th>
+                <th class="p-3">Asian Cutoff Threshold</th>
+                <th class="p-3">Health Reference Guidance</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-[var(--border)]">
               <tr>
-                <td class="p-3 font-semibold">18 – 24 Years</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">19.0 – 24.0 kg/m²</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 23.5 kg/m²</td>
-                <td class="p-3">Peak skeletal mass &amp; baseline metabolic rate</td>
+                <td class="p-3 font-semibold">Underweight</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">&lt; 18.5 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">&lt; 18.5 kg/m²</td>
+                <td class="p-3">May indicate lean mass loss or nutritional deficit</td>
               </tr>
               <tr>
-                <td class="p-3 font-semibold">25 – 34 Years</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">20.0 – 25.0 kg/m²</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">19.5 – 24.5 kg/m²</td>
-                <td class="p-3">Standard adult healthy baseline window</td>
+                <td class="p-3 font-semibold">Healthy Weight</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 24.9 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 22.9 kg/m²</td>
+                <td class="p-3">Standard baseline for lowest cardiometabolic risk</td>
               </tr>
               <tr>
-                <td class="p-3 font-semibold">35 – 44 Years</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">21.0 – 26.0 kg/m²</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">20.5 – 25.5 kg/m²</td>
-                <td class="p-3">Metabolic maintenance &amp; active training phase</td>
+                <td class="p-3 font-semibold">Overweight</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">25.0 – 29.9 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">23.0 – 27.4 kg/m²</td>
+                <td class="p-3">Increased risk window; monitor waist circumference</td>
               </tr>
               <tr>
-                <td class="p-3 font-semibold">45 – 54 Years</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">22.0 – 27.0 kg/m²</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">21.5 – 26.5 kg/m²</td>
-                <td class="p-3">Midlife metabolic maintenance &amp; waist check</td>
+                <td class="p-3 font-semibold">Obesity Class I</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">30.0 – 34.9 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">27.5 – 32.4 kg/m²</td>
+                <td class="p-3">Elevated metabolic risk factor</td>
               </tr>
               <tr>
-                <td class="p-3 font-semibold">55 – 64 Years</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">23.0 – 28.0 kg/m²</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">22.5 – 27.5 kg/m²</td>
-                <td class="p-3">Healthy active ageing target</td>
-              </tr>
-              <tr>
-                <td class="p-3 font-semibold">65+ Years</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">24.0 – 29.0 kg/m²</td>
-                <td class="p-3 font-mono font-bold text-[var(--accent)]">23.5 – 28.5 kg/m²</td>
-                <td class="p-3">Protective reserve against frailty &amp; bone loss</td>
+                <td class="p-3 font-semibold">Obesity Class II+</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">&ge; 35.0 kg/m²</td>
+                <td class="p-3 font-mono font-bold text-[var(--accent)]">&ge; 32.5 kg/m²</td>
+                <td class="p-3">High clinical relevance for lifestyle guidance</td>
               </tr>
             </tbody>
           </table>
