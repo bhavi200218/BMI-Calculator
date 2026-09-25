@@ -24,8 +24,8 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   'bmi-calculator': {
     en: {
       eyebrow: 'WHO Health Standards',
-      title: 'BMI Calculator – Free & Accurate Body Mass Index Calculator',
-      intro: 'Our free BMI Calculator (Body Mass Index Calculator) is a health screening tool built according to World Health Organization (WHO) and CDC standards. Calculate your Body Mass Index (BMI) score, review the WHO BMI chart, and evaluate healthy weight ranges instantly.',
+      title: 'BMI Calculator – Calculate Body Mass Index',
+      intro: 'Our free BMI Calculator (Body Mass Index Calculator) is a health screening tool built according to World Health Organization (WHO) and CDC standards. Calculate your Body Mass Index (BMI) category and review standard weight ranges based on established health references.',
       formulaTitle: 'Standard WHO BMI Calculator Formula',
       formulaDesc: 'Metric: BMI = Weight (kg) / [Height (m)]² | Imperial: BMI = [Weight (lbs) / Height (inches)²] × 703',
       formulaCode: 'BMI = kg / m²',
@@ -64,7 +64,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'How is 3D BMI calculated and visualized?', answer: 'It calculates adult BMI as kilograms divided by height in meters raised to the 2.5 exponent factor. The result is visualized alongside a 360° interactive front, side, and back 3D model avatar.' },
         { question: 'What scientific research backs 3D Body Visualizers?', answer: 'Peer-reviewed research published in NIH PubMed Central (PMC6538417) and Nature Scientific Reports (2023) demonstrates that 3D optical scanning and volumetric body shape models capture body proportion context that standard 2D BMI formulas miss.' },
         { question: 'Why can two people with the same BMI look completely different in 3D?', answer: 'Standard BMI only measures weight relative to height and cannot differentiate muscle mass, bone density, or fat distribution. A 3D Body Visualizer shows proportion context that a single 2D number leaves out.' },
-        { question: 'What is the difference between standard BMI and 3D Height-Adjusted BMI?', answer: 'Human body volume scales three-dimensionally. Standard BMI divides by height squared (m²), which can overestimate risk for tall individuals and underestimate for short individuals. The 2.5 exponent formula presents an alternative mathematical perspective for 3D body volume.' },
+        { question: 'What is the difference between standard BMI and 3D Height-Adjusted BMI?', answer: 'The standard BMI formula scales height using a squared term, while the 2.5-power formula produces different values at different heights.' },
         { question: 'What are the benefits of a 3D Body Visualizer?', answer: 'The 3D visualizer uses the 2.5 exponent formula discussed by Nick Trefethen to reduce height-scaling distortion and adds visual proportion context for educational comparison.' },
         { question: 'Does the 3D Body Visualizer measure body fat percentage?', answer: 'No. The 3D Body Visualizer calculates height and weight relationships and renders a reference 3D outline. It is an educational screening tool, not a direct measure of body fat or medical diagnosis.' }
       ]
