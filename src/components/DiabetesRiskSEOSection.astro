@@ -7,17 +7,17 @@ const { lang = 'en' } = Astro.props;
 
 const translations: Record<string, any> = {
   en: {
-    badge: "Global IDF & WHO Clinical Standards",
+    badge: "IDF & WHO Health References",
     title: "BMI, Type 2 Diabetes Risk & Ethnic Thresholds",
     subtitle: "Understanding your Body Mass Index (BMI = kg/m²) in relation to metabolic health, visceral fat, and global screening guidelines.",
-    formulaTitle: "Official BMI Formula",
+    formulaTitle: "Standard BMI Formula",
     formulaText: "BMI = weight (kg) ÷ height² (m²)",
-    formulaNote: "BMI calculates weight relative to height squared. While a universal screening metric, international clinical guidelines from the WHO & IDF emphasize that BMI does not directly diagnose body fatness or individual metabolic health.",
+    formulaNote: "BMI calculates weight relative to height squared. While a universal screening metric, international health guidelines from the WHO & IDF emphasize that BMI does not directly diagnose body fatness or individual metabolic health.",
     cards: [
       {
         icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
         title: "South Asian & Asian Risk Cutoff (23 kg/m²)",
-        desc: "Clinical evidence from the WHO and International Diabetes Federation (IDF) shows South Asian, East Asian, and Arab populations face increased risk of Type 2 Diabetes and cardiovascular disease at lower BMI levels. Overweight risk begins at 23 kg/m² rather than 25 kg/m²."
+        desc: "Published evidence from the WHO and International Diabetes Federation (IDF) shows South Asian, East Asian, and Arab populations face increased risk of Type 2 Diabetes and cardiovascular disease at lower BMI levels. Overweight risk begins at 23 kg/m² rather than 25 kg/m²."
       },
       {
         icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
@@ -26,42 +26,42 @@ const translations: Record<string, any> = {
       },
       {
         icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
-        title: "BMI Clinical Screening Limitations",
-        desc: "BMI does not distinguish between dense muscle mass, bone density, and adipose fat. Muscular athletes, pregnant women, and elderly individuals require comprehensive clinical evaluations."
+        title: "BMI Screening Limitations",
+        desc: "BMI does not distinguish between dense muscle mass, bone density, and adipose fat. Muscular athletes, pregnant women, and elderly individuals require comprehensive health evaluations."
       }
     ],
     riskMatrixTitle: "Diabetes & Weight Category Risk Matrix",
     matrixHeaders: ["BMI Category", "Standard Range", "South Asian / Asian Cutoff", "Diabetes & Health Risk Level"],
     matrixRows: [
       { cat: "Underweight", std: "< 18.5 kg/m²", asian: "< 18.5 kg/m²", risk: "Low (Increased risk for nutrient deficiency)", status: "normal" },
-      { cat: "Normal Weight", std: "18.5 – 24.9 kg/m²", asian: "18.5 – 22.9 kg/m²", risk: "Lowest Risk Baseline", status: "normal" },
-      { cat: "Increased Risk (Overweight)", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "Moderate Risk for Type 2 Diabetes", status: "warning" },
-      { cat: "High Risk (Obesity)", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "High to Very High Diabetes Risk", status: "danger" }
+      { cat: "Normal Weight", std: "18.5 – 24.9 kg/m²", asian: "18.5 – 22.9 kg/m²", risk: "Baseline Reference Window", status: "normal" },
+      { cat: "Increased Risk (Overweight)", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "Moderate Risk Reference Indicator", status: "warning" },
+      { cat: "High Risk (Obesity)", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "Elevated Screening Reference Indicator", status: "danger" }
     ],
-    disclaimer: "Official Note: This tool provides initial screening information based on international standards (IDF Guidelines & WHO Standards). It does not constitute a formal diagnosis or replace individualized consultation with a healthcare provider."
+    disclaimer: "Guidance Note: This tool provides initial screening information based on international standards (IDF Guidelines & WHO Standards). It does not constitute a formal diagnosis or replace individualized consultation with a healthcare provider."
   },
   hi: {
     badge: "अंतर्राष्ट्रीय IDF एवं WHO गाइडलाइंस अनुसार",
     title: "बीएमआई, टाइप 2 डायबिटीज जोखिम एवं वैश्विक सीमाएं",
     subtitle: "अपने बॉडी मास इंडेक्स (BMI = kg/m²) को मेटाबॉलिक स्वास्थ्य, पेट की वसा और जनसंख्या-विशिष्ट स्क्रीनिंग दिशानिर्देशों के संदर्भ में समझें।",
-    formulaTitle: "आधिकारिक बीएमआई फॉर्मूला",
+    formulaTitle: "मानक बीएमआई फॉर्मूला",
     formulaText: "BMI = वजन (किग्रा) ÷ ऊंचाई² (मीटर²)",
     formulaNote: "बीएमआई ऊंचाई के वर्ग के सापेक्ष वजन की गणना करता है। अंतर्राष्ट्रीय मधुमेह महासंघ (IDF) और डब्ल्यूएचओ इस बात पर जोर देते हैं कि बीएमआई सीधे शरीर की वसा या व्यक्तिगत मेटाबॉलिक स्वास्थ्य का निदान नहीं करता है।",
     cards: [
       {
         icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
         title: "दक्षिण एशियाई एवं एशियाई जोखिम सीमा (23 kg/m²)",
-        desc: "डब्ल्यूएचओ और अंतर्राष्ट्रीय मधुमेह महासंघ (IDF) के क्लिनिकल साक्ष्य बताते हैं कि दक्षिण एशियाई और एशियाई आबादी में कम बीएमआई (23 kg/m²) पर ही टाइप 2 डायबिटीज और हृदय रोग का जोखिम बढ़ जाता है।"
+        desc: "डब्ल्यूएचओ और अंतर्राष्ट्रीय मधुमेह महासंघ (IDF) के शोध साक्ष्य बताते हैं कि दक्षिण एशियाई और एशियाई आबादी में कम बीएमआई (23 kg/m²) पर ही टाइप 2 डायबिटीज का जोखिम बढ़ जाता है।"
       },
       {
         icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
         title: "कमर की परिधि एवं विसरल फैट",
-        desc: "पेट के अंगों के आसपास जमा विसरल वसा टाइप 2 डायबिटीज के जोखिम को काफी बढ़ा देती है। पुरुषों के लिए >94 सेमी और महिलाओं के लिए >80 सेमी पर जोखिम बढ़ जाता है।"
+        desc: "पेट के अंगों के आसपास जमा विसरल वसा टाइप 2 डायबिटीज के जोखिम को बढ़ा देती है।"
       },
       {
         icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
-        title: "बीएमआई की नैदानिक सीमाएं",
-        desc: "बीएमआई घनी मांसपेशियों और वसा के बीच अंतर नहीं करता है। एथलीटों, गर्भवती महिलाओं और बुजुर्गों के लिए व्यापक चिकित्सीय मूल्यांकन आवश्यक है।"
+        title: "बीएमआई की सीमाएं",
+        desc: "बीएमआई घनी मांसपेशियों और वसा के बीच अंतर नहीं करता है।"
       }
     ],
     riskMatrixTitle: "डायबिटीज एवं वजन श्रेणी जोखिम तालिका",
@@ -72,13 +72,13 @@ const translations: Record<string, any> = {
       { cat: "अधिक वजन (Overweight)", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "टाइप 2 डायबिटीज का मध्यम जोखिम", status: "warning" },
       { cat: "मोटापा (Obesity)", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "उच्च से अत्यधिक उच्च जोखिम", status: "danger" }
     ],
-    disclaimer: "आधिकारिक टिप्पणी: यह उपकरण अंतर्राष्ट्रीय मानकों (IDF गाइडलाइंस एवं डब्ल्यूएचओ) के आधार पर प्रारंभिक जानकारी प्रदान करता है। यह डॉक्टरी सलाह का विकल्प नहीं है।"
+    disclaimer: "मार्गदर्शन टिप्पणी: यह उपकरण अंतर्राष्ट्रीय मानकों (IDF गाइडलाइंस एवं डब्ल्यूएचओ) के आधार पर प्रारंभिक जानकारी प्रदान करता है। यह डॉक्टरी सलाह का विकल्प नहीं है।"
   },
   es: {
-    badge: "Normas Clínicas FID y OMS",
+    badge: "Pautas de Salud FID y OMS",
     title: "IMC, Riesgo de Diabetes Tipo 2 y Umbrales Étnicos",
     subtitle: "Comprende tu Índice de Masa Corporal en relación con la salud metabólica y las pautas internacionales de detección.",
-    formulaTitle: "Fórmula Oficial del IMC",
+    formulaTitle: "Fórmula del IMC",
     formulaText: "IMC = peso (kg) ÷ altura² (m²)",
     formulaNote: "El IMC calcula el peso en relación con la altura al cuadrado. Las pautas de la OMS enfatizan que el IMC no diagnostica directamente la grasa metabólica.",
     cards: [
@@ -94,19 +94,19 @@ const translations: Record<string, any> = {
       { cat: "Sobrepeso", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "Riesgo Moderado Diabetes Tipo 2", status: "warning" },
       { cat: "Obesidad", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "Riesgo Alto a Muy Alto", status: "danger" }
     ],
-    disclaimer: "Nota Oficial: Esta herramienta se basa en pautas de la FID y la OMS."
+    disclaimer: "Nota de Guía: Esta herramienta se basa en pautas de la FID y la OMS."
   },
   fr: {
-    badge: "Normes Cliniques FID & OMS",
+    badge: "Directives de Santé FID & OMS",
     title: "IMC, Risque de Diabète de Type 2 & Seuils Ethniques",
     subtitle: "Comprenez votre IMC en relation avec la santé métabolique et les directives internationales.",
-    formulaTitle: "Formule Officielle de l'IMC",
+    formulaTitle: "Formule Standard de l'IMC",
     formulaText: "IMC = poids (kg) ÷ taille² (m²)",
     formulaNote: "L'IMC calcule le poids par rapport à la taille au carré. Les directives de l'OMS soulignent que l'IMC ne diagnostique pas directement la graisse.",
     cards: [
       { icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z", title: "Seuil de Risque Asiatique (23 kg/m²)", desc: "Les populations asiatiques font face à un risque élevé de diabète avec un IMC plus faible (23 kg/m²)." },
       { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", title: "Tour de Taille & Graisse Viscérale", desc: "L'adiposité abdominale présente un risque supérieur pour le diabète de type 2." },
-      { icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", title: "Limites Cliniques de l'IMC", desc: "L'IMC ne distingue pas la masse musculaire de la graisse." }
+      { icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", title: "Limites de l'IMC", desc: "L'IMC ne distingue pas la masse musculaire de la graisse." }
     ],
     riskMatrixTitle: "Matrice de Risque de Diabète et Catégorie de Poids",
     matrixHeaders: ["Catégorie IMC", "Plage Standard", "Seuil Asiatique", "Niveau de Risque"],
@@ -116,13 +116,13 @@ const translations: Record<string, any> = {
       { cat: "Surpoids", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "Risque Modéré Diabète Type 2", status: "warning" },
       { cat: "Obésité", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "Risque Élevé à Très Élevé", status: "danger" }
     ],
-    disclaimer: "Note Officielle : Cet outil s'aligne sur les normes de la FID et de l'OMS."
+    disclaimer: "Note d'Information : Cet outil s'aligne sur les normes de la FID et de l'OMS."
   },
   de: {
-    badge: "Klinische Standards von IDF & WHO",
+    badge: "Gesundheitsstandards von IDF & WHO",
     title: "BMI, Typ-2-Diabetes-Risiko & Ethnische Schwellenwerte",
     subtitle: "Verstehen Sie Ihren Body-Mass-Index im Hinblick auf die Stoffwechselgesundheit und internationale Richtlinien.",
-    formulaTitle: "Offizielle BMI-Formel",
+    formulaTitle: "BMI-Formel",
     formulaText: "BMI = Gewicht (kg) ÷ Höhe² (m²)",
     formulaNote: "Der BMI berechnet das Gewicht im Verhältnis zur Höhe im Quadrat.",
     cards: [
@@ -138,19 +138,19 @@ const translations: Record<string, any> = {
       { cat: "Übergewicht", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "Moderate Typ-2-Diabetes-Risiko", status: "warning" },
       { cat: "Adipositas", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "Hohes bis Sehr Hohes Risiko", status: "danger" }
     ],
-    disclaimer: "Offizieller Hinweis: Orientiert sich an IDF- und WHO-Standards."
+    disclaimer: "Hinweis: Orientiert sich an IDF- und WHO-Standards."
   },
   ko: {
-    badge: "IDF 및 WHO 임상 표준",
+    badge: "IDF 및 WHO 건강 기준",
     title: "BMI, 제2형 당뇨병 위험 및 인종별 선별 임계값",
     subtitle: "대사 건강 및 국제 선별 지침과 관련하여 체질량지수(BMI)를 이해하세요.",
-    formulaTitle: "공식 BMI 계산 공식",
+    formulaTitle: "표준 BMI 계산 공식",
     formulaText: "BMI = 체중 (kg) ÷ 키² (m²)",
     formulaNote: "BMI는 신장의 제곱 대비 체중을 산출합니다.",
     cards: [
       { icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z", title: "아시아인 위험 기준 (23 kg/m²)", desc: "아시아인은 더 낮은 BMI(23 kg/m²) 수준에서 제2형 당뇨병 위험이 증가합니다." },
       { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", title: "허리둘레 및 내장지방", desc: "복부 비만은 제2형 당뇨병에 훨씬 더 높은 위험을 초래합니다." },
-      { icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", title: "BMI 임상 한계", desc: "BMI는 근육량과 지방을 구별하지 못합니다." }
+      { icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", title: "BMI 한계", desc: "BMI는 근육량과 지방을 구별하지 못합니다." }
     ],
     riskMatrixTitle: "당뇨병 및 체중 범주 위험 행렬",
     matrixHeaders: ["BMI 범주", "표준 범위", "아시아인 기준", "당뇨병 위험 수준"],
@@ -160,7 +160,7 @@ const translations: Record<string, any> = {
       { cat: "과체중", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "중등도 당뇨 위험", status: "warning" },
       { cat: "비만", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "높음 내지 매우 높은 위험", status: "danger" }
     ],
-    disclaimer: "공식 참고 사항: IDF 및 WHO 표준에 기반합니다."
+    disclaimer: "안내 참고 사항: IDF 및 WHO 표준에 기반합니다."
   }
 };
 

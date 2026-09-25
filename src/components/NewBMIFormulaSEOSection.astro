@@ -41,23 +41,23 @@ const translations: Record<string, any> = {
   hi: {
     badge: "गणितीय 3D ऊंचाई-समायोजन मानक",
     title: "मानक बीएमआई बनाम नया ऊंचाई-समायोजित बीएमआई फॉर्मूला",
-    subtitle: "समझें कि पारंपरिक बीएमआई लंबे और नाटे लोगों के लिए आंकड़े क्यों बिगाड़ता है, और 2.5 ऊंचाई-घात फॉर्मूला 3D शरीर के आकार को कैसे सटीक बनाता है।",
+    subtitle: "समझे कि 2.5 ऊंचाई-घात फॉर्मूला विभिन्न ऊंचाइयों पर 3D शरीर के आकार के लिए कैसे भिन्न गणितीय मान प्रस्तुत करता है।",
     formulaTitle: "मानक बनाम ऊंचाई-समायोजित फॉर्मूला तुलना",
     standardFormula: "मानक बीएमआई = वजन (किग्रा) ÷ ऊंचाई² (मीटर²)",
     newFormula: "ऊंचाई-समायोजित बीएमआई = 1.3 × वजन (किग्रा) ÷ ऊंचाई²·⁵ (मीटर²·⁵)",
-    formulaExplanation: "मानक बीएमआई वजन को ऊंचाई के वर्ग (2D) से विभाजित करता है। लेकिन मनुष्य 3-आयामी (त्रिविमीय) रूप से बढ़ते हैं। 2.5 घात फॉर्मूला ऊंचाई के भ्रम को दूर करता है।",
+    formulaExplanation: "मानक बीएमआई वजन को ऊंचाई के वर्ग (2D) से विभाजित करता है। 2.5 घात फॉर्मूला ऊंचाई अंतर के लिए एक वैकल्पिक गणितीय दृष्टिकोण प्रस्तुत करता है।",
     cards: [
       {
         title: "कम ऊंचाई वाले लोगों पर प्रभाव (< 160 सेमी)",
-        desc: "मानक बीएमआई कम ऊंचाई वाले लोगों के शरीर की वसा को कम आंकता है। 2.5 घात फॉर्मूला थोड़ा अधिक और अधिक यथार्थवादी स्कोर प्रदान करता है।"
+        desc: "2.5 घात फॉर्मूला कम ऊंचाई वाले लोगों के लिए थोड़ा अधिक गणितीय तुलनात्मक मान प्रस्तुत करता है।"
       },
       {
         title: "औसत ऊंचाई संरेखण (169 – 175 सेमी)",
         desc: "170 सेमी (5'7\") की औसत ऊंचाई वाले वयस्कों के लिए, मानक बीएमआई और 3D ऊंचाई-समायोजित बीएमआई लगभग समान परिणाम देते हैं।"
       },
       {
-        title: "लंबे लोगों के लिए सुधार (> 183 सेमी)",
-        desc: "मानक बीएमआई लंबे लोगों को अक्सर गलती से 'अधिक वजन' श्रेणी में डाल देता है। 3D समायोजित फॉर्मूला फ्रेम लंबाई के हिसाब से स्कोर को 1 से 2 अंक कम करता है।"
+        title: "लंबे लोगों के लिए प्रभाव (> 183 सेमी)",
+        desc: "3D समायोजित फॉर्मूला लंबे लोगों के लिए थोड़ा कम गणितीय तुलनात्मक मान प्रस्तुत करता है।"
       }
     ],
     tableTitle: "ऊंचाई-समायोजित बीएमआई तुलना तालिका",
@@ -68,43 +68,43 @@ const translations: Record<string, any> = {
       { height: "लंबे (190 सेमी)", example: "90 किग्रा", std: "24.9 (सामान्य)", newBmi: "23.4 (सामान्य)", diff: "- 1.5 अंक" },
       { height: "अत्यधिक लंबे (200 सेमी)", example: "105 किग्रा", std: "26.3 (अधिक वजन)", newBmi: "24.3 (सामान्य)", diff: "- 2.0 अंक" }
     ],
-    disclaimer: "गणितीय टिप्पणी: 2.5 घात ऊंचाई समायोजन एक गणितीय सुधार है जो ऊंचाई के कारण होने वाली त्रुटियों को कम करता है।"
+    disclaimer: "गणितीय टिप्पणी: 2.5 घात ऊंचाई समायोजन एक गणितीय संदर्भ है जो शैक्षणिक तुलना के लिए है।"
   },
   es: {
-    badge: "Estándar Matemático 3D de Corrección por Altura",
-    title: "IMC Estándar vs. Nuevo IMC Ajustado por Altura",
-    subtitle: "Por qué el IMC tradicional distorsiona las lecturas para personas altas y bajas, y cómo la fórmula de exponente 2.5 corrige el volumen 3D.",
-    formulaTitle: "Fórmulas Matemáticas: IMC Estándar vs. Ajustado",
+    badge: "Estándar de Ajuste de Altura 3D Matemático",
+    title: "IMC Estándar vs. Nueva Fórmula de IMC Ajustado por Altura",
+    subtitle: "Comprenda por qué el IMC tradicional escala de forma diferente para personas altas y bajas, y cómo la fórmula de exponente 2.5 ofrece una perspectiva alternativa.",
+    formulaTitle: "Fórmulas Matemáticas: Estándar vs. Ajustado por Altura",
     standardFormula: "IMC Estándar = peso (kg) ÷ altura² (m²)",
-    newFormula: "IMC Ajustado = 1.3 × peso (kg) ÷ altura²·⁵ (m²·⁵)",
-    formulaExplanation: "El IMC estándar escala en 2D (altura²). El factor de escala de exponente 2.5 compensa la distorsión volumétrica 3D.",
+    newFormula: "IMC Ajustado por Altura = 1.3 × peso (kg) ÷ altura²·⁵ (m²·⁵)",
+    formulaExplanation: "El IMC estándar divide el peso por la altura al cuadrado (2D). La fórmula con exponente 2.5 presenta una alternativa matemática para las variaciones de altura.",
     cards: [
-      { title: "Baja Estatura (< 160 cm)", desc: "El IMC estándar subestima la grasa en personas bajas. La fórmula 2.5 proporciona una puntuación más realista." },
-      { title: "Estatura Promedio (169 – 175 cm)", desc: "Para adultos cerca de 170 cm, el IMC estándar y el IMC 3D ajustado entregan números casi idénticos." },
-      { title: "Estatura Alta (> 183 cm)", desc: "El IMC estándar sobreestima el peso en adultos altos. La fórmula ajustada reduce el puntaje entre 1 y 2 puntos." }
+      { title: "Estatura Baja (< 160 cm / 5'3\")", desc: "La fórmula con exponente 2.5 produce un valor de comparación ligeramente superior en personas de menor estatura." },
+      { title: "Alineación de Estatura Promedio (169 – 175 cm)", desc: "Para adultos cerca de los 170 cm, el IMC estándar y el IMC ajustado 3D producen cifras prácticamente idénticas." },
+      { title: "Estatura Alta (> 183 cm / 6'0\")", desc: "La fórmula ajustada produce un valor de comparación de 1 a 2 puntos menor en personas altas." }
     ],
     tableTitle: "Matriz Comparativa de IMC Ajustado por Altura",
-    tableHeaders: ["Grupo de Altura", "Ejemplo", "IMC Estándar (m²)", "IMC Ajustado 3D (m²·⁵)", "Diferencia"],
+    tableHeaders: ["Grupo de Altura", "Ejemplo", "IMC Estándar (m²)", "IMC Ajustado 3D (m²·⁵)", "Diferencia de Puntuación"],
     tableRows: [
       { height: "Bajo (152 cm)", example: "60 kg", std: "26.0 (Sobrepeso)", newBmi: "26.9 (Ajustado)", diff: "+ 0.9 pts" },
       { height: "Promedio (170 cm)", example: "70 kg", std: "24.2 (Normal)", newBmi: "24.2 (Normal)", diff: "0.0 (Idéntico)" },
       { height: "Alto (190 cm)", example: "90 kg", std: "24.9 (Normal)", newBmi: "23.4 (Normal)", diff: "- 1.5 pts" },
       { height: "Muy Alto (200 cm)", example: "105 kg", std: "26.3 (Sobrepeso)", newBmi: "24.3 (Normal)", diff: "- 2.0 pts" }
     ],
-    disclaimer: "Nota Matemática: El ajuste por exponente 2.5 es un refinamiento matemático para reducir distorsiones de escala."
+    disclaimer: "Nota Matemática: El ajuste de altura con exponente 2.5 es una comparación matemática educativa y no un diagnóstico clínico."
   },
   fr: {
     badge: "Norme Mathématique 3D d'Ajustement à la Taille",
     title: "IMC Standard vs Nouvel IMC Ajusté à la Taille",
-    subtitle: "Pourquoi l'IMC traditionnel fausse les résultats pour les personnes grandes et petites, et comment l'exposant 2.5 corrige le volume 3D.",
+    subtitle: "Comment la formule à l'exposant 2.5 offre une perspective mathématique alternative sur le volume 3D selon la taille.",
     formulaTitle: "Formules Mathématiques : IMC Standard vs Ajusté",
     standardFormula: "IMC Standard = poids (kg) ÷ taille² (m²)",
     newFormula: "IMC Ajusté = 1.3 × poids (kg) ÷ taille²·⁵ (m²·⁵)",
-    formulaExplanation: "L'IMC standard divise le poids par la taille au carré (2D). L'exposant 2.5 compense la distorsion de taille.",
+    formulaExplanation: "L'IMC standard divise le poids par la taille au carré (2D). L'exposant 2.5 présente une alternative mathématique.",
     cards: [
-      { title: "Petite Taille (< 160 cm)", desc: "L'IMC standard sous-estime la graisse chez les personnes petites. La formule 2.5 offre un résultat plus réaliste." },
+      { title: "Petite Taille (< 160 cm)", desc: "La formule 2.5 produit une valeur comparative légèrement différente." },
       { title: "Taille Moyenne (169 – 175 cm)", desc: "Pour les adultes proches de 170 cm, l'IMC standard et l'IMC 3D ajusté donnent des chiffres identiques." },
-      { title: "Grande Taille (> 183 cm)", desc: "L'IMC standard surévalue la masse chez les personnes grandes. La formule ajustée réduit le score de 1 à 2 points." }
+      { title: "Grande Taille (> 183 cm)", desc: "La formule ajustée produit une valeur comparative inférieure de 1 à 2 points." }
     ],
     tableTitle: "Matrice Comparative IMC Ajusté à la Taille",
     tableHeaders: ["Groupe de Taille", "Exemple", "IMC Standard (m²)", "IMC Ajusté 3D (m²·⁵)", "Différence"],
@@ -114,20 +114,20 @@ const translations: Record<string, any> = {
       { height: "Grand (190 cm)", example: "90 kg", std: "24.9 (Normal)", newBmi: "23.4 (Normal)", diff: "- 1.5 pts" },
       { height: "Très Grand (200 cm)", example: "105 kg", std: "26.3 (Surpoids)", newBmi: "24.3 (Normal)", diff: "- 2.0 pts" }
     ],
-    disclaimer: "Note Mathématique : L'ajustement à l'exposant 2.5 est un raffinement mathématique pour réduire les distorsions."
+    disclaimer: "Note Mathématique : L'ajustement à l'exposant 2.5 est une comparaison mathématique éducative."
   },
   de: {
     badge: "Mathematischer 3D-Höhenkorrektur-Standard",
     title: "Standard-BMI vs. Neuer Höhenbereinigter BMI",
-    subtitle: "Warum der traditionelle BMI Werte für große und kleine Menschen verzerrt und wie der 2,5-Exponent 3D-Volumen korrigiert.",
+    subtitle: "Wie die 2,5-Exponent-Formel eine alternative mathematische Perspektive für das 3D-Körpervolumen bietet.",
     formulaTitle: "Mathematische Formeln: Standard vs. Bereinigt",
     standardFormula: "Standard-BMI = Gewicht (kg) ÷ Höhe² (m²)",
     newFormula: "Höhen-BMI = 1.3 × Gewicht (kg) ÷ Höhe²·⁵ (m²·⁵)",
-    formulaExplanation: "Der 2,5-Exponent-Skalierungsfaktor kompensiert Höhenverzerrungen für fairere Werte.",
+    formulaExplanation: "Der 2,5-Exponent-Skalierungsfaktor bietet einen mathematischen Vergleich für unterschiedliche Höhen.",
     cards: [
-      { title: "Kleine Körpergröße (< 160 cm)", desc: "Der Standard-BMI unterschätzt das Fettgewebe bei kleineren Menschen. Die 2,5-Formel liefert realistischere Werte." },
+      { title: "Kleine Körpergröße (< 160 cm)", desc: "Die 2,5-Formel liefert einen leicht höheren vergleichenden Wert." },
       { title: "Durchschnittliche Größe (169 – 175 cm)", desc: "Bei ca. 170 cm Körpergröße liefern Standard-BMI und 3D-Höhen-BMI nahezu identische Zahlen." },
-      { title: "Große Körpergröße (> 183 cm)", desc: "Der Standard-BMI stuft große Menschen oft fälschlicherweise als 'übergewichtig' ein. Der 3D-BMI korrigiert den Wert." }
+      { title: "Große Körpergröße (> 183 cm)", desc: "Der 3D-BMI liefert einen etwas niedrigeren Vergleichswert." }
     ],
     tableTitle: "Vergleichsmatrix: Höhenbereinigter BMI",
     tableHeaders: ["Größengruppe", "Beispiel", "Standard-BMI (m²)", "3D-Höhen-BMI (m²·⁵)", "Differenz"],
@@ -137,7 +137,7 @@ const translations: Record<string, any> = {
       { height: "Groß (190 cm)", example: "90 kg", std: "24.9 (Normal)", newBmi: "23.4 (Normal)", diff: "- 1.5 Pkt" },
       { height: "Sehr Groß (200 cm)", example: "105 kg", std: "26.3 (Übergewicht)", newBmi: "24.3 (Normal)", diff: "- 2.0 Pkt" }
     ],
-    disclaimer: "Mathematischer Hinweis: Die 2,5-Exponent-Höhenanpassung ist eine mathematische Verfeinerung."
+    disclaimer: "Mathematischer Hinweis: Die 2,5-Exponent-Höhenanpassung dient dem lehrreichen Vergleich."
   },
   ko: {
     badge: "3D 수학적 신장 보정 표준",

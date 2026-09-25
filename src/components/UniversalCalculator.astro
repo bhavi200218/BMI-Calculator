@@ -363,7 +363,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
               { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: classification.label[lang] || classification.label.en },
               { label: { en: 'Resting Metabolism (BMR)', es: 'Metabolismo Basal', fr: 'Métabolisme de Base', de: 'Grundumsatz BMR', ko: '기초대사량', hi: 'बेसल मेटाबॉलिज्म' }, value: Math.round(bmr), unit: 'kcal' },
               { label: { en: 'Daily Energy (TDEE)', es: 'Energía Diaria', fr: 'Énergie Quotidienne', de: 'Tagesbedarf TDEE', ko: '일일 목표', hi: 'दैनिक ऊर्जा' }, value: Math.round(tdee), unit: 'kcal' },
-              { label: { en: 'Est. Body Fat', es: 'Grasa Estimada', fr: 'Graisse Corp. Est.', de: 'Körperfett', ko: '체지방률', hi: 'अनुमानित वसा' }, value: bodyFat.toFixed(1), unit: '%' },
+              { label: { en: 'Healthy Weight Range', es: 'Rango de Peso Saludable', fr: 'Plage de Poids Santé', de: 'Gesunder Gewichtsbereich', ko: '적정 체중 범위', hi: 'स्वस्थ वजन सीमा' }, value: `${(currentUnitSystem === 'imperial' ? (18.5 * hM * hM * 2.20462) : (18.5 * hM * hM)).toFixed(1)} - ${(currentUnitSystem === 'imperial' ? (24.9 * hM * hM * 2.20462) : (24.9 * hM * hM)).toFixed(1)}`, unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
               { label: { en: 'Ideal Weight', es: 'Peso Ideal', fr: 'Poids Idéal', de: 'Idealgewicht', ko: '이상적인 체중', hi: 'आदर्श वजन' }, value: (currentUnitSystem === 'imperial' ? ideal * 2.20462 : ideal).toFixed(1), unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' }
             ]
           };
@@ -616,7 +616,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         } 
         else if (slug === 'pregnancy-weight-gain-calculator') {
           const curW = parseFloat(val('weight')) || 0;
-          const preW = parseFloat(val('height')) || 0;
+          const preW = parseFloat(val('preweight')) || parseFloat(val('weight')) || 0;
           const week = parseInt(ageVal) || 1;
 
           const diff = curW - preW;
