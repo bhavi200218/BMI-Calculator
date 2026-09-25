@@ -1,49 +1,54 @@
 ---
 import { blogArticles } from '../utils/blogArticles';
 
+interface Props {
+  lang?: string;
+}
+
+const { lang: propLang } = Astro.props;
 const { currentLocale } = Astro;
-const lang = currentLocale || 'en';
+const lang = propLang || currentLocale || 'en';
 
 const labels: Record<string, any> = {
   en: {
     library: "Articles & Health Library",
     latest: "Latest Health Articles & Guides",
-    subtitle: "Evidence-based health guides, clinical BMI standards, and weight loss calculation formulas.",
+    subtitle: "Evidence-based health guides, standard BMI reference ranges, and weight loss calculation formulas.",
     viewAll: "View All Articles",
     readArticle: "Read Article →"
   },
   es: {
     library: "Biblioteca de Salud y Artículos",
     latest: "Últimos Artículos y Guías de Salud",
-    subtitle: "Guías de salud basadas en evidencia, estándares clínicos de IMC y fórmulas de cálculo para la pérdida de peso.",
+    subtitle: "Guías de salud basadas en evidencia, estándares de referencia de IMC y fórmulas de cálculo para la pérdida de peso.",
     viewAll: "Ver Todos los Artículos",
     readArticle: "Leer Artículo →"
   },
   fr: {
     library: "Bibliothèque d'Articles et Santé",
     latest: "Derniers Articles et Guides Santé",
-    subtitle: "Guides de santé basés sur des preuves, normes cliniques de l'IMC et formules de calcul de perte de poids.",
+    subtitle: "Guides de santé basés sur des preuves, normes de référence de l'IMC et formules de calcul de perte de poids.",
     viewAll: "Voir Tous les Articles",
     readArticle: "Lire l'Article →"
   },
   de: {
     library: "Gesundheitsbibliothek & Artikel",
     latest: "Neueste Gesundheitsartikel & Leitfäden",
-    subtitle: "Evidenzbasierte Gesundheitsleitfäden, klinische BMI-Standards und Berechnungsformeln zur Gewichtsabnahme.",
+    subtitle: "Evidenzbasierte Gesundheitsleitfäden, BMI-Referenzstandards und Berechnungsformeln zur Gewichtsabnahme.",
     viewAll: "Alle Artikel Anzeigen",
     readArticle: "Artikel Lesen →"
   },
   ko: {
     library: "아티클 및 건강 라이브러리",
     latest: "최신 건강 아티클 및 가이드",
-    subtitle: "증거 기반 건강 가이드, 임상 BMI 표준 및 체중 감량 계산 공식.",
+    subtitle: "증거 기반 건강 가이드, 표준 BMI 참조 기준 및 체중 감량 계산 공식.",
     viewAll: "모든 아티클 보기",
     readArticle: "아티클 읽기 →"
   },
   hi: {
     library: "लेख एवं स्वास्थ्य पुस्तकालय",
     latest: "नवीनतम स्वास्थ्य लेख एवं गाइड",
-    subtitle: "प्रमाण-आधारित स्वास्थ्य गाइड, नैदानिक बीएमआई मानक और वजन घटाने के गणना फॉर्मूले।",
+    subtitle: "प्रमाण-आधारित स्वास्थ्य गाइड, मानक बीएमआई संदर्भ सीमाएं और वजन घटाने के गणना फॉर्मूले।",
     viewAll: "सभी लेख देखें",
     readArticle: "लेख पढ़ें →"
   }

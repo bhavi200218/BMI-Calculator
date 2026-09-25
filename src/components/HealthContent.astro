@@ -1,8 +1,13 @@
 ---
 import { type Locale } from '../utils/calculators';
 
+interface Props {
+  lang?: Locale;
+}
+
+const { lang: propLang } = Astro.props;
 const { currentLocale } = Astro;
-const lang = (currentLocale || 'en') as Locale;
+const lang = (propLang || currentLocale || 'en') as Locale;
 
 const reviewBadge: Record<string, string> = {
   en: 'Reviewed against published health standards • Updated 2026',
@@ -247,6 +252,44 @@ const content: Record<string, any> = {
       { q: 'BMR이란 무엇인가요?', a: 'BMR은 휴식 상태에서 필요한 기초 에너지입니다.' },
       { q: 'TDEE란 무엇인가요?', a: 'TDEE는 하루 총 에너지 소비량입니다.' }
     ]
+  },
+  hi: {
+    insightSub: 'स्वास्थ्य अंतर्दृष्टि',
+    whoSub: 'डब्ल्यूएचओ (WHO) मानक',
+    whoTableTitle: 'WHO बीएमआई वर्गीकरण मानक',
+    whoDesc: 'विश्व स्वास्थ्य संगठन (WHO) बीएमआई स्कोर को स्वास्थ्य और पोषण संकेतकों का मूल्यांकन करने के लिए विभिन्न श्रेणियों में विभाजित करता है।',
+    colCategory: 'वर्गीकरण श्रेणी',
+    colRange: 'बीएमआई सीमा',
+    colRisk: 'अनुमानित स्वास्थ्य जोखिम स्तर',
+    sourcesTitle: 'स्रोत और संदर्भ',
+    sourcesSubtitle: 'आधिकारिक WHO और CDC वैश्विक दिशानिर्देशों पर आधारित मानक।',
+    whoLink: 'WHO मोटापा मार्गदर्शन',
+    cdcLink: 'CDC बीएमआई गाइड',
+    helpCenter: 'सहायता केंद्र',
+    faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
+    faqSubtitle: 'बीएमआई गणना, चयापचय दर और शारीरिक स्वास्थ्य मापदंडों के बारे में जानें।',
+    sections: [
+      { title: 'अपने बॉडी मास इंडेक्स को समझें', text: 'बॉडी मास इंडेक्स (BMI) अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त एक प्राथमिक स्क्रीनिंग मानक है जिसका उपयोग ऊंचाई के संदर्भ में वजन का मूल्यांकन करने के लिए किया जाता है।' },
+      { title: 'BMI, BMR और TDEE कैसे काम करते हैं', text: 'आपका BMI वजन की स्थिति दर्शाता है, BMR विश्राम की अवस्था में बुनियादी चयापचय दर बताता है, और TDEE दैनिक कुल ऊर्जा खपत का अनुमान लगाता है।' },
+      { title: 'हृदय स्वास्थ्य: जोखिम कारकों को समझें', text: 'कमर की परिधि के साथ बीएमआई का मूल्यांकन पेट की आंतरिक वसा और हृदय संबंधी संकेतकों की व्यापक जानकारी प्रदान करता है।' },
+      { title: 'टाइप 2 मधुमेह स्क्रीनिंग (Diabetes Guidelines)', text: 'कमर-से-ऊंचाई अनुपात और बीएमआई का सही मूल्यांकन चयापचय स्वास्थ्य और इंसुलिन संवेदनशीलता के संदर्भ में उपयोगी जानकारी देता है।' }
+    ],
+    whoTable: [
+      { category: 'कम वजन (Underweight)', range: '< 18.5', risk: 'कम (पोषण संबंधी कमी की संभावना)', status: 'underweight' },
+      { category: 'सामान्य वजन (Healthy Weight)', range: '18.5 – 24.9', risk: 'न्यूनतम (संदर्भ सीमा)', status: 'normal' },
+      { category: 'अधिक वजन (Overweight)', range: '25.0 – 29.9', risk: 'मध्यम (एशियाई सीमा: 23.0)', status: 'overweight' },
+      { category: 'मोटापा श्रेणी I (Obesity I)', range: '30.0 – 34.9', risk: 'उच्च (चयापचय जोखिम)', status: 'obesity-1' },
+      { category: 'मोटापा श्रेणी II (Obesity II)', range: '35.0 – 39.9', risk: 'गंभीर (उच्च जोखिम)', status: 'obesity-2' },
+      { category: 'मोटापा श्रेणी III (Obesity III)', range: '≥ 40.0', risk: 'अत्यधिक उच्च', status: 'obesity-3' }
+    ],
+    faq: [
+      { q: 'बीएमआई की गणना कैसे की जाती है?', a: 'बीएमआई की गणना वजन (किग्रा) को ऊंचाई (मीटर) के वर्ग से विभाजित करके की जाती है [kg/m²]।' },
+      { q: 'महिलाओं और पुरुषों के लिए स्वस्थ बीएमआई क्या है?', a: 'अधिकांश वयस्कों के लिए, 18.5 से 24.9 kg/m² के बीच की सीमा को मानक माना जाता है (एशियाई आबादी के लिए 18.5-22.9)।' },
+      { q: 'क्या एथलीटों के लिए बीएमआई सटीक है?', a: 'बीएमआई एक प्राथमिक स्क्रीनिंग टूल है। यह मांसपेशियों वाले एथलीटों में मांसपेशियों के वजन और वसा में अंतर नहीं कर पाता है।' },
+      { q: 'बीएमआई 25 का क्या अर्थ है?', a: 'मानक दिशानिर्देशों में बीएमआई 25.0 सामान्य वजन और अधिक वजन के बीच की सीमा है।' },
+      { q: 'BMR (बीएमआर) क्या है?', a: 'BMR (Basal Metabolic Rate) विश्राम की अवस्था में शरीर के बुनियादी कार्यों को बनाए रखने के लिए आवश्यक कैलोरी का अनुमान है।' },
+      { q: 'TDEE (टीडीईई) क्या है?', a: 'TDEE (Total Daily Energy Expenditure) आपकी शारीरिक गतिविधियों को मिलाकर कुल दैनिक कैलोरी खपत का अनुमान है।' }
+    ]
   }
 };
 
@@ -386,7 +429,7 @@ const faqSchema = {
                   <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">Healthy Weight</td>
                   <td class="px-6 py-4 font-semibold text-[var(--accent)]">18.5 – 24.9 kg/m²</td>
                   <td class="px-6 py-4 font-semibold text-[var(--accent)]">18.5 – 22.9 kg/m²</td>
-                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Optimal baseline associated with lower cardiometabolic risk.</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Reference category associated with lower population-level risk.</td>
                 </tr>
                 <tr class="hover:bg-[var(--muted)]/40 transition-colors">
                   <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">Overweight</td>
@@ -398,13 +441,13 @@ const faqSchema = {
                   <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">Obesity Class I</td>
                   <td class="px-6 py-4 font-semibold text-[var(--accent)]">30.0 – 34.9 kg/m²</td>
                   <td class="px-6 py-4 font-semibold text-[var(--accent)]">27.5 – 32.4 kg/m²</td>
-                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Elevated risk for metabolic complications.</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">Category associated with elevated population-level risk.</td>
                 </tr>
                 <tr class="hover:bg-[var(--muted)]/40 transition-colors">
                   <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">Obesity Class II+</td>
                   <td class="px-6 py-4 font-semibold text-[var(--accent)]">&ge; 35.0 kg/m²</td>
                   <td class="px-6 py-4 font-semibold text-[var(--accent)]">&ge; 32.5 kg/m²</td>
-                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">High clinical relevance for lifestyle & clinical interventions.</td>
+                  <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">High relevance for lifestyle & general health monitoring.</td>
                 </tr>
               </tbody>
             </table>

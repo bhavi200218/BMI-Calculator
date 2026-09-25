@@ -1,6 +1,11 @@
 ---
+interface Props {
+  lang?: string;
+}
+
+const { lang: propLang } = Astro.props;
 const { currentLocale } = Astro;
-const lang = currentLocale || 'en';
+const lang = propLang || currentLocale || 'en';
 
 const content: Record<string, any> = {
   en: {
@@ -17,7 +22,7 @@ const content: Record<string, any> = {
       },
       {
         title: "Which BMI is Accurate?",
-        text: "No single number is 100% accurate for everyone, but a Real BMI calculation that combines standard BMI with Waist-to-Height Ratio (WHtR) and WHO Asian cutoffs (23.0 kg/m² for overweight) provides a comprehensive screening view of overall health and visceral fat risk."
+        text: "No single number is 100% accurate for everyone, but a Real BMI calculation that combines standard BMI with Waist-to-Height Ratio (WHtR) and WHO Asian cutoffs (23.0 kg/m² for overweight) provides additional health context for overall body composition and abdominal fat risk indicators."
       },
       {
         title: "Is a BMI of 25 Realistic?",
@@ -25,7 +30,7 @@ const content: Record<string, any> = {
       },
       {
         title: "Body Mass Index (BMI) & Cancer Risk: What Studies Show",
-        text: "According to published literature from the American Cancer Society (ACS) and World Health Organization (WHO), maintaining a healthy Body Mass Index (BMI between 18.5 and 24.9 kg/m²) is associated with lower risk for metabolic disorders, cardiovascular disease, and certain types of cancer. Elevated body weight, particularly abdominal visceral adiposity, alters hormone balance (such as insulin and estrogen) and promotes chronic inflammation. Real BMI provides immediate screening feedback aligned with these guidelines."
+        text: "According to published literature from the American Cancer Society (ACS) and World Health Organization (WHO), maintaining a healthy Body Mass Index (BMI between 18.5 and 24.9 kg/m²) is associated with lower risk for metabolic disorders, cardiovascular disease, and certain types of cancer. Elevated body weight, particularly abdominal visceral adiposity, alters hormone balance (such as insulin and estrogen) and promotes chronic inflammation. Real BMI provides educational screening references aligned with these guidelines."
       },
       {
         title: "What is 'Real BMI' and How Does it Differ From Weight Scales?",
@@ -50,16 +55,16 @@ const content: Record<string, any> = {
     ]
   },
   hi: {
-    eyebrow: "नैदानिक गाइड",
-    title: "बॉडी मास इंडेक्स (BMI) और दीर्घकालिक स्वास्थ्य जोखिम: आधिकारिक गाइड",
+    eyebrow: "स्वास्थ्य एवं प्रमाण-आधारित गाइड",
+    title: "बॉडी मास इंडेक्स (BMI) और दीर्घकालिक स्वास्थ्य जोखिम: स्वास्थ्य संदर्भ गाइड",
     sections: [
       {
-        title: "बीएमआई और कैंसर/चयापचय जोखिम: चिकित्सकीय अध्ययन क्या कहते हैं?",
-        text: "अमेरिकन कैंसर सोसाइटी (ACS) और विश्व स्वास्थ्य संगठन (WHO) के नैदानिक अध्ययनों के अनुसार, एक स्वस्थ बीएमआई (18.5 से 22.9 / 24.9 kg/m²) बनाए रखने से चयापचय विकारों और पुरानी बीमारियों का खतरा काफी कम हो जाता है।"
+        title: "बीएमआई और कैंसर/चयापचय जोखिम: प्रकाशित अध्ययन क्या कहते हैं?",
+        text: "अमेरिकन कैंसर सोसाइटी (ACS) और विश्व स्वास्थ्य संगठन (WHO) द्वारा प्रकाशित अध्ययनों के अनुसार, एक स्वस्थ बीएमआई (18.5 से 22.9 / 24.9 kg/m²) बनाए रखने से चयापचय विकारों का खतरा कम आबादी-स्तरीय जोखिम से जुड़ा है।"
       },
       {
         title: "'Real BMI' क्या है और यह साधारण तराजू से कैसे अलग है?",
-        text: "'Real BMI' का तात्पर्य केवल वजन पर निर्भर रहने के बजाय बीएमआर (BMR), टीडीईई (TDEE) और कमर की परिधि के साथ बॉडी मास इंडेक्स का मूल्यांकन करना है। डब्ल्यूएचओ (WHO) और सीडीसी (CDC) मानकों के आधार पर हमारा कैलकुलेटर आपको सटीक नैदानिक परिणाम देता है।"
+        text: "'Real BMI' का तात्पर्य केवल वजन पर निर्भर रहने के बजाय बीएमआर (BMR), टीडीईई (TDEE) और कमर की परिधि के साथ बॉडी मास इंडेक्स का मूल्यांकन करना है। डब्ल्यूएचओ (WHO) और सीडीसी (CDC) मानकों के आधार पर हमारा कैलकुलेटर बीएमआई और संबंधित स्वास्थ्य मेट्रिक्स का अनुमानित एवं संदर्भात्मक परिणाम देता है।"
       },
       {
         title: "एशियाई और भारतीय आबादी के लिए कम बीएमआई सीमाएं क्यों हैं?",
@@ -72,7 +77,7 @@ const content: Record<string, any> = {
     ]
   },
   ko: {
-    eyebrow: "임상 가이드",
+    eyebrow: "근거 기반 건강 가이드",
     title: "체질량지수(BMI) 및 만성 질환 위험: 공식 가이드",
     sections: [
       {
@@ -86,7 +91,7 @@ const content: Record<string, any> = {
     ]
   },
   es: {
-    eyebrow: "Guía Clínica",
+    eyebrow: "Guía de Referencia de Salud",
     title: "Índice de Masa Corporal (IMC) y Riesgos para la Salud",
     sections: [
       {
@@ -96,7 +101,7 @@ const content: Record<string, any> = {
     ]
   },
   fr: {
-    eyebrow: "Guide Clinique",
+    eyebrow: "Guide de Référence de Santé",
     title: "Indice de Masse Corporelle (IMC) et Risques pour la Santé",
     sections: [
       {
@@ -106,7 +111,7 @@ const content: Record<string, any> = {
     ]
   },
   de: {
-    eyebrow: "Klinische Leitlinien",
+    eyebrow: "Gesundheits-Referenzleitfaden",
     title: "Body-Mass-Index (BMI) & Gesundheitliche Risiken",
     sections: [
       {
