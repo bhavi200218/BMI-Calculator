@@ -41,21 +41,21 @@ const content: Record<string, any> = {
       { title: 'Type 2 Diabetes & Abdominal Adiposity Screening (Diabetes Canada Aligned)', text: 'According to Diabetes Canada and WHO clinical guidelines, elevated BMI (≥25.0 kg/m² or ≥23.0 kg/m² for Asian populations) and abdominal visceral adiposity directly correlate with increased risk of Type 2 Diabetes and Insulin Resistance. Monitoring your BMI alongside waist circumference offers early detection and vital metabolic risk prevention.' }
     ],
     whoTable: [
-      { category: 'Underweight', range: '< 18.5', risk: 'Low (Increased Nutri. Risk)', status: 'underweight' },
-      { category: 'Normal Weight', range: '18.5 – 24.9', risk: 'Minimal (Reference Range)', status: 'normal' },
-      { category: 'Overweight', range: '25.0 – 29.9', risk: 'Increased (Caution Recommended)', status: 'overweight' },
-      { category: 'Obesity Class I', range: '30.0 – 34.9', risk: 'High (Moderate Risk)', status: 'obesity-1' },
-      { category: 'Obesity Class II', range: '35.0 – 39.9', risk: 'Very High (Severe Risk)', status: 'obesity-2' },
-      { category: 'Obesity Class III', range: '≥ 40.0', risk: 'Extremely High (Acute Risk)', status: 'obesity-3' }
+      { category: 'Underweight', range: '< 18.5', risk: 'Underweight reference range', status: 'underweight' },
+      { category: 'Healthy Weight', range: '18.5 – 24.9', risk: 'Healthy-weight reference range', status: 'normal' },
+      { category: 'Overweight', range: '25.0 – 29.9', risk: 'Overweight reference range', status: 'overweight' },
+      { category: 'Obesity Class I', range: '30.0 – 34.9', risk: 'Obesity Class I reference range', status: 'obesity-1' },
+      { category: 'Obesity Class II', range: '35.0 – 39.9', risk: 'Obesity Class II reference range', status: 'obesity-2' },
+      { category: 'Obesity Class III', range: '≥ 40.0', risk: 'Obesity Class III reference range', status: 'obesity-3' }
     ],
     faq: [
       { q: 'What is the difference between standard BMI and Real BMI?', a: 'Standard BMI calculates body mass strictly using height and weight. Real BMI is a term used by this website to describe standard BMI alongside complementary health metrics (such as BMR, TDEE, body fat estimates, and WHO regional cutoffs) for a broader health overview. It is not a separate medical measurement or official WHO classification.' },
       { q: 'How is BMI calculated?', a: 'BMI compares your weight and height using a simple formula: weight in kilograms divided by height in meters squared (kg/m²), or (weight in lbs / height in inches²) x 703 for imperial units.' },
       { q: 'How does BMI relate to heart disease and stroke risk?', a: 'Elevated BMI levels (25.0 kg/m² and above) correlate with higher incidence of hypertension, high LDL cholesterol, and type-2 diabetes — all major contributing risk factors for coronary heart disease and stroke.' },
       { q: 'Why is waist circumference important alongside BMI for heart health?', a: 'Excess abdominal visceral fat surrounding vital organs poses significantly greater cardiovascular risk than subcutaneous fat stored on limbs. Combining BMI with waist measurements can provide additional context about abdominal fat distribution.' },
-      { q: 'What is a healthy BMI for men and women?', a: 'For most adults, a healthy BMI range is 18.5 to 24.9. However, WHO recommends a lower threshold of 18.5 to 22.9 for Asian and South Asian populations due to metabolic risk profiles.' },
+      { q: 'What is a healthy BMI for men and women?', a: 'For most adults, a healthy BMI range is 18.5 to 24.9. However, WHO expert consultation guidelines suggest a lower action threshold of 18.5 to 22.9 for Asian populations.' },
       { q: 'Is BMI accurate for muscular people or athletes?', a: 'BMI is a screening tool, not a diagnostic measurement of body fat. Because dense muscle tissue weighs more than fat volume, muscular athletes may register a higher BMI score while maintaining very low body fat.' },
-      { q: 'Why does WHO recommend lower BMI cutoffs for Asian populations?', a: 'Clinical research shows that South Asian and East Asian individuals tend to accumulate a higher percentage of abdominal visceral fat at lower body weights. Therefore, WHO defines overweight for Asian adults starting at 23.0 kg/m².' },
+      { q: 'Why does WHO recommend lower BMI cutoffs for Asian populations?', a: 'WHO expert consultation guidelines suggest a lower action threshold of 23.0 kg/m² for increased health risk in Asian populations due to abdominal visceral adiposity patterns.' },
       { q: 'What does a BMI of 25 mean?', a: 'A BMI of 25 sits at the exact threshold between the healthy weight range and the overweight category. It serves as a practical reminder to assess waist circumference and physical activity habits.' },
       { q: 'What is BMR and why does it matter?', a: 'BMR (Basal Metabolic Rate) is the energy your body expends at rest to support vital organ functions. Knowing your BMR helps establish baseline calorie requirements for weight management.' },
       { q: 'What is TDEE and why does it matter?', a: 'TDEE (Total Daily Energy Expenditure) estimates the total calories burned daily including movement and exercise, serving as the blueprint for maintaining, losing, or gaining weight.' }
@@ -83,19 +83,19 @@ const content: Record<string, any> = {
       { title: 'टाइप 2 डायबिटीज एवं विसरल वसा स्क्रीनिंग (डायबिटीज कनाडा मानक)', text: 'डायबिटीज कनाडा और डब्ल्यूएचओ (WHO) के दिशानिर्देशों के अनुसार, बढ़ा हुआ बीएमआई (≥25.0 kg/m² या एशियाई आबादी के लिए ≥23.0 kg/m²) और पेट की वसा सीधे टाइप 2 डायबिटीज और इंसुलिन प्रतिरोध के जोखिम को बढ़ाती है।' }
     ],
     whoTable: [
-      { category: 'कम वजन (Underweight)', range: '< 18.5', risk: 'कम (पोषण संबंधी जोखिम)', status: 'underweight' },
-      { category: 'सामान्य वजन (Normal Weight)', range: '18.5 – 24.9', risk: 'न्यूनतम (संदर्भ सीमा)', status: 'normal' },
-      { category: 'अधिक वजन (Overweight)', range: '25.0 – 29.9', risk: 'बढ़ा हुआ (सावधानी आवश्यक)', status: 'overweight' },
-      { category: 'मोटापा श्रेणी I (Obesity I)', range: '30.0 – 34.9', risk: 'उच्च (मध्यम जोखिम)', status: 'obesity-1' },
-      { category: 'मोटापा श्रेणी II (Obesity II)', range: '35.0 – 39.9', risk: 'अत्यधिक उच्च (गंभीर जोखिम)', status: 'obesity-2' },
-      { category: 'मोटापा श्रेणी III (Obesity III)', range: '≥ 40.0', risk: 'अत्यंत गंभीर (तीव्र जोखिम)', status: 'obesity-3' }
+      { category: 'कम वजन (Underweight)', range: '< 18.5', risk: 'कम वजन संदर्भ सीमा', status: 'underweight' },
+      { category: 'सामान्य वजन (Normal Weight)', range: '18.5 – 24.9', risk: 'सामान्य वजन संदर्भ सीमा', status: 'normal' },
+      { category: 'अधिक वजन (Overweight)', range: '25.0 – 29.9', risk: 'अधिक वजन संदर्भ सीमा', status: 'overweight' },
+      { category: 'मोटापा श्रेणी I (Obesity I)', range: '30.0 – 34.9', risk: 'मोटापा श्रेणी I संदर्भ सीमा', status: 'obesity-1' },
+      { category: 'मोटापा श्रेणी II (Obesity II)', range: '35.0 – 39.9', risk: 'मोटापा श्रेणी II संदर्भ सीमा', status: 'obesity-2' },
+      { category: 'मोटापा श्रेणी III (Obesity III)', range: '≥ 40.0', risk: 'मोटापा श्रेणी III संदर्भ सीमा', status: 'obesity-3' }
     ],
     faq: [
       { q: 'मानक बीएमआई और Real BMI में क्या अंतर है?', a: 'मानक बीएमआई केवल ऊंचाई और वजन का उपयोग करता है। Real BMI बीएमआई को डब्ल्यूएचओ/सीडीसी दिशानिर्देशों, बीएमआर (BMR) और टीडीईई (TDEE) के साथ एकीकृत करके व्यापक स्वास्थ्य दृष्टिकोण प्रदान करता है। यह अलग चिकित्सा माप या आधिकारिक डब्ल्यूएचओ वर्गीकरण नहीं है।' },
       { q: 'बीएमआई (BMI) की गणना कैसे की जाती है?', a: 'बीएमआई = वजन (किलोग्राम) ÷ ऊंचाई² (मीटर)। इंपीरियल इकाइयों में: (वजन पाउंड ÷ ऊंचाई इंच²) × 703। हमारा कैलकुलेटर दोनों प्रणालियों में तुरंत गणना करता है।' },
-      { q: 'पुरुषों और महिलाओं के लिए स्वस्थ बीएमआई क्या है?', a: 'अधिकांश वयस्कों के लिए स्वस्थ बीएमआई सीमा 18.5 से 24.9 है। हालांकि, दक्षिण एशियाई आबादी के लिए डब्ल्यूएचओ 22.9 तक स्वस्थ सीमा मानता है।' },
+      { q: 'पुरुषों और महिलाओं के लिए स्वस्थ बीएमआई क्या है?', a: 'अधिकांश वयस्कों के लिए स्वस्थ बीएमआई सीमा 18.5 से 24.9 है। हालांकि, दक्षिण एशियाई आबादी के लिए डब्ल्यूएचओ विशेषज्ञ परामर्श दिशानिर्देश 22.9 तक संदर्भ सीमा का सुझाव देते हैं।' },
       { q: 'क्या मांसपेशियों वाले एथलीटों के लिए बीएमआई सटीक है?', a: 'बीएमआई एक प्राथमिक जांच उपकरण है, निदान नहीं। यह मांसपेशियों वाले एथलीटों में शरीर की वसा का अधिक अनुमान लगा सकता है, इसलिए इसे कमर की परिधि के साथ देखना चाहिए।' },
-      { q: 'दक्षिण एशियाई लोगों के लिए बीएमआई सीमाएं कम क्यों हैं?', a: 'अनुसंधान से पता चलता है कि एशियाई आबादी में कम वजन पर भी पेट की आंतरिक (विसरल) वसा जमा होने का खतरा अधिक होता है, इसलिए 23.0 kg/m² से अधिक वजन माना जाता है।' },
+      { q: 'दक्षिण एशियाई लोगों के लिए बीएमआई सीमाएं कम क्यों हैं?', a: 'डब्ल्यूएचओ विशेषज्ञ परामर्श दिशानिर्देशों के अनुसार, एशियाई आबादी में कम वजन पर भी पेट की विसरल वसा जमा होने का जोखिम अधिक हो सकता है। इसलिए दिशानिर्देश 23.0 kg/m² को बढ़े हुए स्वास्थ्य जोखिम की संदर्भ सीमा के रूप में सुझाते हैं।' },
       { q: '25 बीएमआई का क्या अर्थ है?', a: '25 का बीएमआई सामान्य सीमा और अधिक वजन श्रेणी के बीच की सीमा पर है। यह कमर के आकार और व्यायाम की आदतों की समीक्षा करने का संकेत है।' },
       { q: 'बीएमआर (BMR) क्या है और यह क्यों महत्वपूर्ण है?', a: 'बीएमआर वह न्यूनतम ऊर्जा है जिसका उपयोग आपका शरीर विश्राम की स्थिति में सांस लेने और अंग संचालन के लिए करता है।' },
       { q: 'टीडीईई (TDEE) क्या है और यह क्यों महत्वपूर्ण है?', a: 'टीडीईई अनुमान लगाता है कि आप शारीरिक गतिविधि और व्यायाम सहित एक दिन में कितनी कैलोरी बर्न करते हैं।' }
@@ -395,6 +395,10 @@ const faqSchema = {
           </table>
         </div>
       </div>
+
+      <p class="text-xs text-[var(--muted-foreground)] font-medium pt-3 italic">
+        BMI is a screening measure and does not independently diagnose disease or determine an individual's overall health risk.
+      </p>
 
       <!-- Standard WHO Adult Classification Section -->
       <div class="pt-8 space-y-6">

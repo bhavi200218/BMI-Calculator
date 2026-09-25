@@ -358,7 +358,8 @@ export const blogArticles: Record<string, any> = {
         </div>
 
         <h2>How to Use TDEE for Weight Loss</h2>
-        <p>To lose fat safely without sacrificing lean skeletal muscle, consume <strong>300 to 500 calories below your TDEE</strong> daily. Never consume fewer calories than your BMR score for prolonged periods.</p>
+        <p>To lose fat safely without sacrificing lean skeletal muscle, a moderate deficit of <strong>300 to 500 calories below your TDEE</strong> daily is often cited as a sustainable starting point. Never consume fewer calories than your BMR score for prolonged periods without medical supervision.</p>
+        <p class="text-xs text-[var(--muted-foreground)] italic mt-4">Note: Individual calorie needs vary. People with medical conditions, adolescents, pregnant or breastfeeding individuals, or other special circumstances should seek individualized advice from a qualified healthcare professional.</p>
       `,
       hi: `
         <h2>बीएमआर (BMR) और टीडीईई (TDEE) में क्या अंतर है?</h2>
@@ -651,7 +652,7 @@ export const blogArticles: Record<string, any> = {
     contentHtml: {
       en: `
         <h2>Healthy Weight Targets by Height</h2>
-        <p>Your ideal healthy weight range is the mass span at which your BMI stays between 18.5 and 24.9 kg/m². Using clinical formulas such as the Devine and Robinson equations, adults can set clear, realistic body weight goals.</p>
+        <p>Your healthy weight range by height is the mass span at which your BMI stays between 18.5 and 24.9 kg/m². Using published equations (such as the Devine and Robinson formulas), adults can evaluate reference body weight targets.</p>
       `,
       hi: `
         <h2>ऊंचाई के अनुसार स्वस्थ वजन की सीमा</h2>
@@ -688,7 +689,7 @@ export const blogArticles: Record<string, any> = {
     contentHtml: {
       en: `
         <h2>BMI vs. Body Fat Percentage: What is the Difference?</h2>
-        <p>While <strong>BMI</strong> measures total body mass relative to height, <strong>Body Fat Percentage (% Fat)</strong> calculates the exact proportion of total weight composed of adipose fat tissue versus lean body mass (skeletal muscle, bone, and water).</p>
+        <p>While <strong>BMI</strong> measures total body mass relative to height, <strong>Body Fat Percentage (% Fat)</strong> estimates the proportion of body mass that is fat versus lean tissue (skeletal muscle, bone, and water).</p>
         <p>For active individuals, athletes, and fitness enthusiasts, Body Fat Percentage offers far superior insight into physical conditioning than scale weight alone.</p>
       `,
       hi: `
