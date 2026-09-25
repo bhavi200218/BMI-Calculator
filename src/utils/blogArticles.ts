@@ -9,12 +9,12 @@ export const blogArticles: Record<string, any> = {
       fr: 'Calculateur IMC Inde (Guide 2026) : Normes OMS, Formule et Tableau'
     },
     category: {
-      en: 'Clinical Guidelines India',
-      hi: 'नैदानिक निर्देश भारत',
-      ko: '임상 지침',
-      de: 'Klinische Leitlinien',
-      es: 'Pautas Clínicas',
-      fr: 'Directives Cliniques'
+      en: 'BMI & Regional Standards',
+      hi: 'बीएमआई और क्षेत्रीय मानक',
+      ko: '지역별 BMI 지침',
+      de: 'BMI & Regionale Standards',
+      es: 'IMC y Normas Regionales',
+      fr: 'IMC et Normes Régionales'
     },
     description: {
       en: 'Complete 2026 guide on BMI for Indians. Learn why 23 is overweight in India, WHO South-East Asia cut-offs, ideal weight chart, formula, and FAQs.',
@@ -127,12 +127,12 @@ export const blogArticles: Record<string, any> = {
       fr: 'Qu\'est-ce que l\'IMC ? Définition, Calcul et Signification pour la Santé'
     },
     category: {
-      en: 'Clinical Basics',
-      hi: 'नैदानिक मूल बातें',
-      ko: '임상 기초',
-      de: 'Klinische Grundlagen',
-      es: 'Conceptos Clínicos',
-      fr: 'Bases Cliniques'
+      en: 'BMI & Health Basics',
+      hi: 'बीएमआई और स्वास्थ्य मूल बातें',
+      ko: 'BMI 기초',
+      de: 'BMI & Grundlagen',
+      es: 'Conceptos Básicos del IMC',
+      fr: 'Bases de l\'IMC'
     },
     description: {
       en: 'Comprehensive 2026 guide to Body Mass Index (BMI). Understand what BMI is, how it is calculated, WHO scale ranges, and what your score means.',
@@ -205,20 +205,20 @@ export const blogArticles: Record<string, any> = {
 
   'is-bmi-accurate': {
     title: {
-      en: 'Is BMI Accurate? Clinical Evidence, Flaws & Oxford 2.5 Power Formula',
-      hi: 'क्या बीएमआई सटीक है? नैदानिक साक्ष्य, सीमाएं और 2.5 घात फॉर्मूला',
-      ko: 'BMI는 정확한가요? 임상 증거, 한계 및 옥스포드 2.5 보정 공식',
-      de: 'Ist der BMI genau? Klinische Fakten, Mängel & Oxford 2.5 Formel',
-      es: '¿Es Preciso el IMC? Evidencia Clínica, Limitaciones y Fórmula 2.5',
-      fr: 'L\'IMC est-il Précis ? Preuves Cliniques, Limites et Formule 2.5'
+      en: 'Is BMI Accurate? Evidence, Flaws & Oxford 2.5 Power Formula',
+      hi: 'क्या बीएमआई सटीक है? साक्ष्य, सीमाएं और 2.5 घात फॉर्मूला',
+      ko: 'BMI는 정확한가요? 증거, 한계 및 옥스포드 2.5 보정 공식',
+      de: 'Ist der BMI genau? Fakten, Mängel & Oxford 2.5 Formel',
+      es: '¿Es Preciso el IMC? Evidencia, Limitaciones y Fórmula 2.5',
+      fr: 'L\'IMC est-il Précis ? Preuves, Limites et Formule 2.5'
     },
     category: {
-      en: 'Medical Debate',
-      hi: 'चिकित्सीय बहस',
-      ko: '의학적 논쟁',
-      de: 'Medizinische Analyse',
-      es: 'Debate Médico',
-      fr: 'Débat Médical'
+      en: 'Research & Evidence',
+      hi: 'शोध और साक्ष्य',
+      ko: '연구 및 증거',
+      de: 'Forschung & Fakten',
+      es: 'Investigación y Evidencia',
+      fr: 'Recherche et Preuves'
     },
     description: {
       en: 'Is BMI actually accurate for your body? Read 2026 medical evidence on muscle density flaws, Oxford height scaling formula, and WHO ethnic guidelines.',
@@ -374,20 +374,20 @@ export const blogArticles: Record<string, any> = {
 
   'bmi-chart-for-men-women': {
     title: {
-      en: 'BMI Chart for Men and Women (Age-Adjusted Cut-offs 2026)',
-      hi: 'पुरुषों और महिलाओं के लिए बीएमआई चार्ट (आयु-समायोजित कट-ऑफ)',
-      ko: '남성 및 여성 BMI 차트 (2026 연령별 진단 기준)',
-      de: 'BMI Tabelle für Männer und Frauen (Alterskorrigiert 2026)',
-      es: 'Tabla de IMC para Hombres y Mujeres (Ajustada por Edad 2026)',
-      fr: 'Tableau d\'IMC pour Hommes et Femmes (Ajusté selon l\'Âge 2026)'
+      en: 'BMI Chart for Men and Women (Age-Based Reference Ranges 2026)',
+      hi: 'पुरुषों और महिलाओं के लिए बीएमआई चार्ट (आयु-आधारित संदर्भ सीमाएं)',
+      ko: '남성 및 여성 BMI 차트 (2026 연령별 참조 범위)',
+      de: 'BMI Tabelle für Männer und Frauen (Altersbasierte Referenzwerte 2026)',
+      es: 'Tabla de IMC para Hombres y Mujeres (Rangos de Referencia por Edad 2026)',
+      fr: 'Tableau d\'IMC pour Hommes et Femmes (Plages de Référence par Âge 2026)'
     },
     category: {
-      en: 'Clinical Standards',
-      hi: 'नैदानिक मानक',
-      ko: '임상 표준',
-      de: 'Klinische Standards',
-      es: 'Estándares Clínicos',
-      fr: 'Normes Cliniques'
+      en: 'Health & Age Standards',
+      hi: 'स्वास्थ्य और आयु मानक',
+      ko: '연령별 건강 지침',
+      de: 'Altersstandards',
+      es: 'Estándares por Edad',
+      fr: 'Normes d\'Âge'
     },
     description: {
       en: 'Detailed gender and age-adjusted BMI reference chart. Compare body fat distribution traits between male and female adults.',
@@ -403,8 +403,8 @@ export const blogArticles: Record<string, any> = {
         <p>Although standard Body Mass Index (BMI) formulas calculate height and weight identically for adult men and women, biological body composition differs significantly between sexes.</p>
         <p>Women naturally carry higher essential fat levels (10–13%) than men (2–5%) to support reproductive functions, endocrine regulation, and childbearing. Men typically possess greater skeletal muscle mass and higher bone mineral density.</p>
 
-        <h2>Age-Adjusted BMI Target Chart for Adults</h2>
-        <p>As adults age, natural physiological changes occur: lean skeletal muscle mass slowly declines (sarcopenia) while body fat percentage tends to increase. Clinical guidelines suggest target healthy BMI windows shift upward slightly in older adults:</p>
+        <h2>Age-Based BMI Reference Chart for Adults</h2>
+        <p>As adults age, natural physiological changes occur: lean skeletal muscle mass slowly declines (sarcopenia) while body fat percentage tends to increase. Illustrative reference ranges suggest target healthy BMI windows shift upward slightly in older adults (Note: WHO and CDC maintain a single adult BMI classification standard regardless of age):</p>
 
         <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
           <table class="w-full text-left border-collapse text-sm">

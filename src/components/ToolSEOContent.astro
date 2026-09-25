@@ -37,7 +37,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Obesity Class I-III', col2: '≥ 30.0 kg/m²', col3: 'Elevated cardiovascular & metabolic risk' }
       ],
       faqs: [
-        { question: 'What is the BMI Calculator and how to calculate BMI?', answer: 'The BMI Calculator (Body Mass Index Calculator) is a validated health screening tool. To calculate BMI, divide weight in kilograms by height in meters squared (kg/m²), or use imperial units [Weight (lbs) / Height (inches)²] × 703. Our free BMI tool computes your score instantly.' },
+        { question: 'What is the BMI Calculator and how to calculate BMI?', answer: 'Body Mass Index (BMI) is a widely used population health screening measure. To calculate BMI, divide weight in kilograms by height in meters squared (kg/m²), or use imperial units [Weight (lbs) / Height (inches)²] × 703. Our free BMI tool applies this standard formula to compute your score instantly.' },
         { question: 'How to calculate BMI accurately for men and women?', answer: 'BMI calculation is identical for adult men and women, relying on height and weight metrics. Our BMI Calculator evaluates your metric score against WHO reference ranges to determine healthy weight boundaries.' },
         { question: 'What is the official WHO BMI chart and BMI scale?', answer: 'The WHO BMI chart categorizes adults into four main ranges on the BMI scale: Underweight (<18.5), Healthy Weight (18.5–24.9), Overweight (25.0–29.9), and Obese (≥30.0). For Asian populations, the overweight cutoff begins at 23.0.' },
         { question: 'Why use Real BMI vs basic standard BMI Calculators?', answer: 'Real BMI incorporates established WHO protocols, Asian cutoff adjustments (23.0 kg/m²), BMR metabolic estimates, and 3D volume scaling to deliver comprehensive health analytics.' },
@@ -47,17 +47,17 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   '3d-bmi-calculator': {
     en: {
-      eyebrow: 'Oxford 3D Height-Exponent Model & Research-Informed 3D Body Visualization',
+      eyebrow: 'Oxford 2.5-Power BMI Model & 3D Body Visualization',
       title: '3D BMI Calculator & Interactive 3D Body Visualizer by Height, Weight & Gender',
       intro: 'Our free interactive 3D Body Visualizer and 3D BMI Calculator computes body mass index using Oxford mathematician Nick Trefethen 2.5 power formula (1.3 × weight / height²·⁵) alongside 3D surface geometry principles. Rotate 360° to view front, side, and back avatar mesh, wireframe, and BMI heatmap modes in real time.',
       formulaTitle: 'Oxford 3D Height-Adjusted Exponent Equation & 3D Volumetric Principles',
-      formulaDesc: '3D Height-Adjusted BMI = 1.3 × Weight (kg) / [Height (m)]².⁵ | Proposed by mathematician Nick Trefethen; 3D visualization is provided here for educational comparison.',
+      formulaDesc: '3D Height-Adjusted BMI = 1.3 × Weight (kg) / [Height (m)]².⁵ | Inspired by published research on height scaling and 3D body-shape visualization.',
       formulaCode: '3D BMI = 1.3 × kg / m²·⁵',
       tableTitle: 'Standard 2D BMI vs 3D Height Adjusted BMI Comparison Matrix',
       tableRows: [
-        { col1: 'Short Adults (< 160 cm)', col2: 'Standard 2D BMI formula produces lower relative scores', col3: '3D Height Adjusted BMI adds +0.5 to +1.5 pts' },
+        { col1: 'Short Adults (< 160 cm)', col2: 'Standard 2D BMI formula produces lower relative scores', col3: 'Alternative formula produces a higher score' },
         { col1: 'Average Stature (170 cm)', col2: 'Identical rating alignment', col3: '0.0 pts difference (Identical)' },
-        { col1: 'Tall Adults (> 185 cm)', col2: 'Standard 2D BMI formula produces higher relative scores', col3: '3D Height Adjusted BMI subtracts -1.0 to -2.0 pts' }
+        { col1: 'Tall Adults (> 185 cm)', col2: 'Standard 2D BMI formula produces higher relative scores', col3: 'Alternative formula produces a lower score' }
       ],
       faqs: [
         { question: 'What is the 3D Body Visualizer & 3D BMI Calculator?', answer: 'The 3D Body Visualizer is an interactive 3D body preview tool that computes an alternative height-adjusted score using Oxford mathematician Nick Trefethen 2.5 power formula [3D BMI = 1.3 × Weight (kg) / Height (m)^2.5] and renders a 360° interactive 3D body avatar with solid mesh, wireframe, and BMI heatmap views.' },
