@@ -37,17 +37,17 @@ const content: Record<string, any> = {
     ],
     whoTable: [
       { category: 'Underweight', range: '< 18.5', risk: 'Low (Increased Nutri. Risk)', status: 'underweight' },
-      { category: 'Normal Weight', range: '18.5 – 24.9', risk: 'Minimal (Optimal Health)', status: 'normal' },
+      { category: 'Normal Weight', range: '18.5 – 24.9', risk: 'Minimal (Reference Range)', status: 'normal' },
       { category: 'Overweight', range: '25.0 – 29.9', risk: 'Increased (Caution Recommended)', status: 'overweight' },
       { category: 'Obesity Class I', range: '30.0 – 34.9', risk: 'High (Moderate Risk)', status: 'obesity-1' },
       { category: 'Obesity Class II', range: '35.0 – 39.9', risk: 'Very High (Severe Risk)', status: 'obesity-2' },
       { category: 'Obesity Class III', range: '≥ 40.0', risk: 'Extremely High (Acute Risk)', status: 'obesity-3' }
     ],
     faq: [
-      { q: 'What is the difference between standard BMI and Real BMI?', a: 'Standard BMI calculates body mass strictly using height and weight. Real BMI integrates standard BMI with WHO & CDC reference tables, gender-adjusted body fat estimates, BMR, and TDEE to provide a complete, clinical-grade overview of your body composition.' },
+      { q: 'What is the difference between standard BMI and Real BMI?', a: 'Standard BMI calculates body mass strictly using height and weight. Real BMI is a term used by this website to describe standard BMI alongside complementary health metrics (such as BMR, TDEE, body fat estimates, and WHO regional cutoffs) for a broader health overview. It is not a separate medical measurement or official WHO classification.' },
       { q: 'How is BMI calculated?', a: 'BMI compares your weight and height using a simple formula: weight in kilograms divided by height in meters squared (kg/m²), or (weight in lbs / height in inches²) x 703 for imperial units.' },
       { q: 'How does BMI relate to heart disease and stroke risk?', a: 'Elevated BMI levels (25.0 kg/m² and above) correlate with higher incidence of hypertension, high LDL cholesterol, and type-2 diabetes — all major contributing risk factors for coronary heart disease and stroke.' },
-      { q: 'Why is waist circumference important alongside BMI for heart health?', a: 'Excess abdominal visceral fat surrounding vital organs poses significantly greater cardiovascular risk than subcutaneous fat stored on limbs. Combining BMI with Waist-to-Hip ratio provides a far more accurate heart risk assessment.' },
+      { q: 'Why is waist circumference important alongside BMI for heart health?', a: 'Excess abdominal visceral fat surrounding vital organs poses significantly greater cardiovascular risk than subcutaneous fat stored on limbs. Combining BMI with waist measurements can provide additional context about abdominal fat distribution.' },
       { q: 'What is a healthy BMI for men and women?', a: 'For most adults, a healthy BMI range is 18.5 to 24.9. However, WHO recommends a lower threshold of 18.5 to 22.9 for Asian and South Asian populations due to metabolic risk profiles.' },
       { q: 'Is BMI accurate for muscular people or athletes?', a: 'BMI is a screening tool, not a diagnostic measurement of body fat. Because dense muscle tissue weighs more than fat volume, muscular athletes may register a higher BMI score while maintaining very low body fat.' },
       { q: 'Why does WHO recommend lower BMI cutoffs for Asian populations?', a: 'Clinical research shows that South Asian and East Asian individuals tend to accumulate a higher percentage of abdominal visceral fat at lower body weights. Therefore, WHO defines overweight for Asian adults starting at 23.0 kg/m².' },

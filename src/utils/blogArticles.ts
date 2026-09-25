@@ -492,7 +492,7 @@ export const blogArticles: Record<string, any> = {
         <p>While Western standards consider 24.5 kg/m² healthy, the WHO South-East Asia Regional Office established that <strong>18.5 to 22.9 kg/m²</strong> represents the true healthy baseline for South Asian adults.</p>
         
         <ul>
-          <li><strong>Optimal Healthy Window:</strong> 18.5 – 22.9 kg/m²</li>
+          <li><strong>Healthy Target Range:</strong> 18.5 – 22.9 kg/m²</li>
           <li><strong>Overweight Risk Trigger:</strong> ≥ 23.0 kg/m²</li>
           <li><strong>Obesity Class I Trigger:</strong> ≥ 27.5 kg/m²</li>
         </ul>

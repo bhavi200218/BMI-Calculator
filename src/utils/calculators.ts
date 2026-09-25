@@ -645,7 +645,7 @@ export const calculators: CalculatorConfig[] = [
     description: { en: 'Free Karvonen Heart Rate Zone Calculator. Calculate all 5 target exercise heart rate zones, fat burn zone, and VO2 max using the clinical Karvonen formula and Heart Rate Reserve (HRR).', es: 'Calculadora gratuita de zonas de frecuencia cardíaca con la fórmula de Karvonen. Calcula tus zonas de entrenamiento y quema de grasa.', fr: 'Calculateur gratuit de zones de fréquence cardiaque selon la formule de Karvonen.', de: 'Kostenloser Karvonen-Formel Herzfrequenzzonen Rechner. Berechnen Sie Ihre Ziel-Pulsbereiche für Fettverbrennung und Ausdauer.', ko: '무료 Karvonen 공식 기반 타겟 심박수 zone 계산기. 임상 Karvonen 공식을 사용하여 유산소 및 체지방 연소 심박 구간을 계산하세요.', hi: 'मुफ़्त कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर। नैदानिक कार्वोनेन फॉर्मूला का उपयोग करके अपने व्यायाम के लक्षित हार्ट रेट ज़ोन की सटीक गणना करें।' },
     inputs: [
       { id: 'age', label: L.age, type: 'number', placeholder: '25' },
-      { id: 'rhr', label: { en: 'Resting Heart Rate (BPM)', es: 'Frecuencia Cardíaca en Reposo', fr: 'Fréquence Cardiaque Repos', de: 'Ruhepuls', ko: '안정시 심박수', hi: 'विश्राम हार्ट रेट' }, type: 'number', placeholder: '60' }
+      { id: 'rhr', label: { en: 'Resting Heart Rate', es: 'Frecuencia Cardíaca en Reposo', fr: 'Fréquence Cardiaque Repos', de: 'Ruhepuls', ko: '안정시 심박수', hi: 'विश्राम हार्ट रेट' }, type: 'number', placeholder: '60' }
     ],
     calculate: (inputs) => {
       const age = parseInt(inputs.age) || 25;

@@ -47,17 +47,17 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   '3d-bmi-calculator': {
     en: {
-      eyebrow: 'Oxford 3D Height-Exponent Model & NIH Validated Geometry',
+      eyebrow: 'Oxford 3D Height-Exponent Model & Research-Informed 3D Body Visualization',
       title: '3D BMI Calculator & Interactive 3D Body Visualizer by Height, Weight & Gender',
-      intro: 'Our free interactive 3D Body Visualizer and 3D BMI Calculator computes body mass index using Oxford mathematician Nick Trefethen 2.5 power formula (1.3 × weight / height²·⁵) alongside 3D surface geometry principles published in NIH (PMC6538417) and Nature (2023) research. Rotate 360° to view front, side, and back avatar mesh, wireframe, and BMI heatmap modes in real time.',
-      formulaTitle: 'Oxford 3D Height-Adjusted Exponent Equation & NIH Volumetric Principles',
-      formulaDesc: '3D Height-Adjusted BMI = 1.3 × Weight (kg) / [Height (m)]².⁵ | Validated by NIH (PMC6538417) & Nature 3D Scanner Obesity Models',
+      intro: 'Our free interactive 3D Body Visualizer and 3D BMI Calculator computes body mass index using Oxford mathematician Nick Trefethen 2.5 power formula (1.3 × weight / height²·⁵) alongside 3D surface geometry principles. Rotate 360° to view front, side, and back avatar mesh, wireframe, and BMI heatmap modes in real time.',
+      formulaTitle: 'Oxford 3D Height-Adjusted Exponent Equation & 3D Volumetric Principles',
+      formulaDesc: '3D Height-Adjusted BMI = 1.3 × Weight (kg) / [Height (m)]².⁵ | Proposed by mathematician Nick Trefethen; 3D visualization is provided here for educational comparison.',
       formulaCode: '3D BMI = 1.3 × kg / m²·⁵',
       tableTitle: 'Standard 2D BMI vs 3D Height Adjusted BMI Comparison Matrix',
       tableRows: [
-        { col1: 'Short Adults (< 160 cm)', col2: 'Standard 2D BMI undercounts body fat', col3: '3D Height Adjusted BMI adds +0.5 to +1.5 pts' },
+        { col1: 'Short Adults (< 160 cm)', col2: 'Standard 2D BMI formula produces lower relative scores', col3: '3D Height Adjusted BMI adds +0.5 to +1.5 pts' },
         { col1: 'Average Stature (170 cm)', col2: 'Identical rating alignment', col3: '0.0 pts difference (Identical)' },
-        { col1: 'Tall Adults (> 185 cm)', col2: 'Standard 2D BMI overestimates overweight status', col3: '3D Height Adjusted BMI subtracts -1.0 to -2.0 pts' }
+        { col1: 'Tall Adults (> 185 cm)', col2: 'Standard 2D BMI formula produces higher relative scores', col3: '3D Height Adjusted BMI subtracts -1.0 to -2.0 pts' }
       ],
       faqs: [
         { question: 'What is the 3D Body Visualizer & 3D BMI Calculator?', answer: 'The 3D Body Visualizer is an interactive 3D body preview tool that computes an alternative height-adjusted score using Oxford mathematician Nick Trefethen 2.5 power formula [3D BMI = 1.3 × Weight (kg) / Height (m)^2.5] and renders a 360° interactive 3D body avatar with solid mesh, wireframe, and BMI heatmap views.' },
@@ -263,7 +263,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Hydration Guidelines',
       title: 'Water Intake Calculator & Daily Hydration Target Tool',
-      intro: 'Calculate "how much water should I drink daily" with our free Water Intake Calculator. Using hydration formulas based on body weight, activity level, and climate loss, determine your recommended fluid intake goal.',
+      intro: 'Calculate "how much water should I drink daily" with our free Water Intake Calculator. Using hydration formulas based on body weight, activity level, and climate loss, determine your estimated daily fluid target. (Note: Hydration requirements vary based on climate, sweat rate, health conditions, and pregnancy.)',
       formulaTitle: 'Water Intake by Body Weight Mathematical Equation',
       formulaDesc: 'Baseline Water (Liters) = [Weight (kg) × 35 ml] / 1000 + Physical Activity Sweat Factor (500 ml to 1000 ml per hour of exercise)',
       formulaCode: 'Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)',
@@ -275,7 +275,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Heavy Exercise 90 kg Athlete', col2: '4.15 Liters / day', col3: '~17 standard 250ml glasses' }
       ],
       faqs: [
-        { question: 'What is the Water Intake Calculator?', answer: 'The Water Intake Calculator is a daily health tool that determines your total recommended fluid consumption based on body weight, physical exertion, and environmental sweat loss.' },
+        { question: 'What is the Water Intake Calculator?', answer: 'The Water Intake Calculator is a daily health tool that determines your estimated daily fluid consumption target based on body weight, physical exertion, and environmental sweat loss.' },
         { question: 'How much water should I drink per day based on body weight?', answer: 'A common rule of thumb is to drink 35 ml of water per kilogram of body weight daily (or approximately 0.5 ounces per pound of body weight), plus additional fluids during workout sessions.' },
         { question: 'How to calculate daily water intake using the weight formula?', answer: 'Multiply your weight in kilograms by 35 ml (or weight in lbs by 0.5 oz). For a 70 kg person: 70 × 35 = 2,450 ml (2.45 Liters), which equals about 10 standard 250ml glasses of water.' },
         { question: 'Does coffee, tea, or soda count toward my daily water intake?', answer: 'Yes, caffeinated beverages like tea and coffee contribute to fluid hydration. However, plain water remains the healthiest and most efficient source of cellular hydration.' },

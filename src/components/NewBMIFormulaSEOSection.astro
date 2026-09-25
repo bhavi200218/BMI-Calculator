@@ -9,23 +9,23 @@ const translations: Record<string, any> = {
   en: {
     badge: "3D Mathematical Height-Correction Standard",
     title: "Standard BMI vs. New Height-Adjusted BMI Formula",
-    subtitle: "Understanding why traditional BMI distorts readings for tall and short individuals, and how the 2.5 height-exponent formula corrects 3D body volume scaling.",
+    subtitle: "Understanding why traditional BMI scales differently for tall and short individuals, and how the 2.5 height-exponent formula offers an alternative perspective on 3D body volume.",
     formulaTitle: "Standard vs. Height-Adjusted Math Formulas",
     standardFormula: "Standard BMI = weight (kg) ÷ height² (m²)",
     newFormula: "Height-Adjusted BMI = 1.3 × weight (kg) ÷ height²·⁵ (m²·⁵)",
-    formulaExplanation: "Standard BMI divides weight by height squared (2D scaling). However, humans grow three-dimensionally (volume). The 2.5 exponent scaling factor compensates for height distortion, offering fairer scores for tall and short people.",
+    formulaExplanation: "Standard BMI divides weight by height squared. However, human volume scales three-dimensionally. The 2.5 exponent formula proposed by Nick Trefethen presents an alternative mathematical approach for height variation.",
     cards: [
       {
         title: "Short Stature Impact (< 160 cm / 5'3\")",
-        desc: "Standard BMI tends to underestimate body fatness in shorter individuals because height² assumes smaller 2D volume. The 2.5 exponent formula provides a slightly higher, more realistic health score."
+        desc: "Standard BMI produces relatively lower values in shorter individuals because height² assumes 2D scaling. The 2.5 exponent formula produces a slightly higher mathematical comparison value."
       },
       {
         title: "Average Stature Alignment (169 – 175 cm)",
         desc: "For adults near the global average height of 170 cm (5'7\"), standard BMI and 3D height-adjusted BMI yield virtually identical numbers (~0.0 difference)."
       },
       {
-        title: "Tall Stature Correction (> 183 cm / 6'0\")",
-        desc: "Standard BMI overestimates weight classification for tall individuals, frequently labeling lean tall adults as 'Overweight'. The 3D adjusted formula lowers the score by 1 to 2 points to account for frame length."
+        title: "Tall Stature (< 183 cm / 6'0\")",
+        desc: "Standard BMI produces relatively higher values for tall individuals. The 3D adjusted formula yields a lower calculated value by 1 to 2 points for comparison."
       }
     ],
     tableTitle: "Height-Adjusted Score Comparison Matrix",
@@ -36,7 +36,7 @@ const translations: Record<string, any> = {
       { height: "Tall (190 cm / 6'3\")", example: "90 kg (198 lbs)", std: "24.9 (Normal)", newBmi: "23.4 (Normal)", diff: "- 1.5 points" },
       { height: "Very Tall (200 cm / 6'7\")", example: "105 kg (231 lbs)", std: "26.3 (Overweight)", newBmi: "24.3 (Normal)", diff: "- 2.0 points" }
     ],
-    disclaimer: "Mathematical Consensus Note: The 2.5 exponent height adjustment is a mathematical refinement designed to reduce height-scaling distortion. Both metrics serve as clinical screening indicators."
+    disclaimer: "Mathematical Note: The 2.5 exponent height adjustment was proposed by Oxford mathematician Nick Trefethen to illustrate height-scaling variations. It is an educational comparison and should not be interpreted as a clinical diagnosis."
   },
   hi: {
     badge: "गणितीय 3D ऊंचाई-समायोजन मानक",
