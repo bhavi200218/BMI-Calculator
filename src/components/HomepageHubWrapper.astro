@@ -93,8 +93,8 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
 
       <div class="calc-group space-y-3">
         <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.performance}</div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-3">
-          {calculators.filter(c=>['ideal-weight-calculator','calorie-calculator','protein-intake-calculator','water-intake-calculator','macro-calculator'].includes(c.slug)).map(calc => (
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          {calculators.filter(c=>['lean-body-mass-calculator','ideal-weight-calculator','calorie-calculator','protein-intake-calculator','water-intake-calculator','macro-calculator'].includes(c.slug)).map(calc => (
             <a
               href={`/${lang}/${calc.slug}/`}
               data-slug={calc.slug}
@@ -130,14 +130,14 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
       </div>
     </div>
 
-  <!-- Main Calculator Form & Result Studio Layout (Hidden by default) -->
-  <div id="calculatorFormGrid" class="hidden grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch pt-4 scroll-mt-28 w-full max-w-full overflow-hidden">
+  <!-- Main Calculator Form & Result Studio Layout (Visible by default) -->
+  <div id="calculatorFormGrid" class="grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch pt-4 scroll-mt-28 w-full max-w-full overflow-hidden">
     <!-- Calculator Forms Container -->
     <div class="relative w-full">
       {calculators.map(calc => (
         <div 
           id={`calc-wrapper-${calc.slug}`} 
-          class="calc-wrapper-item w-full hidden"
+          class={`calc-wrapper-item w-full ${calc.slug === 'bmi-calculator' ? '' : 'hidden'}`}
         >
           <UniversalCalculator calculator={calc} lang={lang} />
         </div>
@@ -150,7 +150,7 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
     </div>
   </div>
 
-  <!-- 3D Visualizer Container for Homepage (Visible when new-bmi-calculator is active) -->
+  <!-- 3D Visualizer Container for Homepage (Visible when 3d-bmi-calculator is active) -->
   <div id="homepage-3d-visualizer-container" class="hidden mt-8">
     <ThreeDBodyVisualizer lang={lang} />
   </div>
@@ -166,60 +166,68 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
 
 <script is:inline>
   (function() {
-    let activeSlug = null;
-    let activeCategory = 'all';
-    let searchQuery = '';
+    let activeSlug = 'bmi-calculator';
 
-    function updateToolVisibility() {
-      const query = searchQuery.trim().toLowerCase();
-      let visibleCount = 0;
+    function setActiveCalculator(slug) {
+      activeSlug = slug;
 
-      document.querySelectorAll('.calc-group').forEach(group => {
-        let groupVisible = 0;
-        group.querySelectorAll('.calc-tab-btn').forEach(button => {
-          const matchesQuery = !query || (button.getAttribute('data-search') || '').toLowerCase().includes(query);
-          const matchesCategory = activeCategory === 'all' || button.getAttribute('data-category') === activeCategory;
-          const shouldShow = matchesQuery && matchesCategory;
-          button.classList.toggle('hidden', !shouldShow);
-          if (shouldShow) groupVisible += 1;
-        });
-        group.classList.toggle('hidden', groupVisible === 0);
-        if (groupVisible > 0) visibleCount += 1;
+      // Ensure form grid container is visible
+      const grid = document.getElementById('calculatorFormGrid');
+      if (grid) grid.classList.remove('hidden');
+
+      // Hide all calc wrappers, show selected
+      document.querySelectorAll('.calc-wrapper-item').forEach(item => {
+        item.classList.add('hidden');
       });
+      const activeWrapper = document.getElementById('calc-wrapper-' + slug);
+      if (activeWrapper) {
+        activeWrapper.classList.remove('hidden');
+      }
 
-      const emptyState = document.getElementById('toolFilterEmptyState');
-      if (emptyState) emptyState.classList.toggle('hidden', visibleCount > 0);
+      // Show 3D visualizer container if 3d-bmi-calculator is active
+      const visualizer = document.getElementById('homepage-3d-visualizer-container');
+      if (visualizer) {
+        visualizer.classList.toggle('hidden', slug !== '3d-bmi-calculator');
+      }
+
+      // Highlight active tab button
+      document.querySelectorAll('.calc-tab-btn').forEach(btn => {
+        const isCurrent = btn.getAttribute('data-slug') === slug;
+        if (isCurrent) {
+          btn.classList.add('border-[var(--accent)]', 'bg-[var(--muted)]', 'text-[var(--foreground)]');
+        } else {
+          btn.classList.remove('border-[var(--accent)]', 'bg-[var(--muted)]', 'text-[var(--foreground)]');
+        }
+      });
     }
 
-    // Category filter and search listeners
-    document.querySelectorAll('.category-filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        activeCategory = btn.getAttribute('data-category-filter') || 'all';
-        document.querySelectorAll('.category-filter-btn').forEach(b => b.classList.remove('border-[var(--accent)]', 'text-[var(--foreground)]'));
-        btn.classList.add('border-[var(--accent)]', 'text-[var(--foreground)]');
-        updateToolVisibility();
+    // Tab button click listeners for inline switching
+    document.querySelectorAll('.calc-tab-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const slug = btn.getAttribute('data-slug');
+        if (slug) {
+          e.preventDefault();
+          setActiveCalculator(slug);
+          const grid = document.getElementById('calculatorFormGrid');
+          if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
 
-    const searchInput = document.getElementById('calculatorSearch');
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        searchQuery = e.target.value;
-        updateToolVisibility();
-      });
-    }
-
-    // Set Up Mobile Dropdown Listener
+    // Mobile Dropdown Listener
     const dropdown = document.getElementById('calculatorDropdownSelector');
     if (dropdown) {
       dropdown.addEventListener('change', (e) => {
         const slug = e.target.value;
         if (slug) {
-          window.location.href = '/' + (typeof lang !== 'undefined' ? lang : 'en') + '/' + slug + '/';
+          setActiveCalculator(slug);
+          const grid = document.getElementById('calculatorFormGrid');
+          if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     }
 
-    updateToolVisibility();
+    // Initialize with default active calculator
+    setActiveCalculator('bmi-calculator');
   })();
 </script>
