@@ -1,9 +1,6 @@
 ---
 import type { Locale } from '../utils/calculators';
 import { calculators, getCalculatorTranslations } from '../utils/calculators';
-import UniversalCalculator from './UniversalCalculator.astro';
-import CalculatorResult from './CalculatorResult.astro';
-import ThreeDBodyVisualizer from './ThreeDBodyVisualizer.astro';
 
 interface Props {
   lang: Locale;
@@ -12,28 +9,6 @@ interface Props {
 const { lang } = Astro.props;
 const t = getCalculatorTranslations(lang);
 
-
-
-const categoryLabels = {
-  all: { en: 'All Tools', es: 'Todas las Herramientas', fr: 'Tous les Outils', de: 'Alle Tools', ko: '모든 도구', hi: 'सभी उपकरण' },
-  weight: { en: 'Weight & Body Composition', es: 'Peso y Composición', fr: 'Poids et Composition', de: 'Gewicht & Körperzusammensetzung', ko: '체중 및 체성분', hi: 'वजन और शरीर रचना' },
-  metabolism: { en: 'Metabolism & Energy', es: 'Metabolismo y Energía', fr: 'Métabolisme et Énergie', de: 'Stoffwechsel & Energie', ko: '대사 및 에너지', hi: 'चयापचय और ऊर्जा' },
-  fitness: { en: 'Fitness & Performance', es: 'Fitness y Rendimiento', fr: 'Fitness et Performance', de: 'Fitness & Leistung', ko: '피트니스 및 성과', hi: 'फिटनेस और प्रदर्शन' },
-
-};
-
-const getCategory = (slug: string) => {
-  if (['bmi-calculator','body-fat-calculator','lean-body-mass-calculator','ideal-weight-calculator','waist-to-hip-ratio-calculator','body-surface-area-calculator'].includes(slug)) return 'weight';
-  if (['bmr-calculator','tdee-calculator','calorie-calculator','protein-intake-calculator','water-intake-calculator','macro-calculator'].includes(slug)) return 'metabolism';
-  if (['heart-rate-zone-calculator','one-rep-max-calculator'].includes(slug)) return 'fitness';
-
-  return 'weight';
-};
-
-type CategoryKey = 'all' | 'weight' | 'metabolism' | 'fitness';
-const getIcon = (slug: string): string => {
-  return '';
-};
 const groupTitles: Record<string, Record<string, string>> = {
   core: { en: 'Core Calculators', es: 'Calculadoras Principales', fr: 'Calculateurs Principaux', de: 'Haupt-Rechner', ko: '핵심 계산기', hi: 'मुख्य कैलकुलेटर' },
   performance: { en: 'Performance & Goals', es: 'Rendimiento y Objetivos', fr: 'Performance et Objectifs', de: 'Leistung & Ziele', ko: '성능 및 목표', hi: 'प्रदर्शन और लक्ष्य' },
@@ -45,6 +20,7 @@ const gTitle = {
   performance: groupTitles.performance[lang] || groupTitles.performance.en,
   specialty: groupTitles.specialty[lang] || groupTitles.specialty.en,
 };
+
 const selectCalcLabels: Record<string, string> = {
   en: '-- Select a Calculator --',
   es: '-- Selecciona una Calculadora --',
@@ -58,101 +34,70 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
 
 <div class="space-y-6 animate-in" style="animation-delay: 150ms;">
   
-    <!-- Mobile Dropdown Selector -->
-    <div class="block md:hidden relative">
-      <select id="calculatorDropdownSelector" class="matte-input w-full px-4 py-3.5 text-base font-bold rounded-[var(--radius-sm)] cursor-pointer h-[56px] border-[1.5px] border-[var(--border)] bg-[var(--input)] text-[var(--foreground)]">
-        <option value="" disabled selected>{tSelectCalc}</option>
-        {calculators.map(calc => (
-          <option value={calc.slug}>
-            {calc.name[lang] || calc.name['en']}
-          </option>
-        ))}
-      </select>
-    </div>
-
-    <!-- Horizontal Pill Scrollbar / Grid for Desktops (grouped with icons) -->
-    <div class="hidden md:block space-y-5">
-      <div class="calc-group space-y-3">
-        <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.core}</div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3">
-          {calculators.filter(c=>['bmi-calculator','3d-bmi-calculator','diabetes-risk-calculator','bmr-calculator','tdee-calculator','body-fat-calculator'].includes(c.slug)).map(calc => (
-            <a
-              href={`/${lang}/${calc.slug}/`}
-              data-slug={calc.slug}
-              data-category={getCategory(calc.slug)}
-              data-search={(calc.name[lang] || calc.name['en']) + ' ' + (calc.description[lang] || calc.description['en'])}
-              class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)] hover:bg-[var(--muted)] hover:text-[var(--foreground)] transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline"
-            >
-              <span class="text-xs sm:text-sm font-display font-bold uppercase text-center text-[var(--foreground)] tracking-tight leading-tight max-w-full text-balance break-words">
-                {calc.name[lang] || calc.name['en']}
-              </span>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div class="calc-group space-y-3">
-        <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.performance}</div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3">
-          {calculators.filter(c=>['lean-body-mass-calculator','ideal-weight-calculator','calorie-calculator','protein-intake-calculator','water-intake-calculator','macro-calculator'].includes(c.slug)).map(calc => (
-            <a
-              href={`/${lang}/${calc.slug}/`}
-              data-slug={calc.slug}
-              data-category={getCategory(calc.slug)}
-              data-search={(calc.name[lang] || calc.name['en']) + ' ' + (calc.description[lang] || calc.description['en'])}
-              class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)] hover:bg-[var(--muted)] hover:text-[var(--foreground)] transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline"
-            >
-              <span class="text-xs sm:text-sm font-display font-bold uppercase text-center text-[var(--foreground)] tracking-tight leading-tight max-w-full text-balance break-words">
-                {calc.name[lang] || calc.name['en']}
-              </span>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div class="calc-group space-y-3">
-        <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.specialty}</div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-3">
-          {calculators.filter(c=>['waist-to-hip-ratio-calculator','body-surface-area-calculator','heart-rate-zone-calculator','one-rep-max-calculator','pregnancy-weight-gain-calculator'].includes(c.slug)).map(calc => (
-            <a
-              href={`/${lang}/${calc.slug}/`}
-              data-slug={calc.slug}
-              data-category={getCategory(calc.slug)}
-              data-search={(calc.name[lang] || calc.name['en']) + ' ' + (calc.description[lang] || calc.description['en'])}
-              class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--muted-foreground)] hover:border-[var(--accent)] hover:bg-[var(--muted)] hover:text-[var(--foreground)] transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline"
-            >
-              <span class="text-xs sm:text-sm font-display font-bold uppercase text-center text-[var(--foreground)] tracking-tight leading-tight max-w-full text-balance break-words">
-                {calc.name[lang] || calc.name['en']}
-              </span>
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
-
-  <!-- Main Calculator Form & Result Studio Layout (Hidden by default until user clicks a calculator) -->
-  <div id="calculatorFormGrid" class="hidden grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch pt-4 scroll-mt-28 w-full max-w-full overflow-hidden">
-    <!-- Calculator Forms Container -->
-    <div class="relative w-full">
+  <!-- Mobile Dropdown Selector (Navigates directly to dedicated page) -->
+  <div class="block md:hidden relative">
+    <select id="calculatorDropdownSelector" class="matte-input w-full px-4 py-3.5 text-base font-bold rounded-[var(--radius-sm)] cursor-pointer h-[56px] border-[1.5px] border-[var(--border)] bg-[var(--input)] text-[var(--foreground)]">
+      <option value="" disabled selected>{tSelectCalc}</option>
       {calculators.map(calc => (
-        <div 
-          id={`calc-wrapper-${calc.slug}`} 
-          class="calc-wrapper-item w-full hidden"
-        >
-          <UniversalCalculator calculator={calc} lang={lang} />
-        </div>
+        <option value={calc.slug}>
+          {calc.name[lang] || calc.name['en']}
+        </option>
       ))}
-    </div>
-
-    <!-- Result Studio (Unified) -->
-    <div class="h-full">
-      <CalculatorResult lang={lang} />
-    </div>
+    </select>
   </div>
 
-  <!-- 3D Visualizer Container for Homepage (Visible when 3d-bmi-calculator is active) -->
-  <div id="homepage-3d-visualizer-container" class="hidden mt-8">
-    <ThreeDBodyVisualizer lang={lang} />
+  <!-- Full 17 Calculators Grid (Navigates directly to dedicated pages) -->
+  <div class="space-y-6">
+    <!-- Group 1: Core Calculators (6) -->
+    <div class="calc-group space-y-3">
+      <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.core}</div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        {calculators.filter(c=>['bmi-calculator','3d-bmi-calculator','diabetes-risk-calculator','bmr-calculator','tdee-calculator','body-fat-calculator'].includes(c.slug)).map(calc => (
+          <a
+            href={`/${lang}/${calc.slug}/`}
+            class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline"
+          >
+            <span class="text-xs sm:text-sm font-display font-bold uppercase text-center tracking-tight leading-tight max-w-full text-balance break-words">
+              {calc.name[lang] || calc.name['en']}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Group 2: Performance & Goals (6) -->
+    <div class="calc-group space-y-3">
+      <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.performance}</div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        {calculators.filter(c=>['lean-body-mass-calculator','ideal-weight-calculator','calorie-calculator','protein-intake-calculator','water-intake-calculator','macro-calculator'].includes(c.slug)).map(calc => (
+          <a
+            href={`/${lang}/${calc.slug}/`}
+            class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline"
+          >
+            <span class="text-xs sm:text-sm font-display font-bold uppercase text-center tracking-tight leading-tight max-w-full text-balance break-words">
+              {calc.name[lang] || calc.name['en']}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Group 3: Specialty Metrics (5) -->
+    <div class="calc-group space-y-3">
+      <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.specialty}</div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-3">
+        {calculators.filter(c=>['waist-to-hip-ratio-calculator','body-surface-area-calculator','heart-rate-zone-calculator','one-rep-max-calculator','pregnancy-weight-gain-calculator'].includes(c.slug)).map(calc => (
+          <a
+            href={`/${lang}/${calc.slug}/`}
+            class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline"
+          >
+            <span class="text-xs sm:text-sm font-display font-bold uppercase text-center tracking-tight leading-tight max-w-full text-balance break-words">
+              {calc.name[lang] || calc.name['en']}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
   </div>
 
 </div>
@@ -164,65 +109,14 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
   }
 </style>
 
-<script is:inline>
+<script is:inline define:vars={{ lang }}>
   (function() {
-    let activeSlug = null;
-
-    function openCalculator(slug) {
-      activeSlug = slug;
-
-      // Unhide the main form grid
-      const grid = document.getElementById('calculatorFormGrid');
-      if (grid) grid.classList.remove('hidden');
-
-      // Hide all calc wrappers, unhide selected
-      document.querySelectorAll('.calc-wrapper-item').forEach(item => {
-        item.classList.add('hidden');
-      });
-      const activeWrapper = document.getElementById('calc-wrapper-' + slug);
-      if (activeWrapper) {
-        activeWrapper.classList.remove('hidden');
-      }
-
-      // Show 3D visualizer container if 3d-bmi-calculator is active
-      const visualizer = document.getElementById('homepage-3d-visualizer-container');
-      if (visualizer) {
-        visualizer.classList.toggle('hidden', slug !== '3d-bmi-calculator');
-      }
-
-      // Highlight active tab button
-      document.querySelectorAll('.calc-tab-btn').forEach(btn => {
-        const isCurrent = btn.getAttribute('data-slug') === slug;
-        if (isCurrent) {
-          btn.classList.add('border-[var(--accent)]', 'bg-[var(--muted)]', 'text-[var(--foreground)]');
-        } else {
-          btn.classList.remove('border-[var(--accent)]', 'bg-[var(--muted)]', 'text-[var(--foreground)]');
-        }
-      });
-    }
-
-    // Tab button click listeners
-    document.querySelectorAll('.calc-tab-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const slug = btn.getAttribute('data-slug');
-        if (slug) {
-          e.preventDefault();
-          openCalculator(slug);
-          const grid = document.getElementById('calculatorFormGrid');
-          if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // Mobile Dropdown Listener
     const dropdown = document.getElementById('calculatorDropdownSelector');
     if (dropdown) {
       dropdown.addEventListener('change', (e) => {
         const slug = e.target.value;
         if (slug) {
-          openCalculator(slug);
-          const grid = document.getElementById('calculatorFormGrid');
-          if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.location.href = '/' + (lang || 'en') + '/' + slug + '/';
         }
       });
     }
