@@ -649,7 +649,7 @@ export const calculators: CalculatorConfig[] = [
     ],
     calculate: (inputs) => {
       const age = parseInt(inputs.age) || 25;
-      const rhr = parseInt(inputs.rhr) || parseInt(inputs.waist) || 60;
+      const rhr = parseInt(inputs.rhr) || 60;
       const maxHr = 220 - age;
       const hrr = Math.max(0, maxHr - rhr);
 
@@ -724,7 +724,7 @@ export const calculators: CalculatorConfig[] = [
     ],
     calculate: (inputs, system) => {
       const curW = parseFloat(inputs.weight) || 0;
-      const preW = parseFloat(inputs.preweight) || parseFloat(inputs.height) || 0;
+      const preW = parseFloat(inputs.preweight) || 0;
       const week = Math.min(40, Math.max(1, parseInt(inputs.age) || 1));
 
       const diff = curW - preW;
