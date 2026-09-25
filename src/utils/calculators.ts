@@ -135,7 +135,7 @@ export const calculators: CalculatorConfig[] = [
     slug: 'diabetes-risk-calculator',
     name: { en: 'Asian BMI Cutoff Calculator', es: 'Calculadora de Umbral IMC Asiático', fr: 'Calculateur d\'IMC Asiatique', de: 'Asian BMI Cutoff Rechner', ko: '아시아인 BMI Cutoff 계산기', hi: 'एशियाई बीएमआई कटऑफ कैलकुलेटर' },
     title: { en: 'Asian BMI Cutoff Calculator – BMI 23 & 27.5 Reference', es: 'Calculadora de Umbral IMC Asiático (23 y 27.5)', fr: 'Calculateur d\'IMC Asiatique – Références 23 & 27.5', de: 'Asian BMI Cutoff Rechner – Referenzen 23 & 27.5', ko: 'Asian BMI Cutoff Calculator – 23 및 27.5 참조', hi: 'एशियाई बीएमआई कटऑफ कैलकुलेटर - 23 एवं 27.5 संदर्भ' },
-    description: { en: 'Free Asian BMI Cutoff Calculator. Evaluate your Asian BMI cutoff score (23.0 kg/m² overweight baseline and 27.5 kg/m² obesity threshold) based on WHO reference standards.', es: 'Calculadora gratuita de umbral IMC asiático. Evalúa tu categoría de IMC según los umbrales de referencia de la OMS para poblaciones asiáticas.', fr: 'Calculateur gratuit d\'IMC asiatique. Évaluez votre catégorie d\'IMC selon les seuils de référence de l\'OMS pour les populations asiatiques.', de: 'Kostenloser Asian BMI Cutoff Rechner. Bewerten Sie Ihre BMI-Kategorie nach WHO-Referenzstandards für asiatische Gruppen.', ko: '무료 아시아인 BMI Cutoff 계산기. WHO 아시아인 BMI 기준(23.0 및 27.5 kg/m²)에 따라 체질량지수 범주를 점검하세요.', hi: 'मुफ़्त एशियाई बीएमआई कटऑफ कैलकुलेटर। WHO संदर्भ मानकों के आधार पर अपने बीएमआई वर्ग (23.0 और 27.5 kg/m²) का मूल्यांकन करें।' },
+    description: { en: 'Free Asian BMI Cutoff Calculator. Understand Asian-specific BMI and waist-circumference reference thresholds based on WHO reference standards.', es: 'Calculadora gratuita de umbral IMC asiático. Evalúa tu categoría de IMC según los umbrales de referencia de la OMS para poblaciones asiáticas.', fr: 'Calculateur gratuit d\'IMC asiatique. Évaluez votre catégorie d\'IMC selon les seuils de référence de l\'OMS pour les populations asiatiques.', de: 'Kostenloser Asian BMI Cutoff Rechner. Bewerten Sie Ihre BMI-Kategorie nach WHO-Referenzstandards für asiatische Gruppen.', ko: '무료 아시아인 BMI Cutoff 계산기. WHO 아시아인 BMI 기준(23.0 및 27.5 kg/m²)에 따라 체질량지수 범주를 점검하세요.', hi: 'मुफ़्त एशियाई बीएमआई कटऑफ कैलकुलेटर। WHO संदर्भ मानकों के आधार पर अपने बीएमआई वर्ग (23.0 और 27.5 kg/m²) का मूल्यांकन करें।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
@@ -160,15 +160,15 @@ export const calculators: CalculatorConfig[] = [
       const waistLimit = isM ? 94 : 80;
       const waistHigh = isM ? 102 : 88;
       
-      let riskScore = 'Low Risk';
+      let riskScore = 'Optimal Reference';
       if (bmi >= 27.5 || waist >= waistHigh || (bmi >= 23 && waist >= waistLimit && age >= 40)) {
-        riskScore = 'High Risk';
+        riskScore = 'Elevated Threshold';
       } else if (bmi >= 23 || waist >= waistLimit || age >= 45) {
-        riskScore = 'Moderate Risk';
+        riskScore = 'Moderate Threshold';
       }
 
       return {
-        primary: { value: riskScore, label: { en: 'Diabetes Risk Status', es: 'Estado Riesgo Diabetes', fr: 'Statut Risque Diabète', de: 'Diabetes-Risikostatus', ko: '당뇨 위험도 상태', hi: 'डायबिटीज जोखिम स्थिति' } },
+        primary: { value: riskScore, label: { en: 'Asian Reference Status', es: 'Estado de Referencia Asiático', fr: 'Statut de Référence Asiatique', de: 'Asiatischer Referenzstatus', ko: '아시아인 참조 상태', hi: 'एशियाई संदर्भ स्थिति' } },
         secondary: [
           { label: { en: 'BMI Score', es: 'Puntaje IMC', fr: 'Score IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' }, value: bmi.toFixed(1) },
           { label: { en: 'Asian Cutoff', es: 'Umbral Asiático', fr: 'Seuil Asiatique', de: 'Asien-Schwellenwert', ko: '아시아인 기준', hi: 'एशियाई कटऑफ' }, value: '23.0 kg/m²' },
