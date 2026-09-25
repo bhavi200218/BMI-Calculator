@@ -130,14 +130,14 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
       </div>
     </div>
 
-  <!-- Main Calculator Form & Result Studio Layout (Visible by default) -->
-  <div id="calculatorFormGrid" class="grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch pt-4 scroll-mt-28 w-full max-w-full overflow-hidden">
+  <!-- Main Calculator Form & Result Studio Layout (Hidden by default until user clicks a calculator) -->
+  <div id="calculatorFormGrid" class="hidden grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch pt-4 scroll-mt-28 w-full max-w-full overflow-hidden">
     <!-- Calculator Forms Container -->
     <div class="relative w-full">
       {calculators.map(calc => (
         <div 
           id={`calc-wrapper-${calc.slug}`} 
-          class={`calc-wrapper-item w-full ${calc.slug === 'bmi-calculator' ? '' : 'hidden'}`}
+          class="calc-wrapper-item w-full hidden"
         >
           <UniversalCalculator calculator={calc} lang={lang} />
         </div>
@@ -166,16 +166,16 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
 
 <script is:inline>
   (function() {
-    let activeSlug = 'bmi-calculator';
+    let activeSlug = null;
 
-    function setActiveCalculator(slug) {
+    function openCalculator(slug) {
       activeSlug = slug;
 
-      // Ensure form grid container is visible
+      // Unhide the main form grid
       const grid = document.getElementById('calculatorFormGrid');
       if (grid) grid.classList.remove('hidden');
 
-      // Hide all calc wrappers, show selected
+      // Hide all calc wrappers, unhide selected
       document.querySelectorAll('.calc-wrapper-item').forEach(item => {
         item.classList.add('hidden');
       });
@@ -201,13 +201,13 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
       });
     }
 
-    // Tab button click listeners for inline switching
+    // Tab button click listeners
     document.querySelectorAll('.calc-tab-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const slug = btn.getAttribute('data-slug');
         if (slug) {
           e.preventDefault();
-          setActiveCalculator(slug);
+          openCalculator(slug);
           const grid = document.getElementById('calculatorFormGrid');
           if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -220,14 +220,11 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
       dropdown.addEventListener('change', (e) => {
         const slug = e.target.value;
         if (slug) {
-          setActiveCalculator(slug);
+          openCalculator(slug);
           const grid = document.getElementById('calculatorFormGrid');
           if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     }
-
-    // Initialize with default active calculator
-    setActiveCalculator('bmi-calculator');
   })();
 </script>
