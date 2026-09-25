@@ -466,8 +466,8 @@ export const blogArticles: Record<string, any> = {
 
   'healthy-bmi-range-indians': {
     title: {
-      en: 'Healthy BMI Range for Indians: Why 23 is the New Overweight',
-      hi: 'भारतीयों के लिए स्वस्थ बीएमआई सीमा: 23 ही नया ओवरवेट क्यों है',
+      en: 'Healthy BMI Range for Indians: Understanding Asian BMI Thresholds (23.0 kg/m²)',
+      hi: 'भारतीयों के लिए स्वस्थ बीएमआई सीमा: एशियाई बीएमआई मानकों को समझें (23.0 kg/m²)',
       ko: '아시아인을 위한 건강 BMI 범위: 과체중 기준 23의 이유',
       de: 'Gesunder BMI-Bereich für asiatische Bevölkerungen (WHO-Standard)',
       es: 'Rango de IMC Saludable para Poblaciones Asiáticas (Límite OMS 23)',
