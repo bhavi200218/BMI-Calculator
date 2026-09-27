@@ -108,7 +108,7 @@ const content: Record<string, any> = {
     whoDesc: 'La Organización Mundial de la Salud (OMS) clasifica los valores de IMC en rangos objetivo para evaluar indicadores nutricionales y de salud.',
     colCategory: 'Categoría de Clasificación',
     colRange: 'Rango de IMC',
-    colRisk: 'Nivel de Riesgo Estimado',
+    colRisk: 'Indicador de Estado de Referencia',
     sourcesTitle: 'Fuentes y Referencias',
     sourcesSubtitle: 'Estándares basados en directrices oficiales de la OMS y los CDC.',
     whoLink: 'Guía de Obesidad de la OMS',
@@ -119,16 +119,16 @@ const content: Record<string, any> = {
     sections: [
       { title: 'Entendiendo Tu Índice de Masa Corporal', text: 'El Índice de Masa Corporal (IMC) es un estándar de evaluación internacional para estimar si tu peso se encuentra dentro de niveles adecuados. Real BMI Calculator utiliza escalas de la OMS y los CDC para guiarte en tu estado nutricional.' },
       { title: 'La Sinergia de IMC, BMR y TDEE', text: 'El IMC te indica tu categoría general de peso, el BMR describe los requerimientos de tu metabolismo celular en reposo, y el TDEE te indica el consumo calórico diario para planificar objetivos de mantenimiento o ajuste.' },
-      { title: 'Salud Cardiovascular: Comprensión de Factores de Riesgo', text: 'La investigación de autoridades globales destaca que el IMC debe evaluarse junto con la circunferencia de cintura y la presión arterial para prevenir eventos cardiovasculares.' },
-      { title: 'Detección de Riesgo de Diabetes Tipo 2 (Norma Diabetes Canada)', text: 'Según los consensos de Diabetes Canada y la OMS, un IMC elevado y la grasa visceral abdominal aumentan directamente el riesgo de diabetes tipo 2 y resistencia a la insulina.' }
+      { title: 'Salud Cardiovascular: Comprensión de Factores de Referencia', text: 'La investigación de autoridades globales destaca que el IMC debe evaluarse junto con la circunferencia de cintura para proporcionar contexto adicional.' },
+      { title: 'Detección de Referencia de IMC y Adiposidad Abdominal', text: 'Según los consensos de la OMS, un IMC elevado y la grasa visceral abdominal proporcionan contexto de evaluación de salud.' }
     ],
     whoTable: [
-      { category: 'Bajo Peso', range: '< 18.5', risk: 'Bajo (Riesgo Nutricional)', status: 'underweight' },
-      { category: 'Peso Normal', range: '18.5 – 24.9', risk: 'Mínimo (Rango de Referencia)', status: 'normal' },
-      { category: 'Sobrepeso', range: '25.0 – 29.9', risk: 'Aumentado (Precaución)', status: 'overweight' },
-      { category: 'Obesidad Clase I', range: '30.0 – 34.9', risk: 'Alto (Riesgo Moderado)', status: 'obesity-1' },
-      { category: 'Obesidad Clase II', range: '35.0 – 39.9', risk: 'Muy Alto (Riesgo Grave)', status: 'obesity-2' },
-      { category: 'Obesidad Clase III', range: '≥ 40.0', risk: 'Extremadamente Alto (Riesgo Agudo)', status: 'obesity-3' }
+      { category: 'Bajo Peso', range: '< 18.5', risk: 'Rango de Referencia', status: 'underweight' },
+      { category: 'Peso Normal', range: '18.5 – 24.9', risk: 'Rango de Referencia Estándar', status: 'normal' },
+      { category: 'Sobrepeso', range: '25.0 – 29.9', risk: 'Umbral de Referencia Moderado', status: 'overweight' },
+      { category: 'Obesidad Clase I', range: '30.0 – 34.9', risk: 'Umbral de Referencia Elevado', status: 'obesity-1' },
+      { category: 'Obesidad Clase II', range: '35.0 – 39.9', risk: 'Categoría de Referencia Elevada', status: 'obesity-2' },
+      { category: 'Obesidad Clase III', range: '≥ 40.0', risk: 'Categoría de Referencia Elevada', status: 'obesity-3' }
     ],
     faq: [
       { q: '¿Cómo se calcula el IMC?', a: 'El IMC se calcula dividiendo el peso en kg por la altura en metros al cuadrado. Nuestra herramienta realiza este cálculo automáticamente.' },
@@ -146,7 +146,7 @@ const content: Record<string, any> = {
     whoDesc: 'L\'Organisation mondiale de la Santé (OMS) divise les scores d\'IMC en plages cibles pour évaluer la santé et la nutrition.',
     colCategory: 'Catégorie de Classification',
     colRange: 'Plage d\'IMC',
-    colRisk: 'Niveau de Risque Estimé',
+    colRisk: 'Indicateur de Statut de Référence',
     sourcesTitle: 'Sources et Références',
     sourcesSubtitle: 'Normes basées sur les directives de l\'OMS et du CDC.',
     whoLink: 'Guide de l\'OMS sur l\'Obésité',
@@ -157,16 +157,16 @@ const content: Record<string, any> = {
     sections: [
       { title: 'Comprendre Votre Indice de Masse Corporelle', text: 'L\'indice de masse corporelle (IMC) est un standard de dépistage reconnu à l\'échelle internationale par les professionnels de santé.' },
       { title: 'Comment l\'IMC, le BMR et le TDEE Interagissent', text: 'Votre IMC indique si votre poids est équilibré, le BMR votre métabolisme de base au repos, et le TDEE vos dépenses caloriques totales quotidiennes.' },
-      { title: 'Santé Cardiovasculaire: Comprendre les Facteurs de Risque', text: 'L\'évaluation de l\'IMC associée au tour de taille permet une appréciation des facteurs de risque cardiovasculaires.' },
-      { title: 'Dépistage du Diabète de Type 2 (Norme Diabetes Canada)', text: 'Un IMC élevé et la graisse viscérale abdominale augmentent le risque de diabète de type 2 et de résistance à l\'insuline.' }
+      { title: 'Santé Cardiovasculaire: Comprendre les Facteurs de Référence', text: 'L\'évaluation de l\'IMC associée au tour de taille permet une appréciation des facteurs de référence cardiovasculaires.' },
+      { title: 'Référence d\'IMC et Adiposité Abdominale', text: 'Un IMC élevé et la graisse viscérale abdominale fournissent un contexte d\'évaluation de la santé.' }
     ],
     whoTable: [
-      { category: 'Sous-poids', range: '< 18.5', risk: 'Faible (Risque Nutritionnel)', status: 'underweight' },
-      { category: 'Poids Normal', range: '18.5 – 24.9', risk: 'Minimal (Plage de Référence)', status: 'normal' },
-      { category: 'Surpoids', range: '25.0 – 29.9', risk: 'Accru (Prudence Recommandée)', status: 'overweight' },
-      { category: 'Obésité Classe I', range: '30.0 – 34.9', risk: 'Élevé (Risque Modéré)', status: 'obesity-1' },
-      { category: 'Obésité Classe II', range: '35.0 – 39.9', risk: 'Très Élevé (Risque Sévère)', status: 'obesity-2' },
-      { category: 'Obésité Classe III', range: '≥ 40.0', risk: 'Extrêmement Élevé (Risque Aigu)', status: 'obesity-3' }
+      { category: 'Sous-poids', range: '< 18.5', risk: 'Plage de Référence', status: 'underweight' },
+      { category: 'Poids Normal', range: '18.5 – 24.9', risk: 'Plage de Référence Standard', status: 'normal' },
+      { category: 'Surpoids', range: '25.0 – 29.9', risk: 'Seuil de Référence Modéré', status: 'overweight' },
+      { category: 'Obésité Classe I', range: '30.0 – 34.9', risk: 'Seuil de Référence Élevé', status: 'obesity-1' },
+      { category: 'Obésité Classe II', range: '35.0 – 39.9', risk: 'Catégorie de Référence Élevée', status: 'obesity-2' },
+      { category: 'Obésité Classe III', range: '≥ 40.0', risk: 'Catégorie de Référence Élevée', status: 'obesity-3' }
     ],
     faq: [
       { q: 'Comment l\'IMC est-il calculé ?', a: 'L\'IMC divise le poids en kg par la taille en mètres au carré.' },
@@ -184,7 +184,7 @@ const content: Record<string, any> = {
     whoDesc: 'Die Weltgesundheitsorganisation (WHO) unterteilt BMI-Werte in Zielbereiche zur Beurteilung von Gesundheitsindikatoren.',
     colCategory: 'Klassifizierungskategorie',
     colRange: 'BMI-Bereich',
-    colRisk: 'Geschätztes Gesundheitsrisiko',
+    colRisk: 'Referenzstatus-Indikator',
     sourcesTitle: 'Quellen & Referenzen',
     sourcesSubtitle: 'Standards basierend auf WHO- und CDC-Richtlinien.',
     whoLink: 'WHO Adipositas-Leitfaden',
@@ -195,16 +195,16 @@ const content: Record<string, any> = {
     sections: [
       { title: 'Ihren Body-Mass-Index Verstehen', text: 'Der Body-Mass-Index (BMI) ist ein international anerkannter Screening-Standard zur Beurteilung Ihres Gewichts.' },
       { title: 'Wie BMI, BMR & TDEE Zusammenhängen', text: 'Ihr BMI zeigt, ob Ihr Gewicht ausgewogen ist, Ihr BMR beschreibt den Grundumsatz, und der TDEE berechnet den Gesamtkalorienbedarf.' },
-      { title: 'Kardiovaskuläre Gesundheit: Risikofaktoren Verstehen', text: 'Die Kombination von BMI und Taillenumfang ermöglicht die Beurteilung von Bluthochdruck und Herzrisiken.' },
-      { title: 'Typ-2-Diabetes-Screening (Diabetes Canada Richtlinie)', text: 'Ein erhöhter BMI und viszerales Bauchfett stehen in direktem Zusammenhang mit einem erhöhten Risiko für Typ-2-Diabetes.' }
+      { title: 'Kardiovaskuläre Gesundheit: Referenzfaktoren Verstehen', text: 'Die Kombination von BMI und Taillenumfang ermöglicht die Beurteilung von Gesundheitskontexten.' },
+      { title: 'BMI & Viszeralfett Referenzkontext', text: 'Ein erhöhter BMI und viszerales Bauchfett liefern Kontext für die Gesundheitsbeurteilung.' }
     ],
     whoTable: [
-      { category: 'Untergewicht', range: '< 18.5', risk: 'Niedrig (Erhöhter Nährstoffbedarf)', status: 'underweight' },
-      { category: 'Normalgewicht', range: '18.5 – 24.9', risk: 'Minimal (Referenzbereich)', status: 'normal' },
-      { category: 'Übergewicht', range: '25.0 – 29.9', risk: 'Erhöht (Vorsicht Empfohlen)', status: 'overweight' },
-      { category: 'Adipositas Klasse I', range: '30.0 – 34.9', risk: 'Hoch (Mäßiges Risiko)', status: 'obesity-1' },
-      { category: 'Adipositas Klasse II', range: '35.0 – 39.9', risk: 'Sehr Hoch (Schweres Risiko)', status: 'obesity-2' },
-      { category: 'Adipositas Klasse III', range: '≥ 40.0', risk: 'Extrem Hoch (Akutes Risiko)', status: 'obesity-3' }
+      { category: 'Untergewicht', range: '< 18.5', risk: 'Referenzbereich Untergewicht', status: 'underweight' },
+      { category: 'Normalgewicht', range: '18.5 – 24.9', risk: 'Standard-Referenzbereich', status: 'normal' },
+      { category: 'Übergewicht', range: '25.0 – 29.9', risk: 'Moderater Referenzschwellenwert', status: 'overweight' },
+      { category: 'Adipositas Klasse I', range: '30.0 – 34.9', risk: 'Erhöhter Referenzschwellenwert', status: 'obesity-1' },
+      { category: 'Adipositas Klasse II', range: '35.0 – 39.9', risk: 'Erhöhte Referenzkategorie', status: 'obesity-2' },
+      { category: 'Adipositas Klasse III', range: '≥ 40.0', risk: 'Erhöhte Referenzkategorie', status: 'obesity-3' }
     ],
     faq: [
       { q: 'Wie wird der BMI berechnet?', a: 'Gewicht in kg geteilt durch Körpergröße in Metern zum Quadrat.' },
@@ -222,7 +222,7 @@ const content: Record<string, any> = {
     whoDesc: '세계보건기구(WHO)는 건강 및 영양 지표를 평가하기 위해 BMI 점수를 범주별 목표 범위로 분류합니다.',
     colCategory: '분류 카테고리',
     colRange: 'BMI 범위',
-    colRisk: '추정 건강 위험도',
+    colRisk: '참고 상태 지표',
     sourcesTitle: '출처 및 참고 문헌',
     sourcesSubtitle: 'WHO 및 CDC 글로벌 지침을 기반으로 한 표준입니다.',
     whoLink: 'WHO 비만 지침',
@@ -233,16 +233,16 @@ const content: Record<string, any> = {
     sections: [
       { title: '체질량지수(BMI) 이해하기', text: '체질량지수(BMI)는 전 세계 의료 전문가들이 사용하는 국제적인 스크리닝 표준입니다.' },
       { title: 'BMI, BMR, TDEE의 상호 연관성', text: 'BMI는 체중의 균형 상태를, BMR은 휴식 상태의 기초 대사량을, TDEE는 활동량을 포함한 필요 칼로리를 보여줍니다.' },
-      { title: '심혈관 건강: 위험 요인 이해', text: 'BMI와 허리둘레를 함께 측정하면 심혈관 위험 요인을 사전에 모니터링할 수 있습니다.' },
-      { title: '제2형 당뇨병 선별 검사 (Diabetes Canada 지침)', text: '높은 BMI와 복부 내장지방은 제2형 당뇨병 및 인슐린 저항성 위험과 관련이 있습니다.' }
+      { title: '심혈관 건강: 참고 요인 이해', text: 'BMI와 허리둘레를 함께 측정하면 추가적인 참고 정보를 얻을 수 있습니다.' },
+      { title: 'BMI 및 복부 내장지방 참고 컨텍스트', text: '높은 BMI와 복부 내장지방은 건강 평가에 대한 참고 정보를 제공합니다.' }
     ],
     whoTable: [
-      { category: '저체중', range: '< 18.5', risk: '낮음 (영양 위험 증가)', status: 'underweight' },
-      { category: '정상 체중', range: '18.5 – 24.9', risk: '최소 (참조 범위)', status: 'normal' },
-      { category: '과체중', range: '25.0 – 29.9', risk: '증가 (주의 필요)', status: 'overweight' },
-      { category: '비만 1단계', range: '30.0 – 34.9', risk: '높음 (중등도 위험)', status: 'obesity-1' },
-      { category: '비만 2단계', range: '35.0 – 39.9', risk: '매우 높음 (심각한 위험)', status: 'obesity-2' },
-      { category: '비만 3단계', range: '≥ 40.0', risk: '극도로 높음 (고위험군)', status: 'obesity-3' }
+      { category: '저체중', range: '< 18.5', risk: '저체중 참고 범주', status: 'underweight' },
+      { category: '정상 체중', range: '18.5 – 24.9', risk: '표준 참고 범주', status: 'normal' },
+      { category: '과체중', range: '25.0 – 29.9', risk: '중등도 참고 기준', status: 'overweight' },
+      { category: '비만 1단계', range: '30.0 – 34.9', risk: '높은 참고 기준', status: 'obesity-1' },
+      { category: '비만 2단계', range: '35.0 – 39.9', risk: '높은 참고 범주', status: 'obesity-2' },
+      { category: '비만 3단계', range: '≥ 40.0', risk: '높은 참고 범주', status: 'obesity-3' }
     ],
     faq: [
       { q: 'BMI는 어떻게 계산되나요?', a: 'BMI는 체중(kg)을 키(m)의 제곱으로 나눈 값입니다.' },

@@ -428,25 +428,25 @@ export const blogArticles: Record<string, any> = {
                 <td class="p-3 font-semibold">Healthy Weight</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 24.9 kg/m²</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 22.9 kg/m²</td>
-                <td class="p-3">Standard baseline for lowest cardiometabolic risk</td>
+                <td class="p-3">Standard reference baseline range</td>
               </tr>
               <tr>
                 <td class="p-3 font-semibold">Overweight</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">25.0 – 29.9 kg/m²</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">23.0 – 27.4 kg/m²</td>
-                <td class="p-3">Increased risk window; monitor waist circumference</td>
+                <td class="p-3">Moderate reference threshold; consider waist circumference</td>
               </tr>
               <tr>
                 <td class="p-3 font-semibold">Obesity Class I</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">30.0 – 34.9 kg/m²</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">27.5 – 32.4 kg/m²</td>
-                <td class="p-3">Elevated metabolic risk factor</td>
+                <td class="p-3">Elevated reference category indicator</td>
               </tr>
               <tr>
                 <td class="p-3 font-semibold">Obesity Class II+</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">&ge; 35.0 kg/m²</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">&ge; 32.5 kg/m²</td>
-                <td class="p-3">High clinical relevance for lifestyle guidance</td>
+                <td class="p-3">Higher reference category indicator</td>
               </tr>
             </tbody>
           </table>
@@ -461,23 +461,23 @@ export const blogArticles: Record<string, any> = {
 
   'healthy-bmi-range-indians': {
     title: {
-      en: 'Healthy BMI Range for Indians: Understanding Asian BMI Thresholds (23.0 kg/m²)',
-      hi: 'भारतीयों के लिए स्वस्थ बीएमआई सीमा: एशियाई बीएमआई मानकों को समझें (23.0 kg/m²)',
-      ko: '아시아인을 위한 건강 BMI 범위: 과체중 기준 23의 이유',
-      de: 'Gesunder BMI-Bereich für asiatische Bevölkerungen (WHO-Standard)',
-      es: 'Rango de IMC Saludable para Poblaciones Asiáticas (Límite OMS 23)',
-      fr: 'Plage d\'IMC Santé pour les Populations Asiatiques (Seuil OMS 23)'
+      en: 'Understanding BMI 18.5–22.9 in Asian-Population Reference Guidance',
+      hi: 'एशियाई आबादी संदर्भ मार्गदर्शिका में बीएमआई 18.5–22.9 को समझें',
+      ko: '아시아인 참조 지침 18.5~22.9 BMI 이해하기',
+      de: 'BMI 18,5–22,9 in der asiatischen Referenzleitlinie verstehen',
+      es: 'Comprendiendo el IMC 18.5–22.9 en la Guía de Referencia Asiática',
+      fr: 'Comprendre l\'IMC 18,5–22,9 dans le Guide de Référence Asiatique'
     },
     category: {
-      en: 'Indian Health',
-      hi: 'भारतीय स्वास्थ्य',
-      ko: '아시아 건강',
+      en: 'Asian Health Guidance',
+      hi: 'एशियाई स्वास्थ्य मार्गदर्शन',
+      ko: '아시아 건강 지침',
       de: 'Regionale Gesundheit',
       es: 'Salud Regional',
       fr: 'Santé Régionale'
     },
     description: {
-      en: 'In-depth analysis of WHO South-East Asia BMI guidelines. Understanding BMI 18.5–22.9 in Asian-Population Reference Guidance.',
+      en: 'In-depth analysis of WHO South-East Asia BMI reference guidelines. Understanding BMI 18.5–22.9 in Asian-Population Reference Guidance.',
       hi: 'डब्ल्यूएचओ दक्षिण-पूर्व एशिया बीएमआई दिशानिर्देशों का विश्लेषण। एशियाई आबादी के संदर्भ में बीएमआई 18.5–22.9 को समझें।',
       ko: 'WHO 아시아-태평양 BMI 지침 분석. 아시아인 체중 기준 18.5~22.9 이해.',
       de: 'Analyse der WHO-Richtlinien für asiatische Bevölkerungen. BMI 18,5–22,9 als Referenzwert verstehen.',
@@ -486,21 +486,62 @@ export const blogArticles: Record<string, any> = {
     },
     contentHtml: {
       en: `
-        <h2>Why Asian Adults Require Lower BMI Thresholds</h2>
-        <p>Extensive health studies conducted by the World Health Organization (WHO) revealed that South Asian adults develop metabolic risk factors—including prediabetes markers and abdominal visceral fat—at lower body weights compared to European populations.</p>
+        <h2>Asian-Population BMI Guidelines & Reference Cutoffs</h2>
+        <p>Published reference guidelines from WHO expert consultations indicate that Asian and South Asian populations exhibit statistical risk indicators at lower BMI cutoffs compared to European reference populations.</p>
         
         <h2>Asian-Population Reference Range: 18.5 to 22.9 kg/m²</h2>
-        <p>While Western standards mark overweight at 25.0 kg/m², the WHO South-East Asia Regional Office established that <strong>18.5 to 22.9 kg/m²</strong> represents the reference healthy range for South Asian adults.</p>
+        <p>While Western reference standards mark overweight at 25.0 kg/m², the WHO South-East Asia Regional Office established that 18.5 to 22.9 kg/m² represents a reference healthy weight range for South Asian adults. <em>BMI 18.5–22.9 is an Asian-population reference range used in some guidance; it should not be interpreted as a universal measure of an individual's healthiest weight.</em></p>
         
         <ul>
-          <li><strong>Healthy Target Range:</strong> 18.5 – 22.9 kg/m²</li>
-          <li><strong>Overweight Risk Trigger:</strong> ≥ 23.0 kg/m²</li>
-          <li><strong>Obesity Class I Trigger:</strong> ≥ 27.5 kg/m²</li>
+          <li><strong>Healthy Reference Range:</strong> 18.5 – 22.9 kg/m²</li>
+          <li><strong>Overweight Action Threshold:</strong> ≥ 23.0 kg/m²</li>
+          <li><strong>Obesity Class I Threshold:</strong> ≥ 27.5 kg/m²</li>
         </ul>
       `,
       hi: `
-        <h2>भारतीयों के लिए स्वस्थ बीएमआई सीमा (18.5 – 22.9 kg/m²)</h2>
-        <p>शोध से पता चलता है कि भारतीयों के लिए 18.5 से 22.9 kg/m² का बीएमआई सबसे सुरक्षित और स्वस्थ माना जाता है।</p>
+        <h2>एशियाई आबादी संदर्भ मार्गदर्शिका (18.5 – 22.9 kg/m²)</h2>
+        <p>डब्ल्यूएचओ दक्षिण-पूर्व एशिया क्षेत्रीय दिशानिर्देशों के अनुसार, 18.5 से 22.9 kg/m² एशियाई आबादी के लिए एक संदर्भ सीमा है; इसे किसी व्यक्ति के व्यक्तिगत स्वस्थ वजन के सार्वभौमिक माप के रूप में नहीं समझा जाना चाहिए।</p>
+        <ul>
+          <li><strong>सामान्य संदर्भ सीमा:</strong> 18.5 – 22.9 kg/m²</li>
+          <li><strong>अधिक वजन एक्शन थ्रेसहोल्ड:</strong> ≥ 23.0 kg/m²</li>
+          <li><strong>मोटापा श्रेणी I थ्रेसहोल्ड:</strong> ≥ 27.5 kg/m²</li>
+        </ul>
+      `,
+      es: `
+        <h2>Pautas de Referencia del IMC para Poblaciones Asiáticas (18.5 – 22.9 kg/m²)</h2>
+        <p>Según las guías de la Oficina Regional de la OMS para el Sudeste Asiático, el rango de 18.5 a 22.9 kg/m² se utiliza como referencia poblacional; no debe interpretarse como una medida universal del peso más saludable de un individuo.</p>
+        <ul>
+          <li><strong>Rango de Referencia Estándar:</strong> 18.5 – 22.9 kg/m²</li>
+          <li><strong>Umbral de Acción para Sobrepeso:</strong> ≥ 23.0 kg/m²</li>
+          <li><strong>Umbral de Obesidad Clase I:</strong> ≥ 27.5 kg/m²</li>
+        </ul>
+      `,
+      fr: `
+        <h2>Directives de Référence de l'IMC pour les Populations Asiatiques (18,5 – 22,9 kg/m²)</h2>
+        <p>Selon les directives du Bureau régional de l'OMS pour l'Asie du Sud-Est, la plage de 18,5 à 22,9 kg/m² est une plage de référence ; elle ne doit pas être interprétée comme une mesure universelle du poids le plus sain d'un individu.</p>
+        <ul>
+          <li><strong>Plage de Référence Standard :</strong> 18,5 – 22,9 kg/m²</li>
+          <li><strong>Seuil d'Action pour le Surpoids :</strong> ≥ 23,0 kg/m²</li>
+          <li><strong>Seuil d'Obésité Classe I :</strong> ≥ 27,5 kg/m²</li>
+        </ul>
+      `,
+      de: `
+        <h2>Asiatische Referenz-Leitlinien für den BMI (18,5 – 22,9 kg/m²)</h2>
+        <p>Nach den Richtlinien des WHO-Regionalbüros für Südostasien dient der Bereich von 18,5 bis 22,9 kg/m² als Populationsreferenz; er sollte nicht als universelles Maß für das gesündeste Gewicht eines Einzelnen interpretiert werden.</p>
+        <ul>
+          <li><strong>Standard-Referenzbereich:</strong> 18,5 – 22,9 kg/m²</li>
+          <li><strong>Schwellenwert für Übergewicht:</strong> ≥ 23,0 kg/m²</li>
+          <li><strong>Schwellenwert für Adipositas Klasse I:</strong> ≥ 27,5 kg/m²</li>
+        </ul>
+      `,
+      ko: `
+        <h2>아시아인 BMI 참고 지침 (18.5 ~ 22.9 kg/m²)</h2>
+        <p>WHO 동남아시아 지역 사무소 지침에 따르면 18.5~22.9 kg/m²는 아시아 성인을 위한 인구 집단 참고 범위입니다. 이는 개인의 가장 건강한 체중에 대한 보편적인 측정 기준으로 해석되어서는 안 됩니다.</p>
+        <ul>
+          <li><strong>표준 참고 범위:</strong> 18.5 – 22.9 kg/m²</li>
+          <li><strong>과체중 조치 기준:</strong> ≥ 23.0 kg/m²</li>
+          <li><strong>비만 1단계 기준:</strong> ≥ 27.5 kg/m²</li>
+        </ul>
       `
     }
   },
