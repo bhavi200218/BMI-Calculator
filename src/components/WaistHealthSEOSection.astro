@@ -15,7 +15,7 @@ const translations: Record<string, any> = {
     cards: [
       {
         title: "1. Central Obesity vs. Subcutaneous Fat",
-        desc: "Subcutaneous fat on arms or legs is relatively benign. In contrast, visceral abdominal fat ('central obesity') surrounds vital internal organs and secretes inflammatory cytokines that increase heart disease and Type 2 Diabetes risk."
+        desc: "Higher abdominal adiposity is associated with different metabolic and cardiovascular risk patterns. Waist measurements can provide additional context alongside BMI."
       },
       {
         title: "2. The 'Normal BMI' Central Obesity Context",
@@ -26,16 +26,16 @@ const translations: Record<string, any> = {
         desc: "A waist-to-height ratio around 0.5 is commonly used as a screening reference. It should be interpreted together with other health measures and does not independently diagnose cardiovascular risk."
       }
     ],
-    tableTitle: "Combined BMI & Waist Circumference Health Risk Matrix",
-    tableHeaders: ["BMI Category", "BMI Range", "Men Waist ≤102cm / Women ≤88cm", "Men Waist >102cm / Women >88cm (High Waist)"],
+    tableTitle: "Combined BMI & Waist Circumference Reference Matrix",
+    tableHeaders: ["BMI Category", "BMI Range", "Men Waist ≤102cm / Women ≤88cm", "Men Waist >102cm / Women >88cm"],
     tableRows: [
-      { cat: "Underweight", range: "< 18.5 kg/m²", lowRisk: "Optimal Baseline Indicator", highRisk: "Elevated Indicator" },
-      { cat: "Normal Weight", range: "18.5 – 24.9 kg/m²", lowRisk: "Minimal Risk (Reference Window)", highRisk: "Elevated Indicator (Visceral Context)" },
-      { cat: "Overweight", range: "25.0 – 29.9 kg/m²", lowRisk: "Elevated Indicator", highRisk: "High Screening Indicator" },
-      { cat: "Obesity Class I", range: "30.0 – 34.9 kg/m²", lowRisk: "High Screening Indicator", highRisk: "Elevated Screening Indicator" },
-      { cat: "Obesity Class II & III", range: "≥ 35.0 kg/m²", lowRisk: "Elevated Screening Indicator", highRisk: "Substantial Screening Indicator" }
+      { cat: "Underweight", range: "< 18.5 kg/m²", lowRisk: "Reference Context", highRisk: "Higher Reference Range" },
+      { cat: "Normal Weight", range: "18.5 – 24.9 kg/m²", lowRisk: "Standard Reference Range", highRisk: "Higher Waist Context" },
+      { cat: "Overweight", range: "25.0 – 29.9 kg/m²", lowRisk: "Higher Reference Range", highRisk: "Additional Screening Context" },
+      { cat: "Obesity Class I", range: "30.0 – 34.9 kg/m²", lowRisk: "Additional Screening Context", highRisk: "Higher Screening Context" },
+      { cat: "Obesity Class II & III", range: "≥ 35.0 kg/m²", lowRisk: "Higher Screening Context", highRisk: "Higher Screening Context" }
     ],
-    disclaimer: "Guidance Note: This screening matrix aligns with published reference standards from NIH & WHO health guidelines. It serves as an educational risk indicator and does not replace professional medical advice."
+    disclaimer: "Guidance Note: This reference matrix aligns with published screening standards from NIH & WHO health guidelines. It serves as an educational screening reference and does not replace professional medical advice."
   },
   hi: {
     badge: "WHO एवं NIH स्वास्थ्य संदर्भ",

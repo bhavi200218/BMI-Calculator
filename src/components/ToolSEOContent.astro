@@ -99,22 +99,22 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Mifflin-St Jeor Equation Standard',
       title: 'BMR Calculator – Free Basal Metabolic Rate Calculator',
-      intro: 'Calculate your estimated Basal Metabolic Rate (BMR) with our free BMR Calculator (Basal Metabolic Rate Calculator). Using the Mifflin-St Jeor formula equation recognized by nutrition literature, estimate how many calories your body burns at rest in 24 hours.',
+      intro: 'Calculate your estimated Basal Metabolic Rate (BMR) with our free BMR Calculator. Using the Mifflin-St Jeor formula equation recognized in nutrition literature, estimate how many calories your body burns at rest in 24 hours. Different BMR equations can produce different estimates. Mifflin-St Jeor is a commonly used predictive equation, but it does not directly measure an individual\'s resting energy expenditure.',
       formulaTitle: 'BMR Calculator Formula (Mifflin St Jeor Equation)',
       formulaDesc: 'Men: BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) + 5 | Women: BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) - 161',
       formulaCode: 'BMR = 10W + 6.25H - 5A + s (s = +5 for men, -161 for women)',
       tableTitle: 'BMR Calculator Formula Comparison (Mifflin St Jeor vs Harris-Benedict)',
       tableRows: [
         { col1: 'Mifflin St Jeor Formula', col2: 'Modern Reference Equation', col3: 'Widely referenced modern formula equation for adult resting metabolic estimation' },
-        { col1: 'Revised Harris-Benedict (1984)', col2: 'Historical Reference Equation', col3: 'Classic metabolic equation historically used in clinical literature' },
-        { col1: 'Katch-McArdle Formula', col2: 'Requires Lean Mass %', col3: 'Ideal for individuals with verified lean body mass percentage' }
+        { col1: 'Revised Harris-Benedict (1984)', col2: 'Historical Reference Equation', col3: 'Classic metabolic equation historically used in nutrition literature' },
+        { col1: 'Katch-McArdle Formula', col2: 'Requires Lean Mass %', col3: 'Reference equation for individuals with estimated lean body mass percentage' }
       ],
       faqs: [
-        { question: 'What is the BMR Calculator and how to calculate BMR?', answer: 'The BMR Calculator (Basal Metabolic Rate Calculator) is a health tool that estimates your BMR—the minimum number of calories your body burns at complete rest to maintain vital life functions.' },
-        { question: 'How to calculate BMR using the Mifflin St Jeor formula?', answer: 'To calculate BMR with the BMR Calculator using the Mifflin St Jeor formula: For Men, multiply weight in kg by 10, add height in cm multiplied by 6.25, subtract age in years multiplied by 5, and add 5. For Women, follow the exact same calculation but subtract 161 at the end.' },
-        { question: 'Why is the Mifflin St Jeor equation widely used in BMR Calculators?', answer: 'The Mifflin St Jeor equation was developed using contemporary population data and is widely cited in modern nutritional literature. However, different equations can produce different estimates, as no formula directly measures resting metabolic rate without specialized equipment.' },
-        { question: 'How many calories do I burn at rest according to the BMR Calculator?', answer: 'Your resting calorie burn is your Basal Metabolic Rate (BMR). For most healthy adults, BMR accounts for 60% to 75% of total daily calorie expenditure before accounting for daily physical movement or workout activities.' },
-        { question: 'What is the difference between BMR Calculator score and TDEE?', answer: 'BMR (Basal Metabolic Rate) is your resting calorie burn calculated while at complete rest. TDEE (Total Daily Energy Expenditure) multiplies BMR by an activity factor to include daily movement, work, and exercise.' }
+        { question: 'What is the BMR Calculator and how to calculate BMR?', answer: 'The BMR Calculator is a reference tool that estimates your BMR—the minimum estimated calories your body expends at rest to support basic physiological functions.' },
+        { question: 'How to calculate BMR using the Mifflin St Jeor formula?', answer: 'To calculate BMR with the Mifflin St Jeor formula: For Men, multiply weight in kg by 10, add height in cm multiplied by 6.25, subtract age in years multiplied by 5, and add 5. For Women, follow the exact same calculation but subtract 161 at the end.' },
+        { question: 'Why is the Mifflin St Jeor equation widely used in BMR Calculators?', answer: 'Different BMR equations can produce different estimates. Mifflin-St Jeor is a commonly used predictive equation developed from population data, but it does not directly measure an individual\'s resting energy expenditure without laboratory equipment.' },
+        { question: 'How many calories do I burn at rest according to the BMR Calculator?', answer: 'Your estimated resting calorie expenditure is your Basal Metabolic Rate (BMR). For most healthy adults, BMR accounts for a major portion of total daily calorie expenditure before accounting for daily physical movement.' },
+        { question: 'What is the difference between BMR Calculator score and TDEE?', answer: 'BMR (Basal Metabolic Rate) is your estimated resting calorie burn at rest. TDEE (Total Daily Energy Expenditure) multiplies BMR by an activity factor to include daily movement and exercise.' }
       ]
     }
   },
@@ -122,7 +122,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Energy Balance Standard',
       title: 'TDEE Calculator – Total Daily Energy Expenditure Calculator',
-      intro: 'Use our free TDEE Calculator to determine your estimated Total Daily Energy Expenditure (TDEE). Based on the Mifflin-St Jeor BMR equation and Physical Activity Level (PAL) multipliers, calculate maintenance calories, daily calorie burn, and targets for weight loss or muscle building.',
+      intro: 'Use our free TDEE Calculator to determine your estimated Total Daily Energy Expenditure (TDEE). Based on the Mifflin-St Jeor BMR equation and Physical Activity Level (PAL) multipliers, calculate maintenance calorie estimates for planning.',
       formulaTitle: 'Total Daily Energy Expenditure (TDEE) Formula & Components',
       formulaDesc: 'TDEE = BMR × Physical Activity Level (PAL) Factor | BMR = (10 × W_kg) + (6.25 × H_cm) - (5 × Age) + S',
       formulaCode: 'TDEE = Basal Metabolic Rate (BMR) + Thermic Effect of Food (TEF) + Exercise Activity (EAT) + Non-Exercise Activity (NEAT)',
@@ -132,14 +132,14 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Lightly Active (1.375)', col2: 'Light exercise or active sports 1–3 days per week', col3: 'TDEE = BMR × 1.375 (Modest daily movement & physical activity)' },
         { col1: 'Moderately Active (1.550)', col2: 'Moderate exercise or sports 3–5 days per week', col3: 'TDEE = BMR × 1.550 (Standard active baseline for regular exercise)' },
         { col1: 'Very Active (1.725)', col2: 'Hard physical exercise or athletic training 6–7 days per week', col3: 'TDEE = BMR × 1.725 (High energy expenditure in training)' },
-        { col1: 'Extra Active / Elite (1.900)', col2: 'Heavy physical labor job or twice-daily endurance training', col3: 'TDEE = BMR × 1.900 (Maximum metabolic energy turnover)' }
+        { col1: 'Extra Active / Elite (1.900)', col2: 'Heavy physical labor job or twice-daily endurance training', col3: 'TDEE = BMR × 1.900 (Higher activity estimate for heavy training)' }
       ],
       faqs: [
-        { question: 'What is the TDEE Calculator and how does Total Daily Energy Expenditure work?', answer: 'The TDEE Calculator computes your Total Daily Energy Expenditure—the total number of calories your body burns in 24 hours. It multiplies your Basal Metabolic Rate (BMR) by a Physical Activity Level (PAL) multiplier to establish your daily maintenance calorie target.' },
+        { question: 'What is the TDEE Calculator and how does Total Daily Energy Expenditure work?', answer: 'The TDEE Calculator computes your estimated Total Daily Energy Expenditure—the total estimated calories your body expends in 24 hours. It multiplies your BMR by a Physical Activity Level (PAL) multiplier to establish your daily maintenance calorie reference.' },
         { question: 'What are the 4 main components of Total Daily Energy Expenditure in a TDEE Calculator?', answer: 'TDEE consists of 4 components: 1) Basal Metabolic Rate (BMR ~60-75%), 2) Non-Exercise Activity Thermogenesis (NEAT ~15%), 3) Thermic Effect of Food (TEF ~10%), and 4) Exercise Activity Thermogenesis (EAT ~5-15%).' },
-        { question: 'How to use a TDEE Calculator for weight loss vs weight gain?', answer: 'To lose weight, consume 300 to 500 calories per day below your TDEE Calculator maintenance result. To gain lean muscle mass, consume 300 to 500 calories per day above your TDEE while engaging in progressive resistance training.' },
-        { question: 'How does Physical Activity Level (PAL) affect TDEE Calculator results?', answer: 'Your activity level acts as a multiplier on resting metabolic rate. Higher physical activity (NEAT and exercise workouts) scales TDEE from 1.2× BMR for sedentary individuals up to 1.9× BMR for elite active athletes.' },
-        { question: 'Why does my TDEE Calculator score change as I lose or gain weight?', answer: 'As body mass changes, BMR decreases (due to lower overall tissue mass) and NEAT often drops during prolonged calorie restriction. Recalculate your TDEE every 5 kg (10 lbs) of weight change to keep energy goals accurate.' }
+        { question: 'How to use a TDEE Calculator for weight management planning?', answer: 'Example: Some people use a modest calorie adjustment below estimated TDEE for weight-loss planning. Individual energy needs, health status, and physical activity circumstances vary.' },
+        { question: 'How does Physical Activity Level (PAL) affect TDEE Calculator results?', answer: 'Your activity level acts as a multiplier on resting metabolic rate. Higher physical activity scales TDEE from 1.2× BMR for sedentary individuals up to 1.9× BMR for active endurance athletes.' },
+        { question: 'Why does my TDEE Calculator score change as I lose or gain weight?', answer: 'As body mass changes, BMR changes (due to lower overall tissue mass) and daily movement patterns vary. Recalculate your TDEE after meaningful body weight changes to keep energy goals aligned.' }
       ]
     }
   },
@@ -171,18 +171,19 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   'lean-body-mass-calculator': {
     en: {
       eyebrow: 'Boer Equation Standard',
-      title: 'Lean Body Mass Calculator & LBM Metric',
-      intro: 'Calculate your weight excluding fat with our Lean Body Mass Calculator. Using the Boer formula, estimate lean body mass, organ weight, and overall lean mass ratio. LBM is not the same as skeletal muscle mass alone.',
+      title: 'Lean Body Mass Calculator & LBM Reference Tool',
+      intro: 'Estimate lean body mass using the Boer predictive equation. This is a mathematical estimate and does not directly measure skeletal muscle, organ mass, or bone mass.',
       formulaTitle: 'Boer Formula for LBM',
       formulaDesc: 'Men: LBM = (0.407 × W) + (0.267 × H) - 19.2 | Women: LBM = (0.252 × W) + (0.473 × H) - 48.3',
-      tableTitle: 'Lean Body Mass Composition',
+      tableTitle: 'Lean Body Mass Reference Composition',
       tableRows: [
-        { col1: 'Skeletal Muscle', col2: '40% - 50% of LBM', col3: 'Main driver of metabolic rate' },
-        { col1: 'Essential Organs & Bone', col2: '35% - 45% of LBM', col3: 'Brain, liver, heart, kidneys, skeleton' },
-        { col1: 'Extracellular Fluid', col2: '15% of LBM', col3: 'Blood plasma and interstitial fluid' }
+        { col1: 'Skeletal Muscle Reference', col2: '~40% - 50% of LBM', col3: 'Major component of non-fat body mass' },
+        { col1: 'Organs & Bone Structure', col2: '~35% - 45% of LBM', col3: 'Vital organs, skeletal bone structure, and connective tissue' },
+        { col1: 'Body Fluid Volume', col2: '~15% of LBM', col3: 'Extracellular fluid and plasma volume' }
       ],
       faqs: [
-        { question: 'Why is Lean Body Mass important for fitness?', answer: 'LBM determines your Basal Metabolic Rate (BMR). Maintaining lean muscle mass ensures higher daily passive calorie burn.' }
+        { question: 'What is the Lean Body Mass Calculator?', answer: 'The Lean Body Mass Calculator uses the Boer predictive equation to estimate non-fat body mass. It is a mathematical estimate and does not directly measure skeletal muscle or organ weight.' },
+        { question: 'Why is Lean Body Mass useful in body composition tracking?', answer: 'LBM estimates help differentiate changes in non-fat body mass from body fat variations during fitness or dietary planning.' }
       ]
     }
   },
@@ -190,7 +191,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Ideal Body Weight Reference',
       title: 'Ideal Body Weight (IBW) Reference Calculator',
-      intro: 'Use our free Ideal Body Weight Reference Calculator to estimate a reference body weight baseline for your height based on historical formulas (Devine, Robinson, Miller, and Hamwi). Important: IBW equations are historical reference formulas. They provide population-based estimates and do not determine an individual\'s medically ideal or healthiest weight.',
+      intro: 'Use our free Ideal Body Weight Reference Calculator to estimate a historical IBW reference value for your height based on published equations (Devine, Robinson, Miller, and Hamwi). Important: IBW equations are historical reference formulas. They provide population-based estimates and do not determine an individual\'s medically ideal or healthiest weight.',
       formulaTitle: 'Ideal Body Weight (IBW) Formulas',
       formulaDesc: 'Devine (Men): 50kg + 2.3kg/inch >5ft | Devine (Women): 45.5kg + 2.3kg/inch >5ft | Robinson: 52kg/49kg base + 1.9kg/1.7kg per inch',
       formulaCode: 'IBW (Devine Male) = 50 + 2.3 × (Height_inches - 60) | IBW (Devine Female) = 45.5 + 2.3 × (Height_inches - 60)',
@@ -203,10 +204,10 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'WHO Healthy BMI Range', col2: 'BMI 18.5 kg/m² to 24.9 kg/m²', col3: 'Physiological healthy weight window accommodating muscle & frame variation' }
       ],
       faqs: [
-        { question: 'What is the Ideal Weight Calculator and how does it calculate IBW?', answer: 'An Ideal Weight Calculator determines a target Ideal Body Weight (IBW) baseline based on height and biological sex using historical formulas (Devine, Robinson, Miller, Hamwi). These outputs are population references, not individual medical prescriptions.' },
-        { question: 'What is my ideal weight for my height?', answer: 'Your ideal weight depends on height, gender, frame size, and muscle mass. For a 5\'10" (178 cm) male, the Devine reference is ~73 kg (161 lbs). For a 5\'5" (165 cm) female, the Devine reference is ~57 kg (125 lbs).' },
-        { question: 'What is the difference between Devine, Robinson, and Miller formulas?', answer: 'The Devine formula (1974) is a widely referenced benchmark in literature. The Robinson formula (1983) adjusts female reference weight slightly higher, while the Miller formula (1983) yields higher base weights for shorter heights but lower scaling per inch for taller adults.' },
-        { question: 'Why does ideal weight differ from total scale weight?', answer: 'Ideal Body Weight (IBW) focuses on lean body mass targets for height, while total scale weight includes body fat, skeletal muscle mass, bone density, and hydration levels.' },
+        { question: 'What is the Ideal Weight Calculator and how does it calculate IBW?', answer: 'An Ideal Weight Calculator estimates a historical IBW reference value based on height and biological sex using historical formulas (Devine, Robinson, Miller, Hamwi). These outputs are population references, not individual medical prescriptions.' },
+        { question: 'What is my reference weight for my height?', answer: 'Reference weight depends on height, gender, frame size, and muscle mass. For a 5\'10" (178 cm) male, the Devine reference value is ~73 kg (161 lbs). For a 5\'5" (165 cm) female, the Devine reference value is ~57 kg (125 lbs).' },
+        { question: 'What is the difference between Devine, Robinson, and Miller formulas?', answer: 'The Devine formula (1974) is a widely referenced benchmark in literature. The Robinson formula (1983) adjusts female reference weight slightly higher, while the Miller formula (1983) yields higher base weights for shorter heights.' },
+        { question: 'Why does historical IBW differ from total scale weight?', answer: 'Ideal Body Weight (IBW) focuses on historical height-based target baselines, while total scale weight includes body fat, muscle mass, bone density, and hydration levels.' },
         { question: 'Is Ideal Body Weight (IBW) better than BMI?', answer: 'IBW gives a single historical reference weight baseline, whereas WHO BMI provides a broader healthy range (18.5 to 24.9 kg/m²). Using both provides a broader context.' }
       ]
     }
@@ -285,9 +286,9 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'macro-calculator': {
     en: {
-      eyebrow: 'Nutrition & IIFYM Protocol',
-      title: 'Macro Calculator & Macronutrient Ratio Tool',
-      intro: 'Calculate your estimated daily carb, protein, and fat target in grams with our free Macro Calculator. Designed for IIFYM flexible dieting, bodybuilding, and body recomposition, determine your optimal macronutrient ratio split.',
+      eyebrow: 'Nutrition Reference',
+      title: 'Macro Calculator & Macronutrient Reference Tool',
+      intro: 'Calculate your estimated daily carb, protein, and fat targets in grams with our free Macro Calculator. The calculator uses example macro ratios for planning. There is no single optimal ratio for everyone; individual dietary needs vary.',
       formulaTitle: 'Macro Caloric Conversion Formulas',
       formulaDesc: 'Carbohydrate Grams = (Total Calories × Carb %) / 4 | Protein Grams = (Total Calories × Protein %) / 4 | Fat Grams = (Total Calories × Fat %) / 9',
       formulaCode: 'Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9',
@@ -295,20 +296,20 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       tableRows: [
         { col1: 'Carbohydrates (4 kcal/g)', col2: 'Balanced: 40% | Low-Carb: 20% | High-Protein: 35%', col3: 'Primary fuel source for high-intensity muscular contractions & brain' },
         { col1: 'Protein (4 kcal/g)', col2: 'Balanced: 30% | Low-Carb: 40% | High-Protein: 40%', col3: 'Essential for skeletal muscle protein synthesis & nitrogen balance' },
-        { col1: 'Dietary Fat (9 kcal/g)', col2: 'Balanced: 30% | Low-Carb: 40% | High-Protein: 25%', col3: 'Required for steroid hormone production (testosterone/estrogen) & cell membranes' }
+        { col1: 'Dietary Fat (9 kcal/g)', col2: 'Balanced: 30% | Low-Carb: 40% | High-Protein: 25%', col3: 'Required for steroid hormone production & cell membranes' }
       ],
       faqs: [
-        { question: 'What is a Macro Calculator?', answer: 'A Macro Calculator is a nutritional tool that divides your total daily caloric intake into specific gram amounts of carbohydrates, protein, and dietary fats based on your fitness goals.' },
-        { question: 'How to calculate macros in grams for weight loss or muscle gain?', answer: 'First calculate your TDEE (Total Daily Energy Expenditure). Multiply total calories by your target macro percentages (e.g., 40% carbs, 30% protein, 30% fat). Divide carbohydrate and protein calories by 4 and fat calories by 9 to get estimated daily grams.' },
-        { question: 'What is IIFYM (If It Fits Your Macros)?', answer: 'IIFYM (If It Fits Your Macros) is a flexible dieting philosophy that allows you to eat any food as long as you meet your target daily grams of protein, carbohydrates, and fats calculated by a macro calculator.' },
-        { question: 'What is the best macro ratio for fat loss vs muscle building?', answer: 'For fat loss, a high-protein split (40% protein, 35% carbs, 25% fat) maximizes satiety and preserves lean muscle mass. For muscle building, a balanced split (40% carbs, 30% protein, 30% fat) provides abundant glycogen for intense lifts.' },
+        { question: 'What is a Macro Calculator?', answer: 'A Macro Calculator is a nutritional reference tool that divides your estimated daily caloric intake into example gram amounts of carbohydrates, protein, and dietary fats for meal planning.' },
+        { question: 'How to calculate macros in grams for weight loss or muscle gain?', answer: 'First calculate your estimated TDEE (Total Daily Energy Expenditure). Multiply total calories by your target macro percentages (e.g., 40% carbs, 30% protein, 30% fat). Divide carbohydrate and protein calories by 4 and fat calories by 9 to get estimated daily grams.' },
+        { question: 'What is IIFYM (If It Fits Your Macros)?', answer: 'IIFYM (If It Fits Your Macros) is a flexible dieting approach that tracks daily gram targets of protein, carbohydrates, and fats calculated by a macro tool.' },
+        { question: 'What macro ratios are commonly used in dietary planning?', answer: 'For weight management, example macro splits (such as 40% protein, 35% carbs, 25% fat) are often referenced to support satiety and muscle retention during a calorie deficit. For muscle building, balanced example splits (40% carbs, 30% protein, 30% fat) provide fuel for training. These are starting reference examples, not universal rules.' },
         { question: 'How many calories are in 1 gram of carbs, protein, and fat?', answer: 'Carbohydrates contain 4 calories per gram, Protein contains 4 calories per gram, and Dietary Fat contains 9 calories per gram.' }
       ]
     }
   },
   'waist-to-hip-ratio-calculator': {
     en: {
-      eyebrow: 'WHO Visceral Fat Guidelines',
+      eyebrow: 'WHO Abdominal Reference Guidelines',
       title: 'Waist to Hip Ratio Calculator & WHR Chart Tool',
       intro: 'Calculate your waist to hip ratio with our free Waist to Hip Ratio Calculator. Aligned with World Health Organization (WHO) abdominal reference guidelines, evaluate your body fat distribution and abdominal reference level.',
       formulaTitle: 'WHO Waist to Hip Ratio (WHR) Formula Equation',
@@ -316,15 +317,15 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       formulaCode: 'WHR = Waist / Hip',
       tableTitle: 'WHO Waist to Hip Ratio (WHR) Risk Categories & Chart',
       tableRows: [
-        { col1: 'Low Risk (Gynoid Pear Shape)', col2: 'Men: < 0.90 | Women: < 0.80', col3: 'Healthy subcutaneous fat distribution with low metabolic risk' },
-        { col1: 'Moderate Risk (Transition Zone)', col2: 'Men: 0.90 – 0.99 | Women: 0.80 – 0.84', col3: 'Moderate abdominal visceral fat accumulation' },
-        { col1: 'High Risk (Android Apple Shape)', col2: 'Men: ≥ 1.00 | Women: ≥ 0.85', col3: 'Substantial central obesity & elevated cardiovascular risk context' }
+        { col1: 'Low Risk Category', col2: 'Men: < 0.90 | Women: < 0.80', col3: 'Subcutaneous fat distribution reference window' },
+        { col1: 'Moderate Risk Category', col2: 'Men: 0.90 – 0.99 | Women: 0.80 – 0.84', col3: 'Moderate abdominal central fat reference window' },
+        { col1: 'Higher Risk Category', col2: 'Men: ≥ 1.00 | Women: ≥ 0.85', col3: 'Higher central fat distribution reference window; additional screening context' }
       ],
       faqs: [
-        { question: 'What is the Waist to Hip Ratio Calculator?', answer: 'The Waist to Hip Ratio Calculator is an anthropometric screening tool that compares your waist measurement to your hip measurement to determine body fat distribution and assess abdominal visceral fat risk.' },
+        { question: 'What is the Waist to Hip Ratio Calculator?', answer: 'The Waist to Hip Ratio Calculator is an anthropometric screening tool that compares your waist measurement to your hip measurement to evaluate body fat distribution and provide context on central fat placement.' },
         { question: 'How to calculate waist to hip ratio with the WHR formula?', answer: 'Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80.' },
-        { question: 'What is a healthy waist to hip ratio for men and women according to WHO?', answer: 'According to World Health Organization (WHO) guidelines, a healthy WHR is below 0.90 for men and below 0.80 for women.' },
-        { question: 'Why is waist to hip ratio a useful indicator alongside BMI?', answer: 'While BMI measures total body mass, Waist to Hip Ratio specifically measures central abdominal fat (visceral fat around internal organs), providing valuable context on body-fat distribution.' },
+        { question: 'What is a healthy waist to hip ratio for men and women according to WHO?', answer: 'According to World Health Organization (WHO) reference guidelines, a ratio below 0.90 for men and below 0.80 for women is standard for lower relative abdominal fat.' },
+        { question: 'Why is waist to hip ratio a useful indicator alongside BMI?', answer: 'While BMI measures total body mass relative to height, Waist to Hip Ratio serves as an anthropometric proxy for central body fat distribution around the abdomen.' },
         { question: 'How to accurately measure waist and hip circumference for the WHR calculator?', answer: 'Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks.' }
       ]
     }
@@ -445,6 +446,34 @@ const faqSchema = {
 };
 
 const toolSpecificReferences: Record<string, { name: string; url: string }[]> = {
+  'bmr-calculator': [
+    { name: 'Mifflin MD, St Jeor GE, et al. Predictive BMR Equation Study (AJCN)', url: 'https://pubmed.ncbi.nlm.nih.gov/2305711/' },
+    { name: 'NIH PMC Research: Evaluation of Predictive Energy Equations', url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4564867/' }
+  ],
+  'tdee-calculator': [
+    { name: 'FAO/WHO/UNU Human Energy Requirements Guidelines', url: 'https://www.fao.org/3/y5686e/y5686e00.htm' },
+    { name: 'NIH National Library of Medicine: Energy Balance & Activity Multipliers', url: 'https://www.ncbi.nlm.nih.gov/books/NBK218769/' }
+  ],
+  'calorie-calculator': [
+    { name: 'NIH Body Weight Planner & Energy Balance Model', url: 'https://www.niddk.nih.gov/bwp' },
+    { name: 'CDC Healthy Weight & Energy Balance Reference', url: 'https://www.cdc.gov/healthyweight/losing_weight/index.html' }
+  ],
+  'ideal-weight-calculator': [
+    { name: 'Devine BJ. Ideal Body Weight Equations (Drug Intell Clin Pharm 1974)', url: 'https://pubmed.ncbi.nlm.nih.gov/4819440/' },
+    { name: 'NIH PMC Evaluation of Historical Ideal Body Weight Formulas', url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4891157/' }
+  ],
+  'lean-body-mass-calculator': [
+    { name: 'Boer P. Estimated Lean Body Mass Index Study (1984)', url: 'https://pubmed.ncbi.nlm.nih.gov/6497914/' },
+    { name: 'NIH PMC Research: Anthropometric Equations for Body Composition', url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7355018/' }
+  ],
+  'macro-calculator': [
+    { name: 'USDA Dietary Guidelines for Americans (Acceptable Macronutrient Distribution Ranges)', url: 'https://www.dietaryguidelines.gov/' },
+    { name: 'ISSN Position Stand: Diets and Body Composition', url: 'https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0174-y' }
+  ],
+  'waist-to-hip-ratio-calculator': [
+    { name: 'WHO Waist Circumference and Waist-to-Hip Ratio Report (2011)', url: 'https://www.who.int/publications/i/item/9789241501491' },
+    { name: 'NIH PMC Anthropometric Proxy Measures for Abdominal Adiposity', url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4926839/' }
+  ],
   'protein-intake-calculator': [
     { name: 'ISSN Position Stand: Protein and Exercise', url: 'https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0177-8' },
     { name: 'NIH Dietary Reference Intakes for Protein', url: 'https://www.ncbi.nlm.nih.gov/books/NBK56068/' }

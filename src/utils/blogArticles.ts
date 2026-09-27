@@ -247,7 +247,7 @@ export const blogArticles: Record<string, any> = {
         </div>
 
         <h2>Flaw #3: Ignoring Abdominal Visceral Fat (Central Obesity)</h2>
-        <p>BMI measures total scale weight, not fat location. Subcutaneous fat stored on the hips or thighs is relatively benign. In contrast, <strong>visceral fat</strong> stored deep inside the abdominal cavity surrounding vital organs secretes inflammatory cytokines that directly cause cardiovascular disease and insulin resistance.</p>
+        <p>BMI measures total scale weight, not fat location. While subcutaneous fat stored under the skin carries different implications, <strong>visceral fat</strong> stored deep inside the abdominal cavity surrounding vital organs is associated with different metabolic and cardiovascular risk patterns.</p>
         <p>Up to 15% of adults with a "Normal" BMI have elevated waist circumferences, carrying significant hidden metabolic risk (the <em>"Normal Weight Obesity"</em> paradox).</p>
 
         <h2>Flaw #4: Ignoring Ethnic Body Composition Differences</h2>
@@ -477,20 +477,20 @@ export const blogArticles: Record<string, any> = {
       fr: 'Santé Régionale'
     },
     description: {
-      en: 'In-depth analysis of WHO South-East Asia BMI guidelines. Discover why 18.5–22.9 is optimal for Indian adults.',
-      hi: 'डब्ल्यूएचओ दक्षिण-पूर्व एशिया बीएमआई दिशानिर्देशों का विश्लेषण। जानें कि 18.5-22.9 भारतीयों के लिए सर्वश्रेष्ठ क्यों है।',
-      ko: 'WHO 아시아-태평양 BMI 지침 분석. 아시아인에게 18.5~22.9가 최적인 이유.',
-      de: 'Analyse der WHO-Richtlinien für asiatische Bevölkerungen. Warum 18,5–22,9 optimal ist.',
-      es: 'Análisis de las pautas de la OMS para poblaciones asiáticas. Por qué 18.5–22.9 es el rango óptimo.',
-      fr: 'Analyse des directives OMS pour les populations asiatiques. Pourquoi 18,5–22,9 est la plage optimale.'
+      en: 'In-depth analysis of WHO South-East Asia BMI guidelines. Understanding BMI 18.5–22.9 in Asian-Population Reference Guidance.',
+      hi: 'डब्ल्यूएचओ दक्षिण-पूर्व एशिया बीएमआई दिशानिर्देशों का विश्लेषण। एशियाई आबादी के संदर्भ में बीएमआई 18.5–22.9 को समझें।',
+      ko: 'WHO 아시아-태평양 BMI 지침 분석. 아시아인 체중 기준 18.5~22.9 이해.',
+      de: 'Analyse der WHO-Richtlinien für asiatische Bevölkerungen. BMI 18,5–22,9 als Referenzwert verstehen.',
+      es: 'Análisis de las pautas de la OMS para poblaciones asiáticas. Comprendiendo el IMC 18.5–22.9 como guía de referencia.',
+      fr: 'Analyse des directives OMS pour les populations asiatiques. Comprendre l\'IMC 18,5–22,9 comme repère de référence.'
     },
     contentHtml: {
       en: `
         <h2>Why Asian Adults Require Lower BMI Thresholds</h2>
-        <p>Extensive clinical studies conducted by the World Health Organization (WHO) revealed that South Asian adults develop metabolic disease risk—including Type 2 Diabetes, abdominal visceral fat, and hypertension—at lower body weights compared to European populations.</p>
+        <p>Extensive health studies conducted by the World Health Organization (WHO) revealed that South Asian adults develop metabolic risk factors—including prediabetes markers and abdominal visceral fat—at lower body weights compared to European populations.</p>
         
-        <h2>The Optimal Indian BMI Range: 18.5 to 22.9 kg/m²</h2>
-        <p>While Western standards consider 24.5 kg/m² healthy, the WHO South-East Asia Regional Office established that <strong>18.5 to 22.9 kg/m²</strong> represents the true healthy baseline for South Asian adults.</p>
+        <h2>Asian-Population Reference Range: 18.5 to 22.9 kg/m²</h2>
+        <p>While Western standards mark overweight at 25.0 kg/m², the WHO South-East Asia Regional Office established that <strong>18.5 to 22.9 kg/m²</strong> represents the reference healthy range for South Asian adults.</p>
         
         <ul>
           <li><strong>Healthy Target Range:</strong> 18.5 – 22.9 kg/m²</li>
