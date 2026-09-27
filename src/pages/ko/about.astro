@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 ---
 
-<Layout title="회사 소개 | Real BMI">
+<Layout title="Real BMI 소개 - 독립 프로젝트">
     <Navbar />
     <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-16">
         <div class="space-y-4">
@@ -15,17 +15,29 @@ import Navbar from '../../components/Navbar.astro';
         </div>
 
         <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-xl font-bold">
-            <p>
-                Real BMI는 데이터 중심의 웰빙을 우선시하는 사람들을 위해 설계된 정밀 건강 도구입니다.
-            </p>
+            <div class="space-y-6">
+                <p>
+                    <strong>Real BMI</strong>는 <strong>Bhawanshi Dosi</strong>가 독립적으로 제작하고 유지 관리하는 건강 계산기 웹사이트입니다. 계산기는 공개된 수학적 방정식과 공중 보건 참조 범위를 사용하여 교육적 추정치를 제공합니다.
+                </p>
+                <p>
+                    Real BMI는 의료 기관, 병원, 의원 또는 의사의 검토를 받는 서비스가 아닙니다. 모든 도구는 오직 교육 및 개인 참조 용도로만 설계되었습니다.
+                </p>
+                <p>
+                    입력된 모든 데이터는 웹 브라우저 내에만 남아 있습니다. 개인 건강 데이터는 외부 서버에 저장되거나 전송되지 않습니다.
+                </p>
+            </div>
 
-            <div class="pt-4 space-y-4 text-[var(--foreground)]">
-                <p class="text-4xl font-black tracking-tighter">
-                    Real BMI <span class="text-lg opacity-40 font-bold ml-2">(플랫폼)</span>
+            <div class="pt-8 space-y-4 text-[var(--foreground)] border-t border-[var(--border)]">
+                <p class="text-3xl font-black tracking-tighter">
+                    문의하기
+                </p>
+                <p class="text-lg opacity-60">
+                    계산기 방법론이나 웹사이트에 대한 문의 사항이 있으시면 언제든지 연락해 주세요.
                 </p>
                 <div class="pt-2">
-                    <a href="mailto:support@realbmicalculator.com" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline">
+                    <a href="mailto:support@realbmicalculator.com" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline group">
                         support@realbmicalculator.com
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                     </a>
                 </div>
             </div>

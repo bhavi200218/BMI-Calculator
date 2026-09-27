@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 ---
 
-<Layout title="Über Uns | Real BMI">
+<Layout title="Über Real BMI - Unabhängiges Projekt">
     <Navbar />
     <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-16">
         <div class="space-y-4">
@@ -15,17 +15,29 @@ import Navbar from '../../components/Navbar.astro';
         </div>
 
         <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-xl font-bold">
-            <p>
-                Real BMI ist ein Präzisions-Gesundheitswerkzeug für alle, die eine datengesteuerte Wellness priorisieren.
-            </p>
+            <div class="space-y-6">
+                <p>
+                    <strong>Real BMI</strong> ist eine unabhängige Gesundheitsrechner-Website, die von <strong>Bhawanshi Dosi</strong> erstellt und gepflegt wird. Die Rechner nutzen veröffentlichte mathematische Gleichungen und öffentlich zugängliche Referenzbereiche für Bildungszwecke.
+                </p>
+                <p>
+                    Real BMI ist keine medizinische Praxis, kein Krankenhaus, keine Klinik und kein ärztlich geprüfter Dienst. Alle Tools dienen ausschließlich der allgemeinen Orientierung und persönlichen Planung.
+                </p>
+                <p>
+                    Alle Eingaben verbleiben lokal in Ihrem Browser. Ihre persönlichen Gesundheitsdaten werden niemals gespeichert oder an externe Server übertragen.
+                </p>
+            </div>
 
-            <div class="pt-4 space-y-4 text-[var(--foreground)]">
-                <p class="text-4xl font-black tracking-tighter">
-                    Real BMI <span class="text-lg opacity-40 font-bold ml-2">(Plattform)</span>
+            <div class="pt-8 space-y-4 text-[var(--foreground)] border-t border-[var(--border)]">
+                <p class="text-3xl font-black tracking-tighter">
+                    Kontakt
+                </p>
+                <p class="text-lg opacity-60">
+                    Bei Fragen zur Methodik der Rechner oder zur Website können Sie sich gerne an mich wenden.
                 </p>
                 <div class="pt-2">
-                    <a href="mailto:support@realbmicalculator.com" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline">
+                    <a href="mailto:support@realbmicalculator.com" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline group">
                         support@realbmicalculator.com
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                     </a>
                 </div>
             </div>
