@@ -10,43 +10,43 @@ const lang = propLang || currentLocale || 'en';
 const content: Record<string, any> = {
   en: {
     eyebrow: "Evidence-Based Health Guide",
-    title: "Body Mass Index (BMI) & Long-Term Health Risks: Health Guidance",
+    title: "Body Mass Index (BMI) & Population Health Reference Guidance",
     sections: [
       {
-        title: "How Do I Find My Real BMI?",
-        text: "You can find your Real BMI by using an online health calculator that measures your Body Mass Index (weight / height²) alongside your Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and Waist-to-Height Ratio (WHtR). This provides additional educational context that accounts for muscle density, age, and waist-to-height reference proportions."
+        title: "How Do I Calculate My BMI & Related Metrics?",
+        text: "You can evaluate your Body Mass Index (weight / height²) alongside your Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and Waist-to-Height Ratio (WHtR). This provides educational context that accounts for muscle density, age, and waist-to-height reference proportions."
       },
       {
-        title: "Is the BMI Calculator Real?",
-        text: "Yes, standard BMI calculators use a mathematical formula recognized by WHO and CDC. However, standard BMI only measures total body weight. The Real BMI Calculator expands on standard BMI by adding body fat estimation, calorie reference estimates, and WHO Asian reference cutoffs for a broader health overview."
+        title: "How Does Standard BMI Work?",
+        text: "Standard BMI calculators use a mathematical formula recognized by WHO and CDC. Standard BMI measures total body mass relative to height. Real BMI expands on standard BMI by presenting body fat estimates, calorie reference ranges, and WHO Asian reference cutoffs for a broader health overview."
       },
       {
-        title: "Which BMI is Accurate?",
-        text: "No single number is 100% accurate for everyone, but a Real BMI calculation that combines standard BMI with Waist-to-Height Ratio (WHtR) and WHO Asian cutoffs (23.0 kg/m² for overweight) provides additional health context for overall body composition and abdominal fat reference indicators."
+        title: "How Do Multiple Metrics Provide Broader Context?",
+        text: "No single number paints a complete picture of an individual's body composition. Combining standard BMI with Waist-to-Height Ratio (WHtR) and WHO Asian cutoffs (23.0 kg/m² for overweight) provides additional context for body composition and abdominal fat reference indicators."
       },
       {
         title: "Is a BMI of 25 Realistic?",
-        text: "Yes, a BMI of 25.0 kg/m² represents the threshold between healthy weight and overweight for general adult populations under WHO guidelines. However, for muscular athletes, a BMI of 25 is realistic and healthy due to dense muscle mass, while for South Asian populations, overweight reference cutoffs begin at 23.0 kg/m²."
+        text: "Yes, a BMI of 25.0 kg/m² represents the threshold between healthy weight and overweight for general adult populations under WHO guidelines. However, for muscular athletes, a BMI of 25 is common due to dense muscle mass, while for South Asian populations, overweight reference cutoffs begin at 23.0 kg/m²."
       },
       {
         title: "Body Mass Index (BMI) & Population Health Guidelines",
-        text: "According to published literature from public health authorities (including the ACS and WHO), maintaining a healthy Body Mass Index (BMI between 18.5 and 24.9 kg/m²) is associated with standard reference health baselines. Real BMI provides educational screening references aligned with these guidelines."
+        text: "According to published literature from public health authorities (including the WHO and CDC), maintaining a Body Mass Index (BMI between 18.5 and 24.9 kg/m²) aligns with standard population reference baselines. Real BMI provides educational screening references aligned with these guidelines."
       },
       {
-        title: "What is 'Real BMI' and How Does it Differ From Weight Scales?",
-        text: "The term 'Real BMI' is used by this website to describe assessing your Body Mass Index (BMI) alongside complementary metrics — including Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and waist circumference — rather than relying on height and weight alone. It is an informational concept, not a separate medical measurement or official WHO classification. Our calculator integrates published WHO and CDC guidelines to offer a broader multi-metric health overview."
+        title: "What is 'Real BMI' and How Does it Differ From Scale Weight?",
+        text: "The term 'Real BMI' is used by this website to describe assessing your Body Mass Index (BMI) alongside complementary metrics — including Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and waist circumference — rather than relying on height and weight alone. It is an informational concept, not a separate medical measurement or official WHO classification."
       },
       {
         title: "Is BMI Accurate for Everyone? The Athlete & Muscle Paradox",
-        text: "While standard Body Mass Index formulas (weight/height²) apply universally, muscle density differs significantly from adipose tissue. Muscular athletes or weightlifters may register as 'Overweight' or 'Obese' despite having low body fat percentage, because dense muscle weighs more than fat volume. Real BMI highlights these nuances and recommends pairing BMI with waist-to-height ratio for active individuals. For an in-depth breakdown of 2026 medical evidence, read our full article: <a href='/blog/is-bmi-accurate' class='underline font-bold text-[var(--accent)]'>Is BMI Accurate? New Evidence Says No</a>."
+        text: "While standard Body Mass Index formulas (weight/height²) apply universally, muscle density differs significantly from adipose tissue. Muscular athletes or weightlifters may register higher BMI values despite having low body fat percentage, because dense muscle weighs more than fat volume. Real BMI highlights these nuances and recommends pairing BMI with waist-to-height ratio for active individuals."
       },
       {
-        title: "Why WHO Recommends Lower BMI Thresholds for Asian & South Asian Populations",
+        title: "Why WHO Recommends Lower BMI Cutoffs for Asian & South Asian Populations",
         text: "World Health Organization (WHO) published consensus recommends lower BMI cutoff thresholds for Asian and South Asian populations: 23.0 kg/m² for overweight reference (vs. 25.0 kg/m² standard) due to higher relative body fat at lower body mass indexes."
       },
       {
         title: "BMI Calculation Formula: Metric (kg/m²) vs. Imperial (lbs/in²)",
-        text: "Our online Real BMI Calculator supports both metric and imperial measurements. In metric, the formula is: <code>BMI = weight (kg) / [height (m)]²</code>. In imperial units, the formula is: <code>BMI = [weight (lb) / height (in)²] x 703</code>. Inputting accurate measurements helps ensure the mathematical calculation itself is correct."
+        text: "Our online Real BMI Calculator supports both metric and imperial measurements. In metric, the formula is: <code>BMI = weight (kg) / [height (m)]²</code>. In imperial units, the formula is: <code>BMI = [weight (lb) / height (in)²] x 703</code>."
       },
       {
         title: "Using BMI for Weight-Management Planning",
@@ -56,11 +56,11 @@ const content: Record<string, any> = {
   },
   hi: {
     eyebrow: "स्वास्थ्य एवं संदर्भ गाइड",
-    title: "बॉडी मास इंडेक्स (BMI) और दीर्घकालिक स्वास्थ्य संदर्भ गाइड",
+    title: "बॉडी मास इंडेक्स (BMI) और जनसंख्या स्वास्थ्य संदर्भ गाइड",
     sections: [
       {
-        title: "बीएमआई और स्वास्थ्य संदर्भ: प्रकाशित अध्ययन क्या कहते हैं?",
-        text: "अमेरिकन कैंसर सोसाइटी (ACS) और विश्व स्वास्थ्य संगठन (WHO) द्वारा प्रकाशित अध्ययनों के अनुसार, एक स्वस्थ बीएमआई (18.5 से 22.9 / 24.9 kg/m²) बनाए रखना कम आबादी-स्तरीय जोखिम से जुड़ा है।"
+        title: "बीएमआई और स्वास्थ्य संदर्भ: प्रकाशित मानक क्या कहते हैं?",
+        text: "विश्व स्वास्थ्य संगठन (WHO) और CDC द्वारा प्रकाशित मानकों के अनुसार, 18.5 से 24.9 kg/m² का बीएमआई सामान्य जनसंख्या संदर्भ सीमा को दर्शाता है।"
       },
       {
         title: "'Real BMI' क्या है और यह साधारण तराजू से कैसे अलग है?",
@@ -68,7 +68,7 @@ const content: Record<string, any> = {
       },
       {
         title: "एशियाई और भारतीय आबादी के लिए कम बीएमआई थ्रेसहोल्ड क्यों हैं?",
-        text: "कुछ WHO विशेषज्ञ परामर्शों और एशियाई आबादी दिशानिर्देशों में बीएमआई 23.0 kg/m² से शुरू होने वाले अतिरिक्त संदर्भ थ्रेसहोल्ड का उपयोग किया जाता है, क्योंकि इस आबादी में पेट के आंतरिक अंगों के आसपास वसा (विसरल फैट) का संचय कम वजन पर भी अधिक हो सकता है।"
+        text: "कुछ WHO विशेषज्ञ परामर्शों और एशियाई आबादी दिशानिर्देशों में बीएमआई 23.0 kg/m² से शुरू होने वाले अतिरिक्त संदर्भ थ्रेसहोल्ड का उपयोग किया जाता है।"
       },
       {
         title: "बीएमआई फॉर्मूला: मीट्रिक (kg/m²) बनाम इंपीरियल (lbs/in²)",
@@ -78,45 +78,45 @@ const content: Record<string, any> = {
   },
   ko: {
     eyebrow: "근거 기반 건강 가이드",
-    title: "체질량지수(BMI) 및 만성 질환 위험: 공식 가이드",
+    title: "체질량지수(BMI) 및 인구 보건학적 참조 가이드",
     sections: [
       {
-        title: "BMI 및 암/대사 질환 위험: 임상 연구 결과",
-        text: "미국암학회(ACS) 및 세계보건기구(WHO) 연구에 따르면 적정 BMI(18.5~22.9/24.9 kg/m²)를 유지하는 것은 대사 질환 및 각종 성인병 위험을 크게 낮춥니다."
+        title: "BMI 및 연령별 건강 지표: 연구 결과",
+        text: "세계보건기구(WHO) 및 CDC 표준에 따르면 적정 BMI(18.5~24.9 kg/m²)를 유지하는 것은 표준 인구 보건학적 참조 범위를 제시합니다."
       },
       {
         title: "'Real BMI'란 무엇이며 일반 체중계와 어떻게 다른가요?",
-        text: "'Real BMI'는 단순 체중뿐만 아니라 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레를 종합하여 체성분을 정확히 평가하는 지표입니다."
+        text: "'Real BMI'는 단순 체중뿐만 아니라 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레를 종합하여 체성분을 교육적으로 참고하는 지표입니다."
       }
     ]
   },
   es: {
     eyebrow: "Guía de Referencia de Salud",
-    title: "Índice de Masa Corporal (IMC) y Riesgos para la Salud",
+    title: "Índice de Masa Corporal (IMC) y Contexto Poblacional",
     sections: [
       {
-        title: "IMC y Riesgo para la Salud según la ACS y OMS",
-        text: "Mantener un IMC saludable (entre 18.5 y 24.9 kg/m²) reduce significativamente los riesgos de enfermedades metabólicas y cardiovasculares."
+        title: "IMC y Estándares de la OMS y CDC",
+        text: "Mantener un IMC dentro del rango de referencia estándar (entre 18.5 y 24.9 kg/m²) proporciona un marco de evaluación poblacional de peso."
       }
     ]
   },
   fr: {
     eyebrow: "Guide de Référence de Santé",
-    title: "Indice de Masse Corporelle (IMC) et Risques pour la Santé",
+    title: "Indice de Masse Corporelle (IMC) et Contexte de Santé",
     sections: [
       {
-        title: "IMC et Risques pour la Santé (ACS et OMS)",
-        text: "Maintenir un IMC sain (entre 18,5 et 24,9 kg/m²) réduit considérablement les risques de maladies métaboliques."
+        title: "IMC et Normes de l'OMS et CDC",
+        text: "Maintenir un IMC de référence (entre 18,5 et 24,9 kg/m²) fournit un cadre d'évaluation globale du poids corporel."
       }
     ]
   },
   de: {
     eyebrow: "Gesundheits-Referenzleitfaden",
-    title: "Body-Mass-Index (BMI) & Gesundheitliche Risiken",
+    title: "Body-Mass-Index (BMI) & Bevölkerungsspezifische Referenzwerte",
     sections: [
       {
-        title: "BMI & Gesundheitsrisiken laut ACS & WHO",
-        text: "Ein gesunder BMI (zwischen 18,5 und 24,9 kg/m²) senkt das langfristige Risiko für Stoffwechselerkrankungen erheblich."
+        title: "BMI & Standards laut WHO & CDC",
+        text: "Ein Referenz-BMI (zwischen 18,5 und 24,9 kg/m²) dient als allgemeiner Orientierungswert für das Körpergewicht."
       }
     ]
   }
