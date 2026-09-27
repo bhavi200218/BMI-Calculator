@@ -45,6 +45,9 @@ const localizedIntro = {
   hi: 'तत्काल संदर्भ गणना और शैक्षिक मेट्रिक्स के लिए निर्मित। वास्तविक समय गणना।'
 };
 
+const bHome = { en: 'Home', es: 'Inicio', fr: 'Accueil', de: 'Startseite', ko: '홈', hi: 'मुख्य पृष्ठ' }[lang];
+const bCalc = { en: 'Calculators', es: 'Calculadoras', fr: 'Calculateurs', de: 'Rechner', ko: '계산기', hi: 'कैलकुलेटर' }[lang];
+
 // WebApplication Schema for SEO
 const webAppSchema = {
   "@context": "https://schema.org",
@@ -72,9 +75,9 @@ const webAppSchema = {
     <div class="max-w-7xl mx-auto space-y-12">
       
       <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm font-medium text-[var(--muted-foreground)]">
-        <a href={`/${lang}/`} class="hover:text-[var(--accent)] transition-colors">Home</a>
+        <a href={`/${lang}/`} class="hover:text-[var(--accent)] transition-colors">{bHome}</a>
         <span>/</span>
-        <a href={`/${lang}/#calculator`} class="hover:text-[var(--accent)] transition-colors">Calculators</a>
+        <a href={`/${lang}/#calculator`} class="hover:text-[var(--accent)] transition-colors">{bCalc}</a>
         <span>/</span>
         <span class="text-[var(--foreground)]">{calc.name[lang] || calc.name['en']}</span>
       </nav>

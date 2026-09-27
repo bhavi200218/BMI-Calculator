@@ -14,7 +14,7 @@ https://realbmicalculator.com/en/contact | Contact Real BMI Calculator | Get sup
 https://realbmicalculator.com/en/disclaimer | Disclaimer | Real BMI | Read the medical disclaimer and calculator guidance for using Real BMI health tools in English.
 https://realbmicalculator.com/en/privacy-policy | Privacy Policy | Real BMI | Learn how Real BMI handles privacy, data usage, and calculator inputs in English.
 https://realbmicalculator.com/en/terms-conditions | Terms & Conditions | Real BMI | Review the terms of use for Real BMI Calculator and wellness tools in English.
-https://realbmicalculator.com/en/sources | Sources | Real BMI | Explore the trusted clinical sources behind Real BMI calculators and guidance in English.
+https://realbmicalculator.com/en/sources | Sources | Real BMI | Explore the trusted published reference sources behind Real BMI calculators and guidance in English.
 https://realbmicalculator.com/en/editorial-policy | Editorial Policy | Real BMI | Read Real BMI’s editorial standards for evidence-based health content in English.
 
 https://realbmicalculator.com/es/about | About Real BMI - Precision Health Calculator Mission | Discover Real BMI's evidence-based health mission, calculator methodology and privacy-first approach in Spanish.
@@ -81,12 +81,12 @@ https://realbmicalculator.com/fr/body-fat-calculator | US Navy Body Fat Calculat
 https://realbmicalculator.com/de/body-fat-calculator | US Navy Body Fat Calculator - Healthy Measurement | Calculate body fat percentage accurately with advanced body composition analysis in German.
 https://realbmicalculator.com/ko/body-fat-calculator | US Navy Body Fat Calculator - Healthy Measurement | Calculate body fat percentage accurately with advanced body composition analysis in Korean.
 https://realbmicalculator.com/hi/body-fat-calculator | US Navy Body Fat Calculator - Healthy Measurement | Calculate body fat percentage accurately with advanced body composition analysis in Hindi.
-https://realbmicalculator.com/en/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using clinical formulas.
-https://realbmicalculator.com/es/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using clinical formulas in Spanish.
-https://realbmicalculator.com/fr/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using clinical formulas in French.
-https://realbmicalculator.com/de/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using clinical formulas in German.
-https://realbmicalculator.com/ko/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using clinical formulas in Korean.
-https://realbmicalculator.com/hi/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using clinical formulas in Hindi.
+https://realbmicalculator.com/en/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using published reference formulas.
+https://realbmicalculator.com/es/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using published reference formulas in Spanish.
+https://realbmicalculator.com/fr/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using published reference formulas in French.
+https://realbmicalculator.com/de/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using published reference formulas in German.
+https://realbmicalculator.com/ko/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using published reference formulas in Korean.
+https://realbmicalculator.com/hi/lean-body-mass-calculator | Lean Body Mass Calculator - LBM Metric | Estimate your lean body mass and fat-free weight using published reference formulas in Hindi.
 https://realbmicalculator.com/en/ideal-weight-calculator | Ideal Weight Calculator - Target Fitness Calculator | Determine your healthiest weight range based on height, gender, and body composition.
 https://realbmicalculator.com/es/ideal-weight-calculator | Ideal Weight Calculator - Target Fitness Calculator | Determine your healthiest weight range based on height, gender, and body composition in Spanish.
 https://realbmicalculator.com/fr/ideal-weight-calculator | Ideal Weight Calculator - Target Fitness Calculator | Determine your healthiest weight range based on height, gender, and body composition in French.
@@ -123,12 +123,12 @@ https://realbmicalculator.com/fr/waist-to-hip-ratio-calculator | Waist-to-Hip Ra
 https://realbmicalculator.com/de/waist-to-hip-ratio-calculator | Waist-to-Hip Ratio Calculator - WHR Diagnostic | Assess cardiovascular health risk using waist-to-hip ratio analysis in German.
 https://realbmicalculator.com/ko/waist-to-hip-ratio-calculator | Waist-to-Hip Ratio Calculator - WHR Diagnostic | Assess cardiovascular health risk using waist-to-hip ratio analysis in Korean.
 https://realbmicalculator.com/hi/waist-to-hip-ratio-calculator | Waist-to-Hip Ratio Calculator - WHR Diagnostic | Assess cardiovascular health risk using waist-to-hip ratio analysis in Hindi.
-https://realbmicalculator.com/en/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area accurately for clinical dosing and metabolic assessments.
-https://realbmicalculator.com/es/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area accurately for clinical dosing and metabolic assessments in Spanish.
-https://realbmicalculator.com/fr/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area accurately for clinical dosing and metabolic assessments in French.
-https://realbmicalculator.com/de/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area accurately for clinical dosing and metabolic assessments in German.
-https://realbmicalculator.com/ko/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area accurately for clinical dosing and metabolic assessments in Korean.
-https://realbmicalculator.com/hi/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area accurately for clinical dosing and metabolic assessments in Hindi.
+https://realbmicalculator.com/en/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area reference estimates for metabolic context.
+https://realbmicalculator.com/es/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area reference estimates for metabolic context in Spanish.
+https://realbmicalculator.com/fr/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area reference estimates for metabolic context in French.
+https://realbmicalculator.com/de/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area reference estimates for metabolic context in German.
+https://realbmicalculator.com/ko/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area reference estimates for metabolic context in Korean.
+https://realbmicalculator.com/hi/body-surface-area-calculator | Body Surface Area Calculator - BSA Metric | Calculate body surface area reference estimates for metabolic context in Hindi.
 https://realbmicalculator.com/en/heart-rate-zone-calculator | Target Heart Rate Zone Calculator - Fitness Training | Identify exercise heart rate zones for fat burn, cardio, and performance training.
 https://realbmicalculator.com/es/heart-rate-zone-calculator | Target Heart Rate Zone Calculator - Fitness Training | Identify exercise heart rate zones for fat burn, cardio, and performance training in Spanish.
 https://realbmicalculator.com/fr/heart-rate-zone-calculator | Target Heart Rate Zone Calculator - Fitness Training | Identify exercise heart rate zones for fat burn, cardio, and performance training in French.
@@ -149,7 +149,7 @@ https://realbmicalculator.com/ko/pregnancy-weight-gain-calculator | Pregnancy We
 https://realbmicalculator.com/hi/pregnancy-weight-gain-calculator | Pregnancy Weight Gain Guide & Calculator | Track recommended gestational weight gain and support healthy pregnancy progress in Hindi.
 
 https://realbmicalculator.com/search | Search Real BMI | Health Calculator Search | Find BMI, BMR, TDEE, and body composition tools across Real BMI.
-https://realbmicalculator.com/sources | Sources | Real BMI | Explore the trusted clinical sources behind Real BMI calculators and guidance.
+https://realbmicalculator.com/sources | Sources | Real BMI | Explore the trusted published reference sources behind Real BMI calculators and guidance.
 https://realbmicalculator.com/editorial-policy | Editorial Policy | Real BMI | Read Real BMI’s editorial standards for evidence-based health content.
 https://realbmicalculator.com/en/blog/bmi-chart-for-men-women | BMI Chart for Men and Women | Understand BMI ranges, health categories, and body composition differences across sexes.
 https://realbmicalculator.com/en/blog/healthy-bmi-range-indians | Healthy BMI Range for Indians | Learn healthy BMI ranges and culturally relevant guidance for Indian body types.

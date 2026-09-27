@@ -20,6 +20,53 @@ interface ToolContent {
   faqs: { question: string; answer: string }[];
 }
 
+const tableUi: Record<string, { cat: string; metric: string; guidance: string; faq: string; refs: string }> = {
+  en: {
+    cat: 'Category / Level',
+    metric: 'Reference Range / Metric',
+    guidance: 'Reference & Context Guidance',
+    faq: 'Frequently Asked Questions & Search Answers',
+    refs: 'References & Published Research'
+  },
+  es: {
+    cat: 'Categoría / Nivel',
+    metric: 'Rango de Referencia / Métrica',
+    guidance: 'Guía y Contexto de Referencia',
+    faq: 'Preguntas Frecuentes y Respuestas',
+    refs: 'Referencias e Investigaciones Publicadas'
+  },
+  fr: {
+    cat: 'Catégorie / Niveau',
+    metric: 'Plage de Référence / Métrique',
+    guidance: 'Guide et Contexte de Référence',
+    faq: 'Foire Aux Questions et Réponses',
+    refs: 'Références et Recherches Publiées'
+  },
+  de: {
+    cat: 'Kategorie / Stufe',
+    metric: 'Referenzbereich / Metrik',
+    guidance: 'Referenz- & Kontext-Leitfaden',
+    faq: 'Häufig gestellte Fragen',
+    refs: 'Referenzen & Veröffentlichte Forschung'
+  },
+  ko: {
+    cat: '범주 / 단계',
+    metric: '참조 범위 / 메트릭',
+    guidance: '참조 및 컨텍스트 안내',
+    faq: '자주 묻는 질문 및 답변',
+    refs: '참고 문헌 및 출판 연구'
+  },
+  hi: {
+    cat: 'श्रेणी / स्तर',
+    metric: 'संदर्भ सीमा / मीट्रिक',
+    guidance: 'संदर्भ एवं स्वास्थ्य विवरण',
+    faq: 'अक्सर पूछे जाने वाले प्रश्न और उत्तर',
+    refs: 'प्रकाशित शोध एवं संदर्भ'
+  }
+};
+
+const ui = tableUi[lang] || tableUi.en;
+
 const seoDatabase: Record<string, Record<string, ToolContent>> = {
   'bmi-calculator': {
     en: {
@@ -191,9 +238,9 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'lean-body-mass-calculator': {
     en: {
-      eyebrow: 'Boer Equation Standard',
+      eyebrow: 'Boer Predictive Equation',
       title: 'Lean Body Mass Calculator & LBM Reference Tool',
-      intro: 'Using the Boer formula, estimate lean body mass from height, weight and sex. LBM is an estimate and is not the same as skeletal muscle mass.',
+      intro: 'Using the Boer formula, estimate lean body mass from height, weight and sex. LBM is a mathematical estimate and is not the same as skeletal muscle mass or organ weight.',
       formulaTitle: 'Boer Formula for LBM',
       formulaDesc: 'Men: LBM = (0.407 × W) + (0.267 × H) - 19.2 | Women: LBM = (0.252 × W) + (0.473 × H) - 48.3',
       tableTitle: 'Illustrative Body Composition Context (Not Directly Measured by Boer Equation)',
@@ -210,9 +257,9 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'ideal-weight-calculator': {
     en: {
-      eyebrow: 'Ideal Body Weight Reference',
-      title: 'Ideal Body Weight (IBW) Reference Calculator',
-      intro: 'Use our free Ideal Body Weight Reference Calculator to estimate a historical IBW reference value for your height based on published equations (Devine, Robinson, Miller, and Hamwi). Important: IBW equations are historical reference formulas. They provide population-based estimates and do not determine an individual\'s medically ideal or healthiest weight.',
+      eyebrow: 'Estimated IBW Reference',
+      title: 'Estimated Ideal Body Weight (IBW) Reference Calculator',
+      intro: 'Use our free Ideal Body Weight Reference Calculator to estimate a historical IBW reference value for your height based on published equations (Devine, Robinson, Miller, and Hamwi). Important: IBW equations provide population-based reference estimates. They do not determine an individual\'s medically ideal or healthiest weight.',
       formulaTitle: 'Ideal Body Weight (IBW) Formulas',
       formulaDesc: 'Devine (Men): 50kg + 2.3kg/inch >5ft | Devine (Women): 45.5kg + 2.3kg/inch >5ft | Robinson: 52kg/49kg base + 1.9kg/1.7kg per inch',
       formulaCode: 'IBW (Devine Male) = 50 + 2.3 × (Height_inches - 60) | IBW (Devine Female) = 45.5 + 2.3 × (Height_inches - 60)',
@@ -307,7 +354,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'macro-calculator': {
     en: {
-      eyebrow: 'Nutrition Reference',
+      eyebrow: 'Macronutrient Reference',
       title: 'Macro Calculator & Macronutrient Reference Tool',
       intro: 'Calculate your estimated daily carb, protein, and fat targets in grams with our free Macro Calculator to explore an example macronutrient ratio based on your selected plan. There is no single optimal macronutrient ratio for everyone. The calculator uses example percentage splits for planning purposes.',
       formulaTitle: 'Macro Caloric Conversion Formulas',
@@ -323,16 +370,16 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'What is a Macro Calculator?', answer: 'A Macro Calculator is a nutritional reference tool that divides your estimated daily caloric intake into example gram amounts of carbohydrates, protein, and dietary fats for meal planning.' },
         { question: 'How to calculate macros in grams for weight loss or muscle gain?', answer: 'First calculate your estimated TDEE (Total Daily Energy Expenditure). Multiply total calories by your target macro percentages (e.g., 40% carbs, 30% protein, 30% fat). Divide carbohydrate and protein calories by 4 and fat calories by 9 to get estimated daily grams.' },
         { question: 'What is IIFYM (If It Fits Your Macros)?', answer: 'IIFYM (If It Fits Your Macros) is a flexible dieting approach that tracks daily gram targets of protein, carbohydrates, and fats calculated by a macro tool.' },
-        { question: 'What macro ratios are commonly used in dietary planning?', answer: 'There is no single optimal macronutrient ratio for everyone. For weight management, example macro splits (such as 40% protein, 35% carbs, 25% fat) are often referenced to support satiety and muscle retention during a calorie deficit. For muscle building, balanced example splits (40% carbs, 30% protein, 30% fat) provide fuel for training. These are starting reference examples, not universal rules.' },
+        { question: 'How can macronutrient ratios vary by goal?', answer: 'There is no single optimal macronutrient ratio for everyone. The calculator uses example splits for planning purposes. For weight management, example macro splits (such as 40% protein, 35% carbs, 25% fat) are often referenced to support satiety and muscle retention during a calorie deficit. For muscle building, balanced example splits (40% carbs, 30% protein, 30% fat) provide fuel for training.' },
         { question: 'How many calories are in 1 gram of carbs, protein, and fat?', answer: 'Carbohydrates contain 4 calories per gram, Protein contain 4 calories per gram, and Dietary Fat contains 9 calories per gram.' }
       ]
     }
   },
   'waist-to-hip-ratio-calculator': {
     en: {
-      eyebrow: 'WHO Waist-to-Hip Ratio Reference',
-      title: 'Waist to Hip Ratio Calculator & WHR Chart Tool',
-      intro: 'Calculate your waist to hip ratio with our free Waist to Hip Ratio Calculator. Aligned with World Health Organization (WHO) abdominal reference guidelines, provide context about body-fat distribution and central adiposity.',
+      eyebrow: 'WHR Reference Standard',
+      title: 'Waist to Hip Ratio Calculator & WHR Reference Tool',
+      intro: 'Calculate your waist to hip ratio with our free Waist to Hip Ratio Calculator. Aligned with World Health Organization (WHO) reference guidelines, it provides context about body-fat distribution. WHR is an anthropometric ratio. It does not directly measure visceral fat or diagnose cardiovascular disease.',
       formulaTitle: 'WHO Waist to Hip Ratio (WHR) Formula Equation',
       formulaDesc: 'WHR = Waist Circumference (at narrowest point or navel) / Hip Circumference (at widest point of buttocks)',
       formulaCode: 'WHR = Waist / Hip',
@@ -346,7 +393,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'What is the Waist to Hip Ratio Calculator?', answer: 'The Waist to Hip Ratio Calculator is an anthropometric screening tool that compares your waist measurement to your hip measurement to evaluate body fat distribution and provide context on central fat placement.' },
         { question: 'How to calculate waist to hip ratio with the WHR formula?', answer: 'Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80.' },
         { question: 'What is a healthy waist to hip ratio for men and women according to WHO?', answer: 'According to World Health Organization (WHO) reference guidelines, a ratio below 0.90 for men and below 0.80 for women is standard for lower relative abdominal fat.' },
-        { question: 'Why is waist to hip ratio a useful indicator alongside BMI?', answer: 'While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat.' },
+        { question: 'Why is waist to hip ratio a useful indicator alongside BMI?', answer: 'While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat or diagnose cardiovascular disease.' },
         { question: 'How to accurately measure waist and hip circumference for the WHR calculator?', answer: 'Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks.' }
       ]
     }
@@ -564,9 +611,9 @@ const activeReferences = toolSpecificReferences[slug] || [
         <table class="w-full text-left border-collapse text-sm">
           <thead>
             <tr class="bg-[var(--muted)]/50 border-b border-[var(--border)] text-[var(--foreground)] font-display uppercase tracking-wider text-xs font-bold">
-              <th class="p-4">Category / Level</th>
-              <th class="p-4">Reference Range / Metric</th>
-              <th class="p-4">Reference & Context Guidance</th>
+              <th class="p-4">{ui.cat}</th>
+              <th class="p-4">{ui.metric}</th>
+              <th class="p-4">{ui.guidance}</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)] font-medium">
@@ -586,7 +633,7 @@ const activeReferences = toolSpecificReferences[slug] || [
   <!-- FAQ Accordion List -->
   <div class="space-y-6 pt-4">
     <h3 class="text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-      Frequently Asked Questions & Search Answers
+      {ui.faq}
     </h3>
     <div class="grid gap-4">
       {currentData.faqs.map(faq => (
@@ -604,7 +651,7 @@ const activeReferences = toolSpecificReferences[slug] || [
 
   <!-- Authority Medical Reference Badges & External Citations -->
   <div class="p-6 rounded-2xl bg-[var(--muted)]/40 border border-[var(--border)] space-y-3">
-    <div class="text-xs font-display font-bold uppercase tracking-widest text-[var(--accent)]">References & Research</div>
+    <div class="text-xs font-display font-bold uppercase tracking-widest text-[var(--accent)]">{ui.refs}</div>
     <div class="flex flex-wrap gap-6 text-xs font-semibold text-[var(--muted-foreground)]">
       {activeReferences.map((ref) => (
         <a href={ref.url} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[var(--accent)] transition-colors underline decoration-[var(--accent)]/40 underline-offset-4">
