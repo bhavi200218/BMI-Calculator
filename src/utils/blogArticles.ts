@@ -168,7 +168,7 @@ export const blogArticles: Record<string, any> = {
         
         <ul>
           <li><strong>Underweight (&lt; 18.5 kg/m²):</strong> Indicates low body mass relative to height. May correlate with nutrient deficiencies, compromised immune function, and lower bone density.</li>
-          <li><strong>Healthy Weight (18.5 – 24.9 kg/m²):</strong> Represents the statistically optimal weight range associated with the lowest overall mortality and chronic disease risk.</li>
+          <li><strong>Healthy Weight (18.5 – 24.9 kg/m²):</strong> Represents the standard reference weight range associated with population-level health baselines.</li>
           <li><strong>Overweight (25.0 – 29.9 kg/m²):</strong> Indicates moderate excess body weight. Associated with elevated risk for Type 2 Diabetes, hypertension, and cardiovascular strain.</li>
           <li><strong>Obesity Class I to III (≥ 30.0 kg/m²):</strong> Indicates significant excess adiposity requiring clinical monitoring for metabolic and cardiovascular conditions.</li>
         </ul>
