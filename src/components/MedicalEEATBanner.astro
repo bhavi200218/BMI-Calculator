@@ -7,106 +7,106 @@ const { lang = 'en' } = Astro.props;
 
 const labels: Record<string, any> = {
   en: {
-    reviewedTag: "Evidence-Based Health Standards",
-    reviewedTitle: "Aligned with WHO & CDC Guidelines",
-    reviewedDesc: "All calculations, reference ranges, and health metrics are calibrated using published guidelines from the World Health Organization (WHO), American Cancer Society (ACS), and Centers for Disease Control and Prevention (CDC).",
-    boardLabel: "Reference Standards",
-    boardValue: "Real BMI Editorial & Reference Team",
-    lastUpdated: "Updated: 2026 Reference Data",
-    icdCode: "WHO & CDC Reference Guidelines",
-    sourcesTitle: "Primary Scientific Sources & Citations",
+    reviewedTag: "Methodology & Sources",
+    reviewedTitle: "Based on Published WHO & CDC Guidelines",
+    reviewedDesc: "All calculations, reference ranges, and health metrics are built using published mathematical equations and public health guidelines from the World Health Organization (WHO), American Cancer Society (ACS), and Centers for Disease Control and Prevention (CDC).",
+    boardLabel: "Methodology & Author",
+    boardValue: "Created & Maintained by Bhawanshi Dosi",
+    lastUpdated: "Methodology updated: 2026",
+    icdCode: "Reference-based calculator methodology",
+    sourcesTitle: "Primary Reference Sources & Citations",
     sources: [
       { name: "WHO Obesity & Overweight Guidelines", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "World Health Organization" },
-      { name: "ACS Body Weight & Cancer Risk Standards", url: "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html", org: "American Cancer Society (ACS)" },
-      { name: "CDC Adult BMI Clinical Standard", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "CDC National Center for Health Statistics" },
+      { name: "ACS Body Weight & Health Reference Standards", url: "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html", org: "American Cancer Society (ACS)" },
+      { name: "CDC Adult BMI Reference Standards", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "CDC National Center for Health Statistics" },
       { name: "NIH Body Composition Assessment", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/", org: "National Institutes of Health (PMC)" }
     ],
-    disclaimer: "Medical Disclaimer: The Real BMI Calculator provides educational metrics (BMI, BMR, TDEE) and screening estimates based on population statistics. It does not replace individualized medical advice, clinical diagnosis, or treatment by a licensed physician."
+    disclaimer: "Educational Disclaimer: Real BMI Calculator provides educational estimates (BMI, BMR, TDEE) based on published population statistics and formulas. Real BMI is an independent website and not a medical practice, hospital, clinic, or physician-reviewed service."
   },
   hi: {
-    reviewedTag: "प्रमाण-आधारित स्वास्थ्य मानक",
-    reviewedTitle: "WHO एवं CDC आधिकारिक दिशानिर्देशों पर आधारित",
-    reviewedDesc: "सभी गणनाएं, संदर्भ श्रेणियां और स्वास्थ्य मेट्रिक्स विश्व स्वास्थ्य संगठन (WHO), अमेरिकन कैंसर सोसाइटी (ACS) और सीडीसी (CDC) के आधिकारिक दिशानिर्देशों का उपयोग करके कैलिब्रेट किए गए हैं।",
-    boardLabel: "संदर्भ मानक",
-    boardValue: "Real BMI Reference Team",
-    lastUpdated: "अद्यतन: 2026 संदर्भ डेटा",
-    icdCode: "WHO एवं CDC मानक संरेखित",
-    sourcesTitle: "प्राथमिक वैज्ञानिक स्रोत और उद्धरण",
+    reviewedTag: "विधि एवं शोध स्रोत",
+    reviewedTitle: "WHO एवं CDC दिशानिर्देशों के संदर्भों पर आधारित",
+    reviewedDesc: "सभी गणनाएं और संदर्भ श्रेणियां विश्व स्वास्थ्य संगठन (WHO) और सीडीसी (CDC) के प्रकाशित गणितीय सूत्रों और संदर्भ डेटा पर आधारित हैं।",
+    boardLabel: "विधि एवं रचयिता",
+    boardValue: "Bhawanshi Dosi द्वारा निर्मित एवं संचालित",
+    lastUpdated: "विधि अद्यतन: 2026",
+    icdCode: "संदर्भ-आधारित कैलकुलेटर विधि",
+    sourcesTitle: "प्राथमिक संदर्भ स्रोत और उद्धरण",
     sources: [
       { name: "डब्ल्यूएचओ मोटापा दिशानिर्देश", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "विश्व स्वास्थ्य संगठन" },
       { name: "अमेरिकन कैंसर सोसाइटी वजन एवं स्वास्थ्य गाइड", url: "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html", org: "American Cancer Society (ACS)" },
       { name: "सीडीसी एडल्ट बीएमआई मानक", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "सीडीसी हेल्थ स्टैटिस्टिक्स" },
       { name: "एनआईएच शरीर संरचना मूल्यांकन", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/", org: "नेशनल इंस्टीट्यूट ऑफ हेल्थ" }
     ],
-    disclaimer: "चिकित्सा अस्वीकरण: Real BMI कैलकुलेटर केवल शैक्षिक मीट्रिक और जनसंख्या आंकड़ों के आधार पर स्क्रीनिंग अनुमान प्रदान करता है। यह किसी लाइसेंस प्राप्त चिकित्सक द्वारा व्यक्तिगत चिकित्सा सलाह का स्थान नहीं लेता है।"
+    disclaimer: "अस्वीकरण: Real BMI कैलकुलेटर केवल शैक्षिक और नियोजन उद्देश्यों के लिए अनुमान प्रदान करता है। यह कोई मेडिकल प्रैक्टिस या डॉक्टर द्वारा समीक्षित सेवा नहीं है।"
   },
   es: {
-    reviewedTag: "Estándar de Salud Basado en Evidencia",
-    reviewedTitle: "Alineado con las Directrices Oficiales de la OMS y los CDC",
-    reviewedDesc: "Todos los cálculos y rangos de referencia se calibran según las pautas oficiales de la OMS, la Sociedad Americana del Cáncer (ACS) y los CDC.",
-    boardLabel: "Estándares de Referencia",
-    boardValue: "Equipo de Referencia Real BMI",
-    lastUpdated: "Actualizado: Datos de Referencia 2026",
-    icdCode: "Estándares OMS y CDC",
-    sourcesTitle: "Fuentes Científicas Primarias y Citas",
+    reviewedTag: "Metodología y Fuentes",
+    reviewedTitle: "Basado en Directrices de la OMS y los CDC",
+    reviewedDesc: "Todos los cálculos y rangos de referencia se basan en fórmulas matemáticas publicadas y pautas oficiales de la OMS y los CDC.",
+    boardLabel: "Metodología y Autor",
+    boardValue: "Creado y Mantenido por Bhawanshi Dosi",
+    lastUpdated: "Metodología actualizada: 2026",
+    icdCode: "Metodología basada en referencias",
+    sourcesTitle: "Fuentes Primarias y Citas",
     sources: [
       { name: "Pautas de Obesidad de la OMS", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "Organización Mundial de la Salud" },
       { name: "Estándares de Peso y Cáncer de la ACS", url: "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html", org: "Sociedad Americana del Cáncer" },
-      { name: "Estándar Clínico de IMC de los CDC", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "CDC Centro de Estadísticas de Salud" },
+      { name: "Estándar de IMC de los CDC", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "CDC Centro de Estadísticas de Salud" },
       { name: "Evaluación de Composición Corporal de los NIH", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/", org: "Institutos Nacionales de Salud" }
     ],
-    disclaimer: "Aviso Médico: Real BMI Calculator proporciona métricas educativas basadas en datos poblacionales. No reemplaza el consejo médico profesional."
+    disclaimer: "Aviso Educativo: Real BMI Calculator proporciona estimaciones educativas basadas en datos poblacionales. Real BMI es un proyecto independiente y no una práctica médica."
   },
   fr: {
-    reviewedTag: "Norme de Santé Basée sur la Science",
-    reviewedTitle: "Aligné sur les Directives Officielles de l'OMS et des CDC",
-    reviewedDesc: "Tous les calculs et plages de référence sont calibrés selon les directives officielles de l'OMS, de l'ACS et des CDC.",
-    boardLabel: "Normes de Référence",
-    boardValue: "Équipe de Référence Real BMI",
-    lastUpdated: "Mis à jour: Données 2026",
-    icdCode: "Normes OMS & CDC Alignées",
-    sourcesTitle: "Sources Scientifiques Primaires et Citations",
+    reviewedTag: "Méthodologie & Sources",
+    reviewedTitle: "Basé sur les Directives de l'OMS et des CDC",
+    reviewedDesc: "Tous les calculs et plages de référence sont établis selon les formules publiées et les directives officielles de l'OMS et des CDC.",
+    boardLabel: "Méthodologie & Auteur",
+    boardValue: "Créé et Maintenu par Bhawanshi Dosi",
+    lastUpdated: "Méthodologie mise à jour: 2026",
+    icdCode: "Méthodologie basée sur des références",
+    sourcesTitle: "Sources Scientifiques et Citations",
     sources: [
       { name: "Directives de l'OMS sur l'Obésité", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "Organisation Mondiale de la Santé" },
       { name: "Normes Poids et Cancer de l'ACS", url: "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html", org: "American Cancer Society" },
-      { name: "Norme Clinique d'IMC des CDC", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "CDC National Center for Health Statistics" },
+      { name: "Norme d'IMC des CDC", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "CDC National Center for Health Statistics" },
       { name: "Évaluation de la Composition Corporelle du NIH", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/", org: "National Institutes of Health" }
     ],
-    disclaimer: "Avertissement Médical: Real BMI Calculator fournit des métriques éducatives basées sur des statistiques démographiques. Il ne remplace pas l'avis d'un médecin."
+    disclaimer: "Avertissement Éducatif: Real BMI Calculator fournit des estimations éducatives. Il s'agit d'un projet indépendant et non d'un service médical."
   },
   de: {
-    reviewedTag: "Evidenzbasierter Gesundheitsstandard",
-    reviewedTitle: "Ausgerichtet an offiziellen WHO- & CDC-Richtlinien",
-    reviewedDesc: "Alle Berechnungen und Referenzbereiche werden nach offiziellen Richtlinien der WHO, ACS und CDC kalibriert.",
-    boardLabel: "Referenzstandards",
-    boardValue: "Real BMI Referenz-Team",
-    lastUpdated: "Aktualisiert: Referenzdaten 2026",
-    icdCode: "WHO & CDC Standards Ausgerichtet",
-    sourcesTitle: "Primäre Wissenschaftliche Quellen & Zitate",
+    reviewedTag: "Methodik & Quellen",
+    reviewedTitle: "Basiert auf WHO- & CDC-Richtlinien",
+    reviewedDesc: "Alle Berechnungen und Referenzbereiche basieren auf veröffentlichten Formeln und offiziellen Richtlinien der WHO und CDC.",
+    boardLabel: "Methodik & Autor",
+    boardValue: "Erstellt & Gepflegt von Bhawanshi Dosi",
+    lastUpdated: "Methodik aktualisiert: 2026",
+    icdCode: "Referenzbasierte Rechner-Methodik",
+    sourcesTitle: "Primäre Quellen & Zitate",
     sources: [
       { name: "WHO Adipositas-Richtlinien", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "Weltgesundheitsorganisation" },
       { name: "ACS Gewicht & Krebsrisiko Standards", url: "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html", org: "American Cancer Society" },
       { name: "CDC Erwachsenen-BMI-Standard", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "CDC National Center for Health Statistics" },
       { name: "NIH Körperzusammensetzung Bewertung", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/", org: "National Institutes of Health" }
     ],
-    disclaimer: "Medizinischer Hinweis: Real BMI Calculator bietet Bildungsmetriken basierend auf Bevölkerungstatistiken. Er ersetzt keine ärztliche Beratung."
+    disclaimer: "Bildungshinweis: Real BMI Calculator bietet Schätzungen zu Bildungszwecken. Es ist ein unabhängiges Projekt und keine medizinische Praxis."
   },
   ko: {
-    reviewedTag: "근거 기반 건강 표준",
-    reviewedTitle: "공식 WHO 및 CDC 지침 준수",
-    reviewedDesc: "모든 계산 및 건강 지표는 세계보건기구(WHO), 미국암학회(ACS) 및 CDC의 공식 지침에 따라 보정됩니다.",
-    boardLabel: "참고 표준",
-    boardValue: "Real BMI 참조 팀",
-    lastUpdated: "최신화: 2026 참조 데이터",
-    icdCode: "WHO 및 CDC 표준 준수",
-    sourcesTitle: "주요 과학적 출처 및 인용",
+    reviewedTag: "방법론 및 출처",
+    reviewedTitle: "WHO 및 CDC 지침 준수",
+    reviewedDesc: "모든 계산 및 건강 지표는 세계보건기구(WHO) 및 CDC의 발표된 수학적 공식과 참조 데이터를 기반으로 합니다.",
+    boardLabel: "방법론 및 작성자",
+    boardValue: "Bhawanshi Dosi 제작 및 관리",
+    lastUpdated: "방법론 업데이트: 2026",
+    icdCode: "참조 기반 계산기 방법론",
+    sourcesTitle: "주요 출처 및 인용",
     sources: [
       { name: "WHO 비만 지침", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "세계보건기구" },
       { name: "ACS 체중 및 암 위험 표준", url: "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html", org: "미국암학회" },
-      { name: "CDC 성인 BMI 임상 표준", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "CDC 국립보건통계센터" },
+      { name: "CDC 성인 BMI 표준", url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html", org: "CDC 국립보건통계센터" },
       { name: "NIH 체성분 평가", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/", org: "미국 국립보건원" }
     ],
-    disclaimer: "의학적 면책 조항: Real BMI 계산기는 통계 데이터 기반의 교육용 지표를 제공합니다. 의사의 진단을 대신하지 않습니다."
+    disclaimer: "교육용 면책 조항: Real BMI 계산기는 교육용 추정치를 제공합니다. 이 사이트는 독립적인 프로젝트이며 의료 기관이 아닙니다."
   }
 };
 

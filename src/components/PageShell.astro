@@ -5,6 +5,7 @@ interface Props {
   description?: string;
   returnUrl?: string;
   returnLabel?: string;
+  showSidebar?: boolean;
 }
 
 const {
@@ -12,7 +13,8 @@ const {
   eyebrow,
   description,
   returnUrl = '/en',
-  returnLabel = 'Home'
+  returnLabel = 'Home',
+  showSidebar = false
 } = Astro.props as Props;
 ---
 
@@ -30,24 +32,30 @@ const {
       {description && <p class="max-w-3xl text-base md:text-lg leading-relaxed text-[var(--muted-foreground)]">{description}</p>}
     </div>
 
-    <div class="grid gap-10 lg:grid-cols-[1.35fr_0.75fr] items-start">
-      <div class="space-y-10">
+    {showSidebar ? (
+      <div class="grid gap-10 lg:grid-cols-[1.35fr_0.75fr] items-start">
+        <div class="space-y-10">
+          <slot />
+        </div>
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-5 sm:p-8 shadow-[var(--shadow-soft)]">
+          <p class="text-xs uppercase tracking-[0.28em] font-semibold text-[var(--accent)]">Need help?</p>
+          <h2 class="mt-4 text-2xl font-black tracking-tight text-[var(--foreground)]">Get in touch</h2>
+          <p class="mt-4 text-sm leading-relaxed text-[var(--muted-foreground)]">
+            Have questions about a calculator or its methodology? Contact me directly for website support and feedback.
+          </p>
+          <a href="mailto:support@realbmicalculator.com" class="mt-6 inline-flex items-center justify-center w-full rounded-[1.25rem] border border-[var(--accent)] bg-[var(--accent)]/5 px-4 py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-[var(--accent)] transition hover:bg-[var(--accent)]/10 text-center">
+            support@realbmicalculator.com
+          </a>
+          <div class="mt-8 space-y-4 text-sm text-[var(--muted-foreground)] leading-relaxed">
+            <p class="font-semibold text-[var(--foreground)]">Response time</p>
+            <p>I aim to respond as quickly as possible to feedback and support requests.</p>
+          </div>
+        </aside>
+      </div>
+    ) : (
+      <div class="w-full space-y-10">
         <slot />
       </div>
-      <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-5 sm:p-8 shadow-[var(--shadow-soft)]">
-        <p class="text-xs uppercase tracking-[0.28em] font-semibold text-[var(--accent)]">Need help?</p>
-        <h2 class="mt-4 text-2xl font-black tracking-tight text-[var(--foreground)]">Get in touch</h2>
-        <p class="mt-4 text-sm leading-relaxed text-[var(--muted-foreground)]">
-          Have questions about our health calculator or want feedback on the tools? Reach our team directly for fast support and professional guidance.
-        </p>
-        <a href="mailto:support@realbmicalculator.com" class="mt-6 inline-flex items-center justify-center w-full rounded-[1.25rem] border border-[var(--accent)] bg-[var(--accent)]/5 px-4 py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-[var(--accent)] transition hover:bg-[var(--accent)]/10 text-center">
-          support@realbmicalculator.com
-        </a>
-        <div class="mt-8 space-y-4 text-sm text-[var(--muted-foreground)] leading-relaxed">
-          <p class="font-semibold text-[var(--foreground)]">Response time</p>
-          <p>We aim to respond within 24 hours on business days.</p>
-        </div>
-      </aside>
-    </div>
+    )}
   </div>
 </section>

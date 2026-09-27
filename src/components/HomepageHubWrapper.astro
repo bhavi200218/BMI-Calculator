@@ -20,32 +20,10 @@ const gTitle = {
   performance: groupTitles.performance[lang] || groupTitles.performance.en,
   specialty: groupTitles.specialty[lang] || groupTitles.specialty.en,
 };
-
-const selectCalcLabels: Record<string, string> = {
-  en: '-- Select a Calculator --',
-  es: '-- Selecciona una Calculadora --',
-  fr: '-- Choisissez un Calculateur --',
-  de: '-- Rechner Auswählen --',
-  ko: '-- 계산기 선택 --',
-  hi: '-- एक कैलकुलेटर चुनें --',
-};
-const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
 ---
 
 <div class="space-y-6 animate-in" style="animation-delay: 150ms;">
   
-  <!-- Mobile Dropdown Selector (Navigates directly to dedicated page) -->
-  <div class="block md:hidden relative">
-    <select id="calculatorDropdownSelector" class="matte-input w-full px-4 py-3.5 text-base font-bold rounded-[var(--radius-sm)] cursor-pointer h-[56px] border-[1.5px] border-[var(--border)] bg-[var(--input)] text-[var(--foreground)]">
-      <option value="" disabled selected>{tSelectCalc}</option>
-      {calculators.map(calc => (
-        <option value={calc.slug}>
-          {calc.name[lang] || calc.name['en']}
-        </option>
-      ))}
-    </select>
-  </div>
-
   <!-- Full 17 Calculators Grid (Navigates directly to dedicated pages) -->
   <div class="space-y-6">
     <!-- Group 1: Core Calculators (6) -->
@@ -108,17 +86,3 @@ const tSelectCalc = selectCalcLabels[lang] || selectCalcLabels.en;
     -webkit-backdrop-filter: blur(12px);
   }
 </style>
-
-<script is:inline define:vars={{ lang }}>
-  (function() {
-    const dropdown = document.getElementById('calculatorDropdownSelector');
-    if (dropdown) {
-      dropdown.addEventListener('change', (e) => {
-        const slug = e.target.value;
-        if (slug) {
-          window.location.href = '/' + (lang || 'en') + '/' + slug + '/';
-        }
-      });
-    }
-  })();
-</script>

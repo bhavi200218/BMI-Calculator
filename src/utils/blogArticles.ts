@@ -17,12 +17,12 @@ export const blogArticles: Record<string, any> = {
       fr: 'IMC et Normes Régionales'
     },
     description: {
-      en: 'Complete 2026 guide on BMI for Indians. Learn why 23 is overweight in India, WHO South-East Asia cut-offs, ideal weight chart, formula, and FAQs.',
-      hi: 'भारतीयों के लिए बीएमआई की संपूर्ण 2026 गाइड। जानें कि भारत में 23 पर ही ओवरवेट क्यों माना जाता है, फॉर्मूला, चार्ट और उत्तर।',
-      ko: '인도인 및 아시아인을 위한 BMI 2026 가이드. 아시아인 과체중 기준이 23인 이유와 WHO 지침, 공식 및 FAQ 안내.',
-      de: 'Vollständiger Leitfaden zum BMI für asiatische Bevölkerungen. Warum 23 als Übergewicht gilt, WHO-Standards und Formeln.',
-      es: 'Guía completa sobre el IMC para poblaciones asiáticas. Aprende por qué 23 es sobrepeso, límites de la OMS y fórmulas.',
-      fr: 'Guide complet sur l\'IMC pour les populations asiatiques. Découvrez pourquoi 23 est un surpoids, normes OMS et formules.'
+      en: 'Complete 2026 guide on BMI for Indians. Learn about BMI 23 and Asian-population reference thresholds, WHO South-East Asia cut-offs, healthy weight ranges, formulas, and FAQs.',
+      hi: 'भारतीयों के लिए बीएमआई की संपूर्ण 2026 गाइड। एशियाई आबादी के बीएमआई 23 संदर्भ मानकों, डब्ल्यूएचओ दिशानिर्देशों, स्वस्थ वजन सीमाओं और उत्तरों के बारे में जानें।',
+      ko: '인도인 및 아시아인을 위한 BMI 2026 가이드. 아시아인과 체중 지침 23과 WHO 지침, 공식 및 FAQ 안내.',
+      de: 'Vollständiger Leitfaden zum BMI für asiatische Bevölkerungen. Asiatische 23-Schwellenwerte, WHO-Standards und Formeln.',
+      es: 'Guía completa sobre el IMC para poblaciones asiáticas. Aprende sobre los umbrales asiáticos de 23, límites de la OMS y fórmulas.',
+      fr: 'Guide complet sur l\'IMC pour les populations asiatiques. Découvrez les seuils asiatiques de 23, normes OMS et formules.'
     },
     contentHtml: {
       en: `
@@ -690,7 +690,7 @@ export const blogArticles: Record<string, any> = {
       en: `
         <h2>BMI vs. Body Fat Percentage: What is the Difference?</h2>
         <p>While <strong>BMI</strong> measures total body mass relative to height, <strong>Body Fat Percentage (% Fat)</strong> estimates the proportion of body mass that is fat versus lean tissue (skeletal muscle, bone, and water).</p>
-        <p>For active individuals, athletes, and fitness enthusiasts, Body Fat Percentage offers far superior insight into physical conditioning than scale weight alone.</p>
+        <p>For active individuals, athletes, and fitness enthusiasts, Body Fat Percentage offers additional insight into physical conditioning compared to scale weight alone.</p>
       `,
       hi: `
         <h2>बीएमआई बनाम बॉडी फैट प्रतिशत</h2>

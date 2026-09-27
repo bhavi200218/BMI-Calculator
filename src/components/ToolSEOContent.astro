@@ -40,7 +40,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'What is the BMI Calculator and how to calculate BMI?', answer: 'Body Mass Index (BMI) is a widely used population health screening measure. To calculate BMI, divide weight in kilograms by height in meters squared (kg/m²), or use imperial units [Weight (lbs) / Height (inches)²] × 703. Our free BMI tool applies this standard formula to compute your score instantly.' },
         { question: 'How to calculate BMI accurately for men and women?', answer: 'BMI calculation is identical for adult men and women, relying on height and weight metrics. Our BMI Calculator evaluates your metric score against WHO reference ranges to determine healthy weight boundaries.' },
         { question: 'What is the official WHO BMI chart and BMI scale?', answer: 'The WHO BMI chart categorizes adults into four main ranges on the BMI scale: Underweight (<18.5), Healthy Weight (18.5–24.9), Overweight (25.0–29.9), and Obese (≥30.0). For Asian populations, the overweight cutoff begins at 23.0.' },
-        { question: 'Why use Real BMI vs basic standard BMI Calculators?', answer: 'Real BMI incorporates established WHO protocols, Asian cutoff adjustments (23.0 kg/m²), BMR metabolic estimates, and 3D volume scaling to deliver comprehensive health analytics.' },
+        { question: 'Why use Real BMI vs basic standard BMI Calculators?', answer: 'Real BMI incorporates established WHO protocols, Asian cutoff adjustments (23.0 kg/m²), BMR metabolic estimates, and 3D volume scaling to deliver additional health context and reference metrics.' },
         { question: 'Is a standard BMI Calculator accurate for muscular athletes?', answer: 'A standard BMI Calculator measures total body mass relative to height and does not differentiate muscle density from adipose fat. Muscular athletes often register higher BMI scores despite healthy low body fat levels.' }
       ]
     }
@@ -65,7 +65,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'What scientific research backs 3D Body Visualizers?', answer: 'Peer-reviewed research published in NIH PubMed Central (PMC6538417) and Nature Scientific Reports (2023) demonstrates that 3D optical scanning and volumetric body shape models capture body proportion context that standard 2D BMI formulas miss.' },
         { question: 'Why can two people with the same BMI look completely different in 3D?', answer: 'Standard BMI only measures weight relative to height and cannot differentiate muscle mass, bone density, or fat distribution. A 3D Body Visualizer shows proportion context that a single 2D number leaves out.' },
         { question: 'What is the difference between standard BMI and 3D Height-Adjusted BMI?', answer: 'The standard BMI formula scales height using a squared term, while the 2.5-power formula produces different values at different heights.' },
-        { question: 'What are the benefits of a 3D Body Visualizer?', answer: 'The 3D visualizer uses the 2.5 exponent formula discussed by Nick Trefethen to reduce height-scaling distortion and adds visual proportion context for educational comparison.' },
+        { question: 'What are the benefits of a 3D Body Visualizer?', answer: 'The 2.5-power formula produces a height-adjusted alternative to conventional BMI, offering visual proportion context for educational comparison.' },
         { question: 'Does the 3D Body Visualizer measure body fat percentage?', answer: 'No. The 3D Body Visualizer calculates height and weight relationships and renders a reference 3D outline. It is an educational screening tool, not a direct measure of body fat or medical diagnosis.' }
       ]
     }
@@ -105,14 +105,14 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       formulaCode: 'BMR = 10W + 6.25H - 5A + s (s = +5 for men, -161 for women)',
       tableTitle: 'BMR Calculator Formula Comparison (Mifflin St Jeor vs Harris-Benedict)',
       tableRows: [
-        { col1: 'Mifflin St Jeor Formula', col2: '±10% of measured RMR', col3: 'Widely accepted modern formula equation for non-obese & obese individuals' },
-        { col1: 'Revised Harris-Benedict (1984)', col2: '±15% of measured RMR', col3: 'Tends to overestimate daily resting calorie burn by 5% to 10%' },
-        { col1: 'Katch-McArdle Formula', col2: 'Requires Lean Mass %', col3: 'Ideal for athletes with verified body fat percentage' }
+        { col1: 'Mifflin St Jeor Formula', col2: 'Modern Reference Equation', col3: 'Widely referenced modern formula equation for adult resting metabolic estimation' },
+        { col1: 'Revised Harris-Benedict (1984)', col2: 'Historical Reference Equation', col3: 'Classic metabolic equation historically used in clinical literature' },
+        { col1: 'Katch-McArdle Formula', col2: 'Requires Lean Mass %', col3: 'Ideal for individuals with verified lean body mass percentage' }
       ],
       faqs: [
         { question: 'What is the BMR Calculator and how to calculate BMR?', answer: 'The BMR Calculator (Basal Metabolic Rate Calculator) is a health tool that estimates your BMR—the minimum number of calories your body burns at complete rest to maintain vital life functions.' },
         { question: 'How to calculate BMR using the Mifflin St Jeor formula?', answer: 'To calculate BMR with the BMR Calculator using the Mifflin St Jeor formula: For Men, multiply weight in kg by 10, add height in cm multiplied by 6.25, subtract age in years multiplied by 5, and add 5. For Women, follow the exact same calculation but subtract 161 at the end.' },
-        { question: 'Why is the Mifflin St Jeor equation better than Harris-Benedict in a BMR Calculator?', answer: 'Clinical trials published in the Journal of the American Dietetic Association showed the Mifflin St Jeor formula in our BMR Calculator is within ±10% of measured resting metabolic rate (RMR) in 82% of individuals, making it more reliable than the older 1919 Harris-Benedict formula.' },
+        { question: 'Why is the Mifflin St Jeor equation widely used in BMR Calculators?', answer: 'The Mifflin St Jeor equation was developed using contemporary population data and is widely cited in modern nutritional literature. However, different equations can produce different estimates, as no formula directly measures resting metabolic rate without specialized equipment.' },
         { question: 'How many calories do I burn at rest according to the BMR Calculator?', answer: 'Your resting calorie burn is your Basal Metabolic Rate (BMR). For most healthy adults, BMR accounts for 60% to 75% of total daily calorie expenditure before accounting for daily physical movement or workout activities.' },
         { question: 'What is the difference between BMR Calculator score and TDEE?', answer: 'BMR (Basal Metabolic Rate) is your resting calorie burn calculated while at complete rest. TDEE (Total Daily Energy Expenditure) multiplies BMR by an activity factor to include daily movement, work, and exercise.' }
       ]
@@ -155,15 +155,15 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       tableRows: [
         { col1: 'Essential Fat Level', col2: 'Men: 2% - 5% | Women: 10% - 13%', col3: 'Minimum physiological fat required for hormone regulation & organ cushioning' },
         { col1: 'Athletes Category', col2: 'Men: 6% - 13% | Women: 14% - 20%', col3: 'Low body fat percentage typical in endurance & resistance trained athletes' },
-        { col1: 'Fitness Level', col2: 'Men: 14% - 17% | Women: 21% - 24%', col3: 'Optimal athletic physique, metabolic health, and muscle definition' },
+        { col1: 'Fitness Level', col2: 'Men: 14% - 17% | Women: 21% - 24%', col3: 'Reference range commonly associated with fitness-oriented populations' },
         { col1: 'Average Population', col2: 'Men: 18% - 24% | Women: 25% - 31%', col3: 'Standard acceptable body fat percentage range for healthy adults' },
-        { col1: 'Obese Classification', col2: 'Men: ≥ 25% | Women: ≥ 32%', col3: 'Elevated risk category for cardiovascular disease and metabolic syndrome' }
+        { col1: 'Obese Classification', col2: 'Men: ≥ 25% | Women: ≥ 32%', col3: 'Higher body-fat reference category; interpretation varies by age, sex, population, and measurement method' }
       ],
       faqs: [
         { question: 'What is the Body Fat Calculator and how does the US Navy formula work?', answer: 'The Body Fat Calculator is an anthropometric health tool developed by the Naval Health Research Center. It computes body fat percentage using circumference measurements (waist, neck, and hips for women) combined with height in a logarithmic regression equation.' },
-        { question: 'How accurate is the Body Fat Calculator compared to DEXA scans?', answer: 'Validation studies indicate that the US Navy Body Fat Calculator correlates closely (within 1.5% to 3.0%) with dual-energy X-ray absorptiometry (DEXA) scans, making it a convenient circumference-based body fat estimation method.' },
+        { question: 'How accurate is the Body Fat Calculator compared to DEXA scans?', answer: 'Circumference-based estimates can differ from laboratory or imaging-based methods such as DEXA. Results should be interpreted as estimates rather than direct measurements.' },
         { question: 'How do I take tape measure readings for the Body Fat Calculator?', answer: 'For Men: measure neck circumference just below the larynx and waist horizontally at the navel level. For Women: measure neck below the larynx, waist at the narrowest natural waistline, and hips at the widest point of the buttocks.' },
-        { question: 'Why does the Body Fat Calculator use neck and waist instead of scale weight?', answer: 'Scale weight alone fails to differentiate between skeletal muscle and adipose fat. Circumference metrics reflect abdominal fat deposition, providing a truer indicator of physical readiness and body composition.' },
+        { question: 'Why does the Body Fat Calculator use neck and waist instead of scale weight?', answer: 'Scale weight alone fails to differentiate between skeletal muscle and adipose fat. Circumference metrics reflect abdominal fat deposition, providing additional context about body composition.' },
         { question: 'What is a healthy body fat percentage for men and women?', answer: 'According to the American Council on Exercise (ACE), a healthy fitness body fat percentage is 14%-17% for men and 21%-24% for women. Essential physiological minimum fat is 2-5% for men and 10-13% for women.' }
       ]
     }
@@ -172,7 +172,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Boer Equation Standard',
       title: 'Lean Body Mass Calculator & LBM Metric',
-      intro: 'Calculate your weight excluding fat with our Lean Body Mass Calculator. Using the Boer formula, assess skeletal muscle mass, organ weight, and overall lean mass ratio.',
+      intro: 'Calculate your weight excluding fat with our Lean Body Mass Calculator. Using the Boer formula, estimate lean body mass, organ weight, and overall lean mass ratio. LBM is not the same as skeletal muscle mass alone.',
       formulaTitle: 'Boer Formula for LBM',
       formulaDesc: 'Men: LBM = (0.407 × W) + (0.267 × H) - 19.2 | Women: LBM = (0.252 × W) + (0.473 × H) - 48.3',
       tableTitle: 'Lean Body Mass Composition',
@@ -189,25 +189,25 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   'ideal-weight-calculator': {
     en: {
       eyebrow: 'Ideal Body Weight Reference',
-      title: 'Ideal Weight Calculator – Ideal Body Weight (IBW) Tool',
-      intro: 'Use our free Ideal Weight Calculator to estimate an ideal body weight baseline for your height. Based on four major equations—Devine, Robinson, Miller, and Hamwi formulas—determine your ideal body weight (IBW) baseline and healthy WHO BMI weight range.',
+      title: 'Ideal Body Weight (IBW) Reference Calculator',
+      intro: 'Use our free Ideal Body Weight Reference Calculator to estimate a reference body weight baseline for your height based on historical formulas (Devine, Robinson, Miller, and Hamwi). Important: IBW equations are historical reference formulas. They provide population-based estimates and do not determine an individual\'s medically ideal or healthiest weight.',
       formulaTitle: 'Ideal Body Weight (IBW) Formulas',
       formulaDesc: 'Devine (Men): 50kg + 2.3kg/inch >5ft | Devine (Women): 45.5kg + 2.3kg/inch >5ft | Robinson: 52kg/49kg base + 1.9kg/1.7kg per inch',
       formulaCode: 'IBW (Devine Male) = 50 + 2.3 × (Height_inches - 60) | IBW (Devine Female) = 45.5 + 2.3 × (Height_inches - 60)',
       tableTitle: 'Ideal Body Weight (IBW) Formulas Comparison Matrix',
       tableRows: [
-        { col1: 'Devine Formula (1974)', col2: 'Men: 50.0kg + 2.3kg/inch | Women: 45.5kg + 2.3kg/inch', col3: 'Widely referenced benchmark used in pharmacology & health literature' },
+        { col1: 'Devine Formula (1974)', col2: 'Men: 50.0kg + 2.3kg/inch | Women: 45.5kg + 2.3kg/inch', col3: 'Widely referenced historical benchmark used in health literature' },
         { col1: 'Robinson Formula (1983)', col2: 'Men: 52.0kg + 1.9kg/inch | Women: 49.0kg + 1.7kg/inch', col3: 'Formula tailored for average population frame sizes' },
         { col1: 'Miller Formula (1983)', col2: 'Men: 56.2kg + 1.41kg/inch | Women: 53.1kg + 1.36kg/inch', col3: 'Alternative equation for taller adult body frames' },
-        { col1: 'Hamwi Formula (1964)', col2: 'Men: 48.0kg + 2.7kg/inch | Women: 45.5kg + 2.2kg/inch', col3: 'Original rule of thumb used in nutrition therapy' },
+        { col1: 'Hamwi Formula (1964)', col2: 'Men: 48.0kg + 2.7kg/inch | Women: 45.5kg + 2.2kg/inch', col3: 'Original rule of thumb used in nutrition reference' },
         { col1: 'WHO Healthy BMI Range', col2: 'BMI 18.5 kg/m² to 24.9 kg/m²', col3: 'Physiological healthy weight window accommodating muscle & frame variation' }
       ],
       faqs: [
-        { question: 'What is the Ideal Weight Calculator and how does it calculate IBW?', answer: 'An Ideal Weight Calculator determines a target Ideal Body Weight (IBW) baseline based on height and biological sex. It computes IBW using the Devine formula (50 kg base for men, 45.5 kg for women, plus 2.3 kg per inch over 5 feet) alongside the Robinson, Miller, and Hamwi equations.' },
-        { question: 'What is my ideal weight for my height?', answer: 'Your ideal weight depends on height, gender, and frame size. For a 5\'10" (178 cm) male, the Devine ideal weight is ~73 kg (161 lbs). For a 5\'5" (165 cm) female, the Devine ideal weight is ~57 kg (125 lbs).' },
-        { question: 'What is the difference between Devine, Robinson, and Miller formulas?', answer: 'The Devine formula (1974) is a widely referenced benchmark in pharmacology literature. The Robinson formula (1983) adjusts female ideal weight slightly higher, while the Miller formula (1983) yields higher base weights for shorter heights but lower scaling per inch for taller adults.' },
+        { question: 'What is the Ideal Weight Calculator and how does it calculate IBW?', answer: 'An Ideal Weight Calculator determines a target Ideal Body Weight (IBW) baseline based on height and biological sex using historical formulas (Devine, Robinson, Miller, Hamwi). These outputs are population references, not individual medical prescriptions.' },
+        { question: 'What is my ideal weight for my height?', answer: 'Your ideal weight depends on height, gender, frame size, and muscle mass. For a 5\'10" (178 cm) male, the Devine reference is ~73 kg (161 lbs). For a 5\'5" (165 cm) female, the Devine reference is ~57 kg (125 lbs).' },
+        { question: 'What is the difference between Devine, Robinson, and Miller formulas?', answer: 'The Devine formula (1974) is a widely referenced benchmark in literature. The Robinson formula (1983) adjusts female reference weight slightly higher, while the Miller formula (1983) yields higher base weights for shorter heights but lower scaling per inch for taller adults.' },
         { question: 'Why does ideal weight differ from total scale weight?', answer: 'Ideal Body Weight (IBW) focuses on lean body mass targets for height, while total scale weight includes body fat, skeletal muscle mass, bone density, and hydration levels.' },
-        { question: 'Is Ideal Body Weight (IBW) better than BMI?', answer: 'IBW gives a single target weight baseline for dosing and body composition goals, whereas WHO BMI provides a broader healthy range (18.5 to 24.9 kg/m²). Using both provides the complete picture.' }
+        { question: 'Is Ideal Body Weight (IBW) better than BMI?', answer: 'IBW gives a single historical reference weight baseline, whereas WHO BMI provides a broader healthy range (18.5 to 24.9 kg/m²). Using both provides a broader context.' }
       ]
     }
   },
@@ -215,47 +215,47 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Weight Management Standard',
       title: 'Calorie Deficit Calculator – Daily Calorie Target for Weight Loss',
-      intro: 'Use our free Calorie Deficit Calculator to estimate the daily calorie deficit for sustainable fat loss. Based on the Mifflin-St Jeor BMR equation and Total Daily Energy Expenditure (TDEE), determine how many calories to eat to manage weight safely.',
-      formulaTitle: 'Calorie Deficit Calculation Formulas & Weight Loss Math',
-      formulaDesc: 'Daily Calorie Intake = TDEE - Target Deficit (300 to 750 kcal/day) | Weekly Fat Loss (kg) = (Daily Deficit × 7) / 7700 kcal',
+      intro: 'Use our free Calorie Deficit Calculator to estimate the daily calorie deficit for sustainable weight targets. Based on the Mifflin-St Jeor BMR equation and Total Daily Energy Expenditure (TDEE), estimate calorie targets for your personal goals.',
+      formulaTitle: 'Calorie Deficit Calculation Formulas & Weight Change Math',
+      formulaDesc: 'Daily Calorie Intake = TDEE - Target Deficit (300 to 750 kcal/day) | Weekly Weight Change Estimate (kg) = (Daily Deficit × 7) / 7700 kcal (Note: 7700 kcal/kg is a rough energy-equivalent estimate)',
       formulaCode: 'Target Calories = [ (10 × W_kg) + (6.25 × H_cm) - (5 × Age) + S ] × Activity Multiplier - Daily Deficit',
-      tableTitle: 'Calorie Deficit Levels, Weekly Fat Loss Rates & Muscle Preservation Matrix',
+      tableTitle: 'Calorie Deficit Levels & Estimated Weekly Weight-Change Rates',
       tableRows: [
-        { col1: 'Aggressive Cut (-25% Deficit)', col2: '~0.75 kg (1.6 lbs) loss / week', col3: 'Requires higher protein intake to safeguard skeletal muscle' },
-        { col1: 'Moderate Cut (-20% Deficit)', col2: '~0.50 kg (1.1 lbs) loss / week', col3: 'Recommended standard for sustainable fat loss' },
-        { col1: 'Mild Cut (-10% to -15% Deficit)', col2: '~0.25 to 0.35 kg loss / week', col3: 'Best for lean individuals & athletes preserving strength' },
+        { col1: 'Larger Example Deficit (-25%)', col2: '~0.75 kg (1.6 lbs) loss / week', col3: 'May help support lean-mass retention when protein intake and resistance training are appropriate' },
+        { col1: 'Moderate Example Deficit (-20%)', col2: '~0.50 kg (1.1 lbs) loss / week', col3: 'Example moderate deficit for fat loss planning' },
+        { col1: 'Smaller Example Deficit (-10% to -15%)', col2: '~0.25 to 0.35 kg loss / week', col3: 'Smaller example deficit for gradual weight-change targets' },
         { col1: 'Maintenance Baseline (0% Deficit)', col2: '0.00 kg loss / week', col3: 'Estimated TDEE energy balance for weight stabilization' }
       ],
       faqs: [
-        { question: 'What is a calorie deficit and how does a calorie deficit calculator work?', answer: 'A calorie deficit occurs when daily energy intake is less than Total Daily Energy Expenditure (TDEE). The calorie deficit calculator computes your BMR using the Mifflin St Jeor equation, applies your physical activity multiplier to determine TDEE, and subtracts a target deficit (300 to 750 kcal/day) to induce steady fat oxidation.' },
-        { question: 'How many calories should I eat to lose 1 kg or 1 lb per week?', answer: 'One pound of body fat contains approximately 3,500 kcal (1 kg = ~7,700 kcal). A daily calorie deficit of 500 kcal creates a 3,500 kcal weekly deficit, producing ~0.45 kg (1 lb) of fat loss per week safely.' },
-        { question: 'What is a safe daily calorie deficit that won\'t ruin my metabolism?', answer: 'A daily deficit of 15% to 25% below TDEE (typically 300 to 500 kcal/day) is widely recommended. This range promotes steady fat loss while protecting lean muscle tissue.' },
-        { question: 'How much protein should I eat while in a calorie deficit?', answer: 'During a calorie deficit, daily protein requirements increase to 1.8 – 2.4 grams per kilogram of body weight. Consuming higher protein prevents muscle breakdown (catabolism) and supports satiety.' },
+        { question: 'What is a calorie deficit and how does a calorie deficit calculator work?', answer: 'A calorie deficit occurs when daily energy intake is less than Total Daily Energy Expenditure (TDEE). The calorie deficit calculator computes your BMR using the Mifflin St Jeor equation, applies your physical activity multiplier to determine TDEE, and subtracts an example target deficit (300 to 750 kcal/day) to estimate weight-change targets.' },
+        { question: 'How many calories should I eat to lose 1 kg or 1 lb per week?', answer: 'A commonly used rough energy-equivalent estimate is approximately 7,700 kcal per kilogram of body mass (~3,500 kcal per pound). Actual weight change varies between individuals and over time. A daily deficit of 500 kcal creates an example 3,500 kcal weekly energy deficit.' },
+        { question: 'What calorie deficit is commonly used for weight management?', answer: 'There is no single calorie-deficit value that is appropriate for everyone. Individual energy needs, health status, activity, and dietary intake should be considered. A daily deficit range of 300 to 500 kcal below TDEE is often used as an example starting range.' },
+        { question: 'How much protein should I eat while in a calorie deficit?', answer: 'During a calorie deficit, protein requirements generally range from 1.6 to 2.2 grams per kilogram of body weight to support muscle retention and satiety.' },
         { question: 'What should I do if my weight loss stalls in a calorie deficit?', answer: 'Weight loss stalls often stem from uncounted food calories, reduced non-exercise physical activity (NEAT), or fluid retention. Recalculate your TDEE at your new lower weight to keep energy goals accurate.' }
       ]
     }
   },
   'protein-intake-calculator': {
     en: {
-      eyebrow: 'ISSN Sports Nutrition Standard',
-      title: 'Protein Intake Calculator & Daily Protein Requirement Tool',
-      intro: 'Calculate "how much protein do I need a day" with our free Protein Intake Calculator. Aligned with International Society of Sports Nutrition (ISSN) guidelines, determine your estimated daily protein target for muscle hypertrophy, fat loss, or health maintenance.',
+      eyebrow: 'Sports Nutrition Reference',
+      title: 'Protein Intake Calculator & Daily Protein Reference Range Tool',
+      intro: 'Calculate an estimated daily protein intake target with our free Protein Intake Calculator. Based on sports nutrition reference ranges, estimate your suggested daily protein target based on body weight, activity level, and goals.',
       formulaTitle: 'Protein Intake Formula & Goal Multipliers',
-      formulaDesc: 'Sedentary Baseline: 0.8 g / kg | Endurance Athletes: 1.2 - 1.4 g / kg | Fat Loss & Muscle Retention: 1.8 - 2.4 g / kg | Muscle Growth (Hypertrophy): 1.6 - 2.2 g / kg',
+      formulaDesc: 'Sedentary Baseline: 0.8 g / kg | Endurance Athletes: 1.2 - 1.4 g / kg | Active Training: 1.6 - 2.2 g / kg',
       formulaCode: 'Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)',
-      tableTitle: 'Daily Protein Requirements (g/kg) Matrix by Activity & Goal',
+      tableTitle: 'Daily Protein Reference Range (g/kg) Matrix by Activity & Goal',
       tableRows: [
         { col1: 'Sedentary Adult Baseline', col2: '0.8 g / kg body weight', col3: 'Minimum RDA to prevent protein deficiency' },
-        { col1: 'Active Endurance Athlete', col2: '1.2 – 1.4 g / kg body weight', col3: 'Tissue repair & glycogen enzyme resynthesis' },
-        { col1: 'Muscle Growth (Hypertrophy)', col2: '1.6 – 2.2 g / kg body weight', col3: 'Maximal muscle protein synthesis (MPS) rate' },
-        { col1: 'Fat Loss Calorie Deficit (Aggressive)', col2: '2.0 – 2.4 g / kg body weight', col3: 'Protects lean skeletal muscle during energy restriction' }
+        { col1: 'Active Endurance Athlete', col2: '1.2 – 1.4 g / kg body weight', col3: 'Tissue repair & glycogen resynthesis' },
+        { col1: 'Muscle Growth (Hypertrophy)', col2: '1.6 – 2.2 g / kg body weight', col3: 'Common athletic target for muscle protein synthesis' },
+        { col1: 'Fat Loss Calorie Deficit', col2: '1.8 – 2.4 g / kg body weight', col3: 'Suggested range to preserve lean skeletal muscle during energy restriction' }
       ],
       faqs: [
-        { question: 'What is the Protein Intake Calculator?', answer: 'The Protein Intake Calculator is an evidence-based sports nutrition tool that calculates your daily protein requirement in grams based on body weight, fitness goals, and training intensity.' },
-        { question: 'How much protein do I need per day for muscle building vs weight loss?', answer: 'For muscle building, consume 1.6 to 2.2 grams of protein per kilogram of body weight. For fat loss during a calorie deficit, consume 2.0 to 2.4 g/kg to protect muscle tissue from breakdown.' },
+        { question: 'What is the Protein Intake Calculator?', answer: 'The Protein Intake Calculator is a sports nutrition tool that calculates your daily protein requirement estimate in grams based on body weight, fitness goals, and training intensity.' },
+        { question: 'How much protein do I need per day for muscle building vs weight loss?', answer: 'Suggested protein ranges vary based on physical activity: 1.6 to 2.2 g/kg is commonly used for muscle building, and 1.8 to 2.4 g/kg for calorie deficit training. Individual needs vary based on age, health status, and overall diet.' },
         { question: 'How to calculate daily protein requirement in grams per kg of body weight?', answer: 'Multiply your weight in kg by your target factor. For example, a 70 kg lifter aiming for muscle growth: 70 kg × 2.0 g/kg = 140 grams of protein daily.' },
         { question: 'What are the best high-protein food sources to reach daily targets?', answer: 'Complete protein sources include chicken breast (31g/100g), Greek yogurt (10g/100g), eggs (6g/egg), whey protein (24g/scoop), salmon (22g/100g), tofu (8g/100g), and lentils (9g/100g cooked).' },
-        { question: 'Can eating high protein harm healthy kidneys?', answer: 'Clinical trials published in the Journal of Nutrition show that high-protein diets (up to 2.8 g/kg) do not impair renal function or kidney filtration in healthy individuals.' }
+        { question: 'Who should consult a professional regarding protein intake targets?', answer: 'Sports nutrition literature provides general protein range estimates based on physical activity. Individuals with kidney disease, liver conditions, or other medical issues should discuss specific dietary protein targets with a qualified healthcare professional.' }
       ]
     }
   },
@@ -331,25 +331,25 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'body-surface-area-calculator': {
     en: {
-      eyebrow: 'Clinical Medical Mosteller & Du Bois Equations',
+      eyebrow: 'Mosteller & Du Bois Equations',
       title: 'Mosteller BSA Calculator (Square Root Method) & Body Surface Area Tool',
-      intro: 'Body Surface Area (BSA) is a measure of the total outer surface area of the body, calculated using the Mosteller formula or square root method. Our free clinical Mosteller BSA Calculator supports dual unit conversion (cm, in, ft, kg, lb) and computes total skin surface area (m²) using Mosteller [((Height × Weight)/3600)^½] and Du Bois formulas for medical dosing and chemotherapy.',
+      intro: 'Body Surface Area (BSA) is a measure of the total outer surface area of the body, calculated using the Mosteller formula or square root method. Our free Mosteller BSA Calculator supports dual unit conversion (cm, in, ft, kg, lb) and computes total skin surface area (m²) using Mosteller [((Height × Weight)/3600)^½] and Du Bois formulas for reference calculations.',
       formulaTitle: 'Mosteller BSA Formula Equations (Square Root, Power-of-Half & Multiplier Methods)',
       formulaDesc: 'Mosteller BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ] = ( [Height(cm) × Weight(kg)] / 3600 )^½ = 0.016667 × Weight (kg)^0.5 × Height (cm)^0.5 | Du Bois BSA (m²) = 0.007184 × Height (cm)^0.725 × Weight (kg)^0.425',
       formulaCode: 'BSA (m²) = [ (Height cm × Weight kg) / 3600 ]^½ = √ ( (H × W) / 3600 ) = 0.016667 × W^0.5 × H^0.5',
-      tableTitle: 'Body Surface Area Square Meters (m²) Pediatric & Adult Clinical Reference Standards',
+      tableTitle: 'Body Surface Area Square Meters (m²) Pediatric & Adult Reference Standards',
       tableRows: [
-        { col1: 'Infants (0–12 months)', col2: '0.25 m² – 0.35 m²', col3: 'Pediatric neonatal clinical baseline' },
+        { col1: 'Infants (0–12 months)', col2: '0.25 m² – 0.35 m²', col3: 'Pediatric neonatal baseline' },
         { col1: 'Toddlers (1–5 years)', col2: '0.50 m² – 0.70 m²', col3: 'Pediatric early childhood baseline' },
         { col1: 'Children (9–12 years)', col2: '1.07 m²', col3: 'Pediatric middle childhood reference' },
-        { col1: 'Adult Women Average', col2: '1.60 m²', col3: 'Standard adult female clinical reference' },
-        { col1: 'Adult Men Average', col2: '1.90 m²', col3: 'Standard adult male clinical reference' },
+        { col1: 'Adult Women Average', col2: '1.60 m²', col3: 'Standard adult female reference' },
+        { col1: 'Adult Men Average', col2: '1.90 m²', col3: 'Standard adult male reference' },
         { col1: 'Tall Athletic Male Average', col2: '2.10 m² – 2.30 m²', col3: 'Elevated muscle mass & height surface area' }
       ],
       faqs: [
         { question: 'What is the Mosteller BSA Calculator Square Meters?', answer: 'Body Surface Area (BSA) is a measure of the total outer surface area of the body, calculated using the Mosteller formula or square root method. Published by Dr. R.D. Mosteller in the New England Journal of Medicine (1987), it computes BSA in m² using ([Height(cm) × Weight(kg)]/3600)^½ or 0.016667 × Weight^0.5 × Height^0.5.' },
         { question: 'How to calculate body surface area square meters using the Mosteller formula?', answer: 'To calculate BSA square meters with the Mosteller formula: Multiply height in cm by weight in kg, divide by 3600, and take the square root or power of ½: ([Height(cm) × Weight(kg)]/3600)^½. For example, for 175 cm and 70 kg: √(175 × 70 / 3600) = √(3.4027) = 1.84 m².' },
-        { question: 'Why is the Mosteller formula used in chemotherapy dosing and clinical medicine?', answer: 'The Mosteller BSA formula is used in clinical oncology, nephrology, and burn fluid resuscitation because it simplifies complex exponential body surface area calculations while preserving extreme accuracy for drug dosing.' },
+        { question: 'Why is the Mosteller formula used in body surface area calculations?', answer: 'The Mosteller BSA formula simplifies complex exponential body surface area calculations while preserving mathematical accuracy for reference surface area estimation.' },
         { question: 'Why is BSA measured in square meters (m²)?', answer: 'Body surface area in square meters correlates closely with metabolic rate, cardiac output, and physiological clearance rates compared to body weight alone.' },
         { question: 'What is the average body surface area for adults?', answer: 'The average body surface area is approximately 1.60 m² for adult women and 1.90 m² for adult men.' }
       ]
@@ -359,23 +359,23 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Karvonen Cardio Protocol',
       title: 'Karvonen Heart Rate Zone Calculator & Target Heart Rate Tool',
-      intro: 'Calculate your personalized target cardio training zones with our free Karvonen Heart Rate Zone Calculator. Using the Karvonen formula method and Heart Rate Reserve (HRR), optimize your fat burn heart rate zone and aerobic conditioning.',
+      intro: 'Calculate estimated exercise heart-rate training zones using the Karvonen method and Heart Rate Reserve (HRR).',
       formulaTitle: 'Karvonen Formula Mathematical Equation',
-      formulaDesc: 'Max HR = 220 - Age in years | Heart Rate Reserve (HRR) = Max HR - Resting HR | Target HR = Resting HR + [HRR × % Intensity]',
+      formulaDesc: 'Max HR = 220 - Age in years (commonly used estimate) | Heart Rate Reserve (HRR) = Max HR - Resting HR | Target HR = Resting HR + [HRR × % Intensity]',
       formulaCode: 'Target HR = RHR + [(220 - Age - RHR) × % Intensity]',
       tableTitle: 'Karvonen 5-Zone Heart Rate Intensity Matrix',
       tableRows: [
         { col1: 'Zone 1 (50% - 60% HRR)', col2: 'Active Recovery / Warmup', col3: 'Promotes blood circulation & passive recovery' },
-        { col1: 'Zone 2 (60% - 70% HRR)', col2: 'Fat Burn & Aerobic Base', col3: 'Maximal fat oxidation & endurance building' },
+        { col1: 'Zone 2 (60% - 70% HRR)', col2: 'Moderate Aerobic Training', col3: 'Often used for aerobic base training and moderate-intensity exercise' },
         { col1: 'Zone 3 (70% - 80% HRR)', col2: 'Aerobic Endurance / Fitness', col3: 'Improves cardiovascular efficiency & stamina' },
         { col1: 'Zone 4 (80% - 90% HRR)', col2: 'Anaerobic / Lactate Threshold', col3: 'Increases high-intensity exercise tolerance' },
         { col1: 'Zone 5 (90% - 100% HRR)', col2: 'Maximal VO2 Max Peak Power', col3: 'Neuromuscular speed & peak sprint conditioning' }
       ],
       faqs: [
         { question: 'What is the Karvonen Heart Rate Zone Calculator?', answer: 'The Karvonen Heart Rate Zone Calculator is a cardiovascular training tool created by Dr. Martti Karvonen. It provides personalized training-zone estimates using the Karvonen formula and Heart Rate Reserve (HRR).' },
-        { question: 'How to calculate target heart rate using the Karvonen formula?', answer: 'To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for aerobic base). 4) Add your Resting HR back to get your target heart rate in BPM.' },
-        { question: 'Why does the Karvonen formula factor in Resting Heart Rate?', answer: 'Traditional formulas (220 - age) treat an athlete and a sedentary individual of the same age identically. The Karvonen formula provides individualized context by factoring in Resting Heart Rate.' },
-        { question: 'Which heart rate zone is associated with aerobic base training?', answer: 'Karvonen Zone 2 (60% to 70% of Heart Rate Reserve) is commonly associated with aerobic base training and relatively higher fat oxidation relative to total calorie expenditure.' },
+        { question: 'How to calculate target heart rate using the Karvonen formula?', answer: 'To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR estimate. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for moderate aerobic training). 4) Add your Resting HR back to get your target heart rate in BPM.' },
+        { question: 'Why does the Karvonen formula factor in Resting Heart Rate?', answer: 'Traditional formulas (220 - age) provide a population estimate of Max HR. The Karvonen formula provides individualized context by factoring in Resting Heart Rate (RHR).' },
+        { question: 'Which heart rate zone is associated with aerobic base training?', answer: 'Karvonen Zone 2 (60% to 70% of Heart Rate Reserve) is commonly associated with aerobic base training and moderate-intensity endurance workouts.' },
         { question: 'How do I measure my Resting Heart Rate (RHR) for the Karvonen calculator?', answer: 'Measure your pulse for 60 seconds immediately upon waking in the morning while resting calmly in bed before sitting up or taking caffeine.' }
       ]
     }
@@ -384,7 +384,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Epley Strength Standard',
       title: 'Epley 1RM Bench Press Calculator & 1 Rep Max Tool',
-      intro: 'Calculate your estimated 1 rep max bench press, squat, and deadlift safely with our free Epley 1RM Bench Press Calculator. Powered by the Epley 1RM formula equation, estimate your maximum lifting capacity without attempting risky 1RM attempts.',
+      intro: 'Calculate your estimated 1 rep max bench press, squat, and deadlift with our free Epley 1RM Bench Press Calculator. Powered by the Epley 1RM formula equation, estimate your maximum lifting capacity without attempting heavy 1RM attempts.',
       formulaTitle: 'Epley 1RM Mathematical Formula Equation',
       formulaDesc: '1RM = Weight Lifted in kg/lbs × (1 + [Reps Performed / 30]) | Brzycki 1RM = Weight Lifted × [36 / (37 - Reps)]',
       formulaCode: '1RM = W × (1 + R / 30)',
@@ -399,17 +399,17 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       faqs: [
         { question: 'What is the Epley 1RM Bench Press Calculator?', answer: 'The Epley 1RM Bench Press Calculator is a strength assessment tool created by Boyd Epley in 1985. It calculates your estimated maximum single-rep bench press (1RM) based on submaximal repetition performance, eliminating the need to attempt heavy 1RM max attempts.' },
         { question: 'How to calculate 1 rep max bench press using the Epley formula?', answer: 'To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press.' },
-        { question: 'How accurate is the Epley 1RM formula for bench press, squat, and deadlift?', answer: 'Sports science studies show that the Epley 1RM formula is accurate within ±2.5% for bench press and squat sets between 2 to 10 repetitions. For reps above 10, accuracy slightly overestimates 1RM capacity.' },
-        { question: 'What is the difference between Epley and Brzycki 1RM formulas?', answer: 'The Epley formula (1RM = W × [1 + R/30]) and Brzycki formula (1RM = W × [36 / (37 - R)]) are two widely referenced formulas. Epley is slightly more accurate for lower rep ranges (1 to 6 reps), while Brzycki performs well up to 10 reps.' },
-        { question: 'Why should I use a 1RM calculator instead of testing max weight directly?', answer: 'Testing true 1RM max weight creates extreme spinal load and pectoral tendon strain during heavy bench press attempts. An Epley 1RM calculator allows lifters to calculate target weights safely with lower weights.' }
+        { question: 'How accurate is the Epley 1RM formula for bench press, squat, and deadlift?', answer: 'Sports science studies show that the Epley 1RM formula provides close estimates for bench press and squat sets between 2 to 10 repetitions. For reps above 10, accuracy slightly overestimates 1RM capacity.' },
+        { question: 'What is the difference between Epley and Brzycki 1RM formulas?', answer: 'The Epley formula (1RM = W × [1 + R/30]) and Brzycki formula (1RM = W × [36 / (37 - R)]) are two widely referenced formulas. Epley is commonly used for lower rep ranges (1 to 6 reps), while Brzycki performs well up to 10 reps.' },
+        { question: 'Why should I use a 1RM calculator instead of testing max weight directly?', answer: 'Testing true 1RM max weight creates extreme spinal load and pectoral tendon strain during heavy bench press attempts. An Epley 1RM calculator allows lifters to estimate target weights safely with lower weights.' }
       ]
     }
   },
   'pregnancy-weight-gain-calculator': {
     en: {
-      eyebrow: 'ACOG Gestational Protocol',
+      eyebrow: 'Pregnancy Weight Gain Reference',
       title: 'Pregnancy Weight Gain Calculator & Trimester Tracker',
-      intro: 'Track gestational weight gain with our Pregnancy Weight Gain Calculator. Aligned with ACOG and IOM guidelines, estimate target weight accumulation based on pre-pregnancy BMI.',
+      intro: 'Pregnancy Weight Gain Reference Calculator. Uses published gestational weight-gain reference ranges from the National Academies/IOM and relevant clinical guidance to provide an educational estimate based on pre-pregnancy BMI.',
       formulaTitle: 'IOM Gestational Weight Gain Targets',
       formulaDesc: 'Normal BMI (18.5-24.9): 11.5 - 16.0 kg total (25 - 35 lbs)',
       tableTitle: 'IOM Trimester Target Weight Chart',
@@ -419,11 +419,11 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Overweight (25.0-29.9)', col2: '7.0 – 11.5 kg (15 - 25 lbs)', col3: '~0.3 kg / week in 2nd/3rd trimester' }
       ],
       faqs: [
-        { question: 'What is the Pregnancy Weight Gain Calculator?', answer: 'The Pregnancy Weight Gain Calculator is an obstetric screening tool based on ACOG (American College of Obstetricians and Gynecologists) and IOM (Institute of Medicine) guidelines. It calculates recommended week-by-week gestational weight accumulation based on pre-pregnancy BMI.' },
-        { question: 'How to calculate healthy pregnancy weight gain week by week?', answer: 'To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters.' },
-        { question: 'How much total weight should you gain during pregnancy?', answer: 'According to IOM guidelines: Underweight (<18.5 BMI) should gain 28–40 lbs (12.5–18 kg); Normal BMI (18.5–24.9) should gain 25–35 lbs (11.5–16 kg); Overweight (25–29.9 BMI) should gain 15–25 lbs (7–11.5 kg); Obese (≥30 BMI) should gain 11–20 lbs (5–9 kg).' },
+        { question: 'What is the Pregnancy Weight Gain Calculator?', answer: 'The Pregnancy Weight Gain Calculator is a reference calculator based on ACOG (American College of Obstetricians and Gynecologists) and IOM (Institute of Medicine) guidance. It provides reference estimates for gestational weight gain based on pre-pregnancy BMI.' },
+        { question: 'How to calculate healthy pregnancy weight gain week by week?', answer: 'To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), reference target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters.' },
+        { question: 'How much total weight should you gain during pregnancy?', answer: 'According to IOM reference guidelines: Underweight (<18.5 BMI) range is 28–40 lbs (12.5–18 kg); Normal BMI (18.5–24.9) range is 25–35 lbs (11.5–16 kg); Overweight (25–29.9 BMI) range is 15–25 lbs (7–11.5 kg); Obese (≥30 BMI) range is 11–20 lbs (5–9 kg).' },
         { question: 'What is typical first trimester weight gain?', answer: 'Most women gain between 0.5 and 2.0 kg (1 to 4.5 lbs) total during the first 12 weeks of pregnancy due to minimal fetal weight growth.' },
-        { question: 'Why does pre-pregnancy BMI affect gestational weight targets?', answer: 'Pre-pregnancy BMI determines metabolic energy reserves. Maternal-fetal health studies show tailored weight targets reduce risks of gestational diabetes, preeclampsia, macrosomia, and preterm delivery.' }
+        { question: 'Why does pre-pregnancy BMI affect gestational weight targets?', answer: 'Pre-pregnancy BMI determines initial energy reserves. Maternal-fetal reference guidelines tailor weight targets based on initial BMI.' }
       ]
     }
   }
@@ -443,6 +443,30 @@ const faqSchema = {
     }
   }))
 };
+
+const toolSpecificReferences: Record<string, { name: string; url: string }[]> = {
+  'protein-intake-calculator': [
+    { name: 'ISSN Position Stand: Protein and Exercise', url: 'https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0177-8' },
+    { name: 'NIH Dietary Reference Intakes for Protein', url: 'https://www.ncbi.nlm.nih.gov/books/NBK56068/' }
+  ],
+  'pregnancy-weight-gain-calculator': [
+    { name: 'ACOG Gestational Weight Gain FAQ & Guidelines', url: 'https://www.acog.org/womens-health/faqs/weight-gain-during-pregnancy' },
+    { name: 'Institute of Medicine (IOM) Pregnancy Weight Guidelines', url: 'https://www.ncbi.nlm.nih.gov/books/NBK32813/' }
+  ],
+  'heart-rate-zone-calculator': [
+    { name: 'American Heart Association (AHA) Target Heart Rates', url: 'https://www.heart.org/en/healthy-living/fitness/fitness-basics/target-heart-rates' },
+    { name: 'Karvonen Heart Rate Reserve Study Reference', url: 'https://pubmed.ncbi.nlm.nih.gov/13443783/' }
+  ],
+  'body-fat-calculator': [
+    { name: 'US Navy Physical Readiness Program Body Composition Method', url: 'https://www.navyfitness.org/nutrition/body-composition' },
+    { name: 'ACE Body Fat Norms & Classification Standards', url: 'https://www.acefitness.org/resources/everyone/blog/112/percent-body-fat-norms-for-men-and-women/' }
+  ]
+};
+
+const activeReferences = toolSpecificReferences[slug] || [
+  { name: 'CDC Adult BMI Guidelines, Screening Limits & Formula FAQ', url: 'https://www.cdc.gov/bmi/faq/' },
+  { name: 'WHO Global Health Observatory Adult BMI Classification', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' }
+];
 ---
 
 <!-- Embed Tool-Specific FAQ Schema -->
@@ -491,8 +515,8 @@ const faqSchema = {
           <thead>
             <tr class="bg-[var(--muted)]/50 border-b border-[var(--border)] text-[var(--foreground)] font-display uppercase tracking-wider text-xs font-bold">
               <th class="p-4">Category / Level</th>
-              <th class="p-4">Clinical Range / Metric</th>
-              <th class="p-4">Health & Metabolic Guidance</th>
+              <th class="p-4">Reference Range / Metric</th>
+              <th class="p-4">Reference & Context Guidance</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)] font-medium">
@@ -532,14 +556,12 @@ const faqSchema = {
   <div class="p-6 rounded-2xl bg-[var(--muted)]/40 border border-[var(--border)] space-y-3">
     <div class="text-xs font-display font-bold uppercase tracking-widest text-[var(--accent)]">References & Research</div>
     <div class="flex flex-wrap gap-6 text-xs font-semibold text-[var(--muted-foreground)]">
-      <a href="https://www.cdc.gov/bmi/faq/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[var(--accent)] transition-colors underline decoration-[var(--accent)]/40 underline-offset-4">
-        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-        CDC Adult BMI Guidelines, Screening Limits & Formula FAQ
-      </a>
-      <a href="https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[var(--accent)] transition-colors underline decoration-[var(--accent)]/40 underline-offset-4">
-        <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-        WHO Global Health Observatory Adult BMI Classification
-      </a>
+      {activeReferences.map((ref) => (
+        <a href={ref.url} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[var(--accent)] transition-colors underline decoration-[var(--accent)]/40 underline-offset-4">
+          <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          {ref.name}
+        </a>
+      ))}
     </div>
   </div>
 
