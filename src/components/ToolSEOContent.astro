@@ -43,6 +43,27 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'Why use Real BMI vs basic standard BMI Calculators?', answer: 'Real BMI incorporates established WHO protocols, Asian cutoff adjustments (23.0 kg/m²), BMR metabolic estimates, and 3D volume scaling to deliver additional health context and reference metrics.' },
         { question: 'Is a standard BMI Calculator accurate for muscular athletes?', answer: 'A standard BMI Calculator measures total body mass relative to height and does not differentiate muscle density from adipose fat. Muscular athletes often register higher BMI scores despite healthy low body fat levels.' }
       ]
+    },
+    hi: {
+      eyebrow: 'डब्ल्यूएचओ स्वास्थ्य मानक',
+      title: 'बीएमआई कैलकुलेटर – बॉडी मास इंडेक्स की गणना करें',
+      intro: 'हमारा मुफ्त बीएमआई कैलकुलेटर (Body Mass Index Calculator) विश्व स्वास्थ्य संगठन (WHO) और CDC मानकों के अनुसार बनाया गया एक स्वास्थ्य स्क्रीनिंग टूल है। अपनी बॉडी मास इंडेक्स (BMI) श्रेणी की गणना करें और स्थापित स्वास्थ्य संदर्भों के आधार पर मानक वजन सीमाओं की समीक्षा करें।',
+      formulaTitle: 'मानक डब्ल्यूएचओ बीएमआई कैलकुलेटर सूत्र',
+      formulaDesc: 'मीट्रिक: बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | इंपीरियल: बीएमआई = [वजन (पाउंड) / ऊंचाई (इंच)²] × 703',
+      formulaCode: 'BMI = kg / m²',
+      tableTitle: 'डब्ल्यूएचओ वयस्क बीएमआई स्केल एवं वर्गीकरण चार्ट',
+      tableRows: [
+        { col1: 'कम वजन (Underweight)', col2: '< 18.5 kg/m²', col3: 'कम शरीर द्रव्यमान से संबंधित संदर्भ श्रेणी' },
+        { col1: 'सामान्य वजन (Healthy Weight)', col2: '18.5 – 24.9 kg/m²', col3: 'कम आबादी-स्तरीय जोखिम से संबंधित संदर्भ श्रेणी' },
+        { col1: 'अधिक वजन (Overweight)', col2: '25.0 – 29.9 kg/m²', col3: 'मध्यम आबादी-स्तरीय जोखिम से संबंधित संदर्भ श्रेणी (एशियाई कटऑफ: 23.0 kg/m²)' },
+        { col1: 'मोटापा (Obesity Class I-III)', col2: '≥ 30.0 kg/m²', col3: 'उच्च आबादी-स्तरीय जोखिम से संबंधित संदर्भ श्रेणी' }
+      ],
+      faqs: [
+        { question: 'बीएमआई कैलकुलेटर क्या है और बीएमआई की गणना कैसे करें?', answer: 'बॉडी मास इंडेक्स (BMI) एक व्यापक रूप से इस्तेमाल किया जाने वाला जनसंख्या स्वास्थ्य स्क्रीनिंग उपाय है। बीएमआई की गणना करने के लिए, किलोग्राम में वजन को मीटर वर्ग में ऊंचाई (kg/m²) से विभाजित करें।' },
+        { question: 'पुरुषों और महिलाओं के लिए बीएमआई की सही गणना कैसे करें?', answer: 'वयस्क पुरुषों और महिलाओं के लिए बीएमआई गणना समान है, जो ऊंचाई और वजन पर निर्भर करती है।' },
+        { question: 'डब्ल्यूएचओ बीएमआई चार्ट और स्केल क्या है?', answer: 'डब्ल्यूएचओ बीएमआई चार्ट वयस्कों को बीएमआई पैमाने पर चार मुख्य श्रेणियों में वर्गीकृत करता है: कम वजन (<18.5), सामान्य वजन (18.5–24.9), अधिक वजन (25.0–29.9), और मोटापा (≥30.0)।' },
+        { question: 'मांसपेशियों वाले एथलीटों के लिए बीएमआई कितना सटीक है?', answer: 'मानक बीएमआई कैलकुलेटर ऊंचाई के सापेक्ष कुल शरीर द्रव्यमान को मापता है और मांसपेशियों के घनत्व को वसा से अलग नहीं करता है।' }
+      ]
     }
   },
   '3d-bmi-calculator': {
@@ -72,26 +93,26 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'diabetes-risk-calculator': {
     en: {
-      eyebrow: 'WHO & IDF Regional Risk Guidelines',
-      title: 'Asian BMI Cutoff Calculator 23 & Type 2 Diabetes Risk Tool',
-      intro: 'Calculate your metabolic health risk with our free Asian BMI Cutoff Calculator 23. Following World Health Organization (WHO) and International Diabetes Federation (IDF) guidelines, evaluate why a BMI cutoff of 23.0 kg/m² marks the trigger point for overweight and Type 2 Diabetes risk in Asian populations.',
-      formulaTitle: 'WHO Asian BMI Cutoff Criteria & Waist Thresholds',
-      formulaDesc: 'Asian Overweight Cutoff: BMI ≥ 23.0 kg/m² | Asian Obesity Cutoff: BMI ≥ 27.5 kg/m² | Asian Waist Limit: Men ≥ 90 cm, Women ≥ 80 cm',
+      eyebrow: 'WHO Asian Regional Guidance',
+      title: 'Asian BMI Reference Calculator — BMI 23 Threshold',
+      intro: 'Calculate BMI using commonly referenced Asian-population BMI thresholds and waist measurements. Results provide population-level reference context and are not a diabetes diagnosis.',
+      formulaTitle: 'WHO Asian BMI Reference Criteria & Waist Thresholds',
+      formulaDesc: 'Asian Overweight Reference Threshold: BMI ≥ 23.0 kg/m² | Asian Obesity Reference Threshold: BMI ≥ 27.5 kg/m² | Asian Waist Screening Reference: Men ≥ 90 cm, Women ≥ 80 cm',
       formulaCode: 'Asian Overweight: BMI 23.0 - 27.4 | Asian Obesity: BMI ≥ 27.5',
-      tableTitle: 'WHO Asian BMI Classification Matrix vs Western Baseline',
+      tableTitle: 'WHO Asian BMI Reference Matrix vs Western Baseline',
       tableRows: [
-        { col1: 'Underweight', col2: 'BMI < 18.5 kg/m²', col3: 'Malnutrition & bone density risk' },
-        { col1: 'Normal Healthy Weight', col2: 'BMI 18.5 – 22.9 kg/m²', col3: 'Optimal metabolic health profile' },
-        { col1: 'Asian Overweight Trigger (23)', col2: 'BMI 23.0 – 27.4 kg/m²', col3: 'Elevated visceral fat & insulin resistance trigger point' },
-        { col1: 'Asian Obesity Class I', col2: 'BMI 27.5 – 32.4 kg/m²', col3: 'Elevated risk for Type 2 Diabetes & hypertension' },
-        { col1: 'Asian Obesity Class II', col2: 'BMI ≥ 32.5 kg/m²', col3: 'High cardiovascular risk context' }
+        { col1: 'Underweight', col2: 'BMI < 18.5 kg/m²', col3: 'Reference category for lower relative body mass' },
+        { col1: 'Standard Reference Weight', col2: 'BMI 18.5 – 22.9 kg/m²', col3: 'Baseline reference window for Asian populations' },
+        { col1: 'Asian Overweight Reference Threshold (23)', col2: 'BMI 23.0 – 27.4 kg/m²', col3: 'Reference threshold used in some Asian-population guidance' },
+        { col1: 'Asian Obesity Class I', col2: 'BMI 27.5 – 32.4 kg/m²', col3: 'Higher reference category for population screening' },
+        { col1: 'Asian Obesity Class II', col2: 'BMI ≥ 32.5 kg/m²', col3: 'Elevated screening reference window' }
       ],
       faqs: [
-        { question: 'What is the Asian BMI Cutoff Calculator 23?', answer: 'The Asian BMI Cutoff Calculator 23 is a specialized health screening tool aligned with WHO and IDF guidelines. It accounts for the higher percentage of body fat and visceral adiposity in Asian populations at lower BMI levels.' },
-        { question: 'Why is the Asian BMI cutoff set at 23 kg/m² instead of 25 kg/m²?', answer: 'Extensive World Health Organization (WHO) epidemiological studies revealed that South Asian, East Asian, and Southeast Asian individuals tend to develop metabolic risk factors at a lower BMI cutoff of 23 kg/m².' },
-        { question: 'How to calculate Type 2 Diabetes risk using the Asian BMI cutoff of 23?', answer: 'Divide your weight in kg by your height in meters squared. If your BMI is 23.0 kg/m² or higher, or your waist circumference exceeds 90 cm (men) / 80 cm (women), WHO recommends blood glucose screening for prediabetes.' },
-        { question: 'What are the waist circumference risk cutoffs for South Asian populations?', answer: 'According to the International Diabetes Federation (IDF), the abdominal obesity waist circumference cutoff for Asian men is 90 cm (35 inches) and for Asian women is 80 cm (31.5 inches).' },
-        { question: 'What steps should I take if my BMI score is 23 or higher?', answer: 'A BMI score of 23.0 to 27.4 is classified as Asian Overweight. Medical guidelines recommend adopting a balanced diet, engaging in 150 minutes of aerobic exercise weekly, and consulting a healthcare provider.' }
+        { question: 'What is the Asian BMI Cutoff Calculator 23?', answer: 'The Asian BMI Cutoff Calculator 23 is a health screening reference tool aligned with WHO reference guidelines. It provides reference context for the lower BMI thresholds often applied in Asian population health studies.' },
+        { question: 'Why is the Asian BMI reference cutoff set at 23 kg/m² instead of 25 kg/m²?', answer: 'World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold.' },
+        { question: 'How is the Asian BMI threshold of 23 kg/m² evaluated?', answer: 'Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the Asian overweight reference threshold, providing educational screening context.' },
+        { question: 'What waist circumference screening thresholds apply to Asian populations?', answer: 'According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds for Asian adults are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women.' },
+        { question: 'What should I do if my BMI score is 23 or higher?', answer: 'A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. Because BMI is a screening metric, consult a qualified healthcare provider for personalized medical evaluation.' }
       ]
     }
   },
@@ -137,7 +158,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       faqs: [
         { question: 'What is the TDEE Calculator and how does Total Daily Energy Expenditure work?', answer: 'The TDEE Calculator computes your estimated Total Daily Energy Expenditure—the total estimated calories your body expends in 24 hours. It multiplies your BMR by a Physical Activity Level (PAL) multiplier to establish your daily maintenance calorie reference.' },
         { question: 'What are the 4 main components of Total Daily Energy Expenditure in a TDEE Calculator?', answer: 'TDEE consists of 4 components: 1) Basal Metabolic Rate (BMR ~60-75%), 2) Non-Exercise Activity Thermogenesis (NEAT ~15%), 3) Thermic Effect of Food (TEF ~10%), and 4) Exercise Activity Thermogenesis (EAT ~5-15%).' },
-        { question: 'How to use a TDEE Calculator for weight management planning?', answer: 'Example: Some people use a modest calorie adjustment below estimated TDEE for weight-loss planning. Individual energy needs, health status, and physical activity circumstances vary.' },
+        { question: 'How to use a TDEE Calculator for weight management planning?', answer: 'A calorie intake somewhat below or above estimated TDEE is sometimes used for weight-management planning. The appropriate target varies by individual needs, goals, activity, and health circumstances.' },
         { question: 'How does Physical Activity Level (PAL) affect TDEE Calculator results?', answer: 'Your activity level acts as a multiplier on resting metabolic rate. Higher physical activity scales TDEE from 1.2× BMR for sedentary individuals up to 1.9× BMR for active endurance athletes.' },
         { question: 'Why does my TDEE Calculator score change as I lose or gain weight?', answer: 'As body mass changes, BMR changes (due to lower overall tissue mass) and daily movement patterns vary. Recalculate your TDEE after meaningful body weight changes to keep energy goals aligned.' }
       ]
@@ -172,17 +193,17 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Boer Equation Standard',
       title: 'Lean Body Mass Calculator & LBM Reference Tool',
-      intro: 'Estimate lean body mass using the Boer predictive equation. This is a mathematical estimate and does not directly measure skeletal muscle, organ mass, or bone mass.',
+      intro: 'Using the Boer formula, estimate lean body mass from height, weight and sex. LBM is an estimate and is not the same as skeletal muscle mass.',
       formulaTitle: 'Boer Formula for LBM',
       formulaDesc: 'Men: LBM = (0.407 × W) + (0.267 × H) - 19.2 | Women: LBM = (0.252 × W) + (0.473 × H) - 48.3',
-      tableTitle: 'Lean Body Mass Reference Composition',
+      tableTitle: 'Illustrative Body Composition Context (Not Directly Measured by Boer Equation)',
       tableRows: [
-        { col1: 'Skeletal Muscle Reference', col2: '~40% - 50% of LBM', col3: 'Major component of non-fat body mass' },
-        { col1: 'Organs & Bone Structure', col2: '~35% - 45% of LBM', col3: 'Vital organs, skeletal bone structure, and connective tissue' },
-        { col1: 'Body Fluid Volume', col2: '~15% of LBM', col3: 'Extracellular fluid and plasma volume' }
+        { col1: 'Skeletal Muscle Reference', col2: '~40% - 50% of LBM', col3: 'Illustrative population reference — not directly measured by this calculator' },
+        { col1: 'Organs & Bone Structure', col2: '~35% - 45% of LBM', col3: 'Illustrative population reference — not directly measured by this calculator' },
+        { col1: 'Body Fluid Volume', col2: '~15% of LBM', col3: 'Illustrative population reference — not directly measured by this calculator' }
       ],
       faqs: [
-        { question: 'What is the Lean Body Mass Calculator?', answer: 'The Lean Body Mass Calculator uses the Boer predictive equation to estimate non-fat body mass. It is a mathematical estimate and does not directly measure skeletal muscle or organ weight.' },
+        { question: 'What is the Lean Body Mass Calculator?', answer: 'The Lean Body Mass Calculator uses the Boer predictive equation to estimate non-fat body mass from height, weight, and sex. It is a mathematical estimate and does not directly measure skeletal muscle or organ weight.' },
         { question: 'Why is Lean Body Mass useful in body composition tracking?', answer: 'LBM estimates help differentiate changes in non-fat body mass from body fat variations during fitness or dietary planning.' }
       ]
     }
@@ -288,7 +309,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Nutrition Reference',
       title: 'Macro Calculator & Macronutrient Reference Tool',
-      intro: 'Calculate your estimated daily carb, protein, and fat targets in grams with our free Macro Calculator. The calculator uses example macro ratios for planning. There is no single optimal ratio for everyone; individual dietary needs vary.',
+      intro: 'Calculate your estimated daily carb, protein, and fat targets in grams with our free Macro Calculator to explore an example macronutrient ratio based on your selected plan. There is no single optimal macronutrient ratio for everyone. The calculator uses example percentage splits for planning purposes.',
       formulaTitle: 'Macro Caloric Conversion Formulas',
       formulaDesc: 'Carbohydrate Grams = (Total Calories × Carb %) / 4 | Protein Grams = (Total Calories × Protein %) / 4 | Fat Grams = (Total Calories × Fat %) / 9',
       formulaCode: 'Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9',
@@ -302,16 +323,16 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'What is a Macro Calculator?', answer: 'A Macro Calculator is a nutritional reference tool that divides your estimated daily caloric intake into example gram amounts of carbohydrates, protein, and dietary fats for meal planning.' },
         { question: 'How to calculate macros in grams for weight loss or muscle gain?', answer: 'First calculate your estimated TDEE (Total Daily Energy Expenditure). Multiply total calories by your target macro percentages (e.g., 40% carbs, 30% protein, 30% fat). Divide carbohydrate and protein calories by 4 and fat calories by 9 to get estimated daily grams.' },
         { question: 'What is IIFYM (If It Fits Your Macros)?', answer: 'IIFYM (If It Fits Your Macros) is a flexible dieting approach that tracks daily gram targets of protein, carbohydrates, and fats calculated by a macro tool.' },
-        { question: 'What macro ratios are commonly used in dietary planning?', answer: 'For weight management, example macro splits (such as 40% protein, 35% carbs, 25% fat) are often referenced to support satiety and muscle retention during a calorie deficit. For muscle building, balanced example splits (40% carbs, 30% protein, 30% fat) provide fuel for training. These are starting reference examples, not universal rules.' },
-        { question: 'How many calories are in 1 gram of carbs, protein, and fat?', answer: 'Carbohydrates contain 4 calories per gram, Protein contains 4 calories per gram, and Dietary Fat contains 9 calories per gram.' }
+        { question: 'What macro ratios are commonly used in dietary planning?', answer: 'There is no single optimal macronutrient ratio for everyone. For weight management, example macro splits (such as 40% protein, 35% carbs, 25% fat) are often referenced to support satiety and muscle retention during a calorie deficit. For muscle building, balanced example splits (40% carbs, 30% protein, 30% fat) provide fuel for training. These are starting reference examples, not universal rules.' },
+        { question: 'How many calories are in 1 gram of carbs, protein, and fat?', answer: 'Carbohydrates contain 4 calories per gram, Protein contain 4 calories per gram, and Dietary Fat contains 9 calories per gram.' }
       ]
     }
   },
   'waist-to-hip-ratio-calculator': {
     en: {
-      eyebrow: 'WHO Abdominal Reference Guidelines',
+      eyebrow: 'WHO Waist-to-Hip Ratio Reference',
       title: 'Waist to Hip Ratio Calculator & WHR Chart Tool',
-      intro: 'Calculate your waist to hip ratio with our free Waist to Hip Ratio Calculator. Aligned with World Health Organization (WHO) abdominal reference guidelines, evaluate your body fat distribution and abdominal reference level.',
+      intro: 'Calculate your waist to hip ratio with our free Waist to Hip Ratio Calculator. Aligned with World Health Organization (WHO) abdominal reference guidelines, provide context about body-fat distribution and central adiposity.',
       formulaTitle: 'WHO Waist to Hip Ratio (WHR) Formula Equation',
       formulaDesc: 'WHR = Waist Circumference (at narrowest point or navel) / Hip Circumference (at widest point of buttocks)',
       formulaCode: 'WHR = Waist / Hip',
@@ -325,7 +346,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'What is the Waist to Hip Ratio Calculator?', answer: 'The Waist to Hip Ratio Calculator is an anthropometric screening tool that compares your waist measurement to your hip measurement to evaluate body fat distribution and provide context on central fat placement.' },
         { question: 'How to calculate waist to hip ratio with the WHR formula?', answer: 'Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80.' },
         { question: 'What is a healthy waist to hip ratio for men and women according to WHO?', answer: 'According to World Health Organization (WHO) reference guidelines, a ratio below 0.90 for men and below 0.80 for women is standard for lower relative abdominal fat.' },
-        { question: 'Why is waist to hip ratio a useful indicator alongside BMI?', answer: 'While BMI measures total body mass relative to height, Waist to Hip Ratio serves as an anthropometric proxy for central body fat distribution around the abdomen.' },
+        { question: 'Why is waist to hip ratio a useful indicator alongside BMI?', answer: 'While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat.' },
         { question: 'How to accurately measure waist and hip circumference for the WHR calculator?', answer: 'Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks.' }
       ]
     }
@@ -383,9 +404,9 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'one-rep-max-calculator': {
     en: {
-      eyebrow: 'Epley Strength Standard',
-      title: 'Epley 1RM Bench Press Calculator & 1 Rep Max Tool',
-      intro: 'Calculate your estimated 1 rep max bench press, squat, and deadlift with our free Epley 1RM Bench Press Calculator. Powered by the Epley 1RM formula equation, estimate your maximum lifting capacity without attempting heavy 1RM attempts.',
+      eyebrow: 'Epley Strength Reference',
+      title: 'Epley 1RM Bench Press Calculator & 1 Rep Max Reference Tool',
+      intro: 'Calculate your estimated 1 rep max bench press, squat, and deadlift with our free Epley 1RM Bench Press Calculator. Powered by the Epley 1RM formula equation, estimate your single-rep lifting capacity from submaximal repetition sets.',
       formulaTitle: 'Epley 1RM Mathematical Formula Equation',
       formulaDesc: '1RM = Weight Lifted in kg/lbs × (1 + [Reps Performed / 30]) | Brzycki 1RM = Weight Lifted × [36 / (37 - Reps)]',
       formulaCode: '1RM = W × (1 + R / 30)',
@@ -393,16 +414,16 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       tableRows: [
         { col1: '100% 1RM Baseline', col2: '1 Repetition', col3: 'Peak single rep strength capacity estimate' },
         { col1: '90% 1RM Load', col2: '3 Repetitions', col3: 'Heavy strength building & neural adaptation' },
-        { col1: '85% 1RM Load', col2: '5 – 6 Repetitions', col3: 'Optimal hypertrophy & compound strength (5x5 protocols)' },
+        { col1: '85% 1RM Load', col2: '5 – 6 Repetitions', col3: 'Common training use & compound strength (5x5 protocols)' },
         { col1: '75% 1RM Load', col2: '10 Repetitions', col3: 'Hypertrophy volume & metabolic conditioning' },
         { col1: '65% 1RM Load', col2: '15 Repetitions', col3: 'Muscular endurance & active recovery sets' }
       ],
       faqs: [
-        { question: 'What is the Epley 1RM Bench Press Calculator?', answer: 'The Epley 1RM Bench Press Calculator is a strength assessment tool created by Boyd Epley in 1985. It calculates your estimated maximum single-rep bench press (1RM) based on submaximal repetition performance, eliminating the need to attempt heavy 1RM max attempts.' },
+        { question: 'What is the Epley 1RM Bench Press Calculator?', answer: 'The Epley 1RM Bench Press Calculator is a strength assessment tool created by Boyd Epley in 1985. It calculates your estimated maximum single-rep bench press (1RM) based on submaximal repetition performance.' },
         { question: 'How to calculate 1 rep max bench press using the Epley formula?', answer: 'To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press.' },
-        { question: 'How accurate is the Epley 1RM formula for bench press, squat, and deadlift?', answer: 'Sports science studies show that the Epley 1RM formula provides close estimates for bench press and squat sets between 2 to 10 repetitions. For reps above 10, accuracy slightly overestimates 1RM capacity.' },
+        { question: 'How accurate is the Epley 1RM formula for bench press, squat, and deadlift?', answer: 'Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates for bench press and squat sets between 2 to 10 repetitions.' },
         { question: 'What is the difference between Epley and Brzycki 1RM formulas?', answer: 'The Epley formula (1RM = W × [1 + R/30]) and Brzycki formula (1RM = W × [36 / (37 - R)]) are two widely referenced formulas. Epley is commonly used for lower rep ranges (1 to 6 reps), while Brzycki performs well up to 10 reps.' },
-        { question: 'Why should I use a 1RM calculator instead of testing max weight directly?', answer: 'Testing true 1RM max weight creates extreme spinal load and pectoral tendon strain during heavy bench press attempts. An Epley 1RM calculator allows lifters to estimate target weights safely with lower weights.' }
+        { question: 'Why use a 1RM calculator instead of testing max weight directly?', answer: 'Testing true 1RM max weight creates significant spinal and tendon strain during heavy bench press attempts. An Epley 1RM calculator allows lifters to estimate reference target weights using submaximal loads.' }
       ]
     }
   },

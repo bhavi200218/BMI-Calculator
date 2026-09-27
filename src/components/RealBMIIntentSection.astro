@@ -39,7 +39,7 @@ const data: Record<string, any> = {
       {
         tag: "06 / Special Groups",
         title: "Special Population Disclaimers",
-        desc: "Standard BMI formulas carry clinical limitations for pregnant women (gestational weight), youth under 19 (percentile growth charts), seniors 65+ (muscle protective reserve), and high-muscle athletes."
+        desc: "Standard BMI formulas carry known limitations for pregnant women (gestational weight), youth under 19 (percentile growth charts), seniors 65+ (muscle protective reserve), and high-muscle athletes."
       }
     ],
     compBadge: "Health Analytics Overview",
@@ -287,7 +287,7 @@ const t = data[lang] || data.en;
   <!-- Comparison Table: Standard BMI vs Real BMI -->
   <div class="mt-10 space-y-4">
     <div class="space-y-1">
-      <p class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-widest text-[var(--accent)]">{t.compBadge || "Clinical Evidence Comparison"}</p>
+      <p class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-widest text-[var(--accent)]">{t.compBadge || "Methodology Comparison"}</p>
       <h3 class="text-lg sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-snug break-words">{t.compTitle || "Standard BMI vs. Real BMI Calculator"}</h3>
     </div>
 
@@ -296,7 +296,7 @@ const t = data[lang] || data.en;
       <table class="w-full text-left border-collapse">
         <thead>
           <tr class="bg-[var(--muted)] text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-            <th class="px-6 py-4">{t.colMetric || "Clinical Metric / Flaw"}</th>
+            <th class="px-6 py-4">{t.colMetric || "Formula Benchmark"}</th>
             <th class="px-6 py-4 text-rose-500 dark:text-rose-400">{t.colStd || "Standard Scale BMI"}</th>
             <th class="px-6 py-4 text-emerald-600 dark:text-emerald-400">{t.colReal || "Real BMI Calculator"}</th>
           </tr>
@@ -341,7 +341,7 @@ const t = data[lang] || data.en;
   <div class="mt-8 p-6 sm:p-8 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 flex flex-col sm:flex-row items-center justify-between gap-6">
     <div class="space-y-1 text-center sm:text-left">
       <h4 class="text-lg font-bold text-[var(--foreground)]">{t.ctaTitle || "Want to know if BMI is actually accurate for you?"}</h4>
-      <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">{t.ctaDesc || "Read our full clinical breakdown on 2026 medical research, muscle density flaws, and WHO ethnic guidelines."}</p>
+      <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">{t.ctaDesc || "Read our analysis on published research, formula scaling, and WHO ethnic guidelines."}</p>
     </div>
     <a href={`/${lang}/blog/is-bmi-accurate`} class="calc-btn-gradient shrink-0 px-6 py-3.5 rounded-xl font-bold uppercase text-xs tracking-wider inline-flex items-center gap-2 transition-transform hover:scale-105">
       {t.ctaBtn || "Read Full Guide: Is BMI Accurate?"}

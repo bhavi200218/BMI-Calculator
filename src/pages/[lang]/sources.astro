@@ -7,18 +7,18 @@ const { lang } = Astro.params;
 const pageData = {
   en: {
     pageTitle: 'Sources | Real BMI',
-    pageDescription: 'Browse Real BMI’s trusted medical sources for BMI, BMR, TDEE, and body composition health information.',
+    pageDescription: 'Browse Real BMI’s reference sources for BMI, BMR, TDEE, and body composition calculations.',
     title: 'Sources',
     eyebrow: 'Verified references',
-    description: 'Browse the trusted medical sources behind Real BMI’s calculators and health guidance.',
+    description: 'Browse reference sources behind Real BMI’s calculators and reference estimates.',
     homeLabel: 'Home',
-    intro: 'Our tools are grounded in publicly available health science. We reference global agencies and clinical sources to keep our calculations reliable and broadly applicable.',
+    intro: 'Our tools are grounded in publicly available health science. We reference global agencies and published literature to keep our calculations reliable and broadly applicable.',
     sources: [
       { label: 'World Health Organization (WHO):', text: 'BMI thresholds and international classifications.' },
       { label: 'Centers for Disease Control and Prevention (CDC):', text: 'BMI formulas and guidance for adult health.' },
       { label: 'National Institutes of Health (NIH):', text: 'Metabolic rate and energy expenditure context.' },
       { label: 'American College of Sports Medicine (ACSM):', text: 'Exercise and calorie burn frameworks.' },
-      { label: 'Peer-reviewed medical literature:', text: 'Evidence on BMI limitations and health risk interpretation.' }
+      { label: 'Peer-reviewed scientific literature:', text: 'Evidence on BMI limitations and health reference interpretation.' }
     ],
     methodologyTitle: 'Methodology',
     methodologyText: 'Real BMI calculates Body Mass Index with the standard formula and converts imperial measurements using the recognized factor of 703. BMR and TDEE values are derived using widely accepted metabolic formulas and activity multipliers.',
@@ -27,18 +27,18 @@ const pageData = {
   },
   es: {
     pageTitle: 'Fuentes | Real BMI',
-    pageDescription: 'Explore las fuentes médicas confiables de Real BMI para información sobre IMC, BMR, TDEE y composición corporal.',
+    pageDescription: 'Explore las fuentes de referencia de Real BMI para información sobre IMC, BMR, TDEE y composición corporal.',
     title: 'Fuentes',
     eyebrow: 'Referencias verificadas',
-    description: 'Consulta las fuentes médicas confiables detrás de las calculadoras y las recomendaciones de Real BMI.',
+    description: 'Consulta las fuentes de referencia detrás de las calculadoras y estimaciones de Real BMI.',
     homeLabel: 'Inicio',
-    intro: 'Nuestras herramientas se basan en ciencia de la salud accesible al público. Referenciamos agencias globales y fuentes clínicas para mantener nuestros cálculos confiables y ampliamente aplicables.',
+    intro: 'Nuestras herramientas se basan en ciencia de la salud accesible al público. Referenciamos agencias globales y literatura publicada para mantener nuestros cálculos confiables.',
     sources: [
       { label: 'Organización Mundial de la Salud (OMS):', text: 'Umbrales de IMC y clasificaciones internacionales.' },
       { label: 'Centros para el Control y la Prevención de Enfermedades (CDC):', text: 'Fórmulas de IMC y orientación para la salud adulta.' },
       { label: 'Institutos Nacionales de Salud (NIH):', text: 'Contexto de tasa metabólica y gasto energético.' },
       { label: 'Colegio Estadounidense de Medicina del Deporte (ACSM):', text: 'Marco de ejercicio y quema de calorías.' },
-      { label: 'Literatura médica revisada por pares:', text: 'Evidencia sobre las limitaciones del IMC y la interpretación del riesgo para la salud.' }
+      { label: 'Literatura científica revisada por pares:', text: 'Evidencia sobre las limitaciones del IMC y la interpretación de referencias.' }
     ],
     methodologyTitle: 'Metodología',
     methodologyText: 'Real BMI calcula el índice de masa corporal con la fórmula estándar y convierte medidas imperiales usando el factor reconocido de 703. Los valores de BMR y TDEE se derivan mediante fórmulas metabólicas ampliamente aceptadas y multiplicadores de actividad.',
@@ -47,18 +47,18 @@ const pageData = {
   },
   fr: {
     pageTitle: 'Sources | Real BMI',
-    pageDescription: 'Consulte les sources médicales fiables de Real BMI pour les informations sur l’IMC, le BMR, le TDEE et la composition corporelle.',
+    pageDescription: 'Consultez les sources de référence de Real BMI pour les informations sur l’IMC, le BMR, le TDEE et la composition corporelle.',
     title: 'Sources',
     eyebrow: 'Références vérifiées',
-    description: 'Parcourez les sources médicales fiables derrière les calculateurs et les conseils de santé de Real BMI.',
+    description: 'Parcourez les sources de référence derrière les calculateurs et estimations de Real BMI.',
     homeLabel: 'Accueil',
-    intro: 'Nos outils reposent sur des données de santé accessibles au public. Nous référons des agences mondiales et des sources cliniques pour que nos calculs restent fiables et applicables à grande échelle.',
+    intro: 'Nos outils reposent sur des données de santé accessibles au public. Nous référons des agences mondiales et de la littérature scientifique pour que nos calculs restent fiables.',
     sources: [
       { label: 'Organisation mondiale de la santé (OMS) :', text: 'Seuils d’IMC et classifications internationales.' },
       { label: 'Centres pour le contrôle et la prévention des maladies (CDC) :', text: 'Formules d’IMC et conseils pour la santé des adultes.' },
       { label: 'Instituts nationaux de la santé (NIH) :', text: 'Contexte du métabolisme et des dépenses énergétiques.' },
       { label: 'American College of Sports Medicine (ACSM) :', text: 'Cadres d’exercice et de dépense calorique.' },
-      { label: 'Littérature médicale évaluée par les pairs :', text: 'Preuves sur les limites de l’IMC et l’interprétation des risques pour la santé.' }
+      { label: 'Littérature scientifique évaluée par les pairs :', text: 'Preuves sur les limites de l’IMC et l’interprétation des références.' }
     ],
     methodologyTitle: 'Méthodologie',
     methodologyText: 'Real BMI calcule l’indice de masse corporelle avec la formule standard et convertit les mesures impériales en utilisant le facteur reconnu de 703. Les valeurs de BMR et de TDEE sont dérivées à l’aide de formules métaboliques largement acceptées et de multiplicateurs d’activité.',
@@ -67,18 +67,18 @@ const pageData = {
   },
   de: {
     pageTitle: 'Quellen | Real BMI',
-    pageDescription: 'Durchsuchen Sie die vertrauenswürdigen medizinischen Quellen von Real BMI für IMC-, BMR-, TDEE- und Körperzusammensetzungsinformationen.',
+    pageDescription: 'Durchsuchen Sie die Referenzquellen von Real BMI für IMC-, BMR-, TDEE- und Körperzusammensetzungsinformationen.',
     title: 'Quellen',
     eyebrow: 'Verifizierte Referenzen',
-    description: 'Durchsuchen Sie die vertrauenswürdigen medizinischen Quellen hinter den Rechnern und Gesundheitsinformationen von Real BMI.',
+    description: 'Durchsuchen Sie die Referenzquellen hinter den Rechnern und Schätzungen von Real BMI.',
     homeLabel: 'Startseite',
-    intro: 'Unsere Tools basieren auf öffentlich zugänglicher Gesundheitswissenschaft. Wir beziehen uns auf globale Institutionen und klinische Quellen, um unsere Berechnungen zuverlässig und breit anwendbar zu halten.',
+    intro: 'Unsere Tools basieren auf öffentlich zugänglicher Gesundheitswissenschaft. Wir beziehen uns auf globale Institutionen und wissenschaftliche Literatur, um unsere Berechnungen zuverlässig zu halten.',
     sources: [
       { label: 'Weltgesundheitsorganisation (WHO):', text: 'IMC-Grenzwerte und internationale Klassifikationen.' },
       { label: 'Centers for Disease Control and Prevention (CDC):', text: 'IMC-Formeln und Richtlinien für die Gesundheit Erwachsener.' },
       { label: 'National Institutes of Health (NIH):', text: 'Kontext zu Stoffwechselrate und Energieverbrauch.' },
       { label: 'American College of Sports Medicine (ACSM):', text: 'Übungs- und Kalorienverbrauchsrahmen.' },
-      { label: 'Peer-Review-Fachliteratur:', text: 'Evidenz zu IMC-Einschränkungen und Gesundheitsrisikointerpretation.' }
+      { label: 'Peer-Review-Fachliteratur:', text: 'Evidenz zu IMC-Einschränkungen und Referenzinterpretation.' }
     ],
     methodologyTitle: 'Methodik',
     methodologyText: 'Real BMI berechnet den Body-Mass-Index mit der Standardformel und konvertiert imperiale Maße mit dem anerkannten Faktor 703. BMR- und TDEE-Werte werden mit allgemein anerkannten Stoffwechselgleichungen und Aktivitätsmultiplikatoren abgeleitet.',
@@ -87,18 +87,18 @@ const pageData = {
   },
   ko: {
     pageTitle: '출처 | Real BMI',
-    pageDescription: 'IMC, BMR, TDEE 및 체성분 건강 정보를 위한 Real BMI의 신뢰할 수 있는 의료 출처를 확인하세요.',
+    pageDescription: 'IMC, BMR, TDEE 및 체성분 정보를 위한 Real BMI의 참고 출처를 확인하세요.',
     title: '출처',
     eyebrow: '검증된 참고자료',
-    description: 'Real BMI의 계산기와 건강 가이드 뒤에 있는 신뢰할 수 있는 의료 출처를 확인하세요.',
+    description: 'Real BMI 계산기 및 추정 지표 뒤에 있는 참고 출처를 확인하세요.',
     homeLabel: '홈',
-    intro: '우리 도구는 공개적으로 이용 가능한 건강 과학을 기반으로 합니다. 계산을 신뢰할 수 있고 널리 적용 가능하도록 전 세계 기관과 임상 출처를 참조합니다.',
+    intro: '우리 도구는 공개적으로 이용 가능한 건강 과학을 기반으로 합니다. 계산을 신뢰할 수 있도록 전 세계 기관과 출판 문헌을 참조합니다.',
     sources: [
       { label: '세계보건기구 (WHO):', text: 'IMC 기준과 국제 분류.' },
       { label: '질병통제예방센터 (CDC):', text: 'IMC 공식 및 성인 건강 지침.' },
       { label: '국립보건원 (NIH):', text: '대사율 및 에너지 소비에 대한 맥락.' },
       { label: '미국 스포츠 의학 학회 (ACSM):', text: '운동 및 칼로리 소모 프레임워크.' },
-      { label: '동료 검토된 의학 문헌:', text: 'IMC 한계와 건강 위험 해석에 대한 증거.' }
+      { label: '동료 검토된 학술 문헌:', text: 'IMC 한계와 참고 해석에 대한 증거.' }
     ],
     methodologyTitle: '방법론',
     methodologyText: 'Real BMI는 표준 공식을 사용하여 체질량지수를 계산하고, 인정된 703 계수를 사용해 영국 단위를 변환합니다. BMR 및 TDEE 값은 널리 수용되는 대사 공식과 활동 배수로 도출됩니다.',
@@ -107,18 +107,18 @@ const pageData = {
   },
   hi: {
     pageTitle: 'स्रोत | Real BMI',
-    pageDescription: 'IMC, BMR, TDEE और शरीर संरचना स्वास्थ्य जानकारी के लिए Real BMI के भरोसेमंद चिकित्सा स्रोत देखें।',
+    pageDescription: 'IMC, BMR, TDEE और शरीर संरचना जानकारी के लिए Real BMI के संदर्भ स्रोत देखें।',
     title: 'स्रोत',
     eyebrow: 'सत्यापित संदर्भ',
-    description: 'Real BMI के कैलकुलेटर और स्वास्थ्य मार्गदर्शन के पीछे भरोसेमंद चिकित्सा स्रोतों को ब्राउज़ करें।',
+    description: 'Real BMI के कैलकुलेटर और संदर्भ अनुमानों के पीछे संदर्भ स्रोतों को ब्राउज़ करें।',
     homeLabel: 'होम',
-    intro: 'हमारे उपकरण सार्वजनिक रूप से उपलब्ध स्वास्थ्य विज्ञान पर आधारित हैं। हम अपनी गणनाओं को विश्वसनीय और व्यापक रूप से लागू रखने के लिए वैश्विक एजेंसियों और आधिकारिक चिकित्सा स्रोतों का संदर्भ देते हैं।',
+    intro: 'हमारे उपकरण सार्वजनिक रूप से उपलब्ध स्वास्थ्य विज्ञान पर आधारित हैं। हम अपनी गणनाओं को विश्वसनीय रखने के लिए वैश्विक एजेंसियों और प्रकाशित साहित्य का संदर्भ देते हैं।',
     sources: [
       { label: 'विश्व स्वास्थ्य संगठन (WHO):', text: 'IMC सीमा और अंतर्राष्ट्रीय वर्गीकरण।' },
       { label: 'रोग नियंत्रण और रोकथाम केंद्र (CDC):', text: 'वयस्क स्वास्थ्य के लिए IMC सूत्र और मार्गदर्शन।' },
       { label: 'नेशनल इंस्टीट्यूट ऑफ हेल्थ (NIH):', text: 'मेटाबॉलिक दर और ऊर्जा व्यय का संदर्भ।' },
       { label: 'अमेरिकन कॉलेज ऑफ स्पोर्ट्स मेडिसिन (ACSM):', text: 'व्यायाम और कैलोरी बर्न फ्रेमवर्क।' },
-      { label: 'पियर-रीव्यू मेडिकल साहित्य:', text: 'IMC सीमाओं और स्वास्थ्य जोखिम व्याख्या पर सबूत।' }
+      { label: 'पियर-रीव्यू वैज्ञानिक साहित्य:', text: 'IMC सीमाओं और संदर्भ व्याख्या पर सबूत।' }
     ],
     methodologyTitle: 'कार्यप्रणाली',
     methodologyText: 'Real BMI मानक सूत्र के साथ बॉडी मास इंडेक्स की गणना करता है और मान्यता प्राप्त 703 फैक्टर का उपयोग करके इंपीरियल मापों को बदलता है। BMR और TDEE मान व्यापक रूप से स्वीकार किए गए मेटाबॉलिक सूत्रों और गतिविधि गुणकों का उपयोग करके निकाले जाते हैं।',
