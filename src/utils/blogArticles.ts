@@ -27,11 +27,11 @@ export const blogArticles: Record<string, any> = {
     contentHtml: {
       en: `
         <h2>Overview of BMI for Indian & South Asian Populations</h2>
-        <p>Body Mass Index (BMI) is an internationally recognized clinical screening tool that measures total body mass relative to height squared (expressed as kg/m²). However, clinical consensus published by the <strong>World Health Organization (WHO)</strong>, the <strong>Indian Council of Medical Research (ICMR)</strong>, and the <strong>Diabetes India Consensus Group</strong> confirms that standard Western BMI cut-offs fail to diagnose health risks in South Asian individuals accurately.</p>
-        <p>In South Asian and Indian adults, metabolic disorders—such as Type 2 Diabetes, hypertension, fatty liver disease, and coronary artery disease—manifest at significantly lower BMI levels compared to Western populations. As a result, the WHO South-East Asia Regional Office established revised BMI classifications tailored specifically to Indian physiology.</p>
+        <p>Body Mass Index (BMI) is an internationally recognized health screening tool that measures total body mass relative to height squared (expressed as kg/m²). However, consensus guidance published by the <strong>World Health Organization (WHO)</strong>, the <strong>Indian Council of Medical Research (ICMR)</strong>, and the <strong>Diabetes India Consensus Group</strong> confirms that standard Western BMI cut-offs differ from South Asian population reference guidance.</p>
+        <p>In South Asian and Indian adults, metabolic risk indicators manifest at lower BMI levels compared to European reference populations. As a result, the WHO South-East Asia Regional Office established revised BMI classifications tailored specifically to Asian population data.</p>
 
         <h2>Why 23.0 kg/m² is Overweight in India (The WHO Asian Cut-off)</h2>
-        <p>Under Western BMI standards, a BMI of 25.0 kg/m² marks the start of the overweight category. However, for Indians and South Asians, clinical research shows that metabolic risk begins at a lower cutoff of <strong>23.0 kg/m²</strong>.</p>
+        <p>Under Western BMI standards, a BMI of 25.0 kg/m² marks the start of the overweight category. However, for Indians and South Asians, population research shows that reference action thresholds begin at a lower cutoff of <strong>23.0 kg/m²</strong>.</p>
         <p>The primary driver behind this disparity is body composition: South Asian populations exhibit the <em>"Thin-Fat Phenotype"</em> (TOFI - Thin Outside, Fat Inside). Indian individuals tend to have a higher body fat percentage and greater abdominal visceral adiposity (deep internal fat surrounding abdominal organs) at identical BMI numbers compared to Caucasians, combined with lower skeletal muscle mass.</p>
 
         <h2>WHO & ICMR Indian BMI Classification Chart</h2>
@@ -145,7 +145,7 @@ export const blogArticles: Record<string, any> = {
     contentHtml: {
       en: `
         <h2>What is Body Mass Index (BMI)?</h2>
-        <p><strong>Body Mass Index (BMI)</strong> is a statistical and clinical health screening metric that compares an adult's body weight to their height. Developed in the 19th century by Belgian mathematician and statistician <em>Adolphe Quetelet</em>, BMI provides a quick, standardized method to categorize individuals into distinct weight brackets: Underweight, Healthy Weight, Overweight, and Obese.</p>
+        <p><strong>Body Mass Index (BMI)</strong> is a statistical and educational health screening metric that compares an adult's body weight to their height. Developed in the 19th century by Belgian mathematician and statistician <em>Adolphe Quetelet</em>, BMI provides a quick, standardized method to categorize individuals into distinct weight brackets: Underweight, Healthy Weight, Overweight, and Obese.</p>
         <p>Today, major global medical organizations—including the <strong>World Health Organization (WHO)</strong> and the <strong>Centers for Disease Control and Prevention (CDC)</strong>—utilize BMI as an initial population screening tool to identify potential health risks associated with undernutrition or excess body fat.</p>
 
         <h2>How is BMI Calculated? (The Official Formula)</h2>
@@ -170,11 +170,11 @@ export const blogArticles: Record<string, any> = {
           <li><strong>Underweight (&lt; 18.5 kg/m²):</strong> Indicates low body mass relative to height. May correlate with nutrient deficiencies, compromised immune function, and lower bone density.</li>
           <li><strong>Healthy Weight (18.5 – 24.9 kg/m²):</strong> Represents the standard reference weight range associated with population-level health baselines.</li>
           <li><strong>Overweight (25.0 – 29.9 kg/m²):</strong> Indicates moderate excess body weight. Associated with elevated risk for Type 2 Diabetes, hypertension, and cardiovascular strain.</li>
-          <li><strong>Obesity Class I to III (≥ 30.0 kg/m²):</strong> Indicates significant excess adiposity requiring clinical monitoring for metabolic and cardiovascular conditions.</li>
+          <li><strong>Obesity Class I to III (≥ 30.0 kg/m²):</strong> Indicates higher body mass requiring evaluation with a healthcare provider for overall health context.</li>
         </ul>
 
         <h2>What BMI Does Not Measure</h2>
-        <p>While BMI is highly effective for rapid population screening, it has recognized clinical limitations for individual diagnosis:</p>
+        <p>While BMI is highly effective for rapid population screening, it has recognized limitations for individual evaluation:</p>
         <ol>
           <li><strong>Does Not Differentiate Muscle from Fat:</strong> Muscle tissue is substantially denser than adipose fat. Muscular athletes often register high BMI scores despite having low body fat.</li>
           <li><strong>Does Not Measure Fat Distribution:</strong> Abdominal visceral fat poses a much higher cardiovascular risk than subcutaneous fat on the hips or legs. BMI cannot measure waist circumference.</li>
@@ -251,10 +251,10 @@ export const blogArticles: Record<string, any> = {
         <p>Up to 15% of adults with a "Normal" BMI have elevated waist circumferences, carrying significant hidden metabolic risk (the <em>"Normal Weight Obesity"</em> paradox).</p>
 
         <h2>Flaw #4: Ignoring Ethnic Body Composition Differences</h2>
-        <p>World Health Organization (WHO) clinical data shows Asian and South Asian populations accumulate higher percentages of visceral fat at lower body mass indexes compared to Caucasians. This is why the WHO revised overweight cut-offs for Asian adults from 25.0 kg/m² down to <strong>23.0 kg/m²</strong>.</p>
+        <p>World Health Organization (WHO) population data shows Asian and South Asian populations accumulate higher percentages of visceral fat at lower body mass indexes compared to Caucasians. This is why the WHO revised overweight cut-offs for Asian adults from 25.0 kg/m² down to <strong>23.0 kg/m²</strong>.</p>
 
         <h2>What You Should Use Instead of Plain BMI</h2>
-        <p>Leading clinicians recommend evaluating three complementary metrics for a true health snapshot:</p>
+        <p>Health authorities recommend evaluating three complementary metrics for a broader educational health snapshot:</p>
         <ol>
           <li><strong>BMI Score:</strong> For baseline stature screening.</li>
           <li><strong>Waist-to-Height Ratio (WHtR):</strong> Keep your waist circumference to less than half your height (Waist ÷ Height &lt; 0.5).</li>
