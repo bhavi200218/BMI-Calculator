@@ -42,7 +42,7 @@ export const blogArticles: Record<string, any> = {
                 <th class="p-3">Category</th>
                 <th class="p-3">Standard Western Cut-off</th>
                 <th class="p-3 text-[var(--accent)] font-extrabold">WHO Asian / Indian Cut-off</th>
-                <th class="p-3">Clinical Risk Profile</th>
+                <th class="p-3">Reference Status Indicator</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-[var(--border)]">
@@ -50,31 +50,31 @@ export const blogArticles: Record<string, any> = {
                 <td class="p-3 font-semibold">Underweight</td>
                 <td class="p-3 font-mono">&lt; 18.5 kg/m²</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">&lt; 18.5 kg/m²</td>
-                <td class="p-3">Nutritional deficiency &amp; low muscle density</td>
+                <td class="p-3">Underweight reference category</td>
               </tr>
               <tr>
                 <td class="p-3 font-semibold">Normal / Healthy Weight</td>
                 <td class="p-3 font-mono">18.5 – 24.9 kg/m²</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 22.9 kg/m²</td>
-                <td class="p-3">Optimal metabolic baseline</td>
+                <td class="p-3">Standard reference baseline</td>
               </tr>
               <tr>
                 <td class="p-3 font-semibold">Overweight (Increased Risk)</td>
                 <td class="p-3 font-mono">25.0 – 29.9 kg/m²</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">23.0 – 27.4 kg/m²</td>
-                <td class="p-3">Moderate risk for Type 2 Diabetes &amp; fatty liver</td>
+                <td class="p-3">Moderate reference threshold for Asian populations</td>
               </tr>
               <tr>
                 <td class="p-3 font-semibold">Obesity Class I (High Risk)</td>
                 <td class="p-3 font-mono">30.0 – 34.9 kg/m²</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">27.5 – 32.4 kg/m²</td>
-                <td class="p-3">High risk for cardiovascular strain &amp; hypertension</td>
+                <td class="p-3">Elevated reference threshold for Asian populations</td>
               </tr>
               <tr>
                 <td class="p-3 font-semibold">Obesity Class II (Very High Risk)</td>
                 <td class="p-3 font-mono">≥ 35.0 kg/m²</td>
                 <td class="p-3 font-mono font-bold text-[var(--accent)]">≥ 32.5 kg/m²</td>
-                <td class="p-3">Severe clinical metabolic risk</td>
+                <td class="p-3">High reference category</td>
               </tr>
             </tbody>
           </table>
@@ -89,15 +89,15 @@ export const blogArticles: Record<string, any> = {
         </div>
 
         <h2>Waist Circumference Cut-offs for South Asians</h2>
-        <p>In addition to computing your BMI score, medical consensus strongly recommends measuring your waist circumference. Abdominal visceral fat carries a much stronger correlation with Type 2 Diabetes and heart disease than total scale weight.</p>
+        <p>In addition to computing your BMI score, measuring waist circumference provides supplementary context on central body-fat distribution.</p>
         <ul>
-          <li><strong>Indian Men:</strong> High risk cutoff is <strong>&gt; 90 cm (35 inches)</strong></li>
-          <li><strong>Indian Women:</strong> High risk cutoff is <strong>&gt; 80 cm (31.5 inches)</strong></li>
+          <li><strong>Indian Men:</strong> Reference threshold is <strong>&gt; 90 cm (35 inches)</strong></li>
+          <li><strong>Indian Women:</strong> Reference threshold is <strong>&gt; 80 cm (31.5 inches)</strong></li>
         </ul>
-        <p>If your BMI exceeds 23.0 kg/m² or your waist circumference exceeds these clinical thresholds, physicians recommend scheduling annual blood glucose (HbA1c) and lipid profile tests.</p>
+        <p>If your BMI exceeds 23.0 kg/m² or your waist circumference exceeds these reference thresholds, consult a healthcare provider for personalized guidance.</p>
 
         <h2>Summary & Next Steps</h2>
-        <p>Maintaining a healthy BMI score between <strong>18.5 and 22.9 kg/m²</strong>, eating a whole-food diet rich in protein and fiber, and completing 150 minutes of aerobic and strength exercise weekly are essential for long-term health in South Asian adults.</p>
+        <p>Understanding BMI 18.5–22.9 in Asian-Population Reference Guidance, eating a balanced whole-food diet, and engaging in regular physical activity are general health planning principles.</p>
       `,
       hi: `
         <h2>भारतीयों के लिए बीएमआई का महत्व</h2>
@@ -307,7 +307,7 @@ export const blogArticles: Record<string, any> = {
 
         <h2>1. What is BMR (Basal Metabolic Rate)?</h2>
         <p>Your <strong>Basal Metabolic Rate (BMR)</strong> is the absolute minimum number of calories your body burns in 24 hours while at complete rest in a thermo-neutral environment. BMR powers your vital life functions—including breathing, blood circulation, cellular repair, brain function, and body temperature regulation.</p>
-        <p>The clinical gold standard for computing BMR is the <strong>Mifflin-St Jeor Equation</strong>:</p>
+        <p>Mifflin-St Jeor is a commonly used predictive equation for estimating resting energy expenditure:</p>
 
         <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed">
           <p class="font-bold text-[var(--accent)] mb-1">Mifflin-St Jeor Equations:</p>
@@ -358,7 +358,7 @@ export const blogArticles: Record<string, any> = {
         </div>
 
         <h2>How to Use TDEE for Weight Loss</h2>
-        <p>To lose fat safely without sacrificing lean skeletal muscle, a moderate deficit of <strong>300 to 500 calories below your TDEE</strong> daily is often cited as a sustainable starting point. Never consume fewer calories than your BMR score for prolonged periods without medical supervision.</p>
+        <p>As a generic planning example, a moderate calorie deficit of <strong>300 to 500 calories below your TDEE</strong> is sometimes referenced in dietary planning. Individual calorie needs and target rates vary based on personal health and activity goals.</p>
         <p class="text-xs text-[var(--muted-foreground)] italic mt-4">Note: Individual calorie needs vary. People with medical conditions, adolescents, pregnant or breastfeeding individuals, or other special circumstances should seek individualized advice from a qualified healthcare professional.</p>
       `,
       hi: `

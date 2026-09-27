@@ -160,7 +160,7 @@ export const calculators: CalculatorConfig[] = [
       const waistLimit = isM ? 94 : 80;
       const waistHigh = isM ? 102 : 88;
       
-      let riskScore = 'Optimal Reference';
+      let riskScore = 'Standard Reference';
       if (bmi >= 27.5 || waist >= waistHigh || (bmi >= 23 && waist >= waistLimit && age >= 40)) {
         riskScore = 'Elevated Threshold';
       } else if (bmi >= 23 || waist >= waistLimit || age >= 45) {
@@ -172,7 +172,7 @@ export const calculators: CalculatorConfig[] = [
         secondary: [
           { label: { en: 'BMI Score', es: 'Puntaje IMC', fr: 'Score IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' }, value: bmi.toFixed(1) },
           { label: { en: 'Asian Cutoff', es: 'Umbral Asiático', fr: 'Seuil Asiatique', de: 'Asien-Schwellenwert', ko: '아시아인 기준', hi: 'एशियाई कटऑफ' }, value: '23.0 kg/m²' },
-          { label: { en: 'Waist Risk', es: 'Riesgo Cintura', fr: 'Risque Tour Taille', de: 'Taillenrisiko', ko: '허리둘레 위험', hi: 'कमर का जोखिम' }, value: waist >= waistLimit ? 'Elevated' : 'Optimal' }
+          { label: { en: 'Waist Reference', es: 'Referencia Cintura', fr: 'Référence Tour Taille', de: 'Taillenreferenz', ko: '허리둘레 참조', hi: 'कमर संदर्भ' }, value: waist >= waistLimit ? 'Elevated' : 'Standard' }
         ]
       };
     }
@@ -318,7 +318,7 @@ export const calculators: CalculatorConfig[] = [
     slug: 'lean-body-mass-calculator',
     name: { en: 'Lean Body Mass Calculator', es: 'Calculadora de Masa Magra', fr: 'Calculateur de Masse Lean', de: 'Fettfreie Masse Rechner', ko: '제지방량 계산기', hi: 'लीन बॉडी मास कैलकुलेटर' },
     title: { en: 'Lean Body Mass Calculator - LBM Metric', es: 'Calculadora de Masa Corporal Magra', fr: 'Calculateur de Masse Corporelle Maigre', de: 'Rechner für fettfreie Körpermasse', ko: '제지방체중 계산기', hi: 'लीन बॉडी मास (LBM) कैलकुलेटर' },
-    description: { en: 'Calculate your weight excluding body fat.', es: 'Calcula tu peso excluyendo grasa corporal.', fr: 'Calculez votre masse corporelle dégraissée.', de: 'Errechnen Sie Ihr Körpergewicht ohne Fett.', ko: '체지방을 뺀 순수 골격 및 장기 체중을 구합니다.', hi: 'शरीर की वसा को हटाकर अपने वास्तविक वजन की गणना करें।' },
+    description: { en: 'The Boer equation provides an estimated lean body mass value. It does not directly measure skeletal muscle, organ mass, bone mass, or body-water compartments.', es: 'La ecuación de Boer proporciona un valor estimado de masa magra.', fr: 'L\'équation de Boer fournit une valeur estimée de la masse maigre.', de: 'Die Boer-Gleichung liefert einen geschätzten Wert für die fettfreie Masse.', ko: 'Boer 공식은 추정 제지방량을 제공합니다.', hi: 'Boer समीकरण लीन बॉडी मास का एक अनुमान प्रदान करता है।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
@@ -525,7 +525,7 @@ export const calculators: CalculatorConfig[] = [
     slug: 'macro-calculator',
     name: { en: 'Macro Calculator', es: 'Calculadora de Macros', fr: 'Calculateur de Macros', de: 'Makro Rechner', ko: '매크로 계산기', hi: 'मैक्रो कैलकुलेटर' },
     title: { en: 'Macro Calculator – Free Macronutrient & IIFYM Ratio Tool', es: 'Calculadora de Macros Gratis - Macronutrientes y IIFYM', fr: 'Calculateur de Macros Gratuit - Glucides Protéines Lipides', de: 'Kostenloser Makro Rechner – IIFYM Makronährstoff-Verteilung', ko: '무료 매크로 계산기 (Macro Calculator & IIFYM Split)', hi: 'मुफ़्त मैक्रो कैलकुलेटर - मैक्रोन्यूट्रिएंट और IIFYM अनुपात' },
-    description: { en: 'Free Macro Calculator. Calculate your target daily macronutrient split (carbs, protein, fat in grams) for muscle gain, weight loss, or IIFYM flexible dieting.', es: 'Calculadora de macros gratuita. Calcula tu distribución recomendada de macronutrientes (carbohidratos, proteínas y grasas) para perder peso o ganar músculo.', fr: 'Calculateur gratuit de macros. Calculez votre répartition ciblée en macronutriments (glucides, protéines, lipides en grammes).', de: 'Kostenloser Makro-Rechner. Berechnen Sie Ihre Makronährstoff-Verteilung (Kohlenhydrate, Eiweiß, Fett) für Muskelaufbau oder Abnehmen.', ko: '무료 매크로 계산기. 체중 감량, 근육 증가 및 IIFYM 식단을 위한 일일 탄단지 g(그램) 비율을 계산하세요.', hi: 'मुफ़्त मैक्रो कैलकुलेटर। वजन घटाने, मांसपेशियों के निर्माण या IIFYM फ्लेक्सिबल डाइट के लिए अपने दैनिक मैक्रोन्यूट्रिएंट विभाजन (कार्ब्स, प्रोटीन, वसा) की गणना करें।' },
+    description: { en: 'Free Macro Calculator. The calculator provides an example macronutrient split for planning. There is no single optimal ratio that applies to everyone.', es: 'Calculadora de macros gratuita. Proporciona un ejemplo de distribución de macronutrientes para la planificación.', fr: 'Calculateur gratuit de macros. Fournit un exemple de répartition des macronutriments pour la planification.', de: 'Kostenloser Makro-Rechner. Liefert eine Beispiel-Makronährstoffverteilung zur Planung.', ko: '무료 매크로 계산기. 기획을 위한 예시 영양소 비율을 제공합니다.', hi: 'मुफ़्त मैक्रो कैलकुलेटर। योजना के लिए एक उदाहरण मैक्रो स्प्लिट प्रदान करता है।' },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
       { id: 'height', label: L.height, type: 'number', placeholder: '175' },
@@ -579,7 +579,7 @@ export const calculators: CalculatorConfig[] = [
     slug: 'waist-to-hip-ratio-calculator',
     name: { en: 'Waist to Hip Ratio Calculator', es: 'Calculadora de Relación Cintura a Cadera', fr: 'Calculateur de Rapport Taille à Hanche', de: 'Taille-zu-Hüfte-Verhältnis Rechner', ko: '허리 엉덩이 비율 계산기 (WHR Calculator)', hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर' },
     title: { en: 'Waist to Hip Ratio Calculator – Free WHO WHR Chart & Tool', es: 'Calculadora de Relación Cintura a Cadera - Tabla OMS WHR', fr: 'Calculateur de Rapport Taille à Hanche - Normes OMS WHR', de: 'Taille zu Hüfte Verhältnis Rechner – WHO WHR Tabelle', ko: '허리 엉덩이 비율 계산기 (Waist to Hip Ratio Calculator)', hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर - WHO WHR चार्ट' },
-    description: { en: 'Free Waist to Hip Ratio Calculator. Calculate your Waist to Hip Ratio (WHR) instantly and assess abdominal obesity and body fat distribution based on WHO guidelines.', es: 'Calculadora gratuita de relación cintura a cadera. Calcula tu WHR y evalúa el riesgo de obesidad abdominal según la OMS.', fr: 'Calculateur gratuit de rapport taille-hanche (WHR). Évaluez votre obésité abdominale selon les normes de l\'OMS.', de: 'Kostenloser Taille-zu-Hüfte-Verhältnis Rechner. Berechnen Sie Ihren WHR-Wert und bewerten Sie Ihr gesundheitliches Risiko nach WHO-Standards.', ko: '무료 허리 엉덩이 비율 계산기. WHR을 즉시 계산하고 WHO 표준에 따라 복부 비만 및 건강 위험을 진단하세요.', hi: 'मुफ़्त कमर से कूल्हे का अनुपात कैलकुलेटर। अपने WHR की तुरंत गणना करें और WHO मानकों के अनुसार पेट के मोटापे के जोखिम का आकलन करें।' },
+    description: { en: 'Free Waist to Hip Ratio Calculator. WHR provides context about body-fat distribution. It does not directly measure visceral fat.', es: 'Calculadora gratuita de relación cintura a cadera. Proporciona contexto sobre la distribución de grasa corporal.', fr: 'Calculateur gratuit de rapport taille-hanche (WHR). Fournit un contexte sur la répartition de la graisse corporelle.', de: 'Kostenloser Taille-zu-Hüfte-Verhältnis Rechner. Liefert Kontext zur Körperfettverteilung.', ko: '무료 허리 엉덩이 비율 계산기. 체지방 분포에 대한 참고 정보를 제공합니다.', hi: 'मुफ़्त कमर से कूल्हे का अनुपात कैलकुलेटर। शरीर की वसा वितरण के बारे में जानकारी प्रदान करता है।' },
     inputs: [
       { id: 'waist', label: L.waist, type: 'number', placeholder: '80' },
       { id: 'hip', label: L.hip, type: 'number', placeholder: '90' },
@@ -591,19 +591,19 @@ export const calculators: CalculatorConfig[] = [
       const whr = w / h;
 
       const isM = inputs.gender === 'male';
-      let risk = { en: 'Low', es: 'Bajo', fr: 'Faible', de: 'Gering', ko: '낮음', hi: 'कम' };
+      let risk = { en: 'Standard Ratio', es: 'Rango Estándar', fr: 'Plage Standard', de: 'Standardbereich', ko: '표준 범위', hi: 'मानक अनुपात' };
       if (isM) {
-        if (whr >= 0.9 && whr < 1.0) risk = { en: 'Moderate', es: 'Moderado', fr: 'Modéré', de: 'Mäßig', ko: '보통', hi: 'मध्यम' };
-        else if (whr >= 1.0) risk = { en: 'High', es: 'Alto', fr: 'Élevé', de: 'Hoch', ko: '높음', hi: 'उच्च' };
+        if (whr >= 0.9 && whr < 1.0) risk = { en: 'Moderate Ratio', es: 'Moderado', fr: 'Modéré', de: 'Mäßig', ko: '보통', hi: 'मध्यम' };
+        else if (whr >= 1.0) risk = { en: 'Elevated Ratio', es: 'Elevado', fr: 'Élevé', de: 'Erhöht', ko: '높음', hi: 'उच्च' };
       } else {
-        if (whr >= 0.8 && whr < 0.85) risk = { en: 'Moderate', es: 'Moderado', fr: 'Modéré', de: 'Mäßig', ko: '보통', hi: 'मध्यम' };
-        else if (whr >= 0.85) risk = { en: 'High', es: 'Alto', fr: 'Élevé', de: 'Hoch', ko: '높음', hi: 'उच्च' };
+        if (whr >= 0.8 && whr < 0.85) risk = { en: 'Moderate Ratio', es: 'Moderado', fr: 'Modéré', de: 'Mäßig', ko: '보통', hi: 'मध्यम' };
+        else if (whr >= 0.85) risk = { en: 'Elevated Ratio', es: 'Elevado', fr: 'Élevé', de: 'Erhöht', ko: '높음', hi: 'उच्च' };
       }
 
       return {
         primary: { value: whr.toFixed(2), label: { en: 'Waist-to-Hip Ratio', es: 'Proporción Cintura-Cadera', fr: 'Rapport WHR', de: 'Taille-Hüft-Verhältnis', ko: '허리 대비 엉덩이 비', hi: 'कमर से कूल्हे का अनुपात' } },
         secondary: [
-          { label: { en: 'Health Risk Level', es: 'Nivel de Riesgo', fr: 'Niveau de Risque', de: 'Risikostufe', ko: '비만 신체 리스크', hi: 'स्वास्थ्य जोखिम स्तर' }, value: risk.en }
+          { label: { en: 'Distribution Reference', es: 'Referencia de Distribución', fr: 'Référence de Distribution', de: 'Verteilungsreferenz', ko: '분포 참조', hi: 'वितरण संदर्भ' }, value: risk.en }
         ]
       };
     }
@@ -682,7 +682,7 @@ export const calculators: CalculatorConfig[] = [
     slug: 'one-rep-max-calculator',
     name: { en: '1RM Bench Press Calculator', es: 'Calculadora 1RM Press de Banca', fr: 'Calculateur 1RM Développé Couché', de: '1RM Bankdrücken Rechner', ko: '1RM 측정기 (1 Rep Max 계산기)', hi: '1RM बेंच प्रेस कैलकुलेटर' },
     title: { en: '1RM Bench Press Calculator – One Rep Max (Epley & Brzycki)', es: 'Calculadora 1RM Epley Press de Banca y Sentadilla', fr: 'Calculateur 1RM Epley Développé Couché', de: 'Epley 1RM Bankdrücken Rechner – Maximalkraft', ko: '1RM 측정기 – 무료 Epley 1 Rep Max 벤치프레스 계산기', hi: '1RM बेंच प्रेस कैलकुलेटर - वन रेप मैक्स' },
-    description: { en: 'Free 1RM Bench Press Calculator. Calculate your one rep max (1RM) bench press, squat, and deadlift using the Epley, Brzycki, and Lander formula equations.', es: 'Calculadora gratuita de 1RM con la fórmula de Epley para press de banca. Calcula tu peso máximo a una repetición.', fr: 'Calculateur gratuit de 1RM selon la formule d\'Epley pour le développé couché.', de: 'Kostenloser Epley 1RM Bankdrücken Rechner. Berechnen Sie Ihre Maximalkraft für 1 Rep mit der Epley-Formel.', ko: '무료 1RM 측정기 (1 Rep Max 계산기). 임상 Epley 1RM 공식을 사용하여 벤치프레스, 스쿼트, 데드리프트 1RM을 즉시 계산하세요.', hi: 'मुफ़्त 1RM बेंच प्रेस कैलकुलेटर। आधिकारिक एपले 1RM फॉर्मूला का उपयोग करके अपने 1RM की सटीक गणना करें।' },
+    description: { en: 'Free 1RM Bench Press Calculator. Estimate your one rep max (1RM) bench press, squat, and deadlift using Epley, Brzycki, and Lander reference formula equations. Formula estimates can differ from actual 1RM performance.', es: 'Calculadora gratuita de 1RM con fórmulas de referencia.', fr: 'Calculateur gratuit de 1RM selon des formules de référence.', de: 'Kostenloser 1RM Rechner mit Referenzformeln.', ko: '무료 1RM 측정기. Epley 및 Brzycki 추정 공식을 사용합니다.', hi: 'मुफ़्त 1RM बेंच प्रेस कैलकुलेटर।' },
     inputs: [
       { id: 'weight', label: { en: 'Weight Lifted', es: 'Peso Levantado', fr: 'Charge Soulevée', de: 'Gewicht', ko: '리프팅 무게', hi: 'उठाया गया वजन' }, type: 'number', placeholder: '100' },
       { id: 'age', label: { en: 'Reps Performed', es: 'Repeticiones', fr: 'Répétitions', de: 'Wiederholungen', ko: '반복 횟수(Reps)', hi: 'रेप्स' }, type: 'number', placeholder: '5' }

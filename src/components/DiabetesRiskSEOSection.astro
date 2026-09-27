@@ -8,21 +8,21 @@ const { lang = 'en' } = Astro.props;
 const translations: Record<string, any> = {
   en: {
     badge: "IDF & WHO Health References",
-    title: "BMI, Type 2 Diabetes Risk & Ethnic Thresholds",
-    subtitle: "Understanding your Body Mass Index (BMI = kg/m²) in relation to metabolic health, visceral fat, and global screening guidelines.",
+    title: "Asian BMI & Population Reference Cutoffs",
+    subtitle: "Understanding Body Mass Index (BMI = kg/m²) in relation to Asian population reference thresholds and public health guidelines.",
     formulaTitle: "Standard BMI Formula",
     formulaText: "BMI = weight (kg) ÷ height² (m²)",
-    formulaNote: "BMI calculates weight relative to height squared. While a universal screening metric, international health guidelines from the WHO & IDF emphasize that BMI does not directly diagnose body fatness or individual metabolic health.",
+    formulaNote: "BMI calculates weight relative to height squared. International reference standards from the WHO & IDF emphasize that BMI is a population reference tool and does not directly diagnose individual metabolic health.",
     cards: [
       {
         icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
-        title: "South Asian & Asian Risk Cutoff (23 kg/m²)",
-        desc: "Published evidence from the WHO and International Diabetes Federation (IDF) shows South Asian, East Asian, and Arab populations face increased risk of Type 2 Diabetes and cardiovascular disease at lower BMI levels. Overweight risk begins at 23 kg/m² rather than 25 kg/m²."
+        title: "Asian Population Reference Cutoff (23 kg/m²)",
+        desc: "Published reference guidelines from WHO expert consultations indicate that Asian populations show statistical metabolic risk indicators at lower BMI thresholds (23 kg/m² and 27.5 kg/m²)."
       },
       {
         icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-        title: "Waist Circumference & Visceral Fat",
-        desc: "Abdominal adiposity carries a significantly higher risk for Type 2 Diabetes than subcutaneous limb fat. Increased risk starts at >94 cm (37 in) for men and >80 cm (31.5 in) for women."
+        title: "Waist Circumference & Adipositas Distribution",
+        desc: "Waist circumference provides supplementary context on central body-fat distribution. Reference thresholds start at >94 cm (37 in) for men and >80 cm (31.5 in) for women."
       },
       {
         icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
@@ -30,15 +30,15 @@ const translations: Record<string, any> = {
         desc: "BMI does not distinguish between dense muscle mass, bone density, and adipose fat. Muscular athletes, pregnant women, and elderly individuals require comprehensive health evaluations."
       }
     ],
-    riskMatrixTitle: "Diabetes & Weight Category Risk Matrix",
-    matrixHeaders: ["BMI Category", "Standard Range", "South Asian / Asian Cutoff", "Diabetes & Health Risk Level"],
+    riskMatrixTitle: "Asian BMI Weight Category Reference Matrix",
+    matrixHeaders: ["BMI Category", "Standard Range", "Asian Reference Cutoff", "Reference Status Indicator"],
     matrixRows: [
-      { cat: "Underweight", std: "< 18.5 kg/m²", asian: "< 18.5 kg/m²", risk: "Low (Increased risk for nutrient deficiency)", status: "normal" },
-      { cat: "Normal Weight", std: "18.5 – 24.9 kg/m²", asian: "18.5 – 22.9 kg/m²", risk: "Baseline Reference Window", status: "normal" },
-      { cat: "Increased Risk (Overweight)", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "Moderate Risk Reference Indicator", status: "warning" },
-      { cat: "High Risk (Obesity)", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "Elevated Screening Reference Indicator", status: "danger" }
+      { cat: "Underweight", std: "< 18.5 kg/m²", asian: "< 18.5 kg/m²", risk: "Underweight Reference Indicator", status: "normal" },
+      { cat: "Normal Weight", std: "18.5 – 24.9 kg/m²", asian: "18.5 – 22.9 kg/m²", risk: "Standard Reference Window", status: "normal" },
+      { cat: "Overweight Threshold", std: "25.0 – 29.9 kg/m²", asian: "23.0 – 27.4 kg/m²", risk: "Moderate Threshold Indicator", status: "warning" },
+      { cat: "Obesity Threshold", std: "≥ 30.0 kg/m²", asian: "≥ 27.5 kg/m²", risk: "Elevated Threshold Indicator", status: "danger" }
     ],
-    disclaimer: "Guidance Note: This tool provides initial screening information based on international standards (IDF Guidelines & WHO Standards). It does not constitute a formal diagnosis or replace individualized consultation with a healthcare provider."
+    disclaimer: "Guidance Note: This tool provides educational reference information based on WHO reference standards. It does not constitute medical diagnosis or advice."
   },
   hi: {
     badge: "अंतर्राष्ट्रीय IDF एवं WHO गाइडलाइंस अनुसार",

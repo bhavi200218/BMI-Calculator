@@ -388,19 +388,19 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           const waistLimit = isM ? 94 : 80;
           const waistHigh = isM ? 102 : 88;
 
-          let riskScore = 'Low Risk';
+          let riskScore = 'Standard Reference';
           if (bmi >= 27.5 || waistCm >= waistHigh || (bmi >= 23 && waistCm >= waistLimit && ageNum >= 40)) {
-            riskScore = 'High Risk';
-          } else if (bmi >= 23 || waistCm >= waistLimit || ageNum >= 45) {
-            riskScore = 'Moderate Risk';
+            riskScore = 'Elevated Threshold';
+          } else if (bmi >= 23 || waistCm >= waistLimit && ageNum >= 45) {
+            riskScore = 'Moderate Threshold';
           }
 
           calculated = {
-            primary: { value: riskScore, label: { en: 'Diabetes Risk Status', es: 'Estado Riesgo Diabetes', fr: 'Statut Risque Diabète', de: 'Diabetes-Risikostatus', ko: '당뇨 위험도 상태', hi: 'डायबिटीज जोखिम स्थिति' } },
+            primary: { value: riskScore, label: { en: 'Asian Reference Status', es: 'Estado de Referencia Asiático', fr: 'Statut de Référence Asiatique', de: 'Asiatischer Referenzstatus', ko: '아시아인 참조 상태', hi: 'एशियाई संदर्भ स्थिति' } },
             secondary: [
               { label: { en: 'BMI Score', es: 'Puntaje IMC', fr: 'Score IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' }, value: bmi.toFixed(1) },
               { label: { en: 'Asian Cutoff', es: 'Umbral Asiático', fr: 'Seuil Asiatique', de: 'Asien-Schwellenwert', ko: '아시아인 기준', hi: 'एशियाई कटऑफ' }, value: '23.0 kg/m²' },
-              { label: { en: 'Waist Risk', es: 'Riesgo Cintura', fr: 'Risque Tour Taille', de: 'Taillenrisiko', ko: '허리둘레 위험', hi: 'कमर का जोखिम' }, value: waistCm >= waistLimit ? 'Elevated' : 'Optimal' }
+              { label: { en: 'Waist Reference', es: 'Referencia Cintura', fr: 'Référence Tour Taille', de: 'Taillenreferenz', ko: '허리둘레 참조', hi: 'कमर संदर्भ' }, value: waistCm >= waistLimit ? 'Elevated' : 'Standard' }
             ]
           };
         } 
@@ -564,19 +564,19 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         } 
         else if (slug === 'waist-to-hip-ratio-calculator') {
           const whr = waistCm / hipCm;
-          let risk = { en: 'Low', es: 'Bajo', fr: 'Faible', de: 'Gering', ko: '낮음', hi: 'कम' };
+          let risk = { en: 'Standard', es: 'Estándar', fr: 'Standard', de: 'Standard', ko: '기준', hi: 'मानक' };
           if (isM) {
-            if (whr >= 0.9 && whr < 1.0) risk = { en: 'Moderate', es: 'Moderado', fr: 'Modéré', de: 'Mäßig', ko: '보통', hi: 'मध्यम' };
-            else if (whr >= 1.0) risk = { en: 'High', es: 'Alto', fr: 'Élevé', de: 'Hoch', ko: '높음', hi: 'उच्च' };
+            if (whr >= 0.9 && whr < 1.0) risk = { en: 'Moderate Ratio', es: 'Proporción Moderada', fr: 'Rapport Modéré', de: 'Mäßiges Verhältnis', ko: '보통 비율', hi: 'मध्यम अनुपात' };
+            else if (whr >= 1.0) risk = { en: 'Elevated Ratio', es: 'Proporción Elevada', fr: 'Rapport Élevé', de: 'Erhöhtes Verhältnis', ko: '높은 비율', hi: 'उच्च अनुपात' };
           } else {
-            if (whr >= 0.8 && whr < 0.85) risk = { en: 'Moderate', es: 'Moderado', fr: 'Modéré', de: 'Mäßig', ko: '보통', hi: 'मध्यम' };
-            else if (whr >= 0.85) risk = { en: 'High', es: 'Alto', fr: 'Élevé', de: 'Hoch', ko: '높음', hi: 'उच्च' };
+            if (whr >= 0.8 && whr < 0.85) risk = { en: 'Moderate Ratio', es: 'Proporción Moderada', fr: 'Rapport Modéré', de: 'Mäßiges Verhältnis', ko: '보통 비율', hi: 'मध्यम अनुपात' };
+            else if (whr >= 0.85) risk = { en: 'Elevated Ratio', es: 'Proporción Elevada', fr: 'Rapport Élevé', de: 'Erhöhtes Verhältnis', ko: '높은 비율', hi: 'उच्च अनुपात' };
           }
 
           calculated = {
             primary: { value: whr.toFixed(2), label: { en: 'Waist-to-Hip Ratio', es: 'Proporción Cintura-Cadera', fr: 'Rapport WHR', de: 'Taille-Hüft-Verhältnis', ko: '허리 대비 엉덩이 비', hi: 'कमर से कूल्हे का अनुपात' } },
             secondary: [
-              { label: { en: 'Health Risk Level', es: 'Nivel de Riesgo', fr: 'Niveau de Risque', de: 'Risikostufe', ko: '비만 신체 리스크', hi: 'स्वास्थ्य जोखिम स्तर' }, value: risk.en }
+              { label: { en: 'Distribution Reference', es: 'Referencia de Distribución', fr: 'Référence de Distribution', de: 'Verteilungsreferenz', ko: '분포 참조', hi: 'वितरण संदर्भ' }, value: risk.en }
             ]
           };
         } 
