@@ -182,7 +182,7 @@ export const blogArticles: Record<string, any> = {
         </ol>
 
         <h2>How to Use BMI Effectively</h2>
-        <p>To get a complete view of your metabolic health, clinicians recommend pairing your BMI score with your <strong>Waist-to-Height Ratio (WHtR)</strong>, <strong>Basal Metabolic Rate (BMR)</strong>, and daily calorie expenditure (<strong>TDEE</strong>).</p>
+        <p>To evaluate your overall health context, public health guidelines suggest pairing your BMI score with your <strong>Waist-to-Height Ratio (WHtR)</strong>, <strong>Basal Metabolic Rate (BMR)</strong>, and daily calorie expenditure (<strong>TDEE</strong>).</p>
       `,
       hi: `
         <h2>बीएमआई (BMI) क्या है?</h2>
@@ -619,11 +619,11 @@ export const blogArticles: Record<string, any> = {
     contentHtml: {
       en: `
         <h2>How Age Alters BMI Interpretation</h2>
-        <p>A person's age significantly influences body composition, muscle density, and fat storage. While fixed cut-offs apply to adults (ages 20 to 65), pediatricians use age-percentile charts for children (ages 2 to 19), and geriatricians recommend slightly higher BMI windows (24–28 kg/m²) for seniors over 65 to protect against frailty and osteoporosis.</p>
+        <p>A person's age can influence body composition, muscle density, and fat distribution. WHO and CDC adult BMI classifications maintain a single standard adult reference category table regardless of age. Age-related interpretation may require additional context from a healthcare provider.</p>
       `,
       hi: `
         <h2>उम्र के साथ बीएमआई में बदलाव</h2>
-        <p>उम्र बढ़ने के साथ मांसपेशियों की मात्रा और शरीर की वसा में बदलाव आता है। बुजुर्गों के लिए थोड़ा अधिक बीएमआई (24–28) सुरक्षित माना जाता है।</p>
+        <p>उम्र के साथ शरीर की संरचना में स्वाभाविक बदलाव आते हैं। डब्ल्यूएचओ और सीडीसी वयस्क बीएमआई वर्गीकरण प्रत्येक आयु वर्ग के लिए अलग तालिका का उपयोग नहीं करते हैं। आयु-संबंधित संदर्भ के लिए अतिरिक्त स्वास्थ्य जानकारी आवश्यक हो सकती है।</p>
       `
     }
   },
