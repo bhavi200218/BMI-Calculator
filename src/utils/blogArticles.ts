@@ -307,7 +307,7 @@ export const blogArticles: Record<string, any> = {
 
         <h2>1. What is BMR (Basal Metabolic Rate)?</h2>
         <p>Your <strong>Basal Metabolic Rate (BMR)</strong> is the absolute minimum number of calories your body burns in 24 hours while at complete rest in a thermo-neutral environment. BMR powers your vital life functions—including breathing, blood circulation, cellular repair, brain function, and body temperature regulation.</p>
-        <p>Mifflin-St Jeor is a commonly used predictive equation for estimating resting energy expenditure:</p>
+        <p>The Mifflin-St Jeor Equation is a commonly used predictive equation for estimating resting energy expenditure. Calculator results are estimates and may differ from measured energy expenditure.</p>
 
         <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed">
           <p class="font-bold text-[var(--accent)] mb-1">Mifflin-St Jeor Equations:</p>
@@ -350,7 +350,7 @@ export const blogArticles: Record<string, any> = {
               </tr>
               <tr>
                 <td class="p-3 font-semibold">Usage Goal</td>
-                <td class="p-3">Absolute caloric intake floor</td>
+                <td class="p-3">Resting energy baseline estimate</td>
                 <td class="p-3">Maintenance caloric target</td>
               </tr>
             </tbody>
@@ -359,7 +359,7 @@ export const blogArticles: Record<string, any> = {
 
         <h2>How to Use TDEE for Weight Loss</h2>
         <p>As a generic planning example, a moderate calorie deficit of <strong>300 to 500 calories below your TDEE</strong> is sometimes referenced in dietary planning. Individual calorie needs and target rates vary based on personal health and activity goals.</p>
-        <p class="text-xs text-[var(--muted-foreground)] italic mt-4">Note: Individual calorie needs vary. People with medical conditions, adolescents, pregnant or breastfeeding individuals, or other special circumstances should seek individualized advice from a qualified healthcare professional.</p>
+        <p class="text-xs text-[var(--muted-foreground)] italic mt-4">Note: A BMR estimate should not be treated as a fixed minimum calorie intake. Individual energy needs vary, and people with medical conditions or special nutritional needs should seek individualized advice from a qualified healthcare professional.</p>
       `,
       hi: `
         <h2>बीएमआर (BMR) और टीडीईई (TDEE) में क्या अंतर है?</h2>
