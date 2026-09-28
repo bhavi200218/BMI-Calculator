@@ -78,10 +78,12 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       formulaCode: 'BMI = kg / m²',
       tableTitle: 'WHO Adult BMI Scale & Classification Chart',
       tableRows: [
-        { col1: 'Underweight', col2: '< 18.5 kg/m²', col3: 'Reference category associated with higher deficiency indicators' },
-        { col1: 'Healthy Weight', col2: '18.5 – 24.9 kg/m²', col3: 'Reference category associated with lower population-level risk' },
-        { col1: 'Overweight', col2: '25.0 – 29.9 kg/m²', col3: 'Reference category associated with moderate population-level risk (Asian cutoff: 23.0 kg/m²)' },
-        { col1: 'Obesity Class I-III', col2: '≥ 30.0 kg/m²', col3: 'Reference category associated with elevated population-level risk' }
+        { col1: 'Underweight', col2: '< 18.5 kg/m²', col3: 'Underweight reference range' },
+        { col1: 'Healthy Weight', col2: '18.5 – 24.9 kg/m²', col3: 'Healthy-weight reference range' },
+        { col1: 'Overweight', col2: '25.0 – 29.9 kg/m²', col3: 'Overweight reference range (Asian cutoff: 23.0 kg/m²)' },
+        { col1: 'Obesity Class I', col2: '30.0 – 34.9 kg/m²', col3: 'Obesity Class I reference range' },
+        { col1: 'Obesity Class II', col2: '35.0 – 39.9 kg/m²', col3: 'Obesity Class II reference range' },
+        { col1: 'Obesity Class III', col2: '≥ 40.0 kg/m²', col3: 'Obesity Class III reference range' }
       ],
       faqs: [
         { question: 'What is the BMI Calculator and how to calculate BMI?', answer: 'Body Mass Index (BMI) is a widely used population health screening measure. To calculate BMI, divide weight in kilograms by height in meters squared (kg/m²), or use imperial units [Weight (lbs) / Height (inches)²] × 703. Our free BMI tool applies this standard formula to compute your score instantly.' },
@@ -100,16 +102,98 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       formulaCode: 'BMI = kg / m²',
       tableTitle: 'डब्ल्यूएचओ वयस्क बीएमआई स्केल एवं वर्गीकरण चार्ट',
       tableRows: [
-        { col1: 'कम वजन (Underweight)', col2: '< 18.5 kg/m²', col3: 'कम शरीर द्रव्यमान से संबंधित संदर्भ श्रेणी' },
-        { col1: 'सामान्य वजन (Healthy Weight)', col2: '18.5 – 24.9 kg/m²', col3: 'कम आबादी-स्तरीय जोखिम से संबंधित संदर्भ श्रेणी' },
-        { col1: 'अधिक वजन (Overweight)', col2: '25.0 – 29.9 kg/m²', col3: 'मध्यम आबादी-स्तरीय जोखिम से संबंधित संदर्भ श्रेणी (एशियाई कटऑफ: 23.0 kg/m²)' },
-        { col1: 'मोटापा (Obesity Class I-III)', col2: '≥ 30.0 kg/m²', col3: 'उच्च आबादी-स्तरीय जोखिम से संबंधित संदर्भ श्रेणी' }
+        { col1: 'कम वजन (Underweight)', col2: '< 18.5 kg/m²', col3: 'कम वजन संदर्भ सीमा' },
+        { col1: 'सामान्य वजन (Healthy Weight)', col2: '18.5 – 24.9 kg/m²', col3: 'सामान्य वजन संदर्भ सीमा' },
+        { col1: 'अधिक वजन (Overweight)', col2: '25.0 – 29.9 kg/m²', col3: 'अधिक वजन संदर्भ सीमा (एशियाई कटऑफ: 23.0 kg/m²)' },
+        { col1: 'मोटापा श्रेणी I (Obesity Class I)', col2: '30.0 – 34.9 kg/m²', col3: 'मोटापा श्रेणी I संदर्भ सीमा' },
+        { col1: 'मोटापा श्रेणी II (Obesity Class II)', col2: '35.0 – 39.9 kg/m²', col3: 'मोटापा श्रेणी II संदर्भ सीमा' },
+        { col1: 'मोटापा श्रेणी III (Obesity Class III)', col2: '≥ 40.0 kg/m²', col3: 'मोटापा श्रेणी III संदर्भ सीमा' }
       ],
       faqs: [
         { question: 'बीएमआई कैलकुलेटर क्या है और बीएमआई की गणना कैसे करें?', answer: 'बॉडी मास इंडेक्स (BMI) एक व्यापक रूप से इस्तेमाल किया जाने वाला जनसंख्या स्वास्थ्य स्क्रीनिंग उपाय है। बीएमआई की गणना करने के लिए, किलोग्राम में वजन को मीटर वर्ग में ऊंचाई (kg/m²) से विभाजित करें।' },
         { question: 'पुरुषों और महिलाओं के लिए बीएमआई की सही गणना कैसे करें?', answer: 'वयस्क पुरुषों और महिलाओं के लिए बीएमआई गणना समान है, जो ऊंचाई और वजन पर निर्भर करती है।' },
         { question: 'डब्ल्यूएचओ बीएमआई चार्ट और स्केल क्या है?', answer: 'डब्ल्यूएचओ बीएमआई चार्ट वयस्कों को बीएमआई पैमाने पर चार मुख्य श्रेणियों में वर्गीकृत करता है: कम वजन (<18.5), सामान्य वजन (18.5–24.9), अधिक वजन (25.0–29.9), और मोटापा (≥30.0)।' },
         { question: 'मांसपेशियों वाले एथलीटों के लिए बीएमआई कितना सटीक है?', answer: 'मानक बीएमआई कैलकुलेटर ऊंचाई के सापेक्ष कुल शरीर द्रव्यमान को मापता है और मांसपेशियों के घनत्व को वसा से अलग नहीं करता है।' }
+      ]
+    },
+    es: {
+      eyebrow: 'Estándares de Salud de la OMS',
+      title: 'Calculadora de IMC – Calcular el Índice de Masa Corporal',
+      intro: 'Nuestra calculadora gratuita de IMC es una herramienta basada en las normas de la Organización Mundial de la Salud (OMS) y los CDC. Calcula tu categoría de IMC y revisa los rangos de peso estándar.',
+      formulaTitle: 'Fórmula Estándar de IMC de la OMS',
+      formulaDesc: 'Métrico: IMC = Peso (kg) / [Altura (m)]² | Imperial: IMC = [Peso (lbs) / Altura (pulgadas)²] × 703',
+      formulaCode: 'IMC = kg / m²',
+      tableTitle: 'Tabla de Clasificación de IMC para Adultos de la OMS',
+      tableRows: [
+        { col1: 'Bajo Peso', col2: '< 18.5 kg/m²', col3: 'Rango de referencia de bajo peso' },
+        { col1: 'Peso Saludable', col2: '18.5 – 24.9 kg/m²', col3: 'Rango de referencia de peso saludable' },
+        { col1: 'Sobrepeso', col2: '25.0 – 29.9 kg/m²', col3: 'Rango de referencia de sobrepeso (Corte asiático: 23.0 kg/m²)' },
+        { col1: 'Obesidad Clase I', col2: '30.0 – 34.9 kg/m²', col3: 'Rango de referencia de obesidad clase I' },
+        { col1: 'Obesidad Clase II', col2: '35.0 – 39.9 kg/m²', col3: 'Rango de referencia de obesidad clase II' },
+        { col1: 'Obesidad Clase III', col2: '≥ 40.0 kg/m²', col3: 'Rango de referencia de obesidad clase III' }
+      ],
+      faqs: [
+        { question: '¿Qué es la Calculadora de IMC y cómo calcular el IMC?', answer: 'El Índice de Masa Corporal (IMC) es una medida estándar de salud poblacional. Para calcular el IMC, divide el peso en kg por la altura en metros al cuadrado.' }
+      ]
+    },
+    fr: {
+      eyebrow: 'Normes de Santé de l\'OMS',
+      title: 'Calculateur d\'IMC – Calculez votre Indice de Masse Corporelle',
+      intro: 'Notre calculateur d\'IMC gratuit est un outil d\'évaluation basé sur les normes de l\'OMS et du CDC. Calculez votre catégorie d\'IMC et consultez les plages de poids de référence.',
+      formulaTitle: 'Formule Officielle d\'IMC selon l\'OMS',
+      formulaDesc: 'Métrique : IMC = Poids (kg) / [Taille (m)]² | Impérial : IMC = [Poids (lbs) / Taille (pouces)²] × 703',
+      formulaCode: 'IMC = kg / m²',
+      tableTitle: 'Tableau de Classification de l\'IMC pour Adultes selon l\'OMS',
+      tableRows: [
+        { col1: 'Sous-poids', col2: '< 18.5 kg/m²', col3: 'Plage de référence de sous-poids' },
+        { col1: 'Poids Normal', col2: '18.5 – 24.9 kg/m²', col3: 'Plage de référence de poids normal' },
+        { col1: 'Surpoids', col2: '25.0 – 29.9 kg/m²', col3: 'Plage de référence de surpoids (Seuil asiatique : 23.0 kg/m²)' },
+        { col1: 'Obésité Classe I', col2: '30.0 – 34.9 kg/m²', col3: 'Plage de référence d\'obésité classe I' },
+        { col1: 'Obésité Classe II', col2: '35.0 – 39.9 kg/m²', col3: 'Plage de référence d\'obésité classe II' },
+        { col1: 'Obésité Classe III', col2: '≥ 40.0 kg/m²', col3: 'Plage de référence d\'obésité classe III' }
+      ],
+      faqs: [
+        { question: 'Qu\'est-ce que le calculateur d\'IMC et comment le calculer ?', answer: 'L\'Indice de Masse Corporelle (IMC) mesure la masse corporelle par rapport à la taille. Divisez le poids en kg par la taille en mètres au carré (kg/m²).' }
+      ]
+    },
+    de: {
+      eyebrow: 'WHO Gesundheitsstandards',
+      title: 'BMI Rechner – Body-Mass-Index Berechnen',
+      intro: 'Unser kostenloser BMI-Rechner ist ein Tool zur Einschätzung nach Standards der WHO und der CDC. Berechnen Sie Ihre BMI-Kategorie und überprüfen Sie Richtwerte.',
+      formulaTitle: 'Offizielle WHO BMI-Formel',
+      formulaDesc: 'Metrisch: BMI = Gewicht (kg) / [Größe (m)]² | Imperial: BMI = [Gewicht (lbs) / Größe (Zoll)²] × 703',
+      formulaCode: 'BMI = kg / m²',
+      tableTitle: 'WHO BMI-Skala & Klassifizierungstabelle für Erwachsene',
+      tableRows: [
+        { col1: 'Untergewicht', col2: '< 18.5 kg/m²', col3: 'Referenzbereich Untergewicht' },
+        { col1: 'Normalgewicht', col2: '18.5 – 24.9 kg/m²', col3: 'Referenzbereich Normalgewicht' },
+        { col1: 'Übergewicht', col2: '25.0 – 29.9 kg/m²', col3: 'Referenzbereich Übergewicht (Asiatischer Wert: 23.0 kg/m²)' },
+        { col1: 'Adipositas Klasse I', col2: '30.0 – 34.9 kg/m²', col3: 'Referenzbereich Adipositas Klasse I' },
+        { col1: 'Adipositas Klasse II', col2: '35.0 – 39.9 kg/m²', col3: 'Referenzbereich Adipositas Klasse II' },
+        { col1: 'Adipositas Klasse III', col2: '≥ 40.0 kg/m²', col3: 'Referenzbereich Adipositas Klasse III' }
+      ],
+      faqs: [
+        { question: 'Was ist der BMI-Rechner und wie berechnet man den BMI?', answer: 'Der Body-Mass-Index (BMI) ist ein Maß zur Einschätzung des Körpergewichts im Verhältnis zur Körpergröße (kg/m²).' }
+      ]
+    },
+    ko: {
+      eyebrow: 'WHO 건강 기준',
+      title: 'BMI 계산기 – 체질량지수 계산',
+      intro: '세계보건기구(WHO) 및 CDC 기준에 따른 무료 BMI 계산기입니다. 체질량지수 범주 및 정상 체중 참조 범위를 계산하세요.',
+      formulaTitle: '표준 WHO BMI 계산 공식',
+      formulaDesc: '미터법: BMI = 체중 (kg) / [신장 (m)]² | 야드파운드법: BMI = [체중 (lbs) / 신장 (인치)²] × 703',
+      formulaCode: 'BMI = kg / m²',
+      tableTitle: 'WHO 성인 BMI 진단표 및 분류 차트',
+      tableRows: [
+        { col1: '저체중 (Underweight)', col2: '< 18.5 kg/m²', col3: '저체중 참조 범위' },
+        { col1: '정상 체중 (Healthy Weight)', col2: '18.5 – 24.9 kg/m²', col3: '정상 체중 참조 범위' },
+        { col1: '과체중 (Overweight)', col2: '25.0 – 29.9 kg/m²', col3: '과체중 참조 범위 (아시아인 기준: 23.0 kg/m²)' },
+        { col1: '비만 1단계 (Obesity Class I)', col2: '30.0 – 34.9 kg/m²', col3: '비만 1단계 참조 범위' },
+        { col1: '비만 2단계 (Obesity Class II)', col2: '35.0 – 39.9 kg/m²', col3: '비만 2단계 참조 범위' },
+        { col1: '비만 3단계 (Obesity Class III)', col2: '≥ 40.0 kg/m²', col3: '비만 3단계 참조 범위' }
+      ],
+      faqs: [
+        { question: 'BMI 계산기란 무엇이며 어떻게 계산하나요?', answer: '체질량지수(BMI)는 체중(kg)을 신장(m)의 제곱으로 나누어 계산하는 인구 보건학적 참조 지표입니다.' }
       ]
     }
   },
