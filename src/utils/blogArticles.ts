@@ -575,7 +575,7 @@ export const blogArticles: Record<string, any> = {
       en: `
         <h2>Pediatric BMI & CDC Percentiles Explained</h2>
         <p>In children and teens (ages 2 through 19), body composition changes constantly with growth and differs markedly between boys and girls. Therefore, fixed adult BMI numbers (18.5, 25, 30) do not apply to youth.</p>
-        <p>Instead, pediatricians evaluate youth health using <strong>CDC Growth Chart Percentiles</strong>, comparing a child's BMI against peers of the exact same age and biological sex:</p>
+        <p>Instead, pediatricians evaluate youth health using <strong>CDC Growth Chart Percentiles</strong>, comparing a child's BMI against peers of the same age and biological sex:</p>
 
         <ul>
           <li><strong>Underweight:</strong> Below the 5th percentile</li>
