@@ -358,7 +358,7 @@ export const blogArticles: Record<string, any> = {
         </div>
 
         <h2>How to Use TDEE for Weight Loss</h2>
-        <p>As a generic planning example, a moderate calorie deficit of <strong>300 to 500 calories below your TDEE</strong> is sometimes referenced in dietary planning. Individual calorie needs and target rates vary based on personal health and activity goals.</p>
+        <p>As a generic planning example, a moderate calorie deficit below your TDEE is sometimes referenced in dietary planning. Individual calorie needs and target rates vary based on personal health and activity goals.</p>
         <p class="text-xs text-[var(--muted-foreground)] italic mt-4">Note: A BMR estimate should not be treated as a fixed minimum calorie intake. Individual energy needs vary, and people with medical conditions or special nutritional needs should seek individualized advice from a qualified healthcare professional.</p>
       `,
       hi: `
