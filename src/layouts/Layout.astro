@@ -81,17 +81,13 @@ const softwareAppSchema = {
   }
 };
 
-// 3. MedicalWebPage Schema for E-E-A-T Authority
-const medicalWebPageSchema = {
+// 3. WebPage Schema for E-E-A-T Authority & Educational Screening Positioning
+const webPageSchema = {
   "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
+  "@type": "WebPage",
   "name": title,
   "url": canonicalURL,
   "description": description,
-  "medicalAudience": {
-    "@type": "MedicalAudience",
-    "audienceType": "Patient, Clinician, Fitness Athlete"
-  },
   "author": {
     "@type": "Person",
     "name": "Bhawanshi Dosi",
@@ -102,7 +98,6 @@ const medicalWebPageSchema = {
     "name": "Real BMI",
     "url": "https://realbmicalculator.com"
   },
-  "aspect": ["Overview", "Diagnosis", "Prevention", "Risk Factors"],
   "citation": [
     "https://www.cdc.gov/gaining-weight-during-pregnancy/",
     "https://pubmed.ncbi.nlm.nih.gov/13460005/",
@@ -305,7 +300,7 @@ const howToSchema = {
 		<!-- Structured Data / JSON-LD -->
 		<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)}></script>
 		<script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)}></script>
-		<script type="application/ld+json" set:html={JSON.stringify(medicalWebPageSchema)}></script>
+		<script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
 		<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 		<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
 		<script type="application/ld+json" set:html={JSON.stringify(howToSchema)}></script>
