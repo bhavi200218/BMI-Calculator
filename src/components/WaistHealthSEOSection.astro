@@ -60,11 +60,11 @@ const translations: Record<string, any> = {
     tableTitle: "संयुक्त बीएमआई एवं कमर परिधि स्वास्थ्य संदर्भ तालिका",
     tableHeaders: ["बीएमआई श्रेणी", "बीएमआई सीमा", "पुरुष कमर ≤102cm / महिला ≤88cm", "पुरुष कमर >102cm / महिला >88cm (अधिक कमर)"],
     tableRows: [
-      { cat: "कम वजन (Underweight)", range: "< 18.5 kg/m²", lowRisk: "कम जोखिम", highRisk: "बढ़ा हुआ संकेतक" },
-      { cat: "सामान्य वजन (Normal)", range: "18.5 – 24.9 kg/m²", lowRisk: "न्यूनतम जोखिम (संदर्भ सीमा)", highRisk: "बढ़ा हुआ संकेतक (पेट की वसा)" },
-      { cat: "अधिक वजन (Overweight)", range: "25.0 – 29.9 kg/m²", lowRisk: "बढ़ा हुआ संकेतक", highRisk: "उच्च स्क्रीनिंग संकेतक" },
-      { cat: "मोटापा श्रेणी I (Obesity I)", range: "30.0 – 34.9 kg/m²", lowRisk: "उच्च स्क्रीनिंग संकेतक", highRisk: "अधिक स्क्रीनिंग संकेतक" },
-      { cat: "मोटापा श्रेणी II और III", range: "≥ 35.0 kg/m²", lowRisk: "अधिक स्क्रीनिंग संकेतक", highRisk: "गंभीर स्क्रीनिंग संकेतक" }
+      { cat: "कम वजन (Underweight)", range: "< 18.5 kg/m²", lowRisk: "मानक संदर्भ", highRisk: "बढ़ा हुआ संदर्भ संकेतक" },
+      { cat: "सामान्य वजन (Normal)", range: "18.5 – 24.9 kg/m²", lowRisk: "सामान्य संदर्भ सीमा", highRisk: "बढ़ा हुआ संदर्भ संकेतक (पेट की वसा)" },
+      { cat: "अधिक वजन (Overweight)", range: "25.0 – 29.9 kg/m²", lowRisk: "बढ़ा हुआ संदर्भ संकेतक", highRisk: "उच्च संदर्भ संकेतक" },
+      { cat: "मोटापा श्रेणी I (Obesity I)", range: "30.0 – 34.9 kg/m²", lowRisk: "उच्च संदर्भ संकेतक", highRisk: "अधिक संदर्भ संकेतक" },
+      { cat: "मोटापा श्रेणी II और III", range: "≥ 35.0 kg/m²", lowRisk: "अधिक संदर्भ संकेतक", highRisk: "गंभीर संदर्भ संकेतक" }
     ],
     disclaimer: "मार्गदर्शन टिप्पणी: यह तालिका एनआईएच और डब्ल्यूएचओ दिशानिर्देशों के आधार पर तैयार की गई है। यह डॉक्टरी सलाह का विकल्प नहीं है।"
   },
@@ -82,8 +82,8 @@ const translations: Record<string, any> = {
     tableTitle: "Matriz de Evaluación: IMC y Cintura",
     tableHeaders: ["Categoría IMC", "Rango IMC", "Hombres ≤102cm / Mujeres ≤88cm", "Hombres >102cm / Mujeres >88cm"],
     tableRows: [
-      { cat: "Bajo Peso", range: "< 18.5 kg/m²", lowRisk: "Bajo Riesgo", highRisk: "Indicador Elevado" },
-      { cat: "Peso Normal", range: "18.5 – 24.9 kg/m²", lowRisk: "Riesgo Mínimo (Línea de Base)", highRisk: "Indicador Elevado (Grasa Visceral)" },
+      { cat: "Bajo Peso", range: "< 18.5 kg/m²", lowRisk: "Contexto de Referencia", highRisk: "Indicador Elevado" },
+      { cat: "Peso Normal", range: "18.5 – 24.9 kg/m²", lowRisk: "Línea de Base de Referencia", highRisk: "Indicador Elevado (Grasa Visceral)" },
       { cat: "Sobrepeso", range: "25.0 – 29.9 kg/m²", lowRisk: "Indicador Elevado", highRisk: "Alto Indicador de Evaluación" },
       { cat: "Obesidad Clase I", range: "30.0 – 34.9 kg/m²", lowRisk: "Alto Indicador", highRisk: "Indicador Elevado" },
       { cat: "Obesidad Clase II y III", range: "≥ 35.0 kg/m²", lowRisk: "Indicador Elevado", highRisk: "Indicador Sustancial" }
@@ -104,8 +104,8 @@ const translations: Record<string, any> = {
     tableTitle: "Matrice d'Évaluation de Santé : IMC & Tour de Taille",
     tableHeaders: ["Catégorie IMC", "Plage IMC", "Hommes ≤102cm / Femmes ≤88cm", "Hommes >102cm / Femmes >88cm"],
     tableRows: [
-      { cat: "Insuffisance Pondérale", range: "< 18.5 kg/m²", lowRisk: "Faible Risque", highRisk: "Indicateur Élevé" },
-      { cat: "Poids Normal", range: "18.5 – 24.9 kg/m²", lowRisk: "Risque Minimal", highRisk: "Indicateur Élevé (Graisse Viscérale)" },
+      { cat: "Insuffisance Pondérale", range: "< 18.5 kg/m²", lowRisk: "Contexte de Référence", highRisk: "Indicateur Élevé" },
+      { cat: "Poids Normal", range: "18.5 – 24.9 kg/m²", lowRisk: "Référence Minimale", highRisk: "Indicateur Élevé (Graisse Viscérale)" },
       { cat: "Surpoids", range: "25.0 – 29.9 kg/m²", lowRisk: "Indicateur Élevé", highRisk: "Indicateur de Dépistage Élevé" },
       { cat: "Obésité Classe I", range: "30.0 – 34.9 kg/m²", lowRisk: "Indicateur Élevé", highRisk: "Indicateur Substantiel" },
       { cat: "Obésité Classe II & III", range: "≥ 35.0 kg/m²", lowRisk: "Indicateur Substantiel", highRisk: "Indicateur Majeur" }
@@ -126,8 +126,8 @@ const translations: Record<string, any> = {
     tableTitle: "Gesundheits-Bewertungs-Matrix: BMI & Taillenumfang",
     tableHeaders: ["BMI-Kategorie", "BMI-Bereich", "Männer ≤102cm / Frauen ≤88cm", "Männer >102cm / Frauen >88cm"],
     tableRows: [
-      { cat: "Untergewicht", range: "< 18.5 kg/m²", lowRisk: "Niedriges Risiko", highRisk: "Erhöhtes Risiko" },
-      { cat: "Normalgewicht", range: "18.5 – 24.9 kg/m²", lowRisk: "Minimales Risiko", highRisk: "Erhöhter Indikator (Viszeralfett)" },
+      { cat: "Untergewicht", range: "< 18.5 kg/m²", lowRisk: "Referenz-Kontext", highRisk: "Erhöhter Indikator" },
+      { cat: "Normalgewicht", range: "18.5 – 24.9 kg/m²", lowRisk: "Standard-Referenz", highRisk: "Erhöhter Indikator (Viszeralfett)" },
       { cat: "Übergewicht", range: "25.0 – 29.9 kg/m²", lowRisk: "Erhöhter Indikator", highRisk: "Hoher Dépistage-Indikator" },
       { cat: "Adipositas Klasse I", range: "30.0 – 34.9 kg/m²", lowRisk: "Hoher Indikator", highRisk: "Substanzieller Indikator" },
       { cat: "Adipositas Klasse II & III", range: "≥ 35.0 kg/m²", lowRisk: "Substanzieller Indikator", highRisk: "Wesentlicher Indikator" }

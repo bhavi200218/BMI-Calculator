@@ -362,41 +362,6 @@ const faqSchema = {
         BMI is a screening measure and does not independently diagnose disease or determine an individual's overall health risk.
       </p>
 
-      <!-- Standard WHO Adult Classification Section -->
-      <div class="pt-8 space-y-6">
-        <div class="space-y-2">
-          <p class="text-xs font-display font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">WHO & CDC Reference Standards</p>
-          <h3 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">Standard Adult BMI Categories (WHO Aligned)</h3>
-          <p class="text-sm text-[var(--muted-foreground)] font-medium max-w-2xl leading-relaxed">
-            Standard adult BMI classifications apply uniformly across all adult ages (18+) and biological sexes according to WHO and CDC guidelines. Observational research notes that older adults (65+) may benefit from maintaining a BMI near the upper end of normal (23–27 kg/m²) to protect against muscle mass loss.
-          </p>
-        </div>
-
-        <!-- Desktop Table Version (WHO Standard) -->
-        <div class="rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-soft)] overflow-hidden">
-          <div class="overflow-x-auto">
-            <table class="w-full text-left min-w-[550px] border-collapse">
-              <thead>
-                <tr class="bg-[var(--muted)] text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-                  <th class="px-6 py-4">{t.colCategory}</th>
-                  <th class="px-6 py-4">{t.colRange}</th>
-                  <th class="px-6 py-4">{t.colRisk}</th>
-                </tr>
-              </thead>
-              <tbody class="text-sm font-medium divide-y divide-[var(--border)]/40">
-                {t.whoTable.map((row: { category: string; range: string; risk: string }) => (
-                  <tr class="hover:bg-[var(--muted)]/40 transition-colors">
-                    <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">{row.category}</td>
-                    <td class="px-6 py-4 font-semibold text-[var(--accent)]">{row.range} kg/m²</td>
-                    <td class="px-6 py-4 text-xs text-[var(--muted-foreground)]">{row.risk}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
       <!-- Sources & References Box -->
       <div class="rounded-xl border border-[var(--border)] bg-[var(--card)]/80 p-5 md:p-6 shadow-[var(--shadow-soft)] flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
