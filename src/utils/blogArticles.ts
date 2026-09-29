@@ -221,12 +221,12 @@ export const blogArticles: Record<string, any> = {
       fr: 'Recherche et Preuves'
     },
     description: {
-      en: 'Is BMI actually accurate for your body? Read 2026 medical evidence on muscle density flaws, Oxford height scaling formula, and WHO ethnic guidelines.',
-      hi: 'क्या बीएमआई आपके लिए सटीक है? मांसपेशियों के घनत्व, ऊंचाई के भ्रम और डब्ल्यूएचओ दिशानिर्देशों पर 2026 का साक्ष्य पढ़ें।',
-      ko: 'BMI가 내 몸에 정말 정확할까요? 근육 밀도 한계, 옥스포드 신장 보정 공식 및 2026 임상 연구 결과.',
-      de: 'Ist der BMI für Ihren Körper wirklich genau? Lesen Sie klinische Fakten zu Muskeldichte und Höhenskalierung.',
-      es: '¿Es el IMC realmente preciso para tu cuerpo? Lee la evidencia médica sobre densidad muscular y escala de altura.',
-      fr: 'L\'IMC est-il vraiment précis pour votre corps ? Découvrez les preuves médicales sur la masse musculaire et la taille.'
+      en: 'Is BMI actually accurate for your body? Read 2026 published reference research on muscle density factors, Oxford height scaling formula, and WHO ethnic guidelines.',
+      hi: 'क्या बीएमआई आपके लिए सटीक है? मांसपेशियों के घनत्व, ऊंचाई के संदर्भ और डब्ल्यूएचओ दिशानिर्देशों पर 2026 का शोध पढ़ें।',
+      ko: 'BMI가 내 몸에 정말 정확할까요? 근육 밀도 한계, 옥스포드 신장 보정 공식 및 2026 연구 결과.',
+      de: 'Ist der BMI für Ihren Körper wirklich genau? Lesen Sie Referenzdaten zu Muskeldichte und Höhenskalierung.',
+      es: '¿Es el IMC realmente preciso para tu cuerpo? Lee la investigación sobre densidad muscular y escala de altura.',
+      fr: 'L\'IMC est-il vraiment précis pour votre corps ? Découvrez les analyses sur la masse musculaire et la taille.'
     },
     contentHtml: {
       en: `
