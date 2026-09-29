@@ -622,8 +622,8 @@ export const calculators: CalculatorConfig[] = [
         primary: { value: Math.round(tdee), label: { en: 'Total Daily Energy Expenditure', es: 'Gasto Energético Total Diario', fr: 'Dépense Énergétique Totale', de: 'Gesamtenergiebedarf (TDEE)', ko: '총 일일 에너지 소비량', hi: 'कुल दैनिक ऊर्जा व्यय' }, unit: 'kcal/day' },
         secondary: [
           { label: { en: 'Basal Metabolic Rate (BMR)', es: 'Metabolismo Basal (BMR)', fr: 'Métabolisme de Base (BMR)', de: 'Grundumsatz (BMR)', ko: '기초대사량 (BMR)', hi: 'बेसल मेटाबॉलिक रेट' }, value: Math.round(bmr), unit: 'kcal' },
-          { label: { en: 'Fat Loss Target (-500 kcal)', es: 'Objetivo Pérdida de Grasa', fr: 'Objectif Perte de Graisse', de: 'Fettabbau-Ziel (-500 kcal)', ko: '체지방 감량 타겟', hi: 'वसा हानि लक्ष्य' }, value: Math.round(tdee - 500), unit: 'kcal' },
-          { label: { en: 'Muscle Gain Target (+300 kcal)', es: 'Objetivo Ganar Músculo', fr: 'Objectif Prise de Muscle', de: 'Muskelaufbau-Ziel (+300 kcal)', ko: '근육 증가 타겟', hi: 'मांसपेशी वृद्धि लक्ष्य' }, value: Math.round(tdee + 300), unit: 'kcal' }
+          { label: { en: 'Example Deficit (-500 kcal)', es: 'Ejemplo de Déficit (-500 kcal)', fr: 'Exemple de Déficit (-500 kcal)', de: 'Beispiel-Defizit (-500 kcal)', ko: '예시 칼로리 적자 (-500 kcal)', hi: 'उदाहरण कैलोरी घाटा (-500 kcal)' }, value: Math.round(tdee - 500), unit: 'kcal' },
+          { label: { en: 'Example Surplus (+300 kcal)', es: 'Ejemplo de Superávit (+300 kcal)', fr: 'Exemple de Surplus (+300 kcal)', de: 'Beispiel-Überschuss (+300 kcal)', ko: '예시 칼로리 잉여 (+300 kcal)', hi: 'उदाहरण कैलोरी वृद्धि (+300 kcal)' }, value: Math.round(tdee + 300), unit: 'kcal' }
         ]
       };
     }
@@ -684,8 +684,8 @@ export const calculators: CalculatorConfig[] = [
         primary: { value: Math.round(tdee), label: { en: 'Daily Maintenance Calories', es: 'Calorías de Mantenimiento', fr: 'Calories de Maintien Quotidiennes', de: 'Tägliche Erhaltungskalorien', ko: '일일 유지 칼로리', hi: 'दैनिक रखरखाव कैलोरी' }, unit: 'kcal/day' },
         secondary: [
           { label: { en: 'Basal Metabolic Rate (BMR)', es: 'Metabolismo Basal (BMR)', fr: 'Métabolisme de Base (BMR)', de: 'Grundumsatz (BMR)', ko: '기초대사량 (BMR)', hi: 'बेसल मेटाबॉलिक रेट' }, value: Math.round(bmr), unit: 'kcal' },
-          { label: { en: 'Mild Weight Loss Deficit (-250 kcal)', es: 'Déficit Pérdida Leve', fr: 'Déficit Perte Légère', de: 'Leichter Kalorienabbau', ko: '완만한 감량 칼로리 (-250)', hi: 'हल्का वजन घटाने का लक्ष्य' }, value: Math.round(tdee - 250), unit: 'kcal' },
-          { label: { en: 'Standard Weight Loss (-500 kcal)', es: 'Déficit Pérdida Estándar', fr: 'Déficit Perte Standard', de: 'Standard Kalorienabbau', ko: '표준 감량 칼로리 (-500)', hi: 'मानक वजन घटाने का लक्ष्य' }, value: Math.round(tdee - 500), unit: 'kcal' }
+          { label: { en: 'Example Mild Deficit (-250 kcal)', es: 'Ejemplo Déficit Leve (-250 kcal)', fr: 'Exemple Déficit Léger (-250 kcal)', de: 'Beispiel-Defizit (-250 kcal)', ko: '완만한 예시 칼로리 (-250 kcal)', hi: 'हल्का उदाहरण घाटा (-250 kcal)' }, value: Math.round(tdee - 250), unit: 'kcal' },
+          { label: { en: 'Example Standard Deficit (-500 kcal)', es: 'Ejemplo Déficit Estándar (-500 kcal)', fr: 'Exemple Déficit Standard (-500 kcal)', de: 'Beispiel-Defizit (-500 kcal)', ko: '표준 예시 칼로리 (-500 kcal)', hi: 'मानक उदाहरण घाटा (-500 kcal)' }, value: Math.round(tdee - 500), unit: 'kcal' }
         ]
       };
     }

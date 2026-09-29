@@ -748,13 +748,13 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Lightly Active (PAL 1.375)', col2: 'BMR × 1.375', col3: 'Light exercise or sport 1–3 days per week' },
         { col1: 'Moderately Active (PAL 1.55)', col2: 'BMR × 1.55', col3: 'Moderate exercise or sports 3–5 days per week' },
         { col1: 'Very Active (PAL 1.725)', col2: 'BMR × 1.725', col3: 'Hard exercise or physical labor 6–7 days per week' },
-        { col1: 'Example Deficit Target', col2: 'TDEE - 500 kcal', col3: 'Example deficit for weight planning (~0.45 kg / 1 lb per week energy difference)' }
+        { col1: 'Example Calorie Deficit', col2: 'TDEE minus a chosen deficit', col3: 'Example reference for weight-management planning' }
       ],
       faqs: [
         { question: 'What is a TDEE calculator and how does it calculate maintenance calories?', answer: 'A TDEE calculator (Total Daily Energy Expenditure calculator) estimates the total calories your body burns in 24 hours including resting metabolic rate (BMR), thermic effect of food (TEF), and exercise/non-exercise physical activity. Eating equal to your TDEE maintains your current body weight.' },
-        { question: 'How to calculate TDEE online for weight loss by age, height (cm), and weight (kg)?', answer: 'To calculate TDEE online for weight loss, enter your age, biological sex, weight in kg (or lbs), and height in cm (or inches). First, your BMR is determined using the Mifflin-St Jeor equation, then multiplied by your physical activity score. Subtracting 500 calories per day from your TDEE yields an estimated calorie deficit for losing ~0.5 kg (1 lb) per week.' },
+        { question: 'How to calculate TDEE online for weight loss by age, height (cm), and weight (kg)?', answer: 'To calculate TDEE online for weight loss, enter your age, biological sex, weight in kg (or lbs), and height in cm (or inches). First, your BMR is determined using the Mifflin-St Jeor equation, then multiplied by your physical activity score. A calorie deficit below estimated TDEE is commonly used for weight-loss planning, but the appropriate amount varies by individual.' },
         { question: 'What is the difference between BMR and TDEE calories?', answer: 'BMR (Basal Metabolic Rate) represents the estimated baseline calories your body requires at complete rest. TDEE includes BMR plus calories burned through daily movement, work, and exercise.' },
-        { question: 'How many calories should I eat daily for weight loss using TDEE?', answer: 'A calorie deficit below estimated TDEE is commonly used for weight-loss planning. The appropriate amount varies by individual.' },
+        { question: 'How many calories should I eat daily for weight loss using TDEE?', answer: 'A calorie deficit below estimated TDEE is commonly used for weight-loss planning, but the appropriate amount varies by individual.' },
         { question: 'How often should I recalculate my maintenance calories and TDEE?', answer: 'Consider recalculating when your body weight or physical activity level changes significantly, as body mass changes alter daily energy maintenance estimates.' }
       ]
     },
@@ -771,14 +771,14 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'हल्का सक्रिय (PAL 1.375)', col2: 'BMR × 1.375', col3: 'सप्ताह में 1–3 दिन हल्का व्यायाम' },
         { col1: 'मध्यम सक्रिय (PAL 1.55)', col2: 'BMR × 1.55', col3: 'सप्ताह में 3–5 दिन मध्यम व्यायाम' },
         { col1: 'अत्यधिक सक्रिय (PAL 1.725)', col2: 'BMR × 1.725', col3: 'सप्ताह में 6–7 दिन कठिन व्यायाम' },
-        { col1: 'वजन घटाने का लक्ष्य', col2: 'TDEE - 500 kcal', col3: 'प्रति सप्ताह ~0.5 किग्रा घटाने का अनुमानित लक्ष्य' }
+        { col1: 'उदाहरण कैलोरी घाटा', col2: 'TDEE घटाव अनुमानित घाटा', col3: 'वजन योजना के लिए उदाहरण संदर्भ' }
       ],
       faqs: [
         { question: 'TDEE कैलकुलेटर क्या है और यह रखरखाव कैलोरी की गणना कैसे करता है?', answer: 'TDEE कैलकुलेटर (Total Daily Energy Expenditure) 24 घंटों में आपके शरीर द्वारा बर्न की जाने वाली कुल कैलोरी का अनुमान लगाता है। TDEE के बराबर कैलोरी खाने से आपका वजन स्थिर रहता है।' },
-        { question: 'वजन घटाने के लिए TDEE ऑनलाइन कैसे कैलकुलेट करें?', answer: 'अपनी उम्र, लिंग, वजन (किग्रा) और ऊंचाई (सेमी) दर्ज करें। TDEE से 500 कैलोरी घटाने पर प्रति सप्ताह ~0.5 किग्रा वजन घटाने का लक्ष्य मिलता है।' },
+        { question: 'वजन घटाने के लिए TDEE ऑनलाइन कैसे कैलकुलेट करें?', answer: 'अपनी उम्र, लिंग, वजन (किग्रा) और ऊंचाई (सेमी) दर्ज करें। TDEE से अनुमानित घाटा घटाने पर वजन योजना का संदर्भ प्राप्त होता है।' },
         { question: 'BMR और TDEE कैलोरी में क्या अंतर है?', answer: 'BMR विश्राम की स्थिति में आवश्यक अनुमानित कैलोरी है, जबकि TDEE में BMR के साथ दैनिक गतिविधियों और व्यायाम में बर्न होने वाली कैलोरी शामिल होती है।' },
-        { question: 'वजन घटाने के लिए प्रतिदिन कितनी कैलोरी खानी चाहिए?', answer: 'वजन घटाने के लिए अपने TDEE से 300 से 500 कैलोरी कम खाएं।' },
-        { question: 'रखरखाव कैलोरी की पुनर्गणना कब करनी चाहिए?', answer: 'हर बार 3 से 5 किग्रा वजन बदलने पर अपने TDEE की पुनर्गणना करें।' }
+        { question: 'वजन घटाने के लिए प्रतिदिन कितनी कैलोरी खानी चाहिए?', answer: 'वजन प्रबंधन योजना के लिए अनुमानित TDEE से कम कैलोरी का उपयोग किया जाता है, लेकिन उपयुक्त मात्रा व्यक्ति के आधार पर भिन्न होती है।' },
+        { question: 'रखरखाव कैलोरी की पुनर्गणना कब करनी चाहिए?', answer: 'जब आपका शरीर का वजन या गतिविधि का स्तर महत्वपूर्ण रूप से बदलता है, तो पुनर्गणना पर विचार करें।' }
       ]
     }
   },
@@ -788,13 +788,13 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       title: 'Maintenance Calorie Calculator – Calorie Maintenance Calculator Online',
       intro: 'Our free Maintenance Calorie Calculator estimates your daily maintenance calories, total energy expenditure, and target calorie ranges for weight goals. Enter your age, gender, weight in kg, height in cm, and exercise frequency to view baseline maintenance caloric estimates.',
       formulaTitle: 'Maintenance Calorie Math & Energy Balance Standards',
-      formulaDesc: 'Maintenance Calories = Basal Metabolic Rate (BMR) × Physical Activity Level (PAL). Weight Loss Target = Maintenance Calories - 500 kcal/day (0.45 kg loss/week). Weight Gain Target = Maintenance Calories + 300 kcal/day.',
+      formulaDesc: 'Maintenance Calories = Basal Metabolic Rate (BMR) × Physical Activity Level (PAL). Energy adjustments can be made based on individual weight goals.',
       formulaCode: 'Maintenance = BMR × PAL',
       tableTitle: 'Calorie Maintenance & Weight Goal Caloric Breakdown Table',
       tableRows: [
         { col1: 'Maintenance Calories', col2: '100% TDEE (0 kcal net change)', col3: 'Preserves current body weight and body composition' },
         { col1: 'Mild Deficit (Weight Loss)', col2: 'TDEE - 250 kcal/day', col3: 'Slow, steady weight loss (~0.25 kg / 0.5 lbs per week)' },
-        { col1: 'Standard Deficit', col2: 'TDEE - 500 kcal/day', col3: 'Standard weight loss deficit (~0.5 kg / 1.0 lb per week)' },
+        { col1: 'Example Calorie Deficit', col2: 'TDEE minus a chosen deficit', col3: 'Example reference for weight-management planning' },
         { col1: 'Higher Deficit', col2: 'TDEE - 750 kcal/day', col3: 'Faster weight loss (~0.75 kg per week); requires adequate protein' },
         { col1: 'Lean Muscle Surplus', col2: 'TDEE + 250 to 300 kcal/day', col3: 'Controlled muscle gain with minimal fat accumulation' }
       ],
@@ -802,7 +802,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'What is a maintenance calorie calculator and how does it work online?', answer: 'A maintenance calorie calculator computes the estimated daily caloric intake required to maintain your current body weight. It uses metabolic equations (Mifflin-St Jeor) combined with your physical activity multiplier.' },
         { question: 'How to calculate calorie maintenance by age, height (cm), and weight (kg)?', answer: 'Input your biological age, gender, height (cm), weight (kg), and weekly activity level to estimate your maintenance calorie baseline.' },
         { question: 'What happens if I eat at my maintenance calories every day?', answer: 'Eating at your estimated maintenance calorie level keeps your total energy balance neutral. Your body weight remains relatively constant over time.' },
-        { question: 'How do I use my maintenance calories to calculate calories for weight loss?', answer: 'To lose weight, subtract 300 to 500 calories per day from your calculated maintenance level. A 500-calorie daily deficit creates an estimated 3,500-calorie weekly deficit.' },
+        { question: 'How do I use my maintenance calories to calculate calories for weight loss?', answer: 'A calorie deficit below estimated maintenance calories is commonly used for weight-loss planning, but the appropriate amount varies by individual.' },
         { question: 'Is a calorie maintenance calculator accurate for men and women of all ages?', answer: 'Maintenance calorie calculators utilize published mathematical formulas like Mifflin-St Jeor and Harris-Benedict, providing baseline estimates for healthy adults.' }
       ]
     },
@@ -811,20 +811,20 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       title: 'रखरखाव कैलोरी कैलकुलेटर – Calorie Maintenance Calculator Online',
       intro: 'हमारा मुफ़्त Maintenance Calorie Calculator आपकी दैनिक रखरखाव कैलोरी और वजन लक्ष्यों के लिए अनुमानित कैलोरी की गणना करता है।',
       formulaTitle: 'रखरखाव कैलोरी सूत्र एवं ऊर्जा संतुलन',
-      formulaDesc: 'रखरखाव कैलोरी = BMR × activity गुणक। वजन घटाने का लक्ष्य = रखरखाव कैलोरी - 500 kcal/दिन।',
+      formulaDesc: 'रखरखाव कैलोरी = BMR × activity गुणक। व्यक्तिगत लक्ष्यों के आधार पर ऊर्जा समायोजन किया जा सकता है।',
       formulaCode: 'Maintenance = BMR × PAL',
       tableTitle: 'कैलोरी रखरखाव एवं वजन लक्ष्य तालिका',
       tableRows: [
         { col1: 'रखरखाव कैलोरी', col2: '100% TDEE (0 kcal बदलाव)', col3: 'वर्तमान वजन को बनाए रखता है' },
         { col1: 'हल्की कमी (वजन घटाना)', col2: 'TDEE - 250 kcal/दिन', col3: 'धीमा, निरंतर वजन घटाना (~0.25 किग्रा प्रति सप्ताह)' },
-        { col1: 'मानक वसा हानि कमी', col2: 'TDEE - 500 kcal/दिन', col3: 'मानक वसा हानि दर (~0.5 किग्रा प्रति सप्ताह)' },
+        { col1: 'उदाहरण कैलोरी घाटा', col2: 'TDEE घटाव अनुमानित घाटा', col3: 'वजन योजना के लिए उदाहरण संदर्भ' },
         { col1: 'मांसपेशी वृद्धि (सरप्लस)', col2: 'TDEE + 250 से 300 kcal/दिन', col3: 'मांसपेशी निर्माण के लिए अतिरिक्त कैलोरी' }
       ],
       faqs: [
         { question: 'रखरखाव कैलोरी कैलकुलेटर क्या है और यह कैसे काम करता है?', answer: 'यह कैलकुलेटर आपके वर्तमान वजन को बनाए रखने के लिए आवश्यक अनुमानित दैनिक कैलोरी की गणना करता है।' },
         { question: 'उम्र, ऊंचाई (सेमी) और वजन (किग्रा) के अनुसार रखरखाव कैलोरी कैसे कैलकुलेट करें?', answer: 'अपनी उम्र, लिंग, ऊंचाई (सेमी), वजन (किग्रा) और गतिविधि स्तर दर्ज करके अपनी रखरखाव कैलोरी जानें।' },
         { question: 'यदि मैं प्रतिदिन अपनी रखरखाव कैलोरी खाऊं तो क्या होगा?', answer: 'रखरखाव कैलोरी खाने से आपका वजन स्थिर रहता है।' },
-        { question: 'वजन घटाने के लिए रखरखाव कैलोरी का उपयोग कैसे करें?', answer: 'वजन घटाने के लिए अपनी रखरखाव कैलोरी से प्रतिदिन 300 से 500 कैलोरी कम खाएं।' },
+        { question: 'वजन घटाने के लिए रखरखाव कैलोरी का उपयोग कैसे करें?', answer: 'वजन प्रबंधन योजना के लिए रखरखाव कैलोरी से कम कैलोरी का उपयोग किया जाता है, लेकिन उपयुक्त मात्रा व्यक्ति के आधार पर भिन्न होती है।' },
         { question: 'क्या यह कैलकुलेटर पुरुषों और महिलाओं के लिए उपयोगी है?', answer: 'हां, यह मिफ्लिन-सेंट जिओर जैसे गणितीय सूत्रों का उपयोग करके अनुमान प्रदान करता है।' }
       ]
     }
