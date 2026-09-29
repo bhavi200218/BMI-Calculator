@@ -93,7 +93,7 @@ const webAppSchema = {
       </div>
 
       <!-- Main Calculator Layout -->
-      {calc.slug === '3d-bmi-calculator' ? (
+      {['3d-bmi-calculator', '3d-body-visualizer'].includes(calc.slug) ? (
         <div class="space-y-10 animate-in" style="animation-delay:100ms">
           <!-- Primary Highlight: 3D Body Visualizer Canvas Studio -->
           <div class="w-full">

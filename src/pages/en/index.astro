@@ -13,11 +13,12 @@ import RealBMIIntentSection from '../../components/RealBMIIntentSection.astro';
 import DiabetesRiskSEOSection from '../../components/DiabetesRiskSEOSection.astro';
 import WaistHealthSEOSection from '../../components/WaistHealthSEOSection.astro';
 import NewBMIFormulaSEOSection from '../../components/NewBMIFormulaSEOSection.astro';
+import SiteArchitectureTree from '../../components/SiteArchitectureTree.astro';
 ---
 
 <Layout 
-	title="Real BMI Calculator – 3D Body Visualizer & Health Tools"
-	description="Real BMI Calculator & 3D Body Visualizer. Calculate your Real BMI score, 3D body model, BMR, TDEE, and ideal weight instantly based on WHO & CDC reference standards. 100% free & private."
+	title="Free BMI, BMR, TDEE & Body Composition Calculators | Real BMI"
+	description="Free BMI, BMR, TDEE & Body Composition Calculators. Educational calculators based on published formulas and reference ranges. 100% free & private."
 >
 	<Navbar />
 	
@@ -30,21 +31,21 @@ import NewBMIFormulaSEOSection from '../../components/NewBMIFormulaSEOSection.as
 				<!-- Main headline — exact keyword match H1 -->
 				<div class="text-center space-y-2.5 mb-5 max-w-4xl mx-auto animate-in" style="animation-delay:0ms">
 					<h1 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Real BMI Calculator
-						<span class="block text-sm sm:text-base md:text-lg mt-1 text-[var(--accent)] font-semibold tracking-normal normal-case">Know Your Real BMI. Own Your Health.</span>
+						Free BMI, BMR, TDEE & Body Composition Calculators
+						<span class="block text-sm sm:text-base md:text-lg mt-1.5 text-[var(--accent)] font-semibold tracking-normal normal-case">Educational calculators based on published formulas and reference ranges.</span>
 					</h1>
 					<p class="text-xs sm:text-sm md:text-base text-[var(--muted-foreground)] font-sans font-semibold max-w-none mx-auto px-2">
-						Calculate your <strong class="text-[var(--foreground)] font-bold">Real BMI</strong> score with our instant Body Mass Index Tool based on <strong class="text-[var(--foreground)] font-bold">WHO & CDC reference standards</strong> — 100% free & private.
+						Calculate your Body Mass Index (BMI), BMR, TDEE, and ideal weight using equations based on WHO & CDC reference standards — 100% free & private.
 					</p>
 				</div>
 
 				<!-- Stats strip -->
 				<div class="flex flex-wrap justify-center gap-6 md:gap-12 mb-6 animate-in" style="animation-delay:60ms">
 					{[
-						{ value: 'WHO', label: 'Standard' },
+						{ value: 'WHO', label: 'Reference' },
 						{ value: '6+', label: 'Languages' },
 						{ value: '100%', label: 'Private' },
-						{ value: 'Instant', label: 'Results' },
+						{ value: 'Instant', label: 'Calculations' },
 					].map(s => (
 						<div class="text-center space-y-0.5">
 							<div class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)]">{s.value}</div>
@@ -57,7 +58,7 @@ import NewBMIFormulaSEOSection from '../../components/NewBMIFormulaSEOSection.as
 				<div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mb-8 md:mb-10 animate-in" style="animation-delay:120ms">
 					<span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-semibold uppercase tracking-[0.18em] text-[var(--accent)] shadow-sm">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						Evidence-Based Health Reference
+						Educational Health Calculators
 					</span>
 				</div>
 
@@ -67,6 +68,11 @@ import NewBMIFormulaSEOSection from '../../components/NewBMIFormulaSEOSection.as
 				</div>
 			</div>
 		</section>
+
+		<!-- Visual Architecture Tree -->
+		<div class="max-w-7xl mx-auto px-4 md:px-6">
+			<SiteArchitectureTree lang="en" />
+		</div>
 
 		<!-- ═══════════════════  REAL BMI INTENT & ACCURACY SECTION  ═══════════════════ -->
 		<RealBMIIntentSection lang="en" />
