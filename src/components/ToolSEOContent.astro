@@ -113,7 +113,8 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'बीएमआई कैलकुलेटर क्या है और बीएमआई की गणना कैसे करें?', answer: 'बॉडी मास इंडेक्स (BMI) एक व्यापक रूप से इस्तेमाल किया जाने वाला जनसंख्या स्वास्थ्य स्क्रीनिंग उपाय है। बीएमआई की गणना करने के लिए, किलोग्राम में वजन को मीटर वर्ग में ऊंचाई (kg/m²) से विभाजित करें।' },
         { question: 'पुरुषों और महिलाओं के लिए बीएमआई की सही गणना कैसे करें?', answer: 'वयस्क पुरुषों और महिलाओं के लिए बीएमआई गणना समान है, जो ऊंचाई और वजन पर निर्भर करती है।' },
         { question: 'डब्ल्यूएचओ बीएमआई चार्ट और स्केल क्या है?', answer: 'डब्ल्यूएचओ बीएमआई चार्ट वयस्कों को बीएमआई पैमाने पर चार मुख्य श्रेणियों में वर्गीकृत करता है: कम वजन (<18.5), सामान्य वजन (18.5–24.9), अधिक वजन (25.0–29.9), और मोटापा (≥30.0)।' },
-        { question: 'मांसपेशियों वाले एथलीटों के लिए बीएमआई कितना सटीक है?', answer: 'मानक बीएमआई कैलकुलेटर ऊंचाई के सापेक्ष कुल शरीर द्रव्यमान को मापता है और मांसपेशियों के घनत्व को वसा से अलग नहीं करता है।' }
+        { question: 'Real BMI कैलकुलेटर और सामान्य बीएमआई कैलकुलेटर में क्या अंतर है?', answer: 'Real BMI डब्ल्यूएचओ दिशानिर्देशों, एशियाई कटऑफ (23.0 kg/m²), और बीएमआर अनुमानों को मिलाकर अतिरिक्त संदर्भात्मक स्वास्थ्य जानकारी प्रदान करता है।' },
+        { question: 'क्या सामान्य BMI कैलकुलेटर मांसपेशियों वाले एथलीटों के लिए सटीक है?', answer: 'मानक बीएमआई कैलकुलेटर ऊंचाई के सापेक्ष कुल शरीर द्रव्यमान को मापता है और मांसपेशियों के घनत्व को वसा से अलग नहीं करता है। मांसपेशियों वाले एथलीट अक्सर कम वसा प्रतिशत के बावजूद उच्च बीएमआई स्कोर दर्ज करते हैं।' }
       ]
     },
     es: {
@@ -481,13 +482,13 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'US Navy Anthropometric Reference',
       title: 'Body Fat Calculator – US Navy Body Fat Percentage Tool',
-      intro: 'Estimate your body fat percentage using the official US Navy circumference-based formula. Based on waist, neck, height, and hip circumference measurements, estimate your body fat %, lean mass ratio, and ACE health category reference thresholds.',
+      intro: 'Estimate your body fat percentage using the US Navy circumference-based estimation formula. Based on waist, neck, height, and hip circumference measurements, estimate your body fat %, lean mass ratio, and ACE health category reference thresholds.',
       formulaTitle: 'US Navy Body Fat Formula Equations (Logarithmic Tape Method)',
       formulaDesc: 'Men: %Fat = 495 / [1.0324 - 0.19077 × log10(waist - neck in cm) + 0.15456 × log10(height in cm)] - 450 | Women: %Fat = 495 / [1.29579 - 0.35004 × log10(waist + hip - neck in cm) + 0.22100 × log10(height in cm)] - 450',
       formulaCode: 'Men: 495 / [ 1.0324 - 0.19077 log10(W - N) + 0.15456 log10(H) ] - 450 | Women: 495 / [ 1.29579 - 0.35004 log10(W + Hip - N) + 0.22100 log10(H) ] - 450',
       tableTitle: 'ACE & US Navy Body Fat Percentage Categorization Table',
       tableRows: [
-        { col1: 'Essential Fat Level', col2: 'Men: 2% - 5% | Women: 10% - 13%', col3: 'Minimum physiological fat required for hormone regulation & organ cushioning' },
+        { col1: 'Essential Fat Level', col2: 'Men: 2% - 5% | Women: 10% - 13%', col3: 'Essential body-fat reference range for physiological function' },
         { col1: 'Athletes Category', col2: 'Men: 6% - 13% | Women: 14% - 20%', col3: 'Low body fat percentage typical in endurance & resistance trained athletes' },
         { col1: 'Fitness Level', col2: 'Men: 14% - 17% | Women: 21% - 24%', col3: 'Reference range commonly associated with fitness-oriented populations' },
         { col1: 'Average Population', col2: 'Men: 18% - 24% | Women: 25% - 31%', col3: 'Standard acceptable body fat percentage range for healthy adults' },
@@ -841,7 +842,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Devine Formula (1974)', col2: '50 kg (M) / 45.5 kg (F) + 2.3 kg/in > 5ft', col3: 'Widely cited formula introduced in 1974' },
         { col1: 'Robinson Formula (1983)', col2: '52 kg (M) / 49.0 kg (F) + 1.9 or 1.7 kg/in', col3: 'Modification of Devine formula optimized for medium frame adults' },
         { col1: 'Miller Formula (1983)', col2: '56.2 kg (M) / 53.1 kg (F) + 1.41 or 1.36 kg/in', col3: 'Higher base estimate for shorter individuals, gentler slope per inch' },
-        { col1: 'Hamwi Formula (1964)', col2: '48 kg (M) / 45.5 kg (F) + 2.7 or 2.2 kg/in', col3: 'Formula originally created for dose estimations' },
+        { col1: 'Hamwi Formula (1964)', col2: '48 kg (M) / 45.5 kg (F) + 2.7 or 2.2 kg/in', col3: 'Historical reference formula' },
         { col1: 'WHO Healthy BMI Range', col2: '18.5 – 24.9 kg/m²', col3: 'Population health reference window based on height squared' }
       ],
       faqs: [
@@ -1049,8 +1050,8 @@ const rawData = seoDatabase[slug]?.[lang] || enData;
 const currentData: ToolContent = {
   ...enData,
   ...rawData,
-  tableRows: (rawData.tableRows && rawData.tableRows.length >= (enData.tableRows?.length || 0)) ? rawData.tableRows : enData.tableRows,
-  faqs: (rawData.faqs && rawData.faqs.length >= (enData.faqs?.length || 0)) ? rawData.faqs : enData.faqs
+  tableRows: (rawData.tableRows && rawData.tableRows.length > 0) ? rawData.tableRows : enData.tableRows,
+  faqs: (rawData.faqs && rawData.faqs.length > 0) ? rawData.faqs : enData.faqs
 };
 
 const faqSchema = {
