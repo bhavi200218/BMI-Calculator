@@ -1154,13 +1154,32 @@ const activeReferences = toolSpecificReferences[slug] || [
     </p>
   </div>
 
-  <!-- Reference Table -->
+  <!-- Reference Table (Responsive: Stacked Cards on Mobile, Table on Desktop) -->
   {currentData.tableRows && (
     <div class="space-y-4">
       <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
         {currentData.tableTitle}
       </h3>
-      <div class="overflow-x-auto rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-md">
+
+      <!-- Mobile Stacked Card View (No Horizontal Scroll) -->
+      <div class="grid gap-3.5 md:hidden">
+        {currentData.tableRows.map(row => (
+          <div class="p-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2.5 shadow-xs">
+            <div class="flex items-center justify-between gap-2 border-b border-[var(--border)]/60 pb-2">
+              <span class="font-display font-bold text-sm text-[var(--foreground)]">{row.col1}</span>
+              <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+                {row.col2}
+              </span>
+            </div>
+            <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+              {row.col3}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Desktop Table View -->
+      <div class="hidden md:block rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-md overflow-hidden">
         <table class="w-full text-left border-collapse text-sm">
           <thead>
             <tr class="bg-[var(--muted)]/50 border-b border-[var(--border)] text-[var(--foreground)] font-display uppercase tracking-wider text-xs font-bold">
