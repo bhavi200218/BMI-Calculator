@@ -97,7 +97,7 @@ const content: Record<string, any> = {
       { q: 'क्या मांसपेशियों वाले एथलीटों के लिए बीएमआई उपयुक्त है?', a: 'बीएमआई एक प्राथमिक जांच उपकरण है, निदान नहीं। यह मांसपेशियों वाले एथलीटों में शरीर की वसा का अधिक अनुमान लगा सकता है, इसलिए इसे कमर की परिधि के साथ देखना चाहिए।' },
       { q: 'दक्षिण एशियाई लोगों के लिए बीएमआई सीमाएं कम क्यों हैं?', a: 'डब्ल्यूएचओ विशेषज्ञ परामर्श दिशानिर्देशों के अनुसार, एशियाई आबादी में कम वजन पर भी पेट की विसरल वसा जमा होने का जोखिम अधिक हो सकता है। इसलिए दिशानिर्देश 23.0 kg/m² को बढ़े हुए स्वास्थ्य जोखिम की संदर्भ सीमा के रूप में सुझाते हैं।' },
       { q: '25 बीएमआई का क्या अर्थ है?', a: '25 का बीएमआई सामान्य सीमा और अधिक वजन श्रेणी के बीच की सीमा पर है। यह कमर के आकार और व्यायाम की आदतों की समीक्षा करने का संकेत है।' },
-      { q: 'बीएमआर (BMR) क्या है और यह क्यों महत्वपूर्ण है?', a: 'बीएमआर वह न्यूनतम ऊर्जा है जिसका उपयोग आपका शरीर विश्राम की स्थिति में सांस लेने और अंग संचालन के लिए करता है।' },
+      { q: 'बीएमआर (BMR) क्या है और यह क्यों महत्वपूर्ण है?', a: 'बीएमआर (BMR) एक प्रेडिक्टिव समीकरण के आधार पर अनुमानित विश्राम ऊर्जा व्यय प्रदान करता है।' },
       { q: 'टीडीईई (TDEE) क्या है और यह क्यों महत्वपूर्ण है?', a: 'टीडीईई अनुमान लगाता है कि आप शारीरिक गतिविधि और व्यायाम सहित एक दिन में कितनी कैलोरी बर्न करते हैं।' }
     ]
   },
@@ -118,8 +118,8 @@ const content: Record<string, any> = {
     faqSubtitle: 'Todo lo que necesitas saber sobre cálculos de IMC, índices metabólicos y mediciones atléticas.',
     sections: [
       { title: 'Entendiendo Tu Índice de Masa Corporal', text: 'El Índice de Masa Corporal (IMC) es un estándar de evaluación internacional para estimar si tu peso se encuentra dentro de niveles adecuados. Real BMI Calculator utiliza escalas de la OMS y los CDC para guiarte en tu estado nutricional.' },
-      { title: 'La Sinergia de IMC, BMR y TDEE', text: 'El IMC te indica tu categoría general de peso, el BMR describe los requerimientos de tu metabolismo celular en reposo, y el TDEE te indica el consumo calórico diario para planificar objetivos de mantenimiento o ajuste.' },
-      { title: 'Salud Cardiovascular: Comprensión de Factores de Referencia', text: 'La investigación de autoridades globales destaca que el IMC debe evaluarse junto con la circunferencia de cintura para proporcionar contexto adicional.' },
+      { title: 'La Sinergia de IMC, BMR y TDEE', text: 'El IMC te indica tu categoría general de peso, el BMR proporciona un gasto energético en reposo estimado basado en una ecuación predictiva, y el TDEE te indica el consumo calórico diario para planificar objetivos de mantenimiento o ajuste.' },
+      { title: 'Salud Cardiovascular: Comprensión de Factores de Referencia', text: 'El IMC es una medida de referencia a nivel poblacional. Otras medidas de salud, como la circunferencia de la cintura, pueden proporcionar contexto adicional.' },
       { title: 'Detección de Referencia de IMC y Adiposidad Abdominal', text: 'Según los consensos de la OMS, un IMC elevado y la grasa visceral abdominal proporcionan contexto de evaluación de salud.' }
     ],
     whoTable: [
@@ -135,7 +135,7 @@ const content: Record<string, any> = {
       { q: '¿Cuál es un IMC saludable para una mujer?', a: 'Para la mayoría de los adultos, el rango saludable es de 18.5 a 24.9.' },
       { q: '¿Es el IMC adecuado para atletas?', a: 'El IMC es una herramienta de evaluación general. Puede clasificar diferente la masa muscular en personas musculosas.' },
       { q: '¿Qué significa un IMC de 25?', a: 'Un IMC de 25 está en el límite entre el rango saludable y el sobrepeso.' },
-      { q: '¿Qué es el BMR y por qué importa?', a: 'El BMR es la energía que tu cuerpo gasta en reposo para mantener funciones vitales básicas.' },
+      { q: '¿Qué es el BMR y por qué importa?', a: 'El BMR proporciona una estimación del gasto energético en reposo basada en una ecuación predictiva.' },
       { q: '¿Qué es el TDEE y por qué importa?', a: 'El TDEE calcula cuántas calorías quemas al día incluyendo el ejercicio diario.' }
     ]
   },
@@ -156,8 +156,8 @@ const content: Record<string, any> = {
     faqSubtitle: 'Tout ce que vous devez savoir sur le calcul de l\'IMC, le métabolisme et les mesures sportives.',
     sections: [
       { title: 'Comprendre Votre Indice de Masse Corporelle', text: 'L\'indice de masse corporelle (IMC) est un standard de dépistage reconnu à l\'échelle internationale par les professionnels de santé.' },
-      { title: 'Comment l\'IMC, le BMR et le TDEE Interagissent', text: 'Votre IMC indique si votre poids est équilibré, le BMR votre métabolisme de base au repos, et le TDEE vos dépenses caloriques totales quotidiennes.' },
-      { title: 'Santé Cardiovasculaire: Comprendre les Facteurs de Référence', text: 'L\'évaluation de l\'IMC associée au tour de taille permet une appréciation des facteurs de référence cardiovasculaires.' },
+      { title: 'Comment l\'IMC, le BMR et le TDEE Interagissent', text: 'Votre IMC indique si votre poids est équilibré, le BMR fournit une estimation de la dépense énergétique au repos basée sur une équation prédictive, et le TDEE estime vos dépenses caloriques quotidiennes.' },
+      { title: 'Santé Cardiovasculaire: Comprendre les Facteurs de Référence', text: 'L\'IMC est une mesure de référence au niveau de la population. D\'autres mesures de santé, telles que le tour de taille, peuvent fournir un contexte supplémentaire.' },
       { title: 'Référence d\'IMC et Adiposité Abdominale', text: 'Un IMC élevé et la graisse viscérale abdominale fournissent un contexte d\'évaluation de la santé.' }
     ],
     whoTable: [
@@ -173,7 +173,7 @@ const content: Record<string, any> = {
       { q: 'Quel est l\'IMC sain pour une femme ?', a: 'Pour la plupart des adultes, un IMC sain se situe entre 18.5 et 24.9.' },
       { q: 'L\'IMC est-il précis pour les sportifs ?', a: 'L\'IMC est un outil de dépistage qui peut surestimer la masse grasse des athlètes.' },
       { q: 'Que signifie un IMC de 25 ?', a: 'Un IMC de 25 marque la limite entre poids normal et surpoids.' },
-      { q: 'Qu\'est-ce que le BMR ?', a: 'Le BMR représente les calories indispensables au fonctionnement des organes au repos.' },
+      { q: 'Qu\'est-ce que le BMR ?', a: 'Le BMR fournit une estimation de la dépense énergétique au repos basée sur une équation prédictive.' },
       { q: 'Qu\'est-ce que le TDEE ?', a: 'Le TDEE estime votre dépense énergétique quotidienne totale avec l\'activité physique.' }
     ]
   },
@@ -194,8 +194,8 @@ const content: Record<string, any> = {
     faqSubtitle: 'Alles, was Sie über BMI-Berechnungen, Stoffwechselraten und sportliche Messungen wissen müssen.',
     sections: [
       { title: 'Ihren Body-Mass-Index Verstehen', text: 'Der Body-Mass-Index (BMI) ist ein international anerkannter Screening-Standard zur Beurteilung Ihres Gewichts.' },
-      { title: 'Wie BMI, BMR & TDEE Zusammenhängen', text: 'Ihr BMI zeigt, ob Ihr Gewicht ausgewogen ist, Ihr BMR beschreibt den Grundumsatz, und der TDEE berechnet den Gesamtkalorienbedarf.' },
-      { title: 'Kardiovaskuläre Gesundheit: Referenzfaktoren Verstehen', text: 'Die Kombination von BMI und Taillenumfang ermöglicht die Beurteilung von Gesundheitskontexten.' },
+      { title: 'Wie BMI, BMR & TDEE Zusammenhängen', text: 'Ihr BMI zeigt, ob Ihr Gewicht ausgewogen ist, Ihr BMR liefert einen geschätzten Ruheenergiebedarf basierend auf einer prädiktiven Gleichung, und der TDEE berechnet den Gesamtkalorienbedarf.' },
+      { title: 'Kardiovaskuläre Gesundheit: Referenzfaktoren Verstehen', text: 'Der BMI ist ein Referenzwert auf Bevölkerungsebene. Andere Gesundheitsmessungen wie der Taillenumfang können zusätzlichen Kontext liefern.' },
       { title: 'BMI & Viszeralfett Referenzkontext', text: 'Ein erhöhter BMI und viszerales Bauchfett liefern Kontext für die Gesundheitsbeurteilung.' }
     ],
     whoTable: [
@@ -211,7 +211,7 @@ const content: Record<string, any> = {
       { q: 'Was ist ein gesunder BMI für Frauen?', a: 'Ein gesunder BMI liegt für die meisten Erwachsenen zwischen 18,5 und 24,9.' },
       { q: 'Ist der BMI für Sportler geeignet?', a: 'Der BMI unterscheidet nicht zwischen Muskelmasse und Fettgewebe.' },
       { q: 'Was bedeutet ein BMI von 25?', a: 'Ein BMI von 25 liegt an der Schwelle zum Übergewicht.' },
-      { q: 'Was ist der BMR?', a: 'Der BMR ist der Kalorienbedarf Ihres Körpers im absoluten Ruhezustand.' },
+      { q: 'Was ist der BMR?', a: 'Der BMR liefert einen geschätzten Ruheenergiebedarf basierend auf einer prädiktiven Gleichung.' },
       { q: 'Was ist der TDEE?', a: 'Der TDEE beschreibt den täglichen Gesamtkalorienverbrauch inklusive Bewegung.' }
     ]
   },
@@ -249,7 +249,7 @@ const content: Record<string, any> = {
       { q: '여성의 건강한 BMI는 얼마인가요?', a: '일반 성인의 경우 18.5에서 24.9 사이가 건강한 범주입니다.' },
       { q: '근육 질량이 많은 사람에게도 BMI가 정확한가요?', a: '운동선수의 경우 BMI가 실제보다 높게 측정될 수 있습니다.' },
       { q: 'BMI 25는 무엇을 의미하나요?', a: 'BMI 25는 정상 범위와 과체중의 경계선입니다.' },
-      { q: 'BMR이란 무엇인가요?', a: 'BMR은 휴식 상태에서 필요한 기초 에너지입니다.' },
+      { q: 'BMR이란 무엇인가요?', a: 'BMR은 예측 방정식을 기반으로 한 추정 휴식 에너지 소비량을 제공합니다.' },
       { q: 'TDEE란 무엇인가요?', a: 'TDEE는 하루 총 에너지 소비량입니다.' }
     ]
   }
