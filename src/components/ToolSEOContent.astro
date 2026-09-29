@@ -1047,7 +1047,15 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   }
 };
 
-const currentData = seoDatabase[slug]?.[lang] || seoDatabase[slug]?.['en'] || seoDatabase['bmi-calculator']['en'];
+const enData = seoDatabase[slug]?.['en'] || seoDatabase['bmi-calculator']['en'];
+const rawData = seoDatabase[slug]?.[lang] || enData;
+
+const currentData: ToolContent = {
+  ...enData,
+  ...rawData,
+  tableRows: (rawData.tableRows && rawData.tableRows.length >= (enData.tableRows?.length || 0)) ? rawData.tableRows : enData.tableRows,
+  faqs: (rawData.faqs && rawData.faqs.length >= (enData.faqs?.length || 0)) ? rawData.faqs : enData.faqs
+};
 
 const faqSchema = {
   "@context": "https://schema.org",
