@@ -524,24 +524,24 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'calorie-calculator': {
     en: {
-      eyebrow: 'Weight Management Standard',
-      title: 'Calorie Deficit Calculator – Daily Calorie Target for Weight Loss',
-      intro: 'Use our free Calorie Deficit Calculator to estimate the daily calorie deficit for sustainable weight targets. Based on the Mifflin-St Jeor BMR equation and Total Daily Energy Expenditure (TDEE), estimate calorie targets for your personal goals.',
+      eyebrow: 'Calorie Planning Reference',
+      title: 'Calorie Deficit Calculator – Estimated Calorie Planning',
+      intro: 'Use our free Calorie Deficit Calculator to estimate daily calorie differences for weight goals based on BMR and TDEE equations. A calorie deficit is commonly used for weight-loss planning, but individual energy needs and appropriate adjustments vary.',
       formulaTitle: 'Calorie Deficit Calculation Formulas & Weight Change Math',
       formulaDesc: 'Daily Calorie Intake = TDEE - Target Deficit | Weekly Weight Change Estimate (kg) = (Daily Deficit × 7) / 7700 kcal (Note: 7700 kcal/kg is a rough energy-equivalent estimate)',
       formulaCode: 'Target Calories = [ (10 × W_kg) + (6.25 × H_cm) - (5 × Age) + S ] × Activity Multiplier - Daily Deficit',
       tableTitle: 'Calorie Deficit Levels & Estimated Weekly Weight-Change Rates',
       tableRows: [
-        { col1: 'Larger Example Deficit (-25%)', col2: '~0.75 kg (1.6 lbs) loss / week', col3: 'May help support lean-mass retention when protein intake and resistance training are appropriate' },
-        { col1: 'Moderate Example Deficit (-20%)', col2: '~0.50 kg (1.1 lbs) loss / week', col3: 'Example moderate deficit for fat loss planning' },
+        { col1: 'Larger Example Deficit (-25%)', col2: '~0.75 kg (1.6 lbs) loss / week', col3: 'Example larger deficit for weight planning' },
+        { col1: 'Moderate Example Deficit (-20%)', col2: '~0.50 kg (1.1 lbs) loss / week', col3: 'Example moderate deficit for weight planning' },
         { col1: 'Smaller Example Deficit (-10% to -15%)', col2: '~0.25 to 0.35 kg loss / week', col3: 'Smaller example deficit for gradual weight-change targets' },
         { col1: 'Maintenance Baseline (0% Deficit)', col2: '0.00 kg loss / week', col3: 'Estimated TDEE energy balance for weight stabilization' }
       ],
       faqs: [
         { question: 'What is a calorie deficit and how does a calorie deficit calculator work?', answer: 'A calorie deficit occurs when daily energy intake is less than Total Daily Energy Expenditure (TDEE). The calorie deficit calculator computes your BMR using the Mifflin St Jeor equation, applies your physical activity multiplier to determine TDEE, and subtracts an example target deficit to estimate weight-change targets.' },
         { question: 'How many calories should I eat to lose 1 kg or 1 lb per week?', answer: 'A commonly used rough energy-equivalent estimate is approximately 7,700 kcal per kilogram of body mass (~3,500 kcal per pound). Actual weight change varies between individuals and over time. A daily deficit of 500 kcal creates an example 3,500 kcal weekly energy deficit.' },
-        { question: 'What calorie deficit is commonly used for weight management?', answer: 'There is no single calorie-deficit value that is appropriate for everyone. Individual energy needs, health status, activity, and dietary intake should be considered. A moderate daily energy deficit below TDEE is often referenced as an example starting range, adjusted for individual health needs.' },
-        { question: 'How much protein should I eat while in a calorie deficit?', answer: 'During a calorie deficit, protein requirements generally range from 1.6 to 2.2 grams per kilogram of body weight to support muscle retention and satiety.' },
+        { question: 'What calorie deficit is commonly used for weight management?', answer: 'There is no single calorie-deficit value that is appropriate for everyone. Individual energy needs, health status, activity, and dietary intake should be considered. A moderate daily energy deficit below TDEE is often referenced as an example starting range.' },
+        { question: 'How much protein should I eat while in a calorie deficit?', answer: 'During a calorie deficit, protein intake ranges from 1.6 to 2.2 grams per kilogram of body weight are commonly referenced in sports nutrition literature.' },
         { question: 'What should I do if my weight loss stalls in a calorie deficit?', answer: 'Weight loss stalls often stem from uncounted food calories, reduced non-exercise physical activity (NEAT), or fluid retention. Recalculate your TDEE at your new lower weight to keep energy goals accurate.' }
       ]
     }
@@ -556,10 +556,10 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       formulaCode: 'Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)',
       tableTitle: 'Daily Protein Reference Range (g/kg) Matrix by Activity & Goal',
       tableRows: [
-        { col1: 'Sedentary Adult Baseline', col2: '0.8 g / kg body weight', col3: 'Minimum RDA to prevent protein deficiency' },
-        { col1: 'Active Endurance Athlete', col2: '1.2 – 1.4 g / kg body weight', col3: 'Tissue repair & glycogen resynthesis' },
-        { col1: 'Muscle Growth (Hypertrophy)', col2: '1.6 – 2.2 g / kg body weight', col3: 'Common athletic target for muscle protein synthesis' },
-        { col1: 'Fat Loss Calorie Deficit', col2: '1.8 – 2.4 g / kg body weight', col3: 'Suggested range to preserve lean skeletal muscle during energy restriction' }
+        { col1: 'Sedentary Adult Baseline', col2: '0.8 g / kg body weight', col3: 'RDA baseline reference' },
+        { col1: 'Active Endurance Athlete', col2: '1.2 – 1.4 g / kg body weight', col3: 'Reference athletic range' },
+        { col1: 'Muscle Growth (Hypertrophy)', col2: '1.6 – 2.2 g / kg body weight', col3: 'Common athletic target for training' },
+        { col1: 'Fat Loss Calorie Deficit', col2: '1.8 – 2.4 g / kg body weight', col3: 'Example range referenced during calorie deficit planning' }
       ],
       faqs: [
         { question: 'What is the Protein Intake Calculator?', answer: 'The Protein Intake Calculator is a sports nutrition tool that calculates your daily protein requirement estimate in grams based on body weight, fitness goals, and training intensity.' },
@@ -597,22 +597,22 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   'macro-calculator': {
     en: {
       eyebrow: 'Macronutrient Reference',
-      title: 'Macro Calculator & Macronutrient Reference Tool',
-      intro: 'Calculate your estimated daily carb, protein, and fat targets in grams with our free Macro Calculator to explore an example macronutrient ratio based on your selected plan. There is no single optimal macronutrient ratio for everyone. The calculator uses example percentage splits for planning purposes.',
+      title: 'Macro Calculator – Estimated Daily Macro Split',
+      intro: 'Calculate your estimated daily carb, protein, and fat targets in grams with our free Macro Calculator to explore an example macronutrient ratio for meal planning. There is no single optimal macronutrient ratio that applies universally.',
       formulaTitle: 'Macro Caloric Conversion Formulas',
       formulaDesc: 'Carbohydrate Grams = (Total Calories × Carb %) / 4 | Protein Grams = (Total Calories × Protein %) / 4 | Fat Grams = (Total Calories × Fat %) / 9',
       formulaCode: 'Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9',
       tableTitle: 'Macronutrient Energy Density & Dieting Ratios',
       tableRows: [
-        { col1: 'Carbohydrates (4 kcal/g)', col2: 'Balanced: 40% | Low-Carb: 20% | High-Protein: 35%', col3: 'Primary fuel source for high-intensity muscular contractions & brain' },
-        { col1: 'Protein (4 kcal/g)', col2: 'Balanced: 30% | Low-Carb: 40% | High-Protein: 40%', col3: 'Essential for skeletal muscle protein synthesis & nitrogen balance' },
-        { col1: 'Dietary Fat (9 kcal/g)', col2: 'Balanced: 30% | Low-Carb: 40% | High-Protein: 25%', col3: 'Required for steroid hormone production & cell membranes' }
+        { col1: 'Carbohydrates (4 kcal/g)', col2: 'Balanced: 40% | Low-Carb: 20% | High-Protein: 35%', col3: 'Example fuel source allocation' },
+        { col1: 'Protein (4 kcal/g)', col2: 'Balanced: 30% | Low-Carb: 40% | High-Protein: 40%', col3: 'Example protein allocation' },
+        { col1: 'Dietary Fat (9 kcal/g)', col2: 'Balanced: 30% | Low-Carb: 40% | High-Protein: 25%', col3: 'Example dietary fat allocation' }
       ],
       faqs: [
         { question: 'What is a Macro Calculator?', answer: 'A Macro Calculator is a nutritional reference tool that divides your estimated daily caloric intake into example gram amounts of carbohydrates, protein, and dietary fats for meal planning.' },
         { question: 'How to calculate macros in grams for weight loss or muscle gain?', answer: 'First calculate your estimated TDEE (Total Daily Energy Expenditure). Multiply total calories by your target macro percentages (e.g., 40% carbs, 30% protein, 30% fat). Divide carbohydrate and protein calories by 4 and fat calories by 9 to get estimated daily grams.' },
         { question: 'What is IIFYM (If It Fits Your Macros)?', answer: 'IIFYM (If It Fits Your Macros) is a flexible dieting approach that tracks daily gram targets of protein, carbohydrates, and fats calculated by a macro tool.' },
-        { question: 'How can macronutrient ratios vary by goal?', answer: 'There is no single optimal macronutrient ratio for everyone. The calculator uses example splits for planning purposes. For weight management, example macro splits (such as 40% protein, 35% carbs, 25% fat) are often referenced to support satiety and muscle retention during a calorie deficit. For muscle building, balanced example splits (40% carbs, 30% protein, 30% fat) provide fuel for training.' },
+        { question: 'How can macronutrient ratios vary by goal?', answer: 'There is no single optimal macronutrient ratio for everyone. The calculator uses example splits for planning purposes.' },
         { question: 'How many calories are in 1 gram of carbs, protein, and fat?', answer: 'Carbohydrates contain 4 calories per gram, Protein contain 4 calories per gram, and Dietary Fat contains 9 calories per gram.' }
       ]
     }
@@ -738,9 +738,9 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Energy Balance & Metabolism',
       title: 'TDEE Calculator Online – Total Daily Energy Expenditure Calculator',
-      intro: 'Our free TDEE Calculator (Total Daily Energy Expenditure Calculator) calculates your total daily calorie maintenance burn based on age, sex, weight (kg or lbs), height (cm or inches), and physical activity multiplier (PAL). Discover your maintenance calories, fat loss deficit targets (500 kcal deficit for weight loss), and muscle gain surplus numbers with precision.',
-      formulaTitle: 'TDEE Calculation Formula (Mifflin-St Jeor & PAL Multiplier)',
-      formulaDesc: 'Step 1: Calculate BMR (Mifflin-St Jeor): Men: (10 × W) + (6.25 × H) - (5 × A) + 5 | Women: (10 × W) + (6.25 × H) - (5 × A) - 161. Step 2: Multiply BMR by Physical Activity Level (PAL): Sedentary (1.2), Light (1.375), Moderate (1.55), Heavy (1.725).',
+      intro: 'Our free TDEE Calculator (Total Daily Energy Expenditure Calculator) estimates your daily energy expenditure based on age, sex, weight (kg or lbs), height (cm or inches), and physical activity multiplier (PAL). Explore your estimated maintenance calories and example weight planning ranges.',
+      formulaTitle: 'TDEE Calculation Formula (Mifflin-St Jeor Predictive Equation & PAL Multiplier)',
+      formulaDesc: 'Step 1: Estimate BMR (Mifflin-St Jeor): Men: (10 × W) + (6.25 × H) - (5 × A) + 5 | Women: (10 × W) + (6.25 × H) - (5 × A) - 161. Step 2: Multiply BMR by Physical Activity Level (PAL): Sedentary (1.2), Light (1.375), Moderate (1.55), Heavy (1.725).',
       formulaCode: 'TDEE = BMR × Activity Factor',
       tableTitle: 'TDEE Activity Multipliers & Daily Calorie Breakdown Table',
       tableRows: [
@@ -748,7 +748,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Lightly Active (PAL 1.375)', col2: 'BMR × 1.375', col3: 'Light exercise or sport 1–3 days per week' },
         { col1: 'Moderately Active (PAL 1.55)', col2: 'BMR × 1.55', col3: 'Moderate exercise or sports 3–5 days per week' },
         { col1: 'Very Active (PAL 1.725)', col2: 'BMR × 1.725', col3: 'Hard exercise or physical labor 6–7 days per week' },
-        { col1: 'Weight Loss Deficit', col2: 'TDEE - 500 kcal', col3: 'Calculates ~0.45 kg (1 lb) per week safe fat loss rate' }
+        { col1: 'Example Deficit Target', col2: 'TDEE - 500 kcal', col3: 'Example deficit for weight planning (~0.45 kg / 1 lb per week energy difference)' }
       ],
       faqs: [
         { question: 'What is a TDEE calculator and how does it calculate maintenance calories?', answer: 'A TDEE calculator (Total Daily Energy Expenditure calculator) estimates the total calories your body burns in 24 hours including resting metabolic rate (BMR), thermic effect of food (TEF), and exercise/non-exercise physical activity. Eating equal to your TDEE maintains your current body weight.' },
