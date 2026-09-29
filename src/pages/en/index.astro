@@ -1,19 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
-import BMICalculator from '../../components/BMICalculator.astro';
-import ResultStudio from '../../components/ResultStudio.astro';
-import HealthContent from '../../components/HealthContent.astro';
-import LatestArticles from '../../components/LatestArticles.astro';
-import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
-import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
-import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
-import RealBMIIntentSection from '../../components/RealBMIIntentSection.astro';
-import DiabetesRiskSEOSection from '../../components/DiabetesRiskSEOSection.astro';
-import WaistHealthSEOSection from '../../components/WaistHealthSEOSection.astro';
-import NewBMIFormulaSEOSection from '../../components/NewBMIFormulaSEOSection.astro';
 import SiteArchitectureTree from '../../components/SiteArchitectureTree.astro';
+import LatestArticles from '../../components/LatestArticles.astro';
+import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
+import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
+import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
 ---
 
 <Layout 
@@ -24,11 +17,11 @@ import SiteArchitectureTree from '../../components/SiteArchitectureTree.astro';
 	
 	<main class="pb-4 relative overflow-x-hidden">
 
-		<!-- ═══════════════════  HERO  ═══════════════════ -->
+		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
 		<section class="pt-24 md:pt-28 pb-6 md:pb-8 px-4 md:px-6">
 			<div class="max-w-7xl mx-auto">
 
-				<!-- Main headline — exact keyword match H1 -->
+				<!-- Main H1 headline -->
 				<div class="text-center space-y-2.5 mb-5 max-w-4xl mx-auto animate-in" style="animation-delay:0ms">
 					<h1 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight leading-[1.1] text-[var(--foreground)]">
 						Free BMI, BMR, TDEE & Body Composition Calculators
@@ -69,42 +62,30 @@ import SiteArchitectureTree from '../../components/SiteArchitectureTree.astro';
 			</div>
 		</section>
 
-		<!-- Visual Architecture Tree -->
+		<!-- Visual Silo Navigation Tree -->
 		<div class="max-w-7xl mx-auto px-4 md:px-6">
 			<SiteArchitectureTree lang="en" />
 		</div>
 
-		<!-- ═══════════════════  REAL BMI INTENT & ACCURACY SECTION  ═══════════════════ -->
-		<RealBMIIntentSection lang="en" />
-
-		<!-- ═══════════════════  WHO & NIH ALIGNED BMI + WAIST SECTION  ═══════════════════ -->
-		<WaistHealthSEOSection lang="en" />
-
-		<!-- ═══════════════════  NEW 3D HEIGHT-ADJUSTED BMI FORMULA SECTION  ═══════════════════ -->
-		<NewBMIFormulaSEOSection lang="en" />
-
-		<!-- ═══════════════════  IDF & WHO ALIGNED RISK SECTION  ═══════════════════ -->
-		<DiabetesRiskSEOSection lang="en" />
-
-		<!-- ═══════════════════  WHY PEOPLE USE REAL BMI  ═══════════════════ -->
+		<!-- ═══════════════════  WHY PEOPLE CHOOSE REAL BMI  ═══════════════════ -->
 		<section class="px-4 md:px-6 py-12 md:py-16">
 			<div class="max-w-7xl mx-auto">
 				<div class="mb-10 sm:mb-12 space-y-3">
-					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Why People Choose It</p>
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Transparent Calculator Features</p>
 					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
 						Clarity for your health goals
 					</h2>
 					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
-						Whether you are tracking progress, planning nutrition, or preparing for a check-in with a clinician, Real BMI Calculator gives you fast, practical context grounded in trusted standards.
+						Whether you are tracking progress, planning nutrition, or reviewing fitness baselines, Real BMI gives you fast, practical estimates grounded in published guidelines.
 					</p>
 				</div>
 
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 					{[
-						{ title: 'A reliable starting point', description: 'Get a clear baseline for BMI, BMR, TDEE, and ideal weight using the Real BMI Calculator without filling out a long form.' },
-						{ title: 'Private by design', description: 'Use the Real BMI Calculator on any device and keep your health data to yourself — no account needed.' },
-						{ title: 'Built on trusted guidance', description: 'Results are presented with WHO and CDC-aligned reference ranges so the context feels more meaningful.' },
-						{ title: 'Useful for everyday planning', description: 'Make smarter nutrition decisions, set realistic goals, and review progress with less guesswork.' },
+						{ title: 'Formula-based estimates', description: 'Get clear baselines for BMI, BMR, TDEE, and ideal weight using published mathematical equations.' },
+						{ title: 'Browser privacy first', description: 'All calculations stay on your device — no accounts, sign-ups, or server storage required.' },
+						{ title: 'Built on public standards', description: 'Results are presented alongside WHO and CDC public reference ranges for context.' },
+						{ title: 'Useful for daily planning', description: 'Explore fitness targets, nutrition estimates, and body composition guidelines without guesswork.' },
 					].map(item => (
 						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
 							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
@@ -113,24 +94,24 @@ import SiteArchitectureTree from '../../components/SiteArchitectureTree.astro';
 							</p>
 						</div>
 					))}
+					
 					<!-- Brand box -->
 					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6">
 						<div class="space-y-2">
-							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-70">Powered by</p>
+							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-70">Independent Tool</p>
 							<p class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase">REAL BMI</p>
 						</div>
-						<p class="text-sm font-medium opacity-80 leading-relaxed">Evidence-based insights meet clear design. Real BMI Calculator health insights that are quick, clear, and easy to trust.</p>
+						<p class="text-sm font-medium opacity-80 leading-relaxed">Reference tools grounded in published equations. Fast, private, and clear health metric calculators.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- ═══════════════════  ARTICLES & HEALTH CONTENT  ═══════════════════ -->
-		<div class="px-4 md:px-6 pt-10 md:pt-14 pb-4">
-			<div class="max-w-7xl mx-auto space-y-10 md:space-y-14">
+		<!-- ═══════════════════  FEATURED GUIDES & TRUST CONTENT  ═══════════════════ -->
+		<div class="px-4 md:px-6 pt-6 pb-12">
+			<div class="max-w-7xl mx-auto space-y-12">
 				<EmbedWidgetBox lang="en" />
 				<LatestArticles lang="en" />
-				<HealthContent lang="en" />
 				<DeepHealthSEO lang="en" />
 				<MedicalEEATBanner lang="en" />
 			</div>
