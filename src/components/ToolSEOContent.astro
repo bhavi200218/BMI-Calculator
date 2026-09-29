@@ -446,29 +446,29 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       formulaCode: 'Men: BMR = 10W + 6.25H - 5A + 5  |  Women: BMR = 10W + 6.25H - 5A - 161',
       tableTitle: 'BMR Formula Comparison Matrix (Mifflin-St Jeor vs. Harris-Benedict & Katch-McArdle)',
       tableRows: [
-        { col1: 'Mifflin-St Jeor Formula', col2: 'Modern Gold Standard (1990)', col3: 'Most accurate equation for non-lab adult BMR estimation' },
-        { col1: 'Revised Harris-Benedict (1984)', col2: 'Classic Historical Reference', col3: 'Tends to overestimate BMR by ~5% in modern sedentary adults' },
-        { col1: 'Katch-McArdle Formula', col2: 'Lean Body Mass Based', col3: 'Requires accurate body fat % (BMR = 370 + 21.6 × Lean Mass in kg)' }
+        { col1: 'Mifflin-St Jeor Formula', col2: 'Predictive Equation (1990)', col3: 'Commonly cited equation for adult BMR estimation' },
+        { col1: 'Revised Harris-Benedict (1984)', col2: 'Classic Historical Reference', col3: 'Tends to yield slightly different estimates in modern adults' },
+        { col1: 'Katch-McArdle Formula', col2: 'Lean Body Mass Based', col3: 'Calculates BMR estimate using lean body mass' }
       ],
       faqs: [
-        { question: 'What is a BMR calculator and how to calculate basal metabolic rate?', answer: 'A BMR calculator (Basal Metabolic Rate Calculator) estimates the baseline calories your body expends at rest over 24 hours to support vital organ functions (brain, heart, lungs, kidneys).' },
+        { question: 'What is a BMR calculator and how to calculate basal metabolic rate?', answer: 'A BMR calculator (Basal Metabolic Rate Calculator) estimates the baseline calories your body expends at rest over 24 hours to support vital organ functions.' },
         { question: 'What is the Mifflin-St Jeor BMR formula for men and women?', answer: 'The Mifflin-St Jeor equation calculates BMR as follows: For Men: BMR = (10 × kg) + (6.25 × cm) - (5 × age) + 5. For Women: BMR = (10 × kg) + (6.25 × cm) - (5 × age) - 161.' },
-        { question: 'How does age affect your BMR calculation?', answer: 'BMR gradually decreases by approximately 1-2% per decade after age 30 due to natural loss of muscle mass (sarcopenia) and cellular metabolic slowdown. Age is a key variable in the BMR formula.' },
+        { question: 'How does age affect your BMR calculation?', answer: 'BMR gradually decreases over time as body composition changes with age.' },
         { question: 'How to calculate BMR in kg and cm online?', answer: 'Enter your weight in kilograms (kg) and height in centimeters (cm) alongside age and sex into our online BMR calculator to get your instant calorie burn estimate.' },
-        { question: 'What is the difference between BMR and TDEE?', answer: 'BMR is your resting metabolic burn at 0% activity. TDEE (Total Daily Energy Expenditure) multiplies BMR by your physical activity level factor (1.2 to 1.9) to account for movement and exercise.' }
+        { question: 'What is the difference between BMR and TDEE?', answer: 'BMR is your resting metabolic burn at 0% activity. TDEE (Total Daily Energy Expenditure) multiplies BMR by your physical activity level factor to account for movement and exercise.' }
       ]
     },
     hi: {
       eyebrow: 'Mifflin-St Jeor समीकरण मानक',
       title: 'बीएमआर कैलकुलेटर ऑनलाइन - बेसल मेटाबॉलिक रेट (BMR Calculator kg cm)',
-      intro: 'हमारे मुफ़्त बीएमआर कैलकुलेटर ऑनलाइन (BMR Calculator Online) से अपनी दैनिक बेसल मेटाबॉलिक रेट की गणना करें। Mifflin-St Jeor फॉर्मूला कैलकुलेटर का उपयोग करके जानें कि विश्राम अवस्था में आपका शरीर 24 घंटे में कितनी कैलोरी बर्न करता है।',
+      intro: 'हमारे मुफ़्त बीएमआर कैलकुलेटर ऑनलाइन से अपनी दैनिक बेसल मेटाबॉलिक रेट का अनुमान लगाएं।',
       formulaTitle: 'पुरुषों एवं महिलाओं के लिए बीएमआर फॉर्मूला',
       formulaDesc: 'पुरुषों के लिए: बीएमआर = (10 × वजन kg) + (6.25 × ऊंचाई cm) - (5 × आयु) + 5  |  महिलाओं के लिए: बीएमआर = (10 × वजन kg) + (6.25 × ऊंचाई cm) - (5 × आयु) - 161',
       formulaCode: 'Men: BMR = 10W + 6.25H - 5A + 5  |  Women: BMR = 10W + 6.25H - 5A - 161',
       tableTitle: 'बीएमआर फॉर्मूला तुलना (Mifflin-St Jeor बनाम Harris-Benedict)',
       tableRows: [
-        { col1: 'Mifflin-St Jeor फॉर्मूला', col2: 'आधुनिक स्वर्ण मानक (1990)', col3: 'वयस्कों के लिए सबसे सटीक बीएमआर गणना फॉर्मूला' },
-        { col1: 'Harris-Benedict फॉर्मूला', col2: 'ऐतिहासिक मानक (1984)', col3: 'आधुनिक निष्क्रिय वयस्कों में बीएमआर का 5% अधिक अनुमान लगा सकता है' }
+        { col1: 'Mifflin-St Jeor फॉर्मूला', col2: 'अनुमानित सूत्र (1990)', col3: 'वयस्कों के लिए बीएमआर अनुमान सूत्र' },
+        { col1: 'Harris-Benedict फॉर्मूला', col2: 'ऐतिहासिक मानक (1984)', col3: 'ऐतिहासिक बीएमआर संदर्भ सूत्र' }
       ],
       faqs: [
         { question: 'बीएमआर (BMR) क्या है और इसकी गणना कैसे की जाती है?', answer: 'बीएमआर (बेसल मेटाबॉलिक रेट) विश्राम की स्थिति में जीवित रहने और सांस लेने के लिए आपके अंगों द्वारा आवश्यक न्यूनतम दैनिक कैलोरी है।' },
@@ -641,27 +641,23 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   'body-surface-area-calculator': {
     en: {
-      eyebrow: 'Mosteller & Du Bois Equations',
-      title: 'Mosteller BSA Calculator (Square Root Method) & Body Surface Area Tool',
-      intro: 'Body Surface Area (BSA) is a measure of the total outer surface area of the body, calculated using the Mosteller formula or square root method. Our free Mosteller BSA Calculator supports dual unit conversion (cm, in, ft, kg, lb) and computes total skin surface area (m²) using Mosteller [((Height × Weight)/3600)^½] and Du Bois formulas for reference calculations.',
-      formulaTitle: 'Mosteller BSA Formula Equations (Square Root, Power-of-Half & Multiplier Methods)',
-      formulaDesc: 'Mosteller BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ] = ( [Height(cm) × Weight(kg)] / 3600 )^½ = 0.016667 × Weight (kg)^0.5 × Height (cm)^0.5 | Du Bois BSA (m²) = 0.007184 × Height (cm)^0.725 × Weight (kg)^0.425',
-      formulaCode: 'BSA (m²) = [ (Height cm × Weight kg) / 3600 ]^½ = √ ( (H × W) / 3600 ) = 0.016667 × W^0.5 × H^0.5',
-      tableTitle: 'Body Surface Area Square Meters (m²) Pediatric & Adult Reference Standards',
+      eyebrow: 'Body Surface Area Reference',
+      title: 'Body Surface Area Calculator — Mosteller & Du Bois Reference Equations',
+      intro: 'BSA is an estimated body-surface-area value calculated from height and weight. Some clinical calculations use BSA as one input, but this calculator does not provide medication doses or treatment recommendations.',
+      formulaTitle: 'Mosteller & Du Bois BSA Equations',
+      formulaDesc: 'Mosteller BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ] | Du Bois BSA (m²) = 0.007184 × Height (cm)^0.725 × Weight (kg)^0.425',
+      formulaCode: 'BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]',
+      tableTitle: 'Body Surface Area (m²) Adult & Population Reference Ranges',
       tableRows: [
-        { col1: 'Infants (0–12 months)', col2: '0.25 m² – 0.35 m²', col3: 'Pediatric neonatal baseline' },
-        { col1: 'Toddlers (1–5 years)', col2: '0.50 m² – 0.70 m²', col3: 'Pediatric early childhood baseline' },
-        { col1: 'Children (9–12 years)', col2: '1.07 m²', col3: 'Pediatric middle childhood reference' },
-        { col1: 'Adult Women Average', col2: '1.60 m²', col3: 'Standard adult female reference' },
-        { col1: 'Adult Men Average', col2: '1.90 m²', col3: 'Standard adult male reference' },
-        { col1: 'Tall Athletic Male Average', col2: '2.10 m² – 2.30 m²', col3: 'Elevated muscle mass & height surface area' }
+        { col1: 'Infants (0–12 months)', col2: '0.25 m² – 0.35 m²', col3: 'Infant population reference range' },
+        { col1: 'Children (1–12 years)', col2: '0.50 m² – 1.07 m²', col3: 'Child population reference range' },
+        { col1: 'Adult Women Average', col2: '1.60 m²', col3: 'Standard adult female population average' },
+        { col1: 'Adult Men Average', col2: '1.90 m²', col3: 'Standard adult male population average' }
       ],
       faqs: [
-        { question: 'What is the Mosteller BSA Calculator Square Meters?', answer: 'Body Surface Area (BSA) is a measure of the total outer surface area of the body, calculated using the Mosteller formula or square root method. Published by Dr. R.D. Mosteller in the New England Journal of Medicine (1987), it computes BSA in m² using ([Height(cm) × Weight(kg)]/3600)^½ or 0.016667 × Weight^0.5 × Height^0.5.' },
-        { question: 'How to calculate body surface area square meters using the Mosteller formula?', answer: 'To calculate BSA square meters with the Mosteller formula: Multiply height in cm by weight in kg, divide by 3600, and take the square root or power of ½: ([Height(cm) × Weight(kg)]/3600)^½. For example, for 175 cm and 70 kg: √(175 × 70 / 3600) = √(3.4027) = 1.84 m².' },
-        { question: 'Why is the Mosteller formula used in body surface area calculations?', answer: 'The Mosteller BSA formula simplifies complex exponential body surface area calculations while preserving mathematical accuracy for reference surface area estimation.' },
-        { question: 'Why is BSA measured in square meters (m²)?', answer: 'Body surface area in square meters correlates closely with metabolic rate, cardiac output, and physiological clearance rates compared to body weight alone.' },
-        { question: 'What is the average body surface area for adults?', answer: 'The average body surface area is approximately 1.60 m² for adult women and 1.90 m² for adult men.' }
+        { question: 'What is Body Surface Area (BSA)?', answer: 'BSA is an estimated body-surface-area value calculated from height and weight. Some clinical calculations use BSA as one input, but this calculator does not provide medication doses or treatment recommendations.' },
+        { question: 'How is BSA calculated using the Mosteller equation?', answer: 'The Mosteller equation multiplies height in cm by weight in kg, divides by 3600, and takes the square root: BSA = √ (Height × Weight / 3600).' },
+        { question: 'What is the average body surface area for adults?', answer: 'The average estimated body surface area is approximately 1.60 m² for adult women and 1.90 m² for adult men.' }
       ]
     }
   },
@@ -754,17 +750,17 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Weight Loss Deficit', col2: 'TDEE - 500 kcal', col3: 'Calculates ~0.45 kg (1 lb) per week safe fat loss rate' }
       ],
       faqs: [
-        { question: 'What is a TDEE calculator and how does it calculate maintenance calories?', answer: 'A TDEE calculator (Total Daily Energy Expenditure calculator) estimates the exact total calories your body burns in 24 hours including resting metabolic rate (BMR), thermic effect of food (TEF), and exercise/non-exercise physical activity. Eating equal to your TDEE maintains your current body weight.' },
-        { question: 'How to calculate TDEE online for weight loss by age, height (cm), and weight (kg)?', answer: 'To calculate TDEE online for weight loss, enter your age, biological sex, weight in kg (or lbs), and height in cm (or inches). First, your BMR is determined using the Mifflin-St Jeor equation, then multiplied by your physical activity score. Subtracting 500 calories per day from your TDEE yields a safe, sustainable calorie deficit for losing ~0.5 kg (1 lb) per week.' },
-        { question: 'What is the difference between BMR and TDEE calories?', answer: 'BMR (Basal Metabolic Rate) represents the minimum baseline calories your organs require at complete bed rest. TDEE includes BMR plus all calories burned through walking, work, posture, eating, and exercise workouts.' },
-        { question: 'How many calories should I eat daily for weight loss using TDEE?', answer: 'For standard healthy weight loss, target a deficit of 15% to 25% below your TDEE (typically 300 to 500 kcal deficit per day). Avoid dropping below your base BMR without medical supervision.' },
+        { question: 'What is a TDEE calculator and how does it calculate maintenance calories?', answer: 'A TDEE calculator (Total Daily Energy Expenditure calculator) estimates the total calories your body burns in 24 hours including resting metabolic rate (BMR), thermic effect of food (TEF), and exercise/non-exercise physical activity. Eating equal to your TDEE maintains your current body weight.' },
+        { question: 'How to calculate TDEE online for weight loss by age, height (cm), and weight (kg)?', answer: 'To calculate TDEE online for weight loss, enter your age, biological sex, weight in kg (or lbs), and height in cm (or inches). First, your BMR is determined using the Mifflin-St Jeor equation, then multiplied by your physical activity score. Subtracting 500 calories per day from your TDEE yields an estimated calorie deficit for losing ~0.5 kg (1 lb) per week.' },
+        { question: 'What is the difference between BMR and TDEE calories?', answer: 'BMR (Basal Metabolic Rate) represents the estimated baseline calories your body requires at complete rest. TDEE includes BMR plus calories burned through daily movement, work, and exercise.' },
+        { question: 'How many calories should I eat daily for weight loss using TDEE?', answer: 'For weight loss planning, target a deficit of 15% to 25% below your TDEE (typically 300 to 500 kcal deficit per day). Individual calorie needs vary.' },
         { question: 'How often should I recalculate my maintenance calories and TDEE?', answer: 'Recalculate your TDEE every time your body weight changes by 3 to 5 kg (7 to 10 lbs), or when your weekly activity routine changes, as a lower body mass reduces daily energy maintenance requirements.' }
       ]
     },
     hi: {
       eyebrow: 'ऊर्जा संतुलन और चयापचय',
       title: 'टीडीईई कैलकुलेटर ऑनलाइन – कुल दैनिक ऊर्जा व्यय और रखरखाव कैलोरी',
-      intro: 'हमारा मुफ़्त TDEE कैलकुलेटर (Total Daily Energy Expenditure) आपकी उम्र, लिंग, वजन (किग्रा या पाउंड), ऊंचाई (सेमी या इंच) और शारीरिक गतिविधि स्तर के आधार पर आपकी दैनिक रखरखाव कैलोरी की गणना करता है। वजन घटाने (500 कैलोरी की कमी) और वजन बढ़ाने के लक्ष्यों की सटीक जानकारी प्राप्त करें।',
+      intro: 'हमारा मुफ़्त TDEE कैलकुलेटर (Total Daily Energy Expenditure) आपकी उम्र, लिंग, वजन (किग्रा या पाउंड), ऊंचाई (सेमी या इंच) और शारीरिक गतिविधि स्तर के आधार पर आपकी दैनिक रखरखाव कैलोरी का अनुमान लगाता है।',
       formulaTitle: 'TDEE गणना सूत्र (मिफ्लिन-सेंट जिओर एवं गतिविधि गुणक)',
       formulaDesc: 'चरण 1: BMR निकालें: पुरुष: (10 × W) + (6.25 × H) - (5 × A) + 5 | महिला: (10 × W) + (6.25 × H) - (5 × A) - 161। चरण 2: BMR को गतिविधि स्तर (1.2 से 1.725) से गुणा करें।',
       formulaCode: 'TDEE = BMR × Activity Factor',
@@ -774,13 +770,13 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'हल्का सक्रिय (PAL 1.375)', col2: 'BMR × 1.375', col3: 'सप्ताह में 1–3 दिन हल्का व्यायाम' },
         { col1: 'मध्यम सक्रिय (PAL 1.55)', col2: 'BMR × 1.55', col3: 'सप्ताह में 3–5 दिन मध्यम व्यायाम' },
         { col1: 'अत्यधिक सक्रिय (PAL 1.725)', col2: 'BMR × 1.725', col3: 'सप्ताह में 6–7 दिन कठिन व्यायाम' },
-        { col1: 'वजन घटाने का लक्ष्य', col2: 'TDEE - 500 kcal', col3: 'प्रति सप्ताह ~0.5 किग्रा वसा घटाने का सुरक्षित लक्ष्य' }
+        { col1: 'वजन घटाने का लक्ष्य', col2: 'TDEE - 500 kcal', col3: 'प्रति सप्ताह ~0.5 किग्रा घटाने का अनुमानित लक्ष्य' }
       ],
       faqs: [
         { question: 'TDEE कैलकुलेटर क्या है और यह रखरखाव कैलोरी की गणना कैसे करता है?', answer: 'TDEE कैलकुलेटर (Total Daily Energy Expenditure) 24 घंटों में आपके शरीर द्वारा बर्न की जाने वाली कुल कैलोरी का अनुमान लगाता है। TDEE के बराबर कैलोरी खाने से आपका वजन स्थिर रहता है।' },
-        { question: 'वजन घटाने के लिए TDEE ऑनलाइन कैसे कैलकुलेट करें?', answer: 'अपनी उम्र, लिंग, वजन (किग्रा) और ऊंचाई (सेमी) दर्ज करें। TDEE से 500 कैलोरी घटाने पर प्रति सप्ताह ~0.5 किग्रा वजन घटाने का सुरक्षित लक्ष्य मिलता है।' },
-        { question: 'BMR और TDEE कैलोरी में क्या अंतर है?', answer: 'BMR विश्राम की स्थिति में आवश्यक न्यूनतम कैलोरी है, जबकि TDEE में BMR के साथ चलने-फिरने, काम करने और व्यायाम में बर्न होने वाली कैलोरी शामिल होती है।' },
-        { question: 'वजन घटाने के लिए प्रतिदिन कितनी कैलोरी खानी चाहिए?', answer: 'वजन घटाने के लिए अपने TDEE से 300 से 500 कैलोरी कम खाएं। अपने BMR से कम कैलोरी कभी न खाएं।' },
+        { question: 'वजन घटाने के लिए TDEE ऑनलाइन कैसे कैलकुलेट करें?', answer: 'अपनी उम्र, लिंग, वजन (किग्रा) और ऊंचाई (सेमी) दर्ज करें। TDEE से 500 कैलोरी घटाने पर प्रति सप्ताह ~0.5 किग्रा वजन घटाने का लक्ष्य मिलता है।' },
+        { question: 'BMR और TDEE कैलोरी में क्या अंतर है?', answer: 'BMR विश्राम की स्थिति में आवश्यक अनुमानित कैलोरी है, जबकि TDEE में BMR के साथ दैनिक गतिविधियों और व्यायाम में बर्न होने वाली कैलोरी शामिल होती है।' },
+        { question: 'वजन घटाने के लिए प्रतिदिन कितनी कैलोरी खानी चाहिए?', answer: 'वजन घटाने के लिए अपने TDEE से 300 से 500 कैलोरी कम खाएं।' },
         { question: 'रखरखाव कैलोरी की पुनर्गणना कब करनी चाहिए?', answer: 'हर बार 3 से 5 किग्रा वजन बदलने पर अपने TDEE की पुनर्गणना करें।' }
       ]
     }
@@ -789,94 +785,94 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     en: {
       eyebrow: 'Calorie Maintenance & Deficit Planning',
       title: 'Maintenance Calorie Calculator – Calorie Maintenance Calculator Online',
-      intro: 'Our free Maintenance Calorie Calculator (Calorie Maintenance Calculator online) calculates your daily maintenance calories, total energy expenditure, and customized target calories for weight loss or muscle building. Enter your age, gender, weight in kg, height in cm, and exercise frequency to view exact baseline maintenance caloric needs.',
+      intro: 'Our free Maintenance Calorie Calculator estimates your daily maintenance calories, total energy expenditure, and target calorie ranges for weight goals. Enter your age, gender, weight in kg, height in cm, and exercise frequency to view baseline maintenance caloric estimates.',
       formulaTitle: 'Maintenance Calorie Math & Energy Balance Standards',
       formulaDesc: 'Maintenance Calories = Basal Metabolic Rate (BMR) × Physical Activity Level (PAL). Weight Loss Target = Maintenance Calories - 500 kcal/day (0.45 kg loss/week). Weight Gain Target = Maintenance Calories + 300 kcal/day.',
       formulaCode: 'Maintenance = BMR × PAL',
       tableTitle: 'Calorie Maintenance & Weight Goal Caloric Breakdown Table',
       tableRows: [
-        { col1: 'Maintenance Calories', col2: '100% TDEE (0 kcal net change)', col3: 'Preserves exact current body weight and body composition' },
+        { col1: 'Maintenance Calories', col2: '100% TDEE (0 kcal net change)', col3: 'Preserves current body weight and body composition' },
         { col1: 'Mild Deficit (Weight Loss)', col2: 'TDEE - 250 kcal/day', col3: 'Slow, steady weight loss (~0.25 kg / 0.5 lbs per week)' },
-        { col1: 'Standard Fat Loss Deficit', col2: 'TDEE - 500 kcal/day', col3: 'Standard recommended fat loss rate (~0.5 kg / 1.0 lb per week)' },
-        { col1: 'Aggressive Fat Loss Deficit', col2: 'TDEE - 750 kcal/day', col3: 'Faster weight loss (~0.75 kg per week); requires high protein' },
-        { col1: 'Lean Muscle Surplus', col2: 'TDEE + 250 to 300 kcal/day', col3: 'Controlled muscle hypertrophy with minimal fat accumulation' }
+        { col1: 'Standard Deficit', col2: 'TDEE - 500 kcal/day', col3: 'Standard weight loss deficit (~0.5 kg / 1.0 lb per week)' },
+        { col1: 'Higher Deficit', col2: 'TDEE - 750 kcal/day', col3: 'Faster weight loss (~0.75 kg per week); requires adequate protein' },
+        { col1: 'Lean Muscle Surplus', col2: 'TDEE + 250 to 300 kcal/day', col3: 'Controlled muscle gain with minimal fat accumulation' }
       ],
       faqs: [
-        { question: 'What is a maintenance calorie calculator and how does it work online?', answer: 'A maintenance calorie calculator computes the exact daily caloric intake required to maintain your current body weight without gaining or losing fat. It uses metabolic equations (Mifflin-St Jeor) combined with your physical activity multiplier.' },
-        { question: 'How to calculate calorie maintenance by age, height (cm), and weight (kg)?', answer: 'Input your biological age, gender, height (cm), weight (kg), and weekly activity level. The calculator computes your BMR, scales it for daily activity, and delivers your exact maintenance calorie baseline.' },
-        { question: 'What happens if I eat at my maintenance calories every day?', answer: 'Eating at your exact maintenance calorie level keeps your total energy balance neutral. Your body weight remains constant over time while supporting exercise recovery and lean muscle preservation.' },
-        { question: 'How do I use my maintenance calories to calculate calories for weight loss?', answer: 'To lose weight, subtract 300 to 500 calories per day from your calculated maintenance level. A 500-calorie daily deficit creates a 3,500-calorie weekly deficit, which equals approximately 1 pound (0.45 kg) of fat loss per week.' },
-        { question: 'Is a calorie maintenance calculator accurate for men and women of all ages?', answer: 'Yes, maintenance calorie calculators utilize validated clinical formulas like Mifflin-St Jeor and Harris-Benedict, which account for age, sex, weight, and height. They provide high accuracy baseline estimates within ±5% for most healthy adults.' }
+        { question: 'What is a maintenance calorie calculator and how does it work online?', answer: 'A maintenance calorie calculator computes the estimated daily caloric intake required to maintain your current body weight. It uses metabolic equations (Mifflin-St Jeor) combined with your physical activity multiplier.' },
+        { question: 'How to calculate calorie maintenance by age, height (cm), and weight (kg)?', answer: 'Input your biological age, gender, height (cm), weight (kg), and weekly activity level to estimate your maintenance calorie baseline.' },
+        { question: 'What happens if I eat at my maintenance calories every day?', answer: 'Eating at your estimated maintenance calorie level keeps your total energy balance neutral. Your body weight remains relatively constant over time.' },
+        { question: 'How do I use my maintenance calories to calculate calories for weight loss?', answer: 'To lose weight, subtract 300 to 500 calories per day from your calculated maintenance level. A 500-calorie daily deficit creates an estimated 3,500-calorie weekly deficit.' },
+        { question: 'Is a calorie maintenance calculator accurate for men and women of all ages?', answer: 'Maintenance calorie calculators utilize published mathematical formulas like Mifflin-St Jeor and Harris-Benedict, providing baseline estimates for healthy adults.' }
       ]
     },
     hi: {
       eyebrow: 'कैलोरी रखरखाव और योजना',
       title: 'रखरखाव कैलोरी कैलकुलेटर – Calorie Maintenance Calculator Online',
-      intro: 'हमारा मुफ़्त Maintenance Calorie Calculator आपकी दैनिक रखरखाव कैलोरी, कुल ऊर्जा व्यय और वजन घटाने या मांसपेशियों के निर्माण के लिए अनुकूलित लक्ष्य कैलोरी की गणना करता है। उम्र, लिंग, वजन (किग्रा), ऊंचाई (सेमी) और व्यायाम आवृत्ति दर्ज करके अपनी बेसलाइन रखरखाव कैलोरी जानें।',
+      intro: 'हमारा मुफ़्त Maintenance Calorie Calculator आपकी दैनिक रखरखाव कैलोरी और वजन लक्ष्यों के लिए अनुमानित कैलोरी की गणना करता है।',
       formulaTitle: 'रखरखाव कैलोरी सूत्र एवं ऊर्जा संतुलन',
       formulaDesc: 'रखरखाव कैलोरी = BMR × activity गुणक। वजन घटाने का लक्ष्य = रखरखाव कैलोरी - 500 kcal/दिन।',
       formulaCode: 'Maintenance = BMR × PAL',
       tableTitle: 'कैलोरी रखरखाव एवं वजन लक्ष्य तालिका',
       tableRows: [
-        { col1: 'रखरखाव कैलोरी', col2: '100% TDEE (0 kcal बदलाव)', col3: 'वर्तमान वजन और शरीर की संरचना को बनाए रखता है' },
+        { col1: 'रखरखाव कैलोरी', col2: '100% TDEE (0 kcal बदलाव)', col3: 'वर्तमान वजन को बनाए रखता है' },
         { col1: 'हल्की कमी (वजन घटाना)', col2: 'TDEE - 250 kcal/दिन', col3: 'धीमा, निरंतर वजन घटाना (~0.25 किग्रा प्रति सप्ताह)' },
-        { col1: 'मानक वसा हानि कमी', col2: 'TDEE - 500 kcal/दिन', col3: 'मानक अनुशंसित वसा हानि दर (~0.5 किग्रा प्रति सप्ताह)' },
-        { col1: 'मांसपेशी वृद्धि (सरप्लस)', col2: 'TDEE + 250 से 300 kcal/दिन', col3: 'न्यूनतम वसा के साथ नियंत्रित मांसपेशी निर्माण' }
+        { col1: 'मानक वसा हानि कमी', col2: 'TDEE - 500 kcal/दिन', col3: 'मानक वसा हानि दर (~0.5 किग्रा प्रति सप्ताह)' },
+        { col1: 'मांसपेशी वृद्धि (सरप्लस)', col2: 'TDEE + 250 से 300 kcal/दिन', col3: 'मांसपेशी निर्माण के लिए अतिरिक्त कैलोरी' }
       ],
       faqs: [
-        { question: 'रखरखाव कैलोरी कैलकुलेटर क्या है और यह कैसे काम करता है?', answer: 'यह कैलकुलेटर बिना वजन बढ़ाए या घटाए आपके वर्तमान वजन को बनाए रखने के लिए आवश्यक सटीक दैनिक कैलोरी की गणना करता है।' },
-        { question: 'उम्र, ऊंचाई (सेमी) और वजन (किग्रा) के अनुसार रखरखाव कैलोरी कैसे कैलकुलेट करें?', answer: 'अपनी उम्र, लिंग, ऊंचाई (सेमी), वजन (किग्रा) और गतिविधि स्तर दर्ज करें। कैलकुलेटर BMR निकालकर आपकी रखरखाव कैलोरी बताता है।' },
-        { question: 'यदि मैं प्रतिदिन अपनी रखरखाव कैलोरी खाऊं तो क्या होगा?', answer: 'रखरखाव कैलोरी खाने से आपका वजन स्थिर रहता है और शरीर की ऊर्जा बनी रहती है।' },
+        { question: 'रखरखाव कैलोरी कैलकुलेटर क्या है और यह कैसे काम करता है?', answer: 'यह कैलकुलेटर आपके वर्तमान वजन को बनाए रखने के लिए आवश्यक अनुमानित दैनिक कैलोरी की गणना करता है।' },
+        { question: 'उम्र, ऊंचाई (सेमी) और वजन (किग्रा) के अनुसार रखरखाव कैलोरी कैसे कैलकुलेट करें?', answer: 'अपनी उम्र, लिंग, ऊंचाई (सेमी), वजन (किग्रा) और गतिविधि स्तर दर्ज करके अपनी रखरखाव कैलोरी जानें।' },
+        { question: 'यदि मैं प्रतिदिन अपनी रखरखाव कैलोरी खाऊं तो क्या होगा?', answer: 'रखरखाव कैलोरी खाने से आपका वजन स्थिर रहता है।' },
         { question: 'वजन घटाने के लिए रखरखाव कैलोरी का उपयोग कैसे करें?', answer: 'वजन घटाने के लिए अपनी रखरखाव कैलोरी से प्रतिदिन 300 से 500 कैलोरी कम खाएं।' },
-        { question: 'क्या यह कैलकुलेटर पुरुषों और महिलाओं के लिए सटीक है?', answer: 'हां, यह मिफ्लिन-सेंट जिओर जैसे चिकित्सकीय रूप से सिद्ध सूत्रों का उपयोग करता है जो अत्यंत सटीक हैं।' }
+        { question: 'क्या यह कैलकुलेटर पुरुषों और महिलाओं के लिए उपयोगी है?', answer: 'हां, यह मिफ्लिन-सेंट जिओर जैसे गणितीय सूत्रों का उपयोग करके अनुमान प्रदान करता है।' }
       ]
     }
   },
   'ideal-weight-calculator': {
     en: {
-      eyebrow: 'Clinical IBW Reference',
-      title: 'Ideal Weight Calculator – Ideal Body Weight (IBW) by Height',
-      intro: 'Our free Ideal Weight Calculator (Ideal Body Weight Calculator / IBW Calculator) helps you calculate "what is my ideal weight" based on your height (cm or inches) and biological sex (female or male). View four validated clinical formulas—Devine, Robinson, Miller, and Hamwi equations—alongside standard WHO healthy BMI target ranges in kg or lbs.',
-      formulaTitle: 'Standard Clinical IBW Formulas (Devine, Robinson, Miller & Hamwi)',
-      formulaDesc: 'Devine (1974): Male = 50 kg + 2.3 kg per inch over 5 ft | Female = 45.5 kg + 2.3 kg per inch over 5 ft. Robinson (1983): Male = 52 kg + 1.9 kg/in | Female = 49 kg + 1.7 kg/in. Miller (1983): Male = 56.2 kg + 1.41 kg/in | Female = 53.1 kg + 1.36 kg/in. Hamwi (1964): Male = 48 kg + 2.7 kg/in | Female = 45.5 kg + 2.2 kg/in.',
+      eyebrow: 'Ideal Body Weight Reference',
+      title: 'Estimate Ideal Body Weight (IBW) using commonly cited equations',
+      intro: 'Our free Ideal Weight Calculator estimates reference ideal body weight based on height (cm or inches) and biological sex (female or male) using four published equations: Devine, Robinson, Miller, and Hamwi equations alongside WHO healthy BMI ranges.',
+      formulaTitle: 'Standard IBW Formulas (Devine, Robinson, Miller & Hamwi)',
+      formulaDesc: 'Devine, Robinson, Miller and Hamwi equations provide different reference estimates; they should not be interpreted as a universally "ideal" or medically required body weight.',
       formulaCode: 'IBW = Base Weight + (Factor × Height over 5ft)',
       tableTitle: 'Ideal Body Weight (IBW) Comparison Table by Height & Formula',
       tableRows: [
-        { col1: 'Devine Formula (1974)', col2: '50 kg (M) / 45.5 kg (F) + 2.3 kg/in > 5ft', col3: 'Most widely used in clinical pharmacology and dosage calculation' },
+        { col1: 'Devine Formula (1974)', col2: '50 kg (M) / 45.5 kg (F) + 2.3 kg/in > 5ft', col3: 'Widely cited formula introduced in 1974' },
         { col1: 'Robinson Formula (1983)', col2: '52 kg (M) / 49.0 kg (F) + 1.9 or 1.7 kg/in', col3: 'Modification of Devine formula optimized for medium frame adults' },
         { col1: 'Miller Formula (1983)', col2: '56.2 kg (M) / 53.1 kg (F) + 1.41 or 1.36 kg/in', col3: 'Higher base estimate for shorter individuals, gentler slope per inch' },
-        { col1: 'Hamwi Formula (1964)', col2: '48 kg (M) / 45.5 kg (F) + 2.7 or 2.2 kg/in', col3: 'Originally designed for quick medicinal dose estimation' },
+        { col1: 'Hamwi Formula (1964)', col2: '48 kg (M) / 45.5 kg (F) + 2.7 or 2.2 kg/in', col3: 'Formula originally created for dose estimations' },
         { col1: 'WHO Healthy BMI Range', col2: '18.5 – 24.9 kg/m²', col3: 'Population health reference window based on height squared' }
       ],
       faqs: [
-        { question: 'What is an Ideal Weight Calculator (IBW Calculator) and how does it calculate ideal weight by height?', answer: 'An Ideal Weight Calculator (Ideal Body Weight or IBW Calculator) estimates your recommended healthy weight based on height (cm/inches) and biological gender (female/male). It calculates values using four recognized medical formulas: Devine, Robinson, Miller, and Hamwi equations.' },
-        { question: 'What is my ideal weight for my height in kg or lbs?', answer: 'To answer "what is my ideal weight", enter your height in cm or feet/inches and select male or female. For example, a 5 ft 10 in (178 cm) male has an estimated IBW of 73 kg (161 lbs) via Devine formula, with a WHO healthy weight range of 58.6 kg to 78.9 kg.' },
-        { question: 'Why are there different formulas for calculating ideal weight for females vs males?', answer: 'Biological males typically have higher muscle density and bone mass per unit of height than females, requiring separate base constants and growth factors in IBW formulas (e.g. 50 kg base for men vs 45.5 kg base for women in the Devine formula).' },
-        { question: 'What is the difference between Ideal Body Weight (IBW) and healthy BMI weight range?', answer: 'IBW formulas provide a specific target weight point based on height over 5 feet, whereas the WHO healthy BMI weight range gives a broad window (18.5 to 24.9 kg/m²) accommodating different frame sizes, muscularity, and body compositions.' },
-        { question: 'Is the IBW calculator accurate for muscular individuals or elderly adults?', answer: 'IBW formulas provide standard population baseline targets. Athletes with high muscle mass may exceed their calculated IBW while remaining lean and healthy. For comprehensive evaluation, pair IBW with body fat percentage and waist circumference measures.' }
+        { question: 'What is an Ideal Weight Calculator (IBW Calculator)?', answer: 'An Ideal Weight Calculator estimates target weight ranges based on height (cm/inches) and biological gender using published equations: Devine, Robinson, Miller, and Hamwi.' },
+        { question: 'What is my ideal weight for my height in kg or lbs?', answer: 'Enter your height in cm or feet/inches and select male or female. For example, a 5 ft 10 in (178 cm) male has an estimated IBW of ~73 kg via Devine formula, with a WHO healthy weight range of 58.6 kg to 78.9 kg.' },
+        { question: 'Why are there different formulas for calculating ideal weight for females vs males?', answer: 'Biological males typically have higher average muscle density and bone mass per unit of height than females, resulting in separate base constants in formulas.' },
+        { question: 'What is the difference between Ideal Body Weight (IBW) and healthy BMI weight range?', answer: 'IBW formulas provide specific formula-based estimates, whereas the WHO healthy BMI weight range gives a broad window (18.5 to 24.9 kg/m²) accommodating different frame sizes and body compositions.' },
+        { question: 'Is the IBW calculator suitable for muscular individuals?', answer: 'IBW formulas provide population reference benchmarks. Muscular individuals or athletes may weigh more than calculated IBW targets while maintaining low body fat.' }
       ]
     },
     hi: {
-      eyebrow: 'चिकित्सकीय आदर्श वजन संदर्भ',
+      eyebrow: 'आदर्श वजन संदर्भ',
       title: 'आदर्श वजन कैलकुलेटर – ऊंचाई के अनुसार आइडियल बॉडी वेट (IBW)',
-      intro: 'हमारा मुफ़्त Ideal Weight Calculator (IBW Calculator) आपकी ऊंचाई (सेमी या इंच) और लिंग (महिला या पुरुष) के आधार पर "मेरा आदर्श वजन क्या है" का सटीक अनुमान लगाता है। चार चिकित्सकीय सूत्रों—Devine, Robinson, Miller और Hamwi—तथा डब्ल्यूएचओ स्वस्थ बीएमआई सीमा (किग्रा में) की तुलना करें।',
-      formulaTitle: 'मानक चिकित्सकीय IBW सूत्र (Devine, Robinson, Miller & Hamwi)',
-      formulaDesc: 'Devine सूत्र (1974): पुरुष = 50 kg + 2.3 kg प्रति इंच (>5ft) | महिला = 45.5 kg + 2.3 kg प्रति इंच (>5ft)। डब्ल्यूएचओ स्वस्थ बीएमआई सीमा: 18.5 - 24.9 kg/m²।',
+      intro: 'हमारा मुफ़्त Ideal Weight Calculator (IBW Calculator) आपकी ऊंचाई (सेमी या इंच) और लिंग (महिला या पुरुष) के आधार पर आदर्श वजन का अनुमान लगाता है। Devine, Robinson, Miller और Hamwi सूत्रों की तुलना करें।',
+      formulaTitle: 'मानक IBW सूत्र (Devine, Robinson, Miller & Hamwi)',
+      formulaDesc: 'Devine, Robinson, Miller और Hamwi सूत्र विभिन्न संदर्भ अनुमान प्रदान करते हैं; इन्हें सार्वभौमिक "आदर्श" या चिकित्सीय आवश्यकता नहीं माना जाना चाहिए।',
       formulaCode: 'IBW = Base Weight + (Factor × Height over 5ft)',
       tableTitle: 'ऊंचाई एवं सूत्र के अनुसार आदर्श शरीर वजन (IBW) तालिका',
       tableRows: [
-        { col1: 'Devine फॉर्मूला (1974)', col2: '50 kg (M) / 45.5 kg (F) + 2.3 kg/in > 5ft', col3: 'चिकित्सकीय खुराक और पोषण योजना में सबसे व्यापक रूप से इस्तेमाल' },
+        { col1: 'Devine फॉर्मूला (1974)', col2: '50 kg (M) / 45.5 kg (F) + 2.3 kg/in > 5ft', col3: 'पोषण और शोध अध्ययनों में व्यापक रूप से इस्तेमाल' },
         { col1: 'Robinson फॉर्मूला (1983)', col2: '52 kg (M) / 49.0 kg (F) + 1.9 या 1.7 kg/in', col3: 'मध्यम फ्रेम वयस्कों के लिए अनुकूलित' },
         { col1: 'Miller फॉर्मूला (1983)', col2: '56.2 kg (M) / 53.1 kg (F) + 1.41 या 1.36 kg/in', col3: 'कम ऊंचाई वालों के लिए उच्च बेस अनुमान' },
-        { col1: 'Hamwi फॉर्मूला (1964)', col2: '48 kg (M) / 45.5 kg (F) + 2.7 या 2.2 kg/in', col3: 'त्वरित नैदानिक अनुमान के लिए डिज़ाइन' },
+        { col1: 'Hamwi फॉर्मूला (1964)', col2: '48 kg (M) / 45.5 kg (F) + 2.7 या 2.2 kg/in', col3: 'त्वरित मानक अनुमान के लिए डिज़ाइन' },
         { col1: 'WHO स्वस्थ बीएमआई सीमा', col2: '18.5 – 24.9 kg/m²', col3: 'ऊंचाई वर्ग के आधार पर सामान्य स्वास्थ्य सीमा' }
       ],
       faqs: [
-        { question: 'आदर्श वजन कैलकुलेटर (IBW Calculator) क्या है और यह ऊंचाई के आधार पर वजन कैसे निकालता है?', answer: 'यह आपकी ऊंचाई (सेमी/इंच) और लिंग (पुरुष/महिला) के आधार पर Devine, Robinson, Miller और Hamwi सूत्रों का उपयोग करके आपके आदर्श वजन (IBW) का अनुमान लगाता है।' },
-        { question: 'मेरी ऊंचाई के अनुसार मेरा आदर्श वजन (किग्रा में) क्या है?', answer: 'अपनी ऊंचाई दर्ज करें और लिंग चुनें। उदाहरण के लिए, 175 सेमी वाले पुरुष का Devine सूत्र के अनुसार आदर्श वजन ~70.5 किग्रा और स्वस्थ बीएमआई सीमा 56.7 किग्रा से 76.2 किग्रा है।' },
-        { question: 'महिलाओं और पुरुषों के लिए अलग-अलग आदर्श वजन सूत्र क्यों होते हैं?', answer: 'जैविक पुरुषों में महिलाओं की तुलना में मांसपेशियों और हड्डियों का घनत्व अधिक होता है, इसलिए IBW सूत्रों में पुरुषों के लिए उच्च बेस मान (50 किग्रा) उपयोग होता है।' },
-        { question: 'आदर्श शरीर वजन (IBW) और स्वस्थ बीएमआई सीमा में क्या अंतर है?', answer: 'IBW एक निश्चित बिंदु मान प्रदान करता है, जबकि बीएमआई सीमा (18.5 से 24.9 kg/m²) एक विस्तृत विंडो प्रदान करती है।' },
-        { question: 'क्या IBW कैलकुलेटर एथलीटों के लिए सटीक है?', answer: 'अधिक मांसपेशियों वाले एथलीट IBW से अधिक हो सकते हैं और फिर भी पूरी तरह से स्वस्थ हो सकते हैं।' }
+        { question: 'आदर्श वजन कैलकुलेटर (IBW Calculator) क्या है और यह ऊंचाई के आधार पर वजन कैसे निकालता है?', answer: 'यह आपकी ऊंचाई और लिंग के आधार पर प्रसिद्ध गणितीय सूत्रों का उपयोग करके आपके आदर्श वजन (IBW) का अनुमान लगाता है।' },
+        { question: 'मेरी ऊंचाई के अनुसार मेरा आदर्श वजन क्या है?', answer: 'अपनी ऊंचाई दर्ज करें और लिंग चुनें। 175 सेमी वाले पुरुष का Devine सूत्र के अनुसार आदर्श वजन ~70.5 किग्रा और स्वस्थ बीएमआई सीमा 56.7 किग्रा से 76.2 किग्रा है।' },
+        { question: 'महिलाओं और पुरुषों के लिए अलग-अलग सूत्र क्यों होते हैं?', answer: 'जैविक पुरुषों में महिलाओं की तुलना में औसत मांसपेशी और हड्डी घनत्व अधिक होता है।' },
+        { question: 'आदर्श शरीर वजन (IBW) और स्वस्थ बीएमआई सीमा में क्या अंतर है?', answer: 'IBW एक निश्चित बिंदु मान प्रदान करता है, जबकि बीएमआई सीमा एक विस्तृत विंडो प्रदान करती है।' },
+        { question: 'क्या IBW कैलकुलेटर एथलीटों के लिए उपयुक्त है?', answer: 'अधिक मांसपेशियों वाले एथलीट IBW से अधिक हो सकते हैं और फिर भी स्वस्थ हो सकते हैं।' }
       ]
     }
   },
