@@ -1,0 +1,213 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+
+const methodologyMatrix = [
+  {
+    name: "BMI Calculator",
+    slug: "bmi-calculator",
+    formula: "Metric: kg / m² | Imperial: (lbs / inches²) × 703",
+    source: "WHO Technical Report Series 854 / CDC Adult BMI Standard",
+    inputs: "Height, Weight",
+    output: "Body Mass Index score & WHO Category",
+    limitations: "Measures total mass relative to height; does not distinguish muscle mass from adipose fat tissue."
+  },
+  {
+    name: "Asian BMI Calculator",
+    slug: "asian-bmi-calculator",
+    formula: "kg / m² with WHO Western Pacific Ethnic Thresholds",
+    source: "WHO Western Pacific Region & IOTF Consultation (2000)",
+    inputs: "Height, Weight, Asian Ethnic Ancestry",
+    output: "Regional Asian BMI Classification (Cutoff at 23.0 kg/m²)",
+    limitations: "Applies to Asian populations due to higher visceral fat ratio at lower BMI levels; screening tool only."
+  },
+  {
+    name: "BMR Calculator",
+    slug: "bmr-calculator",
+    formula: "Mifflin-St Jeor: 10W + 6.25H - 5A + S (+5 male / -161 female)",
+    source: "American Journal of Clinical Nutrition (Mifflin MD et al., 1990)",
+    inputs: "Age, Sex, Height, Weight",
+    output: "Resting Energy Expenditure (kcal/day)",
+    limitations: "Estimates resting metabolic rate; does not account for thyroid variance or extreme muscle mass variations."
+  },
+  {
+    name: "TDEE Calculator",
+    slug: "tdee-calculator",
+    formula: "BMR × Activity Multiplier (1.2 to 1.9 PAL Factors)",
+    source: "FAO/WHO/UNU Human Energy Requirements Expert Consultation",
+    inputs: "BMR, Physical Activity Level (PAL)",
+    output: "Total Daily Energy Expenditure (kcal/day)",
+    limitations: "Relies on self-reported activity categories; actual daily thermogenesis fluctuates based on NEAT."
+  },
+  {
+    name: "Ideal Body Weight (IBW)",
+    slug: "ideal-weight-calculator",
+    formula: "Devine / Hamwi / Miller / Robinson Heights Equations",
+    source: "Standard Clinical Pharmacotherapy Formulas (Devine BJ, 1974)",
+    inputs: "Height, Sex",
+    output: "Reference Weight Bracket (kg / lbs)",
+    limitations: "Provides historical clinical dosing baselines; does not represent individual body composition targets."
+  },
+  {
+    name: "Body Fat Calculator",
+    slug: "body-fat-calculator",
+    formula: "US Navy Logarithmic Circumference Equations",
+    source: "Naval Health Research Center (Hodgdon & Beckett, 1984)",
+    inputs: "Height, Neck, Waist, Hip (women)",
+    output: "Estimated Body Fat Percentage (%) & Category",
+    limitations: "Estimates body volume based on circumference; less precise than DEXA or hydrostatic weighing."
+  },
+  {
+    name: "Lean Body Mass (LBM)",
+    slug: "lean-body-mass-calculator",
+    formula: "Boer Equation (Men: 0.407W + 0.267H - 19.2 | Women: 0.252W + 0.473H - 48.3)",
+    source: "Boer P. (1984) Estimated Lean Body Mass Equations",
+    inputs: "Height, Weight, Sex",
+    output: "Estimated Fat-Free Mass (kg / lbs)",
+    limitations: "Mathematical approximation based on total mass and height; does not measure organ vs muscle breakdown."
+  },
+  {
+    name: "Calorie Deficit Calculator",
+    slug: "calorie-calculator",
+    formula: "Energy Difference Scenarios = TDEE - Selected Deficit",
+    source: "NIH National Institute of Diabetes & Digestive Guidelines",
+    inputs: "BMR, TDEE, Example Energy Difference",
+    output: "Daily Calorie Reference Baseline (kcal/day)",
+    limitations: "Mathematical energy differential model for planning reference; not a prescriptive medical weight loss plan."
+  },
+  {
+    name: "Protein Intake Calculator",
+    slug: "protein-intake-calculator",
+    formula: "Body Weight (kg) × Activity Multiplier (0.8g/kg RDA to 2.2g/kg ISSN)",
+    source: "International Society of Sports Nutrition (ISSN Position Stand)",
+    inputs: "Body Weight, Activity Level, Fitness Focus",
+    output: "Daily Protein Intake Reference Range (grams/day)",
+    limitations: "Provides educational reference ranges based on activity benchmarks; renal health considerations apply."
+  },
+  {
+    name: "Macro Calculator",
+    slug: "macro-calculator",
+    formula: "Acceptable Macronutrient Distribution Ranges (AMDR)",
+    source: "Institute of Medicine (IOM) Dietary Reference Intakes",
+    inputs: "Daily Calorie Intake, Goal Macro Split",
+    output: "Carbohydrate, Protein, Fat Distribution (grams)",
+    limitations: "General nutritional planning framework; individual dietary needs vary based on metabolic conditions."
+  }
+];
+---
+
+<Layout 
+  title="Calculator Methodology & Formulas | Real BMI"
+  description="Transparent methodology, mathematical equations, source citations, inputs, outputs, and limitations for all calculators on Real BMI."
+>
+  <Navbar />
+  
+  <PageShell
+    title="Calculator Methodology & Calculation Engine"
+    eyebrow="PRODUCT TRANSPARENCY & METHODOLOGY"
+    description="Every calculator on Real BMI is built directly on published mathematical equations, public health reference data, and transparent algorithms."
+    returnUrl="/en"
+    returnLabel="Home"
+  >
+    <div class="space-y-12">
+      
+      <!-- Intro & Product Statement Box -->
+      <div class="p-6 md:p-8 rounded-2xl border border-[var(--accent)]/20 bg-[var(--card)] space-y-4 shadow-sm">
+        <h2 class="text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+          Independent Calculator Architecture
+        </h2>
+        <p class="text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+          Real BMI is an independent web application created and maintained by <strong class="text-[var(--foreground)]">Bhawanshi Dosi</strong>. Rather than relying on generic black-box scripts, every tool on this site is documented below with its exact formula, source authority, input parameters, and inherent measurement limitations.
+        </p>
+      </div>
+
+      <!-- Core Pillars Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {[
+          {
+            title: "Documented Formulas",
+            desc: "All calculations use established peer-reviewed literature and published equations (Mifflin-St Jeor, Boer, Devine, US Navy Logarithmic)."
+          },
+          {
+            title: "Reference Standards",
+            desc: "Outputs are evaluated against official population benchmarks from the World Health Organization (WHO) and Centers for Disease Control (CDC)."
+          },
+          {
+            title: "Local On-Device Execution",
+            desc: "Calculator inputs are computed instantly in your browser JavaScript environment — no health metrics are stored on external databases."
+          },
+          {
+            title: "Transparent Limitations",
+            desc: "Every calculator explicitly states what it measures and what it cannot measure, avoiding misleading clinical claims."
+          }
+        ].map(pillar => (
+          <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2.5">
+            <h3 class="text-lg font-display font-bold text-[var(--foreground)] uppercase tracking-wide">{pillar.title}</h3>
+            <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{pillar.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Comprehensive Methodology Matrix -->
+      <div class="space-y-6">
+        <div class="space-y-1">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">Systematic Reference Matrix</p>
+          <h2 class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
+            Complete Calculator Methodology Table
+          </h2>
+          <p class="text-sm text-[var(--muted-foreground)] font-medium">
+            Review the equations, data sources, inputs, outputs, and measurement boundaries for each calculator tool.
+          </p>
+        </div>
+
+        <div class="grid gap-6">
+          {methodologyMatrix.map((item) => (
+            <div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4 hover:border-[var(--accent)]/40 transition-all shadow-xs">
+              <div class="flex items-center justify-between gap-4 flex-wrap pb-3 border-b border-[var(--border)]">
+                <div class="flex items-center gap-3">
+                  <span class="w-3 h-3 rounded-full bg-[var(--accent)]"></span>
+                  <h3 class="text-xl font-display font-bold text-[var(--foreground)]">{item.name}</h3>
+                </div>
+                <a 
+                  href={`/en/${item.slug}/`} 
+                  class="inline-flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:underline"
+                >
+                  Open Tool
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div class="space-y-1.5 p-3.5 rounded-xl bg-[var(--muted)]/40">
+                  <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)]">Mathematical Equation</span>
+                  <p class="font-mono text-[var(--foreground)] font-medium">{item.formula}</p>
+                </div>
+                <div class="space-y-1.5 p-3.5 rounded-xl bg-[var(--muted)]/40">
+                  <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)]">Primary Source Authority</span>
+                  <p class="text-[var(--foreground)] font-medium">{item.source}</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-1">
+                <div>
+                  <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">Input Variables:</span>
+                  <p class="text-[var(--foreground)] font-semibold mt-0.5">{item.inputs}</p>
+                </div>
+                <div>
+                  <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">Output Metric:</span>
+                  <p class="text-[var(--foreground)] font-semibold mt-0.5">{item.output}</p>
+                </div>
+                <div>
+                  <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">Primary Limitation:</span>
+                  <p class="text-[var(--muted-foreground)] font-medium mt-0.5 leading-relaxed">{item.limitations}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </PageShell>
+</Layout>
