@@ -21,23 +21,53 @@ import HealthContent from '../../components/HealthContent.astro';
 		<section class="pt-24 md:pt-28 pb-6 md:pb-8 px-4 md:px-6">
 			<div class="max-w-7xl mx-auto">
 
-				<!-- Main H1 headline -->
-				<div class="text-center space-y-3.5 mb-8 max-w-4xl mx-auto animate-in" style="animation-delay:0ms">
-					<h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Understand Your Numbers. Plan With Confidence.
-						<span class="block text-base sm:text-lg md:text-xl mt-2.5 text-[var(--accent)] font-semibold tracking-normal normal-case">Free BMI, BMR, TDEE & Body Composition Calculators</span>
+				<!-- Main H1 & Hero Header -->
+				<div class="text-center space-y-4 mb-8 max-w-4xl mx-auto animate-in" style="animation-delay:0ms">
+					<!-- Eyebrow Tag / Pill -->
+					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
+						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+						YOUR EVERYDAY HEALTH & FITNESS TOOLS
+					</div>
+
+					<!-- Main H1 headline -->
+					<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
+						Understand Your Numbers.<br class="hidden sm:inline" /> Plan With Confidence.
 					</h1>
+
+					<!-- Supporting H2 Subtitle -->
+					<h2 class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight">
+						Free BMI, BMR, TDEE & Body Composition Calculators
+					</h2>
+
+					<!-- Hero Description -->
 					<p class="text-sm sm:text-base md:text-lg text-[var(--muted-foreground)] font-sans font-medium max-w-2xl mx-auto px-2 leading-relaxed">
-						Turn everyday health and fitness numbers into clear, easy-to-understand reference points. Calculate BMI, metabolic rates, calorie needs, body composition estimates, and more — quickly and privately in your browser.
+						Explore simple calculators for BMI, metabolism, calorie planning, body composition, and everyday fitness reference. Get instant estimates using transparent formulas — directly in your browser, with no account required.
 					</p>
 
-					<!-- Explore 15+ Calculators & Quick Tag Strip -->
-					<div class="pt-2 space-y-2">
-						<p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">Explore 15+ Calculators</p>
+					<!-- Action Buttons -->
+					<div class="flex flex-wrap justify-center items-center gap-3 pt-2">
+						<a href="#calculators" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-[var(--accent)] text-white text-xs font-display font-bold uppercase tracking-wider shadow-md hover:opacity-90 transition-all">
+							Explore Calculators
+						</a>
+						<a href="/en/bmi-calculator/" class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] text-xs font-display font-bold uppercase tracking-wider hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all">
+							View BMI Calculator
+						</a>
+					</div>
+
+					<!-- Calculator Quick Links -->
+					<div class="pt-3">
 						<div class="flex flex-wrap justify-center items-center gap-1.5 text-xs font-semibold text-[var(--accent)]">
-							{['BMI', 'BMR', 'TDEE', 'Body Fat', 'Ideal Weight', 'Macros', 'Protein', 'Water'].map((tag, idx, arr) => (
+							{[
+								{ name: 'BMI Calculator', href: '#calculators' },
+								{ name: 'BMR Calculator', href: '#calculators' },
+								{ name: 'TDEE Calculator', href: '#calculators' },
+								{ name: 'Body Fat', href: '#calculators' },
+								{ name: 'Ideal Weight', href: '#calculators' },
+								{ name: 'Calories', href: '#calculators' },
+								{ name: 'Macros', href: '#calculators' }
+							].map((tag, idx, arr) => (
 								<span>
-									<a href="#calculators" class="hover:underline hover:text-[var(--foreground)] transition-colors">{tag}</a>
+									<a href={tag.href} class="hover:underline hover:text-[var(--foreground)] transition-colors">{tag.name}</a>
 									{idx < arr.length - 1 && <span class="ml-1.5 text-[var(--muted-foreground)]/40">·</span>}
 								</span>
 							))}
@@ -45,19 +75,27 @@ import HealthContent from '../../components/HealthContent.astro';
 					</div>
 				</div>
 
-				<!-- Feature Badges Strip -->
-				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 md:mb-10 animate-in" style="animation-delay:60ms">
+				<!-- Stats Strip -->
+				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 animate-in" style="animation-delay:60ms">
 					{[
-						'Free to Use',
+						'15+ Calculators',
+						'6 Languages',
 						'Browser-Based',
-						'Privacy-Focused',
 						'Instant Results'
 					].map(badge => (
-						<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
+						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
 							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
 							{badge}
 						</div>
 					))}
+				</div>
+
+				<!-- Trust Badge below Stats -->
+				<div class="flex items-center justify-center gap-2 mb-8 md:mb-10 text-xs font-medium text-[var(--muted-foreground)] animate-in" style="animation-delay:90ms">
+					<svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+					</svg>
+					<span>WHO & CDC Reference Standards</span>
 				</div>
 
 				<!-- Interactive Calculator Hub -->
