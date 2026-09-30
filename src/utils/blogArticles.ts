@@ -205,7 +205,7 @@ export const blogArticles: Record<string, any> = {
 
   'is-bmi-accurate': {
     title: {
-      en: 'Is BMI Accurate? Evidence, Limitations & Oxford 2.5 Height-Adjusted Formula',
+      en: 'Is BMI Accurate? Evidence, Limitations & the Oxford 2.5 Height-Adjusted Formula',
       hi: 'क्या बीएमआई सटीक है? साक्ष्य, सीमाएं और 2.5 घात फॉर्मूला',
       ko: 'BMI는 정확한가요? 증거, 한계 및 옥스포드 2.5 보정 공식',
       de: 'Ist der BMI genau? Fakten, Mängel & Oxford 2.5 Formel',
