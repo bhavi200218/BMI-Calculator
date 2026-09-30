@@ -248,17 +248,17 @@ export const blogArticles: Record<string, any> = {
 
         <h2>Flaw #3: Ignoring Abdominal Visceral Fat (Central Obesity)</h2>
         <p>BMI measures total scale weight, not fat location. While subcutaneous fat stored under the skin carries different implications, <strong>visceral fat</strong> stored deep inside the abdominal cavity surrounding vital organs is associated with different metabolic and cardiovascular risk patterns.</p>
-        <p>Up to 15% of adults with a "Normal" BMI have elevated waist circumferences, carrying significant hidden metabolic risk (the <em>"Normal Weight Obesity"</em> paradox).</p>
+        <p>In population health studies, some adults with a "Normal" BMI score present with higher waist circumferences, indicating central adiposity despite normal total body mass (the <em>"Normal Weight Obesity"</em> pattern).</p>
 
         <h2>Flaw #4: Ignoring Ethnic Body Composition Differences</h2>
         <p>World Health Organization (WHO) population data shows Asian and South Asian populations accumulate higher percentages of visceral fat at lower body mass indexes compared to Caucasians. This is why the WHO revised overweight cut-offs for Asian adults from 25.0 kg/m² down to <strong>23.0 kg/m²</strong>.</p>
 
-        <h2>What You Should Use Instead of Plain BMI</h2>
-        <p>Health authorities recommend evaluating three complementary metrics for a broader educational health snapshot:</p>
+        <h2>Additional Metrics That Can Provide Context</h2>
+        <p>Public health resources suggest reviewing complementary metrics for a broader educational health snapshot:</p>
         <ol>
           <li><strong>BMI Score:</strong> For baseline stature screening.</li>
-          <li><strong>Waist-to-Height Ratio (WHtR):</strong> Keep your waist circumference to less than half your height (Waist ÷ Height &lt; 0.5).</li>
-          <li><strong>BMR &amp; TDEE:</strong> To determine daily caloric intake needs.</li>
+          <li><strong>Waist-to-Height Ratio (WHtR):</strong> Provides context on waist circumference relative to height.</li>
+          <li><strong>BMR &amp; TDEE:</strong> To estimate resting and total daily energy expenditure for planning.</li>
         </ol>
       `,
       hi: `

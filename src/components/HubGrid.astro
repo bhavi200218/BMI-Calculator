@@ -8,13 +8,13 @@ interface Props {
 const { lang } = Astro.props;
 
 const headers = {
-  en: { title: 'Quick Tools Directory', desc: 'Browse our complete catalog of professional health calculators.' },
-  es: { title: 'Directorio de herramientas', desc: 'Explora nuestro catálogo de calculadoras de salud profesionales.' },
-  fr: { title: 'Répertoire des outils de santé', desc: 'Consultez notre catalogue complet de calculateurs de santé professionnels.' },
-  de: { title: 'Verzeichnis der Gesundheitsrechner', desc: 'Durchsuchen Sie unser komplettes Sortiment an professionellen Rechnern.' },
-  ko: { title: '건강 분석 도구 디렉토리', desc: '프로급 건강 및 신체 측정 계산기 전체 목록을 확인하세요.' },
-  hi: { title: 'त्वरित उपकरण निर्देशिका', desc: 'पेशेवर स्वास्थ्य कैलकुलेटर की हमारी पूरी सूची देखें।' }
-}[lang] || { title: 'Quick Tools Directory', desc: 'Browse our complete catalog of health calculators.' };
+  en: { title: 'Quick Tools Directory', desc: 'Browse our complete catalog of educational health calculators.' },
+  es: { title: 'Directorio de herramientas', desc: 'Explora nuestro catálogo de calculadoras de salud.' },
+  fr: { title: 'Répertoire des outils de santé', desc: 'Consultez notre catalogue complet de calculateurs de santé.' },
+  de: { title: 'Verzeichnis der Gesundheitsrechner', desc: 'Durchsuchen Sie unser komplettes Sortiment an Gesundheitsrechnern.' },
+  ko: { title: '건강 도구 디렉토리', desc: '건강 및 신체 측정 계산기 전체 목록을 확인하세요.' },
+  hi: { title: 'त्वरित उपकरण निर्देशिका', desc: 'स्वास्थ्य कैलकुलेटर की हमारी पूरी सूची देखें।' }
+}[lang] || { title: 'Quick Tools Directory', desc: 'Browse our complete catalog of educational health calculators.' };
 ---
 
 <section id="hub-grid" class="px-4 md:px-6 py-12 max-w-7xl mx-auto space-y-6">

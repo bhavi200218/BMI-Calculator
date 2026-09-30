@@ -532,10 +532,10 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       formulaCode: 'Target Calories = [ (10 × W_kg) + (6.25 × H_cm) - (5 × Age) + S ] × Activity Multiplier - Daily Deficit',
       tableTitle: 'Calorie Deficit Levels & Estimated Weekly Weight-Change Rates',
       tableRows: [
-        { col1: 'Larger Example Deficit (-25%)', col2: '~0.75 kg (1.6 lbs) loss / week', col3: 'Example larger deficit for weight planning' },
-        { col1: 'Moderate Example Deficit (-20%)', col2: '~0.50 kg (1.1 lbs) loss / week', col3: 'Example moderate deficit for weight planning' },
-        { col1: 'Smaller Example Deficit (-10% to -15%)', col2: '~0.25 to 0.35 kg loss / week', col3: 'Smaller example deficit for gradual weight-change targets' },
-        { col1: 'Maintenance Baseline (0% Deficit)', col2: '0.00 kg loss / week', col3: 'Estimated TDEE energy balance for weight stabilization' }
+        { col1: 'Scenario A: 250 kcal/day difference', col2: '~1,750 kcal net difference / week', col3: 'Mathematical example of a 250 kcal daily energy difference' },
+        { col1: 'Scenario B: 500 kcal/day difference', col2: '~3,500 kcal net difference / week', col3: 'Mathematical example of a 500 kcal daily energy difference' },
+        { col1: 'Scenario C: 750 kcal/day difference', col2: '~5,250 kcal net difference / week', col3: 'Mathematical example of a 750 kcal daily energy difference' },
+        { col1: 'Energy Balance Baseline (0 kcal difference)', col2: '0 kcal net difference / week', col3: 'Estimated TDEE energy balance for weight stabilization' }
       ],
       faqs: [
         { question: 'What is a calorie deficit and how does a calorie deficit calculator work?', answer: 'A calorie deficit occurs when daily energy intake is less than Total Daily Energy Expenditure (TDEE). The calorie deficit calculator computes your BMR using the Mifflin St Jeor equation, applies your physical activity multiplier to determine TDEE, and subtracts an example target deficit to estimate weight-change targets.' },
@@ -792,11 +792,11 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       formulaCode: 'Maintenance = BMR × PAL',
       tableTitle: 'Calorie Maintenance & Weight Goal Caloric Breakdown Table',
       tableRows: [
-        { col1: 'Maintenance Calories', col2: '100% TDEE (0 kcal net change)', col3: 'Preserves current body weight and body composition' },
-        { col1: 'Mild Deficit (Weight Loss)', col2: 'TDEE - 250 kcal/day', col3: 'Slow, steady weight loss (~0.25 kg / 0.5 lbs per week)' },
-        { col1: 'Example Calorie Deficit', col2: 'TDEE minus a chosen deficit', col3: 'Example reference for weight-management planning' },
-        { col1: 'Higher Deficit', col2: 'TDEE - 750 kcal/day', col3: 'Faster weight loss (~0.75 kg per week); requires adequate protein' },
-        { col1: 'Lean Muscle Surplus', col2: 'TDEE + 250 to 300 kcal/day', col3: 'Controlled muscle gain with minimal fat accumulation' }
+        { col1: 'Maintenance Calories', col2: '100% TDEE (0 kcal net change)', col3: 'Preserves current body weight and energy balance' },
+        { col1: 'Scenario 1 (-250 kcal/day)', col2: 'TDEE - 250 kcal/day', col3: 'Mathematical example of 250 kcal lower daily intake' },
+        { col1: 'Scenario 2 (-500 kcal/day)', col2: 'TDEE - 500 kcal/day', col3: 'Mathematical example of 500 kcal lower daily intake' },
+        { col1: 'Scenario 3 (-750 kcal/day)', col2: 'TDEE - 750 kcal/day', col3: 'Mathematical example of 750 kcal lower daily intake' },
+        { col1: 'Example Surplus (+250 kcal/day)', col2: 'TDEE + 250 to 300 kcal/day', col3: 'Mathematical example of 250–300 kcal higher daily intake' }
       ],
       faqs: [
         { question: 'What is a maintenance calorie calculator and how does it work online?', answer: 'A maintenance calorie calculator computes the estimated daily caloric intake required to maintain your current body weight. It uses metabolic equations (Mifflin-St Jeor) combined with your physical activity multiplier.' },
