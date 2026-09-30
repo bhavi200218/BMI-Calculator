@@ -64,12 +64,12 @@ const currentLangDisplay = langNames[lang] || lang;
             class="absolute right-0 top-full mt-2 w-44 rounded-xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)] p-1.5 space-y-0.5 hidden"
             role="menu">
             {Object.entries(langNames).map(([code, name]) => {
-              const rawP = Astro.url.pathname
-                .replace(/^\/[a-z]{2}\//, `/${code}/`)
-                .replace(/^\/[a-z]{2}$/, `/${code}/`);
-              const path = rawP.endsWith('/') ? rawP : `${rawP}/`;
+              const currentPath = Astro.url.pathname;
+              const pathWithoutLang = currentPath.replace(/^\/(en|es|fr|de|ko|hi)(\/|$)/, '/');
+              const cleanPath = pathWithoutLang.startsWith('/') ? pathWithoutLang : `/${pathWithoutLang}`;
+              const targetPath = `/${code}${cleanPath}`.replace(/\/+/g, '/');
               return (
-                <a href={path}
+                <a href={targetPath}
                   class={`flex items-center gap-2 px-3 py-2.5 text-[11px] font-display font-semibold uppercase tracking-wider rounded-lg hover:bg-[var(--muted)] transition-colors text-[var(--foreground)] cursor-pointer ${code === lang ? 'bg-[var(--muted)]' : ''}`}
                   role="menuitem">
                   {name}
@@ -239,6 +239,12 @@ const currentLangDisplay = langNames[lang] || lang;
     btn.addEventListener('click', (e) => { e.stopPropagation(); isOpen ? close() : open(); });
     closeBtn.addEventListener('click', (e) => { e.stopPropagation(); close(); });
     document.addEventListener('click', (e) => { if (!btn.contains(e.target) && !mobileMenu.contains(e.target)) close(); });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        close();
+      });
+    });
   }
 
   initTheme(); attachThemeToggle(); attachLangDropdown(); attachMobileMenu();

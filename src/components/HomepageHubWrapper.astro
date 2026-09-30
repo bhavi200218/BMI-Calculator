@@ -29,8 +29,8 @@ const gTitle = {
     <!-- Group 1: Core Calculators (8) -->
     <div class="calc-group space-y-3">
       <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.core}</div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3">
-        {calculators.filter(c=>['bmi-calculator','bmi-chart','bmi-calculator-india','3d-bmi-calculator','3d-body-visualizer','diabetes-risk-calculator','bmr-calculator','tdee-calculator','maintenance-calorie-calculator'].includes(c.slug)).map(calc => (
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        {calculators.filter(c=>['bmi-calculator','diabetes-risk-calculator','bmr-calculator','tdee-calculator','maintenance-calorie-calculator'].includes(c.slug)).map(calc => (
           <a
             href={`/${lang}/${calc.slug}/`}
             class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline"
