@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import PageShell from '../../components/PageShell.astro';
+import { locales } from '../../utils/calculators';
+
+export function getStaticPaths() {
+  return locales.map(lang => ({ params: { lang } }));
+}
+
+const { lang = 'en' } = Astro.params;
 
 const methodologyMatrix = [
   {
@@ -107,7 +114,7 @@ const methodologyMatrix = [
     title="Calculator Methodology & Calculation Engine"
     eyebrow="PRODUCT TRANSPARENCY & METHODOLOGY"
     description="Every calculator on Real BMI is built directly on published mathematical equations, public health reference data, and transparent algorithms."
-    returnUrl="/en"
+    returnUrl={`/${lang}`}
     returnLabel="Home"
   >
     <div class="space-y-12">
@@ -170,7 +177,7 @@ const methodologyMatrix = [
                   <h3 class="text-xl font-display font-bold text-[var(--foreground)]">{item.name}</h3>
                 </div>
                 <a 
-                  href={`/en/${item.slug}/`} 
+                  href={`/${lang}/${item.slug}/`} 
                   class="inline-flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:underline"
                 >
                   Open Tool
