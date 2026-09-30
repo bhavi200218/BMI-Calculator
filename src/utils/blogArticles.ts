@@ -205,7 +205,7 @@ export const blogArticles: Record<string, any> = {
 
   'is-bmi-accurate': {
     title: {
-      en: 'Is BMI Accurate? Evidence, Flaws & Oxford 2.5 Power Formula',
+      en: 'Is BMI Accurate? Evidence, Limitations & Oxford 2.5 Height-Adjusted Formula',
       hi: 'क्या बीएमआई सटीक है? साक्ष्य, सीमाएं और 2.5 घात फॉर्मूला',
       ko: 'BMI는 정확한가요? 증거, 한계 및 옥스포드 2.5 보정 공식',
       de: 'Ist der BMI genau? Fakten, Mängel & Oxford 2.5 Formel',
@@ -237,20 +237,20 @@ export const blogArticles: Record<string, any> = {
         <h2>Limitation #1: The Muscular Athlete Paradox (Muscle vs. Adipose Fat)</h2>
         <p>Standard BMI treats every kilogram of mass identically. However, skeletal muscle tissue is significantly denser and heavier per unit of volume than adipose fat tissue. As a result, bodybuilders, weightlifters, and muscular athletes frequently register as "Overweight" or "Obese" on standard BMI charts despite having low body fat percentages.</p>
 
-        <h2>Flaw #2: 2D Height Scaling Distortion & The Oxford 2.5 Formula</h2>
+        <h2>Limitation #2: Height Scaling and Alternative BMI Formulas</h2>
         <p>The standard BMI formula (<code>weight / height²</code>) divides mass by height squared. Mathematically, dividing by height squared assumes human body volume scales in two dimensions (like a flat square). In reality, humans grow three-dimensionally.</p>
-        <p>Oxford mathematician <strong>Nick Trefethen</strong> demonstrated that standard 2D scaling penalizes tall adults (making tall people look heavier than they are) while undercounting fatness in short adults. He proposed the modernized <strong>3D Height-Adjusted BMI Formula</strong>:</p>
+        <p>Oxford mathematician <strong>Prof. Nick Trefethen</strong> (<a href="https://www.maths.ox.ac.uk/profiles/nick.trefethen/bmi" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-semibold">Oxford University Mathematics</a>) proposed an alternative mathematical formulation to adjust for height scaling in tall and short adults. He introduced the <strong>3D Height-Adjusted BMI Formula</strong>:</p>
 
         <div class="my-6 p-6 rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 font-mono text-sm leading-relaxed">
           <p class="font-bold text-[var(--accent)] mb-1">Oxford 3D Height-Adjusted Equation:</p>
           <p class="text-[var(--foreground)] font-bold text-base">3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵</p>
         </div>
 
-        <h2>Flaw #3: Ignoring Abdominal Visceral Fat (Central Obesity)</h2>
+        <h2>Limitation #3: Abdominal Visceral Fat (Central Obesity)</h2>
         <p>BMI measures total scale weight, not fat location. While subcutaneous fat stored under the skin carries different implications, <strong>visceral fat</strong> stored deep inside the abdominal cavity surrounding vital organs is associated with different metabolic and cardiovascular risk patterns.</p>
         <p>In population health studies, some adults with a "Normal" BMI score present with higher waist circumferences, indicating central adiposity despite normal total body mass (the <em>"Normal Weight Obesity"</em> pattern).</p>
 
-        <h2>Flaw #4: Ignoring Ethnic Body Composition Differences</h2>
+        <h2>Limitation #4: Ethnic Body Composition Differences</h2>
         <p>World Health Organization (WHO) population data shows Asian and South Asian populations accumulate higher percentages of visceral fat at lower body mass indexes compared to Caucasians. This is why the WHO revised overweight cut-offs for Asian adults from 25.0 kg/m² down to <strong>23.0 kg/m²</strong>.</p>
 
         <h2>Additional Metrics That Can Provide Context</h2>
