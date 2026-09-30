@@ -41,25 +41,7 @@ import HealthContent from '../../components/HealthContent.astro';
 
 
 
-					<!-- Calculator Quick Links -->
-					<div class="pt-3">
-						<div class="flex flex-wrap justify-center items-center gap-1.5 text-xs font-semibold text-[var(--accent)]">
-							{[
-								{ name: 'BMI Calculator', href: '#calculators' },
-								{ name: 'BMR Calculator', href: '#calculators' },
-								{ name: 'TDEE Calculator', href: '#calculators' },
-								{ name: 'Body Fat', href: '#calculators' },
-								{ name: 'Ideal Weight', href: '#calculators' },
-								{ name: 'Calories', href: '#calculators' },
-								{ name: 'Macros', href: '#calculators' }
-							].map((tag, idx, arr) => (
-								<span>
-									<a href={tag.href} class="hover:underline hover:text-[var(--foreground)] transition-colors">{tag.name}</a>
-									{idx < arr.length - 1 && <span class="ml-1.5 text-[var(--muted-foreground)]/40">·</span>}
-								</span>
-							))}
-						</div>
-					</div>
+
 				</div>
 
 				<!-- Stats Strip -->
