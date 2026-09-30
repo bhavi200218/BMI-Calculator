@@ -141,7 +141,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       eyebrow: 'Normes de Santé de l\'OMS',
       title: 'Calculateur d\'IMC – Calculez votre Indice de Masse Corporelle',
       intro: 'Notre calculateur d\'IMC gratuit est un outil d\'évaluation basé sur les normes de l\'OMS et du CDC. Calculez votre catégorie d\'IMC et consultez les plages de poids de référence.',
-      formulaTitle: 'Formule Officielle d\'IMC selon l\'OMS',
+      formulaTitle: 'Formule de Référence IMC de l\'OMS',
       formulaDesc: 'Métrique : IMC = Poids (kg) / [Taille (m)]² | Impérial : IMC = [Poids (lbs) / Taille (pouces)²] × 703',
       formulaCode: 'IMC = kg / m²',
       tableTitle: 'Tableau de Classification de l\'IMC pour Adultes selon l\'OMS',
@@ -161,7 +161,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       eyebrow: 'WHO Gesundheitsstandards',
       title: 'BMI Rechner – Body-Mass-Index Berechnen',
       intro: 'Unser kostenloser BMI-Rechner ist ein Tool zur Einschätzung nach Standards der WHO und der CDC. Berechnen Sie Ihre BMI-Kategorie und überprüfen Sie Richtwerte.',
-      formulaTitle: 'Offizielle WHO BMI-Formel',
+      formulaTitle: 'WHO BMI-Referenzformel',
       formulaDesc: 'Metrisch: BMI = Gewicht (kg) / [Größe (m)]² | Imperial: BMI = [Gewicht (lbs) / Größe (Zoll)²] × 703',
       formulaCode: 'BMI = kg / m²',
       tableTitle: 'WHO BMI-Skala & Klassifizierungstabelle für Erwachsene',
@@ -510,11 +510,10 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       intro: 'Using the Boer formula, estimate lean body mass from height, weight and sex. LBM is a mathematical estimate and is not the same as skeletal muscle mass or organ weight.',
       formulaTitle: 'Boer Formula for LBM',
       formulaDesc: 'Men: LBM = (0.407 × W) + (0.267 × H) - 19.2 | Women: LBM = (0.252 × W) + (0.473 × H) - 48.3',
-      tableTitle: 'Illustrative Body Composition Context (Not Directly Measured by Boer Equation)',
+      tableTitle: 'Boer Equation Formula Reference',
       tableRows: [
-        { col1: 'Skeletal Muscle Reference', col2: '~40% - 50% of LBM', col3: 'Illustrative population reference — not directly measured by this calculator' },
-        { col1: 'Organs & Bone Structure', col2: '~35% - 45% of LBM', col3: 'Illustrative population reference — not directly measured by this calculator' },
-        { col1: 'Body Fluid Volume', col2: '~15% of LBM', col3: 'Illustrative population reference — not directly measured by this calculator' }
+        { col1: 'Boer Equation (Men)', col2: '(0.407 × W) + (0.267 × H) - 19.2', col3: 'Predictive formula for estimated lean mass in males' },
+        { col1: 'Boer Equation (Women)', col2: '(0.252 × W) + (0.473 × H) - 48.3', col3: 'Predictive formula for estimated lean mass in females' }
       ],
       faqs: [
         { question: 'What is the Lean Body Mass Calculator?', answer: 'The Lean Body Mass Calculator uses the Boer predictive equation to estimate non-fat body mass from height, weight, and sex. It is a mathematical estimate and does not directly measure skeletal muscle or organ weight.' },
