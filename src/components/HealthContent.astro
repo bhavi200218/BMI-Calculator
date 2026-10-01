@@ -93,12 +93,14 @@ const content: Record<string, any> = {
     faq: [
       { q: 'मानक बीएमआई और Real BMI में क्या अंतर है?', a: 'मानक बीएमआई केवल ऊंचाई और वजन का उपयोग करता है। Real BMI बीएमआई को डब्ल्यूएचओ/सीडीसी दिशानिर्देशों, बीएमआर (BMR) और टीडीईई (TDEE) के साथ मिलाकर अतिरिक्त संदर्भात्मक स्वास्थ्य जानकारी प्रदान करता है। यह अलग चिकित्सा माप या आधिकारिक डब्ल्यूएचओ वर्गीकरण नहीं है।' },
       { q: 'बीएमआई (BMI) की गणना कैसे की जाती है?', a: 'बीएमआई = वजन (किलोग्राम) ÷ ऊंचाई² (मीटर)। इंपीरियल इकाइयों में: (वजन पाउंड ÷ ऊंचाई इंच²) × 703। हमारा कैलकुलेटर दोनों प्रणालियों में तुरंत गणना करता है।' },
-      { q: 'पुरुषों और महिलाओं के लिए स्वस्थ बीएमआई क्या है?', a: 'अधिकांश वयस्कों के लिए स्वस्थ बीएमआई सीमा 18.5 से 24.9 है। हालांकि, एशियाई आबादी के संदर्भ दिशानिर्देशों में बीएमआई 23.0 kg/m² से शुरू होने वाली अतिरिक्त संदर्भ सीमाओं का उपयोग किया जाता है। इन्हें सामान्य वयस्क बीएमआई वर्गीकरण से अलग संदर्भ में समझना चाहिए।' },
+      { q: 'बीएमआई जनसंख्या स्वास्थ्य अध्ययनों से कैसे संबंधित है?', a: 'सार्वजनिक स्वास्थ्य साहित्य में बीएमआई स्तर (25.0 kg/m² और अधिक) का उपयोग जनसंख्या स्वास्थ्य अध्ययनों के लिए आधारभूत स्क्रीनिंग संदर्भ के रूप में किया जाता है।' },
+      { q: 'बीएमआई के साथ कमर की परिधि (Waist Size) क्यों महत्वपूर्ण है?', a: 'कमर की परिधि का माप बीएमआई के साथ शरीर में वसा के वितरण के बारे में अतिरिक्त संदर्भात्मक जानकारी प्रदान करता है।' },
+      { q: 'पुरुषों और महिलाओं के लिए स्वस्थ बीएमआई क्या है?', a: 'अधिकांश वयस्कों के लिए स्वस्थ बीएमआई सीमा 18.5 से 24.9 है। हालांकि, डब्ल्यूएचओ विशेषज्ञ परामर्श एशियाई आबादी के लिए 18.5 से 22.9 की निचली संदर्भ सीमा का सुझाव देते हैं।' },
       { q: 'क्या मांसपेशियों वाले एथलीटों के लिए बीएमआई उपयुक्त है?', a: 'बीएमआई एक प्राथमिक जांच उपकरण है, निदान नहीं। यह मांसपेशियों वाले एथलीटों में शरीर की वसा का अधिक अनुमान लगा सकता है, इसलिए इसे कमर की परिधि के साथ देखना चाहिए।' },
       { q: 'दक्षिण एशियाई लोगों के लिए बीएमआई सीमाएं कम क्यों हैं?', a: 'डब्ल्यूएचओ विशेषज्ञ परामर्श दिशानिर्देशों के अनुसार, एशियाई आबादी में कम वजन पर भी पेट की विसरल वसा जमा होने का जोखिम अधिक हो सकता है। इसलिए दिशानिर्देश 23.0 kg/m² को बढ़े हुए स्वास्थ्य जोखिम की संदर्भ सीमा के रूप में सुझाते हैं।' },
       { q: '25 बीएमआई का क्या अर्थ है?', a: '25 का बीएमआई सामान्य सीमा और अधिक वजन श्रेणी के बीच की सीमा पर है। यह कमर के आकार और व्यायाम की आदतों की समीक्षा करने का संकेत है।' },
-      { q: 'बीएमआर (BMR) क्या है और यह क्यों महत्वपूर्ण है?', a: 'बीएमआर (BMR) एक प्रेडिक्टिव समीकरण के आधार पर अनुमानित विश्राम ऊर्जा व्यय प्रदान करता है।' },
-      { q: 'टीडीईई (TDEE) क्या है और यह क्यों महत्वपूर्ण है?', a: 'टीडीईई अनुमान लगाता है कि आप शारीरिक गतिविधि और व्यायाम सहित एक दिन में कितनी कैलोरी बर्न करते हैं।' }
+      { q: 'बीएमआर (BMR) क्या है और यह क्यों महत्वपूर्ण है?', a: 'बीएमआर (BMR) एक प्रेडिक्टिव समीकरण के आधार पर अनुमानित विश्राम ऊर्जा व्यय प्रदान करता है, जो आपकी कैलोरी आवश्यकताओं का आधार तय करता है।' },
+      { q: 'टीडीईई (TDEE) क्या है और यह क्यों महत्वपूर्ण है?', a: 'टीडीईई (Total Daily Energy Expenditure) अनुमान लगाता है कि आप शारीरिक गतिविधि और व्यायाम सहित एक दिन में कितनी कुल कैलोरी बर्न करते हैं।' }
     ]
   },
   es: {
@@ -131,12 +133,16 @@ const content: Record<string, any> = {
       { category: 'Obesidad Clase III', range: '≥ 40.0', risk: 'Categoría de Referencia Elevada', status: 'obesity-3' }
     ],
     faq: [
-      { q: '¿Cómo se calcula el IMC?', a: 'El IMC se calcula dividiendo el peso en kg por la altura en metros al cuadrado. Nuestra herramienta realiza este cálculo automáticamente.' },
-      { q: '¿Cuál es un IMC saludable para una mujer?', a: 'Para la mayoría de los adultos, el rango saludable es de 18.5 a 24.9.' },
-      { q: '¿Es el IMC adecuado para atletas?', a: 'El IMC es una herramienta de evaluación general. Puede clasificar diferente la masa muscular en personas musculosas.' },
-      { q: '¿Qué significa un IMC de 25?', a: 'Un IMC de 25 está en el límite entre el rango saludable y el sobrepeso.' },
-      { q: '¿Qué es el BMR y por qué importa?', a: 'El BMR proporciona una estimación del gasto energético en reposo basada en una ecuación predictiva.' },
-      { q: '¿Qué es el TDEE y por qué importa?', a: 'El TDEE calcula cuántas calorías quemas al día incluyendo el ejercicio diario.' }
+      { q: '¿Cuál es la diferencia entre el IMC estándar y el Real BMI?', a: 'El IMC estándar calcula la masa corporal estrictamente a partir de la altura y el peso. Real BMI combina el IMC con resultados complementarios para proporcionar contexto educativo adicional. No es una medición médica independiente ni una clasificación oficial de la OMS.' },
+      { q: '¿Cómo se calcula el IMC?', a: 'El IMC se calcula dividiendo el peso en kg por la altura en metros al cuadrado (kg/m²), o (peso en lbs / altura en pulgadas²) x 703 en unidades imperiales.' },
+      { q: '¿Cómo se relaciona el IMC con los estudios de salud poblacional?', a: 'Los niveles elevados de IMC (25.0 kg/m² y superiores) se utilizan en la literatura de salud pública como referencia básica de evaluación poblacional.' },
+      { q: '¿Por qué es importante la circunferencia de la cintura junto con el IMC?', a: 'La medición de la circunferencia de la cintura proporciona contexto de referencia adicional sobre la distribución de la grasa corporal junto con el IMC.' },
+      { q: '¿Cuál es un IMC saludable para hombres y mujeres?', a: 'Para la mayoría de los adultos, un rango de IMC saludable es de 18.5 a 24.9. Sin embargo, las pautas de la OMS sugieren un umbral de acción más bajo de 18.5 a 22.9 para poblaciones asiáticas.' },
+      { q: '¿Es preciso el IMC para atletas o personas musculosas?', a: 'El IMC es una herramienta de evaluación, no una medida diagnóstica de grasa corporal. Como el tejido muscular denso pesa más que la grasa, los atletas pueden registrar un IMC más alto teniendo baja grasa corporal.' },
+      { q: '¿Por qué la OMS recomienda cortes de IMC más bajos para poblaciones asiáticas?', a: 'Las pautas de la OMS sugieren un umbral de acción de 23.0 kg/m² para un mayor riesgo en poblaciones asiáticas debido a los patrones de grasa visceral abdominal.' },
+      { q: '¿Qué significa un IMC de 25?', a: 'Un IMC de 25 marca el límite entre el rango saludable y la categoría de sobrepeso. Sirve como recordatorio práctico para evaluar la circunferencia de cintura y el ejercicio.' },
+      { q: '¿Qué es el BMR y por qué importa?', a: 'El BMR proporciona una estimación del gasto energético en reposo basada en una ecuación predictiva, ayudando a establecer pautas calóricas básicas.' },
+      { q: '¿Qué es el TDEE y por qué importa?', a: 'El TDEE (Gasto Energético Diario Total) estima las calorías totales quemadas al día, incluyendo movimiento y ejercicio, sirviendo de referencia para la planificación calórica.' }
     ]
   },
   fr: {
@@ -169,12 +175,16 @@ const content: Record<string, any> = {
       { category: 'Obésité Classe III', range: '≥ 40.0', risk: 'Catégorie de Référence Élevée', status: 'obesity-3' }
     ],
     faq: [
-      { q: 'Comment l\'IMC est-il calculé ?', a: 'L\'IMC divise le poids en kg par la taille en mètres au carré.' },
-      { q: 'Quel est l\'IMC sain pour une femme ?', a: 'Pour la plupart des adultes, un IMC sain se situe entre 18.5 et 24.9.' },
-      { q: 'L\'IMC est-il précis pour les sportifs ?', a: 'L\'IMC est un outil de dépistage qui peut surestimer la masse grasse des athlètes.' },
-      { q: 'Que signifie un IMC de 25 ?', a: 'Un IMC de 25 marque la limite entre poids normal et surpoids.' },
-      { q: 'Qu\'est-ce que le BMR ?', a: 'Le BMR fournit une estimation de la dépense énergétique au repos basée sur une équation prédictive.' },
-      { q: 'Qu\'est-ce que le TDEE ?', a: 'Le TDEE estime votre dépense énergétique quotidienne totale avec l\'activité physique.' }
+      { q: 'Quelle est la différence entre l\'IMC standard et le Real BMI ?', a: 'L\'IMC standard calcule la masse corporelle uniquement à partir de la taille et du poids. Real BMI associe l\'IMC à d\'autres estimations complémentaires pour offrir un contexte éducatif. Il ne s\'agit pas d\'une mesure médicale distincte ni d\'une classification officielle de l\'OMS.' },
+      { q: 'Comment l\'IMC est-il calculé ?', a: 'L\'IMC se calcule en divisant le poids en kg par la taille en mètres au carré (kg/m²), ou (poids en lbs / taille en pouces²) x 703 pour les unités impériales.' },
+      { q: 'Quel est le lien entre l\'IMC et les études de santé publique ?', a: 'Les niveaux d\'IMC élevés (25,0 kg/m² et plus) servent de référence de dépistage dans la littérature de santé publique.' },
+      { q: 'Pourquoi le tour de taille est-il important aux côtés de l\'IMC ?', a: 'La mesure du tour de taille fournit un contexte de référence supplémentaire sur la répartition de la graisse corporelle.' },
+      { q: 'Quel est l\'IMC sain pour les hommes et les femmes ?', a: 'Pour la plupart des adultes, la plage d\'IMC sain se situe entre 18,5 et 24,9. Toutefois, l\'OMS suggère un seuil de 18,5 à 22,9 pour les populations asiatiques.' },
+      { q: 'L\'IMC est-il précis pour les personnes musclées ou les athlètes ?', a: 'L\'IMC est un outil de dépistage, non un diagnostic de masse grasse. Le muscle étant plus dense que la graisse, un athlète musclé peut afficher un IMC élevé avec un faible taux de graisse.' },
+      { q: 'Pourquoi l\'OMS recommande-t-elle des seuils d\'IMC plus bas pour les populations asiatiques ?', a: 'L\'OMS suggère un seuil de 23,0 kg/m² pour les populations asiatiques en raison d\'un risque plus élevé d\'adiposité viscérale abdominale.' },
+      { q: 'Que signifie un IMC de 25 ?', a: 'Un IMC de 25 marque la limite entre le poids normal et le surpoids. C\'est un rappel pratique pour évaluer son tour de taille et son activité physique.' },
+      { q: 'Qu\'est-ce que le BMR et pourquoi est-il important ?', a: 'Le BMR (métabolisme de base) fournit une estimation de la dépense énergétique au repos, permettant d\'établir vos besoins caloriques de base.' },
+      { q: 'Qu\'est-ce que le TDEE et pourquoi est-il important ?', a: 'Le TDEE (dépense énergétique quotidienne totale) estime la totalité des calories brûlées par jour, activité physique comprise, pour guider vos objectifs caloriques.' }
     ]
   },
   de: {
@@ -207,12 +217,16 @@ const content: Record<string, any> = {
       { category: 'Adipositas Klasse III', range: '≥ 40.0', risk: 'Erhöhte Referenzkategorie', status: 'obesity-3' }
     ],
     faq: [
-      { q: 'Wie wird der BMI berechnet?', a: 'Gewicht in kg geteilt durch Körpergröße in Metern zum Quadrat.' },
-      { q: 'Was ist ein gesunder BMI für Frauen?', a: 'Ein gesunder BMI liegt für die meisten Erwachsenen zwischen 18,5 und 24,9.' },
-      { q: 'Ist der BMI für Sportler geeignet?', a: 'Der BMI unterscheidet nicht zwischen Muskelmasse und Fettgewebe.' },
-      { q: 'Was bedeutet ein BMI von 25?', a: 'Ein BMI von 25 liegt an der Schwelle zum Übergewicht.' },
-      { q: 'Was ist der BMR?', a: 'Der BMR liefert einen geschätzten Ruheenergiebedarf basierend auf einer prädiktiven Gleichung.' },
-      { q: 'Was ist der TDEE?', a: 'Der TDEE beschreibt den täglichen Gesamtkalorienverbrauch inklusive Bewegung.' }
+      { q: 'Was ist der Unterschied zwischen dem Standard-BMI und Real BMI?', a: 'Der Standard-BMI berechnet die Körpermasse ausschließlich aus Größe und Gewicht. Real BMI kombiniert den BMI mit ergänzenden Rechnerergebnissen für zusätzlichen lehrreichen Kontext. Es ist keine separate medizinische Messung oder offizielle WHO-Klassifizierung.' },
+      { q: 'Wie wird der BMI berechnet?', a: 'Der BMI vergleicht Gewicht und Größe nach der Formel: Gewicht in kg geteilt durch Körpergröße in Metern zum Quadrat (kg/m²).' },
+      { q: 'Wie hängt der BMI mit öffentlichen Gesundheitsstudien zusammen?', a: 'Erhöhte BMI-Werte (25,0 kg/m² und höher) dienen in der Fachliteratur als Screening-Referenz für Bevölkerungsstudien.' },
+      { q: 'Warum ist der Taillenumfang neben dem BMI wichtig?', a: 'Messungen des Taillenumfangs liefern zusätzlichen Kontext zur Körperfettverteilung neben dem BMI.' },
+      { q: 'Was ist ein gesunder BMI für Männer und Frauen?', a: 'Für die meisten Erwachsenen liegt ein gesunder BMI-Bereich zwischen 18,5 und 24,9. Richtlinien der WHO empfehlen für asiatische Populationen jedoch einen Bereich von 18,5 bis 22,9.' },
+      { q: 'Ist der BMI für muskulöse Menschen oder Sportler genau?', a: 'Der BMI ist ein Screening-Tool, keine Diagnose des Körperfetts. Da Muskelgewebe schwerer ist als Fett, können Sportler einen höheren BMI aufweisen, obwohl sie einen sehr niedrigen Körperfettanteil haben.' },
+      { q: 'Warum empfiehlt die WHO niedrigere BMI-Grenzwerte für asiatische Populationen?', a: 'WHO-Richtlinien empfehlen einen niedrigeren Schwellenwert von 23,0 kg/m² für asiatische Populationen aufgrund höherer viszeraler Fettansammlungen.' },
+      { q: 'Was bedeutet ein BMI von 25?', a: 'Ein BMI von 25 liegt an der Grenze zwischen Normalgewicht und Übergewicht. Er dient als praktische Erinnerung, Taillenumfang und Bewegung zu überprüfen.' },
+      { q: 'Was ist der BMR und warum ist er wichtig?', a: 'Der BMR (Grundumsatz) liefert einen geschätzten Ruheenergiebedarf, der als Basis für Ihre Kalorienplanung dient.' },
+      { q: 'Was ist der TDEE und warum ist er wichtig?', a: 'Der TDEE (Gesamtenergieumsatz) schätzt die täglich verbrannten Gesamtkalorien inklusive Bewegung und Sport zur Planung Ihrer Erhaltungs- oder Gewichtsziele.' }
     ]
   },
   ko: {
@@ -245,12 +259,16 @@ const content: Record<string, any> = {
       { category: '비만 3단계', range: '≥ 40.0', risk: '높은 참고 범주', status: 'obesity-3' }
     ],
     faq: [
-      { q: 'BMI는 어떻게 계산되나요?', a: 'BMI는 체중(kg)을 키(m)의 제곱으로 나눈 값입니다.' },
-      { q: '여성의 건강한 BMI는 얼마인가요?', a: '일반 성인의 경우 18.5에서 24.9 사이가 건강한 범주입니다.' },
-      { q: '근육 질량이 많은 사람에게도 BMI가 정확한가요?', a: '운동선수의 경우 BMI가 실제보다 높게 측정될 수 있습니다.' },
-      { q: 'BMI 25는 무엇을 의미하나요?', a: 'BMI 25는 정상 범위와 과체중의 경계선입니다.' },
-      { q: 'BMR이란 무엇인가요?', a: 'BMR은 예측 방정식을 기반으로 한 추정 휴식 에너지 소비량을 제공합니다.' },
-      { q: 'TDEE란 무엇인가요?', a: 'TDEE는 하루 총 에너지 소비량입니다.' }
+      { q: '표준 BMI와 Real BMI의 차이점은 무엇인가요?', a: '표준 BMI는 키와 체중만을 사용하여 체질량을 계산합니다. Real BMI는 BMI와 함께 기초대사량(BMR) 및 TDEE 추정치를 조합하여 교육적 참고 컨텍스트를 제공합니다. 별도의 의료 진단이나 공식 WHO 분류가 아닙니다.' },
+      { q: 'BMI는 어떻게 계산하나요?', a: 'BMI는 체중(kg)을 신장(m)의 제곱으로 나누어 계산합니다(kg/m²).' },
+      { q: 'BMI는 인구 보건 연구와 어떤 관련이 있나요?', a: '높은 BMI 수준(25.0 kg/m² 이상)은 공중 보건 연구에서 인구 보건학적 기준 스크리닝 참고 자료로 사용됩니다.' },
+      { q: 'BMI와 함께 허리둘레 측정이 중요한 이유는 무엇인가요?', a: '허리둘레 측정은 BMI와 함께 체지방 분포에 대한 추가적인 참고 컨텍스트를 제공합니다.' },
+      { q: '남성과 여성의 건강한 BMI 범위는 얼마인가요?', a: '대부분의 성인에게 건강한 BMI 범위는 18.5에서 24.9입니다. 단, WHO 아시아-태평양 지침은 아시아인에 대해 18.5~22.9를 건강한 범위로 권장합니다.' },
+      { q: '근육량이 많은 운동선수에게도 BMI가 정확한가요?', a: 'BMI는 선별 도구이며 체지방 진단 측정법이 아닙니다. 근육 조직은 지방보다 밀도가 높기 때문에 근육질 운동선수는 체지방이 적어도 높은 BMI가 나올 수 있습니다.' },
+      { q: 'WHO가 아시아인에게 더 낮은 BMI 기준을 권장하는 이유는 무엇인가요?', a: 'WHO 전문가 자문 지침은 아시아인의 높은 내장지방 축적 위험을 고려하여 과체중 기준을 23.0 kg/m²로 권장합니다.' },
+      { q: 'BMI 25는 무엇을 의미하나요?', a: 'BMI 25는 정상 범주와 과체중 범주의 경계선입니다. 허리둘레와 신체 활동 습관을 평가하기 위한 실용적인 기준점이 됩니다.' },
+      { q: 'BMR이란 무엇이며 왜 중요한가요?', a: 'BMR(기초대사량)은 예측 방정식을 기반으로 한 추정 휴식 에너지 소비량을 제공하여 일일 칼로리 기준을 설정하는 데 도움을 줍니다.' },
+      { q: 'TDEE란 무엇이며 왜 중요한가요?', a: 'TDEE(일일 총 에너지 소비량)는 신체 활동과 운동을 포함하여 하루 동안 소비되는 총 칼로리를 추정하여 체중 관리 목표 설정의 참고가 됩니다.' }
     ]
   }
 };
