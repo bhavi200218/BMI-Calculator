@@ -403,6 +403,80 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     }
   },
+  'bmr-calculator': {
+    es: {
+      eyebrow: 'Ecuación Estándar de Mifflin-St Jeor',
+      title: 'Calculadora de BMR – Tasa Metabólica Basal en Línea',
+      intro: 'Calcula tu Tasa Metabólica Basal (BMR) diaria con nuestra calculadora gratuita. Utiliza la fórmula de Mifflin-St Jeor para estimar las calorías quemadas en reposo en 24 horas.',
+      formulaTitle: 'Fórmula de BMR de Mifflin-St Jeor para Hombres y Mujeres',
+      formulaDesc: 'Hombres: (10 × peso kg) + (6.25 × altura cm) - (5 × edad) + 5 | Mujeres: (10 × peso kg) + (6.25 × altura cm) - (5 × edad) - 161',
+      formulaCode: 'Hombres: BMR = 10W + 6.25H - 5A + 5 | Mujeres: BMR = 10W + 6.25H - 5A - 161',
+      tableTitle: 'Matriz de Comparación de Fórmulas de BMR',
+      tableRows: [
+        { col1: 'Fórmula Mifflin-St Jeor', col2: 'Ecuación Predictiva (1990)', col3: 'Estándar recomendado para estimación de BMR' },
+        { col1: 'Harris-Benedict Revisada', col2: 'Referencia Histórica (1984)', col3: 'Referencia histórica para BMR' }
+      ],
+      faqs: [
+        { question: '¿Qué es la Tasa Metabólica Basal (BMR) y cómo se calcula?', answer: 'La BMR es la cantidad de calorías que tu cuerpo quema en reposo absoluto durante 24 horas para mantener funciones vitales.' },
+        { question: '¿Cuál es la fórmula de Mifflin-St Jeor para hombres y mujeres?', answer: 'Hombres: (10×kg) + (6.25×cm) - (5×edad) + 5. Mujeres: (10×kg) + (6.25×cm) - (5×edad) - 161.' },
+        { question: '¿Cómo afecta la edad al cálculo del BMR?', answer: 'El BMR disminuye gradualmente con la edad debido a la pérdida natural de masa muscular.' },
+        { question: '¿Cuál es la diferencia entre BMR y TDEE?', answer: 'El BMR es el gasto en reposo (0% actividad). El TDEE es el gasto calórico total diario incluyendo ejercicio y movimiento.' }
+      ]
+    },
+    fr: {
+      eyebrow: 'Équation Référence de Mifflin-St Jeor',
+      title: 'Calculateur de BMR – Métabolisme de Base en Ligne',
+      intro: 'Calculez votre taux métabolique de base (BMR) quotidien avec notre calculateur gratuit. Basé sur la formule reconnue de Mifflin-St Jeor.',
+      formulaTitle: 'Formule de BMR Mifflin-St Jeor Hommes et Femmes',
+      formulaDesc: 'Hommes : (10 × poids kg) + (6.25 × taille cm) - (5 × âge) + 5 | Femmes : (10 × poids kg) + (6.25 × taille cm) - (5 × âge) - 161',
+      formulaCode: 'Hommes : BMR = 10W + 6.25H - 5A + 5 | Femmes : BMR = 10W + 6.25H - 5A - 161',
+      tableTitle: 'Comparatif des Formules de BMR',
+      tableRows: [
+        { col1: 'Formule Mifflin-St Jeor', col2: 'Équation Prédictive (1990)', col3: 'Standard recommandé pour l\'estimation du BMR' },
+        { col1: 'Harris-Benedict Révisée', col2: 'Référence Historique (1984)', col3: 'Équation historique de référence' }
+      ],
+      faqs: [
+        { question: 'Qu\'est-ce que le BMR et comment est-il calculé ?', answer: 'Le BMR (métabolisme de base) est le nombre de calories brûlées au repos pendant 24h pour maintenir les fonctions vitales.' },
+        { question: 'Quelle est la formule de Mifflin-St Jeor pour hommes et femmes ?', answer: 'Hommes : (10×kg) + (6,25×cm) - (5×âge) + 5. Femmes : (10×kg) + (6,25×cm) - (5×âge) - 161.' },
+        { question: 'Quelle est la différence entre le BMR et le TDEE ?', answer: 'Le BMR représente la dépense au repos complet. Le TDEE inclut l\'activité physique et l\'exercice quotidien.' }
+      ]
+    },
+    de: {
+      eyebrow: 'Mifflin-St Jeor Referenzformel',
+      title: 'BMR Rechner Online – Grundumsatz Berechnen für Männer & Frauen',
+      intro: 'Berechnen Sie Ihren täglichen Grundumsatz (BMR) mit unserem kostenlosen BMR-Rechner online nach der wissenschaftlich anerkannten Mifflin-St Jeor Formel.',
+      formulaTitle: 'Mifflin-St Jeor BMR-Formel für Männer und Frauen',
+      formulaDesc: 'Männer: (10 × Gewicht kg) + (6.25 × Größe cm) - (5 × Alter) + 5 | Frauen: (10 × Gewicht kg) + (6.25 × Größe cm) - (5 × Alter) - 161',
+      formulaCode: 'Männer: BMR = 10W + 6.25H - 5A + 5 | Frauen: BMR = 10W + 6.25H - 5A - 161',
+      tableTitle: 'BMR Formel-Vergleichsmatrix',
+      tableRows: [
+        { col1: 'Mifflin-St Jeor Formel', col2: 'Prädiktive Gleichung (1990)', col3: 'Standard-Referenz für die BMR-Berechnung' },
+        { col1: 'Revidierte Harris-Benedict', col2: 'Historischer Standard (1984)', col3: 'Historische Vergleichsformel' }
+      ],
+      faqs: [
+        { question: 'Was ist der BMR (Grundumsatz) und wie wird er berechnet?', answer: 'Der BMR ist die Kalorienmenge, die der Körper in 24 Stunden in absoluter Ruhe zur Aufrechterhaltung der Lebensfunktionen verbrennt.' },
+        { question: 'Was ist die Mifflin-St Jeor Formel für Männer und Frauen?', answer: 'Männer: (10×kg) + (6,25×cm) - (5×Alter) + 5. Frauen: (10×kg) + (6,25×cm) - (5×Alter) - 161.' },
+        { question: 'Was ist der Unterschied zwischen BMR und TDEE?', answer: 'Der BMR misst den Ruheumsatz (0% Aktivität). Der TDEE berechnet den Gesamtkalorienbedarf inklusive Bewegung und Sport.' }
+      ]
+    },
+    ko: {
+      eyebrow: 'Mifflin-St Jeor 표준 공식',
+      title: 'BMR 계산기 온라인 – 기초대사량 계산기',
+      intro: '무료 온라인 BMR 계산기로 일일 기초대사량(BMR)을 계산하세요. Mifflin-St Jeor 공식을 사용하여 24시간 동안 휴식 시 소비되는 칼로리를 추정합니다.',
+      formulaTitle: '남성 및 여성 Mifflin-St Jeor BMR 공식',
+      formulaDesc: '남성: (10 × 체중 kg) + (6.25 × 신장 cm) - (5 × 연령) + 5 | 여성: (10 × 체중 kg) + (6.25 × 신장 cm) - (5 × 연령) - 161',
+      formulaCode: '남성: BMR = 10W + 6.25H - 5A + 5 | 여성: BMR = 10W + 6.25H - 5A - 161',
+      tableTitle: 'BMR 공식 비교표',
+      tableRows: [
+        { col1: 'Mifflin-St Jeor 공식', col2: '예측 방정식 (1990)', col3: '성인 BMR 추정에 널리 사용되는 공식' },
+        { col1: '수정된 Harris-Benedict', col2: '역사적 표준 (1984)', col3: '기초대사량 참조 공식' }
+      ],
+      faqs: [
+        { question: 'BMR(기초대사량)이란 무엇이며 어떻게 계산하나요?', answer: 'BMR은 신체가 휴식 상태에서 장기 기능을 유지하기 위해 24시간 동안 소비하는 최소한의 에너지입니다.' },
+        { question: 'BMR과 TDEE의 차이점은 무엇인가요?', answer: 'BMR은 0% 활동 시의 휴식 대사량이며, TDEE는 일상 활동과 운동을 포함한 총 일일 에너지 소비량입니다.' }
+      ]
+    }
+  },
   '3d-bmi-calculator': {
     en: {
       eyebrow: 'Oxford 2.5-Power BMI Model & 3D Body Visualization',
@@ -558,6 +632,93 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'What calorie deficit is commonly used for weight management?', answer: 'There is no single calorie-deficit value that is appropriate for everyone. Individual energy needs, health status, activity, and dietary intake should be considered. Energy adjustments are evaluated based on individual goals and health context.' },
         { question: 'How much protein should I eat while in a calorie deficit?', answer: 'During a calorie deficit, protein intake ranges from 1.6 to 2.2 grams per kilogram of body weight are commonly referenced in sports nutrition literature.' },
         { question: 'What should I do if my weight loss stalls in a calorie deficit?', answer: 'Weight loss stalls often stem from uncounted food calories, reduced non-exercise physical activity (NEAT), or fluid retention. Recalculate your TDEE at your new lower weight to keep energy goals accurate.' }
+      ]
+    },
+    hi: {
+      eyebrow: 'कैलोरी योजना एवं संदर्भ',
+      title: 'कैलोरी घाटा कैलकुलेटर – Calorie Deficit Calculator Online',
+      intro: 'हमारे मुफ़्त Calorie Deficit Calculator से अपने वजन लक्ष्यों के लिए दैनिक कैलोरी अंतर और TDEE की गणना करें।',
+      formulaTitle: 'कैलोरी घाटा सूत्र एवं ऊर्जा गणित',
+      formulaDesc: 'दैनिक कैलोरी 섭취 = TDEE - लक्ष्य घाटा | साप्ताहिक ऊर्जा अंतर = दैनिक घाटा × 7 (लगभग 7700 kcal/kg गणितीय संदर्भ)',
+      formulaCode: 'Target Calories = TDEE - Daily Deficit',
+      tableTitle: 'कैलोरी घाटा एवं वजन परिवर्तन संदर्भ तालिका',
+      tableRows: [
+        { col1: 'परिदृश्य A: 250 kcal/दिन घाटा', col2: '~1,750 kcal साप्ताहिक अंतर', col3: 'हल्का दैनिक कैलोरी अंतर संदर्भ' },
+        { col1: 'परिदृश्य B: 500 kcal/दिन घाटा', col2: '~3,500 kcal साप्ताहिक अंतर', col3: 'मानक दैनिक कैलोरी अंतर संदर्भ' },
+        { col1: 'ऊर्जा संतुलन (0 kcal)', col2: '0 kcal अंतर', col3: 'वजन स्थिरता के लिए TDEE' }
+      ],
+      faqs: [
+        { question: 'कैलोरी घाटा क्या है और यह कैलकुलेटर कैसे काम करता है?', answer: 'कैलोरी घाटा तब होता है जब आपकी दैनिक कैलोरी खपत TDEE से कम होती है। यह कैलकुलेटर BMR और गतिविधि स्तर के आधार पर TDEE निकालकर लक्ष्य घाटा घटाता है।' },
+        { question: 'कैलोरी घाटा और वजन परिवर्तन का गणित कैसे काम करता है?', answer: '1 किग्रा वजन लगभग 7,700 kcal ऊर्जा के बराबर माना जाता है। प्रतिदिन 500 kcal की कमी से प्रति सप्ताह 3,500 kcal का अंतर बनता है।' }
+      ]
+    },
+    es: {
+      eyebrow: 'Planificación Calórica',
+      title: 'Calculadora de Déficit Calórico – Planificación de Calorías',
+      intro: 'Utiliza nuestra calculadora gratuita de déficit calórico para estimar tus necesidades calóricas diarias según tus objetivos de peso a partir del BMR y TDEE.',
+      formulaTitle: 'Fórmulas de Déficit Calórico',
+      formulaDesc: 'Consumo Calórico Diario = TDEE - Déficit Objetivo | Referencia energética estimada: ~7,700 kcal por kg de masa.',
+      formulaCode: 'Calorías Objetivo = TDEE - Déficit Diario',
+      tableTitle: 'Ejemplos de Déficit Calórico y Cambios Estimados',
+      tableRows: [
+        { col1: 'Escenario A: Déficit de 250 kcal/día', col2: '~1,750 kcal de diferencia semanal', col3: 'Ejemplo matemático de un déficit diario ligero' },
+        { col1: 'Escenario B: Déficit de 500 kcal/día', col2: '~3,500 kcal de diferencia semanal', col3: 'Ejemplo matemático de un déficit diario estándar' },
+        { col1: 'Equilibrio Energético (0 kcal)', col2: '0 kcal de cambio', col3: 'TDEE estimado para mantenimiento de peso' }
+      ],
+      faqs: [
+        { question: '¿Qué es un déficit calórico y cómo funciona la calculadora?', answer: 'Un déficit calórico ocurre cuando el consumo de energía es menor que el TDEE. La calculadora estima tu TDEE y resta un déficit seleccionado para planificar tus calorías diarias.' },
+        { question: '¿Qué déficit calórico es recomendable?', answer: 'No existe una cifra única para todos. Las necesidades calóricas varían según la salud, la actividad y los objetivos de cada persona.' }
+      ]
+    },
+    fr: {
+      eyebrow: 'Planification Calorique',
+      title: 'Calculateur de Déficit Calorique – Planification des Calories',
+      intro: 'Utilisez notre calculateur gratuit de déficit calorique pour estimer vos besoins caloriques quotidiens en fonction de vos objectifs de poids.',
+      formulaTitle: 'Formules de Calcul du Déficit Calorique',
+      formulaDesc: 'Apport Calorique Cible = TDEE - Déficit Souhaité | Référence énergétique : ~7700 kcal par kg de masse.',
+      formulaCode: 'Calories Cibles = TDEE - Déficit Quotidien',
+      tableTitle: 'Exemples de Déficits Caloriques et Répartitions',
+      tableRows: [
+        { col1: 'Scénario A : Déficit de 250 kcal/jour', col2: '~1 750 kcal de différence par semaine', col3: 'Exemple de déficit quotidien modéré' },
+        { col1: 'Scénario B : Déficit de 500 kcal/jour', col2: '~3 500 kcal de différence par semaine', col3: 'Exemple de déficit quotidien standard' },
+        { col1: 'Maintien Énergétique (0 kcal)', col2: '0 kcal de variation', col3: 'TDEE estimé pour stabiliser le poids' }
+      ],
+      faqs: [
+        { question: 'Qu\'est-ce qu\'un déficit calorique et comment fonctionne le calculateur ?', answer: 'Un déficit calorique survient lorsque vous consommez moins de calories que votre TDEE. Le calculateur établit votre TDEE puis soustrait le déficit choisi pour planifier vos repas.' }
+      ]
+    },
+    de: {
+      eyebrow: 'Kalorienplanung & Defizit',
+      title: 'Kaloriendefizit Rechner – Tägliche Kalorienplanung',
+      intro: 'Nutzen Sie unseren kostenlosen Kaloriendefizit-Rechner zur Schätzung Ihres täglichen Kalorienbedarfs für Ihre Gewichtsziele basierend auf BMR und TDEE.',
+      formulaTitle: 'Kaloriendefizit Formel & Energiebilanz',
+      formulaDesc: 'Tägliche Zielkalorien = TDEE - Ziel-Defizit | Mathematische Referenz: ~7.700 kcal pro kg Körpergewicht.',
+      formulaCode: 'Zielkalorien = TDEE - Täglicher Defizit',
+      tableTitle: 'Beispiel-Defizite & Mathematische Übersicht',
+      tableRows: [
+        { col1: 'Szenario A: 250 kcal/Tag Defizit', col2: '~1.750 kcal Differenz / Woche', col3: 'Mathematisches Beispiel für ein leichtes Defizit' },
+        { col1: 'Szenario B: 500 kcal/Tag Defizit', col2: '~3.500 kcal Differenz / Woche', col3: 'Mathematisches Beispiel für ein Standard-Defizit' },
+        { col1: 'Erhaltung (0 kcal Defizit)', col2: '0 kcal Differenz', col3: 'Geschätzter TDEE zur Gewichtserhaltung' }
+      ],
+      faqs: [
+        { question: 'Was ist ein Kaloriendefizit und wie funktioniert der Rechner?', answer: 'Ein Kaloriendefizit entsteht, wenn die tägliche Energiezufuhr geringer ist als der Gesamtenergieumsatz (TDEE). Der Rechner berechnet den TDEE und zieht ein gewähltes Defizit ab.' }
+      ]
+    },
+    ko: {
+      eyebrow: '칼로리 계획 및 섭취량',
+      title: '칼로리 결손 계산기 – 칼로리 계획 계산기',
+      intro: '무료 칼로리 결손 계산기를 사용하여 BMR 및 TDEE를 기반으로 체중 목표에 따른 일일 칼로리 목표를 추정하세요.',
+      formulaTitle: '칼로리 결손 계산 공식',
+      formulaDesc: '일일 목표 칼로리 = TDEE - 목표 결손량 | 칼로리 에너지 참조: 체중 1kg당 약 7,700 kcal.',
+      formulaCode: '목표 칼로리 = TDEE - 일일 결손량',
+      tableTitle: '칼로리 결손 시나리오 및 예시표',
+      tableRows: [
+        { col1: '시나리오 A: 일 250 kcal 결손', col2: '주당 약 1,750 kcal 차이', col3: '가벼운 일일 칼로리 감축 예시' },
+        { col1: '시나리오 B: 일 500 kcal 결손', col2: '주당 약 3,500 kcal 차이', col3: '표준 일일 칼로리 감축 예시' },
+        { col1: '유지 상태 (0 kcal 결손)', col2: '0 kcal 차이', col3: '체중 유지를 위한 추정 TDEE' }
+      ],
+      faqs: [
+        { question: '칼로리 결손이란 무엇이며 계산기는 어떻게 작동하나요?', answer: '칼로리 결손은 일일 섭취 칼로리가 일일 총 에너지 소비량(TDEE)보다 적을 때 발생합니다. 계산기는 TDEE를 구한 후 목표 결손량을 차감하여 표시합니다.' }
       ]
     }
   },
@@ -794,6 +955,84 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'BMR और TDEE कैलोरी में क्या अंतर है?', answer: 'BMR विश्राम की स्थिति में आवश्यक अनुमानित कैलोरी है, जबकि TDEE में BMR के साथ दैनिक गतिविधियों और व्यायाम में बर्न होने वाली कैलोरी शामिल होती है।' },
         { question: 'वजन घटाने के लिए प्रतिदिन कितनी कैलोरी खानी चाहिए?', answer: 'वजन प्रबंधन योजना के लिए अनुमानित TDEE से कम कैलोरी का उपयोग किया जाता है, लेकिन उपयुक्त मात्रा व्यक्ति के आधार पर भिन्न होती है।' },
         { question: 'रखरखाव कैलोरी की पुनर्गणना कब करनी चाहिए?', answer: 'जब आपका शरीर का वजन या गतिविधि का स्तर महत्वपूर्ण रूप से बदलता है, तो पुनर्गणना पर विचार करें।' }
+      ]
+    },
+    es: {
+      eyebrow: 'Balance Energético y Metabolismo',
+      title: 'Calculadora de TDEE – Gasto Energético Diario Total',
+      intro: 'Calcula tu Gasto Energético Diario Total (TDEE) y tus calorías de mantenimiento con nuestra calculadora gratuita según tu edad, peso, altura y nivel de actividad física.',
+      formulaTitle: 'Fórmula del TDEE (Ecuación de Mifflin-St Jeor y Factor PAL)',
+      formulaDesc: 'Paso 1: Calcular BMR (Mifflin-St Jeor). Paso 2: Multiplicar BMR por el factor de actividad física: Sedentario (1.2), Ligero (1.375), Moderado (1.55), Intenso (1.725).',
+      formulaCode: 'TDEE = BMR × Factor de Actividad',
+      tableTitle: 'Factores de Actividad del TDEE y Desglose Calórico',
+      tableRows: [
+        { col1: 'Sedentario (PAL 1.2)', col2: 'BMR × 1.2', col3: 'Trabajo de escritorio, poco o ningún ejercicio' },
+        { col1: 'Ligeramente Activo (PAL 1.375)', col2: 'BMR × 1.375', col3: 'Ejercicio ligero 1–3 días a la semana' },
+        { col1: 'Moderadamente Activo (PAL 1.55)', col2: 'BMR × 1.55', col3: 'Ejercicio moderado 3–5 días a la semana' },
+        { col1: 'Muy Activo (PAL 1.725)', col2: 'BMR × 1.725', col3: 'Ejercicio intenso 6–7 días a la semana' },
+        { col1: 'Ejemplo de Déficit Calórico', col2: 'TDEE menos un déficit elegido', col3: 'Referencia de ejemplo para planificación de peso' }
+      ],
+      faqs: [
+        { question: '¿Qué es el TDEE y cómo calcula las calorías de mantenimiento?', answer: 'El TDEE (Gasto Energético Diario Total) estima el total de calorías que quemas en 24 horas incluyendo el metabolismo en reposo, el efecto térmico de los alimentos y la actividad física.' },
+        { question: '¿Cómo calcular el TDEE para perder peso?', answer: 'Introduce tu edad, sexo, peso y altura. Al restar un déficit calórico moderado de tu TDEE estimado obtendrás una guía calórica para la pérdida de peso.' },
+        { question: '¿Cuál es la diferencia entre BMR y TDEE?', answer: 'El BMR es el gasto energético en reposo. El TDEE engloba el BMR más la energía quemada durante el movimiento diario y el ejercicio.' }
+      ]
+    },
+    fr: {
+      eyebrow: 'Équilibre Énergétique et Métabolisme',
+      title: 'Calculateur de TDEE – Dépense Énergétique Quotidienne Totale',
+      intro: 'Calculez votre dépense énergétique quotidienne totale (TDEE) et vos calories de maintien avec notre calculateur gratuit selon votre âge, poids, taille et niveau d\'activité.',
+      formulaTitle: 'Formule de Calcul du TDEE (Mifflin-St Jeor et Facteur PAL)',
+      formulaDesc: 'Étape 1 : Calcul du BMR. Étape 2 : Multiplier par le facteur d\'activité : Sédentaire (1.2), Légèrement actif (1.375), Modérément actif (1.55), Très actif (1.725).',
+      formulaCode: 'TDEE = BMR × Facteur d\'Activité',
+      tableTitle: 'Facteurs d\'Activité TDEE et Répartition Calorique',
+      tableRows: [
+        { col1: 'Sédentaire (PAL 1.2)', col2: 'BMR × 1.2', col3: 'Travail de bureau, peu ou pas d\'exercice' },
+        { col1: 'Légèrement Actif (PAL 1.375)', col2: 'BMR × 1.375', col3: 'Exercice léger 1–3 jours par semaine' },
+        { col1: 'Modérément Actif (PAL 1.55)', col2: 'BMR × 1.55', col3: 'Exercice modéré 3–5 jours par semaine' },
+        { col1: 'Très Actif (PAL 1.725)', col2: 'BMR × 1.725', col3: 'Exercice intense 6–7 jours par semaine' }
+      ],
+      faqs: [
+        { question: 'Qu\'est-ce que le TDEE et comment calcule-t-il les calories de maintien ?', answer: 'Le TDEE (Dépense Énergétique Quotidienne Totale) estime le total des calories brûlées par jour, incluant le métabolisme de base et l\'exercice physique.' },
+        { question: 'Quelle est la différence entre le BMR et le TDEE ?', answer: 'Le BMR représente le métabolisme au repos. Le TDEE englobe le BMR ainsi que toutes les dépenses liées aux activités et à l\'exercice.' }
+      ]
+    },
+    de: {
+      eyebrow: 'Energiebilanz & Stoffwechsel',
+      title: 'TDEE Rechner Online – Gesamtenergieumsatz & Erhaltungskalorien',
+      intro: 'Berechnen Sie Ihren Gesamtenergieumsatz (TDEE) und Ihre Erhaltungskalorien mit unserem kostenlosen Rechner basierend auf Alter, Gewicht, Größe und Aktivitätslevel.',
+      formulaTitle: 'TDEE Berechnungsformel (Mifflin-St Jeor & Aktivitätsfaktor)',
+      formulaDesc: 'Schritt 1: BMR berechnen. Schritt 2: BMR mit dem Aktivitätsfaktor multiplizieren: Sitzend (1.2), Leicht aktiv (1.375), Moderat aktiv (1.55), Sehr aktiv (1.725).',
+      formulaCode: 'TDEE = BMR × Aktivitätsfaktor',
+      tableTitle: 'TDEE Aktivitätsfaktoren & Kalorienübersicht',
+      tableRows: [
+        { col1: 'Sitzend (PAL 1.2)', col2: 'BMR × 1.2', col3: 'Bürotätigkeit, kaum oder kein Sport' },
+        { col1: 'Leicht aktiv (PAL 1.375)', col2: 'BMR × 1.375', col3: 'Leichter Sport 1–3 Tage pro Woche' },
+        { col1: 'Moderat aktiv (PAL 1.55)', col2: 'BMR × 1.55', col3: 'Moderater Sport 3–5 Tage pro Woche' },
+        { col1: 'Sehr aktiv (PAL 1.725)', col2: 'BMR × 1.725', col3: 'Intensiver Sport 6–7 Tage pro Woche' }
+      ],
+      faqs: [
+        { question: 'Was ist der TDEE und wie berechnet er die Erhaltungskalorien?', answer: 'Der TDEE (Gesamtenergieumsatz) schätzt die Gesamtzahl der Kalorien, die Ihr Körper in 24 Stunden inklusive Grundumsatz und Bewegung verbrennt.' },
+        { question: 'Wie unterscheidet sich der BMR vom TDEE?', answer: 'Der BMR ist der reine Ruheumsatz. Der TDEE beinhaltet den BMR plus den Kalorienverbrauch durch alltägliche Bewegung und Sport.' }
+      ]
+    },
+    ko: {
+      eyebrow: '에너지 균형 및 대사량',
+      title: 'TDEE 계산기 – 일일 총 에너지 소비량 및 유지 칼로리',
+      intro: '무료 TDEE 계산기로 연령, 성별, 체중, 신장 및 활동 수준을 기반으로 일일 총 에너지 소비량(TDEE)과 유지 칼로리를 추정하세요.',
+      formulaTitle: 'TDEE 계산 공식 (Mifflin-St Jeor 및 활동 계수)',
+      formulaDesc: '1단계: BMR 계산. 2단계: 활동 계수 곱하기: 좌식 (1.2), 가벼운 활동 (1.375), 보통 활동 (1.55), 매우 활동적 (1.725).',
+      formulaCode: 'TDEE = BMR × 활동 계수',
+      tableTitle: 'TDEE 활동 계수 및 일일 칼로리 상세표',
+      tableRows: [
+        { col1: '좌식 / 거의 운동 안 함 (PAL 1.2)', col2: 'BMR × 1.2', col3: '데스크톱 업무, 운동 거의 없음' },
+        { col1: '가벼운 활동 (PAL 1.375)', col2: 'BMR × 1.375', col3: '주 1~3회 가벼운 운동' },
+        { col1: '보통 활동 (PAL 1.55)', col2: 'BMR × 1.55', col3: '주 3~5회 보통 운동' },
+        { col1: '매우 활동적 (PAL 1.725)', col2: 'BMR × 1.725', col3: '주 6~7회 강한 운동' }
+      ],
+      faqs: [
+        { question: 'TDEE 계산기란 무엇이며 유지 칼로리는 어떻게 계산하나요?', answer: 'TDEE(일일 총 에너지 소비량)는 기초대사량(BMR)과 일상 활동 및 운동을 포함하여 24시간 동안 소비되는 총 칼로리를 추정합니다.' },
+        { question: 'BMR과 TDEE 칼로리의 차이점은 무엇인가요?', answer: 'BMR은 완전히 휴식할 때의 대사량이며, TDEE는 BMR에 일상 활동 및 운동으로 소비되는 칼로리를 더한 값입니다.' }
       ]
     }
   },

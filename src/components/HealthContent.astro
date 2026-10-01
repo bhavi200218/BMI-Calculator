@@ -23,6 +23,7 @@ const content: Record<string, any> = {
     insightSub: 'Health Insights',
     whoSub: 'WHO Standards',
     whoTableTitle: 'WHO BMI Classification Standards',
+    disclaimer: "BMI is a screening measure and does not independently diagnose disease or determine an individual's overall health risk.",
     whoDesc: 'The World Health Organization (WHO) breaks BMI scores down into categorized reference ranges to mark health and nutritional indicators.',
     colCategory: 'Classification Category',
     colRange: 'BMI Range Box',
@@ -65,6 +66,7 @@ const content: Record<string, any> = {
     insightSub: 'स्वास्थ्य अंतर्दृष्टि',
     whoSub: 'डब्ल्यूएचओ (WHO) मानक',
     whoTableTitle: 'डब्ल्यूएचओ बीएमआई वर्गीकरण मानक',
+    disclaimer: 'बीएमआई एक प्राथमिक जांच माप (स्क्रीनिंग टूल) है और यह स्वतंत्र रूप से बीमारी का निदान या किसी व्यक्ति के समग्र स्वास्थ्य जोखिम का निर्धारण नहीं करता है।',
     whoDesc: 'विश्व स्वास्थ्य संगठन (WHO) पोषण और स्वास्थ्य संकेतकों का आकलन करने के लिए बीएमआई स्कोर को संदर्भित श्रेणियों में वर्गीकृत करता है।',
     colCategory: 'वर्गीकरण श्रेणी',
     colRange: 'बीएमआई सीमा',
@@ -107,6 +109,7 @@ const content: Record<string, any> = {
     insightSub: 'Información de Salud',
     whoSub: 'Estándares OMS',
     whoTableTitle: 'Estándares de Clasificación de IMC de la OMS',
+    disclaimer: 'El IMC es una medida de evaluación y no diagnostica de forma independiente enfermedades ni determina el riesgo de salud general de un individuo.',
     whoDesc: 'La Organización Mundial de la Salud (OMS) clasifica los valores de IMC en rangos de referencia para evaluar indicadores nutricionales y de salud.',
     colCategory: 'Categoría de Clasificación',
     colRange: 'Rango de IMC',
@@ -149,6 +152,7 @@ const content: Record<string, any> = {
     insightSub: 'Aperçus Santé',
     whoSub: 'Normes OMS',
     whoTableTitle: 'Normes de Classification de l\'IMC selon l\'OMS',
+    disclaimer: 'L\'IMC est une mesure de dépistage et ne diagnostique pas indépendamment les maladies ni ne détermine le risque global pour la santé d\'un individu.',
     whoDesc: 'L\'Organisation mondiale de la Santé (OMS) divise les scores d\'IMC en plages de référence pour évaluer la santé et la nutrition.',
     colCategory: 'Catégorie de Classification',
     colRange: 'Plage d\'IMC',
@@ -191,6 +195,7 @@ const content: Record<string, any> = {
     insightSub: 'Gesundheitseinblicke',
     whoSub: 'WHO-Standards',
     whoTableTitle: 'WHO BMI-Klassifizierungsstandards',
+    disclaimer: 'Der BMI ist eine Screening-Maßnahme und diagnostiziert Krankheiten nicht unabhängig und bestimmt auch nicht das allgemeine Gesundheitsrisiko einer Person.',
     whoDesc: 'Die Weltgesundheitsorganisation (WHO) unterteilt BMI-Werte in Referenzbereiche zur Beurteilung von Gesundheitsindikatoren.',
     colCategory: 'Klassifizierungskategorie',
     colRange: 'BMI-Bereich',
@@ -233,6 +238,7 @@ const content: Record<string, any> = {
     insightSub: '건강 인사이트',
     whoSub: 'WHO 표준 기준',
     whoTableTitle: 'WHO BMI 분류 표준 기준',
+    disclaimer: 'BMI는 선별 측정 도구이며 독립적으로 질병을 진단하거나 개인의 전반적인 건강 위험을 결정하지 않습니다.',
     whoDesc: '세계보건기구(WHO)는 건강 및 영양 지표를 평가하기 위해 BMI 점수를 범주별 목표 범위로 분류합니다.',
     colCategory: '분류 카테고리',
     colRange: 'BMI 범위',
@@ -377,7 +383,7 @@ const faqSchema = {
       </div>
 
       <p class="text-xs text-[var(--muted-foreground)] font-medium pt-3 italic">
-        BMI is a screening measure and does not independently diagnose disease or determine an individual's overall health risk.
+        {t.disclaimer}
       </p>
 
       <!-- Sources & References Box -->
