@@ -163,7 +163,7 @@ const pageData = {
   }
 };
 
-const copy = pageData[lang] || pageData.en;
+const copy = (pageData as Record<string, any>)[lang || 'en'] || pageData.en;
 
 export function getStaticPaths() {
   return [
@@ -187,7 +187,7 @@ export function getStaticPaths() {
     returnLabel={copy.homeLabel}
   >
     <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90 space-y-8">
-      {copy.sections.map((section) => (
+      {copy.sections.map((section: { heading: string; body: string }) => (
         <>
           <h2>{section.heading}</h2>
           <p>{section.body}</p>
