@@ -427,6 +427,94 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'What are the benefits of a 3D Body Visualizer?', answer: 'The 2.5-power formula produces a height-adjusted alternative to conventional BMI, offering visual proportion context for educational comparison.' },
         { question: 'Does the 3D Body Visualizer measure body fat percentage?', answer: 'No. The 3D Body Visualizer calculates height and weight relationships and renders a reference 3D outline. It is an educational screening tool, not a direct measure of body fat or medical diagnosis.' }
       ]
+    },
+    es: {
+      eyebrow: 'Modelo IMC Exponencial de Oxford 2.5 y Visualización Corporal 3D',
+      title: 'Calculadora de IMC 3D y Visualizador Corporal Interactivo',
+      intro: 'Nuestra calculadora de IMC 3D y visualizador corporal interactivo calcula el índice de masa corporal mediante la fórmula exponencial de Oxford (1.3 × peso / altura²·⁵) y principios de geometría de superficie 3D. Gira 360° para ver la malla, estructura de alambre y mapa de calor de IMC.',
+      formulaTitle: 'Fórmula Exponencial 3D de Oxford Ajustada a la Altura',
+      formulaDesc: 'IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]².⁵ | Basado en investigaciones sobre escalado de altura y geometría corporal.',
+      formulaCode: 'IMC 3D = 1.3 × kg / m²·⁵',
+      tableTitle: 'Comparación de IMC 2D Estándar vs IMC 3D Ajustado por Altura',
+      tableRows: [
+        { col1: 'Adultos Bajos (< 160 cm)', col2: 'La fórmula 2D estándar produce puntuaciones relativas menores', col3: 'La fórmula 3D produce un valor ajustado superior' },
+        { col1: 'Estatura Promedio (170 cm)', col2: 'Alineación de clasificación idéntica', col3: 'Sin diferencia (Idéntico)' },
+        { col1: 'Adultos Altos (> 185 cm)', col2: 'La fórmula 2D estándar produce puntuaciones elevadas', col3: 'La fórmula 3D ajustada compensa la altura' }
+      ],
+      faqs: [
+        { question: '¿Qué es la Calculadora de IMC 3D y Visualizador Corporal?', answer: 'Es una herramienta interactiva que calcula el IMC ajustado a la altura mediante la fórmula de Oxford 2.5 y genera un avatar 3D interactivo en 360° con vistas de malla sólida, alambre y mapa de calor.' },
+        { question: '¿Cómo se calcula y visualiza el IMC 3D?', answer: 'Calcula el IMC como kg divididos entre la altura en metros elevada a 2.5. El resultado se muestra junto con un modelo avatar 3D que se puede girar en 360°.' },
+        { question: '¿Por qué dos personas con el mismo IMC se ven diferentes en 3D?', answer: 'El IMC tradicional no distingue masa muscular o distribución de grasa. El visualizador 3D muestra el contexto de proporciones físicas reales.' }
+      ]
+    },
+    fr: {
+      eyebrow: 'Modèle IMC d\'Oxford 2.5 Puissance & Modélisation 3D',
+      title: 'Calculateur d\'IMC 3D et Visualiseur Corporel Interactif',
+      intro: 'Notre calculateur d\'IMC 3D et visualiseur corporel interactif calcule l\'indice de masse corporelle via la formule d\'exposant 2.5 d\'Oxford (1.3 × poids / taille²·⁵). Faites pivoter à 360° pour afficher le maillage 3D, le fil de fer et la carte thermique.',
+      formulaTitle: 'Formule d\'Oxford 3D Ajustée à la Taille',
+      formulaDesc: 'IMC 3D Ajusté = 1.3 × Poids (kg) / [Taille (m)]².⁵ | Basé sur les recherches sur l\'échelle de taille et la géométrie corporelle.',
+      formulaCode: 'IMC 3D = 1.3 × kg / m²·⁵',
+      tableTitle: 'Comparatif IMC 2D Standard vs IMC 3D Ajusté',
+      tableRows: [
+        { col1: 'Adultes de Petite Taille (< 160 cm)', col2: 'La formule 2D standard produit des scores relatifs plus faibles', col3: 'La formule 3D produit une valeur ajustée plus élevée' },
+        { col1: 'Taille Moyenne (170 cm)', col2: 'Alignement de classification identique', col3: 'Aucune différence (Identique)' },
+        { col1: 'Adultes Grands (> 185 cm)', col2: 'La formule 2D standard produit des scores plus élevés', col3: 'La formule 3D compensée s\'ajuste à la taille' }
+      ],
+      faqs: [
+        { question: 'Qu\'est-ce que le calculateur d\'IMC 3D et le visualiseur corporel ?', answer: 'C\'est un outil interactif qui calcule l\'IMC ajusté avec la formule d\'Oxford 2.5 et génère un avatar 3D à 360° avec des vues en maillage solide, fil de fer et carte thermique.' },
+        { question: 'Pourquoi deux personnes avec le même IMC ont-elles des apparences différentes en 3D ?', answer: 'L\'IMC standard ne différencie pas la masse musculaire et la graisse. Le visualiseur 3D offre un contexte visuel des proportions corporelles.' }
+      ]
+    },
+    de: {
+      eyebrow: 'Oxford 2.5-Potenz BMI-Modell & 3D-Körpervisualisierung',
+      title: '3D BMI Rechner & Interaktiver 3D-Körper-Visualisierer',
+      intro: 'Unser kostenloser 3D BMI Rechner berechnet den Body-Mass-Index mit der 2.5-Potenz-Formel von Oxford (1.3 × Gewicht / Größe²·⁵). Drehen Sie das Modell um 360°, um Netz-, Drahtmodell- und Heatmap-Modi anzuzeigen.',
+      formulaTitle: 'Oxford 3D Höhenbereinigte Formel',
+      formulaDesc: '3D-Höhen-BMI = 1.3 × Gewicht (kg) / [Größe (m)]².⁵',
+      formulaCode: '3D BMI = 1.3 × kg / m²·⁵',
+      tableTitle: 'Vergleich: Standard-2D-BMI vs. 3D-Höhen-BMI',
+      tableRows: [
+        { col1: 'Kleine Erwachsene (< 160 cm)', col2: 'Standard-2D-Formel liefert niedrigere relative Werte', col3: '3D-Formel liefert einen angepassten höheren Wert' },
+        { col1: 'Durchschnittliche Größe (170 cm)', col2: 'Identische Einstufung', col3: '0,0 Punkte Differenz (Identisch)' },
+        { col1: 'Große Erwachsene (> 185 cm)', col2: 'Standard-2D-Formel liefert höhere Werte', col3: '3D-Formel gleicht die Körpergröße aus' }
+      ],
+      faqs: [
+        { question: 'Was ist der 3D BMI Rechner und Körper-Visualisierer?', answer: 'Ein interaktives Tool, das den höhenbereinigten BMI nach der Oxford 2.5 Formel berechnet und einen 360°-3D-Körper-Avatar darstellt.' }
+      ]
+    },
+    ko: {
+      eyebrow: '옥스포드 2.5 체질량 공식 및 3D 바디 시각화',
+      title: '3D BMI 계산기 및 대화형 3D 체형 시각화 도구',
+      intro: '무료 대화형 3D 바디 비주얼라이저 및 3D BMI 계산기는 옥스퍼드 2.5 제곱 공식(1.3 × 체중 / 신장²·⁵)을 사용하여 체질량지수를 계산하고 실시간 360° 3D 아바타 모델을 제공합니다.',
+      formulaTitle: '옥스포드 3D 신장 보정 공식',
+      formulaDesc: '3D 신장 보정 BMI = 1.3 × 체중 (kg) / [신장 (m)]².⁵',
+      formulaCode: '3D BMI = 1.3 × kg / m²·⁵',
+      tableTitle: '표준 2D BMI 대 3D 신장 보정 BMI 비교표',
+      tableRows: [
+        { col1: '단신 성인 (< 160 cm)', col2: '표준 2D BMI 공식은 상대적으로 낮게 측정됨', col3: '3D 보정 공식은 적절한 보정값을 제공함' },
+        { col1: '평균 신장 (170 cm)', col2: '동일한 등급 산출', col3: '차이 없음 (동일)' },
+        { col1: '장신 성인 (> 185 cm)', col2: '표준 2D BMI 공식은 상대적으로 높게 측정됨', col3: '3D 보정 공식은 신장을 반영하여 보정함' }
+      ],
+      faqs: [
+        { question: '3D BMI 계산기 및 체형 시각화 도구란 무엇인가요?', answer: '옥스퍼드 2.5 공식을 사용하여 보정된 BMI를 구하고 실시간 360° 3D 아바타 모델(메쉬, 와이어프레임, 히트맵)을 시각화하는 도구입니다.' }
+      ]
+    },
+    hi: {
+      eyebrow: 'ऑक्सफोर्ड 2.5 फॉर्मूला और 3D बॉडी विजुअलाइजेशन',
+      title: '3D बीएमआई कैलकुलेटर और इंटरएक्टिव 3D बॉडी विजुअलाइज़र',
+      intro: 'हमारा 3D बॉडी विजुअलाइज़र ऑक्सफोर्ड गणितज्ञ निक त्रेफेथेन 2.5 फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) का उपयोग करके बीएमआई की गणना करता है। 360° घुमाकर ठोस मेश, वायरफ्रेम और बीएमआई हीटमैप देखें।',
+      formulaTitle: 'ऑक्सफोर्ड 3D ऊंचाई-समायोजित बीएमआई सूत्र',
+      formulaDesc: '3D बीएमआई = 1.3 × वजन (किग्रा) / [ऊंचाई (मीटर)]².⁵',
+      formulaCode: '3D BMI = 1.3 × kg / m²·⁵',
+      tableTitle: 'मानक 2D बीएमआई बनाम 3D बीएमआई तुलना तालिका',
+      tableRows: [
+        { col1: 'कम ऊंचाई वाले वयस्क (< 160 cm)', col2: 'मानक 2D फॉर्मूला कम स्कोर दिखाता है', col3: '3D फॉर्मूला ऊंचाई के अनुसार समायोजित करता है' },
+        { col1: 'औसत ऊंचाई (170 cm)', col2: 'समान रेटिंग', col3: '0.0 अंतर' },
+        { col1: 'अधिक ऊंचाई वाले वयस्क (> 185 cm)', col2: 'मानक 2D फॉर्मूला उच्च स्कोर दिखाता है', col3: '3D फॉर्मूला संतुलित स्कोर प्रदान करता है' }
+      ],
+      faqs: [
+        { question: '3D बीएमआई कैलकुलेटर क्या है?', answer: 'यह एक इंटरएक्टिव टूल है जो ऑक्सफोर्ड 2.5 फॉर्मूला से बीएमआई की गणना करता है और 360° 3D बॉडी मॉडल प्रदर्शित करता है।' }
+      ]
     }
   },
   'diabetes-risk-calculator': {
@@ -1298,13 +1386,14 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
 };
 
 const enData = seoDatabase[slug]?.['en'] || seoDatabase['bmi-calculator']['en'];
-const rawData = seoDatabase[slug]?.[lang] || enData;
+const langFallback = seoDatabase[slug]?.[lang] || seoDatabase['bmi-calculator']?.[lang] || enData;
+const rawData = seoDatabase[slug]?.[lang] || langFallback;
 
 const currentData: ToolContent = {
-  ...enData,
+  ...langFallback,
   ...rawData,
-  tableRows: (rawData.tableRows && rawData.tableRows.length > 0) ? rawData.tableRows : enData.tableRows,
-  faqs: (rawData.faqs && rawData.faqs.length > 0) ? rawData.faqs : enData.faqs
+  tableRows: (rawData.tableRows && rawData.tableRows.length > 0) ? rawData.tableRows : langFallback.tableRows,
+  faqs: (rawData.faqs && rawData.faqs.length > 0) ? rawData.faqs : langFallback.faqs
 };
 
 const faqSchema = {
