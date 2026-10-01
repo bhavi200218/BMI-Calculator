@@ -1,65 +1,61 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
-import BMICalculator from '../../components/BMICalculator.astro';
-import ResultStudio from '../../components/ResultStudio.astro';
-import HealthContent from '../../components/HealthContent.astro';
-import LatestArticles from '../../components/LatestArticles.astro';
-import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
-import RealBMIIntentSection from '../../components/RealBMIIntentSection.astro';
-import WaistHealthSEOSection from '../../components/WaistHealthSEOSection.astro';
-import NewBMIFormulaSEOSection from '../../components/NewBMIFormulaSEOSection.astro';
-import DiabetesRiskSEOSection from '../../components/DiabetesRiskSEOSection.astro';
+import LatestArticles from '../../components/LatestArticles.astro';
 import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
+import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
+import HealthContent from '../../components/HealthContent.astro';
 ---
 
 <Layout 
-	title="Real BMI Calculator - 3D BMI Rechner & Interaktiver Körper-Visualisierer"
-	description="Real BMI Calculator mit 3D BMI Rechner und 3D-Körper-Visualisierer. Berechnen Sie Ihren BMI, BMR, TDEE und Körperfettanteil sofort nach WHO- und CDC-Richtlinien."
+	title="Kostenlose BMI-, BMR-, TDEE- & Körperzusammensetzungs-Rechner | Real BMI"
+	description="Kostenlose lehrreiche Rechner für BMI, BMR, TDEE & Körperzusammensetzung basierend auf veröffentlichten Formeln und Referenzbereichen der WHO & CDC."
 >
 	<Navbar />
 	
 	<main class="pb-4 relative overflow-x-hidden">
 
-		<!-- ═══════════════════  HERO  ═══════════════════ -->
-		<section class="pt-24 md:pt-28 pb-8 md:pb-10 px-4 md:px-6">
+		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
+		<section class="pt-24 md:pt-28 pb-6 md:pb-8 px-4 md:px-6">
 			<div class="max-w-7xl mx-auto">
 
-				<!-- Eyebrow pill -->
-				<div class="flex justify-center mb-6 animate-in" style="animation-delay:0ms">
-					<span class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+				<!-- Main H1 & Hero Header -->
+				<div class="text-center space-y-4 mb-8 max-w-4xl mx-auto animate-in" style="animation-delay:0ms">
+					<!-- Eyebrow Tag / Pill -->
+					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						Präzisions-Gesundheitsanalyse
-					</span>
-				</div>
+						IHRE TÄGLICHEN GESUNDHEITS- & FITNESS-TOOLS
+					</div>
 
-				<!-- Main headline -->
-				<div class="text-center space-y-4 mb-8 animate-in" style="animation-delay:60ms">
-					<h1 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Real BMI Calculator
-						<span class="block text-sm sm:text-base md:text-lg mt-1 text-[var(--accent)] font-semibold tracking-normal normal-case">Kenne deinen Körper. Meistere deine Gesundheit.</span>
+					<!-- Main H1 headline -->
+					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
+						Verstehen Sie Ihre Werte. Planen Sie mit Vertrauen.
 					</h1>
-					<p class="text-sm md:text-base lg:text-lg text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto font-sans font-medium px-4">
-						Berechnen Sie BMI, BMR, TDEE und Idealgewicht sofort mit dem offiziellen <strong class="text-[var(--foreground)]">Real BMI Calculator</strong> — ohne Anmeldung, ohne Download.<br class="hidden md:block"/>
-						Entwickelt für Referenz-Präzision nach Standards der <strong class="text-[var(--foreground)]">WHO & des CDC</strong>.
-					</p>
+
+					<!-- Supporting H2 Subtitle -->
+					<h2 class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight">
+						Kostenlose BMI-, BMR-, TDEE- & Körperzusammensetzungs-Rechner
+					</h2>
 				</div>
 
-				<!-- Stats strip -->
-				<div class="flex flex-wrap justify-center gap-8 md:gap-14 mb-10 md:mb-12 animate-in" style="animation-delay:120ms">
-					{[
-						{ value: 'WHO', label: 'Standard' },
-						{ value: '6+', label: 'Sprachen' },
-						{ value: 'Privat', label: 'Lokal' },
-						{ value: '5s', label: 'Ergebnisse' },
-					].map(s => (
-						<div class="text-center space-y-1.5">
-							<div class="text-3xl md:text-4xl font-display font-bold text-[var(--foreground)]">{s.value}</div>
-							<div class="text-xs font-display font-semibold tracking-[0.2em] uppercase text-[var(--muted-foreground)]">{s.label}</div>
+				<!-- Stats Strip -->
+				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 animate-in" style="animation-delay:60ms">
+					{["15+ Rechner","6 Sprachen","Im Browser","Sofortige Ergebnisse"].map(badge => (
+						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
+							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+							{badge}
 						</div>
 					))}
+				</div>
+
+				<!-- Trust Badge below Stats -->
+				<div class="flex items-center justify-center gap-2 mb-8 md:mb-10 text-xs font-medium text-[var(--muted-foreground)] animate-in" style="animation-delay:90ms">
+					<svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+					</svg>
+					<span>WHO & CDC Referenzstandards</span>
 				</div>
 
 				<!-- Interactive Calculator Hub -->
@@ -69,62 +65,47 @@ import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  REAL BMI INTENT & ACCURACY SECTION  ═══════════════════ -->
-		<RealBMIIntentSection lang="de" />
-
-		<!-- ═══════════════════  WHO & NIH ALIGNED BMI + WAIST SECTION  ═══════════════════ -->
-		<WaistHealthSEOSection lang="de" />
-
-		<!-- ═══════════════════  NEW 3D HEIGHT-ADJUSTED BMI FORMULA SECTION  ═══════════════════ -->
-		<NewBMIFormulaSEOSection lang="de" />
-
-		<!-- ═══════════════════  IDF & WHO ALIGNED RISK SECTION  ═══════════════════ -->
-		<DiabetesRiskSEOSection lang="de" />
-
-		<!-- ═══════════════════  USER STORIES  ═══════════════════ -->
+		<!-- ═══════════════════  WHY PEOPLE CHOOSE REAL BMI  ═══════════════════ -->
 		<section class="px-4 md:px-6 py-12 md:py-16">
 			<div class="max-w-7xl mx-auto">
-				<div class="mb-14 space-y-4">
-					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Warum es wichtig ist</p>
-					<h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase leading-[0.95] text-[var(--foreground)]">
-						Deine Fitnessreise,<br/>Deine Regeln
+				<div class="mb-10 sm:mb-12 space-y-3">
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Transparente Rechner-Funktionen</p>
+					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
+						Klarheit für Ihre Gesundheitsziele
 					</h2>
 					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
-						Wir glauben, dass Gesundheitstools dich unterstützen sollten, anstatt dich zu verurteilen. Jede Berechnung basiert auf WHO-Empfehlungen.
+						Egal ob Sie Ihren Fortschritt verfolgen, Ihre Ernährung planen oder Fitnesswerte prüfen: Real BMI bietet Ihnen schnelle, praktische Schätzungen auf Basis veröffentlichter Richtlinien.
 					</p>
 				</div>
 
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-					{[
-						{ num: '01', text: 'Wenn ich mich entscheide fit zu werden,', highlight: 'möchte ich einen effektiven Weg, mein Ziel zu erreichen, um echte Ergebnisse zu sehen — nicht nur nackte Zahlen.' },
-						{ num: '02', text: 'Wenn meine Motivation sinkt,', highlight: 'möchte ich zurückkehren können, ohne bei null anzufangen, damit meine Fortschritte nicht verloren gehen.' },
-						{ num: '03', text: 'Wenn ich plane mit dem Training anzufangen,', highlight: 'möchte ich, dass es kostenlos und ohne Registrierung ist, damit es keine Hürde gibt.' },
-						{ num: '04', text: 'Wenn ich ohne Trainer trainiere,', highlight: 'möchte ich geprüfte Referenzstandards der WHO, um Fehler zu vermeiden.' },
-						{ num: '05', text: 'Wenn ich meine Gesundheit zu Hause checke,', highlight: 'möchte ich präzise BMR-, TDEE- und Körperfett-Schätzungen, um aktiv und informiert zu bleiben.' },
-					].map(item => (
+					{[{"title":"Formelbasierte Schätzungen","desc":"Ermitteln Sie klare Richtwerte für BMI, BMR, TDEE und Idealgewicht anhand veröffentlichter mathematischer Formeln."},{"title":"Browser-Datenschutz an erster Stelle","desc":"Alle Berechnungen verbleiben auf Ihrem Gerät – keine Konten, Registrierungen oder Server-Speicherungen erforderlich."},{"title":"Basierend auf öffentlichen Standards","desc":"Ergebnisse werden zusammen mit den öffentlichen Referenzbereichen der WHO und CDC dargestellt."},{"title":"Nützlich für die tägliche Planung","desc":"Erkunden Sie Fitnesswerte, Ernährungsschätzungen und Referenzen zur Körperzusammensetzung."}].map(item => (
 						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
-							<div class="text-3xl md:text-4xl font-display font-bold text-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity">{item.num}</div>
+							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
 							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
-								{item.text}
-								<span class="text-[var(--foreground)] font-semibold block mt-1">{item.highlight}</span>
+								{item.desc}
 							</p>
 						</div>
 					))}
-					<!-- Brand box -->
-					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6">
+					
+					<!-- Brand & Methodology Box -->
+					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6 shadow-md">
 						<div class="space-y-2">
-							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-70">Unterstützt durch</p>
-							<p class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase">REAL BMI</p>
+							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">Transparente Methodik</p>
+							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">WIE UNSERE RECHNER FUNKTIONIEREN</p>
+							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">Entdecken Sie unsere veröffentlichten Formeln, Referenzstandards, Eingaben, Ausgaben und Grenzen für alle 15+ Tools.</p>
 						</div>
-						<p class="text-sm font-medium opacity-80 leading-relaxed">Referenz-Präzision vereint mit ansprechendem Design. Berechnen Sie Ihre Werte in Sekunden.</p>
+						<a href="/de/methodology/" class="px-4 py-2.5 rounded-xl bg-white text-[var(--accent)] font-display text-xs font-bold uppercase tracking-wider hover:bg-opacity-90 transition-all shadow-xs">
+							Rechner-Methodik anzeigen →
+						</a>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- ═══════════════════  ARTICLES & HEALTH CONTENT  ═══════════════════ -->
-		<div class="px-4 md:px-6 pt-10 md:pt-14 pb-4">
-			<div class="max-w-7xl mx-auto space-y-10 md:space-y-14">
+		<!-- ═══════════════════  FEATURED GUIDES & TRUST CONTENT  ═══════════════════ -->
+		<div class="px-4 md:px-6 pt-6 pb-12">
+			<div class="max-w-7xl mx-auto space-y-12">
 				<EmbedWidgetBox lang="de" />
 				<LatestArticles lang="de" />
 				<HealthContent lang="de" />

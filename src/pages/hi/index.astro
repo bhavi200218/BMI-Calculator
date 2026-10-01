@@ -1,68 +1,61 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
-import BMICalculator from '../../components/BMICalculator.astro';
-import ResultStudio from '../../components/ResultStudio.astro';
-import HealthContent from '../../components/HealthContent.astro';
-import LatestArticles from '../../components/LatestArticles.astro';
-import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
+import LatestArticles from '../../components/LatestArticles.astro';
 import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
+import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
-import RealBMIIntentSection from '../../components/RealBMIIntentSection.astro';
-import DiabetesRiskSEOSection from '../../components/DiabetesRiskSEOSection.astro';
-import WaistHealthSEOSection from '../../components/WaistHealthSEOSection.astro';
-import NewBMIFormulaSEOSection from '../../components/NewBMIFormulaSEOSection.astro';
+import HealthContent from '../../components/HealthContent.astro';
 ---
 
 <Layout 
-	title="BMI (बॉडी मास इंडेक्स) कैलकुलेटर - मुफ़्त | Real BMI"
-	description="Real BMI कैलकुलेटर। WHO एवं CDC दिशानिर्देशों के आधार पर अपने बीएमआई, बीएमआर और वजन की तुरंत गणना करें। 100% मुफ़्त एवं गोपनीय।"
+	title="मुफ़्त BMI, BMR, TDEE एवं शरीर संरचना कैलकुलेटर | Real BMI"
+	description="डब्ल्यूएचओ एवं सीडीसी दिशानिर्देशों पर आधारित मुफ़्त शैक्षणिक बीएमआई, बीएमआर, टीडीईई और वजन कैलकुलेटर। 100% गोपनीय और त्वरित।"
 >
 	<Navbar />
 	
 	<main class="pb-4 relative overflow-x-hidden">
 
-		<!-- ═══════════════════  HERO  ═══════════════════ -->
+		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
 		<section class="pt-24 md:pt-28 pb-6 md:pb-8 px-4 md:px-6">
 			<div class="max-w-7xl mx-auto">
 
-				<!-- Main headline — elegant & balanced -->
-				<div class="text-center space-y-2.5 mb-5 max-w-4xl mx-auto animate-in" style="animation-delay:0ms">
-					<h1 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Real BMI कैलकुलेटर
-						<span class="block text-sm sm:text-base md:text-lg mt-1 text-[var(--accent)] font-semibold tracking-normal normal-case">अपने शरीर को जानें। अपने स्वास्थ्य के मालिक बनें।</span>
+				<!-- Main H1 & Hero Header -->
+				<div class="text-center space-y-4 mb-8 max-w-4xl mx-auto animate-in" style="animation-delay:0ms">
+					<!-- Eyebrow Tag / Pill -->
+					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
+						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+						आपके दैनिक स्वास्थ्य और फिटनेस उपकरण
+					</div>
+
+					<!-- Main H1 headline -->
+					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
+						अपने नंबर समझें। विश्वास के साथ योजना बनाएं।
 					</h1>
-					<p class="text-xs sm:text-sm md:text-base text-[var(--muted-foreground)] font-sans font-semibold max-w-none mx-auto px-2">
-						<strong class="text-[var(--foreground)] font-bold">WHO एवं CDC मानकों</strong> पर आधारित बॉडी मास इंडेक्स कैलकुलेटर — गोपनीयता-केंद्रित।
-					</p>
+
+					<!-- Supporting H2 Subtitle -->
+					<h2 class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight">
+						मुफ़्त बीएमआई, बीएमआर, टीडीईई और शारीरिक संरचना कैलकुलेटर
+					</h2>
 				</div>
 
-				<!-- Stats strip -->
-				<div class="flex flex-wrap justify-center gap-6 md:gap-12 mb-6 animate-in" style="animation-delay:60ms">
-					{[
-						{ value: 'WHO', label: 'मानक' },
-						{ value: '6+', label: 'भाषाएं' },
-						{ value: 'निजी', label: 'लोकल इनपुट' },
-						{ value: 'तुरंत', label: 'परिणाम' },
-					].map(s => (
-						<div class="text-center space-y-0.5">
-							<div class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)]">{s.value}</div>
-							<div class="text-[10px] sm:text-xs font-display font-semibold tracking-[0.15em] uppercase text-[var(--muted-foreground)]">{s.label}</div>
+				<!-- Stats Strip -->
+				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 animate-in" style="animation-delay:60ms">
+					{["15+ कैलकुलेटर","6 भाषाएं","ब्राउज़र-आधारित","तत्काल परिणाम"].map(badge => (
+						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
+							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+							{badge}
 						</div>
 					))}
 				</div>
 
-				<!-- Eyebrow pill & Star Rating Badge in 1 Single Line (Placed Below Stats Strip) -->
-				<div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mb-8 md:mb-10 animate-in" style="animation-delay:120ms">
-					<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-semibold uppercase tracking-[0.18em] text-[var(--accent)] shadow-sm">
-						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						मुफ़्त एवं गोपनीयता-केंद्रित
-					</div>
-					<span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-semibold uppercase tracking-[0.18em] text-[var(--accent)] shadow-sm">
-						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						मानक स्वास्थ्य संदर्भ
-					</span>
+				<!-- Trust Badge below Stats -->
+				<div class="flex items-center justify-center gap-2 mb-8 md:mb-10 text-xs font-medium text-[var(--muted-foreground)] animate-in" style="animation-delay:90ms">
+					<svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+					</svg>
+					<span>डब्ल्यूएचओ एवं सीडीसी संदर्भ मानक</span>
 				</div>
 
 				<!-- Interactive Calculator Hub -->
@@ -72,62 +65,47 @@ import NewBMIFormulaSEOSection from '../../components/NewBMIFormulaSEOSection.as
 			</div>
 		</section>
 
-		<!-- ═══════════════════  REAL BMI INTENT & ACCURACY SECTION  ═══════════════════ -->
-		<RealBMIIntentSection lang="hi" />
-
-		<!-- ═══════════════════  MAYO CLINIC & WHO ALIGNED BMI + WAIST SECTION  ═══════════════════ -->
-		<WaistHealthSEOSection lang="hi" />
-
-		<!-- ═══════════════════  NEW 3D HEIGHT-ADJUSTED BMI FORMULA SECTION  ═══════════════════ -->
-		<NewBMIFormulaSEOSection lang="hi" />
-
-		<!-- ═══════════════════  IDF & WHO ALIGNED RISK SECTION  ═══════════════════ -->
-		<DiabetesRiskSEOSection lang="hi" />
-
-		<!-- ═══════════════════  USER STORIES  ═══════════════════ -->
+		<!-- ═══════════════════  WHY PEOPLE CHOOSE REAL BMI  ═══════════════════ -->
 		<section class="px-4 md:px-6 py-12 md:py-16">
 			<div class="max-w-7xl mx-auto">
 				<div class="mb-10 sm:mb-12 space-y-3">
-					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">यह क्यों मायने रखता है</p>
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">पारदर्शी कैलकुलेटर विशेषताएं</p>
 					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
-						आपका फिटनेस सफर,<br/>आपके नियम
+						आपके स्वास्थ्य लक्ष्यों के लिए स्पष्टता
 					</h2>
 					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
-						हमारा मानना है कि स्वास्थ्य उपकरण आपको सशक्त बनाने के लिए होने चाहिए, न कि आपको जज करने के लिए। प्रत्येक गणना WHO डेटा पर आधारित है।
+						चाहे आप प्रगति को ट्रैक कर रहे हों, पोषण की योजना बना रहे हों, या फिटनेस बेसलाइन की समीक्षा कर रहे हों, Real BMI आपको प्रकाशित दिशानिर्देशों पर आधारित तेज़, व्यावहारिक अनुमान देता है।
 					</p>
 				</div>
 
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-					{[
-						{ num: '01', text: 'जब मैं आकार में आने का निर्णय लेता हूं,', highlight: 'मैं लक्ष्य तक पहुँचने का एक प्रभावी तरीका चाहता हूँ, ताकि मैं वास्तविक परिणाम देख सकूँ — केवल नंबर नहीं।' },
-						{ num: '02', text: 'जब मेरा उत्साह कम हो जाता है,', highlight: 'मैं शुरुआत से शुरू किये बिना वहीं से वापस आना चाहता हूँ जहाँ से मैंने छोड़ा था, ताकि मेरी मेहनत बेकार न जाये।' },
-						{ num: '03', text: 'जब मैं वर्कआउट शुरू करने की योजना बनाता हूँ,', highlight: 'मैं चाहता हूँ कि यह मुफ़्त हो और इसमें ज़ीरो साइन-अप की आवश्यकता हो, ताकि कोई रुकावट न हो।' },
-						{ num: '04', text: 'जब मैं बिना कोच के ट्रेन करता हूँ,', highlight: 'मैं WHO दिशानिर्देशों द्वारा सही तकनीक सीखना चाहता हूँ, ताकि मैं कोई गलती न करूँ।' },
-						{ num: '05', text: 'जब मैं घर पर अपनी सेहत की जांच करता हूँ,', highlight: 'मैं बीएमआर, टीडीईई और बीएमआई का संदर्भात्मक मान चाहता हूँ, ताकि मैं सक्रिय और सूचित रह सकूँ।' },
-					].map(item => (
+					{[{"title":"फॉर्मूला-आधारित अनुमान","desc":"प्रकाशित गणितीय समीकरणों का उपयोग करके बीएमआई, बीएमआर, टीडीईई और आदर्श वजन के लिए स्पष्ट बेसलाइन प्राप्त करें।"},{"title":"ब्राउज़र गोपनीयता पहले","desc":"सभी गणनाएं आपके डिवाइस पर रहती हैं - किसी खाते, साइन-अप या सर्वर स्टोरेज की आवश्यकता नहीं है।"},{"title":"सार्वजनिक मानकों पर आधारित","desc":"परिणाम संदर्भ के लिए डब्ल्यूएचओ और सीडीसी सार्वजनिक संदर्भ सीमाओं के साथ प्रस्तुत किए जाते हैं।"},{"title":"दैनिक योजना के लिए उपयोगी","desc":"स्पष्ट गणना पद्धतियों के साथ फिटनेस मेट्रिक्स, पोषण अनुमान और शरीर संरचना संदर्भों का अन्वेषण करें।"}].map(item => (
 						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
-							<div class="text-3xl md:text-4xl font-display font-bold text-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity">{item.num}</div>
+							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
 							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
-								{item.text}
-								<span class="text-[var(--foreground)] font-semibold block mt-1">{item.highlight}</span>
+								{item.desc}
 							</p>
 						</div>
 					))}
-					<!-- Brand box -->
-					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6">
+					
+					<!-- Brand & Methodology Box -->
+					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6 shadow-md">
 						<div class="space-y-2">
-							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-70">संचालित</p>
-							<p class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase">REAL BMI</p>
+							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">पारदर्शी कार्यप्रणाली</p>
+							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">हमारे कैलकुलेटर कैसे काम करते हैं</p>
+							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">सभी 15+ टूल के लिए हमारे प्रकाशित सूत्रों, संदर्भ मानकों, इनपुट, आउटपुट और सीमाओं का अन्वेषण करें।</p>
 						</div>
-						<p class="text-sm font-medium opacity-80 leading-relaxed">प्रमाण-आधारित स्वास्थ्य मेट्रिक्स और प्रीमियम डिज़ाइन। कुछ ही सेकंड में अपने स्वास्थ्य संदर्भ की गणना करें।</p>
+						<a href="/hi/methodology/" class="px-4 py-2.5 rounded-xl bg-white text-[var(--accent)] font-display text-xs font-bold uppercase tracking-wider hover:bg-opacity-90 transition-all shadow-xs">
+							कैलकुलेटर कार्यप्रणाली देखें →
+						</a>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- ═══════════════════  ARTICLES & HEALTH CONTENT  ═══════════════════ -->
-		<div class="px-4 md:px-6 pt-10 md:pt-14 pb-4">
-			<div class="max-w-7xl mx-auto space-y-10 md:space-y-14">
+		<!-- ═══════════════════  FEATURED GUIDES & TRUST CONTENT  ═══════════════════ -->
+		<div class="px-4 md:px-6 pt-6 pb-12">
+			<div class="max-w-7xl mx-auto space-y-12">
 				<EmbedWidgetBox lang="hi" />
 				<LatestArticles lang="hi" />
 				<HealthContent lang="hi" />

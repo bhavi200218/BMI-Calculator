@@ -1,64 +1,61 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
-import BMICalculator from '../../components/BMICalculator.astro';
-import ResultStudio from '../../components/ResultStudio.astro';
-import HealthContent from '../../components/HealthContent.astro';
-import LatestArticles from '../../components/LatestArticles.astro';
-import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
+import LatestArticles from '../../components/LatestArticles.astro';
 import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
-import RealBMIIntentSection from '../../components/RealBMIIntentSection.astro';
-import WaistHealthSEOSection from '../../components/WaistHealthSEOSection.astro';
-import NewBMIFormulaSEOSection from '../../components/NewBMIFormulaSEOSection.astro';
-import DiabetesRiskSEOSection from '../../components/DiabetesRiskSEOSection.astro';
+import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
+import HealthContent from '../../components/HealthContent.astro';
 ---
 
 <Layout 
-	title="Real BMI Calculator - 3D BMI & 1RM 측정기 (1 Rep Max 계산기)"
-	description="Real BMI Calculator로 3D 체형 시각화, 1RM 측정기 (벤치프레스 1 Rep Max), BMI, BMR 및 TDEE의 정밀한 임상 분석 결과를 즉시 확인하세요. WHO & CDC 지침 표준 적용."
+	title="무료 BMI, BMR, TDEE 및 체성분 계산기 | Real BMI"
+	description="공표된 수식과 WHO 및 CDC 지침에 기반한 무료 교육용 BMI, BMR, TDEE 및 체성분 참조 계산기. 가입 없이 브라우저에서 바로 연산."
 >
 	<Navbar />
 	
 	<main class="pb-4 relative overflow-x-hidden">
 
-		<!-- ═══════════════════  HERO  ═══════════════════ -->
+		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
 		<section class="pt-24 md:pt-28 pb-6 md:pb-8 px-4 md:px-6">
 			<div class="max-w-7xl mx-auto">
 
-				<!-- Eyebrow pill -->
-				<div class="flex justify-center mb-4 animate-in" style="animation-delay:0ms">
-					<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+				<!-- Main H1 & Hero Header -->
+				<div class="text-center space-y-4 mb-8 max-w-4xl mx-auto animate-in" style="animation-delay:0ms">
+					<!-- Eyebrow Tag / Pill -->
+					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						정밀 건강 분석
-					</span>
-				</div>
+						매일 사용하는 건강 및 피트니스 도구
+					</div>
 
-				<!-- Main headline -->
-				<div class="text-center space-y-2.5 mb-5 max-w-4xl mx-auto animate-in" style="animation-delay:60ms">
-					<h1 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Real BMI Calculator
-						<span class="block text-sm sm:text-base md:text-lg mt-1 text-[var(--accent)] font-semibold tracking-normal normal-case">몸을 알자. 건강을 지배하자.</span>
+					<!-- Main H1 headline -->
+					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
+						수치를 이해하고 자신 있게 계획하세요.
 					</h1>
-					<p class="text-xs sm:text-sm md:text-base text-[var(--muted-foreground)] font-sans font-semibold max-w-none mx-auto px-2">
-						WHO 및 CDC 임상 지침 표준 기반 <strong class="text-[var(--foreground)] font-bold">BMI, BMR 및 TDEE 계산기</strong> — 100% 비공개.
-					</p>
+
+					<!-- Supporting H2 Subtitle -->
+					<h2 class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight">
+						무료 BMI, BMR, TDEE 및 체성분 계산기
+					</h2>
 				</div>
 
-				<!-- Stats strip -->
-				<div class="flex flex-wrap justify-center gap-6 md:gap-12 mb-8 md:mb-10 animate-in" style="animation-delay:120ms">
-					{[
-						{ value: 'WHO', label: '표준' },
-						{ value: '6+', label: '언어' },
-						{ value: '비공개', label: '로컬 입력' },
-						{ value: '실시간', label: '결과' },
-					].map(s => (
-						<div class="text-center space-y-0.5">
-							<div class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)]">{s.value}</div>
-							<div class="text-[10px] sm:text-xs font-display font-semibold tracking-[0.15em] uppercase text-[var(--muted-foreground)]">{s.label}</div>
+				<!-- Stats Strip -->
+				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 animate-in" style="animation-delay:60ms">
+					{["15개 이상 계산기","6개 언어 지원","브라우저 기반 연산","실시간 결과"].map(badge => (
+						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
+							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+							{badge}
 						</div>
 					))}
+				</div>
+
+				<!-- Trust Badge below Stats -->
+				<div class="flex items-center justify-center gap-2 mb-8 md:mb-10 text-xs font-medium text-[var(--muted-foreground)] animate-in" style="animation-delay:90ms">
+					<svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+					</svg>
+					<span>WHO 및 CDC 표준 참조 지침</span>
 				</div>
 
 				<!-- Interactive Calculator Hub -->
@@ -68,62 +65,47 @@ import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  REAL BMI INTENT & ACCURACY SECTION  ═══════════════════ -->
-		<RealBMIIntentSection lang="ko" />
-
-		<!-- ═══════════════════  WHO & NIH ALIGNED BMI + WAIST SECTION  ═══════════════════ -->
-		<WaistHealthSEOSection lang="ko" />
-
-		<!-- ═══════════════════  NEW 3D HEIGHT-ADJUSTED BMI FORMULA SECTION  ═══════════════════ -->
-		<NewBMIFormulaSEOSection lang="ko" />
-
-		<!-- ═══════════════════  IDF & WHO ALIGNED RISK SECTION  ═══════════════════ -->
-		<DiabetesRiskSEOSection lang="ko" />
-
-		<!-- ═══════════════════  USER STORIES  ═══════════════════ -->
+		<!-- ═══════════════════  WHY PEOPLE CHOOSE REAL BMI  ═══════════════════ -->
 		<section class="px-4 md:px-6 py-12 md:py-16">
 			<div class="max-w-7xl mx-auto">
 				<div class="mb-10 sm:mb-12 space-y-3">
-					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">중요성</p>
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">투명한 계산 기능 및 지침</p>
 					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
-						당신의 피트니스 여정,<br/>당신의 방식
+						건강 목표를 위한 명확한 수치 제공
 					</h2>
 					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
-						우리는 건강 도구가 귀하를 판단하지 않고 강화해야 한다고 믿습니다. 모든 수치는 WHO 임상 데이터에 근거합니다.
+						운동 경과를 기록하든 식단을 계획하든, Real BMI는 공표된 지침에 기반한 신속하고 실용적인 분석 수치를 제공합니다.
 					</p>
 				</div>
 
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-					{[
-						{ num: '01', text: '내가 목표를 달성하고 싶을 때,', highlight: '단순한 숫자가 아닌 진짜 건강 데이터를 확인하고 싶습니다.' },
-						{ num: '02', text: '동기부여가 떨어지더라도,', highlight: '좌절감 없이 언제든 중단한 지점부터 다시 기분 좋게 시작하고 싶습니다.' },
-						{ num: '03', text: '계산을 시작하려 할 때,', highlight: '가입 없이 완전 무료로 활용할 수 있어 진입 장벽이 없어야 합니다.' },
-						{ num: '04', text: '의사나 코치 없이 홀로 훈련할 때,', highlight: '잘못된 지식에 의존하지 않도록 WHO 공식 표준 기준을 알고 싶습니다.' },
-						{ num: '05', text: '집에서 편안하게 몸 상태를 체크할 때,', highlight: '정확한 BMR, TDEE 및 체지방 통계를 직접 간편하게 얻기를 원합니다.' },
-					].map(item => (
+					{[{"title":"공식 기반 추정치","desc":"공표된 수학적 공식을 사용하여 BMI, BMR, TDEE 및 이상적인 체중 지표를 산출합니다."},{"title":"브라우저 보안 우선 원칙","desc":"모든 연산은 가입이나 서버 저장 없이 사용자의 브라우저 내에서만 수행됩니다."},{"title":"공공 표준 지침 기반","desc":"산출 결과는 이해를 돕기 위해 WHO 및 CDC 표준 참조 범위와 함께 제시됩니다."},{"title":"일상적인 계획에 유용한 지표","desc":"투명한 산출 방식을 통해 피트니스 지표, 영양 필요량 및 체성분 참조값을 확인하세요."}].map(item => (
 						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
-							<div class="text-3xl md:text-4xl font-display font-bold text-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity">{item.num}</div>
+							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
 							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
-								{item.text}
-								<span class="text-[var(--foreground)] font-semibold block mt-1">{item.highlight}</span>
+								{item.desc}
 							</p>
 						</div>
 					))}
-					<!-- Brand box -->
-					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6">
+					
+					<!-- Brand & Methodology Box -->
+					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6 shadow-md">
 						<div class="space-y-2">
-							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-70">제공처</p>
-							<p class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase">REAL BMI</p>
+							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">투명한 산출 방법론</p>
+							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">계산기 작동 원리 및 지침</p>
+							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">15개 이상 도구의 공식, 참조 기준, 입력/출력값 및 한계점을 확인하세요.</p>
 						</div>
-						<p class="text-sm font-medium opacity-80 leading-relaxed">임상 정확도와 프리미엄 디자인의 만남. 몇 초 만에 건강 지표를 계산해 보세요.</p>
+						<a href="/ko/methodology/" class="px-4 py-2.5 rounded-xl bg-white text-[var(--accent)] font-display text-xs font-bold uppercase tracking-wider hover:bg-opacity-90 transition-all shadow-xs">
+							계산기 방법론 보기 →
+						</a>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- ═══════════════════  ARTICLES & HEALTH CONTENT  ═══════════════════ -->
-		<div class="px-4 md:px-6 pt-10 md:pt-14 pb-4">
-			<div class="max-w-7xl mx-auto space-y-10 md:space-y-14">
+		<!-- ═══════════════════  FEATURED GUIDES & TRUST CONTENT  ═══════════════════ -->
+		<div class="px-4 md:px-6 pt-6 pb-12">
+			<div class="max-w-7xl mx-auto space-y-12">
 				<EmbedWidgetBox lang="ko" />
 				<LatestArticles lang="ko" />
 				<HealthContent lang="ko" />

@@ -223,6 +223,18 @@ const currentLangDisplay = langNames[lang] || lang;
     btn.addEventListener('click', (e) => { e.stopPropagation(); isOpen ? close() : open(); });
     document.addEventListener('click', (e) => { if (!btn.contains(e.target) && !menu.contains(e.target)) close(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        close();
+        const href = link.getAttribute('href');
+        if (href) {
+          const match = href.match(/^\/(en|es|fr|de|ko|hi)\b/);
+          if (match) {
+            document.documentElement.lang = match[1];
+          }
+        }
+      });
+    });
   }
 
   function attachMobileMenu() {
