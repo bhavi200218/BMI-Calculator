@@ -403,80 +403,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     }
   },
-  'bmr-calculator': {
-    es: {
-      eyebrow: 'Ecuación Estándar de Mifflin-St Jeor',
-      title: 'Calculadora de BMR – Tasa Metabólica Basal en Línea',
-      intro: 'Calcula tu Tasa Metabólica Basal (BMR) diaria con nuestra calculadora gratuita. Utiliza la fórmula de Mifflin-St Jeor para estimar las calorías quemadas en reposo en 24 horas.',
-      formulaTitle: 'Fórmula de BMR de Mifflin-St Jeor para Hombres y Mujeres',
-      formulaDesc: 'Hombres: (10 × peso kg) + (6.25 × altura cm) - (5 × edad) + 5 | Mujeres: (10 × peso kg) + (6.25 × altura cm) - (5 × edad) - 161',
-      formulaCode: 'Hombres: BMR = 10W + 6.25H - 5A + 5 | Mujeres: BMR = 10W + 6.25H - 5A - 161',
-      tableTitle: 'Matriz de Comparación de Fórmulas de BMR',
-      tableRows: [
-        { col1: 'Fórmula Mifflin-St Jeor', col2: 'Ecuación Predictiva (1990)', col3: 'Estándar recomendado para estimación de BMR' },
-        { col1: 'Harris-Benedict Revisada', col2: 'Referencia Histórica (1984)', col3: 'Referencia histórica para BMR' }
-      ],
-      faqs: [
-        { question: '¿Qué es la Tasa Metabólica Basal (BMR) y cómo se calcula?', answer: 'La BMR es la cantidad de calorías que tu cuerpo quema en reposo absoluto durante 24 horas para mantener funciones vitales.' },
-        { question: '¿Cuál es la fórmula de Mifflin-St Jeor para hombres y mujeres?', answer: 'Hombres: (10×kg) + (6.25×cm) - (5×edad) + 5. Mujeres: (10×kg) + (6.25×cm) - (5×edad) - 161.' },
-        { question: '¿Cómo afecta la edad al cálculo del BMR?', answer: 'El BMR disminuye gradualmente con la edad debido a la pérdida natural de masa muscular.' },
-        { question: '¿Cuál es la diferencia entre BMR y TDEE?', answer: 'El BMR es el gasto en reposo (0% actividad). El TDEE es el gasto calórico total diario incluyendo ejercicio y movimiento.' }
-      ]
-    },
-    fr: {
-      eyebrow: 'Équation Référence de Mifflin-St Jeor',
-      title: 'Calculateur de BMR – Métabolisme de Base en Ligne',
-      intro: 'Calculez votre taux métabolique de base (BMR) quotidien avec notre calculateur gratuit. Basé sur la formule reconnue de Mifflin-St Jeor.',
-      formulaTitle: 'Formule de BMR Mifflin-St Jeor Hommes et Femmes',
-      formulaDesc: 'Hommes : (10 × poids kg) + (6.25 × taille cm) - (5 × âge) + 5 | Femmes : (10 × poids kg) + (6.25 × taille cm) - (5 × âge) - 161',
-      formulaCode: 'Hommes : BMR = 10W + 6.25H - 5A + 5 | Femmes : BMR = 10W + 6.25H - 5A - 161',
-      tableTitle: 'Comparatif des Formules de BMR',
-      tableRows: [
-        { col1: 'Formule Mifflin-St Jeor', col2: 'Équation Prédictive (1990)', col3: 'Standard recommandé pour l\'estimation du BMR' },
-        { col1: 'Harris-Benedict Révisée', col2: 'Référence Historique (1984)', col3: 'Équation historique de référence' }
-      ],
-      faqs: [
-        { question: 'Qu\'est-ce que le BMR et comment est-il calculé ?', answer: 'Le BMR (métabolisme de base) est le nombre de calories brûlées au repos pendant 24h pour maintenir les fonctions vitales.' },
-        { question: 'Quelle est la formule de Mifflin-St Jeor pour hommes et femmes ?', answer: 'Hommes : (10×kg) + (6,25×cm) - (5×âge) + 5. Femmes : (10×kg) + (6,25×cm) - (5×âge) - 161.' },
-        { question: 'Quelle est la différence entre le BMR et le TDEE ?', answer: 'Le BMR représente la dépense au repos complet. Le TDEE inclut l\'activité physique et l\'exercice quotidien.' }
-      ]
-    },
-    de: {
-      eyebrow: 'Mifflin-St Jeor Referenzformel',
-      title: 'BMR Rechner Online – Grundumsatz Berechnen für Männer & Frauen',
-      intro: 'Berechnen Sie Ihren täglichen Grundumsatz (BMR) mit unserem kostenlosen BMR-Rechner online nach der wissenschaftlich anerkannten Mifflin-St Jeor Formel.',
-      formulaTitle: 'Mifflin-St Jeor BMR-Formel für Männer und Frauen',
-      formulaDesc: 'Männer: (10 × Gewicht kg) + (6.25 × Größe cm) - (5 × Alter) + 5 | Frauen: (10 × Gewicht kg) + (6.25 × Größe cm) - (5 × Alter) - 161',
-      formulaCode: 'Männer: BMR = 10W + 6.25H - 5A + 5 | Frauen: BMR = 10W + 6.25H - 5A - 161',
-      tableTitle: 'BMR Formel-Vergleichsmatrix',
-      tableRows: [
-        { col1: 'Mifflin-St Jeor Formel', col2: 'Prädiktive Gleichung (1990)', col3: 'Standard-Referenz für die BMR-Berechnung' },
-        { col1: 'Revidierte Harris-Benedict', col2: 'Historischer Standard (1984)', col3: 'Historische Vergleichsformel' }
-      ],
-      faqs: [
-        { question: 'Was ist der BMR (Grundumsatz) und wie wird er berechnet?', answer: 'Der BMR ist die Kalorienmenge, die der Körper in 24 Stunden in absoluter Ruhe zur Aufrechterhaltung der Lebensfunktionen verbrennt.' },
-        { question: 'Was ist die Mifflin-St Jeor Formel für Männer und Frauen?', answer: 'Männer: (10×kg) + (6,25×cm) - (5×Alter) + 5. Frauen: (10×kg) + (6,25×cm) - (5×Alter) - 161.' },
-        { question: 'Was ist der Unterschied zwischen BMR und TDEE?', answer: 'Der BMR misst den Ruheumsatz (0% Aktivität). Der TDEE berechnet den Gesamtkalorienbedarf inklusive Bewegung und Sport.' }
-      ]
-    },
-    ko: {
-      eyebrow: 'Mifflin-St Jeor 표준 공식',
-      title: 'BMR 계산기 온라인 – 기초대사량 계산기',
-      intro: '무료 온라인 BMR 계산기로 일일 기초대사량(BMR)을 계산하세요. Mifflin-St Jeor 공식을 사용하여 24시간 동안 휴식 시 소비되는 칼로리를 추정합니다.',
-      formulaTitle: '남성 및 여성 Mifflin-St Jeor BMR 공식',
-      formulaDesc: '남성: (10 × 체중 kg) + (6.25 × 신장 cm) - (5 × 연령) + 5 | 여성: (10 × 체중 kg) + (6.25 × 신장 cm) - (5 × 연령) - 161',
-      formulaCode: '남성: BMR = 10W + 6.25H - 5A + 5 | 여성: BMR = 10W + 6.25H - 5A - 161',
-      tableTitle: 'BMR 공식 비교표',
-      tableRows: [
-        { col1: 'Mifflin-St Jeor 공식', col2: '예측 방정식 (1990)', col3: '성인 BMR 추정에 널리 사용되는 공식' },
-        { col1: '수정된 Harris-Benedict', col2: '역사적 표준 (1984)', col3: '기초대사량 참조 공식' }
-      ],
-      faqs: [
-        { question: 'BMR(기초대사량)이란 무엇이며 어떻게 계산하나요?', answer: 'BMR은 신체가 휴식 상태에서 장기 기능을 유지하기 위해 24시간 동안 소비하는 최소한의 에너지입니다.' },
-        { question: 'BMR과 TDEE의 차이점은 무엇인가요?', answer: 'BMR은 0% 활동 시의 휴식 대사량이며, TDEE는 일상 활동과 운동을 포함한 총 일일 에너지 소비량입니다.' }
-      ]
-    }
-  },
+
   '3d-bmi-calculator': {
     en: {
       eyebrow: 'Oxford 2.5-Power BMI Model & 3D Body Visualization',
@@ -565,6 +492,78 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'बीएमआर (BMR) क्या है और इसकी गणना कैसे की जाती है?', answer: 'बीएमआर (बेसल मेटाबॉलिक रेट) विश्राम की स्थिति में जीवित रहने और सांस लेने के लिए आपके अंगों द्वारा आवश्यक न्यूनतम दैनिक कैलोरी है।' },
         { question: 'पुरुषों और महिलाओं के लिए Mifflin-St Jeor बीएमआर फॉर्मूला क्या है?', answer: 'पुरुषों के लिए: (10×kg) + (6.25×cm) - (5×आयु) + 5। महिलाओं के लिए: (10×kg) + (6.25×cm) - (5×आयु) - 161।' },
         { question: 'आयु बीएमआर गणना को कैसे प्रभावित करती है?', answer: '30 वर्ष की आयु के बाद, मांसपेशियों के प्राकृतिक ह्रास के कारण बीएमआर में प्रति दशक 1-2% की कमी आती है।' }
+      ]
+    },
+    es: {
+      eyebrow: 'Ecuación Estándar de Mifflin-St Jeor',
+      title: 'Calculadora de BMR – Tasa Metabólica Basal en Línea',
+      intro: 'Calcula tu Tasa Metabólica Basal (BMR) diaria con nuestra calculadora gratuita. Utiliza la fórmula de Mifflin-St Jeor para estimar las calorías quemadas en reposo en 24 horas.',
+      formulaTitle: 'Fórmula de BMR de Mifflin-St Jeor para Hombres y Mujeres',
+      formulaDesc: 'Hombres: (10 × peso kg) + (6.25 × altura cm) - (5 × edad) + 5 | Mujeres: (10 × peso kg) + (6.25 × altura cm) - (5 × edad) - 161',
+      formulaCode: 'Hombres: BMR = 10W + 6.25H - 5A + 5 | Mujeres: BMR = 10W + 6.25H - 5A - 161',
+      tableTitle: 'Matriz de Comparación de Fórmulas de BMR',
+      tableRows: [
+        { col1: 'Fórmula Mifflin-St Jeor', col2: 'Ecuación Predictiva (1990)', col3: 'Estándar recomendado para estimación de BMR' },
+        { col1: 'Harris-Benedict Revisada', col2: 'Referencia Histórica (1984)', col3: 'Referencia histórica para BMR' }
+      ],
+      faqs: [
+        { question: '¿Qué es la Tasa Metabólica Basal (BMR) y cómo se calcula?', answer: 'La BMR es la cantidad de calorías que tu cuerpo quema en reposo absoluto durante 24 horas para mantener funciones vitales.' },
+        { question: '¿Cuál es la fórmula de Mifflin-St Jeor para hombres y mujeres?', answer: 'Hombres: (10×kg) + (6.25×cm) - (5×edad) + 5. Mujeres: (10×kg) + (6.25×cm) - (5×edad) - 161.' },
+        { question: '¿Cómo afecta la edad al cálculo del BMR?', answer: 'El BMR disminuye gradualmente con la edad debido a la pérdida natural de masa muscular.' },
+        { question: '¿Cuál es la diferencia entre BMR y TDEE?', answer: 'El BMR es el gasto en reposo (0% actividad). El TDEE es el gasto calórico total diario incluyendo ejercicio y movimiento.' }
+      ]
+    },
+    fr: {
+      eyebrow: 'Équation Référence de Mifflin-St Jeor',
+      title: 'Calculateur de BMR – Métabolisme de Base en Ligne',
+      intro: 'Calculez votre taux métabolique de base (BMR) quotidien avec notre calculateur gratuit. Basé sur la formule reconnue de Mifflin-St Jeor.',
+      formulaTitle: 'Formule de BMR Mifflin-St Jeor Hommes et Femmes',
+      formulaDesc: 'Hommes : (10 × poids kg) + (6.25 × taille cm) - (5 × âge) + 5 | Femmes : (10 × poids kg) + (6.25 × taille cm) - (5 × âge) - 161',
+      formulaCode: 'Hommes : BMR = 10W + 6.25H - 5A + 5 | Femmes : BMR = 10W + 6.25H - 5A - 161',
+      tableTitle: 'Comparatif des Formules de BMR',
+      tableRows: [
+        { col1: 'Formule Mifflin-St Jeor', col2: 'Équation Prédictive (1990)', col3: 'Standard recommandé pour l\'estimation du BMR' },
+        { col1: 'Harris-Benedict Révisée', col2: 'Référence Historique (1984)', col3: 'Équation historique de référence' }
+      ],
+      faqs: [
+        { question: 'Qu\'est-ce que le BMR et comment est-il calculé ?', answer: 'Le BMR (métabolisme de base) est le nombre de calories brûlées au repos pendant 24h pour maintenir les fonctions vitales.' },
+        { question: 'Quelle est la formule de Mifflin-St Jeor pour hommes et femmes ?', answer: 'Hommes : (10×kg) + (6,25×cm) - (5×âge) + 5. Femmes : (10×kg) + (6,25×cm) - (5×âge) - 161.' },
+        { question: 'Quelle est la différence entre le BMR et le TDEE ?', answer: 'Le BMR représente la dépense au repos complet. Le TDEE inclut l\'activité physique et l\'exercice quotidien.' }
+      ]
+    },
+    de: {
+      eyebrow: 'Mifflin-St Jeor Referenzformel',
+      title: 'BMR Rechner Online – Grundumsatz Berechnen für Männer & Frauen',
+      intro: 'Berechnen Sie Ihren täglichen Grundumsatz (BMR) mit unserem kostenlosen BMR-Rechner online nach der wissenschaftlich anerkannten Mifflin-St Jeor Formel.',
+      formulaTitle: 'Mifflin-St Jeor BMR-Formel für Männer und Frauen',
+      formulaDesc: 'Männer: (10 × Gewicht kg) + (6.25 × Größe cm) - (5 × Alter) + 5 | Frauen: (10 × Gewicht kg) + (6.25 × Größe cm) - (5 × Alter) - 161',
+      formulaCode: 'Männer: BMR = 10W + 6.25H - 5A + 5 | Frauen: BMR = 10W + 6.25H - 5A - 161',
+      tableTitle: 'BMR Formel-Vergleichsmatrix',
+      tableRows: [
+        { col1: 'Mifflin-St Jeor Formel', col2: 'Prädiktive Gleichung (1990)', col3: 'Standard-Referenz für die BMR-Berechnung' },
+        { col1: 'Revidierte Harris-Benedict', col2: 'Historischer Standard (1984)', col3: 'Historische Vergleichsformel' }
+      ],
+      faqs: [
+        { question: 'Was ist der BMR (Grundumsatz) und wie wird er berechnet?', answer: 'Der BMR ist die Kalorienmenge, die der Körper in 24 Stunden in absoluter Ruhe zur Aufrechterhaltung der Lebensfunktionen verbrennt.' },
+        { question: 'Was ist die Mifflin-St Jeor Formel für Männer und Frauen?', answer: 'Männer: (10×kg) + (6,25×cm) - (5×Alter) + 5. Frauen: (10×kg) + (6,25×cm) - (5×Alter) - 161.' },
+        { question: 'Was ist der Unterschied zwischen BMR und TDEE?', answer: 'Der BMR misst den Ruheumsatz (0% Aktivität). Der TDEE berechnet den Gesamtkalorienbedarf inklusive Bewegung und Sport.' }
+      ]
+    },
+    ko: {
+      eyebrow: 'Mifflin-St Jeor 표준 공식',
+      title: 'BMR 계산기 온라인 – 기초대사량 계산기',
+      intro: '무료 온라인 BMR 계산기로 일일 기초대사량(BMR)을 계산하세요. Mifflin-St Jeor 공식을 사용하여 24시간 동안 휴식 시 소비되는 칼로리를 추정합니다.',
+      formulaTitle: '남성 및 여성 Mifflin-St Jeor BMR 공식',
+      formulaDesc: '남성: (10 × 체중 kg) + (6.25 × 신장 cm) - (5 × 연령) + 5 | 여성: (10 × 체중 kg) + (6.25 × 신장 cm) - (5 × 연령) - 161',
+      formulaCode: '남성: BMR = 10W + 6.25H - 5A + 5 | 여성: BMR = 10W + 6.25H - 5A - 161',
+      tableTitle: 'BMR 공식 비교표',
+      tableRows: [
+        { col1: 'Mifflin-St Jeor 공식', col2: '예측 방정식 (1990)', col3: '성인 BMR 추정에 널리 사용되는 공식' },
+        { col1: '수정된 Harris-Benedict', col2: '역사적 표준 (1984)', col3: '기초대사량 참조 공식' }
+      ],
+      faqs: [
+        { question: 'BMR(기초대사량)이란 무엇이며 어떻게 계산하나요?', answer: 'BMR은 신체가 휴식 상태에서 장기 기능을 유지하기 위해 24시간 동안 소비하는 최소한의 에너지입니다.' },
+        { question: 'BMR과 TDEE의 차이점은 무엇인가요?', answer: 'BMR은 0% 활동 시의 휴식 대사량이며, TDEE는 일상 활동과 운동을 포함한 총 일일 에너지 소비량입니다.' }
       ]
     }
   },
