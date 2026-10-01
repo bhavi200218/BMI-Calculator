@@ -1,49 +1,63 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
-    title="Sobre Real BMI - Proyecto Independiente"
-    description="Conozca Real BMI, un sitio web independiente de calculadoras de salud creado y mantenido por Bhawanshi Dosi."
+    title="Sobre Real BMI - Proyecto Independiente de Calculadoras de Salud"
+    description="Real BMI es un sitio web independiente de calculadoras de salud creado y mantenido por Bhawanshi Dosi, que proporciona estimaciones de referencia de IMC, BMR, TDEE y composición corporal."
 >
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-16">
-        <div class="space-y-4">
-            <a href="/es" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                Volver al inicio
-            </a>
-            <h1 class="text-6xl font-black tracking-tighter uppercase">Sobre Nosotros</h1>
+    <PageShell
+      title="Sobre Real BMI"
+      eyebrow="Proyecto Independiente de Calculadoras"
+      description="Creado y mantenido por Bhawanshi Dosi utilizando fórmulas publicadas y estándares de referencia de salud pública."
+      returnUrl="/es"
+      returnLabel="Inicio"
+    >
+      <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
+        <div class="space-y-10">
+          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+            <p><strong>Real BMI</strong> es un sitio web independiente de calculadoras de salud creado y mantenido por <strong>Bhawanshi Dosi</strong>. Las calculadoras utilizan ecuaciones matemáticas publicadas y rangos de referencia de salud pública para proporcionar estimaciones educativas.</p>
+            <p>Real BMI no es una práctica médica, hospital, clínica ni servicio revisado por médicos. Todas las herramientas están diseñadas únicamente con fines de educación, planificación y referencia personal.</p>
+            <p>Construimos herramientas de referencia utilizando fórmulas publicadas (como Mifflin-St Jeor, Harris-Benedict, Boer, Devine y Mosteller) y pautas públicas de organizaciones como la <strong>OMS</strong> y los <strong>CDC</strong>.</p>
+            <p>Las entradas de salud en la calculadora se procesan localmente en su navegador y nunca se envían a nuestros servidores.</p>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Ecuaciones Publicadas</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Cálculos basados en fórmulas matemáticas documentadas y puntos de referencia poblacionales.</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Privacidad Primero</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Las entradas permanecen en su dispositivo, nunca se almacenan en servidores.</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Proyecto Independiente</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Desarrollado y mantenido de forma independiente por Bhawanshi Dosi.</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Estimaciones Educativas</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Referencias prácticas para la planificación del estilo de vida, no diagnósticos clínicos.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-xl font-bold">
-            <div class="space-y-6">
-                <p>
-                    <strong>Real BMI</strong> es un sitio web independiente de calculadoras de salud creado y mantenido por <strong>Bhawanshi Dosi</strong>. Las calculadoras utilizan ecuaciones matemáticas publicadas y rangos de referencia de salud pública para proporcionar estimaciones educativas.
-                </p>
-                <p>
-                    Real BMI no es una práctica médica, hospital, clínica ni servicio revisado por médicos. Todas las herramientas están diseñadas únicamente con fines de educación y referencia personal.
-                </p>
-                <p>
-                    Todas las entradas permanecen en su navegador. Sus datos personales de salud nunca se almacenan ni se transmiten a servidores externos.
-                </p>
-            </div>
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)]">
+          <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Misión del Proyecto</p>
+          <h2 class="mt-4 text-3xl font-black text-[var(--foreground)]">Herramientas Trasparentes</h2>
+          <p class="mt-4 text-base leading-relaxed text-[var(--muted-foreground)]">Real BMI fue creado para brindar a las personas estimaciones matemáticas accesibles para comparar sus valores con las pautas de referencia publicadas.</p>
 
-            <div class="pt-8 space-y-4 text-[var(--foreground)] border-t border-[var(--border)]">
-                <p class="text-3xl font-black tracking-tighter">
-                    Contacto
-                </p>
-                <p class="text-lg opacity-60">
-                    Si tiene alguna pregunta sobre la metodología de las calculadoras o el sitio web, no dude en ponerse en contacto.
-                </p>
-                <div class="pt-2">
-                    <a href="mailto:support@realbmicalculator.com" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline group">
-                        support@realbmicalculator.com
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
+          <div class="mt-8 space-y-4 text-sm text-[var(--muted-foreground)] leading-relaxed">
+            <p><strong>Metodología publicada:</strong> Los cálculos utilizan ecuaciones revisadas por pares y rangos de referencia públicos.</p>
+            <p><strong>Privacidad en el navegador:</strong> Sin almacenamiento ni transmisión de datos de salud.</p>
+            <p><strong>Límites claros:</strong> Real BMI es un proyecto independiente, no una clínica ni un servicio de asesoramiento médico.</p>
+          </div>
+
+          <a href="/es/contact" class="mt-8 inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">Contactar a Bhawanshi</a>
+        </aside>
+      </div>
+    </PageShell>
 </Layout>

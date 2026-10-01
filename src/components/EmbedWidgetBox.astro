@@ -58,7 +58,7 @@ const embedCode = `<iframe src="https://realbmicalculator.com/embed/bmi-calculat
       <div class="space-y-2 max-w-2xl">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] shadow-xs">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-          Free Webmaster & Blogger Tool
+          {{ en: 'Free Webmaster & Blogger Tool', es: 'Herramienta Gratuita para Webmasters y Bloggers', fr: 'Outil Gratuit pour Webmasters & Blogueurs', de: 'Kostenloses Webmaster- & Blogger-Tool', ko: '무료 웹마스터 및 블로거 도구', hi: 'फ्री वेबमास्टर और ब्लॉगर टूल' }[lang] || 'Free Webmaster & Blogger Tool'}
         </div>
         <h3 class="text-2xl sm:text-3xl font-display font-extrabold uppercase text-[var(--foreground)] tracking-tight">
           {titles[lang] || titles.en}
@@ -76,7 +76,7 @@ const embedCode = `<iframe src="https://realbmicalculator.com/embed/bmi-calculat
         class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[var(--muted)]/50 hover:bg-[var(--muted)] border border-[var(--border)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all cursor-pointer whitespace-nowrap self-start md:self-center shadow-xs"
       >
         <svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-        Live Widget Preview
+        {{ en: 'Live Widget Preview', es: 'Vista Previa del Widget', fr: 'Aperçu du Widget', de: 'Live-Widget-Vorschau', ko: '라이브 위젯 미리보기', hi: 'लाइव विजेट पूर्वावलोकन' }[lang] || 'Live Widget Preview'}
         <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
       </a>
     </div>
@@ -119,18 +119,18 @@ const embedCode = `<iframe src="https://realbmicalculator.com/embed/bmi-calculat
       <div class="flex flex-wrap items-center gap-4 sm:gap-6">
         <span class="flex items-center gap-1.5 text-emerald-500 font-semibold">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          100% Free Forever
+          {{ en: '100% Free Forever', es: '100% Gratis Siempre', fr: '100% Gratuit pour Toujours', de: '100% Dauerhaft Kostenlos', ko: '평생 100% 무료', hi: '100% हमेशा के लिए मुफ़्त' }[lang] || '100% Free Forever'}
         </span>
         <span class="flex items-center gap-1.5 text-emerald-500 font-semibold">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          Fully Responsive
+          {{ en: 'Fully Responsive', es: 'Totalmente Adaptable', fr: 'Entièrement Adaptatif', de: 'Vollständig Responsive', ko: '완벽한 반응형 지원', hi: 'पूर्णतः उत्तरदायी (Responsive)' }[lang] || 'Fully Responsive'}
         </span>
         <span class="flex items-center gap-1.5 text-emerald-500 font-semibold">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          Automatic Updates
+          {{ en: 'Automatic Updates', es: 'Actualizaciones Automáticas', fr: 'Mises à Jour Automatiques', de: 'Automatische Updates', ko: '자동 업데이트', hi: 'स्वचालित अपडेट' }[lang] || 'Automatic Updates'}
         </span>
       </div>
-      <span class="text-[var(--accent)] font-semibold uppercase tracking-wider text-[11px]">No API Keys Required</span>
+      <span class="text-[var(--accent)] font-semibold uppercase tracking-wider text-[11px]">{{ en: 'No API Keys Required', es: 'Sin Claves API', fr: 'Sans Clé API', de: 'Keine API-Schlüssel', ko: 'API 키 필요 없음', hi: 'कोई API कुंजी आवश्यक नहीं' }[lang] || 'No API Keys Required'}</span>
     </div>
   </div>
 </section>

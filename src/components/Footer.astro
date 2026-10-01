@@ -12,6 +12,9 @@ interface FooterTranslation {
   legalStatus: string;
   legalText: string;
   copyright: string;
+  whoBadge: string;
+  privacyBadge: string;
+  privacyFooter: string;
   links: { name: string; href: string }[];
 }
 
@@ -23,6 +26,9 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: 'Medical Disclaimer',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator. All rights reserved.`,
+    whoBadge: 'WHO & CDC Aligned',
+    privacyBadge: 'Free & Privacy-Focused',
+    privacyFooter: 'Privacy-First Health Calculators',
     links: [
       { name: 'About Us', href: `/en/about/` },
       { name: 'Contact Us', href: `/en/contact/` },
@@ -40,6 +46,9 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: 'Aviso Médico',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator. Todos los derechos reservados.`,
+    whoBadge: 'Alineado con OMS y CDC',
+    privacyBadge: 'Gratis y Privado',
+    privacyFooter: 'Calculadoras de Salud Privadas',
     links: [
       { name: 'Sobre Nosotros', href: `/es/about/` },
       { name: 'Contacto', href: `/es/contact/` },
@@ -57,6 +66,9 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: 'Avertissement Médical',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator. Tous droits réservés.`,
+    whoBadge: 'Aligné OMS & CDC',
+    privacyBadge: 'Gratuit & Confidentiel',
+    privacyFooter: 'Calculateurs de Santé Confidentiels',
     links: [
       { name: 'À Propos', href: `/fr/about/` },
       { name: 'Contact', href: `/fr/contact/` },
@@ -74,6 +86,9 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: 'Medizinischer Hinweis',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator. Alle Rechte vorbehalten.`,
+    whoBadge: 'WHO- & CDC-Konform',
+    privacyBadge: 'Kostenlos & Datenschutz',
+    privacyFooter: 'Datenschutz-Gesundheitsrechner',
     links: [
       { name: 'Über Uns', href: `/de/about/` },
       { name: 'Kontakt', href: `/de/contact/` },
@@ -91,6 +106,9 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: '의학적 면책조항',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator. 모든 권리 보유.`,
+    whoBadge: 'WHO 및 CDC 지침 준수',
+    privacyBadge: '무료 및 개인정보 보호',
+    privacyFooter: '개인정보 보호 건강 계산기',
     links: [
       { name: '회사 소개', href: `/ko/about/` },
       { name: '문의하기', href: `/ko/contact/` },
@@ -108,6 +126,9 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: 'चिकित्सा अस्वीकरण',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator। सर्वाधिकार सुरक्षित।`,
+    whoBadge: 'WHO और CDC मानकों पर आधारित',
+    privacyBadge: 'मुफ़्त और 100% सुरक्षित',
+    privacyFooter: 'गोपनीयता-प्रथम स्वास्थ्य कैलकुलेटर',
     links: [
       { name: 'हमारे बारे में', href: `/hi/about/` },
       { name: 'संपर्क करें', href: `/hi/contact/` },
@@ -155,10 +176,10 @@ const healthToolsLinks = calculators.map((calc) => ({
         <div class="pt-0.5 flex flex-wrap gap-1.5">
           <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[var(--muted)] border border-[var(--border)] text-[10px] font-display font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            WHO & CDC Aligned
+            {ft.whoBadge}
           </span>
           <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[var(--muted)] border border-[var(--border)] text-[10px] font-display font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
-            Free & Privacy-Focused
+            {ft.privacyBadge}
           </span>
         </div>
       </div>
@@ -216,7 +237,7 @@ const healthToolsLinks = calculators.map((calc) => ({
         </p>
       </div>
       <div class="flex items-center gap-3">
-        <span class="opacity-80">Privacy-First Health Calculators</span>
+        <span class="opacity-80">{ft.privacyFooter}</span>
       </div>
     </div>
 

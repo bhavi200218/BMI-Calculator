@@ -1,46 +1,63 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
-<Layout title="Real BMI 소개 - 독립 프로젝트">
+<Layout 
+    title="Real BMI 소개 - 독립 건강 계산기 프로젝트"
+    description="Real BMI는 Bhawanshi Dosi가 제작 및 관리하는 독립 헬스 케어 계산기 웹사이트로, BMI, BMR, TDEE 및 체성분 추정치를 제공합니다."
+>
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-16">
-        <div class="space-y-4">
-            <a href="/ko" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                홈으로 돌아가기
-            </a>
-            <h1 class="text-6xl font-black tracking-tighter uppercase">회사 소개</h1>
+    <PageShell
+      title="Real BMI 소개"
+      eyebrow="독립 계산기 프로젝트"
+      description="공표된 수학 공식과 공중보건 참조 표준을 기반으로 Bhawanshi Dosi가 제작 및 관리합니다."
+      returnUrl="/ko"
+      returnLabel="홈"
+    >
+      <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
+        <div class="space-y-10">
+          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+            <p><strong>Real BMI</strong>는 <strong>Bhawanshi Dosi</strong>가 제작 및 관리하는 독립 헬스 케어 계산기 웹사이트입니다. 공표된 수학 공식과 공개된 건강 참조 지표를 사용하여 교육용 추정치를 제공합니다.</p>
+            <p>Real BMI는 의료 기관, 병원, 의사 검수 서비스가 아닙니다. 모든 도구는 오직 교육, 라이프스타일 기획 및 개인 참고 목적으로 설계되었습니다.</p>
+            <p>Mifflin-St Jeor, Harris-Benedict, Boer, Devine, Mosteller와 같은 공식 및 <strong>WHO</strong>, <strong>CDC</strong> 지침을 바탕으로 참조 도구를 제작합니다.</p>
+            <p>입력된 건강 정보는 브라우저 내부에서만 처리되며 서버로 전송되지 않습니다.</p>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">공표된 공식 적용</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">검증된 수학적 방정식 및 인구 통계학적 참조 지표에 기반한 계산.</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">개인정보 보호 우선</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">입력 정보는 기기 내부에서만 처리되며 서버에 저장되지 않습니다.</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">독립 프로젝트</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Bhawanshi Dosi가 독자적으로 제작 및 유지 관리합니다.</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">교육용 참고 지표</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">임상 진단이 아닌 생활 습관 관리를 위한 실용적인 참고 수치.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-xl font-bold">
-            <div class="space-y-6">
-                <p>
-                    <strong>Real BMI</strong>는 <strong>Bhawanshi Dosi</strong>가 독립적으로 제작하고 유지 관리하는 건강 계산기 웹사이트입니다. 계산기는 공개된 수학적 방정식과 공중 보건 참조 범위를 사용하여 교육적 추정치를 제공합니다.
-                </p>
-                <p>
-                    Real BMI는 의료 기관, 병원, 의원 또는 의사의 검토를 받는 서비스가 아닙니다. 모든 도구는 오직 교육 및 개인 참조 용도로만 설계되었습니다.
-                </p>
-                <p>
-                    입력된 모든 데이터는 웹 브라우저 내에만 남아 있습니다. 개인 건강 데이터는 외부 서버에 저장되거나 전송되지 않습니다.
-                </p>
-            </div>
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)]">
+          <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">프로젝트 미션</p>
+          <h2 class="mt-4 text-3xl font-black text-[var(--foreground)]">투명한 참조 도구</h2>
+          <p class="mt-4 text-base leading-relaxed text-[var(--muted-foreground)]">Real BMI는 사용자가 공식 발표 지침과 자신의 건강 수치를 쉽게 비교할 수 있도록 돕습니다.</p>
 
-            <div class="pt-8 space-y-4 text-[var(--foreground)] border-t border-[var(--border)]">
-                <p class="text-3xl font-black tracking-tighter">
-                    문의하기
-                </p>
-                <p class="text-lg opacity-60">
-                    계산기 방법론이나 웹사이트에 대한 문의 사항이 있으시면 언제든지 연락해 주세요.
-                </p>
-                <div class="pt-2">
-                    <a href="mailto:support@realbmicalculator.com" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline group">
-                        support@realbmicalculator.com
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
+          <div class="mt-8 space-y-4 text-sm text-[var(--muted-foreground)] leading-relaxed">
+            <p><strong>공개된 방법론:</strong> 학술 검증을 거친 공식과 공개 reference range 활용.</p>
+            <p><strong>브라우저 보안:</strong> 개인 건강 정보의 서버 저장 및 공유 없음.</p>
+            <p><strong>명확한 경계:</strong> Real BMI는 독립 프로젝트이며 병원이나 진료 서비스가 아닙니다.</p>
+          </div>
+
+          <a href="/ko/contact" class="mt-8 inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">Bhawanshi에게 문의하기</a>
+        </aside>
+      </div>
+    </PageShell>
 </Layout>

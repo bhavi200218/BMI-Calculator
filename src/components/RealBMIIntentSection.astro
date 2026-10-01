@@ -215,7 +215,21 @@ const data: Record<string, any> = {
         title: "Au-delà de la Balance : Graisse Abdominale",
         desc: "L'IMC mesure la masse totale, pas la répartition des graisses. La graisse viscérale profonde présente des risques cardiovasculaires supérieurs."
       }
-    ]
+    ],
+    compBadge: "Aperçu des Indicateurs de Santé",
+    compTitle: "IMC Standard vs. Calculateur Real BMI",
+    colMetric: "Métrique de Santé",
+    colStd: "IMC Échelle Standard",
+    colReal: "Calculateur Real BMI",
+    compRows: [
+      { title: "Densité Musculaire des Sportifs", std: "❌ Classe à tort la masse musculaire comme 'Surpoids' ou 'Obésité'", real: "✅ S'ajuste avec des estimations de BMR et % de graisse" },
+      { title: "Seuil Viscéral Asiatique OMS", std: "❌ Ignore le seuil asiatique de surpoids de 23.0 kg/m²", real: "✅ Intègre pleinement les seuils révisés de l'OMS" },
+      { title: "Objectif Calorique Métabolique", std: "❌ Fournit uniquement un chiffre statique poids-taille", real: "✅ Calcule les besoins caloriques quotidiens BMR & TDEE" },
+      { title: "Évaluation de la Graisse Abdominale", std: "❌ Ne peut pas mesurer le tour de taille ni le risque viscéral", real: "✅ Associe l'IMC à l'outil du rapport Taille-Hanche" }
+    ],
+    ctaTitle: "Voulez-vous savoir si l'IMC est vraiment précis pour vous ?",
+    ctaDesc: "Lisez notre analyse complète basée sur les recherches et recommandations de l'OMS.",
+    ctaBtn: "Lire le Guide Complet : L'IMC est-il Précis ?"
   },
   de: {
     eyebrow: "Gesundheits-Referenzleitlinien",
@@ -242,7 +256,21 @@ const data: Record<string, any> = {
         title: "Bauchfett & Gesundheit",
         desc: "Der BMI misst die Gesamtmasse, nicht die Fettverteilung. Tiefes Bauchfett birgt deutlich höhere Stoffwechselrisiken als Unterhautfettgewebe."
       }
-    ]
+    ],
+    compBadge: "Übersicht der Gesundheitsindikatoren",
+    compTitle: "Standard-BMI vs. Real BMI Rechner",
+    colMetric: "Gesundheitsmetrik",
+    colStd: "Standard-BMI-Skala",
+    colReal: "Real BMI Rechner",
+    compRows: [
+      { title: "Muskeldichte bei Sportlern", std: "❌ Stuft Muskelmasse fälschlicherweise als 'Übergewichtig' ein", real: "✅ Passt sich mit BMR- & Körperfett-Schätzungen an" },
+      { title: "Asiatischer WHO-Viszeralgrenzwert", std: "❌ Ignoriert den asiatischen Grenzwert von 23,0 kg/m²", real: "✅ Integriert die überarbeiteten WHO-Grenzwerte vollständig" },
+      { title: "Stoffwechsel-Kalorienziel", std: "❌ Bietet nur eine statische Gewicht-zu-Größe-Zahl", real: "✅ Berechnet täglichen BMR- & TDEE-Kalorienbedarf" },
+      { title: "Beurteilung von Bauchfett", std: "❌ Kann Taifenumfang oder viszerales Risiko nicht messen", real: "✅ Kombiniert BMI mit dem Taille-Hüfte-Verhältnis-Tool" }
+    ],
+    ctaTitle: "Möchten Sie wissen, ob der BMI für Sie wirklich genau ist?",
+    ctaDesc: "Lesen Sie unsere detaillierte Analyse zu Muskeldichte und WHO-Richtlinien.",
+    ctaBtn: "Vollständigen Leitfaden Lesen: Wie Genau Ist Der BMI?"
   }
 };
 

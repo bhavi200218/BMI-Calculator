@@ -382,6 +382,150 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
             ]
           };
         }
+        else if (slug === 'bmi-chart') {
+          const hM = heightCm / 100;
+          const bmi = heightCm > 0 ? weightKg / (hM * hM) : 0;
+          let category = 'Healthy Weight (18.5 - 24.9)';
+          if (bmi < 18.5) category = 'Underweight (< 18.5)';
+          else if (bmi >= 25.0 && bmi < 30.0) category = 'Overweight (25.0 - 29.9)';
+          else if (bmi >= 30.0) category = 'Obesity (≥ 30.0)';
+
+          const minHealthy = 18.5 * (hM * hM);
+          const maxHealthy = 24.9 * (hM * hM);
+          const isImp = currentUnitSystem === 'imperial';
+
+          calculated = {
+            primary: { value: bmi.toFixed(1), label: { en: 'BMI Chart Score', es: 'Puntaje de IMC', fr: 'Score d\'IMC', de: 'BMI-Wert', ko: 'BMI 차트 점수', hi: 'बीएमआई चार्ट स्कोर' } },
+            secondary: [
+              { label: { en: 'WHO Adult Classification', es: 'Clasificación OMS', fr: 'Classification OMS', de: 'WHO Klassifizierung', ko: 'WHO 성인 분류', hi: 'डब्ल्यूएचओ वयस्क वर्गीकरण' }, value: category },
+              { label: { en: 'Healthy Chart Weight Window', es: 'Rango de Peso Saludable', fr: 'Plage de Poids Santé', de: 'Gesundes Gewicht', ko: '건강한 체중 범위', hi: 'स्वस्थ वजन चार्ट सीमा' }, value: `${(isImp ? minHealthy * 2.20462 : minHealthy).toFixed(1)} - ${(isImp ? maxHealthy * 2.20462 : maxHealthy).toFixed(1)}`, unit: isImp ? 'lbs' : 'kg' }
+            ]
+          };
+        }
+        else if (slug === 'bmi-calculator-india' || slug === 'bmi-calculator-for-indians') {
+          const hM = heightCm / 100;
+          const bmi = weightKg / (hM * hM);
+          let indianCat = 'Healthy Weight (18.5 - 22.9)';
+          if (bmi < 18.5) indianCat = 'Underweight (< 18.5)';
+          else if (bmi >= 23.0 && bmi < 25.0) indianCat = 'Overweight / At Risk (23.0 - 24.9)';
+          else if (bmi >= 25.0 && bmi < 30.0) indianCat = 'Obese Class I (25.0 - 29.9)';
+          else if (bmi >= 30.0) indianCat = 'Obese Class II (≥ 30.0)';
+
+          const minHealthyW = 18.5 * (hM * hM);
+          const maxHealthyW = 22.9 * (hM * hM);
+          const waistLimit = isM ? 90 : 80;
+          const waistStatus = waistCm > 0 ? (waistCm >= waistLimit ? 'Elevated (ICMR Visceral Risk)' : 'Healthy Waist') : 'Not Provided';
+          const isImp = currentUnitSystem === 'imperial';
+          const minW = isImp ? minHealthyW * 2.20462 : minHealthyW;
+          const maxW = isImp ? maxHealthyW * 2.20462 : maxHealthyW;
+
+          calculated = {
+            primary: { value: bmi.toFixed(1), label: { en: 'Indian Standard BMI', es: 'IMC Estándar India', fr: 'IMC Standard Inde', de: 'Indien-Standard-BMI', ko: '인도 표준 BMI', hi: 'भारतीय मानक बीएमआई' } },
+            secondary: [
+              { label: { en: 'Asian/Indian Classification', es: 'Clasificación Asiática', fr: 'Classification Asiatique', de: 'Asiatische Klassifizierung', ko: '아시아/인도 분류', hi: 'भारतीय बीएमआई वर्ग' }, value: indianCat },
+              { label: { en: 'Healthy Weight Window (India)', es: 'Rango de Peso Saludable (India)', fr: 'Plage de Poids Santé (Inde)', de: 'Gesundes Gewicht (Indien)', ko: '인도 권장 건강 체중 범위', hi: 'स्वास्थ्यप्रद वजन सीमा (भारत)' }, value: `${minW.toFixed(1)} - ${maxW.toFixed(1)}`, unit: isImp ? 'lbs' : 'kg' },
+              { label: { en: 'ICMR Waist Risk Status', es: 'Estado de Cintura ICMR', fr: 'Statut Tour de Taille ICMR', de: 'ICMR Taillen-Status', ko: 'ICMR 허리 둘레 평가', hi: 'ICMR कमर जोखिम स्थिति' }, value: waistStatus },
+              { label: { en: 'Indian Overweight Threshold', es: 'Umbral de Acción', fr: 'Seuil d\'Action', de: 'Aktions-Schwellenwert', ko: '주의 개시 기준점', hi: 'भारतीय ओवरवेट कटऑफ' }, value: '23.0 kg/m²' }
+            ]
+          };
+        }
+        else if (slug === 'asian-bmi-calculator') {
+          const hM = heightCm / 100;
+          const bmi = weightKg / (hM * hM);
+          let cat = 'Healthy Weight (18.5 - 22.9)';
+          if (bmi < 18.5) cat = 'Underweight (< 18.5)';
+          else if (bmi >= 23.0 && bmi < 27.5) cat = 'Overweight / At Risk (23.0 - 27.4)';
+          else if (bmi >= 27.5) cat = 'Obese (≥ 27.5)';
+
+          const minHealthy = 18.5 * (hM * hM);
+          const maxHealthy = 22.9 * (hM * hM);
+          const isImp = currentUnitSystem === 'imperial';
+          const minW = isImp ? minHealthy * 2.20462 : minHealthy;
+          const maxW = isImp ? maxHealthy * 2.20462 : maxHealthy;
+
+          calculated = {
+            primary: { value: bmi.toFixed(1), label: { en: 'Asian Adjusted BMI', es: 'IMC Ajustado Asiático', fr: 'IMC Ajusté Asiatique', de: 'Asiatischer BMI-Wert', ko: '아시아인 보정 BMI', hi: 'एशियाई समायोजित बीएमआई' } },
+            secondary: [
+              { label: { en: 'WHO Asian Category', es: 'Categoría OMS Asiática', fr: 'Catégorie OMS Asiatique', de: 'WHO Asiatische Kategorie', ko: 'WHO 아시아인 범주', hi: 'WHO एशियाई श्रेणी' }, value: cat },
+              { label: { en: 'Asian Healthy Weight Window', es: 'Rango de Peso Saludable Asiático', fr: 'Plage de Poids Santé Asiatique', de: 'Asiatisches Gesundes Gewicht', ko: '아시아인 권장 건강 체중 범위', hi: 'एशियाई स्वस्थ वजन सीमा' }, value: `${minW.toFixed(1)} - ${maxW.toFixed(1)}`, unit: isImp ? 'lbs' : 'kg' },
+              { label: { en: 'Asian Action Cutoff', es: 'Corte de Acción Asiático', fr: 'Seuil d\'Action Asiatique', de: 'Asien Aktionsschwelle', ko: '아시아인 주의 개시 기준점', hi: 'एशियाई एक्शन कटऑफ' }, value: '23.0 kg/m²' }
+            ]
+          };
+        }
+        else if (slug === 'healthy-weight-by-height') {
+          const hM = heightCm / 100;
+          const minHealthy = 18.5 * (hM * hM);
+          const maxHealthy = 24.9 * (hM * hM);
+          const over5Ft = Math.max(0, (heightCm / 2.54) - 60);
+          const devineIBW = isM ? 50.0 + (2.3 * over5Ft) : 45.5 + (2.3 * over5Ft);
+          const isImp = currentUnitSystem === 'imperial';
+          const minW = isImp ? minHealthy * 2.20462 : minHealthy;
+          const maxW = isImp ? maxHealthy * 2.20462 : maxHealthy;
+          const devW = isImp ? devineIBW * 2.20462 : devineIBW;
+          const unitStr = isImp ? 'lbs' : 'kg';
+
+          let statusMsg = 'Optimal Range';
+          if (weightKg > 0) {
+            if (weightKg < minHealthy) statusMsg = `${(isImp ? (minHealthy - weightKg)*2.20462 : (minHealthy - weightKg)).toFixed(1)} ${unitStr} below min healthy weight`;
+            else if (weightKg > maxHealthy) statusMsg = `${(isImp ? (weightKg - maxHealthy)*2.20462 : (weightKg - maxHealthy)).toFixed(1)} ${unitStr} above max healthy weight`;
+            else statusMsg = `Within healthy weight range`;
+          }
+
+          calculated = {
+            primary: { value: `${minW.toFixed(1)} - ${maxW.toFixed(1)}`, label: { en: 'WHO Healthy Weight Range', es: 'Rango de Peso Saludable OMS', fr: 'Plage de Poids Santé OMS', de: 'WHO Gesunder Gewichtsbereich', ko: 'WHO 건강한 체중 범위', hi: 'WHO स्वास्थ्यप्रद वजन सीमा' }, unit: unitStr },
+            secondary: [
+              { label: { en: 'Devine Ideal Body Weight (IBW)', es: 'Peso Corporal Ideal Devine', fr: 'Poids Idéal Devine', de: 'Devine Idealgewicht (IBW)', ko: 'Devine 이상 체중', hi: 'डिवाइन आदर्श वजन (IBW)' }, value: devW.toFixed(1), unit: unitStr },
+              { label: { en: 'Current Weight Status', es: 'Estado del Peso Actual', fr: 'Statut du Poids Actuel', de: 'Aktueller Gewichtsstatus', ko: '현재 체중 상태 평가', hi: 'वर्तमान वजन स्थिति' }, value: statusMsg }
+            ]
+          };
+        }
+        else if (slug === 'maintenance-calorie-calculator') {
+          const act = parseFloat(activityVal) || 1.2;
+          const bmr = isM
+            ? (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) + 5
+            : (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) - 161;
+          const tdee = bmr * act;
+
+          calculated = {
+            primary: { value: Math.round(tdee), label: { en: 'Daily Maintenance Calories', es: 'Calorías de Mantenimiento', fr: 'Calories de Maintien Quotidiennes', de: 'Tägliche Erhaltungskalorien', ko: '일일 유지 칼로리', hi: 'दैनिक रखरखाव कैलोरी' }, unit: 'kcal/day' },
+            secondary: [
+              { label: { en: 'Basal Metabolic Rate (BMR)', es: 'Metabolismo Basal (BMR)', fr: 'Métabolisme de Base (BMR)', de: 'Grundumsatz (BMR)', ko: '기초대사량 (BMR)', hi: 'बेसल मेटाबॉलिक रेट' }, value: Math.round(bmr), unit: 'kcal' },
+              { label: { en: 'Mild Deficit (-250 kcal)', es: 'Ejemplo Déficit Leve (-250 kcal)', fr: 'Exemple Déficit Léger (-250 kcal)', de: 'Beispiel-Defizit (-250 kcal)', ko: '완만한 예시 칼로리 (-250 kcal)', hi: 'हल्का उदाहरण घाटा (-250 kcal)' }, value: Math.round(tdee - 250), unit: 'kcal' },
+              { label: { en: 'Standard Deficit (-500 kcal)', es: 'Ejemplo Déficit Estándar (-500 kcal)', fr: 'Exemple Déficit Standard (-500 kcal)', de: 'Beispiel-Defizit (-500 kcal)', ko: '표준 예시 칼로리 (-500 kcal)', hi: 'मानक उदाहरण घाटा (-500 kcal)' }, value: Math.round(tdee - 500), unit: 'kcal' }
+            ]
+          };
+        }
+        else if (slug === 'karvonen-heart-rate-calculator') {
+          const rhrVal = parseFloat(val('rhr')) || 60;
+          const maxHr = 220 - ageNum;
+          const hrr = Math.max(0, maxHr - rhrVal);
+
+          const zone1Min = Math.round(rhrVal + (hrr * 0.5));
+          const zone1Max = Math.round(rhrVal + (hrr * 0.6));
+          const zone2Min = Math.round(rhrVal + (hrr * 0.6));
+          const zone2Max = Math.round(rhrVal + (hrr * 0.7));
+
+          calculated = {
+            primary: { value: `${zone2Min} - ${zone2Max}`, label: { en: 'Karvonen Fat Burn Zone (60-70%)', es: 'Zona Quema Grasa (60-70%)', fr: 'Zone Brûle-Graisse (60-70%)', de: 'Karvonen Fettverbrennung (60-70%)', ko: 'Karvonen 지방 연소 구간 (60-70%)', hi: 'कार्वोनेन फैट बर्न ज़ोन (60-70%)' }, unit: 'bpm' },
+            secondary: [
+              { label: { en: 'Zone 1: Warm-up (50-60%)', es: 'Zona 1: Calentamiento (50-60%)', fr: 'Zone 1: Échauffement (50-60%)', de: 'Zone 1: Aufwärmen (50-60%)', ko: 'Zone 1: 웜업/회복 (50-60%)', hi: 'ज़ोन 1: वार्म-अप (50-60%)' }, value: `${zone1Min} - ${zone1Max}`, unit: 'bpm' },
+              { label: { en: 'Heart Rate Reserve (HRR)', es: 'Reserva de Frecuencia Cardíaca', fr: 'Réserve Cardiaque (HRR)', de: 'Herzfrequenzreserve', ko: '심박 예비능 (HRR)', hi: 'हार्ट रेट रिजर्व' }, value: hrr, unit: 'bpm' }
+            ]
+          };
+        }
+        else if (slug === '1rm-calculator') {
+          const liftW = parseFloat(val('weight')) || 0;
+          const reps = parseInt(val('age')) || 1;
+          const epley1RM = liftW * (1 + (reps / 30));
+          const brzycki1RM = reps < 37 ? liftW * (36 / (37 - reps)) : epley1RM;
+
+          calculated = {
+            primary: { value: Math.round(epley1RM), label: { en: 'Estimated 1RM (Epley)', es: '1RM Estimado (Epley)', fr: '1RM Estimé (Epley)', de: 'Geschätzter 1RM (Epley)', ko: 'Epley 추정 1RM', hi: 'अनुमानित 1RM (Epley)' }, unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
+            secondary: [
+              { label: { en: 'Brzycki Formula 1RM', es: 'Fórmula Brzycki 1RM', fr: 'Formule Brzycki 1RM', de: 'Brzycki Formel 1RM', ko: 'Brzycki 추정 1RM', hi: 'ब्रज़िकी 1RM' }, value: Math.round(brzycki1RM), unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' }
+            ]
+          };
+        }
         else if (slug === 'diabetes-risk-calculator') {
           const hM = heightCm / 100;
           const bmi = weightKg / (hM * hM);

@@ -87,7 +87,7 @@ export const calculators: CalculatorConfig[] = [
         secondary: [
           { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: cat.en },
           { label: { en: 'Est. Body Fat', es: 'Grasa Estimada', fr: 'Graisse Corp. Est.', de: 'Körperfett', ko: '체지방률', hi: 'अनुमानित वसा' }, value: bodyFat.toFixed(1), unit: '%' },
-          { label: { en: 'Ideal Weight', es: 'Peso Ideal', fr: 'Poids Idéal', de: 'Idealgewicht', ko: '이상적인 체중', hi: 'आदर्श वजन' }, value: ideal.toFixed(1), unit: system === 'imperial' ? 'lbs' : 'kg' }
+          { label: { en: 'Ideal Weight', es: 'Peso Ideal', fr: 'Poids Idéal', de: 'Idealgewicht', ko: '이상적인 체중', hi: 'आदर्श वजन' }, value: (system === 'imperial' ? ideal / 0.453592 : ideal).toFixed(1), unit: system === 'imperial' ? 'lbs' : 'kg' }
         ]
       };
     }

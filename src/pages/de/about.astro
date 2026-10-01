@@ -1,46 +1,63 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
-<Layout title="Über Real BMI - Unabhängiges Projekt">
+<Layout 
+    title="Über Real BMI - Unabhängiges Gesundheitsrechner-Projekt"
+    description="Real BMI ist ein unabhängiges Gesundheitsrechner-Portal von Bhawanshi Dosi für Referenzschätzungen von BMI, BMR, TDEE und Körperzusammensetzung."
+>
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-16">
-        <div class="space-y-4">
-            <a href="/de" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                Zurück zur Startseite
-            </a>
-            <h1 class="text-6xl font-black tracking-tighter uppercase">Über Uns</h1>
+    <PageShell
+      title="Über Real BMI"
+      eyebrow="Unabhängiges Rechner-Projekt"
+      description="Erstellt und gepflegt von Bhawanshi Dosi auf Basis veröffentlichter Formeln und öffentlicher Gesundheitsstandards."
+      returnUrl="/de"
+      returnLabel="Startseite"
+    >
+      <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
+        <div class="space-y-10">
+          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+            <p><strong>Real BMI</strong> ist ein unabhängiges Gesundheitsrechner-Portal, das von <strong>Bhawanshi Dosi</strong> entwickelt und gepflegt wird. Die Rechner nutzen dokumentierte mathematische Formeln und öffentlich zugängliche Referenzwerte für Bildungs- und Planungszwecke.</p>
+            <p>Real BMI ist keine medizinische Praxis, kein Krankenhaus und kein von Ärzten geprüfter Dienst. Alle Tools dienen ausschließlich der persönlichen Information und Orientierung.</p>
+            <p>Wir entwickeln Referenz-Tools auf Basis veröffentlichter Gleichungen (wie Mifflin-St.Jeor, Harris-Benedict, Boer, Devine und Mosteller) sowie öffentlicher Richtlinien von Organisationen wie der <strong>WHO</strong> und der <strong>CDC</strong>.</p>
+            <p>Alle eingegebenen Gesundheitsdaten werden lokal in Ihrem Browser verarbeitet und niemals an unsere Server übertragen.</p>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Veröffentlichte Formeln</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Berechnungen basieren auf dokumentierten mathematischen Formeln und Bevölkerungsbenchmarks.</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Datenschutz Zuerst</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Eingaben bleiben lokal auf Ihrem Gerät und werden nicht gespeichert.</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Unabhängiges Projekt</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Eigenständig entwickelt und betreut von Bhawanshi Dosi.</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Informationswerte</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Praktische Referenzen für Lebensstil und Planung, keine medizinische Diagnose.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-xl font-bold">
-            <div class="space-y-6">
-                <p>
-                    <strong>Real BMI</strong> ist eine unabhängige Gesundheitsrechner-Website, die von <strong>Bhawanshi Dosi</strong> erstellt und gepflegt wird. Die Rechner nutzen veröffentlichte mathematische Gleichungen und öffentlich zugängliche Referenzbereiche für Bildungszwecke.
-                </p>
-                <p>
-                    Real BMI ist keine medizinische Praxis, kein Krankenhaus, keine Klinik und kein ärztlich geprüfter Dienst. Alle Tools dienen ausschließlich der allgemeinen Orientierung und persönlichen Planung.
-                </p>
-                <p>
-                    Alle Eingaben verbleiben lokal in Ihrem Browser. Ihre persönlichen Gesundheitsdaten werden niemals gespeichert oder an externe Server übertragen.
-                </p>
-            </div>
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)]">
+          <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Projektmission</p>
+          <h2 class="mt-4 text-3xl font-black text-[var(--foreground)]">Transparente Referenz-Tools</h2>
+          <p class="mt-4 text-base leading-relaxed text-[var(--muted-foreground)]">Real BMI wurde entwickelt, um Menschen zugängliche mathematische Schätzungen zum Vergleich mit offiziellen Referenzwerten zu bieten.</p>
 
-            <div class="pt-8 space-y-4 text-[var(--foreground)] border-t border-[var(--border)]">
-                <p class="text-3xl font-black tracking-tighter">
-                    Kontakt
-                </p>
-                <p class="text-lg opacity-60">
-                    Bei Fragen zur Methodik der Rechner oder zur Website können Sie sich gerne an mich wenden.
-                </p>
-                <div class="pt-2">
-                    <a href="mailto:support@realbmicalculator.com" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline group">
-                        support@realbmicalculator.com
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
+          <div class="mt-8 space-y-4 text-sm text-[var(--muted-foreground)] leading-relaxed">
+            <p><strong>Veröffentlichte Methodik:</strong> Berechnungen nutzen wissenschaftlich fundierte Formeln und öffentliche Referenzbereiche.</p>
+            <p><strong>Browser-Datenschutz:</strong> Keine Speicherung oder Weitergabe persönlicher Gesundheitsdaten.</p>
+            <p><strong>Klarer Rahmen:</strong> Real BMI ist ein unabhängiges Projekt, keine medizinische Beratung oder Klinik.</p>
+          </div>
+
+          <a href="/de/contact" class="mt-8 inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">Bhawanshi Kontaktieren</a>
+        </aside>
+      </div>
+    </PageShell>
 </Layout>

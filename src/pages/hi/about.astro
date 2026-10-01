@@ -1,52 +1,63 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
-<Layout title="हमारे बारे में | Real BMI">
+<Layout 
+    title="Real BMI के बारे में - स्वतंत्र स्वास्थ्य कैलकुलेटर प्रोजेक्ट"
+    description="Real BMI एक स्वतंत्र स्वास्थ्य-कैलकुलेटर वेबसाइट है जिसे Bhawanshi Dosi द्वारा निर्मित एवं संचालित किया जाता है, जो बीएमआई, बीएमआर, टीडीईई और शरीर संरचना के अनुमान प्रदान करती है।"
+>
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-16">
-        <div class="space-y-4">
-            <a href="/hi" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                होम पर वापस जाएं
-            </a>
-            <h1 class="text-6xl font-black tracking-tighter uppercase">हमारे बारे में</h1>
+    <PageShell
+      title="Real BMI के बारे में"
+      eyebrow="स्वतंत्र कैलकुलेटर प्रोजेक्ट"
+      description="Bhawanshi Dosi द्वारा प्रकाशित गणितीय सूत्रों और सार्वजनिक स्वास्थ्य संदर्भ मानकों के आधार पर निर्मित एवं संचालित।"
+      returnUrl="/hi"
+      returnLabel="मुख्य पृष्ठ"
+    >
+      <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
+        <div class="space-y-10">
+          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+            <p><strong>Real BMI</strong> एक स्वतंत्र स्वास्थ्य-कैलकुलेटर वेबसाइट है जिसे <strong>Bhawanshi Dosi</strong> द्वारा निर्मित एवं संचालित किया जाता है। ये कैलकुलेटर प्रकाशित गणितीय समीकरणों और सार्वजनिक रूप से उपलब्ध स्वास्थ्य संदर्भ श्रेणियों का उपयोग करके शैक्षिक अनुमान प्रदान करते हैं।</p>
+            <p>Real BMI कोई मेडिकल प्रैक्टिस, अस्पताल, क्लिनिक या डॉक्टरों द्वारा समीक्षित सेवा नहीं है। सभी उपकरण केवल शैक्षिक, योजना और व्यक्तिगत संदर्भ उद्देश्यों के लिए डिज़ाइन किए गए हैं।</p>
+            <p>हम प्रकाशित सूत्रों (जैसे Mifflin-St Jeor, Harris-Benedict, Boer, Devine, और Mosteller) तथा <strong>WHO</strong> और <strong>CDC</strong> जैसी संस्थाओं के सार्वजनिक दिशानिर्देशों का उपयोग करते हैं।</p>
+            <p>आपकी स्वास्थ्य जानकारी आपके ब्राउज़र में स्थानीय रूप से संसाधित होती है और हमारे सर्वर पर कभी नहीं भेजी जाती।</p>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">प्रकाशित समीकरण</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">दस्तावेजी गणितीय सूत्रों और जनसंख्या बेंचमार्क पर आधारित गणनाएं।</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">गोपनीयता प्रथम</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">आपकी जानकारी केवल आपके डिवाइस पर रहती है, सर्वर पर कभी स्टोर नहीं होती।</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">स्वतंत्र प्रोजेक्ट</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Bhawanshi Dosi द्वारा स्वतंत्र रूप से निर्मित एवं संचालित।</p>
+            </div>
+            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">शैक्षिक अनुमान</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">जीवनशैली योजना के लिए व्यावहारिक संदर्भ, कोई चिकित्सीय निदान नहीं।</p>
+            </div>
+          </div>
         </div>
 
-        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-xl font-bold">
-            <div class="space-y-6">
-                <p>
-                    नमस्ते, Real BMI में आपका स्वागत है।
-                </p>
-                <p>
-                    <strong>Real BMI</strong>, <strong>Bhawanshi Dosi</strong> द्वारा निर्मित एवं संचालित एक स्वतंत्र स्वास्थ्य-कैलकुलेटर वेबसाइट है। यह कैलकुलेटर शैक्षिक और नियोजन उद्देश्यों के लिए अनुमान प्रदान करने हेतु प्रकाशित गणितीय समीकरणों और सार्वजनिक रूप से उपलब्ध स्वास्थ्य संदर्भ श्रेणियों का उपयोग करते हैं।
-                </p>
-                <p>
-                    <strong>Real BMI कोई मेडिकल प्रैक्टिस, अस्पताल, क्लिनिक या डॉक्टर द्वारा समीक्षित सेवा नहीं है।</strong> सभी उपकरण केवल शैक्षिक, व्यक्तिगत योजना और प्रारंभिक संदर्भ के लिए डिज़ाइन किए गए हैं।
-                </p>
-                <p>
-                    हमारे सभी कैलकुलेटर (जैसे BMI, BMR, TDEE, Body Fat) WHO और CDC के मानकों तथा Mifflin-St Jeor, Boer, Devine जैसे प्रसिद्ध प्रकाशित गणितीय सूत्रों पर आधारित हैं।
-                </p>
-                <p>
-                    कैलकुलेटर में दर्ज किए गए स्वास्थ्य डेटा आपके ब्राउज़र में ही प्रोसेस होते हैं और हमारे सर्वर पर नहीं भेजे जाते। वेबसाइट बेनामी एनालिटिक्स या विज्ञापन सेवाओं का उपयोग कर सकती है।
-                </p>
-            </div>
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)]">
+          <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">प्रोजेक्ट का उद्देश्य</p>
+          <h2 class="mt-4 text-3xl font-black text-[var(--foreground)]">पारदर्शी संदर्भ उपकरण</h2>
+          <p class="mt-4 text-base leading-relaxed text-[var(--muted-foreground)]">Real BMI का उद्देश्य लोगों को सुलभ गणितीय अनुमान प्रदान करना है ताकि वे अपने स्वास्थ्य मापों की तुलना प्रकाशित दिशानिर्देशों से कर सकें।</p>
 
-            <div class="pt-8 space-y-4 text-[var(--foreground)] border-t border-[var(--border)]">
-                <p class="text-3xl font-black tracking-tighter">
-                    जुड़ें
-                </p>
-                <p class="text-lg opacity-60">
-                    यदि आपके कोई प्रश्न हैं या आप अपनी स्वास्थ्य यात्रा साझा करना चाहते हैं, तो बेझिझक संपर्क करें।
-                </p>
-                <div class="pt-2">
-                    <a href="mailto:support@realbmicalculator.com" class="inline-flex items-center text-sm font-black hover:opacity-70 transition-opacity uppercase tracking-widest no-underline group">
-                        support@realbmicalculator.com
-                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
+          <div class="mt-8 space-y-4 text-sm text-[var(--muted-foreground)] leading-relaxed">
+            <p><strong>प्रकाशित कार्यप्रणाली:</strong> सहकर्मी-समीक्षित समीकरणों और सार्वजनिक स्वास्थ्य श्रेणियों का उपयोग।</p>
+            <p><strong>ब्राउज़र गोपनीयता:</strong> कोई व्यक्तिगत स्वास्थ्य डेटा संग्रहीत या साझा नहीं किया जाता।</p>
+            <p><strong>स्पष्ट सीमाएं:</strong> Real BMI एक स्वतंत्र वेबसाइट है, कोई मेडिकल क्लिनिक या सलाह सेवा नहीं।</p>
+          </div>
+
+          <a href="/hi/contact" class="mt-8 inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">Bhawanshi से संपर्क करें</a>
+        </aside>
+      </div>
+    </PageShell>
 </Layout>
