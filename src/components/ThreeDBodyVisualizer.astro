@@ -9,6 +9,7 @@ const { lang = 'en' } = Astro.props;
 
 const labels = {
   en: {
+    canvasBadge: "3D Body Visualizer Canvas",
     title: "3D BMI Calculator & Interactive 3D Body Visualizer",
     subtitle: "Oxford 2.5-Power BMI Model & 3D Body Visualization",
     rotate: "Drag / Touch to Rotate 360°",
@@ -20,9 +21,15 @@ const labels = {
     gender: "Gender",
     male: "Male",
     female: "Female",
-    reset: "Reset Camera"
+    reset: "Reset Camera",
+    modelerTitle: "Real-time Body Shape Modeler",
+    volumeScaling: "3D Volume Scaling (x2.5)",
+    viewOutput: "View 3D Body Model Output",
+    disclaimerTitle: "3D Visualizer Disclaimer:",
+    disclaimerText: "The 3D avatar and heatmap render height-to-weight proportion geometry derived from the Oxford 2.5-power formula. It is an educational visualization tool and does not directly measure body fat percentage, muscle mass distribution, or individual medical body composition."
   },
   es: {
+    canvasBadge: "Lienzo del Visualizador Corporal 3D",
     title: "Visualizador Corporal 3D Interactivo",
     subtitle: "Escalado volumétrico 3D en tiempo real según la fórmula Oxford 2.5",
     rotate: "Arrastra para Rotar 360°",
@@ -34,9 +41,15 @@ const labels = {
     gender: "Género",
     male: "Masculino",
     female: "Femenino",
-    reset: "Reiniciar Cámara"
+    reset: "Reiniciar Cámara",
+    modelerTitle: "Modelador Corporal en Tiempo Real",
+    volumeScaling: "Escalado de Volumen 3D (x2.5)",
+    viewOutput: "Ver Modelo Corporal 3D",
+    disclaimerTitle: "Aviso Legal del Visualizador 3D:",
+    disclaimerText: "El avatar 3D y el mapa de calor representan la geometría proporcional de altura y peso derivada de la fórmula de Oxford 2.5. Es una herramienta de visualización educativa y no mide directamente el porcentaje de grasa corporal, la distribución de masa muscular o la composición médica individual."
   },
   fr: {
+    canvasBadge: "Canevas du Visualiseur Corporel 3D",
     title: "Visualiseur Corporel 3D Interactif",
     subtitle: "Mise à l'échelle volumétrique 3D en temps réel selon la formule d'Oxford 2.5",
     rotate: "Glissez pour faire pivoter à 360°",
@@ -48,9 +61,15 @@ const labels = {
     gender: "Genre",
     male: "Homme",
     female: "Femme",
-    reset: "Réinitialiser Caméra"
+    reset: "Réinitialiser Caméra",
+    modelerTitle: "Modélisateur Corporel en Temps Réel",
+    volumeScaling: "Échelle de Volume 3D (x2.5)",
+    viewOutput: "Voir le Modèle Corporel 3D",
+    disclaimerTitle: "Avertissement du Visualiseur 3D :",
+    disclaimerText: "L'avatar 3D et la carte de chaleur représentent la géométrie proportionnelle de la taille et du poids dérivée de la formule d'Oxford 2.5. Il s'agit d'un outil de visualisation éducatif qui ne mesure pas directement le pourcentage de graisse corporelle, la répartition de la masse musculaire ou la composition médicale individuelle."
   },
   de: {
+    canvasBadge: "3D-Körper-Visualisierer Studio",
     title: "Interaktiver 3D-Körper-Visualisierer",
     subtitle: "Echtzeit-3D-Volumenskalierung basierend auf der Oxford 2.5 Formel",
     rotate: "Ziehen zum Drehen um 360°",
@@ -62,9 +81,15 @@ const labels = {
     gender: "Geschlecht",
     male: "Männlich",
     female: "Weiblich",
-    reset: "Kamera zurücksetzen"
+    reset: "Kamera zurücksetzen",
+    modelerTitle: "Echtzeit-Körperform-Modellierer",
+    volumeScaling: "3D-Volumenskalierung (x2.5)",
+    viewOutput: "3D-Körpermodell-Ausgabe anzeigen",
+    disclaimerTitle: "Haftungsausschluss für den 3D-Visualisierer:",
+    disclaimerText: "Der 3D-Avatar und die Heatmap stellen die Höhen- und Gewichtsproportionalgeometrie dar, die aus der Oxford 2.5-Formel abgeleitet wurde. Es ist ein lehrreiches Visualisierungswerkzeug und misst nicht direkt den Körperfettanteil, die Muskelmassenverteilung oder die individuelle medizinische Körperzusammensetzung."
   },
   ko: {
+    canvasBadge: "3D 체형 시각화 캔버스",
     title: "대화형 3D 체형 시각화 도구 (BMI Visualizer)",
     subtitle: "옥스포드 2.5 체질량 공식을 적용한 실시간 3D 실루엣 스케일링",
     rotate: "드래그하여 360° 회전",
@@ -76,9 +101,15 @@ const labels = {
     gender: "성별",
     male: "남성",
     female: "여성",
-    reset: "시점 초기화"
+    reset: "시점 초기화",
+    modelerTitle: "실시간 체형 모델링 시스템",
+    volumeScaling: "3D 볼륨 스케일링 (x2.5)",
+    viewOutput: "3D 체형 모델 결과 보기",
+    disclaimerTitle: "3D 시각화 면책 조항:",
+    disclaimerText: "3D 아바타와 히트맵은 옥스퍼드 2.5 체질량 공식에서 파생된 키 대 체중 비율 기하학을 시각화합니다. 본 도구는 교육용 시각화 도구이며 체지방률, 근육량 분포 또는 개별 의학적 체성분을 직접 측정하지 않습니다."
   },
   hi: {
+    canvasBadge: "3D बॉडी विजुअलाइज़र कैनवास",
     title: "इंटरएक्टिव 3D बॉडी विजुअलाइज़र",
     subtitle: "ऑक्सफोर्ड 2.5 फॉर्मूला के आधार पर वास्तविक समय 3D वॉल्यूम स्केलिंग",
     rotate: "360° घुमाने के लिए ड्रैग करें",
@@ -90,7 +121,12 @@ const labels = {
     gender: "लिंग",
     male: "पुरुष",
     female: "महिला",
-    reset: "कैमरा रीसेट"
+    reset: "कैमरा रीसेट",
+    modelerTitle: "रियल-टाइम बॉडी शेप मॉडलर",
+    volumeScaling: "3D वॉल्यूम स्केलिंग (x2.5)",
+    viewOutput: "3D बॉडी मॉडल आउटपुट देखें",
+    disclaimerTitle: "3D विजुअलाइज़र अस्वीकरण:",
+    disclaimerText: "3D अवतार और हीटमैप ऑक्सफोर्ड 2.5 फॉर्मूला से प्राप्त ऊंचाई-से-वजन अनुपात ज्यामिति को प्रदर्शित करते हैं। यह एक शैक्षिक विज़ुअलाइजेशन टूल है और शरीर में वसा प्रतिशत, मांसपेशी द्रव्यमान वितरण या व्यक्तिगत चिकित्सा शरीर संरचना का सीधे माप नहीं करता है।"
   }
 };
 
@@ -104,7 +140,7 @@ const l = labels[lang] || labels.en;
     <div class="space-y-1">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-[11px] font-display font-bold uppercase tracking-widest border border-[var(--accent)]/30">
         <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
-        3D Body Visualizer Canvas
+        {l.canvasBadge}
       </div>
       <h3 class="text-xl sm:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
         {l.title}
@@ -140,8 +176,7 @@ const l = labels[lang] || labels.en;
           <svg class="w-3.5 h-3.5 text-[var(--accent)] animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          <span class="hidden sm:inline">{l.rotate}</span>
-          <span class="sm:hidden">360° Touch Rotate</span>
+          <span>{l.rotate}</span>
         </div>
         
         <div class="flex items-center gap-2 sm:gap-3">
@@ -161,7 +196,7 @@ const l = labels[lang] || labels.en;
     <!-- Real-time 3D Shape Sliders -->
     <div id="modelerControls3D" class="space-y-5 p-5 sm:p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] scroll-mt-24 sm:scroll-mt-28">
       <h4 class="text-sm sm:text-base font-display font-bold uppercase tracking-wide text-[var(--foreground)] border-b border-[var(--border)]/40 pb-3">
-        Real-time Body Shape Modeler
+        {l.modelerTitle}
       </h4>
 
       <!-- Gender Selector -->
@@ -198,7 +233,7 @@ const l = labels[lang] || labels.en;
       <!-- 3D Volume Ratio Indicator -->
       <div class="p-3.5 rounded-xl bg-[var(--muted)]/50 border border-[var(--border)]/60 space-y-2">
         <div class="flex justify-between items-center text-xs font-display font-bold uppercase">
-          <span class="text-[var(--muted-foreground)]">3D Volume Scaling (x2.5)</span>
+          <span class="text-[var(--muted-foreground)]">{l.volumeScaling}</span>
           <span id="valVolume3D" class="text-[var(--foreground)] font-mono">1.00x</span>
         </div>
         <div class="w-full bg-black/20 h-2 rounded-full overflow-hidden">
@@ -211,7 +246,7 @@ const l = labels[lang] || labels.en;
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
-        <span>View 3D Body Model Output</span>
+        <span>{l.viewOutput}</span>
       </button>
 
     </div>
@@ -222,7 +257,7 @@ const l = labels[lang] || labels.en;
   <div class="mt-2 p-3.5 sm:p-4 rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs text-[var(--muted-foreground)] font-medium flex items-start gap-3">
     <span class="text-base shrink-0">ℹ️</span>
     <p class="leading-relaxed">
-      <strong class="text-[var(--foreground)]">3D Visualizer Disclaimer:</strong> The 3D avatar and heatmap render height-to-weight proportion geometry derived from the Oxford 2.5-power formula. It is an educational visualization tool and does not directly measure body fat percentage, muscle mass distribution, or individual medical body composition.
+      <strong class="text-[var(--foreground)]">{l.disclaimerTitle}</strong> {l.disclaimerText}
     </p>
   </div>
 

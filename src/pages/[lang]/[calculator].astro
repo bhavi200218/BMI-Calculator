@@ -48,6 +48,47 @@ const localizedIntro = {
 const bHome = { en: 'Home', es: 'Inicio', fr: 'Accueil', de: 'Startseite', ko: '홈', hi: 'मुख्य पृष्ठ' }[lang];
 const bCalc = { en: 'Calculators', es: 'Calculadoras', fr: 'Calculateurs', de: 'Rechner', ko: '계산기', hi: 'कैलकुलेटर' }[lang];
 
+const checklist3D: Record<string, string[]> = {
+  en: [
+    'Calculate your BMI with 360° interactive 3D view',
+    'Enter your height and weight in cm, inches, kg or lbs',
+    'Choose between Solid 3D Mesh, Wireframe, and Heatmap views',
+    'Oxford 2.5 Power Formula (1.3 × weight / height²·⁵)'
+  ],
+  es: [
+    'Calcula tu IMC con vista 3D interactiva de 360°',
+    'Introduce tu altura y peso en cm, pulgadas, kg o lbs',
+    'Elige entre Malla 3D Sólida, Estructura de alambre y Mapa de calor',
+    'Fórmula Oxford 2.5 Exponencial (1.3 × peso / altura²·⁵)'
+  ],
+  fr: [
+    'Calculez votre IMC avec une vue 3D interactive à 360°',
+    'Entrez votre taille et votre poids en cm, pouces, kg ou lbs',
+    'Choisissez entre Maillage 3D, Fil de fer et Carte de chaleur',
+    'Formule d\'Oxford 2.5 Puissance (1.3 × poids / taille²·⁵)'
+  ],
+  de: [
+    'Berechnen Sie Ihren BMI mit interaktiver 360°-3D-Ansicht',
+    'Geben Sie Größe und Gewicht in cm, Zoll, kg oder lbs ein',
+    'Wählen Sie zwischen Solidem 3D-Netz, Drahtmodell und Heatmap',
+    'Oxford 2.5 Potenzformel (1.3 × Gewicht / Größe²·⁵)'
+  ],
+  ko: [
+    '360° 대화형 3D 뷰로 BMI를 계산하세요',
+    'cm, inch, kg, lbs 단위로 신장과 체중을 입력하세요',
+    '3D 솔리드 메쉬, 와이어프레임, 히트맵 모드 선택 가능',
+    '옥스포드 2.5 체질량 공식 (1.3 × 체중 / 신장²·⁵)'
+  ],
+  hi: [
+    '360° इंटरएक्टिव 3D दृश्य के साथ अपने बीएमआई की गणना करें',
+    'सेमी, इंच, किग्रा या पाउंड में अपनी ऊंचाई और वजन दर्ज करें',
+    'सॉलिड 3D मेश, वायरफ्रेम और हीटमैप व्यू के बीच चुनें',
+    'ऑक्सफोर्ड 2.5 फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵)'
+  ]
+};
+
+const items3D = checklist3D[lang] || checklist3D.en;
+
 // WebApplication Schema for SEO
 const webAppSchema = {
   "@context": "https://schema.org",
@@ -102,22 +143,12 @@ const webAppSchema = {
 
           <!-- Featured Snippet SEO Checklist Box (Shifted below 3D studio for Google indexing) -->
           <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] text-left text-xs font-semibold text-[var(--foreground)] max-w-3xl mx-auto shadow-xs">
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Calculate your BMI with 360° interactive 3D view
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Enter your height and weight in cm, inches, kg or lbs
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Choose between Solid 3D Mesh, Wireframe, and Heatmap views
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Oxford 2.5 Power Formula (1.3 × weight / height²·⁵)
-            </li>
+            {items3D.map(item => (
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
       ) : (
