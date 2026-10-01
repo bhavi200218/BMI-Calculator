@@ -134,7 +134,11 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Obesidad Clase III', col2: '≥ 40.0 kg/m²', col3: 'Rango de referencia de obesidad clase III' }
       ],
       faqs: [
-        { question: '¿Qué es la Calculadora de IMC y cómo calcular el IMC?', answer: 'El Índice de Masa Corporal (IMC) es una medida estándar de salud poblacional. Para calcular el IMC, divide el peso en kg por la altura en metros al cuadrado.' }
+        { question: '¿Qué es la Calculadora de IMC y cómo calcular el IMC?', answer: 'El Índice de Masa Corporal (IMC) es una medida estándar de salud poblacional. Para calcular el IMC, divide el peso en kg por la altura en metros al cuadrado (kg/m²), o usa unidades imperiales [Peso (lbs) / Altura (pulgadas)²] × 703.' },
+        { question: '¿Cómo calcular el IMC con precisión para hombres y mujeres?', answer: 'El cálculo del IMC es idéntico para hombres y mujeres adultos, basándose en la altura y el peso. Nuestra calculadora evalúa tu puntuación con los rangos de la OMS.' },
+        { question: '¿Cuál es la tabla y escala oficial de IMC de la OMS?', answer: 'La tabla de la OMS categoriza a los adultos en cuatro rangos principales: Bajo peso (<18.5), Peso saludable (18.5–24.9), Sobrepeso (25.0–29.9) y Obesidad (≥30.0). Para poblaciones asiáticas, el corte de sobrepeso comienza en 23.0.' },
+        { question: '¿Qué contexto adicional proporciona Real BMI?', answer: 'Real BMI presenta el cálculo estándar de IMC junto con métricas de referencia seleccionadas y estimaciones complementarias (como BMR y TDEE) para ofrecer un contexto educativo.' },
+        { question: '¿Es precisa una calculadora de IMC estándar para atletas musculosos?', answer: 'Una calculadora de IMC mide la masa corporal total en relación con la altura. Los atletas musculosos pueden registrar un IMC de 25 o superior porque el IMC no distingue la masa muscular de la masa grasa.' }
       ]
     },
     fr: {
@@ -154,7 +158,11 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Obésité Classe III', col2: '≥ 40.0 kg/m²', col3: 'Plage de référence d\'obésité classe III' }
       ],
       faqs: [
-        { question: 'Qu\'est-ce que le calculateur d\'IMC et comment le calculer ?', answer: 'L\'Indice de Masse Corporelle (IMC) mesure la masse corporelle par rapport à la taille. Divisez le poids en kg par la taille en mètres au carré (kg/m²).' }
+        { question: 'Qu\'est-ce que le calculateur d\'IMC et comment le calculer ?', answer: 'L\'Indice de Masse Corporelle (IMC) est une mesure d\'évaluation de la santé de la population. Pour calculer l\'IMC, divisez le poids en kg par la taille en mètres au carré (kg/m²), ou utilisez les unités impériales [Poids (lbs) / Taille (pouces)²] × 703.' },
+        { question: 'Comment calculer l\'IMC avec précision pour les hommes et les femmes ?', answer: 'Le calcul de l\'IMC est identique pour les hommes et les femmes adultes, basé sur la taille et le poids. Notre calculateur évalue votre score par rapport aux plages de référence de l\'OMS.' },
+        { question: 'Quel est le tableau et l\'échelle d\'IMC officiels de l\'OMS ?', answer: 'Le tableau de l\'OMS classe les adultes en quatre plages principales : Sous-poids (<18,5), Poids normal (18,5–24,9), Surpoids (25,0–29,9) et Obésité (≥30,0). Pour les populations asiatiques, le seuil de surpoids commence à 23,0.' },
+        { question: 'Quel contexte supplémentaire Real BMI fournit-il ?', answer: 'Real BMI présente le calcul d\'IMC standard aux côtés de métriques de référence sélectionnées et d\'estimations complémentaires (telles que le BMR et le TDEE) pour offrir un contexte éducatif.' },
+        { question: 'Un calculateur d\'IMC standard est-il précis pour les athlètes musclés ?', answer: 'Un calculateur d\'IMC mesure la masse corporelle totale par rapport à la taille. Les athlètes musclés peuvent avoir un IMC supérieur à 25 car l\'IMC ne distingue pas la masse musculaire de la masse grasse.' }
       ]
     },
     de: {
@@ -174,7 +182,11 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: 'Adipositas Klasse III', col2: '≥ 40.0 kg/m²', col3: 'Referenzbereich Adipositas Klasse III' }
       ],
       faqs: [
-        { question: 'Was ist der BMI-Rechner und wie berechnet man den BMI?', answer: 'Der Body-Mass-Index (BMI) ist ein Maß zur Einschätzung des Körpergewichts im Verhältnis zur Körpergröße (kg/m²).' }
+        { question: 'Was ist der BMI-Rechner und wie berechnet man den BMI?', answer: 'Der Body-Mass-Index (BMI) ist ein weit verbreitetes Maß zur Beurteilung des Körpergewichts. Um den BMI zu berechnen, teilen Sie das Gewicht in kg durch die Körpergröße in Metern zum Quadrat (kg/m²).' },
+        { question: 'Wie berechnet man den BMI genau für Männer und Frauen?', answer: 'Die BMI-Berechnung ist für erwachsene Männer und Frauen identisch und basiert auf Größe und Gewicht. Unser Rechner vergleicht Ihren Wert mit den WHO-Referenzbereichen.' },
+        { question: 'Was ist die offizielle WHO-BMI-Tabelle und -Skala?', answer: 'Die WHO-Tabelle unterteilt Erwachsene in vier Hauptbereiche: Untergewicht (<18,5), Normalgewicht (18,5–24,9), Übergewicht (25,0–29,9) und Adipositas (≥30,0). Für asiatische Populationen beginnt die Übergewichtsschwelle bei 23,0.' },
+        { question: 'Welchen zusätzlichen Kontext bietet Real BMI?', answer: 'Real BMI zeigt die Standard-BMI-Berechnung zusammen mit ausgewählten Referenzwerten und ergänzenden Schätzungen (wie BMR und TDEE) an, um lehrreichen Kontext zu bieten.' },
+        { question: 'Ist ein Standard-BMI-Rechner für muskulöse Sportler genau?', answer: 'Ein Standard-BMI-Rechner misst die Gesamtkörpermasse im Verhältnis zur Größe. Muskel-Sportler können einen BMI von 25 oder höher haben, da der BMI Muskelmasse nicht von Fettmasse unterscheidet.' }
       ]
     },
     ko: {
@@ -194,7 +206,11 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { col1: '비만 3단계 (Obesity Class III)', col2: '≥ 40.0 kg/m²', col3: '비만 3단계 참조 범위' }
       ],
       faqs: [
-        { question: 'BMI 계산기란 무엇이며 어떻게 계산하나요?', answer: '체질량지수(BMI)는 체중(kg)을 신장(m)의 제곱으로 나누어 계산하는 인구 보건학적 참조 지표입니다.' }
+        { question: 'BMI 계산기란 무엇이며 어떻게 계산하나요?', answer: '체질량지수(BMI)는 널리 사용되는 인구 보건학적 지표입니다. 체중(kg)을 신장(m)의 제곱으로 나누어 계산합니다(kg/m²).' },
+        { question: '남성과 여성의 BMI를 정확하게 계산하는 방법은 무엇인가요?', answer: '성인 남성과 여성의 BMI 계산 방식은 동일하며 신장과 체중 수치를 기반으로 합니다.' },
+        { question: '공식 WHO BMI 차트와 진단 기준은 무엇인가요?', answer: 'WHO 차트는 성인을 저체중(<18.5), 정상 체중(18.5–24.9), 과체중(25.0–29.9), 비만(≥30.0)의 4가지 주요 범위로 분류합니다.' },
+        { question: 'Real BMI는 어떤 추가 컨텍스트를 제공하나요?', answer: 'Real BMI는 표준 BMI 계산과 함께 BMR 및 TDEE와 같은 보완적 추정 지표를 함께 제공하여 교육적 참고 컨텍스트를 제시합니다.' },
+        { question: '표준 BMI 계산기는 근육질 운동선수에게도 정확한가요?', answer: '표준 BMI 계산기는 키 대비 전체 체중을 측정합니다. 근육질 운동선수는 근육량이 지방 mass와 구분되지 않아 BMI가 25 이상으로 나올 수 있습니다.' }
       ]
     }
   },

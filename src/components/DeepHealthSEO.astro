@@ -54,69 +54,233 @@ const content: Record<string, any> = {
       }
     ]
   },
-  hi: {
-    eyebrow: "स्वास्थ्य एवं संदर्भ गाइड",
-    title: "बॉडी मास इंडेक्स (BMI) और जनसंख्या स्वास्थ्य संदर्भ गाइड",
-    sections: [
-      {
-        title: "बीएमआई और स्वास्थ्य संदर्भ: प्रकाशित मानक क्या कहते हैं?",
-        text: "विश्व स्वास्थ्य संगठन (WHO) और CDC द्वारा प्रकाशित मानकों के अनुसार, 18.5 से 24.9 kg/m² का बीएमआई सामान्य जनसंख्या संदर्भ सीमा को दर्शाता है।"
-      },
-      {
-        title: "'Real BMI' क्या है और यह साधारण तराजू से कैसे अलग है?",
-        text: "'Real BMI' का तात्पर्य केवल वजन पर निर्भर रहने के बजाय बीएमआर (BMR), टीडीईई (TDEE) और कमर की परिधि के साथ बॉडी मास इंडेक्स का मूल्यांकन करना है। हमारा कैलकुलेटर बीएमआई और संबंधित स्वास्थ्य संदर्भ का अनुमान प्रदान करता है। यह चिकित्सा निदान के लिए नहीं है।"
-      },
-      {
-        title: "एशियाई और भारतीय आबादी के लिए कम बीएमआई थ्रेसहोल्ड क्यों हैं?",
-        text: "कुछ WHO विशेषज्ञ परामर्शों और एशियाई आबादी दिशानिर्देशों में बीएमआई 23.0 kg/m² से शुरू होने वाले अतिरिक्त संदर्भ थ्रेसहोल्ड का उपयोग किया जाता है।"
-      },
-      {
-        title: "बीएमआई फॉर्मूला: मीट्रिक (kg/m²) बनाम इंपीरियल (lbs/in²)",
-        text: "मीट्रिक पद्धति में: <code>BMI = वजन (kg) / [ऊंचाई (m)]²</code>। इंपीरियल पद्धति में: <code>BMI = [वजन (lb) / ऊंचाई (in)²] x 703</code>।"
-      }
-    ]
-  },
-  ko: {
-    eyebrow: "근거 기반 건강 가이드",
-    title: "체질량지수(BMI) 및 인구 보건학적 참조 가이드",
-    sections: [
-      {
-        title: "BMI 및 연령별 건강 지표: 연구 결과",
-        text: "세계보건기구(WHO) 및 CDC 표준에 따르면 적정 BMI(18.5~24.9 kg/m²)를 유지하는 것은 표준 인구 보건학적 참조 범위를 제시합니다."
-      },
-      {
-        title: "'Real BMI'란 무엇이며 일반 체중계와 어떻게 다른가요?",
-        text: "'Real BMI'는 단순 체중뿐만 아니라 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레를 종합하여 체성분을 교육적으로 참고하는 지표입니다."
-      }
-    ]
-  },
   es: {
-    eyebrow: "Guía de Referencia de Salud",
-    title: "Índice de Masa Corporal (IMC) y Contexto Poblacional",
+    eyebrow: "Guía de Referencia de Salud Basada en Evidencia",
+    title: "Índice de Masa Corporal (IMC) y Guía de Referencia Poblacional",
     sections: [
       {
-        title: "IMC y Estándares de la OMS y CDC",
-        text: "Mantener un IMC dentro del rango de referencia estándar (entre 18.5 y 24.9 kg/m²) proporciona un marco de evaluación poblacional de peso."
+        title: "¿Cómo calculo mi IMC y métricas relacionadas?",
+        text: "Puedes evaluar tu Índice de Masa Corporal (peso / altura²) junto con tu Tasa Metabólica Basal (BMR), Gasto Energético Diario Total (TDEE) y la Relación Cintura-Altura (WHtR). Esto proporciona un contexto educativo que considera la densidad muscular, la edad y las proporciones de referencia."
+      },
+      {
+        title: "¿Cómo funciona el IMC estándar?",
+        text: "Las calculadoras de IMC estándar utilizan una fórmula matemática reconocida por la OMS y los CDC. El IMC mide la masa corporal total en relación con la altura. Real BMI presenta el IMC junto con estimaciones complementarias y rangos de referencia poblacionales para ofrecer contexto educativo adicional."
+      },
+      {
+        title: "¿Cómo ofrecen mayor contexto las métricas múltiples?",
+        text: "Ningún número individual ofrece un panorama completo de la composición corporal. Combinar el IMC estándar con la Relación Cintura-Altura (WHtR) y los puntos de corte asiáticos de la OMS (23.0 kg/m² para sobrepeso) proporciona contexto adicional sobre la masa corporal y los indicadores de grasa abdominal."
+      },
+      {
+        title: "¿Es realista un IMC de 25?",
+        text: "Para atletas musculosos, el IMC puede ser más alto porque no distingue la masa muscular de la masa grasa."
+      },
+      {
+        title: "Índice de Masa Corporal (IMC) y Guías de Salud Poblacional",
+        text: "Según la literatura publicada por autoridades de salud pública (incluidas la OMS y los CDC), mantener un IMC entre 18.5 y 24.9 kg/m² se alinea con la línea base de referencia poblacional. Real BMI proporciona referencias de evaluación educativa alineadas con estas guías."
+      },
+      {
+        title: "¿Qué es 'Real BMI' y en qué se diferencia del peso de la báscula?",
+        text: "El término 'Real BMI' es utilizado por este sitio web para describir la evaluación de tu IMC junto con métricas complementarias (BMR, TDEE y circunferencia de la cintura) en lugar de depender únicamente de la altura y el peso. Es un concepto informativo, no una medición médica independiente ni una clasificación oficial de la OMS."
+      },
+      {
+        title: "¿Es el IMC preciso para todos? La paradoja de los atletas y la masa muscular",
+        text: "Aunque las fórmulas estándar de IMC se aplican universalmente, la densidad muscular difiere significativamente del tejido adiposo. Los atletas musculosos pueden registrar valores de IMC más altos a pesar de tener un bajo porcentaje de grasa corporal, ya que el músculo denso pesa más que el volumen de grasa."
+      },
+      {
+        title: "Por qué la OMS recomienda cortes de IMC más bajos para poblaciones asiáticas",
+        text: "El consenso publicado por la Organización Mundial de la Salud recomienda umbrales de corte de IMC más bajos para poblaciones asiáticas y del sur de Asia: 23.0 kg/m² para sobrepeso (frente a 25.0 kg/m² estándar) debido a una mayor grasa corporal relativa con valores de IMC más bajos."
+      },
+      {
+        title: "Fórmula de cálculo del IMC: Métrico (kg/m²) vs. Imperial (lbs/in²)",
+        text: "Nuestra calculadora en línea admite mediciones métricas e imperiales. En el sistema métrico, la fórmula es: <code>IMC = peso (kg) / [altura (m)]²</code>. En unidades imperiales, la fórmula es: <code>IMC = [peso (lb) / altura (in)²] x 703</code>."
+      },
+      {
+        title: "Uso del IMC para la planificación del control de peso",
+        text: "Las necesidades calóricas estimadas se pueden utilizar como referencia de planificación. Las estrategias individuales de control de peso varían, y comúnmente se exploran pequeños ajustes energéticos junto con una nutrición equilibrada y actividad física."
       }
     ]
   },
   fr: {
-    eyebrow: "Guide de Référence de Santé",
-    title: "Indice de Masse Corporelle (IMC) et Contexte de Santé",
+    eyebrow: "Guide de Référence de Santé Basé sur les Preuves",
+    title: "Indice de Masse Corporelle (IMC) & Guide de Référence de Santé Publique",
     sections: [
       {
-        title: "IMC et Normes de l'OMS et CDC",
-        text: "Maintenir un IMC de référence (entre 18,5 et 24,9 kg/m²) fournit un cadre d'évaluation globale du poids corporel."
+        title: "Comment calculer mon IMC et les métriques associées ?",
+        text: "Vous pouvez évaluer votre IMC (poids / taille²) aux côtés de votre Métabolisme de Base (BMR), Dépense Énergétique Quotidienne Totale (TDEE) et Ratio Taille-Taille (WHtR). Cela fournit un contexte éducatif prenant en compte la densité musculaire et les proportions de référence."
+      },
+      {
+        title: "Comment fonctionne l'IMC standard ?",
+        text: "Les calculateurs d'IMC standard utilisent une formule mathématique reconnue par l'OMS et le CDC. L'IMC mesure la masse corporelle totale par rapport à la taille. Real BMI présente l'IMC avec des estimations complémentaires."
+      },
+      {
+        title: "Comment plusieurs métriques offrent-elles un contexte plus large ?",
+        text: "Un seul chiffre ne donne pas une image complète. Combiner l'IMC standard avec le Ratio Taille-Taille (WHtR) et les seuils asiatiques de l'OMS (23,0 kg/m²) fournit un contexte supplémentaire sur les indicateurs de graisse abdominale."
+      },
+      {
+        title: "Un IMC de 25 est-il réaliste ?",
+        text: "Pour les athlètes musclés, l'IMC peut être plus élevé car l'IMC ne distingue pas la masse musculaire de la masse grasse."
+      },
+      {
+        title: "Indice de Masse Corporelle (IMC) et Directives de Santé Publique",
+        text: "Selon les publications des autorités de santé publique (OMS et CDC), maintenir un IMC entre 18,5 et 24,9 kg/m² s'aligne sur les valeurs de référence de la population."
+      },
+      {
+        title: "Qu'est-ce que 'Real BMI' et en quoi diffère-t-il du poids sur la balance ?",
+        text: "Le terme 'Real BMI' est utilisé par ce site pour décrire l'évaluation de votre IMC avec des métriques complémentaires (BMR, TDEE, tour de taille) plutôt que de s'appuyer uniquement sur la taille et le poids. C'est un concept informatif, non un diagnostic médical."
+      },
+      {
+        title: "L'IMC est-il précis pour tout le monde ? Le paradoxe des athlètes",
+        text: "Bien que les formules d'IMC s'appliquent universellement, les athlètes musclés peuvent enregistrer des valeurs d'IMC plus élevées malgré un faible pourcentage de graisse corporelle, le muscle étant plus dense que la graisse."
+      },
+      {
+        title: "Pourquoi l'OMS recommande des seuils d'IMC plus bas pour les populations asiatiques",
+        text: "Les consensus publiés par l'OMS recommandent des seuils d'IMC plus bas pour les populations asiatiques : 23,0 kg/m² pour le surpoids (contre 25,0 kg/m² en norme standard) en raison d'une adiposité viscérale plus élevée."
+      },
+      {
+        title: "Formule de calcul de l'IMC : Métrique (kg/m²) vs Impérial (lbs/in²)",
+        text: "Dans le système métrique : <code>IMC = poids (kg) / [taille (m)]²</code>. En unités impériales : <code>IMC = [poids (lb) / taille (in)²] x 703</code>."
+      },
+      {
+        title: "Utiliser l'IMC pour la planification de la gestion du poids",
+        text: "Les besoins caloriques estimés servent de référence. Des ajustements énergétiques modérés combinés à une alimentation équilibrée et une activité physique sont couramment explorés."
       }
     ]
   },
   de: {
-    eyebrow: "Gesundheits-Referenzleitfaden",
+    eyebrow: "Evidenzbasierter Gesundheits-Referenzleitfaden",
     title: "Body-Mass-Index (BMI) & Bevölkerungsspezifische Referenzwerte",
     sections: [
       {
-        title: "BMI & Standards laut WHO & CDC",
-        text: "Ein Referenz-BMI (zwischen 18,5 und 24,9 kg/m²) dient als allgemeiner Orientierungswert für das Körpergewicht."
+        title: "Wie berechne ich meinen BMI und verwandte Werte?",
+        text: "Sie können Ihren Body-Mass-Index (Gewicht / Größe²) zusammen mit Ihrem Grundumsatz (BMR), Gesamtenergieumsatz (TDEE) und Taille-zu-Größe-Verhältnis (WHtR) auswerten. Dies bietet lehrreichen Kontext zur Muskeldichte und zu Referenzproportionen."
+      },
+      {
+        title: "Wie funktioniert der Standard-BMI?",
+        text: "Standard-BMI-Rechner verwenden eine von der WHO und CDC anerkannte mathematische Formel. Der BMI misst die Gesamtkörpermasse im Verhältnis zur Größe. Real BMI präsentiert den BMI zusammen mit ergänzenden Schätzungen."
+      },
+      {
+        title: "Wie bieten mehrere Messwerte einen breiteren Kontext?",
+        text: "Keine einzelne Zahl zeigt das vollständige Bild. Die Kombination des Standard-BMI mit dem Taille-zu-Größe-Verhältnis (WHtR) und den asiatischen WHO-Grenzwerten (23,0 kg/m² für Übergewicht) bietet zusätzlichen Kontext."
+      },
+      {
+        title: "Ist ein BMI von 25 realistisch?",
+        text: "Für muskulöse Sportler kann der BMI höher sein, da der BMI Muskelmasse nicht von Fettmasse unterscheidet."
+      },
+      {
+        title: "Body-Mass-Index (BMI) & Öffentliche Gesundheitsrichtlinien",
+        text: "Laut Veröffentlichungen der Gesundheitsbehörden (WHO und CDC) liegt ein BMI zwischen 18,5 und 24,9 kg/m² im Standard-Referenzbereich der Bevölkerung."
+      },
+      {
+        title: "Was ist 'Real BMI' und wie unterscheidet es sich vom Waagengewicht?",
+        text: "'Real BMI' beschreibt die Auswertung Ihres BMI zusammen mit ergänzenden Werten (BMR, TDEE, Taillenumfang). Es ist ein informatives Konzept und keine medizinische Diagnose."
+      },
+      {
+        title: "Ist der BMI für jeden genau? Das Sportler-Paradoxon",
+        text: "Muskulöse Sportler können trotz eines niedrigen Körperfettanteils höhere BMI-Werte aufweisen, da dichte Muskelmasse mehr wiegt als Fettgewebe."
+      },
+      {
+        title: "Warum die WHO niedrigere BMI-Grenzwerte für asiatische Populationen empfiehlt",
+        text: "Die WHO empfiehlt für asiatische Populationen einen niedrigeren Übergewichts-Grenzwert von 23,0 kg/m² (statt 25,0 kg/m²), da bei geringerem BMI mehr viszerales Bauchfett vorliegen kann."
+      },
+      {
+        title: "BMI-Berechnungsformel: Metrisch (kg/m²) vs. Imperial (lbs/in²)",
+        text: "Im metrischen System: <code>BMI = Gewicht (kg) / [Größe (m)]²</code>. Imperial: <code>BMI = [Gewicht (lb) / Größe (in)²] x 703</code>."
+      },
+      {
+        title: "Verwendung des BMI für die Gewichtsplanung",
+        text: "Der geschätzte Kalorienbedarf dient als Planungshilfe für ausgewogene Ernährung und körperliche Bewegung."
+      }
+    ]
+  },
+  ko: {
+    eyebrow: "근거 기반 건강 참조 가이드",
+    title: "체질량지수(BMI) 및 인구 보건학적 참조 가이드",
+    sections: [
+      {
+        title: "BMI 및 관련 지표는 어떻게 계산하나요?",
+        text: "체질량지수(체중 / 키²)와 함께 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리높이비(WHtR)를 함께 평가할 수 있습니다."
+      },
+      {
+        title: "표준 BMI는 어떻게 작동하나요?",
+        text: "표준 BMI 계산기는 WHO 및 CDC에서 인정한 수식을 사용하여 키 대비 전체 체중을 측정합니다."
+      },
+      {
+        title: "여러 지표를 조합하면 어떤 이점이 있나요?",
+        text: "단일 수치만으로는 전체 체성분을 파악할 수 없습니다. 표준 BMI와 허리높이비(WHtR) 및 WHO 아시아 기준(23.0 kg/m²)을 조합하면 더 풍부한 참고 컨텍스트를 제공합니다."
+      },
+      {
+        title: "BMI 25는 현실적인가요?",
+        text: "근육질 운동선수는 BMI가 근육과 지방을 구분하지 못해 25 이상으로 측정될 수 있습니다."
+      },
+      {
+        title: "체질량지수(BMI) 및 공중 보건 지침",
+        text: "WHO 및 CDC 지침에 따라 BMI를 18.5~24.9 kg/m² 범위로 유지하는 것은 표준 인구 참조 기준에 해당합니다."
+      },
+      {
+        title: "'Real BMI'란 무엇이며 단순 체중계와 어떻게 다른가요?",
+        text: "'Real BMI'는 단일 체중 측정 대신 BMR, TDEE, 허리둘레를 함께 평가하는 교육적 정보 개념입니다."
+      },
+      {
+        title: "운동선수에게도 BMI가 정확한가요?",
+        text: "근육은 지방보다 밀도가 높기 때문에 체지방률이 낮더라도 BMI가 높게 나올 수 있습니다."
+      },
+      {
+        title: "WHO가 아시아인에게 더 낮은 BMI 기준을 권장하는 이유",
+        text: "WHO 지침은 아시아인에 대해 높은 내장지방 축적 패턴을 고려하여 과체중 기준을 23.0 kg/m²로 권장합니다."
+      },
+      {
+        title: "BMI 계산 공식: 미터법 (kg/m²) vs 야드파운드법 (lbs/in²)",
+        text: "미터법 공식: <code>BMI = 체중 (kg) / [신장 (m)]²</code>. 야드파운드 공식: <code>BMI = [체중 (lb) / 신장 (in)²] x 703</code>."
+      },
+      {
+        title: "체중 관리를 위한 BMI 활용법",
+        text: "추정 칼로리 필요량은 균형 잡힌 영양 및 신체 활동 계획의 참고 자료로 활용할 수 있습니다."
+      }
+    ]
+  },
+  hi: {
+    eyebrow: "साक्ष्य-आधारित स्वास्थ्य संदर्भ गाइड",
+    title: "बॉडी मास इंडेक्स (BMI) और जनसंख्या स्वास्थ्य संदर्भ गाइड",
+    sections: [
+      {
+        title: "मैं अपना बीएमआई और संबंधित मेट्रिक्स कैसे कैलकुलेट करूं?",
+        text: "आप अपने बॉडी मास इंडेक्स (वजन / ऊंचाई²) का मूल्यांकन अपने बीएमआर (BMR), टीडीईई (TDEE) और कमर-से-ऊंचाई अनुपात (WHtR) के साथ कर सकते हैं। यह मांसपेशियों के घनत्व और संदर्भ अनुपातों को समझने में मदद करता है।"
+      },
+      {
+        title: "मानक बीएमआई कैसे काम करता है?",
+        text: "मानक बीएमआई कैलकुलेटर WHO और CDC द्वारा मान्यता प्राप्त गणितीय सूत्र का उपयोग करता है। मानक बीएमआई ऊंचाई के अनुपात में कुल शरीर के द्रव्यमान को मापता है।"
+      },
+      {
+        title: "विभिन्न मेट्रिक्स एक साथ क्या संदर्भ प्रदान करते हैं?",
+        text: "कोई भी एक संख्या शरीर की संरचना का पूरा चित्र प्रस्तुत नहीं करती। बीएमआई को कमर-से-ऊंचाई अनुपात (WHtR) और WHO एशियाई कटऑफ (23.0 kg/m²) के साथ मिलाकर देखना अधिक स्पष्ट संदर्भात्मक जानकारी देता है।"
+      },
+      {
+        title: "क्या 25 का बीएमआई वास्तविक है?",
+        text: "मांसपेशियों वाले एथलीटों के लिए बीएमआई अधिक हो सकता है क्योंकि बीएमआई वसा और मांसपेशियों के द्रव्यमान में अंतर नहीं करता है।"
+      },
+      {
+        title: "बॉडी मास इंडेक्स (BMI) और सार्वजनिक स्वास्थ्य दिशानिर्देश",
+        text: "विश्व स्वास्थ्य संगठन (WHO) और CDC के अनुसार, 18.5 से 24.9 kg/m² का बीएमआई सामान्य जनसंख्या संदर्भ सीमा को दर्शाता है।"
+      },
+      {
+        title: "'Real BMI' क्या है और यह केवल वजन से कैसे अलग है?",
+        text: "'Real BMI' का तात्पर्य केवल वजन पर निर्भर रहने के बजाय बीएमआर (BMR), टीडीईई (TDEE) और कमर की परिधि के साथ बॉडी मास इंडेक्स का मूल्यांकन करना है। यह एक शैक्षणिक और संदर्भात्मक अवधारणा है, चिकित्सा निदान नहीं।"
+      },
+      {
+        title: "क्या बीएमआई सभी के लिए सटीक है? एथलीट और मांसपेशियों का विरोधाभास",
+        text: "मांसपेशियों वाले एथलीटों का बीएमआई कम वसा प्रतिशत के बावजूद उच्च दर्ज हो सकता है क्योंकि सघन मांसपेशियां वसा से अधिक भारी होती हैं।"
+      },
+      {
+        title: "डब्ल्यूएचओ एशियाई और दक्षिण एशियाई आबादी के लिए कम बीएमआई कटऑफ की सिफारिश क्यों करता है?",
+        text: "डब्ल्यूएचओ दिशानिर्देश एशियाई आबादी के लिए 23.0 kg/m² को अधिक वजन (Overweight) की शुरुआत मानते हैं क्योंकि कम बीएमआई पर भी विसरल फैट का जोखिम अधिक होता है।"
+      },
+      {
+        title: "बीएमआई गणना सूत्र: मीट्रिक (kg/m²) बनाम इंपीरियल (lbs/in²)",
+        text: "मीट्रिक पद्धति: <code>BMI = वजन (kg) / [ऊंचाई (m)]²</code>। इंपीरियल पद्धति: <code>BMI = [वजन (lb) / ऊंचाई (in)²] x 703</code>।"
+      },
+      {
+        title: "वजन प्रबंधन योजना के लिए बीएमआई का उपयोग",
+        text: "अनुमानित कैलोरी आवश्यकताओं का उपयोग संतुलित पोषण और शारीरिक गतिविधि के साथ वजन लक्ष्यों की योजना बनाने के लिए संदर्भ के रूप में किया जा सकता है।"
       }
     ]
   }
