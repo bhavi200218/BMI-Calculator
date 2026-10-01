@@ -678,6 +678,89 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         { question: 'Why does the Body Fat Calculator use neck and waist instead of scale weight?', answer: 'Scale weight alone fails to differentiate between skeletal muscle and adipose fat. Circumference metrics reflect abdominal fat deposition, providing additional context about body composition.' },
         { question: 'What is a healthy body fat percentage for men and women?', answer: 'According to the American Council on Exercise (ACE), a healthy fitness body fat percentage is 14%-17% for men and 21%-24% for women. Essential physiological minimum fat is 2-5% for men and 10-13% for women.' }
       ]
+    },
+    es: {
+      eyebrow: 'Referencia Antropométrica de la US Navy',
+      title: 'Calculadora de Grasa Corporal – Porcentaje de Grasa US Navy',
+      intro: 'Calcula tu porcentaje de grasa corporal estimado mediante la fórmula basada en circunferencias de la US Navy. Basado en mediciones de cintura, cuello, altura y cadera.',
+      formulaTitle: 'Fórmula de Grasa Corporal de la US Navy (Método de Cinta)',
+      formulaDesc: 'Hombres: %Grasa = 495 / [1.0324 - 0.19077 × log10(cintura - cuello cm) + 0.15456 × log10(altura cm)] - 450 | Mujeres: %Grasa = 495 / [1.29579 - 0.35004 × log10(cintura + cadera - cuello cm) + 0.22100 × log10(altura cm)] - 450',
+      formulaCode: 'Fórmula US Navy (Cintura + Cuello + Altura)',
+      tableTitle: 'Tabla de Clasificación de Grasa Corporal (ACE y US Navy)',
+      tableRows: [
+        { col1: 'Grasa Esencial', col2: 'Hombres: 2% - 5% | Mujeres: 10% - 13%', col3: 'Nivel mínimo fisiológico esencial' },
+        { col1: 'Atletas', col2: 'Hombres: 6% - 13% | Mujeres: 14% - 20%', col3: 'Nivel típico en deportistas de resistencia' },
+        { col1: 'Fitness', col2: 'Hombres: 14% - 17% | Mujeres: 21% - 24%', col3: 'Rango de referencia saludable' },
+        { col1: 'Promedio Poblacional', col2: 'Hombres: 18% - 24% | Mujeres: 25% - 31%', col3: 'Rango común en adultos' }
+      ],
+      faqs: [
+        { question: '¿Cómo funciona la calculadora de grasa corporal de la US Navy?', answer: 'Calcula el porcentaje estimado de grasa corporal combinando medidas de circunferencia (cintura, cuello y cadera) con la altura.' },
+        { question: '¿Cuál es un porcentaje de grasa saludable para hombres y mujeres?', answer: 'Según la ACE, el rango fitness saludable es de 14%-17% para hombres y 21%-24% para mujeres.' }
+      ]
+    },
+    fr: {
+      eyebrow: 'Référence Anthropométrique de la US Navy',
+      title: 'Calculateur de Graisse Corporelle – Formule US Navy',
+      intro: 'Estimez votre pourcentage de graisse corporelle avec la formule de la US Navy basée sur les circonférences de la taille, du cou et des hanches.',
+      formulaTitle: 'Formule de la US Navy pour le Taux de Graisse Corporelle',
+      formulaDesc: 'Calcul basé sur les circonférences du cou, de la taille et des hanches combinées à la taille.',
+      formulaCode: 'Formule US Navy',
+      tableTitle: 'Catégories de Taux de Graisse Corporelle (ACE & US Navy)',
+      tableRows: [
+        { col1: 'Graisse Essentielle', col2: 'Hommes : 2% - 5% | Femmes : 10% - 13%', col3: 'Niveau minimal physiologique' },
+        { col1: 'Athlètes', col2: 'Hommes : 6% - 13% | Femmes : 14% - 20%', col3: 'Niveau habituel chez les sportifs' }
+      ],
+      faqs: [
+        { question: 'Comment fonctionne le calculateur de graisse corporelle ?', answer: 'Il utilise les mesures de circonférence du cou et de la taille pour estimer la composition corporelle.' }
+      ]
+    },
+    de: {
+      eyebrow: 'US Navy Anthropometrische Referenz',
+      title: 'Körperfett Rechner – US Navy Körperfettanteil Berechnen',
+      intro: 'Schätzen Sie Ihren Körperfettanteil nach der US Navy Formel basierend auf Taillen-, Nacken- und Hüftumfang.',
+      formulaTitle: 'US Navy Körperfett Formel',
+      formulaDesc: 'Berechnung des Fettanteils aus Umfangsmessungen und Körpergröße.',
+      formulaCode: 'US Navy Formel',
+      tableTitle: 'Körperfettanteil Kategorisierung (ACE & US Navy)',
+      tableRows: [
+        { col1: 'Essentielles Fett', col2: 'Männer: 2% - 5% | Frauen: 10% - 13%', col3: 'Physiologisches Minimum' },
+        { col1: 'Sportler', col2: 'Männer: 6% - 13% | Frauen: 14% - 20%', col3: 'Typisch für trainierte Athleten' }
+      ],
+      faqs: [
+        { question: 'Wie genau ist die US Navy Formel?', answer: 'Sie bietet eine praxiserprobte Schätzung des Körperfettanteils ohne teure Laborgeräte.' }
+      ]
+    },
+    ko: {
+      eyebrow: '미 해군(US Navy) 신체 측정 기준',
+      title: '체지방 계산기 – 미 해군 체지방률 공식',
+      intro: '미 해군(US Navy) 둘레 공식을 사용하여 목, 허리, 엉덩이 둘레 및 키 측정값으로 추정 체지방률(%)을 계산하세요.',
+      formulaTitle: '미 해군 체지방 계산 공식',
+      formulaDesc: '목둘레, 허리둘레, 신장을 로그 회귀 방정식에 대입하여 산출.',
+      formulaCode: 'US Navy 체지방 공식',
+      tableTitle: 'ACE 및 미 해군 체지방률 분류표',
+      tableRows: [
+        { col1: '필수 지방 수준', col2: '남성: 2% - 5% | 여성: 10% - 13%', col3: '생리학적 필수 최소 범위' },
+        { col1: '운동선수 범주', col2: '남성: 6% - 13% | 여성: 14% - 20%', col3: '운동선수의 일반적 체지방률' }
+      ],
+      faqs: [
+        { question: '체지방 계산기는 어떻게 작동하나요?', answer: '체중만 측정하는 대신 허리와 목 둘레를 기반으로 신체 조성 및 복부 지방을 추정합니다.' }
+      ]
+    },
+    hi: {
+      eyebrow: 'यूएस नेवी एंथ्रोपोमेट्रिक मानक',
+      title: 'बॉडी फैट कैलकुलेटर – यूएस नेवी वसा प्रतिशत',
+      intro: 'कमर, गर्दन, ऊंचाई और कूल्हे की परिधि के आधार पर यूएस नेवी फॉर्मूला से अपने शरीर के वसा प्रतिशत का अनुमान लगाएं।',
+      formulaTitle: 'यूएस नेवी बॉडी फैट सूत्र',
+      formulaDesc: 'कमर और गर्दन की परिधि तथा ऊंचाई से बॉडी फैट की गणना।',
+      formulaCode: 'US Navy Body Fat Formula',
+      tableTitle: 'बॉडी फैट प्रतिशत वर्गीकरण तालिका',
+      tableRows: [
+        { col1: 'आवश्यक वसा स्तर', col2: 'पुरुष: 2% - 5% | महिला: 10% - 13%', col3: 'न्यूनतम जैविक वसा स्तर' },
+        { col1: 'एथलीट श्रेणी', col2: 'पुरुष: 6% - 13% | महिला: 14% - 20%', col3: 'एथलीटों में सामान्य वसा' }
+      ],
+      faqs: [
+        { question: 'यूएस नेवी फॉर्मूला कैसे काम करता है?', answer: 'यह केवल वजन के बजाय कमर और गर्दन की परिधि का उपयोग करके वसा प्रतिशत का अनुमान लगाता है।' }
+      ]
     }
   },
   'lean-body-mass-calculator': {
