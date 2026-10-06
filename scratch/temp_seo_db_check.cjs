@@ -2013,7 +2013,7 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Est\xE1ndares de Referencia de Salud",
-      "title": "BMI Calculator for Indians \u2013 Healthy Height Weight Chart for Indian Adults \u2013 Gu\xEDa y Calculadora",
+      "title": "Calculadora de IMC para la Poblaci\xF3n India \u2013 Tabla de Peso y Altura \u2013 Gu\xEDa y Calculadora",
       "intro": "Herramienta de c\xE1lculo y referencia educativa dise\xF1ada seg\xFAn los est\xE1ndares de salud publicados de la OMS y CDC. Calcula tus m\xE9tricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "F\xF3rmula de Referencia Est\xE1ndar",
       "formulaDesc": "Calculado utilizando ecuaciones est\xE1ndar validadas.",
@@ -2021,27 +2021,27 @@ const seoDatabase = {
       "tableTitle": "Tabla de Referencia Est\xE1ndar",
       "tableRows": [
         {
-          "col1": "Categor\xEDa / Nivel 1",
+          "col1": "Bajo Peso (Norma Indias ICMR)",
           "col2": "< 18.5 kg/m\xB2",
-          "col3": "Rango de referencia de peso bajo"
+          "col3": "Seuil de referencia para peso bajo"
         },
         {
-          "col1": "Categor\xEDa / Nivel 2",
+          "col1": "Peso Normal & \xD3ptimo",
           "col2": "18.5 \u2013 22.9 kg/m\xB2",
-          "col3": "Rango saludable \xF3ptimo para adultos en India"
+          "col3": "Plage saine \xF3ptima para los adultos indios"
         },
         {
-          "col1": "Categor\xEDa / Nivel 3",
+          "col1": "Sobrepeso / Zona de Riesgo (23.0)",
           "col2": "23.0 \u2013 24.9 kg/m\xB2",
-          "col3": "L\xEDmite de riesgo cardiometab\xF3lico elevado para indios"
+          "col3": "Seuil de riesgo cardiometab\xF3lico elevado para indios"
         },
         {
-          "col1": "Categor\xEDa / Nivel 4",
+          "col1": "Obesidad Clase I (Norma ICMR)",
           "col2": "25.0 \u2013 29.9 kg/m\xB2",
           "col3": "Umbral de obesidad clase I seg\xFAn est\xE1ndares ICMR"
         },
         {
-          "col1": "Categor\xEDa / Nivel 5",
+          "col1": "Obesidad Clase II (Severa)",
           "col2": "\u2265 30.0 kg/m\xB2",
           "col3": "Umbral de riesgo de obesidad severa"
         }
@@ -2063,7 +2063,7 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de R\xE9f\xE9rence de Sant\xE9",
-      "title": "BMI Calculator for Indians \u2013 Healthy Height Weight Chart for Indian Adults \u2013 Outil de R\xE9f\xE9rence",
+      "title": "Calculateur d'IMC pour les Indiens \u2013 Tableau Poids-Taille Sant\xE9 \u2013 Outil de R\xE9f\xE9rence",
       "intro": "Outil de calcul et de r\xE9f\xE9rence \xE9ducatif con\xE7u selon les normes de sant\xE9 publi\xE9es de l'OMS et du CDC. Calculez vos m\xE9triques et consultez les plages de r\xE9f\xE9rence.",
       "formulaTitle": "Formule de R\xE9f\xE9rence Standard",
       "formulaDesc": "Calcul\xE9 \xE0 l'aide d'\xE9quations standards valid\xE9es.",
@@ -2071,27 +2071,27 @@ const seoDatabase = {
       "tableTitle": "Tableau de R\xE9f\xE9rence Standard",
       "tableRows": [
         {
-          "col1": "Cat\xE9gorie / Niveau 1",
+          "col1": "Insuffisance Pond\xE9rale (Norme Indienne)",
           "col2": "< 18.5 kg/m\xB2",
-          "col3": "Plage de r\xE9f\xE9rence de sous-poids"
+          "col3": "Seuil de r\xE9f\xE9rence pour l'insuffisance pond\xE9rale"
         },
         {
-          "col1": "Cat\xE9gorie / Niveau 2",
+          "col1": "Poids Sant\xE9 Optimal",
           "col2": "18.5 \u2013 22.9 kg/m\xB2",
-          "col3": "Plage de poids sant\xE9 optimale pour adultes indiens"
+          "col3": "Plage saine optimale pour les adultes indiens"
         },
         {
-          "col1": "Cat\xE9gorie / Niveau 3",
+          "col1": "Surpoids / Zone de Risque (23.0)",
           "col2": "23.0 \u2013 24.9 kg/m\xB2",
-          "col3": "Seuil de risque cardiom\xE9tabolique \xE9lev\xE9 pour les Indiens"
+          "col3": "Seuil de risque cardiom\xE9tabolique accru pour les Indiens"
         },
         {
-          "col1": "Cat\xE9gorie / Niveau 4",
+          "col1": "Ob\xE9sit\xE9 Classe I (Norme ICMR)",
           "col2": "25.0 \u2013 29.9 kg/m\xB2",
           "col3": "Seuil d'ob\xE9sit\xE9 de classe I selon les normes ICMR"
         },
         {
-          "col1": "Cat\xE9gorie / Niveau 5",
+          "col1": "Ob\xE9sit\xE9 Classe II (S\xE9v\xE8re)",
           "col2": "\u2265 30.0 kg/m\xB2",
           "col3": "Seuil de risque d'ob\xE9sit\xE9 s\xE9v\xE8re"
         }
@@ -2103,11 +2103,11 @@ const seoDatabase = {
         },
         {
           "question": "Pourquoi le seuil de surpoids est-il de 23.0 pour les Indiens au lieu de 25.0 ?",
-          "answer": "Las poblaciones del sur de Asia presentan un mayor porcentaje de grasa visceral a \xEDndices de masa corporal m\xE1s bajos, lo que incrementa el riesgo cardiometab\xF3lico a partir de un IMC de 23.0 kg/m\xB2."
+          "answer": "Les populations d'Asie du Sud et de l'Inde pr\xE9sentent un pourcentage plus \xE9lev\xE9 de graisse visc\xE9rale \xE0 des IMC plus faibles, ce qui augmente le risque cardiom\xE9tabolique d\xE8s un IMC de 23.0 kg/m\xB2."
         },
         {
           "question": "Comment calculer le poids id\xE9al selon la taille en Inde ?",
-          "answer": "Multiplica tu altura en metros al cuadrado por 18.5 para el peso m\xEDnimo y por 22.9 para el peso m\xE1ximo recomendable seg\xFAn los est\xE1ndares de la OMS e ICMR."
+          "answer": "Multipliez votre taille en m\xE8tres au carr\xE9 par 18,5 pour le poids minimum sant\xE9 et par 22,9 pour le poids maximum recommand\xE9 selon les normes de l'OMS et de l'ICMR."
         }
       ]
     },
@@ -7769,8 +7769,8 @@ const seoDatabase = {
           "answer": "One Rep Max (1RM) is the maximum weight you can lift for a single repetition with proper form. Our 1RM Calculator uses submaximal weight and rep counts with the Epley formula [Weight \xD7 (1 + Reps/30)] to safely estimate your max."
         },
         {
-          "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
-          "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
+          "question": "How do submaximal 1RM estimation formulas work?",
+          "answer": "Submaximal formulas like Epley and Brzycki estimate your 1-rep maximum based on lighter set weights and rep counts, avoiding heavy single-rep strain."
         }
       ]
     },
@@ -7786,32 +7786,32 @@ const seoDatabase = {
         {
           "col1": "Categor\xEDa / Nivel 1",
           "col2": "1 Repetition",
-          "col3": "Rango de referencia Absolute maximum strength single"
+          "col3": "Carga m\xE1xima absoluta de fuerza (100% 1RM)"
         },
         {
           "col1": "Categor\xEDa / Nivel 2",
           "col2": "2 Repetitions",
-          "col3": "Rango de referencia Heavy strength training load"
+          "col3": "Carga pesada de entrenamiento de fuerza (95% 1RM)"
         },
         {
           "col1": "Categor\xEDa / Nivel 3",
           "col2": "3 Repetitions",
-          "col3": "Rango de referencia Power lifting strength sets"
+          "col3": "Series de fuerza y levantamiento (93% 1RM)"
         },
         {
           "col1": "Categor\xEDa / Nivel 4",
           "col2": "5 Repetitions",
-          "col3": "Rango de referencia Hypertrophy & heavy strength blend"
+          "col3": "Rango de desarrollo de fuerza muscular (87% 1RM)"
         },
         {
           "col1": "Categor\xEDa / Nivel 5",
           "col2": "7 Repetitions",
-          "col3": "Rango de referencia Hypertrophy muscle building range"
+          "col3": "Rango de hipertrofia y construcci\xF3n muscular (80% 1RM)"
         },
         {
           "col1": "Categor\xEDa / Nivel 6",
           "col2": "10 Repetitions",
-          "col3": "Rango de referencia Volume hypertrophy & endurance"
+          "col3": "Resistencia muscular e hipertrofia de volumen (75% 1RM)"
         }
       ],
       "faqs": [
@@ -7837,32 +7837,32 @@ const seoDatabase = {
         {
           "col1": "Cat\xE9gorie / Niveau 1",
           "col2": "1 Repetition",
-          "col3": "Plage de r\xE9f\xE9rence Absolute maximum strength single"
+          "col3": "Charge maximale absolue de force (100% 1RM)"
         },
         {
           "col1": "Cat\xE9gorie / Niveau 2",
           "col2": "2 Repetitions",
-          "col3": "Plage de r\xE9f\xE9rence Heavy strength training load"
+          "col3": "Charge lourde d'entra\xEEnement de force (95% 1RM)"
         },
         {
           "col1": "Cat\xE9gorie / Niveau 3",
           "col2": "3 Repetitions",
-          "col3": "Plage de r\xE9f\xE9rence Power lifting strength sets"
+          "col3": "S\xE9ries de force et d'halt\xE9rophilie (93% 1RM)"
         },
         {
           "col1": "Cat\xE9gorie / Niveau 4",
           "col2": "5 Repetitions",
-          "col3": "Plage de r\xE9f\xE9rence Hypertrophy & heavy strength blend"
+          "col3": "Plage de d\xE9veloppement de la force (87% 1RM)"
         },
         {
           "col1": "Cat\xE9gorie / Niveau 5",
           "col2": "7 Repetitions",
-          "col3": "Plage de r\xE9f\xE9rence Hypertrophy muscle building range"
+          "col3": "Plage de construction musculaire (80% 1RM)"
         },
         {
           "col1": "Cat\xE9gorie / Niveau 6",
           "col2": "10 Repetitions",
-          "col3": "Plage de r\xE9f\xE9rence Volume hypertrophy & endurance"
+          "col3": "Endurance musculaire et hypertrophie de volume (75% 1RM)"
         }
       ],
       "faqs": [
@@ -7888,32 +7888,32 @@ const seoDatabase = {
         {
           "col1": "Kategorie / Stufe 1",
           "col2": "1 Repetition",
-          "col3": "Referenzbereich Absolute maximum strength single"
+          "col3": "Maximale Kraftleistung (100% 1RM)"
         },
         {
           "col1": "Kategorie / Stufe 2",
           "col2": "2 Repetitions",
-          "col3": "Referenzbereich Heavy strength training load"
+          "col3": "Schwere Krafttraining-Belastung (95% 1RM)"
         },
         {
           "col1": "Kategorie / Stufe 3",
           "col2": "3 Repetitions",
-          "col3": "Referenzbereich Power lifting strength sets"
+          "col3": "Krafts\xE4tze f\xFCr Maximalkraft (93% 1RM)"
         },
         {
           "col1": "Kategorie / Stufe 4",
           "col2": "5 Repetitions",
-          "col3": "Referenzbereich Hypertrophy & heavy strength blend"
+          "col3": "Bereich f\xFCr schweren Kraftaufbau (87% 1RM)"
         },
         {
           "col1": "Kategorie / Stufe 5",
           "col2": "7 Repetitions",
-          "col3": "Referenzbereich Hypertrophy muscle building range"
+          "col3": "Bereich f\xFCr Muskelaufbau (80% 1RM)"
         },
         {
           "col1": "Kategorie / Stufe 6",
           "col2": "10 Repetitions",
-          "col3": "Referenzbereich Volume hypertrophy & endurance"
+          "col3": "Muskelausdauer und Volumen-Hypertrophie (75% 1RM)"
         }
       ],
       "faqs": [
@@ -7939,32 +7939,32 @@ const seoDatabase = {
         {
           "col1": "\uBC94\uC8FC / \uB2E8\uACC4 1",
           "col2": "1 Repetition",
-          "col3": "\uCC38\uC870 \uBC94\uC704 Absolute maximum strength single"
+          "col3": "\uB2E8\uC77C \uCD5C\uACE0 \uADFC\uB825 \uCE21\uC815 \uAD6C\uAC04 (100% 1RM)"
         },
         {
           "col1": "\uBC94\uC8FC / \uB2E8\uACC4 2",
           "col2": "2 Repetitions",
-          "col3": "\uCC38\uC870 \uBC94\uC704 Heavy strength training load"
+          "col3": "\uACE0\uC911\uB7C9 \uADFC\uB825 \uD6C8\uB828 \uAD6C\uAC04 (95% 1RM)"
         },
         {
           "col1": "\uBC94\uC8FC / \uB2E8\uACC4 3",
           "col2": "3 Repetitions",
-          "col3": "\uCC38\uC870 \uBC94\uC704 Power lifting strength sets"
+          "col3": "\uD30C\uC6CC \uB9AC\uD504\uD305 \uC138\uD2B8 \uAD6C\uAC04 (93% 1RM)"
         },
         {
           "col1": "\uBC94\uC8FC / \uB2E8\uACC4 4",
           "col2": "5 Repetitions",
-          "col3": "\uCC38\uC870 \uBC94\uC704 Hypertrophy & heavy strength blend"
+          "col3": "\uACE0\uC911\uB7C9 \uADFC\uB825 \uBC1C\uB2EC \uAD6C\uAC04 (87% 1RM)"
         },
         {
           "col1": "\uBC94\uC8FC / \uB2E8\uACC4 5",
           "col2": "7 Repetitions",
-          "col3": "\uCC38\uC870 \uBC94\uC704 Hypertrophy muscle building range"
+          "col3": "\uADFC\uBE44\uB300 \uC9D1\uC911 \uD6C8\uB828 \uAD6C\uAC04 (80% 1RM)"
         },
         {
           "col1": "\uBC94\uC8FC / \uB2E8\uACC4 6",
           "col2": "10 Repetitions",
-          "col3": "\uCC38\uC870 \uBC94\uC704 Volume hypertrophy & endurance"
+          "col3": "\uADFC\uC9C0\uAD6C\uB825 \uBC0F \uBCFC\uB968 \uD6C8\uB828 \uAD6C\uAC04 (75% 1RM)"
         }
       ],
       "faqs": [

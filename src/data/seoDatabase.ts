@@ -2030,7 +2030,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "BMI Calculator for Indians – Healthy Height Weight Chart for Indian Adults – Guía y Calculadora",
+      "title": "Calculadora de IMC para la Población India – Tabla de Peso y Altura – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -2038,27 +2038,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "Categoría / Nivel 1",
+          "col1": "Bajo Peso (Norma Indias ICMR)",
           "col2": "< 18.5 kg/m²",
-          "col3": "Rango de referencia de peso bajo"
+          "col3": "Seuil de referencia para peso bajo"
         },
         {
-          "col1": "Categoría / Nivel 2",
+          "col1": "Peso Normal & Óptimo",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Rango saludable óptimo para adultos en India"
+          "col3": "Plage saine óptima para los adultos indios"
         },
         {
-          "col1": "Categoría / Nivel 3",
+          "col1": "Sobrepeso / Zona de Riesgo (23.0)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Límite de riesgo cardiometabólico elevado para indios"
+          "col3": "Seuil de riesgo cardiometabólico elevado para indios"
         },
         {
-          "col1": "Categoría / Nivel 4",
+          "col1": "Obesidad Clase I (Norma ICMR)",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "Umbral de obesidad clase I según estándares ICMR"
         },
         {
-          "col1": "Categoría / Nivel 5",
+          "col1": "Obesidad Clase II (Severa)",
           "col2": "≥ 30.0 kg/m²",
           "col3": "Umbral de riesgo de obesidad severa"
         }
@@ -2081,7 +2081,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "BMI Calculator for Indians – Healthy Height Weight Chart for Indian Adults – Outil de Référence",
+      "title": "Calculateur d'IMC pour les Indiens – Tableau Poids-Taille Santé – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -2089,27 +2089,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "Catégorie / Niveau 1",
+          "col1": "Insuffisance Pondérale (Norme Indienne)",
           "col2": "< 18.5 kg/m²",
-          "col3": "Plage de référence de sous-poids"
+          "col3": "Seuil de référence pour l'insuffisance pondérale"
         },
         {
-          "col1": "Catégorie / Niveau 2",
+          "col1": "Poids Santé Optimal",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Plage de poids santé optimale pour adultes indiens"
+          "col3": "Plage saine optimale pour les adultes indiens"
         },
         {
-          "col1": "Catégorie / Niveau 3",
+          "col1": "Surpoids / Zone de Risque (23.0)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Seuil de risque cardiométabolique élevé pour les Indiens"
+          "col3": "Seuil de risque cardiométabolique accru pour les Indiens"
         },
         {
-          "col1": "Catégorie / Niveau 4",
+          "col1": "Obésité Classe I (Norme ICMR)",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "Seuil d'obésité de classe I selon les normes ICMR"
         },
         {
-          "col1": "Catégorie / Niveau 5",
+          "col1": "Obésité Classe II (Sévère)",
           "col2": "≥ 30.0 kg/m²",
           "col3": "Seuil de risque d'obésité sévère"
         }
@@ -2122,11 +2122,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ,
         {
           "question": "Pourquoi le seuil de surpoids est-il de 23.0 pour les Indiens au lieu de 25.0 ?",
-          "answer": "Las poblaciones del sur de Asia presentan un mayor porcentaje de grasa visceral a índices de masa corporal más bajos, lo que incrementa el riesgo cardiometabólico a partir de un IMC de 23.0 kg/m²."
+          "answer": "Les populations d'Asie du Sud et de l'Inde présentent un pourcentage plus élevé de graisse viscérale à des IMC plus faibles, ce qui augmente le risque cardiométabolique dès un IMC de 23.0 kg/m²."
         },
         {
           "question": "Comment calculer le poids idéal selon la taille en Inde ?",
-          "answer": "Multiplica tu altura en metros al cuadrado por 18.5 para el peso mínimo y por 22.9 para el peso máximo recomendable según los estándares de la OMS e ICMR."
+          "answer": "Multipliez votre taille en mètres au carré par 18,5 pour le poids minimum santé et par 22,9 pour le poids maximum recommandé selon les normes de l'OMS et de l'ICMR."
         }
       ]
     },
