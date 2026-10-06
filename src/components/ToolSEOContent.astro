@@ -449,263 +449,243 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     }
   },
   "3d-bmi-calculator": {
-    "en": {
-      "eyebrow": "Oxford 2.5-Power BMI Model & 3D Body Visualization",
-      "title": "3D BMI Calculator & Interactive 3D Body Visualizer by Height, Weight & Gender",
-      "intro": "Our free interactive 3D Body Visualizer and 3D BMI Calculator computes body mass index using Oxford mathematician Nick Trefethen 2.5 power formula (1.3 × weight / height²·⁵) alongside 3D surface geometry principles. Rotate 360° to view front, side, and back avatar mesh, wireframe, and BMI heatmap modes in real time.",
-      "formulaTitle": "Oxford 3D Height-Adjusted Exponent Equation & 3D Volumetric Principles",
-      "formulaDesc": "3D Height-Adjusted BMI = 1.3 × Weight (kg) / [Height (m)]².⁵ | Inspired by published research on height scaling and 3D body-shape visualization.",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "Standard 2D BMI vs 3D Height Adjusted BMI Comparison Matrix",
-      "tableRows": [
-        {
-          "col1": "Short Adults (< 160 cm)",
-          "col2": "Standard 2D BMI formula produces lower relative scores",
-          "col3": "Alternative formula produces a higher score"
-        },
-        {
-          "col1": "Average Stature (170 cm)",
-          "col2": "Identical rating alignment",
-          "col3": "0.0 pts difference (Identical)"
-        },
-        {
-          "col1": "Tall Adults (> 185 cm)",
-          "col2": "Standard 2D BMI formula produces higher relative scores",
-          "col3": "Alternative formula produces a lower score"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "What is the 3D Body Visualizer & 3D BMI Calculator?",
-          "answer": "The 3D Body Visualizer is an interactive 3D body preview tool that computes an alternative height-adjusted score using Oxford mathematician Nick Trefethen 2.5 power formula [3D BMI = 1.3 × Weight (kg) / Height (m)^2.5] and renders a 360° interactive 3D body avatar with solid mesh, wireframe, and BMI heatmap views."
-        },
-        {
-          "question": "How is 3D BMI calculated and visualized?",
-          "answer": "It calculates adult BMI as kilograms divided by height in meters raised to the 2.5 exponent factor. The result is visualized alongside a 360° interactive front, side, and back 3D model avatar."
-        },
-        {
-          "question": "What scientific research backs 3D Body Visualizers?",
-          "answer": "Peer-reviewed research published in NIH PubMed Central (PMC6538417) and Nature Scientific Reports (2023) demonstrates that 3D optical scanning and volumetric body shape models capture body proportion context that standard 2D BMI formulas miss."
-        },
-        {
-          "question": "Why can two people with the same BMI look completely different in 3D?",
-          "answer": "Standard BMI only measures weight relative to height and cannot differentiate muscle mass, bone density, or fat distribution. A 3D Body Visualizer shows proportion context that a single 2D number leaves out."
-        },
-        {
-          "question": "What is the difference between standard BMI and 3D Height-Adjusted BMI?",
-          "answer": "The standard BMI formula scales height using a squared term, while the 2.5-power formula produces different values at different heights."
-        },
-        {
-          "question": "What are the benefits of a 3D Body Visualizer?",
-          "answer": "The 2.5-power formula produces a height-adjusted alternative to conventional BMI, offering visual proportion context for educational comparison."
-        },
-        {
-          "question": "Does the 3D Body Visualizer measure body fat percentage?",
-          "answer": "No. The 3D Body Visualizer calculates height and weight relationships and renders a reference 3D outline. It is an educational screening tool, not a direct measure of body fat or medical diagnosis."
-        }
-      ]
-    },
     "es": {
       "eyebrow": "Modelo IMC Exponencial de Oxford 2.5 y Visualización Corporal 3D",
       "title": "Calculadora de IMC 3D y Visualizador Corporal Interactivo",
-      "intro": "Nuestra calculadora de IMC 3D y visualizador corporal interactivo calcula el índice de masa corporal mediante la fórmula exponencial de Oxford (1.3 × peso / altura²·⁵) y principios de geometría de superficie 3D. Gira 360° para ver la malla, estructura de alambre y mapa de calor de IMC.",
+      "intro": "Nuestra calculadora de IMC 3D y visualizador corporal interactivo calcula el índice de masa corporal mediante la fórmula exponencial de Oxford 2.5 (1.3 × peso / altura²·⁵) y principios de geometría corporal tridimensional. Gira 360° para ver la malla sólida, estructura de alambre y mapa de calor de IMC.",
       "formulaTitle": "Fórmula Exponencial 3D de Oxford Ajustada a la Altura",
-      "formulaDesc": "IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]².⁵ | Basado en investigaciones sobre escalado de altura y geometría corporal.",
+      "formulaDesc": "IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]²·⁵ | Diseñada por matemáticos de la Universidad de Oxford para eliminar la distorsión de altura que afecta a personas altas o bajas en la fórmula clásica de Quetelet.",
       "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
       "tableTitle": "Comparación de IMC 2D Estándar vs IMC 3D Ajustado por Altura",
       "tableRows": [
         {
-          "col1": "Adultos Bajos (< 160 cm)",
-          "col2": "La fórmula 2D estándar produce puntuaciones relativas menores",
-          "col3": "La fórmula 3D produce un valor ajustado superior"
+          "col1": "Personas Bajas (< 160 cm)",
+          "col2": "El IMC 2D estándar suele subestimar el resultado",
+          "col3": "El IMC 3D compensa la estatura menor adecuadamente"
         },
         {
           "col1": "Estatura Promedio (170 cm)",
           "col2": "Alineación de clasificación idéntica",
-          "col3": "Sin diferencia (Idéntico)"
+          "col3": "Sin diferencia entre la fórmula 2D y 3D"
         },
         {
-          "col1": "Adultos Altos (> 185 cm)",
-          "col2": "La fórmula 2D estándar produce puntuaciones elevadas",
-          "col3": "La fórmula 3D ajustada compensa la altura"
+          "col1": "Personas Altas (> 185 cm)",
+          "col2": "El IMC 2D estándar suele sobreestimar el exceso de peso",
+          "col3": "El IMC 3D ajusta el volumen tridimensional real"
         }
       ],
       "faqs": [
         {
-          "question": "¿Qué es la Calculadora de IMC 3D y Visualizador Corporal?",
-          "answer": "Es una herramienta interactiva que calcula el IMC ajustado a la altura mediante la fórmula de Oxford 2.5 y genera un avatar 3D interactivo en 360° con vistas de malla sólida, alambre y mapa de calor."
+          "question": "¿En qué se diferencia el IMC 3D del IMC tradicional?",
+          "answer": "El IMC tradicional usa la altura al cuadrado (m²), mientras que el IMC 3D usa la masa tridimensional dividida entre la altura a la potencia 2.5 (m²·⁵)."
         },
         {
-          "question": "¿Cómo se calcula y visualiza el IMC 3D?",
-          "answer": "Calcula el IMC como kg divididos entre la altura en metros elevada a 2.5. El resultado se muestra junto con un modelo avatar 3D que se puede girar en 360°."
+          "question": "¿Cómo funciona la visualización corporal 3D?",
+          "answer": "Genera una silueta anatómica tridimensional interactiva que se escala según tu altura y peso en tiempo real dentro del navegador."
         },
         {
-          "question": "¿Por qué dos personas con el mismo IMC se ven diferentes en 3D?",
-          "answer": "El IMC tradicional no distingue masa muscular o distribución de grasa. El visualizador 3D muestra el contexto de proporciones físicas reales."
+          "question": "¿Qué representan los modos Malla, Alambre y Mapa de Calor?",
+          "answer": "El modo sólido muestra la masa corporal, la malla de alambre muestra los contornos estructurales, y el mapa de calor resalta las zonas según el nivel de IMC."
         },
         {
-          "question": "¿Cómo funciona la calculadora de 3d bmi calculator y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Es precisa la fórmula de Oxford 2.5 para personas muy altas?",
+          "answer": "Sí, el profesor Nick Trefethen de la Universidad de Oxford diseñó esta fórmula para eliminar la distorsión matemática en personas muy altas o bajas."
+        },
+        {
+          "question": "¿El modelo 3D almacena datos o fotografías personales?",
+          "answer": "No, el modelo 3D es una simulación matemática generada en tiempo real en tu navegador sin guardar datos ni requerir cámara."
         }
       ]
     },
     "fr": {
-      "eyebrow": "Modèle IMC d'Oxford 2.5 Puissance & Modélisation 3D",
+      "eyebrow": "Modèle IMC d'Oxford 2.5 et Visualisation Corporelle 3D",
       "title": "Calculateur d'IMC 3D et Visualiseur Corporel Interactif",
-      "intro": "Notre calculateur d'IMC 3D et visualiseur corporel interactif calcule l'indice de masse corporelle via la formule d'exposant 2.5 d'Oxford (1.3 × poids / taille²·⁵). Faites pivoter à 360° pour afficher le maillage 3D, le fil de fer et la carte thermique.",
-      "formulaTitle": "Formule d'Oxford 3D Ajustée à la Taille",
-      "formulaDesc": "IMC 3D Ajusté = 1.3 × Poids (kg) / [Taille (m)]².⁵ | Basé sur les recherches sur l'échelle de taille et la géométrie corporelle.",
+      "intro": "Notre calculateur d'IMC 3D calcule votre indice de masse corporelle selon la formule d'Oxford 2.5 (1.3 × poids / taille²·⁵) et modélise votre silhouette en 3D sous tous los angles à 360°.",
+      "formulaTitle": "Formule Exponentielle 3D d'Oxford Ajustée à la Taille",
+      "formulaDesc": "IMC 3D Ajusté = 1.3 × Poids (kg) / [Taille (m)]²·⁵ | Élaborée par des mathématiciens de l'Université d'Oxford pour corriger les biais liés à la taille.",
       "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
-      "tableTitle": "Comparatif IMC 2D Standard vs IMC 3D Ajusté",
+      "tableTitle": "Comparaison IMC 2D Standard vs IMC 3D Ajusté d'Oxford",
       "tableRows": [
         {
-          "col1": "Adultes de Petite Taille (< 160 cm)",
-          "col2": "La formule 2D standard produit des scores relatifs plus faibles",
-          "col3": "La formule 3D produit une valeur ajustée plus élevée"
+          "col1": "Personnes de Petite Taille (< 160 cm)",
+          "col2": "L'IMC 2D sous-estime souvent la catégorie",
+          "col3": "L'IMC 3D réajuste le score proportionnellement"
         },
         {
           "col1": "Taille Moyenne (170 cm)",
-          "col2": "Alignement de classification identique",
-          "col3": "Aucune différence (Identique)"
+          "col2": "Résultats identiques sur les deux formules",
+          "col3": "Aucune différence de catégorie"
         },
         {
-          "col1": "Adultes Grands (> 185 cm)",
-          "col2": "La formule 2D standard produit des scores plus élevés",
-          "col3": "La formule 3D compensée s'ajuste à la taille"
+          "col1": "Personnes de Grande Taille (> 185 cm)",
+          "col2": "L'IMC 2D surestime le niveau de surpoids",
+          "col3": "L'IMC 3D corrige la distorsion volumétrique"
         }
       ],
       "faqs": [
         {
-          "question": "Qu'est-ce que le calculateur d'IMC 3D et le visualiseur corporel ?",
-          "answer": "C'est un outil interactif qui calcule l'IMC ajusté avec la formule d'Oxford 2.5 et génère un avatar 3D à 360° avec des vues en maillage solide, fil de fer et carte thermique."
+          "question": "En quoi l'IMC 3D diffère-t-il de l'IMC classique ?",
+          "answer": "L'IMC classique divise le poids par la taille au carré (m²), tandis que l'IMC 3D utilise la puissance 2,5 (m²·⁵) pour refléter le volume corporel."
         },
         {
-          "question": "Pourquoi deux personnes avec le même IMC ont-elles des apparences différentes en 3D ?",
-          "answer": "L'IMC standard ne différencie pas la masse musculaire et la graisse. Le visualiseur 3D offre un contexte visuel des proportions corporelles."
+          "question": "Comment fonctionne la visualisation 3D ?",
+          "answer": "Elle génère un avatar anatomique 3D interactif modélisé en temps réel selon vos mensurations dans votre navigateur."
         },
         {
-          "question": "Comment fonctionne le calculateur de 3d bmi calculator et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Que signifient les modes Maillage, Fil de fer et Carte de chaleur ?",
+          "answer": "Le mode solide montre la masse, le fil de fer révèle la structure géométrique, et la carte de chaleur indique les zones d'IMC."
+        },
+        {
+          "question": "Pourquoi la formule d'Oxford 2.5 est-elle recommandée pour les grands ?",
+          "answer": "Elle élimine la distorsion mathématique de la formule de Quetelet qui désavantage systématiquement les personnes très grandes."
+        },
+        {
+          "question": "L'outil 3D enregistre-t-il des images personnelles ?",
+          "answer": "Non, toutes les modélisations sont des simulations mathématiques anonymes exécutées localement sur votre navigateur."
         }
       ]
     },
     "de": {
-      "eyebrow": "Oxford 2.5-Potenz BMI-Modell & 3D-Körpervisualisierung",
-      "title": "3D BMI Rechner & Interaktiver 3D-Körper-Visualisierer",
-      "intro": "Unser kostenloser 3D BMI Rechner berechnet den Body-Mass-Index mit der 2.5-Potenz-Formel von Oxford (1.3 × Gewicht / Größe²·⁵). Drehen Sie das Modell um 360°, um Netz-, Drahtmodell- und Heatmap-Modi anzuzeigen.",
-      "formulaTitle": "Oxford 3D Höhenbereinigte Formel",
-      "formulaDesc": "3D-Höhen-BMI = 1.3 × Gewicht (kg) / [Größe (m)]².⁵",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "Vergleich: Standard-2D-BMI vs. 3D-Höhen-BMI",
+      "eyebrow": "Oxford 2.5 Potenzformel & 3D-Körper-Visualisierung",
+      "title": "Interaktiver 3D BMI-Rechner & 3D-Körper-Visualisierer",
+      "intro": "Berechnen Sie Ihren höhenkorrigierten BMI mit der Oxford 2.5 Formel (1.3 × Gewicht / Größe²·⁵) und betrachten Sie ein interaktives 360°-3D-Körpermodell direkt in Ihrem Browser.",
+      "formulaTitle": "Oxford 3D Potenzformel für dreidimensionale Körpergeometrie",
+      "formulaDesc": "3D-BMI = 1.3 × Gewicht (kg) / [Größe (m)]²·⁵ | Entwickelt von Mathematikern der Universität Oxford zur Korrektur von Größenverzerrungen.",
+      "formulaCode": "3D-BMI = 1.3 × kg / m²·⁵",
+      "tableTitle": "Vergleich: Standard 2D-BMI vs. Höhenkorrigierter 3D-BMI",
       "tableRows": [
         {
-          "col1": "Kleine Erwachsene (< 160 cm)",
-          "col2": "Standard-2D-Formel liefert niedrigere relative Werte",
-          "col3": "3D-Formel liefert einen angepassten höheren Wert"
+          "col1": "Kleine Personen (< 160 cm)",
+          "col2": "Standard 2D-BMI zeigt tendenziell zu niedrige Werte",
+          "col3": "3D-Formel gleicht die Körpergröße aus"
         },
         {
           "col1": "Durchschnittliche Größe (170 cm)",
-          "col2": "Identische Einstufung",
-          "col3": "0,0 Punkte Differenz (Identisch)"
+          "col2": "Identische Ergebnisse bei beiden Formeln",
+          "col3": "Kein Unterschied in der Kategorie"
         },
         {
-          "col1": "Große Erwachsene (> 185 cm)",
-          "col2": "Standard-2D-Formel liefert höhere Werte",
-          "col3": "3D-Formel gleicht die Körpergröße aus"
+          "col1": "Große Personen (> 185 cm)",
+          "col2": "Standard 2D-BMI zeigt oft zu hohe Werte",
+          "col3": "3D-Formel berücksichtigt das dreidimensionale Volumen"
         }
       ],
       "faqs": [
         {
-          "question": "Was ist der 3D BMI Rechner und Körper-Visualisierer?",
-          "answer": "Ein interaktives Tool, das den höhenbereinigten BMI nach der Oxford 2.5 Formel berechnet und einen 360°-3D-Körper-Avatar darstellt."
+          "question": "Was unterscheidet den 3D-BMI vom klassischen BMI?",
+          "answer": "Der klassische BMI nutzt die Körpergröße zum Quadrat (m²), während der 3D-BMI die Potenz 2.5 nutzt, um das dreidimensionale Körpervolumen besser abzubilden."
         },
         {
-          "question": "Wie funktioniert der 3d bmi calculator-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Wie funktioniert der 3D-Körper-Visualisierer?",
+          "answer": "Er erzeugt einen interaktiven 3D-Avatar, der sich in Echtzeit an Ihre eingegebenen Daten anpasst und um 360° gedreht werden kann."
+        },
+        {
+          "question": "Was bedeuten Drahtmodell, Solid-Mesh und Heatmap?",
+          "answer": "Solid-Mesh zeigt die Körperoberfläche, das Drahtmodell zeigt die Gitterstruktur und die Heatmap hebt BMI-Zonen farblich hervor."
+        },
+        {
+          "question": "Warum ist die Oxford 2.5 Formel für große Menschen genauer?",
+          "answer": "Prof. Nick Trefethen von der Universität Oxford zeigte, dass die alte Quetelet-Formel große Menschen mathematisch benachteiligt."
+        },
+        {
+          "question": "Werden Bilder oder persönliche Daten gespeichert?",
+          "answer": "Nein, das 3D-Modell ist eine rein mathematische Echtzeit-Simulation in Ihrem Browser ohne Datenspeicherung."
         }
       ]
     },
     "ko": {
-      "eyebrow": "옥스포드 2.5 체질량 공식 및 3D 바디 시각화",
+      "eyebrow": "옥스포드 2.5 신장 보정 공식 및 3D 체형 시각화",
       "title": "3D BMI 계산기 및 대화형 3D 체형 시각화 도구",
-      "intro": "무료 대화형 3D 바디 비주얼라이저 및 3D BMI 계산기는 옥스퍼드 2.5 제곱 공식(1.3 × 체중 / 신장²·⁵)을 사용하여 체질량지수를 계산하고 실시간 360° 3D 아바타 모델을 제공합니다.",
-      "formulaTitle": "옥스포드 3D 신장 보정 공식",
-      "formulaDesc": "3D 신장 보정 BMI = 1.3 × 체중 (kg) / [신장 (m)]².⁵",
+      "intro": "옥스포드 2.5 체질량 공식(1.3 × 체중 / 신장²·⁵)을 기반으로 신장 왜곡을 보정한 BMI를 산출하고 360° 회전 가능한 3D 입체 실루엣 아바타를 실시간으로 확인하세요.",
+      "formulaTitle": "3D 옥스포드 신장 보정 체질량 공식",
+      "formulaDesc": "3D 보정 BMI = 1.3 × 체중 (kg) / [신장 (m)]²·⁵ | 옥스퍼드 대학교 수학과 연구진이 개발한 3차원 신체 부피 스케일링 공식.",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "표준 2D BMI 대 3D 신장 보정 BMI 비교표",
+      "tableTitle": "표준 2D BMI vs 옥스포드 3D 신장 보정 BMI 비교",
       "tableRows": [
         {
           "col1": "단신 성인 (< 160 cm)",
-          "col2": "표준 2D BMI 공식은 상대적으로 낮게 측정됨",
-          "col3": "3D 보정 공식은 적절한 보정값을 제공함"
+          "col2": "표준 2D 공식은 상대적으로 낮게 측정됨",
+          "col3": "3D 보정 공식이 올바른 수치 보정"
         },
         {
           "col1": "평균 신장 (170 cm)",
-          "col2": "동일한 등급 산출",
-          "col3": "차이 없음 (동일)"
+          "col2": "두 공식 결과 동일",
+          "col3": "범주 차이 없음 (동일)"
         },
         {
           "col1": "장신 성인 (> 185 cm)",
-          "col2": "표준 2D BMI 공식은 상대적으로 높게 측정됨",
-          "col3": "3D 보정 공식은 신장을 반영하여 보정함"
+          "col2": "표준 2D 공식은 과도하게 높게 측정됨",
+          "col3": "3D 보정 공식이 3차원 부피 왜곡 보정"
         }
       ],
       "faqs": [
         {
-          "question": "3D BMI 계산기 및 체형 시각화 도구란 무엇인가요?",
-          "answer": "옥스퍼드 2.5 공식을 사용하여 보정된 BMI를 구하고 실시간 360° 3D 아바타 모델(메쉬, 와이어프레임, 히트맵)을 시각화하는 도구입니다."
+          "question": "3D BMI와 기존 일반 BMI의 차이점은 무엇인가요?",
+          "answer": "기존 BMI는 신장의 제곱(m²)으로 나누지만, 3D BMI는 3차원 신체 부피 비율인 신장의 2.5제곱(m²·⁵)을 적용합니다."
         },
         {
-          "question": "3d bmi calculator 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "3D 체형 시각화 기능은 어떻게 구동되나요?",
+          "answer": "입력한 신장과 체중 비율에 따라 브라우저 내에서 실시간으로 3D 아바타 모델을 생성하고 360° 회전을 지원합니다."
+        },
+        {
+          "question": "솔리드, 와이어프레임, 히트맵 모드의 차이는 무엇인가요?",
+          "answer": "솔리드는 체형 실루엣, 와이어프레임은 3D 구조 망, 히트맵은 BMI 범주별 색상 위험도를 시각적으로 표현합니다."
+        },
+        {
+          "question": "키가 큰 사람에게 옥스포드 2.5 공식이 더 정확한 이유는?",
+          "answer": "옥스퍼드 대학교 트레페젠 교수가 입증했듯 2차원 제곱 공식은 키가 큰 사람을 불필요하게 비만으로 판정하는 오류를 보정합니다."
+        },
+        {
+          "question": "3D 아바타 생성 시 개인정보나 사진이 저장되나요?",
+          "answer": "아니요, 사진 업로드가 필요 없으며 모든 계산 및 3D 렌더링은 사용자 브라우저에서 100% 안전하게 구동됩니다."
         }
       ]
     },
     "hi": {
-      "eyebrow": "ऑक्सफोर्ड 2.5 फॉर्मूला और 3D बॉडी विजुअलाइजेशन",
+      "eyebrow": "ऑक्सफोर्ड 2.5 एक्सपोनेंशियल फॉर्मूला और 3D मॉडल",
       "title": "3D बीएमआई कैलकुलेटर और इंटरएक्टिव 3D बॉडी विजुअलाइज़र",
-      "intro": "हमारा 3D बॉडी विजुअलाइज़र ऑक्सफोर्ड गणितज्ञ निक त्रेफेथेन 2.5 फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) का उपयोग करके बीएमआई की गणना करता है। 360° घुमाकर ठोस मेश, वायरफ्रेम और बीएमआई हीटमैप देखें।",
-      "formulaTitle": "ऑक्सफोर्ड 3D ऊंचाई-समायोजित बीएमआई सूत्र",
-      "formulaDesc": "3D बीएमआई = 1.3 × वजन (किग्रा) / [ऊंचाई (मीटर)]².⁵",
+      "intro": "ऑक्सफोर्ड 2.5 फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) के साथ अपने बीएमआई की गणना करें और 360° इंटरएक्टिव 3D बॉडी मॉडलर का उपयोग करके अपनी शारीरिक संरचना को समझें।",
+      "formulaTitle": "ऑक्सफोर्ड 3D ऊंचाई-समायोजित बीएमआई फॉर्मूला",
+      "formulaDesc": "3D बीएमआई = 1.3 × वजन (किग्रा) / [ऊंचाई (मीटर)]²·⁵ | ऑक्सफोर्ड विश्वविद्यालय के गणितज्ञों द्वारा विकसित सूत्र जो लंबे या छोटे कद के लोगों में ऊंचाई के गणितीय भ्रम को दूर करता है।",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "मानक 2D बीएमआई बनाम 3D बीएमआई तुलना तालिका",
+      "tableTitle": "मानक 2D बीएमआई बनाम 3D ऊंचाई-समायोजित बीएमआई",
       "tableRows": [
         {
-          "col1": "कम ऊंचाई वाले वयस्क (< 160 cm)",
-          "col2": "मानक 2D फॉर्मूला कम स्कोर दिखाता है",
-          "col3": "3D फॉर्मूला ऊंचाई के अनुसार समायोजित करता है"
+          "col1": "कम ऊंचाई वाले वयस्क (< 160 सेमी)",
+          "col2": "मानक 2D बीएमआई कम स्कोर दिखाता है",
+          "col3": "3D फॉर्मूला सही ऊंचाई अनुपात को समायोजित करता है"
         },
         {
-          "col1": "औसत ऊंचाई (170 cm)",
-          "col2": "समान रेटिंग",
-          "col3": "0.0 अंतर"
+          "col1": "औसत ऊंचाई (170 सेमी)",
+          "col2": "दोनों फॉर्मूलों में समान परिणाम",
+          "col3": "कोई अंतर नहीं (समान श्रेणी)"
         },
         {
-          "col1": "अधिक ऊंचाई वाले वयस्क (> 185 cm)",
-          "col2": "मानक 2D फॉर्मूला उच्च स्कोर दिखाता है",
-          "col3": "3D फॉर्मूला संतुलित स्कोर प्रदान करता है"
+          "col1": "अधिक ऊंचाई वाले वयस्क (> 185 सेमी)",
+          "col2": "मानक 2D बीएमआई अधिक स्कोर दिखाता है",
+          "col3": "3D फॉर्मूला 3D आयतन (Volume) को संतुलित करता है"
         }
       ],
       "faqs": [
         {
-          "question": "3D बीएमआई विजुअलाइज़र क्या है?",
-          "answer": "3D बीएमआई विजुअलाइज़र ऑक्सफोर्ड 2.5 पावर फॉर्मूला के आधार पर ऊंचाई और वजन के अनुपात को 360-डिग्री 3D मॉडल में प्रदर्शित करता है।"
+          "question": "3D बीएमआई और मानक बीएमआई में क्या अंतर है?",
+          "answer": "मानक बीएमआई ऊंचाई के वर्ग (m²) का उपयोग करता है, जबकि 3D बीएमआई शारीरिक मात्रा को संतुलित करने के लिए 2.5 की घात (m²·⁵) का उपयोग करता है।"
         },
         {
-          "question": "ऑक्सफोर्ड 2.5 बीएमआई फॉर्मूला क्या है?",
-          "answer": "ऑक्सफोर्ड फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) मानक बीएमआई की तुलना में लंबे या छोटे कद के व्यक्तियों के लिए अधिक सटीक शारीरिक अनुपात दिखाता है।"
+          "question": "3D बॉडी विजुअलाइज़र कैसे काम करता है?",
+          "answer": "यह आपके दर्ज किए गए वजन और ऊंचाई के आधार पर आपके ब्राउज़र में ही वास्तविक समय में 3D अवतार मॉडल तैयार करता है जिसे आप 360° घुमा सकते हैं।"
         },
         {
-          "question": "3D मॉडलर में हीटमैप (Heatmap) मोड क्या दर्शाता है?",
-          "answer": "हीटमैप मोड शरीर के विभिन्न क्षेत्रों में बीएमआई स्तर के अनुसार रंगीन विज़ुअलाइजेशन दिखाता है।"
+          "question": "वायरफ्रेम, मेश और हीटमैप व्यू क्या दर्शाते हैं?",
+          "answer": "मेश शरीर के आकार को दिखाता है, वायरफ्रेम ज्यामितीय लाइनों को दिखाता है, और हीटमैप बीएमआई श्रेणी के अनुसार रंगों से जोखिम क्षेत्र दिखाता है।"
         },
         {
-          "question": "क्या 3D विजुअलाइज़र वसा का सीधा माप करता है?",
-          "answer": "नहीं, यह ऊंचाई-से-वजन अनुपात पर आधारित एक शैक्षणिक 3D मॉडल है और शरीर की वसा का सीधा मेडिकल माप नहीं करता।"
+          "question": "लंबे लोगों के लिए ऑक्सफोर्ड 2.5 फॉर्मूला क्यों बेहतर है?",
+          "answer": "ऑक्सफोर्ड विश्वविद्यालय के प्रोफेसर निक त्रेफेथेन के अनुसार, पुराना फॉर्मूला लंबे लोगों के बीएमआई को अकारण अधिक दिखाता था, जिसे 2.5 फॉर्मूला ठीक करता है।"
         },
         {
-          "question": "3D बीएमआई में वायरफ्रेम व्यू का उपयोग कैसे करें?",
-          "answer": "वायरफ्रेम व्यू (Wireframe 3D) पर क्लिक करके आप 3D अवतार के ज्यामितीय खाके (Mesh Lines) को देख सकते हैं।"
+          "question": "क्या 3D विजुअलाइज़र आपकी कोई निजी फोटो लेता है?",
+          "answer": "नहीं, इसके लिए किसी कैमरे या फोटो की आवश्यकता नहीं है; यह केवल आपके अंकों पर आधारित एक मुफ़्त 3D गणितीय मॉडल है।"
         }
       ]
     }
@@ -1087,223 +1067,243 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     }
   },
   "3d-body-visualizer": {
-    "en": {
-      "eyebrow": "Oxford 2.5 Volumetric Avatar Simulation",
-      "title": "3D Body Visualizer & Online 3D BMI Calculator Tool",
-      "intro": "Free interactive 3D Body Visualizer and online 3D BMI avatar tool. Visualize body mass index geometry, rotate 360° across front, side and back views, and switch between solid mesh, wireframe, and heatmaps using real-time height and weight sliders.",
-      "formulaTitle": "3D Body Shape Scaling Equations & Exponent Rules",
-      "formulaDesc": "3D Height-Adjusted Exponent: 3D BMI = 1.3 × Weight (kg) / [Height (m)]².⁵ | 3D Volumetric Ratio: Scale Factor = 3D BMI / 22.5",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "3D Body Visualizer Mesh & Heatmap Modes Comparison",
-      "tableRows": [
-        {
-          "col1": "Solid 3D Mesh Mode",
-          "col2": "Full realistic smooth shaded 3D anatomical silhouette model",
-          "col3": "Best for viewing real-time volumetric shape changes"
-        },
-        {
-          "col1": "Wireframe 3D Mode",
-          "col2": "Transparent cyan latitudinal and longitudinal rib mesh rings",
-          "col3": "Best for inspecting volumetric height-weight contour scaling"
-        },
-        {
-          "col1": "BMI Heatmap Mode",
-          "col2": "Dynamic color-coded indicator (Blue=Under, Green=Healthy, Yellow=Over, Red=Obese)",
-          "col3": "Best for instant visual body type risk assessment"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "What is a 3D body visualizer and how does it work online?",
-          "answer": "A 3D body visualizer is an interactive web tool that renders a 360° 3D avatar of human body shape based on height, weight, and gender parameters using mathematical scaling equations."
-        },
-        {
-          "question": "Can I visualize my BMI body type in 3D online for free?",
-          "answer": "Yes! Our free 3D Body Visualizer requires no download or account. Adjust height and weight sliders to instantly see your 3D avatar adapt in real time."
-        },
-        {
-          "question": "What is the 3D BMI calculator vs standard 2D BMI calculator?",
-          "answer": "Standard BMI uses height squared (height^2), while the 3D BMI calculator uses Oxford mathematician Nick Trefethen 2.5-power exponent (height^2.5) to provide a height-adjusted volumetric body calculation."
-        },
-        {
-          "question": "Does the 3D BMI body visualizer show wireframe and heatmap modes?",
-          "answer": "Yes, you can toggle between Solid 3D Mesh, Wireframe 3D Grid, and Dynamic BMI Heatmap modes with a single click."
-        }
-      ]
-    },
     "es": {
-      "eyebrow": "Estándares de Referencia de Salud",
-      "title": "3D Body Visualizer & Online 3D BMI Calculator Tool – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "eyebrow": "Modelo IMC Exponencial de Oxford 2.5 y Visualización Corporal 3D",
+      "title": "Calculadora de IMC 3D y Visualizador Corporal Interactivo",
+      "intro": "Nuestra calculadora de IMC 3D y visualizador corporal interactivo calcula el índice de masa corporal mediante la fórmula exponencial de Oxford 2.5 (1.3 × peso / altura²·⁵) y principios de geometría corporal tridimensional. Gira 360° para ver la malla sólida, estructura de alambre y mapa de calor de IMC.",
+      "formulaTitle": "Fórmula Exponencial 3D de Oxford Ajustada a la Altura",
+      "formulaDesc": "IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]²·⁵ | Diseñada por matemáticos de la Universidad de Oxford para eliminar la distorsión de altura que afecta a personas altas o bajas en la fórmula clásica de Quetelet.",
+      "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
+      "tableTitle": "Comparación de IMC 2D Estándar vs IMC 3D Ajustado por Altura",
       "tableRows": [
         {
-          "col1": "Categoría / Nivel 1",
-          "col2": "Full realistic smooth shaded 3D anatomical silhouette model",
-          "col3": "Rango de referencia Best for viewing real-time volumetric shape changes"
+          "col1": "Personas Bajas (< 160 cm)",
+          "col2": "El IMC 2D estándar suele subestimar el resultado",
+          "col3": "El IMC 3D compensa la estatura menor adecuadamente"
         },
         {
-          "col1": "Categoría / Nivel 2",
-          "col2": "Transparent cyan latitudinal and longitudinal rib mesh rings",
-          "col3": "Rango de referencia Best for inspecting volumetric height-weight contour scaling"
+          "col1": "Estatura Promedio (170 cm)",
+          "col2": "Alineación de clasificación idéntica",
+          "col3": "Sin diferencia entre la fórmula 2D y 3D"
         },
         {
-          "col1": "Categoría / Nivel 3",
-          "col2": "Dynamic color-coded indicator (Blue=Under, Green=Healthy, Yellow=Over, Red=Obese)",
-          "col3": "Rango de referencia Best for instant visual body type risk assessment"
+          "col1": "Personas Altas (> 185 cm)",
+          "col2": "El IMC 2D estándar suele sobreestimar el exceso de peso",
+          "col3": "El IMC 3D ajusta el volumen tridimensional real"
         }
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de 3d body visualizer y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿En qué se diferencia el IMC 3D del IMC tradicional?",
+          "answer": "El IMC tradicional usa la altura al cuadrado (m²), mientras que el IMC 3D usa la masa tridimensional dividida entre la altura a la potencia 2.5 (m²·⁵)."
+        },
+        {
+          "question": "¿Cómo funciona la visualización corporal 3D?",
+          "answer": "Genera una silueta anatómica tridimensional interactiva que se escala según tu altura y peso en tiempo real dentro del navegador."
+        },
+        {
+          "question": "¿Qué representan los modos Malla, Alambre y Mapa de Calor?",
+          "answer": "El modo sólido muestra la masa corporal, la malla de alambre muestra los contornos estructurales, y el mapa de calor resalta las zonas según el nivel de IMC."
+        },
+        {
+          "question": "¿Es precisa la fórmula de Oxford 2.5 para personas muy altas?",
+          "answer": "Sí, el profesor Nick Trefethen de la Universidad de Oxford diseñó esta fórmula para eliminar la distorsión matemática en personas muy altas o bajas."
+        },
+        {
+          "question": "¿El modelo 3D almacena datos o fotografías personales?",
+          "answer": "No, el modelo 3D es una simulación matemática generada en tiempo real en tu navegador sin guardar datos ni requerir cámara."
         }
       ]
     },
     "fr": {
-      "eyebrow": "Normes de Référence de Santé",
-      "title": "3D Body Visualizer & Online 3D BMI Calculator Tool – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "Tableau de Référence Standard",
+      "eyebrow": "Modèle IMC d'Oxford 2.5 et Visualisation Corporelle 3D",
+      "title": "Calculateur d'IMC 3D et Visualiseur Corporel Interactif",
+      "intro": "Notre calculateur d'IMC 3D calcule votre indice de masse corporelle selon la formule d'Oxford 2.5 (1.3 × poids / taille²·⁵) et modélise votre silhouette en 3D sous tous los angles à 360°.",
+      "formulaTitle": "Formule Exponentielle 3D d'Oxford Ajustée à la Taille",
+      "formulaDesc": "IMC 3D Ajusté = 1.3 × Poids (kg) / [Taille (m)]²·⁵ | Élaborée par des mathématiciens de l'Université d'Oxford pour corriger les biais liés à la taille.",
+      "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
+      "tableTitle": "Comparaison IMC 2D Standard vs IMC 3D Ajusté d'Oxford",
       "tableRows": [
         {
-          "col1": "Catégorie / Niveau 1",
-          "col2": "Full realistic smooth shaded 3D anatomical silhouette model",
-          "col3": "Plage de référence Best for viewing real-time volumetric shape changes"
+          "col1": "Personnes de Petite Taille (< 160 cm)",
+          "col2": "L'IMC 2D sous-estime souvent la catégorie",
+          "col3": "L'IMC 3D réajuste le score proportionnellement"
         },
         {
-          "col1": "Catégorie / Niveau 2",
-          "col2": "Transparent cyan latitudinal and longitudinal rib mesh rings",
-          "col3": "Plage de référence Best for inspecting volumetric height-weight contour scaling"
+          "col1": "Taille Moyenne (170 cm)",
+          "col2": "Résultats identiques sur les deux formules",
+          "col3": "Aucune différence de catégorie"
         },
         {
-          "col1": "Catégorie / Niveau 3",
-          "col2": "Dynamic color-coded indicator (Blue=Under, Green=Healthy, Yellow=Over, Red=Obese)",
-          "col3": "Plage de référence Best for instant visual body type risk assessment"
+          "col1": "Personnes de Grande Taille (> 185 cm)",
+          "col2": "L'IMC 2D surestime le niveau de surpoids",
+          "col3": "L'IMC 3D corrige la distorsion volumétrique"
         }
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de 3d body visualizer et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "En quoi l'IMC 3D diffère-t-il de l'IMC classique ?",
+          "answer": "L'IMC classique divise le poids par la taille au carré (m²), tandis que l'IMC 3D utilise la puissance 2,5 (m²·⁵) pour refléter le volume corporel."
+        },
+        {
+          "question": "Comment fonctionne la visualisation 3D ?",
+          "answer": "Elle génère un avatar anatomique 3D interactif modélisé en temps réel selon vos mensurations dans votre navigateur."
+        },
+        {
+          "question": "Que signifient les modes Maillage, Fil de fer et Carte de chaleur ?",
+          "answer": "Le mode solide montre la masse, le fil de fer révèle la structure géométrique, et la carte de chaleur indique les zones d'IMC."
+        },
+        {
+          "question": "Pourquoi la formule d'Oxford 2.5 est-elle recommandée pour les grands ?",
+          "answer": "Elle élimine la distorsion mathématique de la formule de Quetelet qui désavantage systématiquement les personnes très grandes."
+        },
+        {
+          "question": "L'outil 3D enregistre-t-il des images personnelles ?",
+          "answer": "Non, toutes les modélisations sont des simulations mathématiques anonymes exécutées localement sur votre navigateur."
         }
       ]
     },
     "de": {
-      "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "3D Body Visualizer & Online 3D BMI Calculator Tool – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "Standard-Referenztabelle",
+      "eyebrow": "Oxford 2.5 Potenzformel & 3D-Körper-Visualisierung",
+      "title": "Interaktiver 3D BMI-Rechner & 3D-Körper-Visualisierer",
+      "intro": "Berechnen Sie Ihren höhenkorrigierten BMI mit der Oxford 2.5 Formel (1.3 × Gewicht / Größe²·⁵) und betrachten Sie ein interaktives 360°-3D-Körpermodell direkt in Ihrem Browser.",
+      "formulaTitle": "Oxford 3D Potenzformel für dreidimensionale Körpergeometrie",
+      "formulaDesc": "3D-BMI = 1.3 × Gewicht (kg) / [Größe (m)]²·⁵ | Entwickelt von Mathematikern der Universität Oxford zur Korrektur von Größenverzerrungen.",
+      "formulaCode": "3D-BMI = 1.3 × kg / m²·⁵",
+      "tableTitle": "Vergleich: Standard 2D-BMI vs. Höhenkorrigierter 3D-BMI",
       "tableRows": [
         {
-          "col1": "Kategorie / Stufe 1",
-          "col2": "Full realistic smooth shaded 3D anatomical silhouette model",
-          "col3": "Referenzbereich Best for viewing real-time volumetric shape changes"
+          "col1": "Kleine Personen (< 160 cm)",
+          "col2": "Standard 2D-BMI zeigt tendenziell zu niedrige Werte",
+          "col3": "3D-Formel gleicht die Körpergröße aus"
         },
         {
-          "col1": "Kategorie / Stufe 2",
-          "col2": "Transparent cyan latitudinal and longitudinal rib mesh rings",
-          "col3": "Referenzbereich Best for inspecting volumetric height-weight contour scaling"
+          "col1": "Durchschnittliche Größe (170 cm)",
+          "col2": "Identische Ergebnisse bei beiden Formeln",
+          "col3": "Kein Unterschied in der Kategorie"
         },
         {
-          "col1": "Kategorie / Stufe 3",
-          "col2": "Dynamic color-coded indicator (Blue=Under, Green=Healthy, Yellow=Over, Red=Obese)",
-          "col3": "Referenzbereich Best for instant visual body type risk assessment"
+          "col1": "Große Personen (> 185 cm)",
+          "col2": "Standard 2D-BMI zeigt oft zu hohe Werte",
+          "col3": "3D-Formel berücksichtigt das dreidimensionale Volumen"
         }
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der 3d body visualizer-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was unterscheidet den 3D-BMI vom klassischen BMI?",
+          "answer": "Der klassische BMI nutzt die Körpergröße zum Quadrat (m²), während der 3D-BMI die Potenz 2.5 nutzt, um das dreidimensionale Körpervolumen besser abzubilden."
+        },
+        {
+          "question": "Wie funktioniert der 3D-Körper-Visualisierer?",
+          "answer": "Er erzeugt einen interaktiven 3D-Avatar, der sich in Echtzeit an Ihre eingegebenen Daten anpasst und um 360° gedreht werden kann."
+        },
+        {
+          "question": "Was bedeuten Drahtmodell, Solid-Mesh und Heatmap?",
+          "answer": "Solid-Mesh zeigt die Körperoberfläche, das Drahtmodell zeigt die Gitterstruktur und die Heatmap hebt BMI-Zonen farblich hervor."
+        },
+        {
+          "question": "Warum ist die Oxford 2.5 Formel für große Menschen genauer?",
+          "answer": "Prof. Nick Trefethen von der Universität Oxford zeigte, dass die alte Quetelet-Formel große Menschen mathematisch benachteiligt."
+        },
+        {
+          "question": "Werden Bilder oder persönliche Daten gespeichert?",
+          "answer": "Nein, das 3D-Modell ist eine rein mathematische Echtzeit-Simulation in Ihrem Browser ohne Datenspeicherung."
         }
       ]
     },
     "ko": {
-      "eyebrow": "건강 참조 표준 지침",
-      "title": "3D Body Visualizer & Online 3D BMI 계산기 도구 – 참조 계산기",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
+      "eyebrow": "옥스포드 2.5 신장 보정 공식 및 3D 체형 시각화",
+      "title": "3D BMI 계산기 및 대화형 3D 체형 시각화 도구",
+      "intro": "옥스포드 2.5 체질량 공식(1.3 × 체중 / 신장²·⁵)을 기반으로 신장 왜곡을 보정한 BMI를 산출하고 360° 회전 가능한 3D 입체 실루엣 아바타를 실시간으로 확인하세요.",
+      "formulaTitle": "3D 옥스포드 신장 보정 체질량 공식",
+      "formulaDesc": "3D 보정 BMI = 1.3 × 체중 (kg) / [신장 (m)]²·⁵ | 옥스퍼드 대학교 수학과 연구진이 개발한 3차원 신체 부피 스케일링 공식.",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "표준 2D BMI vs 옥스포드 3D 신장 보정 BMI 비교",
       "tableRows": [
         {
-          "col1": "범주 / 단계 1",
-          "col2": "Full realistic smooth shaded 3D anatomical silhouette model",
-          "col3": "참조 범위 Best for viewing real-time volumetric shape changes"
+          "col1": "단신 성인 (< 160 cm)",
+          "col2": "표준 2D 공식은 상대적으로 낮게 측정됨",
+          "col3": "3D 보정 공식이 올바른 수치 보정"
         },
         {
-          "col1": "범주 / 단계 2",
-          "col2": "Transparent cyan latitudinal and longitudinal rib mesh rings",
-          "col3": "참조 범위 Best for inspecting volumetric height-weight contour scaling"
+          "col1": "평균 신장 (170 cm)",
+          "col2": "두 공식 결과 동일",
+          "col3": "범주 차이 없음 (동일)"
         },
         {
-          "col1": "범주 / 단계 3",
-          "col2": "Dynamic color-coded indicator (Blue=Under, Green=Healthy, Yellow=Over, Red=Obese)",
-          "col3": "참조 범위 Best for instant visual body type risk assessment"
+          "col1": "장신 성인 (> 185 cm)",
+          "col2": "표준 2D 공식은 과도하게 높게 측정됨",
+          "col3": "3D 보정 공식이 3차원 부피 왜곡 보정"
         }
       ],
       "faqs": [
         {
-          "question": "3d body visualizer 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "3D BMI와 기존 일반 BMI의 차이점은 무엇인가요?",
+          "answer": "기존 BMI는 신장의 제곱(m²)으로 나누지만, 3D BMI는 3차원 신체 부피 비율인 신장의 2.5제곱(m²·⁵)을 적용합니다."
+        },
+        {
+          "question": "3D 체형 시각화 기능은 어떻게 구동되나요?",
+          "answer": "입력한 신장과 체중 비율에 따라 브라우저 내에서 실시간으로 3D 아바타 모델을 생성하고 360° 회전을 지원합니다."
+        },
+        {
+          "question": "솔리드, 와이어프레임, 히트맵 모드의 차이는 무엇인가요?",
+          "answer": "솔리드는 체형 실루엣, 와이어프레임은 3D 구조 망, 히트맵은 BMI 범주별 색상 위험도를 시각적으로 표현합니다."
+        },
+        {
+          "question": "키가 큰 사람에게 옥스포드 2.5 공식이 더 정확한 이유는?",
+          "answer": "옥스퍼드 대학교 트레페젠 교수가 입증했듯 2차원 제곱 공식은 키가 큰 사람을 불필요하게 비만으로 판정하는 오류를 보정합니다."
+        },
+        {
+          "question": "3D 아바타 생성 시 개인정보나 사진이 저장되나요?",
+          "answer": "아니요, 사진 업로드가 필요 없으며 모든 계산 및 3D 렌더링은 사용자 브라우저에서 100% 안전하게 구동됩니다."
         }
       ]
     },
     "hi": {
-      "eyebrow": "ऑक्सफोर्ड 2.5 वॉल्यूमेट्रिक 3D मॉडल",
-      "title": "3D बॉडी विजुअलाइज़र और ऑनलाइन 3D बीएमआई कैलकुलेटर",
-      "intro": "मुफ़्त इंटरएक्टिव 3D बॉडी विजुअलाइज़र। 360° घुमाकर अपना 3D बॉडी मॉडल देखें, सॉलिड मेश, वायरफ्रेम और बीएमआई हीटमैप मोड के बीच स्विच करें।",
-      "formulaTitle": "3D बॉडी शेप स्केलिंग फॉर्मूला",
-      "formulaDesc": "3D BMI = 1.3 × वजन (किग्रा) / [ऊंचाई (मीटर)]².⁵",
+      "eyebrow": "ऑक्सफोर्ड 2.5 एक्सपोनेंशियल फॉर्मूला और 3D मॉडल",
+      "title": "3D बीएमआई कैलकुलेटर और इंटरएक्टिव 3D बॉडी विजुअलाइज़र",
+      "intro": "ऑक्सफोर्ड 2.5 फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) के साथ अपने बीएमआई की गणना करें और 360° इंटरएक्टिव 3D बॉडी मॉडलर का उपयोग करके अपनी शारीरिक संरचना को समझें।",
+      "formulaTitle": "ऑक्सफोर्ड 3D ऊंचाई-समायोजित बीएमआई फॉर्मूला",
+      "formulaDesc": "3D बीएमआई = 1.3 × वजन (किग्रा) / [ऊंचाई (मीटर)]²·⁵ | ऑक्सफोर्ड विश्वविद्यालय के गणितज्ञों द्वारा विकसित सूत्र जो लंबे या छोटे कद के लोगों में ऊंचाई के गणितीय भ्रम को दूर करता है।",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "3D बॉडी विजुअलाइज़र मोड तुलना",
+      "tableTitle": "मानक 2D बीएमआई बनाम 3D ऊंचाई-समायोजित बीएमआई",
       "tableRows": [
         {
-          "col1": "ठोस 3D मेश (Solid Mesh)",
-          "col2": "पूर्ण यथार्थवादी 3D शरीर का ढांचा",
-          "col3": "वास्तविक आकार परिवर्तन देखने के लिए सर्वश्रेष्ठ"
+          "col1": "कम ऊंचाई वाले वयस्क (< 160 सेमी)",
+          "col2": "मानक 2D बीएमआई कम स्कोर दिखाता है",
+          "col3": "3D फॉर्मूला सही ऊंचाई अनुपात को समायोजित करता है"
         },
         {
-          "col1": "वायरफ्रेम 3D मोड (Wireframe)",
-          "col2": "पारदर्शी 3D रिंग ग्रिड",
-          "col3": "वॉल्यूम स्केलिंग का निरीक्षण करने के लिए"
+          "col1": "औसत ऊंचाई (170 सेमी)",
+          "col2": "दोनों फॉर्मूलों में समान परिणाम",
+          "col3": "कोई अंतर नहीं (समान श्रेणी)"
         },
         {
-          "col1": "बीएमआई हीटमैप (Heatmap)",
-          "col2": "रंग-कोडित बीएमआई संकेतक (हरा, पीला, लाल)",
-          "col3": "त्वरित बीएमआई जोखिम मूल्यांकन"
+          "col1": "अधिक ऊंचाई वाले वयस्क (> 185 सेमी)",
+          "col2": "मानक 2D बीएमआई अधिक स्कोर दिखाता है",
+          "col3": "3D फॉर्मूला 3D आयतन (Volume) को संतुलित करता है"
         }
       ],
       "faqs": [
         {
-          "question": "3D बॉडी विजुअलाइज़र कैनवास का उपयोग कैसे करें?",
-          "answer": "कैनवास पर माउस या टच से 360° घुमाएं और स्लाइडर का उपयोग करके ऊंचाई और वजन को वास्तविक समय में बदलकर देखें।"
+          "question": "3D बीएमआई और मानक बीएमआई में क्या अंतर है?",
+          "answer": "मानक बीएमआई ऊंचाई के वर्ग (m²) का उपयोग करता है, जबकि 3D बीएमआई शारीरिक मात्रा को संतुलित करने के लिए 2.5 की घात (m²·⁵) का उपयोग करता है।"
         },
         {
-          "question": "3D वॉल्यूम स्केलिंग कैसे काम करती है?",
-          "answer": "ऑक्सफोर्ड 2.5 सूत्र के अनुसार शरीर की मात्रा (Volume Ratio) को ऊंचाई के अनुपात में scaled किया जाता है।"
+          "question": "3D बॉडी विजुअलाइज़र कैसे काम करता है?",
+          "answer": "यह आपके दर्ज किए गए वजन और ऊंचाई के आधार पर आपके ब्राउज़र में ही वास्तविक समय में 3D अवतार मॉडल तैयार करता है जिसे आप 360° घुमा सकते हैं।"
         },
         {
-          "question": "क्या 3D बॉडी मॉडल पुरुषों और महिलाओं के लिए अलग है?",
-          "answer": "हाँ, 3D अवतार लिंग (Male/Female) चयन के आधार पर शारीरिक अनुपात और ज्यामिति में बदलाव दिखाता है।"
+          "question": "वायरफ्रेम, मेश और हीटमैप व्यू क्या दर्शाते हैं?",
+          "answer": "मेश शरीर के आकार को दिखाता है, वायरफ्रेम ज्यामितीय लाइनों को दिखाता है, और हीटमैप बीएमआई श्रेणी के अनुसार रंगों से जोखिम क्षेत्र दिखाता है।"
         },
         {
-          "question": "क्या 3D विजुअलाइज़र का डेटा सर्वर पर सेव होता है?",
-          "answer": "नहीं, सभी 3D गणनाएं और कैनवास रेंडरिंग 100% आपके ब्राउज़र में गोपनीयता के साथ चलती हैं।"
+          "question": "लंबे लोगों के लिए ऑक्सफोर्ड 2.5 फॉर्मूला क्यों बेहतर है?",
+          "answer": "ऑक्सफोर्ड विश्वविद्यालय के प्रोफेसर निक त्रेफेथेन के अनुसार, पुराना फॉर्मूला लंबे लोगों के बीएमआई को अकारण अधिक दिखाता था, जिसे 2.5 फॉर्मूला ठीक करता है।"
         },
         {
-          "question": "3D बॉडी मॉडलर का मुख्य उद्देश्य क्या है?",
-          "answer": "यह वजन और ऊंचाई के परिवर्तनों का एक इंटरएक्टिव शैक्षणिक विज़ुअलाइजेशन प्रदान करना है।"
+          "question": "क्या 3D विजुअलाइज़र आपकी कोई निजी फोटो लेता है?",
+          "answer": "नहीं, इसके लिए किसी कैमरे या फोटो की आवश्यकता नहीं है; यह केवल आपके अंकों पर आधारित एक मुफ़्त 3D गणितीय मॉडल है।"
         }
       ]
     }
