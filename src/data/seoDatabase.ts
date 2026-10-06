@@ -384,17 +384,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "डब्ल्यूएचओ वयस्क बीएमआई स्केल एवं वर्गीकरण चार्ट",
       "tableRows": [
         {
-          "col1": "कम वजन (Underweight)",
+          "col1": "कम वजन",
           "col2": "< 18.5 kg/m²",
           "col3": "कम वजन संदर्भ सीमा"
         },
         {
-          "col1": "सामान्य वजन (Healthy Weight)",
+          "col1": "सामान्य (स्वस्थ) वजन",
           "col2": "18.5 – 24.9 kg/m²",
           "col3": "सामान्य वजन संदर्भ सीमा"
         },
         {
-          "col1": "अधिक वजन (Overweight)",
+          "col1": "अधिक वजन",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "अधिक वजन संदर्भ सीमा (एशियाई कटऑफ: 23.0 kg/m²)"
         },
@@ -1162,7 +1162,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "वयस्कों (पुरुषों एवं महिलाओं) के लिए आधिकारिक डब्ल्यूएचओ बीएमआई श्रेणियां चार्ट",
       "tableRows": [
         {
-          "col1": "कम वजन (Underweight)",
+          "col1": "कम वजन",
           "col2": "< 18.5 kg/m²",
           "col3": "कम वजन संदर्भ सीमा"
         },
@@ -1172,7 +1172,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "वयस्कों के लिए आदर्श स्वस्थ बीएमआई सीमा"
         },
         {
-          "col1": "अधिक वजन (Overweight)",
+          "col1": "अधिक वजन",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "अधिक वजन संदर्भ सीमा (एशियाई कटऑफ: 23.0 kg/m²)"
         },
@@ -1919,7 +1919,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "भारतीय पुरुषों एवं महिलाओं के लिए बीएमआई चार्ट (ICMR एवं WHO मानक)",
       "tableRows": [
         {
-          "col1": "कम वजन (Underweight)",
+          "col1": "कम वजन",
           "col2": "< 18.5 kg/m²",
           "col3": "कम वजन संदर्भ सीमा"
         },
@@ -1934,12 +1934,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "भारतीयों के लिए अधिक वजन एवं जोखिम सीमा"
         },
         {
-          "col1": "मोटापा श्रेणी I (Obese Class I)",
+          "col1": "मोटापा श्रेणी I",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "दक्षिण एशियाई मानकों के तहत मोटापा श्रेणी I"
         },
         {
-          "col1": "मोटापा श्रेणी II (Obese Class II)",
+          "col1": "मोटापा श्रेणी II (गंभीर)",
           "col2": "≥ 30.0 kg/m²",
           "col3": "गंभीर मोटापा श्रेणी"
         }
@@ -2242,17 +2242,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "भारतीय वयस्कों के लिए बीएमआई श्रेणी चार्ट (ICMR मानक)",
       "tableRows": [
         {
-          "col1": "कम वजन (Underweight)",
+          "col1": "कम वजन",
           "col2": "< 18.5 kg/m²",
           "col3": "कम वजन सीमा"
         },
         {
-          "col1": "सामान्य वजन (Healthy Weight)",
+          "col1": "सामान्य वजन",
           "col2": "18.5 – 22.9 kg/m²",
           "col3": "भारतीयों के लिए स्वस्थ सामान्य बीएमआई"
         },
         {
-          "col1": "अधिक वजन (Overweight Cutoff 23)",
+          "col1": "अधिक वजन (जोखिम सीमा 23.0)",
           "col2": "23.0 – 24.9 kg/m²",
           "col3": "भारतीयों के लिए अधिक वजन सीमा"
         },
@@ -3368,22 +3368,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "डब्ल्यूएचओ एशियाई वयस्क बीएमआई वर्गीकरण तालिका",
       "tableRows": [
         {
-          "col1": "कम वजन (Underweight)",
+          "col1": "कम वजन",
           "col2": "< 18.5 kg/m²",
           "col3": "कम वजन सीमा"
         },
         {
-          "col1": "सामान्य स्वस्थ वजन (Normal)",
+          "col1": "सामान्य स्वस्थ वजन",
           "col2": "18.5 – 22.9 kg/m²",
           "col3": "एशियाई पुरुषों और महिलाओं के लिए स्वस्थ सीमा"
         },
         {
-          "col1": "अधिक वजन (Overweight)",
+          "col1": "अधिक वजन",
           "col2": "23.0 – 27.4 kg/m²",
           "col3": "एशियाई जोखिम सीमा"
         },
         {
-          "col1": "मोटापा (Obese)",
+          "col1": "मोटापा",
           "col2": "≥ 27.5 kg/m²",
           "col3": "उच्च जोखिम बीएमआई सीमा"
         }
@@ -5605,7 +5605,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "मानक दैनिक कैलोरी अंतर संदर्भ"
         },
         {
-          "col1": "ऊर्जा संतुलन (0 kcal)",
+          "col1": "ऊर्जा संतुलन",
           "col2": "0 kcal अंतर",
           "col3": "वजन स्थिरता के लिए TDEE"
         },
