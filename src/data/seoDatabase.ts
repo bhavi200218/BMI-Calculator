@@ -321,7 +321,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "WHO 성인 BMI 진단표 및 분류 차트",
       "tableRows": [
         {
-          "col1": "저체중 (Underweight)",
+          "col1": "저체중",
           "col2": "< 18.5 kg/m²",
           "col3": "저체중 참조 범위"
         },
@@ -868,17 +868,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Categoría / Nivel 1",
           "col2": "< 16.0 kg/m²",
-          "col3": "Rango de referencia Severe underweight risk threshold"
+          "col3": "Umbral de referencia para bajo peso severo"
         },
         {
           "col1": "Categoría / Nivel 2",
           "col2": "16.0 – 16.9 kg/m²",
-          "col3": "Rango de referencia Moderate underweight rango de referencia"
+          "col3": "Umbral de referencia para bajo peso moderado"
         },
         {
           "col1": "Categoría / Nivel 3",
           "col2": "17.0 – 18.4 kg/m²",
-          "col3": "Rango de referencia Mild underweight reference threshold"
+          "col3": "Umbral de referencia para bajo peso leve"
         },
         {
           "col1": "Categoría / Nivel 4",
@@ -903,7 +903,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Categoría / Nivel 8",
           "col2": "≥ 40.0 kg/m²",
-          "col3": "Rango de referencia Severe Class III obesity screening threshold"
+          "col3": "Umbral de evaluación para obesidad severa Clase III"
         }
       ],
       "faqs": [
@@ -942,17 +942,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Sous-poids (Norme Indienne)",
           "col2": "< 16.0 kg/m²",
-          "col3": "Plage de référence Severe underweight risk threshold"
+          "col3": "Seuil de référence pour insuffisance pondérale sévère"
         },
         {
           "col1": "Poids Normal & Optimal",
           "col2": "16.0 – 16.9 kg/m²",
-          "col3": "Plage de référence Moderate underweight plage de référence"
+          "col3": "Seuil de référence pour insuffisance pondérale modérée"
         },
         {
           "col1": "Surpoids / Zone d'Action",
           "col2": "17.0 – 18.4 kg/m²",
-          "col3": "Plage de référence Mild underweight reference threshold"
+          "col3": "Seuil de référence pour insuffisance pondérale légère"
         },
         {
           "col1": "Obésité Classe I (ICMR)",
@@ -977,7 +977,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Catégorie / Niveau 8",
           "col2": "≥ 40.0 kg/m²",
-          "col3": "Plage de référence Severe Class III obesity screening threshold"
+          "col3": "Seuil d'évaluation de l'obésité sévère de classe III"
         }
       ],
       "faqs": [
@@ -1016,17 +1016,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Kategorie / Stufe 1",
           "col2": "< 16.0 kg/m²",
-          "col3": "Referenzbereich Severe underweight risk threshold"
+          "col3": "Referenzwert für starkes Untergewicht"
         },
         {
           "col1": "Kategorie / Stufe 2",
           "col2": "16.0 – 16.9 kg/m²",
-          "col3": "Referenzbereich Moderate underweight Referenzbereich"
+          "col3": "Referenzwert für mäßiges Untergewicht"
         },
         {
           "col1": "Kategorie / Stufe 3",
           "col2": "17.0 – 18.4 kg/m²",
-          "col3": "Referenzbereich Mild underweight reference threshold"
+          "col3": "Referenzwert für leichtes Untergewicht"
         },
         {
           "col1": "Kategorie / Stufe 4",
@@ -1051,7 +1051,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Kategorie / Stufe 8",
           "col2": "≥ 40.0 kg/m²",
-          "col3": "Referenzbereich Severe Class III obesity screening threshold"
+          "col3": "Schwellenwert für schwere Adipositas Klasse III"
         }
       ],
       "faqs": [
@@ -1090,17 +1090,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "범주 / 단계 1",
           "col2": "< 16.0 kg/m²",
-          "col3": "참조 범위 Severe underweight risk threshold"
+          "col3": "심각한 저체중 위험 기준"
         },
         {
           "col1": "범주 / 단계 2",
           "col2": "16.0 – 16.9 kg/m²",
-          "col3": "참조 범위 Moderate underweight 참조 범위"
+          "col3": "중등도 저체중 참조 범위"
         },
         {
           "col1": "범주 / 단계 3",
           "col2": "17.0 – 18.4 kg/m²",
-          "col3": "참조 범위 Mild underweight reference threshold"
+          "col3": "경도 저체중 참조 기준"
         },
         {
           "col1": "범주 / 단계 4",
@@ -1125,7 +1125,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "범주 / 단계 8",
           "col2": "≥ 40.0 kg/m²",
-          "col3": "참조 범위 Severe Class III obesity screening threshold"
+          "col3": "3단계 고도 비만 스크리닝 임계값"
         }
       ],
       "faqs": [
@@ -1199,7 +1199,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "श्रेणी / स्तर 8",
           "col2": "≥ 40.0 kg/m²",
-          "col3": "संदर्भ सीमा Severe Class III obesity screening threshold"
+          "col3": "गंभीर मोटापा श्रेणी III संदर्भ सीमा"
         }
       ],
       "faqs": [
@@ -1619,7 +1619,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "To calculate BMI in kg and cm: Convert height in cm to meters by dividing by 100. Multiply height in meters by itself to get height squared. Divide weight in kg by height squared. Example: 65 kg / (1.68m x 1.68m) = 23.0 BMI."
         },
         {
-          "question": "What are the waist circumference guidelines for Indian adults?",
+          "question": "¿Cuáles son las pautas de circunferencia de cintura para adultos indios?",
           "answer": "The Indian Council of Medical Research (ICMR) recommends keeping waist circumference under 90 cm (35 inches) for Indian men and under 80 cm (31.5 inches) for Indian women to reduce abdominal fat risk."
         },
         {
@@ -1649,27 +1649,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Categoría / Nivel 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "Rango de referencia Underweight rango de referencia for Indian adults"
+          "col3": "Umbral de referencia para bajo peso"
         },
         {
           "col1": "Categoría / Nivel 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Rango de referencia Optimal healthy BMI range for Indian men & women"
+          "col3": "Rango saludable óptimo para adultos indios"
         },
         {
           "col1": "Categoría / Nivel 3",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Rango de referencia Increased cardiometabolic risk cutoff (BMI 23 India threshold)"
+          "col3": "Umbral de riesgo cardiometabólico elevado (Corte de IMC 23)"
         },
         {
           "col1": "Categoría / Nivel 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Rango de referencia Obesidad Clase I classification under WHO South Asian criteria"
+          "col3": "Clasificación de obesidad Clase I según OMS Asia-Pacífico"
         },
         {
           "col1": "Categoría / Nivel 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Rango de referencia High risk Obesidad Claseification for Indian adults"
+          "col3": "Clasificación de obesidad severa de alto riesgo"
         }
       ],
       "faqs": [
@@ -1679,7 +1679,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "Por qué es BMI 23 the overweight cutoff threshold in India?",
+          "question": "¿Por qué el IMC 23 es el umbral de sobrepeso en India?",
           "answer": "Epidemiological research shows that South Asian populations carry higher abdominal visceral fat and face elevated cardiometabolic risks (such as type 2 diabetes and hypertension) at lower body mass index levels compared to Western populations."
         },
         {
@@ -1687,11 +1687,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "To calculate BMI in kg and cm: Convert height in cm to meters by dividing by 100. Multiply height in meters by itself to get height squared. Divide weight in kg by height squared. Example: 65 kg / (1.68m x 1.68m) = 23.0 BMI."
         },
         {
-          "question": "What are the waist circumference guidelines for Indian adults?",
+          "question": "Quelles sont les directives de tour de taille pour les Indiens?",
           "answer": "The Indian Council of Medical Research (ICMR) recommends keeping waist circumference under 90 cm (35 inches) for Indian men and under 80 cm (31.5 inches) for Indian women to reduce abdominal fat risk."
         },
         {
-          "question": "¿Qué es el ideal height weight chart for Indians?",
+          "question": "¿Cuál es la tabla de peso e estatura ideal para adultos indios?",
           "answer": "An ideal weight for Indian adults keeps BMI between 18.5 and 22.9 kg/m². For example, for an Indian male or female of height 168 cm (5 ft 6 in), the healthy weight range is 52.2 kg to 64.6 kg."
         }
       ,
@@ -1717,27 +1717,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Catégorie / Niveau 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "Plage de référence Underweight plage de référence for Indian adults"
+          "col3": "Seuil de référence d'insuffisance pondérale"
         },
         {
           "col1": "Catégorie / Niveau 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Plage de référence Optimal healthy BMI range for Indian men & women"
+          "col3": "Plage de poids santé optimale pour les adultes indiens"
         },
         {
           "col1": "Catégorie / Niveau 3",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Plage de référence Increased cardiometabolic risk cutoff (BMI 23 India threshold)"
+          "col3": "Seuil de risque cardiométabolique accru (IMC ≥ 23)"
         },
         {
           "col1": "Catégorie / Niveau 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Plage de référence Obésité Classe I classification under WHO South Asian criteria"
+          "col3": "Obésité de classe I selon les critères OMS Asie-Pacifique"
         },
         {
           "col1": "Catégorie / Niveau 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Plage de référence High risk Obésité Classeification for Indian adults"
+          "col3": "Classification d'obésité sévére à haut risque"
         }
       ],
       "faqs": [
@@ -1747,7 +1747,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "Pourquoi BMI 23 the overweight cutoff threshold in India?",
+          "question": "Pourquoi l'IMC 23 est-il le seuil de surpoids en Inde?",
           "answer": "Epidemiological research shows that South Asian populations carry higher abdominal visceral fat and face elevated cardiometabolic risks (such as type 2 diabetes and hypertension) at lower body mass index levels compared to Western populations."
         },
         {
@@ -1755,11 +1755,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "To calculate BMI in kg and cm: Convert height in cm to meters by dividing by 100. Multiply height in meters by itself to get height squared. Divide weight in kg by height squared. Example: 65 kg / (1.68m x 1.68m) = 23.0 BMI."
         },
         {
-          "question": "What are the waist circumference guidelines for Indian adults?",
+          "question": "Welche Richtlinien gelten für den Taillenumfang indischer Erwachsener?",
           "answer": "The Indian Council of Medical Research (ICMR) recommends keeping waist circumference under 90 cm (35 inches) for Indian men and under 80 cm (31.5 inches) for Indian women to reduce abdominal fat risk."
         },
         {
-          "question": "Qu'est-ce que le ideal height weight chart for Indians?",
+          "question": "Quelle est la table de poids et taille idéale pour les Indiens?",
           "answer": "An ideal weight for Indian adults keeps BMI between 18.5 and 22.9 kg/m². For example, for an Indian male or female of height 168 cm (5 ft 6 in), the healthy weight range is 52.2 kg to 64.6 kg."
         }
       ,
@@ -1785,27 +1785,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Kategorie / Stufe 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "Referenzbereich Underweight Referenzbereich for Indian adults"
+          "col3": "Referenzbereich für Untergewicht"
         },
         {
           "col1": "Kategorie / Stufe 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Referenzbereich Optimal healthy BMI range for Indian men & women"
+          "col3": "Optimaler gesunder BMI-Bereich für indische Erwachsene"
         },
         {
           "col1": "Kategorie / Stufe 3",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Referenzbereich Increased cardiometabolic risk cutoff (BMI 23 India threshold)"
+          "col3": "Grenzwert für erhöhtes kardiometabolisches Risiko (BMI 23)"
         },
         {
           "col1": "Kategorie / Stufe 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Referenzbereich Adipositas Klasse I classification under WHO South Asian criteria"
+          "col3": "Adipositas Klasse I nach WHO Südostasien-Kriterien"
         },
         {
           "col1": "Kategorie / Stufe 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Referenzbereich High risk Adipositas Klasseification for Indian adults"
+          "col3": "Klassifizierung für schwere Adipositas"
         }
       ],
       "faqs": [
@@ -1815,7 +1815,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "Warum ist BMI 23 the overweight cutoff threshold in India?",
+          "question": "Warum ist ein BMI von 23 die Schwellengrenze in Indien?",
           "answer": "Epidemiological research shows that South Asian populations carry higher abdominal visceral fat and face elevated cardiometabolic risks (such as type 2 diabetes and hypertension) at lower body mass index levels compared to Western populations."
         },
         {
@@ -1823,11 +1823,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "To calculate BMI in kg and cm: Convert height in cm to meters by dividing by 100. Multiply height in meters by itself to get height squared. Divide weight in kg by height squared. Example: 65 kg / (1.68m x 1.68m) = 23.0 BMI."
         },
         {
-          "question": "What are the waist circumference guidelines for Indian adults?",
+          "question": "Welche Richtlinien gelten für den Taillenumfang indischer Erwachsener?",
           "answer": "The Indian Council of Medical Research (ICMR) recommends keeping waist circumference under 90 cm (35 inches) for Indian men and under 80 cm (31.5 inches) for Indian women to reduce abdominal fat risk."
         },
         {
-          "question": "Was ist der ideal height weight chart for Indians?",
+          "question": "Was ist die ideale Größe-Gewicht-Tabelle für Inder?",
           "answer": "An ideal weight for Indian adults keeps BMI between 18.5 and 22.9 kg/m². For example, for an Indian male or female of height 168 cm (5 ft 6 in), the healthy weight range is 52.2 kg to 64.6 kg."
         }
       ,
@@ -1853,27 +1853,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "범주 / 단계 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "참조 범위 Underweight 참조 범위 for Indian adults"
+          "col3": "저체중 참조 기준"
         },
         {
           "col1": "범주 / 단계 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "참조 범위 Optimal healthy BMI range for Indian men & women"
+          "col3": "인도 성인을 위한 최적 건강 체중 범위"
         },
         {
           "col1": "범주 / 단계 3",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "참조 범위 Increased cardiometabolic risk cutoff (BMI 23 India threshold)"
+          "col3": "심혈관 및 대사 위험 증가 기준 (BMI 23)"
         },
         {
           "col1": "범주 / 단계 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "참조 범위 비만 1단계 classification under WHO South Asian criteria"
+          "col3": "WHO 아시아 태평양 기준 1단계 비만"
         },
         {
           "col1": "범주 / 단계 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "참조 범위 High risk 비만 단계ification for Indian adults"
+          "col3": "고위험 중증 비만 분류"
         }
       ],
       "faqs": [
@@ -1883,7 +1883,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "Why is BMI 23 the overweight cutoff threshold in India? 안내 및 원리",
+          "question": "인도에서 BMI 23이 과체중 기준인 이유는 무엇인가요?",
           "answer": "Epidemiological research shows that South Asian populations carry higher abdominal visceral fat and face elevated cardiometabolic risks (such as type 2 diabetes and hypertension) at lower body mass index levels compared to Western populations."
         },
         {
@@ -1891,11 +1891,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "To calculate BMI in kg and cm: Convert height in cm to meters by dividing by 100. Multiply height in meters by itself to get height squared. Divide weight in kg by height squared. Example: 65 kg / (1.68m x 1.68m) = 23.0 BMI."
         },
         {
-          "question": "What are the waist circumference guidelines for Indian adults? 안내 및 원리",
+          "question": "인도 성인의 허리둘레 기준 가이드라인은 무엇인가요?",
           "answer": "The Indian Council of Medical Research (ICMR) recommends keeping waist circumference under 90 cm (35 inches) for Indian men and under 80 cm (31.5 inches) for Indian women to reduce abdominal fat risk."
         },
         {
-          "question": " ideal height weight chart for Indians? 안내 및 원리",
+          "question": "인도 성인을 위한 이상적인 신장별 체중표는 무엇인가요?",
           "answer": "An ideal weight for Indian adults keeps BMI between 18.5 and 22.9 kg/m². For example, for an Indian male or female of height 168 cm (5 ft 6 in), the healthy weight range is 52.2 kg to 64.6 kg."
         }
       ,
@@ -2234,7 +2234,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "आईसीएमआर एवं डब्ल्यूएचओ भारतीय मानक",
-      "title": "भारतीयों के लिए बीएमआई कैलकुलेटर (BMI कैलकुलेटर for Indians)",
+      "title": "भारतीयों के लिए बीएमआई कैलकुलेटर (BMI Calculator for Indians)",
       "intro": "भारतीय चिकित्सा अनुसंधान परिषद (ICMR) और WHO दक्षिण एशियाई दिशानिर्देशों पर आधारित भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। किलोग्राम और सेंटीमीटर में अपने बीएमआई और स्वस्थ वजन सीमा की गणना करें।",
       "formulaTitle": "भारतीय बीएमआई सूत्र",
       "formulaDesc": "बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | भारतीयों के लिए स्वस्थ सीमा: 18.5 - 22.9 kg/m²",
@@ -2257,12 +2257,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "भारतीयों के लिए अधिक वजन सीमा"
         },
         {
-          "col1": "मोटापा श्रेणी I (Obese Class I)",
+          "col1": "मोटापा श्रेणी I",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "मोटापा श्रेणी I"
         },
         {
-          "col1": "मोटापा श्रेणी II (Obese Class II)",
+          "col1": "मोटापा श्रेणी II",
           "col2": "≥ 30.0 kg/m²",
           "col3": "गंभीर मोटापा"
         }
@@ -2453,7 +2453,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "While WHO BMI ranges (18.5 to 24.9) apply to both adult men and women, ideal body weight formulas (such as Devine or Robinson) adjust for gender due to differences in average skeletal mass and muscle composition."
         },
         {
-          "question": "¿Qué es a healthy weight for Indian adults by height?",
+          "question": "¿Cuál es el peso saludable para adultos indios según la estatura?",
           "answer": "For South Asian and Indian adults, consensus guidelines recommend keeping BMI between 18.5 and 22.9 kg/m² due to higher visceral fat risk at lower body mass."
         }
       ]
@@ -2532,7 +2532,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "While WHO BMI ranges (18.5 to 24.9) apply to both adult men and women, ideal body weight formulas (such as Devine or Robinson) adjust for gender due to differences in average skeletal mass and muscle composition."
         },
         {
-          "question": "Qu'est-ce que a healthy weight for Indian adults by height?",
+          "question": "Quel est un poids santé pour les adultes indiens selon la taille?",
           "answer": "For South Asian and Indian adults, consensus guidelines recommend keeping BMI between 18.5 and 22.9 kg/m² due to higher visceral fat risk at lower body mass."
         }
       ]
@@ -2611,7 +2611,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "While WHO BMI ranges (18.5 to 24.9) apply to both adult men and women, ideal body weight formulas (such as Devine or Robinson) adjust for gender due to differences in average skeletal mass and muscle composition."
         },
         {
-          "question": "Was ist a healthy weight for Indian adults by height?",
+          "question": "Was ist ein gesundes Gewicht für indische Erwachsene nach Körpergröße?",
           "answer": "For South Asian and Indian adults, consensus guidelines recommend keeping BMI between 18.5 and 22.9 kg/m² due to higher visceral fat risk at lower body mass."
         }
       ]
@@ -2690,7 +2690,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "While WHO BMI ranges (18.5 to 24.9) apply to both adult men and women, ideal body weight formulas (such as Devine or Robinson) adjust for gender due to differences in average skeletal mass and muscle composition."
         },
         {
-          "question": " a healthy weight for Indian adults by height? 안내 및 원리",
+          "question": "신장별 인도 성인의 건강 체중은 얼마인가요?",
           "answer": "For South Asian and Indian adults, consensus guidelines recommend keeping BMI between 18.5 and 22.9 kg/m² due to higher visceral fat risk at lower body mass."
         }
       ]
@@ -2824,7 +2824,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the Asian overweight reference threshold, providing educational screening context."
         },
         {
-          "question": "What waist circumference screening thresholds apply to Asian populations?",
+          "question": "¿Qué umbrales de circunferencia de cintura se aplican a las poblaciones asiáticas?",
           "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
         },
         {
@@ -2835,7 +2835,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Asian BMI Reference Calculator — BMI 23 Threshold – Guía y Calculadora",
+      "title": "Calculadora de IMC Asiático — Umbral IMC 23",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -2879,11 +2879,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
         },
         {
-          "question": "¿Cómo se the Asian BMI threshold of 23 kg/m² evaluated?",
+          "question": "¿Cómo se evalúa el umbral de IMC asiático de 23 kg/m²?",
           "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the Asian overweight reference threshold, providing educational screening context."
         },
         {
-          "question": "What waist circumference screening thresholds apply to Asian populations?",
+          "question": "Quels seuils de tour de taille s'appliquent aux populations asiatiques?",
           "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
         },
         {
@@ -2894,7 +2894,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Asian BMI Reference Calculator — BMI 23 Threshold – Outil de Référence",
+      "title": "Calculateur d'IMC Asiatique — Seuil IMC 23",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -2938,11 +2938,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
         },
         {
-          "question": "Comment est the Asian BMI threshold of 23 kg/m² evaluated?",
+          "question": "Comment le seuil d'IMC asiatique de 23 kg/m² est-il évalué?",
           "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the Asian overweight reference threshold, providing educational screening context."
         },
         {
-          "question": "What waist circumference screening thresholds apply to Asian populations?",
+          "question": "Welche Taillenumfang-Grenzwerte gelten für asiatische Bevölkerungsgruppen?",
           "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
         },
         {
@@ -2953,7 +2953,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Asian BMI Reference Calculator — BMI 23 Threshold – Rechner & Leitfaden",
+      "title": "Asiatischer BMI-Rechner — BMI 23 Schwellenwert",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -2997,11 +2997,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
         },
         {
-          "question": "Wie wird the Asian BMI threshold of 23 kg/m² evaluated?",
+          "question": "Wie wird der asiatische BMI-Schwellenwert von 23 kg/m² bewertet?",
           "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the Asian overweight reference threshold, providing educational screening context."
         },
         {
-          "question": "What waist circumference screening thresholds apply to Asian populations?",
+          "question": "Welche Taillenumfang-Grenzwerte gelten für asiatische Bevölkerungsgruppen?",
           "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
         },
         {
@@ -3012,7 +3012,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Asian BMI Reference 계산기 — BMI 23 Threshold – 참조 계산기",
+      "title": "아시아 기준 BMI 계산기 — BMI 23 임계값",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -3056,11 +3056,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
         },
         {
-          "question": " the Asian BMI threshold of 23 kg/m² evaluated? 안내 및 원리",
+          "question": "아시아인 BMI 기준 23 kg/m² 임계값은 어떻게 평가되나요?",
           "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the Asian overweight reference threshold, providing educational screening context."
         },
         {
-          "question": "What waist circumference screening thresholds apply to Asian populations? 안내 및 원리",
+          "question": "아시아인에게 적용되는 허리둘레 선별 임계값은 무엇인가요?",
           "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
         },
         {
@@ -3071,7 +3071,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "Asian BMI Reference कैलकुलेटर — BMI 23 Threshold – मुफ्त कैलकुलेटर",
+      "title": "एशियाई बीएमआई संदर्भ कैलकुलेटर — 23 kg/m² कटऑफ",
       "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
@@ -7583,7 +7583,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Categoría / Nivel 4",
           "col2": "80% – 90% HRR",
-          "col3": "Rango de referencia Increases high-intensity performance and lactate threshold"
+          "col3": "Mejora el rendimiento de alta intensidad y el umbral de lactato"
         },
         {
           "col1": "Categoría / Nivel 5",
@@ -7630,7 +7630,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Catégorie / Niveau 4",
           "col2": "80% – 90% HRR",
-          "col3": "Plage de référence Increases high-intensity performance and lactate threshold"
+          "col3": "Augmente les performances à haute intensité et le seuil de lactate"
         },
         {
           "col1": "Catégorie / Niveau 5",
@@ -7677,7 +7677,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Kategorie / Stufe 4",
           "col2": "80% – 90% HRR",
-          "col3": "Referenzbereich Increases high-intensity performance and lactate threshold"
+          "col3": "Steigert die Hochleistungsfähigkeit und die Laktatschwelle"
         },
         {
           "col1": "Kategorie / Stufe 5",
@@ -7724,7 +7724,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "범주 / 단계 4",
           "col2": "80% – 90% HRR",
-          "col3": "참조 범위 Increases high-intensity performance and lactate threshold"
+          "col3": "고강도 운동 능력 및 젖산 역치 향상"
         },
         {
           "col1": "범주 / 단계 5",
