@@ -124,13 +124,29 @@ const webAppSchema = {
       </nav>
 
       <!-- Top Header text -->
-      <div class="text-center space-y-3 max-w-3xl mx-auto">
+      <div class="text-center space-y-4 max-w-3xl mx-auto">
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] animate-in" style="animation-delay:0ms">
           {calc.slug === '3d-bmi-calculator' ? `${calc.name[lang] || calc.name['en']} & 3D Body Visualizer` : (calc.name[lang] || calc.name['en'])}
         </h1>
-        <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-sans font-medium animate-in max-w-xl mx-auto" style="animation-delay:50ms">
+        <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-sans font-medium animate-in max-w-2xl mx-auto" style="animation-delay:50ms">
           {pageDesc}
         </p>
+
+        <!-- Hero Trust & Privacy Feature Badges (Equal Parity across all Locales) -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-semibold text-[var(--muted-foreground)] pt-1 animate-in" style="animation-delay:75ms">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--muted)]/50 border border-[var(--border)]">
+            <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            {{ en: '100% Free & Instant', es: '100% Gratis e Instantáneo', fr: '100% Gratuit et Instantané', de: '100% Kostenlos & Sofort', ko: '100% 무료 및 즉시 계산', hi: '100% मुफ़्त और त्वरित' }[lang]}
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--muted)]/50 border border-[var(--border)]">
+            <svg class="w-3.5 h-3.5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            {{ en: 'Browser-Based Privacy', es: 'Privacidad en Navegador', fr: 'Confidentialité sur Navigateur', de: 'Datenschutz im Browser', ko: '브라우저 기반 개인정보 보호', hi: 'ब्राउज़र-आधारित गोपनीयता' }[lang]}
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--muted)]/50 border border-[var(--border)]">
+            <svg class="w-3.5 h-3.5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            {{ en: 'WHO & Medical Standards', es: 'Estándares Médicos de la OMS', fr: 'Normes OMS et Médicales', de: 'WHO & Medizinische Standards', ko: 'WHO 및 의학적 표준 지침', hi: 'डब्ल्यूएचओ और चिकित्सा मानक' }[lang]}
+          </span>
+        </div>
       </div>
 
       <!-- Main Calculator Layout -->

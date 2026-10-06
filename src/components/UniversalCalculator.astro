@@ -42,7 +42,24 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
 
     {calculator.slug === 'body-surface-area-calculator' && (
       <div class="p-4 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-semibold leading-relaxed">
-        <strong>Important Warning:</strong> BSA is an estimate. Do not use this calculator to determine medication doses. Medical dosing depends on the specific medication, indication, and professional medical guidance.
+        <strong>
+          {{
+            en: 'Important Warning:',
+            es: 'Advertencia Importante:',
+            fr: 'Avertissement Important:',
+            de: 'Wichtiger Hinweis:',
+            ko: '중요 경고:',
+            hi: 'महत्वपूर्ण चेतावनी:'
+          }[lang]}
+        </strong> {' '}
+        {{
+          en: 'BSA is an estimate. Do not use this calculator to determine medication doses. Medical dosing depends on the specific medication, indication, and professional medical guidance.',
+          es: 'La SC es una estimación. No utilice esta calculadora para determinar dosis de medicamentos. La dosificación médica depende del medicamento específico, la indicación y la orientación médica profesional.',
+          fr: 'La SC est une estimation. N\'utilisez pas ce calculateur pour déterminer les doses de médicaments. Le dosage médical dépend du médicament spécifique, de l\'indication et des conseils médicaux professionnels.',
+          de: 'KOF ist eine Schätzung. Verwenden Sie diesen Rechner nicht zur Bestimmung von Medikamentendosen. Die medizinische Dosierung hängt vom jeweiligen Medikament, der Indikation und der fachlichen medizinischen Beratung ab.',
+          ko: '체표면적(BSA)은 추정치입니다. 본 계산기를 의약품 투여량 결정에 사용하지 마세요. 의학적 투여량은 특정 의약품, 적응증 및 전문 의료 지침에 따라 결정됩니다.',
+          hi: 'बीएसए एक अनुमान है। दवा की खुराक निर्धारित करने के लिए इस कैलकुलेटर का उपयोग न करें। चिकित्सा खुराक विशिष्ट दवा, संकेत और पेशेवर चिकित्सा मार्गदर्शन पर निर्भर करती है।'
+        }[lang]}
       </div>
     )}
 
@@ -385,10 +402,19 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         else if (slug === 'bmi-chart') {
           const hM = heightCm / 100;
           const bmi = heightCm > 0 ? weightKg / (hM * hM) : 0;
-          let category = 'Healthy Weight (18.5 - 24.9)';
-          if (bmi < 18.5) category = 'Underweight (< 18.5)';
-          else if (bmi >= 25.0 && bmi < 30.0) category = 'Overweight (25.0 - 29.9)';
-          else if (bmi >= 30.0) category = 'Obesity (≥ 30.0)';
+          const bmiCatLabels = {
+            en: { healthy: 'Healthy Weight (18.5 - 24.9)', underweight: 'Underweight (< 18.5)', overweight: 'Overweight (25.0 - 29.9)', obese: 'Obesity (≥ 30.0)' },
+            es: { healthy: 'Peso Saludable (18.5 - 24.9)', underweight: 'Bajo Peso (< 18.5)', overweight: 'Sobrepeso (25.0 - 29.9)', obese: 'Obesidad (≥ 30.0)' },
+            fr: { healthy: 'Poids Santé (18.5 - 24.9)', underweight: 'Sous-poids (< 18.5)', overweight: 'Surpoids (25.0 - 29.9)', obese: 'Obésité (≥ 30.0)' },
+            de: { healthy: 'Gesundes Gewicht (18.5 - 24.9)', underweight: 'Untergewicht (< 18.5)', overweight: 'Übergewicht (25.0 - 29.9)', obese: 'Adipositas (≥ 30.0)' },
+            ko: { healthy: '정상 체중 (18.5 - 24.9)', underweight: '저체중 (< 18.5)', overweight: '과체중 (25.0 - 29.9)', obese: '비만 (≥ 30.0)' },
+            hi: { healthy: 'स्वस्थ वजन (18.5 - 24.9)', underweight: 'कम वजन (< 18.5)', overweight: 'अधिक वजन (25.0 - 29.9)', obese: 'मोटापा (≥ 30.0)' }
+          }[lang] || { healthy: 'Healthy Weight (18.5 - 24.9)', underweight: 'Underweight (< 18.5)', overweight: 'Overweight (25.0 - 29.9)', obese: 'Obesity (≥ 30.0)' };
+
+          let category = bmiCatLabels.healthy;
+          if (bmi < 18.5) category = bmiCatLabels.underweight;
+          else if (bmi >= 25.0 && bmi < 30.0) category = bmiCatLabels.overweight;
+          else if (bmi >= 30.0) category = bmiCatLabels.obese;
 
           const minHealthy = 18.5 * (hM * hM);
           const maxHealthy = 24.9 * (hM * hM);
@@ -405,16 +431,25 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         else if (slug === 'bmi-calculator-india' || slug === 'bmi-calculator-for-indians') {
           const hM = heightCm / 100;
           const bmi = weightKg / (hM * hM);
-          let indianCat = 'Healthy Weight (18.5 - 22.9)';
-          if (bmi < 18.5) indianCat = 'Underweight (< 18.5)';
-          else if (bmi >= 23.0 && bmi < 25.0) indianCat = 'Overweight / At Risk (23.0 - 24.9)';
-          else if (bmi >= 25.0 && bmi < 30.0) indianCat = 'Obese Class I (25.0 - 29.9)';
-          else if (bmi >= 30.0) indianCat = 'Obese Class II (≥ 30.0)';
+          const indLabels = {
+            en: { healthy: 'Healthy Weight (18.5 - 22.9)', underweight: 'Underweight (< 18.5)', overweight: 'Overweight / At Risk (23.0 - 24.9)', obese1: 'Obese Class I (25.0 - 29.9)', obese2: 'Obese Class II (≥ 30.0)', waistElevated: 'Elevated (ICMR Visceral Risk)', waistHealthy: 'Healthy Waist', waistNot: 'Not Provided' },
+            es: { healthy: 'Peso Saludable (18.5 - 22.9)', underweight: 'Bajo Peso (< 18.5)', overweight: 'Sobrepeso / En Riesgo (23.0 - 24.9)', obese1: 'Obesidad Clase I (25.0 - 29.9)', obese2: 'Obesidad Clase II (≥ 30.0)', waistElevated: 'Elevado (Riesgo Visceral ICMR)', waistHealthy: 'Cintura Saludable', waistNot: 'No Proporcionado' },
+            fr: { healthy: 'Poids Santé (18.5 - 22.9)', underweight: 'Sous-poids (< 18.5)', overweight: 'Surpoids / À Risque (23.0 - 24.9)', obese1: 'Obésité Classe I (25.0 - 29.9)', obese2: 'Obésité Classe II (≥ 30.0)', waistElevated: 'Élevé (Risque Viscéral ICMR)', waistHealthy: 'Taille Saine', waistNot: 'Non Fourni' },
+            de: { healthy: 'Gesundes Gewicht (18.5 - 22.9)', underweight: 'Untergewicht (< 18.5)', overweight: 'Übergewicht / Risiko (23.0 - 24.9)', obese1: 'Adipositas Klasse I (25.0 - 29.9)', obese2: 'Adipositas Klasse II (≥ 30.0)', waistElevated: 'Erhöht (ICMR Viszeralrisiko)', waistHealthy: 'Gesunde Taille', waistNot: 'Nicht Angegeben' },
+            ko: { healthy: '정상 체중 (18.5 - 22.9)', underweight: '저체중 (< 18.5)', overweight: '과체중 / 위험군 (23.0 - 24.9)', obese1: '1단계 비만 (25.0 - 29.9)', obese2: '2단계 비만 (≥ 30.0)', waistElevated: '주의 필요 (ICMR 내장지방 위험)', waistHealthy: '정상 허리둘레', waistNot: '미입력' },
+            hi: { healthy: 'स्वस्थ वजन (18.5 - 22.9)', underweight: 'कम वजन (< 18.5)', overweight: 'अधिक वजन / जोखिम (23.0 - 24.9)', obese1: 'मोटापा श्रेणी I (25.0 - 29.9)', obese2: 'मोटापा श्रेणी II (≥ 30.0)', waistElevated: 'बढ़ा हुआ (ICMR जोखिम)', waistHealthy: 'स्वस्थ कमर', waistNot: 'उपलब्ध नहीं' }
+          }[lang] || { healthy: 'Healthy Weight (18.5 - 22.9)', underweight: 'Underweight (< 18.5)', overweight: 'Overweight / At Risk (23.0 - 24.9)', obese1: 'Obese Class I (25.0 - 29.9)', obese2: 'Obese Class II (≥ 30.0)', waistElevated: 'Elevated (ICMR Visceral Risk)', waistHealthy: 'Healthy Waist', waistNot: 'Not Provided' };
+
+          let indianCat = indLabels.healthy;
+          if (bmi < 18.5) indianCat = indLabels.underweight;
+          else if (bmi >= 23.0 && bmi < 25.0) indianCat = indLabels.overweight;
+          else if (bmi >= 25.0 && bmi < 30.0) indianCat = indLabels.obese1;
+          else if (bmi >= 30.0) indianCat = indLabels.obese2;
 
           const minHealthyW = 18.5 * (hM * hM);
           const maxHealthyW = 22.9 * (hM * hM);
           const waistLimit = isM ? 90 : 80;
-          const waistStatus = waistCm > 0 ? (waistCm >= waistLimit ? 'Elevated (ICMR Visceral Risk)' : 'Healthy Waist') : 'Not Provided';
+          const waistStatus = waistCm > 0 ? (waistCm >= waistLimit ? indLabels.waistElevated : indLabels.waistHealthy) : indLabels.waistNot;
           const isImp = currentUnitSystem === 'imperial';
           const minW = isImp ? minHealthyW * 2.20462 : minHealthyW;
           const maxW = isImp ? maxHealthyW * 2.20462 : maxHealthyW;
@@ -432,10 +467,19 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         else if (slug === 'asian-bmi-calculator') {
           const hM = heightCm / 100;
           const bmi = weightKg / (hM * hM);
-          let cat = 'Healthy Weight (18.5 - 22.9)';
-          if (bmi < 18.5) cat = 'Underweight (< 18.5)';
-          else if (bmi >= 23.0 && bmi < 27.5) cat = 'Overweight / At Risk (23.0 - 27.4)';
-          else if (bmi >= 27.5) cat = 'Obese (≥ 27.5)';
+          const asianCatLabels = {
+            en: { healthy: 'Healthy Weight (18.5 - 22.9)', underweight: 'Underweight (< 18.5)', overweight: 'Overweight / At Risk (23.0 - 27.4)', obese: 'Obese (≥ 27.5)' },
+            es: { healthy: 'Peso Saludable (18.5 - 22.9)', underweight: 'Bajo Peso (< 18.5)', overweight: 'Sobrepeso / En Riesgo (23.0 - 27.4)', obese: 'Obesidad (≥ 27.5)' },
+            fr: { healthy: 'Poids Santé (18.5 - 22.9)', underweight: 'Sous-poids (< 18.5)', overweight: 'Surpoids / À Risque (23.0 - 27.4)', obese: 'Obésité (≥ 27.5)' },
+            de: { healthy: 'Gesundes Gewicht (18.5 - 22.9)', underweight: 'Untergewicht (< 18.5)', overweight: 'Übergewicht / Risiko (23.0 - 27.4)', obese: 'Adipositas (≥ 27.5)' },
+            ko: { healthy: '정상 체중 (18.5 - 22.9)', underweight: '저체중 (< 18.5)', overweight: '과체중 / 위험군 (23.0 - 27.4)', obese: '비만 (≥ 27.5)' },
+            hi: { healthy: 'स्वस्थ वजन (18.5 - 22.9)', underweight: 'कम वजन (< 18.5)', overweight: 'अधिक वजन / जोखिम (23.0 - 27.4)', obese: 'मोटापा (≥ 27.5)' }
+          }[lang] || { healthy: 'Healthy Weight (18.5 - 22.9)', underweight: 'Underweight (< 18.5)', overweight: 'Overweight / At Risk (23.0 - 27.4)', obese: 'Obese (≥ 27.5)' };
+
+          let cat = asianCatLabels.healthy;
+          if (bmi < 18.5) cat = asianCatLabels.underweight;
+          else if (bmi >= 23.0 && bmi < 27.5) cat = asianCatLabels.overweight;
+          else if (bmi >= 27.5) cat = asianCatLabels.obese;
 
           const minHealthy = 18.5 * (hM * hM);
           const maxHealthy = 22.9 * (hM * hM);
@@ -464,11 +508,20 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           const devW = isImp ? devineIBW * 2.20462 : devineIBW;
           const unitStr = isImp ? 'lbs' : 'kg';
 
-          let statusMsg = 'Optimal Range';
+          const stMsgs = {
+            en: { opt: 'Optimal Range', below: 'below min healthy weight', above: 'above max healthy weight', within: 'Within healthy weight range' },
+            es: { opt: 'Rango Óptimo', below: 'por debajo del peso saludable mín.', above: 'por encima del peso saludable máx.', within: 'Dentro del rango de peso saludable' },
+            fr: { opt: 'Plage Optimale', below: 'en dessous du poids santé min.', above: 'au-dessus du poids santé max.', within: 'Dans la plage de poids santé' },
+            de: { opt: 'Optimaler Bereich', below: 'unter dem Mindest-Gesundgewicht', above: 'über dem Max-Gesundgewicht', within: 'Im gesunden Gewichtsbereich' },
+            ko: { opt: '적정 범위', below: '최소 권장 체중 미달', above: '최대 권장 체중 초과', within: '권장 건강 체중 범위 내' },
+            hi: { opt: 'इष्टतम सीमा', below: 'न्यूनतम स्वस्थ वजन से नीचे', above: 'अधिकतम स्वस्थ वजन से ऊपर', within: 'स्वस्थ वजन सीमा के भीतर' }
+          }[lang] || { opt: 'Optimal Range', below: 'below min healthy weight', above: 'above max healthy weight', within: 'Within healthy weight range' };
+
+          let statusMsg = stMsgs.opt;
           if (weightKg > 0) {
-            if (weightKg < minHealthy) statusMsg = `${(isImp ? (minHealthy - weightKg)*2.20462 : (minHealthy - weightKg)).toFixed(1)} ${unitStr} below min healthy weight`;
-            else if (weightKg > maxHealthy) statusMsg = `${(isImp ? (weightKg - maxHealthy)*2.20462 : (weightKg - maxHealthy)).toFixed(1)} ${unitStr} above max healthy weight`;
-            else statusMsg = `Within healthy weight range`;
+            if (weightKg < minHealthy) statusMsg = `${(isImp ? (minHealthy - weightKg)*2.20462 : (minHealthy - weightKg)).toFixed(1)} ${unitStr} ${stMsgs.below}`;
+            else if (weightKg > maxHealthy) statusMsg = `${(isImp ? (weightKg - maxHealthy)*2.20462 : (weightKg - maxHealthy)).toFixed(1)} ${unitStr} ${stMsgs.above}`;
+            else statusMsg = stMsgs.within;
           }
 
           calculated = {
@@ -532,11 +585,20 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           const waistLimit = isM ? 94 : 80;
           const waistHigh = isM ? 102 : 88;
 
-          let riskScore = 'Standard Reference';
+          const rLabels = {
+            en: { std: 'Standard Reference', elevated: 'Elevated Threshold', moderate: 'Moderate Threshold', elevVal: 'Elevated', stdVal: 'Standard' },
+            es: { std: 'Referencia Estándar', elevated: 'Umbral Elevado', moderate: 'Umbral Moderado', elevVal: 'Elevado', stdVal: 'Estándar' },
+            fr: { std: 'Référence Standard', elevated: 'Seuil Élevé', moderate: 'Seuil Modéré', elevVal: 'Élevé', stdVal: 'Standard' },
+            de: { std: 'Standardreferenz', elevated: 'Erhöhte Schwelle', moderate: 'Mäßige Schwelle', elevVal: 'Erhöht', stdVal: 'Standard' },
+            ko: { std: '표준 기준', elevated: '주의 필요 수치', moderate: '중간 위험 수치', elevVal: '주의 필요', stdVal: '정상' },
+            hi: { std: 'मानक संदर्भ', elevated: 'उच्च जोखिम सीमा', moderate: 'मध्यम जोखिम सीमा', elevVal: 'उच्च', stdVal: 'मानक' }
+          }[lang] || { std: 'Standard Reference', elevated: 'Elevated Threshold', moderate: 'Moderate Threshold', elevVal: 'Elevated', stdVal: 'Standard' };
+
+          let riskScore = rLabels.std;
           if (bmi >= 27.5 || waistCm >= waistHigh || (bmi >= 23 && waistCm >= waistLimit && ageNum >= 40)) {
-            riskScore = 'Elevated Threshold';
+            riskScore = rLabels.elevated;
           } else if (bmi >= 23 || waistCm >= waistLimit && ageNum >= 45) {
-            riskScore = 'Moderate Threshold';
+            riskScore = rLabels.moderate;
           }
 
           calculated = {
@@ -544,7 +606,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
             secondary: [
               { label: { en: 'BMI Score', es: 'Puntaje IMC', fr: 'Score IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' }, value: bmi.toFixed(1) },
               { label: { en: 'Asian Cutoff', es: 'Umbral Asiático', fr: 'Seuil Asiatique', de: 'Asien-Schwellenwert', ko: '아시아인 기준', hi: 'एशियाई कटऑफ' }, value: '23.0 kg/m²' },
-              { label: { en: 'Waist Reference', es: 'Referencia Cintura', fr: 'Référence Tour Taille', de: 'Taillenreferenz', ko: '허리둘레 참조', hi: 'कमर संदर्भ' }, value: waistCm >= waistLimit ? 'Elevated' : 'Standard' }
+              { label: { en: 'Waist Reference', es: 'Referencia Cintura', fr: 'Référence Tour Taille', de: 'Taillenreferenz', ko: '허리둘레 참조', hi: 'कमर संदर्भ' }, value: waistCm >= waistLimit ? rLabels.elevVal : rLabels.stdVal }
             ]
           };
         } 
@@ -720,7 +782,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           calculated = {
             primary: { value: whr.toFixed(2), label: { en: 'Waist-to-Hip Ratio', es: 'Proporción Cintura-Cadera', fr: 'Rapport WHR', de: 'Taille-Hüft-Verhältnis', ko: '허리 대비 엉덩이 비', hi: 'कमर से कूल्हे का अनुपात' } },
             secondary: [
-              { label: { en: 'Distribution Reference', es: 'Referencia de Distribución', fr: 'Référence de Distribution', de: 'Verteilungsreferenz', ko: '분포 참조', hi: 'वितरण संदर्भ' }, value: risk.en }
+              { label: { en: 'Distribution Reference', es: 'Referencia de Distribución', fr: 'Référence de Distribution', de: 'Verteilungsreferenz', ko: '분포 참조', hi: 'वितरण संदर्भ' }, value: risk[lang] || risk.en }
             ]
           };
         } 

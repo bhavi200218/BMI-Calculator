@@ -264,7 +264,7 @@ const l = labels[lang] || labels.en;
 </div>
 
 <!-- 3D Canvas Render Engine Script -->
-<script is:inline>
+<script is:inline define:vars={{ lang }}>
 (function() {
   const canvas = document.getElementById('bodyCanvas3D');
   if (!canvas) return;
@@ -290,6 +290,16 @@ const l = labels[lang] || labels.en;
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
 
+  const statusLabels = {
+    en: { underweight: 'Underweight', healthy: 'Healthy Weight', overweight: 'Overweight', obese: 'Obese Class' },
+    es: { underweight: 'Bajo Peso', healthy: 'Peso Saludable', overweight: 'Sobrepeso', obese: 'Obesidad' },
+    fr: { underweight: 'Sous-poids', healthy: 'Poids Santé', overweight: 'Surpoids', obese: 'Obésité' },
+    de: { underweight: 'Untergewicht', healthy: 'Gesundes Gewicht', overweight: 'Übergewicht', obese: 'Adipositas' },
+    ko: { underweight: '저체중', healthy: '정상 체중', overweight: '과체중', obese: '비만' },
+    hi: { underweight: 'कम वजन', healthy: 'स्वस्थ वजन', overweight: 'अधिक वजन', obese: 'मोटापा' }
+  };
+  const st = statusLabels[lang] || statusLabels.en;
+
   // Compute 3D Metrics
   function compute3D() {
     const hM = heightCm / 100;
@@ -308,16 +318,16 @@ const l = labels[lang] || labels.en;
     
     if (badgeStatus) {
       if (newBmi < 18.5) {
-        badgeStatus.textContent = 'Underweight';
+        badgeStatus.textContent = st.underweight;
         badgeStatus.className = 'text-[11px] font-bold text-sky-400 uppercase tracking-wider';
       } else if (newBmi < 25.0) {
-        badgeStatus.textContent = 'Healthy Weight';
+        badgeStatus.textContent = st.healthy;
         badgeStatus.className = 'text-[11px] font-bold text-emerald-400 uppercase tracking-wider';
       } else if (newBmi < 30.0) {
-        badgeStatus.textContent = 'Overweight';
+        badgeStatus.textContent = st.overweight;
         badgeStatus.className = 'text-[11px] font-bold text-amber-400 uppercase tracking-wider';
       } else {
-        badgeStatus.textContent = 'Obese Class';
+        badgeStatus.textContent = st.obese;
         badgeStatus.className = 'text-[11px] font-bold text-rose-500 uppercase tracking-wider';
       }
     }
