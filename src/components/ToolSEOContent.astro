@@ -81,32 +81,32 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Underweight",
           "col2": "< 18.5 kg/m²",
-          "col3": "Underweight reference range"
+          "col3": ""
         },
         {
           "col1": "Healthy Weight",
           "col2": "18.5 – 24.9 kg/m²",
-          "col3": "Healthy-weight reference range"
+          "col3": ""
         },
         {
           "col1": "Overweight",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Overweight reference range (Asian cutoff: 23.0 kg/m²)"
+          "col3": " (Asian cutoff: 23.0 kg/m²)"
         },
         {
           "col1": "Obesity Class I",
           "col2": "30.0 – 34.9 kg/m²",
-          "col3": "Obesity Class I reference range"
+          "col3": ""
         },
         {
           "col1": "Obesity Class II",
           "col2": "35.0 – 39.9 kg/m²",
-          "col3": "Obesity Class II reference range"
+          "col3": ""
         },
         {
           "col1": "Obesity Class III",
           "col2": "≥ 40.0 kg/m²",
-          "col3": "Obesity Class III reference range"
+          "col3": ""
         }
       ],
       "faqs": [
@@ -346,17 +346,17 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "과체중 참조 범위 (아시아인 기준: 23.0 kg/m²)"
         },
         {
-          "col1": "비만 1단계 (Obesity Class I)",
+          "col1": "비만 1단계 (비만 1단계)",
           "col2": "30.0 – 34.9 kg/m²",
           "col3": "비만 1단계 참조 범위"
         },
         {
-          "col1": "비만 2단계 (Obesity Class II)",
+          "col1": "비만 2단계 (비만 1단계I)",
           "col2": "35.0 – 39.9 kg/m²",
           "col3": "비만 2단계 참조 범위"
         },
         {
-          "col1": "비만 3단계 (Obesity Class III)",
+          "col1": "비만 3단계 (비만 1단계II)",
           "col2": "≥ 40.0 kg/m²",
           "col3": "비만 3단계 참조 범위"
         }
@@ -409,17 +409,17 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "अधिक वजन संदर्भ सीमा (एशियाई कटऑफ: 23.0 kg/m²)"
         },
         {
-          "col1": "मोटापा श्रेणी I (Obesity Class I)",
+          "col1": "मोटापा श्रेणी I (ओबेसिटी क्लास I)",
           "col2": "30.0 – 34.9 kg/m²",
           "col3": "मोटापा श्रेणी I संदर्भ सीमा"
         },
         {
-          "col1": "मोटापा श्रेणी II (Obesity Class II)",
+          "col1": "मोटापा श्रेणी II (ओबेसिटी क्लास II)",
           "col2": "35.0 – 39.9 kg/m²",
           "col3": "मोटापा श्रेणी II संदर्भ सीमा"
         },
         {
-          "col1": "मोटापा श्रेणी III (Obesity Class III)",
+          "col1": "मोटापा श्रेणी III (ओबेसिटी क्लास III)",
           "col2": "≥ 40.0 kg/m²",
           "col3": "मोटापा श्रेणी III संदर्भ सीमा"
         }
@@ -449,6 +449,54 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     }
   },
   "3d-bmi-calculator": {
+    "en": {
+      "eyebrow": "Oxford 2.5-Power BMI Model & 3D Body Visualization",
+      "title": "3D BMI Calculator & Interactive 3D Body Visualizer",
+      "intro": "Our free 3D BMI Calculator uses the Oxford 2.5-power height-adjusted formula (1.3 × weight / height²·⁵) to render interactive 3D body shape models and height-proportional volume geometry.",
+      "formulaTitle": "Oxford 2.5-Power Height-Adjusted 3D BMI Formula",
+      "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵ | Developed by University of Oxford mathematicians to correct height scaling distortions in traditional 2D BMI.",
+      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
+      "tableTitle": "Standard 2D BMI vs. Oxford 3D Height-Adjusted BMI Comparison",
+      "tableRows": [
+        {
+          "col1": "Shorter Adults (< 160 cm / 5'3\")",
+          "col2": "Standard 2D BMI underestimates height scaling",
+          "col3": "3D BMI adjusts score proportionally for shorter statures"
+        },
+        {
+          "col1": "Average Height Adults (170 cm / 5'7\")",
+          "col2": "Standard 2D & 3D BMI produce identical results",
+          "col3": "No difference between 2D and 3D formula categories"
+        },
+        {
+          "col1": "Taller Adults (> 185 cm / 6'1\")",
+          "col2": "Standard 2D BMI overestimates height scaling",
+          "col3": "3D BMI corrects volumetric distortion for taller statures"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How does 3D BMI differ from standard 2D BMI?",
+          "answer": "Standard 2D BMI divides weight by height squared (m²), whereas 3D BMI uses height raised to the 2.5 power (m²·⁵) to account for 3D body volume scaling."
+        },
+        {
+          "question": "How does the interactive 3D body visualizer work?",
+          "answer": "It renders an interactive 3D avatar in your browser using height-to-weight proportions derived from your inputs. You can rotate the avatar 360° and toggle mesh, wireframe, and heatmap modes."
+        },
+        {
+          "question": "What do solid mesh, wireframe, and heatmap modes represent?",
+          "answer": "Solid mesh shows body shape volume, wireframe shows 3D geometric structure, and heatmap highlights weight category distribution."
+        },
+        {
+          "question": "Why is the Oxford 2.5-power formula better for tall or short individuals?",
+          "answer": "As demonstrated by Prof. Nick Trefethen at Oxford University, traditional BMI (m²) overestimates fatness in tall people and underestimates it in short people. The 2.5 exponent corrects this mathematical bias."
+        },
+        {
+          "question": "Does the 3D visualizer store photos or personal data?",
+          "answer": "No. The 3D model is generated mathematically in real time inside your browser. No photos are required, and no data is uploaded or stored."
+        }
+      ]
+    },
     "es": {
       "eyebrow": "Modelo IMC Exponencial de Oxford 2.5 y Visualización Corporal 3D",
       "title": "Calculadora de IMC 3D y Visualizador Corporal Interactivo",
@@ -723,7 +771,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Overweight (Pre-obese)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Overweight reference range (Asian cutoff: 23.0 kg/m²)"
+          "col3": " (Asian cutoff: 23.0 kg/m²)"
         },
         {
           "col1": "Obesity Class I",
@@ -1017,17 +1065,17 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "अधिक वजन संदर्भ सीमा (एशियाई कटऑफ: 23.0 kg/m²)"
         },
         {
-          "col1": "मोटापा श्रेणी I (Obesity Class I)",
+          "col1": "मोटापा श्रेणी I (ओबेसिटी क्लास I)",
           "col2": "30.0 – 34.9 kg/m²",
           "col3": "मोटापा श्रेणी I संदर्भ"
         },
         {
-          "col1": "मोटापा श्रेणी II (Obesity Class II)",
+          "col1": "मोटापा श्रेणी II (ओबेसिटी क्लास II)",
           "col2": "35.0 – 39.9 kg/m²",
           "col3": "मोटापा श्रेणी II संदर्भ"
         },
         {
-          "col1": "मोटापा श्रेणी III (Obesity Class III)",
+          "col1": "मोटापा श्रेणी III (ओबेसिटी क्लास III)",
           "col2": "≥ 40.0 kg/m²",
           "col3": "गंभीर मोटापा संदर्भ श्रेणी"
         },
@@ -1321,7 +1369,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Underweight",
           "col2": "< 18.5 kg/m²",
-          "col3": "Underweight reference range for Indian adults"
+          "col3": " for Indian adults"
         },
         {
           "col1": "Healthy / Normal BMI for Indians",
@@ -1394,12 +1442,12 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Categoría / Nivel 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Rango de referencia Obesity Class I classification under WHO South Asian criteria"
+          "col3": "Rango de referencia Obesidad Clase I classification under WHO South Asian criteria"
         },
         {
           "col1": "Categoría / Nivel 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Rango de referencia High risk obesity classification for Indian adults"
+          "col3": "Rango de referencia High risk Obesidad Claseification for Indian adults"
         }
       ],
       "faqs": [
@@ -1436,12 +1484,12 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Catégorie / Niveau 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Plage de référence Obesity Class I classification under WHO South Asian criteria"
+          "col3": "Plage de référence Obésité Classe I classification under WHO South Asian criteria"
         },
         {
           "col1": "Catégorie / Niveau 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Plage de référence High risk obesity classification for Indian adults"
+          "col3": "Plage de référence High risk Obésité Classeification for Indian adults"
         }
       ],
       "faqs": [
@@ -1478,12 +1526,12 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Kategorie / Stufe 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Referenzbereich Obesity Class I classification under WHO South Asian criteria"
+          "col3": "Referenzbereich Adipositas Klasse I classification under WHO South Asian criteria"
         },
         {
           "col1": "Kategorie / Stufe 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Referenzbereich High risk obesity classification for Indian adults"
+          "col3": "Referenzbereich High risk Adipositas Klasseification for Indian adults"
         }
       ],
       "faqs": [
@@ -1520,12 +1568,12 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "범주 / 단계 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "참조 범위 Obesity Class I classification under WHO South Asian criteria"
+          "col3": "참조 범위 비만 1단계 classification under WHO South Asian criteria"
         },
         {
           "col1": "범주 / 단계 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "참조 범위 High risk obesity classification for Indian adults"
+          "col3": "참조 범위 High risk 비만 단계ification for Indian adults"
         }
       ],
       "faqs": [
@@ -2291,27 +2339,27 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Underweight",
           "col2": "BMI < 18.5 kg/m²",
-          "col3": "Reference category for lower relative body mass"
+          "col3": ""
         },
         {
           "col1": "Standard Reference Weight",
           "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": "Baseline reference window for Asian populations"
+          "col3": ""
         },
         {
           "col1": "Asian Overweight Reference Threshold (23)",
           "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": "Reference threshold used in some Asian-population guidance"
+          "col3": ""
         },
         {
           "col1": "Asian Obesity Class I",
           "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": "Higher reference category for population screening"
+          "col3": ""
         },
         {
           "col1": "Asian Obesity Class II",
           "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": "Elevated screening reference window"
+          "col3": ""
         }
       ],
       "faqs": [
@@ -2349,27 +2397,27 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Categoría / Nivel 1",
           "col2": "BMI < 18.5 kg/m²",
-          "col3": "Rango de referencia Reference category for lower relative body mass"
+          "col3": "Rango de referencia "
         },
         {
           "col1": "Categoría / Nivel 2",
           "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": "Rango de referencia Baseline reference window for Asian populations"
+          "col3": "Rango de referencia "
         },
         {
           "col1": "Categoría / Nivel 3",
           "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": "Rango de referencia Reference threshold used in some Asian-population guidance"
+          "col3": "Rango de referencia "
         },
         {
           "col1": "Categoría / Nivel 4",
           "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": "Rango de referencia Higher reference category for population screening"
+          "col3": "Rango de referencia "
         },
         {
           "col1": "Categoría / Nivel 5",
           "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": "Rango de referencia Elevated screening reference window"
+          "col3": "Rango de referencia "
         }
       ],
       "faqs": [
@@ -2391,27 +2439,27 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Catégorie / Niveau 1",
           "col2": "BMI < 18.5 kg/m²",
-          "col3": "Plage de référence Reference category for lower relative body mass"
+          "col3": "Plage de référence "
         },
         {
           "col1": "Catégorie / Niveau 2",
           "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": "Plage de référence Baseline reference window for Asian populations"
+          "col3": "Plage de référence "
         },
         {
           "col1": "Catégorie / Niveau 3",
           "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": "Plage de référence Reference threshold used in some Asian-population guidance"
+          "col3": "Plage de référence "
         },
         {
           "col1": "Catégorie / Niveau 4",
           "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": "Plage de référence Higher reference category for population screening"
+          "col3": "Plage de référence "
         },
         {
           "col1": "Catégorie / Niveau 5",
           "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": "Plage de référence Elevated screening reference window"
+          "col3": "Plage de référence "
         }
       ],
       "faqs": [
@@ -2433,27 +2481,27 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Kategorie / Stufe 1",
           "col2": "BMI < 18.5 kg/m²",
-          "col3": "Referenzbereich Reference category for lower relative body mass"
+          "col3": "Referenzbereich "
         },
         {
           "col1": "Kategorie / Stufe 2",
           "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": "Referenzbereich Baseline reference window for Asian populations"
+          "col3": "Referenzbereich "
         },
         {
           "col1": "Kategorie / Stufe 3",
           "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": "Referenzbereich Reference threshold used in some Asian-population guidance"
+          "col3": "Referenzbereich "
         },
         {
           "col1": "Kategorie / Stufe 4",
           "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": "Referenzbereich Higher reference category for population screening"
+          "col3": "Referenzbereich "
         },
         {
           "col1": "Kategorie / Stufe 5",
           "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": "Referenzbereich Elevated screening reference window"
+          "col3": "Referenzbereich "
         }
       ],
       "faqs": [
@@ -2475,27 +2523,27 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "범주 / 단계 1",
           "col2": "BMI < 18.5 kg/m²",
-          "col3": "참조 범위 Reference category for lower relative body mass"
+          "col3": "참조 범위 "
         },
         {
           "col1": "범주 / 단계 2",
           "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": "참조 범위 Baseline reference window for Asian populations"
+          "col3": "참조 범위 "
         },
         {
           "col1": "범주 / 단계 3",
           "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": "참조 범위 Reference threshold used in some Asian-population guidance"
+          "col3": "참조 범위 "
         },
         {
           "col1": "범주 / 단계 4",
           "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": "참조 범위 Higher reference category for population screening"
+          "col3": "참조 범위 "
         },
         {
           "col1": "범주 / 단계 5",
           "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": "참조 범위 Elevated screening reference window"
+          "col3": "참조 범위 "
         }
       ],
       "faqs": [
@@ -2517,27 +2565,27 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "श्रेणी / स्तर 1",
           "col2": "BMI < 18.5 kg/m²",
-          "col3": "संदर्भ सीमा Reference category for lower relative body mass"
+          "col3": "संदर्भ सीमा "
         },
         {
           "col1": "श्रेणी / स्तर 2",
           "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": "संदर्भ सीमा Baseline reference window for Asian populations"
+          "col3": "संदर्भ सीमा "
         },
         {
           "col1": "श्रेणी / स्तर 3",
           "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": "संदर्भ सीमा Reference threshold used in some Asian-population guidance"
+          "col3": "संदर्भ सीमा "
         },
         {
           "col1": "श्रेणी / स्तर 4",
           "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": "संदर्भ सीमा Higher reference category for population screening"
+          "col3": "संदर्भ सीमा "
         },
         {
           "col1": "श्रेणी / स्तर 5",
           "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": "संदर्भ सीमा Elevated screening reference window"
+          "col3": "संदर्भ सीमा "
         }
       ],
       "faqs": [
@@ -2637,7 +2685,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Categoría / Nivel 4",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "Rango de referencia High risk obesity classification for Asian adults"
+          "col3": "Rango de referencia High risk Obesidad Claseification for Asian adults"
         }
       ],
       "faqs": [
@@ -2674,7 +2722,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Catégorie / Niveau 4",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "Plage de référence High risk obesity classification for Asian adults"
+          "col3": "Plage de référence High risk Obésité Classeification for Asian adults"
         }
       ],
       "faqs": [
@@ -2711,7 +2759,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Kategorie / Stufe 4",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "Referenzbereich High risk obesity classification for Asian adults"
+          "col3": "Referenzbereich High risk Adipositas Klasseification for Asian adults"
         }
       ],
       "faqs": [
@@ -2748,7 +2796,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "범주 / 단계 4",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "참조 범위 High risk obesity classification for Asian adults"
+          "col3": "참조 범위 High risk 비만 단계ification for Asian adults"
         }
       ],
       "faqs": [
@@ -5816,7 +5864,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Body Surface Area Reference",
       "title": "Body Surface Area Calculator — Mosteller & Du Bois Reference Equations",
-      "intro": "BSA is an estimated body-surface-area value calculated from height and weight. Some clinical calculations use BSA as one input, but this calculator does not provide medication doses or treatment recommendations.",
+      "intro": "BSA is an estimated body-surface-area value calculated from height and weight. Some medical research protocols use BSA as one input, but this calculator does not provide medication doses or treatment recommendations.",
       "formulaTitle": "Mosteller & Du Bois BSA Equations",
       "formulaDesc": "Mosteller BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ] | Du Bois BSA (m²) = 0.007184 × Height (cm)^0.725 × Weight (kg)^0.425",
       "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
@@ -5846,7 +5894,7 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is Body Surface Area (BSA)?",
-          "answer": "BSA is an estimated body-surface-area value calculated from height and weight. Some clinical calculations use BSA as one input, but this calculator does not provide medication doses or treatment recommendations."
+          "answer": "BSA is an estimated body-surface-area value calculated from height and weight. Some medical research protocols use BSA as one input, but this calculator does not provide medication doses or treatment recommendations."
         },
         {
           "question": "How is BSA calculated using the Mosteller equation?",
@@ -7432,9 +7480,10 @@ const seoDatabase: Record<string, Record<string, ToolContent>> = {
   }
 };
 
-const enData = seoDatabase[slug]?.['en'] || seoDatabase['bmi-calculator']['en'];
-const langFallback = seoDatabase[slug]?.[lang] || seoDatabase['bmi-calculator']?.[lang] || enData;
-const rawData = seoDatabase[slug]?.[lang] || langFallback;
+const effectiveSlug = (slug === '3d-body-visualizer' || slug === 'new-bmi-calculator') ? '3d-bmi-calculator' : slug;
+const enData = seoDatabase[effectiveSlug]?.['en'] || seoDatabase['bmi-calculator']['en'];
+const langFallback = seoDatabase[effectiveSlug]?.[lang] || seoDatabase['bmi-calculator']?.[lang] || enData;
+const rawData = seoDatabase[effectiveSlug]?.[lang] || langFallback;
 
 const currentData: ToolContent = {
   ...langFallback,
@@ -7507,7 +7556,7 @@ const toolSpecificReferences: Record<string, { name: string; url: string }[]> = 
   ]
 };
 
-const activeReferences = toolSpecificReferences[slug] || [
+const activeReferences = toolSpecificReferences[effectiveSlug] || [
   { name: 'CDC Adult BMI Guidelines, Screening Limits & Formula FAQ', url: 'https://www.cdc.gov/bmi/faq/' },
   { name: 'WHO Global Health Observatory Adult BMI Classification', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' }
 ];
