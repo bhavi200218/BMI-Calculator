@@ -22,7 +22,7 @@ https://realbmicalculator.com/es/contact | Contact Real BMI Calculator | Get sup
 https://realbmicalculator.com/es/disclaimer | Disclaimer | Real BMI | Read the medical disclaimer and calculator guidance for using Real BMI health tools in Spanish.
 https://realbmicalculator.com/es/privacy-policy | Privacy Policy | Real BMI | Learn how Real BMI handles privacy, data usage, and calculator inputs in Spanish.
 https://realbmicalculator.com/es/terms-conditions | Terms & Conditions | Real BMI | Review the terms of use for Real BMI Calculator and wellness tools in Spanish.
-https://realbmicalculator.com/es/sources | Sources | Real BMI | Explore the trusted clinical sources behind Real BMI calculators and guidance in Spanish.
+https://realbmicalculator.com/es/sources | Sources | Real BMI | Explore the trusted reference sources behind Real BMI calculators and guidance in Spanish.
 https://realbmicalculator.com/es/editorial-policy | Editorial Policy | Real BMI | Read Real BMI’s editorial standards for evidence-based health content in Spanish.
 
 https://realbmicalculator.com/fr/about | About Real BMI - Precision Health Calculator Mission | Discover Real BMI's evidence-based health mission, calculator methodology and privacy-first approach in French.
@@ -30,7 +30,7 @@ https://realbmicalculator.com/fr/contact | Contact Real BMI Calculator | Get sup
 https://realbmicalculator.com/fr/disclaimer | Disclaimer | Real BMI | Read the medical disclaimer and calculator guidance for using Real BMI health tools in French.
 https://realbmicalculator.com/fr/privacy-policy | Privacy Policy | Real BMI | Learn how Real BMI handles privacy, data usage, and calculator inputs in French.
 https://realbmicalculator.com/fr/terms-conditions | Terms & Conditions | Real BMI | Review the terms of use for Real BMI Calculator and wellness tools in French.
-https://realbmicalculator.com/fr/sources | Sources | Real BMI | Explore the trusted clinical sources behind Real BMI calculators and guidance in French.
+https://realbmicalculator.com/fr/sources | Sources | Real BMI | Explore the trusted reference sources behind Real BMI calculators and guidance in French.
 https://realbmicalculator.com/fr/editorial-policy | Editorial Policy | Real BMI | Read Real BMI’s editorial standards for evidence-based health content in French.
 
 https://realbmicalculator.com/de/about | About Real BMI - Precision Health Calculator Mission | Discover Real BMI's evidence-based health mission, calculator methodology and privacy-first approach in German.
@@ -38,7 +38,7 @@ https://realbmicalculator.com/de/contact | Contact Real BMI Calculator | Get sup
 https://realbmicalculator.com/de/disclaimer | Disclaimer | Real BMI | Read the medical disclaimer and calculator guidance for using Real BMI health tools in German.
 https://realbmicalculator.com/de/privacy-policy | Privacy Policy | Real BMI | Learn how Real BMI handles privacy, data usage, and calculator inputs in German.
 https://realbmicalculator.com/de/terms-conditions | Terms & Conditions | Real BMI | Review the terms of use for Real BMI Calculator and wellness tools in German.
-https://realbmicalculator.com/de/sources | Sources | Real BMI | Explore the trusted clinical sources behind Real BMI calculators and guidance in German.
+https://realbmicalculator.com/de/sources | Sources | Real BMI | Explore the trusted reference sources behind Real BMI calculators and guidance in German.
 https://realbmicalculator.com/de/editorial-policy | Editorial Policy | Real BMI | Read Real BMI’s editorial standards for evidence-based health content in German.
 
 https://realbmicalculator.com/ko/about | About Real BMI - Precision Health Calculator Mission | Discover Real BMI's evidence-based health mission, calculator methodology and privacy-first approach in Korean.
@@ -46,7 +46,7 @@ https://realbmicalculator.com/ko/contact | Contact Real BMI Calculator | Get sup
 https://realbmicalculator.com/ko/disclaimer | Disclaimer | Real BMI | Read the medical disclaimer and calculator guidance for using Real BMI health tools in Korean.
 https://realbmicalculator.com/ko/privacy-policy | Privacy Policy | Real BMI | Learn how Real BMI handles privacy, data usage, and calculator inputs in Korean.
 https://realbmicalculator.com/ko/terms-conditions | Terms & Conditions | Real BMI | Review the terms of use for Real BMI Calculator and wellness tools in Korean.
-https://realbmicalculator.com/ko/sources | Sources | Real BMI | Explore the trusted clinical sources behind Real BMI calculators and guidance in Korean.
+https://realbmicalculator.com/ko/sources | Sources | Real BMI | Explore the trusted reference sources behind Real BMI calculators and guidance in Korean.
 https://realbmicalculator.com/ko/editorial-policy | Editorial Policy | Real BMI | Read Real BMI’s editorial standards for evidence-based health content in Korean.
 
 https://realbmicalculator.com/hi/about | About Real BMI - Precision Health Calculator Mission | Discover Real BMI's evidence-based health mission, calculator methodology and privacy-first approach in Hindi.
@@ -54,7 +54,7 @@ https://realbmicalculator.com/hi/contact | Contact Real BMI Calculator | Get sup
 https://realbmicalculator.com/hi/disclaimer | Disclaimer | Real BMI | Read the medical disclaimer and calculator guidance for using Real BMI health tools in Hindi.
 https://realbmicalculator.com/hi/privacy-policy | Privacy Policy | Real BMI | Learn how Real BMI handles privacy, data usage, and calculator inputs in Hindi.
 https://realbmicalculator.com/hi/terms-conditions | Terms & Conditions | Real BMI | Review the terms of use for Real BMI Calculator and wellness tools in Hindi.
-https://realbmicalculator.com/hi/sources | Sources | Real BMI | Explore the trusted clinical sources behind Real BMI calculators and guidance in Hindi.
+https://realbmicalculator.com/hi/sources | Sources | Real BMI | Explore the trusted reference sources behind Real BMI calculators and guidance in Hindi.
 https://realbmicalculator.com/hi/editorial-policy | Editorial Policy | Real BMI | Read Real BMI’s editorial standards for evidence-based health content in Hindi.
 
 https://realbmicalculator.com/en/bmi-calculator | Free BMI Calculator - Accurate BMI Info | Calculate Body Mass Index quickly with WHO-based health categories and instant privacy-first results.

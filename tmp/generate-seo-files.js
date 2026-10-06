@@ -21,12 +21,12 @@ const calcPages = [
   {slug:'pregnancy-weight-gain-calculator', title:'Pregnancy Weight Gain Guide & Calculator', desc:'Track recommended gestational weight accumulation.'}
 ];
 const staticPages = [
-  {slug:'about', title:'About Real BMI - Precision Health Calculator Mission', desc:'Discover the mission behind Real BMI Calculator and our clinical-grade health tools.'},
-  {slug:'contact', title:'Contact Real BMI Calculator', desc:'Get support or feedback for Real BMI's health calculators and accuracy.'},
+  {slug:'about', title:'About Real BMI - Precision Health Calculator Mission', desc:'Discover the mission behind Real BMI Calculator and our reference-based health tools.'},
+  {slug:'contact', title:'Contact Real BMI Calculator', desc:'Get support or feedback for Real BMI\'s health calculators and accuracy.'},
   {slug:'disclaimer', title:'Disclaimer | Real BMI', desc:'Read the medical disclaimer and calculator guidance on Real BMI.'},
   {slug:'privacy-policy', title:'Privacy Policy | Real BMI', desc:'Learn how Real BMI handles privacy, data usage, and calculator inputs.'},
   {slug:'terms-conditions', title:'Terms & Conditions | Real BMI', desc:'Review the terms of use for Real BMI Calculator and health tools.'},
-  {slug:'sources', title:'Sources | Real BMI', desc:'Explore the trusted clinical sources behind Real BMI calculators and guidance.'},
+  {slug:'sources', title:'Sources | Real BMI', desc:'Explore the trusted reference sources behind Real BMI calculators and guidance.'},
   {slug:'editorial-policy', title:'Editorial Policy | Real BMI', desc:'Read Real BMI's editorial standards for evidence-based health content.'}
 ];
 const blogPages = [
