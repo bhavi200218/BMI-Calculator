@@ -479,7 +479,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Why is the Oxford 2.5-power formula better for tall or short individuals?",
-          "answer": "As demonstrated by Prof. Nick Trefethen at Oxford University, traditional BMI (m²) overestimates fatness in tall people and underestimates it in short people. The 2.5 exponent corrects this mathematical bias."
+          "answer": "Proposed by Prof. Nick Trefethen at Oxford University, the 2.5-power equation provides an alternative height-scaling approach that changes how height is represented in the BMI calculation for tall and short statures."
         },
         {
           "question": "Does the 3D visualizer store photos or personal data?",
@@ -536,7 +536,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "¿Es precisa la fórmula de Oxford 2.5 para personas muy altas?",
-          "answer": "Sí, el profesor Nick Trefethen de la Universidad de Oxford diseñó esta fórmula para eliminar la distorsión matemática en personas muy altas o bajas."
+          "answer": "Propuesta por el Prof. Nick Trefethen de la Universidad de Oxford, la ecuación de potencia 2.5 proporciona un enfoque alternativo de escala de altura para personas altas y bajas."
         },
         {
           "question": "¿El modelo 3D almacena datos o fotografías personales?",
@@ -650,7 +650,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Warum ist die Oxford 2.5 Formel für große Menschen genauer?",
-          "answer": "Prof. Nick Trefethen von der Universität Oxford zeigte, dass die alte Quetelet-Formel große Menschen mathematisch benachteiligt."
+          "answer": "Von Prof. Nick Trefethen an der Universität Oxford vorgeschlagen, bietet die 2,5-Potenz-Gleichung einen alternativen Skalierungsansatz für die Körpergröße."
         },
         {
           "question": "Werden Bilder oder persönliche Daten gespeichert?",
@@ -6670,7 +6670,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat or diagnose cardiovascular disease."
         },
         {
-          "question": "Cómo accurately measure waist and hip circumference for the WHR calculator?",
+          "question": "¿Cómo medir con precisión la circunferencia de cintura y cadera para la calculadora de índice cintura-cadera?",
           "answer": "Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks."
         }
       ]
@@ -6719,7 +6719,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat or diagnose cardiovascular disease."
         },
         {
-          "question": "Comment accurately measure waist and hip circumference for the WHR calculator?",
+          "question": "Comment mesurer avec précision le tour de taille et de hanches pour le calculateur RTH ?",
           "answer": "Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks."
         }
       ]
@@ -6768,7 +6768,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat or diagnose cardiovascular disease."
         },
         {
-          "question": "Wie man accurately measure waist and hip circumference for the WHR calculator?",
+          "question": "Wie misst man das Taille-Hüft-Verhältnis (WHR) genau?",
           "answer": "Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks."
         }
       ]
@@ -6817,7 +6817,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat or diagnose cardiovascular disease."
         },
         {
-          "question": " accurately measure waist and hip circumference for the WHR calculator? 안내 및 원리",
+          "question": "허리-둘레 비율(WHR)을 정확하게 측정하는 방법은 무엇인가요?",
           "answer": "Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks."
         }
       ]
@@ -7598,7 +7598,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "Por qué es the Karvonen method more accurate than standard 220-age?",
+          "question": "¿Por qué el método Karvonen considera la frecuencia cardíaca en reposo en lugar de solo 220 menos edad?",
           "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
         }
       ]
@@ -7645,7 +7645,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "Pourquoi the Karvonen method more accurate than standard 220-age?",
+          "question": "Pourquoi la méthode Karvonen prend-elle en compte la fréquence cardiaque au repos ?",
           "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
         }
       ]
@@ -7692,7 +7692,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "Warum ist the Karvonen method more accurate than standard 220-age?",
+          "question": "Warum berücksichtigt die Karvonen-Formel den Ruhepuls?",
           "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
         }
       ]
@@ -7739,7 +7739,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "Why is the Karvonen method more accurate than standard 220-age? 안내 및 원리",
+          "question": "카르보넨 공식이 일반 220-나이 공식과 다른 점은 무엇인가요?",
           "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
         }
       ]
@@ -8058,7 +8058,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "Is the 1RM calculator accurate for bench press and squat? 안내 및 원리",
+          "question": "1RM 계산기는 벤치프레스, 스쿼트, 데드리프트 측정 시 유용한가요?",
           "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
         }
       ]
@@ -8409,7 +8409,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
         },
         {
-          "question": "How accurate is the Epley 1RM formula for bench press, squat, and deadlift? 안내 및 원리",
+          "question": "Epley 1RM 추정 공식의 기본 원리와 사용 방법은 무엇인가요?",
           "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates for bench press and squat sets between 2 to 10 repetitions."
         },
         {
