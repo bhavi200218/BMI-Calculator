@@ -26,7 +26,7 @@ const currentData: ToolContent = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": currentData.faqs.map(faq => ({
+  "mainEntity": (currentData.faqs || []).map((faq: { question: string; answer: string }) => ({
     "@type": "Question",
     "name": faq.question,
     "acceptedAnswer": {
@@ -137,7 +137,7 @@ const activeReferences = toolSpecificReferences[effectiveSlug] || [
 
       <!-- Mobile Stacked Card View (No Horizontal Scroll) -->
       <div class="grid gap-3.5 md:hidden">
-        {currentData.tableRows.map(row => (
+        {(currentData.tableRows || []).map((row: { col1: string; col2: string; col3: string }) => (
           <div class="p-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2.5 shadow-xs">
             <div class="flex items-center justify-between gap-2 border-b border-[var(--border)]/60 pb-2">
               <span class="font-display font-bold text-sm text-[var(--foreground)]">{row.col1}</span>
@@ -163,7 +163,7 @@ const activeReferences = toolSpecificReferences[effectiveSlug] || [
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)] font-medium">
-            {currentData.tableRows.map(row => (
+            {(currentData.tableRows || []).map((row: { col1: string; col2: string; col3: string }) => (
               <tr class="hover:bg-[var(--muted)]/30 transition-colors">
                 <td class="p-4 font-bold text-[var(--foreground)]">{row.col1}</td>
                 <td class="p-4 font-mono">{row.col2}</td>
@@ -182,7 +182,7 @@ const activeReferences = toolSpecificReferences[effectiveSlug] || [
       {ui.faq}
     </h3>
     <div class="grid gap-4">
-      {currentData.faqs.map(faq => (
+      {(currentData.faqs || []).map((faq: { question: string; answer: string }) => (
         <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2">
           <h4 class="text-base md:text-lg font-display font-bold text-[var(--foreground)]">
             {faq.question}
