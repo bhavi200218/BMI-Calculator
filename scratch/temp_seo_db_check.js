@@ -3481,9 +3481,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Referencia histórica para BMR"
         },
         {
-          "col1": "Fórmula Katch-McArdle",
-          "col2": "Basada en Masa Corporal Magra",
-          "col3": "Calcula la estimación del BMR utilizando la masa corporal magra (LBM)"
+          "col1": "Categoría / Nivel 3",
+          "col2": "Katch-McArdle LBM Formula",
+          "col3": "Rango de referencia Calculates BMR using lean body mass (LBM)"
         }
       ],
       "faqs": [
@@ -3529,9 +3529,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Équation historique de référence"
         },
         {
-          "col1": "Formule Katch-McArdle",
-          "col2": "Basée sur la Masse Corporelle Maigre",
-          "col3": "Calcule l'estimation du BMR à l'aide de la masse corporelle maigre (LBM)"
+          "col1": "Catégorie / Niveau 3",
+          "col2": "Katch-McArdle LBM Formula",
+          "col3": "Plage de référence Calculates BMR using lean body mass (LBM)"
         }
       ],
       "faqs": [
@@ -3553,8 +3553,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "Quelle est la différence entre la formule Mifflin-St Jeor et Katch-McArdle ?",
-          "answer": "Mifflin-St Jeor estime le BMR à partir du poids total, de la taille et de l'âge. Katch-McArdle utilise la masse corporelle maigre (LBM), ce qui convient particulièrement aux athlètes."
+          "question": "Qu'est-ce que le difference between BMR and TDEE?",
+          "answer": "BMR is your resting metabolic burn at 0% activity. TDEE (Total Daily Energy Expenditure) multiplies BMR by your physical activity level factor to account for movement and exercise."
         }
       ]
     },
@@ -3578,9 +3578,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Historische Vergleichsformel"
         },
         {
-          "col1": "Katch-McArdle Formel",
-          "col2": "Basierend auf Magerer Körpermasse",
-          "col3": "Berechnet die BMR-Schätzung anhand der mageren Körpermasse (LBM)"
+          "col1": "Kategorie / Stufe 3",
+          "col2": "Katch-McArdle LBM Formula",
+          "col3": "Referenzbereich Calculates BMR using lean body mass (LBM)"
         }
       ],
       "faqs": [
@@ -3602,8 +3602,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "Was ist der Unterschied zwischen der Mifflin-St Jeor und Katch-McArdle Formel?",
-          "answer": "Mifflin-St Jeor berechnet den Grundumsatz aus Gesamtgewicht, Körpergröße und Alter. Katch-McArdle berücksichtigt die magere Körpermasse (LBM), was für sehr muskulöse Menschen präziser ist."
+          "question": "Was ist der difference between BMR and TDEE?",
+          "answer": "BMR is your resting metabolic burn at 0% activity. TDEE (Total Daily Energy Expenditure) multiplies BMR by your physical activity level factor to account for movement and exercise."
         }
       ]
     },
@@ -3627,9 +3627,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "기초대사량 참조 공식"
         },
         {
-          "col1": "Katch-McArdle 공식",
-          "col2": "제지방량(LBM) 기반",
-          "col3": "제지방량(LBM)을 바탕으로 기초대사량을 산출합니다"
+          "col1": "범주 / 단계 3",
+          "col2": "Katch-McArdle LBM Formula",
+          "col3": "참조 범위 Calculates BMR using lean body mass (LBM)"
         }
       ],
       "faqs": [
@@ -3647,12 +3647,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         }
       ,
         {
-          "question": "온라인으로 신장(cm)과 체중(kg)을 통해 BMR을 계산하는 방법은?",
-          "answer": "온라인 BMR 계산기에 신장(cm), 체중(kg), 연령, 성별을 입력하면 미플린-스토어 공식을 통해 즉시 기초대사량이 산출됩니다."
+          "question": " calculate BMR in kg and cm online? 안내 및 원리",
+          "answer": "Enter your weight in kilograms (kg) and height in centimeters (cm) alongside age and sex into our online BMR calculator to get your instant calorie burn estimate."
         },
         {
-          "question": "Mifflin-St Jeor 공식과 Katch-McArdle 공식의 차이는 무엇인가요?",
-          "answer": "미플린-스토어 공식은 전체 체중과 신장을 바탕으로 산출하며, 캐치-맥아들 공식은 제지방량(LBM)을 기반으로 계산하여 근육량이 많은 운동선수에게 적합합니다."
+          "question": " difference between BMR and TDEE? 안내 및 원리",
+          "answer": "BMR is your resting metabolic burn at 0% activity. TDEE (Total Daily Energy Expenditure) multiplies BMR by your physical activity level factor to account for movement and exercise."
         }
       ]
     },
@@ -3676,9 +3676,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "ऐतिहासिक बीएमआर संदर्भ सूत्र"
         },
         {
-          "col1": "कैच-मैकआर्डल फॉर्मूला",
-          "col2": "लीन बॉडी मास पर आधारित",
-          "col3": "लीन बॉडी मास (LBM) का उपयोग करके बीएमआर का अनुमान लगाता है"
+          "col1": "श्रेणी / स्तर 3",
+          "col2": "Katch-McArdle LBM Formula",
+          "col3": "संदर्भ सीमा Calculates BMR using lean body mass (LBM)"
         }
       ],
       "faqs": [
@@ -8770,3 +8770,5 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     }
   }
 };
+
+module.exports = { seoDatabase };

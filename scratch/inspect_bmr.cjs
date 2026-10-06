@@ -1,28 +1,27 @@
 const fs = require('fs');
+const esbuild = require('esbuild');
 
-const content = fs.readFileSync('src/data/seoDatabase.ts', 'utf8');
+const databaseContent = fs.readFileSync('src/data/seoDatabase.ts', 'utf8');
+const transformed = esbuild.transformSync(databaseContent, { loader: 'ts', format: 'cjs' }).code;
 
-const sIdx = content.indexOf('"bmr-calculator":');
-const eIdx = content.indexOf('"tdee-calculator":');
-const block = content.substring(sIdx, eIdx);
+fs.writeFileSync('scratch/temp_seo_db_check.cjs', transformed);
+const { seoDatabase } = require('../scratch/temp_seo_db_check.cjs');
 
-const langs = ['en', 'es', 'fr', 'de', 'ko', 'hi'];
+console.log('=== BMR CALCULATOR AUDIT ===');
+const bmr = seoDatabase['bmr-calculator'];
 
-langs.forEach(lang => {
-  const lIdx = block.indexOf(`"${lang}": {`);
-  if (lIdx === -1) {
-    console.log(`MISSING LANG: ${lang}`);
-    return;
+Object.keys(bmr).forEach(lang => {
+  console.log(`\n--- LOCALE: ${lang.toUpperCase()} ---`);
+  console.log(`Table Rows Count: ${bmr[lang].tableRows ? bmr[lang].tableRows.length : 0}`);
+  if (bmr[lang].tableRows) {
+    bmr[lang].tableRows.forEach((row, i) => {
+      console.log(`  Row ${i+1}: col1="${row.col1}" | col2="${row.col2}" | col3="${row.col3}"`);
+    });
   }
-  const nextLangs = langs.map(l => block.indexOf(`"${l}": {`, lIdx + 5)).filter(p => p !== -1);
-  const lEnd = nextLangs.length > 0 ? Math.min(...nextLangs) : block.length;
-  const lBlock = block.substring(lIdx, lEnd);
-
-  console.log(`\n=================== BMR LANG [${lang}] ===================`);
-  // Find tableRows
-  const trIdx = lBlock.indexOf('"tableRows":');
-  const trEnd = lBlock.indexOf('"faqs":');
-  if (trIdx !== -1) {
-    console.log(lBlock.substring(trIdx, trEnd));
+  console.log(`FAQs Count: ${bmr[lang].faqs ? bmr[lang].faqs.length : 0}`);
+  if (bmr[lang].faqs) {
+    bmr[lang].faqs.forEach((faq, i) => {
+      console.log(`  FAQ ${i+1}: Q="${faq.question}"`);
+    });
   }
 });

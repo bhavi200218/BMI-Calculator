@@ -1,24 +1,24 @@
 const fs = require('fs');
+const esbuild = require('esbuild');
 
-const tsContent = fs.readFileSync('src/data/seoDatabase.ts', 'utf8');
+const databaseContent = fs.readFileSync('src/data/seoDatabase.ts', 'utf8');
+const transformed = esbuild.transformSync(databaseContent, { loader: 'ts', format: 'cjs' }).code;
 
-// Extract 3d-bmi-calculator block
-const sIdx = tsContent.indexOf('"3d-bmi-calculator":');
-const eIdx = tsContent.indexOf('"bmi-chart":');
-const block = tsContent.substring(sIdx, eIdx);
+fs.writeFileSync('scratch/temp_seo_db_check.cjs', transformed);
 
-const langs = ['en', 'es', 'fr', 'de', 'ko', 'hi'];
+const { seoDatabase } = require('../scratch/temp_seo_db_check.cjs');
 
-langs.forEach(lang => {
-  const lIdx = block.indexOf(`"${lang}": {`);
-  if (lIdx === -1) return;
-  const nextLangs = langs.map(l => block.indexOf(`"${l}": {`, lIdx + 5)).filter(p => p !== -1);
-  const lEnd = nextLangs.length > 0 ? Math.min(...nextLangs) : block.length;
-  const lBlock = block.substring(lIdx, lEnd);
-
-  const faqsMatch = lBlock.match(/"question":\s*"([^"]+)"/g);
-  console.log(`\n=== LANG [${lang}] (FAQ count: ${faqsMatch ? faqsMatch.length : 0}) ===`);
-  if (faqsMatch) {
-    faqsMatch.forEach((q, i) => console.log(`  FAQ ${i+1}: ${q}`));
-  }
-});
+console.log('=== 3D BMI CALCULATOR FAQ AUDIT ===');
+const tool = seoDatabase['3d-bmi-calculator'];
+if (tool) {
+  Object.keys(tool).forEach(lang => {
+    console.log(`\nLocale: ${lang.toUpperCase()} -> FAQ Count: ${tool[lang].faqs ? tool[lang].faqs.length : 0}`);
+    if (tool[lang].faqs) {
+      tool[lang].faqs.forEach((f, idx) => {
+        console.log(`  FAQ ${idx+1}: ${f.question}`);
+      });
+    }
+  });
+} else {
+  console.log('3d-bmi-calculator not found in database!');
+}
