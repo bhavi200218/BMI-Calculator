@@ -87,10 +87,34 @@ const toolSpecificReferences: Record<string, { name: string; url: string }[]> = 
   ]
 };
 
-const activeReferences = toolSpecificReferences[effectiveSlug] || [
-  { name: 'CDC Adult BMI Guidelines, Screening Limits & Formula FAQ', url: 'https://www.cdc.gov/bmi/faq/' },
-  { name: 'WHO Global Health Observatory Adult BMI Classification', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' }
-];
+const defaultReferencesByLang: Record<Locale, { name: string; url: string }[]> = {
+  en: [
+    { name: 'WHO Global Health Observatory Adult BMI Classification', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' },
+    { name: 'CDC Adult BMI Guidelines, Screening Limits & Formula FAQ', url: 'https://www.cdc.gov/bmi/faq/' }
+  ],
+  es: [
+    { name: 'OMS Observatorio Mundial de la Salud - Clasificación del IMC', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' },
+    { name: 'CDC Pautas de IMC para Adultos y Preguntas Frecuentes', url: 'https://www.cdc.gov/bmi/faq/' }
+  ],
+  fr: [
+    { name: 'OMS Observatoire Mondial de la Santé - Classification de l\'IMC', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' },
+    { name: 'CDC Directives d\'IMC pour Adultes et Foire Aux Questions', url: 'https://www.cdc.gov/bmi/faq/' }
+  ],
+  de: [
+    { name: 'WHO Globales Gesundheitsobservatorium - BMI-Klassifizierung', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' },
+    { name: 'CDC Erwachsenen-BMI-Richtlinien und Häufige Fragen', url: 'https://www.cdc.gov/bmi/faq/' }
+  ],
+  ko: [
+    { name: 'WHO 세계보건기구 성인 BMI 분류 기준', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' },
+    { name: 'CDC 성인 BMI 가이드라인 및 자주 묻는 질문', url: 'https://www.cdc.gov/bmi/faq/' }
+  ],
+  hi: [
+    { name: 'डब्ल्यूएचओ (WHO) वैश्विक स्वास्थ्य ऑब्जर्वेटरी वयस्क बीएमआई वर्गीकरण', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' },
+    { name: 'सीडीसी (CDC) वयस्क बीएमआई दिशानिर्देश एवं प्रश्नोत्तर', url: 'https://www.cdc.gov/bmi/faq/' }
+  ]
+};
+
+const activeReferences = toolSpecificReferences[effectiveSlug] || (defaultReferencesByLang[lang] || defaultReferencesByLang.en);
 ---
 
 <!-- Embed Tool-Specific FAQ Schema -->
