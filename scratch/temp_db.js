@@ -1,63 +1,4 @@
-import { type Locale } from '../utils/calculators';
-
-export interface ToolContent {
-  title: string;
-  eyebrow: string;
-  intro: string;
-  formulaTitle: string;
-  formulaDesc: string;
-  formulaCode?: string;
-  tableTitle?: string;
-  tableRows?: { col1: string; col2: string; col3: string }[];
-  faqs: { question: string; answer: string }[];
-}
-
-export const tableUi: Record<string, { cat: string; metric: string; guidance: string; faq: string; refs: string }> = {
-  en: {
-    cat: 'Category / Level',
-    metric: 'Reference Range / Metric',
-    guidance: 'Reference Context',
-    faq: 'Frequently Asked Questions',
-    refs: 'References & Published Research'
-  },
-  es: {
-    cat: 'Categoría / Nivel',
-    metric: 'Referencia / Métrica',
-    guidance: 'Contexto de Referencia',
-    faq: 'Preguntas Frecuentes y Respuestas',
-    refs: 'Referencias e Investigaciones Publicadas'
-  },
-  fr: {
-    cat: 'Catégorie / Niveau',
-    metric: 'Référence / Métrique',
-    guidance: 'Contexte de Référence',
-    faq: 'Foire Aux Questions et Réponses',
-    refs: 'Références et Recherches Publiées'
-  },
-  de: {
-    cat: 'Kategorie / Stufe',
-    metric: 'Referenz / Metrik',
-    guidance: 'Referenzkontext',
-    faq: 'Häufig gestellte Fragen',
-    refs: 'Referenzen & Veröffentlichte Forschung'
-  },
-  ko: {
-    cat: '범주 / 단계',
-    metric: '참조 / 메트릭',
-    guidance: '참조 컨텍스트',
-    faq: '자주 묻는 질문 및 답변',
-    refs: '참고 문헌 및 출판 연구'
-  },
-  hi: {
-    cat: 'श्रेणी / स्तर',
-    metric: 'संदर्भ / मीट्रिक',
-    guidance: 'संदर्भ विवरण',
-    faq: 'अक्सर पूछे जाने वाले प्रश्न और उत्तर',
-    refs: 'प्रकाशित शोध एवं संदर्भ'
-  }
-};
-
-export const seoDatabase: Record<string, Record<string, ToolContent>> = {
+module.exports = {
   "bmi-calculator": {
     "en": {
       "eyebrow": "WHO Health Standards",
@@ -2020,11 +1961,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Why is the overweight cutoff 23.0 for Indians instead of 25.0?",
-          "answer": "South Asian populations exhibit higher visceral fat percentages at lower Body Mass Index scores, increasing cardiometabolic risk starting at a BMI of 23.0 kg/m² under ICMR and WHO guidelines."
+          "answer": "Las poblaciones del sur de Asia presentan un mayor porcentaje de grasa visceral a índices de masa corporal más bajos, lo que incrementa el riesgo cardiometabólico a partir de un IMC de 23.0 kg/m²."
         },
         {
           "question": "How to calculate ideal body weight for height in India?",
-          "answer": "Multiply your height in meters squared by 18.5 for the minimum healthy weight and by 22.9 for the maximum recommended healthy weight under WHO and ICMR Indian standards."
+          "answer": "Multiplica tu altura en metros al cuadrado por 18.5 para el peso mínimo y por 22.9 para el peso máximo recomendable según los estándares de la OMS e ICMR."
         }
       ]
     },
@@ -2040,17 +1981,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Bajo Peso (Norma Indias ICMR)",
           "col2": "< 18.5 kg/m²",
-          "col3": "Umbral de referencia para peso bajo"
+          "col3": "Seuil de referencia para peso bajo"
         },
         {
           "col1": "Peso Normal & Óptimo",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Rango saludable óptimo para adultos indios"
+          "col3": "Plage saine óptima para los adultos indios"
         },
         {
           "col1": "Sobrepeso / Zona de Riesgo (23.0)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Umbral de riesgo cardiometabólico elevado para indios"
+          "col3": "Seuil de riesgo cardiometabólico elevado para indios"
         },
         {
           "col1": "Obesidad Clase I (Norma ICMR)",
@@ -2132,7 +2073,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "BMI-Rechner für Inder – ICMR & WHO Indien-Standard-Tabelle – Leitfaden & Rechner",
+      "title": "BMI Calculator for Indians – Healthy Height Weight Chart for Indian Adults – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -2173,17 +2114,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ,
         {
           "question": "Warum liegt der Grenzwert für Übergewicht bei Indern bei 23.0 statt 25.0?",
-          "answer": "Südasiatische Anwohner weisen bei niedrigerem BMI einen höheren viszeralen Fettanteil auf. Das kardiometabolische Risiko steigt laut ICMR- und WHO-Richtlinien bereits ab einem BMI von 23,0 kg/m²."
+          "answer": "Las poblaciones del sur de Asia presentan un mayor porcentaje de grasa visceral a índices de masa corporal más bajos, lo que incrementa el riesgo cardiometabólico a partir de un IMC de 23.0 kg/m²."
         },
         {
           "question": "Wie berechnet man das ideale Körpergewicht nach der Größe in Indien?",
-          "answer": "Multiplizieren Sie Ihre Körpergröße in Metern zum Quadrat mit 18,5 für das Mindestgewicht und mit 22,9 für das empfohlene Höchstgewicht nach WHO- und ICMR-Standards."
+          "answer": "Multiplica tu altura en metros al cuadrado por 18.5 para el peso mínimo y por 22.9 para el peso máximo recomendable según los estándares de la OMS e ICMR."
         }
       ]
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "인도인을 위한 BMI 계산기 – ICMR 및 WHO 인도 표준 건강 체중표 – 참조 계산기",
+      "title": "BMI 계산기 for Indians – Healthy Height Weight Chart for Indian Adults – 참조 계산기",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -2224,11 +2165,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ,
         {
           "question": "인도 성인의 과체중 기준이 25.0이 아닌 23.0인 이유는 무엇인가요?",
-          "answer": "남아시아 및 인도인 인구는 낮은 BMI 점수에서도 더 높은 복부 내장 지방 비율을 보여, ICMR 및 WHO 지침에 따라 BMI 23.0 kg/m²부터 심대사 위험이 증가합니다."
+          "answer": "Las poblaciones del sur de Asia presentan un mayor porcentaje de grasa visceral a índices de masa corporal más bajos, lo que incrementa el riesgo cardiometabólico a partir de un IMC de 23.0 kg/m²."
         },
         {
           "question": " 인도 표준 지침에 따른 신장별 적정 체중은 어떻게 계산하나요?",
-          "answer": "신장(m)의 제곱에 18.5를 곱하면 권장 최소 체중이 되고, 22.9를 곱하면 WHO 및 ICMR 인도 표준에 따른 권장 최대 건강 체중이 됩니다."
+          "answer": "Multiplica tu altura en metros al cuadrado por 18.5 para el peso mínimo y por 22.9 para el peso máximo recomendable según los estándares de la OMS e ICMR."
         }
       ]
     },
@@ -2304,7 +2245,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "WHO & Devine Reference Charts",
       "title": "Healthy Weight by Height Chart – Ideal Weight Range for Men & Women",
-      "intro": "Explore official healthy weight by height reference ranges and height-weight lookup charts for men and women. Calculate your ideal weight based on height in kilograms (kg) and pounds (lbs) based on World Health Organization (WHO), CDC, and Devine formula standards.",
+      "intro": "Explore official healthy weight by height reference ranges and height-weight lookup charts for men and women. Calculate your ideal weight nach Körpergröße in kilograms (kg) and pounds (lbs) based on World Health Organization (WHO), CDC, and Devine formula standards.",
       "formulaTitle": "Healthy Weight Range & Ideal Weight Equations",
       "formulaDesc": "WHO Healthy Weight Range: Min Weight = 18.5 × [Height (m)]² | Max Weight = 24.9 × [Height (m)]² | Devine IBW Male: 50kg + 2.3kg/inch >5ft | Devine IBW Female: 45.5kg + 2.3kg/inch >5ft",
       "formulaCode": "Min Healthy (kg) = 18.5 × m²  |  Max Healthy (kg) = 24.9 × m²",
