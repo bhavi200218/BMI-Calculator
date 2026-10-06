@@ -1808,111 +1808,75 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Klassifizierung für schwere Adipositas"
         }
       ],
-      "faqs": [
+            "faqs": [
         {
-          "question": "Wie funktioniert der BMI-Rechner für Indien und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+                "question": "Wie funktioniert der BMI-Rechner für indische Erwachsene?",
+                "answer": "Der Rechner verwendet die ICMR- und WHO-Südostasien-Kriterien, um Ihren BMI und den gesunden Bereich (18.5 – 22.9 kg/m²) zu berechnen."
+        },
+        {
+                "question": "Warum liegt der Grenzwert für Übergewicht bei Indern bei 23.0 statt 25.0?",
+                "answer": "Aufgrund höherer kardiometabolischer Risiken bei geringerem BMI empfehlen ICMR und WHO einen niedrigeren Grenzwert von 23.0 kg/m² für indische Erwachsene."
+        },
+        {
+                "question": "Wie berechnet man das ideale Körpergewicht nach der Größe in Indien?",
+                "answer": "Das ideale Gewicht liegt vor, wenn der BMI zwischen 18.5 und 22.9 kg/m² liegt. Es wird mit der Formel: Gewicht (kg) / [Größe (m)]² berechnet."
         }
-      ,
-        {
-          "question": "Warum ist ein BMI von 23 die Schwellengrenze in Indien?",
-          "answer": "Epidemiological research shows that South Asian populations carry higher abdominal visceral fat and face elevated cardiometabolic risks (such as type 2 diabetes and hypertension) at lower body mass index levels compared to Western populations."
-        },
-        {
-          "question": "Wie man calculate BMI in India using kg and cm?",
-          "answer": "To calculate BMI in kg and cm: Convert height in cm to meters by dividing by 100. Multiply height in meters by itself to get height squared. Divide weight in kg by height squared. Example: 65 kg / (1.68m x 1.68m) = 23.0 BMI."
-        },
-        {
-          "question": "Welche Richtlinien gelten für den Taillenumfang indischer Erwachsener?",
-          "answer": "The Indian Council of Medical Research (ICMR) recommends keeping waist circumference under 90 cm (35 inches) for Indian men and under 80 cm (31.5 inches) for Indian women to reduce abdominal fat risk."
-        },
-        {
-          "question": "Was ist die ideale Größe-Gewicht-Tabelle für Inder?",
-          "answer": "An ideal weight for Indian adults keeps BMI between 18.5 and 22.9 kg/m². For example, for an Indian male or female of height 168 cm (5 ft 6 in), the healthy weight range is 52.2 kg to 64.6 kg."
-        }
-      ,
-        {
-          "question": "Wie berechnet man den BMI für indische Erwachsene?",
-          "answer": "Um den BMI bei Indern zu berechnen, teilen Sie das Gewicht in kg durch die Größe in Metern zum Quadrat. Beispiel: 65 kg / (1,68 m x 1,68 m) = 23,0 kg/m² (Übergewicht nach dem WHO-Asien-Schwellenwert)."
-        },
-        {
-          "question": "Was ist die Idealgewichtstabelle für die indische Bevölkerung?",
-          "answer": "Ein Idealgewicht für indische Erwachsene hält den BMI zwischen 18,5 und 22,9 kg/m² gemäß den ICMR- und WHO-Leitlinien."
-        }
-      ]
+]
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "BMI 계산기 India – Asian BMI Cutoff Reference (BMI 23) – 참조 계산기",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "title": "인도 성인을 위한 체질량지수 계산기 – ICMR 및 WHO 인도 기준",
+      "intro": "WHO 및 ICMR 남아시아 아시아 태평양 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "Asian BMI = Weight (kg) / [Height (cm) / 100]²",
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "범주 / 단계 1",
+          "col1": "저체중",
           "col2": "< 18.5 kg/m²",
           "col3": "저체중 참조 기준"
         },
         {
-          "col1": "범주 / 단계 2",
+          "col1": "정상 체중",
           "col2": "18.5 – 22.9 kg/m²",
           "col3": "인도 성인을 위한 최적 건강 체중 범위"
         },
         {
-          "col1": "범주 / 단계 3",
+          "col1": "과체중 (위험 증가)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "심혈관 및 대사 위험 증가 기준 (BMI 23)"
+          "col3": "심혈관 및 대사 위험 증가 기준 (BMI ≥ 23)"
         },
         {
-          "col1": "범주 / 단계 4",
+          "col1": "1단계 비만",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "WHO 아시아 태평양 기준 1단계 비만"
         },
         {
-          "col1": "범주 / 단계 5",
+          "col1": "2단계 고도 비만",
           "col2": "≥ 30.0 kg/m²",
           "col3": "고위험 중증 비만 분류"
         }
       ],
       "faqs": [
         {
-          "question": "인도 표준 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+                "question": "인도 성인 전용 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
+                "answer": "본 계산기는 ICMR 및 WHO 아시아 태평양 지침에 따라 BMI와 건강 체중 범위(18.5 – 22.9 kg/m²)를 측정합니다."
+        },
+        {
+                "question": "인도 성인의 과체중 기준이 25.0이 아닌 23.0인 이유는 무엇인가요?",
+                "answer": "남아시아 및 인도인 인구는 낮은 BMI에서도 높은 체지방률을 보여, WHO 및 ICMR 지침에 따라 23.0 kg/m²부터 위험이 증가합니다."
+        },
+        {
+                "question": "인도 표준 지침에 따른 신장별 적정 체중은 어떻게 계산하나요?",
+                "answer": "신장(m)의 제곱에 18.5를 곱하면 최소 권장 체중이 되고, 22.9를 곱하면 최대 건강 체중 범위가 됩니다."
         }
-      ,
-        {
-          "question": "인도에서 BMI 23이 과체중 기준인 이유는 무엇인가요?",
-          "answer": "Epidemiological research shows that South Asian populations carry higher abdominal visceral fat and face elevated cardiometabolic risks (such as type 2 diabetes and hypertension) at lower body mass index levels compared to Western populations."
-        },
-        {
-          "question": " calculate BMI in India using kg and cm? 안내 및 원리",
-          "answer": "To calculate BMI in kg and cm: Convert height in cm to meters by dividing by 100. Multiply height in meters by itself to get height squared. Divide weight in kg by height squared. Example: 65 kg / (1.68m x 1.68m) = 23.0 BMI."
-        },
-        {
-          "question": "인도 성인의 허리둘레 기준 가이드라인은 무엇인가요?",
-          "answer": "The Indian Council of Medical Research (ICMR) recommends keeping waist circumference under 90 cm (35 inches) for Indian men and under 80 cm (31.5 inches) for Indian women to reduce abdominal fat risk."
-        },
-        {
-          "question": "인도 성인을 위한 이상적인 신장별 체중표는 무엇인가요?",
-          "answer": "An ideal weight for Indian adults keeps BMI between 18.5 and 22.9 kg/m². For example, for an Indian male or female of height 168 cm (5 ft 6 in), the healthy weight range is 52.2 kg to 64.6 kg."
-        }
-      ,
-        {
-          "question": "인도 성인의 BMI는 어떻게 계산하나요?",
-          "answer": "인도 성인의 BMI 계산은 체중(kg)을 신장(m)의 제곱으로 나눕니다. 예: 65 kg / (1.68 m x 1.68 m) = 23.0 kg/m² (WHO 아시아 과체중 기준)."
-        },
-        {
-          "question": "인도 인구의 적정 체중 범위는 어떻게 되나요?",
-          "answer": "ICMR 및 WHO 지침에 따르면 인도 성인의 적정 체중은 BMI 18.5~22.9 kg/m² 범위입니다."
-        }
-      ]
+]
     },
-    "hi": {
+"hi": {
       "eyebrow": "डब्ल्यूएचओ एवं आईसीएमआर भारतीय दिशानिर्देश",
-      "title": "बीएमआई कैलकुलेटर भारत (BMI कैलकुलेटर India)",
-      "intro": "भारतीय वयस्कों के लिए आधिकारिक WHO और ICMR (भारतीय चिकित्सा अनुसंधान परिषद) के दिशानिर्देशों के आधार पर अपने बीएमआई की गणना करें। पश्चिमी मानकों के विपरीत, भारतीय आबादी के लिए 23.0 kg/m² बीएमआई से अधिक वजन (Overweight) की शुरुआत मानी जाती है।",
+      "title": "भारतीयों के लिए बीएमआई कैलकुलेटर – आईसीएमआर एवं डब्ल्यूएचओ मानक",
+      "intro": "भारतीय चिकित्सा अनुसंधान परिषद (ICMR) और WHO दक्षिण एशियाई दिशानिर्देशों पर आधारित भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। किलोग्राम और सेंटीमीटर में अपने बीएमआई और स्वस्थ वजन सीमा की गणना करें।",
       "formulaTitle": "भारतीय बीएमआई सूत्र (किग्रा और सेमी)",
       "formulaDesc": "बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | भारतीयों के लिए ओवरवेट कटऑफ: 23.0 kg/m²",
       "formulaCode": "BMI = kg / m²",
@@ -1924,12 +1888,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "कम वजन संदर्भ सीमा"
         },
         {
-          "col1": "सामान्य / स्वास्थ्यप्रद बीएमआई (Healthy)",
+          "col1": "सामान्य एवं स्वस्थ बीएमआई",
           "col2": "18.5 – 22.9 kg/m²",
           "col3": "भारतीयों के लिए आदर्श स्वस्थ बीएमआई सीमा"
         },
         {
-          "col1": "अधिक वजन (Overweight / Cutoff 23)",
+          "col1": "अधिक वजन (कटऑफ 23.0)",
           "col2": "23.0 – 24.9 kg/m²",
           "col3": "भारतीयों के लिए अधिक वजन एवं जोखिम सीमा"
         },
@@ -1939,45 +1903,28 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "दक्षिण एशियाई मानकों के तहत मोटापा श्रेणी I"
         },
         {
-          "col1": "मोटापा श्रेणी II (गंभीर)",
+          "col1": "गंभीर मोटापा श्रेणी II",
           "col2": "≥ 30.0 kg/m²",
           "col3": "गंभीर मोटापा श्रेणी"
         }
       ],
       "faqs": [
         {
-          "question": "भारतीयों के लिए बीएमआई की सीमाएं अलग क्यों हैं?",
-          "answer": "ICMR और डब्ल्यूएचओ दिशानिर्देशों के अनुसार एशियाई/भारतीय आबादी में कम बीएमआई पर भी विसरल फैट (पेट की वसा) का जोखिम अधिक होता है।"
+          "question": "भारतीय वयस्कों के लिए बीएमआई कैलकुलेटर कैसे काम करता है?",
+          "answer": "यह कैलकुलेटर ICMR और WHO के दिशानिर्देशों के आधार पर ऊंचाई और वजन का विश्लेषण करके बीएमआई की गणना करता है।"
         },
         {
-          "question": "भारत के लिए संशोधित बीएमआई कटऑफ क्या है?",
-          "answer": "भारत में 18.5-22.9 स्वस्थ वजन, 23.0-24.9 ओवरवेट (जोखिम) और 25.0 से अधिक को मोटापा श्रेणी माना जाता है।"
+          "question": "भारत में बीएमआई 23.0 को ओवरवेट क्यों माना जाता है?",
+          "answer": "आईसीएमआर (ICMR) के शोध के अनुसार, भारतीय आबादी में कम बीएमआई पर भी पेट की विसरल वसा अधिक होती है, जिससे 23.0 kg/m² से ही जोखिम बढ़ने लगता है।"
         },
         {
-          "question": "ICMR के अनुसार कमर की परिधि (Waist Circumference) की सीमा क्या है?",
-          "answer": "पुरुषों के लिए 90 सेमी और महिलाओं के लिए 80 सेमी से अधिक कमर की माप चयापचय जोखिम का संकेत देती है।"
-        },
-        {
-          "question": "क्या भारतीय बीएमआई कैलकुलेटर में कमर का माप शामिल है?",
-          "answer": "हाँ, यह कैलकुलेटर बीएमआई के साथ कमर के आकार का मूल्यांकन करके ICMR विसरल फैट रिस्क स्टेटस दिखाता है।"
-        },
-        {
-          "question": "एशियाई बीएमआई कटऑफ कब लागू करना चाहिए?",
-          "answer": "यदि आप दक्षिण एशियाई या भारतीय मूल के हैं, तो 23.0 kg/m² की सीमा को संदर्भ बिंदु मानना चाहिए।"
-        }
-      ,
-        {
-          "question": "भारतीय वयस्कों के लिए बीएमआई की गणना कैसे की जाती है?",
-          "answer": "भारतीयों के लिए बीएमआई गणना: वजन (किग्रा) को ऊंचाई के वर्ग (मीटर²) से विभाजित करें। उदाहरण: 65 किग्रा / (1.68 मीटर x 1.68 मीटर) = 23.0 kg/m² (डब्ल्यूएचओ एशियाई कटऑफ के तहत ओवरवेट)।"
-        },
-        {
-          "question": "भारतीयों के लिए आदर्श वजन सीमा क्या है?",
-          "answer": "आईसीएमआर (ICMR) और डब्ल्यूएचओ (WHO) के दिशानिर्देशों के अनुसार भारतीय वयस्कों के लिए आदर्श बीएमआई 18.5 से 22.9 kg/m² के बीच रहता है।"
+          "question": "भारतीयों के लिए आदर्श बीएमआई सीमा क्या है?",
+          "answer": "आईसीएमआर और डब्ल्यूएचओ दिशानिर्देशों के अनुसार भारतीय वयस्कों के लिए आदर्श बीएमआई 18.5 से 22.9 kg/m² के बीच है।"
         }
       ]
     }
   },
-  "bmi-calculator-for-indians": {
+"bmi-calculator-for-indians": {
     "en": {
       "eyebrow": "ICMR & WHO South Asian Standards",
       "title": "BMI Calculator for Indians – Healthy Height Weight Chart for Indian Adults",
@@ -2168,16 +2115,15 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "Wie funktioniert der BMI-Rechner für indische Erwachsene?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        }
-      ,
+          "answer": "Der Rechner verwendet die ICMR- und WHO-Südostasien-Kriterien, um Ihren BMI und den gesunden Bereich (18.5 – 22.9 kg/m²) zu berechnen."
+        },
         {
           "question": "Warum liegt der Grenzwert für Übergewicht bei Indern bei 23.0 statt 25.0?",
-          "answer": "Südasiatische Anwohner weisen bei niedrigerem BMI einen höheren viszeralen Fettanteil auf. Das kardiometabolische Risiko steigt laut ICMR- und WHO-Richtlinien bereits ab einem BMI von 23,0 kg/m²."
+          "answer": "Aufgrund höherer kardiometabolischer Risiken bei geringerem BMI empfehlen ICMR und WHO einen niedrigeren Grenzwert von 23.0 kg/m² für indische Erwachsene."
         },
         {
           "question": "Wie berechnet man das ideale Körpergewicht nach der Größe in Indien?",
-          "answer": "Multiplizieren Sie Ihre Körpergröße in Metern zum Quadrat mit 18,5 für das Mindestgewicht und mit 22,9 für das empfohlene Höchstgewicht nach WHO- und ICMR-Standards."
+          "answer": "Das ideale Gewicht liegt vor, wenn der BMI zwischen 18.5 und 22.9 kg/m² liegt. Es wird mit der Formel: Gewicht (kg) / [Größe (m)]² berechnet."
         }
       ]
     },
@@ -2216,21 +2162,20 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "참조 범위 고도 비만 위험 임계값"
         }
       ],
-      "faqs": [
+            "faqs": [
         {
-          "question": "인도 성인 전용 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        }
-      ,
-        {
-          "question": "인도 성인의 과체중 기준이 25.0이 아닌 23.0인 이유는 무엇인가요?",
-          "answer": "남아시아 및 인도인 인구는 낮은 BMI 점수에서도 더 높은 복부 내장 지방 비율을 보여, ICMR 및 WHO 지침에 따라 BMI 23.0 kg/m²부터 심대사 위험이 증가합니다."
+                "question": "인도 성인 전용 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
+                "answer": "본 계산기는 ICMR 및 WHO 아시아 태평양 지침에 따라 BMI와 건강 체중 범위(18.5 – 22.9 kg/m²)를 측정합니다."
         },
         {
-          "question": " 인도 표준 지침에 따른 신장별 적정 체중은 어떻게 계산하나요?",
-          "answer": "신장(m)의 제곱에 18.5를 곱하면 권장 최소 체중이 되고, 22.9를 곱하면 WHO 및 ICMR 인도 표준에 따른 권장 최대 건강 체중이 됩니다."
+                "question": "인도 성인의 과체중 기준이 25.0이 아닌 23.0인 이유는 무엇인가요?",
+                "answer": "남아시아 및 인도인 인구는 낮은 BMI에서도 높은 체지방률을 보여, WHO 및 ICMR 지침에 따라 23.0 kg/m²부터 위험이 증가합니다."
+        },
+        {
+                "question": "인도 표준 지침에 따른 신장별 적정 체중은 어떻게 계산하나요?",
+                "answer": "신장(m)의 제곱에 18.5를 곱하면 최소 권장 체중이 되고, 22.9를 곱하면 최대 건강 체중 범위가 됩니다."
         }
-      ]
+]
     },
     "hi": {
       "eyebrow": "आईसीएमआर एवं डब्ल्यूएचओ भारतीय मानक",
