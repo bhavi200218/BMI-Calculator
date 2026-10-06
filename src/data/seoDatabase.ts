@@ -940,27 +940,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "Catégorie / Niveau 1",
+          "col1": "Sous-poids (Norme Indienne)",
           "col2": "< 16.0 kg/m²",
           "col3": "Plage de référence Severe underweight risk threshold"
         },
         {
-          "col1": "Catégorie / Niveau 2",
+          "col1": "Poids Normal & Optimal",
           "col2": "16.0 – 16.9 kg/m²",
           "col3": "Plage de référence Moderate underweight plage de référence"
         },
         {
-          "col1": "Catégorie / Niveau 3",
+          "col1": "Surpoids / Zone d'Action",
           "col2": "17.0 – 18.4 kg/m²",
           "col3": "Plage de référence Mild underweight reference threshold"
         },
         {
-          "col1": "Catégorie / Niveau 4",
+          "col1": "Obésité Classe I (ICMR)",
           "col2": "18.5 – 24.9 kg/m²",
           "col3": "Plage de référence Optimal healthy baseline range for adults"
         },
         {
-          "col1": "Catégorie / Niveau 5",
+          "col1": "Obésité Classe II (Sévère)",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "Plage de référence Overweight plage de référence (Asian cutoff: 23.0 kg/m²)"
         },
@@ -1674,7 +1674,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de bmi calculator india y qué mide?",
+          "question": "¿Cómo funciona la calculadora de IMC para India y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -1742,7 +1742,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de bmi calculator india et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur d'IMC pour l'Inde et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -1810,7 +1810,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der bmi calculator india-Rechner und was misst er?",
+          "question": "Wie funktioniert der BMI-Rechner für Indien und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -1878,7 +1878,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "bmi calculator india 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "인도 표준 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -2020,11 +2020,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Why is the overweight cutoff 23.0 for Indians instead of 25.0?",
-          "answer": "Indians have a higher percentage of visceral fat at lower body mass index levels, leading to increased risk of diabetes and hypertension at BMI 23.0 kg/m²."
+          "answer": "Las poblaciones del sur de Asia presentan un mayor porcentaje de grasa visceral a índices de masa corporal más bajos, lo que incrementa el riesgo cardiometabólico a partir de un IMC de 23.0 kg/m²."
         },
         {
           "question": "How to calculate ideal body weight for height in India?",
-          "answer": "Divide your height in meters squared and multiply by 18.5 for minimum healthy weight and by 22.9 for maximum healthy weight. For example, at 170 cm, healthy weight is 53.5 kg to 66.2 kg."
+          "answer": "Multiplica tu altura en metros al cuadrado por 18.5 para el peso mínimo y por 22.9 para el peso máximo recomendable según los estándares de la OMS e ICMR."
         }
       ]
     },
@@ -2040,42 +2040,42 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Categoría / Nivel 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "Rango de referencia Underweight reference threshold"
+          "col3": "Rango de referencia de peso bajo"
         },
         {
           "col1": "Categoría / Nivel 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Rango de referencia Optimal healthy range for Indian adults"
+          "col3": "Rango saludable óptimo para adultos en India"
         },
         {
           "col1": "Categoría / Nivel 3",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Rango de referencia Elevated cardiometabolic risk cutoff for Indians"
+          "col3": "Límite de riesgo cardiometabólico elevado para indios"
         },
         {
           "col1": "Categoría / Nivel 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Rango de referencia Class I obesity threshold under ICMR standards"
+          "col3": "Umbral de obesidad clase I según estándares ICMR"
         },
         {
           "col1": "Categoría / Nivel 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Rango de referencia Severe obesity risk threshold"
+          "col3": "Umbral de riesgo de obesidad severa"
         }
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de bmi calculator for indians y qué mide?",
+          "question": "¿Cómo funciona la calculadora de IMC para la población india y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
         {
-          "question": "Por qué es the overweight cutoff 23.0 for Indians instead of 25.0?",
-          "answer": "Indians have a higher percentage of visceral fat at lower body mass index levels, leading to increased risk of diabetes and hypertension at BMI 23.0 kg/m²."
+          "question": "¿Por qué el límite de sobrepeso es 23.0 para la población india en lugar de 25.0?",
+          "answer": "Las poblaciones del sur de Asia presentan un mayor porcentaje de grasa visceral a índices de masa corporal más bajos, lo que incrementa el riesgo cardiometabólico a partir de un IMC de 23.0 kg/m²."
         },
         {
-          "question": "Cómo calculate ideal body weight for height in India?",
-          "answer": "Divide your height in meters squared and multiply by 18.5 for minimum healthy weight and by 22.9 for maximum healthy weight. For example, at 170 cm, healthy weight is 53.5 kg to 66.2 kg."
+          "question": "¿Cómo calcular el peso corporal ideal según la altura en India?",
+          "answer": "Multiplica tu altura en metros al cuadrado por 18.5 para el peso mínimo y por 22.9 para el peso máximo recomendable según los estándares de la OMS e ICMR."
         }
       ]
     },
@@ -2091,42 +2091,42 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Catégorie / Niveau 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "Plage de référence Underweight reference threshold"
+          "col3": "Plage de référence de sous-poids"
         },
         {
           "col1": "Catégorie / Niveau 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Plage de référence Optimal healthy range for Indian adults"
+          "col3": "Plage de poids santé optimale pour adultes indiens"
         },
         {
           "col1": "Catégorie / Niveau 3",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Plage de référence Elevated cardiometabolic risk cutoff for Indians"
+          "col3": "Seuil de risque cardiométabolique élevé pour les Indiens"
         },
         {
           "col1": "Catégorie / Niveau 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Plage de référence Class I obesity threshold under ICMR standards"
+          "col3": "Seuil d'obésité de classe I selon les normes ICMR"
         },
         {
           "col1": "Catégorie / Niveau 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Plage de référence Severe obesity risk threshold"
+          "col3": "Seuil de risque d'obésité sévère"
         }
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de bmi calculator for indians et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur d'IMC pour la population indienne ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
         {
-          "question": "Pourquoi the overweight cutoff 23.0 for Indians instead of 25.0?",
-          "answer": "Indians have a higher percentage of visceral fat at lower body mass index levels, leading to increased risk of diabetes and hypertension at BMI 23.0 kg/m²."
+          "question": "Pourquoi le seuil de surpoids est-il de 23.0 pour les Indiens au lieu de 25.0 ?",
+          "answer": "Las poblaciones del sur de Asia presentan un mayor porcentaje de grasa visceral a índices de masa corporal más bajos, lo que incrementa el riesgo cardiometabólico a partir de un IMC de 23.0 kg/m²."
         },
         {
-          "question": "Comment calculate ideal body weight for height in India?",
-          "answer": "Divide your height in meters squared and multiply by 18.5 for minimum healthy weight and by 22.9 for maximum healthy weight. For example, at 170 cm, healthy weight is 53.5 kg to 66.2 kg."
+          "question": "Comment calculer le poids idéal selon la taille en Inde ?",
+          "answer": "Multiplica tu altura en metros al cuadrado por 18.5 para el peso mínimo y por 22.9 para el peso máximo recomendable según los estándares de la OMS e ICMR."
         }
       ]
     },
@@ -2142,42 +2142,42 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Kategorie / Stufe 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "Referenzbereich Underweight reference threshold"
+          "col3": "Referenzbereich für Untergewicht"
         },
         {
           "col1": "Kategorie / Stufe 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Referenzbereich Optimal healthy range for Indian adults"
+          "col3": "Optimaler gesunder Bereich für indische Erwachsene"
         },
         {
           "col1": "Kategorie / Stufe 3",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Referenzbereich Elevated cardiometabolic risk cutoff for Indians"
+          "col3": "Grenzwert für erhöhtes kardiometabolisches Risiko"
         },
         {
           "col1": "Kategorie / Stufe 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Referenzbereich Class I obesity threshold under ICMR standards"
+          "col3": "Adipositas Klasse I Schwellenwert nach ICMR-Standards"
         },
         {
           "col1": "Kategorie / Stufe 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Referenzbereich Severe obesity risk threshold"
+          "col3": "Schwellenwert für schwere Adipositas"
         }
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der bmi calculator for indians-Rechner und was misst er?",
+          "question": "Wie funktioniert der BMI-Rechner für indische Erwachsene?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
         {
-          "question": "Warum ist the overweight cutoff 23.0 for Indians instead of 25.0?",
-          "answer": "Indians have a higher percentage of visceral fat at lower body mass index levels, leading to increased risk of diabetes and hypertension at BMI 23.0 kg/m²."
+          "question": "Warum liegt der Grenzwert für Übergewicht bei Indern bei 23.0 statt 25.0?",
+          "answer": "Las poblaciones del sur de Asia presentan un mayor porcentaje de grasa visceral a índices de masa corporal más bajos, lo que incrementa el riesgo cardiometabólico a partir de un IMC de 23.0 kg/m²."
         },
         {
-          "question": "Wie man calculate ideal body weight for height in India?",
-          "answer": "Divide your height in meters squared and multiply by 18.5 for minimum healthy weight and by 22.9 for maximum healthy weight. For example, at 170 cm, healthy weight is 53.5 kg to 66.2 kg."
+          "question": "Wie berechnet man das ideale Körpergewicht nach der Größe in Indien?",
+          "answer": "Multiplica tu altura en metros al cuadrado por 18.5 para el peso mínimo y por 22.9 para el peso máximo recomendable según los estándares de la OMS e ICMR."
         }
       ]
     },
@@ -2193,42 +2193,42 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "범주 / 단계 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "참조 범위 Underweight reference threshold"
+          "col3": "참조 범위 저체중 기준"
         },
         {
           "col1": "범주 / 단계 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "참조 범위 Optimal healthy range for Indian adults"
+          "col3": "참조 범위 인도 성인 최적 건강 체중"
         },
         {
           "col1": "범주 / 단계 3",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "참조 범위 Elevated cardiometabolic risk cutoff for Indians"
+          "col3": "참조 범위 심혈관 및 대사 위험 증가 기준"
         },
         {
           "col1": "범주 / 단계 4",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "참조 범위 Class I obesity threshold under ICMR standards"
+          "col3": "참조 범위 ICMR 기준 1단계 비만 임계값"
         },
         {
           "col1": "범주 / 단계 5",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "참조 범위 Severe obesity risk threshold"
+          "col3": "참조 범위 고도 비만 위험 임계값"
         }
       ],
       "faqs": [
         {
-          "question": "bmi calculator for indians 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "인도 성인 전용 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
         {
-          "question": "Why is the overweight cutoff 23.0 for Indians instead of 25.0? 안내 및 원리",
-          "answer": "Indians have a higher percentage of visceral fat at lower body mass index levels, leading to increased risk of diabetes and hypertension at BMI 23.0 kg/m²."
+          "question": "인도 성인의 과체중 기준이 25.0이 아닌 23.0인 이유는 무엇인가요?",
+          "answer": "Las poblaciones del sur de Asia presentan un mayor porcentaje de grasa visceral a índices de masa corporal más bajos, lo que incrementa el riesgo cardiometabólico a partir de un IMC de 23.0 kg/m²."
         },
         {
-          "question": " calculate ideal body weight for height in India? 안내 및 원리",
-          "answer": "Divide your height in meters squared and multiply by 18.5 for minimum healthy weight and by 22.9 for maximum healthy weight. For example, at 170 cm, healthy weight is 53.5 kg to 66.2 kg."
+          "question": " 인도 표준 지침에 따른 신장별 적정 체중은 어떻게 계산하나요?",
+          "answer": "Multiplica tu altura en metros al cuadrado por 18.5 para el peso mínimo y por 22.9 para el peso máximo recomendable según los estándares de la OMS e ICMR."
         }
       ]
     },
@@ -2304,7 +2304,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "WHO & Devine Reference Charts",
       "title": "Healthy Weight by Height Chart – Ideal Weight Range for Men & Women",
-      "intro": "Explore official healthy weight by height reference ranges and height-weight lookup charts for men and women. Calculate your ideal weight according to height in kilograms (kg) and pounds (lbs) based on World Health Organization (WHO), CDC, and Devine formula standards.",
+      "intro": "Explore official healthy weight by height reference ranges and height-weight lookup charts for men and women. Calculate your ideal weight nach Körpergröße in kilograms (kg) and pounds (lbs) based on World Health Organization (WHO), CDC, and Devine formula standards.",
       "formulaTitle": "Healthy Weight Range & Ideal Weight Equations",
       "formulaDesc": "WHO Healthy Weight Range: Min Weight = 18.5 × [Height (m)]² | Max Weight = 24.9 × [Height (m)]² | Devine IBW Male: 50kg + 2.3kg/inch >5ft | Devine IBW Female: 45.5kg + 2.3kg/inch >5ft",
       "formulaCode": "Min Healthy (kg) = 18.5 × m²  |  Max Healthy (kg) = 24.9 × m²",
@@ -2362,12 +2362,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "A healthy weight for your height is determined by a BMI between 18.5 and 24.9 kg/m² according to WHO standards. Multiply your height in meters squared by 18.5 for minimum weight and 24.9 for maximum healthy weight."
         },
         {
-          "question": "What is the healthy weight chart by height for men and women?",
+          "question": "What is the healthy weight chart por altura para hombres y mujeres?",
           "answer": "A height weight chart lists healthy weight ranges based on stature. For example: 5'4\" (163cm) is 49–66 kg; 5'8\" (173cm) is 55–74 kg; 6'0\" (183cm) is 62–83 kg."
         },
         {
-          "question": "How to calculate ideal weight according to height?",
-          "answer": "Ideal weight according to height can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
+          "question": "How to calculate ideal weight según la altura?",
+          "answer": "Ideal weight nach Körpergröße can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
         },
         {
           "question": "Is the weight chart for men different from the weight chart for women?",
@@ -2436,17 +2436,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de healthy weight by height y qué mide?",
+          "question": "¿Cómo funciona la calculadora de peso saludable por altura y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
         {
-          "question": "¿Qué es el healthy weight chart by height for men and women?",
+          "question": "¿Qué es el healthy weight chart por altura para hombres y mujeres?",
           "answer": "Un gráfico de peso y altura enumera los rangos de peso saludable según la estatura. Por ejemplo, para una altura de 163 cm (5 ft 4 in), el rango normal es de 49 kg a 66 kg (108 lbs a 145 lbs)."
         },
         {
-          "question": "Cómo calculate ideal weight according to height?",
-          "answer": "Ideal weight according to height can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
+          "question": "Cómo calculate ideal weight según la altura?",
+          "answer": "Ideal weight nach Körpergröße can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
         },
         {
           "question": "Is the weight chart for men different from the weight chart for women?",
@@ -2515,17 +2515,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de healthy weight by height et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de poids santé par taille et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
         {
-          "question": "Qu'est-ce que le healthy weight chart by height for men and women?",
+          "question": "Qu'est-ce que le healthy weight chart por altura para hombres y mujeres?",
           "answer": "Un tableau de référence poids-taille indique les plages de poids santé en fonction de la taille. Par exemple, pour 163 cm (5 ft 4 in), la plage normale est de 49 kg à 66 kg (108 lbs à 145 lbs)."
         },
         {
-          "question": "Comment calculate ideal weight according to height?",
-          "answer": "Ideal weight according to height can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
+          "question": "Comment calculate ideal weight según la altura?",
+          "answer": "Ideal weight nach Körpergröße can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
         },
         {
           "question": "Is the weight chart for men different from the weight chart for women?",
@@ -2594,17 +2594,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der healthy weight by height-Rechner und was misst er?",
+          "question": "Wie funktioniert der Rechner für gesunde Gewichtstabellen und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
         {
-          "question": "Was ist der healthy weight chart by height for men and women?",
+          "question": "Was ist der healthy weight chart por altura para hombres y mujeres?",
           "answer": "Eine Größe-Gewichts-Tabelle listet gesunde Gewichtsbereiche basierend auf der Körpergröße auf. Zum Beispiel liegt der normale Bereich bei 163 cm (5 ft 4 in) zwischen 49 kg und 66 kg (108 lbs bis 145 lbs)."
         },
         {
-          "question": "Wie man calculate ideal weight according to height?",
-          "answer": "Ideal weight according to height can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
+          "question": "Wie man calculate ideal weight según la altura?",
+          "answer": "Ideal weight nach Körpergröße can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
         },
         {
           "question": "Is the weight chart for men different from the weight chart for women?",
@@ -2673,7 +2673,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "healthy weight by height 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "신장별 표준 체중 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -2682,8 +2682,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "신장별 표준 체중 차트는 키에 따른 건강한 체중 범위를 나타냅니다. 예를 들어 163 cm (5 ft 4 in)의 경우 표준 권장 범위는 49 kg ~ 66 kg (108 lbs ~ 145 lbs)입니다."
         },
         {
-          "question": " calculate ideal weight according to height? 안내 및 원리",
-          "answer": "Ideal weight according to height can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
+          "question": " calculate ideal weight según la altura? 안내 및 원리",
+          "answer": "Ideal weight nach Körpergröße can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
         },
         {
           "question": "Is the weight chart for men different from the weight chart for women? 안내 및 원리",
@@ -2825,7 +2825,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "What waist circumference screening thresholds apply to Asian populations?",
-          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds for Asian adults are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
+          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
         },
         {
           "question": "What should I do if my BMI score is 23 or higher?",
@@ -2870,7 +2870,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de diabetes risk calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de riesgo de diabetes y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -2884,7 +2884,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "What waist circumference screening thresholds apply to Asian populations?",
-          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds for Asian adults are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
+          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
         },
         {
           "question": "What should I do if my BMI score is 23 or higher?",
@@ -2929,7 +2929,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de diabetes risk calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de risque de diabète et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -2943,7 +2943,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "What waist circumference screening thresholds apply to Asian populations?",
-          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds for Asian adults are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
+          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
         },
         {
           "question": "What should I do if my BMI score is 23 or higher?",
@@ -2988,7 +2988,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der diabetes risk calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Diabetes-Risiko-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -3002,7 +3002,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "What waist circumference screening thresholds apply to Asian populations?",
-          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds for Asian adults are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
+          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
         },
         {
           "question": "What should I do if my BMI score is 23 or higher?",
@@ -3047,7 +3047,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "diabetes risk calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "당뇨 위험 평가 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -3061,7 +3061,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "What waist circumference screening thresholds apply to Asian populations? 안내 및 원리",
-          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds for Asian adults are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
+          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
         },
         {
           "question": "What should I do if my BMI score is 23 or higher? 안내 및 원리",
@@ -3156,7 +3156,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Obese (High Risk)",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "High risk obesity classification for Asian adults"
+          "col3": "High risk obesity classification für asiatische Erwachsene"
         }
       ],
       "faqs": [
@@ -3165,7 +3165,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "The World Health Organization (WHO) created Asian-specific BMI reference thresholds because research showed Asian individuals accumulate more body fat and face higher risks of type 2 diabetes and heart disease at lower BMI levels than Caucasians."
         },
         {
-          "question": "What is a normal BMI for Asian adults?",
+          "question": "What is a normal BMI para adultos asiáticos?",
           "answer": "For Asian adults, a normal healthy BMI ranges from 18.5 to 22.9 kg/m²."
         },
         {
@@ -3186,32 +3186,32 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Categoría / Nivel 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "Rango de referencia Underweight reference threshold"
+          "col3": "Rango de referencia de peso bajo"
         },
         {
           "col1": "Categoría / Nivel 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Rango de referencia Healthy weight window for Asian men & women"
+          "col3": "Rango saludable de referencia para la población asiática"
         },
         {
           "col1": "Categoría / Nivel 3",
           "col2": "23.0 – 27.4 kg/m²",
-          "col3": "Rango de referencia Action threshold for Asian population screening"
+          "col3": "Límite de acción y riesgo elevado en población asiática"
         },
         {
           "col1": "Categoría / Nivel 4",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "Rango de referencia High risk Obesidad Claseification for Asian adults"
+          "col3": "Clasificación de alto riesgo de obesidad en población asiática"
         }
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de asian bmi calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de IMC asiático y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
         {
-          "question": "¿Qué es a normal BMI for Asian adults?",
+          "question": "¿Cuál es el IMC normal para los adultos asiáticos?",
           "answer": "For Asian adults, a normal healthy BMI ranges from 18.5 to 22.9 kg/m²."
         },
         {
@@ -3232,32 +3232,32 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Catégorie / Niveau 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "Plage de référence Underweight reference threshold"
+          "col3": "Plage de référence de sous-poids"
         },
         {
           "col1": "Catégorie / Niveau 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Plage de référence Healthy weight window for Asian men & women"
+          "col3": "Plage de poids santé de référence pour la population asiatique"
         },
         {
           "col1": "Catégorie / Niveau 3",
           "col2": "23.0 – 27.4 kg/m²",
-          "col3": "Plage de référence Action threshold for Asian population screening"
+          "col3": "Seuil d'action et de risque élevé pour la population asiatique"
         },
         {
           "col1": "Catégorie / Niveau 4",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "Plage de référence High risk Obésité Classeification for Asian adults"
+          "col3": "Classification d'obésité à haut risque pour la population asiatique"
         }
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de asian bmi calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur d'IMC asiatique et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
         {
-          "question": "Qu'est-ce que a normal BMI for Asian adults?",
+          "question": "Quel est l'IMC normal pour les adultes asiatiques ?",
           "answer": "For Asian adults, a normal healthy BMI ranges from 18.5 to 22.9 kg/m²."
         },
         {
@@ -3278,32 +3278,32 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Kategorie / Stufe 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "Referenzbereich Underweight reference threshold"
+          "col3": "Referenzbereich für Untergewicht"
         },
         {
           "col1": "Kategorie / Stufe 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Referenzbereich Healthy weight window for Asian men & women"
+          "col3": "Referenzbereich für gesundes Gewicht bei asiatischen Erwachsenen"
         },
         {
           "col1": "Kategorie / Stufe 3",
           "col2": "23.0 – 27.4 kg/m²",
-          "col3": "Referenzbereich Action threshold for Asian population screening"
+          "col3": "Aktionsgrenzwert für asiatische Bevölkerungsgruppen"
         },
         {
           "col1": "Kategorie / Stufe 4",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "Referenzbereich High risk Adipositas Klasseification for Asian adults"
+          "col3": "Klassifizierung für hohes Adipositas-Risiko"
         }
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der asian bmi calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Rechner für asiatischen BMI und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
         {
-          "question": "Was ist a normal BMI for Asian adults?",
+          "question": "Was ist ein normaler BMI für asiatische Erwachsene?",
           "answer": "For Asian adults, a normal healthy BMI ranges from 18.5 to 22.9 kg/m²."
         },
         {
@@ -3324,36 +3324,36 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "범주 / 단계 1",
           "col2": "< 18.5 kg/m²",
-          "col3": "참조 범위 Underweight reference threshold"
+          "col3": "참조 범위 저체중 기준"
         },
         {
           "col1": "범주 / 단계 2",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "참조 범위 Healthy weight window for Asian men & women"
+          "col3": "참조 범위 아시아 성인 표준 건강 체중"
         },
         {
           "col1": "범주 / 단계 3",
           "col2": "23.0 – 27.4 kg/m²",
-          "col3": "참조 범위 Action threshold for Asian population screening"
+          "col3": "참조 범위 아시아인 건강 위험 관리 임계값"
         },
         {
           "col1": "범주 / 단계 4",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "참조 범위 High risk 비만 단계ification for Asian adults"
+          "col3": "참조 범위 고위험 비만 분류 기준"
         }
       ],
       "faqs": [
         {
-          "question": "asian bmi calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "아시아인 전용 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
         {
-          "question": " a normal BMI for Asian adults? 안내 및 원리",
+          "question": "아시아 성인의 표준 정상 BMI 범위는 얼마인가요?",
           "answer": "For Asian adults, a normal healthy BMI ranges from 18.5 to 22.9 kg/m²."
         },
         {
-          "question": "What BMI is considered overweight for Asians? 안내 및 원리",
+          "question": "아시아인에게 과체중으로 간주되는 BMI 기준은 얼마인가요?",
           "answer": "Under WHO Asia-Pacific criteria, a BMI of 23.0 kg/m² or higher is considered overweight."
         }
       ]
@@ -3504,7 +3504,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "El BMR es el gasto en reposo (0% actividad). El TDEE es el gasto calórico total diario incluyendo ejercicio y movimiento."
         },
         {
-          "question": "¿Cómo funciona la calculadora de bmr calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de tasa metabólica basal (BMR) y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ]
@@ -3548,7 +3548,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Le BMR représente la dépense au repos complet. Le TDEE inclut l'activité physique et l'exercice quotidien."
         },
         {
-          "question": "Comment fonctionne le calculateur de bmr calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de métabolisme de base (BMR) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -3597,7 +3597,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Der BMR misst den Ruheumsatz (0% Aktivität). Der TDEE berechnet den Gesamtkalorienbedarf inklusive Bewegung und Sport."
         },
         {
-          "question": "Wie funktioniert der bmr calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der BMR-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -3642,7 +3642,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "BMR은 0% 활동 시의 휴식 대사량이며, TDEE는 일상 활동과 운동을 포함한 총 일일 에너지 소비량입니다."
         },
         {
-          "question": "bmr calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "BMR 기초대사량 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -3813,7 +3813,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "El BMR es el gasto energético en reposo. El TDEE engloba el BMR más la energía quemada durante el movimiento diario y el ejercicio."
         },
         {
-          "question": "¿Cómo funciona la calculadora de tdee calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de gasto energético total (TDEE) y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -3868,7 +3868,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Le BMR représente le métabolisme au repos. Le TDEE englobe le BMR ainsi que toutes les dépenses liées aux activités et à l'exercice."
         },
         {
-          "question": "Comment fonctionne le calculateur de tdee calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de dépense énergétique quotidienne (TDEE) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -3927,7 +3927,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Der BMR ist der reine Ruheumsatz. Der TDEE beinhaltet den BMR plus den Kalorienverbrauch durch alltägliche Bewegung und Sport."
         },
         {
-          "question": "Wie funktioniert der tdee calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der TDEE-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -3986,7 +3986,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "BMR은 완전히 휴식할 때의 대사량이며, TDEE는 BMR에 일상 활동 및 운동으로 소비되는 칼로리를 더한 값입니다."
         },
         {
-          "question": "tdee calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "TDEE 일일 총 에너지 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -4155,7 +4155,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de maintenance calorie calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de calorías de mantenimiento y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -4214,7 +4214,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de maintenance calorie calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de calories de maintien et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -4273,7 +4273,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der maintenance calorie calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Kalorien-Erhaltungs-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -4332,7 +4332,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "maintenance calorie calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "체중 유지 칼로리 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -4815,7 +4815,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de lean body mass calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de masa corporal magra y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -4846,7 +4846,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de lean body mass calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de masse corporelle maigre et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -4877,7 +4877,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der lean body mass calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Magerkurven-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -4908,7 +4908,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "lean body mass calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "제지방량 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -5057,7 +5057,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de ideal weight calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de peso ideal y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -5116,7 +5116,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de ideal weight calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de poids idéal et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -5175,7 +5175,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der ideal weight calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Idealgewicht-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -5234,7 +5234,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "ideal weight calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "이상 체중 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -5409,7 +5409,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "No existe una cifra única para todos. Las necesidades calóricas varían según la salud, la actividad y los objetivos de cada persona."
         },
         {
-          "question": "¿Cómo funciona la calculadora de calorie calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de calorías y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -5459,7 +5459,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Un déficit calorique survient lorsque vous consommez moins de calories que votre TDEE. Le calculateur établit votre TDEE puis soustrait le déficit choisi pour planifier vos repas."
         },
         {
-          "question": "Comment fonctionne le calculateur de calorie calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de calories et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -5513,7 +5513,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Ein Kaloriendefizit entsteht, wenn die tägliche Energiezufuhr geringer ist als der Gesamtenergieumsatz (TDEE). Der Rechner berechnet den TDEE und zieht ein gewähltes Defizit ab."
         },
         {
-          "question": "Wie funktioniert der calorie calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Kalorienrechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -5567,7 +5567,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "칼로리 결손은 일일 섭취 칼로리가 일일 총 에너지 소비량(TDEE)보다 적을 때 발생합니다. 계산기는 TDEE를 구한 후 목표 결손량을 차감하여 표시합니다."
         },
         {
-          "question": "calorie calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "칼로리 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -5725,7 +5725,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de protein intake calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de ingesta de proteínas y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -5779,7 +5779,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de protein intake calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur d'apport en protéines et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -5833,7 +5833,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der protein intake calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Proteine-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -5887,7 +5887,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "protein intake calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "단백질 섭취량 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -6049,7 +6049,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de water intake calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de consumo de agua y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -6103,7 +6103,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de water intake calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur d'hydratation quotidienne et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -6157,7 +6157,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der water intake calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Wasserbedarf-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -6211,7 +6211,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "water intake calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "수분 섭취량 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -6653,7 +6653,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de waist to hip ratio calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de índice cintura-cadera (ICC) y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -6702,7 +6702,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de waist to hip ratio calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de rapport taille-hanche (RTH) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -6751,7 +6751,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der waist to hip ratio calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Taille-Hüft-Verhältnis-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -6800,7 +6800,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "waist to hip ratio calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "허리 둘레 비율 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -6949,7 +6949,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de body surface area calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de superficie corporal (ASC) y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -6995,7 +6995,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de body surface area calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de surface corporelle (BSA) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -7041,7 +7041,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der body surface area calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Körperoberflächen-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -7087,7 +7087,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "body surface area calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "체표면적 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -7251,7 +7251,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de heart rate zone calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de zonas de frecuencia cardíaca y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -7310,7 +7310,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de heart rate zone calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de zones de fréquence cardiaque et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -7369,7 +7369,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der heart rate zone calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Herzfrequenzzonen-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -7428,7 +7428,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "heart rate zone calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "심박수 구간 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -7593,7 +7593,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de karvonen heart rate calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de frecuencia cardíaca Karvonen y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -7640,7 +7640,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de karvonen heart rate calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de fréquence cardiaque Karvonen et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -7687,7 +7687,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der karvonen heart rate calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Karvonen-Herzfrequenz-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -7734,7 +7734,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "karvonen heart rate calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "카르보넨 심박수 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -7850,7 +7850,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "One Rep Max (1RM) is the maximum weight you can lift for a single repetition with proper form. Our 1RM Calculator uses submaximal weight and rep counts with the Epley formula [Weight × (1 + Reps/30)] to safely estimate your max."
         },
         {
-          "question": "Is the 1RM calculator accurate for bench press and squat?",
+          "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
           "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
         }
       ]
@@ -7897,12 +7897,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de 1rm calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de 1RM (repetición máxima) y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
         {
-          "question": "Is the 1RM calculator accurate for bench press and squat?",
+          "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
           "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
         }
       ]
@@ -7949,12 +7949,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de 1rm calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de 1RM (charge maximale) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
         {
-          "question": "Is the 1RM calculator accurate for bench press and squat?",
+          "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
           "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
         }
       ]
@@ -8001,12 +8001,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der 1rm calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der 1RM-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
         {
-          "question": "Is the 1RM calculator accurate for bench press and squat?",
+          "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
           "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
         }
       ]
@@ -8053,7 +8053,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "1rm calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "1RM 1회 최대 중량 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -8173,8 +8173,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
         },
         {
-          "question": "How accurate is the Epley 1RM formula for bench press, squat, and deadlift?",
-          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates for bench press and squat sets between 2 to 10 repetitions."
+          "question": "How accurate is the Epley 1RM formula pour le développé couché, le squat et le soulevé de terre?",
+          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates para press de banca y sentadilla sets between 2 to 10 repetitions."
         },
         {
           "question": "What is the difference between Epley and Brzycki 1RM formulas?",
@@ -8223,7 +8223,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de one rep max calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de repetición máxima (1RM) y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -8232,8 +8232,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
         },
         {
-          "question": "How accurate is the Epley 1RM formula for bench press, squat, and deadlift?",
-          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates for bench press and squat sets between 2 to 10 repetitions."
+          "question": "How accurate is the Epley 1RM formula pour le développé couché, le squat et le soulevé de terre?",
+          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates para press de banca y sentadilla sets between 2 to 10 repetitions."
         },
         {
           "question": "¿Qué es el difference between Epley and Brzycki 1RM formulas?",
@@ -8282,7 +8282,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de one rep max calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de répétition maximale (1RM) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -8291,8 +8291,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
         },
         {
-          "question": "How accurate is the Epley 1RM formula for bench press, squat, and deadlift?",
-          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates for bench press and squat sets between 2 to 10 repetitions."
+          "question": "How accurate is the Epley 1RM formula pour le développé couché, le squat et le soulevé de terre?",
+          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates para press de banca y sentadilla sets between 2 to 10 repetitions."
         },
         {
           "question": "Qu'est-ce que le difference between Epley and Brzycki 1RM formulas?",
@@ -8341,7 +8341,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der one rep max calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Maximalkraft-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -8350,8 +8350,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
         },
         {
-          "question": "How accurate is the Epley 1RM formula for bench press, squat, and deadlift?",
-          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates for bench press and squat sets between 2 to 10 repetitions."
+          "question": "How accurate is the Epley 1RM formula pour le développé couché, le squat et le soulevé de terre?",
+          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates para press de banca y sentadilla sets between 2 to 10 repetitions."
         },
         {
           "question": "Was ist der difference between Epley and Brzycki 1RM formulas?",
@@ -8400,7 +8400,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "one rep max calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "최대 수축력 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
@@ -8410,7 +8410,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Epley 1RM 추정 공식의 기본 원리와 사용 방법은 무엇인가요?",
-          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates for bench press and squat sets between 2 to 10 repetitions."
+          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates para press de banca y sentadilla sets between 2 to 10 repetitions."
         },
         {
           "question": " difference between Epley and Brzycki 1RM formulas? 안내 및 원리",
@@ -8555,7 +8555,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de pregnancy weight gain calculator y qué mide?",
+          "question": "¿Cómo funciona la calculadora de aumento de peso en el embarazo y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         }
       ,
@@ -8603,7 +8603,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de pregnancy weight gain calculator et que mesure-t-il ?",
+          "question": "Comment fonctionne le calculateur de prise de poids pendant la grossesse et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         }
       ,
@@ -8651,7 +8651,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der pregnancy weight gain calculator-Rechner und was misst er?",
+          "question": "Wie funktioniert der Schwangerschaftsgewichts-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         }
       ,
@@ -8699,7 +8699,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "pregnancy weight gain calculator 계산기의 원리와 측정 항목은 무엇인가요?",
+          "question": "임신 중 체중 증가 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         }
       ,
