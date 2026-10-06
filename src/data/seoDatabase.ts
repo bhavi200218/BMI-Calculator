@@ -7850,8 +7850,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "One Rep Max (1RM) is the maximum weight you can lift for a single repetition with proper form. Our 1RM Calculator uses submaximal weight and rep counts with the Epley formula [Weight × (1 + Reps/30)] to safely estimate your max."
         },
         {
-          "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
-          "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
+          "question": "How do submaximal 1RM estimation formulas work?",
+          "answer": "Submaximal formulas like Epley and Brzycki estimate your 1-rep maximum based on lighter set weights and rep counts, avoiding heavy single-rep strain."
         }
       ]
     },
@@ -7867,32 +7867,32 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Categoría / Nivel 1",
           "col2": "1 Repetition",
-          "col3": "Rango de referencia Absolute maximum strength single"
+          "col3": "Carga máxima absoluta de fuerza (100% 1RM)"
         },
         {
           "col1": "Categoría / Nivel 2",
           "col2": "2 Repetitions",
-          "col3": "Rango de referencia Heavy strength training load"
+          "col3": "Carga pesada de entrenamiento de fuerza (95% 1RM)"
         },
         {
           "col1": "Categoría / Nivel 3",
           "col2": "3 Repetitions",
-          "col3": "Rango de referencia Power lifting strength sets"
+          "col3": "Series de fuerza y levantamiento (93% 1RM)"
         },
         {
           "col1": "Categoría / Nivel 4",
           "col2": "5 Repetitions",
-          "col3": "Rango de referencia Hypertrophy & heavy strength blend"
+          "col3": "Rango de desarrollo de fuerza muscular (87% 1RM)"
         },
         {
           "col1": "Categoría / Nivel 5",
           "col2": "7 Repetitions",
-          "col3": "Rango de referencia Hypertrophy muscle building range"
+          "col3": "Rango de hipertrofia y construcción muscular (80% 1RM)"
         },
         {
           "col1": "Categoría / Nivel 6",
           "col2": "10 Repetitions",
-          "col3": "Rango de referencia Volume hypertrophy & endurance"
+          "col3": "Resistencia muscular e hipertrofia de volumen (75% 1RM)"
         }
       ],
       "faqs": [
@@ -7919,32 +7919,32 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Catégorie / Niveau 1",
           "col2": "1 Repetition",
-          "col3": "Plage de référence Absolute maximum strength single"
+          "col3": "Charge maximale absolue de force (100% 1RM)"
         },
         {
           "col1": "Catégorie / Niveau 2",
           "col2": "2 Repetitions",
-          "col3": "Plage de référence Heavy strength training load"
+          "col3": "Charge lourde d'entraînement de force (95% 1RM)"
         },
         {
           "col1": "Catégorie / Niveau 3",
           "col2": "3 Repetitions",
-          "col3": "Plage de référence Power lifting strength sets"
+          "col3": "Séries de force et d'haltérophilie (93% 1RM)"
         },
         {
           "col1": "Catégorie / Niveau 4",
           "col2": "5 Repetitions",
-          "col3": "Plage de référence Hypertrophy & heavy strength blend"
+          "col3": "Plage de développement de la force (87% 1RM)"
         },
         {
           "col1": "Catégorie / Niveau 5",
           "col2": "7 Repetitions",
-          "col3": "Plage de référence Hypertrophy muscle building range"
+          "col3": "Plage de construction musculaire (80% 1RM)"
         },
         {
           "col1": "Catégorie / Niveau 6",
           "col2": "10 Repetitions",
-          "col3": "Plage de référence Volume hypertrophy & endurance"
+          "col3": "Endurance musculaire et hypertrophie de volume (75% 1RM)"
         }
       ],
       "faqs": [
@@ -7971,32 +7971,32 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Kategorie / Stufe 1",
           "col2": "1 Repetition",
-          "col3": "Referenzbereich Absolute maximum strength single"
+          "col3": "Maximale Kraftleistung (100% 1RM)"
         },
         {
           "col1": "Kategorie / Stufe 2",
           "col2": "2 Repetitions",
-          "col3": "Referenzbereich Heavy strength training load"
+          "col3": "Schwere Krafttraining-Belastung (95% 1RM)"
         },
         {
           "col1": "Kategorie / Stufe 3",
           "col2": "3 Repetitions",
-          "col3": "Referenzbereich Power lifting strength sets"
+          "col3": "Kraftsätze für Maximalkraft (93% 1RM)"
         },
         {
           "col1": "Kategorie / Stufe 4",
           "col2": "5 Repetitions",
-          "col3": "Referenzbereich Hypertrophy & heavy strength blend"
+          "col3": "Bereich für schweren Kraftaufbau (87% 1RM)"
         },
         {
           "col1": "Kategorie / Stufe 5",
           "col2": "7 Repetitions",
-          "col3": "Referenzbereich Hypertrophy muscle building range"
+          "col3": "Bereich für Muskelaufbau (80% 1RM)"
         },
         {
           "col1": "Kategorie / Stufe 6",
           "col2": "10 Repetitions",
-          "col3": "Referenzbereich Volume hypertrophy & endurance"
+          "col3": "Muskelausdauer und Volumen-Hypertrophie (75% 1RM)"
         }
       ],
       "faqs": [
@@ -8023,32 +8023,32 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "범주 / 단계 1",
           "col2": "1 Repetition",
-          "col3": "참조 범위 Absolute maximum strength single"
+          "col3": "단일 최고 근력 측정 구간 (100% 1RM)"
         },
         {
           "col1": "범주 / 단계 2",
           "col2": "2 Repetitions",
-          "col3": "참조 범위 Heavy strength training load"
+          "col3": "고중량 근력 훈련 구간 (95% 1RM)"
         },
         {
           "col1": "범주 / 단계 3",
           "col2": "3 Repetitions",
-          "col3": "참조 범위 Power lifting strength sets"
+          "col3": "파워 리프팅 세트 구간 (93% 1RM)"
         },
         {
           "col1": "범주 / 단계 4",
           "col2": "5 Repetitions",
-          "col3": "참조 범위 Hypertrophy & heavy strength blend"
+          "col3": "고중량 근력 발달 구간 (87% 1RM)"
         },
         {
           "col1": "범주 / 단계 5",
           "col2": "7 Repetitions",
-          "col3": "참조 범위 Hypertrophy muscle building range"
+          "col3": "근비대 집중 훈련 구간 (80% 1RM)"
         },
         {
           "col1": "범주 / 단계 6",
           "col2": "10 Repetitions",
-          "col3": "참조 범위 Volume hypertrophy & endurance"
+          "col3": "근지구력 및 볼륨 훈련 구간 (75% 1RM)"
         }
       ],
       "faqs": [
