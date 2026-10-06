@@ -444,7 +444,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "title": "3D BMI Calculator & Interactive 3D Body Visualizer",
       "intro": "Our free 3D BMI Calculator uses the Oxford 2.5-power height-adjusted formula (1.3 × weight / height²·⁵) to render interactive 3D body shape models and height-proportional volume geometry.",
       "formulaTitle": "Oxford 2.5-Power Height-Adjusted 3D BMI Formula",
-      "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵ | Developed by University of Oxford mathematicians to correct height scaling distortions in traditional 2D BMI.",
+      "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵ | Proposed by Oxford mathematician Prof. Nick Trefethen as an educational mathematical alternative to standard 2D BMI height scaling.",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
       "tableTitle": "Standard 2D BMI vs. Oxford 3D Height-Adjusted BMI Comparison",
       "tableRows": [
@@ -501,7 +501,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "title": "Calculadora de IMC 3D y Visualizador Corporal Interactivo",
       "intro": "Nuestra calculadora de IMC 3D y visualizador corporal interactivo calcula el índice de masa corporal mediante la fórmula exponencial de Oxford 2.5 (1.3 × peso / altura²·⁵) y principios de geometría corporal tridimensional. Gira 360° para ver la malla sólida, estructura de alambre y mapa de calor de IMC.",
       "formulaTitle": "Fórmula Exponencial 3D de Oxford Ajustada a la Altura",
-      "formulaDesc": "IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]²·⁵ | Diseñada por matemáticos de la Universidad de Oxford para eliminar la distorsión de altura que afecta a personas altas o bajas en la fórmula clásica de Quetelet.",
+      "formulaDesc": "IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]²·⁵ | Propuesta por el matemático de Oxford Prof. Nick Trefethen como una alternativa matemática educativa al IMC 2D tradicional.",
       "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
       "tableTitle": "Comparación de IMC 2D Estándar vs IMC 3D Ajustado por Altura",
       "tableRows": [
@@ -3482,8 +3482,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "col1": "Fórmula Katch-McArdle",
-          "col2": "Basada en Masa Corporal Magra",
-          "col3": "Calcula la estimación del BMR utilizando la masa corporal magra (LBM)"
+          "col2": "Fórmula basada en la masa corporal magra",
+          "col3": "Calcula la tasa metabólica basal utilizando la masa corporal magra (LBM)"
         }
       ],
       "faqs": [
