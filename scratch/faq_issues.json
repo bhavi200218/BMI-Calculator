@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "es",
+    "index": 1,
+    "ep": "reference threshold",
+    "question": "Por qué es the Asian BMI reference cutoff set at 23 kg/m² instead of 25 kg/m²?",
+    "answerSnippet": "World Health Organization (WHO) epidemiological studies observed that Asian popu"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "es",
+    "index": 2,
+    "ep": "overweight",
+    "question": "¿Cómo se evalúa el umbral de IMC asiático de 23 kg/m²?",
+    "answerSnippet": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m²"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "es",
+    "index": 4,
+    "ep": "overweight",
+    "question": "¿Qué debo hacer si mi puntuación de IMC es de 23 o superior?",
+    "answerSnippet": "A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. B"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "fr",
+    "index": 1,
+    "ep": "reference threshold",
+    "question": "Pourquoi the Asian BMI reference cutoff set at 23 kg/m² instead of 25 kg/m²?",
+    "answerSnippet": "World Health Organization (WHO) epidemiological studies observed that Asian popu"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "fr",
+    "index": 2,
+    "ep": "overweight",
+    "question": "Comment le seuil d'IMC asiatique de 23 kg/m² est-il évalué?",
+    "answerSnippet": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m²"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "fr",
+    "index": 4,
+    "ep": "overweight",
+    "question": "¿Qué debo hacer si mi puntuación de IMC es de 23 o superior?",
+    "answerSnippet": "A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. B"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "de",
+    "index": 1,
+    "ep": "reference threshold",
+    "question": "Warum ist the Asian BMI reference cutoff set at 23 kg/m² instead of 25 kg/m²?",
+    "answerSnippet": "World Health Organization (WHO) epidemiological studies observed that Asian popu"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "de",
+    "index": 2,
+    "ep": "overweight",
+    "question": "Wie wird der asiatische BMI-Schwellenwert von 23 kg/m² bewertet?",
+    "answerSnippet": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m²"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "de",
+    "index": 4,
+    "ep": "overweight",
+    "question": "¿Qué debo hacer si mi puntuación de IMC es de 23 o superior?",
+    "answerSnippet": "A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. B"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "ko",
+    "index": 1,
+    "ep": "reference threshold",
+    "question": "¿Por qué el umbral de referencia del IMC asiático es de 23 kg/m² en lugar de 25 kg/m²? 안내 및 원리",
+    "answerSnippet": "World Health Organization (WHO) epidemiological studies observed that Asian popu"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "ko",
+    "index": 2,
+    "ep": "overweight",
+    "question": "아시아인 BMI 기준 23 kg/m² 임계값은 어떻게 평가되나요?",
+    "answerSnippet": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m²"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "ko",
+    "index": 4,
+    "ep": "overweight",
+    "question": "¿Qué debo hacer si mi puntuación de IMC es de 23 o superior? 안내 및 원리",
+    "answerSnippet": "A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. B"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "es",
+    "index": 2,
+    "ep": "overweight",
+    "question": "¿Qué IMC se considera sobrepeso para las poblaciones asiáticas?",
+    "answerSnippet": "Under WHO Asia-Pacific criteria, a BMI of 23.0 kg/m² or higher is considered ove"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "fr",
+    "index": 2,
+    "ep": "overweight",
+    "question": "¿Qué IMC se considera sobrepeso para las poblaciones asiáticas?",
+    "answerSnippet": "Under WHO Asia-Pacific criteria, a BMI of 23.0 kg/m² or higher is considered ove"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "de",
+    "index": 2,
+    "ep": "overweight",
+    "question": "¿Qué IMC se considera sobrepeso para las poblaciones asiáticas?",
+    "answerSnippet": "Under WHO Asia-Pacific criteria, a BMI of 23.0 kg/m² or higher is considered ove"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "ko",
+    "index": 2,
+    "ep": "overweight",
+    "question": "아시아인에게 과체중으로 간주되는 BMI 기준은 얼마인가요?",
+    "answerSnippet": "Under WHO Asia-Pacific criteria, a BMI of 23.0 kg/m² or higher is considered ove"
+  },
+  {
+    "slug": "lean-body-mass-calculator",
+    "lang": "ko",
+    "index": 1,
+    "ep": "Why is",
+    "question": "Why is Lean Body Mass useful in body composition tracking? 안내 및 원리",
+    "answerSnippet": "LBM estimates can be used as one reference when tracking changes in estimated no"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "es",
+    "index": 2,
+    "ep": "according to",
+    "question": "¿Qué es a healthy waist to hip ratio for men and women according to WHO?",
+    "answerSnippet": "According to World Health Organization (WHO) reference guidelines, a ratio below"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "fr",
+    "index": 2,
+    "ep": "according to",
+    "question": "Qu'est-ce que a healthy waist to hip ratio for men and women according to WHO?",
+    "answerSnippet": "According to World Health Organization (WHO) reference guidelines, a ratio below"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "de",
+    "index": 2,
+    "ep": "according to",
+    "question": "Was ist a healthy waist to hip ratio for men and women according to WHO?",
+    "answerSnippet": "According to World Health Organization (WHO) reference guidelines, a ratio below"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "ko",
+    "index": 2,
+    "ep": "according to",
+    "question": " a healthy waist to hip ratio for men and women according to WHO? 안내 및 원리",
+    "answerSnippet": "According to World Health Organization (WHO) reference guidelines, a ratio below"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "ko",
+    "index": 3,
+    "ep": "Why is",
+    "question": "Why is waist to hip ratio a useful indicator alongside BMI? 안내 및 원리",
+    "answerSnippet": "While BMI measures total body mass relative to height, WHR is an anthropometric "
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "es",
+    "index": 1,
+    "ep": "Is the",
+    "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
+    "answerSnippet": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges bet"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "fr",
+    "index": 1,
+    "ep": "Is the",
+    "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
+    "answerSnippet": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges bet"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "de",
+    "index": 1,
+    "ep": "Is the",
+    "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
+    "answerSnippet": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges bet"
+  }
+]

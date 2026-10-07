@@ -1,63 +1,5 @@
-import { type Locale } from '../utils/calculators';
 
-export interface ToolContent {
-  title: string;
-  eyebrow: string;
-  intro: string;
-  formulaTitle: string;
-  formulaDesc: string;
-  formulaCode?: string;
-  tableTitle?: string;
-  tableRows?: { col1: string; col2: string; col3: string }[];
-  faqs: { question: string; answer: string }[];
-}
-
-export const tableUi: Record<string, { cat: string; metric: string; guidance: string; faq: string; refs: string }> = {
-  en: {
-    cat: 'Category / Level',
-    metric: 'Reference Range / Metric',
-    guidance: 'Reference Context',
-    faq: 'Frequently Asked Questions',
-    refs: 'References & Published Research'
-  },
-  es: {
-    cat: 'Categoría / Nivel',
-    metric: 'Referencia / Métrica',
-    guidance: 'Contexto de Referencia',
-    faq: 'Preguntas Frecuentes y Respuestas',
-    refs: 'Referencias e Investigaciones Publicadas'
-  },
-  fr: {
-    cat: 'Catégorie / Niveau',
-    metric: 'Référence / Métrique',
-    guidance: 'Contexte de Référence',
-    faq: 'Foire Aux Questions et Réponses',
-    refs: 'Références et Recherches Publiées'
-  },
-  de: {
-    cat: 'Kategorie / Stufe',
-    metric: 'Referenz / Metrik',
-    guidance: 'Referenzkontext',
-    faq: 'Häufig gestellte Fragen',
-    refs: 'Referenzen & Veröffentlichte Forschung'
-  },
-  ko: {
-    cat: '범주 / 단계',
-    metric: '참조 / 메트릭',
-    guidance: '참조 컨텍스트',
-    faq: '자주 묻는 질문 및 답변',
-    refs: '참고 문헌 및 출판 연구'
-  },
-  hi: {
-    cat: 'श्रेणी / स्तर',
-    metric: 'संदर्भ / मीट्रिक',
-    guidance: 'संदर्भ विवरण',
-    faq: 'अक्सर पूछे जाने वाले प्रश्न और उत्तर',
-    refs: 'प्रकाशित शोध एवं संदर्भ'
-  }
-};
-
-export const seoDatabase: Record<string, Record<string, ToolContent>> = {
+const seoDatabaseData = {
   "bmi-calculator": {
     "en": {
       "eyebrow": "WHO Health Standards",
@@ -484,11 +426,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Does the 3D visualizer store photos or personal data?",
           "answer": "No. The 3D model is generated mathematically in real time inside your browser. No photos are required, and no data is uploaded or stored."
-        },
+        }
+              ,
         {
           "question": "Can I use the 3D Body Visualizer on mobile devices?",
           "answer": "Yes, the 3D visualizer is fully responsive and optimized for mobile touch controls, allowing 360° rotation and pinch-to-zoom on smartphones and tablets."
-        },
+        }        ,
         {
           "question": "How does body mass index relate to 3D avatar proportion scaling?",
           "answer": "The 3D avatar dynamically adjusts mesh thickness, waist curvature, and volumetric proportions based on your height-to-weight ratio and calculated BMI score."
@@ -540,11 +483,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿El modelo 3D almacena datos o fotografías personales?",
           "answer": "No, el modelo 3D es una simulación matemática generada en tiempo real en tu navegador sin guardar datos ni requerir cámara."
-        },
+        }
+              ,
         {
           "question": "¿Puedo usar el Visualizador Corporal 3D en dispositivos móviles?",
           "answer": "Sí, el visualizador 3D es totalmente adaptable a móviles y controles táctiles, lo que permite rotación de 360° en teléfonos inteligentes y tabletas."
-        },
+        }        ,
         {
           "question": "¿Cómo se relaciona el índice de masa corporal con el escalado del avatar 3D?",
           "answer": "El avatar 3D ajusta dinámicamente el grosor de la malla, la curvatura de la cintura y las proporciones volumétricas según tu IMC."
@@ -596,11 +540,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "L'outil 3D enregistre-t-il des images personnelles ?",
           "answer": "Non, toutes les modélisations sont des simulations mathématiques anonymes exécutées localement sur votre navigateur."
-        },
+        }
+              ,
         {
           "question": "Puis-je utiliser le Visualiseur Corporel 3D sur des appareils mobiles ?",
           "answer": "Oui, le visualiseur 3D est entièrement adapté aux mobiles et aux commandes tactiles, permettant une rotation à 360° sur smartphones et tablettes."
-        },
+        }        ,
         {
           "question": "Comment l'indice de masse corporelle est-il lié à la modélisation 3D ?",
           "answer": "L'avatar 3D ajuste dynamiquement l'épaisseur du maillage et les proportions volumétriques en fonction de votre rapport taille/poids et de votre score IMC."
@@ -652,11 +597,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Werden Bilder oder persönliche Daten gespeichert?",
           "answer": "Nein, das 3D-Modell ist eine rein mathematische Echtzeit-Simulation in Ihrem Browser ohne Datenspeicherung."
-        },
+        }
+              ,
         {
           "question": "Kann ich den 3D-Körper-Visualisierer auf Mobilgeräten verwenden?",
           "answer": "Ja, der 3D-Visualisierer ist vollständig für mobile Touch-Steuerung optimiert und ermöglicht 360°-Drehung auf Smartphones und Tablets."
-        },
+        }        ,
         {
           "question": "Wie hängt der Body-Mass-Index mit der 3D-Proportionenskalierung zusammen?",
           "answer": "Der 3D-Avatar passt die Netzstärke und die volumetrischen Proportionen dynamisch basierend auf Ihrem BMI-Wert an."
@@ -708,11 +654,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "3D 아바타 생성 시 개인정보나 사진이 저장되나요?",
           "answer": "아니요, 사진 업로드가 필요 없으며 모든 계산 및 3D 렌더링은 사용자 브라우저에서 100% 안전하게 구동됩니다."
-        },
+        }
+              ,
         {
           "question": "모바일 기기에서도 3D 체형 시각화 도구를 사용할 수 있나요?",
           "answer": "네, 3D 시각화 도구는 모바일 터치 조작에 완벽하게 최적화되어 스마트폰과 태블릿에서 360° 회전을 지원합니다."
-        },
+        }        ,
         {
           "question": "체질량지수(BMI)는 3D 아바타의 비율 스케일링과 어떻게 연결되나요?",
           "answer": "3D 아바타는 입력된 신장 대 체중 비율과 계산된 BMI 수치에 따라 실루엣 두께와 부피 비율을 실시간으로 조정합니다."
@@ -764,11 +711,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "क्या 3D विजुअलाइज़र आपकी कोई निजी फोटो लेता है?",
           "answer": "नहीं, इसके लिए किसी कैमरे या फोटो की आवश्यकता नहीं है; यह केवल आपके अंकों पर आधारित एक मुफ़्त 3D गणितीय मॉडल है।"
-        },
+        }
+              ,
         {
           "question": "क्या मैं मोबाइल उपकरणों पर 3D बॉडी विजुअलाइज़र का उपयोग कर सकता हूं?",
           "answer": "हाँ, 3D विज़ुअलाइज़र मोबाइल टच कंट्रोल के लिए पूरी तरह से अनुकूलित है, जिससे स्मार्टफ़ोन और टैबलेट पर 360° रोटेशन की अनुमति मिलती है।"
-        },
+        }        ,
         {
           "question": "बॉडी मास इंडेक्स 3D अवतार अनुपात स्केलिंग से कैसे संबंधित है?",
           "answer": "3D अवतार आपकी ऊंचाई-से-वजन अनुपात और बीएमआई स्कोर के आधार पर मेश की मोटाई और 3D आकृतियों को वास्तविक समय में समायोजित करता है।"
@@ -904,7 +852,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de bmi chart y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "¿Es diferente la tabla de IMC para hombres de la tabla de IMC para mujeres?",
           "answer": "La tabla de IMC para adultos de la OMS utiliza los mismos puntos de corte (18.5 a 24.9 para peso normal) tanto para hombres como para mujeres adultas. No obstante, las medidas de cintura aportan contexto complementario."
@@ -977,7 +926,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de bmi chart et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "¿Es diferente la tabla de IMC para hombres de la tabla de IMC para mujeres?",
           "answer": "Le tableau officiel de l'OMS utilise les mêmes seuils (18,5 à 24,9 pour le poids normal) pour les hommes et les femmes adultes. La mesure du tour de taille apporte un contexte d'évaluation supplémentaire."
@@ -1050,7 +1000,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der bmi chart-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "¿Es diferente la tabla de IMC para hombres de la tabla de IMC para mujeres?",
           "answer": "Die WHO-BMI-Tabelle für Erwachsene verwendet dieselben Grenzwerte (18,5 bis 24,9 für Normalgewicht) für Männer und Frauen. Taillenumfang und Körperzusammensetzung bieten zusätzlichen Kontext."
@@ -1123,7 +1074,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "bmi chart 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "¿Es diferente la tabla de IMC para hombres de la tabla de IMC para mujeres? 안내 및 원리",
           "answer": "WHO 성인 BMI 분류표는 성인 남성과 여성 모두에게 동일한 정상 체중 기준(18.5~24.9)을 적용합니다. 체지방 분포를 확인하기 위해 허리둘레 측정을 함께 고려하는 것이 권장됩니다."
@@ -1318,11 +1270,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿El modelo 3D almacena datos o fotografías personales?",
           "answer": "No, el modelo 3D es una simulación matemática generada en tiempo real en tu navegador sin guardar datos ni requerir cámara."
-        },
+        }
+              ,
         {
           "question": "¿Puedo usar el Visualizador Corporal 3D en dispositivos móviles?",
           "answer": "Sí, el visualizador 3D es totalmente adaptable a móviles y controles táctiles, lo que permite rotación de 360° en teléfonos inteligentes y tabletas."
-        },
+        }        ,
         {
           "question": "¿Cómo se relaciona el índice de masa corporal con el escalado del avatar 3D?",
           "answer": "El avatar 3D ajusta dinámicamente el grosor de la malla, la curvatura de la cintura y las proporciones volumétricas según tu IMC."
@@ -1374,11 +1327,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "L'outil 3D enregistre-t-il des images personnelles ?",
           "answer": "Non, toutes les modélisations sont des simulations mathématiques anonymes exécutées localement sur votre navigateur."
-        },
+        }
+              ,
         {
           "question": "Puis-je utiliser le Visualiseur Corporel 3D sur des appareils mobiles ?",
           "answer": "Oui, le visualiseur 3D est entièrement adapté aux mobiles et aux commandes tactiles, permettant une rotation à 360° sur smartphones et tablettes."
-        },
+        }        ,
         {
           "question": "Comment l'indice de masse corporelle est-il lié à la modélisation 3D ?",
           "answer": "L'avatar 3D ajuste dynamiquement l'épaisseur du maillage et les proportions volumétriques en fonction de votre rapport taille/poids et de votre score IMC."
@@ -1430,11 +1384,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Werden Bilder oder persönliche Daten gespeichert?",
           "answer": "Nein, das 3D-Modell ist eine rein mathematische Echtzeit-Simulation in Ihrem Browser ohne Datenspeicherung."
-        },
+        }
+              ,
         {
           "question": "Kann ich den 3D-Körper-Visualisierer auf Mobilgeräten verwenden?",
           "answer": "Ja, der 3D-Visualisierer ist vollständig für mobile Touch-Steuerung optimiert und ermöglicht 360°-Drehung auf Smartphones und Tablets."
-        },
+        }        ,
         {
           "question": "Wie hängt der Body-Mass-Index mit der 3D-Proportionenskalierung zusammen?",
           "answer": "Der 3D-Avatar passt die Netzstärke und die volumetrischen Proportionen dynamisch basierend auf Ihrem BMI-Wert an."
@@ -1486,11 +1441,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "3D 아바타 생성 시 개인정보나 사진이 저장되나요?",
           "answer": "아니요, 사진 업로드가 필요 없으며 모든 계산 및 3D 렌더링은 사용자 브라우저에서 100% 안전하게 구동됩니다."
-        },
+        }
+              ,
         {
           "question": "모바일 기기에서도 3D 체형 시각화 도구를 사용할 수 있나요?",
           "answer": "네, 3D 시각화 도구는 모바일 터치 조작에 완벽하게 최적화되어 스마트폰과 태블릿에서 360° 회전을 지원합니다."
-        },
+        }        ,
         {
           "question": "체질량지수(BMI)는 3D 아바타의 비율 스케일링과 어떻게 연결되나요?",
           "answer": "3D 아바타는 입력된 신장 대 체중 비율과 계산된 BMI 수치에 따라 실루엣 두께와 부피 비율을 실시간으로 조정합니다."
@@ -1542,11 +1498,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "क्या 3D विजुअलाइज़र आपकी कोई निजी फोटो लेता है?",
           "answer": "नहीं, इसके लिए किसी कैमरे या फोटो की आवश्यकता नहीं है; यह केवल आपके अंकों पर आधारित एक मुफ़्त 3D गणितीय मॉडल है।"
-        },
+        }
+              ,
         {
           "question": "क्या मैं मोबाइल उपकरणों पर 3D बॉडी विजुअलाइज़र का उपयोग कर सकता हूं?",
           "answer": "हाँ, 3D विज़ुअलाइज़र मोबाइल टच कंट्रोल के लिए पूरी तरह से अनुकूलित है, जिससे स्मार्टफ़ोन और टैबलेट पर 360° रोटेशन की अनुमति मिलती है।"
-        },
+        }        ,
         {
           "question": "बॉडी मास इंडेक्स 3D अवतार अनुपात स्केलिंग से कैसे संबंधित है?",
           "answer": "3D अवतार आपकी ऊंचाई-से-वजन अनुपात और बीएमआई स्कोर के आधार पर मेश की मोटाई और 3D आकृतियों को वास्तविक समय में समायोजित करता है।"
@@ -1610,11 +1567,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "What is the ideal height weight chart for Indians?",
           "answer": "An ideal weight for Indian adults keeps BMI between 18.5 and 22.9 kg/m². For example, for an Indian male or female of height 168 cm (5 ft 6 in), the healthy weight range is 52.2 kg to 64.6 kg."
-        },
+        }
+              ,
         {
           "question": "Can I use the 3D Body Visualizer on mobile devices?",
           "answer": "Yes, the 3D visualizer is fully responsive and optimized for mobile touch controls, allowing 360° rotation and pinch-to-zoom on smartphones and tablets."
-        },
+        }        ,
         {
           "question": "How does body mass index relate to 3D avatar proportion scaling?",
           "answer": "The 3D avatar dynamically adjusts mesh thickness, waist curvature, and volumetric proportions based on your height-to-weight ratio and calculated BMI score."
@@ -1660,7 +1618,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de IMC para India y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "¿Por qué el IMC 23 es el umbral de sobrepeso en India?",
           "answer": "Epidemiological research shows that South Asian populations carry higher abdominal visceral fat and face elevated cardiometabolic risks (such as type 2 diabetes and hypertension) at lower body mass index levels compared to Western populations."
@@ -1676,7 +1635,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cuál es la tabla de peso e estatura ideal para adultos indios?",
           "answer": "An ideal weight for Indian adults keeps BMI between 18.5 and 22.9 kg/m². For example, for an Indian male or female of height 168 cm (5 ft 6 in), the healthy weight range is 52.2 kg to 64.6 kg."
-        },
+        }
+      ,
         {
           "question": "¿Cómo se calcula el IMC para adultos indios?",
           "answer": "Para calcular el IMC en indios, divide el peso en kg por la altura en metros al cuadrado. Por ejemplo, 65 kg / (1.68 m x 1.68 m) = 23.0 kg/m² (sobrepeso según el punto de corte de la OMS para Asia)."
@@ -1726,7 +1686,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur d'IMC pour l'Inde et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Pourquoi l'IMC 23 est-il le seuil de surpoids en Inde?",
           "answer": "Epidemiological research shows that South Asian populations carry higher abdominal visceral fat and face elevated cardiometabolic risks (such as type 2 diabetes and hypertension) at lower body mass index levels compared to Western populations."
@@ -1742,7 +1703,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Quelle est la table de poids et taille idéale pour les Indiens?",
           "answer": "An ideal weight for Indian adults keeps BMI between 18.5 and 22.9 kg/m². For example, for an Indian male or female of height 168 cm (5 ft 6 in), the healthy weight range is 52.2 kg to 64.6 kg."
-        },
+        }
+      ,
         {
           "question": "Comment calculer l'IMC pour les adultes indiens ?",
           "answer": "Pour calculer l'IMC chez les Indiens, divisez le poids en kg par la taille en mètres au carré. Par exemple, 65 kg / (1.68 m x 1.68 m) = 23.0 kg/m² (surpoids selon le seuil asiatique de l'OMS)."
@@ -1788,20 +1750,20 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Klassifizierung für schwere Adipositas"
         }
       ],
-      "faqs": [
+            "faqs": [
         {
-          "question": "Wie funktioniert der BMI-Rechner für indische Erwachsene?",
-          "answer": "Der Rechner verwendet die ICMR- und WHO-Südostasien-Kriterien, um Ihren BMI und den gesunden Bereich (18.5 – 22.9 kg/m²) zu berechnen."
+                "question": "Wie funktioniert der BMI-Rechner für indische Erwachsene?",
+                "answer": "Der Rechner verwendet die ICMR- und WHO-Südostasien-Kriterien, um Ihren BMI und den gesunden Bereich (18.5 – 22.9 kg/m²) zu berechnen."
         },
         {
-          "question": "Warum liegt der Grenzwert für Übergewicht bei Indern bei 23.0 statt 25.0?",
-          "answer": "Aufgrund höherer kardiometabolischer Risiken bei geringerem BMI empfehlen ICMR und WHO einen niedrigeren Grenzwert von 23.0 kg/m² für indische Erwachsene."
+                "question": "Warum liegt der Grenzwert für Übergewicht bei Indern bei 23.0 statt 25.0?",
+                "answer": "Aufgrund höherer kardiometabolischer Risiken bei geringerem BMI empfehlen ICMR und WHO einen niedrigeren Grenzwert von 23.0 kg/m² für indische Erwachsene."
         },
         {
-          "question": "Wie berechnet man das ideale Körpergewicht nach der Größe in Indien?",
-          "answer": "Das ideale Gewicht liegt vor, wenn der BMI zwischen 18.5 und 22.9 kg/m² liegt. Es wird mit der Formel: Gewicht (kg) / [Größe (m)]² berechnet."
+                "question": "Wie berechnet man das ideale Körpergewicht nach der Größe in Indien?",
+                "answer": "Das ideale Gewicht liegt vor, wenn der BMI zwischen 18.5 und 22.9 kg/m² liegt. Es wird mit der Formel: Gewicht (kg) / [Größe (m)]² berechnet."
         }
-      ]
+]
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
@@ -1840,20 +1802,20 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "인도 성인 전용 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 ICMR 및 WHO 아시아 태평양 지침에 따라 BMI와 건강 체중 범위(18.5 – 22.9 kg/m²)를 측정합니다."
+                "question": "인도 성인 전용 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
+                "answer": "본 계산기는 ICMR 및 WHO 아시아 태평양 지침에 따라 BMI와 건강 체중 범위(18.5 – 22.9 kg/m²)를 측정합니다."
         },
         {
-          "question": "인도 성인의 과체중 기준이 25.0이 아닌 23.0인 이유는 무엇인가요?",
-          "answer": "남아시아 및 인도인 인구는 낮은 BMI에서도 높은 체지방률을 보여, WHO 및 ICMR 지침에 따라 23.0 kg/m²부터 위험이 증가합니다."
+                "question": "인도 성인의 과체중 기준이 25.0이 아닌 23.0인 이유는 무엇인가요?",
+                "answer": "남아시아 및 인도인 인구는 낮은 BMI에서도 높은 체지방률을 보여, WHO 및 ICMR 지침에 따라 23.0 kg/m²부터 위험이 증가합니다."
         },
         {
-          "question": "인도 표준 지침에 따른 신장별 적정 체중은 어떻게 계산하나요?",
-          "answer": "신장(m)의 제곱에 18.5를 곱하면 최소 권장 체중이 되고, 22.9를 곱하면 최대 건강 체중 범위가 됩니다."
+                "question": "인도 표준 지침에 따른 신장별 적정 체중은 어떻게 계산하나요?",
+                "answer": "신장(m)의 제곱에 18.5를 곱하면 최소 권장 체중이 되고, 22.9를 곱하면 최대 건강 체중 범위가 됩니다."
         }
-      ]
+]
     },
-    "hi": {
+"hi": {
       "eyebrow": "डब्ल्यूएचओ एवं आईसीएमआर भारतीय दिशानिर्देश",
       "title": "भारतीयों के लिए बीएमआई कैलकुलेटर – आईसीएमआर एवं डब्ल्यूएचओ मानक",
       "intro": "भारतीय चिकित्सा अनुसंधान परिषद (ICMR) और WHO दक्षिण एशियाई दिशानिर्देशों पर आधारित भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। किलोग्राम और सेंटीमीटर में अपने बीएमआई और स्वस्थ वजन सीमा की गणना करें।",
@@ -1904,7 +1866,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     }
   },
-  "bmi-calculator-for-indians": {
+"bmi-calculator-for-indians": {
     "en": {
       "eyebrow": "ICMR & WHO South Asian Standards",
       "title": "BMI Calculator for Indians – Healthy Height Weight Chart for Indian Adults",
@@ -1965,27 +1927,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "Bajo Peso (< 18.5 kg/m²)",
+          "col1": "Bajo Peso (Norma Indias ICMR)",
           "col2": "< 18.5 kg/m²",
           "col3": "Umbral de referencia para peso bajo"
         },
         {
-          "col1": "Peso Normal Óptimo (18.5 – 22.9 kg/m²)",
+          "col1": "Peso Normal & Óptimo",
           "col2": "18.5 – 22.9 kg/m²",
           "col3": "Rango saludable óptimo para adultos indios"
         },
         {
-          "col1": "Sobrepeso / Zona de Riesgo (23.0 – 24.9 kg/m²)",
+          "col1": "Sobrepeso / Zona de Riesgo (23.0)",
           "col2": "23.0 – 24.9 kg/m²",
           "col3": "Umbral de riesgo cardiometabólico elevado para indios"
         },
         {
-          "col1": "Obesidad Clase I (25.0 – 29.9 kg/m²)",
+          "col1": "Obesidad Clase I (Norma ICMR)",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "Umbral de obesidad clase I según estándares ICMR"
         },
         {
-          "col1": "Obesidad Clase II (≥ 30.0 kg/m²)",
+          "col1": "Obesidad Clase II (Severa)",
           "col2": "≥ 30.0 kg/m²",
           "col3": "Umbral de riesgo de obesidad severa"
         }
@@ -1994,7 +1956,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de IMC para la población india y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "¿Por qué el límite de sobrepeso es 23.0 para la población india en lugar de 25.0?",
           "answer": "Las poblaciones del sur de Asia presentan un mayor porcentaje de grasa visceral a índices de masa corporal más bajos, lo que incrementa el riesgo cardiometabólico a partir de un IMC de 23.0 kg/m²."
@@ -2015,27 +1978,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "Insuffisance Pondérale (< 18.5 kg/m²)",
+          "col1": "Insuffisance Pondérale (Norme Indienne)",
           "col2": "< 18.5 kg/m²",
           "col3": "Seuil de référence pour l'insuffisance pondérale"
         },
         {
-          "col1": "Poids Normal Optimal (18.5 – 22.9 kg/m²)",
+          "col1": "Poids Santé Optimal",
           "col2": "18.5 – 22.9 kg/m²",
           "col3": "Plage saine optimale pour les adultes indiens"
         },
         {
-          "col1": "Surpoids / Zone de Risque (23.0 – 24.9 kg/m²)",
+          "col1": "Surpoids / Zone de Risque (23.0)",
           "col2": "23.0 – 24.9 kg/m²",
           "col3": "Seuil de risque cardiométabolique accru pour les Indiens"
         },
         {
-          "col1": "Obésité Classe I (25.0 – 29.9 kg/m²)",
+          "col1": "Obésité Classe I (Norme ICMR)",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "Seuil d'obésité de classe I selon les normes ICMR"
         },
         {
-          "col1": "Obésité Classe II (≥ 30.0 kg/m²)",
+          "col1": "Obésité Classe II (Sévère)",
           "col2": "≥ 30.0 kg/m²",
           "col3": "Seuil de risque d'obésité sévère"
         }
@@ -2044,7 +2007,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur d'IMC pour la population indienne ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Pourquoi le seuil de surpoids est-il de 23.0 pour les Indiens au lieu de 25.0 ?",
           "answer": "Les populations d'Asie du Sud et de l'Inde présentent un pourcentage plus élevé de graisse viscérale à des IMC plus faibles, ce qui augmente le risque cardiométabolique dès un IMC de 23.0 kg/m²."
@@ -2065,27 +2029,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Standard-Referenztabelle",
       "tableRows": [
         {
-          "col1": "Untergewicht (< 18.5)",
+          "col1": "Kategorie / Stufe 1",
           "col2": "< 18.5 kg/m²",
           "col3": "Referenzbereich für Untergewicht"
         },
         {
-          "col1": "Gesundes Normalgewicht (18.5 – 22.9)",
+          "col1": "Kategorie / Stufe 2",
           "col2": "18.5 – 22.9 kg/m²",
           "col3": "Optimaler gesunder Bereich für indische Erwachsene"
         },
         {
-          "col1": "Übergewicht / Risiko (23.0 – 24.9)",
+          "col1": "Kategorie / Stufe 3",
           "col2": "23.0 – 24.9 kg/m²",
           "col3": "Grenzwert für erhöhtes kardiometabolisches Risiko"
         },
         {
-          "col1": "Adipositas Klasse I (25.0 – 29.9)",
+          "col1": "Kategorie / Stufe 4",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "Adipositas Klasse I Schwellenwert nach ICMR-Standards"
         },
         {
-          "col1": "Adipositas Klasse II (≥ 30.0)",
+          "col1": "Kategorie / Stufe 5",
           "col2": "≥ 30.0 kg/m²",
           "col3": "Schwellenwert für schwere Adipositas"
         }
@@ -2115,45 +2079,45 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "저체중 (< 18.5 kg/m²)",
+          "col1": "범주 / 단계 1",
           "col2": "< 18.5 kg/m²",
           "col3": "참조 범위 저체중 기준"
         },
         {
-          "col1": "정상 체중 (18.5 – 22.9 kg/m²)",
+          "col1": "범주 / 단계 2",
           "col2": "18.5 – 22.9 kg/m²",
           "col3": "참조 범위 인도 성인 최적 건강 체중"
         },
         {
-          "col1": "과체중 / 위험군 (23.0 – 24.9 kg/m²)",
+          "col1": "범주 / 단계 3",
           "col2": "23.0 – 24.9 kg/m²",
           "col3": "참조 범위 심혈관 및 대사 위험 증가 기준"
         },
         {
-          "col1": "1단계 비만 (25.0 – 29.9 kg/m²)",
+          "col1": "범주 / 단계 4",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "참조 범위 ICMR 기준 1단계 비만 임계값"
         },
         {
-          "col1": "2단계 비만 (≥ 30.0 kg/m²)",
+          "col1": "범주 / 단계 5",
           "col2": "≥ 30.0 kg/m²",
           "col3": "참조 범위 고도 비만 위험 임계값"
         }
       ],
-      "faqs": [
+            "faqs": [
         {
-          "question": "인도 성인 전용 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 ICMR 및 WHO 아시아 태평양 지침에 따라 BMI와 건강 체중 범위(18.5 – 22.9 kg/m²)를 측정합니다."
+                "question": "인도 성인 전용 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
+                "answer": "본 계산기는 ICMR 및 WHO 아시아 태평양 지침에 따라 BMI와 건강 체중 범위(18.5 – 22.9 kg/m²)를 측정합니다."
         },
         {
-          "question": "인도 성인의 과체중 기준이 25.0이 아닌 23.0인 이유는 무엇인가요?",
-          "answer": "남아시아 및 인도인 인구는 낮은 BMI에서도 높은 체지방률을 보여, WHO 및 ICMR 지침에 따라 23.0 kg/m²부터 위험이 증가합니다."
+                "question": "인도 성인의 과체중 기준이 25.0이 아닌 23.0인 이유는 무엇인가요?",
+                "answer": "남아시아 및 인도인 인구는 낮은 BMI에서도 높은 체지방률을 보여, WHO 및 ICMR 지침에 따라 23.0 kg/m²부터 위험이 증가합니다."
         },
         {
-          "question": "인도 표준 지침에 따른 신장별 적정 체중은 어떻게 계산하나요?",
-          "answer": "신장(m)의 제곱에 18.5를 곱하면 최소 권장 체중이 되고, 22.9를 곱하면 최대 건강 체중 범위가 됩니다."
+                "question": "인도 표준 지침에 따른 신장별 적정 체중은 어떻게 계산하나요?",
+                "answer": "신장(m)의 제곱에 18.5를 곱하면 최소 권장 체중이 되고, 22.9를 곱하면 최대 건강 체중 범위가 됩니다."
         }
-      ]
+]
     },
     "hi": {
       "eyebrow": "आईसीएमआर एवं डब्ल्यूएचओ भारतीय मानक",
@@ -2165,27 +2129,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "भारतीय वयस्कों के लिए बीएमआई श्रेणी चार्ट (ICMR मानक)",
       "tableRows": [
         {
-          "col1": "कम वजन (< 18.5 kg/m²)",
+          "col1": "कम वजन",
           "col2": "< 18.5 kg/m²",
           "col3": "कम वजन सीमा"
         },
         {
-          "col1": "सामान्य वजन (18.5 – 22.9 kg/m²)",
+          "col1": "सामान्य वजन",
           "col2": "18.5 – 22.9 kg/m²",
           "col3": "भारतीयों के लिए स्वस्थ सामान्य बीएमआई"
         },
         {
-          "col1": "अधिक वजन (जोखिम सीमा 23.0 – 24.9 kg/m²)",
+          "col1": "अधिक वजन (जोखिम सीमा 23.0)",
           "col2": "23.0 – 24.9 kg/m²",
           "col3": "भारतीयों के लिए अधिक वजन सीमा"
         },
         {
-          "col1": "मोटापा श्रेणी I (25.0 – 29.9 kg/m²)",
+          "col1": "मोटापा श्रेणी I",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "मोटापा श्रेणी I"
         },
         {
-          "col1": "मोटापा श्रेणी II (≥ 30.0 kg/m²)",
+          "col1": "मोटापा श्रेणी II",
           "col2": "≥ 30.0 kg/m²",
           "col3": "गंभीर मोटापा"
         }
@@ -2210,7 +2174,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "भारतीय बीएमआई के अनुसार स्वस्थ वजन कैसे बनाए रखें?",
           "answer": "संतुलित भारतीय आहार, नियमित व्यायाम और 22.9 kg/m² से कम बीएमआई बनाए रखना लाभदायक होता है।"
-        },
+        }
+      ,
         {
           "question": "भारतीय वयस्कों के लिए बीएमआई की गणना कैसे की जाती है?",
           "answer": "भारतीयों के लिए बीएमआई गणना: वजन (किग्रा) को ऊंचाई के वर्ग (मीटर²) से विभाजित करें। उदाहरण: 65 किग्रा / (1.68 मीटर x 1.68 मीटर) = 23.0 kg/m² (डब्ल्यूएचओ एशियाई कटऑफ के तहत ओवरवेट)।"
@@ -2360,7 +2325,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de peso saludable por altura y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "¿Qué es el healthy weight chart por altura para hombres y mujeres?",
           "answer": "Un gráfico de peso y altura enumera los rangos de peso saludable según la estatura. Por ejemplo, para una altura de 163 cm (5 ft 4 in), el rango normal es de 49 kg a 66 kg (108 lbs a 145 lbs)."
@@ -2438,7 +2404,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de poids santé par taille et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Qu'est-ce que le healthy weight chart por altura para hombres y mujeres?",
           "answer": "Un tableau de référence poids-taille indique les plages de poids santé en fonction de la taille. Par exemple, pour 163 cm (5 ft 4 in), la plage normale est de 49 kg à 66 kg (108 lbs à 145 lbs)."
@@ -2516,7 +2483,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Rechner für gesunde Gewichtstabellen und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Was ist der healthy weight chart por altura para hombres y mujeres?",
           "answer": "Eine Größe-Gewichts-Tabelle listet gesunde Gewichtsbereiche basierend auf der Körpergröße auf. Zum Beispiel liegt der normale Bereich bei 163 cm (5 ft 4 in) zwischen 49 kg und 66 kg (108 lbs bis 145 lbs)."
@@ -2594,7 +2562,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "신장별 표준 체중 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "신장별 표준 체중 차트의 기준은 무엇인가요?",
           "answer": "신장별 표준 체중 차트는 키에 따른 건강한 체중 범위를 나타냅니다. 예를 들어 163 cm (5 ft 4 in)의 경우 표준 권장 범위는 49 kg ~ 66 kg (108 lbs ~ 145 lbs)입니다."
@@ -2790,7 +2759,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de riesgo de diabetes y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "Por qué es the Asian BMI reference cutoff set at 23 kg/m² instead of 25 kg/m²?",
           "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
@@ -2848,7 +2818,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de risque de diabète et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Pourquoi the Asian BMI reference cutoff set at 23 kg/m² instead of 25 kg/m²?",
           "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
@@ -2906,7 +2877,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Diabetes-Risiko-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Warum ist the Asian BMI reference cutoff set at 23 kg/m² instead of 25 kg/m²?",
           "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
@@ -2964,7 +2936,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "당뇨 위험 평가 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "¿Por qué el umbral de referencia del IMC asiático es de 23 kg/m² en lugar de 25 kg/m²? 안내 및 원리",
           "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
@@ -3122,7 +3095,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de IMC asiático y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "¿Cuál es el IMC normal para los adultos asiáticos?",
           "answer": "For Asian adults, a normal healthy BMI ranges from 18.5 to 22.9 kg/m²."
@@ -3167,7 +3141,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur d'IMC asiatique et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Quel est l'IMC normal pour les adultes asiatiques ?",
           "answer": "For Asian adults, a normal healthy BMI ranges from 18.5 to 22.9 kg/m²."
@@ -3212,7 +3187,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Rechner für asiatischen BMI und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Was ist ein normaler BMI für asiatische Erwachsene?",
           "answer": "For Asian adults, a normal healthy BMI ranges from 18.5 to 22.9 kg/m²."
@@ -3257,7 +3233,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "아시아인 전용 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "아시아 성인의 표준 정상 BMI 범위는 얼마인가요?",
           "answer": "For Asian adults, a normal healthy BMI ranges from 18.5 to 22.9 kg/m²."
@@ -3460,7 +3437,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de métabolisme de base (BMR) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Quelle est la différence entre la formule Mifflin-St Jeor et Katch-McArdle ?",
           "answer": "Mifflin-St Jeor estime le BMR à partir du poids total, de la taille et de l'âge. Katch-McArdle utilise la masse corporelle maigre (LBM), ce qui convient particulièrement aux athlètes."
@@ -3508,7 +3486,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der BMR-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Was ist der Unterschied zwischen der Mifflin-St Jeor und Katch-McArdle Formel?",
           "answer": "Mifflin-St Jeor berechnet den Grundumsatz aus Gesamtgewicht, Körpergröße und Alter. Katch-McArdle berücksichtigt die magere Körpermasse (LBM), was für sehr muskulöse Menschen präziser ist."
@@ -3552,7 +3531,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "BMR 기초대사량 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "온라인으로 신장(cm)과 체중(kg)을 통해 BMR을 계산하는 방법은?",
           "answer": "온라인 BMR 계산기에 신장(cm), 체중(kg), 연령, 성별을 입력하면 미플린-스토어 공식을 통해 즉시 기초대사량이 산출됩니다."
@@ -3722,7 +3702,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de gasto energético total (TDEE) y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "How often should I recalculate my maintenance calories and TDEE?",
           "answer": "Consider recalculating when your body weight or physical activity level changes significantly, as body mass changes alter daily energy maintenance estimates."
@@ -3776,7 +3757,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de dépense énergétique quotidienne (TDEE) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "How many calories should I eat daily for weight loss using TDEE?",
           "answer": "A calorie deficit below estimated TDEE is commonly used for weight-loss planning, but the appropriate amount varies by individual."
@@ -3834,7 +3816,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der TDEE-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "How many calories should I eat daily for weight loss using TDEE?",
           "answer": "A calorie deficit below estimated TDEE is commonly used for weight-loss planning, but the appropriate amount varies by individual."
@@ -3892,7 +3875,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "TDEE 일일 총 에너지 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "How many calories should I eat daily for weight loss using TDEE? 안내 및 원리",
           "answer": "A calorie deficit below estimated TDEE is commonly used for weight-loss planning, but the appropriate amount varies by individual."
@@ -4060,7 +4044,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de calorías de mantenimiento y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "Cómo calculate calorie maintenance by age, height (cm), and weight (kg)?",
           "answer": "Input your biological age, gender, height (cm), weight (kg), and weekly activity level to estimate your maintenance calorie baseline."
@@ -4118,7 +4103,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de calories de maintien et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Comment calculate calorie maintenance by age, height (cm), and weight (kg)?",
           "answer": "Input your biological age, gender, height (cm), weight (kg), and weekly activity level to estimate your maintenance calorie baseline."
@@ -4176,7 +4162,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Kalorien-Erhaltungs-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Wie man calculate calorie maintenance by age, height (cm), and weight (kg)?",
           "answer": "Input your biological age, gender, height (cm), weight (kg), and weekly activity level to estimate your maintenance calorie baseline."
@@ -4234,7 +4221,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "체중 유지 칼로리 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": " calculate calorie maintenance by age, height (cm), and weight (kg)? 안내 및 원리",
           "answer": "Input your biological age, gender, height (cm), weight (kg), and weekly activity level to estimate your maintenance calorie baseline."
@@ -4716,7 +4704,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de masa corporal magra y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "Por qué es Lean Body Mass useful in body composition tracking?",
           "answer": "LBM estimates can be used as one reference when tracking changes in estimated non-fat body mass."
@@ -4746,7 +4735,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de masse corporelle maigre et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Pourquoi Lean Body Mass useful in body composition tracking?",
           "answer": "LBM estimates can be used as one reference when tracking changes in estimated non-fat body mass."
@@ -4776,7 +4766,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Magerkurven-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Warum ist Lean Body Mass useful in body composition tracking?",
           "answer": "LBM estimates can be used as one reference when tracking changes in estimated non-fat body mass."
@@ -4806,7 +4797,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "제지방량 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "Why is Lean Body Mass useful in body composition tracking? 안내 및 원리",
           "answer": "LBM estimates can be used as one reference when tracking changes in estimated non-fat body mass."
@@ -4954,7 +4946,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de peso ideal y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "¿Qué es my ideal weight for my height in kg or lbs?",
           "answer": "Enter your height in cm or feet/inches and select male or female. For example, a 5 ft 10 in (178 cm) male has an estimated IBW of ~73 kg via Devine formula, with a WHO healthy weight range of 58.6 kg to 78.9 kg."
@@ -5012,7 +5005,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de poids idéal et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Qu'est-ce que my ideal weight for my height in kg or lbs?",
           "answer": "Enter your height in cm or feet/inches and select male or female. For example, a 5 ft 10 in (178 cm) male has an estimated IBW of ~73 kg via Devine formula, with a WHO healthy weight range of 58.6 kg to 78.9 kg."
@@ -5070,7 +5064,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Idealgewicht-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Was ist my ideal weight for my height in kg or lbs?",
           "answer": "Enter your height in cm or feet/inches and select male or female. For example, a 5 ft 10 in (178 cm) male has an estimated IBW of ~73 kg via Devine formula, with a WHO healthy weight range of 58.6 kg to 78.9 kg."
@@ -5128,7 +5123,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "이상 체중 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": " my ideal weight for my height in kg or lbs? 안내 및 원리",
           "answer": "Enter your height in cm or feet/inches and select male or female. For example, a 5 ft 10 in (178 cm) male has an estimated IBW of ~73 kg via Devine formula, with a WHO healthy weight range of 58.6 kg to 78.9 kg."
@@ -5302,7 +5298,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de calorías y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "How much protein should I eat while in a calorie deficit?",
           "answer": "During a calorie deficit, protein intake ranges from 1.6 to 2.2 grams per kilogram of body weight are commonly referenced in sports nutrition literature."
@@ -5351,7 +5348,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de calories et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "What calorie deficit is commonly used for weight management?",
           "answer": "There is no single calorie-deficit value that is appropriate for everyone. Individual energy needs, health status, activity, and dietary intake should be considered. Energy adjustments are evaluated based on individual goals and health context."
@@ -5404,7 +5402,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Kalorienrechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "What calorie deficit is commonly used for weight management?",
           "answer": "There is no single calorie-deficit value that is appropriate for everyone. Individual energy needs, health status, activity, and dietary intake should be considered. Energy adjustments are evaluated based on individual goals and health context."
@@ -5457,7 +5456,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "칼로리 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "What calorie deficit is commonly used for weight management? 안내 및 원리",
           "answer": "There is no single calorie-deficit value that is appropriate for everyone. Individual energy needs, health status, activity, and dietary intake should be considered. Energy adjustments are evaluated based on individual goals and health context."
@@ -5614,7 +5614,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de ingesta de proteínas y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "How much protein do I need per day for muscle building vs weight loss?",
           "answer": "Suggested protein ranges vary based on physical activity: 1.6 to 2.2 g/kg is commonly used for muscle building, and 1.8 to 2.4 g/kg for calorie deficit training. Individual needs vary based on age, health status, and overall diet."
@@ -5667,7 +5668,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur d'apport en protéines et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "How much protein do I need per day for muscle building vs weight loss?",
           "answer": "Suggested protein ranges vary based on physical activity: 1.6 to 2.2 g/kg is commonly used for muscle building, and 1.8 to 2.4 g/kg for calorie deficit training. Individual needs vary based on age, health status, and overall diet."
@@ -5720,7 +5722,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Proteine-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "How much protein do I need per day for muscle building vs weight loss?",
           "answer": "Suggested protein ranges vary based on physical activity: 1.6 to 2.2 g/kg is commonly used for muscle building, and 1.8 to 2.4 g/kg for calorie deficit training. Individual needs vary based on age, health status, and overall diet."
@@ -5773,7 +5776,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "단백질 섭취량 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "How much protein do I need per day for muscle building vs weight loss? 안내 및 원리",
           "answer": "Suggested protein ranges vary based on physical activity: 1.6 to 2.2 g/kg is commonly used for muscle building, and 1.8 to 2.4 g/kg for calorie deficit training. Individual needs vary based on age, health status, and overall diet."
@@ -5910,22 +5914,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "Adulto Sedentario (50 kg)",
+          "col1": "Categoría / Nivel 1",
           "col2": "1.75 Liters / day",
           "col3": "~7 vasos estándar de 250 ml"
         },
         {
-          "col1": "Adulto Sedentario (70 kg)",
+          "col1": "Categoría / Nivel 2",
           "col2": "2.45 Liters / day",
           "col3": "~10 vasos estándar de 250 ml"
         },
         {
-          "col1": "Atleta Activo (70 kg)",
+          "col1": "Categoría / Nivel 3",
           "col2": "3.20 Liters / day",
           "col3": "~13 vasos estándar de 250 ml"
         },
         {
-          "col1": "Atleta Entrenamiento Intenso (90 kg)",
+          "col1": "Categoría / Nivel 4",
           "col2": "4.15 Liters / day",
           "col3": "~17 vasos estándar de 250 ml"
         }
@@ -5934,7 +5938,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de consumo de agua y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "How much water should I drink per day based on body weight?",
           "answer": "A common rule of thumb is to drink 35 ml of water per kilogram of body weight daily (or approximately 0.5 ounces per pound of body weight), plus additional fluids during workout sessions."
@@ -5963,22 +5968,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "Adulte Sédentaire (50 kg)",
+          "col1": "Catégorie / Niveau 1",
           "col2": "1.75 Liters / day",
           "col3": "~7 verres standards de 250 ml"
         },
         {
-          "col1": "Adulte Sédentaire (70 kg)",
+          "col1": "Catégorie / Niveau 2",
           "col2": "2.45 Liters / day",
           "col3": "~10 verres standards de 250 ml"
         },
         {
-          "col1": "Athlète Actif (70 kg)",
+          "col1": "Catégorie / Niveau 3",
           "col2": "3.20 Liters / day",
           "col3": "~13 verres standards de 250 ml"
         },
         {
-          "col1": "Athlète Entraînement Intensif (90 kg)",
+          "col1": "Catégorie / Niveau 4",
           "col2": "4.15 Liters / day",
           "col3": "~17 verres standards de 250 ml"
         }
@@ -5987,7 +5992,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur d'hydratation quotidienne et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "How much water should I drink per day based on body weight?",
           "answer": "A common rule of thumb is to drink 35 ml of water per kilogram of body weight daily (or approximately 0.5 ounces per pound of body weight), plus additional fluids during workout sessions."
@@ -6016,22 +6022,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Standard-Referenztabelle",
       "tableRows": [
         {
-          "col1": "Bewegungsarmer Erwachsener (50 kg)",
+          "col1": "Kategorie / Stufe 1",
           "col2": "1.75 Liters / day",
           "col3": "~7 Standardgläser (250 ml)"
         },
         {
-          "col1": "Bewegungsarmer Erwachsener (70 kg)",
+          "col1": "Kategorie / Stufe 2",
           "col2": "2.45 Liters / day",
           "col3": "~10 Standardgläser (250 ml)"
         },
         {
-          "col1": "Aktiver Sportler (70 kg)",
+          "col1": "Kategorie / Stufe 3",
           "col2": "3.20 Liters / day",
           "col3": "~13 Standardgläser (250 ml)"
         },
         {
-          "col1": "Intensiver Sportler (90 kg)",
+          "col1": "Kategorie / Stufe 4",
           "col2": "4.15 Liters / day",
           "col3": "~17 Standardgläser (250 ml)"
         }
@@ -6040,7 +6046,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Wasserbedarf-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "How much water should I drink per day based on body weight?",
           "answer": "A common rule of thumb is to drink 35 ml of water per kilogram of body weight daily (or approximately 0.5 ounces per pound of body weight), plus additional fluids during workout sessions."
@@ -6069,22 +6076,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "비활동 성인 (50 kg)",
+          "col1": "범주 / 단계 1",
           "col2": "1.75 Liters / day",
           "col3": "~250ml 표준 컵 7잔"
         },
         {
-          "col1": "비활동 성인 (70 kg)",
+          "col1": "범주 / 단계 2",
           "col2": "2.45 Liters / day",
           "col3": "~250ml 표준 컵 10잔"
         },
         {
-          "col1": "활동적인 운동선수 (70 kg)",
+          "col1": "범주 / 단계 3",
           "col2": "3.20 Liters / day",
           "col3": "~250ml 표준 컵 13잔"
         },
         {
-          "col1": "고강도 운동선수 (90 kg)",
+          "col1": "범주 / 단계 4",
           "col2": "4.15 Liters / day",
           "col3": "~250ml 표준 컵 17잔"
         }
@@ -6093,7 +6100,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "수분 섭취량 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "How much water should I drink per day based on body weight? 안내 및 원리",
           "answer": "A common rule of thumb is to drink 35 ml of water per kilogram of body weight daily (or approximately 0.5 ounces per pound of body weight), plus additional fluids during workout sessions."
@@ -6122,22 +6130,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "मानक संदर्भ तालिका",
       "tableRows": [
         {
-          "col1": "गतिहीन 50 किग्रा वयस्क",
+          "col1": "श्रेणी / स्तर 1",
           "col2": "1.75 Liters / day",
           "col3": "~7 मानक 250 मिली गिलास"
         },
         {
-          "col1": "गतिहीन 70 किग्रा वयस्क",
+          "col1": "श्रेणी / स्तर 2",
           "col2": "2.45 Liters / day",
           "col3": "~10 मानक 250 मिली गिलास"
         },
         {
-          "col1": "सक्रिय 70 किग्रा एथलीट",
+          "col1": "श्रेणी / स्तर 3",
           "col2": "3.20 Liters / day",
           "col3": "~13 मानक 250 मिली गिलास"
         },
         {
-          "col1": "कठिन व्यायाम 90 किग्रा एथलीट",
+          "col1": "श्रेणी / स्तर 4",
           "col2": "4.15 Liters / day",
           "col3": "~17 मानक 250 मिली गिलास"
         }
@@ -6225,17 +6233,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "Carbohidratos (4 kcal/g)",
+          "col1": "Categoría / Nivel 1",
           "col2": "Balanced: 40% | Low-Carb: 20% | High-Protein: 35%",
           "col3": "Distribución de ejemplo de fuentes de energía"
         },
         {
-          "col1": "Proteínas (4 kcal/g)",
+          "col1": "Categoría / Nivel 2",
           "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 40%",
           "col3": "Distribución de ejemplo de proteínas"
         },
         {
-          "col1": "Grasas (9 kcal/g)",
+          "col1": "Categoría / Nivel 3",
           "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 25%",
           "col3": "Distribución de ejemplo de grasas saludables"
         }
@@ -6273,17 +6281,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "Glucides (4 kcal/g)",
+          "col1": "Catégorie / Niveau 1",
           "col2": "Balanced: 40% | Low-Carb: 20% | High-Protein: 35%",
           "col3": "Répartition indicative des sources d'énergie"
         },
         {
-          "col1": "Protéines (4 kcal/g)",
+          "col1": "Catégorie / Niveau 2",
           "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 40%",
           "col3": "Répartition indicative des protéines"
         },
         {
-          "col1": "Lipides (9 kcal/g)",
+          "col1": "Catégorie / Niveau 3",
           "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 25%",
           "col3": "Répartition indicative des lipides alimentaires"
         }
@@ -6321,17 +6329,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Standard-Referenztabelle",
       "tableRows": [
         {
-          "col1": "Kohlenhydrate (4 kcal/g)",
+          "col1": "Kategorie / Stufe 1",
           "col2": "Balanced: 40% | Low-Carb: 20% | High-Protein: 35%",
           "col3": "Beispielhafte Verteilung von Energiequellen"
         },
         {
-          "col1": "Proteine / Eiweiß (4 kcal/g)",
+          "col1": "Kategorie / Stufe 2",
           "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 40%",
           "col3": "Beispielhafte Verteilung von Proteinen"
         },
         {
-          "col1": "Fette (9 kcal/g)",
+          "col1": "Kategorie / Stufe 3",
           "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 25%",
           "col3": "Beispielhafte Verteilung von Nahrungsfetten"
         }
@@ -6369,17 +6377,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "탄수화물 (4 kcal/g)",
+          "col1": "범주 / 단계 1",
           "col2": "Balanced: 40% | Low-Carb: 20% | High-Protein: 35%",
           "col3": "에너지원의 예시 배분율"
         },
         {
-          "col1": "단백질 (4 kcal/g)",
+          "col1": "범주 / 단계 2",
           "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 40%",
           "col3": "단백질의 예시 배분율"
         },
         {
-          "col1": "지방 (9 kcal/g)",
+          "col1": "범주 / 단계 3",
           "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 25%",
           "col3": "지방의 예시 배분율"
         }
@@ -6417,17 +6425,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "मानक संदर्भ तालिका",
       "tableRows": [
         {
-          "col1": "कार्बोहाइड्रेट (4 kcal/g)",
+          "col1": "श्रेणी / स्तर 1",
           "col2": "Balanced: 40% | Low-Carb: 20% | High-Protein: 35%",
           "col3": "ऊर्जा स्रोतों का उदाहरण आवंटन"
         },
         {
-          "col1": "प्रोटीन (4 kcal/g)",
+          "col1": "श्रेणी / स्तर 2",
           "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 40%",
           "col3": "प्रोटीन का उदाहरण आवंटन"
         },
         {
-          "col1": "वसा (9 kcal/g)",
+          "col1": "श्रेणी / स्तर 3",
           "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 25%",
           "col3": "आहारीय वसा का उदाहरण आवंटन"
         }
@@ -6515,17 +6523,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "Categoría de Riesgo Bajo",
+          "col1": "Categoría / Nivel 1",
           "col2": "Men: < 0.90 | Women: < 0.80",
           "col3": "Referencia de distribución de grasa subcutánea"
         },
         {
-          "col1": "Categoría de Riesgo Moderado",
+          "col1": "Categoría / Nivel 2",
           "col2": "Men: 0.90 – 0.99 | Women: 0.80 – 0.84",
           "col3": "Referencia moderada de grasa abdominal central"
         },
         {
-          "col1": "Categoría de Riesgo Alto",
+          "col1": "Categoría / Nivel 3",
           "col2": "Men: ≥ 1.00 | Women: ≥ 0.85",
           "col3": "Mayor distribución de grasa central; contexto adicional"
         }
@@ -6534,7 +6542,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de índice cintura-cadera (ICC) y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "Cómo calculate waist to hip ratio with the WHR formula?",
           "answer": "Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80."
@@ -6563,17 +6572,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "Catégorie Risque Faible",
+          "col1": "Catégorie / Niveau 1",
           "col2": "Men: < 0.90 | Women: < 0.80",
           "col3": "Fenêtre de distribution de graisse sous-cutanée"
         },
         {
-          "col1": "Catégorie Risque Modéré",
+          "col1": "Catégorie / Niveau 2",
           "col2": "Men: 0.90 – 0.99 | Women: 0.80 – 0.84",
           "col3": "Fenêtre modérée de graisse abdominale centrale"
         },
         {
-          "col1": "Catégorie Risque Élevé",
+          "col1": "Catégorie / Niveau 3",
           "col2": "Men: ≥ 1.00 | Women: ≥ 0.85",
           "col3": "Distribution plus élevée de graisse centrale ; contexte additionnel"
         }
@@ -6582,7 +6591,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de rapport taille-hanche (RTH) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Comment calculate waist to hip ratio with the WHR formula?",
           "answer": "Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80."
@@ -6611,17 +6621,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Standard-Referenztabelle",
       "tableRows": [
         {
-          "col1": "Niedrige Risiko-Kategorie",
+          "col1": "Kategorie / Stufe 1",
           "col2": "Men: < 0.90 | Women: < 0.80",
           "col3": "Referenzbereich für subkutane Fettverteilung"
         },
         {
-          "col1": "Moderate Risiko-Kategorie",
+          "col1": "Kategorie / Stufe 2",
           "col2": "Men: 0.90 – 0.99 | Women: 0.80 – 0.84",
           "col3": "Moderater Referenzbereich für zentrales Bauchfett"
         },
         {
-          "col1": "Höhere Risiko-Kategorie",
+          "col1": "Kategorie / Stufe 3",
           "col2": "Men: ≥ 1.00 | Women: ≥ 0.85",
           "col3": "Höhere zentrale Fettverteilung; zusätzlicher Screening-Kontext"
         }
@@ -6630,7 +6640,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Taille-Hüft-Verhältnis-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Wie man calculate waist to hip ratio with the WHR formula?",
           "answer": "Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80."
@@ -6659,17 +6670,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "낮은 위험군",
+          "col1": "범주 / 단계 1",
           "col2": "Men: < 0.90 | Women: < 0.80",
           "col3": "피하지방 분포 참고 기준"
         },
         {
-          "col1": "중간 위험군",
+          "col1": "범주 / 단계 2",
           "col2": "Men: 0.90 – 0.99 | Women: 0.80 – 0.84",
           "col3": "중등도 복부 내장지방 참고 기준"
         },
         {
-          "col1": "높은 위험군",
+          "col1": "범주 / 단계 3",
           "col2": "Men: ≥ 1.00 | Women: ≥ 0.85",
           "col3": "높은 중심부 지방 분포 기준; 추가 검토 필요"
         }
@@ -6678,7 +6689,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "허리 둘레 비율 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": " calculate waist to hip ratio with the WHR formula? 안내 및 원리",
           "answer": "Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80."
@@ -6707,17 +6719,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "मानक संदर्भ तालिका",
       "tableRows": [
         {
-          "col1": "निम्न जोखिम श्रेणी",
+          "col1": "श्रेणी / स्तर 1",
           "col2": "Men: < 0.90 | Women: < 0.80",
           "col3": "उपचर्म वसा वितरण संदर्भ सीमा"
         },
         {
-          "col1": "मध्यम जोखिम श्रेणी",
+          "col1": "श्रेणी / स्तर 2",
           "col2": "Men: 0.90 – 0.99 | Women: 0.80 – 0.84",
           "col3": "मध्यम पेट की वसा संदर्भ सीमा"
         },
         {
-          "col1": "उच्च जोखिम श्रेणी",
+          "col1": "श्रेणी / स्तर 3",
           "col2": "Men: ≥ 1.00 | Women: ≥ 0.85",
           "col3": "उच्च केंद्रीय वसा वितरण संदर्भ सीमा"
         }
@@ -6802,22 +6814,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "Lactantes (0–12 meses)",
+          "col1": "Categoría / Nivel 1",
           "col2": "0.25 m² – 0.35 m²",
           "col3": "Rango de referencia Infant population rango de referencia"
         },
         {
-          "col1": "Niños (1–12 años)",
+          "col1": "Categoría / Nivel 2",
           "col2": "0.50 m² – 1.07 m²",
           "col3": "Rango de referencia Child population rango de referencia"
         },
         {
-          "col1": "Promedio Mujeres Adultas",
+          "col1": "Categoría / Nivel 3",
           "col2": "1.60 m²",
           "col3": "Promedio poblacional en mujeres adultas"
         },
         {
-          "col1": "Promedio Hombres Adultos",
+          "col1": "Categoría / Nivel 4",
           "col2": "1.90 m²",
           "col3": "Promedio poblacional en hombres adultos"
         }
@@ -6826,7 +6838,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de superficie corporal (ASC) y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "¿Cómo se BSA calculated using the Mosteller equation?",
           "answer": "The Mosteller equation multiplies height in cm by weight in kg, divides by 3600, and takes the square root: BSA = √ (Height × Weight / 3600)."
@@ -6847,22 +6860,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "Nourrissons (0–12 mois)",
+          "col1": "Catégorie / Niveau 1",
           "col2": "0.25 m² – 0.35 m²",
           "col3": "Plage de référence Infant population plage de référence"
         },
         {
-          "col1": "Enfants (1–12 ans)",
+          "col1": "Catégorie / Niveau 2",
           "col2": "0.50 m² – 1.07 m²",
           "col3": "Plage de référence Child population plage de référence"
         },
         {
-          "col1": "Moyenne Femmes Adultes",
+          "col1": "Catégorie / Niveau 3",
           "col2": "1.60 m²",
           "col3": "Moyenne de la population féminine adulte"
         },
         {
-          "col1": "Moyenne Hommes Adultes",
+          "col1": "Catégorie / Niveau 4",
           "col2": "1.90 m²",
           "col3": "Moyenne de la population masculine adulte"
         }
@@ -6871,7 +6884,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de surface corporelle (BSA) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Comment est BSA calculated using the Mosteller equation?",
           "answer": "The Mosteller equation multiplies height in cm by weight in kg, divides by 3600, and takes the square root: BSA = √ (Height × Weight / 3600)."
@@ -6892,22 +6906,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Standard-Referenztabelle",
       "tableRows": [
         {
-          "col1": "Säuglinge (0–12 Monate)",
+          "col1": "Kategorie / Stufe 1",
           "col2": "0.25 m² – 0.35 m²",
           "col3": "Referenzbereich Infant population Referenzbereich"
         },
         {
-          "col1": "Kinder (1–12 Jahre)",
+          "col1": "Kategorie / Stufe 2",
           "col2": "0.50 m² – 1.07 m²",
           "col3": "Referenzbereich Child population Referenzbereich"
         },
         {
-          "col1": "Erwachsene Frauen (Durchschnitt)",
+          "col1": "Kategorie / Stufe 3",
           "col2": "1.60 m²",
           "col3": "Durchschnitt bei erwachsenen Frauen"
         },
         {
-          "col1": "Erwachsene Männer (Durchschnitt)",
+          "col1": "Kategorie / Stufe 4",
           "col2": "1.90 m²",
           "col3": "Durchschnitt bei erwachsenen Männern"
         }
@@ -6916,7 +6930,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Körperoberflächen-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Wie wird BSA calculated using the Mosteller equation?",
           "answer": "The Mosteller equation multiplies height in cm by weight in kg, divides by 3600, and takes the square root: BSA = √ (Height × Weight / 3600)."
@@ -6937,22 +6952,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "영아 (0–12개월)",
+          "col1": "범주 / 단계 1",
           "col2": "0.25 m² – 0.35 m²",
           "col3": "참조 범위 영아 인구 참고 기준"
         },
         {
-          "col1": "소아/어린이 (1–12세)",
+          "col1": "범주 / 단계 2",
           "col2": "0.50 m² – 1.07 m²",
           "col3": "참조 범위 소아 인구 참고 기준"
         },
         {
-          "col1": "성인 여성 평균",
+          "col1": "범주 / 단계 3",
           "col2": "1.60 m²",
           "col3": "성인 여성 인구 표준 평균"
         },
         {
-          "col1": "성인 남성 평균",
+          "col1": "범주 / 단계 4",
           "col2": "1.90 m²",
           "col3": "성인 남성 인구 표준 평균"
         }
@@ -6961,7 +6976,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "체표면적 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": " BSA calculated using the Mosteller equation? 안내 및 원리",
           "answer": "The Mosteller equation multiplies height in cm by weight in kg, divides by 3600, and takes the square root: BSA = √ (Height × Weight / 3600)."
@@ -6982,22 +6998,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "मानक संदर्भ तालिका",
       "tableRows": [
         {
-          "col1": "शिशु (0–12 महीने)",
+          "col1": "श्रेणी / स्तर 1",
           "col2": "0.25 m² – 0.35 m²",
           "col3": "संदर्भ सीमा शिशु जनसंख्या संदर्भ सीमा"
         },
         {
-          "col1": "बच्चे (1–12 वर्ष)",
+          "col1": "श्रेणी / स्तर 2",
           "col2": "0.50 m² – 1.07 m²",
           "col3": "संदर्भ सीमा बाल जनसंख्या संदर्भ सीमा"
         },
         {
-          "col1": "वयस्क महिला औसत",
+          "col1": "श्रेणी / स्तर 3",
           "col2": "1.60 m²",
           "col3": "वयस्क महिला जनसंख्या का मानक औसत"
         },
         {
-          "col1": "वयस्क पुरुष औसत",
+          "col1": "श्रेणी / स्तर 4",
           "col2": "1.90 m²",
           "col3": "वयस्क पुरुष जनसंख्या का मानक औसत"
         }
@@ -7095,27 +7111,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "Zona 1 (50% - 60% HRR)",
+          "col1": "Categoría / Nivel 1",
           "col2": "Active Recovery / Warmup",
           "col3": "Favorece la circulación sanguínea y recuperación pasiva"
         },
         {
-          "col1": "Zona 2 (60% - 70% HRR)",
+          "col1": "Categoría / Nivel 2",
           "col2": "Moderate Aerobic Training",
           "col3": "Base aeróbica y ejercicio de intensidad moderada"
         },
         {
-          "col1": "Zona 3 (70% - 80% HRR)",
+          "col1": "Categoría / Nivel 3",
           "col2": "Aerobic Endurance / Fitness",
           "col3": "Mejora la eficiencia cardiovascular y resistencia"
         },
         {
-          "col1": "Zona 4 (80% - 90% HRR)",
+          "col1": "Categoría / Nivel 4",
           "col2": "Anaerobic / Lactate Threshold",
           "col3": "Aumenta la tolerancia al ejercicio de alta intensidad"
         },
         {
-          "col1": "Zona 5 (90% - 100% HRR)",
+          "col1": "Categoría / Nivel 5",
           "col2": "Maximal VO2 Max Peak Power",
           "col3": "Velocidad neuromuscular y acondicionamiento de sprint"
         }
@@ -7124,7 +7140,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de zonas de frecuencia cardíaca y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "Cómo calculate target heart rate using the Karvonen formula?",
           "answer": "To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR estimate. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for moderate aerobic training). 4) Add your Resting HR back to get your target heart rate in BPM."
@@ -7153,27 +7170,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "Zone 1 (50% - 60% HRR)",
+          "col1": "Catégorie / Niveau 1",
           "col2": "Active Recovery / Warmup",
           "col3": "Favorise la circulation sanguine et la récupération passive"
         },
         {
-          "col1": "Zone 2 (60% - 70% HRR)",
+          "col1": "Catégorie / Niveau 2",
           "col2": "Moderate Aerobic Training",
           "col3": "Base aérobie et exercice d'intensité modérée"
         },
         {
-          "col1": "Zone 3 (70% - 80% HRR)",
+          "col1": "Catégorie / Niveau 3",
           "col2": "Aerobic Endurance / Fitness",
           "col3": "Améliore l'efficacité cardiovasculaire et l'endurance"
         },
         {
-          "col1": "Zone 4 (80% - 90% HRR)",
+          "col1": "Catégorie / Niveau 4",
           "col2": "Anaerobic / Lactate Threshold",
           "col3": "Augmente la tolérance à l'exercice de haute intensité"
         },
         {
-          "col1": "Zone 5 (90% - 100% HRR)",
+          "col1": "Catégorie / Niveau 5",
           "col2": "Maximal VO2 Max Peak Power",
           "col3": "Vitesse neuromusculaire et conditionnement au sprint"
         }
@@ -7182,7 +7199,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de zones de fréquence cardiaque et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Comment calculate target heart rate using the Karvonen formula?",
           "answer": "To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR estimate. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for moderate aerobic training). 4) Add your Resting HR back to get your target heart rate in BPM."
@@ -7211,27 +7229,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Standard-Referenztabelle",
       "tableRows": [
         {
-          "col1": "Zone 1 (50% - 60% HRR)",
+          "col1": "Kategorie / Stufe 1",
           "col2": "Active Recovery / Warmup",
           "col3": "Fördert die Durchblutung & passive Regeneration"
         },
         {
-          "col1": "Zone 2 (60% - 70% HRR)",
+          "col1": "Kategorie / Stufe 2",
           "col2": "Moderate Aerobic Training",
           "col3": "Für aerobes Basistraining & mäßige Intensität"
         },
         {
-          "col1": "Zone 3 (70% - 80% HRR)",
+          "col1": "Kategorie / Stufe 3",
           "col2": "Aerobic Endurance / Fitness",
           "col3": "Verbessert die kardiovaskuläre Effizienz & Ausdauer"
         },
         {
-          "col1": "Zone 4 (80% - 90% HRR)",
+          "col1": "Kategorie / Stufe 4",
           "col2": "Anaerobic / Lactate Threshold",
           "col3": "Erhöht die Toleranz für hochintensives Training"
         },
         {
-          "col1": "Zone 5 (90% - 100% HRR)",
+          "col1": "Kategorie / Stufe 5",
           "col2": "Maximal VO2 Max Peak Power",
           "col3": "Neuromuskuläre Schnelligkeit & Sprint-Konditionierung"
         }
@@ -7240,7 +7258,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Herzfrequenzzonen-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Wie man calculate target heart rate using the Karvonen formula?",
           "answer": "To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR estimate. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for moderate aerobic training). 4) Add your Resting HR back to get your target heart rate in BPM."
@@ -7269,27 +7288,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "1구간 (50% - 60% HRR)",
+          "col1": "범주 / 단계 1",
           "col2": "Active Recovery / Warmup",
           "col3": "혈액 순환 촉진 및 수동적 회복 지원"
         },
         {
-          "col1": "2구간 (60% - 70% HRR)",
+          "col1": "범주 / 단계 2",
           "col2": "Moderate Aerobic Training",
           "col3": "유산소 기초 훈련 및 중강도 운동에 주로 활용"
         },
         {
-          "col1": "3구간 (70% - 80% HRR)",
+          "col1": "범주 / 단계 3",
           "col2": "Aerobic Endurance / Fitness",
           "col3": "심혈관 효율성 및 지구력 향상"
         },
         {
-          "col1": "4구간 (80% - 90% HRR)",
+          "col1": "범주 / 단계 4",
           "col2": "Anaerobic / Lactate Threshold",
           "col3": "고강도 운동 지구력 향상"
         },
         {
-          "col1": "5구간 (90% - 100% HRR)",
+          "col1": "범주 / 단계 5",
           "col2": "Maximal VO2 Max Peak Power",
           "col3": "신경근 속도 및 최고 전력질주 훈련"
         }
@@ -7298,7 +7317,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "심박수 구간 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": " calculate target heart rate using the Karvonen formula? 안내 및 원리",
           "answer": "To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR estimate. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for moderate aerobic training). 4) Add your Resting HR back to get your target heart rate in BPM."
@@ -7327,27 +7347,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "मानक संदर्भ तालिका",
       "tableRows": [
         {
-          "col1": "ज़ोन 1 (50% - 60% HRR)",
+          "col1": "श्रेणी / स्तर 1",
           "col2": "Active Recovery / Warmup",
           "col3": "रक्त परिसंचरण और निष्क्रिय रिकवरी को बढ़ावा देता है"
         },
         {
-          "col1": "ज़ोन 2 (50% - 60% HRR)",
+          "col1": "श्रेणी / स्तर 2",
           "col2": "Moderate Aerobic Training",
           "col3": "एरोबिक आधार प्रशिक्षण और मध्यम तीव्रता वाले व्यायाम के लिए"
         },
         {
-          "col1": "ज़ोन 3 (70% - 80% HRR)",
+          "col1": "श्रेणी / स्तर 3",
           "col2": "Aerobic Endurance / Fitness",
           "col3": "हृदय दक्षता और सहनशक्ति में सुधार"
         },
         {
-          "col1": "ज़ोन 4 (80% - 90% HRR)",
+          "col1": "श्रेणी / स्तर 4",
           "col2": "Anaerobic / Lactate Threshold",
           "col3": "उच्च तीव्रता व्यायाम सहनशीलता बढ़ाता है"
         },
         {
-          "col1": "ज़ोन 5 (90% - 100% HRR)",
+          "col1": "श्रेणी / स्तर 5",
           "col2": "Maximal VO2 Max Peak Power",
           "col3": "न्यूरोमस्कुलर गति और स्प्रिंट कंडीशनिंग"
         }
@@ -7433,27 +7453,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "Zona 1: Recuperación Activa",
+          "col1": "Categoría / Nivel 1",
           "col2": "50% – 60% HRR",
           "col3": "Calentamiento, enfriamiento y recuperación activa"
         },
         {
-          "col1": "Zona 2: Resistencia y Quema de Grasa",
+          "col1": "Categoría / Nivel 2",
           "col2": "60% – 70% HRR",
           "col3": "Zona óptima para quema de grasa y base aeróbica"
         },
         {
-          "col1": "Zona 3: Aptitud Aeróbica",
+          "col1": "Categoría / Nivel 3",
           "col2": "70% – 80% HRR",
           "col3": "Mejora la capacidad cardiovascular y la resistencia"
         },
         {
-          "col1": "Zona 4: Umbral Anaeróbico",
+          "col1": "Categoría / Nivel 4",
           "col2": "80% – 90% HRR",
           "col3": "Mejora el rendimiento de alta intensidad y el umbral de lactato"
         },
         {
-          "col1": "Zona 5: Pico VO2 Máx",
+          "col1": "Categoría / Nivel 5",
           "col2": "90% – 100% HRR",
           "col3": "Velocidad máxima y entrenamiento a intervalos"
         }
@@ -7462,7 +7482,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de frecuencia cardíaca Karvonen y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "¿Por qué el método Karvonen considera la frecuencia cardíaca en reposo en lugar de solo 220 menos edad?",
           "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
@@ -7479,27 +7500,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "Zone 1 : Récupération Active",
+          "col1": "Catégorie / Niveau 1",
           "col2": "50% – 60% HRR",
           "col3": "Échauffement, retour au calme et récupération active"
         },
         {
-          "col1": "Zone 2 : Endurance & Perte de Gras",
+          "col1": "Catégorie / Niveau 2",
           "col2": "60% – 70% HRR",
           "col3": "Zone optimale pour la combustion des graisses et l'endurance"
         },
         {
-          "col1": "Zone 3 : Forme Aérobie",
+          "col1": "Catégorie / Niveau 3",
           "col2": "70% – 80% HRR",
           "col3": "Améliore la capacité cardiovasculaire et l'endurance"
         },
         {
-          "col1": "Zone 4 : Seuil Anaérobie",
+          "col1": "Catégorie / Niveau 4",
           "col2": "80% – 90% HRR",
           "col3": "Augmente les performances à haute intensité et le seuil de lactate"
         },
         {
-          "col1": "Zone 5 : Pic VO2 Max",
+          "col1": "Catégorie / Niveau 5",
           "col2": "90% – 100% HRR",
           "col3": "Vitesse maximale et entraînement par intervalles"
         }
@@ -7508,7 +7529,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de fréquence cardiaque Karvonen et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Pourquoi la méthode Karvonen prend-elle en compte la fréquence cardiaque au repos ?",
           "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
@@ -7525,27 +7547,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Standard-Referenztabelle",
       "tableRows": [
         {
-          "col1": "Zone 1: Aktive Erholung",
+          "col1": "Kategorie / Stufe 1",
           "col2": "50% – 60% HRR",
           "col3": "Aufwärmen, Abkühlen und aktive Erholung"
         },
         {
-          "col1": "Zone 2: Ausdauer & Fettverbrennung",
+          "col1": "Kategorie / Stufe 2",
           "col2": "60% – 70% HRR",
           "col3": "Optimale Zone für Fettverbrennung und aerobe Basis"
         },
         {
-          "col1": "Zone 3: Aerobe Fitness",
+          "col1": "Kategorie / Stufe 3",
           "col2": "70% – 80% HRR",
           "col3": "Verbessert die kardiovaskuläre Kapazität und Ausdauer"
         },
         {
-          "col1": "Zone 4: Anaerobe Schwelle",
+          "col1": "Kategorie / Stufe 4",
           "col2": "80% – 90% HRR",
           "col3": "Steigert die Hochleistungsfähigkeit und die Laktatschwelle"
         },
         {
-          "col1": "Zone 5: VO2 Max Spitzenbereich",
+          "col1": "Kategorie / Stufe 5",
           "col2": "90% – 100% HRR",
           "col3": "Maximalgeschwindigkeit und Intervalltraining"
         }
@@ -7554,7 +7576,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Karvonen-Herzfrequenz-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Warum berücksichtigt die Karvonen-Formel den Ruhepuls?",
           "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
@@ -7571,27 +7594,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "1구간: 능동적 회복",
+          "col1": "범주 / 단계 1",
           "col2": "50% – 60% HRR",
           "col3": "웜업, 쿨다운 및 적극적 회복"
         },
         {
-          "col1": "2구간: 지구력 및 지방 연소",
+          "col1": "범주 / 단계 2",
           "col2": "60% – 70% HRR",
           "col3": "지속 가능한 지방 연소 및 유산소 기초 형성을 위한 최적 구간"
         },
         {
-          "col1": "3구간: 유산소 피트니스",
+          "col1": "범주 / 단계 3",
           "col2": "70% – 80% HRR",
           "col3": "심혈관 능력 및 지구력 향상"
         },
         {
-          "col1": "4구간: 무산소 역치",
+          "col1": "범주 / 단계 4",
           "col2": "80% – 90% HRR",
           "col3": "고강도 운동 능력 및 젖산 역치 향상"
         },
         {
-          "col1": "5구간: 최대 산소 섭취량 (VO2 Max)",
+          "col1": "범주 / 단계 5",
           "col2": "90% – 100% HRR",
           "col3": "최고 속도 및 인터벌 훈련"
         }
@@ -7600,7 +7623,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "카르보넨 심박수 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "카르보넨 공식이 일반 220-나이 공식과 다른 점은 무엇인가요?",
           "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
@@ -7617,27 +7641,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "कार्वोनेन हार्ट रेट ट्रेनिंग ज़ोन तालिका",
       "tableRows": [
         {
-          "col1": "ज़ोन 1: सक्रिय रिकवरी",
+          "col1": "ज़ोन 1: रिकवरी",
           "col2": "50% – 60% HRR",
           "col3": "वार्म-अप और रिकवरी"
         },
         {
-          "col1": "ज़ोन 2: धीरज एवं वसा हानि",
+          "col1": "ज़ोन 2: फैट बर्न / एंड्योरेंस",
           "col2": "60% – 70% HRR",
           "col3": "वसा जलाने के लिए सर्वोत्तम ज़ोन"
         },
         {
-          "col1": "ज़ोन 3: एरोबिक फिटनेस",
+          "col1": "ज़ोन 3: एरोबिक कार्डियो",
           "col2": "70% – 80% HRR",
           "col3": "कार्डियो क्षमता में सुधार"
         },
         {
-          "col1": "ज़ोन 4: एनारोबिक सीमा",
+          "col1": "ज़ोन 4: एनएरोबिक थ्रेशोल्ड",
           "col2": "80% – 90% HRR",
           "col3": "सहनशक्ति में वृद्धि"
         },
         {
-          "col1": "ज़ोन 5: VO2 मैक्स शिखर",
+          "col1": "ज़ोन 5: VO2 मैक्स",
           "col2": "90% – 100% HRR",
           "col3": "अधिकतम तीव्रता अंतराल"
         }
@@ -7728,27 +7752,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "100% 1RM Fuerza Máxima",
+          "col1": "Categoría / Nivel 1",
           "col2": "1 Repetition",
           "col3": "Carga máxima absoluta de fuerza (100% 1RM)"
         },
         {
-          "col1": "90% 1RM Carga Pesada",
+          "col1": "Categoría / Nivel 2",
           "col2": "2 Repetitions",
           "col3": "Carga pesada de entrenamiento de fuerza (95% 1RM)"
         },
         {
-          "col1": "85% 1RM Desarrollo Fuerza",
+          "col1": "Categoría / Nivel 3",
           "col2": "3 Repetitions",
           "col3": "Series de fuerza y levantamiento (93% 1RM)"
         },
         {
-          "col1": "80% 1RM Hipertrofia",
+          "col1": "Categoría / Nivel 4",
           "col2": "5 Repetitions",
           "col3": "Rango de desarrollo de fuerza muscular (87% 1RM)"
         },
         {
-          "col1": "75% 1RM Resistencia Muscular",
+          "col1": "Categoría / Nivel 5",
           "col2": "7 Repetitions",
           "col3": "Rango de hipertrofia y construcción muscular (80% 1RM)"
         },
@@ -7762,7 +7786,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de 1RM (repetición máxima) y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
           "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
@@ -7779,27 +7804,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "100% 1RM Force Maximale",
+          "col1": "Catégorie / Niveau 1",
           "col2": "1 Repetition",
           "col3": "Charge maximale absolue de force (100% 1RM)"
         },
         {
-          "col1": "90% 1RM Charge Lourde",
+          "col1": "Catégorie / Niveau 2",
           "col2": "2 Repetitions",
           "col3": "Charge lourde d'entraînement de force (95% 1RM)"
         },
         {
-          "col1": "85% 1RM Développement Force",
+          "col1": "Catégorie / Niveau 3",
           "col2": "3 Repetitions",
           "col3": "Séries de force et d'haltérophilie (93% 1RM)"
         },
         {
-          "col1": "80% 1RM Hypertrophie",
+          "col1": "Catégorie / Niveau 4",
           "col2": "5 Repetitions",
           "col3": "Plage de développement de la force (87% 1RM)"
         },
         {
-          "col1": "75% 1RM Endurance Musculaire",
+          "col1": "Catégorie / Niveau 5",
           "col2": "7 Repetitions",
           "col3": "Plage de construction musculaire (80% 1RM)"
         },
@@ -7813,7 +7838,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de 1RM (charge maximale) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
           "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
@@ -7830,32 +7856,32 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Standard-Referenztabelle",
       "tableRows": [
         {
-          "col1": "100% 1RM Maximalkraft",
+          "col1": "Kategorie / Stufe 1",
           "col2": "1 Repetition",
           "col3": "Maximale Kraftleistung (100% 1RM)"
         },
         {
-          "col1": "95% 1RM Schwere Last",
+          "col1": "Kategorie / Stufe 2",
           "col2": "2 Repetitions",
           "col3": "Schwere Krafttraining-Belastung (95% 1RM)"
         },
         {
-          "col1": "90% 1RM Kraftaufbau",
+          "col1": "Kategorie / Stufe 3",
           "col2": "3 Repetitions",
           "col3": "Kraftsätze für Maximalkraft (93% 1RM)"
         },
         {
-          "col1": "85% 1RM Muskelaufbau",
+          "col1": "Kategorie / Stufe 4",
           "col2": "5 Repetitions",
           "col3": "Bereich für schweren Kraftaufbau (87% 1RM)"
         },
         {
-          "col1": "80% 1RM Hypertrophie",
+          "col1": "Kategorie / Stufe 5",
           "col2": "7 Repetitions",
           "col3": "Bereich für Muskelaufbau (80% 1RM)"
         },
         {
-          "col1": "75% 1RM Kraftausdauer",
+          "col1": "Kategorie / Stufe 6",
           "col2": "10 Repetitions",
           "col3": "Muskelausdauer und Volumen-Hypertrophie (75% 1RM)"
         }
@@ -7864,7 +7890,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der 1RM-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
           "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
@@ -7881,32 +7908,32 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "100% 1RM 최대 기준",
+          "col1": "범주 / 단계 1",
           "col2": "1 Repetition",
           "col3": "단일 최고 근력 측정 구간 (100% 1RM)"
         },
         {
-          "col1": "95% 1RM 고부하",
+          "col1": "범주 / 단계 2",
           "col2": "2 Repetitions",
           "col3": "고중량 근력 훈련 구간 (95% 1RM)"
         },
         {
-          "col1": "90% 1RM 근력 향상",
+          "col1": "범주 / 단계 3",
           "col2": "3 Repetitions",
           "col3": "파워 리프팅 세트 구간 (93% 1RM)"
         },
         {
-          "col1": "85% 1RM 근비대",
+          "col1": "범주 / 단계 4",
           "col2": "5 Repetitions",
           "col3": "고중량 근력 발달 구간 (87% 1RM)"
         },
         {
-          "col1": "80% 1RM 하이퍼트로피",
+          "col1": "범주 / 단계 5",
           "col2": "7 Repetitions",
           "col3": "근비대 집중 훈련 구간 (80% 1RM)"
         },
         {
-          "col1": "75% 1RM 근지구력",
+          "col1": "범주 / 단계 6",
           "col2": "10 Repetitions",
           "col3": "근지구력 및 볼륨 훈련 구간 (75% 1RM)"
         }
@@ -7915,7 +7942,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "1RM 1회 최대 중량 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": "1RM 계산기는 벤치프레스, 스쿼트, 데드리프트 측정 시 유용한가요?",
           "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
@@ -7932,32 +7960,32 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "1RM प्रतिशत प्रशिक्षण तालिका",
       "tableRows": [
         {
-          "col1": "100% 1RM अधिकतम शक्ति",
+          "col1": "100% 1RM",
           "col2": "1 रेप",
           "col3": "अधिकतम क्षमता"
         },
         {
-          "col1": "95% 1RM भारी भार",
+          "col1": "90% 1RM",
           "col2": "3 रेप्स",
           "col3": "भारी स्ट्रेंथ लोड"
         },
         {
-          "col1": "90% 1RM शक्ति विकास",
+          "col1": "85% 1RM",
           "col2": "5 रेप्स",
           "col3": "मांसपेशी वृद्धि"
         },
         {
-          "col1": "85% 1RM मांसपेशी वृद्धि",
+          "col1": "75% 1RM",
           "col2": "10 रेप्स",
           "col3": "वॉल्यूम ट्रेनिंग"
         },
         {
-          "col1": "80% 1RM हाइपरट्रॉफी",
+          "col1": "श्रेणी / स्तर 5",
           "col2": "7 Repetitions",
           "col3": "हाइपरट्रॉफी मांसपेशी निर्माण सीमा"
         },
         {
-          "col1": "75% 1RM मांसपेशी धीरज",
+          "col1": "श्रेणी / स्तर 6",
           "col2": "10 Repetitions",
           "col3": "वॉल्यूम हाइपरट्रॉफी और सहनशक्ति"
         }
@@ -8055,27 +8083,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "100% 1RM Fuerza Máxima",
+          "col1": "Categoría / Nivel 1",
           "col2": "1 Repetition",
           "col3": "Estimación de fuerza máxima para una sola repetición"
         },
         {
-          "col1": "90% 1RM Carga Pesada",
+          "col1": "Categoría / Nivel 2",
           "col2": "3 Repetitions",
           "col3": "Desarrollo de fuerza pesada y adaptación neural"
         },
         {
-          "col1": "85% 1RM Desarrollo Fuerza",
+          "col1": "Categoría / Nivel 3",
           "col2": "5 – 6 Repetitions",
           "col3": "Fuerza básica en ejercicios compuestos (protocolo 5x5)"
         },
         {
-          "col1": "75% 1RM Hipertrofia",
+          "col1": "Categoría / Nivel 4",
           "col2": "10 Repetitions",
           "col3": "Volumen de hipertrofia y acondicionamiento metabólico"
         },
         {
-          "col1": "65% 1RM Resistencia Muscular",
+          "col1": "Categoría / Nivel 5",
           "col2": "15 Repetitions",
           "col3": "Resistencia muscular y series de recuperación activa"
         }
@@ -8084,7 +8112,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de repetición máxima (1RM) y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "Cómo calculate 1 rep max bench press using the Epley formula?",
           "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
@@ -8113,27 +8142,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "100% 1RM Force Maximale",
+          "col1": "Catégorie / Niveau 1",
           "col2": "1 Repetition",
           "col3": "Estimation de la force maximale sur une seule répétition"
         },
         {
-          "col1": "90% 1RM Charge Lourde",
+          "col1": "Catégorie / Niveau 2",
           "col2": "3 Repetitions",
           "col3": "Force lourde et adaptation neurale"
         },
         {
-          "col1": "85% 1RM Développement Force",
+          "col1": "Catégorie / Niveau 3",
           "col2": "5 – 6 Repetitions",
           "col3": "Force globale sur mouvements de base (protocoles 5x5)"
         },
         {
-          "col1": "75% 1RM Hypertrophie",
+          "col1": "Catégorie / Niveau 4",
           "col2": "10 Repetitions",
           "col3": "Volume d'hypertrophie et conditionnement métabolique"
         },
         {
-          "col1": "65% 1RM Endurance Musculaire",
+          "col1": "Catégorie / Niveau 5",
           "col2": "15 Repetitions",
           "col3": "Endurance musculaire et séries de récupération active"
         }
@@ -8142,7 +8171,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de répétition maximale (1RM) et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Comment calculate 1 rep max bench press using the Epley formula?",
           "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
@@ -8171,27 +8201,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Standard-Referenztabelle",
       "tableRows": [
         {
-          "col1": "100% 1RM Maximalkraft",
+          "col1": "Kategorie / Stufe 1",
           "col2": "1 Repetition",
           "col3": "Schätzung der maximalen Maximalkraft (1 Wdh.)"
         },
         {
-          "col1": "90% 1RM Schwere Last",
+          "col1": "Kategorie / Stufe 2",
           "col2": "3 Repetitions",
           "col3": "Schwerer Kraftaufbau & neuronale Anpassung"
         },
         {
-          "col1": "85% 1RM Kraftaufbau",
+          "col1": "Kategorie / Stufe 3",
           "col2": "5 – 6 Repetitions",
           "col3": "Grundkraft bei Mehrgelenksübungen (5x5-System)"
         },
         {
-          "col1": "75% 1RM Hypertrophie",
+          "col1": "Kategorie / Stufe 4",
           "col2": "10 Repetitions",
           "col3": "Volumen-Hypertrophie & metabolisches Training"
         },
         {
-          "col1": "65% 1RM Kraftausdauer",
+          "col1": "Kategorie / Stufe 5",
           "col2": "15 Repetitions",
           "col3": "Kraftausdauer und aktive Erholungssätze"
         }
@@ -8200,7 +8230,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Maximalkraft-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Wie man calculate 1 rep max bench press using the Epley formula?",
           "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
@@ -8229,27 +8260,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "100% 1RM 최대 기준",
+          "col1": "범주 / 단계 1",
           "col2": "1 Repetition",
           "col3": "1회 최대 반복 근력 추정치"
         },
         {
-          "col1": "90% 1RM 고부하",
+          "col1": "범주 / 단계 2",
           "col2": "3 Repetitions",
           "col3": "고중량 근력 강화 및 신경계 적응"
         },
         {
-          "col1": "85% 1RM 근력 향상",
+          "col1": "범주 / 단계 3",
           "col2": "5 – 6 Repetitions",
           "col3": "복합 다관절 운동의 기본 근력 훈련 (5x5 방식)"
         },
         {
-          "col1": "75% 1RM 근비대",
+          "col1": "범주 / 단계 4",
           "col2": "10 Repetitions",
           "col3": "볼륨 근비대 및 대사 조절 훈련"
         },
         {
-          "col1": "65% 1RM 근지구력",
+          "col1": "범주 / 단계 5",
           "col2": "15 Repetitions",
           "col3": "근지구력 및 적극적 회복 세트"
         }
@@ -8258,7 +8289,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "최대 수축력 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": " calculate 1 rep max bench press using the Epley formula? 안내 및 원리",
           "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
@@ -8287,27 +8319,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "मानक संदर्भ तालिका",
       "tableRows": [
         {
-          "col1": "100% 1RM अधिकतम शक्ति",
+          "col1": "श्रेणी / स्तर 1",
           "col2": "1 Repetition",
           "col3": "अधिकतम एकल प्रतिनिधि शक्ति क्षमता अनुमान"
         },
         {
-          "col1": "90% 1RM भारी भार",
+          "col1": "श्रेणी / स्तर 2",
           "col2": "3 Repetitions",
           "col3": "भारी शक्ति निर्माण और तंत्रिका अनुकूलन"
         },
         {
-          "col1": "85% 1RM शक्ति विकास",
+          "col1": "श्रेणी / स्तर 3",
           "col2": "5 – 6 Repetitions",
           "col3": "संयुक्त शक्ति निर्माण और 5x5 प्रोटोकॉल"
         },
         {
-          "col1": "75% 1RM मांसपेशी वृद्धि",
+          "col1": "श्रेणी / स्तर 4",
           "col2": "10 Repetitions",
           "col3": "हाइपरट्रॉफी वॉल्यूम और मेटाबॉलिक कंडीशनिंग"
         },
         {
-          "col1": "65% 1RM मांसपेशी धीरज",
+          "col1": "श्रेणी / स्तर 5",
           "col2": "15 Repetitions",
           "col3": "मांसपेशियों की सहनशक्ति और सक्रिय रिकवरी सेट"
         }
@@ -8393,17 +8425,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "Bajo peso pregestacional (< 18.5)",
+          "col1": "Categoría / Nivel 1",
           "col2": "12.5 – 18.0 kg (28 - 40 lbs)",
           "col3": "~0.5 kg / semana en el 2.º y 3.er trimestre"
         },
         {
-          "col1": "IMC Normal (18.5–24.9)",
+          "col1": "Categoría / Nivel 2",
           "col2": "11.5 – 16.0 kg (25 - 35 lbs)",
           "col3": "~0.4 kg / semana en el 2.º y 3.er trimestre"
         },
         {
-          "col1": "Sobrepeso (25.0–29.9)",
+          "col1": "Categoría / Nivel 3",
           "col2": "7.0 – 11.5 kg (15 - 25 lbs)",
           "col3": "~0.3 kg / semana en el 2.º y 3.er trimestre"
         }
@@ -8412,7 +8444,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Cómo funciona la calculadora de aumento de peso en el embarazo y qué mide?",
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
-        },
+        }
+      ,
         {
           "question": "Cómo calculate healthy pregnancy weight gain week by week?",
           "answer": "To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), reference target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters."
@@ -8440,17 +8473,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tableau de Référence Standard",
       "tableRows": [
         {
-          "col1": "Insuffisance pondérale avant grossesse (< 18.5)",
+          "col1": "Catégorie / Niveau 1",
           "col2": "12.5 – 18.0 kg (28 - 40 lbs)",
           "col3": "~0,5 kg / semaine au 2e et 3e trimestre"
         },
         {
-          "col1": "IMC Normal (18.5–24.9)",
+          "col1": "Catégorie / Niveau 2",
           "col2": "11.5 – 16.0 kg (25 - 35 lbs)",
           "col3": "~0,4 kg / semaine au 2e et 3e trimestre"
         },
         {
-          "col1": "Surpoids (25.0–29.9)",
+          "col1": "Catégorie / Niveau 3",
           "col2": "7.0 – 11.5 kg (15 - 25 lbs)",
           "col3": "~0,3 kg / semaine au 2e et 3e trimestre"
         }
@@ -8459,7 +8492,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Comment fonctionne le calculateur de prise de poids pendant la grossesse et que mesure-t-il ?",
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
-        },
+        }
+      ,
         {
           "question": "Comment calculate healthy pregnancy weight gain week by week?",
           "answer": "To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), reference target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters."
@@ -8487,17 +8521,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Standard-Referenztabelle",
       "tableRows": [
         {
-          "col1": "Untergewicht vor Schwangerschaft (< 18.5)",
+          "col1": "Kategorie / Stufe 1",
           "col2": "12.5 – 18.0 kg (28 - 40 lbs)",
           "col3": "~0,5 kg / Woche im 2. und 3. Trimester"
         },
         {
-          "col1": "Normalgewicht (18.5–24.9)",
+          "col1": "Kategorie / Stufe 2",
           "col2": "11.5 – 16.0 kg (25 - 35 lbs)",
           "col3": "~0,4 kg / Woche im 2. und 3. Trimester"
         },
         {
-          "col1": "Übergewicht (25.0–29.9)",
+          "col1": "Kategorie / Stufe 3",
           "col2": "7.0 – 11.5 kg (15 - 25 lbs)",
           "col3": "~0,3 kg / Woche im 2. und 3. Trimester"
         }
@@ -8506,7 +8540,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Wie funktioniert der Schwangerschaftsgewichts-Rechner und was misst er?",
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
-        },
+        }
+      ,
         {
           "question": "Wie man calculate healthy pregnancy weight gain week by week?",
           "answer": "To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), reference target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters."
@@ -8534,17 +8569,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "임신 전 저체중 (< 18.5)",
+          "col1": "범주 / 단계 1",
           "col2": "12.5 – 18.0 kg (28 - 40 lbs)",
           "col3": "임신 2/3분기 주당 약 0.5kg"
         },
         {
-          "col1": "정상 BMI (18.5–24.9)",
+          "col1": "범주 / 단계 2",
           "col2": "11.5 – 16.0 kg (25 - 35 lbs)",
           "col3": "임신 2/3분기 주당 약 0.4kg"
         },
         {
-          "col1": "과체중 (25.0–29.9)",
+          "col1": "범주 / 단계 3",
           "col2": "7.0 – 11.5 kg (15 - 25 lbs)",
           "col3": "임신 2/3분기 주당 약 0.3kg"
         }
@@ -8553,7 +8588,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "임신 중 체중 증가 계산기의 원리와 측정 항목은 무엇인가요?",
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
-        },
+        }
+      ,
         {
           "question": " calculate healthy pregnancy weight gain week by week? 안내 및 원리",
           "answer": "To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), reference target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters."
@@ -8581,17 +8617,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "मानक संदर्भ तालिका",
       "tableRows": [
         {
-          "col1": "गर्भावस्था पूर्व कम वजन (< 18.5)",
+          "col1": "श्रेणी / स्तर 1",
           "col2": "12.5 – 18.0 kg (28 - 40 lbs)",
           "col3": "दूसरी/तीसरी तिमाही में ~0.5 किग्रा/सप्ताह"
         },
         {
-          "col1": "सामान्य बीएमआई (18.5–24.9)",
+          "col1": "श्रेणी / स्तर 2",
           "col2": "11.5 – 16.0 kg (25 - 35 lbs)",
           "col3": "दूसरी/तीसरी तिमाही में ~0.4 किग्रा/सप्ताह"
         },
         {
-          "col1": "अधिक वजन (25.0–29.9)",
+          "col1": "श्रेणी / स्तर 3",
           "col2": "7.0 – 11.5 kg (15 - 25 lbs)",
           "col3": "दूसरी/तीसरी तिमाही में ~0.3 किग्रा/सप्ताह"
         }
@@ -8621,3 +8657,5 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     }
   }
 };
+
+module.exports = { seoDatabaseData };

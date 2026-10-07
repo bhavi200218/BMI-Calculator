@@ -16,17 +16,27 @@ const enData = seoDatabase[effectiveSlug]?.['en'] || seoDatabase['bmi-calculator
 const langFallback = seoDatabase[effectiveSlug]?.[lang] || seoDatabase['bmi-calculator']?.[lang] || enData;
 const rawData = seoDatabase[effectiveSlug]?.[lang] || langFallback;
 
+// Deduplicate FAQs by question text
+const rawFaqs = (rawData.faqs && rawData.faqs.length > 0) ? rawData.faqs : langFallback.faqs;
+const uniqueFaqMap = new Map<string, { question: string; answer: string }>();
+(rawFaqs || []).forEach((faq: { question: string; answer: string }) => {
+  if (faq && faq.question && !uniqueFaqMap.has(faq.question.trim())) {
+    uniqueFaqMap.set(faq.question.trim(), faq);
+  }
+});
+const uniqueFaqs = Array.from(uniqueFaqMap.values());
+
 const currentData: ToolContent = {
   ...langFallback,
   ...rawData,
   tableRows: (rawData.tableRows && rawData.tableRows.length > 0) ? rawData.tableRows : langFallback.tableRows,
-  faqs: (rawData.faqs && rawData.faqs.length > 0) ? rawData.faqs : langFallback.faqs
+  faqs: uniqueFaqs
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": (currentData.faqs || []).map((faq: { question: string; answer: string }) => ({
+  "mainEntity": uniqueFaqs.map((faq: { question: string; answer: string }) => ({
     "@type": "Question",
     "name": faq.question,
     "acceptedAnswer": {

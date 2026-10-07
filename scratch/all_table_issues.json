@@ -1,0 +1,3278 @@
+[
+  {
+    "slug": "bmi-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia de bajo peso"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia de peso saludable"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia de sobrepeso (Corte asiático: 23.0 kg/m²)"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia de obesidad clase I"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Rango de referencia de obesidad clase II"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "es",
+    "row": 5,
+    "col": "col3",
+    "text": "Rango de referencia de obesidad clase III"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence de sous-poids"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence de poids normal"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence de surpoids (Seuil asiatique : 23.0 kg/m²)"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence d'obésité classe I"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de référence d'obésité classe II"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "fr",
+    "row": 5,
+    "col": "col3",
+    "text": "Plage de référence d'obésité classe III"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich Untergewicht"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Normalgewicht"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Übergewicht (Asiatischer Wert: 23.0 kg/m²)"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich Adipositas Klasse I"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Referenzbereich Adipositas Klasse II"
+  },
+  {
+    "slug": "bmi-calculator",
+    "lang": "de",
+    "row": 5,
+    "col": "col3",
+    "text": "Referenzbereich Adipositas Klasse III"
+  },
+  {
+    "slug": "3d-bmi-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "El IMC 3D compensa la estatura menor adecuadamente"
+  },
+  {
+    "slug": "3d-bmi-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Sin diferencia entre la fórmula 2D y 3D"
+  },
+  {
+    "slug": "3d-bmi-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "El IMC 3D ajusta el volumen tridimensional real"
+  },
+  {
+    "slug": "3d-bmi-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "L'IMC 3D réajuste le score proportionnellement"
+  },
+  {
+    "slug": "3d-bmi-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Aucune différence de catégorie"
+  },
+  {
+    "slug": "3d-bmi-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "L'IMC 3D corrige la distorsion volumétrique"
+  },
+  {
+    "slug": "3d-bmi-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "3D-Formel gleicht die Körpergröße aus"
+  },
+  {
+    "slug": "3d-bmi-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Kein Unterschied in der Kategorie"
+  },
+  {
+    "slug": "3d-bmi-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "3D-Formel berücksichtigt das dreidimensionale Volumen"
+  },
+  {
+    "slug": "3d-bmi-calculator",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "3D फॉर्मूला 3D आयतन (Volume) को संतुलित करता है"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Umbral de referencia para bajo peso severo"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Umbral de referencia para bajo peso moderado"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Umbral de referencia para bajo peso leve"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia Optimal healthy baseline range for adults"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Rango de referencia Overweight rango de referencia (Asian cutoff: 23.0 kg/m²)"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "es",
+    "row": 5,
+    "col": "col3",
+    "text": "Rango de referencia Class I obesity screening reference"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "es",
+    "row": 6,
+    "col": "col3",
+    "text": "Rango de referencia Class II obesity screening reference"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "es",
+    "row": 7,
+    "col": "col3",
+    "text": "Umbral de evaluación para obesidad severa Clase III"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Seuil de référence pour insuffisance pondérale sévère"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Seuil de référence pour insuffisance pondérale modérée"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Seuil de référence pour insuffisance pondérale légère"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence Optimal healthy baseline range for adults"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de référence Overweight plage de référence (Asian cutoff: 23.0 kg/m²)"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "fr",
+    "row": 5,
+    "col": "col3",
+    "text": "Plage de référence Class I obesity screening reference"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "fr",
+    "row": 6,
+    "col": "col3",
+    "text": "Plage de référence Class II obesity screening reference"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "fr",
+    "row": 7,
+    "col": "col3",
+    "text": "Seuil d'évaluation de l'obésité sévère de classe III"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzwert für starkes Untergewicht"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzwert für mäßiges Untergewicht"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzwert für leichtes Untergewicht"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich Optimal healthy baseline range for adults"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Referenzbereich Overweight Referenzbereich (Asian cutoff: 23.0 kg/m²)"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "de",
+    "row": 5,
+    "col": "col3",
+    "text": "Referenzbereich Class I obesity screening reference"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "de",
+    "row": 6,
+    "col": "col3",
+    "text": "Referenzbereich Class II obesity screening reference"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "de",
+    "row": 7,
+    "col": "col3",
+    "text": "Schwellenwert für schwere Adipositas Klasse III"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "ko",
+    "row": 3,
+    "col": "col3",
+    "text": "참조 범위 Optimal healthy baseline range for adults"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "ko",
+    "row": 4,
+    "col": "col3",
+    "text": "참조 범위 Overweight 참조 범위 (Asian cutoff: 23.0 kg/m²)"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "ko",
+    "row": 5,
+    "col": "col3",
+    "text": "참조 범위 Class I obesity screening reference"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "ko",
+    "row": 6,
+    "col": "col3",
+    "text": "참조 범위 Class II obesity screening reference"
+  },
+  {
+    "slug": "bmi-chart",
+    "lang": "hi",
+    "row": 6,
+    "col": "col3",
+    "text": "संदर्भ सीमा Class II obesity screening reference"
+  },
+  {
+    "slug": "3d-body-visualizer",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "El IMC 3D compensa la estatura menor adecuadamente"
+  },
+  {
+    "slug": "3d-body-visualizer",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Sin diferencia entre la fórmula 2D y 3D"
+  },
+  {
+    "slug": "3d-body-visualizer",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "El IMC 3D ajusta el volumen tridimensional real"
+  },
+  {
+    "slug": "3d-body-visualizer",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "L'IMC 3D réajuste le score proportionnellement"
+  },
+  {
+    "slug": "3d-body-visualizer",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Aucune différence de catégorie"
+  },
+  {
+    "slug": "3d-body-visualizer",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "L'IMC 3D corrige la distorsion volumétrique"
+  },
+  {
+    "slug": "3d-body-visualizer",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "3D-Formel gleicht die Körpergröße aus"
+  },
+  {
+    "slug": "3d-body-visualizer",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Kein Unterschied in der Kategorie"
+  },
+  {
+    "slug": "3d-body-visualizer",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "3D-Formel berücksichtigt das dreidimensionale Volumen"
+  },
+  {
+    "slug": "3d-body-visualizer",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "3D फॉर्मूला 3D आयतन (Volume) को संतुलित करता है"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Umbral de referencia para bajo peso"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango saludable óptimo para adultos indios"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Umbral de riesgo cardiometabólico elevado (Corte de IMC 23)"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Clasificación de obesidad Clase I según OMS Asia-Pacífico"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Clasificación de obesidad severa de alto riesgo"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Seuil de référence d'insuffisance pondérale"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de poids santé optimale pour les adultes indiens"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Seuil de risque cardiométabolique accru (IMC ≥ 23)"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Obésité de classe I selon les critères OMS Asie-Pacifique"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Classification d'obésité sévére à haut risque"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich für Untergewicht"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Optimaler gesunder BMI-Bereich für indische Erwachsene"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Grenzwert für erhöhtes kardiometabolisches Risiko (BMI 23)"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Adipositas Klasse I nach WHO Südostasien-Kriterien"
+  },
+  {
+    "slug": "bmi-calculator-india",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Klassifizierung für schwere Adipositas"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Umbral de referencia para peso bajo"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango saludable óptimo para adultos indios"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Umbral de riesgo cardiometabólico elevado para indios"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Umbral de obesidad clase I según estándares ICMR"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Umbral de riesgo de obesidad severa"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Seuil de référence pour l'insuffisance pondérale"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage saine optimale pour les adultes indiens"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Seuil de risque cardiométabolique accru pour les Indiens"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Seuil d'obésité de classe I selon les normes ICMR"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Seuil de risque d'obésité sévère"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich für Untergewicht"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Optimaler gesunder Bereich für indische Erwachsene"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Grenzwert für erhöhtes kardiometabolisches Risiko"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Adipositas Klasse I Schwellenwert nach ICMR-Standards"
+  },
+  {
+    "slug": "bmi-calculator-for-indians",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Schwellenwert für schwere Adipositas"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia Ideal Devine Weight: Male ~43.2 kg | Female ~36.3 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia Ideal Devine Weight: Male ~50.0 kg | Female ~45.5 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia Ideal Devine Weight: Male ~54.6 kg | Female ~50.1 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia Ideal Devine Weight: Male ~59.2 kg | Female ~54.7 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Rango de referencia Ideal Devine Weight: Male ~63.8 kg | Female ~59.3 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "es",
+    "row": 5,
+    "col": "col3",
+    "text": "Rango de referencia Ideal Devine Weight: Male ~68.4 kg | Female ~63.9 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "es",
+    "row": 6,
+    "col": "col3",
+    "text": "Rango de referencia Ideal Devine Weight: Male ~73.0 kg | Female ~68.5 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "es",
+    "row": 7,
+    "col": "col3",
+    "text": "Rango de referencia Ideal Devine Weight: Male ~77.6 kg | Female ~73.1 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "es",
+    "row": 8,
+    "col": "col3",
+    "text": "Rango de referencia Ideal Devine Weight: Male ~82.2 kg | Female ~77.7 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence Ideal Devine Weight: Male ~43.2 kg | Female ~36.3 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence Ideal Devine Weight: Male ~50.0 kg | Female ~45.5 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence Ideal Devine Weight: Male ~54.6 kg | Female ~50.1 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence Ideal Devine Weight: Male ~59.2 kg | Female ~54.7 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de référence Ideal Devine Weight: Male ~63.8 kg | Female ~59.3 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "fr",
+    "row": 5,
+    "col": "col3",
+    "text": "Plage de référence Ideal Devine Weight: Male ~68.4 kg | Female ~63.9 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "fr",
+    "row": 6,
+    "col": "col3",
+    "text": "Plage de référence Ideal Devine Weight: Male ~73.0 kg | Female ~68.5 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "fr",
+    "row": 7,
+    "col": "col3",
+    "text": "Plage de référence Ideal Devine Weight: Male ~77.6 kg | Female ~73.1 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "fr",
+    "row": 8,
+    "col": "col3",
+    "text": "Plage de référence Ideal Devine Weight: Male ~82.2 kg | Female ~77.7 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich Ideal Devine Weight: Male ~43.2 kg | Female ~36.3 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Ideal Devine Weight: Male ~50.0 kg | Female ~45.5 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Ideal Devine Weight: Male ~54.6 kg | Female ~50.1 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich Ideal Devine Weight: Male ~59.2 kg | Female ~54.7 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Referenzbereich Ideal Devine Weight: Male ~63.8 kg | Female ~59.3 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "de",
+    "row": 5,
+    "col": "col3",
+    "text": "Referenzbereich Ideal Devine Weight: Male ~68.4 kg | Female ~63.9 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "de",
+    "row": 6,
+    "col": "col3",
+    "text": "Referenzbereich Ideal Devine Weight: Male ~73.0 kg | Female ~68.5 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "de",
+    "row": 7,
+    "col": "col3",
+    "text": "Referenzbereich Ideal Devine Weight: Male ~77.6 kg | Female ~73.1 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "de",
+    "row": 8,
+    "col": "col3",
+    "text": "Referenzbereich Ideal Devine Weight: Male ~82.2 kg | Female ~77.7 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 Ideal Devine Weight: Male ~43.2 kg | Female ~36.3 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 Ideal Devine Weight: Male ~50.0 kg | Female ~45.5 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 Ideal Devine Weight: Male ~54.6 kg | Female ~50.1 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "ko",
+    "row": 3,
+    "col": "col3",
+    "text": "참조 범위 Ideal Devine Weight: Male ~59.2 kg | Female ~54.7 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "ko",
+    "row": 4,
+    "col": "col3",
+    "text": "참조 범위 Ideal Devine Weight: Male ~63.8 kg | Female ~59.3 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "ko",
+    "row": 5,
+    "col": "col3",
+    "text": "참조 범위 Ideal Devine Weight: Male ~68.4 kg | Female ~63.9 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "ko",
+    "row": 6,
+    "col": "col3",
+    "text": "참조 범위 Ideal Devine Weight: Male ~73.0 kg | Female ~68.5 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "ko",
+    "row": 7,
+    "col": "col3",
+    "text": "참조 범위 Ideal Devine Weight: Male ~77.6 kg | Female ~73.1 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "ko",
+    "row": 8,
+    "col": "col3",
+    "text": "참조 범위 Ideal Devine Weight: Male ~82.2 kg | Female ~77.7 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "hi",
+    "row": 7,
+    "col": "col3",
+    "text": "संदर्भ सीमा Ideal Devine Weight: Male ~77.6 kg | Female ~73.1 kg"
+  },
+  {
+    "slug": "healthy-weight-by-height",
+    "lang": "hi",
+    "row": 8,
+    "col": "col3",
+    "text": "संदर्भ सीमा Ideal Devine Weight: Male ~82.2 kg | Female ~77.7 kg"
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Rango de referencia "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de référence "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich "
+  },
+  {
+    "slug": "diabetes-risk-calculator",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Referenzbereich "
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia de peso bajo"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango saludable de referencia para la población asiática"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Límite de acción y riesgo elevado en población asiática"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Clasificación de alto riesgo de obesidad en población asiática"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence de sous-poids"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de poids santé de référence pour la population asiatique"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Seuil d'action et de risque élevé pour la population asiatique"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Classification d'obésité à haut risque pour la population asiatique"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich für Untergewicht"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich für gesundes Gewicht bei asiatischen Erwachsenen"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Aktionsgrenzwert für asiatische Bevölkerungsgruppen"
+  },
+  {
+    "slug": "asian-bmi-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Klassifizierung für hohes Adipositas-Risiko"
+  },
+  {
+    "slug": "bmr-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Estándar recomendado para estimación de BMR"
+  },
+  {
+    "slug": "bmr-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Referencia histórica para BMR"
+  },
+  {
+    "slug": "bmr-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Calcula la tasa metabólica basal utilizando la masa corporal magra (LBM)"
+  },
+  {
+    "slug": "bmr-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Standard recommandé pour l'estimation du BMR"
+  },
+  {
+    "slug": "bmr-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Équation historique de référence"
+  },
+  {
+    "slug": "bmr-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Calcule l'estimation du BMR à l'aide de la masse corporelle maigre (LBM)"
+  },
+  {
+    "slug": "bmr-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Standard-Referenz für die BMR-Berechnung"
+  },
+  {
+    "slug": "bmr-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Historische Vergleichsformel"
+  },
+  {
+    "slug": "bmr-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Berechnet die BMR-Schätzung anhand der mageren Körpermasse (LBM)"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Trabajo de escritorio, poco o ningún ejercicio"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Ejercicio ligero 1–3 días a la semana"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Ejercicio moderado 3–5 días a la semana"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Ejercicio intenso 6–7 días a la semana"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Referencia de ejemplo para planificación de peso"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Travail de bureau, peu ou pas d'exercice"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Exercice léger 1–3 jours par semaine"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Exercice modéré 3–5 jours par semaine"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Exercice intense 6–7 jours par semaine"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de référence Example reference for weight-management planning"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Bürotätigkeit, kaum oder kein Sport"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Leichter Sport 1–3 Tage pro Woche"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Moderater Sport 3–5 Tage pro Woche"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Intensiver Sport 6–7 Tage pro Woche"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Referenzbereich Example reference for weight-management planning"
+  },
+  {
+    "slug": "tdee-calculator",
+    "lang": "ko",
+    "row": 4,
+    "col": "col3",
+    "text": "참조 범위 Example reference for weight-management planning"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia Preserves current body weight and energy balance"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia Mathematical example of 250 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia Mathematical example of 500 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia Mathematical example of 750 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Rango de referencia Mathematical example of 250–300 kcal higher daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence Preserves current body weight and energy balance"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence Mathematical example of 250 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence Mathematical example of 500 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence Mathematical example of 750 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de référence Mathematical example of 250–300 kcal higher daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich Preserves current body weight and energy balance"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Mathematical example of 250 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Mathematical example of 500 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich Mathematical example of 750 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Referenzbereich Mathematical example of 250–300 kcal higher daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 Preserves current body weight and energy balance"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 Mathematical example of 250 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 Mathematical example of 500 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "ko",
+    "row": 3,
+    "col": "col3",
+    "text": "참조 범위 Mathematical example of 750 kcal lower daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "ko",
+    "row": 4,
+    "col": "col3",
+    "text": "참조 범위 Mathematical example of 250–300 kcal higher daily intake"
+  },
+  {
+    "slug": "maintenance-calorie-calculator",
+    "lang": "hi",
+    "row": 4,
+    "col": "col3",
+    "text": "संदर्भ सीमा Mathematical example of 250–300 kcal higher daily intake"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Nivel mínimo fisiológico esencial"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Nivel típico en deportistas de resistencia"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia saludable"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango común en adultos"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Rango de referencia Higher body-fat reference category; interpretation varies by age, sex, population, and measurement method"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Niveau minimal physiologique"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Niveau habituel chez les sportifs"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence Reference range commonly associated with fitness-oriented populations"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence Standard acceptable body fat percentage range for healthy adults"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de référence Higher body-fat reference category; interpretation varies by age, sex, population, and measurement method"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Physiologisches Minimum"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Typisch für trainierte Athleten"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Reference range commonly associated with fitness-oriented populations"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich Standard acceptable body fat percentage range for healthy adults"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Referenzbereich Higher body-fat reference category; interpretation varies by age, sex, population, and measurement method"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 Reference range commonly associated with fitness-oriented populations"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "ko",
+    "row": 3,
+    "col": "col3",
+    "text": "참조 범위 Standard acceptable body fat percentage range for healthy adults"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "ko",
+    "row": 4,
+    "col": "col3",
+    "text": "참조 범위 Higher body-fat reference category; interpretation varies by age, sex, population, and measurement method"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "संदर्भ सीमा Reference range commonly associated with fitness-oriented populations"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "hi",
+    "row": 3,
+    "col": "col3",
+    "text": "संदर्भ सीमा Standard acceptable body fat percentage range for healthy adults"
+  },
+  {
+    "slug": "body-fat-calculator",
+    "lang": "hi",
+    "row": 4,
+    "col": "col3",
+    "text": "संदर्भ सीमा Higher body-fat reference category; interpretation varies by age, sex, population, and measurement method"
+  },
+  {
+    "slug": "lean-body-mass-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia Predictive formula for estimated lean mass in males"
+  },
+  {
+    "slug": "lean-body-mass-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia Predictive formula for estimated lean mass in females"
+  },
+  {
+    "slug": "lean-body-mass-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence Predictive formula for estimated lean mass in males"
+  },
+  {
+    "slug": "lean-body-mass-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence Predictive formula for estimated lean mass in females"
+  },
+  {
+    "slug": "lean-body-mass-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich Predictive formula for estimated lean mass in males"
+  },
+  {
+    "slug": "lean-body-mass-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Predictive formula for estimated lean mass in females"
+  },
+  {
+    "slug": "lean-body-mass-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 Predictive formula for estimated lean mass in males"
+  },
+  {
+    "slug": "lean-body-mass-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 Predictive formula for estimated lean mass in females"
+  },
+  {
+    "slug": "lean-body-mass-calculator",
+    "lang": "hi",
+    "row": 0,
+    "col": "col3",
+    "text": "संदर्भ सीमा Predictive formula for estimated lean mass in males"
+  },
+  {
+    "slug": "lean-body-mass-calculator",
+    "lang": "hi",
+    "row": 1,
+    "col": "col3",
+    "text": "संदर्भ सीमा Predictive formula for estimated lean mass in females"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia Widely cited formula introduced in 1974"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia Modification of Devine formula optimized for medium frame adults"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia Higher base estimate for shorter individuals, gentler slope per inch"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia Historical reference formula"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Rango de referencia Population health reference window based on height squared"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence Widely cited formula introduced in 1974"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence Modification of Devine formula optimized for medium frame adults"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence Higher base estimate for shorter individuals, gentler slope per inch"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence Historical reference formula"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de référence Population health reference window based on height squared"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich Widely cited formula introduced in 1974"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Modification of Devine formula optimized for medium frame adults"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Higher base estimate for shorter individuals, gentler slope per inch"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich Historical reference formula"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Referenzbereich Population health reference window based on height squared"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 Widely cited formula introduced in 1974"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 Modification of Devine formula optimized for medium frame adults"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 Higher base estimate for shorter individuals, gentler slope per inch"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "ko",
+    "row": 3,
+    "col": "col3",
+    "text": "참조 범위 Historical reference formula"
+  },
+  {
+    "slug": "ideal-weight-calculator",
+    "lang": "ko",
+    "row": 4,
+    "col": "col3",
+    "text": "참조 범위 Population health reference window based on height squared"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Ejemplo matemático de un déficit diario ligero"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Ejemplo matemático de un déficit diario estándar"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "TDEE estimado para mantenimiento de peso"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia Estimated TDEE energy balance for weight stabilization"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Exemple de déficit quotidien modéré"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Exemple de déficit quotidien standard"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "TDEE estimé pour stabiliser le poids"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence Estimated TDEE energy balance for weight stabilization"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Mathematisches Beispiel für ein leichtes Defizit"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Mathematisches Beispiel für ein Standard-Defizit"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Geschätzter TDEE zur Gewichtserhaltung"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich Estimated TDEE energy balance for weight stabilization"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "ko",
+    "row": 3,
+    "col": "col3",
+    "text": "참조 범위 Estimated TDEE energy balance for weight stabilization"
+  },
+  {
+    "slug": "calorie-calculator",
+    "lang": "hi",
+    "row": 3,
+    "col": "col3",
+    "text": "संदर्भ सीमा Estimated TDEE energy balance for weight stabilization"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia RDA baseline reference"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia Reference athletic range"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia Common athletic target for training"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia Example range referenced during calorie deficit planning"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence RDA baseline reference"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence Reference athletic range"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence Common athletic target for training"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence Example range referenced during calorie deficit planning"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich RDA baseline reference"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Reference athletic range"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Common athletic target for training"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich Example range referenced during calorie deficit planning"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 RDA baseline reference"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 Reference athletic range"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 Common athletic target for training"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "ko",
+    "row": 3,
+    "col": "col3",
+    "text": "참조 범위 Example range referenced during calorie deficit planning"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "hi",
+    "row": 0,
+    "col": "col3",
+    "text": "संदर्भ सीमा RDA baseline reference"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "hi",
+    "row": 1,
+    "col": "col3",
+    "text": "संदर्भ सीमा Reference athletic range"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "संदर्भ सीमा Common athletic target for training"
+  },
+  {
+    "slug": "protein-intake-calculator",
+    "lang": "hi",
+    "row": 3,
+    "col": "col3",
+    "text": "संदर्भ सीमा Example range referenced during calorie deficit planning"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia ~7 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia ~10 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia ~13 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia ~17 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence ~7 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence ~10 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence ~13 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence ~17 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich ~7 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich ~10 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich ~13 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich ~17 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 ~7 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 ~10 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 ~13 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "ko",
+    "row": 3,
+    "col": "col3",
+    "text": "참조 범위 ~17 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "hi",
+    "row": 0,
+    "col": "col3",
+    "text": "संदर्भ सीमा ~7 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "hi",
+    "row": 1,
+    "col": "col3",
+    "text": "संदर्भ सीमा ~10 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "संदर्भ सीमा ~13 standard 250ml glasses"
+  },
+  {
+    "slug": "water-intake-calculator",
+    "lang": "hi",
+    "row": 3,
+    "col": "col3",
+    "text": "संदर्भ सीमा ~17 standard 250ml glasses"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia Example fuel source allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia Example protein allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia Example dietary fat allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence Example fuel source allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence Example protein allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence Example dietary fat allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich Example fuel source allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Example protein allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Example dietary fat allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 Example fuel source allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 Example protein allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 Example dietary fat allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "hi",
+    "row": 0,
+    "col": "col3",
+    "text": "संदर्भ सीमा Example fuel source allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "hi",
+    "row": 1,
+    "col": "col3",
+    "text": "संदर्भ सीमा Example protein allocation"
+  },
+  {
+    "slug": "macro-calculator",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "संदर्भ सीमा Example dietary fat allocation"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia Subcutaneous fat distribution reference window"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia Moderate abdominal central fat reference window"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia Higher central fat distribution reference window; additional screening context"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence Subcutaneous fat distribution reference window"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence Moderate abdominal central fat reference window"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence Higher central fat distribution reference window; additional screening context"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich Subcutaneous fat distribution reference window"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Moderate abdominal central fat reference window"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Higher central fat distribution reference window; additional screening context"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 Subcutaneous fat distribution reference window"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 Moderate abdominal central fat reference window"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 Higher central fat distribution reference window; additional screening context"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "hi",
+    "row": 0,
+    "col": "col3",
+    "text": "संदर्भ सीमा Subcutaneous fat distribution reference window"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "hi",
+    "row": 1,
+    "col": "col3",
+    "text": "संदर्भ सीमा Moderate abdominal central fat reference window"
+  },
+  {
+    "slug": "waist-to-hip-ratio-calculator",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "संदर्भ सीमा Higher central fat distribution reference window; additional screening context"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia Infant population rango de referencia"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia Child population rango de referencia"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia Standard adult female population average"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia Standard adult male population average"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence Infant population plage de référence"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence Child population plage de référence"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence Standard adult female population average"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence Standard adult male population average"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich Infant population Referenzbereich"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Child population Referenzbereich"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Standard adult female population average"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich Standard adult male population average"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 Infant population 참조 범위"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 Child population 참조 범위"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 Standard adult female population average"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "ko",
+    "row": 3,
+    "col": "col3",
+    "text": "참조 범위 Standard adult male population average"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "hi",
+    "row": 0,
+    "col": "col3",
+    "text": "संदर्भ सीमा Infant population संदर्भ सीमा"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "hi",
+    "row": 1,
+    "col": "col3",
+    "text": "संदर्भ सीमा Child population संदर्भ सीमा"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "संदर्भ सीमा Standard adult female population average"
+  },
+  {
+    "slug": "body-surface-area-calculator",
+    "lang": "hi",
+    "row": 3,
+    "col": "col3",
+    "text": "संदर्भ सीमा Standard adult male population average"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia Promotes blood circulation & passive recovery"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia Often used for aerobic base training and moderate-intensity exercise"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia Improves cardiovascular efficiency & stamina"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia Increases high-intensity exercise tolerance"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Rango de referencia Neuromuscular speed & peak sprint conditioning"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence Promotes blood circulation & passive recovery"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence Often used for aerobic base training and moderate-intensity exercise"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence Improves cardiovascular efficiency & stamina"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence Increases high-intensity exercise tolerance"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de référence Neuromuscular speed & peak sprint conditioning"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich Promotes blood circulation & passive recovery"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Often used for aerobic base training and moderate-intensity exercise"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Improves cardiovascular efficiency & stamina"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich Increases high-intensity exercise tolerance"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Referenzbereich Neuromuscular speed & peak sprint conditioning"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 Promotes blood circulation & passive recovery"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 Often used for aerobic base training and moderate-intensity exercise"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 Improves cardiovascular efficiency & stamina"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "ko",
+    "row": 3,
+    "col": "col3",
+    "text": "참조 범위 Increases high-intensity exercise tolerance"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "ko",
+    "row": 4,
+    "col": "col3",
+    "text": "참조 범위 Neuromuscular speed & peak sprint conditioning"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "hi",
+    "row": 0,
+    "col": "col3",
+    "text": "संदर्भ सीमा Promotes blood circulation & passive recovery"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "hi",
+    "row": 1,
+    "col": "col3",
+    "text": "संदर्भ सीमा Often used for aerobic base training and moderate-intensity exercise"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "संदर्भ सीमा Improves cardiovascular efficiency & stamina"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "hi",
+    "row": 3,
+    "col": "col3",
+    "text": "संदर्भ सीमा Increases high-intensity exercise tolerance"
+  },
+  {
+    "slug": "heart-rate-zone-calculator",
+    "lang": "hi",
+    "row": 4,
+    "col": "col3",
+    "text": "संदर्भ सीमा Neuromuscular speed & peak sprint conditioning"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia Warm-up, cooldown, and active recovery"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia Optimal zone for sustainable fat burning and aerobic base building"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia Improves cardiovascular capacity and stamina"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Mejora el rendimiento de alta intensidad y el umbral de lactato"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Rango de referencia Maximal speed and interval training"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence Warm-up, cooldown, and active recovery"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence Optimal zone for sustainable fat burning and aerobic base building"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence Improves cardiovascular capacity and stamina"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Augmente les performances à haute intensité et le seuil de lactate"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de référence Maximal speed and interval training"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich Warm-up, cooldown, and active recovery"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Optimal zone for sustainable fat burning and aerobic base building"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Improves cardiovascular capacity and stamina"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Steigert die Hochleistungsfähigkeit und die Laktatschwelle"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Referenzbereich Maximal speed and interval training"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 Warm-up, cooldown, and active recovery"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 Optimal zone for sustainable fat burning and aerobic base building"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 Improves cardiovascular capacity and stamina"
+  },
+  {
+    "slug": "karvonen-heart-rate-calculator",
+    "lang": "ko",
+    "row": 4,
+    "col": "col3",
+    "text": "참조 범위 Maximal speed and interval training"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Carga máxima absoluta de fuerza (100% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Carga pesada de entrenamiento de fuerza (95% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Series de fuerza y levantamiento (93% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de desarrollo de fuerza muscular (87% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Rango de hipertrofia y construcción muscular (80% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "es",
+    "row": 5,
+    "col": "col3",
+    "text": "Resistencia muscular e hipertrofia de volumen (75% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Charge maximale absolue de force (100% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Charge lourde d'entraînement de force (95% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Séries de force et d'haltérophilie (93% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de développement de la force (87% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de construction musculaire (80% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "fr",
+    "row": 5,
+    "col": "col3",
+    "text": "Endurance musculaire et hypertrophie de volume (75% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Maximale Kraftleistung (100% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Schwere Krafttraining-Belastung (95% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Kraftsätze für Maximalkraft (93% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Bereich für schweren Kraftaufbau (87% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Bereich für Muskelaufbau (80% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "de",
+    "row": 5,
+    "col": "col3",
+    "text": "Muskelausdauer und Volumen-Hypertrophie (75% 1RM)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "मांसपेशी वृद्धि (Hypertrophy)"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "hi",
+    "row": 4,
+    "col": "col3",
+    "text": "संदर्भ सीमा Hypertrophy muscle building range"
+  },
+  {
+    "slug": "1rm-calculator",
+    "lang": "hi",
+    "row": 5,
+    "col": "col3",
+    "text": "संदर्भ सीमा Volume hypertrophy & endurance"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia Peak single rep strength capacity estimate"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia Heavy strength building & neural adaptation"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia Common training use & compound strength (5x5 protocols)"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "es",
+    "row": 3,
+    "col": "col3",
+    "text": "Rango de referencia Hypertrophy volume & metabolic conditioning"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "es",
+    "row": 4,
+    "col": "col3",
+    "text": "Rango de referencia Muscular endurance & active recovery sets"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence Peak single rep strength capacity estimate"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence Heavy strength building & neural adaptation"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence Common training use & compound strength (5x5 protocols)"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "fr",
+    "row": 3,
+    "col": "col3",
+    "text": "Plage de référence Hypertrophy volume & metabolic conditioning"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "fr",
+    "row": 4,
+    "col": "col3",
+    "text": "Plage de référence Muscular endurance & active recovery sets"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich Peak single rep strength capacity estimate"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich Heavy strength building & neural adaptation"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich Common training use & compound strength (5x5 protocols)"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "de",
+    "row": 3,
+    "col": "col3",
+    "text": "Referenzbereich Hypertrophy volume & metabolic conditioning"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "de",
+    "row": 4,
+    "col": "col3",
+    "text": "Referenzbereich Muscular endurance & active recovery sets"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 Peak single rep strength capacity estimate"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 Heavy strength building & neural adaptation"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 Common training use & compound strength (5x5 protocols)"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "ko",
+    "row": 3,
+    "col": "col3",
+    "text": "참조 범위 Hypertrophy volume & metabolic conditioning"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "ko",
+    "row": 4,
+    "col": "col3",
+    "text": "참조 범위 Muscular endurance & active recovery sets"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "hi",
+    "row": 0,
+    "col": "col3",
+    "text": "संदर्भ सीमा Peak single rep strength capacity estimate"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "hi",
+    "row": 1,
+    "col": "col3",
+    "text": "संदर्भ सीमा Heavy strength building & neural adaptation"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "संदर्भ सीमा Common training use & compound strength (5x5 protocols)"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "hi",
+    "row": 3,
+    "col": "col3",
+    "text": "संदर्भ सीमा Hypertrophy volume & metabolic conditioning"
+  },
+  {
+    "slug": "one-rep-max-calculator",
+    "lang": "hi",
+    "row": 4,
+    "col": "col3",
+    "text": "संदर्भ सीमा Muscular endurance & active recovery sets"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "es",
+    "row": 0,
+    "col": "col3",
+    "text": "Rango de referencia ~0.5 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "es",
+    "row": 1,
+    "col": "col3",
+    "text": "Rango de referencia ~0.4 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "es",
+    "row": 2,
+    "col": "col3",
+    "text": "Rango de referencia ~0.3 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "fr",
+    "row": 0,
+    "col": "col3",
+    "text": "Plage de référence ~0.5 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "fr",
+    "row": 1,
+    "col": "col3",
+    "text": "Plage de référence ~0.4 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "fr",
+    "row": 2,
+    "col": "col3",
+    "text": "Plage de référence ~0.3 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "de",
+    "row": 0,
+    "col": "col3",
+    "text": "Referenzbereich ~0.5 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "de",
+    "row": 1,
+    "col": "col3",
+    "text": "Referenzbereich ~0.4 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "de",
+    "row": 2,
+    "col": "col3",
+    "text": "Referenzbereich ~0.3 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "ko",
+    "row": 0,
+    "col": "col3",
+    "text": "참조 범위 ~0.5 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "ko",
+    "row": 1,
+    "col": "col3",
+    "text": "참조 범위 ~0.4 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "ko",
+    "row": 2,
+    "col": "col3",
+    "text": "참조 범위 ~0.3 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "hi",
+    "row": 0,
+    "col": "col3",
+    "text": "संदर्भ सीमा ~0.5 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "hi",
+    "row": 1,
+    "col": "col3",
+    "text": "संदर्भ सीमा ~0.4 kg / week in 2nd/3rd trimester"
+  },
+  {
+    "slug": "pregnancy-weight-gain-calculator",
+    "lang": "hi",
+    "row": 2,
+    "col": "col3",
+    "text": "संदर्भ सीमा ~0.3 kg / week in 2nd/3rd trimester"
+  }
+]
