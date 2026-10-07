@@ -326,12 +326,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "저체중 참조 범위"
         },
         {
-          "col1": "정상 체중 (Healthy Weight)",
+          "col1": "정상 체중",
           "col2": "18.5 – 24.9 kg/m²",
           "col3": "정상 체중 참조 범위"
         },
         {
-          "col1": "과체중 (Overweight)",
+          "col1": "과체중",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "과체중 참조 범위 (아시아인 기준: 23.0 kg/m²)"
         },
@@ -3090,7 +3090,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Asian BMI Calculator – WHO Asian Cutoff Reference Standards – Guía y Calculadora",
+      "title": "Calculadora de IMC Asiático – Estándares de Referencia OMS Asia – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -3135,7 +3135,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Asian BMI Calculator – WHO Asian Cutoff Reference Standards – Outil de Référence",
+      "title": "Calculateur d'IMC Asiatique – Normes de Référence OMS Asie – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -3180,7 +3180,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Asian BMI Calculator – WHO Asian Cutoff Reference Standards – Rechner & Leitfaden",
+      "title": "Asiatischer BMI Rechner – WHO Asien-Referenzstandards – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -3225,7 +3225,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Asian BMI 계산기 – WHO Asian Cutoff Reference Standards – 참조 계산기",
+      "title": "아시아인 전용 BMI 계산기 – WHO 아시아 공중보건 참조 기준",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -3270,7 +3270,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "डब्ल्यूएचओ एशिया-पैसिफिक मानक",
-      "title": "एशियाई बीएमआई कैलकुलेटर (Asian BMI कैलकुलेटर)",
+      "title": "एशियाई बीएमआई कैलकुलेटर – डब्ल्यूएचओ एशियाई संदर्भ कटऑफ",
       "intro": "WHO विशेषज्ञ परामर्श मानकों पर आधारित एशियाई बीएमआई कैलकुलेटर। एशियाई आबादी में कम बीएमआई (23.0 kg/m²) पर भी अधिक वसा और स्वास्थ्य जोखिम का मूल्यांकन करें।",
       "formulaTitle": "डब्ल्यूएचओ एशियाई बीएमआई सूत्र",
       "formulaDesc": "बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | एशियाई ओवरवेट कटऑफ: 23.0 kg/m²",
@@ -4023,7 +4023,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Maintenance Calorie Calculator – Calorie Maintenance Calculator Online – Guía y Calculadora",
+      "title": "Calculadora de Calorías de Mantenimiento – Calcular Necesidades Diarias – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -4081,7 +4081,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Maintenance Calorie Calculator – Calorie Maintenance Calculator Online – Outil de Référence",
+      "title": "Calculateur de Calories de Maintien – Obtenir son Besoin Calorique – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -4139,7 +4139,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Maintenance Calorie Calculator – Calorie Maintenance Calculator Online – Rechner & Leitfaden",
+      "title": "Rechner für Erhaltungskalorien – Täglichen Kalorienbedarf berechnen – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -4197,7 +4197,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Maintenance Calorie 계산기 – Calorie Maintenance 계산기 Online – 참조 계산기",
+      "title": "유지 칼로리 계산기 – 일일 에너지 소모량 측정을 위한 참조 도구",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -4255,7 +4255,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "कैलोरी रखरखाव और योजना",
-      "title": "रखरखाव कैलोरी कैलकुलेटर – Calorie Maintenance कैलकुलेटर Online",
+      "title": "रखरखाव कैलोरी कैलकुलेटर – दैनिक कैलोरी आवश्यकता की गणना करें",
       "intro": "हमारा मुफ़्त Maintenance Calorie Calculator आपकी दैनिक रखरखाव कैलोरी और वजन लक्ष्यों के लिए अनुमानित कैलोरी की गणना करता है।",
       "formulaTitle": "रखरखाव कैलोरी सूत्र एवं ऊर्जा संतुलन",
       "formulaDesc": "रखरखाव कैलोरी = BMR × activity गुणक। व्यक्तिगत लक्ष्यों के आधार पर ऊर्जा समायोजन किया जा सकता है।",
@@ -5582,7 +5582,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Protein Intake Calculator & Daily Protein Reference Range Tool – Guía y Calculadora",
+      "title": "Calculadora de Proteínas – Requerimiento Diario de Proteína – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -5635,7 +5635,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Protein Intake Calculator & Daily Protein Reference Range Tool – Outil de Référence",
+      "title": "Calculateur de Protéines – Apport Protéique Quotidien – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -5688,7 +5688,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Protein Intake Calculator & Daily Protein Reference Range Tool – Rechner & Leitfaden",
+      "title": "Proteinrechner – Täglicher Eiweißbedarf & Referenzwerte – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -5741,7 +5741,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Protein Intake 계산기 & Daily Protein Reference Range 도구 – 참조 계산기",
+      "title": "단백질 섭취량 계산기 – 일일 단백질 권장량 측정 도구",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -5794,7 +5794,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "Protein Intake कैलकुलेटर & Daily Protein Reference Range टूल – मुफ्त कैलकुलेटर",
+      "title": "प्रोटीन सेवन कैलकुलेटर – दैनिक प्रोटीन आवश्यकता की गणना",
       "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
@@ -5902,7 +5902,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Water Intake Calculator & Daily Hydration Target Tool – Guía y Calculadora",
+      "title": "Calculadora de Consumo de Agua – Meta Diaria de Hidratación – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -5955,7 +5955,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Water Intake Calculator & Daily Hydration Target Tool – Outil de Référence",
+      "title": "Calculateur d'Apport en Eau – Objectif d'Hydratation Quotidien – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -6008,7 +6008,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Water Intake Calculator & Daily Hydration Target Tool – Rechner & Leitfaden",
+      "title": "Wasserbedarfsrechner – Tägliches Hydratationsziel berechnen – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -6061,7 +6061,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Water Intake 계산기 & Daily Hydration Target 도구 – 참조 계산기",
+      "title": "수분 섭취량 계산기 – 일일 목표 수분 섭취량 측정 도구",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -6114,7 +6114,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "Water Intake कैलकुलेटर & Daily Hydration Target टूल – मुफ्त कैलकुलेटर",
+      "title": "पानी के सेवन का कैलकुलेटर – दैनिक जल आवश्यकता की गणना",
       "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
@@ -6217,7 +6217,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Macro Calculator – Estimated Daily Macro Split – Guía y Calculadora",
+      "title": "Calculadora de Macronutrientes – Distribución Diaria de Macros – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -6265,7 +6265,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Macro Calculator – Estimated Daily Macro Split – Outil de Référence",
+      "title": "Calculateur de Macronutriments – Répartition des Macros – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -6313,7 +6313,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Macro Calculator – Estimated Daily Macro Split – Rechner & Leitfaden",
+      "title": "Makronährstoff-Rechner – Tägliche Makroverteilung berechnen – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -6361,7 +6361,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Macro 계산기 – Estimated Daily Macro Split – 참조 계산기",
+      "title": "매크로 영양소 계산기 – 일일 탄단지 영양소 비율 계산",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -6409,7 +6409,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "Macro कैलकुलेटर – Estimated Daily Macro Split – मुफ्त कैलकुलेटर",
+      "title": "मैक्रो पोषक तत्व कैलकुलेटर – दैनिक मैक्रो अनुपात की गणना",
       "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
@@ -6507,7 +6507,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Waist to Hip Ratio Calculator & WHR Reference Tool – Guía y Calculadora",
+      "title": "Calculadora de Relación Cintura-Cadera – Índice WHR de Salud – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -6555,7 +6555,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Waist to Hip Ratio Calculator & WHR Reference Tool – Outil de Référence",
+      "title": "Calculateur Ratio Taille-Hanche – Indice WHR et Références – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -6603,7 +6603,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Waist to Hip Ratio Calculator & WHR Reference Tool – Rechner & Leitfaden",
+      "title": "Taille-Hüft-Verhältnis Rechner – WHR-Wert & Referenztabelle – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -6651,7 +6651,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Waist to Hip Ratio 계산기 & WHR Reference 도구 – 참조 계산기",
+      "title": "허리 엉덩이 비율 계산기 – WHR 수치 및 건강 참조 도구",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -6699,7 +6699,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "Waist to Hip Ratio कैलकुलेटर & WHR Reference टूल – मुफ्त कैलकुलेटर",
+      "title": "कमर से कूल्हे के अनुपात का कैलकुलेटर – WHR संदर्भ टूल",
       "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
@@ -6794,7 +6794,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Body Surface Area Calculator — Mosteller & Du Bois Reference Equations – Guía y Calculadora",
+      "title": "Calculadora de Superficie Corporal – Ecuaciones BSA – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -6839,7 +6839,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Body Surface Area Calculator — Mosteller & Du Bois Reference Equations – Outil de Référence",
+      "title": "Calculateur de Surface Corporelle – Formules BSA Mosteller & Du Bois – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -6884,7 +6884,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Body Surface Area Calculator — Mosteller & Du Bois Reference Equations – Rechner & Leitfaden",
+      "title": "Körperoberflächen-Rechner – KOF / BSA Formeln nach Mosteller – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -6929,7 +6929,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Body Surface Area 계산기 — Mosteller & Du Bois Reference Equations – 참조 계산기",
+      "title": "체표면적(BSA) 계산기 – Mosteller 및 Du Bois 계산 공식",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -6974,7 +6974,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "Body Surface Area कैलकुलेटर — Mosteller & Du Bois Reference Equations – मुफ्त कैलकुलेटर",
+      "title": "बॉडी सरफेस एरिया (BSA) कैलकुलेटर – मोस्टेलर सूत्र",
       "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
@@ -7087,7 +7087,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Karvonen Heart Rate Zone Calculator & Target Heart Rate Tool – Guía y Calculadora",
+      "title": "Calculadora de Zonas de Frecuencia Cardíaca – Fórmula Karvonen – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -7145,7 +7145,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Karvonen Heart Rate Zone Calculator & Target Heart Rate Tool – Outil de Référence",
+      "title": "Calculateur de Zones de Fréquence Cardiaque – Formule Karvonen – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -7203,7 +7203,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Karvonen Heart Rate Zone Calculator & Target Heart Rate Tool – Rechner & Leitfaden",
+      "title": "Herzfrequenzzonen-Rechner – Zielherzfrequenz & Karvonen Zonen – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -7261,7 +7261,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Karvonen Heart Rate Zone 계산기 & Target Heart Rate 도구 – 참조 계산기",
+      "title": "심박수 구간 계산기 – Karvonen 목표 심박수 측정",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -7319,7 +7319,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "Karvonen Heart Rate Zone कैलकुलेटर & Target Heart Rate टूल – मुफ्त कैलकुलेटर",
+      "title": "हार्ट रेट ज़ोन कैलकुलेटर – लक्ष्य हृदय गति संदर्भ",
       "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
@@ -7425,7 +7425,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Karvonen Heart Rate Calculator – Target Heart Rate Zones & HRR – Guía y Calculadora",
+      "title": "Calculadora Karvonen – Reserva de Frecuencia Cardíaca HRR – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -7471,7 +7471,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Karvonen Heart Rate Calculator – Target Heart Rate Zones & HRR – Outil de Référence",
+      "title": "Calculateur Karvonen – Réserve Cardiaque HRR & Zones de Forme – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -7517,7 +7517,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Karvonen Heart Rate Calculator – Target Heart Rate Zones & HRR – Rechner & Leitfaden",
+      "title": "Karvonen Herzfrequenz-Rechner – Herzfrequenzreserve HRR Zonen – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -7563,7 +7563,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Karvonen Heart Rate 계산기 – Target Heart Rate Zones & HRR – 참조 계산기",
+      "title": "Karvonen 심박수 계산기 – 심박 예비능(HRR) 측정",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -7609,7 +7609,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "कार्डियोवैस्कुलर फिजियोलॉजी",
-      "title": "कार्वोनेन हार्ट रेट कैलकुलेटर (Karvonen Heart Rate कैलकुलेटर)",
+      "title": "कार्वोनेन हार्ट रेट कैलकुलेटर – हार्ट रेट रिजर्व (HRR) ज़ोन",
       "intro": "कार्वोनेन फॉर्मूला और हार्ट रेट रिजर्व (HRR) का उपयोग करके अपने लक्षित व्यायाम हार्ट रेट ज़ोन की सटीक गणना करें।",
       "formulaTitle": "आधिकारिक कार्वोनेन सूत्र",
       "formulaDesc": "Target HR = [(HRmax - HRrest) × %intensity] + HRrest",
@@ -8386,7 +8386,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Pregnancy Weight Gain Calculator & Trimester Tracker – Guía y Calculadora",
+      "title": "Calculadora de Aumento de Peso en el Embarazo – Seguimiento Trimestral – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -8433,7 +8433,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Pregnancy Weight Gain Calculator & Trimester Tracker – Outil de Référence",
+      "title": "Calculateur de Prise de Poids pendant la Grossesse – Suivi Trimestre – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -8480,7 +8480,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Pregnancy Weight Gain Calculator & Trimester Tracker – Rechner & Leitfaden",
+      "title": "Schwangerschafts-Gewichtszunahme Rechner – Trimester-Tracking – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -8527,7 +8527,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Pregnancy Weight Gain 계산기 & Trimester Tracker – 참조 계산기",
+      "title": "임신 중 체중 증가 계산기 – 분기별 체중 증가 권장 범위",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -8574,7 +8574,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "Pregnancy Weight Gain कैलकुलेटर & Trimester Tracker – मुफ्त कैलकुलेटर",
+      "title": "गर्भावस्था में वजन वृद्धि का कैलकुलेटर – तिमाही ट्रैकिंग",
       "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
