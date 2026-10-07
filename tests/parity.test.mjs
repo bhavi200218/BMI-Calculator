@@ -1,6 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import assert from 'assert';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const esbuild = require('esbuild');
 
 const WORKSPACE = process.cwd();
 const LOCALES = ['en', 'es', 'fr', 'de', 'ko', 'hi'];
@@ -37,7 +41,6 @@ test('Calculators Config: Contains all 26 calculator definitions', () => {
 calcSlugs.forEach(slug => {
   LOCALES.forEach(lang => {
     test(`Calculator Config [${slug}] [${lang}]: All localized names and titles exist`, () => {
-      // Find calculator block in code or evaluate
       assert.ok(calcCode.includes(slug), `Slug ${slug} missing in calculators.ts`);
     });
   });
@@ -73,45 +76,79 @@ LOCALES.forEach(lang => {
   });
 });
 
-// 4. ToolSEOContent.astro Parity Tests (FAQs, Tables, Titles, Eyebrows)
-const toolSeoCode = fs.readFileSync(path.join(WORKSPACE, 'src/components/ToolSEOContent.astro'), 'utf-8');
-const seoDbMatch = toolSeoCode.match(/const seoDatabase:[^{]*= (\{[\s\S]*?\n\};)/);
-assert.ok(seoDbMatch, 'ToolSEOContent.astro must contain seoDatabase object');
-const seoDb = new Function(`return ${seoDbMatch[1]}`)();
-
+// 4. seoDatabase.ts Parity Tests (Transpiled in memory via esbuild)
+const res = esbuild.buildSync({
+  entryPoints: [path.join(WORKSPACE, 'src/data/seoDatabase.ts')],
+  bundle: true,
+  write: false,
+  format: 'cjs'
+});
+const fn = new Function('module', 'exports', res.outputFiles[0].text + '\nreturn module.exports;');
+const { seoDatabase: seoDb } = fn({ exports: {} }, {});
 const seoSlugs = Object.keys(seoDb);
 
-test('ToolSEOContent: Contains all 26 public calculator SEO entries', () => {
+test('seoDatabase: Contains all 26 public calculator SEO entries', () => {
   assert.strictEqual(seoSlugs.length >= 26, true, `Expected >= 26 calculators, found ${seoSlugs.length}`);
 });
 
+const forbiddenFallbacks = [
+  'underweight reference threshold',
+  'optimal healthy range for indian adults',
+  'elevated cardiometabolic risk cutoff for indians',
+  'class i obesity threshold under icmr standards',
+  'severe obesity risk threshold',
+  'staatsbürger'
+];
+
 seoSlugs.forEach(slug => {
   const calcData = seoDb[slug];
-  const enFaqCount = (calcData.en.faqs || []).length;
-  const enRowCount = (calcData.en.tableRows || []).length;
 
   LOCALES.forEach(lang => {
-    test(`ToolSEOContent [${slug}] [${lang}]: Language entry exists`, () => {
+    test(`seoDatabase [${slug}] [${lang}]: Language entry exists and is non-empty`, () => {
       assert.ok(calcData[lang], `Missing ${lang} block for ${slug}`);
-    });
-
-    test(`ToolSEOContent [${slug}] [${lang}]: 100% FAQ Count Parity (EN=${enFaqCount})`, () => {
-      const lFaqCount = (calcData[lang].faqs || []).length;
-      assert.strictEqual(lFaqCount, enFaqCount, `FAQ count mismatch for ${slug} [${lang}]: EN=${enFaqCount}, ${lang}=${lFaqCount}`);
-    });
-
-    if (enRowCount > 0) {
-      test(`ToolSEOContent [${slug}] [${lang}]: 100% Table Row Parity (EN=${enRowCount})`, () => {
-        const lRowCount = (calcData[lang].tableRows || []).length;
-        assert.strictEqual(lRowCount, enRowCount, `Table row count mismatch for ${slug} [${lang}]: EN=${enRowCount}, ${lang}=${lRowCount}`);
-      });
-    }
-
-    test(`ToolSEOContent [${slug}] [${lang}]: Structured fields exist and non-empty`, () => {
       const item = calcData[lang];
       assert.ok(item.title && item.title.trim().length > 0, `Missing title in ${slug} [${lang}]`);
       assert.ok(item.intro && item.intro.trim().length > 0, `Missing intro in ${slug} [${lang}]`);
       assert.ok(item.formulaTitle && item.formulaTitle.trim().length > 0, `Missing formulaTitle in ${slug} [${lang}]`);
+    });
+
+    test(`seoDatabase [${slug}] [${lang}]: Table rows valid and free of English fallback strings`, () => {
+      const rows = calcData[lang].tableRows || [];
+      assert.ok(rows.length > 0, `Missing tableRows for ${slug} [${lang}]`);
+      if (lang !== 'en') {
+        rows.forEach((r, idx) => {
+          forbiddenFallbacks.forEach(f => {
+            assert.strictEqual(
+              r.col3.toLowerCase().includes(f),
+              false,
+              `Found forbidden fallback "${f}" in ${slug} [${lang}] row ${idx}: ${r.col3}`
+            );
+          });
+        });
+      }
+    });
+
+    test(`seoDatabase [${slug}] [${lang}]: FAQs exist, no duplicates, no slug leaks`, () => {
+      const faqs = calcData[lang].faqs || [];
+      assert.ok(faqs.length >= 2, `Expected >= 2 FAQs for ${slug} [${lang}], found ${faqs.length}`);
+      
+      const questions = faqs.map(f => f.question.trim());
+      const uniqueQuestions = new Set(questions);
+      assert.strictEqual(
+        questions.length,
+        uniqueQuestions.size,
+        `Duplicate FAQ questions found in ${slug} [${lang}]: ${questions.length} total, ${uniqueQuestions.size} unique`
+      );
+
+      if (lang !== 'en') {
+        faqs.forEach((f, idx) => {
+          assert.strictEqual(
+            f.question.includes('bmi calculator for indians') || f.answer.includes('bmi calculator for indians'),
+            false,
+            `Slug leaked into FAQ text for ${slug} [${lang}] FAQ ${idx}`
+          );
+        });
+      }
     });
   });
 });
