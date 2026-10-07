@@ -852,7 +852,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "BMI Chart for Adults – Height & Weight Lookup Table (kg & cm) – Guía y Calculadora",
+      "title": "Tabla de IMC para Adultos – Tabla de Consulta de Altura y Peso (kg y cm) – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -925,7 +925,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "BMI Chart for Adults – Height & Weight Lookup Table (kg & cm) – Outil de Référence",
+      "title": "Tableau de l'IMC pour Adultes – Table de Correspondance Poids et Taille (kg & cm) – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -998,7 +998,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "BMI Chart for Adults – Height & Weight Lookup Table (kg & cm) – Rechner & Leitfaden",
+      "title": "BMI-Tabelle für Erwachsene – Größen- & Gewichtstabelle (kg & cm) – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -1071,7 +1071,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "BMI Chart for Adults – Height & Weight Lookup Table (kg & cm) – 참조 계산기",
+      "title": "성인 BMI 표준 체중표 – 신장 및 체중 비교 차트 (kg 및 cm) – 참조 계산기",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -1941,7 +1941,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares ICMR y OMS para el Sur de Asia",
-      "title": "Calculadora de IMC para la Población India – Tabla de Peso y Altura – Guía y Calculadora",
+      "title": "Calculadora de IMC para Adultos Indios – Tabla de Peso y Altura (ICMR y OMS) – Guía y Calculadora",
       "intro": "Calculadora de IMC para la población india en línea gratuita basada en los estándares de referencia del Consejo Indio de Investigación Médica (ICMR) y la OMS para Asia-Pacífico. Calcula tu Índice de Masa Corporal (IMC) usando kg y cm, comprueba si tu peso se sitúa en el rango saludable para adultos indios (18.5 – 22.9 kg/m²) y consulta las pautas de circunferencia de cintura del ICMR.",
       "formulaTitle": "Fórmula Oficial del IMC para la Población India según ICMR (kg y cm)",
       "formulaDesc": "IMC = Peso (kg) / [Altura (m)]² | Rango saludable para adultos indios: 18.5 – 22.9 kg/m² | Punto de corte para sobrepeso: ≥ 23.0 kg/m²",
@@ -1991,7 +1991,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes ICMR et OMS pour l'Asie du Sud",
-      "title": "Calculateur d'IMC pour les Indiens – Tableau Poids-Taille Santé – Outil de Référence",
+      "title": "Calculateur d'IMC pour Adultes Indiens – Tableau Poids-Taille Santé (Normes ICMR & OMS) – Outil de Référence",
       "intro": "Calculateur d'IMC gratuit pour les Indiens basé sur les normes de référence du Conseil indien de la recherche médicale (ICMR) et de l'OMS Asie-Pacifique. Calculez votre Indice de Masse Corporelle (IMC) en kg et cm, vérifiez si votre poids se situe dans la plage saine pour adultes indiens (18,5 – 22,9 kg/m²) et consultez les recommandations de tour de taille de l'ICMR.",
       "formulaTitle": "Formule Officielle d'IMC Indien selon l'ICMR (kg et cm)",
       "formulaDesc": "IMC = Poids (kg) / [Taille (m)]² | Plage saine pour adultes indiens : 18,5 – 22,9 kg/m² | Seuil de surpoids : ≥ 23,0 kg/m²",
@@ -2041,7 +2041,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "ICMR & WHO Südasien-Referenzstandards",
-      "title": "BMI-Rechner für Inder – ICMR & WHO Indien-Standard-Tabelle – Leitfaden & Rechner",
+      "title": "BMI-Rechner für indische Erwachsene – ICMR & WHO Referenztabelle – Rechner & Leitfaden",
       "intro": "Kostenloser Online-BMI-Rechner für indische Erwachsene basierend auf den Referenzstandards des Indian Council of Medical Research (ICMR) und der WHO-Asien-Pazifik-Region. Berechnen Sie Ihren Body-Mass-Index (BMI) in kg und cm, prüfen Sie, ob Ihr Gewicht im gesunden Bereich für indische Erwachsene liegt (18,5 – 22,9 kg/m²), und überprüfen Sie die ICMR-Taillenumfangsrichtlinien.",
       "formulaTitle": "Offizielle ICMR-BMI-Formel für indische Erwachsene (kg & cm)",
       "formulaDesc": "BMI = Gewicht (kg) / [Größe (m)]² | Gesunder Bereich für indische Erwachsene: 18,5 – 22,9 kg/m² | Übergewichtsschwelle: ≥ 23,0 kg/m²",
@@ -2287,7 +2287,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Healthy Weight by Height Chart – Ideal Weight Range for Men & Women – Guía y Calculadora",
+      "title": "Tabla de Peso Saludable por Altura – Rango de Peso Ideal para Hombres y Mujeres – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -2365,7 +2365,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Healthy Weight by Height Chart – Ideal Weight Range for Men & Women – Outil de Référence",
+      "title": "Tableau du Poids Santé selon la Taille – Plage de Poids Idéal Hommes et Femmes – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -2443,7 +2443,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Healthy Weight by Height Chart – Ideal Weight Range for Men & Women – Rechner & Leitfaden",
+      "title": "Gesundes Gewicht nach Körpergröße – Idealer Gewichtsbereich für Männer & Frauen – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -2521,7 +2521,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Healthy Weight by Height Chart – Ideal Weight Range for Men & Women – 참조 계산기",
+      "title": "키별 건강 체중 차트 – 남성 및 여성 이상적인 체중 범위 – 참조 계산기",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -2599,7 +2599,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "डब्ल्यूएचओ एवं डिवाइन संदर्भ तालिका",
-      "title": "ऊंचाई के अनुसार स्वस्थ वजन चार्ट (Healthy Weight by Height)",
+      "title": "ऊंचाई के अनुसार स्वस्थ वजन चार्ट – पुरुषों और महिलाओं के लिए आदर्श वजन सीमा",
       "intro": "पुरुषों और महिलाओं के लिए ऊंचाई के अनुसार स्वस्थ वजन संदर्भ सीमाओं और हाइट-वेट चार्ट की समीक्षा करें। WHO, CDC और डिवाइन फॉर्मूला के आधार पर किलोग्राम (kg) और पाउंड (lbs) में अपनी ऊंचाई के अनुसार आदर्श वजन खोजें।",
       "formulaTitle": "ऊंचाई के अनुसार स्वस्थ वजन का गणितीय सूत्र",
       "formulaDesc": "न्यूनतम स्वस्थ वजन = 18.5 × [ऊंचाई (मीटर)]² | अधिकतम स्वस्थ वजन = 24.9 × [ऊंचाई (मीटर)]²",
@@ -4679,7 +4679,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Lean Body Mass Calculator & LBM Reference Tool – Guía y Calculadora",
+      "title": "Calculadora de Masa Magra – Índice de Masa Libre de Grasa LBM – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -4709,7 +4709,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Lean Body Mass Calculator & LBM Reference Tool – Outil de Référence",
+      "title": "Calculateur de Masse Maigre – Estimation de l'Indice LBM – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -4739,7 +4739,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Lean Body Mass Calculator & LBM Reference Tool – Rechner & Leitfaden",
+      "title": "Magerer-Körpermasse-Rechner – LBM-Index & Referenz – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -4901,7 +4901,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Estimate Ideal Body Weight (IBW) using commonly cited equations – Guía y Calculadora",
+      "title": "Calculadora de Peso Corporal Ideal – Fórmulas IBW Devine y Robinson – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -4959,7 +4959,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Estimate Ideal Body Weight (IBW) using commonly cited equations – Outil de Référence",
+      "title": "Calculateur de Poids Idéal – Équations IBW Devine et Robinson – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -5017,7 +5017,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Estimate Ideal Body Weight (IBW) using commonly cited equations – Rechner & Leitfaden",
+      "title": "Idealgewicht-Rechner – IBW-Formeln nach Devine & Robinson – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -5075,7 +5075,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Estimate Ideal Body Weight (IBW) using commonly cited equations – 참조 계산기",
+      "title": "이상적인 체중 계산기 – Devine 및 Robinson 공식 기반 IBW 분석 – 참조 계산기",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -7704,7 +7704,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "1RM Calculator – Free One Rep Max Calculator (Bench, Squat, Deadlift) – Guía y Calculadora",
+      "title": "Calculadora de 1RM – Calculadora de Repetición Máxima (Press Banca, Sentadilla, Peso Muerto) – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -7755,7 +7755,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "1RM Calculator – Free One Rep Max Calculator (Bench, Squat, Deadlift) – Outil de Référence",
+      "title": "Calculateur de 1RM – Calcul de Répétition Maximale (Développé Couché, Squat, Soulevé) – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -7806,7 +7806,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "1RM Calculator – Free One Rep Max Calculator (Bench, Squat, Deadlift) – Rechner & Leitfaden",
+      "title": "1RM-Rechner – Maximalgewicht-Rechner für 1 Wiederholung (Bankdrücken, Kniebeugen, Kreuzheben) – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -7857,7 +7857,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "1RM 계산기 – 무료 One Rep Max 계산기 (Bench, Squat, Deadlift) – 참조 계산기",
+      "title": "1RM 계산기 – 1회 최대 반복 중량 계산기 (벤치프레스, 스쿼트, 데드리프트) – 참조 계산기",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -7908,7 +7908,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्ट्रेंथ कंडीशनिंग साइंस",
-      "title": "1RM कैलकुलेटर (1RM कैलकुलेटर - One Rep Max)",
+      "title": "1RM कैलकुलेटर – एक पुनरावृत्ति अधिकतम वजन कैलकुलेटर (बेंच प्रेस, स्क्वैट, डेडलिफ्ट)",
       "intro": "बेंच प्रेस, स्क्वाट और डेडलिफ्ट के लिए अपने 1RM (वन रेप मैक्स) की सुरक्षित गणना करें। एपले और ब्रज़िकी सूत्रों से अपने 100% मैक्स की गणना करें।",
       "formulaTitle": "मानक 1RM गणना सूत्र",
       "formulaDesc": "एपले सूत्र: 1RM = वजन × (1 + रेप्स / 30) | ब्रज़िकी सूत्र: 1RM = वजन × [36 / (37 - रेप्स)]",
@@ -8031,7 +8031,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Epley 1RM Bench Press Calculator & 1 Rep Max Reference Tool – Guía y Calculadora",
+      "title": "Calculadora 1RM según Epley – Fórmula de Repetición Máxima para Press Banca – Guía y Calculadora",
       "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -8089,7 +8089,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Epley 1RM Bench Press Calculator & 1 Rep Max Reference Tool – Outil de Référence",
+      "title": "Calculateur de 1RM Formule d'Epley – Répétition Maximale au Développé Couché – Outil de Référence",
       "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -8147,7 +8147,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Epley 1RM Bench Press Calculator & 1 Rep Max Reference Tool – Rechner & Leitfaden",
+      "title": "Epley 1RM Bankdrücken-Rechner – Formel für maximale Wiederholung – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",

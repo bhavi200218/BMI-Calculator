@@ -333,17 +333,17 @@ export const calculators: CalculatorConfig[] = [
     slug: 'bmi-calculator-for-indians',
     name: {
       en: 'BMI Calculator for Indians',
-      es: 'Calculadora IMC para Indios',
-      fr: 'Calculateur d\'IMC pour les Indiens',
-      de: 'BMI Rechner für Inder',
+      es: 'Calculadora de IMC para Adultos Indios',
+      fr: 'Calculateur d\'IMC pour Adultes Indiens',
+      de: 'BMI-Rechner für indische Erwachsene',
       ko: '인도인을 위한 BMI 계산기',
       hi: 'भारतीयों के लिए बीएमआई कैलकुलेटर'
     },
     title: {
       en: 'BMI Calculator for Indians – ICMR & WHO Indian Standard Ranges',
-      es: 'Calculadora IMC para Indios – Estándares ICMR y OMS para India',
-      fr: 'Calculateur d\'IMC pour les Indiens – Normes ICMR et OMS',
-      de: 'BMI Rechner für Inder – ICMR & WHO Indien Standards',
+      es: 'Calculadora de IMC para Adultos Indios – Estándares ICMR y OMS',
+      fr: 'Calculateur d\'IMC pour Adultes Indiens – Normes ICMR et OMS',
+      de: 'BMI-Rechner für indische Erwachsene – ICMR & WHO Referenzstandards',
       ko: '인도인을 위한 BMI 계산기 – ICMR 및 WHO 인도 표준 범위',
       hi: 'भारतीयों के लिए बीएमआई कैलकुलेटर - ICMR एवं WHO भारतीय मानक सीमाएं'
     },
