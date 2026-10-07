@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+---
+
+<Layout 
+    title="Conditions d'Utilisation | Real BMI"
+    description="Consultez les conditions d'utilisation du site de calculateurs et références éducatives Real BMI."
+>
+    <Navbar />
+    <PageShell
+        title="Conditions d'Utilisation"
+        eyebrow="Normes professionnelles"
+        description="Examinez les conditions d'utilisation des calculateurs, outils de santé et de l'expérience axée sur la confidentialité de Real BMI."
+        returnUrl="/fr/"
+        returnLabel="Accueil"
+    >
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-medium opacity-85">
+            <p>
+                Ces Conditions d'Utilisation régissent votre utilisation de <span class="text-[var(--foreground)]">Real BMI</span>. En accédant à nos calculateurs et contenus, vous acceptez ces conditions et reconnaissez que notre service est fourni à des fins d'information et d'éducation.
+            </p>
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Utilisation du Service</h2>
+            <p>
+                Vous pouvez utiliser Real BMI pour explorer l'IMC, le BMR, le TDEE et les estimations de composition corporelle. L'outil est destiné à la sensibilisation à la santé personnelle et ne doit pas remplacer un avis médical professionnel.
+            </p>
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Exactitude et Limites</h2>
+            <p>
+                Nos calculateurs sont conçus pour fournir des estimations de référence basées sur des formules publiées, mais les résultats individuels peuvent varier. Real BMI n'est pas un dispositif médical et les résultats doivent être utilisés en consultation avec un professionnel de santé qualifié.
+            </p>
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Propriété Intellectuelle</h2>
+            <p>
+                Tout le contenu, la conception et la logique de calcul de Real BMI sont protégés par le droit d'auteur et ne peuvent être copiés ou republiés sans autorisation.
+            </p>
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Modifications des Conditions</h2>
+            <p>
+                Nous pouvons mettre à jour ces conditions au fil du temps. L'utilisation continue du site après des modifications indique votre acceptation des conditions révisées.
+            </p>
+        </div>
+    </PageShell>
+</Layout>
