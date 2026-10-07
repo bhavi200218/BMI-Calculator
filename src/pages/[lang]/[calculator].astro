@@ -8,6 +8,7 @@ import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import ToolSEOContent from '../../components/ToolSEOContent.astro';
 import ThreeDBodyVisualizer from '../../components/ThreeDBodyVisualizer.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
+import { seoDatabase } from '../../data/seoDatabase';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
 
 // Define static paths for all 17 calculators across 6 languages
@@ -31,8 +32,9 @@ interface Props {
 
 const { calc, lang } = Astro.props;
 
-const pageTitle = calc.title[lang] || calc.title['en'];
-const pageDesc = calc.description[lang] || calc.description['en'];
+const dbData = seoDatabase[calc.slug]?.[lang] || seoDatabase[calc.slug]?.['en'];
+const pageTitle = dbData?.title || calc.title[lang] || calc.title['en'];
+const pageDesc = dbData?.intro || calc.description[lang] || calc.description['en'];
 const canonicalUrl = `https://realbmicalculator.com/${lang}/${calc.slug}/`;
 
 const localizedIntro = {
