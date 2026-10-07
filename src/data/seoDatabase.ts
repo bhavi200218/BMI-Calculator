@@ -1917,27 +1917,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Underweight",
           "col2": "< 18.5 kg/m²",
-          "col3": "Underweight reference threshold"
+          "col3": "Underweight guidance threshold (< 18.5 kg/m²)"
         },
         {
           "col1": "Healthy Normal Weight",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Optimal healthy range for Indian adults"
+          "col3": "Target healthy weight range for Indian adults"
         },
         {
           "col1": "Overweight / At Risk (Action Threshold)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Elevated cardiometabolic risk cutoff for Indians"
+          "col3": "Action threshold for elevated cardiometabolic risk"
         },
         {
           "col1": "Obese Class I (Indian Standard)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Class I obesity threshold under ICMR standards"
+          "col3": "Class I obesity cutoff under ICMR guidelines"
         },
         {
           "col1": "Obese Class II (Severe Obesity)",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Severe obesity risk threshold"
+          "col3": "Severe obesity high risk classification"
         }
       ],
       "faqs": [
@@ -1967,27 +1967,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Bajo Peso (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
-          "col3": "Umbral de referencia para peso bajo"
+          "col3": "Umbral de referencia para bajo peso (< 18.5 kg/m²)"
         },
         {
           "col1": "Peso Normal Óptimo (18.5 – 22.9 kg/m²)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Rango saludable óptimo para adultos indios"
+          "col3": "Rango saludable recomendado para adultos indios"
         },
         {
           "col1": "Sobrepeso / Zona de Riesgo (23.0 – 24.9 kg/m²)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Umbral de riesgo cardiometabólico elevado para indios"
+          "col3": "Punto de corte para riesgo cardiometabólico elevado"
         },
         {
           "col1": "Obesidad Clase I (25.0 – 29.9 kg/m²)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Umbral de obesidad clase I según estándares ICMR"
+          "col3": "Umbral de obesidad Clase I según guías ICMR"
         },
         {
           "col1": "Obesidad Clase II (≥ 30.0 kg/m²)",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Umbral de riesgo de obesidad severa"
+          "col3": "Clasificación de riesgo de obesidad severa"
         }
       ],
       "faqs": [
@@ -2017,27 +2017,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Insuffisance Pondérale (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
-          "col3": "Seuil de référence pour l'insuffisance pondérale"
+          "col3": "Seuil de référence pour insuffisance pondérale (< 18,5 kg/m²)"
         },
         {
           "col1": "Poids Normal Optimal (18.5 – 22.9 kg/m²)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Plage saine optimale pour les adultes indiens"
+          "col3": "Plage de poids santé recommandée pour les adultes indiens"
         },
         {
           "col1": "Surpoids / Zone de Risque (23.0 – 24.9 kg/m²)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Seuil de risque cardiométabolique accru pour les Indiens"
+          "col3": "Seuil d'action pour risque cardiométabolique accru"
         },
         {
           "col1": "Obésité Classe I (25.0 – 29.9 kg/m²)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Seuil d'obésité de classe I selon les normes ICMR"
+          "col3": "Seuil d'obésité de Classe I selon les directives ICMR"
         },
         {
           "col1": "Obésité Classe II (≥ 30.0 kg/m²)",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Seuil de risque d'obésité sévère"
+          "col3": "Classification de risque d'obésité sévère"
         }
       ],
       "faqs": [
@@ -2067,27 +2067,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Untergewicht (< 18.5)",
           "col2": "< 18.5 kg/m²",
-          "col3": "Referenzbereich für Untergewicht"
+          "col3": "Referenzschwelle für Untergewicht (< 18,5 kg/m²)"
         },
         {
           "col1": "Gesundes Normalgewicht (18.5 – 22.9)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Optimaler gesunder Bereich für indische Erwachsene"
+          "col3": "Empfohlener gesunder Gewichtsbereich für indische Erwachsene"
         },
         {
           "col1": "Übergewicht / Risiko (23.0 – 24.9)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Grenzwert für erhöhtes kardiometabolisches Risiko"
+          "col3": "Aktionsschwelle für erhöhtes kardiometabolisches Risiko"
         },
         {
           "col1": "Adipositas Klasse I (25.0 – 29.9)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Adipositas Klasse I Schwellenwert nach ICMR-Standards"
+          "col3": "Adipositas Klasse I Schwellenwert nach ICMR-Leitlinien"
         },
         {
           "col1": "Adipositas Klasse II (≥ 30.0)",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Schwellenwert für schwere Adipositas"
+          "col3": "Klassifizierung für schweres Adipositas-Risiko"
         }
       ],
       "faqs": [
@@ -2117,27 +2117,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "저체중 (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
-          "col3": "참조 범위 저체중 기준"
+          "col3": "저체중 참조 기준선 (< 18.5 kg/m²)"
         },
         {
           "col1": "정상 체중 (18.5 – 22.9 kg/m²)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "참조 범위 인도 성인 최적 건강 체중"
+          "col3": "인도 성인 권장 적정 체중 구간"
         },
         {
           "col1": "과체중 / 위험군 (23.0 – 24.9 kg/m²)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "참조 범위 심혈관 및 대사 위험 증가 기준"
+          "col3": "심대사 위험 주의 개시 임계 구간"
         },
         {
           "col1": "1단계 비만 (25.0 – 29.9 kg/m²)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "참조 범위 ICMR 기준 1단계 비만 임계값"
+          "col3": "ICMR 지침 기준 1단계 비만 범주"
         },
         {
           "col1": "2단계 비만 (≥ 30.0 kg/m²)",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "참조 범위 고도 비만 위험 임계값"
+          "col3": "고도 비만 고위험 임계 구간"
         }
       ],
       "faqs": [
@@ -2167,27 +2167,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "कम वजन (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
-          "col3": "कम वजन सीमा"
+          "col3": "कम वजन संदर्भ सीमा (< 18.5 kg/m²)"
         },
         {
           "col1": "सामान्य वजन (18.5 – 22.9 kg/m²)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "भारतीयों के लिए स्वस्थ सामान्य बीएमआई"
+          "col3": "भारतीय वयस्कों के लिए अनुशंसित स्वस्थ वजन सीमा"
         },
         {
           "col1": "अधिक वजन (जोखिम सीमा 23.0 – 24.9 kg/m²)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "भारतीयों के लिए अधिक वजन सीमा"
+          "col3": "कार्डियोमेटाबॉलिक जोखिम वृद्धि की शुरुआती सीमा"
         },
         {
           "col1": "मोटापा श्रेणी I (25.0 – 29.9 kg/m²)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "मोटापा श्रेणी I"
+          "col3": "ICMR दिशानिर्देशों के तहत मोटापा श्रेणी I सीमा"
         },
         {
           "col1": "मोटापा श्रेणी II (≥ 30.0 kg/m²)",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "गंभीर मोटापा"
+          "col3": "गंभीर मोटापा उच्च जोखिम वर्गीकरण"
         }
       ],
       "faqs": [
