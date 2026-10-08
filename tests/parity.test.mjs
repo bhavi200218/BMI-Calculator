@@ -217,26 +217,36 @@ test('Navbar: Contains client-side html lang synchronization logic', () => {
   assert.strictEqual(navbarCode.includes('document.documentElement.lang ='), true, 'Navbar missing document.documentElement.lang synchronization');
 });
 
-// 8. Indian BMI Strict Multilingual Parity & Dist Validation
+// 8. Indian BMI Strict Multilingual Parity & Regression Tests (Tests 1 - 6)
 const indianSlug = 'bmi-calculator-for-indians';
 LOCALES.forEach(lang => {
-  test(`Indian BMI Database Parity [${lang}]: 5 table rows with kg/m² units & exactly 3 unique FAQs`, () => {
+  // Test 3: FAQ questions are unique
+  test(`Test 3 — [${lang}] FAQ questions are unique in database`, () => {
     const entry = seoDb[indianSlug]?.[lang];
     assert.ok(entry, `Missing ${lang} entry for ${indianSlug}`);
+    assert.strictEqual(entry.faqs.length, 3, `Expected 3 FAQs for ${indianSlug} [${lang}]`);
+    const qSet = new Set(entry.faqs.map(f => f.question.trim()));
+    assert.strictEqual(qSet.size, 3, `Duplicate FAQ questions in database for ${indianSlug} [${lang}]`);
+  });
+
+  // Test 5: Every locale resolves the correct locale data
+  test(`Test 5 — [${lang}] Resolves correct localized data structure (not English fallback)`, () => {
+    const entry = seoDb[indianSlug]?.[lang];
     assert.strictEqual(entry.tableRows.length, 5, `Expected 5 table rows for ${indianSlug} [${lang}]`);
     entry.tableRows.forEach((r, i) => {
       assert.ok(r.col1.includes('kg/m²'), `Row ${i + 1} col1 missing kg/m² in ${indianSlug} [${lang}]: ${r.col1}`);
+      assert.ok(r.col2.includes('kg/m²'), `Row ${i + 1} col2 missing kg/m² in ${indianSlug} [${lang}]: ${r.col2}`);
+      assert.ok(r.col3.trim().length > 0, `Row ${i + 1} col3 empty in ${indianSlug} [${lang}]`);
     });
-    assert.strictEqual(entry.faqs.length, 3, `Expected 3 FAQs for ${indianSlug} [${lang}]`);
-    const qSet = new Set(entry.faqs.map(f => f.question.trim()));
-    assert.strictEqual(qSet.size, 3, `Duplicate FAQs in database for ${indianSlug} [${lang}]`);
   });
 
   const distFile = path.join(WORKSPACE, `dist/${lang}/${indianSlug}/index.html`);
   if (fs.existsSync(distFile)) {
-    test(`Indian BMI Dist HTML Parity [${lang}]: Zero English table leaks, DOM FAQs === JSON-LD FAQs`, () => {
-      const html = fs.readFileSync(distFile, 'utf-8');
-      if (lang !== 'en') {
+    const html = fs.readFileSync(distFile, 'utf-8');
+
+    // Test 1: Localized pages cannot contain the five English table labels
+    if (lang !== 'en') {
+      test(`Test 1 — [${lang}] Localized Indian BMI page cannot contain the five English table labels`, () => {
         forbiddenFallbacks.forEach(fb => {
           assert.strictEqual(
             html.toLowerCase().includes(fb),
@@ -244,14 +254,23 @@ LOCALES.forEach(lang => {
             `Forbidden English phrase "${fb}" found in dist/${lang}/${indianSlug}/index.html`
           );
         });
-        assert.strictEqual(
-          html.includes('bmi calculator for indians-Rechner') || html.includes('bmi calculator for indians 계산기'),
-          false,
-          `Raw English slug leaked in dist/${lang}/${indianSlug}/index.html`
-        );
-      }
+      });
 
-      // Check DOM FAQ questions vs JSON-LD FAQ questions
+      // Test 2: Localized FAQ cannot contain accidental English slug prose
+      test(`Test 2 — [${lang}] Localized FAQ cannot contain accidental English slug prose`, () => {
+        assert.strictEqual(
+          html.includes('bmi calculator for indians-Rechner') ||
+          html.includes('bmi calculator for indians 계산기') ||
+          html.includes('de bmi calculator for indians') ||
+          html.includes('pour bmi calculator for indians'),
+          false,
+          `Raw English slug leaked into user prose in dist/${lang}/${indianSlug}/index.html`
+        );
+      });
+    }
+
+    // Test 4: Visible FAQ and JSON-LD match
+    test(`Test 4 — [${lang}] FAQ JSON-LD matches visible FAQ in dist HTML`, () => {
       const faqSectionMatch = html.match(/<div class="space-y-6 pt-4">([\s\S]*?)<\/div>\s*<\/div>\s*<!-- Authority Medical/);
       const domFaqs = [...(faqSectionMatch ? faqSectionMatch[1] : '').matchAll(/<h4[^>]*>([\s\S]*?)<\/h4>/g)]
         .map(m => m[1].replace(/<[^>]+>/g, '').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/&quot;/g, '"').trim());
@@ -269,6 +288,13 @@ LOCALES.forEach(lang => {
       });
       assert.strictEqual(jsonLdFaqs.length, 3, `Expected 3 JSON-LD FAQs in dist/${lang}/${indianSlug}`);
       assert.deepStrictEqual(domFaqs, jsonLdFaqs, `DOM FAQs do not match JSON-LD FAQs in dist/${lang}/${indianSlug}`);
+    });
+
+    // Test 6: Locale pages do not receive English cached HTML (independent HTML with correct lang attribute)
+    test(`Test 6 — [${lang}] Page has unique localized HTML and matches language root`, () => {
+      const langMatch = html.match(/<html[^>]*lang="([^"]+)"/);
+      assert.ok(langMatch, `Missing html lang tag in dist/${lang}/${indianSlug}`);
+      assert.strictEqual(langMatch[1], lang, `Expected html lang="${lang}", found "${langMatch[1]}" in dist/${lang}/${indianSlug}`);
     });
   }
 });
