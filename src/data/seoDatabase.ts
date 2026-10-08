@@ -13,47 +13,47 @@ export interface ToolContent {
 }
 
 export const tableUi: Record<string, { cat: string; metric: string; guidance: string; faq: string; refs: string }> = {
-  en: {
-    cat: 'Category / Level',
-    metric: 'Reference Range / Metric',
-    guidance: 'Reference Context',
-    faq: 'Frequently Asked Questions',
-    refs: 'References & Published Research'
+  "en": {
+    "cat": "Category / Level",
+    "metric": "Reference Range / Metric",
+    "guidance": "Reference Context",
+    "faq": "Frequently Asked Questions",
+    "refs": "References & Published Research"
   },
-  es: {
-    cat: 'Categoría / Nivel',
-    metric: 'Referencia / Métrica',
-    guidance: 'Contexto de Referencia',
-    faq: 'Preguntas Frecuentes y Respuestas',
-    refs: 'Referencias e Investigaciones Publicadas'
+  "es": {
+    "cat": "Categoría / Nivel",
+    "metric": "Referencia / Métrica",
+    "guidance": "Contexto de Referencia",
+    "faq": "Preguntas Frecuentes y Respuestas",
+    "refs": "Referencias e Investigaciones Publicadas"
   },
-  fr: {
-    cat: 'Catégorie / Niveau',
-    metric: 'Référence / Métrique',
-    guidance: 'Contexte de Référence',
-    faq: 'Foire Aux Questions et Réponses',
-    refs: 'Références et Recherches Publiées'
+  "fr": {
+    "cat": "Catégorie / Niveau",
+    "metric": "Référence / Métrique",
+    "guidance": "Contexte de Référence",
+    "faq": "Foire Aux Questions et Réponses",
+    "refs": "Références et Recherches Publiées"
   },
-  de: {
-    cat: 'Kategorie / Stufe',
-    metric: 'Referenz / Metrik',
-    guidance: 'Referenzkontext',
-    faq: 'Häufig gestellte Fragen',
-    refs: 'Referenzen & Veröffentlichte Forschung'
+  "de": {
+    "cat": "Kategorie / Stufe",
+    "metric": "Referenz / Metrik",
+    "guidance": "Referenzkontext",
+    "faq": "Häufig gestellte Fragen",
+    "refs": "Referenzen & Veröffentlichte Forschung"
   },
-  ko: {
-    cat: '범주 / 단계',
-    metric: '참조 / 메트릭',
-    guidance: '참조 컨텍스트',
-    faq: '자주 묻는 질문 및 답변',
-    refs: '참고 문헌 및 출판 연구'
+  "ko": {
+    "cat": "범주 / 단계",
+    "metric": "참조 / 메트릭",
+    "guidance": "참조 컨텍스트",
+    "faq": "자주 묻는 질문 및 답변",
+    "refs": "참고 문헌 및 출판 연구"
   },
-  hi: {
-    cat: 'श्रेणी / स्तर',
-    metric: 'संदर्भ / मीट्रिक',
-    guidance: 'संदर्भ विवरण',
-    faq: 'अक्सर पूछे जाने वाले प्रश्न और उत्तर',
-    refs: 'प्रकाशित शोध एवं संदर्भ'
+  "hi": {
+    "cat": "श्रेणी / स्तर",
+    "metric": "संदर्भ / मीट्रिक",
+    "guidance": "संदर्भ विवरण",
+    "faq": "अक्सर पूछे जाने वाले प्रश्न और उत्तर",
+    "refs": "प्रकाशित शोध एवं संदर्भ"
   }
 };
 
@@ -829,23 +829,23 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "What is a BMI chart and how do I read a BMI table?",
-          "answer": "A BMI chart is a reference matrix that maps your height against your weight to determine your Body Mass Index score and category. Locate your height on the left column and trace across to your weight in kg or lbs to find your BMI classification."
+          "question": "What is a BMI Chart and how do I read it?",
+          "answer": "A BMI chart is a visual reference grid that cross-references height and weight to display standard Body Mass Index classifications defined by the World Health Organization (WHO)."
         },
         {
-          "question": "¿Es diferente la tabla de IMC para hombres de la tabla de IMC para mujeres?",
-          "answer": "The WHO adult BMI chart uses identical cutoff numbers (18.5 to 24.9 for normal weight) for both adult men and women. However, because women naturally carry higher body fat percentages, waist measurements and body composition testing provide additional context."
+          "question": "Is the BMI chart different for men and women?",
+          "answer": "Standard WHO BMI charts use identical reference categories (18.5 to 24.9 kg/m² for normal weight) for both adult men and women, although biological sex influences body-fat distribution."
         },
         {
-          "question": "¿Cómo funciona la tabla de IMC según la edad en adultos y adultos mayores?",
-          "answer": "Standard WHO BMI categories apply to all adults aged 20 and older. However, research suggests that for seniors over age 65, a slightly higher BMI (23.0 to 27.0 kg/m²) may protect against bone density loss and frailty."
+          "question": "How does the BMI chart vary by age in adults and seniors?",
+          "answer": "While standard adult BMI categories apply from age 20 onward, geriatric health guidelines suggest that older adults (65+) may benefit from slightly higher BMI ranges (22 to 27 kg/m²) for longevity protection."
         },
         {
           "question": "What is the BMI chart in kg and cm?",
-          "answer": "A metric BMI chart lists height in centimeters (cm) and weight in kilograms (kg). For example: Height 170 cm with Weight 65 kg yields a BMI of 22.5 kg/m² (Healthy Weight)."
+          "answer": "A metric BMI chart lists height in centimeters (cm) and weight in kilograms (kg), allowing you to identify your BMI zone without manual mathematical unit conversions."
         },
         {
-          "question": "¿Cuáles son las categorías principales de la tabla oficial de IMC?",
+          "question": "What are the main categories of the official BMI chart?",
           "answer": "The official WHO BMI categories are: Underweight (< 18.5), Normal Weight (18.5 – 24.9), Overweight (25.0 – 29.9), Obese Class I (30.0 – 34.9), Obese Class II (35.0 – 39.9), and Obese Class III (≥ 40.0)."
         }
       ]
@@ -1121,24 +1121,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "bmi chart 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "성인 BMI 기준표란 무엇인가요?",
+          "answer": "신장과 체중을 바탕으로 저체중, 정상, 과체중, 비만 범주를 한눈에 확인할 수 있는 공식 참고 기준표입니다."
         },
         {
-          "question": "¿Es diferente la tabla de IMC para hombres de la tabla de IMC para mujeres? 안내 및 원리",
-          "answer": "WHO 성인 BMI 분류표는 성인 남성과 여성 모두에게 동일한 정상 체중 기준(18.5~24.9)을 적용합니다. 체지방 분포를 확인하기 위해 허리둘레 측정을 함께 고려하는 것이 권장됩니다."
+          "question": "BMI 차트는 남성과 여성 간에 차이가 있나요?",
+          "answer": "WHO 표준 BMI 기준(18.5~24.9)은 성인 남녀 공통으로 적용되지만, 개인의 체지방률과 근육량에 따라 신체 구성은 다를 수 있습니다."
         },
         {
-          "question": "¿Cómo funciona la tabla de IMC según la edad en adultos y adultos mayores? 안내 및 원리",
-          "answer": "WHO 표준 분류 기준은 20세 이상 성인 전 연령에 적용됩니다. 65세 이상 고령층의 경우 약간 높은 BMI(23.0~27.0 kg/m²)가 골밀도 유지 및 노쇠 예방에 유리할 수 있습니다."
+          "question": "연령에 따라 성인 및 노인의 BMI 차트 적용 방식이 달라지나요?",
+          "answer": "노년층의 경우 체중 감소로 인한 건강 위험을 고려하여 약간 더 높은 BMI 범위가 권장되기도 합니다."
         },
         {
-          "question": " BMI chart in kg and cm? 안내 및 원리",
-          "answer": "미터법 차트는 신장(cm)과 체중(kg)을 대조하여 표시합니다. 예를 들어 신장 170cm에 체중 65kg인 경우 BMI는 22.5 kg/m²(정상 체중)로 계산됩니다."
+          "question": "kg 및 cm 단위의 미터법 BMI 차트는 어떻게 보나요?",
+          "answer": "신장(cm)과 체중(kg)이 교차하는 지점을 확인하여 해당되는 체중 범주를 쉽게 확인할 수 있습니다."
         },
         {
-          "question": "¿Cuáles son las categorías principales de la tabla oficial de IMC? 안내 및 원리",
-          "answer": "공식 WHO 기준 범주는 저체중(< 18.5), 정상 체중(18.5~24.9), 과체중(25.0~29.9), 1단계 비만(30.0~34.9), 2단계 비만(35.0~39.9), 3단계 고도 비만(≥ 40.0)으로 구분됩니다."
+          "question": "공식 BMI 차트의 주요 4가지 범주는 무엇인가요?",
+          "answer": "WHO 기준: 저체중(18.5 미만), 정상 체중(18.5–24.9), 과체중(25.0–29.9), 비만(30.0 이상)으로 분류됩니다."
         }
       ]
     },
@@ -2265,23 +2265,23 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is a healthy weight for my height?",
-          "answer": "A healthy weight for your height is determined by a BMI between 18.5 and 24.9 kg/m² according to WHO standards. Multiply your height in meters squared by 18.5 for minimum weight and 24.9 for maximum healthy weight."
+          "answer": "A healthy weight for your height is determined by a BMI between 18.5 and 24.9 kg/m² under World Health Organization (WHO) adult reference baselines."
         },
         {
-          "question": "What is the healthy weight chart por altura para hombres y mujeres?",
-          "answer": "A height weight chart lists healthy weight ranges based on stature. For example: 5'4\" (163cm) is 49–66 kg; 5'8\" (173cm) is 55–74 kg; 6'0\" (183cm) is 62–83 kg."
+          "question": "What is the healthy weight chart by height for men and women?",
+          "answer": "A height-weight chart lists healthy weight ranges based on stature. For example, for an individual measuring 5 ft 10 in (178 cm), the healthy weight window is approximately 59 to 79 kg (129 to 174 lbs)."
         },
         {
-          "question": "How to calculate ideal weight según la altura?",
-          "answer": "Ideal weight nach Körpergröße can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
+          "question": "How to calculate ideal weight by height?",
+          "answer": "Ideal weight by height can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
         },
         {
-          "question": "¿Es diferente la tabla de peso saludable para hombres y mujeres?",
-          "answer": "While WHO BMI ranges (18.5 to 24.9) apply to both adult men and women, ideal body weight formulas (such as Devine or Robinson) adjust for gender due to differences in average skeletal mass and muscle composition."
+          "question": "Is the healthy weight chart different for men and women?",
+          "answer": "While WHO BMI ranges (18.5 to 24.9) apply to both adult men and women, ideal body weight (IBW) equations provide slightly lower reference numbers for females due to differences in average frame and lean mass."
         },
         {
           "question": "What is a healthy weight for Indian adults by height?",
-          "answer": "For South Asian and Indian adults, consensus guidelines recommend keeping BMI between 18.5 and 22.9 kg/m² due to higher visceral fat risk at lower body mass."
+          "answer": "For South Asian and Indian adults, consensus guidelines recommend keeping BMI between 18.5 and 22.9 kg/m², which yields lower target body weight ranges compared to global WHO standards."
         }
       ]
     },
@@ -2342,24 +2342,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de peso saludable por altura y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Cuál es un peso saludable para mi altura?",
+          "answer": "Un peso saludable para tu estatura se sitúa generalmente dentro de un IMC de 18.5 a 24.9 kg/m² según los estándares de la OMS."
         },
         {
-          "question": "¿Qué es el healthy weight chart por altura para hombres y mujeres?",
-          "answer": "Un gráfico de peso y altura enumera los rangos de peso saludable según la estatura. Por ejemplo, para una altura de 163 cm (5 ft 4 in), el rango normal es de 49 kg a 66 kg (108 lbs a 145 lbs)."
+          "question": "¿Qué es la tabla de peso saludable por altura para hombres y mujeres?",
+          "answer": "Es una tabla de referencia que muestra los rangos de peso recomendados según la estatura en centímetros o pies y pulgadas."
         },
         {
-          "question": "Cómo calculate ideal weight según la altura?",
-          "answer": "Ideal weight nach Körpergröße can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
+          "question": "¿Cómo calcular el peso ideal según la altura?",
+          "answer": "Puede estimarse con fórmulas como Devine: hombres: 50 kg + 2.3 kg por cada pulgada sobre 5 pies; mujeres: 45.5 kg + 2.3 kg por pulgada sobre 5 pies."
         },
         {
           "question": "¿Es diferente la tabla de peso saludable para hombres y mujeres?",
-          "answer": "While WHO BMI ranges (18.5 to 24.9) apply to both adult men and women, ideal body weight formulas (such as Devine or Robinson) adjust for gender due to differences in average skeletal mass and muscle composition."
+          "answer": "Aunque los rangos de IMC de la OMS (18.5 a 24.9) aplican a ambos sexos, las fórmulas de peso ideal (IBW) suelen diferenciar por masa ósea y muscular promedio."
         },
         {
-          "question": "¿Cuál es el peso saludable para adultos indios según la estatura?",
-          "answer": "For South Asian and Indian adults, consensus guidelines recommend keeping BMI between 18.5 and 22.9 kg/m² due to higher visceral fat risk at lower body mass."
+          "question": "¿Cuál es el peso saludable por altura para adultos indios?",
+          "answer": "Para poblaciones del sur de Asia e India, las directrices del ICMR recomiendan un rango de IMC saludable de 18.5 a 22.9 kg/m²."
         }
       ]
     },
@@ -2420,24 +2420,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de poids santé par taille et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Quel est un poids santé pour ma taille ?",
+          "answer": "Un poids santé correspond généralement à un IMC compris entre 18,5 et 24,9 kg/m² selon les critères de l'OMS."
         },
         {
-          "question": "Qu'est-ce que le healthy weight chart por altura para hombres y mujeres?",
-          "answer": "Un tableau de référence poids-taille indique les plages de poids santé en fonction de la taille. Par exemple, pour 163 cm (5 ft 4 in), la plage normale est de 49 kg à 66 kg (108 lbs à 145 lbs)."
+          "question": "Qu'est-ce que le tableau de poids idéal par taille pour hommes et femmes ?",
+          "answer": "C'est un tableau de référence qui indique les fourchettes de poids recommandées en fonction de la taille en cm."
         },
         {
-          "question": "Comment calculate ideal weight según la altura?",
-          "answer": "Ideal weight nach Körpergröße can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
+          "question": "Comment calculer le poids idéal selon la taille ?",
+          "answer": "On utilise souvent la formule de Devine : Hommes : 50 kg + 2,3 kg par pouce au-dessus de 5 pieds ; Femmes : 45,5 kg + 2,3 kg par pouce au-dessus de 5 pieds."
         },
         {
-          "question": "¿Es diferente la tabla de peso saludable para hombres y mujeres?",
-          "answer": "While WHO BMI ranges (18.5 to 24.9) apply to both adult men and women, ideal body weight formulas (such as Devine or Robinson) adjust for gender due to differences in average skeletal mass and muscle composition."
+          "question": "Le tableau de poids santé est-il différent pour les hommes et les femmes ?",
+          "answer": "Bien que la plage d'IMC standard de l'OMS (18,5 à 24,9) s'applique aux deux sexes, les formules de poids idéal intègrent les différences de masse musculaire moyenne."
         },
         {
-          "question": "Quel est un poids santé pour les adultes indiens selon la taille?",
-          "answer": "For South Asian and Indian adults, consensus guidelines recommend keeping BMI between 18.5 and 22.9 kg/m² due to higher visceral fat risk at lower body mass."
+          "question": "Quel est le poids santé par taille pour les adultes indiens ?",
+          "answer": "Pour les adultes d'Asie du Sud et d'Inde, l'ICMR recommande de maintenir un IMC entre 18,5 et 22,9 kg/m²."
         }
       ]
     },
@@ -2498,24 +2498,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Rechner für gesunde Gewichtstabellen und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist ein gesundes Gewicht für meine Körpergröße?",
+          "answer": "Ein gesundes Gewicht entspricht laut WHO in der Regel einem BMI zwischen 18,5 und 24,9 kg/m²."
         },
         {
-          "question": "Was ist der healthy weight chart por altura para hombres y mujeres?",
-          "answer": "Eine Größe-Gewichts-Tabelle listet gesunde Gewichtsbereiche basierend auf der Körpergröße auf. Zum Beispiel liegt der normale Bereich bei 163 cm (5 ft 4 in) zwischen 49 kg und 66 kg (108 lbs bis 145 lbs)."
+          "question": "Was ist die Gewichtstabelle nach Körpergröße für Männer und Frauen?",
+          "answer": "Eine Tabelle, die gesunde Gewichtsbereiche basierend auf der Körpergröße in cm oder Zoll darstellt."
         },
         {
-          "question": "Wie man calculate ideal weight según la altura?",
-          "answer": "Ideal weight nach Körpergröße can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
+          "question": "Wie berechnet man das Idealgewicht nach der Körpergröße?",
+          "answer": "Häufig wird die Devine-Formel genutzt: Männer: 50 kg + 2,3 kg pro Zoll über 5 Fuß; Frauen: 45,5 kg + 2,3 kg pro Zoll über 5 Fuß."
         },
         {
-          "question": "¿Es diferente la tabla de peso saludable para hombres y mujeres?",
-          "answer": "While WHO BMI ranges (18.5 to 24.9) apply to both adult men and women, ideal body weight formulas (such as Devine or Robinson) adjust for gender due to differences in average skeletal mass and muscle composition."
+          "question": "Unterscheidet sich die Tabelle für Männer und Frauen?",
+          "answer": "Der gesunde WHO-BMI-Bereich (18,5–24,9) gilt für beide Geschlechter, aber Idealgewichtsformeln berücksichtigen geschlechtsspezifische Muskelmasseunterschiede."
         },
         {
           "question": "Was ist ein gesundes Gewicht für indische Erwachsene nach Körpergröße?",
-          "answer": "For South Asian and Indian adults, consensus guidelines recommend keeping BMI between 18.5 and 22.9 kg/m² due to higher visceral fat risk at lower body mass."
+          "answer": "Für Erwachsene aus Südasien und Indien empfiehlt der ICMR einen gesunden BMI-Bereich von 18,5 bis 22,9 kg/m²."
         }
       ]
     },
@@ -2576,24 +2576,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "신장별 표준 체중 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "내 신장에 맞는 건강한 적정 체중은 얼마인가요?",
+          "answer": "WHO 기준 성인의 건강 체중은 일반적으로 BMI 18.5에서 24.9 kg/m² 사이의 범위에 해당합니다."
         },
         {
-          "question": "신장별 표준 체중 차트의 기준은 무엇인가요?",
-          "answer": "신장별 표준 체중 차트는 키에 따른 건강한 체중 범위를 나타냅니다. 예를 들어 163 cm (5 ft 4 in)의 경우 표준 권장 범위는 49 kg ~ 66 kg (108 lbs ~ 145 lbs)입니다."
+          "question": "남녀 신장별 표준 체중표란 무엇인가요?",
+          "answer": "키(cm)에 따라 권장되는 정상 건강 체중 범위를 일목요연하게 정리한 참조 도표입니다."
         },
         {
-          "question": " calculate ideal weight según la altura? 안내 및 원리",
-          "answer": "Ideal weight nach Körpergröße can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
+          "question": "신장을 기준으로 이상적인 체중을 어떻게 계산하나요?",
+          "answer": "디바인(Devine) 공식을 널리 활용합니다: 남성: 50kg + 5피트 초과 인치당 2.3kg, 여성: 45.5kg + 5피트 초과 인치당 2.3kg."
         },
         {
-          "question": "¿Es diferente la tabla de peso saludable para hombres y mujeres? 안내 및 원리",
-          "answer": "While WHO BMI ranges (18.5 to 24.9) apply to both adult men and women, ideal body weight formulas (such as Devine or Robinson) adjust for gender due to differences in average skeletal mass and muscle composition."
+          "question": "건강 체중표는 남성과 여성 간에 차이가 있나요?",
+          "answer": "WHO의 표준 BMI 범위(18.5~24.9)는 남녀 공통으로 적용되지만, 이상 체중 공식은 평균적인 골격과 근육량 차이를 반영합니다."
         },
         {
-          "question": "신장별 인도 성인의 건강 체중은 얼마인가요?",
-          "answer": "For South Asian and Indian adults, consensus guidelines recommend keeping BMI between 18.5 and 22.9 kg/m² due to higher visceral fat risk at lower body mass."
+          "question": "인도 성인의 신장별 권장 건강 체중 기준은 무엇인가요?",
+          "answer": "남아시아 및 인도 성인은 ICMR 지침에 따라 BMI 18.5~22.9 kg/m²를 적정 건강 체중 범위로 권장합니다."
         }
       ]
     },
@@ -2654,24 +2654,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "मेरी ऊंचाई के अनुसार मेरा स्वस्थ वजन क्या होना चाहिए?",
-          "answer": "आपकी ऊंचाई के आधार पर 18.5 से 24.9 बीएमआई की सीमा के बीच का वजन आपका स्वस्थ वजन क्षेत्र (Healthy Weight Range) है।"
+          "question": "मेरी ऊंचाई के अनुसार स्वस्थ वजन क्या है?",
+          "answer": "डब्ल्यूएचओ (WHO) के अनुसार आपकी ऊंचाई के लिए स्वस्थ वजन 18.5 से 24.9 kg/m² बीएमआई के बीच निर्धारित होता है।"
         },
         {
-          "question": "डिवाइन सूत्र (Devine IBW) क्या है?",
-          "answer": "डिवाइन सूत्र ऊंचाई के आधार पर आदर्श शरीर वजन (Ideal Body Weight) का अनुमान लगाने का एक स्थापित नैदानिक सूत्र है।"
+          "question": "पुरुषों और महिलाओं के लिए ऊंचाई के अनुसार स्वस्थ वजन चार्ट क्या है?",
+          "answer": "यह चार्ट कद के आधार पर स्वस्थ वजन सीमा दर्शाता है। उदाहरण के लिए, 178 सेमी (5'10\") कद के लिए स्वस्थ सीमा लगभग 59 से 79 किग्रा है।"
         },
         {
-          "question": "क्या पुरुषों और महिलाओं के लिए ऊंचाई के अनुसार वजन सीमा अलग है?",
-          "answer": "बीएमआई रेंज समान होती है, लेकिन डिवाइन सूत्र पुरुषों के लिए 50 किग्रा और महिलाओं के लिए 45.5 किग्रा बेस (5 फीट से ऊपर) का उपयोग करता है।"
+          "question": "ऊंचाई के अनुसार आदर्श वजन की गणना कैसे करें?",
+          "answer": "डिवाइन सूत्र का उपयोग करें: पुरुषों के लिए: 50 किग्रा + 5 फीट से ऊपर प्रति इंच 2.3 किग्रा। महिलाओं के लिए: 45.5 किग्रा + प्रति इंच 2.3 किग्रा।"
         },
         {
-          "question": "ऊंचाई के अनुसार वजन कम या ज्यादा होने पर क्या करें?",
-          "answer": "यदि आपका वजन स्वस्थ सीमा से बाहर है, तो आहार और शारीरिक गतिविधि की समीक्षा करके संतुलित लक्ष्य निर्धारित करें।"
+          "question": "क्या पुरुषों और महिलाओं के लिए स्वस्थ वजन चार्ट अलग होता है?",
+          "answer": "डब्ल्यूएचओ बीएमआई सीमा (18.5 से 24.9) दोनों के लिए समान है, लेकिन आदर्श वजन सूत्र मांसपेशियों और हड्डियों के घनत्व के कारण महिलाओं के लिए थोड़ा कम मान देते हैं।"
         },
         {
-          "question": "क्या हड्डियों के ढांचे (Frame Size) का वजन पर असर पड़ता है?",
-          "answer": "हाँ, बड़े फ्रेम वाले व्यक्तियों का स्वस्थ वजन सीमा के ऊपरी छोर पर होना स्वाभाविक हो सकता है।"
+          "question": "कद के अनुसार भारतीय वयस्कों के लिए स्वस्थ वजन क्या है?",
+          "answer": "आईसीएमआर (ICMR) दिशानिर्देशों के अनुसार भारतीयों के लिए स्वस्थ बीएमआई सीमा 18.5 से 22.9 kg/m² अनुशंसित है।"
         }
       ]
     }
@@ -2715,23 +2715,23 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is the Asian BMI Cutoff Calculator 23?",
-          "answer": "The Asian BMI Cutoff Calculator 23 is a health screening reference tool aligned with WHO reference guidelines. It provides reference context for the lower BMI thresholds often applied in Asian population health studies."
+          "answer": "The Asian BMI Cutoff Calculator 23 is a health screening reference tool aligned with World Health Organization (WHO) Western Pacific Region and ICMR guidance that sets the overweight cutoff for Asian adults at 23.0 kg/m²."
         },
         {
-          "question": "¿Por qué el umbral de referencia del IMC asiático es de 23 kg/m² en lugar de 25 kg/m²?",
-          "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
+          "question": "Why is the Asian BMI cutoff 23 kg/m² instead of 25 kg/m²?",
+          "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations accumulate higher percentages of visceral and body fat at lower BMI scores, elevating cardiometabolic risk at 23.0 kg/m²."
         },
         {
           "question": "How is the Asian BMI threshold of 23 kg/m² evaluated?",
-          "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the Asian overweight reference threshold, providing educational screening context."
+          "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the overweight action range for Asian populations."
         },
         {
-          "question": "¿Qué umbrales de circunferencia de cintura se aplican a las poblaciones asiáticas?",
-          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
+          "question": "What waist circumference thresholds apply to Asian populations?",
+          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal risk cutoffs for Asian adults are ≥ 90 cm for men and ≥ 80 cm for women."
         },
         {
-          "question": "¿Qué debo hacer si mi puntuación de IMC es de 23 o superior?",
-          "answer": "A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. Because BMI is a screening metric, consult a qualified healthcare provider for personalized medical evaluation."
+          "question": "What should I do if my BMI score is 23 or higher?",
+          "answer": "A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. Beneficial lifestyle steps include balanced nutrition, physical activity, and consulting a healthcare professional for comprehensive screening."
         }
       ]
     },
@@ -2772,24 +2772,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de riesgo de diabetes y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es la calculadora de umbral de IMC asiático 23?",
+          "answer": "Es una herramienta de evaluación basada en los criterios de la OMS que identifica el riesgo cardiometabólico temprano en poblaciones asiáticas a partir de un IMC de 23.0 kg/m²."
         },
         {
-          "question": "Por qué es the Asian BMI reference cutoff set at 23 kg/m² instead of 25 kg/m²?",
-          "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
+          "question": "¿Por qué el umbral de sobrepeso asiático es de 23 kg/m² en lugar de 25 kg/m²?",
+          "answer": "Los estudios de la OMS observaron que las poblaciones asiáticas suelen presentar un mayor porcentaje de grasa visceral y riesgo metabólico con valores de IMC más bajos."
         },
         {
           "question": "¿Cómo se evalúa el umbral de IMC asiático de 23 kg/m²?",
-          "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the Asian overweight reference threshold, providing educational screening context."
+          "answer": "Divide tu peso en kg entre la altura en metros al cuadrado. Un valor de 23.0 kg/m² o superior indica la zona de sobrepeso según los estándares de Asia-Pacífico."
         },
         {
-          "question": "Quels seuils de tour de taille s'appliquent aux populations asiatiques?",
-          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
+          "question": "¿Qué medidas de cintura se recomiendan para poblaciones asiáticas?",
+          "answer": "Según la Federación Internacional de Diabetes (IDF), se recomienda mantener la cintura por debajo de 90 cm en hombres y 80 cm en mujeres asiáticas."
         },
         {
           "question": "¿Qué debo hacer si mi puntuación de IMC es de 23 o superior?",
-          "answer": "A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. Because BMI is a screening metric, consult a qualified healthcare provider for personalized medical evaluation."
+          "answer": "Un IMC entre 23.0 y 27.4 se sitúa en el rango de sobrepeso asiático. Se aconseja revisar los hábitos de actividad física y consultar a un profesional de la salud."
         }
       ]
     },
@@ -2830,24 +2830,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de risque de diabète et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce que le calculateur du seuil d'IMC asiatique à 23 ?",
+          "answer": "C'est un outil d'orientation fondé sur les critères de l'OMS qui identifie les risques cardiométaboliques chez les populations asiatiques dès un IMC de 23,0 kg/m²."
         },
         {
-          "question": "Pourquoi the Asian BMI reference cutoff set at 23 kg/m² instead of 25 kg/m²?",
-          "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
+          "question": "Pourquoi le seuil de surpoids asiatique est-il de 23 kg/m² au lieu de 25 kg/m² ?",
+          "answer": "Les recherches de l'OMS ont montré que les populations asiatiques accumulent davantage de graisse viscérale à des indices de masse corporelle plus faibles."
         },
         {
-          "question": "Comment le seuil d'IMC asiatique de 23 kg/m² est-il évalué?",
-          "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the Asian overweight reference threshold, providing educational screening context."
+          "question": "Comment s'évalue le seuil d'IMC asiatique de 23 kg/m² ?",
+          "answer": "Divisez votre poids en kg par votre taille en mètres au carré. Un résultat de 23,0 kg/m² ou plus correspond au surpoids selon les normes Asie-Pacifique."
         },
         {
-          "question": "Welche Taillenumfang-Grenzwerte gelten für asiatische Bevölkerungsgruppen?",
-          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
+          "question": "Quels tours de taille sont recommandés pour les populations asiatiques ?",
+          "answer": "Selon la FID (Fédération Internationale du Diabète), les repères sont inférieurs à 90 cm pour les hommes et 80 cm pour les femmes asiatiques."
         },
         {
-          "question": "¿Qué debo hacer si mi puntuación de IMC es de 23 o superior?",
-          "answer": "A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. Because BMI is a screening metric, consult a qualified healthcare provider for personalized medical evaluation."
+          "question": "Que faire si mon score d'IMC est de 23 ou plus ?",
+          "answer": "Un score de 23,0 à 27,4 entre dans la catégorie de surpoids asiatique. Adopter une alimentation équilibrée et une activité régulière est recommandé."
         }
       ]
     },
@@ -2888,24 +2888,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Diabetes-Risiko-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist der Rechner für den asiatischen BMI-Grenzwert 23?",
+          "answer": "Ein Screening-Werkzeug nach WHO-Kriterien, das das erhöhte kardiometabolische Risiko bei asiatischen Erwachsenen ab einem BMI von 23,0 kg/m² berücksichtigt."
         },
         {
-          "question": "Warum ist the Asian BMI reference cutoff set at 23 kg/m² instead of 25 kg/m²?",
-          "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
+          "question": "Warum liegt die Übergewichtsschwelle für Asiaten bei 23 kg/m² statt bei 25 kg/m²?",
+          "answer": "Studien der WHO zeigten, dass asiatische Bevölkerungsgruppen bei gleichem BMI einen höheren viszeralen Fettanteil und frühere Stoffwechselrisiken aufweisen."
         },
         {
-          "question": "Wie wird der asiatische BMI-Schwellenwert von 23 kg/m² bewertet?",
-          "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the Asian overweight reference threshold, providing educational screening context."
+          "question": "Wie wird der asiatische BMI-Schwellenwert von 23 kg/m² berechnet?",
+          "answer": "Gewicht in kg geteilt durch Größe in Metern zum Quadrat. Ein Wert ab 23,0 kg/m² fällt nach den Asien-Pazifik-Kriterien in den Bereich Übergewicht."
         },
         {
-          "question": "Welche Taillenumfang-Grenzwerte gelten für asiatische Bevölkerungsgruppen?",
-          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
+          "question": "Welche Taillenumfang-Grenzwerte gelten für asiatische Erwachsene?",
+          "answer": "Laut International Diabetes Federation (IDF) liegen die Referenzgrenzen bei unter 90 cm für Männer und unter 80 cm für Frauen."
         },
         {
-          "question": "¿Qué debo hacer si mi puntuación de IMC es de 23 o superior?",
-          "answer": "A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. Because BMI is a screening metric, consult a qualified healthcare provider for personalized medical evaluation."
+          "question": "Was sollte man tun, wenn der BMI-Wert 23 oder höher liegt?",
+          "answer": "Ein Wert zwischen 23,0 und 27,4 liegt im asiatischen Übergewichtsbereich. Eine ausgewogene Ernährung und regelmäßige Bewegung werden empfohlen."
         }
       ]
     },
@@ -2946,24 +2946,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "당뇨 위험 평가 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "아시아인 전용 BMI 23 기준선 계산기란 무엇인가요?",
+          "answer": "WHO 아시아-태평양 지침에 맞춰 아시아 성인의 심대사 위험 증가 시점인 BMI 23.0 kg/m² 기준을 평가하는 건강 선별 도구입니다."
         },
         {
-          "question": "¿Por qué el umbral de referencia del IMC asiático es de 23 kg/m² en lugar de 25 kg/m²? 안내 및 원리",
-          "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations often exhibit higher percentages of body fat at lower BMI values compared to European populations, prompting the use of 23.0 kg/m² as a screening reference threshold."
+          "question": "아시아인의 과체중 기준이 25 kg/m²가 아닌 23 kg/m²인 이유는 무엇인가요?",
+          "answer": "세계보건기구(WHO) 연구에 따르면 아시아 인구는 서구인에 비해 상대적으로 낮은 BMI에서도 내장 지방 비율이 높아 대사 위험이 조기에 증가하기 때문입니다."
         },
         {
-          "question": "아시아인 BMI 기준 23 kg/m² 임계값은 어떻게 평가되나요?",
-          "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the Asian overweight reference threshold, providing educational screening context."
+          "question": "아시아인 BMI 기준 23 kg/m²는 어떻게 평가되나요?",
+          "answer": "체중(kg)을 신장(m)의 제곱으로 나눕니다. 23.0 kg/m² 이상일 경우 아시아 기준 과체중 주의 구간에 해당합니다."
         },
         {
-          "question": "아시아인에게 적용되는 허리둘레 선별 임계값은 무엇인가요?",
-          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal waist circumference screening thresholds für asiatische Erwachsene are 90 cm (35 inches) for men and 80 cm (31.5 inches) for women."
+          "question": "아시아 성인에게 권장되는 허리둘레 기준은 얼마인가요?",
+          "answer": "국제당뇨병연맹(IDF) 기준에 따르면 아시아 성인 남성은 90cm 미만, 여성은 80cm 미만을 권장 복부둘레 기준으로 제시합니다."
         },
         {
-          "question": "¿Qué debo hacer si mi puntuación de IMC es de 23 o superior? 안내 및 원리",
-          "answer": "A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. Because BMI is a screening metric, consult a qualified healthcare provider for personalized medical evaluation."
+          "question": "BMI가 23 이상으로 측정된 경우 어떻게 해야 하나요?",
+          "answer": "BMI 23.0~27.4 구간은 아시아 표준 과체중 범위입니다. 규칙적인 운동과 식습관 개선을 실천하고 필요 시 전문가 상담을 권장합니다."
         }
       ]
     },
@@ -3239,16 +3239,16 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "아시아인 전용 BMI 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "아시아인 전용 BMI 계산기가 별도로 존재하는 이유는 무엇인가요?",
+          "answer": "세계보건기구(WHO)는 아시아 성인이 낮은 체질량지수에서도 높은 체지방률과 심대사 질환 위험을 보인다는 연구를 바탕으로 아시아 전용 기준(과체중 ≥ 23.0 kg/m²)을 마련했습니다."
         },
         {
           "question": "아시아 성인의 표준 정상 BMI 범위는 얼마인가요?",
-          "answer": "For Asian adults, a normal healthy BMI ranges from 18.5 to 22.9 kg/m²."
+          "answer": "WHO 아시아-태평양 및 보건복지부 기준에 따르면 아시아 성인의 정상 건강 체중 범위는 18.5 ~ 22.9 kg/m²입니다."
         },
         {
-          "question": "아시아인에게 과체중으로 간주되는 BMI 기준은 얼마인가요?",
-          "answer": "Under WHO Asia-Pacific criteria, a BMI of 23.0 kg/m² or higher is considered overweight."
+          "question": "아시아인에게 과체중으로 분류되는 BMI 수치는 얼마인가요?",
+          "answer": "아시아-태평양 지침에 따라 BMI 23.0 kg/m² 이상부터 과체중 주의 구간으로 분류되며, 25.0 kg/m² 이상은 1단계 비만으로 정의됩니다."
         }
       ]
     },
@@ -3704,12 +3704,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "El BMR es el gasto energético en reposo. El TDEE engloba el BMR más la energía quemada durante el movimiento diario y el ejercicio."
         },
         {
-          "question": "¿Cómo funciona la calculadora de gasto energético total (TDEE) y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Cuántas calorías debo consumir al día para perder peso usando el TDEE?",
+          "answer": "Un déficit calórico moderado por debajo del TDEE estimado se emplea con frecuencia para la pérdida de peso, variando la cantidad según cada persona."
         },
         {
-          "question": "How often should I recalculate my maintenance calories and TDEE?",
-          "answer": "Consider recalculating when your body weight or physical activity level changes significantly, as body mass changes alter daily energy maintenance estimates."
+          "question": "¿Con qué frecuencia debo recalcular mis calorías de mantenimiento y el TDEE?",
+          "answer": "Conviene recalcular el TDEE cuando tu peso corporal cambie en 2 o 3 kg, o si modificas tu nivel semanal de actividad física o tu rutina de entrenamiento."
         }
       ]
     },
@@ -3762,12 +3762,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         },
         {
-          "question": "How many calories should I eat daily for weight loss using TDEE?",
-          "answer": "A calorie deficit below estimated TDEE is commonly used for weight-loss planning, but the appropriate amount varies by individual."
+          "question": "Combien de calories dois-je consommer par jour pour perdre du poids avec le TDEE ?",
+          "answer": "Un déficit calorique modéré par rapport au TDEE estimé est couramment utilisé pour la gestion du poids, l'ajustement optimal dépendant de chaque profil."
         },
         {
-          "question": "How often should I recalculate my maintenance calories and TDEE?",
-          "answer": "Consider recalculating when your body weight or physical activity level changes significantly, as body mass changes alter daily energy maintenance estimates."
+          "question": "À quelle fréquence dois-je recalculer mes calories de maintien et mon TDEE ?",
+          "answer": "Il est conseillé de recalculer votre TDEE lorsque votre poids varie de 2 à 3 kg ou si votre niveau d'activité physique hebdomadaire change."
         }
       ]
     },
@@ -3820,12 +3820,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
         },
         {
-          "question": "How many calories should I eat daily for weight loss using TDEE?",
-          "answer": "A calorie deficit below estimated TDEE is commonly used for weight-loss planning, but the appropriate amount varies by individual."
+          "question": "Wie viele Kalorien sollte ich täglich zur Gewichtsabnahme anhand des TDEE zu mir nehmen?",
+          "answer": "Ein moderates Kaloriendefizit unter dem geschätzten TDEE wird üblicherweise zur Gewichtsreduktion eingesetzt; die passende Anpassung hängt vom Einzelfall ab."
         },
         {
-          "question": "How often should I recalculate my maintenance calories and TDEE?",
-          "answer": "Consider recalculating when your body weight or physical activity level changes significantly, as body mass changes alter daily energy maintenance estimates."
+          "question": "Wie oft sollte ich meine Erhaltungskalorien und den TDEE neu berechnen?",
+          "answer": "Eine Neuberechnung empfiehlt sich, wenn sich Ihr Körpergewicht um 2 bis 3 kg verändert oder Sie Ihr wöchentliches Aktivitäts- bzw. Trainingsniveau anpassen."
         }
       ]
     },
@@ -3878,12 +3878,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
         },
         {
-          "question": "How many calories should I eat daily for weight loss using TDEE? 안내 및 원리",
-          "answer": "A calorie deficit below estimated TDEE is commonly used for weight-loss planning, but the appropriate amount varies by individual."
+          "question": "TDEE를 기준으로 체중 감량을 위해 하루에 몇 칼로리를 섭취해야 하나요?",
+          "answer": "일반적으로 체중 감량을 위해 추정된 TDEE보다 낮은 칼로리 결손을 계획하지만, 개인의 건강 상태와 목표에 따라 달라집니다."
         },
         {
-          "question": "How often should I recalculate my maintenance calories and TDEE? 안내 및 원리",
-          "answer": "Consider recalculating when your body weight or physical activity level changes significantly, as body mass changes alter daily energy maintenance estimates."
+          "question": "유지 칼로리와 TDEE는 얼마나 자주 재계산해야 하나요?",
+          "answer": "체중이 2~3kg 이상 변화하거나 주간 운동 빈도 및 일상 활동량에 변동이 생겼을 때 재계산하는 것이 좋습니다."
         }
       ]
     },
@@ -3936,12 +3936,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "अपने TDEE से 300 से 500 कैलोरी कम (Calorie Deficit) खाने से सुरक्षित रूप से वजन घटाया जा सकता है।"
         },
         {
-          "question": "TDEE को कब दोबारा अपडेट करना चाहिए?",
-          "answer": "वजन में 3-5 किग्रा का बदलाव होने पर या अपनी वर्कआउट दिनचर्या बदलने पर TDEE की पुनर्गणना करें।"
+          "question": "TDEE के आधार पर वजन घटाने के लिए रोजाना कितनी कैलोरी खानी चाहिए?",
+          "answer": "वजन घटाने के लिए आमतौर पर TDEE से 300-500 कैलोरी कम का घाटा (deficit) रखा जाता है, लेकिन यह व्यक्तिगत लक्ष्यों पर निर्भर करता है।"
         },
         {
-          "question": "क्या TDEE हर दिन समान रहता है?",
-          "answer": "नहीं, आपकी दैनिक गतिविधियों और कसरत के आधार पर वास्तविक कैलोरी बर्न में रोज थोड़ा अंतर हो सकता है।"
+          "question": "मुझे अपने रखरखाव कैलोरी और TDEE की पुनर्गणना कितनी बार करनी चाहिए?",
+          "answer": "जब आपके शरीर के वजन में 2-3 किग्रा का बदलाव हो या आपकी साप्ताहिक शारीरिक गतिविधि बदले, तब TDEE की पुनर्गणना करें।"
         }
       ]
     }
@@ -4042,24 +4042,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de calorías de mantenimiento y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es una calculadora de calorías de mantenimiento y cómo funciona?",
+          "answer": "Una calculadora de calorías de mantenimiento calcula la ingesta calórica diaria estimada necesaria para mantener tu peso corporal actual, combinando ecuaciones metabólicas (Mifflin-St Jeor) con tu nivel de actividad física."
         },
         {
-          "question": "Cómo calculate calorie maintenance by age, height (cm), and weight (kg)?",
-          "answer": "Input your biological age, gender, height (cm), weight (kg), and weekly activity level to estimate your maintenance calorie baseline."
+          "question": "¿Cómo calcular las calorías de mantenimiento según edad, altura (cm) y peso (kg)?",
+          "answer": "Introduce tu edad, sexo biológico, altura (cm), peso (kg) y nivel de actividad semanal para estimar tu línea base de calorías de mantenimiento."
         },
         {
-          "question": "What happens if I eat at my maintenance calories every day?",
-          "answer": "Eating at your estimated maintenance calorie level keeps your total energy balance neutral. Your body weight remains relatively constant over time."
+          "question": "¿Qué sucede si consumo mis calorías de mantenimiento todos los días?",
+          "answer": "Consumir tu nivel estimado de calorías de mantenimiento mantiene neutro tu balance energético total, por lo que el peso corporal tiende a permanecer estable en el tiempo."
         },
         {
-          "question": "How do I use my maintenance calories to calculate calories for weight loss?",
-          "answer": "A calorie deficit below estimated maintenance calories is commonly used for weight-loss planning, but the appropriate amount varies by individual."
+          "question": "¿Cómo utilizo las calorías de mantenimiento para planificar la pérdida de peso?",
+          "answer": "Un déficit calórico moderado por debajo de las calorías de mantenimiento estimadas se utiliza habitualmente para la pérdida de peso, aunque el ajuste adecuado varía según cada persona."
         },
         {
-          "question": "Is a calorie maintenance calculator accurate for men and women of all ages?",
-          "answer": "Maintenance calorie calculators utilize published mathematical formulas like Mifflin-St Jeor and Harris-Benedict, providing baseline estimates for healthy adults."
+          "question": "¿Es precisa la calculadora de calorías de mantenimiento para hombres y mujeres de todas las edades?",
+          "answer": "Las calculadoras de calorías de mantenimiento emplean fórmulas publicadas como Mifflin-St Jeor y Harris-Benedict, proporcionando estimaciones de referencia para adultos sanos."
         }
       ]
     },
@@ -4100,24 +4100,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de calories de maintien et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce qu'un calculateur de calories de maintien et comment fonctionne-t-il ?",
+          "answer": "Un calculateur de calories de maintien estime l'apport calorique quotidien nécessaire pour stabiliser votre poids actuel en combinant des équations métaboliques (Mifflin-St Jeor) avec votre coefficient d'activité physique."
         },
         {
-          "question": "Comment calculate calorie maintenance by age, height (cm), and weight (kg)?",
-          "answer": "Input your biological age, gender, height (cm), weight (kg), and weekly activity level to estimate your maintenance calorie baseline."
+          "question": "Comment calculer les calories de maintien selon l'âge, la taille (cm) et le poids (kg) ?",
+          "answer": "Indiquez votre âge, sexe biologique, taille (cm), poids (kg) et niveau d'activité hebdomadaire pour obtenir une estimation de vos calories de maintien."
         },
         {
-          "question": "What happens if I eat at my maintenance calories every day?",
-          "answer": "Eating at your estimated maintenance calorie level keeps your total energy balance neutral. Your body weight remains relatively constant over time."
+          "question": "Que se passe-t-il si je consomme mes calories de maintien chaque jour ?",
+          "answer": "Consommer vos calories de maintien permet de conserver un bilan énergétique neutre, maintenant ainsi un poids corporel relativement stable au fil du temps."
         },
         {
-          "question": "How do I use my maintenance calories to calculate calories for weight loss?",
-          "answer": "A calorie deficit below estimated maintenance calories is commonly used for weight-loss planning, but the appropriate amount varies by individual."
+          "question": "Comment utiliser les calories de maintien pour calculer un déficit de perte de poids ?",
+          "answer": "Un déficit calorique modéré par rapport aux calories de maintien estimées est généralement utilisé pour la perte de poids, l'ajustement optimal variant selon chaque individu."
         },
         {
-          "question": "Is a calorie maintenance calculator accurate for men and women of all ages?",
-          "answer": "Maintenance calorie calculators utilize published mathematical formulas like Mifflin-St Jeor and Harris-Benedict, providing baseline estimates for healthy adults."
+          "question": "Le calculateur de calories de maintien est-il fiable pour les hommes et les femmes de tous âges ?",
+          "answer": "Ces calculateurs reposent sur des formules scientifiques publiées (Mifflin-St Jeor, Harris-Benedict) et offrent des estimations de référence pour adultes en bonne santé."
         }
       ]
     },
@@ -4158,24 +4158,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Kalorien-Erhaltungs-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist ein Erhaltungskalorien-Rechner und wie funktioniert er?",
+          "answer": "Ein Erhaltungskalorien-Rechner ermittelt die geschätzte tägliche Kalorienaufnahme, die erforderlich ist, um Ihr aktuelles Körpergewicht zu halten, basierend auf Stoffwechselformeln (Mifflin-St Jeor) und Ihrem Aktivitätsfaktor."
         },
         {
-          "question": "Wie man calculate calorie maintenance by age, height (cm), and weight (kg)?",
-          "answer": "Input your biological age, gender, height (cm), weight (kg), and weekly activity level to estimate your maintenance calorie baseline."
+          "question": "Wie berechnet man Erhaltungskalorien nach Alter, Größe (cm) und Gewicht (kg)?",
+          "answer": "Geben Sie Alter, biologisches Geschlecht, Größe (cm), Gewicht (kg) und wöchentliches Aktivitätsniveau ein, um Ihren Kaloriengrundbedarf zu ermitteln."
         },
         {
-          "question": "What happens if I eat at my maintenance calories every day?",
-          "answer": "Eating at your estimated maintenance calorie level keeps your total energy balance neutral. Your body weight remains relatively constant over time."
+          "question": "Was passiert, wenn ich jeden Tag meine Erhaltungskalorien zu mir nehme?",
+          "answer": "Wenn Sie täglich Ihre geschätzten Erhaltungskalorien aufnehmen, bleibt Ihre Energiebilanz ausgeglichen und Ihr Körpergewicht im Zeitverlauf weitgehend konstant."
         },
         {
-          "question": "How do I use my maintenance calories to calculate calories for weight loss?",
-          "answer": "A calorie deficit below estimated maintenance calories is commonly used for weight-loss planning, but the appropriate amount varies by individual."
+          "question": "Wie nutze ich meine Erhaltungskalorien zur Planung einer Gewichtsabnahme?",
+          "answer": "Ein moderates Kaloriendefizit unterhalb der Erhaltungskalorien wird häufig zur Gewichtsreduktion genutzt, wobei die ideale Anpassung individuell variiert."
         },
         {
-          "question": "Is a calorie maintenance calculator accurate for men and women of all ages?",
-          "answer": "Maintenance calorie calculators utilize published mathematical formulas like Mifflin-St Jeor and Harris-Benedict, providing baseline estimates for healthy adults."
+          "question": "Ist ein Erhaltungskalorien-Rechner für Männer und Frauen jeden Alters verlässlich?",
+          "answer": "Erhaltungskalorien-Rechner verwenden anerkannte wissenschaftliche Formeln wie Mifflin-St Jeor und Harris-Benedict und bieten Orientierungswerte für gesunde Erwachsene."
         }
       ]
     },
@@ -4216,24 +4216,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "체중 유지 칼로리 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "체중 유지 칼로리 계산기의 원리와 작동 방식은 무엇인가요?",
+          "answer": "유지 칼로리 계산기는 현재 체중을 유지하는 데 필요한 일일 추정 에너지 섭취량을 미플린-세인트 지어(Mifflin-St Jeor) 공식과 활동 계수를 바탕으로 산출합니다."
         },
         {
-          "question": " calculate calorie maintenance by age, height (cm), and weight (kg)? 안내 및 원리",
-          "answer": "Input your biological age, gender, height (cm), weight (kg), and weekly activity level to estimate your maintenance calorie baseline."
+          "question": "나이, 신장(cm), 체중(kg)을 이용해 유지 칼로리를 어떻게 계산하나요?",
+          "answer": "생물학적 연령, 성별, 키(cm), 체중(kg) 및 주간 신체 활동량을 입력하면 일일 유지 칼로리 기준선이 계산됩니다."
         },
         {
-          "question": "What happens if I eat at my maintenance calories every day? 안내 및 원리",
-          "answer": "Eating at your estimated maintenance calorie level keeps your total energy balance neutral. Your body weight remains relatively constant over time."
+          "question": "매일 유지 칼로리만큼 섭취하면 신체에 어떤 변화가 생기나요?",
+          "answer": "추정된 유지 칼로리 수준으로 식단을 유지하면 총 에너지 균형이 중립을 이루어 체중이 장기적으로 일정하게 유지됩니다."
         },
         {
-          "question": "How do I use my maintenance calories to calculate calories for weight loss? 안내 및 원리",
-          "answer": "A calorie deficit below estimated maintenance calories is commonly used for weight-loss planning, but the appropriate amount varies by individual."
+          "question": "체중 감량을 위해 유지 칼로리를 어떻게 활용해야 하나요?",
+          "answer": "체중 감량 계획에서는 유지 칼로리보다 적은 칼로리 결손을 설정하는 방식이 널리 활용되며, 개인의 건강 상태에 따라 조절할 수 있습니다."
         },
         {
-          "question": "Is a calorie maintenance calculator accurate for men and women of all ages? 안내 및 원리",
-          "answer": "Maintenance calorie calculators utilize published mathematical formulas like Mifflin-St Jeor and Harris-Benedict, providing baseline estimates for healthy adults."
+          "question": "유지 칼로리 계산기는 모든 연령의 성인 남녀에게 적합한가요?",
+          "answer": "미플린-세인트 지어 및 해리스-베네딕트와 같은 표준 학술 공식을 기반으로 하여 건강한 성인을 위한 기초 참고 지표를 제공합니다."
         }
       ]
     },
@@ -4788,12 +4788,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "제지방량 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "제지방량(LBM) 계산기란 무엇인가요?",
+          "answer": "제지방량(Lean Body Mass) 계산기는 보어(Boer) 공식을 사용하여 총 체중에서 지방을 제외한 근육, 뼈, 수분 등의 무게를 추정합니다."
         },
         {
-          "question": "Why is Lean Body Mass useful in body composition tracking? 안내 및 원리",
-          "answer": "LBM estimates can be used as one reference when tracking changes in estimated non-fat body mass."
+          "question": "신체 구성 추적에서 제지방량이 중요한 이유는 무엇인가요?",
+          "answer": "단순 체중 감소가 아닌 근육량을 보존하면서 순수 체지방이 빠지고 있는지 확인하는 핵심 지표로 활용됩니다."
         }
       ]
     },
@@ -4818,24 +4818,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "लीन बॉडी मास (Lean Body Mass) क्या है?",
-          "answer": "लीन बॉडी मास आपके कुल शरीर के वजन में से वसा के वजन को घटाने के बाद बची मांसपेशियों, हड्डियों और पानी का वजन है।"
+          "question": "लीन बॉडी मास (LBM) कैलकुलेटर क्या है?",
+          "answer": "लीन बॉडी मास कैलकुलेटर बोअर (Boer) सूत्र का उपयोग करके कुल शरीर के वजन में से व사 को छोड़कर हड्डियों, मांसपेशियों और अंगों का शुद्ध वजन आंकता है।"
         },
         {
-          "question": "लीन बॉडी मास कैलकुलेटर किस सूत्र का उपयोग करता है?",
-          "answer": "यह बोअर (Boer) सूत्र का उपयोग करता है जो वजन और ऊंचाई के आधार पर लीन मास का सटीक अनुमान लगाता है।"
-        },
-        {
-          "question": "प्रोटीन की आवश्यकता के लिए LBM क्यों महत्वपूर्ण है?",
-          "answer": "एथलीट और बॉडीबिल्डर अक्सर कुल वजन के बजाय लीन बॉडी मास के आधार पर अपने प्रोटीन लक्ष्य तय करते हैं।"
-        },
-        {
-          "question": "LBM और वसा द्रव्यमान (Fat Mass) में क्या अंतर है?",
-          "answer": "LBM शरीर के गैर-वसा वाले ऊतकों का वजन है, जबकि फैट मास शरीर में मौजूद वसा का कुल वजन है।"
-        },
-        {
-          "question": "डाइट के दौरान LBM को कैसे बचाएं?",
-          "answer": "उच्च प्रोटीन आहार और भारी वजन उठाने (Resistance Training) से डाइट के दौरान लीन मास सुरक्षित रहता है।"
+          "question": "शरीर संरचना ट्रैकिंग में लीन बॉडी मास क्यों उपयोगी है?",
+          "answer": "यह वजन घटाने के दौरान मांसपेशियों की रक्षा करते हुए वास्तविक वसा हानि को ट्रैक करने में मदद करता है।"
         }
       ]
     }
@@ -4894,8 +4882,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "IBW formulas provide specific formula-based estimates, whereas the WHO healthy BMI weight range gives a broad window (18.5 to 24.9 kg/m²) accommodating different frame sizes and body compositions."
         },
         {
-          "question": "¿Es adecuada la calculadora de peso ideal para personas musculosas?",
-          "answer": "IBW formulas provide population reference benchmarks. Muscular individuals or athletes may weigh more than calculated IBW targets while maintaining low body fat."
+          "question": "Is the ideal body weight calculator accurate for muscular individuals?",
+          "answer": "IBW formulas provide population reference benchmarks. Muscular individuals or athletes often exceed ideal weight estimates while maintaining healthy body fat percentages."
         }
       ]
     },
@@ -4936,24 +4924,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de peso ideal y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es una calculadora de peso ideal (IBW)?",
+          "answer": "Es una herramienta que estima rangos de peso objetivo según la altura y el sexo biológico utilizando fórmulas clásicas como Devine, Robinson y Miller."
         },
         {
-          "question": "¿Qué es my ideal weight for my height in kg or lbs?",
-          "answer": "Enter your height in cm or feet/inches and select male or female. For example, a 5 ft 10 in (178 cm) male has an estimated IBW of ~73 kg via Devine formula, with a WHO healthy weight range of 58.6 kg to 78.9 kg."
+          "question": "¿Cuál es mi peso ideal para mi altura en kg o libras?",
+          "answer": "Introduce tu altura y sexo. Por ejemplo, para un hombre de 178 cm, la fórmula de Devine estima un peso de referencia cercano a 73 kg."
         },
         {
-          "question": "Why are there different formulas for calculating ideal weight for females vs males?",
-          "answer": "Biological males typically have higher average muscle density and bone mass per unit of height than females, resulting in separate base constants in formulas."
+          "question": "¿Por qué existen diferentes fórmulas para hombres y mujeres?",
+          "answer": "Los hombres biológicos presentan en promedio mayor densidad muscular y masa ósea por centímetro de estatura, lo que se refleja en los coeficientes matemáticos."
         },
         {
-          "question": "¿Qué es el difference between Ideal Body Weight (IBW) and healthy BMI weight range?",
-          "answer": "IBW formulas provide specific formula-based estimates, whereas the WHO healthy BMI weight range gives a broad window (18.5 to 24.9 kg/m²) accommodating different frame sizes and body compositions."
+          "question": "¿Cuál es la diferencia entre el peso corporal ideal (IBW) y el rango saludable de IMC?",
+          "answer": "Las fórmulas de IBW proporcionan un valor numérico específico, mientras que el IMC de la OMS ofrece un rango más amplio y flexible (18.5 a 24.9 kg/m²)."
         },
         {
           "question": "¿Es adecuada la calculadora de peso ideal para personas musculosas?",
-          "answer": "IBW formulas provide population reference benchmarks. Muscular individuals or athletes may weigh more than calculated IBW targets while maintaining low body fat."
+          "answer": "Las fórmulas de IBW se basan en medias poblacionales; los atletas con alta masa muscular pueden superar estos valores manteniéndose saludables."
         }
       ]
     },
@@ -4994,24 +4982,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de poids idéal et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce qu'un calculateur de poids idéal (IBW) ?",
+          "answer": "C'est un outil qui calcule des estimations de poids de référence selon votre taille et votre sexe à l'aide de formules reconnues (Devine, Robinson, Miller)."
         },
         {
-          "question": "Qu'est-ce que my ideal weight for my height in kg or lbs?",
-          "answer": "Enter your height in cm or feet/inches and select male or female. For example, a 5 ft 10 in (178 cm) male has an estimated IBW of ~73 kg via Devine formula, with a WHO healthy weight range of 58.6 kg to 78.9 kg."
+          "question": "Quel est mon poids idéal selon ma taille en kg ?",
+          "answer": "Entrez votre taille et votre sexe. Par exemple, pour un homme de 178 cm, la formule de Devine estime un poids cible autour de 73 kg."
         },
         {
-          "question": "Why are there different formulas for calculating ideal weight for females vs males?",
-          "answer": "Biological males typically have higher average muscle density and bone mass per unit of height than females, resulting in separate base constants in formulas."
+          "question": "Pourquoi les formules sont-elles différentes pour les hommes et les femmes ?",
+          "answer": "Les hommes possèdent en moyenne une masse musculaire et osseuse plus dense par centimètre de taille, ce qui motive des coefficients distincts."
         },
         {
-          "question": "Qu'est-ce que le difference between Ideal Body Weight (IBW) and healthy BMI weight range?",
-          "answer": "IBW formulas provide specific formula-based estimates, whereas the WHO healthy BMI weight range gives a broad window (18.5 to 24.9 kg/m²) accommodating different frame sizes and body compositions."
+          "question": "Quelle est la différence entre le poids idéal (IBW) et la fourchette d'IMC santé ?",
+          "answer": "L'IBW donne une estimation ponctuelle, alors que l'IMC santé de l'OMS définit une plage complète (18,5 à 24,9 kg/m²)."
         },
         {
-          "question": "¿Es adecuada la calculadora de peso ideal para personas musculosas?",
-          "answer": "IBW formulas provide population reference benchmarks. Muscular individuals or athletes may weigh more than calculated IBW targets while maintaining low body fat."
+          "question": "Le calculateur de poids idéal convient-il aux personnes musclées ?",
+          "answer": "Ces équations sont basées sur des moyennes générales ; les sportifs musclés peuvent naturellement peser plus lourd sans excès de graisse."
         }
       ]
     },
@@ -5052,24 +5040,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Idealgewicht-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist ein Idealgewicht-Rechner (IBW-Rechner)?",
+          "answer": "Ein Werkzeug, das Orientierungswerte für das Zielgewicht basierend auf Größe und biologischem Geschlecht mithilfe anerkannter Formeln (Devine, Robinson) berechnet."
         },
         {
-          "question": "Was ist my ideal weight for my height in kg or lbs?",
-          "answer": "Enter your height in cm or feet/inches and select male or female. For example, a 5 ft 10 in (178 cm) male has an estimated IBW of ~73 kg via Devine formula, with a WHO healthy weight range of 58.6 kg to 78.9 kg."
+          "question": "Was ist mein Idealgewicht für meine Körpergröße in kg?",
+          "answer": "Geben Sie Größe und Geschlecht ein. Für einen 178 cm großen Mann schätzt die Devine-Formel beispielsweise ein Referenzgewicht von ca. 73 kg."
         },
         {
-          "question": "Why are there different formulas for calculating ideal weight for females vs males?",
-          "answer": "Biological males typically have higher average muscle density and bone mass per unit of height than females, resulting in separate base constants in formulas."
+          "question": "Warum gibt es unterschiedliche Formeln für Männer und Frauen?",
+          "answer": "Männer haben im statistischen Durchschnitt mehr Knochen- und Muskelmasse pro Zentimeter Körpergröße, was in den Berechnungen berücksichtigt wird."
         },
         {
-          "question": "Was ist der difference between Ideal Body Weight (IBW) and healthy BMI weight range?",
-          "answer": "IBW formulas provide specific formula-based estimates, whereas the WHO healthy BMI weight range gives a broad window (18.5 to 24.9 kg/m²) accommodating different frame sizes and body compositions."
+          "question": "Was ist der Unterschied zwischen Idealgewicht (IBW) und dem gesunden BMI-Bereich?",
+          "answer": "IBW-Formeln liefern eine konkrete Punktschätzung, während der WHO-BMI einen flexiblen gesunden Bereich (18,5 bis 24,9 kg/m²) beschreibt."
         },
         {
-          "question": "¿Es adecuada la calculadora de peso ideal para personas musculosas?",
-          "answer": "IBW formulas provide population reference benchmarks. Muscular individuals or athletes may weigh more than calculated IBW targets while maintaining low body fat."
+          "question": "Ist der Idealgewicht-Rechner für muskulöse Personen geeignet?",
+          "answer": "Die Formeln basieren auf Bevölkerungsdurchschnitten; Kraftsportler mit hohem Muskelanteil können gesunde Werte oberhalb dieser Schätzungen aufweisen."
         }
       ]
     },
@@ -5110,24 +5098,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "이상 체중 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "이상 체중(IBW) 계산기란 무엇인가요?",
+          "answer": "키와 성별을 바탕으로 디바인(Devine), 로빈슨(Robinson) 등 표준 의학 공식을 사용하여 목표 체중을 추정하는 도구입니다."
         },
         {
-          "question": " my ideal weight for my height in kg or lbs? 안내 및 원리",
-          "answer": "Enter your height in cm or feet/inches and select male or female. For example, a 5 ft 10 in (178 cm) male has an estimated IBW of ~73 kg via Devine formula, with a WHO healthy weight range of 58.6 kg to 78.9 kg."
+          "question": "신장별 권장 이상 체중은 몇 kg인가요?",
+          "answer": "키와 성별을 입력하면 계산됩니다. 예를 들어 키 178cm 남성의 경우 디바인 공식 기준 약 73kg의 기준 체중이 산출됩니다."
         },
         {
-          "question": "Why are there different formulas for calculating ideal weight for females vs males? 안내 및 원리",
-          "answer": "Biological males typically have higher average muscle density and bone mass per unit of height than females, resulting in separate base constants in formulas."
+          "question": "남성과 여성의 이상 체중 계산 공식이 다른 이유는 무엇인가요?",
+          "answer": "생물학적 남성은 신장당 평균 골격량과 근육량이 상대적으로 높기 때문에 공식의 기초 가중치에 차이가 있습니다."
         },
         {
-          "question": " difference between Ideal Body Weight (IBW) and healthy BMI weight range? 안내 및 원리",
-          "answer": "IBW formulas provide specific formula-based estimates, whereas the WHO healthy BMI weight range gives a broad window (18.5 to 24.9 kg/m²) accommodating different frame sizes and body compositions."
+          "question": "이상 체중(IBW)과 건강 BMI 정상 범위의 차이점은 무엇인가요?",
+          "answer": "IBW 공식은 특정 기준값을 단일 수치로 제공하는 반면, WHO 정상 BMI는 18.5~24.9 사이의 폭넓고 유연한 체중 범위를 제시합니다."
         },
         {
-          "question": "¿Es adecuada la calculadora de peso ideal para personas musculosas? 안내 및 원리",
-          "answer": "IBW formulas provide population reference benchmarks. Muscular individuals or athletes may weigh more than calculated IBW targets while maintaining low body fat."
+          "question": "근육량이 많은 사람에게도 이상 체중 계산기가 정확한가요?",
+          "answer": "IBW 공식은 일반 성인 평균을 기준으로 하므로, 근육량이 발달한 운동선수는 계산된 수치보다 체중이 더 나가더라도 건강한 상태일 수 있습니다."
         }
       ]
     },
@@ -5184,8 +5172,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "आदर्श वजन एक सटीक बिंदु अनुमान (Point Estimate) देता है, जबकि बीएमआई एक स्वस्थ सीमा (Range) प्रदान करता है।"
         },
         {
-          "question": "क्या एथलीटों का वजन आदर्श वजन से अधिक हो सकता है?",
-          "answer": "हाँ, अधिक मांसपेशियों वाले एथलीटों का वजन स्वास्थ्यप्रद रूप से आदर्श वजन अनुमान से अधिक हो सकता है।"
+          "question": "क्या आदर्श वजन कैलकुलेटर मांसपेशियों वाले लोगों के लिए उपयुक्त है?",
+          "answer": "IBW सूत्र सामान्य औसत पर आधारित हैं; अधिक मांसपेशियों वाले एथलीट बिना अतिरिक्त व사 के भी इस अनुमान से अधिक वजन रख सकते हैं।"
         }
       ]
     }
@@ -5277,23 +5265,23 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "¿Qué es un déficit calórico y cómo funciona la calculadora?",
-          "answer": "Un déficit calórico ocurre cuando el consumo de energía es menor que el TDEE. La calculadora estima tu TDEE y resta un déficit seleccionado para planificar tus calorías diarias."
+          "answer": "Un déficit calórico ocurre cuando consumes menos energía de la que gastas a diario (TDEE). La calculadora estima las calorías diarias necesarias para alcanzar tus metas."
         },
         {
-          "question": "¿Qué déficit calórico es recomendable?",
-          "answer": "No existe una cifra única para todos. Las necesidades calóricas varían según la salud, la actividad y los objetivos de cada persona."
+          "question": "¿Cómo funciona la relación matemática entre calorías y cambio de peso?",
+          "answer": "En la literatura científica se suele estimar que un déficit acumulado de unas 3500 kcal equivale aproximadamente a medio kilo de grasa corporal, aunque la adaptación metabólica varía individualmente."
         },
         {
-          "question": "¿Cómo funciona la calculadora de calorías y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué déficit calórico es el más recomendado para una pérdida de peso sostenible?",
+          "answer": "Un déficit moderado de 300 a 500 kcal diarias suele ser el más sostenible para preservar la masa muscular y mantener la energía."
         },
         {
-          "question": "How much protein should I eat while in a calorie deficit?",
-          "answer": "During a calorie deficit, protein intake ranges from 1.6 to 2.2 grams per kilogram of body weight are commonly referenced in sports nutrition literature."
+          "question": "¿Cuánta proteína debo consumir durante un déficit calórico?",
+          "answer": "Durante una etapa de déficit, se aconseja consumir entre 1.6 y 2.2 gramos de proteína por kilogramo de peso corporal para proteger la masa magra."
         },
         {
-          "question": "What should I do if my weight loss stalls in a calorie deficit?",
-          "answer": "Weight loss stalls often stem from uncounted food calories, reduced non-exercise physical activity (NEAT), or fluid retention. Recalculate your TDEE at your new lower weight to keep energy goals accurate."
+          "question": "¿Qué debo hacer si mi pérdida de peso se estanca en déficit calórico?",
+          "answer": "Los estancamientos suelen deberse a una adaptación metabólica o a pequeñas calorías no contabilizadas; se aconseja reevaluar el TDEE o tomar un descanso dietético temporal."
         }
       ]
     },
@@ -5329,24 +5317,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Qu'est-ce qu'un déficit calorique et comment fonctionne le calculateur ?",
-          "answer": "Un déficit calorique survient lorsque vous consommez moins de calories que votre TDEE. Le calculateur établit votre TDEE puis soustrait le déficit choisi pour planifier vos repas."
+          "question": "Qu'est-ce qu'un déficit calorique et comment fonctionne ce calculateur ?",
+          "answer": "Un déficit calorique survient lorsque l'apport énergétique quotidien est inférieur à la dépense totale (TDEE). Le calculateur estime vos calories cibles pour vos objectifs."
         },
         {
-          "question": "Comment fonctionne le calculateur de calories et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Comment fonctionne la formule mathématique du déficit calorique ?",
+          "answer": "Un déficit cumulé d'environ 3500 kcal correspond en moyenne à 0,45 kg de perte de tissu adipeux, les réponses métaboliques restant variables d'une personne à l'autre."
         },
         {
-          "question": "What calorie deficit is commonly used for weight management?",
-          "answer": "There is no single calorie-deficit value that is appropriate for everyone. Individual energy needs, health status, activity, and dietary intake should be considered. Energy adjustments are evaluated based on individual goals and health context."
+          "question": "Quel déficit calorique est recommandé pour perdre du poids durablement ?",
+          "answer": "Un déficit modéré de 300 à 500 kcal par jour est généralement recommandé pour une perte de graisse progressive sans fatigue excessive."
         },
         {
-          "question": "How much protein should I eat while in a calorie deficit?",
-          "answer": "During a calorie deficit, protein intake ranges from 1.6 to 2.2 grams per kilogram of body weight are commonly referenced in sports nutrition literature."
+          "question": "Quelle quantité de protéines consommer en déficit calorique ?",
+          "answer": "Un apport de 1,6 à 2,2 g de protéines par kg de poids de corps est conseillé pour préserver la masse musculaire pendant une restriction calorique."
         },
         {
-          "question": "What should I do if my weight loss stalls in a calorie deficit?",
-          "answer": "Weight loss stalls often stem from uncounted food calories, reduced non-exercise physical activity (NEAT), or fluid retention. Recalculate your TDEE at your new lower weight to keep energy goals accurate."
+          "question": "Que faire si la perte de poids stagne malgré le déficit calorique ?",
+          "answer": "Les plateaux sont souvent liés à des dépenses non sportives réduites ou des calories non comptabilisées ; recalculez votre TDEE ou prévoyez une courte phase de maintien."
         }
       ]
     },
@@ -5382,24 +5370,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Was ist ein Kaloriendefizit und wie funktioniert der Rechner?",
-          "answer": "Ein Kaloriendefizit entsteht, wenn die tägliche Energiezufuhr geringer ist als der Gesamtenergieumsatz (TDEE). Der Rechner berechnet den TDEE und zieht ein gewähltes Defizit ab."
+          "question": "Was ist ein Kaloriendefizit und wie arbeitet der Rechner?",
+          "answer": "Ein Kaloriendefizit entsteht, wenn die tägliche Kalorienaufnahme unter dem Gesamtenergiebedarf (TDEE) liegt. Der Rechner berechnet individuelle Zielwerte."
         },
         {
-          "question": "Wie funktioniert der Kalorienrechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Wie funktioniert die Mathematik hinter Kaloriendefizit und Gewichtsabnahme?",
+          "answer": "Ein kumuliertes Defizit von etwa 3500 kcal entspricht rechnerisch etwa 0,5 kg Körperfett, wobei individuelle Stoffwechselanpassungen zu beachten sind."
         },
         {
-          "question": "What calorie deficit is commonly used for weight management?",
-          "answer": "There is no single calorie-deficit value that is appropriate for everyone. Individual energy needs, health status, activity, and dietary intake should be considered. Energy adjustments are evaluated based on individual goals and health context."
+          "question": "Welches Kaloriendefizit ist für nachhaltiges Abnehmen ideal?",
+          "answer": "Ein moderates Defizit von 300 bis 500 kcal pro Tag gilt als besonders nachhaltig und schont Muskelmasse und Leistungsfähigkeit."
         },
         {
-          "question": "How much protein should I eat while in a calorie deficit?",
-          "answer": "During a calorie deficit, protein intake ranges from 1.6 to 2.2 grams per kilogram of body weight are commonly referenced in sports nutrition literature."
+          "question": "Wie viel Protein sollte man während eines Kaloriendefizits essen?",
+          "answer": "Um die Muskelmasse im Defizit zu schützen, wird eine Proteinzufuhr von 1,6 bis 2,2 Gramm pro Kilogramm Körpergewicht empfohlen."
         },
         {
-          "question": "What should I do if my weight loss stalls in a calorie deficit?",
-          "answer": "Weight loss stalls often stem from uncounted food calories, reduced non-exercise physical activity (NEAT), or fluid retention. Recalculate your TDEE at your new lower weight to keep energy goals accurate."
+          "question": "Was tun bei einem Gewichtsplateau im Kaloriendefizit?",
+          "answer": "Stagnationen entstehen oft durch unbewusste Kalorienzufuhr oder verringerte Alltagsbewegung; eine Neuberechnung des TDEE verschafft Klarheit."
         }
       ]
     },
@@ -5436,23 +5424,23 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "칼로리 결손이란 무엇이며 계산기는 어떻게 작동하나요?",
-          "answer": "칼로리 결손은 일일 섭취 칼로리가 일일 총 에너지 소비량(TDEE)보다 적을 때 발생합니다. 계산기는 TDEE를 구한 후 목표 결손량을 차감하여 표시합니다."
+          "answer": "칼로리 결손은 하루 섭취 에너지가 총 일일 에너지 소비량(TDEE)보다 적은 상태를 의미하며, 목표에 맞는 일일 섭취 기준을 산출합니다."
         },
         {
-          "question": "칼로리 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "칼로리 결손과 체중 감량의 수학적 원리는 무엇인가요?",
+          "answer": "학술적으로 약 3500 kcal의 누적 결손이 약 0.45kg의 체지방 감량에 상응한다고 알려져 있으나, 대사 적응에 따라 개인차가 존재합니다."
         },
         {
-          "question": "What calorie deficit is commonly used for weight management? 안내 및 원리",
-          "answer": "There is no single calorie-deficit value that is appropriate for everyone. Individual energy needs, health status, activity, and dietary intake should be considered. Energy adjustments are evaluated based on individual goals and health context."
+          "question": "건강하고 지속 가능한 권장 칼로리 결손량은 얼마인가요?",
+          "answer": "근손실을 최소화하고 일상 활력을 유지하기 위해 하루 300~500 kcal 수준의 완만한 결손이 가장 권장됩니다."
         },
         {
-          "question": "How much protein should I eat while in a calorie deficit? 안내 및 원리",
-          "answer": "During a calorie deficit, protein intake ranges from 1.6 to 2.2 grams per kilogram of body weight are commonly referenced in sports nutrition literature."
+          "question": "칼로리 결손 기간 동안 단백질은 얼마나 섭취해야 하나요?",
+          "answer": "체중 감량 중 제지방(근육량)을 보호하기 위해 체중 1kg당 1.6~2.2g의 충분한 단백질 섭취가 권장됩니다."
         },
         {
-          "question": "What should I do if my weight loss stalls in a calorie deficit? 안내 및 원리",
-          "answer": "Weight loss stalls often stem from uncounted food calories, reduced non-exercise physical activity (NEAT), or fluid retention. Recalculate your TDEE at your new lower weight to keep energy goals accurate."
+          "question": "칼로리 결손 중 체중 감량이 정체되면 어떻게 해야 하나요?",
+          "answer": "활동량 감소나 식단 기록 누락이 원인일 수 있으므로, TDEE를 재계산하거나 단기간 유지 칼로리로 재정비하는 것이 좋습니다."
         }
       ]
     },
@@ -5555,8 +5543,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Multiply your weight in kg by your target factor. For example, a 70 kg lifter aiming for muscle growth: 70 kg × 2.0 g/kg = 140 grams of protein daily."
         },
         {
-          "question": "¿Cuáles son las mejores fuentes de alimentos ricos en proteínas?",
-          "answer": "Complete protein sources include chicken breast (31g/100g), Greek yogurt (10g/100g), eggs (6g/egg), whey protein (24g/scoop), salmon (22g/100g), tofu (8g/100g), and lentils (9g/100g cooked)."
+          "question": "What are the best high-protein food sources?",
+          "answer": "Complete protein sources include chicken breast (31g/100g), Greek yogurt (10g/100g), eggs (6g/egg), tofu (8g/100g), lentils (9g/100g), and whey protein powder (20-25g/scoop)."
         },
         {
           "question": "Who should consult a professional regarding protein intake targets?",
@@ -5596,24 +5584,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de ingesta de proteínas y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es la calculadora de ingesta de proteínas?",
+          "answer": "Es una herramienta de nutrición deportiva que estima tus necesidades diarias de proteínas en gramos según tu peso, objetivo y nivel de actividad."
         },
         {
-          "question": "How much protein do I need per day for muscle building vs weight loss?",
-          "answer": "Suggested protein ranges vary based on physical activity: 1.6 to 2.2 g/kg is commonly used for muscle building, and 1.8 to 2.4 g/kg for calorie deficit training. Individual needs vary based on age, health status, and overall diet."
+          "question": "¿Cuánta proteína necesito al día para ganar músculo frente a perder peso?",
+          "answer": "Para mantenimiento suele bastar 1.2 a 1.6 g/kg, mientras que para desarrollo muscular o definición se recomiendan habitualmente de 1.6 a 2.2 g por kg de peso."
         },
         {
-          "question": "Cómo calculate daily protein requirement in grams per kg of body weight?",
-          "answer": "Multiply your weight in kg by your target factor. For example, a 70 kg lifter aiming for muscle growth: 70 kg × 2.0 g/kg = 140 grams of protein daily."
+          "question": "¿Cómo calcular los gramos diarios de proteína por kg de peso corporal?",
+          "answer": "Multiplica tu peso en kg por el factor deseado (ej. 70 kg × 2.0 g/kg = 140 g de proteína al día)."
         },
         {
           "question": "¿Cuáles son las mejores fuentes de alimentos ricos en proteínas?",
-          "answer": "Complete protein sources include chicken breast (31g/100g), Greek yogurt (10g/100g), eggs (6g/egg), whey protein (24g/scoop), salmon (22g/100g), tofu (8g/100g), and lentils (9g/100g cooked)."
+          "answer": "Pechuga de pollo, pescado, huevos, yogur griego, tofu, legumbres y proteína de suero son excelentes fuentes de proteína de alta calidad."
         },
         {
-          "question": "Who should consult a professional regarding protein intake targets?",
-          "answer": "Sports nutrition literature provides general protein range estimates based on physical activity. Individuals with kidney disease, liver conditions, or other medical issues should discuss specific dietary protein targets with a qualified healthcare professional."
+          "question": "¿Quiénes deben consultar a un profesional sobre sus metas de proteína?",
+          "answer": "Personas con afecciones renales o metas atléticas específicas deben coordinar sus requerimientos con un nutricionista o médico."
         }
       ]
     },
@@ -5649,24 +5637,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur d'apport en protéines et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce que le calculateur d'apport en protéines ?",
+          "answer": "C'est un outil de nutrition qui calcule votre besoin quotidien en protéines en grammes selon votre poids, votre activité et vos objectifs."
         },
         {
-          "question": "How much protein do I need per day for muscle building vs weight loss?",
-          "answer": "Suggested protein ranges vary based on physical activity: 1.6 to 2.2 g/kg is commonly used for muscle building, and 1.8 to 2.4 g/kg for calorie deficit training. Individual needs vary based on age, health status, and overall diet."
+          "question": "Combien de protéines par jour pour la prise de muscle ou la perte de poids ?",
+          "answer": "Les recommandations courantes se situent entre 1,6 et 2,2 g par kilo de poids de corps pour la musculation et la préservation de la masse maigre."
         },
         {
-          "question": "Comment calculate daily protein requirement in grams per kg of body weight?",
-          "answer": "Multiply your weight in kg by your target factor. For example, a 70 kg lifter aiming for muscle growth: 70 kg × 2.0 g/kg = 140 grams of protein daily."
+          "question": "Comment calculer son besoin quotidien en protéines en g/kg ?",
+          "answer": "Multipliez votre poids corporel en kg par votre objectif (par exemple, 70 kg × 2,0 g/kg = 140 g de protéines par jour)."
         },
         {
-          "question": "¿Cuáles son las mejores fuentes de alimentos ricos en proteínas?",
-          "answer": "Complete protein sources include chicken breast (31g/100g), Greek yogurt (10g/100g), eggs (6g/egg), whey protein (24g/scoop), salmon (22g/100g), tofu (8g/100g), and lentils (9g/100g cooked)."
+          "question": "Quelles sont les meilleures sources d'aliments riches en protéines ?",
+          "answer": "Le poulet, le poisson, les œufs, le fromage blanc, le tofu, les lentilles et la whey sont d'excellentes sources de protéines complètes."
         },
         {
-          "question": "Who should consult a professional regarding protein intake targets?",
-          "answer": "Sports nutrition literature provides general protein range estimates based on physical activity. Individuals with kidney disease, liver conditions, or other medical issues should discuss specific dietary protein targets with a qualified healthcare professional."
+          "question": "Qui devrait consulter un professionnel pour son apport en protéines ?",
+          "answer": "Toute personne ayant des antécédents rénaux ou des objectifs spécifiques devrait valider son plan alimentaire avec un professionnel de santé."
         }
       ]
     },
@@ -5702,24 +5690,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Proteine-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist der Proteinbedarfs-Rechner?",
+          "answer": "Ein Sporternährungs-Rechner, der Ihre empfohlene tägliche Proteinmenge in Gramm basierend auf Körpergewicht und Trainingsziel ermittelt."
         },
         {
-          "question": "How much protein do I need per day for muscle building vs weight loss?",
-          "answer": "Suggested protein ranges vary based on physical activity: 1.6 to 2.2 g/kg is commonly used for muscle building, and 1.8 to 2.4 g/kg for calorie deficit training. Individual needs vary based on age, health status, and overall diet."
+          "question": "Wie viel Protein benötige ich täglich für Muskelaufbau oder Fettabbau?",
+          "answer": "In der Sporternährung werden für aktiven Muskelaufbau und Muskelerhalt im Defizit meist 1,6 bis 2,2 g Protein pro kg Körpergewicht empfohlen."
         },
         {
-          "question": "Wie man calculate daily protein requirement in grams per kg of body weight?",
-          "answer": "Multiply your weight in kg by your target factor. For example, a 70 kg lifter aiming for muscle growth: 70 kg × 2.0 g/kg = 140 grams of protein daily."
+          "question": "Wie berechnet man den täglichen Proteinbedarf in Gramm pro kg?",
+          "answer": "Multiplizieren Sie Ihr Gewicht in kg mit Ihrem Zielfaktor (z. B. 70 kg × 2,0 g/kg = 140 g Protein täglich)."
         },
         {
-          "question": "¿Cuáles son las mejores fuentes de alimentos ricos en proteínas?",
-          "answer": "Complete protein sources include chicken breast (31g/100g), Greek yogurt (10g/100g), eggs (6g/egg), whey protein (24g/scoop), salmon (22g/100g), tofu (8g/100g), and lentils (9g/100g cooked)."
+          "question": "Welche Lebensmittel sind besonders reich an hochwertigem Eiweiß?",
+          "answer": "Hähnchenbrust, Fisch, Eier, Magerquark, Tofu, Hülsenfrüchte und Proteinpulver bieten eine optimale Aminosäurenbilanz."
         },
         {
-          "question": "Who should consult a professional regarding protein intake targets?",
-          "answer": "Sports nutrition literature provides general protein range estimates based on physical activity. Individuals with kidney disease, liver conditions, or other medical issues should discuss specific dietary protein targets with a qualified healthcare professional."
+          "question": "Wer sollte vor einer Ernährungsumstellung ärztlichen Rat einholen?",
+          "answer": "Personen mit Vorerkrankungen der Nieren sollten ihren Proteinbedarf individuell mit einem Arzt oder Ernährungsberater abstimmen."
         }
       ]
     },
@@ -5755,24 +5743,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "단백질 섭취량 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "단백질 섭취량 계산기란 무엇인가요?",
+          "answer": "체중, 운동 강도 및 목표에 맞춰 하루에 필요한 단백질 섭취량을 그램(g) 단위로 안내하는 스포츠 영양 계산기입니다."
         },
         {
-          "question": "How much protein do I need per day for muscle building vs weight loss? 안내 및 원리",
-          "answer": "Suggested protein ranges vary based on physical activity: 1.6 to 2.2 g/kg is commonly used for muscle building, and 1.8 to 2.4 g/kg for calorie deficit training. Individual needs vary based on age, health status, and overall diet."
+          "question": "근육 증가 및 체중 감량을 위해 하루에 단백질을 얼마나 섭취해야 하나요?",
+          "answer": "일반적으로 근육 합성 및 체중 감량 시 근손실 방지를 위해 체중 1kg당 1.6~2.2g의 단백질 섭취가 권장됩니다."
         },
         {
-          "question": " calculate daily protein requirement in grams per kg of body weight? 안내 및 원리",
-          "answer": "Multiply your weight in kg by your target factor. For example, a 70 kg lifter aiming for muscle growth: 70 kg × 2.0 g/kg = 140 grams of protein daily."
+          "question": "체중당 단백질 권장량을 어떻게 계산하나요?",
+          "answer": "체중(kg)에 목표 섭취 계수를 곱합니다(예: 체중 70kg × 2.0g = 하루 140g의 단백질)."
         },
         {
-          "question": "¿Cuáles son las mejores fuentes de alimentos ricos en proteínas? 안내 및 원리",
-          "answer": "Complete protein sources include chicken breast (31g/100g), Greek yogurt (10g/100g), eggs (6g/egg), whey protein (24g/scoop), salmon (22g/100g), tofu (8g/100g), and lentils (9g/100g cooked)."
+          "question": "단백질이 풍부한 대표적인 권장 식품은 무엇인가요?",
+          "answer": "닭가슴살, 계란, 그릭요거트, 생선, 두부, 콩류 및 단백질 보충제 등이 훌륭한 단백질 공급원입니다."
         },
         {
-          "question": "Who should consult a professional regarding protein intake targets? 안내 및 원리",
-          "answer": "Sports nutrition literature provides general protein range estimates based on physical activity. Individuals with kidney disease, liver conditions, or other medical issues should discuss specific dietary protein targets with a qualified healthcare professional."
+          "question": "단백질 섭취량을 늘릴 때 전문가 상담이 필요한 경우는 언제인가요?",
+          "answer": "신장 질환이 있거나 특이 건강 상태가 있는 분은 고단백 식단을 시작하기 전 전문의 또는 임상영양사와 상의해야 합니다."
         }
       ]
     },
@@ -5879,8 +5867,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Yes, caffeinated beverages like tea and coffee contribute to fluid hydration. However, plain water remains the healthiest and most efficient source of cellular hydration."
         },
         {
-          "question": "¿Cuáles son los primeros signos de deshidratación y sobrehidratación?",
-          "answer": "Dehydration symptoms include dark yellow urine, fatigue, headaches, and dry mouth. Overhydration (hyponatremia) symptoms include clear urine accompanied by nausea and muscle cramps from diluted blood sodium."
+          "question": "What are the early signs of dehydration and overhydration?",
+          "answer": "Dehydration symptoms include dark yellow urine, fatigue, headaches, and dry mouth. Overhydration (water intoxication/hyponatremia) symptoms include completely clear urine, nausea, and disorientation."
         }
       ]
     },
@@ -5916,24 +5904,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de consumo de agua y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es la calculadora de ingesta de agua?",
+          "answer": "Es una herramienta de hidratación que estima tus necesidades diarias de líquidos según tu peso corporal y nivel de actividad."
         },
         {
-          "question": "How much water should I drink per day based on body weight?",
-          "answer": "A common rule of thumb is to drink 35 ml of water per kilogram of body weight daily (or approximately 0.5 ounces per pound of body weight), plus additional fluids during workout sessions."
+          "question": "¿Cuánta agua debo beber al día según mi peso corporal?",
+          "answer": "Una regla orientativa común es beber aproximadamente 35 ml de agua por kilogramo de peso al día (unos 2.5 litros para una persona de 70 kg)."
         },
         {
-          "question": "Cómo calculate daily water intake using the weight formula?",
-          "answer": "Multiply your weight in kilograms by 35 ml (or weight in lbs by 0.5 oz). For a 70 kg person: 70 × 35 = 2,450 ml (2.45 Liters), which equals about 10 standard 250ml glasses of water."
+          "question": "¿Cómo calcular la ingesta diaria de agua con la fórmula por peso?",
+          "answer": "Multiplica tu peso en kilogramos por 35 ml. Si realizas ejercicio intenso, añade entre 500 y 1000 ml adicionales según la duración y el calor."
         },
         {
-          "question": "Does coffee, tea, or soda count toward my daily water intake?",
-          "answer": "Yes, caffeinated beverages like tea and coffee contribute to fluid hydration. However, plain water remains the healthiest and most efficient source of cellular hydration."
+          "question": "¿El café, el té o los refrescos cuentan para la ingesta diaria de agua?",
+          "answer": "Sí, las bebidas contribuyen a la hidratación total, aunque el agua pura sigue siendo la opción principal más saludable."
         },
         {
-          "question": "¿Cuáles son los primeros signos de deshidratación y sobrehidratación?",
-          "answer": "Dehydration symptoms include dark yellow urine, fatigue, headaches, and dry mouth. Overhydration (hyponatremia) symptoms include clear urine accompanied by nausea and muscle cramps from diluted blood sodium."
+          "question": "¿Cuáles son los primeros signos de deshidratación?",
+          "answer": "Orina oscura, sensación de boca seca, fatiga leve y dolor de cabeza son indicadores comunes de hidratación insuficiente."
         }
       ]
     },
@@ -5969,24 +5957,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur d'hydratation quotidienne et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce que le calculateur de consommation d'eau ?",
+          "answer": "C'est un outil d'hydratation qui estime vos besoins quotidiens en liquides en fonction de votre poids et de votre niveau d'activité."
         },
         {
-          "question": "How much water should I drink per day based on body weight?",
-          "answer": "A common rule of thumb is to drink 35 ml of water per kilogram of body weight daily (or approximately 0.5 ounces per pound of body weight), plus additional fluids during workout sessions."
+          "question": "Combien d'eau dois-je boire par jour selon mon poids ?",
+          "answer": "Une règle générale courante est de consommer environ 35 ml d'eau par kilo de poids corporel par jour (soit environ 2,5 L pour 70 kg)."
         },
         {
-          "question": "Comment calculate daily water intake using the weight formula?",
-          "answer": "Multiply your weight in kilograms by 35 ml (or weight in lbs by 0.5 oz). For a 70 kg person: 70 × 35 = 2,450 ml (2.45 Liters), which equals about 10 standard 250ml glasses of water."
+          "question": "Comment calculer son besoin quotidien en eau avec la formule ?",
+          "answer": "Multipliez votre poids en kg par 35 ml. Ajoutez 500 à 1000 ml en cas d'exercice physique prolongé ou de climat chaud."
         },
         {
-          "question": "Does coffee, tea, or soda count toward my daily water intake?",
-          "answer": "Yes, caffeinated beverages like tea and coffee contribute to fluid hydration. However, plain water remains the healthiest and most efficient source of cellular hydration."
+          "question": "Le café et le thé comptent-ils dans l'hydratation quotidienne ?",
+          "answer": "Oui, ces boissons contribuent à l'apport hydrique global, même si l'eau reste la source d'hydratation privilégiée."
         },
         {
-          "question": "¿Cuáles son los primeros signos de deshidratación y sobrehidratación?",
-          "answer": "Dehydration symptoms include dark yellow urine, fatigue, headaches, and dry mouth. Overhydration (hyponatremia) symptoms include clear urine accompanied by nausea and muscle cramps from diluted blood sodium."
+          "question": "Quels sont les premiers signes de déshydratation ?",
+          "answer": "Une urine foncée, la bouche sèche, une fatigue passagère et des maux de tête sont des signes fréquents d'un manque d'eau."
         }
       ]
     },
@@ -6022,24 +6010,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Wasserbedarf-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist der Wasserbedarfs-Rechner?",
+          "answer": "Ein praktisches Hydratationswerkzeug, das Ihren täglichen Flüssigkeitsbedarf basierend auf Körpergewicht und Aktivitätslevel schätzt."
         },
         {
-          "question": "How much water should I drink per day based on body weight?",
-          "answer": "A common rule of thumb is to drink 35 ml of water per kilogram of body weight daily (or approximately 0.5 ounces per pound of body weight), plus additional fluids during workout sessions."
+          "question": "Wie viel Wasser sollte ich pro Tag bezogen auf mein Körpergewicht trinken?",
+          "answer": "Eine bewährte Faustformel empfiehlt etwa 35 ml Wasser pro Kilogramm Körpergewicht täglich (ca. 2,5 Liter bei 70 kg)."
         },
         {
-          "question": "Wie man calculate daily water intake using the weight formula?",
-          "answer": "Multiply your weight in kilograms by 35 ml (or weight in lbs by 0.5 oz). For a 70 kg person: 70 × 35 = 2,450 ml (2.45 Liters), which equals about 10 standard 250ml glasses of water."
+          "question": "Wie berechnet man die tägliche Trinkmenge mit der Gewichtsformel?",
+          "answer": "Multiplizieren Sie Ihr Körpergewicht in kg mit 35 ml. Bei intensivem Sport oder Hitze sollten 500 bis 1000 ml zusätzlich eingeplant werden."
         },
         {
-          "question": "Does coffee, tea, or soda count toward my daily water intake?",
-          "answer": "Yes, caffeinated beverages like tea and coffee contribute to fluid hydration. However, plain water remains the healthiest and most efficient source of cellular hydration."
+          "question": "Zählen Kaffee und Tee zur täglichen Flüssigkeitsaufnahme?",
+          "answer": "Ja, ungesüßter Tee und Kaffee tragen zur Gesamtflüssigkeit bei, reines Wasser bleibt jedoch die beste Basis."
         },
         {
-          "question": "¿Cuáles son los primeros signos de deshidratación y sobrehidratación?",
-          "answer": "Dehydration symptoms include dark yellow urine, fatigue, headaches, and dry mouth. Overhydration (hyponatremia) symptoms include clear urine accompanied by nausea and muscle cramps from diluted blood sodium."
+          "question": "Was sind frühe Anzeichen von Dehydrierung?",
+          "answer": "Dunkler Urin, trockener Mund, Konzentrationsschwäche und leichte Kopfschmerzen deuten auf eine unzureichende Flüssigkeitszufuhr hin."
         }
       ]
     },
@@ -6075,24 +6063,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "수분 섭취량 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "일일 물 섭취량 계산기란 무엇인가요?",
+          "answer": "체중과 신체 활동량을 바탕으로 하루 권장 수분 섭취량을 안내하는 건강 관리 도구입니다."
         },
         {
-          "question": "How much water should I drink per day based on body weight? 안내 및 원리",
-          "answer": "A common rule of thumb is to drink 35 ml of water per kilogram of body weight daily (or approximately 0.5 ounces per pound of body weight), plus additional fluids during workout sessions."
+          "question": "체중에 따라 하루에 물을 얼마나 마셔야 하나요?",
+          "answer": "일반적으로 체중 1kg당 약 30~35ml의 수분 섭취가 권장됩니다(체중 70kg 기준 약 2.1~2.5리터)."
         },
         {
-          "question": " calculate daily water intake using the weight formula? 안내 및 원리",
-          "answer": "Multiply your weight in kilograms by 35 ml (or weight in lbs by 0.5 oz). For a 70 kg person: 70 × 35 = 2,450 ml (2.45 Liters), which equals about 10 standard 250ml glasses of water."
+          "question": "체중 공식을 사용해 일일 권장 수분량을 어떻게 계산하나요?",
+          "answer": "체중(kg)에 35ml를 곱하여 기본 필요량을 구합니다. 격렬한 운동을 하거나 더운 환경에서는 500~1000ml를 추가로 보충합니다."
         },
         {
-          "question": "Does coffee, tea, or soda count toward my daily water intake? 안내 및 원리",
-          "answer": "Yes, caffeinated beverages like tea and coffee contribute to fluid hydration. However, plain water remains the healthiest and most efficient source of cellular hydration."
+          "question": "커피나 차도 하루 수분 섭취량에 포함되나요?",
+          "answer": "커피와 차도 전반적인 수분 공급에 기여하지만, 순수한 물을 주된 수분 공급원으로 섭취하는 것이 가장 좋습니다."
         },
         {
-          "question": "¿Cuáles son los primeros signos de deshidratación y sobrehidratación? 안내 및 원리",
-          "answer": "Dehydration symptoms include dark yellow urine, fatigue, headaches, and dry mouth. Overhydration (hyponatremia) symptoms include clear urine accompanied by nausea and muscle cramps from diluted blood sodium."
+          "question": "수분 부족(탈수)의 초기 증상에는 어떤 것들이 있나요?",
+          "answer": "진한 색의 소변, 구강 건조, 가벼운 피로감 및 두통 등은 수분 보충이 필요하다는 대표적인 신호입니다."
         }
       ]
     },
@@ -6516,24 +6504,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de índice cintura-cadera (ICC) y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es el ratio cintura-cadera (RCC) y cómo funciona la calculadora?",
+          "answer": "El ratio cintura-cadera es una medida antropométrica que compara el perímetro de la cintura con el de la cadera, ofreciendo información sobre la distribución de la grasa corporal."
         },
         {
-          "question": "Cómo calculate waist to hip ratio with the WHR formula?",
-          "answer": "Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80."
+          "question": "¿Cómo calcular el ratio cintura-cadera con la fórmula RCC?",
+          "answer": "Divide el perímetro de la cintura entre el de la cadera utilizando la misma unidad (cm o pulgadas). Fórmula: RCC = Cintura / Cadera."
         },
         {
-          "question": "¿Qué es a healthy waist to hip ratio for men and women according to WHO?",
-          "answer": "According to World Health Organization (WHO) reference guidelines, a ratio below 0.90 for men and below 0.80 for women is standard for lower relative abdominal fat."
+          "question": "¿Cuál es un ratio cintura-cadera saludable para hombres y mujeres según la OMS?",
+          "answer": "Según la OMS, un ratio inferior a 0.90 en hombres e inferior a 0.80 en mujeres se considera el estándar de menor riesgo de acumulación de grasa abdominal."
         },
         {
-          "question": "Por qué es waist to hip ratio a useful indicator alongside BMI?",
-          "answer": "While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat or diagnose cardiovascular disease."
+          "question": "¿Por qué el ratio cintura-cadera es un indicador útil junto con el IMC?",
+          "answer": "Mientras el IMC evalúa la masa corporal en relación con la altura, el RCC aporta información sobre la distribución de la grasa corporal y la grasa abdominal."
         },
         {
-          "question": "¿Cómo medir con precisión la circunferencia de cintura y cadera para la calculadora de índice cintura-cadera?",
-          "answer": "Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks."
+          "question": "¿Cómo medir con precisión la cintura y la cadera para la calculadora RCC?",
+          "answer": "Ponte de pie y exhala con normalidad. Mide la cintura horizontalmente en su punto más estrecho (o nivel del ombligo) y la cadera en la parte más prominente de los glúteos."
         }
       ]
     },
@@ -6564,24 +6552,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de rapport taille-hanche (RTH) et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce que le rapport taille-hanches (RTH) et comment fonctionne le calculateur ?",
+          "answer": "Le rapport taille-hanches compare le tour de taille au tour de hanches pour évaluer la répartition de la graisse corporelle."
         },
         {
-          "question": "Comment calculate waist to hip ratio with the WHR formula?",
-          "answer": "Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80."
+          "question": "Comment calculer le rapport taille-hanches avec la formule RTH ?",
+          "answer": "Divisez le tour de taille par le tour de hanches en utilisant la même unité (cm ou pouces). Formule : RTH = Tour de taille / Tour de hanches."
         },
         {
-          "question": "Qu'est-ce que a healthy waist to hip ratio for men and women according to WHO?",
-          "answer": "According to World Health Organization (WHO) reference guidelines, a ratio below 0.90 for men and below 0.80 for women is standard for lower relative abdominal fat."
+          "question": "Quel est un rapport taille-hanches sain pour les hommes et les femmes selon l'OMS ?",
+          "answer": "Selon l'OMS, un rapport inférieur à 0,90 pour les hommes et inférieur à 0,80 pour les femmes indique une faible concentration de graisse abdominale."
         },
         {
-          "question": "Pourquoi waist to hip ratio a useful indicator alongside BMI?",
-          "answer": "While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat or diagnose cardiovascular disease."
+          "question": "Pourquoi le rapport taille-hanches est-il un bon complément à l'IMC ?",
+          "answer": "Alors que l'IMC évalue la masse totale par rapport à la taille, le RTH renseigne sur la répartition des graisses, notamment au niveau abdominal."
         },
         {
-          "question": "Comment mesurer avec précision le tour de taille et de hanches pour le calculateur RTH ?",
-          "answer": "Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks."
+          "question": "Comment mesurer avec précision le tour de taille et de hanches ?",
+          "answer": "Tenez-vous debout et expirez calmement. Mesurez votre taille au point le plus étroit (ou au niveau du nombril) et vos hanches au point le plus large des fessiers."
         }
       ]
     },
@@ -6612,24 +6600,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Taille-Hüft-Verhältnis-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist das Taille-Hüft-Verhältnis (WHR) und wie funktioniert der Rechner?",
+          "answer": "Das Taille-Hüft-Verhältnis (Waist-to-Hip Ratio) setzt den Taillenumfang ins Verhältnis zum Hüftumfang und gibt Aufschluss über die Verteilung des Körperfetts."
         },
         {
-          "question": "Wie man calculate waist to hip ratio with the WHR formula?",
-          "answer": "Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80."
+          "question": "Wie berechnet man das Taille-Hüft-Verhältnis mit der WHR-Formel?",
+          "answer": "Teilen Sie den Taillenumfang durch den Hüftumfang in der gleichen Einheit (cm oder Zoll). Formel: WHR = Taillenumfang / Hüftumfang."
         },
         {
-          "question": "Was ist a healthy waist to hip ratio for men and women according to WHO?",
-          "answer": "According to World Health Organization (WHO) reference guidelines, a ratio below 0.90 for men and below 0.80 for women is standard for lower relative abdominal fat."
+          "question": "Was ist ein gesundes Taille-Hüft-Verhältnis nach WHO-Richtlinien?",
+          "answer": "Laut WHO liegt der empfohlene Richtwert für Männer unter 0,90 und für Frauen unter 0,80 für ein geringeres relatives Risiko von Bauchfett."
         },
         {
-          "question": "Warum ist waist to hip ratio a useful indicator alongside BMI?",
-          "answer": "While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat or diagnose cardiovascular disease."
+          "question": "Warum ist das Taille-Hüft-Verhältnis eine sinnvolle Ergänzung zum BMI?",
+          "answer": "Während der BMI nur das Gesamtgewicht in Relation zur Körpergröße misst, liefert das WHR wichtige Hinweise auf die Fettverteilung und das Bauchfett."
         },
         {
-          "question": "Wie misst man das Taille-Hüft-Verhältnis (WHR) genau?",
-          "answer": "Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks."
+          "question": "Wie misst man Taillen- und Hüftumfang für den WHR-Rechner exakt?",
+          "answer": "Stehend und entspannt ausatmend messen: Die Taille an der schmalsten Stelle (oder Bauchnabelhöhe), die Hüfte an der breitesten Stelle des Gesäßes."
         }
       ]
     },
@@ -6660,24 +6648,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "허리 둘레 비율 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "허리-엉덩이 둘레 비율(WHR)이란 무엇이며 어떻게 측정되나요?",
+          "answer": "허리-엉덩이 비율(WHR)은 허리둘레와 엉덩이둘레를 비교하여 복부 지방의 분포 상태를 파악하는 신체 계측 지표입니다."
         },
         {
-          "question": " calculate waist to hip ratio with the WHR formula? 안내 및 원리",
-          "answer": "Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80."
+          "question": "WHR 공식을 사용하여 허리-엉덩이 비율을 어떻게 계산하나요?",
+          "answer": "동일한 단위(cm 또는 인치)를 기준으로 허리둘레를 엉덩이둘레로 나눕니다. 공식: WHR = 허리둘레 / 엉덩이둘레."
         },
         {
-          "question": " a healthy waist to hip ratio for men and women according to WHO? 안내 및 원리",
-          "answer": "According to World Health Organization (WHO) reference guidelines, a ratio below 0.90 for men and below 0.80 for women is standard for lower relative abdominal fat."
+          "question": "WHO 기준 성인 남녀의 건강한 허리-엉덩이 비율 기준은 얼마인가요?",
+          "answer": "세계보건기구(WHO) 기준에 따르면 남성은 0.90 미만, 여성은 0.80 미만일 때 상대적으로 복부 비만 위험이 낮은 정상 범위로 평가됩니다."
         },
         {
-          "question": "Why is waist to hip ratio a useful indicator alongside BMI? 안내 및 원리",
-          "answer": "While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat or diagnose cardiovascular disease."
+          "question": "WHR이 BMI와 함께 유용한 건강 지표로 쓰이는 이유는 무엇인가요?",
+          "answer": "BMI는 신장 대비 총 체중을 측정하지만, WHR은 지방이 복부에 집중되어 있는지 체지방 분포 형태를 추가적으로 파악할 수 있게 해줍니다."
         },
         {
-          "question": "허리-둘레 비율(WHR)을 정확하게 측정하는 방법은 무엇인가요?",
-          "answer": "Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks."
+          "question": "허리와 엉덩이 둘레를 정확하게 측정하는 방법은 무엇인가요?",
+          "answer": "편안하게 서서 숨을 내쉰 후, 허리는 가장 잘록한 부위(또는 배꼽 높이)에서, 엉덩이는 가장 돌출된 부위에서 수평으로 줄자를 둘러 측정합니다."
         }
       ]
     },
@@ -6808,16 +6796,16 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de superficie corporal (ASC) y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es el área de superficie corporal (BSA)?",
+          "answer": "El área de superficie corporal es un valor estimado a partir de la altura y el peso. Se utiliza como referencia en protocolos de investigación, pero esta herramienta no ofrece dosificación de medicamentos ni recomendaciones clínicas."
         },
         {
-          "question": "¿Cómo se BSA calculated using the Mosteller equation?",
-          "answer": "The Mosteller equation multiplies height in cm by weight in kg, divides by 3600, and takes the square root: BSA = √ (Height × Weight / 3600)."
+          "question": "¿Cómo se calcula el BSA con la fórmula de Mosteller?",
+          "answer": "La fórmula de Mosteller multiplica la altura en cm por el peso en kg, lo divide entre 3600 y extrae la raíz cuadrada: BSA = √(Altura × Peso / 3600)."
         },
         {
-          "question": "¿Qué es el average body surface area for adults?",
-          "answer": "The average estimated body surface area is approximately 1.60 m² for adult women and 1.90 m² for adult men."
+          "question": "¿Cuál es el área de superficie corporal promedio en adultos?",
+          "answer": "El promedio de superficie corporal estimado es de aproximadamente 1.60 m² para mujeres adultas y 1.90 m² para hombres adultos."
         }
       ]
     },
@@ -6853,16 +6841,16 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de surface corporelle (BSA) et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce que la surface corporelle (BSA) ?",
+          "answer": "La surface corporelle (BSA) est une estimation calculée à partir de la taille et du poids. Elle sert de repère dans la recherche, mais ce calculateur ne fournit aucun dosage médicamenteux ni prescription."
         },
         {
-          "question": "Comment est BSA calculated using the Mosteller equation?",
-          "answer": "The Mosteller equation multiplies height in cm by weight in kg, divides by 3600, and takes the square root: BSA = √ (Height × Weight / 3600)."
+          "question": "Comment la surface corporelle est-elle calculée avec l'équation de Mosteller ?",
+          "answer": "L'équation de Mosteller multiplie la taille en cm par le poids en kg, divise par 3600 et en extrait la racine carrée : BSA = √(Taille × Poids / 3600)."
         },
         {
-          "question": "Qu'est-ce que le average body surface area for adults?",
-          "answer": "The average estimated body surface area is approximately 1.60 m² for adult women and 1.90 m² for adult men."
+          "question": "Quelle est la surface corporelle moyenne chez les adultes ?",
+          "answer": "La surface corporelle moyenne estimée est d'environ 1,60 m² pour les femmes adultes et de 1,90 m² pour les hommes adultes."
         }
       ]
     },
@@ -6898,16 +6886,16 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Körperoberflächen-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist die Körperoberfläche (BSA)?",
+          "answer": "Die Körperoberfläche (Body Surface Area) ist ein Schätzwert, der aus Größe und Gewicht berechnet wird. Er dient als Forschungsorientierung, liefert jedoch keine Medikamentendosierungen oder Behandlungsempfehlungen."
         },
         {
-          "question": "Wie wird BSA calculated using the Mosteller equation?",
-          "answer": "The Mosteller equation multiplies height in cm by weight in kg, divides by 3600, and takes the square root: BSA = √ (Height × Weight / 3600)."
+          "question": "Wie wird die Körperoberfläche mit der Mosteller-Formel berechnet?",
+          "answer": "Die Mosteller-Formel multipliziert Größe in cm mit Gewicht in kg, teilt durch 3600 und zieht die Quadratwurzel: BSA = √(Größe × Gewicht / 3600)."
         },
         {
-          "question": "Was ist der average body surface area for adults?",
-          "answer": "The average estimated body surface area is approximately 1.60 m² for adult women and 1.90 m² for adult men."
+          "question": "Was ist die durchschnittliche Körperoberfläche von Erwachsenen?",
+          "answer": "Die durchschnittliche geschätzte Körperoberfläche beträgt etwa 1,60 m² bei erwachsenen Frauen und 1,90 m² bei erwachsenen Männern."
         }
       ]
     },
@@ -6943,16 +6931,16 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "체표면적 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "체표면적(BSA)이란 무엇인가요?",
+          "answer": "체표면적(Body Surface Area)은 키와 체중을 바탕으로 산출된 인체 표면적의 추정치입니다. 본 계산기는 교육적 참고 지표이며 약물 용량이나 의료적 처방을 제공하지 않습니다."
         },
         {
-          "question": " BSA calculated using the Mosteller equation? 안내 및 원리",
-          "answer": "The Mosteller equation multiplies height in cm by weight in kg, divides by 3600, and takes the square root: BSA = √ (Height × Weight / 3600)."
+          "question": "모스텔러(Mosteller) 공식을 사용하여 체표면적을 어떻게 계산하나요?",
+          "answer": "키(cm)와 체중(kg)을 곱한 뒤 3600으로 나누고 제곱근을 취합니다: BSA = √(신장 × 체중 / 3600)."
         },
         {
-          "question": " average body surface area for adults? 안내 및 원리",
-          "answer": "The average estimated body surface area is approximately 1.60 m² for adult women and 1.90 m² for adult men."
+          "question": "성인의 평균 체표면적은 어느 정도인가요?",
+          "answer": "성인 여성의 평균 체표면적은 약 1.60 m², 성인 남성의 평균 체표면적은 약 1.90 m² 내외입니다."
         }
       ]
     },
@@ -7106,24 +7094,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de zonas de frecuencia cardíaca y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es la calculadora de zonas de frecuencia cardíaca de Karvonen?",
+          "answer": "La calculadora de zonas de Karvonen es una herramienta de entrenamiento cardiovascular que estima rangos de intensidad personalizados utilizando la fórmula de Karvonen y la frecuencia cardíaca de reserva (HRR)."
         },
         {
-          "question": "Cómo calculate target heart rate using the Karvonen formula?",
-          "answer": "To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR estimate. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for moderate aerobic training). 4) Add your Resting HR back to get your target heart rate in BPM."
+          "question": "¿Cómo se calcula la frecuencia cardíaca objetivo con la fórmula de Karvonen?",
+          "answer": "Para aplicar la fórmula de Karvonen: 1) Resta tu edad a 220 para estimar la FC máxima. 2) Resta tu FC en reposo a la FC máxima para obtener la reserva cardíaca (HRR). 3) Multiplica la HRR por el porcentaje deseado (ej. 60%-70%). 4) Suma de nuevo tu FC en reposo para obtener las pulsaciones por minuto objetivo."
         },
         {
-          "question": "Why does the Karvonen formula factor in Resting Heart Rate?",
-          "answer": "Traditional formulas (220 - age) provide a population estimate of Max HR. The Karvonen formula provides individualized context by factoring in Resting Heart Rate (RHR)."
+          "question": "¿Por qué la fórmula de Karvonen incluye la frecuencia cardíaca en reposo?",
+          "answer": "Las fórmulas estándar (220 - edad) proporcionan estimaciones generales, mientras que Karvonen personaliza el cálculo al considerar la frecuencia cardíaca en reposo (RHR), reflejando tu nivel de condición física."
         },
         {
-          "question": "Which heart rate zone is associated with aerobic base training?",
-          "answer": "Karvonen Zone 2 (60% to 70% of Heart Rate Reserve) is commonly associated with aerobic base training and moderate-intensity endurance workouts."
+          "question": "¿Qué zona de frecuencia cardíaca corresponde al entrenamiento aeróbico base?",
+          "answer": "La Zona 2 de Karvonen (60% al 70% de la reserva cardíaca) se asocia habitualmente con el desarrollo aeróbico base y el entrenamiento de resistencia moderada."
         },
         {
-          "question": "How do I measure my Resting Heart Rate (RHR) for the Karvonen calculator?",
-          "answer": "Measure your pulse for 60 seconds immediately upon waking in the morning while resting calmly in bed before sitting up or taking caffeine."
+          "question": "¿Cómo medir la frecuencia cardíaca en reposo (RHR) para esta calculadora?",
+          "answer": "Mide tu pulso durante 60 segundos justo al despertar por la mañana, mientras descansas relajado en la cama antes de levantarte o tomar cafeína."
         }
       ]
     },
@@ -7164,24 +7152,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de zones de fréquence cardiaque et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce que le calculateur de zones de fréquence cardiaque de Karvonen ?",
+          "answer": "Le calculateur de Karvonen est un outil d'entraînement cardiovasculaire qui estime vos zones cibles personnalisées grâce à la formule de Karvonen et la réserve de fréquence cardiaque (HRR)."
         },
         {
-          "question": "Comment calculate target heart rate using the Karvonen formula?",
-          "answer": "To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR estimate. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for moderate aerobic training). 4) Add your Resting HR back to get your target heart rate in BPM."
+          "question": "Comment calculer la fréquence cardiaque cible avec la formule de Karvonen ?",
+          "answer": "Pour utiliser la formule de Karvonen : 1) Soustrayez votre âge de 220 pour estimer la FC maximale. 2) Soustrayez la FC au repos de la FC maximale pour trouver la réserve cardiaque (HRR). 3) Multipliez par l'intensité souhaitée (ex. 60 % à 70 %). 4) Ajoutez la FC au repos pour obtenir la fréquence cible en battements par minute."
         },
         {
-          "question": "Why does the Karvonen formula factor in Resting Heart Rate?",
-          "answer": "Traditional formulas (220 - age) provide a population estimate of Max HR. The Karvonen formula provides individualized context by factoring in Resting Heart Rate (RHR)."
+          "question": "Pourquoi la formule de Karvonen prend-elle en compte la fréquence cardiaque au repos ?",
+          "answer": "Contrairement aux formules simples (220 - âge), la formule de Karvonen intègre la fréquence cardiaque au repos (RHR), ce qui permet de mieux refléter votre condition physique individuelle."
         },
         {
-          "question": "Which heart rate zone is associated with aerobic base training?",
-          "answer": "Karvonen Zone 2 (60% to 70% of Heart Rate Reserve) is commonly associated with aerobic base training and moderate-intensity endurance workouts."
+          "question": "Quelle zone correspond à l'entraînement aérobie de base ?",
+          "answer": "La Zone 2 de Karvonen (60 % à 70 % de la réserve cardiaque) est la zone de référence pour l'endurance fondamentale et le développement aérobie."
         },
         {
-          "question": "How do I measure my Resting Heart Rate (RHR) for the Karvonen calculator?",
-          "answer": "Measure your pulse for 60 seconds immediately upon waking in the morning while resting calmly in bed before sitting up or taking caffeine."
+          "question": "Comment mesurer sa fréquence cardiaque au repos (RHR) ?",
+          "answer": "Prenez votre pouls pendant 60 secondes le matin au réveil, en restant calmement allongé dans votre lit avant de vous lever ou de consommer de la caféine."
         }
       ]
     },
@@ -7222,24 +7210,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Herzfrequenzzonen-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist der Karvonen-Herzfrequenzzonen-Rechner?",
+          "answer": "Der Karvonen-Herzfrequenzzonen-Rechner ist ein Trainingswerkzeug, das individuelle Trainingszonen anhand der Karvonen-Formel und der Herzfrequenzreserve (HRR) ermittelt."
         },
         {
-          "question": "Wie man calculate target heart rate using the Karvonen formula?",
-          "answer": "To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR estimate. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for moderate aerobic training). 4) Add your Resting HR back to get your target heart rate in BPM."
+          "question": "Wie berechnet man die Zielherzfrequenz mit der Karvonen-Formel?",
+          "answer": "Vorgehensweise: 1) 220 minus Alter ergibt die maximale Herzfrequenz. 2) Maximalpuls minus Ruhepuls ergibt die Herzfrequenzreserve (HRR). 3) HRR mit der gewünschten Intensität multiplizieren (z. B. 60 % bis 70 %). 4) Ruhepuls addieren, um die Zielherzfrequenz in Schlägen pro Minute zu erhalten."
         },
         {
-          "question": "Why does the Karvonen formula factor in Resting Heart Rate?",
-          "answer": "Traditional formulas (220 - age) provide a population estimate of Max HR. The Karvonen formula provides individualized context by factoring in Resting Heart Rate (RHR)."
+          "question": "Warum berücksichtigt die Karvonen-Formel den Ruhepuls?",
+          "answer": "Einfache Formeln (220 - Alter) bieten nur grobe Durchschnittswerte. Durch die Einbeziehung des Ruhepulses (RHR) passt Karvonen die Trainingszonen an das persönliche Fitnessniveau an."
         },
         {
-          "question": "Which heart rate zone is associated with aerobic base training?",
-          "answer": "Karvonen Zone 2 (60% to 70% of Heart Rate Reserve) is commonly associated with aerobic base training and moderate-intensity endurance workouts."
+          "question": "Welche Herzfrequenzzone ist für das Grundlagenausdauertraining optimal?",
+          "answer": "Die Karvonen-Zone 2 (60 % bis 70 % der Herzfrequenzreserve) wird typischerweise für das aerobe Grundlagentraining und moderate Ausdauereinheiten genutzt."
         },
         {
-          "question": "How do I measure my Resting Heart Rate (RHR) for the Karvonen calculator?",
-          "answer": "Measure your pulse for 60 seconds immediately upon waking in the morning while resting calmly in bed before sitting up or taking caffeine."
+          "question": "Wie messe ich meinen Ruhepuls (RHR) für den Rechner?",
+          "answer": "Messen Sie Ihren Puls 60 Sekunden lang morgens direkt nach dem Aufwachen, während Sie noch entspannt im Bett liegen, vor dem Aufstehen oder Kaffeetrinken."
         }
       ]
     },
@@ -7280,24 +7268,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "심박수 구간 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "카르보넨 심박수 구간 계산기란 무엇인가요?",
+          "answer": "카르보넨 심박수 계산기는 마르티 카르보넨(Martti Karvonen) 박사의 공식을 기반으로 심박수 예비량(HRR)을 활용해 개인 맞춤형 유산소 운동 강도 구간을 산출하는 도구입니다."
         },
         {
-          "question": " calculate target heart rate using the Karvonen formula? 안내 및 원리",
-          "answer": "To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR estimate. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for moderate aerobic training). 4) Add your Resting HR back to get your target heart rate in BPM."
+          "question": "카르보넨 공식으로 목표 심박수를 어떻게 계산하나요?",
+          "answer": "1) 220에서 나이를 빼 최대 심박수를 추정합니다. 2) 최대 심박수에서 안정시 심박수를 빼 심박수 예비량(HRR)을 구합니다. 3) 목표 운동 강도(예: 60%~70%)를 곱합니다. 4) 안정시 심박수를 다시 더해 목표 심박수(BPM)를 구합니다."
         },
         {
-          "question": "Why does the Karvonen formula factor in Resting Heart Rate? 안내 및 원리",
-          "answer": "Traditional formulas (220 - age) provide a population estimate of Max HR. The Karvonen formula provides individualized context by factoring in Resting Heart Rate (RHR)."
+          "question": "카르보넨 공식이 안정시 심박수를 반영하는 이유는 무엇인가요?",
+          "answer": "단순한 220-나이 공식과 달리, 개인의 안정시 심박수(RHR)를 반영함으로써 개인별 심폐 체력 수준에 맞춘 정밀한 운동 강도를 제시할 수 있습니다."
         },
         {
-          "question": "Which heart rate zone is associated with aerobic base training? 안내 및 원리",
-          "answer": "Karvonen Zone 2 (60% to 70% of Heart Rate Reserve) is commonly associated with aerobic base training and moderate-intensity endurance workouts."
+          "question": "유산소 기초 체력 향상에 적합한 심박수 구간은 어디인가요?",
+          "answer": "카르보넨 2구간(심박수 예비량의 60%~70%)은 유산소 기초 지구력 훈련 및 중강도 유산소 운동에 가장 권장되는 구간입니다."
         },
         {
-          "question": "How do I measure my Resting Heart Rate (RHR) for the Karvonen calculator? 안내 및 원리",
-          "answer": "Measure your pulse for 60 seconds immediately upon waking in the morning while resting calmly in bed before sitting up or taking caffeine."
+          "question": "안정시 심박수(RHR)는 어떻게 정확하게 측정하나요?",
+          "answer": "아침 기상 직후 침대에서 일어나거나 카페인을 섭취하기 전, 편안하게 누운 상태에서 60초 동안 맥박을 측정하는 것이 가장 정확합니다."
         }
       ]
     },
@@ -7339,23 +7327,23 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "कार्वोनेन (Karvonen) हार्ट रेट ज़ोन कैलकुलेटर क्या है?",
-          "answer": "यह आपकी विश्राम स्थिति की हृदय गति (RHR) का उपयोग करके सटीक लक्षित कसरत ज़ोन (Target Heart Rate Zones) निकालता है।"
+          "answer": "कार्वोनेन हार्ट रेट कैलकुलेटर एक कार्डियो प्रशिक्षण उपकरण है जो हार्ट रेट रिजर्व (HRR) का उपयोग करके व्यक्तिगत व्यायाम तीव्रता क्षेत्र निर्धारित करता है।"
         },
         {
-          "question": "अधिकतम हृदय गति (Max Heart Rate) कैसे निकाली जाती है?",
-          "answer": "मानक सूत्र के अनुसार अधिकतम हृदय गति = 220 - आपकी उम्र (bpm) होती है।"
+          "question": "कार्वोनेन सूत्र से लक्ष्य हृदय गति की गणना कैसे करें?",
+          "answer": "1) 220 में से अपनी आयु घटाएं। 2) अधिकतम दर से विश्राम दर (RHR) घटाकर HRR निकालें। 3) वांछित प्रतिशत (60%-70%) से गुणा करें। 4) फिर विश्राम दर जोड़कर लक्ष्य दर प्राप्त करें।"
         },
         {
-          "question": "फैट बर्न ज़ोन (Zone 2) क्या है?",
-          "answer": "यह आपकी अधिकतम क्षमता का 60% से 70% ज़ोन है जहाँ शरीर ऊर्जा के लिए मुख्य रूप से वसा बर्न करता है।"
+          "question": "कार्वोनेन सूत्र में विश्राम हृदय गति (RHR) क्यों शामिल की जाती है?",
+          "answer": "मानक सूत्र केवल सामान्य औसत बताते हैं, जबकि विश्राम हृदय गति शामिल करने से व्यक्तिगत फिटनेस स्तर के अनुसार सटीक प्रशिक्षण क्षेत्र प्राप्त होता है।"
         },
         {
-          "question": "हार्ट रेट रिजर्व (HRR) क्या है?",
-          "answer": "HRR = अधिकतम हृदय गति - विश्राम हृदय गति। यह आपकी हृदय संबंधी कार्यक्षमता की सीमा दिखाता है।"
+          "question": "एरोबिक बेस ट्रेनिंग के लिए कौन सा हार्ट रेट ज़ोन सबसे अच्छा है?",
+          "answer": "कार्वोनेन ज़ोन 2 (HRR का 60% से 70%) आमतौर पर एरोबिक बेस और मध्यम सहनशक्ति व्यायाम के लिए अनुशंसित है।"
         },
         {
-          "question": "विश्राम हृदय गति (Resting Heart Rate) कब मापें?",
-          "answer": "सुबह उठते ही बिस्तर पर बिना किसी गतिविधि के 1 मिनट तक अपनी नब्ज गिनकर RHR मापें।"
+          "question": "कार्वोनेन कैलकुलेटर के लिए विश्राम हृदय गति (RHR) कैसे मापें?",
+          "answer": "सुबह सोकर उठने के तुरंत बाद, बिस्तर पर शांत रहते हुए 60 सेकंड तक अपनी नाड़ी मापें।"
         }
       ]
     }
@@ -7444,12 +7432,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de frecuencia cardíaca Karvonen y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es la fórmula de Karvonen?",
+          "answer": "La fórmula de Karvonen es un método matemático para determinar la frecuencia cardíaca objetivo considerando tanto la frecuencia cardíaca máxima como la frecuencia cardíaca en reposo (HRR)."
         },
         {
-          "question": "¿Por qué el método Karvonen considera la frecuencia cardíaca en reposo en lugar de solo 220 menos edad?",
-          "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
+          "question": "¿Por qué el método Karvonen es más preciso que la fórmula tradicional 220 menos edad?",
+          "answer": "La fórmula tradicional solo estima un límite general, mientras que Karvonen incluye tu frecuencia cardíaca en reposo, reflejando de forma personalizada tu condición cardiovascular actual."
         }
       ]
     },
@@ -7490,12 +7478,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de fréquence cardiaque Karvonen et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce que la formule de Karvonen ?",
+          "answer": "La formule de Karvonen est une équation mathématique permettant d'établir la fréquence cardiaque cible d'entraînement en intégrant la fréquence cardiaque de réserve (HRR)."
         },
         {
-          "question": "Pourquoi la méthode Karvonen prend-elle en compte la fréquence cardiaque au repos ?",
-          "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
+          "question": "Pourquoi la méthode de Karvonen est-elle plus précise que la règle 220 - âge ?",
+          "answer": "La formule standard ne donne qu'une moyenne statistique, tandis que Karvonen prend en compte votre rythme cardiaque au repos, reflétant ainsi votre niveau de forme réel."
         }
       ]
     },
@@ -7536,12 +7524,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Karvonen-Herzfrequenz-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist die Karvonen-Formel?",
+          "answer": "Die Karvonen-Formel ist eine bewährte Berechnungsmethode für die Trainings-Zielherzfrequenz, die neben dem Maximalpuls auch den Ruhepuls einbezieht."
         },
         {
-          "question": "Warum berücksichtigt die Karvonen-Formel den Ruhepuls?",
-          "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
+          "question": "Warum ist die Karvonen-Methode genauer als die Standardformel 220 minus Alter?",
+          "answer": "Standardformeln liefern nur pauschale Schätzwerte. Karvonen bezieht den individuellen Ruhepuls mit ein und passt die Trainingszonen an Ihre persönliche Fitness an."
         }
       ]
     },
@@ -7582,12 +7570,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "카르보넨 심박수 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "카르보넨 공식이란 무엇인가요?",
+          "answer": "카르보넨 공식은 최대 심박수와 안정시 심박수의 차이인 심박수 예비량(HRR)을 활용하여 목표 운동 심박수를 정밀하게 계산하는 공식입니다."
         },
         {
-          "question": "카르보넨 공식이 일반 220-나이 공식과 다른 점은 무엇인가요?",
-          "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
+          "question": "카르보넨 공식이 일반 220-나이 공식보다 정확한 이유는 무엇인가요?",
+          "answer": "단순 220-나이 공식은 대략적인 최대치만 제시하지만, 카르보넨 방식은 개인의 안정시 심박수를 반영하여 현재의 심폐 체력 수준에 꼭 맞는 운동 강도를 제공합니다."
         }
       ]
     },
@@ -7744,12 +7732,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de 1RM (repetición máxima) y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es 1RM y cómo se calcula?",
+          "answer": "El 1RM (repetición máxima) es el peso máximo que puedes levantar una sola vez con técnica adecuada. Nuestra calculadora utiliza repeticiones submáximas y la fórmula de Epley para estimarlo de forma segura."
         },
         {
-          "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
-          "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
+          "question": "¿Cómo funcionan las fórmulas de estimación submáxima de 1RM?",
+          "answer": "Fórmulas como Epley y Brzycki estiman tu repetición máxima a partir de cargas más ligeras y número de repeticiones, evitando el riesgo de lesiones de un intento máximo."
         }
       ]
     },
@@ -7795,12 +7783,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de 1RM (charge maximale) et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce que le 1RM et comment est-il calculé ?",
+          "answer": "Le 1RM (une répétition maximale) est la charge la plus lourde que vous pouvez soulever sur une seule répétition avec une technique correcte. Notre calculateur utilise la formule d'Epley pour l'estimer en toute sécurité."
         },
         {
-          "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
-          "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
+          "question": "Comment fonctionnent les formules d'estimation submoximale du 1RM ?",
+          "answer": "Des formules comme Epley ou Brzycki permettent d'évaluer votre charge maximale à partir de séries plus légères, évitant ainsi le stress articulaire extrême."
         }
       ]
     },
@@ -7846,12 +7834,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der 1RM-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist das 1RM und wie wird es berechnet?",
+          "answer": "Das 1RM (One Rep Max) ist das Maximalgewicht, das Sie für eine einzelne Wiederholung mit sauberer Technik heben können. Unser Rechner nutzt die Epley-Formel, um diesen Wert sicher zu schätzen."
         },
         {
-          "question": "Is the 1RM calculator accurate para press de banca y sentadilla?",
-          "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
+          "question": "Wie funktionieren Formeln zur submaximalen 1RM-Schätzung?",
+          "answer": "Formeln wie Epley und Brzycki berechnen Ihre Maximalkraft aus leichteren Sätzen und Wiederholungszahlen, wodurch das Verletzungsrisiko minimiert wird."
         }
       ]
     },
@@ -7897,12 +7885,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "1RM 1회 최대 중량 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "1RM이란 무엇이며 어떻게 계산되나요?",
+          "answer": "1RM(1 Rep Max)은 올바른 자세로 1회 들 수 있는 최대 중량입니다. 본 계산기는 에플리 공식을 적용하여 가벼운 무게의 반복 횟수로 안전하게 최대치를 추정합니다."
         },
         {
-          "question": "1RM 계산기는 벤치프레스, 스쿼트, 데드리프트 측정 시 유용한가요?",
-          "answer": "Yes, formulas like Epley and Brzycki are accurate within 2-4% for rep ranges between 1 and 10 reps."
+          "question": "서브맥시멀 1RM 추정 공식의 원리는 무엇인가요?",
+          "answer": "에플리 및 브지키 공식은 부상 위험이 높은 최대 중량 대신, 안전한 중량의 반복 횟수를 기반으로 수학적으로 1RM을 추정합니다."
         }
       ]
     },
@@ -8016,8 +8004,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
         },
         {
-          "question": "How accurate is the Epley 1RM formula pour le développé couché, le squat et le soulevé de terre?",
-          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates para press de banca y sentadilla sets between 2 to 10 repetitions."
+          "question": "How accurate is the Epley 1RM formula for bench press, squat, and deadlift?",
+          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reliable reference estimates for bench press and squat sets between 2 to 10 repetitions."
         },
         {
           "question": "What is the difference between Epley and Brzycki 1RM formulas?",
@@ -8066,24 +8054,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de repetición máxima (1RM) y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es la calculadora 1RM de press de banca de Epley?",
+          "answer": "Es una herramienta de evaluación de fuerza creada por Boyd Epley en 1985 que estima tu repetición máxima (1RM) a partir de series submáximas de repeticiones."
         },
         {
-          "question": "Cómo calculate 1 rep max bench press using the Epley formula?",
-          "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
+          "question": "¿Cómo calcular la repetición máxima (1RM) en press de banca con la fórmula de Epley?",
+          "answer": "Realiza una serie con peso submáximo (ej. 100 kg para 5 repeticiones). Aplica la fórmula: 100 × (1 + 5/30) = 116.7 kg de 1RM estimado."
         },
         {
-          "question": "How accurate is the Epley 1RM formula pour le développé couché, le squat et le soulevé de terre?",
-          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates para press de banca y sentadilla sets between 2 to 10 repetitions."
+          "question": "¿Qué tan precisa es la fórmula 1RM de Epley para press de banca, sentadilla y peso muerto?",
+          "answer": "Las estimaciones basadas en fórmulas pueden diferir del rendimiento real. La fórmula de Epley proporciona valores de referencia fiables para series entre 2 y 10 repeticiones."
         },
         {
-          "question": "¿Qué es el difference between Epley and Brzycki 1RM formulas?",
-          "answer": "The Epley formula (1RM = W × [1 + R/30]) and Brzycki formula (1RM = W × [36 / (37 - R)]) are two widely referenced formulas. Epley is commonly used for lower rep ranges (1 to 6 reps), while Brzycki performs well up to 10 reps."
+          "question": "¿Cuál es la diferencia entre las fórmulas 1RM de Epley y Brzycki?",
+          "answer": "La fórmula de Epley (1RM = Peso × [1 + Reps/30]) suele utilizarse para series cortas (1-6 repeticiones), mientras que la de Brzycki funciona adecuadamente hasta las 10 repeticiones."
         },
         {
-          "question": "Why use a 1RM calculator instead of testing max weight directly?",
-          "answer": "Testing true 1RM max weight creates significant spinal and tendon strain during heavy bench press attempts. An Epley 1RM calculator allows lifters to estimate reference target weights using submaximal loads."
+          "question": "¿Por qué utilizar una calculadora 1RM en lugar de probar el peso máximo directamente?",
+          "answer": "Probar un 1RM real somete a articulaciones y tendones a una tensión considerable. La calculadora permite estimar el máximo con cargas submáximas de forma más segura."
         }
       ]
     },
@@ -8124,24 +8112,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de répétition maximale (1RM) et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce que le calculateur 1RM Développé Couché d'Epley ?",
+          "answer": "C'est un outil d'évaluation de force créé par Boyd Epley en 1985 qui estime votre répétition maximale (1RM) à partir de performances sur des séries submoximales."
         },
         {
-          "question": "Comment calculate 1 rep max bench press using the Epley formula?",
-          "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
+          "question": "Comment calculer son 1RM au développé couché avec la formule d'Epley ?",
+          "answer": "Effectuez une série à charge submoximale (ex. 100 kg pour 5 répétitions). Multipliez 100 par (1 + 5/30), soit 100 × 1,1667 = 116,7 kg de 1RM estimé."
         },
         {
-          "question": "How accurate is the Epley 1RM formula pour le développé couché, le squat et le soulevé de terre?",
-          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates para press de banca y sentadilla sets between 2 to 10 repetitions."
+          "question": "Quelle est la précision de la formule d'Epley pour le développé couché, le squat et le soulevé de terre ?",
+          "answer": "Les estimations mathématiques peuvent légèrement différer de la performance réelle. La formule d'Epley offre d'excellents repères pour des séries entre 2 et 10 répétitions."
         },
         {
-          "question": "Qu'est-ce que le difference between Epley and Brzycki 1RM formulas?",
-          "answer": "The Epley formula (1RM = W × [1 + R/30]) and Brzycki formula (1RM = W × [36 / (37 - R)]) are two widely referenced formulas. Epley is commonly used for lower rep ranges (1 to 6 reps), while Brzycki performs well up to 10 reps."
+          "question": "Quelle est la différence entre les formules 1RM d'Epley et de Brzycki ?",
+          "answer": "La formule d'Epley (1RM = Poids × [1 + Reps/30]) est très utilisée pour les séries courtes (1 à 6 répétitions), tandis que Brzycki s'adapte bien jusqu'à 10 répétitions."
         },
         {
-          "question": "Why use a 1RM calculator instead of testing max weight directly?",
-          "answer": "Testing true 1RM max weight creates significant spinal and tendon strain during heavy bench press attempts. An Epley 1RM calculator allows lifters to estimate reference target weights using submaximal loads."
+          "question": "Pourquoi utiliser un calculateur 1RM au lieu de tester sa charge maximale directement ?",
+          "answer": "Tester un 1RM réel engendre un stress articulaire et tendineux élevé. Le calculateur permet d'évaluer son niveau avec des charges plus sécurisées."
         }
       ]
     },
@@ -8182,24 +8170,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Maximalkraft-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist der Epley 1RM Bankdrücken-Rechner?",
+          "answer": "Ein 1985 von Boyd Epley entwickeltes Kraftmessungstool, das Ihr geschätztes Maximalgewicht für eine Wiederholung (1RM) anhand von submaximalen Wiederholungen berechnet."
         },
         {
-          "question": "Wie man calculate 1 rep max bench press using the Epley formula?",
-          "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
+          "question": "Wie berechnet man das 1RM beim Bankdrücken mit der Epley-Formel?",
+          "answer": "Führen Sie einen Satz mit submaximalem Gewicht aus (z. B. 100 kg für 5 Wiederholungen). Multiplizieren Sie 100 mit (1 + 5/30), was ca. 116,7 kg geschätztes 1RM ergibt."
         },
         {
-          "question": "How accurate is the Epley 1RM formula pour le développé couché, le squat et le soulevé de terre?",
-          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates para press de banca y sentadilla sets between 2 to 10 repetitions."
+          "question": "Wie genau ist die Epley-1RM-Formel für Bankdrücken, Kniebeugen und Kreuzheben?",
+          "answer": "Formelbasierte Schätzungen können von der tatsächlichen Maximalleistung abweichen. Die Epley-Formel liefert verlässliche Richtwerte für Wiederholungsbereiche zwischen 2 und 10."
         },
         {
-          "question": "Was ist der difference between Epley and Brzycki 1RM formulas?",
-          "answer": "The Epley formula (1RM = W × [1 + R/30]) and Brzycki formula (1RM = W × [36 / (37 - R)]) are two widely referenced formulas. Epley is commonly used for lower rep ranges (1 to 6 reps), while Brzycki performs well up to 10 reps."
+          "question": "Was ist der Unterschied zwischen den Formeln von Epley und Brzycki?",
+          "answer": "Epley (1RM = Gewicht × [1 + Wdh/30]) eignet sich besonders für schwere Sätze (1 bis 6 Wdh), während Brzycki auch bis zu 10 Wiederholungen gut funktioniert."
         },
         {
-          "question": "Why use a 1RM calculator instead of testing max weight directly?",
-          "answer": "Testing true 1RM max weight creates significant spinal and tendon strain during heavy bench press attempts. An Epley 1RM calculator allows lifters to estimate reference target weights using submaximal loads."
+          "question": "Warum sollte man einen 1RM-Rechner nutzen, statt Maximalversuche durchzuführen?",
+          "answer": "Echte Maximalversuche belasten Sehnen und Gelenke stark. Ein Rechner ermöglicht eine sichere Einschätzung Ihrer Maximalkraft anhand leichterer Gewichte."
         }
       ]
     },
@@ -8240,24 +8228,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "최대 수축력 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "에플리 1RM 벤치프레스 계산기란 무엇인가요?",
+          "answer": "보이드 에플리(Boyd Epley)가 1985년 고안한 근력 측정 도구로, 서브맥시멀(준최대) 반복 수행 기록을 바탕으로 1회 최대 중량(1RM)을 추정합니다."
         },
         {
-          "question": " calculate 1 rep max bench press using the Epley formula? 안내 및 원리",
-          "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
+          "question": "에플리 공식을 사용하여 벤치프레스 1RM을 어떻게 계산하나요?",
+          "answer": "다룰 수 있는 중량으로 반복을 수행한 후(예: 100kg으로 5회), 100 × (1 + 5/30) 공식을 적용하면 약 116.7kg의 추정 1RM이 산출됩니다."
         },
         {
-          "question": "Epley 1RM 추정 공식의 기본 원리와 사용 방법은 무엇인가요?",
-          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reference estimates para press de banca y sentadilla sets between 2 to 10 repetitions."
+          "question": "벤치프레스, 스쿼트, 데드리프트에서 에플리 1RM 공식의 정확도는 어느 정도인가요?",
+          "answer": "실제 1회 최대 중량과 약간의 차이가 있을 수 있으나, 2~10회 반복 범위의 세트에서 신뢰할 수 있는 훈련 중량 가이드를 제공합니다."
         },
         {
-          "question": " difference between Epley and Brzycki 1RM formulas? 안내 및 원리",
-          "answer": "The Epley formula (1RM = W × [1 + R/30]) and Brzycki formula (1RM = W × [36 / (37 - R)]) are two widely referenced formulas. Epley is commonly used for lower rep ranges (1 to 6 reps), while Brzycki performs well up to 10 reps."
+          "question": "에플리(Epley) 공식과 브지키(Brzycki) 공식의 차이점은 무엇인가요?",
+          "answer": "에플리 공식은 1~6회의 낮은 반복 횟수 세트에 널리 쓰이며, 브지키 공식은 최대 10회까지의 반복 세트에서도 안정적인 추정치를 제공합니다."
         },
         {
-          "question": "Why use a 1RM calculator instead of testing max weight directly? 안내 및 원리",
-          "answer": "Testing true 1RM max weight creates significant spinal and tendon strain during heavy bench press attempts. An Epley 1RM calculator allows lifters to estimate reference target weights using submaximal loads."
+          "question": "실제 최고 무게를 직접 들지 않고 1RM 계산기를 사용하는 이유는 무엇인가요?",
+          "answer": "진짜 1RM 측정은 관절과 척추에 큰 부담을 줍니다. 계산기를 활용하면 부상 위험 없이 안전하게 목표 훈련 중량을 설정할 수 있습니다."
         }
       ]
     },
@@ -8394,24 +8382,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de aumento de peso en el embarazo y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es la calculadora de aumento de peso en el embarazo?",
+          "answer": "Es una herramienta de referencia basada en las directrices de ACOG e IOM que ofrece rangos recomendados de aumento de peso gestacional según el IMC previo al embarazo."
         },
         {
-          "question": "Cómo calculate healthy pregnancy weight gain week by week?",
-          "answer": "To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), reference target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters."
+          "question": "¿Cómo calcular el aumento de peso en el embarazo semana a semana?",
+          "answer": "Introduce tu peso actual, peso previo y semana de gestación (1 a 40). Con un IMC normal (18.5–24.9), la ganancia de referencia es de 0.5 a 2 kg en el primer trimestre y aproximadamente 0.4 kg por semana en el segundo y tercer trimestre."
         },
         {
-          "question": "How much total weight should you gain during pregnancy?",
-          "answer": "According to IOM reference guidelines: Underweight (<18.5 BMI) range is 28–40 lbs (12.5–18 kg); Normal BMI (18.5–24.9) range is 25–35 lbs (11.5–16 kg); Overweight (25–29.9 BMI) range is 15–25 lbs (7–11.5 kg); Obese (≥30 BMI) range is 11–20 lbs (5–9 kg)."
+          "question": "¿Cuánto peso total se recomienda aumentar durante el embarazo?",
+          "answer": "Según el IOM: bajo peso (<18.5): 12.5–18 kg; peso normal (18.5–24.9): 11.5–16 kg; sobrepeso (25–29.9): 7–11.5 kg; obesidad (≥30): 5–9 kg."
         },
         {
-          "question": "¿Qué es typical first trimester weight gain?",
-          "answer": "Most women gain between 0.5 and 2.0 kg (1 to 4.5 lbs) total during the first 12 weeks of pregnancy due to minimal fetal weight growth."
+          "question": "¿Cuál es el aumento de peso típico en el primer trimestre?",
+          "answer": "La mayoría de las mujeres aumentan entre 0.5 y 2.0 kg en total durante las primeras 12 semanas, ya que el crecimiento fetal en esta etapa inicial es pequeño."
         },
         {
-          "question": "Why does pre-pregnancy BMI affect gestational weight targets?",
-          "answer": "Pre-pregnancy BMI determines initial energy reserves. Maternal-fetal reference guidelines tailor weight targets based on initial BMI."
+          "question": "¿Por qué el IMC previo al embarazo influye en las metas de peso gestacional?",
+          "answer": "El IMC previo determina las reservas energéticas iniciales, por lo que las pautas médicas adaptan los rangos de ganancia recomendados al estado nutricional de partida."
         }
       ]
     },
@@ -8441,24 +8429,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de prise de poids pendant la grossesse et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce que le calculateur de prise de poids pendant la grossesse ?",
+          "answer": "Il s'agit d'un outil d'orientation basé sur les recommandations de l'ACOG et de l'IOM, estimant la prise de poids gestationnelle idéale selon l'IMC d'avant grossesse."
         },
         {
-          "question": "Comment calculate healthy pregnancy weight gain week by week?",
-          "answer": "To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), reference target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters."
+          "question": "Comment calculer la prise de poids semaine par semaine pendant la grossesse ?",
+          "answer": "Entrez votre poids actuel, votre poids avant grossesse et la semaine actuelle (1 à 40). Pour un IMC normal (18,5–24,9), la recommandation est de 0,5 à 2 kg au 1er trimestre, puis d'environ 0,4 kg par semaine aux 2e et 3e trimestres."
         },
         {
-          "question": "How much total weight should you gain during pregnancy?",
-          "answer": "According to IOM reference guidelines: Underweight (<18.5 BMI) range is 28–40 lbs (12.5–18 kg); Normal BMI (18.5–24.9) range is 25–35 lbs (11.5–16 kg); Overweight (25–29.9 BMI) range is 15–25 lbs (7–11.5 kg); Obese (≥30 BMI) range is 11–20 lbs (5–9 kg)."
+          "question": "Combien de poids au total doit-on prendre pendant la grossesse ?",
+          "answer": "Selon les directives de l'IOM : insuffisance pondérale (<18,5) : 12,5–18 kg ; IMC normal (18,5–24,9) : 11,5–16 kg ; surpoids (25–29,9) : 7–11,5 kg ; obésité (≥30) : 5–9 kg."
         },
         {
-          "question": "Qu'est-ce que typical first trimester weight gain?",
-          "answer": "Most women gain between 0.5 and 2.0 kg (1 to 4.5 lbs) total during the first 12 weeks of pregnancy due to minimal fetal weight growth."
+          "question": "Quelle est la prise de poids habituelle au premier trimestre ?",
+          "answer": "La plupart des femmes prennent entre 0,5 et 2,0 kg au total au cours des 12 premières semaines de grossesse."
         },
         {
-          "question": "Why does pre-pregnancy BMI affect gestational weight targets?",
-          "answer": "Pre-pregnancy BMI determines initial energy reserves. Maternal-fetal reference guidelines tailor weight targets based on initial BMI."
+          "question": "Pourquoi l'IMC d'avant grossesse influence-t-il les objectifs de prise de poids ?",
+          "answer": "L'IMC initial reflète les réserves énergétiques de la mère, ce qui permet d'adapter les recommandations nutritionnelles pour la santé maternelle et fœtale."
         }
       ]
     },
@@ -8488,24 +8476,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Schwangerschaftsgewichts-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist der Rechner für die Gewichtszunahme in der Schwangerschaft?",
+          "answer": "Dieser Rechner basiert auf den Leitlinien von ACOG und IOM und bietet Orientierungswerte für die empfohlene Gewichtszunahme basierend auf dem Ausgangs-BMI vor der Schwangerschaft."
         },
         {
-          "question": "Wie man calculate healthy pregnancy weight gain week by week?",
-          "answer": "To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), reference target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters."
+          "question": "Wie berechnet man die gesunde Gewichtszunahme Woche für Woche?",
+          "answer": "Geben Sie Ihr aktuelles Gewicht, das Ausgangsgewicht und die Schwangerschaftswoche ein. Bei normalem Ausgangs-BMI (18,5–24,9) liegt die Richtlinie bei 0,5–2 kg im 1. Trimester und ca. 0,4 kg pro Woche im 2. und 3. Trimester."
         },
         {
-          "question": "How much total weight should you gain during pregnancy?",
-          "answer": "According to IOM reference guidelines: Underweight (<18.5 BMI) range is 28–40 lbs (12.5–18 kg); Normal BMI (18.5–24.9) range is 25–35 lbs (11.5–16 kg); Overweight (25–29.9 BMI) range is 15–25 lbs (7–11.5 kg); Obese (≥30 BMI) range is 11–20 lbs (5–9 kg)."
+          "question": "Wie viel Gewicht sollte man während der gesamten Schwangerschaft zunehmen?",
+          "answer": "Nach IOM-Richtlinien: Untergewicht (<18,5): 12,5–18 kg; Normalgewicht (18,5–24,9): 11,5–16 kg; Übergewicht (25–29,9): 7–11,5 kg; Adipositas (≥30): 5–9 kg."
         },
         {
-          "question": "Was ist typical first trimester weight gain?",
-          "answer": "Most women gain between 0.5 and 2.0 kg (1 to 4.5 lbs) total during the first 12 weeks of pregnancy due to minimal fetal weight growth."
+          "question": "Was ist eine typische Gewichtszunahme im ersten Trimester?",
+          "answer": "Die meisten Frauen nehmen in den ersten 12 Schwangerschaftswochen insgesamt zwischen 0,5 und 2,0 kg zu, da das fetale Wachstum zu Beginn gering ist."
         },
         {
-          "question": "Why does pre-pregnancy BMI affect gestational weight targets?",
-          "answer": "Pre-pregnancy BMI determines initial energy reserves. Maternal-fetal reference guidelines tailor weight targets based on initial BMI."
+          "question": "Warum beeinflusst der Ausgangs-BMI die Zielwerte für die Gewichtszunahme?",
+          "answer": "Der Ausgangs-BMI bestimmt die vorhandenen Energiereserven, weshalb medizinische Empfehlungen die Zielbereiche individuell anpassen."
         }
       ]
     },
@@ -8535,24 +8523,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "임신 중 체중 증가 계산기의 원리와 측정 항목은 무엇인가요?",
-          "answer": "본 계산기는 검증된 공식을 사용하여 개인별 신체 지수를 산출합니다. 성인 표준 참조 범위를 바탕으로 교육적 분석 결과를 제공합니다."
+          "question": "임신 중 체중 증가 계산기란 무엇인가요?",
+          "answer": "ACOG(미국산부인과학회) 및 IOM(미국의학연구소) 지침을 기반으로 임신 전 BMI에 따른 적정 체중 증가 범위를 안내하는 참고 계산기입니다."
         },
         {
-          "question": " calculate healthy pregnancy weight gain week by week? 안내 및 원리",
-          "answer": "To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), reference target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters."
+          "question": "임신 주차별 적정 체중 증가량은 어떻게 계산하나요?",
+          "answer": "현재 체중, 임신 전 체중, 현재 임신 주수(1~40주)를 입력하여 계산합니다. 정상 BMI(18.5~24.9) 기준, 1분기에는 0.5~2kg, 2·3분기에는 주당 약 0.4kg의 체중 증가가 권장됩니다."
         },
         {
-          "question": "How much total weight should you gain during pregnancy? 안내 및 원리",
-          "answer": "According to IOM reference guidelines: Underweight (<18.5 BMI) range is 28–40 lbs (12.5–18 kg); Normal BMI (18.5–24.9) range is 25–35 lbs (11.5–16 kg); Overweight (25–29.9 BMI) range is 15–25 lbs (7–11.5 kg); Obese (≥30 BMI) range is 11–20 lbs (5–9 kg)."
+          "question": "임신 기간 동안 총 권장 체중 증가는 얼마인가요?",
+          "answer": "IOM 지침 기준: 저체중(<18.5)은 12.5~18kg, 정상 체중(18.5~24.9)은 11.5~16kg, 과체중(25~29.9)은 7~11.5kg, 비만(≥30)은 5~9kg 증가가 권장됩니다."
         },
         {
-          "question": " typical first trimester weight gain? 안내 및 원리",
-          "answer": "Most women gain between 0.5 and 2.0 kg (1 to 4.5 lbs) total during the first 12 weeks of pregnancy due to minimal fetal weight growth."
+          "question": "임신 초기(1분기)의 일반적인 체중 증가량은 어느 정도인가요?",
+          "answer": "태아의 초기 성장이 완만하므로 임신 첫 12주 동안은 대다수 산모가 총 0.5~2.0kg 내외의 완만한 체중 증가를 보입니다."
         },
         {
-          "question": "Why does pre-pregnancy BMI affect gestational weight targets? 안내 및 원리",
-          "answer": "Pre-pregnancy BMI determines initial energy reserves. Maternal-fetal reference guidelines tailor weight targets based on initial BMI."
+          "question": "임신 전 BMI가 주차별 목표 체중 증가량에 영향을 주는 이유는 무엇인가요?",
+          "answer": "임신 전 체질량지수는 산모의 초기 영양 및 에너지 비축량을 나타내므로, 모체와 태아의 건강을 위해 초기 BMI에 맞춰 체중 증가 목표를 다르게 설정합니다."
         }
       ]
     },

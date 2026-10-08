@@ -2,17 +2,17 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import PageShell from '../../components/PageShell.astro';
-const { lang } = Astro.params;
+const { lang = 'en' } = Astro.params;
 
 const pageData = {
   en: {
     pageTitle: 'Sources | Real BMI',
     pageDescription: 'Browse Real BMI’s reference sources for BMI, BMR, TDEE, and body composition calculations.',
     title: 'Sources',
-    eyebrow: 'Verified references',
-    description: 'Browse reference sources behind Real BMI’s calculators and reference estimates.',
+    eyebrow: 'Primary References & Research Sources',
+    description: 'These public-health agencies, research publications and reference materials inform the formulas and reference ranges used on Real BMI.',
     homeLabel: 'Home',
-    intro: 'Our tools are grounded in publicly available health science. We reference global agencies and published literature to keep our calculations reliable and broadly applicable.',
+    intro: 'These public-health agencies, research publications and reference materials inform the formulas and reference ranges used on Real BMI. We reference global agencies and published literature to keep our calculations reliable and broadly applicable.',
     sources: [
       { label: 'World Health Organization (WHO):', text: 'BMI thresholds and international classifications.' },
       { label: 'Centers for Disease Control and Prevention (CDC):', text: 'BMI formulas and guidance for adult health.' },
@@ -127,7 +127,7 @@ const pageData = {
   }
 };
 
-const copy = pageData[lang] || pageData.en;
+const copy = pageData[lang as keyof typeof pageData] || pageData.en;
 
 export function getStaticPaths() {
   return [
@@ -153,7 +153,7 @@ export function getStaticPaths() {
     <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90 space-y-8">
       <p>{copy.intro}</p>
       <ul class="list-disc pl-5 space-y-3">
-        {copy.sources.map((source) => (
+        {copy.sources.map((source: { label: string; text: string }) => (
           <li><strong>{source.label}</strong> {source.text}</li>
         ))}
       </ul>

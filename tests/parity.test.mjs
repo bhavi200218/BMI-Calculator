@@ -147,6 +147,26 @@ seoSlugs.forEach(slug => {
             false,
             `Slug leaked into FAQ text for ${slug} [${lang}] FAQ ${idx}`
           );
+
+          const enCheckPatterns = [
+            /Input your biological age/i,
+            /Eating at your estimated/i,
+            /What happens if I eat at my maintenance calories/i,
+            /How do I use my maintenance calories/i,
+            /Is a calorie maintenance calculator accurate/i,
+            /Why does the Karvonen formula factor in/i,
+            /Why use a 1RM calculator instead of/i,
+            /Why does pre-pregnancy BMI affect/i,
+            /What is a healthy weight for my height/i,
+            /Why is the Asian BMI cutoff/i
+          ];
+          enCheckPatterns.forEach(pat => {
+            assert.strictEqual(
+              pat.test(f.question) || pat.test(f.answer),
+              false,
+              `English leakage matching ${pat} found in ${slug} [${lang}] FAQ ${idx}`
+            );
+          });
         });
       }
     });
