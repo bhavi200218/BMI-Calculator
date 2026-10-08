@@ -1739,27 +1739,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Offizielle BMI-Tabelle für indische Erwachsene (ICMR & WHO Standards)",
       "tableRows": [
         {
-          "col1": "Untergewicht (< 18.5)",
+          "col1": "Untergewicht (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
           "col3": "Referenzschwelle für Untergewicht (< 18,5 kg/m²)"
         },
         {
-          "col1": "Optimales Normalgewicht (18.5 – 22.9)",
+          "col1": "Optimales Normalgewicht (18.5 – 22.9 kg/m²)",
           "col2": "18.5 – 22.9 kg/m²",
           "col3": "Optimaler gesunder Bereich für indische Erwachsene"
         },
         {
-          "col1": "Übergewicht / Risiko (23.0 – 24.9)",
+          "col1": "Übergewicht / Risiko (23.0 – 24.9 kg/m²)",
           "col2": "23.0 – 24.9 kg/m²",
           "col3": "Erhöhter kardiometabolischer Risikogrenzwert für Inder"
         },
         {
-          "col1": "Adipositas Klasse I (25.0 – 29.9)",
+          "col1": "Adipositas Klasse I (25.0 – 29.9 kg/m²)",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "Schwellenwert für Adipositas Grad I nach ICMR-Standards"
         },
         {
-          "col1": "Adipositas Klasse II (≥ 30.0)",
+          "col1": "Adipositas Klasse II (≥ 30.0 kg/m²)",
           "col2": "≥ 30.0 kg/m²",
           "col3": "Risikoschwelle für schwere Adipositas"
         }
@@ -2065,27 +2065,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "ICMR & WHO Erwachsenen-BMI-Referenztabelle für indische Erwachsene (kg/m²)",
       "tableRows": [
         {
-          "col1": "Untergewicht (< 18.5)",
+          "col1": "Untergewicht (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
           "col3": "Referenzschwelle für Untergewicht (< 18,5 kg/m²)"
         },
         {
-          "col1": "Optimales Normalgewicht (18.5 – 22.9)",
+          "col1": "Optimales Normalgewicht (18.5 – 22.9 kg/m²)",
           "col2": "18.5 – 22.9 kg/m²",
           "col3": "Optimaler gesunder Bereich für indische Erwachsene"
         },
         {
-          "col1": "Übergewicht / Risiko (23.0 – 24.9)",
+          "col1": "Übergewicht / Risiko (23.0 – 24.9 kg/m²)",
           "col2": "23.0 – 24.9 kg/m²",
           "col3": "Erhöhter kardiometabolischer Risikogrenzwert für Inder"
         },
         {
-          "col1": "Adipositas Klasse I (25.0 – 29.9)",
+          "col1": "Adipositas Klasse I (25.0 – 29.9 kg/m²)",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "Schwellenwert für Adipositas Grad I nach ICMR-Standards"
         },
         {
-          "col1": "Adipositas Klasse II (≥ 30.0)",
+          "col1": "Adipositas Klasse II (≥ 30.0 kg/m²)",
           "col2": "≥ 30.0 kg/m²",
           "col3": "Risikoschwelle für schwere Adipositas"
         }
