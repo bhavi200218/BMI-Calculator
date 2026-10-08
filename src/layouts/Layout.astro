@@ -301,9 +301,10 @@ const howToSchema = {
 		<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)}></script>
 		<script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)}></script>
 		<script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
-		<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 		<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
-		<script type="application/ld+json" set:html={JSON.stringify(howToSchema)}></script>
+		{((currentLocale === 'en' || !currentLocale) && (normalizedPath === '/' || normalizedPath === '/bmi-calculator/')) && (
+			<script type="application/ld+json" set:html={JSON.stringify(howToSchema)}></script>
+		)}
 		
 		<slot name="json-ld" />
 
