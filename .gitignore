@@ -25,3 +25,6 @@ install-log*.txt
 
 # jetbrains setting folder
 .idea/
+
+# temporary scratch directory
+scratch/
