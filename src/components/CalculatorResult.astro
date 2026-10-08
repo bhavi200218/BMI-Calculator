@@ -99,8 +99,8 @@ const t = getCalculatorTranslations(lang);
   }
 
   const getStr = (obj) => {
-    if (!obj) return '';
-    if (typeof obj === 'string') return obj;
+    if (!obj && obj !== 0) return '';
+    if (typeof obj === 'string' || typeof obj === 'number') return obj;
     const docLang = (document.documentElement.lang || 'en').slice(0, 2);
     return obj[docLang] || obj['en'] || Object.values(obj)[0] || '';
   };
@@ -118,8 +118,17 @@ const t = getCalculatorTranslations(lang);
       const displayIdeal = isImperial ? (parseFloat(idealWeight) * 2.20462).toFixed(1) : idealWeight;
       const idealUnit = isImperial ? 'lbs' : 'kg';
       
+      const catLabels = {
+        en: { underweight: 'Underweight', healthy: 'Healthy Weight', overweight: 'Overweight', obese: 'Obese' },
+        es: { underweight: 'Bajo Peso', healthy: 'Peso Saludable', overweight: 'Sobrepeso', obese: 'Obesidad' },
+        fr: { underweight: 'Sous-poids', healthy: 'Poids Normal', overweight: 'Surpoids', obese: 'Obésité' },
+        de: { underweight: 'Untergewicht', healthy: 'Normalgewicht', overweight: 'Übergewicht', obese: 'Adipositas' },
+        ko: { underweight: '저체중', healthy: '정상 체중', overweight: '과체중', obese: '비만' },
+        hi: { underweight: 'कम वजन', healthy: 'स्वस्थ वजन', overweight: 'अधिक वजन', obese: 'मोटापा' }
+      }[lang] || { underweight: 'Underweight', healthy: 'Healthy Weight', overweight: 'Overweight', obese: 'Obese' };
+
       const bmiNum = parseFloat(bmi);
-      let catStr = bmiNum < 18.5 ? 'Underweight' : bmiNum < 25 ? 'Healthy' : bmiNum < 30 ? 'Overweight' : 'Obese';
+      let catStr = bmiNum < 18.5 ? catLabels.underweight : bmiNum < 25 ? catLabels.healthy : bmiNum < 30 ? catLabels.overweight : catLabels.obese;
 
       lastCalcResult = {
         primary: { value: bmi, label: { en: 'BMI Score', es: 'Puntaje de IMC', fr: 'Score d\'IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' } },
@@ -178,7 +187,7 @@ const t = getCalculatorTranslations(lang);
     if (grid && Array.isArray(secondary)) {
       grid.innerHTML = secondary.map(s => {
         const label = getStr(s.label);
-        const valStr = s.value;
+        const valStr = getStr(s.value);
         const unitStr = s.unit ? `<span class="text-xs font-sans font-medium opacity-40">${s.unit}</span>` : '';
         return `
           <div class="p-5 rounded-[var(--radius-sm)] bg-[var(--muted)] border border-[var(--border)] space-y-1.5 hover:border-[var(--accent)] transition-colors duration-200">
@@ -213,13 +222,24 @@ const t = getCalculatorTranslations(lang);
         if (Array.isArray(secondary)) {
           secondary.forEach(s => {
             const label = getStr(s.label);
-            report += `${label}: ${s.value} ${s.unit || ''}\n`;
+            const val = getStr(s.value);
+            report += `${label}: ${val} ${s.unit || ''}\n`;
           });
         }
 
+        const lang = (document.documentElement.lang || 'en').slice(0, 2);
+        const copySuccess = {
+          en: '✓ Copied!',
+          es: '✓ ¡Copiado!',
+          fr: '✓ Copié !',
+          de: '✓ Kopiert!',
+          ko: '✓ 복사됨!',
+          hi: '✓ कॉपी किया गया!'
+        }[lang] || '✓ Copied!';
+
         navigator.clipboard.writeText(report).then(() => {
           const orig = copyBtn.innerHTML;
-          copyBtn.innerHTML = `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> ✓ Copied!`;
+          copyBtn.innerHTML = `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> ${copySuccess}`;
           setTimeout(() => copyBtn.innerHTML = orig, 2000);
         });
       };

@@ -10,7 +10,7 @@ export interface InputField {
 
 export interface MetricOutput {
   label: Record<string, string>;
-  value: string | number;
+  value: string | number | Record<string, string>;
   unit?: string;
 }
 
@@ -92,7 +92,7 @@ export const calculators: CalculatorConfig[] = [
       return {
         primary: { value: bmi.toFixed(1), label: { en: 'BMI Score', es: 'Puntaje de IMC', fr: 'Score d\'IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' } },
         secondary: [
-          { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: cat.en },
+          { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: cat },
           { label: { en: 'Est. Body Fat', es: 'Grasa Estimada', fr: 'Graisse Corp. Est.', de: 'Körperfett', ko: '체지방률', hi: 'अनुमानित वसा' }, value: bodyFat.toFixed(1), unit: '%' },
           { label: { en: 'Ideal Weight', es: 'Peso Ideal', fr: 'Poids Idéal', de: 'Idealgewicht', ko: '이상적인 체중', hi: 'आदर्श वजन' }, value: (system === 'imperial' ? ideal / 0.453592 : ideal).toFixed(1), unit: system === 'imperial' ? 'lbs' : 'kg' }
         ]
@@ -181,12 +181,54 @@ export const calculators: CalculatorConfig[] = [
       const bmi = hM > 0 ? w / (hM * hM) : 0;
       const isM = inputs.gender === 'male';
 
-      let category = 'Healthy Weight (18.5 - 24.9)';
-      if (bmi < 18.5) category = 'Underweight (< 18.5)';
-      else if (bmi >= 25.0 && bmi < 30.0) category = 'Overweight (25.0 - 29.9)';
-      else if (bmi >= 30.0 && bmi < 35.0) category = 'Obesity Class I (30.0 - 34.9)';
-      else if (bmi >= 35.0 && bmi < 40.0) category = 'Obesity Class II (35.0 - 39.9)';
-      else if (bmi >= 40.0) category = 'Obesity Class III (≥ 40.0)';
+      let category = {
+        en: 'Healthy Weight (18.5 - 24.9)',
+        es: 'Peso Saludable (18.5 - 24.9)',
+        fr: 'Poids Normal (18.5 - 24.9)',
+        de: 'Normalgewicht (18.5 - 24.9)',
+        ko: '정상 체중 (18.5 - 24.9)',
+        hi: 'स्वस्थ वजन (18.5 - 24.9)'
+      };
+      if (bmi < 18.5) category = {
+        en: 'Underweight (< 18.5)',
+        es: 'Bajo Peso (< 18.5)',
+        fr: 'Insuffisance pondérale (< 18.5)',
+        de: 'Untergewicht (< 18.5)',
+        ko: '저체중 (< 18.5)',
+        hi: 'कम वजन (< 18.5)'
+      };
+      else if (bmi >= 25.0 && bmi < 30.0) category = {
+        en: 'Overweight (25.0 - 29.9)',
+        es: 'Sobrepeso (25.0 - 29.9)',
+        fr: 'Surpoids (25.0 - 29.9)',
+        de: 'Übergewicht (25.0 - 29.9)',
+        ko: '과체중 (25.0 - 29.9)',
+        hi: 'अधिक वजन (25.0 - 29.9)'
+      };
+      else if (bmi >= 30.0 && bmi < 35.0) category = {
+        en: 'Obesity Class I (30.0 - 34.9)',
+        es: 'Obesidad Clase I (30.0 - 34.9)',
+        fr: 'Obésité Classe I (30.0 - 34.9)',
+        de: 'Adipositas Grad I (30.0 - 34.9)',
+        ko: '비만 1단계 (30.0 - 34.9)',
+        hi: 'मोटापा श्रेणी I (30.0 - 34.9)'
+      };
+      else if (bmi >= 35.0 && bmi < 40.0) category = {
+        en: 'Obesity Class II (35.0 - 39.9)',
+        es: 'Obesidad Clase II (35.0 - 39.9)',
+        fr: 'Obésité Classe II (35.0 - 39.9)',
+        de: 'Adipositas Grad II (35.0 - 39.9)',
+        ko: '비만 2단계 (35.0 - 39.9)',
+        hi: 'मोटापा श्रेणी II (35.0 - 39.9)'
+      };
+      else if (bmi >= 40.0) category = {
+        en: 'Obesity Class III (≥ 40.0)',
+        es: 'Obesidad Clase III (≥ 40.0)',
+        fr: 'Obésité Classe III (≥ 40.0)',
+        de: 'Adipositas Grad III (≥ 40.0)',
+        ko: '비만 3단계 (≥ 40.0)',
+        hi: 'मोटापा श्रेणी III (≥ 40.0)'
+      };
 
       const minHealthy = 18.5 * (hM * hM);
       const maxHealthy = 24.9 * (hM * hM);
@@ -303,17 +345,73 @@ export const calculators: CalculatorConfig[] = [
       const bmi = hM > 0 ? w / (hM * hM) : 0;
       const isM = inputs.gender === 'male';
 
-      let indianCat = 'Healthy Weight (18.5 - 22.9)';
-      if (bmi < 18.5) indianCat = 'Underweight (< 18.5)';
-      else if (bmi >= 23.0 && bmi < 25.0) indianCat = 'Overweight / At Risk (23.0 - 24.9)';
-      else if (bmi >= 25.0 && bmi < 30.0) indianCat = 'Obese Class I (25.0 - 29.9)';
-      else if (bmi >= 30.0) indianCat = 'Obese Class II (≥ 30.0)';
+      let indianCat = {
+        en: 'Healthy Weight (18.5 - 22.9)',
+        es: 'Peso Saludable (18.5 - 22.9)',
+        fr: 'Poids Normal (18.5 - 22.9)',
+        de: 'Normalgewicht (18.5 - 22.9)',
+        ko: '정상 체중 (18.5 - 22.9)',
+        hi: 'स्वस्थ वजन (18.5 - 22.9)'
+      };
+      if (bmi < 18.5) indianCat = {
+        en: 'Underweight (< 18.5)',
+        es: 'Bajo Peso (< 18.5)',
+        fr: 'Insuffisance pondérale (< 18.5)',
+        de: 'Untergewicht (< 18.5)',
+        ko: '저체중 (< 18.5)',
+        hi: 'कम वजन (< 18.5)'
+      };
+      else if (bmi >= 23.0 && bmi < 25.0) indianCat = {
+        en: 'Overweight / At Risk (23.0 - 24.9)',
+        es: 'Sobrepeso / En Riesgo (23.0 - 24.9)',
+        fr: 'Surpoids / En Risque (23.0 - 24.9)',
+        de: 'Übergewicht / Risiko (23.0 - 24.9)',
+        ko: '과체중 / 위험군 (23.0 - 24.9)',
+        hi: 'अधिक वजन / जोखिम (23.0 - 24.9)'
+      };
+      else if (bmi >= 25.0 && bmi < 30.0) indianCat = {
+        en: 'Obese Class I (25.0 - 29.9)',
+        es: 'Obesidad Clase I (25.0 - 29.9)',
+        fr: 'Obésité Classe I (25.0 - 29.9)',
+        de: 'Adipositas Klasse I (25.0 - 29.9)',
+        ko: '비만 1단계 (25.0 - 29.9)',
+        hi: 'मोटापा श्रेणी I (25.0 - 29.9)'
+      };
+      else if (bmi >= 30.0) indianCat = {
+        en: 'Obese Class II (≥ 30.0)',
+        es: 'Obesidad Clase II (≥ 30.0)',
+        fr: 'Obésité Classe II (≥ 30.0)',
+        de: 'Adipositas Klasse II (≥ 30.0)',
+        ko: '비만 2단계 (≥ 30.0)',
+        hi: 'मोटापा श्रेणी II (≥ 30.0)'
+      };
 
       const minHealthyW = 18.5 * (hM * hM);
       const maxHealthyW = 22.9 * (hM * hM);
 
       const waistLimit = isM ? 90 : 80;
-      const waistStatus = waist > 0 ? (waist >= waistLimit ? 'Elevated (ICMR Visceral Risk)' : 'Healthy Waist') : 'Not Provided';
+      const waistStatus = waist > 0 ? (waist >= waistLimit ? {
+        en: 'Elevated (ICMR Visceral Risk)',
+        es: 'Elevado (Riesgo Visceral ICMR)',
+        fr: 'Élevé (Risque Viscéral ICMR)',
+        de: 'Erhöht (ICMR Viszerales Risiko)',
+        ko: '높음 (ICMR 내장지방 위험)',
+        hi: 'बढ़ा हुआ (ICMR विसरल जोखिम)'
+      } : {
+        en: 'Healthy Waist',
+        es: 'Cintura Saludable',
+        fr: 'Tour de Taille Sain',
+        de: 'Gesunde Taille',
+        ko: '정상 허리둘레',
+        hi: 'स्वस्थ कमर'
+      }) : {
+        en: 'Not Provided',
+        es: 'No Proporcionado',
+        fr: 'Non Renseigné',
+        de: 'Nicht Angegeben',
+        ko: '미입력',
+        hi: 'प्रदान नहीं किया गया'
+      };
 
       const unitStr = system === 'imperial' ? 'lbs' : 'kg';
       const conv = (v: number) => system === 'imperial' ? v / 0.453592 : v;
@@ -375,17 +473,73 @@ export const calculators: CalculatorConfig[] = [
       const bmi = hM > 0 ? w / (hM * hM) : 0;
       const isM = inputs.gender === 'male';
 
-      let indianCat = 'Healthy Weight (18.5 - 22.9)';
-      if (bmi < 18.5) indianCat = 'Underweight (< 18.5)';
-      else if (bmi >= 23.0 && bmi < 25.0) indianCat = 'Overweight / At Risk (23.0 - 24.9)';
-      else if (bmi >= 25.0 && bmi < 30.0) indianCat = 'Obese Class I (25.0 - 29.9)';
-      else if (bmi >= 30.0) indianCat = 'Obese Class II (≥ 30.0)';
+      let indianCat = {
+        en: 'Healthy Weight (18.5 - 22.9)',
+        es: 'Peso Saludable (18.5 - 22.9)',
+        fr: 'Poids Normal (18.5 - 22.9)',
+        de: 'Normalgewicht (18.5 - 22.9)',
+        ko: '정상 체중 (18.5 - 22.9)',
+        hi: 'स्वस्थ वजन (18.5 - 22.9)'
+      };
+      if (bmi < 18.5) indianCat = {
+        en: 'Underweight (< 18.5)',
+        es: 'Bajo Peso (< 18.5)',
+        fr: 'Insuffisance pondérale (< 18.5)',
+        de: 'Untergewicht (< 18.5)',
+        ko: '저체중 (< 18.5)',
+        hi: 'कम वजन (< 18.5)'
+      };
+      else if (bmi >= 23.0 && bmi < 25.0) indianCat = {
+        en: 'Overweight / At Risk (23.0 - 24.9)',
+        es: 'Sobrepeso / En Riesgo (23.0 - 24.9)',
+        fr: 'Surpoids / En Risque (23.0 - 24.9)',
+        de: 'Übergewicht / Risiko (23.0 - 24.9)',
+        ko: '과체중 / 위험군 (23.0 - 24.9)',
+        hi: 'अधिक वजन / जोखिम (23.0 - 24.9)'
+      };
+      else if (bmi >= 25.0 && bmi < 30.0) indianCat = {
+        en: 'Obese Class I (25.0 - 29.9)',
+        es: 'Obesidad Clase I (25.0 - 29.9)',
+        fr: 'Obésité Classe I (25.0 - 29.9)',
+        de: 'Adipositas Klasse I (25.0 - 29.9)',
+        ko: '비만 1단계 (25.0 - 29.9)',
+        hi: 'मोटापा श्रेणी I (25.0 - 29.9)'
+      };
+      else if (bmi >= 30.0) indianCat = {
+        en: 'Obese Class II (≥ 30.0)',
+        es: 'Obesidad Clase II (≥ 30.0)',
+        fr: 'Obésité Classe II (≥ 30.0)',
+        de: 'Adipositas Klasse II (≥ 30.0)',
+        ko: '비만 2단계 (≥ 30.0)',
+        hi: 'मोटापा श्रेणी II (≥ 30.0)'
+      };
 
       const minHealthyW = 18.5 * (hM * hM);
       const maxHealthyW = 22.9 * (hM * hM);
 
       const waistLimit = isM ? 90 : 80;
-      const waistStatus = waist > 0 ? (waist >= waistLimit ? 'Elevated (ICMR Visceral Risk)' : 'Healthy Waist') : 'Not Provided';
+      const waistStatus = waist > 0 ? (waist >= waistLimit ? {
+        en: 'Elevated (ICMR Visceral Risk)',
+        es: 'Elevado (Riesgo Visceral ICMR)',
+        fr: 'Élevé (Risque Viscéral ICMR)',
+        de: 'Erhöht (ICMR Viszerales Risiko)',
+        ko: '높음 (ICMR 내장지방 위험)',
+        hi: 'बढ़ा हुआ (ICMR विसरल जोखिम)'
+      } : {
+        en: 'Healthy Waist',
+        es: 'Cintura Saludable',
+        fr: 'Tour de Taille Sain',
+        de: 'Gesunde Taille',
+        ko: '정상 허리둘레',
+        hi: 'स्वस्थ कमर'
+      }) : {
+        en: 'Not Provided',
+        es: 'No Proporcionado',
+        fr: 'Non Renseigné',
+        de: 'Nicht Angegeben',
+        ko: '미입력',
+        hi: 'प्रदान नहीं किया गया'
+      };
 
       const unitStr = system === 'imperial' ? 'lbs' : 'kg';
       const conv = (v: number) => system === 'imperial' ? v / 0.453592 : v;
@@ -453,11 +607,46 @@ export const calculators: CalculatorConfig[] = [
       const conv = (v: number) => system === 'imperial' ? v / 0.453592 : v;
       const unitStr = system === 'imperial' ? 'lbs' : 'kg';
 
-      let statusMsg = 'Optimal Range';
+      let statusMsg: Record<string, string> = {
+        en: 'Optimal Range',
+        es: 'Rango Óptimo',
+        fr: 'Plage Optimale',
+        de: 'Optimaler Bereich',
+        ko: '적정 범위',
+        hi: 'इष्टतम सीमा'
+      };
       if (w > 0) {
-        if (w < minHealthy) statusMsg = `${conv(minHealthy - w).toFixed(1)} ${unitStr} below min healthy weight`;
-        else if (w > maxHealthy) statusMsg = `${conv(w - maxHealthy).toFixed(1)} ${unitStr} above max healthy weight`;
-        else statusMsg = `Within healthy weight range (${conv(w).toFixed(1)} ${unitStr})`;
+        if (w < minHealthy) {
+          const diff = conv(minHealthy - w).toFixed(1);
+          statusMsg = {
+            en: `${diff} ${unitStr} below min healthy weight`,
+            es: `${diff} ${unitStr} por debajo del peso saludable mín.`,
+            fr: `${diff} ${unitStr} en dessous du poids santé min.`,
+            de: `${diff} ${unitStr} unter dem Mindest-Gesundgewicht`,
+            ko: `최소 권장 체중보다 ${diff} ${unitStr} 미달`,
+            hi: `न्यूनतम स्वस्थ वजन से ${diff} ${unitStr} नीचे`
+          };
+        } else if (w > maxHealthy) {
+          const diff = conv(w - maxHealthy).toFixed(1);
+          statusMsg = {
+            en: `${diff} ${unitStr} above max healthy weight`,
+            es: `${diff} ${unitStr} por encima del peso saludable máx.`,
+            fr: `${diff} ${unitStr} au-dessus du poids santé max.`,
+            de: `${diff} ${unitStr} über dem Max-Gesundgewicht`,
+            ko: `최대 권장 체중보다 ${diff} ${unitStr} 초과`,
+            hi: `अधिकतम स्वस्थ वजन से ${diff} ${unitStr} ऊपर`
+          };
+        } else {
+          const curr = conv(w).toFixed(1);
+          statusMsg = {
+            en: `Within healthy weight range (${curr} ${unitStr})`,
+            es: `Dentro del rango de peso saludable (${curr} ${unitStr})`,
+            fr: `Dans la plage de poids santé (${curr} ${unitStr})`,
+            de: `Im gesunden Gewichtsbereich (${curr} ${unitStr})`,
+            ko: `권장 건강 체중 범위 내 (${curr} ${unitStr})`,
+            hi: `स्वस्थ वजन सीमा के भीतर (${curr} ${unitStr})`
+          };
+        }
       }
 
       return {
@@ -1141,7 +1330,7 @@ export const calculators: CalculatorConfig[] = [
       return {
         primary: { value: whr.toFixed(2), label: { en: 'Waist-to-Hip Ratio', es: 'Proporción Cintura-Cadera', fr: 'Rapport WHR', de: 'Taille-Hüft-Verhältnis', ko: '허리 대비 엉덩이 비', hi: 'कमर से कूल्हे का अनुपात' } },
         secondary: [
-          { label: { en: 'Distribution Reference', es: 'Referencia de Distribución', fr: 'Référence de Distribution', de: 'Verteilungsreferenz', ko: '분포 참조', hi: 'वितरण संदर्भ' }, value: risk.en }
+          { label: { en: 'Distribution Reference', es: 'Referencia de Distribución', fr: 'Référence de Distribution', de: 'Verteilungsreferenz', ko: '분포 참조', hi: 'वितरण संदर्भ' }, value: risk }
         ]
       };
     }

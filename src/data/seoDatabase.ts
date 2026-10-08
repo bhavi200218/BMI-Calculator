@@ -860,50 +860,50 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Referencia Estándar",
       "tableRows": [
         {
-          "col1": "Categoría / Nivel 1",
+          "col1": "Bajo Peso Severo",
           "col2": "< 16.0 kg/m²",
           "col3": "Umbral de referencia para bajo peso severo"
         },
         {
-          "col1": "Categoría / Nivel 2",
+          "col1": "Bajo Peso Moderado",
           "col2": "16.0 – 16.9 kg/m²",
           "col3": "Umbral de referencia para bajo peso moderado"
         },
         {
-          "col1": "Categoría / Nivel 3",
+          "col1": "Bajo Peso Leve",
           "col2": "17.0 – 18.4 kg/m²",
           "col3": "Umbral de referencia para bajo peso leve"
         },
         {
-          "col1": "Categoría / Nivel 4",
+          "col1": "Peso Normal",
           "col2": "18.5 – 24.9 kg/m²",
           "col3": "Rango de referencia saludable óptimo para adultos"
         },
         {
-          "col1": "Categoría / Nivel 5",
+          "col1": "Sobrepeso",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "Rango de sobrepeso (Punto de corte asiático: 23.0 kg/m²)"
         },
         {
-          "col1": "Categoría / Nivel 6",
+          "col1": "Obesidad Clase I",
           "col2": "30.0 – 34.9 kg/m²",
           "col3": "Referencia de evaluación para obesidad clase I"
         },
         {
-          "col1": "Categoría / Nivel 7",
+          "col1": "Obesidad Clase II",
           "col2": "35.0 – 39.9 kg/m²",
           "col3": "Referencia de evaluación para obesidad clase II"
         },
         {
-          "col1": "Categoría / Nivel 8",
+          "col1": "Obesidad Clase III",
           "col2": "≥ 40.0 kg/m²",
           "col3": "Umbral de evaluación para obesidad severa Clase III"
         }
       ],
       "faqs": [
         {
-          "question": "¿Cómo funciona la calculadora de bmi chart y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Qué es una tabla de IMC y cómo se interpreta?",
+          "answer": "Una tabla de IMC es una cuadrícula de referencia visual que cruza la altura y el peso para mostrar las categorías estándar del Índice de Masa Corporal definidas por la Organización Mundial de la Salud (OMS)."
         },
         {
           "question": "¿Es diferente la tabla de IMC para hombres de la tabla de IMC para mujeres?",
@@ -914,7 +914,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Las categorías estándar de la OMS se aplican a todos los adultos a partir de los 20 años. En mayores de 65 años, un IMC ligeramente superior (23.0 a 27.0 kg/m²) puede ser protector frente a la fragilidad."
         },
         {
-          "question": "¿Qué es el BMI chart in kg and cm?",
+          "question": "¿Qué es una tabla de IMC en kg y cm?",
           "answer": "Una tabla métrica de IMC relaciona la estatura en centímetros con el peso en kilogramos. Por ejemplo: una altura de 170 cm con un peso de 65 kg da un IMC de 22.5 kg/m² (rango de peso saludable)."
         },
         {
@@ -958,40 +958,40 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Plage de surpoids (Seuil asiatique : 23.0 kg/m²)"
         },
         {
-          "col1": "Catégorie / Niveau 6",
+          "col1": "Obésité Classe I",
           "col2": "30.0 – 34.9 kg/m²",
           "col3": "Référence de dépistage pour l'obésité de classe I"
         },
         {
-          "col1": "Catégorie / Niveau 7",
+          "col1": "Obésité Classe II",
           "col2": "35.0 – 39.9 kg/m²",
           "col3": "Référence de dépistage pour l'obésité de classe II"
         },
         {
-          "col1": "Catégorie / Niveau 8",
+          "col1": "Obésité Classe III",
           "col2": "≥ 40.0 kg/m²",
           "col3": "Seuil d'évaluation de l'obésité sévère de classe III"
         }
       ],
       "faqs": [
         {
-          "question": "Comment fonctionne le calculateur de bmi chart et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Qu'est-ce qu'un tableau d'IMC et comment le lire ?",
+          "answer": "Un tableau d'IMC est une grille visuelle qui croise la taille et le poids pour présenter les catégories standards définies par l'Organisation mondiale de la Santé (OMS)."
         },
         {
-          "question": "¿Es diferente la tabla de IMC para hombres de la tabla de IMC para mujeres?",
+          "question": "Le tableau d'IMC est-il différent pour les hommes et les femmes ?",
           "answer": "Le tableau officiel de l'OMS utilise les mêmes seuils (18,5 à 24,9 pour le poids normal) pour les hommes et les femmes adultes. La mesure du tour de taille apporte un contexte d'évaluation supplémentaire."
         },
         {
-          "question": "¿Cómo funciona la tabla de IMC según la edad en adultos y adultos mayores?",
+          "question": "Comment le tableau d'IMC varie-t-il selon l'âge chez les adultes et les seniors ?",
           "answer": "Les catégories standards de l'OMS s'appliquent dès 20 ans. Chez les seniors de plus de 65 ans, un IMC légèrement plus élevé (23,0 à 27,0 kg/m²) peut protéger contre la fragilité."
         },
         {
-          "question": "Qu'est-ce que le BMI chart in kg and cm?",
+          "question": "Qu'est-ce qu'un tableau d'IMC en kg et cm ?",
           "answer": "Un tableau métrique associe la taille en centimètres et le poids en kilogrammes. Par exemple : une taille de 170 cm pour 65 kg donne un IMC de 22,5 kg/m² (catégorie poids santé)."
         },
         {
-          "question": "¿Cuáles son las categorías principales de la tabla oficial de IMC?",
+          "question": "Quelles sont les catégories principales du tableau officiel de l'IMC ?",
           "answer": "Les catégories officielles de l'OMS sont : Sous-poids (< 18,5), Poids normal (18,5 – 24,9), Surpoids (25,0 – 29,9), Obésité classe I (30,0 – 34,9), Obésité classe II (35,0 – 39,9) et Obésité classe III (≥ 40,0)."
         }
       ]
@@ -1006,65 +1006,65 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Standard-Referenztabelle",
       "tableRows": [
         {
-          "col1": "Kategorie / Stufe 1",
+          "col1": "Starkes Untergewicht",
           "col2": "< 16.0 kg/m²",
           "col3": "Referenzwert für starkes Untergewicht"
         },
         {
-          "col1": "Kategorie / Stufe 2",
+          "col1": "Mäßiges Untergewicht",
           "col2": "16.0 – 16.9 kg/m²",
           "col3": "Referenzwert für mäßiges Untergewicht"
         },
         {
-          "col1": "Kategorie / Stufe 3",
+          "col1": "Leichtes Untergewicht",
           "col2": "17.0 – 18.4 kg/m²",
           "col3": "Referenzwert für leichtes Untergewicht"
         },
         {
-          "col1": "Kategorie / Stufe 4",
+          "col1": "Normalgewicht",
           "col2": "18.5 – 24.9 kg/m²",
           "col3": "Optimaler gesunder Referenzbereich für Erwachsene"
         },
         {
-          "col1": "Kategorie / Stufe 5",
+          "col1": "Übergewicht",
           "col2": "25.0 – 29.9 kg/m²",
           "col3": "Referenzbereich Übergewicht (Asiatischer Schwellenwert: 23.0 kg/m²)"
         },
         {
-          "col1": "Kategorie / Stufe 6",
+          "col1": "Adipositas Grad I",
           "col2": "30.0 – 34.9 kg/m²",
           "col3": "Screening-Referenz für Adipositas Klasse I"
         },
         {
-          "col1": "Kategorie / Stufe 7",
+          "col1": "Adipositas Grad II",
           "col2": "35.0 – 39.9 kg/m²",
           "col3": "Screening-Referenz für Adipositas Klasse II"
         },
         {
-          "col1": "Kategorie / Stufe 8",
+          "col1": "Adipositas Grad III",
           "col2": "≥ 40.0 kg/m²",
           "col3": "Schwellenwert für schwere Adipositas Klasse III"
         }
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der bmi chart-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Was ist eine BMI-Tabelle und wie liest man sie?",
+          "answer": "Eine BMI-Tabelle ist ein visuelles Referenzraster, das Körpergröße und Gewicht abgleicht, um die von der Weltgesundheitsorganisation (WHO) definierten Standard-Kategorien des Body-Mass-Index darzustellen."
         },
         {
-          "question": "¿Es diferente la tabla de IMC para hombres de la tabla de IMC para mujeres?",
+          "question": "Unterscheidet sich die BMI-Tabelle für Männer und Frauen?",
           "answer": "Die WHO-BMI-Tabelle für Erwachsene verwendet dieselben Grenzwerte (18,5 bis 24,9 für Normalgewicht) für Männer und Frauen. Taillenumfang und Körperzusammensetzung bieten zusätzlichen Kontext."
         },
         {
-          "question": "¿Cómo funciona la tabla de IMC según la edad en adultos y adultos mayores?",
+          "question": "Wie unterscheidet sich die BMI-Tabelle nach Alter bei Erwachsenen und Senioren?",
           "answer": "Die Standardkategorien der WHO gelten für alle Erwachsenen ab 20 Jahren. Bei Senioren über 65 Jahren kann ein leicht höherer BMI (23,0 bis 27,0 kg/m²) Schutz vor Knochendichteverlust bieten."
         },
         {
-          "question": "Was ist der BMI chart in kg and cm?",
+          "question": "Was ist eine BMI-Tabelle in kg und cm?",
           "answer": "Eine metrische BMI-Tabelle ordnet Körpergröße in Zentimetern und Gewicht in Kilogramm zu. Beispiel: 170 cm Größe und 65 kg Gewicht ergeben einen BMI von 22,5 kg/m² (Normalgewicht)."
         },
         {
-          "question": "¿Cuáles son las categorías principales de la tabla oficial de IMC?",
+          "question": "Was sind die Hauptkategorien der offiziellen BMI-Tabelle?",
           "answer": "Die offiziellen WHO-Kategorien lauten: Untergewicht (< 18,5), Normalgewicht (18,5 – 24,9), Übergewicht (25,0 – 29,9), Adipositas Grad I (30,0 – 34,9), Adipositas Grad II (35,0 – 39,9) und Adipositas Grad III (≥ 40,0)."
         }
       ]
@@ -1079,44 +1079,44 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "표준 참조 진단표",
       "tableRows": [
         {
-          "col1": "범주 / 단계 1",
+          "col1": "중증 저체중 (< 16.0)",
           "col2": "< 16.0 kg/m²",
           "col3": "심각한 저체중 위험 기준"
         },
         {
-          "col1": "범주 / 단계 2",
+          "col1": "중등도 저체중 (16.0 – 16.9)",
           "col2": "16.0 – 16.9 kg/m²",
           "col3": "중등도 저체중 참조 범위"
         },
         {
-          "col1": "범주 / 단계 3",
+          "col1": "경도 저체중 (17.0 – 18.4)",
           "col2": "17.0 – 18.4 kg/m²",
           "col3": "경도 저체중 참조 기준"
         },
         {
-          "col1": "범주 / 단계 4",
+          "col1": "정상 체중 (18.5 – 24.9)",
           "col2": "18.5 – 24.9 kg/m²",
           "col3": "성인을 위한 최적의 건강 기준 범위"
         },
         {
-          "col1": "범주 / 단계 5",
+          "col1": "과체중 (25.0 – 29.9)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "참조 범위 과체중 참고 범위 (아시아 기준: 23.0 kg/m²)"
+          "col3": "과체중 범위 (아시아인 기준: 23.0 kg/m²)"
         },
         {
-          "col1": "범주 / 단계 6",
+          "col1": "비만 1단계 (30.0 – 34.9)",
           "col2": "30.0 – 34.9 kg/m²",
-          "col3": "1단계 비만 선별 참고 기준"
+          "col3": "비만 1단계 판정 기준"
         },
         {
-          "col1": "범주 / 단계 7",
+          "col1": "비만 2단계 (35.0 – 39.9)",
           "col2": "35.0 – 39.9 kg/m²",
-          "col3": "2단계 비만 선별 참고 기준"
+          "col3": "비만 2단계 판정 기준"
         },
         {
-          "col1": "범주 / 단계 8",
+          "col1": "고도 비만 3단계 (≥ 40.0)",
           "col2": "≥ 40.0 kg/m²",
-          "col3": "3단계 고도 비만 스크리닝 임계값"
+          "col3": "고도 비만 3단계 판정 임계치"
         }
       ],
       "faqs": [
@@ -3398,8 +3398,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "El BMR es el gasto en reposo (0% actividad). El TDEE es el gasto calórico total diario incluyendo ejercicio y movimiento."
         },
         {
-          "question": "¿Cómo funciona la calculadora de tasa metabólica basal (BMR) y qué mide?",
-          "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
+          "question": "¿Cómo calcular el BMR en kg y cm en línea?",
+          "answer": "Introduce tu peso en kilogramos (kg) y tu altura en centímetros (cm) junto con tu edad y sexo en nuestra calculadora para obtener tu estimación instantánea de gasto calórico en reposo."
         }
       ]
     },
@@ -3442,8 +3442,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Le BMR représente la dépense au repos complet. Le TDEE inclut l'activité physique et l'exercice quotidien."
         },
         {
-          "question": "Comment fonctionne le calculateur de métabolisme de base (BMR) et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Comment calculer le BMR en ligne en kg et en cm ?",
+          "answer": "Saisissez votre poids en kilogrammes (kg) et votre taille en centimètres (cm) ainsi que votre âge et votre sexe dans notre calculateur pour obtenir une estimation instantanée de votre dépense énergétique au repos."
         },
         {
           "question": "Quelle est la différence entre la formule Mifflin-St Jeor et Katch-McArdle ?",
@@ -3490,8 +3490,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Der BMR misst den Ruheumsatz (0% Aktivität). Der TDEE berechnet den Gesamtkalorienbedarf inklusive Bewegung und Sport."
         },
         {
-          "question": "Wie funktioniert der BMR-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Wie berechnet man den BMR online in kg und cm?",
+          "answer": "Geben Sie Ihr Gewicht in Kilogramm (kg) und Ihre Größe in Zentimetern (cm) zusammen mit Alter und Geschlecht in unseren Online-BMR-Rechner ein, um Ihren geschätzten Ruhekalorienverbrauch sofort zu erhalten."
         },
         {
           "question": "Was ist der Unterschied zwischen der Mifflin-St Jeor und Katch-McArdle Formel?",
@@ -3696,8 +3696,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "El TDEE (Gasto Energético Diario Total) estima el total de calorías que quemas en 24 horas incluyendo el metabolismo en reposo, el efecto térmico de los alimentos y la actividad física."
         },
         {
-          "question": "¿Cómo calcular el TDEE para perder peso?",
-          "answer": "Introduce tu edad, sexo, peso y altura. Al restar un déficit calórico moderado de tu TDEE estimado obtendrás una guía calórica para la pérdida de peso."
+          "question": "¿Cómo calcular el TDEE en línea según edad, altura (cm) y peso (kg)?",
+          "answer": "Introduce tu edad, sexo, peso en kg y altura en cm. Primero se determina tu BMR mediante la ecuación Mifflin-St Jeor y luego se multiplica por tu factor de actividad física para obtener el gasto energético diario total."
         },
         {
           "question": "¿Cuál es la diferencia entre BMR y TDEE?",
@@ -3743,9 +3743,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Exercice intense 6–7 jours par semaine"
         },
         {
-          "col1": "Catégorie / Niveau 5",
-          "col2": "TDEE minus a chosen deficit",
-          "col3": "Référence d'exemple pour la planification du contrôle du poids"
+          "col1": "Exemple de Déficit Calorique",
+          "col2": "TDEE moins un déficit choisi",
+          "col3": "Référence d'exemple pour la planification de la gestion du poids"
         }
       ],
       "faqs": [
@@ -3758,8 +3758,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Le BMR représente le métabolisme au repos. Le TDEE englobe le BMR ainsi que toutes les dépenses liées aux activités et à l'exercice."
         },
         {
-          "question": "Comment fonctionne le calculateur de dépense énergétique quotidienne (TDEE) et que mesure-t-il ?",
-          "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
+          "question": "Comment calculer le TDEE en ligne selon l'âge, la taille (cm) et le poids (kg) ?",
+          "answer": "Saisissez votre âge, sexe, poids en kg et taille en cm. Votre BMR est d'abord calculé via la formule Mifflin-St Jeor, puis multiplié par votre facteur d'activité. Un déficit modéré par rapport au TDEE est couramment utilisé pour planifier une perte de poids."
         },
         {
           "question": "Combien de calories dois-je consommer par jour pour perdre du poids avec le TDEE ?",
@@ -3801,9 +3801,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Intensiver Sport 6–7 Tage pro Woche"
         },
         {
-          "col1": "Kategorie / Stufe 5",
-          "col2": "TDEE minus a chosen deficit",
-          "col3": "Beispielreferenz für die Gewichtskontrollplanung"
+          "col1": "Beispiel-Kaloriendefizit",
+          "col2": "TDEE abzüglich eines gewählten Defizits",
+          "col3": "Beispielreferenz für die Planung des Gewichtsmanagements"
         }
       ],
       "faqs": [
@@ -3816,8 +3816,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Der BMR ist der reine Ruheumsatz. Der TDEE beinhaltet den BMR plus den Kalorienverbrauch durch alltägliche Bewegung und Sport."
         },
         {
-          "question": "Wie funktioniert der TDEE-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Wie berechnet man den TDEE online anhand von Alter, Größe (cm) und Gewicht (kg)?",
+          "answer": "Geben Sie Alter, Geschlecht, Gewicht in kg und Größe in cm ein. Zuerst wird Ihr BMR mit der Mifflin-St Jeor-Formel ermittelt und dann mit Ihrem Aktivitätsfaktor multipliziert. Ein moderates Defizit unterhalb des geschätzten TDEE dient häufig der Gewichtsplanung."
         },
         {
           "question": "Wie viele Kalorien sollte ich täglich zur Gewichtsabnahme anhand des TDEE zu mir nehmen?",
@@ -3859,8 +3859,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "주 6~7회 강한 운동"
         },
         {
-          "col1": "범주 / 단계 5",
-          "col2": "TDEE minus a chosen deficit",
+          "col1": "예시 칼로리 적자 (Calorie Deficit)",
+          "col2": "TDEE - 설정한 칼로리 적자",
           "col3": "체중 관리 계획을 위한 예시 참고 기준"
         }
       ],
@@ -4702,8 +4702,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Esta calculadora evalúa tus datos personales utilizando ecuaciones validadas. Proporciona una estimación educativa para ayudarte a comprender tu estado de salud y referencias estándar."
         },
         {
-          "question": "Por qué es Lean Body Mass useful in body composition tracking?",
-          "answer": "LBM estimates can be used as one reference when tracking changes in estimated non-fat body mass."
+          "question": "¿Por qué es útil la masa corporal magra (LBM) para evaluar la composición corporal?",
+          "answer": "Las estimaciones de LBM sirven como referencia clave para monitorear los cambios en el tejido no graso al evaluar el progreso físico."
         }
       ]
     },
@@ -4732,14 +4732,14 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Ce calculateur évalue vos données personnelles à l'aide d'équations validées. Il fournit une estimation éducative pour vous aider à comprendre vos métriques et références standards."
         },
         {
-          "question": "Pourquoi Lean Body Mass useful in body composition tracking?",
-          "answer": "LBM estimates can be used as one reference when tracking changes in estimated non-fat body mass."
+          "question": "Pourquoi la masse corporelle maigre (LBM) est-elle utile pour le suivi corporel ?",
+          "answer": "L'estimation de la masse maigre constitue un repère précieux pour suivre l'évolution des tissus non adipeux lors d'un rééquilibrage physique."
         }
       ]
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Magerer-Körpermasse-Rechner – LBM-Index & Referenz – Rechner & Leitfaden",
+      "title": "Rechner für fettfreie Körpermasse (LBM) – Magermasse & Referenz – Rechner & Leitfaden",
       "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -4758,18 +4758,18 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Magerkurven-Rechner und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Wie funktioniert der Rechner für fettfreie Körpermasse (LBM) und was misst er?",
+          "answer": "Dieser Rechner schätzt anhand validierter anthropometrischer Formeln (wie der Boer-Gleichung) Ihre fettfreie Körpermasse aus Größe, Gewicht und biologischem Geschlecht."
         },
         {
-          "question": "Warum ist Lean Body Mass useful in body composition tracking?",
-          "answer": "LBM estimates can be used as one reference when tracking changes in estimated non-fat body mass."
+          "question": "Warum ist die fettfreie Körpermasse (LBM) wichtig für die Beurteilung der Körperzusammensetzung?",
+          "answer": "LBM-Schätzungen helfen zu beurteilen, ob Gewichtsveränderungen auf den Abbau von Fettgewebe oder den Erhalt wertvoller Muskelmasse zurückzuführen sind."
         }
       ]
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Lean Body Mass 계산기 & LBM Reference 도구 – 참조 계산기",
+      "title": "제지방량(LBM) 계산기 – 체성분 측정 및 한국 표준 가이드",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -4799,7 +4799,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "Lean Body Mass कैलकुलेटर & LBM Reference टूल – मुफ्त कैलकुलेटर",
+      "title": "लीन बॉडी मास (LBM) कैलकुलेटर – शरीर संरचना संदर्भ टूल",
       "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
@@ -4819,7 +4819,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "लीन बॉडी मास (LBM) कैलकुलेटर क्या है?",
-          "answer": "लीन बॉडी मास कैलकुलेटर बोअर (Boer) सूत्र का उपयोग करके कुल शरीर के वजन में से व사 को छोड़कर हड्डियों, मांसपेशियों और अंगों का शुद्ध वजन आंकता है।"
+          "answer": "लीन बॉडी मास कैलकुलेटर बोअर (Boer) सूत्र का उपयोग करके कुल शरीर के वजन में से वसा को छोड़कर हड्डियों, मांसपेशियों और अंगों का शुद्ध वजन आंकता है।"
         },
         {
           "question": "शरीर संरचना ट्रैकिंग में लीन बॉडी मास क्यों उपयोगी है?",
@@ -8193,7 +8193,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
-      "title": "Epley 1RM Bench Press 계산기 & 1 Rep Max Reference 도구 – 참조 계산기",
+      "title": "에플리 1RM 벤치프레스 계산기 – 1회 최대 중량 측정 도구",
       "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
@@ -8251,7 +8251,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "Epley 1RM Bench Press कैलकुलेटर & 1 Rep Max Reference टूल – मुफ्त कैलकुलेटर",
+      "title": "एप्ले 1RM बेंच प्रेस कैलकुलेटर – 1 रेप मैक्स स्ट्रेंथ टूल",
       "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
