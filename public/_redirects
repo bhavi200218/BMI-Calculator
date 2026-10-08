@@ -251,5 +251,9 @@
 /body-fat  /en/body-fat-calculator/  301
 /body-fat/  /en/body-fat-calculator/  301
 
+/blog  /en/blog/  301
+/blog/  /en/blog/  301
+/blog/*  /en/blog/:splat  301
+
 /sitemap.xml /sitemap-index.xml 301
 

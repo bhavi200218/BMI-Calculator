@@ -2,13 +2,259 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import PageShell from '../../components/PageShell.astro';
-import { locales } from '../../utils/calculators';
+import { calculators, locales } from '../../utils/calculators';
 
 export function getStaticPaths() {
   return locales.map(lang => ({ params: { lang } }));
 }
 
 const { lang = 'en' } = Astro.params;
+
+const i18nData: Record<string, {
+  title: string;
+  description: string;
+  eyebrow: string;
+  pageTitle: string;
+  pageDesc: string;
+  returnLabel: string;
+  statementTitle: string;
+  statementDesc: string;
+  pillars: { title: string; desc: string }[];
+  matrixEyebrow: string;
+  matrixTitle: string;
+  matrixDesc: string;
+  openTool: string;
+  equationLabel: string;
+  sourceLabel: string;
+  inputsLabel: string;
+  outputLabel: string;
+  limitationsLabel: string;
+}> = {
+  en: {
+    title: "Calculator Methodology & Formulas | Real BMI",
+    description: "Transparent methodology, mathematical equations, source citations, inputs, outputs, and limitations for all calculators on Real BMI.",
+    eyebrow: "PRODUCT TRANSPARENCY & METHODOLOGY",
+    pageTitle: "Calculator Methodology & Calculation Engine",
+    pageDesc: "Every calculator on Real BMI is built directly on published mathematical equations, public health reference data, and transparent algorithms.",
+    returnLabel: "Home",
+    statementTitle: "Independent Calculator Architecture",
+    statementDesc: "Real BMI is an independent web application created and maintained by Bhawanshi Dosi. Rather than relying on generic black-box scripts, every tool on this site is documented below with its exact formula, source authority, input parameters, and inherent measurement limitations.",
+    pillars: [
+      {
+        title: "Documented Formulas",
+        desc: "All calculations use established peer-reviewed literature and published equations (Mifflin-St Jeor, Boer, Devine, US Navy Logarithmic)."
+      },
+      {
+        title: "Reference Standards",
+        desc: "Outputs are evaluated against official population benchmarks from the World Health Organization (WHO) and Centers for Disease Control (CDC)."
+      },
+      {
+        title: "Local On-Device Execution",
+        desc: "Calculator inputs are computed instantly in your browser JavaScript environment — no health metrics are stored on external databases."
+      },
+      {
+        title: "Transparent Limitations",
+        desc: "Every calculator explicitly states what it measures and what it cannot measure, avoiding misleading clinical claims."
+      }
+    ],
+    matrixEyebrow: "Systematic Reference Matrix",
+    matrixTitle: "Complete Calculator Methodology Table",
+    matrixDesc: "Review the equations, data sources, inputs, outputs, and measurement boundaries for each calculator tool.",
+    openTool: "Open Tool",
+    equationLabel: "Mathematical Equation",
+    sourceLabel: "Primary Source Authority",
+    inputsLabel: "Input Variables:",
+    outputLabel: "Output Metric:",
+    limitationsLabel: "Primary Limitation:"
+  },
+  es: {
+    title: "Metodología y Fórmulas de las Calculadoras | Real BMI",
+    description: "Metodología transparente, ecuaciones matemáticas, citas de fuentes, entradas, salidas y limitaciones para todas las calculadoras de Real BMI.",
+    eyebrow: "TRANSPARENCIA Y METODOLOGÍA DEL PRODUCTO",
+    pageTitle: "Metodología de las Calculadoras y Motor de Cálculo",
+    pageDesc: "Cada calculadora en Real BMI se basa directamente en ecuaciones matemáticas publicadas, datos de referencia de salud pública y algoritmos transparentes.",
+    returnLabel: "Inicio",
+    statementTitle: "Arquitectura Independiente de Calculadoras",
+    statementDesc: "Real BMI es una aplicación web independiente creada y mantenida por Bhawanshi Dosi. Cada herramienta de este sitio está documentada a continuación con su fórmula exacta, autoridad de fuente, parámetros de entrada y limitaciones de medición inherentes.",
+    pillars: [
+      {
+        title: "Fórmulas Documentadas",
+        desc: "Todos los cálculos utilizan literatura revisada por pares y ecuaciones publicadas (Mifflin-St Jeor, Boer, Devine, Marina de EE. UU.)."
+      },
+      {
+        title: "Estándares de Referencia",
+        desc: "Los resultados se comparan con puntos de referencia oficiales de la Organización Mundial de la Salud (OMS) y los CDC."
+      },
+      {
+        title: "Ejecución Local en el Dispositivo",
+        desc: "Las entradas se calculan al instante en tu navegador mediante JavaScript; ninguna métrica se almacena en bases de datos externas."
+      },
+      {
+        title: "Limitaciones Transparentes",
+        desc: "Cada calculadora indica explícitamente lo que mide y lo que no puede medir, evitando afirmaciones clínicas engañosas."
+      }
+    ],
+    matrixEyebrow: "Matriz de Referencia Sistemática",
+    matrixTitle: "Tabla Completa de Metodología de Calculadoras",
+    matrixDesc: "Consulta las ecuaciones, fuentes de datos, entradas, salidas y límites de medición de cada herramienta.",
+    openTool: "Abrir Herramienta",
+    equationLabel: "Ecuación Matemática",
+    sourceLabel: "Autoridad de Fuente Principal",
+    inputsLabel: "Variables de Entrada:",
+    outputLabel: "Métrica de Salida:",
+    limitationsLabel: "Limitación Principal:"
+  },
+  fr: {
+    title: "Méthodologie et Formules des Calculateurs | Real BMI",
+    description: "Méthodologie transparente, équations mathématiques, citations des sources, entrées, sorties et limites de tous les calculateurs de Real BMI.",
+    eyebrow: "TRANSPARENCE ET MÉTHODOLOGIE DU PRODUIT",
+    pageTitle: "Méthodologie des Calculateurs et Moteur de Calcul",
+    pageDesc: "Chaque calculateur sur Real BMI repose directement sur des équations mathématiques publiées, des données de référence de santé publique et des algorithmes transparents.",
+    returnLabel: "Accueil",
+    statementTitle: "Architecture Indépendante des Calculateurs",
+    statementDesc: "Real BMI est une application web indépendante créée et maintenue par Bhawanshi Dosi. Chaque outil de ce site est documenté ci-dessous avec sa formule exacte, son autorité de source, ses paramètres et ses limites.",
+    pillars: [
+      {
+        title: "Formules Documentées",
+        desc: "Tous les calculs utilisent la littérature scientifique évaluée par des pairs et des équations publiées (Mifflin-St Jeor, Boer, Devine, US Navy)."
+      },
+      {
+        title: "Normes de Référence",
+        desc: "Les résultats sont évalués par rapport aux repères officiels de l'Organisation Mondiale de la Santé (OMS) et du CDC."
+      },
+      {
+        title: "Exécution Locale sur l'Appareil",
+        desc: "Les données sont calculées instantanément dans votre navigateur via JavaScript — aucune donnée de santé n'est stockée en ligne."
+      },
+      {
+        title: "Limites Transparentes",
+        desc: "Chaque calculateur précise clairement ce qu'il mesure et ce qu'il ne mesure pas, sans prétention clinique abusive."
+      }
+    ],
+    matrixEyebrow: "Matrice de Référence Systématique",
+    matrixTitle: "Tableau Complet de la Méthodologie des Outils",
+    matrixDesc: "Examinez les équations, sources de données, variables d'entrée, résultats et limites de chaque outil.",
+    openTool: "Ouvrir l'Outil",
+    equationLabel: "Équation Mathématique",
+    sourceLabel: "Autorité de la Source Principale",
+    inputsLabel: "Variables d'Entrée :",
+    outputLabel: "Métrique de Sortie :",
+    limitationsLabel: "Limite Principale :"
+  },
+  de: {
+    title: "Rechner-Methodik & Formeln | Real BMI",
+    description: "Transparente Methodik, mathematische Gleichungen, Quellenzitate, Eingaben, Ausgaben und Einschränkungen für alle Rechner auf Real BMI.",
+    eyebrow: "PRODUKTTRANSPARENZ & METHODIK",
+    pageTitle: "Rechner-Methodik & Berechnungs-Engine",
+    pageDesc: "Jeder Rechner auf Real BMI basiert direkt auf veröffentlichten mathematischen Gleichungen, Referenzdaten der öffentlichen Gesundheit und transparenten Algorithmen.",
+    returnLabel: "Startseite",
+    statementTitle: "Unabhängige Rechner-Architektur",
+    statementDesc: "Real BMI ist eine unabhängige Webanwendung, die von Bhawanshi Dosi erstellt und gepflegt wird. Jedes Werkzeug ist unten mit seiner exakten Formel, Quellautorität, Eingabeparametern und Messgrenzen dokumentiert.",
+    pillars: [
+      {
+        title: "Dokumentierte Formeln",
+        desc: "Alle Berechnungen basieren auf wissenschaftlicher Fachliteratur und publizierten Gleichungen (Mifflin-St Jeor, Boer, Devine, US Navy)."
+      },
+      {
+        title: "Referenzstandards",
+        desc: "Ergebnisse werden anhand offizieller Bevölkerungs-Benchmarks der Weltgesundheitsorganisation (WHO) und der CDC bewertet."
+      },
+      {
+        title: "Lokale Ausführung auf dem Gerät",
+        desc: "Eingaben werden direkt im Browser über JavaScript verarbeitet — keine Speicherung auf externen Servern."
+      },
+      {
+        title: "Transparente Grenzen",
+        desc: "Jeder Rechner benennt klar, was er messen kann und was nicht, um irreführende klinische Aussagen zu vermeiden."
+      }
+    ],
+    matrixEyebrow: "Systematische Referenzmatrix",
+    matrixTitle: "Vollständige Tabelle der Rechner-Methodik",
+    matrixDesc: "Überprüfen Sie Formeln, Datenquellen, Eingaben, Ausgaben und Grenzen für jedes Rechner-Tool.",
+    openTool: "Tool Öffnen",
+    equationLabel: "Mathematische Formel",
+    sourceLabel: "Primäre Quellautorität",
+    inputsLabel: "Eingabevariablen:",
+    outputLabel: "Ausgabemetrik:",
+    limitationsLabel: "Primäre Einschränkung:"
+  },
+  ko: {
+    title: "계산 방법론 및 공식 | Real BMI",
+    description: "Real BMI의 모든 계산기에 대한 투명한 산출 방법론, 수학 공식, 출처 인용, 입력 변수, 출력 결과 및 측정 한계 안내.",
+    eyebrow: "제품 투명성 및 산출 방법론",
+    pageTitle: "계산 방법론 및 연산 엔진 안내",
+    pageDesc: "Real BMI의 모든 계산기는 공표된 학술 공식, 공중 보건 참고 표준 데이터 및 투명한 알고리즘을 바탕으로 제작되었습니다.",
+    returnLabel: "홈",
+    statementTitle: "독립적 계산기 아키텍처",
+    statementDesc: "Real BMI는 Bhawanshi Dosi가 제작하고 운영하는 독립 웹 애플리케이션입니다. 모든 도구는 정확한 공식, 출처 권위, 입력 변수 및 측정 한계와 함께 명확히 문서화되어 있습니다.",
+    pillars: [
+      {
+        title: "문서화된 학술 공식",
+        desc: "모든 연산은 피어 리뷰를 거친 연구 문헌 및 공표된 공식(Mifflin-St Jeor, Boer, Devine, 미 해군 공식)을 사용합니다."
+      },
+      {
+        title: "공식 참고 표준",
+        desc: "산출 결과는 세계보건기구(WHO) 및 미국 질병통제예방센터(CDC)의 공중 보건 기준치와 대조됩니다."
+      },
+      {
+        title: "기기 내 로컬 연산",
+        desc: "입력된 수치는 브라우저 JavaScript 환경에서 즉시 연산되며 외부 데이터베이스에 저장되지 않습니다."
+      },
+      {
+        title: "투명한 측정 한계",
+        desc: "오해의 소지가 있는 임상적 주장을 지양하고, 각 도구가 측정할 수 있는 범위와 한계를 명확히 밝힙니다."
+      }
+    ],
+    matrixEyebrow: "체계적 참고 매트릭스",
+    matrixTitle: "전체 계산기 방법론 종합 안내표",
+    matrixDesc: "각 계산 도구의 수학 공식, 출처 데이터, 입력 변수, 산출 결과 및 측정 한계를 확인하세요.",
+    openTool: "도구 열기",
+    equationLabel: "수학적 공식",
+    sourceLabel: "주요 출처 기관",
+    inputsLabel: "입력 변수:",
+    outputLabel: "산출 지표:",
+    limitationsLabel: "주요 한계점:"
+  },
+  hi: {
+    title: "कैलकुलेटर पद्धति एवं सूत्र | Real BMI",
+    description: "Real BMI के सभी कैलकुलेटरों के लिए पारदर्शी पद्धति, गणितीय समीकरण, स्रोत संदर्भ, इनपुट, आउटपुट और सीमाएं।",
+    eyebrow: "उत्पाद पारदर्शिता एवं गणना पद्धति",
+    pageTitle: "कैलकुलेटर पद्धति एवं गणना इंजन",
+    pageDesc: "Real BMI का प्रत्येक कैलकुलेटर प्रकाशित गणितीय समीकरणों, सार्वजनिक स्वास्थ्य संदर्भ मानकों और पारदर्शी एल्गोरिदम पर आधारित है।",
+    returnLabel: "होम",
+    statementTitle: "स्वतंत्र कैलकुलेटर संरचना",
+    statementDesc: "Real BMI एक स्वतंत्र वेब एप्लिकेशन है जिसे Bhawanshi Dosi द्वारा बनाया और संचालित किया जाता है। प्रत्येक उपकरण का सटीक सूत्र, स्रोत प्राधिकरण, इनपुट पैरामीटर और सीमाएं नीचे पारदर्शी रूप से दर्ज हैं।",
+    pillars: [
+      {
+        title: "प्रलेखित वैज्ञानिक सूत्र",
+        desc: "सभी गणनाएं सहकर्मी-समीक्षित शोध और प्रकाशित समीकरणों (Mifflin-St Jeor, Boer, Devine, US Navy) का उपयोग करती हैं।"
+      },
+      {
+        title: "आधिकारिक संदर्भ मानक",
+        desc: "परिणामों का मूल्यांकन विश्व स्वास्थ्य संगठन (WHO) और सीडीसी (CDC) के जनसंख्या संदर्भ मानकों के आधार पर किया जाता है।"
+      },
+      {
+        title: "डिवाइस पर स्थानीय गणना",
+        desc: "कैलकुलेटर इनपुट आपके ब्राउज़र में सुरक्षित रूप से प्रोसेस होते हैं — कोई भी स्वास्थ्य डेटा बाहरी सर्वर पर संग्रहीत नहीं होता।"
+      },
+      {
+        title: "पारदर्शी सीमाएं",
+        desc: "प्रत्येक उपकरण स्पष्ट रूप से बताता है कि वह क्या मापता है और क्या नहीं, जिससे भ्रामक दावों से बचा जा सके।"
+      }
+    ],
+    matrixEyebrow: "व्यवस्थित संदर्भ तालिका",
+    matrixTitle: "संपूर्ण कैलकुलेटर पद्धति तालिका",
+    matrixDesc: "प्रत्येक कैलकुलेटर उपकरण के समीकरण, डेटा स्रोत, इनपुट, आउटपुट और सीमाओं की समीक्षा करें।",
+    openTool: "टूल खोलें",
+    equationLabel: "गणितीय समीकरण",
+    sourceLabel: "प्रमुख स्रोत संदर्भ",
+    inputsLabel: "इनपुट चर:",
+    outputLabel: "आउटपुट परिणाम:",
+    limitationsLabel: "मुख्य सीमा:"
+  }
+};
+
+const currentI18n = i18nData[lang] || i18nData.en;
 
 const methodologyMatrix = [
   {
@@ -78,7 +324,7 @@ const methodologyMatrix = [
     name: "Calorie Deficit Calculator",
     slug: "calorie-calculator",
     formula: "Energy Difference Scenarios = TDEE - Selected Deficit",
-    source: "NIH National Institute of Diabetes & Digestive Guidelines",
+    source: "NIH / NIDDK Guidelines & Energy Balance Models",
     inputs: "BMR, TDEE, Example Energy Difference",
     output: "Daily Calorie Reference Baseline (kcal/day)",
     limitations: "Mathematical energy differential model for planning reference; not a prescriptive medical weight loss plan."
@@ -105,50 +351,33 @@ const methodologyMatrix = [
 ---
 
 <Layout 
-  title="Calculator Methodology & Formulas | Real BMI"
-  description="Transparent methodology, mathematical equations, source citations, inputs, outputs, and limitations for all calculators on Real BMI."
+  title={currentI18n.title}
+  description={currentI18n.description}
 >
   <Navbar />
   
   <PageShell
-    title="Calculator Methodology & Calculation Engine"
-    eyebrow="PRODUCT TRANSPARENCY & METHODOLOGY"
-    description="Every calculator on Real BMI is built directly on published mathematical equations, public health reference data, and transparent algorithms."
+    title={currentI18n.pageTitle}
+    eyebrow={currentI18n.eyebrow}
+    description={currentI18n.pageDesc}
     returnUrl={`/${lang}`}
-    returnLabel="Home"
+    returnLabel={currentI18n.returnLabel}
   >
     <div class="space-y-12">
       
       <!-- Intro & Product Statement Box -->
       <div class="p-6 md:p-8 rounded-2xl border border-[var(--accent)]/20 bg-[var(--card)] space-y-4 shadow-sm">
         <h2 class="text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-          Independent Calculator Architecture
+          {currentI18n.statementTitle}
         </h2>
         <p class="text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
-          Real BMI is an independent web application created and maintained by <strong class="text-[var(--foreground)]">Bhawanshi Dosi</strong>. Rather than relying on generic black-box scripts, every tool on this site is documented below with its exact formula, source authority, input parameters, and inherent measurement limitations.
+          {currentI18n.statementDesc}
         </p>
       </div>
 
       <!-- Core Pillars Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {[
-          {
-            title: "Documented Formulas",
-            desc: "All calculations use established peer-reviewed literature and published equations (Mifflin-St Jeor, Boer, Devine, US Navy Logarithmic)."
-          },
-          {
-            title: "Reference Standards",
-            desc: "Outputs are evaluated against official population benchmarks from the World Health Organization (WHO) and Centers for Disease Control (CDC)."
-          },
-          {
-            title: "Local On-Device Execution",
-            desc: "Calculator inputs are computed instantly in your browser JavaScript environment — no health metrics are stored on external databases."
-          },
-          {
-            title: "Transparent Limitations",
-            desc: "Every calculator explicitly states what it measures and what it cannot measure, avoiding misleading clinical claims."
-          }
-        ].map(pillar => (
+        {currentI18n.pillars.map(pillar => (
           <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2.5">
             <h3 class="text-lg font-display font-bold text-[var(--foreground)] uppercase tracking-wide">{pillar.title}</h3>
             <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{pillar.desc}</p>
@@ -159,59 +388,64 @@ const methodologyMatrix = [
       <!-- Comprehensive Methodology Matrix -->
       <div class="space-y-6">
         <div class="space-y-1">
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">Systematic Reference Matrix</p>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}</p>
           <h2 class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
-            Complete Calculator Methodology Table
+            {currentI18n.matrixTitle}
           </h2>
           <p class="text-sm text-[var(--muted-foreground)] font-medium">
-            Review the equations, data sources, inputs, outputs, and measurement boundaries for each calculator tool.
+            {currentI18n.matrixDesc}
           </p>
         </div>
 
         <div class="grid gap-6">
-          {methodologyMatrix.map((item) => (
-            <div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4 hover:border-[var(--accent)]/40 transition-all shadow-xs">
-              <div class="flex items-center justify-between gap-4 flex-wrap pb-3 border-b border-[var(--border)]">
-                <div class="flex items-center gap-3">
-                  <span class="w-3 h-3 rounded-full bg-[var(--accent)]"></span>
-                  <h3 class="text-xl font-display font-bold text-[var(--foreground)]">{item.name}</h3>
-                </div>
-                <a 
-                  href={`/${lang}/${item.slug}/`} 
-                  class="inline-flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:underline"
-                >
-                  Open Tool
-                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                </a>
-              </div>
+          {methodologyMatrix.map((item) => {
+            const foundCalc = calculators.find(c => c.slug === item.slug);
+            const localizedName = foundCalc ? (foundCalc.name[lang] || foundCalc.name.en) : item.name;
 
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div class="space-y-1.5 p-3.5 rounded-xl bg-[var(--muted)]/40">
-                  <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)]">Mathematical Equation</span>
-                  <p class="font-mono text-[var(--foreground)] font-medium">{item.formula}</p>
+            return (
+              <div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4 hover:border-[var(--accent)]/40 transition-all shadow-xs">
+                <div class="flex items-center justify-between gap-4 flex-wrap pb-3 border-b border-[var(--border)]">
+                  <div class="flex items-center gap-3">
+                    <span class="w-3 h-3 rounded-full bg-[var(--accent)]"></span>
+                    <h3 class="text-xl font-display font-bold text-[var(--foreground)]">{localizedName}</h3>
+                  </div>
+                  <a 
+                    href={`/${lang}/${item.slug}/`} 
+                    class="inline-flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:underline"
+                  >
+                    {currentI18n.openTool}
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  </a>
                 </div>
-                <div class="space-y-1.5 p-3.5 rounded-xl bg-[var(--muted)]/40">
-                  <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)]">Primary Source Authority</span>
-                  <p class="text-[var(--foreground)] font-medium">{item.source}</p>
-                </div>
-              </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-1">
-                <div>
-                  <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">Input Variables:</span>
-                  <p class="text-[var(--foreground)] font-semibold mt-0.5">{item.inputs}</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                  <div class="space-y-1.5 p-3.5 rounded-xl bg-[var(--muted)]/40">
+                    <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)]">{currentI18n.equationLabel}</span>
+                    <p class="font-mono text-[var(--foreground)] font-medium">{item.formula}</p>
+                  </div>
+                  <div class="space-y-1.5 p-3.5 rounded-xl bg-[var(--muted)]/40">
+                    <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)]">{currentI18n.sourceLabel}</span>
+                    <p class="text-[var(--foreground)] font-medium">{item.source}</p>
+                  </div>
                 </div>
-                <div>
-                  <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">Output Metric:</span>
-                  <p class="text-[var(--foreground)] font-semibold mt-0.5">{item.output}</p>
-                </div>
-                <div>
-                  <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">Primary Limitation:</span>
-                  <p class="text-[var(--muted-foreground)] font-medium mt-0.5 leading-relaxed">{item.limitations}</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-1">
+                  <div>
+                    <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">{currentI18n.inputsLabel}</span>
+                    <p class="text-[var(--foreground)] font-semibold mt-0.5">{item.inputs}</p>
+                  </div>
+                  <div>
+                    <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">{currentI18n.outputLabel}</span>
+                    <p class="text-[var(--foreground)] font-semibold mt-0.5">{item.output}</p>
+                  </div>
+                  <div>
+                    <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">{currentI18n.limitationsLabel}</span>
+                    <p class="text-[var(--muted-foreground)] font-medium mt-0.5 leading-relaxed">{item.limitations}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

@@ -11,11 +11,11 @@ export default defineConfig({
       priority: 0.8,
       lastmod: new Date(),
       filter: (page) => {
-        if (page === 'https://realbmicalculator.com/') return false;
+        if (page === 'https://realbmicalculator.com/' || page === 'https://realbmicalculator.com') return false;
         const path = page.replace('https://realbmicalculator.com', '');
         if (path.startsWith('/embed/') || path.startsWith('/search/')) return false;
-        const isRedirectAlias = ['/bmr-calculator/', '/body-fat-calculator/', '/calculator/', '/editorial-policy/', '/sources/', '/methodology/', '/tdee-calculator/'].includes(path);
-        return !isRedirectAlias;
+        // Only include indexable canonical pages that belong to our 6 supported locales
+        return /^\/(en|es|fr|de|ko|hi)\//.test(path);
       },
     }),
   ],
