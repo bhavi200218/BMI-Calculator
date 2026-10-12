@@ -18,5 +18,13 @@ export async function onRequest(context: EventContext): Promise<Response> {
     return Response.redirect(url.toString(), 301);
   }
 
+  // 3. Consolidate duplicate Indian BMI calculator URL into canonical /bmi-calculator-for-indians/
+  const indianCalcMatch = url.pathname.match(/^(\/(?:en|es|fr|de|ko|hi))?\/bmi-calculator-india(\/?)$/);
+  if (indianCalcMatch) {
+    const localePrefix = indianCalcMatch[1] || '/en';
+    url.pathname = `${localePrefix}/bmi-calculator-for-indians/`;
+    return Response.redirect(url.toString(), 301);
+  }
+
   return context.next();
 }

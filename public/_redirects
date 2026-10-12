@@ -67,8 +67,6 @@
 /asian-bmi-calculator/  /en/asian-bmi-calculator/  301
 /bmi-calculator-for-indians  /en/bmi-calculator-for-indians/  301
 /bmi-calculator-for-indians/  /en/bmi-calculator-for-indians/  301
-/bmi-calculator-india  /en/bmi-calculator-india/  301
-/bmi-calculator-india/  /en/bmi-calculator-india/  301
 /lean-body-mass-calculator  /en/lean-body-mass-calculator/  301
 /lean-body-mass-calculator/  /en/lean-body-mass-calculator/  301
 /waist-to-hip-ratio-calculator  /en/waist-to-hip-ratio-calculator/  301
@@ -255,5 +253,18 @@
 /blog/  /en/blog/  301
 /blog/*  /en/blog/:splat  301
 
-/sitemap.xml /sitemap-index.xml 301
-
+# Indian BMI Calculator consolidation (redirect duplicate calculator to canonical /bmi-calculator-for-indians/)
+/bmi-calculator-india  /en/bmi-calculator-for-indians/  301
+/bmi-calculator-india/  /en/bmi-calculator-for-indians/  301
+/en/bmi-calculator-india  /en/bmi-calculator-for-indians/  301
+/en/bmi-calculator-india/  /en/bmi-calculator-for-indians/  301
+/es/bmi-calculator-india  /es/bmi-calculator-for-indians/  301
+/es/bmi-calculator-india/  /es/bmi-calculator-for-indians/  301
+/fr/bmi-calculator-india  /fr/bmi-calculator-for-indians/  301
+/fr/bmi-calculator-india/  /fr/bmi-calculator-for-indians/  301
+/de/bmi-calculator-india  /de/bmi-calculator-for-indians/  301
+/de/bmi-calculator-india/  /de/bmi-calculator-for-indians/  301
+/ko/bmi-calculator-india  /ko/bmi-calculator-for-indians/  301
+/ko/bmi-calculator-india/  /ko/bmi-calculator-for-indians/  301
+/hi/bmi-calculator-india  /hi/bmi-calculator-for-indians/  301
+/hi/bmi-calculator-india/  /hi/bmi-calculator-for-indians/  301

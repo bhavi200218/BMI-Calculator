@@ -66,14 +66,23 @@ const webSiteSchema = {
 };
 
 // 2. SoftwareApplication Schema for Search Engines
+const softwareAppDescriptions: Record<string, string> = {
+  en: "Free evidence-based Real BMI Calculator for instant Body Mass Index, BMR, TDEE, and 3D body shape reference estimates based on WHO and CDC standards.",
+  es: "Calculadora de IMC Real gratuita basada en evidencia para estimaciones instantáneas de IMC, TMB, TDEE y visualización corporal 3D según estándares de la OMS y CDC.",
+  fr: "Calculateur d'IMC Réel gratuit fondé sur des preuves scientifiques pour des estimations instantanées de l'IMC, du BMR, du TDEE et de la morphologie 3D selon les normes OMS et CDC.",
+  de: "Kostenloser, evidenzbasierter Real BMI Rechner für sofortige Schätzungen von BMI, BMR, TDEE und 3D-Körperformen nach WHO- und CDC-Standards.",
+  ko: "WHO 및 CDC 기준에 따른 체질량지수(BMI), 기초대사량(BMR), 총 에너지 소비량(TDEE) 및 3D 체형 시각화를 제공하는 신뢰할 수 있는 무료 BMI 계산기.",
+  hi: "डब्ल्यूएचओ और सीडीसी मानकों पर आधारित बॉडी मास इंडेक्स (बीएमआई), बीएमआर, टीडीईई और 3D बॉडी शेप अनुमान के लिए साक्ष्य-आधारित निःशुल्क कैलकुलेटर।"
+};
+
 const softwareAppSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Real BMI Calculator",
   "operatingSystem": "All",
   "applicationCategory": "HealthApplication",
-  "description": "Free evidence-based Real BMI Calculator for instant Body Mass Index, BMR, TDEE, and 3D body shape reference estimates based on WHO and CDC standards.",
-  "url": "https://realbmicalculator.com",
+  "description": softwareAppDescriptions[currentLocale || 'en'] || softwareAppDescriptions['en'],
+  "url": `https://realbmicalculator.com/${currentLocale || 'en'}/`,
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -114,6 +123,17 @@ const webPageSchema = {
   ]
 };
 
+const homeLabels: Record<string, string> = {
+  en: 'Home',
+  es: 'Inicio',
+  fr: 'Accueil',
+  de: 'Startseite',
+  ko: '홈',
+  hi: 'होम'
+};
+const homeName = homeLabels[currentLocale || 'en'] || 'Home';
+const homeUrl = `https://realbmicalculator.com/${currentLocale || 'en'}/`;
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -121,8 +141,8 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
-      "item": "https://realbmicalculator.com"
+      "name": homeName,
+      "item": homeUrl
     },
     ...breadcrumbItems
   ]
@@ -227,7 +247,9 @@ const howToSchema = {
 
 		<!-- Structured Data / JSON-LD -->
 		<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)}></script>
-		<script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)}></script>
+		{normalizedPath === '/' && (
+			<script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)}></script>
+		)}
 		<script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
 		<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
 		{((currentLocale === 'en' || !currentLocale) && (normalizedPath === '/' || normalizedPath === '/bmi-calculator/')) && (

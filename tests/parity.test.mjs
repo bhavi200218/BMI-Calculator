@@ -33,8 +33,8 @@ const calcCode = fs.readFileSync(path.join(WORKSPACE, 'src/utils/calculators.ts'
 const calcSlugsMatch = [...calcCode.matchAll(/slug:\s*'([^']+)'/g)];
 const calcSlugs = Array.from(new Set(calcSlugsMatch.map(m => m[1])));
 
-test('Calculators Config: Contains all 26 calculator definitions', () => {
-  assert.strictEqual(calcSlugs.length >= 26, true, `Expected >= 26 calculators, found ${calcSlugs.length}`);
+test('Calculators Config: Contains all 25 canonical calculator definitions', () => {
+  assert.strictEqual(calcSlugs.length >= 25, true, `Expected >= 26 calculators, found ${calcSlugs.length}`);
 });
 
 // 1. Calculator Configuration Parity (Inputs, Labels, Primary & Secondary Outputs)

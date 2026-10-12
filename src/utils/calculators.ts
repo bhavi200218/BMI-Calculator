@@ -125,8 +125,8 @@ export const calculators: CalculatorConfig[] = [
         h = h * 2.54;
       }
       const hM = h / 100;
-      const stdBmi = w / (hM * hM);
-      const newBmi = (1.3 * w) / Math.pow(hM, 2.5);
+      const stdBmi = hM > 0 ? w / (hM * hM) : 0;
+      const newBmi = hM > 0 ? (1.3 * w) / Math.pow(hM, 2.5) : 0;
       const diff = newBmi - stdBmi;
 
       return {
@@ -286,143 +286,15 @@ export const calculators: CalculatorConfig[] = [
         h = h * 2.54;
       }
       const hM = h / 100;
-      const stdBmi = w / (hM * hM);
-      const newBmi = (1.3 * w) / Math.pow(hM, 2.5);
+      const stdBmi = hM > 0 ? w / (hM * hM) : 0;
+      const newBmi = hM > 0 ? (1.3 * w) / Math.pow(hM, 2.5) : 0;
       const diff = newBmi - stdBmi;
 
       return {
         primary: { value: newBmi.toFixed(1), label: { en: '3D Height-Adjusted BMI', es: 'IMC 3D Ajustado', fr: 'IMC 3D Ajusté', de: '3D-Höhen-BMI', ko: '3D 신장 보정 BMI', hi: '3D ऊंचाई-समायोजित बीएमआई' } },
         secondary: [
           { label: { en: 'Standard BMI', es: 'IMC Estándar', fr: 'IMC Standard', de: 'Standard-BMI', ko: '표준 BMI', hi: 'मानक बीएमआई' }, value: stdBmi.toFixed(1) },
-          { label: { en: '3D Volume Scale Factor', es: 'Escala Volumétrica 3D', fr: 'Échelle Volumétrique 3D', de: 'Volumen-Skalierungsfaktor', ko: '3D 볼륨 스케일 팩터', hi: '3D वॉल्यूम स्केल फैक्टर' }, value: (newBmi / 22.5).toFixed(2), unit: 'x' }
-        ]
-      };
-    }
-  },
-  {
-    slug: 'bmi-calculator-india',
-    name: {
-      en: 'BMI Calculator India',
-      es: 'Calculadora IMC India',
-      fr: 'Calculateur d\'IMC Inde',
-      de: 'BMI-Rechner Indien',
-      ko: '인도 BMI 계산기',
-      hi: 'बीएमआई कैलकुलेटर भारत'
-    },
-    title: {
-      en: 'BMI Calculator India – Healthy BMI Chart & Range for Indian Men & Women',
-      es: 'Calculadora IMC India – Rango de IMC Saludable para Hombres y Mujeres',
-      fr: 'Calculateur d\'IMC Inde – Plage d\'IMC Santé pour Hommes et Femmes',
-      de: 'BMI-Rechner Indien – Gesunder BMI-Bereich für Männer und Frauen',
-      ko: '인도 BMI 계산기 – 인도 남성 및 여성의 건강한 BMI 범위 및 차트',
-      hi: 'बीएमआई कैलकुलेटर भारत - भारतीय पुरुषों और महिलाओं के लिए स्वस्थ बीएमआई चार्ट एवं सीमा'
-    },
-    description: {
-      "en": "Free BMI Calculator India aligned with ICMR & WHO South-East Asia consensus guidelines (Asian overweight cutoff: 23.0 kg/m²). Calculate your BMI, Asian risk category, and healthy weight range with privacy-focused, browser-based calculations.",
-      "es": "Calculadora de IMC para la India gratuita alineada con las directrices del ICMR y la OMS para el Sur de Asia (corte de sobrepeso asiático: 23.0 kg/m²). Calcula tu IMC, categoría de riesgo asiática y rango de peso saludable con cálculos privados en el navegador.",
-      "fr": "Calculateur d'IMC Inde gratuit conforme aux directives de l'ICMR et de l'OMS pour l'Asie du Sud-Est (seuil de surpoids asiatique : 23,0 kg/m²). Calculez votre IMC, catégorie de risque asiatique et poids santé avec calculs confidentiels sur navigateur.",
-      "de": "Kostenloser BMI-Rechner für Indien nach offiziellen ICMR- und WHO-Südasien-Richtlinien (asiatischer Übergewichtsschwelle: 23,0 kg/m²). Berechnen Sie Ihren BMI, Ihre asiatische Risiko-Kategorie und Ihr gesundes Gewicht datenschutzorientiert im Browser.",
-      "ko": "공식 ICMR 및 WHO 남아시아 지침(아시아인 과체중 기준: 23.0 kg/m²)에 맞춘 인도인 전용 무료 BMI 계산기. BMI, 아시아인 위험 범주 및 건강 체중 범위를 산출하세요. 브라우저 내 100% 무료 구동.",
-      "hi": "आधिकारिक ICMR और WHO दक्षिण एशियाई दिशानिर्देशों (एशियाई ओवरवेट कटऑफ: 23.0 kg/m²) के अनुसार भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। अपने बीएमआई, एशियाई जोखिम श्रेणी और स्वस्थ वजन सीमा की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
-    },
-    inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '65' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '168' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '30' },
-      { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] },
-      { id: 'waist', label: L.waist, type: 'number', placeholder: '80' }
-    ],
-    calculate: (inputs, system) => {
-      let w = parseFloat(inputs.weight) || 0;
-      let h = parseFloat(inputs.height) || 0;
-      let waist = parseFloat(inputs.waist) || 0;
-      if (system === 'imperial') {
-        w = w * 0.453592;
-        h = h * 2.54;
-        waist = waist * 2.54;
-      }
-      const hM = h / 100;
-      const bmi = hM > 0 ? w / (hM * hM) : 0;
-      const isM = inputs.gender === 'male';
-
-      let indianCat = {
-        en: 'Healthy Weight (18.5 - 22.9)',
-        es: 'Peso Saludable (18.5 - 22.9)',
-        fr: 'Poids Normal (18.5 - 22.9)',
-        de: 'Normalgewicht (18.5 - 22.9)',
-        ko: '정상 체중 (18.5 - 22.9)',
-        hi: 'स्वस्थ वजन (18.5 - 22.9)'
-      };
-      if (bmi < 18.5) indianCat = {
-        en: 'Underweight (< 18.5)',
-        es: 'Bajo Peso (< 18.5)',
-        fr: 'Insuffisance pondérale (< 18.5)',
-        de: 'Untergewicht (< 18.5)',
-        ko: '저체중 (< 18.5)',
-        hi: 'कम वजन (< 18.5)'
-      };
-      else if (bmi >= 23.0 && bmi < 25.0) indianCat = {
-        en: 'Overweight / At Risk (23.0 - 24.9)',
-        es: 'Sobrepeso / En Riesgo (23.0 - 24.9)',
-        fr: 'Surpoids / En Risque (23.0 - 24.9)',
-        de: 'Übergewicht / Risiko (23.0 - 24.9)',
-        ko: '과체중 / 위험군 (23.0 - 24.9)',
-        hi: 'अधिक वजन / जोखिम (23.0 - 24.9)'
-      };
-      else if (bmi >= 25.0 && bmi < 30.0) indianCat = {
-        en: 'Obese Class I (25.0 - 29.9)',
-        es: 'Obesidad Clase I (25.0 - 29.9)',
-        fr: 'Obésité Classe I (25.0 - 29.9)',
-        de: 'Adipositas Klasse I (25.0 - 29.9)',
-        ko: '비만 1단계 (25.0 - 29.9)',
-        hi: 'मोटापा श्रेणी I (25.0 - 29.9)'
-      };
-      else if (bmi >= 30.0) indianCat = {
-        en: 'Obese Class II (≥ 30.0)',
-        es: 'Obesidad Clase II (≥ 30.0)',
-        fr: 'Obésité Classe II (≥ 30.0)',
-        de: 'Adipositas Klasse II (≥ 30.0)',
-        ko: '비만 2단계 (≥ 30.0)',
-        hi: 'मोटापा श्रेणी II (≥ 30.0)'
-      };
-
-      const minHealthyW = 18.5 * (hM * hM);
-      const maxHealthyW = 22.9 * (hM * hM);
-
-      const waistLimit = isM ? 90 : 80;
-      const waistStatus = waist > 0 ? (waist >= waistLimit ? {
-        en: 'Elevated (ICMR Visceral Risk)',
-        es: 'Elevado (Riesgo Visceral ICMR)',
-        fr: 'Élevé (Risque Viscéral ICMR)',
-        de: 'Erhöht (ICMR Viszerales Risiko)',
-        ko: '높음 (ICMR 내장지방 위험)',
-        hi: 'बढ़ा हुआ (ICMR विसरल जोखिम)'
-      } : {
-        en: 'Healthy Waist',
-        es: 'Cintura Saludable',
-        fr: 'Tour de Taille Sain',
-        de: 'Gesunde Taille',
-        ko: '정상 허리둘레',
-        hi: 'स्वस्थ कमर'
-      }) : {
-        en: 'Not Provided',
-        es: 'No Proporcionado',
-        fr: 'Non Renseigné',
-        de: 'Nicht Angegeben',
-        ko: '미입력',
-        hi: 'प्रदान नहीं किया गया'
-      };
-
-      const unitStr = system === 'imperial' ? 'lbs' : 'kg';
-      const conv = (v: number) => system === 'imperial' ? v / 0.453592 : v;
-
-      return {
-        primary: { value: bmi.toFixed(1), label: { en: 'Indian Standard BMI', es: 'IMC Estándar India', fr: 'IMC Standard Inde', de: 'Indien-Standard-BMI', ko: '인도 표준 BMI', hi: 'भारतीय मानक बीएमआई' } },
-        secondary: [
-          { label: { en: 'Asian/Indian Classification', es: 'Clasificación Asiática', fr: 'Classification Asiatique', de: 'Asiatische Klassifizierung', ko: '아시아/인도 분류', hi: 'भारतीय बीएमआई वर्ग' }, value: indianCat },
-          { label: { en: 'Healthy Weight Window (India)', es: 'Rango de Peso Saludable (India)', fr: 'Plage de Poids Santé (Inde)', de: 'Gesundes Gewicht (Indien)', ko: '인도 권장 건강 체중 범위', hi: 'स्वास्थ्यप्रद वजन सीमा (भारत)' }, value: `${conv(minHealthyW).toFixed(1)} - ${conv(maxHealthyW).toFixed(1)}`, unit: unitStr },
-          { label: { en: 'ICMR Waist Risk Status', es: 'Estado de Cintura ICMR', fr: 'Statut Tour de Taille ICMR', de: 'ICMR Taillen-Status', ko: 'ICMR 허리 둘레 평가', hi: 'ICMR कमर जोखिम स्थिति' }, value: waistStatus },
-          { label: { en: 'Indian Overweight Threshold', es: 'Umbral de Acción', fr: 'Seuil d\'Action', de: 'Aktions-Schwellenwert', ko: '주의 개시 기준점', hi: 'भारतीय ओवरवेट कटऑफ' }, value: '23.0 kg/m²' }
+          { label: { en: '3D Volume Scale Factor', es: 'Escala Volumétrica 3D', fr: 'Échelle Volumétrique 3D', de: 'Volumen-Skalierungsfaktor', ko: '3D 볼륨 스케일 팩터', hi: '3D वॉल्यूम स्केल फैक्टर' }, value: (newBmi > 0 ? (newBmi / 22.5).toFixed(2) : '0.00'), unit: 'x' }
         ]
       };
     }
@@ -688,26 +560,63 @@ export const calculators: CalculatorConfig[] = [
         waist = waist * 2.54;
       }
       const hM = h / 100;
-      const bmi = w / (hM * hM);
+      const bmi = hM > 0 ? w / (hM * hM) : 0;
       const isM = inputs.gender === 'male';
       const age = parseInt(inputs.age) || 35;
       
       const waistLimit = isM ? 94 : 80;
       const waistHigh = isM ? 102 : 88;
       
-      let riskScore = 'Standard Reference';
+      let riskScore = {
+        en: 'Standard Reference',
+        es: 'Referencia Estándar',
+        fr: 'Référence Standard',
+        de: 'Standardreferenz',
+        ko: '표준 기준',
+        hi: 'मानक संदर्भ'
+      };
       if (bmi >= 27.5 || waist >= waistHigh || (bmi >= 23 && waist >= waistLimit && age >= 40)) {
-        riskScore = 'Elevated Threshold';
+        riskScore = {
+          en: 'Elevated Threshold',
+          es: 'Umbral Elevado',
+          fr: 'Seuil Élevé',
+          de: 'Erhöhte Schwelle',
+          ko: '주의 필요 수치',
+          hi: 'उच्च जोखिम सीमा'
+        };
       } else if (bmi >= 23 || waist >= waistLimit || age >= 45) {
-        riskScore = 'Moderate Threshold';
+        riskScore = {
+          en: 'Moderate Threshold',
+          es: 'Umbral Moderado',
+          fr: 'Seuil Modéré',
+          de: 'Mäßige Schwelle',
+          ko: '중간 위험 수치',
+          hi: 'मध्यम जोखिम सीमा'
+        };
       }
+
+      const waistStatus = waist >= waistLimit ? {
+        en: 'Elevated',
+        es: 'Elevado',
+        fr: 'Élevé',
+        de: 'Erhöht',
+        ko: '주의 필요',
+        hi: 'उच्च'
+      } : {
+        en: 'Standard',
+        es: 'Estándar',
+        fr: 'Standard',
+        de: 'Standard',
+        ko: '정상',
+        hi: 'मानक'
+      };
 
       return {
         primary: { value: riskScore, label: { en: 'Asian Reference Status', es: 'Estado de Referencia Asiático', fr: 'Statut de Référence Asiatique', de: 'Asiatischer Referenzstatus', ko: '아시아인 참조 상태', hi: 'एशियाई संदर्भ स्थिति' } },
         secondary: [
           { label: { en: 'BMI Score', es: 'Puntaje IMC', fr: 'Score IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' }, value: bmi.toFixed(1) },
           { label: { en: 'Asian Cutoff', es: 'Umbral Asiático', fr: 'Seuil Asiatique', de: 'Asien-Schwellenwert', ko: '아시아인 기준', hi: 'एशियाई कटऑफ' }, value: '23.0 kg/m²' },
-          { label: { en: 'Waist Reference', es: 'Referencia Cintura', fr: 'Référence Tour Taille', de: 'Taillenreferenz', ko: '허리둘레 참조', hi: 'कमर संदर्भ' }, value: waist >= waistLimit ? 'Elevated' : 'Standard' }
+          { label: { en: 'Waist Reference', es: 'Referencia Cintura', fr: 'Référence Tour Taille', de: 'Taillenreferenz', ko: '허리둘레 참조', hi: 'कमर संदर्भ' }, value: waistStatus }
         ]
       };
     }
