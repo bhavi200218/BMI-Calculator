@@ -90,6 +90,15 @@ const checklist3D: Record<string, string[]> = {
 
 const items3D = checklist3D[lang] || checklist3D.en;
 
+const visualizerSuffix: Record<string, string> = {
+  en: ' & 3D Body Visualizer',
+  es: ' y Visualizador Corporal 3D',
+  fr: ' et Visualiseur Corporel 3D',
+  de: ' & 3D-Körper-Visualisierer',
+  ko: ' 및 3D 바디 비주얼라이저',
+  hi: ' एवं 3D बॉडी विजुअलाइज़र'
+};
+
 // WebApplication Schema for SEO
 const webAppSchema = {
   "@context": "https://schema.org",
@@ -127,7 +136,7 @@ const webAppSchema = {
       <!-- Top Header text -->
       <div class="text-center space-y-4 max-w-3xl mx-auto">
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] animate-in" style="animation-delay:0ms">
-          {calc.slug === '3d-bmi-calculator' ? `${calc.name[lang] || calc.name['en']} & 3D Body Visualizer` : (calc.name[lang] || calc.name['en'])}
+          {calc.slug === '3d-bmi-calculator' ? `${calc.name[lang] || calc.name['en']}${visualizerSuffix[lang] || visualizerSuffix.en}` : (calc.name[lang] || calc.name['en'])}
         </h1>
         <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-sans font-medium animate-in max-w-2xl mx-auto" style="animation-delay:50ms">
           {pageDesc}
@@ -180,7 +189,7 @@ const webAppSchema = {
         <ToolSEOContent slug={calc.slug} lang={lang} />
         <EmbedWidgetBox lang={lang} />
         <LatestArticles lang={lang} />
-        <DeepHealthSEO lang={lang} />
+        <DeepHealthSEO lang={lang} slug={calc.slug} />
       </div>
 
     </div>

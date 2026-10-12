@@ -10,8 +10,8 @@ const titles = {
   es: "Incrustar Calculadora Real de IMC Gratis en su Sitio Web",
   fr: "Intégrer le Calculateur IMC Réel Gratuit sur Votre Site Web",
   de: "Kostenlosen Realen BMI-Rechner auf Ihrer Website Einbinden",
-  ko: "무료 리얼 BMI 계산기를 귀하의 웹사이트에 임베드하세요",
-  hi: "अपनी वेबसाइट पर फ्री Real BMI Calculator एम्बेड करें"
+  ko: "무료 리얼 BMI 계산기를 귀하의 웹사이트에 간편하게 추가하세요",
+  hi: "अपनी वेबसाइट पर मुफ़्त Real BMI Calculator जोड़ें"
 };
 
 const subtitles = {
@@ -58,7 +58,7 @@ const embedCode = `<iframe src="https://realbmicalculator.com/embed/bmi-calculat
       <div class="space-y-2 max-w-2xl">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] shadow-xs">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-          {{ en: 'Free Webmaster & Blogger Tool', es: 'Herramienta Gratuita para Webmasters y Bloggers', fr: 'Outil Gratuit pour Webmasters & Blogueurs', de: 'Kostenloses Webmaster- & Blogger-Tool', ko: '무료 웹마스터 및 블로거 도구', hi: 'फ्री वेबमास्टर और ब्लॉगर टूल' }[lang] || 'Free Webmaster & Blogger Tool'}
+          {{ en: 'Free Webmaster & Blogger Tool', es: 'Herramienta Gratuita para Webmasters y Bloggers', fr: 'Outil Gratuit pour Webmasters & Blogueurs', de: 'Kostenloses Webmaster- & Blogger-Tool', ko: '무료 웹마스터 및 블로거 도구', hi: 'मुफ़्त वेबमास्टर और ब्लॉगर टूल' }[lang] || 'Free Webmaster & Blogger Tool'}
         </div>
         <h3 class="text-2xl sm:text-3xl font-display font-extrabold uppercase text-[var(--foreground)] tracking-tight">
           {titles[lang] || titles.en}

@@ -21,7 +21,7 @@ export interface CalculatorConfig {
   description: Record<string, string>;
   inputs: InputField[];
   calculate: (inputs: Record<string, any>, unitSystem: 'metric' | 'imperial') => {
-    primary: { value: string | number; label: Record<string, string>; unit?: string };
+    primary: { value: string | number | Record<string, string>; label: Record<string, string>; unit?: string };
     secondary: MetricOutput[];
   };
 }
@@ -44,7 +44,7 @@ const L = {
   sedentary: { en: 'Sedentary (Little/No Exercise)', es: 'Sedentario', fr: 'Sédentaire', de: 'Sitzend', ko: '활동이 적음', hi: 'गतिहीन' },
   light: { en: 'Light Exercise (1-3 days/wk)', es: 'Ligero', fr: 'Léger', de: 'Leicht', ko: '가벼운 운동', hi: 'हल्का व्यायाम' },
   moderate: { en: 'Moderate Exercise (3-5 days/wk)', es: 'Moderado', fr: 'Modéré', de: 'Mäßig', ko: '보통 운동', hi: 'मध्यम व्यायाम' },
-  active: { en: 'Heavy Exercise (6-7 days/wk)', es: 'Activo', fr: 'Très actif', de: 'Sehr aktiv', ko: '激한 운동', hi: 'सक्रिय व्यायाम' },
+  active: { en: 'Heavy Exercise (6-7 days/wk)', es: 'Activo', fr: 'Très actif', de: 'Sehr aktiv', ko: '격렬한 운동', hi: 'सक्रिय व्यायाम' },
   goal: { en: 'Goal', es: 'Objetivo', fr: 'Objectif', de: 'Ziel', ko: '목표', hi: 'लक्ष्य' },
   loseWeight: { en: 'Weight Loss', es: 'Perder Peso', fr: 'Perte de Poids', de: 'Gewichtsverlust', ko: '체중 감량', hi: 'वजन घटाना' },
   maintainWeight: { en: 'Maintenance', es: 'Mantener Peso', fr: 'Maintien', de: 'Gewicht halten', ko: '현재 체중 유지', hi: 'वजन बनाए रखना' },
@@ -533,8 +533,8 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'diabetes-risk-calculator',
-    name: { en: 'Asian BMI Cutoff Calculator', es: 'Calculadora de Umbral IMC Asiático', fr: 'Calculateur d\'IMC Asiatique', de: 'Asiatischer BMI-Schwellenwert-Rechner', ko: '아시아인 BMI 기준치 계산기', hi: 'एशियाई बीएमआई कटऑफ कैलकुलेटर' },
-    title: { en: 'Asian BMI Cutoff Calculator – BMI 23 & 27.5 Reference', es: 'Calculadora de Umbral IMC Asiático (23 y 27.5)', fr: 'Calculateur d\'IMC Asiatique – Références 23 & 27.5', de: 'Asiatischer BMI-Schwellenwert-Rechner – Referenzen 23 & 27.5', ko: '아시아인 BMI 기준치 계산기 – 23 및 27.5 참조', hi: 'एशियाई बीएमआई कटऑफ कैलकुलेटर - 23 एवं 27.5 संदर्भ' },
+    name: { en: 'Type 2 Diabetes Risk Calculator', es: 'Calculadora de Riesgo de Diabetes', fr: 'Calculateur de Risque de Diabète', de: 'Diabetes-Risiko-Rechner', ko: '제2형 당뇨병 위험도 계산기', hi: 'टाइप 2 डायबिटीज रिस्क कैलकुलेटर' },
+    title: { en: 'Type 2 Diabetes Risk Calculator – BMI & Metabolic Cutoff Reference', es: 'Calculadora de Riesgo de Diabetes – Referencia de IMC y Metabolismo', fr: 'Calculateur de Risque de Diabète – Références d\'IMC et Facteurs Métaboliques', de: 'Diabetes-Risiko-Rechner – BMI & Stoffwechsel-Referenzwerte', ko: '제2형 당뇨병 위험도 계산기 – BMI 및 대사 위험 기준', hi: 'टाइप 2 डायबिटीज रिस्क कैलकुलेटर - बीएमआई एवं मेटाबॉलिक संदर्भ' },
     description: {
       "en": "Free Type 2 Diabetes Risk Calculator based on BMI, waist circumference, age, and WHO Asian risk thresholds (BMI ≥ 23.0 kg/m²). Assess metabolic risk factors with privacy-focused, browser calculations.",
       "es": "Calculadora gratuita de riesgo de diabetes tipo 2 basada en IMC, circunferencia de cintura, edad y umbrales de riesgo asiático de la OMS (IMC ≥ 23.0 kg/m²). Evalúa los factores de riesgo metabólico con cálculos privados en el navegador.",
@@ -716,7 +716,7 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'tdee-calculator',
     name: { en: 'TDEE Calculator', es: 'Calculadora de TDEE', fr: 'Calculateur de TDEE', de: 'TDEE-Rechner', ko: 'TDEE 계산기', hi: 'टीडीईई कैलकुलेटर' },
-    title: { en: 'TDEE Calculator Online – Maintenance Calorie & Total Daily Energy Expenditure Calculator', es: 'Calculadora de TDEE – Gasto Energético Total Diario', fr: 'Calculateur de TDEE – Dépense Énergétique Totale', de: 'TDEE Rechner – Gesamtenergiebedarf (Total Daily Energy Expenditure)', ko: '무료 TDEE 계산기 (TDEE Calculator)', hi: 'मुफ़्त टीडीईई कैलकुलेटर - Total Daily Energy Expenditure' },
+    title: { en: 'TDEE Calculator Online – Maintenance Calorie & Total Daily Energy Expenditure Calculator', es: 'Calculadora de TDEE – Gasto Energético Total Diario', fr: 'Calculateur de TDEE – Dépense Énergétique Totale', de: 'TDEE Rechner – Gesamtenergiebedarf (Total Daily Energy Expenditure)', ko: '무료 TDEE 계산기 – 일일 총 에너지 소비량 계산', hi: 'मुफ़्त टीडीईई कैलकुलेटर - Total Daily Energy Expenditure' },
     description: {
       "en": "Free TDEE Calculator Online. Calculate Total Daily Energy Expenditure (TDEE), maintenance calories, cutting deficit, and bulking targets based on activity level and BMR formulas with privacy-focused, browser calculations.",
       "es": "Calculadora de TDEE gratuita en línea. Calcula tu Gasto Energético Total Diario (TDEE), calorías de mantenimiento, déficit para perder peso y objetivos de volumen basados en tu nivel de actividad y fórmulas de BMR con cálculos privados en el navegador.",
@@ -826,7 +826,7 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'body-fat-calculator',
     name: { en: 'Body Fat Calculator', es: 'Calculadora de Grasa Corporal', fr: 'Calculateur de Graisse Corporelle', de: 'Körperfett Rechner', ko: '체지방 계산기', hi: 'बॉडी फैट कैलकुलेटर' },
-    title: { en: 'Body Fat Calculator – US Navy Body Fat Percentage Tool', es: 'Calculadora de Grasa Corporal – Porcentaje de Grasa US Navy', fr: 'Calculateur de Graisse Corporelle – Formule US Navy', de: 'Körperfett Rechner – US Navy Körperfettanteil Berechnen', ko: '무료 체지방 계산기 (Body Fat Calculator)', hi: 'मुफ़्त बॉडी फैट कैलकुलेटर - बॉडी फैट प्रतिशत' },
+    title: { en: 'Body Fat Calculator – US Navy Body Fat Percentage Tool', es: 'Calculadora de Grasa Corporal – Porcentaje de Grasa US Navy', fr: 'Calculateur de Graisse Corporelle – Formule US Navy', de: 'Körperfett Rechner – US Navy Körperfettanteil Berechnen', ko: '무료 체지방률 계산기 – 체지방 백분율 측정', hi: 'मुफ़्त बॉडी फैट कैलकुलेटर - बॉडी फैट प्रतिशत' },
     description: {
       "en": "Free Body Fat Calculator based on the US Navy body fat formula and WHtR metrics. Calculate body fat percentage, fat mass (kg/lbs), lean mass, and fitness classification categories with privacy-focused, browser calculations.",
       "es": "Calculadora de grasa corporal gratuita basada en la fórmula de la Marina de EE. UU. y métricas WHtR. Calcula el porcentaje de grasa corporal, masa grasa (kg/lbs), masa magra y categorías de condición física con cálculos privados en el navegador.",
@@ -947,7 +947,7 @@ export const calculators: CalculatorConfig[] = [
       es: 'Calculadora de Peso Ideal por Altura – Peso Corporal Ideal (IBW)',
       fr: 'Calculateur de Poids Idéal selon la Taille – Poids Idéal (IBW)',
       de: 'Idealgewicht Rechner nach Körpergröße – Ideales Körpergewicht (IBW)',
-      ko: '이상 체중 계산기 (Ideal Weight Calculator) – 키별 권장 체중 (IBW)',
+      ko: '이상 체중 계산기 – 키별 적정 권장 체중 (IBW)',
       hi: 'आदर्श वजन कैलकुलेटर - ऊंचाई के अनुसार आइडियल बॉडी वेट (IBW Calculator)'
     },
     description: {
@@ -1001,7 +1001,7 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'calorie-calculator',
     name: { en: 'Calorie Deficit Calculator', es: 'Calculadora de Déficit Calórico', fr: 'Calculateur de Déficit Calorique', de: 'Kaloriendefizit Rechner', ko: '칼로리 적자 계산기', hi: 'कैलोरी घाटा कैलकुलेटर' },
-    title: { en: 'Calorie Deficit Calculator – Estimated Daily Calorie Planning', es: 'Calculadora de Déficit Calórico – Planificación Calórica Diaria', fr: 'Calculateur de Déficit Calorique – Planification Calorique', de: 'Kaloriendefizit Rechner – Täglicher Kalorienbedarf', ko: '무료 칼로리 적자 계산기 (Calorie Deficit Calculator)', hi: 'मुफ़्त कैलोरी घाटा कैलकुलेटर - अनुमानित दैनिक कैलोरी योजना' },
+    title: { en: 'Calorie Deficit Calculator – Estimated Daily Calorie Planning', es: 'Calculadora de Déficit Calórico – Planificación Calórica Diaria', fr: 'Calculateur de Déficit Calorique – Planification Calorique', de: 'Kaloriendefizit Rechner – Täglicher Kalorienbedarf', ko: '무료 칼로리 결손 계산기 – 체중 감량 칼로리 목표', hi: 'मुफ़्त कैलोरी घाटा कैलकुलेटर - अनुमानित दैनिक कैलोरी योजना' },
     description: {
       "en": "Free Calorie Calculator for weight loss, maintenance, and weight gain. Calculate daily calorie needs, macro breakdown, and calorie deficit target based on age, height, weight, and activity level with privacy-focused, browser calculations.",
       "es": "Calculadora de calorías gratuita para pérdida de peso, mantenimiento y ganancia de peso. Calcula necesidades calóricas diarias, desglose de macronutrientes y déficit calórico objetivo por edad, altura, peso y nivel de actividad con cálculos privados en el navegador.",
@@ -1069,7 +1069,7 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'protein-intake-calculator',
     name: { en: 'Protein Intake Calculator', es: 'Calculadora de Consumo de Proteínas', fr: 'Calculateur d\'Apport en Protéines', de: 'Täglicher Proteinbedarf Rechner', ko: '단백질 섭취량 계산기', hi: 'प्रोटीन सेवन कैलकुलेटर' },
-    title: { en: 'Protein Intake Calculator – Free Daily Protein Target Tool', es: 'Calculadora de Consumo de Proteínas Diario por Peso', fr: 'Calculateur d\'Apport en Protéines Gratuit', de: 'Protein Intake Rechner – Täglicher Eiweißbedarf', ko: '무료 단백질 섭취량 계산기 (Protein Intake Calculator)', hi: 'मुफ़्त प्रोटीन सेवन कैलकुलेटर - दैनिक प्रोटीन लक्ष्य' },
+    title: { en: 'Protein Intake Calculator – Free Daily Protein Target Tool', es: 'Calculadora de Consumo de Proteínas Diario por Peso', fr: 'Calculateur d\'Apport en Protéines Gratuit', de: 'Protein Intake Rechner – Täglicher Eiweißbedarf', ko: '무료 단백질 섭취량 계산기 – 하루 권장 단백질 섭취 기준', hi: 'मुफ़्त प्रोटीन सेवन कैलकुलेटर - दैनिक प्रोटीन लक्ष्य' },
     description: {
       "en": "Free Daily Protein Intake Calculator. Calculate optimal daily protein intake in grams for muscle growth, fat loss, and athletic performance based on weight, fitness goals, and activity with privacy-focused, browser calculations.",
       "es": "Calculadora de ingesta diaria de proteínas gratuita. Calcula la ingesta óptima diaria de proteínas en gramos para crecimiento muscular, pérdida de grasa y rendimiento deportivo según peso, objetivos y actividad con cálculos privados en el navegador.",
@@ -1109,7 +1109,7 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'water-intake-calculator',
     name: { en: 'Daily Water Intake Calculator', es: 'Calculadora de Consumo de Agua Diario', fr: 'Calculateur d\'Hydratation Journalier', de: 'Täglicher Wasserbedarf Rechner', ko: '하루 물 섭취량 계산기', hi: 'दैनिक पानी का सेवन कैलकुलेटर' },
-    title: { en: 'Daily Water Intake Calculator – Hydration by Weight Tool', es: 'Calculadora de Consumo de Agua Diario por Peso', fr: 'Calculateur d\'Hydratation selon le Poids', de: 'Wasserbedarf Rechner nach Körpergewicht – Täglicher Zielwert', ko: '하루 물 섭취량 계산기 (Water Intake Calculator by Weight)', hi: 'दैनिक पानी का सेवन कैलकुलेटर - वजन के अनुसार हाइड्रेशन' },
+    title: { en: 'Daily Water Intake Calculator – Hydration by Weight Tool', es: 'Calculadora de Consumo de Agua Diario por Peso', fr: 'Calculateur d\'Hydratation selon le Poids', de: 'Wasserbedarf Rechner nach Körpergewicht – Täglicher Zielwert', ko: '하루 물 섭취량 계산기 – 체중별 일일 수분 섭취 권장량', hi: 'दैनिक पानी का सेवन कैलकुलेटर - वजन के अनुसार हाइड्रेशन' },
     description: {
       "en": "Free Daily Water Intake Calculator. Calculate recommended daily water consumption in liters, glasses, and ounces based on body weight, climate, exercise duration, and activity level with privacy-focused, browser calculations.",
       "es": "Calculadora de ingesta diaria de agua gratuita. Calcula el consumo diario recomendado de agua en litros, vasos u onzas según el peso corporal, el clima, la duración del ejercicio y el nivel de actividad con cálculos privados en el navegador.",
@@ -1146,7 +1146,7 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'macro-calculator',
     name: { en: 'Macro Calculator', es: 'Calculadora de Macros', fr: 'Calculateur de Macros', de: 'Makro Rechner', ko: '매크로 계산기', hi: 'मैक्रो कैलकुलेटर' },
-    title: { en: 'Macro Calculator – Free Macronutrient & IIFYM Ratio Tool', es: 'Calculadora de Macros Gratis - Macronutrientes y IIFYM', fr: 'Calculateur de Macros Gratuit - Glucides Protéines Lipides', de: 'Kostenloser Makro Rechner – IIFYM Makronährstoff-Verteilung', ko: '무료 매크로 계산기 (Macro Calculator & IIFYM Split)', hi: 'मुफ़्त मैक्रो कैलकुलेटर - मैक्रोन्यूट्रिएंट और IIFYM अनुपात' },
+    title: { en: 'Macro Calculator – Free Macronutrient & IIFYM Ratio Tool', es: 'Calculadora de Macros Gratis - Macronutrientes y IIFYM', fr: 'Calculateur de Macros Gratuit - Glucides Protéines Lipides', de: 'Kostenloser Makro Rechner – IIFYM Makronährstoff-Verteilung', ko: '무료 탄단지 매크로 계산기 – 3대 영양소 비율 분석', hi: 'मुफ़्त मैक्रो कैलकुलेटर - मैक्रोन्यूट्रिएंट और IIFYM अनुपात' },
     description: {
       "en": "Free Macro Calculator. Calculate optimal daily macronutrient targets (protein, carbs, fat in grams) for cutting, maintenance, or muscle gain based on your TDEE and fitness goals with privacy-focused, browser calculations.",
       "es": "Calculadora de macronutrientes gratuita. Calcula tus objetivos diarios de macronutrientes (proteínas, carbohidratos, grasas en gramos) para definición, mantenimiento o volumen según tu TDEE y objetivos con cálculos privados en el navegador.",
@@ -1207,7 +1207,7 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'waist-to-hip-ratio-calculator',
     name: { en: 'Waist to Hip Ratio Calculator', es: 'Calculadora de Relación Cintura a Cadera', fr: 'Calculateur de Rapport Taille à Hanche', de: 'Taille-zu-Hüfte-Verhältnis Rechner', ko: '허리 엉덩이 비율 계산기', hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर' },
-    title: { en: 'Waist to Hip Ratio Calculator – Free WHO WHR Chart & Tool', es: 'Calculadora de Relación Cintura a Cadera - Tabla OMS WHR', fr: 'Calculateur de Rapport Taille à Hanche - Normes OMS WHR', de: 'Taille zu Hüfte Verhältnis Rechner – WHO WHR Tabelle', ko: '허리 엉덩이 비율 계산기 (Waist to Hip Ratio Calculator)', hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर - WHO WHR चार्ट' },
+    title: { en: 'Waist to Hip Ratio Calculator – Free WHO WHR Chart & Tool', es: 'Calculadora de Relación Cintura a Cadera - Tabla OMS WHR', fr: 'Calculateur de Rapport Taille à Hanche - Normes OMS WHR', de: 'Taille zu Hüfte Verhältnis Rechner – WHO WHR Tabelle', ko: '허리 엉덩이 비율 계산기 – WHR 복부 비만도 측정', hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर - WHO WHR चार्ट' },
     description: {
       "en": "Free Waist-to-Hip Ratio Calculator (WHR Calculator). Calculate your waist-to-hip ratio, body shape type (apple vs pear), and WHO cardiovascular health risk classification with privacy-focused, browser calculations.",
       "es": "Calculadora de relación cintura-cadera (WHR) gratuita. Calcula tu relación cintura-cadera, tipo de forma corporal (manzana vs pera) y clasificación de riesgo cardiovascular de la OMS con cálculos privados en el navegador.",
@@ -1247,7 +1247,7 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'body-surface-area-calculator',
     name: { en: 'Mosteller BSA Calculator (Square Root Method)', es: 'Calculadora BSA Método Mosteller (Metros Cuadrados)', fr: 'Calculateur BSA Formule Mosteller (Mètres Carrés)', de: 'Mosteller BSA Rechner (Quadratmeter)', ko: 'Mosteller 체표면적 계산기', hi: 'मोस्टेलर BSA कैलकुलेटर (वर्ग मीटर)' },
-    title: { en: 'Mosteller BSA Calculator (Square Root Method) – Body Surface Area m² Tool', es: 'Calculadora BSA Fórmula Mosteller en Metros Cuadrados (m²)', fr: 'Calculateur de Surface Corporelle BSA Formule Mosteller m²', de: 'Mosteller BSA Rechner Quadratmeter (m²) – Körperoberfläche', ko: 'Mosteller BSA 계산기 Square Meters (체표면적 계산기)', hi: 'मोस्टेलर BSA कैलकुलेटर square meters - बॉडी सरफेस एरिया' },
+    title: { en: 'Mosteller BSA Calculator (Square Root Method) – Body Surface Area m² Tool', es: 'Calculadora BSA Fórmula Mosteller en Metros Cuadrados (m²)', fr: 'Calculateur de Surface Corporelle BSA Formule Mosteller m²', de: 'Mosteller BSA Rechner Quadratmeter (m²) – Körperoberfläche', ko: 'Mosteller BSA 체표면적 계산기 – 신체 표면적(㎡) 측정', hi: 'मोस्टेलर BSA कैलकुलेटर square meters - बॉडी सरफेस एरिया' },
     description: {
       "en": "Free Body Surface Area Calculator (BSA Calculator). Calculate total body surface area in square meters (m²) using Mosteller, DuBois, Haycock, and Boyd published equations with privacy-focused, browser calculations.",
       "es": "Calculadora de superficie corporal (BSA) gratuita. Calcula la superficie corporal total en metros cuadrados (m²) utilizando las ecuaciones publicadas de Mosteller, DuBois, Haycock y Boyd con cálculos privados en el navegador.",
@@ -1283,8 +1283,8 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'heart-rate-zone-calculator',
-    name: { en: 'Karvonen Heart Rate Zone Calculator', es: 'Calculadora de Zonas Cardíacas Karvonen', fr: 'Calculateur de Zone Cardiaque Karvonen', de: 'Karvonen Herzfrequenzzonen Rechner', ko: '카르보넨 심박수 구간 계산기', hi: 'कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर' },
-    title: { en: 'Karvonen Heart Rate Zone Calculator – Target Heart Rate (HRR)', es: 'Calculadora de Zonas de Frecuencia Cardíaca Fórmula Karvonen', fr: 'Calculateur de Zone de Fréquence Cardiaque Formule Karvonen', de: 'Karvonen-Formel Herzfrequenzzonen Rechner – Zielpuls', ko: '카르보넨 공식 타겟 심박수 구간 계산기 (HRR)', hi: 'कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर - टारगेट हार्ट रेट' },
+    name: { en: 'Target Heart Rate Zones Calculator', es: 'Calculadora de Zonas Cardíacas Objetivo', fr: 'Calculateur de Zones de Fréquence Cardiaque', de: 'Herzfrequenz-Zielzonen Rechner', ko: '목표 심박수 구간 계산기', hi: 'टारगेट हार्ट रेट ज़ोन कैलकुलेटर' },
+    title: { en: 'Target Heart Rate Zones Calculator – 5 Exercise Training Zones', es: 'Calculadora de Zonas Cardíacas Objetivo – 5 Zonas de Entrenamiento', fr: 'Calculateur de Zones Cardiaques Cibles – 5 Zones d\'Entraînement', de: 'Herzfrequenz-Zielzonen Rechner – 5 Trainingszonen', ko: '목표 심박수 구간 계산기 – 5가지 운동 심박 영역', hi: 'टारगेट हार्ट रेट ज़ोन कैलकुलेटर - 5 प्रशिक्षण क्षेत्र' },
     description: {
       "en": "Free Heart Rate Zone Calculator. Calculate target training heart rate zones (Fat Burn, Aerobic, Anaerobic, Peak) based on age, resting heart rate, and maximum heart rate with privacy-focused, browser calculations.",
       "es": "Calculadora de zonas de frecuencia cardíaca gratuita. Calcula tus zonas objetivo de entrenamiento (Quema de grasa, Aeróbica, Anaeróbica, Pico) según edad, frecuencia en reposo y frecuencia máxima con cálculos privados en el navegador.",
@@ -1330,8 +1330,8 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'karvonen-heart-rate-calculator',
-    name: { en: 'Karvonen Heart Rate Calculator', es: 'Calculadora de Frecuencia Cardíaca Karvonen', fr: 'Calculateur de Fréquence Cardiaque Karvonen', de: 'Karvonen Herzfrequenz Rechner', ko: 'Karvonen 심박수 계산기', hi: 'कार्वोनेन हार्ट रेट कैलकुलेटर' },
-    title: { en: 'Karvonen Heart Rate Calculator – Target HR & Reserve (HRR)', es: 'Calculadora de Frecuencia Cardíaca Karvonen – Zona y Reserva Cardíaca', fr: 'Calculateur Karvonen – Fréquence Cardiaque Cible et Réserve', de: 'Karvonen Herzfrequenz Rechner – Zielpuls & Reserve (HRR)', ko: 'Karvonen 심박수 계산기 – 타겟 심박수 및 예비 심박수 (HRR)', hi: 'कार्वोनेन हार्ट रेट कैलकुलेटर - टारगेट हार्ट रेट एवं रिजर्व' },
+    name: { en: 'Karvonen Heart Rate Reserve Calculator', es: 'Calculadora de Reserva Cardíaca Karvonen', fr: 'Calculateur de Fréquence Cardiaque Karvonen', de: 'Karvonen-Formel Pulsreserve Rechner', ko: '카르보넨 예비 심박수(HRR) 계산기', hi: 'कार्वोनेन हार्ट रेट रिजर्व कैलकुलेटर' },
+    title: { en: 'Karvonen Heart Rate Reserve Calculator – Target HR & HRR Training', es: 'Calculadora Karvonen – Reserva de Frecuencia Cardíaca (HRR)', fr: 'Calculateur Karvonen – Fréquence Cardiaque et Réserve (HRR)', de: 'Karvonen Pulsreserve Rechner – Zielpuls & HRR-Training', ko: '카르보넨 심박수 계산기 – 심박수 예비량(HRR) 기반 트레이닝', hi: 'कार्वोनेन हार्ट रेट रिजर्व कैलकुलेटर - टारगेट एवं HRR' },
     description: {
       "en": "Free Karvonen Heart Rate Calculator. Calculate Target Heart Rate (THR) zones using the Karvonen formula (Heart Rate Reserve % method) by age and resting heart rate (BPM) with privacy-focused, browser calculations.",
       "es": "Calculadora de frecuencia cardíaca Karvonen gratuita. Calcula las zonas de frecuencia cardíaca objetivo (THR) utilizando la fórmula de Karvonen (método de Reserva de Frecuencia Cardíaca %) según edad y frecuencia en reposo (BPM) con cálculos privados en el navegador.",
@@ -1376,8 +1376,8 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: '1rm-calculator',
-    name: { en: '1RM Calculator', es: 'Calculadora de 1RM', fr: 'Calculateur de 1RM', de: '1RM Rechner', ko: '1RM 계산기', hi: '1RM कैलकुलेटर' },
-    title: { en: '1RM Calculator – One Rep Max (Bench Press, Squat, Deadlift)', es: 'Calculadora de 1RM – One Rep Max (Press, Sentadilla, Peso Muerto)', fr: 'Calculateur de 1RM – Rep Max (Développé Couché, Squat, Soulevé de Terre)', de: '1RM Rechner – Maximalkraft (Bankdrücken, Kniebeuge, Kreuzheben)', ko: '1RM 계산기 – 1 Rep Max 측정 (벤치프레스, 스쿼트, 데드리프트)', hi: '1RM कैलकुलेटर - वन रेप मैक्स (बेंच प्रेस, स्क्वाट, डेडलिफ्ट)' },
+    name: { en: '1RM Strength Calculator (All Lifts)', es: 'Calculadora de Fuerza 1RM (Multiejercicio)', fr: 'Calculateur de Force 1RM (Tous Exercices)', de: '1RM Maximalkraft Rechner (Alle Übungen)', ko: '1RM 종합 근력 계산기 (3대 운동)', hi: '1RM शक्ति कैलकुलेटर (समस्त लिफ्ट्स)' },
+    title: { en: '1RM Strength Calculator – One Rep Max (Bench Press, Squat, Deadlift)', es: 'Calculadora de Fuerza 1RM – One Rep Max (Press, Sentadilla, Peso Muerto)', fr: 'Calculateur de Force 1RM – Rep Max (Développé Couché, Squat, Soulevé de Terre)', de: '1RM Maximalkraft Rechner – 1 Rep Max (Bankdrücken, Kniebeuge, Kreuzheben)', ko: '1RM 종합 근력 계산기 – 1회 최대 중량 (벤치프레스, 스쿼트, 데드리프트)', hi: '1RM शक्ति कैलकुलेटर - वन रेप मैक्स (बेंच प्रेस, स्क्वाट, डेडलिफ्ट)' },
     description: {
       "en": "Free 1RM Calculator (One-Rep Max Calculator). Calculate one-rep max strength, weightlifting percentages, and rep max benchmarks using Epley and Brzycki equations with privacy-focused, browser calculations.",
       "es": "Calculadora de 1RM (Máximo para una repetición) gratuita. Calcula tu fuerza máxima para 1 repetición, porcentajes de levantamiento y marcas de repetición utilizando las ecuaciones de Epley y Brzycki con cálculos privados en el navegador.",
@@ -1414,8 +1414,8 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'one-rep-max-calculator',
-    name: { en: '1RM Bench Press Calculator', es: 'Calculadora 1RM Press de Banca', fr: 'Calculateur 1RM Développé Couché', de: '1RM Bankdrücken Rechner', ko: '1RM 측정기', hi: '1RM बेंच प्रेस कैलकुलेटर' },
-    title: { en: '1RM Bench Press Calculator – One Rep Max (Epley & Brzycki)', es: 'Calculadora 1RM Epley Press de Banca y Sentadilla', fr: 'Calculateur 1RM Epley Développé Couché', de: 'Epley 1RM Bankdrücken Rechner – Maximalkraft', ko: '1RM 측정기 – 무료 Epley 1 Rep Max 벤치프레스 계산기', hi: '1RM बेंच प्रेस कैलकुलेटर - वन रेप मैक्स' },
+    name: { en: 'Bench Press 1RM Calculator', es: 'Calculadora 1RM Press de Banca', fr: 'Calculateur 1RM Développé Couché', de: 'Bankdrücken 1RM Rechner', ko: '벤치프레스 1RM 계산기', hi: 'बेंच प्रेस 1RM कैलकुलेटर' },
+    title: { en: 'Bench Press 1RM Calculator – One Rep Max (Epley & Brzycki)', es: 'Calculadora 1RM Press de Banca – Epley y Brzycki Fuerza Máxima', fr: 'Calculateur 1RM Développé Couché – Epley et Brzycki Force Max', de: 'Bankdrücken 1RM Rechner – Epley & Brzycki Maximalkraft', ko: '벤치프레스 1RM 계산기 – 무료 Epley 공식 1회 최대 중량', hi: 'बेंच प्रेस 1RM कैलकुलेटर - वन रेप मैक्स (एपले एवं ब्रज़िकी)' },
     description: {
       "en": "Free One-Rep Max Calculator & Bench Press 1RM Tool. Estimate max lift capacity, 5RM, 10RM strength levels, and training percentages based on weight lifted and reps completed with privacy-focused, browser calculations.",
       "es": "Calculadora gratuita de 1RM y herramienta de press de banca. Estima tu capacidad máxima de levantamiento, niveles de fuerza 5RM y 10RM, y porcentajes de entrenamiento según peso y repeticiones con cálculos privados en el navegador.",

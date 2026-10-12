@@ -1,13 +1,36 @@
 ---
 interface Props {
   lang?: string;
+  slug?: string;
 }
 
-const { lang: propLang } = Astro.props;
+const { lang: propLang, slug } = Astro.props;
 const { currentLocale } = Astro;
 const lang = propLang || currentLocale || 'en';
 
-const content: Record<string, any> = {
+const metabolicSlugs = [
+  'bmr-calculator',
+  'tdee-calculator',
+  'maintenance-calorie-calculator',
+  'calorie-calculator',
+  'protein-intake-calculator',
+  'water-intake-calculator',
+  'macro-calculator',
+  'diabetes-risk-calculator'
+];
+
+const fitnessSlugs = [
+  'heart-rate-zone-calculator',
+  'karvonen-heart-rate-calculator',
+  '1rm-calculator',
+  'one-rep-max-calculator'
+];
+
+const category = slug 
+  ? (fitnessSlugs.includes(slug) ? 'fitness' : (metabolicSlugs.includes(slug) ? 'metabolic' : 'bmi'))
+  : 'bmi';
+
+const contentBmi: Record<string, any> = {
   en: {
     eyebrow: "Evidence-Based Health Guide",
     title: "Body Mass Index (BMI) & Population Health Reference Guidance",
@@ -101,162 +124,162 @@ const content: Record<string, any> = {
     ]
   },
   fr: {
-    eyebrow: "Guide de Référence de Santé Basé sur les Preuves",
-    title: "Indice de Masse Corporelle (IMC) & Guide de Référence de Santé Publique",
+    eyebrow: "Guide de Santé Fondé sur les Preuves",
+    title: "Indice de Masse Corporelle (IMC) et Guide de Référence en Santé Publique",
     sections: [
       {
         title: "Comment calculer mon IMC et les métriques associées ?",
-        text: "Vous pouvez évaluer votre IMC (poids / taille²) aux côtés de votre Métabolisme de Base (BMR), Dépense Énergétique Quotidienne Totale (TDEE) et Ratio Taille-Taille (WHtR). Cela fournit un contexte éducatif prenant en compte la densité musculaire et les proportions de référence."
+        text: "Vous pouvez évaluer votre Indice de Masse Corporelle (poids / taille²) aux côtés de votre Métabolisme de Base (BMR), votre Dépense Énergétique Quotidienne Totale (TDEE) et votre Ratio Taille-Hauteur (WHtR) pour un contexte éducatif approfondi."
       },
       {
         title: "Comment fonctionne l'IMC standard ?",
-        text: "Les calculateurs d'IMC standard utilisent une formule mathématique reconnue par l'OMS et le CDC. L'IMC mesure la masse corporelle totale par rapport à la taille. Real BMI présente l'IMC avec des estimations complémentaires."
+        text: "Les calculateurs d'IMC standard utilisent une formule mathématique reconnue par l'OMS et le CDC, mesurant la masse corporelle totale par rapport à la taille. Real BMI présente l'IMC avec des indicateurs complémentaires pour une évaluation globale."
       },
       {
-        title: "Comment plusieurs métriques offrent-elles un contexte plus large ?",
-        text: "Un seul chiffre ne donne pas une image complète. Combiner l'IMC standard avec le Ratio Taille-Taille (WHtR) et les seuils asiatiques de l'OMS (23,0 kg/m²) fournit un contexte supplémentaire sur les indicateurs de graisse abdominale."
+        title: "Pourquoi combiner plusieurs métriques apporte-t-il plus de contexte ?",
+        text: "Aucun chiffre unique ne reflète l'ensemble de la composition corporelle. Associer l'IMC avec le ratio taille-hauteur et les seuils asiatiques de l'OMS (23,0 kg/m² pour le surpoids) éclaire la répartition des graisses abdominales."
       },
       {
-        title: "Un IMC de 25 est-il réaliste ?",
-        text: "Pour les athlètes musclés, l'IMC peut être plus élevé car l'IMC ne distingue pas la masse musculaire de la masse grasse."
+        title: "Un IMC de 25 est-il réaliste pour tous ?",
+        text: "Pour les athlètes très musclés, l'IMC peut dépasser 25 sans surplus graisseux, car le muscle dense pèse plus lourd que le tissu adipeux."
       },
       {
-        title: "Indice de Masse Corporelle (IMC) et Directives de Santé Publique",
-        text: "Selon les publications des autorités de santé publique (OMS et CDC), maintenir un IMC entre 18,5 et 24,9 kg/m² s'aligne sur les valeurs de référence de la population."
+        title: "Recommandations de l'OMS sur l'IMC et la Santé",
+        text: "Selon les publications de santé publique de l'OMS, une plage d'IMC comprise entre 18,5 et 24,9 kg/m² constitue la référence standard de poids santé pour la population adulte générale."
       },
       {
-        title: "Qu'est-ce que 'Real BMI' et en quoi diffère-t-il du poids sur la balance ?",
-        text: "Le terme 'Real BMI' est utilisé par ce site pour décrire l'évaluation de votre IMC avec des métriques complémentaires (BMR, TDEE, tour de taille) plutôt que de s'appuyer uniquement sur la taille et le poids. C'est un concept informatif, non un diagnostic médical."
+        title: "Qu'est-ce que Real BMI et comment fonctionne la plateforme ?",
+        text: "Real BMI est le nom de cette plateforme en ligne. Elle intègre les calculs standards de l'IMC avec des métriques éducatives comme le métabolisme de base et la dépense énergétique journalière."
       },
       {
-        title: "L'IMC est-il précis pour tout le monde ? Le paradoxe des athlètes",
-        text: "Bien que les formules d'IMC s'appliquent universellement, les athlètes musclés peuvent enregistrer des valeurs d'IMC plus élevées malgré un faible pourcentage de graisse corporelle, le muscle étant plus dense que la graisse."
+        title: "L'IMC est-il fiable pour les sportifs ? Le paradoxe musculaire",
+        text: "Les formules d'IMC ne distinguent pas la masse musculaire de la masse grasse. Les athlètes peuvent présenter un IMC élevé tout en ayant un très faible pourcentage de graisse corporelle."
       },
       {
-        title: "Pourquoi l'OMS recommande des seuils d'IMC plus bas pour les populations asiatiques",
-        text: "Les consensus publiés par l'OMS recommandent des seuils d'IMC plus bas pour les populations asiatiques : 23,0 kg/m² pour le surpoids (contre 25,0 kg/m² en norme standard) en raison d'une adiposité viscérale plus élevée."
+        title: "Pourquoi des seuils d'IMC réduits pour les populations asiatiques ?",
+        text: "L'OMS recommande un seuil d'intervention abaissé à 23,0 kg/m² pour les populations asiatiques en raison d'une adiposité viscérale plus précoce à un IMC inférieur."
       },
       {
-        title: "Formule de calcul de l'IMC : Métrique (kg/m²) vs Impérial (lbs/in²)",
-        text: "Dans le système métrique : <code>IMC = poids (kg) / [taille (m)]²</code>. En unités impériales : <code>IMC = [poids (lb) / taille (in)²] x 703</code>."
+        title: "Formules de calcul : Métrique (kg/m²) vs Impérial (lbs/in²)",
+        text: "Système métrique : <code>IMC = poids (kg) / [taille (m)]²</code>. Système impérial : <code>IMC = [poids (lb) / taille (in)²] x 703</code>."
       },
       {
-        title: "Utiliser l'IMC pour la planification de la gestion du poids",
-        text: "Les besoins caloriques estimés servent de référence. Des ajustements énergétiques modérés combinés à une alimentation équilibrée et une activité physique sont couramment explorés."
+        title: "Utilisation de l'IMC dans la gestion du poids",
+        text: "Les estimations des besoins énergétiques servent de guide pour ajuster l'alimentation et l'activité physique de façon progressive et durable."
       }
     ]
   },
   de: {
-    eyebrow: "Evidenzbasierter Gesundheits-Referenzleitfaden",
-    title: "Body-Mass-Index (BMI) & Bevölkerungsspezifische Referenzwerte",
+    eyebrow: "Evidenzbasierter Gesundheitsleitfaden",
+    title: "Body-Mass-Index (BMI) & Referenzrichtlinien zur Bevölkerungsgesundheit",
     sections: [
       {
         title: "Wie berechne ich meinen BMI und verwandte Werte?",
-        text: "Sie können Ihren Body-Mass-Index (Gewicht / Größe²) zusammen mit Ihrem Grundumsatz (BMR), Gesamtenergieumsatz (TDEE) und Taille-zu-Größe-Verhältnis (WHtR) auswerten. Dies bietet lehrreichen Kontext zur Muskeldichte und zu Referenzproportionen."
+        text: "Sie können Ihren Body-Mass-Index (Gewicht / Größe²) zusammen mit Ihrem Grundumsatz (BMR), dem Gesamtenergiebedarf (TDEE) und dem Taille-zu-Größe-Verhältnis (WHtR) ermitteln, um ein ganzheitliches Bild zu erhalten."
       },
       {
         title: "Wie funktioniert der Standard-BMI?",
-        text: "Standard-BMI-Rechner verwenden eine von der WHO und CDC anerkannte mathematische Formel. Der BMI misst die Gesamtkörpermasse im Verhältnis zur Größe. Real BMI präsentiert den BMI zusammen mit ergänzenden Schätzungen."
+        text: "Klassische BMI-Rechner nutzen die von der WHO und CDC definierte Formel zur Relation von Körpergewicht und Körpergröße. Real BMI ergänzt dies mit weiteren wissenschaftlichen Schätzwerten."
       },
       {
-        title: "Wie bieten mehrere Messwerte einen breiteren Kontext?",
-        text: "Keine einzelne Zahl zeigt das vollständige Bild. Die Kombination des Standard-BMI mit dem Taille-zu-Größe-Verhältnis (WHtR) und den asiatischen WHO-Grenzwerten (23,0 kg/m² für Übergewicht) bietet zusätzlichen Kontext."
+        title: "Warum liefern mehrere Kennzahlen mehr Klarheit?",
+        text: "Keine einzelne Zahl bildet die individuelle Körperzusammensetzung vollständig ab. Die Kombination von BMI mit WHtR und den asiatischen WHO-Grenzwerten (23,0 kg/m²) verbessert die Aussagekraft."
       },
       {
-        title: "Ist ein BMI von 25 realistisch?",
-        text: "Für muskulöse Sportler kann der BMI höher sein, da der BMI Muskelmasse nicht von Fettmasse unterscheidet."
+        title: "Ist ein BMI von 25 immer realistisch?",
+        text: "Bei muskulösen Sportlern kann der BMI erhöht sein, da die Formel nicht zwischen Muskel- und Fettmasse unterscheidet."
       },
       {
-        title: "Body-Mass-Index (BMI) & Öffentliche Gesundheitsrichtlinien",
-        text: "Laut Veröffentlichungen der Gesundheitsbehörden (WHO und CDC) liegt ein BMI zwischen 18,5 und 24,9 kg/m² im Standard-Referenzbereich der Bevölkerung."
+        title: "WHO-Richtlinien zum Body-Mass-Index",
+        text: "Laut WHO gilt ein BMI-Wert zwischen 18,5 und 24,9 kg/m² als weltweiter Standardbereich für Normalgewicht bei Erwachsenen."
       },
       {
-        title: "Was ist 'Real BMI' und wie unterscheidet es sich vom Waagengewicht?",
-        text: "'Real BMI' beschreibt die Auswertung Ihres BMI zusammen mit ergänzenden Werten (BMR, TDEE, Taillenumfang). Es ist ein informatives Konzept und keine medizinische Diagnose."
+        title: "Was ist Real BMI und wie funktioniert die Plattform?",
+        text: "Real BMI ist der Name dieses Webangebots. Wir bieten wissenschaftlich fundierte Standard-BMI-Berechnungen zusammen mit BMR, TDEE und weiteren Körperindikatoren."
       },
       {
-        title: "Ist der BMI für jeden genau? Das Sportler-Paradoxon",
-        text: "Muskulöse Sportler können trotz eines niedrigen Körperfettanteils höhere BMI-Werte aufweisen, da dichte Muskelmasse mehr wiegt als Fettgewebe."
+        title: "Das Muskel-Paradoxon bei Sportlern",
+        text: "Dichte Muskelmasse wiegt mehr als Fettgewebe. Kraftsportler können daher in eine höhere BMI-Kategorie fallen, obwohl ihr Körperfettanteil sehr niedrig ist."
       },
       {
-        title: "Warum die WHO niedrigere BMI-Grenzwerte für asiatische Populationen empfiehlt",
-        text: "Die WHO empfiehlt für asiatische Populationen einen niedrigeren Übergewichts-Grenzwert von 23,0 kg/m² (statt 25,0 kg/m²), da bei geringerem BMI mehr viszerales Bauchfett vorliegen kann."
+        title: "Niedrigere Grenzwerte für asiatische Populationen",
+        text: "Die WHO empfiehlt für asiatische Erwachsene einen Übergewichts-Schwellenwert von 23,0 kg/m², da bei gleichem BMI ein höherer Anteil an viszeralem Fett vorliegen kann."
       },
       {
-        title: "BMI-Berechnungsformel: Metrisch (kg/m²) vs. Imperial (lbs/in²)",
-        text: "Im metrischen System: <code>BMI = Gewicht (kg) / [Größe (m)]²</code>. Imperial: <code>BMI = [Gewicht (lb) / Größe (in)²] x 703</code>."
+        title: "BMI-Formel: Metrisch (kg/m²) vs. Imperial (lbs/in²)",
+        text: "Metrisch: <code>BMI = Gewicht (kg) / [Größe (m)]²</code>. Imperial: <code>BMI = [Gewicht (lb) / Größe (in)²] x 703</code>."
       },
       {
-        title: "Verwendung des BMI für die Gewichtsplanung",
-        text: "Der geschätzte Kalorienbedarf dient als Planungshilfe für ausgewogene Ernährung und körperliche Bewegung."
+        title: "Nutzung des BMI zur Gewichtssteuerung",
+        text: "Geschätzte Kalorienwerte bieten einen planbaren Richtwert, um Energieaufnahme und Bewegung harmonisch aufeinander abzustimmen."
       }
     ]
   },
   ko: {
-    eyebrow: "근거 기반 건강 참조 가이드",
-    title: "체질량지수(BMI) 및 인구 보건학적 참조 가이드",
+    eyebrow: "근거 기반 건강 가이드",
+    title: "체질량지수(BMI) 및 성인 건강 표준 참조 지침",
     sections: [
       {
-        title: "BMI 및 관련 지표는 어떻게 계산하나요?",
-        text: "체질량지수(체중 / 키²)와 함께 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리높이비(WHtR)를 함께 평가할 수 있습니다."
+        title: "BMI 및 관련 건강 지표는 어떻게 산출되나요?",
+        text: "체질량지수(체중 / 신장²)는 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리-신장 비율(WHtR)과 함께 종합적으로 평가할 때 가장 신뢰성 있는 교육적 맥락을 제공합니다."
       },
       {
-        title: "표준 BMI는 어떻게 작동하나요?",
-        text: "표준 BMI 계산기는 WHO 및 CDC에서 인정한 수식을 사용하여 키 대비 전체 체중을 측정합니다."
+        title: "표준 BMI 계산 공식의 기본 원리",
+        text: "표준 체질량지수는 세계보건기구(WHO) 및 CDC에서 공인한 수식을 사용합니다. 키의 제곱에 비례하여 체중을 평가하는 인체 측정 지표입니다."
       },
       {
-        title: "여러 지표를 조합하면 어떤 이점이 있나요?",
-        text: "단일 수치만으로는 전체 체성분을 파악할 수 없습니다. 표준 BMI와 허리높이비(WHtR) 및 WHO 아시아 기준(23.0 kg/m²)을 조합하면 더 풍부한 참고 컨텍스트를 제공합니다."
+        title: "다양한 지표를 함께 확인해야 하는 이유",
+        text: "단일 수치만으로는 개인의 근육량과 체지방 분포를 모두 파악할 수 없습니다. 허리둘레 및 아시아인 전용 기준(23.0 kg/m² 이상 과체중 위험)을 병행 확인해야 합니다."
       },
       {
-        title: "BMI 25는 현실적인가요?",
-        text: "근육질 운동선수는 BMI가 근육과 지방을 구분하지 못해 25 이상으로 측정될 수 있습니다."
+        title: "BMI 25는 모든 성인에게 과체중을 의미하나요?",
+        text: "근육량이 많은 운동선수의 경우 체지방률이 낮음에도 불구하고 근육의 밀도로 인해 BMI 수치가 높게 측정될 수 있습니다."
       },
       {
-        title: "체질량지수(BMI) 및 공중 보건 지침",
-        text: "WHO 및 CDC 지침에 따라 BMI를 18.5~24.9 kg/m² 범위로 유지하는 것은 표준 인구 참조 기준에 해당합니다."
+        title: "WHO 및 공공 보건 기구의 건강 체중 가이드라인",
+        text: "WHO 성인 보건 지침에 따르면 BMI 18.5 ~ 24.9 kg/m² 구간이 보편적인 정상 체중 범위로 정의됩니다."
       },
       {
-        title: "'Real BMI'란 무엇이며 단순 체중계와 어떻게 다른가요?",
-        text: "'Real BMI'는 단일 체중 측정 대신 BMR, TDEE, 허리둘레를 함께 평가하는 교육적 정보 개념입니다."
+        title: "Real BMI 플랫폼 안내",
+        text: "Real BMI는 본 건강 정보 웹사이트의 공식 명칭입니다. 단순 체중 측정을 넘어 BMR, TDEE, 신장 보정 공식을 함께 제공합니다."
       },
       {
-        title: "운동선수에게도 BMI가 정확한가요?",
-        text: "근육은 지방보다 밀도가 높기 때문에 체지방률이 낮더라도 BMI가 높게 나올 수 있습니다."
+        title: "운동선수와 근육량 패러독스",
+        text: "근육 조직은 체지방 조직보다 밀도가 훨씬 높습니다. 따라서 보디빌더나 웨이트 트레이너는 BMI 수치와 별도로 체지방률과 허리둘레를 확인해야 합니다."
       },
       {
-        title: "WHO가 아시아인에게 더 낮은 BMI 기준을 권장하는 이유",
-        text: "WHO 지침은 아시아인에 대해 높은 내장지방 축적 패턴을 고려하여 과체중 기준을 23.0 kg/m²로 권장합니다."
+        title: "아시아 성인에게 낮은 BMI 기준을 적용하는 이유",
+        text: "WHO 아시아-태평양 지침에 따르면 동양인은 동일한 BMI에서도 체지방률과 내장지방 축적률이 더 높기 때문에 23.0 kg/m²부터 주의 구간으로 분류합니다."
       },
       {
-        title: "BMI 계산 공식: 미터법 (kg/m²) vs 야드파운드법 (lbs/in²)",
-        text: "미터법 공식: <code>BMI = 체중 (kg) / [신장 (m)]²</code>. 야드파운드 공식: <code>BMI = [체중 (lb) / 신장 (in)²] x 703</code>."
+        title: "BMI 공식: 미터법(kg/m²) vs 야드파운드법(lbs/in²)",
+        text: "미터법: <code>BMI = 체중(kg) / [신장(m)]²</code>, 파운드법: <code>BMI = [체중(lb) / 신장(in)²] x 703</code>."
       },
       {
-        title: "체중 관리를 위한 BMI 활용법",
-        text: "추정 칼로리 필요량은 균형 잡힌 영양 및 신체 활동 계획의 참고 자료로 활용할 수 있습니다."
+        title: "체중 관리를 위한 권장 가이드",
+        text: "예측된 일일 에너지 필요량을 바탕으로 무리한 절식보다는 균형 잡힌 영양 섭취와 규칙적인 운동을 병행하는 것이 바람직합니다."
       }
     ]
   },
   hi: {
-    eyebrow: "साक्ष्य-आधारित स्वास्थ्य संदर्भ गाइड",
-    title: "बॉडी मास इंडेक्स (BMI) और जनसंख्या स्वास्थ्य संदर्भ गाइड",
+    eyebrow: "साक्ष्य-आधारित स्वास्थ्य गाइड",
+    title: "बॉडी मास इंडेक्स (BMI) एवं जनसंख्या स्वास्थ्य संदर्भ दिशानिर्देश",
     sections: [
       {
-        title: "मैं अपना बीएमआई और संबंधित मेट्रिक्स कैसे कैलकुलेट करूं?",
-        text: "आप अपने बॉडी मास इंडेक्स (वजन / ऊंचाई²) का मूल्यांकन अपने बीएमआर (BMR), टीडीईई (TDEE) और कमर-से-ऊंचाई अनुपात (WHtR) के साथ कर सकते हैं। यह मांसपेशियों के घनत्व और संदर्भ अनुपातों को समझने में मदद करता है।"
+        title: "बीएमआई और संबंधित मेट्रिक्स की गणना कैसे की जाती है?",
+        text: "बॉडी मास इंडेक्स (वजन / ऊंचाई²) का मूल्यांकन बेसल मेटाबोलिक दर (BMR), कुल दैनिक ऊर्जा व्यय (TDEE) और कमर-से-ऊंचाई अनुपात (WHtR) के साथ करने से शारीरिक संरचना का सटीक संदर्भ मिलता है।"
       },
       {
         title: "मानक बीएमआई कैसे काम करता है?",
-        text: "मानक बीएमआई कैलकुलेटर WHO और CDC द्वारा मान्यता प्राप्त गणितीय सूत्र का उपयोग करता है। मानक बीएमआई ऊंचाई के अनुपात में कुल शरीर के द्रव्यमान को मापता है।"
+        text: "मानक बीएमआई कैलकुलेटर डब्ल्यूएचओ और सीडीसी द्वारा मान्यता प्राप्त गणितीय सूत्र का उपयोग करते हैं जो ऊंचाई के सापेक्ष कुल वजन को मापता है।"
       },
       {
-        title: "विभिन्न मेट्रिक्स एक साथ क्या संदर्भ प्रदान करते हैं?",
-        text: "कोई भी एक संख्या शरीर की संरचना का पूरा चित्र प्रस्तुत नहीं करती। बीएमआई को कमर-से-ऊंचाई अनुपात (WHtR) और WHO एशियाई कटऑफ (23.0 kg/m²) के साथ मिलाकर देखना अधिक स्पष्ट संदर्भात्मक जानकारी देता है।"
+        title: "एकाधिक मेट्रिक्स व्यापक संदर्भ क्यों प्रदान करते हैं?",
+        text: "कोई भी एकल संख्या व्यक्तिगत शारीरिक संरचना की पूरी तस्वीर प्रस्तुत नहीं करती। बीएमआई के साथ कमर-से-ऊंचाई अनुपात और एशियाई कटऑफ (23.0 kg/m²) का उपयोग पेट की वसा के संदर्भ को स्पष्ट करता है।"
       },
       {
-        title: "क्या 25 का बीएमआई वास्तविक है?",
-        text: "मांसपेशियों वाले एथलीटों के लिए बीएमआई अधिक हो सकता है क्योंकि बीएमआई वसा और मांसपेशियों के द्रव्यमान में अंतर नहीं करता है।"
+        title: "क्या 25 का बीएमआई हमेशा अधिक वजन दर्शाता है?",
+        text: "मांसपेशियों वाले एथलीटों का बीएमआई अधिक हो सकता है क्योंकि यह पैमाना मांसपेशियों और वसा के बीच अंतर नहीं करता।"
       },
       {
         title: "बॉडी मास इंडेक्स (BMI) और सार्वजनिक स्वास्थ्य दिशानिर्देश",
@@ -264,14 +287,14 @@ const content: Record<string, any> = {
       },
       {
         title: "'Real BMI' क्या है और यह केवल वजन से कैसे अलग है?",
-        text: "'Real BMI' का तात्पर्य केवल वजन पर निर्भर रहने के बजाय बीएमआर (BMR), टीडीईई (TDEE) और कमर की परिधि के साथ बॉडी मास इंडेक्स का मूल्यांकन करना है। यह एक शैक्षणिक और संदर्भात्मक अवधारणा है, चिकित्सा निदान नहीं।"
+        text: "'Real BMI' का तात्पर्य केवल वजन पर निर्भर रहने के बजाय बीएमआर (BMR), टीडीईई (TDEE) और कमर की परिधि के साथ बॉडी मास इंडेक्स का मूल्यांकन करना है।"
       },
       {
         title: "क्या बीएमआई सभी के लिए सटीक है? एथलीट और मांसपेशियों का विरोधाभास",
         text: "मांसपेशियों वाले एथलीटों का बीएमआई कम वसा प्रतिशत के बावजूद उच्च दर्ज हो सकता है क्योंकि सघन मांसपेशियां वसा से अधिक भारी होती हैं।"
       },
       {
-        title: "डब्ल्यूएचओ एशियाई और दक्षिण एशियाई आबादी के लिए कम बीएमआई कटऑफ की सिफारिश क्यों करता है?",
+        title: "डब्ल्यूएचओ एशियाई आबादी के लिए कम बीएमआई कटऑफ की सिफारिश क्यों करता है?",
         text: "डब्ल्यूएचओ दिशानिर्देश एशियाई आबादी के लिए 23.0 kg/m² को अधिक वजन की शुरुआत मानते हैं क्योंकि कम बीएमआई पर भी विसरल फैट का जोखिम अधिक होता है।"
       },
       {
@@ -286,7 +309,473 @@ const content: Record<string, any> = {
   }
 };
 
-const t = content[lang] || content.en;
+const contentMetabolic: Record<string, any> = {
+  en: {
+    eyebrow: "Metabolic & Nutritional Reference Guide",
+    title: "Energy Balance, Metabolic Rate & Evidence-Based Nutritional Guidance",
+    sections: [
+      {
+        title: "What is the Difference Between BMR and TDEE?",
+        text: "Basal Metabolic Rate (BMR) represents the minimum baseline calories required to sustain vital physiological organs (brain, liver, heart, lungs) at complete rest. Total Daily Energy Expenditure (TDEE) factors in physical activity, structured exercise, and the thermic effect of feeding (TEF)."
+      },
+      {
+        title: "The Thermodynamics of Energy Balance and Calorie Tracking",
+        text: "Body weight equilibrium operates on thermodynamic principles. Consuming calories equal to your TDEE maintains body weight. A structured deficit (typically 250–500 kcal/day) supports sustainable weight reduction without extreme metabolic adaptation, whereas a modest surplus fuels hypertrophy."
+      },
+      {
+        title: "Evidence-Based Daily Protein Intake Recommendations",
+        text: "According to the National Academy of Medicine and WHO, the baseline Recommended Dietary Allowance (RDA) for sedentary adults is 0.8 g/kg body weight. For physically active individuals and resistance trainers, clinical sports nutrition literature recommends 1.6 to 2.2 g/kg to optimize muscle protein synthesis and preserve lean mass."
+      },
+      {
+        title: "Macronutrient Distribution and Metabolic Flexibility",
+        text: "Balanced nutrition balances carbohydrates, proteins, and dietary fats according to individual physical demands. Quality whole-food carbohydrates provide glycogen for exercise, essential fatty acids support endocrine health, and dietary fiber promotes digestive and glycemic stability."
+      },
+      {
+        title: "Hydration Physiology: Daily Water Intake Benchmarks",
+        text: "Fluid requirements depend on body mass, ambient climate, and sweat rates. Standard public health benchmarks from the European Food Safety Authority (EFSA) recommend 2.0 to 2.5 liters of total fluids daily for healthy adults, increasing during prolonged exercise."
+      },
+      {
+        title: "Visceral Adiposity, Insulin Sensitivity & Type 2 Diabetes Markers",
+        text: "Central or visceral adiposity around abdominal organs carries higher cardiometabolic risk than subcutaneous peripheral fat. Elevated waist-to-height ratio (>0.5) and chronic caloric surplus are clinically associated with impaired fasting glucose and insulin sensitivity."
+      },
+      {
+        title: "Preserving Lean Muscle Mass During Calorie Restriction",
+        text: "Severe calorie deficits trigger adaptive thermogenesis and lean tissue catabolism. Combining moderate energy deficits (15–20% below TDEE) with adequate protein intake and progressive resistance training preserves functional lean tissue during fat loss."
+      },
+      {
+        title: "Clinical Reference Guidance & Medical Disclaimer",
+        text: "Calculators provide mathematical estimates based on published formulas (Mifflin-St Jeor, Katch-McArdle). They do not substitute for individual dietary consultation or medical care. Individuals with chronic medical conditions, diabetes, or eating disorders should consult licensed healthcare providers."
+      }
+    ]
+  },
+  es: {
+    eyebrow: "Guía de Referencia Metabólica y Nutricional",
+    title: "Balance Energético, Tasa Metabólica y Nutrición Basada en Evidencia",
+    sections: [
+      {
+        title: "¿Cuál es la diferencia entre BMR y TDEE?",
+        text: "La Tasa Metabólica Basal (BMR) representa las calorías mínimas necesarias para mantener las funciones vitales (cerebro, corazón, pulmones) en reposo absoluto. El Gasto Energético Diario Total (TDEE) añade la actividad física y el efecto térmico de los alimentos."
+      },
+      {
+        title: "Termodinámica del balance energético y control calórico",
+        text: "El equilibrio del peso corporal responde al balance energético. Consumir las calorías del TDEE mantiene el peso. Un déficit moderado (250–500 kcal/día) permite una pérdida de grasa sostenible sin inducir adaptaciones metabólicas extremas."
+      },
+      {
+        title: "Ingesta diaria recomendada de proteínas según la evidencia",
+        text: "La dosis diaria recomendada (RDA) para adultos sedentarios es de 0.8 g/kg de peso corporal. Para personas activas y practicantes de musculación, la literatura deportiva recomienda entre 1.6 y 2.2 g/kg para preservar la masa magra."
+      },
+      {
+        title: "Distribución de macronutrientes y salud metabólica",
+        text: "Una alimentación equilibrada modula carbohidratos, proteínas y grasas saludables según la demanda energética. Los carbohidratos complejos aportan glucógeno, las grasas esenciales regulan la función hormonal y la fibra mejora la respuesta glucémica."
+      },
+      {
+        title: "Fisiología de la hidratación y consumo diario de agua",
+        text: "Las necesidades hídricas varían con el peso, el clima y la sudoración. La Autoridad Europea de Seguridad Alimentaria (EFSA) recomienda entre 2.0 y 2.5 litros de líquidos totales al día para adultos sanos, aumentando con el ejercicio."
+      },
+      {
+        title: "Adiposidad visceral, sensibilidad a la insulina y diabetes tipo 2",
+        text: "La grasa visceral acumulada alrededor de los órganos abdominales genera un riesgo cardiometabólico superior a la grasa periférica. Un ratio cintura-altura elevado (>0.5) se asocia con resistencia a la insulina y glucosa alterada."
+      },
+      {
+        title: "Preservación de la masa muscular durante el déficit calórico",
+        text: "Déficits energéticos excesivos aumentan la pérdida de masa muscular. Combinar un déficit moderado (15-20% por debajo del TDEE) con un aporte óptimo de proteínas y entrenamiento de fuerza protege el tejido magro."
+      },
+      {
+        title: "Aviso médico y contexto de referencia científica",
+        text: "Estas calculadoras ofrecen estimaciones matemáticas basadas en ecuaciones validadas (Mifflin-St Jeor, Katch-McArdle). No sustituyen el asesoramiento nutricional personalizado ni el diagnóstico médico profesional."
+      }
+    ]
+  },
+  fr: {
+    eyebrow: "Guide de Référence Métabolique et Nutritionnel",
+    title: "Équilibre Énergétique, Métabolisme et Nutrition Basés sur les Preuves",
+    sections: [
+      {
+        title: "Quelle est la différence entre le BMR et le TDEE ?",
+        text: "Le Métabolisme de Base (BMR) correspond aux calories minimales nécessaires au maintien des fonctions vitales (cerveau, foie, cœur, poumons) au repos complet. La Dépense Énergétique Totale (TDEE) intègre l'activité physique et l'effet thermique des aliments."
+      },
+      {
+        title: "Thermodynamique de la balance énergétique et suivi des calories",
+        text: "La régulation du poids repose sur l'équilibre énergétique. Consommer l'équivalent de son TDEE stabilise le poids. Un déficit modéré (250 à 500 kcal/jour) favorise une perte de masse grasse progressive sans ralentissement métabolique sévère."
+      },
+      {
+        title: "Apports recommandés en protéines selon les données scientifiques",
+        text: "L'apport nutritionnel de base pour un adulte sédentaire est de 0,8 g/kg de poids corporel. Pour les sportifs et les pratiquants de musculation, les études préconisent 1,6 à 2,2 g/kg pour soutenir la synthèse protéique et préserver le muscle."
+      },
+      {
+        title: "Répartition des macronutriments et flexibilité métabolique",
+        text: "Un profil nutritionnel équilibré ajuste glucides, protéines et lipides selon l'activité. Les glucides fournissent le glycogène pour l'effort, les acides gras essentiels soutiennent le système endocrinien et les fibres stabilisent la glycémie."
+      },
+      {
+        title: "Physiologie de l'hydratation et repères hydriques quotidiens",
+        text: "Les besoins en eau dépendent du poids corporel, de la température et de la sudation. L'EFSA recommande un apport liquidien total de 2,0 à 2,5 litres par jour pour un adulte sain, à augmenter lors des efforts prolongés."
+      },
+      {
+        title: "Adiposité viscérale, résistance à l'insuline et risque de diabète",
+        text: "La graisse viscérale abdominale présente un risque cardiométabolique supérieur à la graisse sous-cutanée périphérique. Un ratio tour de taille / taille élevé (>0,5) est corrélé à une baisse de sensibilité à l'insuline."
+      },
+      {
+        title: "Préservation de la masse maigre en période de restriction calorique",
+        text: "Les restrictions sévères entraînent une dégradation musculaire. L'association d'un déficit énergétique raisonné (15–20% sous le TDEE) avec un apport protéique suffisant et un entraînement en résistance protège le tissu musculaire."
+      },
+      {
+        title: "Avertissement médical et portée éducative des outils",
+        text: "Ces calculateurs fournissent des estimations d'après des formules publiées (Mifflin-St Jeor, Katch-McArdle). Ils ne se substituent pas à une consultation diététique personnalisée ni à un avis médical."
+      }
+    ]
+  },
+  de: {
+    eyebrow: "Stoffwechsel- & Ernährungs-Referenzleitfaden",
+    title: "Energiebilanz, Grundumsatz und evidenzbasierte Ernährungsrichtlinien",
+    sections: [
+      {
+        title: "Was ist der Unterschied zwischen Grundumsatz (BMR) und Gesamtumsatz (TDEE)?",
+        text: "Der Grundumsatz (BMR) bezeichnet den minimalen Kalorienbedarf für lebenswichtige Organfunktionen in völliger Ruhe. Der Gesamtenergiebedarf (TDEE) berücksichtigt zusätzlich körperliche Aktivität, Sport und die nahrungsinduzierte Thermogenese."
+      },
+      {
+        title: "Energiebilanz und Kaloriensteuerung nach wissenschaftlichen Prinzipien",
+        text: "Gewichtsveränderungen basieren auf der Energiebilanz. Kalorienzufuhr auf TDEE-Niveau hält das Gewicht konstant. Ein moderates Defizit (250–500 kcal/Tag) ermöglicht nachhaltige Fettreduktion ohne drastische Verlangsamung des Stoffwechsels."
+      },
+      {
+        title: "Evidenzbasierte Empfehlungen zur täglichen Proteinzufuhr",
+        text: "Für sitzende Erwachsene liegt der Referenzwert bei 0,8 g/kg Körpergewicht. Kraftsportler und aktive Menschen profitieren laut sportwissenschaftlichen Konsenswerten von 1,6 bis 2,2 g/kg zur optimalen Muskelproteinsynthese."
+      },
+      {
+        title: "Makronährstoffverteilung und metabolische Gesundheit",
+        text: "Eine ausgewogene Nährstoffverteilung stimmt Kohlenhydrate, Proteine und Fette auf das Aktivitätsniveau ab. Vollwertige Kohlenhydrate liefern Glykogen, essentielle Fettsäuren steuern das Hormonsystem und Ballaststoffe stabilisieren den Blutzucker."
+      },
+      {
+        title: "Hydratationsphysiologie: Richtwerte für die tägliche Flüssigkeitsaufnahme",
+        text: "Der Flüssigkeitsbedarf hängt von Körpergewicht, Temperatur und Schweißverlust ab. Die Europäische Behörde für Lebensmittelsicherheit (EFSA) empfiehlt 2,0 bis 2,5 Liter Flüssigkeit pro Tag für gesunde Erwachsene."
+      },
+      {
+        title: "Viszerales Fettgewebe, Insulinsensitivität & Typ-2-Diabetes-Risiko",
+        text: "Viszerales Bauchfett birgt deutlich höhere kardiometabolische Risiken als subkutanes Fett. Ein hohes Taille-zu-Größe-Verhältnis (>0,5) korreliert klinisch mit gestörter Glukosetoleranz und Insulinresistenz."
+      },
+      {
+        title: "Erhalt fettfreier Muskelmasse im Kaloriendefizit",
+        text: "Extreme Crash-Diäten führen oft zu Muskelabbau. Ein moderates Defizit (15–20% unter TDEE) in Verbindung mit ausreichender Proteinzufuhr und progressivem Krafttraining schützt wertvolles Muskelgewebe."
+      },
+      {
+        title: "Medizinischer Hinweis und wissenschaftlicher Kontext",
+        text: "Die Rechner basieren auf anerkannten Rechenmodellen (Mifflin-St Jeor, Katch-McArdle) und dienen der allgemeinen Orientierung. Sie ersetzen keine ärztliche oder ernährungstherapeutische Beratung."
+      }
+    ]
+  },
+  ko: {
+    eyebrow: "대사 및 영양학적 근거 기반 가이드",
+    title: "에너지 균형, 대사율 및 과학적 영양 가이드라인",
+    sections: [
+      {
+        title: "기초대사량(BMR)과 일일 총 에너지 소비량(TDEE)의 차이점",
+        text: "기초대사량(BMR)은 뇌, 심장, 간 등 생명 유지 기관이 완전한 휴식 상태에서 소모하는 최소 열량입니다. TDEE는 여기에 신체 활동, 운동, 음식 소화 열효과(TEF)를 모두 합산한 수치입니다."
+      },
+      {
+        title: "에너지 균형과 칼로리 조절의 열역학적 원리",
+        text: "체중 증감은 열역학적 에너지 보존 법칙을 따릅니다. TDEE와 동일한 열량을 섭취하면 체중이 유지되며, 하루 250~500 kcal 결손을 유지하면 급격한 대사 적응 없이 건강한 감량이 가능합니다."
+      },
+      {
+        title: "근거 기반 일일 단백질 권장 섭취량",
+        text: "보편적 좌식 생활 성인의 기초 권장량은 체중 1kg당 0.8g입니다. 하지만 웨이트 트레이닝과 신체 활동을 병행하는 경우 근육 합성 및 보호를 위해 1.6~2.2g/kg 섭취가 권장됩니다."
+      },
+      {
+        title: "탄수화물, 단백질, 지방의 균형 있는 분배",
+        text: "복합 탄수화물은 글리코겐을 충전하여 운동 에너지를 공급하고, 불포화 지방산은 호르몬 균형을 유지하며, 식이섬유는 혈당 급상승을 방지하여 대사 유연성을 향상시킵니다."
+      },
+      {
+        title: "수분 생리학: 체중별 일일 권장 수분 섭취량",
+        text: "수분 필요량은 체중과 활동량, 기후에 따라 달라집니다. 유럽식품안전청(EFSA) 기준 성인 권장 수분 섭취량은 하루 2.0~2.5리터이며, 고강도 운동 시 추가 보충이 필요합니다."
+      },
+      {
+        title: "내장지방, 인슐린 저항성 및 제2형 당뇨병 위험",
+        text: "복부 장기 주위에 축적되는 내장지방은 피하지방보다 심혈관 및 대사 질환 위험을 크게 증가시킵니다. 허리-신장 비율이 0.5를 초과하는 경우 조기 관리가 권장됩니다."
+      },
+      {
+        title: "체지방 감량 중 근육 손실 방지 원칙",
+        text: "과도한 절식은 근육 분해를 유발합니다. TDEE 대비 15~20% 수준의 완만한 결손과 충분한 단백질 공급, 점진적 과부하 근력 운동을 결합해야 제지방량을 보존할 수 있습니다."
+      },
+      {
+        title: "의학적 면책조항 및 교육적 활용 목적",
+        text: "본 계산기는 널리 검증된 공식(미플린-세인트 지어, 캐치-맥아들)을 활용한 수학적 추정치를 제공합니다. 당뇨, 대사 질환 또는 기저 질환이 있는 경우 의료 전문가와 상담하시기 바랍니다."
+      }
+    ]
+  },
+  hi: {
+    eyebrow: "मेटाबोलिक एवं पोषण संदर्भ गाइड",
+    title: "ऊर्जा संतुलन, चयापचय दर और साक्ष्य-आधारित पोषण दिशानिर्देश",
+    sections: [
+      {
+        title: "बीएमआर (BMR) और टीडीईई (TDEE) में क्या अंतर है?",
+        text: "बेसल मेटाबोलिक दर (BMR) पूर्ण विश्राम की स्थिति में मस्तिष्क, हृदय और फेफड़ों जैसे आवश्यक अंगों को सक्रिय रखने के लिए न्यूनतम कैलोरी आवश्यकता है। टीडीईई (TDEE) में दैनिक शारीरिक गतिविधि और व्यायाम शामिल होता है।"
+      },
+      {
+        title: "ऊर्जा संतुलन और कैलोरी प्रबंधन का गणित",
+        text: "शरीर का वजन ऊर्जा संतुलन पर निर्भर करता है। टीडीईई के बराबर कैलोरी लेने से वजन स्थिर रहता है। 250 से 500 kcal/दिन की मध्यम कैलोरी कमी बिना किसी दुष्प्रभाव के निरंतर वसा घटाने में मदद करती है।"
+      },
+      {
+        title: "साक्ष्य-आधारित दैनिक प्रोटीन आवश्यकताएं",
+        text: "गतिहीन वयस्कों के लिए न्यूनतम अनुशंसित प्रोटीन 0.8 ग्राम प्रति किलोग्राम वजन है। नियमित व्यायाम और शक्ति प्रशिक्षण करने वाले व्यक्तियों के लिए मांसपेशियों की सुरक्षा हेतु 1.6 से 2.2 ग्राम/किग्रा की सिफारिश की जाती है।"
+      },
+      {
+        title: "मैक्रोन्यूट्रिएंट्स का वितरण और मेटाबोलिक स्वास्थ्य",
+        text: "कार्बोहाइड्रेट, प्रोटीन और स्वस्थ वसा का संतुलित सेवन शारीरिक जरूरतों के अनुसार होना चाहिए। गुणवत्तापूर्ण कार्बोहाइड्रेट ऊर्जा प्रदान करते हैं और आवश्यक फैटी एसिड हार्मोनल स्वास्थ्य का समर्थन करते हैं।"
+      },
+      {
+        title: "जलयोजन (Hydration) विज्ञान: दैनिक पानी की आवश्यकता",
+        text: "शरीर के वजन, तापमान और पसीने के आधार पर पानी की आवश्यकता बदलती है। यूरोपीय खाद्य सुरक्षा प्राधिकरण (EFSA) स्वस्थ वयस्कों के लिए प्रतिदिन 2.0 से 2.5 लीटर तरल पदार्थ की सिफारिश करता है।"
+      },
+      {
+        title: "विborderल वसा, इंसुलिन संवेदनशीलता और टाइप 2 मधुमेह के जोखिम",
+        text: "पेट के आंतरिक अंगों के आसपास जमा विसरल वसा सामान्य वसा की तुलना में अधिक जोखिम पैदा करती है। कमर-से-ऊंचाई अनुपात (>0.5) बढ़ना इंसुलिन प्रतिरोध से जुड़ा हो सकता है।"
+      },
+      {
+        title: "कैलोरी घाटे के दौरान मांसपेशियों के नुकसान से बचाव",
+        text: "अत्यधिक भुखमरी मांसपेशियों के क्षय का कारण बनती है। मध्यम कैलोरी घाटा (टीडीईई से 15-20% कम), पर्याप्त प्रोटीन और शक्ति प्रशिक्षण मांसपेशियों की सुरक्षा सुनिश्चित करता है।"
+      },
+      {
+        title: "चिकित्सा अस्वीकरण एवं शैक्षिक संदर्भ",
+        text: "यह कैलकुलेटर प्रकाशित वैज्ञानिक सूत्रों (मिफ्लिन-सेंट जेओर) पर आधारित अनुमान प्रदान करता है। यह किसी पेशेवर चिकित्सा या आहार विशेषज्ञ की सलाह का विकल्प नहीं है।"
+      }
+    ]
+  }
+};
+
+const contentFitness: Record<string, any> = {
+  en: {
+    eyebrow: "Cardiorespiratory & Strength Conditioning Guide",
+    title: "Heart Rate Zones, Strength Metrics & Athletic Conditioning Reference",
+    sections: [
+      {
+        title: "Understanding Heart Rate Reserve (HRR) and the Karvonen Formula",
+        text: "Unlike the simplistic 220 minus age formula, the Karvonen method incorporates your Resting Heart Rate (RHR) to determine true Heart Rate Reserve (HRR = HRmax - RHR). This provides personalized cardiovascular training intensity zones tailored to individual baseline fitness."
+      },
+      {
+        title: "The Five Cardiovascular Training Zones Explained",
+        text: "Training zones target specific metabolic pathways: Zone 1 (50–60% HRR) accelerates active recovery; Zone 2 (60–70% HRR) maximizes mitochondrial density and aerobic base; Zone 3 (70–80% HRR) builds aerobic stamina; Zone 4 (80–90% HRR) raises lactate threshold; and Zone 5 (90–100% HRR) conditions peak neuromuscular VO2 max power."
+      },
+      {
+        title: "Resting Heart Rate as a Biomarker of Cardiovascular Health",
+        text: "Resting Heart Rate (typically 60–100 bpm for average adults, and 40–60 bpm for endurance athletes) reflects parasympathetic nervous system tone and cardiac stroke volume efficiency. Sustained elevations can indicate systemic fatigue, dehydration, or overtraining."
+      },
+      {
+        title: "One Repetition Maximum (1RM) and Percentage-Based Strength Training",
+        text: "One Repetition Maximum represents the maximum load you can lift for a single complete repetition. Percentage-based loading allows lifters to train hypertrophy (70–85% 1RM for 6–12 reps) and maximal neuromuscular strength (85–100% 1RM for 1–5 reps) safely without testing maximal failure daily."
+      },
+      {
+        title: "Mathematical 1RM Estimation Equations (Brzycki & Epley)",
+        text: "Submaximal repetitions allow safe estimation of 1RM using validated formulas. The Brzycki formula [Weight × (36 / (37 - Reps))] and Epley formula [Weight × (1 + 0.0333 × Reps)] provide accurate predictive values when tested between 2 and 10 repetitions."
+      },
+      {
+        title: "Progressive Overload and Neuromuscular Adaptation",
+        text: "Strength progression relies on the principle of progressive overload — systematically increasing resistance, volume, or movement efficiency over time. Early strength gains stem from neural motor unit recruitment, followed by myofibrillar hypertrophy."
+      },
+      {
+        title: "Injury Prevention, Warm-up Protocols & Central Fatigue Monitoring",
+        text: "High-intensity resistance training and cardiovascular exertion require dynamic mobility and progressive ramp-up sets to lubricate joints and elevate core temperature. Monitoring sleep, recovery, and perceived exertion prevents overtraining syndrome."
+      },
+      {
+        title: "Exercise Physiology Disclaimers & Safety Protocols",
+        text: "Cardiovascular and maximal strength estimates are educational references based on published exercise science (ACSM, AHA, NSCA). Individuals with cardiovascular conditions, hypertension, or orthopedic injuries should obtain physician clearance before starting high-intensity exercise."
+      }
+    ]
+  },
+  es: {
+    eyebrow: "Guía de Acondicionamiento Cardiorrespiratorio y Fuerza",
+    title: "Zonas de Frecuencia Cardíaca, Métricas de Fuerza y Entrenamiento Atlético",
+    sections: [
+      {
+        title: "Reserva de Frecuencia Cardíaca (HRR) y Fórmula de Karvonen",
+        text: "A diferencia de la fórmula básica (220 - edad), el método Karvonen incorpora la frecuencia cardíaca en reposo (RHR) para calcular la reserva cardíaca real (HRR = FCmáx - RHR), calibrando zonas de entrenamiento personalizadas."
+      },
+      {
+        title: "Las 5 zonas de entrenamiento cardiovascular explicadas",
+        text: "Zona 1 (50–60% HRR): recuperación activa; Zona 2 (60–70% HRR): base aeróbica y densidad mitocondrial; Zona 3 (70–80% HRR): resistencia aeróbica; Zona 4 (80–90% HRR): umbral de lactato; Zona 5 (90–100% HRR): potencia neuromuscular y VO2 máx."
+      },
+      {
+        title: "Frecuencia cardíaca en reposo como biomarcador de salud",
+        text: "La FC en reposo (60–100 ppm en adultos, 40–60 ppm en atletas de fondo) refleja la eficiencia del volumen sistólico y el tono parasimpático. Elevaciones continuadas pueden indicar fatiga acumulada o deshidratación."
+      },
+      {
+        title: "Repetición Máxima (1RM) y entrenamiento porcentual de fuerza",
+        text: "El 1RM representa la carga máxima para una repetición completa. El entrenamiento por porcentajes permite programar hipertrofia (70–85% de 1RM, 6–12 reps) y fuerza máxima (85–100% de 1RM, 1–5 reps) sin llegar al fallo extremo diario."
+      },
+      {
+        title: "Ecuaciones matemáticas para estimar 1RM (Brzycki y Epley)",
+        text: "Las fórmulas submáximas estiman con seguridad el 1RM sin riesgo de lesión. Las ecuaciones de Brzycki y Epley ofrecen gran precisión predictiva cuando se prueban con cargas submáximas de entre 2 y 10 repeticiones."
+      },
+      {
+        title: "Sobrecarga progresiva y adaptación neuromuscular",
+        text: "El desarrollo de fuerza se rige por la sobrecarga progresiva: aumentar sistemáticamente la carga, el volumen o la calidad técnica con el tiempo, impulsando adaptaciones neuronales e hipertrofia miofibrilar."
+      },
+      {
+        title: "Prevención de lesiones, calentamiento y fatiga central",
+        text: "El entrenamiento de alta intensidad requiere movilidad dinámica y series de aproximación progresivas para lubricar articulaciones y elevar la temperatura corporal, evitando el síndrome de sobreentrenamiento."
+      },
+      {
+        title: "Aviso de seguridad deportiva y fisiología del ejercicio",
+        text: "Las métricas cardiovasculares y de fuerza máxima son referencias basadas en la ciencia del ejercicio (ACSM, NSCA). Personas con patologías cardíacas o hipertensión deben consultar a un médico antes de realizar esfuerzos máximos."
+      }
+    ]
+  },
+  fr: {
+    eyebrow: "Guide de Conditionnement Cardiorespiratoire et Force",
+    title: "Zones Cardiaques, Métriques de Force et Performance Athlétique",
+    sections: [
+      {
+        title: "Fréquence Cardiaque de Réserve (HRR) et Méthode Karvonen",
+        text: "Contrairement à la formule simpliste (220 - âge), la méthode Karvonen intègre la fréquence cardiaque au repos (FCrepos) pour définir la réserve cardiaque réelle (HRR = FCmax - FCrepos), offrant des zones d'entraînement individualisées."
+      },
+      {
+        title: "Les 5 zones d'intensité cardiovasculaire décryptées",
+        text: "Zone 1 (50–60% HRR) : récupération active ; Zone 2 (60–70% HRR) : endurance fondamentale et densité mitochondriale ; Zone 3 (70–80% HRR) : capacité aérobie ; Zone 4 (80–90% HRR) : seuil lactique ; Zone 5 (90–100% HRR) : VO2 max et puissance de pointe."
+      },
+      {
+        title: "Fréquence cardiaque au repos : biomarqueur de forme physique",
+        text: "La FC au repos (60–100 bpm chez l'adulte, 40–60 bpm chez l'athlète d'endurance) témoigne du volume d'éjection systolique et du tonus parasympathique. Une élévation anormale peut traduire un surentraînement ou un manque de sommeil."
+      },
+      {
+        title: "Répétition Maximale (1RM) et programmation en pourcentages",
+        text: "Le 1RM est la charge maximale soulevée sur une répétition stricte. L'entraînement basé sur les pourcentages permet de cibler l'hypertrophie (70–85% du 1RM, 6–12 répétitions) ou la force maximale (85–100%, 1–5 répétitions) sans risque de surentraînement."
+      },
+      {
+        title: "Formules mathématiques d'estimation du 1RM (Brzycki et Epley)",
+        text: "Les séries sous-maximales permettent d'estimer le 1RM en toute sécurité. Les équations validées de Brzycki et d'Epley fournissent d'excellentes prédictions lorsqu'elles sont testées entre 2 et 10 répétitions."
+      },
+      {
+        title: "Surcharge progressive et adaptations neuromusculaires",
+        text: "La progression repose sur le principe de surcharge progressive : augmenter méthodiquement la charge, le volume ou le contrôle moteur au fil des semaines pour stimuler le recrutement des unités motrices et l'hypertrophie."
+      },
+      {
+        title: "Prévention des blessures, échauffement et gestion de la fatigue",
+        text: "L'effort intense requiert un échauffement dynamique et des montées en gamme progressives pour préparer les articulations. La surveillance du sommeil et de la récupération prévient les blessures d'usure."
+      },
+      {
+        title: "Avertissement de sécurité et recommandations médicales",
+        text: "Ces données reposent sur la physiologie de l'exercice (ACSM, NSCA). Les personnes présentant des antécédents cardiovasculaires ou de l'hypertension doivent obtenir un avis médical avant tout entraînement à intensité maximale."
+      }
+    ]
+  },
+  de: {
+    eyebrow: "Kardiorespiratorischer & Kraft-Trainingsleitfaden",
+    title: "Herzfrequenzzonen, Kraftmetriken & sportphysiologische Referenzen",
+    sections: [
+      {
+        title: "Herzfrequenzreserve (HRR) und die Karvonen-Methode",
+        text: "Anders als die Faustformel (220 minus Alter) berücksichtigt die Karvonen-Formel den Ruhepuls (RHR). Die Herzfrequenzreserve (HRR = HRmax - RHR) ermöglicht präzise, individuell auf das Fitnesslevel abgestimmte Trainingsbereiche."
+      },
+      {
+        title: "Die 5 kardiovaskulären Trainingszonen im Überblick",
+        text: "Zone 1 (50–60% HRR): aktive Regeneration; Zone 2 (60–70% HRR): Grundlagenausdauer & Mitochondriendichte; Zone 3 (70–80% HRR): aerobe Fitness; Zone 4 (80–90% HRR): Laktatschwelle; Zone 5 (90–100% HRR): VO2max & neuromuskuläre Spitzenleistung."
+      },
+      {
+        title: "Ruhepuls als Indikator für kardiovaskuläre Gesundheit",
+        text: "Der Ruhepuls (60–100 bpm bei Erwachsenen, 40–60 bpm bei Ausdauersportlern) spiegelt das Schlagvolumen des Herzens und die parasympathische Aktivität wider. Ein anhaltender Anstieg kann auf Erschöpfung oder Übertraining hinweisen."
+      },
+      {
+        title: "One-Repetition Maximum (1RM) und prozentuales Krafttraining",
+        text: "Das 1RM definiert das maximale Gewicht für eine saubere Wiederholung. Prozentbasiertes Training ermöglicht zielgerichtete Hypertrophie (70–85% 1RM, 6–12 Wdh.) und Maximalkraftentwicklung (85–100% 1RM, 1–5 Wdh.) ohne tägliches Ausbelastungsrisiko."
+      },
+      {
+        title: "Mathematische 1RM-Schätzformeln (Brzycki & Epley)",
+        text: "Submaximale Sätze erlauben eine sichere 1RM-Bestimmung. Die etablierten Formeln nach Brzycki und Epley bieten zuverlässige Näherungswerte bei Testwiederholungen zwischen 2 und 10 Wiederholungen."
+      },
+      {
+        title: "Progressive Überlastung und neuromuskuläre Anpassung",
+        text: "Kraftsteigerung folgt dem Prinzip der progressiven Überlastung: kontinuierliche Steigerung von Gewicht, Volumen oder Bewegungskontrolle zur Optimierung der neuronalen Ansteuerung und myofibrillären Hypertrophie."
+      },
+      {
+        title: "Verletzungsprävention, Aufwärmprotokolle und Erholungssteuerung",
+        text: "Hohe Trainingsintensitäten erfordern dynamisches Aufwärmen und Aufwärmsätze zur Gelenkschmierung. Ausreichender Schlaf und Regenerationszeiten schützen vor Überlastungssyndromen."
+      },
+      {
+        title: "Sportmedizinischer Sicherheitshinweis",
+        text: "Die Angaben basieren auf sportwissenschaftlichen Leitlinien (ACSM, NSCA). Personen mit Herz-Kreislauf-Erkrankungen oder Bluthochdruck sollten vor hochintensivem Training ärztlichen Rat einholen."
+      }
+    ]
+  },
+  ko: {
+    eyebrow: "심폐 지구력 및 근력 트레이닝 가이드",
+    title: "심박수 트레이닝 구간, 1RM 근력 지표 및 운동 생리학 지침",
+    sections: [
+      {
+        title: "예비 심박수(HRR)와 카르보넨(Karvonen) 공식의 원리",
+        text: "단순 연령 기반 공식(220 - 나이)과 달리 카르보넨 공식은 안정 시 심박수(RHR)를 반영하여 실제 예비 심박수(HRR = 최대심박수 - 안정시심박수)를 산출하므로 개인별 체력 수준에 맞춘 정밀한 운동 강도 설정이 가능합니다."
+      },
+      {
+        title: "5단계 유산소 트레이닝 심박수 구간 해설",
+        text: "1구간(50~60% HRR): 적극적 회복 및 웜업; 2구간(60~70% HRR): 미토콘드리아 밀도 증가 및 기초 유산소 베이스; 3구간(70~80% HRR): 지구력 향상; 4구간(80~90% HRR): 젖산 역치 향상; 5구간(90~100% HRR): 최대 산소 섭취량(VO2 Max) 및 순발력 극대화."
+      },
+      {
+        title: "심혈관 건강의 바로미터: 안정 시 심박수",
+        text: "일반 성인의 안정 시 심박수는 분당 60~100회, 숙련된 지구력 선수는 40~60회 수준입니다. 평소보다 안정 시 심박수가 지속적으로 높게 측정된다면 누적 피로, 수면 부족 또는 오버트레이닝을 의심할 수 있습니다."
+      },
+      {
+        title: "1RM(1회 최대 중량)과 백분율 기반 점진적 과부하",
+        text: "1RM은 1회 온전히 들어 올릴 수 있는 최대 중량입니다. 백분율 기준 훈련을 통해 근비대 구간(70~85% 1RM, 6~12회)과 최대 근력 구간(85~100% 1RM, 1~5회)을 안전하고 체계적으로 구성할 수 있습니다."
+      },
+      {
+        title: "부상 없이 1RM을 추정하는 수학적 공식 (Brzycki & Epley)",
+        text: "매번 부상 위험을 감수하고 최대 무게를 측정할 필요 없이, 브리츠키 및 에플리 공식을 사용하면 2~10회 반복 가능한 중량으로도 정확한 1RM을 안전하게 산출할 수 있습니다."
+      },
+      {
+        title: "점진적 과부하와 신경근 적응 메커니즘",
+        text: "근력 성장의 핵심은 점진적 과부하입니다. 중량, 반복 횟수, 세트 수 또는 가동 범위를 점진적으로 증가시키면 초기 신경계 운동 단위 동원율이 향상되고 이후 근섬유 비대로 이어집니다."
+      },
+      {
+        title: "부상 예방을 위한 웜업 루틴과 중추신경계 회복 관리",
+        text: "고강도 웨이트 트레이닝 및 인터벌 러닝 전에는 관절 윤활과 체온 상승을 위한 동적 스트레칭 및 웜업 세트가 필수적입니다. 충분한 수면과 영양 섭취로 오버트레이닝 증후군을 예방해야 합니다."
+      },
+      {
+        title: "운동 생리학 안전 수칙 및 의학적 면책조항",
+        text: "본 지침은 미국스포츠의학회(ACSM) 및 전미근력체력조절학회(NSCA)의 연구를 바탕으로 작성되었습니다. 심혈관 질환이나 고혈압이 있는 경우 고강도 운동 전 의사의 진료를 받으시기 바랍니다."
+      }
+    ]
+  },
+  hi: {
+    eyebrow: "हृदय गति एवं शक्ति प्रशिक्षण गाइड",
+    title: "हृदय गति प्रशिक्षण क्षेत्र, 1RM शक्ति मेट्रिक्स और एथलेटिक कंडीशनिंग",
+    sections: [
+      {
+        title: "हार्ट रेट रिजर्व (HRR) और कार्वोनेन सूत्र को समझना",
+        text: "सरल 220 - आयु सूत्र के विपरीत, कार्वोनेन विधि वास्तविक हृदय गति रिजर्व (HRR = अधिकतम हृदय गति - विश्राम हृदय गति) निर्धारित करने के लिए विश्राम हृदय गति (RHR) को शामिल करती है, जो व्यक्तिगत प्रशिक्षण तीव्रता तय करती है।"
+      },
+      {
+        title: "पांच हृदय गति प्रशिक्षण क्षेत्रों (Zones) का विवरण",
+        text: "ज़ोन 1 (50-60% HRR): सक्रिय सुधार; ज़ोन 2 (60-70% HRR): एरोबिक बेस और वसा दहन; ज़ोन 3 (70-80% HRR): सहनशक्ति निर्माण; ज़ोन 4 (80-90% HRR): लैक्टेट थ्रेशोल्ड; ज़ोन 5 (90-100% HRR): अधिकतम शक्ति और VO2 Max।"
+      },
+      {
+        title: "हृदय स्वास्थ्य के बायोमार्कर के रूप में विश्राम हृदय गति (RHR)",
+        text: "सामान्य वयस्कों के लिए विश्राम हृदय गति 60-100 bpm और एथलीटों के लिए 40-60 bpm होती है। इसमें लगातार वृद्धि थकान, निर्जलीकरण या अधिक व्यायाम का संकेत हो सकती है।"
+      },
+      {
+        title: "वन रिपीटिशन मैक्सिमम (1RM) और प्रतिशत आधारित शक्ति प्रशिक्षण",
+        text: "1RM उस अधिकतम वजन का प्रतिनिधित्व करता है जिसे आप एक बार उठा सकते हैं। प्रतिशत-आधारित प्रशिक्षण मांसपेशियों के विकास (70-85% 1RM) और अधिकतम शक्ति (85-100% 1RM) के लिए सुरक्षित योजना बनाने में मदद करता है।"
+      },
+      {
+        title: "1RM अनुमान लगाने के गणितीय समीकरण (Brzycki एवं Epley)",
+        text: "बिना किसी चोट के जोखिम के 1RM का अनुमान लगाने के लिए ब्रिजिकी और एपली फॉर्मूले 2 से 10 पुनरावृत्तियों के आधार पर अत्यधिक सटीक परिणाम देते हैं।"
+      },
+      {
+        title: "प्रगतिशील अधिभार (Progressive Overload) और न्यूरोमस्कुलर अनुकूलन",
+        text: "शक्ति विकास प्रगतिशील अधिभार के सिद्धांत पर निर्भर करता है - समय के साथ वजन या पुनरावृत्ति को व्यवस्थित रूप से बढ़ाना, जिससे मांसपेशियों का विकास होता है।"
+      },
+      {
+        title: "चोट की रोकथाम, वार्म-अप और पुनर्प्राप्ति प्रबंधन",
+        text: "उच्च-तीव्रता वाले व्यायाम से पहले गतिशील स्ट्रेचिंग और वार्म-अप सेट आवश्यक हैं। पर्याप्त नींद और पुनर्प्राप्ति ओवरट्रेनिंग से बचाती है।"
+      },
+      {
+        title: "व्यायाम शरीर क्रिया विज्ञान सुरक्षा दिशानिर्देश",
+        text: "यह दिशानिर्देश खेल विज्ञान (ACSM, NSCA) के मानकों पर आधारित है। हृदय रोग या उच्च रक्तचाप वाले व्यक्तियों को उच्च तीव्रता वाले व्यायाम से पहले डॉक्टर की सलाह लेनी चाहिए।"
+      }
+    ]
+  }
+};
+
+const activeContentMap = category === 'fitness' 
+  ? contentFitness 
+  : (category === 'metabolic' ? contentMetabolic : contentBmi);
+
+const t = activeContentMap[lang] || activeContentMap.en;
 ---
 
 <section class="px-4 md:px-6 my-10 max-w-7xl mx-auto space-y-8">

@@ -178,7 +178,7 @@ const t = getCalculatorTranslations(lang);
     }
 
     const pDisplay = document.getElementById('primaryDisplay');
-    if (pDisplay) pDisplay.textContent = primary.value;
+    if (pDisplay) pDisplay.textContent = getStr(primary.value);
 
     const pName = document.getElementById('primaryNameLabel');
     if (pName) pName.textContent = primaryLabel;

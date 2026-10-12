@@ -109,44 +109,54 @@ const data: Record<string, any> = {
     ctaBtn: "पूरा गाइड पढ़ें: बीएमआई की सीमाएं और उपयोगिता"
   },
   ko: {
-    eyebrow: "검색 의도 및 참고 가이드",
+    eyebrow: "건강 연구 및 공중보건 지침",
     mainTitle: "BMI는 정확한가요? 'Real BMI'와 표준 체중계의 진실",
-    mainSubtitle: "전통적인 체질량지수(BMI)가 세계에서 가장 널리 사용되는 건강 스크리닝 도구이지만, 많은 사람들이 내 체형에 BMI가 정확한지 궁금해합니다.",
+    mainSubtitle: "전통적인 체질량지수(BMI)가 세계에서 가장 널리 사용되는 건강 스크리닝 도구이지만, 많은 사람들이 내 고유한 체형에 BMI가 과연 정확한지 궁금해합니다.",
     cards: [
       {
         tag: "01 / 정의",
         title: "'Real BMI'란 무엇인가요?",
-        desc: "'Real BMI'는 단지 체중뿐만 아니라 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레와 같은 상보적인 생리학적 지표를 종합하여 체성분을 참고하는 것을 의미합니다."
+        desc: "'Real BMI'는 단지 체중뿐만 아니라 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레와 같은 상보적인 생리학적 지표를 종합하여 체성분을 참고하는 교육적 개념입니다. 별도의 의료 진단 지표나 공식 WHO 분류는 아닙니다."
       },
       {
         tag: "02 / 근육 밀도",
         title: "근육질 운동선수의 역설",
-        desc: "표준 BMI 공식(체중/키²)은 모든 질량을 동일하게 처리합니다. 근육질 운동선수는 체지방률이 낮음에도 불구하고 근육의 밀도가 높아 '과체중' 또는 '비만'으로 측정될 수 있습니다."
+        desc: "표준 BMI 공식(체중/키²)은 모든 질량을 동일하게 처리합니다. 근육질 운동선수는 체지방률이 낮음에도 불구하고 골격근의 밀도가 높아 '과체중' 또는 '비만'으로 분류될 수 있습니다."
       },
       {
         tag: "03 / 아시아 기준",
-        title: "아시아인 참고 기준",
-        desc: "세계보건기구(WHO) 아시아-태평양 지침에 따르면 아시아인은 낮은 체중에서도 내장지방 축적 위험이 높아 과체중 기준을 23 kg/m²(서구 기준 25 kg/m²)로 더 낮게 적용합니다."
+        title: "아시아인 전용 위험 기준선",
+        desc: "세계보건기구(WHO) 아시아-태평양 지침에 따르면 아시아인은 낮은 체중에서도 내장지방 축적 위험이 높아 과체중 기준을 23.0 kg/m²(서구 기준 25.0 kg/m²)로 더 낮게 적용합니다."
       },
       {
         tag: "04 / 내장 지방",
-        title: "체중계 너머의 복부 지방",
-        desc: "BMI는 지방의 분포가 아닌 전체 체질량을 측정합니다. 복부 장기를 둘러싼 심부 내장지방은 피하지방보다 심혈관 및 대사 참고 수치를 높입니다."
+        title: "체중계 너머의 복부 내장지방",
+        desc: "BMI는 지방의 신체적 분포가 아닌 전체 체질량을 측정합니다. 복부 장기를 둘러싼 심부 내장지방은 피하지방보다 심혈관 및 대사 질환 위험과 밀접한 연관이 있습니다."
+      },
+      {
+        tag: "05 / 심혈관 지표",
+        title: "심혈관 건강 참고 가이드",
+        desc: "높은 BMI(≥25 kg/m²)는 심장 건강 지표와 통계적 상관관계를 가집니다. 허리둘레와 함께 종합 측정할 때 복부 지방 분포에 대한 의미 있는 임상적 통찰을 얻을 수 있습니다."
+      },
+      {
+        tag: "06 / 특수 인구군",
+        title: "특수 집단에서의 공식 한계",
+        desc: "표준 BMI 공식은 임산부(임신 체중 증가), 19세 미만 소아청소년(백분위 성장 곡선 필요), 65세 이상 노년층(보호적 근육 예비량) 및 보디빌더에게 제한적인 정확도를 가집니다."
       }
     ],
-    compBadge: "참고 지표 비교",
-    compTitle: "표준 BMI vs. Real BMI 계산기",
-    colMetric: "참고 지표 / 한계",
-    colStd: "표준 BMI",
-    colReal: "Real BMI 계산기",
+    compBadge: "방법론적 비교 분석",
+    compTitle: "표준 BMI vs 상보적 건강 지표 비교",
+    colMetric: "건강 지표 / 평가 기준",
+    colStd: "표준 BMI 기준",
+    colReal: "Real BMI 종합 평가",
     compRows: [
-      { title: "운동선수 근육 밀도", std: "❌ 골격근량을 잘못하여 '과체중' 또는 '비만'으로 분류", real: "✅ BMR 및 체지방률 추정치로 보정" },
-      { title: "WHO 아시아 내장지방 기준", std: "❌ 아시아인 과체중 위험 기준(23.0 kg/m²) 무시", real: "✅ WHO 아시아 개정 진단 기준 완벽 통합" },
-      { title: "대사 칼로리 목표", std: "❌ 단순히 체중 대비 키 비율 숫자만 제공", real: "✅ 일일 BMR 및 TDEE 필요 칼로리 계산" },
-      { title: "복부 내장지방 평가", std: "❌ 허리둘레 및 내장지방 위험 측정 불가", real: "✅ BMI를 허리-엉덩이 비율(WHR) 도구와 결합" }
+      { title: "운동선수 골격근 밀도", std: "❌ 근육량을 구분하지 못해 '과체중' 또는 '비만'으로 오분류", real: "✅ BMR 및 체지방률 추정 지표로 보완하여 평가" },
+      { title: "WHO 아시아 내장지방 기준", std: "❌ 아시아인 과체중 위험 기준(23.0 kg/m²)을 간과", real: "✅ WHO 아시아 개정 진단 기준(23.0 kg/m²) 완벽 통합" },
+      { title: "대사 칼로리 및 에너지 목표", std: "❌ 단순히 체중 대비 신장 비율 수치만 정적으로 제공", real: "✅ 일일 기초대사량(BMR) 및 활동 소비량(TDEE) 맞춤 산출" },
+      { title: "복부 내장지방 위험 평가", std: "❌ 허리둘레 및 중심성 비만 위험을 측정 불가", real: "✅ BMI를 허리-엉덩이 비율(WHR) 및 허리-키 비율(WHtR)과 연계" }
     ],
-    ctaTitle: "BMI가 나에게 정말 정확한지 알고 싶으신가요?",
-    ctaDesc: "근육 밀도 한계 및 WHO 인종별 가이드라인을 확인하세요.",
+    ctaTitle: "BMI가 본인에게 정말 정확한지 확인하고 싶으신가요?",
+    ctaDesc: "근육 밀도 요인, 최신 건강 연구 및 WHO 인종별 가이드라인을 담은 전문 가이드를 확인하세요.",
     ctaBtn: "전체 가이드 읽기: BMI는 정확한가요?"
   },
   es: {
@@ -157,29 +167,39 @@ const data: Record<string, any> = {
       {
         tag: "01 / Definición",
         title: "¿Qué es el 'Real BMI'?",
-        desc: "El término 'Real BMI' evalúa el índice de masa corporal junto con métricas como el Metabolismo Basal (BMR), el Gasto Energético Diario (TDEE) y la circunferencia de cintura."
+        desc: "El término 'Real BMI' evalúa el índice de masa corporal junto con métricas como el Metabolismo Basal (BMR), el Gasto Energético Diario (TDEE) y la circunferencia de cintura. Proporciona contexto educativo, no un diagnóstico clínico."
       },
       {
         tag: "02 / Densidad Muscular",
         title: "La Paradoja del Atleta Musculoso",
-        desc: "La fórmula estándar trata todo el peso por igual. Los atletas con alta masa muscular a menudo registran un IMC de 'Sobrepeso' a pesar de tener un bajo porcentaje de grasa."
+        desc: "La fórmula estándar trata todo el peso por igual. Los atletas con alta masa muscular a menudo registran un IMC de 'Sobrepeso' a pesar de tener un bajo porcentaje de grasa corporal."
       },
       {
         tag: "03 / Umbrales Regionales",
-        title: "Pautas de Riesgo para Poblaciones Asiológicas",
-        desc: "La OMS recomienda un umbral de IMC de 23 kg/m² para sobrepeso en poblaciones asiáticas debido al mayor riesgo de grasa visceral a menor peso corporal."
+        title: "Pautas de Riesgo para Poblaciones Asiáticas",
+        desc: "La OMS recomienda un umbral de IMC de 23.0 kg/m² para sobrepeso en poblaciones asiáticas debido al mayor riesgo de grasa visceral con menor peso corporal."
       },
       {
         tag: "04 / Grasa Visceral",
         title: "Más allá de la báscula: Adiposidad Abdominal",
-        desc: "El IMC mide la masa total, no la distribución de grasa. La grasa visceral profunda conlleva un riesgo metabólico sustancialmente mayor."
+        desc: "El IMC mide la masa total, no la distribución de grasa. La grasa visceral profunda conlleva un riesgo cardiometabólico sustancialmente mayor que la grasa subcutánea."
+      },
+      {
+        tag: "05 / Salud Cardiovascular",
+        title: "Referencias Cardiovasculares",
+        desc: "Un IMC elevado (≥25 kg/m²) se asocia con factores arteriales y metabólicos según las guías cardíacas. Medir el IMC junto con la cintura aporta contexto sobre grasa abdominal."
+      },
+      {
+        tag: "06 / Grupos Específicos",
+        title: "Limitaciones en Poblaciones Especiales",
+        desc: "El IMC estándar presenta limitaciones conocidas en mujeres embarazadas (peso gestacional), menores de 19 años (curvas percentilares), adultos mayores de 65 años y atletas."
       }
     ],
-    compBadge: "Comparación de Indicadores",
-    compTitle: "IMC Estándar vs. Real BMI Calculator",
-    colMetric: "Métrica de Referencia",
-    colStd: "IMC Estándar",
-    colReal: "Real BMI Calculator",
+    compBadge: "Comparación Metodológica",
+    compTitle: "IMC Estándar vs Indicadores de Salud Complementarios",
+    colMetric: "Métrica / Criterio de Salud",
+    colStd: "Enfoque IMC Estándar",
+    colReal: "Evaluación Real BMI",
     compRows: [
       { title: "Densidad Muscular en Atletas", std: "❌ Clasifica erróneamente el músculo como 'Sobrepeso' u 'Obesidad'", real: "✅ Se ajusta con estimaciones de BMR y % de grasa corporal" },
       { title: "Límite Visceral Asiático de la OMS", std: "❌ Ignora el umbral asiático de sobrepeso de 23.0 kg/m²", real: "✅ Integra completamente los límites revisados de la OMS" },
@@ -191,45 +211,56 @@ const data: Record<string, any> = {
     ctaBtn: "Leer Guía Completa: ¿Es Preciso el IMC?"
   },
   fr: {
-    eyebrow: "Guide de Santé & Référence",
-    mainTitle: "L'IMC est-il précis ? La vérité sur le 'Real BMI'",
-    mainSubtitle: "Bien que l'Indice de Masse Corporelle (IMC) soit l'outil de santé le plus utilisé au monde, des millions de personnes s'interrogent sur sa précision.",
+    eyebrow: "Recherches Médicales & Recommandations de Santé",
+    mainTitle: "L'IMC est-il Précis ? La Vérité sur le 'Real BMI' face aux Balances Ordinaires",
+    mainSubtitle: "Bien que l'Indice de Masse Corporelle (IMC) traditionnel soit l'outil de dépistage de santé le plus répandu au monde, des millions de personnes s'interrogent : l'IMC est-il réellement adapté à ma morphologie unique ?",
     cards: [
       {
         tag: "01 / Définition",
         title: "Qu'est-ce que le 'Real BMI' ?",
-        desc: "Le terme 'Real BMI' évalue l'IMC en association avec le métabolisme de base (BMR), la dépense énergétique quotidienne (TDEE) et le tour de taille."
+        desc: "Le concept Real BMI associe le calcul standard de l'IMC à des indicateurs complémentaires (BMR, TDEE, tour de taille) pour fournir un contexte éducatif élargi. Il ne s'agit pas d'un diagnostic médical distinct ni d'une classification officielle séparée de l'OMS."
       },
       {
         tag: "02 / Densité Musculaire",
-        title: "Le Paradoxe du Sportif Musclé",
-        desc: "La formule standard traite toute la masse de façon identique. Les athlètes musclés sont souvent classés en 'Surpoids' malgré une masse grasse faible."
+        title: "Le Paradoxe de l'Athlète Musclé",
+        desc: "La formule standard (poids/taille²) traite toute masse corporelle de manière uniforme. Les athlètes ou adeptes de musculation sont fréquemment classés en 'Surpoids' ou 'Obésité' malgré un taux de masse grasse très bas, car le muscle dense pèse plus lourd que le tissu adipeux."
       },
       {
         tag: "03 / Seuils Régionaux",
-        title: "Recommandations Asiatiques de l'OMS",
-        desc: "L'OMS recommande un seuil d'IMC de 23 kg/m² pour le surpoids chez les populations asiatiques en raison du risque accru de graisse viscérale."
+        title: "Recommandations Asiatiques et Régionales de l'OMS",
+        desc: "Les directives de consultation d'experts de l'OMS recommandent des seuils d'IMC abaissés pour les populations d'Asie et d'Asie du Sud : 23,0 kg/m² pour le seuil d'alerte au surpoids (contre 25,0 kg/m² standard) en raison d'un risque accru d'accumulation de graisse viscérale à un IMC plus modéré."
       },
       {
         tag: "04 / Graisse Viscérale",
-        title: "Au-delà de la Balance : Graisse Abdominale",
-        desc: "L'IMC mesure la masse totale, pas la répartition des graisses. La graisse viscérale profonde présente des risques cardiovasculaires supérieurs."
+        title: "Au-delà du Poids : Adiposité Abdominale",
+        desc: "L'IMC mesure la masse corporelle globale sans distinguer la répartition des graisses. La graisse viscérale profonde entourant les organes abdominaux présente des facteurs de risque métabolique et cardiovasculaire bien plus élevés que la graisse sous-cutanée des hanches ou des membres."
+      },
+      {
+        tag: "05 / Risque Cardiovasculaire",
+        title: "Références de Santé Cardiovasculaire",
+        desc: "Un IMC élevé (≥ 25 kg/m²) est associé à des repères cliniques artériels et cardiométaboliques reconnus par les fondations de cardiologie. L'évaluation conjointe de l'IMC et du tour de taille fournit un éclairage supplémentaire essentiel sur la répartition des graisses abdominales."
+      },
+      {
+        tag: "06 / Populations Spécifiques",
+        title: "Limites pour les Groupes Particuliers",
+        desc: "Les formules d'IMC habituelles possèdent des limites documentées pour les femmes enceintes (poids gestationnel), les enfants et adolescents de moins de 19 ans (courbes de percentiles), les seniors de plus de 65 ans (masse musculaire protectrice) et les personnes très sportives."
       }
     ],
-    compBadge: "Aperçu des Indicateurs de Santé",
-    compTitle: "IMC Standard vs. Calculateur Real BMI",
-    colMetric: "Métrique de Santé",
-    colStd: "IMC Échelle Standard",
-    colReal: "Calculateur Real BMI",
+    compBadge: "Comparaison Méthodologique",
+    compTitle: "IMC Standard vs Indicateurs de Santé Complémentaires",
+    colMetric: "Métrique / Critère de Santé",
+    colStd: "Approche Standard (Taille / Poids)",
+    colReal: "Évaluation Approfondie Real BMI",
     compRows: [
-      { title: "Densité Musculaire des Sportifs", std: "❌ Classe à tort la masse musculaire comme 'Surpoids' ou 'Obésité'", real: "✅ S'ajuste avec des estimations de BMR et % de graisse" },
-      { title: "Seuil Viscéral Asiatique OMS", std: "❌ Ignore le seuil asiatique de surpoids de 23.0 kg/m²", real: "✅ Intègre pleinement les seuils révisés de l'OMS" },
-      { title: "Objectif Calorique Métabolique", std: "❌ Fournit uniquement un chiffre statique poids-taille", real: "✅ Calcule les besoins caloriques quotidiens BMR & TDEE" },
-      { title: "Évaluation de la Graisse Abdominale", std: "❌ Ne peut pas mesurer le tour de taille ni le risque viscéral", real: "✅ Associe l'IMC à l'outil du rapport Taille-Hanche" }
+      { title: "Score IMC Standard", std: "❌ Masse globale divisée par la taille² sans distinction tissulaire", real: "✅ Base de dépistage préliminaire standardisée OMS & CDC" },
+      { title: "Densité Musculaire des Sportifs", std: "❌ Classe fréquemment la masse musculaire en 'Surpoids' ou 'Obésité'", real: "✅ Corrèle avec les estimations de BMR et le taux de graisse corporelle" },
+      { title: "Seuil Viscéral Asiatique de l'OMS", std: "❌ Ignore le seuil d'alerte spécifique de 23,0 kg/m²", real: "✅ Intègre pleinement les critères révisés de l'OMS pour populations asiatiques" },
+      { title: "Besoins Métaboliques & Dépense Énergétique", std: "❌ Fournit uniquement un ratio poids/taille statique", real: "✅ Calcule la dépense au repos (BMR) et l'énergie quotidienne totale (TDEE)" },
+      { title: "Évaluation de l'Adiposité Abdominale", std: "❌ Ne mesure ni le tour de taille ni l'adiposité viscérale profonde", real: "✅ Complète l'analyse avec les ratios Taille-Hanche (WHR) et Taille-Hauteur" }
     ],
-    ctaTitle: "Voulez-vous savoir si l'IMC est vraiment précis pour vous ?",
-    ctaDesc: "Lisez notre analyse complète basée sur les recherches et recommandations de l'OMS.",
-    ctaBtn: "Lire le Guide Complet : L'IMC est-il Précis ?"
+    ctaTitle: "Souhaitez-vous savoir si l'IMC est réellement adapté à votre profil ?",
+    ctaDesc: "Consultez notre guide approfondi sur la densité musculaire, les recherches cliniques et les recommandations régionales de l'OMS.",
+    ctaBtn: "Lire le Guide Complet : L'IMC est-il Fiable ?"
   },
   de: {
     eyebrow: "Gesundheits-Referenzleitlinien",
@@ -239,34 +270,44 @@ const data: Record<string, any> = {
       {
         tag: "01 / Definition",
         title: "Was ist 'Real BMI'?",
-        desc: "'Real BMI' bewertet den Body-Mass-Index zusammen mit physiologischen Werten wie Grundumsatz (BMR), Gesamtenergieumsatz (TDEE) und Taifenumfang."
+        desc: "'Real BMI' bewertet den Body-Mass-Index zusammen mit physiologischen Werten wie Grundumsatz (BMR), Gesamtenergieumsatz (TDEE) und Taillenumfang für einen breiteren Bildungskontext."
       },
       {
         tag: "02 / Muskeldichte",
         title: "Das Sportler-Paradoxon",
-        desc: "Die Standardformel bewertet jede Masse gleich. Muskulöse Sportler werden oft als 'Übergewichtig' eingestuft, obwohl ihr Körperfettanteil sehr niedrig ist."
+        desc: "Die Standardformel bewertet jede Masse gleich. Muskulöse Sportler werden oft als 'Übergewichtig' eingestuft, obwohl ihr Körperfettanteil sehr niedrig ist, da Muskeln dichter sind."
       },
       {
         tag: "03 / Asiatische Standards",
         title: "Regionale WHO-Richtlinien",
-        desc: "Die WHO empfiehlt für asiatische Bevölkerungen einen niedrigeren Grenzwert von 23 kg/m² für Übergewicht wegen des höheren Risikos für viszerales Fett."
+        desc: "Die WHO empfiehlt für asiatische Bevölkerungen einen niedrigeren Grenzwert von 23,0 kg/m² für Übergewicht wegen des höheren Risikos für viszerales Fett bei geringerem Gewicht."
       },
       {
         tag: "04 / Viszeralfett",
         title: "Bauchfett & Gesundheit",
-        desc: "Der BMI misst die Gesamtmasse, nicht die Fettverteilung. Tiefes Bauchfett birgt deutlich höhere Stoffwechselrisiken als Unterhautfettgewebe."
+        desc: "Der BMI misst die Gesamtmasse, nicht die Fettverteilung. Tiefes viszerales Bauchfett birgt deutlich höhere Stoffwechselrisiken als Unterhautfettgewebe."
+      },
+      {
+        tag: "05 / Herz-Kreislauf-Risiko",
+        title: "Kardiovaskuläre Referenzwerte",
+        desc: "Ein erhöhter BMI (≥ 25 kg/m²) korreliert mit arteriellen und kardiovaskulären Risikofaktoren. Die gemeinsame Betrachtung von BMI und Taillenumfang liefert entscheidenden Kontext."
+      },
+      {
+        tag: "06 / Besondere Gruppen",
+        title: "Grenzen bei spezifischen Gruppen",
+        desc: "Standard-BMI-Formeln haben dokumentierte Grenzen bei Schwangeren (Gestationsgewicht), Jugendlichen unter 19 (Perzentilenkurven), Senioren ab 65 und Kraftsportlern."
       }
     ],
-    compBadge: "Übersicht der Gesundheitsindikatoren",
-    compTitle: "Standard-BMI vs. Real BMI Rechner",
-    colMetric: "Gesundheitsmetrik",
+    compBadge: "Methodischer Vergleich",
+    compTitle: "Standard-BMI vs. Ergänzende Gesundheitsindikatoren",
+    colMetric: "Gesundheitsmetrik / Kriterium",
     colStd: "Standard-BMI-Skala",
-    colReal: "Real BMI Rechner",
+    colReal: "Real BMI Gesamtanalyse",
     compRows: [
       { title: "Muskeldichte bei Sportlern", std: "❌ Stuft Muskelmasse fälschlicherweise als 'Übergewichtig' ein", real: "✅ Passt sich mit BMR- & Körperfett-Schätzungen an" },
       { title: "Asiatischer WHO-Viszeralgrenzwert", std: "❌ Ignoriert den asiatischen Grenzwert von 23,0 kg/m²", real: "✅ Integriert die überarbeiteten WHO-Grenzwerte vollständig" },
       { title: "Stoffwechsel-Kalorienziel", std: "❌ Bietet nur eine statische Gewicht-zu-Größe-Zahl", real: "✅ Berechnet täglichen BMR- & TDEE-Kalorienbedarf" },
-      { title: "Beurteilung von Bauchfett", std: "❌ Kann Taifenumfang oder viszerales Risiko nicht messen", real: "✅ Kombiniert BMI mit dem Taille-Hüfte-Verhältnis-Tool" }
+      { title: "Beurteilung von Bauchfett", std: "❌ Kann Taillenumfang oder viszerales Risiko nicht messen", real: "✅ Kombiniert BMI mit dem Taille-Hüfte-Verhältnis-Tool" }
     ],
     ctaTitle: "Möchten Sie wissen, ob der BMI für Sie wirklich genau ist?",
     ctaDesc: "Lesen Sie unsere detaillierte Analyse zu Muskeldichte und WHO-Richtlinien.",
