@@ -299,6 +299,130 @@ LOCALES.forEach(lang => {
   }
 });
 
+// Section 9: Specific User-Mandated Regression Tests (Tests A - F)
+// Test A: Localized Indian BMI pages cannot contain the five accidental English table labels
+['es', 'fr', 'de', 'hi', 'ko'].forEach(lang => {
+  test(`Test A — [${lang}] Localized Indian BMI page cannot contain the five accidental English table labels`, () => {
+    const distFile = path.join(WORKSPACE, `dist/${lang}/${indianSlug}/index.html`);
+    assert.ok(fs.existsSync(distFile), `dist file missing for ${lang}`);
+    const html = fs.readFileSync(distFile, 'utf-8');
+    forbiddenFallbacks.forEach(fb => {
+      assert.strictEqual(
+        html.toLowerCase().includes(fb),
+        false,
+        `Forbidden English label "${fb}" found in dist/${lang}/${indianSlug}`
+      );
+    });
+  });
+});
+
+// Test B: DE FAQ questions must be unique
+test('Test B — DE FAQ questions must be unique in database and dist HTML', () => {
+  const deFaqsDb = seoDb[indianSlug]?.de?.faqs || [];
+  const deQuestionsDb = deFaqsDb.map(f => f.question.trim());
+  const deSetDb = new Set(deQuestionsDb);
+  assert.strictEqual(deQuestionsDb.length, deSetDb.size, 'Duplicate DE FAQ questions found in database');
+
+  const deDist = path.join(WORKSPACE, `dist/de/${indianSlug}/index.html`);
+  if (fs.existsSync(deDist)) {
+    const html = fs.readFileSync(deDist, 'utf-8');
+    const faqSectionMatch = html.match(/<div class="space-y-6 pt-4">([\s\S]*?)<\/div>\s*<\/div>\s*<!-- Authority Medical/);
+    const visibleFaqs = [...(faqSectionMatch ? faqSectionMatch[1] : '').matchAll(/<h4[^>]*>([\s\S]*?)<\/h4>/g)]
+      .map(m => m[1].replace(/<[^>]+>/g, '').trim());
+    const visibleSet = new Set(visibleFaqs);
+    assert.strictEqual(visibleFaqs.length, visibleSet.size, 'Duplicate DE FAQ questions found in dist HTML');
+  }
+});
+
+// Test C: KO FAQ questions must be unique
+test('Test C — KO FAQ questions must be unique in database and dist HTML', () => {
+  const koFaqsDb = seoDb[indianSlug]?.ko?.faqs || [];
+  const koQuestionsDb = koFaqsDb.map(f => f.question.trim());
+  const koSetDb = new Set(koQuestionsDb);
+  assert.strictEqual(koQuestionsDb.length, koSetDb.size, 'Duplicate KO FAQ questions found in database');
+
+  const koDist = path.join(WORKSPACE, `dist/ko/${indianSlug}/index.html`);
+  if (fs.existsSync(koDist)) {
+    const html = fs.readFileSync(koDist, 'utf-8');
+    const faqSectionMatch = html.match(/<div class="space-y-6 pt-4">([\s\S]*?)<\/div>\s*<\/div>\s*<!-- Authority Medical/);
+    const visibleFaqs = [...(faqSectionMatch ? faqSectionMatch[1] : '').matchAll(/<h4[^>]*>([\s\S]*?)<\/h4>/g)]
+      .map(m => m[1].replace(/<[^>]+>/g, '').trim());
+    const visibleSet = new Set(visibleFaqs);
+    assert.strictEqual(visibleFaqs.length, visibleSet.size, 'Duplicate KO FAQ questions found in dist HTML');
+  }
+});
+
+// Test D: Localized FAQ cannot contain accidental raw English slug prose
+['es', 'fr', 'de', 'hi', 'ko'].forEach(lang => {
+  test(`Test D — [${lang}] Localized FAQ cannot contain accidental raw English slug prose`, () => {
+    const distFile = path.join(WORKSPACE, `dist/${lang}/${indianSlug}/index.html`);
+    if (fs.existsSync(distFile)) {
+      const html = fs.readFileSync(distFile, 'utf-8');
+      const faqSectionMatch = html.match(/<div class="space-y-6 pt-4">([\s\S]*?)<\/div>\s*<\/div>\s*<!-- Authority Medical/);
+      const faqText = (faqSectionMatch ? faqSectionMatch[1] : '').toLowerCase();
+      assert.strictEqual(
+        faqText.includes('bmi calculator for indians-rechner') ||
+        faqText.includes('bmi calculator for indians 계산기') ||
+        faqText.includes('bmi calculator for indians'),
+        false,
+        `accidental raw English slug prose found in ${lang} FAQ`
+      );
+    }
+  });
+});
+
+// Test E: Visible FAQ and JSON-LD FAQ must match
+LOCALES.forEach(lang => {
+  test(`Test E — [${lang}] Visible FAQ and JSON-LD FAQ must match`, () => {
+    const distFile = path.join(WORKSPACE, `dist/${lang}/${indianSlug}/index.html`);
+    if (fs.existsSync(distFile)) {
+      const html = fs.readFileSync(distFile, 'utf-8');
+      const faqSectionMatch = html.match(/<div class="space-y-6 pt-4">([\s\S]*?)<\/div>\s*<\/div>\s*<!-- Authority Medical/);
+      const domFaqs = [...(faqSectionMatch ? faqSectionMatch[1] : '').matchAll(/<h4[^>]*>([\s\S]*?)<\/h4>/g)]
+        .map(m => m[1].replace(/<[^>]+>/g, '').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/&quot;/g, '"').trim());
+
+      const scriptMatches = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+      let jsonLdFaqs = [];
+      scriptMatches.forEach(m => {
+        try {
+          const d = JSON.parse(m[1]);
+          if (d['@type'] === 'FAQPage' && Array.isArray(d.mainEntity)) {
+            jsonLdFaqs = d.mainEntity.map(e => e.name.trim());
+          }
+        } catch (e) {}
+      });
+      assert.strictEqual(domFaqs.length, jsonLdFaqs.length, `FAQ count mismatch between DOM and JSON-LD on [${lang}]`);
+      assert.deepStrictEqual(domFaqs, jsonLdFaqs, `DOM FAQs do not match JSON-LD FAQs on [${lang}]`);
+    }
+  });
+});
+
+// Test F: Korean visible heading/content must not fall back to the English master title
+test('Test F — Korean visible heading/content must not fall back to the English master title', () => {
+  const koDist = path.join(WORKSPACE, `dist/ko/${indianSlug}/index.html`);
+  assert.ok(fs.existsSync(koDist), 'dist/ko/bmi-calculator-for-indians/index.html must exist');
+  const html = fs.readFileSync(koDist, 'utf-8');
+
+  // Verify visible H1
+  const h1Match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+  assert.ok(h1Match, 'H1 tag must exist');
+  const h1Text = h1Match[1].replace(/<[^>]+>/g, '').trim();
+  assert.strictEqual(h1Text.includes('BMI Calculator for Indians'), false, 'H1 cannot contain English master name');
+  assert.strictEqual(h1Text, '인도인을 위한 BMI 계산기', 'H1 must be natural Korean');
+
+  // Verify visible H2
+  const h2Matches = [...html.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].map(m => m[1].replace(/<[^>]+>/g, '').trim());
+  h2Matches.forEach(h2 => {
+    assert.strictEqual(h2.includes('Healthy Height Weight Chart for Indian Adults'), false, 'H2 cannot contain English master title');
+  });
+
+  // Verify page title
+  const titleMatch = html.match(/<title>([^<]+)<\/title>/);
+  assert.ok(titleMatch, 'Title tag must exist');
+  assert.strictEqual(titleMatch[1].includes('Healthy Height Weight Chart for Indian Adults'), false, 'Title cannot contain English master title');
+  assert.strictEqual(titleMatch[1], '인도인을 위한 BMI 계산기 – ICMR 및 WHO 인도 표준 건강 체중표 – 참조 계산기', 'Title must be Korean');
+});
+
 console.log('====================================================');
 console.log(`   TEST SUMMARY: ${passedTests} / ${totalTests} PASSED   `);
 console.log('====================================================');

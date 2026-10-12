@@ -253,8 +253,8 @@ export const calculators: CalculatorConfig[] = [
       es: 'Visualizador Corporal 3D',
       fr: 'Visualiseur Corporel 3D',
       de: '3D Body Visualizer',
-      ko: '3D 바디 비주얼라이저 (3D Body Visualizer)',
-      hi: '3D बॉडी विजुअलाइज़र (3D Body Visualizer)'
+      ko: '3D 바디 비주얼라이저',
+      hi: '3D बॉडी विजुअलाइज़र'
     },
     title: {
       en: '3D Body Visualizer & 3D BMI Calculator Online – BMI Visualizer Tool',
@@ -661,8 +661,8 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'diabetes-risk-calculator',
-    name: { en: 'Asian BMI Cutoff Calculator', es: 'Calculadora de Umbral IMC Asiático', fr: 'Calculateur d\'IMC Asiatique', de: 'Asian BMI Cutoff Rechner', ko: '아시아인 BMI Cutoff 계산기', hi: 'एशियाई बीएमआई कटऑफ कैलकुलेटर' },
-    title: { en: 'Asian BMI Cutoff Calculator – BMI 23 & 27.5 Reference', es: 'Calculadora de Umbral IMC Asiático (23 y 27.5)', fr: 'Calculateur d\'IMC Asiatique – Références 23 & 27.5', de: 'Asian BMI Cutoff Rechner – Referenzen 23 & 27.5', ko: 'Asian BMI Cutoff Calculator – 23 및 27.5 참조', hi: 'एशियाई बीएमआई कटऑफ कैलकुलेटर - 23 एवं 27.5 संदर्भ' },
+    name: { en: 'Asian BMI Cutoff Calculator', es: 'Calculadora de Umbral IMC Asiático', fr: 'Calculateur d\'IMC Asiatique', de: 'Asiatischer BMI-Schwellenwert-Rechner', ko: '아시아인 BMI 기준치 계산기', hi: 'एशियाई बीएमआई कटऑफ कैलकुलेटर' },
+    title: { en: 'Asian BMI Cutoff Calculator – BMI 23 & 27.5 Reference', es: 'Calculadora de Umbral IMC Asiático (23 y 27.5)', fr: 'Calculateur d\'IMC Asiatique – Références 23 & 27.5', de: 'Asiatischer BMI-Schwellenwert-Rechner – Referenzen 23 & 27.5', ko: '아시아인 BMI 기준치 계산기 – 23 및 27.5 참조', hi: 'एशियाई बीएमआई कटऑफ कैलकुलेटर - 23 एवं 27.5 संदर्भ' },
     description: {
       "en": "Free Type 2 Diabetes Risk Calculator based on BMI, waist circumference, age, and WHO Asian risk thresholds (BMI ≥ 23.0 kg/m²). Assess metabolic risk factors with privacy-focused, browser calculations.",
       "es": "Calculadora gratuita de riesgo de diabetes tipo 2 basada en IMC, circunferencia de cintura, edad y umbrales de riesgo asiático de la OMS (IMC ≥ 23.0 kg/m²). Evalúa los factores de riesgo metabólico con cálculos privados en el navegador.",
@@ -1374,15 +1374,15 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'heart-rate-zone-calculator',
-    name: { en: 'Karvonen Heart Rate Zone Calculator', es: 'Calculadora de Zonas Cardíacas Karvonen', fr: 'Calculateur de Zone Cardiaque Karvonen', de: 'Karvonen Herzfrequenzzonen Rechner', ko: 'Karvonen 심박수 zone 계산기', hi: 'कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर' },
-    title: { en: 'Karvonen Heart Rate Zone Calculator – Target Heart Rate (HRR)', es: 'Calculadora de Zonas de Frecuencia Cardíaca Fórmula Karvonen', fr: 'Calculateur de Zone de Fréquence Cardiaque Formule Karvonen', de: 'Karvonen-Formel Herzfrequenzzonen Rechner – Zielpuls', ko: 'Karvonen 공식 타겟 심박수 zone 계산기 (Karvonen HR Zone)', hi: 'कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर - टारगेट हार्ट रेट' },
+    name: { en: 'Karvonen Heart Rate Zone Calculator', es: 'Calculadora de Zonas Cardíacas Karvonen', fr: 'Calculateur de Zone Cardiaque Karvonen', de: 'Karvonen Herzfrequenzzonen Rechner', ko: '카르보넨 심박수 구간 계산기', hi: 'कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर' },
+    title: { en: 'Karvonen Heart Rate Zone Calculator – Target Heart Rate (HRR)', es: 'Calculadora de Zonas de Frecuencia Cardíaca Fórmula Karvonen', fr: 'Calculateur de Zone de Fréquence Cardiaque Formule Karvonen', de: 'Karvonen-Formel Herzfrequenzzonen Rechner – Zielpuls', ko: '카르보넨 공식 타겟 심박수 구간 계산기 (HRR)', hi: 'कार्वोनेन हार्ट रेट ज़ोन कैलकुलेटर - टारगेट हार्ट रेट' },
     description: {
       "en": "Free Heart Rate Zone Calculator. Calculate target training heart rate zones (Fat Burn, Aerobic, Anaerobic, Peak) based on age, resting heart rate, and maximum heart rate with privacy-focused, browser calculations.",
       "es": "Calculadora de zonas de frecuencia cardíaca gratuita. Calcula tus zonas objetivo de entrenamiento (Quema de grasa, Aeróbica, Anaeróbica, Pico) según edad, frecuencia en reposo y frecuencia máxima con cálculos privados en el navegador.",
       "fr": "Calculateur de zones de fréquence cardiaque gratuit. Calculez vos zones cibles d'entraînement (Brûle-graisse, Aérobie, Anaérobie, Maximale) selon l'âge, le pouls au repos et la fréquence maximale avec calculs sur navigateur.",
       "de": "Kostenloser Herzfrequenzzonen-Rechner. Berechnen Sie Ihre Ziel-Trainingszonen (Fettverbrennung, Aerob, Anaerob, Maximal) basierend auf Alter, Ruhepuls und maximaler Herzfrequenz datenschutzorientiert im Browser.",
-      "ko": "무료 심박수 구간 계산기. 나이, 안정시 심박수 및 최대 심박수를 바탕으로 목표 운동 심박수 구간(지방 burning, 유산소, 무산소, 최대 구간)을 정확하게 산출하세요. 가입 없이 브라우저 내 100% 무료 구동.",
-      "hi": "मुफ़्त हृदय गति क्षेत्र कैलकुलेटर। उम्र, विश्राम हृदय गति और अधिकतम हृदय गति के आधार पर लक्षित प्रशिक्षण हृदय गति क्षेत्रों (फैट बर्न, एरोबिक, एनारobic, पीक) की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
+      "ko": "무료 심박수 구간 계산기. 나이, 안정시 심박수 및 최대 심박수를 바탕으로 목표 운동 심박수 구간(지방 연소, 유산소, 무산소, 최대 심박 구간)을 정확하게 산출하세요. 가입 없이 브라우저 내 100% 무료 구동.",
+      "hi": "मुफ़्त हृदय गति क्षेत्र कैलकुलेटर। उम्र, विश्राम हृदय गति और अधिकतम हृदय गति के आधार पर लक्षित प्रशिक्षण हृदय गति क्षेत्रों (फैट बर्न, एरोबिक, एनारोबिक, पीक) की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
       { id: 'age', label: L.age, type: 'number', placeholder: '25' },
