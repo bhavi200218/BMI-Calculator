@@ -15,12 +15,12 @@ const { params } = Astro;
 const lang = (params.lang || 'en') as Locale;
 
 const headers = {
-  en: { title: "BMI & Health Articles (2026 Guide)", desc: "Explore evidence-based guides on Body Mass Index (BMI), BMR, TDEE, protein intake, and WHO South Asian health thresholds." },
-  es: { title: "Artículos sobre IMC y Salud (Guía 2026)", desc: "Explora guías basadas en evidencia sobre el Índice de Masa Corporal (IMC), BMR, TDEE y estándares de salud de la OMS." },
-  fr: { title: "Articles sur l'IMC et la Santé (Guide 2026)", desc: "Explorez des guides fondés sur des preuves sur l'Indice de Masse Corporelle (IMC), le BMR, le TDEE et les normes OMS." },
-  de: { title: "BMI & Gesundheitsartikel (Leitfaden 2026)", desc: "Entdecken Sie evidenzbasierte Leitfäden zu Body-Mass-Index (BMI), BMR, TDEE und WHO-Gesundheitsstandards." },
-  ko: { title: "BMI 및 건강 아티클 (2026 가이드)", desc: "체질량지수(BMI), BMR, TDEE 및 WHO 건강 표준에 대한 증거 기반 가이드를 살펴보세요." },
-  hi: { title: "बीएमआई और स्वास्थ्य लेख (2026 गाइड)", desc: "बॉडी मास इंडेक्स (BMI), BMR, TDEE, प्रोटीन सेवन और WHO स्वास्थ्य मानकों पर आधारित लेख देखें।" }
+  en: { title: "BMI & Health Articles (2026 Guide)", desc: "Explore evidence-based health guides on Body Mass Index (BMI), BMR, TDEE, protein intake, and official WHO & CDC healthy reference standards and charts." },
+  es: { title: "Artículos sobre IMC y Salud (Guía 2026)", desc: "Explora guías de salud basadas en evidencia sobre el Índice de Masa Corporal (IMC), BMR, TDEE, requerimiento de proteínas y estándares de salud de la OMS y CDC." },
+  fr: { title: "Articles sur l'IMC et la Santé (Guide 2026)", desc: "Explorez nos guides de santé fondés sur des preuves concernant l'IMC, le BMR, le TDEE, l'apport protéique et les normes de référence de l'OMS et du CDC." },
+  de: { title: "BMI & Gesundheitsartikel (Leitfaden 2026)", desc: "Entdecken Sie evidenzbasierte Gesundheitsleitfäden zu Body-Mass-Index (BMI), BMR, TDEE, Proteinbedarf sowie offiziellen WHO- und CDC-Referenztabellen." },
+  ko: { title: "BMI 및 건강 아티클 (2026 가이드)", desc: "세계보건기구(WHO) 및 질병관리청(CDC) 표준 지침에 따른 체질량지수(BMI), 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 단백질 섭취량 및 건강 체중 관리 종합 아티클 가이드를 확인하세요. 개인정보 수집 없는 안전한 브라우저 연산 제공." },
+  hi: { title: "बीएमआई और स्वास्थ्य लेख (2026 गाइड)", desc: "विश्व स्वास्थ्य संगठन (WHO) व सीडीसी मानकों पर आधारित बॉडी मास इंडेक्स (BMI), BMR, TDEE, प्रोटीन सेवन और स्वस्थ वजन श्रेणियों पर प्रमाणित लेख पढ़ें।" }
 };
 
 const homeLabels = {

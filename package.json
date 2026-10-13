@@ -11,6 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "node tests/parity.test.mjs",
+    "indexnow": "node scripts/submit-indexnow.mjs",
     "deploy": "npm run build && npx wrangler pages deploy dist --project-name real-bmi-calculator"
   },
   "dependencies": {

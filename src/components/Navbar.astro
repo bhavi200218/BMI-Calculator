@@ -67,7 +67,16 @@ const currentLangDisplay = langNames[lang] || lang;
               const currentPath = Astro.url.pathname;
               const pathWithoutLang = currentPath.replace(/^\/(en|es|fr|de|ko|hi)(\/|$)/, '/');
               const cleanPath = pathWithoutLang.startsWith('/') ? pathWithoutLang : `/${pathWithoutLang}`;
-              const targetPath = `/${code}${cleanPath}`.replace(/\/+/g, '/');
+              
+              let targetPath = `/${code}${cleanPath}`.replace(/\/+/g, '/');
+              if (cleanPath.startsWith('/404') || cleanPath.startsWith('/500')) {
+                targetPath = `/${code}/`;
+              } else if (cleanPath.startsWith('/search')) {
+                targetPath = '/search';
+              } else if (cleanPath.startsWith('/embed/')) {
+                targetPath = cleanPath;
+              }
+
               return (
                 <a href={targetPath}
                   class={`flex items-center gap-2 px-3 py-2.5 text-[11px] font-display font-semibold uppercase tracking-wider rounded-lg hover:bg-[var(--muted)] transition-colors text-[var(--foreground)] cursor-pointer ${code === lang ? 'bg-[var(--muted)]' : ''}`}
