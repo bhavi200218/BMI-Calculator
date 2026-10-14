@@ -12,6 +12,14 @@ const { calculator, lang } = Astro.props;
 const t = getCalculatorTranslations(lang);
 
 // Setup localized labels
+const inputEyebrow = {
+  en: 'Input Parameters',
+  es: 'Parámetros de Entrada',
+  fr: 'Paramètres d\'Entrée',
+  de: 'Eingabeparameter',
+  ko: '입력 매개변수',
+  hi: 'इनपुट पैरामीटर'
+}[lang] || 'Input Parameters';
 const metricLabel = { en: 'Metric', es: 'Métrico', fr: 'Métrique', de: 'Metrisch', ko: '미터법', hi: 'मीट्रिक' }[lang];
 const imperialLabel = { en: 'Imperial', es: 'Imperial', fr: 'Impérial', de: 'Imperial', ko: '야드파운드법', hi: 'इंपीरियल' }[lang];
 const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence', de: 'Referenz', ko: '기준', hi: 'संदर्भ' }[lang];
@@ -21,7 +29,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
   
   <!-- Header -->
   <div class="space-y-2">
-    <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{calculator.name[lang] || calculator.name['en']}</p>
+    <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{inputEyebrow}</p>
     <div class="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
       <h2 class="text-xl sm:text-2xl md:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] break-words">
         {calculator.name[lang] || calculator.name['en']}
@@ -842,25 +850,6 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
 
         if (calculated) {
           window.dispatchEvent(new CustomEvent('calculationCompleted', { detail: calculated }));
-          
-          if (slug === 'bmi-calculator') {
-            const findVal = (term, fallback) => {
-              if (!Array.isArray(calculated.secondary)) return fallback;
-              const item = calculated.secondary.find(s => {
-                const str = typeof s.label === 'string' ? s.label : (s.label?.en || Object.values(s.label || {})[0] || '');
-                return String(str).toLowerCase().includes(term.toLowerCase());
-              });
-              return item ? item.value : fallback;
-            };
-
-            window.dispatchEvent(new CustomEvent('bmiCalculated', { detail: {
-              bmi: calculated.primary.value,
-              bmr: findVal('bmr', 1650),
-              tdee: findVal('tdee', 1980),
-              idealWeight: ideal.toFixed(1),
-              bodyFat: findVal('fat', 18)
-            }}));
-          }
 
           // Scroll to result on mobile
           if (window.innerWidth < 1024) {

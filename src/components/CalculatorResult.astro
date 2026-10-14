@@ -125,40 +125,6 @@ const resultEyebrow = {
     renderCalcOutput();
   });
 
-  window.addEventListener('bmiCalculated', (e) => {
-    if (e.detail) {
-      const { bmi, bmr, tdee, idealWeight, bodyFat } = e.detail;
-      const lang = (document.documentElement.lang || 'en').slice(0, 2);
-      const isImperial = (localStorage.getItem('bmiUnit') || 'metric') === 'imperial';
-      const displayIdeal = isImperial ? (parseFloat(idealWeight) * 2.20462).toFixed(1) : idealWeight;
-      const idealUnit = isImperial ? 'lbs' : 'kg';
-      
-      const catLabels = {
-        en: { underweight: 'Underweight', healthy: 'Healthy Weight', overweight: 'Overweight', obese: 'Obese' },
-        es: { underweight: 'Bajo Peso', healthy: 'Peso Saludable', overweight: 'Sobrepeso', obese: 'Obesidad' },
-        fr: { underweight: 'Sous-poids', healthy: 'Poids Normal', overweight: 'Surpoids', obese: 'Obésité' },
-        de: { underweight: 'Untergewicht', healthy: 'Normalgewicht', overweight: 'Übergewicht', obese: 'Adipositas' },
-        ko: { underweight: '저체중', healthy: '정상 체중', overweight: '과체중', obese: '비만' },
-        hi: { underweight: 'कम वजन', healthy: 'स्वस्थ वजन', overweight: 'अधिक वजन', obese: 'मोटापा' }
-      }[lang] || { underweight: 'Underweight', healthy: 'Healthy Weight', overweight: 'Overweight', obese: 'Obese' };
-
-      const bmiNum = parseFloat(bmi);
-      let catStr = bmiNum < 18.5 ? catLabels.underweight : bmiNum < 25 ? catLabels.healthy : bmiNum < 30 ? catLabels.overweight : catLabels.obese;
-
-      lastCalcResult = {
-        primary: { value: bmi, label: { en: 'BMI Score', es: 'Puntaje de IMC', fr: 'Score d\'IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' } },
-        secondary: [
-          { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: catStr },
-          { label: { en: 'Resting Metabolism (BMR)', es: 'Metabolismo Basal', fr: 'Métabolisme de Base', de: 'Grundumsatz BMR', ko: '기초대사량', hi: 'बेसल मेटाबॉलिज्म' }, value: bmr, unit: 'kcal' },
-          { label: { en: 'Daily Energy (TDEE)', es: 'Energía Diaria', fr: 'Énergie Quotidienne', de: 'Tagesbedarf TDEE', ko: '일일 목표', hi: 'दैनिक ऊर्जा' }, value: tdee, unit: 'kcal' },
-          { label: { en: 'Est. Body Fat', es: 'Grasa Estimada', fr: 'Graisse Corp. Est.', de: 'Körperfett', ko: '체지방률', hi: 'अनुमानित वसा' }, value: bodyFat, unit: '%' },
-          { label: { en: 'Ideal Weight', es: 'Peso Ideal', fr: 'Poids Idéal', de: 'Idealgewicht', ko: '이상적인 체중', hi: 'आदर्श वजन' }, value: displayIdeal, unit: idealUnit }
-        ]
-      };
-      renderCalcOutput();
-    }
-  });
-
   function renderCalcOutput() {
     if (!lastCalcResult) {
       resetResultState();
