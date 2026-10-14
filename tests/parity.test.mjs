@@ -71,7 +71,6 @@ LOCALES.forEach(lang => {
     assert.ok(hpCode.includes('EmbedWidgetBox'), `EmbedWidgetBox missing in ${lang} homepage`);
     assert.ok(hpCode.includes('LatestArticles'), `LatestArticles missing in ${lang} homepage`);
     assert.ok(hpCode.includes('HealthContent'), `HealthContent missing in ${lang} homepage`);
-    assert.ok(hpCode.includes('DeepHealthSEO'), `DeepHealthSEO missing in ${lang} homepage`);
     assert.ok(hpCode.includes('MedicalEEATBanner'), `MedicalEEATBanner missing in ${lang} homepage`);
   });
 });

@@ -44,6 +44,22 @@ test('UI & Reference Table Repetition Regression Tests', async (t) => {
     assert.strictEqual(deepHealthContent.includes('Evidence-Based Lifestyle & Preventive Strategies'), true, 'Evidence-based lifestyle chapter added');
   });
 
+  await t.test('ToolSEOContent: Does not duplicate introductory paragraph (currentData.intro removed from post-calculator block)', () => {
+    assert.strictEqual(toolSeoContent.includes('{currentData.intro}'), false, 'ToolSEOContent must not re-render duplicate introductory paragraph');
+  });
+
+  await t.test('CalculatorResult: Initial state has no hardcoded -- in primaryDisplay or primaryNameLabel and has aria-hidden/role attributes', () => {
+    assert.strictEqual(calcResultContent.includes('>--<'), false, 'CalculatorResult must not contain hardcoded -- placeholder text');
+    assert.strictEqual(calcResultContent.includes('role="status" aria-live="polite"'), true, 'initialState must be an accessible live region');
+    assert.strictEqual(calcResultContent.includes('id="resultContent" class="hidden flex-1 flex flex-col" aria-hidden="true"'), true, 'resultContent must be aria-hidden in initial state');
+  });
+
+  await t.test('Homepage Index: No duplicate DeepHealthSEO alongside HealthContent on index pages', () => {
+    const enIndexPath = path.resolve('src/pages/en/index.astro');
+    const enIndexContent = fs.readFileSync(enIndexPath, 'utf8');
+    assert.strictEqual(enIndexContent.includes('<DeepHealthSEO'), false, 'en/index.astro must not duplicate generic health guide alongside HealthContent');
+  });
+
   const calcPagePath = path.resolve('src/pages/[lang]/[calculator].astro');
   const calcPageContent = fs.readFileSync(calcPagePath, 'utf8');
 
