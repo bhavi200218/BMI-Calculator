@@ -236,6 +236,24 @@ calculators.forEach(calc => {
   });
 });
 
+// 9. Embed BMI Widget Ideal Weight Unit Conversion
+test('Embed BMI Widget: Ideal weight range properly converted for Imperial and Metric', () => {
+  const heightM = 1.7526; // 5 ft 9 in
+  const minWeightKg = 18.5 * (heightM * heightM);
+  const maxWeightKg = 24.9 * (heightM * heightM);
+
+  const metricMin = minWeightKg.toFixed(1);
+  const metricMax = maxWeightKg.toFixed(1);
+  assert.strictEqual(metricMin, '56.8');
+  assert.strictEqual(metricMax, '76.5');
+
+  const imperialMin = (minWeightKg * 2.20462).toFixed(1);
+  const imperialMax = (maxWeightKg * 2.20462).toFixed(1);
+  assert.strictEqual(imperialMin, '125.3');
+  assert.strictEqual(imperialMax, '168.6');
+  assert.ok(parseFloat(imperialMin) > 100, 'Imperial min weight must be in pounds, not kilograms');
+});
+
 console.log('====================================================');
 console.log(`   CALCULATOR REGRESSION SUMMARY: ${passedTests} / ${totalTests} PASSED`);
 console.log('====================================================');

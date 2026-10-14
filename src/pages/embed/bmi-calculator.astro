@@ -176,9 +176,15 @@ import Layout from '../../layouts/Layout.astro';
       bmiCat.textContent = category;
       bmiCat.className = `font-bold ${colorClass}`;
 
-      const minWeight = (18.5 * (heightM * heightM)).toFixed(1);
-      const maxWeight = (24.9 * (heightM * heightM)).toFixed(1);
-      bmiIdeal.textContent = `${minWeight} - ${maxWeight} ${unit === 'metric' ? 'kg' : 'lbs (approx)'}`;
+      const minWeightKg = 18.5 * (heightM * heightM);
+      const maxWeightKg = 24.9 * (heightM * heightM);
+      if (unit === 'metric') {
+        bmiIdeal.textContent = `${minWeightKg.toFixed(1)} - ${maxWeightKg.toFixed(1)} kg`;
+      } else {
+        const minLbs = (minWeightKg * 2.20462).toFixed(1);
+        const maxLbs = (maxWeightKg * 2.20462).toFixed(1);
+        bmiIdeal.textContent = `${minLbs} - ${maxLbs} lbs`;
+      }
 
       resultBox.classList.remove('hidden');
     }
