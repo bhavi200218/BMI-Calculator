@@ -26,8 +26,13 @@ const fitnessSlugs = [
   'one-rep-max-calculator'
 ];
 
+const indianSlugs = [
+  'bmi-calculator-for-indians',
+  'bmi-calculator-india'
+];
+
 const category = slug 
-  ? (fitnessSlugs.includes(slug) ? 'fitness' : (metabolicSlugs.includes(slug) ? 'metabolic' : 'bmi'))
+  ? (indianSlugs.includes(slug) ? 'indian' : (fitnessSlugs.includes(slug) ? 'fitness' : (metabolicSlugs.includes(slug) ? 'metabolic' : 'bmi')))
   : 'bmi';
 
 const contentBmi: Record<string, any> = {
@@ -771,9 +776,243 @@ const contentFitness: Record<string, any> = {
   }
 };
 
-const activeContentMap = category === 'fitness' 
-  ? contentFitness 
-  : (category === 'metabolic' ? contentMetabolic : contentBmi);
+
+const contentIndian: Record<string, any> = {
+  en: {
+    eyebrow: "South Asian Clinical Reference Guide",
+    title: "Indian & South Asian Body Mass Index (BMI) Consensus Guidance",
+    sections: [
+      {
+        title: "Why Indian BMI Cutoffs Differ from WHO International Baselines",
+        text: "Clinical research shows that Asian Indian and South Asian populations exhibit a distinct 'thin-fat' phenotype: higher body fat percentage, increased visceral (abdominal) adiposity, and pronounced insulin resistance at lower Body Mass Index levels compared to European reference groups. Consequently, cardiometabolic risk escalates at lower BMI values."
+      },
+      {
+        title: "ICMR & WHO South Asian Cutoffs vs. Conventional WHO Adult Categories",
+        text: "The Indian Council of Medical Research (ICMR) and the WHO Expert Consultation (Lancet 2004) establish lower thresholds for South Asian adults:<br/>• <strong>Underweight:</strong> &lt; 18.5 kg/m²<br/>• <strong>Healthy Normal:</strong> 18.5 – 22.9 kg/m² (vs. 18.5–24.9 standard WHO)<br/>• <strong>Overweight (Increased Risk):</strong> 23.0 – 24.9 kg/m² (vs. 25.0–29.9 standard WHO)<br/>• <strong>Obese (High Risk):</strong> &ge; 25.0 kg/m² (ICMR consensus; vs. &ge; 30.0 standard WHO). These thresholds are calibrated for ethnic cardiometabolic risk and are not interchangeable with general international criteria."
+      },
+      {
+        title: "BMI is a Population Screening Metric, Not an Independent Diagnosis",
+        text: "Body Mass Index is a mathematical ratio of weight to height squared (kg/m²). It is an initial screening parameter and cannot measure direct body composition, bone mineral density, or visceral fat distribution. An elevated BMI does not independently diagnose diabetes, hypertension, or cardiovascular disease without clinical examination, blood pressure measurement, and laboratory tests (fasting plasma glucose, HbA1c, lipid profile)."
+      },
+      {
+        title: "ICMR Waist Circumference Guidelines & Abdominal Adiposity",
+        text: "Visceral fat concentrated in the intra-abdominal cavity carries greater cardiometabolic hazard than peripheral subcutaneous fat. ICMR guidelines recommend action cutoffs for waist circumference of <strong>&ge; 90 cm (35.4 in) for men</strong> and <strong>&ge; 80 cm (31.5 in) for women</strong> as indicators of elevated central obesity, regardless of whether BMI appears normal."
+      },
+      {
+        title: "Age Limitations: Adult Reference Standards vs. Pediatric Growth",
+        text: "These ICMR adult BMI cutoffs apply strictly to adults aged 18 years and older. They must not be applied to infants, children, or adolescents under 18 years. Pediatric body mass assessment requires age-and-sex-specific growth percentile charts formulated by the Indian Academy of Pediatrics (IAP) or WHO child growth standards."
+      },
+      {
+        title: "Considerations for Older Adults & Sarcopenic Obesity",
+        text: "In adults aged 65 and above, age-related skeletal muscle loss (sarcopenia) can cause BMI to underestimate adiposity. Conversely, slightly higher BMI reserves within healthy margins may offer protective benefits against frailty and bone fractures in geriatric populations."
+      },
+      {
+        title: "Evidence-Based Lifestyle, Nutrition & Preventive Strategies",
+        text: "Cardiometabolic prevention in South Asian adults emphasizes balanced traditional whole foods: high-fiber legumes (dal, lentils), whole grains (millets, brown rice), seasonal vegetables, and lean protein, combined with reduced consumption of refined carbohydrates, trans fats, and deep-fried snacks. Public health guidelines recommend at least 150 minutes of moderate aerobic exercise plus two resistance sessions weekly."
+      },
+      {
+        title: "Educational Purpose & Clinical Consultation Notice",
+        text: "This calculator provides population-reference educational estimates derived from published peer-reviewed medical consensus (Misra et al., JAPI 2009; WHO Lancet 2004). It does not constitute medical advice or diagnosis. Individuals seeking health evaluations should consult a registered medical practitioner, endocrinologist, or qualified dietitian."
+      }
+    ]
+  },
+  es: {
+    eyebrow: "Guía de Referencia Clínica para el Sur de Asia",
+    title: "Directrices de Consenso de IMC para Adultos Indios y del Sur de Asia",
+    sections: [
+      {
+        title: "Por qué los puntos de corte indios difieren del estándar internacional de la OMS",
+        text: "La investigación clínica demuestra que las poblaciones de origen indio y del sur de Asia presentan el fenotipo 'delgado-graso': mayor porcentaje de grasa corporal y mayor adiposidad visceral con índices de masa corporal más bajos que las poblaciones europeas, incrementando el riesgo cardiometabólico precoz."
+      },
+      {
+        title: "Criterios ICMR y OMS para el Sur de Asia vs. Criterios Convencionales",
+        text: "El Consejo Indio de Investigación Médica (ICMR) y la Consulta de Expertos de la OMS (Lancet 2004) establecen puntos de corte específicos:<br/>• <strong>Bajo peso:</strong> &lt; 18.5 kg/m²<br/>• <strong>Peso saludable:</strong> 18.5 – 22.9 kg/m² (frente a 18.5–24.9 estándar)<br/>• <strong>Sobrepeso (riesgo aumentado):</strong> 23.0 – 24.9 kg/m² (frente a 25.0–29.9 estándar)<br/>• <strong>Obesidad (alto riesgo):</strong> &ge; 25.0 kg/m² (frente a &ge; 30.0 estándar). Ambos sistemas responden a perfiles de riesgo distintos y no son intercambiables."
+      },
+      {
+        title: "El IMC es una prueba de detección, no un diagnóstico clínico independiente",
+        text: "El IMC relaciona peso y altura pero no mide directamente la composición corporal ni la grasa visceral. Un IMC elevado no diagnostica de forma aislada diabetes o hipertensión sin evaluación médica, control de presión arterial y análisis de glucosa y perfil lipídico."
+      },
+      {
+        title: "Circunferencia de cintura y adiposidad visceral según el ICMR",
+        text: "La grasa intraabdominal conlleva mayor riesgo cardiovascular. El ICMR recomienda umbrales de circunferencia de cintura de <strong>&ge; 90 cm en hombres</strong> y <strong>&ge; 80 cm en mujeres</strong> como señal de obesidad central, incluso con un IMC dentro de rangos normales."
+      },
+      {
+        title: "Limitaciones de edad: Adultos frente a desarrollo pediátrico",
+        text: "Estos criterios aplican exclusivamente a personas de 18 años o más. En niños y adolescentes menores de 18 años deben emplearse curvas de percentiles específicas por edad y sexo de la Academia India de Pediatría (IAP) o de la OMS."
+      },
+      {
+        title: "Adultos mayores y obesidad sarcopénica",
+        text: "En personas de 65 años o más, la pérdida de masa muscular relacionada con la edad puede enmascarar un exceso de grasa con un IMC bajo. Mantener una masa muscular funcional es fundamental frente a la fragilidad."
+      },
+      {
+        title: "Pautas de nutrición, ejercicio y prevención cardiometabólica",
+        text: "Se recomienda priorizar legumbres, cereales integrales, verduras y proteínas magras, reduciendo harinas refinadas y frituras. Se aconseja un mínimo de 150 minutos semanales de actividad aeróbica moderada combinada con fuerza."
+      },
+      {
+        title: "Finalidad informativa y aviso médico",
+        text: "Esta calculadora ofrece referencias educativas basadas en consensos médicos publicados (Misra et al., JAPI 2009; OMS Lancet 2004). No sustituye la consulta médica profesional ni constituye un diagnóstico individual."
+      }
+    ]
+  },
+  fr: {
+    eyebrow: "Guide de Référence Clinique Asie du Sud",
+    title: "Directives de Consensus sur l'IMC pour les Indiens et l'Asie du Sud",
+    sections: [
+      {
+        title: "Pourquoi les seuils d'IMC indiens diffèrent des normes internationales de l'OMS",
+        text: "Les études cliniques démontrent que les populations indiennes et sud-asiatiques présentent un phénotype 'mince-gras' distinct : une proportion plus élevée de graisse corporelle et d'adiposité viscérale à des indices d'IMC plus bas que les populations d'origine européenne, entraînant un risque métabolique plus précoce."
+      },
+      {
+        title: "Seuils ICMR & OMS Asie du Sud vs. Seuils Adultes Classiques",
+        text: "L'ICMR et le groupe d'experts de l'OMS (Lancet 2004) recommandent des seuils d'intervention adaptés :<br/>• <strong>Sous-poids :</strong> &lt; 18,5 kg/m²<br/>• <strong>Poids normal santé :</strong> 18,5 – 22,9 kg/m² (vs 18,5–24,9 standard OMS)<br/>• <strong>Surpoids (risque accru) :</strong> 23,0 – 24,9 kg/m² (vs 25,0–29,9 standard OMS)<br/>• <strong>Obésité (risque élevé) :</strong> &ge; 25,0 kg/m² (vs &ge; 30,0 standard OMS). Ces normes sont adaptées au profil de risque ethnique et ne sont pas interchangeables."
+      },
+      {
+        title: "L'IMC est un outil de dépistage, pas un diagnostic médical autonome",
+        text: "L'IMC est un ratio poids/taille². Il ne mesure ni la masse musculaire ni la répartition des graisses. Un IMC élevé n'établit pas à lui seul un diagnostic de diabète ou de pathologie cardiovasculaire sans bilan biologique (glycémie, HbA1c, bilan lipidique) et examen clinique."
+      },
+      {
+        title: "Tour de taille et adiposité abdominale selon les normes ICMR",
+        text: "La graisse viscérale intra-abdominale présente un risque cardiométabolique majeur. L'ICMR fixe les seuils d'alerte pour le tour de taille à <strong>&ge; 90 cm pour les hommes</strong> et <strong>&ge; 80 cm pour les femmes</strong> pour détecter l'obésité centrale."
+      },
+      {
+        title: "Limites d'âge : Adultes vs. Croissance Pédiatrique",
+        text: "Ces seuils s'appliquent exclusivement aux adultes de 18 ans et plus. Pour les enfants et adolescents de moins de 18 ans, il convient d'utiliser les courbes de percentiles de croissance de l'Académie Indienne de Pédiatrie (IAP) ou de l'OMS."
+      },
+      {
+        title: "Personnes âgées et risque de sarcopénie",
+        text: "Après 65 ans, la diminution de la masse musculaire squelettique peut fausser l'interprétation de l'IMC. La préservation de la force musculaire et de la densité osseuse prévaut sur une restriction pondérale stricte."
+      },
+      {
+        title: "Alimentation équilibrée, activité physique et prévention",
+        text: "La prévention repose sur des aliments traditionnels complets : légumineuses (dals), céréales complètes, légumes frais et réduction des glucides raffinés et fritures. Pratiquez au moins 150 minutes d'activité aérobie et de renforcement hebdomadaire."
+      },
+      {
+        title: "Portée éducative et avis médical",
+        text: "Cet outil propose des estimations de référence basées sur le consensus médical (Misra et al., JAPI 2009 ; OMS Lancet 2004). Il ne remplace pas une consultation médicale auprès d'un praticien qualifié."
+      }
+    ]
+  },
+  de: {
+    eyebrow: "Klinischer Leitfaden für Südasiatische Populationen",
+    title: "Konsensus-Richtlinien zum Body-Mass-Index für indische Erwachsene",
+    sections: [
+      {
+        title: "Warum indische BMI-Grenzwerte von den internationalen WHO-Standards abweichen",
+        text: "Klinische Studien zeigen bei südasiatischen Populationen einen charakteristischen 'Thin-Fat'-Phänotyp: einen höheren Körperfett- und viszeralen Fettanteil bereits bei niedrigeren BMI-Werten im Vergleich zu europäischen Kohorten, was zu früherem kardiometabolischem Risiko führt."
+      },
+      {
+        title: "ICMR- & WHO-Grenzwerte für Südasiaten im Vergleich zu Standardkriterien",
+        text: "Der Indische Rat für medizinische Forschung (ICMR) und die WHO-Expertenkonsultation (Lancet 2004) definieren angepasste Grenzwerte:<br/>• <strong>Untergewicht:</strong> &lt; 18,5 kg/m²<br/>• <strong>Normalgewicht:</strong> 18,5 – 22,9 kg/m² (statt 18,5–24,9 Standard)<br/>• <strong>Übergewicht (erhöhtes Risiko):</strong> 23,0 – 24,9 kg/m² (statt 25,0–29,9 Standard)<br/>• <strong>Adipositas (hohes Risiko):</strong> &ge; 25,0 kg/m² (statt &ge; 30,0 Standard). Beide Systeme spiegeln unterschiedliche Risikoprofile wider und sind nicht austauschbar."
+      },
+      {
+        title: "Der BMI ist ein Screening-Werkzeug, keine eigenständige Diagnose",
+        text: "Der BMI berechnet lediglich das Verhältnis von Körpergewicht zur quadrierten Körpergröße. Er unterscheidet nicht zwischen Muskel- und Fettmasse. Ein erhöhter Wert ersetzt keine ärztliche Untersuchung mit Blutzucker-, HbA1c- und Lipidprofil-Diagnostik."
+      },
+      {
+        title: "ICMR-Taillenumfang-Richtlinien und viszerales Bauchfett",
+        text: "Viszerales Bauchfett birgt erhebliche Risiken für Herz und Gefäße. Die ICMR-Richtlinien empfehlen Interventionsgrenzen beim Taillenumfang von <strong>&ge; 90 cm für Männer</strong> und <strong>&ge; 80 cm für Frauen</strong> zur Erfassung zentraler Adipositas."
+      },
+      {
+        title: "Altersgrenzen: Erwachsene ab 18 Jahren vs. pädiatrische Perzentilen",
+        text: "Diese Grenzwerte gelten ausschließlich für Erwachsene ab 18 Jahren. Für Kinder und Jugendliche unter 18 Jahren müssen alters- und geschlechtsspezifische Perzentilenkurven der Indian Academy of Pediatrics (IAP) oder der WHO verwendet werden."
+      },
+      {
+        title: "Besonderheiten im höheren Lebensalter und Sarkopenie",
+        text: "Ab dem 65. Lebensjahr kann altersbedingter Muskelabbau (Sarkopenie) dazu führen, dass der BMI den Fettanteil unterschätzt. Ein moderater Gewichtsspielraum schützt vor Gebrechlichkeit und Knochenbrüchen."
+      },
+      {
+        title: "Prävention durch Ernährung und körperliche Bewegung",
+        text: "Empfohlen werden ballaststoffreiche Hülsenfrüchte, Vollkorngetreide, frisches Gemüse und die Reduktion raffinierter Kohlenhydrate sowie frittierter Speisen, ergänzt durch mindestens 150 Minuten Bewegung wöchentlich."
+      },
+      {
+        title: "Haftungsausschluss und ärztliche Konsultation",
+        text: "Dieser Rechner dient der allgemeinen Orientierung anhand publizierter medizinischer Leitlinien (Misra et al., JAPI 2009; WHO Lancet 2004) und ersetzt keine individuelle ärztliche Beratung."
+      }
+    ]
+  },
+  ko: {
+    eyebrow: "남아시아인 임상 참조 건강 가이드",
+    title: "인도인 및 남아시아 성인 체질량지수(BMI) 표준 합의 지침",
+    sections: [
+      {
+        title: "인도인 전용 BMI 기준이 WHO 국제 기준과 다른 과학적 이유",
+        text: "임상 연구에 따르면 인도인 및 남아시아인은 동일한 체질량지수에서도 체지방률과 내장지방 축적률이 서구인보다 높은 '마른 비만(Thin-Fat)' 표현형을 보입니다. 이에 따라 더 낮은 BMI 구간에서도 심혈관 및 대사 질환 위험이 증가합니다."
+      },
+      {
+        title: "ICMR 및 WHO 남아시아 기준과 일반 WHO 성인 기준 비교",
+        text: "인도 의학연구위원회(ICMR)와 WHO 전문가 위원회(Lancet 2004)가 수립한 남아시아 성인 기준:<br/>• <strong>저체중:</strong> &lt; 18.5 kg/m²<br/>• <strong>정상 체중:</strong> 18.5 – 22.9 kg/m² (일반 WHO: 18.5–24.9)<br/>• <strong>과체중 (위험 증가):</strong> 23.0 – 24.9 kg/m² (일반 WHO: 25.0–29.9)<br/>• <strong>비만 (고위험군):</strong> &ge; 25.0 kg/m² (일반 WHO: &ge; 30.0). 두 기준은 인종별 위험도를 반영한 독립적 체계이며 혼용할 수 없습니다."
+      },
+      {
+        title: "BMI는 기초 선별 검사 지표이며 독립적 의학 진단이 아닙니다",
+        text: "체질량지수는 신장 대비 체중의 수학적 비율일 뿐 체성분, 근육량, 내장지방 분포를 직접 측정하지 못합니다. 높은 BMI가 즉각적인 당뇨병이나 고혈압 진단을 의미하지 않으며, 혈압 측정과 공복 혈당, HbA1c, 지질 검사가 필수적입니다."
+      },
+      {
+        title: "ICMR 허리둘레 기준 및 복부 내장지방 관리",
+        text: "복부 장기 주위의 내장지방은 피하지방보다 대사 질환 위험을 크게 높입니다. ICMR 지침은 중심성 비만 위험을 선별하기 위해 허리둘레 기준치를 <strong>남성 &ge; 90 cm</strong>, <strong>여성 &ge; 80 cm</strong>로 설정하고 있습니다."
+      },
+      {
+        title: "적용 연령 제한: 만 18세 이상 성인 전용 지침",
+        text: "본 성인 기준은 만 18세 이상의 성인에게만 적용됩니다. 만 18세 미만의 소아 및 청소년은 인도소아과학회(IAP) 또는 WHO 소아 성장 도표의 연령별·성별 백분위수를 사용하여 평가해야 합니다."
+      },
+      {
+        title: "고령층의 근감소증(Sarcopenia) 고려사항",
+        text: "65세 이상의 고령층에서는 노화로 인한 골격근 감소로 인해 BMI가 실제 체지방 위험을 과소평가할 수 있습니다. 노년기에는 극단적인 감량보다 적정 체중과 근육량 유지가 중요합니다."
+      },
+      {
+        title: "식습관 개선, 신체 활동 및 심대사 질환 예방",
+        text: "식이섬유가 풍부한 콩류(달), 통곡물, 채소 섭취를 늘리고 정제 탄수화물과 튀김류를 줄이는 전통 식단과 함께, 주당 150분 이상의 중강도 유산소 운동과 근력 운동이 권장됩니다."
+      },
+      {
+        title: "교육적 활용 목적 및 의학적 면책조항",
+        text: "본 도구는 공인된 의학적 합의 기준(Misra et al., JAPI 2009; WHO Lancet 2004)을 근거로 제공되는 교육용 선별 참고 자료이며, 의사의 전문적인 진료나 개별 진단을 대신할 수 없습니다."
+      }
+    ]
+  },
+  hi: {
+    eyebrow: "दक्षिण एशियाई नैदानिक संदर्भ गाइड",
+    title: "भारतीय एवं दक्षिण एशियाई बॉडी मास इंडेक्स (BMI) आम सहमति दिशानिर्देश",
+    sections: [
+      {
+        title: "भारतीय बीएमआई कटऑफ अंतरराष्ट्रीय डब्ल्यूएचओ मानकों से भिन्न क्यों हैं?",
+        text: "चिकित्सीय अनुसंधानों से स्पष्ट है कि भारतीय एवं दक्षिण एशियाई आबादी में 'थिन-फैट (thin-fat)' फेनोटाइप पाया जाता है—अर्थात यूरोपीय आबादी की तुलना में कम बॉडी मास इंडेक्स पर भी शरीर में वसा और विसरल (पेट की) वसा का अनुपात अधिक होता है, जिससे कम बीएमआई पर भी मधुमेह और हृदय रोग का खतरा बढ़ जाता है।"
+      },
+      {
+        title: "आईसीएमआर (ICMR) एवं डब्ल्यूएचओ दक्षिण एशियाई कटऑफ बनाम मानक वयस्क श्रेणियां",
+        text: "भारतीय चिकित्सा अनुसंधान परिषद (ICMR) और डब्ल्यूएचओ विशेषज्ञ परामर्श (Lancet 2004) द्वारा निर्धारित कटऑफ निम्नलिखित हैं:<br/>• <strong>कम वजन (Underweight):</strong> &lt; 18.5 kg/m²<br/>• <strong>स्वस्थ सामान्य वजन (Healthy Weight):</strong> 18.5 – 22.9 kg/m² (मानक डब्ल्यूएचओ: 18.5–24.9)<br/>• <strong>अधिक वजन / जोखिम (Overweight):</strong> 23.0 – 24.9 kg/m² (मानक डब्ल्यूएचओ: 25.0–29.9)<br/>• <strong>मोटापा / उच्च जोखिम (Obese):</strong> &ge; 25.0 kg/m² (मानक डब्ल्यूएचओ: &ge; 30.0)। ये दोनों श्रेणियां अलग-अलग जनसंख्या जोखिमों के लिए तैयार की गई हैं और इन्हें आपस में बदला नहीं जा सकता।"
+      },
+      {
+        title: "बीएमआई एक स्क्रीनिंग पैमाना है, स्वतंत्र चिकित्सीय निदान नहीं",
+        text: "बॉडी मास इंडेक्स ऊंचाई और वजन का गणितीय अनुपात है। यह शरीर की संरचना, हड्डियों के घनत्व या आंतरिक वसा का प्रत्यक्ष माप नहीं करता। बढ़ा हुआ बीएमआई किसी बीमारी का स्वतंत्र निदान नहीं है; इसके लिए रक्तचाप, फास्टिंग ब्लड ग्लूकोज, एचबीए1सी और लिपिड प्रोफाइल जैसी चिकित्सीय जांच आवश्यक है।"
+      },
+      {
+        title: "आईसीएमआर (ICMR) कमर की परिधि दिशानिर्देश एवं पेट की वसा",
+        text: "पेट के आंतरिक अंगों के आसपास जमा विसरल वसा हृदय और चयापचय स्वास्थ्य के लिए अधिक खतरनाक होती है। आईसीएमआर दिशानिर्देशों के अनुसार कमर की परिधि <strong>पुरुषों के लिए &ge; 90 सेमी (35.4 इंच)</strong> और <strong>महिलाओं के लिए &ge; 80 सेमी (31.5 इंच)</strong> होने पर सामान्य बीएमआई के बावजूद केंद्रीय मोटापे का जोखिम बढ़ जाता है।"
+      },
+      {
+        title: "आयु सीमाएं: वयस्क मानक बनाम बाल विकास प्रतिशतक (Percentiles)",
+        text: "यह वयस्क आईसीएमआर बीएमआई मानक केवल 18 वर्ष और उससे अधिक आयु के वयस्कों पर लागू होते हैं। 18 वर्ष से कम उम्र के बच्चों और किशोरों के लिए इनका उपयोग नहीं किया जाना चाहिए। बच्चों के लिए इंडियन एकेडमी ऑफ पीडियाट्रिक्स (IAP) या डब्ल्यूएचओ बाल विकास चार्ट का उपयोग आवश्यक है।"
+      },
+      {
+        title: "वरिष्ठ नागरिकों के लिए विचार एवं सार्कोपेनिया (मांसपेशियों की हानि)",
+        text: "65 वर्ष से अधिक उम्र के वृद्धों में मांसपेशियों के प्राकृतिक नुकसान (सार्कोपेनिया) के कारण बीएमआई वसा जोखिम को कम आंक सकता है। वृद्धावस्था में अत्यधिक वजन घटाने के बजाय हड्डियों और मांसपेशियों की सुरक्षा अधिक महत्वपूर्ण होती है।"
+      },
+      {
+        title: "साक्ष्य-आधारित जीवनशैली, पोषण एवं निवारक रणनीतियां",
+        text: "पारंपरिक संपूर्ण आहार को प्राथमिकता दें: दालें, साबुत अनाज (बाजरा, ज्वार, ब्राउन राइस), मौसमी सब्जियां और रिफाइंड कार्ब्स व तले हुए खाद्य पदार्थों में कमी। सप्ताह में कम से कम 150 मिनट का मध्यम व्यायाम और शक्ति प्रशिक्षण अनुशंसित है।"
+      },
+      {
+        title: "शैक्षिक उद्देश्य एवं चिकित्सीय परामर्श सूचना",
+        text: "यह कैलकुलेटर प्रकाशित वैज्ञानिक और चिकित्सीय सहमति (Misra et al., JAPI 2009; WHO Lancet 2004) पर आधारित शैक्षिक संदर्भ प्रदान करता है। यह किसी डॉक्टर की सलाह या व्यक्तिगत निदान का विकल्प नहीं है। स्वास्थ्य संबंधी निर्णय के लिए पंजीकृत चिकित्सक से परामर्श करें।"
+      }
+    ]
+  }
+};
+
+const activeContentMap = category === 'indian'
+  ? contentIndian
+  : (category === 'fitness' 
+    ? contentFitness 
+    : (category === 'metabolic' ? contentMetabolic : contentBmi));
 
 const t = activeContentMap[lang] || activeContentMap.en;
 ---

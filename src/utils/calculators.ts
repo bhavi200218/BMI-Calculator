@@ -653,10 +653,38 @@ export const calculators: CalculatorConfig[] = [
       const bmi = hM > 0 ? w / (hM * hM) : 0;
       const isM = inputs.gender === 'male';
 
-      let cat = 'Healthy Weight (18.5 - 22.9)';
-      if (bmi < 18.5) cat = 'Underweight (< 18.5)';
-      else if (bmi >= 23.0 && bmi < 27.5) cat = 'Overweight / At Risk (23.0 - 27.4)';
-      else if (bmi >= 27.5) cat = 'Obese (≥ 27.5)';
+      let cat: Record<string, string> = {
+        en: 'Healthy Weight (18.5 - 22.9)',
+        es: 'Peso Saludable (18.5 - 22.9)',
+        fr: 'Poids Santé (18.5 - 22.9)',
+        de: 'Gesundes Gewicht (18.5 - 22.9)',
+        ko: '정상 체중 (18.5 - 22.9)',
+        hi: 'स्वस्थ वजन (18.5 - 22.9)'
+      };
+      if (bmi < 18.5) cat = {
+        en: 'Underweight (< 18.5)',
+        es: 'Bajo Peso (< 18.5)',
+        fr: 'Sous-poids (< 18.5)',
+        de: 'Untergewicht (< 18.5)',
+        ko: '저체중 (< 18.5)',
+        hi: 'कम वजन (< 18.5)'
+      };
+      else if (bmi >= 23.0 && bmi < 27.5) cat = {
+        en: 'Overweight / At Risk (23.0 - 27.4)',
+        es: 'Sobrepeso / En Riesgo (23.0 - 27.4)',
+        fr: 'Surpoids / À Risque (23.0 - 27.4)',
+        de: 'Übergewicht / Risiko (23.0 - 27.4)',
+        ko: '과체중 / 위험군 (23.0 - 27.4)',
+        hi: 'अधिक वजन / जोखिम (23.0 - 27.4)'
+      };
+      else if (bmi >= 27.5) cat = {
+        en: 'Obese (≥ 27.5)',
+        es: 'Obesidad (≥ 27.5)',
+        fr: 'Obésité (≥ 27.5)',
+        de: 'Adipositas (≥ 27.5)',
+        ko: '비만 (≥ 27.5)',
+        hi: 'मोटापा (≥ 27.5)'
+      };
 
       const minHealthy = 18.5 * (hM * hM);
       const maxHealthy = 22.9 * (hM * hM);
@@ -869,27 +897,113 @@ export const calculators: CalculatorConfig[] = [
       }
       fat = Math.max(2, Math.min(fat, 60));
 
-      let category = 'Fitness';
+      let category: Record<string, string> = {
+        en: 'Fitness',
+        es: 'Fitness',
+        fr: 'Fitness',
+        de: 'Fitness',
+        ko: '피트니스',
+        hi: 'फिटनेस'
+      };
       const isMale = inputs.gender === 'male';
       if (isMale) {
-        if (fat < 6) category = 'Essential Fat (2-5%)';
-        else if (fat < 14) category = 'Athletes (6-13%)';
-        else if (fat < 18) category = 'Fitness (14-17%)';
-        else if (fat < 25) category = 'Average (18-24%)';
-        else category = 'Obese (25%+)';
+        if (fat < 6) category = {
+          en: 'Essential Fat (2-5%)',
+          es: 'Grasa Esencial (2-5%)',
+          fr: 'Graisse Essentielle (2-5%)',
+          de: 'Essentielles Fett (2-5%)',
+          ko: '필수 지방 (2-5%)',
+          hi: 'आवश्यक वसा (2-5%)'
+        };
+        else if (fat < 14) category = {
+          en: 'Athletes (6-13%)',
+          es: 'Atletas (6-13%)',
+          fr: 'Athlètes (6-13%)',
+          de: 'Athleten (6-13%)',
+          ko: '운동선수 (6-13%)',
+          hi: 'एथलीट (6-13%)'
+        };
+        else if (fat < 18) category = {
+          en: 'Fitness (14-17%)',
+          es: 'Fitness (14-17%)',
+          fr: 'Fitness (14-17%)',
+          de: 'Fitness (14-17%)',
+          ko: '피트니스 (14-17%)',
+          hi: 'फिटनेस (14-17%)'
+        };
+        else if (fat < 25) category = {
+          en: 'Average (18-24%)',
+          es: 'Promedio (18-24%)',
+          fr: 'Moyen (18-24%)',
+          de: 'Durchschnitt (18-24%)',
+          ko: '일반 평균 (18-24%)',
+          hi: 'औसत (18-24%)'
+        };
+        else category = {
+          en: 'Obese (25%+)',
+          es: 'Obesidad (25%+)',
+          fr: 'Obésité (25%+)',
+          de: 'Adipositas (25%+)',
+          ko: '비만 (25%+)',
+          hi: 'मोटापा (25%+)'
+        };
       } else {
-        if (fat < 14) category = 'Essential Fat (10-13%)';
-        else if (fat < 21) category = 'Athletes (14-20%)';
-        else if (fat < 25) category = 'Fitness (21-24%)';
-        else if (fat < 32) category = 'Average (25-31%)';
-        else category = 'Obese (32%+)';
+        if (fat < 14) category = {
+          en: 'Essential Fat (10-13%)',
+          es: 'Grasa Esencial (10-13%)',
+          fr: 'Graisse Essentielle (10-13%)',
+          de: 'Essentielles Fett (10-13%)',
+          ko: '필수 지방 (10-13%)',
+          hi: 'आवश्यक वसा (10-13%)'
+        };
+        else if (fat < 21) category = {
+          en: 'Athletes (14-20%)',
+          es: 'Atletas (14-20%)',
+          fr: 'Athlètes (14-20%)',
+          de: 'Athleten (14-20%)',
+          ko: '운동선수 (14-20%)',
+          hi: 'एथलीट (14-20%)'
+        };
+        else if (fat < 25) category = {
+          en: 'Fitness (21-24%)',
+          es: 'Fitness (21-24%)',
+          fr: 'Fitness (21-24%)',
+          de: 'Fitness (21-24%)',
+          ko: '피트니스 (21-24%)',
+          hi: 'फिटनेस (21-24%)'
+        };
+        else if (fat < 32) category = {
+          en: 'Average (25-31%)',
+          es: 'Promedio (25-31%)',
+          fr: 'Moyen (25-31%)',
+          de: 'Durchschnitt (25-31%)',
+          ko: '일반 평균 (25-31%)',
+          hi: 'औसत (25-31%)'
+        };
+        else category = {
+          en: 'Obese (32%+)',
+          es: 'Obesidad (32%+)',
+          fr: 'Obésité (32%+)',
+          de: 'Adipositas (32%+)',
+          ko: '비만 (32%+)',
+          hi: 'मोटापा (32%+)'
+        };
       }
+
+      const tapeMethod: Record<string, string> = {
+        en: 'Anthropometric Tape Method',
+        es: 'Método de Cinta Antropométrica',
+        fr: 'Méthode Ruban Anthropométrique',
+        de: 'Anthropometrische Maßbandmethode',
+        ko: '인체측정 줄자 측정법',
+        hi: 'मानवमिति टेप विधि'
+      };
 
       return {
         primary: { value: fat.toFixed(1), label: { en: 'Body Fat Percentage', es: 'Porcentaje de Grasa', fr: 'Taux de Matière Grasse', de: 'Körperfettanteil', ko: '체지방률', hi: 'बॉडी फैट प्रतिशत' }, unit: '%' },
         secondary: [
           { label: { en: 'ACE Category', es: 'Categoría ACE', fr: 'Catégorie ACE', de: 'ACE-Kategorie', ko: 'ACE 분류 등급', hi: 'ACE श्रेणी' }, value: category, unit: '' },
-          { label: { en: 'US Navy Formula', es: 'Fórmula US Navy', fr: 'Formule US Navy', de: 'US Navy Formel', ko: '미 해군 공식 적용', hi: 'यूएस नेवी फॉर्मूला' }, value: 'Anthropometric Tape Method', unit: '' }
+          { label: { en: 'US Navy Formula', es: 'Fórmula US Navy', fr: 'Formule US Navy', de: 'US Navy Formel', ko: '미 해군 공식 적용', hi: 'यूएस नेवी फॉर्मूला' }, value: tapeMethod, unit: '' }
         ]
       };
     }
@@ -934,7 +1048,7 @@ export const calculators: CalculatorConfig[] = [
         primary: { value: displayLbm.toFixed(1), label: { en: 'Lean Body Mass', es: 'Masa Corporal Magra', fr: 'Masse Maigre', de: 'Fettfreie Masse', ko: '제지방 실량', hi: 'लीन बॉडी मास' }, unit: system === 'imperial' ? 'lbs' : 'kg' },
         secondary: [
           { label: { en: 'Fat Mass', es: 'Masa Grasa', fr: 'Masse Grasse', de: 'Fettmasse', ko: '지방 질량', hi: 'वसा द्रव्यमान' }, value: displayFat.toFixed(1), unit: system === 'imperial' ? 'lbs' : 'kg' },
-          { label: { en: 'Lean Mass Ratio', es: 'Proporción de Masa Magra', fr: 'Proportion de Masse Maigre', de: 'Prozentualer LBM', ko: '제지방 비율', hi: 'लीन मास अनुपात' }, value: ((lbm / w) * 100).toFixed(1), unit: '%' }
+          { label: { en: 'Lean Mass Ratio', es: 'Proporción de Masa Magra', fr: 'Proportion de Masse Maigre', de: 'Prozentualer LBM', ko: '제지방 비율', hi: 'लीन मास अनुपात' }, value: w > 0 ? ((lbm / w) * 100).toFixed(1) : '0.0', unit: '%' }
         ]
       };
     }
@@ -1268,15 +1382,16 @@ export const calculators: CalculatorConfig[] = [
         h = h * 2.54;
       }
       // Mosteller Formula: BSA (m²) = sqrt((H * W) / 3600)
-      const bsaMosteller = Math.sqrt((h * w) / 3600);
+      const bsaMosteller = (h > 0 && w > 0) ? Math.sqrt((h * w) / 3600) : 0;
       // Du Bois Formula: BSA (m²) = 0.007184 * H^0.725 * W^0.425
-      const bsaDuBois = 0.007184 * Math.pow(h, 0.725) * Math.pow(w, 0.425);
+      const bsaDuBois = (h > 0 && w > 0) ? 0.007184 * Math.pow(h, 0.725) * Math.pow(w, 0.425) : 0;
+      const refBmi = (h > 0 && w > 0) ? (w / Math.pow(h / 100, 2)).toFixed(1) : '0.0';
 
       return {
         primary: { value: bsaMosteller.toFixed(2), label: { en: 'Mosteller BSA', es: 'BSA Mosteller', fr: 'BSA Mosteller', de: 'Mosteller BSA', ko: 'Mosteller 체표면적', hi: 'मोस्टेलर BSA' }, unit: 'm²' },
         secondary: [
           { label: { en: 'Du Bois Formula BSA', es: 'BSA Fórmula Du Bois', fr: 'BSA Formule Du Bois', de: 'Du Bois BSA', ko: 'Du Bois 체표면적', hi: 'ड्यू बॉइस BSA' }, value: bsaDuBois.toFixed(2), unit: 'm²' },
-          { label: { en: 'Body Mass Index (BMI)', es: 'IMC de Referencia', fr: 'IMC Référence', de: 'BMI-Wert', ko: '참고 BMI', hi: 'बीएमआई संदर्भ' }, value: (w / Math.pow(h / 100, 2)).toFixed(1), unit: 'kg/m²' }
+          { label: { en: 'Body Mass Index (BMI)', es: 'IMC de Referencia', fr: 'IMC Référence', de: 'BMI-Wert', ko: '참고 BMI', hi: 'बीएमआई संदर्भ' }, value: refBmi, unit: 'kg/m²' }
         ]
       };
     }

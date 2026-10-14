@@ -678,7 +678,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
             primary: { value: dL.toFixed(1), label: { en: 'Lean Body Mass', es: 'Masa Corporal Magra', fr: 'Masse Maigre', de: 'Fettfreie Masse', ko: '제지방 실량', hi: 'लीन बॉडी mass' }, unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
             secondary: [
               { label: { en: 'Fat Mass', es: 'Masa Grasa', fr: 'Masse Grasse', de: 'Fettmasse', ko: '지방 질량', hi: 'वसा द्रव्यमान' }, value: dF.toFixed(1), unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
-              { label: { en: 'Lean Mass Ratio', es: 'Proporción de Masa Magra', fr: 'Proportion de Masse Maigre', de: 'Prozentualer LBM', ko: '제지방 비율', hi: 'लीन मास अनुपात' }, value: ((l / weightKg) * 100).toFixed(1), unit: '%' }
+              { label: { en: 'Lean Mass Ratio', es: 'Proporción de Masa Magra', fr: 'Proportion de Masse Maigre', de: 'Prozentualer LBM', ko: '제지방 비율', hi: 'लीन मास अनुपात' }, value: weightKg > 0 ? ((l / weightKg) * 100).toFixed(1) : '0.0', unit: '%' }
             ]
           };
         } 
@@ -787,13 +787,16 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           };
         } 
         else if (slug === 'body-surface-area-calculator') {
-          const bsa = Math.sqrt((heightCm * weightKg) / 3600);
+          const bsa = (heightCm > 0 && weightKg > 0) ? Math.sqrt((heightCm * weightKg) / 3600) : 0;
+          const isImp = currentUnitSystem === 'imperial';
+          const dispW = isImp ? (weightKg * 2.20462).toFixed(1) : weightKg.toFixed(1);
+          const dispH = isImp ? (heightCm / 2.54).toFixed(1) : heightCm.toFixed(1);
 
           calculated = {
             primary: { value: bsa.toFixed(2), label: { en: 'Body Surface Area', es: 'Superficie Corporal', fr: 'Surface Corporelle', de: 'Körperoberfläche', ko: '체표면적 수치', hi: 'बॉडी सरफेस एरिया' }, unit: 'm²' },
             secondary: [
-              { label: { en: 'Weight Input', es: 'Peso Registrado', fr: 'Poids Entré', de: 'Eingegebenes Gewicht', ko: '몸무게 설정값', hi: 'वजन इनपुट' }, value: weightKg.toFixed(1), unit: 'kg' },
-              { label: { en: 'Height Input', es: 'Altura Registrada', fr: 'Taille Entrée', de: 'Eingegebene Größe', ko: '신장 설정값', hi: 'ऊंचाई इनपुट' }, value: heightCm.toFixed(1), unit: 'cm' }
+              { label: { en: 'Weight Input', es: 'Peso Registrado', fr: 'Poids Entré', de: 'Eingegebenes Gewicht', ko: '몸무게 설정값', hi: 'वजन इनपुट' }, value: dispW, unit: isImp ? 'lbs' : 'kg' },
+              { label: { en: 'Height Input', es: 'Altura Registrada', fr: 'Taille Entrée', de: 'Eingegebene Größe', ko: '신장 설정값', hi: 'ऊंचाई इनपुट' }, value: dispH, unit: isImp ? 'in' : 'cm' }
             ]
           };
         } 

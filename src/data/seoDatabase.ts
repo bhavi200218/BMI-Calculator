@@ -441,7 +441,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "3d-bmi-calculator": {
     "en": {
       "eyebrow": "Oxford 2.5-Power BMI Model & 3D Body Visualization",
-      "title": "3D BMI Calculator & Interactive 3D Body Visualizer",
+      "title": "3D Body Visualizer & 3D BMI Calculator Online – Interactive Avatar Tool",
       "intro": "Our free 3D BMI Calculator uses the Oxford 2.5-power height-adjusted formula (1.3 × weight / height²·⁵) to render interactive 3D body shape models and height-proportional volume geometry.",
       "formulaTitle": "Oxford 2.5-Power Height-Adjusted 3D BMI Formula",
       "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵ | Proposed by Oxford mathematician Prof. Nick Trefethen as an educational mathematical alternative to standard 2D BMI height scaling.",
@@ -497,7 +497,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Modelo IMC Exponencial de Oxford 2.5 y Visualización Corporal 3D",
-      "title": "Calculadora de IMC 3D y Visualizador Corporal Interactivo",
+      "title": "Visualizador Corporal 3D y Calculadora IMC 3D Online – Modelo Interactivo",
       "intro": "Nuestra calculadora de IMC 3D y visualizador corporal interactivo calcula el índice de masa corporal mediante la fórmula exponencial de Oxford 2.5 (1.3 × peso / altura²·⁵) y principios de geometría corporal tridimensional. Gira 360° para ver la malla sólida, estructura de alambre y mapa de calor de IMC.",
       "formulaTitle": "Fórmula Exponencial 3D de Oxford Ajustada a la Altura",
       "formulaDesc": "IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]²·⁵ | Propuesta por el matemático de Oxford Prof. Nick Trefethen como una alternativa matemática educativa al IMC 2D tradicional.",
@@ -553,7 +553,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Modèle IMC d'Oxford 2.5 et Visualisation Corporelle 3D",
-      "title": "Calculateur d'IMC 3D et Visualiseur Corporel Interactif",
+      "title": "Visualiseur Corporel 3D et Calculateur IMC 3D en Ligne – Outil Avatar 3D",
       "intro": "Notre calculateur d'IMC 3D calcule votre indice de masse corporelle selon la formule d'Oxford 2.5 (1.3 × poids / taille²·⁵) et modélise votre silhouette en 3D sous tous los angles à 360°.",
       "formulaTitle": "Formule Exponentielle 3D d'Oxford Ajustée à la Taille",
       "formulaDesc": "IMC 3D Ajusté = 1.3 × Poids (kg) / [Taille (m)]²·⁵ | Élaborée par des mathématiciens de l'Université d'Oxford pour corriger les biais liés à la taille.",
@@ -609,7 +609,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Oxford 2.5 Potenzformel & 3D-Körper-Visualisierung",
-      "title": "Interaktiver 3D BMI-Rechner & 3D-Körper-Visualisierer",
+      "title": "3D Body Visualizer & 3D BMI Rechner Online – Interaktiver 3D-Körper-Visualisierer",
       "intro": "Berechnen Sie Ihren höhenkorrigierten BMI mit der Oxford 2.5 Formel (1.3 × Gewicht / Größe²·⁵) und betrachten Sie ein interaktives 360°-3D-Körpermodell direkt in Ihrem Browser.",
       "formulaTitle": "Oxford 3D Potenzformel für dreidimensionale Körpergeometrie",
       "formulaDesc": "3D-BMI = 1.3 × Gewicht (kg) / [Größe (m)]²·⁵ | Entwickelt von Mathematikern der Universität Oxford zur Korrektur von Größenverzerrungen.",
@@ -665,7 +665,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "옥스포드 2.5 신장 보정 공식 및 3D 체형 시각화",
-      "title": "3D BMI 계산기 및 대화형 3D 체형 시각화 도구",
+      "title": "3D 바디 비주얼라이저 & 3D BMI 계산기 – 대화형 3D 체형 시각화 모델",
       "intro": "옥스포드 2.5 체질량 공식(1.3 × 체중 / 신장²·⁵)을 기반으로 신장 왜곡을 보정한 BMI를 산출하고 360° 회전 가능한 3D 입체 실루엣 아바타와 체형 히트맵을 브라우저에서 실시간으로 확인하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "3D 옥스포드 신장 보정 체질량 공식",
       "formulaDesc": "3D 보정 BMI = 1.3 × 체중 (kg) / [신장 (m)]²·⁵ | 옥스퍼드 대학교 수학과 연구진이 개발한 3차원 신체 부피 스케일링 공식.",
@@ -721,7 +721,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "ऑक्सफोर्ड 2.5 एक्सपोनेंशियल फॉर्मूला और 3D मॉडल",
-      "title": "3D बीएमआई कैलकुलेटर और इंटरएक्टिव 3D बॉडी विजुअलाइज़र",
+      "title": "3D बॉडी विजुअलाइज़र और 3D बीएमआई कैलकुलेटर – 3D बॉडी अवतार मॉडल",
       "intro": "ऑक्सफोर्ड 2.5 फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) के साथ अपने बीएमआई की गणना करें और 360° इंटरएक्टिव 3D बॉडी मॉडलर का उपयोग करके अपनी शारीरिक संरचना को समझें।",
       "formulaTitle": "ऑक्सफोर्ड 3D ऊंचाई-समायोजित बीएमआई फॉर्मूला",
       "formulaDesc": "3D बीएमआई = 1.3 × वजन (किग्रा) / [ऊंचाई (मीटर)]²·⁵ | ऑक्सफोर्ड विश्वविद्यालय के गणितज्ञों द्वारा विकसित सूत्र जो लंबे या छोटे कद के लोगों में ऊंचाई के गणितीय भ्रम को दूर करता है।",
