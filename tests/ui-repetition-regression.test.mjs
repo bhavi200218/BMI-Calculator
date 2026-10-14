@@ -17,11 +17,12 @@ test('UI & Reference Table Repetition Regression Tests', async (t) => {
   const calcResultPath = path.resolve('src/components/CalculatorResult.astro');
   const calcResultContent = fs.readFileSync(calcResultPath, 'utf8');
 
-  await t.test('CalculatorResult: Only one h3 calculation header and distinct state eyebrows', () => {
+  await t.test('CalculatorResult: Only one h3 calculation header, distinct state eyebrows, and empty initial headerLabel', () => {
     const h3Occurrences = (calcResultContent.match(/<h3[^>]*id="resultHeaderLabel"[^>]*>/g) || []).length;
     assert.strictEqual(h3Occurrences, 1, 'Exactly one resultHeaderLabel h3 should exist');
     assert.strictEqual(calcResultContent.includes('{studioEyebrow}'), true, 'Distinct studioEyebrow must be present');
     assert.strictEqual(calcResultContent.includes('{resultEyebrow}'), true, 'Distinct resultEyebrow must be present');
+    assert.strictEqual(calcResultContent.includes('{t.metricsTitle}'), false, 'resultHeaderLabel must not render metricsTitle statically in initial HTML');
     assert.strictEqual(calcResultContent.includes('bmiCalculated'), false, 'Redundant bmiCalculated listener removed');
   });
 
