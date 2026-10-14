@@ -187,7 +187,7 @@ const webAppSchema = {
       <!-- Extended Content & Educational Reference Knowledge Base for Search Indexing -->
       <div class="pt-4 space-y-12">
         <ToolSEOContent slug={calc.slug} lang={lang} />
-        <EmbedWidgetBox lang={lang} />
+        {calc.slug === 'bmi-calculator' && <EmbedWidgetBox lang={lang} />}
         <LatestArticles lang={lang} />
         <DeepHealthSEO lang={lang} slug={calc.slug} />
       </div>

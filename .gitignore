@@ -29,3 +29,4 @@ install-log*.txt
 # temporary scratch directory
 scratch/
 _worker.bundle
+.wrangler/

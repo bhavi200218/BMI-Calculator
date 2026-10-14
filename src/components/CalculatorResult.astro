@@ -7,6 +7,24 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = getCalculatorTranslations(lang);
+
+const studioEyebrow = {
+  en: 'Interactive Result Studio',
+  es: 'Panel de Resultados Interactivo',
+  fr: 'Studio de Résultats Interactif',
+  de: 'Interaktives Ergebnis-Studio',
+  ko: '실시간 결과 스튜디오',
+  hi: 'इंटरएक्टिव परिणाम स्टूडियो'
+}[lang];
+
+const resultEyebrow = {
+  en: 'Calculated Metric',
+  es: 'Métrica Calculada',
+  fr: 'Métrique Calculée',
+  de: 'Berechneter Wert',
+  ko: '계산된 지표',
+  hi: 'गणना की गई माप'
+}[lang];
 ---
 
 <div id="resultStudio" class="melove-result-card flex flex-col h-full overflow-hidden w-full max-w-full">
@@ -19,11 +37,8 @@ const t = getCalculatorTranslations(lang);
       </svg>
     </div>
     <div class="space-y-2 sm:space-y-3">
-      <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.metricsTitle}</p>
+      <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{studioEyebrow}</p>
       <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-semibold">{t.waiting}</p>
-      <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium max-w-sm mx-auto">
-        {lang === 'es' ? 'Elige una calculadora, introduce tus datos y calcula tu resultado.' : lang === 'fr' ? 'Choisissez un outil, saisissez vos données et calculez votre résultat.' : lang === 'de' ? 'Wählen Sie einen Rechner, geben Sie Ihre Daten ein und berechnen Sie Ihr Ergebnis.' : lang === 'ko' ? '계산기를 선택하고 정보를 입력하여 결과를 계산하세요.' : lang === 'hi' ? 'एक कैलकुलेटर चुनें, जानकारी भरें और अपना परिणाम देखें।' : 'Choose a calculator, enter your details, and calculate your result.'}
-      </p>
     </div>
   </div>
 
@@ -33,7 +48,7 @@ const t = getCalculatorTranslations(lang);
     <!-- Top Bar -->
     <div class="flex flex-wrap sm:flex-nowrap items-center justify-between gap-2.5 p-4 sm:p-6 md:px-10 md:pt-10 pb-4 border-b border-[var(--border)]">
       <div>
-        <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.metricsTitle}</p>
+        <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{resultEyebrow}</p>
         <h3 id="resultHeaderLabel" class="text-xl sm:text-2xl font-display font-bold uppercase text-[var(--foreground)] break-words">{t.metricsTitle}</h3>
       </div>
       <span id="primaryUnitLabel" class="hidden px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] text-[11px] sm:text-xs font-display font-semibold uppercase tracking-widest whitespace-nowrap shadow-[var(--shadow-accent)] shrink-0">
