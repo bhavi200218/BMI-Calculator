@@ -1618,6 +1618,8 @@ export function getCalculatorTranslations(lang: Locale) {
     subtitle: { en: 'Click on any tool below to calculate standard health metrics instantly.', es: 'Haz clic en cualquier herramienta para calcular métricas de salud al instante.', fr: 'Cliquez sur n\'importe quel outil pour calculer vos métriques de santé.', de: 'Klicken Sie auf ein Tool, um Kennzahlen sofort zu berechnen.', ko: '표준 헬스 지표를 손쉽게 점검하는 계산기를 골라보세요.', hi: 'त्वरित स्वास्थ्य मापन के लिए किसी भी उपकरण पर क्लिक करें।' }[lang],
     metricsTitle: { en: 'Calculation Results Summary', es: 'Resumen de Resultados', fr: 'Résumé des Résultats', de: 'Zusammenfassung der Ergebnisse', ko: '계산 결과 요약', hi: 'गणना परिणाम विवरण' }[lang],
     waiting: { en: 'Enter your details to view your calculated result.', es: 'Ingresa tus datos para ver tu resultado calculado.', fr: 'Saisissez vos informations pour afficher votre résultat calculé.', de: 'Geben Sie Ihre Daten ein, um Ihr berechnetes Ergebnis anzuzeigen.', ko: '계산된 결과를 확인하려면 정보를 입력하세요.', hi: 'अपना परिणाम देखने के लिए अपनी जानकारी दर्ज करें।' }[lang],
-    calcBtn: { en: 'Run Calculation', es: 'Ejecutar Cálculo', fr: 'Calculer', de: 'Berechnung ausführen', ko: '계산하기', hi: 'गणना चलाएं' }[lang]
+    calcBtn: { en: 'Run Calculation', es: 'Ejecutar Cálculo', fr: 'Calculer', de: 'Berechnung ausführen', ko: '계산하기', hi: 'गणना चलाएं' }[lang],
+    resetBtn: { en: 'Reset', es: 'Reiniciar', fr: 'Réinitialiser', de: 'Zurücksetzen', ko: '초기화', hi: 'रीसेट' }[lang],
+    enterPrompt: { en: 'Please enter your measurements above to calculate.', es: 'Por favor, introduce tus medidas arriba para calcular.', fr: 'Veuillez saisir vos mesures ci-dessus pour calculer.', de: 'Bitte geben Sie Ihre Messwerte oben ein, um zu berechnen.', ko: '계산하려면 위의 측정값을 입력하세요.', hi: 'गणना करने के लिए कृपया ऊपर अपनी माप दर्ज करें।' }[lang]
   };
 }

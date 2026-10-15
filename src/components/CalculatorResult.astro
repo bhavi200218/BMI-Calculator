@@ -69,11 +69,11 @@ const resultEyebrow = {
 
       <!-- Action Buttons -->
       <div class="grid grid-cols-2 gap-3 sm:gap-4 pt-2">
-        <button id="copyBtn" class="py-3.5 sm:py-5 rounded-[var(--radius-sm)] bg-[var(--muted)] border-[1.5px] border-[var(--border)] text-[11px] sm:text-xs font-display font-bold uppercase tracking-widest hover:border-[var(--accent)] hover:bg-[var(--card-hover)] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer text-[var(--foreground)]">
+        <button id="copyBtn" disabled aria-disabled="true" class="py-3.5 sm:py-5 rounded-[var(--radius-sm)] bg-[var(--muted)] border-[1.5px] border-[var(--border)] text-[11px] sm:text-xs font-display font-bold uppercase tracking-widest transition-all duration-200 flex items-center justify-center gap-2 text-[var(--foreground)] opacity-50 cursor-not-allowed">
           <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
           {lang === 'es' ? 'Copiar' : lang === 'fr' ? 'Copier' : lang === 'de' ? 'Kopieren' : lang === 'ko' ? '복사' : lang === 'hi' ? 'कॉपी करें' : 'Copy'}
         </button>
-        <button id="shareBtn" class="py-3.5 sm:py-5 rounded-[var(--radius-sm)] bg-[var(--foreground)] text-[var(--background)] text-[11px] sm:text-xs font-display font-bold uppercase tracking-widest hover:opacity-85 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-[var(--shadow-card)]">
+        <button id="shareBtn" disabled aria-disabled="true" class="py-3.5 sm:py-5 rounded-[var(--radius-sm)] bg-[var(--foreground)] text-[var(--background)] text-[11px] sm:text-xs font-display font-bold uppercase tracking-widest transition-all duration-200 flex items-center justify-center gap-2 shadow-[var(--shadow-card)] opacity-50 cursor-not-allowed">
           <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
           {lang === 'es' ? 'Compartir' : lang === 'fr' ? 'Partager' : lang === 'de' ? 'Teilen' : lang === 'ko' ? '공유' : lang === 'hi' ? 'साझा करें' : 'Share'}
         </button>
@@ -100,6 +100,7 @@ const resultEyebrow = {
   let lastCalcResult = null;
 
   function resetResultState() {
+    lastCalcResult = null;
     const initialState = document.getElementById('initialState');
     const rc = document.getElementById('resultContent');
     if (initialState) {
@@ -124,6 +125,21 @@ const resultEyebrow = {
     }
     const secGrid = document.getElementById('secondaryGrid');
     if (secGrid) secGrid.innerHTML = '';
+
+    const copyBtn = document.getElementById('copyBtn');
+    if (copyBtn) {
+      copyBtn.disabled = true;
+      copyBtn.setAttribute('aria-disabled', 'true');
+      copyBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      copyBtn.classList.remove('cursor-pointer', 'hover:border-[var(--accent)]', 'hover:bg-[var(--card-hover)]');
+    }
+    const shareBtn = document.getElementById('shareBtn');
+    if (shareBtn) {
+      shareBtn.disabled = true;
+      shareBtn.setAttribute('aria-disabled', 'true');
+      shareBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      shareBtn.classList.remove('cursor-pointer', 'hover:opacity-85');
+    }
   }
 
   const getStr = (obj) => {
@@ -134,8 +150,16 @@ const resultEyebrow = {
   };
 
   window.addEventListener('calculationCompleted', (e) => {
+    if (!e.detail) {
+      resetResultState();
+      return;
+    }
     lastCalcResult = e.detail;
     renderCalcOutput();
+  });
+
+  window.addEventListener('calculationReset', () => {
+    resetResultState();
   });
 
   function renderCalcOutput() {
@@ -198,23 +222,13 @@ const resultEyebrow = {
       }).join('');
     }
 
-    // Share Click
-    const shareBtn = document.getElementById('shareBtn');
-    if (shareBtn) {
-      shareBtn.onclick = async () => {
-        try {
-          await navigator.share({
-            title: primaryLabel,
-            text: `${primaryLabel}: ${primary.value} ${primary.unit || ''}`,
-            url: location.href
-          });
-        } catch {}
-      };
-    }
-
-    // Copy Click
+    // Enable Action Buttons on valid calculation
     const copyBtn = document.getElementById('copyBtn');
     if (copyBtn) {
+      copyBtn.disabled = false;
+      copyBtn.removeAttribute('aria-disabled');
+      copyBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      copyBtn.classList.add('cursor-pointer', 'hover:border-[var(--accent)]', 'hover:bg-[var(--card-hover)]');
       copyBtn.onclick = () => {
         let report = `${primaryLabel}: ${primary.value} ${primary.unit || ''}\n`;
         if (Array.isArray(secondary)) {
@@ -242,5 +256,27 @@ const resultEyebrow = {
         });
       };
     }
+
+    // Share Click
+    const shareBtn = document.getElementById('shareBtn');
+    if (shareBtn) {
+      shareBtn.disabled = false;
+      shareBtn.removeAttribute('aria-disabled');
+      shareBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      shareBtn.classList.add('cursor-pointer', 'hover:opacity-85');
+      shareBtn.onclick = async () => {
+        try {
+          await navigator.share({
+            title: primaryLabel,
+            text: `${primaryLabel}: ${primary.value} ${primary.unit || ''}`,
+            url: location.href
+          });
+        } catch {}
+      };
+    }
   }
+
+  // Ensure initial empty state on load and client-side page swaps
+  resetResultState();
+  document.addEventListener('astro:after-swap', resetResultState);
 </script>
