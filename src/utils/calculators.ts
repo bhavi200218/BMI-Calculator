@@ -65,9 +65,9 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त बॉडी मास इंडेक्स (BMI) कैलकुलेटर। डब्ल्यूएचओ और सीडीसी दिशानिर्देशों के आधार पर अपने बीएमआई, बीएमआई श्रेणी और स्वस्थ वजन सीमा का अनुमान लगाएं। मुफ़्त, गोपनीयता-केंद्रित और ब्राउज़र-आधारित गणना।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
     ],
     calculate: (inputs, system) => {
@@ -112,9 +112,9 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त 3D बीएमआई कैलकुलेटर और 3D बॉडी विजुअलाइज़र। अपने बीएमआई की गणना करें, ऑक्सफोर्ड 2.5 फॉर्मूला के साथ 360° 3D अवतार, वायरफ्रेम और हीटमैप मोड में अपना शरीर तुरंत देखें। 100% मुफ़्त और ब्राउज़र-आधारित गोपनीयता।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
     ],
     calculate: (inputs, system) => {
@@ -165,9 +165,9 @@ export const calculators: CalculatorConfig[] = [
       "hi": "वयस्कों, पुरुषों और महिलाओं के लिए आधिकारिक डब्ल्यूएचओ बीएमआई चार्ट। इंटरएक्टिव बीएमआई स्केल कैलकुलेटर, ऊंचाई-वजन मीट्रिक लुकअप टेबल (kg और cm), डब्ल्यूएचओ श्रेणियां और आयु संदर्भ मार्गदर्शन। मुफ़्त, गोपनीयता-केंद्रित और ब्राउज़र-आधारित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '30' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
     ],
     calculate: (inputs, system) => {
@@ -273,9 +273,9 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त 3D बॉडी विजुअलाइज़र और ऑनलाइन 3D बीएमआई कैलकुलेटर। रियल-टाइम स्लाइडर्स के साथ 360° फ्रंट, साइड और बैक 3D अवतार मॉडल, वायरफ्रेम और बीएमआई हीटमैप मोड में अपना शरीर तुरंत देखें। 100% मुफ़्त और ब्राउज़र-आधारित गणना।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
     ],
     calculate: (inputs, system) => {
@@ -326,11 +326,11 @@ export const calculators: CalculatorConfig[] = [
       "hi": "ICMR और WHO एशिया-प्रशांत मानक मानदंडों (ओवरवेट: ≥ 23.0 kg/m², मोटा: ≥ 27.5 kg/m²) पर आधारित भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। भारतीय बीएमआई, कार्डियोमेटाबॉलिक जोखिम श्रेणी और लक्षित स्वस्थ वजन सीमा की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '65' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '168' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '30' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] },
-      { id: 'waist', label: L.waist, type: 'number', placeholder: '80' }
+      { id: 'waist', label: L.waist, type: 'number' }
     ],
     calculate: (inputs, system) => {
       let w = parseFloat(inputs.weight) || 0;
@@ -454,9 +454,9 @@ export const calculators: CalculatorConfig[] = [
       "hi": "ऊंचाई के अनुसार स्वस्थ वजन कैलकुलेटर और आदर्श शरीर वजन मैट्रिक्स। WHO बीएमआई 18.5 - 24.9 मानकों और डिवाइन फॉर्मूला के आधार पर ऊंचाई (सेमी, फीट, इंच) के अनुसार स्वस्थ वजन सीमा देखें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'height', label: L.height, type: 'number', placeholder: '170' },
+      { id: 'height', label: L.height, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] },
-      { id: 'weight', label: { en: 'Current Weight (Optional)', es: 'Peso Actual (Opcional)', fr: 'Poids Actuel (Optionnel)', de: 'Aktuelles Gewicht (Optional)', ko: '현재 체중 (선택사항)', hi: 'वर्तमान वजन (वैकल्पिक)' }, type: 'number', placeholder: '68' }
+      { id: 'weight', label: { en: 'Current Weight (Optional)', es: 'Peso Actual (Opcional)', fr: 'Poids Actuel (Optionnel)', de: 'Aktuelles Gewicht (Optional)', ko: '현재 체중 (선택사항)', hi: 'वर्तमान वजन (वैकल्पिक)' }, type: 'number' }
     ],
     calculate: (inputs, system) => {
       let h = parseFloat(inputs.height) || 0;
@@ -544,10 +544,10 @@ export const calculators: CalculatorConfig[] = [
       "hi": "बीएमआई, कमर की परिधि, उम्र और डब्ल्यूएचओ एशियाई जोखिम सीमाओं (BMI ≥ 23.0 kg/m²) पर आधारित मुफ़्त टाइप 2 मधुमेह जोखिम कैलकुलेटर। गोपनीय, ब्राउज़र-आधारित गणनाओं के साथ चयापचय जोखिम कारकों का आकलन करें।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
-      { id: 'waist', label: L.waist, type: 'number', placeholder: '85' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '35' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'waist', label: L.waist, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
     ],
     calculate: (inputs, system) => {
@@ -634,10 +634,10 @@ export const calculators: CalculatorConfig[] = [
       "hi": "संशोधित डब्ल्यूएचओ एशियाई कटऑफ (स्वस्थ: 18.5-22.9, अधिक वजन: 23.0-27.4, मोटापा: ≥ 27.5 kg/m²) पर आधारित मुफ़्त एशियाई बीएमआई कैलकुलेटर। अपने बीएमआई स्कोर और स्वस्थ वजन सीमा की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '65' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '168' },
-      { id: 'waist', label: L.waist, type: 'number', placeholder: '80' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '30' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'waist', label: L.waist, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
     ],
     calculate: (inputs, system) => {
@@ -715,9 +715,9 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त ऑनलाइन बीएमआर कैलकुलेटर। मिफ्लिन-सेंट जॉर और हैरिस-बेनेडिक्ट समीकरणों का उपयोग करके अपने बेसल मेटाबॉलिक रेट (BMR) की गणना करें। उम्र, ऊंचाई (सेमी), वजन (किग्रा) और लिंग के आधार पर विश्राम कैलोरी व्यय निर्धारित करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
     ],
     calculate: (inputs, system) => {
@@ -754,9 +754,9 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त ऑनलाइन टीडीईई कैलकुलेटर। गतिविधि स्तर और बीएमआर सूत्रों के आधार पर अपने कुल दैनिक ऊर्जा व्यय (TDEE), रखरखाव कैलोरी, वजन घटाने के घाटे और वजन बढ़ाने के लक्ष्यों की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] },
       { id: 'activity', label: L.activity, type: 'select', options: [
         { value: '1.2', label: L.sedentary },
@@ -816,9 +816,9 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त ऑनलाइन रखरखाव कैलोरी कैलकुलेटर। उम्र, ऊंचाई (सेमी) और वजन (किग्रा) के अनुसार अपनी दैनिक रखरखाव कैलोरी, कुल दैनिक ऊर्जा व्यय (TDEE) और वजन घटाने की लक्षित कैलोरी की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] },
       { id: 'activity', label: L.activity, type: 'select', options: [
         { value: '1.2', label: L.sedentary },
@@ -865,10 +865,10 @@ export const calculators: CalculatorConfig[] = [
     },
     inputs: [
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
-      { id: 'waist', label: L.waist, type: 'number', placeholder: '80' },
-      { id: 'neck', label: L.neck, type: 'number', placeholder: '38' },
-      { id: 'hip', label: L.hip, type: 'number', placeholder: '90' }
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'waist', label: L.waist, type: 'number' },
+      { id: 'neck', label: L.neck, type: 'number' },
+      { id: 'hip', label: L.hip, type: 'number' }
     ],
     calculate: (inputs, system) => {
       let h = parseFloat(inputs.height) || 170;
@@ -1021,8 +1021,8 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त लीन बॉडी मास कैलकुलेटर (LBM Calculator)। ऊंचाई और वजन के अनुसार बोअर, जेम्स और ह्यूम समीकरणों का उपयोग करके दुबले शरीर के द्रव्यमान, वसा रहित द्रव्यमान प्रतिशत और शरीर की संरचना की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
     ],
     calculate: (inputs, system) => {
@@ -1073,7 +1073,7 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त आदर्श वजन कैलकुलेटर। ऊंचाई और लिंग के आधार पर डिवाइन, रॉबिन्सन, मिलर और हमवी चिकित्सा समीकरणों का उपयोग करके आदर्श शरीर वजन (IBW) संदर्भ सीमाओं की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
+      { id: 'height', label: L.height, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
     ],
     calculate: (inputs, system) => {
@@ -1125,9 +1125,9 @@ export const calculators: CalculatorConfig[] = [
       "hi": "वजन घटाने, वजन बनाए रखने और वजन बढ़ाने के लिए मुफ़्त कैलोरी कैलकुलेटर। उम्र, ऊंचाई, वजन और गतिविधि स्तर के आधार पर दैनिक कैलोरी आवश्यकताओं, मैक्रो ब्रेकडाउन और कैलोरी घाटे के लक्ष्य की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] },
       { id: 'activity', label: L.activity, type: 'select', options: [
         { value: '1.2', label: L.sedentary },
@@ -1193,7 +1193,7 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त दैनिक प्रोटीन सेवन कैलकुलेटर। वजन, फिटनेस लक्ष्यों और गतिविधि के आधार पर मांसपेशियों की वृद्धि, वसा हानि और एथलेटिक प्रदर्शन के लिए ग्राम में इष्टतम दैनिक प्रोटीन सेवन की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
+      { id: 'weight', label: L.weight, type: 'number' },
       { id: 'goal', label: L.goal, type: 'select', options: [
         { value: 'lose', label: L.loseWeight },
         { value: 'maintain', label: L.maintainWeight },
@@ -1233,7 +1233,7 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त दैनिक जल सेवन कैलकुलेटर। शरीर के वजन, जलवायु, व्यायाम की अवधि और गतिविधि स्तर के आधार पर लीटर, ग्लास और औंस में अनुशंसित दैनिक पानी की खपत की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
+      { id: 'weight', label: L.weight, type: 'number' },
       { id: 'activity', label: L.activity, type: 'select', options: [
         { value: 'sedentary', label: L.sedentary },
         { value: 'active', label: L.active }
@@ -1270,9 +1270,9 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त मैक्रो कैलकुलेटर। अपने TDEE और फिटनेस लक्ष्यों के आधार पर कटिंग, रखरखाव या मांसपेशियों को बढ़ाने के लिए इष्टतम दैनिक मैक्रोन्यूट्रिएंट लक्ष्यों (प्रोटीन, कार्ब्स, ग्राम में वसा) की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' },
-      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' },
+      { id: 'age', label: L.age, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] },
       { id: 'activity', label: L.activity, type: 'select', options: [
         { value: '1.2', label: L.sedentary },
@@ -1331,8 +1331,8 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त कमर-से-कूल्हे का अनुपात कैलकुलेटर (WHR Calculator)। अपने कमर-से-कूल्हे के अनुपात, शरीर के आकार के प्रकार (सेब बनाम नाशपाती) और डब्ल्यूएचओ हृदय स्वास्थ्य जोखिम वर्गीकरण की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'waist', label: L.waist, type: 'number', placeholder: '80' },
-      { id: 'hip', label: L.hip, type: 'number', placeholder: '90' },
+      { id: 'waist', label: L.waist, type: 'number' },
+      { id: 'hip', label: L.hip, type: 'number' },
       { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
     ],
     calculate: (inputs) => {
@@ -1371,8 +1371,8 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त बॉडी सरफेस एरिया कैलकुलेटर (BSA Calculator)। मोस्टेलर, डुबॉइस, हेकॉक और बॉयड प्रकाशित समीकरणों का उपयोग करके वर्ग मीटर (m²) में कुल शरीर के सतह क्षेत्र की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: L.weight, type: 'number', placeholder: '70' },
-      { id: 'height', label: L.height, type: 'number', placeholder: '175' }
+      { id: 'weight', label: L.weight, type: 'number' },
+      { id: 'height', label: L.height, type: 'number' }
     ],
     calculate: (inputs, system) => {
       let w = parseFloat(inputs.weight) || 0;
@@ -1409,8 +1409,8 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त हृदय गति क्षेत्र कैलकुलेटर। उम्र, विश्राम हृदय गति और अधिकतम हृदय गति के आधार पर लक्षित प्रशिक्षण हृदय गति क्षेत्रों (फैट बर्न, एरोबिक, एनारोबिक, पीक) की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
-      { id: 'rhr', label: { en: 'Resting Heart Rate', es: 'Frecuencia Cardíaca en Reposo', fr: 'Fréquence Cardiaque Repos', de: 'Ruhepuls', ko: '안정시 심박수', hi: 'विश्राम हार्ट रेट' }, type: 'number', placeholder: '60' }
+      { id: 'age', label: L.age, type: 'number' },
+      { id: 'rhr', label: { en: 'Resting Heart Rate', es: 'Frecuencia Cardíaca en Reposo', fr: 'Fréquence Cardiaque Repos', de: 'Ruhepuls', ko: '안정시 심박수', hi: 'विश्राम हार्ट रेट' }, type: 'number' }
     ],
     calculate: (inputs) => {
       const age = parseInt(inputs.age) || 25;
@@ -1456,8 +1456,8 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त कार्वोनेन हृदय गति कैलकुलेटर। उम्र और विश्राम हृदय गति (BPM) के अनुसार कार्वोनेन सूत्र (हृदय गति आरक्षित % विधि) का उपयोग करके लक्षित हृदय गति (THR) क्षेत्रों की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'age', label: L.age, type: 'number', placeholder: '25' },
-      { id: 'rhr', label: { en: 'Resting Heart Rate', es: 'Frecuencia Cardíaca en Reposo', fr: 'Fréquence Cardiaque Repos', de: 'Ruhepuls', ko: '안정시 심박수', hi: 'विश्राम हार्ट रेट' }, type: 'number', placeholder: '60' }
+      { id: 'age', label: L.age, type: 'number' },
+      { id: 'rhr', label: { en: 'Resting Heart Rate', es: 'Frecuencia Cardíaca en Reposo', fr: 'Fréquence Cardiaque Repos', de: 'Ruhepuls', ko: '안정시 심박수', hi: 'विश्राम हार्ट रेट' }, type: 'number' }
     ],
     calculate: (inputs) => {
       const age = parseInt(inputs.age) || 25;
@@ -1502,8 +1502,8 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त 1RM कैलकुलेटर (One-Rep Max Calculator)। इप्ले और ब्रिज़ीकी समीकरणों का उपयोग करके 1-रेप मैक्स ताकत, भारोत्तोलन प्रतिशत और रेप मैक्स बेंचमार्क की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: { en: 'Weight Lifted', es: 'Peso Levantado', fr: 'Charge Soulevée', de: 'Gewicht', ko: '리프팅 무게', hi: 'उठाया गया वजन' }, type: 'number', placeholder: '100' },
-      { id: 'age', label: { en: 'Reps Performed', es: 'Repeticiones', fr: 'Répétitions', de: 'Wiederholungen', ko: '반복 횟수(Reps)', hi: 'रेप्स' }, type: 'number', placeholder: '5' }
+      { id: 'weight', label: { en: 'Weight Lifted', es: 'Peso Levantado', fr: 'Charge Soulevée', de: 'Gewicht', ko: '리프팅 무게', hi: 'उठाया गया वजन' }, type: 'number' },
+      { id: 'age', label: { en: 'Reps Performed', es: 'Repeticiones', fr: 'Répétitions', de: 'Wiederholungen', ko: '반복 횟수(Reps)', hi: 'रेप्स' }, type: 'number' }
     ],
     calculate: (inputs, system) => {
       const w = parseFloat(inputs.weight) || 0;
@@ -1540,8 +1540,8 @@ export const calculators: CalculatorConfig[] = [
       "hi": "मुफ़्त वन-रेप मैक्स कैलकुलेटर और बेंच प्रेस 1RM टूल। उठाए गए वजन और पूरी की गई पुनरावृत्तियों के आधार पर अधिकतम लिफ्ट क्षमता, 5RM, 10RM शक्ति स्तर और प्रशिक्षण प्रतिशत का अनुमान लगाएं। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: { en: 'Weight Lifted', es: 'Peso Levantado', fr: 'Charge Soulevée', de: 'Gewicht', ko: '리프팅 무게', hi: 'उठाया गया वजन' }, type: 'number', placeholder: '100' },
-      { id: 'age', label: { en: 'Reps Performed', es: 'Repeticiones', fr: 'Répétitions', de: 'Wiederholungen', ko: '반복 횟수(Reps)', hi: 'रेप्स' }, type: 'number', placeholder: '5' }
+      { id: 'weight', label: { en: 'Weight Lifted', es: 'Peso Levantado', fr: 'Charge Soulevée', de: 'Gewicht', ko: '리프팅 무게', hi: 'उठाया गया वजन' }, type: 'number' },
+      { id: 'age', label: { en: 'Reps Performed', es: 'Repeticiones', fr: 'Répétitions', de: 'Wiederholungen', ko: '반복 횟수(Reps)', hi: 'रेप्स' }, type: 'number' }
     ],
     calculate: (inputs, system) => {
       const w = parseFloat(inputs.weight) || 0;
@@ -1581,9 +1581,9 @@ export const calculators: CalculatorConfig[] = [
       "hi": "ACOG और IOM दिशानिर्देशों के अनुसार मुफ़्त गर्भावस्था वजन बढ़ना कैलकुलेटर। गर्भावस्था से पहले के बीएमआई और तिमाही के अनुसार सप्ताह-दर-सप्ताह वजन संचय को ट्रैक करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
-      { id: 'weight', label: { en: 'Current Weight', es: 'Peso Actual', fr: 'Poids Actuel', de: 'Aktuelles Gewicht', ko: '현재 체중', hi: 'वर्तमान वजन' }, type: 'number', placeholder: '70' },
-      { id: 'preweight', label: { en: 'Pre-pregnancy Weight', es: 'Peso Pre-embarazo', fr: 'Poids Avant Grossesse', de: 'Gewicht vor Schwangerschaft', ko: '임신 전 체중', hi: 'गर्भावस्था से पहले का वजन' }, type: 'number', placeholder: '60' },
-      { id: 'age', label: { en: 'Pregnancy Week (1-40)', es: 'Semana de Embarazo (1-40)', fr: 'Semaine de Grossesse (1-40)', de: 'Schwangerschaftswoche (1-40)', ko: '임신 주수 (1-40)', hi: 'गर्भावस्था सप्ताह (1-40)' }, type: 'number', placeholder: '20' }
+      { id: 'weight', label: { en: 'Current Weight', es: 'Peso Actual', fr: 'Poids Actuel', de: 'Aktuelles Gewicht', ko: '현재 체중', hi: 'वर्तमान वजन' }, type: 'number' },
+      { id: 'preweight', label: { en: 'Pre-pregnancy Weight', es: 'Peso Pre-embarazo', fr: 'Poids Avant Grossesse', de: 'Gewicht vor Schwangerschaft', ko: '임신 전 체중', hi: 'गर्भावस्था से पहले का वजन' }, type: 'number' },
+      { id: 'age', label: { en: 'Pregnancy Week (1-40)', es: 'Semana de Embarazo (1-40)', fr: 'Semaine de Grossesse (1-40)', de: 'Schwangerschaftswoche (1-40)', ko: '임신 주수 (1-40)', hi: 'गर्भावस्था सप्ताह (1-40)' }, type: 'number' }
     ],
     calculate: (inputs, system) => {
       const curW = parseFloat(inputs.weight) || 0;

@@ -162,7 +162,7 @@ const t = translations[lang] || translations.en;
           <span>{t.weight_kg}</span>
           <span id="weightUnit" class="text-[var(--accent)] font-bold">{t.weight_unit_kg}</span>
         </label>
-        <input type="number" id="weight" placeholder="70" required
+        <input type="number" id="weight" placeholder="" required
           class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
           inputmode="decimal" />
       </div>
@@ -174,7 +174,7 @@ const t = translations[lang] || translations.en;
           <span id="heightUnit" class="text-[var(--accent)] font-bold">{t.height_unit_cm}</span>
         </label>
         <div id="metricHeightGroup" class="relative">
-          <input type="number" id="height" placeholder="175" required
+          <input type="number" id="height" placeholder="" required
             class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
             inputmode="decimal" />
         </div>
@@ -185,13 +185,13 @@ const t = translations[lang] || translations.en;
         <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{t.height_ft}</label>
         <div id="imperialHeightGroup" class="grid grid-cols-2 gap-2 sm:gap-3">
           <div class="relative">
-            <input type="number" id="heightFt" placeholder="5"
+            <input type="number" id="heightFt" placeholder=""
               class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
               inputmode="decimal" />
             <span class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)]">FT</span>
           </div>
           <div class="relative">
-            <input type="number" id="heightIn" placeholder="9"
+            <input type="number" id="heightIn" placeholder=""
               class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
               inputmode="decimal" />
             <span class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-[10px] font-display font-bold text-[var(--accent)]">IN</span>
@@ -205,7 +205,7 @@ const t = translations[lang] || translations.en;
       <!-- Age -->
       <div class="space-y-2">
         <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{t.age}</label>
-        <input type="number" id="age" placeholder="25" required
+        <input type="number" id="age" placeholder="" required
           class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-xl sm:text-2xl font-bold rounded-[var(--radius-sm)]"
           inputmode="numeric" />
       </div>
