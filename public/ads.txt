@@ -1,2 +1,1 @@
-# Real BMI Calculator - Google AdSense Authorized Digital Sellers (ads.txt)
 google.com, pub-6643535431949281, DIRECT, f08c47fec0942fa0
