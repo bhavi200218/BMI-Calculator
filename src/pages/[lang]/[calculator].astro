@@ -4,14 +4,13 @@ import Navbar from '../../components/Navbar.astro';
 import UniversalCalculator from '../../components/UniversalCalculator.astro';
 import CalculatorResult from '../../components/CalculatorResult.astro';
 import LatestArticles from '../../components/LatestArticles.astro';
-import DeepHealthSEO from '../../components/DeepHealthSEO.astro';
 import ToolSEOContent from '../../components/ToolSEOContent.astro';
 import ThreeDBodyVisualizer from '../../components/ThreeDBodyVisualizer.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
 import { seoDatabase } from '../../data/seoDatabase';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
 
-// Define static paths for all 17 calculators across 6 languages
+// Define static paths for all 25 calculators across 6 languages
 export function getStaticPaths() {
   const paths: any[] = [];
   for (const lang of locales) {
@@ -110,6 +109,52 @@ const webAppSchema = {
   "browserRequirements": "Requires JavaScript. Requires HTML5.",
   "operatingSystem": "All"
 };
+// Curated domain-relevant articles to eliminate generic repetitive article dumping
+const relevantArticlesBySlug: Record<string, string[]> = {
+  'bmi-calculator': ['what-is-bmi', 'bmi-chart-for-men-women', 'is-bmi-accurate'],
+  '3d-bmi-calculator': ['what-is-bmi', 'bmi-vs-body-fat', 'is-bmi-accurate'],
+  '3d-body-visualizer': ['what-is-bmi', 'bmi-vs-body-fat', 'is-bmi-accurate'],
+  'bmi-chart': ['bmi-chart-for-men-women', 'what-is-bmi', 'healthy-weight-chart'],
+  'healthy-weight-by-height': ['healthy-weight-chart', 'what-is-bmi', 'bmi-chart-for-men-women'],
+  'bmi-calculator-for-indians': ['healthy-bmi-range-indians', 'bmi-calculator-india'],
+  'asian-bmi-calculator': ['healthy-bmi-range-indians', 'bmi-calculator-india'],
+  'bmr-calculator': ['bmr-vs-tdee-calculator', 'what-is-bmi'],
+  'tdee-calculator': ['bmr-vs-tdee-calculator', 'what-is-bmi'],
+  'maintenance-calorie-calculator': ['bmr-vs-tdee-calculator', 'what-is-bmi'],
+  'calorie-calculator': ['bmr-vs-tdee-calculator', 'healthy-weight-chart'],
+  'macro-calculator': ['bmr-vs-tdee-calculator', 'bmi-vs-body-fat'],
+  'body-fat-calculator': ['bmi-vs-body-fat', 'is-bmi-accurate'],
+  'lean-body-mass-calculator': ['bmi-vs-body-fat', 'is-bmi-accurate'],
+  'ideal-weight-calculator': ['healthy-weight-chart', 'what-is-bmi'],
+  'waist-to-hip-ratio-calculator': ['bmi-vs-body-fat', 'is-bmi-accurate'],
+  'body-surface-area-calculator': ['what-is-bmi', 'is-bmi-accurate'],
+  'heart-rate-zone-calculator': ['is-bmi-accurate', 'bmr-vs-tdee-calculator'],
+  'karvonen-heart-rate-calculator': ['is-bmi-accurate', 'bmr-vs-tdee-calculator'],
+  '1rm-calculator': ['bmi-vs-body-fat', 'is-bmi-accurate'],
+  'one-rep-max-calculator': ['bmi-vs-body-fat', 'is-bmi-accurate'],
+  'protein-intake-calculator': ['bmr-vs-tdee-calculator', 'bmi-vs-body-fat'],
+  'water-intake-calculator': ['bmr-vs-tdee-calculator', 'healthy-weight-chart'],
+  'pregnancy-weight-gain-calculator': ['what-is-bmi', 'healthy-weight-chart'],
+  'diabetes-risk-calculator': ['healthy-bmi-range-indians', 'what-is-bmi']
+};
+
+const relatedGuidesTitle: Record<string, string> = {
+  en: 'Related Evidence-Based Guides',
+  es: 'Guías Basadas en Evidencia Relacionadas',
+  fr: 'Guides Basés sur des Preuves Associés',
+  de: 'Verwandte Evidenzbasierte Leitfäden',
+  ko: '관련 증거 기반 건강 가이드',
+  hi: 'संबंधित साक्ष्य-आधारित गाइड'
+};
+
+const relatedGuidesSubtitle: Record<string, string> = {
+  en: 'Curated clinical reference articles and educational explanations tailored to this calculator.',
+  es: 'Artículos de referencia clínica y explicaciones educativas seleccionadas para esta calculadora.',
+  fr: 'Articles de référence clinique et explications pédagogiques adaptés à ce calculateur.',
+  de: 'Ausgewählte klinische Referenzartikel und Erläuterungen passend zu diesem Rechner.',
+  ko: '이 계산기에 특화된 임상 참고 문헌 및 교육용 설명 자료입니다.',
+  hi: 'इस कैलकुलेटर के लिए विशेष रूप से तैयार किए गए नैदानिक संदर्भ लेख और शैक्षिक विवरण।'
+};
 ---
 
 <Layout 
@@ -186,10 +231,14 @@ const webAppSchema = {
 
       <!-- Extended Content & Educational Reference Knowledge Base for Search Indexing -->
       <div class="pt-4 space-y-12">
-        <ToolSEOContent slug={calc.slug} lang={lang} />
+        <ToolSEOContent slug={calc.slug} lang={lang} calculator={calc} />
         {calc.slug === 'bmi-calculator' && <EmbedWidgetBox lang={lang} />}
-        <LatestArticles lang={lang} />
-        <DeepHealthSEO lang={lang} slug={calc.slug} />
+        <LatestArticles 
+          lang={lang} 
+          slugs={relevantArticlesBySlug[calc.slug] || ['what-is-bmi', 'is-bmi-accurate']}
+          title={relatedGuidesTitle[lang] || relatedGuidesTitle.en}
+          subtitle={relatedGuidesSubtitle[lang] || relatedGuidesSubtitle.en}
+        />
       </div>
 
     </div>

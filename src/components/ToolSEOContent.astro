@@ -1,14 +1,16 @@
 ---
-import { type Locale } from '../utils/calculators';
+import { calculators, type CalculatorConfig, type Locale } from '../utils/calculators';
 import { seoDatabase, tableUi, type ToolContent } from '../data/seoDatabase';
 import { getWorkedExample } from '../utils/workedExamples';
+import { getInputVariablesGuide, getToolInterpretationAndLimitations } from '../utils/calculatorGuides';
 
 interface Props {
   slug: string;
   lang: Locale;
+  calculator?: CalculatorConfig;
 }
 
-const { slug, lang = 'en' } = Astro.props;
+const { slug, lang = 'en', calculator: propCalc } = Astro.props;
 
 const ui = tableUi[lang] || tableUi.en;
 
@@ -139,6 +141,9 @@ const defaultReferencesByLang: Record<Locale, { name: string; url: string }[]> =
 
 const activeReferences = toolSpecificReferences[effectiveSlug] || (defaultReferencesByLang[lang] || defaultReferencesByLang.en);
 const workedExample = getWorkedExample(effectiveSlug, lang);
+const currentCalc = propCalc || calculators.find(c => c.slug === slug || c.slug === effectiveSlug);
+const variablesGuide = getInputVariablesGuide(currentCalc?.inputs || [], lang);
+const clinicalGuide = getToolInterpretationAndLimitations(effectiveSlug, lang);
 ---
 
 <!-- Embed Tool-Specific FAQ Schema -->
@@ -172,6 +177,45 @@ const workedExample = getWorkedExample(effectiveSlug, lang);
       {currentData.formulaDesc}
     </p>
   </div>
+
+  <!-- Input Variables & Measurement Units Guide -->
+  {variablesGuide.items.length > 0 && (
+    <div class="p-6 md:p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-md space-y-5">
+      <div class="space-y-1">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+          {variablesGuide.title}
+        </div>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium">
+          {variablesGuide.subtitle}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {variablesGuide.items.map((item) => (
+          <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)]/70 flex flex-col justify-between space-y-3">
+            <div class="space-y-1.5">
+              <h4 class="text-sm font-display font-bold text-[var(--foreground)] tracking-tight">
+                {item.name}
+              </h4>
+              <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+                {item.description}
+              </p>
+            </div>
+            <div class="pt-2 border-t border-[var(--border)]/50 flex items-center justify-between gap-2 text-[11px] font-mono">
+              <span class="text-[var(--accent)] font-semibold">
+                <span class="text-[var(--muted-foreground)] font-sans">{variablesGuide.metricLabel}:</span> {item.metricUnit}
+              </span>
+              <span class="text-[var(--muted-foreground)]">|</span>
+              <span class="text-[var(--foreground)] font-semibold">
+                <span class="text-[var(--muted-foreground)] font-sans">{variablesGuide.imperialLabel}:</span> {item.imperialUnit}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
 
   <!-- Transparent Worked Example & Clinical/Educational Interpretation Guide -->
   <div class="p-6 md:p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-md space-y-6">
@@ -278,6 +322,51 @@ const workedExample = getWorkedExample(effectiveSlug, lang);
       </div>
     </div>
   )}
+
+  <!-- Result Interpretation & Clinical Limitations Guide -->
+  <div class="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-md space-y-6">
+    <div class="space-y-1">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
+        <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+        {clinicalGuide.sectionTitle}
+      </div>
+      <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium">
+        {clinicalGuide.sectionSubtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Interpretation Panel -->
+      <div class="p-5 rounded-xl bg-[var(--card)] border border-[var(--border)] space-y-2.5">
+        <h4 class="text-sm sm:text-base font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
+          <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          {clinicalGuide.interpretationTitle}
+        </h4>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+          {clinicalGuide.interpretationText}
+        </p>
+      </div>
+
+      <!-- Limitations Panel -->
+      <div class="p-5 rounded-xl bg-[var(--card)] border border-[var(--border)] space-y-2.5">
+        <h4 class="text-sm sm:text-base font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
+          <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          {clinicalGuide.limitationsTitle}
+        </h4>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+          {clinicalGuide.limitationsText}
+        </p>
+      </div>
+    </div>
+
+    <!-- Educational Consultation Banner -->
+    <div class="p-4 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 flex items-start gap-3">
+      <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <div class="space-y-0.5 text-xs text-[var(--muted-foreground)] font-medium">
+        <strong class="text-[var(--foreground)]">{clinicalGuide.medicalNoticeTitle}:</strong> {clinicalGuide.medicalNoticeText}
+      </div>
+    </div>
+  </div>
 
   <!-- FAQ Accordion List -->
   <div class="space-y-6 pt-4">

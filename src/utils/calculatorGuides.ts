@@ -1,0 +1,607 @@
+import type { Locale, InputField } from './calculators';
+
+export interface VariableGuideItem {
+  id: string;
+  name: string;
+  description: string;
+  metricUnit: string;
+  imperialUnit: string;
+}
+
+export interface DomainInterpretationGuide {
+  domain: string;
+  sectionTitle: string;
+  sectionSubtitle: string;
+  interpretationTitle: string;
+  interpretationText: string;
+  limitationsTitle: string;
+  limitationsText: string;
+  medicalNoticeTitle: string;
+  medicalNoticeText: string;
+}
+
+const UI_TITLES: Record<Locale, { varTitle: string; varSubtitle: string; metricLabel: string; imperialLabel: string }> = {
+  en: {
+    varTitle: 'Input Variables & Measurement Units',
+    varSubtitle: 'Standardized measurement parameters and unit conversions used by this calculator.',
+    metricLabel: 'Metric',
+    imperialLabel: 'Imperial'
+  },
+  es: {
+    varTitle: 'Variables de Entrada y Unidades de Medida',
+    varSubtitle: 'Parámetros de medición estandarizados y conversiones de unidades empleados en este cálculo.',
+    metricLabel: 'Métrico',
+    imperialLabel: 'Imperial'
+  },
+  fr: {
+    varTitle: 'Variables d’Entrée et Unités de Mesure',
+    varSubtitle: 'Paramètres de mesure standardisés et conversions d’unités utilisés par ce calculateur.',
+    metricLabel: 'Métrique',
+    imperialLabel: 'Impérial'
+  },
+  de: {
+    varTitle: 'Eingabevariablen & Maßeinheiten',
+    varSubtitle: 'Standardisierte Messparameter und Einheitenumrechnungen dieses Rechners.',
+    metricLabel: 'Metrisch',
+    imperialLabel: 'Imperial'
+  },
+  ko: {
+    varTitle: '입력 변수 및 측정 단위 가이드',
+    varSubtitle: '본 계산기에 적용되는 표준 측정 파라미터 및 단위 변환 기준입니다.',
+    metricLabel: '미터법',
+    imperialLabel: '야드파운드법'
+  },
+  hi: {
+    varTitle: 'इनपुट चर एवं मापन इकाइयाँ',
+    varSubtitle: 'इस कैलकुलेटर द्वारा उपयोग किए जाने वाले मानकीकृत मापन पैरामीटर और इकाई रूपांतरण।',
+    metricLabel: 'मीट्रिक',
+    imperialLabel: 'इंपीरियल'
+  }
+};
+
+const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: string; metric: string; imperial: string }>> = {
+  weight: {
+    en: { name: 'Body Weight', desc: 'Total scale mass measured in light clothing without footwear.', metric: 'Kilograms (kg)', imperial: 'Pounds (lbs)' },
+    es: { name: 'Peso Corporal', desc: 'Masa total medida en báscula con ropa ligera y descalzo.', metric: 'Kilogramos (kg)', imperial: 'Libras (lbs)' },
+    fr: { name: 'Poids Corporel', desc: 'Masse corporelle totale mesurée avec des vêtements légers et sans chaussures.', metric: 'Kilogrammes (kg)', imperial: 'Livres (lbs)' },
+    de: { name: 'Körpergewicht', desc: 'Gesamte Körpermasse, gewogen in leichter Kleidung ohne Schuhe.', metric: 'Kilogramm (kg)', imperial: 'Pfund (lbs)' },
+    ko: { name: '체중', desc: '가벼운 옷차림과 맨발 상태에서 측정한 체중계 총 질량입니다.', metric: '킬로그램 (kg)', imperial: '파운드 (lbs)' },
+    hi: { name: 'शरीर का वजन', desc: 'हल्के कपड़ों में बिना जूते के मापा गया कुल शारीरिक वजन।', metric: 'किलोग्राम (kg)', imperial: 'पाउंड (lbs)' }
+  },
+  height: {
+    en: { name: 'Stature / Height', desc: 'Vertical height from the soles of the feet to the crown of the head while standing straight.', metric: 'Centimeters (cm)', imperial: 'Feet & Inches (ft/in)' },
+    es: { name: 'Estatura / Altura', desc: 'Distancia vertical desde la planta de los pies hasta la coronilla en posición erguida.', metric: 'Centímetros (cm)', imperial: 'Pies y Pulgadas (ft/in)' },
+    fr: { name: 'Taille / Stature', desc: 'Distance verticale de la plante des pieds au sommet du crâne, en position debout.', metric: 'Centimètres (cm)', imperial: 'Pieds et Pouces (ft/in)' },
+    de: { name: 'Körpergröße', desc: 'Vertikaler Abstand von den Fußsohlen bis zum Scheitel bei aufrechter Haltung.', metric: 'Zentimeter (cm)', imperial: 'Fuß & Zoll (ft/in)' },
+    ko: { name: '신장 (키)', desc: '곧은 자세로 발바닥부터 정수리까지 수직으로 측정한 체격입니다.', metric: '센티미터 (cm)', imperial: '피트 & 인치 (ft/in)' },
+    hi: { name: 'ऊंचाई / कद', desc: 'सीधे खड़े होने पर पैरों के तलवों से लेकर सिर के शीर्ष तक की ऊर्ध्वाधर माप।', metric: 'सेंटीमीटर (cm)', imperial: 'फीट और इंच (ft/in)' }
+  },
+  age: {
+    en: { name: 'Chronological Age', desc: 'Completed years of life, required for age-adjusted metabolic coefficients and growth baselines.', metric: 'Years (integer)', imperial: 'Years (integer)' },
+    es: { name: 'Edad Cronológica', desc: 'Años cumplidos, necesarios para coeficientes metabólicos ajustados por edad.', metric: 'Años (entero)', imperial: 'Años (entero)' },
+    fr: { name: 'Âge Chronologique', desc: 'Années révolues, requises pour les coefficients métaboliques ajustés selon l’âge.', metric: 'Années (entier)', imperial: 'Années (entier)' },
+    de: { name: 'Lebensalter', desc: 'Vollendete Lebensjahre, erforderlich für alterskorrigierte Stoffwechselkoeffizienten.', metric: 'Jahre (Ganzzahl)', imperial: 'Jahre (Ganzzahl)' },
+    ko: { name: '만 나이', desc: '연령별 대사율 계수 산출 및 성장 기준선 평가에 사용되는 만 나이입니다.', metric: '세 (정수)', imperial: '세 (정수)' },
+    hi: { name: 'आयु', desc: 'पूर्ण किए गए जीवन वर्ष, जो आयु-समायोजित चयापचय गुणांक के लिए आवश्यक हैं।', metric: 'वर्ष (पूर्णांक)', imperial: 'वर्ष (पूर्णांक)' }
+  },
+  gender: {
+    en: { name: 'Biological Sex', desc: 'Required because biological sex significantly influences essential adipose tissue ratio and basal metabolic rate.', metric: 'Male / Female', imperial: 'Male / Female' },
+    es: { name: 'Sexo Biológico', desc: 'Requerido porque el sexo biológico determina la proporción de grasa esencial y la tasa metabólica basal.', metric: 'Masculino / Femenino', imperial: 'Masculino / Femenino' },
+    fr: { name: 'Sexe Biologique', desc: 'Nécessaire car le sexe biologique influence la masse grasse essentielle et le métabolisme de base.', metric: 'Homme / Femme', imperial: 'Homme / Femme' },
+    de: { name: 'Biologisches Geschlecht', desc: 'Erforderlich, da das biologische Geschlecht den essenziellen Fettanteil und den Grundumsatz bestimmt.', metric: 'Männlich / Weiblich', imperial: 'Männlich / Weiblich' },
+    ko: { name: '생물학적 성별', desc: '필수 체지방 비율 및 기초 대사량 계수가 성별에 따라 다르므로 계산에 적용됩니다.', metric: '남성 / 여성', imperial: '남성 / 여성' },
+    hi: { name: 'जैविक लिंग', desc: 'आवश्यक क्योंकि जैविक लिंग आवश्यक वसा अनुपात और बेसल मेटाबोलिक दर को प्रभावित करता है।', metric: 'पुरुष / महिला', imperial: 'पुरुष / महिला' }
+  },
+  waist: {
+    en: { name: 'Waist Circumference', desc: 'Measured at the midpoint between the lower margin of the last palpable rib and the top of the iliac crest.', metric: 'Centimeters (cm)', imperial: 'Inches (in)' },
+    es: { name: 'Circunferencia de Cintura', desc: 'Medida en el punto medio entre el borde inferior de la última costilla palpable y la cresta ilíaca.', metric: 'Centímetros (cm)', imperial: 'Pulgadas (in)' },
+    fr: { name: 'Tour de Taille', desc: 'Mesuré à mi-chemin entre le bord inférieur de la dernière côte palpable et la crête iliaque.', metric: 'Centimètres (cm)', imperial: 'Pouces (in)' },
+    de: { name: 'Taillenumfang', desc: 'Gemessen in der Mitte zwischen dem unteren Rippenrand und der Oberkante des Beckenkamms.', metric: 'Zentimeter (cm)', imperial: 'Zoll (in)' },
+    ko: { name: '허리둘레', desc: '가장 아래 갈비뼈 밑단과 골반 장골능 사이의 중간 지점을 수평으로 측정합니다.', metric: '센티미터 (cm)', imperial: '인치 (in)' },
+    hi: { name: 'कमर की परिधि', desc: 'अंतिम पसली के निचले सिरे और कूल्हे की हड्डी के शीर्ष के मध्य बिंदु पर मापी गई परिधि।', metric: 'सेंटीमीटर (cm)', imperial: 'इंच (in)' }
+  },
+  hip: {
+    en: { name: 'Hip Circumference', desc: 'Measured horizontally at the point of maximum circumference over the buttocks.', metric: 'Centimeters (cm)', imperial: 'Inches (in)' },
+    es: { name: 'Circunferencia de Cadera', desc: 'Medida horizontalmente en el punto de máxima prominencia de los glúteos.', metric: 'Centímetros (cm)', imperial: 'Pulgadas (in)' },
+    fr: { name: 'Tour de Hanches', desc: 'Mesuré horizontalement au niveau de la circonférence maximale des fessiers.', metric: 'Centimètres (cm)', imperial: 'Pouces (in)' },
+    de: { name: 'Hüftumfang', desc: 'Horizontal an der breitesten Stelle des Gesäßes gemessen.', metric: 'Zentimeter (cm)', imperial: 'Zoll (in)' },
+    ko: { name: '엉덩이둘레', desc: '둔부에서 가장 둘레가 넓은 돌출 부위를 수평으로 측정합니다.', metric: '센티미터 (cm)', imperial: '인치 (in)' },
+    hi: { name: 'कूल्हे की परिधि', desc: 'नितंबों के सबसे चौड़े हिस्से पर क्षैतिज रूप से मापी गई माप।', metric: 'सेंटीमीटर (cm)', imperial: 'इंच (in)' }
+  },
+  neck: {
+    en: { name: 'Neck Circumference', desc: 'Measured just below the laryngeal prominence (Adam’s apple), perpendicular to the long axis of the neck.', metric: 'Centimeters (cm)', imperial: 'Inches (in)' },
+    es: { name: 'Circunferencia de Cuello', desc: 'Medida justo debajo de la manzana de Adán, perpendicular al eje longitudinal del cuello.', metric: 'Centímetros (cm)', imperial: 'Pulgadas (in)' },
+    fr: { name: 'Tour de Cou', desc: 'Mesuré juste sous la pomme d’Adam, perpendiculairement à l’axe du cou.', metric: 'Centimètres (cm)', imperial: 'Pouces (in)' },
+    de: { name: 'Halsumfang', desc: 'Direkt unterhalb des Kehlkopfs rechtwinklig zur Längsachse des Halses gemessen.', metric: 'Zentimeter (cm)', imperial: 'Zoll (in)' },
+    ko: { name: '목둘레', desc: '후두 융기(목젖) 바로 아래 부위를 목 축에 수직으로 측정합니다.', metric: '센티미터 (cm)', imperial: '인치 (in)' },
+    hi: { name: 'गर्दन की परिधि', desc: 'कंठ (एडम्स एप्पल) के ठीक नीचे गर्दन के अक्ष के लंबवत मापी गई परिधि।', metric: 'सेंटीमीटर (cm)', imperial: 'इंच (in)' }
+  },
+  activity: {
+    en: { name: 'Physical Activity Level (PAL)', desc: 'Categorized multiplier accounting for occupational movement and structured exercise expenditure.', metric: 'Multiplier (1.2 to 1.725)', imperial: 'Multiplier (1.2 to 1.725)' },
+    es: { name: 'Nivel de Actividad Física (PAL)', desc: 'Multiplicador que pondera el movimiento laboral y el ejercicio estructurado semanal.', metric: 'Multiplicador (1.2 a 1.725)', imperial: 'Multiplicador (1.2 a 1.725)' },
+    fr: { name: 'Niveau d’Activité Physique (NAP)', desc: 'Facteur multiplicateur évaluant l’activité professionnelle et les séances de sport.', metric: 'Facteur (1,2 à 1,725)', imperial: 'Facteur (1,2 à 1,725)' },
+    de: { name: 'Körperliche Aktivität (PAL)', desc: 'Multiplikator zur Erfassung der beruflichen und sportlichen Energieverbrennung.', metric: 'Faktor (1,2 bis 1,725)', imperial: 'Faktor (1,2 bis 1,725)' },
+    ko: { name: '신체 활동 수준 (PAL 계수)', desc: '일상 직업 활동량 및 규칙적인 주간 운동 강도를 반영하는 대사 계수입니다.', metric: '계수 (1.2 ~ 1.725)', imperial: '계수 (1.2 ~ 1.725)' },
+    hi: { name: 'शारीरिक गतिविधि स्तर (PAL)', desc: 'दैनिक कार्य और व्यायाम की ऊर्जा खपत का मूल्यांकन करने वाला गुणक।', metric: 'गुणक (1.2 से 1.725)', imperial: 'गुणक (1.2 से 1.725)' }
+  },
+  goal: {
+    en: { name: 'Metabolic Goal', desc: 'Defines the energy delta applied to maintenance calories: deficit (-500 kcal), maintenance (0), or surplus (+500 kcal).', metric: 'Caloric Delta (kcal/day)', imperial: 'Caloric Delta (kcal/day)' },
+    es: { name: 'Objetivo Metabólico', desc: 'Establece el balance calórico deseado: déficit (-500 kcal), mantenimiento (0) o superávit (+500 kcal).', metric: 'Delta Calórico (kcal/día)', imperial: 'Delta Calórico (kcal/día)' },
+    fr: { name: 'Objectif Métabolique', desc: 'Définit le bilan énergétique ciblé : déficit (-500 kcal), maintien (0) ou surplus (+500 kcal).', metric: 'Delta Énergétique (kcal/jour)', imperial: 'Delta Énergétique (kcal/jour)' },
+    de: { name: 'Kalorisches Ziel', desc: 'Definiert die Energiebilanz: Kaloriendefizit (-500 kcal), Erhalt (0) oder Kalorienüberschuss (+500 kcal).', metric: 'Delta (kcal/Tag)', imperial: 'Delta (kcal/Tag)' },
+    ko: { name: '체중 관리 목표', desc: '감량(-500 kcal 적자), 유지(균형), 증량(+500 kcal 잉여) 목표에 맞춘 일일 열량 조정치입니다.', metric: '열량 증감치 (kcal/일)', imperial: '열량 증감치 (kcal/일)' },
+    hi: { name: 'चयापचय लक्ष्य', desc: 'कैलोरी संतुलन निर्धारित करता है: वजन घटाना (-500 किलोकैलोरी), स्थिर रखना (0), या वजन बढ़ाना (+500)।', metric: 'दैनिक परिवर्तन (kcal/दिन)', imperial: 'दैनिक परिवर्तन (kcal/दिन)' }
+  },
+  rhr: {
+    en: { name: 'Resting Heart Rate (RHR)', desc: 'Heart beats per minute taken at complete physical rest, ideally measured immediately upon waking.', metric: 'Beats per minute (bpm)', imperial: 'Beats per minute (bpm)' },
+    es: { name: 'Frecuencia Cardíaca en Reposo', desc: 'Pulsaciones por minuto en reposo total, preferentemente al despertar antes de levantarse.', metric: 'Latidos por minuto (lpm)', imperial: 'Latidos por minuto (lpm)' },
+    fr: { name: 'Fréquence Cardiaque au Repos (FCR)', desc: 'Battements par minute au repos complet, idéalement mesurés au réveil avant le lever.', metric: 'Battements par minute (bpm)', imperial: 'Battements par minute (bpm)' },
+    de: { name: 'Ruhepuls (RHR)', desc: 'Herzschläge pro Minute in völliger körperlicher Ruhe, optimal morgens direkt nach dem Erwachen.', metric: 'Schläge pro Minute (S/min)', imperial: 'Schläge pro Minute (S/min)' },
+    ko: { name: '안정 시 심박수 (RHR)', desc: '신체적 휴식 상태에서 1분간 측정한 맥박 수로, 기상 직후 침대에서 측정하는 것이 가장 정확합니다.', metric: '분당 심박수 (bpm)', imperial: '분당 심박수 (bpm)' },
+    hi: { name: 'विश्राम हृदय गति (RHR)', desc: 'पूर्ण विश्राम की स्थिति में प्रति मिनट हृदय की धड़कन, विशेष रूप से सुबह जागने पर मापी गई।', metric: 'धड़कन प्रति मिनट (bpm)', imperial: 'धड़कन प्रति मिनट (bpm)' }
+  },
+  preweight: {
+    en: { name: 'Pre-Pregnancy Weight', desc: 'Maternal baseline body weight prior to conception, used to establish recommended gestational weight gain brackets.', metric: 'Kilograms (kg)', imperial: 'Pounds (lbs)' },
+    es: { name: 'Peso Previo al Embarazo', desc: 'Peso materno antes de la gestación para definir el rango de ganancia ponderal recomendado según la ACOG.', metric: 'Kilogramos (kg)', imperial: 'Libras (lbs)' },
+    fr: { name: 'Poids Pré-Grossesse', desc: 'Poids maternel avant la conception permettant de définir la prise de poids recommandée selon l’ACOG.', metric: 'Kilogrammes (kg)', imperial: 'Livres (lbs)' },
+    de: { name: 'Vor-Schwangerschaftsgewicht', desc: 'Körpergewicht vor der Empfängnis zur Festlegung der empfohlenen Gewichtszunahme nach IOM/ACOG.', metric: 'Kilogramm (kg)', imperial: 'Pfund (lbs)' },
+    ko: { name: '임신 전 체중', desc: '임신 전 산모의 기준 체중으로, 임신 기간 권장 체중 증가 범위를 분류하는 기준이 됩니다.', metric: '킬로그램 (kg)', imperial: '파운드 (lbs)' },
+    hi: { name: 'गर्भावस्था पूर्व वजन', desc: 'गर्भाधान से पहले माता का मूल शारीरिक वजन, जो गर्भावस्था में अनुशंसित वजन वृद्धि सीमा तय करता है।', metric: 'किलोग्राम (kg)', imperial: 'पाउंड (lbs)' }
+  }
+};
+
+export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale) {
+  const ui = UI_TITLES[lang] || UI_TITLES.en;
+  const items: VariableGuideItem[] = inputs.map(input => {
+    const def = VARIABLE_DEFINITIONS[input.id]?.[lang] || VARIABLE_DEFINITIONS[input.id]?.en;
+    if (def) {
+      return {
+        id: input.id,
+        name: def.name,
+        description: def.desc,
+        metricUnit: def.metric,
+        imperialUnit: def.imperial
+      };
+    }
+    const labelText = typeof input.label === 'object' ? (input.label[lang] || input.label.en || input.id) : String(input.label);
+    return {
+      id: input.id,
+      name: labelText,
+      description: labelText,
+      metricUnit: 'Standard units',
+      imperialUnit: 'Standard units'
+    };
+  });
+
+  return {
+    title: ui.varTitle,
+    subtitle: ui.varSubtitle,
+    metricLabel: ui.metricLabel,
+    imperialLabel: ui.imperialLabel,
+    items
+  };
+}
+
+export function getToolInterpretationAndLimitations(slug: string, lang: Locale): DomainInterpretationGuide {
+  const isRegional = ['bmi-calculator-for-indians', 'asian-bmi-calculator', 'bmi-calculator-india'].includes(slug);
+  const isMetabolic = ['bmr-calculator', 'tdee-calculator', 'maintenance-calorie-calculator', 'calorie-calculator', 'macro-calculator'].includes(slug);
+  const isBodyComp = ['body-fat-calculator', 'lean-body-mass-calculator', 'ideal-weight-calculator', 'waist-to-hip-ratio-calculator', 'body-surface-area-calculator'].includes(slug);
+  const isFitness = ['heart-rate-zone-calculator', 'karvonen-heart-rate-calculator', '1rm-calculator', 'one-rep-max-calculator'].includes(slug);
+  const isSpecialty = ['protein-intake-calculator', 'water-intake-calculator', 'pregnancy-weight-gain-calculator', 'diabetes-risk-calculator'].includes(slug);
+
+  const domain = isRegional ? 'regional' : (isMetabolic ? 'metabolic' : (isBodyComp ? 'bodycomp' : (isFitness ? 'fitness' : (isSpecialty ? 'specialty' : 'bmi'))));
+
+  const GUIDES: Record<string, Record<Locale, DomainInterpretationGuide>> = {
+    bmi: {
+      en: {
+        domain: 'bmi',
+        sectionTitle: 'Result Interpretation & Clinical Limitations',
+        sectionSubtitle: 'How to interpret your calculated score and understand population screening boundaries.',
+        interpretationTitle: 'WHO Global Reference Interpretation',
+        interpretationText: 'A Body Mass Index between 18.5 and 24.9 kg/m² defines the standard reference baseline for adult populations under World Health Organization (WHO) and CDC frameworks. Values from 25.0 to 29.9 kg/m² reflect the overweight threshold, while values ≥ 30.0 kg/m² categorize obesity tiers. These thresholds serve as broad epidemiological screening categories rather than direct measures of metabolic wellness.',
+        limitationsTitle: 'Key Physiological Limitations',
+        limitationsText: 'BMI relies solely on total body mass and stature, without distinguishing adipose tissue from skeletal muscle, bone density, or extracellular fluid. Consequently, highly muscular individuals frequently score in the overweight range despite minimal adiposity, whereas elderly adults with age-related muscle loss (sarcopenia) may display a normal BMI while carrying excess visceral fat.',
+        medicalNoticeTitle: 'Clinical Consultation Notice',
+        medicalNoticeText: 'This tool provides educational screening estimates only. A single BMI value cannot diagnose health. Consult a licensed physician for comprehensive clinical evaluations, including blood pressure, fasting glucose, and blood lipid biomarkers.'
+      },
+      es: {
+        domain: 'bmi',
+        sectionTitle: 'Interpretación de Resultados y Límites Clínicos',
+        sectionSubtitle: 'Cómo interpretar la puntuación obtenida y comprender los límites del cribado poblacional.',
+        interpretationTitle: 'Interpretación según la Referencia Global de la OMS',
+        interpretationText: 'Un Índice de Masa Corporal entre 18.5 y 24.9 kg/m² constituye el intervalo de referencia estándar para adultos según la Organización Mundial de la Salud (OMS) y los CDC. Los valores de 25.0 a 29.9 kg/m² indican sobrepeso, y ≥ 30.0 kg/m² definen obesidad. Estas clasificaciones son herramientas estadísticas de salud pública, no diagnósticos individuales.',
+        limitationsTitle: 'Limitaciones Fisiológicas Clave',
+        limitationsText: 'El IMC utiliza únicamente el peso y la estatura, sin diferenciar entre masa magra muscular, densidad ósea y tejido adiposo. Por este motivo, personas atléticas pueden registrar valores de sobrepeso con baja grasa corporal, mientras que adultos mayores con sarcopenia pueden tener un IMC normal pero un exceso de grasa visceral oculta.',
+        medicalNoticeTitle: 'Aviso de Consulta Médica',
+        medicalNoticeText: 'Esta herramienta proporciona cálculos educativos preliminares. Para evaluar su estado de salud integral, consulte a un profesional médico colegiado que examine su presión arterial, perfil lipídico y glucemia en ayunas.'
+      },
+      fr: {
+        domain: 'bmi',
+        sectionTitle: 'Interprétation des Résultats et Limites Cliniques',
+        sectionSubtitle: 'Comment analyser votre résultat et appréhender les seuils de dépistage épidémiologique.',
+        interpretationTitle: 'Interprétation selon les Normes Mondiales de l’OMS',
+        interpretationText: 'Un Indice de Masse Corporelle compris entre 18,5 et 24,9 kg/m² correspond à la norme de référence pour la population adulte selon l’OMS et les CDC. Les valeurs de 25,0 à 29,9 kg/m² indiquent un surpoids et celles ≥ 30,0 kg/m² définissent l’obésité. Ces fourchettes constituent des repères statistiques et non un bilan métabolique personnalisé.',
+        limitationsTitle: 'Limites Physiologiques Essentielles',
+        limitationsText: 'L’IMC repose uniquement sur le ratio masse/taille sans distinguer le muscle du tissu adipeux ni de la masse osseuse. Ainsi, un sportif musclé peut être classé en surpoids avec un taux de graisse faible, tandis qu’une personne âgée souffrant de sarcopénie peut présenter un IMC normal malgré un excès de graisse viscérale.',
+        medicalNoticeTitle: 'Avertissement Médical',
+        medicalNoticeText: 'Ce calculateur offre une estimation éducative. Pour un examen complet de votre santé métabolique, consultez un médecin qualifié (bilan lipidique, glycémie à jeun et tension artérielle).'
+      },
+      de: {
+        domain: 'bmi',
+        sectionTitle: 'Ergebnisinterpretation & Klinische Grenzen',
+        sectionSubtitle: 'So ordnen Sie Ihren berechneten Wert ein und verstehen die Grenzen des Screenings.',
+        interpretationTitle: 'Interpretation nach weltweiten WHO-Referenzen',
+        interpretationText: 'Ein Body-Mass-Index von 18,5 bis 24,9 kg/m² bildet den internationalen Referenzbereich für Erwachsene nach Vorgaben der WHO und der CDC. Werte zwischen 25,0 und 29,9 kg/m² gelten als Übergewicht, Werte ab 30,0 kg/m² als Adipositas. Diese Stufen dienen der epidemiologischen Früherkennung, nicht der individuellen Diagnose.',
+        limitationsTitle: 'Wesentliche Physiologische Einschränkungen',
+        limitationsText: 'Der BMI erfasst lediglich das Verhältnis von Körpergewicht zu Körpergröße, ohne Muskelmasse, Knochendichte oder Fettgewebe separat zu messen. Gut trainierte Personen fallen dadurch oft in die Kategorie Übergewicht, während ältere Menschen mit altersbedingtem Muskelabbau (Sarkopenie) trotz erhöhtem viszeralem Fett einen normalen BMI aufweisen können.',
+        medicalNoticeTitle: 'Ärztlicher Beratungshinweis',
+        medicalNoticeText: 'Dieses Werkzeug dient ausschließlich der gesundheitlichen Orientierung. Für eine fundierte Diagnose wenden Sie sich an einen Arzt zur Kontrolle von Blutdruck, Nüchternblutzucker und Lipidprofil.'
+      },
+      ko: {
+        domain: 'bmi',
+        sectionTitle: '산출 결과 해석 및 임상적 한계점',
+        sectionSubtitle: '계산된 지표의 보건학적 의미와 집단 선별 검사의 한계점을 안내합니다.',
+        interpretationTitle: 'WHO 글로벌 기준에 따른 해석',
+        interpretationText: '세계보건기구(WHO)와 질병통제예방센터(CDC)에 따르면 성인의 표준 정상 BMI 범위는 18.5 ~ 24.9 kg/m²입니다. 25.0 ~ 29.9 kg/m²는 과체중, 30.0 kg/m² 이상은 비만으로 분류됩니다. 이 수치는 대중 보건 통계용 기준선이며 개인의 대사 건강 상태를 단독으로 확정하지 않습니다.',
+        limitationsTitle: '주요 생리학적 한계점',
+        limitationsText: 'BMI는 총 체중과 신장만을 연산하므로 근육량, 골밀도, 체지방의 구성을 구분하지 못합니다. 근육질 체형의 운동선수는 체지방이 낮아도 과체중으로 판정될 수 있으며, 노화로 인한 근감소증(Sarcopenia)이 있는 경우 내장지방이 많아도 정상 체중으로 나타날 수 있습니다.',
+        medicalNoticeTitle: '의학적 상담 안내',
+        medicalNoticeText: '본 도구는 교육용 참고 수치만을 제공합니다. 정확한 건강 상태 평가는 전문의와 상담하여 혈압, 공복 혈당, 지질 수치 등을 종합적으로 확인해야 합니다.'
+      },
+      hi: {
+        domain: 'bmi',
+        sectionTitle: 'परिणाम व्याख्या एवं नैदानिक सीमाएं',
+        sectionSubtitle: 'अपने प्राप्त स्कोर का अर्थ समझें और जनसंख्या स्क्रीनिंग की सीमाओं को जानें।',
+        interpretationTitle: 'डब्ल्यूएचओ वैश्विक संदर्भ व्याख्या',
+        interpretationText: 'विश्व स्वास्थ्य संगठन (WHO) और सीडीसी के अनुसार वयस्कों के लिए 18.5 से 24.9 kg/m² सामान्य संदर्भ सीमा है। 25.0 से 29.9 kg/m² अधिक वजन और 30.0 या अधिक मोटापे को दर्शाता है। ये श्रेणियां सार्वजनिक स्वास्थ्य स्क्रीनिंग के लिए हैं, व्यक्तिगत नैदानिक पुष्टि के लिए नहीं।',
+        limitationsTitle: 'प्रमुख शारीरिक सीमाएं',
+        limitationsText: 'बीएमआई केवल ऊंचाई और कुल वजन पर आधारित है। यह मांसपेशियों और वसा के बीच अंतर नहीं कर सकता। मांसपेशियों वाले एथलीट कम वसा के बावजूद अधिक वजन की श्रेणी में आ सकते हैं, जबकि बुजुर्ग व्यक्ति मांसपेशियों की कमी (सार्कोपेनिया) के कारण सामान्य बीएमआई पर भी अतिरिक्त आंतरिक वसा रख सकते हैं।',
+        medicalNoticeTitle: 'चिकित्सीय परामर्श सूचना',
+        medicalNoticeText: 'यह कैलकुलेटर केवल शैक्षिक स्क्रीनिंग संदर्भ प्रदान करता है। व्यक्तिगत स्वास्थ्य मूल्यांकन के लिए पंजीकृत चिकित्सक से परामर्श करें और रक्तचाप, ब्लड शुगर तथा लिपिड प्रोफाइल की जांच कराएं।'
+      }
+    },
+    regional: {
+      en: {
+        domain: 'regional',
+        sectionTitle: 'Regional Action Points & Population Specificity',
+        sectionSubtitle: 'Distinguishing international WHO classifications from population-specific public-health intervention triggers.',
+        interpretationTitle: 'WHO Asian Action Points (2004) & ICMR Guidelines (2009)',
+        interpretationText: 'Epidemiological studies confirm that Asian and South Asian adults experience elevated risks of type 2 diabetes and cardiovascular disease at lower BMI levels. The WHO 2004 Expert Consultation identified 23.0 kg/m² (increased risk) and 27.5 kg/m² (high risk) as action points for national intervention policies, while preserving 18.5–24.9 kg/m² as the international standard. For Asian Indians, the ICMR consensus panel (Misra et al., JAPI 2009) recommends maintaining BMI between 18.5 and 22.9 kg/m².',
+        limitationsTitle: 'Public-Health Triggers vs Individual Diagnosis',
+        limitationsText: 'Population action points are public-health triggers designed for earlier dietary guidance and clinical surveillance—they are not universal individual diagnostic labels. Because of the "Thin-Fat Phenotype" (higher visceral fat with lower skeletal muscle), BMI must be interpreted alongside waist circumference (elevated risk at ≥ 90 cm in South Asian men, ≥ 80 cm in women).',
+        medicalNoticeTitle: 'Cardiometabolic Screening Recommendation',
+        medicalNoticeText: 'A regional BMI score between 18.5 and 22.9 kg/m² serves as a population reference window, not a personal guarantee of cardiovascular immunity. Routine clinical screening for glycated hemoglobin (HbA1c), fasting insulin, and blood lipids is recommended.'
+      },
+      es: {
+        domain: 'regional',
+        sectionTitle: 'Puntos de Acción Regionales y Especificidad Poblacional',
+        sectionSubtitle: 'Diferenciación entre la clasificación internacional de la OMS y los umbrales de intervención regional.',
+        interpretationTitle: 'Puntos de Acción de la OMS (2004) y Normas ICMR (2009)',
+        interpretationText: 'La evidencia demuestra que los adultos asiáticos e indios presentan mayor riesgo de diabetes tipo 2 e hipertensión con valores de IMC menores. La consulta de expertos de la OMS (2004) estableció 23.0 kg/m² (riesgo incrementado) y 27.5 kg/m² (alto riesgo) como puntos de acción para políticas de salud pública, manteniendo 18.5–24.9 kg/m² como referencia global. Para India, el consenso del ICMR fija el rango saludable en 18.5–22.9 kg/m².',
+        limitationsTitle: 'Umbrales de Intervención frente a Diagnóstico Clínico',
+        limitationsText: 'Los puntos de acción son desencadenantes de salud pública para iniciar intervenciones preventivas, no etiquetas diagnósticas universales. Debido al fenotipo de grasa visceral acumulada (TOFI), el IMC debe complementarse con la circunferencia de cintura (riesgo a partir de ≥ 90 cm en hombres y ≥ 80 cm en mujeres).',
+        medicalNoticeTitle: 'Recomendación de Cribado Clínico',
+        medicalNoticeText: 'Tener un IMC de 18.5–22.9 kg/m² es una referencia orientativa y no sustituye la evaluación médica periódica de glucosa basal, colesterol y presión arterial.'
+      },
+      fr: {
+        domain: 'regional',
+        sectionTitle: 'Points d’Action Régionaux et Spécificités de Population',
+        sectionSubtitle: 'Distinction entre la classification globale OMS et les seuils d’intervention régionaux.',
+        interpretationTitle: 'Points d’Action OMS Asie (2004) et Consensus ICMR (2009)',
+        interpretationText: 'Les recherches confirment que les risques cardiométaboliques apparaissent à un IMC plus bas chez les adultes asiatiques. La consultation d’experts de l’OMS (Lancet 2004) a identifié les seuils d’action de 23,0 kg/m² (risque accru) et 27,5 kg/m² (haut risque) pour guider les politiques nationales, tout en conservant 18,5–24,9 kg/m² comme norme mondiale. L’ICMR recommande une plage de 18,5–22,9 kg/m² pour l’Inde.',
+        limitationsTitle: 'Seuils d’Alerte de Santé Publique vs Diagnostic Médical',
+        limitationsText: 'Ces points d’action sont des indicateurs statistiques de prévention et non des diagnostics médicaux infaillibles. En raison d’une adiposité viscérale accrue à poids égal (phénotype TOFI), le tour de taille doit être mesuré en complément (risque dès ≥ 90 cm pour les hommes, ≥ 80 cm pour les femmes).',
+        medicalNoticeTitle: 'Conseil de Bilan Médical',
+        medicalNoticeText: 'Une valeur d’IMC située entre 18,5 et 22,9 kg/m² ne dispense pas d’un suivi médical régulier comprenant la mesure de la glycémie à jeun, de l’HbA1c et du bilan lipidique.'
+      },
+      de: {
+        domain: 'regional',
+        sectionTitle: 'Regionale Aktionspunkte & Populationsspezifische Einordnung',
+        sectionSubtitle: 'Unterscheidung zwischen internationalem WHO-Standard und regionalen Interventionsschwellen.',
+        interpretationTitle: 'WHO-Asien-Aktionspunkte (2004) & ICMR-Leitlinien (2009)',
+        interpretationText: 'Studien belegen, dass asiatische Erwachsene bereits bei niedrigerem BMI erhöhte Risiken für Typ-2-Diabetes aufweisen. Die WHO-Expertenkonsultation (Lancet 2004) definierte 23,0 kg/m² (erhöhtes Risiko) und 27,5 kg/m² (hohes Risiko) als Aktionsschwellen für nationale Gesundheitsprogramme, behielt jedoch 18,5–24,9 kg/m² als weltweiten Standard bei. Das ICMR empfiehlt für Indien 18,5–22,9 kg/m².',
+        limitationsTitle: 'Präventive Interventionsschwellen vs. Individuelle Diagnose',
+        limitationsText: 'Aktionspunkte sind bevölkerungsbezogene Schwellenwerte zur frühzeitigen Lebensstilberatung und keine universellen klinischen Diagnosen. Wegen des häufigen Auftretens von vermehrtem viszeralem Bauchfett (TOFI-Phänotyp) sollte stets der Taillenumfang hinzugezogen werden (erhöht ab ≥ 90 cm bei Männern, ≥ 80 cm bei Frauen).',
+        medicalNoticeTitle: 'Kardiometabolische Vorsorgeempfehlung',
+        medicalNoticeText: 'Ein BMI von 18,5–22,9 kg/m² ist ein nützlicher Orientierungswert, schließt jedoch kardiometabolische Risiken nicht aus. Regelmäßige ärztliche Kontrollen von Blutzucker, HbA1c und Blutfettwerten bleiben unerlässlich.'
+      },
+      ko: {
+        domain: 'regional',
+        sectionTitle: '지역별 실행 분별점 및 인구 집단 특이성',
+        sectionSubtitle: '국제 WHO 표준 분류와 지역별 공중보건 조기 개입 기준을 구별하여 설명합니다.',
+        interpretationTitle: 'WHO 아시아 실행 분별점 (2004) 및 ICMR 가이드라인 (2009)',
+        interpretationText: '아시아 성인은 서양인에 비해 상대적으로 낮은 BMI 수준에서도 인슐린 저항성 및 제2형 당뇨병 위험이 조기에 증가합니다. WHO 전문가 자문회의(Lancet 2004)는 국제 표준(18.5~24.9)을 유지하면서도 국가별 보건 개입을 위한 실행 분별점으로 23.0 kg/m²(위험 증가) 및 27.5 kg/m²(고위험)를 제시했습니다. 인도 ICMR 합의 지침은 18.5~22.9 kg/m²를 정상 기준으로 권고합니다.',
+        limitationsTitle: '공중보건 조기 경고 기준 vs 개인 의학 진단',
+        limitationsText: '이 분별점은 조기 식습관 개선과 검진을 촉진하기 위한 보건 행정상 기준선이며 단독 의학적 진단명이 아닙니다. 체중 대비 복부 내장 지방이 높은 체형 특성(마른 비만)을 반영하므로 허리둘레(남성 90cm 이상, 여성 80cm 이상 주의)를 함께 종합 판단해야 합니다.',
+        medicalNoticeTitle: '심대사 정밀 검진 권고',
+        medicalNoticeText: '지역 기준 18.5 ~ 22.9 kg/m² 범위 내에 있더라도 공복 혈당, 당화혈색소(HbA1c), 혈중 지질 등의 정기 혈액 검사를 통한 정밀 평가를 권장합니다.'
+      },
+      hi: {
+        domain: 'regional',
+        sectionTitle: 'क्षेत्रीय एक्शन पॉइंट एवं जनसंख्या विशिष्टता',
+        sectionSubtitle: 'अंतरराष्ट्रीय डब्ल्यूएचओ वर्गीकरण और क्षेत्रीय सार्वजनिक स्वास्थ्य हस्तक्षेप बिंदुओं का अंतर।',
+        interpretationTitle: 'डब्ल्यूएचओ एशियाई एक्शन पॉइंट (2004) और आईसीएमआर मानक (2009)',
+        interpretationText: 'अध्ययनों से सिद्ध हुआ है कि एशियाई वयस्कों में कम बीएमआई स्तर पर भी मधुमेह और हृदय रोग का खतरा बढ़ जाता है। डब्ल्यूएचओ विशेषज्ञ परामर्श (2004) ने 23.0 kg/m² (बढ़ा हुआ जोखिम) और 27.5 kg/m² (उच्च जोखिम) को सार्वजनिक स्वास्थ्य नीतियों के लिए एक्शन पॉइंट माना, जबकि अंतरराष्ट्रीय मानक 18.5–24.9 बना रहा। भारतीयों के लिए आईसीएमआर 18.5–22.9 kg/m² को सामान्य वजन मानता है।',
+        limitationsTitle: 'जनसंख्या एक्शन पॉइंट बनाम व्यक्तिगत निदान',
+        limitationsText: 'ये एक्शन पॉइंट जीवनशैली में समय रहते सुधार के लिए बनाए गए सार्वजनिक स्वास्थ्य संकेत हैं, सार्वभौमिक नैदानिक लेबल नहीं। आंतरिक पेट की चर्बी (थिन-फैट फेनोटाइप) के कारण बीएमआई के साथ कमर की माप (पुरुष ≥ 90 सेमी, महिला ≥ 80 सेमी) की जांच भी आवश्यक है।',
+        medicalNoticeTitle: 'नैदानिक जांच परामर्श',
+        medicalNoticeText: '18.5 से 22.9 kg/m² का बीएमआई स्कोर एक शैक्षिक संदर्भ है। सटीक स्वास्थ्य स्थिति के लिए डॉक्टर से रक्तचाप, ब्लड शुगर और लिपिड प्रोफाइल की नियमित जांच कराएं।'
+      }
+    },
+    metabolic: {
+      en: {
+        domain: 'metabolic',
+        sectionTitle: 'Energy Expenditure & Metabolic Calibration',
+        sectionSubtitle: 'Scientific basis of resting metabolic rate and physical activity multipliers.',
+        interpretationTitle: 'Mifflin-St Jeor Equation & Physical Activity Multipliers',
+        interpretationText: 'Basal Metabolic Rate (BMR) represents the minimum thermal energy expended to sustain vital autonomic processes (respiration, circulation, cellular repair) at complete rest. Total Daily Energy Expenditure (TDEE) factors in physical activity multipliers (1.2 to 1.725). Consuming calories at your estimated maintenance value promotes body mass equilibrium.',
+        limitationsTitle: 'Biological Variance in Predictive Equations',
+        limitationsText: 'Mathematical energy equations provide a predictive baseline with an expected standard error of approximately ±10% to ±15%. Individual metabolic rate varies based on genetics, thyroid function, brown adipose tissue thermogenesis, and lean muscle mass. Monitor body weight trends over 3 to 4 weeks to adjust real-world caloric targets.',
+        medicalNoticeTitle: 'Nutritional Guidance Disclaimer',
+        medicalNoticeText: 'Caloric targets are educational reference baselines. Individuals with metabolic conditions, eating disorders, or endocrine disorders should consult a registered dietitian or endocrinologist before undertaking severe caloric deficits.'
+      },
+      es: {
+        domain: 'metabolic',
+        sectionTitle: 'Gasto Energético y Calibración Metabólica',
+        sectionSubtitle: 'Fundamentos científicos de la tasa metabólica basal y los factores de actividad.',
+        interpretationTitle: 'Ecuación de Mifflin-St Jeor y Factores de Actividad',
+        interpretationText: 'La Tasa Metabólica Basal (TMB) cuantifica la energía mínima que el cuerpo consume para mantener funciones vitales en reposo absoluto. El Gasto Energético Total Diario (TDEE) añade el gasto derivado de la actividad física mediante factores multiplicadores (1.2 a 1.725). Consumir las calorías de mantenimiento mantiene el peso estable.',
+        limitationsTitle: 'Variabilidad Biológica en las Ecuaciones Predictivas',
+        limitationsText: 'Las ecuaciones predictivas conllevan un margen de error fisiológico del ±10% al ±15%. Factores como la masa muscular magra, la función tiroidea y la termogénesis inducida por la dieta varían entre individuos. Ajuste su ingesta observando la tendencia de peso durante 3 o 4 semanas.',
+        medicalNoticeTitle: 'Aviso Nutricional',
+        medicalNoticeText: 'Estos cálculos son estimaciones educativas. Personas con trastornos metabólicos o endocrinos deben consultar a un dietista-nutricionista antes de realizar déficits calóricos significativos.'
+      },
+      fr: {
+        domain: 'metabolic',
+        sectionTitle: 'Dépense Énergétique et Étalonnage Métabolique',
+        sectionSubtitle: 'Principes scientifiques du métabolisme de base et des coefficients d’activité.',
+        interpretationTitle: 'Équation de Mifflin-St Jeor et Coefficients d’Activité',
+        interpretationText: 'Le Métabolisme de Base (MB) correspond à l’énergie vitale nécessaire au fonctionnement des organes au repos absolu. La Dépense Énergétique Journalière (DEJ) intègre les coefficients d’activité (1,2 à 1,725). Un apport calorique équivalent à la DEJ permet de stabiliser le poids corporel.',
+        limitationsTitle: 'Variabilité Biologique des Équations Prédictives',
+        limitationsText: 'Les formules mathématiques comportent une marge de variation d’environ ±10 % à ±15 % par rapport à la calorimétrie indirecte. Le profil génétique, la fonction thyroïdienne et la masse musculaire influencent la dépense réelle. Suivez votre poids sur 3 à 4 semaines pour ajuster vos apports.',
+        medicalNoticeTitle: 'Recommandation Diététique',
+        medicalNoticeText: 'Ce résultat est une estimation informative. En cas de pathologie métabolique ou de troubles du comportement alimentaire, consultez un médecin ou un diététicien-nutritionniste.'
+      },
+      de: {
+        domain: 'metabolic',
+        sectionTitle: 'Energieverbrauch & Stoffwechsel-Kalibrierung',
+        sectionSubtitle: 'Wissenschaftliche Grundlagen des Grundumsatzes und der Aktivitätsfaktoren.',
+        interpretationTitle: 'Mifflin-St Jeor-Gleichung & Aktivitätsmultiplikatoren',
+        interpretationText: 'Der Grundumsatz (BMR) beziffert die minimale Energiemenge, die der Organismus in völliger Ruhe zur Aufrechterhaltung der Vitalfunktionen benötigt. Der Gesamtenergiebedarf (TDEE) berücksichtigt zusätzlich den Lebensstil durch Aktivitätsfaktoren (1,2 bis 1,725). Bei ausgeglichener Kalorienzufuhr bleibt das Körpergewicht stabil.',
+        limitationsTitle: 'Biologische Schwankungsbreite mathematischer Formeln',
+        limitationsText: 'Prädiktive Formeln weisen eine natürliche biologische Abweichung von etwa ±10 % bis ±15 % auf. Muskelmasse, Schilddrüsenhormone und adaptive Thermogenese beeinflussen den tatsächlichen Verbrauch. Beobachten Sie Ihren Gewichtsverlauf über 3 bis 4 Wochen zur Feinjustierung.',
+        medicalNoticeTitle: 'Ernährungsmedizinischer Hinweis',
+        medicalNoticeText: 'Berechnete Kalorienwerte bieten eine rechnerische Richtschnur. Bei Stoffwechselerkrankungen oder Essstörungen sollte vor einer Ernährungsumstellung ärztlicher Rat eingeholt werden.'
+      },
+      ko: {
+        domain: 'metabolic',
+        sectionTitle: '에너지 소비량 및 대사율 산출 가이드',
+        sectionSubtitle: '기초대사량 공식 및 신체 활동 계수의 과학적 산출 원리를 안내합니다.',
+        interpretationTitle: 'Mifflin-St Jeor 공식과 일일 총 에너지 소비량(TDEE)',
+        interpretationText: '기초대사량(BMR)은 생명 유지(호흡, 혈액 순환, 세포 재생)에 필요한 최소한의 안정 시 열량입니다. TDEE는 여기에 일상 활동 계수(1.2 ~ 1.725)를 곱하여 산출됩니다. 유지 칼로리만큼 섭취하면 체중이 안정적으로 유지됩니다.',
+        limitationsTitle: '생리학적 예측 오차와 개인별 편차',
+        limitationsText: '수학적 대사 방정식은 간접 열량 측정법 대비 통상 ±10% ~ ±15%의 예측 편차를 가집니다. 갑상선 호르몬 수치, 근육량 비율, 식후 열생성 등에 따라 실제 소비량이 달라지므로 3~4주간의 체중 변화 추이를 보며 섭취량을 미세 조정하는 것이 권장됩니다.',
+        medicalNoticeTitle: '영양 상담 안내',
+        medicalNoticeText: '본 수치는 교육용 가이드라인입니다. 대사 질환이나 식이 장애가 있는 경우 급격한 칼로리 제한 전에 공인 영양사 또는 내분비내과 전문의와 상담하세요.'
+      },
+      hi: {
+        domain: 'metabolic',
+        sectionTitle: 'ऊर्जा खपत एवं चयापचय गणना',
+        sectionSubtitle: 'बेसल मेटाबोलिक दर और शारीरिक गतिविधि गुणक के वैज्ञानिक आधार।',
+        interpretationTitle: 'मिफलिन-सेंट जियोर समीकरण और दैनिक ऊर्जा व्यय (TDEE)',
+        interpretationText: 'बेसल मेटाबोलिक दर (BMR) शरीर के अंगों को सुचारू रखने के लिए आवश्यक न्यूनतम ऊर्जा है। दैनिक ऊर्जा व्यय (TDEE) में गतिविधि गुणक (1.2 से 1.725) शामिल होते हैं। अपने रखरखाव कैलोरी के बराबर खाने से वजन स्थिर रहता है।',
+        limitationsTitle: 'पूर्वानुमान सूत्रों में शारीरिक भिन्नता',
+        limitationsText: 'गणितीय सूत्रों में लगभग ±10% से ±15% की प्राकृतिक भिन्नता हो सकती है। मांसपेशी द्रव्यमान, थायरॉयड स्तर और व्यक्तिगत चयापचय वास्तविक खपत को प्रभावित करते हैं। सटीक आवश्यकता जानने के लिए 3 से 4 सप्ताह तक वजन के रुझान की निगरानी करें।',
+        medicalNoticeTitle: 'पोषण सलाह अस्वीकरण',
+        medicalNoticeText: 'यह गणना केवल शैक्षिक मार्गदर्शन के लिए है। किसी भी बड़े कैलोरी बदलाव से पहले योग्य पोषण विशेषज्ञ या डॉक्टर से सलाह लें।'
+      }
+    },
+    bodycomp: {
+      en: {
+        domain: 'bodycomp',
+        sectionTitle: 'Body Composition & Anthropometric Estimates',
+        sectionSubtitle: 'Interpreting body fat percentage, lean body mass, and tape measurement formulas.',
+        interpretationTitle: 'Anthropometric Estimation Models',
+        interpretationText: 'Circumference-based algorithms (such as the US Navy Body Fat equation) and height-weight formulas (Boer LBM, Devine Ideal Weight) estimate the proportion of fat-free mass versus adipose tissue. These models help differentiate muscular density from excess adiposity.',
+        limitationsTitle: 'Measurement Accuracy & Technical Limitations',
+        limitationsText: 'Circumference measurements carry an inherent estimation error of approximately 3% to 4% compared to dual-energy X-ray absorptiometry (DEXA) or hydrostatic weighing. Tape positioning, tension consistency, and hydration status directly influence results.',
+        medicalNoticeTitle: 'Clinical Body Composition Context',
+        medicalNoticeText: 'Anthropometric calculations serve fitness tracking purposes and are not diagnostic scans. Individuals seeking precise body composition assessments should arrange clinical DEXA imaging.'
+      },
+      es: {
+        domain: 'bodycomp',
+        sectionTitle: 'Composición Corporal y Estimaciones Antropométricas',
+        sectionSubtitle: 'Interpretación del porcentaje de grasa, masa magra y fórmulas de perímetro.',
+        interpretationTitle: 'Modelos de Estimación Antropométrica',
+        interpretationText: 'Las fórmulas de perímetros corporales (como el método de la Marina de EE. UU.) y las de peso magro (Boer, Devine) estiman la proporción entre tejido adiposo y masa libre de grasa, ayudando a distinguir la masa muscular del exceso de grasa.',
+        limitationsTitle: 'Precisión de Medición y Límites Técnicos',
+        limitationsText: 'Las mediciones con cinta métrica presentan un margen de error del 3% al 4% frente a densitometrías DEXA o pesaje hidrostático. La tensión de la cinta, la ubicación exacta y la retención de líquidos pueden alterar los resultados.',
+        medicalNoticeTitle: 'Contexto Clínico',
+        medicalNoticeText: 'Estas estimaciones son útiles para el seguimiento deportivo y educativo. Para evaluaciones precisas de densidad ósea y composición corporal, se recomienda un escaneo DEXA clínico.'
+      },
+      fr: {
+        domain: 'bodycomp',
+        sectionTitle: 'Composition Corporelle et Estimations Anthropométriques',
+        sectionSubtitle: 'Interprétation du taux de masse grasse, de la masse maigre et des mesures au ruban.',
+        interpretationTitle: 'Modèles d’Évaluation Anthropométrique',
+        interpretationText: 'Les formules basées sur les circonférences (telles que celle de l’US Navy) et sur la taille (Boer, Devine) évaluent la répartition entre masse maigre et tissu adipeux afin de mieux cerner le profil corporel que le seul IMC.',
+        limitationsTitle: 'Précision et Tolérances Techniques',
+        limitationsText: 'L’évaluation anthropométrique présente une marge d’écart de 3 à 4 % par rapport à l’ostéodensitométrie DEXA. La précision du ruban, la tension appliquée et l’état d’hydratation influencent les résultats.',
+        medicalNoticeTitle: 'Information Médicale',
+        medicalNoticeText: 'Ces calculs sont destinés au suivi forme et éducation. Pour une mesure médicale exacte de la composition corporelle, effectuez un bilan DEXA en centre spécialisé.'
+      },
+      de: {
+        domain: 'bodycomp',
+        sectionTitle: 'Körperzusammensetzung & Anthropometrische Schätzungen',
+        sectionSubtitle: 'Einordnung von Körperfettanteil, fettfreier Masse und Umfangsmessungen.',
+        interpretationTitle: 'Anthropometrische Berechnungsmodelle',
+        interpretationText: 'Umfangsbasierte Verfahren (wie die US Navy-Methode) und Formeln zur fettfreien Masse (Boer, Devine) schätzen das Verhältnis von stoffwechselaktiver Muskelmasse zu Fettgewebe, um muskuläre Dichte von Übergewicht abzugrenzen.',
+        limitationsTitle: 'Messgenauigkeit & Technische Grenzen',
+        limitationsText: 'Umfangsmessungen haben gegenüber klinischen DEXA-Scans eine methodische Abweichung von ca. 3 % bis 4 %. Exakte Platzierung des Maßbands, Bandspannung und der Hydratationszustand beeinflussen das Ergebnis.',
+        medicalNoticeTitle: 'Klinischer Hinweis',
+        medicalNoticeText: 'Diese Formeln bieten Orientierung für Fitness und Training. Für eine medizinisch präzise Analyse empfiehlt sich ein klinischer DEXA-Körperscan.'
+      },
+      ko: {
+        domain: 'bodycomp',
+        sectionTitle: '신체 구성 및 인체 계측 추정치 가이드',
+        sectionSubtitle: '체지방률, 제지방량(LBM) 및 신체 둘레 측정 공식의 해석 기준입니다.',
+        interpretationTitle: '인체 계측 기반 신체 구성 모델',
+        interpretationText: '미 해군(US Navy) 체지방 공식 및 Boer 제지방량 공식은 신체 둘레 및 체중을 활용하여 체지방 조직과 근육 조직의 비율을 추정합니다. 이는 단순 체중만으로 알 수 없는 근육 발달도를 평가하는 데 유용합니다.',
+        limitationsTitle: '측정 정확도 및 기술적 한계',
+        limitationsText: '줄자 측정 기반 공식은 임상 정밀 DEXA 스캔 대비 통상 3% ~ 4%의 측정 편차를 가집니다. 줄자의 측정 위치, 당김 장력, 수분 저류 상태에 따라 오차가 발생할 수 있습니다.',
+        medicalNoticeTitle: '임상 신체 구성 검사 안내',
+        medicalNoticeText: '본 도구는 운동 및 건강 관리 추세를 모니터링하기 위한 교육용 추정치입니다. 정밀한 골밀도 및 체지방률 진단을 위해서는 병원 DEXA 검사를 권장합니다.'
+      },
+      hi: {
+        domain: 'bodycomp',
+        sectionTitle: 'शारीरिक संरचना एवं मानवशास्त्रीय अनुमान',
+        sectionSubtitle: 'शरीर में वसा प्रतिशत, लीन बॉडी मास और नाप सूत्रों की व्याख्या।',
+        interpretationTitle: 'मानवशास्त्रीय आकलन मॉडल',
+        interpretationText: 'अमेरिकी नौसेना सूत्र और बोएर लीन मास समीकरण शारीरिक परिधियों के आधार पर वसा और मांसपेशियों के अनुपात का अनुमान लगाते हैं, जिससे वजन और वसा के बीच अंतर स्पष्ट होता है।',
+        limitationsTitle: 'मापन सटीकता एवं सीमाएं',
+        limitationsText: 'डेक्सा (DEXA) स्कैन की तुलना में फीते की माप में लगभग 3% से 4% का अंतर आ सकता है। फीते का सही स्थान, खिंचाव और शरीर में पानी की मात्रा परिणामों को प्रभावित कर सकती है।',
+        medicalNoticeTitle: 'नैदानिक संदर्भ',
+        medicalNoticeText: 'यह अनुमान फिटनेस ट्रैकिंग के लिए है। सटीक शारीरिक संरचना विश्लेषण के लिए अस्पताल में डेक्सा स्कैन करवाएं।'
+      }
+    },
+    fitness: {
+      en: {
+        domain: 'fitness',
+        sectionTitle: 'Cardiorespiratory & Strength Reference Ranges',
+        sectionSubtitle: 'Interpreting training heart rate zones and multi-rep strength predictions.',
+        interpretationTitle: 'Target Heart Rate & One-Rep Max Principles',
+        interpretationText: 'Heart rate zones (Fox 220-age formula, Karvonen heart rate reserve) calibrate aerobic versus anaerobic cardiovascular training intensity. Multi-rep formulas (Brzycki, Epley) extrapolate maximal strength from submaximal sets.',
+        limitationsTitle: 'Physiological Bounds & Formula Deviations',
+        limitationsText: 'Maximal heart rate formulas have an inherent standard deviation of ±10 to ±12 beats per minute. Beta-blockers, caffeine, fatigue, and ambient temperature heavily modify cardiac response. 1RM estimations lose precision beyond 10 repetitions.',
+        medicalNoticeTitle: 'Cardiovascular Clearance Notice',
+        medicalNoticeText: 'Consult a physician before initiating high-intensity cardiovascular training or maximal strength testing, especially if you have a history of cardiovascular disease or hypertension.'
+      },
+      es: {
+        domain: 'fitness',
+        sectionTitle: 'Zonas Cardiorrespiratorias y Rendimiento Muscular',
+        sectionSubtitle: 'Interpretación de las zonas de entrenamiento por pulsaciones y cálculos de fuerza 1RM.',
+        interpretationTitle: 'Zonas de Frecuencia Cardíaca y Principios de 1RM',
+        interpretationText: 'Las zonas de frecuencia cardíaca (métodos de Fox y Karvonen) permiten calibrar la intensidad del esfuerzo aeróbico y anaeróbico. Las fórmulas de Brzycki y Epley estiman la fuerza máxima a partir de series submáximas.',
+        limitationsTitle: 'Variaciones Fisiológicas y Límites',
+        limitationsText: 'La frecuencia cardíaca máxima presenta una desviación estándar de ±10 a ±12 latidos por minuto. Fármacos como betabloqueantes y estimulantes alteran la respuesta del pulso. Los cálculos de 1RM pierden precisión si se realizan más de 10 repeticiones.',
+        medicalNoticeTitle: 'Aviso de Apto Médico',
+        medicalNoticeText: 'Antes de iniciar entrenamientos de alta intensidad o pruebas de fuerza extrema, consulte con su médico, en especial ante antecedentes de cardiopatía o hipertensión.'
+      },
+      fr: {
+        domain: 'fitness',
+        sectionTitle: 'Zones Cardiorespiratoires et Force Maximale',
+        sectionSubtitle: 'Interprétation des plages de fréquence cardiaque et calculs de 1RM.',
+        interpretationTitle: 'Principes des Fréquences Cibles et de la Répétition Maximale',
+        interpretationText: 'Les zones cibles (formules de Fox et Karvonen) délimitent les filières énergétiques aérobie et anaérobie. Les équations de Brzycki et Epley extrapolent la force maximale à partir de répétitions submédianes.',
+        limitationsTitle: 'Limites Physiologiques et Facteurs d’Écart',
+        limitationsText: 'La fréquence cardiaque maximale réelle varie de ±10 à ±12 bpm par rapport aux formules théoriques. Les médicaments bêtabloquants et la fatigue modifient le rythme cardiaque. Les formules de 1RM perdent en fiabilité au-delà de 10 répétitions.',
+        medicalNoticeTitle: 'Précautions Cardiovasculaires',
+        medicalNoticeText: 'Consultez un médecin du sport avant d’entreprendre des entraînements intenses ou des tests de force maximale, particulièrement en cas d’antécédents cardiovasculaires.'
+      },
+      de: {
+        domain: 'fitness',
+        sectionTitle: 'Kardiovaskuläre Zonen & Kraftsport-Referenzen',
+        sectionSubtitle: 'Einordnung von Trainingsherzfrequenzzonen und Ein-Wiederholungs-Maxima.',
+        interpretationTitle: 'Trainingspulszonen & 1RM-Grundsätze',
+        interpretationText: 'Herzfrequenzzonen (Fox-Formel, Karvonen-Methode) steuern die Trainingsintensität im aeroben und anaeroben Bereich. Kraftformeln (Brzycki, Epley) berechnen das maximale Hebegewicht anhand submaksimaler Sätze.',
+        limitationsTitle: 'Individuelle Streuung & Belastungsgrenzen',
+        limitationsText: 'Die tatsächliche maximale Herzfrequenz streut um etwa ±10 bis ±12 Schläge pro Minute um den Rechenwert. Medikamente (z. B. Betablocker) und Koffein beeinflussen den Puls massiv. 1RM-Formeln werden bei mehr als 10 Wiederholungen ungenau.',
+        medicalNoticeTitle: 'Sportmedizinischer Hinweis',
+        medicalNoticeText: 'Vor Beginn hochintensiver Trainingseinheiten oder Maximaltests sollte eine sportärztliche Untersuchung erfolgen, insbesondere bei vorbestehendem Bluthochdruck.'
+      },
+      ko: {
+        domain: 'fitness',
+        sectionTitle: '심폐 지구력 및 최대 근력 기준 지침',
+        sectionSubtitle: '목표 심박수 훈련 구간과 1RM 최대 중량 예측 공식의 해석입니다.',
+        interpretationTitle: '목표 심박수 존 및 1RM 산출 원리',
+        interpretationText: 'Fox 공식 및 Karvonen 여유심박수 공식은 유산소 및 무산소 심폐 운동 강도를 설정합니다. Brzycki 및 Epley 공식은 다중 반복 세트로부터 1회 최대 중량(1RM)을 안전하게 추정합니다.',
+        limitationsTitle: '생리적 편차 및 공식 한계',
+        limitationsText: '최대 심박수 공식은 개인별로 약 ±10~12 bpm의 자연적인 표준편차를 가집니다. 혈압약(베타차단제), 피로도, 카페인 섭취에 따라 심박 반응이 달라지며, 1RM 공식은 10회를 초과하는 고반복 세트에서는 오차가 커집니다.',
+        medicalNoticeTitle: '운동 전 의학적 확인',
+        medicalNoticeText: '고강도 심폐 인터벌 훈련이나 고중량 리프팅을 시작하기 전, 특히 심혈관 질환이나 고혈압 병력이 있는 경우 의사의 운동 처방을 확인하세요.'
+      },
+      hi: {
+        domain: 'fitness',
+        sectionTitle: 'हृदय गति क्षेत्र एवं शक्ति संदर्भ',
+        sectionSubtitle: 'प्रशिक्षण हृदय गति क्षेत्रों और 1RM अधिकतम भार की व्याख्या।',
+        interpretationTitle: 'लक्षित हृदय गति और 1RM सिद्धांत',
+        interpretationText: 'फॉक्स और कार्वोनेन सूत्र एरोबिक और एनारोबिक व्यायाम तीव्रता निर्धारित करते हैं। ब्रज़िकी और एपले फॉर्मूले सब-मैक्सिमल सेट से अधिकतम भार क्षमता का अनुमान लगाते हैं।',
+        limitationsTitle: 'शारीरिक अंतर और सीमाएं',
+        limitationsText: 'अधिकतम हृदय गति फॉर्मूले में ±10 से ±12 धड़कन प्रति मिनट का व्यक्तिगत अंतर हो सकता है। दवाएं और थकान हृदय गति को प्रभावित करते हैं। 10 से अधिक रिपीटीशन पर 1RM अनुमान की सटीकता कम हो जाती है।',
+        medicalNoticeTitle: 'हृदय स्वास्थ्य सावधानी',
+        medicalNoticeText: 'उच्च-तीव्रता वाले व्यायाम या भारी वजन उठाने से पहले डॉक्टर से परामर्श करें, विशेष रूप से यदि उच्च रक्तचाप का इतिहास हो।'
+      }
+    },
+    specialty: {
+      en: {
+        domain: 'specialty',
+        sectionTitle: 'Nutritional Baselines & Clinical Context',
+        sectionSubtitle: 'Interpreting protein targets, fluid hydration needs, and screening scores.',
+        interpretationTitle: 'Evidence-Based Nutritional & Physiological Baselines',
+        interpretationText: 'Nutritional targets follow peer-reviewed sports science guidelines (such as the International Society of Sports Nutrition recommendations of 1.4–2.0 g/kg protein for active individuals) and clinical hydration standards. Specialty risk screeners categorize baseline epidemiological risk tiers.',
+        limitationsTitle: 'Individual Health Conditions & Dietary Constraints',
+        limitationsText: 'General recommendations assume unimpaired renal and hepatic function. Individuals with chronic kidney disease (CKD) or liver dysfunction require restricted protein and fluid intakes under clinical supervision. Risk screeners are not diagnostic lab tests.',
+        medicalNoticeTitle: 'Clinical Dietitian & Medical Disclaimer',
+        medicalNoticeText: 'Nutritional metrics are educational references. Consult a physician or registered dietitian before making substantial dietary alterations or if interpreting clinical risk scores.'
+      },
+      es: {
+        domain: 'specialty',
+        sectionTitle: 'Pautas Nutricionales y Contexto Clínico',
+        sectionSubtitle: 'Interpretación de requerimientos proteicos, hidratación y cribados especializados.',
+        interpretationTitle: 'Pautas de Nutrición y Fisiología Basadas en Evidencia',
+        interpretationText: 'Los objetivos nutricionales siguen directrices respaldadas por la investigación científica (como las pautas de la ISSN de 1.4–2.0 g/kg de proteína en deportistas) y estándares de hidratación recomendados.',
+        limitationsTitle: 'Condiciones de Salud Específicas',
+        limitationsText: 'Estas pautas presuponen una función renal y hepática normal. Pacientes con insuficiencia renal o hepática precisan límites específicos de líquidos y proteínas supervisados por un médico. Los cribados no sustituyen análisis clínicos.',
+        medicalNoticeTitle: 'Aviso Médico y Nutricional',
+        medicalNoticeText: 'Consulte a un dietista colegiado o a su médico antes de modificar drásticamente su dieta o si presenta factores de riesgo clínicos.'
+      },
+      fr: {
+        domain: 'specialty',
+        sectionTitle: 'Bases Nutritionnelles et Contexte Clinique',
+        sectionSubtitle: 'Interprétation des apports protéiques, de l’hydratation et des scores spécialisés.',
+        interpretationTitle: 'Recommandations Nutritionnelles Fondées sur les Preuves',
+        interpretationText: 'Les repères nutritionnels s’appuient sur les recommandations internationales (comme celles de l’ISSN préconisant 1,4 à 2,0 g/kg de protéines pour les sportifs) et les normes de santé publique en matière d’hydratation.',
+        limitationsTitle: 'Pathologies et Restrictions Spécifiques',
+        limitationsText: 'Ces calculs s’appliquent aux personnes ayant une fonction rénale et hépatique saine. En cas d’insuffisance rénale ou hépatique, les apports en protéines et en eau doivent faire l’objet d’un contrôle médical strict.',
+        medicalNoticeTitle: 'Mise en Garde Diététique',
+        medicalNoticeText: 'Ces valeurs sont purement indicatives. Consultez un professionnel de santé ou un diététicien avant tout changement alimentaire important.'
+      },
+      de: {
+        domain: 'specialty',
+        sectionTitle: 'Ernährungsbasen & Klinischer Kontext',
+        sectionSubtitle: 'Einordnung von Proteinbedarf, Flüssigkeitszufuhr und Risikoscores.',
+        interpretationTitle: 'Evidenzbasierte Ernährungs- und Hydratationsleitlinien',
+        interpretationText: 'Die Nährstoffempfehlungen orientieren sich an anerkannten Standards der Sportwissenschaft (z. B. ISSN-Leitlinien von 1,4–2,0 g/kg Protein für Aktive) und offiziellen Richtwerten zur Flüssigkeitsversorgung.',
+        limitationsTitle: 'Individuelle Vorerkrankungen & Einschränkungen',
+        limitationsText: 'Die Orientierungswerte setzen eine gesunde Nieren- und Leberfunktion voraus. Bei chronischen Nierenerkrankungen sind Protein- und Flüssigkeitsmengen zwingend ärztlich anzupassen. Risiko-Scores ersetzen keine Labordiagnostik.',
+        medicalNoticeTitle: 'Ernährungsmedizinischer Hinweis',
+        medicalNoticeText: 'Wenden Sie sich vor gravierenden Ernährungsumstellungen oder bei auffälligen Screeningwerten an einen Arzt oder qualifizierten Ernährungsberater.'
+      },
+      ko: {
+        domain: 'specialty',
+        sectionTitle: '영양 기준치 및 임상 고려사항',
+        sectionSubtitle: '단백질 권장 섭취량, 수분 섭취 기준 및 전문 선별 지표의 해석입니다.',
+        interpretationTitle: '증거 기반 영양 및 수분 섭취 가이드라인',
+        interpretationText: '본 영양 가이드라인은 국제스포츠영양학회(ISSN)의 활성 성인 단백질 권장 기준(체중 1kg당 1.4 ~ 2.0g) 및 의학 수분 섭취 기준을 따릅니다. 전문 선별 도구는 기초 통계 위험도를 안내합니다.',
+        limitationsTitle: '기저 질환 및 식이 제한 사항',
+        limitationsText: '이 계산은 신장 및 간 기능이 정상인 성인을 전제로 합니다. 만성 신부전(CKD)이나 간 질환이 있는 경우 단백질과 수분 섭취를 의학적으로 제한해야 합니다. 선별 점수는 진단 혈액 검사를 대신하지 않습니다.',
+        medicalNoticeTitle: '임상 영양 상담 안내',
+        medicalNoticeText: '급격한 식단 변경이나 임상 위험 점수 해석이 필요한 경우 공인 영양사 또는 주치의와 상담하십시오.'
+      },
+      hi: {
+        domain: 'specialty',
+        sectionTitle: 'पोषण संदर्भ एवं नैदानिक विचार',
+        sectionSubtitle: 'प्रोटीन लक्ष्य, जलयोजन आवश्यकता और विशेष स्क्रीनिंग स्कोर की व्याख्या।',
+        interpretationTitle: 'साक्ष्य-आधारित पोषण और जलयोजन मानक',
+        interpretationText: 'पोषण लक्ष्य अंतरराष्ट्रीय खेल पोषण दिशा-निर्देशों (सक्रिय व्यक्तियों के लिए 1.4–2.0 ग्राम/किग्रा प्रोटीन) और सामान्य जलयोजन मानकों पर आधारित हैं।',
+        limitationsTitle: 'व्यक्तिगत स्वास्थ्य स्थितियां और सीमाएं',
+        limitationsText: 'ये आंकड़े सामान्य गुर्दे और यकृत कार्यप्रणाली वाले वयस्कों के लिए हैं। गुर्दे की बीमारी वाले व्यक्तियों को चिकित्सकीय देखरेख में प्रोटीन और तरल पदार्थ सीमित करने की आवश्यकता होती है।',
+        medicalNoticeTitle: 'चिकित्सीय एवं पोषण सलाह अस्वीकरण',
+        medicalNoticeText: 'आहार में बड़ा बदलाव करने से पहले पंजीकृत आहार विशेषज्ञ या डॉक्टर से परामर्श करें।'
+      }
+    }
+  };
+
+  const domainMap = GUIDES[domain] || GUIDES.bmi;
+  return domainMap[lang] || domainMap.en;
+}

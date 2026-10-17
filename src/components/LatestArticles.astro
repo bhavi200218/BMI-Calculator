@@ -3,9 +3,13 @@ import { blogArticles } from '../utils/blogArticles';
 
 interface Props {
   lang?: string;
+  slugs?: string[];
+  title?: string;
+  subtitle?: string;
+  limit?: number;
 }
 
-const { lang: propLang } = Astro.props;
+const { lang: propLang, slugs: propSlugs, title: propTitle, subtitle: propSubtitle, limit: propLimit } = Astro.props;
 const { currentLocale } = Astro;
 const lang = propLang || currentLocale || 'en';
 
@@ -60,8 +64,15 @@ const labels: Record<string, any> = {
   }
 };
 
-const articleSlugs = Object.keys(blogArticles);
-const articlesList = articleSlugs.slice(0, 6).map(slug => {
+const allSlugs = Object.keys(blogArticles);
+const candidateSlugs = (propSlugs && propSlugs.length > 0)
+  ? propSlugs.filter(s => blogArticles[s])
+  : allSlugs;
+
+const effectiveLimit = propLimit || (propSlugs ? propSlugs.length : 6);
+const selectedSlugs = candidateSlugs.slice(0, effectiveLimit);
+
+const articlesList = selectedSlugs.map(slug => {
   const item = blogArticles[slug];
   return {
     slug,
@@ -72,6 +83,8 @@ const articlesList = articleSlugs.slice(0, 6).map(slug => {
 });
 
 const t = labels[lang] || labels.en;
+const sectionTitle = propTitle || t.latest;
+const sectionSubtitle = propSubtitle || t.subtitle;
 ---
 
 <section class="space-y-6 py-6" id="articles">
@@ -82,10 +95,10 @@ const t = labels[lang] || labels.en;
         {t.library}
       </p>
       <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase text-[var(--foreground)] leading-tight">
-        {t.latest}
+        {sectionTitle}
       </h2>
       <p class="text-sm md:text-base text-[var(--muted-foreground)] max-w-2xl font-medium">
-        {t.subtitle}
+        {sectionSubtitle}
       </p>
     </div>
     
