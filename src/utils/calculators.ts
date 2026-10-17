@@ -318,12 +318,12 @@ export const calculators: CalculatorConfig[] = [
       hi: 'भारतीयों के लिए बीएमआई कैलकुलेटर - ICMR एवं WHO भारतीय मानक सीमाएं'
     },
     description: {
-      "en": "Free BMI Calculator for Indians based on ICMR & WHO Asia-Pacific threshold standards (Overweight: ≥ 23.0 kg/m², Obese: ≥ 27.5 kg/m²). Calculate ethnic Indian body mass index, cardiometabolic risk category, and target healthy weight window with browser-based calculations.",
-      "es": "Calculadora de IMC para indios gratuita basada en los estándares del ICMR y la OMS Asia-Pacífico (Sobrepeso: ≥ 23.0 kg/m², Obesidad: ≥ 27.5 kg/m²). Calcula el IMC étnico indio, la categoría de riesgo cardiometabólico y la ventana de peso saludable objetivo con cálculos en el navegador.",
-      "fr": "Calculateur d'IMC pour les Indiens gratuit basé sur les normes ICMR et OMS Asie-Pacifique (Surpoids : ≥ 23,0 kg/m², Obésité : ≥ 27,5 kg/m²). Calculez l'IMC éthnique indien, la catégorie de risque cardiométabolique et la plage de poids cible avec calculs sur navigateur.",
-      "de": "Kostenloser BMI-Rechner für indische Erwachsene basierend auf ICMR- und WHO-Asien-Pazifik-Standards (Übergewicht: ≥ 23,0 kg/m², Adipositas: ≥ 27,5 kg/m²). Berechnen Sie Ihren indischen BMI und die kardiometabolische Risikokategorie datenschutzorientiert im Browser.",
-      "ko": "ICMR 및 WHO 아시아-태평양 규격 기준(과체중: ≥ 23.0 kg/m², 비만: ≥ 27.5 kg/m²)에 따른 인도인 전용 무료 BMI 계산기. 인도인 체형 BMI 점수, 심대사 위험 범주 및 목표 정상 체중 범위를 계산하세요. 가입 없는 100% 무료 도구.",
-      "hi": "ICMR और WHO एशिया-प्रशांत मानक मानदंडों (ओवरवेट: ≥ 23.0 kg/m², मोटा: ≥ 27.5 kg/m²) पर आधारित भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। भारतीय बीएमआई, कार्डियोमेटाबॉलिक जोखिम श्रेणी और लक्षित स्वस्थ वजन सीमा की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
+      "en": "Free BMI Calculator for Indians based on ICMR consensus standards (Healthy: 18.5–22.9, Overweight: 23.0–24.9, Obese: ≥ 25.0 kg/m²). Calculate ethnic Indian body mass index, cardiometabolic risk category, and target healthy weight window with browser-based calculations.",
+      "es": "Calculadora de IMC para indios gratuita basada en los estándares de consenso del ICMR (Saludable: 18.5–22.9, Sobrepeso: 23.0–24.9, Obesidad: ≥ 25.0 kg/m²). Calcula el IMC étnico indio, la categoría de riesgo cardiometabólico y la ventana de peso saludable objetivo con cálculos en el navegador.",
+      "fr": "Calculateur d'IMC pour les Indiens gratuit basé sur les normes de consensus ICMR (Poids normal : 18,5–22,9, Surpoids : 23,0–24,9, Obésité : ≥ 25,0 kg/m²). Calculez l'IMC ethnique indien, la catégorie de risque cardiométabolique et la plage de poids cible avec calculs sur navigateur.",
+      "de": "Kostenloser BMI-Rechner für indische Erwachsene basierend auf ICMR-Konsensusstandards (Normalgewicht: 18,5–22,9, Übergewicht: 23,0–24,9, Adipositas: ≥ 25,0 kg/m²). Berechnen Sie Ihren indischen BMI und die kardiometabolische Risikokategorie datenschutzorientiert im Browser.",
+      "ko": "ICMR 합의 표준(정상: 18.5–22.9, 과체중: 23.0–24.9, 비만: ≥ 25.0 kg/m²)에 따른 인도인 전용 무료 BMI 계산기. 인도인 체형 BMI 점수, 심대사 위험 범주 및 목표 정상 체중 범위를 계산하세요. 가입 없는 100% 무료 도구.",
+      "hi": "ICMR सर्वसम्मति मानकों (स्वस्थ: 18.5–22.9, अधिक वजन: 23.0–24.9, मोटापा: ≥ 25.0 kg/m²) पर आधारित भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। भारतीय बीएमआई, कार्डियोमेटाबॉलिक जोखिम श्रेणी और लक्षित स्वस्थ वजन सीमा की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
     },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number' },

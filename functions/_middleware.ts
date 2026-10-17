@@ -26,5 +26,19 @@ export async function onRequest(context: EventContext): Promise<Response> {
     return Response.redirect(url.toString(), 301);
   }
 
-  return context.next();
+  const response = await context.next();
+
+  // 4. Ensure embed responses delete X-Frame-Options to allow framing while non-embed retains DENY
+  if (url.pathname.startsWith('/embed/')) {
+    const newHeaders = new Headers(response.headers);
+    newHeaders.delete('x-frame-options');
+    newHeaders.set('Content-Security-Policy', 'frame-ancestors *; upgrade-insecure-requests');
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: newHeaders
+    });
+  }
+
+  return response;
 }

@@ -5,46 +5,52 @@ import PageShell from '../../components/PageShell.astro';
 
 const sources = [
   {
-    title: "WHO Physical Status: The Use and Interpretation of Anthropometry",
-    org: "World Health Organization (WHO)",
-    url: "https://www.who.int/publications/i/item/9241544861",
-    desc: "Official report establishing global body mass index (BMI) categories and reference cutoff benchmarks for adults."
+    "title": "WHO Physical Status: The Use and Interpretation of Anthropometry",
+    "org": "World Health Organization (WHO)",
+    "url": "https://www.who.int/publications/i/item/9241544861",
+    "desc": "Official report establishing global body mass index (BMI) categories and reference cutoff benchmarks for adults."
   },
   {
-    title: "WHO Consultation on Obesity in Asia: Redefining BMI Cut-offs",
-    org: "WHO Western Pacific Region & IOTF",
-    url: "https://www.who.int/publications/i/item/9290611717",
-    desc: "WHO expert consultation report establishing lower BMI cutoff of 23.0 kg/m² for overweight reference in Asian and South Asian populations."
+    "title": "WHO Expert Consultation: Appropriate BMI for Asian Populations and Policy Implications",
+    "org": "The Lancet (WHO Expert Consultation)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
+    "desc": "Lancet 2004 landmark publication defining public-health action trigger points (23.0 kg/m² increased risk, 27.5 kg/m² high risk) for Asian populations."
   },
   {
-    title: "CDC Adult Body Mass Index: Screening Standards",
-    org: "Centers for Disease Control and Prevention (CDC)",
-    url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
-    desc: "Official CDC standard equation for metric and imperial adult body mass index calculation."
+    "title": "Consensus Statement for Diagnosis of Obesity & Metabolic Syndrome in Asian Indians",
+    "org": "ICMR & JAPI (Misra A, et al.)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
+    "desc": "National consensus guideline establishing Indian adult BMI cutoffs (18.5–22.9 kg/m² normal, 23.0–24.9 kg/m² overweight, ≥ 25.0 kg/m² obese)."
   },
   {
-    title: "A New Predictive Equation for Resting Energy Expenditure in Healthy Individuals",
-    org: "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
-    url: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
-    desc: "The Mifflin-St Jeor formula equation for calculating Basal Metabolic Rate (BMR) estimates."
+    "title": "CDC Adult Body Mass Index: Screening Standards",
+    "org": "Centers for Disease Control and Prevention (CDC)",
+    "url": "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
+    "desc": "Official CDC standard equation for metric and imperial adult body mass index calculation."
   },
   {
-    title: "US Navy Anthropometric Logarithmic Body Fat Equation",
-    org: "Naval Health Research Center (Hodgdon JA, Beckett WS)",
-    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/",
-    desc: "Logarithmic tape measurement equation for estimating body fat percentage from body circumferences."
+    "title": "A New Predictive Equation for Resting Energy Expenditure in Healthy Individuals",
+    "org": "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    "desc": "The Mifflin-St Jeor formula equation for calculating Basal Metabolic Rate (BMR) estimates."
   },
   {
-    title: "IDF International Consensus Statement on Abdominal Obesity & Metabolic Syndrome",
-    org: "International Diabetes Federation (IDF)",
-    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
-    desc: "Waist circumference thresholds (>90cm men, >80cm women for Asian populations) for abdominal risk context."
+    "title": "US Navy Anthropometric Logarithmic Body Fat Equation",
+    "org": "Naval Health Research Center (Hodgdon JA, Beckett WS)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/",
+    "desc": "Logarithmic tape measurement equation for estimating body fat percentage from body circumferences."
   },
   {
-    title: "Oxford 2.5 Exponent Height-Adjusted BMI Formula Proposal",
-    org: "University of Oxford (Prof. Nick Trefethen)",
-    url: "https://people.maths.ox.ac.uk/trefethen/bmi.html",
-    desc: "Mathematical refinement compensating for 3D body volume height scaling distortion."
+    "title": "IDF International Consensus Statement on Abdominal Obesity & Metabolic Syndrome",
+    "org": "International Diabetes Federation (IDF)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
+    "desc": "Waist circumference thresholds (>90cm men, >80cm women for Asian populations) for abdominal risk context."
+  },
+  {
+    "title": "Oxford 2.5 Exponent Height-Adjusted BMI Formula Proposal",
+    "org": "University of Oxford (Prof. Nick Trefethen)",
+    "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
+    "desc": "Mathematical refinement compensating for 3D body volume height scaling distortion."
   }
 ];
 ---
@@ -56,14 +62,14 @@ const sources = [
     <Navbar />
     <PageShell
       title="Primary References & Research Sources"
-      eyebrow="Primary References & Research Sources"
-      description="These public-health agencies, research publications and reference materials inform the formulas and reference ranges used on Real BMI."
+      eyebrow="Evidence-Based Health Standards"
+      description="These public-health agencies, research publications and peer-reviewed reference materials inform the formulas and reference ranges used on Real BMI."
       returnUrl="/en/"
       returnLabel="Home"
     >
       <div class="space-y-8">
         <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-          These public-health agencies, research publications and reference materials inform the formulas and reference ranges used on Real BMI. At Real BMI, calculation formulas and reference ranges are rooted in peer-reviewed literature and official guidelines from health organizations.
+          These public-health agencies, research publications and peer-reviewed reference materials inform the formulas and reference ranges used on Real BMI.
         </p>
 
         <div class="grid gap-6">

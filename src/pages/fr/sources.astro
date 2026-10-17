@@ -5,41 +5,71 @@ import PageShell from '../../components/PageShell.astro';
 
 const sources = [
   {
-    title: "OMS État Physique : Utilisation et Interprétation de l'Anthropométrie",
-    org: "Organisation Mondiale de la Santé (OMS)",
-    url: "https://www.who.int/publications/i/item/9241544861",
-    desc: "Rapport officiel établissant les catégories mondiales d'indice de masse corporelle (IMC)."
+    "title": "OMS État Physique : Utilisation et Interprétation de l'Anthropométrie",
+    "org": "Organisation Mondiale de la Santé (OMS)",
+    "url": "https://www.who.int/publications/i/item/9241544861",
+    "desc": "Rapport officiel établissant les catégories globales d'IMC et les seuils de référence chez l'adulte."
   },
   {
-    title: "CDC Normes de Calcul de l'Indice de Masse Corporelle",
-    org: "Centers for Disease Control and Prevention (CDC)",
-    url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
-    desc: "Équations officielles du CDC pour le calcul de l'IMC chez l'adulte."
+    "title": "Consultation d'Experts de l'OMS : IMC approprié pour les populations asiatiques",
+    "org": "The Lancet (Consultation d'experts OMS)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
+    "desc": "Publication majeure du Lancet 2004 définissant les seuils d'action (23,0 kg/m² risque accru, 27,5 kg/m² haut risque)."
   },
   {
-    title: "Équation de Mifflin-St Jeor pour le Métabolisme de Base",
-    org: "American Journal of Clinical Nutrition",
-    url: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
-    desc: "Formule de référence pour calculer le taux métabolique de base (BMR)."
+    "title": "Consensus pour le Diagnostic de l'Obésité chez les Adultes Sud-Asiatiques",
+    "org": "ICMR & JAPI (Misra A, et al.)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
+    "desc": "Guide de consensus national fixant les seuils en Inde (18,5–22,9 normal, 23,0–24,9 surpoids, ≥ 25,0 obésité)."
+  },
+  {
+    "title": "CDC Normes de Dépistage de l'Indice de Masse Corporelle Adulte",
+    "org": "Centers for Disease Control and Prevention (CDC)",
+    "url": "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
+    "desc": "Formule officielle du CDC pour le calcul de l'IMC métrique et impérial chez l'adulte."
+  },
+  {
+    "title": "Équation Prédictive de Dépense Énergétique au Repos",
+    "org": "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    "desc": "Formule de Mifflin-St Jeor pour estimer le métabolisme de base (BMR)."
+  },
+  {
+    "title": "Équation Logarithmique de Graisse Corporelle de l'US Navy",
+    "org": "Naval Health Research Center (Hodgdon JA, Beckett WS)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/",
+    "desc": "Formule basée sur les circonférences corporelles pour évaluer le pourcentage de masse grasse."
+  },
+  {
+    "title": "Consensus IDF sur l'Obésité Abdominale et le Syndrome Métabolique",
+    "org": "Fédération Internationale du Diabète (IDF)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
+    "desc": "Seuils de tour de taille (>90 cm hommes, >80 cm femmes asiatiques) pour évaluer le risque viscéral."
+  },
+  {
+    "title": "Formule d'IMC 3D Ajustée à la Taille d'Oxford 2.5",
+    "org": "Université d'Oxford (Prof. Nick Trefethen)",
+    "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
+    "desc": "Ajustement mathématique compensant la déformation de volume chez les personnes grandes ou petites."
   }
 ];
 ---
 
 <Layout 
-    title="Sources Scientifiques et Références | Real BMI"
-    description="Consultez les publications scientifiques, formules mathématiques et directives de l’OMS et du CDC qui soutiennent l’ensemble des calculateurs de Real BMI."
+    title="Références Scientifiques et Sources de Recherche | Real BMI"
+    description="Consultez les publications scientifiques, formules mathématiques et directives officielles de l'OMS, du CDC et de l'ICMR utilisées sur Real BMI."
 >
     <Navbar />
     <PageShell
-      title="Sources et Références"
-      eyebrow="Références Publiques et Publiées"
-      description="Équations publiées et directives internationales soutenant nos outils."
+      title="Références Scientifiques et Sources"
+      eyebrow="Normes de Santé Fondées sur les Preuves"
+      description="Ces organismes de santé publique et publications scientifiques révisées par des pairs fondent les formules et plages de calcul sur Real BMI."
       returnUrl="/fr/"
-      returnLabel="Accueil"
+      returnLabel="Home"
     >
       <div class="space-y-8">
         <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-          Chez Real BMI, chaque formule de calcul est basée sur de la littérature médicale évaluée par des pairs et sur des directives officielles.
+          Ces organismes de santé publique et publications scientifiques révisées par des pairs fondent les formules et plages de calcul sur Real BMI.
         </p>
 
         <div class="grid gap-6">
@@ -55,7 +85,7 @@ const sources = [
                   rel="noopener noreferrer" 
                   class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
                 >
-                  Voir la publication
+                  View Publication
                   <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </a>
               </div>

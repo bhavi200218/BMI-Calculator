@@ -5,41 +5,71 @@ import PageShell from '../../components/PageShell.astro';
 
 const sources = [
   {
-    title: "WHO 신체 상태: 인체측정학의 사용 및 해석",
-    org: "세계보건기구 (WHO)",
-    url: "https://www.who.int/publications/i/item/9241544861",
-    desc: "글로벌 체질량지수(BMI) 범주 및 참고 기준을 설정한 공식 보고서."
+    "title": "WHO 신체 상태: 인체측정학의 활용과 해석",
+    "org": "세계보건기구 (WHO)",
+    "url": "https://www.who.int/publications/i/item/9241544861",
+    "desc": "성인 체질량지수(BMI) 분류 기준 및 글로벌 벤치마크를 정립한 공식 보고서."
   },
   {
-    title: "CDC 성인 체질량지수 측정 표준",
-    org: "미국 질병통제예방센터 (CDC)",
-    url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
-    desc: "성인 BMI 계산을 위한 CDC 표준 방정식."
+    "title": "WHO 전문가 자문회의: 아시아 인구를 위한 적정 BMI와 보건 정책",
+    "org": "The Lancet (WHO 전문가 자문회의)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
+    "desc": "아시아 성인 공중보건 실행 분별점(23.0 kg/m² 위험 증가, 27.5 kg/m² 고위험)을 정의한 2004 란셋 논문."
   },
   {
-    title: "휴식 시 에너지 소비량 예측 공식 (Mifflin-St Jeor)",
-    org: "American Journal of Clinical Nutrition",
-    url: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
-    desc: "기초대사량(BMR) 계산을 위한 표준 참고 공식."
+    "title": "인도 및 아시아 성인 비만과 대사증후군 진단 합의 성명",
+    "org": "ICMR & JAPI (Misra A, et al.)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
+    "desc": "인도 성인 기준(18.5–22.9 정상, 23.0–24.9 과체중, ≥ 25.0 비만)을 수립한 국가 공인 가이드라인."
+  },
+  {
+    "title": "CDC 성인 체질량지수 스크리닝 표준",
+    "org": "미국 질병통제예방센터 (CDC)",
+    "url": "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
+    "desc": "성인 미터법 및 야드파운드법 공식 체질량지수 산출 표준 공식."
+  },
+  {
+    "title": "건강한 개인의 휴식기 에너지 소비량 예측 공식",
+    "org": "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    "desc": "기초대사량(BMR) 추정을 위해 가장 신뢰받는 미플린-세인트 지어 공식."
+  },
+  {
+    "title": "미 해군 인체 측정 기반 체지방률 공식",
+    "org": "Naval Health Research Center (Hodgdon JA, Beckett WS)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/",
+    "desc": "신체 둘레 측정치를 통해 체지방률을 정밀하게 추정하는 로그 공식."
+  },
+  {
+    "title": "복부 비만과 대사증후군에 관한 IDF 국제 합의 성명",
+    "org": "세계당뇨병연맹 (IDF)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
+    "desc": "아시아 성인 복부 비만 위험 기준선(남성 >90cm, 여성 >80cm) 정의."
+  },
+  {
+    "title": "옥스퍼드 2.5 거듭제곱 신장 보정 BMI 공식",
+    "org": "옥스퍼드 대학교 (Prof. Nick Trefethen)",
+    "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
+    "desc": "신장에 따른 3차원 인체 부피 왜곡을 정밀하게 보정한 수학적 공식."
   }
 ];
 ---
 
 <Layout 
-    title="학술 출처 및 참고문헌 | Real BMI"
-    description="공표된 의학 논문 인용 자료, 세계보건기구(WHO) 및 미국 질병통제예방센터(CDC) 체중 기준, 대사량 계산 공식 등 Real BMI의 모든 계산기와 참조 지표의 바탕이 되는 신뢰할 수 있는 공식 공공 보건 연구 자료와 공인 학술 출처 목록을 상세하게 확인하세요."
+    title="학술 연구 출처 및 의학 참고 문헌 | Real BMI"
+    description="Real BMI의 모든 건강 계산식과 기준 범주의 근거가 되는 WHO, CDC, ICMR 등의 공인 의학 연구와 표준 공식을 확인하세요."
 >
     <Navbar />
     <PageShell
-      title="출처 및 참고문헌"
-      eyebrow="근거 기반 보건 과학"
-      description="계산기 도구를 뒷받침하는 공개 가이드라인 및 학술 자료."
+      title="학술 연구 출처 및 의학 참고 문헌"
+      eyebrow="과학적 근거 중심 표준"
+      description="본 사이트의 모든 계산 공식과 기준선은 세계보건기구, 질병관리청 및 동료 평가를 거친 학술 연구 논문을 바탕으로 합니다."
       returnUrl="/ko/"
-      returnLabel="홈"
+      returnLabel="Home"
     >
       <div class="space-y-8">
         <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-          Real BMI의 모든 계산 공식과 기준 범위는 동료 평가를 거친 의학 문헌 및 글로벌 보건 기구의 공식 지침에 기반합니다.
+          본 사이트의 모든 계산 공식과 기준선은 세계보건기구, 질병관리청 및 동료 평가를 거친 학술 연구 논문을 바탕으로 합니다.
         </p>
 
         <div class="grid gap-6">
@@ -55,7 +85,7 @@ const sources = [
                   rel="noopener noreferrer" 
                   class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
                 >
-                  논문/문서 보기
+                  View Publication
                   <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </a>
               </div>

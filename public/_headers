@@ -16,7 +16,6 @@ https://realbmicalculator.com/*
 
 # Allow embedding for embed widget
 /embed/*
-  X-Frame-Options: ALLOWALL
   Content-Security-Policy: frame-ancestors *
   Cache-Control: public, max-age=3600
 

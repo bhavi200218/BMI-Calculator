@@ -5,52 +5,88 @@ import PageShell from '../../components/PageShell.astro';
 
 const sources = [
   {
-    title: "डब्ल्यूएचओ बीएमआई एवं मोटापा दिशानिर्देश",
-    org: "विश्व स्वास्थ्य संगठन (WHO)",
-    url: "https://www.who.int/publications/i/item/9241544861",
-    desc: "बीएमआई श्रेणियों और स्वास्थ्य सीमाओं के लिए आधिकारिक रिपोर्ट।"
+    "title": "डब्ल्यूएचओ शारीरिक स्थिति: मानवमिति का उपयोग और व्याख्या",
+    "org": "विश्व स्वास्थ्य संगठन (WHO)",
+    "url": "https://www.who.int/publications/i/item/9241544861",
+    "desc": "वयस्कों के लिए वैश्विक बॉडी मास इंडेक्स (BMI) श्रेणियों को स्थापित करने वाली आधिकारिक रिपोर्ट।"
   },
   {
-    title: "एशियाई आबादी के लिए संशोधित बीएमआई कट-ऑफ",
-    org: "डब्ल्यूएचओ दक्षिण-पूर्व एशिया",
-    url: "https://www.who.int/publications/i/item/9290611717",
-    desc: "एशियाई आबादी में 23.0 kg/m² पर ओवरवेट जोखिम के लिए संदर्भ मानक।"
+    "title": "डब्ल्यूएचओ विशेषज्ञ परामर्श: एशियाई आबादी के लिए उपयुक्त बीएमआई",
+    "org": "द लांसेट (WHO विशेषज्ञ परामर्श)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
+    "desc": "एशियाई आबादी के लिए एक्शन पॉइंट (23.0 kg/m² बढ़ा जोखिम, 27.5 kg/m² उच्च जोखिम) स्थापित करने वाला शोध पत्र।"
   },
   {
-    title: "सीडीसी एडल्ट बीएमआई मानक",
-    org: "सीडीसी (CDC)",
-    url: "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
-    desc: "बॉडी मास इंडेक्स गणना के लिए आधिकारिक सीडीसी मानक।"
+    "title": "भारतीय वयस्कों में मोटापा व मेटाबॉलिक सिंड्रोम पर सर्वसम्मति दिशानिर्देश",
+    "org": "ICMR & JAPI (Misra A, et al.)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
+    "desc": "भारतीय वयस्कों के लिए मानक सीमाएं (18.5–22.9 सामान्य, 23.0–24.9 अधिक वजन, ≥ 25.0 मोटापा) स्थापित करने वाली राष्ट्रीय गाइडलाइन।"
+  },
+  {
+    "title": "सीडीसी वयस्क बीएमआई स्क्रीनिंग मानक",
+    "org": "रोग नियंत्रण और रोकथाम केंद्र (CDC)",
+    "url": "https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html",
+    "desc": "वयस्क बॉडी मास इंडेक्स गणना के लिए आधिकारिक सीडीसी मानक समीकरण।"
+  },
+  {
+    "title": "विश्राम ऊर्जा व्यय का मिफलिन-सेंट जियोर समीकरण",
+    "org": "अमेरिकन जर्नल ऑफ क्लिनिकल न्यूट्रिशन (Mifflin MD, St Jeor ST)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    "desc": "बेसल मेटाबॉलिक रेट (BMR) के अनुमान के लिए अंतरराष्ट्रीय स्तर पर स्वीकृत समीकरण।"
+  },
+  {
+    "title": "अमेरिकी नौसेना का बॉडी फैट प्रतिशत समीकरण",
+    "org": "नेवल हेल्थ रिसर्च सेंटर (Hodgdon JA, Beckett WS)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/",
+    "desc": "शरीर की परिधि के आधार पर बॉडी फैट प्रतिशत का सटीक अनुमान लगाने वाला समीकरण।"
+  },
+  {
+    "title": "आईडीएफ इंटरनेशनल कंसेंसस: पेट का मोटापा और मेटाबॉलिक सिंड्रोम",
+    "org": "इंटरनेशनल डायबिटीज फेडरेशन (IDF)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
+    "desc": "एशियाई वयस्कों में कमर की परिधि (>90 सेमी पुरुष, >80 सेमी महिला) के आधार पर आंतरिक वसा जोखिम मानक।"
+  },
+  {
+    "title": "ऑक्सफोर्ड 2.5 ऊंचाई-समायोजित बीएमआई फॉर्मूला",
+    "org": "ऑक्सफोर्ड विश्वविद्यालय (Prof. Nick Trefethen)",
+    "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
+    "desc": "लंबे और छोटे व्यक्तियों के लिए त्रिआयामी शारीरिक संरचना के अनुसार समायोजित गणितीय फॉर्मूला।"
   }
 ];
 ---
 
 <Layout 
-    title="वैज्ञानिक स्रोत एवं उद्धरण | Real BMI"
-    description="विश्व स्वास्थ्य संगठन (WHO) व सीडीसी दिशानिर्देशों, गणितीय समीकरणों और वैज्ञानिक शोध पत्रों की सूची जो Real BMI के सभी कैलकुलेटरों को प्रमाणित बनाती है।"
+    title="प्राथमिक संदर्भ एवं प्रकाशित शोध स्रोत | Real BMI"
+    description="Real BMI की सभी गणनाओं और स्वास्थ्य श्रेणियों के आधारभूत WHO, CDC और ICMR वैज्ञानिक शोध संदर्भों की विस्तृत सूची।"
 >
     <Navbar />
     <PageShell
-      title="स्रोत एवं संदर्भ"
-      eyebrow="प्रमाण-आधारित स्वास्थ्य विज्ञान"
-      description="हमारे कैलकुलेटर के पीछे के प्राथमिक स्वास्थ्य अध्ययन और अंतर्राष्ट्रीय दिशानिर्देश।"
+      title="प्राथमिक संदर्भ एवं शोध स्रोत"
+      eyebrow="साक्ष्य-आधारित स्वास्थ्य मानक"
+      description="ये सार्वजनिक स्वास्थ्य संगठन और सहकर्मी-समीक्षित शोध पत्र Real BMI पर उपयोग किए जाने वाले सूत्रों और संदर्भ श्रेणियों का आधार हैं।"
       returnUrl="/hi/"
-      returnLabel="होम"
+      returnLabel="Home"
     >
       <div class="space-y-8">
         <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-          Real BMI पर हर गणना और स्वास्थ्य जानकारी वैश्विक स्वास्थ्य संगठनों के प्रकाशित चिकित्सा साहित्य पर आधारित है।
+          ये सार्वजनिक स्वास्थ्य संगठन और सहकर्मी-समीक्षित शोध पत्र Real BMI पर उपयोग किए जाने वाले सूत्रों और संदर्भ श्रेणियों का आधार हैं।
         </p>
 
         <div class="grid gap-6">
           {sources.map((src) => (
-            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs">
+            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs hover:border-[var(--accent)]/40 transition-all">
               <div class="flex items-center justify-between gap-4 flex-wrap">
                 <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
                   {src.org}
                 </span>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline">
-                  प्रकाशन देखें →
+                <a 
+                  href={src.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
+                >
+                  View Publication
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </a>
               </div>
               <h2 class="text-xl font-display font-bold text-[var(--foreground)]">{src.title}</h2>
