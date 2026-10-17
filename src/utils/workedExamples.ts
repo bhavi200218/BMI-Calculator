@@ -435,6 +435,144 @@ const EXAMPLES: Record<string, ToolData> = {
       ko: "성인 남성의 14~17% 체지방률은 선명한 근육 윤곽과 건강한 신체 대사를 나타내는 피트니스 권장 상태입니다. 단순 체중보다 신체 구성을 훨씬 정확하게 반영합니다.",
       hi: "वयस्क पुरुषों में 14–17% बॉडी फैट उत्कृष्ट फिटनेस और मांसपेशियों की परिभाषा को दर्शाता है। यह केवल तराजू के वजन की तुलना में कहीं अधिक सटीक स्वास्थ्य सूचक है।"
     }
+  },
+
+  // 7. 1RM Strength Calculator
+  '1rm-calculator': {
+    inputs: {
+      en: [{ label: "Weight Lifted (Barbell Load)", value: "100.0 kg (220.5 lbs)" }, { label: "Repetitions Completed", value: "5 repetitions (to technical failure)" }],
+      es: [{ label: "Carga Levantada (Peso en Barra)", value: "100.0 kg (220.5 lbs)" }, { label: "Repeticiones Realizadas", value: "5 repeticiones (fallo técnico)" }],
+      fr: [{ label: "Charge Soulevée (Barre)", value: "100,0 kg (220,5 lbs)" }, { label: "Répétitions Validées", value: "5 répétitions (échec technique)" }],
+      de: [{ label: "Bewältigtes Hantelgewicht", value: "100,0 kg (220,5 lbs)" }, { label: "Absolvierte Wiederholungen", value: "5 Wiederholungen (technischer Muskelabbruch)" }],
+      ko: [{ label: "리프팅 수행 중량 (바벨)", value: "100.0 kg (220.5 lbs)" }, { label: "완수한 반복 횟수", value: "5회 반복 (자세 유지 한계 기준)" }],
+      hi: [{ label: "उठाया गया भार (बारबेल लोड)", value: "100.0 किग्रा (220.5 पाउंड)" }, { label: "पूरी की गई पुनरावृत्तियां (Reps)", value: "5 रेप्स (सटीक तकनीक के साथ)" }]
+    },
+    steps: {
+      en: [
+        "Step 1: Epley Formula: 1RM = Weight × (1 + Reps ÷ 30) = 100.0 × (1 + 5 ÷ 30) = 100.0 × 1.1667 = 116.67 kg",
+        "Step 2: Brzycki Formula comparison: 1RM = Weight × (36 ÷ (37 - Reps)) = 100.0 × (36 ÷ 32) = 112.50 kg",
+        "Step 3: Lander Formula comparison: (100 × Weight) ÷ (101.3 - 2.67123 × Reps) = 10,000 ÷ 87.944 = 113.71 kg",
+        "Step 4: Standard rounding to nearest whole integer yields an estimated 1RM benchmark of 117 kg (257 lbs)"
+      ],
+      es: [
+        "Paso 1: Fórmula Epley: 1RM = Peso × (1 + Reps ÷ 30) = 100.0 × (1 + 5 ÷ 30) = 116.67 kg",
+        "Paso 2: Comparación Brzycki: 1RM = Peso × (36 ÷ (37 - Reps)) = 100.0 × (36 ÷ 32) = 112.50 kg",
+        "Paso 3: Comparación Lander: (100 × Peso) ÷ (101.3 - 2.67123 × Reps) = 10,000 ÷ 87.944 = 113.71 kg",
+        "Paso 4: Redondeo estándar al entero más próximo: 117 kg (257 lbs) estimados para 1RM"
+      ],
+      fr: [
+        "Étape 1 : Formule d'Epley : 1RM = Charge × (1 + Reps ÷ 30) = 100,0 × (1 + 5 ÷ 30) = 116,67 kg",
+        "Étape 2 : Formule de Brzycki : 1RM = Charge × (36 ÷ (37 - Reps)) = 100,0 × (36 ÷ 32) = 112,50 kg",
+        "Étape 3 : Formule de Lander : (100 × Charge) ÷ (101,3 - 2,67123 × Reps) = 10 000 ÷ 87,944 = 113,71 kg",
+        "Étape 4 : Arrondi usuel à l'unité la plus proche : 117 kg (257 lbs) pour le 1RM théorique"
+      ],
+      de: [
+        "Schritt 1: Epley-Formel: 1RM = Gewicht × (1 + Wdh ÷ 30) = 100,0 × (1 + 5 ÷ 30) = 116,67 kg",
+        "Schritt 2: Brzycki-Formel: 1RM = Gewicht × (36 ÷ (37 - Wdh)) = 100,0 × (36 ÷ 32) = 112,50 kg",
+        "Schritt 3: Lander-Formel: (100 × Gewicht) ÷ (101,3 - 2,67123 × Wdh) = 10.000 ÷ 87,944 = 113,71 kg",
+        "Schritt 4: Rundung auf ganze Zahlen ergibt eine geschätzte 1RM-Maximallast von 117 kg"
+      ],
+      ko: [
+        "1단계: Epley 공식 적용: 1RM = 중량 × (1 + 반복 ÷ 30) = 100.0 × (1 + 5 ÷ 30) = 116.67 kg",
+        "2단계: Brzycki 공식 교차 검증: 1RM = 중량 × (36 ÷ (37 - 반복)) = 100.0 × (36 ÷ 32) = 112.50 kg",
+        "3단계: Lander 공식 계산: (100 × 중량) ÷ (101.3 - 2.67123 × 반복) = 10,000 ÷ 87.944 = 113.71 kg",
+        "4단계: 정수 단위 표준 반올림 적용: 추정 1RM 벤치마크 약 117 kg (257 lbs)"
+      ],
+      hi: [
+        "चरण 1: एपले (Epley) फॉर्मूला: 1RM = वजन × (1 + रेप्स ÷ 30) = 100.0 × (1 + 5 ÷ 30) = 116.67 किग्रा",
+        "चरण 2: ब्रज़िकी (Brzycki) फॉर्मूला: 1RM = वजन × (36 ÷ (37 - रेप्स)) = 100.0 × (36 ÷ 32) = 112.50 किग्रा",
+        "चरण 3: लैंडर (Lander) समीकरण: (100 × वजन) ÷ (101.3 - 2.67123 × रेप्स) = 10,000 ÷ 87.944 = 113.71 किग्रा",
+        "चरण 4: निकटतम पूर्णांक में मानक राउंडिंग: अनुमानित 1RM क्षमता = 117 किग्रा (257 पाउंड)"
+      ]
+    },
+    result: {
+      en: { label: "Estimated 1RM Benchmark (Epley)", value: "117 kg (257 lbs)" },
+      es: { label: "Puntaje Estimado de 1RM (Epley)", value: "117 kg (257 lbs)" },
+      fr: { label: "Estimation du 1RM Théorique (Epley)", value: "117 kg (257 lbs)" },
+      de: { label: "Geschätzte 1RM-Maximalkraft (Epley)", value: "117 kg (257 lbs)" },
+      ko: { label: "Epley 공식 기반 추정 1RM 수치", value: "117 kg (257 lbs)" },
+      hi: { label: "अनुमानित 1RM बेंचमार्क (एपले)", value: "117 किग्रा (257 पाउंड)" }
+    },
+    interp: {
+      en: "Lifting 100 kg for 5 clean reps projects an estimated single-repetition capacity of 117 kg (~85% load intensity for 5RM). Submaximal multi-rep formulas are most reliable between 2 and 6 repetitions. Repetition ranges above 10 introduce anaerobic endurance and fatigue variables that skew maximal estimation. This output serves as a programming guideline for calibrating working set percentages, not an assurance of safe unassisted execution without spotters.",
+      es: "Levantar 100 kg para 5 repeticiones limpias proyecta un 1RM de 117 kg (equivalente a una intensidad del ~85%). Las ecuaciones submáximas ofrecen mayor precisión entre 2 y 6 repeticiones. Por encima de 10 repeticiones, la fatiga y la resistencia muscular alteran la predicción. Utilice este cálculo para dosificar porcentajes de entrenamiento (ej. series al 75-80%), no como garantía para intentar un máximo sin asistentes.",
+      fr: "Déplacer 100 kg sur 5 répétitions propres correspond à une charge maximale théorique de 117 kg (intensité d'environ 85 % pour 5 reps). Les équations prédictives sont particulièrement fiables entre 2 et 6 répétitions. Au-delà de 10 répétitions, l'endurance musculaire et la fatigue faussent les calculs. Ce chiffre permet de calibrer les charges de travail d'un cycle sans risquer une blessure lors d'un test maximal réel.",
+      de: "Das Bewältigen von 100 kg für 5 saubere Wiederholungen ergibt ein rechnerisches 1RM von ca. 117 kg (~85 % der Maximalkraft). Submaximale Formeln sind im Bereich von 2 bis 6 Wiederholungen am präzisesten. Bei mehr als 10 Wiederholungen verfälschen Ermüdung und Kraftausdauer das Ergebnis. Der Wert dient als Orientierung für Trainingsgewichte, nicht als Empfehlung für ungesicherte Maximalversuche.",
+      ko: "100 kg으로 5회의 깔끔한 반복을 완수하면 추정 1RM은 약 117 kg(5RM은 통상 1RM의 약 85% 강도)으로 산출됩니다. 다중 반복 기반의 추정 공식은 2~6회 구간에서 가장 높은 신뢰도를 나타냅니다. 10회를 초과하는 고반복 세트는 근지구력 및 피로도가 개입되어 오차가 커집니다. 본 결과치는 주기화 훈련 시 % 중량을 설정하는 가이드라인이며, 보조자 없는 무리한 단일 시도를 권장하지 않습니다.",
+      hi: "100 किग्रा वजन के साथ 5 स्वच्छ रेप्स करने पर अनुमानित 1RM क्षमता 117 किग्रा (5RM आमतौर पर 1RM का ~85% भार होता है) निकलती है। सबमैक्सिमल बहु-रेप फॉर्मूले 2 से 6 रेप्स के बीच सबसे सटीक परिणाम देते हैं। 10 रेप्स से अधिक होने पर मांसपेशियों की थकान अनुमान को प्रभावित करती है। यह गणना वर्कआउट भार (% लोड) निर्धारित करने के लिए है, बिना सुरक्षा उपकरण या सहायक के अकेले भारी वजन उठाने के लिए नहीं।"
+    }
+  },
+
+  // 8. Karvonen Heart Rate Reserve Calculator
+  'karvonen-heart-rate-calculator': {
+    inputs: {
+      en: [{ label: "Chronological Age", value: "30 years" }, { label: "Resting Heart Rate (RHR)", value: "60 bpm" }],
+      es: [{ label: "Edad Cronológica", value: "30 años" }, { label: "Frecuencia Cardíaca en Reposo (RHR)", value: "60 lpm" }],
+      fr: [{ label: "Âge Chronologique", value: "30 ans" }, { label: "Fréquence Cardiaque au Repos (FCR)", value: "60 bpm" }],
+      de: [{ label: "Lebensalter", value: "30 Jahre" }, { label: "Ruhepuls (RHR)", value: "60 S/min" }],
+      ko: [{ label: "만 나이", value: "30세" }, { label: "안정 시 심박수 (RHR)", value: "60 bpm" }],
+      hi: [{ label: "आयु", value: "30 वर्ष" }, { label: "विश्राम हृदय गति (RHR)", value: "60 धड़कन/मिनट (BPM)" }]
+    },
+    steps: {
+      en: [
+        "Step 1: Estimate Maximum Heart Rate: HR_max = 220 - Age = 220 - 30 = 190 bpm",
+        "Step 2: Calculate Heart Rate Reserve (HRR): HRR = HR_max - RHR = 190 - 60 = 130 bpm",
+        "Step 3: Target HR Zone 2 Lower Bound (60% intensity): 60 + (130 × 0.60) = 60 + 78 = 138 bpm",
+        "Step 4: Target HR Zone 2 Upper Bound (70% intensity): 60 + (130 × 0.70) = 60 + 91 = 151 bpm",
+        "Step 5: Reference Zone 1 Warm-up (50–60%): 125 to 138 bpm; Zone 3 Aerobic (70–80%): 151 to 164 bpm"
+      ],
+      es: [
+        "Paso 1: Estimar FC Máxima: FC_max = 220 - Edad = 220 - 30 = 190 lpm",
+        "Paso 2: Calcular Reserva Cardíaca (HRR): HRR = FC_max - FC_reposo = 190 - 60 = 130 lpm",
+        "Paso 3: Límite Inferior Zona 2 (60% intensidad): 60 + (130 × 0.60) = 60 + 78 = 138 lpm",
+        "Paso 4: Límite Superior Zona 2 (70% intensidad): 60 + (130 × 0.70) = 60 + 91 = 151 lpm",
+        "Paso 5: Referencia Zona 1 (50–60%): 125 a 138 lpm; Zona 3 (70–80%): 151 a 164 lpm"
+      ],
+      fr: [
+        "Étape 1 : Estimer la FC Maximale : FC_max = 220 - Âge = 220 - 30 = 190 bpm",
+        "Étape 2 : Calculer la Réserve Cardiaque (HRR) : HRR = FC_max - FC_repos = 190 - 60 = 130 bpm",
+        "Étape 3 : Seuil Bas Zone 2 (Intensité 60 %) : 60 + (130 × 0,60) = 60 + 78 = 138 bpm",
+        "Étape 4 : Seuil Haut Zone 2 (Intensité 70 %) : 60 + (130 × 0,70) = 60 + 91 = 151 bpm",
+        "Étape 5 : Repères Zone 1 (50–60 %) : 125 à 138 bpm ; Zone 3 Aérobie (70–80 %) : 151 à 164 bpm"
+      ],
+      de: [
+        "Schritt 1: Maximale Herzfrequenz schätzen: HF_max = 220 - Alter = 220 - 30 = 190 S/min",
+        "Schritt 2: Herzfrequenzreserve (HRR) berechnen: HRR = HF_max - Ruhepuls = 190 - 60 = 130 S/min",
+        "Schritt 3: Untergrenze Zone 2 (60 % Intensität): 60 + (130 × 0,60) = 60 + 78 = 138 S/min",
+        "Schritt 4: Obergrenze Zone 2 (70 % Intensität): 60 + (130 × 0,70) = 60 + 91 = 151 S/min",
+        "Schritt 5: Referenzbereich Zone 1 (50–60 %): 125 bis 138 S/min; Zone 3 (70–80 %): 151 bis 164 S/min"
+      ],
+      ko: [
+        "1단계: 최대 심박수(HR_max) 추정: 220 - 나이 = 220 - 30 = 190 bpm",
+        "2단계: 심박수 예비량(HRR) 계산: HR_max - 안정시 심박수 = 190 - 60 = 130 bpm",
+        "3단계: 목표 심박수 Zone 2 하한선 (60% 강도): 60 + (130 × 0.60) = 60 + 78 = 138 bpm",
+        "4단계: 목표 심박수 Zone 2 상한선 (70% 강도): 60 + (130 × 0.70) = 60 + 91 = 151 bpm",
+        "5단계: 참조 구간 - Zone 1 웜업(50~60%): 125~138 bpm, Zone 3 유산소(70~80%): 151~164 bpm"
+      ],
+      hi: [
+        "चरण 1: अधिकतम हृदय गति का अनुमान: HR_max = 220 - आयु = 220 - 30 = 190 धड़कन/मिनट",
+        "चरण 2: हृदय गति आरक्षित (HRR) की गणना: HRR = HR_max - RHR = 190 - 60 = 130 धड़कन/मिनट",
+        "चरण 3: ज़ोन 2 लक्षित निचली सीमा (60% तीव्रता): 60 + (130 × 0.60) = 60 + 78 = 138 धड़कन/मिनट",
+        "चरण 4: ज़ोन 2 लक्षित ऊपरी सीमा (70% तीव्रता): 60 + (130 × 0.70) = 60 + 91 = 151 धड़कन/मिनट",
+        "चरण 5: संदर्भ ज़ोन 1 वार्म-अप (50-60%): 125 से 138 BPM; ज़ोन 3 एरोबिक (70-80%): 151 से 164 BPM"
+      ]
+    },
+    result: {
+      en: { label: "Target Heart Rate (Karvonen Zone 2: 60–70% HRR)", value: "138 – 151 bpm" },
+      es: { label: "Frecuencia Cardíaca Objetivo (Zona 2 Karvonen: 60–70%)", value: "138 – 151 lpm" },
+      fr: { label: "Fréquence Cardiaque Cible (Zone 2 Karvonen : 60–70 %)", value: "138 – 151 bpm" },
+      de: { label: "Zielherzfrequenz (Karvonen Zone 2: 60–70 % HRR)", value: "138 – 151 S/min" },
+      ko: { label: "목표 심박수 (Karvonen Zone 2 지방연소/지구력: 60–70%)", value: "138 – 151 bpm" },
+      hi: { label: "लक्षित हृदय गति (कार्वोनेन ज़ोन 2: 60–70% HRR)", value: "138 – 151 BPM" }
+    },
+    interp: {
+      en: "By anchoring workout intensity to your individual resting pulse (60 bpm), the Karvonen method personalizes cardiovascular zones compared to generic percentage formulas. Maintaining 138 to 151 bpm targets the aerobic base (Zone 2), optimizing mitochondrial lipid oxidation without inducing premature lactate accumulation. Limitations: The 220-age formula carries a standard deviation of approximately ±10 to 12 bpm. Ambient temperature, dehydration, caffeine intake, and beta-blocker medications will alter resting and exercise heart rates.",
+      es: "Al basar la intensidad en el pulso en reposo (60 lpm), Karvonen personaliza las zonas cardiovasculares respecto a fórmulas genéricas. Mantener 138 a 151 lpm sitúa el esfuerzo en la Zona 2 (base aeróbica), favoreciendo la oxidación de grasas sin generar acumulación temprana de lactato. Limitaciones: La fórmula 220-edad tiene un margen de error de ±10 a 12 lpm. El calor ambiental, la deshidratación, la cafeína y ciertos fármacos (como betabloqueantes) modifican la respuesta cardíaca.",
+      fr: "En intégrant la fréquence cardiaque au repos (60 bpm), la méthode de Karvonen personnalise vos zones d'effort par rapport aux formules théoriques classiques. La plage de 138 à 151 bpm correspond à la Zone 2 (endurance fondamentale), favorisant l'oxydation des lipides sans acidose précoce. Limites : L'estimation 220-âge comporte une marge de ±10 à 12 bpm. La déshydratation, la caféine, la chaleur ou des traitements (bêtabloquants) modifient la réponse cardiaque.",
+      de: "Durch die Einbeziehung des individuellen Ruhepulses (60 S/min) passt Karvonen die Trainingszonen an den individuellen Trainingszustand an. Ein Bereich von 138 bis 151 S/min entspricht der Zone 2 (aerobe Basis), die den Fettstoffwechsel optimiert, ohne Laktat anzuhäufen. Grenzen: Die Formel 220-Alter unterliegt einer biologischen Streuung von ca. ±10 bis 12 S/min. Hitze, Flüssigkeitsmangel, Koffein und Medikamente (z. B. Betablocker) beeinflussen die Herzfrequenz maßgeblich.",
+      ko: "개인의 안정 시 심박수(60 bpm)를 반영하는 Karvonen 공식은 단순 백분율 공식보다 훨씬 정밀하게 유산소 훈련 구간을 설정합니다. 138 ~ 151 bpm 범위는 미토콘드리아의 지방 산화 효율을 극대화하는 Zone 2(유산소 기초 지구력) 구간입니다. 한계점: 220-나이 최대 심박수 추정치는 개인별로 약 ±10~12 bpm의 오차가 있습니다. 탈수, 기온, 카페인 섭취 및 베타차단제 복용 등은 심박수 반응에 직접적인 영향을 미칩니다.",
+      hi: "विश्राम पल्स (60 BPM) को आधार बनाकर, कार्वोनेन विधि सामान्य सूत्रों की तुलना में अधिक सटीक व्यक्तिगत कार्डियो ज़ोन बनाती है। 138 से 151 BPM बनाए रखना ज़ोन 2 (एरोबिक बेस) को लक्षित करता है, जिससे लैक्टिक एसिड जमा हुए बिना फैट बर्न होता है। सीमाएं: 220-आयु फॉर्मूले में लगभग ±10 से 12 BPM का अंतर हो सकता है। तापमान, निर्जलीकरण, कैफीन और बीटा-ब्लॉकर दवाएं हृदय गति को सीधे प्रभावित करती हैं।"
+    }
   }
 };
 
@@ -451,6 +589,10 @@ export function getWorkedExample(slug: string, lang: string): WorkedExample {
     normalizedSlug = 'tdee-calculator';
   } else if (slug === 'lean-body-mass-calculator') {
     normalizedSlug = 'body-fat-calculator';
+  } else if (slug === 'one-rep-max-calculator') {
+    normalizedSlug = '1rm-calculator';
+  } else if (slug === 'heart-rate-zone-calculator') {
+    normalizedSlug = 'karvonen-heart-rate-calculator';
   }
 
   const data = EXAMPLES[normalizedSlug] || EXAMPLES['bmi-calculator'];

@@ -142,7 +142,7 @@ const defaultReferencesByLang: Record<Locale, { name: string; url: string }[]> =
 const activeReferences = toolSpecificReferences[effectiveSlug] || (defaultReferencesByLang[lang] || defaultReferencesByLang.en);
 const workedExample = getWorkedExample(effectiveSlug, lang);
 const currentCalc = propCalc || calculators.find(c => c.slug === slug || c.slug === effectiveSlug);
-const variablesGuide = getInputVariablesGuide(currentCalc?.inputs || [], lang);
+const variablesGuide = getInputVariablesGuide(currentCalc?.inputs || [], lang, effectiveSlug);
 const clinicalGuide = getToolInterpretationAndLimitations(effectiveSlug, lang);
 ---
 

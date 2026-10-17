@@ -697,7 +697,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
             ]
           };
         }
-        else if (slug === '1rm-calculator') {
+        else if (slug === '1rm-calculator' || slug === 'one-rep-max-calculator') {
           const liftW = parseFloat(val('weight')) || 0;
           const reps = parseInt(val('age')) || 1;
           const epley1RM = liftW * (1 + (reps / 30));

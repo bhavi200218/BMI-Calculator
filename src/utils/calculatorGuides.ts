@@ -150,10 +150,35 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
   }
 };
 
-export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale) {
+const LIFT_VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: string; metric: string; imperial: string }>> = {
+  weight: {
+    en: { name: 'Weight Lifted (Barbell Load)', desc: 'The external resistance lifted on the barbell, dumbbell, or machine for the completed repetitions.', metric: 'Kilograms (kg)', imperial: 'Pounds (lbs)' },
+    es: { name: 'Carga Levantada (Peso en Barra)', desc: 'La resistencia externa total desplazada en la barra o máquina durante las repeticiones completadas.', metric: 'Kilogramos (kg)', imperial: 'Libras (lbs)' },
+    fr: { name: 'Charge Soulevée (Barre)', desc: 'La charge externe totale déplacée sur la barre ou la machine pour les répétitions réalisées.', metric: 'Kilogrammes (kg)', imperial: 'Livres (lbs)' },
+    de: { name: 'Bewältigtes Hantelgewicht', desc: 'Die gesamte externe Last auf der Hantel oder Maschine für die absolvierten Wiederholungen.', metric: 'Kilogramm (kg)', imperial: 'Pfund (lbs)' },
+    ko: { name: '리프팅 수행 중량 (바벨 부하)', desc: '완수한 반복 횟수 동안 바벨, 덤벨 또는 머신으로 들어올린 순수 외부 저항 중량입니다.', metric: '킬로그램 (kg)', imperial: '파운드 (lbs)' },
+    hi: { name: 'उठाया गया भार (बारबेल लोड)', desc: 'पूरी की गई पुनरावृत्तियों के लिए बारबेल या मशीन पर उठाया गया कुल बाहरी वजन।', metric: 'किलोग्राम (kg)', imperial: 'पाउंड (lbs)' }
+  },
+  age: {
+    en: { name: 'Repetitions Completed', desc: 'The count of consecutive repetitions performed with strict technical form to momentary technical failure (optimal range: 2–10 reps).', metric: 'Rep count (integer)', imperial: 'Rep count (integer)' },
+    es: { name: 'Repeticiones Realizadas', desc: 'Número de repeticiones consecutivas ejecutadas con técnica estricta hasta el fallo técnico momentáneo (rango ideal: 2 a 10 reps).', metric: 'Número de repeticiones', imperial: 'Número de repeticiones' },
+    fr: { name: 'Répétitions Complétées', desc: 'Nombre de répétitions consécutives effectuées avec une technique rigoureuse jusqu’à l’échec technique (plage idéale : 2 à 10 reps).', metric: 'Nombre de répétitions', imperial: 'Nombre de répétitions' },
+    de: { name: 'Absolvierte Wiederholungen', desc: 'Anzahl der aufeinanderfolgenden Wiederholungen mit sauberer technischer Ausführung bis zur lokalen Muskelermüdung (optimal: 2–10 Wdh).', metric: 'Wiederholungsanzahl', imperial: 'Wiederholungsanzahl' },
+    ko: { name: '완수한 반복 횟수 (Reps)', desc: '정확한 자세를 유지하며 일시적 기술적 한계점까지 완수한 연속 반복 횟수입니다 (최적 권장 구간: 2~10회).', metric: '반복 횟수 (정수)', imperial: '반복 횟수 (정수)' },
+    hi: { name: 'पूरी की गई पुनरावृत्तियां (Reps)', desc: 'सटीक तकनीक के साथ मांसपेशियों की थकान तक पूरी की गई लगातार पुनरावृत्तियों की संख्या (इष्टतम सीमा: 2-10 रेप्स)।', metric: 'रेप्स संख्या (पूर्णांक)', imperial: 'रेप्स संख्या (पूर्णांक)' }
+  }
+};
+
+export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale, slug: string = '') {
   const ui = UI_TITLES[lang] || UI_TITLES.en;
+  const is1RM = slug === '1rm-calculator' || slug === 'one-rep-max-calculator';
+
   const items: VariableGuideItem[] = inputs.map(input => {
-    const def = VARIABLE_DEFINITIONS[input.id]?.[lang] || VARIABLE_DEFINITIONS[input.id]?.en;
+    const sourceDefs = is1RM && LIFT_VARIABLE_DEFINITIONS[input.id] 
+      ? LIFT_VARIABLE_DEFINITIONS 
+      : VARIABLE_DEFINITIONS;
+      
+    const def = sourceDefs[input.id]?.[lang] || sourceDefs[input.id]?.en;
     if (def) {
       return {
         id: input.id,
