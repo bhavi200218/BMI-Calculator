@@ -71,12 +71,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Underweight",
           "col2": "< 18.5 kg/m²",
-          "col3": ""
+          "col3": "Lower body mass baseline (< 18.5 kg/m²)"
         },
         {
           "col1": "Healthy Weight",
           "col2": "18.5 – 24.9 kg/m²",
-          "col3": ""
+          "col3": "Standard population reference range"
         },
         {
           "col1": "Overweight",
@@ -86,17 +86,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Obesity Class I",
           "col2": "30.0 – 34.9 kg/m²",
-          "col3": ""
+          "col3": "Class I obesity reference category"
         },
         {
           "col1": "Obesity Class II",
           "col2": "35.0 – 39.9 kg/m²",
-          "col3": ""
+          "col3": "Class II obesity reference category"
         },
         {
           "col1": "Obesity Class III",
           "col2": "≥ 40.0 kg/m²",
-          "col3": ""
+          "col3": "Class III severe obesity reference category"
         }
       ],
       "faqs": [
