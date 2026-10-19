@@ -67,4 +67,17 @@ test('UI & Reference Table Repetition Regression Tests', async (t) => {
   await t.test('[lang]/[calculator].astro: Generic embed box restricted to bmi-calculator only', () => {
     assert.strictEqual(calcPageContent.includes("calc.slug === 'bmi-calculator' && <EmbedWidgetBox"), true, 'Embed box must be scoped to bmi-calculator');
   });
+
+  const healthContentPath = path.resolve('src/components/HealthContent.astro');
+  const healthContent = fs.readFileSync(healthContentPath, 'utf8');
+
+  await t.test('HealthContent: Exactly one responsive table rendered, no duplicate mobile cards, and in-depth chart link present', () => {
+    assert.strictEqual(healthContent.includes('sm:hidden'), false, 'Should not contain duplicate sm:hidden mobile card list in HealthContent');
+    assert.strictEqual(healthContent.includes('hidden sm:block'), false, 'Should not contain hidden sm:block desktop wrapper');
+    const tableOccurrences = (healthContent.match(/<table/g) || []).length;
+    assert.strictEqual(tableOccurrences, 1, 'Exactly one <table> should exist in HealthContent');
+    assert.strictEqual(healthContent.includes('inDepthTitle'), true, 'Must include inDepthTitle in HealthContent');
+    assert.strictEqual(healthContent.includes('href={`/${lang}/bmi-chart/`}'), true, 'Must link to dedicated in-depth BMI chart page');
+  });
 });
+

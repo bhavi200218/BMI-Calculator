@@ -32,6 +32,9 @@ const content: Record<string, any> = {
     sourcesSubtitle: 'Standards based on official WHO & CDC global guidelines.',
     whoLink: 'WHO Obesity Guidance',
     cdcLink: 'CDC BMI Guide',
+    inDepthTitle: 'Explore the Comprehensive BMI Chart & Risk Matrix',
+    inDepthSubtitle: 'Need granular height-to-weight classifications, gender variance, or Asian population thresholds?',
+    inDepthLink: 'View Complete BMI Chart & Analysis →',
     helpCenter: 'Help Center',
     faqTitle: 'Frequently Asked Questions',
     faqSubtitle: 'Everything you need to know about BMI calculations, metabolic ratios, accuracy, and athletic measurements.',
@@ -75,6 +78,9 @@ const content: Record<string, any> = {
     sourcesSubtitle: 'डब्ल्यूएचओ (WHO) और सीडीसी (CDC) के दिशानिर्देशों पर आधारित मानक।',
     whoLink: 'डब्ल्यूएचओ मोटापा गाइड',
     cdcLink: 'सीडीसी बीएमआई गाइड',
+    inDepthTitle: 'विस्तृत बीएमआई चार्ट और स्वास्थ्य जोखिम मैट्रिक्स देखें',
+    inDepthSubtitle: 'क्या आपको लंबाई और वजन के अनुसार विस्तृत वर्गीकरण, लिंग भेद या एशियाई आबादी के सीमा बिंदु चाहिए?',
+    inDepthLink: 'पूर्ण बीएमआई चार्ट और विश्लेषण देखें →',
     helpCenter: 'सहायता केंद्र',
     faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
     faqSubtitle: 'बीएमआई गणना, चयापचय दर और स्वास्थ्य दिशानिर्देशों के बारे में अक्सर पूछे जाने वाले प्रश्न।',
@@ -118,6 +124,9 @@ const content: Record<string, any> = {
     sourcesSubtitle: 'Estándares basados en directrices oficiales de la OMS y los CDC.',
     whoLink: 'Guía de Obesidad de la OMS',
     cdcLink: 'Guía de IMC de los CDC',
+    inDepthTitle: 'Explore la tabla completa de IMC y la matriz de riesgo',
+    inDepthSubtitle: '¿Necesita clasificaciones detalladas por altura y peso, varianza de género o umbrales para poblaciones asiáticas?',
+    inDepthLink: 'Ver tabla de IMC y análisis completo →',
     helpCenter: 'Centro de Ayuda',
     faqTitle: 'Preguntas Frecuentes',
     faqSubtitle: 'Todo lo que necesitas saber sobre cálculos de IMC, índices metabólicos y mediciones atléticas.',
@@ -161,6 +170,9 @@ const content: Record<string, any> = {
     sourcesSubtitle: 'Normes basées sur les directives de l\'OMS et du CDC.',
     whoLink: 'Guide de l\'OMS sur l\'Obésité',
     cdcLink: 'Guide IMC du CDC',
+    inDepthTitle: 'Découvrez le tableau d\'IMC complet et la matrice des risques',
+    inDepthSubtitle: 'Besoin de classifications détaillées selon la taille et le poids, des variances selon le sexe ou des seuils pour les populations asiatiques ?',
+    inDepthLink: 'Voir le tableau d\'IMC complet et l\'analyse →',
     helpCenter: 'Centre d\'Aide',
     faqTitle: 'Foire Aux Questions',
     faqSubtitle: 'Tout ce que vous devez savoir sur le calcul de l\'IMC, le métabolisme et les mesures sportives.',
@@ -204,6 +216,9 @@ const content: Record<string, any> = {
     sourcesSubtitle: 'Standards basierend auf WHO- und CDC-Richtlinien.',
     whoLink: 'WHO Adipositas-Leitfaden',
     cdcLink: 'CDC BMI-Leitfaden',
+    inDepthTitle: 'Entdecken Sie die umfassende BMI-Tabelle & Risikomatrix',
+    inDepthSubtitle: 'Benötigen Sie detaillierte Klassifizierungen nach Größe und Gewicht, Geschlechterunterschiede oder Schwellenwerte für asiatische Populationen?',
+    inDepthLink: 'Vollständige BMI-Tabelle & Analyse ansehen →',
     helpCenter: 'Hilfe-Center',
     faqTitle: 'Häufig Gestellte Fragen',
     faqSubtitle: 'Alles, was Sie über BMI-Berechnungen, Stoffwechselraten und sportliche Messungen wissen müssen.',
@@ -247,6 +262,9 @@ const content: Record<string, any> = {
     sourcesSubtitle: 'WHO 및 CDC 글로벌 지침을 기반으로 한 표준입니다.',
     whoLink: 'WHO 비만 지침',
     cdcLink: 'CDC BMI 지침',
+    inDepthTitle: '종합적인 BMI 차트 및 위험도 매트릭스 살펴보기',
+    inDepthSubtitle: '신장·체중별 세부 분류, 성별 차이 또는 아시아인 기준 위험 수치가 필요하신가요?',
+    inDepthLink: '전체 BMI 차트 및 상세 분석 보기 →',
     helpCenter: '도움말 센터',
     faqTitle: '자주 묻는 질문',
     faqSubtitle: 'BMI 계산, 대사율 및 운동 선수 측정에 대해 알아야 할 모든 것.',
@@ -330,29 +348,8 @@ const faqSchema = {
         </p>
       </div>
 
-      <!-- Mobile Cards Version -->
-      <div class="block sm:hidden space-y-4">
-        {t.whoTable.map((row: any, i: number) => (
-          <div class={`p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-sm ${i % 2 === 1 ? 'bg-[var(--muted)]/20' : ''}`}>
-            <div class="flex justify-between items-center gap-3">
-              <span class="font-display font-bold text-[var(--foreground)] uppercase text-sm">{row.category}</span>
-              <span class={`text-[10px] font-display font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full border ${
-                row.status === 'normal'      ? 'border-emerald-500/40 dark:border-emerald-500/50 text-emerald-950 dark:text-emerald-200 bg-emerald-100/90 dark:bg-emerald-950/60' :
-                row.status === 'underweight' ? 'border-sky-500/40 dark:border-sky-500/50 text-sky-950 dark:text-sky-200 bg-sky-100/90 dark:bg-sky-950/60' :
-                row.status === 'overweight'  ? 'border-amber-500/40 dark:border-amber-500/50 text-amber-950 dark:text-amber-200 bg-amber-100/90 dark:bg-amber-950/60' :
-                                               'border-rose-500/40 dark:border-rose-500/50 text-rose-950 dark:text-rose-200 bg-rose-100/90 dark:bg-rose-950/60'
-              }`}>{row.risk}</span>
-            </div>
-            <div class="flex justify-between items-center text-xs pt-2">
-              <span class="text-[var(--muted-foreground)]">{t.colRange}</span>
-              <span class="font-sans font-bold text-[var(--foreground)]">{row.range}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <!-- Desktop Table Version -->
-      <div class="hidden sm:block rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-soft)] overflow-hidden">
+      <!-- Responsive Table Version -->
+      <div class="rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-soft)] overflow-hidden">
         <div class="overflow-x-auto">
           <table class="w-full text-left min-w-[500px] border-collapse">
             <thead>
@@ -386,6 +383,17 @@ const faqSchema = {
         {t.disclaimer}
       </p>
 
+      <!-- Dedicated In-Depth Reference Banner -->
+      <div class="rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-5 md:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="space-y-1">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{t.inDepthTitle}</p>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium">{t.inDepthSubtitle}</p>
+        </div>
+        <a href={`/${lang}/bmi-chart/`} class="inline-flex items-center gap-1.5 rounded-xl bg-[var(--accent)] px-4 py-2 text-xs font-display font-bold uppercase tracking-wider text-white hover:opacity-90 transition-opacity shrink-0 shadow-xs">
+          <span>{t.inDepthLink}</span>
+        </a>
+      </div>
+
       <!-- Sources & References Box -->
       <div class="rounded-xl border border-[var(--border)] bg-[var(--card)]/80 p-5 md:p-6 shadow-[var(--shadow-soft)] flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -397,7 +405,7 @@ const faqSchema = {
             <span>{t.whoLink}</span>
             <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
-          <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-4 py-1.5 text-xs font-semibold text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors bg-[var(--muted)]/30">
+          <a href="https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-4 py-1.5 text-xs font-semibold text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors bg-[var(--muted)]/30">
             <span>{t.cdcLink}</span>
             <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>

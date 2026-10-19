@@ -2,8 +2,9 @@
 import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import PageShell from '../../../components/PageShell.astro';
-import HubGrid from '../../../components/HubGrid.astro';
+import BlogRelatedCalculators from '../../../components/BlogRelatedCalculators.astro';
 import { blogArticles } from '../../../utils/blogArticles';
+import { getBlogCta } from '../../../utils/blogRelatedTools';
 
 export function getStaticPaths() {
   return Object.keys(blogArticles).map((slug) => ({
@@ -22,6 +23,7 @@ const articleContentHtml = article.contentHtml ? (article.contentHtml[lang] || a
 const articleBody = article.body ? (article.body[lang] || article.body.en) : [];
 
 const canonicalUrl = `https://realbmicalculator.com/en/blog/${slug}/`;
+const cta = getBlogCta(slug as string, lang);
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -75,20 +77,18 @@ const articleSchema = {
           </div>
         )}
 
-        <!-- Natural In-Article Call to Action (CTA) Box -->
+        <!-- Natural In-Article Contextual Call to Action (CTA) Box -->
         <div class="my-12 p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border-2 border-[var(--accent)]/30 shadow-xl text-center space-y-4 not-prose">
-          <h3 class="text-2xl font-bold font-display uppercase tracking-tight text-[var(--foreground)]">Want to know your BMI?</h3>
+          <h3 class="text-2xl font-bold font-display uppercase tracking-tight text-[var(--foreground)]">{cta.title}</h3>
           <p class="text-base text-[var(--muted-foreground)] max-w-xl mx-auto font-sans">
-            Use our free <a href="/en/bmi-calculator/" class="text-[var(--accent)] underline font-bold hover:text-[var(--foreground)] transition-colors">BMI Calculator</a> to get your result in seconds.
+            {cta.descPrefix} <a href={`/en/${cta.targetSlug}/`} class="text-[var(--accent)] underline font-bold hover:text-[var(--foreground)] transition-colors">{cta.linkText}</a> {cta.descSuffix}
           </p>
-          <a href="/en/bmi-calculator/" class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105 active:scale-95 shadow-lg text-white">
-            Calculate My BMI Now →
+          <a href={`/en/${cta.targetSlug}/`} class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105 active:scale-95 shadow-lg text-white">
+            {cta.btnText}
           </a>
         </div>
 
-        <div class="pt-12 border-t border-[var(--border)] not-prose">
-          <HubGrid lang="en" />
-        </div>
+        <BlogRelatedCalculators articleSlug={slug as string} lang={lang} />
       </article>
     </PageShell>
 </Layout>

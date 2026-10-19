@@ -21,9 +21,10 @@ function loadTsModule(entryPoint) {
 }
 
 const { getWorkedExample } = loadTsModule('src/utils/workedExamples.ts');
-const { getInputVariablesGuide } = loadTsModule('src/utils/calculatorGuides.ts');
+const { getInputVariablesGuide, getToolInterpretationAndLimitations } = loadTsModule('src/utils/calculatorGuides.ts');
 const { blogArticles } = loadTsModule('src/utils/blogArticles.ts');
 const { calculators } = loadTsModule('src/utils/calculators.ts');
+const { blogArticleToolsMap, relatedToolsSectionHeading } = loadTsModule('src/utils/blogRelatedTools.ts');
 
 const LOCALES = ['en', 'es', 'fr', 'de', 'ko', 'hi'];
 
@@ -167,13 +168,146 @@ runTest('Homepage HealthContent: All 4 Sections Distinct & Non-Repetitive across
   assert.ok(healthContent.includes('인체 계측 스크리닝 및 국제 WHO 표준 기준'), 'Korean Section 1 present');
 });
 
-// 6. Compiled dist/ HTML Route-Level Verification Tests
+// 6. Dead External Citation URLs Absent from Source Code
+const DEAD_CITATION_PATTERNS = [
+  'cdc.gov/healthyweight/assessing/bmi/adult_bmi',
+  'cdc.gov/healthyweight/losing_weight',
+  'navyfitness.org/fitness/500-physical-readiness/body-composition-assessment',
+  'acog.org/clinical/guidance/committee-opinion/articles/2013/01/weight-gain-during-pregnancy',
+  'who.int/publications/i/item/9241208546',
+  '//maths.ox.ac.uk/trefethen/bmi.html'
+];
+
+function scanDirectoryForDeadUrls(dir, extFilter = ['.astro', '.ts', '.js', '.mjs', '.html']) {
+  const matches = [];
+  function recurse(current) {
+    const entries = fs.readdirSync(current, { withFileTypes: true });
+    for (const ent of entries) {
+      const fullPath = path.join(current, ent.name);
+      if (ent.isDirectory()) {
+        if (ent.name !== 'node_modules' && ent.name !== '.git') {
+          recurse(fullPath);
+        }
+      } else if (ent.isFile() && extFilter.some(ext => ent.name.endsWith(ext))) {
+        const content = fs.readFileSync(fullPath, 'utf8');
+        for (const deadPattern of DEAD_CITATION_PATTERNS) {
+          if (content.includes(deadPattern)) {
+            matches.push({ file: fullPath, pattern: deadPattern });
+          }
+        }
+      }
+    }
+  }
+  recurse(dir);
+  return matches;
+}
+
+runTest('Dead Citation URLs: Zero occurrences across src/ directory', () => {
+  const violations = scanDirectoryForDeadUrls(path.resolve('src'));
+  assert.strictEqual(violations.length, 0, `Found dead citation URLs in src/: ${JSON.stringify(violations, null, 2)}`);
+});
+
+// 7. Karvonen vs 1RM Domain Separation across All 6 Locales
+LOCALES.forEach(lang => {
+  runTest(`Karvonen Guide [${lang}]: Cardiovascular guidance separated with zero 1RM / repetition contamination`, () => {
+    const cardioGuide = getToolInterpretationAndLimitations('karvonen-heart-rate-calculator', lang);
+    assert.strictEqual(cardioGuide.domain, 'cardio', 'Domain must be cardio');
+    const combinedText = `${cardioGuide.sectionTitle} ${cardioGuide.sectionSubtitle} ${cardioGuide.interpretationTitle} ${cardioGuide.interpretationText} ${cardioGuide.limitationsTitle} ${cardioGuide.limitationsText}`;
+    
+    assert.strictEqual(combinedText.includes('1RM'), false, 'Karvonen guide must NOT mention 1RM');
+    assert.strictEqual(combinedText.includes('repetition') || combinedText.includes('repeticion') || combinedText.includes('répétition'), false, 'Karvonen guide must NOT mention repetition');
+    assert.strictEqual(combinedText.includes('10 repetitions'), false, 'Karvonen guide must NOT mention 10 repetitions');
+    assert.ok(combinedText.toLowerCase().includes('heart') || combinedText.toLowerCase().includes('cardio') || combinedText.toLowerCase().includes('kardio') || combinedText.toLowerCase().includes('herz') || combinedText.includes('हृदय') || combinedText.includes('심박'), 'Karvonen guide must focus on cardiovascular heart rate');
+  });
+
+  runTest(`1RM Guide [${lang}]: Muscular strength guidance separated with zero cardiovascular / heart rate contamination`, () => {
+    const strengthGuide = getToolInterpretationAndLimitations('1rm-calculator', lang);
+    assert.strictEqual(strengthGuide.domain, 'strength', 'Domain must be strength');
+    const combinedText = `${strengthGuide.sectionTitle} ${strengthGuide.sectionSubtitle} ${strengthGuide.interpretationTitle} ${strengthGuide.interpretationText} ${strengthGuide.limitationsTitle} ${strengthGuide.limitationsText}`;
+    
+    assert.strictEqual(combinedText.toLowerCase().includes('heart rate'), false, '1RM guide must NOT mention heart rate');
+    assert.strictEqual(combinedText.includes('HRR'), false, '1RM guide must NOT mention HRR');
+    assert.strictEqual(combinedText.includes('हृदय गति'), false, '1RM guide must NOT mention heart rate in Hindi');
+    assert.strictEqual(combinedText.includes('심박'), false, '1RM guide must NOT mention heart rate in Korean');
+    assert.ok(combinedText.includes('1RM'), '1RM guide must focus on 1RM principles');
+  });
+});
+
+// 8. Tool-Specific Citations in ToolSEOContent.astro
+runTest('ToolSEOContent: Karvonen and 1RM have verified tool-specific citations, not generic BMI citations', () => {
+  const toolSeoContent = fs.readFileSync(path.resolve('src/components/ToolSEOContent.astro'), 'utf8');
+  assert.ok(toolSeoContent.includes("'karvonen-heart-rate-calculator'"), 'Karvonen must have entry in toolSpecificReferences');
+  assert.ok(toolSeoContent.includes('13443783'), 'Karvonen entry must reference Karvonen 1957 study (PMID 13443783)');
+  assert.ok(toolSeoContent.includes('heart.org'), 'Karvonen entry must reference AHA Target Heart Rates');
+  
+  assert.ok(toolSeoContent.includes("'1rm-calculator'"), '1RM must have entry in toolSpecificReferences');
+  assert.ok(toolSeoContent.includes('19204579'), '1RM entry must reference ACSM Position Stand (PMID 19204579)');
+  assert.ok(toolSeoContent.includes('9565931'), '1RM entry must reference LeSuer/Brzycki study (PMID 9565931)');
+});
+
+// 9. Blog Contextual CTAs and Curated Related Tools
+const allArticleSlugs = Object.keys(blogArticles);
+allArticleSlugs.forEach(slug => {
+  runTest(`Blog Article [${slug}]: Has contextual CTA and 3-4 curated related calculators across all 6 locales`, () => {
+    const meta = blogArticleToolsMap[slug];
+    assert.ok(meta, `Missing blogArticleToolsMap entry for article ${slug}`);
+    
+    const calcSlugs = calculators.map(c => c.slug);
+    assert.ok(calcSlugs.includes(meta.targetSlug), `targetSlug "${meta.targetSlug}" must exist in calculators.ts`);
+    assert.ok(Array.isArray(meta.relatedSlugs), 'relatedSlugs must be an array');
+    assert.ok(meta.relatedSlugs.length >= 3 && meta.relatedSlugs.length <= 4, `relatedSlugs must have 3 or 4 items, got ${meta.relatedSlugs.length}`);
+    meta.relatedSlugs.forEach(rel => {
+      assert.ok(calcSlugs.includes(rel), `relatedSlug "${rel}" must exist in calculators.ts`);
+    });
+
+    LOCALES.forEach(lang => {
+      const cta = meta.cta[lang];
+      assert.ok(cta, `Missing CTA for locale ${lang} in article ${slug}`);
+      assert.ok(cta.title && cta.title.trim().length > 0, `CTA title must not be empty for ${slug} [${lang}]`);
+      assert.ok(cta.btnText && cta.btnText.trim().length > 0, `CTA btnText must not be empty for ${slug} [${lang}]`);
+      assert.ok(cta.linkText && cta.linkText.trim().length > 0, `CTA linkText must not be empty for ${slug} [${lang}]`);
+      
+      // Verify translated button text does not contain English fallback in other locales
+      if (lang === 'hi') {
+        assert.ok(cta.btnText.includes('→'), 'Button text should include arrow');
+        assert.ok(!cta.btnText.toLowerCase().includes('calculate'), `Hindi button text should not be English: ${cta.btnText}`);
+      } else if (lang === 'es') {
+        assert.ok(!cta.btnText.toLowerCase().includes('calculate'), `Spanish button text should not be English: ${cta.btnText}`);
+      } else if (lang === 'fr') {
+        assert.ok(!cta.btnText.toLowerCase().includes('calculate'), `French button text should not be English: ${cta.btnText}`);
+      } else if (lang === 'de') {
+        assert.ok(!cta.btnText.toLowerCase().includes('calculate'), `German button text should not be English: ${cta.btnText}`);
+      } else if (lang === 'ko') {
+        assert.ok(!cta.btnText.toLowerCase().includes('calculate'), `Korean button text should not be English: ${cta.btnText}`);
+      }
+    });
+  });
+});
+
+// 10. Homepage HealthContent Deduplication and In-Depth Chart Link
+runTest('HealthContent: Single responsive table, no duplicate mobile cards, in-depth chart link present', () => {
+  const healthContent = fs.readFileSync(path.resolve('src/components/HealthContent.astro'), 'utf8');
+  assert.strictEqual(healthContent.includes('sm:hidden'), false, 'HealthContent must not contain duplicate sm:hidden mobile cards');
+  assert.strictEqual(healthContent.includes('hidden sm:block'), false, 'HealthContent must not contain hidden sm:block desktop wrapper');
+  const tableOccurrences = (healthContent.match(/<table/g) || []).length;
+  assert.strictEqual(tableOccurrences, 1, 'Exactly one <table> element should exist in HealthContent');
+  assert.strictEqual(healthContent.includes('inDepthTitle'), true, 'Must include inDepthTitle in HealthContent');
+  assert.strictEqual(healthContent.includes('href={`/${lang}/bmi-chart/`}'), true, 'Must link to dedicated in-depth BMI chart page');
+});
+
+// 11. Compiled dist/ HTML Route-Level Verification Tests
 if (fs.existsSync(path.resolve('dist'))) {
   console.log('\n--- Verifying Compiled dist/ HTML Files ---');
   
-  // 6.1 1RM in dist/
+  // 11.0 Dead URLs in dist/
+  runTest('dist/ HTML: Zero dead citation URLs across all compiled HTML files', () => {
+    const violations = scanDirectoryForDeadUrls(path.resolve('dist'), ['.html']);
+    assert.strictEqual(violations.length, 0, `Found dead citation URLs in dist/: ${JSON.stringify(violations, null, 2)}`);
+  });
+
+  // 11.1 1RM in dist/
   LOCALES.forEach(lang => {
-    runTest(`dist/[${lang}] 1rm-calculator: HTML output has genuine 1RM example and no BMI contamination`, () => {
+    runTest(`dist/[${lang}] 1rm-calculator: HTML output has genuine 1RM example, citations, and no BMI contamination`, () => {
       const htmlPath = path.resolve(`dist/${lang}/1rm-calculator/index.html`);
       assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
       const html = fs.readFileSync(htmlPath, 'utf8');
@@ -188,7 +322,7 @@ if (fs.existsSync(path.resolve('dist'))) {
     });
   });
 
-  // 6.2 Karvonen in dist/
+  // 11.2 Karvonen in dist/
   LOCALES.forEach(lang => {
     runTest(`dist/[${lang}] karvonen-heart-rate-calculator: HTML output has HRR calculation and no BMI contamination`, () => {
       const htmlPath = path.resolve(`dist/${lang}/karvonen-heart-rate-calculator/index.html`);
@@ -203,7 +337,7 @@ if (fs.existsSync(path.resolve('dist'))) {
     });
   });
 
-  // 6.3 Contextual article counts and footer across all 25 calculators in all 6 locales
+  // 11.3 Contextual article counts and footer across all 25 calculators in all 6 locales
   calculators.forEach(calc => {
     LOCALES.forEach(lang => {
       runTest(`dist/[${lang}] [${calc.slug}]: Exactly 2-3 curated articles rendered & standardized footer`, () => {
@@ -223,7 +357,7 @@ if (fs.existsSync(path.resolve('dist'))) {
     });
   });
 
-  // 6.4 Homepage HTML pillars & footer
+  // 11.4 Homepage HTML pillars & footer
   LOCALES.forEach(lang => {
     runTest(`dist/[${lang}] Homepage: 4 distinct HealthContent pillars and standardized footer`, () => {
       const htmlPath = path.resolve(`dist/${lang}/index.html`);
@@ -233,6 +367,47 @@ if (fs.existsSync(path.resolve('dist'))) {
       assert.ok(html.includes('Created and maintained by Bhawanshi Dosi'), 'Must have standardized footer attribution');
       assert.strictEqual(html.includes('BMI & Complementary Health Measures: Understanding Reference Standards'), false, 'Duplicate stub title absent');
       assert.strictEqual(html.includes('Understanding BMI & Waist Reference Standards'), false, 'Duplicate waist stub title absent');
+    });
+  });
+
+  // 11.5 Blog Articles dist/ HTML: Contextual CTA and 3-4 Related Calculators (No HubGrid Dump)
+  allArticleSlugs.forEach(slug => {
+    LOCALES.forEach(lang => {
+      runTest(`dist/[${lang}] blog/[${slug}]: Has contextual CTA, 3-4 related calculator cards, and no full HubGrid dump`, () => {
+        const htmlPath = path.resolve(`dist/${lang}/blog/${slug}/index.html`);
+        assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
+        const html = fs.readFileSync(htmlPath, 'utf8');
+
+        const meta = blogArticleToolsMap[slug];
+        assert.ok(meta, `Meta must exist for ${slug}`);
+        const cta = meta.cta[lang];
+
+        // Assert contextual CTA button link exists
+        assert.ok(html.includes(`href="/${lang}/${meta.targetSlug}/"`), `HTML must contain link to target calculator /${lang}/${meta.targetSlug}/`);
+
+        // Assert HubGrid (full calculator directory dump) is NOT present
+        assert.strictEqual(html.includes('class="hub-grid"'), false, 'Blog post must NOT dump full HubGrid');
+
+        // Assert Related Calculators section exists and links to the 3-4 related slugs
+        meta.relatedSlugs.forEach(rel => {
+          assert.ok(html.includes(`href="/${lang}/${rel}/"`), `Must link to related tool /${lang}/${rel}/`);
+        });
+
+        // Assert footer attribution
+        assert.ok(html.includes('Created and maintained by Bhawanshi Dosi'), 'Must have standardized footer attribution');
+      });
+    });
+  });
+
+  // 11.6 Homepage dist/ HTML: Exactly one table and in-depth chart link present
+  LOCALES.forEach(lang => {
+    runTest(`dist/[${lang}] Homepage: Single responsive WHO table and in-depth chart link`, () => {
+      const htmlPath = path.resolve(`dist/${lang}/index.html`);
+      assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
+      const html = fs.readFileSync(htmlPath, 'utf8');
+
+      assert.ok(html.includes(`href="/${lang}/bmi-chart/"`), `Must link to dedicated in-depth BMI chart /${lang}/bmi-chart/`);
+      assert.strictEqual(html.includes('sm:hidden'), false, 'Must NOT contain duplicate sm:hidden table cards');
     });
   });
 }

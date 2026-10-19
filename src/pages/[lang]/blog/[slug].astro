@@ -2,9 +2,10 @@
 import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import PageShell from '../../../components/PageShell.astro';
-import HubGrid from '../../../components/HubGrid.astro';
+import BlogRelatedCalculators from '../../../components/BlogRelatedCalculators.astro';
 import { blogArticles } from '../../../utils/blogArticles';
 import { type Locale } from '../../../utils/calculators';
+import { getBlogCta } from '../../../utils/blogRelatedTools';
 
 export function getStaticPaths() {
   const supportedLocales = ['es', 'fr', 'de', 'ko', 'hi'];
@@ -27,6 +28,7 @@ const articleContentHtml = article.contentHtml ? (article.contentHtml[lang] || a
 const articleBody = article.body ? (article.body[lang] || article.body.en) : [];
 
 const canonicalUrl = `https://realbmicalculator.com/${lang}/blog/${slug}/`;
+const cta = getBlogCta(slug as string, lang);
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -62,53 +64,6 @@ const blogLabels = {
   ko: '아티클 목록으로 돌아가기',
   hi: 'लेखों की सूची पर वापस जाएं'
 };
-
-const ctaLabels: Record<string, any> = {
-  en: {
-    title: "Want to know your BMI?",
-    descPrefix: "Use our free",
-    linkText: "BMI Calculator",
-    descSuffix: "to get your result in seconds.",
-    btnText: "Calculate My BMI Now →"
-  },
-  hi: {
-    title: "क्या आप अपना BMI जानना चाहते हैं?",
-    descPrefix: "कुछ ही सेकंड में सटीक परिणाम पाने के लिए हमारे मुफ़्त",
-    linkText: "BMI कैलकुलेटर",
-    descSuffix: "का उपयोग करें।",
-    btnText: "अभी बीएमआई कैलकुलेट करें →"
-  },
-  es: {
-    title: "¿Quieres saber tu IMC?",
-    descPrefix: "Utiliza nuestra",
-    linkText: "Calculadora de IMC",
-    descSuffix: "gratuita para obtener tu resultado en segundos.",
-    btnText: "Calcular Mi IMC Ahora →"
-  },
-  fr: {
-    title: "Voulez-vous connaître votre IMC ?",
-    descPrefix: "Utilisez notre",
-    linkText: "Calculateur d'IMC",
-    descSuffix: "gratuit pour obtenir votre résultat en quelques secondes.",
-    btnText: "Calculer Mon IMC Maintenant →"
-  },
-  de: {
-    title: "Möchten Sie Ihren BMI wissen?",
-    descPrefix: "Nutzen Sie unseren kostenlosen",
-    linkText: "BMI-Rechner",
-    descSuffix: ", um Ihr Ergebnis in Sekunden zu erhalten.",
-    btnText: "Jetzt Meinen BMI Berechnen →"
-  },
-  ko: {
-    title: "당신의 BMI를 알고 싶으신가요?",
-    descPrefix: "무료",
-    linkText: "BMI 계산기",
-    descSuffix: "를 사용하여 몇 초 만에 결과를 확인하세요.",
-    btnText: "지금 내 BMI 계산하기 →"
-  }
-};
-
-const cta = ctaLabels[lang] || ctaLabels.en;
 ---
 
 <Layout 
@@ -136,20 +91,18 @@ const cta = ctaLabels[lang] || ctaLabels.en;
           </div>
         )}
 
-        <!-- Natural In-Article Call to Action (CTA) Box -->
+        <!-- Natural In-Article Contextual Call to Action (CTA) Box -->
         <div class="my-12 p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border-2 border-[var(--accent)]/30 shadow-xl text-center space-y-4 not-prose">
           <h3 class="text-2xl font-bold font-display uppercase tracking-tight text-[var(--foreground)]">{cta.title}</h3>
           <p class="text-base text-[var(--muted-foreground)] max-w-xl mx-auto font-sans">
-            {cta.descPrefix} <a href={`/${lang}/bmi-calculator/`} class="text-[var(--accent)] underline font-bold hover:text-[var(--foreground)] transition-colors">{cta.linkText}</a> {cta.descSuffix}
+            {cta.descPrefix} <a href={`/${lang}/${cta.targetSlug}/`} class="text-[var(--accent)] underline font-bold hover:text-[var(--foreground)] transition-colors">{cta.linkText}</a> {cta.descSuffix}
           </p>
-          <a href={`/${lang}/bmi-calculator/`} class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105 active:scale-95 shadow-lg text-white">
+          <a href={`/${lang}/${cta.targetSlug}/`} class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105 active:scale-95 shadow-lg text-white">
             {cta.btnText}
           </a>
         </div>
 
-        <div class="pt-12 border-t border-[var(--border)] not-prose">
-          <HubGrid lang={lang} />
-        </div>
+        <BlogRelatedCalculators articleSlug={slug as string} lang={lang} />
       </article>
     </PageShell>
 </Layout>

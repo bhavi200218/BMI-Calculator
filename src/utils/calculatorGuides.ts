@@ -211,10 +211,11 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
   const isRegional = ['bmi-calculator-for-indians', 'asian-bmi-calculator', 'bmi-calculator-india'].includes(slug);
   const isMetabolic = ['bmr-calculator', 'tdee-calculator', 'maintenance-calorie-calculator', 'calorie-calculator', 'macro-calculator'].includes(slug);
   const isBodyComp = ['body-fat-calculator', 'lean-body-mass-calculator', 'ideal-weight-calculator', 'waist-to-hip-ratio-calculator', 'body-surface-area-calculator'].includes(slug);
-  const isFitness = ['heart-rate-zone-calculator', 'karvonen-heart-rate-calculator', '1rm-calculator', 'one-rep-max-calculator'].includes(slug);
+  const isCardio = ['heart-rate-zone-calculator', 'karvonen-heart-rate-calculator'].includes(slug);
+  const isStrength = ['1rm-calculator', 'one-rep-max-calculator'].includes(slug);
   const isSpecialty = ['protein-intake-calculator', 'water-intake-calculator', 'pregnancy-weight-gain-calculator', 'diabetes-risk-calculator'].includes(slug);
 
-  const domain = isRegional ? 'regional' : (isMetabolic ? 'metabolic' : (isBodyComp ? 'bodycomp' : (isFitness ? 'fitness' : (isSpecialty ? 'specialty' : 'bmi'))));
+  const domain = isRegional ? 'regional' : (isMetabolic ? 'metabolic' : (isBodyComp ? 'bodycomp' : (isCardio ? 'cardio' : (isStrength ? 'strength' : (isSpecialty ? 'specialty' : 'bmi')))));
 
   const GUIDES: Record<string, Record<Locale, DomainInterpretationGuide>> = {
     bmi: {
@@ -489,72 +490,140 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         medicalNoticeText: 'यह अनुमान फिटनेस ट्रैकिंग के लिए है। सटीक शारीरिक संरचना विश्लेषण के लिए अस्पताल में डेक्सा स्कैन करवाएं।'
       }
     },
-    fitness: {
+    cardio: {
       en: {
-        domain: 'fitness',
-        sectionTitle: 'Cardiorespiratory & Strength Reference Ranges',
-        sectionSubtitle: 'Interpreting training heart rate zones and multi-rep strength predictions.',
-        interpretationTitle: 'Target Heart Rate & One-Rep Max Principles',
-        interpretationText: 'Heart rate zones (Fox 220-age formula, Karvonen heart rate reserve) calibrate aerobic versus anaerobic cardiovascular training intensity. Multi-rep formulas (Brzycki, Epley) extrapolate maximal strength from submaximal sets.',
-        limitationsTitle: 'Physiological Bounds & Formula Deviations',
-        limitationsText: 'Maximal heart rate formulas have an inherent standard deviation of ±10 to ±12 beats per minute. Beta-blockers, caffeine, fatigue, and ambient temperature heavily modify cardiac response. 1RM estimations lose precision beyond 10 repetitions.',
-        medicalNoticeTitle: 'Cardiovascular Clearance Notice',
-        medicalNoticeText: 'Consult a physician before initiating high-intensity cardiovascular training or maximal strength testing, especially if you have a history of cardiovascular disease or hypertension.'
+        domain: 'cardio',
+        sectionTitle: 'Cardiorespiratory & Heart Rate Zone Interpretation',
+        sectionSubtitle: 'Interpreting aerobic baselines, heart rate reserve (HRR), and training intensity zones.',
+        interpretationTitle: 'Target Heart Rate & Karvonen Formula Principles',
+        interpretationText: 'Target heart rate zones—calibrated via the standard Fox 220-age formula or the personalized Karvonen Heart Rate Reserve (HRR) equation—delineate aerobic conditioning, lactate threshold, and anaerobic performance zones. Utilizing resting heart rate in the Karvonen model accounts for individual cardiovascular baseline conditioning.',
+        limitationsTitle: 'Cardiac Physiological Variations & Formula Deviations',
+        limitationsText: 'Age-predicted maximal heart rate formulas exhibit an inherent population standard deviation of ±10 to ±12 beats per minute. Prescription medications (such as beta-blockers), caffeine, hydration status, environmental heat, and fatigue substantially alter acute cardiac response.',
+        medicalNoticeTitle: 'Cardiovascular Health & Exercise Clearance Notice',
+        medicalNoticeText: 'Consult a physician or cardiologist before commencing vigorous cardiovascular interval conditioning, particularly if you have hypertension, arrhythmia, or a history of heart disease.'
       },
       es: {
-        domain: 'fitness',
-        sectionTitle: 'Zonas Cardiorrespiratorias y Rendimiento Muscular',
-        sectionSubtitle: 'Interpretación de las zonas de entrenamiento por pulsaciones y cálculos de fuerza 1RM.',
-        interpretationTitle: 'Zonas de Frecuencia Cardíaca y Principios de 1RM',
-        interpretationText: 'Las zonas de frecuencia cardíaca (métodos de Fox y Karvonen) permiten calibrar la intensidad del esfuerzo aeróbico y anaeróbico. Las fórmulas de Brzycki y Epley estiman la fuerza máxima a partir de series submáximas.',
-        limitationsTitle: 'Variaciones Fisiológicas y Límites',
-        limitationsText: 'La frecuencia cardíaca máxima presenta una desviación estándar de ±10 a ±12 latidos por minuto. Fármacos como betabloqueantes y estimulantes alteran la respuesta del pulso. Los cálculos de 1RM pierden precisión si se realizan más de 10 repeticiones.',
-        medicalNoticeTitle: 'Aviso de Apto Médico',
-        medicalNoticeText: 'Antes de iniciar entrenamientos de alta intensidad o pruebas de fuerza extrema, consulte con su médico, en especial ante antecedentes de cardiopatía o hipertensión.'
+        domain: 'cardio',
+        sectionTitle: 'Interpretación de Zonas Cardiorrespiratorias y Frecuencia Cardíaca',
+        sectionSubtitle: 'Cómo interpretar la frecuencia cardíaca de reserva (FCR) y las intensidades aeróbicas.',
+        interpretationTitle: 'Principios de Frecuencia Cardíaca Objetivo y Fórmula de Karvonen',
+        interpretationText: 'Las zonas de frecuencia cardíaca objetivo—calculadas mediante la fórmula estándar de Fox o el método de Reserva Cardíaca de Karvonen—establecen las intensidades de entrenamiento aeróbico, umbral de lactato y anaeróbico. El método de Karvonen incorpora la frecuencia en reposo para una calibración personalizada.',
+        limitationsTitle: 'Variabilidad Cardíaca y Límites Fisiológicos',
+        limitationsText: 'Las fórmulas de pulso máximo teórico presentan una desviación estándar de ±10 a ±12 latidos por minuto. Factores como fármacos betabloqueantes, cafeína, temperatura ambiente y fatiga modifican de forma directa la respuesta del miocardio.',
+        medicalNoticeTitle: 'Aviso de Apto Médico y Salud Cardiovascular',
+        medicalNoticeText: 'Consulte a su médico o cardiólogo antes de iniciar entrenamientos cardiovasculares de alta intensidad, especialmente ante antecedentes de hipertensión o cardiopatías.'
       },
       fr: {
-        domain: 'fitness',
-        sectionTitle: 'Zones Cardiorespiratoires et Force Maximale',
-        sectionSubtitle: 'Interprétation des plages de fréquence cardiaque et calculs de 1RM.',
-        interpretationTitle: 'Principes des Fréquences Cibles et de la Répétition Maximale',
-        interpretationText: 'Les zones cibles (formules de Fox et Karvonen) délimitent les filières énergétiques aérobie et anaérobie. Les équations de Brzycki et Epley extrapolent la force maximale à partir de répétitions submédianes.',
-        limitationsTitle: 'Limites Physiologiques et Facteurs d’Écart',
-        limitationsText: 'La fréquence cardiaque maximale réelle varie de ±10 à ±12 bpm par rapport aux formules théoriques. Les médicaments bêtabloquants et la fatigue modifient le rythme cardiaque. Les formules de 1RM perdent en fiabilité au-delà de 10 répétitions.',
-        medicalNoticeTitle: 'Précautions Cardiovasculaires',
-        medicalNoticeText: 'Consultez un médecin du sport avant d’entreprendre des entraînements intenses ou des tests de force maximale, particulièrement en cas d’antécédents cardiovasculaires.'
+        domain: 'cardio',
+        sectionTitle: 'Interprétation des Zones Cardiorespiratoires et Fréquence Cardiaque',
+        sectionSubtitle: 'Comprendre la fréquence cardiaque de réserve (FCR) et les plages d’effort aérobie.',
+        interpretationTitle: 'Principes des Fréquences Cibles et de la Formule de Karvonen',
+        interpretationText: 'Les zones de fréquence cardiaque cible—calculées selon la formule classique de Fox ou la méthode de réserve de Karvonen—définissent les filières aérobie, le seuil lactique et la filière anaérobie. L’intégration de la fréquence cardiaque au repos affine l’adaptation au niveau d’endurance individuel.',
+        limitationsTitle: 'Variations Physiologiques et Écarts de Formule',
+        limitationsText: 'La fréquence cardiaque maximale estimée comporte un écart-type naturel de ±10 à ±12 battements par minute. La prise de bêtabloquants, la caféine, la déshydratation et la chaleur influencent sensiblement la cinétique cardiaque.',
+        medicalNoticeTitle: 'Avis Médical et Dépistage Cardiovasculaire',
+        medicalNoticeText: 'Demandez l’avis d’un cardiologue ou médecin du sport avant d’entreprendre des séances d’endurance fractionnée intense, particulièrement en cas d’antécédents d’arythmie ou d’hypertension.'
       },
       de: {
-        domain: 'fitness',
-        sectionTitle: 'Kardiovaskuläre Zonen & Kraftsport-Referenzen',
-        sectionSubtitle: 'Einordnung von Trainingsherzfrequenzzonen und Ein-Wiederholungs-Maxima.',
-        interpretationTitle: 'Trainingspulszonen & 1RM-Grundsätze',
-        interpretationText: 'Herzfrequenzzonen (Fox-Formel, Karvonen-Methode) steuern die Trainingsintensität im aeroben und anaeroben Bereich. Kraftformeln (Brzycki, Epley) berechnen das maximale Hebegewicht anhand submaksimaler Sätze.',
-        limitationsTitle: 'Individuelle Streuung & Belastungsgrenzen',
-        limitationsText: 'Die tatsächliche maximale Herzfrequenz streut um etwa ±10 bis ±12 Schläge pro Minute um den Rechenwert. Medikamente (z. B. Betablocker) und Koffein beeinflussen den Puls massiv. 1RM-Formeln werden bei mehr als 10 Wiederholungen ungenau.',
-        medicalNoticeTitle: 'Sportmedizinischer Hinweis',
-        medicalNoticeText: 'Vor Beginn hochintensiver Trainingseinheiten oder Maximaltests sollte eine sportärztliche Untersuchung erfolgen, insbesondere bei vorbestehendem Bluthochdruck.'
+        domain: 'cardio',
+        sectionTitle: 'Interpretation von Herzfrequenzzonen & Kardiophysiologie',
+        sectionSubtitle: 'Trainingspulsbereiche, Herzfrequenzreserve (HFR) und aerobe Belastungsstufen verstehen.',
+        interpretationTitle: 'Zielherzfrequenz & Karvonen-Formel-Grundsätze',
+        interpretationText: 'Trainingspulszonen—berechnet nach der Standardformel von Fox oder der differenzierten Karvonen-Herzfrequenzreserve-Methode—strukturieren das Grundlagenausdauer-, Schwellen- und Spitzenbelastungstraining. Der Einbezug des Ruhepulses bei Karvonen berücksichtigt den individuellen Trainingszustand.',
+        limitationsTitle: 'Kardiologische Streubreite & Einflussfaktoren',
+        limitationsText: 'Formeln zur maximalen Herzfrequenz unterliegen einer statistischen Streuung von ca. ±10 bis ±12 Schlägen pro Minute. Medikamentöse Einflüsse (z. B. Betablocker), Dehydratation, Umgebungshitze und Ermüdung verändern die Herzreaktion deutlich.',
+        medicalNoticeTitle: 'Sportkardiologischer Beratungshinweis',
+        medicalNoticeText: 'Holen Sie vor Beginn hochintensiver Ausdauereinheiten ärztlichen Rat ein, vor allem bei bestehendem Bluthochdruck oder kardiovaskulären Vorerkrankungen.'
       },
       ko: {
-        domain: 'fitness',
-        sectionTitle: '심폐 지구력 및 최대 근력 기준 지침',
-        sectionSubtitle: '목표 심박수 훈련 구간과 1RM 최대 중량 예측 공식의 해석입니다.',
-        interpretationTitle: '목표 심박수 존 및 1RM 산출 원리',
-        interpretationText: 'Fox 공식 및 Karvonen 여유심박수 공식은 유산소 및 무산소 심폐 운동 강도를 설정합니다. Brzycki 및 Epley 공식은 다중 반복 세트로부터 1회 최대 중량(1RM)을 안전하게 추정합니다.',
-        limitationsTitle: '생리적 편차 및 공식 한계',
-        limitationsText: '최대 심박수 공식은 개인별로 약 ±10~12 bpm의 자연적인 표준편차를 가집니다. 혈압약(베타차단제), 피로도, 카페인 섭취에 따라 심박 반응이 달라지며, 1RM 공식은 10회를 초과하는 고반복 세트에서는 오차가 커집니다.',
-        medicalNoticeTitle: '운동 전 의학적 확인',
-        medicalNoticeText: '고강도 심폐 인터벌 훈련이나 고중량 리프팅을 시작하기 전, 특히 심혈관 질환이나 고혈압 병력이 있는 경우 의사의 운동 처방을 확인하세요.'
+        domain: 'cardio',
+        sectionTitle: '심폐 지구력 및 목표 심박수 존 해석 가이드',
+        sectionSubtitle: '여유 심박수(HRR), 유산소 운동 강도 및 카르보넨(Karvonen) 공식 분석 기준입니다.',
+        interpretationTitle: '목표 심박수 구간과 카르보넨 공식 원리',
+        interpretationText: 'Fox 220-연령 공식과 Karvonen 여유 심박수 공식은 유산소 지구력, 젖산 역치 및 고강도 인터벌 훈련 구간을 정밀하게 설정합니다. 특히 카르보넨 방식은 안정 시 심박수를 반영하여 개인의 심폐 체력 수준에 맞춘 최적 훈련 범위를 제공합니다.',
+        limitationsTitle: '심박수 생리적 편차 및 공식 한계',
+        limitationsText: '연령 기반 최대 심박수 예측치는 개인별로 약 ±10~12 bpm의 생리적 편차를 보입니다. 혈압 조절제(베타차단제) 복용, 카페인 섭취, 탈수, 피로도 및 환경 온도에 따라 심장 박동 반응이 크게 달라집니다.',
+        medicalNoticeTitle: '심혈관 건강 및 운동 전 의학적 확인',
+        medicalNoticeText: '고강도 인터벌 러닝이나 심폐 지구력 훈련을 시작하기 전, 특히 고혈압이나 심혈관 질환 병력이 있는 경우 순환기내과 전문의 상담을 권장합니다.'
       },
       hi: {
-        domain: 'fitness',
-        sectionTitle: 'हृदय गति क्षेत्र एवं शक्ति संदर्भ',
-        sectionSubtitle: 'प्रशिक्षण हृदय गति क्षेत्रों और 1RM अधिकतम भार की व्याख्या।',
-        interpretationTitle: 'लक्षित हृदय गति और 1RM सिद्धांत',
-        interpretationText: 'फॉक्स और कार्वोनेन सूत्र एरोबिक और एनारोबिक व्यायाम तीव्रता निर्धारित करते हैं। ब्रज़िकी और एपले फॉर्मूले सब-मैक्सिमल सेट से अधिकतम भार क्षमता का अनुमान लगाते हैं।',
-        limitationsTitle: 'शारीरिक अंतर और सीमाएं',
-        limitationsText: 'अधिकतम हृदय गति फॉर्मूले में ±10 से ±12 धड़कन प्रति मिनट का व्यक्तिगत अंतर हो सकता है। दवाएं और थकान हृदय गति को प्रभावित करते हैं। 10 से अधिक रिपीटीशन पर 1RM अनुमान की सटीकता कम हो जाती है।',
-        medicalNoticeTitle: 'हृदय स्वास्थ्य सावधानी',
-        medicalNoticeText: 'उच्च-तीव्रता वाले व्यायाम या भारी वजन उठाने से पहले डॉक्टर से परामर्श करें, विशेष रूप से यदि उच्च रक्तचाप का इतिहास हो।'
+        domain: 'cardio',
+        sectionTitle: 'हृदय गति क्षेत्र एवं कार्डियोरेस्पिरेटरी व्याख्या',
+        sectionSubtitle: 'हार्ट रेट रिजर्व (HRR), एरोबिक फिटनेस और कार्वोनेन ज़ोन को समझें।',
+        interpretationTitle: 'लक्षित हृदय गति और कार्वोनेन सूत्र के सिद्धांत',
+        interpretationText: 'लक्षित हृदय गति क्षेत्र—फॉक्स 220-आयु समीकरण या कार्वोनेन हार्ट रेट रिजर्व (HRR) पद्धति द्वारा निर्धारित—एरोबिक सहनशक्ति और एनारोबिक थ्रेशोल्ड को परिभाषित करते हैं। कार्वोनेन फॉर्मूला आराम की हृदय गति (RHR) को जोड़कर व्यक्तिगत कार्डियो स्तर के अनुसार सटीक सीमा प्रदान करता है।',
+        limitationsTitle: 'हृदय गति में शारीरिक विभिन्नताएं व सीमाएं',
+        limitationsText: 'आयु-आधारित अधिकतम हृदय गति अनुमान में ±10 से ±12 धड़कन प्रति मिनट का प्राकृतिक अंतर हो सकता है। दवाएं (जैसे बीटा-ब्लॉकर्स), कैफीन, डिहाइड्रेशन और थकान हृदय की धड़कन पर सीधा असर डालते हैं।',
+        medicalNoticeTitle: 'हृदय स्वास्थ्य डॉक्टरी परामर्श चेतावनी',
+        medicalNoticeText: 'तीव्र कार्डियो या एरोबिक प्रशिक्षण शुरू करने से पहले चिकित्सक से परामर्श लें, खासकर यदि उच्च रक्तचाप या हृदय रोग का इतिहास रहा हो।'
+      }
+    },
+    strength: {
+      en: {
+        domain: 'strength',
+        sectionTitle: 'Muscular Strength & 1RM Estimation Guide',
+        sectionSubtitle: 'Interpreting maximal strength calculations, rep-to-fatigue formulas, and lifting percentages.',
+        interpretationTitle: 'One-Repetition Maximum (1RM) Principles',
+        interpretationText: 'A One-Repetition Maximum (1RM) estimates the peak external force a muscle group can generate for a single concentric repetition. Extrapolation equations (such as Brzycki, Epley, and Lander) estimate maximal strength from submaximal sets, minimizing injury risks associated with true 1RM testing.',
+        limitationsTitle: 'Repetition Ranges & Kinetic Limitations',
+        limitationsText: '1RM prediction algorithms maintain strong mathematical accuracy when input repetitions remain between 2 and 10 repetitions to technical failure. At higher rep ranges (> 10 repetitions), muscular endurance, fiber-type ratios, and metabolic fatigue introduce substantial variance into the projected load.',
+        medicalNoticeTitle: 'Resistance Training Safety & Spotter Notice',
+        medicalNoticeText: 'Always utilize competent spotters, safety pins, and appropriate warm-up protocols when executing heavy resistance training. Discontinue lifting immediately if acute joint or tendon pain occurs.'
+      },
+      es: {
+        domain: 'strength',
+        sectionTitle: 'Guía de Fuerza Muscular y Estimación de 1RM',
+        sectionSubtitle: 'Interpretación de repetición máxima, fórmulas submáximas y porcentajes de carga.',
+        interpretationTitle: 'Principios de Repetición Máxima (1RM)',
+        interpretationText: 'La Repetición Máxima (1RM) define la mayor carga que un grupo muscular puede desplazar en una sola repetición con técnica adecuada. Ecuaciones como Brzycki, Epley y Lander permiten estimar este valor a partir de series submáximas, minimizando el riesgo de lesión osteoarticular.',
+        limitationsTitle: 'Rangos de Repeticiones y Límites Mecánicos',
+        limitationsText: 'Las fórmulas de 1RM ofrecen alta precisión cuando la serie se completa entre 2 y 10 repeticiones hasta el fallo técnico. Con más de 10 repeticiones, la resistencia muscular y la fatiga glucolítica distorsionan la estimación del peso máximo.',
+        medicalNoticeTitle: 'Seguridad en Entrenamiento de Fuerza',
+        medicalNoticeText: 'Realice un calentamiento articular adecuado y cuente con la asistencia de observadores (spotters) o soportes de seguridad al levantar cargas elevadas.'
+      },
+      fr: {
+        domain: 'strength',
+        sectionTitle: 'Guide de Force Musculaire et Évaluation du 1RM',
+        sectionSubtitle: 'Interprétation de la répétition maximale, des formules d’extrapolation et des pourcentages de charge.',
+        interpretationTitle: 'Principes de la Répétition Maximale (1RM)',
+        interpretationText: 'Le 1RM correspond à la charge maximale qu’un groupe musculaire peut soulever sur une seule répétition complète. Les équations de Brzycki, Epley et Lander permettent de déduire cette valeur à partir de séries submédianes, réduisant le risque de blessure lié aux tests maximaux directs.',
+        limitationsTitle: 'Plages de Répétitions et Tolérances Biomécaniques',
+        limitationsText: 'Les formules prédictives restent fiables pour des séries de 2 à 10 répétitions menées jusqu’à l’échec technique. Au-delà de 10 répétitions, l’endurance musculaire locale et la fatigue métabolique faussent significativement l’estimation de la force pure.',
+        medicalNoticeTitle: 'Consignes de Sécurité en Musculation',
+        medicalNoticeText: 'Utilisez systématiquement des barres de sécurité et la présence d’un pareur lors de charges lourdes. Cessez l’exercice en cas de douleur articulaire anormale.'
+      },
+      de: {
+        domain: 'strength',
+        sectionTitle: 'Maximalkraft-Leitfaden & 1RM-Berechnung',
+        sectionSubtitle: 'Einordnung von Maximalkraftwerten, Wiederholungsformeln und Trainingslasten.',
+        interpretationTitle: 'Grundsätze des Ein-Wiederholungs-Maximums (1RM)',
+        interpretationText: 'Das 1RM definiert das maximale Gewicht, das ein Muskel bei einmaliger sauberer Ausführung bewältigen kann. Mathematische Näherungsverfahren (wie Brzycki, Epley und Lander) errechnen diesen Spitzenwert aus submaximalen Sätzen und senken so das Verletzungsrisiko gegenüber Maximalversuchen.',
+        limitationsTitle: 'Wiederholungsbereiche & Biomechanische Grenzen',
+        limitationsText: 'Die 1RM-Schätzformeln besitzen die höchste Genauigkeit im Bereich von 2 bis 10 Wiederholungen bis zur technischen Ermüdung. Bei mehr als 10 Wiederholungen verfälschen Kraftausdauer und metabolische Ermüdung das Ergebnis zunehmend.',
+        medicalNoticeTitle: 'Sicherheitshinweis für das Krafttraining',
+        medicalNoticeText: 'Achten Sie bei schweren Grundübungen auf saubere Technik, angemessenes Aufwärmen und den Einsatz von Sicherheitsablagen oder Trainingspartnern (Spottern).'
+      },
+      ko: {
+        domain: 'strength',
+        sectionTitle: '근력 측정 및 1RM 최대 중량 가이드',
+        sectionSubtitle: '1회 최대 중량(1RM), 서브맥시멀 반복 공식 및 부하 비율 해석입니다.',
+        interpretationTitle: '1RM(One-Repetition Maximum) 산출 원리',
+        interpretationText: '1RM은 특정 근육군이 단 1회 완벽한 자세로 들어올릴 수 있는 최대 외부 중량을 의미합니다. Brzycki, Epley, Lander 공식 등은 다중 반복(서브맥시멀) 세트 결과를 기반으로 1RM을 추정하여, 무리한 최고 중량 시도로 인한 부상 위험을 최소화합니다.',
+        limitationsTitle: '반복 횟수 구간 및 역학적 오차',
+        limitationsText: '1RM 예측 공식은 기술적 한계점까지 2회~10회 반복한 세트에서 가장 높은 정확도를 보입니다. 10회를 초과하는 고반복 세트에서는 근지구력 및 근섬유 조성 비율에 따른 개인차가 커져 최대 근력 추정치에 오차가 발생합니다.',
+        medicalNoticeTitle: '중량 리프팅 안전 수칙 안내',
+        medicalNoticeText: '고중량 웨이트 트레이닝 시 충분한 관절 웜업을 시행하고 안전 바(Safety Pin) 또는 보조자(Spotter)를 반드시 확보하세요. 급성 관절 통증 발생 시 즉시 중단해야 합니다.'
+      },
+      hi: {
+        domain: 'strength',
+        sectionTitle: 'मांसपेशीय शक्ति एवं 1RM आकलन गाइड',
+        sectionSubtitle: 'अधिकतम भार क्षमता (1RM), रिपीटीशन फॉर्मूले और लिफ्टिंग प्रतिशत की व्याख्या।',
+        interpretationTitle: 'वन-रिपीटीशन मैक्सिमम (1RM) के सिद्धांत',
+        interpretationText: '1RM वह अधिकतम भार है जिसे कोई मांसपेशी समूह सटीक तकनीक के साथ केवल एक बार उठा सकता है। ब्रज़िकी, एपले और लैंडर समीकरण सब-मैक्सिमल रेप्स के आधार पर सुरक्षित रूप से 1RM का अनुमान लगाते हैं, जिससे सीधे भारी वजन उठाने के चोट जोखिम से बचा जा सकता है।',
+        limitationsTitle: 'रिपीटीशन सीमा एवं यांत्रिक सीमाएं',
+        limitationsText: '1RM फॉर्मूले 2 से 10 रिपीटीशन के बीच सबसे सटीक परिणाम देते हैं। 10 से अधिक रेप्स होने पर मांसपेशियों की सहनशक्ति और थकान के कारण अधिकतम भार का अनुमान कम सटीक हो जाता है।',
+        medicalNoticeTitle: 'स्ट्रेंथ ट्रेनिंग सुरक्षा सावधानी',
+        medicalNoticeText: 'भारी वजन उठाते समय हमेशा उचित वॉर्म-अप करें, सेफ्टी पिन का उपयोग करें और सहायक (स्पॉटर) की उपस्थिति सुनिश्चित करें।'
       }
     },
     specialty: {

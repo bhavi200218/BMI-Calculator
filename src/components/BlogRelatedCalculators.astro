@@ -1,0 +1,62 @@
+---
+import { getBlogRelatedSlugs, relatedToolsSectionHeading } from '../utils/blogRelatedTools';
+import { calculators, type Locale } from '../utils/calculators';
+
+interface Props {
+  articleSlug: string;
+  lang: Locale;
+}
+
+const { articleSlug, lang = 'en' } = Astro.props;
+const relatedSlugs = getBlogRelatedSlugs(articleSlug);
+const heading = relatedToolsSectionHeading[lang] || relatedToolsSectionHeading.en;
+
+const relatedCalcs = relatedSlugs
+  .map(slug => calculators.find(c => c.slug === slug))
+  .filter(Boolean);
+
+const viewToolLabels: Record<Locale, string> = {
+  en: 'Open Calculator →',
+  es: 'Abrir Calculadora →',
+  fr: 'Ouvrir le Calculateur →',
+  de: 'Rechner öffnen →',
+  ko: '계산기 열기 →',
+  hi: 'कैलकुलेटर खोलें →'
+};
+---
+
+<section class="mt-12 pt-10 border-t border-[var(--border)] not-prose">
+  <div class="mb-6">
+    <p class="text-xs font-bold uppercase tracking-wider text-[var(--accent)] font-mono">{heading.title}</p>
+    <p class="text-sm text-[var(--muted-foreground)] mt-1">{heading.subtitle}</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {relatedCalcs.map((calc) => {
+      const calcName = calc!.name[lang] || calc!.name.en || calc!.title[lang] || calc!.title.en;
+      const calcDesc = calc!.description[lang] || calc!.description.en;
+      const calcUrl = `/${lang}/${calc!.slug}/`;
+
+      return (
+        <a 
+          href={calcUrl}
+          class="group block p-5 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 hover:bg-[var(--card)] hover:border-[var(--accent)]/50 transition-all shadow-sm hover:shadow-md"
+        >
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h4 class="text-base font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
+                {calcName}
+              </h4>
+              <p class="text-xs text-[var(--muted-foreground)] mt-1 line-clamp-2 leading-relaxed">
+                {calcDesc}
+              </p>
+            </div>
+          </div>
+          <span class="inline-flex items-center text-xs font-bold text-[var(--accent)] mt-3 group-hover:translate-x-0.5 transition-transform">
+            {viewToolLabels[lang] || viewToolLabels.en}
+          </span>
+        </a>
+      );
+    })}
+  </div>
+</section>
