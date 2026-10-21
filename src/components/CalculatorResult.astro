@@ -34,6 +34,15 @@ const defaultResultHeader = {
   ko: '계산 평가 결과',
   hi: 'गणना मूल्यांकन'
 }[lang];
+
+const resultDescription = {
+  en: 'Clinical category analysis and personalized reference metrics.',
+  es: 'Análisis de categoría clínica y métricas de referencia personalizadas.',
+  fr: 'Analyse des catégories cliniques et métriques de référence personnalisées.',
+  de: 'Klinische Kategorieanalyse und personalisierte Referenzmetriken.',
+  ko: '임상 카테고리 분석 및 맞춤형 신체 건강 기준 범위를 제공합니다.',
+  hi: 'नैदानिक श्रेणी विश्लेषण और व्यक्तिगत संदर्भ मेट्रिक्स।'
+}[lang];
 ---
 
 <div id="resultStudio" class="melove-result-card flex flex-col h-full overflow-hidden w-full max-w-full">
@@ -59,6 +68,7 @@ const defaultResultHeader = {
       <div>
         <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{resultEyebrow}</p>
         <h3 id="resultHeaderLabel" class="text-xl sm:text-2xl font-display font-bold uppercase text-[var(--foreground)] break-words">{defaultResultHeader}</h3>
+        <p class="text-xs text-[var(--muted-foreground)] mt-0.5">{resultDescription}</p>
       </div>
       <span id="primaryUnitLabel" class="hidden px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] text-xs font-display font-semibold uppercase tracking-widest whitespace-nowrap shadow-[var(--shadow-accent)] shrink-0"></span>
     </div>

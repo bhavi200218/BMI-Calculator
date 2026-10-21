@@ -156,6 +156,15 @@ const workedExample = getWorkedExample(effectiveSlug, lang);
 const currentCalc = propCalc || calculators.find(c => c.slug === slug || c.slug === effectiveSlug);
 const variablesGuide = getInputVariablesGuide(currentCalc?.inputs || [], lang, effectiveSlug);
 const clinicalGuide = getToolInterpretationAndLimitations(effectiveSlug, lang);
+
+const referenceTableSubtitle = {
+  en: 'Official clinical thresholds, biometric categories, and physiological parameters evaluated across international health benchmarks.',
+  es: 'Umbrales clínicos oficiales, categorías biométricas y parámetros fisiológicos evaluados según estándares internacionales de salud.',
+  fr: 'Seuils cliniques officiels, catégories biométriques et paramètres physiologiques évalués selon les normes internationales de santé.',
+  de: 'Offizielle klinische Schwellenwerte, biometrische Kategorien und physiologische Parameter nach internationalen Gesundheitsstandards.',
+  ko: '국제 공중보건 및 임상 가이드라인에 따른 공식 건강 지표 분류 기준과 생리학적 평가 구간입니다.',
+  hi: 'अंतरराष्ट्रीय स्वास्थ्य मानकों के अनुसार आधिकारिक नैदानिक सीमाएं, बायोमेट्रिक श्रेणियां और शारीरिक पैरामीटर।'
+}[lang];
 ---
 
 <!-- Embed Tool-Specific FAQ Schema -->
@@ -171,6 +180,9 @@ const clinicalGuide = getToolInterpretationAndLimitations(effectiveSlug, lang);
     <h2 class="text-3xl md:text-4xl font-display font-bold text-[var(--foreground)] tracking-tight uppercase leading-tight">
       {currentData.title}
     </h2>
+    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium pt-1">
+      {referenceTableSubtitle}
+    </p>
   </div>
 
   <!-- Formula Box -->
@@ -239,6 +251,11 @@ const clinicalGuide = getToolInterpretationAndLimitations(effectiveSlug, lang);
       <h3 class="text-xl md:text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
         {workedExample.title}
       </h3>
+      {workedExample.subtitle && (
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium pt-1 leading-relaxed">
+          {workedExample.subtitle}
+        </p>
+      )}
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
@@ -382,9 +399,16 @@ const clinicalGuide = getToolInterpretationAndLimitations(effectiveSlug, lang);
 
   <!-- FAQ Accordion List -->
   <div class="space-y-6 pt-4">
-    <h3 class="text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-      {ui.faq}
-    </h3>
+    <div class="space-y-1">
+      <h3 class="text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+        {ui.faq}
+      </h3>
+      {ui.faqSubtitle && (
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium pt-1 leading-relaxed">
+          {ui.faqSubtitle}
+        </p>
+      )}
+    </div>
     <div class="grid gap-4">
       {(currentData.faqs || []).map((faq: { question: string; answer: string }) => (
         <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2">

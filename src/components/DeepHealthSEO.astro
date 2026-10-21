@@ -985,6 +985,36 @@ const t = activeContentMap ? (activeContentMap[lang] || activeContentMap.en) : n
     <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-tight">
       {t.title}
     </h2>
+    <p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed max-w-3xl pt-1">
+      {category === 'indian'
+        ? (lang === 'hi' ? 'भारतीय वयस्कों के लिए आईसीएमआर (ICMR) और डब्ल्यूएचओ दिशानिर्देशों के आधार पर विस्तृत स्वास्थ्य संदर्भ और चिकित्सीय सीमाओं की समीक्षा।' :
+           lang === 'es' ? 'Revisión exhaustiva de estándares antropométricos y umbrales preventivos del ICMR y la OMS para poblaciones asiáticas e indias.' :
+           lang === 'fr' ? 'Examen approfondi des repères anthropométriques et des seuils préventifs de l\'ICMR et de l\'OMS pour les populations asiatiques.' :
+           lang === 'de' ? 'Umfassender Überblick über anthropometrische Grenzwerte und präventive ICMR- und WHO-Empfehlungen für asiatische Erwachsene.' :
+           lang === 'ko' ? '아시아인 및 인도 성인을 위한 ICMR 및 WHO 공중보건 예방 기준과 신체 계측 지표에 관한 종합적인 분석 가이드입니다.' :
+           'Comprehensive analysis of anthropometric reference standards, visceral fat indicators, and preventive ICMR and WHO consensus guidelines.')
+        : category === 'fitness'
+        ? (lang === 'hi' ? 'हृदय गति प्रशिक्षण ज़ोन, 1RM शक्ति अनुमान और एथलेटिक प्रदर्शन मीट्रिक्स के लिए वैज्ञानिक संदर्भ गाइड।' :
+           lang === 'es' ? 'Guía de referencia científica sobre zonas de entrenamiento cardíaco, fuerza máxima (1RM) y métricas de rendimiento deportivo.' :
+           lang === 'fr' ? 'Guide de référence sur les zones d\'entraînement cardiaque, la force maximale (1RM) et la performance athlétique.' :
+           lang === 'de' ? 'Wissenschaftlicher Leitfaden zu Herzfrequenz-Trainingszonen, Maximalkraft-Berechnungen (1RM) und sportphysiologischen Metriken.' :
+           lang === 'ko' ? '심박수 훈련 구간, 1RM 최대 근력 산출 및 운동 생리학적 성과 지표에 관한 학술적 참조 가이드입니다.' :
+           'Scientific reference guidance on heart rate training zones, estimated one-rep maximum (1RM) strength, and exercise physiology metrics.')
+        : category === 'metabolic'
+        ? (lang === 'hi' ? 'बेसल मेटाबॉलिक रेट (BMR), कुल दैनिक ऊर्जा व्यय (TDEE) और संतुलित ऊर्जा पोषण योजना के लिए वैज्ञानिक दिशानिर्देश।' :
+           lang === 'es' ? 'Fundamentos científicos sobre tasa metabólica basal (TMB), gasto energético diario (GETD) y balance nutricional.' :
+           lang === 'fr' ? 'Principes scientifiques sur le métabolisme de base (BMR), la dépense énergétique journalière (TDEE) et l\'équilibre nutritionnel.' :
+           lang === 'de' ? 'Wissenschaftliche Grundlagen zu Grundumsatz (BMR), Gesamtenergieumsatz (TDEE) und evidenzbasierter Energiebilanz.' :
+           lang === 'ko' ? '기초대사량(BMR), 일일 총 에너지 소비량(TDEE) 및 지속 가능한 대사 균형 관리를 위한 영양 가이드라인입니다.' :
+           'Scientific principles on basal metabolic rate (BMR), total daily energy expenditure (TDEE), and evidence-based caloric balance.')
+        : (lang === 'hi' ? 'बॉडी मास इंडेक्स (BMI) और विश्व स्वास्थ्य संगठन (WHO) के वैश्विक स्वास्थ्य मानकों की साक्ष्य-आधारित विस्तृत समीक्षा।' :
+           lang === 'es' ? 'Análisis basado en la evidencia sobre el Índice de Masa Corporal (IMC) y los criterios de referencia globales de la OMS y CDC.' :
+           lang === 'fr' ? 'Analyse fondée sur les preuves de l\'Indice de Masse Corporelle (IMC) et des critères de référence mondiaux de l\'OMS et du CDC.' :
+           lang === 'de' ? 'Evidenzbasierte Übersicht über den Body-Mass-Index (BMI) und globale Referenzstandards der WHO und CDC.' :
+           lang === 'ko' ? '체질량지수(BMI) 및 세계보건기구(WHO)와 미국 CDC의 글로벌 공중보건 참조 기준에 대한 근거 기반 분석입니다.' :
+           'Evidence-based analysis of Body Mass Index (BMI) screening standards, muscle density factors, and global WHO reference baselines.')
+      }
+    </p>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">

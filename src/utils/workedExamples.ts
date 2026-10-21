@@ -1,6 +1,7 @@
 export interface WorkedExample {
   eyebrow: string;
   title: string;
+  subtitle: string;
   inputHeading: string;
   inputs: { label: string; value: string }[];
   stepsHeading: string;
@@ -12,10 +13,11 @@ export interface WorkedExample {
   disclaimer: string;
 }
 
-const UI_HEADINGS: Record<string, { eyebrow: string; title: string; input: string; steps: string; result: string; interp: string; disc: string }> = {
+const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: string; input: string; steps: string; result: string; interp: string; disc: string }> = {
   en: {
     eyebrow: "Verified Worked Example",
     title: "Step-by-Step Calculation & Educational Interpretation",
+    subtitle: "Explore a transparent step-by-step calculation showing how input measurements are evaluated using official equations and clinical reference ranges.",
     input: "Sample Input Parameters",
     steps: "Mathematical Derivation Steps",
     result: "Calculated Reference Output",
@@ -25,6 +27,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; input: strin
   es: {
     eyebrow: "Ejemplo Práctico Verificado",
     title: "Cálculo Paso a Paso e Interpretación Educativa",
+    subtitle: "Examina una demostración detallada paso a paso que ilustra la aplicación práctica de las fórmulas clínicas y la interpretación del resultado.",
     input: "Parámetros de Entrada de Muestra",
     steps: "Pasos de Derivación Matemática",
     result: "Resultado de Referencia Calculado",
@@ -34,6 +37,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; input: strin
   fr: {
     eyebrow: "Exemple Pratique Vérifié",
     title: "Calcul Étape par Étape et Interprétation Éducative",
+    subtitle: "Découvrez une démonstration mathématique transparente étape par étape illustrant l'application des équations de référence et l'interprétation clinique.",
     input: "Paramètres d'Entrée Types",
     steps: "Étapes de Dérivation Mathématique",
     result: "Résultat de Référence Obtenu",
@@ -43,6 +47,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; input: strin
   de: {
     eyebrow: "Verifiziertes Rechenbeispiel",
     title: "Schritt-für-Schritt-Berechnung & Einordnung",
+    subtitle: "Verfolgen Sie eine transparente Beispielrechnung, die veranschaulicht, wie die Formelwerte mathematisch abgeleitet und physiologisch eingeordnet werden.",
     input: "Beispiel-Eingabeparameter",
     steps: "Mathematische Rechenschritte",
     result: "Berechneter Referenzwert",
@@ -52,6 +57,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; input: strin
   ko: {
     eyebrow: "검증된 단계별 계산 예시",
     title: "단계별 산출 과정 및 건강 참조 해석",
+    subtitle: "실제 신체 계측 입력값이 공식에 따라 어떻게 산출되는지 단계별 유도 과정과 공중보건 참조 범위 해석 지침을 확인하세요.",
     input: "기준 입력 파라미터 예시",
     steps: "수학적 산출 공식 단계",
     result: "최종 산출 참조 결과값",
@@ -61,6 +67,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; input: strin
   hi: {
     eyebrow: "सत्यापित व्यावहारिक उदाहरण",
     title: "चरण-दर-चरण गणना एवं स्वास्थ्य व्याख्या",
+    subtitle: "एक स्पष्ट चरण-दर-चरण गणना उदाहरण देखें जो दिखाता है कि इनपुट मापों को आधिकारिक सूत्रों और स्वास्थ्य संदर्भ श्रेणियों में कैसे लागू किया जाता है।",
     input: "नमूना इनपुट मान",
     steps: "गणितीय गणना के चरण",
     result: "अनुमानित संदर्भ परिणाम",
@@ -601,6 +608,7 @@ export function getWorkedExample(slug: string, lang: string): WorkedExample {
   return {
     eyebrow: headings.eyebrow,
     title: headings.title,
+    subtitle: headings.subtitle,
     inputHeading: headings.input,
     inputs: data.inputs[curLang] || data.inputs.en,
     stepsHeading: headings.steps,

@@ -12,12 +12,13 @@ export interface ToolContent {
   faqs: { question: string; answer: string }[];
 }
 
-export const tableUi: Record<string, { cat: string; metric: string; guidance: string; faq: string; refs: string }> = {
+export const tableUi: Record<string, { cat: string; metric: string; guidance: string; faq: string; faqSubtitle: string; refs: string }> = {
   "en": {
     "cat": "Category / Level",
     "metric": "Reference Range / Metric",
     "guidance": "Reference Context",
     "faq": "Frequently Asked Questions",
+    "faqSubtitle": "Expert answers to common questions regarding mathematical formulas, physiological factors, reference standards, and healthy weight management.",
     "refs": "References & Published Research"
   },
   "es": {
@@ -25,6 +26,7 @@ export const tableUi: Record<string, { cat: string; metric: string; guidance: st
     "metric": "Referencia / Métrica",
     "guidance": "Contexto de Referencia",
     "faq": "Preguntas Frecuentes y Respuestas",
+    "faqSubtitle": "Respuestas de referencia a dudas habituales sobre fórmulas matemáticas, factores fisiológicos, estándares de salud y control del peso.",
     "refs": "Referencias e Investigaciones Publicadas"
   },
   "fr": {
@@ -32,6 +34,7 @@ export const tableUi: Record<string, { cat: string; metric: string; guidance: st
     "metric": "Référence / Métrique",
     "guidance": "Contexte de Référence",
     "faq": "Foire Aux Questions et Réponses",
+    "faqSubtitle": "Réponses détaillées aux questions fréquentes sur les formules mathématiques, les facteurs physiologiques et les repères de santé.",
     "refs": "Références et Recherches Publiées"
   },
   "de": {
@@ -39,6 +42,7 @@ export const tableUi: Record<string, { cat: string; metric: string; guidance: st
     "metric": "Referenz / Metrik",
     "guidance": "Referenzkontext",
     "faq": "Häufig gestellte Fragen",
+    "faqSubtitle": "Fundierte Antworten auf häufige Fragen zu mathematischen Formeln, physiologischen Faktoren und gesundheitlichen Referenzstandards.",
     "refs": "Referenzen & Veröffentlichte Forschung"
   },
   "ko": {
@@ -46,6 +50,7 @@ export const tableUi: Record<string, { cat: string; metric: string; guidance: st
     "metric": "참조 / 메트릭",
     "guidance": "참조 컨텍스트",
     "faq": "자주 묻는 질문 및 답변",
+    "faqSubtitle": "수학적 산출 공식, 개인별 생리학적 요인, 공중보건 참조 기준 및 건강 관리에 관한 자주 묻는 질문을 확인하세요.",
     "refs": "참고 문헌 및 출판 연구"
   },
   "hi": {
@@ -53,6 +58,7 @@ export const tableUi: Record<string, { cat: string; metric: string; guidance: st
     "metric": "संदर्भ / मीट्रिक",
     "guidance": "संदर्भ विवरण",
     "faq": "अक्सर पूछे जाने वाले प्रश्न और उत्तर",
+    "faqSubtitle": "गणितीय सूत्रों, शारीरिक कारकों, सार्वजनिक स्वास्थ्य मानकों और स्वस्थ वजन प्रबंधन से संबंधित अक्सर पूछे जाने वाले प्रश्नों के उत्तर।",
     "refs": "प्रकाशित शोध एवं संदर्भ"
   }
 };
