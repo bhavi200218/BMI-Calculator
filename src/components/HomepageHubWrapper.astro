@@ -66,7 +66,7 @@ const gTitle = {
     <div class="calc-group space-y-3">
       <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.specialty}</div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3">
-        {calculators.filter(c=>['macro-calculator','waist-to-hip-ratio-calculator','body-surface-area-calculator','heart-rate-zone-calculator','one-rep-max-calculator','pregnancy-weight-gain-calculator'].includes(c.slug)).map(calc => (
+        {calculators.filter(c=>['macro-calculator','waist-to-hip-ratio-calculator','body-surface-area-calculator','heart-rate-zone-calculator','1rm-calculator','pregnancy-weight-gain-calculator'].includes(c.slug)).map(calc => (
           <a
             href={`/${lang}/${calc.slug}/`}
             class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline"

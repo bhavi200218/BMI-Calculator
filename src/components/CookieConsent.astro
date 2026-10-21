@@ -1,0 +1,444 @@
+---
+import { type Locale } from '../utils/calculators';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+
+interface CookieTranslations {
+  bannerTitle: string;
+  bannerDesc: string;
+  acceptAll: string;
+  rejectNonEssential: string;
+  customize: string;
+  modalTitle: string;
+  modalDesc: string;
+  essentialTitle: string;
+  essentialStatus: string;
+  essentialDesc: string;
+  analyticsTitle: string;
+  analyticsDesc: string;
+  marketingTitle: string;
+  marketingDesc: string;
+  savePreferences: string;
+  policyLinkText: string;
+  closeLabel: string;
+}
+
+const translations: Record<string, CookieTranslations> = {
+  en: {
+    bannerTitle: "Cookie & Privacy Choices",
+    bannerDesc: "We use essential local storage for theme and measurement units (metric/imperial). With your permission, we also use privacy-friendly cookies for anonymous analytics and ads to keep our health calculators 100% free.",
+    acceptAll: "Accept All",
+    rejectNonEssential: "Reject Non-Essential",
+    customize: "Customize Preferences",
+    modalTitle: "Customize Cookie Preferences",
+    modalDesc: "Manage which cookies and local storage technologies you permit on Real BMI. Essential functional preferences cannot be disabled.",
+    essentialTitle: "Essential Functionality",
+    essentialStatus: "Always Active",
+    essentialDesc: "Required to store your dark/light theme and metric/imperial calculator units locally in your browser. Contains zero personal tracking data.",
+    analyticsTitle: "Anonymous Analytics",
+    analyticsDesc: "Allows Google Analytics 4 to collect aggregated, anonymous traffic metrics so we can optimize calculator performance and usability.",
+    marketingTitle: "Digital Advertising",
+    marketingDesc: "Allows Google AdSense to serve non-intrusive advertisements that fund the free development and maintenance of our health tools.",
+    savePreferences: "Save Preferences",
+    policyLinkText: "Read our Cookie Policy",
+    closeLabel: "Close cookie preferences modal"
+  },
+  es: {
+    bannerTitle: "Preferencias de Cookies y Privacidad",
+    bannerDesc: "Utilizamos almacenamiento local esencial para recordar el tema y las unidades de medida (métrico/imperial). Con su permiso, utilizamos cookies para análisis anónimos y anuncios no intrusivos para mantener nuestras herramientas gratuitas.",
+    acceptAll: "Aceptar Todo",
+    rejectNonEssential: "Rechazar No Esenciales",
+    customize: "Personalizar",
+    modalTitle: "Configurar Preferencias de Cookies",
+    modalDesc: "Gestione qué cookies y tecnologías de almacenamiento local permite en Real BMI. Las preferencias funcionales esenciales no se pueden desactivar.",
+    essentialTitle: "Funcionalidad Esencial",
+    essentialStatus: "Siempre Activo",
+    essentialDesc: "Necesario para guardar su tema (claro/oscuro) y unidades (métrico/imperial) localmente en su navegador. No almacena datos personales de salud.",
+    analyticsTitle: "Análisis Anónimo",
+    analyticsDesc: "Permite a Google Analytics 4 recopilar métricas de tráfico anónimas para optimizar el rendimiento y la facilidad de uso de los calculadores.",
+    marketingTitle: "Publicidad Digital",
+    marketingDesc: "Permite a Google AdSense mostrar anuncios no invasivos que financian el desarrollo y mantenimiento gratuito de nuestras herramientas de salud.",
+    savePreferences: "Guardar Preferencias",
+    policyLinkText: "Leer Política de Cookies",
+    closeLabel: "Cerrar modal de preferencias de cookies"
+  },
+  fr: {
+    bannerTitle: "Gestion des Cookies et Confidentialité",
+    bannerDesc: "Nous utilisons le stockage local essentiel pour mémoriser le thème et les unités de mesure (métrique/impérial). Avec votre accord, nous utilisons des cookies pour des analyses anonymes et des annonces maintenant nos calculateurs gratuits.",
+    acceptAll: "Tout Accepter",
+    rejectNonEssential: "Refuser Non Essentiels",
+    customize: "Personnaliser",
+    modalTitle: "Personnaliser les Cookies",
+    modalDesc: "Choisissez les cookies autorisés sur Real BMI. Les paramètres fonctionnels essentiels ne peuvent pas être désactivés.",
+    essentialTitle: "Fonctionnalités Essentielles",
+    essentialStatus: "Toujours Actif",
+    essentialDesc: "Indispensable pour enregistrer votre thème et vos unités de calcul localement dans votre navigateur. Ne collecte aucune donnée de santé.",
+    analyticsTitle: "Analyses Anonymes",
+    analyticsDesc: "Permet à Google Analytics 4 de mesurer la fréquentation de manière agrégée et anonyme pour améliorer les outils.",
+    marketingTitle: "Publicité Digitale",
+    marketingDesc: "Permet à Google AdSense d'afficher des publicités soutenant le libre accès et la gratuité de nos calculateurs de santé.",
+    savePreferences: "Enregistrer mes Choix",
+    policyLinkText: "Consulter la Politique de Cookies",
+    closeLabel: "Fermer la fenêtre des préférences"
+  },
+  de: {
+    bannerTitle: "Cookie- & Datenschutzeinstellungen",
+    bannerDesc: "Wir verwenden essenziellen lokalen Speicher für Themes und Maßeinheiten (metrisch/imperial). Mit Ihrer Einwilligung nutzen wir Cookies für anonyme Web-Analysen und Werbeanzeigen, um unsere Gesundheitsrechner kostenlos anzubieten.",
+    acceptAll: "Alle Akzeptieren",
+    rejectNonEssential: "Nur Essenzielle",
+    customize: "Einstellungen",
+    modalTitle: "Cookie-Einstellungen anpassen",
+    modalDesc: "Verwalten Sie Ihre Cookie-Zustimmung für Real BMI. Essenzielle funktionale Speicherungen können nicht deaktiviert werden.",
+    essentialTitle: "Essenzielle Funktionen",
+    essentialStatus: "Immer Aktiv",
+    essentialDesc: "Erforderlich zur lokalen Speicherung Ihres Designs (Hell/Dunkel) und Ihrer Rechnereinheiten. Enthält keinerlei persönliche Gesundheitsdaten.",
+    analyticsTitle: "Anonyme Webanalyse",
+    analyticsDesc: "Ermöglicht Google Analytics 4 die Erfassung aggregierter, anonymisierter Nutzungsstatistiken zur technischen Optimierung.",
+    marketingTitle: "Digitale Werbung",
+    marketingDesc: "Ermöglicht Google AdSense dezente Anzeigen, welche die kostenfreie Bereitstellung unserer Rechner finanzieren.",
+    savePreferences: "Auswahl Speichern",
+    policyLinkText: "Cookie-Richtlinie lesen",
+    closeLabel: "Cookie-Einstellungen schließen"
+  },
+  ko: {
+    bannerTitle: "쿠키 및 개인정보 설정",
+    bannerDesc: "테마 및 측정 단위(미터법/야드파운드법) 저장을 위해 필수 로컬 저장소를 사용합니다. 동의하시는 경우 건강 계산기를 무료로 운영하기 위한 익명 분석 및 광고 쿠키를 사용합니다.",
+    acceptAll: "모두 수락",
+    rejectNonEssential: "비필수 거부",
+    customize: "설정 변경",
+    modalTitle: "쿠키 기본 설정 변경",
+    modalDesc: "Real BMI에서 허용할 쿠키를 선택하십시오. 사이트 구동에 필요한 필수 기능은 비활성화할 수 없습니다.",
+    essentialTitle: "필수 기능",
+    essentialStatus: "항상 활성",
+    essentialDesc: "다크/라이트 테마와 계산기 단위를 브라우저에 로컬로 보관하는 데 필수적입니다. 개인 건강 데이터는 일체 저장하지 않습니다.",
+    analyticsTitle: "익명 웹 통계 분석",
+    analyticsDesc: "계산기 성능과 편의성 향상을 위해 Google Analytics 4를 통한 익명의 집계 트래픽 통계를 수집하도록 허용합니다.",
+    marketingTitle: "디지털 광고",
+    marketingDesc: "무료 건강 계산기 서비스 운영을 지원하기 위해 Google AdSense 광고 표시를 허용합니다.",
+    savePreferences: "설정 저장",
+    policyLinkText: "쿠키 정책 읽기",
+    closeLabel: "쿠키 설정 모달 닫기"
+  },
+  hi: {
+    bannerTitle: "कुकी और गोपनीयता प्राथमिकताएं",
+    bannerDesc: "हम थीम और माप इकाइयों (मीट्रिक/इंपीरियल) को याद रखने के लिए आवश्यक स्थानीय भंडारण का उपयोग करते हैं। आपकी अनुमति से, हम कैलकुलेटर को मुफ़्त रखने हेतु अनाम एनालिटिक्स और विज्ञापनों का उपयोग करते हैं।",
+    acceptAll: "सभी स्वीकार करें",
+    rejectNonEssential: "गैर-जरूरी अस्वीकार करें",
+    customize: "प्राथमिकताएं चुनें",
+    modalTitle: "कुकी प्राथमिकताएं अनुकूलित करें",
+    modalDesc: "Real BMI पर अपनी कुकी प्राथमिकताओं का प्रबंधन करें। आवश्यक कार्यात्मक प्राथमिकताओं को अक्षम नहीं किया जा सकता है।",
+    essentialTitle: "आवश्यक कार्यक्षमता",
+    essentialStatus: "हमेशा सक्रिय",
+    essentialDesc: "आपके थीम और पसंदीदा इकाइयों को सुरक्षित रूप से आपके ब्राउज़र में सहेजने के लिए आवश्यक है। कोई व्यक्तिगत स्वास्थ्य डेटा संग्रहीत नहीं होता।",
+    analyticsTitle: "अनाम एनालिटिक्स",
+    analyticsDesc: "उपयोगिता को बेहतर बनाने के लिए Google Analytics 4 को अनाम ट्रैफ़िक मेट्रिक्स एकत्र करने की अनुमति देता है।",
+    marketingTitle: "डिजिटल विज्ञापन",
+    marketingDesc: "Google AdSense विज्ञापनों को सक्षम करता है जो इन स्वास्थ्य उपकरणों को मुफ़्त रखने में सहायता करते हैं।",
+    savePreferences: "प्राथमिकताएं सहेजें",
+    policyLinkText: "कुकी नीति पढ़ें",
+    closeLabel: "कुकी प्राथमिकताएं बंद करें"
+  }
+};
+
+const t = translations[lang] || translations.en;
+const cookiePolicyUrl = `/${lang}/cookie-policy/`;
+---
+
+<!-- Cookie Consent Banner -->
+<div 
+  id="cookieConsentBanner" 
+  class="fixed bottom-0 inset-x-0 z-[100] p-3 sm:p-5 transition-transform duration-300 translate-y-full opacity-0 pointer-events-none"
+  role="region"
+  aria-label={t.bannerTitle}
+>
+  <div class="max-w-4xl mx-auto rounded-2xl bg-[var(--card)]/95 backdrop-blur-2xl border border-[var(--border)] shadow-2xl p-4 sm:p-6 text-[var(--foreground)]">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="space-y-1.5 flex-1 pr-2">
+        <h3 class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)] flex items-center gap-2">
+          <svg class="w-4 h-4 text-[var(--accent)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+          {t.bannerTitle}
+        </h3>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+          {t.bannerDesc} 
+          <a href={cookiePolicyUrl} class="text-[var(--accent)] underline hover:text-[var(--foreground)] ml-1 font-semibold">{t.policyLinkText}</a>.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2 shrink-0">
+        <button 
+          id="btnRejectCookies" 
+          type="button"
+          class="min-h-[44px] px-3.5 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--border)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+        >
+          {t.rejectNonEssential}
+        </button>
+
+        <button 
+          id="btnCustomizeCookies" 
+          type="button"
+          class="min-h-[44px] px-3.5 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-transparent hover:bg-[var(--muted)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+        >
+          {t.customize}
+        </button>
+
+        <button 
+          id="btnAcceptAllCookies" 
+          type="button"
+          class="min-h-[44px] px-4 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-gradient-to-r from-[var(--accent)] to-[#d44f30] text-white shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+        >
+          {t.acceptAll}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Customize Preferences Modal -->
+<div 
+  id="cookiePreferencesModal" 
+  class="fixed inset-0 z-[110] bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cookieModalTitle"
+>
+  <div class="w-full max-w-lg rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-2xl p-5 sm:p-7 text-[var(--foreground)] space-y-6 my-8">
+    <div class="flex items-center justify-between border-b border-[var(--border)] pb-4">
+      <div>
+        <h3 id="cookieModalTitle" class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+          {t.modalTitle}
+        </h3>
+        <p class="text-xs text-[var(--muted-foreground)] mt-1">
+          {t.modalDesc}
+        </p>
+      </div>
+      <button 
+        id="btnCloseCookieModal" 
+        type="button" 
+        class="min-h-[44px] min-w-[44px] p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] rounded-lg transition-colors cursor-pointer"
+        aria-label={t.closeLabel}
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="space-y-4 max-h-[60vh] overflow-y-auto pr-1">
+      <!-- Essential Storage (Always active) -->
+      <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--muted)]/50 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-display font-bold uppercase tracking-wide text-[var(--foreground)]">
+            {t.essentialTitle}
+          </span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-500 border border-emerald-500/30">
+            {t.essentialStatus}
+          </span>
+        </div>
+        <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+          {t.essentialDesc}
+        </p>
+      </div>
+
+      <!-- Analytics Storage -->
+      <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-2">
+        <div class="flex items-center justify-between">
+          <label for="prefAnalytics" class="text-sm font-display font-bold uppercase tracking-wide text-[var(--foreground)] cursor-pointer">
+            {t.analyticsTitle}
+          </label>
+          <input 
+            type="checkbox" 
+            id="prefAnalytics" 
+            class="w-5 h-5 rounded border-[var(--border)] text-[var(--accent)] focus:ring-[var(--accent)] cursor-pointer"
+          />
+        </div>
+        <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+          {t.analyticsDesc}
+        </p>
+      </div>
+
+      <!-- Marketing Storage -->
+      <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-2">
+        <div class="flex items-center justify-between">
+          <label for="prefMarketing" class="text-sm font-display font-bold uppercase tracking-wide text-[var(--foreground)] cursor-pointer">
+            {t.marketingTitle}
+          </label>
+          <input 
+            type="checkbox" 
+            id="prefMarketing" 
+            class="w-5 h-5 rounded border-[var(--border)] text-[var(--accent)] focus:ring-[var(--accent)] cursor-pointer"
+          />
+        </div>
+        <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+          {t.marketingDesc}
+        </p>
+      </div>
+    </div>
+
+    <div class="pt-2 border-t border-[var(--border)] flex flex-wrap items-center justify-between gap-3">
+      <a href={cookiePolicyUrl} class="text-xs text-[var(--accent)] underline hover:text-[var(--foreground)] font-semibold">
+        {t.policyLinkText}
+      </a>
+      <div class="flex items-center gap-2">
+        <button 
+          id="btnSavePreferences" 
+          type="button" 
+          class="min-h-[44px] px-5 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-md hover:brightness-110 active:scale-95 transition-all cursor-pointer"
+        >
+          {t.savePreferences}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    var CONSENT_KEY = 'cookie_consent_preferences';
+    var banner = document.getElementById('cookieConsentBanner');
+    var modal = document.getElementById('cookiePreferencesModal');
+    var btnAcceptAll = document.getElementById('btnAcceptAllCookies');
+    var btnReject = document.getElementById('btnRejectCookies');
+    var btnCustomize = document.getElementById('btnCustomizeCookies');
+    var btnCloseModal = document.getElementById('btnCloseCookieModal');
+    var btnSavePrefs = document.getElementById('btnSavePreferences');
+    var prefAnalytics = document.getElementById('prefAnalytics');
+    var prefMarketing = document.getElementById('prefMarketing');
+
+    function getStoredPreferences() {
+      try {
+        var raw = localStorage.getItem(CONSENT_KEY);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function applyGtagConsent(prefs) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          'analytics_storage': prefs.analytics ? 'granted' : 'denied',
+          'ad_storage': prefs.marketing ? 'granted' : 'denied',
+          'ad_user_data': prefs.marketing ? 'granted' : 'denied',
+          'ad_personalization': prefs.marketing ? 'granted' : 'denied'
+        });
+      }
+    }
+
+    function savePreferences(analytics, marketing) {
+      var prefs = {
+        necessary: true,
+        analytics: Boolean(analytics),
+        marketing: Boolean(marketing),
+        timestamp: new Date().toISOString()
+      };
+      try {
+        localStorage.setItem(CONSENT_KEY, JSON.stringify(prefs));
+      } catch (e) {}
+
+      applyGtagConsent(prefs);
+      hideBanner();
+      hideModal();
+    }
+
+    function showBanner() {
+      if (!banner) return;
+      banner.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+    }
+
+    function hideBanner() {
+      if (!banner) return;
+      banner.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+    }
+
+    function showModal() {
+      if (!modal) return;
+      var existing = getStoredPreferences() || { analytics: false, marketing: false };
+      if (prefAnalytics) prefAnalytics.checked = Boolean(existing.analytics);
+      if (prefMarketing) prefMarketing.checked = Boolean(existing.marketing);
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function hideModal() {
+      if (!modal) return;
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+
+    // Initialize state
+    var currentPrefs = getStoredPreferences();
+    if (!currentPrefs) {
+      // Show consent banner after a short delay for smooth rendering
+      setTimeout(showBanner, 600);
+    } else {
+      applyGtagConsent(currentPrefs);
+    }
+
+    if (btnAcceptAll) {
+      btnAcceptAll.addEventListener('click', function() {
+        savePreferences(true, true);
+      });
+    }
+
+    if (btnReject) {
+      btnReject.addEventListener('click', function() {
+        savePreferences(false, false);
+      });
+    }
+
+    if (btnCustomize) {
+      btnCustomize.addEventListener('click', function() {
+        showModal();
+      });
+    }
+
+    if (btnCloseModal) {
+      btnCloseModal.addEventListener('click', function() {
+        hideModal();
+      });
+    }
+
+    if (btnSavePrefs) {
+      btnSavePrefs.addEventListener('click', function() {
+        savePreferences(
+          prefAnalytics ? prefAnalytics.checked : false,
+          prefMarketing ? prefMarketing.checked : false
+        );
+      });
+    }
+
+    // Modal background click to close
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) hideModal();
+      });
+    }
+
+    // ESC key to close modal
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+        hideModal();
+      }
+    });
+
+    // Global listener for "open-cookie-preferences" custom event or buttons
+    window.openCookiePreferences = function() {
+      showModal();
+    };
+
+    var footerTrigger = document.getElementById('openCookiePreferencesBtn');
+    if (footerTrigger) {
+      footerTrigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        showModal();
+      });
+    }
+  })();
+</script>

@@ -440,9 +440,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   "3d-bmi-calculator": {
     "en": {
-      "eyebrow": "Oxford 2.5-Power BMI Model & 3D Body Visualization",
-      "title": "3D Body Visualizer & 3D BMI Calculator Online – Interactive Avatar Tool",
-      "intro": "Our free 3D BMI Calculator uses the Oxford 2.5-power height-adjusted formula (1.3 × weight / height²·⁵) to render interactive 3D body shape models and height-proportional volume geometry.",
+      "eyebrow": "Oxford 2.5-Power BMI Formula & Mathematical Analysis",
+      "title": "3D BMI Calculator – Oxford Height-Adjusted 2.5 Formula",
+      "intro": "Our free 3D BMI Calculator applies the Oxford 2.5-power height-adjusted formula (1.3 × weight / height²·⁵) proposed by Oxford mathematician Prof. Nick Trefethen. Compare standard 2D Quetelet scaling against volumetric 3D exponent curves to understand how height affects BMI accuracy for tall and short statures. For interactive 360° avatar scaling and visual body morphing based on measurements, try our <a href=\"/en/3d-body-visualizer/\" class=\"text-[var(--accent)] hover:underline font-bold\">3D Body Visualizer</a>.",
       "formulaTitle": "Oxford 2.5-Power Height-Adjusted 3D BMI Formula",
       "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵ | Proposed by Oxford mathematician Prof. Nick Trefethen as an educational mathematical alternative to standard 2D BMI height scaling.",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
@@ -496,9 +496,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     },
     "es": {
-      "eyebrow": "Modelo IMC Exponencial de Oxford 2.5 y Visualización Corporal 3D",
-      "title": "Visualizador Corporal 3D y Calculadora IMC 3D Online – Modelo Interactivo",
-      "intro": "Nuestra calculadora de IMC 3D y visualizador corporal interactivo calcula el índice de masa corporal mediante la fórmula exponencial de Oxford 2.5 (1.3 × peso / altura²·⁵) y principios de geometría corporal tridimensional. Gira 360° para ver la malla sólida, estructura de alambre y mapa de calor de IMC.",
+      "eyebrow": "Fórmula de IMC Exponencial de Oxford 2.5 y Análisis Matemático",
+      "title": "Calculadora de IMC 3D – Fórmula de Oxford Ajustada a la Altura",
+      "intro": "Calcula tu índice de masa corporal con la fórmula exponencial de Oxford 2.5 (1.3 × peso / altura²·⁵) propuesta por el matemático Prof. Nick Trefethen de la Universidad de Oxford. Compara el escalado clásico 2D frente a curvas volumétricas 3D para corregir distorsiones de estatura.",
       "formulaTitle": "Fórmula Exponencial 3D de Oxford Ajustada a la Altura",
       "formulaDesc": "IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]²·⁵ | Propuesta por el matemático de Oxford Prof. Nick Trefethen como una alternativa matemática educativa al IMC 2D tradicional.",
       "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
@@ -552,9 +552,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     },
     "fr": {
-      "eyebrow": "Modèle IMC d'Oxford 2.5 et Visualisation Corporelle 3D",
-      "title": "Visualiseur Corporel 3D et Calculateur IMC 3D en Ligne – Outil Avatar 3D",
-      "intro": "Notre calculateur d'IMC 3D calcule votre indice de masse corporelle selon la formule d'Oxford 2.5 (1.3 × poids / taille²·⁵) et modélise votre silhouette en 3D sous tous los angles à 360°.",
+      "eyebrow": "Modèle IMC d'Oxford 2.5 & Analyse Mathématique Volumétrique",
+      "title": "Calculateur d'IMC 3D – Formule d'Oxford",
+      "intro": "Notre calculateur d'IMC 3D applique la formule exponentielle d'Oxford 2.5 (1.3 × poids / taille²·⁵) formulée par le professeur Nick Trefethen de l'Université d'Oxford. Comparez l'indice traditionnel de Quetelet avec l'échelle volumétrique 3D pour les personnes de grande ou petite taille.",
       "formulaTitle": "Formule Exponentielle 3D d'Oxford Ajustée à la Taille",
       "formulaDesc": "IMC 3D Ajusté = 1.3 × Poids (kg) / [Taille (m)]²·⁵ | Élaborée par des mathématiciens de l'Université d'Oxford pour corriger les biais liés à la taille.",
       "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
@@ -608,9 +608,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     },
     "de": {
-      "eyebrow": "Oxford 2.5 Potenzformel & 3D-Körper-Visualisierung",
-      "title": "3D Body Visualizer & 3D BMI Rechner Online – Interaktiver 3D-Körper-Visualisierer",
-      "intro": "Berechnen Sie Ihren höhenkorrigierten BMI mit der Oxford 2.5 Formel (1.3 × Gewicht / Größe²·⁵) und betrachten Sie ein interaktives 360°-3D-Körpermodell direkt in Ihrem Browser.",
+      "eyebrow": "Oxford 2.5 Potenz-BMI-Formel & Mathematische Skalierung",
+      "title": "3D-BMI-Rechner – Oxford Potenzformel mit Größenkorrektur",
+      "intro": "Berechnen Sie Ihren höhenkorrigierten BMI mit der wissenschaftlichen Oxford 2.5 Potenzformel (1.3 × Gewicht / Größe²·⁵) von Prof. Nick Trefethen (Universität Oxford). Vergleichen Sie das traditionelle Quetelet-Quadrat mit dreidimensionaler Volumenskalierung für kleine und große Personen.",
       "formulaTitle": "Oxford 3D Potenzformel für dreidimensionale Körpergeometrie",
       "formulaDesc": "3D-BMI = 1.3 × Gewicht (kg) / [Größe (m)]²·⁵ | Entwickelt von Mathematikern der Universität Oxford zur Korrektur von Größenverzerrungen.",
       "formulaCode": "3D-BMI = 1.3 × kg / m²·⁵",
@@ -664,9 +664,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     },
     "ko": {
-      "eyebrow": "옥스포드 2.5 신장 보정 공식 및 3D 체형 시각화",
-      "title": "3D 바디 비주얼라이저 & 3D BMI 계산기 – 대화형 3D 체형 시각화 모델",
-      "intro": "옥스포드 2.5 체질량 공식(1.3 × 체중 / 신장²·⁵)을 기반으로 신장 왜곡을 보정한 BMI를 산출하고 360° 회전 가능한 3D 입체 실루엣 아바타와 체형 히트맵을 브라우저에서 실시간으로 확인하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
+      "eyebrow": "옥스퍼드 2.5 신장 보정 공식 및 3차원 체질량 분석",
+      "title": "3D BMI 계산기 – 옥스퍼드 2.5 신장 보정 체질량 공식",
+      "intro": "옥스퍼드 대학교 수학과 닉 트레페젠 교수가 제안한 2.5 거듭제곱 신장 보정 공식(1.3 × 체중 / 신장²·⁵)을 적용한 3D BMI 계산기입니다. 전통적인 케틀레 2차원 제곱 공식의 신장 왜곡을 교정하고 단신 및 장신 성인의 정밀한 체질량 비율을 확인하세요.",
       "formulaTitle": "3D 옥스포드 신장 보정 체질량 공식",
       "formulaDesc": "3D 보정 BMI = 1.3 × 체중 (kg) / [신장 (m)]²·⁵ | 옥스퍼드 대학교 수학과 연구진이 개발한 3차원 신체 부피 스케일링 공식.",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
@@ -720,9 +720,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     },
     "hi": {
-      "eyebrow": "ऑक्सफोर्ड 2.5 एक्सपोनेंशियल फॉर्मूला और 3D मॉडल",
-      "title": "3D बॉडी विजुअलाइज़र और 3D बीएमआई कैलकुलेटर – 3D बॉडी अवतार मॉडल",
-      "intro": "ऑक्सफोर्ड 2.5 फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) के साथ अपने बीएमआई की गणना करें और 360° इंटरएक्टिव 3D बॉडी मॉडलर का उपयोग करके अपनी शारीरिक संरचना को समझें।",
+      "eyebrow": "ऑक्सफोर्ड 2.5 एक्सपोनेंशियल बीएमआई फॉर्मूला और गणितीय विश्लेषण",
+      "title": "3D बीएमआई कैलकुलेटर – ऑक्सफोर्ड 2.5 ऊंचाई-समायोजित फॉर्मूला",
+      "intro": "ऑक्सफोर्ड विश्वविद्यालय के गणितज्ञ प्रो. निक त्रेफेथेन द्वारा विकसित 2.5 एक्सपोनेंशियल फॉर्मूले (1.3 × वजन / ऊंचाई²·⁵) का उपयोग करके अपने 3D बीएमआई की गणना करें। जानें कि पारंपरिक 2D फॉर्मूला लंबे और छोटे कद के लोगों के बीएमआई में क्या गणितीय विसंगतियां उत्पन्न करता है।",
       "formulaTitle": "ऑक्सफोर्ड 3D ऊंचाई-समायोजित बीएमआई फॉर्मूला",
       "formulaDesc": "3D बीएमआई = 1.3 × वजन (किग्रा) / [ऊंचाई (मीटर)]²·⁵ | ऑक्सफोर्ड विश्वविद्यालय के गणितज्ञों द्वारा विकसित सूत्र जो लंबे या छोटे कद के लोगों में ऊंचाई के गणितीय भ्रम को दूर करता है।",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
@@ -779,7 +779,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "bmi-chart": {
     "en": {
       "eyebrow": "WHO Official Adult BMI Scales",
-      "title": "BMI Chart for Adults – Height & Weight Lookup Table (kg & cm)",
+      "title": "BMI Chart for Adults – Height & Weight Lookup Table",
       "intro": "Our comprehensive adult BMI Chart and BMI Table provides an instant visual reference for adult men and women. Look up your Body Mass Index (BMI) category across standard metric ranges (kg & cm) and imperial units (lbs & inches) aligned with World Health Organization (WHO) and CDC population standards.",
       "formulaTitle": "Standard Metric & Imperial BMI Chart Formulas",
       "formulaDesc": "Metric: BMI = Weight (kg) / [Height (m)]²  |  Imperial: BMI = [Weight (lbs) / Height (inches)²] × 703",
@@ -925,7 +925,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Tableau de l'IMC Adultes – Table Poids et Taille (kg & cm)",
+      "title": "Tableau de l'IMC Adultes – Table Poids et Taille",
       "intro": "Tableau d'IMC officiel de l'OMS pour adultes, hommes et femmes. Calculateur d'échelle d'IMC interactif, tableaux de consultation taille-poids en unités métriques (kg et cm), catégories de l'OMS et repères d'âge. Gratuit avec confidentialité sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -1144,7 +1144,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "डब्ल्यूएचओ आधिकारिक वयस्क बीएमआई स्केल",
-      "title": "वयस्कों के लिए बीएमआई चार्ट - ऊंचाई एवं वजन तालिका (BMI Chart kg cm)",
+      "title": "वयस्कों के लिए बीएमआई चार्ट - ऊंचाई एवं वजन तालिका",
       "intro": "हमारा विस्तृत बीएमआई चार्ट (BMI Chart) और तालिका वयस्क पुरुषों और महिलाओं के लिए तुरंत दृश्य संदर्भ प्रदान करती है। विश्व स्वास्थ्य संगठन (WHO) और CDC मानकों के अनुसार मीट्रिक (किग्रा और सेमी) और इंपीरियल (पाउंड और इंच) श्रेणियों में अपना बीएमआई देखें।",
       "formulaTitle": "मानक बीएमआई चार्ट फॉर्मूला",
       "formulaDesc": "मीट्रिक: बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]²",
@@ -1218,340 +1218,370 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   "3d-body-visualizer": {
     "en": {
-      "eyebrow": "Oxford 2.5-Power BMI Model & 3D Body Visualization",
-      "title": "3D BMI Calculator & Interactive 3D Body Visualizer",
-      "intro": "Free 3D Body Visualizer & 3D BMI Calculator online. View interactive 360° front, side & back 3D body type avatar model, wireframe, and BMI heatmap modes with real-time sliders. 100% free with browser-based calculations.",
-      "formulaTitle": "Oxford 2.5-Power Height-Adjusted 3D BMI Formula",
-      "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵ | Developed by University of Oxford mathematicians to correct height scaling distortions in traditional 2D BMI.",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "Standard 2D BMI vs. Oxford 3D Height-Adjusted BMI Comparison",
-      "tableRows": [
-        {
-          "col1": "Shorter Adults (< 160 cm / 5'3\")",
-          "col2": "Standard 2D BMI underestimates height scaling",
-          "col3": "3D BMI adjusts score proportionally for shorter statures"
-        },
-        {
-          "col1": "Average Height Adults (170 cm / 5'7\")",
-          "col2": "Standard 2D & 3D BMI produce identical results",
-          "col3": "No difference between 2D and 3D formula categories"
-        },
-        {
-          "col1": "Taller Adults (> 185 cm / 6'1\")",
-          "col2": "Standard 2D BMI overestimates height scaling",
-          "col3": "3D BMI corrects volumetric distortion for taller statures"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "How does 3D BMI differ from standard 2D BMI?",
-          "answer": "Standard 2D BMI divides weight by height squared (m²), whereas 3D BMI uses height raised to the 2.5 power (m²·⁵) to account for 3D body volume scaling."
-        },
-        {
-          "question": "How does the interactive 3D body visualizer work?",
-          "answer": "It renders an interactive 3D avatar in your browser using height-to-weight proportions derived from your inputs. You can rotate the avatar 360° and toggle mesh, wireframe, and heatmap modes."
-        },
-        {
-          "question": "What do solid mesh, wireframe, and heatmap modes represent?",
-          "answer": "Solid mesh shows body shape volume, wireframe shows 3D geometric structure, and heatmap highlights weight category distribution."
-        },
-        {
-          "question": "Why is the Oxford 2.5-power formula better for tall or short individuals?",
-          "answer": "As demonstrated by Prof. Nick Trefethen at Oxford University, traditional BMI (m²) overestimates fatness in tall people and underestimates it in short people. The 2.5 exponent corrects this mathematical bias."
-        },
-        {
-          "question": "Does the 3D visualizer store photos or personal data?",
-          "answer": "No. The 3D model is generated mathematically in real time inside your browser. No photos are required, and no data is uploaded or stored."
-        },
-        {
-          "question": "Can I use the 3D Body Visualizer on mobile devices?",
-          "answer": "Yes, the 3D visualizer is fully responsive and optimized for mobile touch controls, allowing 360° rotation and pinch-to-zoom on smartphones and tablets."
-        },
-        {
-          "question": "How does body mass index relate to 3D avatar proportion scaling?",
-          "answer": "The 3D avatar dynamically adjusts mesh thickness, waist curvature, and volumetric proportions based on your height-to-weight ratio and calculated BMI score."
-        }
-      ]
+          "eyebrow": "Interactive Avatar Morphing & Body Silhouette Simulation",
+          "title": "3D Body Visualizer – Interactive Silhouette & Avatar Tool",
+          "intro": "Simulate and visualize your anatomical body shape in real time with our client-side 3D Body Visualizer. Rotate a 360° virtual human mannequin, switch between polygon mesh, geometric wireframe, and anthropometric BMI heatmap modes, and observe volumetric silhouette adjustments based on height, weight, and biological sex without uploading photos or compromising personal privacy. To compute your height-adjusted mathematical score using the Oxford 2.5 Power Formula, explore our <a href=\"/en/3d-bmi-calculator/\" class=\"text-[var(--accent)] hover:underline font-bold\">3D BMI Calculator</a>.",
+          "formulaTitle": "Procedural 3D Mesh Vertex Scaling Engine",
+          "formulaDesc": "Dynamic Vertex Coordinate Displacement: V(x,y,z) = Base_Mesh(x,y,z) + Δ(Height, Weight, WHR, Sex) | Client-side WebGL engine deforms polygon geometry in real time to reflect anatomical contours without camera capture or personal image transmission.",
+          "formulaCode": "Vertex(x,y,z) = Mesh_Base + Δ(Anthropometry)",
+          "tableTitle": "Interactive 3D Visualizer Modes & Anatomical Perspectives",
+          "tableRows": [
+                {
+                      "col1": "Solid Volume Mesh",
+                      "col2": "Continuous 3D organic skin surface rendering",
+                      "col3": "Evaluates overall silhouette contours, torso curvature, and body volume"
+                },
+                {
+                      "col1": "Geometric Wireframe",
+                      "col2": "Structural polygon grid overlay",
+                      "col3": "Reveals underlying anatomical mesh density, posture alignment, and proportion symmetry"
+                },
+                {
+                      "col1": "Anthropometric Heatmap",
+                      "col2": "Thermal gradient projection (Green, Yellow, Coral)",
+                      "col3": "Maps standard BMI categories and mass distribution zones across the 3D torso"
+                },
+                {
+                      "col1": "360° Axial Rotation",
+                      "col2": "Front, lateral profile, and posterior views",
+                      "col3": "Provides multi-angle inspection of posture, sagittal balance, and abdominal projection"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "What is the 3D Body Visualizer and how does it work?",
+                      "answer": "The 3D Body Visualizer is an interactive educational modeling tool that procedurally renders an anatomical 3D avatar directly in your browser. By adjusting height and weight sliders, the WebGL rendering engine mathematically deforms mesh vertices to illustrate realistic silhouette proportions."
+                },
+                {
+                      "question": "How do Solid Mesh, Wireframe, and Heatmap views differ?",
+                      "answer": "Solid Mesh displays a smooth anatomical body shape to evaluate volume. Wireframe renders the structural polygon grid to highlight symmetry. Heatmap colors the avatar according to international body mass index thresholds to illustrate mass distribution."
+                },
+                {
+                      "question": "Can I rotate and view the 3D model from 360° angles?",
+                      "answer": "Yes. You can click and drag with a mouse or swipe with your finger on touchscreen mobile devices to rotate the avatar 360 degrees horizontally and inspect frontal, profile, and posterior silhouettes."
+                },
+                {
+                      "question": "Does this tool require a webcam, photographs, or image uploads?",
+                      "answer": "No. The 3D avatar is generated purely through client-side mathematical algorithms and procedural geometry. It never requires camera access, photo uploads, or facial scans, ensuring complete anonymity."
+                },
+                {
+                      "question": "How do body somatotypes (Ectomorph, Mesomorph, Endomorph) appear on the avatar?",
+                      "answer": "As weight increases relative to height, the procedural mesh widens the torso, hips, and limbs, demonstrating how body mass visually alters human silhouettes from slender ectomorphic frames to fuller endomorphic profiles."
+                },
+                {
+                      "question": "Can I use the 3D visualizer on touchscreen mobile phones?",
+                      "answer": "Yes. The 3D visualizer is built with responsive WebGL canvas controls that support one-finger drag rotation and smooth mobile viewport scaling across modern iOS and Android browsers."
+                },
+                {
+                      "question": "Is my data kept private when using the 3D body visualizer?",
+                      "answer": "Yes, 100%. All computations occur locally in your browser's JavaScript engine. No biometric data, measurements, or session details are transmitted to external servers or logged in databases."
+                }
+          ]
     },
     "es": {
-      "eyebrow": "Modelo IMC Exponencial de Oxford 2.5 y Visualización Corporal 3D",
-      "title": "Calculadora de IMC 3D y Visualizador Corporal Interactivo",
-      "intro": "Visualizador corporal 3D interactivo y calculadora de IMC 3D en línea gratuita. Observa tu modelo de avatar 3D en 360° con vistas frontal, lateral y posterior, modo alambre y mapa de calor con deslizadores en tiempo real. 100% gratuito con cálculos en navegador.",
-      "formulaTitle": "Fórmula Exponencial 3D de Oxford Ajustada a la Altura",
-      "formulaDesc": "IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]²·⁵ | Diseñada por matemáticos de la Universidad de Oxford para eliminar la distorsión de altura que afecta a personas altas o bajas en la fórmula clásica de Quetelet.",
-      "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
-      "tableTitle": "Comparación de IMC 2D Estándar vs IMC 3D Ajustado por Altura",
-      "tableRows": [
-        {
-          "col1": "Personas Bajas (< 160 cm)",
-          "col2": "El IMC 2D estándar suele subestimar el resultado",
-          "col3": "El IMC 3D compensa la estatura menor adecuadamente"
-        },
-        {
-          "col1": "Estatura Promedio (170 cm)",
-          "col2": "Alineación de clasificación idéntica",
-          "col3": "Sin diferencia entre la fórmula 2D y 3D"
-        },
-        {
-          "col1": "Personas Altas (> 185 cm)",
-          "col2": "El IMC 2D estándar suele sobreestimar el exceso de peso",
-          "col3": "El IMC 3D ajusta el volumen tridimensional real"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "¿En qué se diferencia el IMC 3D del IMC tradicional?",
-          "answer": "El IMC tradicional usa la altura al cuadrado (m²), mientras que el IMC 3D usa la masa tridimensional dividida entre la altura a la potencia 2.5 (m²·⁵)."
-        },
-        {
-          "question": "¿Cómo funciona la visualización corporal 3D?",
-          "answer": "Genera una silueta anatómica tridimensional interactiva que se escala según tu altura y peso en tiempo real dentro del navegador."
-        },
-        {
-          "question": "¿Qué representan los modos Malla, Alambre y Mapa de Calor?",
-          "answer": "El modo sólido muestra la masa corporal, la malla de alambre muestra los contornos estructurales, y el mapa de calor resalta las zonas según el nivel de IMC."
-        },
-        {
-          "question": "¿Es precisa la fórmula de Oxford 2.5 para personas muy altas?",
-          "answer": "Sí, el profesor Nick Trefethen de la Universidad de Oxford diseñó esta fórmula para eliminar la distorsión matemática en personas muy altas o bajas."
-        },
-        {
-          "question": "¿El modelo 3D almacena datos o fotografías personales?",
-          "answer": "No, el modelo 3D es una simulación matemática generada en tiempo real en tu navegador sin guardar datos ni requerir cámara."
-        },
-        {
-          "question": "¿Puedo usar el Visualizador Corporal 3D en dispositivos móviles?",
-          "answer": "Sí, el visualizador 3D es totalmente adaptable a móviles y controles táctiles, lo que permite rotación de 360° en teléfonos inteligentes y tabletas."
-        },
-        {
-          "question": "¿Cómo se relaciona el índice de masa corporal con el escalado del avatar 3D?",
-          "answer": "El avatar 3D ajusta dinámicamente el grosor de la malla, la curvatura de la cintura y las proporciones volumétricas según tu IMC."
-        }
-      ]
+          "eyebrow": "Modelado Anatómico 3D y Simulación de Silueta Corporal",
+          "title": "Visualizador Corporal 3D – Simulación de Silueta",
+          "intro": "Simula y visualiza tu silueta anatómica en tiempo real con nuestro visualizador corporal 3D interactivo en el navegador. Rota un maniquí humano virtual en 360°, alterna entre los modos de malla sólida, estructura de alambre geométrica y mapa de calor antropométrico según tu estatura, peso y sexo biológico sin subir fotografías personales.",
+          "formulaTitle": "Motor Procedimental de Desplazamiento de Vértices 3D",
+          "formulaDesc": "Desplazamiento Poligonal de Coordenadas: V(x,y,z) = Malla_Base(x,y,z) + Δ(Altura, Peso, Perímetro, Sexo) | El motor WebGL deforma la geometría en tiempo real en tu navegador para reflejar contornos anatómicos sin captura de cámara ni transmisión de imágenes.",
+          "formulaCode": "Vértice(x,y,z) = Malla_Base + Δ(Antropometría)",
+          "tableTitle": "Modos del Visualizador 3D y Perspectivas Anatómicas",
+          "tableRows": [
+                {
+                      "col1": "Malla de Volumen Sólido",
+                      "col2": "Superficie de piel orgánica en 3D continuo",
+                      "col3": "Evalúa contornos generales, curvatura del torso y volumen de masa corporal"
+                },
+                {
+                      "col1": "Estructura de Alambre",
+                      "col2": "Cuadrícula poligonal estructural",
+                      "col3": "Revela densidad de malla anatómica, alineación postural y simetría de proporciones"
+                },
+                {
+                      "col1": "Mapa de Calor Antropométrico",
+                      "col2": "Gradiente térmico de color (Verde, Amarillo, Coral)",
+                      "col3": "Mapea las categorías de IMC y zonas de distribución de masa sobre el torso 3D"
+                },
+                {
+                      "col1": "Rotación Axial 360°",
+                      "col2": "Vistas frontal, perfil lateral y posterior",
+                      "col3": "Permite inspección multiángulo de la postura, equilibrio sagital y proyección abdominal"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "¿Qué es el Visualizador Corporal 3D y cómo funciona?",
+                      "answer": "Es una herramienta interactiva de modelado educativo que genera un avatar 3D anatómico directamente en tu navegador. Al mover los deslizadores de altura y peso, el motor WebGL escala matemáticamente los vértices para mostrar proporciones realistas."
+                },
+                {
+                      "question": "¿En qué se diferencian los modos Malla Sólida, Alambre y Mapa de Calor?",
+                      "answer": "La malla sólida muestra la silueta externa continua. El modo alambre revela la estructura de polígonos y la simetría esquelética. El mapa de calor colorea el avatar según los umbrales de índice de masa corporal."
+                },
+                {
+                      "question": "¿Puedo rotar y observar el modelo 3D desde cualquier ángulo en 360°?",
+                      "answer": "Sí, puedes arrastrar con el ratón en ordenador o deslizar el dedo en pantallas táctiles móviles para girar el avatar 360 grados e inspeccionar la vista frontal, lateral y posterior."
+                },
+                {
+                      "question": "¿Esta herramienta requiere cámara web o subir fotos personales?",
+                      "answer": "No. El avatar 3D se genera exclusivamente mediante algoritmos matemáticos en tu navegador. No requiere acceso a cámara, fotografías ni escaneo facial, garantizando total privacidad."
+                },
+                {
+                      "question": "¿Cómo se reflejan los somatotipos corporales en el avatar?",
+                      "answer": "A medida que el peso varía respecto a la estatura, la malla procedural amplía o estiliza el torso, caderas y extremidades, ilustrando la transición visual entre perfiles ectomórficos, mesomórficos y endomórficos."
+                },
+                {
+                      "question": "¿Puedo utilizar el visualizador 3D en teléfonos móviles táctiles?",
+                      "answer": "Sí. El lienzo WebGL está optimizado para controles táctiles intuitivos, permitiendo rotación con un solo dedo y escalado fluido en navegadores móviles de iOS y Android."
+                },
+                {
+                      "question": "¿Mis datos se mantienen privados al usar el visualizador corporal?",
+                      "answer": "Sí, al 100%. Todos los cálculos y representaciones gráficas se procesan localmente en tu dispositivo. Ningún dato biométrico ni medida se envía a servidores externos."
+                }
+          ]
     },
     "fr": {
-      "eyebrow": "Modèle IMC d'Oxford 2.5 et Visualisation Corporelle 3D",
-      "title": "Calculateur d'IMC 3D et Visualiseur Corporel Interactif",
-      "intro": "Visualiseur corporel 3D gratuit et calculateur d'IMC 3D en ligne. Visualisez votre avatar 3D à 360° de face, de profil et de dos en modes maillage, fil de fer et carte thermique avec curseurs en temps réel. 100% gratuit et axé sur la confidentialité.",
-      "formulaTitle": "Formule Exponentielle 3D d'Oxford Ajustée à la Taille",
-      "formulaDesc": "IMC 3D Ajusté = 1.3 × Poids (kg) / [Taille (m)]²·⁵ | Élaborée par des mathématiciens de l'Université d'Oxford pour corriger les biais liés à la taille.",
-      "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
-      "tableTitle": "Comparaison IMC 2D Standard vs IMC 3D Ajusté d'Oxford",
-      "tableRows": [
-        {
-          "col1": "Personnes de Petite Taille (< 160 cm)",
-          "col2": "L'IMC 2D sous-estime souvent la catégorie",
-          "col3": "L'IMC 3D réajuste le score proportionnellement"
-        },
-        {
-          "col1": "Taille Moyenne (170 cm)",
-          "col2": "Résultats identiques sur les deux formules",
-          "col3": "Aucune différence de catégorie"
-        },
-        {
-          "col1": "Personnes de Grande Taille (> 185 cm)",
-          "col2": "L'IMC 2D surestime le niveau de surpoids",
-          "col3": "L'IMC 3D corrige la distorsion volumétrique"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "En quoi l'IMC 3D diffère-t-il de l'IMC classique ?",
-          "answer": "L'IMC classique divise le poids par la taille au carré (m²), tandis que l'IMC 3D utilise la puissance 2,5 (m²·⁵) pour refléter le volume corporel."
-        },
-        {
-          "question": "Comment fonctionne la visualisation 3D ?",
-          "answer": "Elle génère un avatar anatomique 3D interactif modélisé en temps réel selon vos mensurations dans votre navigateur."
-        },
-        {
-          "question": "Que signifient les modes Maillage, Fil de fer et Carte de chaleur ?",
-          "answer": "Le mode solide montre la masse, le fil de fer révèle la structure géométrique, et la carte de chaleur indique les zones d'IMC."
-        },
-        {
-          "question": "Pourquoi la formule d'Oxford 2.5 est-elle recommandée pour les grands ?",
-          "answer": "Elle élimine la distorsion mathématique de la formule de Quetelet qui désavantage systématiquement les personnes très grandes."
-        },
-        {
-          "question": "L'outil 3D enregistre-t-il des images personnelles ?",
-          "answer": "Non, toutes les modélisations sont des simulations mathématiques anonymes exécutées localement sur votre navigateur."
-        },
-        {
-          "question": "Puis-je utiliser le Visualiseur Corporel 3D sur des appareils mobiles ?",
-          "answer": "Oui, le visualiseur 3D est entièrement adapté aux mobiles et aux commandes tactiles, permettant une rotation à 360° sur smartphones et tablettes."
-        },
-        {
-          "question": "Comment l'indice de masse corporelle est-il lié à la modélisation 3D ?",
-          "answer": "L'avatar 3D ajuste dynamiquement l'épaisseur du maillage et les proportions volumétriques en fonction de votre rapport taille/poids et de votre score IMC."
-        }
-      ]
+          "eyebrow": "Modélisation Anatomique 3D & Simulation de Silhouette Corporelle",
+          "title": "Visualiseur Corporel 3D – Simulation de Silhouette",
+          "intro": "Visualisez et simulez votre morphologie corporelle en temps réel grâce à notre visualiseur 3D interactif dans votre navigateur. Faites pivoter un mannequin virtuel à 360°, basculez entre les modes maillage plein, fil de fer géométrique et carte thermique anthropométrique selon votre taille, votre poids et votre sexe sans importer de photo.",
+          "formulaTitle": "Moteur Procédural de Déformation des Sommets 3D",
+          "formulaDesc": "Déplacement Poligonal des Coordonnées : V(x,y,z) = Maillage_Base(x,y,z) + Δ(Taille, Poids, Tour de Taille, Sexe) | Le moteur WebGL déforme la géométrie en temps réel dans votre navigateur pour reproduire les contours anatomiques sans caméra ni transfert de données.",
+          "formulaCode": "Sommet(x,y,z) = Maillage_Base + Δ(Anthropométrie)",
+          "tableTitle": "Modes du Visualiseur 3D et Perspectives Anatomiques",
+          "tableRows": [
+                {
+                      "col1": "Maillage de Volume Plein",
+                      "col2": "Surface cutanée organique 3D continue",
+                      "col3": "Évalue les contours de la silhouette, les courbures du buste et le volume corporel global"
+                },
+                {
+                      "col1": "Fil de Fer Géométrique",
+                      "col2": "Grille polygonale structurelle",
+                      "col3": "Révèle la densité du maillage, l'alignement postural et la symétrie des proportions"
+                },
+                {
+                      "col1": "Carte Thermique Anthropométrique",
+                      "col2": "Dégradé thermique (Vert, Jaune, Corail)",
+                      "col3": "Représente les catégories d'IMC et les zones de répartition de masse sur le torse 3D"
+                },
+                {
+                      "col1": "Rotation Axiale 360°",
+                      "col2": "Vues de face, profil latéral et dos",
+                      "col3": "Permet une inspection multi-angle de la posture, de l'équilibre sagittal et de la projection abdominale"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "Qu'est-ce que le Visualiseur Corporel 3D et comment fonctionne-t-il ?",
+                      "answer": "C'est un outil interactif de simulation morphologique qui génère un avatar 3D directement dans votre navigateur. En manipulant les curseurs de taille et de poids, le moteur WebGL déforme mathématiquement les sommets pour afficher des proportions réalistes."
+                },
+                {
+                      "question": "Quelles sont les différences entre Maillage Plein, Fil de Fer et Carte Thermique ?",
+                      "answer": "Le maillage plein affiche la surface corporelle continue. Le fil de fer dévoile l'ossature polygonale et la symétrie. La carte thermique colore l'avatar selon les seuils de l'indice de masse corporelle pour visualiser la répartition des volumes."
+                },
+                {
+                      "question": "Puis-je faire pivoter le modèle 3D sous tous les angles à 360° ?",
+                      "answer": "Oui, il vous suffit de cliquer et faire glisser à la souris ou de glisser avec le doigt sur smartphone pour faire tourner l'avatar à 360 degrés et examiner la vue de face, de profil et de dos."
+                },
+                {
+                      "question": "Cet outil nécessite-t-il une webcam ou l'envoi de photos personnelles ?",
+                      "answer": "Non. L'avatar 3D est modélisé uniquement à partir d'équations géométriques exécutées localement sur votre appareil. Aucun accès caméra ni aucune photo ne sont requis, garantissant votre anonymat."
+                },
+                {
+                      "question": "Comment les morphotypes (Ectomorphe, Mésomorphe, Endomorphe) se reflètent-ils sur l'avatar ?",
+                      "answer": "Lorsque le poids varie par rapport à la taille, le maillage procédural affine ou élargit le torse, le bassin et les membres, illustrant les transitions entre morphologies longilignes et plus denses."
+                },
+                {
+                      "question": "Puis-je utiliser le visualiseur 3D sur un smartphone tactile ?",
+                      "answer": "Oui. Le canvas WebGL est optimisé pour les écrans tactiles mobiles et permet une rotation fluide avec un seul doigt sur les navigateurs iOS et Android."
+                },
+                {
+                      "question": "Mes données restent-elles strictement confidentielles ?",
+                      "answer": "Oui, à 100%. L'intégralité du calcul et du rendu visuel se déroule dans votre navigateur. Aucune donnée morphologique n'est transmise à des serveurs tiers."
+                }
+          ]
     },
     "de": {
-      "eyebrow": "Oxford 2.5 Potenzformel & 3D-Körper-Visualisierung",
-      "title": "Interaktiver 3D BMI-Rechner & 3D-Körper-Visualisierer",
-      "intro": "Kostenloser 3D Body Visualizer & 3D BMI Rechner online. Betrachten Sie Ihr interaktives 360° 3D-Körpermodell von vorne, der Seite und von hinten mit Drahtmodell und Heatmap über Echtzeit-Regler. 100% kostenlos direkt im Browser.",
-      "formulaTitle": "Oxford 3D Potenzformel für dreidimensionale Körpergeometrie",
-      "formulaDesc": "3D-BMI = 1.3 × Gewicht (kg) / [Größe (m)]²·⁵ | Entwickelt von Mathematikern der Universität Oxford zur Korrektur von Größenverzerrungen.",
-      "formulaCode": "3D-BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "Vergleich: Standard 2D-BMI vs. Höhenkorrigierter 3D-BMI",
-      "tableRows": [
-        {
-          "col1": "Kleine Personen (< 160 cm)",
-          "col2": "Standard 2D-BMI zeigt tendenziell zu niedrige Werte",
-          "col3": "3D-Formel gleicht die Körpergröße aus"
-        },
-        {
-          "col1": "Durchschnittliche Größe (170 cm)",
-          "col2": "Identische Ergebnisse bei beiden Formeln",
-          "col3": "Kein Unterschied in der Kategorie"
-        },
-        {
-          "col1": "Große Personen (> 185 cm)",
-          "col2": "Standard 2D-BMI zeigt oft zu hohe Werte",
-          "col3": "3D-Formel berücksichtigt das dreidimensionale Volumen"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Was unterscheidet den 3D-BMI vom klassischen BMI?",
-          "answer": "Der klassische BMI nutzt die Körpergröße zum Quadrat (m²), während der 3D-BMI die Potenz 2.5 nutzt, um das dreidimensionale Körpervolumen besser abzubilden."
-        },
-        {
-          "question": "Wie funktioniert der 3D-Körper-Visualisierer?",
-          "answer": "Er erzeugt einen interaktiven 3D-Avatar, der sich in Echtzeit an Ihre eingegebenen Daten anpasst und um 360° gedreht werden kann."
-        },
-        {
-          "question": "Was bedeuten Drahtmodell, Solid-Mesh und Heatmap?",
-          "answer": "Solid-Mesh zeigt die Körperoberfläche, das Drahtmodell zeigt die Gitterstruktur und die Heatmap hebt BMI-Zonen farblich hervor."
-        },
-        {
-          "question": "Warum ist die Oxford 2.5 Formel für große Menschen genauer?",
-          "answer": "Prof. Nick Trefethen von der Universität Oxford zeigte, dass die alte Quetelet-Formel große Menschen mathematisch benachteiligt."
-        },
-        {
-          "question": "Werden Bilder oder persönliche Daten gespeichert?",
-          "answer": "Nein, das 3D-Modell ist eine rein mathematische Echtzeit-Simulation in Ihrem Browser ohne Datenspeicherung."
-        },
-        {
-          "question": "Kann ich den 3D-Körper-Visualisierer auf Mobilgeräten verwenden?",
-          "answer": "Ja, der 3D-Visualisierer ist vollständig für mobile Touch-Steuerung optimiert und ermöglicht 360°-Drehung auf Smartphones und Tablets."
-        },
-        {
-          "question": "Wie hängt der Body-Mass-Index mit der 3D-Proportionenskalierung zusammen?",
-          "answer": "Der 3D-Avatar passt die Netzstärke und die volumetrischen Proportionen dynamisch basierend auf Ihrem BMI-Wert an."
-        }
-      ]
+          "eyebrow": "Interaktives 3D-Avatarmodell & Körpersilhouetten-Simulation",
+          "title": "3D-Körper-Visualisierer – Interaktiver Avatar",
+          "intro": "Simulieren und visualisieren Sie Ihre anatomische Körperform in Echtzeit mit unserem interaktiven 3D-Körper-Visualisierer im Webbrowser. Drehen Sie ein virtuelles menschliches Modell um 360°, wechseln Sie zwischen Volumen-Mesh, geometrischem Drahtgitter und anthropometrischer BMI-Heatmap passend zu Größe, Gewicht und Geschlecht ohne Fotoupload.",
+          "formulaTitle": "Prozedurales 3D-Polygonnetz-Verformungssystem",
+          "formulaDesc": "Geometrische Knotenpunkt-Verschiebung: V(x,y,z) = Basisnetz(x,y,z) + Δ(Größe, Gewicht, Taillenumfang, Geschlecht) | Die WebGL-Engine passt anatomische Konturen in Echtzeit lokal in Ihrem Browser an, ohne Kamerazugriff oder Bilddatenübertragung.",
+          "formulaCode": "Vertex(x,y,z) = Basis_Netz + Δ(Anthropometrie)",
+          "tableTitle": "Visualisierer-Modi & Anatomische Perspektiven",
+          "tableRows": [
+                {
+                      "col1": "Volumen-Mesh (Solid)",
+                      "col2": "Kontinuierliche 3D-Hautoberfläche",
+                      "col3": "Beurteilt Gesamtsilhouette, Rumpfwölbung und Körpervolumen"
+                },
+                {
+                      "col1": "Geometrisches Drahtgitter",
+                      "col2": "Strukturelles Polygon-Netzgitter",
+                      "col3": "Macht Netzdichte, Haltungsausrichtung und Proportionensymmetrie sichtbar"
+                },
+                {
+                      "col1": "Anthropometrische Heatmap",
+                      "col2": "Thermisches Farbprofil (Grün, Gelb, Koralle)",
+                      "col3": "Visualisiert Standard-BMI-Kategorien und Masseverteilungszonen auf dem 3D-Körper"
+                },
+                {
+                      "col1": "360° Axiale Rotation",
+                      "col2": "Frontal-, Seiten- und Rückansicht",
+                      "col3": "Ermöglicht mehrdimensionale Betrachtung von Haltung, Sagittalebene und Bauchsilhouette"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "Was ist der 3D-Körper-Visualisierer und wie funktioniert er?",
+                      "answer": "Es handelt sich um ein interaktives visuelles Modellierungswerkzeug, das einen anatomischen 3D-Avatar direkt im Browser berechnet. Durch Verstellen der Schieberegler für Größe und Gewicht passt die WebGL-Engine die Netzkoordinaten in Echtzeit an."
+                },
+                {
+                      "question": "Worin unterscheiden sich Solid-Mesh, Drahtgitter und Heatmap?",
+                      "answer": "Das Solid-Mesh zeigt die zusammenhängende Körperform. Das Drahtgitter hebt die Polygonstruktur und Symmetrie hervor. Die Heatmap färbt den Körper entsprechend den internationalen BMI-Referenzwerten ein."
+                },
+                {
+                      "question": "Kann ich das 3D-Modell im vollen 360°-Winkel drehen?",
+                      "answer": "Ja, Sie können mit der Maus ziehen oder auf dem Touchscreen wischen, um den Avatar um 360 Grad horizontal zu drehen und die Silhouette von vorne, der Seite und von hinten zu betrachten."
+                },
+                {
+                      "question": "Benötigt das Werkzeug Fotos, eine Webcam oder Bild-Uploads?",
+                      "answer": "Nein. Der 3D-Avatar wird rein über mathematische Algorithmen im Browser gerendert. Es sind keinerlei Kamerazugriffe oder Fotos erforderlich, sodass Ihre Privatsphäre absolut geschützt bleibt."
+                },
+                {
+                      "question": "Wie werden Körpertypen (Ektomorph, Mesomorph, Endomorph) dargestellt?",
+                      "answer": "Je nach Gewichts-Größen-Verhältnis formt die Geometrie-Engine Rumpf, Hüfte und Extremitäten schmaler oder kräftiger und veranschaulicht so die unterschiedlichen somatotypischen Körpersilhouetten."
+                },
+                {
+                      "question": "Funktioniert der 3D-Visualisierer auf Touchscreen-Smartphones?",
+                      "answer": "Ja. Das WebGL-Canvas ist für mobile Touchscreens optimiert und unterstützt flüssige Ein-Finger-Drehung auf aktuellen iOS- und Android-Geräten."
+                },
+                {
+                      "question": "Bleiben meine eingegebenen Daten privat?",
+                      "answer": "Ja, zu 100%. Sämtliche Berechnungen und Bildrenderings erfolgen ausschließlich lokal auf Ihrem Endgerät. Es werden keinerlei Daten an externe Server übertragen."
+                }
+          ]
     },
     "ko": {
-      "eyebrow": "옥스포드 2.5 신장 보정 공식 및 3D 체형 시각화",
-      "title": "3D BMI 계산기 및 대화형 3D 체형 시각화 도구",
-      "intro": "무료 온라인 3D 바디 비주얼라이저 및 3D BMI 시각화 도구. 신장과 체중 슬라이더 조작을 통해 360° 회전 전신 아바타, 와이어프레임 구조 및 체질량지수(BMI) 컬러 히트맵을 브라우저에서 안전하게 확인하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "3D 옥스포드 신장 보정 체질량 공식",
-      "formulaDesc": "3D 보정 BMI = 1.3 × 체중 (kg) / [신장 (m)]²·⁵ | 옥스퍼드 대학교 수학과 연구진이 개발한 3차원 신체 부피 스케일링 공식.",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "표준 2D BMI vs 옥스포드 3D 신장 보정 BMI 비교",
-      "tableRows": [
-        {
-          "col1": "단신 성인 (< 160 cm)",
-          "col2": "표준 2D 공식은 상대적으로 낮게 측정됨",
-          "col3": "3D 보정 공식이 올바른 수치 보정"
-        },
-        {
-          "col1": "평균 신장 (170 cm)",
-          "col2": "두 공식 결과 동일",
-          "col3": "범주 차이 없음 (동일)"
-        },
-        {
-          "col1": "장신 성인 (> 185 cm)",
-          "col2": "표준 2D 공식은 과도하게 높게 측정됨",
-          "col3": "3D 보정 공식이 3차원 부피 왜곡 보정"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "3D BMI와 기존 일반 BMI의 차이점은 무엇인가요?",
-          "answer": "기존 BMI는 신장의 제곱(m²)으로 나누지만, 3D BMI는 3차원 신체 부피 비율인 신장의 2.5제곱(m²·⁵)을 적용합니다."
-        },
-        {
-          "question": "3D 체형 시각화 기능은 어떻게 구동되나요?",
-          "answer": "입력한 신장과 체중 비율에 따라 브라우저 내에서 실시간으로 3D 아바타 모델을 생성하고 360° 회전을 지원합니다."
-        },
-        {
-          "question": "솔리드, 와이어프레임, 히트맵 모드의 차이는 무엇인가요?",
-          "answer": "솔리드는 체형 실루엣, 와이어프레임은 3D 구조 망, 히트맵은 BMI 범주별 색상 위험도를 시각적으로 표현합니다."
-        },
-        {
-          "question": "키가 큰 사람에게 옥스포드 2.5 공식이 더 정확한 이유는?",
-          "answer": "옥스퍼드 대학교 트레페젠 교수가 입증했듯 2차원 제곱 공식은 키가 큰 사람을 불필요하게 비만으로 판정하는 오류를 보정합니다."
-        },
-        {
-          "question": "3D 아바타 생성 시 개인정보나 사진이 저장되나요?",
-          "answer": "아니요, 사진 업로드가 필요 없으며 모든 계산 및 3D 렌더링은 사용자 브라우저에서 100% 안전하게 구동됩니다."
-        },
-        {
-          "question": "모바일 기기에서도 3D 체형 시각화 도구를 사용할 수 있나요?",
-          "answer": "네, 3D 시각화 도구는 모바일 터치 조작에 완벽하게 최적화되어 스마트폰과 태블릿에서 360° 회전을 지원합니다."
-        },
-        {
-          "question": "체질량지수(BMI)는 3D 아바타의 비율 스케일링과 어떻게 연결되나요?",
-          "answer": "3D 아바타는 입력된 신장 대 체중 비율과 계산된 BMI 수치에 따라 실루엣 두께와 부피 비율을 실시간으로 조정합니다."
-        }
-      ]
+          "eyebrow": "대화형 3D 아바타 모델링 및 신체 실루엣 시각화 도구",
+          "title": "3D 바디 비주얼라이저 – 대화형 실루엣 및 3차원 아바타 시뮬레이터",
+          "intro": "웹 브라우저에서 실시간으로 신체 형태와 실루엣을 시각화할 수 있는 대화형 3D 바디 비주얼라이저입니다. 360° 회전 가능한 가상 인체 마네킹 모델을 통해 신장, 체중 및 생물학적 성별에 따른 볼륨 메시, 기하학적 와이어프레임 구조, 체질량 히트맵 모드를 사진 업로드 없이 안전하게 확인하세요.",
+          "formulaTitle": "절차적 3D 폴리곤 정점 변위 엔진",
+          "formulaDesc": "동적 정점 좌표 변위 공식: V(x,y,z) = 기본메시(x,y,z) + Δ(신장, 체중, 둘레, 생물학적 성별) | 브라우저 WebGL 엔진이 체형 윤곽을 실시간으로 계산하여 렌더링하며 카메라 촬영이나 사진 전송이 일체 발생하지 않습니다.",
+          "formulaCode": "정점(x,y,z) = 기본_메시 + Δ(인체계측값)",
+          "tableTitle": "3D 비주얼라이저 렌더링 모드 및 해부학적 관점",
+          "tableRows": [
+                {
+                      "col1": "솔리드 볼륨 메시",
+                      "col2": "연속적인 3D 유기적 외형 표면 렌더링",
+                      "col3": "전체적인 체형 실루엣 윤곽, 체간 곡률 및 신체 부피 평가"
+                },
+                {
+                      "col1": "기하학적 와이어프레임",
+                      "col2": "구조적 다각형 폴리곤 격자망 오버레이",
+                      "col3": "해부학적 메시 밀도, 자세 정렬 및 신체 좌우 대칭성 분석"
+                },
+                {
+                      "col1": "인체계측 컬러 히트맵",
+                      "col2": "온도 그라데이션 투영 (녹색, 황색, 산호색)",
+                      "col3": "3D 몸통에 표준 BMI 범주 및 체질량 분포 영역을 시각적으로 매핑"
+                },
+                {
+                      "col1": "360° 전방위 축 회전",
+                      "col2": "전면, 측면 프로필, 후면 실루엣 보기",
+                      "col3": "자세 균형, 시상면 척추 라인 및 복부 돌출도에 대한 다각도 관찰"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "3D 바디 비주얼라이저는 어떤 도구이며 어떻게 작동하나요?",
+                      "answer": "신장과 체중 수치에 따라 브라우저 내에서 3D 해부학적 아바타를 실시간으로 생성하는 교육용 시각화 도구입니다. WebGL 엔진이 수학적 공식에 기반해 폴리곤 정점 위치를 조정하여 실제 체형 비율을 보여줍니다."
+                },
+                {
+                      "question": "솔리드 메시, 와이어프레임, 히트맵 모드는 어떻게 다른가요?",
+                      "answer": "솔리드 메시는 매끄러운 체형 표면을 보여주어 부피감을 확인하기 좋습니다. 와이어프레임은 골격 구조망을 드러내며, 히트맵은 BMI 기준치에 따른 체질량 분포를 색상으로 구분해 줍니다."
+                },
+                {
+                      "question": "3D 아바타 모델을 360도 전방위로 회전하여 볼 수 있나요?",
+                      "answer": "네, PC 마우스 드래그 또는 모바일 화면 터치 스와이프를 통해 아바타를 좌우 360도 회전하며 정면, 측면, 뒷모습 실루엣을 입체적으로 관찰할 수 있습니다."
+                },
+                {
+                      "question": "웹캠 촬영이나 실제 사진 업로드가 필요한가요?",
+                      "answer": "전혀 필요하지 않습니다. 3D 아바타는 사용자가 입력한 숫자 데이터에 기반한 절차적 기하학 알고리즘으로만 렌더링되므로 사진 촬영이나 업로드 없이 완전한 익명성이 보장됩니다."
+                },
+                {
+                      "question": "체형 체질(외배엽, 중배엽, 내배엽)은 어떻게 표현되나요?",
+                      "answer": "신장 대비 체중 비율 변화에 따라 절차적 메시가 몸통과 사지의 두께를 유기적으로 확장하거나 슬림하게 조절하여 다양한 체형 유형을 시각적으로 체감할 수 있습니다."
+                },
+                {
+                      "question": "스마트폰이나 태블릿 등 모바일 기기에서도 원활히 사용할 수 있나요?",
+                      "answer": "네, 터치스크린 입력에 최적화된 반응형 WebGL 캔버스로 제작되어 모바일 환경에서도 한 손가락 회전 조작을 부드럽게 지원합니다."
+                },
+                {
+                      "question": "사용자의 신체 데이터나 개인정보는 안전하게 보호되나요?",
+                      "answer": "네, 100% 안전합니다. 모든 그래픽 연산과 데이터 처리는 외부 서버로 전송되지 않고 사용자의 기기 브라우저 내부에서만 독립적으로 실행됩니다."
+                }
+          ]
     },
     "hi": {
-      "eyebrow": "ऑक्सफोर्ड 2.5 एक्सपोनेंशियल फॉर्मूला और 3D मॉडल",
-      "title": "3D बीएमआई कैलकुलेटर और इंटरएक्टिव 3D बॉडी विजुअलाइज़र",
-      "intro": "मुफ़्त 3D बॉडी विजुअलाइज़र और ऑनलाइन 3D बीएमआई कैलकुलेटर। रियल-टाइम स्लाइडर्स के साथ 360° फ्रंट, साइड और बैक 3D अवतार मॉडल, वायरफ्रेम और बीएमआई हीटमैप मोड में अपना शरीर तुरंत देखें। 100% मुफ़्त और ब्राउज़र-आधारित गणना।",
-      "formulaTitle": "ऑक्सफोर्ड 3D ऊंचाई-समायोजित बीएमआई फॉर्मूला",
-      "formulaDesc": "3D बीएमआई = 1.3 × वजन (किग्रा) / [ऊंचाई (मीटर)]²·⁵ | ऑक्सफोर्ड विश्वविद्यालय के गणितज्ञों द्वारा विकसित सूत्र जो लंबे या छोटे कद के लोगों में ऊंचाई के गणितीय भ्रम को दूर करता है।",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "मानक 2D बीएमआई बनाम 3D ऊंचाई-समायोजित बीएमआई",
-      "tableRows": [
-        {
-          "col1": "कम ऊंचाई वाले वयस्क (< 160 सेमी)",
-          "col2": "मानक 2D बीएमआई कम स्कोर दिखाता है",
-          "col3": "3D फॉर्मूला सही ऊंचाई अनुपात को समायोजित करता है"
-        },
-        {
-          "col1": "औसत ऊंचाई (170 सेमी)",
-          "col2": "दोनों फॉर्मूलों में समान परिणाम",
-          "col3": "कोई अंतर नहीं (समान श्रेणी)"
-        },
-        {
-          "col1": "अधिक ऊंचाई वाले वयस्क (> 185 सेमी)",
-          "col2": "मानक 2D बीएमआई अधिक स्कोर दिखाता है",
-          "col3": "3D फॉर्मूला 3D आयतन को संतुलित करता है"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "3D बीएमआई और मानक बीएमआई में क्या अंतर है?",
-          "answer": "मानक बीएमआई ऊंचाई के वर्ग (m²) का उपयोग करता है, जबकि 3D बीएमआई शारीरिक मात्रा को संतुलित करने के लिए 2.5 की घात (m²·⁵) का उपयोग करता है।"
-        },
-        {
-          "question": "3D बॉडी विजुअलाइज़र कैसे काम करता है?",
-          "answer": "यह आपके दर्ज किए गए वजन और ऊंचाई के आधार पर आपके ब्राउज़र में ही वास्तविक समय में 3D अवतार मॉडल तैयार करता है जिसे आप 360° घुमा सकते हैं।"
-        },
-        {
-          "question": "वायरफ्रेम, मेश और हीटमैप व्यू क्या दर्शाते हैं?",
-          "answer": "मेश शरीर के आकार को दिखाता है, वायरफ्रेम ज्यामितीय लाइनों को दिखाता है, और हीटमैप बीएमआई श्रेणी के अनुसार रंगों से जोखिम क्षेत्र दिखाता है।"
-        },
-        {
-          "question": "लंबे लोगों के लिए ऑक्सफोर्ड 2.5 फॉर्मूला क्यों बेहतर है?",
-          "answer": "ऑक्सफोर्ड विश्वविद्यालय के प्रोफेसर निक त्रेफेथेन के अनुसार, पुराना फॉर्मूला लंबे लोगों के बीएमआई को अकारण अधिक दिखाता था, जिसे 2.5 फॉर्मूला ठीक करता है।"
-        },
-        {
-          "question": "क्या 3D विजुअलाइज़र आपकी कोई निजी फोटो लेता है?",
-          "answer": "नहीं, इसके लिए किसी कैमरे या फोटो की आवश्यकता नहीं है; यह केवल आपके अंकों पर आधारित एक मुफ़्त 3D गणितीय मॉडल है।"
-        },
-        {
-          "question": "क्या मैं मोबाइल उपकरणों पर 3D बॉडी विजुअलाइज़र का उपयोग कर सकता हूं?",
-          "answer": "हाँ, 3D विज़ुअलाइज़र मोबाइल टच कंट्रोल के लिए पूरी तरह से अनुकूलित है, जिससे स्मार्टफ़ोन और टैबलेट पर 360° रोटेशन की अनुमति मिलती है।"
-        },
-        {
-          "question": "बॉडी मास इंडेक्स 3D अवतार अनुपात स्केलिंग से कैसे संबंधित है?",
-          "answer": "3D अवतार आपकी ऊंचाई-से-वजन अनुपात और बीएमआई स्कोर के आधार पर मेश की मोटाई और 3D आकृतियों को वास्तविक समय में समायोजित करता है।"
-        }
-      ]
+          "eyebrow": "इंटरएक्टिव 3D अवतार मॉडलिंग और शारीरिक बनावट विजुअलाइज़र",
+          "title": "3D बॉडी विजुअलाइज़र – इंटरएक्टिव अवतार और शारीरिक बनावट सिमुलेशन",
+          "intro": "अपने ब्राउज़र में रीयल-टाइम 3D बॉडी विजुअलाइज़र के माध्यम से अपनी शारीरिक बनावट और बॉडी शेप का अनुकरण करें। ऊंचाई, वजन और लिंग के आधार पर 360° वर्चुअल ह्यूमन मॉडल को घुमाएं, सॉलिड मेश, वायरफ्रेम और बीएमआई हीटमैप मोड देखें — बिना किसी फोटो अपलोड या कैमरे के पूरी तरह सुरक्षित और मुफ़्त।",
+          "formulaTitle": "प्रक्रियात्मक 3D पॉलीगॉन मेश विस्थापन इंजन",
+          "formulaDesc": "डायनामिक वर्टेक्स कोऑर्डिनेट विस्थापन: V(x,y,z) = बेस_मेश(x,y,z) + Δ(ऊंचाई, वजन, परिधि, लिंग) | क्लाइंट-साइड WebGL इंजन बिना किसी कैमरा कैप्चर या फ़ोटो अपलोड के आपके ब्राउज़र में रीयल-टाइम ज्यामिति को स्केल करता है।",
+          "formulaCode": "वर्टेक्स(x,y,z) = बेस_मेश + Δ(एंथ्रोपोमेट्री)",
+          "tableTitle": "3D विजुअलाइज़र मोड और शारीरिक दृष्टिकोण तालिका",
+          "tableRows": [
+                {
+                      "col1": "सॉलिड वॉल्यूम मेश",
+                      "col2": "निरंतर 3D जैविक सतह रेंडरिंग",
+                      "col3": "समग्र शारीरिक बनावट, धड़ के घुमाव और शरीर के आयतन का आकलन करता है"
+                },
+                {
+                      "col1": "ज्यामितीय वायरफ्रेम",
+                      "col2": "संरचनात्मक बहुभुज जाल ओवरले",
+                      "col3": "अंतर्निहित मेश घनत्व, शारीरिक मुद्रा संरेखण और अनुपात समरूपता को दर्शाता है"
+                },
+                {
+                      "col1": "एंथ्रोपोमेट्रिक हीटमैप",
+                      "col2": "थर्मल रंग प्रवणता (हरा, पीला, कोरल)",
+                      "col3": "धड़ पर मानक बीएमआई श्रेणियों और भार वितरण क्षेत्रों को रंगों में प्रदर्शित करता है"
+                },
+                {
+                      "col1": "360° घूर्णन दृश्य",
+                      "col2": "सामने, साइड प्रोफाइल और पीछे का दृश्य",
+                      "col3": "शारीरिक मुद्रा, रीढ़ के संतुलन और पेट के फैलाव का बहु-कोणीय निरीक्षण प्रदान करता है"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "3D बॉडी विजुअलाइज़र क्या है और यह कैसे कार्य करता है?",
+                      "answer": "यह एक इंटरएक्टिव शैक्षिक सिमुलेशन टूल है जो सीधे आपके ब्राउज़र में 3D अवतार तैयार करता है। जब आप ऊंचाई और वजन के स्लाइडर्स बदलते हैं, तो WebGL इंजन गणितीय रूप से मेश वर्टिसेस को बदलकर वास्तविक अनुपात प्रदर्शित करता है।"
+                },
+                {
+                      "question": "सॉलिड मेश, वायरफ्रेम और हीटमैप व्यू में क्या अंतर है?",
+                      "answer": "सॉलिड मेश संपूर्ण शारीरिक सतह और आकार दिखाता है। वायरफ्रेम संरचनात्मक लाइनों को दिखाता है। हीटमैप बीएमआई श्रेणियों के अनुसार रंगों से भार वितरण को उजागर करता है।"
+                },
+                {
+                      "question": "क्या मैं 3D मॉडल को 360° के किसी भी कोण से घुमाकर देख सकता हूँ?",
+                      "answer": "हाँ, कंप्यूटर पर माउस से ड्रैग करके या मोबाइल टचस्क्रीन पर उंगली से स्वाइप करके आप अवतार को 360 डिग्री घुमा सकते हैं और सामने, बगल व पीछे से शरीर की बनावट देख सकते हैं।"
+                },
+                {
+                      "question": "क्या इसके लिए किसी कैमरे, फोटो या इमेज अपलोड की आवश्यकता होती है?",
+                      "answer": "बिल्कुल नहीं। यह 3D मॉडल केवल आपके द्वारा दर्ज किए गए अंकों पर आधारित गणितीय समीकरणों से बनता है। इसमें किसी कैमरे या निजी तस्वीर की आवश्यकता नहीं होती।"
+                },
+                {
+                      "question": "शारीरिक प्रकार (एक्टोमॉर्फ, मेसोमॉर्फ, एंडोमॉर्फ) अवतार पर कैसे दिखाई देते हैं?",
+                      "answer": "जैसे-जैसे ऊंचाई के अनुपात में वजन बढ़ता है, मेश मॉडल धड़, कूल्हों और अंगों को उसी अनुपात में चौड़ा करता है, जिससे दुबले से लेकर भारी शरीर के अंतर को समझा जा सकता है।"
+                },
+                {
+                      "question": "क्या मैं टचस्क्रीन स्मार्टफोन पर इस 3D टूल का उपयोग कर सकता हूँ?",
+                      "answer": "हाँ, 3D विजुअलाइज़र टच कंट्रोल के लिए पूरी तरह अनुकूलित है और किसी भी एंड्रॉइड या आईफोन ब्राउज़र पर सुचारू रूप से कार्य करता है।"
+                },
+                {
+                      "question": "क्या 3D बॉडी विजुअलाइज़र का उपयोग करते समय मेरी जानकारी निजी रहती है?",
+                      "answer": "हाँ, 100% सुरक्षित और निजी। सभी गणनाएं और विजुअल रेंडरिंग आपके अपने फोन या कंप्यूटर के ब्राउज़र में ही होती हैं। कोई भी व्यक्तिगत डेटा सर्वर पर नहीं भेजा जाता।"
+                }
+          ]
     }
   },
   "bmi-calculator-india": {
@@ -1908,7 +1938,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "ICMR & WHO South Asian Standards",
       "title": "BMI Calculator for Indians – Healthy Weight Chart & Cutoffs",
-      "intro": "Free online BMI Calculator for Indians based on Indian Council of Medical Research (ICMR) and WHO Asia-Pacific reference standards. Compute your Body Mass Index (BMI) using kg and cm, check whether your weight falls into the healthy Indian range (18.5 – 22.9 kg/m²), and review ICMR waist circumference guidelines.",
+      "intro": "Free online BMI Calculator for Indians based on Indian Council of Medical Research (ICMR) and WHO Asia-Pacific reference standards. Compute your Body Mass Index (BMI) using kg and cm, check whether your weight falls into the healthy Indian range (18.5 – 22.9 kg/m²), and review ICMR waist circumference guidelines. For broader East and Southeast Asian standards where obesity is classified at 27.5 kg/m², explore our <a href=\"/en/asian-bmi-calculator/\" class=\"text-[var(--accent)] hover:underline font-bold\">Asian BMI Calculator</a>.",
       "formulaTitle": "Official ICMR Indian BMI Formula (kg & cm)",
       "formulaDesc": "BMI = Weight (kg) / [Height (m)]² | Healthy Range for Indians: 18.5 – 22.9 kg/m² | Overweight Cutoff: ≥ 23.0 kg/m²",
       "formulaCode": "BMI = Weight (kg) / [(Height in cm / 100)²]",
@@ -2057,36 +2087,36 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "ICMR & WHO Südasien-Referenzstandards",
-      "title": "BMI-Rechner für indische Erwachsene – ICMR & WHO Referenztabelle",
+      "title": "BMI-Rechner für indische Erwachsene – ICMR Referenz",
       "intro": "Kostenloser Online-BMI-Rechner für indische Erwachsene basierend auf den Referenzstandards des Indian Council of Medical Research (ICMR) und der WHO-Asien-Pazifik-Region. Berechnen Sie Ihren Body-Mass-Index (BMI) in kg und cm, prüfen Sie, ob Ihr Gewicht im gesunden Bereich für indische Erwachsene liegt (18,5 – 22,9 kg/m²), und überprüfen Sie die ICMR-Taillenumfangsrichtlinien.",
       "formulaTitle": "Offizielle ICMR-BMI-Formel für indische Erwachsene (kg & cm)",
       "formulaDesc": "BMI = Gewicht (kg) / [Größe (m)]² | Gesunder Bereich für indische Erwachsene: 18,5 – 22,9 kg/m² | Übergewichtsschwelle: ≥ 23,0 kg/m²",
       "formulaCode": "BMI = Gewicht (kg) / [(Größe in cm / 100)²]",
-      "tableTitle": "ICMR & WHO Erwachsenen-BMI-Referenztabelle für indische Erwachsene (kg/m²)",
+      "tableTitle": "ICMR & WHO Erwachsenen-BMI-Referenztabelle für indische Erwachsene",
       "tableRows": [
         {
-          "col1": "Untergewicht (< 18.5 kg/m²)",
-          "col2": "< 18.5 kg/m²",
-          "col3": "Referenzschwelle für Untergewicht (< 18,5 kg/m²)"
+          "col1": "Untergewicht (< 18,5 kg/m²)",
+          "col2": "< 18,5 kg/m²",
+          "col3": "Erhöhtes Risiko für Nährstoffmängel und Unterernährung"
         },
         {
-          "col1": "Optimales Normalgewicht (18.5 – 22.9 kg/m²)",
-          "col2": "18.5 – 22.9 kg/m²",
+          "col1": "Optimales Normalgewicht (18,5 – 22,9 kg/m²)",
+          "col2": "18,5 – 22,9 kg/m²",
           "col3": "Optimaler gesunder Bereich für indische Erwachsene"
         },
         {
-          "col1": "Übergewicht / Risiko (23.0 – 24.9 kg/m²)",
-          "col2": "23.0 – 24.9 kg/m²",
+          "col1": "Übergewicht / Risiko (23,0 – 24,9 kg/m²)",
+          "col2": "23,0 – 24,9 kg/m²",
           "col3": "Erhöhter kardiometabolischer Risikogrenzwert für Inder"
         },
         {
-          "col1": "Adipositas Klasse I (25.0 – 29.9 kg/m²)",
-          "col2": "25.0 – 29.9 kg/m²",
+          "col1": "Adipositas Klasse I (25,0 – 29,9 kg/m²)",
+          "col2": "25,0 – 29,9 kg/m²",
           "col3": "Schwellenwert für Adipositas Grad I nach ICMR-Standards"
         },
         {
-          "col1": "Adipositas Klasse II (≥ 30.0 kg/m²)",
-          "col2": "≥ 30.0 kg/m²",
+          "col1": "Adipositas Klasse II (≥ 30,0 kg/m²)",
+          "col2": "≥ 30,0 kg/m²",
           "col3": "Risikoschwelle für schwere Adipositas"
         }
       ],
@@ -2727,7 +2757,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Evaluación de Riesgo Cardiometabólico",
-      "title": "Calculadora de Riesgo de Diabetes Tipo 2 – Referencia de IMC y Cintura",
+      "title": "Calculadora de Riesgo de Diabetes Tipo 2 – Referencia",
       "intro": "Calculadora gratuita de riesgo de diabetes tipo 2 basada en IMC, circunferencia de cintura y edad. Evalúa factores de riesgo metabólico en el navegador.",
       "formulaTitle": "Criterios de Riesgo Cardiometabólico de la IDF y OMS",
       "formulaDesc": "Criterios combinados: IMC ≥ 25.0 kg/m² (≥ 23.0 adultos asiáticos), cintura ≥ 94 cm hombres (≥ 90 cm asiáticos) y ≥ 80 cm mujeres, edad ≥ 40-45 años.",
@@ -2970,7 +3000,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "WHO Asia-Pacific Guidelines",
       "title": "Asian BMI Calculator – WHO Asian Cutoff Reference Standards",
-      "intro": "Free online Asian BMI Calculator designed specifically for individuals of Asian descent based on official WHO Expert Consultation reference standards. The World Health Organization established lower BMI cutoffs for Asian populations (Overweight at 23.0 kg/m², Obese at 27.5 kg/m²) because Asians experience higher body fat percentages and metabolic health risks at lower BMI values than Western populations.",
+      "intro": "Free online Asian BMI Calculator designed specifically for individuals of Asian descent based on official WHO Expert Consultation reference standards. The World Health Organization established lower BMI cutoffs for Asian populations (Overweight at 23.0 kg/m², Obese at 27.5 kg/m²) because Asians experience higher body fat percentages and metabolic health risks at lower BMI values than Western populations. For individuals seeking guidelines specific to Indian adults under ICMR standards (where obesity begins at 25.0 kg/m²), visit our <a href=\"/en/bmi-calculator-for-indians/\" class=\"text-[var(--accent)] hover:underline font-bold\">BMI Calculator for Indians</a>.",
       "formulaTitle": "WHO Asian BMI Formula (kg & cm / lbs & in)",
       "formulaDesc": "Metric: BMI = Weight (kg) / [Height (m)]² | Asian Overweight Cutoff: BMI ≥ 23.0 kg/m² | Asian Obese Cutoff: BMI ≥ 27.5 kg/m²",
       "formulaCode": "Asian BMI = kg / m²",
@@ -3250,9 +3280,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Mifflin-St Jeor Equation Standard",
       "title": "BMR Calculator Online – Basal Metabolic Rate for Men & Women",
-      "intro": "Calculate your daily Basal Metabolic Rate (BMR) with our free BMR Calculator online. Using the scientifically recognized Mifflin-St Jeor formula calculator equation, calculate how many resting calories your body burns in 24 hours based on age, gender (men and women), height in cm or inches, and weight in kg or lbs.",
+      "intro": "Find your daily Basal Metabolic Rate (BMR) with our free online calculator. Your BMR is the number of calories your body burns at rest each day. We use the proven Mifflin-St Jeor equation to calculate your daily energy needs. Simply enter your age, sex, height, and weight to see your instant result.",
       "formulaTitle": "Mifflin-St Jeor BMR Calculator Formula Equations",
-      "formulaDesc": "BMR for Men: (10 × weight in kg) + (6.25 × height in cm) - (5 × age in yrs) + 5  |  BMR for Women: (10 × weight in kg) + (6.25 × height in cm) - (5 × age in yrs) - 161",
+      "formulaDesc": "Men: (10 × weight in kg) + (6.25 × height in cm) - (5 × age in yrs) + 5. Women: (10 × weight in kg) + (6.25 × height in cm) - (5 × age in yrs) - 161. These formulas give your resting calorie burn.",
       "formulaCode": "Men: BMR = 10W + 6.25H - 5A + 5  |  Women: BMR = 10W + 6.25H - 5A - 161",
       "tableTitle": "BMR Formula Comparison Matrix (Mifflin-St Jeor vs. Harris-Benedict & Katch-McArdle)",
       "tableRows": [
@@ -3275,23 +3305,23 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is a BMR calculator and how to calculate basal metabolic rate?",
-          "answer": "A BMR calculator (Basal Metabolic Rate Calculator) estimates the baseline calories your body expends at rest over 24 hours to support vital organ functions."
+          "answer": "A BMR calculator estimates the calories your body burns at complete rest over 24 hours. It covers the basic energy needed for breathing, blood flow, and cell repair."
         },
         {
           "question": "What is the Mifflin-St Jeor BMR formula for men and women?",
-          "answer": "The Mifflin-St Jeor equation calculates BMR as follows: For Men: BMR = (10 × kg) + (6.25 × cm) - (5 × age) + 5. For Women: BMR = (10 × kg) + (6.25 × cm) - (5 × age) - 161."
+          "answer": "For men: BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age) + 5. For women: BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age) - 161."
         },
         {
           "question": "How does age affect your BMR calculation?",
-          "answer": "BMR gradually decreases over time as body composition changes with age."
+          "answer": "Your BMR tends to drop slowly as you age. This happens mainly because people lose lean muscle over time. Strength training helps keep your muscle and BMR higher."
         },
         {
           "question": "How to calculate BMR in kg and cm online?",
-          "answer": "Enter your weight in kilograms (kg) and height in centimeters (cm) alongside age and sex into our online BMR calculator to get your instant calorie burn estimate."
+          "answer": "Enter your weight in kilograms and your height in centimeters into the calculator. Add your age and biological sex to see your daily resting calorie burn right away."
         },
         {
           "question": "What is the difference between BMR and TDEE?",
-          "answer": "BMR is your resting metabolic burn at 0% activity. TDEE (Total Daily Energy Expenditure) multiplies BMR by your physical activity level factor to account for movement and exercise."
+          "answer": "BMR is the energy you burn while doing nothing at all. TDEE includes your BMR plus all the calories you burn walking, working, and working out."
         }
       ]
     },
@@ -3393,7 +3423,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Mifflin-St Jeor Referenzformel",
-      "title": "BMR Rechner Online – Grundumsatz Berechnen für Männer & Frauen",
+      "title": "BMR Rechner Online – Grundumsatz Berechnen",
       "intro": "Berechnen Sie Ihren täglichen Grundumsatz (BMR) mit unserem kostenlosen BMR-Rechner online nach der wissenschaftlich anerkannten Mifflin-St Jeor Formel.",
       "formulaTitle": "Mifflin-St Jeor BMR-Formel für Männer und Frauen",
       "formulaDesc": "Männer: (10 × Gewicht kg) + (6.25 × Größe cm) - (5 × Alter) + 5 | Frauen: (10 × Gewicht kg) + (6.25 × Größe cm) - (5 × Alter) - 161",
@@ -3489,7 +3519,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "Mifflin-St Jeor समीकरण मानक",
-      "title": "बीएमआर कैलकुलेटर ऑनलाइन - बेसल मेटाबॉलिक रेट (BMR कैलकुलेटर kg cm)",
+      "title": "बीएमआर कैलकुलेटर ऑनलाइन - बेसल मेटाबॉलिक रेट (BMR)",
       "intro": "हमारे मुफ़्त बीएमआर कैलकुलेटर ऑनलाइन से अपनी दैनिक बेसल मेटाबॉलिक रेट (BMR) का अनुमान लगाएं। वैज्ञानिक रूप से प्रमाणित मिफ्लिन-सेंट जोर फॉर्मूले के आधार पर अपने शरीर की न्यूनतम आवश्यक कैलोरी जानिए।",
       "formulaTitle": "पुरुषों एवं महिलाओं के लिए बीएमआर फॉर्मूला",
       "formulaDesc": "पुरुषों के लिए: बीएमआर = (10 × वजन kg) + (6.25 × ऊंचाई cm) - (5 × आयु) + 5  |  महिलाओं के लिए: बीएमआर = (10 × वजन kg) + (6.25 × ऊंचाई cm) - (5 × आयु) - 161",
@@ -3539,10 +3569,10 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "tdee-calculator": {
     "en": {
       "eyebrow": "Energy Balance & Metabolism",
-      "title": "TDEE Calculator Online – Total Daily Energy Expenditure Calculator",
-      "intro": "Our free TDEE Calculator (Total Daily Energy Expenditure Calculator) estimates your daily energy expenditure based on age, sex, weight (kg or lbs), height (cm or inches), and physical activity multiplier (PAL). Explore your estimated maintenance calories and example weight planning ranges.",
-      "formulaTitle": "TDEE Calculation Formula (Mifflin-St Jeor Predictive Equation & PAL Multiplier)",
-      "formulaDesc": "Step 1: Estimate BMR (Mifflin-St Jeor): Men: (10 × W) + (6.25 × H) - (5 × A) + 5 | Women: (10 × W) + (6.25 × H) - (5 × A) - 161. Step 2: Multiply BMR by Physical Activity Level (PAL): Sedentary (1.2), Light (1.375), Moderate (1.55), Heavy (1.725).",
+      "title": "TDEE Calculator – Total Daily Energy Expenditure",
+      "intro": "Find your Total Daily Energy Expenditure (TDEE) with our free calculator. TDEE is the total number of calories you burn each day. It combines your resting metabolism with your daily workouts and chores. Use your result to easily plan calories for fat loss, muscle gain, or weight maintenance.",
+      "formulaTitle": "TDEE Calculation Formula (Mifflin-St Jeor & Activity Factors)",
+      "formulaDesc": "Step 1: Estimate your resting burn (BMR). Step 2: Multiply by your activity factor: Sedentary (1.2), Light (1.375), Moderate (1.55), or Very Active (1.725).",
       "formulaCode": "TDEE = BMR × Activity Factor",
       "tableTitle": "TDEE Activity Multipliers & Daily Calorie Breakdown Table",
       "tableRows": [
@@ -3575,23 +3605,23 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is a TDEE calculator and how does it calculate maintenance calories?",
-          "answer": "A TDEE calculator (Total Daily Energy Expenditure calculator) estimates the total calories your body burns in 24 hours including resting metabolic rate (BMR), thermic effect of food (TEF), and exercise/non-exercise physical activity. Eating equal to your TDEE maintains your current body weight."
+          "answer": "A TDEE calculator estimates the total calories your body burns in 24 hours. This includes your resting metabolism, digestion, and daily movement. Eating the same number of calories as your TDEE keeps your body weight steady."
         },
         {
           "question": "How to calculate TDEE online for weight loss by age, height (cm), and weight (kg)?",
-          "answer": "To calculate TDEE online for weight loss, enter your age, biological sex, weight in kg (or lbs), and height in cm (or inches). First, your BMR is determined using the Mifflin-St Jeor equation, then multiplied by your physical activity score. A calorie deficit below estimated TDEE is commonly used for weight-loss planning, but the appropriate amount varies by individual."
+          "answer": "To calculate TDEE, first find your resting burn (BMR) using your age, sex, height, and weight. Next, multiply that number by your activity factor. To lose weight safely, subtract 300 to 500 calories from your TDEE."
         },
         {
           "question": "What is the difference between BMR and TDEE calories?",
-          "answer": "BMR (Basal Metabolic Rate) represents the estimated baseline calories your body requires at complete rest. TDEE includes BMR plus calories burned through daily movement, work, and exercise."
+          "answer": "BMR is the baseline energy your body burns while resting in bed. TDEE is your total burn, adding work, chores, and exercise to your BMR."
         },
         {
           "question": "How many calories should I eat daily for weight loss using TDEE?",
-          "answer": "A calorie deficit below estimated TDEE is commonly used for weight-loss planning, but the appropriate amount varies by individual."
+          "answer": "Most people aim for a deficit of 300 to 500 calories below their TDEE. This creates steady, gradual weight loss without feeling starved. Always listen to your body and adjust as needed."
         },
         {
           "question": "How often should I recalculate my maintenance calories and TDEE?",
-          "answer": "Consider recalculating when your body weight or physical activity level changes significantly, as body mass changes alter daily energy maintenance estimates."
+          "answer": "Recalculate your numbers whenever you lose or gain 5 to 10 pounds. You should also update your numbers if your workout routine or job activity changes."
         }
       ]
     },
@@ -3713,7 +3743,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Energiebilanz & Stoffwechsel",
-      "title": "TDEE Rechner Online – Gesamtenergieumsatz & Erhaltungskalorien",
+      "title": "TDEE Rechner Online – Gesamtenergieumsatz",
       "intro": "Berechnen Sie Ihren Gesamtenergieumsatz (TDEE) und Ihre Erhaltungskalorien mit unserem kostenlosen Rechner basierend auf Alter, Gewicht, Größe und Aktivitätslevel.",
       "formulaTitle": "TDEE Berechnungsformel (Mifflin-St Jeor & Aktivitätsfaktor)",
       "formulaDesc": "Schritt 1: BMR berechnen. Schritt 2: BMR mit dem Aktivitätsfaktor multiplizieren: Sitzend (1.2), Leicht aktiv (1.375), Moderat aktiv (1.55), Sehr aktiv (1.725).",
@@ -3889,10 +3919,10 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "maintenance-calorie-calculator": {
     "en": {
       "eyebrow": "Calorie Maintenance & Deficit Planning",
-      "title": "Maintenance Calorie Calculator – Calorie Maintenance Calculator Online",
-      "intro": "Our free Maintenance Calorie Calculator estimates your daily maintenance calories, total energy expenditure, and target calorie ranges for weight goals. Enter your age, gender, weight in kg, height in cm, and exercise frequency to view baseline maintenance caloric estimates.",
+      "title": "Maintenance Calorie Calculator – Daily Calorie Needs",
+      "intro": "Our free Maintenance Calorie Calculator estimates the calories you need to keep your current weight. It combines your resting metabolism with your daily activity level. Enter your age, sex, height, weight, and exercise habits. You will receive an instant estimate of your daily calorie needs.",
       "formulaTitle": "Maintenance Calorie Math & Energy Balance Standards",
-      "formulaDesc": "Maintenance Calories = Basal Metabolic Rate (BMR) × Physical Activity Level (PAL). Energy adjustments can be made based on individual weight goals.",
+      "formulaDesc": "Maintenance Calories = Basal Metabolic Rate (BMR) × Physical Activity Level (PAL). Eating at this level matches your daily burn so your weight stays steady.",
       "formulaCode": "Maintenance = BMR × PAL",
       "tableTitle": "Calorie Maintenance & Weight Goal Caloric Breakdown Table",
       "tableRows": [
@@ -3925,23 +3955,23 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is a maintenance calorie calculator and how does it work online?",
-          "answer": "A maintenance calorie calculator computes the estimated daily caloric intake required to maintain your current body weight. It uses metabolic equations (Mifflin-St Jeor) combined with your physical activity multiplier."
+          "answer": "A maintenance calorie calculator shows how many calories you need each day to stay at your current weight. It estimates your resting burn with the Mifflin-St Jeor formula and multiplies it by your activity score."
         },
         {
           "question": "How to calculate calorie maintenance by age, height (cm), and weight (kg)?",
-          "answer": "Input your biological age, gender, height (cm), weight (kg), and weekly activity level to estimate your maintenance calorie baseline."
+          "answer": "Enter your age, sex, height in cm, weight in kg, and weekly exercise level. The calculator first finds your resting burn, then scales it to match your lifestyle."
         },
         {
           "question": "What happens if I eat at my maintenance calories every day?",
-          "answer": "Eating at your estimated maintenance calorie level keeps your total energy balance neutral. Your body weight remains relatively constant over time."
+          "answer": "Eating at your maintenance level keeps your energy in balance. Your body uses the energy you take in, so your scale weight remains steady over time."
         },
         {
           "question": "How do I use my maintenance calories to calculate calories for weight loss?",
-          "answer": "A calorie deficit below estimated maintenance calories is commonly used for weight-loss planning, but the appropriate amount varies by individual."
+          "answer": "To lose weight, subtract 300 to 500 calories from your daily maintenance number. This creates a safe calorie deficit so your body uses stored fat for fuel."
         },
         {
           "question": "Is a calorie maintenance calculator accurate for men and women of all ages?",
-          "answer": "Maintenance calorie calculators utilize published mathematical formulas like Mifflin-St Jeor and Harris-Benedict, providing baseline estimates for healthy adults."
+          "answer": "Yes, it uses validated formulas that give reliable starting numbers for healthy adults. Individual metabolism varies slightly, so monitor your weight over three weeks and adjust if needed."
         }
       ]
     },
@@ -4005,7 +4035,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Calories de Maintien – Obtenir son Besoin Calorique",
+      "title": "Calculateur de Calories de Maintien – Besoin Calorique",
       "intro": "Calculateur gratuit de calories de maintien en ligne. Calculez vos calories quotidiennes de maintien, votre dépense énergétique totale (TDEE) et vos objectifs de déficit calorigène selon l'âge, la taille (cm) et le poids (kg) avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -4063,7 +4093,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Rechner für Erhaltungskalorien – Täglichen Kalorienbedarf berechnen",
+      "title": "Rechner für Erhaltungskalorien – Kalorienbedarf",
       "intro": "Kostenloser Erhaltungskalorien-Rechner online. Berechnen Sie Ihre täglichen Erhaltungskalorien, Ihren Gesamtenergiebedarf (TDEE) und Zielkalorien zum Abnehmen nach Alter, Größe (cm) und Gewicht (kg) datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -4679,7 +4709,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Rechner für fettfreie Körpermasse (LBM) – Magermasse & Referenz",
+      "title": "Rechner für fettfreie Körpermasse – LBM Referenz",
       "intro": "Kostenloser Magermasse-Rechner (LBM-Rechner). Berechnen Sie Ihre magere Körpermasse, den fettfreien Masseprozentsatz und die Körperzusammensetzung mit den Formeln nach Boer, James und Hume datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
@@ -4772,9 +4802,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Ideal Body Weight Reference",
       "title": "Estimate Ideal Body Weight (IBW) using commonly cited equations",
-      "intro": "Our free Ideal Weight Calculator estimates reference ideal body weight based on height (cm or inches) and biological sex (female or male) using four published equations: Devine, Robinson, Miller, and Hamwi equations alongside WHO healthy BMI ranges.",
+      "intro": "Find your ideal body weight with our free online calculator. It estimates healthy weight ranges based on your height and sex. We compare four popular formulas: Devine, Robinson, Miller, and Hamwi. We also show your healthy weight range based on WHO BMI standards.",
       "formulaTitle": "Standard IBW Formulas (Devine, Robinson, Miller & Hamwi)",
-      "formulaDesc": "Devine, Robinson, Miller and Hamwi equations provide different reference estimates; they should not be interpreted as a universally \"ideal\" or medically required body weight.",
+      "formulaDesc": "Each formula calculates a weight guideline based on height above five feet. These numbers are helpful reference points, not rigid rules. A healthy weight depends on your frame size, muscle mass, and overall lifestyle.",
       "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
       "tableTitle": "Ideal Body Weight (IBW) Comparison Table by Height & Formula",
       "tableRows": [
@@ -4807,29 +4837,29 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is an Ideal Weight Calculator (IBW Calculator)?",
-          "answer": "An Ideal Weight Calculator estimates target weight ranges based on height (cm/inches) and biological gender using published equations: Devine, Robinson, Miller, and Hamwi."
+          "answer": "An Ideal Weight Calculator estimates a healthy weight range based on your height and biological sex. It uses classic clinical equations like Devine, Robinson, Miller, and Hamwi."
         },
         {
           "question": "What is my ideal weight for my height in kg or lbs?",
-          "answer": "Enter your height in cm or feet/inches and select male or female. For example, a 5 ft 10 in (178 cm) male has an estimated IBW of ~73 kg via Devine formula, with a WHO healthy weight range of 58.6 kg to 78.9 kg."
+          "answer": "Enter your height and sex to see your estimate. For example, a 5 ft 10 in (178 cm) male has an estimated Devine weight of about 73 kg, with a WHO healthy weight range of 59 kg to 79 kg."
         },
         {
           "question": "Why are there different formulas for calculating ideal weight for females vs males?",
-          "answer": "Biological males typically have higher average muscle density and bone mass per unit of height than females, resulting in separate base constants in formulas."
+          "answer": "Men generally have higher bone density and muscle mass per inch of height than women. Because of this natural difference, formulas use different base numbers for each sex."
         },
         {
           "question": "What is the difference between Ideal Body Weight (IBW) and healthy BMI weight range?",
-          "answer": "IBW formulas provide specific formula-based estimates, whereas the WHO healthy BMI weight range gives a broad window (18.5 to 24.9 kg/m²) accommodating different frame sizes and body compositions."
+          "answer": "IBW formulas give a single reference target for your height. In contrast, the WHO BMI range gives a broad window of 18.5 to 24.9, which easily fits different body frames and bone structures."
         },
         {
           "question": "Is the ideal body weight calculator accurate for muscular individuals?",
-          "answer": "IBW formulas provide population reference benchmarks. Muscular individuals or athletes often exceed ideal weight estimates while maintaining healthy body fat percentages."
+          "answer": "IBW formulas are built for general body types. Muscular athletes often weigh more than their formula target while still carrying very healthy, low body fat levels."
         }
       ]
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Peso Corporal Ideal – Fórmulas IBW Devine y Robinson",
+      "title": "Calculadora de Peso Corporal Ideal – Fórmulas IBW",
       "intro": "Calculadora de peso ideal gratuita. Calcula rangos de referencia de peso corporal ideal (IBW) utilizando las ecuaciones médicas de Devine, Robinson, Miller y Hamwi según altura y género con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -5122,10 +5152,10 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Calorie Planning Reference",
       "title": "Calorie Deficit Calculator – Estimated Calorie Planning",
-      "intro": "Use our free Calorie Deficit Calculator to estimate daily calorie differences for weight goals based on BMR and TDEE equations. A calorie deficit is commonly used for weight-loss planning, but individual energy needs and appropriate adjustments vary.",
+      "intro": "Use our free Calorie Calculator to plan your daily meals and weight goals. It estimates how many calories you burn each day based on BMR and TDEE. You can easily see how small calorie changes affect your weight over time. Simply enter your age, sex, height, weight, and activity level to get started.",
       "formulaTitle": "Calorie Deficit Calculation Formulas & Weight Change Math",
-      "formulaDesc": "Daily Calorie Intake = TDEE - Target Deficit | Weekly Energy Difference Estimate = Daily Deficit × 7 (Note: ~7700 kcal/kg is a mathematical energy-equivalent reference)",
-      "formulaCode": "Target Calories = [ (10 × W_kg) + (6.25 × H_cm) - (5 × Age) + S ] × Activity Multiplier - Daily Deficit",
+      "formulaDesc": "Daily Target = TDEE - Daily Deficit. A daily deficit of 500 calories adds up to 3,500 calories per week, which is roughly equal to one pound of body fat.",
+      "formulaCode": "Target Calories = TDEE - Daily Deficit",
       "tableTitle": "Example Calorie Differences & Weight-Change Math",
       "tableRows": [
         {
@@ -5152,23 +5182,23 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is a calorie deficit and how does a calorie deficit calculator work?",
-          "answer": "A calorie deficit occurs when daily energy intake is less than Total Daily Energy Expenditure (TDEE). The calorie deficit calculator computes your BMR using the Mifflin St Jeor equation, applies your physical activity multiplier to determine TDEE, and subtracts an example energy difference to illustrate calorie planning scenarios."
+          "answer": "A calorie deficit happens when you eat fewer calories than your body burns each day. The calculator finds your daily burn (TDEE) and subtracts your chosen goal to give your target daily intake."
         },
         {
           "question": "How does calorie-deficit and weight-change math work?",
-          "answer": "A commonly cited energy-equivalent benchmark in metabolic literature is approximately 7,700 kcal per kilogram of mass (~3,500 kcal per pound). Actual weight change varies between individuals and over time. Mathematically, a daily difference of 500 kcal creates an example 3,500 kcal weekly energy difference."
+          "answer": "One pound of body fat stores about 3,500 calories. If you create a deficit of 500 calories each day, you create a 3,500-calorie gap over a week. This often leads to about one pound of weight loss."
         },
         {
           "question": "What calorie deficit is commonly used for weight management?",
-          "answer": "There is no single calorie-deficit value that is appropriate for everyone. Individual energy needs, health status, activity, and dietary intake should be considered. Energy adjustments are evaluated based on individual goals and health context."
+          "answer": "A deficit of 300 to 500 calories per day is common and sustainable for most adults. Larger deficits can cause fatigue and muscle loss, so keep your reduction moderate."
         },
         {
           "question": "How much protein should I eat while in a calorie deficit?",
-          "answer": "During a calorie deficit, protein intake ranges from 1.6 to 2.2 grams per kilogram of body weight are commonly referenced in sports nutrition literature."
+          "answer": "Aim for 1.6 to 2.2 grams of protein per kilogram of body weight while cutting calories. Getting enough protein keeps you full and protects your lean muscle."
         },
         {
           "question": "What should I do if my weight loss stalls in a calorie deficit?",
-          "answer": "Weight loss stalls often stem from uncounted food calories, reduced non-exercise physical activity (NEAT), or fluid retention. Recalculate your TDEE at your new lower weight to keep energy goals accurate."
+          "answer": "Weight plateaus are common. Check your portion sizes and track hidden liquid calories. As you lose weight, your body burns slightly fewer calories, so recalculate your TDEE every month."
         }
       ]
     },
@@ -5441,10 +5471,10 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "protein-intake-calculator": {
     "en": {
       "eyebrow": "Sports Nutrition Reference",
-      "title": "Protein Intake Calculator & Daily Protein Reference Range Tool",
-      "intro": "Calculate an estimated daily protein intake target with our free Protein Intake Calculator. Based on sports nutrition reference ranges, estimate your suggested daily protein target based on body weight, activity level, and goals.",
+      "title": "Protein Intake Calculator – Daily Protein Reference",
+      "intro": "Find your daily protein target with our free Protein Intake Calculator. It estimates how much protein you need each day based on your body weight, activity level, and fitness goals. See your personal recommendations in grams per day.",
       "formulaTitle": "Protein Intake Formula & Goal Multipliers",
-      "formulaDesc": "Sedentary Baseline: 0.8 g / kg | Endurance Athletes: 1.2 - 1.4 g / kg | Active Training: 1.6 - 2.2 g / kg",
+      "formulaDesc": "Daily Protein (g) = Weight (kg) × Goal Multiplier. Sedentary adults need about 0.8 g/kg. Active runners and cyclists need 1.2 to 1.4 g/kg. Strength trainers benefit from 1.6 to 2.2 g/kg.",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
       "tableTitle": "Daily Protein Reference Range (g/kg) Matrix by Activity & Goal",
       "tableRows": [
@@ -5472,23 +5502,23 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is the Protein Intake Calculator?",
-          "answer": "The Protein Intake Calculator is a sports nutrition tool that calculates your daily protein requirement estimate in grams based on body weight, fitness goals, and training intensity."
+          "answer": "The Protein Intake Calculator is an evidence-based tool that estimates your daily protein needs in grams. It matches your target to your weight, daily workouts, and fitness goals."
         },
         {
           "question": "How much protein do I need per day for muscle building vs weight loss?",
-          "answer": "Suggested protein ranges vary based on physical activity: 1.6 to 2.2 g/kg is commonly used for muscle building, and 1.8 to 2.4 g/kg for calorie deficit training. Individual needs vary based on age, health status, and overall diet."
+          "answer": "For building muscle, aim for 1.6 to 2.2 grams of protein per kilogram of body weight. When cutting calories for fat loss, aim for 1.8 to 2.4 grams per kilogram to protect your lean muscle."
         },
         {
           "question": "How to calculate daily protein requirement in grams per kg of body weight?",
-          "answer": "Multiply your weight in kg by your target factor. For example, a 70 kg lifter aiming for muscle growth: 70 kg × 2.0 g/kg = 140 grams of protein daily."
+          "answer": "Multiply your body weight in kilograms by your daily goal factor. For example, an active 70 kg adult aiming for 2.0 g/kg needs 140 grams of protein each day."
         },
         {
           "question": "What are the best high-protein food sources?",
-          "answer": "Complete protein sources include chicken breast (31g/100g), Greek yogurt (10g/100g), eggs (6g/egg), tofu (8g/100g), lentils (9g/100g), and whey protein powder (20-25g/scoop)."
+          "answer": "Great protein sources include chicken breast (31g per 100g), Greek yogurt (10g per 100g), eggs (6g per egg), tofu (8g per 100g), and lentils (9g per 100g)."
         },
         {
           "question": "Who should consult a professional regarding protein intake targets?",
-          "answer": "Sports nutrition literature provides general protein range estimates based on physical activity. Individuals with kidney disease, liver conditions, or other medical issues should discuss specific dietary protein targets with a qualified healthcare professional."
+          "answer": "People with kidney disease or liver conditions should speak with a doctor or dietitian. They may need to limit daily protein to protect their organ health."
         }
       ]
     },
@@ -5867,7 +5897,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur d'Apport en Eau – Objectif d'Hydratation Quotidien",
+      "title": "Calculateur d'Apport en Eau – Hydratation Quotidienne",
       "intro": "Calculateur d'apport quotidien en eau gratuit. Calculez la consommation d'eau quotidienne recommandée en litres, verres et onces selon le poids, le climat, la durée de l'exercice et l'activité avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -6751,7 +6781,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Surface Corporelle – Formules Mosteller & Du Bois",
+      "title": "Calculateur de Surface Corporelle – Formules BSA",
       "intro": "Calculateur de surface corporelle (BSA) gratuit. Calculez la surface corporelle totale en mètres carrés (m²) à l'aide des équations publiées de Mosteller, DuBois, Haycock et Boyd avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
@@ -6940,13 +6970,13 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   "heart-rate-zone-calculator": {
     "en": {
-      "eyebrow": "Karvonen Cardio Protocol",
-      "title": "Karvonen Heart Rate Zone Calculator & Target Heart Rate Tool",
-      "intro": "Calculate estimated exercise heart-rate training zones using the Karvonen method and Heart Rate Reserve (HRR) for fat burn, aerobic cardio, and peak training.",
-      "formulaTitle": "Karvonen Formula Mathematical Equation",
-      "formulaDesc": "Max HR = 220 - Age in years (commonly used estimate) | Heart Rate Reserve (HRR) = Max HR - Resting HR | Target HR = Resting HR + [HRR × % Intensity]",
+      "eyebrow": "Cardiovascular Training Protocol",
+      "title": "Target Heart Rate Zones Calculator – 5 Exercise Training Zones",
+      "intro": "Calculate your five exercise heart rate zones with our free online calculator. It uses your age and resting heart rate to find your personal training zones. Easily pace your workouts for warm-ups, fat burning, aerobic endurance, and peak speed.",
+      "formulaTitle": "Cardiorespiratory Training Intensity Equation",
+      "formulaDesc": "Max Heart Rate = 220 - Age. Heart Rate Reserve (HRR) = Max HR - Resting Pulse. Target Pulse = Resting Pulse + [HRR × Intensity %].",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "Karvonen 5-Zone Heart Rate Intensity Matrix",
+      "tableTitle": "5-Zone Cardiovascular Training Intensity Matrix",
       "tableRows": [
         {
           "col1": "Zone 1 (50% - 60% HRR)",
@@ -6955,45 +6985,45 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "col1": "Zone 2 (60% - 70% HRR)",
-          "col2": "Moderate Aerobic Training",
-          "col3": "Often used for aerobic base training and moderate-intensity exercise"
+          "col2": "Aerobic Base Conditioning",
+          "col3": "Optimizes lipid oxidation and builds baseline endurance"
         },
         {
           "col1": "Zone 3 (70% - 80% HRR)",
-          "col2": "Aerobic Endurance / Fitness",
-          "col3": "Improves cardiovascular efficiency & stamina"
+          "col2": "Aerobic Stamina & Fitness",
+          "col3": "Improves cardiovascular efficiency & sustained pacing"
         },
         {
           "col1": "Zone 4 (80% - 90% HRR)",
           "col2": "Anaerobic / Lactate Threshold",
-          "col3": "Increases high-intensity exercise tolerance"
+          "col3": "Increases high-intensity exercise tolerance and power output"
         },
         {
           "col1": "Zone 5 (90% - 100% HRR)",
-          "col2": "Maximal VO2 Max Peak Power",
-          "col3": "Neuromuscular speed & peak sprint conditioning"
+          "col2": "Maximal VO2 Peak Interval",
+          "col3": "Neuromuscular speed, sprint stamina & peak conditioning"
         }
       ],
       "faqs": [
         {
-          "question": "What is the Karvonen Heart Rate Zone Calculator?",
-          "answer": "The Karvonen Heart Rate Zone Calculator is a cardiovascular training tool created by Dr. Martti Karvonen. It provides personalized training-zone estimates using the Karvonen formula and Heart Rate Reserve (HRR)."
+          "question": "How do target training intensity zones work?",
+          "answer": "Training zones divide your workout effort into five heart rate ranges. Exercising in each zone develops different benefits, from easy recovery and fat burning to hard aerobic stamina and sprint speed."
         },
         {
-          "question": "How to calculate target heart rate using the Karvonen formula?",
-          "answer": "To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR estimate. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for moderate aerobic training). 4) Add your Resting HR back to get your target heart rate in BPM."
+          "question": "How do you calculate your exercise pulse range?",
+          "answer": "First, estimate your maximum pulse by subtracting your age from 220. Next, subtract your resting pulse to find your heart rate reserve. Finally, multiply by your target intensity percentage and add back your resting pulse."
         },
         {
-          "question": "Why does the Karvonen formula factor in Resting Heart Rate?",
-          "answer": "Traditional formulas (220 - age) provide a population estimate of Max HR. The Karvonen formula provides individualized context by factoring in Resting Heart Rate (RHR)."
+          "question": "Why should resting pulse be considered alongside maximum heart rate?",
+          "answer": "Resting pulse shows your current cardiovascular fitness. Including it gives you personalized workout zones instead of a one-size-fits-all age estimate."
         },
         {
-          "question": "Which heart rate zone is associated with aerobic base training?",
-          "answer": "Karvonen Zone 2 (60% to 70% of Heart Rate Reserve) is commonly associated with aerobic base training and moderate-intensity endurance workouts."
+          "question": "Which training zone builds optimal aerobic stamina?",
+          "answer": "Zone 2 (60% to 70% of heart rate reserve) is the best zone for aerobic endurance. It builds your cardiovascular base, burns fat efficiently, and allows you to recover quickly."
         },
         {
-          "question": "How do I measure my Resting Heart Rate (RHR) for the Karvonen calculator?",
-          "answer": "Measure your pulse for 60 seconds immediately upon waking in the morning while resting calmly in bed before sitting up or taking caffeine."
+          "question": "What is the best way to record baseline resting pulse?",
+          "answer": "Check your pulse for 60 seconds first thing in the morning while resting in bed. Measure it before you get up, drink coffee, or start moving around."
         }
       ]
     },
@@ -7291,12 +7321,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "karvonen-heart-rate-calculator": {
     "en": {
       "eyebrow": "Cardiovascular Physiology",
-      "title": "Karvonen Heart Rate Calculator – Target Heart Rate Zones & HRR",
-      "intro": "Calculate your target exercise heart rate zones using the Karvonen Formula and Heart Rate Reserve (HRR). Unlike basic percentage formulas, the Karvonen method accounts for your resting heart rate (RHR), providing customized training zones for fat loss, aerobic endurance, and VO2 max improvement.",
+      "title": "Karvonen Calculator – Target Heart Rate Zones & HRR",
+      "intro": "Calculate your personal workout heart rate zones with our free Karvonen calculator. The Karvonen method uses your age and resting heart rate to find your Heart Rate Reserve. This helps you exercise at the right intensity. You can easily train for fat loss, build endurance, or improve high-intensity speed.",
       "formulaTitle": "Official Karvonen Formula Equation",
-      "formulaDesc": "Target Heart Rate (THR) = [(HRmax - HRrest) × %intensity] + HRrest | HRmax = 220 - Age | Heart Rate Reserve (HRR) = HRmax - HRrest",
+      "formulaDesc": "Target Heart Rate = [(Max HR - Resting HR) × % Intensity] + Resting HR. Max HR is estimated as 220 minus your age. Heart Rate Reserve (HRR) is your Max HR minus Resting HR.",
       "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
-      "tableTitle": "Karvonen Heart Rate Training Zones Breakdown",
+      "tableTitle": "Karvonen Heart Rate Reserve (HRR) Intensity Matrix",
       "tableRows": [
         {
           "col1": "Zone 1: Active Recovery",
@@ -7327,11 +7357,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is the Karvonen Formula?",
-          "answer": "The Karvonen formula is a mathematical formula that determines target heart rate (THR) for exercise training by using your heart rate reserve (HRR), which factors in both maximum heart rate and resting heart rate."
+          "answer": "The Karvonen formula calculates target heart rate zones using your resting pulse and maximum heart rate. It finds your Heart Rate Reserve (HRR) and scales it to your workout intensity."
         },
         {
           "question": "Why is the Karvonen method more accurate than standard 220-age?",
-          "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
+          "answer": "Standard formulas only look at age. The Karvonen formula also considers your resting pulse. A lower resting heart rate reflects better fitness, giving you more accurate personal zones."
         }
       ]
     },
@@ -7581,7 +7611,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "1rm-calculator": {
     "en": {
       "eyebrow": "Strength Conditioning Science",
-      "title": "1RM Calculator – Free One Rep Max Calculator (Bench, Squat, Deadlift)",
+      "title": "1RM Calculator – One Rep Max Bench, Squat, Deadlift",
       "intro": "Free 1RM Calculator (One Rep Max Calculator). Calculate your maximum single-repetition lift for bench press, back squat, overhead press, and deadlift without needing to lift to failure, using verified Epley, Brzycki, and Lander mathematical equations.",
       "formulaTitle": "Standard Strength 1RM Calculation Formulas",
       "formulaDesc": "Epley: 1RM = Weight × (1 + Reps / 30) | Brzycki: 1RM = Weight × [36 / (37 - Reps)] | Lander: 1RM = (100 × Weight) / (101.3 - 2.67123 × Reps)",
@@ -8298,7 +8328,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Aumento de Peso en el Embarazo – Seguimiento Trimestral",
+      "title": "Calculadora de Aumento de Peso en el Embarazo",
       "intro": "Calculadora gratuita de peso en el embarazo según las guías del ACOG y el IOM. Realiza un seguimiento del aumento de peso gestacional semana a semana por trimestre e IMC previo al embarazo con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
@@ -8345,7 +8375,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Prise de Poids pendant la Grossesse – Suivi Trimestre",
+      "title": "Calculateur de Prise de Poids pendant la Grossesse",
       "intro": "Calculateur gratuit de prise de poids pendant la grossesse selon les directives de l'ACOG et de l'IOM. Suivez l'évolution du poids gestationnel semaine par semaine par trimestre et IMC avant grossesse avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",

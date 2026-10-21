@@ -1,0 +1,436 @@
+---
+import { type Locale } from '../utils/calculators';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+
+interface SectionCard {
+  tag: string;
+  title: string;
+  summary: string;
+  bullets: string[];
+  links: { name: string; href: string }[];
+}
+
+interface ContentLocale {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  disclaimerTitle: string;
+  disclaimerText: string;
+  cards: SectionCard[];
+}
+
+const data: Record<string, ContentLocale> = {
+  en: {
+    eyebrow: "Educational Health Foundations",
+    title: "Understand Your Numbers. Plan With Confidence.",
+    subtitle: "A practical guide to interpreting body composition screening, metabolic energy expenditure, and anthropometric baselines.",
+    disclaimerTitle: "Important Educational & Clinical Notice",
+    disclaimerText: "Calculations provided by Real BMI are population screening estimates based on published mathematical formulas (WHO, CDC, Mifflin-St Jeor). They are not medical diagnoses or individualized treatment plans. Consult a qualified physician for comprehensive evaluation of cardiometabolic health, including blood pressure, fasting glucose, HbA1c, and lipid panels.",
+    cards: [
+      {
+        tag: "01 / Anthropometric Screening",
+        title: "Interpreting BMI, BAI & Body Fat",
+        summary: "Anthropometric screening metrics evaluate body mass in relation to stature and circumferences. Understanding how each metric works helps you interpret your baseline score objectively.",
+        bullets: [
+          "Body Mass Index (BMI = kg/m²) compares total body mass against height squared, serving as a global epidemiological screening standard.",
+          "Body Adiposity Index (BAI) estimates adiposity using hip circumference and height without relying strictly on scale weight.",
+          "Limitations: Standard equations cannot distinguish dense skeletal muscle from adipose tissue. Muscular athletes or older adults with sarcopenia may register misleading scores."
+        ],
+        links: [
+          { name: "BMI Calculator", href: `/${lang}/bmi-calculator/` },
+          { name: "Body Fat Calculator", href: `/${lang}/body-fat-calculator/` },
+          { name: "Asian BMI Calculator", href: `/${lang}/asian-bmi-calculator/` }
+        ]
+      },
+      {
+        tag: "02 / Metabolic Balance",
+        title: "Integrating BMR & TDEE for Daily Energy",
+        summary: "Metabolic formulas estimate dynamic daily calorie requirements rather than static scale weight, providing a scientific foundation for nutritional planning.",
+        bullets: [
+          "Basal Metabolic Rate (BMR via Mifflin-St Jeor) isolates the resting calories required to sustain vital organ functions (brain, heart, liver, lungs) in a fasting state.",
+          "Total Daily Energy Expenditure (TDEE) factors in physical activity level multipliers (1.2 sedentary to 1.9 intense athlete) plus the thermic effect of food.",
+          "Nutritional Application: Use TDEE as your maintenance baseline. Apply a moderate 300–500 kcal deficit for gradual fat loss, or a surplus for lean muscle hypertrophy without metabolic stalling."
+        ],
+        links: [
+          { name: "BMR Calculator", href: `/${lang}/bmr-calculator/` },
+          { name: "TDEE Calculator", href: `/${lang}/tdee-calculator/` },
+          { name: "Maintenance Calorie Calculator", href: `/${lang}/maintenance-calorie-calculator/` }
+        ]
+      },
+      {
+        tag: "03 / Regional & Visceral Context",
+        title: "Regional Cutoffs & Visceral Adiposity",
+        summary: "Total body mass does not reveal where adipose tissue is stored. Central abdominal fat carries substantially higher cardiometabolic risk than peripheral fat.",
+        bullets: [
+          "WHO Asian Action Points establish lower overweight risk thresholds at 23.0 kg/m² and high risk at 27.5 kg/m² due to higher visceral fat prevalence at lower body weights.",
+          "Waist-to-Height Ratio (WHtR) and Waist-to-Hip Ratio (WHR) identify central adiposity. A waist circumference ≥ 90 cm in Asian men or ≥ 80 cm in Asian women signals elevated risk.",
+          "Ideal Body Weight (IBW) formulas (Devine, Robinson) provide clinical reference ranges adjusted for skeletal frame size and stature."
+        ],
+        links: [
+          { name: "Ideal Weight Calculator", href: `/${lang}/ideal-weight-calculator/` },
+          { name: "Waist to Hip Ratio Calculator", href: `/${lang}/waist-to-hip-ratio-calculator/` },
+          { name: "Healthy Weight by Height", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  },
+  es: {
+    eyebrow: "Bases Educativas de Salud",
+    title: "Entiende tus Números. Planifica con Confianza.",
+    subtitle: "Una guía práctica para interpretar el cribado de composición corporal, el gasto energético metabólico y los estándares antropométricos.",
+    disclaimerTitle: "Aviso Educativo y Clínico Importante",
+    disclaimerText: "Las estimaciones de Real BMI se basan en fórmulas matemáticas publicadas (OMS, CDC, Mifflin-St Jeor). No constituyen diagnósticos médicos ni planes de tratamiento personalizados. Consulta a un profesional médico para una evaluación clínica completa, incluyendo tensión arterial, glucosa basal, HbA1c y perfil lipídico.",
+    cards: [
+      {
+        tag: "01 / Cribado Antropométrico",
+        title: "Interpretación del IMC, IAC y Grasa Corporal",
+        summary: "Las métricas antropométricas evalúan la masa corporal respecto a la estatura y perímetros. Comprender sus fundamentos permite interpretar los resultados objetivamente.",
+        bullets: [
+          "El Índice de Masa Corporal (IMC = kg/m²) relaciona el peso total con la estatura al cuadrado y sirve como estándar epidemiológico internacional de cribado.",
+          "El Índice de Adiposidad Corporal (IAC) estima el porcentaje graso a partir del perímetro de cadera y la estatura sin depender del peso en báscula.",
+          "Limitaciones: Las fórmulas no distinguen entre masa muscular densa y tejido graso. Deportistas musculados o adultos mayores con sarcopenia pueden presentar valores atípicos."
+        ],
+        links: [
+          { name: "Calculadora de IMC", href: `/${lang}/bmi-calculator/` },
+          { name: "Calculadora de Grasa Corporal", href: `/${lang}/body-fat-calculator/` },
+          { name: "Calculadora IMC Asiático", href: `/${lang}/asian-bmi-calculator/` }
+        ]
+      },
+      {
+        tag: "02 / Equilibrio Metabólico",
+        title: "Integración de TMB y GETD para Energía Diaria",
+        summary: "Las fórmulas metabólicas estiman el gasto calórico diario dinámico en lugar del peso estático, sentando las bases científicas para la nutrición.",
+        bullets: [
+          "La Tasa Metabólica Basal (TMB mediante Mifflin-St Jeor) calcula las calorías mínimas necesarias para mantener las funciones vitales en reposo completo.",
+          "El Gasto Energético Total Diario (GETD / TDEE) incorpora los multiplicadores de actividad física (1.2 sedentario a 1.9 atleta) y el efecto térmico de los alimentos.",
+          "Aplicación: El GETD representa tus calorías de mantenimiento. Aplica un déficit moderado de 300–500 kcal para perder grasa gradualmente o un superávit para ganar masa muscular."
+        ],
+        links: [
+          { name: "Calculadora TMB", href: `/${lang}/bmr-calculator/` },
+          { name: "Calculadora GETD (TDEE)", href: `/${lang}/tdee-calculator/` },
+          { name: "Calculadora Calorías Mantenimiento", href: `/${lang}/maintenance-calorie-calculator/` }
+        ]
+      },
+      {
+        tag: "03 / Contexto Regional y Visceral",
+        title: "Umbrales Regionales y Adiposidad Visceral",
+        summary: "El peso total de la báscula no indica dónde se almacena la grasa. La grasa abdominal visceral profunda conlleva un riesgo cardiometabólico superior al de la grasa subcutánea.",
+        bullets: [
+          "Los puntos de acción de la OMS para poblaciones asiáticas fijan la alerta de sobrepeso en 23.0 kg/m² y alto riesgo en 27.5 kg/m² debido a mayor grasa visceral con menor peso.",
+          "La relación cintura-altura y cintura-cadera detectan la adiposidad central. Una cintura ≥ 90 cm en hombres o ≥ 80 cm en mujeres asiáticas señala un riesgo incrementado.",
+          "Las fórmulas de Peso Corporal Ideal (Devine, Robinson) aportan rangos de referencia ajustados a la contextura ósea y altura."
+        ],
+        links: [
+          { name: "Calculadora de Peso Ideal", href: `/${lang}/ideal-weight-calculator/` },
+          { name: "Calculadora Cintura-Cadera", href: `/${lang}/waist-to-hip-ratio-calculator/` },
+          { name: "Peso Saludable por Altura", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  },
+  fr: {
+    eyebrow: "Bases Éducatives de Santé",
+    title: "Comprenez vos Chiffres. Planifiez avec Confiance.",
+    subtitle: "Un guide complet pour interpréter le dépistage morphologique, les dépenses métaboliques et les repères anthropométriques.",
+    disclaimerTitle: "Avis Éducatif et Médical Important",
+    disclaimerText: "Les estimations fournies par Real BMI reposent sur des formules mathématiques publiées (OMS, CDC, Mifflin-St Jeor). Elles constituent des repères de dépistage et non des diagnostics médicaux. Consultez un médecin pour un bilan approfondi incluant tension artérielle, glycémie et bilan lipidique.",
+    cards: [
+      {
+        tag: "01 / Dépistage Morphologique",
+        title: "Interprétation de l'IMC, l'IAC et Masse Grasse",
+        summary: "Les outils anthropométriques évaluent la masse corporelle en fonction de la taille et des mensurations pour situer votre profil avec clarté.",
+        bullets: [
+          "L'Indice de Masse Corporelle (IMC = kg/m²) compare le poids à la taille au carré pour servir de standard épidémiologique mondial.",
+          "L'Indice d'Adiposité Corporelle (IAC) estime la masse grasse à partir du tour de hanches sans dépendre du poids sur la balance.",
+          "Limites : Les équations standard ne différencient pas la masse musculaire dense de la graisse. Les athlètes ou les personnes âgées peuvent afficher des indices atypiques."
+        ],
+        links: [
+          { name: "Calculateur IMC", href: `/${lang}/bmi-calculator/` },
+          { name: "Calculateur Masse Grasse", href: `/${lang}/body-fat-calculator/` },
+          { name: "Calculateur IMC Asiatique", href: `/${lang}/asian-bmi-calculator/` }
+        ]
+      },
+      {
+        tag: "02 / Équilibre Métabolique",
+        title: "Intégration du BMR et TDEE au Quotidien",
+        summary: "Les équations métaboliques évaluent la dépense calorique réelle pour structurer les objectifs alimentaires sur des bases scientifiques.",
+        bullets: [
+          "Le Métabolisme de Base (BMR via Mifflin-St Jeor) chiffre l'énergie minimale nécessaire au fonctionnement des organes vitaux au repos.",
+          "La Dépense Énergétique Totale (TDEE) intègre le coefficient d'activité physique (1,2 sédentaire à 1,9 intensif) et l'effet thermique des repas.",
+          "Application : Votre TDEE représente l'apport de maintien. Un déficit modéré de 300 à 500 kcal favorise une perte de gras saine sans épuisement métabolique."
+        ],
+        links: [
+          { name: "Calculateur BMR", href: `/${lang}/bmr-calculator/` },
+          { name: "Calculateur TDEE", href: `/${lang}/tdee-calculator/` },
+          { name: "Calories de Maintien", href: `/${lang}/maintenance-calorie-calculator/` }
+        ]
+      },
+      {
+        tag: "03 / Risques Régionaux et Viscéraux",
+        title: "Seuils Régionaux et Adiposité Viscérale",
+        summary: "Le poids brut ne renseigne pas sur l'emplacement des graisses. La graisse viscérale abdominale profonde présente des risques cardiovasculaires bien plus marqués.",
+        bullets: [
+          "Les seuils d'action OMS pour populations asiatiques déclenchent le surpoids dès 23,0 kg/m² et le haut risque dès 27,5 kg/m² en raison d'une adiposité viscérale précoce.",
+          "Le ratio taille-hanches et le tour de taille ciblent la graisse abdominale. Un tour de taille ≥ 90 cm chez l'homme ou ≥ 80 cm chez la femme asiatique signale un risque accru.",
+          "Les formules de Poids Idéal (Devine, Robinson) offrent des plages de référence ajustées à la morphologie et à l'ossature."
+        ],
+        links: [
+          { name: "Calculateur Poids Idéal", href: `/${lang}/ideal-weight-calculator/` },
+          { name: "Rapport Taille-Hanches", href: `/${lang}/waist-to-hip-ratio-calculator/` },
+          { name: "Poids Idéal par Taille", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  },
+  de: {
+    eyebrow: "Wissenschaftliche Grundlagen",
+    title: "Verstehen Sie Ihre Werte. Planen Sie mit Vertrauen.",
+    subtitle: "Ein praktischer Leitfaden zur Interpretation von Körperzusammensetzung, Energiebedarf und anthropometrischen Richtwerten.",
+    disclaimerTitle: "Wichtiger medizinischer Hinweis",
+    disclaimerText: "Die Berechnungen von Real BMI basieren auf anerkannten mathematischen Formeln (WHO, CDC, Mifflin-St Jeor). Sie dienen der statistischen Orientierung und stellen keine medizinische Diagnose dar. Konsultieren Sie für eine individuelle Abklärung stets einen Arzt.",
+    cards: [
+      {
+        tag: "01 / Anthropometrisches Screening",
+        title: "Interpretation von BMI, BAI & Körperfett",
+        summary: "Anthropometrische Kennzahlen setzen Gewicht, Größe und Körperumfänge ins Verhältnis, um fundierte Orientierungswerte zu liefern.",
+        bullets: [
+          "Der Body-Mass-Index (BMI = kg/m²) vergleicht das Körpergewicht mit der quadrierten Körpergröße als weltweiter Screening-Standard.",
+          "Der Body Adiposity Index (BAI) schätzt den Fettanteil anhand des Hüftumfangs und der Körpergröße ohne Abhängigkeit vom Waagegewicht.",
+          "Einschränkungen: Formeln unterscheiden nicht zwischen Muskelmasse und Fettgewebe. Sportler oder ältere Menschen können abweichende Werte aufweisen."
+        ],
+        links: [
+          { name: "BMI-Rechner", href: `/${lang}/bmi-calculator/` },
+          { name: "Körperfettrechner", href: `/${lang}/body-fat-calculator/` },
+          { name: "Asiatischer BMI-Rechner", href: `/${lang}/asian-bmi-calculator/` }
+        ]
+      },
+      {
+        tag: "02 / Metabolischer Energiebedarf",
+        title: "BMR & TDEE für die tägliche Kalorienplanung",
+        summary: "Stoffwechselformeln ermitteln den tatsächlichen Energieverbrauch und bilden das Fundament für eine zielgerichtete Ernährung.",
+        bullets: [
+          "Der Grundumsatz (BMR via Mifflin-St Jeor) beziffert die lebensnotwendigen Kalorien zur Aufrechterhaltung der Organfunktionen in Ruhe.",
+          "Der Gesamtenergiebedarf (TDEE) berücksichtigt den Aktivitätsmultiplikator (1,2 sitzend bis 1,9 Leistungssport) sowie die Thermogenese.",
+          "Anwendung: Ihr TDEE ist das Erhaltungsniveau. Ein moderates Defizit von 300–500 kcal ermöglicht nachhaltigen Fettabbau ohne Muskelverlust."
+        ],
+        links: [
+          { name: "BMR-Rechner (Grundumsatz)", href: `/${lang}/bmr-calculator/` },
+          { name: "TDEE-Rechner (Gesamtumsatz)", href: `/${lang}/tdee-calculator/` },
+          { name: "Erhaltungskalorien-Rechner", href: `/${lang}/maintenance-calorie-calculator/` }
+        ]
+      },
+      {
+        tag: "03 / Regionale & Viszerale Faktoren",
+        title: "Regionale Grenzwerte & Viszerales Bauchfett",
+        summary: "Das Gesamtgewicht sagt wenig über die Fettverteilung aus. Tief sitzendes viszerales Bauchfett birgt deutlich höhere kardiometabolische Risiken.",
+        bullets: [
+          "Die WHO-Aktionspunkte für Asien setzen die Übergewichtswarnung bereits bei 23,0 kg/m² an, da viszerales Fett dort früher auftritt.",
+          "Das Taille-zu-Hüfte-Verhältnis (WHR) und der Taillenumfang erfassen das Bauchfett. Ein Taillenumfang ≥ 90 cm bei Männern signalisiert erhöhtes Risiko.",
+          "Idealgewichtsformeln (Devine, Robinson) liefern anatomische Richtbereiche bezogen auf Knochenbau und Körpergröße."
+        ],
+        links: [
+          { name: "Idealgewicht-Rechner", href: `/${lang}/ideal-weight-calculator/` },
+          { name: "Taille-zu-Hüfte-Rechner", href: `/${lang}/waist-to-hip-ratio-calculator/` },
+          { name: "Normalgewicht nach Größe", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  },
+  ko: {
+    eyebrow: "건강 지표 가이드",
+    title: "수치를 이해하고 자신 있게 계획하세요.",
+    subtitle: "체성분 선별 검사, 대사 에너지 소비량 및 인체계측 기준을 올바르게 해석하는 실천 가이드입니다.",
+    disclaimerTitle: "교육 및 임상 주의사항",
+    disclaimerText: "Real BMI의 모든 산출물은 공표된 과학 공식(WHO, CDC, Mifflin-St Jeor)에 따른 인구 선별 추정치입니다. 이는 개별 의학적 진단이나 처방이 아니므로 심혈관 및 대사 질환 위험 평가는 전문의와 상담하시기 바랍니다.",
+    cards: [
+      {
+        tag: "01 / 체성분 선별 검사",
+        title: "BMI, BAI 및 체지방률 지표 해석",
+        summary: "인체계측 지표는 신장과 둘레 대비 체질량을 평가하여 본인의 신체 상태를 객관적으로 파악하도록 돕습니다.",
+        bullets: [
+          "체질량지수(BMI = kg/m²)는 전 세계 공중보건 역학 조사에서 가장 널리 쓰이는 표준 1차 스크리닝 도구입니다.",
+          "신체비만지수(BAI)는 체중계 무게에 의존하지 않고 엉덩이둘레와 신장 비율을 통해 체지방 수준을 추정합니다.",
+          "한계점: 기본 공식은 골격근량과 지방을 분별하지 못하므로 근육질 운동선수나 노년층 근감소증 환자는 수치가 왜곡될 수 있습니다."
+        ],
+        links: [
+          { name: "BMI 계산기", href: `/${lang}/bmi-calculator/` },
+          { name: "체지방률 계산기", href: `/${lang}/body-fat-calculator/` },
+          { name: "아시아 BMI 계산기", href: `/${lang}/asian-bmi-calculator/` }
+        ]
+      },
+      {
+        tag: "02 / 대사 에너지 균형",
+        title: "BMR 및 TDEE를 활용한 일일 칼로리 계획",
+        summary: "단순 체중 수치 대신 동적 에너지 소비량을 계산하여 과학적이고 지속 가능한 영양 계획을 세울 수 있습니다.",
+        bullets: [
+          "기초대사량(BMR, Mifflin-St Jeor 공식)은 안정 상태에서 뇌, 심장, 간 등 주요 장기의 생명 유지에 필요한 최소 열량입니다.",
+          "일일 총 에너지 소비량(TDEE)은 기초대사량에 활동 수준(1.2 좌식 생활 ~ 1.9 고강도 운동)과 음식 소화 대사량을 반영합니다.",
+          "실천법: TDEE는 체중 유지 칼로리입니다. 건강한 감량을 위해 300~500 kcal의 완만한 적자를 유지하면 대사 저하 없이 체지방을 줄일 수 있습니다."
+        ],
+        links: [
+          { name: "BMR 기초대사량 계산기", href: `/${lang}/bmr-calculator/` },
+          { name: "TDEE 총소비량 계산기", href: `/${lang}/tdee-calculator/` },
+          { name: "유지 칼로리 계산기", href: `/${lang}/maintenance-calorie-calculator/` }
+        ]
+      },
+      {
+        tag: "03 / 지역 기준 및 내장 지방",
+        title: "아시아인 기준선 및 복부 내장 지방",
+        summary: "체중계 무게만으로는 지방이 저장된 위치를 알 수 없습니다. 복부 내장 주변에 쌓인 내장 지방은 피하지방보다 훨씬 위험합니다.",
+        bullets: [
+          "WHO 아시아 가이드라인은 체지방 축적 특성을 고려하여 과체중 기준을 23.0 kg/m², 고위험 비만 기준을 27.5 kg/m²로 낮추어 적용합니다.",
+          "허리-신장 비율(WHtR)과 허리-엉덩이 비율(WHR)은 복부 비만을 평가합니다. 아시아 남성 90cm, 여성 85cm 이상 시 주의가 필요합니다.",
+          "표준 이상 체중 공식(Devine, Robinson)은 골격 크기와 신장에 따른 적정 체중 구간을 제공합니다."
+        ],
+        links: [
+          { name: "이상적 체중 계산기", href: `/${lang}/ideal-weight-calculator/` },
+          { name: "허리-엉덩이 비율 계산기", href: `/${lang}/waist-to-hip-ratio-calculator/` },
+          { name: "신장별 정상 체중 차트", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  },
+  hi: {
+    eyebrow: "शैक्षिक स्वास्थ्य आधार",
+    title: "अपने नंबर समझें। विश्वास के साथ योजना बनाएं।",
+    subtitle: "शारीरिक संरचना, मेटाबॉलिक ऊर्जा व्यय और एंथ्रोपोमेट्रिक संदर्भ मानकों को सही ढंग से समझने की व्यावहारिक गाइड।",
+    disclaimerTitle: "महत्वपूर्ण शैक्षिक व नैदानिक सूचना",
+    disclaimerText: "Real BMI द्वारा दिए गए परिणाम प्रकाशित वैज्ञानिक फॉर्मूलों (WHO, CDC, Mifflin-St Jeor) पर आधारित प्राथमिक अनुमान हैं। यह व्यक्तिगत चिकित्सीय निदान या उपचार योजना नहीं है। सटीक स्वास्थ्य जांच के लिए पंजीकृत चिकित्सक से रक्तचाप, ब्लड शुगर और लिपिड प्रोफाइल की जांच करवाएं।",
+    cards: [
+      {
+        tag: "01 / शारीरिक स्क्रीनिंग",
+        title: "बीएमआई, बीएआई और शरीर की वसा की व्याख्या",
+        summary: "एंथ्रोपोमेट्रिक पैमाने ऊंचाई और परिधि के अनुपात में शरीर के वजन का मूल्यांकन करते हैं। इन मानकों को समझकर आप अपने स्वास्थ्य का सही आकलन कर सकते हैं।",
+        bullets: [
+          "बॉडी मास इंडेक्स (BMI = kg/m²) ऊंचाई के वर्ग से वजन की तुलना करता है और वैश्विक स्तर पर प्राथमिक स्वास्थ्य स्क्रीनिंग मानक है।",
+          "बॉडी एडिपोसिटी इंडेक्स (BAI) वजन पर निर्भर हुए बिना कूल्हे की परिधि और ऊंचाई से वसा का अनुमान लगाता है।",
+          "सीमाएं: मानक फॉर्मूले मांसपेशियों और वसा में अंतर नहीं कर पाते। मांसपेशियों वाले एथलीट या बुजुर्गों के स्कोर में अंतर हो सकता है।"
+        ],
+        links: [
+          { name: "बीएमआई कैलकुलेटर", href: `/${lang}/bmi-calculator/` },
+          { name: "शरीर की वसा कैलकुलेटर", href: `/${lang}/body-fat-calculator/` },
+          { name: "एशियाई बीएमआई कैलकुलेटर", href: `/${lang}/asian-bmi-calculator/` }
+        ]
+      },
+      {
+        tag: "02 / मेटाबॉलिक संतुलन",
+        title: "दैनिक ऊर्जा के लिए बीएमआर और टीडीईई का समन्वय",
+        summary: "मेटाबॉलिक फॉर्मूले स्थिर वजन के स्थान पर दैनिक कैलोरी ऊर्जा व्यय का अनुमान लगाते हैं, जिससे संतुलित खानपान की वैज्ञानिक योजना बनती है।",
+        bullets: [
+          "बेसल मेटाबॉलिक रेट (BMR) विश्राम अवस्था में शरीर के महत्वपूर्ण अंगों को जीवित रखने के लिए आवश्यक न्यूनतम ऊर्जा दर्शाता है।",
+          "टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) इसमें शारीरिक गतिविधि कारक (1.2 से 1.9) और भोजन पचाने की ऊर्जा जोड़ता है।",
+          "उपयोग: TDEE आपका वजन बनाए रखने वाला स्तर है। सुरक्षित रूप से वजन घटाने के लिए 300–500 कैलोरी की मध्यम कमी रखें।"
+        ],
+        links: [
+          { name: "बीएमआर कैलकुलेटर", href: `/${lang}/bmr-calculator/` },
+          { name: "टीडीईई कैलकुलेटर", href: `/${lang}/tdee-calculator/` },
+          { name: "मेंटेनेंस कैलोरी कैलकुलेटर", href: `/${lang}/maintenance-calorie-calculator/` }
+        ]
+      },
+      {
+        tag: "03 / क्षेत्रीय संदर्भ व विसरल फैट",
+        title: "एशियाई कट-ऑफ और आंतरिक पेट की चर्बी",
+        summary: "वजन यह नहीं बताता कि चर्बी कहाँ जमा है। पेट के आंतरिक अंगों के आसपास जमा विसरल फैट त्वचा के नीचे की चर्बी से अधिक हानिकारक होता है।",
+        bullets: [
+          "डब्ल्यूएचओ एशियाई मानकों के अनुसार अधिक वजन का जोखिम 23.0 kg/m² और उच्च जोखिम 27.5 kg/m² पर शुरू हो जाता है।",
+          "कमर-से-ऊंचाई और कमर-से-कूल्हे का अनुपात आंतरिक चर्बी का सटीक संकेत देते हैं। पुरुषों में कमर ≥ 90 सेमी और महिलाओं में ≥ 80 सेमी जोखिम का संकेत है।",
+          "आदर्श वजन फॉर्मूले (Devine, Robinson) हड्डियों की बनावट और ऊंचाई के अनुसार लक्ष्य वजन सीमा दर्शाते हैं।"
+        ],
+        links: [
+          { name: "आदर्श वजन कैलकुलेटर", href: `/${lang}/ideal-weight-calculator/` },
+          { name: "कमर से कूल्हा अनुपात कैलकुलेटर", href: `/${lang}/waist-to-hip-ratio-calculator/` },
+          { name: "ऊंचाई अनुसार स्वस्थ वजन", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  }
+};
+
+const current = data[lang] || data.en;
+---
+
+<section id="understand-numbers" class="px-4 md:px-6 py-12 md:py-20 border-t border-[var(--border)] bg-[var(--card)]/40 scroll-mt-28">
+  <div class="max-w-7xl mx-auto space-y-12">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-3">
+      <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">
+        {current.eyebrow}
+      </p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-[1.05]">
+        {current.title}
+      </h2>
+      <p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+        {current.subtitle}
+      </p>
+    </div>
+
+    <!-- 3 Core Guidance Pillars -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      {current.cards.map((card) => (
+        <div class="rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--card)] p-6 md:p-8 flex flex-col justify-between space-y-6 shadow-[var(--shadow-soft)] hover:border-[var(--accent)] hover:shadow-[var(--shadow-card)] transition-all duration-300">
+          <div class="space-y-4">
+            <span class="inline-block text-xs font-display font-bold uppercase tracking-widest text-[var(--accent)] px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20">
+              {card.tag}
+            </span>
+            <h3 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+              {card.title}
+            </h3>
+            <p class="text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+              {card.summary}
+            </p>
+            <ul class="space-y-2 pt-2 border-t border-[var(--border)]/60">
+              {card.bullets.map((bullet) => (
+                <li class="flex items-start gap-2 text-xs text-[var(--muted-foreground)] leading-relaxed">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 mt-1.5"></span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Tool Quick Links -->
+          <div class="pt-4 border-t border-[var(--border)]/60">
+            <p class="text-[11px] font-display font-bold uppercase tracking-widest text-[var(--foreground)] mb-2">Related Screening Tools:</p>
+            <div class="flex flex-wrap gap-2">
+              {card.links.map((link) => (
+                <a 
+                  href={link.href}
+                  class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--muted)]/40 text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                >
+                  <span>{link.name}</span>
+                  <svg class="w-3 h-3 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Educational & Clinical Notice Box -->
+    <div class="rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 shadow-xs">
+      <div class="w-12 h-12 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 flex items-center justify-center shrink-0 text-[var(--accent)]">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <div class="space-y-1.5">
+        <h4 class="text-sm font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+          {current.disclaimerTitle}
+        </h4>
+        <p class="text-xs md:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+          {current.disclaimerText}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>

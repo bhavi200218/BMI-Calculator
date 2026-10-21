@@ -1,0 +1,341 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+import { locales, type Locale } from '../../utils/calculators';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params as { lang: Locale };
+
+const content = {
+  en: {
+    pageTitle: "Cookie Policy | Real BMI",
+    pageDescription: "Read the official Cookie Policy for Real BMI. Learn about the essential local storage and privacy-focused cookies we use.",
+    title: "Cookie Policy",
+    eyebrow: "Transparency & Data Control",
+    description: "Detailed disclosure of the browser storage and cookie technologies utilized across Real BMI calculators.",
+    homeLabel: "Home",
+    sections: [
+      {
+        heading: "1. Overview of Technologies Used",
+        body: "Real BMI uses a privacy-first web architecture. When you calculate your BMI, BMR, or caloric expenditure, all physiological numbers are processed entirely within your browser's local JavaScript runtime. We never transmit your health measurements to our servers. To deliver a smooth, high-performance experience and support free access, we utilize minimal browser local storage and third-party cookies as detailed below."
+      },
+      {
+        heading: "2. Strictly Necessary Functional Storage",
+        body: "These items are required for the website and calculators to operate correctly. They do not store personal identifiers and cannot be disabled in our preference center:"
+      },
+      {
+        heading: "3. Anonymous Analytics (Optional)",
+        body: "With your consent, we use Google Analytics 4 (Measurement ID: G-9D3TJCYP4R) to understand aggregate website usage and improve calculator functionality. Google Analytics sets cookies such as _ga and _ga_* with a retention period of up to 2 years. These cookies collect anonymized telemetry such as page views and general device categories. No health data or personal identifiers are ever collected or linked."
+      },
+      {
+        heading: "4. Digital Advertising Cookies (Optional)",
+        body: "With your consent, Google AdSense (Publisher ID: ca-pub-6643535431949281) uses advertising cookies such as __gads and __gpi (retention up to 13 months) to display non-intrusive advertisements that fund the free development and hosting of our tools. If you reject non-essential cookies, non-personalized advertising settings or no advertising cookies are used."
+      },
+      {
+        heading: "5. How to Manage or Withdraw Your Consent",
+        body: "You have complete control over your cookie choices. You can modify or withdraw your consent at any time by clicking the 'Cookie Preferences' link located in the footer of every page on this website. Additionally, you can configure your browser settings to block or delete cookies at any time."
+      }
+    ],
+    storageTableTitle: "Active Storage & Cookie Registry",
+    tableHeaders: ["Name / Key", "Type & Provider", "Purpose", "Duration"],
+    storageRows: [
+      ["theme", "Local Storage (Real BMI)", "Remembers your light or dark mode visual preference to prevent flashing.", "Persistent"],
+      ["bmiUnit", "Local Storage (Real BMI)", "Remembers your preferred units (metric cm/kg vs imperial ft/lbs) across calculators.", "Persistent"],
+      ["cookie_consent_preferences", "Local Storage (Real BMI)", "Records your cookie consent choices so we do not repeatedly prompt you.", "12 Months"],
+      ["_ga, _ga_*", "Cookie (Google Analytics)", "Measures anonymous aggregate traffic to improve tool performance and usability.", "Up to 2 Years"],
+      ["__gads, __gpi", "Cookie (Google AdSense)", "Serves non-intrusive ads to maintain free, open access to all health calculators.", "Up to 13 Months"]
+    ]
+  },
+  es: {
+    pageTitle: "Política de Cookies | Real BMI",
+    pageDescription: "Consulte la Política de Cookies oficial de Real BMI. Conozca las tecnologías de almacenamiento local y cookies que utilizamos.",
+    title: "Política de Cookies",
+    eyebrow: "Transparencia y Control de Datos",
+    description: "Detalle completo del almacenamiento en navegador y cookies utilizadas en las calculadoras de Real BMI.",
+    homeLabel: "Inicio",
+    sections: [
+      {
+        heading: "1. Información General sobre las Tecnologías Utilizadas",
+        body: "Real BMI opera con una arquitectura orientada a la privacidad. Al calcular su IMC, TMB o gasto calórico, todos los datos se procesan localmente en el motor JavaScript de su navegador. Nunca enviamos sus medidas de salud a nuestros servidores. Para garantizar un servicio óptimo y gratuito, utilizamos almacenamiento local mínimo y cookies según se describe a continuación."
+      },
+      {
+        heading: "2. Almacenamiento Funcional Estrictamente Necesario",
+        body: "Estos elementos son indispensables para el funcionamiento correcto de la web y las calculadoras. No recopilan identificadores personales y no se pueden desactivar en el panel de preferencias:"
+      },
+      {
+        heading: "3. Análisis Web Anónimo (Opcional)",
+        body: "Con su consentimiento, utilizamos Google Analytics 4 (ID: G-9D3TJCYP4R) para conocer el uso general del sitio y optimizar las herramientas. Google Analytics establece cookies como _ga y _ga_* con retención de hasta 2 años. Recopilan métricas agregadas anónimas sin almacenar datos médicos."
+      },
+      {
+        heading: "4. Cookies de Publicidad Digital (Opcional)",
+        body: "Con su autorización, Google AdSense (ID: ca-pub-6643535431949281) emplea cookies publicitarias como __gads y __gpi (retención de hasta 13 meses) para financiar el mantenimiento de las calculadoras gratuitas."
+      },
+      {
+        heading: "5. Cómo Gestionar o Revocar su Consentimiento",
+        body: "Usted tiene control absoluto sobre sus preferencias. Puede cambiar o retirar su consentimiento en cualquier momento haciendo clic en el enlace 'Preferencias de Cookies' ubicado en el pie de página de la web."
+      }
+    ],
+    storageTableTitle: "Registro de Cookies y Almacenamiento Local",
+    tableHeaders: ["Nombre / Clave", "Tipo y Proveedor", "Finalidad", "Duración"],
+    storageRows: [
+      ["theme", "Almacenamiento Local (Real BMI)", "Guarda su preferencia de tema (claro u oscuro).", "Persistente"],
+      ["bmiUnit", "Almacenamiento Local (Real BMI)", "Recuerda sus unidades preferidas (métrico o imperial).", "Persistente"],
+      ["cookie_consent_preferences", "Almacenamiento Local (Real BMI)", "Registra sus decisiones de consentimiento de cookies.", "12 Meses"],
+      ["_ga, _ga_*", "Cookie (Google Analytics)", "Mide estadísticas de visitas anónimas para optimizar el sitio.", "Hasta 2 Años"],
+      ["__gads, __gpi", "Cookie (Google AdSense)", "Muestra anuncios para mantener el acceso gratuito a las herramientas.", "Hasta 13 Meses"]
+    ]
+  },
+  fr: {
+    pageTitle: "Politique de Cookies | Real BMI",
+    pageDescription: "Consultez la Politique de Cookies officielle de Real BMI. Découvrez les technologies de stockage local et de cookies utilisées.",
+    title: "Politique de Cookies",
+    eyebrow: "Transparence & Contrôle des Données",
+    description: "Divulgation complète des technologies de stockage local et cookies sur Real BMI.",
+    homeLabel: "Accueil",
+    sections: [
+      {
+        heading: "1. Présentation des Technologies Utilisées",
+        body: "Real BMI applique une architecture axée sur la confidentialité. Toutes vos saisies physiologiques sont calculées localement dans votre navigateur sans être transmises à des serveurs. Nous utilisons un stockage local minimal et des cookies pour assurer les fonctionnalités et financer l'accès gratuit."
+      },
+      {
+        heading: "2. Stockage Fonctionnel Strictement Nécessaire",
+        body: "Ces paramètres sont indispensables au bon fonctionnement du site et ne collectent aucune donnée personnelle identifiables :"
+      },
+      {
+        heading: "3. Statistiques et Analyses Anonymes (Optionnel)",
+        body: "Avec votre accord, nous utilisons Google Analytics 4 (ID : G-9D3TJCYP4R) pour analyser la fréquentation de manière agrégée et anonyme via les cookies _ga et _ga_* (conservés jusqu'à 2 ans)."
+      },
+      {
+        heading: "4. Cookies Publicitaires (Optionnel)",
+        body: "Avec votre consentement, Google AdSense (ID : ca-pub-6643535431949281) utilise des cookies tels que __gads et __gpi (durée maximale de 13 mois) pour afficher des annonces finançant l'accès gratuit."
+      },
+      {
+        heading: "5. Gestion et Retrait du Consentement",
+        body: "Vous pouvez modifier ou retirer votre consentement à tout moment en cliquant sur 'Préférences de Cookies' en bas de page."
+      }
+    ],
+    storageTableTitle: "Registre des Cookies et Stockages Locaux",
+    tableHeaders: ["Nom / Clé", "Type & Fournisseur", "Finalité", "Durée"],
+    storageRows: [
+      ["theme", "Stockage Local (Real BMI)", "Mémorise le thème sombre ou clair.", "Persistant"],
+      ["bmiUnit", "Stockage Local (Real BMI)", "Mémorise les unités choisies (métrique ou impérial).", "Persistant"],
+      ["cookie_consent_preferences", "Stockage Local (Real BMI)", "Enregistre vos choix de consentement aux cookies.", "12 Mois"],
+      ["_ga, _ga_*", "Cookie (Google Analytics)", "Mesure d'audience anonyme agrégée.", "Jusqu'à 2 Ans"],
+      ["__gads, __gpi", "Cookie (Google AdSense)", "Affichage d'annonces soutenant les outils gratuits.", "Jusqu'à 13 Mois"]
+    ]
+  },
+  de: {
+    pageTitle: "Cookie-Richtlinie | Real BMI",
+    pageDescription: "Lesen Sie die offizielle Cookie-Richtlinie von Real BMI. Erfahren Sie mehr über die verwendeten Cookies und lokalen Speicherungen.",
+    title: "Cookie-Richtlinie",
+    eyebrow: "Transparenz & Datenkontrolle",
+    description: "Vollständige Offenlegung der Browser-Speichertechnologien und Cookies auf Real BMI.",
+    homeLabel: "Startseite",
+    sections: [
+      {
+        heading: "1. Übersicht der eingesetzten Technologien",
+        body: "Real BMI setzt auf kompromisslosen Datenschutz. Berechnungen erfolgen ausschließlich lokal in der JavaScript-Umgebung Ihres Browsers. Wir übertragen niemals persönliche Gesundheitsdaten an unsere Server."
+      },
+      {
+        heading: "2. Technisch notwendige lokale Speicherungen",
+        body: "Diese Einträge sind für den Betrieb der Rechner unerlässlich und können nicht deaktiviert werden:"
+      },
+      {
+        heading: "3. Anonyme Webanalyse (Optional)",
+        body: "Mit Ihrer Einwilligung nutzen wir Google Analytics 4 (ID: G-9D3TJCYP4R) mit Cookies wie _ga und _ga_* (Speicherdauer bis zu 2 Jahre) zur anonymen, aggregierten Nutzungsanalyse."
+      },
+      {
+        heading: "4. Digitale Werbe-Cookies (Optional)",
+        body: "Mit Ihrer Zustimmung nutzt Google AdSense (ID: ca-pub-6643535431949281) Werbe-Cookies wie __gads und __gpi (Speicherdauer bis zu 13 Monate) zur Finanzierung unserer kostenlosen Tools."
+      },
+      {
+        heading: "5. Verwaltung und Widerruf Ihrer Einwilligung",
+        body: "Sie können Ihre Cookie-Zustimmung jederzeit über den Link 'Cookie-Einstellungen' in der Fußzeile jeder Seite ändern oder widerrufen."
+      }
+    ],
+    storageTableTitle: "Verzeichnis der Cookies und Speicherungen",
+    tableHeaders: ["Name / Schlüssel", "Typ & Anbieter", "Zweck", "Dauer"],
+    storageRows: [
+      ["theme", "Lokaler Speicher (Real BMI)", "Speichert Ihre Hell-/Dunkel-Einstellung.", "Persistent"],
+      ["bmiUnit", "Lokaler Speicher (Real BMI)", "Speichert Ihre bevorzugten Einheiten (metrisch/imperial).", "Persistent"],
+      ["cookie_consent_preferences", "Lokaler Speicher (Real BMI)", "Speichert Ihre Cookie-Entscheidungen.", "12 Monate"],
+      ["_ga, _ga_*", "Cookie (Google Analytics)", "Erfasst anonyme Gesamtzugriffszahlen.", "Bis zu 2 Jahre"],
+      ["__gads, __gpi", "Cookie (Google AdSense)", "Finanzierung der kostenlosen Rechner durch Anzeigen.", "Bis zu 13 Monate"]
+    ]
+  },
+  ko: {
+    pageTitle: "쿠키 정책 | Real BMI",
+    pageDescription: "Real BMI의 공식 쿠키 정책을 확인하세요. 사용하는 필수 로컬 저장소 및 개인정보 보호 쿠키에 대해 안내합니다.",
+    title: "쿠키 정책",
+    eyebrow: "투명성 및 데이터 통제",
+    description: "Real BMI 계산기에서 사용하는 브라우저 저장소 및 쿠키 기술에 대한 상세한 안내입니다.",
+    homeLabel: "홈",
+    sections: [
+      {
+        heading: "1. 사용 기술 개요",
+        body: "Real BMI는 개인정보 보호 우선 설계를 적용합니다. 모든 체질량 및 칼로리 계산은 기기의 로컬 브라우저에서만 수행되며 서버로 전송되지 않습니다."
+      },
+      {
+        heading: "2. 필수 기능 로컬 저장소",
+        body: "웹사이트와 계산기가 정상 작동하기 위해 필요한 기술 항목으로 비활성화할 수 없습니다:"
+      },
+      {
+        heading: "3. 익명 웹 통계 분석 (선택)",
+        body: "사용자의 동의 시 Google Analytics 4(ID: G-9D3TJCYP4R)를 사용하여 익명의 집계 트래픽 통계를 수집합니다(_ga 쿠키 등 최대 2년 보관)."
+      },
+      {
+        heading: "4. 디지털 광고 쿠키 (선택)",
+        body: "사용자의 동의 시 Google AdSense(ID: ca-pub-6643535431949281) 광고 쿠키(__gads 등 최대 13개월)를 사용하여 무료 도구 운영을 지원합니다."
+      },
+      {
+        heading: "5. 동의 변경 및 철회 방법",
+        body: "언제든지 웹사이트 하단 푸터의 '쿠키 설정' 링크를 클릭하여 동의를 변경하거나 철회할 수 있습니다."
+      }
+    ],
+    storageTableTitle: "쿠키 및 저장소 레지스트리",
+    tableHeaders: ["항목명 / 키", "유형 및 제공자", "목적", "보관 기간"],
+    storageRows: [
+      ["theme", "로컬 저장소 (Real BMI)", "다크/라이트 화면 모드 설정 유지", "영구 (삭제 전까지)"],
+      ["bmiUnit", "로컬 저장소 (Real BMI)", "미터법/야드파운드법 선호 단위 기억", "영구 (삭제 전까지)"],
+      ["cookie_consent_preferences", "로컬 저장소 (Real BMI)", "쿠키 동의 결정 내역 저장", "12개월"],
+      ["_ga, _ga_*", "쿠키 (Google Analytics)", "익명 집계 방문 통계 분석", "최대 2년"],
+      ["__gads, __gpi", "쿠키 (Google AdSense)", "무료 서비스 유지를 위한 비침해적 광고 표시", "최대 13개월"]
+    ]
+  },
+  hi: {
+    pageTitle: "कुकी नीति | Real BMI",
+    pageDescription: "Real BMI की आधिकारिक कुकी नीति पढ़ें। हमारे द्वारा उपयोग की जाने वाली आवश्यक स्थानीय मेमोरी और कुकीज़ के बारे में जानें।",
+    title: "कुकी नीति",
+    eyebrow: "पारदर्शिता एवं डेटा नियंत्रण",
+    description: "Real BMI कैलकुलेटर में उपयोग की जाने वाली ब्राउज़र मेमोरी और कुकीज़ का विवरण।",
+    homeLabel: "होम",
+    sections: [
+      {
+        heading: "1. उपयोग की गई तकनीकों का अवलोकन",
+        body: "Real BMI पूर्ण गोपनीयता वास्तुकला पर आधारित है। सभी गणनाएं आपके ब्राउज़र में ही निष्पादित होती हैं और स्वास्थ्य संबंधी आंकड़े हमारे सर्वर पर कभी नहीं भेजे जाते।"
+      },
+      {
+        heading: "2. आवश्यक कार्यात्मक स्थानीय भंडारण",
+        body: "वेबसाइट के सुचारू संचालन के लिए ये प्रविष्टियां अनिवार्य हैं और इन्हें बंद नहीं किया जा सकता:"
+      },
+      {
+        heading: "3. अनाम एनालिटिक्स (वैकल्पिक)",
+        body: "आपकी सहमति से, हम Google Analytics 4 (ID: G-9D3TJCYP4R) का उपयोग समग्र ट्रैफ़िक को समझने और उपकरणों को बेहतर बनाने के लिए करते हैं (_ga कुकीज़, 2 वर्ष तक)।"
+      },
+      {
+        heading: "4. डिजिटल विज्ञापन कुकीज़ (वैकल्पिक)",
+        body: "आपकी सहमति से, Google AdSense (ID: ca-pub-6643535431949281) विज्ञापन कुकीज़ (__gads, 13 महीने तक) का उपयोग मुफ़्त सेवा बनाए रखने के लिए करता है।"
+      },
+      {
+        heading: "5. सहमति का प्रबंधन या वापस लेना",
+        body: "आप किसी भी समय वेबसाइट के फुटर में 'कुकी प्राथमिकताएं' लिंक पर क्लिक करके अपनी पसंद बदल सकते हैं या सहमति वापस ले सकते हैं।"
+      }
+    ],
+    storageTableTitle: "कुकी एवं स्टोरेज तालिका",
+    tableHeaders: ["नाम / कुंजी", "प्रकार एवं प्रदाता", "उद्देश्य", "अवधि"],
+    storageRows: [
+      ["theme", "स्थानीय मेमोरी (Real BMI)", "डार्क/लाइट मोड प्राथमिकता को याद रखता है।", "स्थायी"],
+      ["bmiUnit", "स्थानीय मेमोरी (Real BMI)", "मीट्रिक/इंपीरियल इकाइयों को याद रखता है।", "स्थायी"],
+      ["cookie_consent_preferences", "स्थानीय मेमोरी (Real BMI)", "कुकी सहमति निर्णयों को सहेजता है।", "12 महीने"],
+      ["_ga, _ga_*", "कुकी (Google Analytics)", "उपयोगिता सुधार हेतु अनाम ट्रैफ़िक मापन।", "2 वर्ष तक"],
+      ["__gads, __gpi", "कुकी (Google AdSense)", "मुफ़्त स्वास्थ्य उपकरण बनाए रखने हेतु विज्ञापन।", "13 महीने तक"]
+    ]
+  }
+};
+
+const c = content[lang] || content.en;
+---
+
+<Layout title={c.pageTitle} description={c.pageDescription}>
+  <Navbar />
+  <PageShell
+    title={c.title}
+    eyebrow={c.eyebrow}
+    description={c.description}
+    returnUrl={`/${lang}/`}
+    returnLabel={c.homeLabel}
+  >
+    <div class="space-y-8 text-[var(--muted-foreground)] leading-relaxed text-base md:text-lg font-medium">
+      
+      <div class="prose prose-zinc dark:prose-invert max-w-none space-y-6">
+        {c.sections.map((section) => (
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight text-[var(--foreground)] mb-3">
+              {section.heading}
+            </h2>
+            <p>{section.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Storage & Cookie Table -->
+      <div class="pt-6 space-y-4">
+        <h3 class="text-lg sm:text-xl font-bold font-display uppercase tracking-tight text-[var(--foreground)]">
+          {c.storageTableTitle}
+        </h3>
+        <div class="overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-sm">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse">
+            <thead class="bg-[var(--muted)]/60 border-b border-[var(--border)] text-[var(--foreground)] font-display uppercase tracking-wider text-[11px] sm:text-xs">
+              <tr>
+                {c.tableHeaders.map((header) => (
+                  <th class="p-3 sm:p-4 font-bold">{header}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--border)]/60 text-[var(--foreground)]">
+              {c.storageRows.map((row) => (
+                <tr class="hover:bg-[var(--muted)]/20 transition-colors">
+                  <td class="p-3 sm:p-4 font-mono font-semibold text-[var(--accent)]">{row[0]}</td>
+                  <td class="p-3 sm:p-4">{row[1]}</td>
+                  <td class="p-3 sm:p-4 text-[var(--muted-foreground)]">{row[2]}</td>
+                  <td class="p-3 sm:p-4 font-medium whitespace-nowrap">{row[3]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Live Preferences Action Box -->
+      <div class="p-6 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-md flex flex-col sm:flex-row items-center justify-between gap-4 mt-8">
+        <div>
+          <h4 class="text-base font-bold font-display uppercase tracking-tight text-[var(--foreground)]">
+            {lang === 'es' ? '¿Desea cambiar sus opciones?' :
+             lang === 'fr' ? 'Souhaitez-vous modifier vos choix ?' :
+             lang === 'de' ? 'Möchten Sie Ihre Einstellungen ändern?' :
+             lang === 'ko' ? '설정을 변경하시겠습니까?' :
+             lang === 'hi' ? 'क्या आप अपनी प्राथमिकताएं बदलना चाहते हैं?' :
+             'Want to update your choices?'}
+          </h4>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] mt-1">
+            {lang === 'es' ? 'Abra el panel interactivo para actualizar o revocar su consentimiento en cualquier momento.' :
+             lang === 'fr' ? 'Ouvrez le panneau interactif pour modifier ou retirer votre consentement.' :
+             lang === 'de' ? 'Öffnen Sie das Einstellungsmenü, um Ihre Einwilligung jederzeit anzupassen.' :
+             lang === 'ko' ? '언제든지 인터랙티브 패널을 열어 동의를 변경하거나 철회할 수 있습니다.' :
+             lang === 'hi' ? 'अपनी सहमति को किसी भी समय अपडेट या वापस लेने के लिए पैनल खोलें।' :
+             'Open the preference panel to adjust or withdraw your consent at any time.'}
+          </p>
+        </div>
+        <button
+          type="button"
+          onclick="if(window.openCookiePreferences) window.openCookiePreferences();"
+          class="shrink-0 min-h-[44px] px-5 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow hover:scale-105 active:scale-95 transition-all cursor-pointer"
+        >
+          {lang === 'es' ? 'Gestionar Preferencias' :
+           lang === 'fr' ? 'Gérer les Préférences' :
+           lang === 'de' ? 'Präferenzen Anpassen' :
+           lang === 'ko' ? '기본 설정 관리' :
+           lang === 'hi' ? 'प्राथमिकताएं प्रबंधित करें' :
+           'Manage Preferences'}
+        </button>
+      </div>
+
+    </div>
+  </PageShell>
+</Layout>

@@ -8,49 +8,57 @@ const sources = [
     "title": "OMS État Physique : Utilisation et Interprétation de l'Anthropométrie",
     "org": "Organisation Mondiale de la Santé (OMS / NLM PubMed)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/8594834/",
-    "desc": "Rapport officiel établissant les catégories globales d'IMC et les seuils de référence chez l'adulte."
+    "desc": "Rapport officiel établissant les catégories globales d'IMC et les seuils de référence chez l'adulte.",
+    "actionLabel": "Consulter le rapport OMS"
   },
   {
     "title": "Consultation d'Experts de l'OMS : IMC approprié pour les populations asiatiques",
     "org": "The Lancet (Consultation d'experts OMS)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
-    "desc": "Publication majeure du Lancet 2004 définissant les seuils d'action (23,0 kg/m² risque accru, 27,5 kg/m² haut risque)."
+    "desc": "Publication majeure du Lancet 2004 définissant les seuils d'action (23,0 kg/m² risque accru, 27,5 kg/m² haut risque).",
+    "actionLabel": "Lire l'étude The Lancet"
   },
   {
     "title": "Consensus pour le Diagnostic de l'Obésité chez les Adultes Sud-Asiatiques",
     "org": "ICMR & JAPI (Misra A, et al.)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
-    "desc": "Guide de consensus national fixant les seuils en Inde (18,5–22,9 normal, 23,0–24,9 surpoids, ≥ 25,0 obésité)."
+    "desc": "Guide de consensus national fixant les seuils en Inde (18,5–22,9 normal, 23,0–24,9 surpoids, ≥ 25,0 obésité).",
+    "actionLabel": "Consulter les directives ICMR"
   },
   {
     "title": "CDC Normes de Dépistage de l'Indice de Masse Corporelle Adulte",
     "org": "Centers for Disease Control and Prevention (CDC)",
     "url": "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html",
-    "desc": "Formule officielle du CDC pour le calcul de l'IMC métrique et impérial chez l'adulte."
+    "desc": "Formule officielle du CDC pour le calcul de l'IMC métrique et impérial chez l'adulte.",
+    "actionLabel": "Voir les critères du CDC"
   },
   {
     "title": "Équation Prédictive de Dépense Énergétique au Repos",
     "org": "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
-    "desc": "Formule de Mifflin-St Jeor pour estimer le métabolisme de base (BMR)."
+    "desc": "Formule de Mifflin-St Jeor pour estimer le métabolisme de base (BMR).",
+    "actionLabel": "Consulter l'étude AJCN"
   },
   {
     "title": "Équation Logarithmique de Graisse Corporelle de l'US Navy",
     "org": "Naval Health Research Center (Hodgdon JA, Beckett WS)",
     "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/",
-    "desc": "Formule basée sur les circonférences corporelles pour évaluer le pourcentage de masse grasse."
+    "desc": "Formule basée sur les circonférences corporelles pour évaluer le pourcentage de masse grasse.",
+    "actionLabel": "Lire le rapport de recherche"
   },
   {
     "title": "Consensus IDF sur l'Obésité Abdominale et le Syndrome Métabolique",
     "org": "Fédération Internationale du Diabète (IDF)",
     "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
-    "desc": "Seuils de tour de taille (>90 cm hommes, >80 cm femmes asiatiques) pour évaluer le risque viscéral."
+    "desc": "Seuils de tour de taille (>90 cm hommes, >80 cm femmes asiatiques) pour évaluer le risque viscéral.",
+    "actionLabel": "Consulter le consensus FID"
   },
   {
     "title": "Formule d'IMC 3D Ajustée à la Taille d'Oxford 2.5",
     "org": "Université d'Oxford (Prof. Nick Trefethen)",
     "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
-    "desc": "Ajustement mathématique compensant la déformation de volume chez les personnes grandes ou petites."
+    "desc": "Ajustement mathématique compensant la déformation de volume chez les personnes grandes ou petites.",
+    "actionLabel": "Voir la documentation Oxford"
   }
 ];
 ---
@@ -68,9 +76,14 @@ const sources = [
       returnLabel="Home"
     >
       <div class="space-y-8">
-        <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-          Ces organismes de santé publique et publications scientifiques révisées par des pairs fondent les formules et plages de calcul sur Real BMI.
-        </p>
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] font-medium leading-relaxed space-y-4">
+          <p class="text-lg">
+            La rigueur et la transparence scientifique constituent le socle de notre démarche éditoriale. L'ensemble des formules mathématiques, des seuils anthropométriques et des constantes physiologiques intégrés sur Real BMI provient directement d'organismes de santé publique internationaux et d'études cliniques publiées dans des revues à comité de lecture.
+          </p>
+          <p class="text-sm md:text-base">
+            Vous trouverez ci-dessous les publications fondamentales, rapports techniques et travaux de recherche mathématique appuyant nos outils :
+          </p>
+        </div>
 
         <div class="grid gap-6">
           {sources.map((src) => (
@@ -84,8 +97,9 @@ const sources = [
                   target="_blank" 
                   rel="noopener noreferrer" 
                   class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
+                  aria-label={`${src.actionLabel}: ${src.title}`}
                 >
-                  View Publication
+                  {src.actionLabel}
                   <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </a>
               </div>

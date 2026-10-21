@@ -6,22 +6,40 @@ import PageShell from '../../components/PageShell.astro';
 
 <Layout 
     title="Datenschutzerklärung | Real BMI"
-    description="Lesen Sie die Datenschutzerklärung von Real BMI. Alle Berechnungen laufen lokal im Browser — wir erfassen und speichern keinerlei persönliche Gesundheitsdaten."
+    description="Datenschutzerklärung von Real BMI: Alle Berechnungen laufen ausschließlich lokal in Ihrem Webbrowser — wir speichern oder erfassen zu keinem Zeitpunkt persönliche Daten."
 >
     <Navbar />
     <PageShell
       title="Datenschutzerklärung"
       eyebrow="Ihre Daten, Ihre Privatsphäre"
-      description="Erfahren Sie, wie Real BMI Ihre Daten schützt und alle Berechnungen sicher auf Ihrem Gerät ausführt."
+      description="Erfahren Sie, wie Real BMI Ihre Daten schützt und alle Berechnungen vollkommen privat und sicher hält."
       returnUrl="/de/"
       returnLabel="Startseite"
     >
       <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-        <p>Bei <strong>Real BMI</strong> nehmen wir Ihren Datenschutz sehr ernst. Unsere BMI-, BMR- und TDEE-Rechner führen alle Berechnungen lokal in Ihrem Browser aus.</p>
+        <p>Bei <strong>Real BMI</strong> betrachten wir den Schutz Ihrer persönlichen Privatsphäre und die Integrität biometrischer Gesundheitsdaten als fundamentales Grundrecht. Unsere Plattform mit Rechnern für den Body-Mass-Index (BMI), den Grundumsatz (BMR), den Gesamtenergiebedarf (TDEE) und Körperzusammensetzungsanalysen basiert auf einem kompromisslosen Privacy-by-Design-Prinzip.</p>
 
-        <h2>Drittanbieter & Werbung</h2>
-        <p>Drittanbieter, einschließlich Google, verwenden Cookies zur Schaltung von Anzeigen auf Grundlage vorheriger Besuche des Nutzers auf unserer oder anderen Websites. Die Verwendung von Werbe-Cookies durch Google ermöglicht Google und seinen Partnern die Schaltung von Anzeigen auf Basis Ihrer Besuche auf unseren oder anderen Seiten im Internet.</p>
-        <p>Nutzer können personalisierte Werbung in den <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Google Anzeigeneinstellungen</a> oder auf <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a> deaktivieren.</p>
+        <h2>1. Keine Erfassung von Gesundheitsdaten</h2>
+        <p>Wir erfassen, übertragen, speichern oder verarbeiten zu keinem Zeitpunkt individuelle biometrische Messwerte. Wenn Sie Parameter wie Körpergröße, Gewicht, Alter, Geschlecht, Taillenumfang oder Aktivitätsgrad in unsere Rechner eingeben, werden sämtliche mathematischen Berechnungen ausschließlich lokal innerhalb der JavaScript-Laufzeitumgebung Ihres eigenen Webbrowsers ausgeführt. Diese Daten verlassen Ihr Endgerät niemals und werden an keine externen Server übermittelt.</p>
+
+        <h2>2. Lokale Browserverarbeitung & Flüchtiger Speicher</h2>
+        <p>Da die Berechnung vollständig clientseitig erfolgt, ist Ihre Sitzung absolut flüchtig. Sobald Sie den Browsertab schließen, die Seite neu laden oder Ihren Zwischenspeicher leeren, werden sämtliche eingegebenen Messwerte und Berechnungsergebnisse unverzüglich aus dem flüchtigen Arbeitsspeicher gelöscht. Real BMI verwendet keine Benutzerkonten und ordnet keine Berechnungen IP-Adressen zu.</p>
+
+        <h2>3. Technische Serverprotokolle & Diagnosedaten</h2>
+        <p>Wie bei allen modernen Webangeboten üblich, erzeugt unsere Hosting-Infrastruktur standardmäßige technische Server-Zugriffsprotokolle ohne Personenbezug. Diese enthalten Browser-Typen, Betriebssystemversionen, Referrer-URLs und grobe Standortdaten auf Länder-/Stadtebene, um die Stabilität zu gewährleisten und Denial-of-Service-Angriffe (DDoS) abzuwehren. Diese technischen Logs sind strikt von den Rechnern getrennt und enthalten keinerlei Gesundheitsangaben.</p>
+
+        <h2>4. Digitale Werbung & Cookie-Richtlinien</h2>
+        <p>Real BMI finanziert den kostenfreien Betrieb der Plattform durch datenschutzkonforme Werbeeinblendungen. Drittanbieter, einschließlich Google, verwenden Cookies zur Auslieferung von Anzeigen auf Grundlage vorheriger Besuche auf dieser oder anderen Websites.</p>
+        <p>Nutzer können personalisierte Werbung jederzeit über die <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Google Anzeigeneinstellungen</a> oder über Branchenportale wie <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a> und die <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">European Interactive Digital Advertising Alliance (EDAA)</a> deaktivieren.</p>
+
+        <h2>5. DSGVO-Konformität (DSGVO / GDPR)</h2>
+        <p>In voller Übereinstimmung mit der Datenschutz-Grundverordnung der Europäischen Union (DSGVO) bestätigen wir, dass Real BMI keinerlei personenbezogene Gesundheitsdaten verarbeitet, speichert oder an Datenhändler weitergibt. Das Recht auf Löschung und Auskunft ist durch unsere Null-Speicherungs-Architektur standardmäßig gewährleistet.</p>
+
+        <h2>6. Moderne Verschlüsselung & Sicherheit</h2>
+        <p>Unsere Webseite erzwingt moderne Transport Layer Security (TLS 1.3) mit strikten HSTS-Sicherheitsheadern und Content Security Policies (CSP), um zu garantieren, dass jede Verbindung zu unseren Rechenwerkzeugen verschlüsselt und vor unbefugten Zugriffen Dritter geschützt ist.</p>
+
+        <h2>7. Änderungen der Richtlinie & Kontakt</h2>
+        <p>Wir behalten uns vor, diese Datenschutzerklärung gelegentlich anzupassen, um technischen Fortschritten oder rechtlichen Anforderungen zu entsprechen. Bei Fragen zum Datenschutz erreichen Sie uns jederzeit über unsere Kontaktseite.</p>
       </div>
     </PageShell>
 </Layout>

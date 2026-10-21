@@ -17,11 +17,29 @@ import PageShell from '../../components/PageShell.astro';
       returnLabel="Accueil"
     >
       <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-        <p>Chez <strong>Real BMI</strong>, nous prenons votre vie privée très au sérieux. Nos calculatrices d'IMC, BMR, TDEE et de composition corporelle sont conçues pour que vos données restent sur votre appareil et ne soient jamais stockées sur nos serveurs.</p>
+        <p>Chez <strong>Real BMI</strong>, nous considérons la protection de la vie privée et la sécurité des données biométriques comme un principe fondamental. Notre plateforme de calculateurs de santé — incluant l'Indice de Masse Corporelle (IMC), le Métabolisme de Base (BMR), la Dépense Énergétique Totale (TDEE) et les estimateurs de composition corporelle — est conçue selon une architecture stricte de confidentialité dès la conception (« Privacy by Design »), où vos données physiologiques restent exclusivement sous votre contrôle.</p>
 
-        <h2>Services tiers et Publicité</h2>
-        <p>Des tiers, y compris Google, utilisent des cookies pour diffuser des annonces en fonction des visites antérieures des utilisateurs sur notre site Web ou sur d'autres sites. L'utilisation de cookies publicitaires par Google permet à ce dernier et à ses partenaires de diffuser des annonces basées sur votre navigation.</p>
-        <p>Les utilisateurs peuvent désactiver la publicité personnalisée dans les <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Paramètres des annonces Google</a> ou sur <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a>.</p>
+        <h2>1. Architecture Zéro Collecte de Données de Santé</h2>
+        <p>Nous ne collectons, n'interceptons, ne conservons ni ne transmettons aucune donnée biométrique individuelle. Lorsque vous saisissez vos mensurations personnelles (taille, poids corporel, âge, sexe biologique, tour de taille ou niveau d'activité physique), l'ensemble des calculs mathématiques est exécuté localement dans votre navigateur web via JavaScript. Ces informations ne quittent jamais votre terminal, ne transitent pas vers nos serveurs et ne sont enregistrées dans aucune base de données externe.</p>
+
+        <h2>2. Traitement Local dans le Navigateur et Mémoire Éphémère</h2>
+        <p>Étant donné que les calculs s'opèrent intégralement sur votre appareil, votre session est purement éphémère. Dès que vous quittez la page, actualisez votre onglet ou fermez votre navigateur, les valeurs renseignées et les résultats calculés sont immédiatement effacés de la mémoire volatile. Real BMI ne requiert aucun compte utilisateur, aucune inscription préalable et n'associe aucun résultat à votre adresse IP.</p>
+
+        <h2>3. Données Techniques et Journaux de Diagnostic Réseau</h2>
+        <p>Comme la quasi-totalité des services web modernes, notre infrastructure d'hébergement enregistre de manière automatisée des journaux d'accès techniques anonymisés. Ceux-ci comprennent le type de navigateur, la version du système d'exploitation, l'URL de référence, le chemin du fichier demandé et la localisation géographique générale (au niveau du pays et de la ville) afin de prévenir les attaques par déni de service (DDoS) et de surveiller les temps de latence réseau. Ces journaux d'infrastructure sont totalement déconnectés des calculateurs et ne contiennent aucune métrique de santé.</p>
+
+        <h2>4. Publicité Numérique et Utilisation des Témoins de Connexion (Cookies)</h2>
+        <p>Real BMI est financé par la publicité numérique respectueuse de la réglementation pour maintenir ses outils accessibles gratuitement à tous. Des prestataires tiers, notamment Google, utilisent des cookies pour diffuser des annonces pertinentes adaptées à la navigation antérieure des utilisateurs sur ce site ou d'autres plateformes en ligne.</p>
+        <p>Les utilisateurs disposent d'un contrôle total sur leurs préférences publicitaires et peuvent désactiver la personnalisation des annonces à tout moment en accédant aux <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Paramètres des annonces Google</a> ou via les plateformes de choix de l'industrie comme <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a> et la <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Plateforme Européenne EDAA</a>.</p>
+
+        <h2>5. Conformité Réglementaire Mondiale : RGPD et CCPA</h2>
+        <p>Conformément au Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679) et au California Consumer Privacy Act (CCPA), nous affirmons que Real BMI ne vend, ne loue ni ne cède aucune donnée personnelle ou médicale à des tiers. En raison de l'absence totale de collecte de données identifiables, vos droits à l'effacement et à la portabilité sont garantis dès la racine.</p>
+
+        <h2>6. Sécurité Cryptographique des Échanges</h2>
+        <p>Notre site applique les protocoles de chiffrement Transport Layer Security (TLS 1.3) les plus récents, renforcés par des en-têtes HTTP Strict Transport Security (HSTS) et une Politique de Sécurité du Contenu (CSP) stricte, garantissant que vos interactions avec nos simulateurs restent intégralement chiffrées et protégées contre toute tentative d'interception malveillante.</p>
+
+        <h2>7. Mises à Jour de la Politique et Contact</h2>
+        <p>Nous pouvons mettre à jour la présente politique de confidentialité afin de refléter des perfectionnements techniques ou de nouvelles dispositions légales. Toute révision sera immédiatement publiée sur cette page. Pour toute interrogation concernant nos engagements de confidentialité, vous pouvez nous joindre via notre page de contact.</p>
       </div>
     </PageShell>
 </Layout>

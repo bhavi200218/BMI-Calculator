@@ -20,7 +20,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; input: strin
     steps: "Mathematical Derivation Steps",
     result: "Calculated Reference Output",
     interp: "Practical Interpretation & Context",
-    disc: "Screening Notice: Educational reference calculation only; not an individualized medical diagnosis or clinical prescription."
+    disc: "Educational Notice: This calculation is an estimate for educational use, not medical advice."
   },
   es: {
     eyebrow: "Ejemplo Práctico Verificado",
@@ -248,7 +248,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "अनुमानित विश्राम ऊर्जा व्यय", value: "1,730 कैलोरी / दिन (बीएमआर)" }
     },
     interp: {
-      en: "This represents the foundational calories expended in 24 hours purely for vital organ functions (brain, liver, heart, lungs) at total physical rest. To calculate daily calories burned with movement, multiply BMR by your physical activity multiplier (TDEE).",
+      en: "This is the energy your body burns in 24 hours at complete rest. It powers vital organ functions like your brain, heart, liver, and lungs. To find your total daily calorie burn with activity, multiply this BMR number by your activity multiplier.",
       es: "Representa las calorías que el organismo quema en 24 horas para mantener los órganos vitales en reposo completo. Para conocer el gasto total diario con movimiento, multiplique esta cifra por el factor de actividad (TDEE).",
       fr: "Représente les calories consommées en 24h pour assurer les fonctions vitales au repos strict. Pour calculer la dépense avec l'activité physique, multipliez ce chiffre par le coefficient d'activité (TDEE).",
       de: "Dieser Wert entspricht dem reinen Kalorienverbrauch im Ruhezustand zur Aufrechterhaltung der Organfunktionen. Unter Berücksichtigung von Bewegung wird dieser Wert mit dem Aktivitätsfaktor multipliziert (TDEE).",
@@ -308,7 +308,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "दैनिक मेंटेनेंस कैलोरी व्यय", value: "2,682 कैलोरी / दिन (टीडीईई)" }
     },
     interp: {
-      en: "Consuming approximately 2,682 kcal/day matches daily energy burn, maintaining current scale weight. To target sustainable body fat loss, dietary guidelines often explore a modest deficit of 300 to 500 kcal/day (target: ~2,200 to 2,380 kcal/day).",
+      en: "Eating about 2,682 calories per day matches your daily energy burn and keeps your weight steady. To lose body fat gradually, aim for a modest deficit of 300 to 500 calories per day. That brings your daily target to about 2,200 to 2,380 calories.",
       es: "Consumir aproximadamente 2,682 kcal/día mantiene el peso actual. Para perder grasa de forma sostenible, se suele establecer un déficit moderado de 300 a 500 kcal/día (objetivo: 2,180 a 2,380 kcal/día).",
       fr: "Un apport d'environ 2 682 kcal/jour stabilise le poids actuel. Pour une perte de masse grasse progressive, un déficit de 300 à 500 kcal/jour (cible : 2 200 à 2 380 kcal/jour) est couramment recommandé.",
       de: "Eine Energiezufuhr von rund 2.682 kcal/Tag hält das aktuelle Körpergewicht stabil. Zur nachhaltigen Fettreduktion empfiehlt sich ein moderates Defizit von 300 bis 500 kcal/Tag (Ziel: ~2.200 bis 2.380 kcal/Tag).",
@@ -566,7 +566,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "लक्षित हृदय गति (कार्वोनेन ज़ोन 2: 60–70% HRR)", value: "138 – 151 BPM" }
     },
     interp: {
-      en: "By anchoring workout intensity to your individual resting pulse (60 bpm), the Karvonen method personalizes cardiovascular zones compared to generic percentage formulas. Maintaining 138 to 151 bpm targets the aerobic base (Zone 2), optimizing mitochondrial lipid oxidation without inducing premature lactate accumulation. Limitations: The 220-age formula carries a standard deviation of approximately ±10 to 12 bpm. Ambient temperature, dehydration, caffeine intake, and beta-blocker medications will alter resting and exercise heart rates.",
+      en: "The Karvonen formula uses your resting pulse (60 bpm) to calculate personal workout zones. A range of 138 to 151 bpm keeps you in Zone 2. This moderate pace helps you burn fat and build endurance without tiring your muscles too quickly. Note that estimated max heart rates can vary by 10 to 12 beats per minute. Heat, stress, caffeine, and poor sleep can also change your daily heart rate.",
       es: "Al basar la intensidad en el pulso en reposo (60 lpm), Karvonen personaliza las zonas cardiovasculares respecto a fórmulas genéricas. Mantener 138 a 151 lpm sitúa el esfuerzo en la Zona 2 (base aeróbica), favoreciendo la oxidación de grasas sin generar acumulación temprana de lactato. Limitaciones: La fórmula 220-edad tiene un margen de error de ±10 a 12 lpm. El calor ambiental, la deshidratación, la cafeína y ciertos fármacos (como betabloqueantes) modifican la respuesta cardíaca.",
       fr: "En intégrant la fréquence cardiaque au repos (60 bpm), la méthode de Karvonen personnalise vos zones d'effort par rapport aux formules théoriques classiques. La plage de 138 à 151 bpm correspond à la Zone 2 (endurance fondamentale), favorisant l'oxydation des lipides sans acidose précoce. Limites : L'estimation 220-âge comporte une marge de ±10 à 12 bpm. La déshydratation, la caféine, la chaleur ou des traitements (bêtabloquants) modifient la réponse cardiaque.",
       de: "Durch die Einbeziehung des individuellen Ruhepulses (60 S/min) passt Karvonen die Trainingszonen an den individuellen Trainingszustand an. Ein Bereich von 138 bis 151 S/min entspricht der Zone 2 (aerobe Basis), die den Fettstoffwechsel optimiert, ohne Laktat anzuhäufen. Grenzen: Die Formel 220-Alter unterliegt einer biologischen Streuung von ca. ±10 bis 12 S/min. Hitze, Flüssigkeitsmangel, Koffein und Medikamente (z. B. Betablocker) beeinflussen die Herzfrequenz maßgeblich.",

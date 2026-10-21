@@ -6,6 +6,7 @@ import LatestArticles from '../../components/LatestArticles.astro';
 import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
 import HealthContent from '../../components/HealthContent.astro';
+import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.astro';
 ---
 
 <Layout 
@@ -33,10 +34,13 @@ import HealthContent from '../../components/HealthContent.astro';
 						Real BMI — 무료 건강 및 체성분 계산기
 					</h1>
 
-					<!-- Supporting H2 Subtitle -->
-					<h2 class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight">
+					<!-- Supporting H2 Subtitle & Intro -->
+					<p class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight font-display">
 						수치를 이해하고 자신 있게 계획하세요.
-					</h2>
+					</p>
+					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed pt-1">
+						WHO 및 CDC 공식 기준에 기반한 브라우저 계산기로 체질량지수(BMI), 기초대사량(BMR), 일일 총 에너지 소비량(TDEE)을 빠르고 안전하게 확인하세요.
+					</p>
 				</div>
 
 				<!-- Stats Strip -->
@@ -105,6 +109,7 @@ import HealthContent from '../../components/HealthContent.astro';
 		<!-- ═══════════════════  FEATURED GUIDES & TRUST CONTENT  ═══════════════════ -->
 		<div class="px-4 md:px-6 pt-6 pb-12">
 			<div class="max-w-7xl mx-auto space-y-12">
+				<UnderstandNumbersSection lang="ko" />
 				<EmbedWidgetBox lang="ko" />
 				<LatestArticles lang="ko" />
 				<HealthContent lang="ko" />

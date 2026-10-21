@@ -1,18 +1,60 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
-<Layout title="이용약관 | Real BMI" description="Real BMI의 공식 이용약관 안내입니다. 무료 브라우저 기반 건강 지표, 체질량지수(BMI), 기초대사량(BMR), 일일 에너지 소비량 및 체성분 계산기 서비스 이용에 관한 권리와 의무, 데이터 보안 정책, 면책 조항 및 법적 준수 사항을 상세하게 확인하시기 바랍니다.">
+<Layout 
+    title="이용약관 | Real BMI" 
+    description="Real BMI의 공식 이용약관 안내입니다. 무료 브라우저 기반 건강 지표, 체질량지수(BMI), 기초대사량(BMR), 일일 에너지 소비량 계산기 서비스 이용에 관한 권리와 의무를 확인하세요."
+>
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-12">
-        <a href="/ko/" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-            홈으로 돌아가기
-        </a>
-        <h1 class="text-5xl font-black tracking-tighter uppercase">이용약관</h1>
-        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-6 font-bold">
-            <p>Real BMI를 이용함으로써 귀하는 본 이용약관을 준수할 것에 동의하게 됩니다.</p>
+    <PageShell
+        title="이용약관"
+        eyebrow="전문 서비스 표준"
+        description="Real BMI의 계산기, 건강 지표 도구 및 개인정보 보호 중심 서비스 이용 조건을 검토하세요."
+        returnUrl="/ko/"
+        returnLabel="홈"
+    >
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-medium opacity-85">
+            <p>
+                본 이용약관은 <span class="text-[var(--foreground)] font-bold">Real BMI</span> 웹사이트에서 제공하는 계산기 및 건강 관련 콘텐츠의 이용에 관한 권리, 의무 및 책임사항을 규정합니다. 당사의 서비스를 이용함으로써 귀하는 본 약관의 모든 조항에 동의하며, 제공되는 정보가 순수한 교육 및 정보 제공 목적으로 사용됨을 확인합니다.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">서비스 및 계산 도구의 이용</h2>
+            <p>
+                이용자는 체질량지수(BMI), 기초대사량(BMR), 일일 총 에너지 소비량(TDEE) 및 신체 구성 지표를 확인하기 위해 본 도구를 자유롭게 이용할 수 있습니다. 본 서비스는 개인의 건강 증진과 기초 참고용으로 기획되었으며, 결코 의사의 전문적인 진료나 임상 처방을 대신할 수 없습니다.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">계산 공식의 정확성 및 기술적 한계</h2>
+            <p>
+                Real BMI의 계산기는 세계보건기구(WHO) 기준, 미플린-세인트 지오(Mifflin-St Jeor) 공식 등 널리 검증된 의학 및 생리학적 수식을 준용합니다. 그러나 모든 결과는 통계적 추정치이며, 개인별 실제 신체 구성(근육량, 체수분 등)에 따라 임상 검사 결과와 차이가 발생할 수 있습니다. 본 사이트는 의료기기법상 의료기기가 아닙니다.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">로컬 브라우저 연산 및 개인정보 보호</h2>
+            <p>
+                Real BMI는 이용자의 개인정보를 엄격히 보호합니다. 입력하신 신체 수치(신장, 체중, 나이, 성별 등)는 전적으로 이용자의 로컬 웹브라우저 내에서만 연산되며, 외부 웹 서버로 전송되거나 데이터베이스에 저장되지 않습니다.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">지적 재산권 및 저작권 보호</h2>
+            <p>
+                Real BMI 웹사이트에 포함된 텍스트, 사용자 인터페이스, 그래픽 디자인, 인터랙티브 3D 모델 및 알고리즘을 포함한 모든 저작물은 저작권법 및 관련 지적재산권 법률에 의해 보호됩니다. 사전 서면 승인 없는 무단 복제, 배포 및 상업적 전재를 금지합니다.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">약관의 변경 및 효력</h2>
+            <p>
+                당사는 관련 법령의 개정이나 서비스 개선을 위해 본 약관을 개정할 수 있습니다. 변경된 약관이 웹사이트에 게시된 이후에도 서비스를 계속 이용하는 경우, 변경된 약관에 동의한 것으로 간주됩니다.
+            </p>
+        
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">의사-환자 관계의 부존재 확인</h2>
+            <p>
+                Real BMI 웹사이트를 방문하고 건강 계산기를 실행하거나 이메일을 통해 문의하는 행위는 어떠한 경우에도 의료법상 의사-환자 간의 진료 계약이나 임상 치료 관계를 형성하지 않습니다. 질병의 조기 발견, 처방전 발급 및 치료 상담은 반드시 전문 의료기관을 직접 방문하여 면담을 통해 진행하시기 바랍니다.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">준거법 및 분쟁 해결 관할</h2>
+            <p>
+                본 약관의 해석 및 당사 서비스 이용과 관련하여 발생하는 모든 분쟁에 대해서는 대한민국 법률을 준거법으로 적용합니다. 서비스 이용과 관련하여 분쟁이 발생할 경우, 상호 간의 원만한 합의를 위해 성실히 협의하되, 소송이 제기될 경우 관할 법원에 소를 제기할 수 있습니다.
+            </p>
         </div>
-    </main>
+    </PageShell>
 </Layout>

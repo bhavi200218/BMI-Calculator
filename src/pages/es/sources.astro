@@ -8,49 +8,57 @@ const sources = [
     "title": "OMS Estado Físico: Uso e Interpretación de la Antropometría",
     "org": "Organización Mundial de la Salud (OMS / NLM PubMed)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/8594834/",
-    "desc": "Informe oficial que establece las categorías globales del índice de masa corporal (IMC) y puntos de corte de referencia."
+    "desc": "Informe oficial que establece las categorías globales del índice de masa corporal (IMC) y puntos de corte de referencia.",
+    "actionLabel": "Consultar informe de la OMS"
   },
   {
     "title": "Consulta de Expertos de la OMS: IMC Adecuado para Poblaciones Asiáticas",
     "org": "The Lancet (Consulta de Expertos de la OMS)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
-    "desc": "Publicación de referencia de Lancet 2004 que define los puntos de acción de salud pública (23.0 kg/m² riesgo aumentado, 27.5 kg/m² alto riesgo)."
+    "desc": "Publicación de referencia de Lancet 2004 que define los puntos de acción de salud pública (23.0 kg/m² riesgo aumentado, 27.5 kg/m² alto riesgo).",
+    "actionLabel": "Leer estudio en The Lancet"
   },
   {
     "title": "Declaración de Consenso para el Diagnóstico de Obesidad en Adultos Indios",
     "org": "ICMR & JAPI (Misra A, et al.)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
-    "desc": "Pauta de consenso nacional que establece cortes para adultos indios (18.5–22.9 normal, 23.0–24.9 sobrepeso, ≥ 25.0 obesidad)."
+    "desc": "Pauta de consenso nacional que establece cortes para adultos indios (18.5–22.9 normal, 23.0–24.9 sobrepeso, ≥ 25.0 obesidad).",
+    "actionLabel": "Ver consenso del ICMR"
   },
   {
     "title": "CDC Estándar de Índice de Masa Corporal para Adultos",
     "org": "Centros para el Control y la Prevención de Enfermedades (CDC)",
     "url": "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html",
-    "desc": "Ecuación estándar oficial del CDC para el cálculo del IMC métrico e imperial en adultos."
+    "desc": "Ecuación estándar oficial del CDC para el cálculo del IMC métrico e imperial en adultos.",
+    "actionLabel": "Consultar criterios del CDC"
   },
   {
     "title": "Nueva Ecuación Predictiva para el Gasto Energético en Reposo",
     "org": "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
-    "desc": "Ecuación predictiva de Mifflin-St Jeor para calcular la Tasa Metabólica Basal (BMR)."
+    "desc": "Ecuación predictiva de Mifflin-St Jeor para calcular la Tasa Metabólica Basal (BMR).",
+    "actionLabel": "Ver publicación de AJCN"
   },
   {
     "title": "Ecuación Logarítmica de Grasa Corporal de la Marina de EE. UU.",
     "org": "Naval Health Research Center (Hodgdon JA, Beckett WS)",
     "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/",
-    "desc": "Ecuación basada en mediciones de circunferencia para estimar el porcentaje de grasa corporal."
+    "desc": "Ecuación basada en mediciones de circunferencia para estimar el porcentaje de grasa corporal.",
+    "actionLabel": "Leer informe de investigación"
   },
   {
     "title": "Consenso IDF sobre Obesidad Abdominal y Síndrome Metabólico",
     "org": "International Diabetes Federation (IDF)",
     "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
-    "desc": "Límites de circunferencia de cintura (>90 cm hombres, >80 cm mujeres asiáticas) para evaluar el riesgo visceral."
+    "desc": "Límites de circunferencia de cintura (>90 cm hombres, >80 cm mujeres asiáticas) para evaluar el riesgo visceral.",
+    "actionLabel": "Consultar consenso de la FID"
   },
   {
     "title": "Fórmula de IMC 3D Ajustada a la Altura de Oxford 2.5",
     "org": "Universidad de Oxford (Prof. Nick Trefethen)",
     "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
-    "desc": "Ajuste matemático que compensa la distorsión del escalado corporal tridimensional en personas altas y bajas."
+    "desc": "Ajuste matemático que compensa la distorsión del escalado corporal tridimensional en personas altas y bajas.",
+    "actionLabel": "Ver documentación de Oxford"
   }
 ];
 ---
@@ -68,9 +76,14 @@ const sources = [
       returnLabel="Home"
     >
       <div class="space-y-8">
-        <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-          Estas organizaciones de salud pública, publicaciones científicas y materiales de referencia revisados por pares respaldan los cálculos de Real BMI.
-        </p>
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] font-medium leading-relaxed space-y-4">
+          <p class="text-lg">
+            La transparencia científica constituye el pilar fundamental de nuestra plataforma. Todas las fórmulas matemáticas, puntos de corte antropométricos y algoritmos metabólicos de Real BMI proceden directamente de organismos oficiales de salud pública e investigaciones clínicas revisadas por pares.
+          </p>
+          <p class="text-sm md:text-base">
+            A continuación se detallan las principales publicaciones científicas e informes institucionales que fundamentan nuestras herramientas:
+          </p>
+        </div>
 
         <div class="grid gap-6">
           {sources.map((src) => (
@@ -84,8 +97,9 @@ const sources = [
                   target="_blank" 
                   rel="noopener noreferrer" 
                   class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
+                  aria-label={`${src.actionLabel}: ${src.title}`}
                 >
-                  View Publication
+                  {src.actionLabel}
                   <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </a>
               </div>

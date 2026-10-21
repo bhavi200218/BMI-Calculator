@@ -6,6 +6,7 @@ import LatestArticles from '../../components/LatestArticles.astro';
 import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
 import HealthContent from '../../components/HealthContent.astro';
+import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.astro';
 ---
 
 <Layout 
@@ -33,10 +34,13 @@ import HealthContent from '../../components/HealthContent.astro';
 						Real BMI — मुफ़्त स्वास्थ्य एवं शारीरिक संरचना कैलकुलेटर
 					</h1>
 
-					<!-- Supporting H2 Subtitle -->
-					<h2 class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight">
+					<!-- Supporting H2 Subtitle & Intro -->
+					<p class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight font-display">
 						अपने नंबर समझें। विश्वास के साथ योजना बनाएं।
-					</h2>
+					</p>
+					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed pt-1">
+						विश्व स्वास्थ्य संगठन (WHO) और सीडीसी (CDC) मानकों पर आधारित हमारे निःशुल्क और गोपनीय कैलकुलेटर से अपना बीएमआई (BMI), बीएमआर (BMR) और टीडीईई (TDEE) आसानी से मापें।
+					</p>
 				</div>
 
 				<!-- Stats Strip -->
@@ -105,6 +109,7 @@ import HealthContent from '../../components/HealthContent.astro';
 		<!-- ═══════════════════  FEATURED GUIDES & TRUST CONTENT  ═══════════════════ -->
 		<div class="px-4 md:px-6 pt-6 pb-12">
 			<div class="max-w-7xl mx-auto space-y-12">
+				<UnderstandNumbersSection lang="hi" />
 				<EmbedWidgetBox lang="hi" />
 				<LatestArticles lang="hi" />
 				<HealthContent lang="hi" />

@@ -44,6 +44,7 @@ const data: Record<string, any> = {
     ],
     compBadge: "Health Indicator Overview",
     compTitle: "Standard BMI & Complementary Health Indicators",
+    compDesc: "Compare standard Body Mass Index (BMI) calculations with comprehensive metabolic and body composition screening metrics. While standard BMI provides a rapid population-level baseline using height and weight, it does not distinguish lean skeletal muscle from adipose tissue or account for deep visceral abdominal fat. Review how integrating Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), waist-to-hip measurements, and WHO regional thresholds provides a more complete assessment of your health.",
     colMetric: "Health Metric",
     colStd: "Standard Baseline Focus",
     colReal: "What It Evaluates",
@@ -95,6 +96,7 @@ const data: Record<string, any> = {
     ],
     compBadge: "प्रमाण-आधारित तुलना",
     compTitle: "मानक बीएमआई बनाम Real BMI कैलकुलेटर",
+    compDesc: "मानक बॉडी मास इंडेक्स (BMI) की तुलना पूरक चयापचय और शारीरिक संरचना संकेतकों से करें। यद्यपि मानक बीएमआई वजन और ऊंचाई के आधार पर त्वरित स्क्रीनिंग प्रदान करता है, यह मांसपेशियों और वसा के बीच अंतर नहीं कर पाता और न ही पेट की आंतरिक चर्बी को मापता है। जानें कि कैसे बीएमआर (BMR), टीडीईई (TDEE), कमर का माप और डब्ल्यूएचओ एशियाई मानकों का समन्वय आपके स्वास्थ्य का अधिक सटीक मूल्यांकन करता है।",
     colMetric: "स्वास्थ्य मीट्रिक / सीमा",
     colStd: "मानक बीएमआई",
     colReal: "Real BMI कैलकुलेटर",
@@ -146,6 +148,7 @@ const data: Record<string, any> = {
     ],
     compBadge: "방법론적 비교 분석",
     compTitle: "표준 BMI vs 상보적 건강 지표 비교",
+    compDesc: "표준 체질량지수(BMI)와 보완적인 대사 건강 및 신체 구성 지표를 비교해 보세요. 표준 BMI는 신장과 체중을 이용한 신속한 1차 스크리닝 기준이지만, 골격근량과 체지방을 구분하지 못하며 복부 내장지방을 측정할 수 없습니다. 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레 및 WHO 아시아 기준을 함께 고려하여 보다 정밀한 건강 평가를 확인하세요.",
     colMetric: "건강 지표 / 평가 기준",
     colStd: "표준 BMI 기준",
     colReal: "Real BMI 종합 평가",
@@ -197,6 +200,7 @@ const data: Record<string, any> = {
     ],
     compBadge: "Comparación Metodológica",
     compTitle: "IMC Estándar vs Indicadores de Salud Complementarios",
+    compDesc: "Compare el Índice de Masa Corporal (IMC) tradicional con indicadores de salud metabólica y composición corporal complementarios. Aunque el IMC ofrece un cribado poblacional rápido basado en peso y estatura, presenta limitaciones claras: no diferencia entre masa muscular y tejido adiposo ni localiza la grasa visceral profunda. A continuación, analizamos cómo la integración de la Tasa Metabólica Basal (TMB), el Gasto Energético Total Diario (GETD) y el perímetro de cintura proporciona una visión más completa y precisa de su estado físico.",
     colMetric: "Métrica / Criterio de Salud",
     colStd: "Enfoque IMC Estándar",
     colReal: "Evaluación Real BMI",
@@ -248,6 +252,7 @@ const data: Record<string, any> = {
     ],
     compBadge: "Comparaison Méthodologique",
     compTitle: "IMC Standard vs Indicateurs de Santé Complémentaires",
+    compDesc: "Comparez l'Indice de Masse Corporelle (IMC) classique avec les métriques complémentaires de santé métabolique et de composition corporelle. Si l'IMC fournit une première estimation rapide basée sur la taille et le poids, il ne distingue pas la masse musculaire du tissu adipeux et ignore la répartition des graisses viscérales abdominales. Découvrez ci-dessous comment l'intégration du métabolisme de base (BMR), de la dépense énergétique journalière (TDEE), du tour de taille et des seuils régionaux de l'OMS affine considérablement votre évaluation.",
     colMetric: "Métrique / Critère de Santé",
     colStd: "Approche Standard (Taille / Poids)",
     colReal: "Évaluation Approfondie Real BMI",
@@ -300,6 +305,7 @@ const data: Record<string, any> = {
     ],
     compBadge: "Methodischer Vergleich",
     compTitle: "Standard-BMI vs. Ergänzende Gesundheitsindikatoren",
+    compDesc: "Vergleichen Sie den klassischen Body-Mass-Index (BMI) mit ergänzenden Stoffwechsel- und Körperzusammensetzungs-Parametern. Während der Standard-BMI eine schnelle statistische Orientierung anhand von Größe und Gewicht bietet, kann er nicht zwischen Muskelmasse und Fettgewebe differenzieren und erfasst kein viszerales Bauchfett. Erfahren Sie hier, wie die Einbeziehung von Grundumsatz (BMR), Gesamtenergiebedarf (TDEE), Taillenumfang und WHO-Schwellenwerten Ihre Auswertung präzisiert.",
     colMetric: "Gesundheitsmetrik / Kriterium",
     colStd: "Standard-BMI-Skala",
     colReal: "Real BMI Gesamtanalyse",
@@ -355,9 +361,14 @@ const t = data[lang] || data.en;
 
   <!-- Comparison Table: Standard BMI vs Real BMI -->
   <div class="mt-10 space-y-4">
-    <div class="space-y-1">
-      <p class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-widest text-[var(--accent)]">{t.compBadge || "Methodology Comparison"}</p>
+    <div class="space-y-2 max-w-3xl">
+      <p class="text-xs font-mono font-bold uppercase tracking-widest text-[var(--accent)]">{t.compBadge || "Methodology Comparison"}</p>
       <h3 class="text-lg sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-snug break-words">{t.compTitle || "Standard BMI vs. Real BMI Calculator"}</h3>
+      {t.compDesc && (
+        <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium pt-1">
+          {t.compDesc}
+        </p>
+      )}
     </div>
 
     <!-- Desktop Table (hidden on mobile) -->

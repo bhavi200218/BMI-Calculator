@@ -70,6 +70,16 @@
   p, a, span, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
   }
+
+  /* Mobile usability: Ensure form controls are minimum 16px to prevent mobile auto-zoom */
+  input, select, textarea {
+    font-size: 16px;
+  }
+
+  /* Improve touch responsiveness and tap ergonomics */
+  button, a, input, select {
+    touch-action: manipulation;
+  }
 }
 
 
@@ -93,6 +103,7 @@
 
 .matte-input {
   width: 100%;
+  min-height: 48px;
   background-color: var(--input);
   border: 1.5px solid var(--border);
   color: var(--foreground);

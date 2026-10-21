@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import { calculators } from '../utils/calculators';
 
 interface Props {
@@ -97,6 +98,8 @@ const webPageSchema = {
   "name": title,
   "url": canonicalURL,
   "description": description,
+  "datePublished": "2025-01-15T00:00:00Z",
+  "dateModified": "2026-10-21T00:00:00Z",
   "author": {
     "@type": "Person",
     "name": "Bhawanshi Dosi",
@@ -178,16 +181,34 @@ const howToSchema = {
 <!doctype html>
 <html lang={currentLocale} class="dark scroll-smooth">
 	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R"></script>
-		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-9D3TJCYP4R');
-		</script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Theme Initialization (Runs synchronously before DOM render) -->
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="robots" content={robots} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+		<link rel="shortcut icon" href="/favicon.ico?v=2" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="theme-color" content="#E8674A" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Google AdSense -->
+		<meta name="google-adsense-account" content="ca-pub-6643535431949281" />
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281" crossorigin="anonymous"></script>
+
+		<!-- Preload hero background for desktop screens -->
+		<link rel="preload" as="image" href="/images/bg/2.webp" type="image/webp" media="(min-width: 768px)" />
+
+		<!-- Theme Initialization (Runs synchronously before DOM render to prevent flash) -->
 		<script is:inline>
 			(function() {
 				const stored = localStorage.getItem('theme');
@@ -199,28 +220,36 @@ const howToSchema = {
 			})();
 		</script>
 
-		<!-- Google AdSense -->
-		<meta name="google-adsense-account" content="ca-pub-6643535431949281" />
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281" crossorigin="anonymous"></script>
+		<!-- Google Consent Mode v2 & Analytics (gtag.js) -->
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
 
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
-		<link rel="shortcut icon" href="/favicon.ico?v=2" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
-		<link rel="manifest" href="/site.webmanifest" />
-		<meta name="theme-color" content="#E8674A" />
-		<meta name="generator" content={Astro.generator} />
+			var storedConsent = null;
+			try {
+				var raw = localStorage.getItem('cookie_consent_preferences');
+				if (raw) storedConsent = JSON.parse(raw);
+			} catch(e) {}
 
-		<!-- SEO Meta Tags -->
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<meta name="keywords" content={keywords} />
-		<meta name="robots" content={robots} />
-		<link rel="canonical" href={canonicalURL} />
+			if (storedConsent && storedConsent.analytics) {
+				gtag('consent', 'default', {
+					'analytics_storage': 'granted',
+					'ad_storage': storedConsent.marketing ? 'granted' : 'denied',
+					'ad_user_data': storedConsent.marketing ? 'granted' : 'denied',
+					'ad_personalization': storedConsent.marketing ? 'granted' : 'denied'
+				});
+			} else {
+				gtag('consent', 'default', {
+					'analytics_storage': 'denied',
+					'ad_storage': 'denied',
+					'ad_user_data': 'denied',
+					'ad_personalization': 'denied'
+				});
+			}
+			gtag('js', new Date());
+			gtag('config', 'G-9D3TJCYP4R');
+		</script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R"></script>
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
@@ -263,14 +292,17 @@ const howToSchema = {
 		
 		<slot name="json-ld" />
 
-		<!-- Google Fonts -->
+		<!-- Google Fonts (Optimized Non-blocking Asynchronous Pattern with font-display: swap) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+		</noscript>
 	</head>
 	<body class="bg-[var(--background)] text-[var(--foreground)] antialiased font-sans transition-colors duration-300 min-h-screen flex flex-col justify-between overflow-x-hidden relative">
-		<!-- Full-Screen Edge-to-Edge Background Image Slideshow with Cross-Fade & Ken Burns Transition -->
-		<div id="bg-slideshow" class="fixed inset-0 w-full h-full pointer-events-none z-[-2] overflow-hidden" style="background-color: var(--background);">
+		<!-- Full-Screen Edge-to-Edge Background Image Slideshow on Desktop (hidden on mobile for instant LCP & optimal contrast) -->
+		<div id="bg-slideshow" class="hidden md:block fixed inset-0 w-full h-full pointer-events-none z-[-2] overflow-hidden" style="background-color: var(--background);">
 			<div class="bg-slide active absolute inset-0 w-full h-full bg-cover bg-no-repeat" style="background-image: url('/images/bg/2.webp'); background-position: center 30%;"></div>
 			<div class="bg-slide absolute inset-0 w-full h-full bg-cover bg-no-repeat" style="background-image: url('/images/bg/4.webp'); background-position: center 20%;"></div>
 			<!-- Subtle tint overlay for theme blending -->
@@ -281,6 +313,7 @@ const howToSchema = {
 			<slot />
 		</div>
 		<Footer />
+		<CookieConsent lang={currentLocale as any || 'en'} />
 
 		<!-- Background Slideshow Script -->
 		<script is:inline>
@@ -289,6 +322,7 @@ const howToSchema = {
 				let currentSlide = 0;
 
 				function startSlideshow() {
+					if (window.innerWidth < 768) return;
 					if (slideshowTimer) clearInterval(slideshowTimer);
 					const slides = document.querySelectorAll('#bg-slideshow .bg-slide');
 					if (!slides || slides.length <= 1) return;

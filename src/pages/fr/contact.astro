@@ -3,46 +3,126 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 ---
 
-<Layout title="Contactez-nous | Real BMI Calculator" description="Contactez l'équipe de Real BMI pour toute assistance technique, retour sur nos formules, questions éditoriales ou suggestions sur nos outils de calcul.">
+<Layout title="Contactez-nous | Real BMI Calculator" description="Contactez Real BMI pour une assistance technique, des questions sur nos formules mathématiques, des propositions éditoriales ou l'utilisation de nos outils.">
     <Navbar />
-    <main class="pt-40 pb-20 px-6">
-        <div class="max-w-7xl mx-auto">
-          <div class="space-y-6 mb-12">
-            <a href="/fr/" class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.28em] text-[var(--accent)] hover:text-[var(--foreground)] transition-colors">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+    <main class="pt-36 md:pt-40 pb-20 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto space-y-12">
+          <!-- Header block -->
+          <div class="space-y-4 max-w-4xl">
+            <a href="/fr/" class="inline-flex items-center gap-2 min-h-[44px] py-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)] hover:text-[var(--foreground)] transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
               Home
             </a>
-            <p class="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">Contactez-nous</p>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tight leading-tight text-[var(--foreground)]">Contactez-nous</h1>
-            <p class="max-w-3xl text-base md:text-lg leading-relaxed text-[var(--muted-foreground)]">Pour des questions concernant les calculateurs ou la méthodologie, contactez-nous par e-mail. Cliquez sur le bouton pour ouvrir votre application mail.</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">Nous Contacter</p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight leading-tight text-[var(--foreground)]">Contact et Équipe Éditoriale</h1>
+            <p class="text-base sm:text-lg md:text-xl leading-relaxed text-[var(--muted-foreground)] font-medium pt-1">
+              Une question sur les formules mathématiques de nos simulateurs, un problème d'affichage 3D ou une suggestion sur nos guides de santé ? Écrivez directement à notre équipe.
+            </p>
           </div>
 
+          <!-- Main Layout -->
           <div class="grid gap-10 lg:grid-cols-[1.45fr_0.85fr] items-start">
-            <div class="space-y-8">
-              <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-                <p><strong>Équipe Real BMI</strong> — Nous pouvons aider pour des questions sur la précision et la méthodologie des calculateurs.</p>
-                <p>Pour le support ou les retours, cliquez sur le bouton pour envoyer un e-mail.</p>
+            <div class="space-y-10">
+              <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90 space-y-4">
+                <p>Real BMI est une initiative indépendante dédiée au développement d'outils de santé préventive respectueux de la vie privée et conformes aux publications biomédicales internationales de l'OMS et des CDC.</p>
+                <p>Veuillez consulter les sections d'orientation ci-dessous pour faciliter le traitement de votre message.</p>
               </div>
 
+              <!-- Support details grid -->
               <div class="grid gap-4 sm:grid-cols-2">
-                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-                  <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">E-mail</p>
-                  <p class="mt-3 text-base font-semibold text-[var(--foreground)]">Cliquez pour envoyer</p>
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Courrier Électronique</p>
+                  <a href="mailto:support@realbmicalculator.com" class="mt-2 text-base font-bold text-[var(--accent)] hover:underline block break-all">
+                    support@realbmicalculator.com
+                  </a>
                 </div>
-                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-                  <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Délai de réponse</p>
-                  <p class="mt-3 text-base font-semibold text-[var(--foreground)]">En général sous 24 heures les jours ouvrables</p>
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Délai de Réponse</p>
+                  <p class="mt-2 text-base font-bold text-[var(--foreground)]">Généralement sous 24 à 48 heures ouvrées</p>
                 </div>
+              </div>
+
+              <!-- Guidance & Editorial Sections -->
+              <div class="space-y-6 pt-4 border-t border-[var(--border)]">
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">1. Questions Méthodologiques et Validité Scientifique</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Nous vérifions en permanence nos algorithmes de calcul métabolique (Mifflin-St Jeor, formule d'Oxford, seuils OMS pour populations asiatiques). Vos retours d'expérience et citations biomédicales sont toujours analysés avec la plus grande rigueur.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">2. Assistance Technique et Rendu 3D WebGL</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Si vous observez un ralentissement ou une anomalie graphique sur notre Visualiseur Corporel 3D, merci de préciser votre système d'exploitation et votre navigateur (Safari, Chrome, Firefox, Edge) pour nous aider à corriger le comportement.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">3. Absence de Conseil Médical Personnalisé</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Real BMI délivre des estimations statistiques anonymes à vocation pédagogique. Notre équipe ne peut en aucun cas interpréter des bilans sanguins individuels, poser de diagnostic médical ou prescrire de traitement clinique.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">4. Protection de Votre Correspondance</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Vos échanges par courrier électronique demeurent strictement confidentiels. Nous ne transmettons aucune adresse à des réseaux publicitaires tiers et supprimons les correspondances une fois la demande traitée.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">5. Intégration de Widgets et Outils Embarqués</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Si vous gérez un site web de santé, de fitness ou une plateforme pédagogique et désirez intégrer nos calculateurs interactifs ou citer nos tableaux de référence, vous pouvez employer nos widgets iframe standards. Pour des configurations spécifiques, écrivez-nous en précisant votre support.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">6. Signalement de Nouvelles Directives Sanitaires</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Nos simulateurs s'appuient sur les consensus de l'OMS, des CDC et des sociétés savantes. Si les autorités de santé publique de votre région ont édité de nouveaux repères anthropométriques officiels, partagez-nous la référence pour étude par notre comité éditorial.</p>
+                  </div>
+                
               </div>
             </div>
 
-            <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)]">
-              <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Contact</p>
-              <h2 class="mt-4 text-3xl font-black text-[var(--foreground)]">Support par e-mail</h2>
-              <p class="mt-4 text-sm leading-relaxed text-[var(--muted-foreground)]">Cliquez ci-dessous pour ouvrir votre client mail avec l'adresse préremplie.</p>
-              <a href="mailto:support@realbmicalculator.com" class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">support@realbmicalculator.com</a>
+            <!-- Sidebar Card -->
+            <aside class="sticky top-28 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-4">
+              <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Canal Officiel</p>
+              <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight">Support par Courriel</h2>
+              <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">Cliquez sur l'adresse ci-dessous pour ouvrir votre messagerie par défaut avec notre adresse de support préremplie.</p>
+              <div class="pt-4">
+                <a href="mailto:support@realbmicalculator.com" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 px-6 py-4 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-white shadow-xs">
+                  support@realbmicalculator.com
+                </a>
+              </div>
             </aside>
           </div>
         </div>
+    
+              <!-- Support FAQ Section -->
+              <div class="faq-support-section space-y-6 pt-6 border-t border-[var(--border)]">
+                <div class="space-y-2">
+                  <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    Foire Aux Questions — Assistance & Contact
+                  </h2>
+                </div>
+                <div class="space-y-4">
+                  
+                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Comment signaler une anomalie de calcul ou suggérer une mise à jour d'algorithme ?</h3>
+                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Envoyez un e-mail à support@realbmicalculator.com en mentionnant l'URL concernée, la formule mathématique en jeu et les publications scientifiques de référence (OMS, CDC, etc.). Notre équipe éditoriale examine chaque signalement avec soin.</p>
+                    </div>
+                  
+                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Puis-je intégrer les calculateurs Real BMI sur mon site ou mon blog ?</h3>
+                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Oui. Nos widgets iframe peuvent être intégrés librement et gratuitement sur vos plateformes de santé ou de fitness, à condition de conserver le lien de citation permettant à vos lecteurs de consulter les sources scientifiques.</p>
+                    </div>
+                  
+                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Mes mensurations personnelles ou résultats de calcul sont-ils conservés ?</h3>
+                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Non. Tous les calculs s'exécutent exclusivement en local dans votre navigateur web. Aucune donnée relative à votre poids, taille ou composition corporelle n'est enregistrée ni transférée sur nos serveurs.</p>
+                    </div>
+                  
+                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Quel est le délai de réponse moyen de l'équipe éditoriale ?</h3>
+                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Nous répondons à l'ensemble des demandes sous 24 à 48 heures ouvrées. Pour les incidents techniques liés au visualiseur 3D, pensez à préciser votre navigateur et votre terminal pour faciliter la résolution.</p>
+                    </div>
+                  
+                </div>
+              </div>
+  
     </main>
 </Layout>

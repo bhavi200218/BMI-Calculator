@@ -17,17 +17,29 @@ import PageShell from '../../components/PageShell.astro';
       returnLabel="Inicio"
     >
       <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-        <p>En <strong>Real BMI</strong>, nos tomamos tu privacidad muy en serio. Nuestras calculadoras de IMC, BMR, TDEE y composición corporal están diseñadas para que tus datos personales permanezcan en tu dispositivo y nunca se almacenen en nuestros servidores.</p>
+        <p>En <strong>Real BMI</strong>, consideramos la privacidad del usuario y la seguridad de los datos biométricos como derechos fundamentales. Nuestra plataforma de calculadoras de salud —incluyendo el Índice de Masa Corporal (IMC), la Tasa Metabólica Basal (TMB), el Gasto Energético Total Diario (GETD) y las herramientas de composición corporal— se basa en una arquitectura estricta de privacidad por diseño donde sus parámetros fisiológicos permanecen exclusivamente bajo su control.</p>
 
-        <h2>Lo que recopilamos</h2>
-        <p>No recopilamos, almacenamos ni compartimos tu altura, peso, edad o datos de salud. Los cálculos se realizan localmente en tu navegador.</p>
+        <h2>1. Arquitectura de Cero Recopilación de Datos de Salud</h2>
+        <p>No recopilamos, interceptamos, almacenamos ni transmitimos ningún parámetro biométrico individual. Cuando usted introduce sus medidas corporales (estatura, peso, edad, sexo biológico, circunferencia de cintura o nivel de actividad), todas las operaciones matemáticas se ejecutan localmente en el motor JavaScript de su propio navegador web. Estos datos nunca salen de su dispositivo ni se transmiten a servidores externos ni bases de datos en la nube.</p>
 
-        <h2>Servicios de terceros y Publicidad</h2>
-        <p>No vendemos ni comercializamos tus datos. Los proveedores de terceros, incluido Google, utilizan cookies para mostrar anuncios basados en las visitas anteriores del usuario a este u otros sitios web. El uso de cookies de publicidad por parte de Google le permite a él y a sus socios mostrar anuncios basados en las visitas realizadas a sus sitios o a otros sitios de Internet.</p>
-        <p>Los usuarios pueden inhabilitar la publicidad personalizada consultando la <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Configuración de anuncios de Google</a> o visitando <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a>.</p>
+        <h2>2. Computación Local y Memoria Efímera</h2>
+        <p>Dado que todo el procesamiento se realiza en su terminal, su sesión es completamente efímera. En el momento en que cierra la pestaña, actualiza el navegador o borra su memoria caché, todos los valores numéricos introducidos y los resultados calculados se eliminan de forma inmediata de la memoria volátil. Real BMI no requiere registros ni cuentas de usuario y no vincula ningún cálculo con direcciones IP identificables.</p>
 
-        <h2>Seguridad</h2>
-        <p>Nos esforzamos por mantener Real BMI seguro con prácticas web modernas. Si tienes preguntas, contáctanos y te responderemos rápidamente.</p>
+        <h2>3. Registros Técnicos de Diagnóstico y Servidor</h2>
+        <p>Como ocurre en la infraestructura estándar de Internet, nuestros servidores de alojamiento registran automáticamente datos técnicos de diagnóstico no identificables personalmente. Esto incluye cadenas de agente de usuario del navegador, versiones del sistema operativo, URL de referencia y geolocalización de alto nivel (país y ciudad) para mitigar ciberataques de denegación de servicio (DDoS) y analizar la latencia de red. Estos registros operativos están completamente disociados del uso de las calculadoras y no contienen ninguna métrica de salud.</p>
+
+        <h2>4. Publicidad Digital y Política de Cookies</h2>
+        <p>Real BMI se financia mediante publicidad digital respetuosa para mantener nuestras herramientas abiertas y gratuitas para el público general. Proveedores externos, incluido Google, utilizan cookies y balizas web para publicar anuncios basados en visitas anteriores de los usuarios a este u otros sitios web en Internet.</p>
+        <p>Los usuarios conservan total libertad para gestionar sus preferencias y pueden inhabilitar la publicidad personalizada en cualquier momento a través de la <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Configuración de Anuncios de Google</a> o mediante portales de autorregulación como <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a> y la <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Alianza Europea de Publicidad Digital (EDAA)</a>.</p>
+
+        <h2>5. Cumplimiento Normativo Global: RGPD y CCPA</h2>
+        <p>En estricta conformidad con el Reglamento General de Protección de Datos de la Unión Europea (RGPD) y la Ley de Privacidad del Consumidor de California (CCPA), afirmamos que Real BMI no vende, no alquila ni comercializa información personal o médica con intermediarios de datos. Al no almacenar identificadores personales, los derechos de acceso, rectificación y supresión quedan intrínsecamente salvaguardados.</p>
+
+        <h2>6. Estándares Criptográficos de Seguridad</h2>
+        <p>Nuestro sitio web implementa cifrado avanzado Transport Layer Security (TLS 1.3), cabeceras HTTP Strict Transport Security (HSTS) y directivas de seguridad de contenido (CSP) para garantizar que toda interacción con nuestras herramientas sea segura, cifrada y protegida contra manipulaciones externas.</p>
+
+        <h2>7. Actualizaciones de la Política y Contacto</h2>
+        <p>Nos reservamos el derecho de actualizar esta Política de Privacidad para adaptarla a mejoras técnicas o modificaciones legislativas. Cualquier cambio será publicado de forma inmediata en esta página. Para cualquier consulta sobre nuestras prácticas de privacidad, puede comunicarse con nosotros mediante nuestra página de contacto.</p>
       </div>
     </PageShell>
 </Layout>

@@ -3,46 +3,126 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 ---
 
-<Layout title="문의하기 | Real BMI Calculator" description="Real BMI 고객 지원 및 공식 문의 안내입니다. 계산 공식 산출 방식, 의학 연구 문헌 피드백, 기능 제안, 오류 제보 또는 웹사이트 이용에 관한 모든 질문에 대해 전문적이고 투명한 답변을 제공해 드립니다. 언제든지 편안하게 문의해 주시기 바랍니다.">
+<Layout title="문의하기 | Real BMI Calculator" description="Real BMI 공식 문의 페이지입니다. 건강 계산기 수식 검증, 3D 시각화 기술 지원, 학술 제휴 및 이용 관련 피드백을 전달하세요.">
     <Navbar />
-    <main class="pt-40 pb-20 px-6">
-        <div class="max-w-7xl mx-auto">
-          <div class="space-y-6 mb-12">
-            <a href="/ko/" class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.28em] text-[var(--accent)] hover:text-[var(--foreground)] transition-colors">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+    <main class="pt-36 md:pt-40 pb-20 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto space-y-12">
+          <!-- Header block -->
+          <div class="space-y-4 max-w-4xl">
+            <a href="/ko/" class="inline-flex items-center gap-2 min-h-[44px] py-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)] hover:text-[var(--foreground)] transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
               Home
             </a>
-            <p class="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">문의하기</p>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tight leading-tight text-[var(--foreground)]">문의하기</h1>
-            <p class="max-w-3xl text-base md:text-lg leading-relaxed text-[var(--muted-foreground)]">계산기 또는 방법론에 대한 질문이 있으시면 이메일로 연락해 주세요. 이메일 프로그램을 열려면 버튼을 클릭하세요.</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">고객 지원 및 문의</p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight leading-tight text-[var(--foreground)]">고객 지원 및 편집팀 문의</h1>
+            <p class="text-base sm:text-lg md:text-xl leading-relaxed text-[var(--muted-foreground)] font-medium pt-1">
+              계산 공식의 의학적 출처, 3D 신체 시각화 도구의 기술적 오류 제보, 사이트 이용 의견이 있으신가요? 담당 팀에 직접 문의하세요.
+            </p>
           </div>
 
+          <!-- Main Layout -->
           <div class="grid gap-10 lg:grid-cols-[1.45fr_0.85fr] items-start">
-            <div class="space-y-8">
-              <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-                <p><strong>Real BMI 팀</strong> — 계산기의 정확성과 방법론에 대한 질문을 도와드립니다.</p>
-                <p>지원이나 피드백의 경우 이메일을 보내려면 버튼을 클릭하세요.</p>
+            <div class="space-y-10">
+              <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90 space-y-4">
+                <p>Real BMI는 세계보건기구(WHO) 및 질병관리청 등의 공인된 학술 문헌에 기반하여 프라이버시 중심의 건강 계산 도구를 독립적으로 개발 및 제공하는 플랫폼입니다.</p>
+                <p>신속하고 정확한 검토를 위해 아래의 안내 사항을 확인하신 후 문의해 주시기 바랍니다.</p>
               </div>
 
+              <!-- Support details grid -->
               <div class="grid gap-4 sm:grid-cols-2">
-                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-                  <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">이메일</p>
-                  <p class="mt-3 text-base font-semibold text-[var(--foreground)]">전송하려면 클릭</p>
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">이메일 지원</p>
+                  <a href="mailto:support@realbmicalculator.com" class="mt-2 text-base font-bold text-[var(--accent)] hover:underline block break-all">
+                    support@realbmicalculator.com
+                  </a>
                 </div>
-                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-                  <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">응답 시간</p>
-                  <p class="mt-3 text-base font-semibold text-[var(--foreground)]">영업일 기준 보통 24시간 이내</p>
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">평균 답변 소요 시간</p>
+                  <p class="mt-2 text-base font-bold text-[var(--foreground)]">영업일 기준 24~48시간 이내 회신</p>
                 </div>
+              </div>
+
+              <!-- Guidance & Editorial Sections -->
+              <div class="space-y-6 pt-4 border-t border-[var(--border)]">
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">1. 계산 공식 검증 및 학술적 피드백</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">미플린-세인트 지오(Mifflin-St Jeor) 기초대사량 수식, 옥스퍼드 2.5 지수 공식 및 WHO 아시아 성인 기준선 적용에 대한 연구자 및 의료진의 학술적 제언을 적극 환영합니다.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">2. 3D WebGL 그래픽 및 브라우저 호환성 문의</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">3D 바디 시각화 도구 실행 중 그래픽 지연이나 호환성 오류가 발생하는 경우, 사용 중인 기기 기종 및 브라우저 환경(Chrome, Safari, Whale 등)을 함께 알려주시면 신속히 조치하겠습니다.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">3. 개별 의료 상담 및 임상 진단 제공 불가 안내</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Real BMI의 계산기는 통계적 건강 지표를 제공하는 교육용 도구입니다. 특정 질환의 진단, 처방전 검토 또는 맞춤형 식이요법 처방과 같은 개별 의료 상담은 관련 법령에 따라 제공할 수 없습니다.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">4. 문의 이메일의 개인정보 보호 원칙</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">지원 센터로 발송된 모든 문의 메일은 엄격한 보안 하에 열람되며, 이용자의 이메일 주소는 외부 마케팅 업체에 공유되지 않고 문의 해결 목적으로만 한시적으로 보관됩니다.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">5. 외부 웹사이트 계산기 임베드(iFrame) 안내</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">건강, 피트니스 포털 또는 교육 기관 웹사이트에서 Real BMI의 계산기를 인용하거나 반응형 위젯으로 웹페이지에 삽입하고자 하는 경우 표준 임베드 코드를 자유롭게 활용하실 수 있습니다. 맞춤형 크기 조절이나 학술 인용 문의는 이메일을 통해 접수해 주세요.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">6. 국내외 의학 가이드라인 개정 제보</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">당사는 WHO, 대한비만학회 및 질병관리청의 최신 지침을 주기적으로 대조합니다. 보건 당국에서 새로운 인체 계측 기준치나 대사 질환 분별점을 공식 발표한 경우, 관련 학술 출처를 제보해 주시면 편집 검토를 거쳐 반영하겠습니다.</p>
+                  </div>
+                
               </div>
             </div>
 
-            <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)]">
-              <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">문의</p>
-              <h2 class="mt-4 text-3xl font-black text-[var(--foreground)]">이메일 지원</h2>
-              <p class="mt-4 text-sm leading-relaxed text-[var(--muted-foreground)]">아래를 클릭하면 미리 채워진 수신자 주소로 기본 메일 클라이언트가 열립니다.</p>
-              <a href="mailto:support@realbmicalculator.com" class="mt-8 inline-flex w-full items-center justify-center rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">support@realbmicalculator.com</a>
+            <!-- Sidebar Card -->
+            <aside class="sticky top-28 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-4">
+              <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">공식 문의 채널</p>
+              <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight">이메일 지원 센터</h2>
+              <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">아래 버튼을 클릭하시면 기본 이메일 프로그램이 열리며 지원 센터 주소가 자동으로 입력됩니다.</p>
+              <div class="pt-4">
+                <a href="mailto:support@realbmicalculator.com" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 px-6 py-4 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-white shadow-xs">
+                  support@realbmicalculator.com
+                </a>
+              </div>
             </aside>
           </div>
         </div>
+    
+              <!-- Support FAQ Section -->
+              <div class="faq-support-section space-y-6 pt-6 border-t border-[var(--border)]">
+                <div class="space-y-2">
+                  <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    자주 묻는 질문 (고객 지원 및 기술 문의)
+                  </h2>
+                </div>
+                <div class="space-y-4">
+                  
+                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">수식 오류를 제보하거나 새로운 의학 가이드라인을 제안하려면 어떻게 하나요?</h3>
+                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">해당 계산기 페이지 URL, 검토가 필요한 수식 및 관련 학술 출처(WHO, 질병관리청, 대한비만학회 논문 등)를 기재하여 support@realbmicalculator.com으로 메일을 보내주시면 편집팀에서 신속히 검토합니다.</p>
+                    </div>
+                  
+                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">개인 블로그나 헬스케어 포털 사이트에 계산기를 임베드할 수 있나요?</h3>
+                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">네, 가능합니다. Real BMI의 반응형 iFrame 위젯은 비영리 및 영리 웹사이트 모두에서 무료로 활용하실 수 있으며, 공식 문서 출처 확인을 위한 원본 링크를 유지해 주시면 됩니다.</p>
+                    </div>
+                  
+                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">입력한 신장, 체중 등의 건강 데이터가 서버에 저장되나요?</h3>
+                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">아닙니다. 모든 계산 과정은 사용자의 브라우저 내에서 자바스크립트 엔진을 통해 로컬로 수행됩니다. 개인의 신체 지표나 건강 결과는 당사 서버로 전송되거나 저장되지 않습니다.</p>
+                    </div>
+                  
+                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">문의 메일에 대한 고객 지원 답변 시간은 얼마나 걸리나요?</h3>
+                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">영업일 기준 24~48시간 이내에 회신해 드립니다. 3D 바디 시각화 도구의 화면 렌더링 오류 제보 시 사용 중인 운영체제와 브라우저 버전을 함께 기재해 주시면 보다 빠른 조치가 가능합니다.</p>
+                    </div>
+                  
+                </div>
+              </div>
+  
     </main>
 </Layout>

@@ -1,18 +1,60 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
-<Layout title="Términos y Condiciones | Real BMI" description="Consulte los términos y condiciones oficiales para el uso del sitio web de Real BMI, nuestras calculadoras de salud gratuitas y herramientas educativas.">
+<Layout 
+    title="Términos y Condiciones | Real BMI" 
+    description="Consulte los términos y condiciones oficiales para el uso de Real BMI, nuestras calculadoras de salud gratuitas y herramientas educativas en el navegador."
+>
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-12">
-        <a href="/es/" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-            Volver al inicio
-        </a>
-        <h1 class="text-5xl font-black tracking-tighter uppercase">Términos y Condiciones</h1>
-        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-6 font-bold">
-            <p>Al utilizar Real BMI, aceptas cumplir con estos términos y condiciones.</p>
+    <PageShell
+        title="Términos y Condiciones"
+        eyebrow="Estándares Profesionales"
+        description="Revise los términos de uso de las calculadoras, métricas de salud y la experiencia centrada en la privacidad de Real BMI."
+        returnUrl="/es/"
+        returnLabel="Inicio"
+    >
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-medium opacity-85">
+            <p>
+                Los presentes Términos y Condiciones regulan el acceso y uso de la plataforma web <span class="text-[var(--foreground)] font-bold">Real BMI</span>. Al interactuar con nuestras calculadoras, tablas y contenidos informativos, usted acepta expresamente estas disposiciones y reconoce que nuestros servicios se proporcionan con fines informativos y educativos.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Uso del Servicio y Herramientas</h2>
+            <p>
+                Usted puede utilizar Real BMI para consultar estimaciones de Índice de Masa Corporal (IMC), Tasa Metabólica Basal (TMB), Gasto Energético Total Diario (GETD) y métricas de composición corporal. El servicio está concebido para la concienciación y orientación personal en materia de bienestar, y nunca debe utilizarse como sustituto del criterio médico profesional.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Exactitud de Fórmulas y Limitaciones Técnicas</h2>
+            <p>
+                Nuestras calculadoras aplican fórmulas matemáticas científicamente validadas (como las ecuaciones de Mifflin-St Jeor, Epley y los estándares de la OMS). No obstante, los resultados individuales pueden presentar variaciones naturales respecto a análisis de laboratorio clínico. Real BMI no es un dispositivo médico certificado ni un software de telemedicina.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Privacidad en el Navegador y No Almacenamiento</h2>
+            <p>
+                Garantizamos que todas las operaciones matemáticas y entradas de datos (altura, peso, edad, género) se procesan exclusivamente en la memoria local de su navegador. Real BMI no transmite, recopila ni comercializa datos de salud personales a servidores externos ni bases de datos de terceros.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Propiedad Intelectual y Derechos Reservados</h2>
+            <p>
+                Todos los textos, interfaces gráficas, diseño visual, código fuente, algoritmos y materiales interactivos alojados en Real BMI están protegidos por leyes de propiedad intelectual e industrial internacionales. Queda prohibida su reproducción no autorizada con fines comerciales sin nuestro consentimiento previo por escrito.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">Modificaciones de los Términos</h2>
+            <p>
+                Nos reservamos el derecho de revisar y actualizar estos términos en cualquier momento para reflejar mejoras en la plataforma o cambios legislativos. El uso continuado del sitio tras la publicación de modificaciones implica su plena conformidad con las mismas.
+            </p>
+        
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">8. Legislación Aplicable y Resolución de Conflictos</h2>
+            <p>
+                Los presentes Términos y Condiciones se regirán e interpretarán de conformidad con las leyes vigentes y los estándares regulatorios aplicables al comercio electrónico y la sociedad de la información. Cualquier controversia, desacuerdo o reclamación legal que surja en relación con el acceso a la plataforma o la interpretación de estas disposiciones se someterá prioritariamente a mecanismos de resolución amistosa y, en su defecto, a la jurisdicción de los tribunales competentes.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">9. Exclusión de Relación Médico-Paciente</h2>
+            <p>
+                El acceso a Real BMI, el envío de formularios o la recepción de comunicaciones por correo electrónico no establece en ningún caso una relación contractual médico-paciente, sanitaria o de asesoramiento clínico vinculante. Para diagnósticos clínicos o prescripciones farmacológicas, acuda a su centro de salud habitual.
+            </p>
         </div>
-    </main>
+    </PageShell>
 </Layout>

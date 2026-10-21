@@ -61,7 +61,7 @@ const UI_TITLES: Record<Locale, { varTitle: string; varSubtitle: string; metricL
 
 const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: string; metric: string; imperial: string }>> = {
   weight: {
-    en: { name: 'Body Weight', desc: 'Total scale mass measured in light clothing without footwear.', metric: 'Kilograms (kg)', imperial: 'Pounds (lbs)' },
+    en: { name: 'Body Weight', desc: 'Total body weight measured on a scale in light clothing without shoes.', metric: 'Kilograms (kg)', imperial: 'Pounds (lbs)' },
     es: { name: 'Peso Corporal', desc: 'Masa total medida en báscula con ropa ligera y descalzo.', metric: 'Kilogramos (kg)', imperial: 'Libras (lbs)' },
     fr: { name: 'Poids Corporel', desc: 'Masse corporelle totale mesurée avec des vêtements légers et sans chaussures.', metric: 'Kilogrammes (kg)', imperial: 'Livres (lbs)' },
     de: { name: 'Körpergewicht', desc: 'Gesamte Körpermasse, gewogen in leichter Kleidung ohne Schuhe.', metric: 'Kilogramm (kg)', imperial: 'Pfund (lbs)' },
@@ -69,7 +69,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'शरीर का वजन', desc: 'हल्के कपड़ों में बिना जूते के मापा गया कुल शारीरिक वजन।', metric: 'किलोग्राम (kg)', imperial: 'पाउंड (lbs)' }
   },
   height: {
-    en: { name: 'Stature / Height', desc: 'Vertical height from the soles of the feet to the crown of the head while standing straight.', metric: 'Centimeters (cm)', imperial: 'Feet & Inches (ft/in)' },
+    en: { name: 'Stature / Height', desc: 'Standing height measured from the soles of your feet to the top of your head.', metric: 'Centimeters (cm)', imperial: 'Feet & Inches (ft/in)' },
     es: { name: 'Estatura / Altura', desc: 'Distancia vertical desde la planta de los pies hasta la coronilla en posición erguida.', metric: 'Centímetros (cm)', imperial: 'Pies y Pulgadas (ft/in)' },
     fr: { name: 'Taille / Stature', desc: 'Distance verticale de la plante des pieds au sommet du crâne, en position debout.', metric: 'Centimètres (cm)', imperial: 'Pieds et Pouces (ft/in)' },
     de: { name: 'Körpergröße', desc: 'Vertikaler Abstand von den Fußsohlen bis zum Scheitel bei aufrechter Haltung.', metric: 'Zentimeter (cm)', imperial: 'Fuß & Zoll (ft/in)' },
@@ -77,7 +77,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'ऊंचाई / कद', desc: 'सीधे खड़े होने पर पैरों के तलवों से लेकर सिर के शीर्ष तक की ऊर्ध्वाधर माप।', metric: 'सेंटीमीटर (cm)', imperial: 'फीट और इंच (ft/in)' }
   },
   age: {
-    en: { name: 'Chronological Age', desc: 'Completed years of life, required for age-adjusted metabolic coefficients and growth baselines.', metric: 'Years (integer)', imperial: 'Years (integer)' },
+    en: { name: 'Chronological Age', desc: 'Age in completed years. Used to calculate your daily energy needs.', metric: 'Years (integer)', imperial: 'Years (integer)' },
     es: { name: 'Edad Cronológica', desc: 'Años cumplidos, necesarios para coeficientes metabólicos ajustados por edad.', metric: 'Años (entero)', imperial: 'Años (entero)' },
     fr: { name: 'Âge Chronologique', desc: 'Années révolues, requises pour les coefficients métaboliques ajustés selon l’âge.', metric: 'Années (entier)', imperial: 'Années (entier)' },
     de: { name: 'Lebensalter', desc: 'Vollendete Lebensjahre, erforderlich für alterskorrigierte Stoffwechselkoeffizienten.', metric: 'Jahre (Ganzzahl)', imperial: 'Jahre (Ganzzahl)' },
@@ -85,7 +85,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'आयु', desc: 'पूर्ण किए गए जीवन वर्ष, जो आयु-समायोजित चयापचय गुणांक के लिए आवश्यक हैं।', metric: 'वर्ष (पूर्णांक)', imperial: 'वर्ष (पूर्णांक)' }
   },
   gender: {
-    en: { name: 'Biological Sex', desc: 'Required because biological sex significantly influences essential adipose tissue ratio and basal metabolic rate.', metric: 'Male / Female', imperial: 'Male / Female' },
+    en: { name: 'Biological Sex', desc: 'Biological sex. Needed because body fat and calorie burn differ by sex.', metric: 'Male / Female', imperial: 'Male / Female' },
     es: { name: 'Sexo Biológico', desc: 'Requerido porque el sexo biológico determina la proporción de grasa esencial y la tasa metabólica basal.', metric: 'Masculino / Femenino', imperial: 'Masculino / Femenino' },
     fr: { name: 'Sexe Biologique', desc: 'Nécessaire car le sexe biologique influence la masse grasse essentielle et le métabolisme de base.', metric: 'Homme / Femme', imperial: 'Homme / Femme' },
     de: { name: 'Biologisches Geschlecht', desc: 'Erforderlich, da das biologische Geschlecht den essenziellen Fettanteil und den Grundumsatz bestimmt.', metric: 'Männlich / Weiblich', imperial: 'Männlich / Weiblich' },
@@ -93,7 +93,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'जैविक लिंग', desc: 'आवश्यक क्योंकि जैविक लिंग आवश्यक वसा अनुपात और बेसल मेटाबोलिक दर को प्रभावित करता है।', metric: 'पुरुष / महिला', imperial: 'पुरुष / महिला' }
   },
   waist: {
-    en: { name: 'Waist Circumference', desc: 'Measured at the midpoint between the lower margin of the last palpable rib and the top of the iliac crest.', metric: 'Centimeters (cm)', imperial: 'Inches (in)' },
+    en: { name: 'Waist Circumference', desc: 'Waist circumference measured at the narrowest point above your hip bone.', metric: 'Centimeters (cm)', imperial: 'Inches (in)' },
     es: { name: 'Circunferencia de Cintura', desc: 'Medida en el punto medio entre el borde inferior de la última costilla palpable y la cresta ilíaca.', metric: 'Centímetros (cm)', imperial: 'Pulgadas (in)' },
     fr: { name: 'Tour de Taille', desc: 'Mesuré à mi-chemin entre le bord inférieur de la dernière côte palpable et la crête iliaque.', metric: 'Centimètres (cm)', imperial: 'Pouces (in)' },
     de: { name: 'Taillenumfang', desc: 'Gemessen in der Mitte zwischen dem unteren Rippenrand und der Oberkante des Beckenkamms.', metric: 'Zentimeter (cm)', imperial: 'Zoll (in)' },
@@ -101,7 +101,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'कमर की परिधि', desc: 'अंतिम पसली के निचले सिरे और कूल्हे की हड्डी के शीर्ष के मध्य बिंदु पर मापी गई परिधि।', metric: 'सेंटीमीटर (cm)', imperial: 'इंच (in)' }
   },
   hip: {
-    en: { name: 'Hip Circumference', desc: 'Measured horizontally at the point of maximum circumference over the buttocks.', metric: 'Centimeters (cm)', imperial: 'Inches (in)' },
+    en: { name: 'Hip Circumference', desc: 'Hip circumference measured around the widest point of your hips.', metric: 'Centimeters (cm)', imperial: 'Inches (in)' },
     es: { name: 'Circunferencia de Cadera', desc: 'Medida horizontalmente en el punto de máxima prominencia de los glúteos.', metric: 'Centímetros (cm)', imperial: 'Pulgadas (in)' },
     fr: { name: 'Tour de Hanches', desc: 'Mesuré horizontalement au niveau de la circonférence maximale des fessiers.', metric: 'Centimètres (cm)', imperial: 'Pouces (in)' },
     de: { name: 'Hüftumfang', desc: 'Horizontal an der breitesten Stelle des Gesäßes gemessen.', metric: 'Zentimeter (cm)', imperial: 'Zoll (in)' },
@@ -109,7 +109,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'कूल्हे की परिधि', desc: 'नितंबों के सबसे चौड़े हिस्से पर क्षैतिज रूप से मापी गई माप।', metric: 'सेंटीमीटर (cm)', imperial: 'इंच (in)' }
   },
   neck: {
-    en: { name: 'Neck Circumference', desc: 'Measured just below the laryngeal prominence (Adam’s apple), perpendicular to the long axis of the neck.', metric: 'Centimeters (cm)', imperial: 'Inches (in)' },
+    en: { name: 'Neck Circumference', desc: 'Neck circumference measured just below the Adam’s apple.', metric: 'Centimeters (cm)', imperial: 'Inches (in)' },
     es: { name: 'Circunferencia de Cuello', desc: 'Medida justo debajo de la manzana de Adán, perpendicular al eje longitudinal del cuello.', metric: 'Centímetros (cm)', imperial: 'Pulgadas (in)' },
     fr: { name: 'Tour de Cou', desc: 'Mesuré juste sous la pomme d’Adam, perpendiculairement à l’axe du cou.', metric: 'Centimètres (cm)', imperial: 'Pouces (in)' },
     de: { name: 'Halsumfang', desc: 'Direkt unterhalb des Kehlkopfs rechtwinklig zur Längsachse des Halses gemessen.', metric: 'Zentimeter (cm)', imperial: 'Zoll (in)' },
@@ -117,7 +117,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'गर्दन की परिधि', desc: 'कंठ (एडम्स एप्पल) के ठीक नीचे गर्दन के अक्ष के लंबवत मापी गई परिधि।', metric: 'सेंटीमीटर (cm)', imperial: 'इंच (in)' }
   },
   activity: {
-    en: { name: 'Physical Activity Level (PAL)', desc: 'Categorized multiplier accounting for occupational movement and structured exercise expenditure.', metric: 'Multiplier (1.2 to 1.725)', imperial: 'Multiplier (1.2 to 1.725)' },
+    en: { name: 'Physical Activity Level (PAL)', desc: 'Daily physical movement and weekly workouts used to scale your calorie burn.', metric: 'Multiplier (1.2 to 1.725)', imperial: 'Multiplier (1.2 to 1.725)' },
     es: { name: 'Nivel de Actividad Física (PAL)', desc: 'Multiplicador que pondera el movimiento laboral y el ejercicio estructurado semanal.', metric: 'Multiplicador (1.2 a 1.725)', imperial: 'Multiplicador (1.2 a 1.725)' },
     fr: { name: 'Niveau d’Activité Physique (NAP)', desc: 'Facteur multiplicateur évaluant l’activité professionnelle et les séances de sport.', metric: 'Facteur (1,2 à 1,725)', imperial: 'Facteur (1,2 à 1,725)' },
     de: { name: 'Körperliche Aktivität (PAL)', desc: 'Multiplikator zur Erfassung der beruflichen und sportlichen Energieverbrennung.', metric: 'Faktor (1,2 bis 1,725)', imperial: 'Faktor (1,2 bis 1,725)' },
@@ -125,7 +125,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'शारीरिक गतिविधि स्तर (PAL)', desc: 'दैनिक कार्य और व्यायाम की ऊर्जा खपत का मूल्यांकन करने वाला गुणक।', metric: 'गुणक (1.2 से 1.725)', imperial: 'गुणक (1.2 से 1.725)' }
   },
   goal: {
-    en: { name: 'Metabolic Goal', desc: 'Defines the energy delta applied to maintenance calories: deficit (-500 kcal), maintenance (0), or surplus (+500 kcal).', metric: 'Caloric Delta (kcal/day)', imperial: 'Caloric Delta (kcal/day)' },
+    en: { name: 'Metabolic Goal', desc: 'Your weight goal: calorie deficit for fat loss, maintenance, or surplus for muscle.', metric: 'Caloric Delta (kcal/day)', imperial: 'Caloric Delta (kcal/day)' },
     es: { name: 'Objetivo Metabólico', desc: 'Establece el balance calórico deseado: déficit (-500 kcal), mantenimiento (0) o superávit (+500 kcal).', metric: 'Delta Calórico (kcal/día)', imperial: 'Delta Calórico (kcal/día)' },
     fr: { name: 'Objectif Métabolique', desc: 'Définit le bilan énergétique ciblé : déficit (-500 kcal), maintien (0) ou surplus (+500 kcal).', metric: 'Delta Énergétique (kcal/jour)', imperial: 'Delta Énergétique (kcal/jour)' },
     de: { name: 'Kalorisches Ziel', desc: 'Definiert die Energiebilanz: Kaloriendefizit (-500 kcal), Erhalt (0) oder Kalorienüberschuss (+500 kcal).', metric: 'Delta (kcal/Tag)', imperial: 'Delta (kcal/Tag)' },
@@ -133,7 +133,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'चयापचय लक्ष्य', desc: 'कैलोरी संतुलन निर्धारित करता है: वजन घटाना (-500 किलोकैलोरी), स्थिर रखना (0), या वजन बढ़ाना (+500)।', metric: 'दैनिक परिवर्तन (kcal/दिन)', imperial: 'दैनिक परिवर्तन (kcal/दिन)' }
   },
   rhr: {
-    en: { name: 'Resting Heart Rate (RHR)', desc: 'Heart beats per minute taken at complete physical rest, ideally measured immediately upon waking.', metric: 'Beats per minute (bpm)', imperial: 'Beats per minute (bpm)' },
+    en: { name: 'Resting Heart Rate (RHR)', desc: 'Resting pulse in beats per minute, measured right after waking in bed.', metric: 'Beats per minute (bpm)', imperial: 'Beats per minute (bpm)' },
     es: { name: 'Frecuencia Cardíaca en Reposo', desc: 'Pulsaciones por minuto en reposo total, preferentemente al despertar antes de levantarse.', metric: 'Latidos por minuto (lpm)', imperial: 'Latidos por minuto (lpm)' },
     fr: { name: 'Fréquence Cardiaque au Repos (FCR)', desc: 'Battements par minute au repos complet, idéalement mesurés au réveil avant le lever.', metric: 'Battements par minute (bpm)', imperial: 'Battements par minute (bpm)' },
     de: { name: 'Ruhepuls (RHR)', desc: 'Herzschläge pro Minute in völliger körperlicher Ruhe, optimal morgens direkt nach dem Erwachen.', metric: 'Schläge pro Minute (S/min)', imperial: 'Schläge pro Minute (S/min)' },
@@ -152,7 +152,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
 
 const LIFT_VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: string; metric: string; imperial: string }>> = {
   weight: {
-    en: { name: 'Weight Lifted (Barbell Load)', desc: 'The external resistance lifted on the barbell, dumbbell, or machine for the completed repetitions.', metric: 'Kilograms (kg)', imperial: 'Pounds (lbs)' },
+    en: { name: 'Weight Lifted (Barbell Load)', desc: 'Total barbell, dumbbell, or machine weight lifted for all completed reps.', metric: 'Kilograms (kg)', imperial: 'Pounds (lbs)' },
     es: { name: 'Carga Levantada (Peso en Barra)', desc: 'La resistencia externa total desplazada en la barra o máquina durante las repeticiones completadas.', metric: 'Kilogramos (kg)', imperial: 'Libras (lbs)' },
     fr: { name: 'Charge Soulevée (Barre)', desc: 'La charge externe totale déplacée sur la barre ou la machine pour les répétitions réalisées.', metric: 'Kilogrammes (kg)', imperial: 'Livres (lbs)' },
     de: { name: 'Bewältigtes Hantelgewicht', desc: 'Die gesamte externe Last auf der Hantel oder Maschine für die absolvierten Wiederholungen.', metric: 'Kilogramm (kg)', imperial: 'Pfund (lbs)' },
@@ -160,7 +160,7 @@ const LIFT_VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; d
     hi: { name: 'उठाया गया भार (बारबेल लोड)', desc: 'पूरी की गई पुनरावृत्तियों के लिए बारबेल या मशीन पर उठाया गया कुल बाहरी वजन।', metric: 'किलोग्राम (kg)', imperial: 'पाउंड (lbs)' }
   },
   age: {
-    en: { name: 'Repetitions Completed', desc: 'The count of consecutive repetitions performed with strict technical form to momentary technical failure (optimal range: 2–10 reps).', metric: 'Rep count (integer)', imperial: 'Rep count (integer)' },
+    en: { name: 'Repetitions Completed', desc: 'Number of clean repetitions completed with good form before fatigue.', metric: 'Rep count (integer)', imperial: 'Rep count (integer)' },
     es: { name: 'Repeticiones Realizadas', desc: 'Número de repeticiones consecutivas ejecutadas con técnica estricta hasta el fallo técnico momentáneo (rango ideal: 2 a 10 reps).', metric: 'Número de repeticiones', imperial: 'Número de repeticiones' },
     fr: { name: 'Répétitions Complétées', desc: 'Nombre de répétitions consécutives effectuées avec une technique rigoureuse jusqu’à l’échec technique (plage idéale : 2 à 10 reps).', metric: 'Nombre de répétitions', imperial: 'Nombre de répétitions' },
     de: { name: 'Absolvierte Wiederholungen', desc: 'Anzahl der aufeinanderfolgenden Wiederholungen mit sauberer technischer Ausführung bis zur lokalen Muskelermüdung (optimal: 2–10 Wdh).', metric: 'Wiederholungsanzahl', imperial: 'Wiederholungsanzahl' },
@@ -221,14 +221,14 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     bmi: {
       en: {
         domain: 'bmi',
-        sectionTitle: 'Result Interpretation & Clinical Limitations',
-        sectionSubtitle: 'How to interpret your calculated score and understand population screening boundaries.',
-        interpretationTitle: 'WHO Global Reference Interpretation',
-        interpretationText: 'A Body Mass Index between 18.5 and 24.9 kg/m² defines the standard reference baseline for adult populations under World Health Organization (WHO) and CDC frameworks. Values from 25.0 to 29.9 kg/m² reflect the overweight threshold, while values ≥ 30.0 kg/m² categorize obesity tiers. These thresholds serve as broad epidemiological screening categories rather than direct measures of metabolic wellness.',
-        limitationsTitle: 'Key Physiological Limitations',
-        limitationsText: 'BMI relies solely on total body mass and stature, without distinguishing adipose tissue from skeletal muscle, bone density, or extracellular fluid. Consequently, highly muscular individuals frequently score in the overweight range despite minimal adiposity, whereas elderly adults with age-related muscle loss (sarcopenia) may display a normal BMI while carrying excess visceral fat.',
-        medicalNoticeTitle: 'Clinical Consultation Notice',
-        medicalNoticeText: 'This tool provides educational screening estimates only. A single BMI value cannot diagnose health. Consult a licensed physician for comprehensive clinical evaluations, including blood pressure, fasting glucose, and blood lipid biomarkers.'
+        sectionTitle: 'BMI Results & Health Guide',
+        sectionSubtitle: 'How to interpret your BMI score and understand its screening limits.',
+        interpretationTitle: 'WHO Adult BMI Categories',
+        interpretationText: 'A BMI between 18.5 and 24.9 is considered a healthy weight for adults by the World Health Organization (WHO) and CDC. A BMI between 25.0 and 29.9 falls in the overweight range. A score of 30.0 or higher falls into the obesity category. These numbers are general screening guidelines used to track health trends in large populations.',
+        limitationsTitle: 'Key Limitations of BMI',
+        limitationsText: 'BMI uses only your height and weight. It does not measure body fat directly or separate muscle from fat. Athletes with high muscle mass may score in the overweight range even with low body fat. In contrast, older adults who have lost muscle may have a normal BMI despite having excess body fat.',
+        medicalNoticeTitle: 'Clinical Screening Notice',
+        medicalNoticeText: 'BMI is a quick screening tool, not a medical diagnosis. Talk to your doctor for a complete health checkup, including blood pressure, blood sugar, and cholesterol tests.'
       },
       es: {
         domain: 'bmi',
@@ -357,14 +357,14 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     metabolic: {
       en: {
         domain: 'metabolic',
-        sectionTitle: 'Energy Expenditure & Metabolic Calibration',
-        sectionSubtitle: 'Scientific basis of resting metabolic rate and physical activity multipliers.',
-        interpretationTitle: 'Mifflin-St Jeor Equation & Physical Activity Multipliers',
-        interpretationText: 'Basal Metabolic Rate (BMR) represents the minimum thermal energy expended to sustain vital autonomic processes (respiration, circulation, cellular repair) at complete rest. Total Daily Energy Expenditure (TDEE) factors in physical activity multipliers (1.2 to 1.725). Consuming calories at your estimated maintenance value promotes body mass equilibrium.',
-        limitationsTitle: 'Biological Variance in Predictive Equations',
-        limitationsText: 'Mathematical energy equations provide a predictive baseline with an expected standard error of approximately ±10% to ±15%. Individual metabolic rate varies based on genetics, thyroid function, brown adipose tissue thermogenesis, and lean muscle mass. Monitor body weight trends over 3 to 4 weeks to adjust real-world caloric targets.',
-        medicalNoticeTitle: 'Nutritional Guidance Disclaimer',
-        medicalNoticeText: 'Caloric targets are educational reference baselines. Individuals with metabolic conditions, eating disorders, or endocrine disorders should consult a registered dietitian or endocrinologist before undertaking severe caloric deficits.'
+        sectionTitle: 'Energy Expenditure & Calorie Guide',
+        sectionSubtitle: 'How your body burns calories at rest and during physical activity.',
+        interpretationTitle: 'Mifflin-St Jeor Formula & Activity Multipliers',
+        interpretationText: 'Your Basal Metabolic Rate (BMR) is the energy your body burns at complete rest. It powers vital organ functions like breathing, blood flow, and cell repair. Your Total Daily Energy Expenditure (TDEE) adds the calories you burn through movement and exercise. Eating at your maintenance level keeps your weight stable. Eating fewer calories creates a deficit for weight loss. Eating more calories supports muscle growth and weight gain.',
+        limitationsTitle: 'Individual Differences in Calorie Formulas',
+        limitationsText: 'Calorie formulas provide an estimate, typically within 10% to 15% of your true burn. Real metabolic rates vary from person to person. Genetics, muscle mass, age, and hormone levels all affect your daily calorie burn. Track your scale weight for three to four weeks. Then adjust your daily calorie intake based on your real-world progress.',
+        medicalNoticeTitle: 'Nutritional Guidance Notice',
+        medicalNoticeText: 'Caloric targets are educational reference baselines. Consult a registered dietitian or doctor before starting a strict diet, especially if you have a metabolic condition.'
       },
       es: {
         domain: 'metabolic',
@@ -425,14 +425,14 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     bodycomp: {
       en: {
         domain: 'bodycomp',
-        sectionTitle: 'Body Composition & Anthropometric Estimates',
-        sectionSubtitle: 'Interpreting body fat percentage, lean body mass, and tape measurement formulas.',
-        interpretationTitle: 'Anthropometric Estimation Models',
-        interpretationText: 'Circumference-based algorithms (such as the US Navy Body Fat equation) and height-weight formulas (Boer LBM, Devine Ideal Weight) estimate the proportion of fat-free mass versus adipose tissue. These models help differentiate muscular density from excess adiposity.',
-        limitationsTitle: 'Measurement Accuracy & Technical Limitations',
-        limitationsText: 'Circumference measurements carry an inherent estimation error of approximately 3% to 4% compared to dual-energy X-ray absorptiometry (DEXA) or hydrostatic weighing. Tape positioning, tension consistency, and hydration status directly influence results.',
-        medicalNoticeTitle: 'Clinical Body Composition Context',
-        medicalNoticeText: 'Anthropometric calculations serve fitness tracking purposes and are not diagnostic scans. Individuals seeking precise body composition assessments should arrange clinical DEXA imaging.'
+        sectionTitle: 'Body Composition & Weight Guide',
+        sectionSubtitle: 'Understanding body fat, lean muscle, and healthy weight ranges.',
+        interpretationTitle: 'Body Measurement & Composition Models',
+        interpretationText: 'Body composition formulas estimate the balance between lean muscle, bone, and body fat. Height and weight formulas provide healthy reference ranges for your frame. Tape measurement methods estimate body fat using your neck, waist, and hip size. These tools help show whether extra weight comes from healthy muscle or excess body fat.',
+        limitationsTitle: 'Accuracy of Body Fat & Weight Formulas',
+        limitationsText: 'Tape measurements have an error margin of about 3% to 4% compared to clinical DEXA scans. Hydration, recent meals, and tape placement can all affect your daily numbers. Measure at the same time of day under consistent conditions for the most reliable trends.',
+        medicalNoticeTitle: 'Health Assessment Notice',
+        medicalNoticeText: 'These formulas offer practical guidelines for fitness and wellness. They do not replace a full medical evaluation by a licensed healthcare provider.'
       },
       es: {
         domain: 'bodycomp',
@@ -493,14 +493,14 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     cardio: {
       en: {
         domain: 'cardio',
-        sectionTitle: 'Cardiorespiratory & Heart Rate Zone Interpretation',
-        sectionSubtitle: 'Interpreting aerobic baselines, heart rate reserve (HRR), and training intensity zones.',
-        interpretationTitle: 'Target Heart Rate & Karvonen Formula Principles',
-        interpretationText: 'Target heart rate zones—calibrated via the standard Fox 220-age formula or the personalized Karvonen Heart Rate Reserve (HRR) equation—delineate aerobic conditioning, lactate threshold, and anaerobic performance zones. Utilizing resting heart rate in the Karvonen model accounts for individual cardiovascular baseline conditioning.',
-        limitationsTitle: 'Cardiac Physiological Variations & Formula Deviations',
-        limitationsText: 'Age-predicted maximal heart rate formulas exhibit an inherent population standard deviation of ±10 to ±12 beats per minute. Prescription medications (such as beta-blockers), caffeine, hydration status, environmental heat, and fatigue substantially alter acute cardiac response.',
-        medicalNoticeTitle: 'Cardiovascular Health & Exercise Clearance Notice',
-        medicalNoticeText: 'Consult a physician or cardiologist before commencing vigorous cardiovascular interval conditioning, particularly if you have hypertension, arrhythmia, or a history of heart disease.'
+        sectionTitle: 'Heart Rate Zones & Cardio Guide',
+        sectionSubtitle: 'How to use target heart rate zones for safe and effective aerobic workouts.',
+        interpretationTitle: 'Target Heart Rates & Karvonen Method',
+        interpretationText: 'Heart rate zones help you train at the right intensity for your fitness goals. Lower zones improve endurance, fat burning, and heart health. Higher zones build speed, power, and athletic performance. The Karvonen formula factors in your resting heart rate. This gives you a more personalized training zone than simple age-based estimates.',
+        limitationsTitle: 'Factors That Affect Your Heart Rate',
+        limitationsText: 'Age-based formulas provide a helpful starting point, but individual heart rates vary by 10 to 12 beats per minute. Medications, caffeine, stress, heat, and fatigue all change how fast your heart beats during exercise. Listen to your body and adjust your pace if you feel lightheaded or overly fatigued.',
+        medicalNoticeTitle: 'Cardiovascular Safety Notice',
+        medicalNoticeText: 'Speak with your doctor before starting vigorous cardio workouts, especially if you have high blood pressure, heart disease, or chest discomfort.'
       },
       es: {
         domain: 'cardio',
@@ -629,14 +629,14 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     specialty: {
       en: {
         domain: 'specialty',
-        sectionTitle: 'Nutritional Baselines & Clinical Context',
-        sectionSubtitle: 'Interpreting protein targets, fluid hydration needs, and screening scores.',
-        interpretationTitle: 'Evidence-Based Nutritional & Physiological Baselines',
-        interpretationText: 'Nutritional targets follow peer-reviewed sports science guidelines (such as the International Society of Sports Nutrition recommendations of 1.4–2.0 g/kg protein for active individuals) and clinical hydration standards. Specialty risk screeners categorize baseline epidemiological risk tiers.',
-        limitationsTitle: 'Individual Health Conditions & Dietary Constraints',
-        limitationsText: 'General recommendations assume unimpaired renal and hepatic function. Individuals with chronic kidney disease (CKD) or liver dysfunction require restricted protein and fluid intakes under clinical supervision. Risk screeners are not diagnostic lab tests.',
-        medicalNoticeTitle: 'Clinical Dietitian & Medical Disclaimer',
-        medicalNoticeText: 'Nutritional metrics are educational references. Consult a physician or registered dietitian before making substantial dietary alterations or if interpreting clinical risk scores.'
+        sectionTitle: 'Nutrition & Daily Needs Guide',
+        sectionSubtitle: 'Evidence-based guidelines for daily protein, hydration, and wellness targets.',
+        interpretationTitle: 'Daily Protein & Nutrition Guidelines',
+        interpretationText: 'Daily protein needs depend on your body weight and activity level. Sedentary adults need about 0.8 grams of protein per kilogram of body weight to stay healthy. Active adults and strength trainers often benefit from 1.2 to 2.0 grams per kilogram. Spreading your protein across three to four meals each day helps support muscle repair and appetite control.',
+        limitationsTitle: 'Health Conditions & Dietary Adjustments',
+        limitationsText: 'Standard protein recommendations apply to individuals with healthy kidney and liver function. People with kidney disease need to limit protein under medical supervision. Drink plenty of water throughout the day to help your body process protein efficiently.',
+        medicalNoticeTitle: 'Dietary Guidance Notice',
+        medicalNoticeText: 'These calculations serve as educational guidelines. Consult a registered dietitian or doctor before making major changes to your daily diet.'
       },
       es: {
         domain: 'specialty',

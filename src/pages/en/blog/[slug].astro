@@ -66,6 +66,26 @@ const articleSchema = {
       returnUrl="/en/blog/"
       returnLabel="Back to Articles"
     >
+      <!-- Visible Editorial Byline & Verification Card -->
+      <div class="not-prose mb-8 p-4 sm:p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-bold text-sm shadow">
+            BD
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs uppercase tracking-wider font-semibold text-[var(--muted-foreground)]">Written by</span>
+              <a href="/en/about/" class="text-sm font-bold text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">Bhawanshi Dosi</a>
+            </div>
+            <p class="text-xs text-[var(--muted-foreground)]">Founder & Health Tools Developer, Real BMI</p>
+          </div>
+        </div>
+        <div class="text-xs text-[var(--muted-foreground)] sm:text-right space-y-0.5 border-t sm:border-t-0 pt-2 sm:pt-0 border-[var(--border)]">
+          <p><span class="font-medium text-[var(--foreground)]">Published:</span> January 1, 2026</p>
+          <p><span class="font-medium text-[var(--foreground)]">Updated:</span> October 21, 2026</p>
+        </div>
+      </div>
+
       <article class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
         {articleContentHtml ? (
           <div set:html={articleContentHtml} />

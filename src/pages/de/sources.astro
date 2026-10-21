@@ -8,49 +8,57 @@ const sources = [
     "title": "WHO Physischer Status: Nutzung und Interpretation der Anthropometrie",
     "org": "Weltgesundheitsorganisation (WHO / NLM PubMed)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/8594834/",
-    "desc": "Offizieller WHO-Bericht zur Festlegung globaler BMI-Kategorien und Referenzschwellenwerte für Erwachsene."
+    "desc": "Offizieller WHO-Bericht zur Festlegung globaler BMI-Kategorien und Referenzschwellenwerte für Erwachsene.",
+    "actionLabel": "WHO-Bericht einsehen"
   },
   {
     "title": "WHO-Expertenberatung: Angemessener BMI für asiatische Bevölkerungen",
     "org": "The Lancet (WHO-Expertenberatung)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
-    "desc": "Bedeutende Lancet-Publikation 2004 mit Handlungsauslösern (23,0 kg/m² erhöhtes Risiko, 27,5 kg/m² hohes Risiko)."
+    "desc": "Bedeutende Lancet-Publikation 2004 mit Handlungsauslösern (23,0 kg/m² erhöhtes Risiko, 27,5 kg/m² hohes Risiko).",
+    "actionLabel": "Lancet-Studie lesen"
   },
   {
     "title": "Konsensus-Erklärung zur Diagnose von Adipositas bei asiatischen Indern",
     "org": "ICMR & JAPI (Misra A, et al.)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
-    "desc": "Nationale Leitlinie mit Referenzwerten (18,5–22,9 normal, 23,0–24,9 Übergewicht, ≥ 25,0 Adipositas)."
+    "desc": "Nationale Leitlinie mit Referenzwerten (18,5–22,9 normal, 23,0–24,9 Übergewicht, ≥ 25,0 Adipositas).",
+    "actionLabel": "ICMR-Leitlinie abrufen"
   },
   {
     "title": "CDC Erwachsenen-BMI-Screening-Standards",
     "org": "Centers for Disease Control and Prevention (CDC)",
     "url": "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html",
-    "desc": "Offizielle CDC-Standardgleichung für metrische und imperiale BMI-Berechnungen bei Erwachsenen."
+    "desc": "Offizielle CDC-Standardgleichung für metrische und imperiale BMI-Berechnungen bei Erwachsenen.",
+    "actionLabel": "CDC-Richtlinie öffnen"
   },
   {
     "title": "Mifflin-St Jeor Prädiktionsgleichung für den Ruheenergieverbrauch",
     "org": "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
-    "desc": "Mifflin-St Jeor Formel zur Schätzung des Basal Metabolic Rate (BMR Grundumsatz)."
+    "desc": "Mifflin-St Jeor Formel zur Schätzung des Basal Metabolic Rate (BMR Grundumsatz).",
+    "actionLabel": "AJCN-Originalstudie ansehen"
   },
   {
     "title": "US Navy Anthropometrische Logarithmus-Körperfettformel",
     "org": "Naval Health Research Center (Hodgdon JA, Beckett WS)",
     "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/",
-    "desc": "Maßbandgestützte logarithmische Formel zur Schätzung des prozentualen Körperfettanteils."
+    "desc": "Maßbandgestützte logarithmische Formel zur Schätzung des prozentualen Körperfettanteils.",
+    "actionLabel": "Forschungsbericht lesen"
   },
   {
     "title": "IDF-Konsensus zu abdominaler Adipositas und metabolischem Syndrom",
     "org": "International Diabetes Federation (IDF)",
     "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
-    "desc": "Taillenumfang-Schwellenwerte (>90 cm Männer, >80 cm Frauen) für asiatische Risikogruppen."
+    "desc": "Taillenumfang-Schwellenwerte (>90 cm Männer, >80 cm Frauen) für asiatische Risikogruppen.",
+    "actionLabel": "IDF-Konsensus prüfen"
   },
   {
     "title": "Oxford 2,5 Exponenten-Größenkorrigierte BMI-Formel",
     "org": "Universität Oxford (Prof. Nick Trefethen)",
     "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
-    "desc": "Mathematische Korrektur zur Kompensation dreidimensionaler Körperskalierungsverzerrungen."
+    "desc": "Mathematische Korrektur zur Kompensation dreidimensionaler Körperskalierungsverzerrungen.",
+    "actionLabel": "Oxford-Dokumentation aufrufen"
   }
 ];
 ---
@@ -68,9 +76,14 @@ const sources = [
       returnLabel="Home"
     >
       <div class="space-y-8">
-        <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-          Diese offiziellen Gesundheitsorganisationen und wissenschaftlichen Veröffentlichungen bilden die Grundlage aller Berechnungen auf Real BMI.
-        </p>
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] font-medium leading-relaxed space-y-4">
+          <p class="text-lg">
+            Transparenz und wissenschaftliche Fundierung stehen im Zentrum unseres Informationsportals. Alle auf Real BMI implementierten mathematischen Modelle, anthropometrischen Schwellenwerte und Kalorienformeln stützen sich direkt auf Veröffentlichungen führender Gesundheitsbehörden und von Fachkollegen begutachtete Fachliteratur.
+          </p>
+          <p class="text-sm md:text-base">
+            Nachfolgend finden Sie die zentralen Primärquellen, klinischen Leitlinien und mathematischen Forschungsarbeiten mit direkten Verweisen auf die jeweiligen wissenschaftlichen Fachpublikationen:
+          </p>
+        </div>
 
         <div class="grid gap-6">
           {sources.map((src) => (
@@ -84,8 +97,9 @@ const sources = [
                   target="_blank" 
                   rel="noopener noreferrer" 
                   class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
+                  aria-label={`${src.actionLabel}: ${src.title}`}
                 >
-                  View Publication
+                  {src.actionLabel}
                   <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </a>
               </div>

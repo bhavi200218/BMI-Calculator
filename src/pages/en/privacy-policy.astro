@@ -17,20 +17,29 @@ import PageShell from '../../components/PageShell.astro';
       returnLabel="Home"
     >
       <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-        <p>At <strong>Real BMI</strong>, we take your privacy seriously. Our BMI, BMR, TDEE, and body composition calculators are designed so that your personal inputs remain on your device and never get stored on our servers.</p>
+        <p>At <strong>Real BMI</strong>, we consider user privacy and biological data security fundamental rights. Our comprehensive suite of health calculators—including Body Mass Index (BMI), Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and body composition assessment tools—is built on an uncompromising privacy-first architecture where your physiological inputs remain exclusively under your control.</p>
 
-        <h2>What we collect</h2>
-        <p>We do not collect, store, or share your height, weight, age, or health inputs. The calculations are performed locally in your browser, making Real BMI a privacy-first health tool.</p>
+        <h2>1. Zero Health Data Collection Architecture</h2>
+        <p>We do not collect, intercept, store, or transmit your individual biometric parameters. When you enter personal health measurements—such as your stature, body weight, age, biological sex, waist circumference, or activity level—all mathematical calculations execute purely on the client-side within your device's web browser JavaScript engine. These numbers never leave your device, are never transmitted across the network to our web servers, and are never saved to any database or persistent cloud storage.</p>
 
-        <h2>How we use data</h2>
-        <p>Only anonymous usage patterns may be collected for product improvement. This helps us refine calculator accuracy, improve user experience, and optimize the site without compromising your personal health information.</p>
+        <h2>2. Local Browser Computation & Ephemeral Memory</h2>
+        <p>Because computation occurs entirely locally, your session data is ephemeral. When you navigate away from the page, refresh your browser tab, or clear your session cache, all entered parameters and calculated results are instantly purged from volatile memory. Real BMI maintains no user accounts, requires no registration or login, and links no numerical scores to identifiable IP addresses.</p>
 
-        <h2>Third-party services & Advertising</h2>
-        <p>We do not sell or trade your data. Any analytics we use are aggregated and anonymized. Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.</p>
-        <p>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Google Ads Settings</a> or <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a>.</p>
+        <h2>3. Aggregate Technical Telemetry & Essential Server Logs</h2>
+        <p>Like virtually all standard web properties, our hosting infrastructure automatically generates routine server access logs containing non-personally identifiable technical diagnostic data. This includes browser user-agent strings, operating system versions, referral URLs, requested file paths, and high-level geolocation (country and city level) to detect automated malicious traffic, mitigate distributed denial-of-service (DDoS) threats, and evaluate global server latency. These operational logs are strictly decoupled from calculator usage and contain zero health metrics.</p>
 
-        <h2>Security</h2>
-        <p>We strive to keep Real BMI secure with modern web practices. If you have questions about privacy or security, contact us and we will respond quickly.</p>
+        <h2>4. Third-Party Advertising & Cookie Disclosures</h2>
+        <p>Real BMI is supported by privacy-compliant digital advertising to keep our tools free and accessible to the public. Third-party vendors, including Google, utilize cookies and web beacons to serve advertisements based on a visitor's prior interactions with this and other websites across the Internet. Google’s use of advertising cookies enables it and its certified ad partners to deliver relevant, non-intrusive advertisements based on visits to web properties.</p>
+        <p>Visitors maintain full autonomy over their advertising preferences and may opt out of personalized ad targeting at any time by configuring their preferences in <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Google Ads Settings</a> or through industry opt-out portals such as <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a> and the <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">European Interactive Digital Advertising Alliance (EDAA)</a>.</p>
+
+        <h2>5. Global Privacy Compliance: GDPR & CCPA/CPRA</h2>
+        <p>In accordance with the European Union General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA/CPRA), we affirm that Real BMI does not sell, rent, monetize, or disclose personal health information to third-party data brokers. Because our system does not collect or associate identifiers with health records, individual requests to delete or export data are inherently satisfied by our zero-retention infrastructure.</p>
+
+        <h2>6. Cryptographic Security Standards</h2>
+        <p>Our website enforces modern Transport Layer Security (TLS 1.3) with strict HTTP Strict Transport Security (HSTS) headers, modern cipher suites, and rigorous Content Security Policies (CSP) to ensure that your interaction with our calculators remains encrypted, tamper-proof, and shielded from eavesdropping or script injection.</p>
+
+        <h2>7. Policy Amendments & Contact Inquiries</h2>
+        <p>We may periodically update this Privacy Policy to reflect technical refinements or evolving international regulatory standards. Any revisions will be published immediately on this page with an updated timestamp. If you have inquiries regarding our data practices or browser execution model, please reach out via our contact page.</p>
       </div>
     </PageShell>
 </Layout>

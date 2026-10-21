@@ -744,7 +744,7 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'tdee-calculator',
     name: { en: 'TDEE Calculator', es: 'Calculadora de TDEE', fr: 'Calculateur de TDEE', de: 'TDEE-Rechner', ko: 'TDEE 계산기', hi: 'टीडीईई कैलकुलेटर' },
-    title: { en: 'TDEE Calculator Online – Maintenance Calorie & Total Daily Energy Expenditure Calculator', es: 'Calculadora de TDEE – Gasto Energético Total Diario', fr: 'Calculateur de TDEE – Dépense Énergétique Totale', de: 'TDEE Rechner – Gesamtenergiebedarf (Total Daily Energy Expenditure)', ko: '무료 TDEE 계산기 – 일일 총 에너지 소비량 계산', hi: 'मुफ़्त टीडीईई कैलकुलेटर - Total Daily Energy Expenditure' },
+    title: { en: 'TDEE Calculator – Total Daily Energy Expenditure', es: 'Calculadora de TDEE – Gasto Energético Total Diario', fr: 'Calculateur de TDEE – Dépense Énergétique Totale', de: 'TDEE Rechner – Gesamtenergiebedarf (Total Daily Energy Expenditure)', ko: '무료 TDEE 계산기 – 일일 총 에너지 소비량 계산', hi: 'मुफ़्त टीडीईई कैलकुलेटर - Total Daily Energy Expenditure' },
     description: {
       "en": "Free TDEE Calculator Online. Calculate Total Daily Energy Expenditure (TDEE), maintenance calories, cutting deficit, and bulking targets based on activity level and BMR formulas with privacy-focused, browser calculations.",
       "es": "Calculadora de TDEE gratuita en línea. Calcula tu Gasto Energético Total Diario (TDEE), calorías de mantenimiento, déficit para perder peso y objetivos de volumen basados en tu nivel de actividad y fórmulas de BMR con cálculos privados en el navegador.",
@@ -1401,7 +1401,7 @@ export const calculators: CalculatorConfig[] = [
     name: { en: 'Target Heart Rate Zones Calculator', es: 'Calculadora de Zonas Cardíacas Objetivo', fr: 'Calculateur de Zones de Fréquence Cardiaque', de: 'Herzfrequenz-Zielzonen Rechner', ko: '목표 심박수 구간 계산기', hi: 'टारगेट हार्ट रेट ज़ोन कैलकुलेटर' },
     title: { en: 'Target Heart Rate Zones Calculator – 5 Exercise Training Zones', es: 'Calculadora de Zonas Cardíacas Objetivo – 5 Zonas de Entrenamiento', fr: 'Calculateur de Zones Cardiaques Cibles – 5 Zones d\'Entraînement', de: 'Herzfrequenz-Zielzonen Rechner – 5 Trainingszonen', ko: '목표 심박수 구간 계산기 – 5가지 운동 심박 영역', hi: 'टारगेट हार्ट रेट ज़ोन कैलकुलेटर - 5 प्रशिक्षण क्षेत्र' },
     description: {
-      "en": "Free Heart Rate Zone Calculator. Calculate target training heart rate zones (Fat Burn, Aerobic, Anaerobic, Peak) based on age, resting heart rate, and maximum heart rate with privacy-focused, browser calculations.",
+      "en": "Calculate target training intensity zones (Fat Burn, Aerobic, Anaerobic, Peak) based on age, resting pulse, and estimated maximum cardiac capacity with privacy-focused, browser calculations.",
       "es": "Calculadora de zonas de frecuencia cardíaca gratuita. Calcula tus zonas objetivo de entrenamiento (Quema de grasa, Aeróbica, Anaeróbica, Pico) según edad, frecuencia en reposo y frecuencia máxima con cálculos privados en el navegador.",
       "fr": "Calculateur de zones de fréquence cardiaque gratuit. Calculez vos zones cibles d'entraînement (Brûle-graisse, Aérobie, Anaérobie, Maximale) selon l'âge, le pouls au repos et la fréquence maximale avec calculs sur navigateur.",
       "de": "Kostenloser Herzfrequenzzonen-Rechner. Berechnen Sie Ihre Ziel-Trainingszonen (Fettverbrennung, Aerob, Anaerob, Maximal) basierend auf Alter, Ruhepuls und maximaler Herzfrequenz datenschutzorientiert im Browser.",
@@ -1448,7 +1448,7 @@ export const calculators: CalculatorConfig[] = [
     name: { en: 'Karvonen Heart Rate Reserve Calculator', es: 'Calculadora de Reserva Cardíaca Karvonen', fr: 'Calculateur de Fréquence Cardiaque Karvonen', de: 'Karvonen-Formel Pulsreserve Rechner', ko: '카르보넨 예비 심박수(HRR) 계산기', hi: 'कार्वोनेन हार्ट रेट रिजर्व कैलकुलेटर' },
     title: { en: 'Karvonen Heart Rate Reserve Calculator – Target HR & HRR Training', es: 'Calculadora Karvonen – Reserva de Frecuencia Cardíaca (HRR)', fr: 'Calculateur Karvonen – Fréquence Cardiaque et Réserve (HRR)', de: 'Karvonen Pulsreserve Rechner – Zielpuls & HRR-Training', ko: '카르보넨 심박수 계산기 – 심박수 예비량(HRR) 기반 트레이닝', hi: 'कार्वोनेन हार्ट रेट रिजर्व कैलकुलेटर - टारगेट एवं HRR' },
     description: {
-      "en": "Free Karvonen Heart Rate Calculator. Calculate Target Heart Rate (THR) zones using the Karvonen formula (Heart Rate Reserve % method) by age and resting heart rate (BPM) with privacy-focused, browser calculations.",
+      "en": "Free Karvonen Heart Rate Reserve Calculator. Calculate target cardiovascular training zones using the Karvonen formula (% HRR method) by age and resting pulse with privacy-focused, browser calculations.",
       "es": "Calculadora de frecuencia cardíaca Karvonen gratuita. Calcula las zonas de frecuencia cardíaca objetivo (THR) utilizando la fórmula de Karvonen (método de Reserva de Frecuencia Cardíaca %) según edad y frecuencia en reposo (BPM) con cálculos privados en el navegador.",
       "fr": "Calculateur de fréquence cardiaque Karvonen gratuit. Calculez les zones cibles (THR) avec la formule de Karvonen (méthode de Réserve de Fréquence Cardiaque %) selon l'âge et le pouls au repos avec calculs sur navigateur.",
       "de": "Kostenloser Karvonen-Herzfrequenz-Rechner. Berechnen Sie Ihre Zielherzfrequenz (THR) mit der Karvonen-Formel (Herzfrequenzreserve-%-Methode) nach Alter und Ruhepuls (BPM) datenschutzorientiert im Browser.",

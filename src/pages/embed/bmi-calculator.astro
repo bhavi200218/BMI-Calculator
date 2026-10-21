@@ -28,8 +28,8 @@ import Layout from '../../layouts/Layout.astro';
       
       <!-- Unit Toggle -->
       <div class="flex rounded-xl bg-[var(--muted)] p-1 border border-[var(--border)] text-xs font-semibold">
-        <button type="button" id="embed-unit-metric" class="flex-1 py-1.5 rounded-lg bg-[var(--accent)] text-white shadow-sm transition-all cursor-pointer">Metric (cm/kg)</button>
-        <button type="button" id="embed-unit-imperial" class="flex-1 py-1.5 rounded-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all cursor-pointer">Imperial (ft-in/lbs)</button>
+        <button type="button" id="embed-unit-metric" class="flex-1 min-h-[44px] py-2.5 rounded-lg bg-[var(--accent)] text-white shadow-sm transition-all cursor-pointer font-bold">Metric (cm/kg)</button>
+        <button type="button" id="embed-unit-imperial" class="flex-1 min-h-[44px] py-2.5 rounded-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all cursor-pointer font-bold">Imperial (ft-in/lbs)</button>
       </div>
 
       <!-- Inputs Grid -->
@@ -37,29 +37,29 @@ import Layout from '../../layouts/Layout.astro';
         <!-- Height Input -->
         <div id="embed-height-metric-box" class="space-y-1">
           <label class="block text-xs font-medium text-[var(--muted-foreground)]">Height (cm)</label>
-          <input type="number" id="embed-height-cm" placeholder="" min="50" max="250" class="w-full px-3 py-2 rounded-xl bg-[var(--background)] border border-[var(--border)] text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
+          <input type="number" id="embed-height-cm" placeholder="" min="50" max="250" class="w-full min-h-[44px] px-3 py-2.5 rounded-xl bg-[var(--background)] border border-[var(--border)] text-base sm:text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
         </div>
 
         <div id="embed-height-imperial-box" class="hidden grid-cols-2 gap-1.5">
           <div class="space-y-1">
             <label class="block text-xs font-medium text-[var(--muted-foreground)]">Ft</label>
-            <input type="number" id="embed-height-ft" placeholder="" min="1" max="8" class="w-full px-2 py-2 rounded-xl bg-[var(--background)] border border-[var(--border)] text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
+            <input type="number" id="embed-height-ft" placeholder="" min="1" max="8" class="w-full min-h-[44px] px-2 py-2.5 rounded-xl bg-[var(--background)] border border-[var(--border)] text-base sm:text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
           </div>
           <div class="space-y-1">
             <label class="block text-xs font-medium text-[var(--muted-foreground)]">In</label>
-            <input type="number" id="embed-height-in" placeholder="" min="0" max="11" class="w-full px-2 py-2 rounded-xl bg-[var(--background)] border border-[var(--border)] text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
+            <input type="number" id="embed-height-in" placeholder="" min="0" max="11" class="w-full min-h-[44px] px-2 py-2.5 rounded-xl bg-[var(--background)] border border-[var(--border)] text-base sm:text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
           </div>
         </div>
 
         <!-- Weight Input -->
         <div class="space-y-1">
           <label id="embed-weight-label" class="block text-xs font-medium text-[var(--muted-foreground)]">Weight (kg)</label>
-          <input type="number" id="embed-weight" placeholder="" min="20" max="300" class="w-full px-3 py-2 rounded-xl bg-[var(--background)] border border-[var(--border)] text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
+          <input type="number" id="embed-weight" placeholder="" min="20" max="300" class="w-full min-h-[44px] px-3 py-2.5 rounded-xl bg-[var(--background)] border border-[var(--border)] text-base sm:text-sm text-[var(--foreground)] font-bold focus:border-[var(--accent)] focus:outline-none transition-colors" />
         </div>
       </div>
 
       <!-- Calculate Button -->
-      <button type="button" id="embed-calc-btn" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-[var(--accent)] to-orange-500 text-white font-display font-bold text-sm uppercase tracking-wider shadow-lg hover:brightness-110 active:scale-[0.99] transition-all cursor-pointer">
+      <button type="button" id="embed-calc-btn" class="w-full min-h-[48px] py-3.5 rounded-xl bg-gradient-to-r from-[var(--accent)] to-orange-500 text-white font-display font-bold text-sm uppercase tracking-wider shadow-lg hover:brightness-110 active:scale-[0.99] transition-all cursor-pointer">
         Calculate Real BMI
       </button>
 
@@ -84,7 +84,7 @@ import Layout from '../../layouts/Layout.astro';
     <!-- Mandatory Footer Backlink for Viral SEO Link Equity -->
     <div class="mt-4 text-center text-xs text-[var(--muted-foreground)] flex items-center justify-center gap-1.5">
       <span>Powered by</span>
-      <a href="https://realbmicalculator.com" target="_blank" rel="noopener" class="font-bold text-[var(--accent)] hover:underline flex items-center gap-1">
+      <a href="https://realbmicalculator.com/en/" target="_blank" rel="noopener" class="font-bold text-[var(--accent)] hover:underline flex items-center gap-1">
         Real BMI Calculator
         <svg class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
       </a>

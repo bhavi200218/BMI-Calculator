@@ -1,52 +1,360 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
-import PageShell from '../../components/PageShell.astro';
 ---
 
-<Layout 
-    title="Contact Real BMI Calculator | Support & Feedback"
-    description="Contact Real BMI for technical support, mathematical formula feedback, editorial suggestions, or questions regarding our health and fitness calculators."
->
+<Layout title="Contact Us | Real BMI Calculator" description="Contact Real BMI for technical support, mathematical formula feedback, editorial inquiries, or suggestions regarding our health and fitness calculators.">
     <Navbar />
-    <PageShell
-      title="Contact Us"
-      eyebrow="Support for Real BMI"
-      description="Reach out for help with calculators, accuracy questions, and health insight requests."
-      returnUrl="/en/"
-      returnLabel="Home"
-    >
-      <div class="grid gap-10 lg:grid-cols-[1.45fr_0.85fr] items-start">
-        <div class="space-y-8">
-          <div class="space-y-5 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-            <p>Need help understanding your BMI, BMR, TDEE, body fat, or nutrition estimates? I maintain Real BMI and review calculator feedback, formula questions, and support requests directly.</p>
-            <p>For questions about calculator methodology, reference formulas, or website usability, send a message with the tool name and your feedback.</p>
+    <main class="pt-36 md:pt-40 pb-20 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto space-y-12">
+          <!-- Header block -->
+          <div class="space-y-4 max-w-4xl">
+            <a href="/en/" class="inline-flex items-center gap-2 min-h-[44px] py-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)] hover:text-[var(--foreground)] transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+              Home
+            </a>
+            <p class="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">Get in Touch</p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight leading-tight text-[var(--foreground)]">Contact Support & Editorial Team</h1>
+            <p class="text-base sm:text-lg md:text-xl leading-relaxed text-[var(--muted-foreground)] font-medium pt-1">
+              Have a question about our calculator formulas, a technical issue with 3D visualization, or feedback on our health guides? Reach out directly to our team.
+            </p>
           </div>
 
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-xs uppercase tracking-[0.28em] font-semibold text-[var(--accent)]">Response time</p>
-              <p class="mt-3 text-base font-semibold text-[var(--foreground)]">Typically within 24 hours on business days</p>
-            </div>
-            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-xs uppercase tracking-[0.28em] font-semibold text-[var(--accent)]">Message</p>
-              <p class="mt-3 text-base text-[var(--muted-foreground)] leading-relaxed">For inquiries, support, or feedback, please email <a href="mailto:support@realbmicalculator.com" class="text-[var(--accent)] font-semibold hover:underline">support@realbmicalculator.com</a>.</p>
-            </div>
-          </div>
+          <!-- Main Layout -->
+          <div class="grid gap-10 lg:grid-cols-[1.45fr_0.85fr] items-start">
+            <div class="space-y-10">
+              <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90 space-y-4">
+                <p>Real BMI is an independent health engineering platform dedicated to providing transparent, privacy-first wellness tools based on peer-reviewed published algorithms. We welcome inquiries from visitors, healthcare professionals, fitness coaches, and researchers.</p>
+                <p>Please review our communication guidelines below to ensure your message reaches the appropriate review queue.</p>
+              </div>
 
-          <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-            <h2 class="text-2xl font-black text-[var(--foreground)]">What to include</h2>
-            <p class="mt-3 text-base text-[var(--muted-foreground)] leading-relaxed">Please include the calculator name, your specific question or feedback, so I can respond with helpful information.</p>
+              <!-- Support details grid -->
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Email Support</p>
+                  <a href="mailto:support@realbmicalculator.com" class="mt-2 text-base font-bold text-[var(--accent)] hover:underline block break-all">
+                    support@realbmicalculator.com
+                  </a>
+                </div>
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Response Time</p>
+                  <p class="mt-2 text-base font-bold text-[var(--foreground)]">Within 24–48 hours on business days</p>
+                </div>
+              </div>
+
+              <!-- Interactive Contact Form -->
+              <div class="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 sm:p-8 shadow-xs space-y-6">
+                <div class="space-y-2">
+                  <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    Send Us a Direct Message
+                  </h2>
+                  <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
+                    Have feedback on our algorithms, an inquiry about calculator embedding, or a bug report? Complete the form below and our editorial and engineering team will assist you.
+                  </p>
+                </div>
+
+                <form id="contactForm" class="space-y-5" novalidate>
+                  <!-- Anti-spam Honeypot -->
+                  <div class="hidden" aria-hidden="true">
+                    <label for="contact-honey">Leave this field blank</label>
+                    <input type="text" id="contact-honey" name="_honey" tabindex="-1" autocomplete="off" />
+                  </div>
+
+                  <div class="grid gap-4 sm:grid-cols-2">
+                    <!-- Name Field -->
+                    <div class="space-y-1.5">
+                      <label for="contact-name" class="block text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+                        Full Name <span class="text-red-500" aria-hidden="true">*</span>
+                      </label>
+                      <input 
+                        type="text" 
+                        id="contact-name" 
+                        name="name" 
+                        required 
+                        minlength="2" 
+                        maxlength="100" 
+                        autocomplete="name"
+                        placeholder="e.g. Dr. Alex Morgan"
+                        class="w-full px-4 py-3 text-sm rounded-xl border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/60 focus:outline-hidden focus:ring-2 focus:ring-[var(--accent)]/40 focus:border-[var(--accent)] transition-all"
+                        aria-required="true"
+                      />
+                      <p id="nameError" class="text-xs text-red-500 hidden font-medium"></p>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="space-y-1.5">
+                      <label for="contact-email" class="block text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+                        Email Address <span class="text-red-500" aria-hidden="true">*</span>
+                      </label>
+                      <input 
+                        type="email" 
+                        id="contact-email" 
+                        name="email" 
+                        required 
+                        maxlength="254" 
+                        autocomplete="email"
+                        placeholder="alex@example.com"
+                        class="w-full px-4 py-3 text-sm rounded-xl border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/60 focus:outline-hidden focus:ring-2 focus:ring-[var(--accent)]/40 focus:border-[var(--accent)] transition-all"
+                        aria-required="true"
+                      />
+                      <p id="emailError" class="text-xs text-red-500 hidden font-medium"></p>
+                    </div>
+                  </div>
+
+                  <!-- Subject Field -->
+                  <div class="space-y-1.5">
+                    <label for="contact-subject" class="block text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+                      Subject <span class="text-xs font-normal text-[var(--muted-foreground)] lowercase">(optional)</span>
+                    </label>
+                    <select 
+                      id="contact-subject" 
+                      name="subject"
+                      class="w-full px-4 py-3 text-sm rounded-xl border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:outline-hidden focus:ring-2 focus:ring-[var(--accent)]/40 focus:border-[var(--accent)] transition-all cursor-pointer"
+                    >
+                      <option value="Formula Feedback & Academic Research">Formula Feedback & Academic Research</option>
+                      <option value="3D Body Visualizer & Technical Bug">3D Body Visualizer & Technical Bug</option>
+                      <option value="Calculator Embedding / Iframe Integration">Calculator Embedding / Iframe Integration</option>
+                      <option value="Editorial Policy & Reference Table Update">Editorial Policy & Reference Table Update</option>
+                      <option value="General Health Calculator Inquiry">General Health Calculator Inquiry</option>
+                    </select>
+                  </div>
+
+                  <!-- Message Field -->
+                  <div class="space-y-1.5">
+                    <label for="contact-message" class="block text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+                      Message <span class="text-red-500" aria-hidden="true">*</span>
+                    </label>
+                    <textarea 
+                      id="contact-message" 
+                      name="message" 
+                      required 
+                      minlength="10" 
+                      maxlength="3000" 
+                      rows="5"
+                      placeholder="Please share your feedback, bug report, or inquiry..."
+                      class="w-full px-4 py-3 text-sm rounded-xl border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/60 focus:outline-hidden focus:ring-2 focus:ring-[var(--accent)]/40 focus:border-[var(--accent)] transition-all resize-y"
+                      aria-required="true"
+                    ></textarea>
+                    <div class="flex justify-between items-center text-xs text-[var(--muted-foreground)]">
+                      <p id="messageError" class="text-red-500 hidden font-medium"></p>
+                      <p id="charCount" class="ml-auto font-medium">Minimum 10 characters</p>
+                    </div>
+                  </div>
+
+                  <!-- Privacy Notice -->
+                  <div class="rounded-xl bg-[var(--muted)]/50 border border-[var(--border)]/70 p-4">
+                    <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+                      <strong class="text-[var(--foreground)]">Privacy Guarantee:</strong> By submitting this form, you acknowledge that your submitted contact details are transmitted securely and processed exclusively to answer your inquiry in accordance with our <a href="/en/privacy-policy/" class="text-[var(--accent)] underline hover:text-[var(--foreground)]">Privacy Policy</a>. We never sell, rent, or share personal contact details with third-party marketing networks.
+                    </p>
+                  </div>
+
+                  <!-- Feedback Alert Box -->
+                  <div id="formFeedback" class="hidden p-4 rounded-xl text-sm font-medium leading-relaxed" role="alert"></div>
+
+                  <!-- Action Buttons -->
+                  <div class="flex items-center gap-4 flex-wrap">
+                    <button 
+                      type="submit" 
+                      id="submitBtn"
+                      class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--accent)] text-white text-xs font-display font-bold uppercase tracking-widest hover:opacity-95 active:scale-[0.99] transition-all cursor-pointer shadow-md disabled:opacity-50"
+                    >
+                      <span id="btnText">Send Message</span>
+                      <svg id="btnSpinner" class="hidden w-4 h-4 animate-spin text-white" viewBox="0 0 24 24" fill="none">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                      </svg>
+                    </button>
+                    <span class="text-xs text-[var(--muted-foreground)] font-medium">
+                      or reach us directly at <a href="mailto:support@realbmicalculator.com" class="text-[var(--accent)] underline font-bold">support@realbmicalculator.com</a>
+                    </span>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Script for Contact Form Handling -->
+              <script is:inline>
+                (function() {
+                  const form = document.getElementById('contactForm');
+                  if (!form) return;
+
+                  const nameInput = document.getElementById('contact-name');
+                  const emailInput = document.getElementById('contact-email');
+                  const subjectInput = document.getElementById('contact-subject');
+                  const messageInput = document.getElementById('contact-message');
+                  const honeyInput = document.getElementById('contact-honey');
+
+                  const nameError = document.getElementById('nameError');
+                  const emailError = document.getElementById('emailError');
+                  const messageError = document.getElementById('messageError');
+                  const feedback = document.getElementById('formFeedback');
+                  const submitBtn = document.getElementById('submitBtn');
+                  const btnText = document.getElementById('btnText');
+                  const btnSpinner = document.getElementById('btnSpinner');
+
+                  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                  function resetErrors() {
+                    nameError.classList.add('hidden');
+                    emailError.classList.add('hidden');
+                    messageError.classList.add('hidden');
+                    nameInput.classList.remove('border-red-500');
+                    emailInput.classList.remove('border-red-500');
+                    messageInput.classList.remove('border-red-500');
+                  }
+
+                  form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    resetErrors();
+
+                    let hasError = false;
+                    const name = nameInput.value.trim();
+                    const email = emailInput.value.trim();
+                    const subject = subjectInput.value.trim();
+                    const message = messageInput.value.trim();
+                    const honey = honeyInput ? honeyInput.value.trim() : '';
+
+                    if (name.length < 2) {
+                      nameError.textContent = 'Please enter your full name (minimum 2 characters).';
+                      nameError.classList.remove('hidden');
+                      nameInput.classList.add('border-red-500');
+                      hasError = true;
+                    }
+
+                    if (!emailRegex.test(email)) {
+                      emailError.textContent = 'Please enter a valid email address.';
+                      emailError.classList.remove('hidden');
+                      emailInput.classList.add('border-red-500');
+                      hasError = true;
+                    }
+
+                    if (message.length < 10) {
+                      messageError.textContent = 'Please enter a detailed message (minimum 10 characters).';
+                      messageError.classList.remove('hidden');
+                      messageInput.classList.add('border-red-500');
+                      hasError = true;
+                    }
+
+                    if (hasError) return;
+
+                    // UI Loading State
+                    submitBtn.disabled = true;
+                    btnText.textContent = 'Sending...';
+                    btnSpinner.classList.remove('hidden');
+                    feedback.classList.add('hidden');
+
+                    try {
+                      const res = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, subject, message, _honey: honey })
+                      });
+
+                      const data = await res.json().catch(() => ({}));
+
+                      if (res.ok && data.success) {
+                        feedback.className = 'p-4 rounded-xl text-sm font-medium leading-relaxed bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400';
+                        feedback.innerHTML = '<strong>Message Sent Successfully!</strong> Thank you for contacting Real BMI. Our team will review your inquiry and respond within 24–48 hours.';
+                        feedback.classList.remove('hidden');
+                        form.reset();
+                      } else if (data.requiresConfig || res.status === 503) {
+                        // Transparent fallback to prefilled direct mailto
+                        const mailtoUrl = 'mailto:support@realbmicalculator.com?subject=' + encodeURIComponent('[' + subject + '] ' + name) + '&body=' + encodeURIComponent('From: ' + name + ' <' + email + '>\n\n' + message);
+                        feedback.className = 'p-5 rounded-xl text-sm font-medium leading-relaxed bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 space-y-3';
+                        feedback.innerHTML = '<div><strong>Direct Email Pre-Configured:</strong> Your message is validated and ready. Click the button below to send it directly to our team via your email client:</div>' +
+                          '<div class="pt-1"><a href="' + mailtoUrl + '" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] text-white text-xs font-display font-bold uppercase tracking-wider hover:opacity-90 transition-all shadow-xs">Send via Email App &rarr;</a></div>';
+                        feedback.classList.remove('hidden');
+                      } else {
+                        throw new Error(data.error || 'Server returned an error.');
+                      }
+                    } catch (err) {
+                      const mailtoUrl = 'mailto:support@realbmicalculator.com?subject=' + encodeURIComponent('[' + subject + '] ' + name) + '&body=' + encodeURIComponent('From: ' + name + ' <' + email + '>\n\n' + message);
+                      feedback.className = 'p-5 rounded-xl text-sm font-medium leading-relaxed bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 space-y-3';
+                      feedback.innerHTML = '<div><strong>Notice:</strong> Unable to dispatch directly via web API. Please send your message directly to our inbox:</div>' +
+                        '<div class="pt-1"><a href="' + mailtoUrl + '" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] text-white text-xs font-display font-bold uppercase tracking-wider hover:opacity-90 transition-all shadow-xs">Send via Email App &rarr;</a></div>';
+                      feedback.classList.remove('hidden');
+                    } finally {
+                      submitBtn.disabled = false;
+                      btnText.textContent = 'Send Message';
+                      btnSpinner.classList.remove('hidden');
+                      btnSpinner.classList.add('hidden');
+                    }
+                  });
+                })();
+              </script>
+
+              <!-- Guidance & Editorial Sections -->
+              <div class="space-y-6 pt-4 border-t border-[var(--border)]">
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">1. Formula Questions & Scientific Feedback</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">We constantly verify our implementations of the Mifflin-St Jeor equation, Oxford 2.5 BMI models, and WHO Asian risk thresholds. If you have academic feedback, citations, or suggestions for improving reference tables, our editorial review team welcomes your notes.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">2. Technical Troubleshooting & 3D WebGL Support</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Encountering rendering issues with the 3D Body Visualizer or interactive charts? Please include your operating system, device model, and browser version (Chrome, Safari, Edge, or Firefox) so our engineering staff can replicate and resolve the issue quickly.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">3. Absence of Individual Medical Advice</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Real BMI provides population-level educational screening tools and cannot review personal medical lab results, diagnose clinical conditions, or provide individualized medication or diet advice. Inquiries requesting personalized medical diagnoses cannot be answered.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">4. Privacy & Email Communications</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Any correspondence sent to our support inbox is treated with strict confidentiality. We do not sell or share contact email addresses with external marketing networks, and correspondence is retained solely to assist in resolving your query.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">5. Calculator Embedding & API Integrations</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">If you operate a health, fitness, or educational website and wish to embed our interactive calculators or link to our reference guides, you may use our standard iframe widgets. For custom sizing or academic use, please email us with details about your publication.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">6. Feedback on Medical Reference Cutoffs</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">We cross-reference our tools against consensus guidelines from the WHO, CDC, NHLBI, and ICMR. If national health authorities in your region have recently published revised anthropometric guidelines, please send us the citation so our editorial board can evaluate an update.</p>
+                  </div>
+                
+              <!-- Support FAQ Section -->
+              <div class="faq-support-section space-y-6 pt-6 border-t border-[var(--border)]">
+                <div class="space-y-2">
+                  <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    Frequently Asked Support Questions
+                  </h2>
+                </div>
+                <div class="space-y-4">
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">How can I report a mathematical error or suggest a formula update?</h3>
+                    <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Send an email to support@realbmicalculator.com with the specific calculator URL, the mathematical formula or variable in question, and academic citations (such as WHO, CDC, or PubMed articles). Our editorial board reviews all formula feedback within 48 hours.</p>
+                  </div>
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Can I embed Real BMI calculators on my blog, clinic, or gym website?</h3>
+                    <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Yes. You may use our embed widget iframe freely on non-commercial and commercial websites. We ask that you maintain the attribution link back to realbmicalculator.com so your users can access complete formula documentation.</p>
+                  </div>
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Are my health numbers, weight, or personal measurements stored on your servers?</h3>
+                    <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">No. All calculations are processed locally inside your web browser using JavaScript. No biometric parameters, heights, weights, or body fat numbers are ever transmitted to our servers or stored in any database.</p>
+                  </div>
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">How quickly does the Real BMI technical team respond to messages?</h3>
+                    <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">We review and respond to inquiries within 24 to 48 business hours. For urgent bug reports regarding 3D WebGL rendering or calculator malfunction, please include your device and browser version to expedite replication.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar Card -->
+            <aside class="sticky top-28 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-4">
+              <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Official Channel</p>
+              <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight">Electronic Mail</h2>
+              <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">Click the address below to open your preferred email application with our support destination pre-configured.</p>
+              <div class="pt-4">
+                <a href="mailto:support@realbmicalculator.com" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 px-6 py-4 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-white shadow-xs">
+                  support@realbmicalculator.com
+                </a>
+              </div>
+            </aside>
           </div>
         </div>
-
-        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-5 sm:p-8 shadow-[var(--shadow-soft)]">
-          <a href="mailto:support@realbmicalculator.com" class="inline-flex w-full items-center justify-center rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-4 py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider text-[var(--accent)] transition hover:bg-[var(--accent)]/15 text-center">support@realbmicalculator.com</a>
-          <div class="mt-8 space-y-3 text-sm text-[var(--muted-foreground)] leading-relaxed">
-            <p><strong>Note:</strong> Direct email is the best way to reach me for calculator feedback and site suggestions.</p>
-            <p>I aim to respond within 24 hours on business days to improve clarity and usability across the website.</p>
-          </div>
-        </aside>
-      </div>
-    </PageShell>
+    </main>
 </Layout>

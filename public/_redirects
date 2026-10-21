@@ -91,8 +91,20 @@
 /karvonen-heart-rate-calculator/  /en/karvonen-heart-rate-calculator/  301
 /1rm-calculator  /en/1rm-calculator/  301
 /1rm-calculator/  /en/1rm-calculator/  301
-/one-rep-max-calculator  /en/one-rep-max-calculator/  301
-/one-rep-max-calculator/  /en/one-rep-max-calculator/  301
+/one-rep-max-calculator  /en/1rm-calculator/  301
+/one-rep-max-calculator/  /en/1rm-calculator/  301
+/en/one-rep-max-calculator  /en/1rm-calculator/  301
+/en/one-rep-max-calculator/  /en/1rm-calculator/  301
+/es/one-rep-max-calculator  /es/1rm-calculator/  301
+/es/one-rep-max-calculator/  /es/1rm-calculator/  301
+/fr/one-rep-max-calculator  /fr/1rm-calculator/  301
+/fr/one-rep-max-calculator/  /fr/1rm-calculator/  301
+/de/one-rep-max-calculator  /de/1rm-calculator/  301
+/de/one-rep-max-calculator/  /de/1rm-calculator/  301
+/ko/one-rep-max-calculator  /ko/1rm-calculator/  301
+/ko/one-rep-max-calculator/  /ko/1rm-calculator/  301
+/hi/one-rep-max-calculator  /hi/1rm-calculator/  301
+/hi/one-rep-max-calculator/  /hi/1rm-calculator/  301
 /heart-rate-zone-calculator  /en/heart-rate-zone-calculator/  301
 /heart-rate-zone-calculator/  /en/heart-rate-zone-calculator/  301
 
@@ -326,3 +338,13 @@
 /de/embed/*  /embed/:splat  301
 /ko/embed/*  /embed/:splat  301
 /hi/embed/*  /embed/:splat  301
+
+# Audit & User Typo Defensive Redirects
+/es/teres-conditions  /es/terms-conditions/  301
+/es/teres-conditions/  /es/terms-conditions/  301
+/en/heart-rate-zine-calculator  /en/heart-rate-zone-calculator/  301
+/en/heart-rate-zine-calculator/  /en/heart-rate-zone-calculator/  301
+/de/bni-calculator-for-indians  /de/bmi-calculator-for-indians/  301
+/de/bni-calculator-for-indians/  /de/bmi-calculator-for-indians/  301
+/en/bni-calculator-for-indians  /en/bmi-calculator-for-indians/  301
+/en/bni-calculator-for-indians/  /en/bmi-calculator-for-indians/  301

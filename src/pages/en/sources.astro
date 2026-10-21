@@ -8,49 +8,57 @@ const sources = [
     "title": "WHO Physical Status: The Use and Interpretation of Anthropometry",
     "org": "World Health Organization (WHO / NLM PubMed)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/8594834/",
-    "desc": "Official report establishing global body mass index (BMI) categories and reference cutoff benchmarks for adults."
+    "desc": "Official report establishing global body mass index (BMI) categories and reference cutoff benchmarks for adults.",
+    "actionLabel": "View WHO Report"
   },
   {
     "title": "WHO Expert Consultation: Appropriate BMI for Asian Populations and Policy Implications",
     "org": "The Lancet (WHO Expert Consultation)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
-    "desc": "Lancet 2004 landmark publication defining public-health action trigger points (23.0 kg/m² increased risk, 27.5 kg/m² high risk) for Asian populations."
+    "desc": "Lancet 2004 landmark publication defining public-health action trigger points (23.0 kg/m² increased risk, 27.5 kg/m² high risk) for Asian populations.",
+    "actionLabel": "Read Lancet Study"
   },
   {
     "title": "Consensus Statement for Diagnosis of Obesity & Metabolic Syndrome in Asian Indians",
     "org": "ICMR & JAPI (Misra A, et al.)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
-    "desc": "National consensus guideline establishing Indian adult BMI cutoffs (18.5–22.9 kg/m² normal, 23.0–24.9 kg/m² overweight, ≥ 25.0 kg/m² obese)."
+    "desc": "National consensus guideline establishing Indian adult BMI cutoffs (18.5–22.9 kg/m² normal, 23.0–24.9 kg/m² overweight, ≥ 25.0 kg/m² obese).",
+    "actionLabel": "Review ICMR Guidelines"
   },
   {
     "title": "CDC Adult Body Mass Index: Screening Standards",
     "org": "Centers for Disease Control and Prevention (CDC)",
     "url": "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html",
-    "desc": "Official CDC standard equation for metric and imperial adult body mass index calculation."
+    "desc": "Official CDC standard equation for metric and imperial adult body mass index calculation.",
+    "actionLabel": "Examine CDC Standards"
   },
   {
     "title": "A New Predictive Equation for Resting Energy Expenditure in Healthy Individuals",
     "org": "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
     "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
-    "desc": "The Mifflin-St Jeor formula equation for calculating Basal Metabolic Rate (BMR) estimates."
+    "desc": "The Mifflin-St Jeor formula equation for calculating Basal Metabolic Rate (BMR) estimates.",
+    "actionLabel": "Read AJCN Paper"
   },
   {
     "title": "US Navy Anthropometric Logarithmic Body Fat Equation",
     "org": "Naval Health Research Center (Hodgdon JA, Beckett WS)",
     "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872290/",
-    "desc": "Logarithmic tape measurement equation for estimating body fat percentage from body circumferences."
+    "desc": "Logarithmic tape measurement equation for estimating body fat percentage from body circumferences.",
+    "actionLabel": "View Navy Study"
   },
   {
     "title": "IDF International Consensus Statement on Abdominal Obesity & Metabolic Syndrome",
     "org": "International Diabetes Federation (IDF)",
     "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
-    "desc": "Waist circumference thresholds (>90cm men, >80cm women for Asian populations) for abdominal risk context."
+    "desc": "Waist circumference thresholds (>90cm men, >80cm women for Asian populations) for abdominal risk context.",
+    "actionLabel": "Read IDF Consensus"
   },
   {
     "title": "Oxford 2.5 Exponent Height-Adjusted BMI Formula Proposal",
     "org": "University of Oxford (Prof. Nick Trefethen)",
     "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
-    "desc": "Mathematical refinement compensating for 3D body volume height scaling distortion."
+    "desc": "Mathematical refinement compensating for 3D body volume height scaling distortion.",
+    "actionLabel": "View Oxford Research"
   }
 ];
 ---
@@ -68,9 +76,14 @@ const sources = [
       returnLabel="Home"
     >
       <div class="space-y-8">
-        <p class="text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-          These public-health agencies, research publications and peer-reviewed reference materials inform the formulas and reference ranges used on Real BMI.
-        </p>
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] font-medium leading-relaxed space-y-4">
+          <p class="text-lg">
+            Scientific rigor and transparency guide every algorithm implemented on Real BMI. Our mathematical models, metabolic rate equations, and anthropometric reference ranges are sourced directly from global public health authorities and peer-reviewed clinical research.
+          </p>
+          <p class="text-sm md:text-base">
+            Below are the primary scientific publications, institutional reports, and mathematical models referenced throughout our calculators:
+          </p>
+        </div>
 
         <div class="grid gap-6">
           {sources.map((src) => (
@@ -84,8 +97,9 @@ const sources = [
                   target="_blank" 
                   rel="noopener noreferrer" 
                   class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
+                  aria-label={`${src.actionLabel}: ${src.title}`}
                 >
-                  View Publication
+                  {src.actionLabel}
                   <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </a>
               </div>

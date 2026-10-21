@@ -6,6 +6,7 @@ import LatestArticles from '../../components/LatestArticles.astro';
 import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
 import HealthContent from '../../components/HealthContent.astro';
+import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.astro';
 ---
 
 <Layout 
@@ -33,10 +34,13 @@ import HealthContent from '../../components/HealthContent.astro';
 						Real BMI — Free Health & Body Composition Calculators
 					</h1>
 
-					<!-- Supporting H2 Subtitle -->
-					<h2 class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight">
+					<!-- Supporting H2 Subtitle & Intro -->
+					<p class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight font-display">
 						Understand Your Numbers. Plan With Confidence.
-					</h2>
+					</p>
+					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed pt-1">
+						Calculate Body Mass Index (BMI), Basal Metabolic Rate (BMR), and Total Daily Energy Expenditure (TDEE) with instant, private browser tools built on published WHO and CDC health standards.
+					</p>
 
 
 
@@ -119,6 +123,7 @@ import HealthContent from '../../components/HealthContent.astro';
 		<!-- ═══════════════════  FEATURED GUIDES & TRUST CONTENT  ═══════════════════ -->
 		<div class="px-4 md:px-6 pt-6 pb-12">
 			<div class="max-w-7xl mx-auto space-y-12">
+				<UnderstandNumbersSection lang="en" />
 				<EmbedWidgetBox lang="en" />
 				<LatestArticles lang="en" />
 				<HealthContent lang="en" />

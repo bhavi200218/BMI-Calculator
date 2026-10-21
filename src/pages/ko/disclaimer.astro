@@ -1,21 +1,44 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
-<Layout title="의학적 면책 조항 | Real BMI" description="Real BMI 의학적 면책 고지: 당사의 건강 계산기는 순수 교육 및 참고 목적으로 제공되며, 전문 의료진의 진단, 처방 및 치료 상담을 대체할 수 없습니다. 개인정보 수집 없는 안전한 브라우저 무료 연산 도구 제공. 모든 측정 공식과 지표는 공인된 연구 문헌을 참조합니다.">
+<Layout 
+    title="의학적 면책 조항 | Real BMI" 
+    description="Real BMI의 공식 의학적 면책 조항 안내입니다. 당사의 건강 계산기와 수치는 순수 교육 및 참고 목적으로 제공되며 전문적인 의료 상담을 대체하지 않습니다."
+>
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-12 text-center">
-        <a href="/ko/" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform w-fit mx-auto">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-            홈으로 돌아가기
-        </a>
-        <h1 class="text-5xl font-black tracking-tighter uppercase">의학적 면책 조항</h1>
-        <div class="glass-card bg-[var(--muted)] border-[var(--border)] p-12 space-y-8">
-            <p class="text-2xl font-black text-[var(--foreground)] uppercase tracking-widest">법적 건강 고지</p>
-            <p class="text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto text-lg font-bold opacity-80">
-                Real BMI의 콘텐츠는 정보 제공 목적으로만 사용됩니다.
-            </p>
-        </div>
-    </main>
+    <PageShell
+      title="의학적 면책 조항"
+      eyebrow="중요 건강 고지사항"
+      description="Real BMI가 교육용 건강 지표를 제공하는 방식과 의학적 결정을 위해 전문 의료진과 상담해야 하는 이유를 확인하세요."
+      returnUrl="/ko/"
+      returnLabel="홈"
+    >
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+        <p><strong>Real BMI</strong>에서 제공하는 모든 건강 계산기, 통계적 수치 및 정보는 순수한 교육적 목적과 개인 건강 인식 증진을 위해 마련되었습니다. 본 웹사이트의 모든 콘텐츠는 전문적인 의학적 진단, 임상적 처방 또는 맞춤형 치료 계획을 대체할 수 없으며 그렇게 해석되어서도 안 됩니다.</p>
+
+        <h2>교육적 범위 및 비임상적 목적</h2>
+        <p>당사의 계산기는 세계보건기구(WHO) 및 미국 질병통제예방센터(CDC) 등에서 발표한 공인된 역학 연구 공식과 인구 집단 지침을 기반으로 작동합니다. 이러한 수학적 모델은 성인 표준 인구 집단을 위한 통계적 참고용 지표이며, 개인의 유전적 요인, 호르몬 상태, 기저 질환 등 복합적인 생리학적 특성을 개별적으로 진단하지 못합니다.</p>
+
+        <h2>전문 의료진 상담의 필요성</h2>
+        <p>Real BMI의 결과값을 바탕으로 질병을 자가 진단하거나, 의사가 처방한 약물 복용을 중단하거나, 의료진의 승인 없이 극단적인 식이요법 및 고강도 운동 프로그램을 시작하지 마십시오. 신체 증상, 만성 질환 관리 또는 영양 및 신체 활동 계획 변경에 관한 모든 사항은 반드시 공인된 전문의사 또는 임상영양사와 상의하시기 바랍니다.</p>
+
+        <h2>신체 계측 지표의 과학적 한계</h2>
+        <p>체질량지수(BMI)를 비롯한 전통적인 신체 계측법은 임상적 한계를 내포하고 있습니다. BMI는 키와 체중의 단순 비율(kg/m²)을 평가할 뿐, 골격근량, 골밀도, 피하지방과 내장지방의 분포 차이를 구별하지 못합니다. 근육량이 많은 운동선수, 노인성 근감소증(Sarcopenia) 환자, 임산부 및 수유부, 다양한 인종적 배경을 가진 개인의 경우 실제 심혈관 대사 위험도와 계산기 수치가 다를 수 있습니다.</p>
+
+        <h2>응급 상황 시 대처 요령</h2>
+        <p>Real BMI는 응급 의료 서비스를 제공하지 않습니다. 흉통, 급성 호흡곤란, 의식 저하, 급작스러운 마비 등 생명을 위협하는 응급 증상이 발생한 경우 즉시 지역 응급 구조 서비스(대한민국 119, 미국 911 등)에 연락하거나 가장 가까운 응급의료센터를 방문하십시오.</p>
+
+        <h2>책임의 제한 및 자발적 이용 원칙</h2>
+        <p>Real BMI 및 관련 개발자, 기여자는 당사 웹사이트의 정보 또는 계산 결과를 토대로 내린 결정, 식이 선택 및 이로 인해 발생하는 건강상의 결과에 대해 법적 책임을 지지 않습니다. 이용자는 본 사이트의 도구를 자발적이고 독립적인 판단 하에 이용함에 동의합니다.</p>
+      
+        <h2>개인별 임상 검사의 필요성 및 한계</h2>
+        <p>통계적으로 정상 범위에 속하는 BMI 수치가 고혈압, 당뇨병, 이상지질혈증 등의 만성 대사 질환이 없음을 보장하지 않습니다. 반대로 근육량이 많은 운동선수나 청년층의 높은 BMI가 반드시 건강 이상을 의미하지도 않습니다. 심혈관 및 대사 질환 위험을 정확히 진단하기 위해서는 공복 혈당, 당화혈색소(HbA1c), 중성지방, 콜레스테롤 수치 및 혈압 측정을 포함한 종합적인 건강검진이 필수적입니다.</p>
+
+        <h2>콘텐츠의 지속적 업데이트 및 정보 보증의 배제</h2>
+        <p>Real BMI는 세계보건기구(WHO) 및 유관 의학회의 가이드라인 개정 사항을 지속적으로 모니터링하여 계산 공식을 관리합니다. 그러나 인터넷 환경의 기술적 오류, 브라우저 호환성 문제 또는 이용자의 오입력으로 인한 결과값의 편차에 대해서는 어떠한 법적 보증도 제공하지 않습니다.</p>
+      </div>
+    </PageShell>
 </Layout>

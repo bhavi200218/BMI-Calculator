@@ -337,8 +337,8 @@ if (fs.existsSync(path.resolve('dist'))) {
     });
   });
 
-  // 11.3 Contextual article counts and footer across all 25 calculators in all 6 locales
-  calculators.forEach(calc => {
+  // 11.3 Contextual article counts and footer across canonical calculators in all 6 locales
+  calculators.filter(c => c.slug !== 'one-rep-max-calculator').forEach(calc => {
     LOCALES.forEach(lang => {
       runTest(`dist/[${lang}] [${calc.slug}]: Exactly 2-3 curated articles rendered & standardized footer`, () => {
         const htmlPath = path.resolve(`dist/${lang}/${calc.slug}/index.html`);
@@ -354,6 +354,16 @@ if (fs.existsSync(path.resolve('dist'))) {
 
         assert.ok(html.includes('Created and maintained by Bhawanshi Dosi'), 'Must have standardized footer attribution');
       });
+    });
+  });
+
+  // 11.3b Consolidated 1RM redirect verification across all 6 locales
+  LOCALES.forEach(lang => {
+    runTest(`dist/[${lang}] [one-rep-max-calculator]: Consolidated 301 redirect to 1rm-calculator`, () => {
+      const htmlPath = path.resolve(`dist/${lang}/one-rep-max-calculator/index.html`);
+      assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
+      const html = fs.readFileSync(htmlPath, 'utf8');
+      assert.ok(html.includes(`/${lang}/1rm-calculator/`), `Must redirect to /${lang}/1rm-calculator/`);
     });
   });
 

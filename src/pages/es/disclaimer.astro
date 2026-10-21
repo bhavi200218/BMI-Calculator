@@ -1,21 +1,38 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
 ---
 
-<Layout title="Aviso Médico | Real BMI" description="Aviso médico de Real BMI: Nuestras herramientas y métricas son exclusivamente para fines educativos y de referencia, no constituyen asesoramiento médico.">
+<Layout 
+    title="Aviso Médico | Real BMI" 
+    description="Aviso médico oficial de Real BMI. Nuestras herramientas y métricas son exclusivamente para fines educativos y de referencia, no constituyen asesoramiento médico."
+>
     <Navbar />
-    <main class="pt-40 pb-20 px-6 max-w-4xl mx-auto space-y-12 text-center">
-        <a href="/es/" class="text-[10px] font-black uppercase tracking-widest text-[var(--foreground)] flex items-center gap-2 hover:translate-x-[-4px] transition-transform w-fit mx-auto">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-            Volver al inicio
-        </a>
-        <h1 class="text-5xl font-black tracking-tighter uppercase">Aviso Médico</h1>
-        <div class="glass-card bg-[var(--muted)] border-[var(--border)] p-12 space-y-8">
-            <p class="text-2xl font-black text-[var(--foreground)] uppercase tracking-widest">Aviso Legal de Salud</p>
-            <p class="text-[var(--muted-foreground)] leading-relaxed max-w-2xl mx-auto text-lg font-bold opacity-80">
-                El contenido de Real BMI es solo para fines informativos. No constituye consejo médico.
-            </p>
-        </div>
-    </main>
+    <PageShell
+      title="Aviso Médico"
+      eyebrow="Aviso de Salud Importante"
+      description="Comprenda cómo Real BMI proporciona estimaciones de salud educativas y por qué siempre debe consultar a un profesional médico cualificado."
+      returnUrl="/es/"
+      returnLabel="Inicio"
+    >
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
+        <p>La información, herramientas de cálculo y métricas proporcionadas por <strong>Real BMI</strong> tienen fines estrictamente educativos, informativos y de concientización personal. En ningún caso constituyen ni deben interpretarse como asesoramiento médico profesional, diagnóstico clínico formal o planes de tratamiento sanitario individualizados.</p>
+
+        <h2>Ámbito Educativo y Propósito No Diagnóstico</h2>
+        <p>Nuestras calculadoras generan estimaciones matemáticas basadas en fórmulas científicas publicadas y directrices internacionales de salud pública, incluidas las establecidas por la Organización Mundial de la Salud (OMS) y los Centros para el Control y la Prevención de Enfermedades (CDC). Estos algoritmos están diseñados para el análisis de referencia poblacional y no pueden evaluar su historial biológico o médico individual.</p>
+
+        <h2>No Sustituye la Atención Médica Profesional</h2>
+        <p>No utilice las puntuaciones, clasificaciones o estimaciones de Real BMI para autodiagnosticarse enfermedades, suspender medicamentos recetados ni iniciar dietas extremas o rutinas de ejercicio intenso sin supervisión médica previa. Consulte siempre a un médico colegiado, dietista-nutricionista registrado o profesional de la salud acreditado sobre cualquier inquietud médica o cambio en su estilo de vida.</p>
+
+        <h2>Limitaciones Clínicas de las Métricas Antropométricas</h2>
+        <p>Las herramientas de detección antropométrica convencionales, incluido el Índice de Masa Corporal (IMC) estándar, poseen limitaciones clínicas reconocidas. El IMC evalúa el peso total respecto a la estatura al cuadrado, pero no puede diferenciar entre masa muscular esquelética magra, densidad ósea y tejido adiposo visceral. Los atletas de fuerza, adultos mayores con sarcopenia, mujeres embarazadas o lactantes y personas de diversas etnias pueden presentar puntuaciones que no reflejen con precisión su verdadero riesgo cardiometabólico.</p>
+
+        <h2>Situaciones de Emergencia Médica</h2>
+        <p>Real BMI no es un servicio de atención clínica ni de urgencias. Si presenta síntomas médicos agudos, dolor torácico, dificultad respiratoria severa, mareos repentinos o cualquier emergencia médica que amenace su vida, llame inmediatamente a los servicios de emergencias locales (como el 112 o 911) o acuda al centro hospitalario más cercano.</p>
+
+        <h2>Exención de Responsabilidad y Uso Voluntario</h2>
+        <p>Ni Real BMI, ni sus creadores ni colaboradores asumen responsabilidad legal alguna por decisiones, acciones, elecciones nutricionales o resultados de salud derivados del uso de nuestras calculadoras o contenidos. Al utilizar Real BMI, usted reconoce y acepta que el uso de estas herramientas se realiza de forma voluntaria y bajo su exclusiva responsabilidad.</p>
+      </div>
+    </PageShell>
 </Layout>

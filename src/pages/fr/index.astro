@@ -6,6 +6,7 @@ import LatestArticles from '../../components/LatestArticles.astro';
 import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
 import HealthContent from '../../components/HealthContent.astro';
+import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.astro';
 import RealBMIIntentSection from '../../components/RealBMIIntentSection.astro';
 ---
 
@@ -34,10 +35,13 @@ import RealBMIIntentSection from '../../components/RealBMIIntentSection.astro';
 						Real BMI — Calculateurs de Santé et Composition Corporelle Gratuits
 					</h1>
 
-					<!-- Supporting H2 Subtitle -->
-					<h2 class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight">
+					<!-- Supporting H2 Subtitle & Intro -->
+					<p class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight font-display">
 						Comprenez vos Chiffres. Planifiez avec Confiance.
-					</h2>
+					</p>
+					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed pt-1">
+						Calculez votre Indice de Masse Corporelle (IMC), votre Métabolisme de Base (BMR) et votre Dépense Énergétique Quotidienne Totale (TDEE) avec des outils rapides, confidentiels et conformes aux normes OMS et CDC.
+					</p>
 				</div>
 
 				<!-- Stats Strip -->
@@ -109,6 +113,7 @@ import RealBMIIntentSection from '../../components/RealBMIIntentSection.astro';
 		<!-- ═══════════════════  FEATURED GUIDES & TRUST CONTENT  ═══════════════════ -->
 		<div class="px-4 md:px-6 pt-6 pb-12">
 			<div class="max-w-7xl mx-auto space-y-12">
+				<UnderstandNumbersSection lang="fr" />
 				<EmbedWidgetBox lang="fr" />
 				<LatestArticles lang="fr" />
 				<HealthContent lang="fr" />

@@ -1,49 +1,5 @@
-const tableUi = {
-  "en": {
-    "cat": "Category / Level",
-    "metric": "Reference Range / Metric",
-    "guidance": "Reference Context",
-    "faq": "Frequently Asked Questions",
-    "refs": "References & Published Research"
-  },
-  "es": {
-    "cat": "Categoría / Nivel",
-    "metric": "Referencia / Métrica",
-    "guidance": "Contexto de Referencia",
-    "faq": "Preguntas Frecuentes y Respuestas",
-    "refs": "Referencias e Investigaciones Publicadas"
-  },
-  "fr": {
-    "cat": "Catégorie / Niveau",
-    "metric": "Référence / Métrique",
-    "guidance": "Contexte de Référence",
-    "faq": "Foire Aux Questions et Réponses",
-    "refs": "Références et Recherches Publiées"
-  },
-  "de": {
-    "cat": "Kategorie / Stufe",
-    "metric": "Referenz / Metrik",
-    "guidance": "Referenzkontext",
-    "faq": "Häufig gestellte Fragen",
-    "refs": "Referenzen & Veröffentlichte Forschung"
-  },
-  "ko": {
-    "cat": "범주 / 단계",
-    "metric": "참조 / 메트릭",
-    "guidance": "참조 컨텍스트",
-    "faq": "자주 묻는 질문 및 답변",
-    "refs": "참고 문헌 및 출판 연구"
-  },
-  "hi": {
-    "cat": "श्रेणी / स्तर",
-    "metric": "संदर्भ / मीट्रिक",
-    "guidance": "संदर्भ विवरण",
-    "faq": "अक्सर पूछे जाने वाले प्रश्न और उत्तर",
-    "refs": "प्रकाशित शोध एवं संदर्भ"
-  }
-};
 
-const seoDatabase = {
+const seoDatabaseData = {
   "bmi-calculator": {
     "en": {
       "eyebrow": "WHO Health Standards",
@@ -57,12 +13,12 @@ const seoDatabase = {
         {
           "col1": "Underweight",
           "col2": "< 18.5 kg/m²",
-          "col3": ""
+          "col3": "Lower body mass baseline (< 18.5 kg/m²)"
         },
         {
           "col1": "Healthy Weight",
           "col2": "18.5 – 24.9 kg/m²",
-          "col3": ""
+          "col3": "Standard population reference range"
         },
         {
           "col1": "Overweight",
@@ -72,17 +28,17 @@ const seoDatabase = {
         {
           "col1": "Obesity Class I",
           "col2": "30.0 – 34.9 kg/m²",
-          "col3": ""
+          "col3": "Class I obesity reference category"
         },
         {
           "col1": "Obesity Class II",
           "col2": "35.0 – 39.9 kg/m²",
-          "col3": ""
+          "col3": "Class II obesity reference category"
         },
         {
           "col1": "Obesity Class III",
           "col2": "≥ 40.0 kg/m²",
-          "col3": ""
+          "col3": "Class III severe obesity reference category"
         }
       ],
       "faqs": [
@@ -300,7 +256,7 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "WHO 건강 기준",
       "title": "BMI 계산기 – 체질량지수 계산",
-      "intro": "세계보건기구(WHO) 및 CDC 기준에 따른 무료 BMI 계산기입니다. 체질량지수 범주 및 정상 체중 참조 범위를 계산하세요.",
+      "intro": "세계보건기구(WHO) 및 CDC 기준에 따른 무료 BMI 계산기입니다. 신장과 체중을 입력하여 성인 체질량지수 범주, 정상 체중 참조 범위 및 비만도 단계를 브라우저에서 안전하고 정확하게 계산하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 WHO BMI 계산 공식",
       "formulaDesc": "미터법: BMI = 체중 (kg) / [신장 (m)]² | 야드파운드법: BMI = [체중 (lbs) / 신장 (인치)²] × 703",
       "formulaCode": "BMI = kg / m²",
@@ -426,9 +382,9 @@ const seoDatabase = {
   },
   "3d-bmi-calculator": {
     "en": {
-      "eyebrow": "Oxford 2.5-Power BMI Model & 3D Body Visualization",
-      "title": "3D BMI Calculator & Interactive 3D Body Visualizer",
-      "intro": "Our free 3D BMI Calculator uses the Oxford 2.5-power height-adjusted formula (1.3 × weight / height²·⁵) to render interactive 3D body shape models and height-proportional volume geometry.",
+      "eyebrow": "Oxford 2.5-Power BMI Formula & Mathematical Analysis",
+      "title": "3D BMI Calculator – Oxford Height-Adjusted 2.5 Formula",
+      "intro": "Our free 3D BMI Calculator applies the Oxford 2.5-power height-adjusted formula (1.3 × weight / height²·⁵) proposed by Oxford mathematician Prof. Nick Trefethen. Compare standard 2D Quetelet scaling against volumetric 3D exponent curves to understand how height affects BMI accuracy for tall and short statures.",
       "formulaTitle": "Oxford 2.5-Power Height-Adjusted 3D BMI Formula",
       "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵ | Proposed by Oxford mathematician Prof. Nick Trefethen as an educational mathematical alternative to standard 2D BMI height scaling.",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
@@ -482,9 +438,9 @@ const seoDatabase = {
       ]
     },
     "es": {
-      "eyebrow": "Modelo IMC Exponencial de Oxford 2.5 y Visualización Corporal 3D",
-      "title": "Calculadora de IMC 3D y Visualizador Corporal Interactivo",
-      "intro": "Nuestra calculadora de IMC 3D y visualizador corporal interactivo calcula el índice de masa corporal mediante la fórmula exponencial de Oxford 2.5 (1.3 × peso / altura²·⁵) y principios de geometría corporal tridimensional. Gira 360° para ver la malla sólida, estructura de alambre y mapa de calor de IMC.",
+      "eyebrow": "Fórmula de IMC Exponencial de Oxford 2.5 y Análisis Matemático",
+      "title": "Calculadora de IMC 3D – Fórmula de Oxford Ajustada a la Altura",
+      "intro": "Calcula tu índice de masa corporal con la fórmula exponencial de Oxford 2.5 (1.3 × peso / altura²·⁵) propuesta por el matemático Prof. Nick Trefethen de la Universidad de Oxford. Compara el escalado clásico 2D frente a curvas volumétricas 3D para corregir distorsiones de estatura.",
       "formulaTitle": "Fórmula Exponencial 3D de Oxford Ajustada a la Altura",
       "formulaDesc": "IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]²·⁵ | Propuesta por el matemático de Oxford Prof. Nick Trefethen como una alternativa matemática educativa al IMC 2D tradicional.",
       "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
@@ -538,9 +494,9 @@ const seoDatabase = {
       ]
     },
     "fr": {
-      "eyebrow": "Modèle IMC d'Oxford 2.5 et Visualisation Corporelle 3D",
-      "title": "Calculateur d'IMC 3D et Visualiseur Corporel Interactif",
-      "intro": "Notre calculateur d'IMC 3D calcule votre indice de masse corporelle selon la formule d'Oxford 2.5 (1.3 × poids / taille²·⁵) et modélise votre silhouette en 3D sous tous los angles à 360°.",
+      "eyebrow": "Modèle IMC d'Oxford 2.5 & Analyse Mathématique Volumétrique",
+      "title": "Calculateur d'IMC 3D – Formule d'Oxford Ajustée à la Taille",
+      "intro": "Notre calculateur d'IMC 3D applique la formule exponentielle d'Oxford 2.5 (1.3 × poids / taille²·⁵) formulée par le professeur Nick Trefethen de l'Université d'Oxford. Comparez l'indice traditionnel de Quetelet avec l'échelle volumétrique 3D pour les personnes de grande ou petite taille.",
       "formulaTitle": "Formule Exponentielle 3D d'Oxford Ajustée à la Taille",
       "formulaDesc": "IMC 3D Ajusté = 1.3 × Poids (kg) / [Taille (m)]²·⁵ | Élaborée par des mathématiciens de l'Université d'Oxford pour corriger les biais liés à la taille.",
       "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
@@ -594,9 +550,9 @@ const seoDatabase = {
       ]
     },
     "de": {
-      "eyebrow": "Oxford 2.5 Potenzformel & 3D-Körper-Visualisierung",
-      "title": "Interaktiver 3D BMI-Rechner & 3D-Körper-Visualisierer",
-      "intro": "Berechnen Sie Ihren höhenkorrigierten BMI mit der Oxford 2.5 Formel (1.3 × Gewicht / Größe²·⁵) und betrachten Sie ein interaktives 360°-3D-Körpermodell direkt in Ihrem Browser.",
+      "eyebrow": "Oxford 2.5 Potenz-BMI-Formel & Mathematische Skalierung",
+      "title": "3D-BMI-Rechner – Oxford Potenzformel mit Größenkorrektur",
+      "intro": "Berechnen Sie Ihren höhenkorrigierten BMI mit der wissenschaftlichen Oxford 2.5 Potenzformel (1.3 × Gewicht / Größe²·⁵) von Prof. Nick Trefethen (Universität Oxford). Vergleichen Sie das traditionelle Quetelet-Quadrat mit dreidimensionaler Volumenskalierung für kleine und große Personen.",
       "formulaTitle": "Oxford 3D Potenzformel für dreidimensionale Körpergeometrie",
       "formulaDesc": "3D-BMI = 1.3 × Gewicht (kg) / [Größe (m)]²·⁵ | Entwickelt von Mathematikern der Universität Oxford zur Korrektur von Größenverzerrungen.",
       "formulaCode": "3D-BMI = 1.3 × kg / m²·⁵",
@@ -650,9 +606,9 @@ const seoDatabase = {
       ]
     },
     "ko": {
-      "eyebrow": "옥스포드 2.5 신장 보정 공식 및 3D 체형 시각화",
-      "title": "3D BMI 계산기 및 대화형 3D 체형 시각화 도구",
-      "intro": "옥스포드 2.5 체질량 공식(1.3 × 체중 / 신장²·⁵)을 기반으로 신장 왜곡을 보정한 BMI를 산출하고 360° 회전 가능한 3D 입체 실루엣 아바타를 실시간으로 확인하세요.",
+      "eyebrow": "옥스퍼드 2.5 신장 보정 공식 및 3차원 체질량 분석",
+      "title": "3D BMI 계산기 – 옥스퍼드 2.5 신장 보정 체질량 공식",
+      "intro": "옥스퍼드 대학교 수학과 닉 트레페젠 교수가 제안한 2.5 거듭제곱 신장 보정 공식(1.3 × 체중 / 신장²·⁵)을 적용한 3D BMI 계산기입니다. 전통적인 케틀레 2차원 제곱 공식의 신장 왜곡을 교정하고 단신 및 장신 성인의 정밀한 체질량 비율을 확인하세요.",
       "formulaTitle": "3D 옥스포드 신장 보정 체질량 공식",
       "formulaDesc": "3D 보정 BMI = 1.3 × 체중 (kg) / [신장 (m)]²·⁵ | 옥스퍼드 대학교 수학과 연구진이 개발한 3차원 신체 부피 스케일링 공식.",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
@@ -706,9 +662,9 @@ const seoDatabase = {
       ]
     },
     "hi": {
-      "eyebrow": "ऑक्सफोर्ड 2.5 एक्सपोनेंशियल फॉर्मूला और 3D मॉडल",
-      "title": "3D बीएमआई कैलकुलेटर और इंटरएक्टिव 3D बॉडी विजुअलाइज़र",
-      "intro": "ऑक्सफोर्ड 2.5 फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) के साथ अपने बीएमआई की गणना करें और 360° इंटरएक्टिव 3D बॉडी मॉडलर का उपयोग करके अपनी शारीरिक संरचना को समझें।",
+      "eyebrow": "ऑक्सफोर्ड 2.5 एक्सपोनेंशियल बीएमआई फॉर्मूला और गणितीय विश्लेषण",
+      "title": "3D बीएमआई कैलकुलेटर – ऑक्सफोर्ड 2.5 ऊंचाई-समायोजित फॉर्मूला",
+      "intro": "ऑक्सफोर्ड विश्वविद्यालय के गणितज्ञ प्रो. निक त्रेफेथेन द्वारा विकसित 2.5 एक्सपोनेंशियल फॉर्मूले (1.3 × वजन / ऊंचाई²·⁵) का उपयोग करके अपने 3D बीएमआई की गणना करें। जानें कि पारंपरिक 2D फॉर्मूला लंबे और छोटे कद के लोगों के बीएमआई में क्या गणितीय विसंगतियां उत्पन्न करता है।",
       "formulaTitle": "ऑक्सफोर्ड 3D ऊंचाई-समायोजित बीएमआई फॉर्मूला",
       "formulaDesc": "3D बीएमआई = 1.3 × वजन (किग्रा) / [ऊंचाई (मीटर)]²·⁵ | ऑक्सफोर्ड विश्वविद्यालय के गणितज्ञों द्वारा विकसित सूत्र जो लंबे या छोटे कद के लोगों में ऊंचाई के गणितीय भ्रम को दूर करता है।",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
@@ -838,12 +794,12 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Tabla de IMC para Adultos – Tabla de Consulta de Altura y Peso (kg y cm) – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Tabla de IMC para Adultos – Consulta de Altura y Peso (kg y cm)",
+      "intro": "Tabla oficial de IMC de la OMS para adultos, hombres y mujeres. Calculadora interactiva de escala de IMC, tablas de consulta de altura y peso en sistema métrico (kg y cm), categorías de la OMS y guía de referencia por edad. Uso gratuito con privacidad en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "BMI = kg / m²",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Tabla de Referencia Internacional de Categorías de IMC de la OMS",
       "tableRows": [
         {
           "col1": "Bajo Peso Severo",
@@ -911,12 +867,12 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Tableau de l'IMC pour Adultes – Table de Correspondance Poids et Taille (kg & cm) – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Tableau de l'IMC Adultes – Table Poids et Taille (kg & cm)",
+      "intro": "Tableau d'IMC officiel de l'OMS pour adultes, hommes et femmes. Calculateur d'échelle d'IMC interactif, tableaux de consultation taille-poids en unités métriques (kg et cm), catégories de l'OMS et repères d'âge. Gratuit avec confidentialité sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "BMI = kg / m²",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Tableau de Référence International des Catégories d'IMC de l'OMS",
       "tableRows": [
         {
           "col1": "Sous-poids Sévère",
@@ -984,12 +940,12 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "BMI-Tabelle für Erwachsene – Größen- & Gewichtstabelle (kg & cm) – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "BMI-Tabelle für Erwachsene – Größen- & Gewichtstabelle (kg)",
+      "intro": "Offizielle WHO BMI-Tabelle für Erwachsene, Männer und Frauen. Interaktiver BMI-Skala-Rechner, Größe-Gewicht-Referenztabellen in metrischen Einheiten (kg & cm), WHO-Kategorien und Altersreferenzwerte. Kostenlos und datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "BMI = kg / m²",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "WHO Internationale BMI-Gewichtsklassen-Referenztabelle",
       "tableRows": [
         {
           "col1": "Starkes Untergewicht",
@@ -1058,11 +1014,11 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "성인 BMI 표준 체중표 – 신장 및 체중 비교 차트 (kg 및 cm) – 참조 계산기",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "성인 남성과 여성을 위한 공식 WHO BMI 차트입니다. 대화형 BMI 지수 계산기, 신장-체중 미터법 진단표(kg & cm), WHO 체중 범주 및 연령별 건강 체중 참조 지침을 브라우저에서 100% 무료로 확인하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "BMI = kg / m²",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "WHO 국제 표준 BMI 체중 범주 참조 차트",
       "tableRows": [
         {
           "col1": "중증 저체중 (< 16.0)",
@@ -1204,340 +1160,370 @@ const seoDatabase = {
   },
   "3d-body-visualizer": {
     "en": {
-      "eyebrow": "Oxford 2.5-Power BMI Model & 3D Body Visualization",
-      "title": "3D BMI Calculator & Interactive 3D Body Visualizer",
-      "intro": "Our free 3D BMI Calculator uses the Oxford 2.5-power height-adjusted formula (1.3 × weight / height²·⁵) to render interactive 3D body shape models and height-proportional volume geometry.",
-      "formulaTitle": "Oxford 2.5-Power Height-Adjusted 3D BMI Formula",
-      "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵ | Developed by University of Oxford mathematicians to correct height scaling distortions in traditional 2D BMI.",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "Standard 2D BMI vs. Oxford 3D Height-Adjusted BMI Comparison",
-      "tableRows": [
-        {
-          "col1": "Shorter Adults (< 160 cm / 5'3\")",
-          "col2": "Standard 2D BMI underestimates height scaling",
-          "col3": "3D BMI adjusts score proportionally for shorter statures"
-        },
-        {
-          "col1": "Average Height Adults (170 cm / 5'7\")",
-          "col2": "Standard 2D & 3D BMI produce identical results",
-          "col3": "No difference between 2D and 3D formula categories"
-        },
-        {
-          "col1": "Taller Adults (> 185 cm / 6'1\")",
-          "col2": "Standard 2D BMI overestimates height scaling",
-          "col3": "3D BMI corrects volumetric distortion for taller statures"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "How does 3D BMI differ from standard 2D BMI?",
-          "answer": "Standard 2D BMI divides weight by height squared (m²), whereas 3D BMI uses height raised to the 2.5 power (m²·⁵) to account for 3D body volume scaling."
-        },
-        {
-          "question": "How does the interactive 3D body visualizer work?",
-          "answer": "It renders an interactive 3D avatar in your browser using height-to-weight proportions derived from your inputs. You can rotate the avatar 360° and toggle mesh, wireframe, and heatmap modes."
-        },
-        {
-          "question": "What do solid mesh, wireframe, and heatmap modes represent?",
-          "answer": "Solid mesh shows body shape volume, wireframe shows 3D geometric structure, and heatmap highlights weight category distribution."
-        },
-        {
-          "question": "Why is the Oxford 2.5-power formula better for tall or short individuals?",
-          "answer": "As demonstrated by Prof. Nick Trefethen at Oxford University, traditional BMI (m²) overestimates fatness in tall people and underestimates it in short people. The 2.5 exponent corrects this mathematical bias."
-        },
-        {
-          "question": "Does the 3D visualizer store photos or personal data?",
-          "answer": "No. The 3D model is generated mathematically in real time inside your browser. No photos are required, and no data is uploaded or stored."
-        },
-        {
-          "question": "Can I use the 3D Body Visualizer on mobile devices?",
-          "answer": "Yes, the 3D visualizer is fully responsive and optimized for mobile touch controls, allowing 360° rotation and pinch-to-zoom on smartphones and tablets."
-        },
-        {
-          "question": "How does body mass index relate to 3D avatar proportion scaling?",
-          "answer": "The 3D avatar dynamically adjusts mesh thickness, waist curvature, and volumetric proportions based on your height-to-weight ratio and calculated BMI score."
-        }
-      ]
+          "eyebrow": "Interactive Avatar Morphing & Body Silhouette Simulation",
+          "title": "3D Body Visualizer – Interactive Silhouette & Avatar Tool",
+          "intro": "Simulate and visualize your anatomical body shape in real time with our client-side 3D Body Visualizer. Rotate a 360° virtual human mannequin, switch between polygon mesh, geometric wireframe, and anthropometric BMI heatmap modes, and observe volumetric silhouette adjustments based on height, weight, and biological sex without uploading photos or compromising personal privacy.",
+          "formulaTitle": "Procedural 3D Mesh Vertex Scaling Engine",
+          "formulaDesc": "Dynamic Vertex Coordinate Displacement: V(x,y,z) = Base_Mesh(x,y,z) + Δ(Height, Weight, WHR, Sex) | Client-side WebGL engine deforms polygon geometry in real time to reflect anatomical contours without camera capture or personal image transmission.",
+          "formulaCode": "Vertex(x,y,z) = Mesh_Base + Δ(Anthropometry)",
+          "tableTitle": "Interactive 3D Visualizer Modes & Anatomical Perspectives",
+          "tableRows": [
+                {
+                      "col1": "Solid Volume Mesh",
+                      "col2": "Continuous 3D organic skin surface rendering",
+                      "col3": "Evaluates overall silhouette contours, torso curvature, and body volume"
+                },
+                {
+                      "col1": "Geometric Wireframe",
+                      "col2": "Structural polygon grid overlay",
+                      "col3": "Reveals underlying anatomical mesh density, posture alignment, and proportion symmetry"
+                },
+                {
+                      "col1": "Anthropometric Heatmap",
+                      "col2": "Thermal gradient projection (Green, Yellow, Coral)",
+                      "col3": "Maps standard BMI categories and mass distribution zones across the 3D torso"
+                },
+                {
+                      "col1": "360° Axial Rotation",
+                      "col2": "Front, lateral profile, and posterior views",
+                      "col3": "Provides multi-angle inspection of posture, sagittal balance, and abdominal projection"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "What is the 3D Body Visualizer and how does it work?",
+                      "answer": "The 3D Body Visualizer is an interactive educational modeling tool that procedurally renders an anatomical 3D avatar directly in your browser. By adjusting height and weight sliders, the WebGL rendering engine mathematically deforms mesh vertices to illustrate realistic silhouette proportions."
+                },
+                {
+                      "question": "How do Solid Mesh, Wireframe, and Heatmap views differ?",
+                      "answer": "Solid Mesh displays a smooth anatomical body shape to evaluate volume. Wireframe renders the structural polygon grid to highlight symmetry. Heatmap colors the avatar according to international body mass index thresholds to illustrate mass distribution."
+                },
+                {
+                      "question": "Can I rotate and view the 3D model from 360° angles?",
+                      "answer": "Yes. You can click and drag with a mouse or swipe with your finger on touchscreen mobile devices to rotate the avatar 360 degrees horizontally and inspect frontal, profile, and posterior silhouettes."
+                },
+                {
+                      "question": "Does this tool require a webcam, photographs, or image uploads?",
+                      "answer": "No. The 3D avatar is generated purely through client-side mathematical algorithms and procedural geometry. It never requires camera access, photo uploads, or facial scans, ensuring complete anonymity."
+                },
+                {
+                      "question": "How do body somatotypes (Ectomorph, Mesomorph, Endomorph) appear on the avatar?",
+                      "answer": "As weight increases relative to height, the procedural mesh widens the torso, hips, and limbs, demonstrating how body mass visually alters human silhouettes from slender ectomorphic frames to fuller endomorphic profiles."
+                },
+                {
+                      "question": "Can I use the 3D visualizer on touchscreen mobile phones?",
+                      "answer": "Yes. The 3D visualizer is built with responsive WebGL canvas controls that support one-finger drag rotation and smooth mobile viewport scaling across modern iOS and Android browsers."
+                },
+                {
+                      "question": "Is my data kept private when using the 3D body visualizer?",
+                      "answer": "Yes, 100%. All computations occur locally in your browser's JavaScript engine. No biometric data, measurements, or session details are transmitted to external servers or logged in databases."
+                }
+          ]
     },
     "es": {
-      "eyebrow": "Modelo IMC Exponencial de Oxford 2.5 y Visualización Corporal 3D",
-      "title": "Calculadora de IMC 3D y Visualizador Corporal Interactivo",
-      "intro": "Nuestra calculadora de IMC 3D y visualizador corporal interactivo calcula el índice de masa corporal mediante la fórmula exponencial de Oxford 2.5 (1.3 × peso / altura²·⁵) y principios de geometría corporal tridimensional. Gira 360° para ver la malla sólida, estructura de alambre y mapa de calor de IMC.",
-      "formulaTitle": "Fórmula Exponencial 3D de Oxford Ajustada a la Altura",
-      "formulaDesc": "IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]²·⁵ | Diseñada por matemáticos de la Universidad de Oxford para eliminar la distorsión de altura que afecta a personas altas o bajas en la fórmula clásica de Quetelet.",
-      "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
-      "tableTitle": "Comparación de IMC 2D Estándar vs IMC 3D Ajustado por Altura",
-      "tableRows": [
-        {
-          "col1": "Personas Bajas (< 160 cm)",
-          "col2": "El IMC 2D estándar suele subestimar el resultado",
-          "col3": "El IMC 3D compensa la estatura menor adecuadamente"
-        },
-        {
-          "col1": "Estatura Promedio (170 cm)",
-          "col2": "Alineación de clasificación idéntica",
-          "col3": "Sin diferencia entre la fórmula 2D y 3D"
-        },
-        {
-          "col1": "Personas Altas (> 185 cm)",
-          "col2": "El IMC 2D estándar suele sobreestimar el exceso de peso",
-          "col3": "El IMC 3D ajusta el volumen tridimensional real"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "¿En qué se diferencia el IMC 3D del IMC tradicional?",
-          "answer": "El IMC tradicional usa la altura al cuadrado (m²), mientras que el IMC 3D usa la masa tridimensional dividida entre la altura a la potencia 2.5 (m²·⁵)."
-        },
-        {
-          "question": "¿Cómo funciona la visualización corporal 3D?",
-          "answer": "Genera una silueta anatómica tridimensional interactiva que se escala según tu altura y peso en tiempo real dentro del navegador."
-        },
-        {
-          "question": "¿Qué representan los modos Malla, Alambre y Mapa de Calor?",
-          "answer": "El modo sólido muestra la masa corporal, la malla de alambre muestra los contornos estructurales, y el mapa de calor resalta las zonas según el nivel de IMC."
-        },
-        {
-          "question": "¿Es precisa la fórmula de Oxford 2.5 para personas muy altas?",
-          "answer": "Sí, el profesor Nick Trefethen de la Universidad de Oxford diseñó esta fórmula para eliminar la distorsión matemática en personas muy altas o bajas."
-        },
-        {
-          "question": "¿El modelo 3D almacena datos o fotografías personales?",
-          "answer": "No, el modelo 3D es una simulación matemática generada en tiempo real en tu navegador sin guardar datos ni requerir cámara."
-        },
-        {
-          "question": "¿Puedo usar el Visualizador Corporal 3D en dispositivos móviles?",
-          "answer": "Sí, el visualizador 3D es totalmente adaptable a móviles y controles táctiles, lo que permite rotación de 360° en teléfonos inteligentes y tabletas."
-        },
-        {
-          "question": "¿Cómo se relaciona el índice de masa corporal con el escalado del avatar 3D?",
-          "answer": "El avatar 3D ajusta dinámicamente el grosor de la malla, la curvatura de la cintura y las proporciones volumétricas según tu IMC."
-        }
-      ]
+          "eyebrow": "Modelado Anatómico 3D y Simulación de Silueta Corporal",
+          "title": "Visualizador Corporal 3D – Simulación Interactiva de Silueta y Avatar",
+          "intro": "Simula y visualiza tu silueta anatómica en tiempo real con nuestro visualizador corporal 3D interactivo en el navegador. Rota un maniquí humano virtual en 360°, alterna entre los modos de malla sólida, estructura de alambre geométrica y mapa de calor antropométrico según tu estatura, peso y sexo biológico sin subir fotografías personales.",
+          "formulaTitle": "Motor Procedimental de Desplazamiento de Vértices 3D",
+          "formulaDesc": "Desplazamiento Poligonal de Coordenadas: V(x,y,z) = Malla_Base(x,y,z) + Δ(Altura, Peso, Perímetro, Sexo) | El motor WebGL deforma la geometría en tiempo real en tu navegador para reflejar contornos anatómicos sin captura de cámara ni transmisión de imágenes.",
+          "formulaCode": "Vértice(x,y,z) = Malla_Base + Δ(Antropometría)",
+          "tableTitle": "Modos del Visualizador 3D y Perspectivas Anatómicas",
+          "tableRows": [
+                {
+                      "col1": "Malla de Volumen Sólido",
+                      "col2": "Superficie de piel orgánica en 3D continuo",
+                      "col3": "Evalúa contornos generales, curvatura del torso y volumen de masa corporal"
+                },
+                {
+                      "col1": "Estructura de Alambre",
+                      "col2": "Cuadrícula poligonal estructural",
+                      "col3": "Revela densidad de malla anatómica, alineación postural y simetría de proporciones"
+                },
+                {
+                      "col1": "Mapa de Calor Antropométrico",
+                      "col2": "Gradiente térmico de color (Verde, Amarillo, Coral)",
+                      "col3": "Mapea las categorías de IMC y zonas de distribución de masa sobre el torso 3D"
+                },
+                {
+                      "col1": "Rotación Axial 360°",
+                      "col2": "Vistas frontal, perfil lateral y posterior",
+                      "col3": "Permite inspección multiángulo de la postura, equilibrio sagital y proyección abdominal"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "¿Qué es el Visualizador Corporal 3D y cómo funciona?",
+                      "answer": "Es una herramienta interactiva de modelado educativo que genera un avatar 3D anatómico directamente en tu navegador. Al mover los deslizadores de altura y peso, el motor WebGL escala matemáticamente los vértices para mostrar proporciones realistas."
+                },
+                {
+                      "question": "¿En qué se diferencian los modos Malla Sólida, Alambre y Mapa de Calor?",
+                      "answer": "La malla sólida muestra la silueta externa continua. El modo alambre revela la estructura de polígonos y la simetría esquelética. El mapa de calor colorea el avatar según los umbrales de índice de masa corporal."
+                },
+                {
+                      "question": "¿Puedo rotar y observar el modelo 3D desde cualquier ángulo en 360°?",
+                      "answer": "Sí, puedes arrastrar con el ratón en ordenador o deslizar el dedo en pantallas táctiles móviles para girar el avatar 360 grados e inspeccionar la vista frontal, lateral y posterior."
+                },
+                {
+                      "question": "¿Esta herramienta requiere cámara web o subir fotos personales?",
+                      "answer": "No. El avatar 3D se genera exclusivamente mediante algoritmos matemáticos en tu navegador. No requiere acceso a cámara, fotografías ni escaneo facial, garantizando total privacidad."
+                },
+                {
+                      "question": "¿Cómo se reflejan los somatotipos corporales en el avatar?",
+                      "answer": "A medida que el peso varía respecto a la estatura, la malla procedural amplía o estiliza el torso, caderas y extremidades, ilustrando la transición visual entre perfiles ectomórficos, mesomórficos y endomórficos."
+                },
+                {
+                      "question": "¿Puedo utilizar el visualizador 3D en teléfonos móviles táctiles?",
+                      "answer": "Sí. El lienzo WebGL está optimizado para controles táctiles intuitivos, permitiendo rotación con un solo dedo y escalado fluido en navegadores móviles de iOS y Android."
+                },
+                {
+                      "question": "¿Mis datos se mantienen privados al usar el visualizador corporal?",
+                      "answer": "Sí, al 100%. Todos los cálculos y representaciones gráficas se procesan localmente en tu dispositivo. Ningún dato biométrico ni medida se envía a servidores externos."
+                }
+          ]
     },
     "fr": {
-      "eyebrow": "Modèle IMC d'Oxford 2.5 et Visualisation Corporelle 3D",
-      "title": "Calculateur d'IMC 3D et Visualiseur Corporel Interactif",
-      "intro": "Notre calculateur d'IMC 3D calcule votre indice de masse corporelle selon la formule d'Oxford 2.5 (1.3 × poids / taille²·⁵) et modélise votre silhouette en 3D sous tous los angles à 360°.",
-      "formulaTitle": "Formule Exponentielle 3D d'Oxford Ajustée à la Taille",
-      "formulaDesc": "IMC 3D Ajusté = 1.3 × Poids (kg) / [Taille (m)]²·⁵ | Élaborée par des mathématiciens de l'Université d'Oxford pour corriger les biais liés à la taille.",
-      "formulaCode": "IMC 3D = 1.3 × kg / m²·⁵",
-      "tableTitle": "Comparaison IMC 2D Standard vs IMC 3D Ajusté d'Oxford",
-      "tableRows": [
-        {
-          "col1": "Personnes de Petite Taille (< 160 cm)",
-          "col2": "L'IMC 2D sous-estime souvent la catégorie",
-          "col3": "L'IMC 3D réajuste le score proportionnellement"
-        },
-        {
-          "col1": "Taille Moyenne (170 cm)",
-          "col2": "Résultats identiques sur les deux formules",
-          "col3": "Aucune différence de catégorie"
-        },
-        {
-          "col1": "Personnes de Grande Taille (> 185 cm)",
-          "col2": "L'IMC 2D surestime le niveau de surpoids",
-          "col3": "L'IMC 3D corrige la distorsion volumétrique"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "En quoi l'IMC 3D diffère-t-il de l'IMC classique ?",
-          "answer": "L'IMC classique divise le poids par la taille au carré (m²), tandis que l'IMC 3D utilise la puissance 2,5 (m²·⁵) pour refléter le volume corporel."
-        },
-        {
-          "question": "Comment fonctionne la visualisation 3D ?",
-          "answer": "Elle génère un avatar anatomique 3D interactif modélisé en temps réel selon vos mensurations dans votre navigateur."
-        },
-        {
-          "question": "Que signifient les modes Maillage, Fil de fer et Carte de chaleur ?",
-          "answer": "Le mode solide montre la masse, le fil de fer révèle la structure géométrique, et la carte de chaleur indique les zones d'IMC."
-        },
-        {
-          "question": "Pourquoi la formule d'Oxford 2.5 est-elle recommandée pour les grands ?",
-          "answer": "Elle élimine la distorsion mathématique de la formule de Quetelet qui désavantage systématiquement les personnes très grandes."
-        },
-        {
-          "question": "L'outil 3D enregistre-t-il des images personnelles ?",
-          "answer": "Non, toutes les modélisations sont des simulations mathématiques anonymes exécutées localement sur votre navigateur."
-        },
-        {
-          "question": "Puis-je utiliser le Visualiseur Corporel 3D sur des appareils mobiles ?",
-          "answer": "Oui, le visualiseur 3D est entièrement adapté aux mobiles et aux commandes tactiles, permettant une rotation à 360° sur smartphones et tablettes."
-        },
-        {
-          "question": "Comment l'indice de masse corporelle est-il lié à la modélisation 3D ?",
-          "answer": "L'avatar 3D ajuste dynamiquement l'épaisseur du maillage et les proportions volumétriques en fonction de votre rapport taille/poids et de votre score IMC."
-        }
-      ]
+          "eyebrow": "Modélisation Anatomique 3D & Simulation de Silhouette Corporelle",
+          "title": "Visualiseur Corporel 3D – Simulation de Silhouette et Avatar Interactif",
+          "intro": "Visualisez et simulez votre morphologie corporelle en temps réel grâce à notre visualiseur 3D interactif dans votre navigateur. Faites pivoter un mannequin virtuel à 360°, basculez entre les modes maillage plein, fil de fer géométrique et carte thermique anthropométrique selon votre taille, votre poids et votre sexe sans importer de photo.",
+          "formulaTitle": "Moteur Procédural de Déformation des Sommets 3D",
+          "formulaDesc": "Déplacement Poligonal des Coordonnées : V(x,y,z) = Maillage_Base(x,y,z) + Δ(Taille, Poids, Tour de Taille, Sexe) | Le moteur WebGL déforme la géométrie en temps réel dans votre navigateur pour reproduire les contours anatomiques sans caméra ni transfert de données.",
+          "formulaCode": "Sommet(x,y,z) = Maillage_Base + Δ(Anthropométrie)",
+          "tableTitle": "Modes du Visualiseur 3D et Perspectives Anatomiques",
+          "tableRows": [
+                {
+                      "col1": "Maillage de Volume Plein",
+                      "col2": "Surface cutanée organique 3D continue",
+                      "col3": "Évalue les contours de la silhouette, les courbures du buste et le volume corporel global"
+                },
+                {
+                      "col1": "Fil de Fer Géométrique",
+                      "col2": "Grille polygonale structurelle",
+                      "col3": "Révèle la densité du maillage, l'alignement postural et la symétrie des proportions"
+                },
+                {
+                      "col1": "Carte Thermique Anthropométrique",
+                      "col2": "Dégradé thermique (Vert, Jaune, Corail)",
+                      "col3": "Représente les catégories d'IMC et les zones de répartition de masse sur le torse 3D"
+                },
+                {
+                      "col1": "Rotation Axiale 360°",
+                      "col2": "Vues de face, profil latéral et dos",
+                      "col3": "Permet une inspection multi-angle de la posture, de l'équilibre sagittal et de la projection abdominale"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "Qu'est-ce que le Visualiseur Corporel 3D et comment fonctionne-t-il ?",
+                      "answer": "C'est un outil interactif de simulation morphologique qui génère un avatar 3D directement dans votre navigateur. En manipulant les curseurs de taille et de poids, le moteur WebGL déforme mathématiquement les sommets pour afficher des proportions réalistes."
+                },
+                {
+                      "question": "Quelles sont les différences entre Maillage Plein, Fil de Fer et Carte Thermique ?",
+                      "answer": "Le maillage plein affiche la surface corporelle continue. Le fil de fer dévoile l'ossature polygonale et la symétrie. La carte thermique colore l'avatar selon les seuils de l'indice de masse corporelle pour visualiser la répartition des volumes."
+                },
+                {
+                      "question": "Puis-je faire pivoter le modèle 3D sous tous les angles à 360° ?",
+                      "answer": "Oui, il vous suffit de cliquer et faire glisser à la souris ou de glisser avec le doigt sur smartphone pour faire tourner l'avatar à 360 degrés et examiner la vue de face, de profil et de dos."
+                },
+                {
+                      "question": "Cet outil nécessite-t-il une webcam ou l'envoi de photos personnelles ?",
+                      "answer": "Non. L'avatar 3D est modélisé uniquement à partir d'équations géométriques exécutées localement sur votre appareil. Aucun accès caméra ni aucune photo ne sont requis, garantissant votre anonymat."
+                },
+                {
+                      "question": "Comment les morphotypes (Ectomorphe, Mésomorphe, Endomorphe) se reflètent-ils sur l'avatar ?",
+                      "answer": "Lorsque le poids varie par rapport à la taille, le maillage procédural affine ou élargit le torse, le bassin et les membres, illustrant les transitions entre morphologies longilignes et plus denses."
+                },
+                {
+                      "question": "Puis-je utiliser le visualiseur 3D sur un smartphone tactile ?",
+                      "answer": "Oui. Le canvas WebGL est optimisé pour les écrans tactiles mobiles et permet une rotation fluide avec un seul doigt sur les navigateurs iOS et Android."
+                },
+                {
+                      "question": "Mes données restent-elles strictement confidentielles ?",
+                      "answer": "Oui, à 100%. L'intégralité du calcul et du rendu visuel se déroule dans votre navigateur. Aucune donnée morphologique n'est transmise à des serveurs tiers."
+                }
+          ]
     },
     "de": {
-      "eyebrow": "Oxford 2.5 Potenzformel & 3D-Körper-Visualisierung",
-      "title": "Interaktiver 3D BMI-Rechner & 3D-Körper-Visualisierer",
-      "intro": "Berechnen Sie Ihren höhenkorrigierten BMI mit der Oxford 2.5 Formel (1.3 × Gewicht / Größe²·⁵) und betrachten Sie ein interaktives 360°-3D-Körpermodell direkt in Ihrem Browser.",
-      "formulaTitle": "Oxford 3D Potenzformel für dreidimensionale Körpergeometrie",
-      "formulaDesc": "3D-BMI = 1.3 × Gewicht (kg) / [Größe (m)]²·⁵ | Entwickelt von Mathematikern der Universität Oxford zur Korrektur von Größenverzerrungen.",
-      "formulaCode": "3D-BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "Vergleich: Standard 2D-BMI vs. Höhenkorrigierter 3D-BMI",
-      "tableRows": [
-        {
-          "col1": "Kleine Personen (< 160 cm)",
-          "col2": "Standard 2D-BMI zeigt tendenziell zu niedrige Werte",
-          "col3": "3D-Formel gleicht die Körpergröße aus"
-        },
-        {
-          "col1": "Durchschnittliche Größe (170 cm)",
-          "col2": "Identische Ergebnisse bei beiden Formeln",
-          "col3": "Kein Unterschied in der Kategorie"
-        },
-        {
-          "col1": "Große Personen (> 185 cm)",
-          "col2": "Standard 2D-BMI zeigt oft zu hohe Werte",
-          "col3": "3D-Formel berücksichtigt das dreidimensionale Volumen"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Was unterscheidet den 3D-BMI vom klassischen BMI?",
-          "answer": "Der klassische BMI nutzt die Körpergröße zum Quadrat (m²), während der 3D-BMI die Potenz 2.5 nutzt, um das dreidimensionale Körpervolumen besser abzubilden."
-        },
-        {
-          "question": "Wie funktioniert der 3D-Körper-Visualisierer?",
-          "answer": "Er erzeugt einen interaktiven 3D-Avatar, der sich in Echtzeit an Ihre eingegebenen Daten anpasst und um 360° gedreht werden kann."
-        },
-        {
-          "question": "Was bedeuten Drahtmodell, Solid-Mesh und Heatmap?",
-          "answer": "Solid-Mesh zeigt die Körperoberfläche, das Drahtmodell zeigt die Gitterstruktur und die Heatmap hebt BMI-Zonen farblich hervor."
-        },
-        {
-          "question": "Warum ist die Oxford 2.5 Formel für große Menschen genauer?",
-          "answer": "Prof. Nick Trefethen von der Universität Oxford zeigte, dass die alte Quetelet-Formel große Menschen mathematisch benachteiligt."
-        },
-        {
-          "question": "Werden Bilder oder persönliche Daten gespeichert?",
-          "answer": "Nein, das 3D-Modell ist eine rein mathematische Echtzeit-Simulation in Ihrem Browser ohne Datenspeicherung."
-        },
-        {
-          "question": "Kann ich den 3D-Körper-Visualisierer auf Mobilgeräten verwenden?",
-          "answer": "Ja, der 3D-Visualisierer ist vollständig für mobile Touch-Steuerung optimiert und ermöglicht 360°-Drehung auf Smartphones und Tablets."
-        },
-        {
-          "question": "Wie hängt der Body-Mass-Index mit der 3D-Proportionenskalierung zusammen?",
-          "answer": "Der 3D-Avatar passt die Netzstärke und die volumetrischen Proportionen dynamisch basierend auf Ihrem BMI-Wert an."
-        }
-      ]
+          "eyebrow": "Interaktives 3D-Avatarmodell & Körpersilhouetten-Simulation",
+          "title": "3D-Körper-Visualisierer – Interaktiver Avatar & Silhouetten-Simulator",
+          "intro": "Simulieren und visualisieren Sie Ihre anatomische Körperform in Echtzeit mit unserem interaktiven 3D-Körper-Visualisierer im Webbrowser. Drehen Sie ein virtuelles menschliches Modell um 360°, wechseln Sie zwischen Volumen-Mesh, geometrischem Drahtgitter und anthropometrischer BMI-Heatmap passend zu Größe, Gewicht und Geschlecht ohne Fotoupload.",
+          "formulaTitle": "Prozedurales 3D-Polygonnetz-Verformungssystem",
+          "formulaDesc": "Geometrische Knotenpunkt-Verschiebung: V(x,y,z) = Basisnetz(x,y,z) + Δ(Größe, Gewicht, Taillenumfang, Geschlecht) | Die WebGL-Engine passt anatomische Konturen in Echtzeit lokal in Ihrem Browser an, ohne Kamerazugriff oder Bilddatenübertragung.",
+          "formulaCode": "Vertex(x,y,z) = Basis_Netz + Δ(Anthropometrie)",
+          "tableTitle": "Visualisierer-Modi & Anatomische Perspektiven",
+          "tableRows": [
+                {
+                      "col1": "Volumen-Mesh (Solid)",
+                      "col2": "Kontinuierliche 3D-Hautoberfläche",
+                      "col3": "Beurteilt Gesamtsilhouette, Rumpfwölbung und Körpervolumen"
+                },
+                {
+                      "col1": "Geometrisches Drahtgitter",
+                      "col2": "Strukturelles Polygon-Netzgitter",
+                      "col3": "Macht Netzdichte, Haltungsausrichtung und Proportionensymmetrie sichtbar"
+                },
+                {
+                      "col1": "Anthropometrische Heatmap",
+                      "col2": "Thermisches Farbprofil (Grün, Gelb, Koralle)",
+                      "col3": "Visualisiert Standard-BMI-Kategorien und Masseverteilungszonen auf dem 3D-Körper"
+                },
+                {
+                      "col1": "360° Axiale Rotation",
+                      "col2": "Frontal-, Seiten- und Rückansicht",
+                      "col3": "Ermöglicht mehrdimensionale Betrachtung von Haltung, Sagittalebene und Bauchsilhouette"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "Was ist der 3D-Körper-Visualisierer und wie funktioniert er?",
+                      "answer": "Es handelt sich um ein interaktives visuelles Modellierungswerkzeug, das einen anatomischen 3D-Avatar direkt im Browser berechnet. Durch Verstellen der Schieberegler für Größe und Gewicht passt die WebGL-Engine die Netzkoordinaten in Echtzeit an."
+                },
+                {
+                      "question": "Worin unterscheiden sich Solid-Mesh, Drahtgitter und Heatmap?",
+                      "answer": "Das Solid-Mesh zeigt die zusammenhängende Körperform. Das Drahtgitter hebt die Polygonstruktur und Symmetrie hervor. Die Heatmap färbt den Körper entsprechend den internationalen BMI-Referenzwerten ein."
+                },
+                {
+                      "question": "Kann ich das 3D-Modell im vollen 360°-Winkel drehen?",
+                      "answer": "Ja, Sie können mit der Maus ziehen oder auf dem Touchscreen wischen, um den Avatar um 360 Grad horizontal zu drehen und die Silhouette von vorne, der Seite und von hinten zu betrachten."
+                },
+                {
+                      "question": "Benötigt das Werkzeug Fotos, eine Webcam oder Bild-Uploads?",
+                      "answer": "Nein. Der 3D-Avatar wird rein über mathematische Algorithmen im Browser gerendert. Es sind keinerlei Kamerazugriffe oder Fotos erforderlich, sodass Ihre Privatsphäre absolut geschützt bleibt."
+                },
+                {
+                      "question": "Wie werden Körpertypen (Ektomorph, Mesomorph, Endomorph) dargestellt?",
+                      "answer": "Je nach Gewichts-Größen-Verhältnis formt die Geometrie-Engine Rumpf, Hüfte und Extremitäten schmaler oder kräftiger und veranschaulicht so die unterschiedlichen somatotypischen Körpersilhouetten."
+                },
+                {
+                      "question": "Funktioniert der 3D-Visualisierer auf Touchscreen-Smartphones?",
+                      "answer": "Ja. Das WebGL-Canvas ist für mobile Touchscreens optimiert und unterstützt flüssige Ein-Finger-Drehung auf aktuellen iOS- und Android-Geräten."
+                },
+                {
+                      "question": "Bleiben meine eingegebenen Daten privat?",
+                      "answer": "Ja, zu 100%. Sämtliche Berechnungen und Bildrenderings erfolgen ausschließlich lokal auf Ihrem Endgerät. Es werden keinerlei Daten an externe Server übertragen."
+                }
+          ]
     },
     "ko": {
-      "eyebrow": "옥스포드 2.5 신장 보정 공식 및 3D 체형 시각화",
-      "title": "3D BMI 계산기 및 대화형 3D 체형 시각화 도구",
-      "intro": "옥스포드 2.5 체질량 공식(1.3 × 체중 / 신장²·⁵)을 기반으로 신장 왜곡을 보정한 BMI를 산출하고 360° 회전 가능한 3D 입체 실루엣 아바타를 실시간으로 확인하세요.",
-      "formulaTitle": "3D 옥스포드 신장 보정 체질량 공식",
-      "formulaDesc": "3D 보정 BMI = 1.3 × 체중 (kg) / [신장 (m)]²·⁵ | 옥스퍼드 대학교 수학과 연구진이 개발한 3차원 신체 부피 스케일링 공식.",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "표준 2D BMI vs 옥스포드 3D 신장 보정 BMI 비교",
-      "tableRows": [
-        {
-          "col1": "단신 성인 (< 160 cm)",
-          "col2": "표준 2D 공식은 상대적으로 낮게 측정됨",
-          "col3": "3D 보정 공식이 올바른 수치 보정"
-        },
-        {
-          "col1": "평균 신장 (170 cm)",
-          "col2": "두 공식 결과 동일",
-          "col3": "범주 차이 없음 (동일)"
-        },
-        {
-          "col1": "장신 성인 (> 185 cm)",
-          "col2": "표준 2D 공식은 과도하게 높게 측정됨",
-          "col3": "3D 보정 공식이 3차원 부피 왜곡 보정"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "3D BMI와 기존 일반 BMI의 차이점은 무엇인가요?",
-          "answer": "기존 BMI는 신장의 제곱(m²)으로 나누지만, 3D BMI는 3차원 신체 부피 비율인 신장의 2.5제곱(m²·⁵)을 적용합니다."
-        },
-        {
-          "question": "3D 체형 시각화 기능은 어떻게 구동되나요?",
-          "answer": "입력한 신장과 체중 비율에 따라 브라우저 내에서 실시간으로 3D 아바타 모델을 생성하고 360° 회전을 지원합니다."
-        },
-        {
-          "question": "솔리드, 와이어프레임, 히트맵 모드의 차이는 무엇인가요?",
-          "answer": "솔리드는 체형 실루엣, 와이어프레임은 3D 구조 망, 히트맵은 BMI 범주별 색상 위험도를 시각적으로 표현합니다."
-        },
-        {
-          "question": "키가 큰 사람에게 옥스포드 2.5 공식이 더 정확한 이유는?",
-          "answer": "옥스퍼드 대학교 트레페젠 교수가 입증했듯 2차원 제곱 공식은 키가 큰 사람을 불필요하게 비만으로 판정하는 오류를 보정합니다."
-        },
-        {
-          "question": "3D 아바타 생성 시 개인정보나 사진이 저장되나요?",
-          "answer": "아니요, 사진 업로드가 필요 없으며 모든 계산 및 3D 렌더링은 사용자 브라우저에서 100% 안전하게 구동됩니다."
-        },
-        {
-          "question": "모바일 기기에서도 3D 체형 시각화 도구를 사용할 수 있나요?",
-          "answer": "네, 3D 시각화 도구는 모바일 터치 조작에 완벽하게 최적화되어 스마트폰과 태블릿에서 360° 회전을 지원합니다."
-        },
-        {
-          "question": "체질량지수(BMI)는 3D 아바타의 비율 스케일링과 어떻게 연결되나요?",
-          "answer": "3D 아바타는 입력된 신장 대 체중 비율과 계산된 BMI 수치에 따라 실루엣 두께와 부피 비율을 실시간으로 조정합니다."
-        }
-      ]
+          "eyebrow": "대화형 3D 아바타 모델링 및 신체 실루엣 시각화 도구",
+          "title": "3D 바디 비주얼라이저 – 대화형 실루엣 및 3차원 아바타 시뮬레이터",
+          "intro": "웹 브라우저에서 실시간으로 신체 형태와 실루엣을 시각화할 수 있는 대화형 3D 바디 비주얼라이저입니다. 360° 회전 가능한 가상 인체 마네킹 모델을 통해 신장, 체중 및 생물학적 성별에 따른 볼륨 메시, 기하학적 와이어프레임 구조, 체질량 히트맵 모드를 사진 업로드 없이 안전하게 확인하세요.",
+          "formulaTitle": "절차적 3D 폴리곤 정점 변위 엔진",
+          "formulaDesc": "동적 정점 좌표 변위 공식: V(x,y,z) = 기본메시(x,y,z) + Δ(신장, 체중, 둘레, 생물학적 성별) | 브라우저 WebGL 엔진이 체형 윤곽을 실시간으로 계산하여 렌더링하며 카메라 촬영이나 사진 전송이 일체 발생하지 않습니다.",
+          "formulaCode": "정점(x,y,z) = 기본_메시 + Δ(인체계측값)",
+          "tableTitle": "3D 비주얼라이저 렌더링 모드 및 해부학적 관점",
+          "tableRows": [
+                {
+                      "col1": "솔리드 볼륨 메시",
+                      "col2": "연속적인 3D 유기적 외형 표면 렌더링",
+                      "col3": "전체적인 체형 실루엣 윤곽, 체간 곡률 및 신체 부피 평가"
+                },
+                {
+                      "col1": "기하학적 와이어프레임",
+                      "col2": "구조적 다각형 폴리곤 격자망 오버레이",
+                      "col3": "해부학적 메시 밀도, 자세 정렬 및 신체 좌우 대칭성 분석"
+                },
+                {
+                      "col1": "인체계측 컬러 히트맵",
+                      "col2": "온도 그라데이션 투영 (녹색, 황색, 산호색)",
+                      "col3": "3D 몸통에 표준 BMI 범주 및 체질량 분포 영역을 시각적으로 매핑"
+                },
+                {
+                      "col1": "360° 전방위 축 회전",
+                      "col2": "전면, 측면 프로필, 후면 실루엣 보기",
+                      "col3": "자세 균형, 시상면 척추 라인 및 복부 돌출도에 대한 다각도 관찰"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "3D 바디 비주얼라이저는 어떤 도구이며 어떻게 작동하나요?",
+                      "answer": "신장과 체중 수치에 따라 브라우저 내에서 3D 해부학적 아바타를 실시간으로 생성하는 교육용 시각화 도구입니다. WebGL 엔진이 수학적 공식에 기반해 폴리곤 정점 위치를 조정하여 실제 체형 비율을 보여줍니다."
+                },
+                {
+                      "question": "솔리드 메시, 와이어프레임, 히트맵 모드는 어떻게 다른가요?",
+                      "answer": "솔리드 메시는 매끄러운 체형 표면을 보여주어 부피감을 확인하기 좋습니다. 와이어프레임은 골격 구조망을 드러내며, 히트맵은 BMI 기준치에 따른 체질량 분포를 색상으로 구분해 줍니다."
+                },
+                {
+                      "question": "3D 아바타 모델을 360도 전방위로 회전하여 볼 수 있나요?",
+                      "answer": "네, PC 마우스 드래그 또는 모바일 화면 터치 스와이프를 통해 아바타를 좌우 360도 회전하며 정면, 측면, 뒷모습 실루엣을 입체적으로 관찰할 수 있습니다."
+                },
+                {
+                      "question": "웹캠 촬영이나 실제 사진 업로드가 필요한가요?",
+                      "answer": "전혀 필요하지 않습니다. 3D 아바타는 사용자가 입력한 숫자 데이터에 기반한 절차적 기하학 알고리즘으로만 렌더링되므로 사진 촬영이나 업로드 없이 완전한 익명성이 보장됩니다."
+                },
+                {
+                      "question": "체형 체질(외배엽, 중배엽, 내배엽)은 어떻게 표현되나요?",
+                      "answer": "신장 대비 체중 비율 변화에 따라 절차적 메시가 몸통과 사지의 두께를 유기적으로 확장하거나 슬림하게 조절하여 다양한 체형 유형을 시각적으로 체감할 수 있습니다."
+                },
+                {
+                      "question": "스마트폰이나 태블릿 등 모바일 기기에서도 원활히 사용할 수 있나요?",
+                      "answer": "네, 터치스크린 입력에 최적화된 반응형 WebGL 캔버스로 제작되어 모바일 환경에서도 한 손가락 회전 조작을 부드럽게 지원합니다."
+                },
+                {
+                      "question": "사용자의 신체 데이터나 개인정보는 안전하게 보호되나요?",
+                      "answer": "네, 100% 안전합니다. 모든 그래픽 연산과 데이터 처리는 외부 서버로 전송되지 않고 사용자의 기기 브라우저 내부에서만 독립적으로 실행됩니다."
+                }
+          ]
     },
     "hi": {
-      "eyebrow": "ऑक्सफोर्ड 2.5 एक्सपोनेंशियल फॉर्मूला और 3D मॉडल",
-      "title": "3D बीएमआई कैलकुलेटर और इंटरएक्टिव 3D बॉडी विजुअलाइज़र",
-      "intro": "ऑक्सफोर्ड 2.5 फॉर्मूला (1.3 × वजन / ऊंचाई²·⁵) के साथ अपने बीएमआई की गणना करें और 360° इंटरएक्टिव 3D बॉडी मॉडलर का उपयोग करके अपनी शारीरिक संरचना को समझें।",
-      "formulaTitle": "ऑक्सफोर्ड 3D ऊंचाई-समायोजित बीएमआई फॉर्मूला",
-      "formulaDesc": "3D बीएमआई = 1.3 × वजन (किग्रा) / [ऊंचाई (मीटर)]²·⁵ | ऑक्सफोर्ड विश्वविद्यालय के गणितज्ञों द्वारा विकसित सूत्र जो लंबे या छोटे कद के लोगों में ऊंचाई के गणितीय भ्रम को दूर करता है।",
-      "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
-      "tableTitle": "मानक 2D बीएमआई बनाम 3D ऊंचाई-समायोजित बीएमआई",
-      "tableRows": [
-        {
-          "col1": "कम ऊंचाई वाले वयस्क (< 160 सेमी)",
-          "col2": "मानक 2D बीएमआई कम स्कोर दिखाता है",
-          "col3": "3D फॉर्मूला सही ऊंचाई अनुपात को समायोजित करता है"
-        },
-        {
-          "col1": "औसत ऊंचाई (170 सेमी)",
-          "col2": "दोनों फॉर्मूलों में समान परिणाम",
-          "col3": "कोई अंतर नहीं (समान श्रेणी)"
-        },
-        {
-          "col1": "अधिक ऊंचाई वाले वयस्क (> 185 सेमी)",
-          "col2": "मानक 2D बीएमआई अधिक स्कोर दिखाता है",
-          "col3": "3D फॉर्मूला 3D आयतन को संतुलित करता है"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "3D बीएमआई और मानक बीएमआई में क्या अंतर है?",
-          "answer": "मानक बीएमआई ऊंचाई के वर्ग (m²) का उपयोग करता है, जबकि 3D बीएमआई शारीरिक मात्रा को संतुलित करने के लिए 2.5 की घात (m²·⁵) का उपयोग करता है।"
-        },
-        {
-          "question": "3D बॉडी विजुअलाइज़र कैसे काम करता है?",
-          "answer": "यह आपके दर्ज किए गए वजन और ऊंचाई के आधार पर आपके ब्राउज़र में ही वास्तविक समय में 3D अवतार मॉडल तैयार करता है जिसे आप 360° घुमा सकते हैं।"
-        },
-        {
-          "question": "वायरफ्रेम, मेश और हीटमैप व्यू क्या दर्शाते हैं?",
-          "answer": "मेश शरीर के आकार को दिखाता है, वायरफ्रेम ज्यामितीय लाइनों को दिखाता है, और हीटमैप बीएमआई श्रेणी के अनुसार रंगों से जोखिम क्षेत्र दिखाता है।"
-        },
-        {
-          "question": "लंबे लोगों के लिए ऑक्सफोर्ड 2.5 फॉर्मूला क्यों बेहतर है?",
-          "answer": "ऑक्सफोर्ड विश्वविद्यालय के प्रोफेसर निक त्रेफेथेन के अनुसार, पुराना फॉर्मूला लंबे लोगों के बीएमआई को अकारण अधिक दिखाता था, जिसे 2.5 फॉर्मूला ठीक करता है।"
-        },
-        {
-          "question": "क्या 3D विजुअलाइज़र आपकी कोई निजी फोटो लेता है?",
-          "answer": "नहीं, इसके लिए किसी कैमरे या फोटो की आवश्यकता नहीं है; यह केवल आपके अंकों पर आधारित एक मुफ़्त 3D गणितीय मॉडल है।"
-        },
-        {
-          "question": "क्या मैं मोबाइल उपकरणों पर 3D बॉडी विजुअलाइज़र का उपयोग कर सकता हूं?",
-          "answer": "हाँ, 3D विज़ुअलाइज़र मोबाइल टच कंट्रोल के लिए पूरी तरह से अनुकूलित है, जिससे स्मार्टफ़ोन और टैबलेट पर 360° रोटेशन की अनुमति मिलती है।"
-        },
-        {
-          "question": "बॉडी मास इंडेक्स 3D अवतार अनुपात स्केलिंग से कैसे संबंधित है?",
-          "answer": "3D अवतार आपकी ऊंचाई-से-वजन अनुपात और बीएमआई स्कोर के आधार पर मेश की मोटाई और 3D आकृतियों को वास्तविक समय में समायोजित करता है।"
-        }
-      ]
+          "eyebrow": "इंटरएक्टिव 3D अवतार मॉडलिंग और शारीरिक बनावट विजुअलाइज़र",
+          "title": "3D बॉडी विजुअलाइज़र – इंटरएक्टिव अवतार और शारीरिक बनावट सिमुलेशन",
+          "intro": "अपने ब्राउज़र में रीयल-टाइम 3D बॉडी विजुअलाइज़र के माध्यम से अपनी शारीरिक बनावट और बॉडी शेप का अनुकरण करें। ऊंचाई, वजन और लिंग के आधार पर 360° वर्चुअल ह्यूमन मॉडल को घुमाएं, सॉलिड मेश, वायरफ्रेम और बीएमआई हीटमैप मोड देखें — बिना किसी फोटो अपलोड या कैमरे के पूरी तरह सुरक्षित और मुफ़्त।",
+          "formulaTitle": "प्रक्रियात्मक 3D पॉलीगॉन मेश विस्थापन इंजन",
+          "formulaDesc": "डायनामिक वर्टेक्स कोऑर्डिनेट विस्थापन: V(x,y,z) = बेस_मेश(x,y,z) + Δ(ऊंचाई, वजन, परिधि, लिंग) | क्लाइंट-साइड WebGL इंजन बिना किसी कैमरा कैप्चर या फ़ोटो अपलोड के आपके ब्राउज़र में रीयल-टाइम ज्यामिति को स्केल करता है।",
+          "formulaCode": "वर्टेक्स(x,y,z) = बेस_मेश + Δ(एंथ्रोपोमेट्री)",
+          "tableTitle": "3D विजुअलाइज़र मोड और शारीरिक दृष्टिकोण तालिका",
+          "tableRows": [
+                {
+                      "col1": "सॉलिड वॉल्यूम मेश",
+                      "col2": "निरंतर 3D जैविक सतह रेंडरिंग",
+                      "col3": "समग्र शारीरिक बनावट, धड़ के घुमाव और शरीर के आयतन का आकलन करता है"
+                },
+                {
+                      "col1": "ज्यामितीय वायरफ्रेम",
+                      "col2": "संरचनात्मक बहुभुज जाल ओवरले",
+                      "col3": "अंतर्निहित मेश घनत्व, शारीरिक मुद्रा संरेखण और अनुपात समरूपता को दर्शाता है"
+                },
+                {
+                      "col1": "एंथ्रोपोमेट्रिक हीटमैप",
+                      "col2": "थर्मल रंग प्रवणता (हरा, पीला, कोरल)",
+                      "col3": "धड़ पर मानक बीएमआई श्रेणियों और भार वितरण क्षेत्रों को रंगों में प्रदर्शित करता है"
+                },
+                {
+                      "col1": "360° घूर्णन दृश्य",
+                      "col2": "सामने, साइड प्रोफाइल और पीछे का दृश्य",
+                      "col3": "शारीरिक मुद्रा, रीढ़ के संतुलन और पेट के फैलाव का बहु-कोणीय निरीक्षण प्रदान करता है"
+                }
+          ],
+          "faqs": [
+                {
+                      "question": "3D बॉडी विजुअलाइज़र क्या है और यह कैसे कार्य करता है?",
+                      "answer": "यह एक इंटरएक्टिव शैक्षिक सिमुलेशन टूल है जो सीधे आपके ब्राउज़र में 3D अवतार तैयार करता है। जब आप ऊंचाई और वजन के स्लाइडर्स बदलते हैं, तो WebGL इंजन गणितीय रूप से मेश वर्टिसेस को बदलकर वास्तविक अनुपात प्रदर्शित करता है।"
+                },
+                {
+                      "question": "सॉलिड मेश, वायरफ्रेम और हीटमैप व्यू में क्या अंतर है?",
+                      "answer": "सॉलिड मेश संपूर्ण शारीरिक सतह और आकार दिखाता है। वायरफ्रेम संरचनात्मक लाइनों को दिखाता है। हीटमैप बीएमआई श्रेणियों के अनुसार रंगों से भार वितरण को उजागर करता है।"
+                },
+                {
+                      "question": "क्या मैं 3D मॉडल को 360° के किसी भी कोण से घुमाकर देख सकता हूँ?",
+                      "answer": "हाँ, कंप्यूटर पर माउस से ड्रैग करके या मोबाइल टचस्क्रीन पर उंगली से स्वाइप करके आप अवतार को 360 डिग्री घुमा सकते हैं और सामने, बगल व पीछे से शरीर की बनावट देख सकते हैं।"
+                },
+                {
+                      "question": "क्या इसके लिए किसी कैमरे, फोटो या इमेज अपलोड की आवश्यकता होती है?",
+                      "answer": "बिल्कुल नहीं। यह 3D मॉडल केवल आपके द्वारा दर्ज किए गए अंकों पर आधारित गणितीय समीकरणों से बनता है। इसमें किसी कैमरे या निजी तस्वीर की आवश्यकता नहीं होती।"
+                },
+                {
+                      "question": "शारीरिक प्रकार (एक्टोमॉर्फ, मेसोमॉर्फ, एंडोमॉर्फ) अवतार पर कैसे दिखाई देते हैं?",
+                      "answer": "जैसे-जैसे ऊंचाई के अनुपात में वजन बढ़ता है, मेश मॉडल धड़, कूल्हों और अंगों को उसी अनुपात में चौड़ा करता है, जिससे दुबले से लेकर भारी शरीर के अंतर को समझा जा सकता है।"
+                },
+                {
+                      "question": "क्या मैं टचस्क्रीन स्मार्टफोन पर इस 3D टूल का उपयोग कर सकता हूँ?",
+                      "answer": "हाँ, 3D विजुअलाइज़र टच कंट्रोल के लिए पूरी तरह अनुकूलित है और किसी भी एंड्रॉइड या आईफोन ब्राउज़र पर सुचारू रूप से कार्य करता है।"
+                },
+                {
+                      "question": "क्या 3D बॉडी विजुअलाइज़र का उपयोग करते समय मेरी जानकारी निजी रहती है?",
+                      "answer": "हाँ, 100% सुरक्षित और निजी। सभी गणनाएं और विजुअल रेंडरिंग आपके अपने फोन या कंप्यूटर के ब्राउज़र में ही होती हैं। कोई भी व्यक्तिगत डेटा सर्वर पर नहीं भेजा जाता।"
+                }
+          ]
     }
   },
   "bmi-calculator-india": {
@@ -1601,7 +1587,7 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Pautas del ICMR y la OMS para el Sur de Asia",
-      "title": "Calculadora de IMC para India – Valores de Referencia y Gráfico de Salud",
+      "title": "Calculadora de IMC para India – Valores y Gráfico de Salud",
       "intro": "Calculadora de IMC para la población india en línea basada en las directrices de consenso de la OMS y el ICMR. A diferencia de los estándares occidentales donde el sobrepeso comienza en un IMC de 25.0, las pautas para el sur de Asia establecen 23.0 kg/m² como punto de corte para sobrepeso debido a una mayor acumulación de grasa visceral a pesos corporales más bajos.",
       "formulaTitle": "Fórmula del IMC para India según ICMR y la OMS (kg y cm)",
       "formulaDesc": "Métrico: IMC = Peso (kg) / [Altura (m)]² | Umbral de sobrepeso para la población india: IMC ≥ 23.0 kg/m² | Umbral de obesidad: IMC ≥ 25.0 kg/m²",
@@ -1776,7 +1762,7 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "인도 성인을 위한 체질량지수 계산기 – ICMR 및 WHO 인도 기준",
-      "intro": "WHO 및 ICMR 남아시아 아시아 태평양 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "세계보건기구(WHO) 및 인도 의학연구위원회(ICMR)의 남아시아 아시아-태평양 지침에 기반한 실시간 참고 계산기입니다. 성인 BMI 23.0 과체중 기준선과 복부 비만 허리둘레 표준 참조 범위를 상세히 안내합니다. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "Asian BMI = Weight (kg) / [Height (cm) / 100]²",
@@ -1893,7 +1879,7 @@ const seoDatabase = {
   "bmi-calculator-for-indians": {
     "en": {
       "eyebrow": "ICMR & WHO South Asian Standards",
-      "title": "BMI Calculator for Indians – Healthy Height Weight Chart for Indian Adults",
+      "title": "BMI Calculator for Indians – Healthy Weight Chart & Cutoffs",
       "intro": "Free online BMI Calculator for Indians based on Indian Council of Medical Research (ICMR) and WHO Asia-Pacific reference standards. Compute your Body Mass Index (BMI) using kg and cm, check whether your weight falls into the healthy Indian range (18.5 – 22.9 kg/m²), and review ICMR waist circumference guidelines.",
       "formulaTitle": "Official ICMR Indian BMI Formula (kg & cm)",
       "formulaDesc": "BMI = Weight (kg) / [Height (m)]² | Healthy Range for Indians: 18.5 – 22.9 kg/m² | Overweight Cutoff: ≥ 23.0 kg/m²",
@@ -1943,7 +1929,7 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares ICMR y OMS para el Sur de Asia",
-      "title": "Calculadora de IMC para Adultos Indios – Tabla de Peso y Altura (ICMR y OMS) – Guía y Calculadora",
+      "title": "Calculadora de IMC Adultos Indios – Pautas ICMR y OMS",
       "intro": "Calculadora de IMC para la población india en línea gratuita basada en los estándares de referencia del Consejo Indio de Investigación Médica (ICMR) y la OMS para Asia-Pacífico. Calcula tu Índice de Masa Corporal (IMC) usando kg y cm, comprueba si tu peso se sitúa en el rango saludable para adultos indios (18.5 – 22.9 kg/m²) y consulta las pautas de circunferencia de cintura del ICMR.",
       "formulaTitle": "Fórmula Oficial del IMC para la Población India según ICMR (kg y cm)",
       "formulaDesc": "IMC = Peso (kg) / [Altura (m)]² | Rango saludable para adultos indios: 18.5 – 22.9 kg/m² | Punto de corte para sobrepeso: ≥ 23.0 kg/m²",
@@ -1993,7 +1979,7 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes ICMR et OMS pour l'Asie du Sud",
-      "title": "Calculateur d'IMC pour Adultes Indiens – Tableau Poids-Taille Santé (Normes ICMR & OMS) – Outil de Référence",
+      "title": "Calculateur d'IMC Adultes Indiens – Normes ICMR et OMS",
       "intro": "Calculateur d'IMC gratuit pour les Indiens basé sur les normes de référence du Conseil indien de la recherche médicale (ICMR) et de l'OMS Asie-Pacifique. Calculez votre Indice de Masse Corporelle (IMC) en kg et cm, vérifiez si votre poids se situe dans la plage saine pour adultes indiens (18,5 – 22,9 kg/m²) et consultez les recommandations de tour de taille de l'ICMR.",
       "formulaTitle": "Formule Officielle d'IMC Indien selon l'ICMR (kg et cm)",
       "formulaDesc": "IMC = Poids (kg) / [Taille (m)]² | Plage saine pour adultes indiens : 18,5 – 22,9 kg/m² | Seuil de surpoids : ≥ 23,0 kg/m²",
@@ -2043,36 +2029,36 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "ICMR & WHO Südasien-Referenzstandards",
-      "title": "BMI-Rechner für indische Erwachsene – ICMR & WHO Referenztabelle – Rechner & Leitfaden",
+      "title": "BMI-Rechner für indische Erwachsene – ICMR & WHO Referenztabelle",
       "intro": "Kostenloser Online-BMI-Rechner für indische Erwachsene basierend auf den Referenzstandards des Indian Council of Medical Research (ICMR) und der WHO-Asien-Pazifik-Region. Berechnen Sie Ihren Body-Mass-Index (BMI) in kg und cm, prüfen Sie, ob Ihr Gewicht im gesunden Bereich für indische Erwachsene liegt (18,5 – 22,9 kg/m²), und überprüfen Sie die ICMR-Taillenumfangsrichtlinien.",
       "formulaTitle": "Offizielle ICMR-BMI-Formel für indische Erwachsene (kg & cm)",
       "formulaDesc": "BMI = Gewicht (kg) / [Größe (m)]² | Gesunder Bereich für indische Erwachsene: 18,5 – 22,9 kg/m² | Übergewichtsschwelle: ≥ 23,0 kg/m²",
       "formulaCode": "BMI = Gewicht (kg) / [(Größe in cm / 100)²]",
-      "tableTitle": "ICMR & WHO Erwachsenen-BMI-Referenztabelle für indische Erwachsene (kg/m²)",
+      "tableTitle": "ICMR & WHO Erwachsenen-BMI-Referenztabelle für indische Erwachsene",
       "tableRows": [
         {
-          "col1": "Untergewicht (< 18.5 kg/m²)",
-          "col2": "< 18.5 kg/m²",
-          "col3": "Referenzschwelle für Untergewicht (< 18,5 kg/m²)"
+          "col1": "Untergewicht (< 18,5 kg/m²)",
+          "col2": "< 18,5 kg/m²",
+          "col3": "Erhöhtes Risiko für Nährstoffmängel und Unterernährung"
         },
         {
-          "col1": "Optimales Normalgewicht (18.5 – 22.9 kg/m²)",
-          "col2": "18.5 – 22.9 kg/m²",
+          "col1": "Optimales Normalgewicht (18,5 – 22,9 kg/m²)",
+          "col2": "18,5 – 22,9 kg/m²",
           "col3": "Optimaler gesunder Bereich für indische Erwachsene"
         },
         {
-          "col1": "Übergewicht / Risiko (23.0 – 24.9 kg/m²)",
-          "col2": "23.0 – 24.9 kg/m²",
+          "col1": "Übergewicht / Risiko (23,0 – 24,9 kg/m²)",
+          "col2": "23,0 – 24,9 kg/m²",
           "col3": "Erhöhter kardiometabolischer Risikogrenzwert für Inder"
         },
         {
-          "col1": "Adipositas Klasse I (25.0 – 29.9 kg/m²)",
-          "col2": "25.0 – 29.9 kg/m²",
+          "col1": "Adipositas Klasse I (25,0 – 29,9 kg/m²)",
+          "col2": "25,0 – 29,9 kg/m²",
           "col3": "Schwellenwert für Adipositas Grad I nach ICMR-Standards"
         },
         {
-          "col1": "Adipositas Klasse II (≥ 30.0 kg/m²)",
-          "col2": "≥ 30.0 kg/m²",
+          "col1": "Adipositas Klasse II (≥ 30,0 kg/m²)",
+          "col2": "≥ 30,0 kg/m²",
           "col3": "Risikoschwelle für schwere Adipositas"
         }
       ],
@@ -2143,7 +2129,7 @@ const seoDatabase = {
     },
     "hi": {
       "eyebrow": "आईसीएमआर एवं डब्ल्यूएचओ भारतीय मानक",
-      "title": "भारतीयों के लिए बीएमआई कैलकुलेटर",
+      "title": "भारतीयों के लिए बीएमआई कैलकुलेटर – स्वस्थ वजन चार्ट एवं ICMR कटऑफ",
       "intro": "भारतीय चिकित्सा अनुसंधान परिषद (ICMR) और WHO दक्षिण एशियाई दिशानिर्देशों पर आधारित भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। किलोग्राम और सेंटीमीटर में अपने बीएमआई और स्वस्थ वजन सीमा की गणना करें।",
       "formulaTitle": "भारतीय बीएमआई सूत्र",
       "formulaDesc": "बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | भारतीयों के लिए स्वस्थ सीमा: 18.5 - 22.9 kg/m²",
@@ -2195,7 +2181,7 @@ const seoDatabase = {
   "healthy-weight-by-height": {
     "en": {
       "eyebrow": "WHO & Devine Reference Charts",
-      "title": "Healthy Weight by Height Chart – Ideal Weight Range for Men & Women",
+      "title": "Healthy Weight by Height Chart – Ideal Weight Range",
       "intro": "Explore official healthy weight by height reference ranges and height-weight lookup charts for men and women. Calculate your ideal weight based on height in kilograms (kg) and pounds (lbs) based on World Health Organization (WHO), CDC, and Devine formula standards.",
       "formulaTitle": "Healthy Weight Range & Ideal Weight Equations",
       "formulaDesc": "WHO Healthy Weight Range: Min Weight = 18.5 × [Height (m)]² | Max Weight = 24.9 × [Height (m)]² | Devine IBW Male: 50kg + 2.3kg/inch >5ft | Devine IBW Female: 45.5kg + 2.3kg/inch >5ft",
@@ -2273,57 +2259,57 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Tabla de Peso Saludable por Altura – Rango de Peso Ideal para Hombres y Mujeres – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Tabla de Peso Saludable por Altura – Rango de Peso Ideal",
+      "intro": "Calculadora gratuita de peso saludable por altura y matriz de peso corporal ideal. Consulta rangos de peso saludable por altura (cm, pies, pulgadas) según los estándares OMS IMC 18.5 - 24.9 y la fórmula de Devine con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "Min Healthy (kg) = 18.5 × m²  |  Max Healthy (kg) = 24.9 × m²",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Tabla de Peso y Altura para Hombres y Mujeres (Rango Saludable Oficial OMS en kg y lbs)",
       "tableRows": [
         {
-          "col1": "Categoría / Nivel 1",
+          "col1": "4' 10\" (147 cm)",
           "col2": "40.0 – 53.8 kg (88 – 119 lbs)",
-          "col3": "Peso Devine ideal: Hombres ~43.2 kg | Mujeres ~36.3 kg"
+          "col3": "IBW Devine: Hombres ~43.2 kg | Mujeres ~36.3 kg"
         },
         {
-          "col1": "Categoría / Nivel 2",
+          "col1": "5' 0\" (152 cm)",
           "col2": "42.8 – 57.6 kg (94 – 127 lbs)",
-          "col3": "Peso Devine ideal: Hombres ~50.0 kg | Mujeres ~45.5 kg"
+          "col3": "IBW Devine: Hombres ~50.0 kg | Mujeres ~45.5 kg"
         },
         {
-          "col1": "Categoría / Nivel 3",
+          "col1": "5' 2\" (157 cm)",
           "col2": "45.6 – 61.4 kg (100 – 135 lbs)",
-          "col3": "Peso Devine ideal: Hombres ~54.6 kg | Mujeres ~50.1 kg"
+          "col3": "IBW Devine: Hombres ~54.6 kg | Mujeres ~50.1 kg"
         },
         {
-          "col1": "Categoría / Nivel 4",
+          "col1": "5' 4\" (163 cm)",
           "col2": "49.2 – 66.2 kg (108 – 146 lbs)",
-          "col3": "Peso Devine ideal: Hombres ~59.2 kg | Mujeres ~54.7 kg"
+          "col3": "IBW Devine: Hombres ~59.2 kg | Mujeres ~54.7 kg"
         },
         {
-          "col1": "Categoría / Nivel 5",
+          "col1": "5' 6\" (168 cm)",
           "col2": "52.2 – 70.3 kg (115 – 155 lbs)",
-          "col3": "Peso Devine ideal: Hombres ~63.8 kg | Mujeres ~59.3 kg"
+          "col3": "IBW Devine: Hombres ~63.8 kg | Mujeres ~59.3 kg"
         },
         {
-          "col1": "Categoría / Nivel 6",
+          "col1": "5' 8\" (173 cm)",
           "col2": "55.4 – 74.5 kg (122 – 164 lbs)",
-          "col3": "Peso Devine ideal: Hombres ~68.4 kg | Mujeres ~63.9 kg"
+          "col3": "IBW Devine: Hombres ~68.4 kg | Mujeres ~63.9 kg"
         },
         {
-          "col1": "Categoría / Nivel 7",
+          "col1": "5' 10\" (178 cm)",
           "col2": "58.6 – 78.9 kg (129 – 174 lbs)",
-          "col3": "Peso Devine ideal: Hombres ~73.0 kg | Mujeres ~68.5 kg"
+          "col3": "IBW Devine: Hombres ~73.0 kg | Mujeres ~68.5 kg"
         },
         {
-          "col1": "Categoría / Nivel 8",
+          "col1": "6' 0\" (183 cm)",
           "col2": "62.0 – 83.4 kg (136 – 184 lbs)",
-          "col3": "Peso Devine ideal: Hombres ~77.6 kg | Mujeres ~73.1 kg"
+          "col3": "IBW Devine: Hombres ~77.6 kg | Mujeres ~73.1 kg"
         },
         {
-          "col1": "Categoría / Nivel 9",
+          "col1": "6' 2\" (188 cm)",
           "col2": "65.4 – 88.0 kg (144 – 194 lbs)",
-          "col3": "Peso Devine ideal: Hombres ~82.2 kg | Mujeres ~77.7 kg"
+          "col3": "IBW Devine: Hombres ~82.2 kg | Mujeres ~77.7 kg"
         }
       ],
       "faqs": [
@@ -2351,57 +2337,57 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Tableau du Poids Santé selon la Taille – Plage de Poids Idéal Hommes et Femmes – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Tableau du Poids Santé selon la Taille – Plage Idéale",
+      "intro": "Calculateur gratuit de poids idéal par taille et matrice de poids santé. Consultez les plages de poids santé selon la taille (cm, pieds, pouces) basées sur les normes OMS IMC 18,5 - 24,9 et la formule de Devine avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "Min Healthy (kg) = 18.5 × m²  |  Max Healthy (kg) = 24.9 × m²",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Tableau Poids-Taille pour Hommes et Femmes (Plage Santé Officielle OMS en kg et lbs)",
       "tableRows": [
         {
-          "col1": "Catégorie / Niveau 1",
+          "col1": "4' 10\" (147 cm)",
           "col2": "40.0 – 53.8 kg (88 – 119 lbs)",
-          "col3": "Poids Devine idéal : Hommes ~43.2 kg | Femmes ~36.3 kg"
+          "col3": "Poids idéal Devine : Hommes ~43.2 kg | Femmes ~36.3 kg"
         },
         {
-          "col1": "Catégorie / Niveau 2",
+          "col1": "5' 0\" (152 cm)",
           "col2": "42.8 – 57.6 kg (94 – 127 lbs)",
-          "col3": "Poids Devine idéal : Hommes ~50.0 kg | Femmes ~45.5 kg"
+          "col3": "Poids idéal Devine : Hommes ~50.0 kg | Femmes ~45.5 kg"
         },
         {
-          "col1": "Catégorie / Niveau 3",
+          "col1": "5' 2\" (157 cm)",
           "col2": "45.6 – 61.4 kg (100 – 135 lbs)",
-          "col3": "Poids Devine idéal : Hommes ~54.6 kg | Femmes ~50.1 kg"
+          "col3": "Poids idéal Devine : Hommes ~54.6 kg | Femmes ~50.1 kg"
         },
         {
-          "col1": "Catégorie / Niveau 4",
+          "col1": "5' 4\" (163 cm)",
           "col2": "49.2 – 66.2 kg (108 – 146 lbs)",
-          "col3": "Poids Devine idéal : Hommes ~59.2 kg | Femmes ~54.7 kg"
+          "col3": "Poids idéal Devine : Hommes ~59.2 kg | Femmes ~54.7 kg"
         },
         {
-          "col1": "Catégorie / Niveau 5",
+          "col1": "5' 6\" (168 cm)",
           "col2": "52.2 – 70.3 kg (115 – 155 lbs)",
-          "col3": "Poids Devine idéal : Hommes ~63.8 kg | Femmes ~59.3 kg"
+          "col3": "Poids idéal Devine : Hommes ~63.8 kg | Femmes ~59.3 kg"
         },
         {
-          "col1": "Catégorie / Niveau 6",
+          "col1": "5' 8\" (173 cm)",
           "col2": "55.4 – 74.5 kg (122 – 164 lbs)",
-          "col3": "Poids Devine idéal : Hommes ~68.4 kg | Femmes ~63.9 kg"
+          "col3": "Poids idéal Devine : Hommes ~68.4 kg | Femmes ~63.9 kg"
         },
         {
-          "col1": "Catégorie / Niveau 7",
+          "col1": "5' 10\" (178 cm)",
           "col2": "58.6 – 78.9 kg (129 – 174 lbs)",
-          "col3": "Poids Devine idéal : Hommes ~73.0 kg | Femmes ~68.5 kg"
+          "col3": "Poids idéal Devine : Hommes ~73.0 kg | Femmes ~68.5 kg"
         },
         {
-          "col1": "Catégorie / Niveau 8",
+          "col1": "6' 0\" (183 cm)",
           "col2": "62.0 – 83.4 kg (136 – 184 lbs)",
-          "col3": "Poids Devine idéal : Hommes ~77.6 kg | Femmes ~73.1 kg"
+          "col3": "Poids idéal Devine : Hommes ~77.6 kg | Femmes ~73.1 kg"
         },
         {
-          "col1": "Catégorie / Niveau 9",
+          "col1": "6' 2\" (188 cm)",
           "col2": "65.4 – 88.0 kg (144 – 194 lbs)",
-          "col3": "Poids Devine idéal : Hommes ~82.2 kg | Femmes ~77.7 kg"
+          "col3": "Poids idéal Devine : Hommes ~82.2 kg | Femmes ~77.7 kg"
         }
       ],
       "faqs": [
@@ -2429,57 +2415,57 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Gesundes Gewicht nach Körpergröße – Idealer Gewichtsbereich für Männer & Frauen – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Gesundes Gewicht nach Größe – Idealer Gewichtsbereich",
+      "intro": "Kostenloser Idealgewicht-nach-Größe-Rechner & Körpergewicht-Matrix. Schlagen Sie gesunde Gewichtsbereiche nach Körpergröße (cm, Fuß, Zoll) basierend auf WHO-BMI-Normen (18,5 - 24,9) und Devine-Formel datenschutzorientiert im Browser nach.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "Min Healthy (kg) = 18.5 × m²  |  Max Healthy (kg) = 24.9 × m²",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "Größen- und Gewichtstabelle für Männer & Frauen (Offizieller WHO-Gesundheitsbereich in kg & lbs)",
       "tableRows": [
         {
-          "col1": "Kategorie / Stufe 1",
+          "col1": "4' 10\" (147 cm)",
           "col2": "40.0 – 53.8 kg (88 – 119 lbs)",
-          "col3": "Ideales Devine-Gewicht: Männer ~43.2 kg | Frauen ~36.3 kg"
+          "col3": "Devine IBW: Männer ~43.2 kg | Frauen ~36.3 kg"
         },
         {
-          "col1": "Kategorie / Stufe 2",
+          "col1": "5' 0\" (152 cm)",
           "col2": "42.8 – 57.6 kg (94 – 127 lbs)",
-          "col3": "Ideales Devine-Gewicht: Männer ~50.0 kg | Frauen ~45.5 kg"
+          "col3": "Devine IBW: Männer ~50.0 kg | Frauen ~45.5 kg"
         },
         {
-          "col1": "Kategorie / Stufe 3",
+          "col1": "5' 2\" (157 cm)",
           "col2": "45.6 – 61.4 kg (100 – 135 lbs)",
-          "col3": "Ideales Devine-Gewicht: Männer ~54.6 kg | Frauen ~50.1 kg"
+          "col3": "Devine IBW: Männer ~54.6 kg | Frauen ~50.1 kg"
         },
         {
-          "col1": "Kategorie / Stufe 4",
+          "col1": "5' 4\" (163 cm)",
           "col2": "49.2 – 66.2 kg (108 – 146 lbs)",
-          "col3": "Ideales Devine-Gewicht: Männer ~59.2 kg | Frauen ~54.7 kg"
+          "col3": "Devine IBW: Männer ~59.2 kg | Frauen ~54.7 kg"
         },
         {
-          "col1": "Kategorie / Stufe 5",
+          "col1": "5' 6\" (168 cm)",
           "col2": "52.2 – 70.3 kg (115 – 155 lbs)",
-          "col3": "Ideales Devine-Gewicht: Männer ~63.8 kg | Frauen ~59.3 kg"
+          "col3": "Devine IBW: Männer ~63.8 kg | Frauen ~59.3 kg"
         },
         {
-          "col1": "Kategorie / Stufe 6",
+          "col1": "5' 8\" (173 cm)",
           "col2": "55.4 – 74.5 kg (122 – 164 lbs)",
-          "col3": "Ideales Devine-Gewicht: Männer ~68.4 kg | Frauen ~63.9 kg"
+          "col3": "Devine IBW: Männer ~68.4 kg | Frauen ~63.9 kg"
         },
         {
-          "col1": "Kategorie / Stufe 7",
+          "col1": "5' 10\" (178 cm)",
           "col2": "58.6 – 78.9 kg (129 – 174 lbs)",
-          "col3": "Ideales Devine-Gewicht: Männer ~73.0 kg | Frauen ~68.5 kg"
+          "col3": "Devine IBW: Männer ~73.0 kg | Frauen ~68.5 kg"
         },
         {
-          "col1": "Kategorie / Stufe 8",
+          "col1": "6' 0\" (183 cm)",
           "col2": "62.0 – 83.4 kg (136 – 184 lbs)",
-          "col3": "Ideales Devine-Gewicht: Männer ~77.6 kg | Frauen ~73.1 kg"
+          "col3": "Devine IBW: Männer ~77.6 kg | Frauen ~73.1 kg"
         },
         {
-          "col1": "Kategorie / Stufe 9",
+          "col1": "6' 2\" (188 cm)",
           "col2": "65.4 – 88.0 kg (144 – 194 lbs)",
-          "col3": "Ideales Devine-Gewicht: Männer ~82.2 kg | Frauen ~77.7 kg"
+          "col3": "Devine IBW: Männer ~82.2 kg | Frauen ~77.7 kg"
         }
       ],
       "faqs": [
@@ -2508,56 +2494,56 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "키별 건강 체중 차트 – 남성 및 여성 이상적인 체중 범위 – 참조 계산기",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "신장별 정상 체중 무료 계산기 및 이상적 체중 진단표. 세계보건기구(WHO) BMI 18.5 - 24.9 기준 및 Devine 공식에 따라 신장(cm, 피트, 인치)별 건강한 체중 참조 범위를 브라우저에서 안전하게 조회하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "Min Healthy (kg) = 18.5 × m²  |  Max Healthy (kg) = 24.9 × m²",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "남녀 신장별 적정 체중 차트 (WHO 공식 표준 체중 범위 kg 및 lbs)",
       "tableRows": [
         {
-          "col1": "범주 / 단계 1",
+          "col1": "4' 10\" (147 cm)",
           "col2": "40.0 – 53.8 kg (88 – 119 lbs)",
-          "col3": "Devine 이상 체중: 남성 ~43.2 kg | 여성 ~36.3 kg"
+          "col3": "드바인 공식 이상체중: 남성 ~43.2 kg | 여성 ~36.3 kg"
         },
         {
-          "col1": "범주 / 단계 2",
+          "col1": "5' 0\" (152 cm)",
           "col2": "42.8 – 57.6 kg (94 – 127 lbs)",
-          "col3": "Devine 이상 체중: 남성 ~50.0 kg | 여성 ~45.5 kg"
+          "col3": "드바인 공식 이상체중: 남성 ~50.0 kg | 여성 ~45.5 kg"
         },
         {
-          "col1": "범주 / 단계 3",
+          "col1": "5' 2\" (157 cm)",
           "col2": "45.6 – 61.4 kg (100 – 135 lbs)",
-          "col3": "Devine 이상 체중: 남성 ~54.6 kg | 여성 ~50.1 kg"
+          "col3": "드바인 공식 이상체중: 남성 ~54.6 kg | 여성 ~50.1 kg"
         },
         {
-          "col1": "범주 / 단계 4",
+          "col1": "5' 4\" (163 cm)",
           "col2": "49.2 – 66.2 kg (108 – 146 lbs)",
-          "col3": "Devine 이상 체중: 남성 ~59.2 kg | 여성 ~54.7 kg"
+          "col3": "드바인 공식 이상체중: 남성 ~59.2 kg | 여성 ~54.7 kg"
         },
         {
-          "col1": "범주 / 단계 5",
+          "col1": "5' 6\" (168 cm)",
           "col2": "52.2 – 70.3 kg (115 – 155 lbs)",
-          "col3": "Devine 이상 체중: 남성 ~63.8 kg | 여성 ~59.3 kg"
+          "col3": "드바인 공식 이상체중: 남성 ~63.8 kg | 여성 ~59.3 kg"
         },
         {
-          "col1": "범주 / 단계 6",
+          "col1": "5' 8\" (173 cm)",
           "col2": "55.4 – 74.5 kg (122 – 164 lbs)",
-          "col3": "Devine 이상 체중: 남성 ~68.4 kg | 여성 ~63.9 kg"
+          "col3": "드바인 공식 이상체중: 남성 ~68.4 kg | 여성 ~63.9 kg"
         },
         {
-          "col1": "범주 / 단계 7",
+          "col1": "5' 10\" (178 cm)",
           "col2": "58.6 – 78.9 kg (129 – 174 lbs)",
-          "col3": "Devine 이상 체중: 남성 ~73.0 kg | 여성 ~68.5 kg"
+          "col3": "드바인 공식 이상체중: 남성 ~73.0 kg | 여성 ~68.5 kg"
         },
         {
-          "col1": "범주 / 단계 8",
+          "col1": "6' 0\" (183 cm)",
           "col2": "62.0 – 83.4 kg (136 – 184 lbs)",
-          "col3": "Devine 이상 체중: 남성 ~77.6 kg | 여성 ~73.1 kg"
+          "col3": "드바인 공식 이상체중: 남성 ~77.6 kg | 여성 ~73.1 kg"
         },
         {
-          "col1": "범주 / 단계 9",
+          "col1": "6' 2\" (188 cm)",
           "col2": "65.4 – 88.0 kg (144 – 194 lbs)",
-          "col3": "Devine 이상 체중: 남성 ~82.2 kg | 여성 ~77.7 kg"
+          "col3": "드바인 공식 이상체중: 남성 ~82.2 kg | 여성 ~77.7 kg"
         }
       ],
       "faqs": [
@@ -2585,7 +2571,7 @@ const seoDatabase = {
     },
     "hi": {
       "eyebrow": "डब्ल्यूएचओ एवं डिवाइन संदर्भ तालिका",
-      "title": "ऊंचाई के अनुसार स्वस्थ वजन चार्ट – पुरुषों और महिलाओं के लिए आदर्श वजन सीमा",
+      "title": "ऊंचाई के अनुसार स्वस्थ वजन चार्ट – पुरुषों व महिलाओं का आदर्श वजन",
       "intro": "पुरुषों और महिलाओं के लिए ऊंचाई के अनुसार स्वस्थ वजन संदर्भ सीमाओं और हाइट-वेट चार्ट की समीक्षा करें। WHO, CDC और डिवाइन फॉर्मूला के आधार पर किलोग्राम (kg) और पाउंड (lbs) में अपनी ऊंचाई के अनुसार आदर्श वजन खोजें।",
       "formulaTitle": "ऊंचाई के अनुसार स्वस्थ वजन का गणितीय सूत्र",
       "formulaDesc": "न्यूनतम स्वस्थ वजन = 18.5 × [ऊंचाई (मीटर)]² | अधिकतम स्वस्थ वजन = 24.9 × [ऊंचाई (मीटर)]²",
@@ -2664,350 +2650,290 @@ const seoDatabase = {
   },
   "diabetes-risk-calculator": {
     "en": {
-      "eyebrow": "WHO Asian Regional Guidance",
-      "title": "Asian BMI Reference Calculator — BMI 23 Threshold",
-      "intro": "Calculate BMI using commonly referenced Asian-population BMI thresholds and waist measurements. Results provide population-level reference context and are not a diabetes diagnosis.",
-      "formulaTitle": "WHO Asian BMI Reference Criteria & Waist Thresholds",
-      "formulaDesc": "Asian Overweight Reference Threshold: BMI ≥ 23.0 kg/m² | Asian Obesity Reference Threshold: BMI ≥ 27.5 kg/m² | Asian Waist Screening Reference: Men ≥ 90 cm, Women ≥ 80 cm",
-      "formulaCode": "Asian Overweight: BMI 23.0 - 27.4 | Asian Obesity: BMI ≥ 27.5",
-      "tableTitle": "WHO Asian BMI Reference Matrix vs Western Baseline",
+      "eyebrow": "Cardiometabolic Risk Screening",
+      "title": "Type 2 Diabetes Risk Calculator – BMI & Waist Risk Reference",
+      "intro": "Free Type 2 Diabetes Risk Calculator based on BMI, waist circumference, age, and WHO metabolic risk cutoffs. Assess screening factors privately in your browser.",
+      "formulaTitle": "IDF & WHO Cardiometabolic Risk Assessment Criteria",
+      "formulaDesc": "Combined Screening Criteria: BMI ≥ 25.0 kg/m² (≥ 23.0 for Asian adults), Waist Circumference ≥ 94 cm for men (≥ 90 cm Asian) and ≥ 80 cm for women, Age ≥ 40-45 years.",
+      "formulaCode": "Metabolic Risk Index = f(BMI, Waist Circumference, Age, Gender)",
+      "tableTitle": "Type 2 Diabetes Screening Risk Categories Matrix",
       "tableRows": [
         {
-          "col1": "Underweight",
-          "col2": "BMI < 18.5 kg/m²",
-          "col3": ""
+          "col1": "Standard Reference",
+          "col2": "BMI < 23 (Asian) / < 25 (Global) & Normal Waist",
+          "col3": "Baseline metabolic reference range with low statistical risk"
         },
         {
-          "col1": "Standard Reference Weight",
-          "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": ""
+          "col1": "Moderate Threshold",
+          "col2": "BMI 23–27.4 (Asian) or Waist at threshold",
+          "col3": "Early cardiometabolic action range; lifestyle guidance advised"
         },
         {
-          "col1": "Asian Overweight Reference Threshold (23)",
-          "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": ""
-        },
-        {
-          "col1": "Asian Obesity Class I",
-          "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": ""
-        },
-        {
-          "col1": "Asian Obesity Class II",
-          "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": ""
+          "col1": "Elevated Threshold",
+          "col2": "BMI ≥ 27.5 or High Waist with Age ≥ 40",
+          "col3": "Elevated metabolic risk cutoff; clinical screening recommended"
         }
       ],
       "faqs": [
         {
-          "question": "What is the Asian BMI Cutoff Calculator 23?",
-          "answer": "The Asian BMI Cutoff Calculator 23 is a health screening reference tool aligned with World Health Organization (WHO) Western Pacific Region and ICMR guidance that sets the overweight cutoff for Asian adults at 23.0 kg/m²."
+          "question": "What is the connection between BMI and Type 2 Diabetes risk?",
+          "answer": "Higher Body Mass Index (BMI), particularly when accompanied by visceral abdominal adiposity, is strongly associated with insulin resistance, impaired glucose tolerance, and elevated Type 2 Diabetes risk."
         },
         {
-          "question": "Why is the Asian BMI cutoff 23 kg/m² instead of 25 kg/m²?",
-          "answer": "World Health Organization (WHO) epidemiological studies observed that Asian populations accumulate higher percentages of visceral and body fat at lower BMI scores, elevating cardiometabolic risk at 23.0 kg/m²."
+          "question": "Why is the diabetes risk cutoff lower for Asian adults (BMI 23)?",
+          "answer": "World Health Organization (WHO) and International Diabetes Federation (IDF) studies show that Asian adults accumulate more abdominal visceral fat at lower body weights, increasing cardiometabolic risk at BMI 23.0 kg/m²."
         },
         {
-          "question": "How is the Asian BMI threshold of 23 kg/m² evaluated?",
-          "answer": "Divide your weight in kg by your height in meters squared. A score of 23.0 kg/m² or higher indicates the overweight action range for Asian populations."
+          "question": "Why is waist circumference evaluated alongside BMI?",
+          "answer": "Waist circumference specifically screens for intra-abdominal fat surrounding vital organs. Research demonstrates that abdominal fat is a more potent predictor of metabolic disorders than total body weight alone."
         },
         {
-          "question": "What waist circumference thresholds apply to Asian populations?",
-          "answer": "According to International Diabetes Federation (IDF) reference standards, abdominal risk cutoffs for Asian adults are ≥ 90 cm for men and ≥ 80 cm for women."
+          "question": "What do the risk score categories indicate?",
+          "answer": "The categories indicate statistical population risk: Standard Reference represents baseline risk, Moderate Threshold suggests early lifestyle review, and Elevated Threshold warrants a formal clinical checkup."
         },
         {
-          "question": "What should I do if my BMI score is 23 or higher?",
-          "answer": "A BMI score of 23.0 to 27.4 falls within the Asian overweight reference range. Beneficial lifestyle steps include balanced nutrition, physical activity, and consulting a healthcare professional for comprehensive screening."
+          "question": "Does this calculator provide a medical diabetes diagnosis?",
+          "answer": "No. This tool is strictly an educational screening calculator based on published epidemiological risk factors. A clinical diagnosis requires blood glucose testing (such as HbA1c or fasting plasma glucose) by a licensed physician."
         }
       ]
     },
     "es": {
-      "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de IMC Asiático — Umbral IMC 23",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "Asian Overweight: BMI 23.0 - 27.4 | Asian Obesity: BMI ≥ 27.5",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "eyebrow": "Evaluación de Riesgo Cardiometabólico",
+      "title": "Calculadora de Riesgo de Diabetes Tipo 2 – Referencia de IMC y Cintura",
+      "intro": "Calculadora gratuita de riesgo de diabetes tipo 2 basada en IMC, circunferencia de cintura y edad. Evalúa factores de riesgo metabólico en el navegador.",
+      "formulaTitle": "Criterios de Riesgo Cardiometabólico de la IDF y OMS",
+      "formulaDesc": "Criterios combinados: IMC ≥ 25.0 kg/m² (≥ 23.0 adultos asiáticos), cintura ≥ 94 cm hombres (≥ 90 cm asiáticos) y ≥ 80 cm mujeres, edad ≥ 40-45 años.",
+      "formulaCode": "Índice de Riesgo Metabólico = f(IMC, Cintura, Edad, Género)",
+      "tableTitle": "Matriz de Categorías de Riesgo de Diabetes Tipo 2",
       "tableRows": [
         {
-          "col1": "Categoría / Nivel 1",
-          "col2": "BMI < 18.5 kg/m²",
-          "col3": "Rango de referencia "
+          "col1": "Referencia Estándar",
+          "col2": "IMC < 23 (Asiático) / < 25 (Global) & Cintura Normal",
+          "col3": "Rango de referencia metabólica basal con bajo riesgo estadístico"
         },
         {
-          "col1": "Categoría / Nivel 2",
-          "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": "Rango de referencia "
+          "col1": "Umbral Moderado",
+          "col2": "IMC 23–27.4 (Asiático) o Cintura en umbral",
+          "col3": "Rango de acción temprana; se aconsejan hábitos saludables"
         },
         {
-          "col1": "Categoría / Nivel 3",
-          "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": "Rango de referencia "
-        },
-        {
-          "col1": "Categoría / Nivel 4",
-          "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": "Rango de referencia "
-        },
-        {
-          "col1": "Categoría / Nivel 5",
-          "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": "Rango de referencia "
+          "col1": "Umbral Elevado",
+          "col2": "IMC ≥ 27.5 o Cintura Elevada con Edad ≥ 40",
+          "col3": "Corte de riesgo metabólico aumentado; evaluación clínica sugerida"
         }
       ],
       "faqs": [
         {
-          "question": "¿Qué es la calculadora de umbral de IMC asiático 23?",
-          "answer": "Es una herramienta de evaluación basada en los criterios de la OMS que identifica el riesgo cardiometabólico temprano en poblaciones asiáticas a partir de un IMC de 23.0 kg/m²."
+          "question": "¿Cuál es la relación entre el IMC y el riesgo de diabetes tipo 2?",
+          "answer": "Un índice de masa corporal elevado, especialmente combinado con acumulación de grasa abdominal, está fuertemente correlacionado con resistencia a la insulina y mayor riesgo de diabetes tipo 2."
         },
         {
-          "question": "¿Por qué el umbral de sobrepeso asiático es de 23 kg/m² en lugar de 25 kg/m²?",
-          "answer": "Los estudios de la OMS observaron que las poblaciones asiáticas suelen presentar un mayor porcentaje de grasa visceral y riesgo metabólico con valores de IMC más bajos."
+          "question": "¿Por qué el umbral de riesgo es menor para poblaciones asiáticas (IMC 23)?",
+          "answer": "Investigaciones de la OMS y la IDF indican que las poblaciones asiáticas desarrollan más grasa visceral con un IMC más bajo, elevando el riesgo metabólico desde los 23.0 kg/m²."
         },
         {
-          "question": "¿Cómo se evalúa el umbral de IMC asiático de 23 kg/m²?",
-          "answer": "Divide tu peso en kg entre la altura en metros al cuadrado. Un valor de 23.0 kg/m² o superior indica la zona de sobrepeso según los estándares de Asia-Pacífico."
+          "question": "¿Por qué se mide la circunferencia de cintura junto al IMC?",
+          "answer": "La circunferencia de cintura evalúa la grasa visceral que rodea los órganos internos, siendo un indicador más directo de alteraciones metabólicas que el peso total por sí solo."
         },
         {
-          "question": "¿Qué medidas de cintura se recomiendan para poblaciones asiáticas?",
-          "answer": "Según la Federación Internacional de Diabetes (IDF), se recomienda mantener la cintura por debajo de 90 cm en hombres y 80 cm en mujeres asiáticas."
+          "question": "¿Qué significan las categorías de puntuación de riesgo?",
+          "answer": "Indican riesgo estadístico poblacional: Referencia Estándar refleja riesgo basal bajo, Umbral Moderado sugiere optimizar hábitos, y Umbral Elevado recomienda revisión médica."
         },
         {
-          "question": "¿Qué debo hacer si mi puntuación de IMC es de 23 o superior?",
-          "answer": "Un IMC entre 23.0 y 27.4 se sitúa en el rango de sobrepeso asiático. Se aconseja revisar los hábitos de actividad física y consultar a un profesional de la salud."
+          "question": "¿Esta calculadora proporciona un diagnóstico médico de diabetes?",
+          "answer": "No. Es una herramienta educativa de detección basada en factores de riesgo epidemiológicos publicados. El diagnóstico formal requiere análisis clínicos como la prueba de HbA1c supervisada por un médico."
         }
       ]
     },
     "fr": {
-      "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur d'IMC Asiatique — Seuil IMC 23",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "Asian Overweight: BMI 23.0 - 27.4 | Asian Obesity: BMI ≥ 27.5",
-      "tableTitle": "Tableau de Référence Standard",
+      "eyebrow": "Dépistage du Risque Cardiométabolique",
+      "title": "Calculateur de Risque de Diabète Type 2 – IMC et Tour de Taille",
+      "intro": "Calculateur gratuit de risque de diabète de type 2 basé sur l'IMC, le tour de taille et l'âge selon l'OMS. Évaluez vos facteurs de risque en toute confidentialité.",
+      "formulaTitle": "Critères d'Évaluation du Risque Cardiométabolique FID & OMS",
+      "formulaDesc": "Critères combinés : IMC ≥ 25,0 kg/m² (≥ 23,0 populations asiatiques), tour de taille ≥ 94 cm hommes (≥ 90 cm asiatiques) et ≥ 80 cm femmes, âge ≥ 40-45 ans.",
+      "formulaCode": "Indice de Risque Métabolique = f(IMC, Tour de Taille, Âge, Sexe)",
+      "tableTitle": "Matrice des Catégories de Risque de Diabète de Type 2",
       "tableRows": [
         {
-          "col1": "Catégorie / Niveau 1",
-          "col2": "BMI < 18.5 kg/m²",
-          "col3": "Plage de référence "
+          "col1": "Référence Standard",
+          "col2": "IMC < 23 (Asiatique) / < 25 (Global) & Tour Normal",
+          "col3": "Plage de référence métabolique avec risque statistique faible"
         },
         {
-          "col1": "Catégorie / Niveau 2",
-          "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": "Plage de référence "
+          "col1": "Seuil Modéré",
+          "col2": "IMC 23–27,4 (Asiatique) ou Tour de taille limite",
+          "col3": "Zone d'action préventive ; suivi de l'hygiène de vie conseillé"
         },
         {
-          "col1": "Catégorie / Niveau 3",
-          "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": "Plage de référence "
-        },
-        {
-          "col1": "Catégorie / Niveau 4",
-          "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": "Plage de référence "
-        },
-        {
-          "col1": "Catégorie / Niveau 5",
-          "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": "Plage de référence "
+          "col1": "Seuil Élevé",
+          "col2": "IMC ≥ 27,5 ou Tour Élevé avec Âge ≥ 40 ans",
+          "col3": "Seuil de risque accru ; bilan médical recommandé"
         }
       ],
       "faqs": [
         {
-          "question": "Qu'est-ce que le calculateur du seuil d'IMC asiatique à 23 ?",
-          "answer": "C'est un outil d'orientation fondé sur les critères de l'OMS qui identifie les risques cardiométaboliques chez les populations asiatiques dès un IMC de 23,0 kg/m²."
+          "question": "Quel est le lien entre l'IMC et le risque de diabète de type 2 ?",
+          "answer": "Un IMC élevé associé à une adiposité abdominale viscérale favorise l'insulinorésistance et augmente significativement le risque de développer un diabète de type 2."
         },
         {
-          "question": "Pourquoi le seuil de surpoids asiatique est-il de 23 kg/m² au lieu de 25 kg/m² ?",
-          "answer": "Les recherches de l'OMS ont montré que les populations asiatiques accumulent davantage de graisse viscérale à des indices de masse corporelle plus faibles."
+          "question": "Pourquoi le seuil est-il plus bas pour les populations asiatiques (IMC 23) ?",
+          "answer": "Selon l'OMS et la Fédération Internationale du Diabète, les personnes d'origine asiatique accumulent plus de graisse viscérale à un poids corporel moindre, d'où un seuil d'alerte dès 23,0 kg/m²."
         },
         {
-          "question": "Comment s'évalue le seuil d'IMC asiatique de 23 kg/m² ?",
-          "answer": "Divisez votre poids en kg par votre taille en mètres au carré. Un résultat de 23,0 kg/m² ou plus correspond au surpoids selon les normes Asie-Pacifique."
+          "question": "Pourquoi mesurer le tour de taille en plus de l'IMC ?",
+          "answer": "Le tour de taille cible la graisse abdominale profonde autour des organes, constituant un prédicteur métabolique plus précis que le simple ratio poids-taille."
         },
         {
-          "question": "Quels tours de taille sont recommandés pour les populations asiatiques ?",
-          "answer": "Selon la FID (Fédération Internationale du Diabète), les repères sont inférieurs à 90 cm pour les hommes et 80 cm pour les femmes asiatiques."
+          "question": "Que signifient les catégories de résultat ?",
+          "answer": "Elles reflètent un niveau de risque statistique : Référence Standard correspond au risque de base, Seuil Modéré invite à la vigilance, et Seuil Élevé conseille un bilan médical."
         },
         {
-          "question": "Que faire si mon score d'IMC est de 23 ou plus ?",
-          "answer": "Un score de 23,0 à 27,4 entre dans la catégorie de surpoids asiatique. Adopter une alimentation équilibrée et une activité régulière est recommandé."
+          "question": "Ce calculateur fournit-il un diagnostic médical ?",
+          "answer": "Non. Cet outil est un guide de dépistage éducatif. Seuls des examens sanguins prescrits par un médecin (comme l'HbA1c ou la glycémie à jeun) permettent d'établir un diagnostic."
         }
       ]
     },
     "de": {
-      "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Asiatischer BMI-Rechner — BMI 23 Schwellenwert",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "Asian Overweight: BMI 23.0 - 27.4 | Asian Obesity: BMI ≥ 27.5",
-      "tableTitle": "Standard-Referenztabelle",
+      "eyebrow": "Kardiometabolisches Risikoscreening",
+      "title": "Typ-2-Diabetes-Risiko-Rechner – BMI & Taillenumfang Referenz",
+      "intro": "Kostenloser Typ-2-Diabetes-Risikorechner basierend auf BMI, Taillenumfang und Alter nach WHO-Richtlinien. Bewerten Sie Stoffwechsel-Risikofaktoren privat im Browser.",
+      "formulaTitle": "IDF & WHO Kardiometabolische Risikokriterien",
+      "formulaDesc": "Kombinierte Kriterien: BMI ≥ 25,0 kg/m² (≥ 23,0 asiatische Erwachsene), Taillenumfang ≥ 94 cm Männer (≥ 90 cm asiatisch) und ≥ 80 cm Frauen, Alter ≥ 40-45 Jahre.",
+      "formulaCode": "Metabolischer Risiko-Index = f(BMI, Taillenumfang, Alter, Geschlecht)",
+      "tableTitle": "Matrix der Risikokategorien für Typ-2-Diabetes",
       "tableRows": [
         {
-          "col1": "Kategorie / Stufe 1",
-          "col2": "BMI < 18.5 kg/m²",
-          "col3": "Referenzbereich "
+          "col1": "Standardreferenz",
+          "col2": "BMI < 23 (Asiatisch) / < 25 (Global) & Normaler Umfang",
+          "col3": "Metabolischer Basis-Referenzbereich mit geringem statistischem Risiko"
         },
         {
-          "col1": "Kategorie / Stufe 2",
-          "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": "Referenzbereich "
+          "col1": "Mäßige Schwelle",
+          "col2": "BMI 23–27,4 (Asiatisch) oder Taillenumfang am Grenzwert",
+          "col3": "Frühzeitiger Handlungsbereich ; Überprüfung der Lebensgewohnheiten ratsam"
         },
         {
-          "col1": "Kategorie / Stufe 3",
-          "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": "Referenzbereich "
-        },
-        {
-          "col1": "Kategorie / Stufe 4",
-          "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": "Referenzbereich "
-        },
-        {
-          "col1": "Kategorie / Stufe 5",
-          "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": "Referenzbereich "
+          "col1": "Erhöhte Schwelle",
+          "col2": "BMI ≥ 27,5 oder erhöhter Taillenumfang & Alter ≥ 40",
+          "col3": "Erhöhter metabolischer Risikowert ; ärztliche Abklärung empfohlen"
         }
       ],
       "faqs": [
         {
-          "question": "Was ist der Rechner für den asiatischen BMI-Grenzwert 23?",
-          "answer": "Ein Screening-Werkzeug nach WHO-Kriterien, das das erhöhte kardiometabolische Risiko bei asiatischen Erwachsenen ab einem BMI von 23,0 kg/m² berücksichtigt."
+          "question": "Wie hängen BMI und das Risiko für Typ-2-Diabetes zusammen?",
+          "answer": "Ein erhöhter Body-Mass-Index – insbesondere in Kombination mit viszeralem Bauchfett – begünstigt eine Insulinresistenz und steigert das statistische Diabetes-Risiko."
         },
         {
-          "question": "Warum liegt die Übergewichtsschwelle für Asiaten bei 23 kg/m² statt bei 25 kg/m²?",
-          "answer": "Studien der WHO zeigten, dass asiatische Bevölkerungsgruppen bei gleichem BMI einen höheren viszeralen Fettanteil und frühere Stoffwechselrisiken aufweisen."
+          "question": "Warum liegt die Risikoschwelle bei asiatischen Erwachsenen bei BMI 23?",
+          "answer": "Studien von WHO und IDF belegen, dass asiatische Bevölkerungsgruppen bereits bei geringerem Körpergewicht mehr viszerales Bauchfett einlagern, was das Risiko ab 23,0 kg/m² erhöht."
         },
         {
-          "question": "Wie wird der asiatische BMI-Schwellenwert von 23 kg/m² berechnet?",
-          "answer": "Gewicht in kg geteilt durch Größe in Metern zum Quadrat. Ein Wert ab 23,0 kg/m² fällt nach den Asien-Pazifik-Kriterien in den Bereich Übergewicht."
+          "question": "Warum ist der Taillenumfang neben dem BMI entscheidend?",
+          "answer": "Der Taillenumfang erfasst das stoffwechselaktive Bauchfett um die Organe, welches ein zuverlässigerer Prädiktor für metabolische Risiken ist als das reine Körpergewicht."
         },
         {
-          "question": "Welche Taillenumfang-Grenzwerte gelten für asiatische Erwachsene?",
-          "answer": "Laut International Diabetes Federation (IDF) liegen die Referenzgrenzen bei unter 90 cm für Männer und unter 80 cm für Frauen."
+          "question": "Was bedeuten die Risikostufen?",
+          "answer": "Sie beschreiben statistische Risikokategorien: Standardreferenz bedeutet Basisrisiko, Mäßige Schwelle rät zu gesundem Lebensstil, und Erhöhte Schwelle empfiehlt ärztlichen Rat."
         },
         {
-          "question": "Was sollte man tun, wenn der BMI-Wert 23 oder höher liegt?",
-          "answer": "Ein Wert zwischen 23,0 und 27,4 liegt im asiatischen Übergewichtsbereich. Eine ausgewogene Ernährung und regelmäßige Bewegung werden empfohlen."
+          "question": "Ersetzt dieser Rechner eine ärztliche Diagnose?",
+          "answer": "Nein. Dies ist ein rein lehrreiches Screening-Werkzeug. Eine verlässliche Diagnose erfordert Blutuntersuchungen (wie HbA1c oder Nüchternblutzucker) durch medizinisches Fachpersonal."
         }
       ]
     },
     "ko": {
-      "eyebrow": "건강 참조 표준 지침",
-      "title": "아시아 기준 BMI 계산기 — BMI 23 임계값",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "Asian Overweight: BMI 23.0 - 27.4 | Asian Obesity: BMI ≥ 27.5",
-      "tableTitle": "표준 참조 진단표",
+      "eyebrow": "심대사 질환 위험 선별 지침",
+      "title": "제2형 당뇨병 위험도 계산기 – BMI 및 허리둘레 대사 위험 지표",
+      "intro": "체질량지수(BMI), 허리둘레 비율, 연령 및 세계보건기구(WHO) 대사 건강 기준을 결합하여 성인 제2형 당뇨병 위험 요인을 조기에 스크리닝하는 무료 계산기입니다. 개인정보 수집 없는 100% 브라우저 보안 연산. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
+      "formulaTitle": "IDF 및 WHO 심대사 질환 위험 평가 기준",
+      "formulaDesc": "종합 선별 기준: BMI ≥ 25.0 kg/m² (아시아 성인 ≥ 23.0), 허리둘레 남성 ≥ 90 cm 및 여성 ≥ 80 cm, 연령 40-45세 이상 복합 평가.",
+      "formulaCode": "대사 위험 지표 = f(BMI, 허리둘레, 연령, 성별)",
+      "tableTitle": "제2형 당뇨병 대사 위험 단계별 분류 매트릭스",
       "tableRows": [
         {
-          "col1": "범주 / 단계 1",
-          "col2": "BMI < 18.5 kg/m²",
-          "col3": "참조 범위 "
+          "col1": "표준 기준",
+          "col2": "BMI < 23 (아시아) / < 25 (서구) & 정상 허리둘레",
+          "col3": "통계적 위험도가 낮은 표준 대사 건강 참조 구간"
         },
         {
-          "col1": "범주 / 단계 2",
-          "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": "참조 범위 "
+          "col1": "주의 필요 수치",
+          "col2": "BMI 23–27.4 (아시아) 또는 경계치 허리둘레",
+          "col3": "조기 생활 습관 개선 및 정기 모니터링 권장 구간"
         },
         {
-          "col1": "범주 / 단계 3",
-          "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": "참조 범위 "
-        },
-        {
-          "col1": "범주 / 단계 4",
-          "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": "참조 범위 "
-        },
-        {
-          "col1": "범주 / 단계 5",
-          "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": "참조 범위 "
+          "col1": "고위험군 판정 기준",
+          "col2": "BMI ≥ 27.5 또는 복부비만 & 40세 이상",
+          "col3": "심대사 질환 위험 증가 구간 ; 전문의 상담 권장"
         }
       ],
       "faqs": [
         {
-          "question": "아시아인 전용 BMI 23 기준선 계산기란 무엇인가요?",
-          "answer": "WHO 아시아-태평양 지침에 맞춰 아시아 성인의 심대사 위험 증가 시점인 BMI 23.0 kg/m² 기준을 평가하는 건강 선별 도구입니다."
+          "question": "체질량지수(BMI)와 제2형 당뇨병 위험은 어떤 관계가 있나요?",
+          "answer": "높은 BMI와 특히 복부 내장 지방의 축적은 인슐린 저항성을 유발하여 제2형 당뇨병 발병 위험을 크게 높이는 주요 원인입니다."
         },
         {
-          "question": "아시아인의 과체중 기준이 25 kg/m²가 아닌 23 kg/m²인 이유는 무엇인가요?",
-          "answer": "세계보건기구(WHO) 연구에 따르면 아시아 인구는 서구인에 비해 상대적으로 낮은 BMI에서도 내장 지방 비율이 높아 대사 위험이 조기에 증가하기 때문입니다."
+          "question": "아시아인의 당뇨병 위험 기준선이 BMI 23으로 더 낮은 이유는 무엇인가요?",
+          "answer": "WHO와 국제당뇨병연맹(IDF) 연구에 따르면 아시아 인구는 서구인에 비해 상대적으로 낮은 체중에서도 내장 지방 비율이 높아 BMI 23.0 kg/m²부터 대사 질환 위험이 조기에 증가합니다."
         },
         {
-          "question": "아시아인 BMI 기준 23 kg/m²는 어떻게 평가되나요?",
-          "answer": "체중(kg)을 신장(m)의 제곱으로 나눕니다. 23.0 kg/m² 이상일 경우 아시아 기준 과체중 주의 구간에 해당합니다."
+          "question": "BMI 외에 허리둘레 측정이 왜 필수적인가요?",
+          "answer": "허리둘레는 장기 주변에 쌓인 내장 지방을 직접 반영하므로, 단순 체중이나 BMI보다 대사 이상을 예측하는 데 훨씬 정확한 지표로 활용됩니다."
         },
         {
-          "question": "아시아 성인에게 권장되는 허리둘레 기준은 얼마인가요?",
-          "answer": "국제당뇨병연맹(IDF) 기준에 따르면 아시아 성인 남성은 90cm 미만, 여성은 80cm 미만을 권장 복부둘레 기준으로 제시합니다."
+          "question": "위험도 결과 단계는 무엇을 의미하나요?",
+          "answer": "표준 기준은 통계적 기본 상태, 주의 필요 수치는 식습관 및 유산소 운동 관리 권장, 고위험군은 의료진을 통한 혈당 검진이 권장됨을 나타냅니다."
         },
         {
-          "question": "BMI가 23 이상으로 측정된 경우 어떻게 해야 하나요?",
-          "answer": "BMI 23.0~27.4 구간은 아시아 표준 과체중 범위입니다. 규칙적인 운동과 식습관 개선을 실천하고 필요 시 전문가 상담을 권장합니다."
+          "question": "이 계산기로 당뇨병을 의학적으로 진단할 수 있나요?",
+          "answer": "아닙니다. 이 도구는 공개된 역학 통계를 바탕으로 한 참고용 교육 스크리닝 도구이며, 실제 진단은 공복 혈당이나 당화혈색소(HbA1c) 검사를 통해 전문의가 내려야 합니다."
         }
       ]
     },
     "hi": {
-      "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "एशियाई बीएमआई संदर्भ कैलकुलेटर — 23 kg/m² कटऑफ",
-      "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
-      "formulaTitle": "मानक संदर्भ सूत्र",
-      "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
-      "formulaCode": "Asian Overweight: BMI 23.0 - 27.4 | Asian Obesity: BMI ≥ 27.5",
-      "tableTitle": "मानक संदर्भ तालिका",
+      "eyebrow": "हृदय एवं चयापचय जोखिम स्क्रीनिंग",
+      "title": "टाइप 2 डायबिटीज रिस्क कैलकुलेटर – बीएमआई एवं कमर माप संदर्भ",
+      "intro": "बीएमआई, कमर की माप और उम्र के आधार पर टाइप 2 मधुमेह के जोखिम कारकों का मूल्यांकन करने वाला मुफ़्त कैलकुलेटर। सुरक्षित व गोपनीय गणना तुरंत अपने ब्राउज़र में करें।",
+      "formulaTitle": "आईडीएफ एवं डब्ल्यूएचओ चयापचय जोखिम मूल्यांकन मानदंड",
+      "formulaDesc": "संयुक्त स्क्रीनिंग मानदंड: बीएमआई ≥ 25.0 kg/m² (एशियाई वयस्कों में ≥ 23.0), कमर की माप पुरुषों में ≥ 90 सेमी व महिलाओं में ≥ 80 सेमी, उम्र ≥ 40-45 वर्ष।",
+      "formulaCode": "चयापचय जोखिम सूचकांक = f(बीएमआई, कमर माप, उम्र, लिंग)",
+      "tableTitle": "टाइप 2 मधुमेह स्क्रीनिंग जोखिम श्रेणी मैट्रिक्स",
       "tableRows": [
         {
-          "col1": "श्रेणी / स्तर 1",
-          "col2": "BMI < 18.5 kg/m²",
-          "col3": "संदर्भ सीमा "
+          "col1": "मानक संदर्भ",
+          "col2": "BMI < 23 (एशियाई) / < 25 (वैश्विक) एवं सामान्य कमर",
+          "col3": "कम सांख्यिकीय जोखिम वाली सामान्य संदर्भ सीमा"
         },
         {
-          "col1": "श्रेणी / स्तर 2",
-          "col2": "BMI 18.5 – 22.9 kg/m²",
-          "col3": "संदर्भ सीमा "
+          "col1": "मध्यम जोखिम सीमा",
+          "col2": "BMI 23–27.4 (एशियाई) या कमर सीमा पर",
+          "col3": "प्रारंभिक जीवनशैली समीक्षा एवं सतर्कता अनुशंसित"
         },
         {
-          "col1": "श्रेणी / स्तर 3",
-          "col2": "BMI 23.0 – 27.4 kg/m²",
-          "col3": "संदर्भ सीमा "
-        },
-        {
-          "col1": "श्रेणी / स्तर 4",
-          "col2": "BMI 27.5 – 32.4 kg/m²",
-          "col3": "संदर्भ सीमा "
-        },
-        {
-          "col1": "श्रेणी / स्तर 5",
-          "col2": "BMI ≥ 32.5 kg/m²",
-          "col3": "संदर्भ सीमा "
+          "col1": "उच्च जोखिम सीमा",
+          "col2": "BMI ≥ 27.5 या उच्च कमर एवं उम्र ≥ 40 वर्ष",
+          "col3": "उन्नत चयापचय जोखिम कटऑफ; चिकित्सीय जांच की सलाह"
         }
       ],
       "faqs": [
         {
           "question": "बीएमआई और टाइप 2 मधुमेह जोखिम में क्या संबंध है?",
-          "answer": "बढ़ा हुआ बीएमआई (विशेषकर एशियाई आबादी में ≥23.0 kg/m²) इंसुलिन प्रतिरोध और मधुमेह जोखिम के उच्च संकेतकों से जुड़ा है।"
+          "answer": "बढ़ा हुआ बीएमआई (विशेषकर पेट के आसपास विसरल वसा) इंसुलिन प्रतिरोध को बढ़ाता है, जिससे टाइप 2 मधुमेह का खतरा काफी बढ़ जाता है।"
+        },
+        {
+          "question": "एशियाई लोगों के लिए मधुमेह जोखिम कटऑफ कम (BMI 23) क्यों है?",
+          "answer": "डब्ल्यूएचओ और आईडीएफ अध्ययनों के अनुसार एशियाई आबादी में कम वजन पर भी पेट की वसा अधिक होती है, जिससे 23.0 kg/m² पर ही मधुमेह का जोखिम शुरू हो जाता है।"
         },
         {
           "question": "कमर की माप मधुमेह के जोखिम को कैसे दर्शाती है?",
-          "answer": "कमर के आसपास विसरल वसा (Visceral Fat) का जमाव इंसुलिन संवेदनशीलता को प्रभावित करने वाला मुख्य कारक है।"
+          "answer": "कमर की माप आंतरिक अंगों के आसपास जमा हानिकारक विसरल वसा को दर्शाती है, जो केवल कुल शरीर वजन की तुलना में चयापचय संबंधी बीमारियों का बेहतर संकेतक है।"
         },
         {
-          "question": "यह कैलकुलेटर किन जोखिम श्रेणियों का मूल्यांकन करता है?",
-          "answer": "यह बीएमआई, कमर की माप और उम्र का संयोजन करके मानक संदर्भ, मध्यम सीमा और उच्च जोखिम सीमा दिखाता है।"
-        },
-        {
-          "question": "एशियाई लोगों के लिए मधुमेह जोखिम कटऑफ कम क्यों है?",
-          "answer": "एशियाई आबादी में कम बीएमआई पर भी पेट की वसा अधिक होने के कारण एडा (ADA) और डब्ल्यूएचओ कम कटऑफ की सिफारिश करते हैं।"
+          "question": "जोखिम स्कोर श्रेणियों का क्या अर्थ है?",
+          "answer": "मानक संदर्भ कम सांख्यिकीय जोखिम दर्शाता है, मध्यम सीमा जीवनशैली में सुधार की आवश्यकता बताती है, और उच्च सीमा चिकित्सक से स्वास्थ्य जांच कराने की सलाह देती है।"
         },
         {
           "question": "क्या यह कैलकुलेटर कोई मेडिकल डायग्नोसिस प्रदान करता है?",
-          "answer": "नहीं, यह एक शैक्षणिक स्क्रीनिंग टूल है। किसी भी स्वास्थ्य जांच के लिए चिकित्सक से परामर्श लें।"
+          "answer": "नहीं, यह एक शैक्षणिक स्क्रीनिंग टूल है। किसी भी औपचारिक निदान के लिए रक्त परीक्षण (जैसे HbA1c या फास्टिंग ब्लड शुगर) चिकित्सक द्वारा किया जाना अनिवार्य है।"
         }
       ]
     }
@@ -3060,32 +2986,32 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de IMC Asiático – Estándares de Referencia OMS Asia – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de IMC Asiático – Estándares de Referencia OMS Asia",
+      "intro": "Calculadora de IMC asiático gratuita basada en los cortes asiáticos revisados de la OMS (Saludable: 18.5-22.9, Sobrepeso: 23.0-27.4, Obesidad: ≥ 27.5 kg/m²). Calcula tu IMC étnico y rango de peso saludable con cálculos en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "Asian BMI = kg / m²",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Escala de IMC y Clasificación para Adultos de Asia-Pacífico de la OMS",
       "tableRows": [
         {
-          "col1": "Categoría / Nivel 1",
+          "col1": "Bajo peso",
           "col2": "< 18.5 kg/m²",
-          "col3": "Rango de referencia de peso bajo"
+          "col3": "Umbral de referencia de peso bajo (< 18.5 kg/m²)"
         },
         {
-          "col1": "Categoría / Nivel 2",
+          "col1": "Peso Normal Saludable (Asiático)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Rango saludable de referencia para la población asiática"
+          "col3": "Rango de peso saludable para población asiática"
         },
         {
-          "col1": "Categoría / Nivel 3",
+          "col1": "Sobrepeso / Riesgo Aumentado",
           "col2": "23.0 – 27.4 kg/m²",
-          "col3": "Límite de acción y riesgo elevado en población asiática"
+          "col3": "Umbral de alerta metabólica en poblaciones asiáticas"
         },
         {
-          "col1": "Categoría / Nivel 4",
+          "col1": "Obesidad (Alto Riesgo)",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "Clasificación de alto riesgo de obesidad en población asiática"
+          "col3": "Clasificación de obesidad de alto riesgo para adultos asiáticos"
         }
       ],
       "faqs": [
@@ -3105,32 +3031,32 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur d'IMC Asiatique – Normes de Référence OMS Asie – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur d'IMC Asiatique – Normes de Référence OMS Asie",
+      "intro": "Calculateur d'IMC asiatique gratuit basé sur les seuils asiatiques révisés de l'OMS (Normal : 18,5-22,9, Surpoids : 23,0-27,4, Obésité : ≥ 27,5 kg/m²). Calculez votre score d'IMC éthnique et poids idéal avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "Asian BMI = kg / m²",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Échelle et Classification de l'IMC Adulte Asie-Pacifique de l'OMS",
       "tableRows": [
         {
-          "col1": "Catégorie / Niveau 1",
+          "col1": "Insuffisance pondérale",
           "col2": "< 18.5 kg/m²",
-          "col3": "Plage de référence de sous-poids"
+          "col3": "Seuil de poids faible (< 18.5 kg/m²)"
         },
         {
-          "col1": "Catégorie / Niveau 2",
+          "col1": "Poids Normal et Sain (Asiatique)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Plage de poids santé de référence pour la population asiatique"
+          "col3": "Plage de poids saine pour adultes asiatiques"
         },
         {
-          "col1": "Catégorie / Niveau 3",
+          "col1": "Surpoids / Risque Accru",
           "col2": "23.0 – 27.4 kg/m²",
-          "col3": "Seuil d'action et de risque élevé pour la population asiatique"
+          "col3": "Seuil d'intervention et de vigilance pour populations asiatiques"
         },
         {
-          "col1": "Catégorie / Niveau 4",
+          "col1": "Obésité (Risque Élevé)",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "Classification d'obésité à haut risque pour la population asiatique"
+          "col3": "Classification d'obésité à haut risque pour adultes asiatiques"
         }
       ],
       "faqs": [
@@ -3150,32 +3076,32 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Asiatischer BMI Rechner – WHO Asien-Referenzstandards – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Asiatischer BMI Rechner – WHO Asien-Referenzstandards",
+      "intro": "Kostenloser asiatischer BMI-Rechner basierend auf den überarbeiteten WHO-Asien-Schwellenwerten (Normal: 18,5-22,9, Übergewicht: 23,0-27,4, Adipositas: ≥ 27,5 kg/m²). Berechnen Sie Ihren asiatischen BMI-Wert datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "Asian BMI = kg / m²",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "WHO Asien-Pazifik Erwachsenen-BMI-Skala & Klassifizierungsmatrix",
       "tableRows": [
         {
-          "col1": "Kategorie / Stufe 1",
+          "col1": "Untergewicht",
           "col2": "< 18.5 kg/m²",
-          "col3": "Referenzbereich für Untergewicht"
+          "col3": "Referenzwert für Untergewicht (< 18.5 kg/m²)"
         },
         {
-          "col1": "Kategorie / Stufe 2",
+          "col1": "Normalgewicht (Asiatischer Standard)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Referenzbereich für gesundes Gewicht bei asiatischen Erwachsenen"
+          "col3": "Gesunder Gewichtsbereich für asiatische Erwachsene"
         },
         {
-          "col1": "Kategorie / Stufe 3",
+          "col1": "Übergewicht / Erhöhtes Risiko",
           "col2": "23.0 – 27.4 kg/m²",
-          "col3": "Aktionsgrenzwert für asiatische Bevölkerungsgruppen"
+          "col3": "Schwellenwert für asiatische Risikoprävention"
         },
         {
-          "col1": "Kategorie / Stufe 4",
+          "col1": "Adipositas (Hohes Risiko)",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "Klassifizierung für hohes Adipositas-Risiko"
+          "col3": "Adipositas-Klassifikation mit hohem Risiko für asiatische Erwachsene"
         }
       ],
       "faqs": [
@@ -3196,31 +3122,31 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "아시아인 전용 BMI 계산기 – WHO 아시아 공중보건 참조 기준",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "개정된 WHO 아시아인 판정 기준(정상: 18.5-22.9, 과체중: 23.0-27.4, 비만: ≥ 27.5 kg/m²)에 맞춘 무료 아시아인 BMI 계산기. 아시아인 전용 BMI 점수와 건강 체중 범위를 브라우저에서 안전하게 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "Asian BMI = kg / m²",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "WHO 아시아-태평양 성인 BMI 기준치 및 분류 매트릭스",
       "tableRows": [
         {
-          "col1": "범주 / 단계 1",
+          "col1": "저체중 기준",
           "col2": "< 18.5 kg/m²",
-          "col3": "참조 범위 저체중 기준"
+          "col3": "저체중 판정 기준치 (< 18.5 kg/m²)"
         },
         {
-          "col1": "범주 / 단계 2",
+          "col1": "표준 정상 체중 (아시아인 기준)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "참조 범위 아시아 성인 표준 건강 체중"
+          "col3": "아시아 성인 남녀 최적 건강 체중 범위"
         },
         {
-          "col1": "범주 / 단계 3",
+          "col1": "과체중 / 위험 증가",
           "col2": "23.0 – 27.4 kg/m²",
-          "col3": "참조 범위 아시아인 건강 위험 관리 임계값"
+          "col3": "아시아인 건강 모니터링 시작 구간"
         },
         {
-          "col1": "범주 / 단계 4",
+          "col1": "비만 (고위험군)",
           "col2": "≥ 27.5 kg/m²",
-          "col3": "참조 범위 고위험 비만 분류 기준"
+          "col3": "아시아 성인 고위험 비만 진단 기준"
         }
       ],
       "faqs": [
@@ -3295,7 +3221,7 @@ const seoDatabase = {
   "bmr-calculator": {
     "en": {
       "eyebrow": "Mifflin-St Jeor Equation Standard",
-      "title": "BMR Calculator Online – Basal Metabolic Rate Calculator for Men & Women",
+      "title": "BMR Calculator Online – Basal Metabolic Rate for Men & Women",
       "intro": "Calculate your daily Basal Metabolic Rate (BMR) with our free BMR Calculator online. Using the scientifically recognized Mifflin-St Jeor formula calculator equation, calculate how many resting calories your body burns in 24 hours based on age, gender (men and women), height in cm or inches, and weight in kg or lbs.",
       "formulaTitle": "Mifflin-St Jeor BMR Calculator Formula Equations",
       "formulaDesc": "BMR for Men: (10 × weight in kg) + (6.25 × height in cm) - (5 × age in yrs) + 5  |  BMR for Women: (10 × weight in kg) + (6.25 × height in cm) - (5 × age in yrs) - 161",
@@ -3392,7 +3318,7 @@ const seoDatabase = {
     "fr": {
       "eyebrow": "Équation Référence de Mifflin-St Jeor",
       "title": "Calculateur de BMR – Métabolisme de Base en Ligne",
-      "intro": "Calculez votre taux métabolique de base (BMR) quotidien avec notre calculateur gratuit. Basé sur la formule reconnue de Mifflin-St Jeor.",
+      "intro": "Calculez votre taux métabolique de base (BMR) quotidien en calories avec notre calculateur gratuit basé sur la formule médicale reconnue de Mifflin-St Jeor.",
       "formulaTitle": "Formule de BMR Mifflin-St Jeor Hommes et Femmes",
       "formulaDesc": "Hommes : (10 × poids kg) + (6.25 × taille cm) - (5 × âge) + 5 | Femmes : (10 × poids kg) + (6.25 × taille cm) - (5 × âge) - 161",
       "formulaCode": "Hommes : BMR = 10W + 6.25H - 5A + 5 | Femmes : BMR = 10W + 6.25H - 5A - 161",
@@ -3488,7 +3414,7 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "Mifflin-St Jeor 표준 공식",
       "title": "BMR 계산기 온라인 – 기초대사량 계산기",
-      "intro": "무료 온라인 BMR 계산기로 일일 기초대사량(BMR)을 계산하세요. Mifflin-St Jeor 공식을 사용하여 24시간 동안 휴식 시 소비되는 칼로리를 추정합니다.",
+      "intro": "무료 온라인 BMR 계산기로 일일 기초대사량(BMR)을 정밀하게 계산하세요. 신뢰도 높은 Mifflin-St Jeor 공식을 사용하여 24시간 동안 신체 기초 생명 유지에 필요한 최소 소비 칼로리를 브라우저에서 산출합니다. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "남성 및 여성 Mifflin-St Jeor BMR 공식",
       "formulaDesc": "남성: (10 × 체중 kg) + (6.25 × 신장 cm) - (5 × 연령) + 5 | 여성: (10 × 체중 kg) + (6.25 × 신장 cm) - (5 × 연령) - 161",
       "formulaCode": "남성: BMR = 10W + 6.25H - 5A + 5 | 여성: BMR = 10W + 6.25H - 5A - 161",
@@ -3536,7 +3462,7 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "Mifflin-St Jeor समीकरण मानक",
       "title": "बीएमआर कैलकुलेटर ऑनलाइन - बेसल मेटाबॉलिक रेट (BMR कैलकुलेटर kg cm)",
-      "intro": "हमारे मुफ़्त बीएमआर कैलकुलेटर ऑनलाइन से अपनी दैनिक बेसल मेटाबॉलिक रेट का अनुमान लगाएं।",
+      "intro": "हमारे मुफ़्त बीएमआर कैलकुलेटर ऑनलाइन से अपनी दैनिक बेसल मेटाबॉलिक रेट (BMR) का अनुमान लगाएं। वैज्ञानिक रूप से प्रमाणित मिफ्लिन-सेंट जोर फॉर्मूले के आधार पर अपने शरीर की न्यूनतम आवश्यक कैलोरी जानिए।",
       "formulaTitle": "पुरुषों एवं महिलाओं के लिए बीएमआर फॉर्मूला",
       "formulaDesc": "पुरुषों के लिए: बीएमआर = (10 × वजन kg) + (6.25 × ऊंचाई cm) - (5 × आयु) + 5  |  महिलाओं के लिए: बीएमआर = (10 × वजन kg) + (6.25 × ऊंचाई cm) - (5 × आयु) - 161",
       "formulaCode": "पुरुष: BMR = 10W + 6.25H - 5A + 5  |  महिलाएँ: BMR = 10W + 6.25H - 5A - 161",
@@ -3818,7 +3744,7 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "에너지 균형 및 대사량",
       "title": "TDEE 계산기 – 일일 총 에너지 소비량 및 유지 칼로리",
-      "intro": "무료 TDEE 계산기로 연령, 성별, 체중, 신장 및 활동 수준을 기반으로 일일 총 에너지 소비량(TDEE)과 유지 칼로리를 추정하세요.",
+      "intro": "무료 TDEE 계산기로 연령, 성별, 체중, 신장 및 일상 활동 수준을 기반으로 일일 총 에너지 소비량(TDEE)과 현재 체중 유지 칼로리를 브라우저 내에서 안전하고 정밀하게 추정하세요. 100% 무료 건강 도구입니다. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "TDEE 계산 공식 (Mifflin-St Jeor 및 활동 계수)",
       "formulaDesc": "1단계: BMR 계산. 2단계: 활동 계수 곱하기: 좌식 (1.2), 가벼운 활동 (1.375), 보통 활동 (1.55), 매우 활동적 (1.725).",
       "formulaCode": "TDEE = BMR × 활동 계수",
@@ -3993,37 +3919,37 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Calorías de Mantenimiento – Calcular Necesidades Diarias – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de Calorías de Mantenimiento – Necesidades Diarias",
+      "intro": "Calculadora de calorías de mantenimiento gratuita en línea. Calcula tus calorías diarias de mantenimiento, gasto energético total diario (TDEE) y calorías objetivo para pérdida de peso por edad, altura (cm) y peso (kg) con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "Maintenance = BMR × PAL",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Mantenimiento Calórico y Desglose por Objetivos de Peso",
       "tableRows": [
         {
-          "col1": "Categoría / Nivel 1",
-          "col2": "100% TDEE (0 kcal net change)",
-          "col3": "Mantiene el peso corporal actual y el balance energético"
+          "col1": "Calorías de Mantenimiento",
+          "col2": "100% TDEE (0 kcal netas)",
+          "col3": "Mantiene el peso corporal y el balance energético actual"
         },
         {
-          "col1": "Categoría / Nivel 2",
-          "col2": "TDEE - 250 kcal/day",
-          "col3": "Ejemplo matemático de ingesta diaria reducida en 250 kcal"
+          "col1": "Déficit Ligero (-250 kcal/día)",
+          "col2": "TDEE - 250 kcal/día",
+          "col3": "Reducción gradual para pérdida de peso moderada"
         },
         {
-          "col1": "Categoría / Nivel 3",
-          "col2": "TDEE - 500 kcal/day",
-          "col3": "Ejemplo matemático de ingesta diaria reducida en 500 kcal"
+          "col1": "Déficit Moderado (-500 kcal/día)",
+          "col2": "TDEE - 500 kcal/día",
+          "col3": "Déficit estándar para perder ~0.45 kg por semana"
         },
         {
-          "col1": "Categoría / Nivel 4",
-          "col2": "TDEE - 750 kcal/day",
-          "col3": "Ejemplo matemático de ingesta diaria reducida en 750 kcal"
+          "col1": "Déficit Intenso (-750 kcal/día)",
+          "col2": "TDEE - 750 kcal/día",
+          "col3": "Reducción calórica para pérdida de peso más rápida"
         },
         {
-          "col1": "Categoría / Nivel 5",
-          "col2": "TDEE + 250 to 300 kcal/day",
-          "col3": "Ejemplo matemático de ingesta diaria superior en 250–300 kcal"
+          "col1": "Superávit Controlado (+250 kcal/día)",
+          "col2": "TDEE + 250 a 300 kcal/día",
+          "col3": "Superávit para aumento gradual de masa muscular"
         }
       ],
       "faqs": [
@@ -4051,37 +3977,37 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Calories de Maintien – Obtenir son Besoin Calorique – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur de Calories de Maintien – Obtenir son Besoin Calorique",
+      "intro": "Calculateur gratuit de calories de maintien en ligne. Calculez vos calories quotidiennes de maintien, votre dépense énergétique totale (TDEE) et vos objectifs de déficit calorigène selon l'âge, la taille (cm) et le poids (kg) avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "Maintenance = BMR × PAL",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Maintien Calorique et Répartition selon les Objectifs de Poids",
       "tableRows": [
         {
-          "col1": "Catégorie / Niveau 1",
-          "col2": "100% TDEE (0 kcal net change)",
-          "col3": "Maintient le poids corporel actuel et l'équilibre énergétique"
+          "col1": "Calories de Maintien",
+          "col2": "100% TDEE (0 kcal nettes)",
+          "col3": "Préserve le poids corporel actuel et l'équilibre énergétique"
         },
         {
-          "col1": "Catégorie / Niveau 2",
-          "col2": "TDEE - 250 kcal/day",
-          "col3": "Exemple mathématique d'un apport quotidien inférieur de 250 kcal"
+          "col1": "Déficit Léger (-250 kcal/jour)",
+          "col2": "TDEE - 250 kcal/jour",
+          "col3": "Réduction progressive pour perte de poids modérée"
         },
         {
-          "col1": "Catégorie / Niveau 3",
-          "col2": "TDEE - 500 kcal/day",
-          "col3": "Exemple mathématique d'un apport quotidien inférieur de 500 kcal"
+          "col1": "Déficit Modéré (-500 kcal/jour)",
+          "col2": "TDEE - 500 kcal/jour",
+          "col3": "Déficit classique pour perdre environ 0,45 kg par semaine"
         },
         {
-          "col1": "Catégorie / Niveau 4",
-          "col2": "TDEE - 750 kcal/day",
-          "col3": "Exemple mathématique d'un apport quotidien inférieur de 750 kcal"
+          "col1": "Déficit Soutenu (-750 kcal/jour)",
+          "col2": "TDEE - 750 kcal/jour",
+          "col3": "Réduction calorique pour perte plus soutenue"
         },
         {
-          "col1": "Catégorie / Niveau 5",
-          "col2": "TDEE + 250 to 300 kcal/day",
-          "col3": "Exemple mathématique d'un apport quotidien supérieur de 250–300 kcal"
+          "col1": "Surplus Contrôlé (+250 kcal/jour)",
+          "col2": "TDEE + 250 à 300 kcal/jour",
+          "col3": "Surplus pour prise de masse musculaire maîtrisée"
         }
       ],
       "faqs": [
@@ -4109,37 +4035,37 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Rechner für Erhaltungskalorien – Täglichen Kalorienbedarf berechnen – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Rechner für Erhaltungskalorien – Täglichen Kalorienbedarf berechnen",
+      "intro": "Kostenloser Erhaltungskalorien-Rechner online. Berechnen Sie Ihre täglichen Erhaltungskalorien, Ihren Gesamtenergiebedarf (TDEE) und Zielkalorien zum Abnehmen nach Alter, Größe (cm) und Gewicht (kg) datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "Maintenance = BMR × PAL",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "Erhaltungskalorien & Kalorienaufteilung nach Gewichtsziel",
       "tableRows": [
         {
-          "col1": "Kategorie / Stufe 1",
-          "col2": "100% TDEE (0 kcal net change)",
-          "col3": "Erhält das aktuelle Körpergewicht und die Energiebilanz"
+          "col1": "Erhaltungskalorien",
+          "col2": "100% TDEE (0 kcal Nettoänderung)",
+          "col3": "Hält das aktuelle Körpergewicht und die Energiebilanz stabil"
         },
         {
-          "col1": "Kategorie / Stufe 2",
-          "col2": "TDEE - 250 kcal/day",
-          "col3": "Mathematisches Beispiel für 250 kcal geringere tägliche Zufuhr"
+          "col1": "Leichtes Defizit (-250 kcal/Tag)",
+          "col2": "TDEE - 250 kcal/Tag",
+          "col3": "Moderate Kalorienreduktion zur sanften Abnahme"
         },
         {
-          "col1": "Kategorie / Stufe 3",
-          "col2": "TDEE - 500 kcal/day",
-          "col3": "Mathematisches Beispiel für 500 kcal geringere tägliche Zufuhr"
+          "col1": "Moderates Defizit (-500 kcal/Tag)",
+          "col2": "TDEE - 500 kcal/Tag",
+          "col3": "Standard-Defizit für ca. 0,45 kg Gewichtsverlust pro Woche"
         },
         {
-          "col1": "Kategorie / Stufe 4",
-          "col2": "TDEE - 750 kcal/day",
-          "col3": "Mathematisches Beispiel für 750 kcal geringere tägliche Zufuhr"
+          "col1": "Starkes Defizit (-750 kcal/Tag)",
+          "col2": "TDEE - 750 kcal/Tag",
+          "col3": "Deutliches Defizit für schnellere Gewichtsreduktion"
         },
         {
-          "col1": "Kategorie / Stufe 5",
-          "col2": "TDEE + 250 to 300 kcal/day",
-          "col3": "Mathematisches Beispiel für 250–300 kcal höhere tägliche Zufuhr"
+          "col1": "Moderater Überschuss (+250 kcal/Tag)",
+          "col2": "TDEE + 250 bis 300 kcal/Tag",
+          "col3": "Kontrollierter Überschuss für Muskelaufbau"
         }
       ],
       "faqs": [
@@ -4168,36 +4094,36 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "유지 칼로리 계산기 – 일일 에너지 소모량 측정을 위한 참조 도구",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "무료 온라인 유지 칼로리 계산기. 나이, 신장(cm), 체중(kg) 및 활동량 계수에 따라 일일 유지 칼로리, 총 에너지 소모량(TDEE) 및 건강한 다이어트 목표 칼로리를 브라우저 내에서 안전하게 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "Maintenance = BMR × PAL",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "유지 칼로리 및 체중 조절 목표별 칼로리 산출표",
       "tableRows": [
         {
-          "col1": "범주 / 단계 1",
-          "col2": "100% TDEE (0 kcal net change)",
-          "col3": "현재 체중 유지 및 에너지 균형 보존"
+          "col1": "체중 유지 칼로리",
+          "col2": "100% TDEE (변동 0 kcal)",
+          "col3": "현재 체중 및 에너지 균형을 완벽히 유지하는 칼로리"
         },
         {
-          "col1": "범주 / 단계 2",
-          "col2": "TDEE - 250 kcal/day",
-          "col3": "일일 250 kcal 적은 섭취량의 수학적 예시"
+          "col1": "가벼운 결손 (-250 kcal/일)",
+          "col2": "TDEE - 250 kcal/일",
+          "col3": "점진적이고 부담 없는 체중 감량 목표치"
         },
         {
-          "col1": "범주 / 단계 3",
-          "col2": "TDEE - 500 kcal/day",
-          "col3": "일일 500 kcal 적은 섭취량의 수학적 예시"
+          "col1": "표준 결손 (-500 kcal/일)",
+          "col2": "TDEE - 500 kcal/일",
+          "col3": "주당 약 0.45kg 감량을 위한 가장 보편적인 결손 기준"
         },
         {
-          "col1": "범주 / 단계 4",
-          "col2": "TDEE - 750 kcal/day",
-          "col3": "일일 750 kcal 적은 섭취량의 수학적 예시"
+          "col1": "집중 결손 (-750 kcal/일)",
+          "col2": "TDEE - 750 kcal/일",
+          "col3": "적극적인 체중 감량을 위한 단기 결손 구간"
         },
         {
-          "col1": "범주 / 단계 5",
-          "col2": "TDEE + 250 to 300 kcal/day",
-          "col3": "일일 250–300 kcal 높은 섭취량의 수학적 예시"
+          "col1": "근육 성장 잉여 (+250 kcal/일)",
+          "col2": "TDEE + 250 ~ 300 kcal/일",
+          "col3": "근육 합성 및 체중 증량을 위한 완만한 잉여 칼로리"
         }
       ],
       "faqs": [
@@ -4226,7 +4152,7 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "कैलोरी रखरखाव और योजना",
       "title": "रखरखाव कैलोरी कैलकुलेटर – दैनिक कैलोरी आवश्यकता की गणना करें",
-      "intro": "हमारा मुफ़्त Maintenance Calorie Calculator आपकी दैनिक रखरखाव कैलोरी और वजन लक्ष्यों के लिए अनुमानित कैलोरी की गणना करता है।",
+      "intro": "हमारा मुफ़्त Maintenance Calorie Calculator आपकी दैनिक रखरखाव कैलोरी, कुल दैनिक ऊर्जा व्यय (TDEE) और वजन घटाने या मांसपेशियों के निर्माण के लक्ष्यों के लिए आवश्यक कैलोरी की सटीक गणना करता है।",
       "formulaTitle": "रखरखाव कैलोरी सूत्र एवं ऊर्जा संतुलन",
       "formulaDesc": "रखरखाव कैलोरी = BMR × activity गुणक। व्यक्तिगत लक्ष्यों के आधार पर ऊर्जा समायोजन किया जा सकता है।",
       "formulaCode": "Maintenance = BMR × PAL",
@@ -4460,7 +4386,7 @@ const seoDatabase = {
     "de": {
       "eyebrow": "US Navy Anthropometrische Referenz",
       "title": "Körperfett Rechner – US Navy Körperfettanteil Berechnen",
-      "intro": "Schätzen Sie Ihren Körperfettanteil nach der US Navy Formel basierend auf Taillen-, Nacken- und Hüftumfang.",
+      "intro": "Schätzen Sie Ihren Körperfettanteil nach der US Navy Formel basierend auf Taillen-, Nacken- und Hüftumfang privat und sicher direkt in Ihrem Browser.",
       "formulaTitle": "US Navy Körperfett Formel",
       "formulaDesc": "Berechnung des Fettanteils aus Umfangsmessungen und Körpergröße.",
       "formulaCode": "US Navy Formel",
@@ -4518,7 +4444,7 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "미 해군(US Navy) 신체 측정 기준",
       "title": "체지방 계산기 – 미 해군 체지방률 공식",
-      "intro": "미 해군(US Navy) 둘레 공식을 사용하여 목, 허리, 엉덩이 둘레 및 키 측정값으로 추정 체지방률(%)을 계산하세요.",
+      "intro": "미 해군(US Navy) 둘레 공식을 사용하여 목, 허리, 엉덩이 둘레 및 신장 측정값으로 성인 남녀의 추정 체지방률(%)을 정확하게 계산하세요. 가입 없이 브라우저 내에서 구동되는 100% 무료 건강 도구입니다. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "미 해군 체지방 계산 공식",
       "formulaDesc": "목둘레, 허리둘레, 신장을 로그 회귀 방정식에 대입하여 산출.",
       "formulaCode": "US Navy 체지방 공식",
@@ -4576,7 +4502,7 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "यूएस नेवी एंथ्रोपोमेट्रिक मानक",
       "title": "बॉडी फैट कैलकुलेटर – यूएस नेवी वसा प्रतिशत",
-      "intro": "कमर, गर्दन, ऊंचाई और कूल्हे की परिधि के आधार पर यूएस नेवी फॉर्मूला से अपने शरीर के वसा प्रतिशत का अनुमान लगाएं।",
+      "intro": "कमर, गर्दन, ऊंचाई और कूल्हे की परिधि के आधार पर यूएस नेवी फॉर्मूला से अपने शरीर के वसा प्रतिशत (% Body Fat) का सटीक अनुमान लगाएं। 100% सुरक्षित और ब्राउज़र-आधारित मुफ़्त स्वास्थ्य कैलकुलेटर।",
       "formulaTitle": "यूएस नेवी बॉडी फैट सूत्र",
       "formulaDesc": "कमर और गर्दन की परिधि तथा ऊंचाई से बॉडी फैट की गणना।",
       "formulaCode": "US Navy Body Fat Formula",
@@ -4665,21 +4591,21 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Masa Magra – Índice de Masa Libre de Grasa LBM – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de Masa Magra – Índice de Masa Libre de Grasa LBM",
+      "intro": "Calculadora de masa corporal magra (LBM) gratuita. Calcula la masa corporal magra, el porcentaje de masa libre de grasa y la composición corporal utilizando las ecuaciones de Boer, James y Hume por altura y peso con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Referencia de la Fórmula de la Ecuación de Boer",
       "tableRows": [
         {
-          "col1": "Categoría / Nivel 1",
+          "col1": "Ecuación de Boer (Hombres)",
           "col2": "(0.407 × W) + (0.267 × H) - 19.2",
-          "col3": "Fórmula predictiva para masa magra estimada en hombres"
+          "col3": "Fórmula predictiva de masa magra estimada en hombres"
         },
         {
-          "col1": "Categoría / Nivel 2",
+          "col1": "Ecuación de Boer (Mujeres)",
           "col2": "(0.252 × W) + (0.473 × H) - 48.3",
-          "col3": "Fórmula predictiva para masa magra estimada en mujeres"
+          "col3": "Fórmula predictiva de masa magra estimada en mujeres"
         }
       ],
       "faqs": [
@@ -4695,21 +4621,21 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Masse Maigre – Estimation de l'Indice LBM – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur de Masse Maigre – Estimation de l'Indice LBM",
+      "intro": "Calculateur de masse corporelle maigre (LBM) gratuit. Calculez la masse corporelle maigre, le pourcentage de masse sans graisse et la composition corporelle à l'aide des équations de Boer, James et Hume selon la taille et le poids avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Référence de la Formule de l'Équation de Boer",
       "tableRows": [
         {
-          "col1": "Catégorie / Niveau 1",
+          "col1": "Équation de Boer (Hommes)",
           "col2": "(0.407 × W) + (0.267 × H) - 19.2",
-          "col3": "Formule prédictive de masse maigre estimée chez les hommes"
+          "col3": "Formule prédictive de la masse maigre chez l'homme"
         },
         {
-          "col1": "Catégorie / Niveau 2",
+          "col1": "Équation de Boer (Femmes)",
           "col2": "(0.252 × W) + (0.473 × H) - 48.3",
-          "col3": "Formule prédictive de masse maigre estimée chez les femmes"
+          "col3": "Formule prédictive de la masse maigre chez la femme"
         }
       ],
       "faqs": [
@@ -4725,21 +4651,21 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Rechner für fettfreie Körpermasse (LBM) – Magermasse & Referenz – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Rechner für fettfreie Körpermasse (LBM) – Magermasse & Referenz",
+      "intro": "Kostenloser Magermasse-Rechner (LBM-Rechner). Berechnen Sie Ihre magere Körpermasse, den fettfreien Masseprozentsatz und die Körperzusammensetzung mit den Formeln nach Boer, James und Hume datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "Boer-Formel Referenzübersicht",
       "tableRows": [
         {
-          "col1": "Kategorie / Stufe 1",
+          "col1": "Boer-Formel (Männer)",
           "col2": "(0.407 × W) + (0.267 × H) - 19.2",
-          "col3": "Prädiktive Formel für geschätzte Magermasse bei Männern"
+          "col3": "Vorhersageformel für geschätzte fettfreie Masse bei Männern"
         },
         {
-          "col1": "Kategorie / Stufe 2",
+          "col1": "Boer-Formel (Frauen)",
           "col2": "(0.252 × W) + (0.473 × H) - 48.3",
-          "col3": "Prädiktive Formel für geschätzte Magermasse bei Frauen"
+          "col3": "Vorhersageformel für geschätzte fettfreie Masse bei Frauen"
         }
       ],
       "faqs": [
@@ -4756,20 +4682,20 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "제지방량(LBM) 계산기 – 체성분 측정 및 한국 표준 가이드",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "무료 제지방량(LBM) 계산기. Boer, James 및 Hume 공식을 활용하여 신장과 체중별 제지방량, 무지방 체중 비율 및 골격근 체성분 지표를 정확하게 산출하세요. 개인정보 수집 없는 100% 브라우저 계산. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "보어 공식(Boer Equation) 제지방량 참조 산출식",
       "tableRows": [
         {
-          "col1": "범주 / 단계 1",
+          "col1": "보어 공식 (남성)",
           "col2": "(0.407 × W) + (0.267 × H) - 19.2",
-          "col3": "남성의 추정 제지방량 산출 공식"
+          "col3": "성인 남성 제지방량(LBM) 정밀 산출 공식"
         },
         {
-          "col1": "범주 / 단계 2",
+          "col1": "보어 공식 (여성)",
           "col2": "(0.252 × W) + (0.473 × H) - 48.3",
-          "col3": "여성의 추정 제지방량 산출 공식"
+          "col3": "성인 여성 제지방량(LBM) 정밀 산출 공식"
         }
       ],
       "faqs": [
@@ -4786,20 +4712,20 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "लीन बॉडी मास (LBM) कैलकुलेटर – शरीर संरचना संदर्भ टूल",
-      "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
+      "intro": "मुफ़्त लीन बॉडी मास कैलकुलेटर (LBM Calculator)। ऊंचाई और वजन के अनुसार बोअर, जेम्स और ह्यूम समीकरणों का उपयोग करके दुबले शरीर के द्रव्यमान, वसा रहित द्रव्यमान प्रतिशत और शरीर की संरचना की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
-      "tableTitle": "मानक संदर्भ तालिका",
+      "tableTitle": "बोअर समीकरण फॉर्मूला संदर्भ तालिका",
       "tableRows": [
         {
-          "col1": "श्रेणी / स्तर 1",
+          "col1": "बोअर समीकरण (पुरुष)",
           "col2": "(0.407 × W) + (0.267 × H) - 19.2",
-          "col3": "पुरुषों में अनुमानित लीन मास का सूत्र"
+          "col3": "पुरुषों में लीन मास अनुमान लगाने का फॉर्मूला"
         },
         {
-          "col1": "श्रेणी / स्तर 2",
+          "col1": "बोअर समीकरण (महिला)",
           "col2": "(0.252 × W) + (0.473 × H) - 48.3",
-          "col3": "महिलाओं में अनुमानित लीन मास का सूत्र"
+          "col3": "महिलाओं में लीन मास अनुमान लगाने का फॉर्मूला"
         }
       ],
       "faqs": [
@@ -4875,37 +4801,37 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Peso Corporal Ideal – Fórmulas IBW Devine y Robinson – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de Peso Corporal Ideal – Fórmulas IBW Devine y Robinson",
+      "intro": "Calculadora de peso ideal gratuita. Calcula rangos de referencia de peso corporal ideal (IBW) utilizando las ecuaciones médicas de Devine, Robinson, Miller y Hamwi según altura y género con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Tabla Comparativa de Peso Corporal Ideal (IBW) por Altura y Fórmula",
       "tableRows": [
         {
-          "col1": "Categoría / Nivel 1",
-          "col2": "50 kg (M) / 45.5 kg (F) + 2.3 kg/in > 5ft",
-          "col3": "Fórmula ampliamente citada introducida en 1974"
+          "col1": "Fórmula de Devine (1974)",
+          "col2": "50 kg (H) / 45.5 kg (M) + 2.3 kg/in > 5ft",
+          "col3": "Fórmula clásica ampliamente utilizada desde 1974"
         },
         {
-          "col1": "Categoría / Nivel 2",
-          "col2": "52 kg (M) / 49.0 kg (F) + 1.9 or 1.7 kg/in",
-          "col3": "Modificación de la fórmula Devine para complexión media"
+          "col1": "Fórmula de Robinson (1983)",
+          "col2": "52 kg (H) / 49.0 kg (M) + 1.9 o 1.7 kg/in",
+          "col3": "Modificación de Devine optimizada para complexión media"
         },
         {
-          "col1": "Categoría / Nivel 3",
-          "col2": "56.2 kg (M) / 53.1 kg (F) + 1.41 or 1.36 kg/in",
-          "col3": "Mayor estimación base para estatura baja y pendiente más suave"
+          "col1": "Fórmula de Miller (1983)",
+          "col2": "56.2 kg (H) / 53.1 kg (M) + 1.41 o 1.36 kg/in",
+          "col3": "Estimación base más alta para estaturas bajas"
         },
         {
-          "col1": "Categoría / Nivel 4",
-          "col2": "48 kg (M) / 45.5 kg (F) + 2.7 or 2.2 kg/in",
-          "col3": "Fórmula de referencia histórica"
+          "col1": "Fórmula de Hamwi (1964)",
+          "col2": "48 kg (H) / 45.5 kg (M) + 2.7 o 2.2 kg/in",
+          "col3": "Fórmula histórica tradicional de peso corporal ideal"
         },
         {
-          "col1": "Categoría / Nivel 5",
+          "col1": "Rango de IMC Saludable de la OMS",
           "col2": "18.5 – 24.9 kg/m²",
-          "col3": "Rango de referencia poblacional basado en la altura al cuadrado"
+          "col3": "Intervalo de salud poblacional basado en altura al cuadrado"
         }
       ],
       "faqs": [
@@ -4933,37 +4859,37 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Poids Idéal – Équations IBW Devine et Robinson – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur de Poids Idéal – Équations IBW Devine et Robinson",
+      "intro": "Calculateur de poids idéal gratuit. Calculez les plages de référence du poids idéal (IBW) à l'aide des équations médicales de Devine, Robinson, Miller et Hamwi selon la taille et le genre avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Tableau Comparatif du Poids Idéal (IBW) selon la Taille et la Formule",
       "tableRows": [
         {
-          "col1": "Catégorie / Niveau 1",
-          "col2": "50 kg (M) / 45.5 kg (F) + 2.3 kg/in > 5ft",
-          "col3": "Formule largement citée introduite en 1974"
+          "col1": "Formule de Devine (1974)",
+          "col2": "50 kg (H) / 45.5 kg (F) + 2.3 kg/in > 5ft",
+          "col3": "Formule de référence la plus citée depuis 1974"
         },
         {
-          "col1": "Catégorie / Niveau 2",
-          "col2": "52 kg (M) / 49.0 kg (F) + 1.9 or 1.7 kg/in",
-          "col3": "Modification de la formule Devine optimisée pour morphologie moyenne"
+          "col1": "Formule de Robinson (1983)",
+          "col2": "52 kg (H) / 49.0 kg (F) + 1.9 ou 1.7 kg/in",
+          "col3": "Variante de Devine optimisée pour morphologie moyenne"
         },
         {
-          "col1": "Catégorie / Niveau 3",
-          "col2": "56.2 kg (M) / 53.1 kg (F) + 1.41 or 1.36 kg/in",
-          "col3": "Estimation de base plus élevée pour personnes plus petites"
+          "col1": "Formule de Miller (1983)",
+          "col2": "56.2 kg (H) / 53.1 kg (F) + 1.41 ou 1.36 kg/in",
+          "col3": "Estimation de base plus haute pour personnes de petite taille"
         },
         {
-          "col1": "Catégorie / Niveau 4",
-          "col2": "48 kg (M) / 45.5 kg (F) + 2.7 or 2.2 kg/in",
-          "col3": "Formule de référence historique"
+          "col1": "Formule de Hamwi (1964)",
+          "col2": "48 kg (H) / 45.5 kg (F) + 2.7 ou 2.2 kg/in",
+          "col3": "Formule historique traditionnelle de poids idéal"
         },
         {
-          "col1": "Catégorie / Niveau 5",
+          "col1": "Plage d'IMC Santé de l'OMS",
           "col2": "18.5 – 24.9 kg/m²",
-          "col3": "Plage de référence basée sur la taille au carré"
+          "col3": "Fenêtre de référence de santé publique basée sur la taille au carré"
         }
       ],
       "faqs": [
@@ -4991,37 +4917,37 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Idealgewicht-Rechner – IBW-Formeln nach Devine & Robinson – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Idealgewicht-Rechner – IBW-Formeln nach Devine & Robinson",
+      "intro": "Kostenloser Idealgewicht-Rechner. Berechnen Sie den Referenzbereich für das ideale Körpergewicht (IBW) mit den medizinischen Formeln nach Devine, Robinson, Miller und Hamwi nach Körpergröße und Geschlecht datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "Idealgewicht-Vergleichstabelle (IBW) nach Größe und Formel",
       "tableRows": [
         {
-          "col1": "Kategorie / Stufe 1",
+          "col1": "Devine-Formel (1974)",
           "col2": "50 kg (M) / 45.5 kg (F) + 2.3 kg/in > 5ft",
-          "col3": "Weit verbreitete Formel aus dem Jahr 1974"
+          "col3": "Weit verbreitete Referenzformel von 1974"
         },
         {
-          "col1": "Kategorie / Stufe 2",
-          "col2": "52 kg (M) / 49.0 kg (F) + 1.9 or 1.7 kg/in",
-          "col3": "Modifikation der Devine-Formel für mittlere Statur"
+          "col1": "Robinson-Formel (1983)",
+          "col2": "52 kg (M) / 49.0 kg (F) + 1.9 bzw. 1.7 kg/in",
+          "col3": "Devine-Modifikation für durchschnittliche Statur"
         },
         {
-          "col1": "Kategorie / Stufe 3",
-          "col2": "56.2 kg (M) / 53.1 kg (F) + 1.41 or 1.36 kg/in",
-          "col3": "Höhere Basisschätzung für kleinere Personen"
+          "col1": "Miller-Formel (1983)",
+          "col2": "56.2 kg (M) / 53.1 kg (F) + 1.41 bzw. 1.36 kg/in",
+          "col3": "Höherer Basiswert für kleinere Personen"
         },
         {
-          "col1": "Kategorie / Stufe 4",
-          "col2": "48 kg (M) / 45.5 kg (F) + 2.7 or 2.2 kg/in",
-          "col3": "Historische Referenzformel"
+          "col1": "Hamwi-Formel (1964)",
+          "col2": "48 kg (M) / 45.5 kg (F) + 2.7 bzw. 2.2 kg/in",
+          "col3": "Traditionelle historische Referenzformel"
         },
         {
-          "col1": "Kategorie / Stufe 5",
+          "col1": "WHO Gesunder BMI-Bereich",
           "col2": "18.5 – 24.9 kg/m²",
-          "col3": "Bevölkerungsreferenzbereich basierend auf der quadrierten Größe"
+          "col3": "Referenzbereich basierend auf Körpergröße zum Quadrat"
         }
       ],
       "faqs": [
@@ -5050,36 +4976,36 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "이상적인 체중 계산기 – Devine 및 Robinson 공식 기반 IBW 분석 – 참조 계산기",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "무료 이상 체중 계산기. 신장과 성별에 따라 Devine, Robinson, Miller 및 Hamwi 의학 공식을 종합 적용하여 개인별 이상적인 체중(IBW) 권장 범위를 산출하세요. 가입 없이 구동되는 100% 브라우저 계산. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "신장 및 산출 공식별 이상적 표준 체중(IBW) 비교표",
       "tableRows": [
         {
-          "col1": "범주 / 단계 1",
-          "col2": "50 kg (M) / 45.5 kg (F) + 2.3 kg/in > 5ft",
-          "col3": "1974년에 발표된 널리 인용되는 공식"
+          "col1": "드바인 공식 (1974)",
+          "col2": "50 kg (남) / 45.5 kg (여) + 5피트 초과 1인치당 2.3 kg",
+          "col3": "1974년 발표되어 의학계에서 널리 인용되는 표준 공식"
         },
         {
-          "col1": "범주 / 단계 2",
-          "col2": "52 kg (M) / 49.0 kg (F) + 1.9 or 1.7 kg/in",
-          "col3": "보통 체격 성인을 위해 최적화된 Devine 공식 수정본"
+          "col1": "로빈슨 공식 (1983)",
+          "col2": "52 kg (남) / 49.0 kg (여) + 1인치당 1.9 또는 1.7 kg",
+          "col3": "중간 체형 성인에 최적화된 드바인 보정 공식"
         },
         {
-          "col1": "범주 / 단계 3",
-          "col2": "56.2 kg (M) / 53.1 kg (F) + 1.41 or 1.36 kg/in",
-          "col3": "단신 인구를 위한 높은 기본 추정치 적용"
+          "col1": "밀러 공식 (1983)",
+          "col2": "56.2 kg (남) / 53.1 kg (여) + 1인치당 1.41 또는 1.36 kg",
+          "col3": "키가 작은 체형에 적합한 완만한 기울기의 공식"
         },
         {
-          "col1": "범주 / 단계 4",
-          "col2": "48 kg (M) / 45.5 kg (F) + 2.7 or 2.2 kg/in",
-          "col3": "역사적 참고 공식"
+          "col1": "함위 공식 (1964)",
+          "col2": "48 kg (남) / 45.5 kg (여) + 1인치당 2.7 또는 2.2 kg",
+          "col3": "초기 임상 연구에서 사용된 전통적 기준 공식"
         },
         {
-          "col1": "범주 / 단계 5",
+          "col1": "WHO 표준 정상 BMI 범위",
           "col2": "18.5 – 24.9 kg/m²",
-          "col3": "신장 제곱에 기반한 인구 건강 참고 범위"
+          "col3": "키의 제곱에 비례하는 보편적 국제 건강 체중 구간"
         }
       ],
       "faqs": [
@@ -5380,7 +5306,7 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "칼로리 계획 및 섭취량",
       "title": "칼로리 결손 계산기 – 칼로리 계획 계산기",
-      "intro": "무료 칼로리 결손 계산기를 사용하여 BMR 및 TDEE를 기반으로 체중 목표에 따른 일일 칼로리 목표를 추정하세요.",
+      "intro": "무료 칼로리 결손 계산기를 사용하여 기초대사량(BMR) 및 활동량(TDEE)을 기반으로 체중 감량, 유지, 증량 목표에 따른 일일 맞춤형 목표 칼로리 섭취량을 브라우저 내에서 정밀하게 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "칼로리 결손 계산 공식",
       "formulaDesc": "일일 목표 칼로리 = TDEE - 목표 결손량 | 칼로리 에너지 참조: 체중 1kg당 약 7,700 kcal.",
       "formulaCode": "목표 칼로리 = TDEE - 일일 결손량",
@@ -5433,7 +5359,7 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "कैलोरी योजना एवं संदर्भ",
       "title": "कैलोरी घाटा कैलकुलेटर – Calorie Deficit कैलकुलेटर Online",
-      "intro": "हमारे मुफ़्त Calorie Deficit Calculator से अपने वजन लक्ष्यों के लिए दैनिक कैलोरी अंतर और TDEE की गणना करें।",
+      "intro": "हमारे मुफ़्त Calorie Deficit Calculator से अपने वजन घटाने या बढ़ाने के लक्ष्यों के लिए दैनिक कैलोरी अंतर और TDEE की सटीक गणना करें। Mifflin-St Jeor फॉर्मूले पर आधारित सुरक्षित गणना।",
       "formulaTitle": "कैलोरी घाटा सूत्र एवं ऊर्जा गणित",
       "formulaDesc": "दैनिक कैलोरी 섭취 = TDEE - लक्ष्य घाटा | साप्ताहिक ऊर्जा अंतर = दैनिक घाटा × 7 (लगभग 7700 kcal/kg गणितीय संदर्भ)",
       "formulaCode": "Target Calories = TDEE - Daily Deficit",
@@ -5540,32 +5466,32 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Proteínas – Requerimiento Diario de Proteína – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de Proteínas – Requerimiento Diario de Proteína",
+      "intro": "Calculadora de ingesta diaria de proteínas gratuita. Calcula la ingesta óptima diaria de proteínas en gramos para crecimiento muscular, pérdida de grasa y rendimiento deportivo según peso, objetivos y actividad con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Matriz de Ingesta Diaria de Proteína (g/kg) por Actividad y Objetivo",
       "tableRows": [
         {
-          "col1": "Categoría / Nivel 1",
-          "col2": "0.8 g / kg body weight",
-          "col3": "Referencia basal de IDR (ingesta diaria recomendada)"
+          "col1": "Adulto Sedentario (Base)",
+          "col2": "0.8 g / kg de peso corporal",
+          "col3": "Referencia básica de la dosis diaria recomendada (RDA)"
         },
         {
-          "col1": "Categoría / Nivel 2",
-          "col2": "1.2 – 1.4 g / kg body weight",
-          "col3": "Rango de referencia para atletas"
+          "col1": "Atleta de Resistencia Activo",
+          "col2": "1.2 – 1.4 g / kg de peso corporal",
+          "col3": "Rango de referencia para atletas de fondo"
         },
         {
-          "col1": "Categoría / Nivel 3",
-          "col2": "1.6 – 2.2 g / kg body weight",
-          "col3": "Objetivo deportivo habitual para entrenamiento"
+          "col1": "Hipertrofia y Ganancia Muscular",
+          "col2": "1.6 – 2.2 g / kg de peso corporal",
+          "col3": "Objetivo atlético habitual para entrenamiento de fuerza"
         },
         {
-          "col1": "Categoría / Nivel 4",
-          "col2": "1.8 – 2.4 g / kg body weight",
-          "col3": "Rango de ejemplo en planificación de déficit calórico"
+          "col1": "Definición y Déficit Calórico",
+          "col2": "1.8 – 2.4 g / kg de peso corporal",
+          "col3": "Rango protector de la masa muscular durante el déficit"
         }
       ],
       "faqs": [
@@ -5593,32 +5519,32 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Protéines – Apport Protéique Quotidien – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur de Protéines – Apport Protéique Quotidien",
+      "intro": "Calculateur de besoin quotidien en protéines gratuit. Calculez l'apport quotidien optimal en protéines (g) pour la prise de muscle, la perte de graisse et la performance selon le poids, les objectifs et l'activité avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Matrice d'Apport Quotidien en Protéines (g/kg) par Activité et Objectif",
       "tableRows": [
         {
-          "col1": "Catégorie / Niveau 1",
-          "col2": "0.8 g / kg body weight",
-          "col3": "Référence de base AJR (apports journaliers recommandés)"
+          "col1": "Adulte Sédentaire (Base)",
+          "col2": "0.8 g / kg de poids corporel",
+          "col3": "Référence de base des apports journaliers recommandés (AJR)"
         },
         {
-          "col1": "Catégorie / Niveau 2",
-          "col2": "1.2 – 1.4 g / kg body weight",
-          "col3": "Plage de référence pour les athlètes"
+          "col1": "Athlète d'Endurance Actif",
+          "col2": "1.2 – 1.4 g / kg de poids corporel",
+          "col3": "Plage recommandée pour les sports d'endurance"
         },
         {
-          "col1": "Catégorie / Niveau 3",
-          "col2": "1.6 – 2.2 g / kg body weight",
-          "col3": "Objectif sportif courant pour l'entraînement"
+          "col1": "Prise de Muscle (Hypertrophie)",
+          "col2": "1.6 – 2.2 g / kg de poids corporel",
+          "col3": "Cible fréquente pour l'entraînement en musculation"
         },
         {
-          "col1": "Catégorie / Niveau 4",
-          "col2": "1.8 – 2.4 g / kg body weight",
-          "col3": "Plage indicative lors d'un déficit calorique"
+          "col1": "Perte de Graisse en Déficit",
+          "col2": "1.8 – 2.4 g / kg de poids corporel",
+          "col3": "Apport ciblé pour préserver le muscle en déficit calorique"
         }
       ],
       "faqs": [
@@ -5646,32 +5572,32 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Proteinrechner – Täglicher Eiweißbedarf & Referenzwerte – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Proteinrechner – Täglicher Eiweißbedarf & Referenzwerte",
+      "intro": "Kostenloser Proteinbedarf-Rechner. Berechnen Sie Ihre optimale tägliche Proteinaufnahme in Gramm für Muskelaufbau, Fettabbau und sportliche Leistung basierend auf Gewicht, Zielen und Aktivität datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "Täglicher Proteinbedarf (g/kg) nach Aktivität und Trainingsziel",
       "tableRows": [
         {
-          "col1": "Kategorie / Stufe 1",
-          "col2": "0.8 g / kg body weight",
-          "col3": "RDA-Basisreferenz (Empfohlene Tagesdosis)"
+          "col1": "Bewegungsmangel (Basiswert)",
+          "col2": "0.8 g / kg Körpergewicht",
+          "col3": "RDA-Basisexemplar für sitzende Lebensweise"
         },
         {
-          "col1": "Kategorie / Stufe 2",
-          "col2": "1.2 – 1.4 g / kg body weight",
-          "col3": "Sportler-Referenzbereich"
+          "col1": "Ausdauersportler",
+          "col2": "1.2 – 1.4 g / kg Körpergewicht",
+          "col3": "Referenzbereich für aktives Ausdauertraining"
         },
         {
-          "col1": "Kategorie / Stufe 3",
-          "col2": "1.6 – 2.2 g / kg body weight",
-          "col3": "Übliches Trainingsziel für Sportler"
+          "col1": "Muskelaufbau (Hypertrophie)",
+          "col2": "1.6 – 2.2 g / kg Körpergewicht",
+          "col3": "Gängiger Richtwert für Hypertrophie-Krafttraining"
         },
         {
-          "col1": "Kategorie / Stufe 4",
-          "col2": "1.8 – 2.4 g / kg body weight",
-          "col3": "Beispielbereich bei der Planung eines Kaloriendefizits"
+          "col1": "Fettabbau im Kaloriendefizit",
+          "col2": "1.8 – 2.4 g / kg Körpergewicht",
+          "col3": "Empfohlener Bereich zum Schutz der Muskelmasse im Defizit"
         }
       ],
       "faqs": [
@@ -5700,31 +5626,31 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "단백질 섭취량 계산기 – 일일 단백질 권장량 측정 도구",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "일일 단백질 섭취량 무료 계산기. 체중, 운동 강도, 피트니스 목표 및 일상 활동량에 따라 근육 성장, 지방 감량 및 운동 회복 능력을 위한 최적의 일일 단백질 섭취량(g)을 안전하게 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "활동량 및 목표별 일일 단백질 권장 섭취량(g/kg) 기준표",
       "tableRows": [
         {
-          "col1": "범주 / 단계 1",
-          "col2": "0.8 g / kg body weight",
-          "col3": "권장 일일 섭취량(RDA) 기준"
+          "col1": "좌식 생활 성인 기본치",
+          "col2": "0.8 g / kg 체중",
+          "col3": "일일 권장 섭취량(RDA) 기초 기준치"
         },
         {
-          "col1": "범주 / 단계 2",
-          "col2": "1.2 – 1.4 g / kg body weight",
-          "col3": "운동선수 권장 기준 범위"
+          "col1": "지구력 운동 선수",
+          "col2": "1.2 – 1.4 g / kg 체중",
+          "col3": "유산소 및 마라톤 러너 권장 섭취 범위"
         },
         {
-          "col1": "범주 / 단계 3",
-          "col2": "1.6 – 2.2 g / kg body weight",
-          "col3": "트레이닝을 위한 일반적 운동선수 목표치"
+          "col1": "근육 성장 (근비대 트레이닝)",
+          "col2": "1.6 – 2.2 g / kg 체중",
+          "col3": "근력 운동 및 웨이트 트레이닝 핵심 목표치"
         },
         {
-          "col1": "범주 / 단계 4",
-          "col2": "1.8 – 2.4 g / kg body weight",
-          "col3": "칼로리 제한 계획 시 참고하는 예시 범위"
+          "col1": "다이어트 및 칼로리 결손",
+          "col2": "1.8 – 2.4 g / kg 체중",
+          "col3": "체지방 감량 중 근손실 방지를 위한 권장 섭취량"
         }
       ],
       "faqs": [
@@ -5753,31 +5679,31 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "प्रोटीन सेवन कैलकुलेटर – दैनिक प्रोटीन आवश्यकता की गणना",
-      "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
+      "intro": "मुफ़्त दैनिक प्रोटीन सेवन कैलकुलेटर। वजन, फिटनेस लक्ष्यों और गतिविधि के आधार पर मांसपेशियों की वृद्धि, वसा हानि और एथलेटिक प्रदर्शन के लिए ग्राम में इष्टतम दैनिक प्रोटीन सेवन की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "मानक संदर्भ तालिका",
+      "tableTitle": "गतिविधि और लक्ष्य के अनुसार दैनिक प्रोटीन संदर्भ सीमा (g/kg) मैट्रिक्स",
       "tableRows": [
         {
-          "col1": "श्रेणी / स्तर 1",
-          "col2": "0.8 g / kg body weight",
-          "col3": "आरडीए (RDA) आधारभूत संदर्भ"
+          "col1": "गतिहीन वयस्क बेसलाइन",
+          "col2": "0.8 ग्राम / किग्रा शरीर का वजन",
+          "col3": "दैनिक अनुशंसित सेवन (RDA) आधार"
         },
         {
-          "col1": "श्रेणी / स्तर 2",
-          "col2": "1.2 – 1.4 g / kg body weight",
-          "col3": "एथलीट संदर्भ सीमा"
+          "col1": "सक्रिय धीरज एथलीट",
+          "col2": "1.2 – 1.4 ग्राम / किग्रा शरीर का वजन",
+          "col3": "धीरज एथलेटिक संदर्भ सीमा"
         },
         {
-          "col1": "श्रेणी / स्तर 3",
-          "col2": "1.6 – 2.2 g / kg body weight",
-          "col3": "प्रशिक्षण के लिए सामान्य एथलेटिक लक्ष्य"
+          "col1": "मांसपेशियों की वृद्धि (हाइपरट्रॉफी)",
+          "col2": "1.6 – 2.2 ग्राम / किग्रा शरीर का वजन",
+          "col3": "शक्ति प्रशिक्षण के लिए मुख्य लक्ष्य"
         },
         {
-          "col1": "श्रेणी / स्तर 4",
-          "col2": "1.8 – 2.4 g / kg body weight",
-          "col3": "कैलोरी घाटा योजना के दौरान संदर्भित उदाहरण सीमा"
+          "col1": "फैट लॉस कैलोरी घाटा",
+          "col2": "1.8 – 2.4 ग्राम / किग्रा शरीर का वजन",
+          "col3": "मांसपेशियों के संरक्षण के लिए अनुशंसित सीमा"
         }
       ],
       "faqs": [
@@ -5860,12 +5786,12 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Consumo de Agua – Meta Diaria de Hidratación – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de Consumo de Agua – Meta Diaria de Hidratación",
+      "intro": "Calculadora de ingesta diaria de agua gratuita. Calcula el consumo diario recomendado de agua en litros, vasos u onzas según el peso corporal, el clima, la duración del ejercicio y el nivel de actividad con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Pautas de Ingesta Diaria de Agua por Peso Corporal (Litros y Vasos)",
       "tableRows": [
         {
           "col1": "Adulto Sedentario (50 kg)",
@@ -5913,12 +5839,12 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur d'Apport en Eau – Objectif d'Hydratation Quotidien – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur d'Apport en Eau – Objectif d'Hydratation Quotidien",
+      "intro": "Calculateur d'apport quotidien en eau gratuit. Calculez la consommation d'eau quotidienne recommandée en litres, verres et onces selon le poids, le climat, la durée de l'exercice et l'activité avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Repères d'Hydratation Quotidienne selon le Poids (Litres et Verres)",
       "tableRows": [
         {
           "col1": "Adulte Sédentaire (50 kg)",
@@ -5966,12 +5892,12 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Wasserbedarfsrechner – Tägliches Hydratationsziel berechnen – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Wasserbedarfsrechner – Tägliches Hydratationsziel berechnen",
+      "intro": "Kostenloser Wasserbedarf-Rechner. Berechnen Sie Ihre empfohlene tägliche Wasseraufnahme in Litern, Gläsern und Unzen basierend auf Körpergewicht, Klima, Trainingsdauer und Aktivität datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "Täglicher Wasserbedarf nach Körpergewicht (Liter und Gläser)",
       "tableRows": [
         {
           "col1": "Bewegungsarmer Erwachsener (50 kg)",
@@ -6020,11 +5946,11 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "수분 섭취량 계산기 – 일일 목표 수분 섭취량 측정 도구",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "일일 권장 수분 섭취량 무료 계산기. 체중, 기후 환경, 운동 시간 및 일상 활동 수준에 따라 리터(L), 컵 및 온스 단위로 권장되는 일일 적정 수분 섭취량을 브라우저 내에서 안전하게 계산하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "체중 및 활동 수준별 일일 권장 수분 섭취량 (리터 및 잔 기준)",
       "tableRows": [
         {
           "col1": "비활동 성인 (50 kg)",
@@ -6073,11 +5999,11 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "पानी के सेवन का कैलकुलेटर – दैनिक जल आवश्यकता की गणना",
-      "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
+      "intro": "मुफ़्त दैनिक जल सेवन कैलकुलेटर। शरीर के वजन, जलवायु, व्यायाम की अवधि और गतिविधि स्तर के आधार पर लीटर, ग्लास और औंस में अनुशंसित दैनिक पानी की खपत की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
       "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)",
-      "tableTitle": "मानक संदर्भ तालिका",
+      "tableTitle": "शरीर के वजन के अनुसार दैनिक पानी की खपत का पैमाना (लीटर और गिलास)",
       "tableRows": [
         {
           "col1": "गतिहीन 50 किग्रा वयस्क",
@@ -6175,12 +6101,12 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Macronutrientes – Distribución Diaria de Macros – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de Macronutrientes – Distribución Diaria de Macros",
+      "intro": "Calculadora de macronutrientes gratuita. Calcula tus objetivos diarios de macronutrientes (proteínas, carbohidratos, grasas en gramos) para definición, mantenimiento o volumen según tu TDEE y objetivos con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Densidad Energética de Macronutrientes y Ratios Nutricionales",
       "tableRows": [
         {
           "col1": "Carbohidratos (4 kcal/g)",
@@ -6223,12 +6149,12 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Macronutriments – Répartition des Macros – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur de Macronutriments – Répartition des Macros",
+      "intro": "Calculateur de macronutriments gratuit. Calculez vos objectifs quotidiens en macronutriments (protéines, glucides, lipides en grammes) pour la sèche, le maintien ou la prise de masse selon votre TDEE avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Densité Énergétique des Macronutriments et Ratios Nutritionnels",
       "tableRows": [
         {
           "col1": "Glucides (4 kcal/g)",
@@ -6271,12 +6197,12 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Makronährstoff-Rechner – Tägliche Makroverteilung berechnen – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Makronährstoff-Rechner – Tägliche Makroverteilung berechnen",
+      "intro": "Kostenloser Makronährstoff-Rechner. Berechnen Sie Ihre optimalen täglichen Makroziele (Proteine, Kohlenhydrate, Fette in Gramm) zum Abnehmen, Halten oder Muskelaufbau basierend auf Ihrem TDEE datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "Makronährstoff-Energiedichte & empfohlene Ernährungsverhältnisse",
       "tableRows": [
         {
           "col1": "Kohlenhydrate (4 kcal/g)",
@@ -6320,11 +6246,11 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "매크로 영양소 계산기 – 일일 탄단지 영양소 비율 계산",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "무료 매크로 영양소 계산기. TDEE 및 피트니스 목표에 따라 다이어트, 체중 유지 또는 근육 증량을 위한 일일 맞춤형 영양소 비율(단백질, 탄수화물, 지방 g)을 브라우저 내에서 정확하게 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "영양소별 에너지 밀도 및 다이어트 목표별 영양 비율표",
       "tableRows": [
         {
           "col1": "탄수화물 (4 kcal/g)",
@@ -6368,11 +6294,11 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "मैक्रो पोषक तत्व कैलकुलेटर – दैनिक मैक्रो अनुपात की गणना",
-      "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
+      "intro": "मुफ़्त मैक्रो कैलकुलेटर। अपने TDEE और फिटनेस लक्ष्यों के आधार पर कटिंग, रखरखाव या मांसपेशियों को बढ़ाने के लिए इष्टतम दैनिक मैक्रोन्यूट्रिएंट लक्ष्यों (प्रोटीन, कार्ब्स, ग्राम में वसा) की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
       "formulaCode": "Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9",
-      "tableTitle": "मानक संदर्भ तालिका",
+      "tableTitle": "मैक्रोन्यूट्रिएंट ऊर्जा घनत्व और आहार अनुपात तालिका",
       "tableRows": [
         {
           "col1": "कार्बोहाइड्रेट (4 kcal/g)",
@@ -6465,12 +6391,12 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Relación Cintura-Cadera – Índice WHR de Salud – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de Relación Cintura-Cadera – Índice WHR de Salud",
+      "intro": "Calculadora de relación cintura-cadera (WHR) gratuita. Calcula tu relación cintura-cadera, tipo de forma corporal (manzana vs pera) y clasificación de riesgo cardiovascular de la OMS con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "WHR = Waist / Hip",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Umbrales de Riesgo de Salud del Índice Cintura-Cadera (OMS)",
       "tableRows": [
         {
           "col1": "Categoría de Riesgo Bajo",
@@ -6513,12 +6439,12 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur Ratio Taille-Hanche – Indice WHR et Références – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur Ratio Taille-Hanche – Indice WHR et Références",
+      "intro": "Calculateur du rapport taille/hanches (WHR) gratuit. Calculez votre rapport taille/hanches, votre morphologie (pomme vs poire) et la classification des risques cardiovasculaires selon l'OMS avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "WHR = Waist / Hip",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Seuils de Risque pour la Santé du Ratio Taille-Hanches (OMS)",
       "tableRows": [
         {
           "col1": "Catégorie Risque Faible",
@@ -6561,12 +6487,12 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Taille-Hüft-Verhältnis Rechner – WHR-Wert & Referenztabelle – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Taille-Hüft-Verhältnis Rechner – WHR-Wert & Referenztabelle",
+      "intro": "Kostenloser Taille-Hüft-Verhältnis Rechner (WHR-Rechner). Berechnen Sie Ihr Taille-Hüft-Verhältnis, Ihren Körpertyp (Apfel vs. Birne) und die WHO-Risikoklassifizierung für kardiovaskuläre Gesundheit datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "WHR = Waist / Hip",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "WHO-Grenzwerte für das Taille-Hüft-Verhältnis (WHR)",
       "tableRows": [
         {
           "col1": "Niedrige Risiko-Kategorie",
@@ -6610,11 +6536,11 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "허리 엉덩이 비율 계산기 – WHR 수치 및 건강 참조 도구",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "무료 허리-엉덩이 둘레 비율 계산기 (WHR Calculator). 허리둘레와 엉덩이둘레 비율(WHR), 체형 유형(사과형 vs 배형) 및 WHO 심혈관 질환 위험 범주를 브라우저 내에서 즉시 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "WHR = Waist / Hip",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "WHO 허리-엉덩이 비율(WHR) 건강 위험 기준표",
       "tableRows": [
         {
           "col1": "낮은 위험군",
@@ -6658,11 +6584,11 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "कमर से कूल्हे के अनुपात का कैलकुलेटर – WHR संदर्भ टूल",
-      "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
+      "intro": "मुफ़्त कमर-से-कूल्हे का अनुपात कैलकुलेटर (WHR Calculator)। अपने कमर-से-कूल्हे के अनुपात, शरीर के आकार के प्रकार (सेब बनाम नाशपाती) और डब्ल्यूएचओ हृदय स्वास्थ्य जोखिम वर्गीकरण की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
       "formulaCode": "WHR = Waist / Hip",
-      "tableTitle": "मानक संदर्भ तालिका",
+      "tableTitle": "डब्ल्यूएचओ कमर से कूल्हे के अनुपात (WHR) स्वास्थ्य जोखिम सीमा",
       "tableRows": [
         {
           "col1": "निम्न जोखिम श्रेणी",
@@ -6707,7 +6633,7 @@ const seoDatabase = {
   "body-surface-area-calculator": {
     "en": {
       "eyebrow": "Body Surface Area Reference",
-      "title": "Body Surface Area Calculator — Mosteller & Du Bois Reference Equations",
+      "title": "Body Surface Area Calculator — Mosteller & Du Bois BSA",
       "intro": "BSA is an estimated body-surface-area value calculated from height and weight. Some medical research protocols use BSA as one input, but this calculator does not provide medication doses or treatment recommendations.",
       "formulaTitle": "Mosteller & Du Bois BSA Equations",
       "formulaDesc": "Mosteller BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ] | Du Bois BSA (m²) = 0.007184 × Height (cm)^0.725 × Weight (kg)^0.425",
@@ -6738,7 +6664,7 @@ const seoDatabase = {
       "faqs": [
         {
           "question": "What is Body Surface Area (BSA)?",
-          "answer": "BSA is an estimated body-surface-area value calculated from height and weight. Some medical research protocols use BSA as one input, but this calculator does not provide medication doses or treatment recommendations."
+          "answer": "Body Surface Area (BSA) is the measured or calculated surface of a human body expressed in square meters (m²). In physiological research and clinical assessment, BSA is widely utilized to normalize metabolic rates, cardiac index, and renal clearance across individuals of differing statures."
         },
         {
           "question": "How is BSA calculated using the Mosteller equation?",
@@ -6752,12 +6678,12 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Superficie Corporal – Ecuaciones BSA – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de Superficie Corporal – Ecuaciones BSA",
+      "intro": "Calculadora de superficie corporal (BSA) gratuita. Calcula la superficie corporal total en metros cuadrados (m²) utilizando las ecuaciones publicadas de Mosteller, DuBois, Haycock y Boyd con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Rangos de Referencia Poblacionales de Superficie Corporal (m²)",
       "tableRows": [
         {
           "col1": "Lactantes (0–12 meses)",
@@ -6797,12 +6723,12 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Surface Corporelle – Formules BSA Mosteller & Du Bois – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur de Surface Corporelle – Formules Mosteller & Du Bois",
+      "intro": "Calculateur de surface corporelle (BSA) gratuit. Calculez la surface corporelle totale en mètres carrés (m²) à l'aide des équations publiées de Mosteller, DuBois, Haycock et Boyd avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Plages de Référence de la Surface Corporelle Adulte (m²)",
       "tableRows": [
         {
           "col1": "Nourrissons (0–12 mois)",
@@ -6842,12 +6768,12 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Körperoberflächen-Rechner – KOF / BSA Formeln nach Mosteller – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Körperoberflächen-Rechner – KOF / BSA Formeln nach Mosteller",
+      "intro": "Kostenloser Körperoberflächen-Rechner (BSA-Rechner). Berechnen Sie die gesamte Körperoberfläche in Quadratmetern (m²) mit den publizierten Formeln nach Mosteller, DuBois, Haycock und Boyd datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "Körperoberfläche (m²) Referenzbereiche für Erwachsene & Populationen",
       "tableRows": [
         {
           "col1": "Säuglinge (0–12 Monate)",
@@ -6888,11 +6814,11 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "체표면적(BSA) 계산기 – Mosteller 및 Du Bois 계산 공식",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "무료 체표면적 계산기 (BSA Calculator). Mosteller, DuBois, Haycock 및 Boyd 공식을 사용하여 제곱미터(m²) 단위의 전체 신체 표면적을 안전하게 산출하세요. 개인정보 수집 없는 100% 무료 도구. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "체표면적(BSA, m²) 연령별 및 성인 평균 참조 범위",
       "tableRows": [
         {
           "col1": "영아 (0–12개월)",
@@ -6933,11 +6859,11 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "बॉडी सरफेस एरिया (BSA) कैलकुलेटर – मोस्टेलर सूत्र",
-      "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
+      "intro": "मुफ़्त बॉडी सरफेस एरिया कैलकुलेटर (BSA Calculator)। मोस्टेलर, डुबॉइस, हेकॉक और बॉयड प्रकाशित समीकरणों का उपयोग करके वर्ग मीटर (m²) में कुल शरीर के सतह क्षेत्र की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
       "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
-      "tableTitle": "मानक संदर्भ तालिका",
+      "tableTitle": "वयस्क और जनसंख्या के लिए शरीर की सतह का क्षेत्रफल (m²) संदर्भ सीमा",
       "tableRows": [
         {
           "col1": "शिशु (0–12 महीने)",
@@ -6986,13 +6912,13 @@ const seoDatabase = {
   },
   "heart-rate-zone-calculator": {
     "en": {
-      "eyebrow": "Karvonen Cardio Protocol",
-      "title": "Karvonen Heart Rate Zone Calculator & Target Heart Rate Tool",
-      "intro": "Calculate estimated exercise heart-rate training zones using the Karvonen method and Heart Rate Reserve (HRR).",
-      "formulaTitle": "Karvonen Formula Mathematical Equation",
-      "formulaDesc": "Max HR = 220 - Age in years (commonly used estimate) | Heart Rate Reserve (HRR) = Max HR - Resting HR | Target HR = Resting HR + [HRR × % Intensity]",
+      "eyebrow": "Cardiovascular Training Protocol",
+      "title": "Target Heart Rate Zones Calculator – 5 Exercise Training Zones",
+      "intro": "Calculate personal training intensity zones using your resting pulse and maximum heart rate estimates. Delineate active recovery, aerobic base building, threshold pacing, and peak cardiovascular capacity with private, in-browser calculations.",
+      "formulaTitle": "Cardiorespiratory Training Intensity Equation",
+      "formulaDesc": "Peak Pulse = 220 - Age | Heart Rate Reserve (HRR) = Peak Pulse - Resting Pulse | Target Intensity = Resting Pulse + [HRR × Intensity %]",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "Karvonen 5-Zone Heart Rate Intensity Matrix",
+      "tableTitle": "5-Zone Cardiovascular Training Intensity Matrix",
       "tableRows": [
         {
           "col1": "Zone 1 (50% - 60% HRR)",
@@ -7001,56 +6927,56 @@ const seoDatabase = {
         },
         {
           "col1": "Zone 2 (60% - 70% HRR)",
-          "col2": "Moderate Aerobic Training",
-          "col3": "Often used for aerobic base training and moderate-intensity exercise"
+          "col2": "Aerobic Base Conditioning",
+          "col3": "Optimizes lipid oxidation and builds baseline endurance"
         },
         {
           "col1": "Zone 3 (70% - 80% HRR)",
-          "col2": "Aerobic Endurance / Fitness",
-          "col3": "Improves cardiovascular efficiency & stamina"
+          "col2": "Aerobic Stamina & Fitness",
+          "col3": "Improves cardiovascular efficiency & sustained pacing"
         },
         {
           "col1": "Zone 4 (80% - 90% HRR)",
           "col2": "Anaerobic / Lactate Threshold",
-          "col3": "Increases high-intensity exercise tolerance"
+          "col3": "Increases high-intensity exercise tolerance and power output"
         },
         {
           "col1": "Zone 5 (90% - 100% HRR)",
-          "col2": "Maximal VO2 Max Peak Power",
-          "col3": "Neuromuscular speed & peak sprint conditioning"
+          "col2": "Maximal VO2 Peak Interval",
+          "col3": "Neuromuscular speed, sprint stamina & peak conditioning"
         }
       ],
       "faqs": [
         {
-          "question": "What is the Karvonen Heart Rate Zone Calculator?",
-          "answer": "The Karvonen Heart Rate Zone Calculator is a cardiovascular training tool created by Dr. Martti Karvonen. It provides personalized training-zone estimates using the Karvonen formula and Heart Rate Reserve (HRR)."
+          "question": "How do target training intensity zones work?",
+          "answer": "Target training zones partition cardiovascular exertion into distinct physiological tiers based on maximum heart rate and resting pulse. Exercising within specific ranges helps athletes and fitness enthusiasts balance aerobic endurance base-building with high-intensity anaerobic conditioning."
         },
         {
-          "question": "How to calculate target heart rate using the Karvonen formula?",
-          "answer": "To use the Karvonen formula: 1) Subtract your age from 220 to get Max HR estimate. 2) Subtract your Resting HR from Max HR to get Heart Rate Reserve (HRR). 3) Multiply HRR by desired intensity % (e.g., 60% to 70% for moderate aerobic training). 4) Add your Resting HR back to get your target heart rate in BPM."
+          "question": "How do you calculate your exercise pulse range?",
+          "answer": "To establish your training pulse: 1) Estimate your peak cardiac output by subtracting your age from 220. 2) Determine heart rate reserve (HRR) by subtracting resting pulse from that peak. 3) Multiply HRR by your target exercise intensity percentage (such as 60% to 70% for steady-state aerobic conditioning). 4) Add your baseline pulse back to find your target beats per minute."
         },
         {
-          "question": "Why does the Karvonen formula factor in Resting Heart Rate?",
-          "answer": "Traditional formulas (220 - age) provide a population estimate of Max HR. The Karvonen formula provides individualized context by factoring in Resting Heart Rate (RHR)."
+          "question": "Why should resting pulse be considered alongside maximum heart rate?",
+          "answer": "Generic formulas rely solely on age-based peak estimates. Accounting for resting pulse reflects individual aerobic conditioning, ensuring that a fitter person with a lower baseline pulse receives an appropriately challenging exercise intensity range."
         },
         {
-          "question": "Which heart rate zone is associated with aerobic base training?",
-          "answer": "Karvonen Zone 2 (60% to 70% of Heart Rate Reserve) is commonly associated with aerobic base training and moderate-intensity endurance workouts."
+          "question": "Which training zone builds optimal aerobic stamina?",
+          "answer": "Zone 2 (roughly 60% to 70% of reserve capacity) represents the optimal aerobic base window. It stimulates mitochondrial adaptation, improves fat utilization during sustained endurance, and keeps blood lactate low."
         },
         {
-          "question": "How do I measure my Resting Heart Rate (RHR) for the Karvonen calculator?",
-          "answer": "Measure your pulse for 60 seconds immediately upon waking in the morning while resting calmly in bed before sitting up or taking caffeine."
+          "question": "What is the best way to record baseline resting pulse?",
+          "answer": "Check your radial or carotid pulse for a full 60 seconds immediately upon waking while still resting calmly in bed, prior to caffeine consumption or physical activity."
         }
       ]
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Zonas de Frecuencia Cardíaca – Fórmula Karvonen – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de Zonas de Frecuencia Cardíaca – Fórmula Karvonen",
+      "intro": "Calculadora de zonas de frecuencia cardíaca gratuita. Calcula tus zonas objetivo de entrenamiento (Quema de grasa, Aeróbica, Anaeróbica, Pico) según edad, frecuencia en reposo y frecuencia máxima con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Matriz de Intensidad de Frecuencia Cardíaca en 5 Zonas (Karvonen)",
       "tableRows": [
         {
           "col1": "Zona 1 (50% - 60% HRR)",
@@ -7103,12 +7029,12 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Zones de Fréquence Cardiaque – Formule Karvonen – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur de Zones de Fréquence Cardiaque – Formule Karvonen",
+      "intro": "Calculateur de zones de fréquence cardiaque gratuit. Calculez vos zones cibles d'entraînement (Brûle-graisse, Aérobie, Anaérobie, Maximale) selon l'âge, le pouls au repos et la fréquence maximale avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Matrice d'Intensité de Fréquence Cardiaque en 5 Zones (Karvonen)",
       "tableRows": [
         {
           "col1": "Zone 1 (50% - 60% HRR)",
@@ -7161,12 +7087,12 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Herzfrequenzzonen-Rechner – Zielherzfrequenz & Karvonen Zonen – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Herzfrequenzzonen-Rechner – Zielherzfrequenz & Karvonen Zonen",
+      "intro": "Kostenloser Herzfrequenzzonen-Rechner. Berechnen Sie Ihre Ziel-Trainingszonen (Fettverbrennung, Aerob, Anaerob, Maximal) basierend auf Alter, Ruhepuls und maximaler Herzfrequenz datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "Karvonen 5-Zonen-Herzfrequenz-Intensitätsmatrix",
       "tableRows": [
         {
           "col1": "Zone 1 (50% - 60% HRR)",
@@ -7220,11 +7146,11 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "심박수 구간 계산기 – Karvonen 목표 심박수 측정",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "무료 심박수 구간 계산기. 연령, 안정 시 심박수 및 최대 심박수를 바탕으로 목표 유산소 운동 심박수 구간(지방 연소, 심폐 지구력, 무산소 구간)을 브라우저 내에서 정밀하게 산출하세요. 100% 무료 도구입니다. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "카르보넨 공식 5단계 심박수 운동 강도 구간표",
       "tableRows": [
         {
           "col1": "1구간 (50% - 60% HRR)",
@@ -7278,11 +7204,11 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "हार्ट रेट ज़ोन कैलकुलेटर – लक्ष्य हृदय गति संदर्भ",
-      "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
+      "intro": "मुफ़्त हृदय गति क्षेत्र कैलकुलेटर। उम्र, विश्राम हृदय गति और अधिकतम हृदय गति के आधार पर लक्षित प्रशिक्षण हृदय गति क्षेत्रों (फैट बर्न, एरोबिक, एनारोबिक, पीक) की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "मानक संदर्भ तालिका",
+      "tableTitle": "कार्वोनेन 5-ज़ोन हृदय गति तीव्रता मैट्रिक्स",
       "tableRows": [
         {
           "col1": "ज़ोन 1 (50% - 60% HRR)",
@@ -7338,11 +7264,11 @@ const seoDatabase = {
     "en": {
       "eyebrow": "Cardiovascular Physiology",
       "title": "Karvonen Heart Rate Calculator – Target Heart Rate Zones & HRR",
-      "intro": "Calculate your target exercise heart rate zones using the Karvonen Formula and Heart Rate Reserve (HRR). Unlike basic percentage formulas, the Karvonen method accounts for your resting heart rate (RHR), providing customized training zones for fat loss, aerobic endurance, and VO2 max improvement.",
+      "intro": "Calculate personalized cardiovascular training zones using the Karvonen formula and Heart Rate Reserve (HRR). By factoring in your baseline resting pulse alongside age-predicted maximum limits, this method personalizes exercise intensity for endurance base-building, lactate threshold conditioning, and peak interval capacity.",
       "formulaTitle": "Official Karvonen Formula Equation",
       "formulaDesc": "Target Heart Rate (THR) = [(HRmax - HRrest) × %intensity] + HRrest | HRmax = 220 - Age | Heart Rate Reserve (HRR) = HRmax - HRrest",
       "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
-      "tableTitle": "Karvonen Heart Rate Training Zones Breakdown",
+      "tableTitle": "Karvonen Heart Rate Reserve (HRR) Intensity Matrix",
       "tableRows": [
         {
           "col1": "Zone 1: Active Recovery",
@@ -7373,22 +7299,22 @@ const seoDatabase = {
       "faqs": [
         {
           "question": "What is the Karvonen Formula?",
-          "answer": "The Karvonen formula is a mathematical formula that determines target heart rate (THR) for exercise training by using your heart rate reserve (HRR), which factors in both maximum heart rate and resting heart rate."
+          "answer": "The Karvonen formula calculates target training intensity by taking the difference between maximum heart rate and resting pulse (known as heart rate reserve, or HRR), scaling it by workout intensity percentage, and adding back baseline pulse."
         },
         {
           "question": "Why is the Karvonen method more accurate than standard 220-age?",
-          "answer": "Standard formulas only estimate maximum heart rate. The Karvonen formula factors in resting heart rate, reflecting your personal cardiovascular fitness level."
+          "answer": "Standard age-based equations assume an identical cardiovascular capacity for all individuals of the same age. The Karvonen equation incorporates your resting pulse, reflecting personal cardiorespiratory conditioning and establishing a more accurate exercise intensity."
         }
       ]
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora Karvonen – Reserva de Frecuencia Cardíaca HRR – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora Karvonen – Reserva de Frecuencia Cardíaca HRR",
+      "intro": "Calculadora de frecuencia cardíaca Karvonen gratuita. Calcula las zonas de frecuencia cardíaca objetivo (THR) utilizando la fórmula de Karvonen (método de Reserva de Frecuencia Cardíaca %) según edad y frecuencia en reposo (BPM) con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Desglose de Zonas de Entrenamiento de Frecuencia Cardíaca de Karvonen",
       "tableRows": [
         {
           "col1": "Zona 1: Recuperación Activa",
@@ -7429,12 +7355,12 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur Karvonen – Réserve Cardiaque HRR & Zones de Forme – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur Karvonen – Réserve Cardiaque HRR & Zones de Forme",
+      "intro": "Calculateur de fréquence cardiaque Karvonen gratuit. Calculez les zones cibles (THR) avec la formule de Karvonen (méthode de Réserve de Fréquence Cardiaque %) selon l'âge et le pouls au repos avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Répartition des Zones d'Entraînement Cardiaque selon Karvonen",
       "tableRows": [
         {
           "col1": "Zone 1 : Récupération Active",
@@ -7475,12 +7401,12 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Karvonen Herzfrequenz-Rechner – Herzfrequenzreserve HRR Zonen – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Karvonen Herzfrequenz-Rechner – Herzfrequenzreserve HRR Zonen",
+      "intro": "Kostenloser Karvonen-Herzfrequenz-Rechner. Berechnen Sie Ihre Zielherzfrequenz (THR) mit der Karvonen-Formel (Herzfrequenzreserve-%-Methode) nach Alter und Ruhepuls (BPM) datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "Karvonen-Herzfrequenz-Trainingszonen im Überblick",
       "tableRows": [
         {
           "col1": "Zone 1: Aktive Erholung",
@@ -7522,11 +7448,11 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "Karvonen 심박수 계산기 – 심박 예비능(HRR) 측정",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "무료 카보넨(Karvonen) 심박수 계산기. 나이와 안정 시 심박수(BPM)를 활용하여 심박수 예비능(HRR) 공식으로 목표 운동 심박수 트레이닝 구간을 브라우저 내에서 안전하게 계산하세요. 100% 무료 도구. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "카르보넨 예비 심박수(HRR) 기반 트레이닝 구간 분석표",
       "tableRows": [
         {
           "col1": "1구간: 능동적 회복",
@@ -7568,7 +7494,7 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "कार्डियोवैस्कुलर फिजियोलॉजी",
       "title": "कार्वोनेन हार्ट रेट कैलकुलेटर – हार्ट रेट रिजर्व (HRR) ज़ोन",
-      "intro": "कार्वोनेन फॉर्मूला और हार्ट रेट रिजर्व (HRR) का उपयोग करके अपने लक्षित व्यायाम हार्ट रेट ज़ोन की सटीक गणना करें।",
+      "intro": "कार्वोनेन फॉर्मूला और हार्ट रेट रिजर्व (HRR) का उपयोग करके फैट बर्निंग और कार्डियो फिटनेस के लिए अपने लक्षित व्यायाम हार्ट रेट ज़ोन की सटीक और सुरक्षित गणना करें।",
       "formulaTitle": "आधिकारिक कार्वोनेन सूत्र",
       "formulaDesc": "Target HR = [(HRmax - HRrest) × %intensity] + HRrest",
       "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
@@ -7678,12 +7604,12 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de 1RM – Calculadora de Repetición Máxima (Press Banca, Sentadilla, Peso Muerto) – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de 1RM – Repetición Máxima Press Banca y Sentadilla",
+      "intro": "Calculadora de 1RM (Máximo para una repetición) gratuita. Calcula tu fuerza máxima para 1 repetición, porcentajes de levantamiento y marcas de repetición utilizando las ecuaciones de Epley y Brzycki con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "Epley 1RM = W × (1 + R / 30)",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Tabla de Intensidad Porcentual y Repeticiones según 1RM",
       "tableRows": [
         {
           "col1": "100% 1RM Fuerza Máxima",
@@ -7729,12 +7655,12 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de 1RM – Calcul de Répétition Maximale (Développé Couché, Squat, Soulevé) – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur de 1RM – Répétition Maximale Développé Couché",
+      "intro": "Calculateur de 1RM (Maximum pour une répétition) gratuit. Calculez votre force maximale pour 1 répétition, vos pourcentages de musculation et repères de répétition avec les équations d'Epley et Brzycki avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "Epley 1RM = W × (1 + R / 30)",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Tableau d'Intensité en Pourcentage et Répétitions selon le 1RM",
       "tableRows": [
         {
           "col1": "100% 1RM Force Maximale",
@@ -7780,12 +7706,12 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "1RM-Rechner – Maximalgewicht-Rechner für 1 Wiederholung (Bankdrücken, Kniebeugen, Kreuzheben) – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "1RM-Rechner – Maximalgewicht für Bankdrücken & Kniebeugen",
+      "intro": "Kostenloser 1RM-Rechner (Maximalkraft-Rechner). Berechnen Sie Ihre Maximalkraft für eine Wiederholung, Gewichtheber-Prozentwerte und Wiederholungs-Benchmarks mit Epley und Brzycki datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "Epley 1RM = W × (1 + R / 30)",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "1RM-Prozentsatz-Intensitäts- und Wiederholungstabelle",
       "tableRows": [
         {
           "col1": "100% 1RM Maximalkraft",
@@ -7832,11 +7758,11 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "1RM 계산기 – 1회 최대 반복 중량 계산기 (벤치프레스, 스쿼트, 데드리프트) – 참조 계산기",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "무료 1RM(1회 최대 중량) 계산기. Epley 및 Brzycki 공식을 활용하여 벤치프레스, 스쿼트의 1회 최대 근력, 웨이트 리프팅 중량 비율(%)을 브라우저 내에서 안전하고 정밀하게 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "Epley 1RM = W × (1 + R / 30)",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "1RM 백분율 강도 및 반복 횟수 트레이닝 차트",
       "tableRows": [
         {
           "col1": "100% 1RM 최대 기준",
@@ -7882,7 +7808,7 @@ const seoDatabase = {
     },
     "hi": {
       "eyebrow": "स्ट्रेंथ कंडीशनिंग साइंस",
-      "title": "1RM कैलकुलेटर – एक पुनरावृत्ति अधिकतम वजन कैलकुलेटर (बेंच प्रेस, स्क्वैट, डेडलिफ्ट)",
+      "title": "1RM कैलकुलेटर – एक पुनरावृत्ति अधिकतम वजन (बेंच प्रेस व स्क्वैट)",
       "intro": "बेंच प्रेस, स्क्वाट और डेडलिफ्ट के लिए अपने 1RM (वन रेप मैक्स) की सुरक्षित गणना करें। एपले और ब्रज़िकी सूत्रों से अपने 100% मैक्स की गणना करें।",
       "formulaTitle": "मानक 1RM गणना सूत्र",
       "formulaDesc": "एपले सूत्र: 1RM = वजन × (1 + रेप्स / 30) | ब्रज़िकी सूत्र: 1RM = वजन × [36 / (37 - रेप्स)]",
@@ -8005,12 +7931,12 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora 1RM según Epley – Fórmula de Repetición Máxima para Press Banca – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora 1RM según Epley – Repetición Máxima para Press Banca",
+      "intro": "Calculadora gratuita de 1RM y herramienta de press de banca. Estima tu capacidad máxima de levantamiento, niveles de fuerza 5RM y 10RM, y porcentajes de entrenamiento según peso y repeticiones con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
       "formulaCode": "1RM = W × (1 + R / 30)",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Tabla de Entrenamiento de Intensidad según 1RM (Press de Banca)",
       "tableRows": [
         {
           "col1": "100% 1RM Fuerza Máxima",
@@ -8063,12 +7989,12 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de 1RM Formule d'Epley – Répétition Maximale au Développé Couché – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur 1RM Epley – Répétition Maximale Développé Couché",
+      "intro": "Calculateur gratuit de 1RM et outil de développé couché. Estimez votre capacité maximale de soulevé, vos niveaux 5RM et 10RM, et vos pourcentages d'entraînement selon le poids et les répétitions avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
       "formulaCode": "1RM = W × (1 + R / 30)",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Tableau d'Entraînement de l'Intensité selon le 1RM (Développé Couché)",
       "tableRows": [
         {
           "col1": "100% 1RM Force Maximale",
@@ -8121,12 +8047,12 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Epley 1RM Bankdrücken-Rechner – Formel für maximale Wiederholung – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Epley 1RM Bankdrücken-Rechner – Formel für maximale Wiederholung",
+      "intro": "Kostenloser Maximalkraft-Rechner (1RM & Bankdrücken Tool). Schätzen Sie Ihre maximale Hebekapazität, 5RM- und 10RM-Kraftwerte sowie Trainings-Prozentsätze basierend auf Gewicht und Wiederholungen datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
       "formulaCode": "1RM = W × (1 + R / 30)",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "1RM-Intensitäts-Trainingsplan (Bankdrücken & Kraftdreikampf)",
       "tableRows": [
         {
           "col1": "100% 1RM Maximalkraft",
@@ -8180,11 +8106,11 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "에플리 1RM 벤치프레스 계산기 – 1회 최대 중량 측정 도구",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "무료 벤치프레스 1RM 및 1회 최대 중량 도구. 들어올린 중량과 반복 횟수를 바탕으로 최대 중량 수행 능력, 5RM, 10RM 근력 수준 및 훈련 강도 비율(%)을 브라우저 내에서 계산하세요. 100% 무료 도구. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
       "formulaCode": "1RM = W × (1 + R / 30)",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "1RM 벤치프레스 및 파워리프팅 강도별 훈련 차트",
       "tableRows": [
         {
           "col1": "100% 1RM 최대 기준",
@@ -8238,11 +8164,11 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "एप्ले 1RM बेंच प्रेस कैलकुलेटर – 1 रेप मैक्स स्ट्रेंथ टूल",
-      "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
+      "intro": "मुफ़्त वन-रेप मैक्स कैलकुलेटर और बेंच प्रेस 1RM टूल। उठाए गए वजन और पूरी की गई पुनरावृत्तियों के आधार पर अधिकतम लिफ्ट क्षमता, 5RM, 10RM शक्ति स्तर और प्रशिक्षण प्रतिशत का अनुमान लगाएं। मुफ़्त और गोपनीयता-केंद्रित।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
       "formulaCode": "1RM = W × (1 + R / 30)",
-      "tableTitle": "मानक संदर्भ तालिका",
+      "tableTitle": "1RM प्रतिशत तीव्रता प्रशिक्षण चार्ट (बेंच प्रेस और पावरलिफ्टिंग)",
       "tableRows": [
         {
           "col1": "100% 1RM अधिकतम शक्ति",
@@ -8344,11 +8270,11 @@ const seoDatabase = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Aumento de Peso en el Embarazo – Seguimiento Trimestral – Guía y Calculadora",
-      "intro": "Herramienta de cálculo y referencia educativa diseñada según los estándares de salud publicados de la OMS y CDC. Calcula tus métricas y consulta los rangos de referencia establecidos.",
+      "title": "Calculadora de Aumento de Peso en el Embarazo – Seguimiento Trimestral",
+      "intro": "Calculadora gratuita de peso en el embarazo según las guías del ACOG y el IOM. Realiza un seguimiento del aumento de peso gestacional semana a semana por trimestre e IMC previo al embarazo con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Referencia Estándar",
       "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "tableTitle": "Tabla de Referencia Estándar",
+      "tableTitle": "Tabla de Peso Objetivo por Trimestre según el IOM",
       "tableRows": [
         {
           "col1": "Bajo peso pregestacional (< 18.5)",
@@ -8391,11 +8317,11 @@ const seoDatabase = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Prise de Poids pendant la Grossesse – Suivi Trimestre – Outil de Référence",
-      "intro": "Outil de calcul et de référence éducatif conçu selon les normes de santé publiées de l'OMS et du CDC. Calculez vos métriques et consultez les plages de référence.",
+      "title": "Calculateur de Prise de Poids pendant la Grossesse – Suivi Trimestre",
+      "intro": "Calculateur gratuit de prise de poids pendant la grossesse selon les directives de l'ACOG et de l'IOM. Suivez l'évolution du poids gestationnel semaine par semaine par trimestre et IMC avant grossesse avec calculs sur navigateur.",
       "formulaTitle": "Formule de Référence Standard",
       "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "tableTitle": "Tableau de Référence Standard",
+      "tableTitle": "Tableau de Prise de Poids Recommandée par Trimestre (IOM)",
       "tableRows": [
         {
           "col1": "Insuffisance pondérale avant grossesse (< 18.5)",
@@ -8438,11 +8364,11 @@ const seoDatabase = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Schwangerschafts-Gewichtszunahme Rechner – Trimester-Tracking – Rechner & Leitfaden",
-      "intro": "Berechnungs- und Bildungs-Referenzwerkzeug nach den veröffentlichten Gesundheitsstandards der WHO und CDC. Berechnen Sie Ihre Werte und prüfen Sie die Referenzbereiche.",
+      "title": "Schwangerschafts-Gewichtszunahme Rechner – Trimester-Tracking",
+      "intro": "Kostenloser Schwangerschafts-Gewichtszunahme-Rechner nach ACOG- und IOM-Richtlinien. Verfolgen Sie die wöchentliche Gewichtszunahme nach Trimester und BMI vor der Schwangerschaft datenschutzorientiert im Browser.",
       "formulaTitle": "Standard-Referenzformel",
       "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "tableTitle": "Standard-Referenztabelle",
+      "tableTitle": "IOM-Gewichtszunahme-Empfehlungen nach Trimestern",
       "tableRows": [
         {
           "col1": "Untergewicht vor Schwangerschaft (< 18.5)",
@@ -8486,10 +8412,10 @@ const seoDatabase = {
     "ko": {
       "eyebrow": "건강 참조 표준 지침",
       "title": "임신 중 체중 증가 계산기 – 분기별 체중 증가 권장 범위",
-      "intro": "WHO 및 CDC 지침에 기반한 실시간 참고 계산기입니다. 개인별 수치를 측정하고 성인 표준 참조 범위를 확인하세요.",
+      "intro": "미국 산부인과학회(ACOG) 및 IOM 지침에 맞춘 무료 임신 주수별 체중 증가 계산기. 임신 전 BMI 및 분기별 주수별 권장 체중 증가 범위를 브라우저 내에서 안전하게 확인하세요. 100% 무료 도구. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
       "formulaTitle": "표준 계산 공식",
       "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "tableTitle": "표준 참조 진단표",
+      "tableTitle": "미국의학연구소(IOM) 임신 분기별 권장 체중 증가표",
       "tableRows": [
         {
           "col1": "임신 전 저체중 (< 18.5)",
@@ -8533,10 +8459,10 @@ const seoDatabase = {
     "hi": {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "गर्भावस्था में वजन वृद्धि का कैलकुलेटर – तिमाही ट्रैकिंग",
-      "intro": "डब्ल्यूएचओ और सीडीसी स्वास्थ्य मानकों के अनुसार निर्मित संदर्भ टूल। अपनी मेट्रिक्स की गणना करें और स्थापित स्वास्थ्य सीमाओं की समीक्षा करें।",
+      "intro": "ACOG और IOM दिशानिर्देशों के अनुसार मुफ़्त गर्भावस्था वजन बढ़ना कैलकुलेटर। गर्भावस्था से पहले के बीएमआई और तिमाही के अनुसार सप्ताह-दर-सप्ताह वजन संचय को ट्रैक करें। मुफ़्त और गोपनीयता-केंद्रित।",
       "formulaTitle": "मानक संदर्भ सूत्र",
       "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
-      "tableTitle": "मानक संदर्भ तालिका",
+      "tableTitle": "आईओएम तिमाही लक्षित वजन वृद्धि संदर्भ चार्ट",
       "tableRows": [
         {
           "col1": "गर्भावस्था पूर्व कम वजन (< 18.5)",
@@ -8580,4 +8506,4 @@ const seoDatabase = {
   }
 };
 
-module.exports = { tableUi, seoDatabase };
+module.exports = { seoDatabaseData };
