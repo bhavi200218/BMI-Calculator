@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/post-build-mobile-fix.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "test": "node tests/parity.test.mjs && node tests/calculators-regression.test.mjs && node --test tests/ui-repetition-regression.test.mjs tests/bmiReference.test.js tests/calculator-initial-state.test.mjs && node tests/production-remediation.test.mjs",

@@ -174,7 +174,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
         <button 
           id="btnRejectCookies" 
           type="button"
-          class="min-h-[44px] px-3.5 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--border)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+          class="min-h-[48px] px-4 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--border)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         >
           {t.rejectNonEssential}
         </button>
@@ -182,7 +182,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
         <button 
           id="btnCustomizeCookies" 
           type="button"
-          class="min-h-[44px] px-3.5 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-transparent hover:bg-[var(--muted)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+          class="min-h-[48px] px-4 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-transparent hover:bg-[var(--muted)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         >
           {t.customize}
         </button>
@@ -190,7 +190,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
         <button 
           id="btnAcceptAllCookies" 
           type="button"
-          class="min-h-[44px] px-4 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-gradient-to-r from-[var(--accent)] to-[#d44f30] text-white shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+          class="min-h-[48px] px-5 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-gradient-to-r from-[var(--accent)] to-[#d44f30] text-white shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         >
           {t.acceptAll}
         </button>
@@ -220,7 +220,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
       <button 
         id="btnCloseCookieModal" 
         type="button" 
-        class="min-h-[44px] min-w-[44px] p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] rounded-lg transition-colors cursor-pointer"
+        class="min-h-[48px] min-w-[48px] p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] rounded-lg transition-colors cursor-pointer flex items-center justify-center"
         aria-label={t.closeLabel}
       >
         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -236,7 +236,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
           <span class="text-sm font-display font-bold uppercase tracking-wide text-[var(--foreground)]">
             {t.essentialTitle}
           </span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-500 border border-emerald-500/30">
+          <span class="px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-500 border border-emerald-500/30">
             {t.essentialStatus}
           </span>
         </div>
@@ -281,14 +281,14 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
     </div>
 
     <div class="pt-2 border-t border-[var(--border)] flex flex-wrap items-center justify-between gap-3">
-      <a href={cookiePolicyUrl} class="text-xs text-[var(--accent)] underline hover:text-[var(--foreground)] font-semibold">
+      <a href={cookiePolicyUrl} class="text-xs text-[var(--accent)] underline hover:text-[var(--foreground)] font-semibold min-h-[48px] inline-flex items-center">
         {t.policyLinkText}
       </a>
       <div class="flex items-center gap-2">
         <button 
           id="btnSavePreferences" 
           type="button" 
-          class="min-h-[44px] px-5 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-md hover:brightness-110 active:scale-95 transition-all cursor-pointer"
+          class="min-h-[48px] px-5 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-md hover:brightness-110 active:scale-95 transition-all cursor-pointer"
         >
           {t.savePreferences}
         </button>
