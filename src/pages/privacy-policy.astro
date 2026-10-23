@@ -1,16 +1,14 @@
 ---
-// Clean 301 redirect response headers for servers with dynamic adapters
-Astro.response.status = 301;
-Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/privacy-policy/');
+// Root multilingual Privacy Policy portal
 ---
 <!doctype html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | Real BMI Calculator</title>
-  <meta name="description" content="Official Privacy Policy for Real BMI. Understand our client-side processing, zero health data collection, and consent management practices." />
-  <meta name="robots" content="noindex, follow" />
+  <title>Privacy Policy & Data Protection | Real BMI</title>
+  <meta name="description" content="Official Privacy Policy for Real BMI. Learn about client-side computing, zero health data collection, and Google Consent Mode v2 compliance." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://realbmicalculator.com/en/privacy-policy/" />
   <meta http-equiv="refresh" content="0;url=/en/privacy-policy/" />
   <style>
@@ -20,27 +18,55 @@ Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/privacy
       --accent: #E8674A;
       --card: #11201D;
       --border: #182B27;
+      --muted: #162925;
+      --muted-foreground: #8FA7A7;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background-color: var(--background);
       color: var(--foreground);
-      padding: 1.5rem;
+      line-height: 1.6;
+      padding: 2rem 1rem;
     }
-    .card {
-      max-width: 42rem;
-      width: 100%;
+    .container {
+      max-width: 48rem;
+      margin: 0 auto;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 1.5rem;
       padding: 2.5rem 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--foreground);
+    }
+    p {
+      color: var(--muted-foreground);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .privacy-box {
+      background: rgba(232, 103, 74, 0.08);
+      border: 1px solid rgba(232, 103, 74, 0.25);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
     }
     .btn {
       display: inline-flex;
@@ -53,40 +79,90 @@ Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/privacy
       color: #ffffff;
       font-weight: 700;
       text-decoration: none;
+      margin-top: 1rem;
+    }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .lang-link {
+      display: inline-block;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      background: var(--muted);
+      border: 1px solid var(--border);
+      color: var(--foreground);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .lang-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    ul {
+      margin-left: 1.25rem;
+      color: var(--muted-foreground);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <main id="main-content" class="card">
-    <h1 style="font-size: 1.75rem; font-weight: 800; text-align: center;">Privacy Policy</h1>
-    <p style="color: #9ab; line-height: 1.6;">
-      At <strong>Real BMI</strong>, we prioritize user privacy by design. All biometric measurements (weight, height, age, biological sex, and circumference values) are processed strictly in your local browser JavaScript runtime. We never collect, store, or transmit your individual health inputs to external servers.
-    </p>
+  <main id="main-content" class="container">
+    <article>
+      <h1>Privacy Policy & Data Governance</h1>
+      <p>
+        At <strong>Real BMI</strong>, user privacy and biometric data security are foundational architecture requirements. This policy explains how information is handled when you visit our website, compute anthropometric metrics, or interact with our interactive WebGL 3D body visualizer tools.
+      </p>
 
-    <div style="background: rgba(232, 103, 74, 0.08); border: 1px solid rgba(232, 103, 74, 0.25); border-radius: 1rem; padding: 1.25rem; font-size: 0.95rem; line-height: 1.6;">
-      <p style="margin: 0 0 0.5rem 0; font-weight: 700; color: var(--accent);">Data Protection Summary:</p>
-      <ul style="margin: 0; padding-left: 1.2rem; color: #cbd5e1; space-y: 0.25rem;">
-        <li>Zero health data storage: all formulas run locally on your device.</li>
-        <li>Google Consent Mode v2: optional analytics and ads require explicit user consent.</li>
-        <li>Cookie preference management: freely customize or revoke preferences at any time.</li>
+      <div class="privacy-box">
+        <p style="margin-bottom: 0.5rem; font-weight: 700; color: var(--accent);">Architectural Privacy Guarantee:</p>
+        <ul style="margin: 0; padding-left: 1.2rem; color: #cbd5e1; font-size: 0.95rem;">
+          <li>Zero server-side biometric storage: height, weight, age, and circumferences execute locally in your browser.</li>
+          <li>Google Consent Mode v2: tracking cookies remain strictly disabled until you provide affirmative consent.</li>
+          <li>Local browser preferences: settings (dark mode, metric/imperial units) persist only on your device.</li>
+        </ul>
+      </div>
+
+      <h2>Summary of Information Practices</h2>
+      <ul>
+        <li>
+          <strong>Client-Side Local Computation:</strong> Every calculation (including BMI, BMR, TDEE, Body Fat, and 3D avatar morphing) runs on your local device JavaScript engine. No biometric values are sent over network requests or logged into external databases.
+        </li>
+        <li>
+          <strong>Google Consent Mode v2 & Analytics:</strong> We implement Google Consent Mode v2 with default denied states for advertising and analytics cookies. Only when you consent through our cookie preferences banner do services like Google Analytics 4 (Measurement ID: G-9D3TJCYP4R) activate.
+        </li>
+        <li>
+          <strong>Third-Party Advertising Disclosures:</strong> In accordance with Google AdSense policy, third-party vendors may use cookies (such as __gads and __gpi) to serve personalized or non-personalized advertisements based on your consent status.
+        </li>
+        <li>
+          <strong>Your International Privacy Rights:</strong> Under GDPR (EU/UK) and CCPA/CPRA (California), you maintain the right to inspect, revoke consent, or opt out of non-essential tracking at any time via our Cookie Policy controls.
+        </li>
       </ul>
-    </div>
 
-    <div style="line-height: 1.6; font-size: 0.95rem; color: #cbd5e1;">
-      <h2 style="font-size: 1.1rem; font-weight: 700; color: var(--foreground); margin-bottom: 0.5rem;">Read in Your Preferred Language:</h2>
-      <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem;">
-        <li><a href="/en/privacy-policy/" style="color: var(--accent); text-decoration: underline;">English (EN)</a></li>
-        <li><a href="/es/privacy-policy/" style="color: var(--accent); text-decoration: underline;">Español (ES)</a></li>
-        <li><a href="/fr/privacy-policy/" style="color: var(--accent); text-decoration: underline;">Français (FR)</a></li>
-        <li><a href="/de/privacy-policy/" style="color: var(--accent); text-decoration: underline;">Deutsch (DE)</a></li>
-        <li><a href="/ko/privacy-policy/" style="color: var(--accent); text-decoration: underline;">한국어 (KO)</a></li>
-        <li><a href="/hi/privacy-policy/" style="color: var(--accent); text-decoration: underline;">हिन्दी (HI)</a></li>
-      </ul>
-    </div>
+      <h2>Select Your Language Version</h2>
+      <p>Read the comprehensive Privacy Policy in your preferred language:</p>
+      <div class="lang-grid">
+        <a href="/en/privacy-policy/" class="lang-link">🇺🇸 English (EN)</a>
+        <a href="/es/privacy-policy/" class="lang-link">🇪🇸 Español (ES)</a>
+        <a href="/fr/privacy-policy/" class="lang-link">🇫🇷 Français (FR)</a>
+        <a href="/de/privacy-policy/" class="lang-link">🇩🇪 Deutsch (DE)</a>
+        <a href="/ko/privacy-policy/" class="lang-link">🇰🇷 한국어 (KO)</a>
+        <a href="/hi/privacy-policy/" class="lang-link">🇮🇳 हिन्दी (HI)</a>
+      </div>
 
-    <div style="text-align: center; margin-top: 0.5rem;">
-      <a href="/en/privacy-policy/" class="btn" style="width: 100%; max-width: 20rem;">Proceed to Full Privacy Policy</a>
-    </div>
+      <div style="text-align: center; padding-top: 1rem; border-top: 1px solid var(--border);">
+        <a href="/en/privacy-policy/" class="btn">Read Complete English Privacy Policy →</a>
+      </div>
+    </article>
   </main>
 </body>
 </html>

@@ -187,19 +187,21 @@ const referenceTableSubtitle = {
 
   <!-- Formula Box -->
   <div class="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-lg space-y-4">
-    <div class="flex items-center justify-between gap-4 flex-wrap">
-      <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {currentData.formulaTitle}
-      </h3>
-      {currentData.formulaCode && (
-        <span class="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] font-mono text-xs font-bold border border-[var(--accent)]/20">
-          {currentData.formulaCode}
-        </span>
-      )}
+    <div class="space-y-2">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+          {currentData.formulaTitle}
+        </h3>
+        {currentData.formulaCode && (
+          <span class="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] font-mono text-xs font-bold border border-[var(--accent)]/20">
+            {currentData.formulaCode}
+          </span>
+        )}
+      </div>
+      <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-sans font-medium pt-1">
+        {currentData.formulaDesc}
+      </p>
     </div>
-    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-sans font-medium">
-      {currentData.formulaDesc}
-    </p>
   </div>
 
   <!-- Input Variables & Measurement Units Guide -->

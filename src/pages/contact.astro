@@ -1,16 +1,14 @@
 ---
-// Clean 301 redirect response headers for servers with dynamic adapters
-Astro.response.status = 301;
-Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/contact/');
+// Root multilingual contact portal and editorial directory
 ---
 <!doctype html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Real BMI Calculator</title>
-  <meta name="description" content="Contact Real BMI for technical support, formula inquiries, or feedback." />
-  <meta name="robots" content="noindex, follow" />
+  <title>Contact & Technical Support | Real BMI</title>
+  <meta name="description" content="Get in touch with the Real BMI team for technical support, formula validation, editorial feedback, or data privacy inquiries." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://realbmicalculator.com/en/contact/" />
   <meta http-equiv="refresh" content="0;url=/en/contact/" />
   <style>
@@ -20,29 +18,61 @@ Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/contact
       --accent: #E8674A;
       --card: #11201D;
       --border: #182B27;
+      --muted: #162925;
+      --muted-foreground: #8FA7A7;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background-color: var(--background);
       color: var(--foreground);
-      text-align: center;
-      padding: 1.5rem;
+      line-height: 1.6;
+      padding: 2rem 1rem;
     }
-    .card {
-      max-width: 32rem;
-      width: 100%;
+    .container {
+      max-width: 48rem;
+      margin: 0 auto;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 1.5rem;
-      padding: 2.5rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.25rem;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--foreground);
+    }
+    p {
+      color: var(--muted-foreground);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .contact-box {
+      background: rgba(232, 103, 74, 0.08);
+      border: 1px solid rgba(232, 103, 74, 0.25);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .contact-email {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: underline;
     }
     .btn {
       display: inline-flex;
@@ -55,45 +85,96 @@ Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/contact
       color: #ffffff;
       font-weight: 700;
       text-decoration: none;
+      margin-top: 1rem;
+    }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .lang-link {
+      display: inline-block;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      background: var(--muted);
+      border: 1px solid var(--border);
+      color: var(--foreground);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .lang-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    ul {
+      margin-left: 1.25rem;
+      color: var(--muted-foreground);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <main id="main-content" class="card" style="max-width: 42rem; text-align: left;">
-    <h1 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem; text-align: center;">Contact & Support Center</h1>
-    <p style="color: #9ab; line-height: 1.6; margin-bottom: 1rem;">
-      Welcome to the official support portal for Real BMI. Whether you are looking to report a calculation discrepancy, request medical formula validation, inquire about WebGL 3D body visualizer compatibility, or provide editorial feedback, our team is available to assist you.
-    </p>
-
-    <div style="background: rgba(232, 103, 74, 0.08); border: 1px solid rgba(232, 103, 74, 0.25); border-radius: 1rem; padding: 1.25rem; margin-bottom: 1.25rem;">
-      <p style="margin: 0 0 0.5rem 0; font-weight: 700; color: var(--accent);">Direct Inquiries & Editorial Support:</p>
-      <p style="margin: 0; font-size: 1.1rem; font-weight: 700;">
-        <a href="mailto:support@realbmicalculator.com" style="color: var(--foreground); text-decoration: underline;">support@realbmicalculator.com</a>
+  <main id="main-content" class="container">
+    <article>
+      <h1>Contact & Support Center</h1>
+      <p>
+        Welcome to the official support directory for Real BMI. We are dedicated to providing responsive, transparent communication for visitors, healthcare professionals, academic researchers, and developer partners. Whether you are reporting a calculation discrepancy, submitting a bug report for the WebGL 3D body visualizer, or proposing an editorial enhancement to our anthropometric formulas, our team is here to assist.
       </p>
-      <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem; color: #8fa;">Average response time: 24 to 48 business hours.</p>
-    </div>
 
-    <div style="margin-bottom: 1.5rem; line-height: 1.6; font-size: 0.95rem; color: #cbd5e1;">
-      <h2 style="font-size: 1.1rem; font-weight: 700; color: var(--foreground); margin-bottom: 0.5rem;">Select Your Preferred Language:</h2>
-      <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem;">
-        <li><a href="/en/contact/" style="color: var(--accent); text-decoration: underline;">English (EN)</a></li>
-        <li><a href="/es/contact/" style="color: var(--accent); text-decoration: underline;">Español (ES)</a></li>
-        <li><a href="/fr/contact/" style="color: var(--accent); text-decoration: underline;">Français (FR)</a></li>
-        <li><a href="/de/contact/" style="color: var(--accent); text-decoration: underline;">Deutsch (DE)</a></li>
-        <li><a href="/ko/contact/" style="color: var(--accent); text-decoration: underline;">한국어 (KO)</a></li>
-        <li><a href="/hi/contact/" style="color: var(--accent); text-decoration: underline;">हिन्दी (HI)</a></li>
+      <div class="contact-box">
+        <p style="margin-bottom: 0.25rem; font-weight: 700; color: var(--foreground);">Primary Inquiries & Editorial Office:</p>
+        <p style="margin-bottom: 0.5rem;">
+          <a href="mailto:support@realbmicalculator.com" class="contact-email">support@realbmicalculator.com</a>
+        </p>
+        <p style="margin-bottom: 0; font-size: 0.85rem; color: #8FA7A7;">
+          Direct communication managed by Bhawanshi Dosi. Typical response timeframe: 24 to 48 business hours.
+        </p>
+      </div>
+
+      <h2>Specialized Inquiries & Assistance Channels</h2>
+      <ul>
+        <li>
+          <strong>Formula Verification & Clinical Accuracy:</strong> If you notice an issue with our Mifflin-St Jeor, Devine, Boer, or WHO body index algorithms, please include the input variables and expected clinical citations.
+        </li>
+        <li>
+          <strong>Technical Support & 3D WebGL Rendering:</strong> For issues related to Three.js canvas rendering, GPU hardware acceleration, or mobile touch controls, please share your browser version and operating system.
+        </li>
+        <li>
+          <strong>Privacy, Cookies & Data Rights:</strong> Real BMI executes calculations entirely client-side. To learn more about our Google Consent Mode v2 setup or exercise GDPR/CCPA rights, reach out directly.
+        </li>
+        <li>
+          <strong>Editorial Feedback & Educational Partnerships:</strong> We welcome peer review, institutional inquiries, and academic feedback regarding our health screening content.
+        </li>
       </ul>
-    </div>
 
-    <div style="text-align: center; width: 100%;">
-      <a href="/en/contact/" class="btn" style="width: 100%; max-width: 20rem;">Go to Interactive Contact Form</a>
-    </div>
+      <h2>Accessibility & Communications Commitment</h2>
+      <p>
+        Real BMI is committed to ensuring full digital accessibility for all users, including those relying on screen readers, high-contrast display modes, and keyboard navigation. If you encounter any accessibility barriers while using our calculators or reading documentation, please contact our team so we can promptly address and resolve the issue.
+      </p>
+
+      <h2>Select Your Language Version</h2>
+      <p>Access our fully localized contact forms and interactive assistance in your preferred language:</p>
+      <div class="lang-grid">
+        <a href="/en/contact/" class="lang-link">🇺🇸 English (EN)</a>
+        <a href="/es/contact/" class="lang-link">🇪🇸 Español (ES)</a>
+        <a href="/fr/contact/" class="lang-link">🇫🇷 Français (FR)</a>
+        <a href="/de/contact/" class="lang-link">🇩🇪 Deutsch (DE)</a>
+        <a href="/ko/contact/" class="lang-link">🇰🇷 한국어 (KO)</a>
+        <a href="/hi/contact/" class="lang-link">🇮🇳 हिन्दी (HI)</a>
+      </div>
+
+      <div style="text-align: center; padding-top: 1rem; border-top: 1px solid var(--border);">
+        <a href="/en/contact/" class="btn">Open Interactive English Contact Form →</a>
+      </div>
+    </article>
   </main>
-  <script is:inline>
-    // Progressive redirect for browsers supporting instant navigation
-    if (window.location.pathname === '/contact' || window.location.pathname === '/contact/') {
-      // Allow user navigation or automated redirect after brief delay if preferred
-    }
-  </script>
 </body>
 </html>

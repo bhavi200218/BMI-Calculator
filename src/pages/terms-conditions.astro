@@ -1,16 +1,14 @@
 ---
-// Clean 301 redirect response headers for servers with dynamic adapters
-Astro.response.status = 301;
-Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/terms-conditions/');
+// Root multilingual Terms and Conditions portal
 ---
 <!doctype html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms and Conditions | Real BMI Calculator</title>
-  <meta name="description" content="Official Terms and Conditions for Real BMI. Understand acceptable use, intellectual property, and educational screening limitations." />
-  <meta name="robots" content="noindex, follow" />
+  <title>Terms and Conditions | Real BMI</title>
+  <meta name="description" content="Official Terms and Conditions for Real BMI. Review acceptable use policies, intellectual property rights, and educational screening limitations." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://realbmicalculator.com/en/terms-conditions/" />
   <meta http-equiv="refresh" content="0;url=/en/terms-conditions/" />
   <style>
@@ -20,27 +18,55 @@ Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/terms-c
       --accent: #E8674A;
       --card: #11201D;
       --border: #182B27;
+      --muted: #162925;
+      --muted-foreground: #8FA7A7;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background-color: var(--background);
       color: var(--foreground);
-      padding: 1.5rem;
+      line-height: 1.6;
+      padding: 2rem 1rem;
     }
-    .card {
-      max-width: 42rem;
-      width: 100%;
+    .container {
+      max-width: 48rem;
+      margin: 0 auto;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 1.5rem;
       padding: 2.5rem 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--foreground);
+    }
+    p {
+      color: var(--muted-foreground);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .terms-box {
+      background: rgba(232, 103, 74, 0.08);
+      border: 1px solid rgba(232, 103, 74, 0.25);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
     }
     .btn {
       display: inline-flex;
@@ -53,40 +79,90 @@ Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/terms-c
       color: #ffffff;
       font-weight: 700;
       text-decoration: none;
+      margin-top: 1rem;
+    }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .lang-link {
+      display: inline-block;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      background: var(--muted);
+      border: 1px solid var(--border);
+      color: var(--foreground);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .lang-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    ul {
+      margin-left: 1.25rem;
+      color: var(--muted-foreground);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <main id="main-content" class="card">
-    <h1 style="font-size: 1.75rem; font-weight: 800; text-align: center;">Terms and Conditions</h1>
-    <p style="color: #9ab; line-height: 1.6;">
-      These Terms and Conditions govern your access to and use of <strong>Real BMI</strong>, including our full suite of free browser-based health, metabolic, and body composition calculators. By using this website, you agree to comply with all acceptable use guidelines and acknowledge that all calculations are intended solely for educational screening purposes.
-    </p>
+  <main id="main-content" class="container">
+    <article>
+      <h1>Terms and Conditions of Use</h1>
+      <p>
+        These Terms and Conditions constitute a legally binding agreement between you and <strong>Real BMI</strong> (an independent health calculator platform maintained by Bhawanshi Dosi). By accessing our website, interacting with our WebGL 3D visualizers, or using any of our metabolic calculators, you agree to abide by these terms. If you do not agree with any provision herein, you must refrain from using the service.
+      </p>
 
-    <div style="background: rgba(232, 103, 74, 0.08); border: 1px solid rgba(232, 103, 74, 0.25); border-radius: 1rem; padding: 1.25rem; font-size: 0.95rem; line-height: 1.6;">
-      <p style="margin: 0 0 0.5rem 0; font-weight: 700; color: var(--accent);">Key Provisions & Permitted Use:</p>
-      <ul style="margin: 0; padding-left: 1.2rem; color: #cbd5e1; space-y: 0.25rem;">
-        <li>Non-commercial, personal educational use permitted. Automated scraping is prohibited.</li>
-        <li>Calculations process locally in your browser with zero server data storage.</li>
-        <li>Mathematical estimates do not constitute medical diagnoses or clinical prescriptions.</li>
+      <div class="terms-box">
+        <p style="margin-bottom: 0.5rem; font-weight: 700; color: var(--accent);">Core Legal Principles & Permitted Use:</p>
+        <ul style="margin: 0; padding-left: 1.2rem; color: #cbd5e1; font-size: 0.95rem;">
+          <li>All calculators are provided free of charge for non-commercial, personal educational screening only.</li>
+          <li>Calculations execute locally in your client browser environment with zero server-side metric logging.</li>
+          <li>Mathematical formulas do not constitute medical diagnoses, clinical advice, or individualized treatment plans.</li>
+        </ul>
+      </div>
+
+      <h2>Summary of Site Usage Provisions</h2>
+      <ul>
+        <li>
+          <strong>Permitted & Prohibited Conduct:</strong> You are granted a limited, revocable, non-exclusive license to use the tools for personal wellness calculation. You agree not to perform automated screen scraping, unauthorized crawling, denial-of-service attempts, or reverse engineering of the mathematical source code.
+        </li>
+        <li>
+          <strong>Intellectual Property Rights:</strong> All proprietary design systems, graphics, typography pairings, code structures, and visual implementations are the intellectual property of Real BMI and protected by international copyright laws.
+        </li>
+        <li>
+          <strong>Disclaimer of Warranties:</strong> The service is provided strictly on an "AS IS" and "AS AVAILABLE" basis. While we verify formulas against peer-reviewed literature (WHO, CDC, Mifflin-St Jeor), we make no express warranties regarding diagnostic fitness or clinical completeness.
+        </li>
+        <li>
+          <strong>Limitation of Liability:</strong> Under no circumstances shall Real BMI or its maintainers be liable for any direct, indirect, incidental, or consequential damages arising from reliance on calculator outputs.
+        </li>
       </ul>
-    </div>
 
-    <div style="line-height: 1.6; font-size: 0.95rem; color: #cbd5e1;">
-      <h2 style="font-size: 1.1rem; font-weight: 700; color: var(--foreground); margin-bottom: 0.5rem;">Read in Your Preferred Language:</h2>
-      <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem;">
-        <li><a href="/en/terms-conditions/" style="color: var(--accent); text-decoration: underline;">English (EN)</a></li>
-        <li><a href="/es/terms-conditions/" style="color: var(--accent); text-decoration: underline;">Español (ES)</a></li>
-        <li><a href="/fr/terms-conditions/" style="color: var(--accent); text-decoration: underline;">Français (FR)</a></li>
-        <li><a href="/de/terms-conditions/" style="color: var(--accent); text-decoration: underline;">Deutsch (DE)</a></li>
-        <li><a href="/ko/terms-conditions/" style="color: var(--accent); text-decoration: underline;">한국어 (KO)</a></li>
-        <li><a href="/hi/terms-conditions/" style="color: var(--accent); text-decoration: underline;">हिन्दी (HI)</a></li>
-      </ul>
-    </div>
+      <h2>Select Your Language Version</h2>
+      <p>Read the full Terms and Conditions in your preferred language:</p>
+      <div class="lang-grid">
+        <a href="/en/terms-conditions/" class="lang-link">🇺🇸 English (EN)</a>
+        <a href="/es/terms-conditions/" class="lang-link">🇪🇸 Español (ES)</a>
+        <a href="/fr/terms-conditions/" class="lang-link">🇫🇷 Français (FR)</a>
+        <a href="/de/terms-conditions/" class="lang-link">🇩🇪 Deutsch (DE)</a>
+        <a href="/ko/terms-conditions/" class="lang-link">🇰🇷 한국어 (KO)</a>
+        <a href="/hi/terms-conditions/" class="lang-link">🇮🇳 हिन्दी (HI)</a>
+      </div>
 
-    <div style="text-align: center; margin-top: 0.5rem;">
-      <a href="/en/terms-conditions/" class="btn" style="width: 100%; max-width: 20rem;">Proceed to Full Terms & Conditions</a>
-    </div>
+      <div style="text-align: center; padding-top: 1rem; border-top: 1px solid var(--border);">
+        <a href="/en/terms-conditions/" class="btn">Read Complete English Terms & Conditions →</a>
+      </div>
+    </article>
   </main>
 </body>
 </html>

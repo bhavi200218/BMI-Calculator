@@ -6,13 +6,13 @@ import Navbar from '../components/Navbar.astro';
 <Layout title="500 Error | Internal Server Error | Real BMI" robots="noindex, nofollow">
     <Navbar />
     <main class="h-screen flex flex-col items-center justify-center space-y-6">
-        <div class="space-y-2 text-center">
+        <div class="space-y-4 text-center max-w-md mx-auto">
             <div aria-hidden="true" class="text-9xl font-black tracking-tighter opacity-10 select-none">500</div>
             <h1 class="text-xl sm:text-2xl font-bold uppercase tracking-widest text-[var(--foreground)]">500 — Internal Server Error</h1>
+            <p class="text-sm text-[var(--muted-foreground)] opacity-70 text-center font-medium">
+                We are experiencing a momentary lapse in our precision metrics. Our engineering team has been notified.
+            </p>
         </div>
-        <p class="text-sm text-[var(--muted-foreground)] opacity-50 max-w-md text-center font-bold">
-            We are experiencing a momentary lapse in our precision metrics. Our engineers are investigating.
-        </p>
         <a href="/en/" class="px-10 py-5 bg-[var(--foreground)] text-[var(--background)] rounded-2xl font-black uppercase tracking-widest text-xs hover:brightness-95 active:scale-95 transition-all shadow-xl inline-block">Return to Calculator</a>
     </main>
 </Layout>

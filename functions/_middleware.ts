@@ -26,6 +26,22 @@ export async function onRequest(context: EventContext): Promise<Response> {
     return Response.redirect(url.toString(), 301);
   }
 
+  // 3b. Consolidate near-duplicate 3D visualizer slug into canonical /3d-bmi-calculator/
+  const visualizerMatch = url.pathname.match(/^(\/(?:en|es|fr|de|ko|hi))?\/3d-body-visualizer(\/?)$/);
+  if (visualizerMatch) {
+    const localePrefix = visualizerMatch[1] || '/en';
+    url.pathname = `${localePrefix}/3d-bmi-calculator/`;
+    return Response.redirect(url.toString(), 301);
+  }
+
+  // 3c. Consolidate near-duplicate one-rep-max slug into canonical /1rm-calculator/
+  const repMaxMatch = url.pathname.match(/^(\/(?:en|es|fr|de|ko|hi))?\/one-rep-max-calculator(\/?)$/);
+  if (repMaxMatch) {
+    const localePrefix = repMaxMatch[1] || '/en';
+    url.pathname = `${localePrefix}/1rm-calculator/`;
+    return Response.redirect(url.toString(), 301);
+  }
+
   const response = await context.next();
   const headers = new Headers(response.headers);
 

@@ -1,16 +1,14 @@
 ---
-// Clean 301 redirect response headers for servers with dynamic adapters
-Astro.response.status = 301;
-Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/disclaimer/');
+// Root multilingual medical disclaimer directory
 ---
 <!doctype html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medical Disclaimer | Real BMI</title>
-  <meta name="description" content="Official medical disclaimer for Real BMI health calculators, reference ranges, and educational tools." />
-  <meta name="robots" content="noindex, follow" />
+  <title>Medical Disclaimer & Clinical Notice | Real BMI</title>
+  <meta name="description" content="Official medical disclaimer and screening limitations for Real BMI calculators, metabolic formulas, and body visualizer tools." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://realbmicalculator.com/en/disclaimer/" />
   <meta http-equiv="refresh" content="0;url=/en/disclaimer/" />
   <style>
@@ -20,27 +18,55 @@ Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/disclai
       --accent: #E8674A;
       --card: #11201D;
       --border: #182B27;
+      --muted: #162925;
+      --muted-foreground: #8FA7A7;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background-color: var(--background);
       color: var(--foreground);
-      padding: 1.5rem;
+      line-height: 1.6;
+      padding: 2rem 1rem;
     }
-    .card {
-      max-width: 42rem;
-      width: 100%;
+    .container {
+      max-width: 48rem;
+      margin: 0 auto;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 1.5rem;
       padding: 2.5rem 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--foreground);
+    }
+    p {
+      color: var(--muted-foreground);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .notice-box {
+      background: rgba(232, 103, 74, 0.08);
+      border: 1px solid rgba(232, 103, 74, 0.25);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
     }
     .btn {
       display: inline-flex;
@@ -53,38 +79,88 @@ Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/disclai
       color: #ffffff;
       font-weight: 700;
       text-decoration: none;
+      margin-top: 1rem;
+    }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .lang-link {
+      display: inline-block;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      background: var(--muted);
+      border: 1px solid var(--border);
+      color: var(--foreground);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .lang-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    ul {
+      margin-left: 1.25rem;
+      color: var(--muted-foreground);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <main id="main-content" class="card">
-    <h1 style="font-size: 1.75rem; font-weight: 800; text-align: center;">Medical Disclaimer</h1>
-    <p style="color: #9ab; line-height: 1.6;">
-      All calculations, biometric estimates, and reference ranges provided by <strong>Real BMI</strong> are intended strictly for educational, informational, and personal screening purposes. They do not constitute, and must not be interpreted as, professional medical advice, clinical diagnosis, or personalized treatment plans.
-    </p>
-
-    <div style="background: rgba(232, 103, 74, 0.08); border: 1px solid rgba(232, 103, 74, 0.25); border-radius: 1rem; padding: 1.25rem; font-size: 0.95rem; line-height: 1.6;">
-      <p style="margin: 0 0 0.5rem 0; font-weight: 700; color: var(--accent);">Important Health Notice:</p>
-      <p style="margin: 0; color: #cbd5e1;">
-        Always consult a qualified physician or registered dietitian before making significant dietary, medical, or exercise decisions. In the event of a medical emergency, immediately contact your local emergency services (e.g., 911 or 112).
+  <main id="main-content" class="container">
+    <article>
+      <h1>Medical Disclaimer & Clinical Guidance</h1>
+      <p>
+        All calculations, biometric estimators, reference charts, and visual interpretations provided across <strong>Real BMI</strong> are developed strictly for educational screening, general wellness awareness, and personal reference. They do not constitute clinical diagnosis, professional medical advice, personalized physical therapy prescription, or individualized dietetic intervention.
       </p>
-    </div>
 
-    <div style="line-height: 1.6; font-size: 0.95rem; color: #cbd5e1;">
-      <h2 style="font-size: 1.1rem; font-weight: 700; color: var(--foreground); margin-bottom: 0.5rem;">Read in Your Preferred Language:</h2>
-      <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem;">
-        <li><a href="/en/disclaimer/" style="color: var(--accent); text-decoration: underline;">English (EN)</a></li>
-        <li><a href="/es/disclaimer/" style="color: var(--accent); text-decoration: underline;">Español (ES)</a></li>
-        <li><a href="/fr/disclaimer/" style="color: var(--accent); text-decoration: underline;">Français (FR)</a></li>
-        <li><a href="/de/disclaimer/" style="color: var(--accent); text-decoration: underline;">Deutsch (DE)</a></li>
-        <li><a href="/ko/disclaimer/" style="color: var(--accent); text-decoration: underline;">한국어 (KO)</a></li>
-        <li><a href="/hi/disclaimer/" style="color: var(--accent); text-decoration: underline;">हिन्दी (HI)</a></li>
+      <div class="notice-box">
+        <p style="margin-bottom: 0.5rem; font-weight: 700; color: var(--accent);">Critical Emergency Medical Notice:</p>
+        <p style="margin-bottom: 0; color: #cbd5e1; font-size: 0.95rem;">
+          If you are experiencing acute chest pain, shortness of breath, sudden dizziness, severe weakness, or any life-threatening medical emergency, stop using browser calculation tools immediately and call your local emergency services (such as 911 in North America, 112 in Europe, or 102/108 in India).
+        </p>
+      </div>
+
+      <h2>Scope and Limitations of Anthropometric Screening</h2>
+      <ul>
+        <li>
+          <strong>No Substitute for Clinical Examination:</strong> Formulas like Quetelet’s Body Mass Index (BMI = kg/m²), Boer Lean Body Mass, or Devine Ideal Weight are population-level statistical tools. They cannot measure visceral adipose tissue distribution, bone mineral density, or systemic cardiovascular health.
+        </li>
+        <li>
+          <strong>Athletes and Muscular Individuals:</strong> Highly trained resistance athletes frequently produce elevated BMI values categorizing them as overweight or obese, despite maintaining healthy low body fat levels.
+        </li>
+        <li>
+          <strong>Pregnancy, Pediatrics & Clinical Conditions:</strong> Standard adult BMI and calorie deficit equations should never be applied to pregnant individuals, nursing mothers, growing children, elderly individuals with sarcopenia, or individuals in recovery from eating disorders.
+        </li>
+        <li>
+          <strong>Independent Medical Guidance:</strong> Always consult a licensed medical doctor, registered dietitian, or certified exercise physiologist before commencing any calorie deficit, rigorous strength program, or dramatic dietary change.
+        </li>
       </ul>
-    </div>
 
-    <div style="text-align: center; margin-top: 0.5rem;">
-      <a href="/en/disclaimer/" class="btn" style="width: 100%; max-width: 20rem;">Proceed to Full Disclaimer</a>
-    </div>
+      <h2>Select Your Language Version</h2>
+      <p>Read the comprehensive localized disclaimer, liability limitations, and medical reference documentation in your language:</p>
+      <div class="lang-grid">
+        <a href="/en/disclaimer/" class="lang-link">🇺🇸 English (EN)</a>
+        <a href="/es/disclaimer/" class="lang-link">🇪🇸 Español (ES)</a>
+        <a href="/fr/disclaimer/" class="lang-link">🇫🇷 Français (FR)</a>
+        <a href="/de/disclaimer/" class="lang-link">🇩🇪 Deutsch (DE)</a>
+        <a href="/ko/disclaimer/" class="lang-link">🇰🇷 한국어 (KO)</a>
+        <a href="/hi/disclaimer/" class="lang-link">🇮🇳 हिन्दी (HI)</a>
+      </div>
+
+      <div style="text-align: center; padding-top: 1rem; border-top: 1px solid var(--border);">
+        <a href="/en/disclaimer/" class="btn">Read Complete English Medical Disclaimer →</a>
+      </div>
+    </article>
   </main>
 </body>
 </html>
