@@ -44,6 +44,16 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         </button>
       </div>
     </div>
+    <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
+      {{
+        en: 'Enter your biometric values below to calculate instant results with client-side browser privacy.',
+        es: 'Introduce tus medidas a continuación para calcular resultados instantáneos con total privacidad en el navegador.',
+        fr: 'Saisissez vos mesures ci-dessous pour obtenir des résultats instantanés traités directement dans votre navigateur.',
+        de: 'Geben Sie unten Ihre Messwerte ein, um sofortige Ergebnisse mit vollständigem Datenschutz im Browser zu berechnen.',
+        ko: '개인정보 유출 없이 브라우저에서 즉시 결과를 확인하려면 아래에 신체 측정값을 입력하세요.',
+        hi: 'पूर्ण ब्राउज़र गोपनीयता के साथ तुरंत परिणाम प्राप्त करने के लिए नीचे अपने माप दर्ज करें।'
+      }[lang]}
+    </p>
   </div>
 
   <div class="space-y-5 sm:space-y-6">
@@ -671,11 +681,11 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           const tdee = bmr * act;
 
           calculated = {
-            primary: { value: Math.round(tdee), label: { en: 'Daily Maintenance Calories', es: 'Calorías de Mantenimiento', fr: 'Calories de Maintien Quotidiennes', de: 'Tägliche Erhaltungskalorien', ko: '일일 유지 칼로리', hi: 'दैनिक रखरखाव कैलोरी' }, unit: 'kcal/day' },
+            primary: { value: Math.round(tdee), label: { en: 'Daily Maintenance Calories', es: 'Calorías de Mantenimiento', fr: 'Calories de Maintien Quotidiennes', de: 'Tägliche Erhaltungskalorien', ko: '일일 유지 칼로리', hi: 'दैनिक मेंटेनेंस कैलोरी' }, unit: 'kcal/day' },
             secondary: [
               { label: { en: 'Basal Metabolic Rate (BMR)', es: 'Metabolismo Basal (BMR)', fr: 'Métabolisme de Base (BMR)', de: 'Grundumsatz (BMR)', ko: '기초대사량 (BMR)', hi: 'बेसल मेटाबॉलिक रेट' }, value: Math.round(bmr), unit: 'kcal' },
-              { label: { en: 'Mild Deficit (-250 kcal)', es: 'Ejemplo Déficit Leve (-250 kcal)', fr: 'Exemple Déficit Léger (-250 kcal)', de: 'Beispiel-Defizit (-250 kcal)', ko: '완만한 예시 칼로리 (-250 kcal)', hi: 'हल्का उदाहरण घाटा (-250 kcal)' }, value: Math.round(tdee - 250), unit: 'kcal' },
-              { label: { en: 'Standard Deficit (-500 kcal)', es: 'Ejemplo Déficit Estándar (-500 kcal)', fr: 'Exemple Déficit Standard (-500 kcal)', de: 'Beispiel-Defizit (-500 kcal)', ko: '표준 예시 칼로리 (-500 kcal)', hi: 'मानक उदाहरण घाटा (-500 kcal)' }, value: Math.round(tdee - 500), unit: 'kcal' }
+              { label: { en: 'Mild Deficit (-250 kcal)', es: 'Ejemplo Déficit Leve (-250 kcal)', fr: 'Exemple Déficit Léger (-250 kcal)', de: 'Beispiel-Defizit (-250 kcal)', ko: '완만한 예시 칼로리 (-250 kcal)', hi: 'हल्का ऊर्जा घाटा (-250 kcal)' }, value: Math.round(tdee - 250), unit: 'kcal' },
+              { label: { en: 'Standard Deficit (-500 kcal)', es: 'Ejemplo Déficit Estándar (-500 kcal)', fr: 'Exemple Déficit Standard (-500 kcal)', de: 'Beispiel-Defizit (-500 kcal)', ko: '표준 예시 칼로리 (-500 kcal)', hi: 'मानक ऊर्जा घाटा (-500 kcal)' }, value: Math.round(tdee - 500), unit: 'kcal' }
             ]
           };
         }
@@ -844,7 +854,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           calculated = {
             primary: { value: Math.round(targetCal), label: { en: 'Target Daily Calories', es: 'Objetivo Diario Calorías', fr: 'Objectif Calorique Journalier', de: 'Tägliche Zielkalorien', ko: '목표 일일 칼로리 수치', hi: 'लक्षित दैनिक कैलोरी' }, unit: 'kcal/day' },
             secondary: [
-              { label: { en: 'Maintenance (TDEE)', es: 'Mantenimiento', fr: 'Maintenance', de: 'Erhaltungskalorien', ko: '유지 에너지(TDEE)', hi: 'रक्षित कैलोरी' }, value: Math.round(tdee), unit: 'kcal' },
+              { label: { en: 'Maintenance (TDEE)', es: 'Mantenimiento', fr: 'Maintenance', de: 'Erhaltungskalorien', ko: '유지 에너지(TDEE)', hi: 'संतुलन ऊर्जा (TDEE)' }, value: Math.round(tdee), unit: 'kcal' },
               { label: { en: 'Basal Burn (BMR)', es: 'Metabolismo Basal', fr: 'Métabolisme de Base', de: 'Grundumsatz BMR', ko: '기초적인 대사 에너지(BMR)', hi: 'बेसल बर्न (BMR)' }, value: Math.round(bmr), unit: 'kcal' }
             ]
           };

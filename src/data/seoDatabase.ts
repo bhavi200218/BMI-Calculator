@@ -18,7 +18,7 @@ export const tableUi: Record<string, { cat: string; metric: string; guidance: st
     "metric": "Reference Range / Metric",
     "guidance": "Reference Context",
     "faq": "Frequently Asked Questions",
-    "faqSubtitle": "Expert answers to common questions regarding mathematical formulas, physiological factors, reference standards, and healthy weight management.",
+    "faqSubtitle": "Clear answers to common questions about formulas, body metrics, and healthy weight management.",
     "refs": "References & Published Research"
   },
   "es": {
@@ -68,7 +68,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "WHO Health Standards",
       "title": "BMI Calculator – Calculate Body Mass Index",
-      "intro": "Our free BMI Calculator (Body Mass Index Calculator) is a health screening tool built according to World Health Organization (WHO) and CDC standards. Calculate your Body Mass Index (BMI) category and review standard weight ranges based on established health references.",
+      "intro": "Calculate your Body Mass Index (BMI) instantly with our free calculator. BMI compares your weight to your height using official World Health Organization (WHO) and CDC standards. Find your category and healthy weight range in seconds.",
       "formulaTitle": "Standard WHO BMI Calculator Formula",
       "formulaDesc": "Metric: BMI = Weight (kg) / [Height (m)]² | Imperial: BMI = [Weight (lbs) / Height (inches)²] × 703",
       "formulaCode": "BMI = kg / m²",
@@ -77,54 +77,54 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Underweight",
           "col2": "< 18.5 kg/m²",
-          "col3": "Lower body mass baseline (< 18.5 kg/m²)"
+          "col3": "Below the standard weight baseline"
         },
         {
           "col1": "Healthy Weight",
           "col2": "18.5 – 24.9 kg/m²",
-          "col3": "Standard population reference range"
+          "col3": "Standard healthy reference range for adults"
         },
         {
           "col1": "Overweight",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Pre-obesity range (Asian cutoff: 23.0 kg/m²)"
+          "col3": "Above standard weight (Asian cutoff begins at 23.0)"
         },
         {
           "col1": "Obesity Class I",
           "col2": "30.0 – 34.9 kg/m²",
-          "col3": "Class I obesity reference category"
+          "col3": "Moderate health risk category"
         },
         {
           "col1": "Obesity Class II",
           "col2": "35.0 – 39.9 kg/m²",
-          "col3": "Class II obesity reference category"
+          "col3": "High health risk category"
         },
         {
           "col1": "Obesity Class III",
           "col2": "≥ 40.0 kg/m²",
-          "col3": "Class III severe obesity reference category"
+          "col3": "Severe health risk category"
         }
       ],
       "faqs": [
         {
-          "question": "What is the BMI Calculator and how to calculate BMI?",
-          "answer": "Body Mass Index (BMI) is a widely used population health screening measure. To calculate BMI, divide weight in kilograms by height in meters squared (kg/m²), or use imperial units [Weight (lbs) / Height (inches)²] × 703. Our free BMI tool applies this standard formula to compute your score instantly."
+          "question": "What is BMI and how is it calculated?",
+          "answer": "Body Mass Index (BMI) is a simple screening tool. It estimates whether your weight is healthy for your height. The metric formula divides your weight in kilograms by your height in meters squared (kg/m²). In imperial units, divide your weight in pounds by your height in inches squared and multiply by 703."
         },
         {
-          "question": "How to calculate BMI accurately for men and women?",
-          "answer": "BMI calculation is identical for adult men and women, relying on height and weight metrics. Our BMI Calculator evaluates your metric score against WHO reference ranges to determine healthy weight boundaries."
+          "question": "Do men and women use the same BMI formula?",
+          "answer": "Yes. The math formula is the same for adult men and women. Both use the standard WHO cutoffs to assess body weight."
         },
         {
-          "question": "What is the official WHO BMI chart and BMI scale?",
-          "answer": "The WHO BMI chart categorizes adults into four main ranges on the BMI scale: Underweight (<18.5), Healthy Weight (18.5–24.9), Overweight (25.0–29.9), and Obese (≥30.0). For Asian populations, the overweight cutoff begins at 23.0."
+          "question": "What are the standard adult BMI categories?",
+          "answer": "Adults are grouped into four main ranges: Underweight (below 18.5), Healthy weight (18.5 to 24.9), Overweight (25.0 to 29.9), and Obese (30.0 or higher). For Asian adults, the overweight threshold starts earlier at 23.0."
         },
         {
-          "question": "What additional context does Real BMI provide?",
-          "answer": "Real BMI presents the standard BMI calculation alongside selected reference metrics and complementary estimates. These calculations provide educational context and are not a separate medical measurement or diagnosis."
+          "question": "What are the limitations of a standard BMI score?",
+          "answer": "BMI uses only your height and weight. It does not measure body fat directly. It cannot tell the difference between heavy muscle and excess fat. Because of this, muscular athletes may score in the overweight range with very low body fat. Older adults who have lost muscle may score as healthy despite carrying excess fat."
         },
         {
-          "question": "Is a standard BMI Calculator accurate for muscular athletes?",
-          "answer": "A standard BMI Calculator measures total body mass relative to height. Muscular athletes may have a BMI of 25 or higher because BMI does not distinguish muscle mass from fat mass."
+          "question": "Is BMI a clinical medical diagnosis?",
+          "answer": "No. BMI is only a quick screening tool. It does not diagnose illness. A doctor will check your blood pressure, cholesterol, blood sugar, and lifestyle to evaluate your true health."
         }
       ]
     },
@@ -138,7 +138,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Tabla de Clasificación de IMC para Adultos de la OMS",
       "tableRows": [
         {
-          "col1": "Bajo Peso",
+          "col1": "Bajo Peso (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
           "col3": "Rango de referencia de bajo peso"
         },
@@ -153,12 +153,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Rango de referencia de sobrepeso (Corte asiático: 23.0 kg/m²)"
         },
         {
-          "col1": "Obesidad Clase I",
+          "col1": "Obesidad Clase I (25.0 – 29.9 kg/m²)",
           "col2": "30.0 – 34.9 kg/m²",
           "col3": "Rango de referencia de obesidad clase I"
         },
         {
-          "col1": "Obesidad Clase II",
+          "col1": "Obesidad Clase II (≥ 30.0 kg/m²)",
           "col2": "35.0 – 39.9 kg/m²",
           "col3": "Rango de referencia de obesidad clase II"
         },
@@ -216,12 +216,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Plage de référence de surpoids (Seuil asiatique : 23.0 kg/m²)"
         },
         {
-          "col1": "Obésité Classe I",
+          "col1": "Obésité Classe I (25.0 – 29.9 kg/m²)",
           "col2": "30.0 – 34.9 kg/m²",
           "col3": "Plage de référence d'obésité classe I"
         },
         {
-          "col1": "Obésité Classe II",
+          "col1": "Obésité Classe II (≥ 30.0 kg/m²)",
           "col2": "35.0 – 39.9 kg/m²",
           "col3": "Plage de référence d'obésité classe II"
         },
@@ -264,7 +264,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "WHO BMI-Skala & Klassifizierungstabelle für Erwachsene",
       "tableRows": [
         {
-          "col1": "Untergewicht",
+          "col1": "Untergewicht (< 18,5 kg/m²)",
           "col2": "< 18.5 kg/m²",
           "col3": "Referenzbereich Untergewicht"
         },
@@ -327,7 +327,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "WHO 성인 BMI 진단표 및 분류 차트",
       "tableRows": [
         {
-          "col1": "저체중",
+          "col1": "저체중 (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
           "col3": "저체중 참조 범위"
         },
@@ -390,7 +390,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "डब्ल्यूएचओ वयस्क बीएमआई स्केल एवं वर्गीकरण चार्ट",
       "tableRows": [
         {
-          "col1": "कम वजन",
+          "col1": "कम वजन (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
           "col3": "कम वजन संदर्भ सीमा"
         },
@@ -448,7 +448,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Oxford 2.5-Power BMI Formula & Mathematical Analysis",
       "title": "3D BMI Calculator – Oxford Height-Adjusted 2.5 Formula",
-      "intro": "Our free 3D BMI Calculator applies the Oxford 2.5-power height-adjusted formula (1.3 × weight / height²·⁵) proposed by Oxford mathematician Prof. Nick Trefethen. Compare standard 2D Quetelet scaling against volumetric 3D exponent curves to understand how height affects BMI accuracy for tall and short statures. For interactive 360° avatar scaling and visual body morphing based on measurements, try our <a href=\"/en/3d-body-visualizer/\" class=\"text-[var(--accent)] hover:underline font-bold\">3D Body Visualizer</a>.",
+      "intro": "Our free 3D BMI Calculator and 3D Body Visualizer applies the Oxford 2.5-power height-adjusted formula (1.3 × weight / height²·⁵) proposed by Oxford mathematician Prof. Nick Trefethen. Compare standard 2D Quetelet scaling against volumetric 3D exponent curves to understand how height affects BMI accuracy for tall and short statures while interacting with a 360° virtual mannequin in mesh, wireframe, and heatmap modes.",
       "formulaTitle": "Oxford 2.5-Power Height-Adjusted 3D BMI Formula",
       "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵ | Proposed by Oxford mathematician Prof. Nick Trefethen as an educational mathematical alternative to standard 2D BMI height scaling.",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
@@ -839,19 +839,19 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "A BMI chart is a visual reference grid that cross-references height and weight to display standard Body Mass Index classifications defined by the World Health Organization (WHO)."
         },
         {
-          "question": "Is the BMI chart different for men and women?",
+          "question": "Are reference ranges identical for men and women?",
           "answer": "Standard WHO BMI charts use identical reference categories (18.5 to 24.9 kg/m² for normal weight) for both adult men and women, although biological sex influences body-fat distribution."
         },
         {
-          "question": "How does the BMI chart vary by age in adults and seniors?",
+          "question": "How do weight categories shift for older adults and seniors?",
           "answer": "While standard adult BMI categories apply from age 20 onward, geriatric health guidelines suggest that older adults (65+) may benefit from slightly higher BMI ranges (22 to 27 kg/m²) for longevity protection."
         },
         {
-          "question": "What is the BMI chart in kg and cm?",
-          "answer": "A metric BMI chart lists height in centimeters (cm) and weight in kilograms (kg), allowing you to identify your BMI zone without manual mathematical unit conversions."
+          "question": "How do you look up classifications using metric height and weight?",
+          "answer": "A metric reference table lists height in centimeters (cm) and weight in kilograms (kg), allowing you to identify your weight tier without manual mathematical unit conversions."
         },
         {
-          "question": "What are the main categories of the official BMI chart?",
+          "question": "What are the primary adult classification tiers defined by the WHO?",
           "answer": "The official WHO BMI categories are: Underweight (< 18.5), Normal Weight (18.5 – 24.9), Overweight (25.0 – 29.9), Obese Class I (30.0 – 34.9), Obese Class II (35.0 – 39.9), and Obese Class III (≥ 40.0)."
         }
       ]
@@ -1037,12 +1037,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Referenzbereich Übergewicht (Asiatischer Schwellenwert: 23.0 kg/m²)"
         },
         {
-          "col1": "Adipositas Grad I",
+          "col1": "Adipositas Grad I (25,0 – 29,9 kg/m²)",
           "col2": "30.0 – 34.9 kg/m²",
           "col3": "Screening-Referenz für Adipositas Klasse I"
         },
         {
-          "col1": "Adipositas Grad II",
+          "col1": "Adipositas Grad II (≥ 30,0 kg/m²)",
           "col2": "35.0 – 39.9 kg/m²",
           "col3": "Screening-Referenz für Adipositas Klasse II"
         },
@@ -1058,19 +1058,19 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Eine BMI-Tabelle ist ein visuelles Referenzraster, das Körpergröße und Gewicht abgleicht, um die von der Weltgesundheitsorganisation (WHO) definierten Standard-Kategorien des Body-Mass-Index darzustellen."
         },
         {
-          "question": "Unterscheidet sich die BMI-Tabelle für Männer und Frauen?",
+          "question": "Gelten die Richtwerte gleichermaßen für Männer und Frauen?",
           "answer": "Die WHO-BMI-Tabelle für Erwachsene verwendet dieselben Grenzwerte (18,5 bis 24,9 für Normalgewicht) für Männer und Frauen. Taillenumfang und Körperzusammensetzung bieten zusätzlichen Kontext."
         },
         {
-          "question": "Wie unterscheidet sich die BMI-Tabelle nach Alter bei Erwachsenen und Senioren?",
+          "question": "Wie verändern sich die Referenzbereiche im höheren Lebensalter?",
           "answer": "Die Standardkategorien der WHO gelten für alle Erwachsenen ab 20 Jahren. Bei Senioren über 65 Jahren kann ein leicht höherer BMI (23,0 bis 27,0 kg/m²) Schutz vor Knochendichteverlust bieten."
         },
         {
-          "question": "Was ist eine BMI-Tabelle in kg und cm?",
-          "answer": "Eine metrische BMI-Tabelle ordnet Körpergröße in Zentimetern und Gewicht in Kilogramm zu. Beispiel: 170 cm Größe und 65 kg Gewicht ergeben einen BMI von 22,5 kg/m² (Normalgewicht)."
+          "question": "Wie funktioniert der Größen- und Gewichtsabgleich nach dem metrischen System?",
+          "answer": "Eine metrische Übersicht ordnet Körpergröße in Zentimetern und Gewicht in Kilogramm zu. Beispiel: 170 cm Größe und 65 kg Gewicht ergeben einen BMI von 22,5 kg/m² (Normalgewicht)."
         },
         {
-          "question": "Was sind die Hauptkategorien der offiziellen BMI-Tabelle?",
+          "question": "Welche Klassifizierungsstufen definiert die Weltgesundheitsorganisation (WHO)?",
           "answer": "Die offiziellen WHO-Kategorien lauten: Untergewicht (< 18,5), Normalgewicht (18,5 – 24,9), Übergewicht (25,0 – 29,9), Adipositas Grad I (30,0 – 34,9), Adipositas Grad II (35,0 – 39,9) und Adipositas Grad III (≥ 40,0)."
         }
       ]
@@ -1222,729 +1222,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     }
   },
-  "3d-body-visualizer": {
-    "en": {
-          "eyebrow": "Interactive Avatar Morphing & Body Silhouette Simulation",
-          "title": "3D Body Visualizer – Interactive Silhouette & Avatar Tool",
-          "intro": "Simulate and visualize your anatomical body shape in real time with our client-side 3D Body Visualizer. Rotate a 360° virtual human mannequin, switch between polygon mesh, geometric wireframe, and anthropometric BMI heatmap modes, and observe volumetric silhouette adjustments based on height, weight, and biological sex without uploading photos or compromising personal privacy. To compute your height-adjusted mathematical score using the Oxford 2.5 Power Formula, explore our <a href=\"/en/3d-bmi-calculator/\" class=\"text-[var(--accent)] hover:underline font-bold\">3D BMI Calculator</a>.",
-          "formulaTitle": "Procedural 3D Mesh Vertex Scaling Engine",
-          "formulaDesc": "Dynamic Vertex Coordinate Displacement: V(x,y,z) = Base_Mesh(x,y,z) + Δ(Height, Weight, WHR, Sex) | Client-side WebGL engine deforms polygon geometry in real time to reflect anatomical contours without camera capture or personal image transmission.",
-          "formulaCode": "Vertex(x,y,z) = Mesh_Base + Δ(Anthropometry)",
-          "tableTitle": "Interactive 3D Visualizer Modes & Anatomical Perspectives",
-          "tableRows": [
-                {
-                      "col1": "Solid Volume Mesh",
-                      "col2": "Continuous 3D organic skin surface rendering",
-                      "col3": "Evaluates overall silhouette contours, torso curvature, and body volume"
-                },
-                {
-                      "col1": "Geometric Wireframe",
-                      "col2": "Structural polygon grid overlay",
-                      "col3": "Reveals underlying anatomical mesh density, posture alignment, and proportion symmetry"
-                },
-                {
-                      "col1": "Anthropometric Heatmap",
-                      "col2": "Thermal gradient projection (Green, Yellow, Coral)",
-                      "col3": "Maps standard BMI categories and mass distribution zones across the 3D torso"
-                },
-                {
-                      "col1": "360° Axial Rotation",
-                      "col2": "Front, lateral profile, and posterior views",
-                      "col3": "Provides multi-angle inspection of posture, sagittal balance, and abdominal projection"
-                }
-          ],
-          "faqs": [
-                {
-                      "question": "What is the 3D Body Visualizer and how does it work?",
-                      "answer": "The 3D Body Visualizer is an interactive educational modeling tool that procedurally renders an anatomical 3D avatar directly in your browser. By adjusting height and weight sliders, the WebGL rendering engine mathematically deforms mesh vertices to illustrate realistic silhouette proportions."
-                },
-                {
-                      "question": "How do Solid Mesh, Wireframe, and Heatmap views differ?",
-                      "answer": "Solid Mesh displays a smooth anatomical body shape to evaluate volume. Wireframe renders the structural polygon grid to highlight symmetry. Heatmap colors the avatar according to international body mass index thresholds to illustrate mass distribution."
-                },
-                {
-                      "question": "Can I rotate and view the 3D model from 360° angles?",
-                      "answer": "Yes. You can click and drag with a mouse or swipe with your finger on touchscreen mobile devices to rotate the avatar 360 degrees horizontally and inspect frontal, profile, and posterior silhouettes."
-                },
-                {
-                      "question": "Does this tool require a webcam, photographs, or image uploads?",
-                      "answer": "No. The 3D avatar is generated purely through client-side mathematical algorithms and procedural geometry. It never requires camera access, photo uploads, or facial scans, ensuring complete anonymity."
-                },
-                {
-                      "question": "How do body somatotypes (Ectomorph, Mesomorph, Endomorph) appear on the avatar?",
-                      "answer": "As weight increases relative to height, the procedural mesh widens the torso, hips, and limbs, demonstrating how body mass visually alters human silhouettes from slender ectomorphic frames to fuller endomorphic profiles."
-                },
-                {
-                      "question": "Can I use the 3D visualizer on touchscreen mobile phones?",
-                      "answer": "Yes. The 3D visualizer is built with responsive WebGL canvas controls that support one-finger drag rotation and smooth mobile viewport scaling across modern iOS and Android browsers."
-                },
-                {
-                      "question": "Is my data kept private when using the 3D body visualizer?",
-                      "answer": "Yes, 100%. All computations occur locally in your browser's JavaScript engine. No biometric data, measurements, or session details are transmitted to external servers or logged in databases."
-                }
-          ]
-    },
-    "es": {
-          "eyebrow": "Modelado Anatómico 3D y Simulación de Silueta Corporal",
-          "title": "Visualizador Corporal 3D – Simulación de Silueta",
-          "intro": "Simula y visualiza tu silueta anatómica en tiempo real con nuestro visualizador corporal 3D interactivo en el navegador. Rota un maniquí humano virtual en 360°, alterna entre los modos de malla sólida, estructura de alambre geométrica y mapa de calor antropométrico según tu estatura, peso y sexo biológico sin subir fotografías personales.",
-          "formulaTitle": "Motor Procedimental de Desplazamiento de Vértices 3D",
-          "formulaDesc": "Desplazamiento Poligonal de Coordenadas: V(x,y,z) = Malla_Base(x,y,z) + Δ(Altura, Peso, Perímetro, Sexo) | El motor WebGL deforma la geometría en tiempo real en tu navegador para reflejar contornos anatómicos sin captura de cámara ni transmisión de imágenes.",
-          "formulaCode": "Vértice(x,y,z) = Malla_Base + Δ(Antropometría)",
-          "tableTitle": "Modos del Visualizador 3D y Perspectivas Anatómicas",
-          "tableRows": [
-                {
-                      "col1": "Malla de Volumen Sólido",
-                      "col2": "Superficie de piel orgánica en 3D continuo",
-                      "col3": "Evalúa contornos generales, curvatura del torso y volumen de masa corporal"
-                },
-                {
-                      "col1": "Estructura de Alambre",
-                      "col2": "Cuadrícula poligonal estructural",
-                      "col3": "Revela densidad de malla anatómica, alineación postural y simetría de proporciones"
-                },
-                {
-                      "col1": "Mapa de Calor Antropométrico",
-                      "col2": "Gradiente térmico de color (Verde, Amarillo, Coral)",
-                      "col3": "Mapea las categorías de IMC y zonas de distribución de masa sobre el torso 3D"
-                },
-                {
-                      "col1": "Rotación Axial 360°",
-                      "col2": "Vistas frontal, perfil lateral y posterior",
-                      "col3": "Permite inspección multiángulo de la postura, equilibrio sagital y proyección abdominal"
-                }
-          ],
-          "faqs": [
-                {
-                      "question": "¿Qué es el Visualizador Corporal 3D y cómo funciona?",
-                      "answer": "Es una herramienta interactiva de modelado educativo que genera un avatar 3D anatómico directamente en tu navegador. Al mover los deslizadores de altura y peso, el motor WebGL escala matemáticamente los vértices para mostrar proporciones realistas."
-                },
-                {
-                      "question": "¿En qué se diferencian los modos Malla Sólida, Alambre y Mapa de Calor?",
-                      "answer": "La malla sólida muestra la silueta externa continua. El modo alambre revela la estructura de polígonos y la simetría esquelética. El mapa de calor colorea el avatar según los umbrales de índice de masa corporal."
-                },
-                {
-                      "question": "¿Puedo rotar y observar el modelo 3D desde cualquier ángulo en 360°?",
-                      "answer": "Sí, puedes arrastrar con el ratón en ordenador o deslizar el dedo en pantallas táctiles móviles para girar el avatar 360 grados e inspeccionar la vista frontal, lateral y posterior."
-                },
-                {
-                      "question": "¿Esta herramienta requiere cámara web o subir fotos personales?",
-                      "answer": "No. El avatar 3D se genera exclusivamente mediante algoritmos matemáticos en tu navegador. No requiere acceso a cámara, fotografías ni escaneo facial, garantizando total privacidad."
-                },
-                {
-                      "question": "¿Cómo se reflejan los somatotipos corporales en el avatar?",
-                      "answer": "A medida que el peso varía respecto a la estatura, la malla procedural amplía o estiliza el torso, caderas y extremidades, ilustrando la transición visual entre perfiles ectomórficos, mesomórficos y endomórficos."
-                },
-                {
-                      "question": "¿Puedo utilizar el visualizador 3D en teléfonos móviles táctiles?",
-                      "answer": "Sí. El lienzo WebGL está optimizado para controles táctiles intuitivos, permitiendo rotación con un solo dedo y escalado fluido en navegadores móviles de iOS y Android."
-                },
-                {
-                      "question": "¿Mis datos se mantienen privados al usar el visualizador corporal?",
-                      "answer": "Sí, al 100%. Todos los cálculos y representaciones gráficas se procesan localmente en tu dispositivo. Ningún dato biométrico ni medida se envía a servidores externos."
-                }
-          ]
-    },
-    "fr": {
-          "eyebrow": "Modélisation Anatomique 3D & Simulation de Silhouette Corporelle",
-          "title": "Visualiseur Corporel 3D – Simulation de Silhouette",
-          "intro": "Visualisez et simulez votre morphologie corporelle en temps réel grâce à notre visualiseur 3D interactif dans votre navigateur. Faites pivoter un mannequin virtuel à 360°, basculez entre les modes maillage plein, fil de fer géométrique et carte thermique anthropométrique selon votre taille, votre poids et votre sexe sans importer de photo.",
-          "formulaTitle": "Moteur Procédural de Déformation des Sommets 3D",
-          "formulaDesc": "Déplacement Poligonal des Coordonnées : V(x,y,z) = Maillage_Base(x,y,z) + Δ(Taille, Poids, Tour de Taille, Sexe) | Le moteur WebGL déforme la géométrie en temps réel dans votre navigateur pour reproduire les contours anatomiques sans caméra ni transfert de données.",
-          "formulaCode": "Sommet(x,y,z) = Maillage_Base + Δ(Anthropométrie)",
-          "tableTitle": "Modes du Visualiseur 3D et Perspectives Anatomiques",
-          "tableRows": [
-                {
-                      "col1": "Maillage de Volume Plein",
-                      "col2": "Surface cutanée organique 3D continue",
-                      "col3": "Évalue les contours de la silhouette, les courbures du buste et le volume corporel global"
-                },
-                {
-                      "col1": "Fil de Fer Géométrique",
-                      "col2": "Grille polygonale structurelle",
-                      "col3": "Révèle la densité du maillage, l'alignement postural et la symétrie des proportions"
-                },
-                {
-                      "col1": "Carte Thermique Anthropométrique",
-                      "col2": "Dégradé thermique (Vert, Jaune, Corail)",
-                      "col3": "Représente les catégories d'IMC et les zones de répartition de masse sur le torse 3D"
-                },
-                {
-                      "col1": "Rotation Axiale 360°",
-                      "col2": "Vues de face, profil latéral et dos",
-                      "col3": "Permet une inspection multi-angle de la posture, de l'équilibre sagittal et de la projection abdominale"
-                }
-          ],
-          "faqs": [
-                {
-                      "question": "Qu'est-ce que le Visualiseur Corporel 3D et comment fonctionne-t-il ?",
-                      "answer": "C'est un outil interactif de simulation morphologique qui génère un avatar 3D directement dans votre navigateur. En manipulant les curseurs de taille et de poids, le moteur WebGL déforme mathématiquement les sommets pour afficher des proportions réalistes."
-                },
-                {
-                      "question": "Quelles sont les différences entre Maillage Plein, Fil de Fer et Carte Thermique ?",
-                      "answer": "Le maillage plein affiche la surface corporelle continue. Le fil de fer dévoile l'ossature polygonale et la symétrie. La carte thermique colore l'avatar selon les seuils de l'indice de masse corporelle pour visualiser la répartition des volumes."
-                },
-                {
-                      "question": "Puis-je faire pivoter le modèle 3D sous tous les angles à 360° ?",
-                      "answer": "Oui, il vous suffit de cliquer et faire glisser à la souris ou de glisser avec le doigt sur smartphone pour faire tourner l'avatar à 360 degrés et examiner la vue de face, de profil et de dos."
-                },
-                {
-                      "question": "Cet outil nécessite-t-il une webcam ou l'envoi de photos personnelles ?",
-                      "answer": "Non. L'avatar 3D est modélisé uniquement à partir d'équations géométriques exécutées localement sur votre appareil. Aucun accès caméra ni aucune photo ne sont requis, garantissant votre anonymat."
-                },
-                {
-                      "question": "Comment les morphotypes (Ectomorphe, Mésomorphe, Endomorphe) se reflètent-ils sur l'avatar ?",
-                      "answer": "Lorsque le poids varie par rapport à la taille, le maillage procédural affine ou élargit le torse, le bassin et les membres, illustrant les transitions entre morphologies longilignes et plus denses."
-                },
-                {
-                      "question": "Puis-je utiliser le visualiseur 3D sur un smartphone tactile ?",
-                      "answer": "Oui. Le canvas WebGL est optimisé pour les écrans tactiles mobiles et permet une rotation fluide avec un seul doigt sur les navigateurs iOS et Android."
-                },
-                {
-                      "question": "Mes données restent-elles strictement confidentielles ?",
-                      "answer": "Oui, à 100%. L'intégralité du calcul et du rendu visuel se déroule dans votre navigateur. Aucune donnée morphologique n'est transmise à des serveurs tiers."
-                }
-          ]
-    },
-    "de": {
-          "eyebrow": "Interaktives 3D-Avatarmodell & Körpersilhouetten-Simulation",
-          "title": "3D-Körper-Visualisierer – Interaktiver Avatar",
-          "intro": "Simulieren und visualisieren Sie Ihre anatomische Körperform in Echtzeit mit unserem interaktiven 3D-Körper-Visualisierer im Webbrowser. Drehen Sie ein virtuelles menschliches Modell um 360°, wechseln Sie zwischen Volumen-Mesh, geometrischem Drahtgitter und anthropometrischer BMI-Heatmap passend zu Größe, Gewicht und Geschlecht ohne Fotoupload.",
-          "formulaTitle": "Prozedurales 3D-Polygonnetz-Verformungssystem",
-          "formulaDesc": "Geometrische Knotenpunkt-Verschiebung: V(x,y,z) = Basisnetz(x,y,z) + Δ(Größe, Gewicht, Taillenumfang, Geschlecht) | Die WebGL-Engine passt anatomische Konturen in Echtzeit lokal in Ihrem Browser an, ohne Kamerazugriff oder Bilddatenübertragung.",
-          "formulaCode": "Vertex(x,y,z) = Basis_Netz + Δ(Anthropometrie)",
-          "tableTitle": "Visualisierer-Modi & Anatomische Perspektiven",
-          "tableRows": [
-                {
-                      "col1": "Volumen-Mesh (Solid)",
-                      "col2": "Kontinuierliche 3D-Hautoberfläche",
-                      "col3": "Beurteilt Gesamtsilhouette, Rumpfwölbung und Körpervolumen"
-                },
-                {
-                      "col1": "Geometrisches Drahtgitter",
-                      "col2": "Strukturelles Polygon-Netzgitter",
-                      "col3": "Macht Netzdichte, Haltungsausrichtung und Proportionensymmetrie sichtbar"
-                },
-                {
-                      "col1": "Anthropometrische Heatmap",
-                      "col2": "Thermisches Farbprofil (Grün, Gelb, Koralle)",
-                      "col3": "Visualisiert Standard-BMI-Kategorien und Masseverteilungszonen auf dem 3D-Körper"
-                },
-                {
-                      "col1": "360° Axiale Rotation",
-                      "col2": "Frontal-, Seiten- und Rückansicht",
-                      "col3": "Ermöglicht mehrdimensionale Betrachtung von Haltung, Sagittalebene und Bauchsilhouette"
-                }
-          ],
-          "faqs": [
-                {
-                      "question": "Was ist der 3D-Körper-Visualisierer und wie funktioniert er?",
-                      "answer": "Es handelt sich um ein interaktives visuelles Modellierungswerkzeug, das einen anatomischen 3D-Avatar direkt im Browser berechnet. Durch Verstellen der Schieberegler für Größe und Gewicht passt die WebGL-Engine die Netzkoordinaten in Echtzeit an."
-                },
-                {
-                      "question": "Worin unterscheiden sich Solid-Mesh, Drahtgitter und Heatmap?",
-                      "answer": "Das Solid-Mesh zeigt die zusammenhängende Körperform. Das Drahtgitter hebt die Polygonstruktur und Symmetrie hervor. Die Heatmap färbt den Körper entsprechend den internationalen BMI-Referenzwerten ein."
-                },
-                {
-                      "question": "Kann ich das 3D-Modell im vollen 360°-Winkel drehen?",
-                      "answer": "Ja, Sie können mit der Maus ziehen oder auf dem Touchscreen wischen, um den Avatar um 360 Grad horizontal zu drehen und die Silhouette von vorne, der Seite und von hinten zu betrachten."
-                },
-                {
-                      "question": "Benötigt das Werkzeug Fotos, eine Webcam oder Bild-Uploads?",
-                      "answer": "Nein. Der 3D-Avatar wird rein über mathematische Algorithmen im Browser gerendert. Es sind keinerlei Kamerazugriffe oder Fotos erforderlich, sodass Ihre Privatsphäre absolut geschützt bleibt."
-                },
-                {
-                      "question": "Wie werden Körpertypen (Ektomorph, Mesomorph, Endomorph) dargestellt?",
-                      "answer": "Je nach Gewichts-Größen-Verhältnis formt die Geometrie-Engine Rumpf, Hüfte und Extremitäten schmaler oder kräftiger und veranschaulicht so die unterschiedlichen somatotypischen Körpersilhouetten."
-                },
-                {
-                      "question": "Funktioniert der 3D-Visualisierer auf Touchscreen-Smartphones?",
-                      "answer": "Ja. Das WebGL-Canvas ist für mobile Touchscreens optimiert und unterstützt flüssige Ein-Finger-Drehung auf aktuellen iOS- und Android-Geräten."
-                },
-                {
-                      "question": "Bleiben meine eingegebenen Daten privat?",
-                      "answer": "Ja, zu 100%. Sämtliche Berechnungen und Bildrenderings erfolgen ausschließlich lokal auf Ihrem Endgerät. Es werden keinerlei Daten an externe Server übertragen."
-                }
-          ]
-    },
-    "ko": {
-          "eyebrow": "대화형 3D 아바타 모델링 및 신체 실루엣 시각화 도구",
-          "title": "3D 바디 비주얼라이저 – 대화형 실루엣 및 3차원 아바타 시뮬레이터",
-          "intro": "웹 브라우저에서 실시간으로 신체 형태와 실루엣을 시각화할 수 있는 대화형 3D 바디 비주얼라이저입니다. 360° 회전 가능한 가상 인체 마네킹 모델을 통해 신장, 체중 및 생물학적 성별에 따른 볼륨 메시, 기하학적 와이어프레임 구조, 체질량 히트맵 모드를 사진 업로드 없이 안전하게 확인하세요.",
-          "formulaTitle": "절차적 3D 폴리곤 정점 변위 엔진",
-          "formulaDesc": "동적 정점 좌표 변위 공식: V(x,y,z) = 기본메시(x,y,z) + Δ(신장, 체중, 둘레, 생물학적 성별) | 브라우저 WebGL 엔진이 체형 윤곽을 실시간으로 계산하여 렌더링하며 카메라 촬영이나 사진 전송이 일체 발생하지 않습니다.",
-          "formulaCode": "정점(x,y,z) = 기본_메시 + Δ(인체계측값)",
-          "tableTitle": "3D 비주얼라이저 렌더링 모드 및 해부학적 관점",
-          "tableRows": [
-                {
-                      "col1": "솔리드 볼륨 메시",
-                      "col2": "연속적인 3D 유기적 외형 표면 렌더링",
-                      "col3": "전체적인 체형 실루엣 윤곽, 체간 곡률 및 신체 부피 평가"
-                },
-                {
-                      "col1": "기하학적 와이어프레임",
-                      "col2": "구조적 다각형 폴리곤 격자망 오버레이",
-                      "col3": "해부학적 메시 밀도, 자세 정렬 및 신체 좌우 대칭성 분석"
-                },
-                {
-                      "col1": "인체계측 컬러 히트맵",
-                      "col2": "온도 그라데이션 투영 (녹색, 황색, 산호색)",
-                      "col3": "3D 몸통에 표준 BMI 범주 및 체질량 분포 영역을 시각적으로 매핑"
-                },
-                {
-                      "col1": "360° 전방위 축 회전",
-                      "col2": "전면, 측면 프로필, 후면 실루엣 보기",
-                      "col3": "자세 균형, 시상면 척추 라인 및 복부 돌출도에 대한 다각도 관찰"
-                }
-          ],
-          "faqs": [
-                {
-                      "question": "3D 바디 비주얼라이저는 어떤 도구이며 어떻게 작동하나요?",
-                      "answer": "신장과 체중 수치에 따라 브라우저 내에서 3D 해부학적 아바타를 실시간으로 생성하는 교육용 시각화 도구입니다. WebGL 엔진이 수학적 공식에 기반해 폴리곤 정점 위치를 조정하여 실제 체형 비율을 보여줍니다."
-                },
-                {
-                      "question": "솔리드 메시, 와이어프레임, 히트맵 모드는 어떻게 다른가요?",
-                      "answer": "솔리드 메시는 매끄러운 체형 표면을 보여주어 부피감을 확인하기 좋습니다. 와이어프레임은 골격 구조망을 드러내며, 히트맵은 BMI 기준치에 따른 체질량 분포를 색상으로 구분해 줍니다."
-                },
-                {
-                      "question": "3D 아바타 모델을 360도 전방위로 회전하여 볼 수 있나요?",
-                      "answer": "네, PC 마우스 드래그 또는 모바일 화면 터치 스와이프를 통해 아바타를 좌우 360도 회전하며 정면, 측면, 뒷모습 실루엣을 입체적으로 관찰할 수 있습니다."
-                },
-                {
-                      "question": "웹캠 촬영이나 실제 사진 업로드가 필요한가요?",
-                      "answer": "전혀 필요하지 않습니다. 3D 아바타는 사용자가 입력한 숫자 데이터에 기반한 절차적 기하학 알고리즘으로만 렌더링되므로 사진 촬영이나 업로드 없이 완전한 익명성이 보장됩니다."
-                },
-                {
-                      "question": "체형 체질(외배엽, 중배엽, 내배엽)은 어떻게 표현되나요?",
-                      "answer": "신장 대비 체중 비율 변화에 따라 절차적 메시가 몸통과 사지의 두께를 유기적으로 확장하거나 슬림하게 조절하여 다양한 체형 유형을 시각적으로 체감할 수 있습니다."
-                },
-                {
-                      "question": "스마트폰이나 태블릿 등 모바일 기기에서도 원활히 사용할 수 있나요?",
-                      "answer": "네, 터치스크린 입력에 최적화된 반응형 WebGL 캔버스로 제작되어 모바일 환경에서도 한 손가락 회전 조작을 부드럽게 지원합니다."
-                },
-                {
-                      "question": "사용자의 신체 데이터나 개인정보는 안전하게 보호되나요?",
-                      "answer": "네, 100% 안전합니다. 모든 그래픽 연산과 데이터 처리는 외부 서버로 전송되지 않고 사용자의 기기 브라우저 내부에서만 독립적으로 실행됩니다."
-                }
-          ]
-    },
-    "hi": {
-          "eyebrow": "इंटरएक्टिव 3D अवतार मॉडलिंग और शारीरिक बनावट विजुअलाइज़र",
-          "title": "3D बॉडी विजुअलाइज़र – इंटरएक्टिव अवतार और शारीरिक बनावट सिमुलेशन",
-          "intro": "अपने ब्राउज़र में रीयल-टाइम 3D बॉडी विजुअलाइज़र के माध्यम से अपनी शारीरिक बनावट और बॉडी शेप का अनुकरण करें। ऊंचाई, वजन और लिंग के आधार पर 360° वर्चुअल ह्यूमन मॉडल को घुमाएं, सॉलिड मेश, वायरफ्रेम और बीएमआई हीटमैप मोड देखें — बिना किसी फोटो अपलोड या कैमरे के पूरी तरह सुरक्षित और मुफ़्त।",
-          "formulaTitle": "प्रक्रियात्मक 3D पॉलीगॉन मेश विस्थापन इंजन",
-          "formulaDesc": "डायनामिक वर्टेक्स कोऑर्डिनेट विस्थापन: V(x,y,z) = बेस_मेश(x,y,z) + Δ(ऊंचाई, वजन, परिधि, लिंग) | क्लाइंट-साइड WebGL इंजन बिना किसी कैमरा कैप्चर या फ़ोटो अपलोड के आपके ब्राउज़र में रीयल-टाइम ज्यामिति को स्केल करता है।",
-          "formulaCode": "वर्टेक्स(x,y,z) = बेस_मेश + Δ(एंथ्रोपोमेट्री)",
-          "tableTitle": "3D विजुअलाइज़र मोड और शारीरिक दृष्टिकोण तालिका",
-          "tableRows": [
-                {
-                      "col1": "सॉलिड वॉल्यूम मेश",
-                      "col2": "निरंतर 3D जैविक सतह रेंडरिंग",
-                      "col3": "समग्र शारीरिक बनावट, धड़ के घुमाव और शरीर के आयतन का आकलन करता है"
-                },
-                {
-                      "col1": "ज्यामितीय वायरफ्रेम",
-                      "col2": "संरचनात्मक बहुभुज जाल ओवरले",
-                      "col3": "अंतर्निहित मेश घनत्व, शारीरिक मुद्रा संरेखण और अनुपात समरूपता को दर्शाता है"
-                },
-                {
-                      "col1": "एंथ्रोपोमेट्रिक हीटमैप",
-                      "col2": "थर्मल रंग प्रवणता (हरा, पीला, कोरल)",
-                      "col3": "धड़ पर मानक बीएमआई श्रेणियों और भार वितरण क्षेत्रों को रंगों में प्रदर्शित करता है"
-                },
-                {
-                      "col1": "360° घूर्णन दृश्य",
-                      "col2": "सामने, साइड प्रोफाइल और पीछे का दृश्य",
-                      "col3": "शारीरिक मुद्रा, रीढ़ के संतुलन और पेट के फैलाव का बहु-कोणीय निरीक्षण प्रदान करता है"
-                }
-          ],
-          "faqs": [
-                {
-                      "question": "3D बॉडी विजुअलाइज़र क्या है और यह कैसे कार्य करता है?",
-                      "answer": "यह एक इंटरएक्टिव शैक्षिक सिमुलेशन टूल है जो सीधे आपके ब्राउज़र में 3D अवतार तैयार करता है। जब आप ऊंचाई और वजन के स्लाइडर्स बदलते हैं, तो WebGL इंजन गणितीय रूप से मेश वर्टिसेस को बदलकर वास्तविक अनुपात प्रदर्शित करता है।"
-                },
-                {
-                      "question": "सॉलिड मेश, वायरफ्रेम और हीटमैप व्यू में क्या अंतर है?",
-                      "answer": "सॉलिड मेश संपूर्ण शारीरिक सतह और आकार दिखाता है। वायरफ्रेम संरचनात्मक लाइनों को दिखाता है। हीटमैप बीएमआई श्रेणियों के अनुसार रंगों से भार वितरण को उजागर करता है।"
-                },
-                {
-                      "question": "क्या मैं 3D मॉडल को 360° के किसी भी कोण से घुमाकर देख सकता हूँ?",
-                      "answer": "हाँ, कंप्यूटर पर माउस से ड्रैग करके या मोबाइल टचस्क्रीन पर उंगली से स्वाइप करके आप अवतार को 360 डिग्री घुमा सकते हैं और सामने, बगल व पीछे से शरीर की बनावट देख सकते हैं।"
-                },
-                {
-                      "question": "क्या इसके लिए किसी कैमरे, फोटो या इमेज अपलोड की आवश्यकता होती है?",
-                      "answer": "बिल्कुल नहीं। यह 3D मॉडल केवल आपके द्वारा दर्ज किए गए अंकों पर आधारित गणितीय समीकरणों से बनता है। इसमें किसी कैमरे या निजी तस्वीर की आवश्यकता नहीं होती।"
-                },
-                {
-                      "question": "शारीरिक प्रकार (एक्टोमॉर्फ, मेसोमॉर्फ, एंडोमॉर्फ) अवतार पर कैसे दिखाई देते हैं?",
-                      "answer": "जैसे-जैसे ऊंचाई के अनुपात में वजन बढ़ता है, मेश मॉडल धड़, कूल्हों और अंगों को उसी अनुपात में चौड़ा करता है, जिससे दुबले से लेकर भारी शरीर के अंतर को समझा जा सकता है।"
-                },
-                {
-                      "question": "क्या मैं टचस्क्रीन स्मार्टफोन पर इस 3D टूल का उपयोग कर सकता हूँ?",
-                      "answer": "हाँ, 3D विजुअलाइज़र टच कंट्रोल के लिए पूरी तरह अनुकूलित है और किसी भी एंड्रॉइड या आईफोन ब्राउज़र पर सुचारू रूप से कार्य करता है।"
-                },
-                {
-                      "question": "क्या 3D बॉडी विजुअलाइज़र का उपयोग करते समय मेरी जानकारी निजी रहती है?",
-                      "answer": "हाँ, 100% सुरक्षित और निजी। सभी गणनाएं और विजुअल रेंडरिंग आपके अपने फोन या कंप्यूटर के ब्राउज़र में ही होती हैं। कोई भी व्यक्तिगत डेटा सर्वर पर नहीं भेजा जाता।"
-                }
-          ]
-    }
-  },
-  "bmi-calculator-india": {
-    "en": {
-      "eyebrow": "ICMR & WHO South Asian Guidelines",
-      "title": "BMI Calculator India – Healthy Weight & Indian BMI Standards",
-      "intro": "Calculate your Body Mass Index (BMI) using WHO and ICMR (Indian Council of Medical Research) consensus guidelines for Indian adults. Unlike Western standards where overweight begins at BMI 25.0, South Asian guidelines establish 23.0 kg/m² as the cutoff point for overweight due to higher visceral fat accumulation at lower body weights.",
-      "formulaTitle": "Official Indian BMI Formula (ICMR & WHO)",
-      "formulaDesc": "Metric: BMI = Weight (kg) / [Height (m)]² | Overweight Cutoff for Indians: BMI ≥ 23.0 kg/m² | Obesity Threshold: BMI ≥ 25.0 kg/m²",
-      "formulaCode": "BMI = Weight (kg) / [(Height in cm / 100)²]",
-      "tableTitle": "Official BMI Chart for Indian Adults (ICMR & WHO Standards)",
-      "tableRows": [
-        {
-          "col1": "Underweight (< 18.5 kg/m²)",
-          "col2": "< 18.5 kg/m²",
-          "col3": "Underweight reference threshold (< 18.5 kg/m²)"
-        },
-        {
-          "col1": "Optimal Healthy Normal Weight (18.5 – 22.9 kg/m²)",
-          "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Optimal healthy range for Indian adults"
-        },
-        {
-          "col1": "Overweight / At Risk (23.0 – 24.9 kg/m²)",
-          "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Elevated cardiometabolic risk cutoff for Indians"
-        },
-        {
-          "col1": "Obese Class I (25.0 – 29.9 kg/m²)",
-          "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Class I obesity threshold under ICMR standards"
-        },
-        {
-          "col1": "Obese Class II (≥ 30.0 kg/m²)",
-          "col2": "≥ 30.0 kg/m²",
-          "col3": "Severe obesity risk threshold"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "What is the healthy BMI range for Indian men and women?",
-          "answer": "According to WHO Asia-Pacific and ICMR consensus guidelines, the healthy BMI range for Indian men and Indian women is 18.5 to 22.9 kg/m². Any score of 23.0 or higher is classified as overweight/at-risk."
-        },
-        {
-          "question": "Why is BMI 23 the overweight cutoff threshold in India?",
-          "answer": "Epidemiological research shows that South Asian populations carry higher abdominal visceral fat and face elevated cardiometabolic risks (such as type 2 diabetes and hypertension) at lower body mass index levels compared to Western populations."
-        },
-        {
-          "question": "How to calculate BMI in India using kg and cm?",
-          "answer": "To calculate BMI in kg and cm: Convert height in cm to meters by dividing by 100. Multiply height in meters by itself to get height squared. Divide weight in kg by height squared. Example: 65 kg / (1.68m x 1.68m) = 23.0 BMI."
-        },
-        {
-          "question": "What are the waist circumference guidelines for Indian adults?",
-          "answer": "The Indian Council of Medical Research (ICMR) recommends keeping waist circumference under 90 cm (35 inches) for Indian men and under 80 cm (31.5 inches) for Indian women to reduce abdominal fat risk."
-        },
-        {
-          "question": "What is the ideal height weight chart for Indians?",
-          "answer": "An ideal weight for Indian adults keeps BMI between 18.5 and 22.9 kg/m². For example, for an Indian male or female of height 168 cm (5 ft 6 in), the healthy weight range is 52.2 kg to 64.6 kg."
-        }
-      ]
-    },
-    "es": {
-      "eyebrow": "Pautas del ICMR y la OMS para el Sur de Asia",
-      "title": "Calculadora de IMC para India – Valores y Gráfico de Salud",
-      "intro": "Calculadora de IMC para la población india en línea basada en las directrices de consenso de la OMS y el ICMR. A diferencia de los estándares occidentales donde el sobrepeso comienza en un IMC de 25.0, las pautas para el sur de Asia establecen 23.0 kg/m² como punto de corte para sobrepeso debido a una mayor acumulación de grasa visceral a pesos corporales más bajos.",
-      "formulaTitle": "Fórmula del IMC para India según ICMR y la OMS (kg y cm)",
-      "formulaDesc": "Métrico: IMC = Peso (kg) / [Altura (m)]² | Umbral de sobrepeso para la población india: IMC ≥ 23.0 kg/m² | Umbral de obesidad: IMC ≥ 25.0 kg/m²",
-      "formulaCode": "IMC = Peso (kg) / [(Altura en cm / 100)²]",
-      "tableTitle": "Tabla Oficial de IMC para Adultos Indios (Normas ICMR y OMS)",
-      "tableRows": [
-        {
-          "col1": "Bajo Peso (< 18.5 kg/m²)",
-          "col2": "< 18.5 kg/m²",
-          "col3": "Umbral de referencia para bajo peso (< 18.5 kg/m²)"
-        },
-        {
-          "col1": "Peso Normal Óptimo (18.5 – 22.9 kg/m²)",
-          "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Rango saludable óptimo para adultos indios"
-        },
-        {
-          "col1": "Sobrepeso / En Riesgo (23.0 – 24.9 kg/m²)",
-          "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Punto de corte para riesgo cardiometabólico elevado en población india"
-        },
-        {
-          "col1": "Obesidad Clase I (25.0 – 29.9 kg/m²)",
-          "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Umbral de obesidad Clase I según estándares ICMR"
-        },
-        {
-          "col1": "Obesidad Clase II (≥ 30.0 kg/m²)",
-          "col2": "≥ 30.0 kg/m²",
-          "col3": "Umbral de riesgo de obesidad severa"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "¿Cuál es el rango de IMC saludable para hombres y mujeres indios?",
-          "answer": "Según las pautas de consenso de la OMS para Asia-Pacífico y el ICMR, el rango saludable de IMC para hombres y mujeres indios es de 18.5 a 22.9 kg/m²."
-        },
-        {
-          "question": "¿Por qué el IMC 23 es el umbral de sobrepeso en India?",
-          "answer": "La investigación epidemiológica muestra que las poblaciones del sur de Asia acumulan una mayor cantidad de grasa visceral abdominal y enfrentan mayores riesgos cardiometabólicos con niveles de IMC más bajos en comparación con las poblaciones occidentales."
-        },
-        {
-          "question": "¿Cómo calcular el IMC en India usando kg y cm?",
-          "answer": "Para calcular el IMC en kg y cm: Convierte la altura en cm a metros dividiendo entre 100. Multiplica la altura en metros por sí misma. Divide el peso en kg entre la altura al cuadrado. Ejemplo: 65 kg / (1.68 m x 1.68 m) = 23.0 IMC."
-        },
-        {
-          "question": "¿Cuáles son las pautas de circunferencia de cintura para adultos indios?",
-          "answer": "El Consejo Indio de Investigación Médica (ICMR) recomienda mantener la circunferencia de la cintura por debajo de 90 cm para los hombres indios y por debajo de 80 cm para las mujeres indias."
-        },
-        {
-          "question": "¿Cuál es la tabla de peso y estatura ideal para adultos indios?",
-          "answer": "Un peso ideal para adultos indios mantiene el IMC entre 18.5 y 22.9 kg/m². Por ejemplo, para una estatura de 168 cm, el rango de peso saludable es de 52.2 kg a 64.6 kg."
-        }
-      ]
-    },
-    "fr": {
-      "eyebrow": "Directives ICMR et OMS pour l'Asie du Sud",
-      "title": "Calculateur d'IMC Inde – Seuils Asiatiques et Références de Santé",
-      "intro": "Calculez votre Indice de Masse Corporelle (IMC) selon les directives de consensus de l'OMS et de l'ICMR (Conseil indien de la recherche médicale) pour la population indienne. Contrairement aux normes occidentales où le surpoids commence à un IMC de 25,0, les recommandations pour l'Asie du Sud fixent le seuil de surpoids à 23,0 kg/m² en raison d'une accumulation plus précoce de graisse viscérale.",
-      "formulaTitle": "Formule d'IMC Indien selon l'ICMR et l'OMS (kg & cm)",
-      "formulaDesc": "Métrique : IMC = Poids (kg) / [Taille (m)]² | Seuil de surpoids pour la population indienne : IMC ≥ 23,0 kg/m² | Seuil d'obésité : IMC ≥ 25,0 kg/m²",
-      "formulaCode": "IMC = Poids (kg) / [(Taille en cm / 100)²]",
-      "tableTitle": "Tableau Officiel d'IMC pour Adultes Indiens (Normes ICMR et OMS)",
-      "tableRows": [
-        {
-          "col1": "Insuffisance Pondérale (< 18.5 kg/m²)",
-          "col2": "< 18.5 kg/m²",
-          "col3": "Seuil de référence pour insuffisance pondérale (< 18,5 kg/m²)"
-        },
-        {
-          "col1": "Poids Normal Optimal (18.5 – 22.9 kg/m²)",
-          "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Plage de santé optimale pour adultes indiens"
-        },
-        {
-          "col1": "Surpoids / Zone de Risque (23.0 – 24.9 kg/m²)",
-          "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Seuil de risque cardiométabolique accru pour les populations indiennes"
-        },
-        {
-          "col1": "Obésité Classe I (25.0 – 29.9 kg/m²)",
-          "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Seuil d'obésité de Classe I selon les normes ICMR"
-        },
-        {
-          "col1": "Obésité Classe II (≥ 30.0 kg/m²)",
-          "col2": "≥ 30.0 kg/m²",
-          "col3": "Seuil de risque d'obésité sévère"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Quelle est la plage d'IMC saine pour les hommes et les femmes en Inde ?",
-          "answer": "Selon les directives de l'ICMR et de l'OMS pour l'Asie du Sud, la plage d'IMC saine pour les hommes et femmes indiens se situe entre 18,5 et 22,9 kg/m²."
-        },
-        {
-          "question": "Pourquoi l'IMC 23 est-il le seuil de surpoids en Inde ?",
-          "answer": "Les recherches épidémiologiques démontrent que les populations d'Asie du Sud présentent un taux de graisse viscérale plus élevé à des niveaux d'IMC plus bas que les populations occidentales."
-        },
-        {
-          "question": "Comment calculer l'IMC en Inde avec les kg et les cm ?",
-          "answer": "Pour calculer l'IMC en kg et cm : convertissez la taille en cm en mètres en divisant par 100. Multipliez la taille en mètres par elle-même. Divisez le poids en kg par la taille au carré. Exemple : 65 kg / (1,68 m x 1,68 m) = 23,0 IMC."
-        },
-        {
-          "question": "Quelles sont les recommandations relatives au tour de taille pour les adultes indiens ?",
-          "answer": "L'ICMR recommande de maintenir le tour de taille en dessous de 90 cm pour les hommes indiens et de 80 cm pour les femmes indiennes afin de limiter les risques associés à la graisse abdominale."
-        },
-        {
-          "question": "Quelle est la table de poids et taille idéale pour les Indiens ?",
-          "answer": "Un poids idéal pour les adultes indiens correspond à un IMC compris entre 18,5 et 22,9 kg/m². Par exemple, pour une taille de 168 cm, la plage de poids santé se situe entre 52,2 kg et 64,6 kg."
-        }
-      ]
-    },
-    "de": {
-      "eyebrow": "ICMR & WHO Südasien-Richtlinien",
-      "title": "BMI-Rechner Indien – ICMR & WHO Richtlinien für indische Erwachsene",
-      "intro": "Berechnen Sie Ihren Body-Mass-Index (BMI) nach den offiziellen Konsensus-Richtlinien der WHO und des ICMR für indische Erwachsene. Im Gegensatz zu westlichen Standards, bei denen Übergewicht ab einem BMI von 25,0 beginnt, gilt für südasiatische Populationen ein Grenzwert von 23,0 kg/m² aufgrund höherer viszeraler Fetteinlagerungen bei geringerem Körpergewicht.",
-      "formulaTitle": "ICMR & WHO BMI-Formel für indische Erwachsene (kg & cm)",
-      "formulaDesc": "Metrisch: BMI = Gewicht (kg) / [Größe (m)]² | Übergewichtsschwelle für indische Erwachsene: BMI ≥ 23,0 kg/m² | Adipositas-Schwelle: BMI ≥ 25,0 kg/m²",
-      "formulaCode": "BMI = Gewicht (kg) / [(Größe in cm / 100)²]",
-      "tableTitle": "Offizielle BMI-Tabelle für indische Erwachsene (ICMR & WHO Standards)",
-      "tableRows": [
-        {
-          "col1": "Untergewicht (< 18.5 kg/m²)",
-          "col2": "< 18.5 kg/m²",
-          "col3": "Referenzschwelle für Untergewicht (< 18,5 kg/m²)"
-        },
-        {
-          "col1": "Optimales Normalgewicht (18.5 – 22.9 kg/m²)",
-          "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Optimaler gesunder Bereich für indische Erwachsene"
-        },
-        {
-          "col1": "Übergewicht / Risiko (23.0 – 24.9 kg/m²)",
-          "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Erhöhter kardiometabolischer Risikogrenzwert für Inder"
-        },
-        {
-          "col1": "Adipositas Klasse I (25.0 – 29.9 kg/m²)",
-          "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Schwellenwert für Adipositas Grad I nach ICMR-Standards"
-        },
-        {
-          "col1": "Adipositas Klasse II (≥ 30.0 kg/m²)",
-          "col2": "≥ 30.0 kg/m²",
-          "col3": "Risikoschwelle für schwere Adipositas"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Was ist der gesunde BMI-Bereich für indische Männer und Frauen?",
-          "answer": "Gemäß den Richtlinien von ICMR und WHO für Südasien liegt der gesunde BMI-Bereich für indische Männer und Frauen zwischen 18,5 und 22,9 kg/m²."
-        },
-        {
-          "question": "Warum liegt der Grenzwert für Übergewicht bei Indern bei 23.0 statt 25.0?",
-          "answer": "Südasiatische Populationen weisen bei niedrigerem Body-Mass-Index einen höheren Anteil an viszeralem Fett auf, wodurch das kardiometabolische Risiko gemäß ICMR- und WHO-Richtlinien bereits ab einem BMI von 23,0 kg/m² steigt."
-        },
-        {
-          "question": "Wie berechnet man den BMI in Indien mit kg und cm?",
-          "answer": "Um den BMI in kg und cm zu berechnen: Körpergröße in cm durch 100 teilen, um Meter zu erhalten. Diese Zahl mit sich selbst multiplizieren und das Gewicht in kg durch das Ergebnis teilen."
-        },
-        {
-          "question": "Welche Taillenumfangsrichtlinien gelten für indische Erwachsene?",
-          "answer": "Der ICMR empfiehlt, den Taillenumfang für indische Männer unter 90 cm und für indische Frauen unter 80 cm zu halten."
-        },
-        {
-          "question": "Wie berechnet man das ideale Körpergewicht nach der Größe in Indien?",
-          "answer": "Multiplizieren Sie Ihre Körpergröße in Metern zum Quadrat mit 18,5 für das Mindestgesundgewicht und mit 22,9 für das empfohlene Höchstgewicht nach indischen WHO- und ICMR-Standards."
-        }
-      ]
-    },
-    "ko": {
-      "eyebrow": "건강 참조 표준 지침",
-      "title": "인도 성인을 위한 체질량지수 계산기 – ICMR 및 WHO 인도 기준",
-      "intro": "세계보건기구(WHO) 및 인도 의학연구위원회(ICMR)의 남아시아 아시아-태평양 지침에 기반한 실시간 참고 계산기입니다. 성인 BMI 23.0 과체중 기준선과 복부 비만 허리둘레 표준 참조 범위를 상세히 안내합니다. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "Asian BMI = Weight (kg) / [Height (cm) / 100]²",
-      "tableTitle": "표준 참조 진단표",
-      "tableRows": [
-        {
-          "col1": "저체중 (< 18.5 kg/m²)",
-          "col2": "< 18.5 kg/m²",
-          "col3": "저체중 기준 참고 임계값 (< 18.5 kg/m²)"
-        },
-        {
-          "col1": "최적 정상 체중 (18.5 – 22.9 kg/m²)",
-          "col2": "18.5 – 22.9 kg/m²",
-          "col3": "인도 성인 최적 건강 체중 범위"
-        },
-        {
-          "col1": "과체중 / 위험군 (23.0 – 24.9 kg/m²)",
-          "col2": "23.0 – 24.9 kg/m²",
-          "col3": "인도인 심대사 위험 증가 주의 기준점"
-        },
-        {
-          "col1": "1단계 비만 (25.0 – 29.9 kg/m²)",
-          "col2": "25.0 – 29.9 kg/m²",
-          "col3": "ICMR 기준 1단계 비만 임계값"
-        },
-        {
-          "col1": "2단계 비만 (≥ 30.0 kg/m²)",
-          "col2": "≥ 30.0 kg/m²",
-          "col3": "중증 비만 고위험 임계값"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "인도 성인의 건강한 BMI 정상 범위는 얼마인가요?",
-          "answer": "ICMR 및 WHO 남아시아 지침에 따르면 인도 성인 남녀의 건강한 정상 BMI 범위는 18.5 ~ 22.9 kg/m²입니다."
-        },
-        {
-          "question": "인도 성인의 과체중 기준이 25.0이 아닌 23.0인 이유는 무엇인가요?",
-          "answer": "남아시아 및 인도인 인구는 낮은 BMI에서도 더 높은 내장지방 비율을 보여, ICMR 및 WHO 지침에 따라 23.0 kg/m²부터 심대사 위험이 증가합니다."
-        },
-        {
-          "question": "인도에서 kg과 cm 단위로 BMI는 어떻게 계산하나요?",
-          "answer": "신장(cm)을 100으로 나누어 미터 단위로 변환한 후 제곱하고, 체중(kg)을 이 값으로 나눕니다."
-        },
-        {
-          "question": "인도 성인의 적정 허리둘레 기준은 어떻게 되나요?",
-          "answer": "ICMR은 복부 비만 위험을 줄이기 위해 인도 성인 남성은 90cm 미만, 여성은 80cm 미만의 허리둘레를 유지하도록 권장합니다."
-        },
-        {
-          "question": "인도 표준 지침에 따른 신장별 적정 체중은 어떻게 계산하나요?",
-          "answer": "신장(m)의 제곱에 18.5를 곱하면 최소 권장 건강 체중이 되고, 22.9를 곱하면 최대 권장 건강 체중 범위가 됩니다."
-        }
-      ]
-    },
-    "hi": {
-      "eyebrow": "डब्ल्यूएचओ एवं आईसीएमआर भारतीय दिशानिर्देश",
-      "title": "भारतीयों के लिए बीएमआई कैलकुलेटर – आईसीएमआर एवं डब्ल्यूएचओ मानक",
-      "intro": "भारतीय चिकित्सा अनुसंधान परिषद (ICMR) और WHO दक्षिण एशियाई दिशानिर्देशों पर आधारित भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। किलोग्राम और सेंटीमीटर में अपने बीएमआई और स्वस्थ वजन सीमा की गणना करें।",
-      "formulaTitle": "भारतीय बीएमआई सूत्र (किग्रा और सेमी)",
-      "formulaDesc": "बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | भारतीयों के लिए ओवरवेट कटऑफ: 23.0 kg/m²",
-      "formulaCode": "BMI = kg / m²",
-      "tableTitle": "भारतीय पुरुषों एवं महिलाओं के लिए बीएमआई चार्ट (ICMR एवं WHO मानक)",
-      "tableRows": [
-        {
-          "col1": "कम वजन (< 18.5 kg/m²)",
-          "col2": "< 18.5 kg/m²",
-          "col3": "कम वजन संदर्भ सीमा (< 18.5 kg/m²)"
-        },
-        {
-          "col1": "इष्टतम सामान्य वजन (18.5 – 22.9 kg/m²)",
-          "col2": "18.5 – 22.9 kg/m²",
-          "col3": "भारतीय वयस्कों के लिए इष्टतम स्वस्थ वजन सीमा"
-        },
-        {
-          "col1": "अधिक वजन / जोखिम सीमा (23.0 – 24.9 kg/m²)",
-          "col2": "23.0 – 24.9 kg/m²",
-          "col3": "भारतीयों के लिए ऊंचा कार्डियोमेटाबॉलिक जोखिम कटऑफ"
-        },
-        {
-          "col1": "मोटापा श्रेणी I (25.0 – 29.9 kg/m²)",
-          "col2": "25.0 – 29.9 kg/m²",
-          "col3": "ICMR मानकों के तहत मोटापा श्रेणी I सीमा"
-        },
-        {
-          "col1": "मोटापा श्रेणी II (≥ 30.0 kg/m²)",
-          "col2": "≥ 30.0 kg/m²",
-          "col3": "गंभीर मोटापा जोखिम सीमा"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "भारतीय पुरुषों और महिलाओं के लिए स्वस्थ बीएमआई सीमा क्या है?",
-          "answer": "ICMR और WHO दक्षिण एशियाई दिशानिर्देशों के अनुसार भारतीय पुरुषों और महिलाओं के लिए स्वस्थ बीएमआई सीमा 18.5 से 22.9 kg/m² है।"
-        },
-        {
-          "question": "भारत में बीएमआई 23.0 को ओवरवेट कटऑफ क्यों माना जाता है?",
-          "answer": "दक्षिण एशियाई आबादी कम बॉडी मास इंडेक्स पर भी उच्च विसरल वसा प्रतिशत प्रदर्शित करती है, जिससे ICMR और WHO दिशानिर्देशों के तहत 23.0 kg/m² पर कार्डियोमेटाबॉलिक जोखिम बढ़ने लगता है।"
-        },
-        {
-          "question": "किलोग्राम और सेंटीमीटर में बीएमआई की गणना कैसे करें?",
-          "answer": "सेंटीमीटर में ऊंचाई को 100 से विभाजित करके मीटर में बदलें। मीटर में ऊंचाई को स्वयं से गुणा करें। वजन (किग्रा) को इस परिणाम से विभाजित करें।"
-        },
-        {
-          "question": "भारतीय वयस्कों के लिए कमर की परिधि के क्या दिशानिर्देश हैं?",
-          "answer": "ICMR भारतीय पुरुषों के लिए कमर 90 सेमी से कम और महिलाओं के लिए 80 सेमी से कम रखने की सिफारिश करता है।"
-        },
-        {
-          "question": "भारतीयों के लिए आदर्श ऊंचाई और वजन चार्ट क्या है?",
-          "answer": "WHO और ICMR भारतीय मानकों के तहत न्यूनतम स्वस्थ वजन के लिए अपनी ऊंचाई के वर्ग (मीटर²) को 18.5 से और अधिकतम अनुशंसित स्वस्थ वजन के लिए 22.9 से गुणा करें।"
-        }
-      ]
-    }
-  },
   "bmi-calculator-for-indians": {
     "en": {
       "eyebrow": "ICMR & WHO South Asian Standards",
       "title": "BMI Calculator for Indians – Healthy Weight Chart & Cutoffs",
-      "intro": "Free online BMI Calculator for Indians based on Indian Council of Medical Research (ICMR) and WHO Asia-Pacific reference standards. Compute your Body Mass Index (BMI) using kg and cm, check whether your weight falls into the healthy Indian range (18.5 – 22.9 kg/m²), and review ICMR waist circumference guidelines. For broader East and Southeast Asian standards where obesity is classified at 27.5 kg/m², explore our <a href=\"/en/asian-bmi-calculator/\" class=\"text-[var(--accent)] hover:underline font-bold\">Asian BMI Calculator</a>.",
+      "intro": "Free online BMI Calculator for Indians based on Indian Council of Medical Research (ICMR) and WHO Asia-Pacific reference standards. Compute your Body Mass Index (BMI) using kg and cm, check whether your weight falls into the healthy Indian range (18.5 – 22.9 kg/m²), and review ICMR waist circumference guidelines.",
       "formulaTitle": "Official ICMR Indian BMI Formula (kg & cm)",
       "formulaDesc": "BMI = Weight (kg) / [Height (m)]² | Healthy Range for Indians: 18.5 – 22.9 kg/m² | Overweight Cutoff: ≥ 23.0 kg/m²",
       "formulaCode": "BMI = Weight (kg) / [(Height in cm / 100)²]",
@@ -1953,27 +1235,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Underweight (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
-          "col3": "Underweight reference threshold (< 18.5 kg/m²)"
+          "col3": "Nutritional deficiency and low body mass risk"
         },
         {
-          "col1": "Optimal Healthy Normal Weight (18.5 – 22.9 kg/m²)",
+          "col1": "Optimal Normal Weight (18.5 – 22.9 kg/m²)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Optimal healthy range for Indian adults"
+          "col3": "Recommended healthy target range for Indian adults"
         },
         {
-          "col1": "Overweight / At Risk (23.0 – 24.9 kg/m²)",
+          "col1": "Overweight / Elevated Risk (23.0 – 24.9 kg/m²)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Elevated cardiometabolic risk cutoff for Indians"
+          "col3": "Action threshold for cardiometabolic screening"
         },
         {
           "col1": "Obese Class I (25.0 – 29.9 kg/m²)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Class I obesity threshold under ICMR standards"
+          "col3": "Moderate obesity threshold under ICMR guidelines"
         },
         {
           "col1": "Obese Class II (≥ 30.0 kg/m²)",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Severe obesity risk threshold"
+          "col3": "Severe obesity risk bracket requiring medical guidance"
         }
       ],
       "faqs": [
@@ -2003,22 +1285,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Bajo Peso (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
-          "col3": "Umbral de referencia para bajo peso (< 18.5 kg/m²)"
+          "col3": "Riesgo de deficiencia nutricional y bajo peso corporal"
         },
         {
           "col1": "Peso Normal Óptimo (18.5 – 22.9 kg/m²)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Rango saludable óptimo para adultos indios"
+          "col3": "Rango saludable recomendado para adultos indios"
         },
         {
-          "col1": "Sobrepeso / En Riesgo (23.0 – 24.9 kg/m²)",
+          "col1": "Sobrepeso / Riesgo Elevado (23.0 – 24.9 kg/m²)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Punto de corte para riesgo cardiometabólico elevado en población india"
+          "col3": "Umbral de intervención cardiometabólica temprana"
         },
         {
           "col1": "Obesidad Clase I (25.0 – 29.9 kg/m²)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Umbral de obesidad Clase I según estándares ICMR"
+          "col3": "Criterio de obesidad moderada según directrices ICMR"
         },
         {
           "col1": "Obesidad Clase II (≥ 30.0 kg/m²)",
@@ -2053,7 +1335,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Insuffisance Pondérale (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
-          "col3": "Seuil de référence pour insuffisance pondérale (< 18,5 kg/m²)"
+          "col3": "Seuil de référence pour déficits nutritionnels"
         },
         {
           "col1": "Poids Normal Optimal (18.5 – 22.9 kg/m²)",
@@ -2061,19 +1343,19 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Plage de santé optimale pour adultes indiens"
         },
         {
-          "col1": "Surpoids / Zone de Risque (23.0 – 24.9 kg/m²)",
+          "col1": "Surpoids / Risque Accru (23.0 – 24.9 kg/m²)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Seuil de risque cardiométabolique accru pour les populations indiennes"
+          "col3": "Seuil de vigilance cardiométabolique précoce"
         },
         {
           "col1": "Obésité Classe I (25.0 – 29.9 kg/m²)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Seuil d'obésité de Classe I selon les normes ICMR"
+          "col3": "Seuil d'obésité modérée selon l'ICMR"
         },
         {
           "col1": "Obésité Classe II (≥ 30.0 kg/m²)",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Seuil de risque d'obésité sévère"
+          "col3": "Palier de risque d'obésité sévère"
         }
       ],
       "faqs": [
@@ -2094,7 +1376,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "de": {
       "eyebrow": "ICMR & WHO Südasien-Referenzstandards",
       "title": "BMI-Rechner für indische Erwachsene – ICMR Referenz",
-      "intro": "Kostenloser Online-BMI-Rechner für indische Erwachsene basierend auf den Referenzstandards des Indian Council of Medical Research (ICMR) und der WHO-Asien-Pazifik-Region. Berechnen Sie Ihren Body-Mass-Index (BMI) in kg und cm, prüfen Sie, ob Ihr Gewicht im gesunden Bereich für indische Erwachsene liegt (18,5 – 22,9 kg/m²), und überprüfen Sie die ICMR-Taillenumfangsrichtlinien.",
+      "intro": "Kostenloser Online-BMI-Rechner für Erwachsene basierend auf den Referenzstandards des Indian Council of Medical Research (ICMR) und der WHO-Südasien-Region. Berechnen Sie Ihren Body-Mass-Index (BMI) in kg und cm, prüfen Sie, ob Ihr Gewicht im gesunden Zielbereich liegt (18,5 – 22,9 kg/m²), und überprüfen Sie die populationsspezifischen ICMR-Taillenumfangsrichtlinien.",
       "formulaTitle": "Offizielle ICMR-BMI-Formel für indische Erwachsene (kg & cm)",
       "formulaDesc": "BMI = Gewicht (kg) / [Größe (m)]² | Gesunder Bereich für indische Erwachsene: 18,5 – 22,9 kg/m² | Übergewichtsschwelle: ≥ 23,0 kg/m²",
       "formulaCode": "BMI = Gewicht (kg) / [(Größe in cm / 100)²]",
@@ -2106,22 +1388,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Erhöhtes Risiko für Nährstoffmängel und Unterernährung"
         },
         {
-          "col1": "Optimales Normalgewicht (18,5 – 22,9 kg/m²)",
+          "col1": "Normalgewicht / Optimal (18,5 – 22,9 kg/m²)",
           "col2": "18,5 – 22,9 kg/m²",
           "col3": "Optimaler gesunder Bereich für indische Erwachsene"
         },
         {
-          "col1": "Übergewicht / Risiko (23,0 – 24,9 kg/m²)",
+          "col1": "Übergewicht / Erhöhtes Risiko (23,0 – 24,9 kg/m²)",
           "col2": "23,0 – 24,9 kg/m²",
           "col3": "Erhöhter kardiometabolischer Risikogrenzwert für Inder"
         },
         {
-          "col1": "Adipositas Klasse I (25,0 – 29,9 kg/m²)",
+          "col1": "Adipositas Grad I (25,0 – 29,9 kg/m²)",
           "col2": "25,0 – 29,9 kg/m²",
           "col3": "Schwellenwert für Adipositas Grad I nach ICMR-Standards"
         },
         {
-          "col1": "Adipositas Klasse II (≥ 30,0 kg/m²)",
+          "col1": "Adipositas Grad II (≥ 30,0 kg/m²)",
           "col2": "≥ 30,0 kg/m²",
           "col3": "Risikoschwelle für schwere Adipositas"
         }
@@ -2153,7 +1435,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "저체중 (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
-          "col3": "저체중 기준 참고 임계값 (< 18.5 kg/m²)"
+          "col3": "영양 결핍 및 저체중 건강 위험군"
         },
         {
           "col1": "최적 정상 체중 (18.5 – 22.9 kg/m²)",
@@ -2203,7 +1485,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "कम वजन (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
-          "col3": "कम वजन संदर्भ सीमा (< 18.5 kg/m²)"
+          "col3": "पोषण की कमी और कम वजन का जोखिम"
         },
         {
           "col1": "इष्टतम सामान्य वजन (18.5 – 22.9 kg/m²)",
@@ -2245,12 +1527,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "healthy-weight-by-height": {
     "en": {
       "eyebrow": "WHO & Devine Reference Charts",
-      "title": "Healthy Weight by Height Chart – Ideal Weight Range",
-      "intro": "Explore official healthy weight by height reference ranges and height-weight lookup charts for men and women. Calculate your ideal weight based on height in kilograms (kg) and pounds (lbs) based on World Health Organization (WHO), CDC, and Devine formula standards.",
-      "formulaTitle": "Healthy Weight Range & Ideal Weight Equations",
+      "title": "Optimal Weight by Height Chart & Recommended Ranges",
+      "intro": "Explore standard adult weight brackets and stature lookup tables for men and women. Check your target body mass in kilograms (kg) and pounds (lbs) based on World Health Organization (WHO), CDC, and Devine clinical formulas.",
+      "formulaTitle": "Standard Target Weight & Ideal Body Mass Equations",
       "formulaDesc": "WHO Healthy Weight Range: Min Weight = 18.5 × [Height (m)]² | Max Weight = 24.9 × [Height (m)]² | Devine IBW Male: 50kg + 2.3kg/inch >5ft | Devine IBW Female: 45.5kg + 2.3kg/inch >5ft",
-      "formulaCode": "Min Healthy (kg) = 18.5 × m²  |  Max Healthy (kg) = 24.9 × m²",
-      "tableTitle": "Height Weight Chart for Men & Women (Official WHO Healthy Range in kg & lbs)",
+      "formulaCode": "Min Target (kg) = 18.5 × m²  |  Max Target (kg) = 24.9 × m²",
+      "tableTitle": "Stature-to-Weight Chart for Men & Women (WHO Baseline in kg & lbs)",
       "tableRows": [
         {
           "col1": "4' 10\" (147 cm)",
@@ -2300,24 +1582,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "What is a healthy weight for my height?",
-          "answer": "A healthy weight for your height is determined by a BMI between 18.5 and 24.9 kg/m² under World Health Organization (WHO) adult reference baselines."
+          "question": "What is the recommended body weight bracket for my stature?",
+          "answer": "A standard target range corresponds to a BMI between 18.5 and 24.9 kg/m² under World Health Organization (WHO) adult reference baselines."
         },
         {
-          "question": "What is the healthy weight chart by height for men and women?",
-          "answer": "A height-weight chart lists healthy weight ranges based on stature. For example, for an individual measuring 5 ft 10 in (178 cm), the healthy weight window is approximately 59 to 79 kg (129 to 174 lbs)."
+          "question": "How do height-weight reference tables work for adults?",
+          "answer": "These lookup charts map proportional mass boundaries to specific vertical statures. For example, for an individual measuring 5 ft 10 in (178 cm), the normal weight window spans approximately 59 to 79 kg (129 to 174 lbs)."
         },
         {
           "question": "How to calculate ideal weight by height?",
-          "answer": "Ideal weight by height can be calculated using the Devine formula: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
+          "answer": "Ideal weight can be estimated using the classic Devine equation: For Men: 50 kg + 2.3 kg per inch over 5 feet. For Women: 45.5 kg + 2.3 kg per inch over 5 feet."
         },
         {
-          "question": "Is the healthy weight chart different for men and women?",
-          "answer": "While WHO BMI ranges (18.5 to 24.9) apply to both adult men and women, ideal body weight (IBW) equations provide slightly lower reference numbers for females due to differences in average frame and lean mass."
+          "question": "Are recommended target weights different for men and women?",
+          "answer": "While standard WHO BMI cutoffs (18.5 to 24.9) apply identically to adult men and women, clinical ideal body weight (IBW) formulas assign slightly lower target values to biological females due to differences in skeletal frame and musculature."
         },
         {
-          "question": "What is a healthy weight for Indian adults by height?",
-          "answer": "For South Asian and Indian adults, consensus guidelines recommend keeping BMI between 18.5 and 22.9 kg/m², which yields lower target body weight ranges compared to global WHO standards."
+          "question": "What is the recommended weight range for Indian and South Asian adults?",
+          "answer": "Under ICMR and WHO South Asian guidelines, recommended target BMI ranges between 18.5 and 22.9 kg/m², producing lower upper-boundary weights to safeguard against premature visceral fat accumulation."
         }
       ]
     },
@@ -2714,50 +1996,50 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   "diabetes-risk-calculator": {
     "en": {
-      "eyebrow": "Cardiometabolic Risk Screening",
+      "eyebrow": "Health Risk Screening",
       "title": "Type 2 Diabetes Risk Calculator – BMI & Waist Risk Reference",
-      "intro": "Free Type 2 Diabetes Risk Calculator based on BMI, waist circumference, age, and WHO metabolic risk cutoffs. Assess screening factors privately in your browser.",
-      "formulaTitle": "IDF & WHO Cardiometabolic Risk Assessment Criteria",
-      "formulaDesc": "Combined Screening Criteria: BMI ≥ 25.0 kg/m² (≥ 23.0 for Asian adults), Waist Circumference ≥ 94 cm for men (≥ 90 cm Asian) and ≥ 80 cm for women, Age ≥ 40-45 years.",
-      "formulaCode": "Metabolic Risk Index = f(BMI, Waist Circumference, Age, Gender)",
-      "tableTitle": "Type 2 Diabetes Screening Risk Categories Matrix",
+      "intro": "Use our free Type 2 Diabetes Risk Calculator to check your risk factors. It uses your BMI, waist size, age, and activity habits. All calculations run privately in your web browser.",
+      "formulaTitle": "IDF & WHO Diabetes Screening Guidelines",
+      "formulaDesc": "Key risk factors include a BMI of 25 or higher (23 for Asian adults), a larger waist size (over 94 cm for men and 80 cm for women), and age 40 or older.",
+      "formulaCode": "Risk Level = Based on BMI, Waist Size, Age, and Activity",
+      "tableTitle": "Type 2 Diabetes Screening Risk Levels",
       "tableRows": [
         {
-          "col1": "Standard Reference",
-          "col2": "BMI < 23 (Asian) / < 25 (Global) & Normal Waist",
-          "col3": "Baseline metabolic reference range with low statistical risk"
+          "col1": "Standard Risk",
+          "col2": "BMI under 25 (under 23 for Asian adults) & Normal Waist",
+          "col3": "Baseline range with lower statistical risk of type 2 diabetes"
         },
         {
-          "col1": "Moderate Threshold",
-          "col2": "BMI 23–27.4 (Asian) or Waist at threshold",
-          "col3": "Early cardiometabolic action range; lifestyle guidance advised"
+          "col1": "Moderate Risk",
+          "col2": "BMI 23–27.4 (Asian adults) or Waist at warning level",
+          "col3": "Early warning range. Healthy eating and regular exercise help lower your risk"
         },
         {
-          "col1": "Elevated Threshold",
-          "col2": "BMI ≥ 27.5 or High Waist with Age ≥ 40",
-          "col3": "Elevated metabolic risk cutoff; clinical screening recommended"
+          "col1": "Elevated Risk",
+          "col2": "BMI 27.5 or higher, or High Waist with Age 40+",
+          "col3": "Higher statistical risk. A formal clinical checkup with your doctor is recommended"
         }
       ],
       "faqs": [
         {
-          "question": "What is the connection between BMI and Type 2 Diabetes risk?",
-          "answer": "Higher Body Mass Index (BMI), particularly when accompanied by visceral abdominal adiposity, is strongly associated with insulin resistance, impaired glucose tolerance, and elevated Type 2 Diabetes risk."
+          "question": "How are BMI and Type 2 diabetes connected?",
+          "answer": "Carrying extra body weight makes it harder for your cells to respond to insulin. When cells resist insulin, blood sugar stays high. Over time, insulin resistance can lead to type 2 diabetes."
         },
         {
-          "question": "Why is the diabetes risk cutoff lower for Asian adults (BMI 23)?",
-          "answer": "World Health Organization (WHO) and International Diabetes Federation (IDF) studies show that Asian adults accumulate more abdominal visceral fat at lower body weights, increasing cardiometabolic risk at BMI 23.0 kg/m²."
+          "question": "Why is the risk cutoff lower for Asian adults (BMI 23)?",
+          "answer": "Studies from the WHO and IDF show that Asian adults store more belly fat at lower body weights. Because deep belly fat raises blood sugar risks, health guidelines use a lower BMI cutoff of 23."
         },
         {
-          "question": "Why is waist circumference evaluated alongside BMI?",
-          "answer": "Waist circumference specifically screens for intra-abdominal fat surrounding vital organs. Research demonstrates that abdominal fat is a more potent predictor of metabolic disorders than total body weight alone."
+          "question": "Why should I measure my waist along with my BMI?",
+          "answer": "Your waist measurement checks for deep belly fat around your organs. Research shows that belly fat predicts diabetes risk better than total body weight alone."
         },
         {
-          "question": "What do the risk score categories indicate?",
-          "answer": "The categories indicate statistical population risk: Standard Reference represents baseline risk, Moderate Threshold suggests early lifestyle review, and Elevated Threshold warrants a formal clinical checkup."
+          "question": "What do the diabetes risk score levels mean?",
+          "answer": "The scores show your risk compared to large population health studies. Standard risk means lower odds. Moderate risk suggests improving daily habits. Elevated risk means you should talk to a doctor."
         },
         {
-          "question": "Does this calculator provide a medical diabetes diagnosis?",
-          "answer": "No. This tool is strictly an educational screening calculator based on published epidemiological risk factors. A clinical diagnosis requires blood glucose testing (such as HbA1c or fasting plasma glucose) by a licensed physician."
+          "question": "Can this calculator diagnose type 2 diabetes?",
+          "answer": "No. This tool is for educational screening only. It cannot diagnose any medical condition. A real diagnosis requires blood tests, such as fasting glucose or HbA1c, ordered by a licensed doctor."
         }
       ]
     },
@@ -3284,50 +2566,50 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   "bmr-calculator": {
     "en": {
-      "eyebrow": "Mifflin-St Jeor Equation Standard",
+      "eyebrow": "Resting Metabolism & BER",
       "title": "BMR Calculator Online – Basal Metabolic Rate for Men & Women",
-      "intro": "Find your daily Basal Metabolic Rate (BMR) with our free online calculator. Your BMR is the number of calories your body burns at rest each day. We use the proven Mifflin-St Jeor equation to calculate your daily energy needs. Simply enter your age, sex, height, and weight to see your instant result.",
-      "formulaTitle": "Mifflin-St Jeor BMR Calculator Formula Equations",
-      "formulaDesc": "Men: (10 × weight in kg) + (6.25 × height in cm) - (5 × age in yrs) + 5. Women: (10 × weight in kg) + (6.25 × height in cm) - (5 × age in yrs) - 161. These formulas give your resting calorie burn.",
+      "intro": "Find your daily Basal Metabolic Rate (BMR) with our free online calculator. BMR is the number of calories your body burns at complete rest each day. In clinical nutrition, it is also called your Basal Energy Requirement (BER). We use the proven Mifflin-St Jeor equation to give you fast, accurate results.",
+      "formulaTitle": "Mifflin-St Jeor BMR Calculator Formulas",
+      "formulaDesc": "For men: (10 × weight in kg) + (6.25 × height in cm) - (5 × age) + 5. For women: (10 × weight in kg) + (6.25 × height in cm) - (5 × age) - 161. These formulas estimate your baseline daily calorie burn.",
       "formulaCode": "Men: BMR = 10W + 6.25H - 5A + 5  |  Women: BMR = 10W + 6.25H - 5A - 161",
-      "tableTitle": "BMR Formula Comparison Matrix (Mifflin-St Jeor vs. Harris-Benedict & Katch-McArdle)",
+      "tableTitle": "BMR Formula Comparison (Mifflin-St Jeor vs. Other Formulas)",
       "tableRows": [
         {
           "col1": "Mifflin-St Jeor Formula",
-          "col2": "Predictive Equation (1990)",
-          "col3": "Commonly cited equation for adult BMR estimation"
+          "col2": "Standard Equation (1990)",
+          "col3": "The most widely recommended equation for adult BMR estimation"
         },
         {
-          "col1": "Revised Harris-Benedict (1984)",
-          "col2": "Classic Historical Reference",
-          "col3": "Tends to yield slightly different estimates in modern adults"
+          "col1": "Revised Harris-Benedict",
+          "col2": "Classic Historical Formula",
+          "col3": "An older equation that can slightly overestimate calorie needs"
         },
         {
           "col1": "Katch-McArdle Formula",
-          "col2": "Katch-McArdle LBM Formula",
-          "col3": "Calculates BMR using lean body mass (LBM)"
+          "col2": "Lean Body Mass Formula",
+          "col3": "Estimates resting calories using your measured lean muscle mass"
         }
       ],
       "faqs": [
         {
-          "question": "What is a BMR calculator and how to calculate basal metabolic rate?",
-          "answer": "A BMR calculator estimates the calories your body burns at complete rest over 24 hours. It covers the basic energy needed for breathing, blood flow, and cell repair."
+          "question": "What is a BMR calculator and what does it measure?",
+          "answer": "A BMR calculator estimates the calories your body burns while resting quietly over 24 hours. It covers the baseline energy your lungs, heart, liver, and brain need to stay alive."
         },
         {
-          "question": "What is the Mifflin-St Jeor BMR formula for men and women?",
-          "answer": "For men: BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age) + 5. For women: BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age) - 161."
+          "question": "What is the difference between BMR and BER (Basal Energy Requirement)?",
+          "answer": "BMR and BER refer to the same biological measurement. In sports nutrition and clinical dietetics, Basal Energy Requirement (BER) is simply another name for your daily basal metabolic rate."
         },
         {
-          "question": "How does age affect your BMR calculation?",
-          "answer": "Your BMR tends to drop slowly as you age. This happens mainly because people lose lean muscle over time. Strength training helps keep your muscle and BMR higher."
+          "question": "What is the Mifflin-St Jeor formula for men and women?",
+          "answer": "For men, the formula is: (10 × weight in kg) + (6.25 × height in cm) - (5 × age) + 5. For women, it is: (10 × weight in kg) + (6.25 × height in cm) - (5 × age) - 161."
         },
         {
-          "question": "How to calculate BMR in kg and cm online?",
-          "answer": "Enter your weight in kilograms and your height in centimeters into the calculator. Add your age and biological sex to see your daily resting calorie burn right away."
+          "question": "Why does metabolic rate slow down with age?",
+          "answer": "Your resting burn drops slowly over the decades because most adults lose lean muscle mass. Regular strength training helps protect muscle tissue and keeps your metabolism healthy."
         },
         {
           "question": "What is the difference between BMR and TDEE?",
-          "answer": "BMR is the energy you burn while doing nothing at all. TDEE includes your BMR plus all the calories you burn walking, working, and working out."
+          "answer": "BMR is the energy you burn while doing nothing at all. TDEE is your Total Daily Energy Expenditure. It adds all your daily movement, chores, and exercise to your BMR."
         }
       ]
     },
@@ -3574,60 +2856,60 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   "tdee-calculator": {
     "en": {
-      "eyebrow": "Energy Balance & Metabolism",
+      "eyebrow": "Daily Energy Expenditure",
       "title": "TDEE Calculator – Total Daily Energy Expenditure",
-      "intro": "Find your Total Daily Energy Expenditure (TDEE) with our free calculator. TDEE is the total number of calories you burn each day. It combines your resting metabolism with your daily workouts and chores. Use your result to easily plan calories for fat loss, muscle gain, or weight maintenance.",
-      "formulaTitle": "TDEE Calculation Formula (Mifflin-St Jeor & Activity Factors)",
-      "formulaDesc": "Step 1: Estimate your resting burn (BMR). Step 2: Multiply by your activity factor: Sedentary (1.2), Light (1.375), Moderate (1.55), or Very Active (1.725).",
+      "intro": "Find your Total Daily Energy Expenditure (TDEE) with our free calculator. TDEE is the total number of calories you burn every day. It combines your resting burn with your daily movement and workouts. Use your result to set clear calorie targets for weight loss, maintenance, or muscle gain.",
+      "formulaTitle": "TDEE Formula (BMR × Activity Multiplier)",
+      "formulaDesc": "First, estimate your resting calorie burn (BMR). Then multiply it by your activity factor: Sedentary (1.2), Lightly Active (1.375), Moderately Active (1.55), or Very Active (1.725).",
       "formulaCode": "TDEE = BMR × Activity Factor",
-      "tableTitle": "TDEE Activity Multipliers & Daily Calorie Breakdown Table",
+      "tableTitle": "TDEE Activity Multipliers and Daily Energy Levels",
       "tableRows": [
         {
-          "col1": "Sedentary (PAL 1.2)",
+          "col1": "Sedentary (Factor 1.2)",
           "col2": "BMR × 1.2",
-          "col3": "Desk job, little or no structured exercise"
+          "col3": "Desk work with little or no structured exercise"
         },
         {
-          "col1": "Lightly Active (PAL 1.375)",
+          "col1": "Lightly Active (Factor 1.375)",
           "col2": "BMR × 1.375",
-          "col3": "Light exercise or sport 1–3 days per week"
+          "col3": "Light workouts or brisk walking 1 to 3 days each week"
         },
         {
-          "col1": "Moderately Active (PAL 1.55)",
+          "col1": "Moderately Active (Factor 1.55)",
           "col2": "BMR × 1.55",
-          "col3": "Moderate exercise or sports 3–5 days per week"
+          "col3": "Moderate sports or gym workouts 3 to 5 days each week"
         },
         {
-          "col1": "Very Active (PAL 1.725)",
+          "col1": "Very Active (Factor 1.725)",
           "col2": "BMR × 1.725",
-          "col3": "Hard exercise or physical labor 6–7 days per week"
+          "col3": "Hard training or physical labor 6 to 7 days each week"
         },
         {
-          "col1": "Example Calorie Deficit",
-          "col2": "TDEE minus a chosen deficit",
-          "col3": "Example reference for weight-management planning"
+          "col1": "Weight Loss Deficit",
+          "col2": "TDEE minus 300 to 500 kcal",
+          "col3": "A balanced calorie deficit for steady fat loss"
         }
       ],
       "faqs": [
         {
-          "question": "What is a TDEE calculator and how does it calculate maintenance calories?",
-          "answer": "A TDEE calculator estimates the total calories your body burns in 24 hours. This includes your resting metabolism, digestion, and daily movement. Eating the same number of calories as your TDEE keeps your body weight steady."
+          "question": "What is TDEE and how is it calculated?",
+          "answer": "TDEE stands for Total Daily Energy Expenditure. It is the total number of calories your body burns in 24 hours. It includes your resting metabolism, digesting food, and daily physical movement."
         },
         {
-          "question": "How to calculate TDEE online for weight loss by age, height (cm), and weight (kg)?",
-          "answer": "To calculate TDEE, first find your resting burn (BMR) using your age, sex, height, and weight. Next, multiply that number by your activity factor. To lose weight safely, subtract 300 to 500 calories from your TDEE."
+          "question": "How do I use my TDEE to lose weight?",
+          "answer": "To lose body fat steadily, eat 300 to 500 calories below your TDEE each day. This small calorie deficit lets your body burn stored fat without causing extreme hunger or low energy."
         },
         {
-          "question": "What is the difference between BMR and TDEE calories?",
-          "answer": "BMR is the baseline energy your body burns while resting in bed. TDEE is your total burn, adding work, chores, and exercise to your BMR."
+          "question": "What is the difference between BMR and TDEE?",
+          "answer": "BMR is the baseline energy needed to keep your organs working while you rest in bed. TDEE adds all your daily steps, work, chores, and workouts on top of your BMR."
         },
         {
-          "question": "How many calories should I eat daily for weight loss using TDEE?",
-          "answer": "Most people aim for a deficit of 300 to 500 calories below their TDEE. This creates steady, gradual weight loss without feeling starved. Always listen to your body and adjust as needed."
+          "question": "Why do daily energy needs vary between people of the same weight?",
+          "answer": "People burn calories differently based on muscle mass, daily movement, and genetics. Two people of the same weight can have different energy needs if one has an active job and more muscle."
         },
         {
-          "question": "How often should I recalculate my maintenance calories and TDEE?",
-          "answer": "Recalculate your numbers whenever you lose or gain 5 to 10 pounds. You should also update your numbers if your workout routine or job activity changes."
+          "question": "How often should I recalculate my TDEE?",
+          "answer": "Recalculate your TDEE whenever you gain or lose 5 to 10 pounds (2 to 5 kg). You should also recalculate if your job activity or workout routine changes significantly."
         }
       ]
     },
@@ -3924,60 +3206,60 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   },
   "maintenance-calorie-calculator": {
     "en": {
-      "eyebrow": "Calorie Maintenance & Deficit Planning",
+      "eyebrow": "Daily Energy Balance",
       "title": "Maintenance Calorie Calculator – Daily Calorie Needs",
-      "intro": "Our free Maintenance Calorie Calculator estimates the calories you need to keep your current weight. It combines your resting metabolism with your daily activity level. Enter your age, sex, height, weight, and exercise habits. You will receive an instant estimate of your daily calorie needs.",
-      "formulaTitle": "Maintenance Calorie Math & Energy Balance Standards",
-      "formulaDesc": "Maintenance Calories = Basal Metabolic Rate (BMR) × Physical Activity Level (PAL). Eating at this level matches your daily burn so your weight stays steady.",
-      "formulaCode": "Maintenance = BMR × PAL",
-      "tableTitle": "Calorie Maintenance & Weight Goal Caloric Breakdown Table",
+      "intro": "Find how many calories you need to keep your current weight. Our free Maintenance Calorie Calculator combines your resting metabolism with your daily workouts. Enter your age, sex, height, weight, and exercise habits to see your daily target in seconds.",
+      "formulaTitle": "Maintenance Calorie Math & Energy Balance",
+      "formulaDesc": "Maintenance Calories = Basal Metabolic Rate (BMR) × Physical Activity Level (PAL). Eating at maintenance matches your daily burn and keeps your weight steady.",
+      "formulaCode": "Maintenance Calories = BMR × Activity Factor",
+      "tableTitle": "Calorie Maintenance and Goal Planning Table",
       "tableRows": [
         {
-          "col1": "Maintenance Calories",
-          "col2": "100% TDEE (0 kcal net change)",
-          "col3": "Preserves current body weight and energy balance"
+          "col1": "Maintenance Level",
+          "col2": "100% of TDEE (Zero net change)",
+          "col3": "Keeps your current weight and daily energy in balance"
         },
         {
-          "col1": "Scenario 1 (-250 kcal/day)",
-          "col2": "TDEE - 250 kcal/day",
-          "col3": "Mathematical example of 250 kcal lower daily intake"
+          "col1": "Mild Deficit (-250 kcal/day)",
+          "col2": "TDEE minus 250 kcal/day",
+          "col3": "Gradual fat loss of about half a pound per week"
         },
         {
-          "col1": "Scenario 2 (-500 kcal/day)",
-          "col2": "TDEE - 500 kcal/day",
-          "col3": "Mathematical example of 500 kcal lower daily intake"
+          "col1": "Standard Deficit (-500 kcal/day)",
+          "col2": "TDEE minus 500 kcal/day",
+          "col3": "Standard deficit for losing about one pound per week"
         },
         {
-          "col1": "Scenario 3 (-750 kcal/day)",
-          "col2": "TDEE - 750 kcal/day",
-          "col3": "Mathematical example of 750 kcal lower daily intake"
+          "col1": "Moderate Deficit (-750 kcal/day)",
+          "col2": "TDEE minus 750 kcal/day",
+          "col3": "Faster fat loss for people with higher calorie needs"
         },
         {
-          "col1": "Example Surplus (+250 kcal/day)",
-          "col2": "TDEE + 250 to 300 kcal/day",
-          "col3": "Mathematical example of 250–300 kcal higher daily intake"
+          "col1": "Lean Surplus (+250 kcal/day)",
+          "col2": "TDEE plus 250 kcal/day",
+          "col3": "Helps build lean muscle while limiting extra body fat"
         }
       ],
       "faqs": [
         {
-          "question": "What is a maintenance calorie calculator and how does it work online?",
-          "answer": "A maintenance calorie calculator shows how many calories you need each day to stay at your current weight. It estimates your resting burn with the Mifflin-St Jeor formula and multiplies it by your activity score."
+          "question": "What are maintenance calories and how do they work?",
+          "answer": "Maintenance calories are the total calories you burn each day. When calories in match calories out, your body weight stays the same."
         },
         {
-          "question": "How to calculate calorie maintenance by age, height (cm), and weight (kg)?",
-          "answer": "Enter your age, sex, height in cm, weight in kg, and weekly exercise level. The calculator first finds your resting burn, then scales it to match your lifestyle."
+          "question": "How do I find my maintenance calories?",
+          "answer": "Enter your age, sex, height, weight, and weekly activity. The calculator finds your resting burn with the Mifflin-St Jeor formula, then multiplies it by your activity."
         },
         {
-          "question": "What happens if I eat at my maintenance calories every day?",
-          "answer": "Eating at your maintenance level keeps your energy in balance. Your body uses the energy you take in, so your scale weight remains steady over time."
+          "question": "Why do real energy needs differ from formula calculations?",
+          "answer": "Formulas provide helpful estimates. Daily burn can vary by 10% to 15% due to genetics, muscle mass, sleep, and non-exercise movement."
         },
         {
-          "question": "How do I use my maintenance calories to calculate calories for weight loss?",
-          "answer": "To lose weight, subtract 300 to 500 calories from your daily maintenance number. This creates a safe calorie deficit so your body uses stored fat for fuel."
+          "question": "How can I test my true maintenance calories?",
+          "answer": "Eat your estimated calories for two to three weeks. Track your weight each morning. If your average weight stays flat, you have found your true maintenance."
         },
         {
-          "question": "Is a calorie maintenance calculator accurate for men and women of all ages?",
-          "answer": "Yes, it uses validated formulas that give reliable starting numbers for healthy adults. Individual metabolism varies slightly, so monitor your weight over three weeks and adjust if needed."
+          "question": "How do I adjust calories for weight loss or muscle gain?",
+          "answer": "To lose fat, eat 300 to 500 calories below maintenance each day. To build muscle, eat 200 to 300 calories above maintenance while lifting weights."
         }
       ]
     },
@@ -4214,60 +3496,60 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     },
     "hi": {
-      "eyebrow": "कैलोरी रखरखाव और योजना",
-      "title": "रखरखाव कैलोरी कैलकुलेटर – दैनिक कैलोरी आवश्यकता की गणना करें",
-      "intro": "हमारा मुफ़्त Maintenance Calorie Calculator आपकी दैनिक रखरखाव कैलोरी, कुल दैनिक ऊर्जा व्यय (TDEE) और वजन घटाने या मांसपेशियों के निर्माण के लक्ष्यों के लिए आवश्यक कैलोरी की सटीक गणना करता है।",
-      "formulaTitle": "रखरखाव कैलोरी सूत्र एवं ऊर्जा संतुलन",
-      "formulaDesc": "रखरखाव कैलोरी = BMR × activity गुणक। व्यक्तिगत लक्ष्यों के आधार पर ऊर्जा समायोजन किया जा सकता है।",
+      "eyebrow": "ऊर्जा संतुलन एवं पोषण योजना",
+      "title": "मेंटेनेंस कैलोरी कैलकुलेटर – दैनिक ऊर्जा आवश्यकता की गणना",
+      "intro": "हमारा मुफ़्त Maintenance Calorie Calculator आपकी दैनिक ऊर्जा आवश्यकता, कुल दैनिक व्यय (TDEE) और स्वस्थ शारीरिक भार प्रबंधन के लिए आवश्यक पोषण लक्ष्यों का पारदर्शी आकलन करता है।",
+      "formulaTitle": "दैनिक मेंटेनेंस कैलोरी सूत्र एवं ऊर्जा संतुलन",
+      "formulaDesc": "मेंटेनेंस कैलोरी = BMR × शारीरिक गतिविधि गुणक (PAL)। व्यक्तिगत लक्ष्यों और जीवनशैली के अनुसार ऊर्जा का सटीक समायोजन किया जाता है।",
       "formulaCode": "Maintenance = BMR × PAL",
-      "tableTitle": "कैलोरी रखरखाव एवं वजन लक्ष्य तालिका",
+      "tableTitle": "ऊर्जा आवश्यकता एवं शारीरिक भार लक्ष्य तालिका",
       "tableRows": [
         {
-          "col1": "रखरखाव कैलोरी",
-          "col2": "100% TDEE (0 kcal बदलाव)",
-          "col3": "वर्तमान वजन को बनाए रखता है"
+          "col1": "स्थिर वजन ऊर्जा (Maintenance)",
+          "col2": "100% TDEE (शून्य ऊर्जा अंतर)",
+          "col3": "वर्तमान शारीरिक भार और चयापचय संतुलन बनाए रखने हेतु"
         },
         {
-          "col1": "हल्की कमी (वजन घटाना)",
+          "col1": "हल्का ऊर्जा घाटा (-250 kcal/दिन)",
           "col2": "TDEE - 250 kcal/दिन",
-          "col3": "धीमा, निरंतर वजन घटाना (~0.25 किग्रा प्रति सप्ताह)"
+          "col3": "धीमा एवं सतत भार प्रबंधन (~0.25 किग्रा प्रति सप्ताह)"
         },
         {
-          "col1": "उदाहरण कैलोरी घाटा",
-          "col2": "TDEE घटाव अनुमानित घाटा",
-          "col3": "वजन योजना के लिए उदाहरण संदर्भ"
+          "col1": "मानक ऊर्जा घाटा (-500 kcal/दिन)",
+          "col2": "TDEE - 500 kcal/दिन",
+          "col3": "संतुलित वसा घटाने हेतु मानक पोषण स्तर (~0.5 किग्रा प्रति सप्ताह)"
         },
         {
-          "col1": "मांसपेशी वृद्धि (सरप्लस)",
+          "col1": "मांसपेशी विकास सरप्लस (+250 kcal/दिन)",
           "col2": "TDEE + 250 से 300 kcal/दिन",
-          "col3": "मांसपेशी निर्माण के लिए अतिरिक्त कैलोरी"
+          "col3": "लीन मसल मास निर्माण हेतु नियंत्रित अतिरिक्त पोषण"
         },
         {
-          "col1": "श्रेणी / स्तर 5",
-          "col2": "TDEE + 250 to 300 kcal/day",
-          "col3": "प्रतिदिन 250–300 किलोकैलोरी अधिक खपत का गणितीय उदाहरण"
+          "col1": "तीव्र ऊर्जा घाटा (-750 kcal/दिन)",
+          "col2": "TDEE - 750 kcal/दिन",
+          "col3": "विशेषज्ञ देखरेख में अल्पकालिक ऊर्जा कमी का उदाहरण"
         }
       ],
       "faqs": [
         {
-          "question": "रखरखाव कैलोरी (Maintenance Calories) क्या हैं?",
-          "answer": "रखरखाव कैलोरी वह कैलोरी मात्रा है जिसे खाने से आपका वजन न तो बढ़ता है और न ही घटता है।"
+          "question": "दैनिक मेंटेनेंस कैलोरी (Maintenance Calories) का क्या अर्थ है?",
+          "answer": "यह वह दैनिक ऊर्जा मात्रा है, जिसका उपभोग करने पर आपके शरीर का वजन यथावत बना रहता है—अर्थात ग्रहण की गई ऊर्जा खर्च की गई ऊर्जा के बराबर होती है।"
         },
         {
-          "question": "रखरखाव कैलोरी की गणना कैसे होती है?",
-          "answer": "यह आपके BMR और आपकी दैनिक शारीरिक गतिविधि के स्तर (TDEE) के सटीक जोड़ पर आधारित होती है।"
+          "question": "शरीर के ऊर्जा संतुलन की गणना किस प्रकार की जाती है?",
+          "answer": "यह आकलन मिफलिन-सेंट जेओर सूत्र से प्राप्त बेसल मेटाबॉलिक रेट (BMR) और आपकी नियमित शारीरिक दिनचर्या (PAL) के संयोजन पर आधारित होता है।"
         },
         {
-          "question": "वजन घटाने के लिए रखरखाव कैलोरी से कितना कम खाएं?",
-          "answer": "धीमी और टिकाऊ वसा हानि के लिए रखरखाव कैलोरी से 250 से 500 कैलोरी कम खाएं।"
+          "question": "सुरक्षित वजन घटाने के लिए दैनिक उपभोग में कितनी कमी करनी चाहिए?",
+          "answer": "धीमी और टिकाऊ वसा हानि के लिए मेंटेनेंस ऊर्जा से 250 से 500 किलोकैलोरी का मध्यम घाटा सबसे सुरक्षित माना जाता है।"
         },
         {
-          "question": "मांसपेशियां बढ़ाने (Bulking) के लिए कितनी कैलोरी जोड़ें?",
-          "answer": "मांसपेशियां बढ़ाने के लिए रखरखाव कैलोरी में 250 से 500 कैलोरी का हल्का सरप्लस (Surplus) जोड़ें।"
+          "question": "मांसपेशियों के विकास (Bulking) हेतु कितना अतिरिक्त आहार उपयुक्त रहता है?",
+          "answer": "अनावश्यक चर्बी बढ़ाए बिना मांसपेशियां विकसित करने के लिए दैनिक मेंटेनेंस में 250 से 300 किलोकैलोरी का हल्का सरप्लस जोड़ना उचित है।"
         },
         {
-          "question": "क्या उम्र बढ़ने से रखरखाव कैलोरी कम होती है?",
-          "answer": "हाँ, उम्र बढ़ने के साथ मेटाबॉलिज्म और मांसपेशियों में प्राकृतिक कमी के कारण रखरखाव कैलोरी थोड़ा घट सकती है।"
+          "question": "क्या उम्र बढ़ने के साथ शरीर की ऊर्जा आवश्यकताएं स्वाभाविक रूप से घटती हैं?",
+          "answer": "हाँ, उम्र बढ़ने के साथ प्राकृतिक रूप से चयापचय दर और मांसपेशियों के घनत्व में आने वाले धीमे बदलावों के कारण दैनिक ऊर्जा जरूरतें थोड़ी कम हो सकती हैं।"
         }
       ]
     }
@@ -4275,59 +3557,59 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "body-fat-calculator": {
     "en": {
       "eyebrow": "US Navy Anthropometric Reference",
-      "title": "Body Fat Calculator – US Navy Body Fat Percentage Tool",
-      "intro": "Estimate your body fat percentage using the US Navy circumference-based estimation formula. Based on waist, neck, height, and hip circumference measurements, estimate your body fat %, lean mass ratio, and ACE health category reference thresholds.",
-      "formulaTitle": "US Navy Body Fat Formula Equations (Logarithmic Tape Method)",
+      "title": "Body Composition & Navy Tape Method Calculator",
+      "intro": "Estimate your adipose and lean tissue distribution using the US Navy circumference model. By entering your waist, neck, height, and hip measurements, this tool calculates estimated body fat percentage, lean mass ratio, and ACE reference thresholds.",
+      "formulaTitle": "US Navy Circumference Equations (Logarithmic Tape Method)",
       "formulaDesc": "Men: %Fat = 495 / [1.0324 - 0.19077 × log10(waist - neck in cm) + 0.15456 × log10(height in cm)] - 450 | Women: %Fat = 495 / [1.29579 - 0.35004 × log10(waist + hip - neck in cm) + 0.22100 × log10(height in cm)] - 450",
       "formulaCode": "Men: 495 / [ 1.0324 - 0.19077 log10(W - N) + 0.15456 log10(H) ] - 450 | Women: 495 / [ 1.29579 - 0.35004 log10(W + Hip - N) + 0.22100 log10(H) ] - 450",
-      "tableTitle": "ACE & US Navy Body Fat Percentage Categorization Table",
+      "tableTitle": "ACE & US Navy Body Composition Classification Matrix",
       "tableRows": [
         {
           "col1": "Essential Fat Level",
           "col2": "Men: 2% - 5% | Women: 10% - 13%",
-          "col3": "Essential body-fat reference range for physiological function"
+          "col3": "Essential adipose threshold required for hormonal and cellular health"
         },
         {
           "col1": "Athletes Category",
           "col2": "Men: 6% - 13% | Women: 14% - 20%",
-          "col3": "Low body fat percentage typical in endurance & resistance trained athletes"
+          "col3": "Lean athletic range typical for endurance and strength athletes"
         },
         {
           "col1": "Fitness Level",
           "col2": "Men: 14% - 17% | Women: 21% - 24%",
-          "col3": "Reference range commonly associated with fitness-oriented populations"
+          "col3": "Optimal fitness proportion for active adults"
         },
         {
           "col1": "Average Population",
           "col2": "Men: 18% - 24% | Women: 25% - 31%",
-          "col3": "Standard acceptable body fat percentage range for healthy adults"
+          "col3": "Standard population baseline for general health"
         },
         {
           "col1": "Obese Classification",
           "col2": "Men: ≥ 25% | Women: ≥ 32%",
-          "col3": "Higher body-fat reference category; interpretation varies by age, sex, population, and measurement method"
+          "col3": "Elevated adiposity threshold indicating increased metabolic risk"
         }
       ],
       "faqs": [
         {
-          "question": "What is the Body Fat Calculator and how does the US Navy formula work?",
-          "answer": "The Body Fat Calculator is an anthropometric health tool developed by the Naval Health Research Center. It computes body fat percentage using circumference measurements (waist, neck, and hips for women) combined with height in a logarithmic regression equation."
+          "question": "How does the US Navy circumference method estimate body composition?",
+          "answer": "This method was developed by the Naval Health Research Center. It calculates relative adiposity using logarithmic equations comparing waist, neck, and hip circumferences against total stature."
         },
         {
-          "question": "How accurate is the Body Fat Calculator compared to DEXA scans?",
-          "answer": "Circumference-based estimates can differ from laboratory or imaging-based methods such as DEXA. Results should be interpreted as estimates rather than direct measurements."
+          "question": "How do tape-based estimates compare to DEXA scans?",
+          "answer": "Anthropometric calculations provide an accessible home screening benchmark within roughly 3% to 4% of dual-energy X-ray absorptiometry (DEXA), though fluid retention and measuring technique can introduce variance."
         },
         {
-          "question": "How do I take tape measure readings for the Body Fat Calculator?",
-          "answer": "For Men: measure neck circumference just below the larynx and waist horizontally at the navel level. For Women: measure neck below the larynx, waist at the narrowest natural waistline, and hips at the widest point of the buttocks."
+          "question": "What is the recommended technique for taking circumference measurements?",
+          "answer": "For men: measure the neck just below the larynx and the waist horizontally at navel level. For women: measure the neck below the larynx, the narrowest point of the natural waist, and the hips at the widest protrusion of the gluteal muscles."
         },
         {
-          "question": "Why does the Body Fat Calculator use neck and waist instead of scale weight?",
-          "answer": "Scale weight alone fails to differentiate between skeletal muscle and adipose fat. Circumference metrics reflect abdominal fat deposition, providing additional context about body composition."
+          "question": "Why evaluate circumferences rather than bathroom scale weight alone?",
+          "answer": "Standard scale weight cannot distinguish between dense skeletal muscle and adipose tissue. Evaluating abdominal circumferences isolates central adiposity, which correlates more closely with cardiovascular and metabolic health."
         },
         {
-          "question": "What is a healthy body fat percentage for men and women?",
-          "answer": "According to the American Council on Exercise (ACE), a healthy fitness body fat percentage is 14%-17% for men and 21%-24% for women. Essential physiological minimum fat is 2-5% for men and 10-13% for women."
+          "question": "What are the recommended health categories defined by the American Council on Exercise (ACE)?",
+          "answer": "ACE guidelines identify 14%–17% for men and 21%–24% for women as a typical fitness range. Acceptable general health spans 18%–24% for men and 25%–31% for women, while essential biological minimums are 2%–5% and 10%–13% respectively."
         }
       ]
     },
@@ -4808,58 +4090,58 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Ideal Body Weight Reference",
       "title": "Estimate Ideal Body Weight (IBW) using commonly cited equations",
-      "intro": "Find your ideal body weight with our free online calculator. It estimates healthy weight ranges based on your height and sex. We compare four popular formulas: Devine, Robinson, Miller, and Hamwi. We also show your healthy weight range based on WHO BMI standards.",
+      "intro": "Find your ideal body weight with our free calculator. It estimates healthy weight ranges based on your height and sex. Compare four classic formulas: Devine, Robinson, Miller, and Hamwi. View your target weight and WHO healthy range in seconds.",
       "formulaTitle": "Standard IBW Formulas (Devine, Robinson, Miller & Hamwi)",
-      "formulaDesc": "Each formula calculates a weight guideline based on height above five feet. These numbers are helpful reference points, not rigid rules. A healthy weight depends on your frame size, muscle mass, and overall lifestyle.",
+      "formulaDesc": "Each formula calculates a healthy baseline starting at 5 feet tall. These numbers are reference guides, not strict rules. Frame size, muscle mass, and bone density all shape your healthy weight.",
       "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
       "tableTitle": "Ideal Body Weight (IBW) Comparison Table by Height & Formula",
       "tableRows": [
         {
           "col1": "Devine Formula (1974)",
           "col2": "50 kg (M) / 45.5 kg (F) + 2.3 kg/in > 5ft",
-          "col3": "Widely cited formula introduced in 1974"
+          "col3": "Classic medical formula used since 1974"
         },
         {
           "col1": "Robinson Formula (1983)",
           "col2": "52 kg (M) / 49.0 kg (F) + 1.9 or 1.7 kg/in",
-          "col3": "Modification of Devine formula optimized for medium frame adults"
+          "col3": "Popular formula tuned for average adult frames"
         },
         {
           "col1": "Miller Formula (1983)",
           "col2": "56.2 kg (M) / 53.1 kg (F) + 1.41 or 1.36 kg/in",
-          "col3": "Higher base estimate for shorter individuals, gentler slope per inch"
+          "col3": "Slightly higher base weight for shorter adults"
         },
         {
           "col1": "Hamwi Formula (1964)",
           "col2": "48 kg (M) / 45.5 kg (F) + 2.7 or 2.2 kg/in",
-          "col3": "Historical reference formula"
+          "col3": "Early clinical benchmark formula"
         },
         {
           "col1": "WHO Healthy BMI Range",
           "col2": "18.5 – 24.9 kg/m²",
-          "col3": "Population health reference window based on height squared"
+          "col3": "Flexible population range based on height squared"
         }
       ],
       "faqs": [
         {
-          "question": "What is an Ideal Weight Calculator (IBW Calculator)?",
-          "answer": "An Ideal Weight Calculator estimates a healthy weight range based on your height and biological sex. It uses classic clinical equations like Devine, Robinson, Miller, and Hamwi."
+          "question": "What is an Ideal Weight Calculator?",
+          "answer": "An Ideal Weight Calculator estimates a healthy weight range for your height and sex. It uses classic formulas like Devine, Robinson, Miller, and Hamwi."
         },
         {
-          "question": "What is my ideal weight for my height in kg or lbs?",
-          "answer": "Enter your height and sex to see your estimate. For example, a 5 ft 10 in (178 cm) male has an estimated Devine weight of about 73 kg, with a WHO healthy weight range of 59 kg to 79 kg."
+          "question": "What is my ideal weight for my height?",
+          "answer": "Enter your height and sex to check your numbers. For example, a 5'10\" male has an estimated Devine weight of 73 kg (161 lbs), within a WHO healthy range of 59 to 79 kg."
         },
         {
-          "question": "Why are there different formulas for calculating ideal weight for females vs males?",
-          "answer": "Men generally have higher bone density and muscle mass per inch of height than women. Because of this natural difference, formulas use different base numbers for each sex."
+          "question": "Why do formulas use different numbers for men and women?",
+          "answer": "Men naturally have higher muscle mass and bone density per inch of height. Formulas account for these physical differences."
         },
         {
-          "question": "What is the difference between Ideal Body Weight (IBW) and healthy BMI weight range?",
-          "answer": "IBW formulas give a single reference target for your height. In contrast, the WHO BMI range gives a broad window of 18.5 to 24.9, which easily fits different body frames and bone structures."
+          "question": "How does ideal weight differ from a healthy BMI range?",
+          "answer": "Formulas provide a single reference target. In contrast, BMI gives a broad window (18.5 to 24.9) that accommodates different bone structures."
         },
         {
-          "question": "Is the ideal body weight calculator accurate for muscular individuals?",
-          "answer": "IBW formulas are built for general body types. Muscular athletes often weigh more than their formula target while still carrying very healthy, low body fat levels."
+          "question": "Is this calculator accurate for muscular lifters and athletes?",
+          "answer": "Formulas assume average body frames. Muscular lifters often weigh more than formula targets while maintaining low, healthy body fat."
         }
       ]
     },
@@ -5157,11 +4439,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "calorie-calculator": {
     "en": {
       "eyebrow": "Calorie Planning Reference",
-      "title": "Calorie Deficit Calculator – Estimated Calorie Planning",
+      "title": "Daily Calorie Target & Energy Balance Calculator",
       "intro": "Use our free Calorie Calculator to plan your daily meals and weight goals. It estimates how many calories you burn each day based on BMR and TDEE. You can easily see how small calorie changes affect your weight over time. Simply enter your age, sex, height, weight, and activity level to get started.",
-      "formulaTitle": "Calorie Deficit Calculation Formulas & Weight Change Math",
-      "formulaDesc": "Daily Target = TDEE - Daily Deficit. A daily deficit of 500 calories adds up to 3,500 calories per week, which is roughly equal to one pound of body fat.",
-      "formulaCode": "Target Calories = TDEE - Daily Deficit",
+      "formulaTitle": "Energy Expenditure & Caloric Adjustment Math",
+      "formulaDesc": "Daily Target = TDEE - Planned Deficit. A negative energy balance of 500 kcal daily totals 3,500 kcal per week, roughly equivalent to one pound of fat tissue.",
+      "formulaCode": "Target Calories = TDEE - Planned Reduction",
       "tableTitle": "Example Calorie Differences & Weight-Change Math",
       "tableRows": [
         {
@@ -5187,24 +4469,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "What is a calorie deficit and how does a calorie deficit calculator work?",
-          "answer": "A calorie deficit happens when you eat fewer calories than your body burns each day. The calculator finds your daily burn (TDEE) and subtracts your chosen goal to give your target daily intake."
+          "question": "What is an energy deficit and how does this calculator determine daily intake?",
+          "answer": "An energy deficit occurs when daily intake is lower than total daily energy expenditure (TDEE). The tool calculates your maintenance expenditure and applies a gradual adjustment to establish your daily target."
         },
         {
-          "question": "How does calorie-deficit and weight-change math work?",
-          "answer": "One pound of body fat stores about 3,500 calories. If you create a deficit of 500 calories each day, you create a 3,500-calorie gap over a week. This often leads to about one pound of weight loss."
+          "question": "How does caloric reduction translate to weight loss over time?",
+          "answer": "One pound of adipose tissue holds approximately 3,500 kcal of stored energy. Creating a 500 kcal daily gap creates a 3,500 kcal weekly deficit, which typically yields roughly one pound of gradual fat reduction."
         },
         {
-          "question": "What calorie deficit is commonly used for weight management?",
-          "answer": "A deficit of 300 to 500 calories per day is common and sustainable for most adults. Larger deficits can cause fatigue and muscle loss, so keep your reduction moderate."
+          "question": "What reduction rate is recommended for sustainable progress?",
+          "answer": "A moderate deficit of 300 to 500 calories per day provides steady fat loss while preserving metabolic health. Excessive restriction risks lethargy, micronutrient deficiency, and muscle loss."
         },
         {
-          "question": "How much protein should I eat while in a calorie deficit?",
-          "answer": "Aim for 1.6 to 2.2 grams of protein per kilogram of body weight while cutting calories. Getting enough protein keeps you full and protects your lean muscle."
+          "question": "How much protein should I consume during a cutting phase?",
+          "answer": "Consuming 1.6 to 2.2 grams of protein per kilogram of body weight helps preserve lean muscle tissue and increases satiety while in a negative energy balance."
         },
         {
-          "question": "What should I do if my weight loss stalls in a calorie deficit?",
-          "answer": "Weight plateaus are common. Check your portion sizes and track hidden liquid calories. As you lose weight, your body burns slightly fewer calories, so recalculate your TDEE every month."
+          "question": "Why does weight loss sometimes stall during an extended diet?",
+          "answer": "Metabolic adaptation occurs as body mass drops, slightly reducing daily expenditure. Track portion accuracy and recalculate your TDEE every 4 to 6 weeks to adjust your target intake."
         }
       ]
     },
@@ -5421,110 +4703,110 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     },
     "hi": {
-      "eyebrow": "कैलोरी योजना एवं संदर्भ",
-      "title": "कैलोरी घाटा कैलकुलेटर – Calorie Deficit कैलकुलेटर Online",
-      "intro": "हमारे मुफ़्त Calorie Deficit Calculator से अपने वजन घटाने या बढ़ाने के लक्ष्यों के लिए दैनिक कैलोरी अंतर और TDEE की सटीक गणना करें। Mifflin-St Jeor फॉर्मूले पर आधारित सुरक्षित गणना।",
+      "eyebrow": "पोषण योजना एवं ऊर्जा घाटा संदर्भ",
+      "title": "कैलोरी घाटा कैलकुलेटर – Calorie Deficit ऑनलाइन गणना",
+      "intro": "हमारे मुफ़्त Calorie Deficit Calculator से अपने वजन प्रबंधन लक्ष्यों के लिए दैनिक ऊर्जा अंतर और TDEE का वैज्ञानिक आकलन करें। Mifflin-St Jeor फॉर्मूले पर आधारित सुरक्षित गणना।",
       "formulaTitle": "कैलोरी घाटा सूत्र एवं ऊर्जा गणित",
-      "formulaDesc": "दैनिक कैलोरी 섭취 = TDEE - लक्ष्य घाटा | साप्ताहिक ऊर्जा अंतर = दैनिक घाटा × 7 (लगभग 7700 kcal/kg गणितीय संदर्भ)",
+      "formulaDesc": "दैनिक लक्षित ऊर्जा = TDEE - दैनिक ऊर्जा घाटा | साप्ताहिक ऊर्जा अंतर = दैनिक घाटा × 7 (लगभग 7,700 kcal प्रति किलोग्राम वसा का गणितीय मानक)",
       "formulaCode": "Target Calories = TDEE - Daily Deficit",
-      "tableTitle": "कैलोरी घाटा एवं वजन परिवर्तन संदर्भ तालिका",
+      "tableTitle": "ऊर्जा घाटा परिदृश्य एवं वजन परिवर्तन संदर्भ तालिका",
       "tableRows": [
         {
           "col1": "परिदृश्य A: 250 kcal/दिन घाटा",
-          "col2": "~1,750 kcal साप्ताहिक अंतर",
-          "col3": "हल्का दैनिक कैलोरी अंतर संदर्भ"
+          "col2": "~1,750 kcal साप्ताहिक संचयी अंतर",
+          "col3": "हल्का दैनिक ऊर्जा अंतर संदर्भ"
         },
         {
           "col1": "परिदृश्य B: 500 kcal/दिन घाटा",
-          "col2": "~3,500 kcal साप्ताहिक अंतर",
-          "col3": "मानक दैनिक कैलोरी अंतर संदर्भ"
+          "col2": "~3,500 kcal साप्ताहिक संचयी अंतर",
+          "col3": "मानक दैनिक ऊर्जा अंतर संदर्भ"
         },
         {
-          "col1": "ऊर्जा संतुलन",
-          "col2": "0 kcal अंतर",
-          "col3": "वजन स्थिरता के लिए TDEE"
+          "col1": "ऊर्जा संतुलन (0 kcal)",
+          "col2": "0 kcal साप्ताहिक अंतर",
+          "col3": "शारीरिक भार स्थिरता के लिए TDEE स्तर"
         },
         {
-          "col1": "श्रेणी / स्तर 4",
-          "col2": "0 kcal net difference / week",
-          "col3": "वजन स्थिर रखने के लिए अनुमानित टीडीईई ऊर्जा संतुलन"
+          "col1": "परिदृश्य C: 750 kcal/दिन घाटा",
+          "col2": "~5,250 kcal साप्ताहिक संचयी अंतर",
+          "col3": "सक्रिय जीवनशैली के लिए उच्च ऊर्जा अंतर संदर्भ"
         }
       ],
       "faqs": [
         {
-          "question": "कैलोरी कैलकुलेटर दैनिक कैलोरी आवश्यकता कैसे निकालता है?",
-          "answer": "यह आपके BMR और आपकी दैनिक गतिविधियों (TDEE) को मिलाकर वजन घटाने या बढ़ाने के लिए लक्षित कैलोरी तय करता है।"
+          "question": "दैनिक कैलोरी आवश्यकता का आकलन किस प्रकार किया जाता है?",
+          "answer": "यह कैलकुलेटर मिफलिन-सेंट जेओर समीकरण द्वारा आपके बेसल मेटाबॉलिज्म (BMR) और दैनिक शारीरिक गतिविधि (TDEE) के संयोजन से संतुलित ऊर्जा लक्ष्य निर्धारित करता है।"
         },
         {
-          "question": "कैलोरी घाटा (Calorie Deficit) क्या है?",
-          "answer": "अपनी बर्न की गई कैलोरी से कम कैलोरी खाना कैलोरी घाटा कहलाता है, जिससे शरीर वसा बर्न करता है।"
+          "question": "ऊर्जा घाटे (Calorie Deficit) की वैज्ञानिक परिभाषा क्या है?",
+          "answer": "जब शरीर द्वारा दैनिक गतिविधियों में व्यय की गई ऊर्जा की तुलना में भोजन से कम ऊर्जा ग्रहण की जाती है, तो इसे कैलोरी डेफिसिट कहा जाता है। इस अवस्था में शरीर ऊर्जा आपूर्ति हेतु संचित वसा का उपयोग करता है।"
         },
         {
-          "question": "1 किग्रा वसा घटाने के लिए कितनी कैलोरी की कमी चाहिए?",
-          "answer": "लगभग 7,700 कैलोरी की कुल कमी से शरीर का 1 किग्रा वजन कम होता है।"
+          "question": "एक किलोग्राम शारीरिक वसा घटाने के लिए कितने संचयी ऊर्जा अंतर की आवश्यकता होती है?",
+          "answer": "वैज्ञानिक पोषण मानकों के अनुसार लगभग 7,700 किलोकैलोरी के संचयी घाटे से एक किलोग्राम शारीरिक वसा कम होती है।"
         },
         {
-          "question": "सुरक्षित वजन घटाने की गति क्या है?",
-          "answer": "प्रति सप्ताह 0.5 से 1 किग्रा वजन घटाना सुरक्षित और टिकाऊ माना जाता है।"
+          "question": "टिकाऊ और स्वस्थ वजन प्रबंधन के लिए अनुशंसित गति क्या है?",
+          "answer": "स्वास्थ्य विशेषज्ञों के अनुसार प्रति सप्ताह 0.5 से 1 किलोग्राम (लगभग 500 से 1,000 kcal/दिन की मध्यम कमी) वजन घटाना दीर्घकालिक स्वास्थ्य और मांसपेशियों की सुरक्षा हेतु सर्वोत्तम माना जाता है।"
         },
         {
-          "question": "क्या भोजन की गुणवत्ता केवल कैलोरी गिनती से अधिक महत्वपूर्ण है?",
-          "answer": "हाँ, कैलोरी के साथ-साथ प्रोटीन, फाइबर और पोषक तत्वों से भरपूर संतुलित आहार आवश्यक है।"
+          "question": "क्या पोषक तत्वों की गुणवत्ता केवल ऊर्जा की मात्रा से अधिक महत्वपूर्ण है?",
+          "answer": "निसंदेह। कैलोरी की संख्या के अतिरिक्त पर्याप्त प्रोटीन, आहारीय फाइबर, विटामिन और खनिजों से युक्त संतुलित आहार चयापचय को सक्रिय रखने और मांसपेशियों के संरक्षण के लिए अनिवार्य है।"
         }
       ]
     }
   },
   "protein-intake-calculator": {
     "en": {
-      "eyebrow": "Sports Nutrition Reference",
+      "eyebrow": "Daily Nutrition Reference",
       "title": "Protein Intake Calculator – Daily Protein Reference",
-      "intro": "Find your daily protein target with our free Protein Intake Calculator. It estimates how much protein you need each day based on your body weight, activity level, and fitness goals. See your personal recommendations in grams per day.",
-      "formulaTitle": "Protein Intake Formula & Goal Multipliers",
-      "formulaDesc": "Daily Protein (g) = Weight (kg) × Goal Multiplier. Sedentary adults need about 0.8 g/kg. Active runners and cyclists need 1.2 to 1.4 g/kg. Strength trainers benefit from 1.6 to 2.2 g/kg.",
+      "intro": "Find your daily protein target with our free Protein Intake Calculator. It estimates how much protein you need each day based on your body weight, workout routine, and fitness goals. View your personalized recommendations in grams per day.",
+      "formulaTitle": "Protein Intake Formula & Activity Multipliers",
+      "formulaDesc": "Daily Protein (g) = Body Weight (kg) × Goal Multiplier. Sedentary adults need about 0.8 g/kg. Active runners and cyclists need 1.2 to 1.4 g/kg. Strength athletes benefit from 1.6 to 2.2 g/kg.",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "Daily Protein Reference Range (g/kg) Matrix by Activity & Goal",
+      "tableTitle": "Daily Protein Recommendations by Activity & Goal",
       "tableRows": [
         {
           "col1": "Sedentary Adult Baseline",
-          "col2": "0.8 g / kg body weight",
-          "col3": "RDA baseline reference"
+          "col2": "0.8 g per kg body weight",
+          "col3": "Baseline recommended daily allowance (RDA) to prevent nutritional deficiency"
         },
         {
-          "col1": "Active Endurance Athlete",
-          "col2": "1.2 – 1.4 g / kg body weight",
-          "col3": "Reference athletic range"
+          "col1": "Endurance Athlete",
+          "col2": "1.2 – 1.4 g per kg body weight",
+          "col3": "Supports muscle recovery from distance running, swimming, or cycling"
         },
         {
-          "col1": "Muscle Growth (Hypertrophy)",
-          "col2": "1.6 – 2.2 g / kg body weight",
-          "col3": "Common athletic target for training"
+          "col1": "Strength Training & Muscle Growth",
+          "col2": "1.6 – 2.2 g per kg body weight",
+          "col3": "Optimal range to build muscle and support strength gains"
         },
         {
           "col1": "Fat Loss Calorie Deficit",
-          "col2": "1.8 – 2.4 g / kg body weight",
-          "col3": "Example range referenced during calorie deficit planning"
+          "col2": "1.8 – 2.4 g per kg body weight",
+          "col3": "Helps preserve lean muscle and curbs hunger while eating fewer calories"
         }
       ],
       "faqs": [
         {
-          "question": "What is the Protein Intake Calculator?",
-          "answer": "The Protein Intake Calculator is an evidence-based tool that estimates your daily protein needs in grams. It matches your target to your weight, daily workouts, and fitness goals."
+          "question": "How much protein do I need each day?",
+          "answer": "Sedentary adults need at least 0.8 grams of protein per kilogram of body weight. Active people and gym goers generally benefit from 1.2 to 2.2 grams per kilogram."
         },
         {
-          "question": "How much protein do I need per day for muscle building vs weight loss?",
-          "answer": "For building muscle, aim for 1.6 to 2.2 grams of protein per kilogram of body weight. When cutting calories for fat loss, aim for 1.8 to 2.4 grams per kilogram to protect your lean muscle."
+          "question": "Why is protein intake important when losing weight?",
+          "answer": "Protein helps keep you full and satisfied between meals. Eating enough protein during a calorie deficit also protects your muscles, ensuring that most weight lost is fat."
         },
         {
-          "question": "How to calculate daily protein requirement in grams per kg of body weight?",
-          "answer": "Multiply your body weight in kilograms by your daily goal factor. For example, an active 70 kg adult aiming for 2.0 g/kg needs 140 grams of protein each day."
+          "question": "How do I calculate my daily protein target?",
+          "answer": "Multiply your body weight in kilograms by your target factor. For example, a 70 kg adult who lifts weights might choose 1.8 g/kg, which equals 126 grams of protein daily."
         },
         {
-          "question": "What are the best high-protein food sources?",
-          "answer": "Great protein sources include chicken breast (31g per 100g), Greek yogurt (10g per 100g), eggs (6g per egg), tofu (8g per 100g), and lentils (9g per 100g)."
+          "question": "What are some high-protein foods to include in my diet?",
+          "answer": "Healthy protein sources include chicken breast (31g per 100g), Greek yogurt (10g per 100g), eggs (6g each), tofu (8g per 100g), and cooked lentils (9g per 100g)."
         },
         {
-          "question": "Who should consult a professional regarding protein intake targets?",
-          "answer": "People with kidney disease or liver conditions should speak with a doctor or dietitian. They may need to limit daily protein to protect their organ health."
+          "question": "Who should be cautious with high protein intake?",
+          "answer": "Anyone with kidney or liver conditions should consult a doctor before increasing protein. Healthy kidneys easily handle athletic protein levels, but impaired organs may need lower amounts."
         }
       ]
     },
@@ -6118,48 +5400,48 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Macronutrient Reference",
       "title": "Macro Calculator – Estimated Daily Macro Split",
-      "intro": "Calculate your estimated daily carb, protein, and fat targets in grams with our free Macro Calculator to explore an example macronutrient ratio for meal planning. There is no single optimal macronutrient ratio that applies universally.",
+      "intro": "Calculate your daily protein, carbohydrate, and fat targets with our free Macro Calculator. It turns your daily calorie goal into practical gram amounts for easy meal planning. Pick a balanced, low-carb, or high-protein split to match your fitness routine.",
       "formulaTitle": "Macro Caloric Conversion Formulas",
-      "formulaDesc": "Carbohydrate Grams = (Total Calories × Carb %) / 4 | Protein Grams = (Total Calories × Protein %) / 4 | Fat Grams = (Total Calories × Fat %) / 9",
+      "formulaDesc": "Carbohydrates and protein each provide 4 calories per gram. Dietary fats supply 9 calories per gram. The calculator multiplies your daily calories by your macro split, then divides by each nutrient's energy density.",
       "formulaCode": "Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9",
       "tableTitle": "Macronutrient Energy Density & Dieting Ratios",
       "tableRows": [
         {
           "col1": "Carbohydrates (4 kcal/g)",
-          "col2": "Balanced: 40% | Low-Carb: 20% | High-Protein: 35%",
-          "col3": "Example fuel source allocation"
+          "col2": "40% to 50% of daily calories",
+          "col3": "Primary fuel for brain function and high-intensity workouts"
         },
         {
           "col1": "Protein (4 kcal/g)",
-          "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 40%",
-          "col3": "Example protein allocation"
+          "col2": "25% to 35% of daily calories",
+          "col3": "Builds and repairs muscle tissue while supporting fullness"
         },
         {
           "col1": "Dietary Fat (9 kcal/g)",
-          "col2": "Balanced: 30% | Low-Carb: 40% | High-Protein: 25%",
-          "col3": "Example dietary fat allocation"
+          "col2": "20% to 30% of daily calories",
+          "col3": "Supports hormone production and absorption of fat-soluble vitamins"
         }
       ],
       "faqs": [
         {
           "question": "What is a Macro Calculator?",
-          "answer": "A Macro Calculator is a nutritional reference tool that divides your estimated daily caloric intake into example gram amounts of carbohydrates, protein, and dietary fats for meal planning."
+          "answer": "A macro calculator turns your daily calories into grams of protein, carbs, and fats. Tracking macros helps you meet specific body composition and athletic goals."
         },
         {
-          "question": "How to calculate macros in grams for weight loss or muscle gain?",
-          "answer": "First calculate your estimated TDEE (Total Daily Energy Expenditure). Multiply total calories by your target macro percentages (e.g., 40% carbs, 30% protein, 30% fat). Divide carbohydrate and protein calories by 4 and fat calories by 9 to get estimated daily grams."
+          "question": "How do I calculate macros in grams?",
+          "answer": "Multiply your total calories by your target percentage for each macronutrient. Divide carb and protein calories by 4, and divide fat calories by 9."
+        },
+        {
+          "question": "What is the best macro split for weight loss?",
+          "answer": "A common fat-loss split is 40% protein, 35% carbs, and 25% fats. Higher protein helps curb appetite and protects lean muscle during a calorie deficit."
         },
         {
           "question": "What is IIFYM (If It Fits Your Macros)?",
-          "answer": "IIFYM (If It Fits Your Macros) is a flexible dieting approach that tracks daily gram targets of protein, carbohydrates, and fats calculated by a macro tool."
+          "answer": "IIFYM is a flexible eating style. It lets you eat varied foods as long as you hit your daily targets for protein, carbs, and fats."
         },
         {
-          "question": "How can macronutrient ratios vary by goal?",
-          "answer": "There is no single optimal macronutrient ratio for everyone. The calculator uses example splits for planning purposes."
-        },
-        {
-          "question": "How many calories are in 1 gram of carbs, protein, and fat?",
-          "answer": "Carbohydrates contain 4 calories per gram, Protein contain 4 calories per gram, and Dietary Fat contains 9 calories per gram."
+          "question": "Do I need to hit my macros exactly every day?",
+          "answer": "No. Aiming within 5 to 10 grams of each daily goal is fine for progress. Consistency across the week matters more than daily perfection."
         }
       ]
     },
@@ -6407,12 +5689,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "waist-to-hip-ratio-calculator": {
     "en": {
       "eyebrow": "WHR Reference Standard",
-      "title": "Waist to Hip Ratio Calculator & WHR Reference Tool",
-      "intro": "Calculate your waist to hip ratio with our free Waist to Hip Ratio Calculator. Aligned with World Health Organization (WHO) reference guidelines, it provides context about body-fat distribution. WHR is an anthropometric ratio. It does not directly measure visceral fat or diagnose cardiovascular disease.",
-      "formulaTitle": "WHO Waist to Hip Ratio (WHR) Formula Equation",
+      "title": "Waist-to-Hip Ratio (WHR) Calculator & Body Proportions Tool",
+      "intro": "Evaluate your waist-to-hip proportion using our free WHR screening tool. Aligned with World Health Organization (WHO) reference guidelines, it provides insight into body composition and adipose distribution patterns.",
+      "formulaTitle": "WHO Circumference Ratio Equation",
       "formulaDesc": "WHR = Waist Circumference (at narrowest point or navel) / Hip Circumference (at widest point of buttocks)",
       "formulaCode": "WHR = Waist / Hip",
-      "tableTitle": "WHO Waist to Hip Ratio (WHR) Reference Categories & Chart",
+      "tableTitle": "WHO Waist-to-Hip Proportion Reference Categories",
       "tableRows": [
         {
           "col1": "Lower Reference Category",
@@ -6432,24 +5714,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "What is the Waist to Hip Ratio Calculator?",
-          "answer": "The Waist to Hip Ratio Calculator is an anthropometric screening tool that compares your waist measurement to your hip measurement to evaluate body fat distribution and provide context on central fat placement."
+          "question": "What is the Waist-to-Hip Ratio (WHR) index?",
+          "answer": "This anthropometric screening metric compares waist circumference to hip circumference to evaluate regional adipose distribution and assess central body fat placement."
         },
         {
-          "question": "How to calculate waist to hip ratio with the WHR formula?",
-          "answer": "Divide your waist circumference in inches or cm by your hip circumference in the same units. For example, a 32-inch waist divided by a 40-inch hip equals a Waist to Hip Ratio of 0.80."
+          "question": "How do you calculate WHR with circumference measurements?",
+          "answer": "Divide waist circumference by hip circumference using identical units. For example, an 80 cm waist divided by a 100 cm hip yields a proportion of 0.80."
         },
         {
-          "question": "What is a healthy waist to hip ratio for men and women according to WHO?",
-          "answer": "According to World Health Organization (WHO) reference guidelines, a ratio below 0.90 for men and below 0.80 for women is standard for lower relative abdominal fat."
+          "question": "What are the standard WHO health thresholds for men and women?",
+          "answer": "World Health Organization (WHO) guidelines define low risk as a ratio below 0.90 for men and below 0.85 for women, reflecting reduced abdominal fat concentration."
         },
         {
-          "question": "Why is waist to hip ratio a useful indicator alongside BMI?",
-          "answer": "While BMI measures total body mass relative to height, WHR is an anthropometric ratio that provides context about body-fat distribution; it does not directly measure visceral fat or diagnose cardiovascular disease."
+          "question": "Why evaluate body proportions alongside Body Mass Index?",
+          "answer": "While BMI measures total weight relative to stature, circumference proportions reveal body shape and fat distribution, differentiating between android (apple-shaped) and gynoid (pear-shaped) fat patterns."
         },
         {
-          "question": "How to accurately measure waist and hip circumference for the WHR calculator?",
-          "answer": "Stand upright and exhale gently. Wrap a flexible tape measure around your waist horizontally at the narrowest point (or at navel level). Measure your hips at the maximum protrusion of your buttocks."
+          "question": "What is the proper technique for measuring waist and hips?",
+          "answer": "Stand relaxed and exhale naturally. Measure your waist midway between the lowest rib and iliac crest (or at navel level). Measure hips horizontally across the widest point of the buttocks."
         }
       ]
     },
@@ -6978,7 +6260,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Cardiovascular Training Protocol",
       "title": "Target Heart Rate Zones Calculator – 5 Exercise Training Zones",
-      "intro": "Calculate your five exercise heart rate zones with our free online calculator. It uses your age and resting heart rate to find your personal training zones. Easily pace your workouts for warm-ups, fat burning, aerobic endurance, and peak speed.",
+      "intro": "Identify your five cardiovascular intensity zones to optimize endurance, recovery, and metabolic conditioning. Using your age and resting pulse, this tool provides clear target boundaries so you can pace warm-ups, aerobic foundation building, and sprint intervals with precision.",
       "formulaTitle": "Cardiorespiratory Training Intensity Equation",
       "formulaDesc": "Max Heart Rate = 220 - Age. Heart Rate Reserve (HRR) = Max HR - Resting Pulse. Target Pulse = Resting Pulse + [HRR × Intensity %].",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
@@ -7012,8 +6294,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "How do target training intensity zones work?",
-          "answer": "Training zones divide your workout effort into five heart rate ranges. Exercising in each zone develops different benefits, from easy recovery and fat burning to hard aerobic stamina and sprint speed."
+          "question": "How do target cardiovascular intensity zones work?",
+          "answer": "These training tiers divide exercise effort into five distinct physiological bands. Training within specific ranges develops targeted adaptations, from efficient fat oxidation and capillary growth to lactate tolerance and neuromuscular sprint speed."
         },
         {
           "question": "How do you calculate your exercise pulse range?",
@@ -7021,11 +6303,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Why should resting pulse be considered alongside maximum heart rate?",
-          "answer": "Resting pulse shows your current cardiovascular fitness. Including it gives you personalized workout zones instead of a one-size-fits-all age estimate."
+          "answer": "Resting pulse indicates your baseline stroke volume and cardiovascular efficiency. Factoring it into calculations produces individualized targets rather than generic population estimates."
         },
         {
           "question": "Which training zone builds optimal aerobic stamina?",
-          "answer": "Zone 2 (60% to 70% of heart rate reserve) is the best zone for aerobic endurance. It builds your cardiovascular base, burns fat efficiently, and allows you to recover quickly."
+          "answer": "Zone 2 (60% to 70% of heart rate reserve) is the primary range for building mitochondrial density and aerobic endurance, allowing sustained energy output with low systemic fatigue."
         },
         {
           "question": "What is the best way to record baseline resting pulse?",
@@ -7328,9 +6610,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Cardiovascular Physiology",
       "title": "Karvonen Calculator – Target Heart Rate Zones & HRR",
-      "intro": "Calculate your personal workout heart rate zones with our free Karvonen calculator. The Karvonen method uses your age and resting heart rate to find your Heart Rate Reserve. This helps you exercise at the right intensity. You can easily train for fat loss, build endurance, or improve high-intensity speed.",
-      "formulaTitle": "Official Karvonen Formula Equation",
-      "formulaDesc": "Target Heart Rate = [(Max HR - Resting HR) × % Intensity] + Resting HR. Max HR is estimated as 220 minus your age. Heart Rate Reserve (HRR) is your Max HR minus Resting HR.",
+      "intro": "Determine your personal aerobic and anaerobic training zones using the Heart Rate Reserve (HRR) methodology. By combining your age with your baseline resting pulse, this tool provides customized exertion ranges for fat oxidation, stamina development, and high-intensity interval training.",
+      "formulaTitle": "Heart Rate Reserve Equation",
+      "formulaDesc": "Target Exertion = [(Max Pulse - Resting Pulse) × % Intensity] + Resting Pulse. Maximum rate is estimated as 220 minus age, with reserve representing the span between baseline rest and peak effort.",
       "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
       "tableTitle": "Karvonen Heart Rate Reserve (HRR) Intensity Matrix",
       "tableRows": [
@@ -7352,7 +6634,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Zone 4: Anaerobic Threshold",
           "col2": "80% – 90% HRR",
-          "col3": "Increases high-intensity performance and lactate threshold"
+          "col3": "Increases high-intensity exercise tolerance and power output"
         },
         {
           "col1": "Zone 5: VO2 Max Peak",
@@ -7362,12 +6644,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "What is the Karvonen Formula?",
-          "answer": "The Karvonen formula calculates target heart rate zones using your resting pulse and maximum heart rate. It finds your Heart Rate Reserve (HRR) and scales it to your workout intensity."
+          "question": "How does the Karvonen formula determine target training ranges?",
+          "answer": "This physiological model calculates workout zones by subtracting resting pulse from maximum pulse to determine Heart Rate Reserve (HRR). It then scales your workout intensity to that individual baseline rather than relying on population averages alone."
         },
         {
-          "question": "Why is the Karvonen method more accurate than standard 220-age?",
-          "answer": "Standard formulas only look at age. The Karvonen formula also considers your resting pulse. A lower resting heart rate reflects better fitness, giving you more accurate personal zones."
+          "question": "Why is this method more accurate than simple age-based formulas?",
+          "answer": "Traditional 220-minus-age formulas ignore individual aerobic conditioning. Incorporating baseline resting pulse rewards higher cardiovascular fitness with customized zones that reflect true physiological capacity."
         }
       ]
     },
@@ -7618,51 +6900,58 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Strength Conditioning Science",
       "title": "1RM Calculator – One Rep Max Bench, Squat, Deadlift",
-      "intro": "Free 1RM Calculator (One Rep Max Calculator). Calculate your maximum single-repetition lift for bench press, back squat, overhead press, and deadlift without needing to lift to failure, using verified Epley, Brzycki, and Lander mathematical equations.",
+      "intro": "Find your one-rep max with our free 1RM Calculator. It estimates the heaviest weight you can lift for a single rep on the bench press, squat, or deadlift. You do not need to test dangerous maximum lifts to failure. Simply enter the weight you lifted and your rep count to get instant targets.",
       "formulaTitle": "Standard Strength 1RM Calculation Formulas",
-      "formulaDesc": "Epley: 1RM = Weight × (1 + Reps / 30) | Brzycki: 1RM = Weight × [36 / (37 - Reps)] | Lander: 1RM = (100 × Weight) / (101.3 - 2.67123 × Reps)",
+      "formulaDesc": "The Epley formula estimates your max lift: 1RM = Weight × (1 + Reps / 30). The Brzycki formula offers a close second opinion: 1RM = Weight × [36 / (37 - Reps)]. Both equations work best when using sets of 2 to 6 reps.",
       "formulaCode": "Epley 1RM = W × (1 + R / 30)",
       "tableTitle": "1RM Percentage Intensity & Repetition Training Chart",
       "tableRows": [
         {
           "col1": "100% 1RM",
           "col2": "1 Repetition",
-          "col3": "Absolute maximum strength single"
-        },
-        {
-          "col1": "95% 1RM",
-          "col2": "2 Repetitions",
-          "col3": "Heavy strength training load"
+          "col3": "Your absolute maximum single lift"
         },
         {
           "col1": "90% 1RM",
-          "col2": "3 Repetitions",
-          "col3": "Power lifting strength sets"
+          "col2": "3 to 4 Repetitions",
+          "col3": "Heavy strength training load"
         },
         {
           "col1": "85% 1RM",
-          "col2": "5 Repetitions",
-          "col3": "Hypertrophy & heavy strength blend"
+          "col2": "5 to 6 Repetitions",
+          "col3": "Optimal balance of strength and muscle size"
         },
         {
           "col1": "80% 1RM",
-          "col2": "7 Repetitions",
-          "col3": "Hypertrophy muscle building range"
+          "col2": "7 to 8 Repetitions",
+          "col3": "Standard hypertrophy muscle-building load"
         },
         {
           "col1": "75% 1RM",
           "col2": "10 Repetitions",
-          "col3": "Volume hypertrophy & endurance"
+          "col3": "Volume hypertrophy and muscular endurance"
         }
       ],
       "faqs": [
         {
-          "question": "What is 1RM and how is it calculated?",
-          "answer": "One Rep Max (1RM) is the maximum weight you can lift for a single repetition with proper form. Our 1RM Calculator uses submaximal weight and rep counts with the Epley formula [Weight × (1 + Reps/30)] to safely estimate your max."
+          "question": "What is a 1RM and why does it matter?",
+          "answer": "A one-rep max is the heaviest weight you can lift once with clean form. Coaches use this number to assign exact training weights for bench presses, squats, and deadlifts."
         },
         {
-          "question": "How do submaximal 1RM estimation formulas work?",
-          "answer": "Submaximal formulas like Epley and Brzycki estimate your 1-rep maximum based on lighter set weights and rep counts, avoiding heavy single-rep strain."
+          "question": "How does the 1RM calculator estimate my max lift?",
+          "answer": "The calculator uses submaximal formulas like Epley and Brzycki. It takes a lighter weight and your repetition count to predict your top single lift safely."
+        },
+        {
+          "question": "How many reps give the most accurate 1RM estimate?",
+          "answer": "Sets of 2 to 6 clean reps give the most reliable results. Sets over 10 reps test muscle stamina rather than pure strength, which reduces formula accuracy."
+        },
+        {
+          "question": "How should I warm up before testing a heavy set?",
+          "answer": "Start with an empty barbell. Gradually add weight over 3 to 4 easy sets of 3 to 5 reps. Rest two to three minutes before your main working set."
+        },
+        {
+          "question": "Is it safe to attempt a true 1RM in the gym?",
+          "answer": "Testing true maximum singles carries higher joint and muscle strain. Always use safety pins or have an experienced spotter nearby when lifting near your limit."
         }
       ]
     },
@@ -7934,364 +7223,14 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     }
   },
-  "one-rep-max-calculator": {
-    "en": {
-      "eyebrow": "Epley Strength Reference",
-      "title": "Epley 1RM Bench Press Calculator & 1 Rep Max Reference Tool",
-      "intro": "Calculate your estimated 1 rep max bench press, squat, and deadlift with our free Epley 1RM Bench Press Calculator. Powered by the Epley 1RM formula equation, estimate your single-rep lifting capacity from submaximal repetition sets.",
-      "formulaTitle": "Epley 1RM Mathematical Formula Equation",
-      "formulaDesc": "1RM = Weight Lifted in kg/lbs × (1 + [Reps Performed / 30]) | Brzycki 1RM = Weight Lifted × [36 / (37 - Reps)]",
-      "formulaCode": "1RM = W × (1 + R / 30)",
-      "tableTitle": "1RM Percentage Intensity Training Chart (Bench Press & Powerlifting)",
-      "tableRows": [
-        {
-          "col1": "100% 1RM Baseline",
-          "col2": "1 Repetition",
-          "col3": "Peak single rep strength capacity estimate"
-        },
-        {
-          "col1": "90% 1RM Load",
-          "col2": "3 Repetitions",
-          "col3": "Heavy strength building & neural adaptation"
-        },
-        {
-          "col1": "85% 1RM Load",
-          "col2": "5 – 6 Repetitions",
-          "col3": "Common training use & compound strength (5x5 protocols)"
-        },
-        {
-          "col1": "75% 1RM Load",
-          "col2": "10 Repetitions",
-          "col3": "Hypertrophy volume & metabolic conditioning"
-        },
-        {
-          "col1": "65% 1RM Load",
-          "col2": "15 Repetitions",
-          "col3": "Muscular endurance & active recovery sets"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "What is the Epley 1RM Bench Press Calculator?",
-          "answer": "The Epley 1RM Bench Press Calculator is a strength assessment tool created by Boyd Epley in 1985. It calculates your estimated maximum single-rep bench press (1RM) based on submaximal repetition performance."
-        },
-        {
-          "question": "How to calculate 1 rep max bench press using the Epley formula?",
-          "answer": "To calculate your 1RM bench press: Lift a manageable weight for submaximal reps (e.g. 100 kg for 5 reps). Multiply 100 by (1 + 5/30), which equals 100 × 1.1667 = 116.7 kg estimated 1RM bench press."
-        },
-        {
-          "question": "How accurate is the Epley 1RM formula for bench press, squat, and deadlift?",
-          "answer": "Formula-based estimates can differ from actual one-repetition performance. The Epley 1RM formula provides reliable reference estimates for bench press and squat sets between 2 to 10 repetitions."
-        },
-        {
-          "question": "What is the difference between Epley and Brzycki 1RM formulas?",
-          "answer": "The Epley formula (1RM = W × [1 + R/30]) and Brzycki formula (1RM = W × [36 / (37 - R)]) are two widely referenced formulas. Epley is commonly used for lower rep ranges (1 to 6 reps), while Brzycki performs well up to 10 reps."
-        },
-        {
-          "question": "Why use a 1RM calculator instead of testing max weight directly?",
-          "answer": "Testing true 1RM max weight creates significant spinal and tendon strain during heavy bench press attempts. An Epley 1RM calculator allows lifters to estimate reference target weights using submaximal loads."
-        }
-      ]
-    },
-    "es": {
-      "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora 1RM según Epley – Repetición Máxima para Press Banca",
-      "intro": "Calculadora gratuita de 1RM y herramienta de press de banca. Estima tu capacidad máxima de levantamiento, niveles de fuerza 5RM y 10RM, y porcentajes de entrenamiento según peso y repeticiones con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "1RM = W × (1 + R / 30)",
-      "tableTitle": "Tabla de Entrenamiento de Intensidad según 1RM (Press de Banca)",
-      "tableRows": [
-        {
-          "col1": "100% 1RM Fuerza Máxima",
-          "col2": "1 Repetition",
-          "col3": "Estimación de fuerza máxima para una sola repetición"
-        },
-        {
-          "col1": "90% 1RM Carga Pesada",
-          "col2": "3 Repetitions",
-          "col3": "Desarrollo de fuerza pesada y adaptación neural"
-        },
-        {
-          "col1": "85% 1RM Desarrollo Fuerza",
-          "col2": "5 – 6 Repetitions",
-          "col3": "Fuerza básica en ejercicios compuestos (protocolo 5x5)"
-        },
-        {
-          "col1": "75% 1RM Hipertrofia",
-          "col2": "10 Repetitions",
-          "col3": "Volumen de hipertrofia y acondicionamiento metabólico"
-        },
-        {
-          "col1": "65% 1RM Resistencia Muscular",
-          "col2": "15 Repetitions",
-          "col3": "Resistencia muscular y series de recuperación activa"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "¿Qué es la calculadora 1RM de press de banca de Epley?",
-          "answer": "Es una herramienta de evaluación de fuerza creada por Boyd Epley en 1985 que estima tu repetición máxima (1RM) a partir de series submáximas de repeticiones."
-        },
-        {
-          "question": "¿Cómo calcular la repetición máxima (1RM) en press de banca con la fórmula de Epley?",
-          "answer": "Realiza una serie con peso submáximo (ej. 100 kg para 5 repeticiones). Aplica la fórmula: 100 × (1 + 5/30) = 116.7 kg de 1RM estimado."
-        },
-        {
-          "question": "¿Qué tan precisa es la fórmula 1RM de Epley para press de banca, sentadilla y peso muerto?",
-          "answer": "Las estimaciones basadas en fórmulas pueden diferir del rendimiento real. La fórmula de Epley proporciona valores de referencia fiables para series entre 2 y 10 repeticiones."
-        },
-        {
-          "question": "¿Cuál es la diferencia entre las fórmulas 1RM de Epley y Brzycki?",
-          "answer": "La fórmula de Epley (1RM = Peso × [1 + Reps/30]) suele utilizarse para series cortas (1-6 repeticiones), mientras que la de Brzycki funciona adecuadamente hasta las 10 repeticiones."
-        },
-        {
-          "question": "¿Por qué utilizar una calculadora 1RM en lugar de probar el peso máximo directamente?",
-          "answer": "Probar un 1RM real somete a articulaciones y tendones a una tensión considerable. La calculadora permite estimar el máximo con cargas submáximas de forma más segura."
-        }
-      ]
-    },
-    "fr": {
-      "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur 1RM Epley – Répétition Maximale Développé Couché",
-      "intro": "Calculateur gratuit de 1RM et outil de développé couché. Estimez votre capacité maximale de soulevé, vos niveaux 5RM et 10RM, et vos pourcentages d'entraînement selon le poids et les répétitions avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "1RM = W × (1 + R / 30)",
-      "tableTitle": "Tableau d'Entraînement de l'Intensité selon le 1RM (Développé Couché)",
-      "tableRows": [
-        {
-          "col1": "100% 1RM Force Maximale",
-          "col2": "1 Repetition",
-          "col3": "Estimation de la force maximale sur une seule répétition"
-        },
-        {
-          "col1": "90% 1RM Charge Lourde",
-          "col2": "3 Repetitions",
-          "col3": "Force lourde et adaptation neurale"
-        },
-        {
-          "col1": "85% 1RM Développement Force",
-          "col2": "5 – 6 Repetitions",
-          "col3": "Force globale sur mouvements de base (protocoles 5x5)"
-        },
-        {
-          "col1": "75% 1RM Hypertrophie",
-          "col2": "10 Repetitions",
-          "col3": "Volume d'hypertrophie et conditionnement métabolique"
-        },
-        {
-          "col1": "65% 1RM Endurance Musculaire",
-          "col2": "15 Repetitions",
-          "col3": "Endurance musculaire et séries de récupération active"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Qu'est-ce que le calculateur 1RM Développé Couché d'Epley ?",
-          "answer": "C'est un outil d'évaluation de force créé par Boyd Epley en 1985 qui estime votre répétition maximale (1RM) à partir de performances sur des séries submoximales."
-        },
-        {
-          "question": "Comment calculer son 1RM au développé couché avec la formule d'Epley ?",
-          "answer": "Effectuez une série à charge submoximale (ex. 100 kg pour 5 répétitions). Multipliez 100 par (1 + 5/30), soit 100 × 1,1667 = 116,7 kg de 1RM estimé."
-        },
-        {
-          "question": "Quelle est la précision de la formule d'Epley pour le développé couché, le squat et le soulevé de terre ?",
-          "answer": "Les estimations mathématiques peuvent légèrement différer de la performance réelle. La formule d'Epley offre d'excellents repères pour des séries entre 2 et 10 répétitions."
-        },
-        {
-          "question": "Quelle est la différence entre les formules 1RM d'Epley et de Brzycki ?",
-          "answer": "La formule d'Epley (1RM = Poids × [1 + Reps/30]) est très utilisée pour les séries courtes (1 à 6 répétitions), tandis que Brzycki s'adapte bien jusqu'à 10 répétitions."
-        },
-        {
-          "question": "Pourquoi utiliser un calculateur 1RM au lieu de tester sa charge maximale directement ?",
-          "answer": "Tester un 1RM réel engendre un stress articulaire et tendineux élevé. Le calculateur permet d'évaluer son niveau avec des charges plus sécurisées."
-        }
-      ]
-    },
-    "de": {
-      "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Epley 1RM Bankdrücken-Rechner – Formel für maximale Wiederholung",
-      "intro": "Kostenloser Maximalkraft-Rechner (1RM & Bankdrücken Tool). Schätzen Sie Ihre maximale Hebekapazität, 5RM- und 10RM-Kraftwerte sowie Trainings-Prozentsätze basierend auf Gewicht und Wiederholungen datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "1RM = W × (1 + R / 30)",
-      "tableTitle": "1RM-Intensitäts-Trainingsplan (Bankdrücken & Kraftdreikampf)",
-      "tableRows": [
-        {
-          "col1": "100% 1RM Maximalkraft",
-          "col2": "1 Repetition",
-          "col3": "Schätzung der maximalen Maximalkraft (1 Wdh.)"
-        },
-        {
-          "col1": "90% 1RM Schwere Last",
-          "col2": "3 Repetitions",
-          "col3": "Schwerer Kraftaufbau & neuronale Anpassung"
-        },
-        {
-          "col1": "85% 1RM Kraftaufbau",
-          "col2": "5 – 6 Repetitions",
-          "col3": "Grundkraft bei Mehrgelenksübungen (5x5-System)"
-        },
-        {
-          "col1": "75% 1RM Hypertrophie",
-          "col2": "10 Repetitions",
-          "col3": "Volumen-Hypertrophie & metabolisches Training"
-        },
-        {
-          "col1": "65% 1RM Kraftausdauer",
-          "col2": "15 Repetitions",
-          "col3": "Kraftausdauer und aktive Erholungssätze"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Was ist der Epley 1RM Bankdrücken-Rechner?",
-          "answer": "Ein 1985 von Boyd Epley entwickeltes Kraftmessungstool, das Ihr geschätztes Maximalgewicht für eine Wiederholung (1RM) anhand von submaximalen Wiederholungen berechnet."
-        },
-        {
-          "question": "Wie berechnet man das 1RM beim Bankdrücken mit der Epley-Formel?",
-          "answer": "Führen Sie einen Satz mit submaximalem Gewicht aus (z. B. 100 kg für 5 Wiederholungen). Multiplizieren Sie 100 mit (1 + 5/30), was ca. 116,7 kg geschätztes 1RM ergibt."
-        },
-        {
-          "question": "Wie genau ist die Epley-1RM-Formel für Bankdrücken, Kniebeugen und Kreuzheben?",
-          "answer": "Formelbasierte Schätzungen können von der tatsächlichen Maximalleistung abweichen. Die Epley-Formel liefert verlässliche Richtwerte für Wiederholungsbereiche zwischen 2 und 10."
-        },
-        {
-          "question": "Was ist der Unterschied zwischen den Formeln von Epley und Brzycki?",
-          "answer": "Epley (1RM = Gewicht × [1 + Wdh/30]) eignet sich besonders für schwere Sätze (1 bis 6 Wdh), während Brzycki auch bis zu 10 Wiederholungen gut funktioniert."
-        },
-        {
-          "question": "Warum sollte man einen 1RM-Rechner nutzen, statt Maximalversuche durchzuführen?",
-          "answer": "Echte Maximalversuche belasten Sehnen und Gelenke stark. Ein Rechner ermöglicht eine sichere Einschätzung Ihrer Maximalkraft anhand leichterer Gewichte."
-        }
-      ]
-    },
-    "ko": {
-      "eyebrow": "건강 참조 표준 지침",
-      "title": "에플리 1RM 벤치프레스 계산기 – 1회 최대 중량 측정 도구",
-      "intro": "무료 벤치프레스 1RM 및 1회 최대 중량 도구. 들어올린 중량과 반복 횟수를 바탕으로 최대 중량 수행 능력, 5RM, 10RM 근력 수준 및 훈련 강도 비율(%)을 브라우저 내에서 계산하세요. 100% 무료 도구. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "1RM = W × (1 + R / 30)",
-      "tableTitle": "1RM 벤치프레스 및 파워리프팅 강도별 훈련 차트",
-      "tableRows": [
-        {
-          "col1": "100% 1RM 최대 기준",
-          "col2": "1 Repetition",
-          "col3": "1회 최대 반복 근력 추정치"
-        },
-        {
-          "col1": "90% 1RM 고부하",
-          "col2": "3 Repetitions",
-          "col3": "고중량 근력 강화 및 신경계 적응"
-        },
-        {
-          "col1": "85% 1RM 근력 향상",
-          "col2": "5 – 6 Repetitions",
-          "col3": "복합 다관절 운동의 기본 근력 훈련 (5x5 방식)"
-        },
-        {
-          "col1": "75% 1RM 근비대",
-          "col2": "10 Repetitions",
-          "col3": "볼륨 근비대 및 대사 조절 훈련"
-        },
-        {
-          "col1": "65% 1RM 근지구력",
-          "col2": "15 Repetitions",
-          "col3": "근지구력 및 적극적 회복 세트"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "에플리 1RM 벤치프레스 계산기란 무엇인가요?",
-          "answer": "보이드 에플리(Boyd Epley)가 1985년 고안한 근력 측정 도구로, 서브맥시멀(준최대) 반복 수행 기록을 바탕으로 1회 최대 중량(1RM)을 추정합니다."
-        },
-        {
-          "question": "에플리 공식을 사용하여 벤치프레스 1RM을 어떻게 계산하나요?",
-          "answer": "다룰 수 있는 중량으로 반복을 수행한 후(예: 100kg으로 5회), 100 × (1 + 5/30) 공식을 적용하면 약 116.7kg의 추정 1RM이 산출됩니다."
-        },
-        {
-          "question": "벤치프레스, 스쿼트, 데드리프트에서 에플리 1RM 공식의 정확도는 어느 정도인가요?",
-          "answer": "실제 1회 최대 중량과 약간의 차이가 있을 수 있으나, 2~10회 반복 범위의 세트에서 신뢰할 수 있는 훈련 중량 가이드를 제공합니다."
-        },
-        {
-          "question": "에플리(Epley) 공식과 브지키(Brzycki) 공식의 차이점은 무엇인가요?",
-          "answer": "에플리 공식은 1~6회의 낮은 반복 횟수 세트에 널리 쓰이며, 브지키 공식은 최대 10회까지의 반복 세트에서도 안정적인 추정치를 제공합니다."
-        },
-        {
-          "question": "실제 최고 무게를 직접 들지 않고 1RM 계산기를 사용하는 이유는 무엇인가요?",
-          "answer": "진짜 1RM 측정은 관절과 척추에 큰 부담을 줍니다. 계산기를 활용하면 부상 위험 없이 안전하게 목표 훈련 중량을 설정할 수 있습니다."
-        }
-      ]
-    },
-    "hi": {
-      "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "एप्ले 1RM बेंच प्रेस कैलकुलेटर – 1 रेप मैक्स स्ट्रेंथ टूल",
-      "intro": "मुफ़्त वन-रेप मैक्स कैलकुलेटर और बेंच प्रेस 1RM टूल। उठाए गए वजन और पूरी की गई पुनरावृत्तियों के आधार पर अधिकतम लिफ्ट क्षमता, 5RM, 10RM शक्ति स्तर और प्रशिक्षण प्रतिशत का अनुमान लगाएं। मुफ़्त और गोपनीयता-केंद्रित।",
-      "formulaTitle": "मानक संदर्भ सूत्र",
-      "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
-      "formulaCode": "1RM = W × (1 + R / 30)",
-      "tableTitle": "1RM प्रतिशत तीव्रता प्रशिक्षण चार्ट (बेंच प्रेस और पावरलिफ्टिंग)",
-      "tableRows": [
-        {
-          "col1": "100% 1RM अधिकतम शक्ति",
-          "col2": "1 Repetition",
-          "col3": "अधिकतम एकल प्रतिनिधि शक्ति क्षमता अनुमान"
-        },
-        {
-          "col1": "90% 1RM भारी भार",
-          "col2": "3 Repetitions",
-          "col3": "भारी शक्ति निर्माण और तंत्रिका अनुकूलन"
-        },
-        {
-          "col1": "85% 1RM शक्ति विकास",
-          "col2": "5 – 6 Repetitions",
-          "col3": "संयुक्त शक्ति निर्माण और 5x5 प्रोटोकॉल"
-        },
-        {
-          "col1": "75% 1RM मांसपेशी वृद्धि",
-          "col2": "10 Repetitions",
-          "col3": "हाइपरट्रॉफी वॉल्यूम और मेटाबॉलिक कंडीशनिंग"
-        },
-        {
-          "col1": "65% 1RM मांसपेशी धीरज",
-          "col2": "15 Repetitions",
-          "col3": "मांसपेशियों की सहनशक्ति और सक्रिय रिकवरी सेट"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "बेंच प्रेस और स्क्वाट के लिए 1RM कैसे निकालें?",
-          "answer": "आपने जिस वजन से जितने रेप्स किए हैं, उन्हें कैलकुलेटर में दर्ज करें और अपना अनुमानित 1RM देखें।"
-        },
-        {
-          "question": "85% 1RM का क्या मतलब है?",
-          "answer": "85% 1RM वह वजन है जिससे आप आमतौर पर 5 से 6 रेप्स का कड़ा सेट कर सकते हैं।"
-        },
-        {
-          "question": "क्या यह कैलकुलेटर शुरुआती (Beginners) के लिए उपयुक्त है?",
-          "answer": "हाँ, शुरुआती लिफ्टर्स बिना अधिकतम वजन उठाए अपनी शक्ति सीमा का अंदाजा लगा सकते हैं।"
-        },
-        {
-          "question": "क्या रेप्स की संख्या बढ़ने पर कैलकुलेटर सटीक रहता है?",
-          "answer": "10 से अधिक रेप्स पर 1RM अनुमान की सटीकता थोड़ी कम हो जाती है, इसलिए 3-8 रेप्स का डेटा सबसे अच्छा है।"
-        },
-        {
-          "question": "कैलकुलेशन के बाद प्रोग्रेसिव ओवरलोड कैसे करें?",
-          "answer": "प्रत्येक 2-3 सप्ताह में अपनी 1RM अपडेट करें और कसरत में धीरे-धीरे वजन या रेप्स बढ़ाएं।"
-        }
-      ]
-    }
-  },
   "pregnancy-weight-gain-calculator": {
     "en": {
-      "eyebrow": "Pregnancy Weight Gain Reference",
-      "title": "Pregnancy Weight Gain Calculator & Trimester Tracker",
-      "intro": "Pregnancy Weight Gain Reference Calculator. Uses published gestational weight-gain reference ranges from the National Academies/IOM and public health guidelines to provide an educational estimate based on pre-pregnancy BMI.",
-      "formulaTitle": "IOM Gestational Weight Gain Targets",
+      "eyebrow": "Gestational Health Reference",
+      "title": "Gestational Weight Tracker & Pregnancy Growth Stages",
+      "intro": "Track maternal mass changes and developmental benchmarks based on published National Academies/IOM and ACOG clinical consensus guidelines. Understand personalized targets calculated from pre-pregnancy BMI.",
+      "formulaTitle": "IOM Maternal Progression Recommendations",
       "formulaDesc": "Normal BMI (18.5-24.9): 11.5 - 16.0 kg total (25 - 35 lbs)",
-      "tableTitle": "IOM Trimester Target Weight Chart",
+      "tableTitle": "IOM Trimester Maternal Progress Reference Chart",
       "tableRows": [
         {
           "col1": "Underweight (<18.5)",
@@ -8311,24 +7250,24 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "What is the Pregnancy Weight Gain Calculator?",
-          "answer": "The Pregnancy Weight Gain Calculator is a reference calculator based on ACOG (American College of Obstetricians and Gynecologists) and IOM (Institute of Medicine) guidance. It provides reference estimates for gestational weight gain based on pre-pregnancy BMI."
+          "question": "How does the Gestational Weight Tracker calculate target ranges?",
+          "answer": "This reference tool applies Institute of Medicine (IOM) and ACOG guidelines, estimating healthy maternal mass progression based on baseline BMI before conception."
         },
         {
-          "question": "How to calculate healthy pregnancy weight gain week by week?",
-          "answer": "To calculate pregnancy weight gain week by week: Enter your current weight, pre-pregnancy weight, and pregnancy week (1 to 40). For a normal pre-pregnancy BMI (18.5–24.9), reference target gain is 1 to 4.5 lbs in the 1st trimester and ~1 lb per week in the 2nd and 3rd trimesters."
+          "question": "How should maternal progress be evaluated across pregnancy trimesters?",
+          "answer": "For an individual starting with normal pre-pregnancy BMI (18.5–24.9), standard guidelines anticipate 1 to 4.5 lbs in the first trimester, followed by approximately 1 lb per week during the second and third trimesters."
         },
         {
-          "question": "How much total weight should you gain during pregnancy?",
-          "answer": "According to IOM reference guidelines: Underweight (<18.5 BMI) range is 28–40 lbs (12.5–18 kg); Normal BMI (18.5–24.9) range is 25–35 lbs (11.5–16 kg); Overweight (25–29.9 BMI) range is 15–25 lbs (7–11.5 kg); Obese (≥30 BMI) range is 11–20 lbs (5–9 kg)."
+          "question": "What are the recommended total gestational targets according to the IOM?",
+          "answer": "According to IOM standards: Underweight (<18.5 BMI) targets 28–40 lbs (12.5–18 kg); Normal BMI (18.5–24.9) targets 25–35 lbs (11.5–16 kg); Overweight (25–29.9 BMI) targets 15–25 lbs (7–11.5 kg); Obese (≥30 BMI) targets 11–20 lbs (5–9 kg)."
         },
         {
-          "question": "What is typical first trimester weight gain?",
-          "answer": "Most women gain between 0.5 and 2.0 kg (1 to 4.5 lbs) total during the first 12 weeks of pregnancy due to minimal fetal weight growth."
+          "question": "What is typical first trimester maternal change?",
+          "answer": "Most expectant mothers gain between 0.5 and 2.0 kg (1 to 4.5 lbs) total during the first 12 weeks of pregnancy, reflecting blood volume expansion and placental development rather than significant fetal weight."
         },
         {
-          "question": "Why does pre-pregnancy BMI affect gestational weight targets?",
-          "answer": "Pre-pregnancy BMI determines initial energy reserves. Maternal-fetal reference guidelines tailor weight targets based on initial BMI."
+          "question": "Why does baseline pre-pregnancy BMI influence gestational guidance?",
+          "answer": "Pre-conception body composition reflects maternal nutrient stores. Tailoring progression targets helps minimize risks of gestational diabetes, preeclampsia, and macrosomia."
         }
       ]
     },
@@ -8569,3 +7508,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     }
   }
 };
+
+// Legacy and alternate slug aliases for 100% data consistency
+seoDatabase['bmi-calculator-india'] = seoDatabase['bmi-calculator-for-indians'];
+seoDatabase['3d-body-visualizer'] = seoDatabase['3d-bmi-calculator'];
+seoDatabase['one-rep-max-calculator'] = seoDatabase['1rm-calculator'];

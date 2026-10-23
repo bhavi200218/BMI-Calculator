@@ -19,6 +19,7 @@ interface ContentLocale {
   eyebrow: string;
   title: string;
   subtitle: string;
+  relatedToolsLabel: string;
   disclaimerTitle: string;
   disclaimerText: string;
   cards: SectionCard[];
@@ -26,20 +27,21 @@ interface ContentLocale {
 
 const data: Record<string, ContentLocale> = {
   en: {
-    eyebrow: "Educational Health Foundations",
+    eyebrow: "Practical Health Foundations",
     title: "Understand Your Numbers. Plan With Confidence.",
-    subtitle: "A practical guide to interpreting body composition screening, metabolic energy expenditure, and anthropometric baselines.",
-    disclaimerTitle: "Important Educational & Clinical Notice",
-    disclaimerText: "Calculations provided by Real BMI are population screening estimates based on published mathematical formulas (WHO, CDC, Mifflin-St Jeor). They are not medical diagnoses or individualized treatment plans. Consult a qualified physician for comprehensive evaluation of cardiometabolic health, including blood pressure, fasting glucose, HbA1c, and lipid panels.",
+    subtitle: "A practical guide to interpreting body measurements, daily calorie burn, and healthy weight standards.",
+    relatedToolsLabel: "Related Screening Tools:",
+    disclaimerTitle: "Important Educational & Health Notice",
+    disclaimerText: "Calculations on Real BMI are educational screening estimates based on published formulas from the WHO and CDC. They do not replace personalized medical care or diagnoses. Always consult a qualified healthcare provider for clinical checkups, including blood pressure, blood sugar, and cholesterol tests.",
     cards: [
       {
-        tag: "01 / Anthropometric Screening",
-        title: "Interpreting BMI, BAI & Body Fat",
-        summary: "Anthropometric screening metrics evaluate body mass in relation to stature and circumferences. Understanding how each metric works helps you interpret your baseline score objectively.",
+        tag: "01 / Body Composition",
+        title: "Understanding BMI, Body Fat & Scale Weight",
+        summary: "Body measurements help you track your physical health over time. Understanding how each formula works helps you interpret your results objectively.",
         bullets: [
-          "Body Mass Index (BMI = kg/m²) compares total body mass against height squared, serving as a global epidemiological screening standard.",
-          "Body Adiposity Index (BAI) estimates adiposity using hip circumference and height without relying strictly on scale weight.",
-          "Limitations: Standard equations cannot distinguish dense skeletal muscle from adipose tissue. Muscular athletes or older adults with sarcopenia may register misleading scores."
+          "Body Mass Index (BMI) compares total body weight against height squared. It is the most common health screening metric worldwide.",
+          "Body Adiposity Index (BAI) estimates body fat percentage using hip size and height without relying on bathroom scale weight.",
+          "Important Limitations: Formulas cannot tell the difference between dense muscle and body fat. Muscular athletes often receive elevated scores."
         ],
         links: [
           { name: "BMI Calculator", href: `/${lang}/bmi-calculator/` },
@@ -48,13 +50,13 @@ const data: Record<string, ContentLocale> = {
         ]
       },
       {
-        tag: "02 / Metabolic Balance",
-        title: "Integrating BMR & TDEE for Daily Energy",
-        summary: "Metabolic formulas estimate dynamic daily calorie requirements rather than static scale weight, providing a scientific foundation for nutritional planning.",
+        tag: "02 / Calorie Needs",
+        title: "Using BMR & TDEE for Daily Energy",
+        summary: "Metabolic equations estimate how many calories your body burns every day, providing a clear foundation for nutrition and weight goals.",
         bullets: [
-          "Basal Metabolic Rate (BMR via Mifflin-St Jeor) isolates the resting calories required to sustain vital organ functions (brain, heart, liver, lungs) in a fasting state.",
-          "Total Daily Energy Expenditure (TDEE) factors in physical activity level multipliers (1.2 sedentary to 1.9 intense athlete) plus the thermic effect of food.",
-          "Nutritional Application: Use TDEE as your maintenance baseline. Apply a moderate 300–500 kcal deficit for gradual fat loss, or a surplus for lean muscle hypertrophy without metabolic stalling."
+          "Basal Metabolic Rate (BMR) calculates the calories your body burns at rest to keep vital organs working quietly in the background.",
+          "Total Daily Energy Expenditure (TDEE) adds your daily movement, chores, exercise, and food digestion on top of your BMR.",
+          "How to Apply: Eat at your TDEE to keep your weight steady. Subtract 300 to 500 calories for gradual fat loss, or add calories to build muscle."
         ],
         links: [
           { name: "BMR Calculator", href: `/${lang}/bmr-calculator/` },
@@ -63,13 +65,13 @@ const data: Record<string, ContentLocale> = {
         ]
       },
       {
-        tag: "03 / Regional & Visceral Context",
-        title: "Regional Cutoffs & Visceral Adiposity",
-        summary: "Total body mass does not reveal where adipose tissue is stored. Central abdominal fat carries substantially higher cardiometabolic risk than peripheral fat.",
+        tag: "03 / Waist & Regional Standards",
+        title: "Waist Size & Regional Health Cutoffs",
+        summary: "Where your body stores fat matters as much as total weight. Deep belly fat around your organs carries higher health risks than fat on your hips.",
         bullets: [
-          "WHO Asian Action Points establish lower overweight risk thresholds at 23.0 kg/m² and high risk at 27.5 kg/m² due to higher visceral fat prevalence at lower body weights.",
-          "Waist-to-Height Ratio (WHtR) and Waist-to-Hip Ratio (WHR) identify central adiposity. A waist circumference ≥ 90 cm in Asian men or ≥ 80 cm in Asian women signals elevated risk.",
-          "Ideal Body Weight (IBW) formulas (Devine, Robinson) provide clinical reference ranges adjusted for skeletal frame size and stature."
+          "WHO Asian Health Guidelines set the overweight threshold at 23.0 BMI because Asian adults often carry more belly fat at lower body weights.",
+          "Waist-to-Height Ratio: Keeping your waist circumference under half your height is a simple, powerful target for lifelong metabolic health.",
+          "Ideal Weight Formulas: Classic equations give practical reference weight ranges based on your height and biological sex."
         ],
         links: [
           { name: "Ideal Weight Calculator", href: `/${lang}/ideal-weight-calculator/` },
@@ -83,6 +85,7 @@ const data: Record<string, ContentLocale> = {
     eyebrow: "Bases Educativas de Salud",
     title: "Entiende tus Números. Planifica con Confianza.",
     subtitle: "Una guía práctica para interpretar el cribado de composición corporal, el gasto energético metabólico y los estándares antropométricos.",
+    relatedToolsLabel: "Herramientas de Cribado Relacionadas:",
     disclaimerTitle: "Aviso Educativo y Clínico Importante",
     disclaimerText: "Las estimaciones de Real BMI se basan en fórmulas matemáticas publicadas (OMS, CDC, Mifflin-St Jeor). No constituyen diagnósticos médicos ni planes de tratamiento personalizados. Consulta a un profesional médico para una evaluación clínica completa, incluyendo tensión arterial, glucosa basal, HbA1c y perfil lipídico.",
     cards: [
@@ -137,6 +140,7 @@ const data: Record<string, ContentLocale> = {
     eyebrow: "Bases Éducatives de Santé",
     title: "Comprenez vos Chiffres. Planifiez avec Confiance.",
     subtitle: "Un guide complet pour interpréter le dépistage morphologique, les dépenses métaboliques et les repères anthropométriques.",
+    relatedToolsLabel: "Outils de Dépistage Associés :",
     disclaimerTitle: "Avis Éducatif et Médical Important",
     disclaimerText: "Les estimations fournies par Real BMI reposent sur des formules mathématiques publiées (OMS, CDC, Mifflin-St Jeor). Elles constituent des repères de dépistage et non des diagnostics médicaux. Consultez un médecin pour un bilan approfondi incluant tension artérielle, glycémie et bilan lipidique.",
     cards: [
@@ -191,6 +195,7 @@ const data: Record<string, ContentLocale> = {
     eyebrow: "Wissenschaftliche Grundlagen",
     title: "Verstehen Sie Ihre Werte. Planen Sie mit Vertrauen.",
     subtitle: "Ein praktischer Leitfaden zur Interpretation von Körperzusammensetzung, Energiebedarf und anthropometrischen Richtwerten.",
+    relatedToolsLabel: "Verwandte Screening-Tools:",
     disclaimerTitle: "Wichtiger medizinischer Hinweis",
     disclaimerText: "Die Berechnungen von Real BMI basieren auf anerkannten mathematischen Formeln (WHO, CDC, Mifflin-St Jeor). Sie dienen der statistischen Orientierung und stellen keine medizinische Diagnose dar. Konsultieren Sie für eine individuelle Abklärung stets einen Arzt.",
     cards: [
@@ -245,6 +250,7 @@ const data: Record<string, ContentLocale> = {
     eyebrow: "건강 지표 가이드",
     title: "수치를 이해하고 자신 있게 계획하세요.",
     subtitle: "체성분 선별 검사, 대사 에너지 소비량 및 인체계측 기준을 올바르게 해석하는 실천 가이드입니다.",
+    relatedToolsLabel: "관련 건강 선별 도구:",
     disclaimerTitle: "교육 및 임상 주의사항",
     disclaimerText: "Real BMI의 모든 산출물은 공표된 과학 공식(WHO, CDC, Mifflin-St Jeor)에 따른 인구 선별 추정치입니다. 이는 개별 의학적 진단이나 처방이 아니므로 심혈관 및 대사 질환 위험 평가는 전문의와 상담하시기 바랍니다.",
     cards: [
@@ -299,6 +305,7 @@ const data: Record<string, ContentLocale> = {
     eyebrow: "शैक्षिक स्वास्थ्य आधार",
     title: "अपने नंबर समझें। विश्वास के साथ योजना बनाएं।",
     subtitle: "शारीरिक संरचना, मेटाबॉलिक ऊर्जा व्यय और एंथ्रोपोमेट्रिक संदर्भ मानकों को सही ढंग से समझने की व्यावहारिक गाइड।",
+    relatedToolsLabel: "संबंधित स्वास्थ्य जांच उपकरण:",
     disclaimerTitle: "महत्वपूर्ण शैक्षिक व नैदानिक सूचना",
     disclaimerText: "Real BMI द्वारा दिए गए परिणाम प्रकाशित वैज्ञानिक फॉर्मूलों (WHO, CDC, Mifflin-St Jeor) पर आधारित प्राथमिक अनुमान हैं। यह व्यक्तिगत चिकित्सीय निदान या उपचार योजना नहीं है। सटीक स्वास्थ्य जांच के लिए पंजीकृत चिकित्सक से रक्तचाप, ब्लड शुगर और लिपिड प्रोफाइल की जांच करवाएं।",
     cards: [
@@ -396,7 +403,7 @@ const current = data[lang] || data.en;
 
           <!-- Tool Quick Links -->
           <div class="pt-4 border-t border-[var(--border)]/60">
-            <p class="text-xs font-display font-bold uppercase tracking-widest text-[var(--foreground)] mb-2">Related Screening Tools:</p>
+            <p class="text-xs font-display font-bold uppercase tracking-widest text-[var(--foreground)] mb-2">{current.relatedToolsLabel}</p>
             <div class="flex flex-wrap gap-2">
               {card.links.map((link) => (
                 <a 

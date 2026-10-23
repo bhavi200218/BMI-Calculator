@@ -16,7 +16,7 @@ interface Props {
 const { 
 	title = "Real BMI Calculator – 3D Body Visualizer & BMI Tools", 
 	description = "Real BMI Calculator provides instant Body Mass Index (BMI), BMR, TDEE, and ideal weight reference estimates based on WHO & CDC standards. Free & browser-based.",
-	keywords = "real bmi calculator, real bmi, body mass index, what is real bmi, is bmi accurate, real bmi tool, bmi chart, bmi scale, calculate real bmi, bmi calculator for men, bmi calculator for women, bmr calculator, tdee calculator",
+	keywords = "",
 	ogImage = "/seo-dark.png",
 	canonicalURL: customCanonicalURL,
 	robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -57,7 +57,7 @@ const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Real BMI Calculator",
-  "alternateName": ["Real BMI", "Real BMI Tool", "Real BMI Online"],
+  "alternateName": ["Real BMI Online"],
   "url": "https://realbmicalculator.com",
   "potentialAction": {
     "@type": "SearchAction",
@@ -187,7 +187,7 @@ const howToSchema = {
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<meta name="keywords" content={keywords} />
+		{keywords ? <meta name="keywords" content={keywords} /> : null}
 		<meta name="robots" content={robots} />
 		<link rel="canonical" href={canonicalURL} />
 

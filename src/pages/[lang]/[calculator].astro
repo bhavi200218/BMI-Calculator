@@ -34,10 +34,16 @@ const { calc, lang } = Astro.props;
 if (calc.slug === 'one-rep-max-calculator') {
   return Astro.redirect(`/${lang}/1rm-calculator/`, 301);
 }
+if (calc.slug === '3d-body-visualizer') {
+  return Astro.redirect(`/${lang}/3d-bmi-calculator/`, 301);
+}
 
 const dbData = seoDatabase[calc.slug]?.[lang] || seoDatabase[calc.slug]?.['en'];
 const pageTitle = dbData?.title || calc.title[lang] || calc.title['en'];
-const pageDesc = dbData?.intro || calc.description[lang] || calc.description['en'];
+// Clean plain text meta description for <head> SEO
+const metaDesc = (dbData?.intro || calc.description[lang] || calc.description['en']).replace(/<[^>]+>/g, '').trim();
+// Clean, concise visible hero subtitle (1-2 sentences max, eliminates overwhelming walls of text)
+const pageDesc = (calc.description[lang] || calc.description['en']).replace(/<[^>]+>/g, '').trim();
 const canonicalUrl = `https://realbmicalculator.com/${lang}/${calc.slug}/`;
 
 const localizedIntro = {
@@ -138,7 +144,7 @@ const webAppSchema = {
   "@type": "WebApplication",
   "name": calc.name[lang] || calc.name['en'],
   "url": canonicalUrl,
-  "description": pageDesc,
+  "description": metaDesc,
   "applicationCategory": "HealthApplication",
   "browserRequirements": "Requires JavaScript. Requires HTML5.",
   "operatingSystem": "All"
@@ -151,7 +157,7 @@ const relevantArticlesBySlug: Record<string, string[]> = {
   'bmi-chart': ['bmi-chart-for-men-women', 'bmi-chart', 'bmi-by-age'],
   'healthy-weight-by-height': ['healthy-weight-chart', 'bmi-by-age', 'bmi-calculator-teens'],
   'bmi-calculator-for-indians': ['healthy-bmi-range-indians', 'bmi-calculator-india'],
-  'asian-bmi-calculator': ['healthy-bmi-range-indians', 'bmi-calculator-india'],
+  'asian-bmi-calculator': ['what-is-bmi', 'bmi-chart', 'is-bmi-accurate'],
   'bmr-calculator': ['bmr-vs-tdee-calculator', 'what-is-bmi'],
   'tdee-calculator': ['bmr-vs-tdee-calculator', 'what-is-bmi'],
   'maintenance-calorie-calculator': ['bmr-vs-tdee-calculator', 'what-is-bmi'],
@@ -193,7 +199,7 @@ const relatedGuidesSubtitle: Record<string, string> = {
 
 <Layout 
   title={pageTitle}
-  description={pageDesc}
+  description={metaDesc}
   canonicalURL={canonicalUrl}
 >
   <!-- Inject WebApplication JSON-LD dynamically inside Layout context -->
@@ -238,8 +244,87 @@ const relatedGuidesSubtitle: Record<string, string> = {
         </div>
       </div>
 
+      <!-- Population & Regional Standards Notice (Disambiguation for Indian vs Asian WHO Standards) -->
+      {calc.slug === 'bmi-calculator-for-indians' && (
+        <aside class="p-4 rounded-xl border border-amber-500/25 bg-amber-500/5 text-xs text-[var(--foreground)] max-w-3xl mx-auto flex items-start gap-3 text-left shadow-xs">
+          <div class="w-6 h-6 rounded-full bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">ℹ</div>
+          <div class="space-y-1">
+            <p class="font-bold text-amber-600 dark:text-amber-400">
+              {{
+                en: 'Official Indian Consensus Standards (ICMR & MoHFW)',
+                es: 'Estándares de Consenso para India (ICMR y MoHFW)',
+                fr: 'Normes Officielles de Consensus pour l\'Inde (ICMR & MoHFW)',
+                de: 'Offizielle indische Konsensusstandards (ICMR & MoHFW)',
+                ko: '인도 공식 합의 표준 (ICMR 및 인도 보건부)',
+                hi: 'आधिकारिक भारतीय सहमति मानक (ICMR एवं स्वास्थ्य मंत्रालय)'
+              }[lang]}
+            </p>
+            <p class="text-[var(--muted-foreground)] leading-relaxed">
+              {{
+                en: 'This tool applies the Indian Council of Medical Research (ICMR) South Asian guidelines (Overweight ≥ 23.0 kg/m², Obesity ≥ 25.0 kg/m², and waist risk thresholds: 90 cm men / 80 cm women). Looking for East or Southeast Asian standards where obesity begins at 27.5 kg/m²?',
+                es: 'Esta herramienta aplica las directrices del ICMR para el sur de Asia (Sobrepeso ≥ 23.0 kg/m², Obesidad ≥ 25.0 kg/m² y cintura de riesgo: 90 cm hombres / 80 cm mujeres). ¿Buscas las pautas para el Este y Sudeste Asiático donde la obesidad inicia en 27.5 kg/m²?',
+                fr: 'Cet outil applique les directives du Conseil indien de la recherche médicale (ICMR) pour l\'Asie du Sud (Surpoids ≥ 23,0 kg/m², Obésité ≥ 25,0 kg/m² et seuil de tour de taille : 90 cm hommes / 80 cm femmes). Vous cherchez les normes pour l\'Asie de l\'Est où l\'obésité débute à 27,5 kg/m² ?',
+                de: 'Dieser Rechner wendet die Richtlinien des Indian Council of Medical Research (ICMR) für Südasien an (Übergewicht ≥ 23,0 kg/m², Adipositas ≥ 25,0 kg/m² und Taillenrisiko: 90 cm Männer / 80 cm Frauen). Suchen Sie nach ostasiatischen Standards mit einer Adipositasschwelle von 27,5 kg/m²?',
+                ko: '본 계산기는 인도 의학연구위원회(ICMR)의 남아시아 기준을 적용합니다(과체중 ≥ 23.0 kg/m², 비만 ≥ 25.0 kg/m², 복부비만 허리둘레 기준: 남 90cm / 여 80cm). 비만 기준이 27.5 kg/m²인 동아시아/동남아시아 판정 기준을 찾으시나요?',
+                hi: 'यह टूल भारतीय चिकित्सा अनुसंधान परिषद (ICMR) के दक्षिण एशियाई दिशानिर्देश लागू करता है (अधिक वजन ≥ 23.0 kg/m², मोटापा ≥ 25.0 kg/m², एवं कमर जोखिम सीमा: 90 सेमी पुरुष / 80 सेमी महिला)। क्या आप पूर्वी या दक्षिण-पूर्वी एशियाई मानक (मोटापा कटऑफ ≥ 27.5 kg/m²) की तलाश कर रहे हैं?'
+              }[lang]}
+              {' '}
+              <a href={`/${lang}/asian-bmi-calculator/`} class="text-[var(--accent)] font-semibold underline hover:text-[var(--accent)]/80 inline-flex items-center gap-1">
+                {{
+                  en: 'Open Asian BMI Calculator (WHO WPRO) →',
+                  es: 'Ver Calculadora de IMC Asiático (OMS WPRO) →',
+                  fr: 'Ouvrir le Calculateur d\'IMC Asiatique (OMS WPRO) →',
+                  de: 'Asiatischen BMI-Rechner öffnen (WHO WPRO) →',
+                  ko: '아시아인 BMI 계산기 (WHO WPRO) 열기 →',
+                  hi: 'एशियाई बीएमआई कैलकुलेटर (WHO WPRO) देखें →'
+                }[lang]}
+              </a>
+            </p>
+          </div>
+        </aside>
+      )}
+
+      {calc.slug === 'asian-bmi-calculator' && (
+        <aside class="p-4 rounded-xl border border-blue-500/25 bg-blue-500/5 text-xs text-[var(--foreground)] max-w-3xl mx-auto flex items-start gap-3 text-left shadow-xs">
+          <div class="w-6 h-6 rounded-full bg-blue-500/15 text-blue-500 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">ℹ</div>
+          <div class="space-y-1">
+            <p class="font-bold text-blue-600 dark:text-blue-400">
+              {{
+                en: 'WHO Western Pacific Region (WPRO 2004 Standards)',
+                es: 'Norma de la OMS para el Pacífico Occidental (WPRO 2004)',
+                fr: 'Norme OMS pour la Région Pacifique Occidental (WPRO 2004)',
+                de: 'WHO-Region Westlicher Pazifik (WPRO 2004 Standards)',
+                ko: 'WHO 서태평양 지역 지침 (WPRO 2004 판정 기준)',
+                hi: 'WHO पश्चिमी प्रशांत क्षेत्रीय मानक (WPRO 2004)'
+              }[lang]}
+            </p>
+            <p class="text-[var(--muted-foreground)] leading-relaxed">
+              {{
+                en: 'This tool applies the WHO Expert Consultation criteria for East and Southeast Asian adults (Chinese, Japanese, Korean, etc.), where increased risk begins at 23.0 kg/m² and obesity begins at 27.5 kg/m². If you are of South Asian or Indian descent, the ICMR recommends a stricter obesity threshold (≥ 25.0 kg/m²).',
+                es: 'Esta herramienta aplica los criterios de la OMS para adultos del Este y Sudeste Asiático (China, Japón, Corea, etc.), donde el riesgo aumentado inicia en 23.0 kg/m² y la obesidad en 27.5 kg/m². Para ascendencia del sur de Asia o India, el ICMR recomienda un umbral de obesidad más estricto (≥ 25.0 kg/m²).',
+                fr: 'Cet outil applique les critères de l\'OMS pour les adultes d\'Asie de l\'Est et du Sud-Est (Chine, Japon, Corée, etc.), où le risque accru débute à 23,0 kg/m² et l\'obésité à 27,5 kg/m². Pour les personnes d\'origine sud-asiatique ou indienne, l\'ICMR recommande un seuil d\'obésité plus strict (≥ 25,0 kg/m²).',
+                de: 'Dieser Rechner wendet die Kriterien der WHO-Expertenkonsultation für Ost- und Südostasien (China, Japan, Korea usw.) an, wo das erhöhte Risiko bei 23,0 kg/m² und Adipositas bei 27,5 kg/m² beginnt. Für südasiatische oder indische Herkunft empfiehlt das ICMR einen strengeren Grenzwert (≥ 25,0 kg/m²).',
+                ko: '본 도구는 동아시아 및 동남아시아 성인(한국인, 일본인, 중국인 등)을 위한 WHO 서태평양 기준을 적용합니다(주의 기준 23.0 kg/m², 비만 기준 27.5 kg/m²). 남아시아 또는 인도인 혈통인 경우 ICMR 권고에 따라 더 엄격한 비만 기준(≥ 25.0 kg/m²)이 적용됩니다.',
+                hi: 'यह टूल पूर्वी और दक्षिण-पूर्वी एशियाई वयस्कों (चीनी, जापानी, कोरियाई आदि) के लिए डब्ल्यूएचओ विशेषज्ञ मानदंड लागू करता है, जहां अधिक जोखिम 23.0 kg/m² और मोटापा 27.5 kg/m² से शुरू होता है। यदि आप दक्षिण एशियाई या भारतीय मूल के हैं, तो ICMR अधिक सख्त मोटापा सीमा (≥ 25.0 kg/m²) की सिफारिश करता है।'
+              }[lang]}
+              {' '}
+              <a href={`/${lang}/bmi-calculator-for-indians/`} class="text-[var(--accent)] font-semibold underline hover:text-[var(--accent)]/80 inline-flex items-center gap-1">
+                {{
+                  en: 'Open BMI Calculator for Indians (ICMR) →',
+                  es: 'Ver Calculadora de IMC para Indios (ICMR) →',
+                  fr: 'Ouvrir le Calculateur d\'IMC pour Indiens (ICMR) →',
+                  de: 'Indischen BMI-Rechner öffnen (ICMR) →',
+                  ko: '인도인 전용 BMI 계산기 (ICMR) 열기 →',
+                  hi: 'भारतीयों के लिए बीएमआई कैलकुलेटर (ICMR) देखें →'
+                }[lang]}
+              </a>
+            </p>
+          </div>
+        </aside>
+      )}
+
       <!-- Main Calculator Layout -->
-      {['3d-bmi-calculator', '3d-body-visualizer'].includes(calc.slug) ? (
+      {calc.slug === '3d-bmi-calculator' ? (
         <div class="space-y-10 animate-in" style="animation-delay:100ms">
           <!-- Primary Highlight: 3D Body Visualizer Canvas Studio -->
           <div class="w-full">

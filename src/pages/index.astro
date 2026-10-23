@@ -1,15 +1,13 @@
 ---
-// Clean 301 redirect response headers for servers with dynamic adapters
-Astro.response.status = 301;
-Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/');
+// Root multilingual portal and discovery hub
 ---
 <!doctype html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Real BMI Calculator – Free Health & Fitness Tools</title>
-  <meta name="description" content="Calculate Body Mass Index (BMI), BMR, TDEE, and healthy body composition estimates with free browser tools based on WHO & CDC standards." />
+  <title>Real BMI — Free Health, BMI, BMR & Body Calculators</title>
+  <meta name="description" content="Real BMI is an independent health calculator suite offering free BMI, BMR, TDEE, Body Fat, and Ideal Weight tools based on published WHO & CDC standards." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://realbmicalculator.com/en/" />
   <meta http-equiv="refresh" content="0;url=/en/" />
@@ -23,6 +21,8 @@ Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/');
       --accent: #E8674A;
       --card: #11201D;
       --border: #182B27;
+      --muted: #162925;
+      --muted-foreground: #8FA7A7;
     }
     * {
       box-sizing: border-box;
@@ -32,65 +32,243 @@ Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/');
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background-color: var(--background);
       color: var(--foreground);
-      text-align: center;
-      padding: 1.5rem;
+      line-height: 1.6;
+      padding: 2rem 1rem;
     }
-    .card {
-      max-width: 32rem;
-      width: 100%;
+    .container {
+      max-width: 64rem;
+      margin: 0 auto;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 1.5rem;
       padding: 2.5rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.25rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    @media (min-width: 768px) {
+      .container {
+        padding: 3.5rem 3rem;
+      }
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: rgba(232, 103, 74, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(232, 103, 74, 0.2);
+      margin-bottom: 1rem;
     }
     h1 {
-      font-size: 1.75rem;
+      font-size: 2rem;
       font-weight: 800;
       line-height: 1.2;
+      margin-bottom: 0.75rem;
     }
-    p {
-      font-size: 1rem;
+    @media (min-width: 768px) {
+      h1 { font-size: 2.5rem; }
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--muted-foreground);
+      max-width: 44rem;
+      margin-bottom: 2rem;
+    }
+    .lang-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .lang-chip {
+      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
+      background: var(--muted);
+      border: 1px solid var(--border);
+      color: var(--foreground);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .lang-chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .card-item {
+      padding: 1.5rem;
+      border-radius: 1rem;
+      background: rgba(22, 41, 37, 0.5);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-item h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--foreground);
+    }
+    .card-item p {
+      font-size: 0.85rem;
+      color: var(--muted-foreground);
       line-height: 1.5;
-      color: #8FA7A7;
+      margin-bottom: 1rem;
     }
-    .btn {
+    .card-link {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .notice-box {
+      background: rgba(232, 103, 74, 0.06);
+      border: 1px solid rgba(232, 103, 74, 0.2);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+    .btn-main {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 48px;
-      min-width: 48px;
-      padding: 0.75rem 1.75rem;
-      border-radius: 0.75rem;
+      padding: 0.85rem 2rem;
+      border-radius: 0.85rem;
       background-color: var(--accent);
       color: #ffffff;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       text-decoration: none;
-      touch-action: manipulation;
       transition: opacity 0.2s;
     }
-    .btn:hover {
+    .btn-main:hover {
       opacity: 0.9;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Real BMI Calculator</h1>
-    <p>Redirecting to the English homepage...</p>
-    <a href="/en/" class="btn">Proceed to Real BMI Calculator</a>
-  </div>
+  <main id="main-content" class="container">
+    <div class="badge">Real BMI — Health & Fitness Calculator Suite</div>
+    <h1>Real BMI — Free Health & Body Composition Calculators</h1>
+    <p class="subtitle">
+      Calculate Body Mass Index (BMI), Basal Metabolic Rate (BMR), and Total Daily Energy Expenditure (TDEE) with instant, private browser tools built on published WHO and CDC health standards.
+    </p>
+
+    <!-- Language Selector -->
+    <div class="lang-strip">
+      <span style="font-size: 0.85rem; font-weight: 700; align-self: center; color: var(--muted-foreground); margin-right: 0.5rem;">Select Language:</span>
+      <a href="/en/" class="lang-chip">🇬🇧 English</a>
+      <a href="/es/" class="lang-chip">🇪🇸 Español</a>
+      <a href="/fr/" class="lang-chip">🇫🇷 Français</a>
+      <a href="/de/" class="lang-chip">🇩🇪 Deutsch</a>
+      <a href="/ko/" class="lang-chip">🇰🇷 한국어</a>
+      <a href="/hi/" class="lang-chip">🇮🇳 हिन्दी</a>
+    </div>
+
+    <!-- Core Calculator Hub Grid -->
+    <h2 style="font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; color: var(--foreground);">
+      Popular Health Screening Calculators
+    </h2>
+    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; font-size: 0.95rem;">
+      Select from our suite of evidence-based health and anthropometric calculators to assess metabolic rate, body composition, and nutritional benchmarks.
+    </p>
+    <div class="grid">
+      <div class="card-item">
+        <div>
+          <h3>BMI Calculator</h3>
+          <p>Calculate your Body Mass Index score using international WHO and CDC healthy weight reference thresholds.</p>
+        </div>
+        <a href="/en/bmi-calculator/" class="card-link">Open Calculator →</a>
+      </div>
+
+      <div class="card-item">
+        <div>
+          <h3>BMR Calculator</h3>
+          <p>Estimate your Basal Metabolic Rate using the validated Mifflin-St Jeor equation to understand resting caloric needs.</p>
+        </div>
+        <a href="/en/bmr-calculator/" class="card-link">Open Calculator →</a>
+      </div>
+
+      <div class="card-item">
+        <div>
+          <h3>TDEE Calculator</h3>
+          <p>Compute Total Daily Energy Expenditure by factoring in physical exercise, daily chores, and occupational activity.</p>
+        </div>
+        <a href="/en/tdee-calculator/" class="card-link">Open Calculator →</a>
+      </div>
+
+      <div class="card-item">
+        <div>
+          <h3>Body Fat Calculator</h3>
+          <p>Estimate your body fat percentage using the official U.S. Navy circumference method with neck, waist, and hip inputs.</p>
+        </div>
+        <a href="/en/body-fat-calculator/" class="card-link">Open Calculator →</a>
+      </div>
+
+      <div class="card-item">
+        <div>
+          <h3>Ideal Weight Calculator</h3>
+          <p>Compare established ideal body weight equations including Devine, Robinson, and Miller reference formulas.</p>
+        </div>
+        <a href="/en/ideal-weight-calculator/" class="card-link">Open Calculator →</a>
+      </div>
+
+      <div class="card-item">
+        <div>
+          <h3>Indian BMI Calculator</h3>
+          <p>Apply official ICMR and WHO South Asian consensus cutoffs (overweight ≥ 23.0 kg/m², obesity ≥ 25.0 kg/m²).</p>
+        </div>
+        <a href="/en/bmi-calculator-for-indians/" class="card-link">Open Calculator →</a>
+      </div>
+    </div>
+
+    <!-- Educational & Privacy Notice Box -->
+    <div class="notice-box">
+      <h3 style="font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem;">Client-Side Privacy & Scientific Guidelines</h3>
+      <p style="margin-bottom: 0.5rem;">
+        All calculations on Real BMI execute locally in your web browser. No individual physiological measurements (weight, height, age, or gender) are stored on or transmitted to external web servers.
+      </p>
+      <p style="font-size: 0.8rem; color: var(--muted-foreground);">
+        Calculations are educational estimates based on published literature from the World Health Organization (WHO), Centers for Disease Control and Prevention (CDC), and Indian Council of Medical Research (ICMR). They do not replace professional medical evaluations.
+      </p>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="/en/" class="btn-main">Enter Interactive Calculator Suite</a>
+    </div>
+  </main>
   <script is:inline>
-    window.location.replace('/en/');
+    // Seamless progressive enhancement: browsers automatically navigate to the primary English suite
+    if (window.location.pathname === '/' || window.location.pathname === '') {
+      window.location.replace('/en/');
+    }
   </script>
 </body>
 </html>

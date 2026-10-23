@@ -23,7 +23,7 @@ export interface DomainInterpretationGuide {
 const UI_TITLES: Record<Locale, { varTitle: string; varSubtitle: string; metricLabel: string; imperialLabel: string }> = {
   en: {
     varTitle: 'Input Variables & Measurement Units',
-    varSubtitle: 'Standardized measurement parameters and unit conversions used by this calculator.',
+    varSubtitle: 'Measurement units and simple guidelines for this calculator.',
     metricLabel: 'Metric',
     imperialLabel: 'Imperial'
   },
@@ -213,9 +213,10 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
   const isBodyComp = ['body-fat-calculator', 'lean-body-mass-calculator', 'ideal-weight-calculator', 'waist-to-hip-ratio-calculator', 'body-surface-area-calculator'].includes(slug);
   const isCardio = ['heart-rate-zone-calculator', 'karvonen-heart-rate-calculator'].includes(slug);
   const isStrength = ['1rm-calculator', 'one-rep-max-calculator'].includes(slug);
-  const isSpecialty = ['protein-intake-calculator', 'water-intake-calculator', 'pregnancy-weight-gain-calculator', 'diabetes-risk-calculator'].includes(slug);
+  const isDiabetes = slug === 'diabetes-risk-calculator';
+  const isSpecialty = ['protein-intake-calculator', 'water-intake-calculator', 'pregnancy-weight-gain-calculator'].includes(slug);
 
-  const domain = isRegional ? 'regional' : (isMetabolic ? 'metabolic' : (isBodyComp ? 'bodycomp' : (isCardio ? 'cardio' : (isStrength ? 'strength' : (isSpecialty ? 'specialty' : 'bmi')))));
+  const domain = isRegional ? 'regional' : (isMetabolic ? 'metabolic' : (isBodyComp ? 'bodycomp' : (isCardio ? 'cardio' : (isStrength ? 'strength' : (isDiabetes ? 'diabetes' : (isSpecialty ? 'specialty' : 'bmi'))))));
 
   const GUIDES: Record<string, Record<Locale, DomainInterpretationGuide>> = {
     bmi: {
@@ -364,7 +365,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         limitationsTitle: 'Individual Differences in Calorie Formulas',
         limitationsText: 'Calorie formulas provide an estimate, typically within 10% to 15% of your true burn. Real metabolic rates vary from person to person. Genetics, muscle mass, age, and hormone levels all affect your daily calorie burn. Track your scale weight for three to four weeks. Then adjust your daily calorie intake based on your real-world progress.',
         medicalNoticeTitle: 'Nutritional Guidance Notice',
-        medicalNoticeText: 'Caloric targets are educational reference baselines. Consult a registered dietitian or doctor before starting a strict diet, especially if you have a metabolic condition.'
+        medicalNoticeText: 'Calorie targets are educational estimates. Speak with a doctor or dietitian before starting a strict diet, especially if you have a medical condition.'
       },
       es: {
         domain: 'metabolic',
@@ -428,11 +429,11 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         sectionTitle: 'Body Composition & Weight Guide',
         sectionSubtitle: 'Understanding body fat, lean muscle, and healthy weight ranges.',
         interpretationTitle: 'Body Measurement & Composition Models',
-        interpretationText: 'Body composition formulas estimate the balance between lean muscle, bone, and body fat. Height and weight formulas provide healthy reference ranges for your frame. Tape measurement methods estimate body fat using your neck, waist, and hip size. These tools help show whether extra weight comes from healthy muscle or excess body fat.',
+        interpretationText: 'Body composition formulas estimate the balance of muscle, bone, and body fat. Weight formulas give a healthy target range for your height. Tape measurements use your neck, waist, and hip size to estimate body fat. These tools help you see if weight changes come from muscle or fat.',
         limitationsTitle: 'Accuracy of Body Fat & Weight Formulas',
-        limitationsText: 'Tape measurements have an error margin of about 3% to 4% compared to clinical DEXA scans. Hydration, recent meals, and tape placement can all affect your daily numbers. Measure at the same time of day under consistent conditions for the most reliable trends.',
+        limitationsText: 'Tape measurements can vary by 3% to 4% compared to clinical body scans. Fluid retention, recent meals, and tape position can change your daily numbers. Measure at the same time each day for the most reliable trends.',
         medicalNoticeTitle: 'Health Assessment Notice',
-        medicalNoticeText: 'These formulas offer practical guidelines for fitness and wellness. They do not replace a full medical evaluation by a licensed healthcare provider.'
+        medicalNoticeText: 'These calculations offer helpful fitness guidelines. They do not replace a medical exam by your doctor.'
       },
       es: {
         domain: 'bodycomp',
@@ -493,12 +494,12 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     cardio: {
       en: {
         domain: 'cardio',
-        sectionTitle: 'Heart Rate Zones & Cardio Guide',
-        sectionSubtitle: 'How to use target heart rate zones for safe and effective aerobic workouts.',
-        interpretationTitle: 'Target Heart Rates & Karvonen Method',
-        interpretationText: 'Heart rate zones help you train at the right intensity for your fitness goals. Lower zones improve endurance, fat burning, and heart health. Higher zones build speed, power, and athletic performance. The Karvonen formula factors in your resting heart rate. This gives you a more personalized training zone than simple age-based estimates.',
-        limitationsTitle: 'Factors That Affect Your Heart Rate',
-        limitationsText: 'Age-based formulas provide a helpful starting point, but individual heart rates vary by 10 to 12 beats per minute. Medications, caffeine, stress, heat, and fatigue all change how fast your heart beats during exercise. Listen to your body and adjust your pace if you feel lightheaded or overly fatigued.',
+        sectionTitle: 'Cardiovascular Training Bands & Intensity Guide',
+        sectionSubtitle: 'How to utilize target exertion levels for safe and effective aerobic conditioning.',
+        interpretationTitle: 'Training Intensity & The Karvonen Method',
+        interpretationText: 'Pacing zones help you exercise at the right intensity for your fitness goals. Lower zones improve aerobic endurance, fat oxidation, and vascular conditioning. Higher zones build anaerobic power and speed. The Karvonen formula factors in your resting pulse, yielding a more personalized workout window than basic age formulas.',
+        limitationsTitle: 'Physiological Factors Affecting Pulse',
+        limitationsText: 'Age-predicted maximums provide a baseline, but individual peak readings vary by 10 to 12 beats per minute. Medications (such as beta-blockers), caffeine, hydration, heat, and stress all change exertion pulse. Always listen to your body and moderate pace if you experience lightheadedness or excessive breathlessness.',
         medicalNoticeTitle: 'Cardiovascular Safety Notice',
         medicalNoticeText: 'Speak with your doctor before starting vigorous cardio workouts, especially if you have high blood pressure, heart disease, or chest discomfort.'
       },
@@ -561,14 +562,14 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     strength: {
       en: {
         domain: 'strength',
-        sectionTitle: 'Muscular Strength & 1RM Estimation Guide',
-        sectionSubtitle: 'Interpreting maximal strength calculations, rep-to-fatigue formulas, and lifting percentages.',
-        interpretationTitle: 'One-Repetition Maximum (1RM) Principles',
-        interpretationText: 'A One-Repetition Maximum (1RM) estimates the peak external force a muscle group can generate for a single concentric repetition. Extrapolation equations (such as Brzycki, Epley, and Lander) estimate maximal strength from submaximal sets, minimizing injury risks associated with true 1RM testing.',
-        limitationsTitle: 'Repetition Ranges & Kinetic Limitations',
-        limitationsText: '1RM prediction algorithms maintain strong mathematical accuracy when input repetitions remain between 2 and 10 repetitions to technical failure. At higher rep ranges (> 10 repetitions), muscular endurance, fiber-type ratios, and metabolic fatigue introduce substantial variance into the projected load.',
-        medicalNoticeTitle: 'Resistance Training Safety & Spotter Notice',
-        medicalNoticeText: 'Always utilize competent spotters, safety pins, and appropriate warm-up protocols when executing heavy resistance training. Discontinue lifting immediately if acute joint or tendon pain occurs.'
+        sectionTitle: 'Muscular Strength & 1RM Guide',
+        sectionSubtitle: 'How to estimate your one-rep max and plan safe training weights.',
+        interpretationTitle: 'What One-Rep Max (1RM) Means',
+        interpretationText: 'Your One-Rep Max (1RM) is the heaviest weight you can lift for one clean repetition. Formulas like Epley and Brzycki estimate this max from sets of 2 to 10 reps. This protects your joints by avoiding risky single-rep maximum attempts.',
+        limitationsTitle: 'Best Repetition Ranges for Accuracy',
+        limitationsText: 'Formulas are most accurate when you test between 2 and 6 reps. Sets with more than 10 reps measure muscle stamina rather than pure strength. This can make the estimated 1RM less reliable.',
+        medicalNoticeTitle: 'Lifting Safety & Spotter Notice',
+        medicalNoticeText: 'Warm up thoroughly before lifting heavy weights. Always use safety pins or a spotter on bench presses and squats. Stop lifting if you feel sharp pain.'
       },
       es: {
         domain: 'strength',
@@ -626,17 +627,85 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         medicalNoticeText: 'भारी वजन उठाते समय हमेशा उचित वॉर्म-अप करें, सेफ्टी पिन का उपयोग करें और सहायक (स्पॉटर) की उपस्थिति सुनिश्चित करें।'
       }
     },
+    diabetes: {
+      en: {
+        domain: 'specialty',
+        sectionTitle: 'Type 2 Diabetes Screening Guide',
+        sectionSubtitle: 'Understanding lifestyle risk factors, statistical scores, and medical testing limits.',
+        interpretationTitle: 'What This Risk Score Estimates',
+        interpretationText: 'This calculator estimates statistical risk for Type 2 Diabetes using key lifestyle and physical markers. It evaluates your age, BMI, waist circumference, and activity habits. A higher score means a greater statistical chance of insulin resistance or elevated blood sugar over time.',
+        limitationsTitle: 'Important Screening Limits',
+        limitationsText: 'This online score is a lifestyle screening guide, not a medical test. It cannot measure your blood sugar directly. Many people with prediabetes have no symptoms at all. You can have elevated blood sugar even with a lower risk score.',
+        medicalNoticeTitle: 'Clinical Diagnosis Notice',
+        medicalNoticeText: 'Only a doctor can diagnose prediabetes or Type 2 Diabetes using laboratory blood tests, such as fasting blood sugar or an HbA1c test. If your score is moderate or high, schedule a routine checkup with your healthcare provider.'
+      },
+      es: {
+        domain: 'specialty',
+        sectionTitle: 'Guía de Cribado de Diabetes Tipo 2',
+        sectionSubtitle: 'Comprensión de factores de riesgo, puntuaciones estadísticas y límites del cribado.',
+        interpretationTitle: 'Qué Estima esta Puntuación de Riesgo',
+        interpretationText: 'Esta calculadora evalúa factores de riesgo estadísticos de diabetes tipo 2 usando indicadores físicos y hábitos de vida. Analiza la edad, el IMC, el perímetro de cintura y la actividad física.',
+        limitationsTitle: 'Límites Importantes del Cribado',
+        limitationsText: 'Esta puntuación es una guía orientativa de estilo de vida, no una prueba médica. No mide la glucosa en sangre. Muchas personas con prediabetes no presentan ningún síntoma visible.',
+        medicalNoticeTitle: 'Aviso de Diagnóstico Médico',
+        medicalNoticeText: 'Solo un médico colegiado puede diagnosticar prediabetes o diabetes tipo 2 mediante análisis de laboratorio, como glucosa en ayunas o hemoglobina glicosilada (HbA1c).'
+      },
+      fr: {
+        domain: 'specialty',
+        sectionTitle: 'Guide de Dépistage du Diabète de Type 2',
+        sectionSubtitle: 'Comprendre les facteurs de risque, les scores statistiques et les limites médicales.',
+        interpretationTitle: 'Ce que Mesure ce Score de Risque',
+        interpretationText: 'Ce calculateur évalue les facteurs de risque statistiques du diabète de type 2 en fonction de votre âge, de votre IMC, de votre tour de taille et de votre niveau d\'activité physique.',
+        limitationsTitle: 'Limites Importantes du Dépistage',
+        limitationsText: 'Ce score est un repère éducatif sur le mode de vie et non un test médical. Il ne mesure pas directement la glycémie. De nombreuses personnes prédiabétiques ne présentent aucun symptôme apparent.',
+        medicalNoticeTitle: 'Avis Médical et Diagnostic',
+        medicalNoticeText: 'Seul un médecin peut diagnostiquer un prédiabète ou un diabète de type 2 au moyen d\'analyses sanguines de laboratoire (glycémie à jeun ou test d\'HbA1c).'
+      },
+      de: {
+        domain: 'specialty',
+        sectionTitle: 'Leitfaden zum Typ-2-Diabetes-Screening',
+        sectionSubtitle: 'Risikofaktoren, statistische Einschätzungen und medizinische Grenzen verstehen.',
+        interpretationTitle: 'Was dieser Risikoscore bewertet',
+        interpretationText: 'Dieser Rechner ermittelt statistische Risikofaktoren für Typ-2-Diabetes anhand von Alter, BMI, Taillenumfang und körperlicher Aktivität. Ein höherer Wert weist auf eine statistisch erhöhte Wahrscheinlichkeit für Insulinresistenz hin.',
+        limitationsTitle: 'Wichtige Grenzen des Screenings',
+        limitationsText: 'Dieser Score ist ein Orientierungswert und kein medizinischer Test. Er misst den Blutzucker nicht direkt. Viele Menschen mit Prädiabetes zeigen keinerlei spürbare Symptome.',
+        medicalNoticeTitle: 'Hinweis zur Ärztlichen Diagnose',
+        medicalNoticeText: 'Ausschließlich ein Arzt kann Prädiabetes oder Typ-2-Diabetes durch standardisierte Laborblutuntersuchungen (z. B. Nüchternblutzucker oder HbA1c-Wert) diagnostizieren.'
+      },
+      ko: {
+        domain: 'specialty',
+        sectionTitle: '제2형 당뇨병 위험 선별 안내',
+        sectionSubtitle: '생활습관 위험 요인, 통계적 점수 및 의학적 검사의 한계점을 안내합니다.',
+        interpretationTitle: '본 위험 점수가 추정하는 내용',
+        interpretationText: '이 계산기는 연령, BMI, 허리둘레 및 신체 활동량을 바탕으로 제2형 당뇨병의 통계적 위험 요인을 평가합니다. 점수가 높을수록 인슐린 저항성 발생 위험이 통계적으로 높음을 의미합니다.',
+        limitationsTitle: '주요 선별 검사 한계점',
+        limitationsText: '본 온라인 점수는 생활습관 스크리닝 도구이며 의학적 진단 검사가 아닙니다. 혈당을 직접 측정하지 않으며, 전당뇨 단계에서는 겉으로 드러나는 증상이 전혀 없을 수 있습니다.',
+        medicalNoticeTitle: '임상 진단 관련 안내',
+        medicalNoticeText: '전당뇨 및 제2형 당뇨병의 확진은 전문의를 통한 공복 혈당 검사 또는 당화혈색소(HbA1c) 혈액 검사를 통해서만 가능합니다.'
+      },
+      hi: {
+        domain: 'specialty',
+        sectionTitle: 'टाइप 2 डायबिटीज स्क्रीनिंग गाइड',
+        sectionSubtitle: 'जोखिम कारकों, सांख्यिकीय स्कोर और चिकित्सीय सीमाओं की समझ।',
+        interpretationTitle: 'यह जोखिम स्कोर क्या अनुमानित करता है',
+        interpretationText: 'यह कैलकुलेटर आयु, बीएमआई, कमर की परिधि और गतिविधि स्तर के आधार पर टाइप 2 डायबिटीज के सांख्यिकीय जोखिम का आकलन करता है। उच्च स्कोर समय के साथ इंसुलिन प्रतिरोध की उच्च संभावना दर्शाता है।',
+        limitationsTitle: 'स्क्रीनिंग की महत्वपूर्ण सीमाएं',
+        limitationsText: 'यह स्कोर केवल एक सामान्य जीवनशैली मार्गदर्शिका है, कोई चिकित्सीय परीक्षण नहीं। यह सीधे ब्लड शुगर नहीं मापता। प्रीडायबिटीज वाले कई व्यक्तियों में कोई लक्षण दिखाई नहीं देते।',
+        medicalNoticeTitle: 'नैदानिक परीक्षण सूचना',
+        medicalNoticeText: 'केवल पंजीकृत चिकित्सक ही फास्टिंग ब्लड ग्लूकोज या HbA1c रक्त परीक्षण द्वारा प्रीडायबिटीज या डायबिटीज का वास्तविक निदान कर सकते हैं।'
+      }
+    },
     specialty: {
       en: {
         domain: 'specialty',
         sectionTitle: 'Nutrition & Daily Needs Guide',
         sectionSubtitle: 'Evidence-based guidelines for daily protein, hydration, and wellness targets.',
         interpretationTitle: 'Daily Protein & Nutrition Guidelines',
-        interpretationText: 'Daily protein needs depend on your body weight and activity level. Sedentary adults need about 0.8 grams of protein per kilogram of body weight to stay healthy. Active adults and strength trainers often benefit from 1.2 to 2.0 grams per kilogram. Spreading your protein across three to four meals each day helps support muscle repair and appetite control.',
+        interpretationText: 'Your daily protein needs depend on your weight and activity level. Sedentary adults need about 0.8 grams of protein per kilogram of body weight. Active adults and lifters usually benefit from 1.2 to 2.0 grams per kilogram. Eating protein across three or four meals helps support muscle recovery.',
         limitationsTitle: 'Health Conditions & Dietary Adjustments',
-        limitationsText: 'Standard protein recommendations apply to individuals with healthy kidney and liver function. People with kidney disease need to limit protein under medical supervision. Drink plenty of water throughout the day to help your body process protein efficiently.',
+        limitationsText: 'Standard protein targets assume normal kidney and liver function. People with kidney conditions should follow protein limits set by their doctor. Drink plenty of fresh water throughout the day to support healthy digestion.',
         medicalNoticeTitle: 'Dietary Guidance Notice',
-        medicalNoticeText: 'These calculations serve as educational guidelines. Consult a registered dietitian or doctor before making major changes to your daily diet.'
+        medicalNoticeText: 'These numbers are educational guidelines. Talk to a doctor or dietitian before making large diet changes.'
       },
       es: {
         domain: 'specialty',

@@ -41,8 +41,18 @@ test('UI & Reference Table Repetition Regression Tests', async (t) => {
     assert.strictEqual(deepHealthContent.includes('How Do I Calculate My BMI & Related Metrics?'), false, 'Redundant FAQ question should be removed from contentBmi');
     assert.strictEqual(deepHealthContent.includes('Is a BMI of 25 Realistic?'), false, 'Redundant athlete question should be removed from contentBmi');
     assert.strictEqual(deepHealthContent.includes('Body Mass Index (BMI) & Population Health Guidelines'), true, 'Authoritative guide retained');
-    assert.strictEqual(deepHealthContent.includes('Clinical Screening Limitations & Diagnostic Context'), true, 'Clinical screening limitations chapter added');
-    assert.strictEqual(deepHealthContent.includes('Evidence-Based Lifestyle & Preventive Strategies'), true, 'Evidence-based lifestyle chapter added');
+    assert.strictEqual(
+      deepHealthContent.includes('Clinical Screening Limitations & Diagnostic Context') || 
+      deepHealthContent.includes('Understanding the Medical Limits of BMI'), 
+      true, 
+      'Clinical screening limitations chapter present'
+    );
+    assert.strictEqual(
+      deepHealthContent.includes('Evidence-Based Lifestyle & Preventive Strategies') || 
+      deepHealthContent.includes('Daily Habits for Long-Term Health'), 
+      true, 
+      'Evidence-based lifestyle chapter present'
+    );
   });
 
   await t.test('ToolSEOContent: Does not duplicate introductory paragraph (currentData.intro removed from post-calculator block)', () => {

@@ -47,9 +47,12 @@ const articleSchema = {
       "url": "https://realbmicalculator.com/favicon.svg"
     }
   },
-  "datePublished": "2026-01-01",
-  "dateModified": new Date().toISOString().split('T')[0]
+  "datePublished": article.datePublished || "2026-01-15",
+  "dateModified": article.dateModified || "2026-10-21"
 };
+
+const datePublished = article.datePublished || "2026-01-15";
+const dateModified = article.dateModified || "2026-10-21";
 ---
 
 <Layout 
@@ -81,8 +84,8 @@ const articleSchema = {
           </div>
         </div>
         <div class="text-xs text-[var(--muted-foreground)] sm:text-right space-y-0.5 border-t sm:border-t-0 pt-2 sm:pt-0 border-[var(--border)]">
-          <p><span class="font-medium text-[var(--foreground)]">Published:</span> January 1, 2026</p>
-          <p><span class="font-medium text-[var(--foreground)]">Updated:</span> October 21, 2026</p>
+          <p><span class="font-medium text-[var(--foreground)]">Published:</span> {datePublished}</p>
+          <p><span class="font-medium text-[var(--foreground)]">Updated:</span> {dateModified}</p>
         </div>
       </div>
 

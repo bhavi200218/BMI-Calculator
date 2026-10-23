@@ -338,7 +338,7 @@ if (fs.existsSync(path.resolve('dist'))) {
   });
 
   // 11.3 Contextual article counts and footer across canonical calculators in all 6 locales
-  calculators.filter(c => c.slug !== 'one-rep-max-calculator').forEach(calc => {
+  calculators.filter(c => c.slug !== 'one-rep-max-calculator' && c.slug !== '3d-body-visualizer').forEach(calc => {
     LOCALES.forEach(lang => {
       runTest(`dist/[${lang}] [${calc.slug}]: Exactly 2-3 curated articles rendered & standardized footer`, () => {
         const htmlPath = path.resolve(`dist/${lang}/${calc.slug}/index.html`);
@@ -364,6 +364,16 @@ if (fs.existsSync(path.resolve('dist'))) {
       assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
       const html = fs.readFileSync(htmlPath, 'utf8');
       assert.ok(html.includes(`/${lang}/1rm-calculator/`), `Must redirect to /${lang}/1rm-calculator/`);
+    });
+  });
+
+  // 11.3c Consolidated 3D Body Visualizer redirect verification across all 6 locales
+  LOCALES.forEach(lang => {
+    runTest(`dist/[${lang}] [3d-body-visualizer]: Consolidated 301 redirect to 3d-bmi-calculator`, () => {
+      const htmlPath = path.resolve(`dist/${lang}/3d-body-visualizer/index.html`);
+      assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
+      const html = fs.readFileSync(htmlPath, 'utf8');
+      assert.ok(html.includes(`/${lang}/3d-bmi-calculator/`), `Must redirect to /${lang}/3d-bmi-calculator/`);
     });
   });
 

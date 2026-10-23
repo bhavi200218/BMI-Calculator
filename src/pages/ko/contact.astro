@@ -1,9 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "고객 지원 및 문의 | Real BMI Calculator",
+  "url": "https://realbmicalculator.com/ko/contact/",
+  "description": "Real BMI 공식 문의 페이지입니다. 건강 계산기 수식 검증, 3D 시각화 기술 지원, 학술 제휴 및 이용 관련 피드백을 전달하세요.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Real BMI Calculator",
+    "url": "https://realbmicalculator.com",
+    "email": "support@realbmicalculator.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "support@realbmicalculator.com",
+      "contactType": "customer support",
+      "availableLanguage": ["English", "Spanish", "French", "German", "Korean", "Hindi"]
+    }
+  }
+};
 ---
 
-<Layout title="문의하기 | Real BMI Calculator" description="Real BMI 공식 문의 페이지입니다. 건강 계산기 수식 검증, 3D 시각화 기술 지원, 학술 제휴 및 이용 관련 피드백을 전달하세요.">
+<Layout title="고객 지원 및 문의 | Real BMI Calculator" description="Real BMI 공식 문의 페이지입니다. 건강 계산기 수식 검증, 3D 시각화 기술 지원, 학술 제휴 및 이용 관련 피드백을 전달하세요.">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(contactSchema)} />
     <Navbar />
     <main class="pt-36 md:pt-40 pb-20 px-4 md:px-6">
         <div class="max-w-7xl mx-auto space-y-12">
@@ -32,7 +54,7 @@ import Navbar from '../../components/Navbar.astro';
               <div class="grid gap-4 sm:grid-cols-2">
                 <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
                   <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">이메일 지원</p>
-                  <a href="mailto:support@realbmicalculator.com" class="mt-2 text-base font-bold text-[var(--accent)] hover:underline block break-all">
+                  <a href="mailto:support@realbmicalculator.com" itemprop="email" class="mt-2 text-base font-bold text-[var(--accent)] hover:underline block break-all">
                     support@realbmicalculator.com
                   </a>
                 </div>
@@ -41,6 +63,9 @@ import Navbar from '../../components/Navbar.astro';
                   <p class="mt-2 text-base font-bold text-[var(--foreground)]">영업일 기준 24~48시간 이내 회신</p>
                 </div>
               </div>
+
+              <!-- Interactive Contact Form -->
+              <ContactForm lang="ko" />
 
               <!-- Guidance & Editorial Sections -->
               <div class="space-y-6 pt-4 border-t border-[var(--border)]">

@@ -1,0 +1,522 @@
+---
+interface Props {
+  lang: 'en' | 'de' | 'es' | 'fr' | 'ko' | 'hi';
+}
+
+const { lang } = Astro.props;
+
+interface FormDict {
+  heading: string;
+  subtext: string;
+  nameLabel: string;
+  namePlaceholder: string;
+  nameError: string;
+  emailLabel: string;
+  emailPlaceholder: string;
+  emailError: string;
+  subjectLabel: string;
+  subjectOptional: string;
+  subjects: string[];
+  messageLabel: string;
+  messagePlaceholder: string;
+  messageError: string;
+  charCount: string;
+  privacyTitle: string;
+  privacyText: string;
+  privacyLinkText: string;
+  privacySuffix: string;
+  submitBtn: string;
+  sendingText: string;
+  orReachUs: string;
+  successHeading: string;
+  successBody: string;
+  fallbackHeading: string;
+  fallbackBody: string;
+  fallbackNotice: string;
+  fallbackBtn: string;
+}
+
+const dicts: Record<string, FormDict> = {
+  en: {
+    heading: 'Send Us a Direct Message',
+    subtext: 'Have feedback on our algorithms, an inquiry about calculator embedding, or a bug report? Complete the form below and our editorial and engineering team will assist you.',
+    nameLabel: 'Full Name',
+    namePlaceholder: 'e.g. Dr. Alex Morgan',
+    nameError: 'Please enter your full name (minimum 2 characters).',
+    emailLabel: 'Email Address',
+    emailPlaceholder: 'alex@example.com',
+    emailError: 'Please enter a valid email address.',
+    subjectLabel: 'Subject',
+    subjectOptional: '(optional)',
+    subjects: [
+      'Formula Feedback & Academic Research',
+      '3D Body Visualizer & Technical Bug',
+      'Calculator Embedding / Iframe Integration',
+      'Editorial Policy & Reference Table Update',
+      'General Health Calculator Inquiry'
+    ],
+    messageLabel: 'Message',
+    messagePlaceholder: 'Please share your feedback, bug report, or inquiry...',
+    messageError: 'Please enter a detailed message (minimum 10 characters).',
+    charCount: 'Minimum 10 characters',
+    privacyTitle: 'Privacy Guarantee:',
+    privacyText: 'By submitting this form, you acknowledge that your submitted contact details are transmitted securely and processed exclusively to answer your inquiry in accordance with our',
+    privacyLinkText: 'Privacy Policy',
+    privacySuffix: '. We never sell, rent, or share personal contact details with third-party marketing networks.',
+    submitBtn: 'Send Message',
+    sendingText: 'Sending...',
+    orReachUs: 'or reach us directly at',
+    successHeading: 'Message Sent Successfully!',
+    successBody: 'Thank you for contacting Real BMI. Our team will review your inquiry and respond within 24–48 hours.',
+    fallbackHeading: 'Direct Email Pre-Configured:',
+    fallbackBody: 'Your message is validated and ready. Click the button below to send it directly to our team via your email client:',
+    fallbackNotice: 'Notice: Direct web dispatch is offline. Please send your message directly to our verified inbox:',
+    fallbackBtn: 'Send via Email App →'
+  },
+  de: {
+    heading: 'Direkte Nachricht Senden',
+    subtext: 'Haben Sie Anmerkungen zu unseren Algorithmen, Fragen zur Widget-Einbindung oder einen Fehlerbericht? Füllen Sie das Formular aus – unser Redaktions- und Entwicklerteam antwortet Ihnen gern.',
+    nameLabel: 'Vollständiger Name',
+    namePlaceholder: 'z. B. Dr. Johannes Müller',
+    nameError: 'Bitte geben Sie Ihren vollständigen Namen ein (mindestens 2 Zeichen).',
+    emailLabel: 'E-Mail-Adresse',
+    emailPlaceholder: 'name@beispiel.de',
+    emailError: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+    subjectLabel: 'Betreff',
+    subjectOptional: '(optional)',
+    subjects: [
+      'Formelmethodik & Wissenschaftliches Feedback',
+      '3D-Körper-Visualisierer & Technischer Fehler',
+      'Rechner-Einbindung / Iframe-Integration',
+      'Redaktionelle Richtlinien & Referenztabellen',
+      'Allgemeine Anfrage zu Gesundheitsrechnern'
+    ],
+    messageLabel: 'Nachricht',
+    messagePlaceholder: 'Bitte teilen Sie uns Ihr Anliegen, Feedback oder Ihren Fehlerbericht mit...',
+    messageError: 'Bitte geben Sie eine Nachricht mit mindestens 10 Zeichen ein.',
+    charCount: 'Mindestens 10 Zeichen',
+    privacyTitle: 'Datenschutzgarantie:',
+    privacyText: 'Mit dem Absenden erklären Sie sich damit einverstanden, dass Ihre Angaben zur Beantwortung Ihrer Anfrage gemäß unserer',
+    privacyLinkText: 'Datenschutzerklärung',
+    privacySuffix: ' verarbeitet werden. Wir verkaufen oder vermieten niemals persönliche Kontaktdaten.',
+    submitBtn: 'Nachricht Senden',
+    sendingText: 'Wird gesendet...',
+    orReachUs: 'oder direkt per E-Mail an',
+    successHeading: 'Nachricht Erfolgreich Übermittelt!',
+    successBody: 'Vielen Dank für Ihre Kontaktaufnahme. Unser Team wird Ihre Nachricht prüfen und innerhalb von 24–48 Stunden antworten.',
+    fallbackHeading: 'Direkte E-Mail Vorbereitet:',
+    fallbackBody: 'Ihre Nachricht wurde formatiert und ist bereit. Klicken Sie unten, um sie über Ihr lokales E-Mail-Programm zu versenden:',
+    fallbackNotice: 'Hinweis: Web-Versand offline. Senden Sie Ihre Nachricht bitte direkt an unser Postfach:',
+    fallbackBtn: 'In E-Mail-Programm öffnen →'
+  },
+  es: {
+    heading: 'Envíanos un Mensaje Directo',
+    subtext: '¿Tiene comentarios sobre nuestras fórmulas, consultas sobre la integración de widgets o un informe de error? Complete el formulario y nuestro equipo editorial e informático le responderá con gusto.',
+    nameLabel: 'Nombre Completo',
+    namePlaceholder: 'ej. Dr. Carlos Mendoza',
+    nameError: 'Por favor, introduzca su nombre completo (mínimo 2 caracteres).',
+    emailLabel: 'Correo Electrónico',
+    emailPlaceholder: 'nombre@ejemplo.com',
+    emailError: 'Por favor, introduzca un correo electrónico válido.',
+    subjectLabel: 'Asunto',
+    subjectOptional: '(opcional)',
+    subjects: [
+      'Metodología Científica y Fórmulas',
+      'Visualizador Corporal 3D e Incidencias Técnicas',
+      'Integración de Calculadoras / Widgets iFrame',
+      'Políticas Editoriales y Tablas de Referencia',
+      'Consulta General sobre Calculadoras'
+    ],
+    messageLabel: 'Mensaje',
+    messagePlaceholder: 'Describa detalladamente su consulta, sugerencia o incidencia...',
+    messageError: 'Por favor, escriba un mensaje de al menos 10 caracteres.',
+    charCount: 'Mínimo 10 caracteres',
+    privacyTitle: 'Garantía de Privacidad:',
+    privacyText: 'Al enviar este formulario, acepta que sus datos de contacto se procesen de forma segura y exclusivamente para responder a su consulta con arreglo a nuestra',
+    privacyLinkText: 'Política de Privacidad',
+    privacySuffix: '. Nunca comercializamos ni cedemos información personal a redes de terceros.',
+    submitBtn: 'Enviar Mensaje',
+    sendingText: 'Enviando...',
+    orReachUs: 'o escríbanos directamente a',
+    successHeading: '¡Mensaje Enviado con Éxito!',
+    successBody: 'Gracias por comunicarse con Real BMI. Nuestro equipo revisará su mensaje y responderá dentro de 24 a 48 horas laborables.',
+    fallbackHeading: 'Correo Directo Preparado:',
+    fallbackBody: 'Su mensaje ha sido validado. Haga clic abajo para enviarlo directamente a través de su cliente de correo:',
+    fallbackNotice: 'Aviso: Envío web no disponible temporalmente. Puede enviarnos su mensaje directamente a nuestro buzón:',
+    fallbackBtn: 'Enviar por Correo →'
+  },
+  fr: {
+    heading: 'Envoyez-nous un Message Direct',
+    subtext: 'Une question sur la validité de nos calculs, l\'intégration d\'un simulateur ou un dysfonctionnement technique ? Complétez ce formulaire et notre équipe éditoriale vous répondra avec soin.',
+    nameLabel: 'Nom Complet',
+    namePlaceholder: 'ex. Dr. Julien Dubois',
+    nameError: 'Veuillez renseigner votre nom complet (au moins 2 caractères).',
+    emailLabel: 'Adresse E-mail',
+    emailPlaceholder: 'contact@exemple.fr',
+    emailError: 'Veuillez indiquer une adresse e-mail valide.',
+    subjectLabel: 'Objet',
+    subjectOptional: '(facultatif)',
+    subjects: [
+      'Questions Méthodologiques et Formules Scientifiques',
+      'Visualiseur 3D et Débogage Technique',
+      'Intégration de Calculateurs / Code iFrame',
+      'Ligne Éditoriale et Tables de Référence',
+      'Demande Générale sur nos Outils'
+    ],
+    messageLabel: 'Message',
+    messagePlaceholder: 'Précisez votre demande, suggestion ou rapport d\'incident...',
+    messageError: 'Veuillez formuler un message d\'au moins 10 caractères.',
+    charCount: '10 caractères minimum',
+    privacyTitle: 'Garantie de Confidentialité :',
+    privacyText: 'En soumettant ce formulaire, vous consentez au traitement confidentiel de vos coordonnées dans le strict cadre du traitement de votre demande conformément à notre',
+    privacyLinkText: 'Politique de Confidentialité',
+    privacySuffix: '. Vos données ne sont jamais cédées ni vendues à des tiers.',
+    submitBtn: 'Envoyer le Message',
+    sendingText: 'Envoi en cours...',
+    orReachUs: 'ou directement par e-mail à',
+    successHeading: 'Message Transmis avec Succès !',
+    successBody: 'Merci d\'avoir contacté Real BMI. Notre équipe examinera votre demande et y apportera réponse sous 24 à 48 heures ouvrées.',
+    fallbackHeading: 'Message Préconfiguré par E-mail :',
+    fallbackBody: 'Votre message est validé. Cliquez ci-dessous pour le transmettre immédiatement via votre messagerie habituelle :',
+    fallbackNotice: 'Information : Service web indisponible. Vous pouvez nous écrire directement à notre adresse officielle :',
+    fallbackBtn: 'Ouvrir dans l\'application e-mail →'
+  },
+  ko: {
+    heading: '직접 문의 메시지 보내기',
+    subtext: '계산 공식의 의학적 근거, 웹사이트 내 계산기 임베드 제휴, 3D 시각화 도구의 기술 오류 제보가 있으신 경우 아래 양식을 작성해 주시면 담당 팀이 신속히 안내해 드립니다.',
+    nameLabel: '성명',
+    namePlaceholder: '예: 홍길동 연구원',
+    nameError: '성명을 2자 이상 입력해 주세요.',
+    emailLabel: '이메일 주소',
+    emailPlaceholder: 'name@example.kr',
+    emailError: '유효한 이메일 주소를 입력해 주세요.',
+    subjectLabel: '문의 분야',
+    subjectOptional: '(선택)',
+    subjects: [
+      '계산 공식 검증 및 학술 연구 피드백',
+      '3D 바디 시각화 도구 및 그래픽 오류 제보',
+      '계산기 위젯 아이프레임(iFrame) 웹 연동',
+      '편집 정책 및 참고 기준치 업데이트 제안',
+      '기타 건강 계산기 일반 문의'
+    ],
+    messageLabel: '문의 내용',
+    messagePlaceholder: '문의하실 내용이나 오류 사항을 상세히 기재해 주세요...',
+    messageError: '문의 내용을 최소 10자 이상 작성해 주세요.',
+    charCount: '최소 10자 이상',
+    privacyTitle: '개인정보 보호 서약:',
+    privacyText: '본 양식을 제출하시면 문의 응대 목적으로만 개인정보가 안전하게 전송 및 처리되는 것에 동의하게 되며, 이는 당사의',
+    privacyLinkText: '개인정보 처리방침',
+    privacySuffix: '을 준수합니다. 당사는 수집된 정보를 마케팅 등 제3자에게 절대 제공하거나 판매하지 않습니다.',
+    submitBtn: '메시지 보내기',
+    sendingText: '전송 중...',
+    orReachUs: '또는 공식 지원 이메일 직통',
+    successHeading: '메시지가 성공적으로 전송되었습니다!',
+    successBody: 'Real BMI에 문의해 주셔서 감사합니다. 담당 편집 및 엔지니어링 팀에서 내용을 검토한 후 영업일 기준 24~48시간 이내에 회신드리겠습니다.',
+    fallbackHeading: '이메일 클라이언트 직접 발송:',
+    fallbackBody: '작성하신 메시지가 준비되었습니다. 아래 버튼을 클릭하여 사용 중인 이메일 앱에서 즉시 전송하세요:',
+    fallbackNotice: '알림: 웹 직접 발송이 일시 중단되었습니다. 공식 수신함으로 직접 전송해 주십시오:',
+    fallbackBtn: '이메일 앱에서 열기 →'
+  },
+  hi: {
+    heading: 'सीधा संदेश भेजें',
+    subtext: 'हमारे गणितीय सूत्रों, 3D विज़ुअलाइज़र की तकनीकी खामी या कैलकुलेटर एम्बेडिंग से संबंधित किसी भी पूछताछ के लिए कृपया नीचे दिया गया फॉर्म भरें।',
+    nameLabel: 'पूरा नाम',
+    namePlaceholder: 'उदा. डॉ. राहुल शर्मा',
+    nameError: 'कृपया अपना पूरा नाम लिखें (न्यूनतम 2 अक्षर)।',
+    emailLabel: 'ईमेल पता',
+    emailPlaceholder: 'name@example.com',
+    emailError: 'कृपया एक वैध ईमेल पता दर्ज करें।',
+    subjectLabel: 'विषय',
+    subjectOptional: '(वैकल्पिक)',
+    subjects: [
+      'वैज्ञानिक सूत्र एवं अकादमिक शोध प्रतिक्रिया',
+      '3D बॉडी विज़ुअलाइज़र एवं तकनीकी समस्या',
+      'कैलकुलेटर एम्बेडिंग / iFrame एकीकरण',
+      'संपादकीय नीति एवं संदर्भ तालिका अपडेट',
+      'सामान्य स्वास्थ्य टूल्स संबंधी प्रश्न'
+    ],
+    messageLabel: 'संदेश',
+    messagePlaceholder: 'कृपया अपनी प्रतिक्रिया, त्रुटि रिपोर्ट या प्रश्न का विवरण साझा करें...',
+    messageError: 'कृपया कम से कम 10 अक्षरों का विस्तृत संदेश लिखें।',
+    charCount: 'कम से कम 10 अक्षर',
+    privacyTitle: 'गोपनीयता आश्वासन:',
+    privacyText: 'यह फॉर्म जमा करके आप स्वीकार करते हैं कि आपके संपर्क विवरण सुरक्षित रूप से प्रेषित किए जाते हैं और हमारी',
+    privacyLinkText: 'गोपनीयता नीति',
+    privacySuffix: ' के अनुसार केवल आपके प्रश्न का समाधान करने के लिए उपयोग किए जाते हैं। हम व्यक्तिगत विवरण कभी किसी तीसरे पक्ष को साझा या विक्रय नहीं करते हैं।',
+    submitBtn: 'संदेश भेजें',
+    sendingText: 'भेजा जा रहा है...',
+    orReachUs: 'या सीधे संपर्क करें',
+    successHeading: 'संदेश सफलतापूर्वक भेजा गया!',
+    successBody: 'Real BMI से संपर्क करने के लिए धन्यवाद। हमारी टीम आपके संदेश की समीक्षा करेगी और 24–48 घंटों में उत्तर देगी।',
+    fallbackHeading: 'सीधा ईमेल तैयार है:',
+    fallbackBody: 'आपका संदेश मान्य और तैयार है। अपने ईमेल ऐप से सीधे भेजने के लिए नीचे दिए गए बटन पर क्लिक करें:',
+    fallbackNotice: 'सूचना: वेब डिस्पैच वर्तमान में अनुपलब्ध है। कृपया अपना संदेश सीधे हमारे इनबॉक्स में भेजें:',
+    fallbackBtn: 'ईमेल ऐप द्वारा भेजें →'
+  }
+};
+
+const d = dicts[lang] || dicts.en;
+---
+
+<div class="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 sm:p-8 shadow-xs space-y-6">
+  <div class="space-y-2">
+    <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+      {d.heading}
+    </h2>
+    <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
+      {d.subtext}
+    </p>
+  </div>
+
+  <form id="contactForm" action="/api/contact" method="POST" class="space-y-5" novalidate>
+    <!-- Hidden locale field for backend routing if needed -->
+    <input type="hidden" name="lang" value={lang} />
+
+    <!-- Anti-spam Honeypot -->
+    <div class="hidden" aria-hidden="true">
+      <label for="contact-honey">Leave this field blank</label>
+      <input type="text" id="contact-honey" name="_honey" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <!-- Name Field -->
+      <div class="space-y-1.5">
+        <label for="contact-name" class="block text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+          {d.nameLabel} <span class="text-red-500" aria-hidden="true">*</span>
+        </label>
+        <input 
+          type="text" 
+          id="contact-name" 
+          name="name" 
+          required 
+          minlength="2" 
+          maxlength="100" 
+          autocomplete="name"
+          placeholder={d.namePlaceholder}
+          class="w-full px-4 py-3 text-sm rounded-xl border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/60 focus:outline-hidden focus:ring-2 focus:ring-[var(--accent)]/40 focus:border-[var(--accent)] transition-all"
+          aria-required="true"
+        />
+        <p id="nameError" class="text-xs text-red-500 hidden font-medium"></p>
+      </div>
+
+      <!-- Email Field -->
+      <div class="space-y-1.5">
+        <label for="contact-email" class="block text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+          {d.emailLabel} <span class="text-red-500" aria-hidden="true">*</span>
+        </label>
+        <input 
+          type="email" 
+          id="contact-email" 
+          name="email" 
+          required 
+          maxlength="254" 
+          autocomplete="email"
+          placeholder={d.emailPlaceholder}
+          class="w-full px-4 py-3 text-sm rounded-xl border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/60 focus:outline-hidden focus:ring-2 focus:ring-[var(--accent)]/40 focus:border-[var(--accent)] transition-all"
+          aria-required="true"
+        />
+        <p id="emailError" class="text-xs text-red-500 hidden font-medium"></p>
+      </div>
+    </div>
+
+    <!-- Subject Field -->
+    <div class="space-y-1.5">
+      <label for="contact-subject" class="block text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+        {d.subjectLabel} <span class="text-xs font-normal text-[var(--muted-foreground)] lowercase">{d.subjectOptional}</span>
+      </label>
+      <select 
+        id="contact-subject" 
+        name="subject"
+        class="w-full px-4 py-3 text-sm rounded-xl border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:outline-hidden focus:ring-2 focus:ring-[var(--accent)]/40 focus:border-[var(--accent)] transition-all cursor-pointer"
+      >
+        {d.subjects.map((s, idx) => (
+          <option value={s} selected={idx === 0}>{s}</option>
+        ))}
+      </select>
+    </div>
+
+    <!-- Message Field -->
+    <div class="space-y-1.5">
+      <label for="contact-message" class="block text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+        {d.messageLabel} <span class="text-red-500" aria-hidden="true">*</span>
+      </label>
+      <textarea 
+        id="contact-message" 
+        name="message" 
+        required 
+        minlength="10" 
+        maxlength="3000" 
+        rows="5"
+        placeholder={d.messagePlaceholder}
+        class="w-full px-4 py-3 text-sm rounded-xl border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]/60 focus:outline-hidden focus:ring-2 focus:ring-[var(--accent)]/40 focus:border-[var(--accent)] transition-all resize-y"
+        aria-required="true"
+      ></textarea>
+      <div class="flex justify-between items-center text-xs text-[var(--muted-foreground)]">
+        <p id="messageError" class="text-red-500 hidden font-medium"></p>
+        <p id="charCount" class="ml-auto font-medium">{d.charCount}</p>
+      </div>
+    </div>
+
+    <!-- Privacy Notice -->
+    <div class="rounded-xl bg-[var(--muted)]/50 border border-[var(--border)]/70 p-4">
+      <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+        <strong class="text-[var(--foreground)]">{d.privacyTitle}</strong> {d.privacyText} <a href={`/${lang}/privacy-policy/`} class="text-[var(--accent)] underline hover:text-[var(--foreground)]">{d.privacyLinkText}</a>{d.privacySuffix}
+      </p>
+    </div>
+
+    <!-- Feedback Alert Box -->
+    <div id="formFeedback" class="hidden p-4 rounded-xl text-sm font-medium leading-relaxed" role="alert"></div>
+
+    <!-- Action Buttons -->
+    <div class="flex items-center gap-4 flex-wrap">
+      <button 
+        type="submit" 
+        id="submitBtn"
+        class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--accent)] text-white text-xs font-display font-bold uppercase tracking-widest hover:opacity-95 active:scale-[0.99] transition-all cursor-pointer shadow-md disabled:opacity-50"
+      >
+        <span id="btnText">{d.submitBtn}</span>
+        <svg id="btnSpinner" class="hidden w-4 h-4 animate-spin text-white" viewBox="0 0 24 24" fill="none">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+        </svg>
+      </button>
+      <span class="text-xs text-[var(--muted-foreground)] font-medium">
+        {d.orReachUs} <a href="mailto:support@realbmicalculator.com" itemprop="email" class="text-[var(--accent)] underline font-bold">support@realbmicalculator.com</a>
+      </span>
+    </div>
+  </form>
+</div>
+
+<!-- Script for Contact Form Handling -->
+<script is:inline define:vars={{ 
+  nameErrText: d.nameError, 
+  emailErrText: d.emailError, 
+  msgErrText: d.messageError, 
+  sendingText: d.sendingText, 
+  submitBtnText: d.submitBtn,
+  successTitle: d.successHeading,
+  successMsg: d.successBody,
+  fallbackTitle: d.fallbackHeading,
+  fallbackMsg: d.fallbackBody,
+  fallbackNoticeText: d.fallbackNotice,
+  fallbackBtnText: d.fallbackBtn
+}}>
+  (function() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const subjectInput = document.getElementById('contact-subject');
+    const messageInput = document.getElementById('contact-message');
+    const honeyInput = document.getElementById('contact-honey');
+
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const messageError = document.getElementById('messageError');
+    const feedback = document.getElementById('formFeedback');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnSpinner = document.getElementById('btnSpinner');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function resetErrors() {
+      if (nameError) nameError.classList.add('hidden');
+      if (emailError) emailError.classList.add('hidden');
+      if (messageError) messageError.classList.add('hidden');
+      if (nameInput) nameInput.classList.remove('border-red-500');
+      if (emailInput) emailInput.classList.remove('border-red-500');
+      if (messageInput) messageInput.classList.remove('border-red-500');
+    }
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      resetErrors();
+
+      let hasError = false;
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const subject = subjectInput ? subjectInput.value.trim() : 'Inquiry';
+      const message = messageInput ? messageInput.value.trim() : '';
+      const honey = honeyInput ? honeyInput.value.trim() : '';
+
+      if (name.length < 2) {
+        if (nameError) {
+          nameError.textContent = nameErrText;
+          nameError.classList.remove('hidden');
+        }
+        if (nameInput) nameInput.classList.add('border-red-500');
+        hasError = true;
+      }
+
+      if (!emailRegex.test(email)) {
+        if (emailError) {
+          emailError.textContent = emailErrText;
+          emailError.classList.remove('hidden');
+        }
+        if (emailInput) emailInput.classList.add('border-red-500');
+        hasError = true;
+      }
+
+      if (message.length < 10) {
+        if (messageError) {
+          messageError.textContent = msgErrText;
+          messageError.classList.remove('hidden');
+        }
+        if (messageInput) messageInput.classList.add('border-red-500');
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      // UI Loading State
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnText) btnText.textContent = sendingText;
+      if (btnSpinner) btnSpinner.classList.remove('hidden');
+      if (feedback) feedback.classList.add('hidden');
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, subject, message, _honey: honey })
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && data.success) {
+          if (feedback) {
+            feedback.className = 'p-4 rounded-xl text-sm font-medium leading-relaxed bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400';
+            feedback.innerHTML = '<strong>' + successTitle + '</strong> ' + successMsg;
+            feedback.classList.remove('hidden');
+          }
+          form.reset();
+        } else if (data.requiresConfig || res.status === 503 || res.status === 200) {
+          // Transparent fallback to prefilled direct mailto
+          const mailtoUrl = 'mailto:support@realbmicalculator.com?subject=' + encodeURIComponent('[' + subject + '] ' + name) + '&body=' + encodeURIComponent('From: ' + name + ' <' + email + '>\n\n' + message);
+          if (feedback) {
+            feedback.className = 'p-5 rounded-xl text-sm font-medium leading-relaxed bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 space-y-3';
+            feedback.innerHTML = '<div><strong>' + fallbackTitle + '</strong> ' + fallbackMsg + '</div>' +
+              '<div class="pt-1"><a href="' + mailtoUrl + '" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] text-white text-xs font-display font-bold uppercase tracking-wider hover:opacity-90 transition-all shadow-xs">' + fallbackBtnText + '</a></div>';
+            feedback.classList.remove('hidden');
+          }
+        } else {
+          throw new Error(data.error || 'Server error');
+        }
+      } catch (err) {
+        const mailtoUrl = 'mailto:support@realbmicalculator.com?subject=' + encodeURIComponent('[' + subject + '] ' + name) + '&body=' + encodeURIComponent('From: ' + name + ' <' + email + '>\n\n' + message);
+        if (feedback) {
+          feedback.className = 'p-5 rounded-xl text-sm font-medium leading-relaxed bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 space-y-3';
+          feedback.innerHTML = '<div><strong>' + fallbackNoticeText + '</strong></div>' +
+            '<div class="pt-1"><a href="' + mailtoUrl + '" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] text-white text-xs font-display font-bold uppercase tracking-wider hover:opacity-90 transition-all shadow-xs">' + fallbackBtnText + '</a></div>';
+          feedback.classList.remove('hidden');
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+        if (btnText) btnText.textContent = submitBtnText;
+        if (btnSpinner) btnSpinner.classList.add('hidden');
+      }
+    });
+  })();
+</script>

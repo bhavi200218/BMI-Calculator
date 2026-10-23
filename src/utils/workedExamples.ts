@@ -17,7 +17,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
   en: {
     eyebrow: "Verified Worked Example",
     title: "Step-by-Step Calculation & Educational Interpretation",
-    subtitle: "Explore a transparent step-by-step calculation showing how input measurements are evaluated using official equations and clinical reference ranges.",
+    subtitle: "See how this formula works step by step with sample measurements and clear health ranges.",
     input: "Sample Input Parameters",
     steps: "Mathematical Derivation Steps",
     result: "Calculated Reference Output",
@@ -501,7 +501,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "अनुमानित 1RM बेंचमार्क (एपले)", value: "117 किग्रा (257 पाउंड)" }
     },
     interp: {
-      en: "Lifting 100 kg for 5 clean reps projects an estimated single-repetition capacity of 117 kg (~85% load intensity for 5RM). Submaximal multi-rep formulas are most reliable between 2 and 6 repetitions. Repetition ranges above 10 introduce anaerobic endurance and fatigue variables that skew maximal estimation. This output serves as a programming guideline for calibrating working set percentages, not an assurance of safe unassisted execution without spotters.",
+      en: "Lifting 100 kg for 5 clean reps gives an estimated 1RM of 117 kg. This weight represents about 85% of your maximum strength. Multi-rep formulas work best between 2 and 6 reps. Sets with more than 10 reps test muscle endurance, which makes the 1RM estimate less accurate. Use this number to plan your workout weights. Always lift heavy weights with safety pins or a spotter.",
       es: "Levantar 100 kg para 5 repeticiones limpias proyecta un 1RM de 117 kg (equivalente a una intensidad del ~85%). Las ecuaciones submáximas ofrecen mayor precisión entre 2 y 6 repeticiones. Por encima de 10 repeticiones, la fatiga y la resistencia muscular alteran la predicción. Utilice este cálculo para dosificar porcentajes de entrenamiento (ej. series al 75-80%), no como garantía para intentar un máximo sin asistentes.",
       fr: "Déplacer 100 kg sur 5 répétitions propres correspond à une charge maximale théorique de 117 kg (intensité d'environ 85 % pour 5 reps). Les équations prédictives sont particulièrement fiables entre 2 et 6 répétitions. Au-delà de 10 répétitions, l'endurance musculaire et la fatigue faussent les calculs. Ce chiffre permet de calibrer les charges de travail d'un cycle sans risquer une blessure lors d'un test maximal réel.",
       de: "Das Bewältigen von 100 kg für 5 saubere Wiederholungen ergibt ein rechnerisches 1RM von ca. 117 kg (~85 % der Maximalkraft). Submaximale Formeln sind im Bereich von 2 bis 6 Wiederholungen am präzisesten. Bei mehr als 10 Wiederholungen verfälschen Ermüdung und Kraftausdauer das Ergebnis. Der Wert dient als Orientierung für Trainingsgewichte, nicht als Empfehlung für ungesicherte Maximalversuche.",
@@ -513,7 +513,7 @@ const EXAMPLES: Record<string, ToolData> = {
   // 8. Karvonen Heart Rate Reserve Calculator
   'karvonen-heart-rate-calculator': {
     inputs: {
-      en: [{ label: "Chronological Age", value: "30 years" }, { label: "Resting Heart Rate (RHR)", value: "60 bpm" }],
+      en: [{ label: "Chronological Age", value: "30 years" }, { label: "Baseline Resting Pulse", value: "60 bpm" }],
       es: [{ label: "Edad Cronológica", value: "30 años" }, { label: "Frecuencia Cardíaca en Reposo (RHR)", value: "60 lpm" }],
       fr: [{ label: "Âge Chronologique", value: "30 ans" }, { label: "Fréquence Cardiaque au Repos (FCR)", value: "60 bpm" }],
       de: [{ label: "Lebensalter", value: "30 Jahre" }, { label: "Ruhepuls (RHR)", value: "60 S/min" }],
@@ -522,10 +522,10 @@ const EXAMPLES: Record<string, ToolData> = {
     },
     steps: {
       en: [
-        "Step 1: Estimate Maximum Heart Rate: HR_max = 220 - Age = 220 - 30 = 190 bpm",
-        "Step 2: Calculate Heart Rate Reserve (HRR): HRR = HR_max - RHR = 190 - 60 = 130 bpm",
-        "Step 3: Target HR Zone 2 Lower Bound (60% intensity): 60 + (130 × 0.60) = 60 + 78 = 138 bpm",
-        "Step 4: Target HR Zone 2 Upper Bound (70% intensity): 60 + (130 × 0.70) = 60 + 91 = 151 bpm",
+        "Step 1: Estimate Maximum Pulse: Peak HR = 220 - Age = 220 - 30 = 190 bpm",
+        "Step 2: Calculate Heart Rate Reserve (HRR): HRR = Peak HR - Resting Pulse = 190 - 60 = 130 bpm",
+        "Step 3: Target Zone 2 Lower Bound (60% intensity): 60 + (130 × 0.60) = 60 + 78 = 138 bpm",
+        "Step 4: Target Zone 2 Upper Bound (70% intensity): 60 + (130 × 0.70) = 60 + 91 = 151 bpm",
         "Step 5: Reference Zone 1 Warm-up (50–60%): 125 to 138 bpm; Zone 3 Aerobic (70–80%): 151 to 164 bpm"
       ],
       es: [
@@ -565,7 +565,7 @@ const EXAMPLES: Record<string, ToolData> = {
       ]
     },
     result: {
-      en: { label: "Target Heart Rate (Karvonen Zone 2: 60–70% HRR)", value: "138 – 151 bpm" },
+      en: { label: "Target Exertion Range (Karvonen Zone 2: 60–70% HRR)", value: "138 – 151 bpm" },
       es: { label: "Frecuencia Cardíaca Objetivo (Zona 2 Karvonen: 60–70%)", value: "138 – 151 lpm" },
       fr: { label: "Fréquence Cardiaque Cible (Zone 2 Karvonen : 60–70 %)", value: "138 – 151 bpm" },
       de: { label: "Zielherzfrequenz (Karvonen Zone 2: 60–70 % HRR)", value: "138 – 151 S/min" },
@@ -573,12 +573,144 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "लक्षित हृदय गति (कार्वोनेन ज़ोन 2: 60–70% HRR)", value: "138 – 151 BPM" }
     },
     interp: {
-      en: "The Karvonen formula uses your resting pulse (60 bpm) to calculate personal workout zones. A range of 138 to 151 bpm keeps you in Zone 2. This moderate pace helps you burn fat and build endurance without tiring your muscles too quickly. Note that estimated max heart rates can vary by 10 to 12 beats per minute. Heat, stress, caffeine, and poor sleep can also change your daily heart rate.",
+      en: "The Karvonen formula uses your resting pulse (60 bpm) to calculate personal workout zones. A range of 138 to 151 bpm keeps you in Zone 2. This moderate pace helps you burn fat and build endurance without tiring your muscles too quickly. Note that estimated peak cardiac output can vary by 10 to 12 beats per minute. Heat, stress, caffeine, and poor sleep can also change your daily pulse reading.",
       es: "Al basar la intensidad en el pulso en reposo (60 lpm), Karvonen personaliza las zonas cardiovasculares respecto a fórmulas genéricas. Mantener 138 a 151 lpm sitúa el esfuerzo en la Zona 2 (base aeróbica), favoreciendo la oxidación de grasas sin generar acumulación temprana de lactato. Limitaciones: La fórmula 220-edad tiene un margen de error de ±10 a 12 lpm. El calor ambiental, la deshidratación, la cafeína y ciertos fármacos (como betabloqueantes) modifican la respuesta cardíaca.",
       fr: "En intégrant la fréquence cardiaque au repos (60 bpm), la méthode de Karvonen personnalise vos zones d'effort par rapport aux formules théoriques classiques. La plage de 138 à 151 bpm correspond à la Zone 2 (endurance fondamentale), favorisant l'oxydation des lipides sans acidose précoce. Limites : L'estimation 220-âge comporte une marge de ±10 à 12 bpm. La déshydratation, la caféine, la chaleur ou des traitements (bêtabloquants) modifient la réponse cardiaque.",
       de: "Durch die Einbeziehung des individuellen Ruhepulses (60 S/min) passt Karvonen die Trainingszonen an den individuellen Trainingszustand an. Ein Bereich von 138 bis 151 S/min entspricht der Zone 2 (aerobe Basis), die den Fettstoffwechsel optimiert, ohne Laktat anzuhäufen. Grenzen: Die Formel 220-Alter unterliegt einer biologischen Streuung von ca. ±10 bis 12 S/min. Hitze, Flüssigkeitsmangel, Koffein und Medikamente (z. B. Betablocker) beeinflussen die Herzfrequenz maßgeblich.",
       ko: "개인의 안정 시 심박수(60 bpm)를 반영하는 Karvonen 공식은 단순 백분율 공식보다 훨씬 정밀하게 유산소 훈련 구간을 설정합니다. 138 ~ 151 bpm 범위는 미토콘드리아의 지방 산화 효율을 극대화하는 Zone 2(유산소 기초 지구력) 구간입니다. 한계점: 220-나이 최대 심박수 추정치는 개인별로 약 ±10~12 bpm의 오차가 있습니다. 탈수, 기온, 카페인 섭취 및 베타차단제 복용 등은 심박수 반응에 직접적인 영향을 미칩니다.",
       hi: "विश्राम पल्स (60 BPM) को आधार बनाकर, कार्वोनेन विधि सामान्य सूत्रों की तुलना में अधिक सटीक व्यक्तिगत कार्डियो ज़ोन बनाती है। 138 से 151 BPM बनाए रखना ज़ोन 2 (एरोबिक बेस) को लक्षित करता है, जिससे लैक्टिक एसिड जमा हुए बिना फैट बर्न होता है। सीमाएं: 220-आयु फॉर्मूले में लगभग ±10 से 12 BPM का अंतर हो सकता है। तापमान, निर्जलीकरण, कैफीन और बीटा-ब्लॉकर दवाएं हृदय गति को सीधे प्रभावित करती हैं।"
+    }
+  },
+
+  // 9. Ideal Weight Calculator
+  'ideal-weight-calculator': {
+    inputs: {
+      en: [{ label: "Biological Sex", value: "Male" }, { label: "Height", value: "178.0 cm (5'10\")" }],
+      es: [{ label: "Sexo Biológico", value: "Masculino" }, { label: "Estatura", value: "178.0 cm (5'10\")" }],
+      fr: [{ label: "Sexe Biologique", value: "Homme" }, { label: "Taille", value: "178,0 cm (5'10\")" }],
+      de: [{ label: "Geschlecht", value: "Männlich" }, { label: "Körpergröße", value: "178,0 cm (5'10\")" }],
+      ko: [{ label: "생물학적 성별", value: "남성" }, { label: "신장", value: "178.0 cm (5'10\")" }],
+      hi: [{ label: "जैविक लिंग", value: "पुरुष" }, { label: "ऊंचाई", value: "178.0 सेमी (5'10\")" }]
+    },
+    steps: {
+      en: [
+        "Step 1: Convert height to inches: 178 cm = 70.08 inches (10.08 inches over 5 feet)",
+        "Step 2: Devine formula: 50.0 kg + (2.3 kg × 10.08 inches) = 50.0 + 23.18 = 73.18 kg",
+        "Step 3: Robinson formula comparison: 52.0 kg + (1.9 kg × 10.08 inches) = 71.15 kg",
+        "Step 4: WHO healthy BMI weight range (18.5 to 24.9 kg/m²): 58.6 kg to 78.9 kg"
+      ],
+      es: [
+        "Paso 1: Convertir estatura a pulgadas: 178 cm = 70.08 pulgadas (10.08 pulgadas sobre 5 pies)",
+        "Paso 2: Fórmula Devine: 50.0 kg + (2.3 kg × 10.08) = 73.18 kg",
+        "Paso 3: Fórmula Robinson: 52.0 kg + (1.9 kg × 10.08) = 71.15 kg",
+        "Paso 4: Rango saludable según IMC de la OMS (18.5–24.9): 58.6 kg a 78.9 kg"
+      ],
+      fr: [
+        "Étape 1 : Convertir la taille : 178 cm = 70,08 pouces (10,08 pouces au-dessus de 5 pieds)",
+        "Étape 2 : Formule de Devine : 50,0 kg + (2,3 kg × 10,08) = 73,18 kg",
+        "Étape 3 : Formule de Robinson : 52,0 kg + (1,9 kg × 10,08) = 71,15 kg",
+        "Étape 4 : Plage de poids santé selon l'OMS (18,5 à 24,9 kg/m²) : 58,6 kg à 78,9 kg"
+      ],
+      de: [
+        "Schritt 1: Größe umrechnen: 178 cm = 70,08 Zoll (10,08 Zoll über 5 Fuß)",
+        "Schritt 2: Devine-Formel: 50,0 kg + (2,3 kg × 10,08) = 73,18 kg",
+        "Schritt 3: Robinson-Formel: 52,0 kg + (1,9 kg × 10,08) = 71,15 kg",
+        "Schritt 4: Normalgewichtsbereich nach WHO (18,5–24,9 kg/m²): 58,6 kg bis 78,9 kg"
+      ],
+      ko: [
+        "1단계: 신장 변환: 178 cm = 70.08인치 (5피트 기준 10.08인치 초과)",
+        "2단계: Devine 공식 적용: 50.0 kg + (2.3 kg × 10.08) = 73.18 kg",
+        "3단계: Robinson 공식 비교: 52.0 kg + (1.9 kg × 10.08) = 71.15 kg",
+        "4단계: WHO 정상 BMI 체중 구간 (18.5~24.9 kg/m²): 58.6 kg ~ 78.9 kg"
+      ],
+      hi: [
+        "चरण 1: ऊंचाई को इंच में बदलें: 178 सेमी = 70.08 इंच (5 फीट से 10.08 इंच अधिक)",
+        "चरण 2: डिवाइन फॉर्मूला: 50.0 किग्रा + (2.3 किग्रा × 10.08) = 73.18 किग्रा",
+        "चरण 3: रॉबिन्सन फॉर्मूला तुलना: 52.0 किग्रा + (1.9 किग्रा × 10.08) = 71.15 किग्रा",
+        "चरण 4: डब्ल्यूएचओ स्वस्थ बीएमआई वजन सीमा (18.5 से 24.9 kg/m²): 58.6 किग्रा से 78.9 किग्रा"
+      ]
+    },
+    result: {
+      en: { label: "Estimated Ideal Body Weight (Devine)", value: "73.2 kg (161.4 lbs)" },
+      es: { label: "Peso Corporal Ideal Estimado (Devine)", value: "73.2 kg (161.4 lbs)" },
+      fr: { label: "Poids Idéal Théorique (Devine)", value: "73,2 kg (161,4 lbs)" },
+      de: { label: "Geschätztes Idealgewicht (Devine)", value: "73,2 kg (161,4 lbs)" },
+      ko: { label: "Devine 공식 기반 추정 이상 체중", value: "73.2 kg (161.4 lbs)" },
+      hi: { label: "अनुमानित आदर्श शारीरिक वजन (डिवाइन)", value: "73.2 किग्रा (161.4 पाउंड)" }
+    },
+    interp: {
+      en: "For a 5'10\" male, common formulas estimate an ideal weight of about 71 to 73 kg. The WHO healthy weight range provides a wider window of 59 to 79 kg. Frame size, muscle mass, and bone density naturally shift your personal healthy weight. Muscular athletes often weigh more than formula targets while staying lean.",
+      es: "Para un hombre de 178 cm, las fórmulas estiman un peso ideal entre 71 y 73 kg, con un rango saludable según la OMS de 59 a 79 kg. La masa muscular, contextura ósea y grasa corporal definen el peso saludable real de cada persona.",
+      fr: "Pour un homme de 178 cm, les formules estiment un poids idéal d'environ 71 à 73 kg, dans une fourchette santé OMS de 59 à 79 kg. La masse musculaire et l'ossature déterminent le poids de forme individuel.",
+      de: "Für einen 178 cm großen Mann schätzen die Formeln ein Idealgewicht von ca. 71 bis 73 kg (WHO-Bereich: 59 bis 79 kg). Muskelmasse und Knochenbau beeinflussen das individuelle Wohlfühlgewicht maßgeblich.",
+      ko: "키 178cm 성인 남성의 경우 임상 공식상 이상 체중은 약 71~73kg이며, WHO 정상 범위는 59~79kg입니다. 골격 크기와 근육량에 따라 개인별 최적 건강 체중은 유연하게 달라집니다.",
+      hi: "178 सेमी लंबे पुरुष के लिए सूत्रों के अनुसार आदर्श वजन लगभग 71 से 73 किग्रा है, जबकि डब्ल्यूएचओ स्वस्थ सीमा 59 से 79 किग्रा है। मांसपेशियों का अनुपात और हड्डियों की बनावट व्यक्तिगत स्वस्थ वजन को प्रभावित करते हैं।"
+    }
+  },
+
+  // 10. Protein Intake Calculator
+  'protein-intake-calculator': {
+    inputs: {
+      en: [{ label: "Body Weight", value: "75.0 kg (165.3 lbs)" }, { label: "Activity Goal", value: "Strength Training & Muscle Growth (1.6 g/kg)" }],
+      es: [{ label: "Peso Corporal", value: "75.0 kg (165.3 lbs)" }, { label: "Objetivo y Actividad", value: "Entrenamiento de Fuerza y Músculo (1.6 g/kg)" }],
+      fr: [{ label: "Poids Corporel", value: "75,0 kg (165,3 lbs)" }, { label: "Objectif Sportif", value: "Renforcement et Prise de Muscle (1,6 g/kg)" }],
+      de: [{ label: "Körpergewicht", value: "75,0 kg (165,3 lbs)" }, { label: "Trainingsziel", value: "Krafttraining & Muskelaufbau (1,6 g/kg)" }],
+      ko: [{ label: "체중", value: "75.0 kg (165.3 lbs)" }, { label: "활동 및 운동 목표", value: "근력 운동 및 근육량 증가 (1.6 g/kg)" }],
+      hi: [{ label: "शरीर का वजन", value: "75.0 किग्रा (165.3 पाउंड)" }, { label: "गतिविधि व फिटनेस लक्ष्य", value: "स्ट्रेंथ ट्रेनिंग एवं मांसपेशी विकास (1.6 ग्राम/किग्रा)" }]
+    },
+    steps: {
+      en: [
+        "Step 1: Identify protein multiplier for your goal: 1.6 grams per kilogram",
+        "Step 2: Multiply body weight by protein factor: 75.0 kg × 1.6 g/kg",
+        "Step 3: Daily protein target: 120.0 grams of protein per day",
+        "Step 4: Target per meal (divided over 3 to 4 meals): 30 to 40 grams of protein"
+      ],
+      es: [
+        "Paso 1: Identificar factor proteico para el objetivo: 1.6 g por kilogramo",
+        "Paso 2: Multiplicar peso corporal por el factor: 75.0 kg × 1.6 g/kg",
+        "Paso 3: Objetivo proteico diario: 120.0 gramos de proteína al día",
+        "Paso 4: Reparto por comida (dividido en 3 o 4 tomas): 30 a 40 gramos de proteína"
+      ],
+      fr: [
+        "Étape 1 : Identifier le coefficient adapté à l'objectif : 1,6 g par kilogramme",
+        "Étape 2 : Multiplier le poids par le coefficient : 75,0 kg × 1,6 g/kg",
+        "Étape 3 : Cible protéique quotidienne : 120,0 grammes de protéines par jour",
+        "Étape 4 : Cible par repas (répartie sur 3 à 4 repas) : 30 à 40 grammes"
+      ],
+      de: [
+        "Schritt 1: Protein-Multiplikator für das Ziel bestimmen: 1,6 g pro Kilogramm",
+        "Schritt 2: Körpergewicht mit Multiplikator multiplizieren: 75,0 kg × 1,6 g/kg",
+        "Schritt 3: Tagesziel an Protein: 120,0 Gramm Eiweiß pro Tag",
+        "Schritt 4: Verteilung pro Mahlzeit (über 3 bis 4 Mahlzeiten): 30 bis 40 Gramm"
+      ],
+      ko: [
+        "1단계: 운동 목표별 단백질 계수 확인: 체중 1kg당 1.6g",
+        "2단계: 체중과 목표 계수 곱셈: 75.0 kg × 1.6 g/kg",
+        "3단계: 하루 총 단백질 권장량: 120.0g / 일",
+        "4단계: 끼니별 권장량 (하루 3~4회 식사 기준 분할): 회당 약 30~40g"
+      ],
+      hi: [
+        "चरण 1: फिटनेस लक्ष्य के अनुसार प्रोटीन गुणक चुनें: 1.6 ग्राम प्रति किग्रा",
+        "चरण 2: वजन को प्रोटीन गुणक से गुणा करें: 75.0 किग्रा × 1.6 ग्राम/किग्रा",
+        "चरण 3: दैनिक प्रोटीन आवश्यकता: 120.0 ग्राम प्रोटीन प्रतिदिन",
+        "चरण 4: प्रति भोजन लक्ष्य (3 से 4 बार में विभाजित): 30 से 40 ग्राम प्रोटीन"
+      ]
+    },
+    result: {
+      en: { label: "Target Daily Protein Intake", value: "120 g / day (1.6 g/kg)" },
+      es: { label: "Ingesta Proteica Diaria Objetivo", value: "120 g / día (1.6 g/kg)" },
+      fr: { label: "Apport Protéique Journalier Conseillé", value: "120 g / jour (1,6 g/kg)" },
+      de: { label: "Täglicher Eiweiß-Zielwert", value: "120 g / Tag (1,6 g/kg)" },
+      ko: { label: "일일 권장 단백질 섭취량", value: "120 g / 일 (1.6 g/kg)" },
+      hi: { label: "दैनिक लक्षित प्रोटीन सेवन", value: "120 ग्राम / दिन (1.6 ग्राम/किग्रा)" }
+    },
+    interp: {
+      en: "Eating 120 grams of protein daily supports muscle repair and strength gains for a 75 kg lifter. Spread your protein across 3 to 4 meals, aiming for 30 to 40 grams each time. Good sources include eggs, chicken, fish, tofu, Greek yogurt, and lentils. Drink plenty of water throughout the day to stay well hydrated.",
+      es: "Consumir 120 g diarios de proteína favorece la síntesis muscular en un adulto de 75 kg. Se recomienda repartir esta cantidad en 3 o 4 comidas (30 a 40 g por comida) con fuentes saludables como huevos, aves, pescado, legumbres, tofu o yogur natural.",
+      fr: "Un apport de 120 g de protéines par jour optimise la récupération musculaire pour 75 kg de poids de corps. Répartissez cet apport sur 3 à 4 repas (30 à 40 g par repas) en privilégiant œufs, volaille, poisson, légumineuses et tofu.",
+      de: "Eine Zufuhr von 120 g Eiweiß pro Tag unterstützt Muskelregeneration und Kraftaufbau bei 75 kg Körpergewicht. Verteilen Sie die Zufuhr auf 3 bis 4 Mahlzeiten (30 bis 40 g pro Portion) mit vollwertigen Proteinquellen.",
+      ko: "체중 75kg 운동자의 경우 하루 120g의 단백질 섭취가 근육 회복과 근비대를 촉진합니다. 하루 3~4끼에 걸쳐 끼니당 30~40g씩 고르게 나누어 섭취하는 것이 생체 이용률에 유리합니다.",
+      hi: "75 किग्रा वजन वाले व्यक्ति के लिए प्रतिदिन 120 ग्राम प्रोटीन मांसपेशियों की मरम्मत और शक्ति वृद्धि में मदद करता है। इसे दिन में 3 से 4 भोजन में 30 से 40 ग्राम प्रति भोजन के रूप में विभाजित करें।"
     }
   }
 };

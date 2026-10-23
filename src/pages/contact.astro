@@ -1,0 +1,99 @@
+---
+// Clean 301 redirect response headers for servers with dynamic adapters
+Astro.response.status = 301;
+Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/contact/');
+---
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Real BMI Calculator</title>
+  <meta name="description" content="Contact Real BMI for technical support, formula inquiries, or feedback." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://realbmicalculator.com/en/contact/" />
+  <meta http-equiv="refresh" content="0;url=/en/contact/" />
+  <style>
+    :root {
+      --background: #091212;
+      --foreground: #FCFAF7;
+      --accent: #E8674A;
+      --card: #11201D;
+      --border: #182B27;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--background);
+      color: var(--foreground);
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .card {
+      max-width: 32rem;
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.75rem;
+      background-color: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main id="main-content" class="card" style="max-width: 42rem; text-align: left;">
+    <h1 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem; text-align: center;">Contact & Support Center</h1>
+    <p style="color: #9ab; line-height: 1.6; margin-bottom: 1rem;">
+      Welcome to the official support portal for Real BMI. Whether you are looking to report a calculation discrepancy, request medical formula validation, inquire about WebGL 3D body visualizer compatibility, or provide editorial feedback, our team is available to assist you.
+    </p>
+
+    <div style="background: rgba(232, 103, 74, 0.08); border: 1px solid rgba(232, 103, 74, 0.25); border-radius: 1rem; padding: 1.25rem; margin-bottom: 1.25rem;">
+      <p style="margin: 0 0 0.5rem 0; font-weight: 700; color: var(--accent);">Direct Inquiries & Editorial Support:</p>
+      <p style="margin: 0; font-size: 1.1rem; font-weight: 700;">
+        <a href="mailto:support@realbmicalculator.com" style="color: var(--foreground); text-decoration: underline;">support@realbmicalculator.com</a>
+      </p>
+      <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem; color: #8fa;">Average response time: 24 to 48 business hours.</p>
+    </div>
+
+    <div style="margin-bottom: 1.5rem; line-height: 1.6; font-size: 0.95rem; color: #cbd5e1;">
+      <h2 style="font-size: 1.1rem; font-weight: 700; color: var(--foreground); margin-bottom: 0.5rem;">Select Your Preferred Language:</h2>
+      <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem;">
+        <li><a href="/en/contact/" style="color: var(--accent); text-decoration: underline;">English (EN)</a></li>
+        <li><a href="/es/contact/" style="color: var(--accent); text-decoration: underline;">Español (ES)</a></li>
+        <li><a href="/fr/contact/" style="color: var(--accent); text-decoration: underline;">Français (FR)</a></li>
+        <li><a href="/de/contact/" style="color: var(--accent); text-decoration: underline;">Deutsch (DE)</a></li>
+        <li><a href="/ko/contact/" style="color: var(--accent); text-decoration: underline;">한국어 (KO)</a></li>
+        <li><a href="/hi/contact/" style="color: var(--accent); text-decoration: underline;">हिन्दी (HI)</a></li>
+      </ul>
+    </div>
+
+    <div style="text-align: center; width: 100%;">
+      <a href="/en/contact/" class="btn" style="width: 100%; max-width: 20rem;">Go to Interactive Contact Form</a>
+    </div>
+  </main>
+  <script is:inline>
+    // Progressive redirect for browsers supporting instant navigation
+    if (window.location.pathname === '/contact' || window.location.pathname === '/contact/') {
+      // Allow user navigation or automated redirect after brief delay if preferred
+    }
+  </script>
+</body>
+</html>

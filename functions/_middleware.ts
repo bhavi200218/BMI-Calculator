@@ -27,18 +27,37 @@ export async function onRequest(context: EventContext): Promise<Response> {
   }
 
   const response = await context.next();
+  const headers = new Headers(response.headers);
 
-  // 4. Ensure embed responses delete X-Frame-Options to allow framing while non-embed retains DENY
-  if (url.pathname.startsWith('/embed/')) {
-    const newHeaders = new Headers(response.headers);
-    newHeaders.delete('x-frame-options');
-    newHeaders.set('Content-Security-Policy', 'frame-ancestors *; upgrade-insecure-requests');
+  // 4. Ensure non-production preview domains are never indexed
+  if (url.hostname.endsWith('.pages.dev')) {
+    headers.set('X-Robots-Tag', 'noindex, nofollow');
+  }
+
+  // 5. Ensure 404 pages always return true HTTP 404 status with noindex to prevent soft 404s
+  if (response.status === 404 || url.pathname === '/404' || url.pathname === '/404/' || url.pathname === '/404.html') {
+    headers.set('X-Robots-Tag', 'noindex, nofollow');
     return new Response(response.body, {
-      status: response.status,
-      statusText: response.statusText,
-      headers: newHeaders
+      status: 404,
+      statusText: 'Not Found',
+      headers
     });
   }
 
-  return response;
+  // 6. Ensure embed responses delete X-Frame-Options to allow framing while non-embed retains DENY
+  if (url.pathname.startsWith('/embed/')) {
+    headers.delete('x-frame-options');
+    headers.set('Content-Security-Policy', 'frame-ancestors *; upgrade-insecure-requests');
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers
+    });
+  }
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers
+  });
 }

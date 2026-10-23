@@ -22,6 +22,25 @@ const gTitle = {
   specialty: groupTitles.specialty[lang] || groupTitles.specialty.en,
   regional: groupTitles.regional[lang] || groupTitles.regional.en,
 };
+
+const regionalMeta: Record<string, Record<Locale, { tag: string; cutoff: string }>> = {
+  'bmi-calculator-for-indians': {
+    en: { tag: 'ICMR Consensus · South Asia', cutoff: 'Obesity threshold ≥ 25.0 kg/m² · Includes ICMR waist action cutoffs (90cm / 80cm)' },
+    es: { tag: 'Consenso ICMR · Sur de Asia', cutoff: 'Umbral de obesidad ≥ 25.0 kg/m² · Incluye puntos de corte de cintura ICMR (90/80 cm)' },
+    fr: { tag: 'Consensus ICMR · Asie du Sud', cutoff: 'Seuil d\'obésité ≥ 25,0 kg/m² · Inclut les repères de tour de taille ICMR (90/80 cm)' },
+    de: { tag: 'ICMR-Konsens · Südasien', cutoff: 'Adipositas-Schwelle ≥ 25,0 kg/m² · Beinhaltet ICMR-Taillen-Richtwerte (90/80 cm)' },
+    ko: { tag: 'ICMR 합의 · 남아시아', cutoff: '비만 기준점 ≥ 25.0 kg/m² · ICMR 허리둘레 위험 기준치 포함 (남 90cm / 여 80cm)' },
+    hi: { tag: 'ICMR सहमति मानक · दक्षिण एशिया', cutoff: 'मोटापा कटऑफ ≥ 25.0 kg/m² · ICMR कमर परिधि जोखिम सीमाएं (90 सेमी पुरुष / 80 सेमी महिला)' }
+  },
+  'asian-bmi-calculator': {
+    en: { tag: 'WHO WPRO Standard · East & SE Asia', cutoff: 'Obesity threshold ≥ 27.5 kg/m² · Cutoff standard for Chinese, Japanese, Korean & SE Asian populations' },
+    es: { tag: 'Norma OMS WPRO · Este y SE de Asia', cutoff: 'Umbral de obesidad ≥ 27.5 kg/m² · Pauta para poblaciones del Este y Sudeste Asiático' },
+    fr: { tag: 'Norme OMS WPRO · Asie de l\'Est', cutoff: 'Seuil d\'obésité ≥ 27,5 kg/m² · Recommandations pour les populations d\'Asie de l\'Est et du Sud-Est' },
+    de: { tag: 'WHO WPRO-Standard · Ost- & SO-Asien', cutoff: 'Adipositas-Schwelle ≥ 27,5 kg/m² · Richtlinien für ost- und südostasiatische Bevölkerungen' },
+    ko: { tag: 'WHO WPRO 표준 · 동아시아/동남아', cutoff: '비만 기준점 ≥ 27.5 kg/m² · 한국, 일본, 중국 및 동남아시아 인구 집단 기준' },
+    hi: { tag: 'WHO WPRO मानक · पूर्व एवं दक्षिण-पूर्व एशिया', cutoff: 'मोटापा कटऑफ ≥ 27.5 kg/m² · पूर्वी व दक्षिण-पूर्वी एशियाई (चीनी, जापानी, कोरियाई) दिशानिर्देश' }
+  }
+};
 ---
 
 <div class="space-y-6 animate-in" style="animation-delay: 150ms;">
@@ -82,17 +101,28 @@ const gTitle = {
     <!-- Group 4: Clearly Labelled Regional & Population Resources -->
     <div class="calc-group space-y-3">
       <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.regional}</div>
-      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-3">
-        {calculators.filter(c=>['bmi-calculator-for-indians','asian-bmi-calculator'].includes(c.slug)).map(calc => (
-          <a
-            href={`/${lang}/${calc.slug}/`}
-            class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline"
-          >
-            <span class="text-xs sm:text-sm font-display font-bold uppercase text-center tracking-tight leading-tight max-w-full text-balance break-words">
-              {calc.name[lang] || calc.name['en']}
-            </span>
-          </a>
-        ))}
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        {calculators.filter(c=>['bmi-calculator-for-indians','asian-bmi-calculator'].includes(c.slug)).map(calc => {
+          const meta = regionalMeta[calc.slug]?.[lang] || regionalMeta[calc.slug]?.['en'];
+          return (
+            <a
+              href={`/${lang}/${calc.slug}/`}
+              class="calc-tab-btn flex flex-col items-start justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/5 transition-all duration-300 p-4 cursor-pointer shadow-xs no-underline group"
+            >
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+                  {meta?.tag}
+                </span>
+              </div>
+              <span class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
+                {calc.name[lang] || calc.name['en']}
+              </span>
+              <p class="text-xs text-[var(--muted-foreground)] mt-1 leading-relaxed">
+                {meta?.cutoff}
+              </p>
+            </a>
+          );
+        })}
       </div>
     </div>
   </div>

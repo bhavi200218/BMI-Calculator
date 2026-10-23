@@ -1,0 +1,90 @@
+---
+// Clean 301 redirect response headers for servers with dynamic adapters
+Astro.response.status = 301;
+Astro.response.headers.set('Location', 'https://realbmicalculator.com/en/disclaimer/');
+---
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical Disclaimer | Real BMI</title>
+  <meta name="description" content="Official medical disclaimer for Real BMI health calculators, reference ranges, and educational tools." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://realbmicalculator.com/en/disclaimer/" />
+  <meta http-equiv="refresh" content="0;url=/en/disclaimer/" />
+  <style>
+    :root {
+      --background: #091212;
+      --foreground: #FCFAF7;
+      --accent: #E8674A;
+      --card: #11201D;
+      --border: #182B27;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--background);
+      color: var(--foreground);
+      padding: 1.5rem;
+    }
+    .card {
+      max-width: 42rem;
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.75rem;
+      background-color: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main id="main-content" class="card">
+    <h1 style="font-size: 1.75rem; font-weight: 800; text-align: center;">Medical Disclaimer</h1>
+    <p style="color: #9ab; line-height: 1.6;">
+      All calculations, biometric estimates, and reference ranges provided by <strong>Real BMI</strong> are intended strictly for educational, informational, and personal screening purposes. They do not constitute, and must not be interpreted as, professional medical advice, clinical diagnosis, or personalized treatment plans.
+    </p>
+
+    <div style="background: rgba(232, 103, 74, 0.08); border: 1px solid rgba(232, 103, 74, 0.25); border-radius: 1rem; padding: 1.25rem; font-size: 0.95rem; line-height: 1.6;">
+      <p style="margin: 0 0 0.5rem 0; font-weight: 700; color: var(--accent);">Important Health Notice:</p>
+      <p style="margin: 0; color: #cbd5e1;">
+        Always consult a qualified physician or registered dietitian before making significant dietary, medical, or exercise decisions. In the event of a medical emergency, immediately contact your local emergency services (e.g., 911 or 112).
+      </p>
+    </div>
+
+    <div style="line-height: 1.6; font-size: 0.95rem; color: #cbd5e1;">
+      <h2 style="font-size: 1.1rem; font-weight: 700; color: var(--foreground); margin-bottom: 0.5rem;">Read in Your Preferred Language:</h2>
+      <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem;">
+        <li><a href="/en/disclaimer/" style="color: var(--accent); text-decoration: underline;">English (EN)</a></li>
+        <li><a href="/es/disclaimer/" style="color: var(--accent); text-decoration: underline;">Español (ES)</a></li>
+        <li><a href="/fr/disclaimer/" style="color: var(--accent); text-decoration: underline;">Français (FR)</a></li>
+        <li><a href="/de/disclaimer/" style="color: var(--accent); text-decoration: underline;">Deutsch (DE)</a></li>
+        <li><a href="/ko/disclaimer/" style="color: var(--accent); text-decoration: underline;">한국어 (KO)</a></li>
+        <li><a href="/hi/disclaimer/" style="color: var(--accent); text-decoration: underline;">हिन्दी (HI)</a></li>
+      </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 0.5rem;">
+      <a href="/en/disclaimer/" class="btn" style="width: 100%; max-width: 20rem;">Proceed to Full Disclaimer</a>
+    </div>
+  </main>
+</body>
+</html>

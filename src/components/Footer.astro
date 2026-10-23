@@ -167,7 +167,7 @@ const ft = footerTranslations[lang] || footerTranslations.en;
 const healthToolsLabel = ft.healthTools || 'Health Calculators';
 
 const healthToolsLinks = calculators
-  .filter((calc) => calc.slug !== 'one-rep-max-calculator')
+  .filter((calc) => calc.slug !== 'one-rep-max-calculator' && calc.slug !== '3d-body-visualizer')
   .map((calc) => {
   let name = calc.name[lang] || calc.name['en'];
   if (lang === 'es') {
@@ -176,6 +176,10 @@ const healthToolsLinks = calculators
   } else if (lang === 'fr') {
     name = name.replace(/^Calculateur (?:de |d['’])/i, '');
     name = name.charAt(0).toUpperCase() + name.slice(1);
+  } else if (lang === 'hi') {
+    name = name.replace(/\s+कैलकुलेटर$/i, '');
+  } else if (lang === 'ko') {
+    name = name.replace(/\s*계산기$/i, '');
   }
   return {
     name,

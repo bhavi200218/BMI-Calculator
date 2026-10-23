@@ -16,20 +16,37 @@ interface ContactPayload {
 export async function onRequestPost(context: { request: Request; env: Env }): Promise<Response> {
   const { request, env } = context;
 
-  // 1. Enforce JSON content type
+  // 1. Parse JSON or FormData content
   const contentType = request.headers.get('content-type') || '';
-  if (!contentType.includes('application/json')) {
-    return new Response(JSON.stringify({ success: false, error: 'Invalid content type. Expected application/json.' }), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' }
-    });
-  }
-
   let body: ContactPayload;
-  try {
-    body = await request.json();
-  } catch {
-    return new Response(JSON.stringify({ success: false, error: 'Malformed JSON payload.' }), {
+
+  if (contentType.includes('application/json')) {
+    try {
+      body = await request.json();
+    } catch {
+      return new Response(JSON.stringify({ success: false, error: 'Malformed JSON payload.' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+  } else if (contentType.includes('application/x-www-form-urlencoded') || contentType.includes('multipart/form-data')) {
+    try {
+      const fd = await request.formData();
+      body = {
+        name: (fd.get('name') || '').toString(),
+        email: (fd.get('email') || '').toString(),
+        subject: (fd.get('subject') || '').toString(),
+        message: (fd.get('message') || '').toString(),
+        _honey: (fd.get('_honey') || '').toString(),
+      };
+    } catch {
+      return new Response(JSON.stringify({ success: false, error: 'Malformed form data.' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+  } else {
+    return new Response(JSON.stringify({ success: false, error: 'Invalid content type. Expected application/json or form-data.' }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' }
     });

@@ -805,7 +805,7 @@ export const calculators: CalculatorConfig[] = [
       fr: 'Calculateur de Calories de Maintien en Ligne',
       de: 'Erhaltungskalorien Rechner Online – TDEE Kalorienbedarf',
       ko: '온라인 유지 칼로리 계산기 – TDEE 일일 칼로리 도구',
-      hi: 'ऑनलाइन रखरखाव कैलोरी कैलकुलेटर - TDEE दैनिक कैलोरी आवश्यकता'
+      hi: 'दैनिक मेंटेनेंस कैलोरी कैलकुलेटर – TDEE एवं ऊर्जा आवश्यकता'
     },
     description: {
       "en": "Free Maintenance Calorie Calculator online. Calculate your daily maintenance calories, total daily energy expenditure (TDEE), and weight loss deficit target calories by age, height (cm) and weight (kg) with privacy-focused, browser calculations.",
@@ -813,7 +813,7 @@ export const calculators: CalculatorConfig[] = [
       "fr": "Calculateur gratuit de calories de maintien en ligne. Calculez vos calories quotidiennes de maintien, votre dépense énergétique totale (TDEE) et vos objectifs de déficit calorigène selon l'âge, la taille (cm) et le poids (kg) avec calculs sur navigateur.",
       "de": "Kostenloser Erhaltungskalorien-Rechner online. Berechnen Sie Ihre täglichen Erhaltungskalorien, Ihren Gesamtenergiebedarf (TDEE) und Zielkalorien zum Abnehmen nach Alter, Größe (cm) und Gewicht (kg) datenschutzorientiert im Browser.",
       "ko": "무료 온라인 유지 칼로리 계산기. 나이, 신장(cm) 및 체중(kg)에 따라 일일 유지 칼로리, 총 에너지 소모량(TDEE) 및 체중 감량 목표 칼로리를 산출하세요. 가입 없이 브라우저 내 100% 무료 구동.",
-      "hi": "मुफ़्त ऑनलाइन रखरखाव कैलोरी कैलकुलेटर। उम्र, ऊंचाई (सेमी) और वजन (किग्रा) के अनुसार अपनी दैनिक रखरखाव कैलोरी, कुल दैनिक ऊर्जा व्यय (TDEE) और वजन घटाने की लक्षित कैलोरी की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
+      "hi": "स्थिर शारीरिक भार बनाए रखने हेतु आवश्यक दैनिक ऊर्जा का सटीक आकलन। अपनी आयु, कद, वजन और गतिविधि स्तर दर्ज करके कुल ऊर्जा व्यय (TDEE) तथा संतुलित पोषण लक्ष्यों की तुरंत जानकारी प्राप्त करें।"
     },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number' },
@@ -1115,14 +1115,14 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'calorie-calculator',
     name: { en: 'Calorie Deficit Calculator', es: 'Calculadora de Déficit Calórico', fr: 'Calculateur de Déficit Calorique', de: 'Kaloriendefizit Rechner', ko: '칼로리 적자 계산기', hi: 'कैलोरी घाटा कैलकुलेटर' },
-    title: { en: 'Calorie Deficit Calculator – Estimated Daily Calorie Planning', es: 'Calculadora de Déficit Calórico – Planificación Calórica Diaria', fr: 'Calculateur de Déficit Calorique – Planification Calorique', de: 'Kaloriendefizit Rechner – Täglicher Kalorienbedarf', ko: '무료 칼로리 결손 계산기 – 체중 감량 칼로리 목표', hi: 'मुफ़्त कैलोरी घाटा कैलकुलेटर - अनुमानित दैनिक कैलोरी योजना' },
+    title: { en: 'Calorie Deficit Calculator – Estimated Daily Calorie Planning', es: 'Calculadora de Déficit Calórico – Planificación Calórica Diaria', fr: 'Calculateur de Déficit Calorique – Planification Calorique', de: 'Kaloriendefizit Rechner – Täglicher Kalorienbedarf', ko: '무료 칼로리 결손 계산기 – 체중 감량 칼로리 목표', hi: 'कैलोरी घाटा कैलकुलेटर – दैनिक ऊर्जा अंतर व आहार योजना' },
     description: {
       "en": "Free Calorie Calculator for weight loss, maintenance, and weight gain. Calculate daily calorie needs, macro breakdown, and calorie deficit target based on age, height, weight, and activity level with privacy-focused, browser calculations.",
       "es": "Calculadora de calorías gratuita para pérdida de peso, mantenimiento y ganancia de peso. Calcula necesidades calóricas diarias, desglose de macronutrientes y déficit calórico objetivo por edad, altura, peso y nivel de actividad con cálculos privados en el navegador.",
       "fr": "Calculateur de calories gratuit pour la perte de poids, le maintien et la prise de masse. Calculez vos besoins caloriques quotidiens, la répartition des macronutriments et votre objectif de déficit calorigène selon l'âge, la taille, le poids et l'activité avec calculs sur navigateur.",
       "de": "Kostenloser Kalorienrechner zum Abnehmen, Gewicht halten und Zunehmen. Berechnen Sie Ihren täglichen Kalorienbedarf, die Makronährstoffverteilung und das Ziel-Kaloriendefizit nach Alter, Größe, Gewicht und Aktivitätslevel datenschutzorientiert im Browser.",
       "ko": "체중 감량, 현재 체중 유지 및 체중 증가를 위한 무료 칼로리 계산기. 나이, 신장, 체중 및 활동량에 따른 일일 필요 칼로리, 영양소 비율 및 칼로리 소모 목표를 산출하세요. 가입 없는 100% 무료 도구.",
-      "hi": "वजन घटाने, वजन बनाए रखने और वजन बढ़ाने के लिए मुफ़्त कैलोरी कैलकुलेटर। उम्र, ऊंचाई, वजन और गतिविधि स्तर के आधार पर दैनिक कैलोरी आवश्यकताओं, मैक्रो ब्रेकडाउन और कैलोरी घाटे के लक्ष्य की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
+      "hi": "दैनिक ऊर्जा संतुलन और आहार योजना के लिए व्यावहारिक कैलकुलेटर। अपनी आयु, कद, भार और शारीरिक गतिविधि के अनुसार BMR तथा TDEE आधारित पोषण लक्ष्यों का सुगमता से आकलन करें। सुरक्षित और निजी गणना।"
     },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number' },

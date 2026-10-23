@@ -262,90 +262,300 @@ const methodologyMatrix = [
     slug: "bmi-calculator",
     formula: "Metric: kg / m² | Imperial: (lbs / inches²) × 703",
     source: "WHO Technical Report Series 854 / CDC Adult BMI Standard",
-    inputs: "Height, Weight",
-    output: "Body Mass Index score & WHO Category",
-    limitations: "Measures total mass relative to height; does not distinguish muscle mass from adipose fat tissue."
+    inputs: {
+      en: "Height, Weight",
+      es: "Altura, Peso",
+      fr: "Taille, Poids",
+      de: "Körpergröße, Gewicht",
+      ko: "신장(키), 체중(몸무게)",
+      hi: "कद (ऊंचाई), वजन"
+    },
+    output: {
+      en: "Body Mass Index score & WHO Category",
+      es: "Puntuación de IMC y categoría de la OMS",
+      fr: "Score d'IMC et catégorie de l'OMS",
+      de: "BMI-Wert & WHO-Gewichtskategorie",
+      ko: "체질량지수(BMI) 수치 및 WHO 비만도 분류",
+      hi: "बॉडी मास इंडेक्स (BMI) स्कोर एवं WHO वर्गीकरण श्रेणी"
+    },
+    limitations: {
+      en: "Measures total mass relative to height; does not distinguish muscle mass from adipose fat tissue.",
+      es: "Mide la masa total respecto a la altura; no distingue la masa muscular del tejido adiposo.",
+      fr: "Mesure la masse totale par rapport à la taille ; ne distingue pas la masse musculaire du tissu adipeux.",
+      de: "Misst die Gesamtmasse im Verhältnis zur Körpergröße; unterscheidet nicht zwischen Muskelmasse und Fettgewebe.",
+      ko: "신장 대비 총 체중을 측정하며 근육량과 체지방 조직을 직접 구별하지는 않습니다.",
+      hi: "ऊंचाई के अनुपात में कुल शारीरिक भार मापता है; यह मांसपेशियों के द्रव्यमान और वसा ऊतक (फैट) में अंतर नहीं करता।"
+    }
   },
   {
     name: "Asian BMI Calculator",
     slug: "asian-bmi-calculator",
     formula: "kg / m² with WHO Western Pacific Ethnic Thresholds",
     source: "WHO Western Pacific Region & IOTF Consultation (2000)",
-    inputs: "Height, Weight, Asian Ethnic Ancestry",
-    output: "Regional Asian BMI Classification (Cutoff at 23.0 kg/m²)",
-    limitations: "Applies to Asian populations due to higher visceral fat ratio at lower BMI levels; screening tool only."
+    inputs: {
+      en: "Height, Weight, Asian Ethnic Ancestry",
+      es: "Altura, Peso, Ascendencia étnica asiática",
+      fr: "Taille, Poids, Origine ethnique asiatique",
+      de: "Körpergröße, Gewicht, Asiatische Abstammung",
+      ko: "신장, 체중, 아시아계 민족 참고 기준",
+      hi: "कद, वजन, एशियाई मूल संदर्भ"
+    },
+    output: {
+      en: "Regional Asian BMI Classification (Cutoff at 23.0 kg/m²)",
+      es: "Clasificación regional asiática del IMC (punto de corte en 23.0 kg/m²)",
+      fr: "Classification régionale asiatique de l'IMC (seuil à 23,0 kg/m²)",
+      de: "Regionale asiatische BMI-Klassifikation (Grenzwert 23,0 kg/m²)",
+      ko: "아시아인 기준 체질량지수 분류 (위험 기준치 23.0 kg/m²)",
+      hi: "क्षेत्रीय एशियाई BMI वर्गीकरण (23.0 kg/m² कटऑफ मानक)"
+    },
+    limitations: {
+      en: "Applies to Asian populations due to higher visceral fat ratio at lower BMI levels; screening tool only.",
+      es: "Aplicable a poblaciones asiáticas debido a una mayor proporción de grasa visceral con un IMC más bajo; solo herramienta de cribado.",
+      fr: "S'applique aux populations asiatiques en raison d'un ratio de graisse viscérale plus élevé à un IMC plus bas ; outil de dépistage uniquement.",
+      de: "Gilt für asiatische Populationen aufgrund eines höheren viszeralen Fettanteils bei niedrigerem BMI; reines Screening-Tool.",
+      ko: "낮은 BMI에서도 내장지방 축적 비율이 높은 아시아인의 신체적 특성을 반영한 1차 선별 도구입니다.",
+      hi: "एशियाई आबादी पर लागू, जहां कम BMI स्तरों पर भी आंतरिक वसा (विसरल फैट) का अनुपात अधिक हो सकता है; यह केवल प्राथमिक स्क्रीनिंग टूल है।"
+    }
   },
   {
     name: "BMR Calculator",
     slug: "bmr-calculator",
     formula: "Mifflin-St Jeor: 10W + 6.25H - 5A + S (+5 male / -161 female)",
     source: "American Journal of Clinical Nutrition (Mifflin MD et al., 1990)",
-    inputs: "Age, Sex, Height, Weight",
-    output: "Resting Energy Expenditure (kcal/day)",
-    limitations: "Estimates resting metabolic rate; does not account for thyroid variance or extreme muscle mass variations."
+    inputs: {
+      en: "Age, Sex, Height, Weight",
+      es: "Edad, Sexo, Altura, Peso",
+      fr: "Âge, Sexe, Taille, Poids",
+      de: "Alter, Geschlecht, Körpergröße, Gewicht",
+      ko: "연령(나이), 성별, 신장, 체중",
+      hi: "आयु (उम्र), लिंग, कद, वजन"
+    },
+    output: {
+      en: "Resting Energy Expenditure (kcal/day)",
+      es: "Gasto energético en reposo (kcal/día)",
+      fr: "Dépense énergétique au repos (kcal/jour)",
+      de: "Ruheenergiebedarf / Grundumsatz (kcal/Tag)",
+      ko: "휴식기 기초 대사율 (BMR, kcal/일)",
+      hi: "विश्राम अवस्था ऊर्जा व्यय (BMR, kcal/दिन)"
+    },
+    limitations: {
+      en: "Estimates resting metabolic rate; does not account for thyroid variance or extreme muscle mass variations.",
+      es: "Estima la tasa metabólica basal en reposo; no considera variaciones tiroideas ni masa muscular extrema.",
+      fr: "Estime le métabolisme de base au repos ; ne tient pas compte des dysfonctionnements thyroïdiens ni des masses musculaires atypiques.",
+      de: "Schätzt den Ruheumsatz; berücksichtigt keine Schilddrüsenabweichungen oder extreme Muskelmasseunterschiede.",
+      ko: "기초 대사율을 추정하며, 갑상선 질환이나 극단적인 근육량 차이까지는 반영하지 못합니다.",
+      hi: "विश्राम अवस्था की चयापचय दर का सांख्यिकीय अनुमान लगाता है; यह थायरॉयड स्थिति या अत्यधिक मांसपेशियों के अंतर को शामिल नहीं करता।"
+    }
   },
   {
     name: "TDEE Calculator",
     slug: "tdee-calculator",
     formula: "BMR × Activity Multiplier (1.2 to 1.9 PAL Factors)",
     source: "FAO/WHO/UNU Human Energy Requirements Expert Consultation",
-    inputs: "BMR, Physical Activity Level (PAL)",
-    output: "Total Daily Energy Expenditure (kcal/day)",
-    limitations: "Relies on self-reported activity categories; actual daily thermogenesis fluctuates based on NEAT."
+    inputs: {
+      en: "BMR, Physical Activity Level (PAL)",
+      es: "BMR, Nivel de actividad física (PAL)",
+      fr: "BMR, Niveau d'activité physique (PAL)",
+      de: "BMR, Physikalisches Aktivitätsniveau (PAL)",
+      ko: "기초대사율(BMR), 신체 활동 수준(PAL)",
+      hi: "BMR, शारीरिक गतिविधि स्तर (PAL गुणांक)"
+    },
+    output: {
+      en: "Total Daily Energy Expenditure (kcal/day)",
+      es: "Gasto energético diario total (kcal/día)",
+      fr: "Dépense énergétique quotidienne totale (kcal/jour)",
+      de: "Gesamttagesenergiebedarf (kcal/Tag)",
+      ko: "일일 총 에너지 소비량 (TDEE, kcal/일)",
+      hi: "दैनिक कुल ऊर्जा व्यय (TDEE, kcal/दिन)"
+    },
+    limitations: {
+      en: "Relies on self-reported activity categories; actual daily thermogenesis fluctuates based on NEAT.",
+      es: "Depende de categorías de actividad autodeclaradas; la termogénesis diaria real fluctúa según la NEAT.",
+      fr: "Dépend des catégories d'activité déclarées ; la thermogenèse quotidienne réelle varie selon le NEAT.",
+      de: "Basiert auf selbstberichteter Aktivität; die reale tägliche Thermogenese schwankt abhängig von NEAT.",
+      ko: "자가 보고 활동량 범주에 의존하므로 비운동성 활동 열생성(NEAT)에 따라 실제 일일 에너지 소모는 달라질 수 있습니다.",
+      hi: "स्व-रिपोर्ट की गई गतिविधि श्रेणियों पर निर्भर करता है; वास्तविक दैनिक थर्मोजेनेसिस गैर-व्यायाम गतिविधि (NEAT) के आधार पर बदलती रहती है।"
+    }
   },
   {
     name: "Ideal Body Weight (IBW)",
     slug: "ideal-weight-calculator",
     formula: "Devine / Hamwi / Miller / Robinson Heights Equations",
     source: "Standard Clinical Pharmacotherapy Formulas (Devine BJ, 1974)",
-    inputs: "Height, Sex",
-    output: "Reference Weight Bracket (kg / lbs)",
-    limitations: "Provides historical clinical dosing baselines; does not represent individual body composition targets."
+    inputs: {
+      en: "Height, Sex",
+      es: "Altura, Sexo",
+      fr: "Taille, Sexe",
+      de: "Körpergröße, Geschlecht",
+      ko: "신장, 성별",
+      hi: "कद, लिंग"
+    },
+    output: {
+      en: "Reference Weight Bracket (kg / lbs)",
+      es: "Rango de peso de referencia (kg / lbs)",
+      fr: "Fourchette de poids de référence (kg / lbs)",
+      de: "Referenzgewichtsbereich (kg / lbs)",
+      ko: "표준 권장 체중 참고 범위 (kg / lbs)",
+      hi: "मानक संदर्भ वजन सीमा (kg / lbs)"
+    },
+    limitations: {
+      en: "Provides historical clinical dosing baselines; does not represent individual body composition targets.",
+      es: "Proporciona referencias clínicas históricas de dosificación; no representa metas de composición corporal individual.",
+      fr: "Fournit une référence clinique historique de dosage ; ne reflète pas la composition corporelle individuelle.",
+      de: "Liefert historische klinische Dosierungs-Baselines; stellt keine individuellen Körperbau-Ziele dar.",
+      ko: "과거 임상 투약 기준을 제시하는 공식으로, 개인의 골격 및 근육 상태를 고려한 체성분 목표가 아닙니다.",
+      hi: "ऐतिहासिक नैदानिक खुराक मानक प्रदान करता है; यह किसी व्यक्ति विशेष के शारीरिक संरचना या फिटनेस लक्ष्य का प्रतिनिधित्व नहीं करता।"
+    }
   },
   {
     name: "Body Fat Calculator",
     slug: "body-fat-calculator",
     formula: "US Navy Logarithmic Circumference Equations",
     source: "Naval Health Research Center (Hodgdon & Beckett, 1984)",
-    inputs: "Height, Neck, Waist, Hip (women)",
-    output: "Estimated Body Fat Percentage (%) & Category",
-    limitations: "Estimates body volume based on circumference; less precise than DEXA or hydrostatic weighing."
+    inputs: {
+      en: "Height, Neck, Waist, Hip (women)",
+      es: "Altura, Cuello, Cintura, Cadera (mujeres)",
+      fr: "Taille, Cou, Taille, Hanches (femmes)",
+      de: "Größe, Nackenumfang, Taillenumfang, Hüftumfang (Frauen)",
+      ko: "신장, 목둘레, 허리둘레, 엉덩이둘레(여성)",
+      hi: "कद, गर्दन, कमर, कूल्हे (महिलाओं के लिए)"
+    },
+    output: {
+      en: "Estimated Body Fat Percentage (%) & Category",
+      es: "Porcentaje estimado de grasa corporal (%) y categoría",
+      fr: "Pourcentage estimé de masse grasse (%) et catégorie",
+      de: "Geschätzter Körperfettanteil (%) & Kategorie",
+      ko: "추정 체지방률(%) 및 피트니스 등급 분류",
+      hi: "अनुमानित शारीरिक वसा प्रतिशत (%) एवं फिटनेस श्रेणी"
+    },
+    limitations: {
+      en: "Estimates body volume based on circumference; less precise than DEXA or hydrostatic weighing.",
+      es: "Estima el volumen corporal mediante circunferencias; menos preciso que una densitometría DEXA.",
+      fr: "Estime le volume corporel par circonférences ; moins précis qu'un scan DEXA ou une pesée hydrostatique.",
+      de: "Schätzt das Körpervolumen anhand von Umfängen; weniger präzise als ein DEXA-Scan.",
+      ko: "신체 둘레 기반의 체적 추정이므로 DEXA 스캔이나 수중 정수 체중 측정법보다 정밀도가 낮습니다.",
+      hi: "शारीरिक परिधि के आधार पर शरीर की मात्रा का अनुमान लगाता है; यह DEXA स्कैन या हाइड्रोस्टेटिक वजन जितना सटीक नहीं होता।"
+    }
   },
   {
     name: "Lean Body Mass (LBM)",
     slug: "lean-body-mass-calculator",
     formula: "Boer Equation (Men: 0.407W + 0.267H - 19.2 | Women: 0.252W + 0.473H - 48.3)",
     source: "Boer P. (1984) Estimated Lean Body Mass Equations",
-    inputs: "Height, Weight, Sex",
-    output: "Estimated Fat-Free Mass (kg / lbs)",
-    limitations: "Mathematical approximation based on total mass and height; does not measure organ vs muscle breakdown."
+    inputs: {
+      en: "Height, Weight, Sex",
+      es: "Altura, Peso, Sexo",
+      fr: "Taille, Poids, Sexe",
+      de: "Körpergröße, Gewicht, Geschlecht",
+      ko: "신장, 체중, 성별",
+      hi: "कद, वजन, लिंग"
+    },
+    output: {
+      en: "Estimated Fat-Free Mass (kg / lbs)",
+      es: "Masa libre de grasa estimada (kg / lbs)",
+      fr: "Masse maigre estimée sans graisse (kg / lbs)",
+      de: "Geschätzte fettfreie Körpermasse (kg / lbs)",
+      ko: "추정 제지방량 (Fat-Free Mass, kg / lbs)",
+      hi: "अनुमानित वसा-मुक्त द्रव्यमान (Lean Mass, kg / lbs)"
+    },
+    limitations: {
+      en: "Mathematical approximation based on total mass and height; does not measure organ vs muscle breakdown.",
+      es: "Aproximación matemática basada en masa y altura; no mide la separación entre órganos y músculo.",
+      fr: "Approximation mathématique basée sur le poids et la taille ; ne distingue pas la masse des organes du muscle.",
+      de: "Mathematische Annäherung basierend auf Gewicht und Größe; misst keine exakte Organ- und Muskelaufteilung.",
+      ko: "체중과 신장을 기반으로 한 수학적 근사치이며, 내부 장기와 근육 조직의 세부 비율을 직접 측정하지는 않습니다.",
+      hi: "कुल द्रव्यमान और ऊंचाई पर आधारित गणितीय सन्निकटन; आंतरिक अंगों और मांसपेशियों के वास्तविक भार को अलग-अलग नहीं मापता।"
+    }
   },
   {
     name: "Calorie Deficit Calculator",
     slug: "calorie-calculator",
     formula: "Energy Difference Scenarios = TDEE - Selected Deficit",
     source: "NIH / NIDDK Guidelines & Energy Balance Models",
-    inputs: "BMR, TDEE, Example Energy Difference",
-    output: "Daily Calorie Reference Baseline (kcal/day)",
-    limitations: "Mathematical energy differential model for planning reference; not a prescriptive medical weight loss plan."
+    inputs: {
+      en: "BMR, TDEE, Example Energy Difference",
+      es: "BMR, TDEE, Diferencial de energía seleccionado",
+      fr: "BMR, TDEE, Différentiel d'énergie sélectionné",
+      de: "BMR, TDEE, Gewähltes Energiedefizit",
+      ko: "BMR, TDEE, 목표 에너지 결손량",
+      hi: "BMR, TDEE, ऊर्जा घाटा परिदृश्य"
+    },
+    output: {
+      en: "Daily Calorie Reference Baseline (kcal/day)",
+      es: "Línea base de calorías diarias de referencia (kcal/día)",
+      fr: "Repère calorique quotidien de référence (kcal/jour)",
+      de: "Tägliche Kalorien-Referenzlinie (kcal/Tag)",
+      ko: "일일 칼로리 권장 기준선 (kcal/일)",
+      hi: "दैनिक कैलोरी संदर्भ बेसलाइन (kcal/दिन)"
+    },
+    limitations: {
+      en: "Mathematical energy differential model for planning reference; not a prescriptive medical weight loss plan.",
+      es: "Modelo matemático de balance energético para planificación; no es un plan médico prescriptivo.",
+      fr: "Modèle différentiel d'énergie pour la planification ; ne remplace pas un suivi médical nutritionnel.",
+      de: "Mathematisches Modell zur Orientierung; kein verbindlicher ärztlicher Ernährungsplan.",
+      ko: "계획 수립을 위한 수학적 에너지 균형 모델이며, 의사의 처방이나 전문적인 의료 다이어트 요법을 대신하지 않습니다.",
+      hi: "नियोजन संदर्भ हेतु ऊर्जा अंतर का गणितीय मॉडल; यह कोई व्यक्तिगत चिकित्सीय या चिकित्सकीय वजन घटाने की योजना नहीं है।"
+    }
   },
   {
     name: "Protein Intake Calculator",
     slug: "protein-intake-calculator",
     formula: "Body Weight (kg) × Activity Multiplier (0.8g/kg RDA to 2.2g/kg ISSN)",
     source: "International Society of Sports Nutrition (ISSN Position Stand)",
-    inputs: "Body Weight, Activity Level, Fitness Focus",
-    output: "Daily Protein Intake Reference Range (grams/day)",
-    limitations: "Provides educational reference ranges based on activity benchmarks; renal health considerations apply."
+    inputs: {
+      en: "Body Weight, Activity Level, Fitness Focus",
+      es: "Peso corporal, Nivel de actividad, Objetivo de fitness",
+      fr: "Poids corporel, Niveau d'activité, Objectif forme",
+      de: "Körpergewicht, Aktivitätsniveau, Trainingsziel",
+      ko: "체중, 신체 활동 수준, 운동 목표",
+      hi: "शरीर का वजन, गतिविधि स्तर, फिटनेस लक्ष्य"
+    },
+    output: {
+      en: "Daily Protein Intake Reference Range (grams/day)",
+      es: "Rango de referencia de ingesta diaria de proteínas (g/día)",
+      fr: "Fourchette de référence d'apport en protéines (g/jour)",
+      de: "Referenzbereich für tägliche Proteinzufuhr (Gramm/Tag)",
+      ko: "일일 권장 단백질 섭취량 참고 범위 (g/일)",
+      hi: "दैनिक प्रोटीन सेवन संदर्भ सीमा (ग्राम/दिन)"
+    },
+    limitations: {
+      en: "Provides educational reference ranges based on activity benchmarks; renal health considerations apply.",
+      es: "Proporciona rangos de referencia educativos según la actividad; considerar la salud renal.",
+      fr: "Fournit des repères éducatifs selon le niveau d'activité ; précautions rénales applicables.",
+      de: "Bietet Richtwerte basierend auf Aktivitäts-Benchmarks; Nierengesundheit ist zu berücksichtigen.",
+      ko: "활동량 기준의 교육용 참고 지표이며, 신장 질환 등 건강 상태에 따라 전문의 상담이 필요합니다.",
+      hi: "गतिविधि मानकों पर आधारित शैक्षिक संदर्भ सीमाएं प्रदान करता है; गुर्दे (किडनी) स्वास्थ्य संबंधी सावधानियां लागू होती हैं।"
+    }
   },
   {
     name: "Macro Calculator",
     slug: "macro-calculator",
     formula: "Acceptable Macronutrient Distribution Ranges (AMDR)",
     source: "Institute of Medicine (IOM) Dietary Reference Intakes",
-    inputs: "Daily Calorie Intake, Goal Macro Split",
-    output: "Carbohydrate, Protein, Fat Distribution (grams)",
-    limitations: "General nutritional planning framework; individual dietary needs vary based on metabolic conditions."
+    inputs: {
+      en: "Daily Calorie Intake, Goal Macro Split",
+      es: "Calorías diarias, Distribución de macronutrientes",
+      fr: "Calories quotidiennes, Répartition des macronutriments",
+      de: "Tägliche Kalorienzufuhr, Makronährstoff-Verteilung",
+      ko: "일일 칼로리 섭취량, 목표 영양소 비율",
+      hi: "दैनिक कैलोरी सेवन, मैक्रोन्यूट्रिएंट अनुपात लक्ष्य"
+    },
+    output: {
+      en: "Carbohydrate, Protein, Fat Distribution (grams)",
+      es: "Distribución de carbohidratos, proteínas y grasas (gramos)",
+      fr: "Répartition en glucides, protéines et lipides (grammes)",
+      de: "Verteilung von Kohlenhydraten, Proteinen und Fetten (Gramm)",
+      ko: "탄수화물, 단백질, 지방 일일 섭취 비율 (g)",
+      hi: "कार्बोहाइड्रेट, प्रोटीन, वसा वितरण (ग्राम में)"
+    },
+    limitations: {
+      en: "General nutritional planning framework; individual dietary needs vary based on metabolic conditions.",
+      es: "Marco general de planificación nutricional; las necesidades individuales varían según la salud metabólica.",
+      fr: "Cadre général de planification nutritionnelle ; les besoins varient selon l'état métabolique individuel.",
+      de: "Allgemeiner Ernährungsplanungsrahmen; individuelle Bedürfnisse variieren je nach Stoffwechsel.",
+      ko: "일반적인 영양 계획 수립을 위한 기초 프레임워크이며, 대사 질환 및 개인 건강 상태에 따라 달라질 수 있습니다.",
+      hi: "सामान्य पोषण योजना ढांचा; व्यक्तिगत आहार आवश्यकताएं चयापचय स्वास्थ्य और चिकित्सीय स्थितियों के आधार पर भिन्न हो सकती हैं।"
+    }
   }
 ];
 ---
@@ -402,6 +612,10 @@ const methodologyMatrix = [
             const foundCalc = calculators.find(c => c.slug === item.slug);
             const localizedName = foundCalc ? (foundCalc.name[lang] || foundCalc.name.en) : item.name;
 
+            const localizedInputs = typeof item.inputs === 'object' ? (item.inputs[lang] || item.inputs.en) : item.inputs;
+            const localizedOutput = typeof item.output === 'object' ? (item.output[lang] || item.output.en) : item.output;
+            const localizedLimitations = typeof item.limitations === 'object' ? (item.limitations[lang] || item.limitations.en) : item.limitations;
+
             return (
               <div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4 hover:border-[var(--accent)]/40 transition-all shadow-xs">
                 <div class="flex items-center justify-between gap-4 flex-wrap pb-3 border-b border-[var(--border)]">
@@ -432,15 +646,15 @@ const methodologyMatrix = [
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-1">
                   <div>
                     <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">{currentI18n.inputsLabel}</span>
-                    <p class="text-[var(--foreground)] font-semibold mt-0.5">{item.inputs}</p>
+                    <p class="text-[var(--foreground)] font-semibold mt-0.5">{localizedInputs}</p>
                   </div>
                   <div>
                     <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">{currentI18n.outputLabel}</span>
-                    <p class="text-[var(--foreground)] font-semibold mt-0.5">{item.output}</p>
+                    <p class="text-[var(--foreground)] font-semibold mt-0.5">{localizedOutput}</p>
                   </div>
                   <div>
                     <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">{currentI18n.limitationsLabel}</span>
-                    <p class="text-[var(--muted-foreground)] font-medium mt-0.5 leading-relaxed">{item.limitations}</p>
+                    <p class="text-[var(--muted-foreground)] font-medium mt-0.5 leading-relaxed">{localizedLimitations}</p>
                   </div>
                 </div>
               </div>
