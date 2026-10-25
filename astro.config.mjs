@@ -5,6 +5,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://realbmicalculator.com',
   trailingSlash: 'ignore',
+  build: {
+    inlineStylesheets: 'always',
+  },
   integrations: [
     sitemap({
       changefreq: 'weekly',

@@ -537,23 +537,25 @@ const howToSchema = {
 					}, 300);
 				}
 
-				function scheduleIdleLoad() {
-					if ('requestIdleCallback' in window) {
-						window.requestIdleCallback(loadDeferredThirdParties, { timeout: 6000 });
-					} else {
-						setTimeout(loadDeferredThirdParties, 5000);
-					}
-				}
-
-				if (document.readyState === 'complete') {
-					scheduleIdleLoad();
-				} else {
-					window.addEventListener('load', scheduleIdleLoad);
+				var fallbackTimer = null;
+				function triggerLoad() {
+					if (fallbackTimer) clearTimeout(fallbackTimer);
+					loadDeferredThirdParties();
 				}
 
 				['scroll', 'touchstart', 'mousemove', 'keydown', 'click'].forEach(function(evt) {
-					window.addEventListener(evt, loadDeferredThirdParties, { once: true, passive: true });
+					window.addEventListener(evt, triggerLoad, { once: true, passive: true });
 				});
+
+				function scheduleFallback() {
+					fallbackTimer = setTimeout(loadDeferredThirdParties, 8500);
+				}
+
+				if (document.readyState === 'complete') {
+					scheduleFallback();
+				} else {
+					window.addEventListener('load', scheduleFallback);
+				}
 			})();
 		</script>
 	</body>
