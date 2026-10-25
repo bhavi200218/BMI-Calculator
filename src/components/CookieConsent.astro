@@ -328,6 +328,16 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
           'ad_user_data': prefs.marketing ? 'granted' : 'denied',
           'ad_personalization': prefs.marketing ? 'granted' : 'denied'
         });
+        if (prefs.analytics) {
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-9D3TJCYP4R');
+          if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+            var gtmScript = document.createElement('script');
+            gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R';
+            gtmScript.async = true;
+            document.head.appendChild(gtmScript);
+          }
+        }
       }
     }
 

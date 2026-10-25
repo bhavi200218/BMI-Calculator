@@ -24,18 +24,15 @@ const t = nav[lang] || nav.en;
 const currentLangDisplay = langNames[lang] || lang;
 ---
 
-<nav class="fixed inset-x-2 sm:inset-x-6 top-4 z-50 max-w-6xl mx-auto">
-  <div class="flex items-center justify-between px-3 sm:px-5 h-14 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)]">
+<header role="banner" class="site-header fixed inset-x-2 sm:inset-x-6 top-4 z-50 max-w-6xl mx-auto">
+  <nav class="w-full" aria-label="Main Navigation">
+    <div class="flex items-center justify-between px-3 sm:px-5 h-14 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)]">
 
-    <!-- Logo -->
-    <a href={`/${lang}/`} class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-      <div class="w-7 h-7 rounded-lg bg-[var(--accent)] flex items-center justify-center">
-        <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-        </svg>
-      </div>
-      <span class="font-display font-bold text-xs sm:text-sm uppercase tracking-tight text-[var(--foreground)]">Real BMI</span>
-    </a>
+      <!-- Logo & Site Title -->
+      <a href={`/${lang}/`} class="logo site-logo flex items-center gap-2 shrink-0 group" rel="home" aria-label="Real BMI Homepage">
+        <img src="/favicon.svg" alt="Real BMI Logo" width="28" height="28" class="w-7 h-7 rounded-lg bg-[var(--accent)] p-1 object-contain shrink-0 shadow-xs group-hover:scale-105 transition-transform" />
+        <span class="site-title font-display font-bold text-xs sm:text-sm uppercase tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">Real BMI</span>
+      </a>
 
     <!-- Desktop Links -->
     <div class="hidden lg:flex items-center gap-3 lg:gap-5">
@@ -145,8 +142,8 @@ const currentLangDisplay = langNames[lang] || lang;
         {t.faq}
       </a>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
 
 <style>
   .nav-link {

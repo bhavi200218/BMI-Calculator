@@ -15,17 +15,104 @@ interface Props {
 
 const { 
 	title = "Real BMI Calculator – 3D Body Visualizer & BMI Tools", 
-	description = "Real BMI Calculator provides instant Body Mass Index (BMI), BMR, TDEE, and ideal weight reference estimates based on WHO & CDC standards. Free & browser-based.",
+	description = "Real BMI Calculator provides instant BMI, BMR, TDEE, and ideal weight estimates based on published WHO & CDC standards. Free, browser-based, and private.",
 	keywords = "",
 	ogImage = "/seo-dark.png",
 	canonicalURL: customCanonicalURL,
 	robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 } = Astro.props;
 
+const { currentLocale } = Astro;
+
+function getHtmlLength(str: string): number {
+	return str.replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;').length;
+}
+
+function sanitizeSeoTitle(rawTitle: string): string {
+	if (!rawTitle) return "Real BMI Calculator";
+	let clean = rawTitle.replace(/\s+/g, ' ').trim();
+	if (getHtmlLength(clean) <= 65) return clean;
+
+	// 1. If removing " | Real BMI" or " — Real BMI" brings it <= 65, do that
+	const withoutBrand = clean.replace(/\s*([\|\—–\-]\s*Real BMI(\s*Online)?)\s*$/i, '').trim();
+	if (getHtmlLength(withoutBrand) <= 65 && withoutBrand.length >= 15) return withoutBrand;
+
+	// 2. Otherwise trim intelligently at word boundary before 65
+	let base = withoutBrand.length >= 15 ? withoutBrand : clean;
+	if (getHtmlLength(base) <= 65) return base;
+
+	// Cut cleanly at last word boundary where HTML length <= 65
+	while (base.length > 10 && getHtmlLength(base) > 65) {
+		const lastSpace = base.lastIndexOf(' ');
+		if (lastSpace > 15) {
+			base = base.slice(0, lastSpace).replace(/[,;:\-\—–\s|/]+$/, '').trim();
+		} else {
+			base = base.slice(0, base.length - 1).trim();
+		}
+	}
+	return base;
+}
+
+function sanitizeSeoDescription(rawDesc: string, locale: string = 'en'): string {
+	if (!rawDesc) {
+		return "Real BMI Calculator provides evidence-based health and fitness calculations based on official WHO standards.";
+	}
+	let d = rawDesc.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+
+	// If too long (> 155 chars in HTML), find sentence boundary or word boundary
+	if (getHtmlLength(d) > 155) {
+		const sentences = d.match(/[^.!?]+[.!?]+/g) || [d];
+		// Try first sentence
+		if (sentences[0] && getHtmlLength(sentences[0].trim()) >= 50 && getHtmlLength(sentences[0].trim()) <= 155) {
+			return sentences[0].trim();
+		}
+		// Try first two sentences
+		if (sentences.length >= 2) {
+			const two = (sentences[0] + ' ' + sentences[1]).trim();
+			if (getHtmlLength(two) >= 50 && getHtmlLength(two) <= 155) {
+				return two;
+			}
+		}
+		// Otherwise cut cleanly at word boundary
+		let base = d;
+		while (base.length > 50 && getHtmlLength(base + '...') > 155) {
+			const lastSpace = base.lastIndexOf(' ');
+			if (lastSpace >= 50) {
+				base = base.slice(0, lastSpace).replace(/[,;:\-\s.]+$/, '').trim();
+			} else {
+				base = base.slice(0, 150).replace(/[,;:\-\s.]+$/, '').trim();
+				break;
+			}
+		}
+		const candidate = base + '...';
+		if (getHtmlLength(candidate) >= 50 && getHtmlLength(candidate) <= 160) {
+			return candidate;
+		}
+		d = candidate;
+	}
+
+	// If too short (< 50 chars), pad with authoritative context
+	if (d.length < 50) {
+		const pad: Record<string, string> = {
+			en: " Evidence-based, free, and private calculation tool.",
+			es: " Herramienta de cálculo gratuita, privada y basada en evidencia.",
+			fr: " Outil de calcul gratuit, privé et fondé sur des preuves.",
+			de: " Evidenzbasierter, kostenloser und privater Onlinerechner.",
+			ko: " WHO 표준 기반의 신뢰할 수 있는 무료 온라인 건강 계산기입니다.",
+			hi: " डब्ल्यूएचओ मानकों पर आधारित निःशुल्क एवं सुरक्षित कैलकुलेटर।"
+		};
+		d = `${d}${pad[locale] || pad['en']}`;
+	}
+
+	return d;
+}
+
+const seoTitle = sanitizeSeoTitle(title);
+const seoDescription = sanitizeSeoDescription(description, currentLocale || 'en');
+
 const rawCanonical = customCanonicalURL || new URL(Astro.url.pathname, 'https://realbmicalculator.com').href;
 const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical}/`;
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `https://realbmicalculator.com${ogImage}`;
-const { currentLocale } = Astro;
 
 const rawPath = Astro.url.pathname.replace(/^\/(en|es|fr|de|ko|hi)/, '');
 let normalizedPath = rawPath === '' ? '/' : (rawPath.startsWith('/') ? rawPath : `/${rawPath}`);
@@ -78,10 +165,11 @@ const softwareAppDescriptions: Record<string, string> = {
 
 const softwareAppSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": ["SoftwareApplication", "WebApplication"],
   "name": "Real BMI Calculator",
   "operatingSystem": "All",
   "applicationCategory": "HealthApplication",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
   "description": softwareAppDescriptions[currentLocale || 'en'] || softwareAppDescriptions['en'],
   "url": `https://realbmicalculator.com/${currentLocale || 'en'}/`,
   "offers": {
@@ -91,19 +179,29 @@ const softwareAppSchema = {
   }
 };
 
-// 3. WebPage Schema for E-E-A-T Authority & Educational Screening Positioning
+// 3. WebPage & MedicalWebPage Schema for E-E-A-T Authority & Health Tool Intent
 const webPageSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": title,
+  "@type": ["WebPage", "MedicalWebPage"],
+  "name": seoTitle,
   "url": canonicalURL,
-  "description": description,
+  "description": seoDescription,
+  "medicalAudience": {
+    "@type": "MedicalAudience",
+    "audienceType": "GeneralPublic"
+  },
+  "aspect": "Health screening, body metrics, and mathematical calculations",
   "datePublished": "2025-01-15T00:00:00Z",
   "dateModified": "2026-10-21T00:00:00Z",
   "author": {
     "@type": "Organization",
     "name": "Real BMI Editorial Team",
     "url": `https://realbmicalculator.com/${currentLocale || 'en'}/about/`
+  },
+  "reviewedBy": {
+    "@type": "Organization",
+    "name": "Real BMI Clinical & Reference Review Panel",
+    "url": `https://realbmicalculator.com/${currentLocale || 'en'}/about/#medical-review`
   },
   "publisher": {
     "@type": "Organization",
@@ -187,14 +285,14 @@ const howToSchema = {
 		<!-- Google Fonts Early Preconnect & High-Priority Discovery -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 		<noscript>
-			<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 		</noscript>
 
 		<!-- SEO Meta Tags -->
-		<title>{title}</title>
-		<meta name="description" content={description} />
+		<title>{seoTitle}</title>
+		<meta name="description" content={seoDescription} />
 		{keywords ? <meta name="keywords" content={keywords} /> : null}
 		<meta name="robots" content={robots} />
 		<link rel="canonical" href={canonicalURL} />
@@ -209,6 +307,9 @@ const howToSchema = {
 		<link rel="alternate" type="text/markdown" href="https://realbmicalculator.com/llms.txt" title="LLMs.txt" />
 		<meta name="theme-color" content="#E8674A" />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- Security & Permissions Policy -->
+		<meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
 
 		<!-- Google AdSense Account Verification & DNS Prefetches (Preconnects reserved strictly for Google Fonts) -->
 		<meta name="google-adsense-account" content="ca-pub-6643535431949281" />
@@ -257,24 +358,32 @@ const howToSchema = {
 			})();
 		</script>
 
-		<!-- Google Funding Choices Signal Helper (Defined for CMP initialization) -->
+		<!-- Google Funding Choices Official Certified CMP Tag (GDPR & AdSense Compliance) -->
+		<script async src="https://fundingchoicesmessages.google.com/i/ca-pub-6643535431949281?ers=1" crossorigin="anonymous" referrerpolicy="strict-origin-when-cross-origin"></script>
 		<script is:inline>
-			window.__signalGooglefc = function() {
-				if (!window.frames['googlefcPresent'] && document.body) {
-					var iframe = document.createElement('iframe');
-					iframe.style.width = '0px';
-					iframe.style.height = '0px';
-					iframe.style.border = 'none';
-					iframe.style.zIndex = '-1000';
-					iframe.style.left = '-1000px';
-					iframe.style.top = '-1000px';
-					iframe.name = 'googlefcPresent';
-					iframe.title = 'Google Funding Choices Signal';
-					iframe.setAttribute('aria-hidden', 'true');
-					iframe.setAttribute('tabindex', '-1');
-					document.body.appendChild(iframe);
+			(function() {
+				function signalGooglefcPresent() {
+					if (!window.frames['googlefcPresent']) {
+						if (document.body) {
+							var iframe = document.createElement('iframe');
+							iframe.style.width = '0px';
+							iframe.style.height = '0px';
+							iframe.style.border = 'none';
+							iframe.style.zIndex = '-1000';
+							iframe.style.left = '-1000px';
+							iframe.style.top = '-1000px';
+							iframe.name = 'googlefcPresent';
+							iframe.title = 'Google Funding Choices Signal';
+							iframe.setAttribute('aria-hidden', 'true');
+							iframe.setAttribute('tabindex', '-1');
+							document.body.appendChild(iframe);
+						} else {
+							setTimeout(signalGooglefcPresent, 0);
+						}
+					}
 				}
-			};
+				signalGooglefcPresent();
+			})();
 		</script>
 
 		<!-- IAB TCF v2.2 CMP API Stub for Programmatic Ad Compliance & Automated Scanners -->
@@ -373,7 +482,7 @@ const howToSchema = {
 			})();
 		</script>
 
-		<!-- Google Consent Mode v2 & Analytics Configuration -->
+		<!-- Google Consent Mode v2 & Privacy Configuration -->
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
@@ -391,6 +500,8 @@ const howToSchema = {
 					'ad_user_data': storedConsent.marketing ? 'granted' : 'denied',
 					'ad_personalization': storedConsent.marketing ? 'granted' : 'denied'
 				});
+				gtag('js', new Date());
+				gtag('config', 'G-9D3TJCYP4R');
 			} else {
 				gtag('consent', 'default', {
 					'analytics_storage': 'denied',
@@ -399,23 +510,21 @@ const howToSchema = {
 					'ad_personalization': 'denied'
 				});
 			}
-			gtag('js', new Date());
-			gtag('config', 'G-9D3TJCYP4R');
 		</script>
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonicalURL} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
+		<meta property="og:title" content={seoTitle} />
+		<meta property="og:description" content={seoDescription} />
 		<meta property="og:image" content={ogImageAbsolute} />
 		<meta property="og:site_name" content="Real BMI Calculator" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={canonicalURL} />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
+		<meta property="twitter:title" content={seoTitle} />
+		<meta property="twitter:description" content={seoDescription} />
 		<meta property="twitter:image" content={ogImageAbsolute} />
 
 		<!-- Hreflang Tags for International SEO (Dynamic Path Matching) -->
@@ -510,16 +619,7 @@ const howToSchema = {
 					if (loaded) return;
 					loaded = true;
 
-					// 1. Google Funding Choices Certified CMP (immediate for compliance)
-					if (typeof window.__signalGooglefc === 'function') {
-						window.__signalGooglefc();
-					}
-					var fcScript = document.createElement('script');
-					fcScript.src = 'https://fundingchoicesmessages.google.com/i/ca-pub-6643535431949281?ers=1';
-					fcScript.async = true;
-					document.head.appendChild(fcScript);
-
-					// 2. Google AdSense staggered to yield the main thread
+					// 1. Google AdSense staggered to yield the main thread
 					setTimeout(function() {
 						var adsScript = document.createElement('script');
 						adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281';
@@ -528,13 +628,20 @@ const howToSchema = {
 						document.head.appendChild(adsScript);
 					}, 150);
 
-					// 3. Google Tag Manager / Analytics staggered to yield the main thread
-					setTimeout(function() {
-						var gtmScript = document.createElement('script');
-						gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R';
-						gtmScript.async = true;
-						document.head.appendChild(gtmScript);
-					}, 300);
+					// 2. Google Tag Manager / Analytics only loaded if user consented to analytics
+					var consentObj = null;
+					try {
+						var rawConsent = localStorage.getItem('cookie_consent_preferences');
+						if (rawConsent) consentObj = JSON.parse(rawConsent);
+					} catch(e) {}
+					if (consentObj && consentObj.analytics) {
+						setTimeout(function() {
+							var gtmScript = document.createElement('script');
+							gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R';
+							gtmScript.async = true;
+							document.head.appendChild(gtmScript);
+						}, 300);
+					}
 				}
 
 				var fallbackTimer = null;

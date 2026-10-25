@@ -62,9 +62,21 @@ const articlesList = articleSlugs.map(slug => {
     returnUrl={`/${lang}/`}
     returnLabel={homeLabels[lang] || homeLabels.en}
   >
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Category Hub Navigation -->
+    <div class="flex flex-wrap items-center gap-2 mb-8 pb-4 border-b border-[var(--border)]" id="categoryHubNav">
+      <button type="button" class="category-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--accent)] text-white transition-all shadow-xs cursor-pointer" data-filter="all">
+        All Guides ({articlesList.length})
+      </button>
+      {[...new Set(articlesList.map(a => a.category))].map(cat => (
+        <button type="button" class="category-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter={cat}>
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="articlesGrid">
       {articlesList.map(article => (
-        <a href={`/${lang}/blog/${article.slug}/`} class="group block h-full">
+        <a href={`/${lang}/blog/${article.slug}/`} class="group block h-full article-item" data-category={article.category}>
           <div class="h-full p-6 sm:p-7 rounded-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-4 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
             <div class="space-y-3">
               <div class="flex items-center justify-between gap-2">
@@ -90,5 +102,30 @@ const articlesList = articleSlugs.map(slug => {
         </a>
       ))}
     </div>
+
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.category-tab');
+        const cards = document.querySelectorAll('.article-item');
+        tabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            tabs.forEach(t => {
+              t.classList.remove('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+              t.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]');
+            });
+            tab.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+            tab.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]');
+            const filter = tab.getAttribute('data-filter');
+            cards.forEach(card => {
+              if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = '';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+      });
+    </script>
   </PageShell>
 </Layout>

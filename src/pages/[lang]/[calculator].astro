@@ -35,8 +35,8 @@ const { calc, lang } = Astro.props;
 
 const dbData = seoDatabase[calc.slug]?.[lang] || seoDatabase[calc.slug]?.['en'];
 const pageTitle = dbData?.title || calc.title[lang] || calc.title['en'];
-// Clean plain text meta description for <head> SEO
-const metaDesc = (dbData?.intro || calc.description[lang] || calc.description['en']).replace(/<[^>]+>/g, '').trim();
+// Clean, concise plain text meta description for <head> SEO (50-160 characters)
+const metaDesc = (calc.description[lang] || calc.description['en'] || dbData?.intro || '').replace(/<[^>]+>/g, '').trim();
 // Clean, concise visible hero subtitle (1-2 sentences max, eliminates overwhelming walls of text)
 const pageDesc = (calc.description[lang] || calc.description['en']).replace(/<[^>]+>/g, '').trim();
 const canonicalUrl = `https://realbmicalculator.com/${lang}/${calc.slug}/`;
@@ -133,7 +133,7 @@ const checklist3DVisualizer: Record<string, string[]> = {
 
 const items3D = (calc.slug === '3d-bmi-calculator' ? checklist3DBmi[lang] : checklist3DVisualizer[lang]) || checklist3DBmi.en;
 
-// WebApplication Schema for SEO
+// WebApplication & MedicalWebPage Schemas for Structured Data
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -143,6 +143,19 @@ const webAppSchema = {
   "applicationCategory": "HealthApplication",
   "browserRequirements": "Requires JavaScript. Requires HTML5.",
   "operatingSystem": "All"
+};
+
+const medicalWebPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": `${calc.name[lang] || calc.name['en']} — Reference Health Calculator`,
+  "url": canonicalUrl,
+  "description": metaDesc,
+  "aspect": "Health calculation, clinical guidelines, and reference screening",
+  "medicalAudience": {
+    "@type": "MedicalAudience",
+    "audienceType": "GeneralPublic"
+  }
 };
 // Curated domain-relevant articles to eliminate generic repetitive article dumping
 const relevantArticlesBySlug: Record<string, string[]> = {
@@ -197,8 +210,9 @@ const relatedGuidesSubtitle: Record<string, string> = {
   description={metaDesc}
   canonicalURL={canonicalUrl}
 >
-  <!-- Inject WebApplication JSON-LD dynamically inside Layout context -->
+  <!-- Inject WebApplication and MedicalWebPage JSON-LD dynamically inside Layout context -->
   <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} slot="json-ld"></script>
+  <script type="application/ld+json" set:html={JSON.stringify(medicalWebPageSchema)} slot="json-ld"></script>
   
   <Navbar />
   

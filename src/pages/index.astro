@@ -7,19 +7,44 @@ const currentYear = new Date().getFullYear();
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Real BMI Global Gateway — International Health & Body Calculator Suite</title>
-  <meta name="description" content="Select your preferred language to access Real BMI evidence-based health calculators in English, Español, Français, Deutsch, 한국어, or हिन्दी. 100% private and browser-based." />
+  <title>Real BMI Global Gateway — Multilingual Health Calculators</title>
+  <meta name="description" content="Access Real BMI evidence-based calculators in English, Español, Français, Deutsch, 한국어, or हिन्दी. 100% private, free, and browser-based." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://realbmicalculator.com/" />
   
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://realbmicalculator.com/" />
+  <meta property="og:title" content="Real BMI Global Gateway — Multilingual Health Calculators" />
+  <meta property="og:description" content="Access Real BMI evidence-based calculators in English, Español, Français, Deutsch, 한국어, or हिन्दी. 100% private, free, and browser-based." />
+  <meta property="og:image" content="https://realbmicalculator.com/seo-dark.png" />
+  <meta property="og:site_name" content="Real BMI Calculator" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://realbmicalculator.com/" />
+  <meta property="twitter:title" content="Real BMI Global Gateway — Multilingual Health Calculators" />
+  <meta property="twitter:description" content="Access Real BMI evidence-based calculators in English, Español, Français, Deutsch, 한국어, or हिन्दी. 100% private, free, and browser-based." />
+  <meta property="twitter:image" content="https://realbmicalculator.com/seo-dark.png" />
+
+  <!-- Hreflang Tags for International Discovery -->
+  <link rel="alternate" hreflang="en" href="https://realbmicalculator.com/en/" />
+  <link rel="alternate" hreflang="es" href="https://realbmicalculator.com/es/" />
+  <link rel="alternate" hreflang="fr" href="https://realbmicalculator.com/fr/" />
+  <link rel="alternate" hreflang="de" href="https://realbmicalculator.com/de/" />
+  <link rel="alternate" hreflang="ko" href="https://realbmicalculator.com/ko/" />
+  <link rel="alternate" hreflang="hi" href="https://realbmicalculator.com/hi/" />
+  <link rel="alternate" hreflang="x-default" href="https://realbmicalculator.com/en/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
   <link rel="shortcut icon" href="/favicon.ico?v=2" />
 
+  <!-- Permissions Policy -->
+  <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
+
   <!-- Google AdSense Account Verification -->
   <meta name="google-adsense-account" content="ca-pub-6643535431949281" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281" crossorigin="anonymous"></script>
 
   <style>
     :root {
@@ -201,12 +226,50 @@ const currentYear = new Date().getFullYear();
       color: var(--muted-foreground);
       margin-top: 1.5rem;
     }
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .site-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+    .logo-img {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.5rem;
+      background: var(--accent);
+      padding: 0.25rem;
+      object-fit: contain;
+    }
+    .site-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--foreground);
+    }
   </style>
 </head>
 <body>
-  <main id="main-content" class="container">
-    <div class="badge">Real BMI International Portal</div>
-    <h1>Real BMI Global Gateway — Multi-Language Health Suite</h1>
+  <div class="container">
+    <header role="banner" class="site-header">
+      <a href="/en/" class="logo site-logo" rel="home" aria-label="Real BMI Homepage">
+        <img src="/favicon.svg" alt="Real BMI Logo" width="36" height="36" class="logo-img" />
+        <span class="site-title">Real BMI</span>
+      </a>
+      <div class="badge" style="margin: 0;">Verified Health Suite</div>
+    </header>
+
+    <main id="main-content">
+      <div class="badge">Real BMI International Portal</div>
+      <h1>Real BMI Global Gateway — Multi-Language Health Suite</h1>
     <p class="subtitle">
       Select your preferred language edition to access our verified, evidence-based calculation suite. Compute Body Mass Index (BMI), Basal Metabolic Rate (BMR), and Total Daily Energy Expenditure (TDEE) with complete client-side privacy.
     </p>
@@ -301,5 +364,6 @@ const currentYear = new Date().getFullYear();
     </footer>
     <p class="copyright-line">© {currentYear} Real BMI Calculator. All rights reserved. Maintained by the Real BMI Health Tools Team for educational reference.</p>
   </main>
+</div>
 </body>
 </html>
