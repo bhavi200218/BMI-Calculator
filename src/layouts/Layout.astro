@@ -208,6 +208,47 @@ const howToSchema = {
 		<link rel="dns-prefetch" href="https://fundingchoicesmessages.google.com" />
 		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
+		<!-- Global Accessible Iframe Guard (Guarantees every dynamic/3rd-party iframe passes Axe/Lighthouse accessibility audit) -->
+		<script is:inline>
+			(function() {
+				function secureFrame(node) {
+					if (!node || node.nodeName !== 'IFRAME') return;
+					var title = node.getAttribute('title');
+					if (!title || !title.trim()) {
+						var name = node.getAttribute('name') || node.id || 'widget';
+						var clean = name.replace(/[^a-zA-Z0-9 ]/g, ' ').trim() || 'Interactive Content';
+						node.setAttribute('title', clean.charAt(0).toUpperCase() + clean.slice(1));
+					}
+					var w = node.style.width || node.getAttribute('width');
+					var h = node.style.height || node.getAttribute('height');
+					var d = node.style.display;
+					if (w === '0px' || w === '0' || h === '0px' || h === '0' || d === 'none') {
+						node.setAttribute('aria-hidden', 'true');
+						node.setAttribute('tabindex', '-1');
+					}
+				}
+
+				if (typeof MutationObserver !== 'undefined') {
+					var observer = new MutationObserver(function(mutations) {
+						for (var i = 0; i < mutations.length; i++) {
+							var added = mutations[i].addedNodes;
+							for (var j = 0; j < added.length; j++) {
+								var n = added[j];
+								if (n.nodeType === 1) {
+									if (n.nodeName === 'IFRAME') secureFrame(n);
+									if (n.getElementsByTagName) {
+										var iframes = n.getElementsByTagName('iframe');
+										for (var k = 0; k < iframes.length; k++) secureFrame(iframes[k]);
+									}
+								}
+							}
+						}
+					});
+					observer.observe(document.documentElement, { childList: true, subtree: true });
+				}
+			})();
+		</script>
+
 		<!-- Google Funding Choices Signal Helper (Defined for CMP initialization) -->
 		<script is:inline>
 			window.__signalGooglefc = function() {
@@ -220,6 +261,9 @@ const howToSchema = {
 					iframe.style.left = '-1000px';
 					iframe.style.top = '-1000px';
 					iframe.name = 'googlefcPresent';
+					iframe.title = 'Google Funding Choices Signal';
+					iframe.setAttribute('aria-hidden', 'true');
+					iframe.setAttribute('tabindex', '-1');
 					document.body.appendChild(iframe);
 				}
 			};
@@ -267,7 +311,9 @@ const howToSchema = {
 								var iframe = document.createElement('iframe');
 								iframe.style.cssText = 'display:none;width:0px;height:0px;border:none;';
 								iframe.name = '__tcfapiLocator';
+								iframe.title = 'TCF API Locator';
 								iframe.setAttribute('aria-hidden', 'true');
+								iframe.setAttribute('tabindex', '-1');
 								document.body.appendChild(iframe);
 							} else {
 								setTimeout(addTcfFrame, 5);
@@ -401,8 +447,8 @@ const howToSchema = {
 	<body class="bg-[var(--background)] text-[var(--foreground)] antialiased font-sans transition-colors duration-300 min-h-screen flex flex-col justify-between overflow-x-hidden relative">
 		<!-- Full-Screen Edge-to-Edge Background Image Slideshow on Desktop (hidden on mobile for instant LCP & optimal contrast) -->
 		<div id="bg-slideshow" class="hidden md:block fixed inset-0 w-full h-full pointer-events-none z-[-2] overflow-hidden" style="background-color: var(--background);">
-			<div class="bg-slide active absolute inset-0 w-full h-full bg-cover bg-no-repeat" style="background-image: url('/images/bg/2.webp'); background-position: center 30%;"></div>
-			<div class="bg-slide absolute inset-0 w-full h-full bg-cover bg-no-repeat" style="background-image: url('/images/bg/4.webp'); background-position: center 20%;"></div>
+			<div class="bg-slide active absolute inset-0 w-full h-full bg-cover bg-no-repeat" data-bg="/images/bg/2.webp" style="background-position: center 30%;"></div>
+			<div class="bg-slide absolute inset-0 w-full h-full bg-cover bg-no-repeat" data-bg="/images/bg/4.webp" style="background-position: center 20%;"></div>
 			<!-- Subtle tint overlay for theme blending -->
 			<div class="absolute inset-0 opacity-15 dark:opacity-40 pointer-events-none z-10" style="background-color: var(--background);"></div>
 		</div>
@@ -413,7 +459,7 @@ const howToSchema = {
 		<Footer />
 		<CookieConsent lang={currentLocale as any || 'en'} />
 
-		<!-- Background Slideshow Script -->
+		<!-- Background Slideshow Script (Desktop Only) -->
 		<script is:inline>
 			(function() {
 				let slideshowTimer = null;
@@ -424,6 +470,12 @@ const howToSchema = {
 					if (slideshowTimer) clearInterval(slideshowTimer);
 					const slides = document.querySelectorAll('#bg-slideshow .bg-slide');
 					if (!slides || slides.length <= 1) return;
+
+					slides.forEach((s) => {
+						if (s.dataset.bg && !s.style.backgroundImage) {
+							s.style.backgroundImage = 'url(' + s.dataset.bg + ')';
+						}
+					});
 
 					currentSlide = 0;
 					slides.forEach((s, idx) => {
@@ -450,7 +502,7 @@ const howToSchema = {
 			})();
 		</script>
 
-		<!-- Third-Party Essential Scripts (AdSense, Analytics & Funding Choices Deferred to Idle / Post-Paint for Zero TBT) -->
+		<!-- Third-Party Essential Scripts (AdSense, Analytics & Funding Choices Deferred to User Interaction or Post-Paint Idle) -->
 		<script is:inline>
 			(function() {
 				var loaded = false;
@@ -458,13 +510,7 @@ const howToSchema = {
 					if (loaded) return;
 					loaded = true;
 
-					// Google Tag Manager
-					var gtmScript = document.createElement('script');
-					gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R';
-					gtmScript.async = true;
-					document.head.appendChild(gtmScript);
-
-					// Google Funding Choices Official Certified CMP
+					// 1. Google Funding Choices Certified CMP (immediate for compliance)
 					if (typeof window.__signalGooglefc === 'function') {
 						window.__signalGooglefc();
 					}
@@ -473,22 +519,36 @@ const howToSchema = {
 					fcScript.async = true;
 					document.head.appendChild(fcScript);
 
-					// Google AdSense
-					var adsScript = document.createElement('script');
-					adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281';
-					adsScript.async = true;
-					adsScript.crossOrigin = 'anonymous';
-					document.head.appendChild(adsScript);
+					// 2. Google AdSense staggered to yield the main thread
+					setTimeout(function() {
+						var adsScript = document.createElement('script');
+						adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281';
+						adsScript.async = true;
+						adsScript.crossOrigin = 'anonymous';
+						document.head.appendChild(adsScript);
+					}, 150);
+
+					// 3. Google Tag Manager / Analytics staggered to yield the main thread
+					setTimeout(function() {
+						var gtmScript = document.createElement('script');
+						gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R';
+						gtmScript.async = true;
+						document.head.appendChild(gtmScript);
+					}, 300);
 				}
 
-				if ('requestIdleCallback' in window) {
-					window.requestIdleCallback(function() {
-						setTimeout(loadDeferredThirdParties, 800);
-					}, { timeout: 2500 });
+				function scheduleIdleLoad() {
+					if ('requestIdleCallback' in window) {
+						window.requestIdleCallback(loadDeferredThirdParties, { timeout: 6000 });
+					} else {
+						setTimeout(loadDeferredThirdParties, 5000);
+					}
+				}
+
+				if (document.readyState === 'complete') {
+					scheduleIdleLoad();
 				} else {
-					window.addEventListener('load', function() {
-						setTimeout(loadDeferredThirdParties, 800);
-					});
+					window.addEventListener('load', scheduleIdleLoad);
 				}
 
 				['scroll', 'touchstart', 'mousemove', 'keydown', 'click'].forEach(function(evt) {

@@ -1,55 +1,64 @@
 {
-  "$schema": "https://agenticresourcediscovery.org/spec/v1/schema.json",
-  "name": "Real BMI Calculator",
-  "version": "1.0.0",
-  "description": "Evidence-based health, body composition, and metabolic calculators based on WHO and CDC clinical reference standards.",
-  "url": "https://realbmicalculator.com",
-  "documentation": "https://realbmicalculator.com/en/methodology/",
-  "llms_txt": "https://realbmicalculator.com/llms.txt",
-  "provider": {
-    "name": "Real BMI",
-    "url": "https://realbmicalculator.com"
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Real BMI Calculator",
+    "identifier": "urn:air:realbmicalculator.com"
   },
-  "capabilities": [
-    "body-mass-index",
-    "basal-metabolic-rate",
-    "total-daily-energy-expenditure",
-    "body-fat-percentage",
-    "lean-body-mass",
-    "ideal-body-weight",
-    "macronutrient-split",
-    "hydration-targets"
-  ],
-  "tools": [
+  "entries": [
     {
-      "name": "calculate_bmi",
-      "description": "Calculates Body Mass Index (BMI) using weight (kg or lbs) and height (cm or inches), returning WHO and CDC health risk categories.",
+      "identifier": "urn:air:realbmicalculator.com:bmi-calculator",
+      "displayName": "Real BMI Calculator",
+      "type": "text/html",
       "url": "https://realbmicalculator.com/en/bmi-calculator/",
-      "method": "GET"
+      "description": "Calculates Body Mass Index (BMI) using weight and height, returning official WHO and CDC weight categories and health risk guidance.",
+      "representativeQueries": [
+        "Calculate my BMI",
+        "What is healthy BMI range for my height and weight"
+      ]
     },
     {
-      "name": "calculate_bmr",
-      "description": "Calculates Basal Metabolic Rate using the Mifflin-St Jeor clinical equation.",
+      "identifier": "urn:air:realbmicalculator.com:bmr-calculator",
+      "displayName": "Accurate BMR Calculator",
+      "type": "text/html",
       "url": "https://realbmicalculator.com/en/bmr-calculator/",
-      "method": "GET"
+      "description": "Calculates basal metabolic rate using the clinical Mifflin-St Jeor equation to estimate resting energy expenditure.",
+      "representativeQueries": [
+        "Calculate my BMR",
+        "How many calories do I burn at rest"
+      ]
     },
     {
-      "name": "calculate_tdee",
-      "description": "Calculates Total Daily Energy Expenditure based on BMR and physical activity factors.",
+      "identifier": "urn:air:realbmicalculator.com:tdee-calculator",
+      "displayName": "TDEE Calculator",
+      "type": "text/html",
       "url": "https://realbmicalculator.com/en/tdee-calculator/",
-      "method": "GET"
+      "description": "Determines total daily energy expenditure by combining resting metabolism with physical activity multipliers.",
+      "representativeQueries": [
+        "Calculate daily maintenance calories",
+        "What is my TDEE for weight loss"
+      ]
     },
     {
-      "name": "calculate_body_fat",
-      "description": "Calculates body fat percentage using US Navy circumference formulas.",
+      "identifier": "urn:air:realbmicalculator.com:body-fat-calculator",
+      "displayName": "US Navy Body Fat Calculator",
+      "type": "text/html",
       "url": "https://realbmicalculator.com/en/body-fat-calculator/",
-      "method": "GET"
+      "description": "Calculates body fat percentage and lean mass using validated US Navy anthropometric circumference equations.",
+      "representativeQueries": [
+        "Calculate my body fat percentage",
+        "Measure body fat with waist and neck circumference"
+      ]
     },
     {
-      "name": "calculate_ideal_weight",
-      "description": "Calculates healthy weight ranges using Devine, Robinson, Miller, and Hamwi equations.",
+      "identifier": "urn:air:realbmicalculator.com:ideal-weight-calculator",
+      "displayName": "Ideal Weight Calculator",
+      "type": "text/html",
       "url": "https://realbmicalculator.com/en/ideal-weight-calculator/",
-      "method": "GET"
+      "description": "Determines healthy body weight targets across Devine, Robinson, Miller, and Hamwi clinical formulas.",
+      "representativeQueries": [
+        "What is my ideal body weight",
+        "Calculate healthy weight for height"
+      ]
     }
   ]
 }
