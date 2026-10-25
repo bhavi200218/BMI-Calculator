@@ -184,6 +184,14 @@ const howToSchema = {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+		<!-- Google Fonts Early Preconnect & High-Priority Discovery -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+		</noscript>
+
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
@@ -435,14 +443,6 @@ const howToSchema = {
 		)}
 		
 		<slot name="json-ld" />
-
-		<!-- Google Fonts (Optimized Non-blocking Asynchronous Pattern with font-display: swap) -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-		<noscript>
-			<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-		</noscript>
 	</head>
 	<body class="bg-[var(--background)] text-[var(--foreground)] antialiased font-sans transition-colors duration-300 min-h-screen flex flex-col justify-between overflow-x-hidden relative">
 		<!-- Full-Screen Edge-to-Edge Background Image Slideshow on Desktop (hidden on mobile for instant LCP & optimal contrast) -->

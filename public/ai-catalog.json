@@ -8,8 +8,8 @@
     {
       "identifier": "urn:air:realbmicalculator.com:bmi-calculator",
       "displayName": "Real BMI Calculator",
-      "type": "text/html",
-      "url": "https://realbmicalculator.com/en/bmi-calculator/",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/llms.txt",
       "description": "Calculates Body Mass Index (BMI) using weight and height, returning official WHO and CDC weight categories and health risk guidance.",
       "representativeQueries": [
         "Calculate my BMI",
@@ -19,8 +19,8 @@
     {
       "identifier": "urn:air:realbmicalculator.com:bmr-calculator",
       "displayName": "Accurate BMR Calculator",
-      "type": "text/html",
-      "url": "https://realbmicalculator.com/en/bmr-calculator/",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/llms.txt",
       "description": "Calculates basal metabolic rate using the clinical Mifflin-St Jeor equation to estimate resting energy expenditure.",
       "representativeQueries": [
         "Calculate my BMR",
@@ -30,8 +30,8 @@
     {
       "identifier": "urn:air:realbmicalculator.com:tdee-calculator",
       "displayName": "TDEE Calculator",
-      "type": "text/html",
-      "url": "https://realbmicalculator.com/en/tdee-calculator/",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/llms.txt",
       "description": "Determines total daily energy expenditure by combining resting metabolism with physical activity multipliers.",
       "representativeQueries": [
         "Calculate daily maintenance calories",
@@ -41,8 +41,8 @@
     {
       "identifier": "urn:air:realbmicalculator.com:body-fat-calculator",
       "displayName": "US Navy Body Fat Calculator",
-      "type": "text/html",
-      "url": "https://realbmicalculator.com/en/body-fat-calculator/",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/llms.txt",
       "description": "Calculates body fat percentage and lean mass using validated US Navy anthropometric circumference equations.",
       "representativeQueries": [
         "Calculate my body fat percentage",
@@ -52,8 +52,8 @@
     {
       "identifier": "urn:air:realbmicalculator.com:ideal-weight-calculator",
       "displayName": "Ideal Weight Calculator",
-      "type": "text/html",
-      "url": "https://realbmicalculator.com/en/ideal-weight-calculator/",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/llms.txt",
       "description": "Determines healthy body weight targets across Devine, Robinson, Miller, and Hamwi clinical formulas.",
       "representativeQueries": [
         "What is my ideal body weight",
