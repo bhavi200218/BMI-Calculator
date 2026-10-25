@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+---
+
+<Layout 
+    title="Política de Derechos de Autor y DMCA | Real BMI"
+    description="Consulte nuestra política de derechos de autor (DMCA), los procedimientos de notificación de infracciones, el contacto del agente designado y las normas de propiedad intelectual."
+>
+    <Navbar />
+    <PageShell
+      title="Política de Derechos de Autor y DMCA"
+      eyebrow="Propiedad Intelectual y Normas Legales"
+      description="Directrices transparentes sobre derechos de autor, uso educativo justo, citación de contenidos y procedimiento formal de notificación DMCA."
+      returnUrl="/es/"
+      returnLabel="Inicio"
+    >
+        <p>En <strong>Real BMI</strong>, una plataforma independiente de cálculo de salud y recursos educativos mantenida por el <strong>Equipo de Herramientas de Salud de Real BMI</strong>, respetamos profundamente los derechos de propiedad intelectual de creadores, investigadores médicos y autores de software. Esta Política de Derechos de Autor y de la Ley de Derechos de Autor del Milenio Digital (DMCA) describe la titularidad de nuestros contenidos, las pautas para citaciones de terceros y el procedimiento formal para notificar supuestas infracciones de derechos de autor de conformidad con el Título 17 del Código de los Estados Unidos, Sección 512(c).</p>
+
+        <h2>1. Titularidad del Contenido del Sitio</h2>
+        <p>Salvo que se indique expresamente lo contrario, todos los artículos originales, algoritmos de cálculo interactivos, código fuente, diseños de interfaz, scripts del modelo de visualización corporal en 3D, estructuras de diseño responsivo, gráficos SVG personalizados, elementos de marca y recursos gráficos publicados en <strong>realbmicalculator.com</strong> son propiedad intelectual del equipo de Real BMI y están protegidos por tratados internacionales de derechos de autor y las legislaciones aplicables.</p>
+
+        <h2>2. Fórmulas Científicas de Dominio Público y Atribución Académica</h2>
+        <p>Las fórmulas matemáticas implementadas en nuestras calculadoras (incluyendo la fórmula clásica de Quetelet para el IMC, el modelo Oxford 2.5 de Trefethen, las ecuaciones de BMR de Mifflin-St Jeor y Harris-Benedict, las fórmulas de Boer y Devine para el peso ideal y la ecuación de Mosteller para la superficie corporal) son obras científicas revisadas por pares que residen en el dominio público o en la literatura académica reconocida. Real BMI no reclama propiedad exclusiva sobre estas leyes matemáticas ni sobre los umbrales de clasificación de salud pública fijados por la Organización Mundial de la Salud (OMS) o los Centros para el Control y la Prevención de Enfermedades (CDC). Nuestro derecho de autor protege el código de software original, la interfaz de cálculo, los textos explicativos y las herramientas interactivas desarrolladas por nuestro equipo.</p>
+
+        <h2>3. Uso Justo Educativo y Pautas de Enlaces</h2>
+        <p>Apoyamos activamente la educación y difusión pública de la salud. Se permite:</p>
+        <ul>
+          <li><strong>Enlaces Directos:</strong> Enlazar directamente a cualquier calculadora o guía de nuestro sitio desde blogs, medios de comunicación o portales educativos.</li>
+          <li><strong>Citas Breves:</strong> Citar extractos textuales breves (hasta 150 palabras) indicando la fuente y un hipervínculo activo a la página original en <code>realbmicalculator.com</code>.</li>
+          <li><strong>Inserción iFrame:</strong> Usar el código de inserción iFrame autorizado disponible en las páginas de nuestras herramientas respetando la atribución de marca.</li>
+        </ul>
+
+        <h2>4. Procedimiento de Notificación DMCA (17 U.S.C. § 512(c))</h2>
+        <p>Los titulares de derechos de autor o sus representantes pueden enviar notificaciones formales de presunta infracción a nuestro Agente Designado incluyendo: firma física o electrónica, identificación de la obra protegida, URL exacta del contenido infractor, información de contacto válida, declaración de creencia de buena fe y declaración bajo pena de perjurio de que la información remitida es exacta.</p>
+
+        <h2>5. Contacto del Agente Designado de Derechos de Autor</h2>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] my-4 text-sm">
+          <p><strong>Agente Designado:</strong> Departamento Legal y Cumplimiento DMCA de Real BMI</p>
+          <p><strong>Correo Electrónico DMCA:</strong> <a href="mailto:dmca@realbmicalculator.com" class="text-[var(--accent)] font-semibold underline">dmca@realbmicalculator.com</a></p>
+          <p><strong>Buzón de Soporte General:</strong> <a href="mailto:support@realbmicalculator.com" class="text-[var(--accent)] font-semibold underline">support@realbmicalculator.com</a></p>
+          <p class="text-xs text-[var(--muted-foreground)] mt-2">Las notificaciones válidas se revisan y resuelven normalmente en un plazo de 24 a 48 horas hábiles.</p>
+        </div>
+
+        <h2>6. Procedimiento de Contranotificación</h2>
+        <p>Si considera que su contenido fue retirado por error o identificación equivocada, puede remitir una contranotificación formal a nuestro Agente Designado cumpliendo con los requisitos previstos en la sección 512(g) de la DMCA.</p>
+
+        <h2>7. Política sobre Infractores Reincidentes</h2>
+        <p>De conformidad con la legislación aplicable, Real BMI aplicará una política de rescisión y bloqueo a aquellos usuarios o plataformas que infrinjan reiteradamente los derechos de propiedad intelectual.</p>
+    </PageShell>
+</Layout>

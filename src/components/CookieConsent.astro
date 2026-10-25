@@ -375,8 +375,12 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
     // Initialize state
     var currentPrefs = getStoredPreferences();
     if (!currentPrefs) {
-      // Show consent banner after a short delay for smooth rendering
-      setTimeout(showBanner, 600);
+      // Show consent banner after a short delay for smooth rendering, unless Google Funding Choices CMP is active
+      setTimeout(function() {
+        if (!document.querySelector('.googlefc-consent-root') && !document.querySelector('.fc-dialog')) {
+          showBanner();
+        }
+      }, 700);
     } else {
       applyGtagConsent(currentPrefs);
     }
@@ -428,16 +432,20 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
       }
     });
 
-    // Global listener for "open-cookie-preferences" custom event or buttons
+    // Global listener for "open-cookie-preferences" (Compliant with Google Funding Choices Revocation)
     window.openCookiePreferences = function() {
-      showModal();
+      if (window.googlefc && typeof window.googlefc.showRevocationMessage === 'function') {
+        window.googlefc.showRevocationMessage();
+      } else {
+        showModal();
+      }
     };
 
     var footerTrigger = document.getElementById('openCookiePreferencesBtn');
     if (footerTrigger) {
       footerTrigger.addEventListener('click', function(e) {
         e.preventDefault();
-        showModal();
+        window.openCookiePreferences();
       });
     }
   })();

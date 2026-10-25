@@ -17,7 +17,7 @@ import PageShell from '../../components/PageShell.astro';
       returnLabel="홈"
     >
       <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
-        <p><strong>Bhawanshi Dosi</strong>가 독립적으로 제작 및 운영하는 건강 계산기 웹사이트인 <strong>Real BMI</strong>의 목표는 명확하고 투명하며 참조 기반의 건강 계산기를 제공하여 사용자가 체질량지수(BMI), 기초대사량(BMR), 일일 총 에너지 소비량(TDEE) 및 보완적 신체 지표를 추정할 수 있도록 돕는 것입니다.</p>
+        <p><strong>Real BMI 편집팀</strong>이 독립적으로 운영하는 건강 계산기 웹사이트인 <strong>Real BMI</strong>의 목표는 명확하고 투명하며 참조 기반의 건강 계산기를 제공하여 사용자가 체질량지수(BMI), 기초대사량(BMR), 일일 총 에너지 소비량(TDEE) 및 보완적 신체 지표를 추정할 수 있도록 돕는 것입니다.</p>
 
         <h2>1. 근거 기반 참조 가이드라인</h2>
         <p>Real BMI에 게시된 모든 공식 및 참조 범위는 공식 보건 기구의 공개된 수학적 방정식과 공중 보건 가이드라인을 바탕으로 제작되었습니다:</p>
@@ -28,9 +28,9 @@ import PageShell from '../../components/PageShell.astro';
         </ul>
 
         <h2>2. 콘텐츠 제작 및 유지 관리</h2>
-        <p>Real BMI는 Bhawanshi Dosi가 독립적으로 제작 및 유지 관리합니다:</p>
+        <p>Real BMI는 Real BMI 편집 및 헬스 엔지니어링 팀이 독립적으로 제작 및 유지 관리합니다:</p>
         <ul>
-          <li><strong>제작자 및 운영자:</strong> Bhawanshi Dosi</li>
+          <li><strong>편집 및 기술 위원회:</strong> Real BMI 헬스 툴스 팀</li>
           <li><strong>방법론 기반:</strong> 공개된 수학적 공식 및 공중 보건 참조 가이드라인</li>
         </ul>
 
@@ -47,10 +47,19 @@ import PageShell from '../../components/PageShell.astro';
         <p>Real BMI는 탑재된 모든 계산 공식, 임상 분별점 표 및 참고 지표에 대해 반기별 엄격한 정기 감사 프로토콜을 수행합니다. WHO, CDC 또는 아시아 태평양 보건 학술 기구에서 새로운 역학 통계치나 지침을 발표하면, 즉시 공식 백서를 대조하여 연산 엔진을 재검증합니다. 모든 알고리즘 코드는 단위 테스트(Unit Testing)와 경계값 회귀 테스트를 거쳐 배포됩니다.</p>
 
         <h2>7. 독창성 및 인간 작성자 원칙</h2>
-        <p>웹사이트의 모든 설명 가이드, 단계별 수학적 풀이 예시 및 자주 묻는 질문(FAQ)은 Bhawanshi Dosi가 공식 의학 1차 문헌을 참조하여 직접 정성껏 작성합니다. 무분별한 콘텐츠 복제(스크래핑), 대량의 인위적 문장 생성, 무의미한 키워드 반복을 엄격히 배제하며, 사용자에게 실질적인 교육적 가치를 제공합니다.</p>
+        <p>웹사이트의 모든 설명 가이드, 단계별 수학적 풀이 예시 및 자주 묻는 질문(FAQ)은 Real BMI 편집팀이 공식 의학 1차 문헌을 참조하여 직접 정성껏 작성합니다. 무분별한 콘텐츠 복제(스크래핑), 대량의 인위적 문장 생성, 무의미한 키워드 반복을 엄격히 배제하며, 사용자에게 실질적인 교육적 가치를 제공합니다.</p>
 
         <h2>8. 오탈자 정정 및 사용자 피드백 정책</h2>
         <p>계산 공식의 불일치, 불명확한 용어 정의 또는 보완이 필요한 출처를 발견하신 경우 문의 페이지를 통해 언제든지 제보해 주시기 바랍니다. 검증된 지적 사항은 개발 소스 코드에 신속히 반영되며, 투명하게 관리됩니다.</p>
+
+        <h2>9. 사전 게시 검토 및 개인정보(PII) 스크리닝 워크플로우</h2>
+        <p>사용자 개인정보 보호 및 구글 게시자 정책(AdSense) 준수를 위해 Real BMI는 콘텐츠 게시 전 엄격한 4단계 검증 프로세스를 거칩니다:</p>
+        <ul>
+          <li><strong>1단계: 근거 및 인용 문헌 검증:</strong> 모든 의학 공식과 임상 기준치를 공식 1차 문헌(WHO, CDC)과 대조 검증합니다.</li>
+          <li><strong>2단계: 수학적 정밀도 감사:</strong> 미터법 및 야드파운드법 전반에 걸쳐 경계값 알고리즘 테스트를 수행합니다.</li>
+          <li><strong>3단계: 개인정보(PII) 스크리닝:</strong> 개인 이름, 이메일, 전화번호, 개인 식별자가 공개 페이지나 URL 매개변수에 노출되지 않도록 전수 필터링을 진행합니다.</li>
+          <li><strong>4단계: 최종 편집 승인:</strong> 정보의 명확성과 교육적 유용성을 검증한 후 프로덕션에 배포합니다.</li>
+        </ul>
       </div>
     </PageShell>
 </Layout>

@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+---
+
+<Layout 
+    title="Politique de Droits d'Auteur et DMCA | Real BMI"
+    description="Consultez notre politique DMCA, les procédures de signalement d'infraction aux droits d'auteur, les coordonnées de notre agent désigné et les règles de propriété intellectuelle."
+>
+    <Navbar />
+    <PageShell
+      title="Droits d'Auteur & Politique DMCA"
+      eyebrow="Propriété Intellectuelle & Normes Légales"
+      description="Directives sur la propriété intellectuelle, l'usage éducatif équitable, la citation de contenus et les procédures de notification DMCA."
+      returnUrl="/fr/"
+      returnLabel="Accueil"
+    >
+        <p>Sur <strong>Real BMI</strong>, plateforme éducative indépendante maintenue par l'<strong>Équipe d'Outils Santé Real BMI</strong>, nous respectons scrupuleusement les droits de propriété intellectuelle. Cette politique détaille la propriété de nos contenus, les conditions d'utilisation et la procédure formelle de signalement d'infraction conformément au Digital Millennium Copyright Act (17 U.S.C. § 512(c)).</p>
+
+        <h2>1. Propriété des Contenus du Site</h2>
+        <p>Sauf mention contraire, tous les articles originaux, algorithmes interactifs, codes sources, interfaces graphiques, modèles 3D et ressources visuelles sur <strong>realbmicalculator.com</strong> constituent la propriété intellectuelle exclusive de Real BMI et sont protégés par les lois et traités internationaux relatifs au droit d'auteur.</p>
+
+        <h2>2. Formules Scientifiques et Domaine Public</h2>
+        <p>Les formules mathématiques fondamentales (Quetelet, Mifflin-St Jeor, Harris-Benedict, formule de Broca/Devine, Mosteller) et les classifications médicales officielles (OMS, CDC) relèvent du domaine public scientifique. Notre protection s'applique à l'implémentation logicielle, aux interfaces interactives et aux rédactions explicatives originales conçues par nos soins.</p>
+
+        <h2>3. Utilisation Pédagogique et Règles de Citation</h2>
+        <p>Nous encourageons la diffusion pédagogique : liens hypertextes directs autorisés, citations d'extraits courts (jusqu'à 150 mots) avec mention explicite de la source et lien actif vers <code>realbmicalculator.com</code>, et intégration iFrame officielle.</p>
+
+        <h2>4. Coordonnées de l'Agent DMCA Désigné</h2>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] my-4 text-sm">
+          <p><strong>Agent Désigné :</strong> Département Conformité Juridique et DMCA de Real BMI</p>
+          <p><strong>Courriel Dédié DMCA :</strong> <a href="mailto:dmca@realbmicalculator.com" class="text-[var(--accent)] font-semibold underline">dmca@realbmicalculator.com</a></p>
+          <p><strong>Support Général :</strong> <a href="mailto:support@realbmicalculator.com" class="text-[var(--accent)] font-semibold underline">support@realbmicalculator.com</a></p>
+          <p class="text-xs text-[var(--muted-foreground)] mt-2">Délai habituel de traitement des notifications formelles conformes : 24 à 48 heures ouvrables.</p>
+        </div>
+
+        <h2>5. Procédure de Contre-Notification et Récidive</h2>
+        <p>Toute partie estimant qu'un contenu a été retiré par erreur peut adresser une contre-notification selon les formes légales prévues par la section 512(g). Real BMI applique une politique de radiation stricte à l'égard des contrefacteurs récidivistes.</p>
+    </PageShell>
+</Layout>

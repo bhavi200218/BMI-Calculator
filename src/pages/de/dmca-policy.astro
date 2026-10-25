@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+---
+
+<Layout 
+    title="Urheberrecht & DMCA-Richtlinie | Real BMI"
+    description="Erfahren Sie mehr über unsere Urheberrechts- und DMCA-Richtlinie, Meldeverfahren bei Rechtsverletzungen und Richtlinien zum geistigen Eigentum."
+>
+    <Navbar />
+    <PageShell
+      title="Urheberrecht & DMCA-Richtlinie"
+      eyebrow="Geistiges Eigentum & Rechtliche Standards"
+      description="Transparente Richtlinien zu Urheberrechten, wissenschaftlicher Zitierung und dem formellen DMCA-Meldeverfahren."
+      returnUrl="/de/"
+      returnLabel="Startseite"
+    >
+        <p>Bei <strong>Real BMI</strong>, einer unabhängigen Gesundheitsberechnungs- und Bildungsplattform, die vom <strong>Real BMI Team</strong> gepflegt wird, respektieren wir die Rechte an geistigem Eigentum. Diese Richtlinie regelt die Urheberschaft an Inhalten, Bildungszitate sowie das formelle Verfahren zur Meldung von Urheberrechtsverletzungen gemäß dem Digital Millennium Copyright Act (17 U.S.C. § 512(c)).</p>
+
+        <h2>1. Urheberrecht an Inhalten und Werkzeugen</h2>
+        <p>Soweit nicht ausdrücklich anders angegeben, sind alle redaktionellen Artikel, Berechnungsskripte, Schnittstellendesigns, 3D-Körpermodelle und SVG-Grafiken auf <strong>realbmicalculator.com</strong> geistiges Eigentum des Real BMI Teams und international urheberrechtlich geschützt.</p>
+
+        <h2>2. Gemeinfreie wissenschaftliche Formeln</h2>
+        <p>Die in unseren Werkzeugen angewendeten mathematischen Grundformeln (wie BMI nach Quetelet, BMR nach Mifflin-St Jeor und Harris-Benedict, KOF nach Mosteller) sowie die offiziellen WHO- und CDC-Klassifikationen sind peer-reviewte wissenschaftliche Standards im Gemeingut. Unser Schutzrecht bezieht sich auf den Quellcode, die interaktive Benutzeroberfläche und die erläuternden Originaltexte.</p>
+
+        <h2>3. Zulässige Nutzung und Zitierregeln</h2>
+        <p>Wir begrüßen akademische und bildungsbezogene Verlinkungen. Erlaubt sind direkte Verlinkungen, kurze Textzitate (bis zu 150 Wörter mit Quellennennung und aktivem Backlink zu <code>realbmicalculator.com</code>) sowie die Einbindung über offizielle iFrame-Codes.</p>
+
+        <h2>4. Kontakt des benannten Urheberrechtsbeauftragten (DMCA-Agent)</h2>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] my-4 text-sm">
+          <p><strong>Benannte Stelle:</strong> Real BMI Recht &amp; DMCA-Compliance-Abteilung</p>
+          <p><strong>Dedizierte DMCA-E-Mail:</strong> <a href="mailto:dmca@realbmicalculator.com" class="text-[var(--accent)] font-semibold underline">dmca@realbmicalculator.com</a></p>
+          <p><strong>Allgemeiner Support:</strong> <a href="mailto:support@realbmicalculator.com" class="text-[var(--accent)] font-semibold underline">support@realbmicalculator.com</a></p>
+          <p class="text-xs text-[var(--muted-foreground)] mt-2">Gültige formelle Meldungen werden in der Regel innerhalb von 24 bis 48 Geschäftsstunden geprüft und bearbeitet.</p>
+        </div>
+
+        <h2>5. Gegendarstellungsverfahren &amp; Wiederholungstäter-Richtlinie</h2>
+        <p>Gegen irrtümliche Entfernungen kann eine schriftliche Gegendarstellung gemäß DMCA Section 512(g) eingereicht werden. Real BMI sperrt den Zugang für wiederholte Rechtsverletzer konsequent.</p>
+    </PageShell>
+</Layout>

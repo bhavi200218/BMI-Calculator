@@ -40,8 +40,8 @@ const articleSchema = {
     "@id": canonicalUrl
   },
   "author": {
-    "@type": "Person",
-    "name": "Bhawanshi Dosi",
+    "@type": "Organization",
+    "name": "Real BMI Editorial Team",
     "url": `https://realbmicalculator.com/${lang}/about/`
   },
   "publisher": {
@@ -68,13 +68,13 @@ const blogLabels = {
   hi: 'लेखों की सूची पर वापस जाएं'
 };
 
-const bylineLabels: Record<string, { writtenBy: string; role: string; published: string; updated: string }> = {
-  en: { writtenBy: "Written by", role: "Founder & Health Tools Developer, Real BMI", published: "Published", updated: "Updated" },
-  es: { writtenBy: "Escrito por", role: "Fundador y Desarrollador, Real BMI", published: "Publicado", updated: "Actualizado" },
-  fr: { writtenBy: "Rédigé par", role: "Fondateur et Développeur, Real BMI", published: "Publié le", updated: "Mis à jour" },
-  de: { writtenBy: "Verfasst von", role: "Gründer & Entwickler, Real BMI", published: "Veröffentlicht", updated: "Aktualisiert" },
-  ko: { writtenBy: "작성자", role: "Real BMI 설립자 및 개발자", published: "게시일", updated: "업데이트" },
-  hi: { writtenBy: "लेखक", role: "संस्थापक एवं डेवलपर, Real BMI", published: "प्रकाशित", updated: "अद्यतित" }
+const bylineLabels: Record<string, { writtenBy: string; author: string; role: string; published: string; updated: string }> = {
+  en: { writtenBy: "Written by", author: "Real BMI Editorial Team", role: "Clinical Reference & Health Calculation Staff", published: "Published", updated: "Updated" },
+  es: { writtenBy: "Escrito por", author: "Equipo Editorial Real BMI", role: "Equipo de Referencia Clínica y Cálculos", published: "Publicado", updated: "Actualizado" },
+  fr: { writtenBy: "Rédigé par", author: "Équipe Éditoriale Real BMI", role: "Équipe de Référence Clinique et de Calcul", published: "Publié le", updated: "Mis à jour" },
+  de: { writtenBy: "Verfasst von", author: "Real BMI Redaktionsteam", role: "Klinische Referenz & Rechenredaktion", published: "Veröffentlicht", updated: "Aktualisiert" },
+  ko: { writtenBy: "작성자", author: "Real BMI 편집팀", role: "임상 참고 및 건강 지표 계산팀", published: "게시일", updated: "업데이트" },
+  hi: { writtenBy: "लेखक", author: "Real BMI संपादकीय टीम", role: "नैदानिक संदर्भ एवं स्वास्थ्य गणना टीम", published: "प्रकाशित", updated: "अद्यतित" }
 };
 const byline = bylineLabels[lang] || bylineLabels.en;
 ---
@@ -97,12 +97,12 @@ const byline = bylineLabels[lang] || bylineLabels.en;
       <div class="not-prose mb-8 p-4 sm:p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-bold text-sm shadow">
-            BD
+            RB
           </div>
           <div>
             <div class="flex items-center gap-2">
               <span class="text-xs uppercase tracking-wider font-semibold text-[var(--muted-foreground)]">{byline.writtenBy}</span>
-              <a href={`/${lang}/about/`} class="text-sm font-bold text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">Bhawanshi Dosi</a>
+              <a href={`/${lang}/about/`} class="text-sm font-bold text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">{byline.author}</a>
             </div>
             <p class="text-xs text-[var(--muted-foreground)]">{byline.role}</p>
           </div>

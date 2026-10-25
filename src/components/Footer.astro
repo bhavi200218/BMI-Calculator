@@ -15,6 +15,7 @@ interface FooterTranslation {
   whoBadge: string;
   privacyBadge: string;
   privacyFooter: string;
+  teamAttribution: string;
   links: { name: string; href: string }[];
 }
 
@@ -26,6 +27,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: 'Medical Disclaimer',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator. All rights reserved.`,
+    teamAttribution: 'Educational health calculators maintained by the Real BMI Team',
     whoBadge: 'WHO & CDC Aligned',
     privacyBadge: 'Free & Privacy-Focused',
     privacyFooter: 'Privacy-First Health Calculators',
@@ -39,6 +41,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Terms & Conditions', href: `/en/terms-conditions/` },
       { name: 'Medical Disclaimer', href: `/en/disclaimer/` },
       { name: 'Cookie Policy', href: `/en/cookie-policy/` },
+      { name: 'Copyright & DMCA', href: `/en/dmca-policy/` },
     ],
   },
   es: {
@@ -48,6 +51,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: 'Aviso Médico',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator. Todos los derechos reservados.`,
+    teamAttribution: 'Herramientas educativas de salud mantenidas por el Equipo de Real BMI',
     whoBadge: 'Alineado con OMS y CDC',
     privacyBadge: 'Gratis y Privado',
     privacyFooter: 'Calculadoras de Salud Privadas',
@@ -61,6 +65,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Términos y Condiciones', href: `/es/terms-conditions/` },
       { name: 'Aviso Médico', href: `/es/disclaimer/` },
       { name: 'Política de Cookies', href: `/es/cookie-policy/` },
+      { name: 'Derechos de Autor y DMCA', href: `/es/dmca-policy/` },
     ],
   },
   fr: {
@@ -70,6 +75,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: 'Avertissement Médical',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator. Tous droits réservés.`,
+    teamAttribution: 'Outils de santé éducatifs maintenus par l’Équipe Real BMI',
     whoBadge: 'Aligné OMS & CDC',
     privacyBadge: 'Gratuit & Confidentiel',
     privacyFooter: 'Calculateurs de Santé Confidentiels',
@@ -83,6 +89,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Conditions Générales', href: `/fr/terms-conditions/` },
       { name: 'Avertissement Médical', href: `/fr/disclaimer/` },
       { name: 'Politique de Cookies', href: `/fr/cookie-policy/` },
+      { name: 'Droits d\'Auteur & DMCA', href: `/fr/dmca-policy/` },
     ],
   },
   de: {
@@ -92,6 +99,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: 'Medizinischer Hinweis',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator. Alle Rechte vorbehalten.`,
+    teamAttribution: 'Evidenzbasierte Gesundheitsrechner betreut vom Real BMI Team',
     whoBadge: 'WHO- & CDC-Konform',
     privacyBadge: 'Kostenlos & Datenschutz',
     privacyFooter: 'Datenschutz-Gesundheitsrechner',
@@ -105,6 +113,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Nutzungsbedingungen', href: `/de/terms-conditions/` },
       { name: 'Medizinischer Hinweis', href: `/de/disclaimer/` },
       { name: 'Cookie-Richtlinie', href: `/de/cookie-policy/` },
+      { name: 'Urheberrecht & DMCA', href: `/de/dmca-policy/` },
     ],
   },
   ko: {
@@ -114,6 +123,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: '의학적 면책조항',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator. 모든 권리 보유.`,
+    teamAttribution: 'Real BMI 팀이 연구 및 유지 관리하는 교육용 건강 도구',
     whoBadge: 'WHO 및 CDC 지침 준수',
     privacyBadge: '무료 및 개인정보 보호',
     privacyFooter: '개인정보 보호 건강 계산기',
@@ -127,6 +137,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: '이용약관', href: `/ko/terms-conditions/` },
       { name: '의학적 면책조항', href: `/ko/disclaimer/` },
       { name: '쿠키 정책', href: `/ko/cookie-policy/` },
+      { name: '저작권 및 DMCA 정책', href: `/ko/dmca-policy/` },
     ],
   },
   hi: {
@@ -136,6 +147,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
     legalStatus: 'चिकित्सा अस्वीकरण',
     legalText: '',
     copyright: `© ${year} Real BMI Calculator। सर्वाधिकार सुरक्षित।`,
+    teamAttribution: 'Real BMI टीम द्वारा संचालित एवं प्रबंधित स्वास्थ्य कैलकुलेटर',
     whoBadge: 'WHO और CDC मानकों पर आधारित',
     privacyBadge: 'मुफ़्त और 100% सुरक्षित',
     privacyFooter: 'गोपनीयता-प्रथम स्वास्थ्य कैलकुलेटर',
@@ -149,6 +161,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'नियम और शर्तें', href: `/hi/terms-conditions/` },
       { name: 'चिकित्सा अस्वीकरण', href: `/hi/disclaimer/` },
       { name: 'कुकी नीति', href: `/hi/cookie-policy/` },
+      { name: 'कॉपीराइट एवं DMCA नीति', href: `/hi/dmca-policy/` },
     ],
   }
 };
@@ -226,12 +239,12 @@ const healthToolsLinks = calculators
     <!-- Row 2: Health & Fitness Calculators (Sleek 6-column grid on desktop, 4 on tablet, 2 on mobile) -->
     <div class="space-y-2">
       <div class="flex items-center justify-between">
-        <h4 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] flex items-center gap-1.5">
+        <p class="text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] flex items-center gap-1.5">
           <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
           </svg>
           {healthToolsLabel}
-        </h4>
+        </p>
         <div class="hidden sm:flex items-center gap-2.5 text-xs text-[var(--muted-foreground)]">
           <span class="inline-flex items-center gap-1">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
@@ -260,7 +273,7 @@ const healthToolsLinks = calculators
       <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-center sm:text-left">
         <span class="font-display font-semibold text-[var(--foreground)]">{ft.copyright}</span>
         <span class="hidden sm:inline">•</span>
-        <span class="text-xs text-[var(--muted-foreground)]/80">Created and maintained by Bhawanshi Dosi</span>
+        <span class="text-xs text-[var(--muted-foreground)]/80">{ft.teamAttribution}</span>
       </div>
 
       <div class="flex items-center gap-3">

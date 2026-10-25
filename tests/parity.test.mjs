@@ -189,14 +189,24 @@ LOCALES.forEach(lang => {
 });
 
 // 6. blogArticles.ts Parity Tests
-const blogCode = fs.readFileSync(path.join(WORKSPACE, 'src/utils/blogArticles.ts'), 'utf-8');
-const blogMatch = blogCode.match(/export const blogArticles: Record<string, any> = (\{[\s\S]*?\n\};)/);
-assert.ok(blogMatch, 'blogArticles.ts must contain blogArticles object');
-const blogObj = new Function(`return ${blogMatch[1]}`)();
+function loadTsModule(entryPoint) {
+  const result = esbuild.buildSync({
+    entryPoints: [entryPoint],
+    bundle: true,
+    write: false,
+    format: 'cjs'
+  });
+  const mod = { exports: {} };
+  const fn = new Function('module', 'exports', result.outputFiles[0].text);
+  fn(mod, mod.exports);
+  return mod.exports;
+}
+
+const { blogArticles: blogObj } = loadTsModule('src/utils/blogArticles.ts');
 const articleKeys = Object.keys(blogObj);
 
-test('blogArticles: Contains 11 master blog articles', () => {
-  assert.strictEqual(articleKeys.length, 11, `Expected 11 blog articles, found ${articleKeys.length}`);
+test('blogArticles: Contains 24 in-depth clinical blog articles', () => {
+  assert.ok(articleKeys.length >= 24, `Expected at least 24 blog articles, found ${articleKeys.length}`);
 });
 
 articleKeys.forEach(key => {

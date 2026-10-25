@@ -637,6 +637,709 @@ export const blogArticleToolsMap: Record<string, BlogToolMeta> = {
       }
     }
   }
+,
+  'how-to-measure-body-fat-percentage': {
+    targetSlug: 'body-fat-calculator',
+    relatedSlugs: ['body-fat-calculator', 'lean-body-mass-calculator', 'waist-to-hip-ratio-calculator', 'bmi-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Body Fat Percentage",
+        descPrefix: "Estimate your body fat and lean mass using the US Navy circumference method with our free",
+        linkText: "Body Fat Calculator",
+        descSuffix: "for instant feedback.",
+        btnText: "Calculate Body Fat Now →",
+        targetSlug: "body-fat-calculator"
+      },
+      es: {
+        title: "Calcula tu Porcentaje de Grasa Corporal",
+        descPrefix: "Estima tu grasa corporal con el método de la Marina usando nuestra",
+        linkText: "Calculadora de Grasa Corporal",
+        descSuffix: "gratuita.",
+        btnText: "Calcular Grasa Corporal →",
+        targetSlug: "body-fat-calculator"
+      },
+      fr: {
+        title: "Calculez Votre Taux de Masse Grasse",
+        descPrefix: "Estimez votre pourcentage adipeux avec la méthode US Navy sur notre",
+        linkText: "Calculateur de Masse Grasse",
+        descSuffix: "gratuit.",
+        btnText: "Calculer Ma Masse Grasse →",
+        targetSlug: "body-fat-calculator"
+      },
+      de: {
+        title: "Berechnen Sie Ihren Körperfettanteil",
+        descPrefix: "Ermitteln Sie Fett- und Magermasse nach der US-Navy-Methode mit unserem",
+        linkText: "Körperfettrechner",
+        descSuffix: "online.",
+        btnText: "Jetzt Körperfett berechnen →",
+        targetSlug: "body-fat-calculator"
+      },
+      ko: {
+        title: "체지방률 정밀 계산하기",
+        descPrefix: "미 해군 둘레 공식을 활용하여 체지방률을 측정하는",
+        linkText: "체지방률 계산기",
+        descSuffix: "로 확인하세요.",
+        btnText: "체지방률 계산하기 →",
+        targetSlug: "body-fat-calculator"
+      },
+      hi: {
+        title: "अपना बॉडी फैट प्रतिशत जांचें",
+        descPrefix: "यूएस नेवी फॉर्मूले के आधार पर शरीर की चर्बी मापने के लिए हमारे",
+        linkText: "बॉडी फैट कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "बॉडी फैट निकालें →",
+        targetSlug: "body-fat-calculator"
+      }
+    }
+  },
+  'lean-body-mass-calculation-guide': {
+    targetSlug: 'lean-body-mass-calculator',
+    relatedSlugs: ['lean-body-mass-calculator', 'body-fat-calculator', 'ideal-weight-calculator', 'protein-intake-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Lean Body Mass",
+        descPrefix: "Determine your fat-free skeletal muscle and organ weight with our free",
+        linkText: "Lean Body Mass Calculator",
+        descSuffix: "using Boer and James formulas.",
+        btnText: "Calculate Lean Mass Now →",
+        targetSlug: "lean-body-mass-calculator"
+      },
+      es: {
+        title: "Calcula tu Masa Corporal Magra",
+        descPrefix: "Determina tus kilos libres de grasa con nuestra",
+        linkText: "Calculadora de Masa Magra",
+        descSuffix: "usando las fórmulas de Boer y James.",
+        btnText: "Calcular Masa Magra →",
+        targetSlug: "lean-body-mass-calculator"
+      },
+      fr: {
+        title: "Calculez Votre Masse Corporelle Maigre",
+        descPrefix: "Évaluez votre masse musculaire et osseuse hors graisse avec notre",
+        linkText: "Calculateur de Masse Maigre",
+        descSuffix: "médical.",
+        btnText: "Calculer Ma Masse Maigre →",
+        targetSlug: "lean-body-mass-calculator"
+      },
+      de: {
+        title: "Berechnen Sie Ihre fettfreie Magermasse",
+        descPrefix: "Ermitteln Sie Muskel- und Skelettgewicht mit unserem",
+        linkText: "Magermasse-Rechner",
+        descSuffix: "nach Boer und James.",
+        btnText: "Jetzt Magermasse berechnen →",
+        targetSlug: "lean-body-mass-calculator"
+      },
+      ko: {
+        title: "제지방량(LBM) 계산하기",
+        descPrefix: "체지방을 제외한 순수 골격근 및 제지방량을",
+        linkText: "제지방량 계산기",
+        descSuffix: "로 정밀 측정하세요.",
+        btnText: "제지방량 계산하기 →",
+        targetSlug: "lean-body-mass-calculator"
+      },
+      hi: {
+        title: "लीन बॉडी मास (LBM) की गणना करें",
+        descPrefix: "चर्बी रहित मांसपेशियों और शारीरिक वजन की गणना के लिए हमारे",
+        linkText: "लीन बॉडी मास कैलकुलेटर",
+        descSuffix: "का प्रयोग करें।",
+        btnText: "लीन मास निकालें →",
+        targetSlug: "lean-body-mass-calculator"
+      }
+    }
+  },
+  'waist-to-hip-ratio-guide': {
+    targetSlug: 'waist-to-hip-ratio-calculator',
+    relatedSlugs: ['waist-to-hip-ratio-calculator', 'body-fat-calculator', 'bmi-calculator', 'asian-bmi-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Waist-to-Hip Ratio",
+        descPrefix: "Evaluate your central visceral fat distribution and cardiovascular risk using our free",
+        linkText: "Waist-to-Hip Ratio Calculator",
+        descSuffix: "in seconds.",
+        btnText: "Calculate WHR Now →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      },
+      es: {
+        title: "Calcula tu Relación Cintura-Cadera",
+        descPrefix: "Evalúa tu distribución de grasa visceral y riesgo cardiovascular con nuestra",
+        linkText: "Calculadora Cintura-Cadera",
+        descSuffix: "gratuita.",
+        btnText: "Calcular Índice Cintura-Cadera →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      },
+      fr: {
+        title: "Calculez Votre Rapport Taille-Hanches",
+        descPrefix: "Mesurez la répartition de votre graisse abdominale avec notre",
+        linkText: "Calculateur Taille-Hanches",
+        descSuffix: "conforme aux normes OMS.",
+        btnText: "Calculer Mon Rapport RTH →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      },
+      de: {
+        title: "Taille-Hüft-Verhältnis (WHR) berechnen",
+        descPrefix: "Erkennen Sie viszerales Bauchfett und Herz-Kreislauf-Risiken mit unserem",
+        linkText: "Taille-Hüft-Rechner",
+        descSuffix: "sofort.",
+        btnText: "Jetzt WHR berechnen →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      },
+      ko: {
+        title: "허리-엉덩이 비율(WHR) 계산하기",
+        descPrefix: "복부 내장 비만과 심혈관 대사 위험도를 평가하는",
+        linkText: "허리-엉덩이 비율 계산기",
+        descSuffix: "를 이용해 보세요.",
+        btnText: "WHR 비율 계산하기 →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      },
+      hi: {
+        title: "कमर और कूल्हे का अनुपात (WHR) निकालें",
+        descPrefix: "पेट की आंतरिक चर्बी और हृदय स्वास्थ्य जोखिम जांचने के लिए हमारे",
+        linkText: "कमर-कूल्हा अनुपात कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "WHR अनुपात निकालें →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      }
+    }
+  },
+  'ideal-body-weight-formulas': {
+    targetSlug: 'ideal-weight-calculator',
+    relatedSlugs: ['ideal-weight-calculator', 'healthy-weight-by-height', 'bmi-calculator', 'lean-body-mass-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Ideal Body Weight",
+        descPrefix: "Compare Devine, Robinson, Miller, and Hamwi equations with our free",
+        linkText: "Ideal Weight Calculator",
+        descSuffix: "for your height and gender.",
+        btnText: "Calculate Ideal Weight →",
+        targetSlug: "ideal-weight-calculator"
+      },
+      es: {
+        title: "Calcula tu Peso Corporal Ideal",
+        descPrefix: "Compara las fórmulas de Devine, Robinson y Miller con nuestra",
+        linkText: "Calculadora de Peso Ideal",
+        descSuffix: "médica.",
+        btnText: "Calcular Peso Ideal →",
+        targetSlug: "ideal-weight-calculator"
+      },
+      fr: {
+        title: "Calculez Votre Poids Idéal Santé",
+        descPrefix: "Comparez les équations de Devine, Robinson et Hamwi avec notre",
+        linkText: "Calculateur de Poids Idéal",
+        descSuffix: "gratuit.",
+        btnText: "Calculer Mon Poids Idéal →",
+        targetSlug: "ideal-weight-calculator"
+      },
+      de: {
+        title: "Berechnen Sie Ihr Idealgewicht",
+        descPrefix: "Vergleichen Sie die Formeln von Devine, Robinson und Miller mit unserem",
+        linkText: "Idealgewichts-Rechner",
+        descSuffix: "für Ihre Größe.",
+        btnText: "Jetzt Idealgewicht berechnen →",
+        targetSlug: "ideal-weight-calculator"
+      },
+      ko: {
+        title: "신장별 이상 체중(IBW) 산출하기",
+        descPrefix: "드바인, 로빈슨, 밀러 임상 공식을 비교 분석하는",
+        linkText: "이상 체중 계산기",
+        descSuffix: "를 사용하세요.",
+        btnText: "이상 체중 확인하기 →",
+        targetSlug: "ideal-weight-calculator"
+      },
+      hi: {
+        title: "अपना आदर्श शारीरिक वजन (IBW) जानें",
+        descPrefix: "डिवाइन, रॉबिन्सन और मिलर सूत्रों द्वारा सही वजन निकालने के लिए हमारे",
+        linkText: "आदर्श वजन कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "आदर्श वजन निकालें →",
+        targetSlug: "ideal-weight-calculator"
+      }
+    }
+  },
+  'how-to-calculate-tdee': {
+    targetSlug: 'tdee-calculator',
+    relatedSlugs: ['tdee-calculator', 'bmr-calculator', 'calorie-calculator', 'maintenance-calorie-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Daily Energy Expenditure",
+        descPrefix: "Determine your maintenance calories based on your activity multiplier with our free",
+        linkText: "TDEE Calculator",
+        descSuffix: "today.",
+        btnText: "Calculate TDEE Now →",
+        targetSlug: "tdee-calculator"
+      },
+      es: {
+        title: "Calcula tu Gasto Energético Total (TDEE)",
+        descPrefix: "Determina tus calorías diarias de mantenimiento con nuestra",
+        linkText: "Calculadora de TDEE",
+        descSuffix: "personalizada.",
+        btnText: "Calcular TDEE Ahora →",
+        targetSlug: "tdee-calculator"
+      },
+      fr: {
+        title: "Calculez Votre Dépense Énergétique Totale",
+        descPrefix: "Trouvez vos calories de maintien selon votre niveau d'activité avec notre",
+        linkText: "Calculateur TDEE",
+        descSuffix: "en ligne.",
+        btnText: "Calculer Mon TDEE →",
+        targetSlug: "tdee-calculator"
+      },
+      de: {
+        title: "Ermitteln Sie Ihren Gesamtumsatz (TDEE)",
+        descPrefix: "Berechnen Sie Ihre täglichen Erhaltungskalorien mit unserem",
+        linkText: "TDEE-Rechner",
+        descSuffix: "präzise.",
+        btnText: "Jetzt TDEE berechnen →",
+        targetSlug: "tdee-calculator"
+      },
+      ko: {
+        title: "일일 총 에너지 소비량(TDEE) 계산하기",
+        descPrefix: "신체 활동 수준에 맞춘 유지 칼로리를 산출하는",
+        linkText: "TDEE 계산기",
+        descSuffix: "로 최적 식단을 계획하세요.",
+        btnText: "TDEE 계산하기 →",
+        targetSlug: "tdee-calculator"
+      },
+      hi: {
+        title: "दैनिक ऊर्जा व्यय (TDEE) की गणना करें",
+        descPrefix: "अपनी शारीरिक गतिविधि के अनुसार मेंटेनेंस कैलोरी जानने के लिए हमारे",
+        linkText: "टीडीईई कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "TDEE निकालें →",
+        targetSlug: "tdee-calculator"
+      }
+    }
+  },
+  'bmr-formulas-mifflin-vs-harris-benedict': {
+    targetSlug: 'bmr-calculator',
+    relatedSlugs: ['bmr-calculator', 'tdee-calculator', 'calorie-calculator', 'lean-body-mass-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Basal Metabolic Rate",
+        descPrefix: "Compare Mifflin-St Jeor and Harris-Benedict baseline metabolic burn with our free",
+        linkText: "BMR Calculator",
+        descSuffix: "for exact calories.",
+        btnText: "Calculate BMR Now →",
+        targetSlug: "bmr-calculator"
+      },
+      es: {
+        title: "Calcula tu Tasa Metabólica Basal (TMB)",
+        descPrefix: "Compara las fórmulas de Mifflin-St Jeor y Harris-Benedict con nuestra",
+        linkText: "Calculadora de TMB",
+        descSuffix: "gratuita.",
+        btnText: "Calcular TMB →",
+        targetSlug: "bmr-calculator"
+      },
+      fr: {
+        title: "Calculez Votre Métabolisme de Base (BMR)",
+        descPrefix: "Comparez les équations de Mifflin et Harris-Benedict grâce à notre",
+        linkText: "Calculateur de BMR",
+        descSuffix: "rapide.",
+        btnText: "Calculer Mon BMR →",
+        targetSlug: "bmr-calculator"
+      },
+      de: {
+        title: "Berechnen Sie Ihren Grundumsatz (BMR)",
+        descPrefix: "Vergleichen Sie die Mifflin-St-Jeor- und Harris-Benedict-Formel mit unserem",
+        linkText: "BMR-Rechner",
+        descSuffix: "sofort.",
+        btnText: "Jetzt BMR berechnen →",
+        targetSlug: "bmr-calculator"
+      },
+      ko: {
+        title: "기초대사량(BMR) 비교 산출하기",
+        descPrefix: "미플린-세인트 지어 및 해리스-베네딕트 공식으로",
+        linkText: "기초대사량 계산기",
+        descSuffix: "에서 정확한 칼로리를 확인하세요.",
+        btnText: "기초대사량 계산하기 →",
+        targetSlug: "bmr-calculator"
+      },
+      hi: {
+        title: "बेसल मेटाबॉलिक रेट (BMR) निकालें",
+        descPrefix: "मिफ्लिन और हैरिस-बेनेडिक्ट सूत्रों द्वारा न्यूनतम कैलोरी खपत जानने के लिए हमारे",
+        linkText: "बीएमआर कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "BMR निकालें →",
+        targetSlug: "bmr-calculator"
+      }
+    }
+  },
+  'healthy-calorie-deficit-guide': {
+    targetSlug: 'calorie-calculator',
+    relatedSlugs: ['calorie-calculator', 'tdee-calculator', 'maintenance-calorie-calculator', 'macro-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Target Daily Caloric Deficit",
+        descPrefix: "Plan safe and sustainable fat loss targets with our evidence-based",
+        linkText: "Calorie Calculator",
+        descSuffix: "tailored to your goals.",
+        btnText: "Calculate Calories Now →",
+        targetSlug: "calorie-calculator"
+      },
+      es: {
+        title: "Calcula tus Calorías para Perder Grasa",
+        descPrefix: "Diseña un déficit calórico seguro y sostenible con nuestra",
+        linkText: "Calculadora de Calorías",
+        descSuffix: "personalizada.",
+        btnText: "Calcular Déficit Calórico →",
+        targetSlug: "calorie-calculator"
+      },
+      fr: {
+        title: "Calculez Vos Besoins Caloriques Journaliers",
+        descPrefix: "Définissez un déficit calorique sain et progressif avec notre",
+        linkText: "Calculateur de Calories",
+        descSuffix: "gratuit.",
+        btnText: "Calculer Mes Calories →",
+        targetSlug: "calorie-calculator"
+      },
+      de: {
+        title: "Berechnen Sie Ihr optimales Kaloriendefizit",
+        descPrefix: "Planen Sie einen gesunden und nachhaltigen Fettabbau mit unserem",
+        linkText: "Kalorienrechner",
+        descSuffix: "online.",
+        btnText: "Jetzt Kalorienbedarf berechnen →",
+        targetSlug: "calorie-calculator"
+      },
+      ko: {
+        title: "감량 목표 칼로리 적자 계산하기",
+        descPrefix: "요요 현상 없는 지속 가능한 감량 식단을 위한",
+        linkText: "칼로리 계산기",
+        descSuffix: "를 통해 일일 섭취량을 설정하세요.",
+        btnText: "칼로리 계산하기 →",
+        targetSlug: "calorie-calculator"
+      },
+      hi: {
+        title: "दैनिक कैलोरी डेफिसिट लक्ष्य तय करें",
+        descPrefix: "सुरक्षित और टिकाऊ वजन घटाने के लिए सही कैलोरी जानने के लिए हमारे",
+        linkText: "कैलोरी कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "कैलोरी लक्ष्य निकालें →",
+        targetSlug: "calorie-calculator"
+      }
+    }
+  },
+  'daily-protein-intake-science': {
+    targetSlug: 'protein-intake-calculator',
+    relatedSlugs: ['protein-intake-calculator', 'macro-calculator', 'lean-body-mass-calculator', 'calorie-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Optimal Daily Protein Target",
+        descPrefix: "Determine exact protein grams for muscle growth, fat loss, or healthy aging with our free",
+        linkText: "Protein Intake Calculator",
+        descSuffix: "in seconds.",
+        btnText: "Calculate Protein Now →",
+        targetSlug: "protein-intake-calculator"
+      },
+      es: {
+        title: "Calcula tu Ingesta Óptima de Proteína Diaria",
+        descPrefix: "Determina tus gramos exactos de proteína para preservar masa muscular con nuestra",
+        linkText: "Calculadora de Proteínas",
+        descSuffix: "gratuita.",
+        btnText: "Calcular Proteína Diaria →",
+        targetSlug: "protein-intake-calculator"
+      },
+      fr: {
+        title: "Calculez Vos Besoins Quotidiens en Protéines",
+        descPrefix: "Déterminez votre grammage idéal de protéines pour la synthèse musculaire avec notre",
+        linkText: "Calculateur de Protéines",
+        descSuffix: "gratuit.",
+        btnText: "Calculer Mes Protéines →",
+        targetSlug: "protein-intake-calculator"
+      },
+      de: {
+        title: "Berechnen Sie Ihren täglichen Proteinbedarf",
+        descPrefix: "Ermitteln Sie Ihre optimale Grammzahl für Muskelaufbau und Fettabbau mit unserem",
+        linkText: "Protein-Rechner",
+        descSuffix: "sofort.",
+        btnText: "Jetzt Proteinbedarf berechnen →",
+        targetSlug: "protein-intake-calculator"
+      },
+      ko: {
+        title: "일일 단백질 최적 섭취량 계산하기",
+        descPrefix: "체중 및 운동 목표에 맞춘 단백질 필요량을",
+        linkText: "단백질 계산기",
+        descSuffix: "로 정밀 산출하세요.",
+        btnText: "단백질 섭취량 계산하기 →",
+        targetSlug: "protein-intake-calculator"
+      },
+      hi: {
+        title: "दैनिक प्रोटीन की सही मात्रा निकालें",
+        descPrefix: "मांसपेशियों की मजबूती और वजन प्रबंधन के लिए सही ग्राम जानने के लिए हमारे",
+        linkText: "प्रोटीन कैलकुलेटर",
+        descSuffix: "का प्रयोग करें।",
+        btnText: "प्रोटीन की मात्रा जानें →",
+        targetSlug: "protein-intake-calculator"
+      }
+    }
+  },
+  'macro-split-calculator-guide': {
+    targetSlug: 'macro-calculator',
+    relatedSlugs: ['macro-calculator', 'protein-intake-calculator', 'calorie-calculator', 'tdee-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Personalized Macro Split",
+        descPrefix: "Balance protein, carbohydrates, and healthy fats tailored to your caloric goals with our free",
+        linkText: "Macro Calculator",
+        descSuffix: "today.",
+        btnText: "Calculate Macros Now →",
+        targetSlug: "macro-calculator"
+      },
+      es: {
+        title: "Calcula tu Reparto de Macronutrientes",
+        descPrefix: "Distribuye tus proteínas, carbohidratos y grasas con nuestra",
+        linkText: "Calculadora de Macros",
+        descSuffix: "personalizada.",
+        btnText: "Calcular Macronutrientes →",
+        targetSlug: "macro-calculator"
+      },
+      fr: {
+        title: "Calculez Votre Répartition de Macronutriments",
+        descPrefix: "Équilibrez vos protéines, glucides et lipides selon vos objectifs avec notre",
+        linkText: "Calculateur de Macros",
+        descSuffix: "en ligne.",
+        btnText: "Calculer Mes Macros →",
+        targetSlug: "macro-calculator"
+      },
+      de: {
+        title: "Berechnen Sie Ihre Makronährstoff-Verteilung",
+        descPrefix: "Optimieren Sie Ihre Grammzahlen für Protein, Carbs und Fett mit unserem",
+        linkText: "Makro-Rechner",
+        descSuffix: "für jedes Fitnessziel.",
+        btnText: "Jetzt Makros berechnen →",
+        targetSlug: "macro-calculator"
+      },
+      ko: {
+        title: "맞춤 매크로 영양소 비율 계산하기",
+        descPrefix: "단백질, 탄수화물, 지방의 그램 수를 목표별로 배분하는",
+        linkText: "매크로 계산기",
+        descSuffix: "로 최적 식단을 완성하세요.",
+        btnText: "매크로 비율 계산하기 →",
+        targetSlug: "macro-calculator"
+      },
+      hi: {
+        title: "मैक्रोन्यूट्रिएंट्स (प्रोटीन, कार्ब्स, फैट) का सही अनुपात निकालें",
+        descPrefix: "अपने दैनिक कैलोरी लक्ष्य के अनुसार पोषण के सही विभाजन के लिए हमारे",
+        linkText: "मैक्रो कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "मैक्रो अनुपात निकालें →",
+        targetSlug: "macro-calculator"
+      }
+    }
+  },
+  'daily-water-intake-guide': {
+    targetSlug: 'water-intake-calculator',
+    relatedSlugs: ['water-intake-calculator', 'tdee-calculator', 'body-surface-area-calculator', 'calorie-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Daily Water Intake Target",
+        descPrefix: "Determine clinical fluid needs based on body weight, climate, and exercise with our free",
+        linkText: "Water Intake Calculator",
+        descSuffix: "in seconds.",
+        btnText: "Calculate Water Intake →",
+        targetSlug: "water-intake-calculator"
+      },
+      es: {
+        title: "Calcula tu Ingesta de Agua Diaria",
+        descPrefix: "Calcula los litros exactos de fluidos que tu cuerpo necesita con nuestra",
+        linkText: "Calculadora de Agua",
+        descSuffix: "científica.",
+        btnText: "Calcular Consumo de Agua →",
+        targetSlug: "water-intake-calculator"
+      },
+      fr: {
+        title: "Calculez Vos Besoins Journaliers en Eau",
+        descPrefix: "Estimez votre volume d'hydratation optimal selon votre poids et activité avec notre",
+        linkText: "Calculateur d'Eau",
+        descSuffix: "gratuit.",
+        btnText: "Calculer Mon Eau Quotidienne →",
+        targetSlug: "water-intake-calculator"
+      },
+      de: {
+        title: "Berechnen Sie Ihren täglichen Wasserbedarf",
+        descPrefix: "Ermitteln Sie Ihre empfohlene Trinkmenge basierend auf Gewicht und Sport mit unserem",
+        linkText: "Wasserbedarfsrechner",
+        descSuffix: "online.",
+        btnText: "Jetzt Wasserbedarf berechnen →",
+        targetSlug: "water-intake-calculator"
+      },
+      ko: {
+        title: "체중 맞춤 일일 수분 권장량 계산하기",
+        descPrefix: "신체 무게와 운동량에 맞춘 하루 최적 음용량을",
+        linkText: "수분 섭취 계산기",
+        descSuffix: "에서 즉시 산출하세요.",
+        btnText: "수분 섭취량 계산하기 →",
+        targetSlug: "water-intake-calculator"
+      },
+      hi: {
+        title: "प्रतिदिन पानी की सही मात्रा जानें",
+        descPrefix: "वजन और व्यायाम के अनुसार दैनिक जल आवश्यकता निकालने के लिए हमारे",
+        linkText: "वाटर इनटेक कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "पानी की मात्रा निकालें →",
+        targetSlug: "water-intake-calculator"
+      }
+    }
+  },
+  'body-surface-area-mosteller-guide': {
+    targetSlug: 'body-surface-area-calculator',
+    relatedSlugs: ['body-surface-area-calculator', 'bmi-calculator', 'lean-body-mass-calculator', 'ideal-weight-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Body Surface Area (BSA)",
+        descPrefix: "Compute skin surface area using Mosteller and Du Bois formulas with our free",
+        linkText: "Body Surface Area Calculator",
+        descSuffix: "for clinical precision.",
+        btnText: "Calculate BSA Now →",
+        targetSlug: "body-surface-area-calculator"
+      },
+      es: {
+        title: "Calcula tu Superficie Corporal (BSA)",
+        descPrefix: "Calcula el área total de tu piel con las fórmulas de Mosteller y Du Bois en nuestra",
+        linkText: "Calculadora de Superficie Corporal",
+        descSuffix: "médica.",
+        btnText: "Calcular Superficie Corporal →",
+        targetSlug: "body-surface-area-calculator"
+      },
+      fr: {
+        title: "Calculez Votre Surface Corporelle (BSA)",
+        descPrefix: "Déterminez votre surface cutanée totale selon Mosteller et Du Bois avec notre",
+        linkText: "Calculateur de Surface Corporelle",
+        descSuffix: "clinique.",
+        btnText: "Calculer Ma Surface Corporelle →",
+        targetSlug: "body-surface-area-calculator"
+      },
+      de: {
+        title: "Berechnen Sie Ihre Körperoberfläche (BSA)",
+        descPrefix: "Ermitteln Sie Ihre Hautoberfläche nach Mosteller und Du Bois mit unserem",
+        linkText: "Körperoberflächen-Rechner",
+        descSuffix: "präzise.",
+        btnText: "Jetzt BSA berechnen →",
+        targetSlug: "body-surface-area-calculator"
+      },
+      ko: {
+        title: "체표면적(BSA) 정밀 계산하기",
+        descPrefix: "Mosteller 및 Du Bois 의학 공식을 활용한",
+        linkText: "체표면적 계산기",
+        descSuffix: "로 신체 표면적을 산출하세요.",
+        btnText: "체표면적 계산하기 →",
+        targetSlug: "body-surface-area-calculator"
+      },
+      hi: {
+        title: "बॉडी सरफेस एरिया (BSA) निकालें",
+        descPrefix: "मोस्टेलर और डू बॉइस क्लिनिकल सूत्रों द्वारा शरीर की सतह मापने के लिए हमारे",
+        linkText: "बॉडी सरफेस एरिया कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "BSA निकालें →",
+        targetSlug: "body-surface-area-calculator"
+      }
+    }
+  },
+  'target-heart-rate-training-zones': {
+    targetSlug: 'heart-rate-zone-calculator',
+    relatedSlugs: ['heart-rate-zone-calculator', 'karvonen-heart-rate-calculator', 'tdee-calculator', '1rm-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your Target Heart Rate Zones",
+        descPrefix: "Determine your Zone 2 aerobic and lactate threshold training intensities with our free",
+        linkText: "Heart Rate Zone Calculator",
+        descSuffix: "today.",
+        btnText: "Calculate Heart Rate Zones →",
+        targetSlug: "heart-rate-zone-calculator"
+      },
+      es: {
+        title: "Calcula tus Zonas de Frecuencia Cardíaca",
+        descPrefix: "Establece tus intensidades aeróbicas de Zona 2 y umbral anaeróbico con nuestra",
+        linkText: "Calculadora de Zonas Cardíacas",
+        descSuffix: "gratuita.",
+        btnText: "Calcular Zonas de Pulso →",
+        targetSlug: "heart-rate-zone-calculator"
+      },
+      fr: {
+        title: "Calculez Vos Zones Cibles d'Entraînement",
+        descPrefix: "Déterminez votre Zone 2 d'endurance fondamentale et votre seuil lactique avec notre",
+        linkText: "Calculateur de Zones Cardiaques",
+        descSuffix: "en ligne.",
+        btnText: "Calculer Mes Zones Cardiaques →",
+        targetSlug: "heart-rate-zone-calculator"
+      },
+      de: {
+        title: "Berechnen Sie Ihre Herzfrequenz-Zonen",
+        descPrefix: "Bestimmen Sie Ihre aeroben Grundlagenausdauer-Zonen mit unserem",
+        linkText: "Herzfrequenzzonen-Rechner",
+        descSuffix: "sofort.",
+        btnText: "Jetzt Pulszonen berechnen →",
+        targetSlug: "heart-rate-zone-calculator"
+      },
+      ko: {
+        title: "목표 심박수 5대 트레이닝 구간 계산하기",
+        descPrefix: "지방 연소 Zone 2부터 젖산 역치 구간까지",
+        linkText: "심박수 구간 계산기",
+        descSuffix: "로 최적 유산소 훈련 강도를 확인하세요.",
+        btnText: "심박수 구간 계산하기 →",
+        targetSlug: "heart-rate-zone-calculator"
+      },
+      hi: {
+        title: "टारगेट हार्ट रेट जोन की गणना करें",
+        descPrefix: "फैट बर्निंग और स्टैमिना बढ़ाने के लिए एरोबिक जोन 2 निकालने के लिए हमारे",
+        linkText: "हार्ट रेट जोन कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "हार्ट रेट जोन निकालें →",
+        targetSlug: "heart-rate-zone-calculator"
+      }
+    }
+  },
+  'one-rep-max-strength-guide': {
+    targetSlug: '1rm-calculator',
+    relatedSlugs: ['1rm-calculator', 'heart-rate-zone-calculator', 'lean-body-mass-calculator', 'protein-intake-calculator'],
+    cta: {
+      en: {
+        title: "Calculate Your One Rep Max (1RM)",
+        descPrefix: "Safely estimate your maximum single lift from submaximal sets using our free",
+        linkText: "One Rep Max Calculator",
+        descSuffix: "based on Epley and Brzycki.",
+        btnText: "Calculate 1RM Now →",
+        targetSlug: "1rm-calculator"
+      },
+      es: {
+        title: "Calcula tu Repetición Máxima (1RM)",
+        descPrefix: "Estima tu levantamiento máximo sin riesgo de lesión usando nuestra",
+        linkText: "Calculadora de 1RM",
+        descSuffix: "basada en Epley y Brzycki.",
+        btnText: "Calcular 1RM Ahora →",
+        targetSlug: "1rm-calculator"
+      },
+      fr: {
+        title: "Calculez Votre 1RM en Toute Sécurité",
+        descPrefix: "Estimez votre charge maximale sans risquer de blessure grâce à notre",
+        linkText: "Calculateur de 1RM",
+        descSuffix: "fondé sur Epley et Brzycki.",
+        btnText: "Calculer Mon 1RM →",
+        targetSlug: "1rm-calculator"
+      },
+      de: {
+        title: "Berechnen Sie Ihr One Rep Max (1RM)",
+        descPrefix: "Schätzen Sie Ihre Maximalkraft verletzungsfrei aus 2 bis 10 Wiederholungen mit unserem",
+        linkText: "1RM-Rechner",
+        descSuffix: "online.",
+        btnText: "Jetzt 1RM berechnen →",
+        targetSlug: "1rm-calculator"
+      },
+      ko: {
+        title: "1RM 최대 근력 안전하게 산출하기",
+        descPrefix: "부상 위험 없이 하위최대 반복 세트 데이터로 산출하는",
+        linkText: "1RM 계산기",
+        descSuffix: "로 중량별 세트를 구성하세요.",
+        btnText: "1RM 계산하기 →",
+        targetSlug: "1rm-calculator"
+      },
+      hi: {
+        title: "वन रेप मैक्स (1RM) सुरक्षित रूप से निकालें",
+        descPrefix: "बिना किसी चोट के जोखिम के 2 से 10 रेप्स के आधार पर अधिकतम भार जानने के लिए हमारे",
+        linkText: "1RM कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "1RM निकालें →",
+        targetSlug: "1rm-calculator"
+      }
+    }
+  }
 };
 
 export function getBlogCta(slug: string, lang: Locale): BlogCtaConfig {

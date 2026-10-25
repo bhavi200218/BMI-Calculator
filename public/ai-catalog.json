@@ -1,0 +1,55 @@
+{
+  "$schema": "https://agenticresourcediscovery.org/spec/v1/schema.json",
+  "name": "Real BMI Calculator",
+  "version": "1.0.0",
+  "description": "Evidence-based health, body composition, and metabolic calculators based on WHO and CDC clinical reference standards.",
+  "url": "https://realbmicalculator.com",
+  "documentation": "https://realbmicalculator.com/en/methodology/",
+  "llms_txt": "https://realbmicalculator.com/llms.txt",
+  "provider": {
+    "name": "Real BMI",
+    "url": "https://realbmicalculator.com"
+  },
+  "capabilities": [
+    "body-mass-index",
+    "basal-metabolic-rate",
+    "total-daily-energy-expenditure",
+    "body-fat-percentage",
+    "lean-body-mass",
+    "ideal-body-weight",
+    "macronutrient-split",
+    "hydration-targets"
+  ],
+  "tools": [
+    {
+      "name": "calculate_bmi",
+      "description": "Calculates Body Mass Index (BMI) using weight (kg or lbs) and height (cm or inches), returning WHO and CDC health risk categories.",
+      "url": "https://realbmicalculator.com/en/bmi-calculator/",
+      "method": "GET"
+    },
+    {
+      "name": "calculate_bmr",
+      "description": "Calculates Basal Metabolic Rate using the Mifflin-St Jeor clinical equation.",
+      "url": "https://realbmicalculator.com/en/bmr-calculator/",
+      "method": "GET"
+    },
+    {
+      "name": "calculate_tdee",
+      "description": "Calculates Total Daily Energy Expenditure based on BMR and physical activity factors.",
+      "url": "https://realbmicalculator.com/en/tdee-calculator/",
+      "method": "GET"
+    },
+    {
+      "name": "calculate_body_fat",
+      "description": "Calculates body fat percentage using US Navy circumference formulas.",
+      "url": "https://realbmicalculator.com/en/body-fat-calculator/",
+      "method": "GET"
+    },
+    {
+      "name": "calculate_ideal_weight",
+      "description": "Calculates healthy weight ranges using Devine, Robinson, Miller, and Hamwi equations.",
+      "url": "https://realbmicalculator.com/en/ideal-weight-calculator/",
+      "method": "GET"
+    }
+  ]
+}

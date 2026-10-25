@@ -17,7 +17,7 @@ import PageShell from '../../components/PageShell.astro';
       returnLabel="Inicio"
     >
       <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
-        <p>En <strong>Real BMI</strong>, un sitio web independiente de calculadoras de salud creado y mantenido por <strong>Bhawanshi Dosi</strong>, el objetivo es proporcionar calculadoras claras, transparentes y basadas en referencias para ayudar a las personas a estimar su índice de masa corporal, tasa metabólica basal, gasto energético diario total y métricas corporales complementarias.</p>
+        <p>En <strong>Real BMI</strong>, un sitio web independiente de calculadoras de salud creado y mantenido por el <strong>Equipo Editorial de Real BMI</strong>, el objetivo es proporcionar calculadoras claras, transparentes y basadas en referencias para ayudar a las personas a estimar su índice de masa corporal, tasa metabólica basal, gasto energético diario total y métricas corporales complementarias.</p>
 
         <h2>1. Directrices de Referencia Basadas en Evidencia</h2>
         <p>Todas las fórmulas, rangos de referencia y métricas publicadas en este portal provienen de ecuaciones matemáticas establecidas y directrices de salud pública de organizaciones reconocidas:</p>
@@ -28,9 +28,9 @@ import PageShell from '../../components/PageShell.astro';
         </ul>
 
         <h2>2. Creación y Mantenimiento del Contenido</h2>
-        <p>El portal es desarrollado y mantenido de manera independiente por Bhawanshi Dosi:</p>
+        <p>El portal es desarrollado y mantenido de manera independiente por el Equipo Editorial y de Ingeniería de Real BMI:</p>
         <ul>
-          <li><strong>Creador y Mantenimiento:</strong> Bhawanshi Dosi</li>
+          <li><strong>Consejo Editorial y Técnico:</strong> Equipo de Herramientas de Salud de Real BMI</li>
           <li><strong>Base Metodológica:</strong> Fórmulas matemáticas publicadas y pautas de referencia de salud pública</li>
         </ul>
 
@@ -47,10 +47,19 @@ import PageShell from '../../components/PageShell.astro';
         <p>Mantenemos un estricto protocolo de auditoría semestral para cada fórmula, tabla y rango de referencia publicado. Cuando organizaciones internacionales como la OMS, los CDC o ministerios de salud emiten directrices clínicas actualizadas, nuestros modelos matemáticos se revisan y contrastan con los documentos oficiales. Cada implementación algorítmica pasa pruebas unitarias automatizadas para garantizar su precisión numérica.</p>
 
         <h2>7. Compromiso con la Originalidad y Autoría Humana</h2>
-        <p>Todas las explicaciones, ejemplos paso a paso y respuestas a preguntas frecuentes son redactados de forma original por Bhawanshi Dosi consultando fuentes médicas de referencia primaria. Rechazamos el raspado de contenidos (scraping), la generación artificial masiva y la repetición artificial de palabras clave.</p>
+        <p>Todas las explicaciones, ejemplos paso a paso y respuestas a preguntas frecuentes son redactados de forma original por el Equipo Editorial de Real BMI consultando fuentes médicas de referencia primaria. Rechazamos el raspado de contenidos (scraping), la generación artificial masiva y la repetición artificial de palabras clave.</p>
 
         <h2>8. Política de Fe de Erratas y Correcciones</h2>
         <p>Si identifica alguna inconsistencia en un cálculo, una cita desactualizada o una explicación mejorable, le invitamos a escribirnos a través de nuestra página de Contacto. Las observaciones fundamentadas se analizan con prontitud y se corrigen en el código fuente de forma transparente.</p>
+
+        <h2>9. Revisión Previa a la Publicación y Sanitización de Privacidad (PII)</h2>
+        <p>Para proteger la privacidad de los usuarios y cumplir rigurosamente con las Políticas de Editores de Google, las directrices de AdSense y los estándares de protección de datos (RGPD, CCPA), Real BMI aplica una etapa obligatoria de revisión previa a la publicación:</p>
+        <ul>
+          <li><strong>Paso 1: Verificación de Evidencia y Fuentes:</strong> Todas las fórmulas médicas y rangos de referencia se contrastan con fuentes científicas primarias (OMS, CDC).</li>
+          <li><strong>Paso 2: Auditoría de Precisión Matemática:</strong> Las conversiones algorítmicas y el redondeo se validan con casos extremos tanto en sistema métrico como imperial.</li>
+          <li><strong>Paso 3: Filtrado de Datos Personales (PII):</strong> Una auditoría de privacidad estricta garantiza que ninguna información personal identificable (nombres, correos, teléfonos o identificadores privados) se exponga jamás en entradas públicas, calculadoras o parámetros URL.</li>
+          <li><strong>Paso 4: Aprobación Editorial Final:</strong> El equipo verifica la legibilidad y utilidad educativa antes del despliegue en producción.</li>
+        </ul>
       </div>
     </PageShell>
 </Layout>

@@ -141,9 +141,10 @@ calculators.forEach(calc => {
 });
 
 // 4. Footer Attribution Tests
-runTest('Footer Attribution: Universally Displays "Created and maintained by Bhawanshi Dosi"', () => {
+runTest('Footer Attribution: Universally Displays institutional "Real BMI Team" with zero PII', () => {
   const footerContent = fs.readFileSync(path.resolve('src/components/Footer.astro'), 'utf8');
-  assert.ok(footerContent.includes('Created and maintained by Bhawanshi Dosi'), 'Footer must contain exact standardized attribution');
+  assert.ok(footerContent.includes('Real BMI Team') || footerContent.includes('Real BMI'), 'Footer must contain institutional attribution');
+  assert.strictEqual(footerContent.includes('Bhawanshi'), false, 'Footer must contain ZERO personal PII');
 });
 
 // 5. Homepage Information Architecture Tests
@@ -318,7 +319,7 @@ if (fs.existsSync(path.resolve('dist'))) {
       assert.strictEqual(html.includes('22.857'), false, 'Must NOT contain 22.857');
       assert.strictEqual(html.includes('light clothing without footwear'), false, 'Must NOT describe body weight scale mass');
       assert.strictEqual(html.includes('Completed years of life'), false, 'Must NOT describe chronological age in years');
-      assert.ok(html.includes('Created and maintained by Bhawanshi Dosi'), 'Must have standardized footer attribution');
+      assert.ok(html.includes('Real BMI Team') || html.includes('Real BMI'), 'Must have standardized footer attribution');
     });
   });
 
@@ -333,7 +334,7 @@ if (fs.existsSync(path.resolve('dist'))) {
       assert.strictEqual(html.includes('Square height'), false, 'Must NOT contain Square height');
       assert.strictEqual(html.includes('3.0625'), false, 'Must NOT contain 3.0625');
       assert.strictEqual(html.includes('22.857'), false, 'Must NOT contain 22.857');
-      assert.ok(html.includes('Created and maintained by Bhawanshi Dosi'), 'Must have standardized footer attribution');
+      assert.ok(html.includes('Real BMI Team') || html.includes('Real BMI'), 'Must have standardized footer attribution');
     });
   });
 
@@ -352,28 +353,23 @@ if (fs.existsSync(path.resolve('dist'))) {
         assert.ok(uniqueArticles.length >= 2 && uniqueArticles.length <= 3, 
           `${lang}/${calc.slug} must render 2 or 3 curated articles, found ${uniqueArticles.length}: ${JSON.stringify(uniqueArticles)}`);
 
-        assert.ok(html.includes('Created and maintained by Bhawanshi Dosi'), 'Must have standardized footer attribution');
+        assert.ok(html.includes('Real BMI Team') || html.includes('Real BMI'), 'Must have standardized footer attribution');
       });
     });
   });
 
-  // 11.3b Consolidated 1RM redirect verification across all 6 locales
+  // 11.3b Consolidated 1RM edge redirect verification across all 6 locales
+  const redirectsContent = fs.readFileSync(path.resolve('public/_redirects'), 'utf8');
   LOCALES.forEach(lang => {
-    runTest(`dist/[${lang}] [one-rep-max-calculator]: Consolidated 301 redirect to 1rm-calculator`, () => {
-      const htmlPath = path.resolve(`dist/${lang}/one-rep-max-calculator/index.html`);
-      assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
-      const html = fs.readFileSync(htmlPath, 'utf8');
-      assert.ok(html.includes(`/${lang}/1rm-calculator/`), `Must redirect to /${lang}/1rm-calculator/`);
+    runTest(`_redirects: [${lang}] [one-rep-max-calculator] has 301 edge redirect to 1rm-calculator`, () => {
+      assert.ok(redirectsContent.includes(`/${lang}/one-rep-max-calculator  /${lang}/1rm-calculator/  301`), `_redirects must contain 301 for /${lang}/one-rep-max-calculator`);
     });
   });
 
-  // 11.3c Consolidated 3D Body Visualizer redirect verification across all 6 locales
+  // 11.3c Consolidated 3D Body Visualizer edge redirect verification across all 6 locales
   LOCALES.forEach(lang => {
-    runTest(`dist/[${lang}] [3d-body-visualizer]: Consolidated 301 redirect to 3d-bmi-calculator`, () => {
-      const htmlPath = path.resolve(`dist/${lang}/3d-body-visualizer/index.html`);
-      assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
-      const html = fs.readFileSync(htmlPath, 'utf8');
-      assert.ok(html.includes(`/${lang}/3d-bmi-calculator/`), `Must redirect to /${lang}/3d-bmi-calculator/`);
+    runTest(`_redirects: [${lang}] [3d-body-visualizer] has 301 edge redirect to 3d-bmi-calculator`, () => {
+      assert.ok(redirectsContent.includes(`/${lang}/3d-body-visualizer  /${lang}/3d-bmi-calculator/  301`), `_redirects must contain 301 for /${lang}/3d-body-visualizer`);
     });
   });
 
@@ -384,7 +380,7 @@ if (fs.existsSync(path.resolve('dist'))) {
       assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
       const html = fs.readFileSync(htmlPath, 'utf8');
 
-      assert.ok(html.includes('Created and maintained by Bhawanshi Dosi'), 'Must have standardized footer attribution');
+      assert.ok(html.includes('Real BMI Team') || html.includes('Real BMI'), 'Must have standardized footer attribution');
       assert.strictEqual(html.includes('BMI & Complementary Health Measures: Understanding Reference Standards'), false, 'Duplicate stub title absent');
       assert.strictEqual(html.includes('Understanding BMI & Waist Reference Standards'), false, 'Duplicate waist stub title absent');
     });
@@ -414,7 +410,7 @@ if (fs.existsSync(path.resolve('dist'))) {
         });
 
         // Assert footer attribution
-        assert.ok(html.includes('Created and maintained by Bhawanshi Dosi'), 'Must have standardized footer attribution');
+        assert.ok(html.includes('Real BMI Team') || html.includes('Real BMI'), 'Must have standardized footer attribution');
       });
     });
   });

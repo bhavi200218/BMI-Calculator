@@ -53,7 +53,7 @@ const currentLangDisplay = langNames[lang] || lang;
         <div class="relative" id="langDropdownWrapper">
           <button id="langDropdownBtn"
             class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider bg-[var(--muted)] px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-xl border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)] transition-colors duration-200 cursor-pointer min-h-[48px]"
-            aria-haspopup="true" aria-expanded="false">
+            aria-haspopup="menu" aria-expanded="false">
             <span id="langCurrentLabel">{currentLangDisplay}</span>
             <svg class="w-3 h-3 opacity-60 transition-transform duration-200" id="langChevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />

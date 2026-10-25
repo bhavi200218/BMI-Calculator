@@ -213,6 +213,21 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
       </button>
     </div>
     <p id={`calcErrorMsg-${calculator.slug}`} class="hidden text-xs text-rose-500 font-semibold tracking-wide text-center pt-1" role="alert"></p>
+
+    <!-- Client-Side Privacy Guarantee (AdSense Policy Compliant) -->
+    <div class="flex items-center gap-2.5 p-3 rounded-xl border border-emerald-500/25 bg-emerald-500/5 text-emerald-400 text-xs font-semibold leading-relaxed">
+      <svg class="w-4 h-4 shrink-0 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+      <span>
+        {lang === 'es' ? 'Garantía de Privacidad: No almacenamos sus datos ingresados. Todos los cálculos se realizan 100% en su navegador.' :
+         lang === 'fr' ? 'Garantie de Confidentialité : Nous ne stockons pas vos données saisies. Tous les calculs s\'exécutent localement dans votre navigateur.' :
+         lang === 'de' ? 'Datenschutzgarantie: Wir speichern Ihre Eingaben nicht. Alle Berechnungen erfolgen zu 100 % lokal in Ihrem Browser.' :
+         lang === 'ko' ? '개인정보 보호 보장: 당사는 사용자의 입력 데이터를 일체 저장하지 않습니다. 모든 계산은 브라우저에서 100% 로컬로 처리됩니다.' :
+         lang === 'hi' ? 'गोपनीयता गारंटी: हम आपके इनपुट को संग्रहीत नहीं करते हैं। सभी गणनाएं आपके ब्राउज़र में 100% स्थानीय रूप से होती हैं।' :
+         'Privacy Guarantee: We do not store your input. All calculations run 100% client-side in your browser.'}
+      </span>
+    </div>
   </div>
 
 </div>

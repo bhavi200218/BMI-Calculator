@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+---
+
+<Layout 
+    title="Copyright & DMCA Policy | Real BMI"
+    description="Review our Digital Millennium Copyright Act (DMCA) policy, copyright reporting procedures, designated agent contact details, and intellectual property guidelines."
+>
+    <Navbar />
+    <PageShell
+      title="Copyright & DMCA Policy"
+      eyebrow="Intellectual Property & Legal Standards"
+      description="Clear guidance on copyright ownership, educational fair use, content citation, and DMCA takedown notice procedures."
+      returnUrl="/en/"
+      returnLabel="Home"
+    >
+        <p>At <strong>Real BMI</strong>, an independent health computation and educational resource maintained by the <strong>Real BMI Health Tools Team</strong>, we deeply respect the intellectual property rights of creators, medical researchers, and software authors. This Copyright &amp; Digital Millennium Copyright Act (DMCA) Policy outlines the copyright ownership of our content, guidelines for third-party citations, and the formal procedure for reporting alleged copyright infringement pursuant to Title 17, United States Code, Section 512(c).</p>
+
+        <h2>1. Ownership of Site Content &amp; Proprietary Assets</h2>
+        <p>Except where otherwise expressly noted, all original written articles, interactive calculator algorithms, source code, user interface designs, 3D body visualizer model scripts, responsive layout structures, custom SVG charts, branding, and graphical assets published on <strong>realbmicalculator.com</strong> are the intellectual property of the Real BMI Team and are protected under international copyright treaties and applicable national copyright statutes.</p>
+        <p>All rights not expressly granted herein are reserved.</p>
+
+        <h2>2. Public Domain Scientific Formulas &amp; Academic Attribution</h2>
+        <p>The mathematical formulas implemented within our calculation tools (including the classic Quetelet Body Mass Index formula, the Oxford Trefethen 2.5 BMI model, the Mifflin-St Jeor and Harris-Benedict BMR equations, the Boer and Devine ideal body weight formulas, and the Mosteller body surface area equation) are published, peer-reviewed scientific works residing in the public domain or acknowledged academic literature. Real BMI makes no claim of exclusive ownership over these underlying mathematical laws of nature or public health classification cutoffs established by the World Health Organization (WHO) or Centers for Disease Control and Prevention (CDC). Our copyright applies to the original software code, computational user interface, curated instructional text, and proprietary interactive visualizations developed by our team.</p>
+
+        <h2>3. Permitted Educational Fair Use &amp; Linking Guidelines</h2>
+        <p>We actively support academic and educational dissemination of health literacy. You are granted permission to:</p>
+        <ul>
+          <li><strong>Direct Linking:</strong> Link directly to any calculator, reference chart, or educational guide on our website from personal blogs, clinical education portals, news media, or academic resources.</li>
+          <li><strong>Brief Quotations &amp; Excerpts:</strong> Quote brief textual excerpts (up to 150 words) from our reference guides for non-commercial commentary, academic review, or news reporting, provided that explicit credit and an active hyperlink to the original source page on <code>realbmicalculator.com</code> are clearly provided.</li>
+          <li><strong>Calculator Embedding:</strong> Use our authorized iframe embed code (available on individual calculator pages) to render our privacy-first tools on your health or wellness website without modification or removal of branding attributions.</li>
+        </ul>
+        <p><strong>Prohibited Actions:</strong> Automated bulk scraping, whole-page copying, republishing entire articles without permission, mirroring interactive tools, or repackaging our proprietary code for commercial distribution without written authorization is strictly prohibited.</p>
+
+        <h2>4. DMCA Notice &amp; Takedown Procedure (17 U.S.C. § 512(c))</h2>
+        <p>If you are a copyright owner or an authorized agent thereof and believe in good faith that any material, text, image, or link hosted on our platform infringes upon your copyright, you may submit a formal written notification of claimed infringement to our Designated Copyright Agent containing the following statutory requirements:</p>
+        <ol>
+          <li><strong>Physical or Electronic Signature:</strong> A physical or electronic signature of a person authorized to act on behalf of the owner of the exclusive right that is allegedly infringed.</li>
+          <li><strong>Identification of the Copyrighted Work:</strong> Identification of the copyrighted work claimed to have been infringed, or, if multiple works at a single online site are covered by a single notification, a representative list of such works.</li>
+          <li><strong>Identification of the Infringing Material:</strong> Identification of the material that is claimed to be infringing or to be the subject of infringing activity, including the exact URL(s) on <code>realbmicalculator.com</code> where the material is located.</li>
+          <li><strong>Contact Information:</strong> Information reasonably sufficient to permit us to contact you, such as your full legal name, physical address, telephone number, and valid email address.</li>
+          <li><strong>Good Faith Statement:</strong> A statement that you have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law (such as fair use).</li>
+          <li><strong>Perjury Statement:</strong> A statement that the information in the notification is accurate, and under penalty of perjury, that you are authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.</li>
+        </ol>
+
+        <h2>5. Designated Copyright Agent Contact</h2>
+        <p>Formal DMCA notices and copyright communications must be submitted via email to our dedicated legal inbox:</p>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] my-4 text-sm">
+          <p><strong>Designated Agent:</strong> Real BMI Legal &amp; Copyright Compliance Department</p>
+          <p><strong>Dedicated DMCA Email:</strong> <a href="mailto:dmca@realbmicalculator.com" class="text-[var(--accent)] font-semibold underline">dmca@realbmicalculator.com</a></p>
+          <p><strong>General Support Inbox:</strong> <a href="mailto:support@realbmicalculator.com" class="text-[var(--accent)] font-semibold underline">support@realbmicalculator.com</a></p>
+          <p><strong>Physical Inquiries:</strong> Real BMI Editorial Compliance, Attention: Copyright Agent</p>
+          <p class="text-xs text-[var(--muted-foreground)] mt-2">Note: Inquiries sent without the 6 statutory elements outlined above may experience processing delays. Valid takedown notices are typically reviewed and acted upon within 24 to 48 business hours.</p>
+        </div>
+
+        <h2>6. Counter-Notification Procedure</h2>
+        <p>If you believe that your content was removed or access to it was disabled as a result of mistake or misidentification, you may submit a written counter-notification to our Designated Agent containing:</p>
+        <ul>
+          <li>Your physical or electronic signature.</li>
+          <li>Identification of the material that was removed or to which access was disabled and the location at which the material appeared before it was removed.</li>
+          <li>A statement under penalty of perjury that you have a good faith belief that the material was removed or disabled as a result of mistake or misidentification.</li>
+          <li>Your name, address, and telephone number, and a statement that you consent to the jurisdiction of the Federal District Court for the judicial district in which your address is located (or if outside the United States, for any judicial district in which the service provider may be found), and that you will accept service of process from the person who provided the initial notification.</li>
+        </ul>
+
+        <h2>7. Repeat Infringer Policy</h2>
+        <p>In accordance with the DMCA and international intellectual property laws, Real BMI enforces a policy of terminating access, removing submissions, and barring repeat copyright infringers from contributing to or utilizing interactive services on our network.</p>
+    </PageShell>
+</Layout>
