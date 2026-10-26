@@ -85,7 +85,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'आयु', desc: 'पूर्ण किए गए जीवन वर्ष, जो आयु-समायोजित चयापचय गुणांक के लिए आवश्यक हैं।', metric: 'वर्ष (पूर्णांक)', imperial: 'वर्ष (पूर्णांक)' }
   },
   gender: {
-    en: { name: 'Biological Sex', desc: 'Biological sex. Needed because body fat and calorie burn differ by sex.', metric: 'Male / Female', imperial: 'Male / Female' },
+    en: { name: 'Biological Profile', desc: 'Biological gender profile. Needed because body fat and calorie burn differ between men and women.', metric: 'Male / Female', imperial: 'Male / Female' },
     es: { name: 'Sexo Biológico', desc: 'Requerido porque el sexo biológico determina la proporción de grasa esencial y la tasa metabólica basal.', metric: 'Masculino / Femenino', imperial: 'Masculino / Femenino' },
     fr: { name: 'Sexe Biologique', desc: 'Nécessaire car le sexe biologique influence la masse grasse essentielle et le métabolisme de base.', metric: 'Homme / Femme', imperial: 'Homme / Femme' },
     de: { name: 'Biologisches Geschlecht', desc: 'Erforderlich, da das biologische Geschlecht den essenziellen Fettanteil und den Grundumsatz bestimmt.', metric: 'Männlich / Weiblich', imperial: 'Männlich / Weiblich' },

@@ -106,14 +106,17 @@
       margin-bottom: 1.5rem;
     }
     .lang-link {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
       padding: 0.5rem 0.75rem;
       border-radius: 0.5rem;
       background: var(--muted);
       border: 1px solid var(--border);
       color: var(--foreground);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 600;
       text-align: center;
     }
@@ -136,7 +139,11 @@
   <main id="main-content" class="container">
     <header role="banner" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border);">
       <a href="/en/" class="logo site-logo" rel="home" aria-label="Real BMI Homepage" style="display:inline-flex;align-items:center;gap:0.75rem;text-decoration:none;">
-        <img src="/favicon.svg" alt="Real BMI Logo" width="32" height="32" style="border-radius:0.5rem;background:var(--accent);padding:0.25rem;object-fit:contain;" />
+        <picture style="display:inline-flex;align-items:center;">
+          <source srcset="/logo.avif" type="image/avif" />
+          <source srcset="/logo.webp" type="image/webp" />
+          <img src="/logo.webp" alt="Real BMI Logo" width="32" height="32" loading="lazy" decoding="async" style="border-radius:0.5rem;background:var(--accent);padding:0.25rem;object-fit:contain;" />
+        </picture>
         <span class="site-title" style="font-size:1.15rem;font-weight:800;text-transform:uppercase;color:var(--foreground);">Real BMI</span>
       </a>
       <a href="/en/" style="font-size:0.85rem;font-weight:700;color:var(--accent);text-decoration:none;">← Return to Home</a>
@@ -150,7 +157,7 @@
       <div class="notice-box">
         <p style="margin-bottom: 0.5rem; font-weight: 700; color: var(--accent);">Critical Emergency Medical Notice:</p>
         <p style="margin-bottom: 0; color: #cbd5e1; font-size: 0.95rem;">
-          If you are experiencing acute chest pain, shortness of breath, sudden dizziness, severe weakness, or any life-threatening medical emergency, stop using browser calculation tools immediately and call your local emergency services (such as 911 in North America, 112 in Europe, or 102/108 in India).
+          If you are experiencing acute chest pain, shortness of breath, sudden dizziness, severe weakness, or any life-threatening medical emergency, stop using browser calculation tools immediately and contact your local emergency medical services or proceed to the nearest hospital emergency department.
         </p>
       </div>
 

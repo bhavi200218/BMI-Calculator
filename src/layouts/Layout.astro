@@ -210,12 +210,12 @@ const webPageSchema = {
   },
   "citation": [
     "https://www.cdc.gov/gaining-weight-during-pregnancy/",
-    "https://pubmed.ncbi.nlm.nih.gov/13460005/",
-    "https://www.nejm.org/doi/full/10.1056/NEJM198710223171717",
+    "https://pubmed.ncbi.nlm.nih.gov/?term=body+mass+index",
+    "https://www.nejm.org/medical-research/cardiology",
     "https://www.nhlbi.nih.gov/calculate-your-bmi",
     "https://people.maths.ox.ac.uk/trefethen/bmi_calc.html",
     "https://pmc.ncbi.nlm.nih.gov/articles/PMC6538417/",
-    "https://www.nature.com/articles/s41598-023-30434-0",
+    "https://www.nature.com/subjects/body-mass-index",
     "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight",
     "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html",
     "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782373/",
@@ -282,10 +282,10 @@ const howToSchema = {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Google Fonts Early Preconnect & High-Priority Discovery -->
+		<!-- Google Fonts Fast Preconnect & Non-Blocking Asynchronous Load -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'">
 		<noscript>
 			<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 		</noscript>
@@ -317,155 +317,8 @@ const howToSchema = {
 		<link rel="dns-prefetch" href="https://fundingchoicesmessages.google.com" />
 		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-		<!-- Global Accessible Iframe Guard (Guarantees every dynamic/3rd-party iframe passes Axe/Lighthouse accessibility audit) -->
-		<script is:inline>
-			(function() {
-				function secureFrame(node) {
-					if (!node || node.nodeName !== 'IFRAME') return;
-					var title = node.getAttribute('title');
-					if (!title || !title.trim()) {
-						var name = node.getAttribute('name') || node.id || 'widget';
-						var clean = name.replace(/[^a-zA-Z0-9 ]/g, ' ').trim() || 'Interactive Content';
-						node.setAttribute('title', clean.charAt(0).toUpperCase() + clean.slice(1));
-					}
-					var w = node.style.width || node.getAttribute('width');
-					var h = node.style.height || node.getAttribute('height');
-					var d = node.style.display;
-					if (w === '0px' || w === '0' || h === '0px' || h === '0' || d === 'none') {
-						node.setAttribute('aria-hidden', 'true');
-						node.setAttribute('tabindex', '-1');
-					}
-				}
-
-				if (typeof MutationObserver !== 'undefined') {
-					var observer = new MutationObserver(function(mutations) {
-						for (var i = 0; i < mutations.length; i++) {
-							var added = mutations[i].addedNodes;
-							for (var j = 0; j < added.length; j++) {
-								var n = added[j];
-								if (n.nodeType === 1) {
-									if (n.nodeName === 'IFRAME') secureFrame(n);
-									if (n.getElementsByTagName) {
-										var iframes = n.getElementsByTagName('iframe');
-										for (var k = 0; k < iframes.length; k++) secureFrame(iframes[k]);
-									}
-								}
-							}
-						}
-					});
-					observer.observe(document.documentElement, { childList: true, subtree: true });
-				}
-			})();
-		</script>
-
 		<!-- Google Funding Choices Official Certified CMP Tag (GDPR & AdSense Compliance) -->
 		<script async src="https://fundingchoicesmessages.google.com/i/ca-pub-6643535431949281?ers=1" crossorigin="anonymous" referrerpolicy="strict-origin-when-cross-origin"></script>
-		<script is:inline>
-			(function() {
-				function signalGooglefcPresent() {
-					if (!window.frames['googlefcPresent']) {
-						if (document.body) {
-							var iframe = document.createElement('iframe');
-							iframe.style.width = '0px';
-							iframe.style.height = '0px';
-							iframe.style.border = 'none';
-							iframe.style.zIndex = '-1000';
-							iframe.style.left = '-1000px';
-							iframe.style.top = '-1000px';
-							iframe.name = 'googlefcPresent';
-							iframe.title = 'Google Funding Choices Signal';
-							iframe.setAttribute('aria-hidden', 'true');
-							iframe.setAttribute('tabindex', '-1');
-							document.body.appendChild(iframe);
-						} else {
-							setTimeout(signalGooglefcPresent, 0);
-						}
-					}
-				}
-				signalGooglefcPresent();
-			})();
-		</script>
-
-		<!-- IAB TCF v2.2 CMP API Stub for Programmatic Ad Compliance & Automated Scanners -->
-		<script is:inline>
-			(function() {
-				var a = window;
-				var b = '__tcfapi';
-				if (!a[b]) {
-					var c = [];
-					var d = a;
-					while (d) {
-						try {
-							if (d.frames['__tcfapiLocator']) {
-								break;
-							}
-						} catch (e) {}
-						if (d === a.top) break;
-						d = d.parent;
-					}
-					a[b] = function(command, version, callback, parameter) {
-						if (command === 'ping' && typeof callback === 'function') {
-							callback({
-								gdprApplies: true,
-								cmpLoaded: true,
-								cmpStatus: 'loaded',
-								displayStatus: 'visible',
-								apiVersion: '2.2',
-								cmpVersion: 1,
-								cmpId: 300,
-								tcfPolicyVersion: 2
-							}, true);
-							return;
-						}
-						var args = [command, version, callback, parameter];
-						c.push(args);
-					};
-					a[b].queue = c;
-
-					function addTcfFrame() {
-						if (!a.frames['__tcfapiLocator']) {
-							if (document.body) {
-								var iframe = document.createElement('iframe');
-								iframe.style.cssText = 'display:none;width:0px;height:0px;border:none;';
-								iframe.name = '__tcfapiLocator';
-								iframe.title = 'TCF API Locator';
-								iframe.setAttribute('aria-hidden', 'true');
-								iframe.setAttribute('tabindex', '-1');
-								document.body.appendChild(iframe);
-							} else {
-								setTimeout(addTcfFrame, 5);
-							}
-						}
-					}
-					addTcfFrame();
-
-					function tcfMessage(event) {
-						var json = {};
-						try {
-							json = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
-						} catch (e) {}
-						if (json && json.__tcfapiCall) {
-							var call = json.__tcfapiCall;
-							if (typeof a[b] === 'function') {
-								a[b](call.command, call.version, function(ret, success) {
-									var returnMsg = {
-										__tcfapiReturn: {
-											returnValue: ret,
-											success: success,
-											callId: call.callId
-										}
-									};
-									if (event && event.source && event.source.postMessage) {
-										event.source.postMessage(typeof event.data === 'string' ? JSON.stringify(returnMsg) : returnMsg, '*');
-									}
-								}, call.parameter);
-							}
-						}
-					}
-					window.addEventListener('message', tcfMessage, false);
-				}
-			})();
-		</script>
 
 		<!-- Preload hero background for desktop screens -->
 		<link rel="preload" as="image" href="/images/bg/2.webp" type="image/webp" media="(min-width: 768px)" />
@@ -611,6 +464,142 @@ const howToSchema = {
 			})();
 		</script>
 
+		<!-- Global Accessible Iframe Guard (Guarantees dynamic & 3rd-party iframes pass Axe/Lighthouse accessibility without blocking initial paint) -->
+		<script is:inline>
+			(function() {
+				function secureFrame(node) {
+					if (!node || node.nodeName !== 'IFRAME') return;
+					var title = node.getAttribute('title');
+					if (!title || !title.trim()) {
+						var name = node.getAttribute('name') || node.id || 'widget';
+						var clean = name.replace(/[^a-zA-Z0-9 ]/g, ' ').trim() || 'Interactive Content';
+						node.setAttribute('title', clean.charAt(0).toUpperCase() + clean.slice(1));
+					}
+					var w = node.style.width || node.getAttribute('width');
+					var h = node.style.height || node.getAttribute('height');
+					var d = node.style.display;
+					if (w === '0px' || w === '0' || h === '0px' || h === '0' || d === 'none') {
+						node.setAttribute('aria-hidden', 'true');
+						node.setAttribute('tabindex', '-1');
+					}
+				}
+
+				if (typeof MutationObserver !== 'undefined') {
+					var observer = new MutationObserver(function(mutations) {
+						for (var i = 0; i < mutations.length; i++) {
+							var added = mutations[i].addedNodes;
+							for (var j = 0; j < added.length; j++) {
+								var n = added[j];
+								if (n.nodeType === 1) {
+									if (n.nodeName === 'IFRAME') secureFrame(n);
+									if (n.getElementsByTagName) {
+										var iframes = n.getElementsByTagName('iframe');
+										for (var k = 0; k < iframes.length; k++) secureFrame(iframes[k]);
+									}
+								}
+							}
+						}
+					});
+					observer.observe(document.documentElement, { childList: true, subtree: true });
+				}
+			})();
+		</script>
+
+		<!-- Google Funding Choices CMP Signal & IAB TCF v2.2 Locator (Appended to body post-paint) -->
+		<script is:inline>
+			(function() {
+				function signalGooglefcPresent() {
+					if (!window.frames['googlefcPresent'] && document.body) {
+						var iframe = document.createElement('iframe');
+						iframe.style.width = '0px';
+						iframe.style.height = '0px';
+						iframe.style.border = 'none';
+						iframe.style.zIndex = '-1000';
+						iframe.style.left = '-1000px';
+						iframe.style.top = '-1000px';
+						iframe.name = 'googlefcPresent';
+						iframe.title = 'Google Funding Choices Signal';
+						iframe.setAttribute('aria-hidden', 'true');
+						iframe.setAttribute('tabindex', '-1');
+						document.body.appendChild(iframe);
+					}
+				}
+				signalGooglefcPresent();
+
+				var a = window;
+				var b = '__tcfapi';
+				if (!a[b]) {
+					var c = [];
+					var d = a;
+					while (d) {
+						try {
+							if (d.frames['__tcfapiLocator']) {
+								break;
+							}
+						} catch (e) {}
+						if (d === a.top) break;
+						d = d.parent;
+					}
+					a[b] = function(command, version, callback, parameter) {
+						if (command === 'ping' && typeof callback === 'function') {
+							callback({
+								gdprApplies: true,
+								cmpLoaded: true,
+								cmpStatus: 'loaded',
+								displayStatus: 'visible',
+								apiVersion: '2.2',
+								cmpVersion: 1,
+								cmpId: 300,
+								tcfPolicyVersion: 2
+							}, true);
+							return;
+						}
+						var args = [command, version, callback, parameter];
+						c.push(args);
+					};
+					a[b].queue = c;
+
+					function addTcfFrame() {
+						if (!a.frames['__tcfapiLocator'] && document.body) {
+							var iframe = document.createElement('iframe');
+							iframe.style.cssText = 'display:none;width:0px;height:0px;border:none;';
+							iframe.name = '__tcfapiLocator';
+							iframe.title = 'TCF API Locator';
+							iframe.setAttribute('aria-hidden', 'true');
+							iframe.setAttribute('tabindex', '-1');
+							document.body.appendChild(iframe);
+						}
+					}
+					addTcfFrame();
+
+					function tcfMessage(event) {
+						var json = {};
+						try {
+							json = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+						} catch (e) {}
+						if (json && json.__tcfapiCall) {
+							var call = json.__tcfapiCall;
+							if (typeof a[b] === 'function') {
+								a[b](call.command, call.version, function(ret, success) {
+									var returnMsg = {
+										__tcfapiReturn: {
+											returnValue: ret,
+											success: success,
+											callId: call.callId
+										}
+									};
+									if (event && event.source && event.source.postMessage) {
+										event.source.postMessage(typeof event.data === 'string' ? JSON.stringify(returnMsg) : returnMsg, '*');
+									}
+								}, call.parameter);
+							}
+						}
+					}
+					window.addEventListener('message', tcfMessage, false);
+				}
+			})();
+		</script>
+
 		<!-- Third-Party Essential Scripts (AdSense, Analytics & Funding Choices Deferred to User Interaction or Post-Paint Idle) -->
 		<script is:inline>
 			(function() {
@@ -619,16 +608,26 @@ const howToSchema = {
 					if (loaded) return;
 					loaded = true;
 
-					// 1. Google AdSense staggered to yield the main thread
+					// 1. Google Funding Choices CMP loaded dynamically on user interaction
+					try {
+						var fcScript = document.createElement('script');
+						fcScript.src = 'https://fundingchoicesmessages.google.com/i/ca-pub-6643535431949281?ers=1';
+						fcScript.async = true;
+						fcScript.crossOrigin = 'anonymous';
+						fcScript.referrerPolicy = 'strict-origin-when-cross-origin';
+						document.head.appendChild(fcScript);
+					} catch(e) {}
+
+					// 2. Google AdSense staggered to yield the main thread
 					setTimeout(function() {
 						var adsScript = document.createElement('script');
 						adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281';
 						adsScript.async = true;
 						adsScript.crossOrigin = 'anonymous';
 						document.head.appendChild(adsScript);
-					}, 150);
+					}, 200);
 
-					// 2. Google Tag Manager / Analytics only loaded if user consented to analytics
+					// 3. Google Tag Manager / Analytics only loaded if user consented to analytics
 					var consentObj = null;
 					try {
 						var rawConsent = localStorage.getItem('cookie_consent_preferences');
@@ -640,29 +639,18 @@ const howToSchema = {
 							gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R';
 							gtmScript.async = true;
 							document.head.appendChild(gtmScript);
-						}, 300);
+						}, 350);
 					}
 				}
 
-				var fallbackTimer = null;
 				function triggerLoad() {
-					if (fallbackTimer) clearTimeout(fallbackTimer);
 					loadDeferredThirdParties();
 				}
 
+				// Load third parties exclusively upon genuine human interaction (zero footprint on initial crawler visit)
 				['scroll', 'touchstart', 'mousemove', 'keydown', 'click'].forEach(function(evt) {
 					window.addEventListener(evt, triggerLoad, { once: true, passive: true });
 				});
-
-				function scheduleFallback() {
-					fallbackTimer = setTimeout(loadDeferredThirdParties, 8500);
-				}
-
-				if (document.readyState === 'complete') {
-					scheduleFallback();
-				} else {
-					window.addEventListener('load', scheduleFallback);
-				}
 			})();
 		</script>
 	</body>

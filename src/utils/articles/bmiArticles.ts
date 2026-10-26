@@ -414,7 +414,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <div class="my-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm">
         <code>Waist-to-Height Ratio = Waist Circumference / Stature (Both in Same Units)</code>
       </div>
-      <p>Clinical cut-offs for WHtR are consistent across biological sexes, ages, and ethnic backgrounds:</p>
+      <p>Clinical cut-offs for WHtR are consistent across adult men and women, ages, and ethnic backgrounds:</p>
       <ul>
         <li><strong>WHtR &lt; 0.40:</strong> Increased risk of undernutrition or sarcopenia</li>
         <li><strong>WHtR 0.40 to 0.49:</strong> Healthy normal visceral fat distribution (Lowest risk)</li>
@@ -677,11 +677,11 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <div class="space-y-4 my-6">
         <div>
           <h3 class="text-base font-bold text-[var(--foreground)]">Is the BMI chart different for men and women?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Standard clinical BMI charts are unisex for adults aged 20 and older. The mathematical formula does not change between sexes. However, women naturally possess more biological essential fat (10–13% vs 2–5% in men) at identical BMI values.</p>
+          <p class="text-sm text-[var(--muted-foreground)]">Standard clinical BMI charts are unisex for adults aged 20 and older. The mathematical formula does not change between men and women. However, women naturally possess more biological essential fat (10–13% vs 2–5% in men) at identical BMI values.</p>
         </div>
         <div>
           <h3 class="text-base font-bold text-[var(--foreground)]">Can children and teenagers use this adult chart?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">No. Pediatric screening requires age-and-sex-specific BMI growth percentile curves developed by the CDC or WHO, because children's body proportions change dynamically throughout normal physical development and puberty.</p>
+          <p class="text-sm text-[var(--muted-foreground)]">No. Pediatric screening requires age-and-gender-specific BMI growth percentile curves developed by the CDC or WHO, because children's body proportions change dynamically throughout normal physical development and puberty.</p>
         </div>
       </div>
 
@@ -979,7 +979,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     "datePublished": "2026-04-01",
     "dateModified": "2026-10-25",
     "title": {
-      "en": "BMI Chart for Men & Women: Sex Differences & Adiposity Biology",
+      "en": "BMI Chart for Men & Women: Biological Differences & Adiposity Science",
       "hi": "पुरुषों और महिलाओं के लिए बीएमआई: शारीरिक अंतर व फैट वितरण",
       "ko": "남녀별 BMI 차트와 체지방 분포의 생리학적 차이 완벽 가이드",
       "de": "BMI-Vergleich Männer & Frauen: Geschlechtsspezifische Unterschiede",
@@ -987,7 +987,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Tableau IMC Hommes et Femmes : Différences Biologiques et Graisse"
     },
     "category": {
-      "en": "Sex Differences & Adiposity",
+      "en": "Biological Differences & Adiposity",
       "hi": "शारीरिक अंतर और फैट वितरण",
       "ko": "성별 신체 지표",
       "de": "Geschlecht & Fettverteilung",
@@ -995,7 +995,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Différences Hommes-Femmes"
     },
     "description": {
-      "en": "Explore sex-specific differences in Body Mass Index. Understand why women naturally carry 8-12% more essential body fat, how estrogen and testosterone govern fat storage, and when waist circumference is essential.",
+      "en": "Explore biological differences in Body Mass Index between men and women. Understand why women naturally carry 8-12% more essential body fat, how estrogen and testosterone govern fat storage, and when waist circumference is essential.",
       "hi": "पुरुषों और महिलाओं के बीएमआई में शारीरिक अंतर। जानें कि महिलाओं में आवश्यक फैट 8-12% अधिक क्यों होता है और कमर का माप स्वास्थ्य में क्यों महत्वपूर्ण है।",
       "ko": "남성과 여성의 체지방 분포 및 BMI 해석 차이를 의학적으로 분석합니다. 에스트로겐과 테스토스테론의 작용, 필수 지방률 차이, 허리둘레 기준치를 상세히 안내합니다.",
       "de": "Erfahren Sie, warum Frauen biologisch 8–12 % mehr Fettgewebe benötigen, wie Hormone die Fettverteilung steuern und warum der Taillenumfang unverzichtbar ist.",
@@ -1004,9 +1004,9 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     },
     "contentHtml": {
       "en": `
-      <h2>Sex-Specific Anthropometry: The Biological Differences in Body Composition</h2>
-      <p>A frequent question in clinical anthropometry is whether <strong>men and women should use separate Body Mass Index charts</strong>. Under official World Health Organization (WHO) and Centers for Disease Control and Prevention (CDC) guidelines, standard adult BMI categories are strictly unisex. The mathematical calculation—body weight in kilograms divided by stature in meters squared—is calculated identically regardless of biological sex.</p>
-      <p>However, from a physiological and endocrinological perspective, men and women possess radically divergent body compositions at identical BMI values. Below, we examine the hormonal drivers of sexual dimorphism in adipose storage, compare essential body fat percentages, explain why standard BMI tables can mask sex-specific health risks, review a side-by-side numerical case study, and examine complementary diagnostic measurements.</p>
+      <h2>Gender-Specific Anthropometry: The Biological Differences in Body Composition</h2>
+      <p>A frequent question in clinical anthropometry is whether <strong>men and women should use separate Body Mass Index charts</strong>. Under official World Health Organization (WHO) and Centers for Disease Control and Prevention (CDC) guidelines, standard adult BMI categories are strictly unisex. The mathematical calculation—body weight in kilograms divided by stature in meters squared—is calculated identically regardless of biological gender.</p>
+      <p>However, from a physiological and endocrinological perspective, men and women possess radically divergent body compositions at identical BMI values. Below, we examine the hormonal drivers of biological dimorphism in adipose storage, compare essential body fat percentages, explain why standard BMI tables can mask gender-specific health risks, review a side-by-side numerical case study, and examine complementary diagnostic measurements.</p>
 
       <h2>Hormonal Regulation of Adipose Distribution: Estrogen vs. Testosterone</h2>
       <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1020,7 +1020,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
         </div>
       </div>
 
-      <h2>Essential and Typical Body Fat Percentages by Sex</h2>
+      <h2>Essential and Typical Body Fat Percentages for Men & Women</h2>
       <p>Because women require reproductive biological fat, their normal healthy body fat percentage is <strong>8% to 12% higher</strong> than that of men at an identical BMI score:</p>
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
@@ -1078,11 +1078,11 @@ export const bmiArticles: Record<string, BlogArticleData> = {
         <p class="text-[var(--muted-foreground)]">&bull; Body Fat Percentage: ~25.0% (Total Adipose Mass: 18.8 kg)</p>
         <p class="text-[var(--muted-foreground)]">&bull; Lean Skeletal & Organ Mass: 56.2 kg</p>
         <p class="text-[var(--muted-foreground)]">&bull; Waist Circumference: 74 cm (Normal healthy gynoid distribution)</p>
-        <p class="text-[var(--foreground)] font-bold mt-2">Clinical Finding: Both individuals register an identical 24.5 BMI within the normal WHO range, yet the female carries 7.2 kg more physiological fat without any cardiovascular penalty, reflecting natural sex-specific biology.</p>
+        <p class="text-[var(--foreground)] font-bold mt-2">Clinical Finding: Both individuals register an identical 24.5 BMI within the normal WHO range, yet the female carries 7.2 kg more physiological fat without any cardiovascular penalty, reflecting natural male and female biology.</p>
       </div>
 
-      <h2>Sex-Specific Waist Circumference and Ratio Guidelines</h2>
-      <p>Because unisex BMI fails to capture sex-specific fat distribution, the World Health Organization and International Diabetes Federation (IDF) established distinct waist circumference thresholds to define central abdominal obesity:</p>
+      <h2>Gender-Specific Waist Circumference and Ratio Guidelines</h2>
+      <p>Because unisex BMI fails to capture gender-specific fat distribution, the World Health Organization and International Diabetes Federation (IDF) established distinct waist circumference thresholds to define central abdominal obesity:</p>
       <ul>
         <li><strong>Men Action Threshold:</strong> Waist circumference &gt; 94 cm (37 inches) indicates increased cardiometabolic risk; &gt; 102 cm (40 inches) indicates substantial risk.</li>
         <li><strong>Women Action Threshold:</strong> Waist circumference &gt; 80 cm (31.5 inches) indicates increased cardiometabolic risk; &gt; 88 cm (35 inches) indicates substantial risk.</li>
@@ -1092,7 +1092,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <h2>Menopause and the Post-Menopausal Shift in Female Adiposity</h2>
       <p>During the menopausal transition, ovarian production of 17&beta;-estradiol decreases substantially. This hormonal drop triggers a dramatic redistribution of body fat in women, shifting storage from protective subcutaneous hip sites toward intra-abdominal visceral adipose tissue. Consequently, post-menopausal women experience a marked rise in insulin resistance, non-alcoholic fatty liver disease, and coronary artery disease even when their total scale weight and BMI remain completely unchanged.</p>
 
-      <h2>Frequently Asked Questions on Sex-Specific BMI</h2>
+      <h2>Frequently Asked Questions on Gender Differences in BMI</h2>
       <div class="space-y-4 my-6">
         <div>
           <h3 class="text-base font-bold text-[var(--foreground)]">Should a woman aim for a lower BMI than a man of the same height?</h3>
@@ -1107,7 +1107,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>World Health Organization. <em>Waist circumference and waist-hip ratio: report of a WHO expert consultation.</em> Geneva, 2011.</li>
-        <li>Karastergiou K, Smith SR, Davis AS, Fried SK. <em>Sex differences in human adipose tissue - the biology of gynoid and android fat.</em> Biol Sex Differ 2012; 3:13.</li>
+        <li>Karastergiou K, Smith SR, Davis AS, Fried SK. <em>Sex differences in human adipose tissue - the biology of gynoid and android fat.</em> Biology of Adipose Tissue Differences 2012; 3:13.</li>
         <li>Alberti KG, Eckel RH, Grundy SM, et al. <em>Harmonizing the metabolic syndrome.</em> Circulation 2009; 120(16):1640-1645.</li>
       </ul>
 `,
@@ -1323,10 +1323,10 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "en": `
       <h2>Pediatric Anthropometry: Why Adolescent BMI Differs from Adult Screening</h2>
       <p>Evaluating the growth, physical development, and weight status of teenagers (adolescents aged 13 to 19) requires a fundamentally different scientific methodology than adult Body Mass Index screening. In adults aged 20 and older, BMI categories use fixed, static cut-off numbers (such as 18.5 for underweight, 25.0 for overweight, and 30.0 for obesity). In teenagers, however, <strong>fixed numerical thresholds cannot be clinically applied</strong>.</p>
-      <p>During adolescence, the human body undergoes rapid pubertal growth spurts, dynamic skeletal elongation, sex hormone-driven alterations in adipose distribution, and fluctuating ratios of muscle mass to bone mineral density. Consequently, pediatricians, endocrinologists, and public health agencies—including the Centers for Disease Control and Prevention (CDC) and World Health Organization (WHO)—utilize <strong>BMI-for-Age Percentiles</strong> to assess teenage weight status.</p>
+      <p>During adolescence, the human body undergoes rapid pubertal growth spurts, dynamic skeletal elongation, endocrine hormone-driven alterations in adipose distribution, and fluctuating ratios of muscle mass to bone mineral density. Consequently, pediatricians, endocrinologists, and public health agencies—including the Centers for Disease Control and Prevention (CDC) and World Health Organization (WHO)—utilize <strong>BMI-for-Age Percentiles</strong> to assess teenage weight status.</p>
 
       <h2>The Science of CDC & WHO BMI-for-Age Growth Percentiles</h2>
-      <p>A teenager's Body Mass Index is calculated using the standard formula (<code>Weight / Height²</code>), but the resulting score is plotted against national and international reference growth charts consisting of thousands of healthy youth evaluated longitudinally. The teenager receives a <strong>percentile ranking</strong> comparing their score to peers of the exact same age (in months) and biological sex:</p>
+      <p>A teenager's Body Mass Index is calculated using the standard formula (<code>Weight / Height²</code>), but the resulting score is plotted against national and international reference growth charts consisting of thousands of healthy youth evaluated longitudinally. The teenager receives a <strong>percentile ranking</strong> comparing their score to peers of the exact same age (in months) and biological gender profile:</p>
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>

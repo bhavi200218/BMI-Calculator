@@ -91,9 +91,9 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         return (
           <div class="space-y-2">
             <label class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--foreground)]">{labelStr}</label>
-            <select id={`input-${calculator.slug}-${input.id}`} class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-sm sm:text-base font-bold rounded-[var(--radius-sm)] cursor-pointer h-[50px] sm:h-[56px] border-[1.5px] border-[var(--border)] bg-[var(--input)] text-[var(--foreground)]">
+            <select id={`input-${calculator.slug}-${input.id}`} class="matte-input w-full px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-lg font-bold rounded-[var(--radius-sm)] cursor-pointer h-[50px] sm:h-[56px] border-[1.5px] border-[var(--border)] bg-[var(--input)] text-[var(--foreground)]">
               {input.options?.map(opt => (
-                <option value={opt.value} class="bg-[var(--card)] text-[var(--foreground)] font-bold">
+                <option value={opt.value} class="bg-[var(--card)] text-[var(--foreground)] font-bold text-base">
                   {opt.label[lang] || opt.label['en']}
                 </option>
               ))}

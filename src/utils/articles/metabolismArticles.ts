@@ -320,7 +320,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
     "contentHtml": {
       "en": `
       <h2>The Evolution of Predictive Calorimetry: Estimating Resting Metabolism</h2>
-      <p>Human energy expenditure begins with <strong>Basal Metabolic Rate (BMR)</strong> or Resting Energy Expenditure (REE)—the thermodynamic baseline representing the energy consumed by internal organs to maintain life. Because direct whole-room calorimetry and indirect metabolic cart spirometry are expensive and inaccessible for daily clinical use, physiologists over the past century have derived mathematical equations based on height, weight, age, and sex.</p>
+      <p>Human energy expenditure begins with <strong>Basal Metabolic Rate (BMR)</strong> or Resting Energy Expenditure (REE)—the thermodynamic baseline representing the energy consumed by internal organs to maintain life. Because direct whole-room calorimetry and indirect metabolic cart spirometry are expensive and inaccessible for daily clinical use, physiologists over the past century have derived mathematical equations based on height, weight, age, and biological gender.</p>
       <p>Three primary formulas dominate modern practice: the original <strong>Harris-Benedict equation (1919)</strong>, the <strong>Roza-Shizgal revision (1984)</strong>, the <strong>Mifflin-St Jeor formula (1990)</strong>, and the body composition-based <strong>Katch-McArdle formula (1977)</strong>. Below, we examine their mathematical structures, compare their clinical accuracy, review historical calorimetry trials, and explain which formula to choose for your patient or client profile.</p>
 
       <h2>The Mathematical Formulas Compared</h2>

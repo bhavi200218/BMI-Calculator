@@ -102,8 +102,8 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       <p>One of the most clinically hazardous scenarios in modern medicine is <strong>Normal Weight Obesity (NWO)</strong>. In individuals with NWO, scale weight and BMI fall completely within the standard healthy window (BMI 18.5 to 24.9 kg/m²), creating a deceptive illusion of good health. However, direct body composition testing reveals body fat percentages exceeding 30% in men or 35% in women, accompanied by low skeletal muscle mass.</p>
       <p>Prospective cardiometabolic research demonstrates that individuals with Normal Weight Obesity exhibit a <strong>four-fold higher risk of developing metabolic syndrome</strong>, higher circulating high-sensitivity C-reactive protein (hs-CRP), elevated fasting insulin levels, and a higher rate of cardiovascular mortality compared to individuals with normal BMI and normal body fat.</p>
 
-      <h2>Healthy Body Fat Reference Standards by Biological Sex</h2>
-      <p>Because women require essential reproductive adipose tissue for normal ovulatory and endocrine function, healthy body fat ranges differ substantially between sexes:</p>
+      <h2>Healthy Body Fat Reference Standards for Men & Women</h2>
+      <p>Because women require essential reproductive adipose tissue for normal ovulatory and endocrine function, healthy body fat ranges differ substantially between men and women:</p>
       <ul>
         <li><strong>Men Essential Fat:</strong> 2% to 5% | <strong>Athletes:</strong> 6% to 13% | <strong>Fitness / Healthy:</strong> 14% to 17% | <strong>Acceptable Average:</strong> 18% to 24% | <strong>Obese:</strong> &ge; 25%</li>
         <li><strong>Women Essential Fat:</strong> 10% to 13% | <strong>Athletes:</strong> 14% to 20% | <strong>Fitness / Healthy:</strong> 21% to 24% | <strong>Acceptable Average:</strong> 25% to 31% | <strong>Obese:</strong> &ge; 32%</li>
@@ -222,7 +222,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       </div>
 
       <h2>The Jackson-Pollock Skinfold Protocols: 3-Site vs. 7-Site Equations</h2>
-      <p>For fitness professionals and coaches, the <strong>Jackson-Pollock skinfold method</strong> remains the most widely practiced field test. The anatomical testing sites differ between biological sexes to capture primary subcutaneous depots:</p>
+      <p>For fitness professionals and coaches, the <strong>Jackson-Pollock skinfold method</strong> remains the most widely practiced field test. The anatomical testing sites differ between male and female profiles to capture primary subcutaneous depots:</p>
       <ul>
         <li><strong>Men 3-Site Protocol:</strong> Chest (diagonal pinch midway between anterior axillary line and nipple), Abdomen (vertical pinch 2 cm lateral to umbilicus), and Thigh (vertical pinch on anterior midline midway between inguinal crease and top of patella).</li>
         <li><strong>Women 3-Site Protocol:</strong> Triceps (vertical pinch midway between acromion and olecranon process), Suprailiac (diagonal pinch immediately superior to iliac crest along anterior axillary line), and Thigh (vertical pinch on anterior midline).</li>
@@ -314,7 +314,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       <p>Understanding and calculating your Lean Body Mass allows precise titration of daily dietary protein requirements, calculation of the Katch-McArdle metabolic rate, and accurate monitoring of muscle preservation during fat-loss dieting phases.</p>
 
       <h2>Mathematical Estimation Formulas: Boer, James, and Hume</h2>
-      <p>When laboratory methods like DEXA or hydrostatic weighing are unavailable, clinicians utilize validated regression formulas developed by Boer, James, and Hume. These equations predict lean body mass from biological sex, stature, and body weight:</p>
+      <p>When laboratory methods like DEXA or hydrostatic weighing are unavailable, clinicians utilize validated regression formulas developed by Boer, James, and Hume. These equations predict lean body mass from biological gender, stature, and body weight:</p>
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
@@ -440,7 +440,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "fr": "Dépistage Cardiovasculaire"
     },
     "description": {
-      "en": "Official guide to the Waist-to-Hip Ratio (WHR). Learn the standardized WHO measuring protocol, android vs gynoid fat distribution, and sex-specific cardiovascular risk thresholds.",
+      "en": "Official guide to the Waist-to-Hip Ratio (WHR). Learn the standardized WHO measuring protocol, android vs gynoid fat distribution, and gender-specific cardiovascular risk thresholds.",
       "hi": "कमर-कूल्हा अनुपात (WHR) की आधिकारिक गाइड। डब्ल्यूएचओ मापन तकनीक, पेट की चर्बी (एंड्रॉइड) बनाम कूल्हे की चर्बी (गाइनॉइड) और हृदय रोग की सीमाएं।",
       "ko": "세계보건기구(WHO) 공인 허리-엉덩이 둘레 비율(WHR) 가이드. 사과형(내장지방)과 서양배형(피하지방) 체형 구분법과 성별 심혈관 질환 위험 기준치를 확인하세요.",
       "de": "Leitfaden zum Taille-Hüft-Verhältnis (WHR): WHO-Messanleitung, viszerales Bauchfett vs. subkutanes Hüftfett und kardiovaskuläre Risikoschwellen.",

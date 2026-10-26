@@ -207,7 +207,7 @@ const EXAMPLES: Record<string, ToolData> = {
   // 3. BMR Calculator
   'bmr-calculator': {
     inputs: {
-      en: [{ label: "Biological Sex", value: "Male" }, { label: "Age", value: "30 years" }, { label: "Weight", value: "75.0 kg" }, { label: "Height", value: "180.0 cm" }],
+      en: [{ label: "Gender Profile", value: "Male" }, { label: "Age", value: "30 years" }, { label: "Weight", value: "75.0 kg" }, { label: "Height", value: "180.0 cm" }],
       es: [{ label: "Sexo Biológico", value: "Masculino" }, { label: "Edad", value: "30 años" }, { label: "Peso", value: "75.0 kg" }, { label: "Estatura", value: "180.0 cm" }],
       fr: [{ label: "Sexe Biologique", value: "Homme" }, { label: "Âge", value: "30 ans" }, { label: "Poids", value: "75,0 kg" }, { label: "Taille", value: "180,0 cm" }],
       de: [{ label: "Geschlecht", value: "Männlich" }, { label: "Alter", value: "30 Jahre" }, { label: "Gewicht", value: "75,0 kg" }, { label: "Größe", value: "180,0 cm" }],
@@ -387,7 +387,7 @@ const EXAMPLES: Record<string, ToolData> = {
   // 6. Body Fat Calculator
   'body-fat-calculator': {
     inputs: {
-      en: [{ label: "Biological Sex", value: "Male" }, { label: "Height", value: "178.0 cm" }, { label: "Neck Circumference", value: "38.0 cm" }, { label: "Waist Circumference", value: "86.0 cm" }],
+      en: [{ label: "Gender Profile", value: "Male" }, { label: "Height", value: "178.0 cm" }, { label: "Neck Circumference", value: "38.0 cm" }, { label: "Waist Circumference", value: "86.0 cm" }],
       es: [{ label: "Sexo", value: "Masculino" }, { label: "Estatura", value: "178.0 cm" }, { label: "Cuello", value: "38.0 cm" }, { label: "Cintura", value: "86.0 cm" }],
       fr: [{ label: "Sexe", value: "Homme" }, { label: "Taille", value: "178,0 cm" }, { label: "Cou", value: "38,0 cm" }, { label: "Tour de Taille", value: "86,0 cm" }],
       de: [{ label: "Geschlecht", value: "Männlich" }, { label: "Körpergröße", value: "178,0 cm" }, { label: "Nackenumfang", value: "38,0 cm" }, { label: "Taillenumfang", value: "86,0 cm" }],
@@ -585,7 +585,7 @@ const EXAMPLES: Record<string, ToolData> = {
   // 9. Ideal Weight Calculator
   'ideal-weight-calculator': {
     inputs: {
-      en: [{ label: "Biological Sex", value: "Male" }, { label: "Height", value: "178.0 cm (5'10\")" }],
+      en: [{ label: "Gender Profile", value: "Male" }, { label: "Height", value: "178.0 cm (5'10\")" }],
       es: [{ label: "Sexo Biológico", value: "Masculino" }, { label: "Estatura", value: "178.0 cm (5'10\")" }],
       fr: [{ label: "Sexe Biologique", value: "Homme" }, { label: "Taille", value: "178,0 cm (5'10\")" }],
       de: [{ label: "Geschlecht", value: "Männlich" }, { label: "Körpergröße", value: "178,0 cm (5'10\")" }],

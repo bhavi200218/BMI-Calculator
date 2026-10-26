@@ -71,9 +71,9 @@
     overflow-wrap: break-word;
   }
 
-  /* Mobile usability: Ensure form controls are minimum 16px to prevent mobile auto-zoom */
+  /* Mobile usability: Ensure form controls are strictly minimum 16px to prevent mobile auto-zoom and pass AdSense mobile checks */
   input, select, textarea {
-    font-size: 16px;
+    font-size: 16px !important;
   }
 
   /* Improve touch responsiveness and tap ergonomics */
@@ -84,6 +84,17 @@
   /* Tap target standard for mobile touch accessibility */
   button, a.btn, input[type="button"], input[type="submit"] {
     min-height: 48px;
+  }
+
+  /* Mobile usability enforcement for touch targets and font legibility */
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+    input, select, textarea {
+      font-size: 16px !important;
+      min-height: 48px;
+    }
   }
 }
 

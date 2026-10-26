@@ -29,9 +29,13 @@ const currentLangDisplay = langNames[lang] || lang;
     <div class="flex items-center justify-between px-3 sm:px-5 h-14 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)]">
 
       <!-- Logo & Site Title -->
-      <a href={`/${lang}/`} class="logo site-logo flex items-center gap-2 shrink-0 group" rel="home" aria-label="Real BMI Homepage">
-        <img src="/favicon.svg" alt="Real BMI Logo" width="28" height="28" class="w-7 h-7 rounded-lg bg-[var(--accent)] p-1 object-contain shrink-0 shadow-xs group-hover:scale-105 transition-transform" />
-        <span class="site-title font-display font-bold text-xs sm:text-sm uppercase tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">Real BMI</span>
+      <a href={`/${lang}/`} class="logo site-logo flex items-center gap-2 shrink-0 group min-h-[48px] min-w-[48px] py-1" rel="home" aria-label="Real BMI Homepage">
+        <picture class="shrink-0 flex items-center">
+          <source srcset="/logo.avif" type="image/avif" />
+          <source srcset="/logo.webp" type="image/webp" />
+          <img src="/logo.webp" alt="Real BMI Logo" width="28" height="28" loading="lazy" decoding="async" class="w-7 h-7 rounded-lg bg-[var(--accent)] p-1 object-contain shrink-0 shadow-xs group-hover:scale-105 transition-transform" />
+        </picture>
+        <span class="site-title font-display font-bold text-sm sm:text-base uppercase tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">Real BMI</span>
       </a>
 
     <!-- Desktop Links -->

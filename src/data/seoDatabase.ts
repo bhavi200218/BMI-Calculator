@@ -840,7 +840,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Are reference ranges identical for men and women?",
-          "answer": "Standard WHO BMI charts use identical reference categories (18.5 to 24.9 kg/m² for normal weight) for both adult men and women, although biological sex influences body-fat distribution."
+          "answer": "Standard WHO BMI charts use identical reference categories (18.5 to 24.9 kg/m² for normal weight) for both adult men and women, although biological gender influences body-fat distribution."
         },
         {
           "question": "How do weight categories shift for older adults and seniors?",
@@ -1751,7 +1751,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Le tableau de poids santé est-il différent pour les hommes et les femmes ?",
-          "answer": "Bien que la plage d'IMC standard de l'OMS (18,5 à 24,9) s'applique aux deux sexes, les formules de poids idéal intègrent les différences de masse musculaire moyenne."
+          "answer": "Bien que la plage d'IMC standard de l'OMS (18,5 à 24,9) s'applique aux hommes comme aux femmes, les formules de poids idéal intègrent les différences de masse musculaire moyenne."
         },
         {
           "question": "Quel est le poids santé par taille pour les adultes indiens ?",
@@ -3208,7 +3208,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Daily Energy Balance",
       "title": "Maintenance Calorie Calculator – Daily Calorie Needs",
-      "intro": "Find how many calories you need to keep your current weight. Our free Maintenance Calorie Calculator combines your resting metabolism with your daily workouts. Enter your age, sex, height, weight, and exercise habits to see your daily target in seconds.",
+      "intro": "Find how many calories you need to keep your current weight. Our free Maintenance Calorie Calculator combines your resting metabolism with your daily workouts. Enter your age, gender, height, weight, and exercise habits to see your daily target in seconds.",
       "formulaTitle": "Maintenance Calorie Math & Energy Balance",
       "formulaDesc": "Maintenance Calories = Basal Metabolic Rate (BMR) × Physical Activity Level (PAL). Eating at maintenance matches your daily burn and keeps your weight steady.",
       "formulaCode": "Maintenance Calories = BMR × Activity Factor",
@@ -3247,7 +3247,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "How do I find my maintenance calories?",
-          "answer": "Enter your age, sex, height, weight, and weekly activity. The calculator finds your resting burn with the Mifflin-St Jeor formula, then multiplies it by your activity."
+          "answer": "Enter your age, gender, height, weight, and weekly activity. The calculator finds your resting burn with the Mifflin-St Jeor formula, then multiplies it by your activity."
         },
         {
           "question": "Why do real energy needs differ from formula calculations?",
@@ -3908,7 +3908,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Boer Predictive Equation",
       "title": "Lean Body Mass Calculator & LBM Reference Tool",
-      "intro": "Using the Boer formula, estimate lean body mass from height, weight and sex. LBM is a mathematical estimate and is not the same as skeletal muscle mass or organ weight.",
+      "intro": "Using the Boer formula, estimate lean body mass from height, weight and gender. LBM is a mathematical estimate and is not the same as skeletal muscle mass or organ weight.",
       "formulaTitle": "Boer Formula for LBM",
       "formulaDesc": "Men: LBM = (0.407 × W) + (0.267 × H) - 19.2 | Women: LBM = (0.252 × W) + (0.473 × H) - 48.3",
       "tableTitle": "Boer Equation Formula Reference",
@@ -3927,7 +3927,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is the Lean Body Mass Calculator?",
-          "answer": "The Lean Body Mass Calculator uses the Boer predictive equation to estimate non-fat body mass from height, weight, and sex. It is a mathematical estimate and does not directly measure skeletal muscle or organ weight."
+          "answer": "The Lean Body Mass Calculator uses the Boer predictive equation to estimate non-fat body mass from height, weight, and gender. It is a mathematical estimate and does not directly measure skeletal muscle or organ weight."
         },
         {
           "question": "Why is Lean Body Mass useful in body composition tracking?",
@@ -4090,7 +4090,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Ideal Body Weight Reference",
       "title": "Estimate Ideal Body Weight (IBW) using commonly cited equations",
-      "intro": "Find your ideal body weight with our free calculator. It estimates healthy weight ranges based on your height and sex. Compare four classic formulas: Devine, Robinson, Miller, and Hamwi. View your target weight and WHO healthy range in seconds.",
+      "intro": "Find your ideal body weight with our free calculator. It estimates healthy weight ranges based on your height and gender profile. Compare four classic formulas: Devine, Robinson, Miller, and Hamwi. View your target weight and WHO healthy range in seconds.",
       "formulaTitle": "Standard IBW Formulas (Devine, Robinson, Miller & Hamwi)",
       "formulaDesc": "Each formula calculates a healthy baseline starting at 5 feet tall. These numbers are reference guides, not strict rules. Frame size, muscle mass, and bone density all shape your healthy weight.",
       "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
@@ -4125,11 +4125,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "What is an Ideal Weight Calculator?",
-          "answer": "An Ideal Weight Calculator estimates a healthy weight range for your height and sex. It uses classic formulas like Devine, Robinson, Miller, and Hamwi."
+          "answer": "An Ideal Weight Calculator estimates a healthy weight range for your height and gender profile. It uses classic formulas like Devine, Robinson, Miller, and Hamwi."
         },
         {
           "question": "What is my ideal weight for my height?",
-          "answer": "Enter your height and sex to check your numbers. For example, a 5'10\" male has an estimated Devine weight of 73 kg (161 lbs), within a WHO healthy range of 59 to 79 kg."
+          "answer": "Enter your height and gender profile to check your numbers. For example, a 5'10\" male has an estimated Devine weight of 73 kg (161 lbs), within a WHO healthy range of 59 to 79 kg."
         },
         {
           "question": "Why do formulas use different numbers for men and women?",
@@ -4440,7 +4440,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Calorie Planning Reference",
       "title": "Daily Calorie Target & Energy Balance Calculator",
-      "intro": "Use our free Calorie Calculator to plan your daily meals and weight goals. It estimates how many calories you burn each day based on BMR and TDEE. You can easily see how small calorie changes affect your weight over time. Simply enter your age, sex, height, weight, and activity level to get started.",
+      "intro": "Use our free Calorie Calculator to plan your daily meals and weight goals. It estimates how many calories you burn each day based on BMR and TDEE. You can easily see how small calorie changes affect your weight over time. Simply enter your age, gender, height, weight, and activity level to get started.",
       "formulaTitle": "Energy Expenditure & Caloric Adjustment Math",
       "formulaDesc": "Daily Target = TDEE - Planned Deficit. A negative energy balance of 500 kcal daily totals 3,500 kcal per week, roughly equivalent to one pound of fat tissue.",
       "formulaCode": "Target Calories = TDEE - Planned Reduction",
