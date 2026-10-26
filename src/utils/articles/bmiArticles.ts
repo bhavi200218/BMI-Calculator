@@ -1372,7 +1372,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
         <li><strong>Tanner Stage 1–2 (Pre-pubertal / Early Puberty):</strong> Has not yet experienced peak height velocity. Carries lower bone density and less muscular development.</li>
         <li><strong>Tanner Stage 4–5 (Late Puberty / Mature):</strong> Has completed peak height velocity, experienced substantial testosterone-driven muscular hypertrophy, and increased skeletal bone density.</li>
       </ul>
-      <p>A mature 14-year-old athlete in Tanner Stage 5 may register a higher BMI-for-age percentile purely due to early pubertal muscle accumulation, whereas an early-stage peer may appear leaner. Pediatric clinicians always assess sexual maturity staging (Tanner stages) before making clinical weight diagnoses.</p>
+      <p>A mature 14-year-old athlete in Tanner Stage 5 may register a higher BMI-for-age percentile purely due to early pubertal muscle accumulation, whereas an early-stage peer may appear leaner. Pediatric clinicians always assess pubertal maturity staging (Tanner stages) before making clinical weight diagnoses.</p>
 
       <h2>Practical Example: Reading Teen Percentile Curves</h2>
       <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-2">

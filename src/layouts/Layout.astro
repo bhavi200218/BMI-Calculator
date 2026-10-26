@@ -171,7 +171,7 @@ const softwareAppSchema = {
   "applicationCategory": "HealthApplication",
   "browserRequirements": "Requires JavaScript. Requires HTML5.",
   "description": softwareAppDescriptions[currentLocale || 'en'] || softwareAppDescriptions['en'],
-  "url": `https://realbmicalculator.com/${currentLocale || 'en'}/`,
+  "url": normalizedPath === '/bmi-calculator/' ? canonicalURL : `https://realbmicalculator.com/${currentLocale || 'en'}/`,
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -194,11 +194,10 @@ const webPageSchema = {
   "datePublished": "2025-01-15T00:00:00Z",
   "dateModified": "2026-10-21T00:00:00Z",
   "author": {
-    "@type": "Person",
-    "name": "Dr. Michael Vance, Ph.D.",
-    "jobTitle": "Lead Health Informatics & Biostatistics Researcher",
-    "description": "Specialist in client-side health calculation algorithms, metabolic modeling, and evidence-based anthropometric standards (WHO & CDC).",
-    "url": `https://realbmicalculator.com/${currentLocale || 'en'}/about/`
+    "@type": "Organization",
+    "name": "Real BMI Clinical Review Board",
+    "url": `https://realbmicalculator.com/${currentLocale || 'en'}/about/#editorial-board`,
+    "description": "Multidisciplinary panel of health informatics researchers, biostatisticians, and clinical calculation specialists adhering to WHO and CDC standards."
   },
   "reviewedBy": {
     "@type": "Organization",
@@ -282,7 +281,7 @@ const howToSchema = {
 <html lang={currentLocale} class="dark scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
 		<!-- Google Fonts Fast Preconnect & Non-Blocking Asynchronous Load -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -291,6 +290,16 @@ const howToSchema = {
 		<noscript>
 			<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 		</noscript>
+
+		<!-- DNS Prefetch for Third-Party Domains to Minimize Latency Footprint -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+		<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+		<link rel="dns-prefetch" href="https://fundingchoicesmessages.google.com" />
+		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+		<link rel="dns-prefetch" href="https://ep2.adtrafficquality.google" />
+		<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
+		<link rel="dns-prefetch" href="https://tpc.googlesyndication.com" />
 
 		<!-- SEO Meta Tags -->
 		<title>{seoTitle}</title>
@@ -312,13 +321,30 @@ const howToSchema = {
 
 		<!-- Security & Permissions Policy -->
 		<meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fundingchoicesmessages.google.com https://pagead2.googlesyndication.com https://www.googletagmanager.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.google.com https://*.googlesyndication.com https://*.google-analytics.com https://*.doubleclick.net https://*.gstatic.com; connect-src 'self' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.google-analytics.com https://analytics.google.com https://*.googletagmanager.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com; frame-src 'self' https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com https://*.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.googletagmanager.com https://ep2.adtrafficquality.google; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://pagead2.googlesyndication.com https://*.doubleclick.net https://*.google-analytics.com https://*.googlesyndication.com https://www.google.com https://www.gstatic.com; connect-src 'self' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://www.googletagmanager.com https://ep2.adtrafficquality.google https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; frame-src 'self' https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com https://www.google.com; worker-src 'self' blob:; manifest-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
 
 		<!-- Google AdSense Account Verification -->
 		<meta name="google-adsense-account" content="ca-pub-6643535431949281" />
 
 		<!-- Google Funding Choices Official Certified CMP Tag (GDPR & AdSense Compliance) -->
-		<script async src="https://fundingchoicesmessages.google.com/i/ca-pub-6643535431949281?ers=1" crossorigin="anonymous" referrerpolicy="strict-origin-when-cross-origin"></script>
+		<script async src="https://fundingchoicesmessages.google.com/i/pub-6643535431949281?ers=1" crossorigin="anonymous" referrerpolicy="strict-origin-when-cross-origin"></script>
+		<script is:inline>
+			(function() {
+				function signalGooglefcPresent() {
+					if (!window.frames['googlefcPresent']) {
+						if (document.body) {
+							var iframe = document.createElement('iframe');
+							iframe.style.display = 'none';
+							iframe.name = 'googlefcPresent';
+							document.body.appendChild(iframe);
+						} else {
+							setTimeout(signalGooglefcPresent, 0);
+						}
+					}
+				}
+				signalGooglefcPresent();
+			})();
+		</script>
 
 		<!-- Preload hero background for desktop screens -->
 		<link rel="preload" as="image" href="/images/bg/2.webp" type="image/webp" media="(min-width: 768px)" />
@@ -389,13 +415,13 @@ const howToSchema = {
 				<link rel="alternate" hreflang="de" href={`https://realbmicalculator.com/de${normalizedPath}`} />
 				<link rel="alternate" hreflang="ko" href={`https://realbmicalculator.com/ko${normalizedPath}`} />
 				<link rel="alternate" hreflang="hi" href={`https://realbmicalculator.com/hi${normalizedPath}`} />
-				<link rel="alternate" hreflang="x-default" href={`https://realbmicalculator.com/en${normalizedPath}`} />
+				<link rel="alternate" hreflang="x-default" href={normalizedPath === '/' ? 'https://realbmicalculator.com/' : `https://realbmicalculator.com/en${normalizedPath}`} />
 			</>
 		)}
 
 		<!-- Structured Data / JSON-LD -->
 		<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)}></script>
-		{normalizedPath === '/' && (
+		{(normalizedPath === '/' || normalizedPath === '/bmi-calculator/') && (
 			<script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)}></script>
 		)}
 		<script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
@@ -505,70 +531,72 @@ const howToSchema = {
 			})();
 		</script>
 
-		<!-- Google Funding Choices CMP Signal (Appended to body post-paint) -->
+		<!-- Third-Party Essential Scripts (AdSense & Analytics Orchestration - Yields Main Thread to Eliminate Script Footprint & Interaction Delays) -->
 		<script is:inline>
 			(function() {
-				function signalGooglefcPresent() {
-					if (!window.frames['googlefcPresent'] && document.body) {
-						var iframe = document.createElement('iframe');
-						iframe.style.width = '0px';
-						iframe.style.height = '0px';
-						iframe.style.border = 'none';
-						iframe.style.zIndex = '-1000';
-						iframe.style.left = '-1000px';
-						iframe.style.top = '-1000px';
-						iframe.name = 'googlefcPresent';
-						iframe.title = 'Google Funding Choices Signal';
-						iframe.setAttribute('aria-hidden', 'true');
-						iframe.setAttribute('tabindex', '-1');
-						document.body.appendChild(iframe);
-					}
-				}
-				signalGooglefcPresent();
-			})();
-		</script>
+				if (window.__thirdPartiesInitialized) return;
+				window.__thirdPartiesInitialized = false;
 
-		<!-- Third-Party Essential Scripts (AdSense & Analytics Deferred to User Interaction to Minimize Footprint) -->
-		<script is:inline>
-			(function() {
-				var loaded = false;
 				function loadDeferredThirdParties() {
-					if (loaded) return;
-					loaded = true;
+					if (window.__thirdPartiesInitialized) return;
+					window.__thirdPartiesInitialized = true;
 
-					// 1. Google AdSense staggered to yield the main thread
-					setTimeout(function() {
-						var adsScript = document.createElement('script');
-						adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281';
-						adsScript.async = true;
-						adsScript.crossOrigin = 'anonymous';
-						document.head.appendChild(adsScript);
-					}, 200);
+					var scheduleTask = window.requestIdleCallback || function(cb) { setTimeout(cb, 100); };
 
-					// 2. Google Tag Manager / Analytics only loaded if user consented to analytics
+					// 1. Google AdSense: Scheduled strictly during idle time after main thread settles
+					scheduleTask(function() {
+						if (!document.querySelector('script[src*="adsbygoogle.js"]')) {
+							var adsScript = document.createElement('script');
+							adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281';
+							adsScript.async = true;
+							adsScript.crossOrigin = 'anonymous';
+							adsScript.referrerPolicy = 'strict-origin-when-cross-origin';
+							document.head.appendChild(adsScript);
+						}
+					});
+
+					// 2. Google Tag Manager / Analytics: Loaded exclusively if user has consented
 					var consentObj = null;
 					try {
 						var rawConsent = localStorage.getItem('cookie_consent_preferences');
 						if (rawConsent) consentObj = JSON.parse(rawConsent);
 					} catch(e) {}
+
 					if (consentObj && consentObj.analytics) {
-						setTimeout(function() {
-							var gtmScript = document.createElement('script');
-							gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R';
-							gtmScript.async = true;
-							document.head.appendChild(gtmScript);
-						}, 400);
+						scheduleTask(function() {
+							if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+								var gtmScript = document.createElement('script');
+								gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R';
+								gtmScript.async = true;
+								gtmScript.crossOrigin = 'anonymous';
+								gtmScript.referrerPolicy = 'strict-origin-when-cross-origin';
+								document.head.appendChild(gtmScript);
+							}
+						});
 					}
 				}
 
-				function triggerLoad() {
+				// Trigger on first human interaction or when browser reaches idle state
+				var interactionEvents = ['scroll', 'touchstart', 'mousemove', 'keydown', 'click'];
+				function onInteraction() {
+					interactionEvents.forEach(function(evt) {
+						window.removeEventListener(evt, onInteraction);
+					});
 					loadDeferredThirdParties();
 				}
 
-				// Load third parties exclusively upon genuine human interaction (zero footprint on initial crawler visit)
-				['scroll', 'touchstart', 'mousemove', 'keydown', 'click'].forEach(function(evt) {
-					window.addEventListener(evt, triggerLoad, { once: true, passive: true });
+				interactionEvents.forEach(function(evt) {
+					window.addEventListener(evt, onInteraction, { once: true, passive: true });
 				});
+
+				// Fallback: If no interaction, initialize during idle state after 4 seconds
+				if (typeof window.requestIdleCallback === 'function') {
+					window.requestIdleCallback(function() {
+						setTimeout(loadDeferredThirdParties, 4000);
+					}, { timeout: 6000 });
+				} else {
+					setTimeout(loadDeferredThirdParties, 4500);
+				}
 			})();
 		</script>
 	</body>

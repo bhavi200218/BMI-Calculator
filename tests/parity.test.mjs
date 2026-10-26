@@ -205,8 +205,8 @@ function loadTsModule(entryPoint) {
 const { blogArticles: blogObj } = loadTsModule('src/utils/blogArticles.ts');
 const articleKeys = Object.keys(blogObj);
 
-test('blogArticles: Contains 24 in-depth clinical blog articles', () => {
-  assert.ok(articleKeys.length >= 24, `Expected at least 24 blog articles, found ${articleKeys.length}`);
+test('blogArticles: Contains 30 in-depth clinical blog articles', () => {
+  assert.ok(articleKeys.length >= 30, `Expected at least 30 blog articles, found ${articleKeys.length}`);
 });
 
 articleKeys.forEach(key => {

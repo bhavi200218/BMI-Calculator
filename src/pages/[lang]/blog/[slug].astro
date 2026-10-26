@@ -3,6 +3,7 @@ import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import PageShell from '../../../components/PageShell.astro';
 import BlogRelatedCalculators from '../../../components/BlogRelatedCalculators.astro';
+import MedicalEEATBanner from '../../../components/MedicalEEATBanner.astro';
 import { blogArticles } from '../../../utils/blogArticles';
 import { type Locale } from '../../../utils/calculators';
 import { getBlogCta } from '../../../utils/blogRelatedTools';
@@ -136,6 +137,10 @@ const byline = bylineLabels[lang] || bylineLabels.en;
         </div>
 
         <BlogRelatedCalculators articleSlug={slug as string} lang={lang} />
+
+        <div class="mt-12 not-prose">
+          <MedicalEEATBanner lang={lang} />
+        </div>
       </article>
     </PageShell>
 </Layout>

@@ -7,6 +7,7 @@ import LatestArticles from '../../components/LatestArticles.astro';
 import ToolSEOContent from '../../components/ToolSEOContent.astro';
 import ThreeDBodyVisualizer from '../../components/ThreeDBodyVisualizer.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
+import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 import { seoDatabase } from '../../data/seoDatabase';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
 
@@ -133,16 +134,21 @@ const checklist3DVisualizer: Record<string, string[]> = {
 
 const items3D = (calc.slug === '3d-bmi-calculator' ? checklist3DBmi[lang] : checklist3DVisualizer[lang]) || checklist3DBmi.en;
 
-// WebApplication & MedicalWebPage Schemas for Structured Data
+// SoftwareApplication / WebApplication & MedicalWebPage Schemas for Structured Data
 const webAppSchema = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": ["SoftwareApplication", "WebApplication"],
   "name": calc.name[lang] || calc.name['en'],
   "url": canonicalUrl,
   "description": metaDesc,
   "applicationCategory": "HealthApplication",
   "browserRequirements": "Requires JavaScript. Requires HTML5.",
-  "operatingSystem": "All"
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 };
 
 const medicalWebPageSchema = {
@@ -367,6 +373,7 @@ const relatedGuidesSubtitle: Record<string, string> = {
           title={relatedGuidesTitle[lang] || relatedGuidesTitle.en}
           subtitle={relatedGuidesSubtitle[lang] || relatedGuidesSubtitle.en}
         />
+        <MedicalEEATBanner lang={lang} />
       </div>
 
     </div>

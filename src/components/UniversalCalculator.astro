@@ -205,10 +205,10 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
 
     <!-- Action Buttons: Calculate + Reset -->
     <div class="flex items-center gap-3 pt-1">
-      <button id={`runCalcBtn-${calculator.slug}`} type="button" class="flex-1 py-4 sm:py-5 rounded-[var(--radius)] calc-btn-gradient font-display font-bold uppercase text-sm sm:text-base tracking-[0.2em] sm:tracking-[0.25em] cursor-pointer transition-all hover:opacity-90">
+      <button id={`runCalcBtn-${calculator.slug}`} type="button" class="flex-1 min-h-[48px] py-4 sm:py-5 rounded-[var(--radius)] calc-btn-gradient font-display font-bold uppercase text-sm sm:text-base tracking-[0.2em] sm:tracking-[0.25em] cursor-pointer transition-all hover:opacity-90">
         {t.calcBtn}
       </button>
-      <button id={`resetCalcBtn-${calculator.slug}`} type="button" class="px-5 py-4 sm:py-5 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] font-display font-bold uppercase text-xs sm:text-sm tracking-wider cursor-pointer transition-all" aria-label={t.resetBtn}>
+      <button id={`resetCalcBtn-${calculator.slug}`} type="button" class="min-h-[48px] px-5 py-4 sm:py-5 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] font-display font-bold uppercase text-xs sm:text-sm tracking-wider cursor-pointer transition-all" aria-label={t.resetBtn}>
         {t.resetBtn}
       </button>
     </div>

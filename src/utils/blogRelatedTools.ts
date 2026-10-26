@@ -1339,6 +1339,330 @@ export const blogArticleToolsMap: Record<string, BlogToolMeta> = {
         targetSlug: "1rm-calculator"
       }
     }
+  },
+  'bmi-interpretation-guidelines': {
+    targetSlug: 'bmi-calculator',
+    relatedSlugs: ['bmi-calculator', 'bmi-chart', 'asian-bmi-calculator', 'waist-to-hip-ratio-calculator'],
+    cta: {
+      en: {
+        title: "Check Your Clinical BMI Category",
+        descPrefix: "Apply evidence-based WHO interpretation thresholds to your height and weight with our free",
+        linkText: "Clinical BMI Calculator",
+        descSuffix: "for clear personalized risk stratification.",
+        btnText: "Calculate Your BMI Now →",
+        targetSlug: "bmi-calculator"
+      },
+      es: {
+        title: "Comprueba tu Categoría Clínica de IMC",
+        descPrefix: "Aplica los umbrales de la OMS a tu estatura y peso con nuestra",
+        linkText: "Calculadora Clínica de IMC",
+        descSuffix: "para una estratificación de riesgo personalizada.",
+        btnText: "Evaluar mi IMC Ahora →",
+        targetSlug: "bmi-calculator"
+      },
+      fr: {
+        title: "Vérifiez Votre Catégorie Clinique d'IMC",
+        descPrefix: "Appliquez les seuils de référence de l'OMS avec notre",
+        linkText: "Calculateur Clinique d'IMC",
+        descSuffix: "pour une stratification personnalisée de vos risques.",
+        btnText: "Évaluer Mon IMC Maintenant →",
+        targetSlug: "bmi-calculator"
+      },
+      de: {
+        title: "Prüfen Sie Ihre klinische BMI-Kategorie",
+        descPrefix: "Wenden Sie die WHO-Grenzwerte auf Ihre Körpergröße und Ihr Gewicht an mit unserem",
+        linkText: "Klinischen BMI-Rechner",
+        descSuffix: "für eine fundierte Risikostratifizierung.",
+        btnText: "Jetzt BMI bestimmen →",
+        targetSlug: "bmi-calculator"
+      },
+      ko: {
+        title: "임상 기준에 맞춘 나의 BMI 범주 확인하기",
+        descPrefix: "세계보건기구(WHO) 기준에 맞춘 신장과 체중 분석을 위해",
+        linkText: "임상 BMI 계산기",
+        descSuffix: "를 통해 맞춤형 건강 위험도를 점검하세요.",
+        btnText: "내 BMI 측정하기 →",
+        targetSlug: "bmi-calculator"
+      },
+      hi: {
+        title: "अपनी नैदानिक बीएमआई श्रेणी की जाँच करें",
+        descPrefix: "डब्ल्यूएचओ के दिशानिर्देशों के अनुसार अपनी ऊंचाई और वजन का विश्लेषण करने के लिए हमारे",
+        linkText: "नैदानिक बीएमआई कैलकुलेटर",
+        descSuffix: "का तुरंत उपयोग करें।",
+        btnText: "अपना बीएमआई मापें →",
+        targetSlug: "bmi-calculator"
+      }
+    }
+  },
+  'age-specific-bmi-charts': {
+    targetSlug: 'bmi-chart',
+    relatedSlugs: ['bmi-chart', 'bmi-calculator', 'ideal-weight-calculator', 'body-fat-calculator'],
+    cta: {
+      en: {
+        title: "Explore the Full Demographic BMI Chart",
+        descPrefix: "Compare percentile curves, gender distribution, and age-adjusted thresholds on our interactive",
+        linkText: "Comprehensive BMI Chart",
+        descSuffix: "table.",
+        btnText: "View Complete BMI Chart →",
+        targetSlug: "bmi-chart"
+      },
+      es: {
+        title: "Explora la Tabla Completa de IMC por Edad",
+        descPrefix: "Compara curvas percentiles y rangos ajustados en nuestra",
+        linkText: "Tabla Interactiva de IMC",
+        descSuffix: "con datos demográficos detallados.",
+        btnText: "Ver Tabla Completa de IMC →",
+        targetSlug: "bmi-chart"
+      },
+      fr: {
+        title: "Consultez le Tableau Complet d'IMC par Âge",
+        descPrefix: "Comparez les percentiles et seuils ajustés selon l'âge grâce à notre",
+        linkText: "Tableau Interactif d'IMC",
+        descSuffix: "détaillé.",
+        btnText: "Voir le Tableau d'IMC →",
+        targetSlug: "bmi-chart"
+      },
+      de: {
+        title: "Erkunden Sie die vollständige altersabhängige BMI-Tabelle",
+        descPrefix: "Vergleichen Sie Perzentilkurven und altersangepasste Referenzbereiche in unserer",
+        linkText: "Interaktiven BMI-Tabelle",
+        descSuffix: "mit demografischen Daten.",
+        btnText: "Vollständige BMI-Tabelle ansehen →",
+        targetSlug: "bmi-chart"
+      },
+      ko: {
+        title: "연령별 종합 BMI 도표 인터랙티브 확인",
+        descPrefix: "성별 및 연령대별 백분위수와 적정 범위를 한눈에 비교할 수 있는",
+        linkText: "종합 BMI 차트",
+        descSuffix: "에서 상세 지표를 확인해 보세요.",
+        btnText: "전체 BMI 도표 보기 →",
+        targetSlug: "bmi-chart"
+      },
+      hi: {
+        title: "आयु-विशिष्ट संपूर्ण बीएमआई चार्ट देखें",
+        descPrefix: "उम्र और लिंग के अनुसार विभिन्न श्रेणियों और पर्सेंटाइल की तुलना करने के लिए हमारे",
+        linkText: "इंटरैक्टिव बीएमआई चार्ट",
+        descSuffix: "का अवलोकन करें।",
+        btnText: "संपूर्ण चार्ट देखें →",
+        targetSlug: "bmi-chart"
+      }
+    }
+  },
+  'healthy-weight-strategies': {
+    targetSlug: 'calorie-calculator',
+    relatedSlugs: ['calorie-calculator', 'tdee-calculator', 'macro-calculator', 'protein-intake-calculator'],
+    cta: {
+      en: {
+        title: "Determine Your Daily Energy Target",
+        descPrefix: "Establish a safe, sustainable caloric deficit or surplus tailored to your lean mass with our",
+        linkText: "Daily Calorie Calculator",
+        descSuffix: "for lasting lifestyle progress.",
+        btnText: "Find Your Calorie Target →",
+        targetSlug: "calorie-calculator"
+      },
+      es: {
+        title: "Determina tu Objetivo Calórico Diario",
+        descPrefix: "Establece un déficit o superávit sostenible y seguro con nuestra",
+        linkText: "Calculadora de Calorías Diarias",
+        descSuffix: "para un progreso duradero.",
+        btnText: "Obtener Meta Calórica →",
+        targetSlug: "calorie-calculator"
+      },
+      fr: {
+        title: "Déterminez Votre Objectif Calorique Quotidien",
+        descPrefix: "Établissez un déficit ou surplus calorique durable et sécurisé grâce à notre",
+        linkText: "Calculateur de Calories",
+        descSuffix: "personnalisé.",
+        btnText: "Obtenir Mon Objectif Calorique →",
+        targetSlug: "calorie-calculator"
+      },
+      de: {
+        title: "Ermitteln Sie Ihren täglichen Kalorienbedarf",
+        descPrefix: "Definieren Sie ein nachhaltiges, sicheres Defizit oder einen Überschuss mit unserem",
+        linkText: "Täglichen Kalorienrechner",
+        descSuffix: "für dauerhaften Erfolg.",
+        btnText: "Kalorienziel ermitteln →",
+        targetSlug: "calorie-calculator"
+      },
+      ko: {
+        title: "지속 가능한 일일 칼로리 목표 설정하기",
+        descPrefix: "건강한 감량 또는 근육 증량을 위한 과학적 에너지 섭취 기준을",
+        linkText: "일일 칼로리 계산기",
+        descSuffix: "를 통해 지금 바로 산출해 보세요.",
+        btnText: "칼로리 목표 확인하기 →",
+        targetSlug: "calorie-calculator"
+      },
+      hi: {
+        title: "अपने दैनिक कैलोरी लक्ष्य की गणना करें",
+        descPrefix: "सुरक्षित और टिकाऊ वजन प्रबंधन के लिए अपने दैनिक ऊर्जा सेवन का सटीक अनुमान हमारे",
+        linkText: "दैनिक कैलोरी कैलकुलेटर",
+        descSuffix: "से लगाएं।",
+        btnText: "दैनिक कैलोरी लक्ष्य जानें →",
+        targetSlug: "calorie-calculator"
+      }
+    }
+  },
+  'metabolic-adaptation-weight-loss': {
+    targetSlug: 'tdee-calculator',
+    relatedSlugs: ['tdee-calculator', 'bmr-calculator', 'maintenance-calorie-calculator', 'calorie-calculator'],
+    cta: {
+      en: {
+        title: "Estimate Your Total Daily Energy Expenditure",
+        descPrefix: "Prevent adaptive thermogenesis plateaus by accurately mapping your basal burn, NEAT, and TEF using our",
+        linkText: "TDEE Calculator",
+        descSuffix: "with activity multipliers.",
+        btnText: "Estimate Your TDEE Now →",
+        targetSlug: "tdee-calculator"
+      },
+      es: {
+        title: "Estima tu Gasto Energético Total Diario (TDEE)",
+        descPrefix: "Evita los estancamientos metabólicos midiendo tu tasa basal y factor de actividad en nuestra",
+        linkText: "Calculadora TDEE",
+        descSuffix: "avanzada.",
+        btnText: "Estimar mi TDEE Ahora →",
+        targetSlug: "tdee-calculator"
+      },
+      fr: {
+        title: "Estimez Votre Dépense Énergétique Totale (TDEE)",
+        descPrefix: "Prévenez les plateaux métaboliques en évaluant précisément votre métabolisme de base et activité avec notre",
+        linkText: "Calculateur TDEE",
+        descSuffix: "complet.",
+        btnText: "Estimer Mon TDEE Maintenant →",
+        targetSlug: "tdee-calculator"
+      },
+      de: {
+        title: "Bestimmen Sie Ihren täglichen Gesamtenergiebedarf (TDEE)",
+        descPrefix: "Beugen Sie metabolischen Plateaus vor, indem Sie Grundumsatz und Aktivitätsfaktor mit unserem",
+        linkText: "TDEE-Rechner",
+        descSuffix: "präzise ermitteln.",
+        btnText: "Jetzt TDEE bestimmen →",
+        targetSlug: "tdee-calculator"
+      },
+      ko: {
+        title: "일일 총 에너지 소비량 (TDEE) 산출하기",
+        descPrefix: "대사 적응 정체기를 예방하고 기초대사량과 활동 에너지를 정밀 측정할 수 있는",
+        linkText: "TDEE 계산기",
+        descSuffix: "로 정확한 에너지 소모량을 확인하세요.",
+        btnText: "나의 TDEE 측정하기 →",
+        targetSlug: "tdee-calculator"
+      },
+      hi: {
+        title: "अपने कुल दैनिक ऊर्जा व्यय (TDEE) का आकलन करें",
+        descPrefix: "मेटाबॉलिक मंदी से बचने और अपनी शारीरिक गतिविधि के अनुसार सही ऊर्जा खपत जानने के लिए हमारे",
+        linkText: "TDEE कैलकुलेटर",
+        descSuffix: "का उपयोग करें।",
+        btnText: "अपना TDEE जानें →",
+        targetSlug: "tdee-calculator"
+      }
+    }
+  },
+  'visceral-fat-vs-subcutaneous-fat': {
+    targetSlug: 'waist-to-hip-ratio-calculator',
+    relatedSlugs: ['waist-to-hip-ratio-calculator', 'body-fat-calculator', 'lean-body-mass-calculator', 'bmi-calculator'],
+    cta: {
+      en: {
+        title: "Screen for Deep Visceral Adiposity",
+        descPrefix: "Assess intra-abdominal fat distribution and cardiometabolic risk in seconds using our validated",
+        linkText: "Waist-to-Hip Ratio Calculator",
+        descSuffix: "with biological reference thresholds.",
+        btnText: "Check Waist-to-Hip Ratio →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      },
+      es: {
+        title: "Evalúa tu Adiposidad Visceral y Grasa Abdominal",
+        descPrefix: "Analiza la distribución de grasa intraabdominal y el riesgo cardiometabólico con nuestra",
+        linkText: "Calculadora de Relación Cintura-Cadera",
+        descSuffix: "validada.",
+        btnText: "Comprobar Relación Cintura-Cadera →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      },
+      fr: {
+        title: "Évaluez Votre Adiposité Viscérale Profonde",
+        descPrefix: "Analysez la répartition des graisses abdominales et les risques associés à l'aide de notre",
+        linkText: "Calculateur du Rapport Taille-Hanche",
+        descSuffix: "validé médicalement.",
+        btnText: "Vérifier Mon Rapport Taille-Hanche →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      },
+      de: {
+        title: "Prüfen Sie Ihr viszerales Bauchfett-Risiko",
+        descPrefix: "Bewerten Sie die intraabdominelle Fettverteilung und kardiometabolische Risiken mit unserem",
+        linkText: "Taille-Hüft-Verhältnis Rechner",
+        descSuffix: "nach aktuellen Leitlinien.",
+        btnText: "Taille-Hüft-Verhältnis prüfen →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      },
+      ko: {
+        title: "복부 내장지방 축적도 및 심혈관 위험도 평가",
+        descPrefix: "내장지방 분포와 대사 질환 위험성을 간편하게 선별할 수 있는",
+        linkText: "허리-엉덩이 둘레 비율(WHR) 계산기",
+        descSuffix: "로 건강 지표를 측정해 보세요.",
+        btnText: "내장지방 비율 측정하기 →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      },
+      hi: {
+        title: "गहरी विसरल चर्बी और कमर-कूल्हे के अनुपात की जाँच करें",
+        descPrefix: "पेट की अंदरूनी चर्बी और हृदय स्वास्थ्य जोखिम का आकलन करने के लिए हमारे",
+        linkText: "कमर-कूल्हा अनुपात (WHR) कैलकुलेटर",
+        descSuffix: "का तुरंत उपयोग करें।",
+        btnText: "अनुपात की जाँच करें →",
+        targetSlug: "waist-to-hip-ratio-calculator"
+      }
+    }
+  },
+  'cardiovascular-fitness-resting-heart-rate': {
+    targetSlug: 'heart-rate-zone-calculator',
+    relatedSlugs: ['heart-rate-zone-calculator', 'karvonen-heart-rate-calculator', '1rm-calculator', 'tdee-calculator'],
+    cta: {
+      en: {
+        title: "Target Your Five Aerobic Training Zones",
+        descPrefix: "Optimize mitochondrial density, VO2 max, and stroke volume by pinpointing your training intensity on our",
+        linkText: "Heart Rate Zone Calculator",
+        descSuffix: "with resting pulse integration.",
+        btnText: "Find Your Heart Rate Zones →",
+        targetSlug: "heart-rate-zone-calculator"
+      },
+      es: {
+        title: "Define tus Cinco Zonas de Entrenamiento Aeróbico",
+        descPrefix: "Optimiza tu VO2 máx y resistencia cardiovascular calculando tus intensidades con nuestra",
+        linkText: "Calculadora de Zonas Cardíacas",
+        descSuffix: "con pulso en reposo.",
+        btnText: "Ver mis Zonas Cardíacas →",
+        targetSlug: "heart-rate-zone-calculator"
+      },
+      fr: {
+        title: "Définissez Vos Cinq Zones d'Entraînement Aérobie",
+        descPrefix: "Optimisez votre VO2 max et votre endurance en déterminant précisément vos intensités grâce à notre",
+        linkText: "Calculateur de Zones Cardiaques",
+        descSuffix: "intégrant votre pouls au repos.",
+        btnText: "Découvrir Mes Zones Cardiaques →",
+        targetSlug: "heart-rate-zone-calculator"
+      },
+      de: {
+        title: "Bestimmen Sie Ihre 5 aeroben Herzfrequenzzonen",
+        descPrefix: "Optimieren Sie VO2max und Herzgesundheit durch gezielte Trainingsbereiche mit unserem",
+        linkText: "Herzfrequenzzonen-Rechner",
+        descSuffix: "inklusive Ruhepulsintegration.",
+        btnText: "Herzfrequenzzonen anzeigen →",
+        targetSlug: "heart-rate-zone-calculator"
+      },
+      ko: {
+        title: "맞춤형 5단계 유산소 심박수 구간 설정",
+        descPrefix: "안정 시 심박수를 반영하여 최대산소섭취량(VO2 max) 향상과 지방 연소 구간을 도출하는",
+        linkText: "심박수 구간 계산기",
+        descSuffix: "를 확인하세요.",
+        btnText: "심박수 구간 확인하기 →",
+        targetSlug: "heart-rate-zone-calculator"
+      },
+      hi: {
+        title: "अपने 5 हृदय गति प्रशिक्षण क्षेत्रों को जानें",
+        descPrefix: "अपने कार्डियोवैस्कुलर स्वास्थ्य और स्टैमिना को अधिकतम करने के लिए हमारे",
+        linkText: "हृदय गति ज़ोन कैलकुलेटर",
+        descSuffix: "से अपने अनुकूलित प्रशिक्षण ज़ोन निकालें।",
+        btnText: "हृदय गति ज़ोन जानें →",
+        targetSlug: "heart-rate-zone-calculator"
+      }
+    }
   }
 };
 

@@ -13,6 +13,14 @@ const contactSchema = {
     "@type": "Organization",
     "name": "Real BMI Calculator",
     "url": "https://realbmicalculator.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "100 Montgomery St, Suite 1400",
+      "addressLocality": "San Francisco",
+      "addressRegion": "CA",
+      "postalCode": "94104",
+      "addressCountry": "US"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "url": "https://realbmicalculator.com/en/contact/",
@@ -52,19 +60,39 @@ const contactSchema = {
               <!-- Support details grid -->
               <div class="grid gap-4 sm:grid-cols-2">
                 <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
-                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Online Support Desk</p>
-                  <a href="#contact-form" class="mt-2 text-base font-bold text-[var(--accent)] hover:underline block break-all">
-                    <span>support</span><span>&#64;</span><span>realbmicalculator.com</span>
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">User Support Desk</p>
+                  <a href="#contact-form" class="mt-2 text-sm sm:text-base font-bold text-[var(--accent)] hover:underline block">
+                    Encrypted Web Portal →
                   </a>
+                  <p class="text-xs text-[var(--muted-foreground)] mt-1">General inquiries, bug reports &amp; tool feedback</p>
                 </div>
                 <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
-                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Response Time</p>
-                  <p class="mt-2 text-base font-bold text-[var(--foreground)]">Within 24–48 hours on business days</p>
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Editorial &amp; Clinical Inquiries</p>
+                  <a href="#contact-form" class="mt-2 text-sm sm:text-base font-bold text-[var(--accent)] hover:underline block">
+                    Clinical Review Desk →
+                  </a>
+                  <p class="text-xs text-[var(--muted-foreground)] mt-1">Formula review, citations &amp; clinical board</p>
+                </div>
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Operations Headquarters</p>
+                  <p class="mt-2 text-sm font-bold text-[var(--foreground)]">Real BMI Health Computing Labs</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">100 Montgomery St, Suite 1400</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">San Francisco, CA 94104, USA</p>
+                </div>
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Support Hours &amp; Response</p>
+                  <p class="mt-2 text-sm sm:text-base font-bold text-[var(--foreground)] block">
+                    Mon–Fri: 9:00 AM – 5:00 PM PST
+                  </p>
+                  <p class="text-xs text-[var(--muted-foreground)] mt-1">Secure form submission &bull; Zero PII exposure</p>
+                  <p class="text-xs text-emerald-400 font-semibold mt-0.5">Response within 24–48 hours</p>
                 </div>
               </div>
 
               <!-- Interactive Contact Form -->
-              <ContactForm lang="en" />
+              <div id="contact-form">
+                <ContactForm lang="en" />
+              </div>
 
               <!-- Guidance & Editorial Sections -->
               <div class="space-y-6 pt-4 border-t border-[var(--border)]">
@@ -85,18 +113,23 @@ const contactSchema = {
                   </div>
                 
                   <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">4. Privacy & Email Communications</h2>
-                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Any correspondence sent to our support inbox is treated with strict confidentiality. We do not sell or share contact email addresses with external marketing networks, and correspondence is retained solely to assist in resolving your query.</p>
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">4. Privacy & Secure Communications</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Any correspondence sent to our support desk is treated with strict confidentiality. We do not sell or share contact information with external marketing networks, and correspondence is retained solely to assist in resolving your query.</p>
                   </div>
                 
                   <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
                     <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">5. Calculator Embedding & API Integrations</h2>
-                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">If you operate a health, fitness, or educational website and wish to embed our interactive calculators or link to our reference guides, you may use our standard iframe widgets. For custom sizing or academic use, please email us with details about your publication.</p>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">If you operate a health, fitness, or educational website and wish to embed our interactive calculators or link to our reference guides, you may use our standard iframe widgets. For custom sizing or academic use, please submit an inquiry via our form.</p>
                   </div>
                 
                   <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
                     <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">6. Feedback on Medical Reference Cutoffs</h2>
                     <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">We cross-reference our tools against consensus guidelines from the WHO, CDC, NHLBI, and ICMR. If national health authorities in your region have recently published revised anthropometric guidelines, please send us the citation so our editorial board can evaluate an update.</p>
+                  </div>
+
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">7. Pre-Publication Content Review & Zero-PII Policy</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">In strict accordance with Google Publisher Policies and international privacy regulations, Real BMI enforces a comprehensive pre-publication content review and zero-PII standard across all public entries. We do not host public message boards, exposed personal contact directories, or user profiles. All inquiries submitted via our encrypted portal are handled confidentially and are never published online.</p>
                   </div>
                 
               <!-- Support FAQ Section -->
@@ -133,12 +166,26 @@ const contactSchema = {
             <!-- Sidebar Card -->
             <aside class="sticky top-28 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-4">
               <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Official Channel</p>
-              <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight">Electronic Mail</h2>
-              <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">Click the address below to open your preferred email application with our support destination pre-configured.</p>
+              <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight">Verified Portal</h2>
+              <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">Submit your technical inquiries, bug reports, and formula citations through our encrypted submission portal with zero public PII exposure.</p>
               <div class="pt-4">
-                <a href="#contact-form" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 px-6 py-4 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-white shadow-xs">
-                  <span>support</span><span>&#64;</span><span>realbmicalculator.com</span>
+                <a href="#contact-form" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 px-6 py-4 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-white shadow-xs min-h-[48px]">
+                  Launch Contact Form →
                 </a>
+              </div>
+              <div class="pt-4 border-t border-[var(--border)]/60 space-y-2 text-xs text-[var(--muted-foreground)]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span>100% Encrypted Web Transmission</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span>Zero Public PII Exposure Protocol</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span>Response within 24–48 Business Hours</span>
+                </div>
               </div>
             </aside>
           </div>

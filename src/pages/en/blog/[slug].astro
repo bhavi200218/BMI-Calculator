@@ -3,6 +3,7 @@ import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import PageShell from '../../../components/PageShell.astro';
 import BlogRelatedCalculators from '../../../components/BlogRelatedCalculators.astro';
+import MedicalEEATBanner from '../../../components/MedicalEEATBanner.astro';
 import { blogArticles } from '../../../utils/blogArticles';
 import { getBlogCta } from '../../../utils/blogRelatedTools';
 
@@ -112,6 +113,10 @@ const dateModified = article.dateModified || "2026-10-21";
         </div>
 
         <BlogRelatedCalculators articleSlug={slug as string} lang={lang} />
+
+        <div class="mt-12 not-prose">
+          <MedicalEEATBanner lang={lang} />
+        </div>
       </article>
     </PageShell>
 </Layout>

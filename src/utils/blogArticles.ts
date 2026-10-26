@@ -4,6 +4,7 @@ import { asianBmiArticles } from './articles/asianBmiArticles';
 import { bodyCompArticles } from './articles/bodyCompArticles';
 import { metabolismArticles } from './articles/metabolismArticles';
 import { nutritionAndFitnessArticles } from './articles/nutritionAndFitnessArticles';
+import { guidelinesAndStrategiesArticles } from './articles/guidelinesAndStrategiesArticles';
 
 export type { BlogArticleData };
 
@@ -13,4 +14,5 @@ export const blogArticles: Record<string, BlogArticleData> = {
   ...bodyCompArticles,
   ...metabolismArticles,
   ...nutritionAndFitnessArticles,
+  ...guidelinesAndStrategiesArticles,
 };

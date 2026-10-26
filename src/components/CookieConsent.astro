@@ -335,6 +335,8 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
             var gtmScript = document.createElement('script');
             gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R';
             gtmScript.async = true;
+            gtmScript.crossOrigin = 'anonymous';
+            gtmScript.referrerPolicy = 'strict-origin-when-cross-origin';
             document.head.appendChild(gtmScript);
           }
         }
@@ -385,12 +387,18 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
     // Initialize state
     var currentPrefs = getStoredPreferences();
     if (!currentPrefs) {
-      // Show consent banner after a short delay for smooth rendering, unless Google Funding Choices CMP is active
-      setTimeout(function() {
-        if (!document.querySelector('.googlefc-consent-root') && !document.querySelector('.fc-dialog')) {
-          showBanner();
-        }
-      }, 700);
+      if (!document.querySelector('.googlefc-consent-root') && !document.querySelector('.fc-dialog')) {
+        showBanner();
+      }
+      if (typeof window.MutationObserver !== 'undefined') {
+        var fcObserver = new MutationObserver(function() {
+          if (document.querySelector('.googlefc-consent-root') || document.querySelector('.fc-dialog')) {
+            hideBanner();
+            fcObserver.disconnect();
+          }
+        });
+        fcObserver.observe(document.body || document.documentElement, { childList: true, subtree: true });
+      }
     } else {
       applyGtagConsent(currentPrefs);
     }
