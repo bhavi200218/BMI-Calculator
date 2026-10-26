@@ -86,8 +86,8 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
   },
   gender: {
     en: { name: 'Biological Profile', desc: 'Biological gender profile. Needed because body fat and calorie burn differ between men and women.', metric: 'Male / Female', imperial: 'Male / Female' },
-    es: { name: 'Sexo Biológico', desc: 'Requerido porque el sexo biológico determina la proporción de grasa esencial y la tasa metabólica basal.', metric: 'Masculino / Femenino', imperial: 'Masculino / Femenino' },
-    fr: { name: 'Sexe Biologique', desc: 'Nécessaire car le sexe biologique influence la masse grasse essentielle et le métabolisme de base.', metric: 'Homme / Femme', imperial: 'Homme / Femme' },
+    es: { name: 'Género Biológico', desc: 'Requerido porque el perfil biológico determina la proporción de grasa esencial y la tasa metabólica basal.', metric: 'Masculino / Femenino', imperial: 'Masculino / Femenino' },
+    fr: { name: 'Profil Biologique', desc: 'Nécessaire car le profil biologique influence la masse grasse essentielle et le métabolisme de base.', metric: 'Homme / Femme', imperial: 'Homme / Femme' },
     de: { name: 'Biologisches Geschlecht', desc: 'Erforderlich, da das biologische Geschlecht den essenziellen Fettanteil und den Grundumsatz bestimmt.', metric: 'Männlich / Weiblich', imperial: 'Männlich / Weiblich' },
     ko: { name: '생물학적 성별', desc: '필수 체지방 비율 및 기초 대사량 계수가 성별에 따라 다르므로 계산에 적용됩니다.', metric: '남성 / 여성', imperial: '남성 / 여성' },
     hi: { name: 'जैविक लिंग', desc: 'आवश्यक क्योंकि जैविक लिंग आवश्यक वसा अनुपात और बेसल मेटाबोलिक दर को प्रभावित करता है।', metric: 'पुरुष / महिला', imperial: 'पुरुष / महिला' }

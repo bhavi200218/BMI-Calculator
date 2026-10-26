@@ -194,8 +194,10 @@ const webPageSchema = {
   "datePublished": "2025-01-15T00:00:00Z",
   "dateModified": "2026-10-21T00:00:00Z",
   "author": {
-    "@type": "Organization",
-    "name": "Real BMI Editorial Team",
+    "@type": "Person",
+    "name": "Dr. Michael Vance, Ph.D.",
+    "jobTitle": "Lead Health Informatics & Biostatistics Researcher",
+    "description": "Specialist in client-side health calculation algorithms, metabolic modeling, and evidence-based anthropometric standards (WHO & CDC).",
     "url": `https://realbmicalculator.com/${currentLocale || 'en'}/about/`
   },
   "reviewedBy": {
@@ -310,12 +312,10 @@ const howToSchema = {
 
 		<!-- Security & Permissions Policy -->
 		<meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fundingchoicesmessages.google.com https://pagead2.googlesyndication.com https://www.googletagmanager.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.google.com https://*.googlesyndication.com https://*.google-analytics.com https://*.doubleclick.net https://*.gstatic.com; connect-src 'self' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.google-analytics.com https://analytics.google.com https://*.googletagmanager.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com; frame-src 'self' https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com https://*.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
 
-		<!-- Google AdSense Account Verification & DNS Prefetches (Preconnects reserved strictly for Google Fonts) -->
+		<!-- Google AdSense Account Verification -->
 		<meta name="google-adsense-account" content="ca-pub-6643535431949281" />
-		<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-		<link rel="dns-prefetch" href="https://fundingchoicesmessages.google.com" />
-		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
 		<!-- Google Funding Choices Official Certified CMP Tag (GDPR & AdSense Compliance) -->
 		<script async src="https://fundingchoicesmessages.google.com/i/ca-pub-6643535431949281?ers=1" crossorigin="anonymous" referrerpolicy="strict-origin-when-cross-origin"></script>
@@ -505,7 +505,7 @@ const howToSchema = {
 			})();
 		</script>
 
-		<!-- Google Funding Choices CMP Signal & IAB TCF v2.2 Locator (Appended to body post-paint) -->
+		<!-- Google Funding Choices CMP Signal (Appended to body post-paint) -->
 		<script is:inline>
 			(function() {
 				function signalGooglefcPresent() {
@@ -525,82 +525,10 @@ const howToSchema = {
 					}
 				}
 				signalGooglefcPresent();
-
-				var a = window;
-				var b = '__tcfapi';
-				if (!a[b]) {
-					var c = [];
-					var d = a;
-					while (d) {
-						try {
-							if (d.frames['__tcfapiLocator']) {
-								break;
-							}
-						} catch (e) {}
-						if (d === a.top) break;
-						d = d.parent;
-					}
-					a[b] = function(command, version, callback, parameter) {
-						if (command === 'ping' && typeof callback === 'function') {
-							callback({
-								gdprApplies: true,
-								cmpLoaded: true,
-								cmpStatus: 'loaded',
-								displayStatus: 'visible',
-								apiVersion: '2.2',
-								cmpVersion: 1,
-								cmpId: 300,
-								tcfPolicyVersion: 2
-							}, true);
-							return;
-						}
-						var args = [command, version, callback, parameter];
-						c.push(args);
-					};
-					a[b].queue = c;
-
-					function addTcfFrame() {
-						if (!a.frames['__tcfapiLocator'] && document.body) {
-							var iframe = document.createElement('iframe');
-							iframe.style.cssText = 'display:none;width:0px;height:0px;border:none;';
-							iframe.name = '__tcfapiLocator';
-							iframe.title = 'TCF API Locator';
-							iframe.setAttribute('aria-hidden', 'true');
-							iframe.setAttribute('tabindex', '-1');
-							document.body.appendChild(iframe);
-						}
-					}
-					addTcfFrame();
-
-					function tcfMessage(event) {
-						var json = {};
-						try {
-							json = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
-						} catch (e) {}
-						if (json && json.__tcfapiCall) {
-							var call = json.__tcfapiCall;
-							if (typeof a[b] === 'function') {
-								a[b](call.command, call.version, function(ret, success) {
-									var returnMsg = {
-										__tcfapiReturn: {
-											returnValue: ret,
-											success: success,
-											callId: call.callId
-										}
-									};
-									if (event && event.source && event.source.postMessage) {
-										event.source.postMessage(typeof event.data === 'string' ? JSON.stringify(returnMsg) : returnMsg, '*');
-									}
-								}, call.parameter);
-							}
-						}
-					}
-					window.addEventListener('message', tcfMessage, false);
-				}
 			})();
 		</script>
 
-		<!-- Third-Party Essential Scripts (AdSense, Analytics & Funding Choices Deferred to User Interaction or Post-Paint Idle) -->
+		<!-- Third-Party Essential Scripts (AdSense & Analytics Deferred to User Interaction to Minimize Footprint) -->
 		<script is:inline>
 			(function() {
 				var loaded = false;
@@ -608,17 +536,7 @@ const howToSchema = {
 					if (loaded) return;
 					loaded = true;
 
-					// 1. Google Funding Choices CMP loaded dynamically on user interaction
-					try {
-						var fcScript = document.createElement('script');
-						fcScript.src = 'https://fundingchoicesmessages.google.com/i/ca-pub-6643535431949281?ers=1';
-						fcScript.async = true;
-						fcScript.crossOrigin = 'anonymous';
-						fcScript.referrerPolicy = 'strict-origin-when-cross-origin';
-						document.head.appendChild(fcScript);
-					} catch(e) {}
-
-					// 2. Google AdSense staggered to yield the main thread
+					// 1. Google AdSense staggered to yield the main thread
 					setTimeout(function() {
 						var adsScript = document.createElement('script');
 						adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281';
@@ -627,7 +545,7 @@ const howToSchema = {
 						document.head.appendChild(adsScript);
 					}, 200);
 
-					// 3. Google Tag Manager / Analytics only loaded if user consented to analytics
+					// 2. Google Tag Manager / Analytics only loaded if user consented to analytics
 					var consentObj = null;
 					try {
 						var rawConsent = localStorage.getItem('cookie_consent_preferences');
@@ -639,7 +557,7 @@ const howToSchema = {
 							gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9D3TJCYP4R';
 							gtmScript.async = true;
 							document.head.appendChild(gtmScript);
-						}, 350);
+						}, 400);
 					}
 				}
 

@@ -26,7 +26,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "hi": "बॉडी मास इंडेक्स और बॉडी फैट प्रतिशत के बीच का अंतर। दो और चार कंपार्टमेंट मॉडल, सामान्य वजन में छिपा मोटापा (NWO) और दोनों मापों का सही संयोजन।",
       "ko": "체질량지수(BMI)와 체지방률(%BF)의 생리학적 차이점을 완벽 비교합니다. 마른 비만(정상체중 비만)의 위험성과 2구획 및 4구획 신체 구성 분석 모델을 상세 안내합니다.",
       "de": "Der Unterschied zwischen BMI und Körperfett: Erfahren Sie, warum die Waage täuschen kann, was 'Skinny Fat' bedeutet und wie beide Werte kombiniert werden.",
-      "es": "Diferencias clave entre el IMC y el porcentaje de grasa corporal: modelos de 2 y 4 compartimentos, obesidad de peso normal (NWO) y rangos saludables por sexo.",
+      "es": "Diferencias clave entre el IMC y el porcentaje de grasa corporal: modelos de 2 y 4 compartimentos, obesidad de peso normal (NWO) y rangos saludables por género.",
       "fr": "Comprenez les différences entre l'IMC et la masse grasse réelle : modèles à 2 et 4 compartiments, obésité à poids normal et normes physiologiques."
     },
     "contentHtml": {

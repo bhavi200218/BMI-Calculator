@@ -991,7 +991,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "hi": "शारीरिक अंतर और फैट वितरण",
       "ko": "성별 신체 지표",
       "de": "Geschlecht & Fettverteilung",
-      "es": "Diferencias de Sexo y Grasa",
+      "es": "Diferencias de Género y Grasa",
       "fr": "Différences Hommes-Femmes"
     },
     "description": {
@@ -1107,7 +1107,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>World Health Organization. <em>Waist circumference and waist-hip ratio: report of a WHO expert consultation.</em> Geneva, 2011.</li>
-        <li>Karastergiou K, Smith SR, Davis AS, Fried SK. <em>Sex differences in human adipose tissue - the biology of gynoid and android fat.</em> Biology of Adipose Tissue Differences 2012; 3:13.</li>
+        <li>Karastergiou K, Smith SR, Davis AS, Fried SK. <em>Biological differences in human adipose tissue - the biology of gynoid and android fat.</em> Biology of Adipose Tissue Differences 2012; 3:13.</li>
         <li>Alberti KG, Eckel RH, Grundy SM, et al. <em>Harmonizing the metabolic syndrome.</em> Circulation 2009; 120(16):1640-1645.</li>
       </ul>
 `,

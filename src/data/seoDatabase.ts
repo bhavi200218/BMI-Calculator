@@ -2657,7 +2657,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "¿Cómo calcular el BMR en kg y cm en línea?",
-          "answer": "Introduce tu peso en kilogramos (kg) y tu altura en centímetros (cm) junto con tu edad y sexo en nuestra calculadora para obtener tu estimación instantánea de gasto calórico en reposo."
+          "answer": "Introduce tu peso en kilogramos (kg) y tu altura en centímetros (cm) junto con tu edad y género en nuestra calculadora para obtener tu estimación instantánea de gasto calórico en reposo."
         }
       ]
     },
@@ -2955,7 +2955,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "¿Cómo calcular el TDEE en línea según edad, altura (cm) y peso (kg)?",
-          "answer": "Introduce tu edad, sexo, peso en kg y altura en cm. Primero se determina tu BMR mediante la ecuación Mifflin-St Jeor y luego se multiplica por tu factor de actividad física para obtener el gasto energético diario total."
+          "answer": "Introduce tu edad, género, peso en kg y altura en cm. Primero se determina tu BMR mediante la ecuación Mifflin-St Jeor y luego se multiplica por tu factor de actividad física para obtener el gasto energético diario total."
         },
         {
           "question": "¿Cuál es la diferencia entre BMR y TDEE?",
@@ -3305,7 +3305,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "¿Cómo calcular las calorías de mantenimiento según edad, altura (cm) y peso (kg)?",
-          "answer": "Introduce tu edad, sexo biológico, altura (cm), peso (kg) y nivel de actividad semanal para estimar tu línea base de calorías de mantenimiento."
+          "answer": "Introduce tu edad, género biológico, altura (cm), peso (kg) y nivel de actividad semanal para estimar tu línea base de calorías de mantenimiento."
         },
         {
           "question": "¿Qué sucede si consumo mis calorías de mantenimiento todos los días?",
@@ -3645,7 +3645,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Categoría / Nivel 5",
           "col2": "Men: ≥ 25% | Women: ≥ 32%",
-          "col3": "Categoría de referencia de mayor grasa corporal; varía según edad y sexo"
+          "col3": "Categoría de referencia de mayor grasa corporal; varía según edad y género"
         }
       ],
       "faqs": [
@@ -4183,11 +4183,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "faqs": [
         {
           "question": "¿Qué es una calculadora de peso ideal (IBW)?",
-          "answer": "Es una herramienta que estima rangos de peso objetivo según la altura y el sexo biológico utilizando fórmulas clásicas como Devine, Robinson y Miller."
+          "answer": "Es una herramienta que estima rangos de peso objetivo según la altura y el género biológico utilizando fórmulas clásicas como Devine, Robinson y Miller."
         },
         {
           "question": "¿Cuál es mi peso ideal para mi altura en kg o libras?",
-          "answer": "Introduce tu altura y sexo. Por ejemplo, para un hombre de 178 cm, la fórmula de Devine estima un peso de referencia cercano a 73 kg."
+          "answer": "Introduce tu altura y género. Por ejemplo, para un hombre de 178 cm, la fórmula de Devine estima un peso de referencia cercano a 73 kg."
         },
         {
           "question": "¿Por qué existen diferentes fórmulas para hombres y mujeres?",

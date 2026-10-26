@@ -208,8 +208,8 @@ const EXAMPLES: Record<string, ToolData> = {
   'bmr-calculator': {
     inputs: {
       en: [{ label: "Gender Profile", value: "Male" }, { label: "Age", value: "30 years" }, { label: "Weight", value: "75.0 kg" }, { label: "Height", value: "180.0 cm" }],
-      es: [{ label: "Sexo Biológico", value: "Masculino" }, { label: "Edad", value: "30 años" }, { label: "Peso", value: "75.0 kg" }, { label: "Estatura", value: "180.0 cm" }],
-      fr: [{ label: "Sexe Biologique", value: "Homme" }, { label: "Âge", value: "30 ans" }, { label: "Poids", value: "75,0 kg" }, { label: "Taille", value: "180,0 cm" }],
+      es: [{ label: "Género Biológico", value: "Masculino" }, { label: "Edad", value: "30 años" }, { label: "Peso", value: "75.0 kg" }, { label: "Estatura", value: "180.0 cm" }],
+      fr: [{ label: "Profil Biologique", value: "Homme" }, { label: "Âge", value: "30 ans" }, { label: "Poids", value: "75,0 kg" }, { label: "Taille", value: "180,0 cm" }],
       de: [{ label: "Geschlecht", value: "Männlich" }, { label: "Alter", value: "30 Jahre" }, { label: "Gewicht", value: "75,0 kg" }, { label: "Größe", value: "180,0 cm" }],
       ko: [{ label: "성별", value: "남성" }, { label: "나이", value: "30세" }, { label: "체중", value: "75.0 kg" }, { label: "신장", value: "180.0 cm" }],
       hi: [{ label: "लिंग", value: "पुरुष" }, { label: "आयु", value: "30 वर्ष" }, { label: "वजन", value: "75.0 किग्रा" }, { label: "ऊंचाई", value: "180.0 सेमी" }]
@@ -388,8 +388,8 @@ const EXAMPLES: Record<string, ToolData> = {
   'body-fat-calculator': {
     inputs: {
       en: [{ label: "Gender Profile", value: "Male" }, { label: "Height", value: "178.0 cm" }, { label: "Neck Circumference", value: "38.0 cm" }, { label: "Waist Circumference", value: "86.0 cm" }],
-      es: [{ label: "Sexo", value: "Masculino" }, { label: "Estatura", value: "178.0 cm" }, { label: "Cuello", value: "38.0 cm" }, { label: "Cintura", value: "86.0 cm" }],
-      fr: [{ label: "Sexe", value: "Homme" }, { label: "Taille", value: "178,0 cm" }, { label: "Cou", value: "38,0 cm" }, { label: "Tour de Taille", value: "86,0 cm" }],
+      es: [{ label: "Género", value: "Masculino" }, { label: "Estatura", value: "178.0 cm" }, { label: "Cuello", value: "38.0 cm" }, { label: "Cintura", value: "86.0 cm" }],
+      fr: [{ label: "Genre", value: "Homme" }, { label: "Taille", value: "178,0 cm" }, { label: "Cou", value: "38,0 cm" }, { label: "Tour de Taille", value: "86,0 cm" }],
       de: [{ label: "Geschlecht", value: "Männlich" }, { label: "Körpergröße", value: "178,0 cm" }, { label: "Nackenumfang", value: "38,0 cm" }, { label: "Taillenumfang", value: "86,0 cm" }],
       ko: [{ label: "성별", value: "남성" }, { label: "신장", value: "178.0 cm" }, { label: "목둘레", value: "38.0 cm" }, { label: "허리둘레", value: "86.0 cm" }],
       hi: [{ label: "लिंग", value: "पुरुष" }, { label: "ऊंचाई", value: "178.0 सेमी" }, { label: "गर्दन", value: "38.0 सेमी" }, { label: "कमर", value: "86.0 सेमी" }]
@@ -586,8 +586,8 @@ const EXAMPLES: Record<string, ToolData> = {
   'ideal-weight-calculator': {
     inputs: {
       en: [{ label: "Gender Profile", value: "Male" }, { label: "Height", value: "178.0 cm (5'10\")" }],
-      es: [{ label: "Sexo Biológico", value: "Masculino" }, { label: "Estatura", value: "178.0 cm (5'10\")" }],
-      fr: [{ label: "Sexe Biologique", value: "Homme" }, { label: "Taille", value: "178,0 cm (5'10\")" }],
+      es: [{ label: "Género Biológico", value: "Masculino" }, { label: "Estatura", value: "178.0 cm (5'10\")" }],
+      fr: [{ label: "Profil Biologique", value: "Homme" }, { label: "Taille", value: "178,0 cm (5'10\")" }],
       de: [{ label: "Geschlecht", value: "Männlich" }, { label: "Körpergröße", value: "178,0 cm (5'10\")" }],
       ko: [{ label: "생물학적 성별", value: "남성" }, { label: "신장", value: "178.0 cm (5'10\")" }],
       hi: [{ label: "जैविक लिंग", value: "पुरुष" }, { label: "ऊंचाई", value: "178.0 सेमी (5'10\")" }]

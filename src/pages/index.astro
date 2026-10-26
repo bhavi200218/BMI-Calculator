@@ -40,8 +40,9 @@ const currentYear = new Date().getFullYear();
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
   <link rel="shortcut icon" href="/favicon.ico?v=2" />
 
-  <!-- Permissions Policy -->
+  <!-- Permissions Policy & Content Security Policy -->
   <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fundingchoicesmessages.google.com https://pagead2.googlesyndication.com https://www.googletagmanager.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.google.com https://*.googlesyndication.com https://*.google-analytics.com https://*.doubleclick.net https://*.gstatic.com; connect-src 'self' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.google-analytics.com https://analytics.google.com https://*.googletagmanager.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com; frame-src 'self' https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com https://*.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
 
   <!-- Google AdSense Account Verification -->
   <meta name="google-adsense-account" content="ca-pub-6643535431949281" />
