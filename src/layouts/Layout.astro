@@ -31,18 +31,18 @@ function getHtmlLength(str: string): number {
 function sanitizeSeoTitle(rawTitle: string): string {
 	if (!rawTitle) return "Real BMI Calculator";
 	let clean = rawTitle.replace(/\s+/g, ' ').trim();
-	if (getHtmlLength(clean) <= 65) return clean;
+	if (getHtmlLength(clean) <= 60 && clean.length <= 60) return clean;
 
-	// 1. If removing " | Real BMI" or " — Real BMI" brings it <= 65, do that
+	// 1. If removing " | Real BMI" or " — Real BMI" brings it <= 60, do that
 	const withoutBrand = clean.replace(/\s*([\|\—–\-]\s*Real BMI(\s*Online)?)\s*$/i, '').trim();
-	if (getHtmlLength(withoutBrand) <= 65 && withoutBrand.length >= 15) return withoutBrand;
+	if (getHtmlLength(withoutBrand) <= 60 && withoutBrand.length <= 60 && withoutBrand.length >= 15) return withoutBrand;
 
-	// 2. Otherwise trim intelligently at word boundary before 65
+	// 2. Otherwise trim intelligently at word boundary before 60
 	let base = withoutBrand.length >= 15 ? withoutBrand : clean;
-	if (getHtmlLength(base) <= 65) return base;
+	if (getHtmlLength(base) <= 60 && base.length <= 60) return base;
 
-	// Cut cleanly at last word boundary where HTML length <= 65
-	while (base.length > 10 && getHtmlLength(base) > 65) {
+	// Cut cleanly at last word boundary where HTML length <= 60 and raw length <= 60
+	while (base.length > 10 && (getHtmlLength(base) > 60 || base.length > 60)) {
 		const lastSpace = base.lastIndexOf(' ');
 		if (lastSpace > 15) {
 			base = base.slice(0, lastSpace).replace(/[,;:\-\—–\s|/]+$/, '').trim();
@@ -321,7 +321,7 @@ const howToSchema = {
 
 		<!-- Security & Permissions Policy -->
 		<meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.googletagmanager.com https://ep2.adtrafficquality.google; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://pagead2.googlesyndication.com https://*.doubleclick.net https://*.google-analytics.com https://*.googlesyndication.com https://www.google.com https://www.gstatic.com; connect-src 'self' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://www.googletagmanager.com https://ep2.adtrafficquality.google https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; frame-src 'self' https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com https://www.google.com; worker-src 'self' blob:; manifest-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.googletagmanager.com https://ep2.adtrafficquality.google https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://pagead2.googlesyndication.com https://*.doubleclick.net https://*.google-analytics.com https://*.googlesyndication.com https://www.google.com https://www.gstatic.com; connect-src 'self' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://www.googletagmanager.com https://ep2.adtrafficquality.google https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://cloudflareinsights.com; frame-src 'self' https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com https://www.google.com; worker-src 'self' blob:; manifest-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
 
 		<!-- Google AdSense Account Verification -->
 		<meta name="google-adsense-account" content="ca-pub-6643535431949281" />
