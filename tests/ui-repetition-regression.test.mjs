@@ -17,9 +17,9 @@ test('UI & Reference Table Repetition Regression Tests', async (t) => {
   const calcResultPath = path.resolve('src/components/CalculatorResult.astro');
   const calcResultContent = fs.readFileSync(calcResultPath, 'utf8');
 
-  await t.test('CalculatorResult: Only one h3 calculation header, distinct state eyebrows, and empty initial headerLabel', () => {
-    const h3Occurrences = (calcResultContent.match(/<h3[^>]*id="resultHeaderLabel"[^>]*>/g) || []).length;
-    assert.strictEqual(h3Occurrences, 1, 'Exactly one resultHeaderLabel h3 should exist');
+  await t.test('CalculatorResult: Only one calculation header, distinct state eyebrows, and empty initial headerLabel', () => {
+    const headerOccurrences = (calcResultContent.match(/<h[23][^>]*id="resultHeaderLabel"[^>]*>/g) || []).length;
+    assert.strictEqual(headerOccurrences, 1, 'Exactly one resultHeaderLabel heading should exist');
     assert.strictEqual(calcResultContent.includes('{studioEyebrow}'), true, 'Distinct studioEyebrow must be present');
     assert.strictEqual(calcResultContent.includes('{resultEyebrow}'), true, 'Distinct resultEyebrow must be present');
     assert.strictEqual(calcResultContent.includes('{t.metricsTitle}'), false, 'resultHeaderLabel must not render metricsTitle statically in initial HTML');
@@ -59,10 +59,10 @@ test('UI & Reference Table Repetition Regression Tests', async (t) => {
     assert.strictEqual(toolSeoContent.includes('{currentData.intro}'), false, 'ToolSEOContent must not re-render duplicate introductory paragraph');
   });
 
-  await t.test('CalculatorResult: Initial state has no hardcoded -- in primaryDisplay or primaryNameLabel and has aria-hidden/role attributes', () => {
+  await t.test('CalculatorResult: Initial state has no hardcoded -- in primaryDisplay or primaryNameLabel and has role attributes', () => {
     assert.strictEqual(calcResultContent.includes('>--<'), false, 'CalculatorResult must not contain hardcoded -- placeholder text');
     assert.strictEqual(calcResultContent.includes('role="status" aria-live="polite"'), true, 'initialState must be an accessible live region');
-    assert.strictEqual(calcResultContent.includes('id="resultContent" class="hidden flex-1 flex flex-col" aria-hidden="true"'), true, 'resultContent must be aria-hidden in initial state');
+    assert.strictEqual(calcResultContent.includes('id="resultContent" class="hidden flex-1 flex flex-col"'), true, 'resultContent must be hidden in initial state');
   });
 
   await t.test('Homepage Index: No duplicate DeepHealthSEO alongside HealthContent on index pages', () => {

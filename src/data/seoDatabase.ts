@@ -2421,47 +2421,65 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     },
     "de": {
-      "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Asiatischer BMI Rechner – WHO Asien-Referenzstandards",
-      "intro": "Kostenloser asiatischer BMI-Rechner basierend auf den überarbeiteten WHO-Asien-Schwellenwerten (Normal: 18,5-22,9, Übergewicht: 23,0-27,4, Adipositas: ≥ 27,5 kg/m²). Berechnen Sie Ihren asiatischen BMI-Wert datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "Asian BMI = kg / m²",
-      "tableTitle": "WHO Asien-Pazifik Erwachsenen-BMI-Skala & Klassifizierungsmatrix",
+      "eyebrow": "WHO Asien-Pazifik Standards",
+      "title": "Asiatischer BMI Rechner – WHO WPRO & ICMR Klassifikation",
+      "intro": "Berechnen Sie Ihren Body-Mass-Index nach den offiziellen Leitlinien der WHO-Region Westlicher Pazifik (WPRO) und des Indian Council of Medical Research (ICMR). Asiatische Populationen weisen bereits bei niedrigeren BMI-Werten einen signifikant höheren Körperfettanteil und vermehrt viszerales Bauchfett auf, weshalb standardisierte westliche Grenzwerte das kardiometabolische Risiko unterschätzen.",
+      "formulaTitle": "Asiatische BMI-Berechnung & Spezifische Risikoschwellen",
+      "formulaDesc": "Der mathematische Quotient entspricht der Standardformel: BMI = Körpergewicht (kg) / [Körpergröße (m)]². Die klinische Besonderheit liegt in den adaptierten Schwellenwerten: Bereits ab einem BMI von 23,0 kg/m² gilt eine Person in asiatischen Leitlinien als übergewichtig (erhöhtes Risiko für Typ-2-Diabetes), und ab 27,5 kg/m² liegt Adipositas vor.",
+      "formulaCode": "BMI = kg / m² (Asien-Aktionspunkte: 23,0 & 27,5)",
+      "tableTitle": "WHO WPRO Klassifikationsmatrix für asiatische Erwachsene",
       "tableRows": [
         {
           "col1": "Untergewicht",
           "col2": "< 18.5 kg/m²",
-          "col3": "Referenzwert für Untergewicht (< 18.5 kg/m²)"
+          "col3": "Erhöhtes Risiko für Nährstoffmangel, Osteoporose und Infektanfälligkeit"
         },
         {
           "col1": "Normalgewicht (Asiatischer Standard)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Gesunder Gewichtsbereich für asiatische Erwachsene"
+          "col3": "Optimaler Gesundheitsbereich mit niedrigstem kardiometabolischem Grundrisiko"
         },
         {
-          "col1": "Übergewicht / Erhöhtes Risiko",
-          "col2": "23.0 – 27.4 kg/m²",
-          "col3": "Schwellenwert für asiatische Risikoprävention"
+          "col1": "Übergewicht / Warnstufe 1",
+          "col2": "23.0 – 24.9 kg/m²",
+          "col3": "Früher Interventionspunkt für Insulinresistenz, Hypertonie und Fettleber (NAFLD)"
         },
         {
-          "col1": "Adipositas (Hohes Risiko)",
-          "col2": "≥ 27.5 kg/m²",
-          "col3": "Adipositas-Klassifikation mit hohem Risiko für asiatische Erwachsene"
+          "col1": "Prä-Adipositas / Warnstufe 2",
+          "col2": "25.0 – 27.4 kg/m²",
+          "col3": "Moderat erhöhtes kardiometabolisches und atherosklerotisches Gefäßrisiko"
+        },
+        {
+          "col1": "Adipositas Grad I (Hohes Risiko)",
+          "col2": "27.5 – 32.4 kg/m²",
+          "col3": "Deutlich erhöhtes Risiko für Typ-2-Diabetes und koronare Herzkrankheit"
+        },
+        {
+          "col1": "Adipositas Grad II (Schweres Risiko)",
+          "col2": "≥ 32.5 kg/m²",
+          "col3": "Schwere metabolische Belastung mit dringender multidisziplinärer Interventionsindikation"
         }
       ],
       "faqs": [
         {
-          "question": "Wie funktioniert der Rechner für asiatischen BMI und was misst er?",
-          "answer": "Dieser Rechner wertet Ihre persönlichen Angaben anhand validierter Formeln aus. Er bietet eine lehrreiche Orientierungshilfe zur besseren Einordnung Ihrer Werte."
+          "question": "Warum gelten für asiatische Erwachsene strengere BMI-Grenzwerte als für Europäer?",
+          "answer": "Epidemiologische Studien der WHO belegen, dass Menschen asiatischer Abstammung bei gleichem BMI einen um 3 bis 5 Prozentpunkte höheren Körperfettanteil und signifikant mehr stoffwechselaktives viszerales Bauchfett aufweisen als Kaukasier. Dadurch treten kardiovaskuläre Erkrankungen und Typ-2-Diabetes bereits ab einem BMI von 23,0 kg/m² gehäuft auf."
         },
         {
-          "question": "Was ist ein normaler BMI für asiatische Erwachsene?",
-          "answer": "Für asiatische Erwachsene liegt ein normaler gesunder BMI-Bereich zwischen 18,5 und 22,9 kg/m²."
+          "question": "Was ist der Unterschied zwischen den Richtlinien der WHO WPRO und des ICMR für Indien?",
+          "answer": "Die WHO WPRO definiert für Ost- und Südostasien (China, Japan, Korea) Übergewicht ab 23,0 kg/m² und Adipositas ab 27,5 kg/m². Das Indian Council of Medical Research (ICMR) setzt für Südasien und Indien noch strengere Maßstäbe an: Übergewicht ab 23,0 kg/m² und Adipositas bereits ab 25,0 kg/m²."
         },
         {
-          "question": "Ab welchem BMI gilt man in asiatischen Populationen als übergewichtig?",
-          "answer": "Nach den Asien-Pazifik-Kriterien der WHO gilt ein BMI von 23,0 kg/m² oder höher als Übergewicht."
+          "question": "Ab welchem BMI-Wert beginnt bei asiatischen Populationen das Risiko für Typ-2-Diabetes?",
+          "answer": "Klinische Daten zeigen, dass das relative Risiko für Insulinresistenz und Typ-2-Diabetes bei Asiaten bereits in der Übergewichtszone zwischen 23,0 und 24,9 kg/m² steil ansteigt, weshalb die WHO diesen Bereich als primären 'Action Trigger' für Lebensstilinterventionen empfiehlt."
+        },
+        {
+          "question": "Welche Rolle spielt der Taillenumfang bei der asiatischen BMI-Beurteilung?",
+          "answer": "Der Taillenumfang ist für asiatische Patienten ein entscheidender komplementärer Marker. Laut ICMR und WHO WPRO liegt das Risiko für zentrale Adipositas bei asiatischen Männern bereits ab 90 cm Taillenumfang und bei asiatischen Frauen ab 80 cm vor (im Vergleich zu 102 cm / 88 cm in westlichen Standards)."
+        },
+        {
+          "question": "Warum kann eine schlank wirkende asiatische Person trotzdem metabolisch gefährdet sein (TOFI-Phänotyp)?",
+          "answer": "Der TOFI-Phänotyp ('Thin on the Outside, Fat on the Inside') beschreibt Personen mit normalem oder niedrigem BMI, die dennoch unbemerkt gefährliches Fett um innere Organe wie Leber und Bauchspeicheldrüse anlagern. Regelmäßige Stoffwechsel-Screenings (Blutzucker, Blutfette) sind daher auch bei normalem BMI ratsam."
         }
       ]
     },
@@ -7058,53 +7076,65 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ]
     },
     "de": {
-      "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "1RM-Rechner – Maximalgewicht für Bankdrücken & Kniebeugen",
-      "intro": "Kostenloser 1RM-Rechner (Maximalkraft-Rechner). Berechnen Sie Ihre Maximalkraft für eine Wiederholung, Gewichtheber-Prozentwerte und Wiederholungs-Benchmarks mit Epley und Brzycki datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "Epley 1RM = W × (1 + R / 30)",
-      "tableTitle": "1RM-Prozentsatz-Intensitäts- und Wiederholungstabelle",
+      "eyebrow": "Kraftsport & Trainingswissenschaft",
+      "title": "1RM-Rechner – Maximalkraft für Bankdrücken, Kniebeugen & Kreuzheben",
+      "intro": "Ermitteln Sie Ihre One-Repetition-Maximum (1RM) Kraftleistung wissenschaftlich präzise ohne riskante Maximalversuche. Unser evidenzbasierter Rechner verwendet die validierten submaximalen Formeln nach Epley und Brzycki, um Ihr theoretisches Maximalgewicht für Grundübungen und Krafttrainingspläne exakt zu berechnen.",
+      "formulaTitle": "Submaximale 1RM-Formeln nach Epley & Brzycki",
+      "formulaDesc": "Die Epley-Gleichung berechnet das geschätzte Maximalgewicht: 1RM = Gewicht × (1 + Wiederholungen / 30). Die Brzycki-Gleichung liefert eine alternative Referenz: 1RM = Gewicht × [36 / (37 - Wiederholungen)]. Beide Formeln erzielen die höchste Validität im Wiederholungsbereich von 2 bis 6 Wiederholungen mit sauberer Ausführung.",
+      "formulaCode": "Epley: 1RM = W × (1 + R / 30) | Brzycki: 1RM = W × (36 / (37 - R))",
+      "tableTitle": "Trainingsintensitäts-Zonen & Wiederholungsbereiche basierend auf 1RM",
       "tableRows": [
         {
           "col1": "100% 1RM Maximalkraft",
-          "col2": "1 Repetition",
-          "col3": "Maximale Kraftleistung (100% 1RM)"
+          "col2": "1 Wiederholung",
+          "col3": "Absolute Maximalkraft (Wettkampf- und Testgewicht für Einzelversuche)"
         },
         {
-          "col1": "95% 1RM Schwere Last",
-          "col2": "2 Repetitions",
-          "col3": "Schwere Krafttraining-Belastung (95% 1RM)"
+          "col1": "90% 1RM Schwere Last",
+          "col2": "3 bis 4 Wiederholungen",
+          "col3": "Schwere neuronale Kraftentwicklung und maximale myofibrilläre Rekrutierung"
         },
         {
-          "col1": "90% 1RM Kraftaufbau",
-          "col2": "3 Repetitions",
-          "col3": "Kraftsätze für Maximalkraft (93% 1RM)"
+          "col1": "85% 1RM Kraftaufbau",
+          "col2": "5 bis 6 Wiederholungen",
+          "col3": "Klassischer Kraftaufbau und funktionelle Hypertrophie (z.B. 5x5-Systeme)"
         },
         {
-          "col1": "85% 1RM Muskelaufbau",
-          "col2": "5 Repetitions",
-          "col3": "Bereich für schweren Kraftaufbau (87% 1RM)"
+          "col1": "80% 1RM Muskelaufbau",
+          "col2": "7 bis 8 Wiederholungen",
+          "col3": "Optimales Muskelaufbautraining und sarkoplasmatische Hypertrophie"
         },
         {
-          "col1": "80% 1RM Hypertrophie",
-          "col2": "7 Repetitions",
-          "col3": "Bereich für Muskelaufbau (80% 1RM)"
+          "col1": "75% 1RM Volumen-Hypertrophie",
+          "col2": "9 bis 10 Wiederholungen",
+          "col3": "Volumen-Hypertrophie, metabolischer Stress und muskuläre Ermüdungstoleranz"
         },
         {
-          "col1": "75% 1RM Kraftausdauer",
-          "col2": "10 Repetitions",
-          "col3": "Muskelausdauer und Volumen-Hypertrophie (75% 1RM)"
+          "col1": "70% 1RM Kraftausdauer",
+          "col2": "12 bis 15 Wiederholungen",
+          "col3": "Kraftausdauer, kapilläre Vaskularisierung und biomechanische Sehnenanpassung"
         }
       ],
       "faqs": [
         {
-          "question": "Was ist das 1RM und wie wird es berechnet?",
-          "answer": "Das 1RM (One Rep Max) ist das Maximalgewicht, das Sie für eine einzelne Wiederholung mit sauberer Technik heben können. Unser Rechner nutzt die Epley-Formel, um diesen Wert sicher zu schätzen."
+          "question": "Was ist das One-Repetition-Maximum (1RM) und warum ist es für das Krafttraining wichtig?",
+          "answer": "Das One-Repetition-Maximum (1RM) definiert die maximale Last in Kilogramm, die ein Athlet für genau eine vollständige Wiederholung mit korrekter biomechanischer Technik bewältigen kann. Trainingswissenschaftler und Kraftsportler nutzen diesen Kennwert als standardisierte Bezugsgröße (100%), um gezielte Trainingszonen für Maximalkraft (85-100%), Hypertrophie (70-85%) und Kraftausdauer (50-70%) zu programmieren."
         },
         {
-          "question": "Wie funktionieren Formeln zur submaximalen 1RM-Schätzung?",
-          "answer": "Formeln wie Epley und Brzycki berechnen Ihre Maximalkraft aus leichteren Sätzen und Wiederholungszahlen, wodurch das Verletzungsrisiko minimiert wird."
+          "question": "Warum ist die submaximale Schätzung sicherer als ein echter 1RM-Maximalversuch?",
+          "answer": "Ein echter Maximalversuch bis zum Muskelversagen erzeugt enorme Scher- und Kompressionskräfte auf Gelenke, Bandscheiben und Sehnen. Die submaximale Schätzung aus 3 bis 5 Wiederholungen mit sauberer Technik minimiert das Verletzungsrisiko drastisch und liefert mathematisch verlässliche Vorhersagewerte mit über 95% Genauigkeit."
+        },
+        {
+          "question": "Bei welcher Wiederholungszahl ist die 1RM-Berechnung am präzisesten?",
+          "answer": "Wiederholungszahlen zwischen 2 und 6 Wiederholungen liefern die exaktesten Ergebnisse. Sobald ein Satz mehr als 10 Wiederholungen umfasst, verschiebt sich die muskuläre Limitierung zunehmend von der Maximalkraft zur metabolischen Laktattoleranz, was die Formelgenauigkeit verringert."
+        },
+        {
+          "question": "Wie berechnet man Trainingsgewichte anhand von 1RM-Prozentsätzen?",
+          "answer": "Multiplizieren Sie Ihr errechnetes 1RM einfach mit dem gewünschten Intensitätsprozentsatz. Wenn Ihr geschätztes 1RM im Bankdrücken 100 kg beträgt und Ihr Trainingsplan 5 Wiederholungen mit 85% Intensität vorsieht, trainieren Sie mit 85 kg (100 × 0,85 = 85 kg)."
+        },
+        {
+          "question": "Welche Aufwärmroutine wird vor einem schweren Arbeitssatz empfohlen?",
+          "answer": "Beginnen Sie mit einer leeren Hantelstange (10-15 Wiederholungen). Erhöhen Sie schrittweise das Gewicht über 3 bis 4 Sätze mit sinkenden Wiederholungszahlen (z.B. 50% für 5 Wdh, 70% für 3 Wdh, 85% für 1 Wdh). Gönnen Sie sich 2 bis 3 Minuten Pause vor dem eigentlichen Wertungssatz."
         }
       ]
     },

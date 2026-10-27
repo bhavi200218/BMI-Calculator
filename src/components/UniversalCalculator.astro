@@ -9,7 +9,8 @@ interface Props {
 }
 
 const { calculator, lang } = Astro.props;
-const t = getCalculatorTranslations(lang);
+const calcName = calculator.name[lang] || calculator.name.en;
+const t = getCalculatorTranslations(lang, calcName);
 
 // Setup localized labels
 const inputEyebrow = {
@@ -32,7 +33,14 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
     <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{inputEyebrow}</p>
     <div class="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
       <h2 class="text-xl sm:text-2xl md:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] break-words">
-        {calculator.name[lang] || calculator.name['en']}
+        {{
+          en: `${calculator.name['en']} — Inputs`,
+          es: `${calculator.name['es'] || calculator.name['en']} — Parámetros`,
+          fr: `${calculator.name['fr'] || calculator.name['en']} — Données`,
+          de: `${calculator.name['de'] || calculator.name['en']} — Eingaben`,
+          ko: `${calculator.name['ko'] || calculator.name['en']} — 측정값 입력`,
+          hi: `${calculator.name['hi'] || calculator.name['en']} — इनपुट मान`
+        }[lang] || `${calculator.name['en']} — Inputs`}
       </h2>
       <!-- Unit Toggle -->
       <div class="p-1 bg-[var(--muted)] rounded-xl border border-[var(--border)] flex shrink-0">
@@ -46,13 +54,13 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
     </div>
     <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
       {{
-        en: 'Enter your biometric values below to calculate instant results with client-side browser privacy.',
-        es: 'Introduce tus medidas a continuación para calcular resultados instantáneos con total privacidad en el navegador.',
-        fr: 'Saisissez vos mesures ci-dessous pour obtenir des résultats instantanés traités directement dans votre navigateur.',
-        de: 'Geben Sie unten Ihre Messwerte ein, um sofortige Ergebnisse mit vollständigem Datenschutz im Browser zu berechnen.',
-        ko: '개인정보 유출 없이 브라우저에서 즉시 결과를 확인하려면 아래에 신체 측정값을 입력하세요.',
-        hi: 'पूर्ण ब्राउज़र गोपनीयता के साथ तुरंत परिणाम प्राप्त करने के लिए नीचे अपने माप दर्ज करें।'
-      }[lang]}
+        en: `Enter your biometric metrics below to calculate verified ${calculator.name['en']} results instantly in your browser.`,
+        es: `Introduce tus medidas a continuación para calcular resultados verificados de ${calculator.name['es'] || calculator.name['en']} con total privacidad en el navegador.`,
+        fr: `Saisissez vos mesures ci-dessous pour calculer vos résultats validés de ${calculator.name['fr'] || calculator.name['en']} avec confidentialité totale dans votre navigateur.`,
+        de: `Geben Sie unten Ihre Messwerte ein, um fundierte Ergebnisse für ${calculator.name['de'] || calculator.name['en']} mit vollständigem Datenschutz im Browser zu berechnen.`,
+        ko: `브라우저에서 안전하게 공인된 ${calculator.name['ko'] || calculator.name['en']} 결과를 즉시 산출하려면 아래에 수치를 입력하세요.`,
+        hi: `ब्राउज़र में पूर्ण गोपनीयता के साथ ${calculator.name['hi'] || calculator.name['en']} के प्रमाणित परिणाम प्राप्त करने के लिए नीचे अपने मान दर्ज करें।`
+      }[lang] || `Enter your biometric metrics below to calculate verified results instantly in your browser.`}
     </p>
   </div>
 

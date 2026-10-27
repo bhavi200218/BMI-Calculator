@@ -132,8 +132,60 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
       <p>Les seuils abaissés de l'OMS Asie (18,5–22,9 normal, 23,0–24,9 surpoids, &ge; 25,0 obésité) permettent d'agir précocement contre l'accumulation de graisse viscérale abdominale.</p>
     `,
       "de": `
-      <h2>Asiatische BMI-Werte im Alltag praktisch nutzen</h2>
-      <p>Aufgrund der genetischen Neigung zu abdominellem Bauchfett profitieren Personen südasiatischer Herkunft von gezielten Ernährungsumstellungen und Krafttraining.</p>
+      <h2>Indische und südasiatische BMI-Standards nach ICMR und WHO</h2>
+      <p>Über Jahrzehnte hinweg bewerteten Gesundheitssysteme das Körpergewicht weltweit anhand einheitlicher WHO-Standards. Kardiologen und Diabetologen stellten jedoch fest, dass Menschen südasiatischer Herkunft (Indien, Pakistan, Bangladesch, Sri Lanka) bereits bei scheinbar völlig normalen westlichen BMI-Werten von 22 bis 24 kg/m² massiv erhöhte Raten an Typ-2-Diabetes, frühzeitiger koronarer Herzkrankheit und Fettleber aufweisen.</p>
+      <p>Um dieser genetischen und metabolischen Besonderheit Rechnung zu tragen, formulierte das Indian Council of Medical Research (ICMR) zusammen mit der WHO spezifische <strong>südasiatische Konsensus-Grenzwerte</strong>:</p>
+
+      <h2>Vergleich der BMI-Grenzwerte: Global vs. Indien / Südasien (ICMR)</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Kategorie</th>
+              <th class="p-3 text-blue-500 font-bold">Standard WHO Global (kg/m²)</th>
+              <th class="p-3 text-emerald-500 font-bold">ICMR Indien / Südasien (kg/m²)</th>
+              <th class="p-3">Klinische Relevanz für Südasiaten</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">Untergewicht</td>
+              <td class="p-3">&lt; 18,5</td>
+              <td class="p-3 text-emerald-500">&lt; 18,5</td>
+              <td class="p-3 font-sans">Nährstoffdefizit, Anämierisiko</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold text-emerald-500 font-bold">Normalgewicht</td>
+              <td class="p-3">18,5 – 24,9</td>
+              <td class="p-3 text-emerald-500 font-bold">18,5 – 22,9</td>
+              <td class="p-3 font-sans">Optimaler kardiometabolischer Bereich</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold text-amber-500 font-bold">Übergewicht</td>
+              <td class="p-3">25,0 – 29,9</td>
+              <td class="p-3 text-amber-500 font-bold">23,0 – 24,9</td>
+              <td class="p-3 font-sans">Früher Interventionspunkt für Insulinresistenz</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold text-rose-500 font-bold">Adipositas</td>
+              <td class="p-3">&ge; 30,0</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 25,0</td>
+              <td class="p-3 font-sans">Hohes Risiko für vaskuläre Komplikationen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Der 'Thin-Fat'-Phänotyp und das Y-Y-Paradoxon</h2>
+      <p>In der medizinischen Fachwelt wird die spezifische südasiatische Phänotypik häufig als <em>Thin-Fat-Syndrom</em> bezeichnet, wissenschaftlich untermauert durch das berühmte <strong>Yajnik-Yudkin-Paradoxon (Y-Y-Paradoxon)</strong>: Zwei Ärzte – einer kaukasischer, der andere indischer Herkunft – wiesen denselben BMI von 22,3 kg/m² auf. Die DEXA-Untersuchung ergab jedoch beim indischen Arzt einen Körperfettanteil von 21,2 % gegenüber lediglich 9,1 % beim kaukasischen Kollegen. Trotz schlanker Gliedmaßen speichern Menschen südasiatischer Abstammung vermehrt entzündungsförderndes Fettgewebe intraabdominal und intramuskulär.</p>
+
+      <h2>Evidenzbasierte Ernährungsempfehlungen für Südasiaten</h2>
+      <p>Um das kardiometabolische Risiko wirksam zu senken, empfehlen Diabetologen:</p>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Reduktion raffinierter Kohlenhydrate:</strong> Weißer polierter Reis, Naan-Brote und frittierte Snacks (Samosas, Pakoras) sollten durch traditionelle Hirsearten (Ragi, Jowar, Bajra) und Hülsenfrüchte ersetzt werden.</li>
+        <li><strong>Erhöhung der Proteindichte:</strong> Vegetarische Ernährungsweisen sollten gezielt mit Linsen (Dal), Kichererbsen, fettarmem Paneer, Magerquark oder Sojaprodukten angereichert werden.</li>
+        <li><strong>Regelmäßiges Muskelaufbautraining:</strong> Mindestens 2- bis 3-mal wöchentlich progressives Krafttraining zur Steigerung der GLUT-4-vermittelten Glukoseaufnahme in die Muskulatur.</li>
+      </ul>
     `,
       "ko": `
       <h2>아시아 및 인도 표준 BMI 수치의 일상 속 실천 가이드</h2>

@@ -145,8 +145,77 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       <p>L'<strong>IMC</strong> ne distingue pas le muscle de la graisse. Le <strong>taux de masse grasse</strong> est le seul indicateur capable de diagnostiquer l'obésité à poids normal.</p>
     `,
       "de": `
-      <h2>BMI im Vergleich zum Körperfettanteil</h2>
-      <p>Der BMI misst das Gesamtkörpergewicht; der Körperfettanteil isoliert das Fettgewebe von stoffwechselaktiver Muskelmasse.</p>
+      <h2>Die fundamentale Unterscheidung zwischen Gesamtgewicht und Gewebezusammensetzung</h2>
+      <p>Beim Thema Gewichtsmanagement und Körperoptimierung herrscht häufig Verwirrung zwischen dem <strong>Body-Mass-Index (BMI)</strong> und dem <strong>Körperfettanteil (%KFA)</strong>. Obwohl beide Werte als diagnostische Indikatoren genutzt werden, erfassen sie grundlegend unterschiedliche physiologische Dimensionen. Der BMI ist eine schnelle, unkomplizierte mathematische Relation zwischen Gesamtkörpergewicht und Körpergröße. Der Körperfettanteil hingegen unterteilt dieses Gesamtgewicht in physiologische Kompartimente und bestimmt exakt den Anteil des Fettgewebes im Verhältnis zur stoffwechselaktiven Magermasse.</p>
+      <p>Beide Werte gleichzusetzen, ist einer der häufigsten Fehler in Fitness und klinischer Praxis. Ein muskulöser Kraftsportler mit 10 % Körperfett kann denselben BMI von 28 kg/m² aufweisen wie ein bewegungsarmer Erwachsener mit 32 % Körperfett.</p>
+
+      <h2>Das 2-Kompartiment- und 4-Kompartiment-Modell des menschlichen Körpers</h2>
+      <p>In der Sportmedizin und Ernährungswissenschaft wird die Körperzusammensetzung anhand von Modellen quantifiziert:</p>
+      <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">Das 2-Kompartiment-Modell (2C)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-2">Unterteilt das Gesamtkörpergewicht in zwei Hauptkomponenten:</p>
+          <ul class="text-xs text-[var(--muted-foreground)] space-y-1 mt-2">
+            <li><strong>Fettmasse (FM):</strong> Essenzielle Lipide (Knochenmark, Nervensystem, Zellmembranen) und Speicherfett (subkutan und viszeral).</li>
+            <li><strong>Fettfreie Masse (FFM / Magermasse):</strong> Skelettmuskulatur, innere Organe (Herz, Leber, Nieren), Knochen und Gesamtkörperwasser.</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">Das 4-Kompartiment-Modell (4C)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-2">Der wissenschaftliche Goldstandard differenziert die Magermasse weiter in:</p>
+          <ul class="text-xs text-[var(--muted-foreground)] space-y-1 mt-2">
+            <li><strong>Gesamtkörperwasser (TBW):</strong> Intra- und extrazelluläre Flüssigkeit (~60–70% der FFM).</li>
+            <li><strong>Knochenmineralgehalt (BMC):</strong> Calciumphosphat-Matrix der Knochen.</li>
+            <li><strong>Körperzellmasse (Protein):</strong> Kontraktile Muskeleiweiße und Enzymsysteme.</li>
+            <li><strong>Speicherlipide:</strong> Subkutanes und viszerales Fettgewebe.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Vergleichsanalyse: BMI vs. Körperfettanteil</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Vergleichsparameter</th>
+              <th class="p-3 text-blue-500 font-bold">Body-Mass-Index (BMI)</th>
+              <th class="p-3 text-emerald-500 font-bold">Körperfettanteil (%KFA)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)]">
+            <tr>
+              <td class="p-3 font-semibold">Messgrundlage</td>
+              <td class="p-3">Gesamtkörpergewicht / Körpergröße² (kg/m²)</td>
+              <td class="p-3">Fettmasse geteilt durch Gesamtkörpergewicht &times; 100</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Gewebedifferenzierung</td>
+              <td class="p-3 text-rose-500 font-bold">Nein (Muskeln, Fett und Knochen werden gleich gewogen)</td>
+              <td class="p-3 text-emerald-500 font-bold">Ja (isoliert Fettgewebe von aktiver Magermasse)</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Klinischer Hauptnutzen</td>
+              <td class="p-3">Epidemiologisches Screening von Populationen, Risikotriage</td>
+              <td class="p-3">Individuelle Stoffwechselgesundheit, Sportsteuerung, Longevity</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Größte diagnostische Lücke</td>
+              <td class="p-3">Überbewertet muskulöse Athleten; übersieht Sarkopenie</td>
+              <td class="p-3">Messmethoden (Caliper, BIA, DEXA) variieren nach Hydratation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Das 'Skinny-Fat'-Phänomen: Normalgewichtige Adipositas (NWO)</h2>
+      <p>Ein unterschätztes gesundheitliches Risiko stellt die sogenannte <strong>Normalgewichtige Adipositas (Normal Weight Obesity, NWO)</strong> dar. Betroffene haben laut Waage und BMI ein scheinbar ideales Normalgewicht (18,5 bis 24,9 kg/m²). Bei genauerer bioelektrischer Impedanz- oder DEXA-Analyse zeigt sich jedoch ein gefährlich hoher Körperfettanteil (&gt; 25 % bei Männern bzw. &gt; 35 % bei Frauen) bei gleichzeitig stark unterentwickelter Muskulatur.</p>
+      <p>Kardiometabolische Studien zeigen, dass Personen mit normalgewichtiger Adipositas ein <strong>vierfach höheres Risiko für das metabolische Syndrom</strong>, erhöhte Entzündungswerte (hs-CRP) und Insulinresistenz aufweisen als normalgewichtige Personen mit gesunder Muskelmasse.</p>
+
+      <h2>Referenzbereiche für den Körperfettanteil</h2>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Männer:</strong> Essentielles Fett: 2–5 % | Athleten: 6–13 % | Fitnessbereich: 14–17 % | Durchschnitt: 18–24 % | Adipositas: &ge; 25 %</li>
+        <li><strong>Frauen:</strong> Essentielles Fett: 10–13 % | Athletinnen: 14–20 % | Fitnessbereich: 21–24 % | Durchschnitt: 25–31 % | Adipositas: &ge; 32 %</li>
+      </ul>
     `,
       "ko": `
       <h2>BMI와 체지방률의 생리학적 차이와 임상적 중요성</h2>

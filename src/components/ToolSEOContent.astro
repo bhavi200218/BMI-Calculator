@@ -152,19 +152,19 @@ const defaultReferencesByLang: Record<Locale, { name: string; url: string }[]> =
 };
 
 const activeReferences = toolSpecificReferences[effectiveSlug] || (defaultReferencesByLang[lang] || defaultReferencesByLang.en);
-const workedExample = getWorkedExample(effectiveSlug, lang);
 const currentCalc = propCalc || calculators.find(c => c.slug === slug || c.slug === effectiveSlug);
-const variablesGuide = getInputVariablesGuide(currentCalc?.inputs || [], lang, effectiveSlug);
+const workedExample = getWorkedExample(effectiveSlug, lang, currentData.title);
+const variablesGuide = getInputVariablesGuide(currentCalc?.inputs || [], lang, effectiveSlug, currentData.title);
 const clinicalGuide = getToolInterpretationAndLimitations(effectiveSlug, lang);
 
 const referenceTableSubtitle = {
-  en: 'Standard health categories, reference ranges, and measurements based on international health guidelines.',
-  es: 'Umbrales clínicos oficiales, categorías biométricas y parámetros fisiológicos evaluados según estándares internacionales de salud.',
-  fr: 'Seuils cliniques officiels, catégories biométriques et paramètres physiologiques évalués selon les normes internationales de santé.',
-  de: 'Offizielle klinische Schwellenwerte, biometrische Kategorien und physiologische Parameter nach internationalen Gesundheitsstandards.',
-  ko: '국제 공중보건 및 임상 가이드라인에 따른 공식 건강 지표 분류 기준과 생리학적 평가 구간입니다.',
-  hi: 'अंतरराष्ट्रीय स्वास्थ्य मानकों के अनुसार आधिकारिक नैदानिक सीमाएं, बायोमेट्रिक श्रेणियां और शारीरिक पैरामीटर।'
-}[lang];
+  en: `Official reference ranges, clinical thresholds, and validated benchmarks for ${currentData.title}.`,
+  es: `Rangos de referencia oficiales, umbrales clínicos y parámetros validados para ${currentData.title}.`,
+  fr: `Intervalles de référence officiels, seuils cliniques et repères validés pour ${currentData.title}.`,
+  de: `Offizielle Referenzbereiche, klinische Schwellenwerte und validierte Richtwerte für ${currentData.title}.`,
+  ko: `${currentData.title}에 대한 공식 참조 범위, 임상 기준치 및 검증된 생리학적 지표입니다.`,
+  hi: `${currentData.title} के लिए आधिकारिक संदर्भ सीमाएं, नैदानिक सीमाएं और मान्य बेंचमार्क।`
+}[lang] || `Official clinical benchmarks and reference ranges for ${currentData.title}.`;
 
 const figCaptionText = {
   en: `Figure 1.1: Clinical reference spectrum and classification cutoffs for ${currentData.title}. Source & Credit: World Health Organization (WHO) Technical Report Series 854 & CDC Clinical Guidelines. Published for educational reference.`,

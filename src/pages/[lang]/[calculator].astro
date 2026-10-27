@@ -359,7 +359,7 @@ const relatedGuidesSubtitle: Record<string, string> = {
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch animate-in" style="animation-delay:100ms">
           <UniversalCalculator calculator={calc} lang={lang} />
-          <CalculatorResult lang={lang} />
+          <CalculatorResult lang={lang} calculatorName={calc.name[lang] || calc.name.en} />
         </div>
       )}
 

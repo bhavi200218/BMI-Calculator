@@ -188,10 +188,12 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       `,
       "de": `
       <h2>Klinische Grundlagen der BMI-Interpretation</h2>
-      <p>Der Body-Mass-Index (BMI) ist das weltweite Standard-Screening-Instrument der <strong>Weltgesundheitsorganisation (WHO)</strong> zur Klassifizierung des Gewichtsstatus von Erwachsenen. Er errechnet sich aus dem Körpergewicht in Kilogramm geteilt durch das Quadrat der Körpergröße in Metern (kg/m²).</p>
-      <p>Da der BMI nicht zwischen stoffwechselaktiver Muskelmasse und Fettgewebe differenziert, dient er Ärzten als statistischer Orientierungswert im Rahmen einer umfassenden gesundheitlichen Gesamteinschätzung.</p>
+      <p>Der Body-Mass-Index (BMI), ursprünglich im 19. Jahrhundert von dem belgischen Mathematiker und Statistiker Adolphe Quetelet formuliert und in den 1970er Jahren von der <strong>Weltgesundheitsorganisation (WHO)</strong> als globaler Maßstab etabliert, dient Medizinern und Gesundheitsbehörden als epidemiologisches Standard-Screening-Instrument zur Einteilung des Körpergewichts bei Erwachsenen. Er errechnet sich aus dem Körpergewicht in Kilogramm geteilt durch das Quadrat der Körpergröße in Metern (kg/m²).</p>
+      <p>In der modernen evidenzbasierten Medizin gilt jedoch: Der BMI ist ein statistischer Schätzwert für die Körpermasse und kein direktes Maß für den Körperfettanteil. Da die Formel weder zwischen stoffwechselaktiver fettfreier Muskelmasse, Knochendichte noch viszeralem Fettgewebe unterscheidet, dient der Wert Fachärzten als primäre Orientierungshilfe zur Einstufung des kardiometabolischen Risikoprofils, bedarf jedoch stets einer kontextbezogenen individuellen Diagnostik.</p>
 
       <h2>Offizielle WHO-Klassifikation für Erwachsene</h2>
+      <p>Für erwachsene Frauen und Männer ab dem 20. Lebensjahr definiert die Weltgesundheitsorganisation international harmonisierte Referenzbereiche, die mit spezifischen statistischen Morbiditäts- und Mortalitätsrisiken korrelieren:</p>
+      
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left text-sm border-collapse">
           <thead>
@@ -205,30 +207,78 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
             <tr>
               <td class="py-2.5 px-3 font-semibold text-sky-400">Untergewicht</td>
               <td class="py-2.5 px-3 font-mono">&lt; 18.5</td>
-              <td class="py-2.5 px-3">Erhöhtes Risiko für Nährstoffmangel und Infektanfälligkeit.</td>
+              <td class="py-2.5 px-3">Erhöhtes Risiko für Nährstoffmängel, hormonelle Dysbalancen, Osteoporose und Immunschwäche.</td>
             </tr>
             <tr>
               <td class="py-2.5 px-3 font-semibold text-emerald-400">Normalgewicht</td>
               <td class="py-2.5 px-3 font-mono">18.5 – 24.9</td>
-              <td class="py-2.5 px-3">Geringstes statistisches Risiko für kardiovaskuläre Erkrankungen.</td>
+              <td class="py-2.5 px-3">Statistisch geringstes Gesamtmortalitätsrisiko für Herz-Kreislauf-Erkrankungen und Typ-2-Diabetes.</td>
             </tr>
             <tr>
-              <td class="py-2.5 px-3 font-semibold text-amber-400">Übergewicht</td>
+              <td class="py-2.5 px-3 font-semibold text-amber-400">Präadipositas (Übergewicht)</td>
               <td class="py-2.5 px-3 font-mono">25.0 – 29.9</td>
-              <td class="py-2.5 px-3">Leicht erhöhtes Risiko für Bluthochdruck und Stoffwechselbelastung.</td>
+              <td class="py-2.5 px-3">Leicht bis mäßig erhöhte Inzidenz von Hypertonie, Fettstoffwechselstörungen und Gefäßbelastung.</td>
             </tr>
             <tr>
               <td class="py-2.5 px-3 font-semibold text-rose-400">Adipositas Grad I</td>
               <td class="py-2.5 px-3 font-mono">30.0 – 34.9</td>
-              <td class="py-2.5 px-3">Deutlich gesteigertes Risiko für Insulinresistenz und Gelenkbelastung.</td>
+              <td class="py-2.5 px-3">Deutlich gesteigertes Risiko für Insulinresistenz, Schlafapnoe-Syndrom und degenerative Gelenkschäden.</td>
             </tr>
             <tr>
               <td class="py-2.5 px-3 font-semibold text-red-500">Adipositas Grad II &amp; III</td>
               <td class="py-2.5 px-3 font-mono">&ge; 35.0</td>
-              <td class="py-2.5 px-3">Schwerwiegende kardiometabolische Risiken und chronische Einschränkungen.</td>
+              <td class="py-2.5 px-3">Schwerwiegende kardiometabolische Risiken, Fettleber (MASLD) und drastisch verminderte Lebenserwartung.</td>
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <h2>Ethnizitätsspezifische Grenzwerte: Asiatische &amp; südasiatische Richtlinien</h2>
+      <p>Epidemiologische Langzeitstudien belegen eindeutig, dass der Zusammenhang zwischen Body-Mass-Index, absolutem Körperfettanteil und kardiometabolischem Erkrankungsrisiko maßgeblich von der ethnischen Herkunft beeinflusst wird. Personen asiatischer Abstammung neigen genetisch bedingt bereits bei deutlich niedrigerem Gesamtgewicht zu einer erhöhten Ansammlung von stoffwechselaktivem viszeralem Fett im Bauchraum.</p>
+      <p>Aus diesem Grund haben das <strong>WHO-Regionalbüro für den westlichen Pazifik (WPRO)</strong> und der indische Medizinrat (ICMR) modifizierte Schwellenwerte für asiatische Populationen formuliert:</p>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Erhöhtes Risiko (Übergewicht):</strong> 23,0 bis 24,9 kg/m² (im Vergleich zu 25,0 kg/m² bei kaukasischen Referenzgruppen).</li>
+        <li><strong>Hohes Risiko (Adipositas):</strong> &ge; 25,0 kg/m² für südasiatische Populationen bzw. &ge; 27,5 kg/m² für ostasiatische Bevölkerungen.</li>
+      </ul>
+
+      <h2>Kritische Limitationen &amp; das Phänomen „Skinny Fat“ (TOFI)</h2>
+      <p>Der BMI kann in zwei typischen klinischen Szenarien zu folgenschweren Fehleinschätzungen führen:</p>
+      <ol class="list-decimal pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Athleten und Kraftsportler:</strong> Aufgrund der höheren Dichte von Muskelgewebe gegenüber Fettmasse weisen muskulöse Personen häufig einen BMI über 26 oder gar 30 auf, besitzen jedoch einen sehr niedrigen Körperfettanteil von unter 12 % und exzellente Blutwerte. Hier liegt keine pathologische Adipositas vor.</li>
+        <li><strong>Sarkopenische Adipositas / Normalgewichtige Adipositas („Skinny Fat“):</strong> Personen mit geringem Muskelanteil und subklinischem Bewegungsmangel fallen laut BMI oft in den gesunden Normbereich (z. B. 22 kg/m²), weisen jedoch einen pathologisch überhöhten Anteil an entzündungsförderndem Eingeweidefett (viszerales Fett) auf. Dieses Profil (TOFI: <em>Thin on the Outside, Fat on the Inside</em>) birgt dieselben kardiovaskulären Gefahren wie manifeste Fettleibigkeit.</li>
+      </ol>
+
+      <h2>Ergänzende anthropometrische Biomarker in der klinischen Praxis</h2>
+      <p>Zur ganzheitlichen Erfassung der Stoffwechselgesundheit kombinieren Kardiologen, Endokrinologen und Ernährungsmediziner den BMI mit weiterführenden Messmethoden:</p>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Taille-zu-Größe-Verhältnis (WHtR):</strong> Gilt wissenschaftlich als präziserer Prädiktor für kardiovaskuläre Risiken als der reine BMI. Ein Wert unter 0,50 bei unter 50-Jährigen signalisiert eine gesunde Fettverteilung.</li>
+        <li><strong>Taillenumfang:</strong> Unabhängig vom BMI gilt bei Frauen ab 88 cm und bei Männern ab 102 cm ein stark erhöhtes Risiko für metabolisches Syndrom und Fettlebererkrankungen.</li>
+        <li><strong>DEXA-Körperscan &amp; BIA:</strong> Erlauben die exakte Trennung von viszeralem Fett, subkutanem Fettgewebe, Skelettmuskelmasse und Knochenmineralgehalt.</li>
+        <li><strong>Kardiometabolische Blutparameter:</strong> Nüchternglukose, HbA1c-Langzeitblutzucker, Harnsäure, Triglyceride und das Verhältnis von HDL- zu LDL-Cholesterin liefern physiologische Fakten über den Zustand von Herz und Gefäßen.</li>
+      </ul>
+
+      <h2>Häufig gestellte Fragen (FAQ) zur klinischen BMI-Interpretation</h2>
+      <div class="my-6 space-y-4">
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+          <h3 class="font-bold text-[var(--foreground)] mb-1">Warum reicht der BMI alleine nicht für eine verlässliche Diagnose aus?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Der BMI misst lediglich das Verhältnis von Gesamtkörpergewicht zur Körpergröße im Quadrat. Er differenziert nicht zwischen schwerer Muskulatur, Wasseransammlungen, Knochengerüst und gesundheitsschädlichem Fettgewebe. Eine fundierte Diagnose erfordert daher immer ergänzende Untersuchungen wie Taillenumfang und Laborwerte.</p>
+        </div>
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+          <h3 class="font-bold text-[var(--foreground)] mb-1">Welche BMI-Grenzwerte gelten für Menschen über 65 Jahren?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Für Seniorinnen und Senioren empfiehlt die Deutsche Gesellschaft für Ernährung (DGE) und die Geriatrie einen etwas höheren Normbereich von etwa 22 bis 28 kg/m². Ein leichter Puffer schützt vor Sarkopenie (altersbedingtem Muskelschwund), Mangelernährung und Komplikationen bei schweren Akuterkrankungen (Adipositas-Paradoxon).</p>
+        </div>
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+          <h3 class="font-bold text-[var(--foreground)] mb-1">Was bedeutet „metabolisch ungesundes Normalgewicht“?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Man spricht hierbei von Personen, deren Körpergewicht laut BMI als normal eingestuft wird, die aber aufgrund von viszeralem Fettgewebe an Insulinresistenz, chronischen Mikroentzündungen, erhöhten Leberenzymen oder Hypertonie leiden. Oft ist ein Mangel an Bewegung und Krafttraining die Hauptursache.</p>
+        </div>
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+          <h3 class="font-bold text-[var(--foreground)] mb-1">Wie unterscheidet der Arzt zwischen hoher Muskelmasse und Fettgewebe?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Mediziner setzen neben der optischen Begutachtung und Anamnese standardisierte Methoden ein: bioelektrische Impedanzanalyse (BIA), Kaliper-Messungen der Hautfaltendicke, hydrostatisches Wiegen oder den Goldstandard der DEXA-Ganzkörperszintigrafie.</p>
+        </div>
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+          <h3 class="font-bold text-[var(--foreground)] mb-1">Warum ist viszerales Bauchfett gefährlicher als Fett an Hüften und Oberschenkeln?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Viszerales Fett umhüllt lebenswichtige Bauchorgane wie Leber und Bauchspeicheldrüse. Es verhält sich wie ein aktives Drüsenorgan, das entzündungsfördernde Zytokine und freie Fettsäuren direkt in den Pfortaderkreislauf abgibt, was Arteriosklerose, Bluthochdruck und Typ-2-Diabetes stark forciert.</p>
+        </div>
       </div>
       `,
       "ko": `
@@ -378,8 +428,61 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       <p>Les seuils standards de l'IMC adulte s'appliquent entre 20 et 65 ans. Chez les enfants et adolescents, on utilise les courbes de centiles de croissance des CDC. Chez les seniors de plus de 65 ans, la médecine gériatrique reconnaît qu'un IMC modérément plus élevé (25 à 28 kg/m²) offre souvent une meilleure protection contre la dénutrition et la perte osseuse.</p>
       `,
       "de": `
-      <h2>Einfluss des Alters auf die BMI-Bewertung</h2>
-      <p>Die Standard-BMI-Werte für Erwachsene gelten für den Altersbereich von 20 bis 65 Jahren. Bei Jugendlichen werden CDC-Wachstumsperzentilen angewendet. Bei Senioren über 65 Jahren gilt ein BMI zwischen 25,0 und 28,0 kg/m² oft als optimal, um Muskelabbau und Sturzfolgen vorzubeugen.</p>
+      <h2>Der signifikante Einfluss des Lebensalters auf die Interpretation des Body-Mass-Index</h2>
+      <p>Standardisierte BMI-Kategorien der Weltgesundheitsorganisation (WHO) mit einem Normalgewichtsbereich von 18,5 bis 24,9 kg/m² gelten einheitlich für Erwachsene im Alter von 20 bis 65 Jahren. Die epidemiologische Physiologie zeigt jedoch eindrücklich, dass sich das Verhältnis zwischen Körpergewicht, Muskelmasse, Fettverteilung und Gesundheitsrisiken im Laufe des Lebens tiefgreifend wandelt. Ein BMI von 22,0 kg/m² hat für einen durchtrainierten 20-jährigen Sportler eine völlig andere klinische Bedeutung als für einen 82-jährigen Senior im Ruhestand.</p>
+
+      <h2>Jugendliche und Heranwachsende (2 bis 19 Jahre): CDC- und WHO-Wachstumsperzentilen</h2>
+      <p>Bei Kindern und Jugendlichen verändert sich die Körperzusammensetzung während des Wachstums und der Pubertät dynamisch. Feste Grenzwerte für Erwachsene sind daher medizinisch ungeeignet. Kinder- und Jugendärzte verwenden stattdessen <strong>alters- und geschlechtsspezifische BMI-Perzentilen</strong> (z. B. nach Kromeyer-Hauschild in Deutschland oder CDC/WHO international):</p>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Untergewicht:</strong> Unterhalb der 10. Perzentile (erfordert ernährungsmedizinische Abklärung)</li>
+        <li><strong>Normalgewicht:</strong> 10. bis unterhalb der 85. Perzentile (gesunde Wachstumsentwicklung)</li>
+        <li><strong>Übergewicht:</strong> 85. bis unterhalb der 95. Perzentile (Präventionsbereich für Lebensstilfaktoren)</li>
+        <li><strong>Adipositas:</strong> Ab der 95. Perzentile (klinisch behandlungsbedürftig)</li>
+      </ul>
+
+      <h2>Senioren (ab 65 Jahren): Das Adipositas-Paradoxon in der Geriatrie</h2>
+      <p>In der Altersmedizin (Geriatrie) gilt der herkömmliche untere Normalbereich (18,5 bis 22,0 kg/m²) häufig als Risikofaktor. Durch die altersbedingte Abnahme der Skelettmuskelmasse (<strong>Sarkopenie</strong>) und den Verlust an Knochendichte sind ältere Menschen am unteren Ende des BMI-Spektrums besonders anfällig für Stürze, Schenkelhalsfrakturen und Wundheilungsstörungen.</p>
+      <p>Umfangreiche Kohortenstudien belegen, dass für Menschen über 65 Jahren ein leicht erhöhtes Körpergewicht mit einem BMI zwischen <strong>24,0 und 28,0 kg/m²</strong> mit der geringsten Gesamtsterblichkeit und der höchsten funktionellen Selbstständigkeit verbunden ist. Dieses Phänomen wird in der Fachliteratur als <em>schützendes geriatrisches Polster</em> bezeichnet.</p>
+
+      <h2>Altersstratifizierte Richtwerte im Überblick</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Altersgruppe</th>
+              <th class="p-3 text-emerald-500 font-bold">Optimaler Longevity-BMI</th>
+              <th class="p-3">Anthropometrischer Fokus</th>
+              <th class="p-3">Präventionspriorität</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">18 – 35 Jahre</td>
+              <td class="p-3 text-emerald-500 font-bold">19,0 – 24,5 kg/m²</td>
+              <td class="p-3 font-sans">Kardiorespiratorische Fitness & Muskelaufbau</td>
+              <td class="p-3 font-sans">Blutdruck, Stoffwechselgesundheit</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">36 – 54 Jahre</td>
+              <td class="p-3 text-emerald-500 font-bold">20,5 – 25,5 kg/m²</td>
+              <td class="p-3 font-sans">Viszerales Bauchfett (WHtR &lt; 0,50)</td>
+              <td class="p-3 font-sans">Nüchternglukose, Blutfettwerte (Lipidpanel)</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">55 – 64 Jahre</td>
+              <td class="p-3 text-emerald-500 font-bold">22,0 – 26,5 kg/m²</td>
+              <td class="p-3 font-sans">Muskelerhalt, Proteinzufuhr</td>
+              <td class="p-3 font-sans">Arterieller Gefäßstatus, Knochendichte</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">Ab 65 Jahren</td>
+              <td class="p-3 text-emerald-500 font-bold">24,0 – 28,0 kg/m²</td>
+              <td class="p-3 font-sans">Sarkopenieprävention, Sturzschutz</td>
+              <td class="p-3 font-sans">Vermeidung ungewollten Gewichtsverlusts</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       `,
       "ko": `
       <h2>연령에 따른 체질량지수(BMI) 평가의 차이</h2>

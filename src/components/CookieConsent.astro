@@ -165,12 +165,12 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
   <div class="max-w-4xl mx-auto rounded-2xl bg-[var(--card)]/95 backdrop-blur-2xl border border-[var(--border)] shadow-2xl p-4 sm:p-6 text-[var(--foreground)]">
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
       <div class="space-y-1.5 flex-1 pr-2">
-        <h3 class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)] flex items-center gap-2">
+        <p class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)] flex items-center gap-2">
           <svg class="w-4 h-4 text-[var(--accent)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
           </svg>
           {t.bannerTitle}
-        </h3>
+        </p>
         <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
           {t.bannerDesc} 
           <a href={cookiePolicyUrl} class="text-[var(--accent)] underline hover:text-[var(--foreground)] ml-1 font-semibold">{t.policyLinkText}</a>.
@@ -228,9 +228,9 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
   <div class="w-full max-w-lg rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-2xl p-5 sm:p-7 text-[var(--foreground)] space-y-6 my-8">
     <div class="flex items-center justify-between border-b border-[var(--border)] pb-4">
       <div>
-        <h3 id="cookieSheetTitle" class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        <h2 id="cookieSheetTitle" class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
           {t.modalTitle}
-        </h3>
+        </h2>
         <p class="text-xs text-[var(--muted-foreground)] mt-1">
           {t.modalDesc}
         </p>

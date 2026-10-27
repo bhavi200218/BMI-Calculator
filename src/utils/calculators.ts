@@ -1611,15 +1611,29 @@ export const calculators: CalculatorConfig[] = [
   },
 ];
 
-export function getCalculatorTranslations(lang: Locale) {
+export function getCalculatorTranslations(lang: Locale, toolName?: string) {
   return {
     home: { en: 'Home', es: 'Inicio', fr: 'Accueil', de: 'Startseite', ko: '홈', hi: 'मुख्य पृष्ठ' }[lang],
     title: { en: 'Health Tools Hub', es: 'Centro de Calculadoras de Salud', fr: 'Centre d\'Outils de Santé', de: 'Gesundheitsrechner-Portal', ko: '헬스 케어 계산기 허브', hi: 'स्वास्थ्य उपकरण केंद्र' }[lang],
     subtitle: { en: 'Click on any tool below to calculate standard health metrics instantly.', es: 'Haz clic en cualquier herramienta para calcular métricas de salud al instante.', fr: 'Cliquez sur n\'importe quel outil pour calculer vos métriques de santé.', de: 'Klicken Sie auf ein Tool, um Kennzahlen sofort zu berechnen.', ko: '표준 헬스 지표를 손쉽게 점검하는 계산기를 골라보세요.', hi: 'त्वरित स्वास्थ्य मापन के लिए किसी भी उपकरण पर क्लिक करें।' }[lang],
     metricsTitle: { en: 'Calculation Results Summary', es: 'Resumen de Resultados', fr: 'Résumé des Résultats', de: 'Zusammenfassung der Ergebnisse', ko: '계산 결과 요약', hi: 'गणना परिणाम विवरण' }[lang],
-    waiting: { en: 'Enter your details to view your calculated result.', es: 'Ingresa tus datos para ver tu resultado calculado.', fr: 'Saisissez vos informations pour afficher votre résultat calculé.', de: 'Geben Sie Ihre Daten ein, um Ihr berechnetes Ergebnis anzuzeigen.', ko: '계산된 결과를 확인하려면 정보를 입력하세요.', hi: 'अपना परिणाम देखने के लिए अपनी जानकारी दर्ज करें।' }[lang],
+    waiting: {
+      en: toolName ? `Enter your details to calculate your verified ${toolName} results.` : 'Enter your details to view your calculated result.',
+      es: toolName ? `Ingresa tus datos para calcular los resultados de tu ${toolName}.` : 'Ingresa tus datos para ver tu resultado calculado.',
+      fr: toolName ? `Saisissez vos informations pour calculer les résultats de votre ${toolName}.` : 'Saisissez vos informations pour afficher votre résultat calculé.',
+      de: toolName ? `Geben Sie Ihre Daten ein, um Ihr verifiziertes Ergebnis für ${toolName} anzuzeigen.` : 'Geben Sie Ihre Daten ein, um Ihr berechnetes Ergebnis anzuzeigen.',
+      ko: toolName ? `${toolName} 결과를 확인하려면 신체 정보를 입력하세요.` : '계산된 결과를 확인하려면 정보를 입력하세요.',
+      hi: toolName ? `${toolName} का परिणाम देखने के लिए अपनी जानकारी दर्ज करें।` : 'अपना परिणाम देखने के लिए अपनी जानकारी दर्ज करें।'
+    }[lang],
     calcBtn: { en: 'Run Calculation', es: 'Ejecutar Cálculo', fr: 'Calculer', de: 'Berechnung ausführen', ko: '계산하기', hi: 'गणना चलाएं' }[lang],
     resetBtn: { en: 'Reset', es: 'Reiniciar', fr: 'Réinitialiser', de: 'Zurücksetzen', ko: '초기화', hi: 'रीसेट' }[lang],
-    enterPrompt: { en: 'Please enter your measurements above to calculate.', es: 'Por favor, introduce tus medidas arriba para calcular.', fr: 'Veuillez saisir vos mesures ci-dessus pour calculer.', de: 'Bitte geben Sie Ihre Messwerte oben ein, um zu berechnen.', ko: '계산하려면 위의 측정값을 입력하세요.', hi: 'गणना करने के लिए कृपया ऊपर अपनी माप दर्ज करें।' }[lang]
+    enterPrompt: {
+      en: toolName ? `Please enter your measurements above to calculate your ${toolName}.` : 'Please enter your measurements above to calculate.',
+      es: toolName ? `Por favor, introduce tus medidas arriba para calcular tu ${toolName}.` : 'Por favor, introduce tus medidas arriba para calcular.',
+      fr: toolName ? `Veuillez saisir vos mesures ci-dessus pour calculer votre ${toolName}.` : 'Veuillez saisir vos mesures ci-dessus pour calculer.',
+      de: toolName ? `Bitte geben Sie Ihre Messwerte oben ein, um ${toolName} zu berechnen.` : 'Bitte geben Sie Ihre Messwerte oben ein, um zu berechnen.',
+      ko: toolName ? `${toolName} 계산을 위해 위의 측정값을 입력하세요.` : '계산하려면 위의 측정값을 입력하세요.',
+      hi: toolName ? `${toolName} की गणना करने के लिए कृपया ऊपर अपनी माप दर्ज करें।` : 'गणना करने के लिए कृपया ऊपर अपनी माप दर्ज करें।'
+    }[lang]
   };
 }

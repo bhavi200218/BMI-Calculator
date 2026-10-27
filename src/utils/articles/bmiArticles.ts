@@ -717,15 +717,78 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       </ul>
     `,
       "de": `
-      <h2>Die offizielle BMI-Tabelle der Weltgesundheitsorganisation</h2>
-      <p>Die standardisierte <strong>BMI-Referenztabelle</strong> ermöglicht eine schnelle Zuordnung des Körpergewichts im Verhältnis zur Körpergröße in standardisierte Risikoklassen.</p>
-      <h2>Die 4 zentralen Bereiche</h2>
-      <ul>
-        <li><strong>Untergewicht (&lt; 18,5):</strong> Erhöhtes Risiko für Nährstoffmangel und Infektanfälligkeit.</li>
-        <li><strong>Normalgewicht (18,5 – 24,9):</strong> Geringstes relatives Krankheits- und Sterberisiko.</li>
-        <li><strong>Übergewicht (25,0 – 29,9):</strong> Mäßige Erhöhung von Blutdruck und Stoffwechselwerten.</li>
-        <li><strong>Adipositas (&ge; 30,0):</strong> Deutlich gesteigertes Risiko für Diabetes Typ 2 und Gefäßerkrankungen.</li>
+      <h2>Die offizielle BMI-Tabelle der Weltgesundheitsorganisation (WHO)</h2>
+      <p>Die <strong>WHO-BMI-Tabelle</strong> dient als international standardisiertes Referenzraster, um das Körpergewicht im Verhältnis zur Körpergröße schnell, reproduzierbar und ohne apparativen Aufwand einzuordnen. Epidemiologische Langzeitstudien mit über 10 Millionen Teilnehmern belegen, dass die Zuordnung zu diesen Kategorien eng mit statistischen Morbiditäts- und Mortalitätsrisiken korreliert.</p>
+
+      <h2>Körpergröße-Gewichts-Referenztabelle für Erwachsene</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-2 sm:p-3">Körpergröße</th>
+              <th class="p-2 sm:p-3 text-blue-500 font-bold">Untergewicht (&lt; 18,5)</th>
+              <th class="p-2 sm:p-3 text-emerald-500 font-bold">Normalgewicht (18,5 – 24,9)</th>
+              <th class="p-2 sm:p-3 text-amber-500 font-bold">Übergewicht (25,0 – 29,9)</th>
+              <th class="p-2 sm:p-3 text-rose-500 font-bold">Adipositas (&ge; 30,0)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-2 sm:p-3 font-sans font-semibold">160 cm</td>
+              <td class="p-2 sm:p-3">&lt; 47,4 kg</td>
+              <td class="p-2 sm:p-3 text-emerald-500 font-bold">47,4 – 63,7 kg</td>
+              <td class="p-2 sm:p-3 text-amber-500">63,8 – 76,5 kg</td>
+              <td class="p-2 sm:p-3 text-rose-500">&ge; 76,8 kg</td>
+            </tr>
+            <tr>
+              <td class="p-2 sm:p-3 font-sans font-semibold">165 cm</td>
+              <td class="p-2 sm:p-3">&lt; 50,4 kg</td>
+              <td class="p-2 sm:p-3 text-emerald-500 font-bold">50,4 – 67,8 kg</td>
+              <td class="p-2 sm:p-3 text-amber-500">67,9 – 81,4 kg</td>
+              <td class="p-2 sm:p-3 text-rose-500">&ge; 81,7 kg</td>
+            </tr>
+            <tr>
+              <td class="p-2 sm:p-3 font-sans font-semibold">170 cm</td>
+              <td class="p-2 sm:p-3">&lt; 53,5 kg</td>
+              <td class="p-2 sm:p-3 text-emerald-500 font-bold">53,5 – 72,0 kg</td>
+              <td class="p-2 sm:p-3 text-amber-500">72,1 – 86,4 kg</td>
+              <td class="p-2 sm:p-3 text-rose-500">&ge; 86,7 kg</td>
+            </tr>
+            <tr>
+              <td class="p-2 sm:p-3 font-sans font-semibold">175 cm</td>
+              <td class="p-2 sm:p-3">&lt; 56,7 kg</td>
+              <td class="p-2 sm:p-3 text-emerald-500 font-bold">56,7 – 76,3 kg</td>
+              <td class="p-2 sm:p-3 text-amber-500">76,4 – 91,6 kg</td>
+              <td class="p-2 sm:p-3 text-rose-500">&ge; 91,9 kg</td>
+            </tr>
+            <tr>
+              <td class="p-2 sm:p-3 font-sans font-semibold">180 cm</td>
+              <td class="p-2 sm:p-3">&lt; 59,9 kg</td>
+              <td class="p-2 sm:p-3 text-emerald-500 font-bold">59,9 – 80,7 kg</td>
+              <td class="p-2 sm:p-3 text-amber-500">80,8 – 96,9 kg</td>
+              <td class="p-2 sm:p-3 text-rose-500">&ge; 97,2 kg</td>
+            </tr>
+            <tr>
+              <td class="p-2 sm:p-3 font-sans font-semibold">185 cm</td>
+              <td class="p-2 sm:p-3">&lt; 63,3 kg</td>
+              <td class="p-2 sm:p-3 text-emerald-500 font-bold">63,3 – 85,2 kg</td>
+              <td class="p-2 sm:p-3 text-amber-500">85,3 – 102,3 kg</td>
+              <td class="p-2 sm:p-3 text-rose-500">&ge; 102,7 kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Die 4 zentralen Risikobereiche im Detail</h2>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Untergewicht (&lt; 18,5 kg/m²):</strong> Geringe Energiespeicher, erhöhtes Risiko für Mangelernährung, Osteopenie, Amenorrhö bei Frauen und geschwächte Infektabwehr.</li>
+        <li><strong>Normalgewicht (18,5 – 24,9 kg/m²):</strong> Epidemiologisch geringste Gesamtsterblichkeit, optimale Insulinsensitivität und minimaler vaskulärer Blutdruckstress.</li>
+        <li><strong>Übergewicht (25,0 – 29,9 kg/m²):</strong> Schleichender Anstieg des kardiometabolischen Risikos (Hypertonie, Dyslipidämie). Bei Sportlern mit hoher Muskelmasse häufig harmlos.</li>
+        <li><strong>Adipositas (&ge; 30,0 kg/m²):</strong> Stark erhöhtes Risiko für Typ-2-Diabetes, obstruktives Schlafapnoe-Syndrom, Fettleber (NAFLD) und degenerative Gelenkerkrankungen.</li>
       </ul>
+
+      <h2>Spezifische Grenzwerte für asiatische Populationen</h2>
+      <p>Aufgrund eines höheren Körperfettanteils und vermehrter viszeraler Fetteinlagerung empfiehlt die WHO für Menschen asiatischer Herkunft niedrigere Interventionsschwellen: <strong>Normalbereich 18,5 bis 22,9 kg/m²</strong>, Übergewicht ab 23,0 kg/m² und Adipositas ab 25,0 kg/m² (ICMR) bzw. 27,5 kg/m² (WHO WPRO).</p>
     `,
       "ko": `
       <h2>세계보건기구(WHO) 표준 BMI 차트 가이드</h2>
@@ -1125,8 +1188,59 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <p>Bien que les catégories de l'OMS soient unisexes, les femmes possèdent naturellement plus de tissu adipeux essentiel (10-13% contre 2-5% chez les hommes) sans que cela n'augmente leur risque cardiovasculaire.</p>
     `,
       "de": `
-      <h2>Geschlechtsspezifische Unterschiede bei der BMI-Bewertung</h2>
-      <p>Frauen weisen bei gleichem BMI einen um etwa 8 bis 12 Prozentpunkte höheren Körperfettanteil auf als Männer. Dies ist biologisch normal und notwendig für den Hormonhaushalt.</p>
+      <h2>Geschlechtsspezifische Unterschiede: Warum der Unisex-BMI biologische Realitäten verschleiert</h2>
+      <p>Die offizielle Einstufung der Weltgesundheitsorganisation (WHO) unterscheidet beim BMI nicht zwischen den biologischen Geschlechtern: Für Männer und Frauen gilt gleichermaßen ein Bereich von 18,5 bis 24,9 kg/m² als Normalgewicht. Aus endokrinologischer und sportmedizinischer Sicht birgt diese Einheitlichkeit jedoch eine gravierende Limitation: <strong>Frauen weisen bei identischem BMI im Durchschnitt einen um 8 bis 12 Prozentpunkte höheren Körperfettanteil auf als Männer</strong>.</p>
+      <p>Während bei einem Mann mit einem BMI von 23 kg/m² der typische Körperfettanteil bei etwa 13 bis 17 % liegt, besitzt eine gesunde Frau mit demselben BMI typischerweise 23 bis 27 % Körperfett. Dieses zusätzliche Fettgewebe ist biologisch essenziell für die ovarielle Hormonproduktion, den Menstruationszyklus und die Knochendichte.</p>
+
+      <h2>Hormonelle Steuerung: Gynoide vs. androide Fettverteilungsmuster</h2>
+      <p>Die Sexualhormone steuern maßgeblich, an welchen Stellen des Körpers überschüssige Lipide eingelagert werden:</p>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Östrogene (Weibliches Profil):</strong> Begünstigen die subkutane Fetteinlagerung im Bereich von Hüfte, Gesäß und Oberschenkeln (<em>gynoide Birnenform</em>). Dieses Unterhautfettgewebe ist metabolisch weitgehend inert und schützt vor kardiovaskulären Schäden.</li>
+        <li><strong>Testosteron & Androgene (Männliches Profil):</strong> Fördern eine höhere Muskelmasse, führen bei Kalorienüberschuss jedoch bevorzugt zur viszeralen Fetteinlagerung im Bauchraum zwischen den Organen (<em>androide Apfelform</em>), was mit einem stark erhöhten Risiko für Bluthochdruck und Arteriosklerose einhergeht.</li>
+      </ul>
+
+      <h2>Grenzwerte für den Taillenumfang nach WHO und IDF</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Geschlecht / Population</th>
+              <th class="p-3 text-emerald-500 font-bold">Normalbereich (Niedriges Risiko)</th>
+              <th class="p-3 text-amber-500 font-bold">Erhöhtes Risiko (Warnschwelle)</th>
+              <th class="p-3 text-rose-500 font-bold">Deutlich erhöhtes Risiko (Aktionspunkt)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">Männer (Europäisch / Kaukasisch)</td>
+              <td class="p-3 text-emerald-500">&lt; 94 cm</td>
+              <td class="p-3 text-amber-500">94 – 101 cm</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 102 cm</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">Frauen (Europäisch / Kaukasisch)</td>
+              <td class="p-3 text-emerald-500">&lt; 80 cm</td>
+              <td class="p-3 text-amber-500">80 – 87 cm</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 88 cm</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">Männer (Asiatische Populationen)</td>
+              <td class="p-3 text-emerald-500">&lt; 90 cm</td>
+              <td class="p-3 text-amber-500">90 – 94 cm</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 95 cm</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">Frauen (Asiatische Populationen)</td>
+              <td class="p-3 text-emerald-500">&lt; 80 cm</td>
+              <td class="p-3 text-amber-500">80 – 84 cm</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 85 cm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Menopause: Die viszerale Fettumverteilung nach den Wechseljahren</h2>
+      <p>Mit dem Absinken des Östrogenspiegels während der Perimenopause verlagert sich die Fetteinlagerung bei Frauen zunehmend von den Hüften in den Bauchraum. Viele Frauen bemerken, dass ihr Taillenumfang wächst und das viszerale Bauchfett zunimmt, obwohl das Gesamtgewicht auf der Waage konstant bleibt. Regelmäßige Messungen der Taille-zu-Größe-Relation (WHtR &lt; 0,50) sind daher ab dem 50. Lebensjahr aussagekräftiger als der BMI allein.</p>
     `,
       "ko": `
       <h2>남녀별 BMI와 체지방 분포의 의학적 차이</h2>
@@ -1278,8 +1392,34 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <p>Chez les personnes de plus de 65 ans, un IMC légèrement plus élevé (entre 23,5 et 28 kg/m²) est associé à une meilleure survie en cas d'infection ou d'intervention chirurgicale.</p>
     `,
       "de": `
-      <h2>Der Einfluss des Alters auf die Interpretation des BMI</h2>
-      <p>Im höheren Lebensalter (ab 65 Jahren) verschiebt sich der optimale BMI-Bereich nach oben auf etwa 24 bis 28 kg/m², um Muskelabbau und Gebrechlichkeit vorzubeugen.</p>
+      <h2>Die Lebensspannen-Trajektorie: Wie das Alter die BMI-Interpretation verändert</h2>
+      <p>Die Körperzusammensetzung des Menschen ist kein statischer Zustand, sondern unterliegt in jedem Lebensjahrzehnt physiologischen Transformationen. Während die mathematische Formel des Body-Mass-Index (Körpergewicht in kg geteilt durch Körpergröße in Metern zum Quadrat) für alle Altersgruppen von 20 bis 100 Jahren identisch bleibt, muss die <strong>medizinische Interpretation zwingend an altersbedingte biologische Veränderungen angepasst werden</strong>. Was für einen 22-jährigen Athleten ein optimaler BMI ist, kann bei einem 82-jährigen Senior bereits auf eine gefährliche Mangelernährung und Gebrechlichkeit hindeuten.</p>
+
+      <h2>Die vier Hauptphasen der anthropometrischen Entwicklung</h2>
+      <div class="my-6 space-y-4">
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">1. Frühes Erwachsenenalter (20 bis 39 Jahre): Maximale Muskel- und Knochenmasse</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">In dieser Lebensphase erreichen Menschen ihre maximale Knochendichte und ihr höchstes natürliches Muskelmassenniveau. Der Standardbereich der WHO von 18,5 bis 24,9 kg/m² besitzt hier seine höchste diagnostische Validität. Erhöhte BMI-Werte spiegeln in diesem Alter primär eine positive Energiebilanz und Fettakkumulation wider.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">2. Mittleres Erwachsenenalter (40 bis 64 Jahre): Metabolischer Wandel & viszerale Fettumverteilung</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Ab dem 40. Lebensjahr sinkt der Ruhe-Grundumsatz um etwa 1 bis 2 % pro Dekade. Hormonelle Umstellungen (Andropause bei Männern, Menopause bei Frauen) begünstigen die Einlagerung von viszeralem Fett im Bauchraum bei gleichzeitig schleichendem Abbau peripherer Muskelmasse. Ein unverändertes Körpergewicht kann hier über eine ungünstige Veränderung des Körperfettanteils hinwegtäuschen.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">3. Höheres Erwachsenenalter (65 bis 74 Jahre): Risiko der sarkopenischen Adipositas</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Im frühen Seniorenalter nimmt die Effizienz der muskulären Proteinsynthese ab. Ohne gezieltes Krafttraining verliert der Körper kontinuierlich Muskelmasse (Sarkopenie). Radikale Reduktionsdiäten sind in dieser Lebensphase streng kontraindiziert, da sie den Muskelabbau beschleunigen und das Sturzrisiko erhöhen.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">4. Hohes Seniorenalter (ab 75 Jahren): Schutz vor Gebrechlichkeit und Auszehrung</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">In dieser Phase ist ein unbeabsichtigter Gewichtsverlust (BMI &lt; 22 kg/m²) ein ernstzunehmendes Warnsignal. Ausreichende Energiereserven schützen vor Komplikationen bei Infektionen, Operationen und schenkelhalsnahen Frakturen.</p>
+        </div>
+      </div>
+
+      <h2>Das geriatrische Adipositas-Paradoxon</h2>
+      <p>Internationale geriatrische Studien belegen konsistent das sogenannte <strong>Adipositas-Paradoxon</strong>: Bei Senioren über 65 Jahren liegt die geringste Gesamtsterblichkeit nicht im schlanken Bereich von 20 bis 22 kg/m², sondern in der leichten Übergewichtszone von <strong>25,0 bis 29,9 kg/m²</strong>. Ein moderates Fettgewebspolster dient als überlebenswichtige Stoffwechselreserve bei akuten Erkrankungen und federt mechanische Erschütterungen bei Stürzen effektiv ab.</p>
+
+      <h2>Einfluss der altersbedingten Körpergrößenabnahme</h2>
+      <p>Durch die Dehydratation der Bandscheiben und osteoporotische Veränderungen der Wirbelsäule verlieren Erwachsene ab dem 40. Lebensjahr etwa 1 bis 2 cm Körpergröße pro Dekade. Da die Körpergröße im BMI-Nenner quadriert wird, steigt der errechnete BMI rein rechnerisch um 1,0 bis 1,5 Einheiten an, selbst wenn das tatsächliche Fettgewebe völlig konstant geblieben ist.</p>
     `,
       "ko": `
       <h2>생애주기별 BMI 해석과 노인 비만의 역설</h2>
@@ -1426,8 +1566,55 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <p>Chez les 13-19 ans, le diagnostic de corpulence repose impérativement sur les <strong>courbes de percentiles de corpulence</strong> qui prennent en compte l'âge exact en mois et le sexe biologique.</p>
     `,
       "de": `
-      <h2>BMI bei Jugendlichen: Perzentilkurven statt fester Grenzwerte</h2>
-      <p>Für Jugendliche von 13 bis 19 Jahren gelten keine starren Grenzwerte. Kinder- und Jugendärzte nutzen die CDC- und WHO-Perzentilkurven (Normalbereich: 5. bis 84. Perzentil).</p>
+      <h2>Pädiatrische Anthropometrie: Warum Jugendliche nicht mit Erwachsenenwerten beurteilt werden dürfen</h2>
+      <p>Die Beurteilung des Wachstums, der körperlichen Reifung und des Gewichtsstatus von Jugendlichen (Heranwachsende im Alter von 13 bis 19 Jahren) erfordert eine völlig andere wissenschaftliche Methodik als bei Erwachsenen. Während bei Erwachsenen ab 20 Jahren starre Grenzwerte gelten (18,5 für Untergewicht, 25,0 für Übergewicht und 30,0 für Adipositas), können <strong>feste numerische Schwellenwerte bei Jugendlichen nicht klinisch angewendet werden</strong>.</p>
+      <p>Während der Pubertät erlebt der Körper dynamische Wachstumsschübe, eine Verlängerung der Röhrenknochen, hormonell gesteuerte Veränderungen der Fettverteilung und starke Schwankungen im Verhältnis zwischen Muskelmasse und Knochendichte. Kinderärzte und Fachgesellschaften (wie die Arbeitsgemeinschaft Adipositas im Kindes- und Jugendalter AGA, CDC und WHO) verwenden daher <strong>alters- und geschlechtsspezifische BMI-Perzentilen</strong>.</p>
+
+      <h2>Die Klassifikation nach Perzentilen</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Perzentilbereich</th>
+              <th class="p-3">Pädiatrische Einstufung</th>
+              <th class="p-3">Klinische Handlungsempfehlung</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)]">
+            <tr>
+              <td class="p-3 font-mono text-blue-500 font-bold">&lt; 10. Perzentile</td>
+              <td class="p-3 font-semibold">Untergewicht</td>
+              <td class="p-3">Ernährungsanamnese, Ausschluss von Zöliakie, chronischen Erkrankungen oder Essstörungen</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-mono text-emerald-500 font-bold">10. bis 84. Perzentile</td>
+              <td class="p-3 font-semibold text-emerald-500">Normalgewicht</td>
+              <td class="p-3">Gesunde physiologische Entwicklung; Förderung von ausgewogener Ernährung und Sport</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-mono text-amber-500 font-bold">85. bis 94. Perzentile</td>
+              <td class="p-3 font-semibold text-amber-500">Übergewicht</td>
+              <td class="p-3">Überprüfung von Alltagsaktivität und Bildschirmzeit; keine restriktiven Reduktionsdiäten</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-mono text-rose-500 font-bold">&ge; 95. Perzentile</td>
+              <td class="p-3 font-semibold text-rose-500">Adipositas</td>
+              <td class="p-3">Pädiatrische Abklärung von Blutdruck, Blutzucker und Leberwerten; multimodale Schulung</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Der Einfluss der Tanner-Stadien auf die biologische Reifung</h2>
+      <p>Ein wesentlicher Störfaktor bei der Beurteilung jugendlicher BMI-Werte ist der Unterschied zwischen <strong>biologischem Entwicklungsstand und kalendarischem Alter</strong>. Zwei 14-jährige Jugendliche gleichen Alters können sich in völlig unterschiedlichen pubertären Entwicklungsstadien (Tanner-Stadien) befinden: Ein Junge in Tanner-Stufe 5 besitzt bereits eine ausgeprägte, testosterongesteuerte Muskelmasse und Knochendichte, was seinen BMI rein rechnerisch anhebt, ohne dass Übergewicht vorliegt. Erfahrene Pädiater beurteilen den BMI daher stets im Kontext der körperlichen Reifezeichen.</p>
+
+      <h2>Handlungsempfehlungen für Eltern: Gesunder Lebensstil ohne Diätzwang</h2>
+      <p>Medizinische Leitlinien warnen ausdrücklich davor, Jugendliche auf strenge kalorienreduzierte Diäten zu setzen. Ein Nährstoffdefizit während des pubertären Wachstumsschubs gefährdet das Längenwachstum, verringert die Knochendichte und erhöht das Risiko für Essstörungen drastisch. Im Vordergrund stehen:</p>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Gesunde Familienküche:</strong> Verzicht auf zuckerhaltige Softdrinks und hochverarbeitete Snacks im Haushalt, ohne das Kind zu isolieren oder zu stigmatisieren.</li>
+        <li><strong>Tägliche Bewegung:</strong> Mindestens 60 Minuten moderate bis intensive Alltagsbewegung oder Sportverein.</li>
+        <li><strong>Ausreichender Schlaf:</strong> 8 bis 10 Stunden Schlaf zur hormonellen Regeneration und Appetitregulation.</li>
+      </ul>
     `,
       "ko": `
       <h2>청소년 BMI 평가: 연령별 성장 백분위수의 과학</h2>

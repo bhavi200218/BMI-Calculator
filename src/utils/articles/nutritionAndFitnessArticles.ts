@@ -126,8 +126,68 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       <p>Pour stimuler la synthèse musculaire et préserver la masse maigre, un apport de 1,6 à 2,2 g/kg est recommandé chez l'adulte actif.</p>
     `,
       "de": `
-      <h2>Der optimale tägliche Proteinbedarf</h2>
-      <p>Die Mindestempfehlung von 0,8 g/kg reicht für Muskelaufbau und Altersschutz nicht aus. Sportler benötigen 1,6 bis 2,2 g pro Kilogramm Körpergewicht.</p>
+      <h2>Die physiologische Bedeutung von Nahrungsprotein im Stoffwechsel</h2>
+      <p>Nahrungsprotein nimmt unter den drei Hauptmakronährstoffen eine Sonderstellung ein. Während Kohlenhydrate als Glykogen in Leber und Muskeln und Fette in Form von Triglyzeriden im Fettgewebe als langfristige Energiespeicher angelegt werden können, <strong>besitzt der menschliche Organismus keinen biochemischen Speicher für überschüssige Aminosäuren</strong>. Jedes Gramm Protein im Körper erfüllt eine aktive funktionelle Aufgabe: als Myofibrille in der Skelettmuskulatur, als Antikörper im Immunsystem, als Enzym, Transporterprotein oder Bindegewebskollagen.</p>
+      <p>Eine bedarfsdeckende Proteinzufuhr ist daher nicht nur für leistungsorientierte Kraftsportler essenziell, sondern bildet das Fundament für die Stoffwechselgesundheit, Immunabwehr, Sättigungsregulation und die Vermeidung von Sarkopenie im Alter.</p>
+
+      <h2>Mindestbedarf (DGE/RDA: 0,8 g/kg) vs. Optimale Proteinzufuhr</h2>
+      <p>In der Ernährungswissenschaft sorgt die Empfehlung der Deutschen Gesellschaft für Ernährung (DGE) und der internationalen RDA von <strong>0,8 g Protein pro Kilogramm Körpergewicht täglich</strong> für Missverständnisse:</p>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Die RDA ist eine Mangelgrenze:</strong> Die 0,8 g/kg stellen sicher, dass 97,5 % der gesunden, inaktiven Erwachsenen nicht in eine negative Stickstoffbilanz geraten. Es ist die Schwelle zur Verhinderung klinischer Mangelzustände.</li>
+        <li><strong>Kein Optimum für aktive Menschen:</strong> Für Sportler, Personen im Kaloriendefizit und ältere Erwachsene ab 60 Jahren reichen 0,8 g/kg nachweislich nicht aus, um Muskelmasse zu schützen oder funktionelle Anpassungen zu ermöglichen.</li>
+      </ul>
+
+      <h2>Evidenzbasierte Proteinempfehlungen nach Zielgruppe</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Zielgruppe / Aktivität</th>
+              <th class="p-3 text-emerald-500 font-bold">Proteinbedarf (g/kg KG/Tag)</th>
+              <th class="p-3">Tagesmenge (für 75 kg Person)</th>
+              <th class="p-3">Physiologisches Hauptziel</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">Sedentäre Erwachsene (Basis)</td>
+              <td class="p-3">0,8 – 1,0 g/kg</td>
+              <td class="p-3">60 – 75 Gramm</td>
+              <td class="p-3 font-sans">Grundversorgung, Enzymsynthese</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">Ausdauersportler (Laufen / Rad)</td>
+              <td class="p-3">1,2 – 1,6 g/kg</td>
+              <td class="p-3">90 – 120 Gramm</td>
+              <td class="p-3 font-sans">Mitochondriale Regeneration, Gewebereparatur</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold text-emerald-500 font-bold">Kraftsportler (Hypertrophie / Kraft)</td>
+              <td class="p-3 text-emerald-500 font-bold">1,6 – 2,2 g/kg</td>
+              <td class="p-3 text-emerald-500 font-bold">120 – 165 Gramm</td>
+              <td class="p-3 font-sans">Maximierung der Muskelproteinsynthese (MPS)</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold text-blue-500 font-bold">Fettabbau im Kaloriendefizit</td>
+              <td class="p-3 text-blue-500 font-bold">1,8 – 2,4 g/kg</td>
+              <td class="p-3 text-blue-500 font-bold">135 – 180 Gramm</td>
+              <td class="p-3 font-sans">Muskelschutz bei reduzierter Kalorienzufuhr & hohe Sättigung</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold text-amber-500 font-bold">Senioren (ab 65 Jahren)</td>
+              <td class="p-3 text-amber-500 font-bold">1,2 – 1,5 g/kg</td>
+              <td class="p-3 text-amber-500 font-bold">90 – 112 Gramm</td>
+              <td class="p-3 font-sans">Überwindung der anabolen Resistenz, Sarkopenieschutz</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Der Leucin-Schwellenwert und Muskelproteinsynthese</h2>
+      <p>Um die muskuläre Proteinsynthese (MPS) über den mTOR-Signalweg maximal zu aktivieren, muss eine Mahlzeit den sogenannten <strong>Leucin-Trigger</strong> erreichen. Leucin ist eine essenzielle verzweigtkettige Aminosäure (BCAA), die als molekularer Startschalter fungiert. Klinische Studien zeigen, dass eine Portion etwa <strong>2,5 bis 3,0 g Leucin</strong> (entsprechend ca. 25 bis 40 g hochwertigem Gesamtprotein) enthalten sollte.</p>
+
+      <h2>Entkräftung von Mythen: Nierenfunktion bei gesunden Menschen</h2>
+      <p>Ein hartnäckiger Mythos besagt, dass eine hohe Proteinzufuhr die Nieren schädige. Zahlreiche Langzeitstudien haben eindeutig belegt: Bei Personen mit gesunden Nieren führt eine Proteinzufuhr von bis zu 2,8 g/kg/Tag zu keiner Beeinträchtigung der Nierenfunktion oder der glomerulären Filtrationsrate (GFR). Lediglich bei vorbestehender chronischer Niereninsuffizienz ist eine ärztlich überwachte Proteinrestriktion zwingend erforderlich.</p>
     `,
       "ko": `
       <h2>과학적 근거에 기반한 일일 단백질 섭취 가이드</h2>
@@ -531,8 +591,63 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       <p>La formule de Mosteller est la référence internationale pour doser les chimiothérapies et évaluer l'index cardiaque.</p>
     `,
       "de": `
-      <h2>Körperoberfläche (BSA) in der klinischen Praxis</h2>
-      <p>Die Mosteller-Formel berechnet die Körperoberfläche in m² als Basis für Chemotherapie-Dosierungen und renale Filtrationsraten.</p>
+      <h2>Die physiologische und pharmakokinetische Bedeutung der Körperoberfläche (BSA)</h2>
+      <p>Die <strong>Körperoberfläche (Body Surface Area, BSA)</strong>, gemessen in Quadratmetern (m²), ist in der modernen Pharmakologie und klinischen Intensivmedizin einer der präzisesten biometrischen Parameter. Während das einfache Körpergewicht in Kilogramm stark durch Fettansammlungen oder Dehydratation verzerrt werden kann, korreliert die Körperoberfläche eng mit dem basalen Stoffwechselvolumen, dem renalen Blutfluss, der glomerulären Filtrationsrate und dem Herzzeitvolumen.</p>
+
+      <h2>Die Mosteller-Formel im Vergleich zu historischen Gleichungen</h2>
+      <p>Im Jahr 1987 veröffentlichte Dr. Ralph D. Mosteller im <em>New England Journal of Medicine</em> eine vereinfachte Gleichung, die heute weltweiter klinischer Standard ist:</p>
+      <div class="my-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-xs sm:text-sm">
+        <p class="font-bold text-[var(--accent)]">Mosteller-Formel (Metrisch):</p>
+        <p class="text-[var(--foreground)] mt-1">BSA (m²) = &radic;[ (Körpergröße in cm &times; Körpergewicht in kg) / 3600 ]</p>
+      </div>
+      <p>Im Vergleich zur komplexeren Du-Bois-Formel (1916) minimiert die Mosteller-Formel Rechenfehler bei identischer klinischer Genauigkeit und wird in onkologischen Leitlinien der ESMO und DGHO einheitlich empfohlen.</p>
+
+      <h2>Referenzwerte der Körperoberfläche im Überblick</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Population / Patientengruppe</th>
+              <th class="p-3 text-[var(--accent)] font-bold">Durchschnittliche BSA (m²)</th>
+              <th class="p-3">Klinische Bedeutung & Normierung</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">Standard-Referenz-Erwachsener</td>
+              <td class="p-3 text-[var(--accent)] font-bold">1,73 m²</td>
+              <td class="p-3 font-sans">Internationaler Normalisierungsstandard für GFR (ml/min/1,73 m²)</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">Durchschnittlicher Mann (Erwachsen)</td>
+              <td class="p-3">1,90 m²</td>
+              <td class="p-3 font-sans">Körpergröße ca. 178 cm, Körpergewicht ca. 82 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">Durchschnittliche Frau (Erwachsen)</td>
+              <td class="p-3">1,60 m²</td>
+              <td class="p-3 font-sans">Körpergröße ca. 163 cm, Körpergewicht ca. 65 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">Schulkind (ca. 9 Jahre)</td>
+              <td class="p-3">1,07 m²</td>
+              <td class="p-3 font-sans">Körpergröße ca. 133 cm, Körpergewicht ca. 30 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">Säugling (ca. 6 Monate)</td>
+              <td class="p-3">0,36 m²</td>
+              <td class="p-3 font-sans">Körpergröße ca. 66 cm, Körpergewicht ca. 7,5 kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Klinische Anwendungsfelder der Körperoberfläche</h2>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Onkologische Zytostatika-Dosierung:</strong> Zytotoxische Chemotherapeutika (z. B. Cisplatin, Paclitaxel, Doxorubicin) besitzen eine extrem enge therapeutische Breite. Dosierungen werden zwingend pro m² BSA berechnet, um Überdosierungstoxizitäten zu verhindern.</li>
+        <li><strong>Herzindex (Cardiac Index) in der Kardiologie:</strong> Das Herzzeitvolumen wird anhand der Formel <code>CI = HZV / BSA</code> auf die Körpergröße normalisiert (Normalwert: 2,5 bis 4,0 l/min/m²). Ein Wert unter 2,2 l/min/m² weist auf ein kardiogenes Schockgeschehen hin.</li>
+        <li><strong>Glomeruläre Filtrationsrate (GFR):</strong> Die Nierenfunktion wird weltweit auf die standardisierte Körperoberfläche von 1,73 m² normiert.</li>
+      </ul>
     `,
       "ko": `
       <h2>임상 의학에서의 체표면적(BSA) 산출 공식</h2>

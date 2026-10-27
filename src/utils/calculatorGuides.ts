@@ -169,7 +169,7 @@ const LIFT_VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; d
   }
 };
 
-export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale, slug: string = '') {
+export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale, slug: string = '', toolTitle?: string) {
   const ui = UI_TITLES[lang] || UI_TITLES.en;
   const is1RM = slug === '1rm-calculator' || slug === 'one-rep-max-calculator';
 
@@ -198,9 +198,18 @@ export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale, 
     };
   });
 
+  const dynamicSubtitle = toolTitle ? ({
+    en: `Standardized measurement parameters and unit conversions for ${toolTitle}.`,
+    es: `Parámetros de medición estandarizados y conversiones de unidades empleados en ${toolTitle}.`,
+    fr: `Paramètres de mesure standardisés et conversions d’unités utilisés pour ${toolTitle}.`,
+    de: `Standardisierte Messparameter und Einheitenumrechnungen für ${toolTitle}.`,
+    ko: `${toolTitle}에 적용되는 표준 측정 파라미터 및 단위 변환 기준입니다.`,
+    hi: `${toolTitle} द्वारा उपयोग किए जाने वाले मानकीकृत मापन पैरामीटर और इकाई रूपांतरण।`
+  }[lang] || ui.varSubtitle) : ui.varSubtitle;
+
   return {
     title: ui.varTitle,
-    subtitle: ui.varSubtitle,
+    subtitle: dynamicSubtitle,
     metricLabel: ui.metricLabel,
     imperialLabel: ui.imperialLabel,
     items

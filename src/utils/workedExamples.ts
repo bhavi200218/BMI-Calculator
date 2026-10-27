@@ -715,7 +715,7 @@ const EXAMPLES: Record<string, ToolData> = {
   }
 };
 
-export function getWorkedExample(slug: string, lang: string): WorkedExample {
+export function getWorkedExample(slug: string, lang: string, toolTitle?: string): WorkedExample {
   const headings = UI_HEADINGS[lang] || UI_HEADINGS.en;
   
   // Normalization for visualizer and alias slugs
@@ -737,10 +737,19 @@ export function getWorkedExample(slug: string, lang: string): WorkedExample {
   const data = EXAMPLES[normalizedSlug] || EXAMPLES['bmi-calculator'];
   const curLang = (data.inputs[lang]) ? lang : 'en';
 
+  const dynamicSubtitle = toolTitle ? ({
+    en: `See how this formula works step by step for ${toolTitle} with sample measurements and clear health ranges.`,
+    es: `Examina una demostración detallada paso a paso que ilustra la aplicación práctica de las fórmulas para ${toolTitle}.`,
+    fr: `Découvrez une démonstration mathématique étape par étape illustrant l'application des équations de calcul pour ${toolTitle}.`,
+    de: `Verfolgen Sie eine transparente Beispielrechnung für ${toolTitle}, die veranschaulicht, wie die Formelwerte mathematisch abgeleitet werden.`,
+    ko: `${toolTitle}에 대한 실제 계측 입력값이 공식에 따라 산출되는 유도 과정과 해석 지침입니다.`,
+    hi: `${toolTitle} के लिए विस्तृत चरण-दर-चरण गणना और मानकीकृत संदर्भ समझें।`
+  }[lang] || headings.subtitle) : headings.subtitle;
+
   return {
     eyebrow: headings.eyebrow,
     title: headings.title,
-    subtitle: headings.subtitle,
+    subtitle: dynamicSubtitle,
     inputHeading: headings.input,
     inputs: data.inputs[curLang] || data.inputs.en,
     stepsHeading: headings.steps,
