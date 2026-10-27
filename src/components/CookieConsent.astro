@@ -25,6 +25,7 @@ interface CookieTranslations {
   savePreferences: string;
   policyLinkText: string;
   closeLabel: string;
+  dismissLabel: string;
 }
 
 const translations: Record<string, CookieTranslations> = {
@@ -45,7 +46,8 @@ const translations: Record<string, CookieTranslations> = {
     marketingDesc: "Allows Google AdSense to serve non-intrusive advertisements that fund the free development and maintenance of our health tools.",
     savePreferences: "Save Preferences",
     policyLinkText: "Read our Cookie Policy",
-    closeLabel: "Close cookie preferences modal"
+    closeLabel: "Close cookie preferences",
+    dismissLabel: "Dismiss"
   },
   es: {
     bannerTitle: "Preferencias de Cookies y Privacidad",
@@ -64,7 +66,8 @@ const translations: Record<string, CookieTranslations> = {
     marketingDesc: "Permite a Google AdSense mostrar anuncios no invasivos que financian el desarrollo y mantenimiento gratuito de nuestras herramientas de salud.",
     savePreferences: "Guardar Preferencias",
     policyLinkText: "Leer Política de Cookies",
-    closeLabel: "Cerrar modal de preferencias de cookies"
+    closeLabel: "Cerrar preferencias de cookies",
+    dismissLabel: "Descartar"
   },
   fr: {
     bannerTitle: "Gestion des Cookies et Confidentialité",
@@ -83,7 +86,8 @@ const translations: Record<string, CookieTranslations> = {
     marketingDesc: "Permet à Google AdSense d'afficher des publicités soutenant le libre accès et la gratuité de nos calculateurs de santé.",
     savePreferences: "Enregistrer mes Choix",
     policyLinkText: "Consulter la Politique de Cookies",
-    closeLabel: "Fermer la fenêtre des préférences"
+    closeLabel: "Fermer les préférences de cookies",
+    dismissLabel: "Ignorer"
   },
   de: {
     bannerTitle: "Cookie- & Datenschutzeinstellungen",
@@ -102,7 +106,8 @@ const translations: Record<string, CookieTranslations> = {
     marketingDesc: "Ermöglicht Google AdSense dezente Anzeigen, welche die kostenfreie Bereitstellung unserer Rechner finanzieren.",
     savePreferences: "Auswahl Speichern",
     policyLinkText: "Cookie-Richtlinie lesen",
-    closeLabel: "Cookie-Einstellungen schließen"
+    closeLabel: "Cookie-Einstellungen schließen",
+    dismissLabel: "Schließen"
   },
   ko: {
     bannerTitle: "쿠키 및 개인정보 설정",
@@ -121,7 +126,8 @@ const translations: Record<string, CookieTranslations> = {
     marketingDesc: "무료 건강 계산기 서비스 운영을 지원하기 위해 Google AdSense 광고 표시를 허용합니다.",
     savePreferences: "설정 저장",
     policyLinkText: "쿠키 정책 읽기",
-    closeLabel: "쿠키 설정 모달 닫기"
+    closeLabel: "쿠키 설정 닫기",
+    dismissLabel: "닫기"
   },
   hi: {
     bannerTitle: "कुकी और गोपनीयता प्राथमिकताएं",
@@ -140,7 +146,8 @@ const translations: Record<string, CookieTranslations> = {
     marketingDesc: "Google AdSense विज्ञापनों को सक्षम करता है जो इन स्वास्थ्य उपकरणों को मुफ़्त रखने में सहायता करते हैं।",
     savePreferences: "प्राथमिकताएं सहेजें",
     policyLinkText: "कुकी नीति पढ़ें",
-    closeLabel: "कुकी प्राथमिकताएं बंद करें"
+    closeLabel: "कुकी प्राथमिकताएं बंद करें",
+    dismissLabel: "हटाएं"
   }
 };
 
@@ -174,7 +181,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
         <button 
           id="btnRejectCookies" 
           type="button"
-          class="min-h-[48px] px-4 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--border)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+          class="min-h-[44px] px-4 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--border)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         >
           {t.rejectNonEssential}
         </button>
@@ -182,7 +189,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
         <button 
           id="btnCustomizeCookies" 
           type="button"
-          class="min-h-[48px] px-4 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-transparent hover:bg-[var(--muted)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+          class="min-h-[44px] px-4 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-transparent hover:bg-[var(--muted)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         >
           {t.customize}
         </button>
@@ -190,27 +197,38 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
         <button 
           id="btnAcceptAllCookies" 
           type="button"
-          class="min-h-[48px] px-5 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-gradient-to-r from-[var(--accent)] to-[#d44f30] text-white shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+          class="min-h-[44px] px-5 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-gradient-to-r from-[var(--accent)] to-[#d44f30] text-white shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         >
           {t.acceptAll}
+        </button>
+
+        <!-- Quick 1-tap dismiss button to avoid intrusive blocking on mobile -->
+        <button 
+          id="btnDismissBanner" 
+          type="button"
+          class="min-h-[44px] min-w-[44px] p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] rounded-lg transition-colors cursor-pointer flex items-center justify-center shrink-0"
+          aria-label={t.dismissLabel}
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
         </button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Customize Preferences Modal -->
+<!-- Customize Preferences Panel (Clean accessible panel without intrusive modal attributes) -->
 <div 
-  id="cookiePreferencesModal" 
+  id="cookiePreferencesSheet" 
   class="fixed inset-0 z-[110] bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="cookieModalTitle"
+  role="region"
+  aria-labelledby="cookieSheetTitle"
 >
   <div class="w-full max-w-lg rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-2xl p-5 sm:p-7 text-[var(--foreground)] space-y-6 my-8">
     <div class="flex items-center justify-between border-b border-[var(--border)] pb-4">
       <div>
-        <h3 id="cookieModalTitle" class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        <h3 id="cookieSheetTitle" class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
           {t.modalTitle}
         </h3>
         <p class="text-xs text-[var(--muted-foreground)] mt-1">
@@ -218,7 +236,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
         </p>
       </div>
       <button 
-        id="btnCloseCookieModal" 
+        id="btnCloseCookieSheet" 
         type="button" 
         class="min-h-[48px] min-w-[48px] p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] rounded-lg transition-colors cursor-pointer flex items-center justify-center"
         aria-label={t.closeLabel}
@@ -301,11 +319,12 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
   (function() {
     var CONSENT_KEY = 'cookie_consent_preferences';
     var banner = document.getElementById('cookieConsentBanner');
-    var modal = document.getElementById('cookiePreferencesModal');
+    var sheet = document.getElementById('cookiePreferencesSheet');
     var btnAcceptAll = document.getElementById('btnAcceptAllCookies');
     var btnReject = document.getElementById('btnRejectCookies');
     var btnCustomize = document.getElementById('btnCustomizeCookies');
-    var btnCloseModal = document.getElementById('btnCloseCookieModal');
+    var btnCloseSheet = document.getElementById('btnCloseCookieSheet');
+    var btnDismissBanner = document.getElementById('btnDismissBanner');
     var btnSavePrefs = document.getElementById('btnSavePreferences');
     var prefAnalytics = document.getElementById('prefAnalytics');
     var prefMarketing = document.getElementById('prefMarketing');
@@ -356,7 +375,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
 
       applyGtagConsent(prefs);
       hideBanner();
-      hideModal();
+      hideSheet();
     }
 
     function showBanner() {
@@ -369,27 +388,30 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
       banner.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
     }
 
-    function showModal() {
-      if (!modal) return;
+    function showSheet() {
+      if (!sheet) return;
       var existing = getStoredPreferences() || { analytics: false, marketing: false };
       if (prefAnalytics) prefAnalytics.checked = Boolean(existing.analytics);
       if (prefMarketing) prefMarketing.checked = Boolean(existing.marketing);
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
+      sheet.classList.remove('hidden');
+      sheet.classList.add('flex');
     }
 
-    function hideModal() {
-      if (!modal) return;
-      modal.classList.remove('flex');
-      modal.classList.add('hidden');
+    function hideSheet() {
+      if (!sheet) return;
+      sheet.classList.remove('flex');
+      sheet.classList.add('hidden');
     }
 
-    // Initialize state
+    // Initialize state with non-intrusive delay to protect mobile viewport and crawler first paint
     var currentPrefs = getStoredPreferences();
     if (!currentPrefs) {
-      if (!document.querySelector('.googlefc-consent-root') && !document.querySelector('.fc-dialog')) {
-        showBanner();
-      }
+      setTimeout(function() {
+        if (!document.querySelector('.googlefc-consent-root') && !document.querySelector('.fc-dialog')) {
+          showBanner();
+        }
+      }, 1500);
+
       if (typeof window.MutationObserver !== 'undefined') {
         var fcObserver = new MutationObserver(function() {
           if (document.querySelector('.googlefc-consent-root') || document.querySelector('.fc-dialog')) {
@@ -417,13 +439,19 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
 
     if (btnCustomize) {
       btnCustomize.addEventListener('click', function() {
-        showModal();
+        showSheet();
       });
     }
 
-    if (btnCloseModal) {
-      btnCloseModal.addEventListener('click', function() {
-        hideModal();
+    if (btnDismissBanner) {
+      btnDismissBanner.addEventListener('click', function() {
+        savePreferences(false, false);
+      });
+    }
+
+    if (btnCloseSheet) {
+      btnCloseSheet.addEventListener('click', function() {
+        hideSheet();
       });
     }
 
@@ -436,17 +464,17 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
       });
     }
 
-    // Modal background click to close
-    if (modal) {
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) hideModal();
+    // Background click to close sheet
+    if (sheet) {
+      sheet.addEventListener('click', function(e) {
+        if (e.target === sheet) hideSheet();
       });
     }
 
-    // ESC key to close modal
+    // ESC key to close sheet
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
-        hideModal();
+      if (e.key === 'Escape' && sheet && !sheet.classList.contains('hidden')) {
+        hideSheet();
       }
     });
 
@@ -455,7 +483,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
       if (window.googlefc && typeof window.googlefc.showRevocationMessage === 'function') {
         window.googlefc.showRevocationMessage();
       } else {
-        showModal();
+        showSheet();
       }
     };
 
