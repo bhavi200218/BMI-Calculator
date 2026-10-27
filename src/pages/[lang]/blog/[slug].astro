@@ -36,7 +36,8 @@ const clinicalBadge: Record<string, string> = {
   hi: 'अंतर्राष्ट्रीय नैदानिक संदर्भ डेटा'
 };
 const badgeLabel = clinicalBadge[lang] || clinicalBadge.en;
-const articleContentHtml = (plainTextLen > 350)
+const isFallback = (plainTextLen <= 350);
+const articleContentHtml = (!isFallback)
   ? rawContentHtml
   : (rawContentHtml
       ? `${rawContentHtml} <div class="mt-8 pt-8 border-t border-[var(--border)]"><div class="not-prose mb-4 px-3 py-1.5 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider inline-block">${badgeLabel}</div>${article.contentHtml?.en || ''}</div>`
@@ -45,6 +46,7 @@ const articleBody: string[] = (article.body ? (article.body[lang] || article.bod
 
 const canonicalUrl = `https://realbmicalculator.com/${lang}/blog/${slug}/`;
 const cta = getBlogCta(slug as string, lang);
+const robotsDirective = isFallback ? 'noindex, follow' : 'index, follow';
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -99,7 +101,7 @@ const byline = bylineLabels[lang] || bylineLabels.en;
     title={`${articleTitle} | Real BMI`}
     description={articleDescription}
     canonicalURL={canonicalUrl}
-    robots="index, follow"
+    robots={robotsDirective}
 >
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="json-ld"></script>
     <Navbar />
