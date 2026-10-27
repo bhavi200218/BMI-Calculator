@@ -1,448 +1,151 @@
 ---
-// Root multilingual portal and global discovery gateway
-import CookieConsent from '../components/CookieConsent.astro';
-
-const currentYear = new Date().getFullYear();
+// Root Homepage — Primary Interactive Health Suite & Global Gateway
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import HomepageHubWrapper from '../components/HomepageHubWrapper.astro';
+import LatestArticles from '../components/LatestArticles.astro';
+import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
+import EmbedWidgetBox from '../components/EmbedWidgetBox.astro';
+import HealthContent from '../components/HealthContent.astro';
+import UnderstandNumbersSection from '../components/UnderstandNumbersSection.astro';
 ---
-<!doctype html>
-<html lang="en" class="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Real BMI Global Gateway — Multilingual Health Calculators</title>
-  <meta name="description" content="Access Real BMI evidence-based calculators in English, Español, Français, Deutsch, 한국어, or हिन्दी. 100% private, free, and browser-based." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://realbmicalculator.com/" />
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://realbmicalculator.com/" />
-  <meta property="og:title" content="Real BMI Global Gateway — Multilingual Health Calculators" />
-  <meta property="og:description" content="Access Real BMI evidence-based calculators in English, Español, Français, Deutsch, 한국어, or हिन्दी. 100% private, free, and browser-based." />
-  <meta property="og:image" content="https://realbmicalculator.com/seo-dark.png" />
-  <meta property="og:site_name" content="Real BMI Calculator" />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://realbmicalculator.com/" />
-  <meta property="twitter:title" content="Real BMI Global Gateway — Multilingual Health Calculators" />
-  <meta property="twitter:description" content="Access Real BMI evidence-based calculators in English, Español, Français, Deutsch, 한국어, or हिन्दी. 100% private, free, and browser-based." />
-  <meta property="twitter:image" content="https://realbmicalculator.com/seo-dark.png" />
+<Layout 
+	title="Real BMI Calculator — Free Health & Body Composition Tools"
+	description="Real BMI is a private, evidence-based health calculator suite offering free BMI, BMR, TDEE, Body Fat, and Ideal Weight tools based on published WHO & CDC standards."
+	canonicalURL="https://realbmicalculator.com/"
+>
+	<Navbar />
+	
+	<main class="pb-4 relative overflow-x-hidden">
 
-  <!-- Hreflang Tags for International Discovery (Self-Referencing x-default + Locale Endpoints) -->
-  <link rel="alternate" hreflang="x-default" href="https://realbmicalculator.com/" />
-  <link rel="alternate" hreflang="en" href="https://realbmicalculator.com/en/" />
-  <link rel="alternate" hreflang="es" href="https://realbmicalculator.com/es/" />
-  <link rel="alternate" hreflang="fr" href="https://realbmicalculator.com/fr/" />
-  <link rel="alternate" hreflang="de" href="https://realbmicalculator.com/de/" />
-  <link rel="alternate" hreflang="ko" href="https://realbmicalculator.com/ko/" />
-  <link rel="alternate" hreflang="hi" href="https://realbmicalculator.com/hi/" />
+		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
+		<section class="pt-24 md:pt-28 pb-6 md:pb-8 px-4 md:px-6">
+			<div class="max-w-7xl mx-auto">
 
-  <!-- Structured Data (Schema.org): WebSite & SoftwareApplication / WebApplication for BMI Calculation Tool -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Real BMI Calculator",
-    "alternateName": ["Real BMI", "Real BMI Online", "Real BMI Global Gateway"],
-    "url": "https://realbmicalculator.com/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://realbmicalculator.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["SoftwareApplication", "WebApplication"],
-    "name": "Real BMI Calculator",
-    "operatingSystem": "All",
-    "applicationCategory": "HealthApplication",
-    "browserRequirements": "Requires JavaScript. Requires HTML5.",
-    "description": "Evidence-based BMI Calculator suite for instantaneous Body Mass Index, BMR, TDEE, and 3D body composition estimation adhering to WHO and CDC standards.",
-    "url": "https://realbmicalculator.com/en/bmi-calculator/",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  </script>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
-  <link rel="shortcut icon" href="/favicon.ico?v=2" />
+				<!-- Main H1 & Hero Header -->
+				<div class="text-center space-y-4 mb-8 max-w-4xl mx-auto">
+					<!-- Eyebrow Tag / Pill -->
+					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
+						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+						REAL BMI — HEALTH & FITNESS CALCULATOR SUITE
+					</div>
 
-  <!-- Resource Hints -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-  <link rel="dns-prefetch" href="https://fundingchoicesmessages.google.com" />
+					<!-- Main H1 headline -->
+					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
+						Real BMI — Free Health & Body Composition Calculators
+					</h1>
 
-  <!-- Permissions Policy & Content Security Policy -->
-  <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.googletagmanager.com https://ep2.adtrafficquality.google https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://pagead2.googlesyndication.com https://*.doubleclick.net https://*.google-analytics.com https://*.googlesyndication.com https://www.google.com https://www.gstatic.com; connect-src 'self' https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://www.googletagmanager.com https://ep2.adtrafficquality.google https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://cloudflareinsights.com; frame-src 'self' https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://tpc.googlesyndication.com https://www.google.com; worker-src 'self' blob:; manifest-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
+					<!-- Supporting H2 Subtitle & Intro -->
+					<p class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight font-display">
+						Understand Your Numbers. Plan With Confidence.
+					</p>
+					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed pt-1">
+						Calculate Body Mass Index (BMI), Basal Metabolic Rate (BMR), and Total Daily Energy Expenditure (TDEE) with instant, private browser tools built on published WHO and CDC health standards.
+					</p>
+				</div>
 
-  <!-- Google AdSense Account Verification -->
-  <meta name="google-adsense-account" content="ca-pub-6643535431949281" />
+				<!-- Stats Strip -->
+				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4">
+					{[
+						'15+ Calculators',
+						'6 Languages',
+						'Browser-Based',
+						'Instant Results'
+					].map(badge => (
+						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
+							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+							{badge}
+						</div>
+					))}
+				</div>
 
-  <!-- Google Funding Choices Official Certified CMP Tag (GDPR & AdSense Compliance) -->
-  <script async src="https://fundingchoicesmessages.google.com/i/pub-6643535431949281?ers=1" crossorigin="anonymous" referrerpolicy="strict-origin-when-cross-origin"></script>
-  <script is:inline>
-    (function() {
-      function signalGooglefcPresent() {
-        if (!window.frames['googlefcPresent']) {
-          if (document.body) {
-            var iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.name = 'googlefcPresent';
-            document.body.appendChild(iframe);
-          } else {
-            setTimeout(signalGooglefcPresent, 0);
-          }
-        }
-      }
-      signalGooglefcPresent();
-    })();
-  </script>
+				<!-- Trust Badge below Stats -->
+				<div class="flex items-center justify-center gap-2 mb-8 md:mb-10 text-xs font-medium text-[var(--muted-foreground)]">
+					<svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+					</svg>
+					<span>WHO & CDC Reference Standards • Client-Side Privacy Guarantee</span>
+				</div>
 
-  <style>
-    :root {
-      --background: #091212;
-      --foreground: #FCFAF7;
-      --accent: #E8674A;
-      --card: #11201D;
-      --border: #182B27;
-      --muted: #162925;
-      --muted-foreground: #8FA7A7;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      min-height: 100vh;
-      background-color: var(--background);
-      color: var(--foreground);
-      line-height: 1.6;
-      padding: 2.5rem 1rem;
-    }
-    .container {
-      max-width: 68rem;
-      margin: 0 auto;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 1.5rem;
-      padding: 2.5rem 1.5rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-    @media (min-width: 768px) {
-      .container {
-        padding: 3.5rem 3rem;
-      }
-    }
-    .badge {
-      display: inline-block;
-      padding: 0.35rem 0.85rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      background: rgba(232, 103, 74, 0.1);
-      color: var(--accent);
-      border: 1px solid rgba(232, 103, 74, 0.25);
-      margin-bottom: 1.25rem;
-    }
-    h1 {
-      font-size: 2.1rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
-    }
-    @media (min-width: 768px) {
-      h1 { font-size: 2.75rem; }
-    }
-    .subtitle {
-      font-size: 1.15rem;
-      color: var(--muted-foreground);
-      max-width: 48rem;
-      margin-bottom: 2.5rem;
-      line-height: 1.5;
-    }
-    .section-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--foreground);
-      margin-bottom: 1.25rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.5rem;
-    }
-    .grid-languages {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-      margin-bottom: 2.5rem;
-    }
-    @media (min-width: 640px) {
-      .grid-languages { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (min-width: 1024px) {
-      .grid-languages { grid-template-columns: repeat(3, 1fr); }
-    }
-    .lang-card {
-      padding: 1.5rem;
-      border-radius: 1rem;
-      background: rgba(22, 41, 37, 0.5);
-      border: 1.5px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-    .lang-card:hover {
-      border-color: var(--accent);
-      background: rgba(232, 103, 74, 0.06);
-      transform: translateY(-2px);
-    }
-    .lang-flag {
-      font-size: 1.75rem;
-      margin-bottom: 0.5rem;
-    }
-    .lang-name {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--foreground);
-      margin-bottom: 0.35rem;
-    }
-    .lang-desc {
-      font-size: 0.85rem;
-      color: var(--muted-foreground);
-      line-height: 1.45;
-      margin-bottom: 1.25rem;
-    }
-    .lang-action {
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .trust-box {
-      background: rgba(16, 185, 129, 0.06);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-    .trust-icon {
-      width: 1.5rem;
-      height: 1.5rem;
-      color: #10b981;
-      shrink: 0;
-      margin-top: 0.15rem;
-    }
-    .trust-text h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #34d399;
-      margin-bottom: 0.35rem;
-    }
-    .trust-text p {
-      font-size: 0.85rem;
-      color: #cbd5e1;
-      line-height: 1.5;
-    }
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem 1.25rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.95rem;
-      color: var(--muted-foreground);
-    }
-    .footer-links a,
-    .footer-links button {
-      color: var(--muted-foreground);
-      text-decoration: none;
-      transition: color 0.2s;
-      min-height: 48px;
-      display: inline-flex;
-      align-items: center;
-      padding: 0.5rem 0.5rem;
-      background: none;
-      border: none;
-      font: inherit;
-      cursor: pointer;
-    }
-    .footer-links a:hover,
-    .footer-links button:hover {
-      color: var(--accent);
-    }
-    .copyright-line {
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted-foreground);
-      margin-top: 1.5rem;
-    }
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 2rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .site-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      min-height: 48px;
-      min-width: 48px;
-    }
-    .logo-img {
-      width: 2.25rem;
-      height: 2.25rem;
-      border-radius: 0.5rem;
-      background: var(--accent);
-      padding: 0.25rem;
-      object-fit: contain;
-    }
-    .site-title {
-      font-size: 1.25rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
-      color: var(--foreground);
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header role="banner" class="site-header">
-      <a href="/en/" class="logo site-logo" rel="home" aria-label="Real BMI Homepage">
-        <picture style="display:inline-flex;align-items:center;">
-          <source srcset="/logo.avif" type="image/avif" />
-          <source srcset="/logo.webp" type="image/webp" />
-          <img src="/logo.webp" alt="Real BMI Logo" width="36" height="36" loading="lazy" decoding="async" class="logo-img" />
-        </picture>
-        <span class="site-title">Real BMI</span>
-      </a>
-      <div class="badge" style="margin: 0;">Verified Health Suite</div>
-    </header>
+				<!-- Interactive Calculator Hub -->
+				<div id="calculators" class="scroll-mt-28">
+					<HomepageHubWrapper lang="en" />
+				</div>
+			</div>
+		</section>
 
-    <main id="main-content">
-      <div class="badge">Real BMI International Portal</div>
-      <h1>Real BMI Global Gateway — Multi-Language Health Suite</h1>
-    <p class="subtitle">
-      Select your preferred language edition to access our verified, evidence-based calculation suite. Compute Body Mass Index (BMI), Basal Metabolic Rate (BMR), and Total Daily Energy Expenditure (TDEE) with complete client-side privacy.
-    </p>
+		<!-- ═══════════════════  MULTILINGUAL DISCOVERY BAR  ═══════════════════ -->
+		<section class="px-4 md:px-6 py-6 border-y border-[var(--border)] bg-[var(--card)]/40">
+			<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+				<div>
+					<p class="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">International Editions</p>
+					<p class="text-sm text-[var(--muted-foreground)]">Access Real BMI calculators in your preferred language:</p>
+				</div>
+				<div class="flex flex-wrap justify-center gap-2">
+					<a href="/en/" class="px-3 py-1.5 rounded-lg border border-[var(--accent)] bg-[var(--accent)]/15 text-xs font-bold text-[var(--accent)]">🇺🇸 English</a>
+					<a href="/es/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇪🇸 Español</a>
+					<a href="/fr/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇫🇷 Français</a>
+					<a href="/de/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇩🇪 Deutsch</a>
+					<a href="/ko/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇰🇷 한국어</a>
+					<a href="/hi/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇮🇳 हिन्दी</a>
+				</div>
+			</div>
+		</section>
 
-    <!-- Client-Side Privacy Note (AdSense Policy Compliance) -->
-    <div class="trust-box">
-      <svg class="trust-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-      </svg>
-      <div class="trust-text">
-        <h3>Client-Side Privacy Guarantee: We Do Not Store Your Input</h3>
-        <p>All biometric calculations on Real BMI execute locally in your web browser. No personal health metrics (such as weight, height, age, or gender) are stored on, transmitted to, or logged on external web servers.</p>
-      </div>
-    </div>
+		<!-- ═══════════════════  WHY PEOPLE CHOOSE REAL BMI  ═══════════════════ -->
+		<section class="px-4 md:px-6 py-12 md:py-16 content-auto">
+			<div class="max-w-7xl mx-auto">
+				<div class="mb-10 sm:mb-12 space-y-3">
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Transparent Calculator Features</p>
+					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
+						Clarity for your health goals
+					</h2>
+					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
+						Whether you are tracking progress, planning nutrition, or reviewing fitness baselines, Real BMI gives you fast, practical estimates grounded in published guidelines.
+					</p>
+				</div>
 
-    <!-- 6 Language Edition Cards -->
-    <h2 class="section-title">Select Language Edition</h2>
-    <div class="grid-languages">
-      <!-- English -->
-      <a href="/en/" class="lang-card">
-        <div>
-          <div class="lang-flag">🇺🇸 🇬🇧</div>
-          <div class="lang-name">English Edition</div>
-          <p class="lang-desc">Real BMI Calculator, BMR, TDEE, Body Fat Percentage, 3D Visualizer &amp; CDC/WHO adult reference charts.</p>
-        </div>
-        <div class="lang-action">Enter English Suite →</div>
-      </a>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+					{[
+						{ title: 'Formula-based estimates', description: 'Get clear baselines for BMI, BMR, TDEE, and ideal weight using published mathematical equations.' },
+						{ title: 'Browser privacy first', description: 'All calculations stay on your device — no accounts, sign-ups, or server storage required.' },
+						{ title: 'Built on public standards', description: 'Results are presented alongside WHO and CDC public reference ranges for context.' },
+						{ title: 'Useful for daily planning', description: 'Explore fitness metrics, nutrition estimates, and body composition references with clear calculation methods.' },
+					].map(item => (
+						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
+							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
+							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+								{item.description}
+							</p>
+						</div>
+					))}
+					
+					<!-- Brand & Methodology Box -->
+					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6 shadow-md">
+						<div class="space-y-2">
+							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">Transparent Methodology</p>
+							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">HOW OUR CALCULATORS WORK</p>
+							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">Explore our published formulas, reference standards, inputs, outputs, and limitations for all 15+ tools.</p>
+						</div>
+						<a href="/en/methodology/" class="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-display text-xs font-bold uppercase tracking-wider hover:bg-slate-100 transition-all shadow-xs">
+							View Calculator Methodology →
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 
-      <!-- Spanish -->
-      <a href="/es/" class="lang-card">
-        <div>
-          <div class="lang-flag">🇪🇸 🇲🇽</div>
-          <div class="lang-name">Edición en Español</div>
-          <p class="lang-desc">Calculadora de IMC, TMB, TDEE, Grasa Corporal, Peso Ideal y Visualizador Corporal 3D según directrices OMS.</p>
-        </div>
-        <div class="lang-action">Entrar en Español →</div>
-      </a>
+		<!-- ═══════════════════  FEATURED GUIDES & TRUST CONTENT  ═══════════════════ -->
+		<div class="px-4 md:px-6 pt-6 pb-12 content-auto">
+			<div class="max-w-7xl mx-auto space-y-12">
+				<UnderstandNumbersSection lang="en" />
+				<EmbedWidgetBox lang="en" />
+				<LatestArticles lang="en" />
+				<HealthContent lang="en" />
+				<MedicalEEATBanner lang="en" />
+			</div>
+		</div>
 
-      <!-- French -->
-      <a href="/fr/" class="lang-card">
-        <div>
-          <div class="lang-flag">🇫🇷 🇨🇦</div>
-          <div class="lang-name">Édition Française</div>
-          <p class="lang-desc">Calculateur d'IMC, Métabolisme de Base (BMR), Dépense Énergétique (TDEE) et Composition Corporelle 3D.</p>
-        </div>
-        <div class="lang-action">Accéder en Français →</div>
-      </a>
-
-      <!-- German -->
-      <a href="/de/" class="lang-card">
-        <div>
-          <div class="lang-flag">🇩🇪 🇦🇹</div>
-          <div class="lang-name">Deutsche Ausgabe</div>
-          <p class="lang-desc">BMI Rechner, Grundumsatz (BMR), Gesamtenergiebedarf (TDEE), Körperfettanteil und 3D-Körpervisualisierung.</p>
-        </div>
-        <div class="lang-action">Auf Deutsch Öffnen →</div>
-      </a>
-
-      <!-- Korean -->
-      <a href="/ko/" class="lang-card">
-        <div>
-          <div class="lang-flag">🇰🇷</div>
-          <div class="lang-name">한국어 에디션</div>
-          <p class="lang-desc">WHO 및 CDC 기준 무료 체질량지수(BMI), 기초대사량(BMR), 일일 총 에너지 소비량(TDEE) 및 3D 체형 시각화 도구.</p>
-        </div>
-        <div class="lang-action">한국어 계산기 시작 →</div>
-      </a>
-
-      <!-- Hindi -->
-      <a href="/hi/" class="lang-card">
-        <div>
-          <div class="lang-flag">🇮🇳</div>
-          <div class="lang-name">हिन्दी संस्करण</div>
-          <p class="lang-desc">डब्ल्यूएचओ एवं आईसीएमआर दिशानिर्देशों पर आधारित बॉडी मास इंडेक्स (BMI), बीएमआर, टीडीईई एवं शरीर संरचना कैलकुलेटर।</p>
-        </div>
-        <div class="lang-action">हिन्दी में शुरू करें →</div>
-      </a>
-    </div>
-
-    <!-- Institutional Footer Links -->
-    <footer class="footer-links">
-      <a href="/en/about/">About Us</a>
-      <a href="/en/contact/">Contact &amp; Inquiries</a>
-      <a href="/en/editorial-policy/">Editorial Policy</a>
-      <a href="/en/methodology/">Methodology &amp; Formulas</a>
-      <a href="/en/sources/">Scientific Sources</a>
-      <a href="/en/privacy-policy/">Privacy Policy</a>
-      <a href="/en/terms-conditions/">Terms &amp; Conditions</a>
-      <a href="/en/disclaimer/">Medical Disclaimer</a>
-      <a href="/en/cookie-policy/">Cookie Policy</a>
-      <button id="openCookiePreferencesBtn" type="button" class="cookie-prefs-btn">Cookie Preferences</button>
-      <a href="/en/dmca-policy/">Copyright &amp; DMCA</a>
-    </footer>
-    <p class="copyright-line">© {currentYear} Real BMI Calculator. All rights reserved. Maintained by the Real BMI Health Tools Team for educational reference.</p>
-  </main>
-</div>
-<CookieConsent lang="en" />
-</body>
-</html>
+	</main>
+</Layout>

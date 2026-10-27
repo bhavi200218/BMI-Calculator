@@ -52,6 +52,7 @@ const articlesList = articleSlugs.map(slug => {
   title={`${h.title} | Real BMI`}
   description={h.desc}
   canonicalURL={`https://realbmicalculator.com/${lang}/blog/`}
+  robots={lang === 'en' ? 'index, follow' : 'noindex, follow'}
 >
   <Navbar />
 

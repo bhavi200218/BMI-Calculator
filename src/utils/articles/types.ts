@@ -8,4 +8,5 @@ export interface BlogArticleData {
   category: Record<Locale, string>;
   description: Record<Locale, string>;
   contentHtml: Record<Locale, string>;
+  body?: Partial<Record<Locale, string[]>> | Record<string, string[]>;
 }
