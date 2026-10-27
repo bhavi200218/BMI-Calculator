@@ -76,6 +76,12 @@ const currentLangDisplay = langNames[lang] || lang;
                 targetPath = '/search';
               } else if (cleanPath.startsWith('/embed/')) {
                 targetPath = cleanPath;
+              } else if (cleanPath.startsWith('/author/') && code !== 'en') {
+                targetPath = `/${code}/about/`;
+              } else if (cleanPath.startsWith('/terms-of-service') && code !== 'en') {
+                targetPath = `/${code}/terms-conditions/`;
+              } else if (cleanPath.startsWith('/terms') && !cleanPath.startsWith('/terms-conditions')) {
+                targetPath = `/${code}/terms-conditions/`;
               }
 
               return (
