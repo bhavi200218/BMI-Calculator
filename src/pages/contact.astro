@@ -1,3 +1,199 @@
 ---
-return Astro.redirect('/en/contact/', 301);
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Support & Editorial Team | Real BMI Calculator",
+  "url": "https://realbmicalculator.com/contact/",
+  "description": "Contact Real BMI for technical support, mathematical formula feedback, editorial inquiries, or suggestions regarding our health and fitness calculators.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Real BMI Calculator",
+    "url": "https://realbmicalculator.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "100 Montgomery St, Suite 1400",
+      "addressLocality": "San Francisco",
+      "addressRegion": "CA",
+      "postalCode": "94104",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "url": "https://realbmicalculator.com/contact/",
+      "contactType": "customer support",
+      "availableLanguage": ["English", "Spanish", "French", "German", "Korean", "Hindi"]
+    }
+  }
+};
 ---
+
+<Layout 
+    title="Contact Real BMI — Feedback & Technical Support" 
+    description="Contact the Real BMI engineering and editorial desk. Submit algorithm feedback, report calculation bugs, or request assistance."
+    canonicalURL="https://realbmicalculator.com/contact/"
+>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(contactSchema)} />
+    <Navbar />
+    <main class="pt-36 md:pt-40 pb-20 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto space-y-12">
+          <!-- Header block -->
+          <div class="space-y-4 max-w-4xl">
+            <a href="/" class="inline-flex items-center gap-2 min-h-[48px] px-3 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)] hover:text-[var(--foreground)] transition-colors rounded-lg">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+              Home
+            </a>
+            <p class="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">Get in Touch</p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight leading-tight text-[var(--foreground)]">Contact Support & Editorial Team</h1>
+            <p class="text-base sm:text-lg md:text-xl leading-relaxed text-[var(--muted-foreground)] font-medium pt-1">
+              Have a question about our calculator formulas, a technical issue with 3D visualization, or feedback on our health guides? Reach out directly to our team.
+            </p>
+          </div>
+
+          <!-- Main Layout -->
+          <div class="grid gap-10 lg:grid-cols-[1.45fr_0.85fr] items-start">
+            <div class="space-y-10">
+              <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90 space-y-4">
+                <p>Real BMI is an independent health engineering platform dedicated to providing transparent, privacy-first wellness tools based on peer-reviewed published algorithms. We welcome inquiries from visitors, healthcare professionals, fitness coaches, and researchers.</p>
+                <p>Please review our communication guidelines below to ensure your message reaches the appropriate review queue.</p>
+              </div>
+
+              <!-- Support details grid -->
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">User Support Desk</p>
+                  <a href="#contact-form" class="mt-2 text-sm sm:text-base font-bold text-[var(--accent)] hover:underline block">
+                    Encrypted Web Portal →
+                  </a>
+                  <p class="text-xs text-[var(--muted-foreground)] mt-1">General inquiries, bug reports &amp; tool feedback</p>
+                </div>
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Editorial &amp; Clinical Inquiries</p>
+                  <a href="#contact-form" class="mt-2 text-sm sm:text-base font-bold text-[var(--accent)] hover:underline block">
+                    Clinical Review Desk →
+                  </a>
+                  <p class="text-xs text-[var(--muted-foreground)] mt-1">Formula review, citations &amp; clinical board</p>
+                </div>
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Operations Headquarters</p>
+                  <p class="mt-2 text-sm font-bold text-[var(--foreground)]">Real BMI Health Computing Labs</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">100 Montgomery St, Suite 1400</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">San Francisco, CA 94104, USA</p>
+                </div>
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
+                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Support Hours &amp; Response</p>
+                  <p class="mt-2 text-sm sm:text-base font-bold text-[var(--foreground)] block">
+                    Mon–Fri: 9:00 AM – 5:00 PM PST
+                  </p>
+                  <p class="text-xs text-[var(--muted-foreground)] mt-1">Secure form submission &bull; Zero PII exposure</p>
+                  <p class="text-xs text-emerald-400 font-semibold mt-0.5">Response within 24–48 hours</p>
+                </div>
+              </div>
+
+              <!-- Interactive Contact Form -->
+              <div id="contact-form">
+                <ContactForm lang="en" />
+              </div>
+
+              <!-- Guidance & Editorial Sections -->
+              <div class="space-y-6 pt-4 border-t border-[var(--border)]">
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">1. Formula Questions & Scientific Feedback</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">We constantly verify our implementations of the Mifflin-St Jeor equation, Oxford 2.5 BMI models, and WHO Asian risk thresholds. If you have academic feedback, citations, or suggestions for improving reference tables, our editorial review team welcomes your notes.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">2. Technical Troubleshooting & 3D WebGL Support</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Encountering rendering issues with the 3D Body Visualizer or interactive charts? Please include your operating system, device model, and browser version (Chrome, Safari, Edge, or Firefox) so our engineering staff can replicate and resolve the issue quickly.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">3. Absence of Individual Medical Advice</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Real BMI provides population-level educational screening tools and cannot review personal medical lab results, diagnose clinical conditions, or provide individualized medication or diet advice. Inquiries requesting personalized medical diagnoses cannot be answered.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">4. Privacy & Secure Communications</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Any correspondence sent to our support desk is treated with strict confidentiality. We do not sell or share contact information with external marketing networks, and correspondence is retained solely to assist in resolving your query.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">5. Calculator Embedding & API Integrations</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">If you operate a health, fitness, or educational website and wish to embed our interactive calculators or link to our reference guides, you may use our standard iframe widgets. For custom sizing or academic use, please submit an inquiry via our form.</p>
+                  </div>
+                
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">6. Feedback on Medical Reference Cutoffs</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">We cross-reference our tools against consensus guidelines from the WHO, CDC, NHLBI, and ICMR. If national health authorities in your region have recently published revised anthropometric guidelines, please send us the citation so our editorial board can evaluate an update.</p>
+                  </div>
+
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">7. Pre-Publication Content Review & Zero-PII Policy</h2>
+                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">In strict accordance with Google Publisher Policies and international privacy regulations, Real BMI enforces a comprehensive pre-publication content review and zero-PII standard across all public entries. We do not host public message boards, exposed personal contact directories, or user profiles. All inquiries submitted via our encrypted portal are handled confidentially and are never published online.</p>
+                  </div>
+              </div>
+
+              <!-- Support FAQ Section -->
+              <div class="faq-support-section space-y-6 pt-6 border-t border-[var(--border)]">
+                <div class="space-y-2">
+                  <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    Frequently Asked Support Questions
+                  </h2>
+                  <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
+                    Common inquiries regarding formula citations, 3D WebGL simulator performance, privacy guidelines, and calculator integrations.
+                  </p>
+                </div>
+                <div class="space-y-4">
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">How can I report a mathematical error or suggest a formula update?</h3>
+                    <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Send your inquiry through our online support form with the specific calculator URL, the mathematical formula or variable in question, and academic citations (such as WHO, CDC, or PubMed articles). Our editorial board reviews all formula feedback within 48 hours.</p>
+                  </div>
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Can I embed Real BMI calculators on my blog, clinic, or gym website?</h3>
+                    <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Yes. You may use our embed widget iframe freely on non-commercial and commercial websites. We ask that you maintain the attribution link back to realbmicalculator.com so your users can access complete formula documentation.</p>
+                  </div>
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Are my health numbers, weight, or personal measurements stored on your servers?</h3>
+                    <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">No. All calculations are processed locally inside your web browser using JavaScript. No biometric parameters, heights, weights, or body fat numbers are ever transmitted to our servers or stored in any database.</p>
+                  </div>
+                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
+                    <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">How quickly does the Real BMI technical team respond to messages?</h3>
+                    <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">We review and respond to inquiries within 24 to 48 business hours. For urgent bug reports regarding 3D WebGL rendering or calculator malfunction, please include your device and browser version to expedite replication.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar Card -->
+            <aside class="sticky top-28 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-4">
+              <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Official Channel</p>
+              <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight">Verified Portal</h2>
+              <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">Submit your technical inquiries, bug reports, and formula citations through our encrypted submission portal with zero public PII exposure.</p>
+              <div class="pt-4">
+                <a href="#contact-form" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 px-6 py-4 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-white shadow-xs min-h-[48px]">
+                  Launch Contact Form →
+                </a>
+              </div>
+              <div class="pt-4 border-t border-[var(--border)]/60 space-y-2 text-xs text-[var(--muted-foreground)]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span>100% Encrypted Web Transmission</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span>Zero Public PII Exposure Protocol</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span>Response within 24–48 Business Hours</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+    </main>
+</Layout>

@@ -1,3 +1,109 @@
 ---
-return Astro.redirect('/en/about/', 301);
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import PageShell from '../../../components/PageShell.astro';
+
+const authorSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Dr. Michael Vance, MD",
+    "jobTitle": "Lead Medical Reviewer & Clinical Informatics Advisor",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Real BMI",
+      "url": "https://realbmicalculator.com"
+    },
+    "description": "Board-certified internal medicine physician and clinical informatics advisor specializing in evidence-based anthropometric models and mathematical health computing.",
+    "knowsAbout": [
+      "Internal Medicine",
+      "Clinical Informatics",
+      "Body Mass Index (BMI) Reference Cutoffs",
+      "Basal Metabolic Rate & Energy Balance Equations",
+      "Cardiometabolic Risk Screening",
+      "WHO & CDC Population Health Standards"
+    ]
+  }
+};
 ---
+
+<Layout 
+    title="Medical Reviewer Profile: Dr. Michael Vance, MD | Real BMI"
+    description="Clinical profile of Dr. Michael Vance, MD, Lead Medical Reviewer at Real BMI. Board-certified internal medicine physician validating public health formulas."
+    canonicalURL="https://realbmicalculator.com/en/author/dr-michael-vance/"
+>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(authorSchema)} />
+    <Navbar />
+    <PageShell
+      title="Dr. Michael Vance, MD"
+      eyebrow="Medical Reviewer & Clinical Informatics Advisor"
+      description="Board-certified internal medicine physician and clinical informatics advisor overseeing mathematical model derivation and reference guideline alignment at Real BMI."
+      returnUrl="/en/about/"
+      returnLabel="About Us"
+    >
+      <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
+        <div class="space-y-10">
+          <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium opacity-90 space-y-6">
+            
+            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-center">
+              <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-black text-2xl shadow-lg shrink-0">
+                MV
+              </div>
+              <div class="space-y-1 text-center sm:text-left">
+                <h2 class="text-xl sm:text-2xl font-bold text-[var(--foreground)] font-display">Dr. Michael Vance, MD</h2>
+                <p class="text-xs font-bold uppercase tracking-wider text-[var(--accent)]">Lead Medical Reviewer &bull; Clinical Informatics Advisor</p>
+                <p class="text-xs text-[var(--muted-foreground)]">Board-Certified Internal Medicine &bull; Clinical Reference Panel</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Biography & Clinical Background</h2>
+            <p>
+              <strong>Dr. Michael Vance, MD</strong>, serves as the Lead Medical Reviewer and Clinical Informatics Advisor for Real BMI. With over a decade of clinical experience in adult internal medicine and healthcare data systems, Dr. Vance provides rigorous medical and biostatistical oversight across our entire suite of anthropometric, metabolic, and body composition calculators.
+            </p>
+            <p>
+              Dr. Vance completed his Doctor of Medicine (MD) and post-graduate clinical training with a focus on preventative cardiometabolic screening and quantitative biometric assessment. His clinical interest centers on translating large-scale epidemiological data—such as World Health Organization (WHO) and Centers for Disease Control (CDC) population datasets—into clear, accessible, and mathematically verifiable health tools for the general public.
+            </p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Medical Oversight & Responsibilities at Real BMI</h2>
+            <p>
+              In his advisory capacity at Real BMI, Dr. Vance ensures that every mathematical model and educational guide adheres to current peer-reviewed medical literature and public health standards:
+            </p>
+            <ul>
+              <li><strong>Algorithm Validation:</strong> Direct oversight of formulas including Mifflin-St Jeor (1990), Oxford 2.5 BMI equation, Devine Ideal Body Weight, and U.S. Navy body fat circumference equations.</li>
+              <li><strong>Population Cutoff Accuracy:</strong> Verification of international classification benchmarks, including WHO ethnic cutoffs for Asian populations (overweight trigger at 23.0 kg/m² and obesity at 27.5 kg/m²).</li>
+              <li><strong>Physiological Limitation Warnings:</strong> Formulating educational disclaimers explaining when mathematical screening tools fail—such as high-muscle athletic body composition, fluid retention, and age-related sarcopenia.</li>
+              <li><strong>Zero-PII & Ethical Review:</strong> Upholding strict ethical standards that prevent commercial bias, third-party medical endorsements, or user biometric data collection.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Clinical Philosophy on Self-Screening</h2>
+            <p>
+              <em>"Health calculators are powerful instruments for personal awareness and baseline monitoring, but they are screening utilities—not medical diagnoses,"</em> notes Dr. Vance. <em>"Our goal at Real BMI is to deliver complete mathematical transparency, so individuals can understand what their numbers represent and hold meaningful, informed discussions with their primary healthcare providers."</em>
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar Credentials Card -->
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-6">
+          <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Professional Profile</p>
+          <h3 class="text-2xl font-black text-[var(--foreground)]">Credentials & Specialties</h3>
+          
+          <div class="space-y-4 text-xs text-[var(--muted-foreground)] leading-relaxed border-t border-[var(--border)] pt-4">
+            <p><strong>Medical Specialty:</strong> Internal Medicine &amp; Clinical Informatics</p>
+            <p><strong>Primary Focus:</strong> Cardiometabolic Risk Screening &amp; Anthropometry</p>
+            <p><strong>Affiliation:</strong> Real BMI Clinical Review Board</p>
+            <p><strong>Review Scope:</strong> WHO &amp; CDC Benchmark Alignment, Formula Verification</p>
+          </div>
+
+          <div class="space-y-3 pt-2">
+            <a href="/en/about/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition">
+              About Editorial Team →
+            </a>
+            <a href="/en/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">
+              Contact Editorial Desk
+            </a>
+          </div>
+        </aside>
+      </div>
+    </PageShell>
+</Layout>
