@@ -27,10 +27,19 @@ const articleCategory = article.category ? (article.category[lang] || article.ca
 const articleDescription = article.description[lang] || article.description.en;
 const rawContentHtml = article.contentHtml ? (article.contentHtml[lang] || '') : '';
 const plainTextLen = rawContentHtml.replace(/<[^>]+>/g, '').trim().length;
+const clinicalBadge: Record<string, string> = {
+  en: 'International Clinical Reference Data',
+  es: 'Datos de Referencia Clínica Internacional',
+  fr: 'Données de Référence Clinique Internationale',
+  de: 'Internationale klinische Referenzdaten',
+  ko: '국제 임상 참조 데이터',
+  hi: 'अंतर्राष्ट्रीय नैदानिक संदर्भ डेटा'
+};
+const badgeLabel = clinicalBadge[lang] || clinicalBadge.en;
 const articleContentHtml = (plainTextLen > 350)
   ? rawContentHtml
   : (rawContentHtml
-      ? `${rawContentHtml} <div class="mt-8 pt-8 border-t border-[var(--border)]"><div class="not-prose mb-4 px-3 py-1.5 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider inline-block">International Clinical Reference Data</div>${article.contentHtml?.en || ''}</div>`
+      ? `${rawContentHtml} <div class="mt-8 pt-8 border-t border-[var(--border)]"><div class="not-prose mb-4 px-3 py-1.5 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider inline-block">${badgeLabel}</div>${article.contentHtml?.en || ''}</div>`
       : (article.contentHtml?.en || null));
 const articleBody: string[] = (article.body ? (article.body[lang] || article.body.en) : []) || [];
 
