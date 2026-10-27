@@ -156,7 +156,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       "en": "How to Calculate TDEE: Activity Multipliers & Energy Science",
       "hi": "टीडीईई की गणना कैसे करें: गतिविधि गुणक व ऊर्जा विज्ञान",
       "ko": "TDEE 계산법 완벽 가이드: 신체 활동 계수와 유지 칼로리 산출",
-      "de": "TDEE berechnen: Aktivitätsfaktoren & Erhaltungskalorien-Formel",
+      "de": "TDEE berechnen: Aktivitätsfaktoren und Kalorienbedarf",
       "es": "Cómo Calcular el TDEE: Multiplicadores de Actividad y Calorías",
       "fr": "Comment Calculer son TDEE : Multiplicateurs d'Activité et Calories"
     },

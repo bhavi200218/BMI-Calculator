@@ -700,7 +700,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       "en": "Resting Heart Rate, Cardiovascular Fitness & VO2 Max Reference Baselines",
       "es": "Frecuencia Cardíaca en Reposo, Condición Cardiovascular y Zonas de Entrenamiento",
       "fr": "Fréquence Cardiaque au Repos, Forme Cardiovasculaire et Zones d'Entraînement",
-      "de": "Ruhepuls, kardiovaskuläre Fitness & Trainingsherzfrequenz",
+      "de": "Ruhepuls & kardiovaskuläre Fitness: Richtwerte nach Alter",
       "ko": "안정 시 심박수, 심폐 지구력 기준 및 목표 심박수 훈련 구간",
       "hi": "विश्राम हृदय गति (Resting Heart Rate), हृदय स्वास्थ्य और प्रशिक्षण क्षेत्र"
     },

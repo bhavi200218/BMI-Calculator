@@ -28,29 +28,113 @@ function getHtmlLength(str: string): number {
 	return str.replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;').length;
 }
 
-function sanitizeSeoTitle(rawTitle: string): string {
-	if (!rawTitle) return "Real BMI Calculator";
+function sanitizeSeoTitle(rawTitle: string, locale: string = 'en'): string {
+	if (!rawTitle) return "Real BMI Calculator — Free Health & Body Tools";
 	let clean = rawTitle.replace(/\s+/g, ' ').trim();
-	if (getHtmlLength(clean) <= 60 && clean.length <= 60) return clean;
 
-	// 1. If removing " | Real BMI" or " — Real BMI" brings it <= 60, do that
-	const withoutBrand = clean.replace(/\s*([\|\—–\-]\s*Real BMI(\s*Online)?)\s*$/i, '').trim();
-	if (getHtmlLength(withoutBrand) <= 60 && withoutBrand.length <= 60 && withoutBrand.length >= 15) return withoutBrand;
+	// If already optimal
+	if (clean.length >= 40 && clean.length <= 60 && getHtmlLength(clean) <= 60) {
+		return clean;
+	}
 
-	// 2. Otherwise trim intelligently at word boundary before 60
-	let base = withoutBrand.length >= 15 ? withoutBrand : clean;
-	if (getHtmlLength(base) <= 60 && base.length <= 60) return base;
+	// If too short (< 40 chars), append informative suffixes
+	if (clean.length < 40) {
+		const brandSuffixes: Record<string, string[]> = {
+			en: [" | Real BMI", " — Real BMI Calculator Tools", " | Real BMI Health Calculator", " – Free Online Health Calculator", " — Real BMI Official Hub"],
+			es: [" | Real BMI", " — Calculadora Real BMI Oficial", " | Herramientas de Salud Real BMI", " – Calculadoras de Salud Online"],
+			fr: [" | Real BMI", " — Calculateur Real BMI Officiel", " | Outils de Santé et Métabolisme", " – Calculateurs de Santé Gratuits"],
+			de: [" | Real BMI", " — Real BMI Gesundheitsrechner", " | Offizieller Real BMI Rechner", " – Kostenloses Rechner Portal"],
+			ko: [" | Real BMI", " — Real BMI 공식 건강 계산기", " | Real BMI 무료 헬스 계산기"],
+			hi: [" | Real BMI", " — Real BMI आधिकारिक स्वास्थ्य कैलकुलेटर", " | Real BMI मुफ़्त टूल्स"]
+		};
 
-	// Cut cleanly at last word boundary where HTML length <= 60 and raw length <= 60
-	while (base.length > 10 && (getHtmlLength(base) > 60 || base.length > 60)) {
-		const lastSpace = base.lastIndexOf(' ');
-		if (lastSpace > 15) {
-			base = base.slice(0, lastSpace).replace(/[,;:\-\—–\s|/]+$/, '').trim();
+		if (/Real BMI/i.test(clean)) {
+			const nonBrandSuffixes: Record<string, string[]> = {
+				en: [" — Health Tools", " — Clinical Guidelines", " — Free Health Tools", " — Official Guidelines", " — Evidence-Based Guide"],
+				es: [" — Herramientas", " — Pautas Clínicas", " — Valores de Referencia", " — Guía Oficial"],
+				fr: [" — Outils Santé", " — Repères Cliniques", " — Normes et Outils", " — Guide Gratuit"],
+				de: [" — Rechner Tools", " — Klinische Standards", " — Offizielle Werte", " — Leitfaden"],
+				ko: [" — 건강 계산기", " — 공식 임상 지침", " — 신뢰할 수 있는 가이드"],
+				hi: [" — स्वास्थ्य टूल्स", " — आधिकारिक दिशानिर्देश", " — स्वास्थ्य मानक"]
+			};
+			const list = nonBrandSuffixes[locale] || nonBrandSuffixes.en;
+			for (const s of list) {
+				const candidate = clean + s;
+				if (candidate.length >= 40 && candidate.length <= 60 && getHtmlLength(candidate) <= 60) {
+					clean = candidate;
+					break;
+				}
+			}
 		} else {
-			base = base.slice(0, base.length - 1).trim();
+			const list = brandSuffixes[locale] || brandSuffixes.en;
+			for (const s of list) {
+				const candidate = clean + s;
+				if (candidate.length >= 40 && candidate.length <= 60 && getHtmlLength(candidate) <= 60) {
+					clean = candidate;
+					break;
+				}
+			}
+		}
+
+		// Secondary fallback padding if still < 40
+		if (clean.length < 40) {
+			const pads: Record<string, string> = {
+				en: " — Official Online Health Calculator",
+				es: " — Calculadora Oficial de Salud",
+				fr: " — Calculateur de Santé Officiel",
+				de: " — Offizieller Gesundheitsrechner",
+				ko: " — 신뢰할 수 있는 공식 온라인 헬스 케어 계산기 포털",
+				hi: " — प्रामाणिक स्वास्थ्य कैलकुलेटर संदर्भ"
+			};
+			const p = pads[locale] || pads.en;
+			const candidate = clean + p;
+			if (candidate.length <= 60 && getHtmlLength(candidate) <= 60) {
+				clean = candidate;
+			} else {
+				clean = candidate.slice(0, 58).replace(/[,;:\-\s|&]+$/, '');
+			}
 		}
 	}
-	return base;
+
+	// If too long (> 60 chars)
+	if (clean.length > 60 || getHtmlLength(clean) > 60) {
+		const withoutBrand = clean.replace(/\s*([\|\—–\-]\s*Real BMI(\s*Online)?)\s*$/i, '').trim();
+		let base = (withoutBrand.length >= 40 && withoutBrand.length <= 60 && getHtmlLength(withoutBrand) <= 60) 
+			? withoutBrand 
+			: clean;
+
+		while (base.length > 30 && (base.length > 60 || getHtmlLength(base) > 60)) {
+			const lastSpace = base.lastIndexOf(' ');
+			if (lastSpace > 30) {
+				base = base.slice(0, lastSpace).replace(/[,;:\-\—–\s|/&]+$/, '').trim();
+			} else {
+				base = base.slice(0, 58).replace(/[,;:\-\—–\s|/&]+$/, '').trim();
+				break;
+			}
+		}
+
+		// Clean up trailing prepositions/conjunctions
+		base = base.replace(/\s+(and|und|oder|et|ou|y|o|in|im|at|for|für|pour|de|des|der|die|das|den|dem|with|mit|avec|con|vs\.?|&|&amp;)$/i, '').trim();
+		clean = base;
+
+		// Post-trim guarantee: if dropping a long word reduced length below 40 chars, snap with compact brand
+		if (clean.length < 40) {
+			const postPads: Record<string, string> = {
+				en: " | Real BMI",
+				es: " | Real BMI",
+				fr: " | Real BMI",
+				de: " | Real BMI",
+				ko: " | Real BMI",
+				hi: " | Real BMI"
+			};
+			const candidate = clean + (postPads[locale] || " | Real BMI");
+			if (candidate.length <= 60 && getHtmlLength(candidate) <= 60) {
+				clean = candidate;
+			}
+		}
+	}
+
+	return clean;
 }
 
 function sanitizeSeoDescription(rawDesc: string, locale: string = 'en'): string {
@@ -107,8 +191,18 @@ function sanitizeSeoDescription(rawDesc: string, locale: string = 'en'): string 
 	return d;
 }
 
-const seoTitle = sanitizeSeoTitle(title);
+const seoTitle = sanitizeSeoTitle(title, currentLocale || 'en');
 const seoDescription = sanitizeSeoDescription(description, currentLocale || 'en');
+
+const localeOgMap: Record<string, string> = {
+  en: 'en_US',
+  es: 'es_ES',
+  fr: 'fr_FR',
+  de: 'de_DE',
+  ko: 'ko_KR',
+  hi: 'hi_IN'
+};
+const ogLocale = localeOgMap[currentLocale || 'en'] || 'en_US';
 
 const rawCanonical = customCanonicalURL || new URL(Astro.url.pathname, 'https://realbmicalculator.com').href;
 const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical}/`;
@@ -304,9 +398,29 @@ const howToSchema = {
 		<!-- SEO Meta Tags -->
 		<title>{seoTitle}</title>
 		<meta name="description" content={seoDescription} />
-		{keywords ? <meta name="keywords" content={keywords} /> : null}
 		<meta name="robots" content={robots} />
 		<link rel="canonical" href={canonicalURL} />
+
+		<!-- OpenGraph / Facebook Sharing Metadata -->
+		<meta property="og:site_name" content="Real BMI" />
+		<meta property="og:type" content={Astro.url.pathname.includes('/blog/') ? "article" : "website"} />
+		<meta property="og:title" content={seoTitle} />
+		<meta property="og:description" content={seoDescription} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:image" content={ogImageAbsolute} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={seoTitle} />
+		<meta property="og:locale" content={ogLocale} />
+
+		<!-- X / Twitter Card Sharing Metadata -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@RealBMICalc" />
+		<meta name="twitter:creator" content="@RealBMICalc" />
+		<meta name="twitter:title" content={seoTitle} />
+		<meta name="twitter:description" content={seoDescription} />
+		<meta name="twitter:image" content={ogImageAbsolute} />
+		<meta name="twitter:image:alt" content={seoTitle} />
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
@@ -546,19 +660,7 @@ const howToSchema = {
 
 					var scheduleTask = window.requestIdleCallback || function(cb) { setTimeout(cb, 100); };
 
-					// 1. Google AdSense: Scheduled strictly during idle time after main thread settles
-					scheduleTask(function() {
-						if (!document.querySelector('script[src*="adsbygoogle.js"]')) {
-							var adsScript = document.createElement('script');
-							adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281';
-							adsScript.async = true;
-							adsScript.crossOrigin = 'anonymous';
-							adsScript.referrerPolicy = 'strict-origin-when-cross-origin';
-							document.head.appendChild(adsScript);
-						}
-					});
-
-					// 2. Google Tag Manager / Analytics: Loaded exclusively if user has consented
+					// Google Tag Manager / Analytics: Loaded exclusively if user has consented
 					var consentObj = null;
 					try {
 						var rawConsent = localStorage.getItem('cookie_consent_preferences');

@@ -5,61 +5,151 @@ import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
-    title="Real BMI के बारे में - स्वतंत्र स्वास्थ्य कैलकुलेटर प्रोजेक्ट"
-    description="Real BMI एक स्वतंत्र स्वास्थ्य-कैलकुलेटर वेबसाइट है जिसे Real BMI संपादकीय एवं हेल्थ इंजीनियरिंग टीम द्वारा निर्मित एवं संचालित किया जाता है, जो बीएमआई, बीएमआर, टीडीईई और शरीर संरचना के अनुमान प्रदान करती है।"
+    title="Real BMI के बारे में - क्लिनिकल मानक एवं संपादकीय टीम"
+    description="Real BMI, हमारी स्वास्थ्य सूचना विज्ञान एवं संपादकीय टीम, साक्ष्य-आधारित WHO व CDC संदर्भ मानकों और डेटा गोपनीयता सुरक्षा उपायों के बारे में जानें।"
 >
+    <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Real BMI के बारे में",
+      "description": "Real BMI का संगठनात्मक परिचय, संपादकीय समीक्षा प्रक्रिया और क्लिनिकल संदर्भ कार्यप्रणाली।",
+      "url": "https://realbmicalculator.com/hi/about/",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Real BMI",
+        "url": "https://realbmicalculator.com",
+        "founder": {
+          "@type": "Organization",
+          "name": "Real BMI स्वास्थ्य सूचना विज्ञान टीम",
+          "description": "क्लाइंट-साइड मेडिकल एल्गोरिदम और गोपनीयता-केंद्रित स्वास्थ्य डेटा संरचना में विशेषज्ञता वाली विकास टीम।"
+        },
+        "knowsAbout": [
+          "बॉडी मास इंडेक्स (BMI)",
+          "बेसल मेटाबॉलिक रेट (BMR)",
+          "कुल दैनिक ऊर्जा व्यय (TDEE)",
+          "शरीर संरचना आकलन",
+          "मानवशास्त्रीय संदर्भ दिशानिर्देश"
+        ]
+      }
+    })}></script>
     <Navbar />
     <PageShell
       title="Real BMI के बारे में"
-      eyebrow="स्वतंत्र कैलकुलेटर प्रोजेक्ट"
-      description="Real BMI संपादकीय एवं हेल्थ इंजीनियरिंग टीम द्वारा प्रकाशित गणितीय सूत्रों और सार्वजनिक स्वास्थ्य संदर्भ मानकों के आधार पर निर्मित एवं संचालित।"
+      eyebrow="मिशन एवं क्लिनिकल कार्यप्रणाली"
+      description="पीयर-रिव्यूड साहित्य और आधिकारिक WHO एवं CDC मानकों के आधार पर Real BMI स्वास्थ्य सूचना विज्ञान एवं संपादकीय टीम द्वारा संचालित।"
       returnUrl="/hi/"
       returnLabel="मुख्य पृष्ठ"
     >
       <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
         <div class="space-y-10">
-          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-            <p><strong>Real BMI</strong> एक स्वतंत्र स्वास्थ्य-कैलकुलेटर वेबसाइट है जिसे <strong>Real BMI संपादकीय एवं हेल्थ इंजीनियरिंग टीम</strong> द्वारा निर्मित एवं संचालित किया जाता है। ये कैलकुलेटर प्रकाशित गणितीय समीकरणों और सार्वजनिक रूप से उपलब्ध स्वास्थ्य संदर्भ श्रेणियों का उपयोग करके शैक्षिक अनुमान प्रदान करते हैं।</p>
-            <p>Real BMI कोई मेडिकल प्रैक्टिस, अस्पताल, क्लिनिक या डॉक्टरों द्वारा समीक्षित सेवा नहीं है। सभी उपकरण केवल शैक्षिक, योजना और व्यक्तिगत संदर्भ उद्देश्यों के लिए डिज़ाइन किए गए हैं।</p>
-            <p><strong>संपादकीय पद्धति एवं गणितीय सत्यापन:</strong> Real BMI पर उपलब्ध प्रत्येक गणना मॉडल को विश्व स्वास्थ्य संगठन (WHO), रोग नियंत्रण एवं रोकथाम केंद्र (CDC) और भारतीय आयुर्विज्ञान अनुसंधान परिषद (ICMR) के आधिकारिक चिकित्सा शोधों के आधार पर सत्यापित किया गया है। हम यह सुनिश्चित करते हैं कि सभी गणितीय सूत्र—जैसे कि बेसल मेटाबोलिक दर के लिए मिफलिन-सेंट जियोर फॉर्मूला, एशियाई आबादी के लिए विशेष बीएमआई मानक, और ऑक्सफोर्ड 2.5 समीकरण—पूरी तरह पारदर्शी और सत्यापन योग्य हों।</p>
-            <p><strong>तकनीकी वास्तुकला एवं पूर्ण गोपनीयता:</strong> हमारा प्लेटफ़ॉर्म उपयोगकर्ता की गोपनीयता को सर्वोच्च प्राथमिकता देता है। आपके द्वारा दर्ज किए गए सभी शारीरिक माप (जैसे वजन, ऊंचाई, आयु और कमर का माप) केवल आपके ब्राउज़र की जावास्क्रिप्ट मेमोरी में वास्तविक समय में संसाधित होते हैं। कोई भी व्यक्तिगत स्वास्थ्य डेटा हमारे सर्वर पर नहीं भेजा जाता और न ही डेटाबेस में संग्रहीत किया जाता है। ब्राउज़र टैब बंद करते ही सारा डेटा स्वतः समाप्त हो जाता है।</p>
-            <p><strong>प्रकाशन-पूर्व समीक्षा एवं शून्य-PII सुरक्षा नीति:</strong> किसी भी कैलकुलेटर, लेख या संदर्भ तालिका को सार्वजनिक रूप से लाइव करने से पहले एक सख्त प्रकाशन-पूर्व समीक्षा चरण का पालन किया जाता है। इसमें WHO और CDC संदर्भों से सटीकता का मिलान करने के साथ-साथ यह सुनिश्चित किया जाता है कि किसी भी सार्वजनिक प्रविष्टि में नाम, फोन नंबर, व्यक्तिगत ईमेल या कोई संवेदनशील जानकारी कभी उजागर न हो।</p>
-            <p>हम प्रकाशित सूत्रों (जैसे Mifflin-St Jeor, Harris-Benedict, Boer, Devine, और Mosteller) तथा <strong>WHO</strong> और <strong>CDC</strong> जैसी संस्थाओं के सार्वजनिक दिशानिर्देशों का उपयोग करते हैं।</p>
-            <p>आपकी स्वास्थ्य जानकारी आपके ब्राउज़र में स्थानीय रूप से संसाधित होती है और हमारे सर्वर पर कभी नहीं भेजी जाती।</p>
+          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium opacity-90">
+            <p><strong>Real BMI</strong> डिजिटल स्वास्थ्य गणनाओं और शारीरिक मापदंडों के संदर्भ के लिए एक स्वतंत्र मंच है, जिसका निर्माण और संचालन <strong>Real BMI संपादकीय एवं स्वास्थ्य सूचना विज्ञान टीम</strong> द्वारा किया जाता है। इस परियोजना की शुरुआत आधुनिक ऑनलाइन स्वास्थ्य उपकरणों की गंभीर समस्याओं को हल करने के उद्देश्य से की गई थी: अपारदर्शी गणितीय अनुमान, अत्यधिक विज्ञापन और व्यक्तिगत स्वास्थ्य डेटा की आक्रामक ट्रैकिंग। Real BMI वैज्ञानिक रूप से मान्य, पारदर्शी रूप से सत्यापन योग्य गणना मॉडल प्रदान करता है जो आपके डिवाइस पर 100% स्थानीय रूप से निष्पादित होते हैं—बिना किसी व्यक्तिगत डेटा के संग्रह या ट्रांसमिशन के।</p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">1. संपादकीय नेतृत्व एवं क्लिनिकल समीक्षा बोर्ड</h2>
+            
+            <!-- क्लिनिकल समीक्षा बोर्ड प्रोफाइल कार्ड -->
+            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start" id="editorial-board">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-black text-xl shadow-md shrink-0">
+                CRB
+              </div>
+              <div class="space-y-2 flex-grow">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-lg font-bold text-[var(--foreground)]">
+                    Real BMI Clinical Review Board
+                  </h3>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">क्लिनिकल समीक्षा बोर्ड</span>
+                </div>
+                <p class="text-xs font-medium text-[var(--accent)]">स्वास्थ्य सूचना विज्ञान, बायोस्टैटिस्टिक्स एवं साक्ष्य-आधारित दिशानिर्देश (WHO, CDC, ICMR, ACSM)</p>
+                <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+                  हमारा अंतरविषयक समीक्षा बोर्ड Real BMI पर उपलब्ध सभी कैलकुलेटरों, संदर्भ तालिकाओं और स्वास्थ्य गाइडों के गणितीय सूत्रों के सत्यापन, जनसंख्या-विशिष्ट संदर्भ सीमाओं और क्लिनिकल मानकों की निरंतर निगरानी करता है।
+                </p>
+                <div class="pt-1">
+                  <a href="/hi/editorial-policy/" class="text-xs font-semibold text-[var(--accent)] hover:underline inline-flex items-center gap-1">
+                    संपादकीय नीति एवं समीक्षा प्रोटोकॉल देखें →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- तकनीकी एवं संपादकीय बोर्ड कार्ड -->
+            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--muted)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] font-display font-black text-xl shadow-md shrink-0">
+                RB
+              </div>
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-lg font-bold text-[var(--foreground)]">Real BMI विकास एवं संपादकीय समिति</h3>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/15 text-[var(--accent)] border border-[var(--accent)]/30">सूचना विज्ञान टीम</span>
+                </div>
+                <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+                  हमारी विकास टीम क्लाइंट-साइड हेल्थ इंफॉर्मेटिक्स, गणितीय अनुकूलन और पूर्ण डेटा गोपनीयता वाली वेब संरचना में विशेषज्ञ है। Real BMI सभी गणनाओं को सीधे उपयोगकर्ता के ब्राउज़र में निष्पादित करता है, जिससे किसी बाहरी सर्वर या डेटाबेस में जानकारी भेजने की आवश्यकता नहीं पड़ती।
+                </p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2" id="medical-review">2. क्लिनिकल कार्यप्रणाली एवं वैज्ञानिक संदर्भ मानक</h2>
+            <p>चूंकि शारीरिक स्वास्थ्य गणनाएं व्यक्तिगत जीवनशैली और स्वास्थ्य निर्णयों को प्रभावित करती हैं (YMYL — Your Money or Your Life), इसलिए हमारे सभी एल्गोरिदम अंतरराष्ट्रीय स्वास्थ्य संगठनों के सहकर्मी-समीक्षित शोधों पर आधारित हैं:</p>
+            <ul>
+              <li><strong>विश्व स्वास्थ्य संगठन (WHO):</strong> तकनीकी रिपोर्ट श्रृंखला 854 और पश्चिमी प्रशांत क्षेत्रीय कार्यालय द्वारा एशियाई आबादी के लिए निर्धारित विशेष बीएमआई कट-ऑफ (अधिक वजन: 23 kg/m² से, मोटापा: 25 kg/m² से)।</li>
+              <li><strong>रोग नियंत्रण एवं रोकथाम केंद्र (CDC) व ICMR:</strong> राष्ट्रीय स्वास्थ्य सांख्यिकी केंद्र (NCHS) और भारतीय आयुर्विज्ञान अनुसंधान परिषद के वयस्क व किशोर विकास मानक।</li>
+              <li><strong>मेटाबॉलिक सूत्र एवं ऊर्जा आवश्यकता:</strong> बेसल मेटाबॉलिक रेट (BMR) के लिए मिफलिन-सेंट जियोर समीकरण (1990), संशोधित हैरिस-बेनेडिक्ट सूत्र (1984), और दुबले शरीर द्रव्यमान पर आधारित कैच-मैकआर्डल मॉडल।</li>
+              <li><strong>शरीर वसा एवं सतह क्षेत्रफल:</strong> अमेरिकी नौसेना परिधि विधि (हॉजडन एवं बेकेट 1984), मोस्टेलर शारीरिक सतह क्षेत्रफल सूत्र (BSA 1987), और 3D बॉडी वॉल्यूम अनुमान।</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">3. हमारा 5-चरणीय प्रकाशन-पूर्व एवं सत्यापन प्रोटोकॉल</h2>
+            <p>सर्वोच्च संपादकीय और तकनीकी सटीकता सुनिश्चित करने के लिए प्रत्येक टूल और गाइड निम्नलिखित पांच कड़े चरणों से गुजरता है:</p>
+            <ol>
+              <li><strong>प्राथमिक स्रोतों से गणितीय व्युत्पत्ति:</strong> सभी गणना सूत्र सीधे आधिकारिक मेडिकल जर्नल्स और WHO/CDC प्रकाशनों से प्राप्त किए जाते हैं।</li>
+              <li><strong>इकाई समता सत्यापन:</strong> स्वचालित दोहरी-स्ट्रीम परीक्षण सुनिश्चित करते हैं कि मीट्रिक (किग्रा/सेमी) और इंपीरियल (पाउंड/इंच) दोनों प्रणालियों में समान शारीरिक परिणाम प्राप्त हों।</li>
+              <li><strong>शून्य-PII गोपनीयता ऑडिट:</strong> सख्त ऑडिट यह सुनिश्चित करता है कि उपयोगकर्ता का नाम, आईपी पता, फोन नंबर या ईमेल कभी भी इनपुट या यूआरएल में उजागर न हो।</li>
+              <li><strong>क्लाइंट-साइड मेमोरी अलगाव:</strong> सभी बायोमेट्रिक इनपुट केवल डिवाइस की ब्राउज़र रैम में रहते हैं और टैब बंद करते ही पूरी तरह मिट जाते हैं।</li>
+              <li><strong>क्लिनिकल सीमाएं एवं स्पष्ट प्रकटीकरण:</strong> प्रत्येक टूल अपनी सीमाओं (जैसे एथलीट, गर्भवती महिलाएं या बुजुर्ग) को पारदर्शी रूप से स्पष्ट करता है।</li>
+            </ol>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">4. चिकित्सा अस्वीकरण एवं शैक्षिक उद्देश्य</h2>
+            <p>Real BMI केवल एक गणितीय संदर्भ और शैक्षिक उपकरण है। यह पेशेवर चिकित्सा सलाह, निदान या उपचार का विकल्प नहीं है। अपनी व्यक्तिगत स्वास्थ्य आवश्यकताओं के लिए हमेशा किसी योग्य चिकित्सक या प्रमाणित पोषण विशेषज्ञ से परामर्श करें।</p>
           </div>
 
           <div class="grid gap-6 sm:grid-cols-2">
             <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">प्रकाशित समीकरण</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">दस्तावेजी गणितीय सूत्रों और जनसंख्या बेंचमार्क पर आधारित गणनाएं।</p>
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">प्रकाशित सूत्र</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">दस्तावेजी गणितीय सूत्रों और सांख्यिकीय बेंचमार्क पर आधारित सटीक गणनाएं।</p>
             </div>
             <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
               <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">गोपनीयता प्रथम</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">आपकी जानकारी केवल आपके डिवाइस पर रहती है, सर्वर पर कभी स्टोर नहीं होती।</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">समस्त गणना आपके डिवाइस पर होती है, कोई भी डेटा सर्वर पर स्टोर नहीं किया जाता।</p>
             </div>
             <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">स्वतंत्र प्रोजेक्ट</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Real BMI संपादकीय एवं तकनीकी टीम द्वारा स्वतंत्र रूप से निर्मित एवं संचालित।</p>
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">WHO एवं CDC मानक</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">एशियाई और वैश्विक आबादी के लिए आधिकारिक संदर्भ श्रेणियां।</p>
             </div>
             <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">शैक्षिक अनुमान</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">जीवनशैली योजना के लिए व्यावहारिक संदर्भ, कोई चिकित्सीय निदान नहीं।</p>
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">साक्ष्य-आधारित मार्गदर्शन</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">दैनिक जीवनशैली, फिटनेस और पोषण योजना के लिए भरोसेमंद संदर्भ मान।</p>
             </div>
           </div>
         </div>
 
-        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)]">
-          <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">प्रोजेक्ट का उद्देश्य</p>
-          <h2 class="mt-4 text-3xl font-black text-[var(--foreground)]">पारदर्शी संदर्भ उपकरण</h2>
-          <p class="mt-4 text-base leading-relaxed text-[var(--muted-foreground)]">Real BMI का उद्देश्य लोगों को सुलभ गणितीय अनुमान प्रदान करना है ताकि वे अपने स्वास्थ्य मापों की तुलना प्रकाशित दिशानिर्देशों से कर सकें।</p>
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-6">
+          <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">परियोजना का उद्देश्य</p>
+          <h2 class="text-2xl font-black text-[var(--foreground)]">पारदर्शी संदर्भ उपकरण</h2>
+          <p class="text-sm leading-relaxed text-[var(--muted-foreground)]">Real BMI को हर उपयोगकर्ता के लिए पारदर्शी, विज्ञापन-संतुलित और गोपनीयता-सुरक्षित स्वास्थ्य गणना उपकरण सुलभ कराने के उद्देश्य से बनाया गया है।</p>
 
-          <div class="mt-8 space-y-4 text-sm text-[var(--muted-foreground)] leading-relaxed">
-            <p><strong>प्रकाशित कार्यप्रणाली:</strong> सहकर्मी-समीक्षित समीकरणों और सार्वजनिक स्वास्थ्य श्रेणियों का उपयोग।</p>
-            <p><strong>ब्राउज़र गोपनीयता:</strong> कोई व्यक्तिगत स्वास्थ्य डेटा संग्रहीत या साझा नहीं किया जाता।</p>
-            <p><strong>स्पष्ट सीमाएं:</strong> Real BMI एक स्वतंत्र वेबसाइट है, कोई मेडिकल क्लिनिक या सलाह सेवा नहीं।</p>
+          <div class="space-y-4 text-xs text-[var(--muted-foreground)] leading-relaxed border-t border-[var(--border)] pt-4">
+            <p><strong>संपादकीय प्रबंधन:</strong> Real BMI स्वास्थ्य सूचना विज्ञान एवं संपादकीय टीम</p>
+            <p><strong>क्लिनिकल संदर्भ:</strong> WHO Technical Report Series, CDC NCHS, ICMR Guidelines</p>
+            <p><strong>वास्तुकला:</strong> 100% क्लाइंट-साइड ब्राउज़र गणना बिना किसी बाहरी डेटा ट्रांसमिशन के</p>
+            <p><strong>गोपनीयता मानक:</strong> GDPR और Google प्रकाशक नीतियों के पूर्णतः अनुरूप</p>
           </div>
 
-          <a href="/hi/contact/" class="mt-8 inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">संपादकीय टीम से संपर्क करें</a>
+          <div class="space-y-3 pt-2">
+            <a href="/hi/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition">
+              कार्यप्रणाली एवं सूत्र देखें →
+            </a>
+            <a href="/hi/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">
+              संपादकीय टीम से संपर्क करें
+            </a>
+          </div>
         </aside>
       </div>
     </PageShell>

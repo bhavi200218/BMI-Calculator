@@ -5,27 +5,109 @@ import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
-    title="Sobre Real BMI - Proyecto Independiente de Calculadoras de Salud"
-    description="Real BMI es un sitio web independiente de calculadoras de salud creado y mantenido por el Equipo Editorial y de Ingeniería de Real BMI, que proporciona estimaciones de referencia de IMC, BMR, TDEE y composición corporal."
+    title="Sobre Real BMI - Estándares Clínicos y Equipo Editorial"
+    description="Conozca Real BMI, nuestro equipo de informática médica y editorial, estándares de la OMS y CDC, y nuestro compromiso con la privacidad sin registro."
 >
+    <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Sobre Real BMI",
+      "description": "Antecedentes organizacionales, metodología de cálculo y protocolo de revisión editorial de Real BMI.",
+      "url": "https://realbmicalculator.com/es/about/",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Real BMI",
+        "url": "https://realbmicalculator.com",
+        "founder": {
+          "@type": "Organization",
+          "name": "Equipo de Informática en Salud Real BMI",
+          "description": "Equipo de desarrollo e informática médica especializado en algoritmos computacionales y arquitectura de privacidad del navegador."
+        },
+        "knowsAbout": [
+          "Índice de Masa Corporal (IMC)",
+          "Tasa Metabólica Basal (TMB)",
+          "Gasto Energético Total Diario (TDEE)",
+          "Composición Corporal",
+          "Pautas Antropométricas Oficiales"
+        ]
+      }
+    })}></script>
     <Navbar />
     <PageShell
       title="Sobre Real BMI"
-      eyebrow="Proyecto Independiente de Calculadoras"
-      description="Creado y mantenido por el Equipo Editorial y de Ingeniería de Real BMI utilizando fórmulas publicadas y estándares de referencia de salud pública."
+      eyebrow="Misión y Metodología Clínica"
+      description="Mantenido por el equipo de informática médica y editorial de Real BMI utilizando literatura científica y estándares de la OMS y los CDC."
       returnUrl="/es/"
       returnLabel="Inicio"
     >
       <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
         <div class="space-y-10">
-          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-            <p><strong>Real BMI</strong> es un sitio web independiente de calculadoras de salud creado y mantenido por el <strong>Equipo Editorial de Real BMI</strong>. Las calculadoras utilizan ecuaciones matemáticas publicadas y rangos de referencia de salud pública para proporcionar estimaciones educativas.</p>
-            <p>Real BMI no es una práctica médica, hospital, clínica ni servicio revisado por médicos. Todas las herramientas están diseñadas únicamente con fines de educación, planificación y referencia personal.</p>
-            <p><strong>Metodología Editorial y Validación:</strong> Cada modelo computacional integrado en Real BMI se verifica mediante la literatura médica de la Organización Mundial de la Salud (OMS), los Centros para el Control y la Prevención de Enfermedades (CDC) y comités médicos nacionales. Nos aseguramos de que toda la lógica algorítmica —desde la ecuación de Mifflin-St Jeor para el gasto metabólico basal hasta la fórmula Oxford 2.5 y los puntos de corte poblacionales para el IMC asiático— esté documentada de forma transparente y sea científicamente verificable.</p>
-            <p><strong>Arquitectura Técnica y Privacidad sin Registro:</strong> Nuestra plataforma opera bajo el principio de minimización de datos. Todos los parámetros biométricos ingresados (peso, estatura, edad, cintura) se procesan exclusivamente en la memoria local de su navegador mediante JavaScript. Ningún dato de salud se almacena en bases de datos externas ni se vincula con perfiles de usuario, garantizando total confidencialidad.</p>
-            <p><strong>Revisión Previa a la Publicación y Cero PII:</strong> Antes de publicar cualquier cálculo, artículo o tabla de referencia, se aplica un protocolo estricto de revisión editorial. Verificamos la precisión de las ecuaciones, confirmamos fuentes con la OMS y los CDC, y realizamos una auditoría de privacidad rigurosa para garantizar que ninguna información de identificación personal (PII), teléfonos o correos privados aparezcan en entradas públicas.</p>
-            <p>Construimos herramientas de referencia utilizando fórmulas publicadas (como Mifflin-St Jeor, Harris-Benedict, Boer, Devine y Mosteller) y pautas públicas de organizaciones como la <strong>OMS</strong> y los <strong>CDC</strong>.</p>
-            <p>Las entradas de salud en la calculadora se procesan localmente en su navegador y nunca se envían a nuestros servidores.</p>
+          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium opacity-90">
+            <p><strong>Real BMI</strong> es una plataforma independiente de cálculo bioplatafórmico y referencia antropométrica, desarrollada y gestionada por el <strong>Equipo de Informática Médica y Editorial de Real BMI</strong>. El proyecto nació para resolver un problema crítico en la web de la salud: herramientas saturadas de rastreo invasivo, publicidad engañosa y fórmulas opacas sin respaldo documental. Real BMI ofrece calculadoras transparentes y verificables que se ejecutan 100 % en el navegador local, con cero almacenamiento de datos de salud.</p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">1. Liderazgo Editorial y Consejo de Revisión Clínica</h2>
+            
+            <!-- Perfil del Consejo de Revisión Clínica -->
+            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start" id="editorial-board">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-black text-xl shadow-md shrink-0">
+                CRB
+              </div>
+              <div class="space-y-2 flex-grow">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-lg font-bold text-[var(--foreground)]">
+                    Real BMI Clinical Review Board
+                  </h3>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">Panel de Revisión Clínica</span>
+                </div>
+                <p class="text-xs font-medium text-[var(--accent)]">Informática en Salud, Bioestadística y Pautas Epidemiológicas (OMS, CDC, ACSM)</p>
+                <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+                  Nuestro panel multidisciplinario supervisa la derivación matemática de las fórmulas, los umbrales de riesgo clínico poblacional y los protocolos de verificación para todas las herramientas y guías de salud de Real BMI.
+                </p>
+                <div class="pt-1">
+                  <a href="/es/editorial-policy/" class="text-xs font-semibold text-[var(--accent)] hover:underline inline-flex items-center gap-1">
+                    Consultar Política Editorial y Protocolo de Revisión →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Consejo de Ingeniería y Redacción -->
+            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--muted)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] font-display font-black text-xl shadow-md shrink-0">
+                RB
+              </div>
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-lg font-bold text-[var(--foreground)]">Equipo Técnico y Editorial de Real BMI</h3>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/15 text-[var(--accent)] border border-[var(--accent)]/30">Informática en Salud</span>
+                </div>
+                <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+                  Especializados en computación client-side y privacidad digital. Real BMI ofrece resultados inmediatos calculados localmente en su dispositivo sin servidores intermedios, cuentas obligatorias ni identificadores persistentes.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2" id="medical-review">2. Metodología Clínica y Estándares de Referencia</h2>
+            <p>Debido a que los cálculos antropométricos y metabólicos inciden en decisiones de bienestar personal (categoría YMYL — Your Money or Your Life), nuestros modelos se basan estrictamente en consensos clínicos internacionales:</p>
+            <ul>
+              <li><strong>Organización Mundial de la Salud (OMS):</strong> Serie de Informes Técnicos 854 y pautas regionales para poblaciones asiáticas (sobrepeso a partir de 23 kg/m², obesidad desde 25 kg/m²).</li>
+              <li><strong>Centros para el Control y la Prevención de Enfermedades (CDC):</strong> Puntos de corte percentilares del NCHS para jóvenes y tablas de distribución adulta.</li>
+              <li><strong>Ecuaciones de Metabolismo y Calorías:</strong> Fórmula de Mifflin-St Jeor (1990) como el estándar predictivo más exacto para el metabolismo basal; revisión Roza-Shizgal de Harris-Benedict (1984); modelos Katch-McArdle basados en masa magra.</li>
+              <li><strong>Composición Corporal y Superficie:</strong> Ecuación de circunferencia de la Marina de EE. UU. (Hodgdon &amp; Beckett, 1984), fórmula de Mosteller para el área de superficie corporal (BSA, 1987) y visualización 3D.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">3. Nuestro Protocolo de Verificación en 5 Etapas</h2>
+            <p>Para asegurar el máximo rigor científico y la total conformidad con las políticas de Google para editores, cada herramienta y artículo supera un proceso de revisión en 5 fases antes de su publicación:</p>
+            <ol>
+              <li><strong>Derivación Directa de Fuentes Primarias:</strong> Las fórmulas se extraen directamente de estudios científicos revisados por pares y documentos técnicos de la OMS y los CDC.</li>
+              <li><strong>Validación de Paridad de Unidades:</strong> Pruebas automáticas duales entre el sistema métrico (cm/kg) y el imperial (ft-in/lbs) garantizan equivalencia numérica sin discrepancias por redondeo.</li>
+              <li><strong>Auditoría de Cero Datos Personales (Zero-PII):</strong> Verificación estricta de que ningún dato personal identificable (nombres, correos electrónicos, teléfonos) quede registrado en entradas públicas ni en parámetros URL.</li>
+              <li><strong>Aislamiento en Memoria del Navegador:</strong> Confirmación técnica de que las métricas biométricas se procesan exclusivamente en la memoria volátil del dispositivo y jamás se transmiten a servidores externos.</li>
+              <li><strong>Límites Clínicos y Advertencia Sanitaria:</strong> Se detallan claramente los casos límite (deportistas musculados, adultos mayores con sarcopenia, mujeres embarazadas) y se incluye una advertencia educativa explícita.</li>
+            </ol>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">4. Aviso Médico y Propósito Educativo</h2>
+            <p>Real BMI es un portal de estimación matemática y educación preventiva, no un centro médico, hospital ni proveedor de diagnóstico sanitario. Las cifras y clasificaciones ofrecidas buscan fomentar la conciencia física personal y facilitar un diálogo informado con profesionales sanitarios colegiados.</p>
           </div>
 
           <div class="grid gap-6 sm:grid-cols-2">
@@ -35,31 +117,39 @@ import PageShell from '../../components/PageShell.astro';
             </div>
             <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
               <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Privacidad Primero</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Las entradas permanecen en su dispositivo, nunca se almacenan en servidores.</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Los datos permanecen exclusivamente en su dispositivo y se purgan al cerrar la sesión.</p>
             </div>
             <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Proyecto Independiente</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Desarrollado y mantenido de forma independiente por el Equipo Editorial de Real BMI.</p>
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Estándares OMS &amp; CDC</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Rangos oficiales internacionales y clasificaciones específicas para poblaciones asiáticas.</p>
             </div>
             <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
               <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Estimaciones Educativas</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Referencias prácticas para la planificación del estilo de vida, no diagnósticos clínicos.</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Referencias prácticas y orientativas para la planificación del estilo de vida y nutrición.</p>
             </div>
           </div>
         </div>
 
-        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)]">
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-6">
           <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Misión del Proyecto</p>
-          <h2 class="mt-4 text-3xl font-black text-[var(--foreground)]">Herramientas Trasparentes</h2>
-          <p class="mt-4 text-base leading-relaxed text-[var(--muted-foreground)]">Real BMI fue creado para brindar a las personas estimaciones matemáticas accesibles para comparar sus valores con las pautas de referencia publicadas.</p>
+          <h2 class="text-2xl font-black text-[var(--foreground)]">Herramientas Transparentes</h2>
+          <p class="text-sm leading-relaxed text-[var(--muted-foreground)]">Real BMI nació para ofrecer cálculos de salud accesibles, transparentes y respetuosos con la privacidad. Rechazamos los algoritmos cerrados: cada cálculo expone su fórmula exacta y sus referencias científicas.</p>
 
-          <div class="mt-8 space-y-4 text-sm text-[var(--muted-foreground)] leading-relaxed">
-            <p><strong>Metodología publicada:</strong> Los cálculos utilizan ecuaciones revisadas por pares y rangos de referencia públicos.</p>
-            <p><strong>Privacidad en el navegador:</strong> Sin almacenamiento ni transmisión de datos de salud.</p>
-            <p><strong>Límites claros:</strong> Real BMI es un proyecto independiente, no una clínica ni un servicio de asesoramiento médico.</p>
+          <div class="space-y-4 text-xs text-[var(--muted-foreground)] leading-relaxed border-t border-[var(--border)] pt-4">
+            <p><strong>Dirección Editorial:</strong> Equipo de Informática Médica y Editorial de Real BMI</p>
+            <p><strong>Referencias Clínicas:</strong> Informes Técnicos de la OMS, CDC NCHS, Guías ACSM</p>
+            <p><strong>Modelo de Ejecución:</strong> Computación 100 % en el navegador del usuario</p>
+            <p><strong>Privacidad:</strong> Cumplimiento RGPD y Políticas para Editores de Google</p>
           </div>
 
-          <a href="/es/contact/" class="mt-8 inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">Contactar al Equipo Editorial</a>
+          <div class="space-y-3 pt-2">
+            <a href="/es/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition">
+              Consultar Metodología y Fórmulas →
+            </a>
+            <a href="/es/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">
+              Contactar al Equipo Editorial
+            </a>
+          </div>
         </aside>
       </div>
     </PageShell>

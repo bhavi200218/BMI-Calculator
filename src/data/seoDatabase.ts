@@ -559,7 +559,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Modèle IMC d'Oxford 2.5 & Analyse Mathématique Volumétrique",
-      "title": "Calculateur d'IMC 3D – Formule d'Oxford",
+      "title": "Calculateur d'IMC 3D – Formule d'Oxford & Visualiseur",
       "intro": "Notre calculateur d'IMC 3D applique la formule exponentielle d'Oxford 2.5 (1.3 × poids / taille²·⁵) formulée par le professeur Nick Trefethen de l'Université d'Oxford. Comparez l'indice traditionnel de Quetelet avec l'échelle volumétrique 3D pour les personnes de grande ou petite taille.",
       "formulaTitle": "Formule Exponentielle 3D d'Oxford Ajustée à la Taille",
       "formulaDesc": "IMC 3D Ajusté = 1.3 × Poids (kg) / [Taille (m)]²·⁵ | Élaborée par des mathématiciens de l'Université d'Oxford pour corriger les biais liés à la taille.",

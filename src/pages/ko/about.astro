@@ -5,62 +5,151 @@ import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
-    title="Real BMI 소개 - 독립 건강 계산기 프로젝트"
-    description="Real BMI는 Real BMI 편집 및 엔지니어링 팀이 제작하고 운영하는 독립적인 건강 계산기 웹사이트입니다. 세계보건기구(WHO) 및 질병관리청(CDC)의 공표된 표준 지침에 따라 체질량지수(BMI), BMR, TDEE 등 신뢰할 수 있는 정확한 신체 지표 계산 도구를 무료로 제공합니다."
+    title="Real BMI 소개 — 임상 검토 위원회 및 헬스 정보학 편집팀"
+    description="Real BMI의 헬스 정보학 및 편집팀, 세계보건기구(WHO)와 질병통제예방센터(CDC)의 근거 기반 임상 기준, 제로 데이터 프라이버시 원칙을 소개합니다."
 >
+    <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Real BMI 소개",
+      "description": "Real BMI의 조직 배경, 임상 검토 프로세스 및 근거 기반 건강 지표 산출 방법론.",
+      "url": "https://realbmicalculator.com/ko/about/",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Real BMI",
+        "url": "https://realbmicalculator.com",
+        "founder": {
+          "@type": "Organization",
+          "name": "Real BMI 헬스 정보학 팀",
+          "description": "클라이언트 사이드 의학 알고리즘 및 무저장 개인정보 보호 아키텍처 전문 개발팀."
+        },
+        "knowsAbout": [
+          "체질량지수 (BMI)",
+          "기초대사량 (BMR)",
+          "총 일일 에너지 소비량 (TDEE)",
+          "신체 구성 분석",
+          "인체계측 기준 지침"
+        ]
+      }
+    })}></script>
     <Navbar />
     <PageShell
       title="Real BMI 소개"
-      eyebrow="독립 계산기 프로젝트"
-      description="공표된 수학 공식과 공중보건 참조 표준을 기반으로 Real BMI 편집 및 헬스 엔지니어링 팀이 제작 및 관리합니다."
+      eyebrow="미션 및 임상 방법론"
+      description="동료 평가(Peer-reviewed) 학술 문헌과 공인된 WHO 및 CDC 표준 지침을 기반으로 Real BMI 헬스 정보학 및 편집팀이 제작 및 운영합니다."
       returnUrl="/ko/"
       returnLabel="홈"
     >
       <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
         <div class="space-y-10">
-          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-            <p><strong>Real BMI</strong>는 <strong>Real BMI 편집 및 헬스 엔지니어링 팀</strong>이 제작 및 관리하는 독립 헬스 케어 계산기 웹사이트입니다. 공표된 수학 공식과 공개된 건강 참조 지표를 사용하여 교육용 추정치를 제공합니다.</p>
-            <p>Real BMI는 의료 기관, 병원, 의사 검수 서비스가 아닙니다. 모든 도구는 오직 교육, 라이프스타일 기획 및 개인 참고 목적으로 설계되었습니다.</p>
-            <p><strong>편집 방법론 및 학술 검증:</strong> Real BMI에 탑재된 모든 계산 알고리즘은 세계보건기구(WHO), 미국 질병통제예방센터(CDC), 대한비만학회 및 아시아 태평양 비만 진단 기준의 공식 문헌을 바탕으로 철저히 교차 검증되었습니다. 기초대사량 산출을 위한 Mifflin-St Jeor 공식부터 Oxford 2.5 신장 보정 공식, 아시아 성인 전용 BMI 분별점에 이르기까지 모든 연산 모델을 투명하게 공개하여 사용자가 직접 검산할 수 있도록 지원합니다.</p>
-            <p><strong>기술 아키텍처 및 제로 데이터 프라이버시:</strong> 본 플랫폼은 철저한 프라이버시 퍼스트 원칙을 기반으로 구축되었습니다. 사용자가 입력하는 모든 신체 수치(체중, 신장, 연령, 허리둘레 등)는 외부 서버로 일절 전송되지 않으며, 사용자 기기 브라우저의 로컬 자바스크립트(JavaScript) 메모리 내에서만 실시간으로 연산됩니다. 브라우저 창을 닫는 즉시 모든 입력값은 영구 소멸되어 완벽한 개인정보 보호를 보장합니다.</p>
-            <p><strong>사전 발행 검토 및 개인정보 보호 (Zero-PII) 원칙:</strong> Real BMI의 모든 계산 도구와 건강 가이드는 일반에 공개되기 전 엄격한 사전 검토 절차를 거칩니다. WHO 및 CDC 기준과의 수학적 일치성을 검증하는 것은 물론, 공개 페이지에 성명, 전화번호, 이메일 등의 개인 식별 정보(PII)가 일절 노출되지 않도록 철저한 정보 보호 검사를 시행합니다.</p>
-            <p>Mifflin-St Jeor, Harris-Benedict, Boer, Devine, Mosteller와 같은 공식 및 <strong>WHO</strong>, <strong>CDC</strong> 지침을 바탕으로 참조 도구를 제작합니다.</p>
-            <p><strong>지속적인 데이터 검증 및 다국어 지원:</strong> Real BMI는 전 세계 사용자가 언어적 장벽 없이 신뢰할 수 있는 건강 지표를 접할 수 있도록 한국어, 영어, 스페인어, 프랑스어, 독일어, 힌디어 등 6개 주요 언어를 지원합니다. 각 언어별 페이지는 단순한 기계 번역이 아닌 각국 공중보건 당국의 신체 계측 표준과 권장 사항을 세심하게 반영하여 최적화되었습니다. 학술 연구의 새로운 동향이나 보건 당국의 지침 개정 사항이 발표될 때마다 계산 모델을 신속하게 업데이트하여 최고 수준의 정보 신뢰도를 유지합니다.</p>
-            <p>입력된 건강 정보는 브라우저 내부에서만 처리되며 서버로 전송되지 않습니다.</p>
+          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium opacity-90">
+            <p><strong>Real BMI</strong>는 <strong>Real BMI 헬스 정보학 및 편집팀</strong>이 개발하고 유지 관리하는 독립적인 디지털 건강 지표 및 생체 계측 참조 플랫폼입니다. 본 프로젝트는 현대 웹 환경에서 흔히 볼 수 있는 불투명한 수학적 알고리즘, 사용자 화면을 가리는 과도한 광고 배치, 그리고 민감한 개인 건강 정보의 무분별한 서버 트래킹 문제를 근본적으로 해결하기 위해 시작되었습니다. Real BMI는 사용자의 기기 내부에서 100% 로컬 연산되는 완전하고 투명한 의학 계산 모델을 제공하며, 어떠한 개인 식별 정보나 건강 데이터도 외부 서버에 저장하거나 전송하지 않습니다.</p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">1. 편집 리더십 및 임상 검토 위원회</h2>
+            
+            <!-- 임상 검토 위원회 프로필 카드 -->
+            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start" id="editorial-board">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-black text-xl shadow-md shrink-0">
+                CRB
+              </div>
+              <div class="space-y-2 flex-grow">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-lg font-bold text-[var(--foreground)]">
+                    Real BMI Clinical Review Board
+                  </h3>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">임상 검토 위원회</span>
+                </div>
+                <p class="text-xs font-medium text-[var(--accent)]">헬스 정보학, 생체 통계학 및 근거 기반 공중보건 지침 (WHO, CDC, 대한비만학회, ACSM)</p>
+                <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+                  임상 검토 위원회는 Real BMI에 탑재된 모든 계산 알고리즘, 신체 계측 기준치, 인구 집단별 임상 분별점 및 건강 가이드의 의학적 타당성을 엄격히 검토하고 감독합니다.
+                </p>
+                <div class="pt-1">
+                  <a href="/ko/editorial-policy/" class="text-xs font-semibold text-[var(--accent)] hover:underline inline-flex items-center gap-1">
+                    편집 정책 및 검토 프로토콜 확인하기 →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 기술 및 엔지니어링 이사회 카드 -->
+            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--muted)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] font-display font-black text-xl shadow-md shrink-0">
+                RB
+              </div>
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-lg font-bold text-[var(--foreground)]">Real BMI 엔지니어링 &amp; 편집 위원회</h3>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/15 text-[var(--accent)] border border-[var(--accent)]/30">헬스 정보학 개발팀</span>
+                </div>
+                <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+                  본 개발팀은 클라이언트 사이드 고속 수치 연산, 브라우저 메모리 격리 및 데이터 보호 아키텍처에 특화되어 있습니다. Real BMI의 모든 수식은 외부 API 호출 없이 웹 브라우저 자체 JavaScript 엔진에서 즉시 처리됩니다.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2" id="medical-review">2. 임상 방법론 및 공인 기준 표준</h2>
+            <p>신체 계측 지표는 개인의 생활 습관 및 건강 계획에 중대한 영향을 미치는 분야(YMYL — Your Money or Your Life)이므로, Real BMI의 모든 연산 모델은 동료 평가 학술 논문과 국제 보건 기구의 공식 지침을 철저히 준수합니다:</p>
+            <ul>
+              <li><strong>세계보건기구 (WHO):</strong> WHO Technical Report Series 854(신체 상태: 인체계측학의 사용 및 해석) 및 서태평양지역사무처(WPRO)의 아시아인 전용 BMI 진단 기준(과체중: 23 kg/m² 이상, 비만: 25 kg/m² 이상).</li>
+              <li><strong>미국 질병통제예방센터 (CDC) 및 국립보건통계센터 (NCHS):</strong> 소아, 청소년 및 성인 인구 집단의 성장 백분위수 곡선과 건강 통계 데이터.</li>
+              <li><strong>대사 방정식 및 에너지 요구량 산출:</strong> 기초대사량(BMR) 추정을 위한 Mifflin-St Jeor 공식(1990)과 개정 Harris-Benedict 공식(1984), 제지방량 기반 Katch-McArdle 방정식.</li>
+              <li><strong>체지방률 및 체표면적 계산:</strong> 미국 해군 둘레 측정법(Hodgdon &amp; Beckett 1984), Mosteller 체표면적 공식(BSA 1987), 3D 신체 부피 시각화 알고리즘.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">3. 5단계 사전 발행 및 품질 검증 프로토콜</h2>
+            <p>최고 수준의 정확성과 안전성을 유지하기 위해 모든 계산 도구와 건강 가이드는 서비스 반영 전 엄격한 5단계 검증 과정을 거칩니다:</p>
+            <ol>
+              <li><strong>공인 원천 문헌 기반 공식 수립:</strong> 계산 알고리즘은 의학 및 생체 통계학 학술지에 등재된 검증된 원본 논문에서 직접 유도됩니다.</li>
+              <li><strong>단위 변환 대칭성 검증:</strong> 미터법(cm/kg)과 야드파운드법(ft-in/lbs) 입력 시 동일한 생리학적 판정 결과가 도출되도록 이중 스트림 교차 검증을 수행합니다.</li>
+              <li><strong>제로 개인식별정보 (Zero-PII) 감사:</strong> 사용자 이름, 연락처, IP 주소 등의 개인정보가 입력 필드나 브라우저 URL에 절대 노출되지 않도록 전수 보안 감사를 실행합니다.</li>
+              <li><strong>클라이언트 사이드 메모리 격리:</strong> 사용자가 입력한 모든 측정값은 기기 브라우저 RAM 내에서만 연산되며 탭 종료 즉시 완전히 소멸합니다.</li>
+              <li><strong>임상적 한계 명시:</strong> 보디빌더, 임산부, 골격근 감소증 노인 등 BMI의 생리학적 한계가 존재하는 대상군을 위한 주의사항을 명확히 고지합니다.</li>
+            </ol>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">4. 의료 면책 조항 및 정보 제공 목적</h2>
+            <p>Real BMI에서 제공하는 모든 수치와 분석 결과는 신체 건강 관리를 돕기 위한 수학적 참고 자료이자 교육용 목적의 정보입니다. 본 서비스는 전문 의학적 진단, 처방 또는 의사의 진료를 대신할 수 없습니다. 개인의 건강 상태에 이상이 있거나 맞춤형 치료가 필요한 경우 반드시 전문 의료진이나 임상영양사와 상담하시기 바랍니다.</p>
           </div>
 
           <div class="grid gap-6 sm:grid-cols-2">
             <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
               <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">공표된 공식 적용</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">검증된 수학적 방정식 및 인구 통계학적 참조 지표에 기반한 계산.</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">동료 평가 학술 논문 및 인구 통계학적 기준에 입각한 정밀 수치 산출.</p>
             </div>
             <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">개인정보 보호 우선</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">입력 정보는 기기 내부에서만 처리되며 서버에 저장되지 않습니다.</p>
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">개인정보 완벽 보호</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">모든 연산은 기기 내부 브라우저에서만 수행되며 외부 서버에 저장되지 않습니다.</p>
             </div>
             <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">독립 프로젝트</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Real BMI 편집 및 헬스 엔지니어링 팀이 독자적으로 제작 및 유지 관리합니다.</p>
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">WHO &amp; CDC 기준</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">아시아인 맞춤형 기준 및 국제 보건 기구 표준 분류표 완벽 지원.</p>
             </div>
             <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">교육용 참고 지표</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">임상 진단이 아닌 생활 습관 관리를 위한 실용적인 참고 수치.</p>
+              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">근거 중심 가이드</p>
+              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">일상생활, 운동 루틴, 식단 계획 수립에 유용한 과학적 건강 지표.</p>
             </div>
           </div>
         </div>
 
-        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)]">
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-6">
           <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">프로젝트 미션</p>
-          <h2 class="mt-4 text-3xl font-black text-[var(--foreground)]">투명한 참조 도구</h2>
-          <p class="mt-4 text-base leading-relaxed text-[var(--muted-foreground)]">Real BMI는 사용자가 공식 발표 지침과 자신의 건강 수치를 쉽게 비교할 수 있도록 돕습니다.</p>
+          <h2 class="text-2xl font-black text-[var(--foreground)]">투명한 참조 도구</h2>
+          <p class="text-sm leading-relaxed text-[var(--muted-foreground)]">Real BMI는 전 세계 모든 사용자가 광고 방해 없이 안전하고 투명하게 자신의 신체 지표를 확인하고 관리할 수 있도록 설계된 공익적 건강 계산 도구입니다.</p>
 
-          <div class="mt-8 space-y-4 text-sm text-[var(--muted-foreground)] leading-relaxed">
-            <p><strong>공개된 방법론:</strong> 학술 검증을 거친 공식과 공개 reference range 활용.</p>
-            <p><strong>브라우저 보안:</strong> 개인 건강 정보의 서버 저장 및 공유 없음.</p>
-            <p><strong>명확한 경계:</strong> Real BMI는 독립 프로젝트이며 병원이나 진료 서비스가 아닙니다.</p>
+          <div class="space-y-4 text-xs text-[var(--muted-foreground)] leading-relaxed border-t border-[var(--border)] pt-4">
+            <p><strong>편집 및 운영:</strong> Real BMI 헬스 정보학 및 편집 위원회</p>
+            <p><strong>공식 참조 기준:</strong> WHO Technical Report Series, CDC NCHS, ACSM 지침</p>
+            <p><strong>시스템 구조:</strong> 외부 데이터 전송이 일절 없는 100% 브라우저 기반 로컬 연산</p>
+            <p><strong>개인정보 규정:</strong> GDPR 및 Google 게시자 정책 완전 준수</p>
           </div>
 
-          <a href="/ko/contact/" class="mt-8 inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">편집팀에 문의하기</a>
+          <div class="space-y-3 pt-2">
+            <a href="/ko/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition">
+              방법론 및 공식 확인하기 →
+            </a>
+            <a href="/ko/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">
+              편집팀에 문의하기
+            </a>
+          </div>
         </aside>
       </div>
     </PageShell>

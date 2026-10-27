@@ -31,17 +31,27 @@ export const bmiArticles: Record<string, BlogArticleData> = {
   },
   contentHtml: {
     en: `
-      <h2>The Definition and Historical Origins of Body Mass Index</h2>
-      <p><strong>Body Mass Index (BMI)</strong> is an internationally standardized anthropometric screening metric designed to evaluate the relationship between an individual's total body mass and their stature. Originally formulated between 1830 and 1850 by the Belgian polymath, astronomer, and mathematician <strong>Lambert Adolphe Jacques Quetelet</strong>, the equation was initially termed the <em>Quetelet Index of Obesity</em>. Quetelet's pioneering work in social statistics sought to characterize the physiological dimensions of the average adult human, observing that across healthy populations, total body mass scales approximately with the square of stature.</p>
-      <p>In 1972, American physiologist Ancel Keys and his colleagues published a landmark epidemiological investigation in the <em>Journal of Chronic Diseases</em> evaluating various height-weight ratios across 7,424 healthy adult men in five countries. Keys formally designated Quetelet's formula as the "Body Mass Index" and demonstrated that it exhibited the highest statistical correlation with direct underwater densitometry body fat measurements while remaining largely independent of stature. Consequently, the World Health Organization (WHO), the Centers for Disease Control and Prevention (CDC), and the National Institutes of Health (NIH) adopted BMI as the international standard for adult population weight screening.</p>
+      <h2>What is Body Mass Index (BMI)?</h2>
+      <p><strong>Body Mass Index (BMI)</strong> is an internationally recognized health screening measurement. It compares your body weight to your height to help determine if your weight falls within a healthy, balanced range.</p>
+      <p>Belgian mathematician <strong>Lambert Adolphe Jacques Quetelet</strong> first designed the formula in the 1830s. In 1972, researcher Ancel Keys confirmed that Quetelet's math strongly matches real body composition across large adult populations. Today, the <strong>World Health Organization (WHO)</strong> and the <strong>CDC</strong> use BMI worldwide as the primary benchmark for adult weight screening.</p>
 
-      <h2>Mathematical Formulas: Metric and Imperial Systems</h2>
-      <p>Body Mass Index is mathematically defined as total body mass divided by the square of stature, universally expressed in units of kilograms per square meter (kg/m²):</p>
-      <ul>
-        <li><strong>Standard International Metric Formula:</strong> <code>BMI = Weight (kg) / [Height (m)]²</code></li>
-        <li><strong>United States Customary / Imperial Formula:</strong> <code>BMI = [Weight (lbs) &times; 703] / [Height (inches)]²</code></li>
+      <div class="my-5 p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+        <p class="font-bold text-[var(--accent)] text-xs uppercase tracking-wider">Quick Key Takeaways:</p>
+        <ul class="text-sm space-y-1.5 text-[var(--foreground)] list-disc pl-5">
+          <li><strong>Purpose:</strong> Screens baseline weight categories across large populations quickly and safely.</li>
+          <li><strong>Healthy benchmark:</strong> 18.5 to 24.9 kg/m² for most adults.</li>
+          <li><strong>Key strength:</strong> Non-invasive, instantaneous, and mathematically standardized worldwide.</li>
+          <li><strong>Key limitation:</strong> Does not measure body fat percentage or muscle mass directly.</li>
+        </ul>
+      </div>
+
+      <h2>Official Mathematical Formulas: Metric &amp; Imperial</h2>
+      <p>Body Mass Index divides your weight by your height squared. It is universally expressed in kilograms per square meter (kg/m²):</p>
+      <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
+        <li><strong>Standard Metric Formula:</strong> <code>BMI = Weight (kg) / [Height (m)]²</code></li>
+        <li><strong>Imperial Formula (US):</strong> <code>BMI = [Weight (lbs) &times; 703] / [Height (inches)]²</code></li>
       </ul>
-      <p>The multiplier <strong>703</strong> in the imperial formula is an exact mathematical conversion constant derived from converting pounds to kilograms (1 lb = 0.45359237 kg) and inches to meters (1 inch = 0.0254 m), yielding <code>0.45359237 / (0.0254)² &asymp; 703.06958</code>.</p>
+      <p>The number <strong>703</strong> is the exact conversion constant between metric units (kilograms and meters) and imperial units (pounds and inches).</p>
 
       <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-2">
         <p class="font-bold text-[var(--accent)]">Step-by-Step Numerical Calculation Examples:</p>
@@ -54,55 +64,55 @@ export const bmiArticles: Record<string, BlogArticleData> = {
         <p class="text-[var(--muted-foreground)]">&bull; Step 3: Divide product by squared height: 130,055 / 5,041 = <strong>25.80 kg/m²</strong> (Overweight)</p>
       </div>
 
-      <h2>World Health Organization International Classification Reference Matrix</h2>
-      <p>The World Health Organization establishes standardized reference categories for adults aged 20 and older, correlating specific BMI intervals with statistical risks of cardiovascular disease, metabolic syndrome, and all-cause mortality:</p>
+      <h2>World Health Organization (WHO) Adult Classification Matrix</h2>
+      <p>The World Health Organization groups adult BMI scores into distinct categories to help individuals and healthcare providers evaluate general wellness:</p>
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-sm">
           <thead>
             <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
               <th class="p-3">WHO Category</th>
               <th class="p-3 font-mono text-[var(--accent)]">BMI Range (kg/m²)</th>
-              <th class="p-3">Physiological Characteristics</th>
+              <th class="p-3">Health Status</th>
               <th class="p-3">Cardiometabolic Risk Profile</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]">
-            <tr><td class="p-3 font-semibold">Severe Thinness</td><td class="p-3 font-mono">&lt; 16.0</td><td class="p-3">Acute protein-energy malnutrition, cachexia</td><td class="p-3">Elevated immune suppression, cardiac arrhythmia risk</td></tr>
-            <tr><td class="p-3 font-semibold">Moderate Thinness</td><td class="p-3 font-mono">16.0 – 16.9</td><td class="p-3">Chronic nutritional deficit, bone demineralization</td><td class="p-3">Elevated osteopenia, chronic fatigue, hormonal imbalance</td></tr>
-            <tr><td class="p-3 font-semibold">Mild Thinness</td><td class="p-3 font-mono">17.0 – 18.4</td><td class="p-3">Marginal energy reserve, lean phenotype</td><td class="p-3">Mild risk; often constitutional in slender individuals</td></tr>
-            <tr><td class="p-3 font-semibold text-[var(--accent)]">Normal Healthy Weight</td><td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 24.9</td><td class="p-3">Optimal equilibrium of lean mass and adipose storage</td><td class="p-3">Statistically lowest baseline all-cause mortality rate</td></tr>
-            <tr><td class="p-3 font-semibold">Pre-Obesity (Overweight)</td><td class="p-3 font-mono">25.0 – 29.9</td><td class="p-3">Moderate adipose expansion or athletic muscle mass</td><td class="p-3">Gradual elevation in hypertension, dyslipidemia risk</td></tr>
-            <tr><td class="p-3 font-semibold">Obesity Class I</td><td class="p-3 font-mono">30.0 – 34.9</td><td class="p-3">Substantial visceral and subcutaneous adiposity</td><td class="p-3">Substantially elevated incidence of Type 2 diabetes</td></tr>
-            <tr><td class="p-3 font-semibold">Obesity Class II</td><td class="p-3 font-mono">35.0 – 39.9</td><td class="p-3">Severe central adiposity and systemic inflammation</td><td class="p-3">High risk of coronary artery disease, sleep apnea</td></tr>
-            <tr><td class="p-3 font-semibold">Obesity Class III</td><td class="p-3 font-mono">&ge; 40.0</td><td class="p-3">Extreme functional and cardiometabolic impairment</td><td class="p-3">Severe risk; comprehensive clinical intervention indicated</td></tr>
+            <tr><td class="p-3 font-semibold">Severe Thinness</td><td class="p-3 font-mono">&lt; 16.0</td><td class="p-3">Nutritional deficit, fatigue</td><td class="p-3">Elevated immune and electrolyte risk</td></tr>
+            <tr><td class="p-3 font-semibold">Moderate Thinness</td><td class="p-3 font-mono">16.0 – 16.9</td><td class="p-3">Low energy reserve</td><td class="p-3">Elevated osteopenia and fatigue risk</td></tr>
+            <tr><td class="p-3 font-semibold">Mild Thinness</td><td class="p-3 font-mono">17.0 – 18.4</td><td class="p-3">Slender natural phenotype</td><td class="p-3">Mild baseline risk</td></tr>
+            <tr><td class="p-3 font-semibold text-[var(--accent)]">Normal Healthy Weight</td><td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 24.9</td><td class="p-3">Balanced body composition</td><td class="p-3">Statistically lowest all-cause health risk</td></tr>
+            <tr><td class="p-3 font-semibold">Pre-Obesity (Overweight)</td><td class="p-3 font-mono">25.0 – 29.9</td><td class="p-3">Carrying extra weight or muscle</td><td class="p-3">Gradual rise in blood pressure and cholesterol</td></tr>
+            <tr><td class="p-3 font-semibold">Obesity Class I</td><td class="p-3 font-mono">30.0 – 34.9</td><td class="p-3">Elevated body fat accumulation</td><td class="p-3">Substantially higher type 2 diabetes risk</td></tr>
+            <tr><td class="p-3 font-semibold">Obesity Class II</td><td class="p-3 font-mono">35.0 – 39.9</td><td class="p-3">High central adiposity</td><td class="p-3">High cardiovascular and joint strain risk</td></tr>
+            <tr><td class="p-3 font-semibold">Obesity Class III</td><td class="p-3 font-mono">&ge; 40.0</td><td class="p-3">Significant metabolic impact</td><td class="p-3">Comprehensive clinical guidance recommended</td></tr>
           </tbody>
         </table>
       </div>
 
       <h2>Ethnic Cut-Off Adjustments: Asian Population Risk Profiles</h2>
-      <p>Extensive clinical trials by the WHO Western Pacific Region and the Indian Council of Medical Research (ICMR) demonstrated that individuals of Asian descent carry higher body fat percentages and significantly greater visceral adiposity at lower BMI scores than Western Caucasian reference groups. Consequently, WHO established complementary <strong>Asian Action Triggers</strong>:</p>
-      <ul>
-        <li><strong>Asian Healthy Reference Range:</strong> 18.5 to 22.9 kg/m²</li>
-        <li><strong>Asian Overweight Action Trigger:</strong> 23.0 to 24.9 kg/m²</li>
-        <li><strong>Asian Obesity Action Trigger:</strong> &ge; 25.0 kg/m²</li>
+      <p>Body composition varies by genetic background. Clinical research from the WHO Western Pacific Region and the Indian Council of Medical Research (ICMR) shows that adults of Asian descent tend to carry more visceral belly fat at lower body weights than Western populations.</p>
+      <p>Because of this difference, health experts established earlier <strong>Asian Action Triggers</strong>:</p>
+      <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
+        <li><strong>Healthy Asian Range:</strong> 18.5 to 22.9 kg/m²</li>
+        <li><strong>Asian Overweight Action Point:</strong> 23.0 to 24.9 kg/m²</li>
+        <li><strong>Asian Obesity Action Point:</strong> 25.0 kg/m² and above</li>
       </ul>
-      <p>Adjusting the screening threshold downwards by 2.0 to 5.0 BMI units enables earlier identification of insulin resistance, non-alcoholic fatty liver disease (NAFLD), and cardiovascular risk across Asian communities.</p>
+      <p>These lower thresholds help individuals identify cardiovascular and diabetes risks earlier, allowing for timely dietary and fitness adjustments.</p>
 
-      <h2>Key Clinical Limitations: What BMI Cannot Measure</h2>
-      <p>While Body Mass Index serves as an indispensable first-line screening parameter due to its reproducibility, zero cost, and non-invasive nature, clinicians emphasize several inherent physiological limitations when interpreting individual scores:</p>
-      <ul>
-        <li><strong>Absence of Tissue Differentiation:</strong> BMI treats all kilograms identically. It cannot distinguish dense skeletal muscle from adipose tissue. A heavily muscled strength athlete may register a BMI of 31 kg/m² ("Obese") with 9% body fat, whereas a sedentary elder with sarcopenia may register 22 kg/m² despite dangerous visceral adiposity.</li>
-        <li><strong>Failure to Quantify Fat Distribution:</strong> Cardiometabolic risk is driven primarily by visceral abdominal fat, which secretes inflammatory cytokines directly into the portal circulation, rather than subcutaneous fat stored on the hips and thighs.</li>
-        <li><strong>Age-Related Stature Compression:</strong> As adults age, vertebral disc compression and osteoporotic changes reduce measured height, artificially inflating the calculated BMI denominator without any change in adipose mass.</li>
+      <h2>Important Limitations: What BMI Cannot Measure</h2>
+      <p>BMI is a practical first screening tool, but it does not tell the whole story about your body. Keep these three main limitations in mind:</p>
+      <ul class="my-3 space-y-2 list-disc pl-5 text-sm">
+        <li><strong>Muscle vs. Fat:</strong> BMI treats every pound the same. An athletic weightlifter with high muscle mass might score as "overweight" or "obese" despite having very low body fat.</li>
+        <li><strong>Body Fat Placement:</strong> Visceral fat around the stomach carries higher health risks than subcutaneous fat on the hips. BMI cannot detect where your body stores fat.</li>
+        <li><strong>Age and Bone Changes:</strong> As adults age, natural spine disc compression can slightly reduce height, which raises the calculated BMI without any real change in body fat.</li>
       </ul>
 
-      <h2>Evidence-Based Complementary Health Assessments</h2>
-      <p>To establish a thorough personal health profile, public health authorities advise pairing your baseline BMI score with supplementary screening assessments:</p>
-      <ol class="space-y-2 my-4">
-        <li><strong>Waist-to-Height Ratio (WHtR):</strong> Dividing waist circumference by height provides an accurate proxy for central adiposity. Maintaining a WHtR below 0.50 correlates with optimal cardiometabolic risk across all body types.</li>
-        <li><strong>Waist-to-Hip Ratio (WHR):</strong> Evaluates android versus gynoid fat deposition. WHR thresholds above 0.90 in men and 0.85 in women indicate elevated visceral fat accumulation.</li>
-        <li><strong>Metabolic Rate Calculations (BMR &amp; TDEE):</strong> Assessing your Basal Metabolic Rate and Total Daily Energy Expenditure establishes exact caloric maintenance requirements for structured lifestyle programming.</li>
-        <li><strong>Biomarker Blood Chemistry Panels:</strong> Fasting blood glucose, HbA1c, comprehensive lipid profiles (triglycerides, HDL, LDL), and resting blood pressure provide direct confirmation of internal metabolic status.</li>
+      <h2>Helpful Assessments to Pair with Your BMI</h2>
+      <p>To build a complete picture of your physical wellness, health professionals suggest combining your BMI with these simple measurements:</p>
+      <ol class="space-y-2 my-4 list-decimal pl-5 text-sm">
+        <li><strong>Waist-to-Height Ratio (WHtR):</strong> Aim to keep your waist circumference to less than half your height (ratio under 0.50) for healthy abdominal fat levels.</li>
+        <li><strong>Daily Energy Needs (BMR &amp; TDEE):</strong> Calculate your baseline calorie burn to plan your daily meals and active lifestyle with confidence.</li>
+        <li><strong>Routine Health Panels:</strong> Fasting blood glucose, lipid panels, and resting blood pressure provide direct confirmation of internal metabolic health.</li>
       </ol>
 
       <h2>Frequently Asked Questions Regarding Body Mass Index</h2>
