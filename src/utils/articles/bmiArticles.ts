@@ -1143,7 +1143,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     "datePublished": "2026-04-15",
     "dateModified": "2026-10-25",
     "title": {
-      "en": "BMI by Age: Lifespan Trajectory, Sarcopenia & Older Adult Guidelines",
+      "en": "BMI by Age: Lifespan Trajectory, Sarcopenia & Senior Guidelines",
       "hi": "उम्र के अनुसार बीएमआई: जीवन के पड़ाव, मांसपेशी क्षय और बुजुर्गों के दिशानिर्देश",
       "ko": "연령별 BMI 가이드: 생애주기별 비만도 변화와 노인 비만의 역설",
       "de": "BMI nach Alter: Lebensphasen, Sarkopenie & Richtwerte für Senioren",

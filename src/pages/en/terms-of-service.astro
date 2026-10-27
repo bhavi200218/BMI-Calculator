@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageShell from '../../components/PageShell.astro';
+---
+
+<Layout 
+    title="Terms of Service & Usage Agreement | Real BMI"
+    description="Official English Terms of Service for Real BMI. Understand acceptable usage, non-diagnostic calculation limits, and user rights."
+    canonicalURL="https://realbmicalculator.com/en/terms-conditions/"
+>
+    <Navbar />
+    <PageShell
+        title="Terms of Service"
+        eyebrow="Professional standards"
+        description="Review the terms of service for Real BMI’s calculators, health tools, and privacy-forward experience."
+        returnUrl="/en/"
+        returnLabel="Home"
+    >
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-medium opacity-85">
+            <p>
+                These Terms of Service govern your access to and use of <span class="text-[var(--foreground)] font-bold">Real BMI</span>, including all calculators, interactive charts, educational content, and software utilities accessible via our website. By accessing or using our platform, you acknowledge that you have read, understood, and agreed to be bound by these Terms.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">1. Educational Scope & Non-Diagnostic Purpose</h2>
+            <p>
+                All calculators, assessment scores, and health reference models provided on Real BMI are designed strictly for general educational and personal health awareness. They do not substitute for professional medical consultations.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">2. Scientific Formulas & Calculation Accuracy</h2>
+            <p>
+                Real BMI implements scientifically recognized, peer-reviewed mathematical formulas. While algorithms adhere to published WHO & CDC standards, individual biometrics and clinical factors must be interpreted by a healthcare practitioner.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">3. Local Browser Processing & Data Privacy</h2>
+            <p>
+                Your measurements are calculated entirely within your browser's local memory. No health metrics are transmitted across our network or stored on persistent databases.
+            </p>
+
+            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">4. Comprehensive Terms Reference</h2>
+            <p>
+                For our full legal framework, consult the <a href="/en/terms-conditions/" class="text-[var(--accent)] underline font-bold">Complete Terms & Conditions</a> or reach our compliance team at the <a href="/en/contact/" class="text-[var(--accent)] underline font-bold">Contact Portal</a>.
+            </p>
+        </div>
+    </PageShell>
+</Layout>
