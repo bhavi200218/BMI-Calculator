@@ -8,6 +8,7 @@ import ToolSEOContent from '../../components/ToolSEOContent.astro';
 import ThreeDBodyVisualizer from '../../components/ThreeDBodyVisualizer.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
 import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
+import IndianBmiClinicalGuide from '../../components/IndianBmiClinicalGuide.astro';
 import { seoDatabase } from '../../data/seoDatabase';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
 
@@ -366,6 +367,7 @@ const relatedGuidesSubtitle: Record<string, string> = {
       <!-- Extended Content & Educational Reference Knowledge Base for Search Indexing -->
       <div class="pt-4 space-y-12">
         <ToolSEOContent slug={calc.slug} lang={lang} calculator={calc} />
+        {calc.slug === 'bmi-calculator-for-indians' && <IndianBmiClinicalGuide lang={lang} />}
         {calc.slug === 'bmi-calculator' && <EmbedWidgetBox lang={lang} />}
         <LatestArticles 
           lang={lang} 

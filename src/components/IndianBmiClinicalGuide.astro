@@ -1,0 +1,823 @@
+---
+import type { Locale } from '../utils/calculators';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+
+interface ClinicalPhenotypeLocale {
+  eyebrow: string;
+  phenotypeTitle: string;
+  phenotypeSubtitle: string;
+  phenotypeLead: string;
+  phenotypeP1: string;
+  phenotypeP2: string;
+  comparisonTitle: string;
+  compHeaders: { marker: string; southAsian: string; western: string };
+  compRows: { marker: string; southAsian: string; western: string }[];
+  waistTitle: string;
+  waistSubtitle: string;
+  waistCutoffs: { group: string; threshold: string; context: string }[];
+  waistStepsTitle: string;
+  waistSteps: string[];
+  whtrRuleTitle: string;
+  whtrRuleText: string;
+  dietTitle: string;
+  dietSubtitle: string;
+  thaliConceptTitle: string;
+  thaliComponents: { portion: string; name: string; items: string }[];
+  sampleMealTitle: string;
+  vegMeals: { meal: string; details: string }[];
+  nonVegMeals: { meal: string; details: string }[];
+  swapsTitle: string;
+  swaps: { insteadOf: string; chooseThis: string; why: string }[];
+  faqTitle: string;
+  faqSubtitle: string;
+  faqs: { q: string; a: string }[];
+}
+
+const content: Record<Locale, ClinicalPhenotypeLocale> = {
+  en: {
+    eyebrow: "South Asian Cardiometabolic Endocrinology",
+    phenotypeTitle: "The South Asian 'Thin-Fat' Phenotype (MONW)",
+    phenotypeSubtitle: "Why standard Western BMI standards severely underestimate metabolic risk in individuals of Indian descent.",
+    phenotypeLead: "The 'Thin-Fat' Phenotype—known clinically as Metabolically Obese Normal Weight (MONW)—is the distinct biological profile observed across South Asian populations.",
+    phenotypeP1: "Individuals of Indian heritage characteristically possess higher total body fat percentage (typically 5% to 8% higher than Caucasians of identical BMI), higher abdominal visceral fat, and significantly reduced skeletal muscle mass. Consequently, a South Asian adult with a 'normal' BMI of 22.0 kg/m² frequently presents the cardiometabolic risk profile of a Caucasian individual with a BMI of 28.0 to 30.0 kg/m².",
+    phenotypeP2: "Deep visceral adipose tissue around the liver, pancreas, and mesenteric organs secretes inflammatory adipokines (TNF-alpha, IL-6), precipitating premature insulin resistance, elevated triglycerides, low HDL cholesterol, and early onset of Type 2 diabetes and coronary artery disease (CAD)—often 10 to 15 years earlier than in Western populations. This prompted the Indian Council of Medical Research (ICMR) and WHO Asia-Pacific expert consultation to revise diagnostic criteria downwards.",
+    comparisonTitle: "Clinical Body Composition Comparison: South Asian vs. Western Caucasian",
+    compHeaders: { marker: "Physiological Marker", southAsian: "South Asian (Indian) Profile", western: "Western Caucasian Profile" },
+    compRows: [
+      { marker: "Body Fat % at BMI 22 kg/m²", southAsian: "26% – 32% (Men) | 33% – 40% (Women)", western: "16% – 21% (Men) | 23% – 28% (Women)" },
+      { marker: "Visceral Adipose Tissue (VAT)", southAsian: "Significantly Higher at identical total weight", western: "Lower proportion; fat stored subcutaneously" },
+      { marker: "Skeletal Muscle Mass", southAsian: "Reduced (Sarcopenic predisposition)", western: "Higher baseline lean muscle density" },
+      { marker: "Overweight Diagnostic Cutoff", southAsian: "BMI ≥ 23.0 kg/m² (ICMR consensus)", western: "BMI ≥ 25.0 kg/m² (WHO International)" },
+      { marker: "Obesity Diagnostic Cutoff", southAsian: "BMI ≥ 25.0 kg/m² (ICMR consensus)", western: "BMI ≥ 30.0 kg/m² (WHO International)" },
+      { marker: "Insulin Resistance Trigger", southAsian: "Manifests at BMI 21.5 – 23.5 kg/m²", western: "Typically manifests at BMI > 27.5 kg/m²" }
+    ],
+    waistTitle: "ICMR Waist Circumference & Central Adiposity Guide",
+    waistSubtitle: "Why your waistline is a more potent predictor of heart disease and diabetes than your bathroom scale weight.",
+    waistCutoffs: [
+      { group: "Indian Adult Men", threshold: "≥ 90 cm (35.4 inches)", context: "Indicates abdominal visceral obesity and requires clinical screening for insulin resistance and lipid abnormalities." },
+      { group: "Indian Adult Women", threshold: "≥ 80 cm (31.5 inches)", context: "Indicates abdominal visceral obesity with heightened risk for metabolic syndrome and gestational complications." }
+    ],
+    waistStepsTitle: "Standardized Clinical Measurement Protocol (ICMR Guidelines)",
+    waistSteps: [
+      "Stand upright with feet shoulder-width apart, arms hanging naturally at your sides.",
+      "Locate the narrowest point of your torso, precisely midway between the lowest palpable rib and the top of the iliac crest (hip bone).",
+      "Wrap a non-elastic, flexible measuring tape horizontally around bare skin, keeping it parallel to the floor without compressing soft tissue.",
+      "Breathe out gently (measure at the end of normal expiration) and record the measurement to the nearest 0.5 cm or 0.1 inch."
+    ],
+    whtrRuleTitle: "The Waist-to-Height Ratio (WHtR) Rule of Thumb",
+    whtrRuleText: "Keep your waist circumference under half your height (WHtR < 0.5). For example, a 170 cm tall person should maintain a waistline below 85 cm. A ratio exceeding 0.5 correlates strongly with subclinical atherosclerosis and fatty liver disease regardless of overall BMI.",
+    dietTitle: "Indian Diet Optimization & Balanced Thali Architecture",
+    dietSubtitle: "Countering the Indian carbohydrate paradox with evidence-based meal architecture and targeted protein swaps.",
+    thaliConceptTitle: "The Cardiometabolic Indian Plate (ICMR-NIN MyPlate Concept)",
+    thaliComponents: [
+      { portion: "50% (Half the Plate)", name: "Non-Starchy Vegetables & Raw Fiber", items: "Bhindi, lauki, palak, methi, tori, karela, cabbage, bell peppers, cucumber, and tomato salad. High soluble fiber blunts postprandial glucose spikes." },
+      { portion: "25% (One-Quarter)", name: "High-Quality Protein", items: "100g low-fat paneer or tofu, soya chunks, boiled sprouts (moong/chana), thick dal, rajma, or grilled fish/chicken breast for non-vegetarians." },
+      { portion: "25% (One-Quarter)", name: "Complex Unpolished Whole Grains", items: "1-2 small rotis made of jowar, bajra, ragi, or besan-missi atta, or 1 small cup cooked foxtail/barnyard millet instead of polished white rice." }
+    ],
+    sampleMealTitle: "Sample Daily Indian Meal Plans for Healthy Weight",
+    vegMeals: [
+      { meal: "Breakfast (8:00 AM)", details: "2 Moong dal chillas stuffed with 40g grated paneer and mint-coriander chutney, accompanied by 1 cup unsweetened tea or coffee." },
+      { meal: "Lunch (1:00 PM)", details: "1 bowl thick mixed dal + 1 large bowl seasonal sabzi (e.g., palak or bhindi) + 1 plate kachumber salad + 1 small bowl probiotic curd + 1 jowar or ragi roti." },
+      { meal: "Evening Snack (5:00 PM)", details: "1 small bowl dry-roasted chana (chickpeas) with spiced makhana (foxnuts) and green tea." },
+      { meal: "Dinner (8:00 PM)", details: "Clear vegetable or dal soup + 1 bowl sauteed paneer or tofu with stir-fried capsicum and mushrooms + small bowl foxtail millet khichdi." }
+    ],
+    nonVegMeals: [
+      { meal: "Breakfast (8:00 AM)", details: "3 egg-white & 1 whole egg bhurji with onions, tomatoes, and spinach + 1 slice toasted 100% whole-grain bread." },
+      { meal: "Lunch (1:00 PM)", details: "150g grilled tandoori chicken breast or steamed fish curry (prepared with minimal mustard oil) + 1 large green salad + 1 bowl curd + 1 multigrain phulka." },
+      { meal: "Evening Snack (5:00 PM)", details: "Sprouted moong and chana salad with cucumber, tomato, green chilies, and lemon juice." },
+      { meal: "Dinner (8:00 PM)", details: "Grilled fish fillet or chicken stew with steamed broccoli, carrots, and french beans + small portion brown basmati rice." }
+    ],
+    swapsTitle: "Smart Clinical Ingredient Swaps for Indian Kitchens",
+    swaps: [
+      { insteadOf: "Polished White Rice (Glycemic Index ~73)", chooseThis: "Foxtail Millet, Little Millet, or Parboiled Brown Basmati", why: "Lowers glycemic load, increases dietary fiber by 300%, and stabilizes 2-hour postprandial glucose." },
+      { insteadOf: "Maida / Refined Wheat Flour Parathas", chooseThis: "Jowar, Bajra, Ragi, or Besan-Enriched Missi Rotis", why: "Provides rich magnesium, slow-release complex starches, and naturally gluten-free fiber." },
+      { insteadOf: "Deep-Fried Samosas, Bhujia & Namkeen", chooseThis: "Roasted Makhana (Foxnuts) & Roasted Bengal Gram", why: "Eliminates industrial trans-fats and lipid peroxidation while providing bioavailable protein." },
+      { insteadOf: "Sugar-Sweetened Milky Chai (3–4 cups/day)", chooseThis: "Masala Chai with Stevia or Spiced Chaas (Buttermilk)", why: "Saves 150–250 kcal of refined sugar per day and provides gut-friendly lactobacillus." },
+      { insteadOf: "Thin, Watery Dal with Heavy Ghee Tadka", chooseThis: "Thick Sprouted Moong / Chana Dal with 1 tsp Cold-Pressed Oil", why: "Triples protein density per bowl and avoids saturated fat accumulation in hepatic tissue." }
+    ],
+    faqTitle: "Frequently Asked Questions: Indian BMI & Cardiometabolic Health",
+    faqSubtitle: "Detailed clinical answers regarding the thin-fat phenotype, dietary adjustments, and ICMR standards.",
+    faqs: [
+      {
+        q: "Why is an Indian adult with a BMI of 22.5 kg/m² advised to monitor their diet closely?",
+        a: "While a BMI of 22.5 kg/m² is classified as 'normal' under Western standards, it sits near the top of the healthy Indian range (18.5–22.9 kg/m²). Due to the South Asian thin-fat phenotype, individuals at this level often carry substantial visceral fat and elevated fasting insulin. Monitoring waist circumference and dietary glycemic index prevents progression to prediabetes."
+      },
+      {
+        q: "Can someone with a normal BMI in India develop Type 2 diabetes?",
+        a: "Yes. Clinical registries indicate that up to 30% of newly diagnosed Type 2 diabetes patients in India have a BMI under 23.0 kg/m². This occurs because pancreatic beta cells in South Asians have lower compensatory reserve, and modest visceral fat deposition in the liver and pancreas triggers metabolic dysfunction even without apparent obesity."
+      },
+      {
+        q: "How does the ICMR waist circumference cutoff compare to international guidelines?",
+        a: "The ICMR recommends cutoffs of ≥ 90 cm for Indian men and ≥ 80 cm for Indian women. In contrast, Western guidelines use 102 cm for men and 88 cm for women. Using Western cutoffs in India misses over 50% of adults with clinically dangerous visceral adiposity."
+      },
+      {
+        q: "How much protein should an Indian vegetarian consume each day?",
+        a: "The ICMR recommends a baseline of 0.83 grams of protein per kilogram of body weight per day, which increases to 1.2 to 1.6 g/kg for active adults seeking fat loss or muscle preservation. For a 65 kg adult, this equates to 55 to 80 grams daily, best achieved by combining paneer, tofu, soya, sprouts, lentils, and curd across all meals."
+      },
+      {
+        q: "What type of exercise is most effective for reversing the South Asian thin-fat phenotype?",
+        a: "A combination of progressive resistance training (weight training or calisthenics 2–3 times per week) and moderate aerobic exercise (such as brisk walking at 5–6 km/h for 150–300 minutes weekly). Resistance training directly increases skeletal muscle mass and glucose uptake via GLUT4 transporters, reducing insulin resistance."
+      }
+    ]
+  },
+  hi: {
+    eyebrow: "दक्षिण एशियाई कार्डियोमेटाबोलिक एंडोक्रिनोलॉजी",
+    phenotypeTitle: "दक्षिण एशियाई 'पतला-मोटा' फेनोटाइप (Thin-Fat Phenotype)",
+    phenotypeSubtitle: "पश्चिमी बीएमआई मानक भारतीय आबादी के चयापचय जोखिम को कम क्यों आंकते हैं?",
+    phenotypeLead: "'थिन-फैट फेनोटाइप' (चिकित्सीय भाषा में MONW - मेटाबॉलिक रूप से मोटा सामान्य वजन) दक्षिण एशियाई आबादी में पाया जाने वाला एक विशिष्ट शारीरिक प्रोफाइल है।",
+    phenotypeP1: "भारतीय मूल के व्यक्तियों में समान बीएमआई वाले कोकेशियान (पश्चिमी) वयस्कों की तुलना में शरीर में वसा का प्रतिशत 5% से 8% अधिक, पेट की आंतरिक (विस्रल) वसा अधिक और कंकाल की मांसपेशियों (लीन मसल) का द्रव्यमान काफी कम होता है। इसका परिणाम यह है कि 22.0 kg/m² के 'सामान्य' बीएमआई वाले एक भारतीय वयस्क का कार्डियोमेटाबोलिक जोखिम 28.0 से 30.0 kg/m² बीएमआई वाले पश्चिमी व्यक्ति के बराबर होता है।",
+    phenotypeP2: "लिवर, अग्न्याशय (पैन्क्रियाज) और आंतों के चारों ओर जमा गहरी विस्रल वसा सूजन पैदा करने वाले साइटोकिन्स छोड़ती है। इससे कम उम्र में ही इंसुलिन प्रतिरोध, उच्च ट्राइग्लिसराइड्स, कम एचडीएल और टाइप 2 डायबिटीज व हृदय रोग (CAD) का जोखिम 10 से 15 साल पहले उभरने लगता है। इसी कारण आईसीएमआर (ICMR) और डब्ल्यूएचओ ने भारतीयों के लिए बीएमआई कटऑफ को घटाया है।",
+    comparisonTitle: "शारीरिक संरचना तुलना: दक्षिण एशियाई बनाम पश्चिमी कोकेशियान",
+    compHeaders: { marker: "शारीरिक बायोमार्कर", southAsian: "दक्षिण एशियाई (भारतीय) प्रोफाइल", western: "पश्चिमी कोकेशियान प्रोफाइल" },
+    compRows: [
+      { marker: "बीएमआई 22 kg/m² पर वसा %", southAsian: "26% – 32% (पुरुष) | 33% – 40% (महिला)", western: "16% – 21% (पुरुष) | 23% – 28% (महिला)" },
+      { marker: "विस्रल (आंतरिक पेट) वसा", southAsian: "समान वजन पर काफी अधिक", western: "कम अनुपात; वसा त्वचा के नीचे जमा" },
+      { marker: "कंकाल मांसपेशी (मसल मास)", southAsian: "कम (सारकोपीनिक प्रवृत्ति)", western: "अधिक बुनियादी मांसपेशी घनत्व" },
+      { marker: "ओवरवेट नैदानिक कटऑफ", southAsian: "बीएमआई ≥ 23.0 kg/m² (ICMR मानक)", western: "बीएमआई ≥ 25.0 kg/m² (WHO मानक)" },
+      { marker: "मोटापा नैदानिक कटऑफ", southAsian: "बीएमआई ≥ 25.0 kg/m² (ICMR मानक)", western: "बीएमआई ≥ 30.0 kg/m² (WHO मानक)" },
+      { marker: "इंसुलिन प्रतिरोध की शुरुआत", southAsian: "बीएमआई 21.5 – 23.5 kg/m² पर शुरू", western: "आमतौर पर बीएमआई > 27.5 kg/m² पर" }
+    ],
+    waistTitle: "आईसीएमआर कमर परिधि एवं केंद्रीय मोटापा गाइड",
+    waistSubtitle: "वजन के कांटे से ज्यादा आपकी कमर की माप हृदय रोग और मधुमेह की सटीक भविष्यवाणी क्यों करती है?",
+    waistCutoffs: [
+      { group: "भारतीय वयस्क पुरुष", threshold: "≥ 90 सेमी (35.4 इंच)", context: "पेट के आंतरिक मोटापे का संकेत देता है और इंसुलिन प्रतिरोध व लिपिड जांच की आवश्यकता को दर्शाता है।" },
+      { group: "भारतीय वयस्क महिला", threshold: "≥ 80 सेमी (31.5 इंच)", context: "मेटाबॉलिक सिंड्रोम और हृदय संबंधी जटिलताओं के बढ़ते जोखिम का नैदानिक संकेत।" }
+    ],
+    waistStepsTitle: "कमर नापने की मानक चिकित्सीय विधि (ICMR दिशानिर्देश)",
+    waistSteps: [
+      "पैरों को कंधे की चौड़ाई पर रखकर सीधे खड़े हों और हाथों को स्वाभाविक रूप से ढीला छोड़ें।",
+      "अपनी पसलियों की निचली हड्डी और कूल्हे की ऊपरी हड्डी के ठीक बीच के बिंदु का पता लगाएं।",
+      "एक लचीले गैर-खिंचाव वाले फीते को त्वचा पर क्षैतिज रूप से लपेटें (नाभि के ठीक ऊपर)।",
+      "सामान्य रूप से सांस बाहर छोड़ें (सांस छोड़ने के अंत में) और माप को निकटतम 0.5 सेमी में दर्ज करें।"
+    ],
+    whtrRuleTitle: "कमर-से-कद अनुपात (WHtR) का व्यावहारिक नियम",
+    whtrRuleText: "अपनी कमर की परिधि को अपने कुल कद के आधे से कम रखें (WHtR < 0.5)। उदाहरण के लिए, 170 सेमी लंबे व्यक्ति की कमर 85 सेमी से कम होनी चाहिए। 0.5 से अधिक का अनुपात फैटी लिवर और धमनियों में रुकावट से सीधे जुड़ा है, भले ही आपका कुल वजन सामान्य हो।",
+    dietTitle: "भारतीय आहार अनुकूलन एवं संतुलित थाली संरचना",
+    dietSubtitle: "उच्च कार्बोहाइड्रेट युक्त भोजन के स्थान पर संतुलित थाली और प्रोटीन विकल्पों को अपनाएं।",
+    thaliConceptTitle: "स्वस्थ भारतीय थाली संरचना (ICMR-NIN MyPlate अवधारणा)",
+    thaliComponents: [
+      { portion: "50% (थाली का आधा हिस्सा)", name: "हरी सब्जियां एवं कच्चा सलाद", items: "भिंडी, लौकी, पालक, मेथी, तोरई, करेला, पत्तागोभी, खीरा और टमाटर। उच्च घुलनशील फाइबर भोजन के बाद ब्लड शुगर को तेजी से बढ़ने से रोकता है।" },
+      { portion: "25% (एक-चौथाई हिस्सा)", name: "उच्च-गुणवत्ता युक्त प्रोटीन", items: "100 ग्राम लो-फैट पनीर या टोफू, सोया चंक्स, उबले अंकुरित मूंग/चने, गाढ़ी दाल, राजमा, या मांसाहारी वयस्कों के लिए उबले अंडे/ग्रिल्ड चिकन।" },
+      { portion: "25% (एक-चौथाई हिस्सा)", name: "जटिल मोटे अनाज (मिलेट्स)", items: "ज्वार, बाजरा, रागी या मिस्सी रोटी (1–2 छोटी), अथवा पॉलिश सफेद चावल के स्थान पर 1 कटोरी बाजरा/कंगनी (फॉक्सटेल मिलेट)।" }
+    ],
+    sampleMealTitle: "स्वस्थ वजन एवं मेटाबॉलिज्म हेतु दैनिक भारतीय आहार तालिका",
+    vegMeals: [
+      { meal: "नाश्ता (प्रातः 8:00 बजे)", details: "2 मूंग दाल चीला (40 ग्राम कद्दूकस पनीर भरा हुआ) हरी चटनी के साथ, साथ में 1 कप बिना चीनी की चाय।" },
+      { meal: "दोपहर का भोजन (1:00 बजे)", details: "1 कटोरी गाढ़ी पंचरत्न दाल + 1 बड़ी कटोरी पालक/भिंडी की सब्जी + 1 प्लेट ककड़ी-टमाटर सलाद + 1 कटोरी ताजा दही + 1-2 ज्वार या रागी रोटी।" },
+      { meal: "शाम का नाश्ता (5:00 बजे)", details: "1 कटोरी भुने चने और मखाने (जीरा व चाट मसाले के साथ) और ग्रीन टी।" },
+      { meal: "रात का भोजन (8:00 बजे)", details: "सब्जियों का सूप + 1 कटोरी पनीर/टोफू भुर्जी शिमला मिर्च और प्याज के साथ + छोटी कटोरी बाजरा या कंगनी की खिचड़ी।" }
+    ],
+    nonVegMeals: [
+      { meal: "नाश्ता (प्रातः 8:00 बजे)", details: "3 अंडे की सफेदी और 1 पूरे अंडे की भुर्जी प्याज-टमाटर और पालक के साथ + 1 होल-व्हीट टोस्ट।" },
+      { meal: "दोपहर का भोजन (1:00 बजे)", details: "150 ग्राम तंदूरी चिकन या भाप में पकी मछली की करी (कम तेल) + बड़ी प्लेट सलाद + 1 कटोरी दही + 1 बाजरा या मल्टीग्रेन रोटी।" },
+      { meal: "शाम का नाश्ता (5:00 बजे)", details: "अंकुरित मूंग और काले चने की चाट नींबू के रस और भुनी मूंगफली के साथ।" },
+      { meal: "रात का भोजन (8:00 बजे)", details: "ग्रिल्ड फिश या चिकन स्टू उबली ब्रोकोली, गाजर और बीन्स के साथ + थोड़ी मात्रा में ब्राउन बासमती चावल।" }
+    ],
+    swapsTitle: "भारतीय रसोई के लिए स्मार्ट स्वास्थ्य विकल्प (Smart Swaps)",
+    swaps: [
+      { insteadOf: "पॉलिश सफेद चावल (उच्च ग्लाइसेमिक इंडेक्स ~73)", chooseThis: "फॉक्सटेल मिलेट (कंगनी), कोदो, या अनपॉलिश भूरा चावल", why: "ग्लाइसेमिक भार कम करता है, फाइबर को 3 गुना बढ़ाता है और भोजन के बाद रक्त शर्करा को स्थिर रखता है।" },
+      { insteadOf: "मैदा या अधिक छने गेहूं के आटे के परांठे", chooseThis: "ज्वार, बाजरा, रागी या बेसन मिली मिस्सी रोटी", why: "मैग्नीशियम, धीमे पचने वाले जटिल स्टार्च और आंतों के लिए जरूरी फाइबर प्रदान करता है।" },
+      { insteadOf: "समोसा, कचौड़ी, भुजिया और नमकीन", chooseThis: "भुने मखाने और भुना चना (हल्का सेंधा नमक)", why: "हानिकारक ट्रांस-फैट और तेल को समाप्त करता है और प्राकृतिक प्रोटीन देता है।" },
+      { insteadOf: "मीठी दूध वाली चाय (दिन में 3-4 कप)", chooseThis: "मसाला चाय (बिना चीनी) या छाछ (जीरा-पुदीना युक्त)", why: "दैनिक 150-200 कैलोरी सफेद चीनी की बचत और पेट के लिए प्रोबायोटिक लाभ।" },
+      { insteadOf: "पतली दाल जिसमें ऊपर से अधिक घी का तड़का हो", chooseThis: "गाढ़ी अंकुरित दाल जिसमें 1 छोटा चम्मच कच्ची घानी तेल हो", why: "प्रति कटोरी प्रोटीन को दोगुना करता है और लिवर में फैट जमा होने से रोकता है।" }
+    ],
+    faqTitle: "अक्सर पूछे जाने वाले प्रश्न: भारतीय बीएमआई एवं स्वास्थ्य",
+    faqSubtitle: "थिन-फैट फेनोटाइप, आहार प्रबंधन और आईसीएमआर मानकों से संबंधित वैज्ञानिक उत्तर।",
+    faqs: [
+      {
+        q: "22.5 बीएमआई वाले भारतीय वयस्क को भी वजन और आहार पर ध्यान देने की सलाह क्यों दी जाती है?",
+        a: "पश्चिमी मानकों में 22.5 बीएमआई सामान्य माना जाता है, लेकिन भारतीय संदर्भ में यह स्वस्थ सीमा (18.5–22.9) के अंतिम छोर पर है। थिन-फैट फेनोटाइप के कारण इस स्तर पर भी आंतरिक विस्रल वसा और इंसुलिन प्रतिरोध बढ़ सकता है।"
+      },
+      {
+        q: "क्या सामान्य बीएमआई वाले भारतीय को भी टाइप 2 डायबिटीज हो सकती है?",
+        a: "हाँ। भारत में नए डायबिटीज मरीजों में से लगभग 30% का बीएमआई 23.0 से कम होता है। इसका कारण अग्न्याशय (पैन्क्रियाज) में इंसुलिन की सीमित क्षमता और लिवर में जमा अदृश्य विस्रल वसा है।"
+      },
+      {
+        q: "आईसीएमआर की कमर परिधि सीमा पश्चिमी देशों से अलग क्यों है?",
+        a: "आईसीएमआर पुरुषों के लिए ≥ 90 सेमी और महिलाओं के लिए ≥ 80 सेमी निर्धारित करता है, जबकि पश्चिमी सीमा 102/88 सेमी है। पश्चिमी सीमा लागू करने पर भारत में 50% से अधिक जोखिम वाले लोग जांच से छूट जाते हैं।"
+      },
+      {
+        q: "शाकाहारी भारतीय को प्रतिदिन कितना प्रोटीन लेना चाहिए?",
+        a: "आईसीएमआर के अनुसार न्यूनतम 0.83 ग्राम प्रति किग्रा शरीर वजन आवश्यक है, जो सक्रिय वयस्कों के लिए 1.2 से 1.6 ग्राम तक होना चाहिए। 65 किग्रा वयस्क के लिए यह 55 से 80 ग्राम प्रतिदिन बनता है, जिसे पनीर, टोफू, सोया, अंकुरित अनाज और दालों से प्राप्त किया जा सकता है।"
+      },
+      {
+        q: "थिन-फैट फेनोटाइप को उलटने के लिए कौन सा व्यायाम सबसे प्रभावी है?",
+        a: "सप्ताह में 2–3 दिन स्ट्रेंथ ट्रेनिंग (वजन उठाना या डंबल) और 150 मिनट तेज गति से पैदल चलना। स्ट्रेंथ ट्रेनिंग मांसपेशियों का द्रव्यमान बढ़ाकर इंसुलिन संवेदनशीलता में सीधा सुधार करती है।"
+      }
+    ]
+  },
+  es: {
+    eyebrow: "Endocrinología Cardiometabólica del Sur de Asia",
+    phenotypeTitle: "El Fenotipo 'Delgado-Graso' del Sur de Asia (MONW)",
+    phenotypeSubtitle: "Por qué los estándares occidentales de IMC subestiman gravemente el riesgo metabólico en personas de origen indio.",
+    phenotypeLead: "El fenotipo 'delgado-graso' —conocido clínicamente como Obeso Metabólicamente de Peso Normal (MONW)— es el perfil biológico característico del sur de Asia.",
+    phenotypeP1: "Las personas de origen indio poseen mayor porcentaje de grasa corporal (entre 5% y 8% más que los caucásicos con idéntico IMC), mayor grasa visceral y menor masa muscular esquelética. Por ello, un adulto indio con un IMC de 22.0 kg/m² presenta a menudo el riesgo cardiometabólico de un occidental con un IMC de 28.0 a 30.0 kg/m².",
+    phenotypeP2: "El tejido adiposo visceral profundo segrega citoquinas inflamatorias que aceleran la resistencia a la insulina y la diabetes tipo 2 de forma prematura. Por esta razón, el ICMR fijó el sobrepeso en 23.0 kg/m² y la obesidad en 25.0 kg/m².",
+    comparisonTitle: "Comparativa Clínica: Población del Sur de Asia vs. Caucásica Occidental",
+    compHeaders: { marker: "Marcador Fisiológico", southAsian: "Perfil Indio (Sur de Asia)", western: "Perfil Occidental Caucásico" },
+    compRows: [
+      { marker: "Grasa Corporal a IMC 22 kg/m²", southAsian: "26% – 32% (Hombres) | 33% – 40% (Mujeres)", western: "16% – 21% (Hombres) | 23% – 28% (Mujeres)" },
+      { marker: "Grasa Visceral Abdominal", southAsian: "Significativamente más alta a igual peso", western: "Menor proporción; acumulada subcutáneamente" },
+      { marker: "Masa Muscular Esquelética", southAsian: "Reducida (Predisposición a sarcopenia)", western: "Mayor densidad muscular basal" },
+      { marker: "Corte de Sobrepeso", southAsian: "IMC ≥ 23.0 kg/m² (ICMR)", western: "IMC ≥ 25.0 kg/m² (OMS)" },
+      { marker: "Corte de Obesidad", southAsian: "IMC ≥ 25.0 kg/m² (ICMR)", western: "IMC ≥ 30.0 kg/m² (OMS)" },
+      { marker: "Aparición de Resistencia a Insulina", southAsian: "Se manifiesta con IMC 21.5 – 23.5 kg/m²", western: "Típicamente con IMC > 27.5 kg/m²" }
+    ],
+    waistTitle: "Guía de Circunferencia de Cintura del ICMR",
+    waistSubtitle: "Por qué el perímetro abdominal predice mejor el riesgo coronario que la báscula de baño.",
+    waistCutoffs: [
+      { group: "Hombres Adultos Indios", threshold: "≥ 90 cm (35.4 pulgadas)", context: "Indica obesidad visceral y requiere cribado de glucosa y perfil lipídico." },
+      { group: "Mujeres Adultas Indias", threshold: "≥ 80 cm (31.5 pulgadas)", context: "Indica obesidad visceral con alto riesgo de síndrome metabólico." }
+    ],
+    waistStepsTitle: "Protocolo Clínico de Medición Estandarizada",
+    waistSteps: [
+      "Póngase de pie con los pies alineados a la anchura de los hombros y brazos relajados.",
+      "Ubique el punto medio entre el borde inferior de la última costilla y la cresta ilíaca.",
+      "Pase la cinta métrica flexible horizontalmente sobre la piel descubierta sin comprimir tejidos.",
+      "Exhale con normalidad y registre la lectura al final de la espiración suave."
+    ],
+    whtrRuleTitle: "Regla Cintura-Estatura (WHtR < 0.5)",
+    whtrRuleText: "Mantenga su cintura en menos de la mitad de su estatura. Por ejemplo, una persona de 170 cm debe mantener una cintura inferior a 85 cm.",
+    dietTitle: "Optimización de la Dieta India y Plato Equilibrado",
+    dietSubtitle: "Estrategias para reducir el exceso de carbohidratos refinados y optimizar el aporte de proteínas.",
+    thaliConceptTitle: "Estructura del Plato Indio Saludable (Concepto ICMR-NIN)",
+    thaliComponents: [
+      { portion: "50% del Plato", name: "Verduras y Ensaladas Crudas", items: "Espinacas, calabacín, coliflor, pimientos, pepino y tomate. La fibra reduce los picos de glucosa posprandial." },
+      { portion: "25% del Plato", name: "Proteínas de Calidad", items: "100 g de paneer bajo en grasa, tofu, soja texturizada, lentejas espesas (dhal) o pollo/pescado a la plancha." },
+      { portion: "25% del Plato", name: "Cereales Integrales / Mijos", items: "1-2 rotis de jowar o mijo en lugar de arroz blanco refinado." }
+    ],
+    sampleMealTitle: "Menú Diario de Ejemplo para la Población India",
+    vegMeals: [
+      { meal: "Desayuno (8:00)", details: "Chilla de moong dal relleno de paneer con té sin azúcar." },
+      { meal: "Almuerzo (13:00)", details: "Dhal mixto espeso + verduras de temporada + ensalada fresca + yogur probiótico + 1 roti de jowar." },
+      { meal: "Merienda (17:00)", details: "Garbanzos tostados (chana) con makhana y té verde." },
+      { meal: "Cena (20:00)", details: "Sopa de verduras + paneer salteado con pimientos + porción pequeña de khichdi de mijo." }
+    ],
+    nonVegMeals: [
+      { meal: "Desayuno (8:00)", details: "Revuelto de claras y huevo entero con espinacas y cebolla + tostada integral." },
+      { meal: "Almuerzo (13:00)", details: "Pollo tandoori a la plancha o curry de pescado suave + ensalada grande + 1 roti multigrano." },
+      { meal: "Merienda (17:00)", details: "Ensalada de brotes de legumbres con limón y cacahuetes." },
+      { meal: "Cena (20:00)", details: "Pescado al horno con brócoli y judías verdes + porción pequeña de arroz basmati integral." }
+    ],
+    swapsTitle: "Sustituciones Saludables en la Cocina India",
+    swaps: [
+      { insteadOf: "Arroz blanco pulido (IG alto ~73)", chooseThis: "Mijo Foxtail o Arroz Basmati Integral", why: "Reduce la carga glucémica y triplica la fibra." },
+      { insteadOf: "Harina de trigo refinada (Maida)", chooseThis: "Harina de Jowar, Bajra o Ragi", why: "Aporta magnesio y almidones de lenta absorción." },
+      { insteadOf: "Frituras comerciales (Samosas)", chooseThis: "Makhana tostada y garbanzos secos", why: "Elimina grasas trans perjudiciales." },
+      { insteadOf: "Té con leche azucarado (3 tazas al día)", chooseThis: "Chai con stevia o Chaas especiado", why: "Ahorra 200 kcal de azúcares libres al día." },
+      { insteadOf: "Dhal muy diluido con exceso de ghee", chooseThis: "Dhal espeso de legumbres germinadas", why: "Aumenta la densidad proteica por ración." }
+    ],
+    faqTitle: "Preguntas Frecuentes sobre el IMC en la Población India",
+    faqSubtitle: "Respuestas clínicas sobre el fenotipo delgado-graso y las normas del ICMR.",
+    faqs: [
+      {
+        q: "¿Por qué el sobrepeso se define en 23.0 kg/m² para indios?",
+        a: "Porque la población del sur de Asia acumula mayor grasa visceral a valores más bajos de IMC, lo que adelanta el riesgo de diabetes y cardiopatías."
+      },
+      {
+        q: "¿Una persona con IMC normal en India puede tener diabetes?",
+        a: "Sí, hasta el 30% de los pacientes diagnosticados en India tienen un IMC menor a 23.0 kg/m² debido a la grasa visceral ectópica en hígado y páncreas."
+      },
+      {
+        q: "¿Cuáles son los límites de cintura según el ICMR?",
+        a: "Cintura ≥ 90 cm en hombres y ≥ 80 cm en mujeres, frente a los 102/88 cm utilizados en países occidentales."
+      },
+      {
+        q: "¿Cuánta proteína diaria necesita un adulto indio?",
+        a: "Entre 0.83 y 1.2 g/kg de peso corporal al día, combinando legumbres, paneer, soja y lácteos fermentados."
+      },
+      {
+        q: "¿Qué ejercicio es mejor para reducir la grasa visceral?",
+        a: "La combinación de entrenamiento de fuerza 2-3 veces por semana con 150-300 minutos de caminata rápida semanal."
+      }
+    ]
+  },
+  fr: {
+    eyebrow: "Endocrinologie Cardiométabolique Sud-Asiatique",
+    phenotypeTitle: "Le Phénotype 'Mince-Gras' Sud-Asiatique (MONW)",
+    phenotypeSubtitle: "Pourquoi l'IMC occidental sous-estime le risque cardiométabolique chez les personnes d'origine indienne.",
+    phenotypeLead: "Le phénotype 'mince-gras' (obésité métabolique à poids normal) caractérise le profil biologique des populations d'Asie du Sud.",
+    phenotypeP1: "Les adultes d'origine indienne présentent un taux de masse grasse supérieur de 5 à 8 % et une adiposité viscérale abdominale plus marquée à un IMC identique à celui des Européens.",
+    phenotypeP2: "Cette graisse viscérale entraîne une insulinorésistance précoce et un risque accru de diabète de type 2 dès un IMC de 23,0 kg/m², justifiant les recommandations spécifiques de l'ICMR.",
+    comparisonTitle: "Comparaison Clinique : Profil Sud-Asiatique vs Caucasien",
+    compHeaders: { marker: "Marqueur", southAsian: "Profil Sud-Asiatique", western: "Profil Caucasien" },
+    compRows: [
+      { marker: "Taux de Graisse à IMC 22 kg/m²", southAsian: "26% – 32% (Hommes) | 33% – 40% (Femmes)", western: "16% – 21% (Hommes) | 23% – 28% (Femmes)" },
+      { marker: "Graisse Viscérale Abdominale", southAsian: "Nettement plus élevée à poids égal", western: "Stockée principalement en sous-cutané" },
+      { marker: "Masse Musculaire Squelettique", southAsian: "Plus faible (tendance sarcopénique)", western: "Densité musculaire supérieure" },
+      { marker: "Seuil de Surpoids", southAsian: "IMC ≥ 23,0 kg/m² (ICMR)", western: "IMC ≥ 25,0 kg/m² (OMS)" },
+      { marker: "Seuil d'Obésité", southAsian: "IMC ≥ 25,0 kg/m² (ICMR)", western: "IMC ≥ 30,0 kg/m² (OMS)" },
+      { marker: "Début Insulinorésistance", southAsian: "Dès un IMC de 21,5 – 23,5 kg/m²", western: "Généralement au-delà de 27,5 kg/m²" }
+    ],
+    waistTitle: "Recommandations du Tour de Taille selon l'ICMR",
+    waistSubtitle: "Pourquoi le tour de taille surpasse la balance pour prédire les maladies cardiaques.",
+    waistCutoffs: [
+      { group: "Hommes Adultes Indiens", threshold: "≥ 90 cm (35,4 pouces)", context: "Indique une obésité abdominale viscérale à haut risque." },
+      { group: "Femmes Adultes Indiennes", threshold: "≥ 80 cm (31,5 pouces)", context: "Indique une obésité abdominale viscérale nécessitant un suivi médical." }
+    ],
+    waistStepsTitle: "Protocole Clinique de Mesure",
+    waistSteps: [
+      "Tenez-vous debout, pieds écartés de la largeur des épaules.",
+      "Repérez le point médian entre la dernière côte et la crête iliaque.",
+      "Enroulez le mètre ruban souple horizontalement sur la peau nue sans serrer.",
+      "Mesurez à la fin d'une expiration normale."
+    ],
+    whtrRuleTitle: "Règle Taille-Hauteur (WHtR < 0,5)",
+    whtrRuleText: "Le tour de taille doit rester inférieur à la moitié de la stature (ex : moins de 85 cm pour 170 cm).",
+    dietTitle: "Optimisation de l'Alimentation Indienne",
+    dietSubtitle: "Équilibrer les apports glucidiques et maximiser les protéines végétales.",
+    thaliConceptTitle: "Le Thali Équilibré (Concept ICMR-NIN)",
+    thaliComponents: [
+      { portion: "50 % de l'Assiette", name: "Légumes et Salades Crudités", items: "Épinards, courgettes, gombos, choux, concombres et tomates riches en fibres solubles." },
+      { portion: "25 % de l'Assiette", name: "Protéines de Qualité", items: "Paneer allégé, tofu, soja, dhal épais, rajma ou poulet/poisson grillé." },
+      { portion: "25 % de l'Assiette", name: "Céréales Complètes et Millets", items: "Rotis de jowar, bajra ou ragi au lieu du riz blanc poli." }
+    ],
+    sampleMealTitle: "Exemple de Repas Quotidien",
+    vegMeals: [
+      { meal: "Petit-déjeuner (8h00)", details: "2 Chillas au moong dal avec paneer râpé et thé non sucré." },
+      { meal: "Déjeuner (13h00)", details: "Dhal épais + légumes de saison + crudités + yaourt probiotique + 1 roti de jowar." },
+      { meal: "Collation (17h00)", details: "Pois chiches grillés et makhana avec thé vert." },
+      { meal: "Dîner (20h00)", details: "Soupe de légumes + paneer sauté aux poivrons + khichdi de millet." }
+    ],
+    nonVegMeals: [
+      { meal: "Petit-déjeuner (8h00)", details: "Brouillade d'œufs aux épinards et tomates + pain complet." },
+      { meal: "Déjeuner (13h00)", details: "Poulet tandoori ou poisson vapeur + grande salade + 1 roti multigrains." },
+      { meal: "Collation (17h00)", details: "Salade de graines germées au citron." },
+      { meal: "Dîner (20h00)", details: "Filet de poisson avec légumes vapeur + riz basmati complet." }
+    ],
+    swapsTitle: "Remplacements Intelligents en Cuisine Indienne",
+    swaps: [
+      { insteadOf: "Riz blanc raffiné", chooseThis: "Millets ou Riz Basmati Complet", why: "Diminue la charge glycémique et triple les fibres." },
+      { insteadOf: "Farine blanche (Maida)", chooseThis: "Farines de Jowar, Bajra ou Ragi", why: "Riches en magnésium et sucres lents." },
+      { insteadOf: "Beignets frits (Samosas)", chooseThis: "Makhana et pois chiches rôtis", why: "Supprime les acides gras trans nocifs." },
+      { insteadOf: "Thé au lait très sucré", chooseThis: "Thé aux épices sans sucre ou Chaas", why: "Économise 200 kcal de sucres rapides par jour." },
+      { insteadOf: "Dhal très clair avec beaucoup de ghee", chooseThis: "Dhal épais de légumineuses germées", why: "Augmente la densité protéique." }
+    ],
+    faqTitle: "Foire Aux Questions : IMC et Santé en Inde",
+    faqSubtitle: "Précisions cliniques sur le phénotype mince-gras et les seuils de l'ICMR.",
+    faqs: [
+      {
+        q: "Pourquoi le surpoids commence-t-il à 23,0 kg/m² en Inde ?",
+        a: "En raison d'un taux de graisse viscérale supérieur à poids égal, augmentant précocement le risque cardiovasculaire."
+      },
+      {
+        q: "Peut-on avoir un IMC normal et développer un diabète ?",
+        a: "Oui, près de 30 % des diabétiques indiens ont un IMC inférieur à 23,0 kg/m² en raison du dépôt de graisse viscérale dans le foie et le pancréas."
+      },
+      {
+        q: "Quels sont les seuils de tour de taille de l'ICMR ?",
+        a: "≥ 90 cm pour les hommes et ≥ 80 cm pour les femmes, contre 102/88 cm en Occident."
+      },
+      {
+        q: "Quelle quantité de protéines consommer au quotidien ?",
+        a: "Entre 0,83 et 1,2 g par kilo de poids corporel par jour avec des légumineuses, paneer et laitages fermentés."
+      },
+      {
+        q: "Quel sport pratiquer pour réduire la graisse viscérale ?",
+        a: "Un entraînement de renforcement musculaire 2 à 3 fois par semaine combiné à 150 minutes de marche rapide."
+      }
+    ]
+  },
+  de: {
+    eyebrow: "Südasiatische Kardiometabolische Endokrinologie",
+    phenotypeTitle: "Der südasiatische 'Thin-Fat'-Phänotyp (MONW)",
+    phenotypeSubtitle: "Warum westliche BMI-Standards das metabolische Risiko bei Menschen indischer Abstammung unterschätzen.",
+    phenotypeLead: "Der 'Thin-Fat'-Phänotyp (metabolisch fettleibig bei normalem Gewicht) beschreibt die biologische Besonderheit südasiatischer Populationen.",
+    phenotypeP1: "Personen indischer Herkunft weisen bei gleichem BMI einen um 5–8 % höheren Körperfettanteil, mehr viszerales Bauchfett und weniger Muskelmasse auf als Kaukasier.",
+    phenotypeP2: "Tiefes Viszerallfett um Leber und Bauchspeicheldrüse löst frühzeitig Insulinresistenz und Typ-2-Diabetes aus. Daher hat das ICMR die Grenzwerte auf 23,0 (Übergewicht) und 25,0 (Adipositas) gesenkt.",
+    comparisonTitle: "Klinischer Vergleich: Südasiatisch vs. Westlich",
+    compHeaders: { marker: "Biomarker", southAsian: "Südasiatisches Profil (Indien)", western: "Westlich-kaukasisches Profil" },
+    compRows: [
+      { marker: "Körperfett % bei BMI 22 kg/m²", southAsian: "26% – 32% (Männer) | 33% – 40% (Frauen)", western: "16% – 21% (Männer) | 23% – 28% (Frauen)" },
+      { marker: "Viszerales Bauchfett", southAsian: "Deutlich erhöht bei normalem Gewicht", western: "Vorwiegend subkutane Fetteinlagerung" },
+      { marker: "Skelettmuskelmasse", southAsian: "Geringer (Sarkopenieneigung)", western: "Höhere Muskelbasaldichte" },
+      { marker: "Übergewichtsschwelle", southAsian: "BMI ≥ 23,0 kg/m² (ICMR)", western: "BMI ≥ 25,0 kg/m² (WHO)" },
+      { marker: "Adipositasschwelle", southAsian: "BMI ≥ 25,0 kg/m² (ICMR)", western: "BMI ≥ 30,0 kg/m² (WHO)" },
+      { marker: "Beginn Insulinresistenz", southAsian: "Bereits bei BMI 21,5 – 23,5 kg/m²", western: "Typischerweise bei BMI > 27,5 kg/m²" }
+    ],
+    waistTitle: "ICMR-Taillenumfang-Richtlinien",
+    waistSubtitle: "Warum die Taille das Herz-Kreislauf-Risiko zuverlässiger anzeigt als das Waagengewicht.",
+    waistCutoffs: [
+      { group: "Indische Männer", threshold: "≥ 90 cm (35,4 Zoll)", context: "Zeigt abdominale viszerale Adipositas mit dringendem Vorsorgebedarf an." },
+      { group: "Indische Frauen", threshold: "≥ 80 cm (31,5 Zoll)", context: "Klinischer Hinweis auf metabolisches Syndrom und erhöhtes Risiko." }
+    ],
+    waistStepsTitle: "Standardisiertes Messprotokoll",
+    waistSteps: [
+      "Aufrecht mit schulterbreitem Stand hinstellen.",
+      "Mittelpunkt zwischen unterster Rippe und Beckenkamm ertasten.",
+      "Maßband horizontal auf nackter Haut anlegen ohne einzuschneiden.",
+      "Nach normalem Ausatmen ablesen."
+    ],
+    whtrRuleTitle: "Taille-zu-Größe-Regel (WHtR < 0,5)",
+    whtrRuleText: "Der Taillenumfang sollte weniger als die Hälfte der Körpergröße betragen (z. B. unter 85 cm bei 170 cm Größe).",
+    dietTitle: "Indische Ernährungsoptimierung & Thali-Konzept",
+    dietSubtitle: "Reduktion raffinierter Kohlenhydrate durch ausgewogene vollwertige Lebensmittel.",
+    thaliConceptTitle: "Der gesunde indische Teller (ICMR-NIN MyPlate)",
+    thaliComponents: [
+      { portion: "50 % des Tellers", name: "Gemüse & Rohkostsalat", items: "Spinat, Zucchini, Okra, Kohl, Gurke und Tomate mit löslichen Ballaststoffen." },
+      { portion: "25 % des Tellers", name: "Hochwertiges Protein", items: "Fettarmer Paneer, Tofu, Soja, dicke Linsen (Dal) oder Hähnchen/Fisch." },
+      { portion: "25 % des Tellers", name: "Vollkorn & Hirse", items: "Jowar-, Bajra- oder Ragi-Roti statt poliertem weißem Reis." }
+    ],
+    sampleMealTitle: "Muster-Ernährungsplan",
+    vegMeals: [
+      { meal: "Frühstück (8:00)", details: "2 Moong-Dal-Chillas gefüllt mit Paneer + ungesüßter Tee." },
+      { meal: "Mittagessen (13:00)", details: "Dickes Dal + Gemüsecurry + Salat + probiotischer Joghurt + 1 Hirse-Roti." },
+      { meal: "Nachmittagssnack (17:00)", details: "Geröstete Kichererbsen und Makhana + grüner Tee." },
+      { meal: "Abendessen (20:00)", details: "Gemüsesuppe + gebratener Paneer mit Paprika + kleine Portion Hirse-Khichdi." }
+    ],
+    nonVegMeals: [
+      { meal: "Frühstück (8:00)", details: "Eierspeise aus Eiweiß und Spinat + Vollkorntoast." },
+      { meal: "Mittagessen (13:00)", details: "Tandoori-Hähnchen oder Fischcurry + Rohkost + 1 Mehrkorn-Roti." },
+      { meal: "Nachmittagssnack (17:00)", details: "Salat aus gekeimten Linsen mit Zitrone." },
+      { meal: "Abendessen (20:00)", details: "Gegrillter Fisch mit gedünstetem Gemüse + brauner Basmatireis." }
+    ],
+    swapsTitle: "Smarte Lebensmittel-Tauschoptionen",
+    swaps: [
+      { insteadOf: "Polierter weißer Reis", chooseThis: "Hirse oder brauner Basmatireis", why: "Senkt den glykämischen Index und verdreifacht die Ballaststoffe." },
+      { insteadOf: "Weißmehl-Parathas (Maida)", chooseThis: "Jowar-, Bajra- oder Ragi-Roti", why: "Liefert Magnesium und langanhaltende Energie." },
+      { insteadOf: "Frittierte Samosas & Snacks", chooseThis: "Geröstete Kichererbsen & Makhana", why: "Beseitigt schädliche Transfette." },
+      { insteadOf: "Süßer Milchtee (Chai)", chooseThis: "Chai ohne Zucker oder Chaas", why: "Spart täglich bis zu 200 kcal Zucker ein." },
+      { insteadOf: "Wässriges Dal mit viel Ghee", chooseThis: "Dickes Linsengericht mit 1 TL Pflanzenöl", why: "Erhöht den Proteingehalt pro Mahlzeit." }
+    ],
+    faqTitle: "Häufig gestellte Fragen: Indischer BMI & Stoffwechsel",
+    faqSubtitle: "Klinische Antworten zum Thin-Fat-Phänotyp und den ICMR-Grenzwerte.",
+    faqs: [
+      {
+        q: "Warum gilt in Indien ein BMI von 23,0 kg/m² als Übergewicht?",
+        a: "Weil Südasiaten bereits bei diesem Wert erhöhtes Viszeralfett und Stoffwechselrisiken aufweisen."
+      },
+      {
+        q: "Kann man bei normalem BMI an Typ-2-Diabetes erkranken?",
+        a: "Ja, bis zu 30 % der neu diagnostizierten Patienten in Indien haben einen normalen BMI unter 23,0 kg/m²."
+      },
+      {
+        q: "Wie lauten die ICMR-Taillengrenzwerte?",
+        a: "≥ 90 cm für Männer und ≥ 80 cm für Frauen (im Vergleich zu 102/88 cm im Westen)."
+      },
+      {
+        q: "Wie viel Protein benötigt ein Erwachsener täglich?",
+        a: "Mindestens 0,83 bis 1,2 g pro kg Körpergewicht aus Hülsenfrüchten, Paneer, Soja und Joghurt."
+      },
+      {
+        q: "Welches Training baut viszerales Bauchfett am besten ab?",
+        a: "Krafttraining 2-3 Mal pro Woche kombiniert mit 150 Minuten schnellem Gehen wöchentlich."
+      }
+    ]
+  },
+  ko: {
+    eyebrow: "남아시아 심혈관 대사 내분비학 가이드",
+    phenotypeTitle: "남아시아 특이적 '마른 비만' 체형 (Thin-Fat Phenotype)",
+    phenotypeSubtitle: "서양 기준의 BMI가 인도계 인구의 대사 질환 위험을 과소평가하는 이유를 임상적으로 분석합니다.",
+    phenotypeLead: "'마른 비만'(임상적으로 대사적 비만 정상 체중 - MONW)은 남아시아 인구 집단에서 광범위하게 관찰되는 독특한 생리학적 특징입니다.",
+    phenotypeP1: "인도계 성인은 동일한 BMI의 서양인에 비해 체지방률이 5~8% 더 높고, 복부 내장지방이 많으며, 골격근량이 현저히 적습니다. 따라서 BMI 22.0 kg/m²의 정상 체중 인도인이라도 서양인의 BMI 28.0~30.0 kg/m²에 해당하는 심혈관 대사 위험을 가집니다.",
+    phenotypeP2: "간과 췌장 주변에 축적된 깊은 내장지방은 염증성 사이토카인을 분비하여 인슐린 저항성과 제2형 당뇨병을 조기에 유발합니다. 이로 인해 인도 의학연구위원회(ICMR)는 과체중 기준을 23.0 kg/m², 비만 기준을 25.0 kg/m²로 하향 조정했습니다.",
+    comparisonTitle: "임상 체성분 비교: 남아시아인 vs. 서양인",
+    compHeaders: { marker: "생리학적 지표", southAsian: "남아시아(인도) 프로필", western: "서양 코카시안 프로필" },
+    compRows: [
+      { marker: "BMI 22 kg/m² 시 체지방률", southAsian: "26% – 32% (남) | 33% – 40% (여)", western: "16% – 21% (남) | 23% – 28% (여)" },
+      { marker: "복부 내장지방 조직(VAT)", southAsian: "동일 체중 대비 현저히 높음", western: "피하지방 위주 저장으로 낮은 비율" },
+      { marker: "골격근량 (근육 밀도)", southAsian: "감소됨 (근감소성 소인)", western: "더 높은 기초 근육량 보유" },
+      { marker: "과체중 진단 기준", southAsian: "BMI ≥ 23.0 kg/m² (ICMR 기준)", western: "BMI ≥ 25.0 kg/m² (WHO 국제 기준)" },
+      { marker: "비만 진단 기준", southAsian: "BMI ≥ 25.0 kg/m² (ICMR 기준)", western: "BMI ≥ 30.0 kg/m² (WHO 국제 기준)" },
+      { marker: "인슐린 저항성 발현 시점", southAsian: "BMI 21.5 – 23.5 kg/m²에서 발현", western: "일반적으로 BMI > 27.5 kg/m²에서 발현" }
+    ],
+    waistTitle: "ICMR 허리둘레 및 복부 비만 관리 가이드",
+    waistSubtitle: "체중계 수치보다 허리둘레가 당뇨와 심장병 위험을 훨씬 정확하게 예측하는 이유입니다.",
+    waistCutoffs: [
+      { group: "인도 성인 남성", threshold: "≥ 90 cm (35.4 인치)", context: "복부 내장비만 위험 기준치로, 공복 혈당 및 지질 검진이 즉시 권장됩니다." },
+      { group: "인도 성인 여성", threshold: "≥ 80 cm (31.5 인치)", context: "대사증후군 및 심혈관 질환 위험 상승을 의미하는 임상 기준치입니다." }
+    ],
+    waistStepsTitle: "표준 임상 허리둘레 측정법",
+    waistSteps: [
+      "양발을 어깨너비로 벌리고 선 후 팔을 편안히 내립니다.",
+      "가장 아래 갈비뼈와 골반뼈(장골능) 사이의 중간 지점을 찾습니다.",
+      "피부에 줄자를 수평으로 두르고 살을 압박하지 않도록 밀착시킵니다.",
+      "숨을 편안하게 내쉰 상태(호기 말)에서 0.5 cm 단위로 측정합니다."
+    ],
+    whtrRuleTitle: "허리-신장 비율(WHtR < 0.5) 황금률",
+    whtrRuleText: "허리둘레는 항상 자신의 키의 절반 미만이어야 합니다. 예를 들어 키가 170 cm라면 허리는 85 cm 미만을 유지해야 비알코올성 지방간과 동맥경화 위험을 낮출 수 있습니다.",
+    dietTitle: "인도식 식단 최적화 및 균형 잡힌 탈리(Thali) 구성",
+    dietSubtitle: "정제 탄수화물 과다 섭취를 줄이고 고단백 복합 식품으로 전환하는 전략입니다.",
+    thaliConceptTitle: "대사 건강을 위한 인도식 식판 구성 (ICMR-NIN MyPlate)",
+    thaliComponents: [
+      { portion: "식판의 50%", name: "비전분질 채소 및 생채소 샐러드", items: "시금치, 호박, 오크라, 양배추, 오이, 토마토 등 수용성 식이섬유가 풍부한 채소." },
+      { portion: "식판의 25%", name: "고품질 단백질 식품", items: "저지방 파니르(코티지치즈) 100g, 두부, 대두박, 진한 달(렌틸콩), 병아리콩 또는 생선/닭가슴살." },
+      { portion: "25% (4분의 1)", name: "복합 통곡물 및 잡곡(밀렛)", items: "백미 대신 조, 기장, 수수, 라기 로티 1~2장." }
+    ],
+    sampleMealTitle: "일일 권장 식단 예시",
+    vegMeals: [
+      { meal: "아침 (08:00)", details: "파니르를 채운 녹두전(Moong Dal Chilla) 2장과 무가당 차." },
+      { meal: "점심 (13:00)", details: "진한 믹스 달 + 채소 커리 + 신선한 채소 샐러드 + 요거트 + 잡곡 로티 1장." },
+      { meal: "오후 간식 (17:00)", details: "구운 병아리콩(Chana)과 마카나(연꽃씨) 한 줌 + 녹차." },
+      { meal: "저녁 (20:00)", details: "채소 수프 + 파니르 버섯 볶음 + 잡곡 키치디(Khichdi) 소량." }
+    ],
+    nonVegMeals: [
+      { meal: "아침 (08:00)", details: "시금치 토마토 달걀 스크램블 + 100% 통밀 토스트 1장." },
+      { meal: "점심 (13:00)", details: "탄두리 닭가슴살 구이 또는 생선 커리 + 대형 샐러드 + 통곡 로티 1장." },
+      { meal: "오후 간식 (17:00)", details: "싹 틔운 콩 샐러드와 레몬즙." },
+      { meal: "저녁 (20:00)", details: "생선 구이와 찐 브로콜리/당근 + 현미밥 소량." }
+    ],
+    swapsTitle: "주방에서 실천하는 스마트 식재료 대체 가이드",
+    swaps: [
+      { insteadOf: "도정된 백미 (높은 혈당지수 ~73)", chooseThis: "잡곡 밀렛(조, 기장) 또는 현미", why: "혈당 스파이크를 방지하고 식이섬유를 3배 높입니다." },
+      { insteadOf: "정제 밀가루(마이다) 난 및 파라타", chooseThis: "수수, 조, 라기 잡곡 로티", why: "마그네슘과 서서히 흡수되는 복합 탄수화물을 공급합니다." },
+      { insteadOf: "기름에 튀긴 사모사 및 스낵", chooseThis: "에어로 구운 마카나와 구운 병아리콩", why: "유해 트랜스지방을 완벽히 차단합니다." },
+      { insteadOf: "설탕을 듬뿍 넣은 밀크티(차이)", chooseThis: "무가당 스파이스 티 또는 프로바이오틱 차스(버터밀크)", why: "하루 150~200 kcal의 단순당을 절감합니다." },
+      { insteadOf: "기름진 버터(기)를 듬뿍 올린 묽은 달", chooseThis: "발아 콩으로 끓인 진한 달과 최소량의 식물성 오일", why: "식사당 순수 단백질 섭취량을 2배 이상 높입니다." }
+    ],
+    faqTitle: "자주 묻는 질문: 인도인 BMI 및 심혈관 대사 건강",
+    faqSubtitle: "마른 비만 체형, 식단 구성 및 ICMR 기준에 대한 전문적인 답변입니다.",
+    faqs: [
+      {
+        q: "인도인은 왜 BMI 23.0 kg/m²부터 과체중으로 분류되나요?",
+        a: "남아시아인은 낮은 체중에서도 내장지방 비율이 높아 23.0부터 당뇨와 심장 질환 발생률이 급증하기 때문입니다."
+      },
+      {
+        q: "정상 체중인데도 당뇨병에 걸릴 수 있나요?",
+        a: "네, 인도 내 신규 당뇨 환자의 약 30%는 정상 BMI(23.0 미만)이며, 이는 간과 췌장에 낀 내장지방 때문입니다."
+      },
+      {
+        q: "ICMR 허리둘레 기준은 서양과 어떻게 다른가요?",
+        a: "인도 기준은 남성 90cm, 여성 80cm 이상 시 비만이며, 서양(남 102cm, 여 88cm) 기준을 적용하면 위험 환자의 절반 이상을 놓치게 됩니다."
+      },
+      {
+        q: "채식주의자가 하루에 섭취해야 할 단백질 양은 얼마인가요?",
+        a: "체중 1kg당 0.83~1.2g이 권장되며, 파니르, 두부, 콩류, 발아 곡물, 요거트를 매 끼니 골고루 섭취해야 합니다."
+      },
+      {
+        q: "마른 비만을 탈출하기 위한 가장 좋은 운동은 무엇인가요?",
+        a: "주 2~3회의 점진적 근력 운동(웨이트 트레이닝)과 주 150분 이상의 빠른 걷기를 병행하는 것이 내장지방 감량에 가장 효과적입니다."
+      }
+    ]
+  }
+};
+
+const c = content[lang] || content.en;
+---
+
+<section class="mt-12 pt-10 border-t border-[var(--border)] space-y-12" id="indian-clinical-guide">
+  
+  <!-- ═══════════════════  1. SOUTH ASIAN THIN-FAT PHENOTYPE  ═══════════════════ -->
+  <div class="space-y-6">
+    <div class="space-y-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
+        <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+        {c.eyebrow}
+      </div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-tight">
+        {c.phenotypeTitle}
+      </h2>
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium max-w-3xl leading-relaxed">
+        {c.phenotypeSubtitle}
+      </p>
+    </div>
+
+    <!-- Clinical Explanation Box -->
+    <div class="p-6 md:p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] shadow-sm space-y-4">
+      <p class="text-base sm:text-lg font-semibold text-[var(--foreground)] leading-relaxed">
+        {c.phenotypeLead}
+      </p>
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">
+        {c.phenotypeP1}
+      </p>
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">
+        {c.phenotypeP2}
+      </p>
+    </div>
+
+    <!-- Clinical Comparison Table -->
+    <div class="space-y-3">
+      <h3 class="text-lg sm:text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        {c.comparisonTitle}
+      </h3>
+      <div class="rounded-2xl border border-[var(--border)] bg-[var(--card)] overflow-x-auto shadow-xs">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm min-w-[600px]">
+          <thead>
+            <tr class="bg-[var(--muted)]/50 border-b border-[var(--border)] text-[var(--foreground)] font-display uppercase tracking-wider text-xs font-bold">
+              <th class="p-3.5 sm:p-4">{c.compHeaders.marker}</th>
+              <th class="p-3.5 sm:p-4 text-[var(--accent)]">{c.compHeaders.southAsian}</th>
+              <th class="p-3.5 sm:p-4">{c.compHeaders.western}</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)] font-medium">
+            {c.compRows.map(row => (
+              <tr class="hover:bg-[var(--muted)]/20 transition-colors">
+                <td class="p-3.5 sm:p-4 font-bold text-[var(--foreground)]">{row.marker}</td>
+                <td class="p-3.5 sm:p-4 text-[var(--foreground)] font-semibold bg-[var(--accent)]/[0.03]">{row.southAsian}</td>
+                <td class="p-3.5 sm:p-4">{row.western}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════  2. WAIST CIRCUMFERENCE & CENTRAL ADIPOSITY  ═══════════════════ -->
+  <div class="space-y-6 pt-6 border-t border-[var(--border)]/60">
+    <div class="space-y-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-display font-bold uppercase tracking-widest border border-amber-500/20">
+        ICMR Action Cutoffs
+      </div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-tight">
+        {c.waistTitle}
+      </h2>
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium max-w-3xl leading-relaxed">
+        {c.waistSubtitle}
+      </p>
+    </div>
+
+    <!-- Cutoff Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {c.waistCutoffs.map(item => (
+        <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2 shadow-xs">
+          <div class="text-xs font-display font-bold uppercase tracking-wider text-[var(--muted-foreground)]">
+            {item.group}
+          </div>
+          <div class="text-2xl sm:text-3xl font-display font-bold text-[var(--accent)]">
+            {item.threshold}
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium pt-1">
+            {item.context}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Measurement Steps Box -->
+    <div class="p-6 md:p-8 rounded-2xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-4">
+      <h3 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        {c.waistStepsTitle}
+      </h3>
+      <ol class="space-y-2 text-xs sm:text-sm text-[var(--foreground)]/90 font-medium">
+        {c.waistSteps.map((step, idx) => (
+          <li class="flex items-start gap-3">
+            <span class="flex items-center justify-center w-5 h-5 rounded-full bg-[var(--accent)] text-white text-xs font-bold shrink-0 mt-0.5">
+              {idx + 1}
+            </span>
+            <span class="leading-relaxed">{step}</span>
+          </li>
+        ))}
+      </ol>
+      <div class="pt-3 border-t border-[var(--border)]/70 text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
+        <strong class="text-[var(--foreground)] font-display uppercase tracking-wide">{c.whtrRuleTitle}:</strong> {c.whtrRuleText}
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════  3. INDIAN DIET EXAMPLES & MEAL ARCHITECTURE  ═══════════════════ -->
+  <div class="space-y-6 pt-6 border-t border-[var(--border)]/60">
+    <div class="space-y-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-display font-bold uppercase tracking-widest border border-emerald-500/20">
+        Clinical Nutrition Strategy
+      </div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-tight">
+        {c.dietTitle}
+      </h2>
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium max-w-3xl leading-relaxed">
+        {c.dietSubtitle}
+      </p>
+    </div>
+
+    <!-- Thali Concept Breakdown (3 Pillars) -->
+    <div class="p-6 md:p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] shadow-sm space-y-5">
+      <h3 class="text-lg sm:text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        {c.thaliConceptTitle}
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {c.thaliComponents.map(comp => (
+          <div class="p-5 rounded-2xl bg-[var(--muted)]/30 border border-[var(--border)]/70 space-y-2">
+            <span class="text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+              {comp.portion}
+            </span>
+            <h4 class="text-base font-display font-bold text-[var(--foreground)]">
+              {comp.name}
+            </h4>
+            <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+              {comp.items}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Meal Plans Grid (Veg vs Non-Veg) -->
+    <div class="space-y-4">
+      <h3 class="text-lg sm:text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        {c.sampleMealTitle}
+      </h3>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Vegetarian Plan -->
+        <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4">
+          <div class="flex items-center gap-2 pb-2 border-b border-[var(--border)]">
+            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+            <h4 class="text-sm sm:text-base font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+              Vegetarian Balanced Indian Menu
+            </h4>
+          </div>
+          <div class="space-y-3">
+            {c.vegMeals.map(m => (
+              <div class="space-y-1">
+                <span class="text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+                  {m.meal}
+                </span>
+                <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                  {m.details}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Non-Vegetarian Plan -->
+        <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4">
+          <div class="flex items-center gap-2 pb-2 border-b border-[var(--border)]">
+            <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+            <h4 class="text-sm sm:text-base font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+              Non-Vegetarian Balanced Indian Menu
+            </h4>
+          </div>
+          <div class="space-y-3">
+            {c.nonVegMeals.map(m => (
+              <div class="space-y-1">
+                <span class="text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+                  {m.meal}
+                </span>
+                <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                  {m.details}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Smart Swaps Table -->
+    <div class="space-y-3">
+      <h3 class="text-lg sm:text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        {c.swapsTitle}
+      </h3>
+      <div class="rounded-2xl border border-[var(--border)] bg-[var(--card)] overflow-x-auto shadow-xs">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm min-w-[650px]">
+          <thead>
+            <tr class="bg-[var(--muted)]/50 border-b border-[var(--border)] text-[var(--foreground)] font-display uppercase tracking-wider text-xs font-bold">
+              <th class="p-3.5 sm:p-4 text-red-500">Traditional High-GI Item</th>
+              <th class="p-3.5 sm:p-4 text-emerald-500">Smart Nutritional Swap</th>
+              <th class="p-3.5 sm:p-4">Clinical Advantage</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)] font-medium">
+            {c.swaps.map(item => (
+              <tr class="hover:bg-[var(--muted)]/20 transition-colors">
+                <td class="p-3.5 sm:p-4 line-through text-[var(--muted-foreground)]/80 font-medium">{item.insteadOf}</td>
+                <td class="p-3.5 sm:p-4 font-bold text-[var(--foreground)]">{item.chooseThis}</td>
+                <td class="p-3.5 sm:p-4 text-xs sm:text-sm leading-relaxed">{item.why}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════  4. CLINICAL FAQS SECTION  ═══════════════════ -->
+  <div class="space-y-6 pt-6 border-t border-[var(--border)]/60" id="indian-clinical-faqs">
+    <div class="space-y-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-display font-bold uppercase tracking-widest border border-blue-500/20">
+        Clinical Inquiries
+      </div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-tight">
+        {c.faqTitle}
+      </h2>
+      <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium max-w-3xl leading-relaxed">
+        {c.faqSubtitle}
+      </p>
+    </div>
+
+    <!-- FAQ Accordion / Cards List -->
+    <div class="space-y-3">
+      {c.faqs.map(faq => (
+        <details class="group p-5 rounded-2xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)]/50 transition-colors shadow-xs">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-display font-bold text-sm sm:text-base text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors select-none">
+            <span class="pr-4">{faq.q}</span>
+            <span class="w-6 h-6 rounded-full bg-[var(--muted)]/60 flex items-center justify-center shrink-0 text-xs transition-transform group-open:rotate-180">
+              ▼
+            </span>
+          </summary>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed pt-3 border-t border-[var(--border)]/40 mt-3">
+            {faq.a}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+
+</section>
