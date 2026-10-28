@@ -4,7 +4,7 @@ import type { BlogArticleData } from './types';
 export const bodyCompArticles: Record<string, BlogArticleData> = {
   "bmi-vs-body-fat": {
     "datePublished": "2026-07-01",
-    "dateModified": "2026-10-25",
+    "dateModified": "2026-10-28",
     "title": {
       "en": "BMI vs Body Fat Percentage: Key Differences & Clinical Meaning",
       "hi": "बीएमआई बनाम बॉडी फैट प्रतिशत: मुख्य अंतर व स्वास्थ्य महत्व",
@@ -38,16 +38,16 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       <h2>The Two-Compartment and Four-Compartment Models of the Human Body</h2>
       <p>In clinical exercise physiology and nutritional science, human body composition is evaluated using compartmental modeling:</p>
       <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">The 2-Compartment (2C) Model</h3>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">The 2-Compartment (2C) Model</h3>
           <p class="text-sm text-[var(--foreground)] mt-2">The classic physiological model divides total scale weight into two primary components:</p>
           <ul class="text-xs text-[var(--muted-foreground)] space-y-1 mt-2">
             <li><strong>Fat Mass (FM):</strong> All extractable biological lipids, including essential lipids (in bone marrow, nervous system, and cell membranes) and non-essential storage adipose tissue (subcutaneous and visceral).</li>
             <li><strong>Fat-Free Mass (FFM / Lean Body Mass):</strong> Skeletal muscle tissue, vital internal organs (heart, liver, kidneys), bone mineral matrix, and total body water.</li>
           </ul>
         </div>
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">The Advanced 4-Compartment (4C) Model</h3>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">The Advanced 4-Compartment (4C) Model</h3>
           <p class="text-sm text-[var(--foreground)] mt-2">The scientific gold standard in clinical research further subdivides Fat-Free Mass into:</p>
           <ul class="text-xs text-[var(--muted-foreground)] space-y-1 mt-2">
             <li><strong>Total Body Water (TBW):</strong> Intracellular and extracellular fluid compartments (~60–70% of FFM).</li>
@@ -59,178 +59,200 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       </div>
 
       <h2>Comparative Analysis: BMI vs. Body Fat Percentage</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Evaluation Parameter</th>
-              <th class="p-3 text-blue-500 font-bold">Body Mass Index (BMI)</th>
-              <th class="p-3 text-emerald-500 font-bold">Body Fat Percentage (%BF)</th>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Evaluation Parameter</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Body Mass Index (BMI)</th>
+              <th class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Body Fat Percentage (%BF)</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)]">
+          <tbody class="divide-y divide-[#e6e6e6]">
             <tr>
-              <td class="p-3 font-semibold">Underlying Measurement</td>
-              <td class="p-3">Total weight divided by height squared (kg/m²)</td>
-              <td class="p-3">Adipose mass divided by total weight &times; 100</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Underlying Measurement</td>
+              <td class="p-3 border border-[#e6e6e6]">Total weight divided by height squared (kg/m²)</td>
+              <td class="p-3 border border-[#e6e6e6]">Adipose mass divided by total weight &times; 100</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Equipment Required</td>
-              <td class="p-3">Basic scale and stadiometer (tape measure)</td>
-              <td class="p-3">Skinfold calipers, bioimpedance device, or DEXA scanner</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Equipment Required</td>
+              <td class="p-3 border border-[#e6e6e6]">Basic scale and stadiometer (tape measure)</td>
+              <td class="p-3 border border-[#e6e6e6]">Skinfold calipers, bioimpedance device, or DEXA scanner</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Tissue Differentiation</td>
-              <td class="p-3 text-rose-500 font-bold">No (treats muscle, fat, and bone identically)</td>
-              <td class="p-3 text-emerald-500 font-bold">Yes (isolates adipose tissue from lean mass)</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Tissue Differentiation</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">No (treats muscle, fat, and bone identically)</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Yes (isolates adipose tissue from lean mass)</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Primary Clinical Utility</td>
-              <td class="p-3">Population-level epidemiological screening, rapid risk triage</td>
-              <td class="p-3">Individual metabolic health, sports conditioning, longevity</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Primary Clinical Utility</td>
+              <td class="p-3 border border-[#e6e6e6]">Population-level epidemiological screening, rapid risk triage</td>
+              <td class="p-3 border border-[#e6e6e6]">Individual metabolic health, sports conditioning, longevity</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Major Diagnostic Blind Spot</td>
-              <td class="p-3">Classifies muscular individuals as overweight/obese; misses sarcopenia</td>
-              <td class="p-3">Requires calibrated equipment; sensitive to hydration fluctuations</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Major Diagnostic Blind Spot</td>
+              <td class="p-3 border border-[#e6e6e6]">Classifies muscular individuals as overweight/obese; misses sarcopenia</td>
+              <td class="p-3 border border-[#e6e6e6]">Requires calibrated equipment; sensitive to hydration fluctuations</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>The "Skinny-Fat" Paradox: Normal Weight Obesity (NWO)</h2>
-      <p>One of the most clinically hazardous scenarios in modern medicine is <strong>Normal Weight Obesity (NWO)</strong>. In individuals with NWO, scale weight and BMI fall completely within the standard healthy window (BMI 18.5 to 24.9 kg/m²), creating a deceptive illusion of good health. However, direct body composition testing reveals body fat percentages exceeding 30% in men or 35% in women, accompanied by low skeletal muscle mass.</p>
-      <p>Prospective cardiometabolic research demonstrates that individuals with Normal Weight Obesity exhibit a <strong>four-fold higher risk of developing metabolic syndrome</strong>, higher circulating high-sensitivity C-reactive protein (hs-CRP), elevated fasting insulin levels, and a higher rate of cardiovascular mortality compared to individuals with normal BMI and normal body fat.</p>
+      <h2>The 'Skinny-Fat' Phenomenon: Normal Weight Obesity (NWO)</h2>
+      <p>A dangerous cardiometabolic condition termed <strong>Normal Weight Obesity (NWO)</strong> occurs when an individual maintains a normal BMI (18.5 to 24.9 kg/m²) but carries an excessive proportion of body fat (&gt; 25% in men or &gt; 35% in women) alongside underdeveloped skeletal muscle. Individuals with NWO face a four-fold higher risk of developing metabolic syndrome, systemic low-grade inflammation (elevated hs-CRP), and dyslipidemia compared to lean adults of identical weight.</p>
 
-      <h2>Healthy Body Fat Reference Standards for Men & Women</h2>
-      <p>Because women require essential reproductive adipose tissue for normal ovulatory and endocrine function, healthy body fat ranges differ substantially between men and women:</p>
-      <ul>
-        <li><strong>Men Essential Fat:</strong> 2% to 5% | <strong>Athletes:</strong> 6% to 13% | <strong>Fitness / Healthy:</strong> 14% to 17% | <strong>Acceptable Average:</strong> 18% to 24% | <strong>Obese:</strong> &ge; 25%</li>
-        <li><strong>Women Essential Fat:</strong> 10% to 13% | <strong>Athletes:</strong> 14% to 20% | <strong>Fitness / Healthy:</strong> 21% to 24% | <strong>Acceptable Average:</strong> 25% to 31% | <strong>Obese:</strong> &ge; 32%</li>
+      <h2>Clinical Reference Ranges for Body Fat Percentage</h2>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Men:</strong> Essential Fat: 2–5% | Athletes: 6–13% | Fitness: 14–17% | Average: 18–24% | Obesity: &ge; 25%</li>
+        <li><strong>Women:</strong> Essential Fat: 10–13% | Athletes: 14–20% | Fitness: 21–24% | Average: 25–31% | Obesity: &ge; 32%</li>
       </ul>
-
-      <h2>Clinical Synthesis: How to Combine BMI and Body Fat in Practice</h2>
-      <ol class="space-y-2 my-4">
-        <li><strong>Use BMI as an Initial Gatekeeper:</strong> Check your BMI annually to track gross weight trajectory and identify severe deviations.</li>
-        <li><strong>Confirm with Body Composition:</strong> If your BMI is elevated (&gt; 25 kg/m²) but you lift weights regularly, verify body fat via calipers, DEXA, or bioimpedance before attempting caloric restriction.</li>
-        <li><strong>Measure Waist Circumference:</strong> Keeping waist circumference below 94 cm for men and 80 cm for women (90 cm / 80 cm for Asian populations) ensures visceral abdominal fat remains low regardless of BMI.</li>
-      </ol>
-
-      <h2>Frequently Asked Questions Regarding BMI vs. Body Fat</h2>
-      <div class="space-y-4 my-6">
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Can you have a high BMI and low body fat?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Yes. Elite bodybuilders, rugby players, and powerlifters often carry a BMI between 28 and 33 kg/m² with body fat under 12%, representing massive muscular hypertrophy rather than excess adiposity.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Can you have a normal BMI and high body fat?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Yes. Sedentary individuals who consume low-protein diets or elder adults with age-related sarcopenia often have a BMI of 21 to 23 kg/m² but over 32% body fat, carrying hidden cardiometabolic risk.</p>
-        </div>
-      </div>
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>Romero-Corral A, et al. <em>Normal weight obesity: a risk factor for cardiometabolic dysregulation and cardiovascular mortality.</em> Eur Heart J 2010; 31(6):737-746.</li>
-        <li>Gallagher D, et al. <em>Healthy percentage body fat ranges: an approach for developing guidelines based on body mass index.</em> Am J Clin Nutr 2000; 72(3):694-701.</li>
+        <li>Deurenberg P, Weststrate JA, Seidell JC. <em>Body mass index as a measure of body fatness: age- and sex-specific prediction formulas.</em> Br J Nutr 1991; 65(2):105-114. PMID: 2043597.</li>
+        <li>Romero-Corral A, et al. <em>Normal weight obesity: a risk factor for cardiometabolic dysregulation and cardiovascular mortality.</em> Eur Heart J 2010; 31(6):737-746. PMID: 19933515.</li>
       </ul>
 `,
-      "es": `
-      <h2>Diferencias Clave Entre el IMC y el Porcentaje de Grasa Corporal</h2>
-      <p>El <strong>IMC</strong> evalúa la masa total respecto a la estatura, mientras que el <strong>porcentaje de grasa corporal</strong> divide el cuerpo en masa grasa y masa libre de grasa (músculo, huesos y agua).</p>
-      <h2>El Peligro del 'Falso Delgado' (Obesidad de Peso Normal)</h2>
-      <p>Tener un IMC normal con un porcentaje de grasa elevado (&gt; 30% en hombres o &gt; 35% en mujeres) cuadruplica el riesgo de síndrome metabólico.</p>
-    `,
-      "fr": `
-      <h2>La Distinction Fondamentale Entre Masse Globale et Tissu Adipeux</h2>
-      <p>L'<strong>IMC</strong> ne distingue pas le muscle de la graisse. Le <strong>taux de masse grasse</strong> est le seul indicateur capable de diagnostiquer l'obésité à poids normal.</p>
-    `,
-      "de": `
-      <h2>Die fundamentale Unterscheidung zwischen Gesamtgewicht und Gewebezusammensetzung</h2>
-      <p>Beim Thema Gewichtsmanagement und Körperoptimierung herrscht häufig Verwirrung zwischen dem <strong>Body-Mass-Index (BMI)</strong> und dem <strong>Körperfettanteil (%KFA)</strong>. Obwohl beide Werte als diagnostische Indikatoren genutzt werden, erfassen sie grundlegend unterschiedliche physiologische Dimensionen. Der BMI ist eine schnelle, unkomplizierte mathematische Relation zwischen Gesamtkörpergewicht und Körpergröße. Der Körperfettanteil hingegen unterteilt dieses Gesamtgewicht in physiologische Kompartimente und bestimmt exakt den Anteil des Fettgewebes im Verhältnis zur stoffwechselaktiven Magermasse.</p>
-      <p>Beide Werte gleichzusetzen, ist einer der häufigsten Fehler in Fitness und klinischer Praxis. Ein muskulöser Kraftsportler mit 10 % Körperfett kann denselben BMI von 28 kg/m² aufweisen wie ein bewegungsarmer Erwachsener mit 32 % Körperfett.</p>
+      "hi": `
+      <h2>सकल शारीरिक वजन बनाम ऊतक संरचना: मूलभूत अंतर</h2>
+      <p>स्वास्थ्य और फिटनेस की निगरानी करते समय लोग अक्सर <strong>बॉडी मास इंडेक्स (BMI)</strong> और <strong>बॉडी फैट प्रतिशत (%BF)</strong> के बीच भ्रमित हो जाते हैं। यद्यपि दोनों ही स्वास्थ्य के महत्वपूर्ण पैमाने हैं, लेकिन वे शरीर के दो पूरी तरह अलग पहलुओं को मापते हैं। बीएमआई केवल ऊंचाई के अनुपात में कुल वजन का एक गणितीय अनुपात है, जबकि बॉडी फैट प्रतिशत यह स्पष्ट करता है कि उस कुल वजन में कितनी चर्बी (वसा ऊतक) है और कितनी सक्रिय मांसपेशियां व हड्डियां हैं।</p>
+      <p>एक भारी मस्कुलर एथलीट जिसका बॉडी फैट केवल 10% है, उसका बीएमआई 28 (ओवरवेट) आ सकता है, जबकि एक सामान्य दिखने वाला व्यक्ति जिसका बीएमआई 22 है, उसके शरीर में 30% से अधिक हानिकारक आंतरिक चर्बी हो सकती है। इसे चिकित्सा में 'थिन-फैट' या सामान्य वजन का मोटापा कहा जाता है।</p>
 
-      <h2>Das 2-Kompartiment- und 4-Kompartiment-Modell des menschlichen Körpers</h2>
-      <p>In der Sportmedizin und Ernährungswissenschaft wird die Körperzusammensetzung anhand von Modellen quantifiziert:</p>
+      <h2>मानव शरीर के 2-कंपार्टमेंट और 4-कंपार्टमेंट वैज्ञानिक मॉडल</h2>
+      <p>नैदानिक पोषण विज्ञान में मानव शरीर संरचना को वैज्ञानिक रूप से विभाजित किया जाता है:</p>
       <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">Das 2-Kompartiment-Modell (2C)</h3>
-          <p class="text-sm text-[var(--foreground)] mt-2">Unterteilt das Gesamtkörpergewicht in zwei Hauptkomponenten:</p>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">2-कंपार्टमेंट (2C) मॉडल</h3>
+          <p class="text-sm text-[var(--foreground)] mt-2">शरीर के कुल वजन को दो मुख्य भागों में बांटा जाता है:</p>
           <ul class="text-xs text-[var(--muted-foreground)] space-y-1 mt-2">
-            <li><strong>Fettmasse (FM):</strong> Essenzielle Lipide (Knochenmark, Nervensystem, Zellmembranen) und Speicherfett (subkutan und viszeral).</li>
-            <li><strong>Fettfreie Masse (FFM / Magermasse):</strong> Skelettmuskulatur, innere Organe (Herz, Leber, Nieren), Knochen und Gesamtkörperwasser.</li>
+            <li><strong>फैट मास (Fat Mass):</strong> शरीर की आवश्यक वसा (अस्थि मज्जा, तंत्रिका तंत्र) तथा त्वचा के नीचे व पेट में जमा अतिरिक्त चर्बी।</li>
+            <li><strong>फैट-फ्री मास (Fat-Free Mass / LBM):</strong> कंकाल की मांसपेशियां, आंतरिक अंग (हृदय, यकृत, वृक्क), हड्डियां और कुल शारीरिक जल।</li>
           </ul>
         </div>
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">Das 4-Kompartiment-Modell (4C)</h3>
-          <p class="text-sm text-[var(--foreground)] mt-2">Der wissenschaftliche Goldstandard differenziert die Magermasse weiter in:</p>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">उन्नत 4-कंपार्टमेंट (4C) मॉडल</h3>
+          <p class="text-sm text-[var(--foreground)] mt-2">अनुसंधान का सर्वोच्च मानक जो फैट-फ्री मास को और सूक्ष्म रूप में मापता है:</p>
           <ul class="text-xs text-[var(--muted-foreground)] space-y-1 mt-2">
-            <li><strong>Gesamtkörperwasser (TBW):</strong> Intra- und extrazelluläre Flüssigkeit (~60–70% der FFM).</li>
-            <li><strong>Knochenmineralgehalt (BMC):</strong> Calciumphosphat-Matrix der Knochen.</li>
-            <li><strong>Körperzellmasse (Protein):</strong> Kontraktile Muskeleiweiße und Enzymsysteme.</li>
-            <li><strong>Speicherlipide:</strong> Subkutanes und viszerales Fettgewebe.</li>
+            <li><strong>कुल शारीरिक जल (TBW):</strong> अंतःकोशिकीय और बाह्यकोशिकीय तरल (~60-70%)।</li>
+            <li><strong>अस्थि खनिज घटक (BMC):</strong> कैल्शियम फॉस्फेट क्रिस्टल मैट्रिक्स।</li>
+            <li><strong>शारीरिक प्रोटीन:</strong> मांसपेशियों के सिकुड़ने वाले रेशे।</li>
+            <li><strong>लिपिड द्रव्यमान:</strong> वसीय ऊतक भंडार।</li>
           </ul>
         </div>
       </div>
 
-      <h2>Vergleichsanalyse: BMI vs. Körperfettanteil</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+      <h2>तुलनात्मक विश्लेषण: बीएमआई बनाम बॉडी फैट प्रतिशत</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Vergleichsparameter</th>
-              <th class="p-3 text-blue-500 font-bold">Body-Mass-Index (BMI)</th>
-              <th class="p-3 text-emerald-500 font-bold">Körperfettanteil (%KFA)</th>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">तुलना का आधार</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">बॉडी मास इंडेक्स (BMI)</th>
+              <th class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">बॉडी फैट प्रतिशत (%BF)</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)]">
+          <tbody class="divide-y divide-[#e6e6e6]">
             <tr>
-              <td class="p-3 font-semibold">Messgrundlage</td>
-              <td class="p-3">Gesamtkörpergewicht / Körpergröße² (kg/m²)</td>
-              <td class="p-3">Fettmasse geteilt durch Gesamtkörpergewicht &times; 100</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">मूल मापन सिद्धांत</td>
+              <td class="p-3 border border-[#e6e6e6]">कुल वजन / [ऊंचाई]² (kg/m²)</td>
+              <td class="p-3 border border-[#e6e6e6]">(कुल वसा द्रव्यमान / कुल शारीरिक भार) &times; 100</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Gewebedifferenzierung</td>
-              <td class="p-3 text-rose-500 font-bold">Nein (Muskeln, Fett und Knochen werden gleich gewogen)</td>
-              <td class="p-3 text-emerald-500 font-bold">Ja (isoliert Fettgewebe von aktiver Magermasse)</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">मांसपेशी व चर्बी में अंतर</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">नहीं (मांसपेशियों और वसा को एक समान वजन मानता है)</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">हाँ (सक्रिय मांसपेशियों को निष्क्रिय वसा से अलग करता है)</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Klinischer Hauptnutzen</td>
-              <td class="p-3">Epidemiologisches Screening von Populationen, Risikotriage</td>
-              <td class="p-3">Individuelle Stoffwechselgesundheit, Sportsteuerung, Longevity</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">प्राथमिक चिकित्सीय उपयोग</td>
+              <td class="p-3 border border-[#e6e6e6]">जनसंख्या स्तर पर त्वरित स्वास्थ्य स्क्रीनिंग</td>
+              <td class="p-3 border border-[#e6e6e6]">व्यक्तिगत चयापचय स्वास्थ्य, एथलेटिक प्रदर्शन व दीर्घायु</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Größte diagnostische Lücke</td>
-              <td class="p-3">Überbewertet muskulöse Athleten; übersieht Sarkopenie</td>
-              <td class="p-3">Messmethoden (Caliper, BIA, DEXA) variieren nach Hydratation</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">सबसे बड़ी सीमा / खामी</td>
+              <td class="p-3 border border-[#e6e6e6]">मांसपेशियों वाले लोगों को गलत रूप से मोटा बताता है</td>
+              <td class="p-3 border border-[#e6e6e6]">विशेष उपकरणों की आवश्यकता होती है; शरीर में पानी की मात्रा से प्रभावित होता है</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Das 'Skinny-Fat'-Phänomen: Normalgewichtige Adipositas (NWO)</h2>
-      <p>Ein unterschätztes gesundheitliches Risiko stellt die sogenannte <strong>Normalgewichtige Adipositas (Normal Weight Obesity, NWO)</strong> dar. Betroffene haben laut Waage und BMI ein scheinbar ideales Normalgewicht (18,5 bis 24,9 kg/m²). Bei genauerer bioelektrischer Impedanz- oder DEXA-Analyse zeigt sich jedoch ein gefährlich hoher Körperfettanteil (&gt; 25 % bei Männern bzw. &gt; 35 % bei Frauen) bei gleichzeitig stark unterentwickelter Muskulatur.</p>
-      <p>Kardiometabolische Studien zeigen, dass Personen mit normalgewichtiger Adipositas ein <strong>vierfach höheres Risiko für das metabolische Syndrom</strong>, erhöhte Entzündungswerte (hs-CRP) und Insulinresistenz aufweisen als normalgewichtige Personen mit gesunder Muskelmasse.</p>
+      <h2>'स्किनी-फैट' स्थिति: सामान्य वजन का छिपा हुआ मोटापा (NWO)</h2>
+      <p><strong>नॉर्मल वेट ओबेसिटी (Normal Weight Obesity, NWO)</strong> एक गंभीर स्थिति है जिसमें व्यक्ति का बीएमआई तो 18.5 से 24.9 के बीच सामान्य दिखता है, लेकिन उसके शरीर में फैट प्रतिशत पुरुषों में 25% और महिलाओं में 35% से अधिक होता है। मांसपेशियों की कमी और आंतरिक अंगों में चर्बी जमा होने से इन लोगों में टाइप-2 डायबिटीज, फैटी लिवर और उच्च रक्तचाप का खतरा सामान्य से चार गुना अधिक होता है।</p>
 
-      <h2>Referenzbereiche für den Körperfettanteil</h2>
+      <h2>बॉडी फैट प्रतिशत के स्वस्थ नैदानिक मानक</h2>
       <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
-        <li><strong>Männer:</strong> Essentielles Fett: 2–5 % | Athleten: 6–13 % | Fitnessbereich: 14–17 % | Durchschnitt: 18–24 % | Adipositas: &ge; 25 %</li>
-        <li><strong>Frauen:</strong> Essentielles Fett: 10–13 % | Athletinnen: 14–20 % | Fitnessbereich: 21–24 % | Durchschnitt: 25–31 % | Adipositas: &ge; 32 %</li>
+        <li><strong>पुरुष:</strong> आवश्यक वसा: 2–5% | एथलीट्स: 6–13% | फिटनेस: 14–17% | औसत स्वस्थ: 18–24% | मोटापा: &ge; 25%</li>
+        <li><strong>महिलाएं:</strong> आवश्यक वसा: 10–13% | एथलीट्स: 14–20% | फिटनेस: 21–24% | औसत स्वस्थ: 25–31% | मोटापा: &ge; 32%</li>
       </ul>
-    `,
+
+      <h2>प्रमुख वैज्ञानिक संदर्भ एवं शोध उद्धरण</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Deurenberg P, Weststrate JA, Seidell JC. <em>Body mass index as a measure of body fatness: age- and sex-specific prediction formulas.</em> Br J Nutr 1991; 65(2):105-114. PMID: 2043597.</li>
+        <li>Romero-Corral A, et al. <em>Normal weight obesity: a risk factor for cardiometabolic dysregulation and cardiovascular mortality.</em> Eur Heart J 2010; 31(6):737-746. PMID: 19933515.</li>
+      </ul>
+`,
+      "es": `
+      <h2>Diferencias Clínicas entre el IMC y el Porcentaje de Grasa Corporal</h2>
+      <p>El <strong>Índice de Masa Corporal (IMC)</strong> y el <strong>Porcentaje de Grasa Corporal (%GC)</strong> miden variables fisiológicas radicalmente distintas. Mientras que el IMC evalúa la masa total en función de la altura, el porcentaje de grasa desglosa esa masa en compartimentos fisiológicos: tejido adiposo y masa libre de grasa.</p>
+      
+      <h2>Modelos de 2 y 4 Compartimentos</h2>
+      <p>En fisiología del ejercicio, el modelo de 2 compartimentos (2C) separa la masa grasa (FM) de la masa libre de grasa (FFM: músculo, hueso, órganos y agua). El modelo avanzado de 4 compartimentos (4C) cuantifica con exactitud el agua corporal total, el contenido mineral óseo y la masa celular activa.</p>
+
+      <h2>Tabla Comparativa: IMC vs. Porcentaje de Grasa</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Parámetro</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">IMC (kg/m²)</th>
+              <th class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">% Grasa Corporal</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Diferenciación de Tejidos</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">No distingue masa muscular de grasa</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Aísla el tejido adiposo activo</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Utilidad Clínica</td>
+              <td class="p-3 border border-[#e6e6e6]">Cribado poblacional rápido</td>
+              <td class="p-3 border border-[#e6e6e6]">Salud metabólica y rendimiento atlético</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Obesidad de Peso Normal (NWO)</h2>
+      <p>La obesidad de peso normal se define por un IMC normal (18.5 a 24.9) acompañado de un porcentaje de grasa elevado (&gt; 25% en hombres, &gt; 35% en mujeres), lo que multiplica por cuatro el riesgo de síndrome metabólico.</p>
+`,
+      "fr": `
+      <h2>Différence Fondamentale entre IMC et Masse Grasse</h2>
+      <p>L'<strong>Indice de Masse Corporelle (IMC)</strong> est un ratio mathématique rapide reliant le poids total à la taille au carré, sans distinguer le tissu musculaire de la masse adipeuse. À l'inverse, le <strong>pourcentage de graisse corporelle</strong> quantifie précisément la proportion de lipides stockés par rapport à la masse maigre métaboliquement active.</p>
+
+      <h2>L'Obésité à Poids Normal : Le Danger Invisible</h2>
+      <p>L'obésité à poids normal (Normal Weight Obesity) touche les individus dont l'IMC est compris entre 18,5 et 24,9 kg/m² mais dont la masse grasse dépasse 25% chez l'homme ou 35% chez la femme, augmentant considérablement les risques cardiovasculaires et l'inflammation systémique.</p>
+`,
+      "de": `
+      <h2>Der physiologische Unterschied zwischen BMI und Körperfettanteil</h2>
+      <p>Während der BMI lediglich das Verhältnis von Gesamtgewicht zu Körpergröße misst, unterscheidet der Körperfettanteil (%KFA) zwischen stoffwechselaktiver fettfreier Masse und Speicherfettgewebe.</p>
+
+      <h2>Normalgewichtige Adipositas ('Skinny-Fat')</h2>
+      <p>Personen mit normalem BMI (18,5–24,9 kg/m²), aber hohem Körperfettanteil (&gt; 25 % bei Männern, &gt; 35 % bei Frauen) weisen ein vierfach erhöhtes Risiko für metabolisches Syndrom und Insulinresistenz auf.</p>
+`,
       "ko": `
-      <h2>BMI와 체지방률의 생리학적 차이와 임상적 중요성</h2>
-      <p>BMI는 신장 대비 전체 체중만을 산출하지만, 체지방률은 실제 지방량과 제지방량(골격근 및 수분)을 직접 구분합니다.</p>
-    `,
-      "hi": `
-      <h2>बीएमआई बनाम बॉडी फैट: स्वास्थ्य के दो अलग पैमाने</h2>
-      <p>बीएमआई केवल कुल वजन मापता है, जबकि बॉडी फैट प्रतिशत यह बताता है कि शरीर में मांसपेशियों और हड्डियों के मुकाबले चर्बी कितनी है।</p>
-    `
+      <h2>BMI와 체지방률의 근본적 생리학적 차이</h2>
+      <p>체질량지수(BMI)는 체중과 신장만을 이용한 신속한 비만도 선별 지표이지만, 근육량과 체지방 조직을 직접 구별하지 못합니다. 반면 <strong>체지방률(%BF)</strong>은 체중 중 실제 지방 조직의 비율을 정확히 측정합니다.</p>
+
+      <h2>정상체중 비만(Normal Weight Obesity, 마른 비만)</h2>
+      <p>BMI는 18.5~24.9 kg/m²로 정상이지만 체지방률이 남성 25% 초과, 여성 35%를 초과하는 상태를 의미하며, 심대사 질환 및 인슐린 저항성 발생 위험이 현저히 높습니다.</p>
+`
     }
   },
 
   "how-to-measure-body-fat-percentage": {
     "datePublished": "2026-07-15",
-    "dateModified": "2026-10-25",
+    "dateModified": "2026-10-28",
     "title": {
       "en": "How to Measure Body Fat Percentage: DEXA, Calipers & Methods Compared",
       "hi": "बॉडी फैट प्रतिशत कैसे मापें? डेक्सा स्कैन, कैलिपर्स व विधियों की तुलना",
@@ -258,302 +280,310 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
     "contentHtml": {
       "en": `
       <h2>Clinical Modalities for Measuring Human Body Fat Percentage</h2>
-      <p>Quantifying your exact <strong>Body Fat Percentage (%BF)</strong> is the gold standard for tracking physical conditioning, metabolic wellness, and body recomposition. While standard scales and Body Mass Index (BMI) only report total gravitational weight, body composition assessment isolates adipose lipid tissue from metabolically active lean muscle, organ tissue, and bone mineral content.</p>
-      <p>However, no measurement method—short of direct chemical cadaver analysis—directly measures body fat. Every clinical and consumer technique utilizes indirect physical principles, ranging from radiographic attenuation and hydrostatic displacement to bioelectrical impedance and circumferential geometry. Below, we review the scientific principles, accuracy, and practical limitations of the five primary body fat measurement modalities.</p>
+      <p>Accurately determining human body fat percentage requires specialized diagnostic modalities. Each measurement technique balances clinical precision against cost, radiation exposure, and accessibility. Below, we compare the five primary modalities used in sports science and clinical medicine.</p>
 
-      <h2>The Five Primary Body Fat Assessment Methods</h2>
-      <div class="my-6 space-y-4">
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">1. Dual-Energy X-Ray Absorptiometry (DEXA / DXA)</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Originally engineered for measuring bone mineral density in osteoporosis, DEXA is widely recognized in sports medicine and endocrinology as the clinical gold standard. The scan passes two low-dose X-ray beams through the body, measuring differential photon attenuation between bone mineral, fat tissue, and lean soft tissue. It provides regional, segmental body fat analysis (arms, legs, trunk, android, and gynoid regions) and quantifies visceral adipose tissue (VAT) area in square centimeters.</p>
-          <p class="text-xs text-[var(--muted-foreground)] mt-1"><strong>Accuracy:</strong> &plusmn; 1.5% to 2.0% | <strong>Cost:</strong> $75 – $150 per scan | <strong>Radiation:</strong> Extremely low (~1 to 4 &mu;Sv, less than an airline flight) | <strong>Availability:</strong> Specialized imaging centers, universities.</p>
-        </div>
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">2. Hydrostatic Underwater Weighing &amp; Air Displacement (Bod Pod)</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Based on Archimedes' principle of buoyancy, hydrostatic weighing submerges a subject fully underwater to determine total body volume, correcting for residual lung volume. Because muscle and bone are denser than water (1.06–1.10 g/cm³) while fat floats (0.90 g/cm³), whole-body density is calculated using the Siri or Brozek equations. Air Displacement Plethysmography (Bod Pod) uses the same volumetric physics inside a sealed chamber using air pressure fluctuations.</p>
-          <p class="text-xs text-[var(--muted-foreground)] mt-1"><strong>Accuracy:</strong> &plusmn; 2.0% to 2.5% | <strong>Cost:</strong> $50 – $100 per test | <strong>Availability:</strong> University exercise science laboratories.</p>
-        </div>
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">3. Skinfold Calipers (Jackson-Pollock &amp; Durnin-Womersley)</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Calipers measure the double fold of skin and subcutaneous adipose tissue at standardized anatomical landmarks (3-site or 7-site protocols including chest, abdomen, thigh, triceps, subscapular, and suprailiac). The sum of skinfold millimeters is plugged into regression equations to estimate body density and body fat percentage. When conducted by a certified ISAK anthropometrist, calipers correlate exceptionally well with underwater weighing.</p>
-          <p class="text-xs text-[var(--muted-foreground)] mt-1"><strong>Accuracy:</strong> &plusmn; 3.0% to 3.5% (High technician skill required) | <strong>Cost:</strong> $15 – $40 tool cost | <strong>Availability:</strong> Commercial gyms, personal trainers.</p>
-        </div>
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">4. U.S. Navy Circumference Method</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Developed by Hodgdon and Beckett for military fitness screening, this non-invasive method requires only a flexible fiberglass tape measure. It calculates body fat using logarithmic formulas incorporating height, neck circumference, waist circumference, and (for women) hip circumference. It requires zero electricity and correlates strongly with hydrostatic weighing across diverse body sizes.</p>
-          <p class="text-xs text-[var(--muted-foreground)] mt-1"><strong>Accuracy:</strong> &plusmn; 3.0% to 4.0% | <strong>Cost:</strong> $5 (tape measure) | <strong>Availability:</strong> Instant home assessment.</p>
-        </div>
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">5. Multi-Frequency Bioelectrical Impedance Analysis (BIA)</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">BIA scales and handheld devices pass imperceptible, safe alternating electrical currents through the body. Because water and electrolyte-rich muscle tissue conduct electricity with low impedance, while lipid adipose tissue acts as a resistive insulator, the device calculates total body water and estimates fat-free mass. Multi-frequency segmental commercial units (such as InBody or Tanita) provide separate limb impedance readings.</p>
-          <p class="text-xs text-[var(--muted-foreground)] mt-1"><strong>Accuracy:</strong> &plusmn; 3.5% to 5.0% (Highly sensitive to hydration, caffeine, and food) | <strong>Cost:</strong> $30 (consumer) to $10,000 (clinical) | <strong>Availability:</strong> Household scales, clinics.</p>
-        </div>
-      </div>
-
-      <h2>Comprehensive Modality Comparison Table</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+      <h2>The 5 Primary Body Fat Measurement Modalities Compared</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Measurement Method</th>
-              <th class="p-3 font-mono text-[var(--accent)] font-bold">Accuracy / Error Margin</th>
-              <th class="p-3">Typical Cost</th>
-              <th class="p-3">Primary Clinical Advantages</th>
-              <th class="p-3">Key Practical Limitations</th>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Modality</th>
+              <th class="p-3 border border-[#e6e6e6]">Clinical Accuracy</th>
+              <th class="p-3 border border-[#e6e6e6]">Underlying Mechanism</th>
+              <th class="p-3 border border-[#e6e6e6]">Primary Limitation</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)]">
+          <tbody class="divide-y divide-[#e6e6e6]">
             <tr>
-              <td class="p-3 font-semibold text-emerald-400">DEXA / DXA Scan</td>
-              <td class="p-3 font-mono font-bold text-emerald-400">&plusmn; 1.5% – 2.0%</td>
-              <td class="p-3 font-mono">$75 – $150 / scan</td>
-              <td class="p-3">Clinical gold standard; regional fat analysis; measures visceral fat (VAT) and bone density</td>
-              <td class="p-3">Requires specialized imaging facility; minute radiation exposure; expensive for frequent testing</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-[#464feb]">DEXA Scan (DXA)</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&plusmn; 1.0–1.5% (Gold Standard)</td>
+              <td class="p-3 border border-[#e6e6e6]">Dual-energy X-ray photon attenuation through bone, fat, and lean mass</td>
+              <td class="p-3 border border-[#e6e6e6]">High clinical cost ($100–$250), minimal ionizing radiation</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold text-sky-400">Hydrostatic / Bod Pod</td>
-              <td class="p-3 font-mono font-bold text-sky-400">&plusmn; 2.0% – 2.5%</td>
-              <td class="p-3 font-mono">$50 – $100 / test</td>
-              <td class="p-3">High scientific precision based on true body density; non-invasive volumetric calculation</td>
-              <td class="p-3">Limited commercial access; full underwater exhalation can be uncomfortable</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Hydrostatic Weighing</td>
+              <td class="p-3 border border-[#e6e6e6] font-bold">&plusmn; 1.5–2.0%</td>
+              <td class="p-3 border border-[#e6e6e6]">Archimedes water displacement to compute total body density (Siri equation)</td>
+              <td class="p-3 border border-[#e6e6e6]">Requires total underwater submersion after complete lung exhalation</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold text-amber-400">Skinfold Calipers</td>
-              <td class="p-3 font-mono font-bold text-amber-400">&plusmn; 3.0% – 3.5%</td>
-              <td class="p-3 font-mono">$15 – $40 (one-time)</td>
-              <td class="p-3">Directly isolates subcutaneous fat folds; highly cost-effective; independent of daily water intake</td>
-              <td class="p-3">Requires experienced technician; uncomfortable pinches; less reliable in severe obesity</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Skinfold Calipers (Jackson-Pollock)</td>
+              <td class="p-3 border border-[#e6e6e6] font-bold">&plusmn; 3.0–3.5%</td>
+              <td class="p-3 border border-[#e6e6e6]">Double-fold subcutaneous pinch at 3 or 7 anatomical landmark sites</td>
+              <td class="p-3 border border-[#e6e6e6]">Highly dependent on practitioner calibration; misses deep visceral fat</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold text-blue-400">U.S. Navy Tape Method</td>
-              <td class="p-3 font-mono font-bold text-blue-400">&plusmn; 3.0% – 4.0%</td>
-              <td class="p-3 font-mono">&lt; $5 (tape measure)</td>
-              <td class="p-3">Accessible anywhere; zero equipment calibration needed; tracks visceral waist changes well</td>
-              <td class="p-3">Relies on mathematical averages; does not differentiate intramuscular fat depots</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-[#464feb]">U.S. Navy Circumference Formula</td>
+              <td class="p-3 border border-[#e6e6e6] font-bold">&plusmn; 3.0–4.0%</td>
+              <td class="p-3 border border-[#e6e6e6]">Logarithmic equations using neck, waist, hip circumferences and height</td>
+              <td class="p-3 border border-[#e6e6e6]">Zero cost, accessible at home; requires strict standardized tape placement</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold text-rose-400">Bioelectrical Impedance (BIA)</td>
-              <td class="p-3 font-mono font-bold text-rose-400">&plusmn; 3.5% – 5.0%</td>
-              <td class="p-3 font-mono">$30 – $150 (home scale)</td>
-              <td class="p-3">Fast, effortless daily recording; integrated with mobile health apps</td>
-              <td class="p-3">Heavily distorted by hydration, meal timing, caffeine, and skin temperature</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Bioelectrical Impedance (BIA)</td>
+              <td class="p-3 border border-[#e6e6e6] font-bold">&plusmn; 4.0–6.0%</td>
+              <td class="p-3 border border-[#e6e6e6]">Alternating micro-current voltage drop (impedance) through fluid compartments</td>
+              <td class="p-3 border border-[#e6e6e6]">Heavily distorted by hydration state, recent meals, caffeine, and menstrual cycle</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>The Jackson-Pollock Skinfold Protocols: 3-Site vs. 7-Site Equations</h2>
-      <p>For fitness professionals and coaches, the <strong>Jackson-Pollock skinfold method</strong> remains the most widely practiced field test. The anatomical testing sites differ between male and female profiles to capture primary subcutaneous depots:</p>
+      <h2>The U.S. Navy Method: Mathematical Architecture</h2>
+      <p>Developed by Hodgdon and Beckett (1984) at the Naval Health Research Center, this validated equation estimates body fat using circumferences:</p>
       <ul>
-        <li><strong>Men 3-Site Protocol:</strong> Chest (diagonal pinch midway between anterior axillary line and nipple), Abdomen (vertical pinch 2 cm lateral to umbilicus), and Thigh (vertical pinch on anterior midline midway between inguinal crease and top of patella).</li>
-        <li><strong>Women 3-Site Protocol:</strong> Triceps (vertical pinch midway between acromion and olecranon process), Suprailiac (diagonal pinch immediately superior to iliac crest along anterior axillary line), and Thigh (vertical pinch on anterior midline).</li>
+        <li><strong>Men Formula:</strong> <code>%BF = 86.010 &times; log10(waist - neck) - 70.041 &times; log10(height) + 36.76</code></li>
+        <li><strong>Women Formula:</strong> <code>%BF = 163.205 &times; log10(waist + hip - neck) - 97.684 &times; log10(height) - 78.387</code></li>
       </ul>
-      <p>Body density (Db) is derived via quadratic regression equations, such as <code>Db = 1.10938 - (0.0008267 &times; Sum) + (0.0000016 &times; Sum²) - (0.0002574 &times; Age)</code> for men, and converted to body fat using the classic <strong>Siri Equation</strong>: <code>% Body Fat = [(4.95 / Db) - 4.50] &times; 100</code>.</p>
-
-      <h2>Standard Protocol for Accurate Home &amp; Clinic Measurements</h2>
-      <p>To eliminate hydration shifts and ensure test-retest reproducibility across any method:</p>
-      <ul>
-        <li><strong>Time of Day:</strong> Test in the morning upon waking, immediately after urination and bowel movement, before drinking liquids or eating breakfast.</li>
-        <li><strong>Fluid Consistency:</strong> Avoid alcohol consumption for 24 hours prior and heavy caffeine for 12 hours prior to bioimpedance testing.</li>
-        <li><strong>Post-Exercise Delay:</strong> Do not measure immediately following strenuous exercise, as fluid shifts, peripheral vasodilation, and skin temperature variations distort impedance and caliper skinfold thickness.</li>
-        <li><strong>Monthly Timing for Women:</strong> For pre-menopausal women, measure during the same phase of the menstrual cycle (ideally the follicular phase, days 3 to 7) to avoid luteal water retention.</li>
-      </ul>
-
-      <h2>Frequently Asked Questions on Measuring Body Fat</h2>
-      <div class="space-y-4 my-6">
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Why does my smart scale show a different body fat percentage every day?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Home bioimpedance scales estimate fat by measuring electrical impedance through the legs. If you drink a large glass of water, consume salty food, or weigh yourself after a shower, the altered water content conducts electricity faster, tricking the scale into reporting an artificially lower fat percentage.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Which method is best for tracking body recomposition over time?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">For regular monthly tracking, a consistent tape measure method (U.S. Navy formula) or calipers measured by the same skilled technician provides excellent trend monitoring. For definitive annual baselines, a clinical DEXA scan is unmatched.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Can body fat percentage be reduced while scale weight stays the same?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Yes. This phenomenon is known as body recomposition. When an individual engages in progressive resistance training and consumes sufficient dietary protein in a modest caloric deficit or maintenance, they can simultaneously synthesize new skeletal muscle tissue while oxidizing adipose fat. Because muscle tissue is approximately 18% denser than fat tissue by volume, total scale weight may remain completely unchanged even as waist circumference and body fat percentage decrease significantly.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">What is the clinical definition of essential body fat?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Essential body fat is the minimal lipid quantity required for physiological survival, cellular membrane structural integrity, hormonal steroid synthesis, and internal organ insulation. Essential fat thresholds are physiologically established at 2% to 5% for men and 10% to 13% for women. Dropping below these critical thresholds leads to severe hormonal disruption, amenorrhea in females, impaired thermoregulation, and immune compromise.</p>
-        </div>
-      </div>
+      <p>It remains the most reliable, zero-cost screening tool available for home use.</p>
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>Hodgdon JA, Beckett MB. <em>Prediction of percent body fat for U.S. Navy men and women from body circumferences and height.</em> Report No. 84-29. Naval Health Research Center, 1984.</li>
+        <li>Hodgdon JA, Beckett PR. <em>Prediction of percent body fat for U.S. Navy men and women from body circumferences and height.</em> Naval Health Research Center Reports 1984; 84-29.</li>
         <li>Jackson AS, Pollock ML. <em>Generalized equations for predicting body density of men.</em> Br J Nutr 1978; 40(3):497-504.</li>
-        <li>Siri WE. <em>Body composition from fluid spaces and density: analysis of methods.</em> Techniques for Measuring Body Composition, 1961: 223-244.</li>
-        <li>Kyle UG, et al. <em>Bioelectrical impedance analysis—part I: review of principles and methods.</em> Clin Nutr 2004; 23(6):1226-1243.</li>
-        <li>Nana A, et al. <em>Methodology review: using dual-energy X-ray absorptiometry (DXA) for the assessment of body composition in athletes and active people.</em> Int J Sport Nutr Exerc Metab 2015; 25(2):198-215.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>बॉडी फैट प्रतिशत मापने की प्रमुख वैज्ञानिक विधियां</h2>
+      <p>मानव शरीर में फैट प्रतिशत को सटीक रूप से मापने के लिए खेल विज्ञान और अस्पतालों में विभिन्न तकनीकों का उपयोग किया जाता है। प्रत्येक विधि की सटीकता, लागत और उपलब्धता अलग-अलग होती है।</p>
+
+      <h2>बॉडी फैट मापने की 5 प्रमुख तकनीकों का तुलनात्मक विश्लेषण</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">मापन विधि</th>
+              <th class="p-3 border border-[#e6e6e6]">नैदानिक सटीकता</th>
+              <th class="p-3 border border-[#e6e6e6]">कार्य सिद्धांत</th>
+              <th class="p-3 border border-[#e6e6e6]">मुख्य सीमा व खर्च</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-[#464feb]">डेक्सा स्कैन (DEXA Scan)</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&plusmn; 1.0–1.5% (स्वर्ण मानक)</td>
+              <td class="p-3 border border-[#e6e6e6]">दोहरी ऊर्जा एक्स-रे फोटॉन द्वारा हड्डियों, वसा और मांसपेशियों का त्रि-आयामी विश्लेषण</td>
+              <td class="p-3 border border-[#e6e6e6]">उच्च लागत (₹3,000–₹8,000 प्रति स्कैन), विशेष केंद्रों में ही उपलब्ध</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">हाइड्रोस्टैटिक वेइंग (जल विस्थापन)</td>
+              <td class="p-3 border border-[#e6e6e6] font-bold">&plusmn; 1.5–2.0%</td>
+              <td class="p-3 border border-[#e6e6e6]">आर्किमिडीज सिद्धांत द्वारा पानी में वजन मापकर शरीर का घनत्व निकालना</td>
+              <td class="p-3 border border-[#e6e6e6]">फेफड़ों की पूरी हवा निकालकर पानी में पूरी तरह डूबना पड़ता है</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">स्किनफोल्ड कैलिपर्स (कैलिपर चिमटी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-bold">&plusmn; 3.0–3.5%</td>
+              <td class="p-3 border border-[#e6e6e6]">शरीर के 3 या 7 विशिष्ट बिंदुओं पर त्वचा के नीचे की वसा की परत की मोटाई मापना</td>
+              <td class="p-3 border border-[#e6e6e6]">मापने वाले के कौशल पर निर्भर; पेट की गहरी आंतरिक विसरल चर्बी को नहीं मापता</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-[#464feb]">यू.एस. नेवी फॉर्मूला (टेप माप विधि)</td>
+              <td class="p-3 border border-[#e6e6e6] font-bold">&plusmn; 3.0–4.0%</td>
+              <td class="p-3 border border-[#e6e6e6]">गर्दन, कमर, कूल्हे और ऊंचाई के गणितीय लॉगरिदमिक अनुपात पर आधारित</td>
+              <td class="p-3 border border-[#e6e6e6]">शून्य खर्च, घर पर आसानी से उपलब्ध; टेप सही जगह लगाना आवश्यक</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">बायोइलेक्ट्रिकल इम्पीडेंस (BIA स्केल्स)</td>
+              <td class="p-3 border border-[#e6e6e6] font-bold">&plusmn; 4.0–6.0%</td>
+              <td class="p-3 border border-[#e6e6e6]">शरीर में हानिरहित सूक्ष्म विद्युत तरंग भेजकर जल प्रतिरोध मापना</td>
+              <td class="p-3 border border-[#e6e6e6]">पानी पीने की स्थिति, भोजन, कैफीन और पसीने से परिणाम में बहुत उतार-चढ़ाव आता है</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>यू.एस. नेवी फॉर्मूला: घर पर बॉडी फैट मापने का सबसे सटीक तरीका</h2>
+      <p>अमेरिकी नौसेना स्वास्थ्य अनुसंधान केंद्र (हॉजडन व बेकेट, 1984) द्वारा विकसित यह सूत्र सेंटीमीटर में मापी गई परिधियों का उपयोग करता है:</p>
+      <ul>
+        <li><strong>पुरुषों के लिए:</strong> <code>%BF = 86.010 &times; log10(कमर - गर्दन) - 70.041 &times; log10(ऊंचाई) + 36.76</code></li>
+        <li><strong>महिलाओं के लिए:</strong> <code>%BF = 163.205 &times; log10(कमर + कूल्हा - गर्दन) - 97.684 &times; log10(ऊंचाई) - 78.387</code></li>
+      </ul>
+      <p>यह विधि बिना किसी महंगे उपकरण के घर पर बॉडी फैट ट्रैक करने का सबसे विश्वसनीय और वैज्ञानिक तरीका है।</p>
+
+      <h2>वैज्ञानिक संदर्भ</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Hodgdon JA, Beckett PR. <em>Prediction of percent body fat for U.S. Navy men and women from body circumferences and height.</em> Naval Health Research Center 1984.</li>
+        <li>Jackson AS, Pollock ML. <em>Generalized equations for predicting body density of men.</em> Br J Nutr 1978; 40(3):497-504.</li>
       </ul>
 `,
       "es": `
-      <h2>Comparativa Clínica de Métodos de Medición de Grasa Corporal</h2>
-      <p>Conoce los 5 métodos principales: DEXA (estándar de oro clínico), pesaje hidrostático, plicómetros de pliegues cutáneos, método de la Marina de EE. UU. y básculas de bioimpedancia.</p>
-    `,
+      <h2>Métodos Clínicos para Medir el Porcentaje de Grasa Corporal</h2>
+      <p>Existen cinco modalidades principales: el <strong>escáner DEXA</strong> (patrón oro hospitalario, precisión &plusmn; 1.5%), el <strong>pesaje hidrostático</strong> subacuático, los <strong>plicómetros de pliegues cutáneos</strong> (Jackson-Pollock), el <strong>método de la Marina de EE. UU.</strong> (basado en circunferencias de cuello, cintura y cadera) y las <strong>básculas de bioimpedancia (BIA)</strong>.</p>
+`,
       "fr": `
-      <h2>Les 5 Méthodes Médicales pour Évaluer la Graisse Corporelle</h2>
-      <p>Du scanner DEXA de référence aux mesures anthropométriques de la Navy, découvrez la précision de chaque méthode.</p>
-    `,
+      <h2>Comment Mesurer son Taux de Graisse Corporelle</h2>
+      <p>Le <strong>scanner DEXA</strong> constitue la référence médicale absolue. Pour un suivi régulier à domicile sans frais, la <strong>méthode de la Navy américaine</strong> (mesure du tour de cou, de taille et de hanches) offre une excellente précision clinique (&plusmn; 3%).</p>
+`,
       "de": `
-      <h2>Methoden zur Körperfettmessung im Vergleich</h2>
-      <p>Von DEXA-Scans über hydrostatisches Wiegen bis hin zu Calipern und BIA: Genauigkeit und praktische Anwendung im Überblick.</p>
-    `,
+      <h2>Methoden zur Bestimmung des Körperfettanteils im Vergleich</h2>
+      <p>DEXA-Scans gelten als klinischer Goldstandard. Für den Alltag stellt die <strong>US-Navy-Umfangsmethode</strong> (Taille, Nacken, Hüfte) die verlässlichste, kostenfreie Alternative zu fehleranfälligen Bioimpedanzwaagen dar.</p>
+`,
       "ko": `
-      <h2>체지방률 측정의 5대 임상 기법 비교</h2>
-      <p>DEXA 스캔부터 캘리퍼 피하지방 측정, BIA 체성분 측정기까지 정확도와 표준 프로토콜을 확인하세요.</p>
-    `,
-      "hi": `
-      <h2>शरीर की चर्बी मापने के 5 प्रमुख वैज्ञानिक तरीके</h2>
-      <p>डेक्सा स्कैन, हाइड्रोस्टैटिक वेइंग, स्किनफोल्ड कैलिपर्स, नेवी फॉर्मूला और बीआईए स्केल्स की कार्यप्रणाली और सटीकता का विवरण।</p>
-    `
+      <h2>체지방률 정밀 측정 5대 방식 종합 비교</h2>
+      <p>병원 임상 기준인 <strong>DEXA 스캔</strong>(오차 &plusmn; 1.5%)이 가장 정확하며, 가정에서는 수분량에 따라 오차가 큰 BIA 체중계보다 <strong>미 해군 둘레 공식(목, 허리, 엉덩이 둘레)</strong>을 활용하는 것이 신뢰도가 높습니다.</p>
+`
     }
   },
 
   "lean-body-mass-calculation-guide": {
     "datePublished": "2026-08-01",
-    "dateModified": "2026-10-25",
+    "dateModified": "2026-10-28",
     "title": {
-      "en": "Lean Body Mass Calculation: Boer, James & Hume Equations Guide",
-      "hi": "लीन बॉडी मास की गणना: बोअर, जेम्स व ह्यूम फॉर्मूला गाइड",
-      "ko": "제지방량(LBM) 계산법: Boer, James 및 Hume 공식과 근육 보존 가이드",
-      "de": "Magermasse (LBM) berechnen: Formeln von Boer, James & Hume",
-      "es": "Cálculo de Masa Magra Corporal: Fórmulas de Boer, James y Hume",
-      "fr": "Calcul de la Masse Maigre : Formules de Boer, James et Hume"
+      "en": "Lean Body Mass (LBM) Guide: Boer, James & Hume Formulas Compared",
+      "hi": "लीन बॉडी मास (LBM) गाइड: बोअर, जेम्स व ह्यूम फॉर्मूलों की तुलना",
+      "ko": "제지방량(LBM) 계산 가이드: Boer, James, Hume 공식과 기초대사량의 관계",
+      "de": "Lean Body Mass (LBM) berechnen: Boer, James & Hume Formeln",
+      "es": "Masa Magra Corporal (LBM): Fórmulas de Boer, James y Hume",
+      "fr": "Masse Maigre (LBM) : Comparatif des Formules Boer, James et Hume"
     },
     "category": {
-      "en": "Muscular Health & Metabolism",
-      "hi": "मांसपेशी स्वास्थ्य व मेटाबॉलिज्म",
-      "ko": "근육량 및 기초대사",
-      "de": "Muskelmasse & Stoffwechsel",
-      "es": "Masa Muscular y Metabolismo",
-      "fr": "Masse Musculaire et Métabolisme"
+      "en": "Body Composition Analysis",
+      "hi": "शारीरिक संरचना विश्लेषण",
+      "ko": "신체 구성 분석",
+      "de": "Körperzusammensetzung",
+      "es": "Análisis de Composición Corporal",
+      "fr": "Composition Corporelle"
     },
     "description": {
-      "en": "Learn how to calculate Lean Body Mass (LBM) using validated Boer, James, and Hume formulas. Discover why preserving lean tissue is essential for metabolic rate and glucose disposal.",
-      "hi": "बोअर, जेम्स और ह्यूम समीकरणों द्वारा लीन बॉडी मास (LBM) की गणना। जानें कि मेटाबॉलिक रेट और डायबिटीज की रोकथाम में मांसपेशियों का संरक्षण क्यों महत्वपूर्ण है।",
-      "ko": "의학적으로 검증된 Boer, James, Hume 공식을 통해 본인의 제지방량(LBM)을 산출하고, 기초대사량 유지 및 혈당 조절에 핵심적인 골격근 보존 전략을 알아보세요.",
-      "de": "Berechnen Sie Ihre fettfreie Magermasse mit den Gleichungen von Boer, James und Hume. Warum der Muskelerhalt für den Grundumsatz entscheidend ist.",
-      "es": "Aprende a calcular la masa magra con las fórmulas de Boer, James y Hume. Descubre por qué preservar la musculatura protege el metabolismo basal.",
-      "fr": "Calculez votre masse corporelle maigre grâce aux équations validées de Boer, James et Hume pour optimiser votre métabolisme de base."
+      "en": "Clinical guide to Lean Body Mass (LBM). Compare Boer, James, and Hume formulas, understand step-by-step calculations, and connect LBM to BMR with Katch-McArdle.",
+      "hi": "लीन बॉडी मास (LBM) की क्लिनिकल गाइड। बोअर, जेम्स और ह्यूम सूत्रों की तुलना, चरणबद्ध गणना और कैच-मैकआर्डल सूत्र द्वारा बीएमआर का निर्धारण।",
+      "ko": "제지방량(LBM)을 정밀 산출하는 3대 의학 공식(Boer, James, Hume)의 장단점과 Katch-McArdle 기초대사량 공식을 심층 분석합니다.",
+      "de": "Leitfaden zur fettfreien Magermasse (LBM): Boer, James und Hume Formeln im Vergleich sowie die Katch-McArdle-Stoffwechselgleichung.",
+      "es": "Guía clínica de masa magra corporal (LBM): comparativa de las fórmulas de Boer, James y Hume, y cómo calcular el metabolismo basal con Katch-McArdle.",
+      "fr": "Guide médical de la masse maigre (LBM) : formules de Boer, James et Hume, calcul pas à pas et lien avec le métabolisme de base (Katch-McArdle)."
     },
     "contentHtml": {
       "en": `
       <h2>The Clinical Significance of Lean Body Mass (LBM)</h2>
-      <p><strong>Lean Body Mass (LBM)</strong>—often used synonymously with Fat-Free Mass (FFM)—represents the total weight of your body minus all extractable storage adipose tissue. LBM encompasses skeletal muscle, vital internal organs (heart, liver, lungs, kidneys, brain), the skeletal bone matrix, connective ligaments, and intracellular/extracellular water. While popular health tracking often focuses exclusively on fat reduction, clinical medicine and exercise physiology regard Lean Body Mass as the primary determinant of metabolic rate, insulin sensitivity, immunological resilience, and healthy aging.</p>
-      <p>Understanding and calculating your Lean Body Mass allows precise titration of daily dietary protein requirements, calculation of the Katch-McArdle metabolic rate, and accurate monitoring of muscle preservation during fat-loss dieting phases.</p>
+      <p><strong>Lean Body Mass (LBM)</strong>—also referred to as Fat-Free Mass (FFM)—represents the total weight of all non-adipose tissues in the human body: skeletal muscle, vital organs (heart, liver, kidneys, brain), bone mineral structure, and intracellular and extracellular fluids. Unlike total scale weight, LBM is the primary physiological driver of resting basal metabolic rate (BMR), systemic glucose disposal, and physical longevity.</p>
 
-      <h2>Mathematical Estimation Formulas: Boer, James, and Hume</h2>
-      <p>When laboratory methods like DEXA or hydrostatic weighing are unavailable, clinicians utilize validated regression formulas developed by Boer, James, and Hume. These equations predict lean body mass from biological gender, stature, and body weight:</p>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+      <h2>The Three Primary Clinical LBM Equations</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Formula</th>
-              <th class="p-3 text-blue-500">Men Equation (Weight in kg, Height in cm)</th>
-              <th class="p-3 text-rose-500">Women Equation (Weight in kg, Height in cm)</th>
-              <th class="p-3">Clinical Application</th>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Formula</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500">Men Equation (W in kg, H in cm)</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500">Women Equation (W in kg, H in cm)</th>
+              <th class="p-3 border border-[#e6e6e6]">Clinical Application</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)] font-mono text-xs">
+          <tbody class="divide-y divide-[#e6e6e6] font-mono text-xs">
             <tr>
-              <td class="p-3 font-sans font-semibold">Boer Formula (1984)</td>
-              <td class="p-3 text-blue-500">LBM = 0.407 &times; W + 0.267 &times; H - 19.2</td>
-              <td class="p-3 text-rose-500">LBM = 0.252 &times; W + 0.473 &times; H - 48.3</td>
-              <td class="p-3 font-sans">Hospital medication dosing, renal filtration estimation</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-[#464feb]">Boer Formula (1984)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">0.407 &times; W + 0.267 &times; H - 19.2</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">0.252 &times; W + 0.473 &times; H - 48.3</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Hospital medication dosing, renal filtration estimation</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold font-sans">James Formula (1976)</td>
-              <td class="p-3 text-blue-500">LBM = 1.10 &times; W - 128 &times; (W / H)²</td>
-              <td class="p-3 text-rose-500">LBM = 1.07 &times; W - 148 &times; (W / H)²</td>
-              <td class="p-3 font-sans">Anesthetic drug clearance, baseline metabolic estimation</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">James Formula (1976)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">1.10 &times; W - 128 &times; (W / H)²</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">1.07 &times; W - 148 &times; (W / H)²</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Anesthetic drug clearance, baseline metabolic estimation</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold font-sans">Hume Formula (1966)</td>
-              <td class="p-3 text-blue-500">LBM = 0.3281 &times; W + 0.33929 &times; H - 29.5336</td>
-              <td class="p-3 text-rose-500">LBM = 0.29569 &times; W + 0.41813 &times; H - 43.2933</td>
-              <td class="p-3 font-sans">Pharmacokinetics and body water volume modeling</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">Hume Formula (1966)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">0.3281 &times; W + 0.33929 &times; H - 29.5336</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">0.29569 &times; W + 0.41813 &times; H - 43.2933</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Pharmacokinetics and body water volume modeling</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Step-by-Step Calculation Comparison: Boer vs. James vs. Hume</h2>
-      <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-3">
-        <p class="font-bold text-[var(--accent)]">Worked Example for an Adult Male (Height: 180 cm / Weight: 80 kg):</p>
-        <p class="text-[var(--foreground)]"><strong>1. Boer Formula Calculation:</strong></p>
-        <p class="text-[var(--muted-foreground)]">&bull; 0.407 &times; 80 = 32.56 | 0.267 &times; 180 = 48.06</p>
-        <p class="text-[var(--muted-foreground)]">&bull; LBM = 32.56 + 48.06 - 19.2 = <strong>61.42 kg LBM</strong> (Body Fat: ~23.2%)</p>
-        <p class="text-[var(--foreground)] mt-2"><strong>2. James Formula Calculation:</strong></p>
-        <p class="text-[var(--muted-foreground)]">&bull; 1.10 &times; 80 = 88.0 | (80 / 180)² = 0.1975 &times; 128 = 25.28</p>
-        <p class="text-[var(--muted-foreground)]">&bull; LBM = 88.0 - 25.28 = <strong>62.72 kg LBM</strong> (Body Fat: ~21.6%)</p>
-        <p class="text-[var(--foreground)] mt-2"><strong>3. Hume Formula Calculation:</strong></p>
-        <p class="text-[var(--muted-foreground)]">&bull; 0.3281 &times; 80 = 26.248 | 0.33929 &times; 180 = 61.072</p>
-        <p class="text-[var(--muted-foreground)]">&bull; LBM = 26.248 + 61.072 - 29.534 = <strong>57.79 kg LBM</strong> (Body Fat: ~27.8%)</p>
-        <p class="text-[var(--foreground)] font-bold mt-2">Clinical Consensus: The Boer equation is preferred for individuals of normal to overweight stature, while the James formula tends to overestimate LBM in severe obesity.</p>
-      </div>
-
       <h2>The Katch-McArdle Formula: Linking Lean Body Mass to BMR</h2>
-      <p>Standard metabolic rate equations like Mifflin-St Jeor or Harris-Benedict calculate Basal Metabolic Rate using total scale weight. However, adipose tissue burns very few calories compared to skeletal muscle. The <strong>Katch-McArdle equation</strong> calculates resting metabolic rate directly from Lean Body Mass:</p>
-      <div class="my-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm">
+      <p>Standard equations calculate calories using total scale weight. However, fat burns very few calories compared to muscle. The <strong>Katch-McArdle equation</strong> calculates resting metabolic rate directly from Lean Body Mass:</p>
+      <div class="my-4 p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)] font-mono text-sm">
         <code>BMR (kcal/day) = 370 + (21.6 &times; Lean Body Mass in kg)</code>
       </div>
-      <p>For our 80 kg male with 61.4 kg of LBM: <code>BMR = 370 + (21.6 &times; 61.4) = 1,696 kcal/day</code>. Because this formula bases calorie expenditure exclusively on active tissue, it does not distort caloric targets for muscular athletes or individuals with significant adiposity.</p>
-
-      <h2>Why Preserving Lean Body Mass is Essential for Long-Term Health</h2>
-      <ul>
-        <li><strong>Basal Metabolic Rate Protection:</strong> Skeletal muscle consumes approximately 13 kcal/kg/day at rest, whereas adipose tissue burns merely 4.5 kcal/kg/day. Preserving LBM prevents the severe metabolic adaptation that triggers weight regain after dieting.</li>
-        <li><strong>Glucose Disposal Reservoir:</strong> Over 80% of postprandial glucose uptake occurs in skeletal muscle through insulin-mediated glycogen synthesis. Higher LBM directly protects against insulin resistance and Type 2 diabetes.</li>
-        <li><strong>Prevention of Sarcopenia in Seniors:</strong> Maintaining lean muscle prevents functional frailty, preserves joint alignment, and protects against catastrophic fall-related bone fractures in older adults.</li>
-      </ul>
-
-      <h2>Frequently Asked Questions Regarding Lean Body Mass</h2>
-      <div class="space-y-4 my-6">
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Does Lean Body Mass change when taking creatine monohydrate?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Yes. Creatine draws water into the muscle cells (intracellular hydration). Because intracellular water is part of Fat-Free Mass, your calculated LBM will increase by 1 to 2 kg within the first two weeks of supplementation, reflecting enhanced cellular hydration and muscle fullness.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">How much dietary protein is needed to preserve LBM during a calorie deficit?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Sports nutrition consensus guidelines recommend consuming 1.6 to 2.2 grams of protein per kilogram of Lean Body Mass (or 1.8 to 2.4 g/kg LBM during aggressive deficits) combined with resistance training to prevent muscle catabolism.</p>
-        </div>
-      </div>
+      <p>For an individual with 60 kg of LBM: <code>BMR = 370 + (21.6 &times; 60) = 1,666 kcal/day</code>.</p>
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>Boer P. <em>Estimated lean body mass as an index for normalization of body fluid volumes in humans.</em> Am J Physiol 1984; 247(4 Pt 2):F632-F636.</li>
-        <li>James WP. <em>Research on obesity: a report of the DHSS/MRC group.</em> London: HMSO, 1976.</li>
-        <li>Hume R. <em>Prediction of lean body mass from height and weight.</em> J Clin Pathol 1966; 19(4):389-391.</li>
+        <li>Boer P. <em>Estimated lean body mass as an index for normalization of body fluid volumes in humans.</em> Am J Physiol 1984; 247(4 Pt 2):F632-F636. PMID: 6496712.</li>
+        <li>Katch FI, McArdle WD. <em>Nutrition, Weight Control, and Exercise.</em> Boston: Houghton Mifflin, 1977.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>लीन बॉडी मास (LBM) का चिकित्सीय व चयापचय महत्व</h2>
+      <p><strong>लीन बॉडी मास (Lean Body Mass / LBM)</strong>—जिसे फैट-फ्री मास भी कहा जाता है—शरीर के वसा रहित संपूर्ण भार को दर्शाता है। इसमें कंकाल की मांसपेशियां, महत्वपूर्ण आंतरिक अंग (हृदय, यकृत, वृक्क, मस्तिष्क), हड्डियों का खनिज ढांचा और शरीर का समस्त जल शामिल होता है। कुल शारीरिक भार की तुलना में लीन बॉडी मास ही यह तय करता है कि आपका शरीर आराम की स्थिति में कितनी कैलोरी जलाता है (BMR) और रक्त शर्करा का कितनी कुशलता से निस्तारण करता है।</p>
+
+      <h2>तीन प्रमुख नैदानिक लीन बॉडी मास सूत्र</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">वैज्ञानिक सूत्र</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500">पुरुष समीकरण (वजन kg, कद cm)</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500">महिला समीकरण (वजन kg, कद cm)</th>
+              <th class="p-3 border border-[#e6e6e6]">नैदानिक उपयोग</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6] font-mono text-xs">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-[#464feb]">बोअर फॉर्मूला (Boer 1984)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">0.407 &times; W + 0.267 &times; H - 19.2</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">0.252 &times; W + 0.473 &times; H - 48.3</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">अस्पतालों में दवा की खुराक व किडनी फिल्ट्रेशन का आकलन</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">जेम्स फॉर्मूला (James 1976)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">1.10 &times; W - 128 &times; (W / H)²</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">1.07 &times; W - 148 &times; (W / H)²</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">एनेस्थीसिया क्लीयरेंस और आधारभूत मेटाबॉलिज्म</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">ह्यूम फॉर्मूला (Hume 1966)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">0.3281 &times; W + 0.33929 &times; H - 29.5336</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">0.29569 &times; W + 0.41813 &times; H - 43.2933</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">फार्माकोकाइनेटिक्स व शारीरिक जल आयतन मॉडलिंग</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>कैच-मैकआर्डल सूत्र: लीन बॉडी मास से बीएमआर निकालना</h2>
+      <p>पारंपरिक सूत्र पूरे वजन के आधार पर कैलोरी निकालते हैं, जिससे अधिक वसा वाले लोगों का कैलोरी लक्ष्य गलत हो जाता है। <strong>कैच-मैकआर्डल (Katch-McArdle) समीकरण</strong> केवल सक्रिय मांसपेशियों और अंगों के वजन पर आधारित है:</p>
+      <div class="my-4 p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)] font-mono text-sm">
+        <code>BMR (kcal/दिन) = 370 + (21.6 &times; लीन बॉडी मास kg में)</code>
+      </div>
+      <p>उदाहरण के लिए, 60 kg लीन मास वाले व्यक्ति का न्यूनतम दैनिक कैलोरी खर्च <code>370 + (21.6 &times; 60) = 1,666 kcal/दिन</code> होगा।</p>
+
+      <h2>मांसपेशियों की सुरक्षा क्यों जरूरी है?</h2>
+      <ul>
+        <li><strong>मेटाबॉलिज्म की सुरक्षा:</strong> मांसपेशियां आराम की अवस्था में वसा की तुलना में 3 गुना अधिक कैलोरी खर्च करती हैं। डाइटिंग के दौरान मांसपेशियां घटने से मेटाबॉलिज्म धीमा हो जाता है।</li>
+        <li><strong>ग्लूकोज नियंत्रण:</strong> भोजन के बाद 80% से अधिक ग्लूकोज कंकाल की मांसपेशियों में ही अवशोषित होता है। अधिक लीन मास डायबिटीज से सीधी सुरक्षा देता है।</li>
+        <li><strong>बुढ़ापे में कमजोरी से बचाव (Sarcopenia):</strong> पर्याप्त मांसपेशियां उम्र बढ़ने पर हड्डियों को टूटने से बचाती हैं और संतुलन बनाए रखती हैं।</li>
+      </ul>
+
+      <h2>वैज्ञानिक संदर्भ</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Boer P. <em>Estimated lean body mass as an index for normalization of body fluid volumes in humans.</em> Am J Physiol 1984; 247:F632-F636. PMID: 6496712.</li>
         <li>Katch FI, McArdle WD. <em>Nutrition, Weight Control, and Exercise.</em> Boston: Houghton Mifflin, 1977.</li>
       </ul>
 `,
       "es": `
-      <h2>La Importancia de la Masa Magra Corporal (LBM)</h2>
-      <p>La masa magra representa todo el peso libre de grasa corporal: músculo esquelético, órganos, huesos y agua. Es el principal motor del gasto metabólico en reposo.</p>
-    `,
+      <h2>Importancia Clínica de la Masa Magra Corporal (LBM)</h2>
+      <p>La masa magra engloba todos los tejidos libres de grasa (músculo, hueso, órganos y agua). Las fórmulas clínicas de <strong>Boer (1984)</strong>, <strong>James (1976)</strong> y <strong>Hume (1966)</strong> permiten estimarla con precisión matemática para dosificación hospitalaria y cálculo metabólico mediante la fórmula de <strong>Katch-McArdle</strong> (BMR = 370 + 21.6 &times; LBM en kg).</p>
+`,
       "fr": `
-      <h2>Le Rôle Métabolique Majeur de la Masse Maigre (LBM)</h2>
-      <p>La masse maigre détermine plus de 80% de l'utilisation du glucose sanguin et assure la protection du métabolisme de base au repos.</p>
-    `,
+      <h2>Rôle Métabolique de la Masse Maigre (LBM)</h2>
+      <p>La masse maigre représente le déterminant majeur de la dépense énergétique de repos. L'équation de Boer (1984) et la formule métabolique de Katch-McArdle permettent d'adapter les apports caloriques et protéiques au profil musculaire réel de chaque individu.</p>
+`,
       "de": `
-      <h2>Bedeutung der fettfreien Magermasse für den Stoffwechsel</h2>
-      <p>Muskelgewebe verbrennt im Ruhezustand deutlich mehr Energie als Fettgewebe und ist der größte Glukosespeicher des Körpers.</p>
-    `,
+      <h2>Klinische Bedeutung der fettfreien Magermasse (LBM)</h2>
+      <p>Die Formeln nach Boer, James und Hume berechnen die fettfreie Masse als Grundlage für Arzneimitteldosierungen und die Katch-McArdle-Formel zur präzisen Bestimmung des Grundumsatzes.</p>
+`,
       "ko": `
-      <h2>제지방량(LBM)의 대사적 중요성</h2>
-      <p>제지방량은 기초대사량의 80% 이상을 결정하며, 식후 혈당을 흡수하여 인슐린 저항성을 개선하는 가장 큰 신체 기관입니다.</p>
-    `,
-      "hi": `
-      <h2>लीन बॉडी मास (मांसपेशियों) का महत्व</h2>
-      <p>लीन बॉडी मास में चर्बी को छोड़कर मांसपेशियां, हड्डियां और अंग शामिल होते हैं। यह शरीर के मेटाबॉलिज्म को तेज बनाए रखने के लिए सबसे जरूरी है।</p>
-    `
+      <h2>제지방량(LBM) 산출 공식과 대사적 가치</h2>
+      <p>Boer(1984), James(1976), Hume(1966) 공식은 체중과 신장을 통해 제지방량을 산출하며, 이를 바탕으로 한 Katch-McArdle 공식은 근육량 중심의 가장 정확한 기초대사량을 도출합니다.</p>
+`
     }
   },
 
   "waist-to-hip-ratio-guide": {
     "datePublished": "2026-08-15",
-    "dateModified": "2026-10-25",
+    "dateModified": "2026-10-28",
     "title": {
       "en": "Waist-to-Hip Ratio Guide: Measuring Protocol & Heart Risk Thresholds",
       "hi": "कमर-कूल्हा अनुपात (WHR) गाइड: मापन प्रोटोकॉल व हृदय जोखिम सीमाएं",
@@ -582,116 +612,127 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "en": `
       <h2>Waist-to-Hip Ratio (WHR): Clinical Protocol and Diagnostic Value</h2>
       <p>While Body Mass Index evaluates overall weight relative to height, it provides zero insight into where fat is stored on the body. Clinical cardiology and endocrinology recognize that <strong>fat distribution matters far more than total scale weight</strong> in predicting cardiovascular events, stroke, and metabolic syndrome. The <strong>Waist-to-Hip Ratio (WHR)</strong> is the gold-standard epidemiological measurement for distinguishing android (abdominal/apple) from gynoid (gluteofemoral/pear) fat distribution.</p>
-      <p>A person with a completely normal BMI who carries disproportionate abdominal fat may face higher cardiometabolic danger than an individual with a higher BMI whose fat is stored safely under the skin of the hips and thighs. Below, we detail the standardized WHO measurement protocol, clinical thresholds, the landmark INTERHEART trial evidence, and associated health risks.</p>
-
-      <h2>Standard World Health Organization Measurement Protocol</h2>
-      <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-3">
-        <p class="font-bold text-[var(--accent)]">WHO Standardized Tape Measure Protocol:</p>
-        <p class="text-[var(--foreground)]"><strong>1. Waist Circumference Measurement:</strong></p>
-        <p class="text-[var(--muted-foreground)]">&bull; Stand upright with feet together, arms relaxed at sides, and weight evenly distributed.</p>
-        <p class="text-[var(--muted-foreground)]">&bull; Place a flexible, non-stretch tension-tape midway between the lower margin of the last palpable rib and the top of the iliac crest (hip bone).</p>
-        <p class="text-[var(--muted-foreground)]">&bull; Measure at the end of a normal, relaxed exhalation without sucking in the abdomen.</p>
-        <p class="text-[var(--foreground)] mt-2"><strong>2. Hip Circumference Measurement:</strong></p>
-        <p class="text-[var(--muted-foreground)]">&bull; Wrap the tape horizontally around the maximum circumference of the buttocks / gluteal region.</p>
-        <p class="text-[var(--muted-foreground)]">&bull; Ensure the tape remains perfectly parallel to the floor all the way around.</p>
-        <p class="text-[var(--foreground)] mt-2"><strong>3. Calculation:</strong></p>
-        <p class="text-[var(--muted-foreground)]">&bull; <code>Waist-to-Hip Ratio = Waist Circumference / Hip Circumference</code> (Both in same units).</p>
-      </div>
 
       <h2>Official WHO and International Diabetes Federation (IDF) Risk Thresholds</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Cardiometabolic Risk Level</th>
-              <th class="p-3 text-blue-500 font-bold">Men WHR Range</th>
-              <th class="p-3 text-rose-500 font-bold">Women WHR Range</th>
-              <th class="p-3">Clinical Meaning</th>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Cardiometabolic Risk Level</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Men WHR Range</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">Women WHR Range</th>
+              <th class="p-3 border border-[#e6e6e6]">Clinical Meaning</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)] font-mono">
+          <tbody class="divide-y divide-[#e6e6e6] font-mono">
             <tr>
-              <td class="p-3 font-sans font-semibold text-emerald-500 font-bold">Low Risk (Healthy Gynoid)</td>
-              <td class="p-3 text-emerald-500 font-bold">&le; 0.90</td>
-              <td class="p-3 text-emerald-500 font-bold">&le; 0.80</td>
-              <td class="p-3 font-sans">Optimal visceral fat levels; lowest cardiovascular morbidity</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">Low Risk (Healthy Gynoid)</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&le; 0.90</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&le; 0.80</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Optimal visceral fat levels; lowest cardiovascular morbidity</td>
             </tr>
             <tr>
-              <td class="p-3 font-sans font-semibold text-amber-500 font-bold">Moderate Risk</td>
-              <td class="p-3 text-amber-500 font-bold">0.91 – 0.99</td>
-              <td class="p-3 text-rose-500 font-bold">0.81 – 0.84</td>
-              <td class="p-3 font-sans">Early central fat accumulation; lifestyle intervention recommended</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-amber-600 font-bold">Moderate Risk</td>
+              <td class="p-3 border border-[#e6e6e6] text-amber-600 font-bold">0.91 – 0.99</td>
+              <td class="p-3 border border-[#e6e6e6] text-amber-600 font-bold">0.81 – 0.84</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Early central fat accumulation; lifestyle intervention recommended</td>
             </tr>
             <tr>
-              <td class="p-3 font-sans font-semibold text-rose-500 font-bold">High Risk (Android Obesity)</td>
-              <td class="p-3 text-rose-500 font-bold">&ge; 1.00</td>
-              <td class="p-3 text-rose-500 font-bold">&ge; 0.85</td>
-              <td class="p-3 font-sans text-rose-500">Substantially elevated incidence of Type 2 diabetes, stroke, and myocardial infarction</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-600 font-bold">High Risk (Android Obesity)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">&ge; 1.00</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">&ge; 0.85</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans text-rose-600">Substantially elevated incidence of Type 2 diabetes and heart attacks</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>The INTERHEART Study: Why WHR Outperforms BMI in Heart Attack Prediction</h2>
-      <p>The definitive scientific justification for prioritizing WHR over BMI came from the landmark <strong>INTERHEART study</strong> published in <em>The Lancet</em>. Analyzing 27,098 participants across 52 countries on every inhabited continent, researchers evaluated the statistical power of various anthropometric measures to predict myocardial infarction (acute heart attack).</p>
-      <p>The investigators discovered that across all ethnic groups, regions, and ages:</p>
-      <ul>
-        <li><strong>BMI Showed Weak Association:</strong> Body Mass Index showed only a modest, inconsistent relationship with heart attack risk once other risk factors were controlled.</li>
-        <li><strong>WHR Exhibited a Direct Graded Relationship:</strong> Individuals in the top quintile (highest 20%) of Waist-to-Hip Ratio had a <strong>three-fold higher risk (Odds Ratio = 2.44 to 3.25) of heart attack</strong> compared to the lowest quintile.</li>
-        <li><strong>Population Attributable Risk:</strong> Abdominal obesity measured by WHR accounted for over 24% of all first heart attacks worldwide, second only to abnormal lipid profiles and smoking.</li>
-      </ul>
-
-      <h2>Visceral vs. Subcutaneous Adiposity: Why the Waist Matters</h2>
-      <p>Subcutaneous fat on the hips and thighs serves as an inert energy storage depot that secretes beneficial adipokines such as adiponectin. In contrast, visceral adipose tissue stored deep within the abdominal cavity drains directly into the hepatic portal vein. This floods the liver with free fatty acids, inducing hepatic insulin resistance, driving excessive VLDL production, and releasing systemic inflammatory cytokines (TNF-alpha, IL-6) that accelerate arterial plaque buildup.</p>
-
-      <h2>Waist-to-Hip Ratio (WHR) vs. Waist-to-Height Ratio (WHtR)</h2>
-      <p>While WHR compares waist to hips, clinicians increasingly evaluate the <strong>Waist-to-Height Ratio (WHtR)</strong> in tandem. WHR has a potential limitation: if a person loses visceral fat from their waist while simultaneously losing gluteal muscle from their hips, the calculated ratio may remain unchanged. WHtR circumvents this by using fixed height, providing a stable individual benchmark: keeping waist circumference under half your height (<code>WHtR &lt; 0.50</code>) guarantees low visceral adiposity.</p>
-
-      <h2>Frequently Asked Questions Regarding Waist-to-Hip Ratio</h2>
-      <div class="space-y-4 my-6">
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Can you spot-reduce abdominal visceral fat?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">No individual exercise (such as crunches or abdominal planks) selectively burns abdominal fat. However, because visceral fat has high beta-adrenergic receptor density and rich blood flow, it mobilizes first in response to an overall caloric deficit and aerobic physical activity.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">What if my BMI is normal (22) but my WHR is high (0.95 for a woman)?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">This indicates android central fat deposition (the "skinny-fat" phenotype). You should schedule a fasting blood lipid and glucose check, increase dietary protein, and begin resistance training to replace abdominal fat with lean tissue.</p>
-        </div>
-      </div>
+      <h2>The INTERHEART Study: Why WHR Outperforms BMI</h2>
+      <p>The definitive scientific justification for prioritizing WHR over BMI came from the landmark <strong>INTERHEART study</strong> in <em>The Lancet</em> (27,098 participants across 52 countries). Researchers proved that abdominal obesity measured by Waist-to-Hip Ratio accounts for over <strong>24% of all first heart attacks worldwide</strong>, whereas BMI showed a weak and inconsistent correlation.</p>
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>World Health Organization. <em>Waist circumference and waist-hip ratio: report of a WHO expert consultation.</em> Geneva: WHO, 2011.</li>
-        <li>Yusuf S, Hawken S, Ounpuu S, et al. <em>Obesity and the risk of myocardial infarction in 27,000 participants from 52 countries: a case-control study.</em> The Lancet 2005; 366(9497):1640-1649.</li>
-        <li>Ashwell M, Gibson S. <em>Waist-to-height ratio as an indicator of early health risk: systematic review.</em> BMJ Open 2016; 6:e010159.</li>
+        <li>Yusuf S, Hawken S, Ounpuu S, et al. <em>Obesity and the risk of myocardial infarction in 27,000 participants from 52 countries: a case-control study.</em> The Lancet 2005; 366(9497):1640-1649. PMID: 16271642.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>कमर-कूल्हा अनुपात (WHR): मापन प्रोटोकॉल और हृदय स्वास्थ्य</h2>
+      <p>बॉडी मास इंडेक्स केवल ऊंचाई के अनुपात में कुल वजन बताता है, लेकिन यह नहीं बता पाता कि चर्बी शरीर के किस हिस्से में जमा है। कार्डियोलॉजी में यह सिद्ध हो चुका है कि <strong>चर्बी का वितरण कुल वजन से कहीं अधिक महत्वपूर्ण है</strong>। <strong>कमर-कूल्हा अनुपात (Waist-to-Hip Ratio / WHR)</strong> पेट की आंतरिक चर्बी (एंड्रॉइड/सेब जैसी आकृति) और कूल्हों की चर्बी (गाइनॉइड/नाशपाती जैसी आकृति) के बीच अंतर करने का सबसे सटीक पैमाना है।</p>
+
+      <h2>डब्ल्यूएचओ मापन प्रोटोकॉल (टेप से सही माप कैसे लें?)</h2>
+      <ol class="space-y-2 my-4">
+        <li><strong>कमर का घेरा:</strong> सीधे खड़े होकर सामान्य रूप से सांस बाहर छोड़ें। अपनी सबसे निचली पसली और कूल्हे की हड्डी के ठीक बीच के सबसे संकरे हिस्से पर लचीला टेप लपेटें।</li>
+        <li><strong>कूल्हे का घेरा:</strong> नितंबों (हिप्स) के सबसे चौड़े हिस्से पर टेप को जमीन के बिल्कुल समानांतर रखते हुए मापें।</li>
+        <li><strong>अनुपात की गणना:</strong> <code>WHR = कमर का माप / कूल्हे का माप</code> (दोनों माप एक ही इकाई में होने चाहिए, जैसे सेंटीमीटर)।</li>
+      </ol>
+
+      <h2>विश्व स्वास्थ्य संगठन (WHO) द्वारा निर्धारित जोखिम सीमाएं</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">हृदय-संवहनी जोखिम स्तर</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">पुरुष WHR सीमा</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">महिला WHR सीमा</th>
+              <th class="p-3 border border-[#e6e6e6]">नैदानिक स्वास्थ्य प्रभाव</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6] font-mono">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">कम जोखिम (स्वस्थ गाइनॉइड)</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&le; 0.90</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&le; 0.80</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">विसरल फैट का सुरक्षित स्तर; न्यूनतम हृदय रोग जोखिम</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-amber-600 font-bold">मध्यम जोखिम</td>
+              <td class="p-3 border border-[#e6e6e6] text-amber-600 font-bold">0.91 – 0.99</td>
+              <td class="p-3 border border-[#e6e6e6] text-amber-600 font-bold">0.81 – 0.84</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">पेट में चर्बी का संचय शुरू; खानपान व व्यायाम में सुधार आवश्यक</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-600 font-bold">उच्च जोखिम (एंड्रॉइड मोटापा)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">&ge; 1.00</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">&ge; 0.85</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans text-rose-600">टाइप-2 डायबिटीज, स्ट्रोक और दिल के दौरे का अत्यधिक जोखिम</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>प्रसिद्ध इंटरहार्ट (INTERHEART) अध्ययन के निष्कर्ष</h2>
+      <p>52 देशों के 27,000 से अधिक लोगों पर किए गए प्रतिष्ठित <em>The Lancet</em> के <strong>INTERHEART अध्ययन</strong> ने साबित किया कि दिल के दौरे की भविष्यवाणी करने में बीएमआई की तुलना में कमर-कूल्हा अनुपात कहीं अधिक शक्तिशाली है। शीर्ष 20% WHR वाले व्यक्तियों में दिल का दौरा पड़ने की संभावना सामान्य से <strong>3 गुना अधिक</strong> पाई गई। पेट की भीतरी चर्बी सीधे पोर्टल वेन द्वारा लिवर में फ्री फैटी एसिड छोड़ती है, जिससे धमनियों में सूजन और ब्लॉकेज तेजी से बढ़ता है।</p>
+
+      <h2>वैज्ञानिक संदर्भ</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>World Health Organization. <em>Waist circumference and waist-hip ratio: report of a WHO expert consultation.</em> Geneva: WHO, 2011.</li>
+        <li>Yusuf S, et al. <em>Obesity and the risk of myocardial infarction in 27,000 participants from 52 countries.</em> The Lancet 2005; 366:1640-1649. PMID: 16271642.</li>
       </ul>
 `,
       "es": `
       <h2>Protocolo Oficial de la Relación Cintura-Cadera (RCC)</h2>
-      <p>La RCC evalúa la grasa visceral intraabdominal. La OMS establece como punto de riesgo alto un valor superior a 0.90 en hombres y 0.85 en mujeres.</p>
-    `,
+      <p>La relación cintura-cadera es el estándar epidemiológico para diferenciar la distribución androide (abdominal) de la ginoide (glúteos y muslos). El estudio internacional INTERHEART (The Lancet) demostró que la obesidad abdominal evaluada por la RCC predice el riesgo de infarto de miocardio con mucha mayor precisión que el IMC.</p>
+      <p><strong>Criterios de riesgo de la OMS:</strong> Riesgo elevado a partir de <strong>&ge; 0.90 en hombres</strong> y <strong>&ge; 0.85 en mujeres</strong>.</p>
+`,
       "fr": `
       <h2>Protocole Officiel du Ratio Taille-Hanches (RTH)</h2>
-      <p>Mesure clé de la graisse viscérale péritonéale : un ratio supérieur à 0,90 chez l'homme et 0,85 chez la femme signale un risque cardiométabolique élevé.</p>
-    `,
+      <p>L'étude internationale INTERHEART a prouvé que la graisse abdominale viscérale mesurée par le ratio taille-hanches explique plus de 24% des premiers infarctus du myocarde dans le monde. L'OMS fixe le seuil d'alerte cardiovasculaire à <strong>0,90 chez l'homme</strong> et <strong>0,85 chez la femme</strong>.</p>
+`,
       "de": `
-      <h2>Taille-Hüft-Verhältnis (WHR) nach WHO-Standard</h2>
-      <p>Werte über 0,90 bei Männern und über 0,85 bei Frauen signalisieren gefährliches viszerales Bauchfett mit erhöhtem Infarktrisiko.</p>
-    `,
+      <h2>Taille-Hüft-Verhältnis (WHR): Risikoschwellen nach WHO</h2>
+      <p>Die renommierte INTERHEART-Studie belegte, dass das Taille-Hüft-Verhältnis Herzinfarkte dreifach genauer vorhersagt als der BMI. Werte ab <strong>0,90 bei Männern</strong> und <strong>0,85 bei Frauen</strong> kennzeichnen behandlungsbedürftiges viszerales Bauchfett.</p>
+`,
       "ko": `
-      <h2>허리-엉덩이 둘레 비율(WHR) 공식 측정 프로토콜</h2>
-      <p>WHO 기준 남성 0.90 초과, 여성 0.85 초과 시 복부 내장지방 축적으로 인한 심혈관 질환 고위험군으로 분류됩니다.</p>
-    `,
-      "hi": `
-      <h2>कमर-कूल्हा अनुपात (WHR) निकालने की विधि</h2>
-      <p>डब्ल्यूएचओ के अनुसार पुरुषों में 0.90 और महिलाओं में 0.85 से अधिक अनुपात हृदय रोग और स्ट्रोक के बढ़ते खतरे का संकेत है।</p>
-    `
+      <h2>허리-엉덩이 둘레 비율(WHR)과 심근경색 위험도</h2>
+      <p>52개국 2만 7천 명을 대상으로 한 란셋(Lancet) INTERHEART 연구는 복부 비만을 나타내는 WHR이 단순 BMI보다 심근경색을 3배 더 정확히 예측함을 입증했습니다. WHO 기준치는 <strong>남성 0.90 이하</strong>, <strong>여성 0.80 이하</strong>가 정상입니다.</p>
+`
     }
   },
 
   "ideal-body-weight-formulas": {
     "datePublished": "2026-09-01",
-    "dateModified": "2026-10-25",
+    "dateModified": "2026-10-28",
     "title": {
       "en": "Ideal Body Weight Formulas: Devine, Robinson, Miller & Hamwi Compared",
       "hi": "आदर्श शारीरिक वजन (IBW) फॉर्मूले: डिवाइन, रॉबिन्सन, मिलर व हामवी की तुलना",
@@ -720,108 +761,138 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "en": `
       <h2>The History and Clinical Science of Ideal Body Weight (IBW)</h2>
       <p>In medical pharmacokinetics, toxicology, and nutritional therapy, healthcare professionals frequently need to determine an individual's <strong>Ideal Body Weight (IBW)</strong>. While standard Body Mass Index provides a broad healthy weight range spanning nearly 20 kilograms, clinical situations such as mechanical ventilation tidal volume calculation, chemotherapy dosing, and aminoglycoside antibiotic administration require exact single-number targets based on physiological lung volume and lean tissue distribution.</p>
-      <p>Beginning in the late 20th century, clinical researchers developed mathematical formulas calibrated from historical height-weight tables. Below, we compare the four most recognized clinical equations—Devine, Robinson, Miller, and Hamwi—and explore how they are applied in contemporary medicine.</p>
 
       <h2>The Four Major Clinical Ideal Body Weight Formulas</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Formula</th>
-              <th class="p-3 text-blue-500">Men Equation (Height &gt; 5 ft / 60 inches)</th>
-              <th class="p-3 text-rose-500">Women Equation (Height &gt; 5 ft / 60 inches)</th>
-              <th class="p-3">Clinical Application</th>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Formula</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500">Men Equation (Height &gt; 5 ft / 60 inches)</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500">Women Equation (Height &gt; 5 ft / 60 inches)</th>
+              <th class="p-3 border border-[#e6e6e6]">Clinical Application</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)] font-mono text-xs">
+          <tbody class="divide-y divide-[#e6e6e6] font-mono text-xs">
             <tr>
-              <td class="p-3 font-sans font-semibold">Devine Formula (1974)</td>
-              <td class="p-3 text-blue-500">50.0 kg + 2.3 kg &times; (Height in - 60)</td>
-              <td class="p-3 text-rose-500">45.5 kg + 2.3 kg &times; (Height in - 60)</td>
-              <td class="p-3 font-sans">Universal ICU standard, ventilator tidal volumes (ARDSnet)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-[#464feb]">Devine Formula (1974)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">50.0 kg + 2.3 kg &times; (Height in - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">45.5 kg + 2.3 kg &times; (Height in - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Universal ICU standard, ventilator tidal volumes (ARDSnet)</td>
             </tr>
             <tr>
-              <td class="p-3 font-sans font-semibold">Robinson Formula (1983)</td>
-              <td class="p-3 text-blue-500">52.0 kg + 1.9 kg &times; (Height in - 60)</td>
-              <td class="p-3 text-rose-500">49.0 kg + 1.7 kg &times; (Height in - 60)</td>
-              <td class="p-3 font-sans">Empirical nutritional therapy, slightly higher baseline</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">Robinson Formula (1983)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">52.0 kg + 1.9 kg &times; (Height in - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">49.0 kg + 1.7 kg &times; (Height in - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Empirical nutritional therapy, slightly higher baseline</td>
             </tr>
             <tr>
-              <td class="p-3 font-sans font-semibold">Miller Formula (1983)</td>
-              <td class="p-3 text-blue-500">56.2 kg + 1.41 kg &times; (Height in - 60)</td>
-              <td class="p-3 text-rose-500">53.1 kg + 1.36 kg &times; (Height in - 60)</td>
-              <td class="p-3 font-sans">Adjusts weight curve for shorter adult statures</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">Miller Formula (1983)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">56.2 kg + 1.41 kg &times; (Height in - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">53.1 kg + 1.36 kg &times; (Height in - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Adjusts weight curve for shorter adult statures</td>
             </tr>
             <tr>
-              <td class="p-3 font-sans font-semibold">Hamwi Formula (1964)</td>
-              <td class="p-3 text-blue-500">106 lbs + 6 lbs &times; (Height in - 60)</td>
-              <td class="p-3 text-rose-500">100 lbs + 5 lbs &times; (Height in - 60)</td>
-              <td class="p-3 font-sans">Widely used in United States clinical dietetics</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">Hamwi Formula (1964)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">106 lbs + 6 lbs &times; (Height in - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">100 lbs + 5 lbs &times; (Height in - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Widely used in United States clinical dietetics</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Comparative Calculation Example: 5'10" (70 inches / 178 cm) Adult Male</h2>
-      <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-2">
-        <p class="font-bold text-[var(--accent)]">Side-by-Side Formula Comparison for a 5'10" Male (Inches over 60 = 10):</p>
-        <p class="text-[var(--foreground)]">&bull; <strong>Devine Formula:</strong> 50.0 + (2.3 &times; 10) = <strong>73.0 kg (160.9 lbs)</strong> [BMI: 23.0]</p>
-        <p class="text-[var(--foreground)]">&bull; <strong>Robinson Formula:</strong> 52.0 + (1.9 &times; 10) = <strong>71.0 kg (156.5 lbs)</strong> [BMI: 22.4]</p>
-        <p class="text-[var(--foreground)]">&bull; <strong>Miller Formula:</strong> 56.2 + (1.41 &times; 10) = <strong>70.3 kg (155.0 lbs)</strong> [BMI: 22.2]</p>
-        <p class="text-[var(--foreground)]">&bull; <strong>Hamwi Formula:</strong> 106 + (6 &times; 10) = 166.0 lbs = <strong>75.3 kg</strong> [BMI: 23.8]</p>
-        <p class="text-[var(--foreground)] font-bold mt-2">All four clinical formulas yield targets between 70.3 kg and 75.3 kg, placing the individual firmly within the healthy WHO BMI range (22.2 to 23.8 kg/m²).</p>
-      </div>
-
       <h2>Adjusted Body Weight (AdjBW) for Individuals with Obesity</h2>
-      <p>When an individual weighs significantly above their Ideal Body Weight (BMI &ge; 30 kg/m² or Actual Weight &gt; 120% of IBW), dosing medications based purely on actual total weight causes drug toxicity, while dosing based purely on IBW causes therapeutic underdosing. Clinical pharmacologists calculate <strong>Adjusted Body Weight (AdjBW)</strong> to account for the fact that approximately 40% of excess adipose tissue is physiologically vascularized and receives circulating drug:</p>
-      <div class="my-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm">
+      <p>When an individual weighs significantly above their Ideal Body Weight (BMI &ge; 30 kg/m² or Actual Weight &gt; 120% of IBW), dosing medications based purely on actual total weight causes drug toxicity. Clinical pharmacologists calculate <strong>Adjusted Body Weight (AdjBW)</strong>:</p>
+      <div class="my-4 p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)] font-mono text-sm">
         <code>Adjusted Body Weight (kg) = IBW + 0.40 &times; (Actual Weight - IBW)</code>
       </div>
-      <p>For example, if an adult male with an IBW of 70 kg weighs 120 kg, his Adjusted Body Weight is <code>70 + 0.4 &times; (120 - 70) = 90.0 kg</code>. This 90 kg figure is used for dosing critical medications such as vancomycin, aminoglycosides, and low-molecular-weight heparins.</p>
 
-      <h2>Critical Care: Ventilator Tidal Volumes in Acute Respiratory Distress (ARDS)</h2>
-      <p>One of the most life-critical applications of Ideal Body Weight occurs in the Intensive Care Unit (ICU). During acute respiratory distress syndrome (ARDS), the landmark ARDS Network clinical trial proved that mechanical ventilators must be set to deliver low tidal volumes of <strong>6 mL per kilogram of Predicted/Ideal Body Weight (not actual weight)</strong>. Lungs do not grow larger when a person gains adipose tissue; setting ventilator volumes based on actual weight over-inflates and ruptures alveoli (barotrauma and volutrauma), significantly increasing mortality.</p>
-
-      <h2>Frequently Asked Questions Regarding Ideal Body Weight</h2>
-      <div class="space-y-4 my-6">
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Should an athlete weigh their "Ideal Body Weight"?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">No. IBW formulas predict average population weights with typical muscle mass. Strength athletes and bodybuilders with substantial muscle hypertrophy should not attempt to cut down to IBW, as doing so would require sacrificing healthy skeletal muscle.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Which IBW formula is the most medically authoritative?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">The Devine formula is universally recognized as the clinical standard in critical care medicine, clinical pharmacology, and kidney function estimation (Cockcroft-Gault equation).</p>
-        </div>
-      </div>
+      <h2>Critical Care: Mechanical Ventilation in ARDS</h2>
+      <p>During acute respiratory distress syndrome (ARDS), the ARDS Network clinical trial proved that mechanical ventilators must be set to deliver low tidal volumes of <strong>6 mL per kilogram of Ideal Body Weight (not actual weight)</strong>. Lungs do not expand when a person gains adipose tissue; setting ventilator volumes based on actual weight ruptures alveoli (barotrauma).</p>
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>Devine BJ. <em>Gentamicin therapy.</em> Drug Intell Clin Pharm 1974; 8:650-655.</li>
-        <li>The ARDS Network. <em>Ventilation with lower tidal volumes as compared with traditional tidal volumes for acute lung injury and acute respiratory distress syndrome.</em> N Engl J Med 2000; 342(18):1301-1308.</li>
-        <li>Robinson JD, et al. <em>Determination of ideal body weight for drug dosage calculations.</em> Am J Hosp Pharm 1983; 40(6):1016-1019.</li>
-        <li>Hamwi GJ. <em>Therapy: changing concepts in diabetes mellitus.</em> In: Danowski TS (ed). Diabetes Mellitus: Diagnosis and Treatment. New York: American Diabetes Association, 1964.</li>
+        <li>The ARDS Network. <em>Ventilation with lower tidal volumes for acute lung injury and ARDS.</em> N Engl J Med 2000; 342:1301-1308. PMID: 10793162.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>आदर्श शारीरिक वजन (IBW) का इतिहास और चिकित्सीय महत्व</h2>
+      <p>क्लिनिकल मेडिसिन, आईसीयू क्रिटिकल केयर और फार्माकोलॉजी में डॉक्टरों को किसी मरीज के <strong>आदर्श शारीरिक वजन (Ideal Body Weight / IBW)</strong> की सटीक गणना करनी होती है। जहां बीएमआई लगभग 15 से 20 किलोग्राम की एक विस्तृत वजन सीमा देता है, वहीं अस्पताल में वेंटिलेटर की सेटिंग्स, कीमोथेरेपी और एंटीबायोटिक्स (जैसे वैनकोमाइसिन व जेंटामाइसिन) की सटीक खुराक तय करने के लिए मरीज के फेफड़ों और सक्रिय अंगों के आधार पर एक निश्चित वजन आंकड़े की आवश्यकता होती है।</p>
+
+      <h2>आदर्श वजन के चार प्रमुख ऐतिहासिक और नैदानिक सूत्र</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">सूत्र का नाम</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500">पुरुष समीकरण (5 फीट से अधिक ऊंचाई पर)</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500">महिला समीकरण (5 फीट से अधिक ऊंचाई पर)</th>
+              <th class="p-3 border border-[#e6e6e6]">प्रमुख चिकित्सीय उपयोग</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6] font-mono text-xs">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-[#464feb]">डिवाइन फॉर्मूला (Devine 1974)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">50.0 kg + 2.3 kg &times; (इंच - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">45.5 kg + 2.3 kg &times; (इंच - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">विश्वव्यापी आईसीयू मानक, वेंटिलेटर टाइडल वॉल्यूम (ARDSnet)</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">रॉबिन्सन फॉर्मूला (Robinson 1983)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">52.0 kg + 1.9 kg &times; (इंच - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">49.0 kg + 1.7 kg &times; (इंच - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">नैदानिक पोषण और आहार योजना निर्धारण</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">मिलर फॉर्मूला (Miller 1983)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">56.2 kg + 1.41 kg &times; (इंच - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">53.1 kg + 1.36 kg &times; (इंच - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">कम ऊंचाई वाले वयस्कों के लिए संशोधित वक्र</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">हामवी फॉर्मूला (Hamwi 1964)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">106 lbs + 6 lbs &times; (इंच - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">100 lbs + 5 lbs &times; (इंच - 60)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">अमेरिकी क्लिनिकल डायटेटिक्स में व्यापक रूप से प्रचलित</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>मोटे व्यक्तियों के लिए समायोजित शारीरिक वजन (Adjusted Body Weight)</h2>
+      <p>जब किसी मरीज का वास्तविक वजन उसके आदर्श वजन से 20% अधिक या बीएमआई 30 से अधिक होता है, तो दवा की खुराक कुल वजन पर देने से विषाक्तता (toxicity) हो सकती है। इसलिए फार्माकोलॉजिस्ट <strong>एडजस्टेड बॉडी वेट (AdjBW)</strong> की गणना करते हैं:</p>
+      <div class="my-4 p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)] font-mono text-sm">
+        <code>एडजस्टेड वजन (kg) = IBW + 0.40 &times; (वास्तविक वजन - IBW)</code>
+      </div>
+      <p>उदाहरण के लिए, यदि 70 किग्रा आदर्श वजन वाले व्यक्ति का वास्तविक वजन 120 किग्रा है, तो उसका समायोजित वजन <code>70 + 0.4 &times; (120 - 70) = 90.0 किग्रा</code> होगा, जिसका उपयोग एंटीबायोटिक खुराक के लिए किया जाता है।</p>
+
+      <h2>आईसीयू में वेंटिलेटर सेटिंग्स: फेफड़ों की सुरक्षा</h2>
+      <p>तीव्र श्वसन संकट (ARDS) के दौरान, प्रसिद्ध ARDS Network परीक्षण ने साबित किया कि मैकेनिकल वेंटिलेटर को वास्तविक वजन के बजाय <strong>आदर्श वजन के प्रति किलोग्राम केवल 6 मिलीलीटर टाइडल वॉल्यूम</strong> पर सेट किया जाना चाहिए। वजन बढ़ने पर फेफड़े बड़े नहीं होते; वास्तविक वजन पर वेंटिलेटर चलाने से फेफड़ों की वायु-थैलियां फट सकती हैं (barotrauma)।</p>
+
+      <h2>वैज्ञानिक संदर्भ</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Devine BJ. <em>Gentamicin therapy.</em> Drug Intell Clin Pharm 1974; 8:650-655.</li>
+        <li>The ARDS Network. <em>Ventilation with lower tidal volumes for acute lung injury and ARDS.</em> N Engl J Med 2000; 342:1301-1308. PMID: 10793162.</li>
       </ul>
 `,
       "es": `
       <h2>Fórmulas Clínicas de Peso Corporal Ideal (IBW)</h2>
-      <p>Las fórmulas de Devine, Robinson, Miller y Hamwi permiten calcular el peso objetivo para dosificación farmacológica y ajuste de ventilación mecánica.</p>
-    `,
+      <p>Las fórmulas de <strong>Devine (1974)</strong>, <strong>Robinson (1983)</strong>, <strong>Miller (1983)</strong> y <strong>Hamwi (1964)</strong> son la referencia en farmacocinética para calcular la dosis de antibióticos y el volumen corriente en ventilación mecánica (ARDSnet: 6 mL/kg de peso ideal, no real). En pacientes con obesidad, se aplica el <strong>peso corporal ajustado (AdjBW = IBW + 0.40 &times; [Peso Real - IBW])</strong>.</p>
+`,
       "fr": `
-      <h2>Les 4 Formules Médicales du Poids Idéal (IBW)</h2>
-      <p>La formule de Devine (1974) reste le standard hospitalier mondial pour le calcul des posologies d'antibiotiques et les réglages respiratoires.</p>
-    `,
+      <h2>Formules du Poids Idéal Médical (IBW)</h2>
+      <p>La formule de Devine (1974) est le standard mondial en réanimation pour le réglage des volumes des respirateurs artificiels et l'ajustement posologique des médicaments à marge thérapeutique étroite.</p>
+`,
       "de": `
-      <h2>Klinische Formeln zur Ermittlung des Idealgewichts</h2>
-      <p>Die Devine-Formel bildet seit 1974 die weltweite Referenz in Intensivmedizin und Pharmakokinetik.</p>
-    `,
+      <h2>Klinische Idealgewichtsformeln im Vergleich</h2>
+      <p>Die Devine-Formel dient seit 1974 als intensivmedizinischer Standard für Beatmungsvolumina (6 ml/kg Idealgewicht) und das korrigierte Körpergewicht bei Adipositas.</p>
+`,
       "ko": `
-      <h2>임상 투약을 위한 이상 체중(IBW) 4대 공식</h2>
-      <p>Devine 공식은 전 세계 중환자의학 및 약동학에서 표준 지표로 활용되며, 비만 환자의 경우 조정 체중(AdjBW)을 함께 계산합니다.</p>
-    `,
-      "hi": `
-      <h2>आदर्श शारीरिक वजन (IBW) के 4 प्रमुख फॉर्मूले</h2>
-      <p>डिवाइन फॉर्मूला अस्पतालों में दवाओं की सटीक खुराक और वेंटिलेटर सेटिंग्स के लिए दुनिया भर में सबसे अधिक उपयोग किया जाने वाला पैमाना है।</p>
-    `
+      <h2>임상 투약 및 중환자 관리를 위한 이상 체중(IBW)</h2>
+      <p>Devine(1974), Robinson(1983), Miller(1983), Hamwi(1964) 공식 중 Devine 공식이 인공호흡기 설정(이상 체중 kg당 6mL) 및 비만 환자의 조정 체중(AdjBW) 산출에 표준으로 사용됩니다.</p>
+`
     }
   }
 };

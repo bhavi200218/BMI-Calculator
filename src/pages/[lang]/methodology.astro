@@ -10,6 +10,16 @@ export function getStaticPaths() {
 
 const { lang = 'en' } = Astro.params;
 
+interface MethodologyItem {
+  name: string;
+  slug: string;
+  formula: Record<string, string>;
+  source: Record<string, string>;
+  inputs: Record<string, string>;
+  output: Record<string, string>;
+  limitations: Record<string, string>;
+}
+
 const i18nData: Record<string, {
   title: string;
   description: string;
@@ -29,532 +39,1395 @@ const i18nData: Record<string, {
   inputsLabel: string;
   outputLabel: string;
   limitationsLabel: string;
+  tableColTool: string;
+  tableColFormula: string;
+  tableColSource: string;
+  tableColInputs: string;
+  tableColOutputs: string;
+  tableColLimitations: string;
+  studiesBadge: string;
+  tableViewTitle: string;
+  tableViewDesc: string;
 }> = {
-  en: {
-    title: "Calculator Methodology & Formulas | Real BMI",
-    description: "Comprehensive methodology, published mathematical formulas, WHO and CDC citations, inputs, outputs, and limitations for every calculator on Real BMI.",
-    eyebrow: "PRODUCT TRANSPARENCY & METHODOLOGY",
-    pageTitle: "Calculator Methodology & Calculation Engine",
-    pageDesc: "Every calculator on Real BMI is built directly on published mathematical equations, public health reference data, and transparent algorithms.",
-    returnLabel: "Home",
-    statementTitle: "Independent Calculator Architecture",
-    statementDesc: "Real BMI is an independent web application created and maintained by the Real BMI Editorial & Health Engineering Team. Rather than relying on generic black-box scripts, every tool on this site is documented below with its exact formula, source authority, input parameters, and inherent measurement limitations.",
-    pillars: [
+  "en": {
+    "title": "Calculator Methodology & Formulas | Real BMI",
+    "description": "Comprehensive methodology, published mathematical formulas, WHO and CDC citations, inputs, outputs, and limitations for every calculator on Real BMI.",
+    "eyebrow": "PRODUCT TRANSPARENCY & METHODOLOGY",
+    "pageTitle": "Calculator Methodology & Calculation Engine",
+    "pageDesc": "Every calculator on Real BMI is built directly on published mathematical equations, public health reference data, and transparent algorithms.",
+    "returnLabel": "Home",
+    "statementTitle": "Independent Calculator Architecture",
+    "statementDesc": "Real BMI is an independent web application created and maintained by the Real BMI Editorial & Health Engineering Team. The exact formula, source authority, input parameters, and limitations for each tool are documented below.",
+    "pillars": [
       {
-        title: "Documented Formulas",
-        desc: "All calculations use established peer-reviewed literature and published equations (Mifflin-St Jeor, Boer, Devine, US Navy Logarithmic)."
+        "title": "Documented Formulas",
+        "desc": "All calculations use peer-reviewed research and published equations (Mifflin-St Jeor, Boer, Devine, US Navy)."
       },
       {
-        title: "Reference Standards",
-        desc: "Outputs are evaluated against official population benchmarks from the World Health Organization (WHO) and Centers for Disease Control (CDC)."
+        "title": "Official Reference Standards",
+        "desc": "Results are evaluated against WHO and CDC population reference standards."
       },
       {
-        title: "Local On-Device Execution",
-        desc: "Calculator inputs are computed instantly in your browser JavaScript environment — no health metrics are stored on external databases."
+        "title": "Client-Side Execution",
+        "desc": "Calculator inputs are processed locally in your browser — no health data is transmitted to or stored on our servers."
       },
       {
-        title: "Transparent Limitations",
-        desc: "Every calculator explicitly states what it measures and what it cannot measure, avoiding misleading clinical claims."
+        "title": "Transparent Limitations",
+        "desc": "Each tool clearly states what it measures and what it does not, preventing misleading health claims."
       }
     ],
-    matrixEyebrow: "Systematic Reference Matrix",
-    matrixTitle: "Complete Calculator Methodology Table",
-    matrixDesc: "Review the equations, data sources, inputs, outputs, and measurement boundaries for each calculator tool.",
-    openTool: "Open Tool",
-    equationLabel: "Mathematical Equation",
-    sourceLabel: "Primary Source Authority",
-    inputsLabel: "Input Variables:",
-    outputLabel: "Output Metric:",
-    limitationsLabel: "Primary Limitation:"
+    "matrixEyebrow": "SYSTEMATIC REFERENCE MATRIX",
+    "matrixTitle": "Comprehensive Calculator Methodology Matrix",
+    "matrixDesc": "Review the equation, data source, inputs, outputs, and limitations for each calculator tool.",
+    "openTool": "Open Tool",
+    "equationLabel": "Mathematical Equation",
+    "sourceLabel": "Primary Source Authority",
+    "inputsLabel": "Input Variables:",
+    "outputLabel": "Output Metrics:",
+    "limitationsLabel": "Clinical Limitations:",
+    "tableColTool": "Calculator Tool",
+    "tableColFormula": "Mathematical Formula / Model",
+    "tableColSource": "Clinical Reference Authority",
+    "tableColInputs": "Input Variables",
+    "tableColOutputs": "Output Metrics",
+    "tableColLimitations": "Clinical Limitations",
+    "studiesBadge": "15 Indexed Landmark Studies",
+    "tableViewTitle": "Executive Algorithm & Formula Reference Table",
+    "tableViewDesc": "Comprehensive cross-reference of all 25 computational health tools on Real BMI:"
   },
-  es: {
-    title: "Metodología y Fórmulas de las Calculadoras | Real BMI",
-    description: "Metodología completa, ecuaciones matemáticas publicadas, citas de la OMS y CDC, entradas, salidas y limitaciones para todas las calculadoras de Real BMI.",
-    eyebrow: "TRANSPARENCIA Y METODOLOGÍA DEL PRODUCTO",
-    pageTitle: "Metodología de las Calculadoras y Motor de Cálculo",
-    pageDesc: "Cada calculadora en Real BMI se basa directamente en ecuaciones matemáticas publicadas, datos de referencia de salud pública y algoritmos transparentes.",
-    returnLabel: "Inicio",
-    statementTitle: "Arquitectura Independiente de Calculadoras",
-    statementDesc: "Real BMI es una aplicación web independiente creada y mantenida por el equipo editorial y de ingeniería de Real BMI. Cada herramienta de este sitio está documentada a continuación con su fórmula exacta, autoridad de fuente, parámetros de entrada y limitaciones de medición inherentes.",
-    pillars: [
+  "hi": {
+    "title": "कैलकुलेटर पद्धति एवं सूत्र | Real BMI",
+    "description": "विश्व स्वास्थ्य संगठन (WHO) व सीडीसी मानकों, गणितीय समीकरणों, इनपुट-आउटपुट चरों और सीमाओं सहित Real BMI कैलकुलेटरों की संपूर्ण पारदर्शी कार्यप्रणाली।",
+    "eyebrow": "उत्पाद पारदर्शिता एवं गणना पद्धति",
+    "pageTitle": "कैलकुलेटर पद्धति एवं गणना इंजन",
+    "pageDesc": "Real BMI का प्रत्येक कैलकुलेटर प्रकाशित गणितीय समीकरणों, सार्वजनिक स्वास्थ्य संदर्भ मानकों और पारदर्शी एल्गोरिदम पर आधारित है।",
+    "returnLabel": "होम",
+    "statementTitle": "स्वतंत्र कैलकुलेटर संरचना",
+    "statementDesc": "Real BMI एक स्वतंत्र वेब एप्लिकेशन है जिसे Real BMI संपादकीय एवं हेल्थ इंजीनियरिंग टीम द्वारा बनाया और संचालित किया जाता है। प्रत्येक उपकरण का सटीक सूत्र, स्रोत प्राधिकरण, इनपुट पैरामीटर और सीमाएं नीचे पारदर्शी रूप से दर्ज हैं।",
+    "pillars": [
       {
-        title: "Fórmulas Documentadas",
-        desc: "Todos los cálculos utilizan literatura revisada por pares y ecuaciones publicadas (Mifflin-St Jeor, Boer, Devine, Marina de EE. UU.)."
+        "title": "प्रलेखित वैज्ञानिक सूत्र",
+        "desc": "सभी गणनाएं सहकर्मी-समीक्षित शोध और प्रकाशित समीकरणों (Mifflin-St Jeor, Boer, Devine, US Navy) का उपयोग करती हैं।"
       },
       {
-        title: "Estándares de Referencia",
-        desc: "Los resultados se comparan con puntos de referencia oficiales de la Organización Mundial de la Salud (OMS) y los CDC."
+        "title": "आधिकारिक संदर्भ मानक",
+        "desc": "परिणामों का मूल्यांकन विश्व स्वास्थ्य संगठन (WHO) और सीडीसी (CDC) के जनसंख्या संदर्भ मानकों के आधार पर किया जाता है।"
       },
       {
-        title: "Ejecución Local en el Dispositivo",
-        desc: "Las entradas se calculan al instante en tu navegador mediante JavaScript; ninguna métrica se almacena en bases de datos externas."
+        "title": "डिवाइस पर स्थानीय गणना",
+        "desc": "कैलकुलेटर इनपुट आपके ब्राउज़र में सुरक्षित रूप से प्रोसेस होते हैं — कोई भी स्वास्थ्य डेटा बाहरी सर्वर पर संग्रहीत नहीं होता।"
       },
       {
-        title: "Limitaciones Transparentes",
-        desc: "Cada calculadora indica explícitamente lo que mide y lo que no puede medir, evitando afirmaciones clínicas engañosas."
+        "title": "पारदर्शी सीमाएं",
+        "desc": "प्रत्येक उपकरण स्पष्ट रूप से बताता है कि वह क्या मापता है और क्या नहीं, जिससे भ्रामक दावों से बचा जा सके।"
       }
     ],
-    matrixEyebrow: "Matriz de Referencia Sistemática",
-    matrixTitle: "Tabla Completa de Metodología de Calculadoras",
-    matrixDesc: "Consulta las ecuaciones, fuentes de datos, entradas, salidas y límites de medición de cada herramienta.",
-    openTool: "Abrir Herramienta",
-    equationLabel: "Ecuación Matemática",
-    sourceLabel: "Autoridad de Fuente Principal",
-    inputsLabel: "Variables de Entrada:",
-    outputLabel: "Métrica de Salida:",
-    limitationsLabel: "Limitación Principal:"
+    "matrixEyebrow": "व्यवस्थित संदर्भ तालिका",
+    "matrixTitle": "संपूर्ण कैलकुलेटर पद्धति तालिका",
+    "matrixDesc": "प्रत्येक कैलकुलेटर उपकरण के समीकरण, डेटा स्रोत, इनपुट, आउटपुट और सीमाओं की समीक्षा करें।",
+    "openTool": "टूल खोलें",
+    "equationLabel": "गणितीय समीकरण",
+    "sourceLabel": "प्रमुख स्रोत संदर्भ",
+    "inputsLabel": "इनपुट चर:",
+    "outputLabel": "आउटपुट परिणाम:",
+    "limitationsLabel": "मुख्य सीमा:",
+    "tableColTool": "कैलकुलेटर उपकरण",
+    "tableColFormula": "गणितीय सूत्र एवं मॉडल",
+    "tableColSource": "प्रमुख नैदानिक संदर्भ संस्था",
+    "tableColInputs": "इनपुट चर (मान)",
+    "tableColOutputs": "प्राप्त परिणाम (आउटपुट)",
+    "tableColLimitations": "नैदानिक एवं शारीरिक सीमाएं",
+    "studiesBadge": "15 अनुक्रमित ऐतिहासिक अध्ययन",
+    "tableViewTitle": "कार्यकारी एल्गोरिदम एवं सूत्र संदर्भ तालिका",
+    "tableViewDesc": "Real BMI पर उपलब्ध समस्त 25 स्वास्थ्य गणना उपकरणों का विस्तृत संदर्भ मैट्रिक्स:"
   },
-  fr: {
-    title: "Méthodologie et Formules des Calculateurs | Real BMI",
-    description: "Méthodologie détaillée, formules mathématiques publiées, références OMS et CDC, variables d'entrée, métriques de sortie et limites des outils Real BMI.",
-    eyebrow: "TRANSPARENCE ET MÉTHODOLOGIE DU PRODUIT",
-    pageTitle: "Méthodologie des Calculateurs et Moteur de Calcul",
-    pageDesc: "Chaque calculateur sur Real BMI repose directement sur des équations mathématiques publiées, des données de référence de santé publique et des algorithmes transparents.",
-    returnLabel: "Accueil",
-    statementTitle: "Architecture Indépendante des Calculateurs",
-    statementDesc: "Real BMI est une application web indépendante créée et maintenue par l'équipe éditoriale et technique de Real BMI. Chaque outil de ce site est documenté ci-dessous avec sa formule exacte, son autorité de source, ses paramètres et ses limites.",
-    pillars: [
+  "es": {
+    "title": "Metodología y Fórmulas de las Calculadoras | Real BMI",
+    "description": "Metodología completa, fórmulas matemáticas publicadas, citas de la OMS y los CDC, entradas, salidas y limitaciones de cada calculadora de Real BMI.",
+    "eyebrow": "TRANSPARENCIA DEL PRODUCTO Y METODOLOGÍA",
+    "pageTitle": "Metodología de las Calculadoras y Motor de Cálculo",
+    "pageDesc": "Cada calculadora de Real BMI se basa directamente en ecuaciones matemáticas publicadas, datos de referencia de salud pública y algoritmos transparentes.",
+    "returnLabel": "Inicio",
+    "statementTitle": "Arquitectura de Calculadoras Independientes",
+    "statementDesc": "Real BMI es una aplicación web independiente creada y mantenida por el equipo editorial y de ingeniería de la salud de Real BMI. A continuación se documentan la fórmula exacta, la autoridad de origen, los parámetros de entrada y las limitaciones de cada herramienta.",
+    "pillars": [
       {
-        title: "Formules Documentées",
-        desc: "Tous les calculs utilisent la littérature scientifique évaluée par des pairs et des équations publiées (Mifflin-St Jeor, Boer, Devine, US Navy)."
+        "title": "Fórmulas Documentadas",
+        "desc": "Todos los cálculos utilizan investigaciones revisadas por pares y ecuaciones publicadas (Mifflin-St Jeor, Boer, Devine, US Navy)."
       },
       {
-        title: "Normes de Référence",
-        desc: "Les résultats sont évalués par rapport aux repères officiels de l'Organisation Mondiale de la Santé (OMS) et du CDC."
+        "title": "Estándares Oficiales de Referencia",
+        "desc": "Los resultados se evalúan según los estándares de referencia poblacional de la OMS y los CDC."
       },
       {
-        title: "Exécution Locale sur l'Appareil",
-        desc: "Les données sont calculées instantanément dans votre navigateur via JavaScript — aucune donnée de santé n'est stockée en ligne."
+        "title": "Ejecución del Lado del Cliente",
+        "desc": "Las entradas de las calculadoras se procesan localmente en su navegador; no se transmiten ni almacenan datos de salud en nuestros servidores."
       },
       {
-        title: "Limites Transparentes",
-        desc: "Chaque calculateur précise clairement ce qu'il mesure et ce qu'il ne mesure pas, sans prétention clinique abusive."
+        "title": "Limitaciones Transparentes",
+        "desc": "Cada herramienta establece claramente qué mide y qué no, evitando afirmaciones de salud engañosas."
       }
     ],
-    matrixEyebrow: "Matrice de Référence Systématique",
-    matrixTitle: "Tableau Complet de la Méthodologie des Outils",
-    matrixDesc: "Examinez les équations, sources de données, variables d'entrée, résultats et limites de chaque outil.",
-    openTool: "Ouvrir l'Outil",
-    equationLabel: "Équation Mathématique",
-    sourceLabel: "Autorité de la Source Principale",
-    inputsLabel: "Variables d'Entrée :",
-    outputLabel: "Métrique de Sortie :",
-    limitationsLabel: "Limite Principale :"
+    "matrixEyebrow": "MATRIZ SISTEMÁTICA DE REFERENCIA",
+    "matrixTitle": "Matriz Completa de Metodología de las Calculadoras",
+    "matrixDesc": "Revise la ecuación, la fuente de datos, las entradas, las salidas y las limitaciones de cada herramienta de cálculo.",
+    "openTool": "Abrir Herramienta",
+    "equationLabel": "Ecuación Matemática",
+    "sourceLabel": "Autoridad de Origen Principal",
+    "inputsLabel": "Variables de Entrada:",
+    "outputLabel": "Métricas de Salida:",
+    "limitationsLabel": "Limitaciones Clínicas:",
+    "tableColTool": "Herramienta de Cálculo",
+    "tableColFormula": "Fórmula Matemática / Modelo",
+    "tableColSource": "Autoridad Clínica de Referencia",
+    "tableColInputs": "Variables de Entrada",
+    "tableColOutputs": "Métricas de Salida",
+    "tableColLimitations": "Limitaciones Clínicas",
+    "studiesBadge": "15 Estudios Indexados de Referencia",
+    "tableViewTitle": "Tabla Ejecutiva de Fórmulas y Algoritmos",
+    "tableViewDesc": "Referencia comparativa completa de las 25 herramientas de salud digital de Real BMI:"
   },
-  de: {
-    title: "Rechner-Methodik & Formeln | Real BMI",
-    description: "Umfassende Methodik, publizierte mathematische Formeln, WHO- und CDC-Zitate, Eingabewerte, Ausgabe-Metriken und Grenzen aller Rechner auf Real BMI.",
-    eyebrow: "PRODUKTTRANSPARENZ & METHODIK",
-    pageTitle: "Rechner-Methodik & Berechnungs-Engine",
-    pageDesc: "Jeder Rechner auf Real BMI basiert direkt auf veröffentlichten mathematischen Gleichungen, Referenzdaten der öffentlichen Gesundheit und transparenten Algorithmen.",
-    returnLabel: "Startseite",
-    statementTitle: "Unabhängige Rechner-Architektur",
-    statementDesc: "Real BMI ist eine unabhängige Webanwendung, die vom redaktionellen und technischen Team von Real BMI entwickelt und betreut wird. Jedes Werkzeug ist unten mit seiner exakten Formel, Quellautorität, Eingabeparametern und Messgrenzen dokumentiert.",
-    pillars: [
+  "fr": {
+    "title": "Méthodologie et Formules des Calculateurs | Real BMI",
+    "description": "Méthodologie complète, formules mathématiques publiées, citations de l'OMS et des CDC, entrées, sorties et limites de chaque calculateur sur Real BMI.",
+    "eyebrow": "TRANSPARENCE DU PRODUIT ET MÉTHODOLOGIE",
+    "pageTitle": "Méthodologie des Calculateurs et Moteur de Calcul",
+    "pageDesc": "Chaque calculateur sur Real BMI repose directement sur des équations mathématiques publiées, des données de référence de santé publique et des algorithmes transparents.",
+    "returnLabel": "Accueil",
+    "statementTitle": "Architecture des Calculateurs Indépendants",
+    "statementDesc": "Real BMI est une application web indépendante conçue et maintenue par l'équipe éditoriale et d'ingénierie santé de Real BMI. La formule exacte, la source faisant autorité, les paramètres d'entrée et les limites de chaque outil sont documentés ci-dessous.",
+    "pillars": [
       {
-        title: "Dokumentierte Formeln",
-        desc: "Alle Berechnungen basieren auf wissenschaftlicher Fachliteratur und publizierten Gleichungen (Mifflin-St Jeor, Boer, Devine, US Navy)."
+        "title": "Formules Documentées",
+        "desc": "Tous les calculs utilisent des recherches évaluées par des pairs et des équations publiées (Mifflin-St Jeor, Boer, Devine, US Navy)."
       },
       {
-        title: "Referenzstandards",
-        desc: "Ergebnisse werden anhand offizieller Bevölkerungs-Benchmarks der Weltgesundheitsorganisation (WHO) und der CDC bewertet."
+        "title": "Normes Officielles de Référence",
+        "desc": "Les résultats sont évalués par rapport aux normes de référence de l'OMS et des CDC."
       },
       {
-        title: "Lokale Ausführung auf dem Gerät",
-        desc: "Eingaben werden direkt im Browser über JavaScript verarbeitet — keine Speicherung auf externen Servern."
+        "title": "Exécution Côté Client",
+        "desc": "Les données saisies sont traitées localement dans votre navigateur — aucune donnée de santé n'est transmise ni stockée sur nos serveurs."
       },
       {
-        title: "Transparente Grenzen",
-        desc: "Jeder Rechner benennt klar, was er messen kann und was nicht, um irreführende klinische Aussagen zu vermeiden."
+        "title": "Limites Transparentes",
+        "desc": "Chaque outil indique clairement ce qu'il mesure et ce qu'il ne mesure pas, évitant ainsi toute allégation de santé trompeuse."
       }
     ],
-    matrixEyebrow: "Systematische Referenzmatrix",
-    matrixTitle: "Vollständige Tabelle der Rechner-Methodik",
-    matrixDesc: "Überprüfen Sie Formeln, Datenquellen, Eingaben, Ausgaben und Grenzen für jedes Rechner-Tool.",
-    openTool: "Tool Öffnen",
-    equationLabel: "Mathematische Formel",
-    sourceLabel: "Primäre Quellautorität",
-    inputsLabel: "Eingabevariablen:",
-    outputLabel: "Ausgabemetrik:",
-    limitationsLabel: "Primäre Einschränkung:"
+    "matrixEyebrow": "MATRICE DE RÉFÉRENCE SYSTÉMATIQUE",
+    "matrixTitle": "Matrice Méthodologique Complète des Calculateurs",
+    "matrixDesc": "Consultez l'équation, la source des données, les entrées, les sorties et les limites de chaque outil de calcul.",
+    "openTool": "Ouvrir l'Outil",
+    "equationLabel": "Équation Mathématique",
+    "sourceLabel": "Autorité Source Principale",
+    "inputsLabel": "Variables d'Entrée :",
+    "outputLabel": "Mesures Obtenues :",
+    "limitationsLabel": "Limites Physiologiques :",
+    "tableColTool": "Outil de Calcul",
+    "tableColFormula": "Formule Mathématique / Modèle",
+    "tableColSource": "Autorité Clinique de Référence",
+    "tableColInputs": "Variables d'Entrée",
+    "tableColOutputs": "Mesures Obtenues (Sortie)",
+    "tableColLimitations": "Limites Physiologiques",
+    "studiesBadge": "15 Études de Référence Indexées",
+    "tableViewTitle": "Tableau Récapitulatif des Algorithmes et Formules",
+    "tableViewDesc": "Référence croisée complète des 25 outils de santé computationnelle de Real BMI :"
   },
-  ko: {
-    title: "계산 방법론 및 공식 | Real BMI",
-    description: "세계보건기구(WHO) 및 CDC 출처 지침, 공표된 의학 공식, 입력 변수, 산출 지표 및 과학적 측정 한계점을 포함한 Real BMI 전체 건강 계산기 방법론 및 연산 엔진 종합 안내. 100% 무료 브라우저 안전 연산과 투명하고 신뢰할 수 있는 계산 알고리즘 안내.",
-    eyebrow: "제품 투명성 및 산출 방법론",
-    pageTitle: "계산 방법론 및 연산 엔진 안내",
-    pageDesc: "Real BMI의 모든 계산기는 공표된 학술 공식, 공중 보건 참고 표준 데이터 및 투명한 알고리즘을 바탕으로 제작되었습니다.",
-    returnLabel: "홈",
-    statementTitle: "독립적 계산기 아키텍처",
-    statementDesc: "Real BMI는 Real BMI 편집 및 헬스 엔지니어링 팀이 제작하고 운영하는 독립 웹 애플리케이션입니다. 모든 도구는 정확한 공식, 출처 권위, 입력 변수 및 측정 한계와 함께 명확히 문서화되어 있습니다.",
-    pillars: [
+  "de": {
+    "title": "Methodik und Formeln der Rechner | Real BMI",
+    "description": "Umfassende Methodik, veröffentlichte mathematische Formeln, WHO- und CDC-Zitate, Eingaben, Ausgaben und Einschränkungen für jeden Rechner auf Real BMI.",
+    "eyebrow": "PRODUKTTRANSPARENZ & METHODIK",
+    "pageTitle": "Rechner-Methodik & Berechnungs-Engine",
+    "pageDesc": "Jeder Rechner auf Real BMI basiert direkt auf veröffentlichten mathematischen Gleichungen, Referenzdaten des öffentlichen Gesundheitswesens und transparenten Algorithmen.",
+    "returnLabel": "Startseite",
+    "statementTitle": "Unabhängige Rechner-Architektur",
+    "statementDesc": "Real BMI ist eine unabhängige Webanwendung, die vom Real BMI Redaktions- und Gesundheits-Engineering-Team entwickelt und gepflegt wird. Die genaue Formel, die maßgebliche Quelle, die Eingabeparameter und die Einschränkungen für jedes Tool sind unten dokumentiert.",
+    "pillars": [
       {
-        title: "문서화된 학술 공식",
-        desc: "모든 연산은 피어 리뷰를 거친 연구 문헌 및 공표된 공식(Mifflin-St Jeor, Boer, Devine, 미 해군 공식)을 사용합니다."
+        "title": "Dokumentierte Formeln",
+        "desc": "Alle Berechnungen basieren auf peer-reviewter Forschung und veröffentlichten Formeln (Mifflin-St Jeor, Boer, Devine, US Navy)."
       },
       {
-        title: "공식 참고 표준",
-        desc: "산출 결과는 세계보건기구(WHO) 및 미국 질병통제예방센터(CDC)의 공중 보건 기준치와 대조됩니다."
+        "title": "Offizielle Referenzstandards",
+        "desc": "Die Ergebnisse werden anhand von Populationsreferenzstandards der WHO und CDC bewertet."
       },
       {
-        title: "기기 내 로컬 연산",
-        desc: "입력된 수치는 브라우저 JavaScript 환경에서 즉시 연산되며 외부 데이터베이스에 저장되지 않습니다."
+        "title": "Client-Side-Ausführung",
+        "desc": "Rechnereingaben werden lokal in Ihrem Browser verarbeitet — es werden keine Gesundheitsdaten an unsere Server übertragen oder dort gespeichert."
       },
       {
-        title: "투명한 측정 한계",
-        desc: "오해의 소지가 있는 임상적 주장을 지양하고, 각 도구가 측정할 수 있는 범위와 한계를 명확히 밝힙니다."
+        "title": "Transparente Einschränkungen",
+        "desc": "Jedes Tool gibt klar an, was es misst und was nicht, um irreführende Gesundheitsversprechen zu vermeiden."
       }
     ],
-    matrixEyebrow: "체계적 참고 매트릭스",
-    matrixTitle: "전체 계산기 방법론 종합 안내표",
-    matrixDesc: "각 계산 도구의 수학 공식, 출처 데이터, 입력 변수, 산출 결과 및 측정 한계를 확인하세요.",
-    openTool: "도구 열기",
-    equationLabel: "수학적 공식",
-    sourceLabel: "주요 출처 기관",
-    inputsLabel: "입력 변수:",
-    outputLabel: "산출 지표:",
-    limitationsLabel: "주요 한계점:"
+    "matrixEyebrow": "SYSTEMATISCHE REFERENZMATRIX",
+    "matrixTitle": "Umfassende Rechner-Methodik-Matrix",
+    "matrixDesc": "Überprüfen Sie Gleichung, Datenquelle, Eingaben, Ausgaben und Einschränkungen für jedes Berechnungstool.",
+    "openTool": "Tool öffnen",
+    "equationLabel": "Mathematische Gleichung",
+    "sourceLabel": "Primäre Referenzbehörde",
+    "inputsLabel": "Eingabevariablen:",
+    "outputLabel": "Ausgabewerte:",
+    "limitationsLabel": "Klinische Einschränkungen:",
+    "tableColTool": "Berechnungstool",
+    "tableColFormula": "Mathematische Formel / Modell",
+    "tableColSource": "Klinische Referenzbehörde",
+    "tableColInputs": "Eingabevariablen",
+    "tableColOutputs": "Berechnete Ausgabewerte",
+    "tableColLimitations": "Klinische Einschränkungen",
+    "studiesBadge": "15 indexierte Referenzstudien",
+    "tableViewTitle": "Übersichtstabelle der Algorithmen & mathematischen Modelle",
+    "tableViewDesc": "Vollständige Referenztabelle aller 25 digitalen Gesundheitsrechner auf Real BMI:"
   },
-  hi: {
-    title: "कैलकुलेटर पद्धति एवं सूत्र | Real BMI",
-    description: "विश्व स्वास्थ्य संगठन (WHO) व सीडीसी मानकों, गणितीय समीकरणों, इनपुट-आउटपुट चरों और सीमाओं सहित Real BMI कैलकुलेटरों की संपूर्ण पारदर्शी कार्यप्रणाली।",
-    eyebrow: "उत्पाद पारदर्शिता एवं गणना पद्धति",
-    pageTitle: "कैलकुलेटर पद्धति एवं गणना इंजन",
-    pageDesc: "Real BMI का प्रत्येक कैलकुलेटर प्रकाशित गणितीय समीकरणों, सार्वजनिक स्वास्थ्य संदर्भ मानकों और पारदर्शी एल्गोरिदम पर आधारित है।",
-    returnLabel: "होम",
-    statementTitle: "स्वतंत्र कैलकुलेटर संरचना",
-    statementDesc: "Real BMI एक स्वतंत्र वेब एप्लिकेशन है जिसे Real BMI संपादकीय एवं हेल्थ इंजीनियरिंग टीम द्वारा बनाया और संचालित किया जाता है। प्रत्येक उपकरण का सटीक सूत्र, स्रोत प्राधिकरण, इनपुट पैरामीटर और सीमाएं नीचे पारदर्शी रूप से दर्ज हैं।",
-    pillars: [
+  "ko": {
+    "title": "계산기 방법론 및 산출 공식 | Real BMI",
+    "description": "Real BMI의 모든 계산기에 대한 상세한 방법론, 공인된 수학적 공식, WHO 및 CDC 인용 자료, 입력 변수, 산출 결과 및 의학적 한계점을 투명하게 공개합니다.",
+    "eyebrow": "제품 투명성 및 산출 방법론",
+    "pageTitle": "계산기 방법론 및 연산 엔진 구조",
+    "pageDesc": "Real BMI의 모든 계산기는 공인된 학술 논문의 수학적 공식, 공공 보건 표준 참고 데이터 및 투명한 알고리즘을 기반으로 구축되었습니다.",
+    "returnLabel": "홈",
+    "statementTitle": "독립적 연산 엔진 아키텍처",
+    "statementDesc": "Real BMI는 전문 편집 및 헬스 엔지니어링 팀이 직접 개발하고 운영하는 독립 웹 플랫폼입니다. 모든 도구의 정확한 공식, 출처 기관, 입력 매개변수 및 임상적 한계점은 아래에 투명하게 기록되어 있습니다.",
+    "pillars": [
       {
-        title: "प्रलेखित वैज्ञानिक सूत्र",
-        desc: "सभी गणनाएं सहकर्मी-समीक्षित शोध और प्रकाशित समीकरणों (Mifflin-St Jeor, Boer, Devine, US Navy) का उपयोग करती हैं।"
+        "title": "검증된 공식 채택",
+        "desc": "모든 연산은 동료 검토 학술 연구와 공인된 논문 공식(Mifflin-St Jeor, Boer, Devine, US Navy)을 사용합니다."
       },
       {
-        title: "आधिकारिक संदर्भ मानक",
-        desc: "परिणामों का मूल्यांकन विश्व स्वास्थ्य संगठन (WHO) और सीडीसी (CDC) के जनसंख्या संदर्भ मानकों के आधार पर किया जाता है।"
+        "title": "공식 인구 집단 기준",
+        "desc": "연산 결과는 세계보건기구(WHO)와 CDC의 공식 인구학적 건강 기준에 따라 신뢰성 있게 평가됩니다."
       },
       {
-        title: "डिवाइस पर स्थानीय गणना",
-        desc: "कैलकुलेटर इनपुट आपके ब्राउज़र में सुरक्षित रूप से प्रोसेस होते हैं — कोई भी स्वास्थ्य डेटा बाहरी सर्वर पर संग्रहीत नहीं होता।"
+        "title": "클라이언트 단독 연산",
+        "desc": "입력된 수치는 브라우저 JavaScript 환경에서 즉시 연산되며 외부 데이터베이스에 저장되지 않습니다."
       },
       {
-        title: "पारदर्शी सीमाएं",
-        desc: "प्रत्येक उपकरण स्पष्ट रूप से बताता है कि वह क्या मापता है और क्या नहीं, जिससे भ्रामक दावों से बचा जा सके।"
+        "title": "투명한 측정 한계",
+        "desc": "오해의 소지가 있는 임상적 주장을 지양하고, 각 도구가 측정할 수 있는 범위와 한계를 명확히 밝힙니다."
       }
     ],
-    matrixEyebrow: "व्यवस्थित संदर्भ तालिका",
-    matrixTitle: "संपूर्ण कैलकुलेटर पद्धति तालिका",
-    matrixDesc: "प्रत्येक कैलकुलेटर उपकरण के समीकरण, डेटा स्रोत, इनपुट, आउटपुट और सीमाओं की समीक्षा करें।",
-    openTool: "टूल खोलें",
-    equationLabel: "गणितीय समीकरण",
-    sourceLabel: "प्रमुख स्रोत संदर्भ",
-    inputsLabel: "इनपुट चर:",
-    outputLabel: "आउटपुट परिणाम:",
-    limitationsLabel: "मुख्य सीमा:"
+    "matrixEyebrow": "체계적 참고 매트릭스",
+    "matrixTitle": "전체 계산기 방법론 종합 안내표",
+    "matrixDesc": "각 계산 도구의 수학 공식, 출처 데이터, 입력 변수, 산출 결과 및 측정 한계를 확인하세요.",
+    "openTool": "도구 열기",
+    "equationLabel": "수학적 공식",
+    "sourceLabel": "주요 출처 기관",
+    "inputsLabel": "입력 변수:",
+    "outputLabel": "산출 지표:",
+    "limitationsLabel": "주요 한계점:",
+    "tableColTool": "계산기 도구명",
+    "tableColFormula": "수학적 공식 및 알고리즘",
+    "tableColSource": "공식 임상 출처 기관",
+    "tableColInputs": "필수 입력 변수",
+    "tableColOutputs": "산출 결과 지표",
+    "tableColLimitations": "생리학적 및 임상적 한계점",
+    "studiesBadge": "15편의 색인된 공인 임상 연구",
+    "tableViewTitle": "알고리즘 및 수학 공식 검증 종합 안내표",
+    "tableViewDesc": "Real BMI의 25개 전 건강 연산 도구에 대한 공식 교차 검증 데이터:"
   }
 };
 
 const currentI18n = i18nData[lang] || i18nData.en;
 
-const methodologyMatrix = [
+const methodologyMatrix: MethodologyItem[] = [
   {
-    name: "BMI Calculator",
-    slug: "bmi-calculator",
-    formula: "Metric: kg / m² | Imperial: (lbs / inches²) × 703",
-    source: "WHO Technical Report Series 854 / CDC Adult BMI Standard",
-    inputs: {
-      en: "Height, Weight",
-      es: "Altura, Peso",
-      fr: "Taille, Poids",
-      de: "Körpergröße, Gewicht",
-      ko: "신장(키), 체중(몸무게)",
-      hi: "कद (ऊंचाई), वजन"
+    "name": "BMI Calculator",
+    "slug": "bmi-calculator",
+    "formula": {
+      "en": "Metric: kg / m² | Imperial: (lbs / inches²) × 703",
+      "hi": "मीट्रिक: वजन (kg) / [ऊंचाई (m)]² | इम्पीरियल: [वजन (lbs) / (ऊंचाई (in))²] × 703",
+      "es": "Métrico: kg / m² | Imperial: (libras / pulgadas²) × 703",
+      "fr": "Métrique : kg / m² | Impérial : (livres / pouces²) × 703",
+      "de": "Metrisch: kg / m² | Imperial: (lbs / Zoll²) × 703",
+      "ko": "미터법: kg / m² | 야드파운드법: (lbs / in²) × 703"
     },
-    output: {
-      en: "Body Mass Index score & WHO Category",
-      es: "Puntuación de IMC y categoría de la OMS",
-      fr: "Score d'IMC et catégorie de l'OMS",
-      de: "BMI-Wert & WHO-Gewichtskategorie",
-      ko: "체질량지수(BMI) 수치 및 WHO 비만도 분류",
-      hi: "बॉडी मास इंडेक्स (BMI) स्कोर एवं WHO वर्गीकरण श्रेणी"
+    "source": {
+      "en": "WHO Technical Report Series 854 (1995) / CDC Adult BMI Standards",
+      "hi": "विश्व स्वास्थ्य संगठन तकनीकी रिपोर्ट 854 (1995) / CDC प्रौढ़ BMI मानक",
+      "es": "OMS Serie de Informes Técnicos 854 (1995) / Estándares CDC para Adultos",
+      "fr": "OMS Série de Rapports Techniques 854 (1995) / Normes de l'IMC Adulte CDC",
+      "de": "WHO Technische Berichtsreihe 854 (1995) / CDC BMI-Standards für Erwachsene",
+      "ko": "WHO 기술 보고서 시리즈 854 (1995) / CDC 성인 BMI 임상 표준"
     },
-    limitations: {
-      en: "Measures total mass relative to height; does not distinguish muscle mass from adipose fat tissue.",
-      es: "Mide la masa total respecto a la altura; no distingue la masa muscular del tejido adiposo.",
-      fr: "Mesure la masse totale par rapport à la taille ; ne distingue pas la masse musculaire du tissu adipeux.",
-      de: "Misst die Gesamtmasse im Verhältnis zur Körpergröße; unterscheidet nicht zwischen Muskelmasse und Fettgewebe.",
-      ko: "신장 대비 총 체중을 측정하며 근육량과 체지방 조직을 직접 구별하지는 않습니다.",
-      hi: "ऊंचाई के अनुपात में कुल शारीरिक भार मापता है; यह मांसपेशियों के द्रव्यमान और वसा ऊतक (फैट) में अंतर नहीं करता।"
+    "inputs": {
+      "en": "Height, Weight",
+      "hi": "कद (ऊंचाई), वजन",
+      "es": "Altura, Peso",
+      "fr": "Taille, Poids",
+      "de": "Körpergröße, Gewicht",
+      "ko": "신장(키), 체중(몸무게)"
+    },
+    "output": {
+      "en": "Body Mass Index score & WHO Weight Category",
+      "hi": "बॉडी मास इंडेक्स (BMI) स्कोर एवं WHO वर्गीकरण श्रेणी",
+      "es": "Puntuación de IMC y categoría de peso de la OMS",
+      "fr": "Score d'IMC et catégorie de poids de l'OMS",
+      "de": "BMI-Wert & WHO-Gewichtskategorie",
+      "ko": "체질량지수(BMI) 수치 및 WHO 비만도 분류"
+    },
+    "limitations": {
+      "en": "Measures total mass relative to height; does not distinguish muscle mass from adipose fat tissue.",
+      "hi": "ऊंचाई के अनुपात में कुल शारीरिक भार मापता है; यह मांसपेशियों के द्रव्यमान और वसा ऊतक (फैट) में अंतर नहीं करता।",
+      "es": "Mide la masa total respecto a la altura; no distingue la masa muscular del tejido adiposo.",
+      "fr": "Mesure la masse totale par rapport à la taille ; ne distingue pas la masse musculaire du tissu adipeux.",
+      "de": "Misst die Gesamtmasse im Verhältnis zur Körpergröße; unterscheidet nicht zwischen Muskelmasse und Fettgewebe.",
+      "ko": "신장 대비 총 체중을 측정하며 근육량과 체지방 조직을 직접 구별하지는 않습니다."
     }
   },
   {
-    name: "Asian BMI Calculator",
-    slug: "asian-bmi-calculator",
-    formula: "kg / m² with WHO Western Pacific Ethnic Thresholds",
-    source: "WHO Western Pacific Region & IOTF Consultation (2000)",
-    inputs: {
-      en: "Height, Weight, Asian Ethnic Ancestry",
-      es: "Altura, Peso, Ascendencia étnica asiática",
-      fr: "Taille, Poids, Origine ethnique asiatique",
-      de: "Körpergröße, Gewicht, Asiatische Abstammung",
-      ko: "신장, 체중, 아시아계 민족 참고 기준",
-      hi: "कद, वजन, एशियाई मूल संदर्भ"
+    "name": "3D BMI Calculator",
+    "slug": "3d-bmi-calculator",
+    "formula": {
+      "en": "3D Anthropometric Mesh Deformation Algorithm (Height-to-Weight Volume Mapping)",
+      "hi": "3D बायोमेट्रिक मेष विरूपण मॉडल (कद-वजन आयतन समोच्च मैपिंग)",
+      "es": "Algoritmo de Deformación de Malla Antropométrica 3D (Mapeo de Volumen)",
+      "fr": "Algorithme de Déformation de Maillage 3D (Modélisation Volumétrique)",
+      "de": "3D-anthropometrischer Gitter-Deformationsalgorithmus (Volumen-Mapping)",
+      "ko": "3D 인체 체형 메시 변형 알고리즘 (신장-체중 부피 매핑)"
     },
-    output: {
-      en: "Regional Asian BMI Classification (Cutoff at 23.0 kg/m²)",
-      es: "Clasificación regional asiática del IMC (punto de corte en 23.0 kg/m²)",
-      fr: "Classification régionale asiatique de l'IMC (seuil à 23,0 kg/m²)",
-      de: "Regionale asiatische BMI-Klassifikation (Grenzwert 23,0 kg/m²)",
-      ko: "아시아인 기준 체질량지수 분류 (위험 기준치 23.0 kg/m²)",
-      hi: "क्षेत्रीय एशियाई BMI वर्गीकरण (23.0 kg/m² कटऑफ मानक)"
+    "source": {
+      "en": "WHO TRS 854 & Computational Biomechanics Morphometry Standards",
+      "hi": "WHO TRS 854 एवं कंप्यूटेशनल बायोमैकेनिक्स मॉर्फोमेट्री अध्ययन",
+      "es": "OMS TRS 854 y Estándares de Morfometría Biomecánica Computacional",
+      "fr": "OMS TRS 854 & Normes de Morphométrie Biomécanique Numérique",
+      "de": "WHO TRS 854 & Standards der computergestützten Biomechanik",
+      "ko": "WHO TRS 854 및 컴퓨터 생체역학 형태 측정 표준"
     },
-    limitations: {
-      en: "Applies to Asian populations due to higher visceral fat ratio at lower BMI levels; screening tool only.",
-      es: "Aplicable a poblaciones asiáticas debido a una mayor proporción de grasa visceral con un IMC más bajo; solo herramienta de cribado.",
-      fr: "S'applique aux populations asiatiques en raison d'un ratio de graisse viscérale plus élevé à un IMC plus bas ; outil de dépistage uniquement.",
-      de: "Gilt für asiatische Populationen aufgrund eines höheren viszeralen Fettanteils bei niedrigerem BMI; reines Screening-Tool.",
-      ko: "낮은 BMI에서도 내장지방 축적 비율이 높은 아시아인의 신체적 특성을 반영한 1차 선별 도구입니다.",
-      hi: "एशियाई आबादी पर लागू, जहां कम BMI स्तरों पर भी आंतरिक वसा (विसरल फैट) का अनुपात अधिक हो सकता है; यह केवल प्राथमिक स्क्रीनिंग टूल है।"
+    "inputs": {
+      "en": "Height, Weight, Biological Sex",
+      "hi": "कद (ऊंचाई), वजन, जैविक लिंग",
+      "es": "Altura, Peso, Sexo Biológico",
+      "fr": "Taille, Poids, Sexe Biologique",
+      "de": "Körpergröße, Gewicht, Biologisches Geschlecht",
+      "ko": "신장, 체중, 생물학적 성별"
+    },
+    "output": {
+      "en": "Interactive 3D Body Simulation, BMI Score & Risk Heatmap",
+      "hi": "इंटरएक्टिव 3D बॉडी सिमुलेशन, बीएमआई मान एवं स्वास्थ्य जोखिम क्षेत्र",
+      "es": "Simulación Corporal 3D Interactiva, Puntuación de IMC y Mapa de Calor",
+      "fr": "Simulation Corporelle 3D Interactive, Score d'IMC et Zones de Risque",
+      "de": "Interaktive 3D-Körpersimulation, BMI-Wert & Risikozonen-Heatmap",
+      "ko": "인터랙티브 3D 체형 시뮬레이션, BMI 수치 및 건강 위험 영역"
+    },
+    "limitations": {
+      "en": "Population-average visual simulation; does not capture unique skeletal frame widths or localized subcutaneous deposits.",
+      "hi": "दृश्य सिमुलेशन जनसंख्या औसत पर आधारित है; यह व्यक्तिगत हड्डियों की बनावट या वसा वितरण को पूरी तरह नहीं दर्शाता।",
+      "es": "Simulación visual basada en promedios poblacionales; no refleja variaciones óseas individuales ni depósitos localizados.",
+      "fr": "Simulation visuelle basée sur des moyennes statistiques ; ne remplace pas une imagerie médicale diagnostique.",
+      "de": "Auf Populationsdurchschnitten basierende visuelle Simulation; erfasst keinen individuellen Knochenbau.",
+      "ko": "인구 집단 평균에 기반한 시각적 시뮬레이션이며, 개인의 골격 구조나 국소 지방 축적을 완전히 반영하지는 않습니다."
     }
   },
   {
-    name: "BMR Calculator",
-    slug: "bmr-calculator",
-    formula: "Mifflin-St Jeor: 10W + 6.25H - 5A + S (+5 male / -161 female)",
-    source: "American Journal of Clinical Nutrition (Mifflin MD et al., 1990)",
-    inputs: {
-      en: "Age, Gender, Height, Weight",
-      es: "Edad, Género, Altura, Peso",
-      fr: "Âge, Genre, Taille, Poids",
-      de: "Alter, Geschlecht, Körpergröße, Gewicht",
-      ko: "연령(나이), 성별, 신장, 체중",
-      hi: "आयु (उम्र), लिंग, कद, वजन"
+    "name": "BMI Chart & Table",
+    "slug": "bmi-chart",
+    "formula": {
+      "en": "Standard WHO Weight-for-Height Grid Matrices (18.5, 24.9, 29.9 kg/m² Cutoffs)",
+      "hi": "WHO मानक वजन अंतराल ग्रिड (18.5, 24.9, 29.9 kg/m² कटऑफ)",
+      "es": "Matriz de Peso para la Altura de la OMS (Puntos de corte: 18.5, 24.9, 29.9 kg/m²)",
+      "fr": "Matrice Taille-Poids Standard de l'OMS (Seuils : 18.5, 24.9, 29.9 kg/m²)",
+      "de": "Standard-WHO-Gewichts- und Größengitter (Schwellenwerte: 18,5, 24,9, 29,9 kg/m²)",
+      "ko": "공식 WHO 신장별 체중 격자 매트릭스 (18.5, 24.9, 29.9 kg/m² 기준치)"
     },
-    output: {
-      en: "Resting Energy Expenditure (kcal/day)",
-      es: "Gasto energético en reposo (kcal/día)",
-      fr: "Dépense énergétique au repos (kcal/jour)",
-      de: "Ruheenergiebedarf / Grundumsatz (kcal/Tag)",
-      ko: "휴식기 기초 대사율 (BMR, kcal/일)",
-      hi: "विश्राम अवस्था ऊर्जा व्यय (BMR, kcal/दिन)"
+    "source": {
+      "en": "World Health Organization Expert Committee (WHO Technical Report 854)",
+      "hi": "विश्व स्वास्थ्य संगठन (WHO) विशेषज्ञ समिति तकनीकी रिपोर्ट 854",
+      "es": "Comité de Expertos de la Organización Mundial de la Salud (OMS TR 854)",
+      "fr": "Comité d'Experts de l'Organisation Mondiale de la Santé (OMS TR 854)",
+      "de": "Expertenausschuss der Weltgesundheitsorganisation (WHO TR 854)",
+      "ko": "세계보건기구(WHO) 전문가 위원회 기술 보고서 854"
     },
-    limitations: {
-      en: "Estimates resting metabolic rate; does not account for thyroid variance or extreme muscle mass variations.",
-      es: "Estima la tasa metabólica basal en reposo; no considera variaciones tiroideas ni masa muscular extrema.",
-      fr: "Estime le métabolisme de base au repos ; ne tient pas compte des dysfonctionnements thyroïdiens ni des masses musculaires atypiques.",
-      de: "Schätzt den Ruheumsatz; berücksichtigt keine Schilddrüsenabweichungen oder extreme Muskelmasseunterschiede.",
-      ko: "기초 대사율을 추정하며, 갑상선 질환이나 극단적인 근육량 차이까지는 반영하지 못합니다.",
-      hi: "विश्राम अवस्था की चयापचय दर का सांख्यिकीय अनुमान लगाता है; यह थायरॉयड स्थिति या अत्यधिक मांसपेशियों के अंतर को शामिल नहीं करता।"
+    "inputs": {
+      "en": "Height (cm / ft-in), Weight (kg / lbs)",
+      "hi": "कद (सेमी / फीट-इंच), वजन (किग्रा / पाउंड)",
+      "es": "Altura (cm / pies-pulgadas), Peso (kg / libras)",
+      "fr": "Taille (cm / pieds-pouces), Poids (kg / livres)",
+      "de": "Körpergröße (cm / ft-in), Gewicht (kg / lbs)",
+      "ko": "신장(cm/ft-in), 체중(kg/lbs)"
+    },
+    "output": {
+      "en": "Comprehensive BMI Lookup Table, Healthy Weight Range Grid & Category Distribution",
+      "hi": "विस्तृत तुलनात्मक बीएमआई तालिका, स्वस्थ वजन सीमा और श्रेणी ग्रिड",
+      "es": "Tabla de Búsqueda Rápida de IMC, Rango de Peso Saludable y Clasificación",
+      "fr": "Tableau de Référence de l'IMC, Plage de Poids Santé et Catégorisation",
+      "de": "Vollständige BMI-Referenztabelle, Normalgewichtsbereich & Klassifizierung",
+      "ko": "종합 BMI 대조표, 정상 체중 범위 격자 및 세부 체중 분류 체계"
+    },
+    "limitations": {
+      "en": "Population-level reference tool; not tailored for elderly populations with sarcopenia or pregnant individuals.",
+      "hi": "जनसंख्या-स्तर संदर्भ उपकरण; वरिष्ठ नागरिकों (सार्कोपेनिया) या गर्भवती महिलाओं पर सीधे लागू नहीं होता।",
+      "es": "Herramienta de referencia poblacional; no aplicable para adultos mayores con sarcopenia o personas embarazadas.",
+      "fr": "Outil de référence populationnel ; non adapté aux personnes âgées souffrant de sarcopénie ou aux femmes enceintes.",
+      "de": "Referenzinstrument auf Populationsebene; nicht geeignet für ältere Menschen mit Sarkopenie oder Schwangere.",
+      "ko": "인구 집단 수준의 참고 도구이며, 근감소증이 있는 고령자나 임산부에게는 직접 적용되지 않습니다."
     }
   },
   {
-    name: "TDEE Calculator",
-    slug: "tdee-calculator",
-    formula: "BMR × Activity Multiplier (1.2 to 1.9 PAL Factors)",
-    source: "FAO/WHO/UNU Human Energy Requirements Expert Consultation",
-    inputs: {
-      en: "BMR, Physical Activity Level (PAL)",
-      es: "BMR, Nivel de actividad física (PAL)",
-      fr: "BMR, Niveau d'activité physique (PAL)",
-      de: "BMR, Physikalisches Aktivitätsniveau (PAL)",
-      ko: "기초대사율(BMR), 신체 활동 수준(PAL)",
-      hi: "BMR, शारीरिक गतिविधि स्तर (PAL गुणांक)"
+    "name": "3D Body Visualizer",
+    "slug": "3d-body-visualizer",
+    "formula": {
+      "en": "Parametric Morphological Synthesis (Circumference-to-Volume Multi-Axis Mapping)",
+      "hi": "पैरामीट्रिक 3D मॉर्फोलॉजी मैपिंग (कमर, कूल्हे, छाती एवं बीएमआई आयाम)",
+      "es": "Síntesis Morfológica Paramétrica (Mapeo Multieje Circunferencia-Volumen)",
+      "fr": "Synthèse Morphologique Paramétrique (Mappage Multi-Axes Circonférence-Volume)",
+      "de": "Parametrische morphologische Synthese (Umfang-zu-Volumen-Mapping)",
+      "ko": "매개변수 기반 형태학적 3D 체형 합성 (둘레-부피 다축 매핑)"
     },
-    output: {
-      en: "Total Daily Energy Expenditure (kcal/day)",
-      es: "Gasto energético diario total (kcal/día)",
-      fr: "Dépense énergétique quotidienne totale (kcal/jour)",
-      de: "Gesamttagesenergiebedarf (kcal/Tag)",
-      ko: "일일 총 에너지 소비량 (TDEE, kcal/일)",
-      hi: "दैनिक कुल ऊर्जा व्यय (TDEE, kcal/दिन)"
+    "source": {
+      "en": "Applied Anthropometry & Computational Biomechanics Literature",
+      "hi": "कंप्यूटेशनल बायोमैकेनिक्स एवं व्यावहारिक एंथ्रोपोमेट्री संदर्भ",
+      "es": "Literatura de Antropometría Aplicada y Biomecánica Computacional",
+      "fr": "Littérature d'Anthropométrie Appliquée et Biomécanique Numérique",
+      "de": "Fachliteratur der angewandten Anthropometrie und Biomechanik",
+      "ko": "응용 인체측정학 및 컴퓨터 생체역학 공인 학술 문헌"
     },
-    limitations: {
-      en: "Relies on self-reported activity categories; actual daily thermogenesis fluctuates based on NEAT.",
-      es: "Depende de categorías de actividad autodeclaradas; la termogénesis diaria real fluctúa según la NEAT.",
-      fr: "Dépend des catégories d'activité déclarées ; la thermogenèse quotidienne réelle varie selon le NEAT.",
-      de: "Basiert auf selbstberichteter Aktivität; die reale tägliche Thermogenese schwankt abhängig von NEAT.",
-      ko: "자가 보고 활동량 범주에 의존하므로 비운동성 활동 열생성(NEAT)에 따라 실제 일일 에너지 소모는 달라질 수 있습니다.",
-      hi: "स्व-रिपोर्ट की गई गतिविधि श्रेणियों पर निर्भर करता है; वास्तविक दैनिक थर्मोजेनेसिस गैर-व्यायाम गतिविधि (NEAT) के आधार पर बदलती रहती है।"
+    "inputs": {
+      "en": "Height, Weight, Sex, Waist Circumference, Hip Circumference",
+      "hi": "कद, वजन, लिंग, कमर एवं कूल्हे का माप",
+      "es": "Altura, Peso, Sexo, Circunferencia de Cintura y Cadera",
+      "fr": "Taille, Poids, Sexe, Tour de Taille, Tour de Hanches",
+      "de": "Körpergröße, Gewicht, Geschlecht, Taillenumfang, Hüftumfang",
+      "ko": "신장, 체중, 성별, 허리둘레, 엉덩이둘레"
+    },
+    "output": {
+      "en": "360-Degree Interactive 3D Mesh Representation & Adiposity Contour Analysis",
+      "hi": "360-डिग्री इंटरएक्टिव 3D शारीरिक मॉडल एवं समोच्च दृश्य",
+      "es": "Modelo 3D Interactivo de 360 Grados y Análisis de Contornos de Adiposidad",
+      "fr": "Modèle 3D Interactif à 360 Degrés et Analyse des Contours d'Adiposité",
+      "de": "Interaktives 360-Grad-3D-Körpermodell & Fettverteilungs-Konturanalyse",
+      "ko": "360도 인터랙티브 3D 체형 렌더링 및 신체 지방 윤곽 분석"
+    },
+    "limitations": {
+      "en": "Visual approximation intended for educational awareness; not a diagnostic substitute for DEXA imaging.",
+      "hi": "शैक्षणिक 3D विज़ुअलाइज़ेशन उपकरण; यह डेक्सा (DEXA) स्कैन या मेडिकल इमेजिंग का विकल्प नहीं है।",
+      "es": "Aproximación visual con fines educativos; no sustituye densitometrías DEXA ni resonancias magnéticas.",
+      "fr": "Représentation visuelle éducative ; ne remplace pas une mesure clinique par absorptiométrie DEXA.",
+      "de": "Visuelle Näherung zu Bildungszwecken; kein Ersatz für bildgebende DEXA-Verfahren.",
+      "ko": "교육적 이해를 돕기 위한 시각적 근사 모델이며, 병원 정밀 DEXA 스캔 검사를 대체할 수 없습니다."
     }
   },
   {
-    name: "Ideal Body Weight (IBW)",
-    slug: "ideal-weight-calculator",
-    formula: "Devine / Hamwi / Miller / Robinson Heights Equations",
-    source: "Standard Clinical Pharmacotherapy Formulas (Devine BJ, 1974)",
-    inputs: {
-      en: "Height, Gender",
-      es: "Altura, Género",
-      fr: "Taille, Genre",
-      de: "Körpergröße, Geschlecht",
-      ko: "신장, 성별",
-      hi: "कद, लिंग"
+    "name": "BMI Calculator for Indians",
+    "slug": "bmi-calculator-for-indians",
+    "formula": {
+      "en": "kg / m² (ICMR-NIN Consensus Cutoffs: Normal 18.0–22.9, Overweight 23.0–24.9, Obese ≥25.0 kg/m²)",
+      "hi": "वजन (kg) / [ऊंचाई (m)]² (ICMR-NIN 2009 / एम्स एशियाई भारतीय कटऑफ: सामान्य 18.0–22.9, अधिक वजन 23.0–24.9, मोटापा ≥25.0 kg/m²)",
+      "es": "kg / m² (Puntos de corte ICMR-NIN: Normal 18.0–22.9, Sobrepeso 23.0–24.9, Obesidad ≥25.0 kg/m²)",
+      "fr": "kg / m² (Seuils ICMR-NIN : Normal 18.0–22.9, Surpoids 23.0–24.9, Obésité ≥25.0 kg/m²)",
+      "de": "kg / m² (ICMR-NIN Grenzwerte: Normal 18,0–22,9, Übergewicht 23,0–24,9, Adipositas ≥25,0 kg/m²)",
+      "ko": "kg / m² (ICMR-NIN 인도인 임상 기준치: 정상 18.0–22.9, 과체중 23.0–24.9, 비만 ≥25.0 kg/m²)"
     },
-    output: {
-      en: "Reference Weight Bracket (kg / lbs)",
-      es: "Rango de peso de referencia (kg / lbs)",
-      fr: "Fourchette de poids de référence (kg / lbs)",
-      de: "Referenzgewichtsbereich (kg / lbs)",
-      ko: "표준 권장 체중 참고 범위 (kg / lbs)",
-      hi: "मानक संदर्भ वजन सीमा (kg / lbs)"
+    "source": {
+      "en": "Misra A, Chowbey P, et al. ICMR Consensus Guidelines (JAPI 2009; 57: 163–170 / PMID: 19582986)",
+      "hi": "मिश्रा ए., चौबे पी. एट अल., ICMR आम सहमति दिशानिर्देश (JAPI 2009; 57: 163–170 / PMID: 19582986)",
+      "es": "Misra A, Chowbey P, et al. Directrices de Consenso ICMR (JAPI 2009; 57: 163–170 / PMID: 19582986)",
+      "fr": "Misra A, Chowbey P, et al. Lignes Directrices ICMR (JAPI 2009; 57: 163–170 / PMID: 19582986)",
+      "de": "Misra A, Chowbey P, et al. ICMR-Konsensrichtlinien (JAPI 2009; 57: 163–170 / PMID: 19582986)",
+      "ko": "Misra A, Chowbey P, et al. ICMR 인도인 합의 지침 (JAPI 2009; 57: 163–170 / PMID: 19582986)"
     },
-    limitations: {
-      en: "Provides historical clinical dosing baselines; does not represent individual body composition targets.",
-      es: "Proporciona referencias clínicas históricas de dosificación; no representa metas de composición corporal individual.",
-      fr: "Fournit une référence clinique historique de dosage ; ne reflète pas la composition corporelle individuelle.",
-      de: "Liefert historische klinische Dosierungs-Baselines; stellt keine individuellen Körperbau-Ziele dar.",
-      ko: "과거 임상 투약 기준을 제시하는 공식으로, 개인의 골격 및 근육 상태를 고려한 체성분 목표가 아닙니다.",
-      hi: "ऐतिहासिक नैदानिक खुराक मानक प्रदान करता है; यह किसी व्यक्ति विशेष के शारीरिक संरचना या फिटनेस लक्ष्य का प्रतिनिधित्व नहीं करता।"
+    "inputs": {
+      "en": "Height, Weight, Asian Indian Ancestry",
+      "hi": "कद, वजन, एशियाई भारतीय मूल",
+      "es": "Altura, Peso, Ascendencia India",
+      "fr": "Taille, Poids, Ascendance Indienne",
+      "de": "Körpergröße, Gewicht, Asiatisch-indische Abstammung",
+      "ko": "신장, 체중, 인도계 인종 배경"
+    },
+    "output": {
+      "en": "Indian Population-Specific BMI Score, Lowered Risk Classification & Cardiometabolic Warning",
+      "hi": "भारतीय जनसंख्या-विशिष्ट बीएमआई, संशोधित कटऑफ एवं कार्डियोमेटाबोलिक जोखिम स्तर",
+      "es": "IMC Específico para Población India, Clasificación Ajustada y Alerta Cardiometabólica",
+      "fr": "Score d'IMC Spécifique à l'Inde, Classification Révisée et Risque Métabolique",
+      "de": "Indienspezifischer BMI-Wert, angepasste Risikoklasse & kardiometabolische Warnung",
+      "ko": "인도인 맞춤형 BMI 점수, 하향 조정된 비만 분류 및 심혈관 대사 위험 알림"
+    },
+    "limitations": {
+      "en": "Tailored specifically for South Asian phenotypes with higher visceral fat at lower BMI; does not apply to Caucasian or African populations.",
+      "hi": "दक्षिण एशियाई लोगों में कम बीएमआई पर उच्च आंतों की वसा (विसरल फैट) को लक्षित करता है; कोकेशियन या अफ्रीकी मूल पर लागू नहीं होता।",
+      "es": "Diseñado para fenotipos sudasiáticos con mayor adiposidad visceral; no debe aplicarse a poblaciones caucásicas.",
+      "fr": "Spécifique aux populations sud-asiatiques à adiposité viscérale précoce ; non applicable aux populations caucasiennes.",
+      "de": "Speziell für südasiatische Phänotypen mit höherem Viszeralfettanteil entwickelt; nicht für Kaukasier geeignet.",
+      "ko": "낮은 BMI에서도 내장지방 축적이 빠른 남아시아인 체질 맞춤 지표이며 서구 인구 집단에는 부적합합니다."
     }
   },
   {
-    name: "Body Fat Calculator",
-    slug: "body-fat-calculator",
-    formula: "US Navy Logarithmic Circumference Equations",
-    source: "Naval Health Research Center (Hodgdon & Beckett, 1984)",
-    inputs: {
-      en: "Height, Neck, Waist, Hip (women)",
-      es: "Altura, Cuello, Cintura, Cadera (mujeres)",
-      fr: "Taille, Cou, Taille, Hanches (femmes)",
-      de: "Größe, Nackenumfang, Taillenumfang, Hüftumfang (Frauen)",
-      ko: "신장, 목둘레, 허리둘레, 엉덩이둘레(여성)",
-      hi: "कद, गर्दन, कमर, कूल्हे (महिलाओं के लिए)"
+    "name": "Healthy Weight by Height",
+    "slug": "healthy-weight-by-height",
+    "formula": {
+      "en": "Min Weight = 18.5 × [Height (m)]² | Max Weight = 24.9 × [Height (m)]²",
+      "hi": "न्यूनतम वजन = 18.5 × [ऊंचाई (m)]² | अधिकतम वजन = 24.9 × [ऊंचाई (m)]²",
+      "es": "Peso Mínimo = 18.5 × [Altura (m)]² | Peso Máximo = 24.9 × [Altura (m)]²",
+      "fr": "Poids Minimum = 18.5 × [Taille (m)]² | Poids Maximum = 24.9 × [Taille (m)]²",
+      "de": "Minimalgewicht = 18,5 × [Größe (m)]² | Maximalgewicht = 24,9 × [Größe (m)]²",
+      "ko": "최소 적정 체중 = 18.5 × [신장 (m)]² | 최대 적정 체중 = 24.9 × [신장 (m)]²"
     },
-    output: {
-      en: "Estimated Body Fat Percentage (%) & Category",
-      es: "Porcentaje estimado de grasa corporal (%) y categoría",
-      fr: "Pourcentage estimé de masse grasse (%) et catégorie",
-      de: "Geschätzter Körperfettanteil (%) & Kategorie",
-      ko: "추정 체지방률(%) 및 피트니스 등급 분류",
-      hi: "अनुमानित शारीरिक वसा प्रतिशत (%) एवं फिटनेस श्रेणी"
+    "source": {
+      "en": "WHO Technical Report Series 854 Anthropometric Reference Guidelines",
+      "hi": "WHO तकनीकी रिपोर्ट 854 एंथ्रोपोमेट्रिक संदर्भ दिशानिर्देश",
+      "es": "Directrices Antropométricas de la Serie de Informes Técnicos 854 de la OMS",
+      "fr": "Directives Antropométriques de l'OMS (Série de Rapports Techniques 854)",
+      "de": "Anthropometrische Richtlinien der WHO-Berichtsreihe 854",
+      "ko": "WHO 기술 보고서 시리즈 854 인체계측 임상 표준 가이드라인"
     },
-    limitations: {
-      en: "Estimates body volume based on circumference; less precise than DEXA or hydrostatic weighing.",
-      es: "Estima el volumen corporal mediante circunferencias; menos preciso que una densitometría DEXA.",
-      fr: "Estime le volume corporel par circonférences ; moins précis qu'un scan DEXA ou une pesée hydrostatique.",
-      de: "Schätzt das Körpervolumen anhand von Umfängen; weniger präzise als ein DEXA-Scan.",
-      ko: "신체 둘레 기반의 체적 추정이므로 DEXA 스캔이나 수중 정수 체중 측정법보다 정밀도가 낮습니다.",
-      hi: "शारीरिक परिधि के आधार पर शरीर की मात्रा का अनुमान लगाता है; यह DEXA स्कैन या हाइड्रोस्टेटिक वजन जितना सटीक नहीं होता।"
+    "inputs": {
+      "en": "Height, Sex, Target Reference (WHO Global vs. Asian Thresholds)",
+      "hi": "कद (ऊंचाई), लिंग, संदर्भ जनसंख्या (वैश्विक WHO / एशियाई कटऑफ)",
+      "es": "Altura, Sexo, Referencia Poblacional (OMS Global vs. Asiática)",
+      "fr": "Taille, Sexe, Référence Cible (OMS Mondiale vs Seuils Asiatiques)",
+      "de": "Körpergröße, Geschlecht, Referenzstandard (WHO Global vs. Asiatisch)",
+      "ko": "신장, 성별, 참고 기준(글로벌 WHO vs 아시아 기준)"
+    },
+    "output": {
+      "en": "Healthy Weight Target Range in Kilograms and Pounds for Given Height",
+      "hi": "आपके कद के लिए आदर्श स्वस्थ वजन की न्यूनतम व अधिकतम सीमा (किग्रा / पाउंड)",
+      "es": "Rango de Peso Saludable Recomendado en Kilogramos y Libras para la Altura",
+      "fr": "Fourchette de Poids Idéale en Kilogrammes et Livres selon la Taille",
+      "de": "Gesunder Zielgewichtsbereich in Kilogramm und Pfund für die Körpergröße",
+      "ko": "해당 신장에 권장되는 건강한 적정 체중 범위(kg 및 lbs 단위)"
+    },
+    "limitations": {
+      "en": "Assumes standard body composition; competitive powerlifters and athletes may exceed upper boundary without surplus body fat.",
+      "hi": "स्थिर बीएमआई सीमा मानती है; अत्यधिक मस्कुलर एथलीट या बॉडीबिल्डर बिना अतिरिक्त चर्बी के भी ऊपरी सीमा पार कर सकते हैं।",
+      "es": "Asume una composición corporal estándar; deportistas con gran masa muscular pueden superar el límite sin exceso de grasa.",
+      "fr": "Repose sur une composition corporelle moyenne ; les athlètes très musclés peuvent dépasser le plafond sans excès adipeux.",
+      "de": "Setzt eine durchschnittliche Körperzusammensetzung voraus; Athleten mit hoher Muskelmasse können die Grenze überschreiten.",
+      "ko": "표준 체성분을 전제하며, 근육량이 많은 보디빌더나 운동선수는 지방 과다 없이도 상한선을 넘길 수 있습니다."
     }
   },
   {
-    name: "Lean Body Mass (LBM)",
-    slug: "lean-body-mass-calculator",
-    formula: "Boer Equation (Men: 0.407W + 0.267H - 19.2 | Women: 0.252W + 0.473H - 48.3)",
-    source: "Boer P. (1984) Estimated Lean Body Mass Equations",
-    inputs: {
-      en: "Height, Weight, Gender",
-      es: "Altura, Peso, Género",
-      fr: "Taille, Poids, Genre",
-      de: "Körpergröße, Gewicht, Geschlecht",
-      ko: "신장, 체중, 성별",
-      hi: "कद, वजन, लिंग"
+    "name": "Type 2 Diabetes Risk Calculator",
+    "slug": "diabetes-risk-calculator",
+    "formula": {
+      "en": "Stern Multivariable Logistic Risk Prediction Model: P = 1 / [1 + e^(-Linear Predictor)]",
+      "hi": "स्टर्न क्लिनिकल टाइप 2 डायबिटीज प्रिडिक्शन मॉडल (लॉजिस्टिक रिग्रेशन स्कोर: P = 1 / [1 + e^(-L)])",
+      "es": "Modelo de Regresión Logística Multivariable de Stern: P = 1 / [1 + e^(-L)]",
+      "fr": "Modèle de Prédiction Logistique Multivarié de Stern : P = 1 / [1 + e^(-L)]",
+      "de": "Multivariates logistisches Risikomodell nach Stern: P = 1 / [1 + e^(-L)]",
+      "ko": "Stern 다변량 로지스틱 당뇨병 발병 예측 모델: P = 1 / [1 + e^(-L)]"
     },
-    output: {
-      en: "Estimated Fat-Free Mass (kg / lbs)",
-      es: "Masa libre de grasa estimada (kg / lbs)",
-      fr: "Masse maigre estimée sans graisse (kg / lbs)",
-      de: "Geschätzte fettfreie Körpermasse (kg / lbs)",
-      ko: "추정 제지방량 (Fat-Free Mass, kg / lbs)",
-      hi: "अनुमानित वसा-मुक्त द्रव्यमान (Lean Mass, kg / lbs)"
+    "source": {
+      "en": "Stern MP, Williams K, Haffner SM. Ann Intern Med. 2002; 136(8): 575–581 (PMID: 11955025)",
+      "hi": "स्टर्न एमपी, विलियम्स के., हैफनर एसएम. एनल्स ऑफ इंटरनल मेडिसिन (2002; 136: 575–581 / PMID: 11955025)",
+      "es": "Stern MP, Williams K, Haffner SM. Ann Intern Med. 2002; 136(8): 575–581 (PMID: 11955025)",
+      "fr": "Stern MP, Williams K, Haffner SM. Ann Intern Med. 2002; 136(8): 575–581 (PMID: 11955025)",
+      "de": "Stern MP, Williams K, Haffner SM. Ann Intern Med. 2002; 136(8): 575–581 (PMID: 11955025)",
+      "ko": "Stern MP, Williams K, Haffner SM. Ann Intern Med. 2002; 136(8): 575–581 (PMID: 11955025)"
     },
-    limitations: {
-      en: "Mathematical approximation based on total mass and height; does not measure organ vs muscle breakdown.",
-      es: "Aproximación matemática basada en masa y altura; no mide la separación entre órganos y músculo.",
-      fr: "Approximation mathématique basée sur le poids et la taille ; ne distingue pas la masse des organes du muscle.",
-      de: "Mathematische Annäherung basierend auf Gewicht und Größe; misst keine exakte Organ- und Muskelaufteilung.",
-      ko: "체중과 신장을 기반으로 한 수학적 근사치이며, 내부 장기와 근육 조직의 세부 비율을 직접 측정하지는 않습니다.",
-      hi: "कुल द्रव्यमान और ऊंचाई पर आधारित गणितीय सन्निकटन; आंतरिक अंगों और मांसपेशियों के वास्तविक भार को अलग-अलग नहीं मापता।"
+    "inputs": {
+      "en": "Age, Sex, BMI, Blood Pressure Category, Parental Diabetes History, Activity Level",
+      "hi": "आयु, लिंग, बीएमआई, रक्तचाप इतिहास, परिवार में मधुमेह इतिहास, शारीरिक गतिविधि",
+      "es": "Edad, Sexo, IMC, Presión Arterial, Antecedentes Familiares de Diabetes, Nivel de Actividad",
+      "fr": "Âge, Sexe, IMC, Tension Artérielle, Antécédents Familiaux de Diabète, Activité Physique",
+      "de": "Alter, Geschlecht, BMI, Blutdruckkategorie, familiäre Diabetes-Vorbelastung, Aktivitätslevel",
+      "ko": "연령, 성별, BMI, 혈압 이력, 당뇨 가족력, 일상 신체 활동 수준"
+    },
+    "output": {
+      "en": "7.5-Year Projected Percentage Probability of Developing Type 2 Diabetes Mellitus",
+      "hi": "अगले 7.5 वर्षों में टाइप 2 मधुमेह विकसित होने का प्रतिशत जोखिम स्तर",
+      "es": "Probabilidad Porcentual Proyectada a 7.5 Años de Desarrollar Diabetes Tipo 2",
+      "fr": "Probabilité Estimée à 7.5 Ans de Développer un Diabète de Type 2 (en %)",
+      "de": "Prozentuale 7,5-Jahres-Wahrscheinlichkeit für das Auftreten von Typ-2-Diabetes",
+      "ko": "향후 7.5년 이내 제2형 당뇨병 발병 예측 확률(%) 및 위험도 평가"
+    },
+    "limitations": {
+      "en": "Epidemiological risk stratification tool; does not replace laboratory venous fasting plasma glucose or HbA1c tests.",
+      "hi": "सांख्यिकीय जोखिम मूल्यांकन उपकरण; यह HbA1c या फास्टिंग ब्लड ग्लूकोज प्रयोगशाला परीक्षणों का विकल्प नहीं है।",
+      "es": "Herramienta de estratificación epidemiológica; no sustituye análisis clínicos de glucemia en ayunas o HbA1c.",
+      "fr": "Outil d'évaluation statistique du risque ; ne remplace en aucun cas un dosage d'HbA1c ou de glycémie à jeun.",
+      "de": "Epidemiologisches Risikoschätzungstool; ersetzt keine Laboruntersuchungen von Nüchternglukose oder HbA1c.",
+      "ko": "역학적 위험 분류 선별 도구이며, 공복 혈당 검사나 당화혈색소(HbA1c) 임상 검사를 대체할 수 없습니다."
     }
   },
   {
-    name: "Calorie Deficit Calculator",
-    slug: "calorie-calculator",
-    formula: "Energy Difference Scenarios = TDEE - Selected Deficit",
-    source: "NIH / NIDDK Guidelines & Energy Balance Models",
-    inputs: {
-      en: "BMR, TDEE, Example Energy Difference",
-      es: "BMR, TDEE, Diferencial de energía seleccionado",
-      fr: "BMR, TDEE, Différentiel d'énergie sélectionné",
-      de: "BMR, TDEE, Gewähltes Energiedefizit",
-      ko: "BMR, TDEE, 목표 에너지 결손량",
-      hi: "BMR, TDEE, ऊर्जा घाटा परिदृश्य"
+    "name": "Asian BMI Calculator",
+    "slug": "asian-bmi-calculator",
+    "formula": {
+      "en": "kg / m² with WHO Western Pacific Ethnic Thresholds (Normal 18.5–22.9, Overweight 23.0–27.4, Obese ≥27.5)",
+      "hi": "वजन (kg) / [ऊंचाई (m)]² (WHO वेस्टर्न पैसिफिक कटऑफ: सामान्य 18.5–22.9, ओवरवेट 23.0–27.4, मोटापा ≥27.5 kg/m²)",
+      "es": "kg / m² con Puntos de Corte OMS Pacífico Occidental (Normal 18.5–22.9, Sobrepeso 23.0–27.4, Obesidad ≥27.5)",
+      "fr": "kg / m² avec Seuils OMS Pacifique Occidental (Normal 18.5–22.9, Surpoids 23.0–27.4, Obésité ≥27.5)",
+      "de": "kg / m² mit WHO-Grenzwerte für den Westpazifik (Normal 18,5–22,9, Übergewicht 23,0–27,4, Adipositas ≥27,5)",
+      "ko": "kg / m² (WHO 서태평양 아시아인 전용 기준: 정상 18.5–22.9, 과체중 23.0–27.4, 비만 ≥27.5 kg/m²)"
     },
-    output: {
-      en: "Daily Calorie Reference Baseline (kcal/day)",
-      es: "Línea base de calorías diarias de referencia (kcal/día)",
-      fr: "Repère calorique quotidien de référence (kcal/jour)",
-      de: "Tägliche Kalorien-Referenzlinie (kcal/Tag)",
-      ko: "일일 칼로리 권장 기준선 (kcal/일)",
-      hi: "दैनिक कैलोरी संदर्भ बेसलाइन (kcal/दिन)"
+    "source": {
+      "en": "WHO Expert Consultation. Appropriate Body-Mass Index for Asian Populations. Lancet 2004; 363: 157–163 (PMID: 14726171)",
+      "hi": "WHO विशेषज्ञ परामर्श, एशियाई आबादी हेतु उपयुक्त बीएमआई. द लैंसेट 2004; 363: 157–163 (PMID: 14726171)",
+      "es": "Consulta de Expertos de la OMS. IMC apropiado para poblaciones asiáticas. Lancet 2004; 363: 157–163 (PMID: 14726171)",
+      "fr": "Consultation d'Experts de l'OMS. IMC approprié pour les populations asiatiques. Lancet 2004; 363: 157–163 (PMID: 14726171)",
+      "de": "WHO-Expertenkonsultation. Angemessener BMI für asiatische Populationen. Lancet 2004; 363: 157–163 (PMID: 14726171)",
+      "ko": "WHO 전문가 위원회. 아시아 인구를 위한 체질량지수 합의 보고서. Lancet 2004; 363: 157–163 (PMID: 14726171)"
     },
-    limitations: {
-      en: "Mathematical energy differential model for planning reference; not a prescriptive medical weight loss plan.",
-      es: "Modelo matemático de balance energético para planificación; no es un plan médico prescriptivo.",
-      fr: "Modèle différentiel d'énergie pour la planification ; ne remplace pas un suivi médical nutritionnel.",
-      de: "Mathematisches Modell zur Orientierung; kein verbindlicher ärztlicher Ernährungsplan.",
-      ko: "계획 수립을 위한 수학적 에너지 균형 모델이며, 의사의 처방이나 전문적인 의료 다이어트 요법을 대신하지 않습니다.",
-      hi: "नियोजन संदर्भ हेतु ऊर्जा अंतर का गणितीय मॉडल; यह कोई व्यक्तिगत चिकित्सीय या चिकित्सकीय वजन घटाने की योजना नहीं है।"
+    "inputs": {
+      "en": "Height, Weight, Asian Ethnic Ancestry",
+      "hi": "कद, वजन, एशियाई मूल संदर्भ",
+      "es": "Altura, Peso, Ascendencia Étnica Asiática",
+      "fr": "Taille, Poids, Origine Ethnique Asiatique",
+      "de": "Körpergröße, Gewicht, Asiatische Abstammung",
+      "ko": "신장, 체중, 아시아계 민족 참고 기준"
+    },
+    "output": {
+      "en": "Asian-Specific Body Mass Index Score & Public Health Action Thresholds",
+      "hi": "संशोधित एशियाई बीएमआई स्कोर एवं चयापचय जोखिम वर्गीकरण",
+      "es": "Puntuación de IMC para Poblaciones Asiáticas y Puntos de Acción de Salud Pública",
+      "fr": "Score d'IMC Spécifique et Seuils d'Intervention en Santé Publique",
+      "de": "Asienspezifischer BMI-Wert & gesundheitliche Interventionsschwellen",
+      "ko": "아시아인 기준 맞춤 체질량지수 점수 및 공중보건 권고 비만 분류"
+    },
+    "limitations": {
+      "en": "Accounts for population-level body fat variations in East and Southeast Asian cohorts; requires waist circumference for central adiposity verification.",
+      "hi": "पूर्वी व दक्षिण-पूर्वी एशियाई समूहों में वसा भिन्नताओं को दर्शाता है; आंतों की चर्बी की पुष्टि के लिए कमर माप आवश्यक है।",
+      "es": "Refleja la mayor proporción de grasa a menor IMC en asiáticos; se recomienda complementar con perímetro de cintura.",
+      "fr": "Prend en compte la masse grasse plus élevée à IMC identique ; nécessite la mesure du tour de taille pour l'adiposité viscérale.",
+      "de": "Berücksichtigt höhere Körperfettanteile bei niedrigerem BMI; Taillenumfang zur Viszeralfettprüfung empfohlen.",
+      "ko": "동아시아 및 동남아시아 인구의 높은 체지방률을 반영하며, 복부 내장비만 평가를 위해 허리둘레 측정이 병행되어야 합니다."
     }
   },
   {
-    name: "Protein Intake Calculator",
-    slug: "protein-intake-calculator",
-    formula: "Body Weight (kg) × Activity Multiplier (0.8g/kg RDA to 2.2g/kg ISSN)",
-    source: "International Society of Sports Nutrition (ISSN Position Stand)",
-    inputs: {
-      en: "Body Weight, Activity Level, Fitness Focus",
-      es: "Peso corporal, Nivel de actividad, Objetivo de fitness",
-      fr: "Poids corporel, Niveau d'activité, Objectif forme",
-      de: "Körpergewicht, Aktivitätsniveau, Trainingsziel",
-      ko: "체중, 신체 활동 수준, 운동 목표",
-      hi: "शरीर का वजन, गतिविधि स्तर, फिटनेस लक्ष्य"
+    "name": "BMR Calculator",
+    "slug": "bmr-calculator",
+    "formula": {
+      "en": "Mifflin-St Jeor: 10W + 6.25H - 5A + S (Men: +5 | Women: -161)",
+      "hi": "मिफ्लिन-सेंट जेओर: 10 × वजन(kg) + 6.25 × कद(cm) - 5 × उम्र(वर्ष) + S (पुरुष: +5 | महिला: -161)",
+      "es": "Mifflin-St Jeor: 10P + 6.25A - 5E + S (Hombres: +5 | Mujeres: -161)",
+      "fr": "Mifflin-St Jeor : 10P + 6.25T - 5A + S (Hommes : +5 | Femmes : -161)",
+      "de": "Mifflin-St Jeor: 10G + 6,25H - 5A + S (Männer: +5 | Frauen: -161)",
+      "ko": "Mifflin-St Jeor 공식: 10W + 6.25H - 5A + S (남성: +5 | 여성: -161)"
     },
-    output: {
-      en: "Daily Protein Intake Reference Range (grams/day)",
-      es: "Rango de referencia de ingesta diaria de proteínas (g/día)",
-      fr: "Fourchette de référence d'apport en protéines (g/jour)",
-      de: "Referenzbereich für tägliche Proteinzufuhr (Gramm/Tag)",
-      ko: "일일 권장 단백질 섭취량 참고 범위 (g/일)",
-      hi: "दैनिक प्रोटीन सेवन संदर्भ सीमा (ग्राम/दिन)"
+    "source": {
+      "en": "Mifflin MD, St Jeor ST, et al. Am J Clin Nutr. 1990; 51(2): 241–247 (PMID: 2305711)",
+      "hi": "मिफ्लिन एमडी, सेंट जेओर एसटी, एट अल. अमेरिकन जर्नल ऑफ क्लिनिकल न्यूट्रिशन (1990; 51: 241–247 / PMID: 2305711)",
+      "es": "Mifflin MD, St Jeor ST, et al. Am J Clin Nutr. 1990; 51(2): 241–247 (PMID: 2305711)",
+      "fr": "Mifflin MD, St Jeor ST, et al. Am J Clin Nutr. 1990; 51(2): 241–247 (PMID: 2305711)",
+      "de": "Mifflin MD, St Jeor ST, et al. Am J Clin Nutr. 1990; 51(2): 241–247 (PMID: 2305711)",
+      "ko": "Mifflin MD, St Jeor ST, et al. Am J Clin Nutr. 1990; 51(2): 241–247 (PMID: 2305711)"
     },
-    limitations: {
-      en: "Provides educational reference ranges based on activity benchmarks; renal health considerations apply.",
-      es: "Proporciona rangos de referencia educativos según la actividad; considerar la salud renal.",
-      fr: "Fournit des repères éducatifs selon le niveau d'activité ; précautions rénales applicables.",
-      de: "Bietet Richtwerte basierend auf Aktivitäts-Benchmarks; Nierengesundheit ist zu berücksichtigen.",
-      ko: "활동량 기준의 교육용 참고 지표이며, 신장 질환 등 건강 상태에 따라 전문의 상담이 필요합니다.",
-      hi: "गतिविधि मानकों पर आधारित शैक्षिक संदर्भ सीमाएं प्रदान करता है; गुर्दे (किडनी) स्वास्थ्य संबंधी सावधानियां लागू होती हैं।"
+    "inputs": {
+      "en": "Age, Biological Sex, Height, Weight",
+      "hi": "आयु (उम्र), जैविक लिंग, कद, वजन",
+      "es": "Edad, Sexo Biológico, Altura, Peso",
+      "fr": "Âge, Sexe Biologique, Taille, Poids",
+      "de": "Alter, Biologisches Geschlecht, Größe, Gewicht",
+      "ko": "연령, 생물학적 성별, 신장, 체중"
+    },
+    "output": {
+      "en": "Basal Metabolic Rate (BMR) in Calories/Day required for resting vital organ maintenance",
+      "hi": "बेसल मेटाबोलिक दर (BMR) — पूर्ण शारीरिक विश्राम में आवश्यक दैनिक कैलोरी",
+      "es": "Tasa Metabólica Basal (TMB) en calorías/día para funciones vitales en reposo",
+      "fr": "Taux Métabolique de Base (TMB) en calories/jour pour le maintien au repos",
+      "de": "Grundumsatz (BMR) in Kalorien/Tag für lebensnotwendige Organfunktionen in Ruhe",
+      "ko": "기초대사량(BMR) — 완전한 휴식 상태에서 생명 유지를 위해 소비되는 일일 칼로리"
+    },
+    "limitations": {
+      "en": "Calculates baseline energy expenditure for non-athletic lean body mass; highly muscular individuals burn more at rest.",
+      "hi": "दुबली मांसपेशियों (LBM) के आधार पर भिन्न हो सकता है; अत्यधिक मस्कुलर एथलीट विश्राम में भी अधिक कैलोरी जलाते हैं।",
+      "es": "Estima el gasto basal según promedios corporales; personas muy musculosas poseen un gasto en reposo superior.",
+      "fr": "Estime la dépense énergétique au repos ; les personnes très musclées présentent un métabolisme basal plus élevé.",
+      "de": "Berechnet den Energiebedarf bei durchschnittlicher Muskelmasse; muskulöse Personen haben einen höheren Grundumsatz.",
+      "ko": "표준 체지방률 기준의 기초 에너지 소모량을 계산하므로, 근육량이 매우 많은 체형은 실제 기초대사량이 더 높습니다."
     }
   },
   {
-    name: "Macro Calculator",
-    slug: "macro-calculator",
-    formula: "Acceptable Macronutrient Distribution Ranges (AMDR)",
-    source: "Institute of Medicine (IOM) Dietary Reference Intakes",
-    inputs: {
-      en: "Daily Calorie Intake, Goal Macro Split",
-      es: "Calorías diarias, Distribución de macronutrientes",
-      fr: "Calories quotidiennes, Répartition des macronutriments",
-      de: "Tägliche Kalorienzufuhr, Makronährstoff-Verteilung",
-      ko: "일일 칼로리 섭취량, 목표 영양소 비율",
-      hi: "दैनिक कैलोरी सेवन, मैक्रोन्यूट्रिएंट अनुपात लक्ष्य"
+    "name": "TDEE Calculator",
+    "slug": "tdee-calculator",
+    "formula": {
+      "en": "BMR × Physical Activity Level Multiplier (PAL Factor: 1.2 to 1.9)",
+      "hi": "BMR × शारीरिक गतिविधि स्तर (PAL गुणांक: 1.2 से 1.9)",
+      "es": "TMB × Multiplicador de Nivel de Actividad Física (Factor PAL: 1.2 a 1.9)",
+      "fr": "TMB × Multiplicateur d'Activité Physique (Facteur PAL : 1.2 à 1.9)",
+      "de": "BMR × Aktivitätsmultiplikator (PAL-Faktor: 1,2 bis 1,9)",
+      "ko": "BMR × 일상 신체 활동 수준 계수 (PAL 지수: 1.2 ~ 1.9)"
     },
-    output: {
-      en: "Carbohydrate, Protein, Fat Distribution (grams)",
-      es: "Distribución de carbohidratos, proteínas y grasas (gramos)",
-      fr: "Répartition en glucides, protéines et lipides (grammes)",
-      de: "Verteilung von Kohlenhydraten, Proteinen und Fetten (Gramm)",
-      ko: "탄수화물, 단백질, 지방 일일 섭취 비율 (g)",
-      hi: "कार्बोहाइड्रेट, प्रोटीन, वसा वितरण (ग्राम में)"
+    "source": {
+      "en": "Institute of Medicine (IOM / NASEM 2005) Dietary Reference Intakes for Energy",
+      "hi": "राष्ट्रीय विज्ञान अकादमी (NASEM / IOM 2005) ऊर्जा व्यय मॉडल",
+      "es": "Instituto de Medicina (IOM / NASEM 2005) Ingestas Dietéticas de Referencia para Energía",
+      "fr": "Institut de Médecine (IOM / NASEM 2005) Apports Nutritionnels de Référence en Énergie",
+      "de": "Institute of Medicine (IOM / NASEM 2005) Dietary Reference Intakes für Energie",
+      "ko": "미국 의학연구소(IOM / NASEM 2005) 에너지 권장 섭취 기준 지침"
     },
-    limitations: {
-      en: "General nutritional planning framework; individual dietary needs vary based on metabolic conditions.",
-      es: "Marco general de planificación nutricional; las necesidades individuales varían según la salud metabólica.",
-      fr: "Cadre général de planification nutritionnelle ; les besoins varient selon l'état métabolique individuel.",
-      de: "Allgemeiner Ernährungsplanungsrahmen; individuelle Bedürfnisse variieren je nach Stoffwechsel.",
-      ko: "일반적인 영양 계획 수립을 위한 기초 프레임워크이며, 대사 질환 및 개인 건강 상태에 따라 달라질 수 있습니다.",
-      hi: "सामान्य पोषण योजना ढांचा; व्यक्तिगत आहार आवश्यकताएं चयापचय स्वास्थ्य और चिकित्सीय स्थितियों के आधार पर भिन्न हो सकती हैं।"
+    "inputs": {
+      "en": "BMR (derived via Mifflin-St Jeor), Weekly Occupational & Exercise Activity Level",
+      "hi": "BMR, शारीरिक गतिविधि स्तर (PAL), व्यायाम दिनचर्या",
+      "es": "TMB (derivada de Mifflin-St Jeor), Nivel de Actividad Laboral y Deportiva",
+      "fr": "TMB (dérivé de Mifflin-St Jeor), Niveau d'Activité Physique et Professionnelle",
+      "de": "BMR (nach Mifflin-St Jeor), wöchentliches Berufs- und Trainingsaktivitätsniveau",
+      "ko": "기초대사량(BMR), 직업적 활동량 및 주간 운동 빈도"
+    },
+    "output": {
+      "en": "Total Daily Energy Expenditure (TDEE) in Calories/Day to maintain current body weight",
+      "hi": "कुल दैनिक ऊर्जा व्यय (TDEE) — वर्तमान वजन बनाए रखने के लिए कुल कैलोरी",
+      "es": "Gasto Energético Diario Total (TDEE) en calorías/día para mantener el peso actual",
+      "fr": "Dépense Énergétique Journalière Totale (DEJT) en calories/jour pour maintenir le poids",
+      "de": "Gesamtenergieumsatz (TDEE) in Kalorien/Tag zur Erhaltung des aktuellen Körpergewichts",
+      "ko": "일일 총 에너지 소비량(TDEE) — 현재 체중을 유지하기 위한 하루 권장 칼로리"
+    },
+    "limitations": {
+      "en": "Subject to self-reporting bias in activity estimation; individual metabolic adaptation can vary by 5–10%.",
+      "hi": "व्यक्तिगत मेटाबॉलिक अनुकूलन और गैर-व्यायाम गतिविधि थर्मोजेनेसिस (NEAT) के कारण 5–10% विचलन संभव है।",
+      "es": "Sujeto a margen de error en la estimación de actividad; la adaptación metabólica individual puede variar un 5–10%.",
+      "fr": "Dépend de l'estimation individuelle de l'activité ; l'adaptation métabolique peut varier de 5 à 10 %.",
+      "de": "Abhängig von der subjektiven Einschätzung der Aktivität; die metabolische Anpassung kann um 5–10 % abweichen.",
+      "ko": "활동량 자가 보고에 따른 주관적 오차가 발생할 수 있으며, 개인의 대사 적응 반응에 따라 5~10% 편차가 있을 수 있습니다."
+    }
+  },
+  {
+    "name": "Maintenance Calorie Calculator",
+    "slug": "maintenance-calorie-calculator",
+    "formula": {
+      "en": "Isoenergetic Balance Model (Daily Energy Intake = TDEE Expenditure)",
+      "hi": "TDEE संतुलन समीकरण (दैनिक ऊर्जा सेवन = कुल ऊर्जा व्यय)",
+      "es": "Modelo de Balance Isoenergético (Ingesta Diaria de Energía = Gasto TDEE)",
+      "fr": "Modèle d'Équilibre Isoénergétique (Apport Énergétique Quotidien = DEJT)",
+      "de": "Isoenergetisches Bilanzmodell (Tägliche Energieaufnahme = TDEE-Verbrauch)",
+      "ko": "등에너지 평형 모델 (일일 에너지 섭취량 = TDEE 에너지 소비량)"
+    },
+    "source": {
+      "en": "FAO/WHO/UNU Expert Consultation on Human Energy Requirements (2004)",
+      "hi": "FAO/WHO/UNU मानव पोषण ऊर्जा आवश्यकताएं रिपोर्ट (2004)",
+      "es": "Consulta de Expertos FAO/OMS/UNU sobre Requerimientos de Energía Humana (2004)",
+      "fr": "Consultation d'Experts FAO/OMS/UNU sur les Besoins Énergétiques Humains (2004)",
+      "de": "FAO/WHO/UNU Expertenbericht über den menschlichen Energiebedarf (2004)",
+      "ko": "FAO/WHO/UNU 인간 에너지 필요량 전문가 공동 보고서 (2004)"
+    },
+    "inputs": {
+      "en": "Age, Biological Sex, Height, Weight, Activity Multiplier",
+      "hi": "उम्र, लिंग, कद, वजन, साप्ताहिक कार्य दिनचर्या",
+      "es": "Edad, Sexo Biológico, Altura, Peso, Nivel de Actividad",
+      "fr": "Âge, Sexe Biologique, Taille, Poids, Niveau d'Activité",
+      "de": "Alter, Geschlecht, Größe, Gewicht, Aktivitätsfaktor",
+      "ko": "연령, 생물학적 성별, 신장, 체중, 일상 활동 지수"
+    },
+    "output": {
+      "en": "Precise Daily Maintenance Caloric Intake Targets & Balanced Macronutrient Baseline",
+      "hi": "दैनिक रखरखाव कैलोरी लक्ष्य एवं मैक्रोन्यूट्रिएंट विभाजन आधार",
+      "es": "Meta Calórica Diaria de Mantenimiento y Distribución Base de Macronutrientes",
+      "fr": "Objectif Calorique Journalier de Maintien et Répartition des Macronutriments",
+      "de": "Präzise tägliche Erhaltungskalorien & ausgewogene Makronährstoff-Basis",
+      "ko": "체중 유지를 위한 일일 정밀 유지 칼로리 및 기본 탄단지 영양소 분배 기준"
+    },
+    "limitations": {
+      "en": "Metabolic rates down-regulate or up-regulate over prolonged diet phases; periodic re-evaluation every 4-6 weeks is advised.",
+      "hi": "वजन में बदलाव के साथ मेटाबॉलिज्म अनुकूलित होता है; हर 4-6 सप्ताह में पुनः गणना की सिफारिश की जाती है।",
+      "es": "El metabolismo se adapta tras períodos prolongados de dieta; se recomienda reevaluar cada 4 a 6 semanas.",
+      "fr": "Le métabolisme s'adapte lors de régimes prolongés ; un réajustement toutes les 4 à 6 semaines est conseillé.",
+      "de": "Der Stoffwechsel passt sich bei Diätphasen an; eine Neuberechnung alle 4 bis 6 Wochen wird empfohlen.",
+      "ko": "장기간의 식단 조절 시 대사 적응 현상이 일어나므로 4~6주 간격으로 재평가하는 것이 바람직합니다."
+    }
+  },
+  {
+    "name": "Body Fat Calculator",
+    "slug": "body-fat-calculator",
+    "formula": {
+      "en": "US Navy Logarithmic Circumference Equations based on Abdominal, Neck, and Hip (females) values",
+      "hi": "अमेरिकी नौसेना (US Navy) परिधि-आधारित लॉगरिदमिक समीकरण",
+      "es": "Ecuaciones Logarítmicas de la Marina de EE. UU. basadas en perímetros de cuello, cintura y cadera",
+      "fr": "Équations Logarithmiques de l'US Navy basées sur les circonférences du cou, de la taille et des hanches",
+      "de": "Logarithmische US-Navy-Umfangsformel basierend auf Nacken-, Taillen- und Hüftumfang",
+      "ko": "미 해군(US Navy) 둘레 측정 로그 방정식 (목, 허리 및 여성 엉덩이둘레 기준)"
+    },
+    "source": {
+      "en": "Hodgdon JA, Beckett MB. Naval Health Research Center Report 84-29 (1984)",
+      "hi": "हॉज्डन जेए एवं बेकेट एमबी, नेवल हेल्थ रिसर्च सेंटर रिपोर्ट 84-29 (1984)",
+      "es": "Hodgdon JA, Beckett MB. Naval Health Research Center Report 84-29 (1984)",
+      "fr": "Hodgdon JA, Beckett MB. Rapport du Naval Health Research Center 84-29 (1984)",
+      "de": "Hodgdon JA, Beckett MB. Naval Health Research Center Report 84-29 (1984)",
+      "ko": "Hodgdon JA, Beckett MB. 미국 해군 건강연구센터 보고서 84-29 (1984)"
+    },
+    "inputs": {
+      "en": "Height, Neck Circumference, Waist Circumference, Hip Circumference (females)",
+      "hi": "कद, गर्दन, कमर, कूल्हे (महिलाओं हेतु)",
+      "es": "Altura, Cuello, Cintura, Cadera (mujeres)",
+      "fr": "Taille, Tour de Cou, Tour de Taille, Tour de Hanches (femmes)",
+      "de": "Größe, Nackenumfang, Taillenumfang, Hüftumfang (Frauen)",
+      "ko": "신장, 목둘레, 허리둘레, 엉덩이둘레(여성 필수)"
+    },
+    "output": {
+      "en": "Body Fat Percentage (%), Fat Mass (kg/lbs), Lean Mass, and Essential Fat Category",
+      "hi": "शरीर में वसा का अनुमानित प्रतिशत (Body Fat %) एवं वसा श्रेणी",
+      "es": "Porcentaje de Grasa Corporal (%), Masa Grasa, Masa Magra y Categoría de Grasa",
+      "fr": "Pourcentage de Graisse Corporelle (%), Masse Grasse, Masse Maigre et Catégorie",
+      "de": "Körperfettanteil (%), Fettmasse (kg/lbs), fettfreie Masse & Einstufungskategorie",
+      "ko": "체지방률(%), 체지방량, 제지방량(LBM) 및 ACE 체지방 단계 분류"
+    },
+    "limitations": {
+      "en": "Measuring tape tension and localized subcutaneous fat variations introduce ±3–4% margin of error compared to hydrodensitometry.",
+      "hi": "टेप माप सटीकता और व्यक्तिगत वसा संचय पैटर्न पर निर्भर; हाइड्रोस्टैटिक वजन या DEXA स्कैन जितना सटीक नहीं।",
+      "es": "La tensión de la cinta métrica y la grasa localizada pueden inducir un margen de error de ±3-4% frente a DEXA.",
+      "fr": "La tension du ruban et la répartition des graisses introduisent une marge d'erreur de ±3-4 % par rapport à l'imagerie DEXA.",
+      "de": "Messbandspannung und subkutane Fettverteilung bedingen eine Fehlertoleranz von ±3–4 % gegenüber DEXA-Scans.",
+      "ko": "줄자 측정 강도 및 피하지방 분포에 따라 정밀 수중밀도측정법이나 DEXA 대비 ±3~4%의 오차가 발생할 수 있습니다."
+    }
+  },
+  {
+    "name": "Lean Body Mass Calculator",
+    "slug": "lean-body-mass-calculator",
+    "formula": {
+      "en": "Boer Equation (Men: 0.407W + 0.267H - 19.2 | Women: 0.252W + 0.473H - 48.3)",
+      "hi": "बोएर समीकरण (पुरुष: 0.407W + 0.267H - 19.2 | महिला: 0.252W + 0.473H - 48.3)",
+      "es": "Ecuación de Boer (Hombres: 0.407P + 0.267A - 19.2 | Mujeres: 0.252P + 0.473A - 48.3)",
+      "fr": "Formule de Boer (Hommes : 0.407P + 0.267T - 19.2 | Femmes : 0.252P + 0.473T - 48.3)",
+      "de": "Boer-Formel (Männer: 0,407G + 0,267H - 19,2 | Frauen: 0,252G + 0,473H - 48,3)",
+      "ko": "Boer 공식 (남성: 0.407W + 0.267H - 19.2 | 여성: 0.252W + 0.473H - 48.3)"
+    },
+    "source": {
+      "en": "Boer P. Am J Physiol. 1984; 247(4 Pt 2): F632–F636 (PMID: 6496691)",
+      "hi": "बोएर पी., अमेरिकन जर्नल ऑफ फिजियोलॉजी (1984; 247: F632–F636 / PMID: 6496691)",
+      "es": "Boer P. Am J Physiol. 1984; 247(4 Pt 2): F632–F636 (PMID: 6496691)",
+      "fr": "Boer P. Am J Physiol. 1984; 247(4 Pt 2): F632–F636 (PMID: 6496691)",
+      "de": "Boer P. Am J Physiol. 1984; 247(4 Pt 2): F632–F636 (PMID: 6496691)",
+      "ko": "Boer P. Am J Physiol. 1984; 247(4 Pt 2): F632–F636 (PMID: 6496691)"
+    },
+    "inputs": {
+      "en": "Height, Weight, Biological Sex",
+      "hi": "कद, वजन, लिंग",
+      "es": "Altura, Peso, Sexo Biológico",
+      "fr": "Taille, Poids, Sexe Biologique",
+      "de": "Größe, Gewicht, Biologisches Geschlecht",
+      "ko": "신장, 체중, 생물학적 성별"
+    },
+    "output": {
+      "en": "Lean Body Mass (LBM) in kg and lbs, Fat Mass, and Lean-to-Fat Mass Ratio",
+      "hi": "लीन बॉडी मास (LBM) — हड्डियों, अंगों और मांसपेशियों का कुल वसा-रहित भार",
+      "es": "Masa Corporal Magra (MCM) en kg y libras, Masa Grasa y Ratio Músculo/Grasa",
+      "fr": "Masse Corporelle Maigre (MCM) en kg et livres, Masse Grasse et Ratio Masse Maigre/Grasse",
+      "de": "Fettfreie Körpermasse (LBM) in kg und lbs, Fettmasse & fettfreies Verhältnis",
+      "ko": "제지방량(LBM, kg 및 lbs 단위), 총 지방량 및 골격근-체지방 구성 비율"
+    },
+    "limitations": {
+      "en": "Assumes normal total body water hydration (approx 73%); severe edema or clinical dehydration distorts estimate.",
+      "hi": "औसत जलयोजन स्तर (हाइड्रेशन) मानता है; गंभीर निर्जलीकरण या शोफ (सूजन) में परिणाम प्रभावित हो सकते हैं।",
+      "es": "Asume un estado de hidratación normal (aprox. 73%); la retención de líquidos o deshidratación grave distorsiona el cálculo.",
+      "fr": "Repose sur une hydratation normale (environ 73 %) ; les œdèmes sévères ou la déshydratation faussent le calcul.",
+      "de": "Setzt normalen Wasserhaushalt (ca. 73 %) voraus; schwere Ödeme oder Dehydratation verfälschen das Ergebnis.",
+      "ko": "체내 정상 수분율(약 73%)을 전제하므로, 심한 부종이나 탈수 증상이 있을 경우 오차가 커질 수 있습니다."
+    }
+  },
+  {
+    "name": "Ideal Weight Calculator",
+    "slug": "ideal-weight-calculator",
+    "formula": {
+      "en": "Devine (1974): Men: 50 kg + 2.3 kg/inch > 5ft | Women: 45.5 kg + 2.3 kg/inch > 5ft",
+      "hi": "डिवाइन 1974 समीकरण (पुरुष: 50 kg + 2.3 kg प्रति इंच > 5 फीट | महिला: 45.5 kg + 2.3 kg प्रति इंच > 5 फीट)",
+      "es": "Devine (1974): Hombres: 50 kg + 2.3 kg/pulgada > 5ft | Mujeres: 45.5 kg + 2.3 kg/pulgada > 5ft",
+      "fr": "Devine (1974) : Hommes : 50 kg + 2.3 kg/pouce > 5ft | Femmes : 45.5 kg + 2.3 kg/pouce > 5ft",
+      "de": "Devine (1974): Männer: 50 kg + 2,3 kg/Zoll > 5ft | Frauen: 45,5 kg + 2,3 kg/Zoll > 5ft",
+      "ko": "Devine 공식 (1974): 남성: 50 kg + 2.3 kg/inch (5피트 초과 시) | 여성: 45.5 kg + 2.3 kg/inch (5피트 초과 시)"
+    },
+    "source": {
+      "en": "Devine BJ. Drug Intell Clin Pharm. 1974; 8: 650–655",
+      "hi": "डिवाइन बीजे, ड्रग इंटेलिजेंस एंड क्लिनिकल फार्मेसी (1974; 8: 650–655)",
+      "es": "Devine BJ. Drug Intell Clin Pharm. 1974; 8: 650–655",
+      "fr": "Devine BJ. Drug Intell Clin Pharm. 1974; 8: 650–655",
+      "de": "Devine BJ. Drug Intell Clin Pharm. 1974; 8: 650–655",
+      "ko": "Devine BJ. Drug Intell Clin Pharm. 1974; 8: 650–655"
+    },
+    "inputs": {
+      "en": "Height, Biological Sex",
+      "hi": "कद, लिंग",
+      "es": "Altura, Sexo Biológico",
+      "fr": "Taille, Sexe Biologique",
+      "de": "Größe, Biologisches Geschlecht",
+      "ko": "신장, 생물학적 성별"
+    },
+    "output": {
+      "en": "Ideal Body Weight (IBW) comparison across 4 clinical formulas (Devine, Robinson, Miller, Hamwi)",
+      "hi": "क्लिनिकल आदर्श शारीरिक वजन (IBW) एवं 4 स्थापित सूत्रों (Devine, Robinson, Miller, Hamwi) का तुलनात्मक चार्ट",
+      "es": "Peso Corporal Ideal (PCI) comparado a través de 4 fórmulas clínicas (Devine, Robinson, Miller, Hamwi)",
+      "fr": "Poids Idéal Théorique selon 4 formules cliniques validées (Devine, Robinson, Miller, Hamwi)",
+      "de": "Idealgewicht (IBW) im Vergleich über 4 klinische Formeln (Devine, Robinson, Miller, Hamwi)",
+      "ko": "4대 공인 임상 공식(Devine, Robinson, Miller, Hamwi) 기반 표준 이상적 체중(IBW) 비교 결과"
+    },
+    "limitations": {
+      "en": "Created historically for pharmaceutical drug dosing; does not account for frame size or athletic muscular development.",
+      "hi": "मूल रूप से दवा खुराक मानकीकरण के लिए बनाया गया था; यह प्राकृतिक मस्कुलर फ्रेम या भारी हड्डियों को पूरी तरह शामिल नहीं करता।",
+      "es": "Creado para dosificación farmacológica; no contempla la complexión ósea ni el desarrollo muscular atlético.",
+      "fr": "Initialement développé pour le dosage médicamenteux ; ne prend pas en compte l'ossature ni la masse musculaire.",
+      "de": "Historisch für medikamentöse Dosierungen entwickelt; berücksichtigt weder Knochenbau noch Muskelmasse.",
+      "ko": "원래 약물 투여량 산정을 위해 개발되었으며, 개인의 골격 크기나 운동선수의 근육 발달도를 반영하지 않습니다."
+    }
+  },
+  {
+    "name": "Calorie Deficit Calculator",
+    "slug": "calorie-calculator",
+    "formula": {
+      "en": "Deficit Target = TDEE - Selected Daily Caloric Deficit (250 to 1000 kcal/day)",
+      "hi": "ऊर्जा घाटा परिदृश्य = TDEE - लक्षित दैनिक कैलोरी कटौती (250–1000 kcal/दिन)",
+      "es": "Objetivo de Déficit = TDEE - Déficit Calórico Diario Seleccionado (250 a 1000 kcal/día)",
+      "fr": "Objectif Déficitaire = DEJT - Déficit Calorique Quotidien Choisi (250 à 1000 kcal/jour)",
+      "de": "Defizitziel = TDEE - gewähltes tägliches Kaloriendefizit (250 bis 1000 kcal/Tag)",
+      "ko": "목표 칼로리 = 일일 총 소비량(TDEE) - 선택한 일일 칼로리 적자폭 (250 ~ 1000 kcal/일)"
+    },
+    "source": {
+      "en": "American College of Sports Medicine (ACSM) & NIH Weight Management Guidelines",
+      "hi": "अमेरिकन कॉलेज ऑफ स्पोर्ट्स मेडिसिन (ACSM) एवं NIH मोटापा दिशानिर्देश",
+      "es": "Colegio Americano de Medicina del Deporte (ACSM) y Directrices del NIH",
+      "fr": "American College of Sports Medicine (ACSM) & Recommandations des NIH",
+      "de": "American College of Sports Medicine (ACSM) & NIH-Gewichtsmanagement-Richtlinien",
+      "ko": "미국스포츠의학회(ACSM) 및 미국립보건원(NIH) 체중 관리 가이드라인"
+    },
+    "inputs": {
+      "en": "Current Weight, Goal Weight, TDEE, Desired Weight Loss Pace (0.25 to 1.0 kg/week)",
+      "hi": "वर्तमान वजन, लक्षित वजन, TDEE, साप्ताहिक वजन घटाने की गति",
+      "es": "Peso Actual, Peso Objetivo, TDEE, Ritmo Deseado de Pérdida de Peso (0.25 a 1.0 kg/semana)",
+      "fr": "Poids Actuel, Poids Cible, DEJT, Rythme de Perte Souhaité (0.25 à 1.0 kg/semaine)",
+      "de": "Aktuelles Gewicht, Zielgewicht, TDEE, gewünschtes Abnahmetempo (0,25 bis 1,0 kg/Woche)",
+      "ko": "현재 체중, 목표 체중, TDEE, 주당 목표 감량 속도 (0.25 ~ 1.0 kg/주)"
+    },
+    "output": {
+      "en": "Target Daily Caloric Intake for Safe Fat Loss & Estimated Goal Timeline",
+      "hi": "वजन घटाने हेतु दैनिक अनुशंसित कैलोरी सेवन लक्ष्य एवं अनुमानित पूर्णता तिथि",
+      "es": "Ingesta Calórica Diaria Recomendada y Cronograma Estimado de Pérdida Grasa Segura",
+      "fr": "Apport Calorique Quotidien Cible et Estimation de la Date d'Atteinte de l'Objectif",
+      "de": "Tägliche Zielkalorienaufnahme für gesunden Fettabbau & geschätzter Zeitplan",
+      "ko": "안전한 체지방 감량을 위한 일일 권장 섭취 칼로리 및 목표 도달 예상 기간"
+    },
+    "limitations": {
+      "en": "Excessive deficits below basal metabolic minimums (1200 kcal for women, 1500 kcal for men) induce metabolic slowdown and lean tissue catabolism.",
+      "hi": "अत्यधिक कैलोरी कटौती मेटाबॉलिज्म धीमा कर सकती है; महिलाओं के लिए 1200 और पुरुषों के लिए 1500 kcal न्यूनतम सुरक्षित सीमा है।",
+      "es": "Déficits excesivos por debajo de los mínimos basales pueden inducir ralentización metabólica y pérdida de masa muscular.",
+      "fr": "Un déficit trop agressif sous les seuils vitaux (1200 kcal femmes, 1500 kcal hommes) entraîne une fonte musculaire.",
+      "de": "Zu hohe Defizite unterhalb des Grundumsatzes führen zu metabolischer Verlangsamung und Muskelabbau.",
+      "ko": "지나친 칼로리 제한(여성 1200 kcal, 남성 1500 kcal 미만)은 대사 저하 및 근손실(근육 이화 작용)을 유발할 수 있습니다."
+    }
+  },
+  {
+    "name": "Protein Intake Calculator",
+    "slug": "protein-intake-calculator",
+    "formula": {
+      "en": "Body Mass (kg) × Activity Coefficient (0.8 g/kg Sedentary to 2.2 g/kg High-Intensity)",
+      "hi": "शरीर का वजन (kg) × प्रोटीन आवश्यकता कारक (0.8 g/kg सेडान्ट्री से 2.2 g/kg एथलेटिक)",
+      "es": "Masa Corporal (kg) × Coeficiente de Actividad (0.8 g/kg sedentario a 2.2 g/kg intenso)",
+      "fr": "Masse Corporelle (kg) × Coefficient d'Activité (0.8 g/kg sédentaire à 2.2 g/kg intensif)",
+      "de": "Körpermasse (kg) × Aktivitätskoeffizient (0,8 g/kg sitzend bis 2,2 g/kg intensiv)",
+      "ko": "체중 (kg) × 신체 활동 및 훈련 계수 (좌식 생활 0.8 g/kg ~ 고강도 근력운동 2.2 g/kg)"
+    },
+    "source": {
+      "en": "International Society of Sports Nutrition (ISSN) Position Stand (JISSN 2017; 14: 20) & NASEM RDA Guidelines",
+      "hi": "इंटरनेशनल सोसाइटी ऑफ स्पोर्ट्स न्यूट्रिशन (ISSN 2017) एवं NASEM प्रोटीन RDA",
+      "es": "Sociedad Internacional de Nutrición Deportiva (ISSN 2017) y Directrices NASEM RDA",
+      "fr": "International Society of Sports Nutrition (ISSN 2017) et Recommandations NASEM",
+      "de": "International Society of Sports Nutrition (ISSN 2017) & NASEM RDA-Richtlinien",
+      "ko": "국제스포츠영양학회(ISSN 2017 공식 성명서) 및 미국 국립학술원(NASEM) 권장 섭취량(RDA)"
+    },
+    "inputs": {
+      "en": "Body Weight, Activity Level, Fitness Objective (Maintenance, Fat Loss, Hypertrophy)",
+      "hi": "वजन, शारीरिक गतिविधि स्तर, प्राथमिक फिटनेस लक्ष्य",
+      "es": "Peso Corporal, Nivel de Actividad, Objetivo (Mantenimiento, Pérdida de Grasa, Hipertrofia)",
+      "fr": "Poids, Niveau d'Activité, Objectif (Maintien, Perte de Poids, Prise de Muscle)",
+      "de": "Körpergewicht, Aktivitätsniveau, Trainingsziel (Erhalt, Fettabbau, Muskelaufbau)",
+      "ko": "체중, 일상 활동량 및 운동 강도, 운동 목표(체중 유지, 다이어트, 근육 증가)"
+    },
+    "output": {
+      "en": "Total Daily Recommended Protein Intake (grams/day), Meal Distribution, and % of Total Calories",
+      "hi": "दैनिक प्रोटीन आवश्यकता (ग्राम/दिन) एवं प्रति भोजन अनुशंसित वितरण",
+      "es": "Ingesta Diaria Recomendada de Proteína (gramos/día), Distribución por Comida y Porcentaje",
+      "fr": "Apport Protéique Journalier Recommandé (g/jour), Répartition par Repas et Pourcentage",
+      "de": "Empfohlene tägliche Proteinzufuhr (g/Tag), Verteilung pro Mahlzeit & Kalorienanteil",
+      "ko": "일일 총 단백질 권장 섭취량(g/일), 끼니별 분배 가이드 및 총 칼로리 대비 비율"
+    },
+    "limitations": {
+      "en": "Individuals with pre-existing renal impairment or chronic kidney disease must consult a clinical nephrologist prior to high-protein regimens.",
+      "hi": "गुर्दे (किडनी) रोग से पीड़ित व्यक्तियों को उच्च प्रोटीन सेवन से पूर्व डॉक्टर से परामर्श लेना चाहिए।",
+      "es": "Personas con disfunción renal preexistente deben consultar a un nefrólogo antes de aumentar el consumo proteico.",
+      "fr": "Les personnes souffrant d'insuffisance rénale doivent impérativement consulter un néphrologue.",
+      "de": "Personen mit Nierenvorerkrankungen müssen vor einer eiweißreichen Ernährung einen Arzt konsultieren.",
+      "ko": "신장 질환(만성 신부전 등) 병력이 있는 경우 고단백 식단을 시작하기 전 반드시 전문의와 상담해야 합니다."
+    }
+  },
+  {
+    "name": "Daily Water Intake Calculator",
+    "slug": "water-intake-calculator",
+    "formula": {
+      "en": "Base Hydration: Weight (kg) × 35 mL + Exercise Offset (350–500 mL per 30 min activity)",
+      "hi": "आधार सेवन = वजन (kg) × 35 ml + व्यायाम क्षति पूरक (प्रति 30 मिनट गतिविधि 350-500 ml)",
+      "es": "Hidratación Base: Peso (kg) × 35 mL + Compensación por Ejercicio (350–500 mL por 30 min)",
+      "fr": "Hydratation de Base : Poids (kg) × 35 mL + Compensation d'Activité (350–500 mL par 30 min)",
+      "de": "Basishydratation: Gewicht (kg) × 35 ml + Trainingszuschlag (350–500 ml pro 30 Min.)",
+      "ko": "기본 수분량: 체중(kg) × 35 mL + 운동 손실 보충량 (운동 30분당 350~500 mL 추가)"
+    },
+    "source": {
+      "en": "National Academy of Medicine (NAM / IOM 2005) Dietary Reference Intakes for Water & Electrolytes",
+      "hi": "नेशनल एकेडमी ऑफ मेडिसिन (NAM) आहार संदर्भ सेवन मानक",
+      "es": "Academia Nacional de Medicina (NAM / IOM 2005) Ingestas Dietéticas de Referencia para Agua",
+      "fr": "Académie Nationale de Médecine (NAM / IOM 2005) Apports Nutritionnels en Eau et Électrolytes",
+      "de": "National Academy of Medicine (NAM / IOM 2005) Referenzwerte für Wasser und Elektrolyte",
+      "ko": "미국 국립의학원(NAM / IOM 2005) 수분 및 전해질 섭취 기준 지침"
+    },
+    "inputs": {
+      "en": "Body Weight, Daily Exercise Duration (minutes), Climate Environment (Temperate vs. Hot/Humid)",
+      "hi": "शारीरिक वजन, दैनिक व्यायाम की अवधि, जलवायु स्थिति (सामान्य / उष्ण-आर्द्र)",
+      "es": "Peso Corporal, Duración del Ejercicio (minutos), Clima (Templado vs. Cálido/Húmedo)",
+      "fr": "Poids, Durée de l'Exercice (minutes), Climat (Tempéré vs Chaud/Humide)",
+      "de": "Körpergewicht, tägliche Trainingsdauer (Minuten), Umgebungsklima (gemäßigt vs. heiß/feucht)",
+      "ko": "체중, 일일 운동 시간(분), 생활 기후 환경(온대 vs 고온다습)"
+    },
+    "output": {
+      "en": "Total Recommended Daily Fluid and Pure Water Volume in Liters and Standard Glasses",
+      "hi": "दैनिक अनुशंसित कुल तरल व पानी का सेवन (लीटर एवं गिलास)",
+      "es": "Volumen Diario Total Recomendado de Líquidos y Agua en Litros y Vasos",
+      "fr": "Volume Total Quotidien Recommandé d'Eau et Liquides en Litres et Verres",
+      "de": "Empfohlene tägliche Gesamtwassermenge in Litern und Gläsern",
+      "ko": "일일 총 권장 수분 섭취량(리터 단위 및 표준 컵 기준 잔 수)"
+    },
+    "limitations": {
+      "en": "Clinical conditions such as congestive heart failure, end-stage renal disease, or hyponatremia require medically prescribed fluid restrictions.",
+      "hi": "हृदय विफलता (हार्ट फेल्योर) या गुर्दे के मरीजों के लिए तरल प्रतिबंध लागू हो सकते हैं।",
+      "es": "Condiciones como insuficiencia cardíaca congestiva o enfermedad renal crónica requieren restricción médica de líquidos.",
+      "fr": "Des pathologies comme l'insuffisance cardiaque ou rénale nécessitent une restriction hydrique médicale.",
+      "de": "Klinische Erkrankungen wie Herzinsuffizienz oder Nierenversagen erfordern ärztlich verordnete Flüssigkeitsrestriktionen.",
+      "ko": "심부전, 만성 신부전 또는 저나트륨혈증 환자는 주치의가 지정한 엄격한 수분 제한 지침을 따라야 합니다."
+    }
+  },
+  {
+    "name": "Macro Calculator",
+    "slug": "macro-calculator",
+    "formula": {
+      "en": "Acceptable Macronutrient Distribution Ranges (AMDR: Protein 10–35%, Carbs 45–65%, Fats 20–35%)",
+      "hi": "स्वीकार्य मैक्रोन्यूट्रिएंट वितरण सीमाएं (AMDR: प्रोटीन 10-35%, कार्बोहाइड्रेट 45-65%, वसा 20-35%)",
+      "es": "Rangos Aceptables de Distribución de Macronutrientes (AMDR: Proteínas 10–35%, Carbohidratos 45–65%, Grasas 20–35%)",
+      "fr": "Intervalles Acceptables de Distribution des Macronutriments (AMDR : Protéines 10–35 %, Glucides 45–65 %, Lipides 20–35 %)",
+      "de": "Akzeptable Makronährstoff-Verteilungsbereiche (AMDR: Protein 10–35%, Kohlenhydrate 45–65%, Fette 20–35%)",
+      "ko": "적정 매크로 영양소 분배 비율 (AMDR 기준: 단백질 10~35%, 탄수화물 45~65%, 지방 20~35%)"
+    },
+    "source": {
+      "en": "Food and Nutrition Board, Institute of Medicine (NASEM / IOM 2005)",
+      "hi": "यूएस इंस्टीट्यूट ऑफ मेडिसिन (IOM) मैक्रोन्यूट्रिएंट दिशानिर्देश",
+      "es": "Junta de Alimentos y Nutrición, Instituto de Medicina (NASEM / IOM 2005)",
+      "fr": "Food and Nutrition Board, Institut de Médecine (NASEM / IOM 2005)",
+      "de": "Food and Nutrition Board, Institute of Medicine (NASEM / IOM 2005)",
+      "ko": "미국 국립학술원 의학연구소(NASEM / IOM 2005) 식품영양위원회 기준"
+    },
+    "inputs": {
+      "en": "Daily Calorie Target (TDEE), Fitness Objective, Dietary Split Protocol (Balanced, Low-Carb, High-Protein)",
+      "hi": "दैनिक कैलोरी लक्ष्य (TDEE), फिटनेस लक्ष्य, आहार प्राथमिकता",
+      "es": "Calorías Diarias (TDEE), Objetivo Físico, Protocolo Dietético (Equilibrado, Bajo en Carbohidratos, Alto en Proteína)",
+      "fr": "Calories Quotidiennes (DEJT), Objectif de Forme, Profil Nutritionnel (Équilibré, Low-Carb, Hyperprotéiné)",
+      "de": "Tägliches Kalorienziel (TDEE), Fitnessziel, Ernährungsstil (ausgewogen, Low-Carb, High-Protein)",
+      "ko": "일일 목표 칼로리(TDEE), 피트니스 목표, 선호 식단 비율(균형식, 저탄수화물, 고단백)"
+    },
+    "output": {
+      "en": "Grams and Caloric Contribution for Daily Proteins (4 kcal/g), Carbohydrates (4 kcal/g), and Lipids (9 kcal/g)",
+      "hi": "दैनिक प्रोटीन, कार्बोहाइड्रेट एवं वसा का ग्राम व कैलोरी में सटीक विभाजन",
+      "es": "Gramos y Porcentajes Diarios de Proteínas (4 kcal/g), Carbohidratos (4 kcal/g) y Grasas (9 kcal/g)",
+      "fr": "Grammes et Répartition Calorique Quotidiens en Protéines (4 kcal/g), Glucides (4 kcal/g) et Lipides (9 kcal/g)",
+      "de": "Gramm und Kalorienanteil für tägliches Protein (4 kcal/g), Kohlenhydrate (4 kcal/g) und Fette (9 kcal/g)",
+      "ko": "단백질(4 kcal/g), 탄수화물(4 kcal/g), 지방(9 kcal/g)의 일일 목표 그램(g) 수 및 칼로리 구성비"
+    },
+    "limitations": {
+      "en": "General nutritional planning framework; individual dietary requirements vary based on metabolic markers and athletic demands.",
+      "hi": "सामान्य पोषण योजना ढांचा; व्यक्तिगत चयापचय स्वास्थ्य और चिकित्सीय प्राथमिकताओं के आधार पर समायोजन आवश्यक है।",
+      "es": "Marco general de planificación nutricional; las necesidades individuales varían según la salud metabólica.",
+      "fr": "Cadre général de planification nutritionnelle ; les besoins varient selon l'état métabolique individuel.",
+      "de": "Allgemeiner Ernährungsplanungsrahmen; individuelle Bedürfnisse variieren je nach Stoffwechsel.",
+      "ko": "일반적인 영양 계획 수립을 위한 기초 프레임워크이며, 대사 질환 및 개인 건강 상태에 따라 달라질 수 있습니다."
+    }
+  },
+  {
+    "name": "Waist to Hip Ratio Calculator",
+    "slug": "waist-to-hip-ratio-calculator",
+    "formula": {
+      "en": "Waist Circumference (cm) / Hip Circumference (cm) | WHO Risk Cutoffs: Men > 0.90, Women > 0.85",
+      "hi": "कमर परिधि (cm) / कूल्हे की परिधि (cm) | WHO जोखिम कटऑफ: पुरुष > 0.90, महिला > 0.85",
+      "es": "Circunferencia de Cintura (cm) / Circunferencia de Cadera (cm) | Corte OMS: Hombres > 0.90, Mujeres > 0.85",
+      "fr": "Tour de Taille (cm) / Tour de Hanches (cm) | Seuils de Risque OMS : Hommes > 0.90, Femmes > 0.85",
+      "de": "Taillenumfang (cm) / Hüftumfang (cm) | WHO-Risikoschwellen: Männer > 0,90, Frauen > 0,85",
+      "ko": "허리둘레(cm) / 엉덩이둘레(cm) | WHO 심혈관 위험 기준치: 남성 > 0.90, 여성 > 0.85"
+    },
+    "source": {
+      "en": "World Health Organization. Waist Circumference and Waist-Hip Ratio: Report of a WHO Expert Consultation (2008)",
+      "hi": "विश्व स्वास्थ्य संगठन (WHO) कमर परिधि एवं कमर-कूल्हा अनुपात रिपोर्ट (2008)",
+      "es": "Organización Mundial de la Salud. Circunferencia de la cintura y relación cintura-cadera (OMS 2008)",
+      "fr": "Organisation Mondiale de la Santé. Tour de taille et rapport taille-hanches (Rapport d'Experts OMS 2008)",
+      "de": "Weltgesundheitsorganisation. Taillenumfang und Taille-Hüfte-Verhältnis (WHO-Bericht 2008)",
+      "ko": "세계보건기구(WHO). 허리둘레 및 허리-엉덩이 비율 전문가 자문 보고서 (2008)"
+    },
+    "inputs": {
+      "en": "Waist Circumference (umbilicus), Hip Circumference (widest buttocks), Sex",
+      "hi": "कमर का माप (नाभि स्तर), कूल्हे का माप, लिंग",
+      "es": "Cintura (nivel ombligo), Cadera (máxima prominencia), Sexo",
+      "fr": "Tour de Taille (niveau ombilic), Tour de Hanches, Sexe",
+      "de": "Taillenumfang (Bauchnabelhöhe), Hüftumfang, Geschlecht",
+      "ko": "허리둘레(배꼽 높이), 엉덩이둘레(가장 돌출된 부위), 성별"
+    },
+    "output": {
+      "en": "Waist-to-Hip Ratio (WHR), Body Fat Distribution Profile (Android vs. Gynoid), and Cardiovascular Risk Tier",
+      "hi": "WHR अनुपात, वसा वितरण प्रकार (सेब/नाशपाती आकार) एवं कार्डियोवैस्कुलर जोखिम वर्गीकरण",
+      "es": "Índice Cintura-Cadera (ICC), Patrón de Distribución Grasa (Androide vs. Ginoide) y Riesgo Cardiovascular",
+      "fr": "Rapport Taille-Hanches (RTH), Profil de Répartition des Graisses (Androïde vs Gynoïde) et Risque Cardiovasculaire",
+      "de": "Taille-zu-Hüfte-Verhältnis (WHR), Fettverteilungsmuster (Apfel vs. Birne) & Herz-Kreislauf-Risiko",
+      "ko": "허리-엉덩이 비율(WHR), 복부 지방 체형 분류(사과형 vs 서양배형) 및 심혈관 대사 위험도"
+    },
+    "limitations": {
+      "en": "Does not differentiate between visceral intra-abdominal adipose tissue and subcutaneous abdominal fat without imaging.",
+      "hi": "आंतरिक आंतों की वसा (विसरल) और त्वचा के नीचे की वसा (सबक्यूटेनियस) में पूर्ण अंतर नहीं कर सकता।",
+      "es": "No diferencia entre tejido adiposo visceral intraabdominal y grasa subcutánea sin tomografía.",
+      "fr": "Ne distingue pas la graisse viscérale intra-abdominale de la graisse sous-cutanée sans imagerie.",
+      "de": "Unterscheidet ohne MRT/CT nicht zwischen gefährlichem Viszeralfett und subkutanem Fett.",
+      "ko": "정밀 의료 영상 촬영 없이는 장기 주변의 내장지방과 피부 바로 아래의 피하지방을 엄밀히 분리하지 못합니다."
+    }
+  },
+  {
+    "name": "Mosteller BSA Calculator",
+    "slug": "body-surface-area-calculator",
+    "formula": {
+      "en": "Mosteller Equation: BSA (m²) = √[ (Height (cm) × Weight (kg)) / 3600 ]",
+      "hi": "मोस्टेलर समीकरण: BSA (m²) = √[ (कद(cm) × वजन(kg)) / 3600 ]",
+      "es": "Ecuación de Mosteller: ASC (m²) = √[ (Altura (cm) × Peso (kg)) / 3600 ]",
+      "fr": "Formule de Mosteller : SC (m²) = √[ (Taille (cm) × Poids (kg)) / 3600 ]",
+      "de": "Mosteller-Formel: KOF (m²) = √[ (Größe (cm) × Gewicht (kg)) / 3600 ]",
+      "ko": "Mosteller 공식: BSA (m²) = √[ (신장 (cm) × 체중 (kg)) / 3600 ]"
+    },
+    "source": {
+      "en": "Mosteller RD. Simplified calculation of body-surface area. N Engl J Med. 1987; 317(17): 1098 (PMID: 3657876)",
+      "hi": "मोस्टेलर आरडी, न्यू इंग्लैंड जर्नल ऑफ मेडिसिन (NEJM 1987; 317: 1098 / PMID: 3657876)",
+      "es": "Mosteller RD. N Engl J Med. 1987; 317(17): 1098 (PMID: 3657876)",
+      "fr": "Mosteller RD. N Engl J Med. 1987; 317(17): 1098 (PMID: 3657876)",
+      "de": "Mosteller RD. N Engl J Med. 1987; 317(17): 1098 (PMID: 3657876)",
+      "ko": "Mosteller RD. N Engl J Med. 1987; 317(17): 1098 (PMID: 3657876)"
+    },
+    "inputs": {
+      "en": "Height (cm or inches), Weight (kg or lbs)",
+      "hi": "कद (सेमी / इंच), वजन (किग्रा / पाउंड)",
+      "es": "Altura (cm o pulgadas), Peso (kg o libras)",
+      "fr": "Taille (cm ou pouces), Poids (kg ou livres)",
+      "de": "Körpergröße (cm oder Zoll), Gewicht (kg oder lbs)",
+      "ko": "신장(cm 또는 in), 체중(kg 또는 lbs)"
+    },
+    "output": {
+      "en": "Body Surface Area (BSA) in Square Meters (m²), Normal Population Comparison, and Du Bois Reference Index",
+      "hi": "कुल शारीरिक सतह क्षेत्र (BSA) वर्ग मीटर (m²) में",
+      "es": "Área de Superficie Corporal (ASC) en Metros Cuadrados (m²) y Comparativa Poblacional",
+      "fr": "Surface Corporelle (SC) en Mètres Carrés (m²) et Comparaison avec l'Index Du Bois",
+      "de": "Körperoberfläche (KOF/BSA) in Quadratmetern (m²) & Populationsreferenzvergleich",
+      "ko": "총 체표면적(BSA, m² 단위) 및 Du Bois 공식 대조 결과"
+    },
+    "limitations": {
+      "en": "Assumes standard anatomical limb proportions; severe limb amputations or extreme congenital morphometries require specialized corrections.",
+      "hi": "औसत शरीर संरचना मानता है; गंभीर अंग विच्छेदन या असाधारण शरीर अनुपात में नैदानिक सुधार आवश्यक है।",
+      "es": "Asume proporciones anatómicas convencionales; amputaciones o displasias requieren corrección clínica.",
+      "fr": "Repose sur des proportions anatomiques standard ; les amputations nécessitent des facteurs correctifs.",
+      "de": "Setzt Standardkörperproportionen voraus; bei Amputationen sind medizinische Korrekturfaktoren erforderlich.",
+      "ko": "표준 해부학적 사지 비율을 전제하므로, 사지 절단 환자나 심한 신체 기형의 경우 별도의 임상 보정이 필요합니다."
+    }
+  },
+  {
+    "name": "Target Heart Rate Zones Calculator",
+    "slug": "heart-rate-zone-calculator",
+    "formula": {
+      "en": "Max Heart Rate (HRmax) = 220 - Age | Training Zones 1 to 5 = 50% to 100% of HRmax",
+      "hi": "अधिकतम हृदय गति (MHR) = 220 - उम्र | ज़ोन 1 से 5 = MHR का 50% से 100%",
+      "es": "Frecuencia Cardíaca Máxima (FCmáx) = 220 - Edad | Zonas 1 a 5 = 50% a 100% de FCmáx",
+      "fr": "Fréquence Cardiaque Maximale (FCmax) = 220 - Âge | Zones 1 à 5 = 50% à 100% de FCmax",
+      "de": "Maximale Herzfrequenz (HFmax) = 220 - Alter | Trainingszonen 1 bis 5 = 50% bis 100% der HFmax",
+      "ko": "최대 심박수(HRmax) = 220 - 연령 | 트레이닝 1~5 존 = HRmax의 50% ~ 100%"
+    },
+    "source": {
+      "en": "Fox SM, Haskell WL. Ann Clin Res. 1971; 3: 404–432 & ACSM Exercise Guidelines",
+      "hi": "फॉक्स और हास्केल हृदय प्रशिक्षण मॉडल / ACSM व्यायाम परीक्षण दिशानिर्देश",
+      "es": "Fox SM, Haskell WL. Ann Clin Res. 1971; 3: 404–432 y Directrices ACSM",
+      "fr": "Fox SM, Haskell WL. Ann Clin Res. 1971; 3: 404–432 & Recommandations ACSM",
+      "de": "Fox SM, Haskell WL. Ann Clin Res. 1971; 3: 404–432 & ACSM-Leitlinien",
+      "ko": "Fox SM, Haskell WL. Ann Clin Res. 1971; 3: 404–432 및 미국스포츠의학회(ACSM) 심폐 운동 기준"
+    },
+    "inputs": {
+      "en": "Age, Primary Training Goal (Recovery, Fat Oxidation, Aerobic, Threshold, Anaerobic Peak)",
+      "hi": "आयु (उम्र), प्राथमिक कार्डियो लक्ष्य (फैट बर्न, एरोबिक, एनारोबिक)",
+      "es": "Edad, Objetivo de Entrenamiento (Recuperación, Quema de Grasa, Aeróbico, Umbral, Máximo)",
+      "fr": "Âge, Objectif Sportif (Récupération, Brûlage de Graisses, Aérobie, Seuil, Anaérobie)",
+      "de": "Alter, primäres Trainingsziel (Regeneration, Fettverbrennung, aerob, Schwelle, anaerob)",
+      "ko": "연령, 주요 운동 목표(회복, 지방 연소, 유산소 체력, 젖산 역치, 무산소 최대 한계)"
+    },
+    "output": {
+      "en": "5 Personalized Heart Rate Zones in Beats Per Minute (BPM) with Physiological Fuel Utilization Profiles",
+      "hi": "5 विशिष्ट प्रशिक्षण हृदय गति क्षेत्र (बीट्स प्रति मिनट - BPM)",
+      "es": "5 Zonas Cardíacas Personalizadas en Latidos por Minuto (LPM) y Perfil de Sustrato Metabólico",
+      "fr": "5 Zones de Fréquence Cardiaque Cibles en Battements par Minute (BPM)",
+      "de": "5 individuelle Herzfrequenzzonen in Schlägen pro Minute (BPM)",
+      "ko": "분당 심박수(BPM) 기준 5단계 맞춤 심박 존 및 존별 대사 기질(지방/탄수화물) 사용 비율"
+    },
+    "limitations": {
+      "en": "The standard 220-age formula carries a standard deviation of ±10–12 BPM; medications like beta-blockers significantly alter chronotropic response.",
+      "hi": "उम्र-आधारित अनुमान में ±10-12 BPM का विचलन हो सकता है; बीटा-ब्लॉकर दवाएं हृदय गति प्रतिक्रिया को बदल देती हैं।",
+      "es": "La fórmula 220-edad tiene una desviación de ±10-12 LPM; fármacos betabloqueantes alteran la respuesta cardíaca.",
+      "fr": "La formule 220-âge présente une marge d'erreur de ±10 à 12 BPM ; les bêta-bloquants modifient la fréquence cardiaque.",
+      "de": "Die 220-Minus-Alter-Formel weist eine Standardabweichung von ±10–12 BPM auf; Betablocker verändern die Herzfrequenz.",
+      "ko": "연령 기반 추정 공식은 ±10~12 BPM의 오차가 있을 수 있으며, 베타차단제 등 심장 약물 복용 시 심박 반응이 달라집니다."
+    }
+  },
+  {
+    "name": "Karvonen Heart Rate Reserve Calculator",
+    "slug": "karvonen-heart-rate-calculator",
+    "formula": {
+      "en": "Target HR = [ (HRmax - Resting HR) × % Intensity ] + Resting HR",
+      "hi": "लक्षित HR = [(HRmax - विश्राम HR) × तीव्रता %] + विश्राम HR",
+      "es": "FC Objetivo = [ (FCmáx - FC Reposo) × % Intensidad ] + FC Reposo",
+      "fr": "FC Cible = [ (FCmax - FC Repos) × % Intensité ] + FC Repos",
+      "de": "Ziel-HF = [ (HFmax - Ruhe-HF) × % Intensität ] + Ruhe-HF",
+      "ko": "목표 심박수 = [ (최대 심박수 - 안정시 심박수) × 운동 강도(%) ] + 안정시 심박수"
+    },
+    "source": {
+      "en": "Karvonen MJ, Kentala E, Mustala O. Ann Med Exp Biol Fenn. 1957; 35(3): 307–315 (PMID: 13470504)",
+      "hi": "कार्वोनेन एमजे, एनाल्स ऑफ मेडिसिन एंड एक्सपेरिमेंटल बायोलॉजी (1957; 35: 307–315 / PMID: 13470504)",
+      "es": "Karvonen MJ, Kentala E, Mustala O. Ann Med Exp Biol Fenn. 1957; 35(3): 307–315 (PMID: 13470504)",
+      "fr": "Karvonen MJ, Kentala E, Mustala O. Ann Med Exp Biol Fenn. 1957; 35(3): 307–315 (PMID: 13470504)",
+      "de": "Karvonen MJ, Kentala E, Mustala O. Ann Med Exp Biol Fenn. 1957; 35(3): 307–315 (PMID: 13470504)",
+      "ko": "Karvonen MJ, Kentala E, Mustala O. Ann Med Exp Biol Fenn. 1957; 35(3): 307–315 (PMID: 13470504)"
+    },
+    "inputs": {
+      "en": "Age, Basal Resting Heart Rate (measured upon waking), Selected Exercise Intensity (%)",
+      "hi": "आयु, विश्राम हृदय गति (Resting Heart Rate), वांछित व्यायाम तीव्रता (%)",
+      "es": "Edad, Frecuencia Cardíaca en Reposo (medida al despertar), Intensidad Deseada (%)",
+      "fr": "Âge, Fréquence Cardiaque au Repos (mesurée au réveil), Intensité Cible (%)",
+      "de": "Alter, Ruheherzfrequenz (morgens im Bett gemessen), gewünschte Trainingsintensität (%)",
+      "ko": "연령, 안정시 심박수(기상 직후 측정치), 목표 운동 강도(%)"
+    },
+    "output": {
+      "en": "Personalized Training Target Heart Rate and Individualized Heart Rate Reserve (HRR) Spectrum",
+      "hi": "हार्ट रेट रिजर्व (HRR) आधारित व्यक्तिगत प्रशिक्षण हृदय गति लक्ष्य",
+      "es": "Frecuencia Cardíaca de Entrenamiento Personalizada basada en la Reserva Cardíaca (FCR)",
+      "fr": "Fréquence Cardiaque d'Entraînement Personnalisée basée sur la Réserve Cardiaque (FCR)",
+      "de": "Individuelle Trainings-Herzfrequenz basierend auf der Herzfrequenzreserve (HFR)",
+      "ko": "심박수 예비력(HRR) 기반 맞춤형 유산소 및 인터벌 운동 목표 심박수(BPM)"
+    },
+    "limitations": {
+      "en": "Requires true morning resting heart rate; psychological stress, dehydration, caffeine, and illness artificially elevate resting baseline.",
+      "hi": "सटीक विश्राम हृदय गति माप (सुबह उठते समय) की आवश्यकता होती है।",
+      "es": "Requiere una medición real matutina; el estrés, la cafeína o la deshidratación alteran la línea base.",
+      "fr": "Exige une mesure rigoureuse au réveil ; le stress, le café et la déshydratation faussent la fréquence de repos.",
+      "de": "Erfordert echtes Ruhepuls-Messergebnis am Morgen; Stress, Koffein und Schlafmangel verfälschen den Ruhewert.",
+      "ko": "아침 기상 직후의 정확한 안정시 심박수가 필요하며, 스트레스, 카페인 섭취, 탈수 상태에서는 기준치가 왜곡될 수 있습니다."
+    }
+  },
+  {
+    "name": "1RM Strength Calculator",
+    "slug": "1rm-calculator",
+    "formula": {
+      "en": "Brzycki Equation: 1RM = Weight Lifted / [ 1.0278 - (0.0278 × Repetitions) ]",
+      "hi": "ब्रज़ीकी समीकरण: वजन ÷ [ 1.0278 - (0.0278 × दोहराव) ]",
+      "es": "Ecuación de Brzycki: 1RM = Peso Levantado / [ 1.0278 - (0.0278 × Repeticiones) ]",
+      "fr": "Formule de Brzycki : 1RM = Charge / [ 1.0278 - (0.0278 × Répétitions) ]",
+      "de": "Brzycki-Formel: 1RM = Gehobenes Gewicht / [ 1,0278 - (0,0278 × Wiederholungen) ]",
+      "ko": "Brzycki 공식: 1RM = 든 무게 / [ 1.0278 - (0.0278 × 반복 횟수) ]"
+    },
+    "source": {
+      "en": "Brzycki M. Strength testing—predicting a one-rep max from reps-to-fatigue. JOPERD. 1993; 64(1): 88–90",
+      "hi": "ब्रज़ीकी एम., जर्नल ऑफ फिजिकल एजुकेशन, रिक्रिएशन एंड डांस (1993; 64: 88–90)",
+      "es": "Brzycki M. JOPERD. 1993; 64(1): 88–90",
+      "fr": "Brzycki M. JOPERD. 1993; 64(1): 88–90",
+      "de": "Brzycki M. JOPERD. 1993; 64(1): 88–90",
+      "ko": "Brzycki M. JOPERD. 1993; 64(1): 88–90"
+    },
+    "inputs": {
+      "en": "Weight Lifted (kg or lbs), Number of Repetitions Completed to Fatigue (1 to 10 reps)",
+      "hi": "उठाया गया भार (किग्रा / पाउंड), पूर्ण दोहरावों (Reps) की संख्या (1 से 10)",
+      "es": "Peso Levantado (kg o lbs), Repeticiones Completadas hasta el Fallo (1 a 10)",
+      "fr": "Poids Soulevé (kg ou lbs), Répétitions Effectuées à Échec Propre (1 à 10)",
+      "de": "Gehobenes Gewicht (kg oder lbs), Wiederholungen bis zur Erschöpfung (1 bis 10)",
+      "ko": "들어 올린 무게(kg 또는 lbs), 실패 지점까지 성공한 반복 횟수(1~10회)"
+    },
+    "output": {
+      "en": "Predicted One-Repetition Maximum (1RM) and Full Percentage Load Chart (50% to 95% of 1RM)",
+      "hi": "अधिकतम एक बार उठाने योग्य भार (1RM) एवं प्रशिक्षण प्रतिशत तालिका (50%–95%)",
+      "es": "Una Repetición Máxima Estimada (1RM) y Tabla Completa de Cargas de Entrenamiento (50% a 95%)",
+      "fr": "Charge Maximale Estimée (1RM) et Grille d'Entraînement en Pourcentages (50 % à 95 %)",
+      "de": "Geschätztes Einer-Wiederholungsmaximum (1RM) und Trainingslast-Tabelle (50 % bis 95 %)",
+      "ko": "예측 1회 최대 반복 중량(1RM) 및 백분율별(50%~95%) 훈련 부하 표"
+    },
+    "limitations": {
+      "en": "Highest accuracy between 1 and 10 repetitions; predicting 1RM from high-repetition sets (>10 reps) introduces muscular endurance bias.",
+      "hi": "10 से कम दोहरावों पर सबसे सटीक; 10 से अधिक दोहरावों पर थकान और फॉर्म बिगड़ने से सटीकता घटती है।",
+      "es": "Máxima precisión en series de 1 a 10 repeticiones; más de 10 repeticiones introduce sesgo de resistencia muscular.",
+      "fr": "Précision optimale entre 1 et 10 répétitions ; au-delà de 10, la fatigue musculaire fausse l'estimation.",
+      "de": "Höchste Genauigkeit bei 1 bis 10 Wiederholungen; Sätze über 10 Wdh. verzerren das Ergebnis durch Kraftausdauer.",
+      "ko": "1~10회 반복 범위에서 가장 정확하며, 10회 이상의 고반복 세트로 추정 시 근지구력 요인으로 인해 오차가 발생합니다."
+    }
+  },
+  {
+    "name": "Bench Press 1RM Calculator",
+    "slug": "one-rep-max-calculator",
+    "formula": {
+      "en": "Multi-Formula Strength Synthesis (Brzycki, Epley, Lander, and O'Conner Equations Comparison)",
+      "hi": "मल्टी-फॉर्मूला बेंच प्रेस मॉडल (Brzycki, Epley, Lander, O'Conner सूत्रों की तुलना)",
+      "es": "Síntesis de Fuerza Multi-Fórmula (Comparación de Brzycki, Epley, Lander y O'Conner)",
+      "fr": "Synthèse Multi-Formules (Comparaison des Équations de Brzycki, Epley, Lander et O'Conner)",
+      "de": "Multi-Formel-Kraftsynthese (Vergleich nach Brzycki, Epley, Lander und O'Conner)",
+      "ko": "다공식 벤치프레스 1RM 복합 모델 (Brzycki, Epley, Lander, O'Conner 공식 상호 비교)"
+    },
+    "source": {
+      "en": "Epley B. (1985) & Brzycki M. (1993) Strength and Conditioning Research Standards",
+      "hi": "एप्ले आर. 1985 एवं ब्रज़ीकी एम. 1993 स्ट्रेंथ एंड कंडीशनिंग रिसर्च",
+      "es": "Epley B. (1985) y Brzycki M. (1993) Estándares de Investigación de Fuerza",
+      "fr": "Epley B. (1985) & Brzycki M. (1993) Normes de Recherche en Préparation Physique",
+      "de": "Epley B. (1985) & Brzycki M. (1993) Standards der Krafttrainingsforschung",
+      "ko": "Epley B. (1985) 및 Brzycki M. (1993) 근력 및 컨디셔닝 공인 연구 표준"
+    },
+    "inputs": {
+      "en": "Bench Press Resistance Weight, Repetitions to Fatigue, Lifter Experience Level",
+      "hi": "बेंच प्रेस भार, दोहराव संख्या, एथलेटिक अनुभव स्तर",
+      "es": "Peso en Press de Banca, Repeticiones Realizadas, Nivel de Experiencia",
+      "fr": "Poids au Développé Couché, Répétitions Réalisées, Niveau d'Expérience",
+      "de": "Bankdrück-Gewicht, saubere Wiederholungen, Trainingserfahrungsstufe",
+      "ko": "벤치프레스 훈련 중량, 성공한 반복 횟수, 리프터 경험 수준"
+    },
+    "output": {
+      "en": "Bench Press 1RM Consensus Estimation, Relative Strength-to-Weight Ratio, and National Strength Standards",
+      "hi": "बेंच प्रेस 1RM अनुमान एवं अधिकतम शक्ति रेटिंग स्तर",
+      "es": "Estimación de 1RM en Press de Banca, Ratio Fuerza-Peso y Estándares de Rendimiento",
+      "fr": "Estimation Consensuelle du 1RM au Développé Couché et Ratio Force/Poids",
+      "de": "Bankdrücken-1RM-Konsensschätzung, Kraft-zu-Gewicht-Verhältnis & Leistungsstandards",
+      "ko": "벤치프레스 1RM 종합 추정치, 체중 대비 상대 근력 비율 및 피트니스 근력 등급 분류"
+    },
+    "limitations": {
+      "en": "Requires strict pause-at-chest biomechanics; bouncing the bar off ribcage or lifting glutes invalidates calculation.",
+      "hi": "उचित लिफ्टिंग तकनीक और वार्म-अप आवश्यक है; सुरक्षा हेतु कभी भी बिना स्पॉटर के वास्तविक 1RM न आजमाएं।",
+      "es": "Requiere técnica estricta; rebotar la barra en el pecho o elevar la pelvis invalida el resultado.",
+      "fr": "Exige une technique d'exécution stricte ; faire rebondir la barre sur la cage thoracique fausse le calcul.",
+      "de": "Erfordert saubere Bewegungsausführung; Abfedern auf der Brust verfälscht die tatsächliche Kraftleistung.",
+      "ko": "가슴 터치 및 엄격한 궤적의 올바른 자세가 필수이며, 반동(바운딩)이나 엉덩이 들림 시 계산이 부정확해집니다."
+    }
+  },
+  {
+    "name": "Pregnancy Weight Gain Calculator",
+    "slug": "pregnancy-weight-gain-calculator",
+    "formula": {
+      "en": "Pre-Pregnancy BMI-Stratified Trimester Trajectory Model (IOM/NRC Guidelines)",
+      "hi": "प्री-प्रेग्नेंसी बीएमआई श्रेणी आधारित त्रैमासिक वजन वृद्धि मॉडल (IOM/NRC दिशानिर्देश)",
+      "es": "Modelo de Trayectoria Trimestral Estratificado por IMC Preconcepcional (Directrices IOM/NRC)",
+      "fr": "Modèle de Trajectoire Trimestrielle selon l'IMC Pré-Grossesse (Lignes Directrices IOM/NRC)",
+      "de": "Trimester-Gewichtskurvenmodell stratifiziert nach Prägraviditäts-BMI (IOM/NRC)",
+      "ko": "임신 전 BMI 등급별 분기별 임신 체중 증가 궤적 모델 (IOM/NRC 권고안)"
+    },
+    "source": {
+      "en": "Institute of Medicine (IOM) & National Research Council (NRC). Weight Gain During Pregnancy: Reexamining the Guidelines (2009 / PMID: 20669500)",
+      "hi": "इंस्टीट्यूट ऑफ मेडिसिन (IOM) एवं नेशनल रिसर्च काउंसिल (2009 आम सहमति रिपोर्ट / PMID: 20669500)",
+      "es": "Instituto de Medicina (IOM) y Consejo Nacional de Investigación (NRC). Directrices de Aumento de Peso en el Embarazo (2009 / PMID: 20669500)",
+      "fr": "Institute of Medicine (IOM) & National Research Council (NRC). Prise de Poids pendant la Grossesse (2009 / PMID: 20669500)",
+      "de": "Institute of Medicine (IOM) & National Research Council (NRC). Gewichtszunahme in der Schwangerschaft (2009 / PMID: 20669500)",
+      "ko": "미국 의학연구소(IOM) 및 국립연구회(NRC). 임신 중 체중 증가 가이드라인 (2009 / PMID: 20669500)"
+    },
+    "inputs": {
+      "en": "Pre-Pregnancy Weight, Height, Gestational Age (weeks 1 to 40), Pregnancy Type (Singleton vs. Twins)",
+      "hi": "प्री-प्रेग्नेंसी वजन, कद, गर्भावस्था का सप्ताह (1 से 40), एकल या जुड़वां गर्भावस्था",
+      "es": "Peso Previo al Embarazo, Altura, Semana de Gestación (1 a 40), Embarazo Único o Gemelar",
+      "fr": "Poids Pré-Grossesse, Taille, Semaine d'Aménorrhée/Grossesse (1 à 40), Grossesse Unique ou Gémellaire",
+      "de": "Vor-Schwangerschaftsgewicht, Größe, Schwangerschaftswoche (1 bis 40), Einlings- oder Zwillingsschwangerschaft",
+      "ko": "임신 전 체중, 신장, 현재 임신 주수(1~40주), 임신 유형(단태아 vs 쌍둥이)"
+    },
+    "output": {
+      "en": "Target Weight Gain Range for Current Gestational Week and Total Recommended Term Goal (kg/lbs)",
+      "hi": "वर्तमान सप्ताह हेतु अनुशंसित वजन वृद्धि सीमा एवं कुल गर्भावस्था लक्ष्य (किग्रा/पाउंड)",
+      "es": "Rango Recomendado de Aumento de Peso para la Semana Gestacional Actual y Meta Total al Término",
+      "fr": "Fourchette de Prise de Poids Recommandée pour la Semaine Actuelle et Objectif Total à Terme",
+      "de": "Empfohlener Gewichtszunahmebereich für die aktuelle Schwangerschaftswoche & Gesamtziel bis zur Geburt",
+      "ko": "현재 임신 주수에 따른 권장 적정 체중 증가 범위 및 만삭 시점의 총 권장 증량 목표치"
+    },
+    "limitations": {
+      "en": "Population guidelines for uncomplicated pregnancies; conditions such as gestational diabetes, preeclampsia, or hyperemesis require individualized obstetric care.",
+      "hi": "सामान्य एकल व जुड़वां गर्भावस्था हेतु जनसंख्या दिशानिर्देश; गर्भावधि मधुमेह या उच्च रक्तचाप में व्यक्तिगत ओब्स्टेट्रिशियन सलाह अनिवार्य है।",
+      "es": "Pautas poblacionales para embarazos sin complicaciones; diabetes gestacional o preeclampsia requieren seguimiento obstétrico individualizado.",
+      "fr": "Recommandations valables pour les grossesses sans complication ; le diabète gestationnel ou la prééclampsie exigent un suivi médical personnalisé.",
+      "de": "Populationsrichtlinien für unkomplizierte Schwangerschaften; Gestationsdiabetes oder Präeklampsie erfordern individuelle fachärztliche Betreuung.",
+      "ko": "합병증이 없는 일반 임신 기준이며, 임신성 당뇨, 전자간증(임신중독증), 다태아 고위험 임신은 담당 산부인과 전문의의 개별 관리를 받아야 합니다."
     }
   }
 ];
@@ -595,8 +1468,62 @@ const methodologyMatrix = [
         ))}
       </div>
 
-      <!-- Comprehensive Methodology Matrix -->
-      <div class="space-y-6">
+      <!-- Executive Algorithm & Formula Reference Table (Exact AdSense / YMYL Table Format) -->
+      <div class="space-y-4">
+        <div class="space-y-1">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}</p>
+          <h2 class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
+            {currentI18n.tableViewTitle}
+          </h2>
+          <p class="text-sm text-[var(--muted-foreground)] font-medium">
+            {currentI18n.tableViewDesc}
+          </p>
+        </div>
+
+        <div class="methodology-table-wrap p-4 sm:p-6 shadow-xs">
+          <table class="methodology-matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 18%;">{currentI18n.tableColTool}</th>
+                <th style="width: 20%;">{currentI18n.tableColFormula}</th>
+                <th style="width: 18%;">{currentI18n.tableColSource}</th>
+                <th style="width: 14%;">{currentI18n.tableColInputs}</th>
+                <th style="width: 15%;">{currentI18n.tableColOutputs}</th>
+                <th style="width: 15%;">{currentI18n.tableColLimitations}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {methodologyMatrix.map((item) => {
+                const foundCalc = calculators.find(c => c.slug === item.slug);
+                const localizedName = foundCalc ? (foundCalc.name[lang] || foundCalc.name.en) : item.name;
+                const locFormula = item.formula[lang] || item.formula.en;
+                const locSource = item.source[lang] || item.source.en;
+                const locInputs = item.inputs[lang] || item.inputs.en;
+                const locOutput = item.output[lang] || item.output.en;
+                const locLimitations = item.limitations[lang] || item.limitations.en;
+
+                return (
+                  <tr>
+                    <td>
+                      <a href={`/${lang}/${item.slug}/`} class="font-bold">
+                        {localizedName}
+                      </a>
+                    </td>
+                    <td class="font-mono text-xs">{locFormula}</td>
+                    <td class="text-xs">{locSource}</td>
+                    <td>{locInputs}</td>
+                    <td>{locOutput}</td>
+                    <td class="text-xs leading-relaxed">{locLimitations}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Comprehensive Detailed Methodology Cards (25 Tools) -->
+      <div class="space-y-6 pt-4 border-t border-[var(--border)]">
         <div class="space-y-1">
           <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}</p>
           <h2 class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
@@ -612,9 +1539,11 @@ const methodologyMatrix = [
             const foundCalc = calculators.find(c => c.slug === item.slug);
             const localizedName = foundCalc ? (foundCalc.name[lang] || foundCalc.name.en) : item.name;
 
-            const localizedInputs = typeof item.inputs === 'object' ? (item.inputs[lang] || item.inputs.en) : item.inputs;
-            const localizedOutput = typeof item.output === 'object' ? (item.output[lang] || item.output.en) : item.output;
-            const localizedLimitations = typeof item.limitations === 'object' ? (item.limitations[lang] || item.limitations.en) : item.limitations;
+            const locFormula = item.formula[lang] || item.formula.en;
+            const locSource = item.source[lang] || item.source.en;
+            const locInputs = item.inputs[lang] || item.inputs.en;
+            const locOutput = item.output[lang] || item.output.en;
+            const locLimitations = item.limitations[lang] || item.limitations.en;
 
             return (
               <div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4 hover:border-[var(--accent)]/40 transition-all shadow-xs">
@@ -633,41 +1562,125 @@ const methodologyMatrix = [
                     </a>
                   </div>
                   <p class="text-xs text-[var(--muted-foreground)] font-medium pl-6">
-                    {localizedOutput} — {item.formula}
+                    {locOutput} — {locFormula}
                   </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                   <div class="space-y-1.5 p-3.5 rounded-xl bg-[var(--muted)]/40">
                     <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)]">{currentI18n.equationLabel}</span>
-                    <p class="font-mono text-[var(--foreground)] font-medium">{item.formula}</p>
+                    <p class="font-mono text-[var(--foreground)] font-medium">{locFormula}</p>
                   </div>
                   <div class="space-y-1.5 p-3.5 rounded-xl bg-[var(--muted)]/40">
                     <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)]">{currentI18n.sourceLabel}</span>
-                    <p class="text-[var(--foreground)] font-medium">{item.source}</p>
+                    <p class="text-[var(--foreground)] font-medium">{locSource}</p>
                   </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-1">
                   <div>
                     <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">{currentI18n.inputsLabel}</span>
-                    <p class="text-[var(--foreground)] font-semibold mt-0.5">{localizedInputs}</p>
+                    <p class="text-[var(--foreground)] font-semibold mt-0.5">{locInputs}</p>
                   </div>
                   <div>
                     <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">{currentI18n.outputLabel}</span>
-                    <p class="text-[var(--foreground)] font-semibold mt-0.5">{localizedOutput}</p>
+                    <p class="text-[var(--foreground)] font-semibold mt-0.5">{locOutput}</p>
                   </div>
                   <div>
                     <span class="font-display font-bold uppercase text-[var(--muted-foreground)]">{currentI18n.limitationsLabel}</span>
-                    <p class="text-[var(--muted-foreground)] font-medium mt-0.5 leading-relaxed">{localizedLimitations}</p>
+                    <p class="text-[var(--muted-foreground)] font-medium mt-0.5 leading-relaxed">{locLimitations}</p>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
+
+        <!-- Direct Academic Citations & Sources Cross-Link Banner -->
+        <div class="p-6 md:p-8 rounded-2xl border-2 border-indigo-500/30 bg-indigo-500/5 space-y-4 not-prose shadow-sm">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <span class="text-xs font-bold font-display uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
+              {lang === 'hi' ? 'प्राथमिक अकादमिक शोध उद्धरण एवं संदर्भ' : (lang === 'es' ? 'Citas Académicas Primarias y Bibliografía' : (lang === 'fr' ? 'Citations Académiques Primaires & Bibliographie' : (lang === 'de' ? 'Primäre wissenschaftliche Zitate & Bibliographie' : (lang === 'ko' ? '직접 학술 연구 논문 인용 및 참고문헌' : 'Primary Academic Research Citations & Sources'))))}
+            </span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+              {currentI18n.studiesBadge}
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+            {lang === 'hi' 
+              ? 'केवल सामान्य संदर्भों के बजाय, Real BMI प्रत्येक कैलकुलेटर को सटीक अध्ययनों से जोड़ता है: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, और Devine 1974।'
+              : (lang === 'es'
+                ? 'En lugar de menciones genéricas, Real BMI vincula cada calculadora con estudios fundamentales exactos: OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 y Devine 1974.'
+                : (lang === 'fr'
+                  ? 'Plutôt que de simples mentions institutionnelles, Real BMI adosse chaque outil à des études fondamentales précises : OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 et Devine 1974.'
+                  : (lang === 'de'
+                    ? 'Statt pauschaler Angaben verknüpft Real BMI jeden Rechner mit exakten Studien: WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 und Devine 1974.'
+                    : (lang === 'ko'
+                      ? '모호한 기관명 약어 대신, Real BMI는 모든 계산기를 정밀한 논문(WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, Devine 1974)과 직접 연결합니다.'
+                      : 'Rather than relying on vague acronym claims (WHO, CDC, NIH, ACSM), Real BMI links every calculator to exact landmark studies: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, and Devine 1974.'))))}
+          </p>
+          <div class="pt-2">
+            <a 
+              href={`/${lang}/sources/`} 
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-95 transition-opacity"
+            >
+              <span>{lang === 'hi' ? 'प्राथमिक शोध उद्धरण मैट्रिक्स देखें (15 अध्ययन) →' : (lang === 'es' ? 'Explorar Matriz de Citas de Investigación (15 Estudios) →' : (lang === 'fr' ? 'Consulter la Matrice des Citations de Recherche (15 Études) →' : (lang === 'de' ? 'Forschungszitate-Matrix erkunden (15 Studien) →' : (lang === 'ko' ? '학술 연구 인용 매트릭스 탐색 (15편 연구) →' : 'Explore Primary Research Citations & Matrix (15 Studies) →'))))}</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
 
     </div>
   </PageShell>
 </Layout>
+
+<style>
+  .methodology-table-wrap {
+    overflow-x: auto;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background-color: var(--card);
+  }
+  .methodology-matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+  .methodology-matrix-table a {
+    text-decoration: none;
+    color: #464feb;
+    font-weight: 600;
+  }
+  .methodology-matrix-table a:hover {
+    text-decoration: underline;
+  }
+  .methodology-matrix-table tr th,
+  .methodology-matrix-table tr td {
+    border: 1px solid #e6e6e6;
+    padding: 0.85rem 1rem;
+    vertical-align: top;
+    text-align: left;
+  }
+  .methodology-matrix-table tr th {
+    background-color: #f5f5f5;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1f2937;
+    white-space: nowrap;
+  }
+  :global(.dark) .methodology-matrix-table tr th,
+  :global(.dark) .methodology-matrix-table tr td {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  :global(.dark) .methodology-matrix-table tr th {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #f3f4f6;
+  }
+  :global(.dark) .methodology-matrix-table a {
+    color: #818cf8;
+  }
+</style>

@@ -654,8 +654,80 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       <p>표준 성인 BMI 기준은 20세에서 65세 사이에 적용됩니다. 2~19세 성장기 청소년은 CDC 연령별 성장 백분위수를 활용하여 판정하며, 65세 이상 고령층의 경우 근감소증 예방을 위해 약간 높은 BMI(25.0~28.0 kg/m²)가 사망률과 질병 회복에 더 유리하다는 연구 결과가 다수 보고되고 있습니다.</p>
       `,
       "hi": `
-      <h2>बीएमआई पर उम्र का प्रभाव</h2>
-      <p>मानक वयस्क बीएमआई सीमा 20 से 65 वर्ष के लोगों पर लागू होती है। बच्चों और किशोरों के लिए सीडीसी विकास पर्सेंटाइल का उपयोग किया जाता है। 65 वर्ष से अधिक उम्र के बुजुर्गों में थोड़ा अधिक बीएमआई (25.0 से 28.0 kg/m²) कमजोरी से बचाव और बेहतर स्वास्थ्य परिणामों से जुड़ा होता है।</p>
+      <h2>उम्र के अनुसार बीएमआई व्याख्या: जीवन के चार चरण</h2>
+      <p>विश्व स्वास्थ्य संगठन (WHO) की मानक 18.5 से 24.9 kg/m² की बीएमआई सीमा केवल 20 से 65 वर्ष के वयस्कों के लिए उपयुक्त है। मानव शरीर में उम्र के साथ मांसपेशियों का घनत्व, हड्डियों का वजन और वसा वितरण तेजी से बदलता है। 25 वर्षीय युवा और 75 वर्षीय बुजुर्ग के बीएमआई की व्याख्या एक समान नहीं की जा सकती।</p>
+
+      <h2>1. बच्चे व किशोर (आयु 2 से 19 वर्ष): विकास पर्सेंटाइल (Growth Percentiles)</h2>
+      <p>बच्चों में स्थिर बीएमआई संख्या के बजाय उम्र और लिंग आधारित विकास पर्सेंटाइल का उपयोग किया जाता है:</p>
+      <ul>
+        <li><strong>कम वजन (अंडरवेट):</strong> 5वें पर्सेंटाइल से कम</li>
+        <li><strong>स्वस्थ / सामान्य वजन:</strong> 5वें से 85वें पर्सेंटाइल के बीच</li>
+        <li><strong>अधिक वजन (ओवरवेट):</strong> 85वें से 95वें पर्सेंटाइल के बीच</li>
+        <li><strong>मोटापा (ओबेसिटी):</strong> 95वें पर्सेंटाइल या उससे अधिक</li>
+      </ul>
+
+      <h2>2. मध्य वयस्कता (आयु 20 से 64 वर्ष): सरकोपेनिया की शुरुआत</h2>
+      <p>30 वर्ष की आयु के बाद गतिहीन वयस्कों में प्रति दशक 3% से 8% मांसपेशियां स्वाभाविक रूप से घटने लगती हैं। वजन स्थिर रहने पर भी मांसपेशियों की जगह पेट में आंतरिक चर्बी (विसरल फैट) बढ़ने लगती है, जिससे टाइप-2 डायबिटीज का खतरा बढ़ जाता है।</p>
+
+      <h2>3. वरिष्ठ नागरिक (आयु 65 वर्ष व अधिक): 'गेरियाट्रिक ओबेसिटी पैराडॉक्स'</h2>
+      <p>वृद्धावस्था में मानक 18.5 से 22.0 का कम बीएमआई अत्यधिक खतरनाक सिद्ध होता है। बड़े चिकित्सीय अध्ययनों (द लैंसेट व अमेरिकन जर्नल ऑफ क्लिनिकल न्यूट्रिशन) ने साबित किया है कि 65 वर्ष से अधिक उम्र के बुजुर्गों में थोड़ा अधिक बीएमआई (23.0 से 28.0 kg/m²) मृत्यु दर को काफी कम करता है। इसे <strong>'गेरियाट्रिक ओबेसिटी पैराडॉक्स'</strong> कहा जाता है:</p>
+
+      <div class="my-6 space-y-4">
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">1. चयापचय व पोषण संबंधी सुरक्षा (Nutritional Reserve)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">निमोनिया, संक्रमण या बड़े ऑपरेशन के समय बुजुर्गों में वसा का यह सुरक्षात्मक भंडार शरीर को अंगों की विफलता (Cachexia) से बचाता है।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">2. गिरने पर कूल्हे की हड्डी की सुरक्षा (Mechanical Cushioning)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">बुजुर्गों में गिरने पर हल्की वसा पैडिंग शॉक-एब्जॉर्बर का काम करती है और कूल्हे (फेमर बोन) के घातक फ्रैक्चर के जोखिम को कम करती है।</p>
+        </div>
+      </div>
+
+      <h2>जीवनकाल बीएमआई संदर्भ तालिका (Lifespan BMI Continuum)</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">आयु वर्ग</th>
+              <th class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">अनुशंसित बीएमआई / पैमाना</th>
+              <th class="p-3 border border-[#e6e6e6]">मूल्यांकन विधि</th>
+              <th class="p-3 border border-[#e6e6e6]">प्राथमिक नैदानिक प्राथमिकता</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">बच्चे (2–11 वर्ष)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">5वां से 85वां पर्सेंटाइल</td>
+              <td class="p-3 border border-[#e6e6e6]">CDC विकास चार्ट</td>
+              <td class="p-3 border border-[#e6e6e6]">स्वस्थ कंकाल वृद्धि, सूक्ष्म पोषक तत्वों की आपूर्ति</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">किशोर (12–19 वर्ष)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">5वां से 85वां पर्सेंटाइल</td>
+              <td class="p-3 border border-[#e6e6e6]">उम्र-लिंग पर्सेंटाइल</td>
+              <td class="p-3 border border-[#e6e6e6]">हड्डियों का खनिजीकरण व सकारात्मक शारीरिक छवि</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-emerald-600 font-bold">वयस्क (20–64 वर्ष)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-emerald-600">18.5 – 24.9 kg/m²</td>
+              <td class="p-3 border border-[#e6e6e6]">मानक WHO बीएमआई + कमर</td>
+              <td class="p-3 border border-[#e6e6e6]">हृदय रोग व डायबिटीज से बचाव, विसरल फैट नियंत्रण</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-amber-600 font-bold">वरिष्ठ (65+ वर्ष)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-amber-600">23.0 – 28.0 kg/m²</td>
+              <td class="p-3 border border-[#e6e6e6]">गेरियाट्रिक बीएमआई + ग्रिप स्ट्रेंथ</td>
+              <td class="p-3 border border-[#e6e6e6]">मांसपेशियों की सुरक्षा, कमजोरी से बचाव व जीवन प्रत्याशा</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>वैज्ञानिक संदर्भ</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Winter JE, et al. <em>BMI and all-cause mortality in older adults: a meta-analysis.</em> Am J Clin Nutr 2014; 99(4):875-890. PMID: 24452234.</li>
+        <li>Cruz-Jentoft AJ, et al. <em>Sarcopenia: revised European consensus on definition and diagnosis (EWGSOP2).</em> Age Ageing 2019; 48(1):16-31. PMID: 30312372.</li>
+      </ul>
       `
     }
   },
@@ -800,8 +872,60 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       <p>성공적이고 요요 없는 체지방 감량을 위해서는 일일 총 에너지 소비량(TDEE) 대비 300~500kcal의 완만한 칼로리 결손 유지, 근손실을 방지하기 위한 체중 1kg당 1.6~2.2g의 충분한 단백질 섭취, 그리고 규칙적인 근력 운동이 필수적입니다.</p>
       `,
       "hi": `
-      <h2>स्थायी वजन घटाने के वैज्ञानिक सिद्धांत</h2>
-      <p>सफल वसा हानि के लिए कुल दैनिक ऊर्जा व्यय (TDEE) से 300 से 500 कैलोरी की मध्यम दैनिक कमी, मांसपेशियों की सुरक्षा के लिए पर्याप्त प्रोटीन (1.6 से 2.2 ग्राम प्रति किलोग्राम) और नियमित स्ट्रेंथ ट्रेनिंग आवश्यक है।</p>
+      <h2>मानव शरीर में ऊर्जा संतुलन: ऊष्माप्रवैगिकी (Thermodynamics) का पहला नियम</h2>
+      <p>स्थायी वजन प्रबंधन और शरीर की संरचना में सुधार किसी क्रैश डाइट, सप्लीमेंट या अल्पकालिक उपवास से नहीं, बल्कि जैवभौतिकी के <strong>ऊष्माप्रवैगिकी के पहले नियम (ऊर्जा संरक्षण सिद्धांत)</strong> से संचालित होता है: आपके शरीर के ऊर्जा भंडार में परिवर्तन = ली गई ऊर्जा (भोजन/पेय) &minus; खर्च की गई ऊर्जा (कुल दैनिक ऊर्जा व्यय / TDEE)।</p>
+      <p>जब शरीर दैनिक व्यय से कम कैलोरी ग्रहण करता है, तो वसा ऊतकों (Adipose tissue) से ट्राइग्लिसराइड्स मुक्त होकर फैटी एसिड और ग्लिसरॉल में टूटते हैं और माइटोकॉन्ड्रिया में बीटा-ऑक्सीडेशन द्वारा एटीपी (ऊर्जा) उत्पन्न करते हैं।</p>
+
+      <h2>सुरक्षित और स्थायी कैलोरी डेफिसिट की रूपरेखा</h2>
+      <p>अत्यधिक कम कैलोरी खाने (जैसे 800-1000 kcal/दिन) से वजन तो तेजी से गिरता है, लेकिन उसमें 40% से अधिक हिस्सा पानी और सक्रिय मांसपेशियों का होता है, जिससे बेसल मेटाबॉलिक रेट (BMR) क्रैश हो जाता है। मध्यम कैलोरी डेफिसिट ही वैज्ञानिक रूप से स्वर्ण मानक है:</p>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">डेफिसिट रणनीति</th>
+              <th class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">दैनिक कैलोरी कटौती</th>
+              <th class="p-3 border border-[#e6e6e6]">साप्ताहिक वजन घटाव</th>
+              <th class="p-3 border border-[#e6e6e6]">शारीरिक प्रभाव व निरंतरता</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-emerald-600 font-bold">संयमित डेफिसिट (रूढ़िवादी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">250 – 400 kcal/दिन</td>
+              <td class="p-3 border border-[#e6e6e6]">~0.25 – 0.40 किग्रा/हफ्ता</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">हार्मोनल संतुलन 100% सुरक्षित; भूख व थकावट न्यूनतम; लीन मास पूर्ण संरक्षित</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-blue-500 font-bold">मध्यम डेफिसिट (क्लिनिकल स्वर्ण मानक)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-blue-500 font-bold">400 – 600 kcal/दिन</td>
+              <td class="p-3 border border-[#e6e6e6]">~0.40 – 0.65 किग्रा/हफ्ता</td>
+              <td class="p-3 border border-[#e6e6e6]">स्थिर वसा हानि (0.5%–1.0% शारीरिक वजन/हफ्ता); लंबे समय तक बनाए रखने योग्य</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-rose-600 font-bold">अत्यधिक क्रैश डेफिसिट (असुरक्षित)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-500 font-bold">&gt; 1,000 kcal/दिन</td>
+              <td class="p-3 border border-[#e6e6e6]">&gt; 1.20 किग्रा/हफ्ता</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">गंभीर मांसपेशी हानि, थायराइड/लेप्टिन दमन, पित्ताशय की पथरी और तुरंत वजन का लौटना</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>शरीर की संरचना में सुधार (Body Recomposition) के तीन स्तंभ</h2>
+      <p>केवल वजन घटाने और वसा घटाने में गहरा अंतर है। बिना मांसपेशियों को खोए केवल चर्बी घटाने के लिए निम्नलिखित तीन स्तंभ अनिवार्य हैं:</p>
+      <ul>
+        <li><strong>उच्च जैविक मूल्य वाला प्रोटीन (1.6 से 2.2 g/kg):</strong> भोजन में पर्याप्त प्रोटीन मांसपेशियों के टूटने (Muscle Catabolism) को रोकता है और भोजन के थर्मिक प्रभाव (TEF ~25%) के कारण स्वाभाविक रूप से कैलोरी बर्न बढ़ाता है।</li>
+        <li><strong>प्रोग्रेसिव रेजिस्टेंस ट्रेनिंग (वेट ट्रेनिंग):</strong> सप्ताह में 3 से 5 दिन प्रोग्रेसिव ओवरलोड के साथ वजन उठाने से शरीर को मांसपेशियों को बनाए रखने का तीव्र न्यूरोमस्कुलर संकेत मिलता है।</li>
+        <li><strong>गहरी नींद और कोर्टिसोल नियंत्रण:</strong> रात में 7 से 9 घंटे की गुणवत्तापूर्ण नींद ग्रोथ हार्मोन को स्रावित करती है और तनाव हार्मोन कोर्टिसोल को रोकती है, जिससे पेट के आसपास चर्बी का संचय कम होता है।</li>
+      </ul>
+
+      <h2>वैज्ञानिक संदर्भ एवं साक्ष्य</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Hall KD, et al. <em>Quantification of the effect of energy imbalance on bodyweight.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/21872751/" class="text-[#464feb] underline">Lancet 2011; 378(9793):826-837. PMID: 21872751</a>.</li>
+        <li>Helms ER, et al. <em>Evidence-based recommendations for natural bodybuilding contest preparation: nutrition and supplementation.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/24864135/" class="text-[#464feb] underline">J Int Soc Sports Nutr 2014; 11:20. PMID: 24864135</a>.</li>
+        <li>Garthe I, et al. <em>Effect of two different weight-loss rates on body composition and strength and power-related performance in elite athletes.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/21558571/" class="text-[#464feb] underline">Int J Sport Nutr Exerc Metab 2011; 21(2):97-104. PMID: 21558571</a>.</li>
+      </ul>
       `
     }
   },
@@ -947,8 +1071,41 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       <p>장기간의 칼로리 결손 지속 시 인체는 생존을 위해 기초대사량과 활동량을 계획치 이상으로 억제합니다. 갑상선 호르몬 수치 저하, 무의식적 일상 활동량(NEAT) 감소, 세포 미토콘드리아 에너지 효율 극대화 등이 대표적인 적응 기전입니다.</p>
       `,
       "hi": `
-      <h2>मेटाबॉलिक अनुकूलन के कारण</h2>
-      <p>लंबे समय तक कैलोरी की कमी बनाए रखने पर शरीर ऊर्जा बचाने के लिए मेटाबॉलिज्म धीमा कर देता है। इसमें थायरॉयड हार्मोन में कमी, अनैच्छिक शारीरिक गतिविधियों (NEAT) में गिरावट और ऊर्जा दक्षता में वृद्धि शामिल है।</p>
+      <h2>मेटाबॉलिक एडाप्टेशन क्या है? (एडाप्टिव थर्मोजेनेसिस का जीवविज्ञान)</h2>
+      <p>जब आप लंबे समय तक कैलोरी डेफिसिट डाइट पर रहते हैं और अपने शरीर का वजन घटाते हैं, तो शरीर इसे पोषण की कमी और भुखमरी का जैविक खतरा मान लेता है। अस्तित्व की रक्षा के लिए मानव शरीर अपनी कुल ऊर्जा खपत को स्वचालित रूप से घटा देता है। चिकित्सा विज्ञान में इस जटिल न्यूरोएंडोक्राइन प्रतिक्रिया को <strong>मेटाबॉलिक एडाप्टेशन (Metabolic Adaptation)</strong> या <strong>एडाप्टिव थर्मोजेनेसिस (Adaptive Thermogenesis)</strong> कहा जाता है।</p>
+
+      <h2>प्रसिद्ध 'बिगेस्ट लूज़र' क्लिनिकल अध्ययन (NIH Fothergill Study)</h2>
+      <p>यूएस नेशनल इंस्टीट्यूट्स ऑफ हेल्थ (NIH) के शोधकर्ताओं डॉ. केविन हॉल और एरिन फॉदरगिल द्वारा 6 वर्षों तक किए गए ऐतिहासिक अध्ययन में यह पाया गया कि अत्यधिक तीव्र गति से वजन घटाने वाले प्रतिभागियों का आराम की स्थिति का चयापचय (BMR) सामान्य पूर्वानुमानित दर से औसतन <strong>500 कैलोरी प्रतिदिन कम</strong> हो गया था। सबसे चौंकाने वाला तथ्य यह था कि वजन घटाने के 6 वर्ष बाद भी यह चयापचय धीमापन पूरी तरह समाप्त नहीं हुआ था।</p>
+
+      <h2>एडाप्टेशन के दौरान शरीर में होने वाले 4 प्रमुख हार्मोनल बदलाव</h2>
+      <div class="my-6 space-y-3">
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">1. लेप्टिन हार्मोन में भारी गिरावट व घ्रेलिन का विस्फोट</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">वसा कोशिकाओं द्वारा बनने वाला तृप्ति हार्मोन <em>लेप्टिन</em> 50% से अधिक गिर जाता है, जिससे मस्तिष्क को लगातार भुखमरी का संकेत मिलता है, जबकि पेट द्वारा स्रावित भूख हार्मोन <em>घ्रेलिन</em> तेजी से बढ़ता है।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">2. थायरॉयड अक्ष का दमन (T3 का गिरना)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">थायरॉयड ग्रंथि सक्रिय हार्मोन ट्राईआयोडोथायरोनिन (T3) का उत्पादन घटा देती है और निष्क्रिय रिवर्स T3 (rT3) बढ़ा देती है, जिससे प्रत्येक कोशिका में माइटोकॉन्ड्रियल श्वसन दर धीमी हो जाती है।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">3. गैर-व्यायाम गतिविधि थर्मोजेनेसिस (NEAT) का पतन</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">केंद्रीय तंत्रिका तंत्र अनजाने में दैनिक शारीरिक हरकतों (जैसे पैर हिलाना, सीधे बैठना, चलना) को न्यूनतम कर देता है। यह अवचेतन धीमापन प्रतिदिन 300 से 500 कैलोरी तक का बर्न कम कर देता है।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">4. मांसपेशियों की कार्यकुशलता में कृत्रिम वृद्धि</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">मांसपेशियों के तंतु समान शारीरिक कार्य को पूरा करने के लिए कम एटीपी (ऊर्जा) की खपत करने लगते हैं, जिससे प्रति कदम या व्यायाम में जली कैलोरी की मात्रा घट जाती है।</p>
+        </div>
+      </div>
+
+      <h2>मेटाबॉलिज्म क्रैश से बचने की वैज्ञानिक रणनीतियाँ: डाइट ब्रेक्स (Diet Breaks)</h2>
+      <p>प्रसिद्ध <strong>MATADOR क्लिनिकल ट्रायल (Byrne et al. 2018)</strong> ने सिद्ध किया कि लगातार 16 हफ्ते कठोर डाइटिंग करने के बजाय हर 2 हफ्ते डाइटिंग के बाद 2 हफ्ते रखरखाव कैलोरी (Maintenance Calories) खाने वाले व्यक्तियों ने अधिक स्थायी वसा घटाई और उनके लेप्टिन व BMR में न्यूनतम गिरावट दर्ज की गई।</p>
+
+      <h2>वैज्ञानिक संदर्भ एवं साक्ष्य</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Fothergill E, et al. <em>Persistent metabolic adaptation 6 years after 'The Biggest Loser' competition.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/27136388/" class="text-[#464feb] underline">Obesity (Silver Spring) 2016; 24(8):1612-1619. PMID: 27136388</a>.</li>
+        <li>Byrne NM, et al. <em>Intermittent energy restriction improves weight loss efficiency in obese men: the MATADOR study.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/28816233/" class="text-[#464feb] underline">Int J Obes (Lond) 2018; 42(2):129-138. PMID: 28816233</a>.</li>
+        <li>Rosenbaum M, Leibel RL. <em>Adaptive thermogenesis in humans.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/20935667/" class="text-[#464feb] underline">Int J Obes (Lond) 2010; 34(Suppl 1):S47-S55. PMID: 20935667</a>.</li>
+      </ul>
       `
     }
   },
@@ -1095,8 +1252,71 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       <p>피부 바로 아래 위치한 피하지방은 체온 유지와 충격 흡수를 담당하는 반면, 복강 내 장기를 감싸고 있는 내장지방은 문맥을 통해 간으로 유리지방산을 방출하고 염증 유발 사이토카인을 분비하여 인슐린 저항성과 대사증후군 위험을 크게 높입니다.</p>
       `,
       "hi": `
-      <h2>आंत की वसा और उपचर्म वसा में अंतर</h2>
-      <p>उपचर्म वसा त्वचा के ठीक नीचे पाई जाती है, जबकि आंत की वसा पेट के अंदरूनी अंगों के चारों ओर जमा होती है। आंत की वसा अधिक हानिकारक होती है क्योंकि यह सूजन पैदा करने वाले रसायन छोड़ती है और सीधे लिवर को प्रभावित करती है।</p>
+      <h2>विसरल फैट बनाम सबक्यूटेनियस फैट: दो भिन्न वसीय ऊतक</h2>
+      <p>मानव शरीर में संग्रहित सभी वसा एक समान जैविक व्यवहार नहीं करती। त्वचा के ठीक नीचे पाई जाने वाली चर्बी, जिसे उंगलियों से आसानी से चुटकी में पकड़ा जा सकता है, <strong>सबक्यूटेनियस फैट (Subcutaneous Adipose Tissue / SAT)</strong> कहलाती है। इसके विपरीत, पेट की गहरी मांसपेशियों के पीछे यकृत (लिवर), आंतों, अग्न्याशय और गुर्दों के चारों ओर लिपटी हुई चर्बी को <strong>विसरल फैट (Visceral Adipose Tissue / VAT)</strong> कहा जाता है।</p>
+
+      <h2>पोर्टल वेन परिकल्पना (The Portal Vein Hypothesis) और कार्डियोमेटाबॉलिक जोखिम</h2>
+      <p>कूल्हे और जांघों में स्थित सबक्यूटेनियस वसा एक निष्क्रिय ऊर्जा बैंक की भांति व्यवहार करती है और दिल की सुरक्षा करने वाला लाभकारी हार्मोन <em>एडिपोनेक्टिन</em> बनाती है। इसके विपरीत, विसरल वसा अत्यंत सक्रिय अंतःस्रावी अंग की तरह कार्य करती है। यह <strong>पोर्टल वेन (Portal Vein)</strong> के माध्यम से सीधे यकृत में अनियंत्रित फ्री फैटी एसिड (FFA) उड़ेलती है:</p>
+
+      <div class="my-6 space-y-3">
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">1. हेपेटिक इंसुलिन प्रतिरोध व नॉन-अल्कोहलिक फैटी लिवर</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">यकृत में सीधे फैटी एसिड पहुंचने से लिवर में ग्लूकोज उत्पादन अनियंत्रित हो जाता है और इंसुलिन प्रतिरोध तेजी से बढ़ता है, जो टाइप-2 डायबिटीज का मूल कारण है।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">2. भड़काऊ साइटोकिन्स (TNF-&alpha;, IL-6) का स्राव</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">विसरल वसा कोशिकाएं अत्यधिक मात्रा में सूजनकारी साइटोकिन्स और PAI-1 छोड़ती हैं, जो रक्त वाहिकाओं में सूजन पैदा करती हैं और रक्त के थक्के जमने का खतरा बढ़ाती हैं।</p>
+        </div>
+      </div>
+
+      <h2>तुलनात्मक नैदानिक विश्लेषण: विसरल बनाम सबक्यूटेनियस फैट</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">विशेषता</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">विसरल फैट (आंतरिक वसा)</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">सबक्यूटेनियस फैट (त्वचा के नीचे)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">शारीरिक स्थिति</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">पेट की गहरी दीवार के पीछे आंतरिक अंगों के चारों ओर</td>
+              <td class="p-3 border border-[#e6e6e6]">त्वचा और मांसपेशियों के बीच पूरे शरीर में</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">मेटाबॉलिक सक्रियता</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">अत्यधिक विषैला; भड़काऊ साइटोकिन्स और कोर्टिसोल सक्रियक</td>
+              <td class="p-3 border border-[#e6e6e6]">मेटाबॉलिक रूप से शांत; थर्मल इन्सुलेशन व ऊर्जा भंडारण</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">रोगों से संबंध</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">टाइप-2 डायबिटीज, फैटी लिवर, एथेरोस्क्लेरोसिस व हार्ट अटैक</td>
+              <td class="p-3 border border-[#e6e6e6]">गंभीर संवहनी बीमारियों से न्यूनतम प्रत्यक्ष संबंध</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">घटाने की सुगमता</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">व्यायाम व कैलोरी डेफिसिट से सबसे पहले जलती है (उच्च रक्त प्रवाह)</td>
+              <td class="p-3 border border-[#e6e6e6]">हठी वसा (Alpha-2 रिसेप्टर्स के कारण धीमी गति से कमी)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>विसरल चर्बी को खत्म करने के 3 साक्ष्य-आधारित उपाय</h2>
+      <ul>
+        <li><strong>रिफाइंड कार्बोहाइड्रेट और फ्रुक्टोज का त्याग:</strong> हाई-फ्रुक्टोज कॉर्न सिरप और रिफाइंड आटा लिवर में डे-नोवो लिपोजेनेसिस के जरिए सीधे विसरल वसा का निर्माण करते हैं।</li>
+        <li><strong>ज़ोन 2 कार्डियोवस्कुलर व्यायाम:</strong> प्रति सप्ताह 150-180 मिनट का संयमित एरोबिक व्यायाम (जैसे तेज चाल) विसरल वसा के फैटी एसिड को प्राथमिक ईंधन के रूप में जलाता है।</li>
+        <li><strong>कमर-कद अनुपात की निगरानी:</strong> अपनी कमर की परिधि को हमेशा अपने कुल कद के 50% से कम रखें (WHtR &lt; 0.50)।</li>
+      </ul>
+
+      <h2>वैज्ञानिक संदर्भ एवं साक्ष्य</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Després JP. <em>Body fat distribution and risk of cardiovascular disease: an update.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/22949539/" class="text-[#464feb] underline">Circulation 2012; 126(10):1301-1313. PMID: 22949539</a>.</li>
+        <li>Neeland IJ, et al. <em>Visceral and ectopic adiposity, atherosclerosis, and cardiovascular disease.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/31303525/" class="text-[#464feb] underline">Lancet Diabetes Endocrinol 2019; 7(9):715-725. PMID: 31303525</a>.</li>
+        <li>Bjorntorp P. <em>"Portal" adipose tissue as a generator of risk factors for cardiovascular disease and diabetes.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/2179998/" class="text-[#464feb] underline">Arteriosclerosis 1990; 10(4):493-496. PMID: 2179998</a>.</li>
+      </ul>
       `
     }
   },
@@ -1302,8 +1522,60 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       <p>미국심장협회(AHA)에 따르면 성인의 정상적인 안정 시 심박수는 분당 60~100회입니다. 꾸준한 유산소 운동은 심장의 1회 박출량(Stroke Volume)을 증가시켜 심박수를 40~55회 수준으로 낮추는 건강한 운동선수형 서맥을 유도합니다.</p>
       `,
       "hi": `
-      <h2>विश्राम हृदय गति और हृदय स्वास्थ्य</h2>
-      <p>अमेरिकन हार्ट एसोसिएशन के अनुसार वयस्कों की सामान्य विश्राम हृदय गति 60 से 100 बीट्स प्रति मिनट होती है। नियमित एरोबिक व्यायाम से हृदय की कार्यकुशलता बढ़ती है और विश्राम के समय नाड़ी की गति स्वस्थ रूप से कम होती है।</p>
+      <h2>रेस्टिंग हार्ट रेट (RHR): हृदय स्वास्थ्य और दीर्घायु का सीधा पैमाना</h2>
+      <p><strong>रेस्टिंग हार्ट रेट (Resting Heart Rate / RHR)</strong>—सुबह जागने के तुरंत बाद बिना किसी शारीरिक हलचल या उत्तेजना के हृदय के प्रति मिनट धड़कने की संख्या—हृदय-संवहनी दक्षता और ऑटोनोमिक नर्वस सिस्टम (सहानुभूति व परानुकंपी संतुलन) का सबसे सीधा और संवेदनशील बायोमार्कर है।</p>
+
+      <h2>नैदानिक रेस्टिंग हार्ट रेट श्रेणियां एवं स्वास्थ्य प्रभाव</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm font-mono">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">हार्ट रेट श्रेणी</th>
+              <th class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">धड़कन प्रति मिनट (BPM)</th>
+              <th class="p-3 border border-[#e6e6e6]">नैदानिक मूल्यांकन</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y border-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">एथलेटिक ब्रैडीकार्डिया</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&lt; 60 BPM (40–55)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">उच्च स्ट्रोक वॉल्यूम, मजबूत मायोकार्डियम और उत्कृष्ट वेगस तंत्रिका टोन</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-blue-500 font-bold">सामान्य स्वस्थ सीमा</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">60 – 80 BPM</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">स्वस्थ वयस्कों का सामान्य औसत; संतुलित संवहनी तनाव</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-amber-600 font-bold">उच्च सामान्य (मध्यम जोखिम)</td>
+              <td class="p-3 border border-[#e6e6e6] text-amber-600">80 – 99 BPM</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">सिम्पैथेटिक तनाव, गतिहीन जीवनशैली, निर्जलीकरण या नींद की कमी</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-600 font-bold">क्लिनिकल टैचीकार्डिया</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">&ge; 100 BPM</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">तत्काल चिकित्सीय जांच आवश्यक (अतालता, हाइपरथायरायडिज्म, एनीमिया या संक्रमण)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>प्रति 5 BPM वृद्धि पर 9% अधिक सर्व-कारण मृत्यु दर (The Lancet & CMAJ Data)</h2>
+      <p>लाखों व्यक्तियों पर किए गए विशाल दीर्घकालिक महामारी विज्ञान अध्ययनों से सिद्ध हुआ है कि 70 BPM से अधिक रेस्टिंग हार्ट रेट होने पर, प्रति 5 BPM की अतिरिक्त वृद्धि सर्व-कारण मृत्यु दर के जोखिम को <strong>9% तक बढ़ा देती है</strong>। जब हृदय को विश्राम की अवस्था में भी प्रति मिनट 85-90 बार धड़कना पड़ता है, तो कोरोनरी धमनियों पर शीयर स्ट्रेस (घर्षण दबाव) बढ़ जाता है और एंडोथेलियल डिसफंक्शन होता है।</p>
+
+      <h2>RHR को स्थायी रूप से घटाने के 3 कार्डियोवस्कुलर नियम</h2>
+      <ul>
+        <li><strong>एरोबिक बेस कंडीशनिंग (ज़ोन 2 ट्रेनिंग):</strong> सप्ताह में 3 से 4 बार 45 मिनट का हल्का जॉगिंग, स्विमिंग या साइकिलिंग हृदय के बाएं वेंट्रिकल को अधिक लोचदार बनाता है, जिससे स्ट्रोक वॉल्यूम बढ़ता है।</li>
+        <li><strong>कैफीन, निकोटीन और अल्कोहल का संयम:</strong> ये उत्तेजक पदार्थ सहानुभूति तंत्रिका तंत्र को उत्तेजित कर रेस्टिंग पल्स को 10-15 BPM तक बढ़ा देते हैं।</li>
+        <li><strong>श्वसन प्राणायाम और परानुकंपी सक्रियण:</strong> प्रतिदिन 10-15 मिनट का 4-7-8 श्वास अभ्यास वेगस तंत्रिका को सक्रिय कर हृदय गति को प्राकृतिक रूप से धीमा करता है।</li>
+      </ul>
+
+      <h2>वैज्ञानिक संदर्भ एवं साक्ष्य</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Aune D, et al. <em>Resting heart rate and the risk of cardiovascular disease, total cancer, and all-cause mortality: a systematic review and meta-analysis.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/29255018/" class="text-[#464feb] underline">CMAJ 2017; 189(50):E1525-E1537. PMID: 29255018</a>.</li>
+        <li>Fox K, et al. <em>Resting heart rate in cardiovascular disease.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/17719466/" class="text-[#464feb] underline">J Am Coll Cardiol 2007; 50(9):823-830. PMID: 17719466</a>.</li>
+        <li>Palatini P, Julius S. <em>Heart rate and the cardiovascular risk.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/9312151/" class="text-[#464feb] underline">J Hypertens 1997; 15(1):3-17. PMID: 9312151</a>.</li>
+      </ul>
       `
     }
   }

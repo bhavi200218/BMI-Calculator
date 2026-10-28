@@ -3,111 +3,689 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import PageShell from '../../components/PageShell.astro';
 
-const sources = [
+interface ScientificSource {
+  citationId: string;
+  title: string;
+  authors: string;
+  journal: string;
+  doi?: string;
+  pmid?: string;
+  url: string;
+  category: 'anthropometry' | 'metabolism' | 'composition' | 'cardiovascular' | 'nutrition';
+  categoryLabel: string;
+  appliedCalculators: { name: string; url: string }[];
+  summary: string;
+  keyFinding: string;
+}
+
+const sources: ScientificSource[] = [
   {
-    "title": "WHO 신체 상태: 인체측정학의 활용과 해석",
-    "org": "세계보건기구 (WHO / NLM PubMed)",
+    "citationId": "WHO 기술 보고서 시리즈 854 (1995)",
+    "title": "신체 상태: 인체측정학의 사용 및 해석 (WHO 전문가 위원회 보고서)",
+    "authors": "World Health Organization Expert Committee",
+    "journal": "World Health Organ Tech Rep Ser. 1995; 854: 1–452",
+    "pmid": "8594834",
     "url": "https://pubmed.ncbi.nlm.nih.gov/8594834/",
-    "desc": "성인 체질량지수(BMI) 분류 기준 및 글로벌 벤치마크를 정립한 공식 보고서.",
-    "actionLabel": "WHO 보고서 원문 열람"
+    "category": "anthropometry",
+    "categoryLabel": "인체계측 및 BMI",
+    "appliedCalculators": [
+      {
+        "name": "BMI 계산기",
+        "url": "/ko/bmi-calculator/"
+      },
+      {
+        "name": "BMI 표",
+        "url": "/ko/bmi-chart/"
+      },
+      {
+        "name": "키별 표준 체중 계산기",
+        "url": "/ko/healthy-weight-by-height/"
+      }
+    ],
+    "summary": "전 세계 성인 인구를 대상으로 한 표준 체질량지수(BMI) 분류 기준을 수립한 권위 있는 역학 보고서: 저체중(< 18.5), 정상(18.5–24.9), 과체중(25.0–29.9), 비만(≥ 30.0 kg/m²).",
+    "keyFinding": "표준 케틀레 계측 공식: BMI = 체중(kg) / [키(m)]²를 만성 질환 사망 위험 평가를 위한 표준 임상 지표로 공식화."
   },
   {
-    "title": "WHO 전문가 자문회의: 아시아 인구를 위한 적정 BMI와 보건 정책",
-    "org": "The Lancet (WHO 전문가 자문회의)",
+    "citationId": "더 란셋 2004 아시아인 BMI 전문가 협의",
+    "title": "아시아 인구를 위한 적정 체질량지수 및 보건 정책적 시사점",
+    "authors": "WHO Expert Consultation",
+    "journal": "The Lancet. 2004 Jan 10; 363(9403): 157–163",
+    "doi": "10.1016/S0140-6736(03)15268-3",
+    "pmid": "14726171",
     "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
-    "desc": "아시아 성인 공중보건 실행 분별점(23.0 kg/m² 위험 증가, 27.5 kg/m² 고위험)을 정의한 2004 란셋 논문.",
-    "actionLabel": "Lancet 원문 연구 보기"
+    "category": "anthropometry",
+    "categoryLabel": "인체계측 및 아시아인 위험도",
+    "appliedCalculators": [
+      {
+        "name": "아시아인 BMI 계산기",
+        "url": "/ko/asian-bmi-calculator/"
+      },
+      {
+        "name": "당뇨 위험도 계산기",
+        "url": "/ko/diabetes-risk-calculator/"
+      }
+    ],
+    "summary": "아시아인은 서구인보다 동일한 BMI에서 체지방률이 더 높고, 더 낮은 BMI에서도 당뇨병 및 심혈관 질환 위험이 크게 증가함을 규명한 연구.",
+    "keyFinding": "WHO 아시아 공중보건 권고 기준치 수립: 23.0 kg/m² (위험 증가), 27.5 kg/m² (고위험/비만 조치 기준)."
   },
   {
-    "title": "인도 및 아시아 성인 비만과 대사증후군 진단 합의 성명",
-    "org": "ICMR & JAPI (Misra A, et al.)",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
-    "desc": "인도 성인 기준(18.5–22.9 정상, 23.0–24.9 과체중, ≥ 25.0 비만)을 수립한 국가 공인 가이드라인.",
-    "actionLabel": "ICMR 국가 가이드라인 확인"
-  },
-  {
-    "title": "CDC 성인 체질량지수 스크리닝 표준",
-    "org": "미국 질병통제예방센터 (CDC)",
-    "url": "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html",
-    "desc": "성인 미터법 및 야드파운드법 공식 체질량지수 산출 표준 공식.",
-    "actionLabel": "CDC 스크리닝 기준 살펴보기"
-  },
-  {
-    "title": "건강한 개인의 휴식기 에너지 소비량 예측 공식",
-    "org": "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
+    "citationId": "Mifflin MD 1990 (휴식기 에너지 소비량 BMR)",
+    "title": "건강한 성인의 휴식기 에너지 소비량을 예측하기 위한 새로운 공식",
+    "authors": "Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO",
+    "journal": "Am J Clin Nutr. 1990 Feb; 51(2): 241–247",
+    "doi": "10.1093/ajcn/51.2.241",
+    "pmid": "2305711",
     "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
-    "desc": "기초대사량(BMR) 추정을 위해 가장 신뢰받는 미플린-세인트 지어 공식.",
-    "actionLabel": "AJCN 학술 논문 검토"
+    "category": "metabolism",
+    "categoryLabel": "대사량 및 기초대사율(BMR)",
+    "appliedCalculators": [
+      {
+        "name": "기초대사량(BMR) 계산기",
+        "url": "/ko/bmr-calculator/"
+      },
+      {
+        "name": "일일 총 에너지 소비량(TDEE) 계산기",
+        "url": "/ko/tdee-calculator/"
+      },
+      {
+        "name": "칼로리 계산기",
+        "url": "/ko/calorie-calculator/"
+      },
+      {
+        "name": "유지 칼로리 계산기",
+        "url": "/ko/maintenance-calorie-calculator/"
+      }
+    ],
+    "summary": "간접 열량 측정법을 통해 498명의 성인을 측정한 임상 연구. 미국 영양 및 식이요법 학회에서 가장 정확한 기초대사율 공식으로 공인.",
+    "keyFinding": "BMR(kcal/일) = (10 × 체중 kg) + (6.25 × 키 cm) - (5 × 나이) + s (남성: +5, 여성: -161)."
   },
   {
-    "title": "미 해군 인체 측정 기반 체지방률 공식",
-    "org": "Naval Health Research Center (Hodgdon JA, Beckett WS)",
+    "citationId": "Mosteller 1987 (체표면적 BSA 산출)",
+    "title": "체표면적(BSA)의 간이 산출 공식",
+    "authors": "Mosteller RD",
+    "journal": "N Engl J Med. 1987 Oct 22; 317(17): 1098",
+    "doi": "10.1056/NEJM198710223171717",
+    "pmid": "3657876",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/3657876/",
+    "category": "anthropometry",
+    "categoryLabel": "인체계측 및 임상 투약 기준",
+    "appliedCalculators": [
+      {
+        "name": "체표면적(BSA) 계산기",
+        "url": "/ko/body-surface-area-calculator/"
+      }
+    ],
+    "summary": "뉴잉글랜드 의학 저널(NEJM)에 발표된 체표면적(BSA) 간이 공식으로, 임상 항암 치료 및 신장 청소율 계산의 표준으로 채택됨.",
+    "keyFinding": "BSA(m²) = √[(신장 cm × 체중 kg) / 3600]. 종양학, 심박출계수 및 신장 기능 보정의 글로벌 표준 공식."
+  },
+  {
+    "citationId": "Devine 1974 (이상 체중 IBW 공식)",
+    "title": "젠타마이신 요법: 임상적 사용 및 투약 가이드라인",
+    "authors": "Devine BJ",
+    "journal": "Drug Intell Clin Pharm. 1974; 8(11): 650–655",
+    "pmid": "4819440",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/4819440/",
+    "category": "anthropometry",
+    "categoryLabel": "인체계측 및 이상체중",
+    "appliedCalculators": [
+      {
+        "name": "표준 체중(이상 체중) 계산기",
+        "url": "/ko/ideal-weight-calculator/"
+      },
+      {
+        "name": "키별 표준 체중 계산기",
+        "url": "/ko/healthy-weight-by-height/"
+      }
+    ],
+    "summary": "신장을 기반으로 한 이상 체중(IBW) 산출 공식을 확립한 약리학 연구로, 현대 병원 임상 투약 및 표준 체중 산출의 표준으로 활용됨.",
+    "keyFinding": "남성: 50.0 kg + 5피트 초과 인치당 2.3 kg. 여성: 45.5 kg + 5피트 초과 인치당 2.3 kg."
+  },
+  {
+    "citationId": "미스라 A, ICMR 2009 합의 (남아시아인 비만 기준)",
+    "title": "남아시아인을 위한 비만, 복부비만 및 대사증후군 진단에 관한 합의 성명",
+    "authors": "Misra A, Chowbey P, Makkar BM, Vikram NK, et al.",
+    "journal": "J Assoc Physicians India. 2009 Feb; 57: 163–170",
+    "pmid": "19702033",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
+    "category": "anthropometry",
+    "categoryLabel": "남아시아 가이드라인",
+    "appliedCalculators": [
+      {
+        "name": "인도인/남아시아인 BMI 계산기",
+        "url": "/ko/bmi-calculator-for-indians/"
+      },
+      {
+        "name": "당뇨 위험도 계산기",
+        "url": "/ko/diabetes-risk-calculator/"
+      }
+    ],
+    "summary": "인도 의학연구위원회(ICMR)의 합의 지침으로, 정상 체중에서도 내장지방이 많고 조기 대사질환 위험이 높은 특성을 반영함.",
+    "keyFinding": "남아시아인 공식 기준치: 정상(18.5–22.9), 과체중(23.0–24.9), 비만(≥ 25.0 kg/m²); 허리둘레 기준: 남성 ≥ 90 cm, 여성 ≥ 80 cm."
+  },
+  {
+    "citationId": "호지던 & 베켓 1984 (미 해군 체지방률 공식)",
+    "title": "신체 둘레 및 신장을 이용한 미 해군 남녀 체지방률 산출 공식",
+    "authors": "Hodgdon JA, Beckett MB",
+    "journal": "Naval Health Research Center Technical Reports 84-29 & 84-11; 1984",
     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/",
-    "desc": "신체 둘레 측정치를 통해 체지방률을 정밀하게 추정하는 로그 공식.",
-    "actionLabel": "미 해군 연구 보고서 열람"
+    "category": "composition",
+    "categoryLabel": "체성분 및 체지방",
+    "appliedCalculators": [
+      {
+        "name": "체지방률 계산기",
+        "url": "/ko/body-fat-calculator/"
+      },
+      {
+        "name": "제지방량(LBM) 계산기",
+        "url": "/ko/lean-body-mass-calculator/"
+      }
+    ],
+    "summary": "수중 밀도 측정법(골드 스탠다드)과 비교 검증된 다부위 둘레 측정 기반의 로그 회귀 체지방 산출 공식.",
+    "keyFinding": "허리, 목, 엉덩이(여성) 둘레와 신장을 변수로 신체 밀도 및 체지방률을 정밀 산출하는 성별 특화 로그 회귀식."
   },
   {
-    "title": "복부 비만과 대사증후군에 관한 IDF 국제 합의 성명",
-    "org": "세계당뇨병연맹 (IDF)",
-    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2782373/",
-    "desc": "아시아 성인 복부 비만 위험 기준선(남성 >90cm, 여성 >80cm) 정의.",
-    "actionLabel": "IDF 국제 합의 성명서 확인"
+    "citationId": "카르보넨 1957 (심박수 예비력 HRR)",
+    "title": "운동 트레이닝이 심박수에 미치는 영향: 종단적 연구",
+    "authors": "Karvonen MJ, Kentala E, Mustala O",
+    "journal": "Ann Med Exp Biol Fenn. 1957; 35(3): 307–315",
+    "pmid": "13470504",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/13470504/",
+    "category": "cardiovascular",
+    "categoryLabel": "심혈관 및 운동 생리학",
+    "appliedCalculators": [
+      {
+        "name": "카르보넨 목표 심박수 계산기",
+        "url": "/ko/karvonen-heart-rate-calculator/"
+      },
+      {
+        "name": "심박수 운동 존 계산기",
+        "url": "/ko/heart-rate-zone-calculator/"
+      }
+    ],
+    "summary": "단순 최고 심박수가 아닌 안정 시 심박수를 보정한 심박수 예비력(HRR)을 통해 유산소 운동 강도를 정밀 처방하는 기준을 정립한 연구.",
+    "keyFinding": "목표 심박수 = [(최대 심박수 - 안정 시 심박수) × % 운동강도] + 안정 시 심박수."
   },
   {
-    "title": "옥스퍼드 2.5 거듭제곱 신장 보정 BMI 공식",
-    "org": "옥스퍼드 대학교 (Prof. Nick Trefethen)",
+    "citationId": "보어 1984 (제지방량 LBM 산출)",
+    "title": "인체 체액량 표준화 지표로서의 추정 제지방량(LBM) 공식",
+    "authors": "Boer P",
+    "journal": "Am J Physiol. 1984 Jul; 247(1 Pt 2): F632–F636",
+    "doi": "10.1152/ajprenal.1984.247.4.F632",
+    "pmid": "6497914",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/6497914/",
+    "category": "composition",
+    "categoryLabel": "체성분",
+    "appliedCalculators": [
+      {
+        "name": "제지방량(LBM) 계산기",
+        "url": "/ko/lean-body-mass-calculator/"
+      }
+    ],
+    "summary": "인체 계측 회귀식을 통해 제지방량을 정량화하여, 세포외액량 및 크레아티닌 청소율과의 높은 임상적 상관관계를 입증한 연구.",
+    "keyFinding": "남성: LBM = (0.407 × W) + (0.267 × H) - 19.2. 여성: LBM = (0.252 × W) + (0.473 × H) - 48.3 (체중 kg, 키 cm)."
+  },
+  {
+    "citationId": "애슈웰 2012 (허리둘레 대비 키 비율 WHtR)",
+    "title": "성인 심혈관 대사 위험 인자 선별에 있어 허리둘레-신장 비율(WHtR)의 유용성",
+    "authors": "Ashwell M, Gunn P, Gibson S",
+    "journal": "Obes Rev. 2012 Mar; 13(3): 275–286",
+    "doi": "10.1111/j.1467-789X.2011.00952.x",
+    "pmid": "22106927",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22106927/",
+    "category": "anthropometry",
+    "categoryLabel": "복부 지방 및 체형 분석",
+    "appliedCalculators": [
+      {
+        "name": "허리 엉덩이 둘레 비율(WHR) 계산기",
+        "url": "/ko/waist-to-hip-ratio-calculator/"
+      },
+      {
+        "name": "인도인/남아시아인 BMI 계산기",
+        "url": "/ko/bmi-calculator-for-indians/"
+      },
+      {
+        "name": "아시아인 BMI 계산기",
+        "url": "/ko/asian-bmi-calculator/"
+      }
+    ],
+    "summary": "30만 명 이상의 다민족 데이터를 분석하여, 허리둘레를 신장의 절반 이하(WHtR < 0.5)로 유지하는 것이 고혈압 및 대사증후군 예측에 표준 BMI보다 우수함을 증명한 연구.",
+    "keyFinding": "허리-신장 비율 권고치: < 0.50 ('허리둘레를 키의 절반 이하로 유지할 것')."
+  },
+  {
+    "citationId": "트레페센 2013 (옥스퍼드 신형 BMI 공식)",
+    "title": "신체 기하학적 왜곡을 보정한 신규 BMI 산출 공식 제안",
+    "authors": "Trefethen LN (Professor of Numerical Analysis)",
+    "journal": "Mathematical Institute, University of Oxford; 2013",
     "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
-    "desc": "신장에 따른 3차원 인체 부피 왜곡을 정밀하게 보정한 수학적 공식.",
-    "actionLabel": "옥스퍼드 수학 분석 자료 안내"
+    "category": "anthropometry",
+    "categoryLabel": "기하학적 체형 모델링",
+    "appliedCalculators": [
+      {
+        "name": "3D BMI 계산기",
+        "url": "/ko/3d-bmi-calculator/"
+      },
+      {
+        "name": "3D 신체 시각화 도구",
+        "url": "/ko/3d-body-visualizer/"
+      }
+    ],
+    "summary": "표준 퀘틀레 BMI(키의 제곱으로 나눔)의 체형 왜곡 문제를 해결하기 위해 키의 2.5승 및 1.3 보정 계수를 도입한 옥스퍼드 수치해석학 모델.",
+    "keyFinding": "신규 BMI = 1.3 × [체중(kg) / 키(m)²·⁵]. 키가 큰 사람의 비만 과대평가 및 키가 작은 사람의 과소평가 왜곡을 보정."
+  },
+  {
+    "citationId": "브르지키 1993 (1회 최대 반복 중량 1RM)",
+    "title": "근력 평가: 피로 한계 반복수를 이용한 1RM(1회 최대 중량) 추정 공식",
+    "authors": "Brzycki M",
+    "journal": "J Phys Educ Recreat Dance. 1993; 64(1): 88–90",
+    "doi": "10.1080/07303084.1993.10606684",
+    "url": "https://www.tandfonline.com/doi/abs/10.1080/07303084.1993.10606684",
+    "category": "cardiovascular",
+    "categoryLabel": "근력 생리학",
+    "appliedCalculators": [
+      {
+        "name": "1RM 계산기",
+        "url": "/ko/1rm-calculator/"
+      },
+      {
+        "name": "최대 근력(1RM) 계산기",
+        "url": "/ko/one-rep-max-calculator/"
+      }
+    ],
+    "summary": "최대 중량 측정 시 발생하는 정형외과적 부상 위험과 혈압 급상승 없이, 반복 횟수로 안전하게 1RM을 추정하는 선형 회귀 공식.",
+    "keyFinding": "1RM = 든 무게 / (1.0278 - 0.0278 × 지칠 때까지의 반복 횟수). 1~10회 반복 구간에서 높은 신뢰도 입증."
+  },
+  {
+    "citationId": "미국 한림원 NASEM / IOM 2005 (영양 섭취 기준 및 수분)",
+    "title": "에너지, 탄수화물, 섬유소, 지방, 단백질 및 수분에 대한 일일 영양 섭취 기준(DRI)",
+    "authors": "Institute of Medicine (National Academies of Sciences, Engineering, and Medicine)",
+    "journal": "Washington, DC: The National Academies Press; 2005",
+    "doi": "10.17226/10490",
+    "url": "https://nap.nationalacademies.org/catalog/10490/",
+    "category": "nutrition",
+    "categoryLabel": "영양학 및 식이 기준",
+    "appliedCalculators": [
+      {
+        "name": "매크로(탄단지) 영양 계산기",
+        "url": "/ko/macro-calculator/"
+      },
+      {
+        "name": "단백질 하루 섭취량 계산기",
+        "url": "/ko/protein-intake-calculator/"
+      },
+      {
+        "name": "일일 수분 섭취량 계산기",
+        "url": "/ko/water-intake-calculator/"
+      }
+    ],
+    "summary": "성인을 위한 권장 탄단지 영양소 분배 비율(AMDR: 탄수화물 45~65%, 지방 20~35%, 단백질 10~35%) 및 체중 1kg당 0.8g 기본 단백질 기준 확립.",
+    "keyFinding": "AMDR 분배 기준: 탄수화물 45~65%, 지방 20~35%, 단백질 10~35%; 적정 수분 섭취량: 성인 남성 3.7L, 성인 여성 2.7L."
+  },
+  {
+    "citationId": "IOM / NRC 2009 (임신 중 적정 체중 증가 지침)",
+    "title": "임신 중 체중 증가: 임상 가이드라인 재검토",
+    "authors": "Institute of Medicine and National Research Council Committee",
+    "journal": "Washington, DC: The National Academies Press; 2009",
+    "doi": "10.17226/12584",
+    "pmid": "20669500",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/20669500/",
+    "category": "anthropometry",
+    "categoryLabel": "임산부 인체계측",
+    "appliedCalculators": [
+      {
+        "name": "임신 체중 증가 계산기",
+        "url": "/ko/pregnancy-weight-gain-calculator/"
+      }
+    ],
+    "summary": "임신 전 BMI 범주별로 산모와 태아의 합병증을 최소화하기 위한 임신 주수별 최적 체중 증가 권고 기준을 수립한 임상 합의 보고서.",
+    "keyFinding": "단태 임신 권장 증가량: 저체중(<18.5): 12.5~18 kg; 정상(18.5~24.9): 11.5~16 kg; 과체중(25~29.9): 7~11.5 kg; 비만(≥30): 5~9 kg."
+  },
+  {
+    "citationId": "스턴 MP 2002 (제2형 당뇨병 임상 위험도 예측 모델)",
+    "title": "제2형 당뇨병 고위험군 선별: 경구 당부하 검사가 필수적인가?",
+    "authors": "Stern MP, Williams K, Haffner SM",
+    "journal": "Ann Intern Med. 2002 Apr 16; 136(8): 575–581",
+    "doi": "10.7326/0003-4819-136-8-200204160-00006",
+    "pmid": "11955025",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11955025/",
+    "category": "cardiovascular",
+    "categoryLabel": "대사 위험도 모델링",
+    "appliedCalculators": [
+      {
+        "name": "당뇨 위험도 계산기",
+        "url": "/ko/diabetes-risk-calculator/"
+      }
+    ],
+    "summary": "BMI, 혈압, 공복 혈당, 가족력을 비침습적으로 결합하여 향후 7년간의 제2형 당뇨병 발병 위험도를 정확하게 예측하는 다변량 임상 모델.",
+    "keyFinding": "비침습적 계측 지표(BMI 및 복부 지방)와 기초 임상 변수 결합만으로 고가 침습 검사에 필적하는 당뇨 발병 고위험군 선별 정확도 달성."
   }
 ];
+
+const categoryCounts = {
+  all: sources.length,
+  anthropometry: sources.filter(s => s.category === 'anthropometry').length,
+  metabolism: sources.filter(s => s.category === 'metabolism').length,
+  composition: sources.filter(s => s.category === 'composition').length,
+  cardiovascular: sources.filter(s => s.category === 'cardiovascular').length,
+  nutrition: sources.filter(s => s.category === 'nutrition').length
+};
 ---
 
 <Layout 
-    title="학술 연구 출처 및 의학 참고 문헌 | Real BMI"
-    description="Real BMI의 모든 건강 계산식과 기준 범주의 근거가 되는 WHO, CDC, ICMR 등의 공인 의학 연구와 표준 공식을 확인하세요."
+    title="학술 연구 인용 및 과학적 참고문헌 서지 목록 | Real BMI"
+    description="WHO TRS 854, Lancet 2004, Mifflin MD 1990을 포함하여 Real BMI의 모든 계산기에 적용된 피어리뷰 임상 연구 및 수학적 공식을 확인하세요."
+    canonicalURL="https://realbmicalculator.com/ko/sources/"
 >
     <Navbar />
     <PageShell
-      title="학술 연구 출처 및 의학 참고 문헌"
-      eyebrow="과학적 근거 중심 표준"
-      description="본 사이트의 모든 계산 공식과 기준선은 세계보건기구, 질병관리청 및 동료 평가를 거친 학술 연구 논문을 바탕으로 합니다."
+      title="학술 연구 인용 및 과학적 참고문헌 서지 목록"
+      eyebrow="근거 중심 의학적 엄격성"
+      description="Real BMI의 모든 알고리즘에 적용된 피어리뷰 학술 논문, 공식 기관 보고서 및 수학적 모델."
       returnUrl="/ko/"
-      returnLabel="Home"
+      returnLabel="홈"
     >
-      <div class="space-y-8">
+      <div class="space-y-10">
+
+        <!-- Executive Rigor Notice -->
         <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] font-medium leading-relaxed space-y-4">
-          <p class="text-lg">
-            Real BMI는 과학적 투명성을 최우선 가치로 삼고 있습니다. 모든 신체 지수 산출식, 대사량 계산 모델 및 건강 위험 기준선은 세계보건기구(WHO), 미국 질병통제예방센터(CDC) 및 동료 평가를 통과한 국제 학술지의 공인 논문을 직접 인용하여 구축되었습니다.
+          <p class="text-base sm:text-lg leading-relaxed">
+            Real BMI는 불투명한 블랙박스 추정 알고리즘을 사용하지 않습니다. 본 플랫폼의 모든 계산기는 <strong class="text-[var(--foreground)]">세계보건기구(WHO)</strong>, <strong class="text-[var(--foreground)]">미국 질병통제예방센터(CDC)</strong>, <strong class="text-[var(--foreground)]">미국 국립보건원(NIH)</strong>, 그리고 <em class="text-[var(--foreground)]">더 란셋(The Lancet)</em>, <em class="text-[var(--foreground)]">NEJM</em> 등 세계적인 동료 심사(Peer-reviewed) 의학 학술 논문에 근거하여 직접 설계되었습니다.
           </p>
-          <p class="text-sm md:text-base">
-            사용자가 계산 알고리즘의 과학적 배경을 직접 검증할 수 있도록 공인 원문 논문 및 보건 기구 공식 지침에 대한 직접 링크를 안내합니다:
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            아래는 고유한 PubMed 식별자(PMID), 디지털 객체 식별자(DOI), 정밀한 수학적 산출 공식 및 연계 계산기를 체계적으로 색인화한 공식 학술 참고문헌 목록입니다.
           </p>
         </div>
 
-        <div class="grid gap-6">
-          {sources.map((src) => (
-            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs hover:border-[var(--accent)]/40 transition-all">
-              <div class="flex items-center justify-between gap-4 flex-wrap">
-                <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
-                  {src.org}
-                </span>
-                <a 
-                  href={src.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
-                  aria-label={`${src.actionLabel}: ${src.title}`}
-                >
-                  {src.actionLabel}
-                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                </a>
-              </div>
-              <h2 class="text-xl font-display font-bold text-[var(--foreground)]">{src.title}</h2>
-              <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{src.desc}</p>
+        <!-- Evidence-Based Guarantee: Exact Studies vs Generic Claims -->
+        <section class="p-6 md:p-8 rounded-2xl border-2 border-indigo-500/30 bg-indigo-500/5 space-y-5 not-prose shadow-sm" aria-label="E-E-A-T Academic Rigor Policy">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-indigo-500"></span>
+              <span class="text-xs font-bold font-display uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
+                AdSense 및 YMYL E-E-A-T 품질 평가 표준
+              </span>
             </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+              단순 기관명 표기 배제 원칙
+            </span>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="text-lg sm:text-xl font-bold font-display text-[var(--foreground)]">
+              직접 학술 연구 인용 vs 단순 기관명 약어 표기 비교
+            </h2>
+            <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
+              구글 검색 품질 평가 가이드라인(YMYL 건강 분야 E-E-A-T 원칙)을 엄격히 준수하여, Real BMI는 "WHO", "CDC", "NIH"와 같은 단순 기관명 약어만을 모호하게 언급하지 않습니다. 모든 계산은 영구적인 PubMed ID(PMID), DOI 및 공인된 수학적 공식으로 검증 가능한 논문과 직접 연결됩니다:
+            </p>
+          </div>
+
+          <!-- Direct Comparison Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+            <div class="p-4 rounded-xl border border-red-500/20 bg-red-500/5 space-y-2">
+              <span class="font-bold uppercase tracking-wider text-red-500 block">❌ 모호한 단순 표기 (Real BMI 배제 기준)</span>
+              <ul class="space-y-1.5 text-[var(--muted-foreground)]">
+                <li>• BMI 분류 기준에 대해 단순 'WHO'만 표기</li>
+                <li>• 적정 체중에 대해 모호한 'CDC' 언급</li>
+                <li>• 일일 대사량 산출에 대해 단순 'NIH' 또는 'ACSM' 언급</li>
+                <li>• 내부 산출 방식을 알 수 없는 블랙박스 알고리즘</li>
+              </ul>
+            </div>
+            <div class="p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 space-y-2">
+              <span class="font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">✅ 정밀 학술 인용 (Real BMI 구현 기준)</span>
+              <ul class="space-y-1.5 text-[var(--foreground)] font-medium">
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">WHO Technical Report Series 854</strong> (PMID 8594834)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Lancet 2004 BMI Asian Populations</strong> (PMID 14726171)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Mifflin MD 1990 Resting Energy Expenditure</strong> (PMID 2305711)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Mosteller 1987 Body Surface Area</strong> (PMID 3657876)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Devine 1974 Ideal Body Weight Equation</strong> (PMID 4819440)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Primary Academic Citation Matrix Table -->
+        <section class="space-y-4" aria-label="Academic Citation Matrix Table">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="text-xs font-bold font-display uppercase tracking-widest text-[var(--accent)]">E-E-A-T 근거 매트릭스</span>
+              <h2 class="text-xl sm:text-2xl font-bold font-display text-[var(--foreground)]">직접 학술 논문 인용 및 수학적 산출 공식</h2>
+            </div>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 self-start sm:self-auto">
+              15편의 핵심 논문 및 보고서 색인
+            </span>
+          </div>
+
+          <div class="citation-table-wrap border border-[var(--border)] overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="citation-matrix-table">
+                <thead>
+                  <tr>
+                    <th>표준 기준 / 인용 ID</th>
+                    <th>발표 기관 및 연구 저자</th>
+                    <th>핵심 학술 논문 / 보고서</th>
+                    <th>임상 산출 공식 및 기준치</th>
+                    <th>원문 직접 인용</th>
+                    <th>적용 계산기</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sources.map((src) => (
+                    <tr>
+                      <td class="whitespace-nowrap font-medium">
+                        <strong class="text-[var(--foreground)] block text-xs sm:text-sm">{src.citationId}</strong>
+                        <span class="text-[11px] font-semibold text-[var(--muted-foreground)] uppercase tracking-wide">{src.categoryLabel}</span>
+                      </td>
+                      <td>
+                        <span class="font-semibold text-[var(--foreground)] block text-xs">{src.authors}</span>
+                        <span class="text-[11px] text-[var(--muted-foreground)] italic block">{src.journal}</span>
+                      </td>
+                      <td>
+                        <span class="font-medium text-[var(--foreground)] text-xs line-clamp-2" title={src.title}>{src.title}</span>
+                      </td>
+                      <td>
+                        <code class="font-mono text-[11px] bg-[var(--muted)]/60 px-2 py-1 rounded block text-[var(--foreground)] leading-relaxed whitespace-pre-wrap">{src.keyFinding}</code>
+                      </td>
+                      <td class="whitespace-nowrap">
+                        <a href={src.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-semibold text-xs">
+                          {src.pmid ? `PMID: ${src.pmid}` : (src.doi ? `DOI: ${src.doi}` : '논문 확인')}
+                          <svg class="w-3 h-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                      </td>
+                      <td>
+                        <div class="flex flex-col gap-1">
+                          {src.appliedCalculators.slice(0, 2).map(calc => (
+                            <a href={calc.url} class="text-xs font-semibold whitespace-nowrap hover:underline">
+                              {calc.name} →
+                            </a>
+                          ))}
+                          {src.appliedCalculators.length > 2 && (
+                            <span class="text-[10px] text-[var(--muted-foreground)]">+{src.appliedCalculators.length - 2} more</span>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2 pb-2 border-b border-[var(--border)]" id="sourcesFilterNav">
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-xs transition-all cursor-pointer" data-filter="all">
+            전체 인용 ({categoryCounts.all})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="anthropometry">
+            인체계측 및 BMI ({categoryCounts.anthropometry})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="metabolism">
+            대사량 및 BMR ({categoryCounts.metabolism})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="composition">
+            체성분 및 체지방 ({categoryCounts.composition})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="cardiovascular">
+            심혈관 및 운동생리 ({categoryCounts.cardiovascular})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="nutrition">
+            영양 및 수분 섭취 ({categoryCounts.nutrition})
+          </button>
+        </div>
+
+        <!-- Direct Citation Cards List -->
+        <div class="space-y-6" id="sourcesList">
+          {sources.map((src, index) => (
+            <article class="source-card p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4 shadow-xs hover:border-[var(--accent)]/50 transition-all" data-category={src.category}>
+              <!-- Card Header -->
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[var(--border)]/60">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="w-6 h-6 rounded-full bg-[var(--accent)]/15 text-[var(--accent)] font-mono font-bold text-xs flex items-center justify-center">
+                    {index + 1}
+                  </span>
+                  <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
+                    {src.citationId}
+                  </span>
+                  <span class="px-2.5 py-0.5 rounded-md bg-[var(--muted)]/50 text-[var(--muted-foreground)] text-xs font-semibold">
+                    {src.categoryLabel}
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  {src.pmid && (
+                    <span class="text-xs font-mono font-semibold text-[var(--muted-foreground)]">
+                      PMID: <strong class="text-[var(--foreground)]">{src.pmid}</strong>
+                    </span>
+                  )}
+                  <a 
+                    href={src.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity shrink-0"
+                    aria-label={`논문 확인: ${src.citationId}`}
+                  >
+                    논문 확인
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Main Citation Details -->
+              <div class="space-y-2">
+                <h2 class="text-lg sm:text-xl font-display font-bold text-[var(--foreground)] leading-snug">
+                  {src.title}
+                </h2>
+                <p class="text-xs sm:text-sm font-serif italic text-[var(--muted-foreground)]">
+                  {src.authors}. <span class="font-semibold text-[var(--foreground)]/80 not-italic">{src.journal}.</span>
+                  {src.doi && <span class="block sm:inline sm:ml-2 not-italic font-mono text-xs text-[var(--accent)]">DOI: {src.doi}</span>}
+                </p>
+              </div>
+
+              <!-- Summary & Key Finding -->
+              <div class="space-y-2 text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                <p>{src.summary}</p>
+                <div class="p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 text-[var(--foreground)]/90">
+                  <strong class="text-[var(--accent)] font-display uppercase tracking-wide text-xs block mb-0.5">임상 산출 공식 / 기준치:</strong>
+                  <span class="font-mono text-xs text-[var(--foreground)]">{src.keyFinding}</span>
+                </div>
+              </div>
+
+              <!-- Applied Calculators on Real BMI -->
+              <div class="pt-3 border-t border-[var(--border)]/50 flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-bold text-[var(--foreground)] uppercase tracking-wider text-xs">Real BMI 적용 도구:</span>
+                {src.appliedCalculators.map(calc => (
+                  <a 
+                    href={calc.url} 
+                    class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[var(--muted)] text-[var(--foreground)] hover:text-[var(--accent)] hover:border-[var(--accent)]/40 border border-[var(--border)] transition-colors font-semibold"
+                  >
+                    <span>{calc.name}</span>
+                    <span class="text-[var(--accent)]">→</span>
+                  </a>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
+
       </div>
     </PageShell>
 </Layout>
+
+<style>
+  .citation-table-wrap {
+    overflow-x: auto;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background-color: var(--card);
+  }
+  .citation-matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+  .citation-matrix-table a {
+    text-decoration: none;
+    color: #464feb;
+    font-weight: 600;
+  }
+  .citation-matrix-table a:hover {
+    text-decoration: underline;
+  }
+  .citation-matrix-table tr th,
+  .citation-matrix-table tr td {
+    border: 1px solid #e6e6e6;
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    text-align: left;
+  }
+  .citation-matrix-table tr th {
+    background-color: #f5f5f5;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1f2937;
+  }
+  :global(.dark) .citation-matrix-table tr th,
+  :global(.dark) .citation-matrix-table tr td {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  :global(.dark) .citation-matrix-table tr th {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #f3f4f6;
+  }
+  :global(.dark) .citation-matrix-table a {
+    color: #818cf8;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.source-tab');
+    const cards = document.querySelectorAll('.source-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.getAttribute('data-filter');
+
+        // Update active tab styles
+        tabs.forEach(t => {
+          t.classList.remove('bg-[var(--accent)]', 'text-white');
+          t.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+        });
+        tab.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+        tab.classList.add('bg-[var(--accent)]', 'text-white');
+
+        // Filter cards
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

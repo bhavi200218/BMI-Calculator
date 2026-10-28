@@ -156,7 +156,7 @@ const byline = bylineLabels[lang] || bylineLabels.en;
         </a>
       </div>
 
-      <article class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
+      <article class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium article-container">
         {articleContentHtml ? (
           <div set:html={articleContentHtml} />
         ) : (
@@ -167,22 +167,52 @@ const byline = bylineLabels[lang] || bylineLabels.en;
           </div>
         )}
 
-        <!-- Natural In-Article Contextual Call to Action (CTA) Box -->
-        <div class="my-12 p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border-2 border-[var(--accent)]/30 shadow-xl text-center space-y-4 not-prose">
-          <h3 class="text-2xl font-bold font-display uppercase tracking-tight text-[var(--foreground)]">{cta.title}</h3>
-          <p class="text-base text-[var(--muted-foreground)] max-w-xl mx-auto font-sans">
-            {cta.descPrefix} <a href={`/${lang}/${cta.targetSlug}/`} class="text-[var(--accent)] underline font-bold hover:text-[var(--foreground)] transition-colors">{cta.linkText}</a> {cta.descSuffix}
-          </p>
-          <a href={`/${lang}/${cta.targetSlug}/`} class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105 active:scale-95 shadow-lg text-white">
-            {cta.btnText}
-          </a>
+        <!-- Medical Credibility, Review Protocol & Editorial Transparency -->
+        <div class="mt-14 not-prose">
+          <MedicalEEATBanner lang={lang} />
         </div>
 
-        <BlogRelatedCalculators articleSlug={slug as string} lang={lang} />
+        <!-- Complementary Calculation Tools & Interactive Next Steps (Shifted to End of Article) -->
+        <div class="mt-14 pt-8 border-t border-[var(--border)] not-prose space-y-8">
+          <div class="p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border-2 border-[var(--accent)]/30 shadow-xl text-center space-y-4">
+            <h3 class="text-2xl font-bold font-display uppercase tracking-tight text-[var(--foreground)]">{cta.title}</h3>
+            <p class="text-base text-[var(--muted-foreground)] max-w-xl mx-auto font-sans">
+              {cta.descPrefix} <a href={`/${lang}/${cta.targetSlug}/`} class="text-[var(--accent)] underline font-bold hover:text-[var(--foreground)] transition-colors">{cta.linkText}</a> {cta.descSuffix}
+            </p>
+            <a href={`/${lang}/${cta.targetSlug}/`} class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105 active:scale-95 shadow-lg text-white">
+              {cta.btnText}
+            </a>
+          </div>
 
-        <div class="mt-12 not-prose">
-          <MedicalEEATBanner lang={lang} />
+          <BlogRelatedCalculators articleSlug={slug as string} lang={lang} />
         </div>
       </article>
     </PageShell>
 </Layout>
+
+<style is:global>
+  /* Academic Reference & Table Standards */
+  article.article-container a:not(.calc-btn-gradient) {
+    text-decoration: none;
+    color: #464feb;
+  }
+  article.article-container a:not(.calc-btn-gradient):hover {
+    text-decoration: underline;
+  }
+  article.article-container tr th,
+  article.article-container tr td {
+    border: 1px solid #e6e6e6;
+  }
+  article.article-container tr th {
+    background-color: #f5f5f5;
+    color: #1e293b;
+  }
+  :global(.dark) article.article-container tr th,
+  :global(.dark) article.article-container tr td {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  :global(.dark) article.article-container tr th {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #f1f5f9;
+  }
+</style>

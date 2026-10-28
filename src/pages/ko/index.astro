@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import UpperEvidenceCenter from '../../components/UpperEvidenceCenter.astro';
 import HeroQuickLaunch from '../../components/HeroQuickLaunch.astro';
 import PopularHealthTopics from '../../components/PopularHealthTopics.astro';
 import FeaturedResearchGuides from '../../components/FeaturedResearchGuides.astro';
@@ -13,8 +14,8 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 ---
 
 <Layout 
-	title="무료 BMI, BMR, TDEE 및 체성분 계산기 | Real BMI"
-	description="세계보건기구(WHO) 및 질병관리청(CDC) 표준 지침에 따른 무료 체질량지수(BMI), 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 체지방률 및 이상 체중 건강 계산기 모음입니다. 가입 없이 개인정보 수집 없는 100% 안전한 브라우저 연산 제공."
+	title="Real BMI — 임상 근거 센터, 의학 연구 라이브러리 및 건강 계산기"
+	description="세계보건기구(WHO) 및 질병관리청(CDC) 표준에 기반한 근거 중심 의학 학술 플랫폼. 동료 검토 임상 연구 가이드 및 100% 안전한 브라우저 건강 평가 도구."
 >
 	<Navbar />
 	
@@ -22,33 +23,33 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 
 		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
 		<section class="pt-24 md:pt-28 pb-8 md:pb-12 px-4 md:px-6">
-			<div class="max-w-7xl mx-auto">
+			<div class="max-w-7xl mx-auto space-y-10">
 
 				<!-- Main H1 & Hero Header -->
-				<div class="text-center space-y-4 mb-8 max-w-4xl mx-auto">
+				<div class="text-center space-y-4 max-w-4xl mx-auto">
 					<!-- Eyebrow Tag / Pill -->
 					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						REAL BMI — 근거 기반 건강 평가 및 연구 허브
+						임상 근거 센터 • 동료 검토 건강 연구 및 스크리닝 플랫폼
 					</div>
 
 					<!-- Main H1 headline -->
 					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Real BMI — 무료 건강 및 체성분 계산기
+						근거 중심 건강 연구, 임상 가이드 및 건강 평가 도구
 					</h1>
 
 					<!-- Supporting H2 Subtitle & Intro -->
 					<p class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight font-display">
-						수치를 이해하고 자신 있게 계획하세요.
+						동료 검토 의학 문헌 • 공인 대사 알고리즘 • 사용자 데이터 무보관
 					</p>
 					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed pt-1">
-						WHO 및 CDC 공식 기준에 기반한 브라우저 계산기로 체질량지수(BMI), 기초대사량(BMR), 일일 총 에너지 소비량(TDEE)을 빠르고 안전하게 확인하세요.
+						세계보건기구(WHO)와 미국 질병통제예방센터(CDC)의 공중보건 역학 지침에 기반한 신뢰할 수 있는 건강 의학 연구, 생애주기별 신체 지표 가이드 및 안전한 브라우저 연산 도구를 확인하세요.
 					</p>
 				</div>
 
 				<!-- Stats Strip -->
-				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4">
-					{["18개 이상 계산기","25개 임상 가이드","6개 언어 지원","브라우저 보안 연산"].map(badge => (
+				<div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+					{["25+ 임상 가이드","30+ 학술 칼럼","15개 원저 논문 색인","WHO 및 CDC 근거 기준"].map(badge => (
 						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
 							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
 							{badge}
@@ -56,37 +57,39 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 					))}
 				</div>
 
-				<!-- Trust Badge below Stats -->
-				<div class="flex items-center justify-center gap-2 mb-8 md:mb-10 text-xs font-medium text-[var(--muted-foreground)]">
-					<svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-					</svg>
-					<span>WHO 및 CDC 표준 참조 지침 • 동료 검토 공식</span>
-				</div>
+				<!-- ═══════════════════  UPPER EVIDENCE & RESEARCH HUB  ═══════════════════ -->
+				<UpperEvidenceCenter lang="ko" />
 
-				<!-- Quick Screening Launchpad -->
-				<div class="max-w-5xl mx-auto">
-					<HeroQuickLaunch lang="ko" />
-				</div>
 			</div>
 		</section>
 
-		<!-- ═══════════════════  POPULAR HEALTH TOPICS  ═══════════════════ -->
-		<div class="px-4 md:px-6 pt-4 pb-8 content-auto">
-			<div class="max-w-7xl mx-auto">
-				<PopularHealthTopics lang="ko" />
-			</div>
-		</div>
-
 		<!-- ═══════════════════  FEATURED RESEARCH GUIDES  ═══════════════════ -->
-		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20">
+		<div id="featured-guides" class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
 				<FeaturedResearchGuides lang="ko" />
 			</div>
 		</div>
 
 		<!-- ═══════════════════  LATEST HEALTH ARTICLES  ═══════════════════ -->
-		<div class="px-4 md:px-6 py-8 md:py-12 content-auto">
+		<div id="latest-articles" class="px-4 md:px-6 py-8 md:py-12 content-auto scroll-mt-20">
+			<div class="max-w-7xl mx-auto">
+				<LatestArticles lang="ko" limit={6} />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  QUICK SCREENING LAUNCHPAD  ═══════════════════ -->
+		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40">
+			<div class="max-w-7xl mx-auto">
+				<HeroQuickLaunch lang="ko" />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  POPULAR HEALTH TOPICS  ═══════════════════ -->
+		<div class="px-4 md:px-6 pt-4 pb-8 content-auto border-t border-[var(--border)]/40">
+			<div class="max-w-7xl mx-auto">
+				<PopularHealthTopics lang="ko" />
+			</div>
+		</div>
 			<div class="max-w-7xl mx-auto">
 				<LatestArticles lang="ko" limit={6} />
 			</div>

@@ -187,6 +187,78 @@ const figCaptionText = {
   ko: `그림 1.1: ${currentData.title}에 대한 임상 참조 스펙트럼 및 위험 기준치. 출처 및 크레딧: 세계보건기구(WHO) 기술 보고서 시리즈 854 및 CDC 임상 지침. 교육용 참고 목적으로 제공됨.`,
   hi: `चित्र 1.1: ${currentData.title} के लिए नैदानिक संदर्भ स्पेक्ट्रम एवं सीमाएं। स्रोत एवं श्रेय: विश्व स्वास्थ्य संगठन (WHO) तकनीकी रिपोर्ट श्रृंखला 854 एवं CDC दिशानिर्देश।`
 }[lang] || `Figure 1.1: Clinical reference spectrum and classification cutoffs for ${currentData.title}. Source & Credit: WHO & CDC.`;
+
+const spectrumUi = {
+  en: {
+    badge: 'Visual Reference Infographic',
+    titleSuffix: 'Visual Spectrum Diagram',
+    source: 'WHO Technical Report Series',
+    desc: 'Graphical representation of clinical classification cutoffs and category ranges based on published WHO guidelines.',
+    underweight: 'Underweight / Low',
+    normal: 'Normal / Healthy',
+    overweight: 'Overweight / Moderate',
+    obese: 'Obese / High Risk'
+  },
+  hi: {
+    badge: 'दृश्य संदर्भ इन्फोग्राफिक',
+    titleSuffix: 'विज़ुअल स्पेक्ट्रम आरेख',
+    source: 'डब्ल्यूएचओ तकनीकी रिपोर्ट श्रृंखला',
+    desc: 'प्रकाशित डब्ल्यूएचओ दिशानिर्देशों के आधार पर नैदानिक वर्गीकरण सीमाओं और श्रेणियों का आरेखीय निरूपण।',
+    underweight: 'कम वजन / निम्न',
+    normal: 'सामान्य / स्वस्थ',
+    overweight: 'अधिक वजन / मध्यम',
+    obese: 'मोटापा / उच्च जोखिम'
+  },
+  es: {
+    badge: 'Infografía de Referencia Visual',
+    titleSuffix: 'Diagrama de Espectro Visual',
+    source: 'Serie de Informes Técnicos de la OMS',
+    desc: 'Representación gráfica de los puntos de corte de clasificación clínica basados en las directrices de la OMS.',
+    underweight: 'Bajo peso / Bajo',
+    normal: 'Normal / Saludable',
+    overweight: 'Sobrepeso / Moderado',
+    obese: 'Obesidad / Alto riesgo'
+  },
+  fr: {
+    badge: 'Infographie de Référence Visuelle',
+    titleSuffix: 'Diagramme du Spectre Visuel',
+    source: 'Série de Rapports Techniques OMS',
+    desc: 'Représentation graphique des seuils de classification clinique selon les directives publiées par l\'OMS.',
+    underweight: 'Insuffisance pondérale',
+    normal: 'Normal / Santé',
+    overweight: 'Surpoids / Modéré',
+    obese: 'Obésité / Risque élevé'
+  },
+  de: {
+    badge: 'Visuelle Referenz-Infografik',
+    titleSuffix: 'Visuelles Spektrum-Diagramm',
+    source: 'WHO Technische Berichtsreihe',
+    desc: 'Grafische Darstellung der klinischen Schwellenwerte basierend auf veröffentlichten WHO-Richtlinien.',
+    underweight: 'Untergewicht / Niedrig',
+    normal: 'Normalgewicht / Gesund',
+    overweight: 'Übergewicht / Moderat',
+    obese: 'Adipositas / Hohes Risiko'
+  },
+  ko: {
+    badge: '시각적 참조 인포그래픽',
+    titleSuffix: '시각적 스펙트럼 다이어그램',
+    source: 'WHO 기술 보고서 시리즈',
+    desc: '공식 WHO 지침에 기반한 임상적 분류 기준치 및 범위의 그래픽 시각화입니다.',
+    underweight: '저체중 / 위험도 낮음',
+    normal: '정상 / 건강 체중',
+    overweight: '과체중 / 주의 요망',
+    obese: '비만 / 고위험군'
+  }
+}[lang] || {
+  badge: 'Visual Reference Infographic',
+  titleSuffix: 'Visual Spectrum Diagram',
+  source: 'WHO Technical Report Series',
+  desc: 'Graphical representation of clinical classification cutoffs and category ranges based on published WHO guidelines.',
+  underweight: 'Underweight / Low',
+  normal: 'Normal / Healthy',
+  overweight: 'Overweight / Moderate',
+  obese: 'Obese / High Risk'
+};
 ---
 
 <!-- Embed Tool-Specific FAQ Schema -->
@@ -350,37 +422,37 @@ const figCaptionText = {
     <div class="flex items-center justify-between gap-4 flex-wrap">
       <div class="space-y-1">
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
-          Visual Reference Infographic
+          {spectrumUi.badge}
         </span>
         <h4 class="text-base sm:text-lg font-display font-bold text-[var(--foreground)] uppercase">
-          {currentData.title} — Visual Spectrum Diagram
+          {currentData.title} — {spectrumUi.titleSuffix}
         </h4>
       </div>
       <span class="text-xs text-[var(--muted-foreground)] font-mono">
-        WHO Technical Report Series
+        {spectrumUi.source}
       </span>
     </div>
 
     <!-- Scalable Visual Spectrum Diagram -->
     <div class="w-full bg-[var(--muted)]/50 rounded-xl p-4 border border-[var(--border)] overflow-x-auto">
       <svg class="w-full min-w-[500px] h-auto max-h-36 text-[var(--foreground)]" viewBox="0 0 800 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={`Infographic illustrating ${currentData.title}`}>
-        <title>{currentData.title} Visual Spectrum Diagram</title>
-        <desc>Graphical representation of clinical classification cutoffs and category ranges based on published WHO guidelines.</desc>
+        <title>{currentData.title} — {spectrumUi.titleSuffix}</title>
+        <desc>{spectrumUi.desc}</desc>
         <!-- Bar Segments -->
         <rect x="20" y="20" width="180" height="38" rx="6" fill="#38bdf8" fill-opacity="0.25" stroke="#38bdf8" stroke-width="2"/>
-        <text x="110" y="44" text-anchor="middle" fill="#38bdf8" font-size="12" font-weight="700" font-family="sans-serif">Underweight / Low</text>
+        <text x="110" y="44" text-anchor="middle" fill="#38bdf8" font-size="12" font-weight="700" font-family="sans-serif">{spectrumUi.underweight}</text>
         <text x="110" y="78" text-anchor="middle" fill="#8FA7A7" font-size="11" font-family="sans-serif">&lt; 18.5</text>
 
         <rect x="210" y="20" width="180" height="38" rx="6" fill="#34d399" fill-opacity="0.25" stroke="#34d399" stroke-width="2"/>
-        <text x="300" y="44" text-anchor="middle" fill="#34d399" font-size="12" font-weight="700" font-family="sans-serif">Normal / Healthy</text>
+        <text x="300" y="44" text-anchor="middle" fill="#34d399" font-size="12" font-weight="700" font-family="sans-serif">{spectrumUi.normal}</text>
         <text x="300" y="78" text-anchor="middle" fill="#8FA7A7" font-size="11" font-family="sans-serif">18.5 – 24.9</text>
 
         <rect x="400" y="20" width="180" height="38" rx="6" fill="#fbbf24" fill-opacity="0.25" stroke="#fbbf24" stroke-width="2"/>
-        <text x="490" y="44" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700" font-family="sans-serif">Overweight / Moderate</text>
+        <text x="490" y="44" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700" font-family="sans-serif">{spectrumUi.overweight}</text>
         <text x="490" y="78" text-anchor="middle" fill="#8FA7A7" font-size="11" font-family="sans-serif">25.0 – 29.9</text>
 
         <rect x="590" y="20" width="190" height="38" rx="6" fill="#f87171" fill-opacity="0.25" stroke="#f87171" stroke-width="2"/>
-        <text x="685" y="44" text-anchor="middle" fill="#f87171" font-size="12" font-weight="700" font-family="sans-serif">Obese / High Risk</text>
+        <text x="685" y="44" text-anchor="middle" fill="#f87171" font-size="12" font-weight="700" font-family="sans-serif">{spectrumUi.obese}</text>
         <text x="685" y="78" text-anchor="middle" fill="#8FA7A7" font-size="11" font-family="sans-serif">≥ 30.0</text>
       </svg>
     </div>

@@ -20,232 +20,343 @@ interface ScientificSource {
 
 const sources: ScientificSource[] = [
   {
-    citationId: "WHO Technical Report Series 854 (1995)",
-    title: "शारीरिक स्थिति: मानवमिति का उपयोग और व्याख्या (WHO विशेषज्ञ समिति रिपोर्ट)",
-    authors: "World Health Organization Expert Committee",
-    journal: "World Health Organ Tech Rep Ser. 1995; 854: 1–452",
-    pmid: "8594834",
-    url: "https://pubmed.ncbi.nlm.nih.gov/8594834/",
-    category: "anthropometry",
-    categoryLabel: "मानवमिति एवं बीएमआई",
-    appliedCalculators: [
-      { name: "बीएमआई कैलकुलेटर", url: "/hi/bmi-calculator/" },
-      { name: "बीएमआई चार्ट", url: "/hi/bmi-chart/" },
-      { name: "ऊंचाई अनुसार स्वस्थ वजन", url: "/hi/healthy-weight-by-height/" }
+    "citationId": "WHO Technical Report Series 854 (1995)",
+    "title": "शारीरिक स्थिति: मानवमिति का उपयोग और व्याख्या (WHO विशेषज्ञ समिति रिपोर्ट)",
+    "authors": "World Health Organization Expert Committee",
+    "journal": "World Health Organ Tech Rep Ser. 1995; 854: 1–452",
+    "pmid": "8594834",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/8594834/",
+    "category": "anthropometry",
+    "categoryLabel": "मानवमिति एवं बीएमआई",
+    "appliedCalculators": [
+      {
+        "name": "बीएमआई कैलकुलेटर",
+        "url": "/hi/bmi-calculator/"
+      },
+      {
+        "name": "बीएमआई चार्ट",
+        "url": "/hi/bmi-chart/"
+      },
+      {
+        "name": "कद के अनुसार सही वजन",
+        "url": "/hi/healthy-weight-by-height/"
+      }
     ],
-    summary: "वयस्कों के लिए अंतरराष्ट्रीय बॉडी मास इंडेक्स (BMI) कटऑफ स्थापित करने वाली ऐतिहासिक वैश्विक रिपोर्ट: कम वजन (< 18.5 kg/m²), सामान्य वजन (18.5–24.9 kg/m²), अधिक वजन (25.0–29.9 kg/m²) और मोटापा वर्ग I–III (≥ 30.0 kg/m²)।",
-    keyFinding: "क्रॉनिक रोगों के प्राथमिक नैदानिक स्क्रीनिंग इंडेक्स के रूप में क्वेटलेट के मीट्रिक फॉर्मूले (वजन किग्रा / ऊंचाई मीटर²) को मानकीकृत किया।"
+    "summary": "सार्वभौमिक महामारी विज्ञान रिपोर्ट जिसने वयस्क आबादी के लिए मानकीकृत अंतर्राष्ट्रीय बीएमआई कटऑफ स्थापित किए: कम वजन (< 18.5), सामान्य वजन (18.5–24.9), अधिक वजन (25.0–29.9), और मोटापा (≥ 30.0 kg/m²)।",
+    "keyFinding": "केटलेट का मीट्रिक सूत्र: BMI = वजन (kg) / [कद (m)]² को प्राथमिक स्वास्थ्य जांच मानक के रूप में स्थापित किया।"
   },
   {
-    citationId: "Lancet 2004 BMI Asian Populations",
-    title: "एशियाई आबादी के लिए उपयुक्त बीएमआई और सार्वजनिक स्वास्थ्य नीतिगत निहितार्थ",
-    authors: "WHO Expert Consultation",
-    journal: "The Lancet. 2004 Jan 10; 363(9403): 157–163",
-    doi: "10.1016/S0140-6736(03)15268-3",
-    pmid: "14726171",
-    url: "https://pubmed.ncbi.nlm.nih.gov/14726171/",
-    category: "anthropometry",
-    categoryLabel: "एशियाई स्वास्थ्य मानक",
-    appliedCalculators: [
-      { name: "एशियाई बीएमआई कैलकुलेटर", url: "/hi/asian-bmi-calculator/" },
-      { name: "मधुमेह जोखिम कैलकुलेटर", url: "/hi/diabetes-risk-calculator/" }
+    "citationId": "Lancet 2004 BMI Asian Populations",
+    "title": "एशियाई आबादी के लिए उपयुक्त बॉडी मास इंडेक्स और नीतिगत निहितार्थ",
+    "authors": "WHO Expert Consultation",
+    "journal": "The Lancet. 2004 Jan 10; 363(9403): 157–163",
+    "doi": "10.1016/S0140-6736(03)15268-3",
+    "pmid": "14726171",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
+    "category": "anthropometry",
+    "categoryLabel": "मानवमिति एवं एशियाई जोखिम",
+    "appliedCalculators": [
+      {
+        "name": "एशियन बीएमआई कैलकुलेटर",
+        "url": "/hi/asian-bmi-calculator/"
+      },
+      {
+        "name": "डायबिटीज रिस्क कैलकुलेटर",
+        "url": "/hi/diabetes-risk-calculator/"
+      }
     ],
-    summary: "द लांसेट का मील का पत्थर अध्ययन जिसने साबित किया कि एशियाई वयस्कों में पश्चिमी आबादी की तुलना में कम बीएमआई पर भी अधिक बॉडी फैट और गंभीर हृदय रोग व टाइप 2 डायबिटीज का खतरा होता है।",
-    keyFinding: "WHO एशियाई एक्शन थ्रेशोल्ड निर्धारित किए: 23.0 kg/m² (बढ़ा हुआ जोखिम / अधिक वजन) और 27.5 kg/m² (उच्च जोखिम / मोटापा)।"
+    "summary": "ऐतिहासिक बहु-केंद्रीय अध्ययन जिसने सिद्ध किया कि एशियाई व्यक्तियों में कम बीएमआई पर भी वसा प्रतिशत अधिक और टाइप 2 मधुमेह व हृदय रोग का खतरा अधिक होता है।",
+    "keyFinding": "एशियाई कार्रवाई सीमाएं: 23.0 kg/m² (बढ़ा हुआ जोखिम) और 27.5 kg/m² (उच्च जोखिम / मोटापा)।"
   },
   {
-    citationId: "Mifflin MD 1990 (Resting Energy Expenditure)",
-    title: "स्वस्थ व्यक्तियों में विश्राम ऊर्जा व्यय का नया भविष्यसूचक समीकरण",
-    authors: "Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO",
-    journal: "Am J Clin Nutr. 1990 Feb; 51(2): 241–247",
-    doi: "10.1093/ajcn/51.2.241",
-    pmid: "2305711",
-    url: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
-    category: "metabolism",
-    categoryLabel: "मेटाबॉलिज्म एवं BMR",
-    appliedCalculators: [
-      { name: "BMR कैलकुलेटर", url: "/hi/bmr-calculator/" },
-      { name: "TDEE कैलकुलेटर", url: "/hi/tdee-calculator/" },
-      { name: "कैलोरी कैलकुलेटर", url: "/hi/calorie-calculator/" },
-      { name: "मेंटेनेंस कैलोरी कैलकुलेटर", url: "/hi/maintenance-calorie-calculator/" }
+    "citationId": "Mifflin MD 1990 (Resting Energy Expenditure)",
+    "title": "स्वस्थ व्यक्तियों में विश्राम ऊर्जा व्यय (REE) के लिए एक नया भविष्यसूचक समीकरण",
+    "authors": "Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO",
+    "journal": "Am J Clin Nutr. 1990 Feb; 51(2): 241–247",
+    "doi": "10.1093/ajcn/51.2.241",
+    "pmid": "2305711",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    "category": "metabolism",
+    "categoryLabel": "चयापचय एवं बीएमआर",
+    "appliedCalculators": [
+      {
+        "name": "बीएमआर कैलकुलेटर",
+        "url": "/hi/bmr-calculator/"
+      },
+      {
+        "name": "टीडीईई कैलकुलेटर",
+        "url": "/hi/tdee-calculator/"
+      },
+      {
+        "name": "कैलोरी कैलकुलेटर",
+        "url": "/hi/calorie-calculator/"
+      },
+      {
+        "name": "मेंटेनेंस कैलोरी कैलकुलेटर",
+        "url": "/hi/maintenance-calorie-calculator/"
+      }
     ],
-    summary: "अप्रत्यक्ष कैलोरीमेट्री द्वारा मापे गए 498 स्वस्थ वयस्कों पर क्लिनिकल अध्ययन। एकेडमी ऑफ न्यूट्रिशन एंड डाइटेटिक्स द्वारा सामान्य और मोटे दोनों वयस्कों में बीएमआर अनुमान के लिए सबसे सटीक फॉर्मूला घोषित।",
-    keyFinding: "BMR (किलोकेलोरी/दिन) = (10 × वजन किग्रा) + (6.25 × ऊंचाई सेमी) - (5 × आयु वर्ष) + s (पुरुष: +5, महिला: -161)।"
+    "summary": "अप्रत्यक्ष कैलोरीमेट्री द्वारा 498 स्वस्थ वयस्कों पर नैदानिक अध्ययन। एकेडमी ऑफ न्यूट्रिशन एंड डायटेटिक्स द्वारा बीएमआर के लिए सबसे सटीक फॉर्मूले के रूप में सत्यापित।",
+    "keyFinding": "BMR (kcal/दिन) = (10 × वजन kg) + (6.25 × कद cm) - (5 × आयु वर्ष) + s (पुरुष: +5, महिला: -161)।"
   },
   {
-    citationId: "Mosteller RD 1987 (Body Surface Area)",
-    title: "बॉडी सरफेस एरिया (BSA) की सरलीकृत गणना विधि",
-    authors: "Mosteller RD",
-    journal: "N Engl J Med. 1987 Oct 22; 317(17): 1098",
-    doi: "10.1056/NEJM198710223171717",
-    pmid: "3657876",
-    url: "https://pubmed.ncbi.nlm.nih.gov/3657876/",
-    category: "anthropometry",
-    categoryLabel: "मानवमिति एवं चिकित्सा खुराक",
-    appliedCalculators: [
-      { name: "बॉडी सरफेस एरिया कैलकुलेटर", url: "/hi/body-surface-area-calculator/" }
+    "citationId": "Mosteller RD 1987 (Body Surface Area)",
+    "title": "शरीर की सतह के क्षेत्रफल (BSA) की सरलीकृत गणना",
+    "authors": "Mosteller RD",
+    "journal": "N Engl J Med. 1987 Oct 22; 317(17): 1098",
+    "doi": "10.1056/NEJM198710223171717",
+    "pmid": "3657876",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/3657876/",
+    "category": "anthropometry",
+    "categoryLabel": "मानवमिति एवं क्लिनिकल डोजिंग",
+    "appliedCalculators": [
+      {
+        "name": "बॉडी सरफेस एरिया कैलकुलेटर",
+        "url": "/hi/body-surface-area-calculator/"
+      }
     ],
-    summary: "न्यू इंग्लैंड जर्नल ऑफ मेडिसिन में प्रकाशित पत्र जिसमें जटिल लॉगरिदमिक तालिकाओं के बिना शारीरिक सतह क्षेत्र की सटीक गणना का फॉर्मूला प्रस्तुत किया गया।",
-    keyFinding: "BSA (वर्ग मीटर) = √[(ऊंचाई सेमी × वजन किग्रा) / 3600]। ऑन्कोलॉजी, कार्डियक इंडेक्स और नेफ्रोलॉजी में अंतरराष्ट्रीय मानक।"
+    "summary": "न्यू इंग्लैंड जर्नल ऑफ मेडिसिन में प्रकाशित ऐतिहासिक पत्र जिसने लघुगणक तालिकाओं के बिना शरीर के सतही क्षेत्रफल (BSA) की सटीक गणना का आसान सूत्र प्रस्तुत किया।",
+    "keyFinding": "BSA (m²) = √[(कद cm × वजन kg) / 3600]। ऑन्कोलॉजी, कार्डियक इंडेक्स एवं नेफ्रोलॉजी में वैश्विक रूप से स्वीकृत।"
   },
   {
-    citationId: "Devine BJ 1974 (Ideal Body Weight)",
-    title: "जेंटामाइसिन थेरेपी: आदर्श शरीर वजन एवं खुराक निर्धारण",
-    authors: "Devine BJ",
-    journal: "Drug Intell Clin Pharm. 1974; 8(11): 650–655",
-    pmid: "4819440",
-    url: "https://pubmed.ncbi.nlm.nih.gov/4819440/",
-    category: "anthropometry",
-    categoryLabel: "आदर्श शारीरिक वजन",
-    appliedCalculators: [
-      { name: "आदर्श वजन कैलकुलेटर", url: "/hi/ideal-weight-calculator/" },
-      { name: "ऊंचाई अनुसार स्वस्थ वजन", url: "/hi/healthy-weight-by-height/" }
+    "citationId": "Devine BJ 1974 (Ideal Body Weight)",
+    "title": "जेंटामाइसिन थेरेपी: नैदानिक उपयोग एवं खुराक दिशानिर्देश",
+    "authors": "Devine BJ",
+    "journal": "Drug Intell Clin Pharm. 1974; 8(11): 650–655",
+    "pmid": "4819440",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/4819440/",
+    "category": "anthropometry",
+    "categoryLabel": "मानवमिति एवं आदर्श भार",
+    "appliedCalculators": [
+      {
+        "name": "आदर्श वजन कैलकुलेटर",
+        "url": "/hi/ideal-weight-calculator/"
+      },
+      {
+        "name": "कद के अनुसार सही वजन",
+        "url": "/hi/healthy-weight-by-height/"
+      }
     ],
-    summary: "अस्पताल चिकित्सा में संकीर्ण चिकित्सीय दवाओं की खुराक निर्धारित करने के लिए विकसित आदर्श शरीर वजन (IBW) का क्लासिक फॉर्मूला, जो आज भी वैश्विक मानक है।",
-    keyFinding: "पुरुष: 50.0 किग्रा + 2.3 किग्रा प्रति इंच (5 फीट से ऊपर); महिला: 45.5 किग्रा + 2.3 किग्रा प्रति इंच (5 फीट से ऊपर)।"
+    "summary": "आधारभूत नैदानिक औषधीय अध्ययन जिसने ऊंचाई के आधार पर आदर्श वजन (IBW) की गणना के नियम दिए। आज भी अस्पताल चिकित्सा में गोल्ड स्टैंडर्ड बेंचमार्क।",
+    "keyFinding": "पुरुष: 50 kg + 2.3 kg प्रति इंच (5 फीट से ऊपर)। महिला: 45.5 kg + 2.3 kg प्रति इंच (5 फीट से ऊपर)।"
   },
   {
-    citationId: "Misra A, ICMR Consensus 2009 (Asian Indians)",
-    title: "भारतीय वयस्कों में मोटापा, उदर मोटापा एवं मेटाबॉलिक सिंड्रोम पर राष्ट्रीय सर्वसम्मति दिशानिर्देश",
-    authors: "Misra A, Chowbey P, Makkar BM, Vikram NK, et al.",
-    journal: "J Assoc Physicians India. 2009 Feb; 57: 163–170",
-    pmid: "19702033",
-    url: "https://pubmed.ncbi.nlm.nih.gov/19702033/",
-    category: "anthropometry",
-    categoryLabel: "भारतीय स्वास्थ्य मानक (ICMR)",
-    appliedCalculators: [
-      { name: "भारतीयों के लिए बीएमआई कैलकुलेटर", url: "/hi/bmi-calculator-for-indians/" },
-      { name: "मधुमेह जोखिम कैलकुलेटर", url: "/hi/diabetes-risk-calculator/" }
+    "citationId": "Misra A, ICMR Consensus 2009 (Asian Indians)",
+    "title": "एशियाई भारतीयों में मोटापा, उदर मोटापा और मेटाबॉलिक सिंड्रोम के निदान के लिए सहमति वक्तव्य",
+    "authors": "Misra A, Chowbey P, Makkar BM, Vikram NK, et al.",
+    "journal": "J Assoc Physicians India. 2009 Feb; 57: 163–170",
+    "pmid": "19702033",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
+    "category": "anthropometry",
+    "categoryLabel": "दक्षिण एशियाई दिशानिर्देश",
+    "appliedCalculators": [
+      {
+        "name": "भारतीय बीएमआई कैलकुलेटर",
+        "url": "/hi/bmi-calculator-for-indians/"
+      },
+      {
+        "name": "डायबिटीज रिस्क कैलकुलेटर",
+        "url": "/hi/diabetes-risk-calculator/"
+      }
     ],
-    summary: "भारतीय चिकित्सा अनुसंधान परिषद (ICMR) के सहयोग से विकसित दिशानिर्देश, जो दक्षिण एशियाई 'थिन-फैट' फेनोटाइप (कम मांसपेशियों और सामान्य वजन पर भी अधिक आंतरिक वसा) को संबोधित करता है।",
-    keyFinding: "भारतीय मानक: सामान्य (18.5–22.9 kg/m²), अधिक वजन (23.0–24.9 kg/m²), मोटापा (≥ 25.0 kg/m²); कमर परिधि सीमा: पुरुष ≥ 90 सेमी, महिला ≥ 80 सेमी।"
+    "summary": "आईसीएमआर के तहत व्यापक दिशानिर्देश, जो दक्षिण एशियाई 'थिन-फैट' फेनोटाइप (सामान्य वजन पर भी अतिरिक्त आंत वसा और समयपूर्व मधुमेह) को संबोधित करता है।",
+    "keyFinding": "भारतीय सीमाएं: सामान्य (18.5–22.9), अधिक वजन (23.0–24.9), मोटापा (≥ 25.0 kg/m²); कमर घेरा: पुरुष ≥ 90 cm, महिला ≥ 80 cm।"
   },
   {
-    citationId: "Hodgdon JA & Beckett MB 1984 (US Navy Body Fat)",
-    title: "शारीरिक परिधि एवं ऊंचाई से अमेरिकी नौसैनिकों के बॉडी फैट प्रतिशत का आकलन",
-    authors: "Hodgdon JA, Beckett MB",
-    journal: "Naval Health Research Center Technical Reports 84-29 & 84-11; 1984",
-    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/",
-    category: "composition",
-    categoryLabel: "शारीरिक संरचना",
-    appliedCalculators: [
-      { name: "बॉडी फैट कैलकुलेटर", url: "/hi/body-fat-calculator/" },
-      { name: "लीन बॉडी मास कैलकुलेटर", url: "/hi/lean-body-mass-calculator/" }
+    "citationId": "Hodgdon JA & Beckett MB 1984 (US Navy Body Fat)",
+    "title": "शारीरिक परिधि और ऊंचाई से अमेरिकी नौसेना के पुरुषों और महिलाओं के लिए शारीरिक वसा प्रतिशत का पूर्वानुमान",
+    "authors": "Hodgdon JA, Beckett MB",
+    "journal": "Naval Health Research Center Technical Reports 84-29 & 84-11; 1984",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/",
+    "category": "composition",
+    "categoryLabel": "शरीर संरचना एवं वसा",
+    "appliedCalculators": [
+      {
+        "name": "बॉडी फैट कैलकुलेटर",
+        "url": "/hi/body-fat-calculator/"
+      },
+      {
+        "name": "लीन बॉडी मास कैलकुलेटर",
+        "url": "/hi/lean-body-mass-calculator/"
+      }
     ],
-    summary: "हजारों सैन्य कर्मियों पर हाइड्रोस्टैटिक अंडरवाटर वजन के विरुद्ध मान्य किया गया लॉगरिदमिक समीकरण, जो बिना प्रयोगशाला उपकरणों के सटीक बॉडी फैट मापता है।",
-    keyFinding: "कमर, गर्दन, कूल्हों (महिलाओं के लिए) और ऊंचाई का उपयोग करके शरीर के घनत्व और फैट प्रतिशत की सटीक गणना।"
+    "summary": "सक्रिय नौसेना कर्मियों पर हाइड्रोस्टैटिक वजन के खिलाफ मान्य किया गया अनुभवजन्य गणितीय मॉडल, जो बिना प्रयोगशाला उपकरणों के सटीक वसा प्रतिशत प्रदान करता है।",
+    "keyFinding": "कमर, गर्दन, कूल्हे (महिला) और ऊंचाई का उपयोग करके शरीर घनत्व और वसा प्रतिशत निर्धारित करने का लॉग सूत्र।"
   },
   {
-    citationId: "Karvonen MJ 1957 (Heart Rate Reserve)",
-    title: "हृदय गति पर प्रशिक्षण का प्रभाव: एक दीर्घकालिक अध्ययन",
-    authors: "Karvonen MJ, Kentala E, Mustala O",
-    journal: "Ann Med Exp Biol Fenn. 1957; 35(3): 307–315",
-    pmid: "13470504",
-    url: "https://pubmed.ncbi.nlm.nih.gov/13470504/",
-    category: "cardiovascular",
-    categoryLabel: "हृदय क्रिया विज्ञान",
-    appliedCalculators: [
-      { name: "कार्वोनेन हृदय गति कैलकुलेटर", url: "/hi/karvonen-heart-rate-calculator/" },
-      { name: "हृदय गति क्षेत्र कैलकुलेटर", url: "/hi/heart-rate-zone-calculator/" }
+    "citationId": "Karvonen MJ 1957 (Heart Rate Reserve)",
+    "title": "हृदय गति पर प्रशिक्षण के प्रभाव: एक दीर्घकालिक अध्ययन",
+    "authors": "Karvonen MJ, Kentala E, Mustala O",
+    "journal": "Ann Med Exp Biol Fenn. 1957; 35(3): 307–315",
+    "pmid": "13470504",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/13470504/",
+    "category": "cardiovascular",
+    "categoryLabel": "हृदय एवं व्यायाम शरीर विज्ञान",
+    "appliedCalculators": [
+      {
+        "name": "कार्वोनेन हार्ट रेट कैलकुलेटर",
+        "url": "/hi/karvonen-heart-rate-calculator/"
+      },
+      {
+        "name": "हार्ट रेट ज़ोन कैलकुलेटर",
+        "url": "/hi/heart-rate-zone-calculator/"
+      }
     ],
-    summary: "व्यायाम फिजियोलॉजी का आधारभूत अध्ययन, जिसने सिद्ध किया कि प्रशिक्षण की तीव्रता निरपेक्ष हृदय गति के बजाय हार्ट रेट रिजर्व (HRR) से निर्धारित होती है।",
-    keyFinding: "लक्ष्य हृदय गति = [(अधिकतम HR - विश्राम HR) × % तीव्रता] + विश्राम HR।"
+    "summary": "व्यायाम शरीर क्रिया विज्ञान का मौलिक अध्ययन जिसने साबित किया कि प्रशिक्षण तीव्रता केवल अधिकतम धड़कन के बजाय हार्ट रेट रिजर्व (HRR) के अनुपात में निर्धारित होनी चाहिए।",
+    "keyFinding": "लक्षित हृदय गति = [(अधिकतम HR - विश्राम HR) × % तीव्रता] + विश्राम HR।"
   },
   {
-    citationId: "Boer P 1984 (Lean Body Mass)",
-    title: "मानव में शारीरिक द्रव आयतन के सामान्यीकरण के लिए लीन बॉडी मास आकलन",
-    authors: "Boer P",
-    journal: "Am J Physiol. 1984 Jul; 247(1 Pt 2): F632–F636",
-    doi: "10.1152/ajprenal.1984.247.4.F632",
-    pmid: "6497914",
-    url: "https://pubmed.ncbi.nlm.nih.gov/6497914/",
-    category: "composition",
-    categoryLabel: "शारीरिक संरचना",
-    appliedCalculators: [
-      { name: "लीन बॉडी मास कैलकुलेटर", url: "/hi/lean-body-mass-calculator/" }
+    "citationId": "Boer P 1984 (Lean Body Mass)",
+    "title": "मानव में शारीरिक तरल मात्रा के सामान्यीकरण के लिए अनुमानित लीन बॉडी मास",
+    "authors": "Boer P",
+    "journal": "Am J Physiol. 1984 Jul; 247(1 Pt 2): F632–F636",
+    "doi": "10.1152/ajprenal.1984.247.4.F632",
+    "pmid": "6497914",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/6497914/",
+    "category": "composition",
+    "categoryLabel": "शरीर संरचना",
+    "appliedCalculators": [
+      {
+        "name": "लीन बॉडी मास कैलकुलेटर",
+        "url": "/hi/lean-body-mass-calculator/"
+      }
     ],
-    summary: "मानवमिति प्रतिगमन का उपयोग करके फैट-मुक्त द्रव्यमान को मापने वाला अध्ययन, जो प्लाज्मा वॉल्यूम और क्रिएटिनिन क्लीयरेंस के साथ कुल वजन से बेहतर संबंध प्रदर्शित करता है।",
-    keyFinding: "पुरुष: LBM = (0.407 × W) + (0.267 × H) - 19.2; महिला: LBM = (0.252 × W) + (0.473 × H) - 48.3 (वजन किग्रा, ऊंचाई सेमी)।"
+    "summary": "नैदानिक शोध जिसने वसा-मुक्त द्रव्यमान को मापा, यह साबित करते हुए कि कुल वजन की तुलना में बाह्य कोशिकीय द्रव और रीनल क्लीयरेंस के साथ इसका संबंध कहीं बेहतर है।",
+    "keyFinding": "पुरुष: LBM = (0.407 × W) + (0.267 × H) - 19.2। महिला: LBM = (0.252 × W) + (0.473 × H) - 48.3।"
   },
   {
-    citationId: "Ashwell M 2012 (Waist-to-Height Ratio)",
-    title: "कमर-से-ऊंचाई अनुपात (WHtR): वयस्कों में हृदय-मेटाबॉलिक जोखिम का सर्वश्रेष्ठ स्क्रीनिंग टूल",
-    authors: "Ashwell M, Gunn P, Gibson S",
-    journal: "Obes Rev. 2012 Mar; 13(3): 275–286",
-    doi: "10.1111/j.1467-789X.2011.00952.x",
-    pmid: "22106927",
-    url: "https://pubmed.ncbi.nlm.nih.gov/22106927/",
-    category: "anthropometry",
-    categoryLabel: "केंद्रीय मोटापा",
-    appliedCalculators: [
-      { name: "कमर से कूल्हा अनुपात कैलकुलेटर", url: "/hi/waist-to-hip-ratio-calculator/" },
-      { name: "भारतीयों के लिए बीएमआई कैलकुलेटर", url: "/hi/bmi-calculator-for-indians/" },
-      { name: "एशियाई बीएमआई कैलकुलेटर", url: "/hi/asian-bmi-calculator/" }
+    "citationId": "Ashwell M 2012 (Waist-to-Height Ratio)",
+    "title": "वयस्क कार्डियोमेटाबोलिक जोखिम कारकों के लिए कमर-से-कद अनुपात बीएमआई की तुलना में एक बेहतर स्क्रीनिंग टूल है",
+    "authors": "Ashwell M, Gunn P, Gibson S",
+    "journal": "Obes Rev. 2012 Mar; 13(3): 275–286",
+    "doi": "10.1111/j.1467-789X.2011.00952.x",
+    "pmid": "22106927",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22106927/",
+    "category": "anthropometry",
+    "categoryLabel": "केंद्रीय वसा एवं कमर अनुपात",
+    "appliedCalculators": [
+      {
+        "name": "कमर-कूल्हा अनुपात कैलकुलेटर",
+        "url": "/hi/waist-to-hip-ratio-calculator/"
+      },
+      {
+        "name": "भारतीय बीएमआई कैलकुलेटर",
+        "url": "/hi/bmi-calculator-for-indians/"
+      },
+      {
+        "name": "एशियन बीएमआई कैलकुलेटर",
+        "url": "/hi/asian-bmi-calculator/"
+      }
     ],
-    summary: "3,00,000 से अधिक प्रतिभागियों पर व्यवस्थित समीक्षा और मेटा-विश्लेषण, जिसने पुष्टि की कि WHtR सीमा < 0.5 बीएमआई की तुलना में मेटाबॉलिक सिंड्रोम का बेहतर संकेतक है।",
-    keyFinding: "कमर-से-ऊंचाई अनुपात (WHtR) < 0.5 बनाए रखें ('अपनी कमर को ऊंचाई के आधे से कम रखें')।"
+    "summary": "300,000 से अधिक बहु-जातीय व्यक्तियों का मेटा-विश्लेषण, जिसने पुष्टि की कि कमर-से-कद अनुपात को 0.50 से नीचे रखना बीएमआई की तुलना में उच्च रक्तचाप और मधुमेह का बेहतर संकेतक है।",
+    "keyFinding": "कमर-से-कद अनुपात मानक: < 0.50 ('अपनी कमर को अपने कद के आधे से कम रखें')।"
   },
   {
-    citationId: "Trefethen LN 2013 (Oxford New BMI)",
-    title: "बीएमआई फॉर्मूलेशन का गणितीय संशोधन प्रस्ताव",
-    authors: "Trefethen LN (ऑक्सफोर्ड विश्वविद्यालय में संख्यात्मक विश्लेषण के प्रोफेसर)",
-    journal: "Mathematical Institute, University of Oxford; 2013",
-    url: "https://people.maths.ox.ac.uk/trefethen/bmi.html",
-    category: "anthropometry",
-    categoryLabel: "ज्यामितीय मॉडलिंग",
-    appliedCalculators: [
-      { name: "3D बीएमआई कैलकुलेटर", url: "/hi/3d-bmi-calculator/" }
+    "citationId": "Trefethen LN 2013 (Oxford New BMI)",
+    "title": "बीएमआई (बॉडी मास इंडेक्स) त्रि-आयामी गणितीय पुनरीक्षण प्रस्ताव",
+    "authors": "Trefethen LN (Professor of Numerical Analysis)",
+    "journal": "Mathematical Institute, University of Oxford; 2013",
+    "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
+    "category": "anthropometry",
+    "categoryLabel": "ज्यामितीय स्केलिंग",
+    "appliedCalculators": [
+      {
+        "name": "3D बीएमआई कैलकुलेटर",
+        "url": "/hi/3d-bmi-calculator/"
+      },
+      {
+        "name": "3D बॉडी विज़ुअलाइज़र",
+        "url": "/hi/3d-body-visualizer/"
+      }
     ],
-    summary: "मानक क्वेटलेट बीएमआई में ऊंचाई स्केलिंग विकृति का विश्लेषण। प्रो. ट्रेफेथेन ने 2.5 घातांक और 1.3 स्केलिंग कारक का वैज्ञानिक प्रस्ताव रखा।",
-    keyFinding: "नया बीएमआई = 1.3 × [वजन (किग्रा) / ऊंचाई (मीटर)²·⁵]। छोटे कद में बीएमआई कम होने और लंबे कद में अधिक होने की विकृति को ठीक करता है।"
+    "summary": "ऑक्सफोर्ड गणितज्ञ द्वारा मानक केटलेट बीएमआई में स्केलिंग विसंगति की पहचान। लंबे लोगों और छोटे कद के लोगों में विकृति दूर करने के लिए 2.5 घातांक का प्रस्ताव।",
+    "keyFinding": "नया BMI = 1.3 × [वजन (kg) / कद (m)²·⁵]। कद के आधार पर होने वाली विसंगति को दूर करता है।"
   },
   {
-    citationId: "Brzycki M 1993 (One-Repetition Maximum)",
-    title: "स्ट्रेंथ टेस्टिंग: थकान-तक-रेप्स से वन-रेप मैक्स (1RM) का सटीक अनुमान",
-    authors: "Brzycki M",
-    journal: "J Phys Educ Recreat Dance. 1993; 64(1): 88–90",
-    doi: "10.1080/07303084.1993.10606684",
-    url: "https://www.tandfonline.com/doi/abs/10.1080/07303084.1993.10606684",
-    category: "cardiovascular",
-    categoryLabel: "स्ट्रेंथ एवं व्यायाम फिजियोलॉजी",
-    appliedCalculators: [
-      { name: "1RM कैलकुलेटर", url: "/hi/1rm-calculator/" }
+    "citationId": "Brzycki M 1993 (One-Repetition Maximum)",
+    "title": "शक्ति परीक्षण: थकान तक पुनरावृत्तियों से 1RM की भविष्यवाणी",
+    "authors": "Brzycki M",
+    "journal": "J Phys Educ Recreat Dance. 1993; 64(1): 88–90",
+    "doi": "10.1080/07303084.1993.10606684",
+    "url": "https://www.tandfonline.com/doi/abs/10.1080/07303084.1993.10606684",
+    "category": "cardiovascular",
+    "categoryLabel": "व्यायाम एवं शक्ति शरीर विज्ञान",
+    "appliedCalculators": [
+      {
+        "name": "1RM कैलकुलेटर",
+        "url": "/hi/1rm-calculator/"
+      },
+      {
+        "name": "वन रेप मैक्स कैलकुलेटर",
+        "url": "/hi/one-rep-max-calculator/"
+      }
     ],
-    summary: "बिना किसी आर्थोपेडिक या हृदय जोखिम के उप-अधिकतम लिफ्टिंग से 1RM की भविष्यवाणी करने वाला वैज्ञानिक मॉडल।",
-    keyFinding: "1RM = उठाया गया वजन / (1.0278 - 0.0278 × रेप्स)।"
+    "summary": "सत्यापित उप-अधिकतम गणितीय एल्गोरिदम जो अधिकतम वजन उठाने के ऑर्थोपेडिक जोखिम और हृदय तनाव के बिना 1RM की सटीक गणना करता है।",
+    "keyFinding": "1RM = उठाया गया वजन / (1.0278 - 0.0278 × पुनरावृत्तियां)। 1-10 दोहरावों के लिए मान्य।"
   },
   {
-    citationId: "NASEM / IOM 2005 (Dietary Energy & Macronutrients)",
-    title: "ऊर्जा, कार्बोहाइड्रेट, फाइबर, वसा, प्रोटीन और पानी के लिए आहार संदर्भ सेवन (DRI)",
-    authors: "Institute of Medicine (National Academies of Sciences, Engineering, and Medicine)",
-    journal: "Washington, DC: The National Academies Press; 2005",
-    doi: "10.17226/10490",
-    url: "https://nap.nationalacademies.org/catalog/10490/",
-    category: "nutrition",
-    categoryLabel: "आहार एवं पोषण विज्ञान",
-    appliedCalculators: [
-      { name: "मैक्रो कैलकुलेटर", url: "/hi/macro-calculator/" },
-      { name: "प्रोटीन सेवन कैलकुलेटर", url: "/hi/protein-intake-calculator/" },
-      { name: "जल सेवन कैलकुलेटर", url: "/hi/water-intake-calculator/" }
+    "citationId": "NASEM / IOM 2005 (Dietary Energy & Macronutrients)",
+    "title": "ऊर्जा, कार्बोहाइड्रेट, फाइबर, वसा, प्रोटीन और अमीनो एसिड के लिए आहार संदर्भ सेवन दिशानिर्देश",
+    "authors": "Institute of Medicine (National Academies of Sciences, Engineering, and Medicine)",
+    "journal": "Washington, DC: The National Academies Press; 2005",
+    "doi": "10.17226/10490",
+    "url": "https://nap.nationalacademies.org/catalog/10490/",
+    "category": "nutrition",
+    "categoryLabel": "आहार विज्ञान एवं पोषण",
+    "appliedCalculators": [
+      {
+        "name": "मैक्रो कैलकुलेटर",
+        "url": "/hi/macro-calculator/"
+      },
+      {
+        "name": "प्रोटीन इंटेक कैलकुलेटर",
+        "url": "/hi/protein-intake-calculator/"
+      },
+      {
+        "name": "वाटर इंटेक कैलकुलेटर",
+        "url": "/hi/water-intake-calculator/"
+      }
     ],
-    summary: "मैक्रोन्यूट्रिएंट्स के लिए आधिकारिक संदर्भ सीमाएं (AMDR): कार्बोहाइड्रेट (45–65%), वसा (20–35%), प्रोटीन (10–35%) और बुनियादी प्रोटीन आरडीए 0.83 ग्राम/किग्रा।",
-    keyFinding: "दैनिक जल सेवन मानक: वयस्क पुरुषों के लिए 3.7 लीटर और महिलाओं के लिए 2.7 लीटर कुल पानी।"
+    "summary": "स्वस्थ वयस्कों के लिए स्वीकार्य मैक्रोन्यूट्रिएंट वितरण सीमाएं (AMDR) स्थापित करने वाले निर्णायक दिशानिर्देश: कार्ब्स (45-65%), वसा (20-35%), प्रोटीन (10-35%) और 0.8 g/kg RDA।",
+    "keyFinding": "दैनिक मैक्रोज़: कार्ब्स 45-65%, वसा 20-35%, प्रोटीन 10-35%; दैनिक जल आवश्यकता: 3.7 लीटर पुरुष, 2.7 लीटर महिला।"
   },
   {
-    citationId: "Stern MP 2002 (Type 2 Diabetes Clinical Risk Model)",
-    title: "टाइप 2 मधुमेह के उच्च जोखिम वाले व्यक्तियों की गैर-आक्रामक पहचान",
-    authors: "Stern MP, Williams K, Haffner SM",
-    journal: "Ann Intern Med. 2002 Apr 16; 136(8): 575–581",
-    doi: "10.7326/0003-4819-136-8-200204160-00006",
-    pmid: "11955025",
-    url: "https://pubmed.ncbi.nlm.nih.gov/11955025/",
-    category: "cardiovascular",
-    categoryLabel: "मेटाबॉलिक जोखिम मॉडलिंग",
-    appliedCalculators: [
-      { name: "मधुमेह जोखिम कैलकुलेटर", url: "/hi/diabetes-risk-calculator/" }
+    "citationId": "IOM / NRC 2009 (Pregnancy Weight Gain)",
+    "title": "गर्भावस्था के दौरान वजन बढ़ना: दिशानिर्देशों का पुनरीक्षण",
+    "authors": "Institute of Medicine and National Research Council Committee",
+    "journal": "Washington, DC: The National Academies Press; 2009",
+    "doi": "10.17226/12584",
+    "pmid": "20669500",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/20669500/",
+    "category": "anthropometry",
+    "categoryLabel": "मातृ मानवमिति",
+    "appliedCalculators": [
+      {
+        "name": "प्रेग्नेंसी वेट गेन कैलकुलेटर",
+        "url": "/hi/pregnancy-weight-gain-calculator/"
+      }
     ],
-    summary: "आयु, बीएमआई, रक्तचाप, ग्लूकोज और पारिवारिक इतिहास के आधार पर 7-वर्षीय टाइप 2 मधुमेह जोखिम का बहुभिन्नरूपी गैर-आक्रामक स्क्रीनिंग मॉडल।",
-    keyFinding: "साबित किया कि शारीरिक मानवमिति और बुनियादी जनसांख्यिकी महंगे रक्त परीक्षणों के बराबर सटीकता से जोखिम की पहचान कर सकते हैं।"
+    "summary": "व्यापक सहमति रिपोर्ट जिसने गर्भावधि मधुमेह, प्री-एक्लेम्पसिया और प्रसव जटिलताओं को कम करने के लिए पूर्व-गर्भावस्था बीएमआई के आधार पर वजन वृद्धि लक्ष्य निर्धारित किए।",
+    "keyFinding": "एकल गर्भावस्था लक्ष्य: कम वजन: 12.5–18 kg; सामान्य: 11.5–16 kg; अधिक वजन: 7–11.5 kg; मोटापा: 5–9 kg।"
+  },
+  {
+    "citationId": "Stern MP 2002 (Type 2 Diabetes Clinical Risk Model)",
+    "title": "टाइप 2 मधुमेह के लिए उच्च जोखिम वाले व्यक्तियों की पहचान: क्या हमें ओरल ग्लूकोज टॉलरेंस टेस्ट की आवश्यकता है?",
+    "authors": "Stern MP, Williams K, Haffner SM",
+    "journal": "Ann Intern Med. 2002 Apr 16; 136(8): 575–581",
+    "doi": "10.7326/0003-4819-136-8-200204160-00006",
+    "pmid": "11955025",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11955025/",
+    "category": "cardiovascular",
+    "categoryLabel": "मेटाबॉलिक जोखिम मॉडलिंग",
+    "appliedCalculators": [
+      {
+        "name": "डायबिटीज रिस्क कैलकुलेटर",
+        "url": "/hi/diabetes-risk-calculator/"
+      }
+    ],
+    "summary": "बड़े पैमाने पर महामारी विज्ञान अध्ययन जिसने बीएमआई, रक्तचाप, ग्लूकोज और पारिवारिक इतिहास को जोड़कर 7 साल के टाइप 2 मधुमेह जोखिम का गैर-आक्रामक स्क्रीनिंग मॉडल दिया।",
+    "keyFinding": "मानवमिति सूचकांक (बीएमआई और उदर वसा) महंगे परीक्षणों के बराबर सटीकता के साथ उच्च जोखिम की पहचान करते हैं।"
   }
 ];
 
@@ -260,15 +371,15 @@ const categoryCounts = {
 ---
 
 <Layout 
-    title="प्राथमिक अनुसंधान संदर्भ एवं वैज्ञानिक ग्रंथ सूची | Real BMI"
-    description="Real BMI कैलकुलेटरों में प्रयुक्त आधिकारिक सहकर्मी-समीक्षित शोध पत्र, WHO TRS 854, Lancet 2004, Mifflin MD 1990 और ICMR सर्वसम्मति दिशानिर्देश।"
+    title="प्राथमिक शोध उद्धरण एवं वैज्ञानिक संदर्भ ग्रंथ सूची | Real BMI"
+    description="Real BMI के प्रत्येक कैलकुलेटर को संचालित करने वाले सटीक सहकर्मी-समीक्षित उद्धरण, नैदानिक अध्ययन और गणितीय सूत्र देखें, जिनमें WHO TRS 854, Lancet 2004 और Mifflin MD 1990 शामिल हैं।"
     canonicalURL="https://realbmicalculator.com/hi/sources/"
 >
     <Navbar />
     <PageShell
-      title="प्राथमिक अनुसंधान संदर्भ एवं वैज्ञानिक ग्रंथ सूची"
-      eyebrow="साक्ष्य-आधारित नैदानिक सटीकता"
-      description="Real BMI के प्रत्येक एल्गोरिदम को संचालित करने वाले सटीक सहकर्मी-समीक्षित शोध पत्र, संस्थागत रिपोर्ट और गणितीय मॉडल।"
+      title="प्राथमिक शोध उद्धरण एवं वैज्ञानिक ग्रंथ सूची"
+      eyebrow="साक्ष्य-आधारित चिकित्सीय सटीकता"
+      description="Real BMI के प्रत्येक एल्गोरिदम को प्रमाणित करने वाले सटीक सहकर्मी-समीक्षित शोध पत्र, संस्थागत रिपोर्ट एवं गणितीय मॉडल।"
       returnUrl="/hi/"
       returnLabel="होम"
     >
@@ -277,29 +388,144 @@ const categoryCounts = {
         <!-- Executive Rigor Notice -->
         <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] font-medium leading-relaxed space-y-4">
           <p class="text-base sm:text-lg leading-relaxed">
-            Real BMI किसी भी ब्लैक-बॉक्स अनुमान का उपयोग नहीं करता है। इस प्लेटफ़ॉर्म का प्रत्येक कैलकुलेटर अंतरराष्ट्रीय सार्वजनिक स्वास्थ्य प्राधिकरणों—जैसे कि <strong class="text-[var(--foreground)]">विश्व स्वास्थ्य संगठन (WHO)</strong>, <strong class="text-[var(--foreground)]">भारतीय चिकित्सा अनुसंधान परिषद (ICMR)</strong>, और <strong class="text-[var(--foreground)]">यूएस नेशनल इंस्टीट्यूट्स ऑफ हेल्थ (NIH)</strong>—तथा प्रतिष्ठित शोध पत्रिकाओं (<em class="text-[var(--foreground)]">The Lancet</em> एवं <em class="text-[var(--foreground)]">New England Journal of Medicine</em>) के प्रकाशित, सहकर्मी-समीक्षित वैज्ञानिक साहित्य पर आधारित है।
+            Real BMI किसी भी ब्लैक-बॉक्स अनुमान एल्गोरिदम का उपयोग नहीं करता है। इस प्लेटफॉर्म का प्रत्येक कैलकुलेटर अंतरराष्ट्रीय सार्वजनिक स्वास्थ्य प्राधिकरणों के सहकर्मी-समीक्षित नैदानिक साहित्य से सीधे जुड़ा है—जिसमें <strong class="text-[var(--foreground)]">विश्व स्वास्थ्य संगठन (WHO)</strong>, <strong class="text-[var(--foreground)]">भारतीय चिकित्सा अनुसंधान परिषद (ICMR)</strong>, <strong class="text-[var(--foreground)]">नेशनल इंस्टीट्यूट ऑफ हेल्थ (NIH)</strong>, और <em class="text-[var(--foreground)]">द लांसेट</em> जैसे प्रतिष्ठित जर्नल शामिल हैं।
           </p>
           <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
-            नीचे हमारी संपूर्ण अकादमिक ग्रंथ सूची दी गई है, जिसमें सीधे PubMed पहचानकर्ता (PMID), डिजिटल ऑब्जेक्ट पहचानकर्ता (DOI), सटीक गणितीय सूत्र और संबंधित टूल्स सूचीबद्ध हैं।
+            नीचे हमारी संपूर्ण अकादमिक ग्रंथ सूची दी गई है, जिसे प्रत्यक्ष पबमेड पहचानकर्ता (PMID), डिजिटल ऑब्जेक्ट पहचानकर्ता (DOI), सटीक गणितीय सूत्र और कैलकुलेटर के साथ अनुक्रमित किया गया है।
           </p>
         </div>
+
+        <!-- Evidence-Based Guarantee: Exact Studies vs Generic Claims -->
+        <section class="p-6 md:p-8 rounded-2xl border-2 border-indigo-500/30 bg-indigo-500/5 space-y-5 not-prose shadow-sm" aria-label="E-E-A-T Academic Rigor Policy">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-indigo-500"></span>
+              <span class="text-xs font-bold font-display uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
+                AdSense एवं YMYL E-E-A-T अनुपालन मानक
+              </span>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+              शून्य अस्पष्ट दावा नीति
+            </span>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="text-lg sm:text-xl font-bold font-display text-[var(--foreground)]">
+              प्रत्यक्ष प्राथमिक उद्धरण बनाम अस्पष्ट सामान्य दावे (Generic Claims)
+            </h2>
+            <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
+              गूगल खोज गुणवत्ता मूल्यांकनकर्ता दिशानिर्देशों (YMYL स्वास्थ्य विषयों के लिए E-E-A-T) के पूर्ण अनुपालन में, Real BMI 'WHO', 'CDC', या 'NIH' जैसे केवल सामान्य संक्षिप्त नामों पर निर्भर नहीं रहता। इसके बजाय, प्रत्येक गणना प्रत्यक्ष, सहकर्मी-समीक्षित अध्ययनों, पबमेड आईडी (PMID), डीओआई (DOI) और सटीक सूत्रों द्वारा सत्यापित है:
+            </p>
+          </div>
+
+          <!-- Direct Comparison Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+            <div class="p-4 rounded-xl border border-red-500/20 bg-red-500/5 space-y-2">
+              <span class="font-bold uppercase tracking-wider text-red-500 block">❌ सामान्य दावे (Real BMI पर पूर्णतः वर्जित)</span>
+              <ul class="space-y-1.5 text-[var(--muted-foreground)]">
+                <li>• बीएमआई श्रेणियों के लिए केवल अस्पष्ट 'WHO' का उल्लेख</li>
+                <li>• सही वजन के लिए केवल 'CDC' का सामान्य संदर्भ</li>
+                <li>• दैनिक ऊर्जा व्यय के लिए केवल 'NIH' या 'ACSM'</li>
+                <li>• अपारदर्शी ब्लैक-बॉक्स या गुप्त एल्गोरिदम</li>
+              </ul>
+            </div>
+            <div class="p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 space-y-2">
+              <span class="font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">✅ सटीक अकादमिक उद्धरण (Real BMI पर लागू)</span>
+              <ul class="space-y-1.5 text-[var(--foreground)] font-medium">
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">WHO Technical Report Series 854</strong> (PMID 8594834)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Lancet 2004 BMI Asian Populations</strong> (PMID 14726171)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Mifflin MD 1990 Resting Energy Expenditure</strong> (PMID 2305711)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Mosteller 1987 Body Surface Area</strong> (PMID 3657876)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Devine 1974 Ideal Body Weight Equation</strong> (PMID 4819440)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Primary Academic Citation Matrix Table -->
+        <section class="space-y-4" aria-label="Academic Citation Matrix Table">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="text-xs font-bold font-display uppercase tracking-widest text-[var(--accent)]">E-E-A-T साक्ष्य मैट्रिक्स</span>
+              <h2 class="text-xl sm:text-2xl font-bold font-display text-[var(--foreground)]">प्रत्यक्ष अकादमिक उद्धरण एवं गणितीय सूत्र</h2>
+            </div>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 self-start sm:self-auto">
+              15 प्राथमिक अध्ययन अनुक्रमित
+            </span>
+          </div>
+
+          <div class="citation-table-wrap border border-[var(--border)] overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="citation-matrix-table">
+                <thead>
+                  <tr>
+                    <th>मानक / संदर्भ ID</th>
+                    <th>जारीकर्ता संस्था एवं लेखक</th>
+                    <th>ऐतिहासिक शोध पत्र / अध्ययन</th>
+                    <th>नैदानिक सूत्र / मानक सीमा</th>
+                    <th>प्रत्यक्ष उद्धरण</th>
+                    <th>प्रयुक्त कैलकुलेटर</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sources.map((src) => (
+                    <tr>
+                      <td class="whitespace-nowrap font-medium">
+                        <strong class="text-[var(--foreground)] block text-xs sm:text-sm">{src.citationId}</strong>
+                        <span class="text-[11px] font-semibold text-[var(--muted-foreground)] uppercase tracking-wide">{src.categoryLabel}</span>
+                      </td>
+                      <td>
+                        <span class="font-semibold text-[var(--foreground)] block text-xs">{src.authors}</span>
+                        <span class="text-[11px] text-[var(--muted-foreground)] italic block">{src.journal}</span>
+                      </td>
+                      <td>
+                        <span class="font-medium text-[var(--foreground)] text-xs line-clamp-2" title={src.title}>{src.title}</span>
+                      </td>
+                      <td>
+                        <code class="font-mono text-[11px] bg-[var(--muted)]/60 px-2 py-1 rounded block text-[var(--foreground)] leading-relaxed whitespace-pre-wrap">{src.keyFinding}</code>
+                      </td>
+                      <td class="whitespace-nowrap">
+                        <a href={src.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-semibold text-xs">
+                          {src.pmid ? `PMID: ${src.pmid}` : (src.doi ? `DOI: ${src.doi}` : 'अध्ययन देखें')}
+                          <svg class="w-3 h-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                      </td>
+                      <td>
+                        <div class="flex flex-col gap-1">
+                          {src.appliedCalculators.slice(0, 2).map(calc => (
+                            <a href={calc.url} class="text-xs font-semibold whitespace-nowrap hover:underline">
+                              {calc.name} →
+                            </a>
+                          ))}
+                          {src.appliedCalculators.length > 2 && (
+                            <span class="text-[10px] text-[var(--muted-foreground)]">+{src.appliedCalculators.length - 2} more</span>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
 
         <!-- Category Filter Tabs -->
         <div class="flex flex-wrap items-center gap-2 pb-2 border-b border-[var(--border)]" id="sourcesFilterNav">
           <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-xs transition-all cursor-pointer" data-filter="all">
-            सभी संदर्भ ({categoryCounts.all})
+            सभी उद्धरण ({categoryCounts.all})
           </button>
           <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="anthropometry">
             मानवमिति एवं बीएमआई ({categoryCounts.anthropometry})
           </button>
           <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="metabolism">
-            मेटाबॉलिज्म एवं BMR ({categoryCounts.metabolism})
+            चयापचय एवं बीएमआर ({categoryCounts.metabolism})
           </button>
           <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="composition">
-            शारीरिक संरचना ({categoryCounts.composition})
+            शरीर संरचना ({categoryCounts.composition})
           </button>
           <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="cardiovascular">
-            हृदय एवं व्यायाम ({categoryCounts.cardiovascular})
+            कार्डियोलॉजी एवं व्यायाम ({categoryCounts.cardiovascular})
           </button>
           <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="nutrition">
             पोषण एवं जल ({categoryCounts.nutrition})
@@ -335,9 +561,9 @@ const categoryCounts = {
                     target="_blank" 
                     rel="noopener noreferrer" 
                     class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity shrink-0"
-                    aria-label={`${src.citationId} के लिए मूल अध्ययन देखें`}
+                    aria-label={`अध्ययन देखें: ${src.citationId}`}
                   >
-                    शोध पत्र देखें
+                    अध्ययन देखें
                     <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                   </a>
                 </div>
@@ -358,14 +584,14 @@ const categoryCounts = {
               <div class="space-y-2 text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
                 <p>{src.summary}</p>
                 <div class="p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 text-[var(--foreground)]/90">
-                  <strong class="text-[var(--accent)] font-display uppercase tracking-wide text-xs block mb-0.5">क्लिनिकल मीट्रिक / फॉर्मूला:</strong>
+                  <strong class="text-[var(--accent)] font-display uppercase tracking-wide text-xs block mb-0.5">नैदानिक सूत्र / मानक सीमा:</strong>
                   <span class="font-mono text-xs text-[var(--foreground)]">{src.keyFinding}</span>
                 </div>
               </div>
 
               <!-- Applied Calculators on Real BMI -->
               <div class="pt-3 border-t border-[var(--border)]/50 flex flex-wrap items-center gap-2 text-xs">
-                <span class="font-bold text-[var(--foreground)] uppercase tracking-wider text-xs">Real BMI पर लागू टूल्स:</span>
+                <span class="font-bold text-[var(--foreground)] uppercase tracking-wider text-xs">Real BMI पर प्रयुक्त:</span>
                 {src.appliedCalculators.map(calc => (
                   <a 
                     href={calc.url} 
@@ -384,6 +610,55 @@ const categoryCounts = {
     </PageShell>
 </Layout>
 
+<style>
+  .citation-table-wrap {
+    overflow-x: auto;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background-color: var(--card);
+  }
+  .citation-matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+  .citation-matrix-table a {
+    text-decoration: none;
+    color: #464feb;
+    font-weight: 600;
+  }
+  .citation-matrix-table a:hover {
+    text-decoration: underline;
+  }
+  .citation-matrix-table tr th,
+  .citation-matrix-table tr td {
+    border: 1px solid #e6e6e6;
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    text-align: left;
+  }
+  .citation-matrix-table tr th {
+    background-color: #f5f5f5;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1f2937;
+  }
+  :global(.dark) .citation-matrix-table tr th,
+  :global(.dark) .citation-matrix-table tr td {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  :global(.dark) .citation-matrix-table tr th {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #f3f4f6;
+  }
+  :global(.dark) .citation-matrix-table a {
+    color: #818cf8;
+  }
+</style>
+
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.source-tab');
@@ -393,6 +668,7 @@ const categoryCounts = {
       tab.addEventListener('click', () => {
         const filter = tab.getAttribute('data-filter');
 
+        // Update active tab styles
         tabs.forEach(t => {
           t.classList.remove('bg-[var(--accent)]', 'text-white');
           t.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
@@ -400,6 +676,7 @@ const categoryCounts = {
         tab.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
         tab.classList.add('bg-[var(--accent)]', 'text-white');
 
+        // Filter cards
         cards.forEach(card => {
           const category = card.getAttribute('data-category');
           if (filter === 'all' || category === filter) {

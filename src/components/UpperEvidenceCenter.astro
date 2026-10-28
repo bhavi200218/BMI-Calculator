@@ -1,0 +1,738 @@
+---
+import type { Locale } from '../utils/calculators';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+
+interface EvidencePillar {
+  id: string;
+  title: string;
+  eyebrow: string;
+  desc: string;
+  badge: string;
+  linkText: string;
+  href: string;
+  iconPath: string;
+}
+
+interface EvidenceMatrixRow {
+  domain: string;
+  study: string;
+  studyLink: string;
+  guideTitle: string;
+  guideSlug: string;
+  toolTitle: string;
+  toolSlug: string;
+}
+
+interface UpperEvidenceLocale {
+  sectionEyebrow: string;
+  sectionTitle: string;
+  sectionSubtitle: string;
+  tableTitle: string;
+  tableSubtitle: string;
+  colDomain: string;
+  colStudy: string;
+  colGuide: string;
+  colTool: string;
+  pillars: EvidencePillar[];
+  matrixRows: EvidenceMatrixRow[];
+}
+
+const data: Record<Locale, UpperEvidenceLocale> = {
+  en: {
+    sectionEyebrow: "Evidence-Based Medical Publishing & Screening Suite",
+    sectionTitle: "Health Research Library & Clinical Evidence Center",
+    sectionSubtitle: "Explore peer-reviewed metabolic literature, lifespan anthropometric guidelines, and clinically verified screening models built on published WHO, CDC, and NCHS frameworks.",
+    tableTitle: "Executive Clinical Evidence & Primary Literature Matrix",
+    tableSubtitle: "Direct academic citations, published landmark equations, and peer-reviewed guide cross-references.",
+    colDomain: "Clinical Domain",
+    colStudy: "Primary Literature & PMID",
+    colGuide: "Peer-Reviewed Guide",
+    colTool: "Interactive Tool",
+    pillars: [
+      {
+        id: "featured-guides",
+        title: "Featured Guides",
+        eyebrow: "Clinical Deep Dives",
+        desc: "In-depth clinical analyses on lifespan BMI trajectory, Asian-specific thresholds, geriatric obesity paradox, and pediatric growth percentiles.",
+        badge: "25+ Clinical Guides",
+        linkText: "Read Featured Guides ↓",
+        href: "#featured-guides",
+        iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+      },
+      {
+        id: "latest-articles",
+        title: "Latest Articles",
+        eyebrow: "Editorial Publications",
+        desc: "Fresh evidence-based articles covering resting metabolic rate, visceral fat risks, protein intake science, and cardiovascular recovery.",
+        badge: "30+ Published Articles",
+        linkText: "Browse Latest Articles ↓",
+        href: "#latest-articles",
+        iconPath: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+      },
+      {
+        id: "research-library",
+        title: "Research Library",
+        eyebrow: "Academic Citations",
+        desc: "Direct citation index of 15+ landmark medical studies: WHO TRS 854, Lancet 2004 Asian BMI, Mifflin MD 1990, Mosteller 1987, and Devine 1974.",
+        badge: "15 Indexed Studies & PMIDs",
+        linkText: "Explore Citation Matrix →",
+        href: `/${lang}/sources/`,
+        iconPath: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        id: "evidence-center",
+        title: "Evidence Center",
+        eyebrow: "Review Board & Standards",
+        desc: "Real BMI 4-stage peer-reviewed verification protocol, Clinical Review Board governance, mathematical parity validation, and zero-PII client privacy.",
+        badge: "4-Stage Peer-Reviewed Protocol",
+        linkText: "Review Verification Standards →",
+        href: `/${lang}/editorial-policy/`,
+        iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      }
+    ],
+    matrixRows: [
+      {
+        domain: "Lifespan BMI & Sarcopenia",
+        study: "Winter JE 2014 (PMID: 24451310)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/24451310/",
+        guideTitle: "BMI by Age: Senior Guidelines",
+        guideSlug: "bmi-by-age",
+        toolTitle: "BMR Calculator",
+        toolSlug: "bmr-calculator"
+      },
+      {
+        domain: "Asian Phenotype & Adiposity",
+        study: "Lancet 2004 (PMID: 14718328)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/14718328/",
+        guideTitle: "BMI for Indians & Asian Points",
+        guideSlug: "bmi-calculator-india",
+        toolTitle: "Indian BMI Tool",
+        toolSlug: "bmi-calculator-for-indians"
+      },
+      {
+        domain: "Resting Metabolic Rate",
+        study: "Mifflin MD 1990 (PMID: 2305711)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+        guideTitle: "Mifflin vs Harris-Benedict",
+        guideSlug: "bmr-formulas-mifflin-vs-harris-benedict",
+        toolTitle: "TDEE Calculator",
+        toolSlug: "tdee-calculator"
+      },
+      {
+        domain: "Adiposity & Body Fat",
+        study: "Hodgdon & Beckett 1984 (U.S. Navy)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2872290/",
+        guideTitle: "BMI vs Body Fat Percentage",
+        guideSlug: "bmi-vs-body-fat",
+        toolTitle: "Body Fat Calculator",
+        toolSlug: "body-fat-calculator"
+      }
+    ]
+  },
+  hi: {
+    sectionEyebrow: "प्रमाण-आधारित चिकित्सा प्रकाशन एवं स्क्रीनिंग सूट",
+    sectionTitle: "स्वास्थ्य अनुसंधान पुस्तकालय एवं क्लिनिकल साक्ष्य केंद्र",
+    sectionSubtitle: "सहकर्मी-समीक्षित चयापचय अनुसंधान, जीवनकाल मानवमितीय दिशानिर्देश और विश्व स्वास्थ्य संगठन (WHO) व सीडीसी (CDC) मानकों पर आधारित नैदानिक मॉडल।",
+    tableTitle: "कार्यकारी क्लिनिकल साक्ष्य एवं प्राथमिक शोध मैट्रिक्स",
+    tableSubtitle: "प्रत्यक्ष शैक्षणिक उद्धरण, प्रकाशित सूत्र और सहकर्मी-समीक्षित शोध गाइड क्रॉस-रेफरेंस।",
+    colDomain: "नैदानिक विषय / डोमेन",
+    colStudy: "प्राथमिक शोध एवं पबमेड (PMID)",
+    colGuide: "सहकर्मी-समीक्षित शोध गाइड",
+    colTool: "इंटरैक्टिव स्क्रीनिंग टूल",
+    pillars: [
+      {
+        id: "featured-guides",
+        title: "प्रमुख शोध गाइड",
+        eyebrow: "गहन चिकित्सीय विश्लेषण",
+        desc: "उम्र के अनुसार बीएमआई का बदलाव, एशियाई व भारतीय शारीरिक फेनोटाइप और बुजुर्गों में मांसपेशी क्षय (सार्कोपेनिया) पर गहन शोध।",
+        badge: "25+ नैदानिक गाइड",
+        linkText: "प्रमुख गाइड पढ़ें ↓",
+        href: "#featured-guides",
+        iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+      },
+      {
+        id: "latest-articles",
+        title: "नवीनतम स्वास्थ्य लेख",
+        eyebrow: "संपादकीय प्रकाशन",
+        desc: "चयापचय अनुकूलन, विसेरल बनाम सबक्यूटेनियस फैट, प्रोटीन आवश्यकता और हृदय गति रिकवरी पर अद्यतन सहकर्मी-समीक्षित लेख।",
+        badge: "30+ प्रकाशित लेख",
+        linkText: "सभी लेख देखें ↓",
+        href: "#latest-articles",
+        iconPath: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+      },
+      {
+        id: "research-library",
+        title: "शोध पुस्तकालय",
+        eyebrow: "शैक्षणिक शोध उद्धरण",
+        desc: "15 प्रमुख ऐतिहासिक चिकित्सा अध्ययनों का सीधा सूचकांक: WHO TRS 854, लांसेट 2004 एशियाई मानक, मिफ्लिन 1990, मोस्टेलर 1987।",
+        badge: "15 अनुक्रमित अध्ययन एवं PMIDs",
+        linkText: "शोध उद्धरण देखें →",
+        href: `/${lang}/sources/`,
+        iconPath: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        id: "evidence-center",
+        title: "साक्ष्य एवं समीक्षा केंद्र",
+        eyebrow: "समीक्षा बोर्ड एवं मानक",
+        desc: "Real BMI 4-चरणीय सहकर्मी-समीक्षित सत्यापन प्रोटोकॉल, क्लिनिकल समीक्षा समिति, गणितीय समानता परीक्षण और शून्य डेटा प्रतिधारण।",
+        badge: "4-चरणीय सत्यापन प्रोटोकॉल",
+        linkText: "संपादकीय मानक पढ़ें →",
+        href: `/${lang}/editorial-policy/`,
+        iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      }
+    ],
+    matrixRows: [
+      {
+        domain: "उम्र-अनुसार बीएमआई व सार्कोपेनिया",
+        study: "Winter JE 2014 (PMID: 24451310)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/24451310/",
+        guideTitle: "उम्र के अनुसार बीएमआई गाइड",
+        guideSlug: "bmi-by-age",
+        toolTitle: "बीएमआर कैलकुलेटर",
+        toolSlug: "bmr-calculator"
+      },
+      {
+        domain: "भारतीय फेनोटाइप व एशियाई मानक",
+        study: "Lancet 2004 (PMID: 14718328)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/14718328/",
+        guideTitle: "भारतीयों के लिए बीएमआई गाइड",
+        guideSlug: "bmi-calculator-india",
+        toolTitle: "भारतीय बीएमआई टूल",
+        toolSlug: "bmi-calculator-for-indians"
+      },
+      {
+        domain: "रेस्टिंग मेटाबॉलिक रेट (BMR)",
+        study: "Mifflin MD 1990 (PMID: 2305711)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+        guideTitle: "मिफ्लिन बनाम हैरिस-बेनेडिक्ट",
+        guideSlug: "bmr-formulas-mifflin-vs-harris-benedict",
+        toolTitle: "टीडीईई कैलकुलेटर",
+        toolSlug: "tdee-calculator"
+      },
+      {
+        domain: "शारीरिक संरचना एवं बॉडी फैट",
+        study: "Hodgdon 1984 (U.S. Navy Method)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2872290/",
+        guideTitle: "बीएमआई बनाम बॉडी फैट प्रतिशत",
+        guideSlug: "bmi-vs-body-fat",
+        toolTitle: "बॉडी फैट कैलकुलेटर",
+        toolSlug: "body-fat-calculator"
+      }
+    ]
+  },
+  es: {
+    sectionEyebrow: "Publicación Médica Basada en Evidencia y Plataforma de Cribado",
+    sectionTitle: "Biblioteca de Investigación y Centro de Evidencia Clínica",
+    sectionSubtitle: "Explore literatura metabólica revisada por pares, pautas antropométricas a lo largo de la vida y modelos de cribado basados en la OMS y los CDC.",
+    tableTitle: "Matriz Ejecutiva de Evidencia Clínica y Literatura Primaria",
+    tableSubtitle: "Citas académicas directas, ecuaciones históricas publicadas y referencias cruzadas.",
+    colDomain: "Área Clínica",
+    colStudy: "Literatura Primaria (PMID)",
+    colGuide: "Guía Revisada por Pares",
+    colTool: "Herramienta Interactiva",
+    pillars: [
+      {
+        id: "featured-guides",
+        title: "Guías Destacadas",
+        eyebrow: "Análisis Clínicos en Profundidad",
+        desc: "Investigaciones clínicas sobre la trayectoria del IMC a lo largo de la vida, fenotipos asiáticos y obesidad sarcopénica en mayores.",
+        badge: "25+ Guías Clínicas",
+        linkText: "Leer Guías Destacadas ↓",
+        href: "#featured-guides",
+        iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+      },
+      {
+        id: "latest-articles",
+        title: "Últimos Artículos",
+        eyebrow: "Publicaciones Editoriales",
+        desc: "Artículos basados en evidencia sobre tasa metabólica basal, grasa visceral, ingesta proteica y recuperación cardiovascular.",
+        badge: "30+ Artículos Publicados",
+        linkText: "Ver Últimos Artículos ↓",
+        href: "#latest-articles",
+        iconPath: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+      },
+      {
+        id: "research-library",
+        title: "Biblioteca de Investigación",
+        eyebrow: "Citas Académicas",
+        desc: "Índice directo de 15+ estudios fundamentales: OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, Devine 1974.",
+        badge: "15 Estudios Indexados (PMID)",
+        linkText: "Ver Fuentes Científicas →",
+        href: `/${lang}/sources/`,
+        iconPath: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        id: "evidence-center",
+        title: "Centro de Evidencia",
+        eyebrow: "Consejo de Revisión",
+        desc: "Protocolo de verificación en 4 etapas, supervisión del Consejo Clínico, paridad de fórmulas y privacidad total sin retención de datos.",
+        badge: "Protocolo de 4 Etapas",
+        linkText: "Revisar Estándares Editoriales →",
+        href: `/${lang}/editorial-policy/`,
+        iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      }
+    ],
+    matrixRows: [
+      {
+        domain: "IMC y Sarcopenia en Mayores",
+        study: "Winter JE 2014 (PMID: 24451310)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/24451310/",
+        guideTitle: "IMC por Edad y Longevidad",
+        guideSlug: "bmi-by-age",
+        toolTitle: "Calculadora TMB",
+        toolSlug: "bmr-calculator"
+      },
+      {
+        domain: "Fenotipo Asiático y Adiposidad",
+        study: "Lancet 2004 (PMID: 14718328)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/14718328/",
+        guideTitle: "IMC para India y Puntos de Acción",
+        guideSlug: "bmi-calculator-india",
+        toolTitle: "Herramienta IMC India",
+        toolSlug: "bmi-calculator-for-indians"
+      },
+      {
+        domain: "Tasa Metabólica Basal",
+        study: "Mifflin MD 1990 (PMID: 2305711)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+        guideTitle: "Mifflin vs Harris-Benedict",
+        guideSlug: "bmr-formulas-mifflin-vs-harris-benedict",
+        toolTitle: "Calculadora GETD",
+        toolSlug: "tdee-calculator"
+      },
+      {
+        domain: "Composición y Grasa Corporal",
+        study: "Hodgdon 1984 (U.S. Navy Method)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2872290/",
+        guideTitle: "IMC vs Porcentaje de Grasa",
+        guideSlug: "bmi-vs-body-fat",
+        toolTitle: "Calculadora de Grasa Corporal",
+        toolSlug: "body-fat-calculator"
+      }
+    ]
+  },
+  fr: {
+    sectionEyebrow: "Publication Médicale Fondée sur des Preuves & Suite de Dépistage",
+    sectionTitle: "Bibliothèque de Recherche & Centre de Preuves Cliniques",
+    sectionSubtitle: "Explorez la littérature métabolique évaluée par les pairs, les directives de longévité et les modèles de dépistage fondés sur l'OMS et les CDC.",
+    tableTitle: "Matrice Clinique Exécutive & Littérature Scientifique Primaire",
+    tableSubtitle: "Citations académiques directes, équations de référence et corrélations cliniques.",
+    colDomain: "Domaine Clinique",
+    colStudy: "Littérature Primaire (PMID)",
+    colGuide: "Guide Évalué par les Pairs",
+    colTool: "Outil Interactif",
+    pillars: [
+      {
+        id: "featured-guides",
+        title: "Guides Cliniques Vedettes",
+        eyebrow: "Analyses Approfondies",
+        desc: "Analyses approfondies sur l'évolution de l'IMC au fil des âges, les seuils asiatiques et l'obésité sarcopénique.",
+        badge: "25+ Guides Cliniques",
+        linkText: "Consulter les Guides ↓",
+        href: "#featured-guides",
+        iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+      },
+      {
+        id: "latest-articles",
+        title: "Derniers Articles",
+        eyebrow: "Publications Éditoriales",
+        desc: "Articles scientifiques sur l'adaptation métabolique, la graisse viscérale, les besoins en protéines et l'endurance cardiovasculaire.",
+        badge: "30+ Articles Publiés",
+        linkText: "Lire les Derniers Articles ↓",
+        href: "#latest-articles",
+        iconPath: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+      },
+      {
+        id: "research-library",
+        title: "Bibliothèque de Recherche",
+        eyebrow: "Citations Académiques",
+        desc: "Index direct de plus de 15 études médicales de référence : OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987.",
+        badge: "15 Études Indexées (PMID)",
+        linkText: "Explorer les Sources →",
+        href: `/${lang}/sources/`,
+        iconPath: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        id: "evidence-center",
+        title: "Centre de Preuves",
+        eyebrow: "Comité de Révision",
+        desc: "Protocole d'évaluation clinique en 4 étapes, gouvernance du comité médical, parité mathématique et confidentialité sans cookies.",
+        badge: "Protocole en 4 Étapes",
+        linkText: "Normes & Politique Éditoriale →",
+        href: `/${lang}/editorial-policy/`,
+        iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      }
+    ],
+    matrixRows: [
+      {
+        domain: "IMC et Sarcopénie chez les Seniors",
+        study: "Winter JE 2014 (PMID: 24451310)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/24451310/",
+        guideTitle: "L'IMC selon l'Âge et la Longévité",
+        guideSlug: "bmi-by-age",
+        toolTitle: "Calculateur BMR",
+        toolSlug: "bmr-calculator"
+      },
+      {
+        domain: "Phénotype Asiatique & Adiposité",
+        study: "Lancet 2004 (PMID: 14718328)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/14718328/",
+        guideTitle: "IMC Asie et Seuils d'Action",
+        guideSlug: "bmi-calculator-india",
+        toolTitle: "Calculateur IMC Inde",
+        toolSlug: "bmi-calculator-for-indians"
+      },
+      {
+        domain: "Métabolisme de Base",
+        study: "Mifflin MD 1990 (PMID: 2305711)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+        guideTitle: "Mifflin vs Harris-Benedict",
+        guideSlug: "bmr-formulas-mifflin-vs-harris-benedict",
+        toolTitle: "Calculateur TDEE",
+        toolSlug: "tdee-calculator"
+      },
+      {
+        domain: "Composition & Masse Grasse",
+        study: "Hodgdon 1984 (U.S. Navy)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2872290/",
+        guideTitle: "IMC vs Pourcentage de Graisse",
+        guideSlug: "bmi-vs-body-fat",
+        toolTitle: "Calculateur Masse Grasse",
+        toolSlug: "body-fat-calculator"
+      }
+    ]
+  },
+  de: {
+    sectionEyebrow: "Evidenzbasierte Medizinische Publikation & Screening-Suite",
+    sectionTitle: "Forschungsbibliothek & Klinisches Evidenzzentrum",
+    sectionSubtitle: "Erkunden Sie peer-reviewte Stoffwechselforschung, altersdifferenzierte Richtwerte und evidenzbasierte Berechnungsmodelle nach WHO- und CDC-Standards.",
+    tableTitle: "Klinische Evidenzmatrix & Primärliteratur-Verzeichnis",
+    tableSubtitle: "Direkte akademische Zitationen, publizierte Referenzgleichungen und Fachartikel-Verknüpfungen.",
+    colDomain: "Klinischer Bereich",
+    colStudy: "Primärliteratur & PMID",
+    colGuide: "Peer-Reviewter Leitfaden",
+    colTool: "Interaktives Tool",
+    pillars: [
+      {
+        id: "featured-guides",
+        title: "Ausgewählte Leitfäden",
+        eyebrow: "Klinische Tiefenanalysen",
+        desc: "Fundierte wissenschaftliche Analysen zur BMI-Trajektorie im Alter, asiatischen Grenzwerten und sarkopenischer Adipositas.",
+        badge: "25+ Klinische Leitfäden",
+        linkText: "Leitfäden Lesen ↓",
+        href: "#featured-guides",
+        iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+      },
+      {
+        id: "latest-articles",
+        title: "Neueste Fachartikel",
+        eyebrow: "Redaktionelle Publikationen",
+        desc: "Evidenzbasierte Fachbeiträge zu metabolischen Anpassungen, viszeralem Fettgewebe, Proteinbedarf und Herz-Kreislauf-Fitness.",
+        badge: "30+ Fachartikel",
+        linkText: "Alle Artikel Durchsuchen ↓",
+        href: "#latest-articles",
+        iconPath: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+      },
+      {
+        id: "research-library",
+        title: "Wissenschaftsbibliothek",
+        eyebrow: "Akademische Zitate",
+        desc: "Direktes Zitationsverzeichnis von über 15 medizinischen Grundlagenstudien: WHO TRS 854, Lancet 2004, Mifflin 1990, Mosteller 1987.",
+        badge: "15 Primärstudien (PMID)",
+        linkText: "Zitationsmatrix Öffnen →",
+        href: `/${lang}/sources/`,
+        iconPath: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        id: "evidence-center",
+        title: "Evidenzzentrum",
+        eyebrow: "Prüfprotokoll & Fachgremium",
+        desc: "4-stufiges Peer-Review-Verifikationsprotokoll, Überwachung durch das klinische Prüfgremium und 100 % clientseitige Privatsphäre.",
+        badge: "4-Stufen-Prüfprotokoll",
+        linkText: "Evidenzstandards Einsehen →",
+        href: `/${lang}/editorial-policy/`,
+        iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      }
+    ],
+    matrixRows: [
+      {
+        domain: "BMI & Sarkopenie im Alter",
+        study: "Winter JE 2014 (PMID: 24451310)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/24451310/",
+        guideTitle: "BMI nach Alter & Senioren-Normen",
+        guideSlug: "bmi-by-age",
+        toolTitle: "BMR-Rechner",
+        toolSlug: "bmr-calculator"
+      },
+      {
+        domain: "Asiatischer Phänotyp & Adipositas",
+        study: "Lancet 2004 (PMID: 14718328)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/14718328/",
+        guideTitle: "BMI für Indien & Asien-Schwellen",
+        guideSlug: "bmi-calculator-india",
+        toolTitle: "Indischer BMI-Rechner",
+        toolSlug: "bmi-calculator-for-indians"
+      },
+      {
+        domain: "Grundumsatz (BMR)",
+        study: "Mifflin MD 1990 (PMID: 2305711)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+        guideTitle: "Mifflin vs. Harris-Benedict",
+        guideSlug: "bmr-formulas-mifflin-vs-harris-benedict",
+        toolTitle: "TDEE-Rechner",
+        toolSlug: "tdee-calculator"
+      },
+      {
+        domain: "Körperfettanteil & Zusammensetzung",
+        study: "Hodgdon 1984 (U.S. Navy)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2872290/",
+        guideTitle: "BMI vs. Körperfettanteil",
+        guideSlug: "bmi-vs-body-fat",
+        toolTitle: "Körperfett-Rechner",
+        toolSlug: "body-fat-calculator"
+      }
+    ]
+  },
+  ko: {
+    sectionEyebrow: "근거 중심 의학 학술 출판 및 스크리닝 플랫폼",
+    sectionTitle: "건강 연구 라이브러리 및 임상 근거 센터",
+    sectionSubtitle: "동료 검토 대사 연구, 생애주기별 인체 측정 지침, 세계보건기구(WHO) 및 질병관리청(CDC) 표준 기반 임상 스크리닝 도구를 제공합니다.",
+    tableTitle: "총괄 임상 근거 매트릭스 및 원저 논문 색인",
+    tableSubtitle: "직접 학술 인용, 주요 공식 원저 논문 및 동료 검토 임상 가이드 상호 참조.",
+    colDomain: "임상 분야",
+    colStudy: "원저 논문 및 PMID",
+    colGuide: "동료 검토 가이드",
+    colTool: "인터랙티브 도구",
+    pillars: [
+      {
+        id: "featured-guides",
+        title: "주요 임상 가이드",
+        eyebrow: "심층 의학 분석",
+        desc: "생애주기별 BMI 궤적, 아시아인 기준 비만 지표 및 노년기 근감소성 비만에 관한 종합 의학 분석.",
+        badge: "25+ 임상 가이드",
+        linkText: "주요 가이드 읽기 ↓",
+        href: "#featured-guides",
+        iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+      },
+      {
+        id: "latest-articles",
+        title: "최신 건강 칼럼",
+        eyebrow: "편집국 학술 간행물",
+        desc: "기초대사량 공식, 내장지방 위험성, 단백질 섭취 과학 및 심폐 회복 지표에 관한 최신 논문 분석.",
+        badge: "30+ 편 수록",
+        linkText: "최신 칼럼 보기 ↓",
+        href: "#latest-articles",
+        iconPath: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+      },
+      {
+        id: "research-library",
+        title: "의학 연구 라이브러리",
+        eyebrow: "학술 논문 인용",
+        desc: "15대 주요 원저 논문 직통 색인: WHO TRS 854, 란셋 2004 아시아인 BMI, Mifflin MD 1990, Mosteller 1987, Devine 1974.",
+        badge: "15개 원저 논문 (PMID)",
+        linkText: "학술 연구 색인 확인 →",
+        href: `/${lang}/sources/`,
+        iconPath: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        id: "evidence-center",
+        title: "의학적 근거 센터",
+        eyebrow: "임상 검증 프로토콜",
+        desc: "Real BMI 4단계 동료 검토 프로토콜, 전문 임상 검토 위원회 감독, 이중 단위 수학적 검증 및 사용자 데이터 무보관 원칙.",
+        badge: "4단계 검증 프로토콜",
+        linkText: "검증 기준 및 정책 확인 →",
+        href: `/${lang}/editorial-policy/`,
+        iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      }
+    ],
+    matrixRows: [
+      {
+        domain: "생애주기 BMI 및 근감소증",
+        study: "Winter JE 2014 (PMID: 24451310)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/24451310/",
+        guideTitle: "연령별 BMI 가이드 및 장수 기준",
+        guideSlug: "bmi-by-age",
+        toolTitle: "기초대사량 계산기",
+        toolSlug: "bmr-calculator"
+      },
+      {
+        domain: "아시아인 체형 및 비만 기준",
+        study: "Lancet 2004 (PMID: 14718328)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/14718328/",
+        guideTitle: "인도 및 아시아인 BMI 기준",
+        guideSlug: "bmi-calculator-india",
+        toolTitle: "인도/아시아 BMI 도구",
+        toolSlug: "bmi-calculator-for-indians"
+      },
+      {
+        domain: "기초대사율 (BMR)",
+        study: "Mifflin MD 1990 (PMID: 2305711)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+        guideTitle: "미플린 vs 해리스-베네딕트",
+        guideSlug: "bmr-formulas-mifflin-vs-harris-benedict",
+        toolTitle: "TDEE 계산기",
+        toolSlug: "tdee-calculator"
+      },
+      {
+        domain: "체지방률 및 신체 조성",
+        study: "Hodgdon 1984 (U.S. Navy 공식)",
+        studyLink: "https://pubmed.ncbi.nlm.nih.gov/2872290/",
+        guideTitle: "BMI vs 체지방률 완벽 비교",
+        guideSlug: "bmi-vs-body-fat",
+        toolTitle: "체지방률 계산기",
+        toolSlug: "body-fat-calculator"
+      }
+    ]
+  }
+};
+
+const current = data[lang] || data.en;
+---
+
+<section id="upper-evidence-hub" class="space-y-10 not-prose">
+
+  <!-- Header for Upper Evidence Hub -->
+  <div class="text-center max-w-4xl mx-auto space-y-3">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
+      <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+      {current.sectionEyebrow}
+    </div>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+      {current.sectionTitle}
+    </h2>
+    <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium leading-relaxed max-w-2xl mx-auto">
+      {current.sectionSubtitle}
+    </p>
+  </div>
+
+  <!-- 4 Interactive Research & Evidence Pillar Cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {current.pillars.map(pillar => (
+      <a 
+        href={pillar.href}
+        class="group p-5 sm:p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] hover:bg-[var(--card)]/90 hover:border-[var(--accent)]/60 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between gap-5 relative overflow-hidden"
+      >
+        <div class="space-y-3">
+          <div class="flex items-center justify-between gap-2">
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold font-mono tracking-wider bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase">
+              {pillar.badge}
+            </span>
+            <div class="w-8 h-8 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={pillar.iconPath}></path>
+              </svg>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-[var(--accent)] font-display">{pillar.eyebrow}</p>
+            <h3 class="text-lg font-bold font-display uppercase tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors mt-0.5">
+              {pillar.title}
+            </h3>
+          </div>
+
+          <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-sans line-clamp-3">
+            {pillar.desc}
+          </p>
+        </div>
+
+        <div class="pt-2 border-t border-[var(--border)]/60 flex items-center justify-between text-xs font-bold text-[var(--accent)] group-hover:translate-x-0.5 transition-transform">
+          <span>{pillar.linkText}</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <!-- Executive Clinical Evidence Matrix Table -->
+  <div class="p-6 sm:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)]/80 shadow-xs space-y-5">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[var(--border)]/60 pb-4">
+      <div>
+        <h3 class="text-base sm:text-lg font-bold font-display uppercase tracking-tight text-[var(--foreground)]">
+          {current.tableTitle}
+        </h3>
+        <p class="text-xs text-[var(--muted-foreground)] font-medium mt-0.5">
+          {current.tableSubtitle}
+        </p>
+      </div>
+      <a 
+        href={`/${lang}/sources/`} 
+        class="inline-flex items-center gap-1.5 text-xs font-bold text-[var(--accent)] hover:underline decoration-dotted shrink-0"
+      >
+        <span>View Full 15 Studies Matrix →</span>
+      </a>
+    </div>
+
+    <!-- Academic Evidence Table with Required Styles -->
+    <div class="overflow-x-auto">
+      <table class="evidence-matrix-table w-full text-left border-collapse text-xs sm:text-sm">
+        <thead>
+          <tr>
+            <th class="p-3">{current.colDomain}</th>
+            <th class="p-3">{current.colStudy}</th>
+            <th class="p-3">{current.colGuide}</th>
+            <th class="p-3">{current.colTool}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {current.matrixRows.map(row => (
+            <tr>
+              <td class="p-3 font-semibold text-[var(--foreground)]">{row.domain}</td>
+              <td class="p-3 font-mono text-[11px] sm:text-xs">
+                <a href={row.studyLink} target="_blank" rel="noopener noreferrer" class="hover:underline">
+                  {row.study}
+                </a>
+              </td>
+              <td class="p-3">
+                <a href={`/${lang}/blog/${row.guideSlug}/`} class="font-medium hover:underline">
+                  {row.guideTitle}
+                </a>
+              </td>
+              <td class="p-3">
+                <a href={`/${lang}/${row.toolSlug}/`} class="font-medium hover:underline">
+                  {row.toolTitle} →
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  /* Academic Reference & Table Standards */
+  .evidence-matrix-table a {
+    text-decoration: none;
+    color: #464feb;
+  }
+  .evidence-matrix-table a:hover {
+    text-decoration: underline;
+  }
+  .evidence-matrix-table tr th,
+  .evidence-matrix-table tr td {
+    border: 1px solid #e6e6e6;
+  }
+  .evidence-matrix-table tr th {
+    background-color: #f5f5f5;
+    color: #1e293b;
+    font-weight: 700;
+  }
+  :global(.dark) .evidence-matrix-table tr th,
+  :global(.dark) .evidence-matrix-table tr td {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  :global(.dark) .evidence-matrix-table tr th {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #f1f5f9;
+  }
+</style>

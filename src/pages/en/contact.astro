@@ -21,8 +21,8 @@ const contactSchema = {
     },
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Banswara",
-      "addressRegion": "Rajasthan",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
       "addressCountry": "IN"
     },
     "contactPoint": {
@@ -74,7 +74,7 @@ const contactSchema = {
                 </div>
                 <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
                   <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Operational Base</span>
-                  <p class="text-base font-display font-black text-[var(--foreground)]">Banswara, Rajasthan, India</p>
+                  <p class="text-base font-display font-black text-[var(--foreground)]">Ahmedabad, Gujarat, India</p>
                   <p class="text-xs text-[var(--muted-foreground)] font-medium">India &amp; Global Users</p>
                 </div>
                 <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
@@ -84,6 +84,57 @@ const contactSchema = {
                 </div>
               </div>
             </div>
+          </div>
+
+          
+          <!-- Executive Ownership & Transparency Verification Table (AdSense / YMYL High-Trust Anchor) -->
+          <div class="contact-table-wrap my-8 p-6 shadow-xs">
+            <div class="mb-4 space-y-1">
+              <p class="text-xs uppercase tracking-[0.28em] font-bold text-[var(--accent)]">Ownership & Editorial Accountability</p>
+              <h2 class="text-xl sm:text-2xl font-display font-black uppercase tracking-tight text-[var(--foreground)]">Publisher Credentials & Operational Verification</h2>
+              <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">In strict accordance with Google Search Quality Evaluator Guidelines (Transparency & E-E-A-T for YMYL Digital Health Platforms):</p>
+            </div>
+            <table class="contact-matrix-table">
+              <thead>
+                <tr>
+                  <th style="width: 26%;">Transparency Parameter</th>
+                  <th style="width: 32%;">Verified Status / Credential</th>
+                  <th style="width: 42%;">Operational Context & Policy</th>
+                </tr>
+              </thead>
+              <tbody>
+          <tr>
+            <td><strong>Founder & Lead Creator</strong></td>
+            <td><strong>Bhawanshi Dosi</strong></td>
+            <td>Software Engineer & Health Informatics Researcher. Personally designs, codes, and maintains the algorithms, mathematical models, and 3D visualizers.</td>
+          </tr>
+          <tr>
+            <td><strong>Project Structure</strong></td>
+            <td><strong>Independent Project</strong></td>
+            <td>Self-directed, independent educational web application. 100% free public access; zero pharmaceutical bias, ad trackers, or paywalled features.</td>
+          </tr>
+          <tr>
+            <td><strong>Headquarters & Location</strong></td>
+            <td><strong>Ahmedabad, Gujarat, India</strong></td>
+            <td>Operational base for algorithmic development, server maintenance, editorial review, and user support. Serving global audiences across 6 languages.</td>
+          </tr>
+          <tr>
+            <td><strong>Direct Support Desk</strong></td>
+            <td><a href="mailto:support@realbmicalculator.com">support@realbmicalculator.com</a></td>
+            <td>Directly monitored inbox for mathematical formula feedback, bug reports, and academic inquiries. 24–48 hour human reply protocol.</td>
+          </tr>
+          <tr>
+            <td><strong>Data Privacy Policy</strong></td>
+            <td><strong>100% Client-Side Computing</strong></td>
+            <td>Zero personal health metrics (PII) are transmitted or stored on remote servers. All calculations execute locally inside your web browser.</td>
+          </tr>
+          <tr>
+            <td><strong>Scientific Standards</strong></td>
+            <td><a href="/en/sources/">Indexed Academic Bibliography &rarr;</a></td>
+            <td>Directly anchored to published landmark studies: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, and Devine 1974.</td>
+          </tr>
+              </tbody>
+            </table>
           </div>
 
           <!-- Main Layout -->
@@ -123,7 +174,7 @@ const contactSchema = {
                     <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
                     <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Operational Base &amp; Location</p>
                   </div>
-                  <p class="text-lg font-display font-black text-[var(--foreground)]">Banswara, Rajasthan, India</p>
+                  <p class="text-lg font-display font-black text-[var(--foreground)]">Ahmedabad, Gujarat, India</p>
                   <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
                     Global Computational Health Operations (Serving Worldwide Visitors in 6 Languages)
                   </p>
@@ -235,7 +286,7 @@ const contactSchema = {
                 </div>
                 <div>
                   <span class="font-bold text-[var(--foreground)] block">Location &amp; Operations:</span>
-                  <span class="text-[var(--muted-foreground)] font-medium">Banswara, Rajasthan, India</span>
+                  <span class="text-[var(--muted-foreground)] font-medium">Ahmedabad, Gujarat, India</span>
                 </div>
                 <div>
                   <span class="font-bold text-[var(--foreground)] block">Official Contact:</span>
@@ -276,4 +327,54 @@ const contactSchema = {
           </div>
         </div>
     </main>
+
+<style>
+  .contact-table-wrap {
+    overflow-x: auto;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background-color: var(--card);
+  }
+  .contact-matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+  .contact-matrix-table a {
+    text-decoration: none;
+    color: #464feb;
+    font-weight: 600;
+  }
+  .contact-matrix-table a:hover {
+    text-decoration: underline;
+  }
+  .contact-matrix-table tr th,
+  .contact-matrix-table tr td {
+    border: 1px solid #e6e6e6;
+    padding: 0.85rem 1rem;
+    vertical-align: top;
+    text-align: left;
+  }
+  .contact-matrix-table tr th {
+    background-color: #f5f5f5;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1f2937;
+  }
+  :global(.dark) .contact-matrix-table tr th,
+  :global(.dark) .contact-matrix-table tr td {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  :global(.dark) .contact-matrix-table tr th {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #f3f4f6;
+  }
+  :global(.dark) .contact-matrix-table a {
+    color: #818cf8;
+  }
+</style>
+
 </Layout>

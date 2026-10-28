@@ -4,7 +4,7 @@ import type { BlogArticleData } from './types';
 export const metabolismArticles: Record<string, BlogArticleData> = {
   "bmr-vs-tdee-calculator": {
     "datePublished": "2026-09-10",
-    "dateModified": "2026-10-25",
+    "dateModified": "2026-10-28",
     "title": {
       "en": "BMR vs TDEE: Metabolic Components & Energy Balance Guide",
       "hi": "बीएमआर बनाम टीडीईई: मेटाबॉलिज्म के घटक और ऊर्जा संतुलन",
@@ -38,561 +38,606 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       <h2>The Four Distinct Pillars of Total Daily Energy Expenditure</h2>
       <p>Total Daily Energy Expenditure is not a monolithic number; it is the mathematical sum of four distinct physiological processes:</p>
       <div class="my-6 space-y-4">
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">1. Basal Metabolic Rate (BMR): ~60% to 70% of TDEE</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">BMR quantifies the basal caloric cost of sustaining vegetative life over 24 hours in a thermoneutral environment, measured immediately upon waking following a 12-hour fast. This energy fuels cellular ATP production, cardiac myocardial contraction, pulmonary alveolar respiration, active sodium-potassium ATPase pump transport, and hepatic/renal filtration. The brain, liver, heart, and kidneys consume roughly 60% of BMR despite accounting for under 6% of total body mass.</p>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">1. Basal Metabolic Rate (BMR): ~60% to 70% of TDEE</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">BMR quantifies the basal caloric cost of sustaining vegetative life over 24 hours in a thermoneutral environment. This fuels cellular ATP production, cardiac myocardial contraction, pulmonary alveolar respiration, and hepatic/renal filtration.</p>
         </div>
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">2. Non-Exercise Activity Thermogenesis (NEAT): ~15% to 20% of TDEE</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">NEAT encompasses all physical movement that is not structured athletic exercise. It includes spontaneous walking between rooms, taking stairs, fidgeting, maintaining upright posture, typing, gardening, and performing household chores. NEAT represents the most variable component of human metabolism between individuals, differing by up to 800 to 1,000 kcal/day between sedentary office workers and active laborers.</p>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">2. Non-Exercise Activity Thermogenesis (NEAT): ~15% to 20% of TDEE</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">NEAT encompasses all spontaneous physical movement that is not structured athletic exercise: taking stairs, pacing, typing, household chores, and maintaining posture.</p>
         </div>
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">3. Thermic Effect of Food (TEF): ~8% to 10% of TDEE</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">TEF (also termed diet-induced thermogenesis) represents the metabolic cost of digesting, absorbing, transporting, and storing ingested macronutrients. The metabolic cost varies dramatically by macronutrient: <strong>Proteins require 20% to 30% of their energy content</strong> to break down into amino acids, <strong>carbohydrates require 5% to 10%</strong>, and <strong>dietary fats require merely 0% to 3%</strong>.</p>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">3. Thermic Effect of Food (TEF): ~8% to 10% of TDEE</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">The metabolic cost of digesting macronutrients: protein requires 20–30% of its caloric value to process, carbohydrates 5–10%, and dietary fats 0–3%.</p>
         </div>
-        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">4. Exercise Activity Thermogenesis (EAT): ~5% to 15% of TDEE</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">EAT represents the calories expended during planned, intentional cardiovascular conditioning, resistance weightlifting, competitive sports, or high-intensity interval training (HIIT). In typical recreationally active adults, EAT constitutes a surprisingly modest fraction of overall 24-hour calorie burn.</p>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">4. Exercise Activity Thermogenesis (EAT): ~5% to 15% of TDEE</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Calories burned during intentional cardiovascular conditioning, resistance training, or competitive sports.</p>
         </div>
       </div>
 
       <h2>BMR vs. TDEE: Side-by-Side Clinical Comparison</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Characteristic</th>
-              <th class="p-3 text-blue-500 font-bold">Basal Metabolic Rate (BMR)</th>
-              <th class="p-3 text-emerald-500 font-bold">Total Daily Energy Expenditure (TDEE)</th>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Characteristic</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Basal Metabolic Rate (BMR)</th>
+              <th class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Total Daily Energy Expenditure (TDEE)</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)]">
+          <tbody class="divide-y divide-[#e6e6e6]">
             <tr>
-              <td class="p-3 font-semibold">Physiological Scope</td>
-              <td class="p-3">Cellular survival and autonomic organ function at complete rest</td>
-              <td class="p-3">Complete 24-hour total energy cost (BMR + NEAT + TEF + EAT)</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Physiological Scope</td>
+              <td class="p-3 border border-[#e6e6e6]">Cellular survival and autonomic organ function at complete rest</td>
+              <td class="p-3 border border-[#e6e6e6]">Complete 24-hour total energy cost (BMR + NEAT + TEF + EAT)</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Measurement Conditions</td>
-              <td class="p-3">Post-absorptive state, thermoneutral room, zero physical movement</td>
-              <td class="p-3">Normal free-living lifestyle across 24 hours of daily activity</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Typical Adult Range</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono">1,300 – 1,900 kcal/day</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono">1,800 – 3,200 kcal/day</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Typical Adult Range</td>
-              <td class="p-3 font-mono">1,300 – 1,900 kcal/day</td>
-              <td class="p-3 font-mono">1,800 – 3,200 kcal/day</td>
-            </tr>
-            <tr>
-              <td class="p-3 font-semibold">Role in Calorie Planning</td>
-              <td class="p-3 text-rose-500 font-bold">Floor Threshold: Never consume below BMR long-term</td>
-              <td class="p-3 text-emerald-500 font-bold">Baseline Anchor: Deficit or surplus is calculated from TDEE</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Role in Calorie Planning</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">Floor Threshold: Never consume below BMR long-term</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Baseline Anchor: Deficit or surplus is calculated from TDEE</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <h2>The Dangerous Mistake: Eating Below Your BMR</h2>
-      <p>A widespread error among individuals attempting rapid weight loss is adopting a calorie target equal to or lower than their calculated BMR (e.g., placing an adult whose BMR is 1,500 kcal on a 1,000 kcal crash diet). When chronic energy intake falls below basal survival requirements, the hypothalamus perceives severe starvation and initiates <strong>adaptive thermogenesis</strong>:</p>
-      <ul>
-        <li><strong>Thyroid Downregulation:</strong> Active triiodothyronine (T3) levels plummet, while inactive reverse T3 (rT3) rises, slowing basal metabolic cellular turnover.</li>
-        <li><strong>Leptin Collapse &amp; Ghrelin Surge:</strong> Satiety signaling disappears while intense hunger cues escalate exponentially.</li>
-        <li><strong>Subconscious NEAT Suppression:</strong> The brain subconsciously curtails spontaneous movement, leaving you lethargic and cold, eliminating up to 500 kcal of daily NEAT burn.</li>
-        <li><strong>Muscular Proteolysis:</strong> The body breaks down lean skeletal muscle to liberate amino acids for gluconeogenesis, permanently lowering your metabolic engine.</li>
-      </ul>
-
-      <h2>Frequently Asked Questions on BMR and TDEE</h2>
-      <div class="space-y-4 my-6">
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Should my daily diet target be closer to my BMR or my TDEE?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Your caloric target should always be anchored to your TDEE. For healthy, sustainable fat loss, subtract 300 to 500 kcal from your TDEE, ensuring the final number remains safely above your BMR.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Why does BMR decline during a prolonged fat-loss diet?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">As you lose scale weight, you carry fewer kilograms, meaning your organs require less baseline energy. Furthermore, the body reduces sympathetic nervous system tone and thyroid hormone conversion to conserve energy.</p>
-        </div>
-      </div>
+      <p>When chronic energy intake falls below basal survival requirements (e.g., a 1,000 kcal crash diet for someone with a 1,500 kcal BMR), the body initiates <strong>adaptive thermogenesis</strong>: thyroid hormone T3 drops, leptin collapses while ghrelin surges, spontaneous NEAT drops by up to 500 kcal/day, and muscle tissue is catabolized to provide glucose.</p>
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>Mifflin MD, St Jeor ST, Hill LA, et al. <em>A new predictive equation for resting energy expenditure in healthy individuals.</em> Am J Clin Nutr 1990; 51(2):241-247.</li>
-        <li>Levine JA. <em>Non-exercise activity thermogenesis (NEAT).</em> Best Pract Res Clin Endocrinol Metab 2002; 16(4):679-702.</li>
-        <li>Hall KD, et al. <em>Metabolic slowing and reduced energy expenditure after extreme weight loss.</em> Obesity (Silver Spring) 2016; 24(8):1612-1619.</li>
+        <li>Mifflin MD, St Jeor ST, et al. <em>A new predictive equation for resting energy expenditure in healthy individuals.</em> Am J Clin Nutr 1990; 51(2):241-247. PMID: 2305711.</li>
+        <li>Levine JA. <em>Non-exercise activity thermogenesis (NEAT).</em> Best Pract Res Clin Endocrinol Metab 2002; 16(4):679-702. PMID: 12468415.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>मानव चयापचय (मेटाबॉलिज्म) के दो मूल आधार: BMR बनाम TDEE</h2>
+      <p>वजन कम करने या स्वस्थ जीवनशैली अपनाने के लिए <strong>बेसल मेटाबॉलिक रेट (BMR)</strong> और <strong>टोटल डेली एनर्जी एक्सपेंडिचर (TDEE)</strong> के बीच के अंतर को समझना सबसे महत्वपूर्ण है। अक्सर लोग इन दोनों को एक ही समझ लेते हैं, जिसके कारण वे बहुत कम खाना खाने लगते हैं और उनका मेटाबॉलिज्म क्रैश हो जाता है।</p>
+      <p>सीधे शब्दों में कहें तो: <strong>BMR वह न्यूनतम ऊर्जा (कैलोरी) है जो आपके शरीर को जीवित रखने, सांस लेने, दिल धड़कने और अंगों को काम करने के लिए बिस्तर पर पूरी तरह आराम की स्थिति में चाहिए।</strong> जबकि <strong>TDEE पूरे 24 घंटे में आपके चलने-फिरने, काम करने, भोजन पचाने और व्यायाम सहित खर्च होने वाली कुल वास्तविक कैलोरी है।</strong></p>
+
+      <h2>दैनिक ऊर्जा व्यय के चार मुख्य स्तंभ (4 Pillars of TDEE)</h2>
+      <div class="my-6 space-y-4">
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">1. बेसल मेटाबॉलिक रेट (BMR) - कुल ऊर्जा का 60% से 70%</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">यह शरीर की बुनियादी जैविक क्रियाओं (मस्तिष्क, हृदय, फेफड़े, यकृत और गुर्दे) को 24 घंटे चालू रखने की लागत है। मस्तिष्क और यकृत कुल बीएमआर का लगभग 40% अकेले उपभोग करते हैं।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">2. नॉन-एक्सरसाइज एक्टिविटी थर्मोजेनेसिस (NEAT) - कुल ऊर्जा का 15% से 20%</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">इसमें वह सभी शारीरिक गतिविधियां शामिल हैं जो औपचारिक व्यायाम नहीं हैं: जैसे सीढ़ियां चढ़ना, खड़े रहना, घर के काम करना, टाइपिंग करना और चलते-फिरते रहना। गतिहीन और सक्रिय व्यक्ति के बीच NEAT में 800 कैलोरी तक का अंतर हो सकता है।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">3. भोजन का थर्मिक प्रभाव (TEF) - कुल ऊर्जा का 8% से 10%</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">खाए गए भोजन को पचाने और अवशोषित करने में खर्च होने वाली कैलोरी। <strong>प्रोटीन पचाने में उसकी कुल ऊर्जा का 20% से 30% हिस्सा खर्च होता है</strong>, जबकि कार्ब्स में केवल 5-10% और वसा में 0-3%।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">4. व्यायाम थर्मोजेनेसिस (EAT) - कुल ऊर्जा का 5% से 15%</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">जिम में कसरत, दौड़ना या खेलकूद के दौरान खर्च होने वाली कैलोरी। आम लोगों में पूरे दिन की कुल कैलोरी में व्यायाम का हिस्सा आश्चर्यजनक रूप से कम (10% के आसपास) होता है।</p>
+        </div>
+      </div>
+
+      <h2>तुलनात्मक विश्लेषण: BMR बनाम TDEE</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">मापदंड</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">बेसल मेटाबॉलिक रेट (BMR)</th>
+              <th class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">टोटल डेली एनर्जी एक्सपेंडिचर (TDEE)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">शारीरिक परिभाषा</td>
+              <td class="p-3 border border-[#e6e6e6]">बिना हिले-डुले कोशिकाओं व आंतरिक अंगों को जीवित रखने की न्यूनतम ऊर्जा</td>
+              <td class="p-3 border border-[#e6e6e6]">पूरे दिन की वास्तविक कुल जलाई गई कैलोरी (BMR + NEAT + TEF + EAT)</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">वयस्कों में सामान्य सीमा</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono">1,300 – 1,800 kcal/दिन</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono">1,800 – 3,000 kcal/दिन</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">डाइट प्लानिंग में भूमिका</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">न्यूनतम सीमा: लंबे समय तक BMR से कम कभी न खाएं</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">कैलोरी डेफिसिट की आधार रेखा (TDEE से 300-500 कम खाएं)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>BMR से कम कैलोरी खाने का गंभीर खतरा (मेटाबॉलिक स्लोडाउन)</h2>
+      <p>जब कोई व्यक्ति अत्यधिक कम कैलोरी वाली क्रैश डाइट (जैसे 1000 या 1200 कैलोरी) शुरू करता है, तो शरीर भुखमरी की स्थिति मानकर <strong>एडाप्टिव थर्मोजेनेसिस</strong> शुरू कर देता है:</p>
+      <ul>
+        <li><strong>थायराइड हार्मोन में गिरावट:</strong> सक्रिय T3 हार्मोन का स्तर तेजी से गिरता है, जिससे शरीर आराम की स्थिति में कैलोरी जलाना बहुत कम कर देता है।</li>
+        <li><strong>मांसपेशियों का टूटना:</strong> शरीर ऊर्जा के लिए अपनी ही मांसपेशियों को घोलने लगता है, जिससे स्थायी रूप से मेटाबॉलिज्म धीमा हो जाता है।</li>
+        <li><strong>थकान व सुस्ती:</strong> मस्तिष्क अनजाने में NEAT को बंद कर देता है, जिससे व्यक्ति दिनभर आलसी और ठंडा महसूस करता है।</li>
+      </ul>
+
+      <h2>वैज्ञानिक संदर्भ</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Mifflin MD, St Jeor ST, et al. <em>A new predictive equation for resting energy expenditure in healthy individuals.</em> Am J Clin Nutr 1990; 51(2):241-247. PMID: 2305711.</li>
+        <li>Levine JA. <em>Non-exercise activity thermogenesis (NEAT).</em> Best Pract Res Clin Endocrinol Metab 2002; 16:679-702. PMID: 12468415.</li>
       </ul>
 `,
       "es": `
-      <h2>La Ciencia del Metabolismo: TMB frente a TDEE</h2>
-      <p>La <strong>Tasa Metabólica Basal (TMB)</strong> es el gasto calórico imprescindible para mantener vivas las funciones vitales en reposo absoluto, mientras que el <strong>TDEE</strong> abarca todo el gasto energético de 24 horas (TMB + NEAT + TEF + ejercicio).</p>
-      <h2>Los 4 Pilares del Gasto Calórico</h2>
-      <ul>
-        <li><strong>TMB (~60-70%):</strong> Funcionamiento orgánico básico (cerebro, corazón, hígado y riñones).</li>
-        <li><strong>NEAT (~15-20%):</strong> Actividad física no programada (caminar, tareas domésticas, gesticular).</li>
-        <li><strong>TEF (~10%):</strong> Efecto térmico de los alimentos (digestión y absorción).</li>
-        <li><strong>EAT (~5-15%):</strong> Ejercicio físico estructurado y entrenamiento deportivo.</li>
-      </ul>
-    `,
+      <h2>Diferencias Clave entre la TMB y el Gasto Calórico Total (TDEE)</h2>
+      <p>La <strong>Tasa Metabólica Basal (TMB)</strong> representa la energía mínima vital para mantener los órganos en reposo absoluto (60–70% del gasto total). El <strong>Gasto Energético Total Diario (TDEE)</strong> suma la TMB más la termogénesis de la actividad no deportiva (NEAT), el efecto térmico de los alimentos (TEF) y el ejercicio (EAT).</p>
+      <p><strong>Regla clínica fundamental:</strong> El déficit calórico para perder peso debe calcularse restando 300 a 500 kcal del TDEE, nunca comiendo por debajo de la TMB, lo que desencadenaría adaptación metabólica y pérdida muscular.</p>
+`,
       "fr": `
-      <h2>Comprendre la Différence Entre BMR et TDEE</h2>
-      <p>Le <strong>BMR (métabolisme basal)</strong> correspond aux calories brûlées au repos complet pour les organes vitaux. Le <strong>TDEE</strong> représente la dépense calorique réelle journalière.</p>
-    `,
+      <h2>Comprendre le Métabolisme de Base (BMR) et la Dépense Totale (TDEE)</h2>
+      <p>Le <strong>BMR</strong> correspond à l'énergie minimale requise pour assurer les fonctions végétatives vitales (respiration, circulation, filtration rénale). Le <strong>TDEE</strong> représente la dépense énergétique globale sur 24 heures en intégrant l'activité spontanée (NEAT), la digestion (TEF) et le sport (EAT).</p>
+`,
       "de": `
-      <h2>Grundumsatz (BMR) vs. Gesamtenergiebedarf (TDEE)</h2>
-      <p>Der BMR deckt die lebenserhaltenden Körperfunktionen ab. Der TDEE summiert BMR, Alltagsbewegung (NEAT), Verdauungswärme (TEF) und Sport (EAT).</p>
-    `,
+      <h2>Grundumsatz (BMR) vs. Gesamtumsatz (TDEE)</h2>
+      <p>Der Grundumsatz (BMR) sichert das reine Überleben im Ruhezustand. Der Gesamtenergiebedarf (TDEE) umfasst alle täglichen Bewegungen. Ein gesundes Kaloriendefizit wird immer vom TDEE abgezogen und darf den Grundumsatz nicht langfristig unterschreiten.</p>
+`,
       "ko": `
-      <h2>신진대사의 4대 기둥: BMR과 TDEE의 의학적 구분</h2>
-      <p>BMR은 생명 유지에 필요한 최소 열량이며, TDEE는 일상 활동과 운동을 포함한 24시간 총 에너지 소비량을 나타냅니다.</p>
-    `,
-      "hi": `
-      <h2>बीएमआर और टीडीईई में मुख्य अंतर</h2>
-      <p>बीएमआर शरीर को जीवित रखने के लिए जरूरी न्यूनतम ऊर्जा है, जबकि टीडीईई पूरे दिन के कामकाज और व्यायाम को मिलाकर खर्च होने वाली कुल कैलोरी है।</p>
-    `
+      <h2>기초대사량(BMR)과 일일 총 에너지 소비량(TDEE)</h2>
+      <p>BMR은 생명 유지를 위한 최소 에너지(심장 박동, 세포 대사)이며, TDEE는 활동량과 소화 대사량을 합산한 실제 24시간 에너지 소비량입니다. 건강한 체중 감량을 위해서는 TDEE에서 300~500kcal를 제한하되 BMR 이하로 섭취하지 않아야 요요 현상을 방지할 수 있습니다.</p>
+`
     }
   },
 
   "how-to-calculate-tdee": {
     "datePublished": "2026-09-20",
-    "dateModified": "2026-10-25",
+    "dateModified": "2026-10-28",
     "title": {
-      "en": "How to Calculate TDEE: Activity Multipliers & Energy Science",
-      "hi": "टीडीईई की गणना कैसे करें: गतिविधि गुणक व ऊर्जा विज्ञान",
-      "ko": "TDEE 계산법 완벽 가이드: 신체 활동 계수와 유지 칼로리 산출",
-      "de": "TDEE berechnen: Aktivitätsfaktoren und Kalorienbedarf",
-      "es": "Cómo Calcular el TDEE: Multiplicadores de Actividad y Calorías",
-      "fr": "Comment Calculer son TDEE : Multiplicateurs d'Activité et Calories"
+      "en": "How to Calculate TDEE: Step-by-Step Multipliers & Calorie Deficit",
+      "hi": "TDEE कैसे निकालें? चरणबद्ध गतिविधि गुणक व सही कैलोरी डेफिसिट",
+      "ko": "TDEE(일일 총 에너지 소비량) 계산법: 활동 계수 적용 및 칼로리 설정 가이드",
+      "de": "TDEE berechnen: Schritt-für-Schritt-Anleitung mit Aktivitätsfaktoren",
+      "es": "Cómo Calcular el TDEE: Factores de Actividad y Déficit Calórico",
+      "fr": "Comment Calculer son TDEE : Facteurs d'Activité et Déficit Calorique"
     },
     "category": {
-      "en": "Energy Expenditure & Diet",
-      "hi": "ऊर्जा व्यय और आहार",
-      "ko": "에너지 소비 및 식단",
-      "de": "Energiebedarf & Diät",
-      "es": "Gasto Energético y Dieta",
-      "fr": "Dépense Énergétique et Diète"
+      "en": "Metabolic Science & Energy",
+      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा",
+      "ko": "대사 과학 및 에너지",
+      "de": "Stoffwechsel & Kalorienbedarf",
+      "es": "Gasto Energético y Metabolismo",
+      "fr": "Métabolisme et Dépense Énergétique"
     },
     "description": {
-      "en": "Step-by-step clinical guide to calculating Total Daily Energy Expenditure. Understand the physical activity level (PAL) multipliers from sedentary to extremely active, the MET system, and smartwatch accuracy.",
-      "hi": "टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) निकालने की वैज्ञानिक गाइड। सेडेंटरी से लेकर एक्टिव स्तर तक गतिविधि गुणक, MET सिस्टम और मेंटेनेंस कैलोरी तय करने की विधि।",
-      "ko": "신체 활동 수준(PAL) 계수와 MET 운동 공식을 활용하여 일일 총 에너지 소비량(TDEE)을 정밀 산출하는 방법과 스마트워치 오차 분석을 안내합니다.",
-      "de": "Schritt-für-Schritt-Anleitung zur TDEE-Berechnung: Von sitzender Tätigkeit bis Hochleistungssport. Aktivitätsmultiplikatoren und Kalibrierung.",
-      "es": "Guía paso a paso para calcular el gasto energético total diario (TDEE): factores de actividad PAL, cálculo de calorías de mantenimiento y calibración.",
-      "fr": "Guide étape par étape pour calculer sa dépense énergétique totale (TDEE) avec les coefficients d'activité physique PAL pour ajuster ses calories."
+      "en": "Step-by-step clinical methodology for calculating Total Daily Energy Expenditure (TDEE). Learn physical activity level (PAL) multipliers, worked mathematical examples, and how to dial in calories.",
+      "hi": "टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) निकालने की वैज्ञानिक विधि। शारीरिक गतिविधि गुणक (PAL), गणितीय उदाहरण और वजन घटाने के लिए सटीक कैलोरी लक्ष्य।",
+      "ko": "일일 총 에너지 소비량(TDEE)을 산출하는 표준 공식. 신체 활동 수준(PAL) 계수 선택법, 계산 예제 및 안전한 칼로리 설정법을 확인하세요.",
+      "de": "Schritt-für-Schritt-Anleitung zur Berechnung des Gesamtumsatzes (TDEE) mittels PAL-Faktoren und präziser Kalorienbedarfsplanung.",
+      "es": "Guía práctica para calcular el Gasto Energético Total Diario (TDEE) usando factores de actividad física (PAL) y ejemplos paso a paso.",
+      "fr": "Méthode pas à pas pour calculer votre dépense calorique journalière (TDEE) grâce aux coefficients d'activité physique (PAL)."
     },
     "contentHtml": {
       "en": `
-      <h2>The Clinical Science of Total Daily Energy Expenditure (TDEE)</h2>
-      <p>Calculating your <strong>Total Daily Energy Expenditure (TDEE)</strong>—often referred to as your maintenance calories—is the single most important mathematical foundation for evidence-based nutritional planning. Whether your objective is progressive fat loss, lean muscle hypertrophy, athletic endurance fueling, or metabolic maintenance, all physical transformations obey the fundamental First Law of Thermodynamics: energy cannot be created or destroyed, only transferred.</p>
-      <p>To lose adipose tissue, you must create a controlled negative energy balance below your TDEE. To gain skeletal muscle, you must provide a caloric surplus above TDEE alongside resistance stimulus. Below, we explain the two-step clinical method for calculating TDEE, detail the physical activity level (PAL) multipliers, explain the Metabolic Equivalent of Task (MET) system, examine wearable fitness tracker accuracy, and review how to troubleshoot real-world metabolic variance.</p>
-
-      <h2>The Two-Step Mathematical Formula for TDEE</h2>
-      <p>Calculating TDEE requires establishing your baseline Basal Metabolic Rate (BMR) and multiplying it by a standardized <strong>Physical Activity Level (PAL)</strong> factor:</p>
-      <div class="my-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm">
-        <code>TDEE (kcal/day) = BMR &times; Physical Activity Level (PAL) Multiplier</code>
+      <h2>Mathematical Framework for Calculating TDEE</h2>
+      <p>Calculating Total Daily Energy Expenditure (TDEE) begins with determining Basal Metabolic Rate using the validated <strong>Mifflin-St Jeor equation</strong>, followed by applying an empirical <strong>Physical Activity Level (PAL) multiplier</strong> established by the Food and Agriculture Organization (FAO) and World Health Organization (WHO):</p>
+      <div class="my-4 p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)] font-mono text-sm">
+        <code>TDEE = Basal Metabolic Rate (BMR) &times; Physical Activity Level (PAL)</code>
       </div>
 
-      <h2>Standardized Physical Activity Level (PAL) Multiplier Matrix</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+      <h2>Standard FAO/WHO Physical Activity Level Multipliers</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Activity Tier</th>
-              <th class="p-3 font-mono text-[var(--accent)] font-bold">PAL Multiplier</th>
-              <th class="p-3">Daily Movement Profile &amp; Step Counts</th>
-              <th class="p-3">Weekly Exercise Sessions</th>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Activity Level</th>
+              <th class="p-3 border border-[#e6e6e6] font-mono text-blue-500">PAL Multiplier</th>
+              <th class="p-3 border border-[#e6e6e6]">Clinical Lifestyle Description</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)]">
+          <tbody class="divide-y divide-[#e6e6e6]">
             <tr>
-              <td class="p-3 font-semibold">Sedentary</td>
-              <td class="p-3 font-mono font-bold text-[var(--accent)]">1.20</td>
-              <td class="p-3">Desk job, minimal walking (&lt; 4,000 steps/day), driving, screen leisure</td>
-              <td class="p-3">Zero to 1 light session per week</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Sedentary</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1.20</td>
+              <td class="p-3 border border-[#e6e6e6]">Desk job, under 5,000 steps/day, zero structured workouts</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Lightly Active</td>
-              <td class="p-3 font-mono font-bold text-[var(--accent)]">1.375</td>
-              <td class="p-3">Regular standing or teaching, light retail (5,000 – 7,500 steps/day)</td>
-              <td class="p-3">1 to 3 light exercise or walking sessions/week</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Lightly Active</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1.375</td>
+              <td class="p-3 border border-[#e6e6e6]">Light walking, 5,000–8,000 steps/day, 1–3 light workout sessions/week</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold text-emerald-500 font-bold">Moderately Active</td>
-              <td class="p-3 font-mono font-bold text-emerald-500">1.55</td>
-              <td class="p-3">Active throughout day, frequent walking (8,000 – 11,000 steps/day)</td>
-              <td class="p-3 text-emerald-500 font-bold">3 to 5 moderate workout sessions (weightlifting, jogging)</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Moderately Active</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1.55</td>
+              <td class="p-3 border border-[#e6e6e6]">8,000–12,000 steps/day, 3–5 moderate-to-vigorous training sessions/week</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Very Active</td>
-              <td class="p-3 font-mono font-bold text-[var(--accent)]">1.725</td>
-              <td class="p-3">Physical labor (construction, nursing, delivery) or 12,000+ steps/day</td>
-              <td class="p-3">6 to 7 strenuous training sessions/week</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Very Active</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1.725</td>
+              <td class="p-3 border border-[#e6e6e6]">Physical occupation or 6–7 intense training sessions weekly</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold">Extremely Active</td>
-              <td class="p-3 font-mono font-bold text-[var(--accent)]">1.90</td>
-              <td class="p-3">Heavy manual labor, professional athletic training, two-a-day workouts</td>
-              <td class="p-3">Daily grueling athletic competition and conditioning</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Extremely Active</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1.90</td>
+              <td class="p-3 border border-[#e6e6e6]">Competitive endurance athletes, double training sessions daily</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>The Metabolic Equivalent of Task (MET) System</h2>
-      <p>When tracking individual workouts rather than generic activity tiers, exercise physiologists utilize the <strong>Compendium of Physical Activities MET system</strong>. One MET represents the rate of oxygen consumption at quiet rest, defined as <code>3.5 mL of O₂ / kg / minute</code> (equivalent to approximately 1.0 kcal per kilogram of body weight per hour):</p>
-      <div class="my-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm">
-        <code>Exercise Calories Burned = MET Value &times; Body Weight (kg) &times; Duration (hours)</code>
-      </div>
-      <p>Common reference values from the Stanford and Harvard compendia:</p>
+      <h2>Step-by-Step Calculation Example</h2>
+      <p>Consider a 30-year-old male weighing 80 kg, height 180 cm, who works an office desk job but lifts weights 4 times per week (Moderately Active, PAL = 1.55):</p>
       <ul>
-        <li><strong>Brisk Walking (5.5 km/h / 3.5 mph):</strong> 3.8 to 4.3 METs</li>
-        <li><strong>Vigorous Weightlifting / Resistance Training:</strong> 5.0 to 6.0 METs</li>
-        <li><strong>Moderate Running (8.0 km/h / 5 mph):</strong> 8.3 METs</li>
-        <li><strong>Vigorous Swimming (Freestyle):</strong> 9.8 METs</li>
+        <li><strong>Step 1 (Calculate BMR):</strong> <code>(10 &times; 80) + (6.25 &times; 180) - (5 &times; 30) + 5 = 800 + 1125 - 150 + 5 = 1,780 kcal/day</code></li>
+        <li><strong>Step 2 (Apply PAL):</strong> <code>1,780 &times; 1.55 = 2,759 kcal/day (TDEE)</code></li>
+        <li><strong>Step 3 (Set Calorie Deficit):</strong> For steady fat loss of ~0.5 kg/week, subtract 500 kcal: <code>2,759 - 500 = 2,259 kcal/day</code></li>
       </ul>
-      <p>For an 80 kg adult performing 45 minutes (0.75 hours) of vigorous weight training: <code>6.0 &times; 80 &times; 0.75 = 360 kcal burned</code>.</p>
-
-      <h2>The Accuracy of Wearable Fitness Trackers &amp; Smartwatches</h2>
-      <p>A landmark investigation conducted by Stanford University School of Medicine evaluating the most popular consumer fitness trackers and smartwatches revealed a critical clinical finding: while wearable devices measure heart rate with high precision (median error under 5%), <strong>every tested device failed to accurately measure energy expenditure</strong>.</p>
-      <p>Across diverse physical tasks, median error rates for calories burned ranged between <strong>27% and 93%</strong>. Most consumer algorithms substantially overestimate calories burned during cardio sessions and daily walking, leading users to inadvertently overeat when "eating back" exercise calories.</p>
-
-      <h2>The Two-Week Scale Calibration Protocol</h2>
-      <p>Because predictive formulas provide an educated statistical estimate with an inherent error margin of &plusmn; 5% to 10%, clinicians advise calibrating your number with the <strong>Two-Week Real-World Tracking Method</strong>:</p>
-      <ol class="space-y-2 my-4">
-        <li>Weigh yourself every morning upon waking after using the restroom. Compute the 7-day rolling average.</li>
-        <li>Weigh and log all food and beverage intake meticulously for 14 consecutive days using a digital kitchen scale.</li>
-        <li>If your 7-day average weight remains completely flat over two weeks, your daily caloric intake exactly equals your true biological TDEE. If you gained 0.5 kg, you are in an average ~250 kcal daily surplus; if you lost 0.5 kg, you are in a ~250 kcal daily deficit.</li>
-      </ol>
-
-      <h2>Dynamic NEAT Optimization: The Highest-Leverage Metabolic Variable</h2>
-      <p>While structured gym exercise (EAT) typically lasts 45 to 60 minutes, your Non-Exercise Activity Thermogenesis (NEAT) operates across 16 waking hours. Pioneer metabolic researcher Dr. James Levine at the Mayo Clinic demonstrated that free-living spontaneous movement accounts for daily expenditure differences of up to <strong>800 to 1,000 kcal between individuals of identical height and weight</strong>.</p>
-      <p>A simple shift from 4,000 steps per day (sedentary) to 10,000 steps per day (moderately active) expends an estimated <strong>300 to 450 additional kilocalories daily</strong>. Crucially, low-intensity ambulatory movement does not elicit the intense ghrelin surges or compensatory appetite spikes associated with exhaustive chronic cardio sessions, making NEAT the single most sustainable lever for fat loss.</p>
-
-      <h2>Worked Calculation Walkthrough: Finding True TDEE</h2>
-      <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-2">
-        <p class="font-bold text-[var(--accent)]">Case Example: 35-Year-Old Female Professional (Height: 168 cm, Weight: 68 kg):</p>
-        <p class="text-[var(--foreground)]">&bull; <strong>Step 1: Calculate BMR (Mifflin-St Jeor):</strong><br>
-        <code>BMR = (10 &times; 68) + (6.25 &times; 168) - (5 &times; 35) - 161 = 680 + 1050 - 175 - 161 = <strong>1,394 kcal/day</strong></code></p>
-        <p class="text-[var(--foreground)]">&bull; <strong>Step 2: Assign PAL Multiplier:</strong> Works at a desk, but walks 8,500 steps/day and attends 3 strength sessions/week &rarr; <strong>Moderately Active (PAL = 1.55)</strong>.</p>
-        <p class="text-[var(--foreground)]">&bull; <strong>Step 3: Compute Baseline TDEE:</strong><br>
-        <code>TDEE = 1,394 &times; 1.55 = <strong>2,160 kcal/day</strong> (Maintenance Calories)</code></p>
-        <p class="text-[var(--foreground)]">&bull; <strong>Step 4: Target Setting:</strong><br>
-        For sustainable fat loss at ~0.5 kg/week: Set a moderate 20% deficit (<code>2,160 &times; 0.80 = <strong>1,728 kcal/day</strong></code>). Notice this target stays safely 334 kcal <em>above</em> her basal BMR floor.</p>
-      </div>
-
-      <h2>Frequently Asked Questions on Calculating TDEE</h2>
-      <div class="space-y-4 my-6">
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Should I eat back the calories burned shown on my Apple Watch or Fitbit?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">No. Wearable fitness trackers frequently overestimate exercise calorie burn by 25% to 50%. Furthermore, your TDEE activity multiplier already accounts for your average weekly exercise. Adding tracker calories on top double-counts your workouts, negating your caloric deficit and halting weight loss.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Why does TDEE decrease as I lose weight?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">As body mass decreases, your smaller physical frame requires less energy to sustain at rest (lower BMR), and moving lighter limbs requires fewer calories per step (lower NEAT). To maintain steady weight loss, recalculate your TDEE every 4 to 6 weeks as your scale weight drops.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">How does severe stress or poor sleep affect daily energy expenditure?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Sleep deprivation elevates circulating cortisol and ghrelin while suppressing leptin and thyroid T3. Chronic fatigue also severely curbs spontaneous NEAT (you fidget less, sit more, and feel lethargic), lowering your effective daily TDEE by up to 200–300 kcal even if you still attend your scheduled workout.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Which activity multiplier should I choose if my daily schedule varies?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Always select the more conservative (lower) activity tier. If you work a sedentary desk job but work out 3 days a week, start with "Lightly Active" (1.375) or "Moderately Active" (1.55). It is much easier to adjust calories upward after 2 weeks of scale tracking than to recover from overestimating your daily burn.</p>
-        </div>
-      </div>
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>Ainsworth BE, et al. <em>2011 Compendium of Physical Activities: a second update of codes and MET values.</em> Med Sci Sports Exerc 2011; 43(8):1575-1581.</li>
-        <li>Shcherbina A, et al. <em>Accuracy in wrist-worn, wearable devices for tracking heart rate and energy expenditure in everyday conditions.</em> J Pers Med 2017; 7(2):3.</li>
-        <li>Levine JA. <em>Non-exercise activity thermogenesis (NEAT).</em> Best Pract Res Clin Endocrinol Metab 2002; 16(4):679-702.</li>
-        <li>Hall KD, et al. <em>Quantification of the effect of energy imbalance on bodyweight.</em> Lancet 2011; 378(9793):826-837.</li>
-        <li>FAO / WHO / UNU. <em>Human energy requirements.</em> Food and Nutrition Technical Report Series 1. Rome: FAO, 2004.</li>
+        <li>Mifflin MD, St Jeor ST, et al. <em>A new predictive equation for resting energy expenditure.</em> Am J Clin Nutr 1990; 51(2):241-247.</li>
+        <li>FAO/WHO/UNU. <em>Human energy requirements: Report of a Joint Expert Consultation.</em> Rome: FAO Food and Nutrition Technical Report Series 2004; 1.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>TDEE निकालने का गणितीय व वैज्ञानिक ढांचा</h2>
+      <p>टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) निकालने के लिए सबसे पहले <strong>मिफलिन-सेंट जियोर (Mifflin-St Jeor) फॉर्मूले</strong> से BMR निकाला जाता है, और फिर उसमें आपकी जीवनशैली के अनुसार विश्व स्वास्थ्य संगठन (WHO) द्वारा निर्धारित <strong>शारीरिक गतिविधि स्तर (PAL Multiplier)</strong> से गुणा किया जाता है:</p>
+      <div class="my-4 p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)] font-mono text-sm">
+        <code>TDEE = बेसल मेटाबॉलिक रेट (BMR) &times; शारीरिक गतिविधि स्तर (PAL)</code>
+      </div>
+
+      <h2>मानक WHO गतिविधि स्तर गुणक (PAL Multipliers)</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">गतिविधि स्तर</th>
+              <th class="p-3 border border-[#e6e6e6] font-mono text-blue-500">गुणक (PAL)</th>
+              <th class="p-3 border border-[#e6e6e6]">दैनिक जीवनशैली का विवरण</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">गतिहीन (Sedentary)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1.20</td>
+              <td class="p-3 border border-[#e6e6e6]">डेस्क जॉब, दिन में 5,000 से कम कदम, कोई व्यायाम नहीं</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">हल्का सक्रिय (Lightly Active)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1.375</td>
+              <td class="p-3 border border-[#e6e6e6]">दैनिक 5,000–8,000 कदम, सप्ताह में 1–3 दिन हल्का व्यायाम</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">मध्यम सक्रिय (Moderately Active)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1.55</td>
+              <td class="p-3 border border-[#e6e6e6]">दैनिक 8,000–12,000 कदम, सप्ताह में 3–5 दिन जिम या कसरत</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">अति सक्रिय (Very Active)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1.725</td>
+              <td class="p-3 border border-[#e6e6e6]">शारीरिक मेहनत का काम या सप्ताह में 6-7 दिन कठिन वर्कआउट</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">अत्यधिक सक्रिय (Extremely Active)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1.90</td>
+              <td class="p-3 border border-[#e6e6e6]">पेशेवर एथलीट, दिन में दो बार गहन प्रशिक्षण</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>चरणबद्ध गणना का व्यावहारिक उदाहरण</h2>
+      <p>मान लीजिए 30 वर्षीय पुरुष का वजन 80 किग्रा, कद 180 सेमी है, और वह सप्ताह में 4 दिन कसरत करता है (मध्यम सक्रिय, PAL = 1.55):</p>
+      <ul>
+        <li><strong>चरण 1 (BMR निकालें):</strong> <code>(10 &times; 80) + (6.25 &times; 180) - (5 &times; 30) + 5 = 1,780 kcal/दिन</code></li>
+        <li><strong>चरण 2 (TDEE निकालें):</strong> <code>1,780 &times; 1.55 = 2,759 kcal/दिन</code> (यह वजन बनाए रखने की कैलोरी है)</li>
+        <li><strong>चरण 3 (वजन घटाने का लक्ष्य):</strong> सुरक्षित रूप से प्रति सप्ताह 500 ग्राम वजन घटाने के लिए TDEE में से 500 कैलोरी घटाएं: <code>2,759 - 500 = 2,259 kcal/दिन</code></li>
+      </ul>
+
+      <h2>वैज्ञानिक संदर्भ</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Mifflin MD, St Jeor ST, et al. <em>A new predictive equation for resting energy expenditure.</em> Am J Clin Nutr 1990; 51(2):241-247. PMID: 2305711.</li>
+        <li>FAO/WHO/UNU. <em>Human energy requirements.</em> Food and Nutrition Technical Report Series 2004; 1.</li>
       </ul>
 `,
       "es": `
-      <h2>Cómo Calcular el Gasto Energético Diario Total (TDEE)</h2>
-      <p>Multiplica tu Tasa Metabólica Basal (TMB) por el factor de actividad física correspondiente (1.20 sedentario, 1.375 ligero, 1.55 moderado, 1.725 muy activo, 1.90 extremo).</p>
-    `,
+      <h2>Cómo Calcular el TDEE Paso a Paso</h2>
+      <p>El cálculo combina la TMB con los factores de actividad de la FAO/OMS: Sedentario (1.20), Ligero (1.375), Moderado (1.55), Muy activo (1.725) y Extremo (1.90). Para perder grasa de forma sostenible, se resta un déficit moderado de 500 kcal al TDEE resultante.</p>
+`,
       "fr": `
-      <h2>Calcul Pratique de la Dépense Énergétique Totale (TDEE)</h2>
-      <p>Appliquez le coefficient d'activité physique (PAL) à votre métabolisme de base pour obtenir vos calories de maintien journalières.</p>
-    `,
+      <h2>Méthode de Calcul du TDEE</h2>
+      <p>Le TDEE s'obtient en multipliant le BMR par le coefficient d'activité physique (PAL : 1,20 pour la sédentarité à 1,90 pour le sport intensif). Un déficit de 500 kcal/jour permet une perte de graisse saine d'environ 0,5 kg par semaine.</p>
+`,
       "de": `
-      <h2>TDEE-Formel und Aktivitätsfaktoren</h2>
-      <p>Multiplizieren Sie Ihren BMR mit Ihrem Aktivitätsfaktor (1,2 bis 1,9), um Ihren genauen täglichen Kalorienbedarf zu ermitteln.</p>
-    `,
+      <h2>Schritt-für-Schritt-Berechnung des Gesamtumsatzes (TDEE)</h2>
+      <p>Grundumsatz multipliziert mit dem PAL-Faktor (1,2 bis 1,9). Ein moderates Defizit von 500 kcal pro Tag sichert einen stetigen Fettabbau ohne Muskelverlust.</p>
+`,
       "ko": `
-      <h2>신체 활동 계수를 적용한 정밀 TDEE 계산 공식</h2>
-      <p>기초대사량에 일상 활동 지수(1.2~1.9)를 곱하여 본인의 체중 유지 칼로리를 도출하고 목표에 맞게 열량을 설정합니다.</p>
-    `,
-      "hi": `
-      <h2>टीडीईई निकालने का 2-चरणीय फॉर्मूला</h2>
-      <p>अपने बीएमआर को अपने गतिविधि गुणक (1.2 से 1.9) से गुणा करके अपने दैनिक कैलोरी खर्च का सटीक आकलन करें।</p>
-    `
+      <h2>TDEE 계산 공식 및 활동 계수 가이드</h2>
+      <p>기초대사량(BMR)에 FAO/WHO 활동 계수(좌식 1.20 ~ 격렬한 운동 1.90)를 곱하여 TDEE를 도출합니다. 건강한 감량을 위해 TDEE에서 500kcal를 감량한 식단을 구성하는 것이 이상적입니다.</p>
+`
     }
   },
 
   "bmr-formulas-mifflin-vs-harris-benedict": {
     "datePublished": "2026-10-01",
-    "dateModified": "2026-10-25",
+    "dateModified": "2026-10-28",
     "title": {
-      "en": "BMR Formulas Compared: Mifflin-St Jeor vs Harris-Benedict vs Katch-McArdle",
-      "hi": "बीएमआर फॉर्मूलों की तुलना: मिफ्लिन-सेंट जेओर बनाम हैरिस-बेनेडिक्ट",
-      "ko": "BMR 계산 공식 비교: Mifflin-St Jeor vs Harris-Benedict vs Katch-McArdle",
-      "de": "BMR-Formeln im Vergleich: Mifflin-St. Jeor vs. Harris-Benedict",
-      "es": "Comparativa de Fórmulas de TMB: Mifflin-St Jeor vs Harris-Benedict",
-      "fr": "Formules du Métabolisme de Base : Mifflin-St Jeor vs Harris-Benedict"
+      "en": "BMR Formulas Compared: Mifflin-St Jeor vs. Harris-Benedict & Katch-McArdle",
+      "hi": "BMR फॉर्मूलों की तुलना: मिफलिन-सेंट जियोर बनाम हैरिस-बेनेडिक्ट व कैच-मैकआर्डल",
+      "ko": "BMR 공식 완벽 비교: Mifflin-St Jeor vs Harris-Benedict 및 Katch-McArdle",
+      "de": "BMR-Formeln im Vergleich: Mifflin-St Jeor, Harris-Benedict & Katch-McArdle",
+      "es": "Fórmulas de TMB Comparadas: Mifflin-St Jeor vs Harris-Benedict",
+      "fr": "Formules du BMR Comparées : Mifflin-St Jeor vs Harris-Benedict"
     },
     "category": {
-      "en": "Predictive Calorimetry",
-      "hi": "ऊर्जा आकलन और फॉर्मूले",
-      "ko": "대사율 예측 공식",
-      "de": "Kaloriemetrie & Formeln",
-      "es": "Calorimetría Predictiva",
-      "fr": "Calorimétrie Prédictive"
+      "en": "Metabolic Science & Energy",
+      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा",
+      "ko": "대사 과학 및 에너지",
+      "de": "Stoffwechsel & Kalorienbedarf",
+      "es": "Gasto Energético y Metabolismo",
+      "fr": "Métabolisme et Dépense Énergétique"
     },
     "description": {
-      "en": "Explore the scientific differences between Mifflin-St Jeor, Revised Harris-Benedict, and Katch-McArdle BMR equations. Discover which formula provides the highest clinical accuracy.",
-      "hi": "मिफ्लिन-सेंट जेओर, हैरिस-बेनेडिक्ट और कैच-मैकआर्डल फॉर्मूलों की वैज्ञानिक तुलना। जानें कि कौन सा समीकरण सबसे सटीक परिणाम देता है।",
-      "ko": "Mifflin-St Jeor, Harris-Benedict 개정식, Katch-McArdle 공식의 임상 정확도와 수학적 구조를 전격 비교합니다. 체지방률 반영 여부에 따른 최적 공식을 확인하세요.",
-      "de": "Wissenschaftlicher Vergleich der BMR-Gleichungen: Warum Mifflin-St. Jeor heute als Goldstandard gilt und wann Katch-McArdle überlegen ist.",
-      "es": "Comparativa de fórmulas de TMB: por qué Mifflin-St Jeor es el estándar de oro médico y cuándo conviene utilizar Katch-McArdle.",
-      "fr": "Comparatif clinique des équations de métabolisme basal : pourquoi Mifflin-St Jeor surpasse Harris-Benedict dans la population moderne."
+      "en": "Clinical comparison of predictive resting metabolic equations: Mifflin-St Jeor (1990), original Harris-Benedict (1919), revised Roza-Shizgal (1984), and Katch-McArdle.",
+      "hi": "बीएमआर फॉर्मूलों का वैज्ञानिक विश्लेषण। जानें कि अमेरिकन डायटेटिक एसोसिएशन मिफलिन-सेंट जियोर समीकरण को सबसे सटीक स्वर्ण मानक क्यों मानती है।",
+      "ko": "현대 임상 영양학의 표준 BMR 공식 비교. Mifflin-St Jeor(1990), Harris-Benedict(1919/1984 개정), Katch-McArdle 공식의 정확도와 차이점을 분석합니다.",
+      "de": "Wissenschaftlicher Vergleich der Grundumsatzformeln: Warum Mifflin-St Jeor heute der anerkannte Goldstandard gegenüber Harris-Benedict ist.",
+      "es": "Comparativa clínica de fórmulas de metabolismo basal: por qué Mifflin-St Jeor supera a Harris-Benedict según la Asociación Americana de Dietética.",
+      "fr": "Comparatif clinique des formules de métabolisme basal : pourquoi Mifflin-St Jeor surpasse Harris-Benedict dans la recherche moderne."
     },
     "contentHtml": {
       "en": `
-      <h2>The Evolution of Predictive Calorimetry: Estimating Resting Metabolism</h2>
-      <p>Human energy expenditure begins with <strong>Basal Metabolic Rate (BMR)</strong> or Resting Energy Expenditure (REE)—the thermodynamic baseline representing the energy consumed by internal organs to maintain life. Because direct whole-room calorimetry and indirect metabolic cart spirometry are expensive and inaccessible for daily clinical use, physiologists over the past century have derived mathematical equations based on height, weight, age, and biological gender.</p>
-      <p>Three primary formulas dominate modern practice: the original <strong>Harris-Benedict equation (1919)</strong>, the <strong>Roza-Shizgal revision (1984)</strong>, the <strong>Mifflin-St Jeor formula (1990)</strong>, and the body composition-based <strong>Katch-McArdle formula (1977)</strong>. Below, we examine their mathematical structures, compare their clinical accuracy, review historical calorimetry trials, and explain which formula to choose for your patient or client profile.</p>
+      <h2>The Evolution of Predictive Metabolic Equations</h2>
+      <p>Estimating Resting Energy Expenditure (REE / BMR) is essential for clinical nutrition support and weight management. Direct and indirect calorimetry represent the physical gold standards, but require expensive metabolic carts. For non-laboratory settings, clinicians rely on validated regression formulas:</p>
 
-      <h2>The Mathematical Formulas Compared</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+      <h2>The Major BMR Predictive Equations Compared</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Formula</th>
-              <th class="p-3 text-blue-500">Men Equation (W in kg, H in cm, A in yrs)</th>
-              <th class="p-3 text-rose-500">Women Equation (W in kg, H in cm, A in yrs)</th>
-              <th class="p-3">Clinical Accuracy Rating</th>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Equation</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Men Formula</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">Women Formula</th>
+              <th class="p-3 border border-[#e6e6e6]">Clinical Validation</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)] font-mono text-xs">
+          <tbody class="divide-y divide-[#e6e6e6] font-mono text-xs">
             <tr>
-              <td class="p-3 font-sans font-semibold text-emerald-500 font-bold">Mifflin-St Jeor (1990)</td>
-              <td class="p-3 text-blue-500 font-bold">10 &times; W + 6.25 &times; H - 5 &times; A + 5</td>
-              <td class="p-3 text-rose-500 font-bold">10 &times; W + 6.25 &times; H - 5 &times; A - 161</td>
-              <td class="p-3 font-sans text-emerald-500 font-bold">Gold Standard: Accurate within &plusmn;10% for 82% of non-obese and 70% of obese adults</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-[#464feb]">Mifflin-St Jeor (1990)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">10 &times; W + 6.25 &times; H - 5 &times; A + 5</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">10 &times; W + 6.25 &times; H - 5 &times; A - 161</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-bold text-emerald-600">Gold Standard (ADA recommended, &plusmn;10% accuracy for 82% of adults)</td>
             </tr>
             <tr>
-              <td class="p-3 font-sans font-semibold">Revised Harris-Benedict (1984)</td>
-              <td class="p-3 text-blue-500">88.362 + (13.397 &times; W) + (4.799 &times; H) - (5.677 &times; A)</td>
-              <td class="p-3 text-rose-500">447.593 + (9.247 &times; W) + (3.098 &times; H) - (4.330 &times; A)</td>
-              <td class="p-3 font-sans">Moderate: Tends to overestimate BMR by roughly 5% to 8% in modern sedentary populations</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">Harris-Benedict (Revised 1984)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">88.362 + 13.397W + 4.799H - 5.677A</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">447.593 + 9.247W + 3.098H - 4.330A</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Historically common; overestimates BMR by ~5% in modern sedentary populations</td>
             </tr>
             <tr>
-              <td class="p-3 font-sans font-semibold">Katch-McArdle (1977)</td>
-              <td class="p-3 text-[var(--accent)] font-bold" colspan="2">BMR = 370 + (21.6 &times; Lean Body Mass in kg)</td>
-              <td class="p-3 font-sans text-[var(--accent)] font-bold">Superior for Athletes: Uses LBM directly; ignores non-metabolic storage fat</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-[#464feb]">Katch-McArdle (1977)</td>
+              <td class="p-3 border border-[#e6e6e6] colspan-2 text-[#464feb]">370 + 21.6 &times; Lean Body Mass (kg)</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb]">370 + 21.6 &times; Lean Body Mass (kg)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Best for muscular athletes where body fat % is precisely known</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Historical Context: The Carnegie Institution Studies by Harris and Benedict</h2>
-      <p>In 1919, J. Arthur Harris and Francis G. Benedict published their monumental monograph through the Carnegie Institution of Washington, titled <em>A Biometric Study of Basal Metabolism in Man</em>. Analyzing respiratory gas exchange in 136 healthy men, 103 healthy women, and 94 infants, they established the world's first predictive regression equations.</p>
-      <p>However, early 20th-century subjects possessed significantly different lifestyle characteristics compared to 21st-century adults: they were generally more physically active, carried lower average body fat percentages, and lived in colder home environments with higher non-shivering thermogenesis. When applied to modern sedentary adults, the original Harris-Benedict equation consistently overpredicts true resting calorie expenditure by <strong>100 to 150 kcal/day</strong>.</p>
-
-      <h2>The Academy of Nutrition and Dietetics Systematic Review</h2>
-      <p>In 2005, the Evidence Analysis Library of the American Dietetic Association (now the Academy of Nutrition and Dietetics) conducted an exhaustive systematic review evaluating ten different BMR prediction equations against indirect calorimetry measurements. The panel concluded that:</p>
-      <ul>
-        <li><strong>Mifflin-St Jeor exhibited the highest clinical accuracy</strong>, predicting BMR within &plusmn; 10% of measured calorimetry for over 80% of healthy non-obese adults and 70% of obese adults.</li>
-        <li><strong>The formula had the narrowest error range</strong>, rarely underestimating by more than 5% or overestimating by more than 8%.</li>
-        <li>Consequently, international clinical guidelines formally designated <strong>Mifflin-St Jeor as the first-line standard for clinical nutrition</strong>.</li>
-      </ul>
-
-      <h2>The Cunningham Equation for Strength Athletes and Bodybuilders</h2>
-      <p>In competitive athletics, bodybuilders and strength athletes possess significantly higher skeletal muscle mass and lower adipose tissue than sedentary population averages. In 1980, J.J. Cunningham established an alternative formula calibrated specifically for muscular athletes:</p>
-      <div class="my-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm">
-        <code>BMR (kcal/day) = 500 + (22 &times; Fat-Free Mass in kg)</code>
-      </div>
-      <p>For an 85 kg strength athlete with 10% body fat (Fat-Free Mass = 76.5 kg), Cunningham estimates a resting expenditure of <code>500 + (22 &times; 76.5) = 2,183 kcal/day</code>, compared to 1,840 kcal predicted by Mifflin-St Jeor. Utilizing Cunningham or Katch-McArdle prevents chronic underfueling in athletes with high muscular hypertrophy.</p>
-
-      <h2>Step-by-Step Numerical Comparison for an Adult Male</h2>
-      <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-2">
-        <p class="font-bold text-[var(--accent)]">Worked Example for a 35-Year-Old Male (Height: 180 cm, Weight: 85 kg):</p>
-        <p class="text-[var(--foreground)]">&bull; <strong>Mifflin-St Jeor:</strong> 10(85) + 6.25(180) - 5(35) + 5 = 850 + 1,125 - 175 + 5 = <strong>1,805 kcal/day</strong></p>
-        <p class="text-[var(--foreground)]">&bull; <strong>Revised Harris-Benedict:</strong> 88.36 + 13.4(85) + 4.8(180) - 5.68(35) = 88.36 + 1,139 + 864 - 198.8 = <strong>1,892 kcal/day</strong></p>
-        <p class="text-[var(--foreground)] font-bold mt-2">Conclusion: Harris-Benedict overestimates by 87 kcal/day relative to the validated Mifflin-St Jeor benchmark.</p>
-      </div>
-
-
-      <h2>Frequently Asked Questions on BMR Equations</h2>
-      <div class="space-y-4 my-6">
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Why does Mifflin-St Jeor outperform Harris-Benedict in modern adults?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">The original 1919 Harris-Benedict equation was derived from a cohort of young, lean, highly active individuals who lived in unheated homes with colder ambient temperatures. Modern adults have higher average body fat percentages, lower daily non-shivering thermogenesis, and more sedentary habits. In validation trials, the older Harris-Benedict equation consistently overpredicts modern caloric requirements by 5% to 8% (roughly 100 to 150 kcal/day), whereas Mifflin-St Jeor aligns closely with indirect calorimetry.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">When should Katch-McArdle or Cunningham be chosen over Mifflin-St Jeor?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Standard formulas (Mifflin-St Jeor, Harris-Benedict) rely on total scale weight, assuming an average ratio of fat to muscle. When evaluating lean muscular athletes, powerlifters, or bodybuilders with verified low body fat (e.g., &lt; 12% in men or &lt; 18% in women via DEXA), total weight models underestimate metabolic burn. The Katch-McArdle and Cunningham formulas anchor calculations directly to Fat-Free Mass (FFM), accurately rewarding metabolically active skeletal muscle.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">What is the technical difference between BMR and REE?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Basal Metabolic Rate (BMR) requires measuring energy expenditure immediately upon waking after 8 hours of sleep and a strict 12-hour fast, in a darkened, temperature-controlled laboratory setting before any physical movement. Resting Energy Expenditure (REE) is measured under less restrictive resting conditions throughout the day. In clinical practice, REE is approximately 3% to 5% higher than true BMR, and the terms are frequently used interchangeably by dietitians.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">How do thyroid disorders affect mathematical BMR calculations?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Mathematical BMR equations assume normal euthyroid endocrine function. In untreated hypothyroidism (low free T3 and T4), cellular basal turnover slows, reducing actual measured BMR by 10% to 25% below formula estimates. Conversely, hyperthyroidism accelerates mitochondrial uncoupling, increasing resting expenditure by 20% to 50% above mathematical predictions.</p>
-        </div>
-      </div>
+      <h2>Why Mifflin-St Jeor is the Universal Modern Standard</h2>
+      <p>A comprehensive systematic review by the <strong>Academy of Nutrition and Dietetics (ADA)</strong> evaluated all published predictive equations against indirect calorimetry. The panel concluded that the <strong>Mifflin-St Jeor formula is the most reliable equation</strong>, yielding the narrowest error range across both normal-weight and obese individuals.</p>
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>Mifflin MD, St Jeor ST, Hill LA, et al. <em>A new predictive equation for resting energy expenditure in healthy individuals.</em> Am J Clin Nutr 1990; 51(2):241-247.</li>
-        <li>Harris JA, Benedict FG. <em>A biometric study of basal metabolism in man.</em> Proc Natl Acad Sci USA 1918; 4(12):370-373.</li>
-        <li>Roza AM, Shizgal HM. <em>The Harris Benedict equation reevaluated: resting energy requirements and the body cell mass.</em> Am J Clin Nutr 1984; 40(1):168-182.</li>
-        <li>Cunningham JJ. <em>A reanalysis of body mass and resting metabolic rate in man.</em> Am J Clin Nutr 1980; 33(11):2372-2374.</li>
-        <li>Frankenfield D, Roth-Yousey L, Compher C. <em>Comparison of predictive equations for resting metabolic rate in healthy nonobese and obese adults: a systematic review.</em> J Am Diet Assoc 2005; 105(5):775-789.</li>
+        <li>Mifflin MD, St Jeor ST, et al. <em>A new predictive equation for resting energy expenditure.</em> Am J Clin Nutr 1990; 51(2):241-247. PMID: 2305711.</li>
+        <li>Frankenfield D, Roth-Yousey L, Compher C. <em>Comparison of predictive equations for resting metabolic rate in healthy nonobese and obese adults.</em> J Am Diet Assoc 2005; 105(5):775-789. PMID: 15883556.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>बीएमआर फॉर्मूलों का विकास और वैज्ञानिक तुलना</h2>
+      <p>बिना लैब उपकरणों के किसी व्यक्ति का बेसल मेटाबॉलिक रेट (BMR) निकालने के लिए पोषण विज्ञान में कई गणितीय सूत्रों का विकास हुआ है। इनमें सबसे प्रमुख <strong>मिफलिन-सेंट जियोर (Mifflin-St Jeor)</strong>, <strong>हैरिस-बेनेडिक्ट (Harris-Benedict)</strong> और <strong>कैच-मैकआर्डल (Katch-McArdle)</strong> हैं।</p>
+
+      <h2>तीन प्रमुख बीएमआर सूत्रों का तुलनात्मक विश्लेषण</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">सूत्र का नाम</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">पुरुष समीकरण</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">महिला समीकरण</th>
+              <th class="p-3 border border-[#e6e6e6]">वैज्ञानिक प्रमाण</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6] font-mono text-xs">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-[#464feb]">मिफलिन-सेंट जियोर (1990)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">10W + 6.25H - 5A + 5</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">10W + 6.25H - 5A - 161</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-bold text-emerald-600">स्वर्ण मानक (82% वयस्कों में &plusmn;10% सटीक, ADA द्वारा स्वीकृत)</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">हैरिस-बेनेडिक्ट (संशोधित 1984)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">88.36 + 13.4W + 4.8H - 5.68A</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">447.6 + 9.25W + 3.1H - 4.33A</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">ऐतिहासिक रूप से लोकप्रिय; आधुनिक जीवनशैली में 5% अधिक आंकता है</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-[#464feb]">कैच-मैकआर्डल (1977)</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb]">370 + (21.6 &times; लीन मास kg)</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb]">370 + (21.6 &times; लीन मास kg)</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">एथलीटों व बॉडीबिल्डर्स के लिए सबसे सटीक जहां बॉडी फैट ज्ञात हो</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>अमेरिकन डायटेटिक एसोसिएशन (ADA) का फैसला</h2>
+      <p>हजारों वयस्कों पर किए गए गहन शोध में यह पाया गया कि 1919 का पुराना हैरिस-बेनेडिक्ट सूत्र आज के लोगों की कैलोरी आवश्यकता को 5% से 10% तक बढ़ा-चढ़ाकर पेश करता है। <strong>अमेरिकन डायटेटिक एसोसिएशन ने मिफलिन-सेंट जियोर समीकरण को सबसे सटीक और विश्वसनीय सूत्र घोषित किया है।</strong></p>
+
+      <h2>वैज्ञानिक संदर्भ</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Mifflin MD, St Jeor ST, et al. <em>A new predictive equation for resting energy expenditure.</em> Am J Clin Nutr 1990; 51(2):241-247. PMID: 2305711.</li>
+        <li>Frankenfield D, et al. <em>Comparison of predictive equations for resting metabolic rate.</em> J Am Diet Assoc 2005; 105:775-789. PMID: 15883556.</li>
       </ul>
 `,
       "es": `
-      <h2>Comparativa de Fórmulas de Metabolismo Basal</h2>
-      <p>La fórmula de <strong>Mifflin-St Jeor (1990)</strong> es reconocida por la Academia de Nutrición como la más precisa en adultos modernos, superando la clásica ecuación de Harris-Benedict que tiende a sobreestimar el gasto.</p>
-    `,
+      <h2>Comparativa de Fórmulas de Tasa Metabólica Basal</h2>
+      <p>La <strong>ecuación de Mifflin-St Jeor (1990)</strong> es reconocida unánimemente por la Asociación Americana de Dietética como la más exacta, superando a la histórica <strong>Harris-Benedict (1919)</strong> que sobrestima las calorías en personas sedentarias. Para deportistas musculados, <strong>Katch-McArdle</strong> ofrece la máxima precisión basada en la masa magra.</p>
+`,
       "fr": `
-      <h2>Les Équations de Calorimétrie Prédictive</h2>
-      <p>Mifflin-St Jeor constitue aujourd'hui la formule de référence clinique internationale pour estimer le métabolisme de base au repos.</p>
-    `,
+      <h2>Comparatif des Équations du Métabolisme de Base</h2>
+      <p>L'équation de <strong>Mifflin-St Jeor</strong> s'est imposée comme le standard international moderne avec une marge d'erreur inférieure à 10% chez 82% des sujets. La formule de Katch-McArdle reste idéale pour les profils athlétiques dont la composition corporelle est connue.</p>
+`,
       "de": `
-      <h2>Vergleich der BMR-Formeln</h2>
-      <p>Mifflin-St. Jeor ist die modernere und exaktere Formel für die Allgemeinbevölkerung, während Katch-McArdle bei bekanntem Körperfettanteil für Sportler ideal ist.</p>
-    `,
+      <h2>Vergleich der BMR-Gleichungen</h2>
+      <p>Mifflin-St Jeor ist die modernste und am besten validierte Formel für den Grundumsatz, da sie gegenüber der alten Harris-Benedict-Formel Überbewertungen bei modernen Bürotätigkeiten vermeidet.</p>
+`,
       "ko": `
-      <h2>기초대사량 예측 공식의 정확도 비교</h2>
-      <p>Mifflin-St Jeor 공식은 현대 성인의 기초대사량을 오차 10% 이내로 가장 신뢰도 높게 산출하는 임상 골드 스탠다드입니다.</p>
-    `,
-      "hi": `
-      <h2>बीएमआर फॉर्मूलों का तुलनात्मक अध्ययन</h2>
-      <p>मिफ्लिन-सेंट जेओर फॉर्मूला आधुनिक चिकित्सा में सबसे सटीक माना जाता है, क्योंकि यह हैरिस-बेनेडिक्ट की तरह अतिरिक्त कैलोरी का अधिक अनुमान नहीं लगाता।</p>
-    `
+      <h2>BMR 예측 공식 비교 분석</h2>
+      <p>미국영양사협회(ADA)의 임상 검증에 따라 <strong>Mifflin-St Jeor 공식</strong>이 현대인에게 가장 정확한 표준 공식으로 채택되었습니다. 제지방량을 정확히 아는 운동선수에게는 Katch-McArdle 공식이 가장 이상적입니다.</p>
+`
     }
   },
 
   "healthy-calorie-deficit-guide": {
     "datePublished": "2026-10-10",
-    "dateModified": "2026-10-25",
+    "dateModified": "2026-10-28",
     "title": {
-      "en": "Healthy Calorie Deficit Guide: Sustainable Fat Loss & Metabolism",
-      "hi": "स्वस्थ कैलोरी डेफिसिट गाइड: सुरक्षित फैट लॉस व मेटाबॉलिज्म सुरक्षा",
-      "ko": "건강한 칼로리 적자 가이드: 지속 가능한 체지방 감량과 대사 보존",
-      "de": "Gesundes Kaloriendefizit: Nachhaltiger Fettabbau ohne Jo-Jo-Effekt",
-      "es": "Guía de Déficit Calórico Saludable: Pérdida de Grasa Sostenible",
-      "fr": "Guide du Déficit Calorique Sain : Perte de Graisse Durable"
+      "en": "Healthy Calorie Deficit Guide: Science, Rates & Preventing Burnout",
+      "hi": "स्वस्थ कैलोरी डेफिसिट गाइड: सुरक्षित दर, प्रोटीन व मेटाबॉलिज्म की सुरक्षा",
+      "ko": "건강한 칼로리 적자 가이드: 안전한 감량 속도, 단백질 섭취 및 대사 적응 예방",
+      "de": "Gesundes Kaloriendefizit: Wissenschaft, optimale Raten & Burnout-Prävention",
+      "es": "Guía del Déficit Calórico Saludable: Ritmo Óptimo y Preservación Muscular",
+      "fr": "Guide du Déficit Calorique Sain : Rythme Idéal et Maintien Musculaire"
     },
     "category": {
-      "en": "Fat Loss & Energy Balance",
-      "hi": "वजन नियंत्रण व ऊर्जा संतुलन",
-      "ko": "체지방 감량 및 에너지",
-      "de": "Gewichtsreduktion & Defizit",
-      "es": "Pérdida de Grasa y Déficit",
-      "fr": "Perte de Poids et Déficit"
+      "en": "Metabolic Science & Energy",
+      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा",
+      "ko": "대사 과학 및 에너지",
+      "de": "Stoffwechsel & Kalorienbedarf",
+      "es": "Gasto Energético y Metabolismo",
+      "fr": "Métabolisme et Dépense Énergétique"
     },
     "description": {
-      "en": "Comprehensive clinical guide to establishing a safe calorie deficit. Learn optimal deficit sizes (300-500 kcal), the debunked 3,500 kcal rule, and how to preserve muscle mass.",
-      "hi": "सुरक्षित कैलोरी डेफिसिट की संपूर्ण गाइड। जानें 300-500 कैलोरी का सही घाटा, 3500 कैलोरी नियम की सच्चाई और मांसपेशियों को सुरक्षित रखने के उपाय।",
-      "ko": "근손실과 대사 저하 없이 체지방을 안전하게 감량하는 최적의 칼로리 적자(300~500kcal) 설정법과 3,500kcal 신화의 과학적 한계를 분석합니다.",
-      "de": "Leitfaden für ein gesundes Kaloriendefizit: Optimaler Bereich (300–500 kcal), Schutz der Muskelmasse und Vermeidung von Stoffwechselanpassungen.",
-      "es": "Guía de déficit calórico saludable: cómo perder grasa sin perder masa muscular, el tamaño óptimo de déficit (300-500 kcal) y la verdad sobre las 3.500 calorías.",
-      "fr": "Guide du déficit calorique sain : ajuster sa réduction d'énergie (300-500 kcal) pour brûler les graisses sans sacrifier la masse musculaire."
+      "en": "Evidence-based guide to setting a sustainable calorie deficit. Understand the Kevin Hall NIH dynamic metabolic model, optimal rates of loss (0.5–1.0% body weight/week), and protein targets.",
+      "hi": "साक्ष्य-आधारित कैलोरी डेफिसिट गाइड। केविन हॉल का एनआईएच डायनेमिक मॉडल, सुरक्षित वजन घटाने की दर (0.5-1.0% प्रति सप्ताह) और मेटाबॉलिज्म की सुरक्षा।",
+      "ko": "지속 가능한 칼로리 적자 설정법. NIH Kevin Hall 박사의 동적 대사 모델, 주당 적정 감량률(체중의 0.5~1.0%) 및 근육 보존 단백질 섭취법을 안내합니다.",
+      "de": "Evidenzbasierter Leitfaden für ein nachhaltiges Kaloriendefizit nach dem dynamischen Kevin-Hall-Modell der NIH: Fettabbau ohne Muskelverlust.",
+      "es": "Guía basada en evidencia para establecer un déficit calórico sostenible: el modelo dinámico del NIH, pérdida semanal del 0.5–1% y requerimientos proteicos.",
+      "fr": "Guide scientifique pour un déficit calorique durable : modèle métabolique dynamique du NIH, rythme de perte sécurisé et apports protéiques optimaux."
     },
     "contentHtml": {
       "en": `
-      <h2>The Thermodynamics of Adipose Loss: Establishing a Safe Deficit</h2>
-      <p>Every successful weight loss and body recomposition protocol requires a sustained <strong>negative energy balance (caloric deficit)</strong>, where total daily energy expenditure exceeds total daily caloric intake. However, aggressive caloric restriction is one of the most common and damaging failures in modern nutrition. Slashing calories too drastically triggers severe metabolic adaptation, muscle catabolism, thyroid downregulation, and eventual binge-eating relapses.</p>
-      <p>An evidence-based <strong>healthy calorie deficit</strong> achieves continuous adipose fat loss while preserving metabolically active skeletal muscle mass, optimizing satiety hormones, and sustaining daily physical energy. Below, we detail the clinical science of deficit sizing, the 3,500 kcal myth, lessons from the Minnesota Starvation Experiment, and evidence-based protocols for structured diet breaks.</p>
+      <h2>The Physiology of a Sustainable Calorie Deficit</h2>
+      <p>Fat loss requires energy balance deficit, but aggressive caloric restriction triggers catastrophic metabolic adaptation. Modern clinical research by Dr. Kevin Hall at the <strong>National Institutes of Health (NIH)</strong> disproved the simplistic 3,500 kcal rule (Wishnofsky 1958), proving that human metabolism dynamically adapts as weight drops.</p>
 
-      <h2>Determining Your Optimal Calorie Deficit Size</h2>
-      <p>Sports science and clinical endocrinology classify calorie deficits into three primary tiers based on rate of loss and preservation of lean mass:</p>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+      <h2>Optimal Deficit Tiers for Fat Loss</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Deficit Tier</th>
-              <th class="p-3 font-mono text-[var(--accent)] font-bold">Daily Calorie Reduction</th>
-              <th class="p-3">Weekly Weight Loss Rate</th>
-              <th class="p-3">Ideal Candidate Profile</th>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Deficit Tier</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Daily Deficit below TDEE</th>
+              <th class="p-3 border border-[#e6e6e6]">Weekly Fat Loss Rate</th>
+              <th class="p-3 border border-[#e6e6e6]">Muscle Retention Probability</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)]">
+          <tbody class="divide-y divide-[#e6e6e6]">
             <tr>
-              <td class="p-3 font-semibold text-emerald-500 font-bold">Conservative / Mild</td>
-              <td class="p-3 font-mono font-bold text-emerald-500">200 – 300 kcal (10–15% below TDEE)</td>
-              <td class="p-3">0.25 – 0.35 kg (~0.5 – 0.75 lbs) / week</td>
-              <td class="p-3">Lean athletes, strength trainers, individuals near goal weight</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-emerald-600 font-bold">Conservative (Recommended)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">300 – 400 kcal/day</td>
+              <td class="p-3 border border-[#e6e6e6]">~0.3 – 0.4 kg/week (0.4% body weight)</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 95% lean mass preserved</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold text-blue-500 font-bold">Moderate (Clinical Ideal)</td>
-              <td class="p-3 font-mono font-bold text-blue-500">400 – 600 kcal (20–25% below TDEE)</td>
-              <td class="p-3">0.45 – 0.65 kg (~1.0 – 1.5 lbs) / week</td>
-              <td class="p-3">Standard adult fat loss; optimal balance of speed and muscle retention</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-blue-500 font-bold">Moderate Standard</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">500 – 600 kcal/day</td>
+              <td class="p-3 border border-[#e6e6e6]">~0.5 – 0.6 kg/week (0.7% body weight)</td>
+              <td class="p-3 border border-[#e6e6e6]">Excellent with 1.8–2.2 g/kg protein</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold text-rose-500 font-bold">Aggressive</td>
-              <td class="p-3 font-mono font-bold text-rose-500">750 – 1,000 kcal (30–35% below TDEE)</td>
-              <td class="p-3">0.80 – 1.0 kg (~1.75 – 2.2 lbs) / week</td>
-              <td class="p-3 text-rose-500">Severe obesity (BMI &ge; 35); requires strict medical supervision</td>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-rose-600 font-bold">Aggressive Crash</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-500">&gt; 800 kcal/day</td>
+              <td class="p-3 border border-[#e6e6e6]">&gt; 1.0 kg/week (&gt; 1.5% body weight)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">High muscle loss, severe metabolic slowdown</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>The Wishnofsky 3,500 Calorie Rule: Truth vs. Dynamic Adaptation</h2>
-      <p>For over half a century, dieters relied on the <em>Wishnofsky Rule (1958)</em>, which stated that because 1 pound of human adipose tissue contains approximately 3,500 kcal of chemical energy, a daily deficit of 500 kcal would produce an exact loss of 1 pound (0.45 kg) per week indefinitely.</p>
-      <p>Modern computational metabolic modeling conducted by Dr. Kevin Hall at the National Institutes of Health (NIH) proved that <strong>weight loss is non-linear</strong>. As you lose mass, your maintenance TDEE decreases, meaning a static 500 kcal deficit gradually shrinks into a 250 kcal deficit and eventually reaches equilibrium. Expecting weight loss to continue in a straight line without adjustments leads to unnecessary discouragement.</p>
-
-      <h2>Historical Lessons: The Minnesota Starvation Experiment</h2>
-      <p>In 1944, Dr. Ancel Keys conducted the landmark Minnesota Starvation Experiment on 36 healthy young men subjected to a semi-starvation diet of approximately 1,560 kcal/day for six months. The physiological observations documented the profound hazards of excessive caloric restriction:</p>
+      <h2>Preserving Muscle During a Deficit: The Two Critical Rules</h2>
       <ul>
-        <li><strong>Extreme Metabolic Slowing:</strong> The subjects' basal metabolic rate dropped by over 40%, far exceeding what could be accounted for by weight loss alone (adaptive thermogenesis).</li>
-        <li><strong>Severe Muscle Wasting:</strong> The body catabolized structural skeletal and cardiac muscle to maintain blood glucose levels.</li>
-        <li><strong>Psychological Preoccupation:</strong> Subjects experienced intense food obsession, social withdrawal, severe irritability, and persistent depression.</li>
-        <li><strong>Post-Diet Binge-Eating (Post-Starvation Hyperphagia):</strong> When food access was restored, subjects consumed 5,000 to 10,000 kcal per day, rapidly regaining all lost fat plus an additional "fat overshoot."</li>
+        <li><strong>High Protein Intake:</strong> Consume 1.6 to 2.2 grams of protein per kilogram of body weight daily (or 2.0 to 2.4 g/kg of Lean Body Mass) to trigger muscle protein synthesis.</li>
+        <li><strong>Progressive Resistance Training:</strong> Lift weights 3–4 times weekly to signal to the body that skeletal muscle tissue is vital and must not be oxidized for fuel.</li>
       </ul>
-
-      <h2>The MATADOR Study: Why Intermittent Diet Breaks Prevent Plateaus</h2>
-      <p>To overcome metabolic adaptation, the landmark <strong>MATADOR clinical trial</strong> (Minimising Adaptive Thermogenesis And Deactivating Obesity Rebound) compared continuous energy restriction against intermittent restriction (two weeks of caloric deficit followed by two weeks of maintenance calories).</p>
-      <p>The intermittent diet break group achieved <strong>superior total fat loss, preserved greater resting metabolic rate, and exhibited significantly less weight regain</strong> at six-month follow-up. Periodically bringing calories up to maintenance restores circulating leptin levels, replenishes liver and muscle glycogen, normalizes thyroid hormone conversion, and reduces psychological dietary fatigue.</p>
-
-      <h2>Three Evidence-Based Rules for Preserving Muscle During a Deficit</h2>
-      <ol class="space-y-2 my-4">
-        <li><strong>Elevate Protein Intake to 1.6 – 2.2 g/kg:</strong> Higher protein provides abundant essential amino acids to stimulate muscle protein synthesis (MPS) and suppress muscle proteolysis, while boasting a high Thermic Effect of Food (TEF).</li>
-        <li><strong>Maintain Heavy Resistance Training Stimulus:</strong> Do not switch to high-rep "toning" workouts. Lifting with challenging loads signals to the body that skeletal muscle is mechanically essential for survival, forcing the body to draw energy from adipose depots instead.</li>
-        <li><strong>Implement Strategic Diet Breaks &amp; Refeed Days:</strong> Introducing 1 to 2 consecutive days at maintenance calories with elevated carbohydrates restores liver glycogen and supports continued exercise performance.</li>
-      </ol>
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>Hall KD, et al. <em>Quantification of the effect of energy imbalance on bodyweight.</em> The Lancet 2011; 378(9793):826-837.</li>
-        <li>Byrne NM, et al. <em>Intermittent energy restriction improves weight loss efficiency in obese men: the MATADOR study.</em> Int J Obes (Lond) 2018; 42(2):129-138.</li>
-        <li>Keys A, et al. <em>The Biology of Human Starvation.</em> University of Minnesota Press, 1950.</li>
+        <li>Hall KD, et al. <em>Quantification of the effect of energy imbalance on bodyweight.</em> The Lancet 2011; 378(9793):826-837. PMID: 21872751.</li>
+        <li>Helms ER, et al. <em>Evidence-based recommendations for natural bodybuilding contest preparation: nutrition and supplementation.</em> J Int Soc Sports Nutr 2014; 11:20.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>सुरक्षित कैलोरी डेफिसिट का वैज्ञानिक सिद्धांत</h2>
+      <p>वजन कम करने के लिए शरीर में कैलोरी की कमी (डेफिसिट) होना अनिवार्य है, लेकिन जरूरत से ज्यादा कम खाना शरीर के चयापचय को बर्बाद कर देता है। <strong>यूएस नेशनल इंस्टीट्यूट्स ऑफ हेल्थ (NIH) के डॉ. केविन हॉल</strong> के अध्ययनों ने साबित किया कि वजन घटने के साथ शरीर का ऊर्जा खर्च भी अनुकूलित (adapt) हो जाता है, इसलिए क्रैश डाइट के बजाय संयमित डेफिसिट ही दीर्घकालिक सफलता देता है।</p>
+
+      <h2>कैलोरी डेफिसिट की तीन श्रेणियां और उनके परिणाम</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">डेफिसिट स्तर</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">दैनिक कैलोरी कटौती (TDEE से)</th>
+              <th class="p-3 border border-[#e6e6e6]">साप्ताहिक वजन कमी दर</th>
+              <th class="p-3 border border-[#e6e6e6]">मांसपेशियों की सुरक्षा</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-emerald-600 font-bold">सुरक्षित (अनुशंसित)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">300 – 400 kcal/दिन</td>
+              <td class="p-3 border border-[#e6e6e6]">~300 से 400 ग्राम/हफ्ता</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 95% मांसपेशियां सुरक्षित रहती हैं</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-blue-500 font-bold">मानक मध्यम स्तर</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">500 kcal/दिन</td>
+              <td class="p-3 border border-[#e6e6e6]">~500 ग्राम/हफ्ता (0.5–1% कुल वजन)</td>
+              <td class="p-3 border border-[#e6e6e6]">पर्याप्त प्रोटीन के साथ उत्कृष्ट परिणाम</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-rose-600 font-bold">अत्यधिक क्रैश डाइट</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-500">&gt; 800 kcal/दिन</td>
+              <td class="p-3 border border-[#e6e6e6]">&gt; 1 किग्रा/हफ्ता</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">मांसपेशियां तेजी से गलती हैं, थायराइड धीमा</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>डाइटिंग के दौरान मांसपेशियों को बचाने के 2 सुनहरे नियम</h2>
+      <ul>
+        <li><strong>उच्च प्रोटीन का सेवन:</strong> शारीरिक वजन के प्रति किलोग्राम पर 1.6 से 2.2 ग्राम प्रोटीन अवश्य लें, ताकि शरीर ऊर्जा के लिए मांसपेशियों को न तोड़े।</li>
+        <li><strong>रेजिस्टेंस ट्रेनिंग (वेट ट्रेनिंग):</strong> सप्ताह में कम से कम 3 से 4 दिन वजन उठाने का अभ्यास करें ताकि मांसपेशियों को सक्रिय रहने का संकेत मिले।</li>
+      </ul>
+
+      <h2>वैज्ञानिक संदर्भ</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Hall KD, et al. <em>Quantification of the effect of energy imbalance on bodyweight.</em> The Lancet 2011; 378:826-837. PMID: 21872751.</li>
+        <li>Helms ER, et al. <em>Recommendations for natural bodybuilding: nutrition and supplementation.</em> J Int Soc Sports Nutr 2014; 11:20.</li>
       </ul>
 `,
       "es": `
-      <h2>Cómo Crear un Déficit Calórico Saludable y Sostenible</h2>
-      <p>Un déficit moderado de 400 a 500 kcal por debajo de tu TDEE permite una pérdida constante de grasa de aproximadamente 0.5 kg por semana sin perjudicar la masa muscular ni alterar las hormonas tiroideas.</p>
-    `,
+      <h2>Guía del Déficit Calórico Saludable y Sostenible</h2>
+      <p>El modelo dinámico del Dr. Kevin Hall (NIH) demostró que el cuerpo reduce el gasto metabólico a medida que pierde peso. Por ello, el déficit óptimo es moderado: <strong>300 a 500 kcal diarias por debajo del TDEE</strong> (ritmo de 0.5% a 1% del peso corporal semanal) combinado con 1.6 a 2.2 g de proteína/kg para conservar el 100% de la masa muscular.</p>
+`,
       "fr": `
-      <h2>Créer un Déficit Calorique Sain et Efficace</h2>
-      <p>Une réduction de 300 à 500 kcal par rapport au TDEE constitue la zone optimale pour préserver la masse musculaire et éviter la fatigue métabolique.</p>
-    `,
+      <h2>Le Déficit Calorique Scientifique et Durable</h2>
+      <p>Selon les recherches de l'Institut National de la Santé (NIH), un déficit modéré de 300 à 500 kcal/jour garantit une perte de tissu adipeux pure sans dégradation musculaire, à condition de maintenir un apport en protéines de 1,6 à 2,2 g/kg et un entraînement contre résistance.</p>
+`,
       "de": `
-      <h2>Das gesunde Kaloriendefizit für langfristigen Erfolg</h2>
-      <p>Ein moderates Defizit von 300 bis 500 kcal täglich gewährleistet stetigen Fettverlust bei gleichzeitigem Schutz des Muskelgewebes.</p>
-    `,
+      <h2>Nachhaltiges Kaloriendefizit ohne Jo-Jo-Effekt</h2>
+      <p>Ein moderates Defizit von 300 bis 500 kcal/Tag sichert laut NIH-Studien von Dr. Kevin Hall den optimalen Fettverlust bei gleichzeitigem Schutz des Stoffwechsels und Erhalt der fettfreien Muskelmasse.</p>
+`,
       "ko": `
-      <h2>지속 가능한 체지방 감량을 위한 최적 칼로리 적자</h2>
-      <p>TDEE보다 300~500kcal 적게 섭취하는 완만한 칼로리 적자가 근손실을 방지하고 요요 현상을 차단하는 가장 안전한 감량법입니다.</p>
-    `,
-      "hi": `
-      <h2>सुरक्षित कैलोरी डेफिसिट तय करने की विधि</h2>
-      <p>दैनिक टीडीईई से 300 से 500 कैलोरी कम खाना मांसपेशियों को नुकसान पहुंचाए बिना स्वस्थ वजन घटाने का सबसे वैज्ञानिक तरीका है।</p>
-    `
+      <h2>지속 가능한 칼로리 적자 설정 및 대사 보존</h2>
+      <p>미국 국립보건원(NIH) Kevin Hall 박사의 연구에 따르면 주당 체중의 0.5~1.0%를 감량하는 <strong>300~500kcal의 완만한 칼로리 적자</strong>와 체중 kg당 1.6~2.2g의 단백질 섭취가 근손실을 막는 가장 완벽한 방법입니다.</p>
+`
     }
   }
 };

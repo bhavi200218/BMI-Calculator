@@ -272,7 +272,7 @@ const current = data[lang] || data.en;
           </p>
         </div>
         <div class="pt-2 flex items-center text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] gap-1 group-hover:translate-x-1 transition-transform">
-          <span>Open Tool</span>
+          <span>{lang === 'hi' ? 'कैलकुलेटर खोलें' : lang === 'es' ? 'Abrir herramienta' : lang === 'fr' ? "Ouvrir l'outil" : lang === 'de' ? 'Rechner öffnen' : lang === 'ko' ? '도구 열기' : 'Open Tool'}</span>
           <span>→</span>
         </div>
       </a>

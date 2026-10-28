@@ -21,8 +21,8 @@ const contactSchema = {
     },
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Banswara",
-      "addressRegion": "Rajasthan",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
       "addressCountry": "IN"
     },
     "contactPoint": {
@@ -91,7 +91,7 @@ const contactSchema = {
                     <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
                     <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Localisation &amp; Siège</p>
                   </div>
-                  <p class="text-lg font-display font-black text-[var(--foreground)]">Banswara, Rajasthan, India</p>
+                  <p class="text-lg font-display font-black text-[var(--foreground)]">Ahmedabad, Gujarat, India</p>
                   <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
                     Opérations d'ingénierie numérique en santé (Plateforme disponible en 6 langues)
                   </p>
@@ -170,7 +170,7 @@ const contactSchema = {
                 </div>
                 <div>
                   <span class="font-bold text-[var(--foreground)] block">Siège &amp; Opérations:</span>
-                  <span class="text-[var(--muted-foreground)] font-medium">Banswara, Rajasthan, India</span>
+                  <span class="text-[var(--muted-foreground)] font-medium">Ahmedabad, Gujarat, India</span>
                 </div>
                 <div>
                   <span class="font-bold text-[var(--foreground)] block">Contact Officiel:</span>
@@ -247,4 +247,54 @@ const contactSchema = {
               </div>
   
     </main>
+
+<style>
+  .contact-table-wrap {
+    overflow-x: auto;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background-color: var(--card);
+  }
+  .contact-matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+  .contact-matrix-table a {
+    text-decoration: none;
+    color: #464feb;
+    font-weight: 600;
+  }
+  .contact-matrix-table a:hover {
+    text-decoration: underline;
+  }
+  .contact-matrix-table tr th,
+  .contact-matrix-table tr td {
+    border: 1px solid #e6e6e6;
+    padding: 0.85rem 1rem;
+    vertical-align: top;
+    text-align: left;
+  }
+  .contact-matrix-table tr th {
+    background-color: #f5f5f5;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1f2937;
+  }
+  :global(.dark) .contact-matrix-table tr th,
+  :global(.dark) .contact-matrix-table tr td {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  :global(.dark) .contact-matrix-table tr th {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #f3f4f6;
+  }
+  :global(.dark) .contact-matrix-table a {
+    color: #818cf8;
+  }
+</style>
+
 </Layout>

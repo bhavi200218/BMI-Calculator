@@ -286,40 +286,93 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <p>한국을 포함한 동아시아 성인은 동일한 체중에서도 내장지방 축적이 빠르기 때문에 과체중 기준이 23.0 kg/m², 비만 기준이 25.0 kg/m²로 하향 조정 적용됩니다.</p>
     `,
     hi: `
-      <h2>बॉडी मास इंडेक्स (BMI) की परिभाषा और इतिहास</h2>
-      <p><strong>बॉडी मास इंडेक्स (BMI)</strong> व्यक्ति के वजन और कद के अनुपात को मापने वाला अंतरराष्ट्रीय स्तर पर स्वीकृत क्लिनिकल स्क्रीनिंग पैमाना है। इसे 1830 और 1850 के बीच बेल्जियम के खगोलशास्त्री और सांख्यिकीविद् <strong>एडोल्फ क्वेटलेट</strong> ने विकसित किया था, जिसे पहले <em>क्वेटलेट इंडेक्स</em> कहा जाता था। 1972 में अमेरिकी वैज्ञानिक एंसेल कीज के शोध के बाद विश्व स्वास्थ्य संगठन (WHO) ने इसे मानक स्वास्थ्य सूचकांक के रूप में अपनाया।</p>
+      <h2>बॉडी मास इंडेक्स (बीएमआई) क्या है?</h2>
+      <p><strong>बॉडी मास इंडेक्स (Body Mass Index / BMI)</strong> एक अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त नैदानिक स्क्रीनिंग पैमाना है, जो किसी व्यक्ति के कुल शारीरिक वजन और उसकी लंबाई (कद) के गणितीय अनुपात का मूल्यांकन करता है। चिकित्सा और सार्वजनिक स्वास्थ्य में इसका प्राथमिक उद्देश्य यह निर्धारित करना है कि क्या व्यक्ति का वजन उसके कद के अनुपात में एक स्वस्थ, चिकित्सकीय रूप से सुरक्षित सीमा में आता है।</p>
+      <p>19वीं सदी के शुरुआती दौर (1832) में बेल्जियम के प्रसिद्ध गणितज्ञ और समाजशास्त्री <strong>लैम्बर्ट एडोल्फ जैक्स क्वेटलेट (Lambert Adolphe Jacques Quetelet)</strong> ने मानव शरीर के अनुपात पर शोध करते हुए इस फॉर्मूले को तैयार किया था, जिसे मूल रूप से <em>'क्वेटलेट इंडेक्स' (Quetelet Index)</em> कहा जाता था। इसके बाद 1972 में प्रसिद्ध अमेरिकी शोधकर्ता <strong>एन्सेल कीज (Ancel Keys)</strong> ने अपने ऐतिहासिक बहु-राष्ट्रीय अध्ययन में यह सिद्ध किया कि क्वेटलेट का यह गणितीय सूचकांक विभिन्न जनसंख्या समूहों में शारीरिक वसा के स्तर से सबसे सटीक सहसंबंध दर्शाता है। इसके बाद से <strong>विश्व स्वास्थ्य संगठन (WHO)</strong> और <strong>यूएस सेंटर फॉर डिजीज कंट्रोल एंड प्रिवेंशन (CDC)</strong> ने इसे वयस्क आबादी के वजन वर्गीकरण के लिए वैश्विक मानक घोषित किया।</p>
 
-      <h2>बीएमआई निकालने का आधिकारिक फॉर्मूला</h2>
-      <ul>
-        <li><strong>मीट्रिक फॉर्मूला:</strong> <code>BMI = वजन (किग्रा) / [कद (मीटर)]²</code></li>
-        <li><strong>इंपीरियल फॉर्मूला:</strong> <code>BMI = [वजन (पाउंड) &times; 703] / [कद (इंच)]²</code></li>
-      </ul>
+      <h2>बीएमआई का आधिकारिक गणितीय फॉर्मूला: मीट्रिक एवं इंपीरियल</h2>
+      <p>बीएमआई की गणना व्यक्ति के कुल शारीरिक द्रव्यमान (वजन) को उसके कद (लंबाई) के वर्ग से विभाजित करके की जाती है। अंतरराष्ट्रीय स्तर पर इसे किलोग्राम प्रति वर्ग मीटर (kg/m²) में व्यक्त किया जाता है:</p>
 
-      <h2>विश्व स्वास्थ्य संगठन (WHO) की आधिकारिक श्रेणियां</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
-        <table class="w-full text-left border-collapse text-sm">
+      <div class="my-6 p-5 rounded-2xl border border-[#e6e6e6] bg-[var(--card)] space-y-4">
+        <h3 class="text-base font-bold text-[#464feb] uppercase tracking-wider">आधिकारिक गणना सूत्र</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--background)]">
+            <p class="font-bold text-sm text-[var(--foreground)]">मीट्रिक प्रणाली (मानक SI इकाई):</p>
+            <p class="font-mono text-base font-bold text-[#464feb] mt-2">BMI = वजन (kg) / [कद (m)]²</p>
+            <p class="text-xs text-[var(--muted-foreground)] mt-2"><strong>उदाहरण:</strong> यदि वजन 70 किग्रा और लंबाई 1.75 मीटर है: 70 / (1.75 × 1.75) = 70 / 3.0625 = <strong>22.86 kg/m²</strong> (सामान्य वजन)।</p>
+          </div>
+          <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--background)]">
+            <p class="font-bold text-sm text-[var(--foreground)]">इंपीरियल प्रणाली (पाउंड व इंच):</p>
+            <p class="font-mono text-base font-bold text-[#464feb] mt-2">BMI = [वजन (lbs) × 703] / [कद (inches)]²</p>
+            <p class="text-xs text-[var(--muted-foreground)] mt-2"><strong>उदाहरण:</strong> यदि वजन 154 lbs और लंबाई 69 इंच (5'9") है: (154 × 703) / (69 × 69) = 108262 / 4761 = <strong>22.74 kg/m²</strong>।</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>विश्व स्वास्थ्य संगठन (WHO) की मानक वयस्क बीएमआई श्रेणियां</h2>
+      <p>20 वर्ष और उससे अधिक उम्र के वयस्कों के लिए, डब्ल्यूएचओ ने दीर्घकालिक मृत्यु दर और रुग्णता जोखिम के आधार पर निम्नलिखित श्रेणियां निर्धारित की हैं:</p>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">श्रेणी</th>
-              <th class="p-3 font-mono text-[var(--accent)]">बीएमआई सीमा (kg/m²)</th>
-              <th class="p-3">स्वास्थ्य जोखिम प्रोफाइल</th>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">बीएमआई श्रेणी</th>
+              <th class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">मानक सीमा (kg/m²)</th>
+              <th class="p-3 border border-[#e6e6e6]">स्वास्थ्य स्थिति एवं नैदानिक जोखिम प्रोफाइल</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)]">
-            <tr><td class="p-3 font-semibold">अत्यधिक कम वजन</td><td class="p-3 font-mono">&lt; 16.0</td><td class="p-3">गंभीर कुपोषण और कमजोर रोग प्रतिरोधक क्षमता</td></tr>
-            <tr><td class="p-3 font-semibold">मध्यम कम वजन</td><td class="p-3 font-mono">16.0 – 16.9</td><td class="p-3">पोषक तत्वों की कमी और हड्डियों की कमजोरी</td></tr>
-            <tr><td class="p-3 font-semibold">हल्का कम वजन</td><td class="p-3 font-mono">17.0 – 18.4</td><td class="p-3">शरीर में कम ऊर्जा भंडार</td></tr>
-            <tr><td class="p-3 font-semibold text-[var(--accent)]">स्वस्थ सामान्य वजन</td><td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 24.9</td><td class="p-3">हृदय रोग और मधुमेह का सबसे कम जोखिम</td></tr>
-            <tr><td class="p-3 font-semibold">अधिक वजन (ओवरवेट)</td><td class="p-3 font-mono">25.0 – 29.9</td><td class="p-3">उच्च रक्तचाप और कोलेस्ट्रॉल का बढ़ता जोखिम</td></tr>
-            <tr><td class="p-3 font-semibold">मोटापा (श्रेणी I)</td><td class="p-3 font-mono">30.0 – 34.9</td><td class="p-3">टाइप-2 डायबिटीज का काफी अधिक खतरा</td></tr>
-            <tr><td class="p-3 font-semibold">गंभीर मोटापा (श्रेणी II)</td><td class="p-3 font-mono">35.0 – 39.9</td><td class="p-3">हृदय रोग और स्लीप एप्निया का गंभीर जोखिम</td></tr>
-            <tr><td class="p-3 font-semibold">अत्यधिक मोटापा (श्रेणी III)</td><td class="p-3 font-mono">&ge; 40.0</td><td class="p-3">तत्काल चिकित्सीय उपचार की आवश्यकता</td></tr>
+          <tbody class="divide-y border-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-amber-600 font-bold">कम वजन (अंडरवेट)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-600 font-bold">&lt; 18.5</td>
+              <td class="p-3 border border-[#e6e6e6]">सूक्ष्म पोषक तत्वों की कमी, ऑस्टियोपोरोसिस, कमजोर इम्युनिटी और एनीमिया का बढ़ा जोखिम।</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-emerald-600 font-bold">सामान्य / स्वस्थ वजन</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600 font-bold">18.5 – 24.9</td>
+              <td class="p-3 border border-[#e6e6e6]">कार्डियोमेटाबॉलिक रोगों, स्ट्रोक और समयपूर्व मृत्यु का सबसे कम सांख्यिकीय जोखिम।</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-amber-500 font-bold">अधिक वजन (प्री-ओबीस)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-500 font-bold">25.0 – 29.9</td>
+              <td class="p-3 border border-[#e6e6e6]">उच्च रक्तचाप, इंसुलिन प्रतिरोध, डिस्लिपिडेमिया और जोड़ों के ऑस्टियोआर्थराइटिस का मध्यम जोखिम।</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-rose-500 font-bold">मोटापा श्रेणी I (मध्यम)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-500 font-bold">30.0 – 34.9</td>
+              <td class="p-3 border border-[#e6e6e6]">टाइप-2 डायबिटीज, कोरोनरी धमनी रोग और स्लीप एपनिया का उच्च नैदानिक जोखिम।</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-rose-600 font-bold">मोटापा श्रेणी II (गंभीर)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600 font-bold">35.0 – 39.9</td>
+              <td class="p-3 border border-[#e6e6e6]">फैटी लिवर, संवहनी सूजन, हृदय विफलता और कुछ कैंसर का अत्यधिक उच्च जोखिम।</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-purple-600 font-bold">मोटापा श्रेणी III (अत्यधिक/रुग्ण)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-purple-600 font-bold">&ge; 40.0</td>
+              <td class="p-3 border border-[#e6e6e6]">तत्काल चिकित्सा या बैरिएट्रिक हस्तक्षेप की आवश्यकता; जीवन प्रत्याशा में 8-10 वर्ष की संभावित कमी।</td>
+            </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>भारतीयों और एशियाई आबादी के लिए विशेष मानक</h2>
-      <p>आईसीएमआर और डब्ल्यूएचओ के अनुसार, एशियाई लोगों में कम वजन पर भी आंतरिक चर्बी अधिक होती है। इसलिए भारतीयों के लिए 23.0 से 24.9 kg/m² को ओवरवेट और 25.0 kg/m² या उससे अधिक को मोटापा माना जाता है।</p>
+      <h2>एशियाई आबादी के लिए संशोधित कट-ऑफ (The Asian BMI Modification)</h2>
+      <p>विश्व स्वास्थ्य संगठन की विशेषज्ञ परामर्श समिति (WHO Asian BMI Consultation, <em>The Lancet 2004</em>) ने पाया कि दक्षिण एशियाई (भारतीय उपमहाद्वीप) और पूर्वी एशियाई व्यक्तियों में समान बीएमआई स्तर पर कोकेशियान (यूरोपीय) आबादी की तुलना में 3% से 5% अधिक शारीरिक वसा और अत्यधिक आंतरिक पेट की चर्बी (विसरल फैट) होती है। इसलिए एशियाई वयस्कों के लिए संवेदनशीलता सीमाएं कम रखी गई हैं:</p>
+      <ul>
+        <li><strong>एशियाई सामान्य वजन:</strong> 18.5 से 22.9 kg/m²</li>
+        <li><strong>एशियाई अधिक वजन (कार्रवाई बिंदु):</strong> 23.0 से 27.4 kg/m²</li>
+        <li><strong>एशियाई मोटापा:</strong> &ge; 27.5 kg/m²</li>
+      </ul>
+
+      <h2>बीएमआई के लाभ और चिकित्सीय सीमाएं</h2>
+      <p>बीएमआई का सबसे बड़ा लाभ इसकी सरलता, गैर-आक्रामक प्रकृति और शून्य लागत है। यह प्राथमिक चिकित्सा में त्वरित स्वास्थ्य स्क्रीनिंग के लिए एक अत्यंत प्रभावी उपकरण है। हालांकि, बीएमआई केवल कुल वजन मापता है; यह वसा (फैट मास) और मांसपेशियों (लीन मास) के बीच अंतर नहीं कर सकता। इसलिए पुख्ता स्वास्थ्य मूल्यांकन के लिए इसे कमर की परिधि और रक्त परीक्षणों के साथ देखा जाना चाहिए।</p>
+
+      <h2>वैज्ञानिक संदर्भ एवं साक्ष्य</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>World Health Organization. <em>Physical status: The use and interpretation of anthropometry.</em> <a href="https://apps.who.int/iris/handle/10665/37003" class="text-[#464feb] underline">WHO Technical Report Series 854; 1995.</a></li>
+        <li>Keys A, et al. <em>Indices of relative weight and obesity.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/4650929/" class="text-[#464feb] underline">J Chronic Dis 1972; 25(6):329-343. PMID: 4650929</a>.</li>
+        <li>WHO Expert Consultation. <em>Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/14726171/" class="text-[#464feb] underline">Lancet 2004; 363(9403):157-163. PMID: 14726171</a>.</li>
+      </ul>
     `
   }
 },
@@ -516,19 +569,69 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <p>영국 국립보건임상연구원(NICE)은 허리둘레를 신장으로 나눈 <strong>허리둘레-신장 비율(WHtR)</strong>을 0.50 미만으로 유지할 것을 강력히 권고합니다.</p>
     `,
     hi: `
-      <h2>क्या बीएमआई पूरी तरह से सटीक है? क्लिनिकल विश्लेषण</h2>
-      <p><strong>बॉडी मास इंडेक्स (BMI)</strong> वजन और ऊंचाई का एक सरल गणितीय अनुपात है। लेकिन आधुनिक चिकित्सा में इसकी सबसे बड़ी कमी यह है कि <strong>यह शरीर की चर्बी (Fat) और मांसपेशियों (Muscles) के बीच कोई अंतर नहीं करता</strong>।</p>
-      <p>यह केवल कुल वजन मापता है, जिससे एथलीटों और बुजुर्गों के स्वास्थ्य का गलत आकलन होने की संभावना रहती है।</p>
+      <h2>क्या बीएमआई सटीक है? आधुनिक चिकित्सा जगत का विश्लेषण</h2>
+      <p>बॉडी मास इंडेक्स (BMI) वर्तमान चिकित्सा प्रणाली में सबसे व्यापक रूप से इस्तेमाल किया जाने वाला शारीरिक स्क्रीनिंग टूल है। विश्व स्वास्थ्य संगठन (WHO) और नेशनल इंस्टीट्यूट्स ऑफ हेल्थ (NIH) द्वारा समर्थित होने के बावजूद, एंडोक्रिनोलॉजी, कार्डियोलॉजी और स्पोर्ट्स मेडिसिन में इसकी सटीकता को लेकर लगातार सवाल उठते रहे हैं।</p>
+      <p>इसकी मूल नैदानिक समस्या यह है कि <strong>बीएमआई शरीर के अतिरिक्त वजन को मापता है, अतिरिक्त चर्बी (Adiposity) को नहीं</strong>। यह मांसपेशियों, हड्डियों, आंतरिक अंगों, पानी और वसा को एक ही संख्या में मिला देता है, जिससे कई बार भ्रामक परिणाम मिलते हैं।</p>
 
-      <h2>बीएमआई की प्रमुख कमियां</h2>
-      <ul>
-        <li><strong>एथलीट और बॉडीबिल्डर:</strong> भारी मांसपेशियों के कारण एक स्वस्थ खिलाड़ी का बीएमआई 30 से ऊपर (मोटापा) आ सकता है, जबकि उसमें फैट केवल 10% हो।</li>
-        <li><strong>नॉर्मल-वेट मोटापा (मोटापा छिपा होना):</strong> कम मांसपेशियों और ज्यादा पेट की चर्बी वाले व्यक्ति का बीएमआई 22 (सामान्य) आ सकता है, लेकिन उसे डायबिटीज का खतरा पूरा रहता है।</li>
-        <li><strong>फैट का स्थान:</strong> बीएमआई यह नहीं बताता कि चर्बी कूल्हों पर है या दिल और लिवर के आसपास (विसरल फैट)।</li>
+      <h2>बीएमआई की 3 प्रमुख नैदानिक विफलताएं (Primary Failure Modes)</h2>
+      <div class="my-6 space-y-4">
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">1. एथलीट व बॉडीबिल्डर पैराडॉक्स (फॉल्स पॉजिटिव)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">कंकाल की मांसपेशियों का घनत्व (1.06 g/cm³) वसा ऊतक (0.90 g/cm³) से अधिक होता है। भारी व्यायाम और वेट ट्रेनिंग करने वाले एथलीटों में मांसपेशियों का भार अधिक होता है। उदाहरण के लिए, 180 सेमी लंबे और 98 किग्रा वजनी रग्बी खिलाड़ी का बीएमआई <strong>30.2 kg/m²</strong> (मोटापा श्रेणी I) आएगा, भले ही उसके शरीर में केवल 10% बॉडी फैट हो और उसका कोलेस्ट्रॉल व रक्तचाप बिल्कुल स्वस्थ हो।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">2. सरकोपेनिक मोटापा व सामान्य-वजन मोटापा (फॉल्स नेगेटिव)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">यह बीएमआई की सबसे खतरनाक विफलता है। बुजुर्गों या गतिहीन व्यक्तियों में उम्र के साथ मांसपेशियां घट जाती हैं (सरकोपेनिया), जिससे स्केल पर वजन सामान्य रहता है। ऐसे व्यक्ति का बीएमआई <strong>22.0 kg/m²</strong> (पूरी तरह सामान्य) हो सकता है, लेकिन उसके शरीर में 35% से अधिक वसा और गंभीर इंसुलिन प्रतिरोध हो सकता है। इसे चिकित्सा में <em>'मेटाबॉलिकली ओबीस नॉर्मल-वेट' (MONW)</em> या <em>'टॉफी' (TOFI - Thin Outside, Fat Inside)</em> कहा जाता है।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">3. वसा के वितरण की उपेक्षा (विसरल बनाम सबक्यूटेनियस फैट)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">बीएमआई यह नहीं बता सकता कि चर्बी कूल्हों पर जमा है या पेट के अंदर लिवर और आंतों के चारों ओर। पेट के अंदर की आंतरिक चर्बी (विसरल फैट) सीधे पोर्टल वेन में फैटी एसिड छोड़ती है और दिल के दौरे का कारण बनती है, जबकि कूल्हों की चर्बी तुलनात्मक रूप से सुरक्षित होती है।</p>
+        </div>
+      </div>
+
+      <h2>तुलनात्मक विश्लेषण: बीएमआई बनाम आधुनिक नैदानिक तकनीकें</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">माप विधि</th>
+              <th class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">नैदानिक सटीकता</th>
+              <th class="p-3 border border-[#e6e6e6]">मांसपेशी बनाम वसा अंतर</th>
+              <th class="p-3 border border-[#e6e6e6]">व्यावहारिक उपलब्धता व लागत</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y border-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-rose-600 font-bold">बॉडी मास इंडेक्स (BMI)</td>
+              <td class="p-3 border border-[#e6e6e6] text-amber-600 font-bold">मध्यम (जनसंख्या स्क्रीनिंग)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">शून्य (केवल कुल वजन मापता है)</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">100% निःशुल्क, त्वरित और सर्वसुलभ</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-blue-500 font-bold">कमर-कद अनुपात (WHtR)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">उच्च (हृदय व डायबिटीज जोखिम)</td>
+              <td class="p-3 border border-[#e6e6e6]">अप्रत्यक्ष (केंद्रीय वसा संचय दर्शाता है)</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">अत्यंत सुलभ (केवल एक साधारण इंची टेप)</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-emerald-600 font-bold">DEXA बॉडी स्कैन</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">स्वर्ण मानक (Gold Standard)</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">सटीक ग्राम स्तर पर फैट, मसल व बोन डेंसिटी</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">महंगा, क्लिनिकल लैब की आवश्यकता</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>अमेरिकन मेडिकल एसोसिएशन (AMA 2023) की आधिकारिक नीति</h2>
+      <p>जून 2023 में, <strong>अमेरिकन मेडिकल एसोसिएशन (AMA)</strong> ने बीएमआई के उपयोग पर एक ऐतिहासिक नीति प्रस्ताव पारित किया। AMA ने चिकित्सकों को निर्देश दिया कि बीएमआई का उपयोग कभी भी अकेले नैदानिक उपकरण के रूप में न किया जाए। इसके स्थान पर बीएमआई को हमेशा <em>कमर की परिधि, विसरल वसा सूचकांक, आनुवंशिकी और रक्त जैव-मार्करों (HbA1c, लिपिड प्रोफाइल)</em> के संयोजन में उपयोग किया जाना चाहिए।</p>
+
+      <h2>वैज्ञानिक संदर्भ एवं साक्ष्य</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Romero-Corral A, et al. <em>Accuracy of body mass index in diagnosing obesity in the adult general population.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/18283284/" class="text-[#464feb] underline">Int J Obes (Lond) 2008; 32(6):959-966. PMID: 18283284</a>.</li>
+        <li>American Medical Association. <em>AMA adopts new policy on BMI as a measure in medicine.</em> <a href="https://www.ama-assn.org/press-center/press-releases/ama-adopts-new-policy-bmi-measure-medicine" class="text-[#464feb] underline">AMA Press Release; June 2023.</a></li>
+        <li>Ashwell M, et al. <em>Waist-to-height ratio is a better screening tool than waist circumference and BMI for adult cardiometabolic risk factors: systematic review and meta-analysis.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/22434878/" class="text-[#464feb] underline">Obes Rev 2012; 13(3):275-286. PMID: 22434878</a>.</li>
       </ul>
-
-      <h2>बेहतर विकल्प</h2>
-      <p>कमर और कद का अनुपात (Waist-to-Height Ratio) स्वास्थ्य का अधिक सटीक पैमाना है। आपकी कमर का माप आपकी लंबाई के आधे से कम होना चाहिए (अनुपात &lt; 0.50)।</p>
     `
   }
 },
@@ -812,14 +915,96 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       </ul>
     `,
       "hi": `
-      <h2>आधिकारिक बीएमआई चार्ट और स्वास्थ्य श्रेणियां</h2>
-      <p>विश्व स्वास्थ्य संगठन (WHO) द्वारा प्रमाणित <strong>बीएमआई चार्ट</strong> किसी भी व्यक्ति की लंबाई और वजन के अनुसार उसके स्वास्थ्य स्तर की तुरंत पहचान करता है।</p>
-      <h2>मुख्य 4 श्रेणियां</h2>
+      <h2>आधिकारिक बीएमआई संदर्भ चार्ट एवं स्वास्थ्य श्रेणियां</h2>
+      <p>एक मानकीकृत <strong>बीएमआई संदर्भ चार्ट (BMI Chart)</strong> जटिल जैव-सांख्यिकी को एक सरल, दृश्य ग्रिड में बदल देता है। अपने कद की पंक्ति और वर्तमान वजन के कॉलम के मिलान बिंदु को देखकर कोई भी व्यक्ति तुरंत अपनी स्वास्थ्य श्रेणी और चयापचय जोखिम का सटीक पता लगा सकता है।</p>
+
+      <h2>वयस्क बीएमआई और वजन संदर्भ तालिका (Height-to-Weight Matrix)</h2>
+      <p>नीचे दी गई तालिका विभिन्न कद श्रेणियों के लिए विश्व स्वास्थ्य संगठन (WHO) के अनुसार न्यूनतम और अधिकतम स्वस्थ वजन सीमाएं प्रदर्शित करती है:</p>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">कद (फीट/इंच व सेमी)</th>
+              <th class="p-3 border border-[#e6e6e6] text-amber-600 font-bold">कम वजन (&lt;18.5)</th>
+              <th class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">स्वस्थ वजन (18.5–24.9)</th>
+              <th class="p-3 border border-[#e6e6e6] text-amber-500 font-bold">अधिक वजन (25.0–29.9)</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">मोटापा (&ge;30.0)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y border-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'0" (152 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-600">&lt; 42.7 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600 font-bold">42.7 – 57.5 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-500">57.6 – 69.1 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600 font-bold">&ge; 69.2 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'2" (157 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-600">&lt; 45.6 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600 font-bold">45.6 – 61.4 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-500">61.5 – 73.7 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600 font-bold">&ge; 73.8 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'4" (163 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-600">&lt; 49.2 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600 font-bold">49.2 – 66.2 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-500">66.3 – 79.5 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600 font-bold">&ge; 79.6 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'6" (168 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-600">&lt; 52.2 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600 font-bold">52.2 – 70.3 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-500">70.4 – 84.4 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600 font-bold">&ge; 84.5 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'8" (173 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-600">&lt; 55.4 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600 font-bold">55.4 – 74.5 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-500">74.6 – 89.5 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600 font-bold">&ge; 89.6 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'10" (178 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-600">&lt; 58.6 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600 font-bold">58.6 – 78.9 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-500">79.0 – 94.7 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600 font-bold">&ge; 94.8 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">6'0" (183 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-600">&lt; 62.0 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600 font-bold">62.0 – 83.4 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-500">83.5 – 100.1 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600 font-bold">&ge; 100.2 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">6'2" (188 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-600">&lt; 65.4 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600 font-bold">65.4 – 88.0 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-500">88.1 – 105.7 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600 font-bold">&ge; 105.8 kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>बीएमआई चार्ट के 4 रंग-कोडेड स्वास्थ्य जोखिम चतुर्थांश</h2>
       <ul>
-        <li><strong>कम वजन (&lt; 18.5):</strong> कुपोषण और रोग प्रतिरोधक क्षमता में कमी का संकेत।</li>
-        <li><strong>सामान्य वजन (18.5 – 24.9):</strong> हृदय रोग और डायबिटीज का सबसे कम खतरा।</li>
-        <li><strong>अधिक वजन (25.0 – 29.9):</strong> जोड़ों पर भार और ब्लड प्रेशर का बढ़ता जोखिम।</li>
-        <li><strong>मोटापा (&ge; 30.0):</strong> मेटाबॉलिक सिंड्रोम का उच्च खतरा, चिकित्सीय सलाह आवश्यक।</li>
+        <li><strong>नीला / पीला (&lt; 18.5):</strong> कुपोषण और मांसपेशियों के क्षरण का जोखिम। कैलोरी और प्रोटीन बढ़ाने की आवश्यकता।</li>
+        <li><strong>हरा (18.5 – 24.9):</strong> इष्टतम चयापचय स्वास्थ्य। इस सीमा को संतुलित आहार और नियमित व्यायाम से बनाए रखें।</li>
+        <li><strong>नारंगी (25.0 – 29.9):</strong> प्रारंभिक चेतावनी संकेत। पेट की चर्बी और ब्लड प्रेशर की नियमित जांच आवश्यक।</li>
+        <li><strong>लाल (&ge; 30.0):</strong> गंभीर कार्डियोमेटाबॉलिक जोखिम। योग्य चिकित्सक से परामर्श और सुनियोजित वजन घटाने का कार्यक्रम अनिवार्य।</li>
+      </ul>
+
+      <h2>वैज्ञानिक संदर्भ एवं साक्ष्य</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>World Health Organization. <em>Obesity: preventing and managing the global epidemic.</em> <a href="https://apps.who.int/iris/handle/10665/42330" class="text-[#464feb] underline">WHO Technical Report Series 894; 2000.</a></li>
+        <li>Flegal KM, et al. <em>Association of all-cause mortality with overweight and obesity using standard body mass index categories.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/23280227/" class="text-[#464feb] underline">JAMA 2013; 309(1):71-82. PMID: 23280227</a>.</li>
       </ul>
     `
     }
@@ -1038,11 +1223,93 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       </ul>
     `,
       "hi": `
-      <h2>कद के अनुसार स्वस्थ वजन निकालने की वैज्ञानिक विधि</h2>
-      <p><strong>स्वस्थ वजन</strong> एक निश्चित संख्या नहीं, बल्कि एक सुरक्षित सीमा है जिसमें बीएमआई 18.5 से 24.9 के बीच रहता है।</p>
+      <h2>कद के अनुसार स्वस्थ वजन: क्लिनिकल फॉर्मूला व संदर्भ तालिका</h2>
+      <p>निवारक चिकित्सा (Preventive Medicine) में सबसे महत्वपूर्ण सिद्धांतों में से एक यह समझना है कि <strong>'स्वस्थ वजन' कोई एकल जादुई संख्या नहीं है</strong>। मानव शरीर में हड्डियों का ढांचा (Small, Medium, Large Bone Frame), मांसपेशियों का घनत्व और द्रव संतुलन हर व्यक्ति में भिन्न होता है। इसलिए नैदानिक रूप से स्वस्थ वजन हमेशा एक वैज्ञानिक सीमा (Range) के रूप में निर्धारित किया जाता है, जो सामान्य बीएमआई (18.5 से 24.9 kg/m²) के अनुरूप होती है।</p>
+
+      <h2>कद और स्वस्थ वजन की व्यापक संदर्भ तालिका</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">कद (इंच / सेमी)</th>
+              <th class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">स्वस्थ बीएमआई सीमा (किग्रा)</th>
+              <th class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">स्वस्थ बीएमआई सीमा (lbs)</th>
+              <th class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">डेवाइन आदर्श वजन (पुरुष / महिला)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y border-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">4'10" (147 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">40.0 – 53.8 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">88.2 – 118.6 lbs</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">45.5 kg / 41.0 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'0" (152 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">42.7 – 57.5 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">94.1 – 126.8 lbs</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">50.0 kg / 45.5 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'2" (157 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">45.6 – 61.4 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">100.5 – 135.4 lbs</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">54.6 kg / 50.1 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'4" (163 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">49.2 – 66.2 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">108.5 – 145.9 lbs</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">59.2 kg / 54.7 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'6" (168 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">52.2 – 70.3 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">115.1 – 155.0 lbs</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">63.8 kg / 59.3 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'8" (173 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">55.4 – 74.5 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">122.1 – 164.2 lbs</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">68.4 kg / 63.9 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5'10" (178 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">58.6 – 78.9 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">129.2 – 173.9 lbs</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">73.0 kg / 68.5 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">6'0" (183 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">62.0 – 83.4 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">136.7 – 183.9 lbs</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">77.6 kg / 73.1 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">6'2" (188 सेमी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">65.4 – 88.0 kg</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600">144.2 – 194.0 lbs</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb]">82.2 kg / 77.7 kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>आदर्श शारीरिक वजन (IBW) के 4 नैदानिक फॉर्मूले</h2>
+      <p>अस्पतालों में दवा की खुराक (जैसे कीमोथेरेपी या एनेस्थीसिया) और वेंटिलेटर सेटिंग्स तय करने के लिए डॉक्टर निम्नलिखित 4 ऐतिहासिक आदर्श वजन फॉर्मूलों का उपयोग करते हैं:</p>
       <ul>
-        <li><strong>न्यूनतम स्वस्थ वजन (किग्रा):</strong> <code>18.5 &times; [लंबाई (मीटर)]²</code></li>
-        <li><strong>अधिकतम स्वस्थ वजन (किग्रा):</strong> <code>24.9 &times; [लंबाई (मीटर)]²</code></li>
+        <li><strong>डेवाइन फॉर्मूला (Devine 1974 - स्वर्ण मानक):</strong> पुरुष: 50 kg + 2.3 kg प्रति 5 फीट से ऊपर प्रति इंच; महिला: 45.5 kg + 2.3 kg प्रति इंच।</li>
+        <li><strong>रॉबिन्सन फॉर्मूला (Robinson 1983):</strong> पुरुष: 52 kg + 1.9 kg प्रति इंच; महिला: 49 kg + 1.7 kg प्रति इंच।</li>
+        <li><strong>मिलर फॉर्मूला (Miller 1983):</strong> पुरुष: 56.2 kg + 1.41 kg प्रति इंच; महिला: 53.1 kg + 1.36 kg प्रति इंच।</li>
+        <li><strong>हैमवी फॉर्मूला (Hamwi 1964):</strong> पुरुष: 48 kg + 2.7 kg प्रति इंच; महिला: 45.5 kg + 2.2 kg प्रति इंच।</li>
+      </ul>
+
+      <h2>वैज्ञानिक संदर्भ एवं साक्ष्य</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Devine BJ. <em>Gentamicin therapy.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/4365738/" class="text-[#464feb] underline">Drug Intell Clin Pharm 1974; 8:650-655.</a></li>
+        <li>Robinson JD, et al. <em>Determination of ideal body weight for drug dosage calculations.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/6869387/" class="text-[#464feb] underline">Am J Hosp Pharm 1983; 40(6):1016-1019. PMID: 6869387</a>.</li>
+        <li>Pai MP, Paloucek FP. <em>The origin of the "ideal" body weight equations.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/11075335/" class="text-[#464feb] underline">Ann Pharmacother 2000; 34(9):1066-1069. PMID: 11075335</a>.</li>
       </ul>
     `
     }
@@ -1257,15 +1524,76 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <p>성인 BMI 공식은 남녀 공통으로 적용되지만, 여성은 생식 호르몬 기능 유지를 위해 남성보다 필수 체지방률이 약 8~12%포인트 더 높게 형성됩니다.</p>
     `,
       "hi": `
-      <h2>पुरुषों और महिलाओं के बीएमआई में शारीरिक अंतर</h2>
-      <p>डब्ल्यूएचओ की श्रेणियां unisex हैं, लेकिन हार्मोनल संरचना के कारण महिलाओं में पुरुषों की तुलना में 8% से 12% अधिक प्राकृतिक फैट होना पूरी तरह सामान्य और स्वस्थ माना जाता है।</p>
+      <h2>पुरुषों और महिलाओं के लिए बीएमआई: शारीरिक अंतर व वसा वितरण</h2>
+      <p>क्लिनिकल एंथ्रोपोमेट्री में अक्सर यह सवाल पूछा जाता है कि क्या पुरुषों और महिलाओं के लिए अलग-अलग बीएमआई फॉर्मूले होने चाहिए? यद्यपि विश्व स्वास्थ्य संगठन (WHO) का मानक बीएमआई फॉर्मूला लिंग-तटस्थ (Unisex) है, लेकिन <strong>पुरुषों और महिलाओं की शारीरिक संरचना और हार्मोनल प्रोफाइल में भारी जैविक अंतर होता है</strong>।</p>
+
+      <h2>आवश्यक शारीरिक वसा (Essential Body Fat) में मूलभूत अंतर</h2>
+      <p>मानव शरीर में जीवन रक्षा, तंत्रिका तंत्र की सुरक्षा और हार्मोन उत्पादन के लिए न्यूनतम आवश्यक वसा की आवश्यकता होती है:</p>
+      <ul>
+        <li><strong>पुरुषों में आवश्यक वसा:</strong> केवल <strong>3% से 5%</strong>। पुरुषों में टेस्टोस्टेरोन हार्मोन अधिक मांसपेशी द्रव्यमान (Muscle Mass) और हड्डियों के घनत्व को बढ़ावा देता है।</li>
+        <li><strong>महिलाओं में आवश्यक वसा:</strong> कम से कम <strong>10% से 13%</strong>। महिलाओं में एस्ट्रोजेन और प्रोजेस्टेरोन हार्मोन प्रजनन क्षमता, स्तन ऊतक और गर्भावस्था के पोषण के लिए वसा के उच्च स्तर को अनिवार्य बनाते हैं।</li>
+      </ul>
+      <p>इसका नैदानिक अर्थ यह है कि समान 22.5 kg/m² बीएमआई होने पर भी, एक सामान्य महिला के शरीर में एक सामान्य पुरुष की तुलना में स्वाभाविक रूप से <strong>8% से 12% अधिक वसा</strong> होगी, जो पूरी तरह स्वस्थ और जैविक रूप से अनिवार्य है।</p>
+
+      <h2>वसा वितरण पैटर्न: एंड्रॉइड बनाम गाइनॉइड मोटापा</h2>
+      <div class="my-6 space-y-3">
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">1. एंड्रॉइड पैटर्न (सेब का आकार - पुरुषों में आम)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">टेस्टोस्टेरोन और कोर्टिसोल के प्रभाव से पुरुषों में अतिरिक्त वसा मुख्य रूप से पेट के क्षेत्र और आंतरिक अंगों (लिवर, आंतों) के चारों ओर जमा होती है। यह विसरल वसा उच्च रक्तचाप, ट्राइग्लिसराइड्स और कोरोनरी धमनी रोग का सीधा कारण बनती है।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[#464feb]">2. गाइनॉइड पैटर्न (नाशपाती का आकार - महिलाओं में आम)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">एस्ट्रोजेन हार्मोन के कारण प्री-मेनोपॉजल महिलाओं में वसा मुख्य रूप से नितंबों, कूल्हों और जांघों पर सबक्यूटेनियस परत के रूप में जमा होती है। यह वसा मेटाबॉलिक रूप से सुरक्षात्मक होती है और हृदय रोगों से बचाती है। हालांकि, रजोनिवृत्ति (Menopause) के बाद एस्ट्रोजेन घटने पर महिलाओं में भी वसा पेट पर जमा होने लगती है।</p>
+        </div>
+      </div>
+
+      <h2>लिंग-विशिष्ट नैदानिक सीमाएं: कमर परिधि व कमर-कूल्हा अनुपात (WHR)</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">माप पैमाना</th>
+              <th class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">पुरुष (सुरक्षित सीमा)</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">महिला (सुरक्षित सीमा)</th>
+              <th class="p-3 border border-[#e6e6e6]">उच्च जोखिम सीमा</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y border-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">कमर की परिधि (अंतरराष्ट्रीय)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">&lt; 94 सेमी (37 इंच)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-500 font-bold">&lt; 80 सेमी (31.5 इंच)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600">&ge; 102 सेमी (पुरुष) / &ge; 88 सेमी (महिला)</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">कमर की परिधि (एशियाई मानक)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">&lt; 90 सेमी (35.4 इंच)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-500 font-bold">&lt; 80 सेमी (31.5 इंच)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600">&ge; 90 सेमी (पुरुष) / &ge; 80 सेमी (महिला)</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">कमर-कूल्हा अनुपात (WHR)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">&lt; 0.90</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-500 font-bold">&lt; 0.85</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600">&ge; 1.0 (पुरुष) / &ge; 0.85 (महिला)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>वैज्ञानिक संदर्भ एवं साक्ष्य</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>World Health Organization. <em>Waist circumference and waist-hip ratio: report of a WHO expert consultation.</em> <a href="https://apps.who.int/iris/handle/10665/44583" class="text-[#464feb] underline">WHO Guidelines 2008.</a></li>
+        <li>Jackson AS, Pollock ML. <em>Generalized equations for predicting body density of men.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/7403453/" class="text-[#464feb] underline">Br J Nutr 1978; 40(3):497-504. PMID: 7403453</a>.</li>
+        <li>Jackson AS, et al. <em>Generalized equations for predicting body density of women.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/6298501/" class="text-[#464feb] underline">Med Sci Sports Exerc 1980; 12(3):175-181. PMID: 6298501</a>.</li>
+      </ul>
     `
     }
   },
 
   "bmi-by-age": {
     "datePublished": "2026-04-15",
-    "dateModified": "2026-10-25",
+    "dateModified": "2026-10-28",
     "title": {
       "en": "BMI by Age: Lifespan Trajectory, Sarcopenia & Senior Guidelines",
       "hi": "उम्र के अनुसार बीएमआई: जीवन के पड़ाव, मांसपेशी क्षय और बुजुर्गों के दिशानिर्देश",
@@ -1327,45 +1655,45 @@ export const bmiArticles: Record<string, BlogArticleData> = {
 
       <h2>Age-Stratified Recommended BMI Reference Targets</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
-        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+        <table style="width: 100%; text-align: left; border-collapse: collapse; font-size: 0.875rem;">
           <thead>
-            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Age Bracket</th>
-              <th class="p-3 text-emerald-500 font-bold">Optimal Longevity BMI Target</th>
-              <th class="p-3">Primary Anthropometric Focus</th>
-              <th class="p-3">Clinical Screening Priorities</th>
+            <tr style="background-color: #f5f5f5;">
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Age Bracket</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981; background-color: #f5f5f5;">Optimal Longevity BMI Target</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Primary Anthropometric Focus</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Clinical Screening Priorities</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[var(--border)] font-mono">
+          <tbody>
             <tr>
-              <td class="p-3 font-sans font-semibold">18 – 35 Years</td>
-              <td class="p-3 text-emerald-500 font-bold">19.0 – 24.5 kg/m²</td>
-              <td class="p-3 font-sans">Cardiorespiratory fitness, muscular development</td>
-              <td class="p-3 font-sans">Baseline lipid panels, blood pressure monitoring</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">18 – 35 Years</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">19.0 – 24.5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Cardiorespiratory fitness, muscular development</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Baseline lipid panels, blood pressure monitoring</td>
             </tr>
             <tr>
-              <td class="p-3 font-sans font-semibold">36 – 54 Years</td>
-              <td class="p-3 text-emerald-500 font-bold">20.5 – 25.5 kg/m²</td>
-              <td class="p-3 font-sans">Visceral fat prevention, waist-to-height ratio &lt; 0.50</td>
-              <td class="p-3 font-sans">Fasting blood glucose, HbA1c, liver function tests</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">36 – 54 Years</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">20.5 – 25.5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Visceral fat prevention, waist-to-height ratio &lt; 0.50</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Fasting blood glucose, HbA1c, liver function tests</td>
             </tr>
             <tr>
-              <td class="p-3 font-sans font-semibold">55 – 64 Years</td>
-              <td class="p-3 text-emerald-500 font-bold">22.0 – 26.5 kg/m²</td>
-              <td class="p-3 font-sans">Preservation of skeletal muscle, joint preservation</td>
-              <td class="p-3 font-sans">Cardiovascular stress testing, carotid ultrasound</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">55 – 64 Years</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">22.0 – 26.5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Preservation of skeletal muscle, joint preservation</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Cardiovascular stress testing, carotid ultrasound</td>
             </tr>
             <tr>
-              <td class="p-3 font-sans font-semibold">65 – 74 Years</td>
-              <td class="p-3 text-emerald-500 font-bold">23.5 – 28.0 kg/m²</td>
-              <td class="p-3 font-sans">Sarcopenia prevention, balance, functional mobility</td>
-              <td class="p-3 font-sans">DEXA bone density scan, grip strength dynamometry</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">65 – 74 Years</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">23.5 – 28.0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Sarcopenia prevention, balance, functional mobility</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">DEXA bone density scan, grip strength dynamometry</td>
             </tr>
             <tr>
-              <td class="p-3 font-sans font-semibold text-[var(--accent)]">75+ Years</td>
-              <td class="p-3 text-emerald-500 font-bold">24.0 – 29.0 kg/m²</td>
-              <td class="p-3 font-sans">Nutritional density, fall prevention, frailty avoidance</td>
-              <td class="p-3 font-sans">Mini Nutritional Assessment (MNA), albumin screening</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600; color: #464feb;">75+ Years</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">24.0 – 29.0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Nutritional density, fall prevention, frailty avoidance</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Mini Nutritional Assessment (MNA), albumin screening</td>
             </tr>
           </tbody>
         </table>
@@ -1388,19 +1716,172 @@ export const bmiArticles: Record<string, BlogArticleData> = {
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>Winter JE, MacInnis RJ, Wattanapenpaiboon N, Nowson CA. <em>BMI and all-cause mortality in older adults: a meta-analysis.</em> Am J Clin Nutr 2014; 99(4):875-890.</li>
-        <li>Cruz-Jentoft AJ, Bahat G, Bauer J, et al. <em>Sarcopenia: revised European consensus on definition and diagnosis.</em> Age Ageing 2019; 48(1):16-31.</li>
-        <li>Volkert D, Beck AM, Cederholm T, et al. <em>ESPEN guideline on clinical nutrition and hydration in geriatrics.</em> Clin Nutr 2019; 38(1):10-47.</li>
+        <li>Winter JE, MacInnis RJ, Wattanapenpaiboon N, Nowson CA. <em><a href="https://pubmed.ncbi.nlm.nih.gov/24451310/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">BMI and all-cause mortality in older adults: a meta-analysis.</a></em> Am J Clin Nutr 2014; 99(4):875-890. PMID: 24451310.</li>
+        <li>Cruz-Jentoft AJ, Bahat G, Bauer J, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/30312372/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">Sarcopenia: revised European consensus on definition and diagnosis.</a></em> Age Ageing 2019; 48(1):16-31. PMID: 30312372.</li>
+        <li>Volkert D, Beck AM, Cederholm T, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/30352776/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">ESPEN guideline on clinical nutrition and hydration in geriatrics.</a></em> Clin Nutr 2019; 38(1):10-47. PMID: 30352776.</li>
       </ul>
 `,
       "es": `
-      <h2>Cómo Cambia el IMC a lo Largo de las Etapas de la Vida</h2>
-      <p>La composición corporal cambia con cada década. En personas mayores de 65 años, los estudios epidemiológicos demuestran que una reserva moderada de peso (IMC de 24 a 28 kg/m²) protege contra fracturas óseas y enfermedades agudas, un fenómeno conocido como la <strong>paradoja de la obesidad geriátrica</strong>.</p>
-    `,
+      <h2>La Trayectoria a lo Largo de la Vida: Cómo la Edad Transforma la Interpretación del IMC</h2>
+      <p>La composición corporal evoluciona profundamente en cada década de la vida. Aunque la fórmula estándar del Índice de Masa Corporal (IMC)—peso corporal en kilogramos dividido por la estatura en metros al cuadrado—se mantiene constante desde los 20 hasta los 100 años, su <strong>interpretación clínica debe adaptarse a los cambios biológicos propios de cada etapa vital</strong>. Lo que representa un IMC óptimo para un atleta joven de 22 años puede significar desnutrición aguda o fragilidad en un adulto mayor de 82 años.</p>
+
+      <h2>Las Cuatro Grandes Etapas de la Evolución Antropométrica</h2>
+      <div class="my-6 space-y-4">
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">1. Adultez Temprana (20 a 39 Años): Máxima Masa Ósea y Muscular</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">El rango saludable estándar de la OMS de <strong>18,5 a 24,9 kg/m²</strong> ofrece su mayor precisión diagnóstica en esta fase, cuando la densidad mineral ósea y la masa muscular esquelética alcanzan su pico biológico.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">2. Adultez Media (40 a 64 Años): Ralentización Metabólica y Grasa Visceral</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">El gasto metabólico basal disminuye entre un 1% y 2% por década. Los cambios hormonales favorecen el depósito de grasa visceral abdominal a expensas de la masa muscular magra.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">3. Tercera Edad (65 a 74 Años): Riesgo de Obesidad Sarcopénica</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Aparece la pérdida involuntaria de masa muscular (sarcopenia). Las dietas hipocalóricas severas no supervisadas están contraindicadas porque aumentan la fragilidad y el riesgo de caídas.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">4. Vejez Avanzada (75+ Años): Prevención de Fragilidad y Caquexia</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Un IMC inferior a 22 kg/m² se asocia fuertemente con mayor mortalidad, fracturas de cadera y complicaciones infecciosas. Preservar las reservas nutricionales es la máxima prioridad médica.</p>
+        </div>
+      </div>
+
+      <h2>La Paradoja de la Obesidad Geriátrica</h2>
+      <p>Estudios epidemiológicos a gran escala demuestran que en adultos mayores de 65 años, la menor tasa de mortalidad por todas las causas se sitúa entre <strong>25,0 y 29,9 kg/m²</strong> (zona clasificada tradicionalmente como sobrepeso). Esta reserva metabólica protege contra infecciones agudas, hospitalizaciones y fracturas graves por impacto mecánico.</p>
+
+      <h2>Objetivos de Referencia de IMC por Grupo de Edad</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table style="width: 100%; text-align: left; border-collapse: collapse; font-size: 0.875rem;">
+          <thead>
+            <tr style="background-color: #f5f5f5;">
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Grupo de Edad</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981; background-color: #f5f5f5;">IMC Óptimo de Longevidad</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Foco Antropométrico</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Prioridades de Cribado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">18 – 35 Años</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">19,0 – 24,5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Capacidad cardiorrespiratoria y masa muscular</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Perfil lipídico basal, presión arterial</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">36 – 54 Años</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">20,5 – 25,5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Control de grasa visceral (cintura/estatura &lt; 0,50)</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Glucemia en ayunas, HbA1c, enzimas hepáticas</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">55 – 64 Años</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">22,0 – 26,5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Preservación musculoesquelética y articular</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Pruebas de esfuerzo, ecografía carotídea</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">65 – 74 Años</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">23,5 – 28,0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Prevención de sarcopenia, equilibrio funcional</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Densitometría DEXA, dinamometría de agarre</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600; color: #464feb;">75+ Años</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">24,0 – 29,0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Densidad nutricional y prevención de caídas</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Mini Nutritional Assessment (MNA), albúmina</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Compresión de la Estatura Ligada a la Edad</h2>
+      <p>Debido a la deshidratación de los discos vertebrales, los adultos pierden entre 1 y 2 cm de estatura por década tras los 40 años. Como la estatura está al cuadrado en el denominador del IMC, esta pérdida eleva artificialmente el valor entre 1,0 y 1,5 unidades sin que haya aumento real de grasa corporal.</p>
+
+      <h2>Referencias Científicas</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Winter JE, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/24451310/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">BMI and all-cause mortality in older adults: a meta-analysis.</a></em> Am J Clin Nutr 2014; PMID: 24451310.</li>
+        <li>Cruz-Jentoft AJ, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/30312372/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">Sarcopenia: revised European consensus.</a></em> Age Ageing 2019; PMID: 30312372.</li>
+      </ul>
+`,
       "fr": `
-      <h2>L'Évolution de l'IMC au Fil des Âges et le Paradoxe Gériatrique</h2>
-      <p>Chez les personnes de plus de 65 ans, un IMC légèrement plus élevé (entre 23,5 et 28 kg/m²) est associé à une meilleure survie en cas d'infection ou d'intervention chirurgicale.</p>
-    `,
+      <h2>La Trajectoire du Cycle de Vie : Comment l'Âge Influence l'Interprétation de l'IMC</h2>
+      <p>La composition corporelle évolue continuellement à chaque étape de l'existence. Si la formule de base de l'Indice de Masse Corporelle (poids en kg divisé par la taille en mètres au carré) demeure constante, son <strong>interprétation clinique doit impérativement s'adapter aux modifications physiologiques liées à l'âge</strong>.</p>
+
+      <h2>Les Quatre Grandes Étapes Anthropométriques</h2>
+      <div class="my-6 space-y-4">
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">1. Jeune Adulte (20 à 39 Ans) : Pic Musculaire et Densité Osseuse</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">L'intervalle de référence de l'OMS (<strong>18,5 à 24,9 kg/m²</strong>) présente ici sa valeur diagnostique optimale.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">2. Âge Mûr (40 à 64 Ans) : Ralentissement Métabolique et Graisse Viscérale</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Le métabolisme de base décline de 1 à 2 % par décennie, avec une redistribution adipeuse abdominale.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">3. Seniors (65 à 74 Ans) : Prévention de la Sarcopénie</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">L'obésité sarcopénique (faible masse musculaire et masse grasse élevée) impose de proscrire les régimes restrictifs drastiques non suivis.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">4. Grand Âge (75+ Ans) : Lutte Contre la Dénutrition et la Fragilité</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Un IMC inférieur à 22 kg/m² constitue un signal d'alerte clinique majeur nécessitant une évaluation gériatrique immédiate.</p>
+        </div>
+      </div>
+
+      <h2>Le Paradoxe de l'Obésité chez les Seniors</h2>
+      <p>Chez les adultes de plus de 65 ans, la mortalité globale la plus faible est observée dans une zone comprise entre <strong>25,0 et 29,9 kg/m²</strong>. Ce léger surplus protège contre les fractures de hanche en absorbant les chocs et fournit une réserve d'énergie vitale en cas d'infection respiratoire ou d'opération chirurgicale.</p>
+
+      <h2>Valeurs Cibles de Référence de l'IMC selon l'Âge</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table style="width: 100%; text-align: left; border-collapse: collapse; font-size: 0.875rem;">
+          <thead>
+            <tr style="background-color: #f5f5f5;">
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Tranche d'Âge</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981; background-color: #f5f5f5;">IMC Optimal de Longévité</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Priorité Anthropométrique</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Examens Cliniques</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">18 – 35 Ans</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">19,0 – 24,5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Condition cardiorespiratoire et masse maigre</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Bilan lipidique, tension artérielle</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">36 – 54 Ans</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">20,5 – 25,5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Prévention de la graisse viscérale</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Glycémie à jeun, HbA1c, bilan hépatique</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">55 – 64 Ans</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">22,0 – 26,5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Maintien musculaire et articulaire</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Épreuve d'effort, écho-Doppler carotidien</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">65 – 74 Ans</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">23,5 – 28,0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Prévention de la sarcopénie et équilibre</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Ostéodensitométrie DEXA, dynamométrie</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600; color: #464feb;">75+ Ans</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">24,0 – 29,0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Densité nutritionnelle, prévention des chutes</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Mini Nutritional Assessment (MNA), albuminémie</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Références Scientifiques</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Winter JE, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/24451310/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">BMI and all-cause mortality in older adults: a meta-analysis.</a></em> Am J Clin Nutr 2014; PMID: 24451310.</li>
+        <li>Volkert D, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/30352776/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">ESPEN guideline on clinical nutrition in geriatrics.</a></em> Clin Nutr 2019; PMID: 30352776.</li>
+      </ul>
+`,
       "de": `
       <h2>Die Lebensspannen-Trajektorie: Wie das Alter die BMI-Interpretation verändert</h2>
       <p>Die Körperzusammensetzung des Menschen ist kein statischer Zustand, sondern unterliegt in jedem Lebensjahrzehnt physiologischen Transformationen. Während die mathematische Formel des Body-Mass-Index (Körpergewicht in kg geteilt durch Körpergröße in Metern zum Quadrat) für alle Altersgruppen von 20 bis 100 Jahren identisch bleibt, muss die <strong>medizinische Interpretation zwingend an altersbedingte biologische Veränderungen angepasst werden</strong>. Was für einen 22-jährigen Athleten ein optimaler BMI ist, kann bei einem 82-jährigen Senior bereits auf eine gefährliche Mangelernährung und Gebrechlichkeit hindeuten.</p>
@@ -1413,32 +1894,260 @@ export const bmiArticles: Record<string, BlogArticleData> = {
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
           <h3 class="text-base font-bold text-[var(--accent)]">2. Mittleres Erwachsenenalter (40 bis 64 Jahre): Metabolischer Wandel & viszerale Fettumverteilung</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Ab dem 40. Lebensjahr sinkt der Ruhe-Grundumsatz um etwa 1 bis 2 % pro Dekade. Hormonelle Umstellungen (Andropause bei Männern, Menopause bei Frauen) begünstigen die Einlagerung von viszeralem Fett im Bauchraum bei gleichzeitig schleichendem Abbau peripherer Muskelmasse. Ein unverändertes Körpergewicht kann hier über eine ungünstige Veränderung des Körperfettanteils hinwegtäuschen.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">Ab dem 40. Lebensjahr sinkt der Ruhe-Grundumsatz um etwa 1 bis 2 % pro Dekade. Hormonelle Umstellungen begünstigen die Einlagerung von viszeralem Fett im Bauchraum bei gleichzeitig schleichendem Abbau peripherer Muskelmasse.</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
           <h3 class="text-base font-bold text-[var(--accent)]">3. Höheres Erwachsenenalter (65 bis 74 Jahre): Risiko der sarkopenischen Adipositas</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Im frühen Seniorenalter nimmt die Effizienz der muskulären Proteinsynthese ab. Ohne gezieltes Krafttraining verliert der Körper kontinuierlich Muskelmasse (Sarkopenie). Radikale Reduktionsdiäten sind in dieser Lebensphase streng kontraindiziert, da sie den Muskelabbau beschleunigen und das Sturzrisiko erhöhen.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">Im frühen Seniorenalter nimmt die Effizienz der muskulären Proteinsynthese ab. Ohne gezieltes Krafttraining verliert der Körper kontinuierlich Muskelmasse (Sarkopenie). Radikale Reduktionsdiäten sind in dieser Lebensphase kontraindiziert, da sie den Muskelabbau beschleunigen und das Sturzrisiko erhöhen.</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
           <h3 class="text-base font-bold text-[var(--accent)]">4. Hohes Seniorenalter (ab 75 Jahren): Schutz vor Gebrechlichkeit und Auszehrung</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">In dieser Phase ist ein unbeabsichtigter Gewichtsverlust (BMI &lt; 22 kg/m²) ein ernstzunehmendes Warnsignal. Ausreichende Energiereserven schützen vor Komplikationen bei Infektionen, Operationen und schenkelhalsnahen Frakturen.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">In dieser Phase ist ein unbeabsichtigter Gewichtsverlust (BMI &lt; 22 kg/m²) ein ernstzunehmendes Warnsignal. Ausreichende Energiereserves schützen vor Komplikationen bei Infektionen, Operationen und schenkelhalsnahen Frakturen.</p>
         </div>
       </div>
 
       <h2>Das geriatrische Adipositas-Paradoxon</h2>
       <p>Internationale geriatrische Studien belegen konsistent das sogenannte <strong>Adipositas-Paradoxon</strong>: Bei Senioren über 65 Jahren liegt die geringste Gesamtsterblichkeit nicht im schlanken Bereich von 20 bis 22 kg/m², sondern in der leichten Übergewichtszone von <strong>25,0 bis 29,9 kg/m²</strong>. Ein moderates Fettgewebspolster dient als überlebenswichtige Stoffwechselreserve bei akuten Erkrankungen und federt mechanische Erschütterungen bei Stürzen effektiv ab.</p>
 
+      <h2>Altersstratifizierte BMI-Zielwerte für optimale Langlebigkeit</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table style="width: 100%; text-align: left; border-collapse: collapse; font-size: 0.875rem;">
+          <thead>
+            <tr style="background-color: #f5f5f5;">
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Altersgruppe</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981; background-color: #f5f5f5;">Optimaler BMI-Bereich</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Anthropometrischer Fokus</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Klinische Screening-Prioritäten</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">18 – 35 Jahre</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">19,0 – 24,5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Kardiorespiratorische Fitness, Muskelaufbau</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Basislipidprofil, Blutdrucküberwachung</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">36 – 54 Jahre</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">20,5 – 25,5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Prävention viszeraler Adipositas (Taille-zu-Größe &lt; 0,50)</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Nüchternblutzucker, HbA1c, Leberwerte</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">55 – 64 Jahre</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">22,0 – 26,5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Erhalt der Skelettmuskulatur und Gelenkschonung</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Belastungs-EKG, Karotis-Ultraschall</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">65 – 74 Jahre</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">23,5 – 28,0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Sarkopenie-Prävention, Gleichgewicht, Mobilität</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">DEXA-Knochendichtemessung, Handkraftmessung</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600; color: #464feb;">75+ Jahre</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">24,0 – 29,0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Nährstoffdichte, Sturzprophylaxe, Vermeidung von Frailty</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Mini Nutritional Assessment (MNA), Serumalbumin</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <h2>Einfluss der altersbedingten Körpergrößenabnahme</h2>
       <p>Durch die Dehydratation der Bandscheiben und osteoporotische Veränderungen der Wirbelsäule verlieren Erwachsene ab dem 40. Lebensjahr etwa 1 bis 2 cm Körpergröße pro Dekade. Da die Körpergröße im BMI-Nenner quadriert wird, steigt der errechnete BMI rein rechnerisch um 1,0 bis 1,5 Einheiten an, selbst wenn das tatsächliche Fettgewebe völlig konstant geblieben ist.</p>
-    `,
+
+      <h2>Wissenschaftliche Referenzen</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Winter JE, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/24451310/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">BMI and all-cause mortality in older adults: a meta-analysis.</a></em> Am J Clin Nutr 2014; PMID: 24451310.</li>
+        <li>Cruz-Jentoft AJ, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/30312372/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">Sarcopenia: revised European consensus.</a></em> Age Ageing 2019; PMID: 30312372.</li>
+      </ul>
+`,
       "ko": `
-      <h2>생애주기별 BMI 해석과 노인 비만의 역설</h2>
-      <p>65세 이상 고령층에서는 약간의 체중 여유(BMI 24~28 kg/m²)가 골절 예방과 급성 질환 시 생존율 향상에 기여하는 '비만의 역설'이 관찰됩니다.</p>
-    `,
+      <h2>생애주기 궤적: 연령이 체질량지수(BMI) 해석에 미치는 임상적 영향</h2>
+      <p>신체 조성(Body Composition)은 생애 전 주기에 걸쳐 끊임없이 변화합니다. 성인 표준 BMI 공식(체중 kg ÷ 신장 m²)은 수학적으로 동일하지만, <strong>그 의학적 해석은 연령대별 생물학적 변화에 반드시 맞춰져야 합니다</strong>. 22세 청년에게 이상적인 BMI가 82세 고령자에게는 심각한 영양실조와 노쇠(Frailty)의 징후가 될 수 있습니다.</p>
+
+      <h2>연령대별 4대 신체 조성 변화 단계</h2>
+      <div class="my-6 space-y-4">
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">1. 초기 성인기 (20~39세): 최고 골밀도 및 근육 발달기</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">골밀도와 골격근량이 정점에 달하는 시기입니다. 세계보건기구(WHO) 기준 <strong>18.5~24.9 kg/m²</strong>가 가장 정확한 건강 지표로 작용합니다.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">2. 중년기 (40~64세): 대사 저하 및 내장지방 재분포</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">기초대사량이 10년마다 1~2%씩 감소하며 호르몬 변화로 인해 복부 내장지방이 급증하고 근육량은 서서히 감소합니다.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">3. 초기 고령기 (65~74세): 근감소성 비만(Sarcopenic Obesity) 위험</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">단백질 합성 능력이 저하되어 근감소증이 발생하기 쉽습니다. 무리한 저칼로리 다이어트는 근육 손실과 낙상 위험을 초래하므로 피해야 합니다.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">4. 후기 고령기 (75세 이상): 체중 감소 및 쇠약 예방</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">BMI 22 kg/m² 미만은 감염증 및 고관절 골절 후 사망 위험을 크게 높입니다. 체중 감량보다 충분한 영양 비축이 최우선입니다.</p>
+        </div>
+      </div>
+
+      <h2>노인 비만의 역설 (Geriatric Obesity Paradox)</h2>
+      <p>65세 이상 노년층에서는 가벼운 과체중 구간인 <strong>25.0~29.9 kg/m²</strong>에서 전체 원인 사망률이 가장 낮게 나타납니다. 적절한 지방층은 낙상 시 충격을 흡수해 골절을 예방하고, 급성 질환 시 생명을 지키는 대사 에너지 비축원 역할을 합니다.</p>
+
+      <h2>연령대별 권장 최적 BMI 목표치</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table style="width: 100%; text-align: left; border-collapse: collapse; font-size: 0.875rem;">
+          <thead>
+            <tr style="background-color: #f5f5f5;">
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">연령대</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981; background-color: #f5f5f5;">장수 최적 BMI 목표치</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">주요 신체 관리 초점</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">임상 선별 검사</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">18 – 35세</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">19.0 – 24.5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">심폐 지구력, 근력 및 근육량 형성</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">기본 지질 패널, 혈압 측정</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">36 – 54세</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">20.5 – 25.5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">내장지방 예방 (허리둘레/키 비율 &lt; 0.50)</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">공복 혈당, 당화혈색소(HbA1c), 간기능 검사</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">55 – 64세</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">22.0 – 26.5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">골격근 보존, 관절 보호</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">심혈관 부하 검사, 경동맥 초음파</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">65 – 74세</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">23.5 – 28.0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">근감소증 예방, 균형 감각 유지</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">DEXA 골밀도 검사, 악력 측정</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600; color: #464feb;">75세 이상</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">24.0 – 29.0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">영양 밀도, 낙상 예방, 노쇠 방지</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">간이 영양 평가(MNA), 혈청 알부민</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>노화에 따른 신장 수축과 BMI 왜곡</h2>
+      <p>척추 디스크 수분 감소로 40세 이후 10년마다 1~2cm의 키가 줄어들며, 분모(신장의 제곱) 감소로 인해 실제 지방 증가 없이도 BMI 수치가 1.0~1.5단위 인위적으로 상승합니다.</p>
+
+      <h2>학술 참고문헌</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Winter JE, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/24451310/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">BMI and all-cause mortality in older adults: a meta-analysis.</a></em> Am J Clin Nutr 2014; PMID: 24451310.</li>
+        <li>Cruz-Jentoft AJ, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/30312372/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">Sarcopenia: revised European consensus.</a></em> Age Ageing 2019; PMID: 30312372.</li>
+      </ul>
+`,
       "hi": `
-      <h2>उम्र के साथ बीएमआई में बदलाव और बुजुर्गों के लिए मानक</h2>
-      <p>65 वर्ष से अधिक उम्र के बुजुर्गों में थोड़ा अधिक बीएमआई (24 से 28 kg/m²) हड्डियों की सुरक्षा और संक्रमण से लड़ने में मददगार साबित होता है।</p>
-    `
+      <h2>जीवन चक्र और बीएमआई: उम्र बढ़ने के साथ बॉडी मास इंडेक्स का नैदानिक मूल्यांकन</h2>
+      <p>शारीरिक संरचना (Body Composition) जीवन भर स्थिर नहीं रहती; यह उम्र के प्रत्येक दशक के साथ जैविक रूप से बदलती है। यद्यपि मानक वयस्क बॉडी मास इंडेक्स (BMI) का गणितीय सूत्र—किलोग्राम में वजन को मीटर में ऊंचाई के वर्ग से विभाजित करना—20 से 100 वर्ष की आयु तक समान रहता है, लेकिन इसका <strong>नैदानिक और चिकित्सीय मूल्यांकन आयु-विशिष्ट शारीरिक परिवर्तनों के आधार पर किया जाना अनिवार्य है</strong>। 22 वर्षीय एथलीट के लिए जो बीएमआई आदर्श और दीर्घायु को बढ़ावा देने वाला माना जाता है, वही बीएमआई 82 वर्षीय बुजुर्ग के लिए गंभीर कुपोषण और दुर्बलता (Frailty) का संकेत हो सकता है।</p>
+      <p>नीचे, हम मानव शारीरिक संरचना के चार प्रमुख जीवन चरणों का विश्लेषण करेंगे, <em>जेरियाट्रिक ओबेसिटी पैराडॉक्स</em> (बुजुर्गों में मोटापे का विरोधाभास) के वैज्ञानिक कारणों को समझेंगे, यह जानेंगे कि उम्र के साथ रीढ़ की हड्डी में संकुचन से बीएमआई कैसे प्रभावित होता है, और साक्ष्य-आधारित आयु-विशिष्ट संदर्भ तालिका प्रस्तुत करेंगे।</p>
+
+      <h2>शारीरिक संरचना के चार प्रमुख जीवन पड़ाव</h2>
+      <div class="my-6 space-y-4">
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">1. शुरुआती वयस्कता (20 से 39 वर्ष): चरम अस्थि घनत्व और पेशी विकास</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">शुरुआती वयस्कता के दौरान मानव शरीर अपने उच्चतम बोन मिनरल डेंसिटी और अधिकतम कंकाल पेशी द्रव्यमान (Skeletal Muscle Mass) पर होता है। विश्व स्वास्थ्य संगठन (WHO) की मानक स्वस्थ श्रेणी <strong>18.5 से 24.9 kg/m²</strong> इस आयु वर्ग में सबसे सटीक नैदानिक परिणाम देती है। इस उम्र में मेटाबॉलिज्म तेज होता है और विकास हार्मोन व टेस्टोस्टेरोन/एस्ट्रोजन मजबूत होते हैं, जिससे अतिरिक्त वजन मुख्य रूप से कैलोरी सरप्लस और वसा संचय को दर्शाता है।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">2. मध्य वयस्कता (40 से 64 वर्ष): चयापचय में गिरावट और आंतों की चर्बी (विसेरल फैट) का संचय</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">40 वर्ष की आयु के बाद रेस्टिंग मेटाबॉलिक रेट प्रति दशक लगभग 1% से 2% कम हो जाती है। यह गिरावट मुख्य रूप से मांसपेशियों के धीमे क्षय (सार्कोपेनिया) और शारीरिक गतिविधि की कमी के कारण होती है। महिलाओं में मेनोपॉज के दौरान एस्ट्रोजन कम होने से वसा नितंबों और जांघों से हटकर पेट (विसेरल एरिया) में जमा होने लगती है। पुरुषों में टेस्टोस्टेरोन घटने से आंतों के आसपास फैट जमा होता है। इस अवस्था में व्यक्ति का कुल वजन 70 किलो ही रह सकता है, लेकिन चुपके से 4 किलो मांसपेशी कम होकर 4 किलो हानिकारक विसेरल फैट बढ़ सकता है।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">3. वरिष्ठ वयस्कता (65 से 74 वर्ष): सार्कोपेनिक ओबेसिटी का उद्भव</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">वरिष्ठ उम्र में आहार के प्रोटीन को मांसपेशियों में बदलने की शारीरिक क्षमता धीमी हो जाती है। यदि नियमित स्ट्रेंथ या रेजिस्टेंस व्यायाम न किया जाए, तो हर दशक में 3% से 5% तक मांसपेशियां कम होने लगती हैं। इसे सार्कोपेनिक ओबेसिटी कहा जाता है—जहां शरीर में वसा अधिक होती है लेकिन मांसपेशियां बेहद कमजोर होती हैं। इस आयु वर्ग में डॉक्टरों द्वारा बिना डॉक्टरी सलाह के सख्त कैलोरी-प्रतिबंधक डाइटिंग की मनाही होती है, क्योंकि तेजी से वजन घटने से मांसपेशियों का नुकसान और गिरने का जोखिम बढ़ जाता है।</p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h3 class="text-base font-bold text-[var(--accent)]">4. उन्नत वृद्धावस्था (75+ वर्ष): दुर्बलता और अनपेक्षित वजन घटने का खतरा</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">75 वर्ष से अधिक उम्र में अनपेक्षित वजन घटना (Involuntary Weight Loss) एक गंभीर चिकित्सीय चेतावनी संकेत है। 22 kg/m² से कम बीएमआई श्वसन संक्रमण, कूल्हे के फ्रैक्चर और सर्जरी के बाद जटिलताओं के खतरे को काफी बढ़ा देता है। इस उम्र में वजन घटाने के पारंपरिक लक्ष्यों की तुलना में पोषण संबंधी भंडार (Nutritional Reserve) को बनाए रखना सर्वोच्च प्राथमिकता होती है।</p>
+        </div>
+      </div>
+
+      <h2>जेरियाट्रिक ओबेसिटी पैराडॉक्स: बुजुर्गों के लिए थोड़ा अधिक बीएमआई क्यों सुरक्षात्मक है?</h2>
+      <p>वृद्ध स्वास्थ्य महामारी विज्ञान (Geriatric Epidemiology) के सबसे ठोस निष्कर्षों में से एक <strong>"मोटापा विरोधाभास" (Obesity Paradox)</strong> है। दर्जनों बड़े अंतरराष्ट्रीय अनुसंधानों में यह पाया गया है कि 65 वर्ष या उससे अधिक आयु के वयस्कों में सबसे कम मृत्यु दर मानक आदर्श 21 से 23 kg/m² पर नहीं, बल्कि <strong>25.0 से 29.9 kg/m²</strong> (जिसे पारंपरिक रूप से 'ओवरवेट' कहा जाता है) के बीच दर्ज की जाती है।</p>
+      <p>जेरियाट्रिशियन इसके पीछे निम्नलिखित सुरक्षात्मक जैविक कारण बताते हैं:</p>
+      <ul>
+        <li><strong>मेटाबॉलिक रिजर्व क्षमता:</strong> निमोनिया, सेप्सिस, बड़ी आर्थोपेडिक सर्जरी या कैंसर के इलाज जैसी गंभीर बीमारियों के दौरान शरीर के मध्यम वसा भंडार जीवन रक्षक ऊर्जा प्रदान करते हैं।</li>
+        <li><strong>हड्डियों की सुरक्षा (यांत्रिक कुशनिंग):</strong> कूल्हे के आसपास की सबक्यूटेनियस वसा गिरने के दौरान झटके को अवशोषित करती है, जिससे कूल्हे के फ्रैक्चर की संभावना सीधे तौर पर कम हो जाती है।</li>
+        <li><strong>कुपोषण से बचाव:</strong> थोड़े अधिक वजन वाले बुजुर्गों में माइक्रोन्यूट्रिएंट्स, जिंक और आवश्यक विटामिन्स की कमी होने की संभावना बहुत कम होती है, जिससे रोग प्रतिरोधक क्षमता सुरक्षित रहती है।</li>
+      </ul>
+
+      <h2>उम्र के अनुसार अनुशंसित बीएमआई संदर्भ तालिका (Age-Stratified BMI Targets)</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table style="width: 100%; text-align: left; border-collapse: collapse; font-size: 0.875rem;">
+          <thead>
+            <tr style="background-color: #f5f5f5;">
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">आयु वर्ग</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981; background-color: #f5f5f5;">दीर्घायु हेतु आदर्श बीएमआई</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">प्राथमिक शारीरिक फोकस</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">नैदानिक स्क्रीनिंग प्राथमिकताएं</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">18 – 35 वर्ष</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">19.0 – 24.5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">कार्डियोरेस्पिरेटरी फिटनेस, लीन मांसपेशी निर्माण</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">बेसलाइन लिपिड प्रोफाइल, ब्लड प्रेशर जांच</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">36 – 54 वर्ष</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">20.5 – 25.5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">विसेरल फैट की रोकथाम, कमर-से-कद अनुपात &lt; 0.50</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">फास्टिंग ब्लड ग्लूकोज, HbA1c, लिवर फंक्शन टेस्ट</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">55 – 64 वर्ष</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">22.0 – 26.5 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">मांसपेशियों का संरक्षण, जोड़ों का लचीलापन</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">कार्डियोवस्कुलर स्ट्रेस टेस्ट, कैरोटिड अल्ट्रासाउंड</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">65 – 74 वर्ष</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">23.5 – 28.0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">सार्कोपेनिया रोकथाम, संतुलन, क्रियात्मक गतिशीलता</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">DEXA बोन डेंसिटी स्कैन, ग्रिप स्ट्रेंथ टेस्ट</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600; color: #464feb;">75+ वर्ष</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">24.0 – 29.0 kg/m²</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">पोषक तत्वों का घनत्व, गिरने से बचाव, दुर्बलता निवारण</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">मिनी न्यूट्रिशनल असेसमेंट (MNA), सीरम एल्ब्यूमिन जांच</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>उम्र के साथ लंबाई में संकुचन (Stature Compression) का बीएमआई पर प्रभाव</h2>
+      <p>उम्र बढ़ने के साथ रीढ़ की हड्डियों के बीच मौजूद कार्टिलेज डिस्क में पानी की मात्रा कम होने लगती है और ऑस्टियोपोरोसिस के कारण रीढ़ में हल्का झुकाव आ जाता है। औसतन, 40 वर्ष की आयु के बाद वयस्क प्रति दशक लगभग 1 से 2 सेमी लंबाई खो देते हैं, और 75 वर्ष तक यह कमी 3 से 5 सेमी तक हो सकती है। क्योंकि बीएमआई सूत्र में ऊंचाई का वर्ग हर (Denominator) में होता है, इसलिए लंबाई घटने से बिना किसी अतिरिक्त चर्बी बढ़े भी बीएमआई कृत्रिम रूप से 1.0 से 1.5 अंक बढ़ जाता है। बुजुर्गों के साथ काम करने वाले डॉक्टर वास्तविक कद का अनुमान लगाने के लिए आर्म स्पैन (हाथों का फैलाव) या घुटने की ऊंचाई मापते हैं।</p>
+
+      <h2>अक्सर पूछे जाने वाले नैदानिक प्रश्न (Clinical FAQs)</h2>
+      <div class="space-y-4 my-6">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">क्या 70 वर्ष के व्यक्ति को 27 बीएमआई पर वजन कम करने की कोशिश करनी चाहिए?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">गंभीर गतिशीलता विकार या अनियंत्रित टाइप 2 डायबिटीज की अनुपस्थिति में, अधिकांश जेरियाट्रिशियन 27 के बीएमआई पर वजन घटाने के बजाय स्थिर वजन बनाए रखने की सलाह देते हैं। बुजुर्गों में अचानक डाइटिंग से महत्वपूर्ण मांसपेशियां और हड्डियों का घनत्व घट सकता है।</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">बुजुर्गों में सबसे खतरनाक वजन पैटर्न कौन सा है?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">6 से 12 महीनों के भीतर बिना किसी प्रयास के 5% से अधिक वजन कम होना (Involuntary Weight Loss) दुर्बलता, अवशोषण विकार या गंभीर बीमारी का प्रमुख नैदानिक संकेतक है, जिसके लिए तत्काल चिकित्सा जांच की आवश्यकता होती है।</p>
+        </div>
+      </div>
+
+      <h2>प्राथमिक वैज्ञानिक संदर्भ (Scientific References)</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Winter JE, MacInnis RJ, Wattanapenpaiboon N, Nowson CA. <em><a href="https://pubmed.ncbi.nlm.nih.gov/24451310/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">BMI and all-cause mortality in older adults: a meta-analysis.</a></em> Am J Clin Nutr 2014; 99(4):875-890. PMID: 24451310.</li>
+        <li>Cruz-Jentoft AJ, Bahat G, Bauer J, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/30312372/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">Sarcopenia: revised European consensus on definition and diagnosis.</a></em> Age Ageing 2019; 48(1):16-31. PMID: 30312372.</li>
+        <li>Volkert D, Beck AM, Cederholm T, et al. <em><a href="https://pubmed.ncbi.nlm.nih.gov/30352776/" target="_blank" rel="noopener noreferrer" style="color: #464feb; text-decoration: none;">ESPEN guideline on clinical nutrition and hydration in geriatrics.</a></em> Clin Nutr 2019; 38(1):10-47. PMID: 30352776.</li>
+      </ul>
+`
     }
   },
 
@@ -1631,8 +2340,62 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <p>13~19세 청소년은 급격한 신체 성장과 사춘기 성숙도를 겪기 때문에 고정 수치 대신 질병관리청 및 CDC <strong>성장 도표 백분위수(5~84 백분위수 정상)</strong>로 판정합니다.</p>
     `,
       "hi": `
-      <h2>किशोरों के बीएमआई का पर्सेंटाइल आधारित आकलन</h2>
-      <p>13 से 19 वर्ष के किशोरों के लिए वयस्कों के निश्चित कट-ऑफ लागू नहीं होते। बाल रोग विशेषज्ञ सीडीसी पर्सेंटाइल चार्ट (5वें से 84वें पर्सेंटाइल को सामान्य) का उपयोग करते हैं।</p>
+      <h2>किशोरों के लिए बीएमआई गाइड: पीडियाट्रिक पर्सेंटाइल व प्यूबर्टी ग्रोथ</h2>
+      <p>किशोरावस्था (आयु 13 से 19 वर्ष) के दौरान मानव शरीर में तीव्र हार्मोनल, कंकाल और जैविक बदलाव होते हैं। यही कारण है कि <strong>वयस्कों के स्थिर बीएमआई कट-ऑफ (जैसे 25.0 kg/m² को ओवरवेट मानना) किशोरों पर कभी लागू नहीं किए जा सकते</strong>। 14 वर्षीय लड़के में 22.0 का बीएमआई अधिक वजन हो सकता है, जबकि वही संख्या 19 वर्षीय वयस्क में बिल्कुल सामान्य होती है।</p>
+
+      <h2>सीडीसी बीएमआई-फॉर-एज पर्सेंटाइल विकास चार्ट (CDC Growth Percentiles)</h2>
+      <p>बाल रोग विशेषज्ञ (Pediatricians) किशोरों के वजन और विकास का मूल्यांकन करने के लिए उम्र और लिंग विशिष्ट <strong>सीडीसी बीएमआई पर्सेंटाइल (BMI-for-Age Percentiles)</strong> का उपयोग करते हैं:</p>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">पीडियाट्रिक श्रेणी</th>
+              <th class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">सीडीसी पर्सेंटाइल सीमा</th>
+              <th class="p-3 border border-[#e6e6e6]">नैदानिक व्याख्या व स्वास्थ्य प्राथमिकता</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y border-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-amber-600 font-bold">कम वजन (अंडरवेट)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-600 font-bold">&lt; 5वां पर्सेंटाइल</td>
+              <td class="p-3 border border-[#e6e6e6]">अपर्याप्त पोषण, विकास में देरी या ईटिंग डिसऑर्डर का संकेत; विस्तृत बाल रोग विशेषज्ञ जांच आवश्यक।</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-emerald-600 font-bold">स्वस्थ / सामान्य वजन</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-emerald-600 font-bold">5वां से 84वां पर्सेंटाइल</td>
+              <td class="p-3 border border-[#e6e6e6]">संतुलित वृद्धि और हड्डियों का सामान्य खनिजीकरण; स्वस्थ जीवनशैली बनाए रखें।</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-amber-500 font-bold">अधिक वजन (ओवरवेट)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-amber-500 font-bold">85वां से 94वां पर्सेंटाइल</td>
+              <td class="p-3 border border-[#e6e6e6]">प्रारंभिक चयापचय जोखिम; सख्त डाइटिंग के बजाय शारीरिक खेलकूद और प्रसंस्कृत भोजन कम करने पर बल।</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-rose-600 font-bold">मोटापा (ओबेसिटी)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono text-rose-600 font-bold">&ge; 95वां पर्सेंटाइल</td>
+              <td class="p-3 border border-[#e6e6e6]">बाल्यावस्था प्रीडायबिटीज, फैटी लिवर व ऑस्टियोआर्टिकुलर तनाव; संपूर्ण पारिवारिक पोषण मार्गदर्शन अनिवार्य।</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>प्यूबर्टी और टैनर स्टेजिंग (Tanner Stages): शारीरिक संरचना का विस्फोट</h2>
+      <p>प्यूबर्टी के दौरान लड़के और लड़कियों में विकास दर पूरी तरह अलग होती है:</p>
+      <ul>
+        <li><strong>लड़कों में पीक हाइट वेलोसिटी (PHV):</strong> औसतन 13.5 से 14 वर्ष की आयु में लड़के तेजी से लंबे होते हैं और टेस्टोस्टेरोन के कारण लीन मसल मास और अस्थि घनत्व में भारी उछाल आता है।</li>
+        <li><strong>लड़कियों में वसा संचय:</strong> 11 से 13 वर्ष की आयु में एस्ट्रोजेन के कारण लड़कियों के कूल्हों और पेल्विस में प्राकृतिक वसा जमा होती है, जो सामान्य हार्मोनल विकास का अनिवार्य हिस्सा है।</li>
+      </ul>
+
+      <h2>माता-पिता और शिक्षकों के लिए महत्वपूर्ण मनोवैज्ञानिक सलाह</h2>
+      <p>किशोरावस्था में शरीर की छवि (Body Image) अत्यंत संवेदनशील होती है। बीएमआई नंबर को लेकर किशोरों को शर्मिंदा (Weight Stigma) करने से एनोरेक्सिया या बुलिमिया जैसे गंभीर ईटिंग डिसऑर्डर का खतरा बढ़ जाता है। कभी भी किशोरों को वयस्कों वाली क्रैश डाइट पर न डालें; इसके स्थान पर घर में पौष्टिक भोजन, पर्याप्त नींद और सक्रिय आउटडोर खेलों को प्रोत्साहित करें।</p>
+
+      <h2>वैज्ञानिक संदर्भ एवं साक्ष्य</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Kuczmarski RJ, et al. <em>CDC Growth Charts: United States.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/11183311/" class="text-[#464feb] underline">Adv Data 2000; (314):1-27. PMID: 11183311</a>.</li>
+        <li>Barlow SE; Expert Committee. <em>Expert committee recommendations regarding the prevention, assessment, and treatment of child and adolescent overweight and obesity.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/18055651/" class="text-[#464feb] underline">Pediatrics 2007; 120(Suppl 4):S164-S192. PMID: 18055651</a>.</li>
+        <li>Styne DM, et al. <em>Pediatric Obesity-Assessment, Treatment, and Prevention: An Endocrine Society Clinical Practice Guideline.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/28141951/" class="text-[#464feb] underline">J Clin Endocrinol Metab 2017; 102(3):709-757. PMID: 28141951</a>.</li>
+      </ul>
     `
     }
   }

@@ -3,111 +3,689 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import PageShell from '../../components/PageShell.astro';
 
-const sources = [
+interface ScientificSource {
+  citationId: string;
+  title: string;
+  authors: string;
+  journal: string;
+  doi?: string;
+  pmid?: string;
+  url: string;
+  category: 'anthropometry' | 'metabolism' | 'composition' | 'cardiovascular' | 'nutrition';
+  categoryLabel: string;
+  appliedCalculators: { name: string; url: string }[];
+  summary: string;
+  keyFinding: string;
+}
+
+const sources: ScientificSource[] = [
   {
-    "title": "OMS État Physique : Utilisation et Interprétation de l'Anthropométrie",
-    "org": "Organisation Mondiale de la Santé (OMS / NLM PubMed)",
+    "citationId": "Rapports Techniques OMS 854 (1995)",
+    "title": "État Physique : Utilisation et Interprétation de l'Anthropométrie. Rapport d'un Comité d'Experts de l'OMS",
+    "authors": "World Health Organization Expert Committee",
+    "journal": "World Health Organ Tech Rep Ser. 1995; 854: 1–452",
+    "pmid": "8594834",
     "url": "https://pubmed.ncbi.nlm.nih.gov/8594834/",
-    "desc": "Rapport officiel établissant les catégories globales d'IMC et les seuils de référence chez l'adulte.",
-    "actionLabel": "Consulter le rapport OMS"
+    "category": "anthropometry",
+    "categoryLabel": "Anthropométrie & IMC",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur d'IMC",
+        "url": "/fr/bmi-calculator/"
+      },
+      {
+        "name": "Tableau d'IMC",
+        "url": "/fr/bmi-chart/"
+      },
+      {
+        "name": "Poids Idéal par Taille",
+        "url": "/fr/healthy-weight-by-height/"
+      }
+    ],
+    "summary": "Rapport épidémiologique de référence mondiale établissant les seuils standardisés de l'indice de masse corporelle (IMC) pour les adultes : Insuffisance pondérale (< 18,5), Normal (18,5–24,9), Surpoids (25,0–29,9) et Obésité (≥ 30,0 kg/m²).",
+    "keyFinding": "Formule métrique de Quetelet standardisée : IMC = Poids (kg) / [Taille (m)]² comme indice clinique universel de dépistage."
   },
   {
-    "title": "Consultation d'Experts de l'OMS : IMC approprié pour les populations asiatiques",
-    "org": "The Lancet (Consultation d'experts OMS)",
+    "citationId": "The Lancet 2004 IMC Populations Asiatiques",
+    "title": "Indice de Masse Corporelle Approprié pour les Populations Asiatiques et ses Implications Thérapeutiques",
+    "authors": "WHO Expert Consultation",
+    "journal": "The Lancet. 2004 Jan 10; 363(9403): 157–163",
+    "doi": "10.1016/S0140-6736(03)15268-3",
+    "pmid": "14726171",
     "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
-    "desc": "Publication majeure du Lancet 2004 définissant les seuils d'action (23,0 kg/m² risque accru, 27,5 kg/m² haut risque).",
-    "actionLabel": "Lire l'étude The Lancet"
+    "category": "anthropometry",
+    "categoryLabel": "Anthropométrie & Risque Asiatique",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur d'IMC Asiatique",
+        "url": "/fr/asian-bmi-calculator/"
+      },
+      {
+        "name": "Calculateur de Risque de Diabète",
+        "url": "/fr/diabetes-risk-calculator/"
+      }
+    ],
+    "summary": "Étude multicentrique démontrant que les populations asiatiques présentent un pourcentage de graisse corporelle plus élevé et un risque accru de diabète dès des valeurs d'IMC inférieures.",
+    "keyFinding": "Seuils d'intervention pour les populations asiatiques : 23,0 kg/m² (risque accru) et 27,5 kg/m² (haut risque)."
   },
   {
-    "title": "Consensus pour le Diagnostic de l'Obésité chez les Adultes Sud-Asiatiques",
-    "org": "ICMR & JAPI (Misra A, et al.)",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
-    "desc": "Guide de consensus national fixant les seuils en Inde (18,5–22,9 normal, 23,0–24,9 surpoids, ≥ 25,0 obésité).",
-    "actionLabel": "Consulter les directives ICMR"
-  },
-  {
-    "title": "CDC Normes de Dépistage de l'Indice de Masse Corporelle Adulte",
-    "org": "Centers for Disease Control and Prevention (CDC)",
-    "url": "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html",
-    "desc": "Formule officielle du CDC pour le calcul de l'IMC métrique et impérial chez l'adulte.",
-    "actionLabel": "Voir les critères du CDC"
-  },
-  {
-    "title": "Équation Prédictive de Dépense Énergétique au Repos",
-    "org": "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
+    "citationId": "Mifflin MD 1990 (Dépense Énergétique au Repos)",
+    "title": "Une Nouvelle Équation Prédictive de la Dépense Énergétique au Repos chez les Sujets Sains",
+    "authors": "Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO",
+    "journal": "Am J Clin Nutr. 1990 Feb; 51(2): 241–247",
+    "doi": "10.1093/ajcn/51.2.241",
+    "pmid": "2305711",
     "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
-    "desc": "Formule de Mifflin-St Jeor pour estimer le métabolisme de base (BMR).",
-    "actionLabel": "Consulter l'étude AJCN"
+    "category": "metabolism",
+    "categoryLabel": "Métabolisme & MB",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur de Métabolisme de Base",
+        "url": "/fr/bmr-calculator/"
+      },
+      {
+        "name": "Calculateur TDEE",
+        "url": "/fr/tdee-calculator/"
+      },
+      {
+        "name": "Calculateur de Calories",
+        "url": "/fr/calorie-calculator/"
+      },
+      {
+        "name": "Calculateur de Calories de Maintien",
+        "url": "/fr/maintenance-calorie-calculator/"
+      }
+    ],
+    "summary": "Étude clinique sur 498 adultes mesurés par calorimétrie indirecte. Reconnue par l'Académie de Nutrition comme la formule la plus précise pour estimer la dépense au repos.",
+    "keyFinding": "MB (kcal/jour) = (10 × poids kg) + (6,25 × taille cm) - (5 × âge) + s (+5 hommes, -161 femmes)."
   },
   {
-    "title": "Équation Logarithmique de Graisse Corporelle de l'US Navy",
-    "org": "Naval Health Research Center (Hodgdon JA, Beckett WS)",
+    "citationId": "Mosteller RD 1987 (Surface Corporelle)",
+    "title": "Calcul Simplifié de la Surface Corporelle",
+    "authors": "Mosteller RD",
+    "journal": "N Engl J Med. 1987 Oct 22; 317(17): 1098",
+    "doi": "10.1056/NEJM198710223171717",
+    "pmid": "3657876",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/3657876/",
+    "category": "anthropometry",
+    "categoryLabel": "Anthropométrie & Dosages",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur de Surface Corporelle",
+        "url": "/fr/body-surface-area-calculator/"
+      }
+    ],
+    "summary": "Publication dans le New England Journal of Medicine établissant la formule simplifiée de référence pour calculer la surface corporelle en médecine clinique.",
+    "keyFinding": "BSA (m²) = √[(Taille en cm × Poids en kg) / 3600]. Standard universel en oncologie et néphrologie."
+  },
+  {
+    "citationId": "Devine BJ 1974 (Poids Idéal Théorique)",
+    "title": "Thérapie à la Gentamicine : Utilisation Clinique et Directives Posologiques",
+    "authors": "Devine BJ",
+    "journal": "Drug Intell Clin Pharm. 1974; 8(11): 650–655",
+    "pmid": "4819440",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/4819440/",
+    "category": "anthropometry",
+    "categoryLabel": "Anthropométrie & Poids Idéal",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur de Poids Idéal",
+        "url": "/fr/ideal-weight-calculator/"
+      },
+      {
+        "name": "Poids Idéal par Taille",
+        "url": "/fr/healthy-weight-by-height/"
+      }
+    ],
+    "summary": "Étude pharmacologique clinique de référence fournissant les équations basées sur la taille pour le calcul du poids idéal théorique (IBW).",
+    "keyFinding": "Hommes : 50,0 kg + 2,3 kg par pouce au-delà de 5 pieds. Femmes : 45,5 kg + 2,3 kg par pouce."
+  },
+  {
+    "citationId": "Misra A, Consensus ICMR 2009 (Indiens Asiatiques)",
+    "title": "Déclaration de Consensus pour le Diagnostic de l'Obésité chez les Indiens Asiatiques",
+    "authors": "Misra A, Chowbey P, Makkar BM, Vikram NK, et al.",
+    "journal": "J Assoc Physicians India. 2009 Feb; 57: 163–170",
+    "pmid": "19702033",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
+    "category": "anthropometry",
+    "categoryLabel": "Recommandations Asie du Sud",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur d'IMC pour Indiens",
+        "url": "/fr/bmi-calculator-for-indians/"
+      },
+      {
+        "name": "Calculateur de Risque de Diabète",
+        "url": "/fr/diabetes-risk-calculator/"
+      }
+    ],
+    "summary": "Consensus médical sous l'égide de l'ICMR abordant le phénotype spécifique sud-asiatique caractérisé par une adiposité viscérale précoce.",
+    "keyFinding": "Seuils adultes indiens : Normal (18,5–22,9), Surpoids (23,0–24,9), Obésité (≥ 25,0 kg/m²) ; Tour de taille : ≥ 90 cm hommes, ≥ 80 cm femmes."
+  },
+  {
+    "citationId": "Hodgdon JA & Beckett MB 1984 (US Navy Masse Grasse)",
+    "title": "Prédiction du Pourcentage de Graisse Corporelle pour l'US Navy à partir des Circonférences et de la Taille",
+    "authors": "Hodgdon JA, Beckett MB",
+    "journal": "Naval Health Research Center Technical Reports 84-29 & 84-11; 1984",
     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/",
-    "desc": "Formule basée sur les circonférences corporelles pour évaluer le pourcentage de masse grasse.",
-    "actionLabel": "Lire le rapport de recherche"
+    "category": "composition",
+    "categoryLabel": "Composition Corporelle",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur de Graisse Corporelle",
+        "url": "/fr/body-fat-calculator/"
+      },
+      {
+        "name": "Calculateur de Masse Maigre",
+        "url": "/fr/lean-body-mass-calculator/"
+      }
+    ],
+    "summary": "Modèle anthropométrique validé par pesée hydrostatique fournissant une estimation logarithmique précise sans équipement de laboratoire.",
+    "keyFinding": "Régressions logarithmiques sexospécifiques mesurant cou, taille, hanches (femmes) et stature pour déduire la masse grasse."
   },
   {
-    "title": "Consensus IDF sur l'Obésité Abdominale et le Syndrome Métabolique",
-    "org": "Fédération Internationale du Diabète (IDF)",
-    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2782373/",
-    "desc": "Seuils de tour de taille (>90 cm hommes, >80 cm femmes asiatiques) pour évaluer le risque viscéral.",
-    "actionLabel": "Consulter le consensus FID"
+    "citationId": "Karvonen MJ 1957 (Réserve de Fréquence Cardiaque)",
+    "title": "Les Effets de l'Entraînement sur la Fréquence Cardiaque : Étude Longitudinale",
+    "authors": "Karvonen MJ, Kentala E, Mustala O",
+    "journal": "Ann Med Exp Biol Fenn. 1957; 35(3): 307–315",
+    "pmid": "13470504",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/13470504/",
+    "category": "cardiovascular",
+    "categoryLabel": "Physiologie Cardiovasculaire",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur de Fréquence Cardiaque Karvonen",
+        "url": "/fr/karvonen-heart-rate-calculator/"
+      },
+      {
+        "name": "Calculateur de Zones de Fréquence Cardiaque",
+        "url": "/fr/heart-rate-zone-calculator/"
+      }
+    ],
+    "summary": "Étude fondatrice montrant que l'intensité de l'entraînement aérobie doit être calculée à partir de la réserve de fréquence cardiaque (RFC).",
+    "keyFinding": "Fréquence Cible = [(FC Max - FC Repos) × % Intensité] + FC Repos."
   },
   {
-    "title": "Formule d'IMC 3D Ajustée à la Taille d'Oxford 2.5",
-    "org": "Université d'Oxford (Prof. Nick Trefethen)",
+    "citationId": "Boer P 1984 (Masse Corporelle Maigre)",
+    "title": "Estimation de la Masse Maigre comme Indice de Normalisation des Volumes Hydriques Corporels",
+    "authors": "Boer P",
+    "journal": "Am J Physiol. 1984 Jul; 247(1 Pt 2): F632–F636",
+    "doi": "10.1152/ajprenal.1984.247.4.F632",
+    "pmid": "6497914",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/6497914/",
+    "category": "composition",
+    "categoryLabel": "Composition Corporelle",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur de Masse Maigre",
+        "url": "/fr/lean-body-mass-calculator/"
+      }
+    ],
+    "summary": "Étude clinique évaluant la masse non grasse par régressions anthropométriques, démontrant une corrélation supérieure avec les volumes plasmatiques.",
+    "keyFinding": "Hommes : LBM = (0,407 × P) + (0,267 × T) - 19,2. Femmes : LBM = (0,252 × P) + (0,473 × T) - 48,3."
+  },
+  {
+    "citationId": "Ashwell M 2012 (Rapport Taille-Hauteur)",
+    "title": "Le Rapport Taille-Hauteur est un Meilleur Outil de Dépistage que l'IMC pour les Facteurs de Risque Cardiométabolique",
+    "authors": "Ashwell M, Gunn P, Gibson S",
+    "journal": "Obes Rev. 2012 Mar; 13(3): 275–286",
+    "doi": "10.1111/j.1467-789X.2011.00952.x",
+    "pmid": "22106927",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22106927/",
+    "category": "anthropometry",
+    "categoryLabel": "Adiposité Centrale",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur Rapport Taille-Hanche",
+        "url": "/fr/waist-to-hip-ratio-calculator/"
+      },
+      {
+        "name": "Calculateur d'IMC pour Indiens",
+        "url": "/fr/bmi-calculator-for-indians/"
+      },
+      {
+        "name": "Calculateur d'IMC Asiatique",
+        "url": "/fr/asian-bmi-calculator/"
+      }
+    ],
+    "summary": "Méta-analyse sur plus de 300 000 participants confirmant que maintenir le ratio tour de taille/stature sous 0,50 surpasse l'IMC pour dépister l'hypertension.",
+    "keyFinding": "Seuil du Ratio Taille-Hauteur : < 0,50 ('gardez votre tour de taille inférieur à la moitié de votre taille')."
+  },
+  {
+    "citationId": "Trefethen LN 2013 (Nouvel IMC d'Oxford)",
+    "title": "Proposition de Formulation Mathématique de l'Indice de Masse Corporelle",
+    "authors": "Trefethen LN (Professor of Numerical Analysis)",
+    "journal": "Mathematical Institute, University of Oxford; 2013",
     "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
-    "desc": "Ajustement mathématique compensant la déformation de volume chez les personnes grandes ou petites.",
-    "actionLabel": "Voir la documentation Oxford"
+    "category": "anthropometry",
+    "categoryLabel": "Modélisation Géométrique",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur d'IMC 3D",
+        "url": "/fr/3d-bmi-calculator/"
+      },
+      {
+        "name": "Visualiseur Corporel 3D",
+        "url": "/fr/3d-body-visualizer/"
+      }
+    ],
+    "summary": "Analyse mathématique démontrant que l'exposant 2,5 corrige la distorsion de l'IMC standard chez les personnes très grandes ou très petites.",
+    "keyFinding": "Nouvel IMC = 1,3 × [Poids (kg) / Taille (m)²·⁵]. Corrige les biais morphologiques de l'IMC classique."
+  },
+  {
+    "citationId": "Brzycki M 1993 (Une Répétition Maximale 1RM)",
+    "title": "Évaluation de la Force : Prédiction du 1RM à partir des Répétitions jusqu'à Épuisement",
+    "authors": "Brzycki M",
+    "journal": "J Phys Educ Recreat Dance. 1993; 64(1): 88–90",
+    "doi": "10.1080/07303084.1993.10606684",
+    "url": "https://www.tandfonline.com/doi/abs/10.1080/07303084.1993.10606684",
+    "category": "cardiovascular",
+    "categoryLabel": "Physiologie de l'Effort",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur 1RM",
+        "url": "/fr/1rm-calculator/"
+      },
+      {
+        "name": "Calculateur de Répétition Maximale",
+        "url": "/fr/one-rep-max-calculator/"
+      }
+    ],
+    "summary": "Algorithme de prédiction sous-maximale permettant d'estimer la charge maximale sans risque traumatique lié aux tests d'effort maximal.",
+    "keyFinding": "1RM = Charge Soulevée / (1,0278 - 0,0278 × Répétitions)."
+  },
+  {
+    "citationId": "NASEM / IOM 2005 (Apports Nutritionnels & Macronutriments)",
+    "title": "Apports Nutritionnels de Référence en Énergie, Glucides, Lipides, Protéines et Acides Aminés",
+    "authors": "Institute of Medicine (National Academies of Sciences, Engineering, and Medicine)",
+    "journal": "Washington, DC: The National Academies Press; 2005",
+    "doi": "10.17226/10490",
+    "url": "https://nap.nationalacademies.org/catalog/10490/",
+    "category": "nutrition",
+    "categoryLabel": "Science Nutritionnelle",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur de Macronutriments",
+        "url": "/fr/macro-calculator/"
+      },
+      {
+        "name": "Calculateur d'Apport en Protéines",
+        "url": "/fr/protein-intake-calculator/"
+      },
+      {
+        "name": "Calculateur de Consommation d'Eau",
+        "url": "/fr/water-intake-calculator/"
+      }
+    ],
+    "summary": "Directives cliniques officielles fixant les plages de distribution des macronutriments (AMDR) et les apports hydriques de référence.",
+    "keyFinding": "AMDR : Glucides 45–65 %, Lipides 20–35 %, Protéines 10–35 % ; Hydratation : 3,7 L/j hommes, 2,7 L/j femmes."
+  },
+  {
+    "citationId": "IOM / NRC 2009 (Prise de Poids pendant la Grossesse)",
+    "title": "Prise de Poids pendant la Grossesse : Réexamen des Recommandations",
+    "authors": "Institute of Medicine and National Research Council Committee",
+    "journal": "Washington, DC: The National Academies Press; 2009",
+    "doi": "10.17226/12584",
+    "pmid": "20669500",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/20669500/",
+    "category": "anthropometry",
+    "categoryLabel": "Anthropométrie Maternelle",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur de Prise de Poids Grossesse",
+        "url": "/fr/pregnancy-weight-gain-calculator/"
+      }
+    ],
+    "summary": "Rapport de consensus fixant les objectifs de prise de poids gestationnelle selon l'IMC pré-conceptionnel pour prévenir les complications.",
+    "keyFinding": "Objectifs de gain pondéral : Poids insuffisant : 12,5–18 kg ; Normal : 11,5–16 kg ; Surpoids : 7–11,5 kg ; Obésité : 5–9 kg."
+  },
+  {
+    "citationId": "Stern MP 2002 (Modèle de Risque Clinique du Diabète de Type 2)",
+    "title": "Identification des Personnes à Haut Risque de Diabète de Type 2 sans Test de Tolérance au Glucose",
+    "authors": "Stern MP, Williams K, Haffner SM",
+    "journal": "Ann Intern Med. 2002 Apr 16; 136(8): 575–581",
+    "doi": "10.7326/0003-4819-136-8-200204160-00006",
+    "pmid": "11955025",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11955025/",
+    "category": "cardiovascular",
+    "categoryLabel": "Modélisation du Risque Métabolique",
+    "appliedCalculators": [
+      {
+        "name": "Calculateur de Risque de Diabète",
+        "url": "/fr/diabetes-risk-calculator/"
+      }
+    ],
+    "summary": "Étude de cohorte validant un modèle prédictif non invasif du risque de diabète à 7 ans combinant IMC, pression artérielle et antécédents.",
+    "keyFinding": "Les indices anthropométriques identifient les sujets à risque avec une précision comparable aux examens invasifs."
   }
 ];
+
+const categoryCounts = {
+  all: sources.length,
+  anthropometry: sources.filter(s => s.category === 'anthropometry').length,
+  metabolism: sources.filter(s => s.category === 'metabolism').length,
+  composition: sources.filter(s => s.category === 'composition').length,
+  cardiovascular: sources.filter(s => s.category === 'cardiovascular').length,
+  nutrition: sources.filter(s => s.category === 'nutrition').length
+};
 ---
 
 <Layout 
-    title="Références Scientifiques et Sources de Recherche | Real BMI"
-    description="Consultez les publications scientifiques, formules mathématiques et directives officielles de l'OMS, du CDC et de l'ICMR utilisées sur Real BMI."
+    title="Citations de Recherche Primaire et Bibliographie Scientifique | Real BMI"
+    description="Consultez les citations évaluées par des pairs, essais cliniques et équations mathématiques de chaque calculateur sur Real BMI, notamment OMS TRS 854, Lancet 2004 et Mifflin MD 1990."
+    canonicalURL="https://realbmicalculator.com/fr/sources/"
 >
     <Navbar />
     <PageShell
-      title="Références Scientifiques et Sources"
-      eyebrow="Normes de Santé Fondées sur les Preuves"
-      description="Ces organismes de santé publique et publications scientifiques révisées par des pairs fondent les formules et plages de calcul sur Real BMI."
+      title="Citations de Recherche Primaire et Bibliographie Scientifique"
+      eyebrow="Rigueur Médicale Fondée sur les Preuves"
+      description="Publications évaluées par des pairs, rapports institutionnels et modèles mathématiques de chaque algorithme sur Real BMI."
       returnUrl="/fr/"
-      returnLabel="Home"
+      returnLabel="Accueil"
     >
-      <div class="space-y-8">
+      <div class="space-y-10">
+
+        <!-- Executive Rigor Notice -->
         <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] font-medium leading-relaxed space-y-4">
-          <p class="text-lg">
-            La rigueur et la transparence scientifique constituent le socle de notre démarche éditoriale. L'ensemble des formules mathématiques, des seuils anthropométriques et des constantes physiologiques intégrés sur Real BMI provient directement d'organismes de santé publique internationaux et d'études cliniques publiées dans des revues à comité de lecture.
+          <p class="text-base sm:text-lg leading-relaxed">
+            Real BMI n'utilise aucun algorithme d'estimation opaque ou « boîte noire ». Chaque calculateur de cette plateforme est directement ancré dans la littérature clinique évaluée par les pairs d'autorités internationales telles que l'<strong class="text-[var(--foreground)]">Organisation Mondiale de la Santé (OMS)</strong>, les <strong class="text-[var(--foreground)]">CDC</strong>, le <strong class="text-[var(--foreground)]">NIH</strong>, et de revues de référence comme <em class="text-[var(--foreground)]">The Lancet</em> et <em class="text-[var(--foreground)]">The New England Journal of Medicine</em>.
           </p>
-          <p class="text-sm md:text-base">
-            Vous trouverez ci-dessous les publications fondamentales, rapports techniques et travaux de recherche mathématique appuyant nos outils :
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            Voici notre bibliographie académique complète, indexée avec les identifiants PubMed directs (PMID), les DOI, les formules mathématiques exactes et les outils associés.
           </p>
         </div>
 
-        <div class="grid gap-6">
-          {sources.map((src) => (
-            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs hover:border-[var(--accent)]/40 transition-all">
-              <div class="flex items-center justify-between gap-4 flex-wrap">
-                <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
-                  {src.org}
-                </span>
-                <a 
-                  href={src.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
-                  aria-label={`${src.actionLabel}: ${src.title}`}
-                >
-                  {src.actionLabel}
-                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                </a>
-              </div>
-              <h2 class="text-xl font-display font-bold text-[var(--foreground)]">{src.title}</h2>
-              <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{src.desc}</p>
+        <!-- Evidence-Based Guarantee: Exact Studies vs Generic Claims -->
+        <section class="p-6 md:p-8 rounded-2xl border-2 border-indigo-500/30 bg-indigo-500/5 space-y-5 not-prose shadow-sm" aria-label="E-E-A-T Academic Rigor Policy">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-indigo-500"></span>
+              <span class="text-xs font-bold font-display uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
+                Norme de Conformité AdSense & YMYL E-E-A-T
+              </span>
             </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+              Politique Zéro Mention Floue
+            </span>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="text-lg sm:text-xl font-bold font-display text-[var(--foreground)]">
+              Citations Primaires Directes vs. Mentions Génériques d'Acronymes
+            </h2>
+            <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
+              Conformément aux directives de qualité Google (section E-E-A-T pour les thématiques médicales YMYL), Real BMI proscrit les étiquettes institutionnelles vagues comme la simple évocation de l'« OMS », des « CDC » ou du « NIH ». Chaque calcul est adossé à des études cliniques vérifiables avec PMIDs, DOIs et formulations mathématiques transparentes :
+            </p>
+          </div>
+
+          <!-- Direct Comparison Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+            <div class="p-4 rounded-xl border border-red-500/20 bg-red-500/5 space-y-2">
+              <span class="font-bold uppercase tracking-wider text-red-500 block">❌ Mentions Floues (Proscrites sur Real BMI)</span>
+              <ul class="space-y-1.5 text-[var(--muted-foreground)]">
+                <li>• Mention générique de l'« OMS » pour les seuils d'IMC</li>
+                <li>• Référence vague aux « CDC » pour le poids santé</li>
+                <li>• Simple mention du « NIH » ou de l'« ACSM » pour la dépense énergétique</li>
+                <li>• Algorithmes d'estimation propriétaires non publiés</li>
+              </ul>
+            </div>
+            <div class="p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 space-y-2">
+              <span class="font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">✅ Citations Académiques Précises (En vigueur sur Real BMI)</span>
+              <ul class="space-y-1.5 text-[var(--foreground)] font-medium">
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">WHO Technical Report Series 854</strong> (PMID 8594834)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Lancet 2004 BMI Asian Populations</strong> (PMID 14726171)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Mifflin MD 1990 Resting Energy Expenditure</strong> (PMID 2305711)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Mosteller 1987 Body Surface Area</strong> (PMID 3657876)</li>
+                <li>• <strong class="text-indigo-600 dark:text-indigo-400">Devine 1974 Ideal Body Weight Equation</strong> (PMID 4819440)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Primary Academic Citation Matrix Table -->
+        <section class="space-y-4" aria-label="Academic Citation Matrix Table">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="text-xs font-bold font-display uppercase tracking-widest text-[var(--accent)]">Matrice de Preuves E-E-A-T</span>
+              <h2 class="text-xl sm:text-2xl font-bold font-display text-[var(--foreground)]">Citations Académiques Directes & Formules Mathématiques</h2>
+            </div>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 self-start sm:self-auto">
+              15 Études Primaires Indexées
+            </span>
+          </div>
+
+          <div class="citation-table-wrap border border-[var(--border)] overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="citation-matrix-table">
+                <thead>
+                  <tr>
+                    <th>Norme / Identifiant</th>
+                    <th>Autorité Émettrice & Auteurs</th>
+                    <th>Publication / Étude de Référence</th>
+                    <th>Formule Clinique / Norme</th>
+                    <th>Citation Directe</th>
+                    <th>Outils Appliqués</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sources.map((src) => (
+                    <tr>
+                      <td class="whitespace-nowrap font-medium">
+                        <strong class="text-[var(--foreground)] block text-xs sm:text-sm">{src.citationId}</strong>
+                        <span class="text-[11px] font-semibold text-[var(--muted-foreground)] uppercase tracking-wide">{src.categoryLabel}</span>
+                      </td>
+                      <td>
+                        <span class="font-semibold text-[var(--foreground)] block text-xs">{src.authors}</span>
+                        <span class="text-[11px] text-[var(--muted-foreground)] italic block">{src.journal}</span>
+                      </td>
+                      <td>
+                        <span class="font-medium text-[var(--foreground)] text-xs line-clamp-2" title={src.title}>{src.title}</span>
+                      </td>
+                      <td>
+                        <code class="font-mono text-[11px] bg-[var(--muted)]/60 px-2 py-1 rounded block text-[var(--foreground)] leading-relaxed whitespace-pre-wrap">{src.keyFinding}</code>
+                      </td>
+                      <td class="whitespace-nowrap">
+                        <a href={src.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-semibold text-xs">
+                          {src.pmid ? `PMID: ${src.pmid}` : (src.doi ? `DOI: ${src.doi}` : "Voir l'Étude")}
+                          <svg class="w-3 h-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                      </td>
+                      <td>
+                        <div class="flex flex-col gap-1">
+                          {src.appliedCalculators.slice(0, 2).map(calc => (
+                            <a href={calc.url} class="text-xs font-semibold whitespace-nowrap hover:underline">
+                              {calc.name} →
+                            </a>
+                          ))}
+                          {src.appliedCalculators.length > 2 && (
+                            <span class="text-[10px] text-[var(--muted-foreground)]">+{src.appliedCalculators.length - 2} more</span>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2 pb-2 border-b border-[var(--border)]" id="sourcesFilterNav">
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-xs transition-all cursor-pointer" data-filter="all">
+            Toutes les Citations ({categoryCounts.all})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="anthropometry">
+            Anthropométrie & IMC ({categoryCounts.anthropometry})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="metabolism">
+            Métabolisme & MB ({categoryCounts.metabolism})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="composition">
+            Composition Corporelle ({categoryCounts.composition})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="cardiovascular">
+            Cardiologie & Effort ({categoryCounts.cardiovascular})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="nutrition">
+            Nutrition & Hydratation ({categoryCounts.nutrition})
+          </button>
+        </div>
+
+        <!-- Direct Citation Cards List -->
+        <div class="space-y-6" id="sourcesList">
+          {sources.map((src, index) => (
+            <article class="source-card p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4 shadow-xs hover:border-[var(--accent)]/50 transition-all" data-category={src.category}>
+              <!-- Card Header -->
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[var(--border)]/60">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="w-6 h-6 rounded-full bg-[var(--accent)]/15 text-[var(--accent)] font-mono font-bold text-xs flex items-center justify-center">
+                    {index + 1}
+                  </span>
+                  <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
+                    {src.citationId}
+                  </span>
+                  <span class="px-2.5 py-0.5 rounded-md bg-[var(--muted)]/50 text-[var(--muted-foreground)] text-xs font-semibold">
+                    {src.categoryLabel}
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  {src.pmid && (
+                    <span class="text-xs font-mono font-semibold text-[var(--muted-foreground)]">
+                      PMID: <strong class="text-[var(--foreground)]">{src.pmid}</strong>
+                    </span>
+                  )}
+                  <a 
+                    href={src.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity shrink-0"
+                    aria-label={`Voir l'Étude: ${src.citationId}`}
+                  >
+                    Voir l'Étude
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Main Citation Details -->
+              <div class="space-y-2">
+                <h2 class="text-lg sm:text-xl font-display font-bold text-[var(--foreground)] leading-snug">
+                  {src.title}
+                </h2>
+                <p class="text-xs sm:text-sm font-serif italic text-[var(--muted-foreground)]">
+                  {src.authors}. <span class="font-semibold text-[var(--foreground)]/80 not-italic">{src.journal}.</span>
+                  {src.doi && <span class="block sm:inline sm:ml-2 not-italic font-mono text-xs text-[var(--accent)]">DOI: {src.doi}</span>}
+                </p>
+              </div>
+
+              <!-- Summary & Key Finding -->
+              <div class="space-y-2 text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                <p>{src.summary}</p>
+                <div class="p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 text-[var(--foreground)]/90">
+                  <strong class="text-[var(--accent)] font-display uppercase tracking-wide text-xs block mb-0.5">Formule Clinique / Norme :</strong>
+                  <span class="font-mono text-xs text-[var(--foreground)]">{src.keyFinding}</span>
+                </div>
+              </div>
+
+              <!-- Applied Calculators on Real BMI -->
+              <div class="pt-3 border-t border-[var(--border)]/50 flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-bold text-[var(--foreground)] uppercase tracking-wider text-xs">Appliqué sur Real BMI :</span>
+                {src.appliedCalculators.map(calc => (
+                  <a 
+                    href={calc.url} 
+                    class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[var(--muted)] text-[var(--foreground)] hover:text-[var(--accent)] hover:border-[var(--accent)]/40 border border-[var(--border)] transition-colors font-semibold"
+                  >
+                    <span>{calc.name}</span>
+                    <span class="text-[var(--accent)]">→</span>
+                  </a>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
+
       </div>
     </PageShell>
 </Layout>
+
+<style>
+  .citation-table-wrap {
+    overflow-x: auto;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background-color: var(--card);
+  }
+  .citation-matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+  .citation-matrix-table a {
+    text-decoration: none;
+    color: #464feb;
+    font-weight: 600;
+  }
+  .citation-matrix-table a:hover {
+    text-decoration: underline;
+  }
+  .citation-matrix-table tr th,
+  .citation-matrix-table tr td {
+    border: 1px solid #e6e6e6;
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    text-align: left;
+  }
+  .citation-matrix-table tr th {
+    background-color: #f5f5f5;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1f2937;
+  }
+  :global(.dark) .citation-matrix-table tr th,
+  :global(.dark) .citation-matrix-table tr td {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  :global(.dark) .citation-matrix-table tr th {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #f3f4f6;
+  }
+  :global(.dark) .citation-matrix-table a {
+    color: #818cf8;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.source-tab');
+    const cards = document.querySelectorAll('.source-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.getAttribute('data-filter');
+
+        // Update active tab styles
+        tabs.forEach(t => {
+          t.classList.remove('bg-[var(--accent)]', 'text-white');
+          t.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+        });
+        tab.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+        tab.classList.add('bg-[var(--accent)]', 'text-white');
+
+        // Filter cards
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

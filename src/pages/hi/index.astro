@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import UpperEvidenceCenter from '../../components/UpperEvidenceCenter.astro';
 import HeroQuickLaunch from '../../components/HeroQuickLaunch.astro';
 import PopularHealthTopics from '../../components/PopularHealthTopics.astro';
 import FeaturedResearchGuides from '../../components/FeaturedResearchGuides.astro';
@@ -13,8 +14,8 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 ---
 
 <Layout 
-	title="मुफ़्त BMI, BMR, TDEE एवं शरीर संरचना कैलकुलेटर | Real BMI"
-	description="विश्व स्वास्थ्य संगठन (WHO) और सीडीसी मानकों पर आधारित मुफ़्त शैक्षणिक बीएमआई, बीएमआर, टीडीईई और आदर्श वजन कैलकुलेटर। 100% गोपनीय और सुरक्षित ऑनलाइन गणना।"
+	title="Real BMI — प्रमाण-आधारित स्वास्थ्य अनुसंधान, नैदानिक शोध गाइड एवं कैलकुलेटर सूट"
+	description="विश्व स्वास्थ्य संगठन (WHO) और सीडीसी मानकों पर आधारित स्वास्थ्य साक्ष्य केंद्र। सहकर्मी-समीक्षित चयापचय गाइड, शैक्षणिक अध्ययन और 100% सुरक्षित ऑनलाइन स्क्रीनिंग टूल्स।"
 >
 	<Navbar />
 	
@@ -22,33 +23,33 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 
 		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
 		<section class="pt-24 md:pt-28 pb-8 md:pb-12 px-4 md:px-6">
-			<div class="max-w-7xl mx-auto">
+			<div class="max-w-7xl mx-auto space-y-10">
 
 				<!-- Main H1 & Hero Header -->
-				<div class="text-center space-y-4 mb-8 max-w-4xl mx-auto">
+				<div class="text-center space-y-4 max-w-4xl mx-auto">
 					<!-- Eyebrow Tag / Pill -->
 					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						REAL BMI — साक्ष्य-आधारित स्वास्थ्य एवं अनुसंधान सूट
+						क्लिनिकल साक्ष्य केंद्र • सहकर्मी-समीक्षित स्वास्थ्य अनुसंधान एवं टूल्स
 					</div>
 
 					<!-- Main H1 headline -->
 					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Real BMI — मुफ़्त स्वास्थ्य एवं शारीरिक संरचना कैलकुलेटर
+						प्रमाण-आधारित स्वास्थ्य अनुसंधान, नैदानिक गाइड एवं स्क्रीनिंग टूल्स
 					</h1>
 
 					<!-- Supporting H2 Subtitle & Intro -->
 					<p class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight font-display">
-						अपने नंबर समझें। विश्वास के साथ योजना बनाएं।
+						सहकर्मी-समीक्षित चिकित्सा साहित्य • बायोस्टैटिस्टिकल एल्गोरिदम • पूर्ण गोपनीयता
 					</p>
 					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed pt-1">
-						विश्व स्वास्थ्य संगठन (WHO) और सीडीसी (CDC) मानकों पर आधारित हमारे निःशुल्क और गोपनीय कैलकुलेटर से अपना बीएमआई (BMI), बीएमआर (BMR) और टीडीईई (TDEE) आसानी से मापें।
+						विश्व स्वास्थ्य संगठन (WHO) और सीडीसी (CDC) के प्रकाशित महामारी विज्ञान मानकों पर आधारित प्रामाणिक स्वास्थ्य अनुसंधान, उम्र-विशिष्ट गाइड और निजी ब्राउज़र कैलकुलेटर।
 					</p>
 				</div>
 
 				<!-- Stats Strip -->
-				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4">
-					{["18+ कैलकुलेटर","25+ नैदानिक गाइड","6 भाषाएं","क्लाइंट-साइड गोपनीयता"].map(badge => (
+				<div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+					{["25+ नैदानिक गाइड","30+ सहकर्मी-समीक्षित लेख","15 अनुक्रमित अध्ययन","WHO एवं CDC साक्ष्य मानक"].map(badge => (
 						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
 							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
 							{badge}
@@ -56,37 +57,39 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 					))}
 				</div>
 
-				<!-- Trust Badge below Stats -->
-				<div class="flex items-center justify-center gap-2 mb-8 md:mb-10 text-xs font-medium text-[var(--muted-foreground)]">
-					<svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-					</svg>
-					<span>डब्ल्यूएचओ एवं सीडीसी संदर्भ मानक • सहकर्मी-समीक्षित सूत्र</span>
-				</div>
+				<!-- ═══════════════════  UPPER EVIDENCE & RESEARCH HUB  ═══════════════════ -->
+				<UpperEvidenceCenter lang="hi" />
 
-				<!-- Quick Screening Launchpad -->
-				<div class="max-w-5xl mx-auto">
-					<HeroQuickLaunch lang="hi" />
-				</div>
 			</div>
 		</section>
 
-		<!-- ═══════════════════  POPULAR HEALTH TOPICS  ═══════════════════ -->
-		<div class="px-4 md:px-6 pt-4 pb-8 content-auto">
-			<div class="max-w-7xl mx-auto">
-				<PopularHealthTopics lang="hi" />
-			</div>
-		</div>
-
 		<!-- ═══════════════════  FEATURED RESEARCH GUIDES  ═══════════════════ -->
-		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20">
+		<div id="featured-guides" class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
 				<FeaturedResearchGuides lang="hi" />
 			</div>
 		</div>
 
 		<!-- ═══════════════════  LATEST HEALTH ARTICLES  ═══════════════════ -->
-		<div class="px-4 md:px-6 py-8 md:py-12 content-auto">
+		<div id="latest-articles" class="px-4 md:px-6 py-8 md:py-12 content-auto scroll-mt-20">
+			<div class="max-w-7xl mx-auto">
+				<LatestArticles lang="hi" limit={6} />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  QUICK SCREENING LAUNCHPAD  ═══════════════════ -->
+		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40">
+			<div class="max-w-7xl mx-auto">
+				<HeroQuickLaunch lang="hi" />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  POPULAR HEALTH TOPICS  ═══════════════════ -->
+		<div class="px-4 md:px-6 pt-4 pb-8 content-auto border-t border-[var(--border)]/40">
+			<div class="max-w-7xl mx-auto">
+				<PopularHealthTopics lang="hi" />
+			</div>
+		</div>
 			<div class="max-w-7xl mx-auto">
 				<LatestArticles lang="hi" limit={6} />
 			</div>
