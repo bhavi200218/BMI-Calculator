@@ -26,7 +26,9 @@ const articleTitle = article.title[lang] || article.title.en;
 const articleCategory = article.category ? (article.category[lang] || article.category.en) : 'Health';
 const articleDescription = article.description[lang] || article.description.en;
 const rawContentHtml = article.contentHtml ? (article.contentHtml[lang] || '') : '';
-const plainTextLen = rawContentHtml.replace(/<[^>]+>/g, '').trim().length;
+const cleanPlainText = rawContentHtml.replace(/<[^>]+>/g, '').trim();
+const plainTextLen = cleanPlainText.length;
+const wordCount = cleanPlainText ? cleanPlainText.split(/\s+/).filter(Boolean).length : 0;
 const clinicalBadge: Record<string, string> = {
   en: 'International Clinical Reference Data',
   es: 'Datos de Referencia Clínica Internacional',
@@ -36,17 +38,19 @@ const clinicalBadge: Record<string, string> = {
   hi: 'अंतर्राष्ट्रीय नैदानिक संदर्भ डेटा'
 };
 const badgeLabel = clinicalBadge[lang] || clinicalBadge.en;
-const isFallback = (plainTextLen <= 350);
-const articleContentHtml = (!isFallback)
-  ? rawContentHtml
-  : (rawContentHtml
-      ? `${rawContentHtml} <div class="mt-8 pt-8 border-t border-[var(--border)]"><div class="not-prose mb-4 px-3 py-1.5 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider inline-block">${badgeLabel}</div>${article.contentHtml?.en || ''}</div>`
-      : (article.contentHtml?.en || null));
-const articleBody: string[] = (article.body ? (article.body[lang] || article.body.en) : []) || [];
 
-const canonicalUrl = `https://realbmicalculator.com/${lang}/blog/${slug}/`;
+// Elimination of thin multilingual content & English fallback stitching:
+// Non-English blog stubs are 301 redirected to the authoritative English articles.
+// To guarantee zero Google AdSense "Low Value Content" penalties, all non-English blog pages are:
+// 1) Canonicalized to the primary English article (/blog/${slug}/)
+// 2) Permanently set to robots: 'noindex, follow' (0 indexable non-English blog pages)
+// 3) Free from Frankenstein English fallback text block dumps
+const articleContentHtml = rawContentHtml || '';
+const articleBody: string[] = (article.body ? (article.body[lang] || []) : []) || [];
+
+const canonicalUrl = `https://realbmicalculator.com/blog/${slug}/`;
 const cta = getBlogCta(slug as string, lang);
-const robotsDirective = isFallback ? 'noindex, follow' : 'index, follow';
+const robotsDirective = 'noindex, follow';
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -130,6 +134,26 @@ const byline = bylineLabels[lang] || bylineLabels.en;
           <p><span class="font-medium text-[var(--foreground)]">{byline.published}:</span> {datePublished}</p>
           <p><span class="font-medium text-[var(--foreground)]">{byline.updated}:</span> {dateModified}</p>
         </div>
+      <!-- Editorial Edition Notice -->
+      <div class="not-prose mb-6 p-4 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)] text-xs text-[var(--muted-foreground)] flex items-center justify-between gap-3">
+        <span>{{
+          en: "Complete clinical guide available in the authoritative English edition.",
+          es: "Guía clínica completa disponible en la edición oficial en inglés.",
+          fr: "Guide clinique complet disponible dans l'édition officielle en anglais.",
+          de: "Umfassender klinischer Leitfaden in der offiziellen englischen Ausgabe verfügbar.",
+          ko: "공식 영문 에디션에서 전체 심층 임상 가이드를 확인하실 수 있습니다.",
+          hi: "संपूर्ण नैदानिक गाइड आधिकारिक अंग्रेजी संस्करण में उपलब्ध है।"
+        }[lang]}</span>
+        <a href={`/blog/${slug}/`} class="text-[var(--accent)] font-semibold underline shrink-0 hover:text-[var(--foreground)]">
+          {{
+            en: "Read full English guide →",
+            es: "Leer en inglés →",
+            fr: "Lire en anglais →",
+            de: "Auf Englisch lesen →",
+            ko: "영문 원본 읽기 →",
+            hi: "अंग्रेजी में पढ़ें →"
+          }[lang]}
+        </a>
       </div>
 
       <article class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">

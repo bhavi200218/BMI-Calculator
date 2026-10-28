@@ -892,8 +892,10 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           calculated = {
             primary: { value: Math.round(protein), label: { en: 'Protein Target', es: 'Objetivo de Proteína', fr: 'Objectif Protéines', de: 'Zielzufuhr Eiweiß', ko: '목표 단백질 중량', hi: 'प्रोटीन लक्ष्य' }, unit: 'g/day' },
             secondary: [
-              { label: { en: 'Minimum Threshold', es: 'Consumo Mínimo', fr: 'Seuil Minimum', de: 'Mindestbedarf (DGE)', ko: '최소 단백질 권장량', hi: 'न्यूनतम सीमा' }, value: Math.round(weightKg * 0.8), unit: 'g' },
-              { label: { en: 'Athletic Intake', es: 'Consumo Atlético', fr: 'Athlètes Actifs', de: 'Leistungssportler', ko: '활동성 집중 섭취량', hi: 'एथलेटिक सेवन' }, value: Math.round(weightKg * 2.4), unit: 'g' }
+              { label: { en: 'Sedentary Baseline (0.8 g/kg)', es: 'Línea Base Sedentaria (0.8 g/kg)', fr: 'Base Sédentaire (0,8 g/kg)', de: 'Sitzend Grundbedarf (0,8 g/kg)', ko: '좌식 생활 기준 (0.8 g/kg)', hi: 'गतिहीन आधार (0.8 g/kg)' }, value: Math.round(weightKg * 0.8), unit: 'g/day' },
+              { label: { en: 'Athlete Intake (1.4–2.0 g/kg)', es: 'Consumo Atlético (1.4–2.0 g/kg)', fr: 'Athlètes Actifs (1,4–2,0 g/kg)', de: 'Sportler (1,4–2,0 g/kg)', ko: '운동선수 섭취량 (1.4~2.0 g/kg)', hi: 'एथलीट सेवन (1.4–2.0 g/kg)' }, value: `${Math.round(weightKg * 1.4)} - ${Math.round(weightKg * 2.0)}`, unit: 'g/day' },
+              { label: { en: 'Weight Loss Target (1.8–2.4 g/kg)', es: 'Pérdida de Peso (1.8–2.4 g/kg)', fr: 'Perte de Poids (1,8–2,4 g/kg)', de: 'Gewichtsverlust (1,8–2,4 g/kg)', ko: '체중 감량 목표 (1.8~2.4 g/kg)', hi: 'वजन घटाने का लक्ष्य (1.8–2.4 g/kg)' }, value: `${Math.round(weightKg * 1.8)} - ${Math.round(weightKg * 2.4)}`, unit: 'g/day' },
+              { label: { en: 'Muscle Building (1.6–2.2 g/kg)', es: 'Ganancia Muscular (1.6–2.2 g/kg)', fr: 'Prise de Muscle (1,6–2,2 g/kg)', de: 'Muskelaufbau (1,6–2,2 g/kg)', ko: '근육량 증가 (1.6~2.2 g/kg)', hi: 'मांसपेशी निर्माण (1.6–2.2 g/kg)' }, value: `${Math.round(weightKg * 1.6)} - ${Math.round(weightKg * 2.2)}`, unit: 'g/day' }
             ]
           };
         } 
@@ -902,9 +904,12 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           if (activityVal === 'active') waterMl += 750;
 
           calculated = {
-            primary: { value: (waterMl / 1000).toFixed(2), label: { en: 'Water Target', es: 'Objetivo de Agua', fr: 'Objectif d\'Hydratation', de: 'Täglicher Wasserbedarf', ko: '목표 수분 섭취량', hi: 'पानी का लक्ष्य' }, unit: 'Liters/day' },
+            primary: { value: (waterMl / 1000).toFixed(2), label: { en: 'Daily Baseline Water', es: 'Objetivo de Agua', fr: 'Objectif d\'Hydratation', de: 'Täglicher Wasserbedarf', ko: '목표 수분 섭취량', hi: 'पानी का लक्ष्य' }, unit: 'Liters/day' },
             secondary: [
-              { label: { en: 'Standard Glasses (250ml)', es: 'Vasos Estándar (250ml)', fr: 'Verres Standards', de: 'Gläser (250ml)', ko: '일반 컵 횟수 (250ml)', hi: 'मानक गिलास (250 मिली)' }, value: Math.round(waterMl / 250) }
+              { label: { en: 'Standard Glasses (250ml)', es: 'Vasos Estándar (250ml)', fr: 'Verres Standards (250ml)', de: 'Gläser (250ml)', ko: '일반 컵 횟수 (250ml)', hi: 'मानक गिलास (250 मिली)' }, value: Math.round(waterMl / 250), unit: 'glasses' },
+              { label: { en: 'Summer Heat Target (+750ml)', es: 'Verano (+750ml)', fr: 'Chaleur Été (+750ml)', de: 'Sommerhitze (+750ml)', ko: '여름철 권장량 (+750ml)', hi: 'गर्मी का मौसम (+750ml)' }, value: ((waterMl + 750) / 1000).toFixed(2), unit: 'Liters/day' },
+              { label: { en: 'Winter Baseline Intake', es: 'Invierno (Línea Base)', fr: 'Hiver (Apport de Base)', de: 'Winter Grundbedarf', ko: '겨울철 권장량', hi: 'सर्दियों का सेवन' }, value: ((weightKg * 32) / 1000).toFixed(2), unit: 'Liters/day' },
+              { label: { en: 'Workout Hydration (per hour)', es: 'Hidratación por Hora de Ejercicio', fr: 'Hydratation par Heure d\'Effort', de: 'Training pro Stunde', ko: '운동 시 시간당 수분', hi: 'प्रति घंटा कसरत' }, value: '500 - 1000', unit: 'ml/hour' }
             ]
           };
         } 
@@ -968,22 +973,33 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           const maxHr = 220 - ageNum;
 
           calculated = {
-            primary: { value: maxHr, label: { en: 'Max Heart Rate', es: 'Frecuencia Cardíaca Máxima', fr: 'Fréquence Cardiaque Max', de: 'Maximale Herzfrequenz', ko: '최대 심박수', hi: 'अधिकतम हार्ट रेट' }, unit: 'bpm' },
+            primary: { value: maxHr, label: { en: 'Max Heart Rate (HRmax)', es: 'Frecuencia Cardíaca Máxima', fr: 'Fréquence Cardiaque Max', de: 'Maximale Herzfrequenz', ko: '최대 심박수', hi: 'अधिकतम हार्ट रेट' }, unit: 'bpm' },
             secondary: [
-              { label: { en: 'Fat Burn (60-70%)', es: 'Zona Quema Grasa (60-70%)', fr: 'Brule Graisse (60-70%)', de: 'Fettverbrennung (60-70%)', ko: '체지방 연소 구간 (60-70%)', hi: 'फैट बर्न (60-70%)' }, value: `${Math.round(maxHr * 0.6)} - ${Math.round(maxHr * 0.7)}`, unit: 'bpm' },
-              { label: { en: 'Aerobic (70-80%)', es: 'Zona Cardio (70-80%)', fr: 'Cardio (70-80%)', de: 'Fitness/Ausdauer (70-80%)', ko: '유산소 운동 구간 (70-80%)', hi: 'एरोबिक (70-80%)' }, value: `${Math.round(maxHr * 0.7)} - ${Math.round(maxHr * 0.8)}`, unit: 'bpm' }
+              { label: { en: 'Zone 1 Recovery (50–60%)', es: 'Zona 1 Recuperación (50–60%)', fr: 'Zone 1 Récupération (50–60%)', de: 'Zone 1 Erholung (50–60%)', ko: '존 1 회복 구간 (50–60%)', hi: 'ज़ोन 1 रिकवरी (50–60%)' }, value: `${Math.round(maxHr * 0.50)} - ${Math.round(maxHr * 0.60)}`, unit: 'bpm' },
+              { label: { en: 'Zone 2 Aerobic Base (60–70%)', es: 'Zona 2 Base Aeróbica (60–70%)', fr: 'Zone 2 Base Aérobie (60–70%)', de: 'Zone 2 Aerobe Basis (60–70%)', ko: '존 2 유산소 기초 (60–70%)', hi: 'ज़ोन 2 एरोबिक बेस (60–70%)' }, value: `${Math.round(maxHr * 0.60)} - ${Math.round(maxHr * 0.70)}`, unit: 'bpm' },
+              { label: { en: 'Zone 3 Aerobic Tempo (70–80%)', es: 'Zona 3 Tempo Cardio (70–80%)', fr: 'Zone 3 Tempo Cardio (70–80%)', de: 'Zone 3 Cardio Tempo (70–80%)', ko: '존 3 템포 지구력 (70–80%)', hi: 'ज़ोन 3 एरोबिक टेम्पो (70–80%)' }, value: `${Math.round(maxHr * 0.70)} - ${Math.round(maxHr * 0.80)}`, unit: 'bpm' },
+              { label: { en: 'Zone 4 Lactate Threshold (80–90%)', es: 'Zona 4 Umbral Anaeróbico (80–90%)', fr: 'Zone 4 Seuil Lactique (80–90%)', de: 'Zone 4 Laktatschwelle (80–90%)', ko: '존 4 무산소 역치 (80–90%)', hi: 'ज़ोन 4 लैक्टेट थ्रेशोल्ड (80–90%)' }, value: `${Math.round(maxHr * 0.80)} - ${Math.round(maxHr * 0.90)}`, unit: 'bpm' },
+              { label: { en: 'Zone 5 VO2 Max Peak (90–100%)', es: 'Zona 5 Pico VO2 Máx (90–100%)', fr: 'Zone 5 Pic VO2 Max (90–100%)', de: 'Zone 5 VO2-Spitze (90–100%)', ko: '존 5 최대 산소섭취량 (90–100%)', hi: 'ज़ोन 5 VO2 मैक्स पीक (90–100%)' }, value: `${Math.round(maxHr * 0.90)} - ${maxHr}`, unit: 'bpm' }
             ]
           };
         } 
-        else if (slug === 'one-rep-max-calculator') {
+        else if (slug === '1rm-calculator' || slug === 'one-rep-max-calculator') {
           const liftW = parseFloat(val('weight')) || 0;
           const reps = parseInt(ageVal) || 1;
-          const oneRepMax = liftW * (1 + (reps / 30));
+          const epley1RM = liftW * (1 + (reps / 30));
+          const brzycki1RM = reps < 37 ? liftW * (36 / (37 - reps)) : epley1RM;
+          const lander1RM = (100 * liftW) / Math.max(1, 101.3 - (2.67123 * reps));
+          const unit = currentUnitSystem === 'imperial' ? 'lbs' : 'kg';
 
           calculated = {
-            primary: { value: Math.round(oneRepMax), label: { en: 'Estimated 1RM', es: '1RM Estimado', fr: '1RM Estimé', de: 'Berechneter 1RM', ko: '추정 1RM 무게', hi: 'अनुमानित 1RM' }, unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
+            primary: { value: Math.round(epley1RM), label: { en: 'Estimated 1RM (Epley)', es: '1RM Estimado (Epley)', fr: '1RM Estimé (Epley)', de: 'Geschätzter 1RM (Epley)', ko: 'Epley 추정 1RM', hi: 'अनुमानित 1RM (Epley)' }, unit: unit },
             secondary: [
-              { label: { en: '85% Maximum (approx 5-6 Reps)', es: '85% del Máximo', fr: '85% de la force', de: '85% der Maximalkraft', ko: '85% 훈련 무게 (5~6회)', hi: '85% अधिकतम' }, value: Math.round(oneRepMax * 0.85), unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' }
+              { label: { en: 'Brzycki Formula 1RM', es: 'Fórmula Brzycki 1RM', fr: 'Formule Brzycki 1RM', de: 'Brzycki Formel 1RM', ko: 'Brzycki 추정 1RM', hi: 'ब्रज़िकी 1RM' }, value: Math.round(brzycki1RM), unit: unit },
+              { label: { en: 'Lander Formula 1RM', es: 'Fórmula Lander 1RM', fr: 'Formule Lander 1RM', de: 'Lander Formel 1RM', ko: 'Lander 추정 1RM', hi: 'लैंडर 1RM' }, value: Math.round(lander1RM), unit: unit },
+              { label: { en: '90% 1RM (3-4 Reps Strength)', es: '90% del Máximo (3-4 Reps)', fr: '90% du 1RM (3-4 Reps)', de: '90% 1RM (3-4 Wdh)', ko: '90% 훈련 무게 (3~4회)', hi: '90% 1RM (3-4 रेप्स)' }, value: Math.round(epley1RM * 0.90), unit: unit },
+              { label: { en: '85% 1RM (5-6 Reps Strength)', es: '85% del Máximo (5-6 Reps)', fr: '85% du 1RM (5-6 Reps)', de: '85% 1RM (5-6 Wdh)', ko: '85% 훈련 무게 (5~6회)', hi: '85% 1RM (5-6 रेप्स)' }, value: Math.round(epley1RM * 0.85), unit: unit },
+              { label: { en: '80% 1RM (7-8 Reps Hypertrophy)', es: '80% del Máximo (7-8 Reps)', fr: '80% du 1RM (7-8 Reps)', de: '80% 1RM (7-8 Wdh)', ko: '80% 훈련 무게 (7~8회)', hi: '80% 1RM (7-8 रेप्स)' }, value: Math.round(epley1RM * 0.80), unit: unit },
+              { label: { en: '70% 1RM (11-12 Reps Endurance)', es: '70% del Máximo (11-12 Reps)', fr: '70% du 1RM (11-12 Reps)', de: '70% 1RM (11-12 Wdh)', ko: '70% 훈련 무게 (11~12회)', hi: '70% 1RM (11-12 रेप्स)' }, value: Math.round(epley1RM * 0.70), unit: unit }
             ]
           };
         } 

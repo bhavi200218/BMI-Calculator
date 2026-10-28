@@ -4780,51 +4780,51 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "title": "Protein Intake Calculator – Daily Protein Reference",
       "intro": "Find your daily protein target with our free Protein Intake Calculator. It estimates how much protein you need each day based on your body weight, workout routine, and fitness goals. View your personalized recommendations in grams per day.",
       "formulaTitle": "Protein Intake Formula & Activity Multipliers",
-      "formulaDesc": "Daily Protein (g) = Body Weight (kg) × Goal Multiplier. Sedentary adults need about 0.8 g/kg. Active runners and cyclists need 1.2 to 1.4 g/kg. Strength athletes benefit from 1.6 to 2.2 g/kg.",
+      "formulaDesc": "Daily Protein (g) = Body Weight (kg) × Goal Multiplier. Sedentary adults need about 0.8 g/kg. Active endurance athletes require 1.2 to 2.0 g/kg. Individuals in a caloric deficit for weight loss need 1.8 to 2.4 g/kg to protect lean muscle, while lifters building muscle benefit from 1.6 to 2.2 g/kg.",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "Daily Protein Recommendations by Activity & Goal",
+      "tableTitle": "Protein per kg Table — Sedentary, Athlete, Weight Loss & Muscle Building Targets",
       "tableRows": [
         {
-          "col1": "Sedentary Adult Baseline",
-          "col2": "0.8 g per kg body weight",
-          "col3": "Baseline recommended daily allowance (RDA) to prevent nutritional deficiency"
+          "col1": "Sedentary",
+          "col2": "0.8 g / kg / day",
+          "col3": "Baseline Recommended Dietary Allowance (RDA) established by WHO/NIH DRI to prevent nitrogen deficit and cellular protein malnutrition in non-exercising adults."
         },
         {
-          "col1": "Endurance Athlete",
-          "col2": "1.2 – 1.4 g per kg body weight",
-          "col3": "Supports muscle recovery from distance running, swimming, or cycling"
+          "col1": "Athlete",
+          "col2": "1.2 – 2.0 g / kg / day",
+          "col3": "Endurance runners and cyclists require 1.2–1.6 g/kg; team and high-intensity intermittent athletes require 1.6–2.0 g/kg for tissue repair and glycogen replenishment."
         },
         {
-          "col1": "Strength Training & Muscle Growth",
-          "col2": "1.6 – 2.2 g per kg body weight",
-          "col3": "Optimal range to build muscle and support strength gains"
+          "col1": "Weight Loss",
+          "col2": "1.8 – 2.4 g / kg / day",
+          "col3": "Essential during a hypocaloric diet (caloric deficit) to spare skeletal muscle from catabolism, elevate the thermic effect of food (TEF), and maximize satiety peptides (PYY, GLP-1)."
         },
         {
-          "col1": "Fat Loss Calorie Deficit",
-          "col2": "1.8 – 2.4 g per kg body weight",
-          "col3": "Helps preserve lean muscle and curbs hunger while eating fewer calories"
+          "col1": "Muscle Building",
+          "col2": "1.6 – 2.2 g / kg / day",
+          "col3": "Optimal hypertrophic zone validated by Morton et al. (BJSM meta-analysis) and ISSN; maximizes fractional muscle protein synthesis (MPS) rates when paired with resistance overload."
         }
       ],
       "faqs": [
         {
-          "question": "How much protein do I need each day?",
-          "answer": "Sedentary adults need at least 0.8 grams of protein per kilogram of body weight. Active people and gym goers generally benefit from 1.2 to 2.2 grams per kilogram."
+          "question": "How much protein per kg do sedentary adults, athletes, weight loss, and muscle building need?",
+          "answer": "Scientific guidelines establish distinct daily protein targets: Sedentary adults need 0.8 g/kg to maintain nitrogen equilibrium; athletes need 1.2 to 2.0 g/kg to support muscular recovery and cellular remodeling; people in a caloric deficit for weight loss need 1.8 to 2.4 g/kg to preserve lean tissue and curb hunger; and individuals focused on muscle building need 1.6 to 2.2 g/kg to saturate muscle protein synthesis (MPS)."
         },
         {
-          "question": "Why is protein intake important when losing weight?",
-          "answer": "Protein helps keep you full and satisfied between meals. Eating enough protein during a calorie deficit also protects your muscles, ensuring that most weight lost is fat."
+          "question": "Can consuming 2.0+ grams of protein per kg harm kidney function or bone density in healthy adults?",
+          "answer": "Extensive clinical research, including systematic reviews from the International Society of Sports Nutrition (ISSN), confirms that high-protein diets (up to 3.0 g/kg/day) do not impair glomerular filtration rate, kidney function, or bone mineral density in healthy individuals. Those with pre-existing renal disease or compromised kidney function must consult a nephrologist for clinical restrictions."
         },
         {
-          "question": "How do I calculate my daily protein target?",
-          "answer": "Multiply your body weight in kilograms by your target factor. For example, a 70 kg adult who lifts weights might choose 1.8 g/kg, which equals 126 grams of protein daily."
+          "question": "How should I distribute my daily protein per kg across meals?",
+          "answer": "Sports scientists recommend consuming 0.40 to 0.55 g of protein per kilogram of body weight per meal (approximately 25 to 45 grams per meal for most adults) distributed evenly across 3 to 5 meals throughout the day. This provides repeated leucine-mediated triggers for the mTORC1 pathway, optimizing round-the-clock muscle protein synthesis."
         },
         {
-          "question": "What are some high-protein foods to include in my diet?",
-          "answer": "Healthy protein sources include chicken breast (31g per 100g), Greek yogurt (10g per 100g), eggs (6g each), tofu (8g per 100g), and cooked lentils (9g per 100g)."
+          "question": "What whole food sources provide the best amino acid profiles to hit athletic and muscle building targets?",
+          "answer": "Complete protein sources rich in branched-chain amino acids (especially leucine) include skinless chicken breast (31g per 100g), wild salmon (25g per 100g), whole eggs (6g each), Greek yogurt (10g per 100g), and cottage cheese (11g per 100g). Plant-based options with complete amino acid profiles include edamame (18g per cup), firm tofu (10g per 100g), tempeh (19g per 100g), and lentil-quinoa combinations."
         },
         {
-          "question": "Who should be cautious with high protein intake?",
-          "answer": "Anyone with kidney or liver conditions should consult a doctor before increasing protein. Healthy kidneys easily handle athletic protein levels, but impaired organs may need lower amounts."
+          "question": "Is the post-workout 'anabolic window' real, and does total daily protein per kg matter more?",
+          "answer": "Consuming protein within 1 to 2 hours post-workout is beneficial, but modern sports nutrition confirms that total daily protein intake per kilogram and consistent per-meal distribution are far more impactful for muscle growth and recovery than rushing to drink a shake within an arbitrary 30-minute window."
         }
       ]
     },
@@ -4832,264 +4832,208 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de Proteínas – Requerimiento Diario de Proteína",
       "intro": "Calculadora de ingesta diaria de proteínas gratuita. Calcula la ingesta óptima diaria de proteínas en gramos para crecimiento muscular, pérdida de grasa y rendimiento deportivo según peso, objetivos y actividad con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
+      "formulaTitle": "Fórmula de Ingesta Diaria de Proteína y Multiplicadores",
+      "formulaDesc": "Proteína diaria (g) = Peso corporal (kg) × Factor de objetivo (0.8 a 2.4 g/kg). Los adultos sedentarios precisan 0.8 g/kg, mientras que atletas y deportistas en déficit calórico o hipertrofia requieren entre 1.6 y 2.4 g/kg.",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "Matriz de Ingesta Diaria de Proteína (g/kg) por Actividad y Objetivo",
+      "tableTitle": "Tabla de Proteína por kg — Objetivos para Sedentarios, Atletas, Pérdida de Peso y Masa Muscular",
       "tableRows": [
         {
-          "col1": "Adulto Sedentario (Base)",
-          "col2": "0.8 g / kg de peso corporal",
-          "col3": "Referencia básica de la dosis diaria recomendada (RDA)"
+          "col1": "Sedentario",
+          "col2": "0.8 g / kg / día",
+          "col3": "Cantidad diaria recomendada (RDA) de la OMS para prevenir déficit de nitrógeno en adultos no activos."
         },
         {
-          "col1": "Atleta de Resistencia Activo",
-          "col2": "1.2 – 1.4 g / kg de peso corporal",
-          "col3": "Rango de referencia para atletas de fondo"
+          "col1": "Atleta",
+          "col2": "1.2 – 2.0 g / kg / día",
+          "col3": "Deportes de resistencia (1.2–1.6 g/kg) y disciplinas de alta intensidad (1.6–2.0 g/kg) para reparación tisular."
         },
         {
-          "col1": "Hipertrofia y Ganancia Muscular",
-          "col2": "1.6 – 2.2 g / kg de peso corporal",
-          "col3": "Objetivo atlético habitual para entrenamiento de fuerza"
+          "col1": "Pérdida de Peso",
+          "col2": "1.8 – 2.4 g / kg / día",
+          "col3": "Crucial durante el déficit calórico para preservar masa magra, elevar la termogénesis alimentaria y aumentar la saciedad."
         },
         {
-          "col1": "Definición y Déficit Calórico",
-          "col2": "1.8 – 2.4 g / kg de peso corporal",
-          "col3": "Rango protector de la masa muscular durante el déficit"
+          "col1": "Masa Muscular",
+          "col2": "1.6 – 2.2 g / kg / día",
+          "col3": "Rango validado por la ISSN y metaanálisis del BJSM para maximizar la síntesis proteica muscular (MPS) con sobrecarga progresiva."
         }
       ],
       "faqs": [
         {
-          "question": "¿Qué es la calculadora de ingesta de proteínas?",
-          "answer": "Es una herramienta de nutrición deportiva que estima tus necesidades diarias de proteínas en gramos según tu peso, objetivo y nivel de actividad."
+          "question": "¿Cuánta proteína por kg se necesita según el estilo de vida y objetivos?",
+          "answer": "Los adultos sedentarios necesitan 0.8 g/kg para equilibrio metabólico; los atletas de 1.2 a 2.0 g/kg; las personas en déficit para perder peso entre 1.8 y 2.4 g/kg para proteger el músculo; y quienes buscan hipertrofia entre 1.6 y 2.2 g/kg."
         },
         {
-          "question": "¿Cuánta proteína necesito al día para ganar músculo frente a perder peso?",
-          "answer": "Para mantenimiento suele bastar 1.2 a 1.6 g/kg, mientras que para desarrollo muscular o definición se recomiendan habitualmente de 1.6 a 2.2 g por kg de peso."
+          "question": "¿Afecta una ingesta elevada de proteínas (2 g/kg o más) la salud renal en personas sanas?",
+          "answer": "Los estudios clínicos de la ISSN confirman que ingestas de hasta 2.5-3.0 g/kg/día no causan daño renal ni pérdida ósea en personas sanas. Pacientes con patologías renales previas deben consultar a su especialista."
         },
         {
-          "question": "¿Cómo calcular los gramos diarios de proteína por kg de peso corporal?",
-          "answer": "Multiplica tu peso en kg por el factor deseado (ej. 70 kg × 2.0 g/kg = 140 g de proteína al día)."
-        },
-        {
-          "question": "¿Cuáles son las mejores fuentes de alimentos ricos en proteínas?",
-          "answer": "Pechuga de pollo, pescado, huevos, yogur griego, tofu, legumbres y proteína de suero son excelentes fuentes de proteína de alta calidad."
-        },
-        {
-          "question": "¿Quiénes deben consultar a un profesional sobre sus metas de proteína?",
-          "answer": "Personas con afecciones renales o metas atléticas específicas deben coordinar sus requerimientos con un nutricionista o médico."
+          "question": "¿Cómo se debe distribuir la proteína diaria por kilogramo entre las comidas?",
+          "answer": "Se aconseja distribuir entre 0.40 y 0.55 g/kg por comida en 3 a 5 tomas a lo largo del día (25-45 g por comida) para estimular periódicamente la vía mTORC1 y la síntesis muscular."
         }
       ]
     },
     "fr": {
-      "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Protéines – Apport Protéique Quotidien",
-      "intro": "Calculateur de besoin quotidien en protéines gratuit. Calculez l'apport quotidien optimal en protéines (g) pour la prise de muscle, la perte de graisse et la performance selon le poids, les objectifs et l'activité avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
+      "eyebrow": "Normes Nutritionnelles de Référence",
+      "title": "Calculateur d'Apport Protéique – Référence Quotidienne",
+      "intro": "Calculez votre besoin quotidien en protéines en grammes selon votre poids, votre niveau d'activité physique et vos objectifs de composition corporelle.",
+      "formulaTitle": "Formule d'Apport en Protéines et Facteurs d'Activité",
+      "formulaDesc": "Protéines quotidiennes (g) = Poids (kg) × Facteur d'objectif (0,8 à 2,4 g/kg). Les adultes sédentaires ont besoin de 0,8 g/kg, les sportifs d'endurance de 1,2 à 1,6 g/kg, et la prise de masse ou le déficit nécessitent 1,6 à 2,4 g/kg.",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "Matrice d'Apport Quotidien en Protéines (g/kg) par Activité et Objectif",
+      "tableTitle": "Tableau des Protéines par kg — Cibles Sédentaire, Athlète, Perte de Poids et Prise Musculaire",
       "tableRows": [
         {
-          "col1": "Adulte Sédentaire (Base)",
-          "col2": "0.8 g / kg de poids corporel",
-          "col3": "Référence de base des apports journaliers recommandés (AJR)"
+          "col1": "Sédentaire",
+          "col2": "0,8 g / kg / jour",
+          "col3": "Apport nutritionnel conseillé (ANC/OMS) pour prévenir les carences azotées chez l'adulte inactif."
         },
         {
-          "col1": "Athlète d'Endurance Actif",
-          "col2": "1.2 – 1.4 g / kg de poids corporel",
-          "col3": "Plage recommandée pour les sports d'endurance"
+          "col1": "Athlète",
+          "col2": "1,2 – 2,0 g / kg / jour",
+          "col3": "Recommandé pour les sports d'endurance (1,2-1,6 g/kg) et collectifs (1,6-2,0 g/kg) pour la régénération tissulaire."
         },
         {
-          "col1": "Prise de Muscle (Hypertrophie)",
-          "col2": "1.6 – 2.2 g / kg de poids corporel",
-          "col3": "Cible fréquente pour l'entraînement en musculation"
+          "col1": "Perte de Poids",
+          "col2": "1,8 – 2,4 g / kg / jour",
+          "col3": "Essentiel en déficit calorique pour préserver la masse musculaire squelettique et réguler la satiété."
         },
         {
-          "col1": "Perte de Graisse en Déficit",
-          "col2": "1.8 – 2.4 g / kg de poids corporel",
-          "col3": "Apport ciblé pour préserver le muscle en déficit calorique"
+          "col1": "Prise Musculaire",
+          "col2": "1,6 – 2,2 g / kg / jour",
+          "col3": "Zone hypertrophique optimale validée par l'ISSN et les méta-analyses du BJSM pour maximiser la synthèse protéique."
         }
       ],
       "faqs": [
         {
-          "question": "Qu'est-ce que le calculateur d'apport en protéines ?",
-          "answer": "C'est un outil de nutrition qui calcule votre besoin quotidien en protéines en grammes selon votre poids, votre activité et vos objectifs."
+          "question": "Quelle quantité de protéines par kg consommer selon votre profil ?",
+          "answer": "Les sédentaires ont besoin de 0,8 g/kg, les athlètes de 1,2 à 2,0 g/kg, les personnes en perte de poids de 1,8 à 2,4 g/kg pour préserver les muscles, et la prise de masse de 1,6 à 2,2 g/kg."
         },
         {
-          "question": "Combien de protéines par jour pour la prise de muscle ou la perte de poids ?",
-          "answer": "Les recommandations courantes se situent entre 1,6 et 2,2 g par kilo de poids de corps pour la musculation et la préservation de la masse maigre."
-        },
-        {
-          "question": "Comment calculer son besoin quotidien en protéines en g/kg ?",
-          "answer": "Multipliez votre poids corporel en kg par votre objectif (par exemple, 70 kg × 2,0 g/kg = 140 g de protéines par jour)."
-        },
-        {
-          "question": "Quelles sont les meilleures sources d'aliments riches en protéines ?",
-          "answer": "Le poulet, le poisson, les œufs, le fromage blanc, le tofu, les lentilles et la whey sont d'excellentes sources de protéines complètes."
-        },
-        {
-          "question": "Qui devrait consulter un professionnel pour son apport en protéines ?",
-          "answer": "Toute personne ayant des antécédents rénaux ou des objectifs spécifiques devrait valider son plan alimentaire avec un professionnel de santé."
+          "question": "Un apport élevé en protéines présente-t-il un risque rénal chez les personnes saines ?",
+          "answer": "Les revues scientifiques et l'ISSN confirment qu'un apport jusqu'à 2,5-3,0 g/kg ne présente aucun risque rénal chez les individus en bonne santé avec des reins fonctionnels."
         }
       ]
     },
     "de": {
-      "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Proteinrechner – Täglicher Eiweißbedarf & Referenzwerte",
-      "intro": "Kostenloser Proteinbedarf-Rechner. Berechnen Sie Ihre optimale tägliche Proteinaufnahme in Gramm für Muskelaufbau, Fettabbau und sportliche Leistung basierend auf Gewicht, Zielen und Aktivität datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
+      "eyebrow": "Ernährungsmedizinische Richtwerte",
+      "title": "Protein-Rechner – Täglicher Eiweißbedarf",
+      "intro": "Ermitteln Sie Ihren täglichen Proteinbedarf in Gramm basierend auf Körpergewicht, Trainingspensum und individuellen Fitnesszielen.",
+      "formulaTitle": "Eiweißbedarfsformel & Aktivitätsfaktoren",
+      "formulaDesc": "Tägliches Protein (g) = Körpergewicht (kg) × Zielfaktor (0,8 bis 2,4 g/kg). Der DGE-Mindestwert liegt bei 0,8 g/kg, während Sportler, Fettabbau und Hypertrophie 1,6 bis 2,4 g/kg erfordern.",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "Täglicher Proteinbedarf (g/kg) nach Aktivität und Trainingsziel",
+      "tableTitle": "Protein pro kg Tabelle — Richtwerte für Sitzend, Sportler, Fettabbau & Muskelaufbau",
       "tableRows": [
         {
-          "col1": "Bewegungsmangel (Basiswert)",
-          "col2": "0.8 g / kg Körpergewicht",
-          "col3": "RDA-Basisexemplar für sitzende Lebensweise"
+          "col1": "Sitzend",
+          "col2": "0,8 g / kg / Tag",
+          "col3": "DGE- und WHO-Mindestempfehlung zur Vermeidung von Stickstoffverlusten bei inaktiven Erwachsenen."
         },
         {
-          "col1": "Ausdauersportler",
-          "col2": "1.2 – 1.4 g / kg Körpergewicht",
-          "col3": "Referenzbereich für aktives Ausdauertraining"
+          "col1": "Sportler",
+          "col2": "1,2 – 2,0 g / kg / Tag",
+          "col3": "Empfohlen für Ausdauersportler (1,2–1,6 g/kg) und Mannschaftssportler (1,6–2,0 g/kg) zur Muskelregeneration."
         },
         {
-          "col1": "Muskelaufbau (Hypertrophie)",
-          "col2": "1.6 – 2.2 g / kg Körpergewicht",
-          "col3": "Gängiger Richtwert für Hypertrophie-Krafttraining"
+          "col1": "Fettabbau (Defizit)",
+          "col2": "1,8 – 2,4 g / kg / Tag",
+          "col3": "Schützt fettfreie Muskelmasse bei Kaloriendefizit, erhöht den thermischen Effekt (TEF) und sättigt langanhaltend."
         },
         {
-          "col1": "Fettabbau im Kaloriendefizit",
-          "col2": "1.8 – 2.4 g / kg Körpergewicht",
-          "col3": "Empfohlener Bereich zum Schutz der Muskelmasse im Defizit"
+          "col1": "Muskelaufbau",
+          "col2": "1,6 – 2,2 g / kg / Tag",
+          "col3": "Optimale Hypertrophie-Zone nach ISSN und BJSM-Metaanalyse zur Maximierung der Muskelproteinsynthese (MPS)."
         }
       ],
       "faqs": [
         {
-          "question": "Was ist der Proteinbedarfs-Rechner?",
-          "answer": "Ein Sporternährungs-Rechner, der Ihre empfohlene tägliche Proteinmenge in Gramm basierend auf Körpergewicht und Trainingsziel ermittelt."
+          "question": "Wie viel Eiweiß pro kg Körpergewicht wird für verschiedene Ziele empfohlen?",
+          "answer": "Sitzende Personen benötigen 0,8 g/kg, Sportler 1,2 bis 2,0 g/kg, Personen im Kaloriendefizit 1,8 bis 2,4 g/kg zum Muskelerhalt und Kraftsportler im Muskelaufbau 1,6 bis 2,2 g/kg."
         },
         {
-          "question": "Wie viel Protein benötige ich täglich für Muskelaufbau oder Fettabbau?",
-          "answer": "In der Sporternährung werden für aktiven Muskelaufbau und Muskelerhalt im Defizit meist 1,6 bis 2,2 g Protein pro kg Körpergewicht empfohlen."
-        },
-        {
-          "question": "Wie berechnet man den täglichen Proteinbedarf in Gramm pro kg?",
-          "answer": "Multiplizieren Sie Ihr Gewicht in kg mit Ihrem Zielfaktor (z. B. 70 kg × 2,0 g/kg = 140 g Protein täglich)."
-        },
-        {
-          "question": "Welche Lebensmittel sind besonders reich an hochwertigem Eiweiß?",
-          "answer": "Hähnchenbrust, Fisch, Eier, Magerquark, Tofu, Hülsenfrüchte und Proteinpulver bieten eine optimale Aminosäurenbilanz."
-        },
-        {
-          "question": "Wer sollte vor einer Ernährungsumstellung ärztlichen Rat einholen?",
-          "answer": "Personen mit Vorerkrankungen der Nieren sollten ihren Proteinbedarf individuell mit einem Arzt oder Ernährungsberater abstimmen."
+          "question": "Schadet eine proteinreiche Ernährung den Nieren gesunder Menschen?",
+          "answer": "Zahlreiche Studien und die ISSN belegen, dass eine Zufuhr von bis zu 2,5 bis 3,0 g/kg bei gesunden Nieren völlig unbedenklich ist. Bei bestehenden Nierenschäden muss ärztlicher Rat eingeholt werden."
         }
       ]
     },
     "ko": {
-      "eyebrow": "건강 참조 표준 지침",
-      "title": "단백질 섭취량 계산기 – 일일 단백질 권장량 측정 도구",
-      "intro": "일일 단백질 섭취량 무료 계산기. 체중, 운동 강도, 피트니스 목표 및 일상 활동량에 따라 근육 성장, 지방 감량 및 운동 회복 능력을 위한 최적의 일일 단백질 섭취량(g)을 안전하게 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
+      "eyebrow": "공인 영양 섭취 기준표",
+      "title": "단백질 섭취량 계산기 – 일일 권장 기준",
+      "intro": "체중, 운동 루틴 및 건강 목표에 맞춘 일일 적정 단백질 섭취량(g)을 산출하세요. 체중 감량, 근육 증가 및 일상 건강을 위한 맞춤 기준을 제공합니다.",
+      "formulaTitle": "일일 단백질 섭취 산출 공식 및 활동 계수",
+      "formulaDesc": "일일 단백질(g) = 체중(kg) × 목표 계수(0.8 ~ 2.4 g/kg). 비운동 성인은 0.8 g/kg, 지구력 운동 선수는 1.2~2.0 g/kg, 근육 증가 및 다이어트는 1.6~2.4 g/kg이 권장됩니다.",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "활동량 및 목표별 일일 단백질 권장 섭취량(g/kg) 기준표",
+      "tableTitle": "체중(kg)당 일일 단백질 섭취 기준표 — 좌식 생활, 운동선수, 체중 감량, 근육 증가",
       "tableRows": [
         {
-          "col1": "좌식 생활 성인 기본치",
-          "col2": "0.8 g / kg 체중",
-          "col3": "일일 권장 섭취량(RDA) 기초 기준치"
+          "col1": "좌식 생활 (비운동 성인)",
+          "col2": "0.8 g / kg / 일",
+          "col3": "WHO 및 보건복지부 영양 섭취 기준 질소 결핍 방지를 위한 최소 필요량."
         },
         {
-          "col1": "지구력 운동 선수",
-          "col2": "1.2 – 1.4 g / kg 체중",
-          "col3": "유산소 및 마라톤 러너 권장 섭취 범위"
+          "col1": "운동선수 (지구력 및 필드)",
+          "col2": "1.2 – 2.0 g / kg / 일",
+          "col3": "지구력 및 구기 종목 운동 후 근섬유 복구 및 글리코겐 합성 효소 재충전."
         },
         {
-          "col1": "근육 성장 (근비대 트레이닝)",
-          "col2": "1.6 – 2.2 g / kg 체중",
-          "col3": "근력 운동 및 웨이트 트레이닝 핵심 목표치"
+          "col1": "체중 감량 (칼로리 제한)",
+          "col2": "1.8 – 2.4 g / kg / 일",
+          "col3": "칼로리 적자 환경에서 제지방 근육 손실을 방지하고 포만감을 극대화."
         },
         {
-          "col1": "다이어트 및 칼로리 결손",
-          "col2": "1.8 – 2.4 g / kg 체중",
-          "col3": "체지방 감량 중 근손실 방지를 위한 권장 섭취량"
+          "col1": "근육 증가 (웨이트 트레이닝)",
+          "col2": "1.6 – 2.2 g / kg / 일",
+          "col3": "국제스포츠영양학회(ISSN) 및 BJSM 메타분석 기준 근비대(MPS) 극대화 구간."
         }
       ],
       "faqs": [
         {
-          "question": "단백질 섭취량 계산기란 무엇인가요?",
-          "answer": "체중, 운동 강도 및 목표에 맞춰 하루에 필요한 단백질 섭취량을 그램(g) 단위로 안내하는 스포츠 영양 계산기입니다."
+          "question": "체중(kg)당 하루 단백질 권장량은 목표별로 어떻게 다른가요?",
+          "answer": "좌식 생활 성인은 체중 1kg당 0.8g, 운동선수는 1.2~2.0g, 다이어트 중 근육 보존 목적은 1.8~2.4g, 근육 비대 및 보디빌딩 목적은 1.6~2.2g이 권장됩니다."
         },
         {
-          "question": "근육 증가 및 체중 감량을 위해 하루에 단백질을 얼마나 섭취해야 하나요?",
-          "answer": "일반적으로 근육 합성 및 체중 감량 시 근손실 방지를 위해 체중 1kg당 1.6~2.2g의 단백질 섭취가 권장됩니다."
-        },
-        {
-          "question": "체중당 단백질 권장량을 어떻게 계산하나요?",
-          "answer": "체중(kg)에 목표 섭취 계수를 곱합니다(예: 체중 70kg × 2.0g = 하루 140g의 단백질)."
-        },
-        {
-          "question": "단백질이 풍부한 대표적인 권장 식품은 무엇인가요?",
-          "answer": "닭가슴살, 계란, 그릭요거트, 생선, 두부, 콩류 및 단백질 보충제 등이 훌륭한 단백질 공급원입니다."
-        },
-        {
-          "question": "단백질 섭취량을 늘릴 때 전문가 상담이 필요한 경우는 언제인가요?",
-          "answer": "신장 질환이 있거나 특이 건강 상태가 있는 분은 고단백 식단을 시작하기 전 전문의 또는 임상영양사와 상의해야 합니다."
+          "question": "단백질을 많이 먹으면 신장에 무리가 가나요?",
+          "answer": "신장 기능이 정상인 건강한 성인의 경우 하루 2.0~3.0 g/kg의 단백질 섭취가 신장 손상을 유발하지 않는다는 점이 다수의 임상 연구로 입증되었습니다. 단, 기존 신장 질환자는 의사의 지침을 따라야 합니다."
         }
       ]
     },
     "hi": {
-      "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "प्रोटीन सेवन कैलकुलेटर – दैनिक प्रोटीन आवश्यकता की गणना",
-      "intro": "मुफ़्त दैनिक प्रोटीन सेवन कैलकुलेटर। वजन, फिटनेस लक्ष्यों और गतिविधि के आधार पर मांसपेशियों की वृद्धि, वसा हानि और एथलेटिक प्रदर्शन के लिए ग्राम में इष्टतम दैनिक प्रोटीन सेवन की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
-      "formulaTitle": "मानक संदर्भ सूत्र",
-      "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
+      "eyebrow": "दैनिक पोषण संदर्भ मानक",
+      "title": "प्रोटीन सेवन कैलकुलेटर – दैनिक प्रोटीन संदर्भ",
+      "intro": "अपने शरीर के वजन, गतिविधि स्तर और फिटनेस लक्ष्यों के आधार पर दैनिक प्रोटीन आवश्यकता (ग्राम/दिन) की सटीक गणना करें।",
+      "formulaTitle": "प्रोटीन गणना सूत्र एवं गतिविधि गुणक",
+      "formulaDesc": "दैनिक प्रोटीन (ग्राम) = शरीर का वजन (किग्रा) × लक्ष्य कारक (0.8 से 2.4 ग्राम/किग्रा)। गतिहीन वयस्कों के लिए 0.8 ग्राम/किग्रा, एथलीटों के लिए 1.2 से 2.0 ग्राम/किग्रा तथा वजन घटाने या मांसपेशी निर्माण हेतु 1.6 से 2.4 ग्राम/किग्रा उपयुक्त है।",
       "formulaCode": "Protein Target (g) = Weight (kg) × Goal Factor (0.8 to 2.4 g/kg)",
-      "tableTitle": "गतिविधि और लक्ष्य के अनुसार दैनिक प्रोटीन संदर्भ सीमा (g/kg) मैट्रिक्स",
+      "tableTitle": "दैनिक प्रोटीन प्रति किग्रा संदर्भ तालिका — गतिहीन, एथलीट, वजन घटाना, मांसपेशी निर्माण",
       "tableRows": [
         {
-          "col1": "गतिहीन वयस्क बेसलाइन",
-          "col2": "0.8 ग्राम / किग्रा शरीर का वजन",
-          "col3": "दैनिक अनुशंसित सेवन (RDA) आधार"
+          "col1": "गतिहीन (Sedentary)",
+          "col2": "0.8 ग्राम / किग्रा / दिन",
+          "col3": "डब्ल्यूएचओ/आईसीएमआर द्वारा अनुशंसित न्यूनतम स्तर जो पोषण की कमी रोकता है।"
         },
         {
-          "col1": "सक्रिय धीरज एथलीट",
-          "col2": "1.2 – 1.4 ग्राम / किग्रा शरीर का वजन",
-          "col3": "धीरज एथलेटिक संदर्भ सीमा"
+          "col1": "एथलीट (Athlete)",
+          "col2": "1.2 – 2.0 ग्राम / किग्रा / दिन",
+          "col3": "दौड़, तैराकी और खेलों के बाद मांसपेशियों की मरम्मत और सहनशक्ति हेतु।"
         },
         {
-          "col1": "मांसपेशियों की वृद्धि (हाइपरट्रॉफी)",
-          "col2": "1.6 – 2.2 ग्राम / किग्रा शरीर का वजन",
-          "col3": "शक्ति प्रशिक्षण के लिए मुख्य लक्ष्य"
+          "col1": "वजन घटाना (Weight Loss)",
+          "col2": "1.8 – 2.4 ग्राम / किग्रा / दिन",
+          "col3": "कैलोरी की कमी के दौरान मांसपेशियों के नुकसान को रोकने और भूख नियंत्रित करने के लिए।"
         },
         {
-          "col1": "फैट लॉस कैलोरी घाटा",
-          "col2": "1.8 – 2.4 ग्राम / किग्रा शरीर का वजन",
-          "col3": "मांसपेशियों के संरक्षण के लिए अनुशंसित सीमा"
+          "col1": "मांसपेशी निर्माण (Muscle Building)",
+          "col2": "1.6 – 2.2 ग्राम / किग्रा / दिन",
+          "col3": "स्ट्रेंथ ट्रेनिंग के साथ मांसपेशियों के विकास (हाइपरट्रॉफी) को अधिकतम करने के लिए।"
         }
       ],
       "faqs": [
         {
-          "question": "मुझे रोजाना कितने ग्राम प्रोटीन की आवश्यकता है?",
-          "answer": "एक सामान्य वयस्क को प्रति किग्रा वजन पर न्यूनतम 0.8 ग्राम, जबकि सक्रिय एथलीटों को 1.6 से 2.2 ग्राम प्रोटीन चाहिए।"
+          "question": "गतिहीन, एथलीट, वजन घटाने और मांसपेशी निर्माण हेतु कितना प्रोटीन प्रति किग्रा चाहिए?",
+          "answer": "गतिहीन वयस्कों के लिए 0.8 ग्राम/किग्रा, एथलीटों के लिए 1.2 से 2.0 ग्राम/किग्रा, वजन घटाने के दौरान 1.8 से 2.4 ग्राम/किग्रा और मांसपेशी निर्माण के लिए 1.6 से 2.2 ग्राम/किग्रा प्रोटीन की आवश्यकता होती है।"
         },
         {
-          "question": "मांसपेशियां बनाने के लिए प्रोटीन का दैनिक लक्ष्य क्या है?",
-          "answer": "मांसपेशियों के निर्माण के लिए आपके शरीर के वजन के प्रति किग्रा पर 1.6 से 2.0 ग्राम प्रोटीन की सलाह दी जाती है।"
-        },
-        {
-          "question": "वजन घटाते समय प्रोटीन क्यों महत्वपूर्ण है?",
-          "answer": "प्रोटीन पेट को भरा रखता है और कैलोरी घाटे के दौरान मांसपेशियों के क्षय (Muscle Loss) को रोकता है।"
-        },
-        {
-          "question": "क्या एक बार में बहुत अधिक प्रोटीन पचाना संभव है?",
-          "answer": "शरीर दिनभर में विभाजित प्रोटीन का बेहतर उपयोग करता है, इसलिए 3-4 भोजन में प्रोटीन बांटना बेहतर है।"
-        },
-        {
-          "question": "शाकाहारी स्रोतों से प्रोटीन की आवश्यकता कैसे पूरी करें?",
-          "answer": "दालें, पनीर, सोया, तोफू, बेसन और व्हे प्रोटीन जैसे स्रोतों से दैनिक प्रोटीन लक्ष्य पूरा किया जा सकता है।"
+          "question": "क्या अधिक प्रोटीन का सेवन स्वस्थ वयस्कों में गुर्दे को नुकसान पहुंचाता है?",
+          "answer": "वैज्ञानिक अध्ययनों और ISSN के अनुसार सामान्य गुर्दे वाले व्यक्तियों में 2.0-3.0 ग्राम/किग्रा तक प्रोटीन सुरक्षित है। यदि पहले से गुर्दे की बीमारी हो तो चिकित्सक से परामर्श लें।"
         }
       ]
     }
@@ -5098,318 +5042,416 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Hydration Guidelines",
       "title": "Water Intake Calculator & Daily Hydration Target Tool",
-      "intro": "Calculate \"how much water should I drink daily\" with our free Water Intake Calculator. Using hydration formulas based on body weight, activity level, and climate loss, determine your estimated daily fluid target. (Note: Hydration requirements vary based on climate, sweat rate, health conditions, and pregnancy.)",
-      "formulaTitle": "Water Intake by Body Weight Mathematical Equation",
-      "formulaDesc": "Baseline Water (Liters) = [Weight (kg) × 35 ml] / 1000 + Physical Activity Sweat Factor (500 ml to 1000 ml per hour of exercise)",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)",
-      "tableTitle": "Daily Water Intake Benchmarks by Body Weight (Liters & Glasses)",
+      "intro": "Calculate your daily fluid requirements with our free Water Intake Calculator. Using clinically validated hydration formulas based on body weight, climate adjustments (summer vs winter), workout sweat losses, and the Armstrong urine color guide, discover your personalized daily fluid target.",
+      "formulaTitle": "Hydration Mathematical Equation & Climate/Workout Factors",
+      "formulaDesc": "Daily Fluid Target (L) = [Body Weight (kg) × 35 mL] / 1000 + Workout Sweat Replacement (500–1,000 mL/hr) + Climate Adjustment (Summer: +500 to +1,000 mL/day vs Winter: standard baseline with warm fluid compensation). Evaluate systemic hydration status with the validated Armstrong Urine Color Scale.",
+      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "tableTitle": "Comprehensive Hydration Guide — Climate Adjustments, Workouts & Urine Color",
       "tableRows": [
         {
-          "col1": "Sedentary 50 kg Adult",
-          "col2": "1.75 Liters / day",
-          "col3": "~7 standard 250ml glasses"
+          "col1": "Sedentary Baseline Hydration",
+          "col2": "30 – 35 mL / kg / day (~2.0 – 2.5 L)",
+          "col3": "Baseline metabolic fluid volume required for cellular homeostasis, organ perfusion, and renal clearance under temperate conditions."
         },
         {
-          "col1": "Sedentary 70 kg Adult",
-          "col2": "2.45 Liters / day",
-          "col3": "~10 standard 250ml glasses"
+          "col1": "Climate Adjustments — Summer Heat",
+          "col2": "+500 to +1,000 mL / day (+2 to 4 glasses)",
+          "col3": "Elevated ambient heat and humidity dramatically increase evaporative sweat rates. Increase fluid and electrolyte intake to avoid cumulative dehydration and thermoregulatory strain."
         },
         {
-          "col1": "Active 70 kg Athlete",
-          "col2": "3.20 Liters / day",
-          "col3": "~13 standard 250ml glasses"
+          "col1": "Climate Adjustments — Winter Cold",
+          "col2": "Baseline 30 – 35 mL / kg / day (Warm Fluids)",
+          "col3": "Cold-induced diuresis and dry heated indoor air elevate insensible respiratory fluid losses. Maintain consistent water and herbal tea consumption despite blunted thirst sensations."
         },
         {
-          "col1": "Heavy Exercise 90 kg Athlete",
-          "col2": "4.15 Liters / day",
-          "col3": "~17 standard 250ml glasses"
+          "col1": "Workout Hydration — Pre-Exercise",
+          "col2": "500 mL (17 oz) 2–3 hours before workout",
+          "col3": "Establishes optimal pre-exercise blood volume and cardiovascular stroke volume. Drink an additional 200–250 mL 15 minutes prior to starting."
+        },
+        {
+          "col1": "Workout Hydration — During Training",
+          "col2": "150 – 250 mL every 15–20 minutes",
+          "col3": "Replaces ongoing sweat losses, prevents core temperature spikes, and preserves cardiovascular output. Add sodium/electrolytes for sessions exceeding 60 minutes."
+        },
+        {
+          "col1": "Workout Hydration — Post-Exercise",
+          "col2": "1.25 – 1.5 L per 1 kg (2.2 lbs) sweat lost",
+          "col3": "Restores whole-body fluid balance, re-establishes plasma volume, and supports glycogen replenishment over 2 to 4 hours post-workout."
+        },
+        {
+          "col1": "Urine Color Guide — Level 1 to 3",
+          "col2": "Pale Straw to Light Lemonade",
+          "col3": "Optimal Hydration (Armstrong Scale): Kidneys are in fluid equilibrium. Maintain your current hydration routine."
+        },
+        {
+          "col1": "Urine Color Guide — Level 4 to 5",
+          "col2": "Bright Yellow to Dark Golden",
+          "col3": "Mild Dehydration: Consume 250 to 500 mL of water promptly. Avoid diuretic energy drinks or excessive caffeine until color normalizes."
+        },
+        {
+          "col1": "Urine Color Guide — Level 6 to 8",
+          "col2": "Amber, Copper to Tea Brown",
+          "col3": "Significant Dehydration: Rehydrate immediately with water and electrolyte-rich fluids. If urine remains dark despite fluid intake or dizziness occurs, seek medical attention."
         }
       ],
       "faqs": [
         {
-          "question": "What is the Water Intake Calculator?",
-          "answer": "The Water Intake Calculator is a daily health tool that determines your estimated daily fluid consumption target based on body weight, physical exertion, and environmental sweat loss."
+          "question": "How should I adjust my daily water intake between summer and winter climates?",
+          "answer": "In summer, high ambient heat and humidity trigger elevated perspiration for thermoregulation; add 500 to 1,000 mL (2 to 4 glasses) of water daily plus sodium. In winter, cold-induced diuresis and dry heated indoor air accelerate respiratory moisture loss; maintain your baseline (30–35 mL/kg) using warm water, broths, and herbal teas even when your thirst sensation feels blunted."
         },
         {
-          "question": "How much water should I drink per day based on body weight?",
-          "answer": "A common rule of thumb is to drink 35 ml of water per kilogram of body weight daily (or approximately 0.5 ounces per pound of body weight), plus additional fluids during workout sessions."
+          "question": "What is the recommended workout hydration protocol before, during, and after exercise?",
+          "answer": "Follow the evidence-based 3-phase athletic hydration protocol: (1) Pre-workout: Drink 500 mL 2–3 hours before training, plus 200–250 mL 15 minutes prior; (2) During exercise: Sip 150–250 mL every 15–20 minutes; (3) Post-workout: Drink 1.25 to 1.5 Liters of water with electrolytes for every 1 kg (2.2 lbs) of body weight lost through sweat."
         },
         {
-          "question": "How to calculate daily water intake using the weight formula?",
-          "answer": "Multiply your weight in kilograms by 35 ml (or weight in lbs by 0.5 oz). For a 70 kg person: 70 × 35 = 2,450 ml (2.45 Liters), which equals about 10 standard 250ml glasses of water."
+          "question": "How do I use the urine color guide (Armstrong Hydration Scale) to check my status?",
+          "answer": "Compare your urine color during morning urination and throughout the day against the validated Armstrong 8-level scale: Levels 1–3 (pale straw or transparent yellow) indicate optimal hydration; levels 4–5 (dark yellow or golden) signal mild dehydration requiring 250–500 mL of water; and levels 6–8 (amber to tea brown) indicate significant dehydration requiring prompt fluid and electrolyte replacement."
         },
         {
-          "question": "Does coffee, tea, or soda count toward my daily water intake?",
-          "answer": "Yes, caffeinated beverages like tea and coffee contribute to fluid hydration. However, plain water remains the healthiest and most efficient source of cellular hydration."
+          "question": "Why do people often become dehydrated in cold winter months without feeling thirsty?",
+          "answer": "Cold weather causes peripheral vasoconstriction, shifting blood to the core and signaling the kidneys to excrete more water (cold-induced diuresis). Furthermore, cold temperatures blunt brain thirst perception by up to 40%, and breathing cold, dry air causes substantial respiratory fluid loss, leading to unnoticed dehydration."
         },
         {
-          "question": "What are the early signs of dehydration and overhydration?",
-          "answer": "Dehydration symptoms include dark yellow urine, fatigue, headaches, and dry mouth. Overhydration (water intoxication/hyponatremia) symptoms include completely clear urine, nausea, and disorientation."
+          "question": "When should I drink electrolyte sports drinks rather than plain water?",
+          "answer": "Plain water is sufficient for workouts under 60 minutes in moderate conditions. Electrolyte solutions (providing sodium, potassium, and magnesium) are recommended for training lasting longer than 60 minutes, during intense summer heat/humidity, or for heavy sweaters to prevent hyponatremia and cramping."
         }
       ]
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de Consumo de Agua – Meta Diaria de Hidratación",
-      "intro": "Calculadora de ingesta diaria de agua gratuita. Calcula el consumo diario recomendado de agua en litros, vasos u onzas según el peso corporal, el clima, la duración del ejercicio y el nivel de actividad con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)",
-      "tableTitle": "Pautas de Ingesta Diaria de Agua por Peso Corporal (Litros y Vasos)",
+      "intro": "Calcula tu consumo diario de agua según peso, clima (verano vs invierno), sudoración por ejercicio y guía de color de orina de Armstrong.",
+      "formulaTitle": "Ecuación de Hidratación Diaria, Clima y Ejercicio",
+      "formulaDesc": "Agua Diaria (L) = (Peso_kg × 0.035) + Factor de Ejercicio + Ajuste Climático (Verano: +500 a +1000 ml vs Invierno: línea base con líquidos templados). Monitorea tu hidratación con la escala cromática de orina.",
+      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "tableTitle": "Guía Integral de Hidratación: Ajustes Climáticos (Verano vs Invierno), Entrenamiento y Color de Orina",
       "tableRows": [
         {
-          "col1": "Adulto Sedentario (50 kg)",
-          "col2": "1.75 Liters / day",
-          "col3": "~7 vasos estándar de 250 ml"
+          "col1": "Línea Base Adulto Sedentario",
+          "col2": "30 – 35 ml / kg / día (~2.0 – 2.5 L)",
+          "col3": "Volumen mínimo para homeostasis celular, perfusión orgánica y filtración renal en clima templado."
         },
         {
-          "col1": "Adulto Sedentario (70 kg)",
-          "col2": "2.45 Liters / day",
-          "col3": "~10 vasos estándar de 250 ml"
+          "col1": "Ajuste Climático — Verano",
+          "col2": "+500 a +1,000 ml / día (+2 a 4 vasos)",
+          "col3": "Compensa la mayor sudoración termorreguladora y previene el estrés térmico en días calurosos."
         },
         {
-          "col1": "Atleta Activo (70 kg)",
-          "col2": "3.20 Liters / day",
-          "col3": "~13 vasos estándar de 250 ml"
+          "col1": "Ajuste Climático — Invierno",
+          "col2": "Línea Base 30 – 35 ml / kg / día",
+          "col3": "La diuresis inducida por frío y el aire seco de calefacción aumentan pérdidas respiratorias; beber líquidos templados."
         },
         {
-          "col1": "Atleta Entrenamiento Intenso (90 kg)",
-          "col2": "4.15 Liters / day",
-          "col3": "~17 vasos estándar de 250 ml"
+          "col1": "Entrenamiento — Pre-Ejercicio",
+          "col2": "500 ml 2–3 horas antes",
+          "col3": "Garantiza volumen plasmático óptimo y gasto cardíaco antes del entrenamiento (+250 ml 15 min antes)."
+        },
+        {
+          "col1": "Entrenamiento — Durante",
+          "col2": "150 – 250 ml cada 15–20 minutos",
+          "col3": "Repone pérdidas continuas de sudor y evita picos de temperatura central."
+        },
+        {
+          "col1": "Entrenamiento — Post-Ejercicio",
+          "col2": "1.25 – 1.5 L por cada kg perdido",
+          "col3": "Restaura el déficit hídrico corporal y los electrolitos durante las 2 a 4 horas posteriores."
+        },
+        {
+          "col1": "Guía de Color de Orina — Niveles 1 a 3",
+          "col2": "Paja Pálido a Amarillo Claro",
+          "col3": "Hidratación Óptima (Escala Armstrong): Los riñones están en equilibrio hídrico."
+        },
+        {
+          "col1": "Guía de Color de Orina — Niveles 4 a 5",
+          "col2": "Amarillo Oscuro a Dorado",
+          "col3": "Deshidratación Leve: Beber 250 a 500 ml de agua de inmediato."
+        },
+        {
+          "col1": "Guía de Color de Orina — Niveles 6 a 8",
+          "col2": "Ámbar, Cobre a Marrón Té",
+          "col3": "Deshidratación Severa: Rehidratar urgentemente con agua y electrolitos orales."
         }
       ],
       "faqs": [
         {
-          "question": "¿Qué es la calculadora de ingesta de agua?",
-          "answer": "Es una herramienta de hidratación que estima tus necesidades diarias de líquidos según tu peso corporal y nivel de actividad."
+          "question": "¿Cómo ajustar el consumo de agua entre verano e invierno?",
+          "answer": "En verano añada entre 500 y 1,000 ml diarios para compensar el sudor; en invierno mantenga su consumo basal con líquidos templados e infusiones a pesar de la menor sensación de sed."
         },
         {
-          "question": "¿Cuánta agua debo beber al día según mi peso corporal?",
-          "answer": "Una regla orientativa común es beber aproximadamente 35 ml de agua por kilogramo de peso al día (unos 2.5 litros para una persona de 70 kg)."
+          "question": "¿Cuál es el protocolo de hidratación para antes, durante y después del ejercicio?",
+          "answer": "Beba 500 ml 2-3 horas antes, 150-250 ml cada 15-20 minutos durante el ejercicio, y 1.25 a 1.5 litros por cada kilogramo de sudor perdido tras finalizar."
         },
         {
-          "question": "¿Cómo calcular la ingesta diaria de agua con la fórmula por peso?",
-          "answer": "Multiplica tu peso en kilogramos por 35 ml. Si realizas ejercicio intenso, añade entre 500 y 1000 ml adicionales según la duración y el calor."
-        },
-        {
-          "question": "¿El café, el té o los refrescos cuentan para la ingesta diaria de agua?",
-          "answer": "Sí, las bebidas contribuyen a la hidratación total, aunque el agua pura sigue siendo la opción principal más saludable."
-        },
-        {
-          "question": "¿Cuáles son los primeros signos de deshidratación?",
-          "answer": "Orina oscura, sensación de boca seca, fatiga leve y dolor de cabeza son indicadores comunes de hidratación insuficiente."
+          "question": "¿Cómo interpretar la escala de color de la orina de Armstrong?",
+          "answer": "Los tonos paja pálido (niveles 1-3) reflejan hidratación óptima; el amarillo oscuro (4-5) avisa de deshidratación leve; y los tonos ámbar o té (6-8) indican deshidratación grave que exige rehidratación inmediata."
         }
       ]
     },
     "fr": {
-      "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur d'Apport en Eau – Hydratation Quotidienne",
-      "intro": "Calculateur d'apport quotidien en eau gratuit. Calculez la consommation d'eau quotidienne recommandée en litres, verres et onces selon le poids, le climat, la durée de l'exercice et l'activité avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)",
-      "tableTitle": "Repères d'Hydratation Quotidienne selon le Poids (Litres et Verres)",
+      "eyebrow": "Recommandations d'Hydratation",
+      "title": "Calculateur d'Apport en Eau – Besoins Hydriques Quotidiens",
+      "intro": "Évaluez votre apport quotidien en eau selon votre poids, les saisons (été vs hiver), l'effort physique et l'échelle colorimétrique urinaire d'Armstrong.",
+      "formulaTitle": "Équation d'Hydratation, Facteurs Climatiques et Sport",
+      "formulaDesc": "Eau (L) = (Poids_kg × 0,035) + Pertes à l'effort + Ajustement climatique (Été : +500 à +1000 ml vs Hiver : maintien avec boissons chaudes).",
+      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "tableTitle": "Guide Complet d'Hydratation : Ajustements Climatiques (Été vs Hiver), Sport et Échelle des Urines",
       "tableRows": [
         {
-          "col1": "Adulte Sédentaire (50 kg)",
-          "col2": "1.75 Liters / day",
-          "col3": "~7 verres standards de 250 ml"
+          "col1": "Base Adulte Sédentaire",
+          "col2": "30 – 35 ml / kg / jour (~2,0 – 2,5 L)",
+          "col3": "Volume physiologique de base pour la clairance rénale et l'homéostasie cellulaire en climat tempéré."
         },
         {
-          "col1": "Adulte Sédentaire (70 kg)",
-          "col2": "2.45 Liters / day",
-          "col3": "~10 verres standards de 250 ml"
+          "col1": "Ajustement Climatique — Été",
+          "col2": "+500 à +1 000 ml / jour (+2 à 4 verres)",
+          "col3": "Compense la sudation accrue pour éviter l'épuisement thermique par temps chaud."
         },
         {
-          "col1": "Athlète Actif (70 kg)",
-          "col2": "3.20 Liters / day",
-          "col3": "~13 verres standards de 250 ml"
+          "col1": "Ajustement Climatique — Hiver",
+          "col2": "Base 30 – 35 ml / kg / jour",
+          "col3": "La diurèse induite par le froid et le chauffage sec augmentent les pertes respiratoires ; boire chaud régulièrement."
         },
         {
-          "col1": "Athlète Entraînement Intensif (90 kg)",
-          "col2": "4.15 Liters / day",
-          "col3": "~17 verres standards de 250 ml"
+          "col1": "Sport — Avant l'Effort",
+          "col2": "500 ml 2–3 heures avant",
+          "col3": "Assure un débit cardiaque et un volume sanguin pré-exercice optimaux (+250 ml 15 min avant)."
+        },
+        {
+          "col1": "Sport — Pendant l'Effort",
+          "col2": "150 – 250 ml toutes les 15–20 minutes",
+          "col3": "Prévient les hausses de température corporelle et maintient l'endurance."
+        },
+        {
+          "col1": "Sport — Après l'Effort",
+          "col2": "1,25 – 1,5 L par kg perdu",
+          "col3": "Restaure le déficit hydrique et les électrolytes dans les 2 à 4 heures post-effort."
+        },
+        {
+          "col1": "Couleur des Urines — Niveaux 1 à 3",
+          "col2": "Paille Clair à Jaune Pâle",
+          "col3": "Hydratation Optimale (Échelle d'Armstrong) : Les reins sont à l'équilibre hydrique."
+        },
+        {
+          "col1": "Couleur des Urines — Niveaux 4 à 5",
+          "col2": "Jaune Foncé à Doré",
+          "col3": "Déshydratation Légère : Boire immédiatement 250 à 500 ml d'eau."
+        },
+        {
+          "col1": "Couleur des Urines — Niveaux 6 à 8",
+          "col2": "Ambré, Cuivre à Brun Thé",
+          "col3": "Déshydratation Sévère : Réhydrater sans attendre avec eau et électrolytes."
         }
       ],
       "faqs": [
         {
-          "question": "Qu'est-ce que le calculateur de consommation d'eau ?",
-          "answer": "C'est un outil d'hydratation qui estime vos besoins quotidiens en liquides en fonction de votre poids et de votre niveau d'activité."
+          "question": "Comment adapter son hydratation entre été et hiver ?",
+          "answer": "En été, augmentez votre apport de 500 à 1000 ml par jour pour compenser la transpiration. En hiver, buvez régulièrement de l'eau tiède et des tisanes malgré l'atténuation de la sensation de soif."
         },
         {
-          "question": "Combien d'eau dois-je boire par jour selon mon poids ?",
-          "answer": "Une règle générale courante est de consommer environ 35 ml d'eau par kilo de poids corporel par jour (soit environ 2,5 L pour 70 kg)."
-        },
-        {
-          "question": "Comment calculer son besoin quotidien en eau avec la formule ?",
-          "answer": "Multipliez votre poids en kg par 35 ml. Ajoutez 500 à 1000 ml en cas d'exercice physique prolongé ou de climat chaud."
-        },
-        {
-          "question": "Le café et le thé comptent-ils dans l'hydratation quotidienne ?",
-          "answer": "Oui, ces boissons contribuent à l'apport hydrique global, même si l'eau reste la source d'hydratation privilégiée."
-        },
-        {
-          "question": "Quels sont les premiers signes de déshydratation ?",
-          "answer": "Une urine foncée, la bouche sèche, une fatigue passagère et des maux de tête sont des signes fréquents d'un manque d'eau."
+          "question": "Quel est le protocole d'hydratation sportive recommandé ?",
+          "answer": "Buvez 500 ml 2 à 3 heures avant la séance, 150 à 250 ml toutes les 15 à 20 minutes pendant l'effort, et 1,25 à 1,5 litre par kilo de transpiration perdue après la séance."
         }
       ]
     },
     "de": {
-      "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Wasserbedarfsrechner – Tägliches Hydratationsziel berechnen",
-      "intro": "Kostenloser Wasserbedarf-Rechner. Berechnen Sie Ihre empfohlene tägliche Wasseraufnahme in Litern, Gläsern und Unzen basierend auf Körpergewicht, Klima, Trainingsdauer und Aktivität datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)",
-      "tableTitle": "Täglicher Wasserbedarf nach Körpergewicht (Liter und Gläser)",
+      "eyebrow": "Hydratations-Leitlinien",
+      "title": "Wasserbedarf-Rechner – Täglicher Flüssigkeitsbedarf",
+      "intro": "Ermitteln Sie Ihren täglichen Wasserbedarf basierend auf Körpergewicht, Jahreszeit (Sommer vs. Winter), Schweißverlusten beim Sport und der Armstrong-Urinfarbenskala.",
+      "formulaTitle": "Flüssigkeitsbedarfsformel, Klimafaktoren und Trainingsausgleich",
+      "formulaDesc": "Tägliches Wasser (L) = (Gewicht_kg × 0,035) + Trainingsverlust + Klimaanpassung (Sommer: +500 bis +1000 ml vs. Winter: Grundbedarf mit warmen Getränken).",
+      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "tableTitle": "Umfassender Hydratations-Leitfaden: Klimaanpassung (Sommer vs. Winter), Sport & Urinfarben-Skala",
       "tableRows": [
         {
-          "col1": "Bewegungsarmer Erwachsener (50 kg)",
-          "col2": "1.75 Liters / day",
-          "col3": "~7 Standardgläser (250 ml)"
+          "col1": "Grundbedarf Sitzender Erwachsener",
+          "col2": "30 – 35 ml / kg / Tag (~2,0 – 2,5 L)",
+          "col3": "Physiologischer Basisbedarf für Zellstoffwechsel und Nierenfunktion bei gemäßigtem Klima."
         },
         {
-          "col1": "Bewegungsarmer Erwachsener (70 kg)",
-          "col2": "2.45 Liters / day",
-          "col3": "~10 Standardgläser (250 ml)"
+          "col1": "Klimaanpassung — Sommer",
+          "col2": "+500 bis +1.000 ml / Tag (+2 bis 4 Gläser)",
+          "col3": "Gleicht erhöhte Schweißverluste durch Hitze aus und beugt Hitzestress vor."
         },
         {
-          "col1": "Aktiver Sportler (70 kg)",
-          "col2": "3.20 Liters / day",
-          "col3": "~13 Standardgläser (250 ml)"
+          "col1": "Klimaanpassung — Winter",
+          "col2": "Basis 30 – 35 ml / kg / Tag",
+          "col3": "Kälte-Diurese und trockene Heizungsluft steigern Atemwegsverluste; regelmäßig warme Flüssigkeiten trinken."
         },
         {
-          "col1": "Intensiver Sportler (90 kg)",
-          "col2": "4.15 Liters / day",
-          "col3": "~17 Standardgläser (250 ml)"
+          "col1": "Sport — Vor dem Training",
+          "col2": "500 ml 2–3 Stunden vor dem Sport",
+          "col3": "Sichert optimales Blutvolumen und Schlagvolumen (+250 ml 15 Min. vor Beginn)."
+        },
+        {
+          "col1": "Sport — Während des Trainings",
+          "col2": "150 – 250 ml alle 15–20 Minuten",
+          "col3": "Verhindert Leistungsabfall und Anstieg der Körperkerntemperatur."
+        },
+        {
+          "col1": "Sport — Nach dem Training",
+          "col2": "1,25 – 1,5 L pro kg Gewichtsverlust",
+          "col3": "Gleicht Flüssigkeits- und Elektrolytdefizite innerhalb von 2 bis 4 Stunden aus."
+        },
+        {
+          "col1": "Urinfarben-Guide — Stufe 1 bis 3",
+          "col2": "Blassgelb bis Helles Stroh",
+          "col3": "Optimale Hydratation (Armstrong-Skala): Der Flüssigkeitshaushalt ist im Gleichgewicht."
+        },
+        {
+          "col1": "Urinfarben-Guide — Stufe 4 bis 5",
+          "col2": "Dunkelgelb bis Gold",
+          "col3": "Leichte Dehydratation: Zeitnah 250 bis 500 ml Wasser trinken."
+        },
+        {
+          "col1": "Urinfarben-Guide — Stufe 6 bis 8",
+          "col2": "Bernstein, Kupfer bis Teebraun",
+          "col3": "Erhebliche Dehydratation: Sofort mit Wasser und Elektrolyten rehydrieren."
         }
       ],
       "faqs": [
         {
-          "question": "Was ist der Wasserbedarfs-Rechner?",
-          "answer": "Ein praktisches Hydratationswerkzeug, das Ihren täglichen Flüssigkeitsbedarf basierend auf Körpergewicht und Aktivitätslevel schätzt."
+          "question": "Wie passt man die Wasserzufuhr zwischen Sommer und Winter an?",
+          "answer": "Im Sommer sollten Sie 500 bis 1000 ml zusätzlich trinken, um Schwitzen auszugleichen. Im Winter trinken Sie trotz verringertem Durstgefühl regelmäßig warmes Wasser oder ungesüßte Kräutertees."
         },
         {
-          "question": "Wie viel Wasser sollte ich pro Tag bezogen auf mein Körpergewicht trinken?",
-          "answer": "Eine bewährte Faustformel empfiehlt etwa 35 ml Wasser pro Kilogramm Körpergewicht täglich (ca. 2,5 Liter bei 70 kg)."
-        },
-        {
-          "question": "Wie berechnet man die tägliche Trinkmenge mit der Gewichtsformel?",
-          "answer": "Multiplizieren Sie Ihr Körpergewicht in kg mit 35 ml. Bei intensivem Sport oder Hitze sollten 500 bis 1000 ml zusätzlich eingeplant werden."
-        },
-        {
-          "question": "Zählen Kaffee und Tee zur täglichen Flüssigkeitsaufnahme?",
-          "answer": "Ja, ungesüßter Tee und Kaffee tragen zur Gesamtflüssigkeit bei, reines Wasser bleibt jedoch die beste Basis."
-        },
-        {
-          "question": "Was sind frühe Anzeichen von Dehydrierung?",
-          "answer": "Dunkler Urin, trockener Mund, Konzentrationsschwäche und leichte Kopfschmerzen deuten auf eine unzureichende Flüssigkeitszufuhr hin."
+          "question": "Wie lautet das empfohlene Trinkprotokoll beim Sport?",
+          "answer": "Trinken Sie 500 ml 2-3 Stunden vor dem Training, 150-250 ml alle 15-20 Minuten währenddessen und 1,25 bis 1,5 Liter für jedes durch Schweiß verlorene Kilogramm danach."
         }
       ]
     },
     "ko": {
-      "eyebrow": "건강 참조 표준 지침",
-      "title": "수분 섭취량 계산기 – 일일 목표 수분 섭취량 측정 도구",
-      "intro": "일일 권장 수분 섭취량 무료 계산기. 체중, 기후 환경, 운동 시간 및 일상 활동 수준에 따라 리터(L), 컵 및 온스 단위로 권장되는 일일 적정 수분 섭취량을 브라우저 내에서 안전하게 계산하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)",
-      "tableTitle": "체중 및 활동 수준별 일일 권장 수분 섭취량 (리터 및 잔 기준)",
+      "eyebrow": "공인 수분 섭취 가이드라인",
+      "title": "물 섭취량 계산기 – 일일 수분 섭취 권장량",
+      "intro": "체중, 계절별 기후 보정(여름 vs 겨울), 운동 중 땀 배출량 및 암스트롱 소변 색상 지표를 반영하여 하루 필요한 정확한 수분 섭취량을 계산하세요.",
+      "formulaTitle": "일일 수분 섭취 방정식 및 기후/운동 보정 계수",
+      "formulaDesc": "일일 수분(L) = (체중_kg × 0.035) + 운동 시간당 보충량(500~1000ml) + 기후 보정 계수(여름: +500~1000ml vs 겨울: 미온수 중심 기본 섭취 유지). 소변 색상표로 탈수 여부를 확인합니다.",
+      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "tableTitle": "종합 수분 섭취 가이드 — 기후별 보정 (여름철 vs 겨울철), 운동 수분 보충 및 소변 색상 판정표",
       "tableRows": [
         {
-          "col1": "비활동 성인 (50 kg)",
-          "col2": "1.75 Liters / day",
-          "col3": "~250ml 표준 컵 7잔"
+          "col1": "좌식 성인 기준 섭취량",
+          "col2": "30 – 35 ml / kg / 일 (~2.0 – 2.5 L)",
+          "col3": "온화한 환경에서 신장 여과 기능 및 세포 항상성을 유지하기 위한 기본 대사 수분량."
         },
         {
-          "col1": "비활동 성인 (70 kg)",
-          "col2": "2.45 Liters / day",
-          "col3": "~250ml 표준 컵 10잔"
+          "col1": "기후 보정 — 여름철 고온다습",
+          "col2": "+500 ~ +1,000 ml / 일 (+2~4잔)",
+          "col3": "체온 조절을 위한 급격한 땀 증발 손실을 보충하고 열 탈진을 예방하기 위한 추가 섭취."
         },
         {
-          "col1": "활동적인 운동선수 (70 kg)",
-          "col2": "3.20 Liters / day",
-          "col3": "~250ml 표준 컵 13잔"
+          "col1": "기후 보정 — 겨울철 한랭건조",
+          "col2": "기준 섭취량 30 – 35 ml / kg / 일 유지",
+          "col3": "한랭 이뇨 작용과 난방 건조로 호흡기 수분 손실 증가; 갈증 인지 저하에도 미온수 주기적 섭취."
         },
         {
-          "col1": "고강도 운동선수 (90 kg)",
-          "col2": "4.15 Liters / day",
-          "col3": "~250ml 표준 컵 17잔"
+          "col1": "운동 수분 보충 — 운동 2~3시간 전",
+          "col2": "500 ml 섭취 (운동 15분 전 250ml 추가)",
+          "col3": "운동 시작 전 체내 최적의 혈액량과 심박출량을 확보하여 운동 수행 능력 향상."
+        },
+        {
+          "col1": "운동 수분 보충 — 운동 중 섭취",
+          "col2": "15~20분마다 150 – 250 ml",
+          "col3": "운동 중 지속적인 땀 배출을 보충하고 심부 체온의 급격한 상승을 억제."
+        },
+        {
+          "col1": "운동 수분 보충 — 운동 후 회복",
+          "col2": "체중 1kg 감소당 1.25 – 1.5 L",
+          "col3": "운동 후 2~4시간 동안 소실된 체액과 전해질을 완전히 보충하여 빠른 피로 회복 유도."
+        },
+        {
+          "col1": "소변 색상 가이드 — 1~3단계",
+          "col2": "연한 짚색 ~ 맑은 레모네이드색",
+          "col3": "최적의 수분 상태 (암스트롱 척도): 신장 수분 밸런스가 정상입니다."
+        },
+        {
+          "col1": "소변 색상 가이드 — 4~5단계",
+          "col2": "진한 노란색 ~ 황금색",
+          "col3": "경미한 탈수 상태: 즉시 물 250~500ml를 섭취하여 수분을 보충하세요."
+        },
+        {
+          "col1": "소변 색상 가이드 — 6~8단계",
+          "col2": "호박색, 구리색 ~ 진한 홍차색",
+          "col3": "심각한 탈수 상태: 물과 전해질 음료를 즉시 섭취하고 현기증 지속 시 진료를 권장합니다."
         }
       ],
       "faqs": [
         {
-          "question": "일일 물 섭취량 계산기란 무엇인가요?",
-          "answer": "체중과 신체 활동량을 바탕으로 하루 권장 수분 섭취량을 안내하는 건강 관리 도구입니다."
+          "question": "여름철과 겨울철 기후에 따라 물 섭취량을 어떻게 조절해야 하나요?",
+          "answer": "여름철에는 땀 배출이 크게 늘어나므로 하루 500~1,000ml의 수분을 추가로 섭취해야 합니다. 겨울철에는 갈증 중추가 둔화되지만 찬 공기와 난방으로 호흡기 수분 손실이 크므로, 미온수와 차를 통해 하루 30~35 ml/kg을 꾸준히 마셔야 합니다."
         },
         {
-          "question": "체중에 따라 하루에 물을 얼마나 마셔야 하나요?",
-          "answer": "일반적으로 체중 1kg당 약 30~35ml의 수분 섭취가 권장됩니다(체중 70kg 기준 약 2.1~2.5리터)."
+          "question": "운동 전, 중, 후에 지켜야 할 스포츠 수분 섭취 원칙은 무엇인가요?",
+          "answer": "운동 2~3시간 전 500ml, 운동 중에는 15~20분마다 150~250ml를 마시고, 운동이 끝난 후에는 땀으로 빠진 체중 1kg당 1.25~1.5L의 물과 전해질을 나누어 마시는 것이 이상적입니다."
         },
         {
-          "question": "체중 공식을 사용해 일일 권장 수분량을 어떻게 계산하나요?",
-          "answer": "체중(kg)에 35ml를 곱하여 기본 필요량을 구합니다. 격렬한 운동을 하거나 더운 환경에서는 500~1000ml를 추가로 보충합니다."
-        },
-        {
-          "question": "커피나 차도 하루 수분 섭취량에 포함되나요?",
-          "answer": "커피와 차도 전반적인 수분 공급에 기여하지만, 순수한 물을 주된 수분 공급원으로 섭취하는 것이 가장 좋습니다."
-        },
-        {
-          "question": "수분 부족(탈수)의 초기 증상에는 어떤 것들이 있나요?",
-          "answer": "진한 색의 소변, 구강 건조, 가벼운 피로감 및 두통 등은 수분 보충이 필요하다는 대표적인 신호입니다."
+          "question": "암스트롱 소변 색상 가이드(Armstrong Scale)는 어떻게 활용하나요?",
+          "answer": "소변 색상이 연한 짚색(1~3단계)이면 최적의 상태이며, 진한 노란색(4~5단계)은 경미한 탈수로 즉각 300ml 이상의 수분 섭취가 필요합니다. 짙은 갈색이나 홍차색(6~8단계)은 즉시 전해질과 수분을 보충해야 하는 위험 신호입니다."
         }
       ]
     },
     "hi": {
-      "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "पानी के सेवन का कैलकुलेटर – दैनिक जल आवश्यकता की गणना",
-      "intro": "मुफ़्त दैनिक जल सेवन कैलकुलेटर। शरीर के वजन, जलवायु, व्यायाम की अवधि और गतिविधि स्तर के आधार पर लीटर, ग्लास और औंस में अनुशंसित दैनिक पानी की खपत की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
-      "formulaTitle": "मानक संदर्भ सूत्र",
-      "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75)",
-      "tableTitle": "शरीर के वजन के अनुसार दैनिक पानी की खपत का पैमाना (लीटर और गिलास)",
+      "eyebrow": "जलयोजन संदर्भ दिशानिर्देश",
+      "title": "जल सेवन कैलकुलेटर – दैनिक जल आवश्यकता",
+      "intro": "अपने शरीर के वजन, मौसम समायोजन (गर्मी बनाम सर्दी), कसरत में पसीने की कमी और आर्मस्ट्रांग मूत्र रंग गाइड के आधार पर दैनिक पानी की आवश्यकता की गणना करें।",
+      "formulaTitle": "दैनिक जल आवश्यकता सूत्र, जलवायु एवं कसरत कारक",
+      "formulaDesc": "दैनिक जल (लीटर) = (वजन_किग्रा × 0.035) + कसरत पूर्ति + जलवायु कारक (गर्मी: +500 से +1000 मिली बनाम सर्दी: गुनगुने तरल पदार्थों के साथ आधार सेवन)। मूत्र रंग पैमाने से शरीर के जलयोजन की जांच करें।",
+      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "tableTitle": "व्यापक जलयोजन गाइड — जलवायु समायोजन (गर्मी बनाम सर्दी), कसरत जलयोजन और मूत्र रंग गाइड",
       "tableRows": [
         {
-          "col1": "गतिहीन 50 किग्रा वयस्क",
-          "col2": "1.75 Liters / day",
-          "col3": "~7 मानक 250 मिली गिलास"
+          "col1": "गतिहीन वयस्क आधार जलयोजन",
+          "col2": "30 – 35 मिली / किग्रा / दिन (~2.0 – 2.5 L)",
+          "col3": "सामान्य तापमान में अंगों के कार्य और गुर्दे की सफाई के लिए आवश्यक न्यूनतम मात्रा।"
         },
         {
-          "col1": "गतिहीन 70 किग्रा वयस्क",
-          "col2": "2.45 Liters / day",
-          "col3": "~10 मानक 250 मिली गिलास"
+          "col1": "जलवायु समायोजन — गर्मी का मौसम",
+          "col2": "+500 से +1,000 मिली / दिन (+2 से 4 गिलास)",
+          "col3": "अधिक पसीने के कारण होने वाले जल नुकसान की भरपाई और हीट स्ट्रोक से बचाव हेतु।"
         },
         {
-          "col1": "सक्रिय 70 किग्रा एथलीट",
-          "col2": "3.20 Liters / day",
-          "col3": "~13 मानक 250 मिली गिलास"
+          "col1": "जलवायु समायोजन — सर्दी का मौसम",
+          "col2": "आधार 30 – 35 मिली / किग्रा / दिन",
+          "col3": "सर्दियों में प्यास कम लगती है किंतु शुष्क हवा में जल हानि होती है; गुनगुना पानी पिएं।"
         },
         {
-          "col1": "कठिन व्यायाम 90 किग्रा एथलीट",
-          "col2": "4.15 Liters / day",
-          "col3": "~17 मानक 250 मिली गिलास"
+          "col1": "कसरत जलयोजन — कसरत से पहले",
+          "col2": "500 मिली कसरत से 2–3 घंटे पूर्व",
+          "col3": "व्यायाम से पहले रक्त प्रवाह और हृदय क्षमता को अनुकूल बनाए रखने के लिए।"
+        },
+        {
+          "col1": "कसरत जलयोजन — कसरत के दौरान",
+          "col2": "150 – 250 मिली प्रत्येक 15–20 मिनट में",
+          "col3": "पसीने से होने वाली कमी को तुरंत पूरा करने और शारीरिक तापमान नियंत्रित रखने हेतु।"
+        },
+        {
+          "col1": "कसरत जलयोजन — कसरत के बाद",
+          "col2": "1.25 – 1.5 L प्रति किग्रा वजन कमी",
+          "col3": "कसरत के दौरान पसीने में घटे प्रत्येक 1 किग्रा वजन के लिए 2-4 घंटे में जल पूर्ति करें।"
+        },
+        {
+          "col1": "मूत्र रंग गाइड — स्तर 1 से 3",
+          "col2": "हल्का पीला / पारदर्शी पुआल",
+          "col3": "उत्तम जलयोजन (आर्मस्ट्रांग पैमाना): शरीर में पानी का संतुलन एकदम सही है।"
+        },
+        {
+          "col1": "मूत्र रंग गाइड — स्तर 4 से 5",
+          "col2": "गहरा पीला / सुनहरा",
+          "col3": "हल्का डिहाइड्रेशन: तुरंत 250 से 500 मिली पानी पिएं।"
+        },
+        {
+          "col1": "मूत्र रंग गाइड — स्तर 6 से 8",
+          "col2": "गहरा एम्बर / चाय जैसा भूरा",
+          "col3": "गंभीर डिहाइड्रेशन: तुरंत ओआरएस/इलेक्ट्रोलाइट और पानी पिएं; डॉक्टर से संपर्क करें।"
         }
       ],
       "faqs": [
         {
-          "question": "मुझे रोजाना कितना पानी पीना चाहिए?",
-          "answer": "सामान्य नियम के अनुसार आपके शरीर के वजन के प्रति किग्रा पर लगभग 35 मिलीलीटर पानी की आवश्यकता होती है।"
+          "question": "गर्मी और सर्दी के मौसम में पानी के सेवन में क्या बदलाव करना चाहिए?",
+          "answer": "गर्मियों में पसीने की भरपाई के लिए रोजाना 500 से 1000 मिली अतिरिक्त पानी पिएं। सर्दियों में प्यास कम लगने पर भी गुनगुना पानी और सूप पीकर 30-35 मिली/किग्रा का लक्ष्य बनाए रखें।"
         },
         {
-          "question": "व्यायाम करने पर पानी का सेवन कितना बढ़ाएं?",
-          "answer": "प्रत्येक 30 मिनट के गहन व्यायाम के लिए अतिरिक्त 500 से 750 मिलीलीटर पानी पीने की सिफारिश की जाती है।"
-        },
-        {
-          "question": "हल्के निर्जलीकरण (Dehydration) के लक्षण क्या हैं?",
-          "answer": "सिरदर्द, थकान, शुष्क मुँह और गहरे रंग का पेशाब निर्जलीकरण के प्राथमिक संकेत हैं।"
-        },
-        {
-          "question": "क्या चाय, कॉफी और फल दैनिक पानी की गिनती में आते हैं?",
-          "answer": "हाँ, भोजन और तरल पदार्थों से मिलने वाला पानी कुल दैनिक जलयोजन (Hydration) में योगदान देता है।"
-        },
-        {
-          "question": "क्या बहुत अधिक पानी पीना हानिकारक हो सकता है?",
-          "answer": "अत्यधिक पानी पीने से इलेक्ट्रोलाइट असंतुलन (Hyponatremia) हो सकता है, इसलिए प्यास और गतिविधि के अनुसार पीएं।"
+          "question": "कसरत से पहले, दौरान और बाद में पानी पीने का सही नियम क्या है?",
+          "answer": "कसरत से 2-3 घंटे पहले 500 मिली, कसरत के दौरान हर 15-20 मिनट में 150-250 मिली और कसरत के बाद पसीने में घटे प्रत्येक 1 किग्रा वजन के लिए 1.25 से 1.5 लीटर पानी पिएं।"
         }
       ]
     }
@@ -6280,346 +6322,286 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "title": "Target Heart Rate Zones Calculator – 5 Exercise Training Zones",
       "intro": "Identify your five cardiovascular intensity zones to optimize endurance, recovery, and metabolic conditioning. Using your age and resting pulse, this tool provides clear target boundaries so you can pace warm-ups, aerobic foundation building, and sprint intervals with precision.",
       "formulaTitle": "Cardiorespiratory Training Intensity Equation",
-      "formulaDesc": "Max Heart Rate = 220 - Age. Heart Rate Reserve (HRR) = Max HR - Resting Pulse. Target Pulse = Resting Pulse + [HRR × Intensity %].",
+      "formulaDesc": "Max Heart Rate = 220 - Age. Heart Rate Reserve (HRR) = Max HR - Resting Pulse. Target Pulse = Resting Pulse + [HRR × Intensity %]. Calculate each of your five physiological zones using the Karvonen method.",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "5-Zone Cardiovascular Training Intensity Matrix",
+      "tableTitle": "5-Zone Heart Rate Training Intensity Table — Zone 1 to Zone 5 Physiology & Training Targets",
       "tableRows": [
         {
-          "col1": "Zone 1 (50% - 60% HRR)",
-          "col2": "Active Recovery / Warmup",
-          "col3": "Promotes blood circulation & passive recovery"
+          "col1": "Zone 1",
+          "col2": "50% – 60% HRR (or HRmax)",
+          "col3": "Active Recovery & Warm-Up: Very light effort. Stimulates capillary blood circulation, clears metabolic waste, enhances joint mobility, and activates the parasympathetic recovery branch."
         },
         {
-          "col1": "Zone 2 (60% - 70% HRR)",
-          "col2": "Aerobic Base Conditioning",
-          "col3": "Optimizes lipid oxidation and builds baseline endurance"
+          "col1": "Zone 2",
+          "col2": "60% – 70% HRR (or HRmax)",
+          "col3": "Aerobic Base & Fat Oxidation: Conversational endurance pace. Stimulates mitochondrial biogenesis, capillarization, and optimizes fatty acid oxidation; foundation of polarized 80/20 endurance."
         },
         {
-          "col1": "Zone 3 (70% - 80% HRR)",
-          "col2": "Aerobic Stamina & Fitness",
-          "col3": "Improves cardiovascular efficiency & sustained pacing"
+          "col1": "Zone 3",
+          "col2": "70% – 80% HRR (or HRmax)",
+          "col3": "Aerobic Stamina & Tempo: Moderate sustained effort. Enhances cardiac stroke volume, glycogen utilization efficiency, and builds cardiovascular stamina for steady-state pacing."
         },
         {
-          "col1": "Zone 4 (80% - 90% HRR)",
-          "col2": "Anaerobic / Lactate Threshold",
-          "col3": "Increases high-intensity exercise tolerance and power output"
+          "col1": "Zone 4",
+          "col2": "80% – 90% HRR (or HRmax)",
+          "col3": "Anaerobic & Lactate Threshold: Hard, challenging pace. Elevates the second ventilatory threshold (VT2), improves muscle buffer capacity against hydrogen ions, and increases sustained race power."
         },
         {
-          "col1": "Zone 5 (90% - 100% HRR)",
-          "col2": "Maximal VO2 Peak Interval",
-          "col3": "Neuromuscular speed, sprint stamina & peak conditioning"
+          "col1": "Zone 5",
+          "col2": "90% – 100% HRR (or HRmax)",
+          "col3": "Neuromuscular Sprint & VO2 Max Peak: All-out maximal effort. Maximizes peak cardiac output, recruits fast-twitch motor units, and enhances sprint speed and high-intensity interval capacity."
         }
       ],
       "faqs": [
         {
-          "question": "How do target cardiovascular intensity zones work?",
-          "answer": "These training tiers divide exercise effort into five distinct physiological bands. Training within specific ranges develops targeted adaptations, from efficient fat oxidation and capillary growth to lactate tolerance and neuromuscular sprint speed."
+          "question": "What are the specific physiological adaptations of Zone 1 through Zone 5?",
+          "answer": "Zone 1 (50-60%) aids active recovery and tissue repair; Zone 2 (60-70%) builds mitochondrial density, capillarization, and maximal fat oxidation; Zone 3 (70-80%) enhances cardiac stroke volume and steady aerobic pacing; Zone 4 (80-90%) pushes the anaerobic lactate threshold; and Zone 5 (90-100%) maximizes peak VO2 capacity and fast-twitch sprint speed."
         },
         {
-          "question": "How do you calculate your exercise pulse range?",
-          "answer": "First, estimate your maximum pulse by subtracting your age from 220. Next, subtract your resting pulse to find your heart rate reserve. Finally, multiply by your target intensity percentage and add back your resting pulse."
+          "question": "Why do elite endurance athletes spend 80% of their training volume in Zone 2?",
+          "answer": "Zone 2 endurance training stimulates mitochondrial biogenesis and capillary network growth with minimal nervous system fatigue. This enables athletes to build immense cardiovascular efficiency and fat metabolism without triggering chronic overtraining."
         },
         {
-          "question": "Why should resting pulse be considered alongside maximum heart rate?",
-          "answer": "Resting pulse indicates your baseline stroke volume and cardiovascular efficiency. Factoring it into calculations produces individualized targets rather than generic population estimates."
+          "question": "How does the Karvonen formula differ from the standard 220-Age equation?",
+          "answer": "The Fox formula (220 - Age) only considers age to estimate peak pulse. The Karvonen formula incorporates your resting heart rate (Heart Rate Reserve = Max HR - Resting HR), producing customized training zones that adjust dynamically as your cardiovascular fitness improves."
         },
         {
-          "question": "Which training zone builds optimal aerobic stamina?",
-          "answer": "Zone 2 (60% to 70% of heart rate reserve) is the primary range for building mitochondrial density and aerobic endurance, allowing sustained energy output with low systemic fatigue."
+          "question": "How long should training intervals last in Zone 4 versus Zone 5?",
+          "answer": "Zone 4 threshold blocks typically range from 8 to 25 minutes of sustained hard effort. In contrast, Zone 5 intervals are held for 30 seconds to 4 minutes due to rapid glycogen depletion, severe lactic acid accumulation, and neuromuscular exhaustion."
         },
         {
-          "question": "What is the best way to record baseline resting pulse?",
-          "answer": "Check your pulse for 60 seconds first thing in the morning while resting in bed. Measure it before you get up, drink coffee, or start moving around."
+          "question": "What is cardiac drift and how does it affect target heart rate zones?",
+          "answer": "Cardiac drift is the upward climb in heart rate during prolonged steady exercise despite keeping the same speed or power. It is caused by dehydration, rising internal body temperature, and reduced plasma volume, requiring you to slow down to remain in your true target zone."
         }
       ]
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de Zonas de Frecuencia Cardíaca – Fórmula Karvonen",
-      "intro": "Calculadora de zonas de frecuencia cardíaca gratuita. Calcula tus zonas objetivo de entrenamiento (Quema de grasa, Aeróbica, Anaeróbica, Pico) según edad, frecuencia en reposo y frecuencia máxima con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
+      "intro": "Calcula tus 5 zonas objetivo de entrenamiento (Recuperación, Base Aeróbica, Cardio Tempo, Umbral Anaeróbico y Pico VO2 Máx) según edad, frecuencia en reposo y frecuencia máxima.",
+      "formulaTitle": "Ecuación de Zonas de Entrenamiento Cardiorrespiratorio",
+      "formulaDesc": "Frecuencia Cardíaca Máxima = 220 - Edad. Reserva de Frecuencia Cardíaca (RFC) = FC Máx - FC Reposo. FC Objetivo = FC Reposo + [RFC × % Intensidad].",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "Matriz de Intensidad de Frecuencia Cardíaca en 5 Zonas (Karvonen)",
+      "tableTitle": "Tabla de Frecuencia Cardíaca de 5 Zonas: Fisiología y Objetivos de Entrenamiento (Zona 1 a 5)",
       "tableRows": [
         {
-          "col1": "Zona 1 (50% - 60% HRR)",
-          "col2": "Active Recovery / Warmup",
-          "col3": "Favorece la circulación sanguínea y recuperación pasiva"
+          "col1": "Zona 1",
+          "col2": "50% – 60% RFC / FCmáx",
+          "col3": "Recuperación Activa y Calentamiento: Esfuerzo muy suave. Favorece el retorno venoso, elimina residuos metabólicos y activa la recuperación parasimpática."
         },
         {
-          "col1": "Zona 2 (60% - 70% HRR)",
-          "col2": "Moderate Aerobic Training",
-          "col3": "Base aeróbica y ejercicio de intensidad moderada"
+          "col1": "Zona 2",
+          "col2": "60% – 70% RFC / FCmáx",
+          "col3": "Base Aeróbica y Oxidación de Grasas: Ritmo conversacional. Estimula la biogénesis mitocondrial y la capilarización; pilar del entrenamiento polarizado 80/20."
         },
         {
-          "col1": "Zona 3 (70% - 80% HRR)",
-          "col2": "Aerobic Endurance / Fitness",
-          "col3": "Mejora la eficiencia cardiovascular y resistencia"
+          "col1": "Zona 3",
+          "col2": "70% – 80% RFC / FCmáx",
+          "col3": "Resistencia Aeróbica y Tempo: Esfuerzo moderado sostenido. Aumenta el volumen sistólico cardíaco y la eficiencia en el uso de glucógeno."
         },
         {
-          "col1": "Zona 4 (80% - 90% HRR)",
-          "col2": "Anaerobic / Lactate Threshold",
-          "col3": "Aumenta la tolerancia al ejercicio de alta intensidad"
+          "col1": "Zona 4",
+          "col2": "80% – 90% RFC / FCmáx",
+          "col3": "Umbral Anaeróbico y Lactato: Ritmo exigente. Eleva el umbral ventilatorio (VT2) y entrena la tolerancia al lactato para competición."
         },
         {
-          "col1": "Zona 5 (90% - 100% HRR)",
-          "col2": "Maximal VO2 Max Peak Power",
-          "col3": "Velocidad neuromuscular y acondicionamiento de sprint"
+          "col1": "Zona 5",
+          "col2": "90% – 100% RFC / FCmáx",
+          "col3": "Pico de VO2 Máx y Sprint: Esfuerzo máximo en intervalos cortos. Recluta fibras rápidas y maximiza el gasto cardíaco pico."
         }
       ],
       "faqs": [
         {
-          "question": "¿Qué es la calculadora de zonas de frecuencia cardíaca de Karvonen?",
-          "answer": "La calculadora de zonas de Karvonen es una herramienta de entrenamiento cardiovascular que estima rangos de intensidad personalizados utilizando la fórmula de Karvonen y la frecuencia cardíaca de reserva (HRR)."
+          "question": "¿Cuáles son las adaptaciones fisiológicas de las Zonas 1 a 5?",
+          "answer": "La Zona 1 facilita la recuperación; la Zona 2 desarrolla mitocondrias y quema de grasas; la Zona 3 mejora la resistencia cardiovascular; la Zona 4 eleva el umbral de lactato; y la Zona 5 maximiza el consumo máximo de oxígeno (VO2 máx)."
         },
         {
-          "question": "¿Cómo se calcula la frecuencia cardíaca objetivo con la fórmula de Karvonen?",
-          "answer": "Para aplicar la fórmula de Karvonen: 1) Resta tu edad a 220 para estimar la FC máxima. 2) Resta tu FC en reposo a la FC máxima para obtener la reserva cardíaca (HRR). 3) Multiplica la HRR por el porcentaje deseado (ej. 60%-70%). 4) Suma de nuevo tu FC en reposo para obtener las pulsaciones por minuto objetivo."
-        },
-        {
-          "question": "¿Por qué la fórmula de Karvonen incluye la frecuencia cardíaca en reposo?",
-          "answer": "Las fórmulas estándar (220 - edad) proporcionan estimaciones generales, mientras que Karvonen personaliza el cálculo al considerar la frecuencia cardíaca en reposo (RHR), reflejando tu nivel de condición física."
-        },
-        {
-          "question": "¿Qué zona de frecuencia cardíaca corresponde al entrenamiento aeróbico base?",
-          "answer": "La Zona 2 de Karvonen (60% al 70% de la reserva cardíaca) se asocia habitualmente con el desarrollo aeróbico base y el entrenamiento de resistencia moderada."
-        },
-        {
-          "question": "¿Cómo medir la frecuencia cardíaca en reposo (RHR) para esta calculadora?",
-          "answer": "Mide tu pulso durante 60 segundos justo al despertar por la mañana, mientras descansas relajado en la cama antes de levantarte o tomar cafeína."
+          "question": "¿Por qué la Zona 2 es el pilar de los atletas de resistencia?",
+          "answer": "Entrenar en Zona 2 genera adaptaciones aeróbicas profundas sin sobrecargar el sistema nervioso, permitiendo acumular gran volumen semanal sin sobreentrenamiento."
         }
       ]
     },
     "fr": {
-      "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Zones de Fréquence Cardiaque – Formule Karvonen",
-      "intro": "Calculateur de zones de fréquence cardiaque gratuit. Calculez vos zones cibles d'entraînement (Brûle-graisse, Aérobie, Anaérobie, Maximale) selon l'âge, le pouls au repos et la fréquence maximale avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
+      "eyebrow": "Protocole d'Entraînement Cardiorespiratoire",
+      "title": "Calculateur de Zones de Fréquence Cardiaque – 5 Zones d'Exercice",
+      "intro": "Identifiez vos cinq zones d'intensité cardiaque pour structurer vos séances d'endurance, de tempo et d'intervalles selon la formule de Karvonen.",
+      "formulaTitle": "Équation d'Intensité Cardiorespiratoire de Karvonen",
+      "formulaDesc": "Fréquence Cardiaque Maximale = 220 - Âge. Réserve Cardiaque (FCR) = FC Max - FC Repos. FC Cible = FC Repos + [FCR × % Intensité].",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "Matrice d'Intensité de Fréquence Cardiaque en 5 Zones (Karvonen)",
+      "tableTitle": "Tableau des 5 Zones de Fréquence Cardiaque : Physiologie et Objectifs (Zone 1 à Zone 5)",
       "tableRows": [
         {
-          "col1": "Zone 1 (50% - 60% HRR)",
-          "col2": "Active Recovery / Warmup",
-          "col3": "Favorise la circulation sanguine et la récupération passive"
+          "col1": "Zone 1",
+          "col2": "50% – 60% FCR / FCmax",
+          "col3": "Récupération Active et Échauffement : Effort très léger stimulant le drainage métabolique et le système parasympathique."
         },
         {
-          "col1": "Zone 2 (60% - 70% HRR)",
-          "col2": "Moderate Aerobic Training",
-          "col3": "Base aérobie et exercice d'intensité modérée"
+          "col1": "Zone 2",
+          "col2": "60% – 70% FCR / FCmax",
+          "col3": "Endurance Fondamentale : Maximise la biogenèse mitochondriale, la capillarisation et l'oxydation lipidique (modèle 80/20)."
         },
         {
-          "col1": "Zone 3 (70% - 80% HRR)",
-          "col2": "Aerobic Endurance / Fitness",
-          "col3": "Améliore l'efficacité cardiovasculaire et l'endurance"
+          "col1": "Zone 3",
+          "col2": "70% – 80% FCR / FCmax",
+          "col3": "Endurance Active et Tempo : Améliore le volume d'éjection systolique et l'efficacité à allure de croisière."
         },
         {
-          "col1": "Zone 4 (80% - 90% HRR)",
-          "col2": "Anaerobic / Lactate Threshold",
-          "col3": "Augmente la tolérance à l'exercice de haute intensité"
+          "col1": "Zone 4",
+          "col2": "80% – 90% FCR / FCmax",
+          "col3": "Seuil Lactique / Anaérobie : Développe le pouvoir tampon musculaire et la tolérance aux efforts intenses soutenus."
         },
         {
-          "col1": "Zone 5 (90% - 100% HRR)",
-          "col2": "Maximal VO2 Max Peak Power",
-          "col3": "Vitesse neuromusculaire et conditionnement au sprint"
+          "col1": "Zone 5",
+          "col2": "90% – 100% FCR / FCmax",
+          "col3": "Puissance Maximale / VO2 Max : Intervalles courts et sprints recrutant les fibres rapides et poussant le débit cardiaque à son pic."
         }
       ],
       "faqs": [
         {
-          "question": "Qu'est-ce que le calculateur de zones de fréquence cardiaque de Karvonen ?",
-          "answer": "Le calculateur de Karvonen est un outil d'entraînement cardiovasculaire qui estime vos zones cibles personnalisées grâce à la formule de Karvonen et la réserve de fréquence cardiaque (HRR)."
+          "question": "Quels sont les bénéfices physiologiques des Zones 1 à 5 ?",
+          "answer": "La Zone 1 régénère les tissus ; la Zone 2 développe le métabolisme des graisses et les mitochondries ; la Zone 3 optimise l'endurance ; la Zone 4 repousse le seuil d'acide lactique ; et la Zone 5 stimule le VO2 max."
         },
         {
-          "question": "Comment calculer la fréquence cardiaque cible avec la formule de Karvonen ?",
-          "answer": "Pour utiliser la formule de Karvonen : 1) Soustrayez votre âge de 220 pour estimer la FC maximale. 2) Soustrayez la FC au repos de la FC maximale pour trouver la réserve cardiaque (HRR). 3) Multipliez par l'intensité souhaitée (ex. 60 % à 70 %). 4) Ajoutez la FC au repos pour obtenir la fréquence cible en battements par minute."
-        },
-        {
-          "question": "Pourquoi la formule de Karvonen prend-elle en compte la fréquence cardiaque au repos ?",
-          "answer": "Contrairement aux formules simples (220 - âge), la formule de Karvonen intègre la fréquence cardiaque au repos (RHR), ce qui permet de mieux refléter votre condition physique individuelle."
-        },
-        {
-          "question": "Quelle zone correspond à l'entraînement aérobie de base ?",
-          "answer": "La Zone 2 de Karvonen (60 % à 70 % de la réserve cardiaque) est la zone de référence pour l'endurance fondamentale et le développement aérobie."
-        },
-        {
-          "question": "Comment mesurer sa fréquence cardiaque au repos (RHR) ?",
-          "answer": "Prenez votre pouls pendant 60 secondes le matin au réveil, en restant calmement allongé dans votre lit avant de vous lever ou de consommer de la caféine."
+          "question": "Quelle est la différence entre la formule standard et la méthode de Karvonen ?",
+          "answer": "La formule de Karvonen intègre la fréquence cardiaque au repos (FCR) en plus de l'âge, fournissant des zones d'intensité personnalisées adaptées à votre condition physique réelle."
         }
       ]
     },
     "de": {
-      "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Herzfrequenzzonen-Rechner – Zielherzfrequenz & Karvonen Zonen",
-      "intro": "Kostenloser Herzfrequenzzonen-Rechner. Berechnen Sie Ihre Ziel-Trainingszonen (Fettverbrennung, Aerob, Anaerob, Maximal) basierend auf Alter, Ruhepuls und maximaler Herzfrequenz datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
+      "eyebrow": "Kardiovaskuläres Trainingsprotokoll",
+      "title": "Herzfrequenzzonen-Rechner – 5 Trainingszonen nach Karvonen",
+      "intro": "Ermitteln Sie Ihre fünf kardiovaskulären Intensitätszonen (Regeneration, Grundlagen-Ausdauer, Tempo, Schwellentraining und VO2-Spitze) basierend auf Alter und Ruhepuls.",
+      "formulaTitle": "Karvonen-Formel zur Bestimmung der Trainingsherzfrequenz",
+      "formulaDesc": "Maximale Herzfrequenz (HFmax) = 220 - Alter. Herzfrequenzreserve (HFR) = HFmax - Ruhepuls. Ziel-HF = Ruhepuls + [HFR × Intensität %].",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "Karvonen 5-Zonen-Herzfrequenz-Intensitätsmatrix",
+      "tableTitle": "5-Zonen-Herzfrequenz-Tabelle: Physiologie und Trainingsziele von Zone 1 bis Zone 5",
       "tableRows": [
         {
-          "col1": "Zone 1 (50% - 60% HRR)",
-          "col2": "Active Recovery / Warmup",
-          "col3": "Fördert die Durchblutung & passive Regeneration"
+          "col1": "Zone 1",
+          "col2": "50% – 60% HFR / HFmax",
+          "col3": "Aktive Regeneration & Aufwärmen: Sehr leichte Belastung zur Förderung der Durchblutung und des Laktatabbaus."
         },
         {
-          "col1": "Zone 2 (60% - 70% HRR)",
-          "col2": "Moderate Aerobic Training",
-          "col3": "Für aerobes Basistraining & mäßige Intensität"
+          "col1": "Zone 2",
+          "col2": "60% – 70% HFR / HFmax",
+          "col3": "Grundlagenausdauer 1 & Fettstoffwechsel: Fördert Mitochondriendichte und Kapillarisierung (Kern des 80/20-Prinzips)."
         },
         {
-          "col1": "Zone 3 (70% - 80% HRR)",
-          "col2": "Aerobic Endurance / Fitness",
-          "col3": "Verbessert die kardiovaskuläre Effizienz & Ausdauer"
+          "col1": "Zone 3",
+          "col2": "70% – 80% HFR / HFmax",
+          "col3": "Aerobes Tempo & Herzleistung: Steigert das Herzschlagvolumen und die aerobe Leistungsfähigkeit bei Dauerbelastung."
         },
         {
-          "col1": "Zone 4 (80% - 90% HRR)",
-          "col2": "Anaerobic / Lactate Threshold",
-          "col3": "Erhöht die Toleranz für hochintensives Training"
+          "col1": "Zone 4",
+          "col2": "80% – 90% HFR / HFmax",
+          "col3": "Anaerobe Laktatschwelle: Verschiebt die anaerobe Schwelle nach oben und verbessert die Pufferkapazität der Muskeln."
         },
         {
-          "col1": "Zone 5 (90% - 100% HRR)",
-          "col2": "Maximal VO2 Max Peak Power",
-          "col3": "Neuromuskuläre Schnelligkeit & Sprint-Konditionierung"
+          "col1": "Zone 5",
+          "col2": "90% – 100% HFR / HFmax",
+          "col3": "Maximale Sauerstoffaufnahme (VO2max): Kurze Spitzenintervalle und Sprints zur Steigerung der Höchstleistung."
         }
       ],
       "faqs": [
         {
-          "question": "Was ist der Karvonen-Herzfrequenzzonen-Rechner?",
-          "answer": "Der Karvonen-Herzfrequenzzonen-Rechner ist ein Trainingswerkzeug, das individuelle Trainingszonen anhand der Karvonen-Formel und der Herzfrequenzreserve (HRR) ermittelt."
+          "question": "Welche physiologischen Anpassungen finden in den Zonen 1 bis 5 statt?",
+          "answer": "Zone 1 dient der Erholung; Zone 2 stärkt Mitochondrien und Fettverbrennung; Zone 3 verbessert das Ausdauertempo; Zone 4 schult die Laktattoleranz; und Zone 5 maximiert die maximale Sauerstoffaufnahme (VO2 max)."
         },
         {
-          "question": "Wie berechnet man die Zielherzfrequenz mit der Karvonen-Formel?",
-          "answer": "Vorgehensweise: 1) 220 minus Alter ergibt die maximale Herzfrequenz. 2) Maximalpuls minus Ruhepuls ergibt die Herzfrequenzreserve (HRR). 3) HRR mit der gewünschten Intensität multiplizieren (z. B. 60 % bis 70 %). 4) Ruhepuls addieren, um die Zielherzfrequenz in Schlägen pro Minute zu erhalten."
-        },
-        {
-          "question": "Warum berücksichtigt die Karvonen-Formel den Ruhepuls?",
-          "answer": "Einfache Formeln (220 - Alter) bieten nur grobe Durchschnittswerte. Durch die Einbeziehung des Ruhepulses (RHR) passt Karvonen die Trainingszonen an das persönliche Fitnessniveau an."
-        },
-        {
-          "question": "Welche Herzfrequenzzone ist für das Grundlagenausdauertraining optimal?",
-          "answer": "Die Karvonen-Zone 2 (60 % bis 70 % der Herzfrequenzreserve) wird typischerweise für das aerobe Grundlagentraining und moderate Ausdauereinheiten genutzt."
-        },
-        {
-          "question": "Wie messe ich meinen Ruhepuls (RHR) für den Rechner?",
-          "answer": "Messen Sie Ihren Puls 60 Sekunden lang morgens direkt nach dem Aufwachen, während Sie noch entspannt im Bett liegen, vor dem Aufstehen oder Kaffeetrinken."
+          "question": "Wie unterscheidet sich die Karvonen-Methode von der einfachen 220-Minus-Alter-Formel?",
+          "answer": "Die Karvonen-Formel berücksichtigt den individuellen Ruhepuls und die Herzfrequenzreserve, wodurch präzisere, auf das aktuelle Fitnessniveau abgestimmte Trainingsbereiche berechnet werden."
         }
       ]
     },
     "ko": {
-      "eyebrow": "건강 참조 표준 지침",
-      "title": "심박수 구간 계산기 – Karvonen 목표 심박수 측정",
-      "intro": "무료 심박수 구간 계산기. 연령, 안정 시 심박수 및 최대 심박수를 바탕으로 목표 유산소 운동 심박수 구간(지방 연소, 심폐 지구력, 무산소 구간)을 브라우저 내에서 정밀하게 산출하세요. 100% 무료 도구입니다. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
+      "eyebrow": "심폐 지구력 트레이닝 프로토콜",
+      "title": "심박수 운동 강도 구간 계산기 – 5단계 트레이닝 존",
+      "intro": "나이와 안정 시 심박수를 기반으로 카르보넨 공식을 적용하여 회복, 유산소 기초, 템포 지구력, 무산소 역치, VO2 최대 강도의 5개 심박수 구간을 계산합니다.",
+      "formulaTitle": "카르보넨 심박수 예비량(HRR) 산출 공식",
+      "formulaDesc": "최대 심박수 = 220 - 나이. 심박수 예비량(HRR) = 최대 심박수 - 안정 시 심박수. 목표 심박수 = 안정 시 심박수 + [HRR × 운동 강도 %].",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "카르보넨 공식 5단계 심박수 운동 강도 구간표",
+      "tableTitle": "5단계 심박수 트레이닝 강도표 — 존 1부터 존 5 생리학적 적응 및 훈련 목표",
       "tableRows": [
         {
-          "col1": "1구간 (50% - 60% HRR)",
-          "col2": "Active Recovery / Warmup",
-          "col3": "혈액 순환 촉진 및 수동적 회복 지원"
+          "col1": "존 1 (Zone 1)",
+          "col2": "50% – 60% HRR (또는 HRmax)",
+          "col3": "적극적 회복 및 웜업: 매우 가벼운 운동 강도로 혈류 순환 촉진, 젖산 제거 및 부교감신경 활성화."
         },
         {
-          "col1": "2구간 (60% - 70% HRR)",
-          "col2": "Moderate Aerobic Training",
-          "col3": "유산소 기초 훈련 및 중강도 운동에 주로 활용"
+          "col1": "존 2 (Zone 2)",
+          "col2": "60% – 70% HRR (또는 HRmax)",
+          "col3": "유산소 기초 및 지방 산화: 대화가 가능한 지속 페이스. 미토콘드리아 수 증가, 모세혈관 발달 및 지방 대사 극대화."
         },
         {
-          "col1": "3구간 (70% - 80% HRR)",
-          "col2": "Aerobic Endurance / Fitness",
-          "col3": "심혈관 효율성 및 지구력 향상"
+          "col1": "존 3 (Zone 3)",
+          "col2": "70% – 80% HRR (또는 HRmax)",
+          "col3": "유산소 템포 및 심폐 지구력: 적당히 힘든 페이스. 심박출량 증대 및 글리코겐 지속 연소 능력 강화."
         },
         {
-          "col1": "4구간 (80% - 90% HRR)",
-          "col2": "Anaerobic / Lactate Threshold",
-          "col3": "고강도 운동 지구력 향상"
+          "col1": "존 4 (Zone 4)",
+          "col2": "80% – 90% HRR (또는 HRmax)",
+          "col3": "무산소 역치 및 젖산 역치: 고강도 지속 훈련. 제2 환기역치(VT2)를 향상시키고 젖산 내성 증대."
         },
         {
-          "col1": "5구간 (90% - 100% HRR)",
-          "col2": "Maximal VO2 Max Peak Power",
-          "col3": "신경근 속도 및 최고 전력질주 훈련"
+          "col1": "존 5 (Zone 5)",
+          "col2": "90% – 100% HRR (또는 HRmax)",
+          "col3": "최대 산소 섭취량(VO2 Max) 및 스프린트: 전력 질주 인터벌. 속근 섬유 동원 및 최고 심박출 능력 발휘."
         }
       ],
       "faqs": [
         {
-          "question": "카르보넨 심박수 구간 계산기란 무엇인가요?",
-          "answer": "카르보넨 심박수 계산기는 마르티 카르보넨(Martti Karvonen) 박사의 공식을 기반으로 심박수 예비량(HRR)을 활용해 개인 맞춤형 유산소 운동 강도 구간을 산출하는 도구입니다."
+          "question": "심박수 존 1부터 존 5까지의 생리학적 운동 효과는 어떻게 다른가요?",
+          "answer": "존 1은 빠른 피로 회복, 존 2는 세포 내 미토콘드리아 확장 및 지방 연소, 존 3은 심폐 지구력 유지, 존 4는 젖산 역치 및 경기 페이스 향상, 존 5는 최대산소섭취량(VO2 max) 및 스피드 향상을 담당합니다."
         },
         {
-          "question": "카르보넨 공식으로 목표 심박수를 어떻게 계산하나요?",
-          "answer": "1) 220에서 나이를 빼 최대 심박수를 추정합니다. 2) 최대 심박수에서 안정시 심박수를 빼 심박수 예비량(HRR)을 구합니다. 3) 목표 운동 강도(예: 60%~70%)를 곱합니다. 4) 안정시 심박수를 다시 더해 목표 심박수(BPM)를 구합니다."
-        },
-        {
-          "question": "카르보넨 공식이 안정시 심박수를 반영하는 이유는 무엇인가요?",
-          "answer": "단순한 220-나이 공식과 달리, 개인의 안정시 심박수(RHR)를 반영함으로써 개인별 심폐 체력 수준에 맞춘 정밀한 운동 강도를 제시할 수 있습니다."
-        },
-        {
-          "question": "유산소 기초 체력 향상에 적합한 심박수 구간은 어디인가요?",
-          "answer": "카르보넨 2구간(심박수 예비량의 60%~70%)은 유산소 기초 지구력 훈련 및 중강도 유산소 운동에 가장 권장되는 구간입니다."
-        },
-        {
-          "question": "안정시 심박수(RHR)는 어떻게 정확하게 측정하나요?",
-          "answer": "아침 기상 직후 침대에서 일어나거나 카페인을 섭취하기 전, 편안하게 누운 상태에서 60초 동안 맥박을 측정하는 것이 가장 정확합니다."
+          "question": "카르보넨 공식과 일반 220-나이 공식의 차이점은 무엇인가요?",
+          "answer": "카르보넨 공식은 안정 시 심박수를 반영하는 심박수 예비량(HRR)을 사용하여, 개인의 현재 유산소 체력 수준에 맞춘 정밀한 훈련 구간을 제공합니다."
         }
       ]
     },
     "hi": {
-      "eyebrow": "स्वास्थ्य संदर्भ मानक",
-      "title": "हार्ट रेट ज़ोन कैलकुलेटर – लक्ष्य हृदय गति संदर्भ",
-      "intro": "मुफ़्त हृदय गति क्षेत्र कैलकुलेटर। उम्र, विश्राम हृदय गति और अधिकतम हृदय गति के आधार पर लक्षित प्रशिक्षण हृदय गति क्षेत्रों (फैट बर्न, एरोबिक, एनारोबिक, पीक) की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
-      "formulaTitle": "मानक संदर्भ सूत्र",
-      "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
+      "eyebrow": "कार्डियोवैस्कुलर प्रशिक्षण प्रोटोकॉल",
+      "title": "हृदय गति प्रशिक्षण क्षेत्र कैलकुलेटर – 5 व्यायाम ज़ोन",
+      "intro": "अपनी आयु और विश्राम हृदय गति के आधार पर कार्वोनेन सूत्र से अपने 5 कार्डियोवैस्कुलर तीव्रता क्षेत्र (रिकवरी, फैट बर्न, टेम्पो, लैक्टेट थ्रेशोल्ड, VO2 मैक्स) ज्ञात करें।",
+      "formulaTitle": "कार्वोनेन हार्ट रेट रिजर्व (HRR) सूत्र",
+      "formulaDesc": "अधिकतम हृदय गति = 220 - आयु। हार्ट रेट रिजर्व (HRR) = अधिकतम धड़कन - आराम की धड़कन। लक्षित हृदय गति = आराम की धड़कन + [HRR × तीव्रता %]।",
       "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
-      "tableTitle": "कार्वोनेन 5-ज़ोन हृदय गति तीव्रता मैट्रिक्स",
+      "tableTitle": "5-ज़ोन हृदय गति प्रशिक्षण तीव्रता तालिका — ज़ोन 1 से ज़ोन 5 शरीर विज्ञान एवं प्रशिक्षण लक्ष्य",
       "tableRows": [
         {
-          "col1": "ज़ोन 1 (50% - 60% HRR)",
-          "col2": "Active Recovery / Warmup",
-          "col3": "रक्त परिसंचरण और निष्क्रिय रिकवरी को बढ़ावा देता है"
+          "col1": "ज़ोन 1 (Zone 1)",
+          "col2": "50% – 60% HRR / HRmax",
+          "col3": "सक्रिय रिकवरी और वॉर्म-अप: अत्यंत हल्का व्यायाम जो रक्त संचार बढ़ाता है और मांसपेशियों से अपशिष्ट पदार्थ हटाता है।"
         },
         {
-          "col1": "ज़ोन 2 (50% - 60% HRR)",
-          "col2": "Moderate Aerobic Training",
-          "col3": "एरोबिक आधार प्रशिक्षण और मध्यम तीव्रता वाले व्यायाम के लिए"
+          "col1": "ज़ोन 2 (Zone 2)",
+          "col2": "60% – 70% HRR / HRmax",
+          "col3": "एरोबिक बेस और फैट बर्न: बातचीत करने योग्य गति। माइटोकॉन्ड्रिया का विकास और वसा जलने की दर को अधिकतम करता है।"
         },
         {
-          "col1": "ज़ोन 3 (70% - 80% HRR)",
-          "col2": "Aerobic Endurance / Fitness",
-          "col3": "हृदय दक्षता और सहनशक्ति में सुधार"
+          "col1": "ज़ोन 3 (Zone 3)",
+          "col2": "70% – 80% HRR / HRmax",
+          "col3": "एरोबिक स्टेमिना और टेम्पो: मध्यम तीव्र प्रयास। स्ट्रोक वॉल्यूम और निरंतर कार्डियो सहनशक्ति का निर्माण करता है।"
         },
         {
-          "col1": "ज़ोन 4 (80% - 90% HRR)",
-          "col2": "Anaerobic / Lactate Threshold",
-          "col3": "उच्च तीव्रता व्यायाम सहनशीलता बढ़ाता है"
+          "col1": "ज़ोन 4 (Zone 4)",
+          "col2": "80% – 90% HRR / HRmax",
+          "col3": "एनारोबिक एवं लैक्टेट थ्रेशोल्ड: कठिन गति। मांसपेशियों में लैक्टिक एसिड सहने की क्षमता और गति को बढ़ाता है।"
         },
         {
-          "col1": "ज़ोन 5 (90% - 100% HRR)",
-          "col2": "Maximal VO2 Max Peak Power",
-          "col3": "न्यूरोमस्कुलर गति और स्प्रिंट कंडीशनिंग"
+          "col1": "ज़ोन 5 (Zone 5)",
+          "col2": "90% – 100% HRR / HRmax",
+          "col3": "VO2 मैक्स और स्प्रिंट पीक: अत्यधिक तीव्र स्प्रिंट इंटरवल्स जो अधिकतम ऑक्सीजन क्षमता और तेज गति विकसित करते हैं।"
         }
       ],
       "faqs": [
         {
-          "question": "कार्वोनेन (Karvonen) हार्ट रेट ज़ोन कैलकुलेटर क्या है?",
-          "answer": "कार्वोनेन हार्ट रेट कैलकुलेटर एक कार्डियो प्रशिक्षण उपकरण है जो हार्ट रेट रिजर्व (HRR) का उपयोग करके व्यक्तिगत व्यायाम तीव्रता क्षेत्र निर्धारित करता है।"
+          "question": "हृदय गति ज़ोन 1 से ज़ोन 5 के विशिष्ट शारीरिक लाभ क्या हैं?",
+          "answer": "ज़ोन 1 सक्रिय रिकवरी करता है; ज़ोन 2 माइटोकॉन्ड्रिया बढ़ाता है और फैट बर्न करता है; ज़ोन 3 एरोबिक स्टैमिना बनाता है; ज़ोन 4 लैक्टेट थ्रेशोल्ड बढ़ाता है; और ज़ोन 5 VO2 मैक्स और स्प्रिंट गति बढ़ाता है।"
         },
         {
-          "question": "कार्वोनेन सूत्र से लक्ष्य हृदय गति की गणना कैसे करें?",
-          "answer": "1) 220 में से अपनी आयु घटाएं। 2) अधिकतम दर से विश्राम दर (RHR) घटाकर HRR निकालें। 3) वांछित प्रतिशत (60%-70%) से गुणा करें। 4) फिर विश्राम दर जोड़कर लक्ष्य दर प्राप्त करें।"
-        },
-        {
-          "question": "कार्वोनेन सूत्र में विश्राम हृदय गति (RHR) क्यों शामिल की जाती है?",
-          "answer": "मानक सूत्र केवल सामान्य औसत बताते हैं, जबकि विश्राम हृदय गति शामिल करने से व्यक्तिगत फिटनेस स्तर के अनुसार सटीक प्रशिक्षण क्षेत्र प्राप्त होता है।"
-        },
-        {
-          "question": "एरोबिक बेस ट्रेनिंग के लिए कौन सा हार्ट रेट ज़ोन सबसे अच्छा है?",
-          "answer": "कार्वोनेन ज़ोन 2 (HRR का 60% से 70%) आमतौर पर एरोबिक बेस और मध्यम सहनशक्ति व्यायाम के लिए अनुशंसित है।"
-        },
-        {
-          "question": "कार्वोनेन कैलकुलेटर के लिए विश्राम हृदय गति (RHR) कैसे मापें?",
-          "answer": "सुबह सोकर उठने के तुरंत बाद, बिस्तर पर शांत रहते हुए 60 सेकंड तक अपनी नाड़ी मापें।"
+          "question": "कार्वोनेन फॉर्मूला 220-आयु फॉर्मूले से अधिक सटीक क्यों है?",
+          "answer": "कार्वोनेन फॉर्मूला विश्राम हृदय गति को शामिल करता है, जिससे धावक या एथलीट की बेहतर फिटनेस के अनुसार सही व्यक्तिगत कार्डियो ज़ोन निर्धारित होते हैं।"
         }
       ]
     }
@@ -6918,337 +6900,438 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Strength Conditioning Science",
       "title": "1RM Calculator – One Rep Max Bench, Squat, Deadlift",
-      "intro": "Find your one-rep max with our free 1RM Calculator. It estimates the heaviest weight you can lift for a single rep on the bench press, squat, or deadlift. You do not need to test dangerous maximum lifts to failure. Simply enter the weight you lifted and your rep count to get instant targets.",
-      "formulaTitle": "Standard Strength 1RM Calculation Formulas",
-      "formulaDesc": "The Epley formula estimates your max lift: 1RM = Weight × (1 + Reps / 30). The Brzycki formula offers a close second opinion: 1RM = Weight × [36 / (37 - Reps)]. Both equations work best when using sets of 2 to 6 reps.",
-      "formulaCode": "Epley 1RM = W × (1 + R / 30)",
-      "tableTitle": "1RM Percentage Intensity & Repetition Training Chart",
+      "intro": "Find your one-rep max with our free 1RM Calculator. It estimates the heaviest weight you can lift for a single rep on the bench press, squat, or deadlift using the validated Epley, Brzycki, and Lander formulas, along with a full 10-tier training percentages chart.",
+      "formulaTitle": "One-Rep Max Calculation Formulas: Epley, Brzycki & Lander",
+      "formulaDesc": "Predict your true maximal single lift safely from repetition testing using three established mathematical models:\\n• Epley Formula (1985): 1RM = Weight × (1 + Reps / 30)\\n• Brzycki Formula (1993): 1RM = Weight × [36 / (37 - Reps)]\\n• Lander Formula (1985): 1RM = (100 × Weight) / (101.3 - 2.67123 × Reps)\\nThese submaximal formulas protect joints and ligaments by preventing dangerous single-rep maximum attempts to failure.",
+      "formulaCode": "Epley: W×(1+R/30) | Brzycki: W×(36/(37-R)) | Lander: (100×W)/(101.3-2.67123×R)",
+      "tableTitle": "1RM Training Percentages & Repetition Maximum Continuum Table",
       "tableRows": [
         {
           "col1": "100% 1RM",
           "col2": "1 Repetition",
-          "col3": "Your absolute maximum single lift"
+          "col3": "Absolute Maximal Strength & Neural Drive: Peak motor unit recruitment; testing standard for powerlifting and Olympic weightlifting."
+        },
+        {
+          "col1": "95% 1RM",
+          "col2": "2 Repetitions",
+          "col3": "Near-Maximal Strength & Peaking: Intense central nervous system activation with minimal bar deceleration."
         },
         {
           "col1": "90% 1RM",
           "col2": "3 to 4 Repetitions",
-          "col3": "Heavy strength training load"
+          "col3": "Pure Myofibrillar Strength & Power: Maximal strength development, high rate of force development (RFD)."
         },
         {
           "col1": "85% 1RM",
           "col2": "5 to 6 Repetitions",
-          "col3": "Optimal balance of strength and muscle size"
+          "col3": "Functional Strength & Hypertrophy: Classic 5x5 compound strength-hypertrophy loading zone."
         },
         {
           "col1": "80% 1RM",
           "col2": "7 to 8 Repetitions",
-          "col3": "Standard hypertrophy muscle-building load"
+          "col3": "Optimal Hypertrophy Continuum: Excellent balance of mechanical tension and metabolic stress for muscle growth."
         },
         {
           "col1": "75% 1RM",
-          "col2": "10 Repetitions",
-          "col3": "Volume hypertrophy and muscular endurance"
+          "col2": "9 to 10 Repetitions",
+          "col3": "Hypertrophy Volume Accumulation: Sarcoplasmic growth, high localized fatigue, and pump volume."
+        },
+        {
+          "col1": "70% 1RM",
+          "col2": "11 to 12 Repetitions",
+          "col3": "Work Capacity & Hypertrophy: Moderate load, high metabolic byproduct accumulation, and endurance crossover."
+        },
+        {
+          "col1": "65% 1RM",
+          "col2": "13 to 15 Repetitions",
+          "col3": "Local Muscular Endurance: Enhances vascular capillarization, mitochondrial buffer capacity, and form endurance."
+        },
+        {
+          "col1": "60% 1RM",
+          "col2": "16 to 20 Repetitions",
+          "col3": "Metabolic Conditioning & Deload: High repetition burn, connective tissue recovery, and dynamic speed sets."
+        },
+        {
+          "col1": "50% 1RM",
+          "col2": "25+ Repetitions",
+          "col3": "Dynamic Warm-Up & Recovery: Barbell speed technique, active recovery flush, and mobility preparation."
         }
       ],
       "faqs": [
         {
-          "question": "What is a 1RM and why does it matter?",
-          "answer": "A one-rep max is the heaviest weight you can lift once with clean form. Coaches use this number to assign exact training weights for bench presses, squats, and deadlifts."
+          "question": "How do the Epley, Brzycki, and Lander formulas compare in calculating 1RM?",
+          "answer": "All three equations are scientifically validated for strength estimation: The Epley formula (1RM = Weight × [1 + Reps/30]) uses a linear scale that excels across 2 to 10 repetitions; the Brzycki formula (1RM = Weight × [36 / (37 - Reps)]) is slightly more conservative on sets near 10 reps; and the Lander formula (1RM = [100 × Weight] / [101.3 - 2.67123 × Reps]) offers a balanced intermediate prediction widely used by the National Strength and Conditioning Association (NSCA)."
         },
         {
-          "question": "How does the 1RM calculator estimate my max lift?",
-          "answer": "The calculator uses submaximal formulas like Epley and Brzycki. It takes a lighter weight and your repetition count to predict your top single lift safely."
+          "question": "What are the recommended training percentages for strength vs muscle hypertrophy vs muscular endurance?",
+          "answer": "Training adaptations depend on load percentage: Train at 85% to 100% of 1RM (1 to 6 reps) for maximal neural strength; train at 65% to 85% of 1RM (6 to 12 reps) for optimal muscular hypertrophy (muscle building); and train at 50% to 65% of 1RM (15 to 25+ reps) for muscular endurance and vascular capillarization."
         },
         {
-          "question": "How many reps give the most accurate 1RM estimate?",
-          "answer": "Sets of 2 to 6 clean reps give the most reliable results. Sets over 10 reps test muscle stamina rather than pure strength, which reduces formula accuracy."
+          "question": "Why is estimating 1RM from submaximal sets safer than performing a true 1-rep maximum test?",
+          "answer": "Attempting a true single-rep maximum to failure subjects joint capsules, spinal erectors, and tendon insertions to extreme mechanical strain. Testing a submaximal set of 3 to 6 reps provides 95%+ statistical accuracy while keeping a buffer against catastrophic injury or form breakdown."
         },
         {
-          "question": "How should I warm up before testing a heavy set?",
-          "answer": "Start with an empty barbell. Gradually add weight over 3 to 4 easy sets of 3 to 5 reps. Rest two to three minutes before your main working set."
+          "question": "Up to how many repetitions are the Epley, Brzycki, and Lander formulas accurate?",
+          "answer": "The formulas are most accurate when tested between 2 and 6 repetitions performed with strict technique to technical failure. When sets exceed 10 repetitions, muscle stamina, fiber type distribution (slow-twitch vs fast-twitch), and lactic acid tolerance distort the estimation."
         },
         {
-          "question": "Is it safe to attempt a true 1RM in the gym?",
-          "answer": "Testing true maximum singles carries higher joint and muscle strain. Always use safety pins or have an experienced spotter nearby when lifting near your limit."
+          "question": "How should I structure my warm-up sets leading up to a heavy working set?",
+          "answer": "Use percentage-based warm-up progressions: (1) Empty barbell for 10–12 reps; (2) 50% of working weight for 5 reps; (3) 70% of working weight for 3 reps; (4) 85% of working weight for 1–2 reps; followed by a 3-minute rest before your primary working set."
         }
       ]
     },
     "es": {
-      "eyebrow": "Estándares de Referencia de Salud",
+      "eyebrow": "Ciencia del Acondicionamiento de Fuerza",
       "title": "Calculadora de 1RM – Repetición Máxima Press Banca y Sentadilla",
-      "intro": "Calculadora de 1RM (Máximo para una repetición) gratuita. Calcula tu fuerza máxima para 1 repetición, porcentajes de levantamiento y marcas de repetición utilizando las ecuaciones de Epley y Brzycki con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "Epley 1RM = W × (1 + R / 30)",
-      "tableTitle": "Tabla de Intensidad Porcentual y Repeticiones según 1RM",
+      "intro": "Calcula tu fuerza máxima para 1 repetición (1RM) con las fórmulas validadas de Epley, Brzycki y Lander, y consulta la tabla completa de porcentajes de entrenamiento.",
+      "formulaTitle": "Fórmulas Validadas de 1RM: Epley, Brzycki y Lander",
+      "formulaDesc": "Predicción de fuerza máxima a partir de repeticiones submáximas:\\n• Epley (1985): 1RM = Peso × (1 + Reps / 30)\\n• Brzycki (1993): 1RM = Peso × [36 / (37 - Reps)]\\n• Lander (1985): 1RM = (100 × Peso) / (101.3 - 2.67123 × Reps)\\nEvita intentos máximos lesivos evaluando series de 2 a 10 repeticiones con técnica perfecta.",
+      "formulaCode": "Epley: W×(1+R/30) | Brzycki: W×(36/(37-R)) | Lander: (100×W)/(101.3-2.67123×R)",
+      "tableTitle": "Tabla de Porcentajes de Entrenamiento y Repeticiones según 1RM",
       "tableRows": [
         {
-          "col1": "100% 1RM Fuerza Máxima",
-          "col2": "1 Repetition",
-          "col3": "Carga máxima absoluta de fuerza (100% 1RM)"
+          "col1": "100% 1RM",
+          "col2": "1 Repetición",
+          "col3": "Fuerza Máxima Absoluta y Reclutamiento Neural Máximo (Estándar de Competición)."
         },
         {
-          "col1": "90% 1RM Carga Pesada",
-          "col2": "2 Repetitions",
-          "col3": "Carga pesada de entrenamiento de fuerza (95% 1RM)"
+          "col1": "95% 1RM",
+          "col2": "2 Repeticiones",
+          "col3": "Fuerza Casi Máxima y Puesta a Punto: Gran activación del SNC."
         },
         {
-          "col1": "85% 1RM Desarrollo Fuerza",
-          "col2": "3 Repetitions",
-          "col3": "Series de fuerza y levantamiento (93% 1RM)"
+          "col1": "90% 1RM",
+          "col2": "3 a 4 Repeticiones",
+          "col3": "Fuerza Miofibrilar Pura y Potencia: Aumento de tasa de desarrollo de fuerza (RFD)."
         },
         {
-          "col1": "80% 1RM Hipertrofia",
-          "col2": "5 Repetitions",
-          "col3": "Rango de desarrollo de fuerza muscular (87% 1RM)"
+          "col1": "85% 1RM",
+          "col2": "5 a 6 Repeticiones",
+          "col3": "Fuerza Funcional e Hipertrofia: Rango clásico de fuerza e hipertrofia (protocolo 5x5)."
         },
         {
-          "col1": "75% 1RM Resistencia Muscular",
-          "col2": "7 Repetitions",
-          "col3": "Rango de hipertrofia y construcción muscular (80% 1RM)"
+          "col1": "80% 1RM",
+          "col2": "7 a 8 Repeticiones",
+          "col3": "Continuo Óptimo de Hipertrofia: Equilibrio perfecto de tensión mecánica y estrés metabólico."
         },
         {
-          "col1": "Categoría / Nivel 6",
-          "col2": "10 Repetitions",
-          "col3": "Resistencia muscular e hipertrofia de volumen (75% 1RM)"
+          "col1": "75% 1RM",
+          "col2": "9 a 10 Repeticiones",
+          "col3": "Acumulación de Volumen e Hipertrofia Sarcoplasmática."
+        },
+        {
+          "col1": "70% 1RM",
+          "col2": "11 a 12 Repeticiones",
+          "col3": "Capacidad de Trabajo y Resistencia Muscular con Hipertrofia."
+        },
+        {
+          "col1": "65% 1RM",
+          "col2": "13 a 15 Repeticiones",
+          "col3": "Resistencia Muscular Local y Capilarización Vascular."
+        },
+        {
+          "col1": "60% 1RM",
+          "col2": "16 a 20 Repeticiones",
+          "col3": "Acondicionamiento Metabólico y Series de Descarga / Velocidad."
+        },
+        {
+          "col1": "50% 1RM",
+          "col2": "25+ Repeticiones",
+          "col3": "Calentamiento Dinámico, Técnica de Velocidad y Recuperación Activa."
         }
       ],
       "faqs": [
         {
-          "question": "¿Qué es 1RM y cómo se calcula?",
-          "answer": "El 1RM (repetición máxima) es el peso máximo que puedes levantar una sola vez con técnica adecuada. Nuestra calculadora utiliza repeticiones submáximas y la fórmula de Epley para estimarlo de forma segura."
+          "question": "¿En qué se diferencian las fórmulas de Epley, Brzycki y Lander?",
+          "answer": "La fórmula de Epley es lineal y muy precisa entre 2 y 8 repeticiones; Brzycki es más conservadora cerca de 10 repeticiones; y Lander ofrece un equilibrio intermedio ampliamente respaldado por la NSCA."
         },
         {
-          "question": "¿Cómo funcionan las fórmulas de estimación submáxima de 1RM?",
-          "answer": "Fórmulas como Epley y Brzycki estiman tu repetición máxima a partir de cargas más ligeras y número de repeticiones, evitando el riesgo de lesiones de un intento máximo."
+          "question": "¿Cuáles son los porcentajes de 1RM según el objetivo de entrenamiento?",
+          "answer": "Use 85-100% de 1RM (1-6 reps) para fuerza máxima; 65-85% (6-12 reps) para hipertrofia muscular; y 50-65% (15-25+ reps) para resistencia y salud vascular."
         }
       ]
     },
     "fr": {
-      "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de 1RM – Répétition Maximale Développé Couché",
-      "intro": "Calculateur de 1RM (Maximum pour une répétition) gratuit. Calculez votre force maximale pour 1 répétition, vos pourcentages de musculation et repères de répétition avec les équations d'Epley et Brzycki avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "Epley 1RM = W × (1 + R / 30)",
-      "tableTitle": "Tableau d'Intensité en Pourcentage et Répétitions selon le 1RM",
+      "eyebrow": "Science de la Musculation et de la Force",
+      "title": "Calculateur de 1RM – Répétition Maximale Développé Couché et Squat",
+      "intro": "Estimez votre charge maximale pour 1 répétition (1RM) avec les formules d'Epley, Brzycki et Lander et planifiez vos séances avec la table des pourcentages d'entraînement.",
+      "formulaTitle": "Formules Validées de Calcul du 1RM : Epley, Brzycki et Lander",
+      "formulaDesc": "Équations d'extrapolation biomécanique :\\n• Epley (1985) : 1RM = Charge × (1 + Répétitions / 30)\\n• Brzycki (1993) : 1RM = Charge × [36 / (37 - Répétitions)]\\n• Lander (1985) : 1RM = (100 × Charge) / (101,3 - 2,67123 × Répétitions)\\nCes méthodes évitent les risques articulaires des tests maximaux directs.",
+      "formulaCode": "Epley: W×(1+R/30) | Brzycki: W×(36/(37-R)) | Lander: (100×W)/(101.3-2.67123×R)",
+      "tableTitle": "Tableau des Pourcentages d'Entraînement et Répétitions selon le 1RM",
       "tableRows": [
         {
-          "col1": "100% 1RM Force Maximale",
-          "col2": "1 Repetition",
-          "col3": "Charge maximale absolue de force (100% 1RM)"
+          "col1": "100% 1RM",
+          "col2": "1 Répétition",
+          "col3": "Force Maximale Absolue et Recrutement Nerveux Maximal (Compétition)."
         },
         {
-          "col1": "90% 1RM Charge Lourde",
-          "col2": "2 Repetitions",
-          "col3": "Charge lourde d'entraînement de force (95% 1RM)"
+          "col1": "95% 1RM",
+          "col2": "2 Répétitions",
+          "col3": "Force Quasi-Maximale et Affûtage Nerveux."
         },
         {
-          "col1": "85% 1RM Développement Force",
-          "col2": "3 Repetitions",
-          "col3": "Séries de force et d'haltérophilie (93% 1RM)"
+          "col1": "90% 1RM",
+          "col2": "3 à 4 Répétitions",
+          "col3": "Force Myofibrillaire Pure et Puissance Explosive (RFD)."
         },
         {
-          "col1": "80% 1RM Hypertrophie",
-          "col2": "5 Repetitions",
-          "col3": "Plage de développement de la force (87% 1RM)"
+          "col1": "85% 1RM",
+          "col2": "5 à 6 Répétitions",
+          "col3": "Force Fonctionnelle et Hypertrophie (Format classique 5x5)."
         },
         {
-          "col1": "75% 1RM Endurance Musculaire",
-          "col2": "7 Repetitions",
-          "col3": "Plage de construction musculaire (80% 1RM)"
+          "col1": "80% 1RM",
+          "col2": "7 à 8 Répétitions",
+          "col3": "Continuum d'Hypertrophie Optimale (Tension Mécanique et Stress Métabolique)."
         },
         {
-          "col1": "Catégorie / Niveau 6",
-          "col2": "10 Repetitions",
-          "col3": "Endurance musculaire et hypertrophie de volume (75% 1RM)"
+          "col1": "75% 1RM",
+          "col2": "9 à 10 Répétitions",
+          "col3": "Accumulation de Volume et Hypertrophie Sarcoplasmique."
+        },
+        {
+          "col1": "70% 1RM",
+          "col2": "11 à 12 Répétitions",
+          "col3": "Capacité de Travail Musculaire et Endurance de Force."
+        },
+        {
+          "col1": "65% 1RM",
+          "col2": "13 à 15 Répétitions",
+          "col3": "Endurance Musculaire Locale et Capillarisation."
+        },
+        {
+          "col1": "60% 1RM",
+          "col2": "16 à 20 Répétitions",
+          "col3": "Conditionnement Métabolique et Séries de Décharge."
+        },
+        {
+          "col1": "50% 1RM",
+          "col2": "25+ Répétitions",
+          "col3": "Échauffement Dynamique, Vitesse de Barre et Récupération Active."
         }
       ],
       "faqs": [
         {
-          "question": "Qu'est-ce que le 1RM et comment est-il calculé ?",
-          "answer": "Le 1RM (une répétition maximale) est la charge la plus lourde que vous pouvez soulever sur une seule répétition avec une technique correcte. Notre calculateur utilise la formule d'Epley pour l'estimer en toute sécurité."
+          "question": "Comment choisir entre les formules d'Epley, Brzycki et Lander ?",
+          "answer": "La formule d'Epley est réputée pour sa linéarité sur 2 à 8 répétitions, Brzycki est plus prudente sur les séries longues, et Lander offre un juste milieu validé par la NSCA."
         },
         {
-          "question": "Comment fonctionnent les formules d'estimation submoximale du 1RM ?",
-          "answer": "Des formules comme Epley ou Brzycki permettent d'évaluer votre charge maximale à partir de séries plus légères, évitant ainsi le stress articulaire extrême."
+          "question": "Pourquoi estimer son 1RM au lieu d'effectuer un test maximal direct ?",
+          "answer": "Les tests à 100% de charge maximale augmentent fortement le risque de blessure articulaire et tendineuse. Une estimation sur 3 à 6 répétitions est fiable à plus de 95% tout en préservant l'intégrité physique."
         }
       ]
     },
     "de": {
-      "eyebrow": "Kraftsport & Trainingswissenschaft",
-      "title": "1RM-Rechner – Maximalkraft für Bankdrücken, Kniebeugen & Kreuzheben",
-      "intro": "Ermitteln Sie Ihre One-Repetition-Maximum (1RM) Kraftleistung wissenschaftlich präzise ohne riskante Maximalversuche. Unser evidenzbasierter Rechner verwendet die validierten submaximalen Formeln nach Epley und Brzycki, um Ihr theoretisches Maximalgewicht für Grundübungen und Krafttrainingspläne exakt zu berechnen.",
-      "formulaTitle": "Submaximale 1RM-Formeln nach Epley & Brzycki",
-      "formulaDesc": "Die Epley-Gleichung berechnet das geschätzte Maximalgewicht: 1RM = Gewicht × (1 + Wiederholungen / 30). Die Brzycki-Gleichung liefert eine alternative Referenz: 1RM = Gewicht × [36 / (37 - Wiederholungen)]. Beide Formeln erzielen die höchste Validität im Wiederholungsbereich von 2 bis 6 Wiederholungen mit sauberer Ausführung.",
-      "formulaCode": "Epley: 1RM = W × (1 + R / 30) | Brzycki: 1RM = W × (36 / (37 - R))",
-      "tableTitle": "Trainingsintensitäts-Zonen & Wiederholungsbereiche basierend auf 1RM",
+      "eyebrow": "Trainingswissenschaft & Kraftsport",
+      "title": "1RM-Rechner – Maximalkraft Bankdrücken, Kniebeugen & Kreuzheben",
+      "intro": "Berechnen Sie Ihr One-Rep Max (1RM) verletzungsfrei anhand der Formeln von Epley, Brzycki und Lander inklusive 10-stufiger Trainings-Prozentsatztabelle.",
+      "formulaTitle": "Validierte 1RM-Maximalkraft-Formeln: Epley, Brzycki & Lander",
+      "formulaDesc": "Mathematische Näherungsverfahren zur Maximalkraftbestimmung:\\n• Epley (1985): 1RM = Gewicht × (1 + Wdh / 30)\\n• Brzycki (1993): 1RM = Gewicht × [36 / (37 - Wdh)]\\n• Lander (1985): 1RM = (100 × Gewicht) / (101,3 - 2,67123 × Wdh)\\nSubmaximale Tests schonen Sehnen und Gelenke vor Überlastung.",
+      "formulaCode": "Epley: W×(1+R/30) | Brzycki: W×(36/(37-R)) | Lander: (100×W)/(101.3-2.67123×R)",
+      "tableTitle": "1RM-Trainings-Prozentsätze & Wiederholungsbereiche Kontinuum-Tabelle",
       "tableRows": [
         {
-          "col1": "100% 1RM Maximalkraft",
+          "col1": "100% 1RM",
           "col2": "1 Wiederholung",
-          "col3": "Absolute Maximalkraft (Wettkampf- und Testgewicht für Einzelversuche)"
+          "col3": "Absolute Maximalkraft & maximale neuronale Rekrutierung (Wettkampfstandard)."
         },
         {
-          "col1": "90% 1RM Schwere Last",
+          "col1": "95% 1RM",
+          "col2": "2 Wiederholungen",
+          "col3": "Submaximale Spitzenkraft & ZNS-Aktivierung bei minimalem Geschwindigkeitsverlust."
+        },
+        {
+          "col1": "90% 1RM",
           "col2": "3 bis 4 Wiederholungen",
-          "col3": "Schwere neuronale Kraftentwicklung und maximale myofibrilläre Rekrutierung"
+          "col3": "Reine myofibrilläre Maximalkraft & Explosivkraft (Rate of Force Development)."
         },
         {
-          "col1": "85% 1RM Kraftaufbau",
+          "col1": "85% 1RM",
           "col2": "5 bis 6 Wiederholungen",
-          "col3": "Klassischer Kraftaufbau und funktionelle Hypertrophie (z.B. 5x5-Systeme)"
+          "col3": "Funktionelle Kraft & Hypertrophie (Klassisches 5x5-Grundkraft-Schema)."
         },
         {
-          "col1": "80% 1RM Muskelaufbau",
+          "col1": "80% 1RM",
           "col2": "7 bis 8 Wiederholungen",
-          "col3": "Optimales Muskelaufbautraining und sarkoplasmatische Hypertrophie"
+          "col3": "Optimales Hypertrophie-Kontinuum aus mechanischer Spannung und metabolischem Stress."
         },
         {
-          "col1": "75% 1RM Volumen-Hypertrophie",
+          "col1": "75% 1RM",
           "col2": "9 bis 10 Wiederholungen",
-          "col3": "Volumen-Hypertrophie, metabolischer Stress und muskuläre Ermüdungstoleranz"
+          "col3": "Volumen-Hypertrophie & sarkoplasmatisches Muskelwachstum."
         },
         {
-          "col1": "70% 1RM Kraftausdauer",
-          "col2": "12 bis 15 Wiederholungen",
-          "col3": "Kraftausdauer, kapilläre Vaskularisierung und biomechanische Sehnenanpassung"
+          "col1": "70% 1RM",
+          "col2": "11 bis 12 Wiederholungen",
+          "col3": "Kraftausdauer & metabolische Ermüdungstoleranz mit Muskelaufbau."
+        },
+        {
+          "col1": "65% 1RM",
+          "col2": "13 bis 15 Wiederholungen",
+          "col3": "Lokale Muskelausdauer & Vaskularisierung/Kapillarisierung."
+        },
+        {
+          "col1": "60% 1RM",
+          "col2": "16 bis 20 Wiederholungen",
+          "col3": "Metabolisches Konditionieren & Deload-/Speed-Einheiten."
+        },
+        {
+          "col1": "50% 1RM",
+          "col2": "25+ Wiederholungen",
+          "col3": "Dynamisches Aufwärmen, Hantelbeschleunigung & aktive Erholung."
         }
       ],
       "faqs": [
         {
-          "question": "Was ist das One-Repetition-Maximum (1RM) und warum ist es für das Krafttraining wichtig?",
-          "answer": "Das One-Repetition-Maximum (1RM) definiert die maximale Last in Kilogramm, die ein Athlet für genau eine vollständige Wiederholung mit korrekter biomechanischer Technik bewältigen kann. Trainingswissenschaftler und Kraftsportler nutzen diesen Kennwert als standardisierte Bezugsgröße (100%), um gezielte Trainingszonen für Maximalkraft (85-100%), Hypertrophie (70-85%) und Kraftausdauer (50-70%) zu programmieren."
+          "question": "Wie unterscheiden sich die Formeln von Epley, Brzycki und Lander?",
+          "answer": "Epley berechnet linear und eignet sich hervorragend für 2 bis 8 Wiederholungen; Brzycki schätzt bei höheren Wiederholungen konservativer; und Lander gilt als präziser Mittelwert nach NSCA-Standards."
         },
         {
-          "question": "Warum ist die submaximale Schätzung sicherer als ein echter 1RM-Maximalversuch?",
-          "answer": "Ein echter Maximalversuch bis zum Muskelversagen erzeugt enorme Scher- und Kompressionskräfte auf Gelenke, Bandscheiben und Sehnen. Die submaximale Schätzung aus 3 bis 5 Wiederholungen mit sauberer Technik minimiert das Verletzungsrisiko drastisch und liefert mathematisch verlässliche Vorhersagewerte mit über 95% Genauigkeit."
-        },
-        {
-          "question": "Bei welcher Wiederholungszahl ist die 1RM-Berechnung am präzisesten?",
-          "answer": "Wiederholungszahlen zwischen 2 und 6 Wiederholungen liefern die exaktesten Ergebnisse. Sobald ein Satz mehr als 10 Wiederholungen umfasst, verschiebt sich die muskuläre Limitierung zunehmend von der Maximalkraft zur metabolischen Laktattoleranz, was die Formelgenauigkeit verringert."
-        },
-        {
-          "question": "Wie berechnet man Trainingsgewichte anhand von 1RM-Prozentsätzen?",
-          "answer": "Multiplizieren Sie Ihr errechnetes 1RM einfach mit dem gewünschten Intensitätsprozentsatz. Wenn Ihr geschätztes 1RM im Bankdrücken 100 kg beträgt und Ihr Trainingsplan 5 Wiederholungen mit 85% Intensität vorsieht, trainieren Sie mit 85 kg (100 × 0,85 = 85 kg)."
-        },
-        {
-          "question": "Welche Aufwärmroutine wird vor einem schweren Arbeitssatz empfohlen?",
-          "answer": "Beginnen Sie mit einer leeren Hantelstange (10-15 Wiederholungen). Erhöhen Sie schrittweise das Gewicht über 3 bis 4 Sätze mit sinkenden Wiederholungszahlen (z.B. 50% für 5 Wdh, 70% für 3 Wdh, 85% für 1 Wdh). Gönnen Sie sich 2 bis 3 Minuten Pause vor dem eigentlichen Wertungssatz."
+          "question": "Warum ist die 1RM-Berechnung sicherer als ein direkter Maximalversuch?",
+          "answer": "Maximale Einzelwiederholungen belasten Bänder, Sehnen und Wirbelsäule extrem. Submaximale Sätze mit 3 bis 6 Wiederholungen bieten 95%+ Genauigkeit bei minimalem Verletzungsrisiko."
         }
       ]
     },
     "ko": {
-      "eyebrow": "건강 참조 표준 지침",
-      "title": "1RM 계산기 – 1회 최대 반복 중량 계산기 (벤치프레스, 스쿼트, 데드리프트) – 참조 계산기",
-      "intro": "무료 1RM(1회 최대 중량) 계산기. Epley 및 Brzycki 공식을 활용하여 벤치프레스, 스쿼트의 1회 최대 근력, 웨이트 리프팅 중량 비율(%)을 브라우저 내에서 안전하고 정밀하게 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "Epley 1RM = W × (1 + R / 30)",
-      "tableTitle": "1RM 백분율 강도 및 반복 횟수 트레이닝 차트",
+      "eyebrow": "근력 트레이닝 운동과학",
+      "title": "1RM 계산기 – 1회 최대 중량 (벤치프레스, 스쿼트, 데드리프트)",
+      "intro": "위험한 1회 최대 중량 시도 없이, 검증된 Epley, Brzycki, Lander 공식을 통해 안전하게 1RM을 산출하고 10단계 훈련 부하 비율(%) 표를 확인하세요.",
+      "formulaTitle": "검증된 1RM 최대 근력 산출 공식: Epley, Brzycki 및 Lander",
+      "formulaDesc": "하위최대(Submaximal) 반복 기반 1RM 산출 방정식:\\n• Epley 공식 (1985): 1RM = 중량 × (1 + 반복 ÷ 30)\\n• Brzycki 공식 (1993): 1RM = 중량 × [36 ÷ (37 - 반복)]\\n• Lander 공식 (1985): 1RM = (100 × 중량) ÷ (101.3 - 2.67123 × 반복)\\n관절 및 인대 부상 위험을 최소화하면서 95% 이상의 정확도로 최고 근력을 예측합니다.",
+      "formulaCode": "Epley: W×(1+R/30) | Brzycki: W×(36/(37-R)) | Lander: (100×W)/(101.3-2.67123×R)",
+      "tableTitle": "1RM 트레이닝 백분율 및 반복 횟수 매트릭스 표",
       "tableRows": [
         {
-          "col1": "100% 1RM 최대 기준",
-          "col2": "1 Repetition",
-          "col3": "단일 최고 근력 측정 구간 (100% 1RM)"
+          "col1": "100% 1RM",
+          "col2": "1회 반복",
+          "col3": "절대 최대 근력 및 운동단위 최대 동원 (파워리프팅 및 역도 경기 기준)."
         },
         {
-          "col1": "95% 1RM 고부하",
-          "col2": "2 Repetitions",
-          "col3": "고중량 근력 훈련 구간 (95% 1RM)"
+          "col1": "95% 1RM",
+          "col2": "2회 반복",
+          "col3": "준최대 근력 및 피킹: 중추신경계(CNS) 강력 활성화 및 고부하 적응."
         },
         {
-          "col1": "90% 1RM 근력 향상",
-          "col2": "3 Repetitions",
-          "col3": "파워 리프팅 세트 구간 (93% 1RM)"
+          "col1": "90% 1RM",
+          "col2": "3~4회 반복",
+          "col3": "순수 근원섬유 근력 및 파워: 최대 근력 발현 및 힘 생성율(RFD) 증대."
         },
         {
-          "col1": "85% 1RM 근비대",
-          "col2": "5 Repetitions",
-          "col3": "고중량 근력 발달 구간 (87% 1RM)"
+          "col1": "85% 1RM",
+          "col2": "5~6회 반복",
+          "col3": "기능적 근력 및 근비대: 클래식 5x5 스트렝스-근비대 최적 복합 부하."
         },
         {
-          "col1": "80% 1RM 하이퍼트로피",
-          "col2": "7 Repetitions",
-          "col3": "근비대 집중 훈련 구간 (80% 1RM)"
+          "col1": "80% 1RM",
+          "col2": "7~8회 반복",
+          "col3": "최적의 근비대 연속체: 기계적 장력과 대사적 스트레스의 완벽한 균형."
         },
         {
-          "col1": "75% 1RM 근지구력",
-          "col2": "10 Repetitions",
-          "col3": "근지구력 및 볼륨 훈련 구간 (75% 1RM)"
+          "col1": "75% 1RM",
+          "col2": "9~10회 반복",
+          "col3": "볼륨 축적 및 근형질 근비대: 펌핑 효과 및 피로 내성 강화."
+        },
+        {
+          "col1": "70% 1RM",
+          "col2": "11~12회 반복",
+          "col3": "작업 수행 능력 및 근지구력-근비대 복합 훈련."
+        },
+        {
+          "col1": "65% 1RM",
+          "col2": "13~15회 반복",
+          "col3": "국소 근지구력 강화, 모세혈관 확장 및 자세 유지력 증대."
+        },
+        {
+          "col1": "60% 1RM",
+          "col2": "16~20회 반복",
+          "col3": "대사 컨디셔닝 및 디로드/바벨 스피드 트레이닝."
+        },
+        {
+          "col1": "50% 1RM",
+          "col2": "25회 이상",
+          "col3": "동적 웜업, 바벨 가속 기술 훈련 및 능동적 회복."
         }
       ],
       "faqs": [
         {
-          "question": "1RM이란 무엇이며 어떻게 계산되나요?",
-          "answer": "1RM(1 Rep Max)은 올바른 자세로 1회 들 수 있는 최대 중량입니다. 본 계산기는 에플리 공식을 적용하여 가벼운 무게의 반복 횟수로 안전하게 최대치를 추정합니다."
+          "question": "Epley, Brzycki, Lander 공식의 특징과 차이점은 무엇인가요?",
+          "answer": "Epley 공식은 2~8회 반복 구간에서 선형적으로 매우 신뢰도가 높으며, Brzycki는 10회에 가까운 고반복에서 다소 보수적으로 측정하며, Lander 공식은 미국근력조절학회(NSCA)에서 널리 권장하는 균형 잡힌 기준을 제공합니다."
         },
         {
-          "question": "서브맥시멀 1RM 추정 공식의 원리는 무엇인가요?",
-          "answer": "에플리 및 브지키 공식은 부상 위험이 높은 최대 중량 대신, 안전한 중량의 반복 횟수를 기반으로 수학적으로 1RM을 추정합니다."
+          "question": "목표별 추천 1RM 트레이닝 백분율(%)은 어떻게 되나요?",
+          "answer": "최대 근력 발달은 1RM의 85~100%(1~6회), 근육량 증대(근비대)는 65~85%(6~12회), 근지구력 향상 및 혈관 발달은 50~65%(15~25회 이상) 구간이 권장됩니다."
         }
       ]
     },
     "hi": {
-      "eyebrow": "स्ट्रेंथ कंडीशनिंग साइंस",
-      "title": "1RM कैलकुलेटर – एक पुनरावृत्ति अधिकतम वजन (बेंच प्रेस व स्क्वैट)",
-      "intro": "बेंच प्रेस, स्क्वाट और डेडलिफ्ट के लिए अपने 1RM (वन रेप मैक्स) की सुरक्षित गणना करें। एपले और ब्रज़िकी सूत्रों से अपने 100% मैक्स की गणना करें।",
-      "formulaTitle": "मानक 1RM गणना सूत्र",
-      "formulaDesc": "एपले सूत्र: 1RM = वजन × (1 + रेप्स / 30) | ब्रज़िकी सूत्र: 1RM = वजन × [36 / (37 - रेप्स)]",
-      "formulaCode": "Epley 1RM = W × (1 + R / 30)",
-      "tableTitle": "1RM प्रतिशत प्रशिक्षण तालिका",
+      "eyebrow": "स्ट्रेंथ कंडीशनिंग विज्ञान",
+      "title": "1RM कैलकुलेटर – वन रेप मैक्स (बेंच प्रेस, स्क्वाट, डेडलिफ्ट)",
+      "intro": "बिना किसी चोट जोखिम के, प्रमाणित एपले, ब्रज़िकी और लैंडर सूत्रों से अपना 1RM निकालें और संपूर्ण 10-स्तरीय प्रशिक्षण प्रतिशत चार्ट देखें।",
+      "formulaTitle": "प्रमाणित 1RM शक्ति सूत्र: एपले, ब्रज़िकी और लैंडर",
+      "formulaDesc": "सब-मैक्सिमल रिपीटीशन आधारित 1RM भविष्यवाणी सूत्र:\\n• एपले फॉर्मूला (1985): 1RM = वजन × (1 + रेप्स ÷ 30)\\n• ब्रज़िकी फॉर्मूला (1993): 1RM = वजन × [36 ÷ (37 - रेप्स)]\\n• लैंडर फॉर्मूला (1985): 1RM = (100 × वजन) ÷ (101.3 - 2.67123 × रेप्स)\\nयह जोड़ों को सुरक्षित रखते हुए अधिकतम लिफ्टिंग क्षमता की सटीक भविष्यवाणी करता है।",
+      "formulaCode": "Epley: W×(1+R/30) | Brzycki: W×(36/(37-R)) | Lander: (100×W)/(101.3-2.67123×R)",
+      "tableTitle": "1RM प्रशिक्षण प्रतिशत एवं पुनरावृत्ति सातत्य तालिका",
       "tableRows": [
         {
-          "col1": "100% 1RM अधिकतम शक्ति",
-          "col2": "1 रेप",
-          "col3": "अधिकतम क्षमता"
+          "col1": "100% 1RM",
+          "col2": "1 रिपीटीशन",
+          "col3": "पूर्ण अधिकतम शक्ति (प्रतियोगिता एवं पावरलिफ्टिंग मानक)।"
         },
         {
-          "col1": "95% 1RM भारी भार",
-          "col2": "3 रेप्स",
-          "col3": "भारी स्ट्रेंथ लोड"
+          "col1": "95% 1RM",
+          "col2": "2 रिपीटीशन",
+          "col3": "निकट-अधिकतम शक्ति और तंत्रिका तंत्र की चरम सक्रियता।"
         },
         {
-          "col1": "90% 1RM शक्ति विकास",
-          "col2": "5 रेप्स",
-          "col3": "मांसपेशी वृद्धि"
+          "col1": "90% 1RM",
+          "col2": "3 से 4 रिपीटीशन",
+          "col3": "शुद्ध मायोफिब्रिलर स्ट्रेंथ और विस्फोटक शक्ति विकास।"
         },
         {
-          "col1": "85% 1RM मांसपेशी वृद्धि",
-          "col2": "10 रेप्स",
-          "col3": "वॉल्यूम ट्रेनिंग"
+          "col1": "85% 1RM",
+          "col2": "5 से 6 रिपीटीशन",
+          "col3": "कार्यात्मक शक्ति एवं मांसपेशी विकास (क्लासिक 5x5 नियम)।"
         },
         {
-          "col1": "80% 1RM हाइपरट्रॉफी",
-          "col2": "7 Repetitions",
-          "col3": "हाइपरट्रॉफी मांसपेशी निर्माण सीमा"
+          "col1": "80% 1RM",
+          "col2": "7 से 8 रिपीटीशन",
+          "col3": "इष्टतम हाइपरट्रॉफी: यांत्रिक तनाव और मेटाबोलिक तनाव का सही संतुलन।"
         },
         {
-          "col1": "75% 1RM मांसपेशी धीरज",
-          "col2": "10 Repetitions",
-          "col3": "वॉल्यूम हाइपरट्रॉफी और सहनशक्ति"
+          "col1": "75% 1RM",
+          "col2": "9 से 10 रिपीटीशन",
+          "col3": "मांसपेशियों के आयतन और रक्त पंप में वृद्धि।"
+        },
+        {
+          "col1": "70% 1RM",
+          "col2": "11 से 12 रिपीटीशन",
+          "col3": "कार्य क्षमता और सहनशक्ति-हाइपरट्रॉफी का तालमेल।"
+        },
+        {
+          "col1": "65% 1RM",
+          "col2": "13 से 15 रिपीटीशन",
+          "col3": "मांसपेशियों की स्थानीय सहनशक्ति और केशिका विकास।"
+        },
+        {
+          "col1": "60% 1RM",
+          "col2": "16 से 20 रिपीटीशन",
+          "col3": "मेटाबोलिक कंडीशनिंग और डीलोड/स्पीड सेट्स।"
+        },
+        {
+          "col1": "50% 1RM",
+          "col2": "25+ रिपीटीशन",
+          "col3": "डायनेमिक वॉर्म-अप, बारबेल गति तकनीक और रिकवरी।"
         }
       ],
       "faqs": [
         {
-          "question": "वन रेप मैक्स (1RM) क्या है?",
-          "answer": "1RM वह अधिकतम वजन है जिसे आप सही फॉर्म के साथ केवल एक बार उठा सकते हैं।"
+          "question": "एपले, ब्रज़िकी और लैंडर सूत्रों में क्या अंतर है?",
+          "answer": "एपले सूत्र 2-8 रेप्स के लिए सरल व सटीक है, ब्रज़िकी 10 रेप्स के पास अधिक सतर्क अनुमान देता है, और लैंडर सूत्र NSCA द्वारा मान्य सटीक मध्यवर्ती अनुमान प्रदान करता है।"
         },
         {
-          "question": "इपली (Epley) और ब्रज़िकी (Brzycki) सूत्रों में क्या अंतर है?",
-          "answer": "इपली सूत्र 1RM = W × (1 + R/30) का उपयोग करता है, जो 10 से कम रेप्स के लिए अत्यधिक सटीक है।"
-        },
-        {
-          "question": "1RM कैलकुलेटर का उपयोग करना असली 1RM उठाने से बेहतर क्यों है?",
-          "answer": "कैलकुलेटर भारी वजन से होने वाली चोट के जोखिम के बिना आपकी 1RM क्षमता का सुरक्षित अनुमान देता है।"
-        },
-        {
-          "question": "1RM का उपयोग स्ट्रेंथ ट्रेनिंग प्रोग्राम में कैसे करें?",
-          "answer": "आप अपनी 1RM का 75-85% वजन चुनकर 6 से 10 रेप्स के सेट डिजाइन कर सकते हैं।"
-        },
-        {
-          "question": "1RM निकालने के लिए कितने रेप्स का सेट सबसे अच्छा है?",
-          "answer": "3 से 6 रेप्स का भारी सेट 1RM कैलकुलेटर में सबसे सटीक परिणाम देता है।"
+          "question": "1RM का प्रत्यक्ष परीक्षण करने की तुलना में इसका अनुमान लगाना अधिक सुरक्षित क्यों है?",
+          "answer": "सीधे 1RM प्रयास करने से जोड़ों और रीढ़ पर अत्यधिक दबाव पड़ता है। 3 से 6 रेप्स से 1RM का अनुमान लगाने पर 95% से अधिक सटीकता मिलती है और चोट का जोखिम नगण्य रहता है।"
         }
       ]
     }

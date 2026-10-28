@@ -51,8 +51,8 @@ const articlesList = articleSlugs.map(slug => {
 <Layout 
   title={`${h.title} | Real BMI`}
   description={h.desc}
-  canonicalURL={`https://realbmicalculator.com/${lang}/blog/`}
-  robots={lang === 'en' ? 'index, follow' : 'noindex, follow'}
+  canonicalURL="https://realbmicalculator.com/blog/"
+  robots="noindex, follow"
 >
   <Navbar />
 
@@ -63,6 +63,27 @@ const articlesList = articleSlugs.map(slug => {
     returnUrl={`/${lang}/`}
     returnLabel={homeLabels[lang] || homeLabels.en}
   >
+    <!-- Multilingual Library Notice -->
+    <div class="not-prose mb-6 p-4 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)] text-xs text-[var(--muted-foreground)] flex items-center justify-between gap-3">
+      <span>{{
+        en: "Complete clinical health library available in the authoritative English edition.",
+        es: "Biblioteca de artículos clínicos completos en la edición oficial en inglés.",
+        fr: "Bibliothèque d'articles cliniques complets dans l'édition officielle en anglais.",
+        de: "Vollständige klinische Artikelbibliothek in der offiziellen englischen Ausgabe.",
+        ko: "공식 영문 에디션에서 전체 심층 임상 아티클 라이브러리를 확인하실 수 있습니다.",
+        hi: "संपूर्ण नैदानिक स्वास्थ्य लेख लाइब्रेरी आधिकारिक अंग्रेजी संस्करण में उपलब्ध है।"
+      }[lang]}</span>
+      <a href="/blog/" class="text-[var(--accent)] font-semibold underline shrink-0 hover:text-[var(--foreground)]">
+        {{
+          en: "View English library →",
+          es: "Ver biblioteca en inglés →",
+          fr: "Voir la bibliothèque en anglais →",
+          de: "Englische Bibliothek ansehen →",
+          ko: "영문 라이브러리 보기 →",
+          hi: "अंग्रेजी लाइब्रेरी देखें →"
+        }[lang]}
+      </a>
+    </div>
     <!-- Category Hub Navigation -->
     <div class="flex flex-wrap items-center gap-2 mb-8 pb-4 border-b border-[var(--border)]" id="categoryHubNav">
       <button type="button" class="category-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--accent)] text-white transition-all shadow-xs cursor-pointer" data-filter="all">
