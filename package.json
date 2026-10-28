@@ -12,7 +12,7 @@
     "astro": "astro",
     "test": "node tests/parity.test.mjs && node tests/calculators-regression.test.mjs && node --test tests/ui-repetition-regression.test.mjs tests/bmiReference.test.js tests/calculator-initial-state.test.mjs && node tests/production-remediation.test.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
-    "deploy": "npm run build && npx wrangler pages deploy dist --project-name real-bmi-calculator"
+    "deploy": "npm run build && npx wrangler@4.152.0 pages deploy dist --project-name real-bmi-calculator"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
