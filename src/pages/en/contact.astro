@@ -17,7 +17,10 @@ const contactSchema = {
       "@type": "Person",
       "name": "Bhawanshi Dosi",
       "jobTitle": "Founder & Lead Developer",
-      "url": "https://realbmicalculator.com/en/about/"
+      "url": "https://realbmicalculator.com/en/about/",
+      "sameAs": [
+        "https://www.linkedin.com/in/bhawanshi-dosi"
+      ]
     },
     "address": {
       "@type": "PostalAddress",
@@ -36,7 +39,11 @@ const contactSchema = {
 };
 ---
 
-<Layout title="Contact Us | Real BMI Calculator" description="Contact Real BMI for technical support, mathematical formula feedback, editorial inquiries, or suggestions regarding our health and fitness calculators.">
+<Layout 
+    title="Contact Us | Real BMI Calculator" 
+    description="Contact Real BMI for technical support, mathematical formula feedback, editorial inquiries, or suggestions regarding our health and fitness calculators."
+    canonicalURL="https://realbmicalculator.com/en/contact/"
+>
     <script type="application/ld+json" is:inline set:html={JSON.stringify(contactSchema)} />
     <Navbar />
     <main class="pt-36 md:pt-40 pb-20 px-4 md:px-6">
@@ -61,7 +68,7 @@ const contactSchema = {
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 Verified Editorial &amp; Ownership Transparency
               </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-1">
                 <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
                   <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Founder &amp; Developer</span>
                   <p class="text-base font-display font-black text-[var(--foreground)]">Bhawanshi Dosi</p>
@@ -70,23 +77,30 @@ const contactSchema = {
                 <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
                   <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Project Nature</span>
                   <p class="text-base font-display font-black text-[var(--foreground)]">Independent Project</p>
-                  <p class="text-xs text-[var(--muted-foreground)] font-medium">100% Free Public Health Tools</p>
+                  <p class="text-xs text-[var(--muted-foreground)] font-medium">Independent Health Informatics</p>
                 </div>
                 <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
                   <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Operational Base</span>
                   <p class="text-base font-display font-black text-[var(--foreground)]">Ahmedabad, Gujarat, India</p>
-                  <p class="text-xs text-[var(--muted-foreground)] font-medium">India &amp; Global Users</p>
+                  <p class="text-xs text-[var(--muted-foreground)] font-medium">India &amp; Global Operations</p>
                 </div>
                 <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
                   <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Direct Support Desk</span>
-                  <a href="mailto:support@realbmicalculator.com" class="text-base font-mono font-bold text-[var(--accent)] hover:underline block break-all">support@realbmicalculator.com</a>
-                  <p class="text-xs text-emerald-400 font-semibold">24–48h response protocol</p>
+                  <a href="mailto:support@realbmicalculator.com" class="text-base font-mono font-bold text-[#464feb] hover:underline block break-all">support@realbmicalculator.com</a>
+                  <p class="text-xs text-emerald-500 font-semibold">24–48h response protocol</p>
+                </div>
+                <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
+                  <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Professional Profile</span>
+                  <a href="https://www.linkedin.com/in/bhawanshi-dosi" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-[#464feb] hover:underline flex items-center gap-1.5 pt-0.5">
+                    <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn Profile ↗
+                  </a>
+                  <p class="text-xs text-[var(--muted-foreground)] font-medium">Verified Creator Identity</p>
                 </div>
               </div>
             </div>
           </div>
 
-          
           <!-- Executive Ownership & Transparency Verification Table (AdSense / YMYL High-Trust Anchor) -->
           <div class="contact-table-wrap my-8 p-6 shadow-xs">
             <div class="mb-4 space-y-1">
@@ -103,36 +117,46 @@ const contactSchema = {
                 </tr>
               </thead>
               <tbody>
-          <tr>
-            <td><strong>Founder & Lead Creator</strong></td>
-            <td><strong>Bhawanshi Dosi</strong></td>
-            <td>Software Engineer & Health Informatics Researcher. Personally designs, codes, and maintains the algorithms, mathematical models, and 3D visualizers.</td>
-          </tr>
-          <tr>
-            <td><strong>Project Structure</strong></td>
-            <td><strong>Independent Project</strong></td>
-            <td>Self-directed, independent educational web application. 100% free public access; zero pharmaceutical bias, ad trackers, or paywalled features.</td>
-          </tr>
-          <tr>
-            <td><strong>Headquarters & Location</strong></td>
-            <td><strong>Ahmedabad, Gujarat, India</strong></td>
-            <td>Operational base for algorithmic development, server maintenance, editorial review, and user support. Serving global audiences across 6 languages.</td>
-          </tr>
-          <tr>
-            <td><strong>Direct Support Desk</strong></td>
-            <td><a href="mailto:support@realbmicalculator.com">support@realbmicalculator.com</a></td>
-            <td>Directly monitored inbox for mathematical formula feedback, bug reports, and academic inquiries. 24–48 hour human reply protocol.</td>
-          </tr>
-          <tr>
-            <td><strong>Data Privacy Policy</strong></td>
-            <td><strong>100% Client-Side Computing</strong></td>
-            <td>Zero personal health metrics (PII) are transmitted or stored on remote servers. All calculations execute locally inside your web browser.</td>
-          </tr>
-          <tr>
-            <td><strong>Scientific Standards</strong></td>
-            <td><a href="/en/sources/">Indexed Academic Bibliography &rarr;</a></td>
-            <td>Directly anchored to published landmark studies: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, and Devine 1974.</td>
-          </tr>
+                <tr>
+                  <td><strong>Founder &amp; Lead Creator</strong></td>
+                  <td><strong>Bhawanshi Dosi</strong></td>
+                  <td>Software Engineer &amp; Health Informatics Researcher. Personally designs, codes, and maintains the algorithms, mathematical models, and 3D visualizers.</td>
+                </tr>
+                <tr>
+                  <td><strong>Professional Profile</strong></td>
+                  <td>
+                    <a href="https://www.linkedin.com/in/bhawanshi-dosi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-bold text-[#464feb] hover:underline">
+                      <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                      linkedin.com/in/bhawanshi-dosi ↗
+                    </a>
+                  </td>
+                  <td>Public professional profile verifying individual creator identity, computational engineering background, and project governance.</td>
+                </tr>
+                <tr>
+                  <td><strong>Project Structure</strong></td>
+                  <td><strong>Independent Health Informatics Project</strong></td>
+                  <td>Self-directed, independent educational web application. 100% free public access; zero pharmaceutical bias, ad trackers, or paywalled features.</td>
+                </tr>
+                <tr>
+                  <td><strong>Headquarters &amp; Location</strong></td>
+                  <td><strong>Ahmedabad, Gujarat, India</strong></td>
+                  <td>Operational base for algorithmic development, server maintenance, editorial review, and user support. Serving global audiences across 6 languages.</td>
+                </tr>
+                <tr>
+                  <td><strong>Direct Support Desk</strong></td>
+                  <td><a href="mailto:support@realbmicalculator.com" class="font-mono text-[#464feb] font-bold">support@realbmicalculator.com</a></td>
+                  <td>Directly monitored inbox for mathematical formula feedback, bug reports, and academic inquiries. 24–48 hour human reply protocol.</td>
+                </tr>
+                <tr>
+                  <td><strong>Data Privacy Policy</strong></td>
+                  <td><strong>100% Client-Side Computing</strong></td>
+                  <td>Zero personal health metrics (PII) are transmitted or stored on remote servers. All calculations execute locally inside your web browser.</td>
+                </tr>
+                <tr>
+                  <td><strong>Scientific Standards</strong></td>
+                  <td><a href="/en/sources/" class="text-[#464feb] font-bold">Indexed Academic Bibliography &rarr;</a></td>
+                  <td>Directly anchored to published landmark studies: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, and Devine 1974.</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -154,8 +178,14 @@ const contactSchema = {
                   </div>
                   <p class="text-lg font-display font-black text-[var(--foreground)]">Bhawanshi Dosi</p>
                   <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
-                    Independent Software Engineer &amp; Health Informatics Researcher (Lead Developer &amp; Project Creator)
+                    Software Engineer &amp; Health Informatics Researcher (Lead Developer &amp; Project Creator)
                   </p>
+                  <div class="pt-1">
+                    <a href="https://www.linkedin.com/in/bhawanshi-dosi" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-[#464feb] hover:underline inline-flex items-center gap-1">
+                      <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                      LinkedIn Profile ↗
+                    </a>
+                  </div>
                 </div>
 
                 <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs space-y-2">
@@ -163,9 +193,9 @@ const contactSchema = {
                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
                     <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Project Nature</p>
                   </div>
-                  <p class="text-lg font-display font-black text-[var(--foreground)]">Independent Educational Project</p>
+                  <p class="text-lg font-display font-black text-[var(--foreground)]">Independent Project</p>
                   <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
-                    100% Free, Public-Access Digital Health Computing • Zero Health Data Retention (100% Client-Side Privacy)
+                    Independent Health Informatics Project • 100% Free Public Health Tools • Zero Data Retention
                   </p>
                 </div>
 
@@ -185,10 +215,10 @@ const contactSchema = {
                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
                     <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Official Contact Desk</p>
                   </div>
-                  <a href="mailto:support@realbmicalculator.com" class="text-base font-bold font-mono text-[var(--accent)] hover:underline block break-all">
+                  <a href="mailto:support@realbmicalculator.com" class="text-base font-bold font-mono text-[#464feb] hover:underline block break-all">
                     <span>support</span><span>&#64;</span><span>realbmicalculator.com</span>
                   </a>
-                  <p class="text-xs text-emerald-400 font-semibold">Human review &amp; reply within 24–48 hours on business days</p>
+                  <p class="text-xs text-emerald-500 font-semibold">Human review &amp; reply within 24–48 hours on business days</p>
                 </div>
               </div>
 
@@ -201,12 +231,12 @@ const contactSchema = {
               <div class="space-y-6 pt-4 border-t border-[var(--border)]">
                 
                   <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">1. Formula Questions & Scientific Feedback</h2>
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">1. Formula Questions &amp; Scientific Feedback</h2>
                     <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">We constantly verify our implementations of the Mifflin-St Jeor equation, Oxford 2.5 BMI models, and WHO Asian risk thresholds. If you have academic feedback, citations, or suggestions for improving reference tables, our editorial review team welcomes your notes.</p>
                   </div>
                 
                   <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">2. Technical Troubleshooting & 3D WebGL Support</h2>
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">2. Technical Troubleshooting &amp; 3D WebGL Support</h2>
                     <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Encountering rendering issues with the 3D Body Visualizer or interactive charts? Please include your operating system, device model, and browser version (Chrome, Safari, Edge, or Firefox) so our engineering staff can replicate and resolve the issue quickly.</p>
                   </div>
                 
@@ -216,12 +246,12 @@ const contactSchema = {
                   </div>
                 
                   <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">4. Privacy & Secure Communications</h2>
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">4. Privacy &amp; Secure Communications</h2>
                     <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Any correspondence sent to our support desk is treated with strict confidentiality. We do not sell or share contact information with external marketing networks, and correspondence is retained solely to assist in resolving your query.</p>
                   </div>
                 
                   <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">5. Calculator Embedding & API Integrations</h2>
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">5. Calculator Embedding &amp; API Integrations</h2>
                     <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">If you operate a health, fitness, or educational website and wish to embed our interactive calculators or link to our reference guides, you may use our standard iframe widgets. For custom sizing or academic use, please submit an inquiry via our form.</p>
                   </div>
                 
@@ -231,10 +261,11 @@ const contactSchema = {
                   </div>
 
                   <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">7. Pre-Publication Content Review & Zero-PII Policy</h2>
+                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">7. Pre-Publication Content Review &amp; Zero-PII Policy</h2>
                     <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">In strict accordance with Google Publisher Policies and international privacy regulations, Real BMI enforces a comprehensive pre-publication content review and zero-PII standard across all public entries. We do not host public message boards, exposed personal contact directories, or user profiles. All inquiries submitted via our encrypted portal are handled confidentially and are never published online.</p>
                   </div>
-                
+              </div>
+
               <!-- Support FAQ Section -->
               <div class="faq-support-section space-y-6 pt-6 border-t border-[var(--border)]">
                 <div class="space-y-2">
@@ -271,7 +302,7 @@ const contactSchema = {
               <div class="space-y-2">
                 <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Verified Publisher Details</p>
                 <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight font-display">Real BMI</h2>
-                <p class="text-xs text-[var(--muted-foreground)] font-medium">Independent Health Engineering &amp; Educational Project</p>
+                <p class="text-xs text-[var(--muted-foreground)] font-medium">Independent Health Informatics Project</p>
               </div>
 
               <!-- Founder & Transparency Badges -->
@@ -281,8 +312,15 @@ const contactSchema = {
                   <span class="text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi</span>
                 </div>
                 <div>
+                  <span class="font-bold text-[var(--foreground)] block">Professional Profile:</span>
+                  <a href="https://www.linkedin.com/in/bhawanshi-dosi" target="_blank" rel="noopener noreferrer" class="text-[#464feb] hover:underline font-semibold inline-flex items-center gap-1.5 mt-0.5">
+                    <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn: in/bhawanshi-dosi ↗
+                  </a>
+                </div>
+                <div>
                   <span class="font-bold text-[var(--foreground)] block">Project Nature:</span>
-                  <span class="text-[var(--muted-foreground)] font-medium">Independent Educational Project</span>
+                  <span class="text-[var(--muted-foreground)] font-medium">Independent Health Informatics Project</span>
                 </div>
                 <div>
                   <span class="font-bold text-[var(--foreground)] block">Location &amp; Operations:</span>
@@ -290,19 +328,23 @@ const contactSchema = {
                 </div>
                 <div>
                   <span class="font-bold text-[var(--foreground)] block">Official Contact:</span>
-                  <a href="mailto:support@realbmicalculator.com" class="text-[var(--accent)] hover:underline font-mono break-all font-semibold">
+                  <a href="mailto:support@realbmicalculator.com" class="text-[#464feb] hover:underline font-mono break-all font-semibold">
                     support@realbmicalculator.com
                   </a>
                 </div>
                 <div>
                   <span class="font-bold text-[var(--foreground)] block">Response Protocol:</span>
-                  <span class="text-emerald-400 font-medium">24–48 Business Hours (Mon–Fri)</span>
+                  <span class="text-emerald-500 dark:text-emerald-400 font-medium">24–48 Business Hours (Mon–Fri)</span>
                 </div>
               </div>
 
               <div class="pt-2 space-y-2.5">
                 <a href="mailto:support@realbmicalculator.com" class="inline-flex w-full items-center justify-center rounded-xl bg-[var(--accent)] px-6 py-3.5 text-xs font-display font-bold uppercase tracking-[0.15em] text-white transition-all hover:opacity-90 shadow-xs min-h-[44px]">
                   Compose Direct Email →
+                </a>
+                <a href="https://www.linkedin.com/in/bhawanshi-dosi" target="_blank" rel="noopener noreferrer" class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:bg-[var(--muted)] px-6 py-3 text-xs font-display font-bold uppercase tracking-[0.15em] text-[var(--foreground)] transition-all min-h-[44px]">
+                  <svg class="w-4 h-4 fill-current text-[#464feb]" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  Connect on LinkedIn ↗
                 </a>
                 <a href="#contact-form" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] hover:bg-[var(--muted)] px-6 py-3 text-xs font-display font-bold uppercase tracking-[0.15em] text-[var(--foreground)] transition-all min-h-[44px]">
                   Launch Web Portal ↓
