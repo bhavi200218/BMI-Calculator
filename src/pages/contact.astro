@@ -13,16 +13,21 @@ const contactSchema = {
     "@type": "Organization",
     "name": "Real BMI Calculator",
     "url": "https://realbmicalculator.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Bhawanshi Dosi",
+      "jobTitle": "Founder & Lead Developer",
+      "url": "https://realbmicalculator.com/about/"
+    },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "100 Montgomery St, Suite 1400",
-      "addressLocality": "San Francisco",
-      "addressRegion": "CA",
-      "postalCode": "94104",
-      "addressCountry": "US"
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "addressCountry": "IN"
     },
     "contactPoint": {
       "@type": "ContactPoint",
+      "email": "support@realbmicalculator.com",
       "url": "https://realbmicalculator.com/contact/",
       "contactType": "customer support",
       "availableLanguage": ["English", "Spanish", "French", "German", "Korean", "Hindi"]
@@ -58,38 +63,53 @@ const contactSchema = {
             <div class="space-y-10">
               <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90 space-y-4">
                 <p>Real BMI is an independent health engineering platform dedicated to providing transparent, privacy-first wellness tools based on peer-reviewed published algorithms. We welcome inquiries from visitors, healthcare professionals, fitness coaches, and researchers.</p>
-                <p>Please review our communication guidelines below to ensure your message reaches the appropriate review queue.</p>
+                <p>Please review our verified ownership credentials and communication guidelines below to ensure your message reaches the appropriate review queue.</p>
               </div>
 
-              <!-- Support details grid -->
+              <!-- Verified Trust & Transparency Grid -->
               <div class="grid gap-4 sm:grid-cols-2">
-                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
-                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">User Support Desk</p>
-                  <a href="#contact-form" class="mt-2 text-sm sm:text-base font-bold text-[var(--accent)] hover:underline block">
-                    Encrypted Web Portal →
-                  </a>
-                  <p class="text-xs text-[var(--muted-foreground)] mt-1">General inquiries, bug reports &amp; tool feedback</p>
-                </div>
-                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
-                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Editorial &amp; Methodology Inquiries</p>
-                  <a href="#contact-form" class="mt-2 text-sm sm:text-base font-bold text-[var(--accent)] hover:underline block">
-                    Editorial Desk →
-                  </a>
-                  <p class="text-xs text-[var(--muted-foreground)] mt-1">Formula review, citations &amp; calculation standards</p>
-                </div>
-                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
-                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Operations Headquarters</p>
-                  <p class="mt-2 text-sm font-bold text-[var(--foreground)]">Real BMI Health Computing Labs</p>
-                  <p class="text-xs text-[var(--muted-foreground)]">100 Montgomery St, Suite 1400</p>
-                  <p class="text-xs text-[var(--muted-foreground)]">San Francisco, CA 94104, USA</p>
-                </div>
-                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
-                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Support Hours &amp; Response</p>
-                  <p class="mt-2 text-sm sm:text-base font-bold text-[var(--foreground)] block">
-                    Mon–Fri: 9:00 AM – 5:00 PM PST
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Founder &amp; Creator</p>
+                  </div>
+                  <p class="text-lg font-display font-black text-[var(--foreground)]">Bhawanshi Dosi</p>
+                  <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+                    Independent Software Engineer &amp; Health Informatics Researcher (Lead Developer &amp; Project Creator)
                   </p>
-                  <p class="text-xs text-[var(--muted-foreground)] mt-1">Secure form submission &bull; Zero PII exposure</p>
-                  <p class="text-xs text-emerald-400 font-semibold mt-0.5">Response within 24–48 hours</p>
+                </div>
+
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Project Nature</p>
+                  </div>
+                  <p class="text-lg font-display font-black text-[var(--foreground)]">Independent Educational Project</p>
+                  <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+                    100% Free, Public-Access Digital Health Computing • Zero Health Data Retention (100% Client-Side Privacy)
+                  </p>
+                </div>
+
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                    <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Operational Base &amp; Location</p>
+                  </div>
+                  <p class="text-lg font-display font-black text-[var(--foreground)]">Ahmedabad, Gujarat, India</p>
+                  <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+                    Global Computational Health Operations (Serving Worldwide Visitors in 6 Languages)
+                  </p>
+                </div>
+
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Official Contact Desk</p>
+                  </div>
+                  <a href="mailto:support@realbmicalculator.com" class="text-base font-bold font-mono text-[var(--accent)] hover:underline block break-all">
+                    <span>support</span><span>&#64;</span><span>realbmicalculator.com</span>
+                  </a>
+                  <p class="text-xs text-emerald-400 font-semibold">Human review &amp; reply within 24–48 hours on business days</p>
                 </div>
               </div>
 
@@ -169,27 +189,60 @@ const contactSchema = {
             </div>
 
             <!-- Sidebar Card -->
-            <aside class="sticky top-28 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-4">
-              <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Official Channel</p>
-              <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight">Verified Portal</h2>
-              <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">Submit your technical inquiries, bug reports, and formula citations through our encrypted submission portal with zero public PII exposure.</p>
-              <div class="pt-4">
-                <a href="#contact-form" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 px-6 py-4 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-white shadow-xs min-h-[48px]">
-                  Launch Contact Form →
+            <aside class="sticky top-28 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-6">
+              <div class="space-y-2">
+                <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Verified Publisher Details</p>
+                <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight font-display">Real BMI</h2>
+                <p class="text-xs text-[var(--muted-foreground)] font-medium">Independent Health Engineering &amp; Educational Project</p>
+              </div>
+
+              <!-- Founder & Transparency Badges -->
+              <div class="space-y-3 pt-3 border-t border-[var(--border)] text-xs">
+                <div>
+                  <span class="font-bold text-[var(--foreground)] block">Founder &amp; Lead Developer:</span>
+                  <span class="text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi</span>
+                </div>
+                <div>
+                  <span class="font-bold text-[var(--foreground)] block">Project Nature:</span>
+                  <span class="text-[var(--muted-foreground)] font-medium">Independent Educational Project</span>
+                </div>
+                <div>
+                  <span class="font-bold text-[var(--foreground)] block">Location &amp; Operations:</span>
+                  <span class="text-[var(--muted-foreground)] font-medium">Ahmedabad, Gujarat, India</span>
+                </div>
+                <div>
+                  <span class="font-bold text-[var(--foreground)] block">Official Contact:</span>
+                  <a href="mailto:support@realbmicalculator.com" class="text-[var(--accent)] hover:underline font-mono break-all font-semibold">
+                    support@realbmicalculator.com
+                  </a>
+                </div>
+                <div>
+                  <span class="font-bold text-[var(--foreground)] block">Response Protocol:</span>
+                  <span class="text-emerald-400 font-medium">24–48 Business Hours (Mon–Fri)</span>
+                </div>
+              </div>
+
+              <div class="pt-2 space-y-2.5">
+                <a href="mailto:support@realbmicalculator.com" class="inline-flex w-full items-center justify-center rounded-xl bg-[var(--accent)] px-6 py-3.5 text-xs font-display font-bold uppercase tracking-[0.15em] text-white transition-all hover:opacity-90 shadow-xs min-h-[44px]">
+                  Compose Direct Email →
+                </a>
+                <a href="#contact-form" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] hover:bg-[var(--muted)] px-6 py-3 text-xs font-display font-bold uppercase tracking-[0.15em] text-[var(--foreground)] transition-all min-h-[44px]">
+                  Launch Web Portal ↓
                 </a>
               </div>
+
               <div class="pt-4 border-t border-[var(--border)]/60 space-y-2 text-xs text-[var(--muted-foreground)]">
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  <span>100% Encrypted Web Transmission</span>
+                  <span>100% Client-Side Privacy (Zero Health PII)</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  <span>Zero Public PII Exposure Protocol</span>
+                  <span>Peer-Reviewed Clinical Standards (WHO, CDC)</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  <span>Response within 24–48 Business Hours</span>
+                  <span>Human Editorial Review for Every Message</span>
                 </div>
               </div>
             </aside>

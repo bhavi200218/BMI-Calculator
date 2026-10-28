@@ -312,11 +312,32 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
         <li><strong>20% Discretionary Foods:</strong> Favorite treats, dining out, or convenient packaged foods that fit within your daily macronutrient targets without generating dietary guilt or binge-restrict cycles.</li>
       </ul>
 
+      <h2>Frequently Asked Questions on Macronutrient Splits</h2>
+      <div class="space-y-4 my-6">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Should I track total carbohydrates or net carbohydrates?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">For standard balanced and athletic diets, tracking total carbohydrates and monitoring daily dietary fiber (aiming for 25 to 38 grams/day) is the most reliable approach. Net carbohydrates (Total Carbs minus Fiber and certain non-caloric sugar alcohols) is primarily useful for individuals adhering to a strict therapeutic ketogenic protocol (&lt; 30–50g net carbs) to maintain physiological ketosis.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">What is the absolute physiological minimum for dietary fat?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Dietary fat should never drop below 0.6 grams per kilogram of body weight (roughly 15% to 20% of total calories) for extended periods. Essential fatty acids (linoleic and alpha-linolenic acids) cannot be synthesized endogenously. Chronic fat deprivation impairs cell membrane fluidity, leads to fat-soluble vitamin malabsorption (A, D, E, K), and suppresses pituitary LH/FSH secretion, causing testosterone collapse in men and hypothalamic amenorrhea in women.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">How should alcohol calories be tracked within daily macros?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Alcohol (ethanol) yields 7 kcal per gram, but is not one of the three standard macronutrients. To track alcoholic beverages accurately without sabotaging energy balance, divide the drink's total calories by 4 to log as carbohydrates, or divide by 9 to log as dietary fat (or split between both). Never subtract alcohol calories from your required daily protein target.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">What are carbohydrate refeeds and do they boost metabolic rate?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">A structured carbohydrate refeed involves temporarily increasing calories up to maintenance for 24 to 48 hours, with the surplus coming almost exclusively from starchy carbohydrates while keeping fats very low. While refeeds do not permanently "reverse" metabolic slowdown, they temporarily boost circulating leptin, refill intramuscular glycogen stores, reduce cortisol, and provide profound psychological relief during extended dieting phases.</p>
+        </div>
+      </div>
+
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>Helms ER, et al. <em>Evidence-based recommendations for natural bodybuilding contest preparation: nutrition and supplementation.</em> J Int Soc Sports Nutr 2014; 11:20.</li>
         <li>Thomas DT, Erdman KA, Burke LM. <em>Position of the Academy of Nutrition and Dietetics, Dietitians of Canada, and the American College of Sports Medicine: Nutrition and Athletic Performance.</em> J Acad Nutr Diet 2016; 116(3):501-528.</li>
         <li>Hall KD, et al. <em>Ultra-processed diets cause excess calorie intake and weight gain: an inpatient randomized controlled trial of ad libitum food intake.</em> Cell Metab 2019; 30(1):67-77.</li>
+        <li>Morton RW, et al. <em>A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults.</em> Br J Sports Med 2018; 52(6):376-384.</li>
       </ul>
 `,
       "es": `
@@ -786,11 +807,32 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       <p>In modern sports cardiology and longevity medicine, <strong>Zone 2 aerobic base training</strong> has emerged as the premier exercise modality for metabolic health. At Zone 2 intensity, skeletal muscle relies primarily on Type I slow-twitch muscle fibers, which are rich in mitochondria and oxidative enzymes.</p>
       <p>Training in Zone 2 stimulates <strong>mitochondrial biogenesis</strong> (the creation of new cellular powerhouses) and upregulates <em>carnitine palmitoyltransferase-1 (CPT-1)</em>, the enzyme responsible for transporting long-chain fatty acids into mitochondria for beta-oxidation. Elite endurance athletes and longevity researchers advocate for a <strong>Polarized 80/20 training distribution</strong>: dedicating approximately 80% of weekly cardiovascular volume to low-intensity Zone 2 work and reserving only 20% for high-intensity Zone 4 and Zone 5 intervals, avoiding the chronic systemic fatigue associated with excessive Zone 3 "grey zone" training.</p>
 
+      <h2>Frequently Asked Questions on Target Heart Rate Training</h2>
+      <div class="space-y-4 my-6">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">How do blood pressure medications (like Beta-Blockers) affect heart rate zones?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Beta-adrenergic receptor blockers (e.g., metoprolol, atenolol, propranolol) blunt autonomic sympathetic stimulation of the sinoatrial node, artificially lowering both resting and maximum exercise heart rates by 15 to 30 beats per minute. Standard age-based formulas (Tanaka, Fox) will grossly overestimate target heart rates for patients on beta-blockers. These individuals should rely on the Rating of Perceived Exertion (RPE 1–10 scale) or a physician-supervised graded exercise treadmill test.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">What is the "Talk Test" for confirming Zone 2 intensity?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">The clinical "Talk Test" is a proven physiological proxy for the aerobic threshold (ventilatory threshold 1). In Zone 2, you should be able to speak in full, complete sentences without gasping for breath, but with enough respiratory effort that singing or speaking completely uninterrupted feels uncomfortable. If you can only speak in short 3-to-4 word phrases, you have crossed into Zone 3 or Zone 4.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Are wrist-based optical smartwatches accurate during high-intensity training?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Optical photoplethysmography (PPG) sensors on the wrist perform adequately during steady-state aerobic jogging and cycling. However, during rapid interval sprinting, kettlebell swings, or heavy weightlifting, wrist muscle flexion and rapid blood pressure spikes degrade optical sensor contact, introducing lag and measurement errors of up to 10–20 bpm. For high-intensity intervals or precision Karvonen training, an ECG-based chest strap (such as Polar or Garmin) is the gold standard.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Why is training in Zone 3 ("the grey zone") discouraged by endurance coaches?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Zone 3 (70%–80% MHR) is often called "no-man's land" because it is too strenuous to promote pure mitochondrial fat oxidation and cellular recovery (which thrives in Zone 2), yet not intense enough to stimulate neuromuscular power and VO2 max adaptations (which require Zone 4 and 5). Chronic training in Zone 3 generates high systemic cortisol and autonomic fatigue without proportional aerobic gains.</p>
+        </div>
+      </div>
+
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>Tanaka H, Monahan KD, Seals DR. <em>Age-predicted maximal heart rate revisited.</em> J Am Coll Cardiol 2001; 37(1):153-156.</li>
         <li>Karvonen MJ, Kentala E, Mustala O. <em>The effects of training on heart rate; a longitudinal study.</em> Ann Med Exp Biol Fenn 1957; 35(3):307-315.</li>
         <li>Seiler S. <em>What is best practice for training intensity and duration distribution in endurance athletes?</em> Int J Sports Physiol Perform 2010; 5(3):276-291.</li>
+        <li>San-Millán I, Brooks GA. <em>Assessment of metabolic flexibility and lactate clearance in elite cyclists, moderately trained individuals, and patients with type 2 diabetes.</em> Sports Med 2018; 48(2):467-479.</li>
       </ul>
 `,
       "es": `
@@ -926,11 +968,33 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
         <li><strong>Utilize Experienced Spotters or Safety Pins:</strong> Even when performing submaximal repetitions to technical failure, always set safety pins inside a power cage to eliminate the danger of catastrophic barbell drops.</li>
       </ol>
 
+      <h2>Frequently Asked Questions on One Rep Max (1RM) Testing</h2>
+      <div class="space-y-4 my-6">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Which formula is more accurate: Epley or Brzycki?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">For heavy, low-repetition sets (2 to 5 reps), both equations yield virtually identical results within 1% to 2% of each other. For moderate sets between 6 and 10 repetitions, the Brzycki equation tends to provide a slightly more conservative and realistic estimate, whereas the Epley equation can slightly overestimate 1RM if the lifter possesses high muscular endurance.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Should I test to absolute muscular failure to use submaximal formulas?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">No. Training to absolute mechanical failure increases injury risk. Instead, coaches recommend taking a submaximal set to a Rating of Perceived Exertion (RPE) of 9 or 9.5 (1 repetition left in reserve, known as 1 RIR). Simply add the unperformed reserve repetition to your completed reps (e.g., 5 reps completed at RPE 9 = use 6 reps in the formula).</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">How often should an athlete recalculate their 1RM?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Re-testing every 6 to 12 weeks at the conclusion of a structured training block or mesocycle is ideal. In between testing blocks, adjust training loads using small progressive overload increments (e.g., adding 1.25 to 2.5 kg per week) rather than recalculating 1RM daily.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Can 1RM formulas be used for isolation exercises like bicep curls or leg extensions?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Submaximal formulas were derived and validated specifically on multi-joint compound barbell movements (squat, bench press, deadlift, overhead press). Single-joint isolation exercises place high localized shear stress on distal tendons (e.g., distal biceps or patellar tendon) and should not be tested with true 1RM loads.</p>
+        </div>
+      </div>
+
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>Epley B. <em>Poundage chart.</em> Boyd Epley Workout. Lincoln, NE: Body Enterprises, 1985.</li>
         <li>Brzycki M. <em>Strength testing—predicting a one-rep max from reps-to-fatigue.</em> J Phys Educ Recreat Dance 1993; 64(1):88-90.</li>
         <li>Reynolds JM, Gordon TJ, Robergs RA. <em>Prediction of one repetition maximum strength from multiple repetition maximum testing and anthropometry.</em> J Strength Cond Res 2006; 20(3):584-592.</li>
+        <li>Zourdos MC, et al. <em>Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve.</em> J Strength Cond Res 2016; 30(1):267-275.</li>
+        <li>Helms ER, et al. <em>Application of the repetitions in reserve-based rating of perceived exertion scale for resistance training.</em> Strength Cond J 2016; 38(4):42-49.</li>
       </ul>
 `,
       "es": `

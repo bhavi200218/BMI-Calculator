@@ -290,6 +290,58 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
         </div>
       </div>
 
+      <h2>Comprehensive Modality Comparison Table</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Measurement Method</th>
+              <th class="p-3 font-mono text-[var(--accent)] font-bold">Accuracy / Error Margin</th>
+              <th class="p-3">Typical Cost</th>
+              <th class="p-3">Primary Clinical Advantages</th>
+              <th class="p-3">Key Practical Limitations</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)]">
+            <tr>
+              <td class="p-3 font-semibold text-emerald-400">DEXA / DXA Scan</td>
+              <td class="p-3 font-mono font-bold text-emerald-400">&plusmn; 1.5% – 2.0%</td>
+              <td class="p-3 font-mono">$75 – $150 / scan</td>
+              <td class="p-3">Clinical gold standard; regional fat analysis; measures visceral fat (VAT) and bone density</td>
+              <td class="p-3">Requires specialized imaging facility; minute radiation exposure; expensive for frequent testing</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-sky-400">Hydrostatic / Bod Pod</td>
+              <td class="p-3 font-mono font-bold text-sky-400">&plusmn; 2.0% – 2.5%</td>
+              <td class="p-3 font-mono">$50 – $100 / test</td>
+              <td class="p-3">High scientific precision based on true body density; non-invasive volumetric calculation</td>
+              <td class="p-3">Limited commercial access; full underwater exhalation can be uncomfortable</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-amber-400">Skinfold Calipers</td>
+              <td class="p-3 font-mono font-bold text-amber-400">&plusmn; 3.0% – 3.5%</td>
+              <td class="p-3 font-mono">$15 – $40 (one-time)</td>
+              <td class="p-3">Directly isolates subcutaneous fat folds; highly cost-effective; independent of daily water intake</td>
+              <td class="p-3">Requires experienced technician; uncomfortable pinches; less reliable in severe obesity</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-blue-400">U.S. Navy Tape Method</td>
+              <td class="p-3 font-mono font-bold text-blue-400">&plusmn; 3.0% – 4.0%</td>
+              <td class="p-3 font-mono">&lt; $5 (tape measure)</td>
+              <td class="p-3">Accessible anywhere; zero equipment calibration needed; tracks visceral waist changes well</td>
+              <td class="p-3">Relies on mathematical averages; does not differentiate intramuscular fat depots</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-rose-400">Bioelectrical Impedance (BIA)</td>
+              <td class="p-3 font-mono font-bold text-rose-400">&plusmn; 3.5% – 5.0%</td>
+              <td class="p-3 font-mono">$30 – $150 (home scale)</td>
+              <td class="p-3">Fast, effortless daily recording; integrated with mobile health apps</td>
+              <td class="p-3">Heavily distorted by hydration, meal timing, caffeine, and skin temperature</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <h2>The Jackson-Pollock Skinfold Protocols: 3-Site vs. 7-Site Equations</h2>
       <p>For fitness professionals and coaches, the <strong>Jackson-Pollock skinfold method</strong> remains the most widely practiced field test. The anatomical testing sites differ between male and female profiles to capture primary subcutaneous depots:</p>
       <ul>
@@ -317,6 +369,14 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
           <h3 class="text-base font-bold text-[var(--foreground)]">Which method is best for tracking body recomposition over time?</h3>
           <p class="text-sm text-[var(--muted-foreground)]">For regular monthly tracking, a consistent tape measure method (U.S. Navy formula) or calipers measured by the same skilled technician provides excellent trend monitoring. For definitive annual baselines, a clinical DEXA scan is unmatched.</p>
         </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Can body fat percentage be reduced while scale weight stays the same?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Yes. This phenomenon is known as body recomposition. When an individual engages in progressive resistance training and consumes sufficient dietary protein in a modest caloric deficit or maintenance, they can simultaneously synthesize new skeletal muscle tissue while oxidizing adipose fat. Because muscle tissue is approximately 18% denser than fat tissue by volume, total scale weight may remain completely unchanged even as waist circumference and body fat percentage decrease significantly.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">What is the clinical definition of essential body fat?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Essential body fat is the minimal lipid quantity required for physiological survival, cellular membrane structural integrity, hormonal steroid synthesis, and internal organ insulation. Essential fat thresholds are physiologically established at 2% to 5% for men and 10% to 13% for women. Dropping below these critical thresholds leads to severe hormonal disruption, amenorrhea in females, impaired thermoregulation, and immune compromise.</p>
+        </div>
       </div>
 
       <h2>Scientific References</h2>
@@ -324,6 +384,8 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
         <li>Hodgdon JA, Beckett MB. <em>Prediction of percent body fat for U.S. Navy men and women from body circumferences and height.</em> Report No. 84-29. Naval Health Research Center, 1984.</li>
         <li>Jackson AS, Pollock ML. <em>Generalized equations for predicting body density of men.</em> Br J Nutr 1978; 40(3):497-504.</li>
         <li>Siri WE. <em>Body composition from fluid spaces and density: analysis of methods.</em> Techniques for Measuring Body Composition, 1961: 223-244.</li>
+        <li>Kyle UG, et al. <em>Bioelectrical impedance analysis—part I: review of principles and methods.</em> Clin Nutr 2004; 23(6):1226-1243.</li>
+        <li>Nana A, et al. <em>Methodology review: using dual-energy X-ray absorptiometry (DXA) for the assessment of body composition in athletes and active people.</em> Int J Sport Nutr Exerc Metab 2015; 25(2):198-215.</li>
       </ul>
 `,
       "es": `

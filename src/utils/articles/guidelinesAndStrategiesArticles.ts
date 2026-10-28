@@ -92,6 +92,56 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         <li><strong>Body Fat Percentage (%BF):</strong> Measured via dual-energy X-ray absorptiometry (DEXA), bioelectrical impedance, or standardized skinfold calipers to directly quantify lean tissue vs. lipid storage.</li>
         <li><strong>Cardiometabolic Laboratory Panels:</strong> Fasting blood glucose, glycated hemoglobin (HbA1c), lipid panels (HDL, LDL, triglycerides), and resting blood pressure provide physiological verification of metabolic health.</li>
       </ol>
+
+      <h2>Clinical Case Studies: When BMI Fails Without Context</h2>
+      <div class="my-6 space-y-4">
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-2">
+          <h3 class="text-base font-bold text-[var(--accent)]">Case Study 1: The Muscular Athlete (False-Positive Risk)</h3>
+          <p class="text-sm text-[var(--foreground)]">A 28-year-old male competitive powerlifter measures 180 cm (5'11") and weighs 96 kg (211 lbs). Calculating his standard BMI yields <strong>29.6 kg/m²</strong>, placing him on the verge of clinical Class I Obesity according to WHO tables.</p>
+          <p class="text-sm text-[var(--muted-foreground)]">However, a dual-energy X-ray absorptiometry (DEXA) scan reveals a body fat percentage of merely <strong>11.5%</strong>, an abdominal waist circumference of 82 cm (32 in), and normal resting systolic/diastolic blood pressure (118/74 mmHg). Because skeletal muscle tissue possesses a biological density of 1.06 g/cm³ compared to adipose density of 0.90 g/cm³, his elevated gravitational mass stems entirely from hypertrophied contractile protein. Treating this athlete for obesity would be clinically inappropriate.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-2">
+          <h3 class="text-base font-bold text-[var(--accent)]">Case Study 2: Normal Weight Obesity / "TOFI" (False-Negative Risk)</h3>
+          <p class="text-sm text-[var(--foreground)]">A 52-year-old sedentary office worker measures 165 cm (5'5") and weighs 62 kg (136 lbs). Her BMI calculates to <strong>22.8 kg/m²</strong>, comfortably within the conventional WHO "healthy weight" corridor.</p>
+          <p class="text-sm text-[var(--muted-foreground)]">Despite her normal BMI, she exhibits severe sarcopenia (skeletal muscle deficiency) combined with an abdominal waist circumference of 91 cm (36 in) and a DEXA-confirmed body fat percentage of <strong>36.2%</strong>. Her routine lipid panel reveals fasting triglycerides of 210 mg/dL, elevated fasting glucose of 108 mg/dL, and fatty liver infiltration on abdominal ultrasound. This presentation—clinically termed Normal Weight Obesity (NWO) or Thin-Outside-Fat-Inside (TOFI)—carries identical cardiovascular mortality risks to Class I obesity, yet standard BMI screening completely overlooks it.</p>
+        </div>
+      </div>
+
+      <h2>Age-Specific Interpretations &amp; The Geriatric Obesity Paradox</h2>
+      <p>Standard adult BMI cutoffs apply uniformly from age 20 to 64, but clinical interpretations must shift substantially for geriatric adults aged 65 and older. Multiple large-scale epidemiological meta-analyses (including studies published in <em>The Lancet</em> and <em>American Journal of Clinical Nutrition</em>) demonstrate a U-shaped or J-shaped mortality curve in older adults, known as the <strong>Geriatric Obesity Paradox</strong>:</p>
+      <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Frailty &amp; Underweight Danger:</strong> In adults over 65, a BMI below 22.0 kg/m² is strongly associated with accelerated sarcopenia, osteoporosis, hip fractures, post-surgical complications, and elevated all-cause mortality.</li>
+        <li><strong>Protective Adiposity Reserve:</strong> Older adults with a "mildly overweight" BMI between <strong>25.0 and 28.5 kg/m²</strong> exhibit the lowest statistical mortality rates, as modest subcutaneous lipid reserves provide vital energy buffering during acute illnesses, major surgeries, or prolonged hospitalizations.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions on Clinical BMI Interpretation</h2>
+      <div class="space-y-4 my-6">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Why do healthcare providers still use BMI if it has recognized limitations?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">BMI remains the cornerstone of primary screening because it is 100% non-invasive, incurs zero financial cost, requires no complex imaging calibration, and correlates reliably with cardiovascular disease and all-cause mortality at population scales. When interpreted correctly as an initial triage signal rather than a definitive diagnosis, it alerts clinicians to investigate further with waist measurements and blood panels.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">How does ethnicity alter the clinical threshold for obesity?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Genetics and evolutionary adaptations dictate where individuals store excess lipids. Individuals of South Asian, East Asian, and Filipino descent tend to accumulate visceral fat in the abdominal cavity and hepatic parenchyma at substantially lower total weights. Consequently, the WHO and ICMR recommend defining overweight at &ge; 23.0 kg/m² and obesity at &ge; 25.0 kg/m² for Asian populations to prevent under-diagnosing diabetes and hypertension.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">What is the single best metric to combine with BMI for personal tracking?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Waist circumference or the Waist-to-Height Ratio (WHtR) is the most powerful complement to BMI. Keeping your waist circumference below half your height (WHtR &lt; 0.50) strongly guards against visceral adipose buildup regardless of whether you have heavy bone structure, high muscularity, or a light frame.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Can someone be metabolically healthy while classified as obese?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">A subset of individuals classified as Obese Class I (BMI 30–34.9) exhibit "Metabolically Healthy Obesity" (MHO), displaying normal insulin sensitivity, healthy blood lipids, and absent hepatic steatosis due to subcutaneous rather than visceral fat distribution. However, longitudinal cohort studies demonstrate that roughly half of MHO individuals transition to metabolically unhealthy states within 10 to 15 years, indicating that excess mass places cumulative mechanical stress on joints and vascular endothelium.</p>
+        </div>
+      </div>
+
+      <h2>Scientific References</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>World Health Organization. <em>Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.</em> Lancet 2004; 363(9403):157-163.</li>
+        <li>Flegal KM, et al. <em>Association of all-cause mortality with overweight and obesity using standard body mass index categories.</em> JAMA 2013; 309(1):71-82.</li>
+        <li>Romero-Corral A, et al. <em>Normal weight obesity: a risk factor for cardiometabolic dysregulation and cardiovascular mortality.</em> Eur Heart J 2010; 31(6):737-746.</li>
+        <li>Winter JE, et al. <em>BMI and all-cause mortality in older adults: a meta-analysis.</em> Am J Clin Nutr 2014; 99(4):875-890.</li>
+        <li>National Heart, Lung, and Blood Institute. <em>Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults.</em> NIH Publication No. 98-4083, 1998.</li>
+      </ul>
       `,
       "es": `
       <h2>Fundamento Clínico de la Interpretación del IMC</h2>

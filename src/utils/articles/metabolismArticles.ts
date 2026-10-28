@@ -260,10 +260,48 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
         <li>If your 7-day average weight remains completely flat over two weeks, your daily caloric intake exactly equals your true biological TDEE. If you gained 0.5 kg, you are in an average ~250 kcal daily surplus; if you lost 0.5 kg, you are in a ~250 kcal daily deficit.</li>
       </ol>
 
+      <h2>Dynamic NEAT Optimization: The Highest-Leverage Metabolic Variable</h2>
+      <p>While structured gym exercise (EAT) typically lasts 45 to 60 minutes, your Non-Exercise Activity Thermogenesis (NEAT) operates across 16 waking hours. Pioneer metabolic researcher Dr. James Levine at the Mayo Clinic demonstrated that free-living spontaneous movement accounts for daily expenditure differences of up to <strong>800 to 1,000 kcal between individuals of identical height and weight</strong>.</p>
+      <p>A simple shift from 4,000 steps per day (sedentary) to 10,000 steps per day (moderately active) expends an estimated <strong>300 to 450 additional kilocalories daily</strong>. Crucially, low-intensity ambulatory movement does not elicit the intense ghrelin surges or compensatory appetite spikes associated with exhaustive chronic cardio sessions, making NEAT the single most sustainable lever for fat loss.</p>
+
+      <h2>Worked Calculation Walkthrough: Finding True TDEE</h2>
+      <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-2">
+        <p class="font-bold text-[var(--accent)]">Case Example: 35-Year-Old Female Professional (Height: 168 cm, Weight: 68 kg):</p>
+        <p class="text-[var(--foreground)]">&bull; <strong>Step 1: Calculate BMR (Mifflin-St Jeor):</strong><br>
+        <code>BMR = (10 &times; 68) + (6.25 &times; 168) - (5 &times; 35) - 161 = 680 + 1050 - 175 - 161 = <strong>1,394 kcal/day</strong></code></p>
+        <p class="text-[var(--foreground)]">&bull; <strong>Step 2: Assign PAL Multiplier:</strong> Works at a desk, but walks 8,500 steps/day and attends 3 strength sessions/week &rarr; <strong>Moderately Active (PAL = 1.55)</strong>.</p>
+        <p class="text-[var(--foreground)]">&bull; <strong>Step 3: Compute Baseline TDEE:</strong><br>
+        <code>TDEE = 1,394 &times; 1.55 = <strong>2,160 kcal/day</strong> (Maintenance Calories)</code></p>
+        <p class="text-[var(--foreground)]">&bull; <strong>Step 4: Target Setting:</strong><br>
+        For sustainable fat loss at ~0.5 kg/week: Set a moderate 20% deficit (<code>2,160 &times; 0.80 = <strong>1,728 kcal/day</strong></code>). Notice this target stays safely 334 kcal <em>above</em> her basal BMR floor.</p>
+      </div>
+
+      <h2>Frequently Asked Questions on Calculating TDEE</h2>
+      <div class="space-y-4 my-6">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Should I eat back the calories burned shown on my Apple Watch or Fitbit?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">No. Wearable fitness trackers frequently overestimate exercise calorie burn by 25% to 50%. Furthermore, your TDEE activity multiplier already accounts for your average weekly exercise. Adding tracker calories on top double-counts your workouts, negating your caloric deficit and halting weight loss.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Why does TDEE decrease as I lose weight?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">As body mass decreases, your smaller physical frame requires less energy to sustain at rest (lower BMR), and moving lighter limbs requires fewer calories per step (lower NEAT). To maintain steady weight loss, recalculate your TDEE every 4 to 6 weeks as your scale weight drops.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">How does severe stress or poor sleep affect daily energy expenditure?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Sleep deprivation elevates circulating cortisol and ghrelin while suppressing leptin and thyroid T3. Chronic fatigue also severely curbs spontaneous NEAT (you fidget less, sit more, and feel lethargic), lowering your effective daily TDEE by up to 200–300 kcal even if you still attend your scheduled workout.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Which activity multiplier should I choose if my daily schedule varies?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Always select the more conservative (lower) activity tier. If you work a sedentary desk job but work out 3 days a week, start with "Lightly Active" (1.375) or "Moderately Active" (1.55). It is much easier to adjust calories upward after 2 weeks of scale tracking than to recover from overestimating your daily burn.</p>
+        </div>
+      </div>
+
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>Ainsworth BE, et al. <em>2011 Compendium of Physical Activities: a second update of codes and MET values.</em> Med Sci Sports Exerc 2011; 43(8):1575-1581.</li>
         <li>Shcherbina A, et al. <em>Accuracy in wrist-worn, wearable devices for tracking heart rate and energy expenditure in everyday conditions.</em> J Pers Med 2017; 7(2):3.</li>
+        <li>Levine JA. <em>Non-exercise activity thermogenesis (NEAT).</em> Best Pract Res Clin Endocrinol Metab 2002; 16(4):679-702.</li>
+        <li>Hall KD, et al. <em>Quantification of the effect of energy imbalance on bodyweight.</em> Lancet 2011; 378(9793):826-837.</li>
         <li>FAO / WHO / UNU. <em>Human energy requirements.</em> Food and Nutrition Technical Report Series 1. Rome: FAO, 2004.</li>
       </ul>
 `,
@@ -384,10 +422,32 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       </div>
 
 
+      <h2>Frequently Asked Questions on BMR Equations</h2>
+      <div class="space-y-4 my-6">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Why does Mifflin-St Jeor outperform Harris-Benedict in modern adults?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">The original 1919 Harris-Benedict equation was derived from a cohort of young, lean, highly active individuals who lived in unheated homes with colder ambient temperatures. Modern adults have higher average body fat percentages, lower daily non-shivering thermogenesis, and more sedentary habits. In validation trials, the older Harris-Benedict equation consistently overpredicts modern caloric requirements by 5% to 8% (roughly 100 to 150 kcal/day), whereas Mifflin-St Jeor aligns closely with indirect calorimetry.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">When should Katch-McArdle or Cunningham be chosen over Mifflin-St Jeor?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Standard formulas (Mifflin-St Jeor, Harris-Benedict) rely on total scale weight, assuming an average ratio of fat to muscle. When evaluating lean muscular athletes, powerlifters, or bodybuilders with verified low body fat (e.g., &lt; 12% in men or &lt; 18% in women via DEXA), total weight models underestimate metabolic burn. The Katch-McArdle and Cunningham formulas anchor calculations directly to Fat-Free Mass (FFM), accurately rewarding metabolically active skeletal muscle.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">What is the technical difference between BMR and REE?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Basal Metabolic Rate (BMR) requires measuring energy expenditure immediately upon waking after 8 hours of sleep and a strict 12-hour fast, in a darkened, temperature-controlled laboratory setting before any physical movement. Resting Energy Expenditure (REE) is measured under less restrictive resting conditions throughout the day. In clinical practice, REE is approximately 3% to 5% higher than true BMR, and the terms are frequently used interchangeably by dietitians.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">How do thyroid disorders affect mathematical BMR calculations?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Mathematical BMR equations assume normal euthyroid endocrine function. In untreated hypothyroidism (low free T3 and T4), cellular basal turnover slows, reducing actual measured BMR by 10% to 25% below formula estimates. Conversely, hyperthyroidism accelerates mitochondrial uncoupling, increasing resting expenditure by 20% to 50% above mathematical predictions.</p>
+        </div>
+      </div>
+
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>Mifflin MD, St Jeor ST, Hill LA, et al. <em>A new predictive equation for resting energy expenditure in healthy individuals.</em> Am J Clin Nutr 1990; 51(2):241-247.</li>
         <li>Harris JA, Benedict FG. <em>A biometric study of basal metabolism in man.</em> Proc Natl Acad Sci USA 1918; 4(12):370-373.</li>
+        <li>Roza AM, Shizgal HM. <em>The Harris Benedict equation reevaluated: resting energy requirements and the body cell mass.</em> Am J Clin Nutr 1984; 40(1):168-182.</li>
+        <li>Cunningham JJ. <em>A reanalysis of body mass and resting metabolic rate in man.</em> Am J Clin Nutr 1980; 33(11):2372-2374.</li>
         <li>Frankenfield D, Roth-Yousey L, Compher C. <em>Comparison of predictive equations for resting metabolic rate in healthy nonobese and obese adults: a systematic review.</em> J Am Diet Assoc 2005; 105(5):775-789.</li>
       </ul>
 `,

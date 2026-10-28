@@ -13,8 +13,21 @@ const contactSchema = {
     "@type": "Organization",
     "name": "Real BMI Calculator",
     "url": "https://realbmicalculator.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Bhawanshi Dosi",
+      "jobTitle": "Founder & Lead Developer",
+      "url": "https://realbmicalculator.com/hi/about/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "addressCountry": "IN"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
+      "email": "support@realbmicalculator.com",
       "url": "https://realbmicalculator.com/hi/contact/",
       "contactType": "customer support",
       "availableLanguage": ["English", "Spanish", "French", "German", "Korean", "Hindi"]
@@ -45,26 +58,61 @@ const contactSchema = {
           <div class="grid gap-10 lg:grid-cols-[1.45fr_0.85fr] items-start">
             <div class="space-y-10">
               <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90 space-y-4">
-                <p>Real BMI एक स्वतंत्र स्वास्थ्य इंजीनियरिंग मंच है जो अंतरराष्ट्रीय स्वास्थ्य मानकों (WHO एवं CDC) पर आधारित पूर्णतः मुफ़्त और गोपनीयता-केंद्रित टूल्स उपलब्ध कराता है।</p>
-                <p>अपने संदेश के त्वरित निवारण हेतु कृपया नीचे दिए गए दिशा-निर्देशों की समीक्षा करें।</p>
+                <p>Real BMI एक स्वतंत्र स्वास्थ्य इंजीनियरिंग एवं शैक्षिक परियोजना है जो अंतरराष्ट्रीय स्वास्थ्य मानकों (WHO, CDC एवं ICMR) पर आधारित पूर्णतः मुफ़्त और 100% गोपनीयता-केंद्रित टूल्स उपलब्ध कराती है।</p>
+                <p>अपने संदेश के त्वरित निवारण हेतु कृपया नीचे दिए गए सत्यापित विवरण और संपादकीय दिशा-निर्देशों की समीक्षा करें।</p>
               </div>
 
-              <!-- Support details grid -->
+              <!-- Verified Trust & Transparency Grid -->
               <div class="grid gap-4 sm:grid-cols-2">
-                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
-                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">ऑनलाइन सहायता केंद्र</p>
-                  <a href="#contact-form" class="mt-2 text-base font-bold text-[var(--accent)] hover:underline block break-all">
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">संस्थापक एवं निर्माता</p>
+                  </div>
+                  <p class="text-lg font-display font-black text-[var(--foreground)]">Bhawanshi Dosi</p>
+                  <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+                    स्वतंत्र सॉफ्टवेयर इंजीनियर एवं स्वास्थ्य सूचना विज्ञान शोधकर्ता (Lead Developer &amp; Project Creator)
+                  </p>
+                </div>
+
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">परियोजना प्रकार</p>
+                  </div>
+                  <p class="text-lg font-display font-black text-[var(--foreground)]">Independent Educational Project</p>
+                  <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+                    100% मुफ़्त, गैर-व्यावसायिक डिजिटल स्वास्थ्य उपकरण • शून्य डेटा संग्रहण (100% Client-Side Privacy)
+                  </p>
+                </div>
+
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                    <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">स्थान एवं संचालन केंद्र</p>
+                  </div>
+                  <p class="text-lg font-display font-black text-[var(--foreground)]">Ahmedabad, Gujarat, India</p>
+                  <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+                    अहमदाबाद, गुजरात, भारत (वैश्विक उपयोगकर्ताओं के लिए 6 भाषाओं में उपलब्ध डिजिटल स्वास्थ्य प्लेटफ़ॉर्म)
+                  </p>
+                </div>
+
+                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">आधिकारिक ईमेल व सहायता</p>
+                  </div>
+                  <a href="mailto:support@realbmicalculator.com" class="text-base font-bold font-mono text-[var(--accent)] hover:underline block break-all">
                     <span>support</span><span>&#64;</span><span>realbmicalculator.com</span>
                   </a>
-                </div>
-                <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-xs">
-                  <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">प्रतिक्रिया समय</p>
-                  <p class="mt-2 text-base font-bold text-[var(--foreground)]">कार्य दिवसों में 24–48 घंटों के भीतर</p>
+                  <p class="text-xs text-emerald-400 font-semibold">कार्य दिवसों में 24–48 घंटों के भीतर मानवीय समीक्षा एवं उत्तर</p>
                 </div>
               </div>
 
               <!-- Interactive Contact Form -->
-              <ContactForm lang="hi" />
+              <div id="contact-form">
+                <ContactForm lang="hi" />
+              </div>
 
               <!-- Guidance & Editorial Sections -->
               <div class="space-y-6 pt-4 border-t border-[var(--border)]">
@@ -103,14 +151,61 @@ const contactSchema = {
             </div>
 
             <!-- Sidebar Card -->
-            <aside class="sticky top-28 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-4">
-              <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">आधिकारिक माध्यम</p>
-              <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight">ईमेल सहायता केंद्र</h2>
-              <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">पूर्वनिर्धारित सहायता पते के साथ अपना ईमेल क्लाइंट खोलने के लिए नीचे दिए गए बटन पर क्लिक करें।</p>
-              <div class="pt-4">
-                <a href="#contact-form" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 px-6 py-4 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-white shadow-xs">
-                  <span>support</span><span>&#64;</span><span>realbmicalculator.com</span>
+            <aside class="sticky top-28 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-6">
+              <div class="space-y-2">
+                <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">सत्यापित प्रकाशक विवरण</p>
+                <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight font-display">Real BMI</h2>
+                <p class="text-xs text-[var(--muted-foreground)] font-medium">स्वतंत्र स्वास्थ्य इंजीनियरिंग एवं शैक्षिक परियोजना</p>
+              </div>
+
+              <!-- Founder & Transparency Badges -->
+              <div class="space-y-3 pt-3 border-t border-[var(--border)] text-xs">
+                <div>
+                  <span class="font-bold text-[var(--foreground)] block">संस्थापक (Founder):</span>
+                  <span class="text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi</span>
+                </div>
+                <div>
+                  <span class="font-bold text-[var(--foreground)] block">प्रोजेक्ट प्रकार (Project Nature):</span>
+                  <span class="text-[var(--muted-foreground)] font-medium">Independent Educational Project</span>
+                </div>
+                <div>
+                  <span class="font-bold text-[var(--foreground)] block">स्थान (Location):</span>
+                  <span class="text-[var(--muted-foreground)] font-medium">Ahmedabad, Gujarat, India</span>
+                </div>
+                <div>
+                  <span class="font-bold text-[var(--foreground)] block">आधिकारिक संपर्क (Email):</span>
+                  <a href="mailto:support@realbmicalculator.com" class="text-[var(--accent)] hover:underline font-mono break-all font-semibold">
+                    support@realbmicalculator.com
+                  </a>
+                </div>
+                <div>
+                  <span class="font-bold text-[var(--foreground)] block">प्रतिक्रिया समय (Response Time):</span>
+                  <span class="text-emerald-400 font-medium">24–48 घंटे (सोमवार–शुक्रवार)</span>
+                </div>
+              </div>
+
+              <div class="pt-2 space-y-2.5">
+                <a href="mailto:support@realbmicalculator.com" class="inline-flex w-full items-center justify-center rounded-xl bg-[var(--accent)] px-6 py-3.5 text-xs font-display font-bold uppercase tracking-[0.15em] text-white transition-all hover:opacity-90 shadow-xs min-h-[44px]">
+                  सीधे ईमेल भेजें →
                 </a>
+                <a href="#contact-form" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] hover:bg-[var(--muted)] px-6 py-3 text-xs font-display font-bold uppercase tracking-[0.15em] text-[var(--foreground)] transition-all min-h-[44px]">
+                  ऑनलाइन फॉर्म खोलें ↓
+                </a>
+              </div>
+
+              <div class="pt-4 border-t border-[var(--border)]/60 space-y-2 text-xs text-[var(--muted-foreground)]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span>100% क्लाइंट-साइड सुरक्षा (शून्य सर्वर डेटा)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span>सत्यापित WHO, CDC एवं ICMR संदर्भ</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span>प्रत्येक ईमेल की मानवीय समीक्षा</span>
+                </div>
               </div>
             </aside>
           </div>
