@@ -1,0 +1,301 @@
+---
+import type { Locale } from '../utils/calculators';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+
+interface QuickTool {
+  name: string;
+  tag: string;
+  desc: string;
+  href: string;
+  icon: string;
+}
+
+interface QuickLaunchLocale {
+  badge: string;
+  title: string;
+  allToolsBtn: string;
+  browseResearchBtn: string;
+  tools: QuickTool[];
+}
+
+const data: Record<Locale, QuickLaunchLocale> = {
+  en: {
+    badge: "Quick Screening Launchpad",
+    title: "Essential Health Calculators",
+    allToolsBtn: "View All 18+ Calculators ↓",
+    browseResearchBtn: "Explore Health Topics & Guides ↓",
+    tools: [
+      {
+        name: "BMI Calculator",
+        tag: "Anthropometrics",
+        desc: "Screen healthy weight ranges using WHO & CDC height-to-weight metrics.",
+        href: `/${lang}/bmi-calculator/`,
+        icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      },
+      {
+        name: "BMR Calculator",
+        tag: "Basal Metabolism",
+        desc: "Calculate vital baseline calorie burn at rest via Mifflin-St Jeor formula.",
+        href: `/${lang}/bmr-calculator/`,
+        icon: "M13 10V3L4 14h7v7l9-11h-7z"
+      },
+      {
+        name: "TDEE Calculator",
+        tag: "Daily Energy Burn",
+        desc: "Estimate total daily calories burned with activity multipliers.",
+        href: `/${lang}/tdee-calculator/`,
+        icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+      },
+      {
+        name: "Body Fat Calculator",
+        tag: "Body Composition",
+        desc: "Estimate lean mass vs body fat percentage via U.S. Navy circumference method.",
+        href: `/${lang}/body-fat-calculator/`,
+        icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      }
+    ]
+  },
+  hi: {
+    badge: "त्वरित स्क्रीनिंग लॉन्चपैड",
+    title: "आवश्यक स्वास्थ्य कैलकुलेटर",
+    allToolsBtn: "सभी 18+ कैलकुलेटर देखें ↓",
+    browseResearchBtn: "स्वास्थ्य विषय एवं गाइड देखें ↓",
+    tools: [
+      {
+        name: "बीएमआई कैलकुलेटर",
+        tag: "मानवमितीय स्क्रीनिंग",
+        desc: "डब्ल्यूएचओ एवं सीडीसी मानकों के अनुसार अपने स्वस्थ वजन की जांच करें।",
+        href: `/${lang}/bmi-calculator/`,
+        icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      },
+      {
+        name: "बीएमआर कैलकुलेटर",
+        tag: "बेसल मेटाबॉलिज्म",
+        desc: "मिफ्लिन-सेंट जेओर सूत्र से विश्राम अवस्था में आवश्यक दैनिक कैलोरी मापें।",
+        href: `/${lang}/bmr-calculator/`,
+        icon: "M13 10V3L4 14h7v7l9-11h-7z"
+      },
+      {
+        name: "टीडीईई कैलकुलेटर",
+        tag: "कुल दैनिक ऊर्जा खर्च",
+        desc: "शारीरिक गतिविधि स्तर के आधार पर कुल दैनिक कैलोरी खर्च का सटीक अनुमान।",
+        href: `/${lang}/tdee-calculator/`,
+        icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+      },
+      {
+        name: "बॉडी फैट कैलकुलेटर",
+        tag: "शारीरिक संरचना",
+        desc: "यू.एस. नेवी विधि द्वारा शरीर में वसा और लीन मास प्रतिशत का मापन।",
+        href: `/${lang}/body-fat-calculator/`,
+        icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      }
+    ]
+  },
+  es: {
+    badge: "Plataforma de Cribado Rápido",
+    title: "Calculadoras de Salud Esenciales",
+    allToolsBtn: "Ver las 18+ Calculadoras ↓",
+    browseResearchBtn: "Explorar Temas y Guías Clínicas ↓",
+    tools: [
+      {
+        name: "Calculadora de IMC",
+        tag: "Antropometría",
+        desc: "Evalúe rangos de peso saludable según los estándares de la OMS y los CDC.",
+        href: `/${lang}/bmi-calculator/`,
+        icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      },
+      {
+        name: "Calculadora TMB",
+        tag: "Metabolismo Basal",
+        desc: "Calcule el gasto calórico vital en reposo mediante Mifflin-St Jeor.",
+        href: `/${lang}/bmr-calculator/`,
+        icon: "M13 10V3L4 14h7v7l9-11h-7z"
+      },
+      {
+        name: "Calculadora GETD (TDEE)",
+        tag: "Gasto Energético Total",
+        desc: "Estime las calorías diarias totales según su nivel de actividad física.",
+        href: `/${lang}/tdee-calculator/`,
+        icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+      },
+      {
+        name: "Grasa Corporal",
+        tag: "Composición Corporal",
+        desc: "Estime el porcentaje graso y masa magra según el método de la Marina de EE. UU.",
+        href: `/${lang}/body-fat-calculator/`,
+        icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      }
+    ]
+  },
+  fr: {
+    badge: "Lancement Rapide de Dépistage",
+    title: "Calculateurs Santé Indispensables",
+    allToolsBtn: "Voir les 18+ Calculateurs ↓",
+    browseResearchBtn: "Explorer Thématiques & Guides ↓",
+    tools: [
+      {
+        name: "Calculateur d'IMC",
+        tag: "Anthropométrie",
+        desc: "Évaluez votre poids sain selon les classifications officielles OMS et CDC.",
+        href: `/${lang}/bmi-calculator/`,
+        icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      },
+      {
+        name: "Calculateur TMB",
+        tag: "Métabolisme de Base",
+        desc: "Calculez vos besoins caloriques vitaux au repos avec Mifflin-St Jeor.",
+        href: `/${lang}/bmr-calculator/`,
+        icon: "M13 10V3L4 14h7v7l9-11h-7z"
+      },
+      {
+        name: "Calculateur TDEE",
+        tag: "Dépense Énergétique",
+        desc: "Estimez les calories journalières dépensées selon votre niveau d'activité.",
+        href: `/${lang}/tdee-calculator/`,
+        icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+      },
+      {
+        name: "Masse Grasse",
+        tag: "Composition Corporelle",
+        desc: "Estimez le taux de graisse et masse maigre par la méthode US Navy.",
+        href: `/${lang}/body-fat-calculator/`,
+        icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      }
+    ]
+  },
+  de: {
+    badge: "Schnell-Screening Startbereich",
+    title: "Wichtigste Gesundheitsrechner",
+    allToolsBtn: "Alle 18+ Rechner Anzeigen ↓",
+    browseResearchBtn: "Themen & Leitfäden Erkunden ↓",
+    tools: [
+      {
+        name: "BMI-Rechner",
+        tag: "Anthropometrie",
+        desc: "Ermitteln Sie gesunde Gewichtsbereiche nach offiziellen WHO- und CDC-Standards.",
+        href: `/${lang}/bmi-calculator/`,
+        icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      },
+      {
+        name: "BMR-Rechner",
+        tag: "Grundumsatz",
+        desc: "Berechnen Sie Ihren lebenswichtigen Ruheenergiebedarf nach Mifflin-St Jeor.",
+        href: `/${lang}/bmr-calculator/`,
+        icon: "M13 10V3L4 14h7v7l9-11h-7z"
+      },
+      {
+        name: "TDEE-Rechner",
+        tag: "Gesamtenergiebedarf",
+        desc: "Bestimmen Sie den täglichen Kalorienverbrauch inklusive Aktivitätsmultiplikator.",
+        href: `/${lang}/tdee-calculator/`,
+        icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+      },
+      {
+        name: "Körperfettrechner",
+        tag: "Körperzusammensetzung",
+        desc: "Schätzen Sie Körperfett- und fettfreie Masse nach der US-Navy-Methode.",
+        href: `/${lang}/body-fat-calculator/`,
+        icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      }
+    ]
+  },
+  ko: {
+    badge: "빠른 스크리닝 런치패드",
+    title: "핵심 건강 계산기",
+    allToolsBtn: "18+ 전체 계산기 모음 보기 ↓",
+    browseResearchBtn: "인기 주제 및 연구 가이드 탐색 ↓",
+    tools: [
+      {
+        name: "BMI 계산기",
+        tag: "신체 계측학",
+        desc: "WHO 및 CDC 기준 신장 대비 체중 비율로 건강 체중 범위를 확인하세요.",
+        href: `/${lang}/bmi-calculator/`,
+        icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      },
+      {
+        name: "BMR 계산기",
+        tag: "기초대사량",
+        desc: "Mifflin-St Jeor 공식을 통해 안정 시 필수 기초 칼로리 소모량을 산출합니다.",
+        href: `/${lang}/bmr-calculator/`,
+        icon: "M13 10V3L4 14h7v7l9-11h-7z"
+      },
+      {
+        name: "TDEE 계산기",
+        tag: "일일 총 대사량",
+        desc: "활동 계수를 반영하여 하루에 실제로 소모되는 총 에너지를 계산합니다.",
+        href: `/${lang}/tdee-calculator/`,
+        icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+      },
+      {
+        name: "체지방률 계산기",
+        tag: "신체 구성",
+        desc: "미 해군 둘레 측정 공식(US Navy)으로 체지방률과 제지방량을 평가합니다.",
+        href: `/${lang}/body-fat-calculator/`,
+        icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      }
+    ]
+  }
+};
+
+const current = data[lang] || data.en;
+---
+
+<div class="space-y-6">
+  <!-- 4 Core Calculators Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {current.tools.map((tool) => (
+      <a
+        href={tool.href}
+        class="group p-5 rounded-2xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/[0.03] transition-all duration-300 flex flex-col justify-between space-y-3 shadow-xs hover:shadow-md no-underline"
+      >
+        <div class="space-y-2">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-[10px] font-display font-bold uppercase tracking-wider text-[var(--accent)] px-2 py-0.5 rounded-md bg-[var(--accent)]/10 border border-[var(--accent)]/20">
+              {tool.tag}
+            </span>
+            <div class="w-7 h-7 rounded-lg bg-[var(--muted)]/50 flex items-center justify-center text-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.icon} />
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
+            {tool.name}
+          </h3>
+          <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium line-clamp-2">
+            {tool.desc}
+          </p>
+        </div>
+        <div class="pt-2 flex items-center text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] gap-1 group-hover:translate-x-1 transition-transform">
+          <span>Open Tool</span>
+          <span>→</span>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <!-- Dual Action Jump Bar -->
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+    <a
+      href="#all-calculators"
+      class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all shadow-xs"
+    >
+      <svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+      <span>{current.allToolsBtn}</span>
+    </a>
+    
+    <a
+      href="#popular-topics"
+      class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all shadow-xs"
+    >
+      <span>{current.browseResearchBtn}</span>
+    </a>
+  </div>
+</div>

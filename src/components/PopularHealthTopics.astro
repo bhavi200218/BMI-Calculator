@@ -1,0 +1,698 @@
+---
+import type { Locale } from '../utils/calculators';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+
+interface TopicItem {
+  id: string;
+  badge: string;
+  title: string;
+  description: string;
+  keyInsights: string[];
+  featuredGuides: { title: string; href: string }[];
+  featuredTools: { title: string; href: string }[];
+}
+
+interface TopicsLocaleData {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  guidesLabel: string;
+  toolsLabel: string;
+  topics: TopicItem[];
+}
+
+const data: Record<Locale, TopicsLocaleData> = {
+  en: {
+    eyebrow: "Topical Research Hubs",
+    title: "Popular Health Topics & Clinical Domains",
+    subtitle: "Explore evidence-based research pillars combining peer-reviewed clinical guidelines, metabolic science, and interactive screening tools.",
+    guidesLabel: "Flagship Research Guides:",
+    toolsLabel: "Interactive Screening Tools:",
+    topics: [
+      {
+        id: "body-composition",
+        badge: "Anthropometrics & Body Fat",
+        title: "Body Composition & Physical Screening",
+        description: "Screening beyond bathroom scale weight. Analyze standard BMI reference categories, dual-energy X-ray calibration formulas, visceral versus subcutaneous fat distribution, and regional Asian cutoffs.",
+        keyInsights: [
+          "Standard WHO healthy BMI window: 18.5 to 24.9 kg/m².",
+          "Asian & South Asian population action threshold: 23.0 kg/m² for heightened cardiometabolic risk.",
+          "Visceral abdominal adiposity carries 3× higher metabolic risk than subcutaneous hip fat."
+        ],
+        featuredGuides: [
+          { title: "Visceral Fat vs. Subcutaneous Fat Analysis", href: `/${lang}/blog/visceral-fat-vs-subcutaneous-fat/` },
+          { title: "BMI vs. Body Fat Percentage Comparison", href: `/${lang}/blog/bmi-vs-body-fat/` },
+          { title: "Age-Specific BMI & Clinical Growth Charts", href: `/${lang}/blog/age-specific-bmi-charts/` }
+        ],
+        featuredTools: [
+          { title: "Standard BMI Calculator", href: `/${lang}/bmi-calculator/` },
+          { title: "Body Fat % Calculator", href: `/${lang}/body-fat-calculator/` },
+          { title: "Asian BMI Standard", href: `/${lang}/asian-bmi-calculator/` },
+          { title: "Waist-to-Hip Ratio", href: `/${lang}/waist-to-hip-ratio-calculator/` }
+        ]
+      },
+      {
+        id: "metabolism-energy",
+        badge: "Metabolic Rate & Energy",
+        title: "Metabolism, BMR & Daily Calorie Burn",
+        description: "The thermodynamics of daily human energy balance. Understand Mifflin-St Jeor basal metabolic equations, physical activity level (PAL) multipliers, and metabolic adaptation during caloric restriction.",
+        keyInsights: [
+          "Basal Metabolic Rate accounts for 60–75% of total daily energy expenditure in sedentary adults.",
+          "Adaptive thermogenesis can reduce resting energy burn by 10–15% during prolonged aggressive deficits.",
+          "A sustainable deficit of 300–500 kcal/day preserves lean active muscle mass while maximizing fat loss."
+        ],
+        featuredGuides: [
+          { title: "Metabolic Adaptation & Weight Loss Plateaus", href: `/${lang}/blog/metabolic-adaptation-weight-loss/` },
+          { title: "BMR vs. TDEE: Complete Calculation Guide", href: `/${lang}/blog/bmr-vs-tdee-calculator/` },
+          { title: "Healthy Calorie Deficit & Macro Planning", href: `/${lang}/blog/healthy-calorie-deficit-guide/` }
+        ],
+        featuredTools: [
+          { title: "BMR Calculator", href: `/${lang}/bmr-calculator/` },
+          { title: "TDEE Energy Calculator", href: `/${lang}/tdee-calculator/` },
+          { title: "Maintenance Calories", href: `/${lang}/maintenance-calorie-calculator/` },
+          { title: "Calorie Deficit Planner", href: `/${lang}/calorie-calculator/` }
+        ]
+      },
+      {
+        id: "clinical-nutrition",
+        badge: "Macronutrients & Hydration",
+        title: "Clinical Nutrition & Hydration Science",
+        description: "Evidence-based macronutrient distribution and physiological fluid management. Learn optimal protein-per-kilogram thresholds for muscle preservation and seasonal climate hydration protocols.",
+        keyInsights: [
+          "Clinical protein guidelines: 0.8 g/kg for sedentary baseline up to 1.6–2.2 g/kg for active athletes.",
+          "Urine specific gravity and color index serve as practical daily hydration biomarkers.",
+          "High-temperature climates and prolonged exercise elevate daily water and electrolyte requirements by 20–35%."
+        ],
+        featuredGuides: [
+          { title: "Daily Protein Intake Science & Per-kg Tables", href: `/${lang}/blog/daily-protein-intake-science/` },
+          { title: "Macro Split Guidelines for Fat Loss & Muscle", href: `/${lang}/blog/macro-split-calculator-guide/` },
+          { title: "Clinical Daily Hydration & Urine Color Guide", href: `/${lang}/blog/daily-water-intake-guide/` }
+        ],
+        featuredTools: [
+          { title: "Protein Intake Calculator", href: `/${lang}/protein-intake-calculator/` },
+          { title: "Macro Split Calculator", href: `/${lang}/macro-calculator/` },
+          { title: "Water Intake Calculator", href: `/${lang}/water-intake-calculator/` }
+        ]
+      },
+      {
+        id: "cardio-strength",
+        badge: "Cardiovascular & Performance",
+        title: "Cardiovascular Fitness & Strength Performance",
+        description: "Objective biomarkers for heart health and athletic conditioning. Explore resting heart rate longevity correlation, Karvonen heart rate training zones (Zone 1–5), and 1RM strength formulas.",
+        keyInsights: [
+          "Resting heart rate under 65 BPM correlates with higher stroke volume and lower cardiovascular mortality.",
+          "Zone 2 aerobic conditioning (60–70% HRR) maximizes mitochondrial density and metabolic efficiency.",
+          "Submaximal 1RM estimation via Epley and Brzycki equations eliminates the injury risk of true 1RM testing."
+        ],
+        featuredGuides: [
+          { title: "Resting Heart Rate & Longevity Biomarkers", href: `/${lang}/blog/cardiovascular-fitness-resting-heart-rate/` },
+          { title: "Target Heart Rate Training Zones (1–5)", href: `/${lang}/blog/target-heart-rate-training-zones/` },
+          { title: "One-Rep Max Strength Formulas & Percentages", href: `/${lang}/blog/one-rep-max-strength-guide/` }
+        ],
+        featuredTools: [
+          { title: "Heart Rate Zone Calculator", href: `/${lang}/heart-rate-zone-calculator/` },
+          { title: "1RM Strength Calculator", href: `/${lang}/1rm-calculator/` },
+          { title: "Healthy Weight by Height", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  },
+  hi: {
+    eyebrow: "प्रमुख शोध एवं स्वास्थ्य स्तंभ",
+    title: "लोकप्रिय स्वास्थ्य विषय एवं नैदानिक क्षेत्र",
+    subtitle: "वैज्ञानिक स्वास्थ्य स्तंभों का अन्वेषण करें जिनमें सहकर्मी-समीक्षित नैदानिक दिशानिर्देश, चयापचय विज्ञान और इंटरैक्टिव स्क्रीनिंग टूल शामिल हैं।",
+    guidesLabel: "प्रमुख शोध गाइड:",
+    toolsLabel: "इंटरैक्टिव स्क्रीनिंग टूल्स:",
+    topics: [
+      {
+        id: "body-composition",
+        badge: "मानवमितीय एवं शारीरिक वसा",
+        title: "शरीर संरचना एवं शारीरिक स्क्रीनिंग",
+        description: "साधारण वजन से आगे का वैज्ञानिक विश्लेषण। मानक बीएमआई (BMI) श्रेणियां, शरीर में वसा का प्रतिशत, विस्रल (पेट की आंतरिक) बनाम सबक्यूटेनियस वसा और एशियाई आबादी कटऑफ समझें।",
+        keyInsights: [
+          "डब्ल्यूएचओ (WHO) मानक स्वस्थ बीएमआई सीमा: 18.5 से 24.9 किग्रा/मी²।",
+          "भारतीय एवं एशियाई आबादी के लिए जोखिम कटऑफ: 23.0 किग्रा/मी² से अधिक जोखिम शुरू।",
+          "विस्रल वसा सामान्य त्वचा के नीचे की वसा की तुलना में 3 गुना अधिक मेटाबोलिक जोखिम पैदा करती है।"
+        ],
+        featuredGuides: [
+          { title: "विस्रल फैट बनाम सबक्यूटेनियस फैट का नैदानिक विश्लेषण", href: `/${lang}/blog/visceral-fat-vs-subcutaneous-fat/` },
+          { title: "बीएमआई बनाम शरीर वसा प्रतिशत तुलना गाइड", href: `/${lang}/blog/bmi-vs-body-fat/` },
+          { title: "उम्र-विशिष्ट बीएमआई एवं बाल विकास चार्ट", href: `/${lang}/blog/age-specific-bmi-charts/` }
+        ],
+        featuredTools: [
+          { title: "मानक बीएमआई कैलकुलेटर", href: `/${lang}/bmi-calculator/` },
+          { title: "बॉडी फैट कैलकुलेटर", href: `/${lang}/body-fat-calculator/` },
+          { title: "एशियाई बीएमआई मानक", href: `/${lang}/asian-bmi-calculator/` },
+          { title: "कमर-से-कूल्हे का अनुपात", href: `/${lang}/waist-to-hip-ratio-calculator/` }
+        ]
+      },
+      {
+        id: "metabolism-energy",
+        badge: "मेटाबॉलिक दर एवं दैनिक ऊर्जा",
+        title: "चयापचय, बीएमआर (BMR) एवं दैनिक कैलोरी खर्च",
+        description: "मानव ऊर्जा संतुलन का विज्ञान। मिफ्लिन-सेंट जेओर बेसल मेटाबोलिक दर समीकरण, शारीरिक गतिविधि कारक और वजन घटाने के दौरान चयापचय अनुकूलन (मेटाबॉलिक अडैप्टेशन) को समझें।",
+        keyInsights: [
+          "बीएमआर (BMR) एक सामान्य वयस्क के कुल दैनिक कैलोरी खर्च का 60–75% हिस्सा बनाता है।",
+          "लंबे समय तक अत्यधिक कैलोरी कटौती करने पर चयापचय दर 10–15% तक धीमी हो सकती है।",
+          "300–500 किलोकैलोरी का संतुलित दैनिक घाटा मांसपेशियों को सुरक्षित रखते हुए वसा घटाता है।"
+        ],
+        featuredGuides: [
+          { title: "मेटाबॉलिक अडैप्टेशन एवं वजन रुकने का वैज्ञानिक समाधान", href: `/${lang}/blog/metabolic-adaptation-weight-loss/` },
+          { title: "बीएमआर बनाम टीडीईई: पूर्ण गणना गाइड", href: `/${lang}/blog/bmr-vs-tdee-calculator/` },
+          { title: "स्वस्थ कैलोरी डेफिसिट एवं मैक्रो गाइड", href: `/${lang}/blog/healthy-calorie-deficit-guide/` }
+        ],
+        featuredTools: [
+          { title: "बीएमआर कैलकुलेटर", href: `/${lang}/bmr-calculator/` },
+          { title: "टीडीईई ऊर्जा कैलकुलेटर", href: `/${lang}/tdee-calculator/` },
+          { title: "रखरखाव कैलोरी कैलकुलेटर", href: `/${lang}/maintenance-calorie-calculator/` },
+          { title: "कैलोरी डेफिसिट प्लानर", href: `/${lang}/calorie-calculator/` }
+        ]
+      },
+      {
+        id: "clinical-nutrition",
+        badge: "मैक्रोन्यूट्रिएंट्स एवं जलयोजन",
+        title: "नैदानिक पोषण एवं जलयोजन विज्ञान",
+        description: "प्रमाण-आधारित पोषण संतुलन एवं जलयोजन प्रबंधन। मांसपेशियों के संरक्षण हेतु प्रति किग्रा प्रोटीन की आवश्यकता और मौसम अनुसार जलयोजन प्रोटोकॉल जानें।",
+        keyInsights: [
+          "प्रोटीन मानक: गतिहीन वयस्क के लिए 0.8 ग्रा/किग्रा से लेकर सक्रिय एथलीटों के लिए 1.6–2.2 ग्रा/किग्रा।",
+          "मूत्र का रंग और विशिष्ट गुरुत्व दैनिक हाइड्रेशन के सटीक बायोमार्कर हैं।",
+          "गर्म जलवायु और कसरत के दौरान पानी और इलेक्ट्रोलाइट की मांग 20–35% तक बढ़ जाती है।"
+        ],
+        featuredGuides: [
+          { title: "दैनिक प्रोटीन सेवन विज्ञान एवं प्रति किग्रा तालिका", href: `/${lang}/blog/daily-protein-intake-science/` },
+          { title: "वसा घटाने और मांसपेशी निर्माण हेतु मैक्रो स्प्लिट", href: `/${lang}/blog/macro-split-calculator-guide/` },
+          { title: "जलयोजन एवं मूत्र रंग व्याख्या गाइड", href: `/${lang}/blog/daily-water-intake-guide/` }
+        ],
+        featuredTools: [
+          { title: "प्रोटीन सेवन कैलकुलेटर", href: `/${lang}/protein-intake-calculator/` },
+          { title: "मैक्रो स्प्लिट कैलकुलेटर", href: `/${lang}/macro-calculator/` },
+          { title: "जल सेवन कैलकुलेटर", href: `/${lang}/water-intake-calculator/` }
+        ]
+      },
+      {
+        id: "cardio-strength",
+        badge: "कार्डियो एवं शक्ति प्रदर्शन",
+        title: "कार्डियोवास्कुलर फिटनेस एवं शक्ति प्रदर्शन",
+        description: "हृदय स्वास्थ्य और फिटनेस के उद्देश्यपरक बायोमार्कर। विश्राम हृदय गति (RHR), कार्वोनेन हृदय गति प्रशिक्षण क्षेत्र (ज़ोन 1–5) और 1RM अधिकतम शक्ति सूत्रों का अध्ययन करें।",
+        keyInsights: [
+          "65 बीपीएम (BPM) से कम विश्राम हृदय गति स्वस्थ हृदय कार्यप्रणाली और दीर्घायु का संकेत है।",
+          "ज़ोन 2 एरोबिक कंडीशनिंग (60–70% एचआरआर) माइटोकॉन्ड्रियल घनत्व और वसा जलाने की क्षमता बढ़ाती है।",
+          "एप्ले और ब्रज़िकी सूत्रों से सबमैक्सिमल 1RM अनुमान चोट के जोखिम के बिना अधिकतम शक्ति बताता है।"
+        ],
+        featuredGuides: [
+          { title: "विश्राम हृदय गति एवं दीर्घायु बायोमार्कर", href: `/${lang}/blog/cardiovascular-fitness-resting-heart-rate/` },
+          { title: "लक्षित हृदय गति प्रशिक्षण क्षेत्र (ज़ोन 1 से 5)", href: `/${lang}/blog/target-heart-rate-training-zones/` },
+          { title: "1RM अधिकतम शक्ति सूत्र एवं प्रशिक्षण प्रतिशत", href: `/${lang}/blog/one-rep-max-strength-guide/` }
+        ],
+        featuredTools: [
+          { title: "हृदय गति ज़ोन कैलकुलेटर", href: `/${lang}/heart-rate-zone-calculator/` },
+          { title: "1RM शक्ति कैलकुलेटर", href: `/${lang}/1rm-calculator/` },
+          { title: "कद अनुसार स्वस्थ वजन", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  },
+  es: {
+    eyebrow: "Áreas de Investigación Clínica",
+    title: "Temas de Salud Populares y Dominios Clínicos",
+    subtitle: "Explore áreas de investigación fundamentadas en evidencia que combinan directrices médicas revisadas por pares, ciencia metabólica y herramientas interactivas.",
+    guidesLabel: "Guías de Investigación Destacadas:",
+    toolsLabel: "Herramientas Interactivas de Cribado:",
+    topics: [
+      {
+        id: "body-composition",
+        badge: "Antropometría y Grasa Corporal",
+        title: "Composición Corporal y Cribado Físico",
+        description: "Evaluación más allá de la báscula. Analice categorías de referencia de IMC según la OMS, calibración de porcentaje graso, adiposidad visceral frente a subcutánea y umbrales regionales.",
+        keyInsights: [
+          "Intervalo de IMC saludable estándar según la OMS: 18.5 a 24.9 kg/m².",
+          "Umbral de alerta en poblaciones asiáticas: 23.0 kg/m² por mayor riesgo cardiometabólico.",
+          "La grasa visceral profunda conlleva un riesgo metabólico hasta 3 veces mayor que la grasa subcutánea."
+        ],
+        featuredGuides: [
+          { title: "Análisis de Grasa Visceral vs. Grasa Subcutánea", href: `/${lang}/blog/visceral-fat-vs-subcutaneous-fat/` },
+          { title: "Comparativa entre IMC y Porcentaje de Grasa Corporal", href: `/${lang}/blog/bmi-vs-body-fat/` },
+          { title: "Tablas de IMC por Edad y Curvas de Crecimiento", href: `/${lang}/blog/age-specific-bmi-charts/` }
+        ],
+        featuredTools: [
+          { title: "Calculadora de IMC Estándar", href: `/${lang}/bmi-calculator/` },
+          { title: "Calculadora de Grasa Corporal", href: `/${lang}/body-fat-calculator/` },
+          { title: "Calculadora IMC Asiático", href: `/${lang}/asian-bmi-calculator/` },
+          { title: "Índice Cintura-Cadera", href: `/${lang}/waist-to-hip-ratio-calculator/` }
+        ]
+      },
+      {
+        id: "metabolism-energy",
+        badge: "Tasa Metabólica y Energía Diaria",
+        title: "Metabolismo, TMB y Gasto Calórico Total",
+        description: "Leyes del balance energético humano. Comprenda las ecuaciones de Mifflin-St Jeor para la tasa metabólica basal, los factores de actividad física (GETD) y la adaptación metabólica.",
+        keyInsights: [
+          "La Tasa Metabólica Basal representa el 60–75% del gasto energético total diario en adultos sedentarios.",
+          "La termogénesis adaptativa puede reducir el gasto en reposo un 10–15% durante déficits prolongados.",
+          "Un déficit moderado de 300–500 kcal/día preserva la masa muscular y maximiza la pérdida de grasa."
+        ],
+        featuredGuides: [
+          { title: "Adaptación Metabólica y Estancamiento en la Pérdida de Peso", href: `/${lang}/blog/metabolic-adaptation-weight-loss/` },
+          { title: "TMB vs. GETD (TDEE): Guía Completa de Cálculo", href: `/${lang}/blog/bmr-vs-tdee-calculator/` },
+          { title: "Déficit Calórico Saludable y Distribución de Macros", href: `/${lang}/blog/healthy-calorie-deficit-guide/` }
+        ],
+        featuredTools: [
+          { title: "Calculadora de TMB", href: `/${lang}/bmr-calculator/` },
+          { title: "Calculadora GETD (TDEE)", href: `/${lang}/tdee-calculator/` },
+          { title: "Calorías de Mantenimiento", href: `/${lang}/maintenance-calorie-calculator/` },
+          { title: "Planificador de Déficit", href: `/${lang}/calorie-calculator/` }
+        ]
+      },
+      {
+        id: "clinical-nutrition",
+        badge: "Macronutrientes e Hidratación",
+        title: "Nutrición Clínica y Ciencia de la Hidratación",
+        description: "Distribución de macronutrientes basada en literatura científica y gestión hídrica. Conozca las necesidades de proteína por kilogramo de peso corporal y pautas de hidratación según el clima.",
+        keyInsights: [
+          "Pautas de proteína: 0.8 g/kg para adultos sedentarios hasta 1.6–2.2 g/kg para deportistas activos.",
+          "El color de la orina y la gravedad específica son biomarcadores prácticos de hidratación diaria.",
+          "El calor ambiental y el ejercicio físico incrementan las necesidades hídricas y electrolíticas un 20–35%."
+        ],
+        featuredGuides: [
+          { title: "Ciencia del Aporte Proteico Diario y Tablas por kg", href: `/${lang}/blog/daily-protein-intake-science/` },
+          { title: "Reparto de Macronutrientes para Pérdida de Grasa y Masa Muscular", href: `/${lang}/blog/macro-split-calculator-guide/` },
+          { title: "Guía de Hidratación y Escala de Color de la Orina", href: `/${lang}/blog/daily-water-intake-guide/` }
+        ],
+        featuredTools: [
+          { title: "Calculadora de Ingesta Proteica", href: `/${lang}/protein-intake-calculator/` },
+          { title: "Calculadora de Macros", href: `/${lang}/macro-calculator/` },
+          { title: "Calculadora de Ingesta de Agua", href: `/${lang}/water-intake-calculator/` }
+        ]
+      },
+      {
+        id: "cardio-strength",
+        badge: "Aptitud Cardiovascular y Fuerza",
+        title: "Condición Cardiovascular y Rendimiento de Fuerza",
+        description: "Biomarcadores objetivos de salud cardiaca y acondicionamiento. Evalúe la frecuencia cardíaca en reposo, zonas de entrenamiento de Karvonen (Zonas 1 a 5) y fórmulas de fuerza máxima (1RM).",
+        keyInsights: [
+          "Una frecuencia cardíaca en reposo inferior a 65 PPM se asocia a mayor eficiencia y menor riesgo cardiovascular.",
+          "El entrenamiento en Zona 2 (60–70% FCR) optimiza la densidad mitocondrial y la combustión de grasas.",
+          "Las fórmulas de Epley y Brzycki estiman el 1RM submáximo evitando el riesgo de lesión del test directo."
+        ],
+        featuredGuides: [
+          { title: "Frecuencia Cardíaca en Reposo y Biomarcadores de Longevidad", href: `/${lang}/blog/cardiovascular-fitness-resting-heart-rate/` },
+          { title: "Zonas de Entrenamiento de Frecuencia Cardíaca (1 a 5)", href: `/${lang}/blog/target-heart-rate-training-zones/` },
+          { title: "Fórmulas de Repetición Máxima (1RM) y Porcentajes de Carga", href: `/${lang}/blog/one-rep-max-strength-guide/` }
+        ],
+        featuredTools: [
+          { title: "Calculadora de Zonas Cardíacas", href: `/${lang}/heart-rate-zone-calculator/` },
+          { title: "Calculadora de 1RM de Fuerza", href: `/${lang}/1rm-calculator/` },
+          { title: "Peso Saludable según Altura", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  },
+  fr: {
+    eyebrow: "Pôles Thématiques de Recherche",
+    title: "Thématiques Santé Populaires et Domaines Cliniques",
+    subtitle: "Explorez nos piliers de recherche combinant recommandations médicales validées par les pairs, science métabolique et calculateurs interactifs.",
+    guidesLabel: "Guides de Recherche Principaux :",
+    toolsLabel: "Outils de Dépistage Interactifs :",
+    topics: [
+      {
+        id: "body-composition",
+        badge: "Anthropométrie et Masse Grasse",
+        title: "Composition Corporelle et Dépistage Physique",
+        description: "Évaluer au-delà du simple poids sur la balance. Analysez les plages de référence de l'IMC selon l'OMS, l'estimation de la masse grasse, la graisse viscérale vs sous-cutanée et les repères régionaux.",
+        keyInsights: [
+          "Fourchette saine de référence OMS : IMC compris entre 18,5 et 24,9 kg/m².",
+          "Seuil d'action pour populations asiatiques : 23,0 kg/m² en raison du profil cardiométabolique.",
+          "La graisse abdominale profonde présente un risque métabolique 3 fois supérieur à la graisse sous-cutanée."
+        ],
+        featuredGuides: [
+          { title: "Graisse Viscérale vs Graisse Sous-Cutanée : Analyse Clinique", href: `/${lang}/blog/visceral-fat-vs-subcutaneous-fat/` },
+          { title: "Comparatif IMC vs Pourcentage de Masse Grasse", href: `/${lang}/blog/bmi-vs-body-fat/` },
+          { title: "Courbes de Croissance et IMC par Tranche d'Âge", href: `/${lang}/blog/age-specific-bmi-charts/` }
+        ],
+        featuredTools: [
+          { title: "Calculateur d'IMC Standard", href: `/${lang}/bmi-calculator/` },
+          { title: "Calculateur de Masse Grasse", href: `/${lang}/body-fat-calculator/` },
+          { title: "Calculateur IMC Asiatique", href: `/${lang}/asian-bmi-calculator/` },
+          { title: "Rapport Taille-Hanches", href: `/${lang}/waist-to-hip-ratio-calculator/` }
+        ]
+      },
+      {
+        id: "metabolism-energy",
+        badge: "Métabolisme de Base et Dépense",
+        title: "Métabolisme, TMB et Dépense Calorique Quotidienne",
+        description: "Comprendre les lois de l'équilibre énergétique humain. Équations Mifflin-St Jeor pour le métabolisme de base, multiplicateurs d'activité physique (TDEE) et adaptation métabolique.",
+        keyInsights: [
+          "Le Taux Métabolique de Base représente 60 à 75 % de la dépense énergétique journalière d'un adulte sédentaire.",
+          "La thermogenèse adaptative peut ralentir la dépense au repos de 10 à 15 % lors d'un déficit prolongé.",
+          "Un déficit modéré de 300 à 500 kcal/jour préserve la masse maigre active tout en ciblant la masse grasse."
+        ],
+        featuredGuides: [
+          { title: "Adaptation Métabolique et Paliers de Perte de Poids", href: `/${lang}/blog/metabolic-adaptation-weight-loss/` },
+          { title: "TMB vs TDEE : Guide Complet de Calcul Métabolique", href: `/${lang}/blog/bmr-vs-tdee-calculator/` },
+          { title: "Déficit Calorique Maîtrisé et Répartition des Macros", href: `/${lang}/blog/healthy-calorie-deficit-guide/` }
+        ],
+        featuredTools: [
+          { title: "Calculateur de TMB", href: `/${lang}/bmr-calculator/` },
+          { title: "Calculateur de Dépense TDEE", href: `/${lang}/tdee-calculator/` },
+          { title: "Calories de Maintien", href: `/${lang}/maintenance-calorie-calculator/` },
+          { title: "Planificateur de Déficit", href: `/${lang}/calorie-calculator/` }
+        ]
+      },
+      {
+        id: "clinical-nutrition",
+        badge: "Macronutriments et Hydratation",
+        title: "Nutrition Clinique et Science de l'Hydratation",
+        description: "Distribution des macronutriments fondée sur les preuves et hydratation physiologique. Apprenez les repères en protéines par kilogramme et les protocoles selon les conditions climatiques.",
+        keyInsights: [
+          "Recommandations protéiques : 0,8 g/kg pour un mode sédentaire jusqu'à 1,6–2,2 g/kg pour athlètes.",
+          "La couleur des urines et la densité urinaire sont des indicateurs clés d'hydratation au quotidien.",
+          "La chaleur et l'exercice augmentent les besoins en eau et en électrolytes de 20 à 35 %."
+        ],
+        featuredGuides: [
+          { title: "Besoins en Protéines Quotidiens et Tableaux par kg", href: `/${lang}/blog/daily-protein-intake-science/` },
+          { title: "Équilibre des Macronutriments pour Masse Musculaire et Sèche", href: `/${lang}/blog/macro-split-calculator-guide/` },
+          { title: "Guide d'Hydratation et Échelle de Couleur de l'Urine", href: `/${lang}/blog/daily-water-intake-guide/` }
+        ],
+        featuredTools: [
+          { title: "Calculateur d'Apport Protéique", href: `/${lang}/protein-intake-calculator/` },
+          { title: "Calculateur de Macronutriments", href: `/${lang}/macro-calculator/` },
+          { title: "Calculateur de Consommation d'Eau", href: `/${lang}/water-intake-calculator/` }
+        ]
+      },
+      {
+        id: "cardio-strength",
+        badge: "Cardio et Force Athlétique",
+        title: "Condition Cardiovasculaire et Force Musculaire",
+        description: "Biomarqueurs précis pour le cœur et l'entraînement physique. Analysez la fréquence cardiaque au repos, les zones de fréquence cardiaque Karvonen (Zones 1 à 5) et l'estimation du 1RM.",
+        keyInsights: [
+          "Un pouls au repos sous 65 BPM reflète un bon volume d'éjection et un risque cardiaque réduit.",
+          "L'entraînement en Zone 2 (60–70% RFC) développe la densité mitochondriale et l'endurance.",
+          "Les équations d'Epley et Brzycki estiment le 1RM sans exposer le corps aux risques d'une charge maximale réelle."
+        ],
+        featuredGuides: [
+          { title: "Fréquence Cardiaque au Repos et Longévité Cardiaque", href: `/${lang}/blog/cardiovascular-fitness-resting-heart-rate/` },
+          { title: "Zones d'Entraînement Cardiaque Cibles (Zones 1 à 5)", href: `/${lang}/blog/target-heart-rate-training-zones/` },
+          { title: "Formules de Force Maximale (1RM) et Pourcentages de Charge", href: `/${lang}/blog/one-rep-max-strength-guide/` }
+        ],
+        featuredTools: [
+          { title: "Calculateur de Zones Cardiaques", href: `/${lang}/heart-rate-zone-calculator/` },
+          { title: "Calculateur de 1RM de Force", href: `/${lang}/1rm-calculator/` },
+          { title: "Poids Idéal selon la Taille", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  },
+  de: {
+    eyebrow: "Thematische Forschungsbereiche",
+    title: "Beliebte Gesundheitsthemen & Klinische Schwerpunkte",
+    subtitle: "Entdecken Sie evidenzbasierte Forschungsschwerpunkte, die medizinische Leitlinien, Stoffwechselphysiologie und interaktive Rechenwerkzeuge vereinen.",
+    guidesLabel: "Wichtige Forschungsleitfäden:",
+    toolsLabel: "Interaktive Screening-Werkzeuge:",
+    topics: [
+      {
+        id: "body-composition",
+        badge: "Anthropometrie & Körperfett",
+        title: "Körperzusammensetzung & Physisches Screening",
+        description: "Differenzierte Beurteilung über das Waagengewicht hinaus. Verstehen Sie WHO-Referenzwerte, Körperfettanteils-Formeln, viszerales vs. subkutanes Fett und regionale Grenzwerte.",
+        keyInsights: [
+          "WHO-Referenzbereich für gesundes Gewicht: BMI 18,5 bis 24,9 kg/m².",
+          "Aktionsgrenzwert für asiatische Bevölkerungen: 23,0 kg/m² bei erhöhtem Stoffwechselrisiko.",
+          "Tiefes viszerales Bauchfett birgt ein 3-fach höheres kardiometabolisches Risiko als subkutanes Hüftfett."
+        ],
+        featuredGuides: [
+          { title: "Viszerales Fett vs. Subkutanes Fett im klinischen Vergleich", href: `/${lang}/blog/visceral-fat-vs-subcutaneous-fat/` },
+          { title: "BMI vs. Körperfettanteil: Aussagekraft und Unterschiede", href: `/${lang}/blog/bmi-vs-body-fat/` },
+          { title: "Altersabhängige BMI-Tabellen & Wachstumskurven", href: `/${lang}/blog/age-specific-bmi-charts/` }
+        ],
+        featuredTools: [
+          { title: "Standard-BMI-Rechner", href: `/${lang}/bmi-calculator/` },
+          { title: "Körperfettrechner", href: `/${lang}/body-fat-calculator/` },
+          { title: "Asiatischer BMI-Standard", href: `/${lang}/asian-bmi-calculator/` },
+          { title: "Taille-Hüft-Verhältnis", href: `/${lang}/waist-to-hip-ratio-calculator/` }
+        ]
+      },
+      {
+        id: "metabolism-energy",
+        badge: "Grundumsatz & Energieverbrauch",
+        title: "Stoffwechsel, BMR & Täglicher Kalorienbedarf",
+        description: "Physikalische Gesetze der menschlichen Energiebilanz. Mifflin-St-Jeor-Formeln für den Grundumsatz, TDEE-Aktivitätsfaktoren und metabolische Anpassung bei Gewichtsabnahme.",
+        keyInsights: [
+          "Der Grundumsatz (BMR) macht 60–75 % des täglichen Gesamtenergiebedarfs eines sitzenden Erwachsenen aus.",
+          "Adaptive Thermogenese kann den Ruheenergieverbrauch bei starkem Kaloriendefizit um 10–15 % senken.",
+          "Ein moderates Defizit von 300–500 kcal/Tag schützt aktive Muskelmasse und fördert gesunden Fettabbau."
+        ],
+        featuredGuides: [
+          { title: "Metabolische Anpassung & Gewichtsplateaus wissenschaftlich erklärt", href: `/${lang}/blog/metabolic-adaptation-weight-loss/` },
+          { title: "BMR vs. TDEE: Leitfaden zur Berechnung des Energiebedarfs", href: `/${lang}/blog/bmr-vs-tdee-calculator/` },
+          { title: "Gesundes Kaloriendefizit & Makronährstoff-Verteilung", href: `/${lang}/blog/healthy-calorie-deficit-guide/` }
+        ],
+        featuredTools: [
+          { title: "BMR-Rechner (Grundumsatz)", href: `/${lang}/bmr-calculator/` },
+          { title: "TDEE-Rechner (Gesamtverbrauch)", href: `/${lang}/tdee-calculator/` },
+          { title: "Erhaltungskalorien-Rechner", href: `/${lang}/maintenance-calorie-calculator/` },
+          { title: "Kaloriendefizit-Planer", href: `/${lang}/calorie-calculator/` }
+        ]
+      },
+      {
+        id: "clinical-nutrition",
+        badge: "Makronährstoffe & Hydratation",
+        title: "Klinische Ernährung & Hydratationswissenschaft",
+        description: "Evidenzbasierte Nährstoffverteilung und Flüssigkeitshaushalt. Empfohlene Proteinmengen pro Kilogramm Körpergewicht zum Muskelschutz sowie klimabezogene Trinkregeln.",
+        keyInsights: [
+          "Protein-Richtwerte: 0,8 g/kg bei sitzender Lebensweise bis 1,6–2,2 g/kg für aktive Sportler.",
+          "Urinfarbe und spezifisches Gewicht sind zuverlässige tägliche Biomarker des Wasserhaushalts.",
+          "Hitze und intensiver Sport steigern den Flüssigkeits- und Elektrolytbedarf um 20–35 %."
+        ],
+        featuredGuides: [
+          { title: "Proteinbedarf pro kg Körpergewicht: Wissenschaftliche Tabellen", href: `/${lang}/blog/daily-protein-intake-science/` },
+          { title: "Makronährstoff-Verteilung für Fettabbau und Muskelaufbau", href: `/${lang}/blog/macro-split-calculator-guide/` },
+          { title: "Leitfaden für Trinkmenge & Urinfarb-Skala", href: `/${lang}/blog/daily-water-intake-guide/` }
+        ],
+        featuredTools: [
+          { title: "Proteinbedarfs-Rechner", href: `/${lang}/protein-intake-calculator/` },
+          { title: "Makronährstoff-Rechner", href: `/${lang}/macro-calculator/` },
+          { title: "Wasserbedarfs-Rechner", href: `/${lang}/water-intake-calculator/` }
+        ]
+      },
+      {
+        id: "cardio-strength",
+        badge: "Kardio & Maximalkraft",
+        title: "Kardiovaskuläre Fitness & Kraftleistung",
+        description: "Objektive Messwerte für Herzgesundheit und Trainingssteuerung. Ruhepuls-Referenzen, Karvonen-Herzfrequenzzonen (Zone 1 bis 5) und 1RM-Maximalkraftformeln.",
+        keyInsights: [
+          "Ein Ruhepuls unter 65 Schlägen pro Minute deutet auf ein kräftiges Schlagvolumen und geringeres Herzrisiko hin.",
+          "Zone-2-Ausdauertraining (60–70 % HRR) maximiert die mitochondriale Dichte und Fettstoffwechselkapazität.",
+          "Epley- und Brzycki-Formeln schätzen das 1RM verlässlich ohne das Verletzungsrisiko von Maximalversuchen."
+        ],
+        featuredGuides: [
+          { title: "Ruhepuls & kardiovaskuläre Langlebigkeits-Biomarker", href: `/${lang}/blog/cardiovascular-fitness-resting-heart-rate/` },
+          { title: "Herzfrequenz-Trainingszonen nach Karvonen (Zonen 1 bis 5)", href: `/${lang}/blog/target-heart-rate-training-zones/` },
+          { title: "1RM-Maximalkraft-Formeln und Trainingsprozentsätze", href: `/${lang}/blog/one-rep-max-strength-guide/` }
+        ],
+        featuredTools: [
+          { title: "Herzfrequenzzonen-Rechner", href: `/${lang}/heart-rate-zone-calculator/` },
+          { title: "1RM-Kraftrechner", href: `/${lang}/1rm-calculator/` },
+          { title: "Idealgewicht nach Körpergröße", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  },
+  ko: {
+    eyebrow: "주제별 연구 및 건강 허브",
+    title: "인기 건강 주제 및 임상 영역",
+    subtitle: "동료 검토를 거친 임상 지침, 대사 과학, 인터랙티브 건강 계산기가 결합된 근거 기반 연구 분야를 탐색하세요.",
+    guidesLabel: "핵심 연구 가이드:",
+    toolsLabel: "인터랙티브 스크리닝 도구:",
+    topics: [
+      {
+        id: "body-composition",
+        badge: "신체 계측학 및 체지방",
+        title: "신체 구성 및 신체 평가",
+        description: "단순 체중계 수치를 넘어선 종합적 평가. WHO 표준 BMI 구간, 체지방률 측정 공식, 내장지방과 피하지방의 차이 및 아시아 인구 집단별 기준치를 분석합니다.",
+        keyInsights: [
+          "WHO 표준 정상 BMI 구간: 18.5 ~ 24.9 kg/m².",
+          "한국 및 아시아 성인 위험 기준치: 심혈관 대사 위험 증가에 따라 23.0 kg/m² 이상 주의.",
+          "내장지방은 일반 피하지방에 비해 대사 질환 위험을 3배 이상 증가시킵니다."
+        ],
+        featuredGuides: [
+          { title: "내장지방 vs 피하지방의 임상적 위험 분석", href: `/${lang}/blog/visceral-fat-vs-subcutaneous-fat/` },
+          { title: "BMI와 체지방률의 차이점 및 상관관계", href: `/${lang}/blog/bmi-vs-body-fat/` },
+          { title: "연령별 BMI 차트 및 성장 곡선 해석 가이드", href: `/${lang}/blog/age-specific-bmi-charts/` }
+        ],
+        featuredTools: [
+          { title: "표준 BMI 계산기", href: `/${lang}/bmi-calculator/` },
+          { title: "체지방률 계산기", href: `/${lang}/body-fat-calculator/` },
+          { title: "아시아인 전용 BMI 계산기", href: `/${lang}/asian-bmi-calculator/` },
+          { title: "허리-엉덩이 둘레 비율(WHR)", href: `/${lang}/waist-to-hip-ratio-calculator/` }
+        ]
+      },
+      {
+        id: "metabolism-energy",
+        badge: "대사율 및 일일 에너지",
+        title: "대사율, BMR 및 일일 칼로리 소모량",
+        description: "인체 에너지 균형의 열역학적 분석. Mifflin-St Jeor 기초대사량 방정식, 활동 계수별 총 칼로리 소비(TDEE) 및 감량기 대사 적응 현상을 다룹니다.",
+        keyInsights: [
+          "기초대사량(BMR)은 좌식 생활 성인의 일일 총 에너지 소비량의 60~75%를 차지합니다.",
+          "과도한 장기 칼로리 제한 시 적응성 열생성으로 인해 기초 대사가 10~15% 저하될 수 있습니다.",
+          "하루 300~500 kcal의 점진적 적자가 근육 손실을 방지하고 체지방 감량을 극대화합니다."
+        ],
+        featuredGuides: [
+          { title: "대사 적응 및 다이어트 정체기 극복 가이드", href: `/${lang}/blog/metabolic-adaptation-weight-loss/` },
+          { title: "BMR vs TDEE: 일일 대사량 완전 계산 가이드", href: `/${lang}/blog/bmr-vs-tdee-calculator/` },
+          { title: "건강한 칼로리 적자 설정 및 탄단지 분배", href: `/${lang}/blog/healthy-calorie-deficit-guide/` }
+        ],
+        featuredTools: [
+          { title: "기초대사량(BMR) 계산기", href: `/${lang}/bmr-calculator/` },
+          { title: "TDEE 일일 대사량 계산기", href: `/${lang}/tdee-calculator/` },
+          { title: "유지 칼로리 계산기", href: `/${lang}/maintenance-calorie-calculator/` },
+          { title: "칼로리 적자 플래너", href: `/${lang}/calorie-calculator/` }
+        ]
+      },
+      {
+        id: "clinical-nutrition",
+        badge: "영양소 및 수분 섭취",
+        title: "임상 영양학 및 수분 섭취 과학",
+        description: "연구 기반의 다량 영양소 분배와 생리학적 수분 관리. 체중(kg)당 적정 단백질 권장량과 기후 및 운동 강도별 수분 보충 지침을 확인하세요.",
+        keyInsights: [
+          "임상 단백질 가이드: 비활동 성인 0.8 g/kg부터 운동선수 1.6~2.2 g/kg 권장.",
+          "소변 색상 차트와 비중 검사는 일상에서 가장 손쉬운 수분 상태 지표입니다.",
+          "고온 환경과 고강도 운동은 하루 수분 및 전해질 필요량을 20~35% 증가시킵니다."
+        ],
+        featuredGuides: [
+          { title: "일일 단백질 섭취 과학 및 체중별 권장량 표", href: `/${lang}/blog/daily-protein-intake-science/` },
+          { title: "감량 및 근육 증량을 위한 최적의 매크로 분배", href: `/${lang}/blog/macro-split-calculator-guide/` },
+          { title: "임상 수분 섭취 가이드 및 소변 색상 판독법", href: `/${lang}/blog/daily-water-intake-guide/` }
+        ],
+        featuredTools: [
+          { title: "단백질 섭취량 계산기", href: `/${lang}/protein-intake-calculator/` },
+          { title: "탄단지 매크로 계산기", href: `/${lang}/macro-calculator/` },
+          { title: "일일 수분 섭취량 계산기", href: `/${lang}/water-intake-calculator/` }
+        ]
+      },
+      {
+        id: "cardio-strength",
+        badge: "심혈관 및 근력 운동",
+        title: "심혈관 체력 및 최대 근력 퍼포먼스",
+        description: "심장 건강과 신체 능력을 나타내는 객관적 지표. 안정 시 심박수, 카보넨 공식 기반 심박수 5개 트레이닝 존 및 1RM 근력 계산 공식을 살펴봅니다.",
+        keyInsights: [
+          "안정 시 심박수 65 BPM 이하는 효율적인 심박출량과 심혈관 질환 위험 감소를 의미합니다.",
+          "존 2 유산소 훈련(60~70% HRR)은 미토콘드리아 밀도와 지방 대사 능력을 극대화합니다.",
+          "Epley와 Brzycki 공식을 활용한 준최대 1RM 추정은 부상 위험 없이 안전하게 근력을 측정합니다."
+        ],
+        featuredGuides: [
+          { title: "안정 시 심박수와 심혈관 장수 지표 분석", href: `/${lang}/blog/cardiovascular-fitness-resting-heart-rate/` },
+          { title: "목표 심박수 트레이닝 존 (존 1부터 존 5까지)", href: `/${lang}/blog/target-heart-rate-training-zones/` },
+          { title: "1RM 최대 근력 공식 및 훈련 중량 비율표", href: `/${lang}/blog/one-rep-max-strength-guide/` }
+        ],
+        featuredTools: [
+          { title: "심박수 트레이닝 존 계산기", href: `/${lang}/heart-rate-zone-calculator/` },
+          { title: "1RM 근력 계산기", href: `/${lang}/1rm-calculator/` },
+          { title: "키에 따른 이상적 체중", href: `/${lang}/healthy-weight-by-height/` }
+        ]
+      }
+    ]
+  }
+};
+
+const current = data[lang] || data.en;
+---
+
+<section class="space-y-8 py-8 md:py-12" id="popular-topics">
+  <!-- Section Header -->
+  <div class="space-y-3">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+      <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+      {current.eyebrow}
+    </div>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-[1.05]">
+      {current.title}
+    </h2>
+    <p class="text-base sm:text-lg text-[var(--muted-foreground)] max-w-3xl font-medium leading-relaxed">
+      {current.subtitle}
+    </p>
+  </div>
+
+  <!-- Topics Grid (2 Columns on Desktop) -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+    {current.topics.map((topic) => (
+      <div class="p-6 sm:p-8 rounded-3xl border border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-6 hover:border-[var(--accent)]/60 transition-all duration-300 shadow-xs hover:shadow-md">
+        
+        <!-- Header & Description -->
+        <div class="space-y-4">
+          <div class="flex items-center justify-between gap-3 flex-wrap">
+            <span class="px-3 py-1 rounded-full text-xs font-display font-bold tracking-wider uppercase text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/20">
+              {topic.badge}
+            </span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-display font-bold tracking-tight text-[var(--foreground)] uppercase leading-snug">
+            {topic.title}
+          </h3>
+
+          <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">
+            {topic.description}
+          </p>
+
+          <!-- Key Scientific Takeaways / Bullet Box -->
+          <div class="p-4 rounded-2xl bg-[var(--muted)]/30 border border-[var(--border)]/50 space-y-2">
+            <div class="text-[11px] font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+              Clinical Takeaways
+            </div>
+            <ul class="space-y-1.5">
+              {topic.keyInsights.map((insight) => (
+                <li class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)]/90 leading-relaxed font-medium">
+                  <span class="text-[var(--accent)] font-bold shrink-0 mt-0.5">•</span>
+                  <span>{insight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Links Footer: Research Guides & Calculators -->
+        <div class="space-y-4 pt-4 border-t border-[var(--border)]">
+          <!-- Research Guides Links -->
+          <div class="space-y-2">
+            <p class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+              {current.guidesLabel}
+            </p>
+            <div class="flex flex-col gap-1.5">
+              {topic.featuredGuides.map((guide) => (
+                <a
+                  href={guide.href}
+                  class="group/link flex items-center justify-between text-xs sm:text-sm font-semibold text-[var(--accent)] hover:underline py-0.5"
+                >
+                  <span class="truncate pr-2">{guide.title}</span>
+                  <span class="shrink-0 transition-transform group-hover/link:translate-x-1">→</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Direct Calculator Links -->
+          <div class="space-y-2 pt-2">
+            <p class="text-xs font-display font-bold uppercase tracking-wider text-[var(--muted-foreground)]">
+              {current.toolsLabel}
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {topic.featuredTools.map((tool) => (
+                <a
+                  href={tool.href}
+                  class="px-2.5 py-1 rounded-lg border border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 text-xs font-medium text-[var(--foreground)] transition-colors"
+                >
+                  {tool.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,181 @@
+---
+import { blogArticles } from '../utils/blogArticles';
+import type { Locale } from '../utils/calculators';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+
+interface GuidesHeaderLocale {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  viewAll: string;
+  readGuide: string;
+  readTime: string;
+  peerReviewedBadge: string;
+}
+
+const headerLabels: Record<Locale, GuidesHeaderLocale> = {
+  en: {
+    eyebrow: "Evidence-Based Health Research",
+    title: "Featured Clinical Research Guides",
+    subtitle: "In-depth clinical analyses, peer-reviewed metabolic research, and public health guidelines reviewed against published WHO and CDC standards.",
+    viewAll: "Explore All Research Guides",
+    readGuide: "Read Clinical Guide →",
+    readTime: "min read",
+    peerReviewedBadge: "Clinical Review"
+  },
+  hi: {
+    eyebrow: "प्रमाण-आधारित स्वास्थ्य अनुसंधान",
+    title: "प्रमुख नैदानिक शोध एवं गाइड",
+    subtitle: "गहन नैदानिक विश्लेषण, सहकर्मी-समीक्षित चयापचय अनुसंधान और डब्ल्यूएचओ एवं सीडीसी मानकों के अनुसार समीक्षित सार्वजनिक स्वास्थ्य गाइड।",
+    viewAll: "सभी शोध गाइड देखें",
+    readGuide: "पूर्ण शोध गाइड पढ़ें →",
+    readTime: "मिनट पठन",
+    peerReviewedBadge: "नैदानिक समीक्षा"
+  },
+  es: {
+    eyebrow: "Investigación Clínica Basada en Evidencia",
+    title: "Guías de Investigación Clínica Destacadas",
+    subtitle: "Análisis clínicos en profundidad, investigación metabólica revisada por pares y directrices de salud pública cotejadas con normas de la OMS y los CDC.",
+    viewAll: "Explorar Todas las Guías",
+    readGuide: "Leer Guía Clínica →",
+    readTime: "min de lectura",
+    peerReviewedBadge: "Revisión Clínica"
+  },
+  fr: {
+    eyebrow: "Recherche Clinique Fondée sur les Preuves",
+    title: "Guides de Recherche Clinique à la Une",
+    subtitle: "Analyses cliniques approfondies, recherches métaboliques validées par les pairs et repères de santé publique vérifiés selon les normes OMS et CDC.",
+    viewAll: "Explorer Tous les Guides",
+    readGuide: "Lire le Guide Clinique →",
+    readTime: "min de lecture",
+    peerReviewedBadge: "Revue Clinique"
+  },
+  de: {
+    eyebrow: "Evidenzbasierte Gesundheitsforschung",
+    title: "Ausgewählte Klinische Forschungsleitfäden",
+    subtitle: "Tiefgehende klinische Analysen, peer-reviewte Stoffwechselforschung und Richtlinien nach offiziellen WHO- und CDC-Standards.",
+    viewAll: "Alle Forschungsleitfäden",
+    readGuide: "Klinischen Leitfaden Lesen →",
+    readTime: "Min. Lesezeit",
+    peerReviewedBadge: "Klinisch Geprüft"
+  },
+  ko: {
+    eyebrow: "근거 기반 임상 연구",
+    title: "주요 임상 연구 가이드",
+    subtitle: "WHO 및 CDC 표준에 부합하도록 검토된 심층 임상 분석, 동료 검토 대사 연구 및 공공 보건 지침을 확인하세요.",
+    viewAll: "모든 연구 가이드 탐색",
+    readGuide: "임상 가이드 읽기 →",
+    readTime: "분 분량",
+    peerReviewedBadge: "임상 검토"
+  }
+};
+
+const t = headerLabels[lang] || headerLabels.en;
+
+// Featured flagship guides (curated deep dive articles)
+const featuredSlugs = [
+  'metabolic-adaptation-weight-loss',
+  'visceral-fat-vs-subcutaneous-fat',
+  'healthy-weight-strategies',
+  'cardiovascular-fitness-resting-heart-rate',
+  'age-specific-bmi-charts',
+  'daily-protein-intake-science'
+];
+
+const guides = featuredSlugs
+  .filter(slug => blogArticles[slug])
+  .map(slug => {
+    const article = blogArticles[slug];
+    return {
+      slug,
+      title: article.title[lang] || article.title.en,
+      description: article.description[lang] || article.description.en,
+      category: article.category[lang] || article.category.en,
+      dateModified: article.dateModified || article.datePublished,
+      readingMinutes: 8 // standard deep guide average
+    };
+  });
+---
+
+<section class="space-y-8 py-8 md:py-12" id="research-guides">
+  <!-- Section Header -->
+  <div class="flex items-end justify-between gap-4 flex-wrap pb-2">
+    <div class="space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+        <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+        {t.eyebrow}
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-[1.05]">
+        {t.title}
+      </h2>
+      <p class="text-base sm:text-lg text-[var(--muted-foreground)] max-w-3xl font-medium leading-relaxed">
+        {t.subtitle}
+      </p>
+    </div>
+
+    <a
+      href={`/${lang}/blog/`}
+      class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all duration-200 shadow-xs"
+    >
+      <span>{t.viewAll}</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Guides Grid (3 Columns on Desktop) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {guides.map((guide) => (
+      <a
+        href={`/${lang}/blog/${guide.slug}/`}
+        class="group block h-full no-underline"
+      >
+        <article class="h-full p-6 sm:p-7 rounded-3xl border border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-5 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+          
+          <div class="space-y-3.5">
+            <!-- Metadata Strip -->
+            <div class="flex items-center justify-between gap-2 text-xs">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-md font-display font-bold tracking-wider uppercase text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/20 truncate max-w-[65%]">
+                {guide.category}
+              </span>
+              <span class="inline-flex items-center gap-1 text-[var(--muted-foreground)] font-medium shrink-0">
+                <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{guide.readingMinutes} {t.readTime}</span>
+              </span>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-lg sm:text-xl font-display font-bold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors duration-200 line-clamp-2">
+              {guide.title}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium line-clamp-3">
+              {guide.description}
+            </p>
+          </div>
+
+          <!-- Footer Action -->
+          <div class="pt-4 border-t border-[var(--border)]/50 flex items-center justify-between text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+            <span class="inline-flex items-center gap-1.5 text-[var(--muted-foreground)] font-mono text-[11px]">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              {t.peerReviewedBadge}
+            </span>
+            <div class="inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+              <span>{t.readGuide}</span>
+            </div>
+          </div>
+
+        </article>
+      </a>
+    ))}
+  </div>
+</section>

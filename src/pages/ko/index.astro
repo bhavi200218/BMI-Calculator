@@ -1,12 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
-import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
+import HeroQuickLaunch from '../../components/HeroQuickLaunch.astro';
+import PopularHealthTopics from '../../components/PopularHealthTopics.astro';
+import FeaturedResearchGuides from '../../components/FeaturedResearchGuides.astro';
 import LatestArticles from '../../components/LatestArticles.astro';
-import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
-import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
-import HealthContent from '../../components/HealthContent.astro';
 import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.astro';
+import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
+import HealthContent from '../../components/HealthContent.astro';
+import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
+import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 ---
 
 <Layout 
@@ -18,7 +21,7 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 	<main class="pb-4 relative overflow-x-hidden">
 
 		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
-		<section class="pt-24 md:pt-28 pb-6 md:pb-8 px-4 md:px-6">
+		<section class="pt-24 md:pt-28 pb-8 md:pb-12 px-4 md:px-6">
 			<div class="max-w-7xl mx-auto">
 
 				<!-- Main H1 & Hero Header -->
@@ -26,7 +29,7 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 					<!-- Eyebrow Tag / Pill -->
 					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						REAL BMI — 건강 및 피트니스 계산기 제품군
+						REAL BMI — 근거 기반 건강 평가 및 연구 허브
 					</div>
 
 					<!-- Main H1 headline -->
@@ -45,7 +48,7 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 
 				<!-- Stats Strip -->
 				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4">
-					{["15개 이상 계산기","6개 언어 지원","브라우저 기반 연산","실시간 결과"].map(badge => (
+					{["18개 이상 계산기","25개 임상 가이드","6개 언어 지원","브라우저 보안 연산"].map(badge => (
 						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
 							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
 							{badge}
@@ -58,18 +61,65 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 					<svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
 					</svg>
-					<span>WHO 및 CDC 표준 참조 지침</span>
+					<span>WHO 및 CDC 표준 참조 지침 • 동료 검토 공식</span>
 				</div>
 
-				<!-- Interactive Calculator Hub -->
-				<div id="calculators" class="scroll-mt-28">
-					<HomepageHubWrapper lang="ko" />
+				<!-- Quick Screening Launchpad -->
+				<div class="max-w-5xl mx-auto">
+					<HeroQuickLaunch lang="ko" />
 				</div>
 			</div>
 		</section>
 
+		<!-- ═══════════════════  POPULAR HEALTH TOPICS  ═══════════════════ -->
+		<div class="px-4 md:px-6 pt-4 pb-8 content-auto">
+			<div class="max-w-7xl mx-auto">
+				<PopularHealthTopics lang="ko" />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  FEATURED RESEARCH GUIDES  ═══════════════════ -->
+		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20">
+			<div class="max-w-7xl mx-auto">
+				<FeaturedResearchGuides lang="ko" />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  LATEST HEALTH ARTICLES  ═══════════════════ -->
+		<div class="px-4 md:px-6 py-8 md:py-12 content-auto">
+			<div class="max-w-7xl mx-auto">
+				<LatestArticles lang="ko" limit={6} />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  PRACTICAL HEALTH FOUNDATIONS  ═══════════════════ -->
+		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40">
+			<div class="max-w-7xl mx-auto">
+				<UnderstandNumbersSection lang="ko" />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  COMPLETE 18+ CALCULATOR SUITE  ═══════════════════ -->
+		<section id="all-calculators" class="px-4 md:px-6 py-12 md:py-16 scroll-mt-24 border-t border-[var(--border)]/60 bg-[var(--card)]/30 content-auto">
+			<div class="max-w-7xl mx-auto space-y-8">
+				<div class="text-center max-w-3xl mx-auto space-y-3">
+					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+						전체 인터랙티브 디렉터리
+					</div>
+					<h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+						18+ 전체 근거 기반 건강 계산기 모음
+					</h2>
+					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+						임상 표준에 기반한 건강 및 피트니스 계산기 전체 모음 — 100% 브라우저 내 비공개 실행 및 개인 건강 정보 미수집.
+					</p>
+				</div>
+				<HomepageHubWrapper lang="ko" />
+			</div>
+		</section>
+
 		<!-- ═══════════════════  WHY PEOPLE CHOOSE REAL BMI  ═══════════════════ -->
-		<section class="px-4 md:px-6 py-12 md:py-16 content-auto">
+		<section class="px-4 md:px-6 py-12 md:py-16 content-auto border-t border-[var(--border)]/40">
 			<div class="max-w-7xl mx-auto">
 				<div class="mb-10 sm:mb-12 space-y-3">
 					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">투명한 계산 기능 및 지침</p>
@@ -96,7 +146,7 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 						<div class="space-y-2">
 							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">투명한 산출 방법론</p>
 							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">계산기 작동 원리 및 지침</p>
-							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">15개 이상 도구의 공식, 참조 기준, 입력/출력값 및 한계점을 확인하세요.</p>
+							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">18개 이상 도구의 공식, 참조 기준, 입력/출력값 및 한계점을 확인하세요.</p>
 						</div>
 						<a href="/ko/methodology/" class="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-display text-xs font-bold uppercase tracking-wider hover:bg-slate-100 transition-all shadow-xs">
 							계산기 방법론 보기 →
@@ -106,13 +156,11 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 			</div>
 		</section>
 
-		<!-- ═══════════════════  FEATURED GUIDES & TRUST CONTENT  ═══════════════════ -->
+		<!-- ═══════════════════  STANDARDS, METHODOLOGY & E-E-A-T  ═══════════════════ -->
 		<div class="px-4 md:px-6 pt-6 pb-12 content-auto">
 			<div class="max-w-7xl mx-auto space-y-12">
-				<UnderstandNumbersSection lang="ko" />
-				<EmbedWidgetBox lang="ko" />
-				<LatestArticles lang="ko" />
 				<HealthContent lang="ko" />
+				<EmbedWidgetBox lang="ko" />
 				<MedicalEEATBanner lang="ko" />
 			</div>
 		</div>

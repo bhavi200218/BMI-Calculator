@@ -1,12 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
-import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
+import HeroQuickLaunch from '../../components/HeroQuickLaunch.astro';
+import PopularHealthTopics from '../../components/PopularHealthTopics.astro';
+import FeaturedResearchGuides from '../../components/FeaturedResearchGuides.astro';
 import LatestArticles from '../../components/LatestArticles.astro';
-import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
-import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
-import HealthContent from '../../components/HealthContent.astro';
 import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.astro';
+import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
+import HealthContent from '../../components/HealthContent.astro';
+import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
+import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 ---
 
 <Layout 
@@ -18,7 +21,7 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 	<main class="pb-4 relative overflow-x-hidden">
 
 		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
-		<section class="pt-24 md:pt-28 pb-6 md:pb-8 px-4 md:px-6">
+		<section class="pt-24 md:pt-28 pb-8 md:pb-12 px-4 md:px-6">
 			<div class="max-w-7xl mx-auto">
 
 				<!-- Main H1 & Hero Header -->
@@ -26,7 +29,7 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 					<!-- Eyebrow Tag / Pill -->
 					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						REAL BMI — SUITE DE CALCULADORAS DE SALUD Y FITNESS
+						REAL BMI — SUITE DE SALUD Y RECURSOS CLÍNICOS
 					</div>
 
 					<!-- Main H1 headline -->
@@ -45,7 +48,7 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 
 				<!-- Stats Strip -->
 				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4">
-					{["15+ Calculadoras","6 Idiomas","En el Navegador","Resultados Instantáneos"].map(badge => (
+					{["18+ Calculadoras","25+ Guías Clínicas","6 Idiomas","Privacidad en el Navegador"].map(badge => (
 						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
 							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
 							{badge}
@@ -58,18 +61,65 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 					<svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
 					</svg>
-					<span>Estándares de Referencia de la OMS y CDC</span>
+					<span>Estándares de Referencia de la OMS y CDC • Fórmulas Revisadas por Pares</span>
 				</div>
 
-				<!-- Interactive Calculator Hub -->
-				<div id="calculators" class="scroll-mt-28">
-					<HomepageHubWrapper lang="es" />
+				<!-- Quick Screening Launchpad -->
+				<div class="max-w-5xl mx-auto">
+					<HeroQuickLaunch lang="es" />
 				</div>
 			</div>
 		</section>
 
+		<!-- ═══════════════════  POPULAR HEALTH TOPICS  ═══════════════════ -->
+		<div class="px-4 md:px-6 pt-4 pb-8 content-auto">
+			<div class="max-w-7xl mx-auto">
+				<PopularHealthTopics lang="es" />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  FEATURED RESEARCH GUIDES  ═══════════════════ -->
+		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20">
+			<div class="max-w-7xl mx-auto">
+				<FeaturedResearchGuides lang="es" />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  LATEST HEALTH ARTICLES  ═══════════════════ -->
+		<div class="px-4 md:px-6 py-8 md:py-12 content-auto">
+			<div class="max-w-7xl mx-auto">
+				<LatestArticles lang="es" limit={6} />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  PRACTICAL HEALTH FOUNDATIONS  ═══════════════════ -->
+		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40">
+			<div class="max-w-7xl mx-auto">
+				<UnderstandNumbersSection lang="es" />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  COMPLETE 18+ CALCULATOR SUITE  ═══════════════════ -->
+		<section id="all-calculators" class="px-4 md:px-6 py-12 md:py-16 scroll-mt-24 border-t border-[var(--border)]/60 bg-[var(--card)]/30 content-auto">
+			<div class="max-w-7xl mx-auto space-y-8">
+				<div class="text-center max-w-3xl mx-auto space-y-3">
+					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+						Directorio Interactivo Completo
+					</div>
+					<h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+						Todas las 18+ Calculadoras Basadas en Evidencia
+					</h2>
+					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+						Explore nuestra suite completa de herramientas clínicas y de condición física — 100% privadas en su navegador y sin retención de datos de salud.
+					</p>
+				</div>
+				<HomepageHubWrapper lang="es" />
+			</div>
+		</section>
+
 		<!-- ═══════════════════  WHY PEOPLE CHOOSE REAL BMI  ═══════════════════ -->
-		<section class="px-4 md:px-6 py-12 md:py-16 content-auto">
+		<section class="px-4 md:px-6 py-12 md:py-16 content-auto border-t border-[var(--border)]/40">
 			<div class="max-w-7xl mx-auto">
 				<div class="mb-10 sm:mb-12 space-y-3">
 					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Funciones Transparentes de la Calculadora</p>
@@ -96,7 +146,7 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 						<div class="space-y-2">
 							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">Metodología Transparente</p>
 							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">CÓMO FUNCIONAN NUESTRAS CALCULADORAS</p>
-							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">Explora nuestras fórmulas publicadas, estándares de referencia, entradas, salidas y limitaciones para las 15+ herramientas.</p>
+							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">Explora nuestras fórmulas publicadas, estándares de referencia, entradas, salidas y limitaciones para las 18+ herramientas.</p>
 						</div>
 						<a href="/es/methodology/" class="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-display text-xs font-bold uppercase tracking-wider hover:bg-slate-100 transition-all shadow-xs">
 							Ver Metodología de Calculadoras →
@@ -106,13 +156,11 @@ import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.
 			</div>
 		</section>
 
-		<!-- ═══════════════════  FEATURED GUIDES & TRUST CONTENT  ═══════════════════ -->
+		<!-- ═══════════════════  STANDARDS, METHODOLOGY & E-E-A-T  ═══════════════════ -->
 		<div class="px-4 md:px-6 pt-6 pb-12 content-auto">
 			<div class="max-w-7xl mx-auto space-y-12">
-				<UnderstandNumbersSection lang="es" />
-				<EmbedWidgetBox lang="es" />
-				<LatestArticles lang="es" />
 				<HealthContent lang="es" />
+				<EmbedWidgetBox lang="es" />
 				<MedicalEEATBanner lang="es" />
 			</div>
 		</div>
