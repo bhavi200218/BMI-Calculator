@@ -51,8 +51,8 @@ const articlesList = articleSlugs.map(slug => {
 <Layout 
   title={`${h.title} | Real BMI`}
   description={h.desc}
-  canonicalURL="https://realbmicalculator.com/blog/"
-  robots="noindex, follow"
+  canonicalURL={lang === 'en' ? 'https://realbmicalculator.com/en/blog/' : 'https://realbmicalculator.com/en/blog/'}
+  robots={lang === 'en' ? 'index, follow' : 'noindex, follow'}
 >
   <Navbar />
 

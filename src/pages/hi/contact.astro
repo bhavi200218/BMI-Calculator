@@ -21,8 +21,8 @@ const contactSchema = {
     },
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Ahmedabad",
-      "addressRegion": "Gujarat",
+      "addressLocality": "Banswara",
+      "addressRegion": "Rajasthan",
       "addressCountry": "IN"
     },
     "contactPoint": {
@@ -40,7 +40,7 @@ const contactSchema = {
     <script type="application/ld+json" is:inline set:html={JSON.stringify(contactSchema)} />
     <Navbar />
     <main class="pt-36 md:pt-40 pb-20 px-4 md:px-6">
-        <div class="max-w-7xl mx-auto space-y-12">
+        <div class="max-w-7xl mx-auto space-y-10">
           <!-- Header block -->
           <div class="space-y-4 max-w-4xl">
             <a href="/hi/" class="inline-flex items-center gap-2 min-h-[48px] px-3 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)] hover:text-[var(--foreground)] transition-colors rounded-lg">
@@ -52,6 +52,38 @@ const contactSchema = {
             <p class="text-base sm:text-lg md:text-xl leading-relaxed text-[var(--muted-foreground)] font-medium pt-1">
               कैलकुलेटर सूत्रों, 3D विज़ुअलाइज़र की तकनीकी समस्याओं या हमारे स्वास्थ्य गाइडों पर सुझाव के लिए हमारी टीम से संपर्क करें।
             </p>
+          </div>
+
+          <!-- Prominent Founder & Transparency Banner (High-Authority Trust Signal) -->
+          <div class="rounded-2xl border-2 border-[var(--accent)]/40 bg-gradient-to-r from-[var(--card)] via-[var(--background)] to-[var(--card)] p-6 md:p-8 shadow-sm">
+            <div class="space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-display font-bold uppercase tracking-widest border border-emerald-500/20">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                सत्यापित संपादकीय एवं स्वामित्व पारदर्शिता (Verified Transparency)
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+                <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
+                  <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">संस्थापक एवं निर्माता</span>
+                  <p class="text-base font-display font-black text-[var(--foreground)]">Bhawanshi Dosi</p>
+                  <p class="text-xs text-[var(--muted-foreground)] font-medium">Software Engineer &amp; Health Informatics</p>
+                </div>
+                <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
+                  <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">परियोजना प्रकार</span>
+                  <p class="text-base font-display font-black text-[var(--foreground)]">Independent Project</p>
+                  <p class="text-xs text-[var(--muted-foreground)] font-medium">100% मुफ़्त शैक्षिक स्वास्थ्य टूल्स</p>
+                </div>
+                <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
+                  <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">संचालन केंद्र</span>
+                  <p class="text-base font-display font-black text-[var(--foreground)]">Banswara, Rajasthan, India</p>
+                  <p class="text-xs text-[var(--muted-foreground)] font-medium">बांसवाड़ा, राजस्थान, भारत</p>
+                </div>
+                <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
+                  <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">आधिकारिक सपोर्ट डेस्क</span>
+                  <a href="mailto:support@realbmicalculator.com" class="text-base font-mono font-bold text-[var(--accent)] hover:underline block break-all">support@realbmicalculator.com</a>
+                  <p class="text-xs text-emerald-400 font-semibold">24–48 घंटे में समाधान</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Main Layout -->
@@ -91,9 +123,9 @@ const contactSchema = {
                     <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
                     <p class="text-xs uppercase tracking-[0.3em] font-bold text-[var(--accent)]">स्थान एवं संचालन केंद्र</p>
                   </div>
-                  <p class="text-lg font-display font-black text-[var(--foreground)]">Ahmedabad, Gujarat, India</p>
+                  <p class="text-lg font-display font-black text-[var(--foreground)]">Banswara, Rajasthan, India</p>
                   <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
-                    अहमदाबाद, गुजरात, भारत (वैश्विक उपयोगकर्ताओं के लिए 6 भाषाओं में उपलब्ध डिजिटल स्वास्थ्य प्लेटफ़ॉर्म)
+                    बांसवाड़ा, राजस्थान, भारत (वैश्विक उपयोगकर्ताओं के लिए 6 भाषाओं में उपलब्ध डिजिटल स्वास्थ्य प्लेटफ़ॉर्म)
                   </p>
                 </div>
 
@@ -170,7 +202,7 @@ const contactSchema = {
                 </div>
                 <div>
                   <span class="font-bold text-[var(--foreground)] block">स्थान (Location):</span>
-                  <span class="text-[var(--muted-foreground)] font-medium">Ahmedabad, Gujarat, India</span>
+                  <span class="text-[var(--muted-foreground)] font-medium">Banswara, Rajasthan, India (बांसवाड़ा, राजस्थान)</span>
                 </div>
                 <div>
                   <span class="font-bold text-[var(--foreground)] block">आधिकारिक संपर्क (Email):</span>

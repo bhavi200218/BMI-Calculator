@@ -3,111 +3,414 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import PageShell from '../../components/PageShell.astro';
 
-const sources = [
+interface ScientificSource {
+  citationId: string;
+  title: string;
+  authors: string;
+  journal: string;
+  doi?: string;
+  pmid?: string;
+  url: string;
+  category: 'anthropometry' | 'metabolism' | 'composition' | 'cardiovascular' | 'nutrition';
+  categoryLabel: string;
+  appliedCalculators: { name: string; url: string }[];
+  summary: string;
+  keyFinding: string;
+}
+
+const sources: ScientificSource[] = [
   {
-    "title": "WHO Physical Status: The Use and Interpretation of Anthropometry",
-    "org": "World Health Organization (WHO / NLM PubMed)",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/8594834/",
-    "desc": "Official report establishing global body mass index (BMI) categories and reference cutoff benchmarks for adults.",
-    "actionLabel": "View WHO Report"
+    citationId: "WHO Technical Report Series 854 (1995)",
+    title: "Physical Status: The Use and Interpretation of Anthropometry. Report of a WHO Expert Committee",
+    authors: "World Health Organization Expert Committee",
+    journal: "World Health Organ Tech Rep Ser. 1995; 854: 1–452",
+    pmid: "8594834",
+    url: "https://pubmed.ncbi.nlm.nih.gov/8594834/",
+    category: "anthropometry",
+    categoryLabel: "Anthropometry & BMI",
+    appliedCalculators: [
+      { name: "BMI Calculator", url: "/en/bmi-calculator/" },
+      { name: "BMI Chart", url: "/en/bmi-chart/" },
+      { name: "Healthy Weight by Height", url: "/en/healthy-weight-by-height/" }
+    ],
+    summary: "The definitive global epidemiological report establishing standardized international Body Mass Index (BMI) cutoffs for adult populations: Underweight (< 18.5 kg/m²), Normal weight (18.5–24.9 kg/m²), Overweight (25.0–29.9 kg/m²), and Obesity Class I–III (≥ 30.0 kg/m²).",
+    keyFinding: "Standardized Quetelet's metric formula (weight in kg / height in m²) across multi-ethnic populations as the primary clinical screening index for chronic disease mortality risk."
   },
   {
-    "title": "WHO Expert Consultation: Appropriate BMI for Asian Populations and Policy Implications",
-    "org": "The Lancet (WHO Expert Consultation)",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/14726171/",
-    "desc": "Lancet 2004 landmark publication defining public-health action trigger points (23.0 kg/m² increased risk, 27.5 kg/m² high risk) for Asian populations.",
-    "actionLabel": "Read Lancet Study"
+    citationId: "Lancet 2004 BMI Asian Populations",
+    title: "Appropriate Body-Mass Index for Asian Populations and Its Implications for Policy and Intervention Strategies",
+    authors: "WHO Expert Consultation",
+    journal: "The Lancet. 2004 Jan 10; 363(9403): 157–163",
+    doi: "10.1016/S0140-6736(03)15268-3",
+    pmid: "14726171",
+    url: "https://pubmed.ncbi.nlm.nih.gov/14726171/",
+    category: "anthropometry",
+    categoryLabel: "Anthropometry & BMI",
+    appliedCalculators: [
+      { name: "Asian BMI Calculator", url: "/en/asian-bmi-calculator/" },
+      { name: "Diabetes Risk Calculator", url: "/en/diabetes-risk-calculator/" }
+    ],
+    summary: "Landmark multi-center analysis demonstrating that Asian individuals have higher percentages of body fat and significantly greater cardiovascular and Type 2 diabetes risk at lower BMIs than Western European populations.",
+    keyFinding: "Established WHO Asian public health action trigger thresholds: 23.0 kg/m² (increased risk / overweight threshold) and 27.5 kg/m² (high risk / obesity threshold)."
   },
   {
-    "title": "Consensus Statement for Diagnosis of Obesity & Metabolic Syndrome in Asian Indians",
-    "org": "ICMR & JAPI (Misra A, et al.)",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/19702033/",
-    "desc": "National consensus guideline establishing Indian adult BMI cutoffs (18.5–22.9 kg/m² normal, 23.0–24.9 kg/m² overweight, ≥ 25.0 kg/m² obese).",
-    "actionLabel": "Review ICMR Guidelines"
+    citationId: "Mifflin MD 1990 (Resting Energy Expenditure)",
+    title: "A New Predictive Equation for Resting Energy Expenditure in Healthy Individuals",
+    authors: "Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO",
+    journal: "Am J Clin Nutr. 1990 Feb; 51(2): 241–247",
+    doi: "10.1093/ajcn/51.2.241",
+    pmid: "2305711",
+    url: "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    category: "metabolism",
+    categoryLabel: "Metabolism & BMR",
+    appliedCalculators: [
+      { name: "BMR Calculator", url: "/en/bmr-calculator/" },
+      { name: "TDEE Calculator", url: "/en/tdee-calculator/" },
+      { name: "Calorie Calculator", url: "/en/calorie-calculator/" },
+      { name: "Maintenance Calorie Calculator", url: "/en/maintenance-calorie-calculator/" }
+    ],
+    summary: "Clinical study of 498 healthy men and women measured via indirect calorimetry. Rigorous systematic reviews by the Academy of Nutrition and Dietetics established the Mifflin-St Jeor equation as the most accurate predictive formula for BMR (within 10% of measured REE in both normal-weight and obese adults).",
+    keyFinding: "BMR (kcal/day) = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in yrs) + s, where s = +5 for males and -161 for females."
   },
   {
-    "title": "CDC Adult Body Mass Index: Screening Standards",
-    "org": "Centers for Disease Control and Prevention (CDC)",
-    "url": "https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html",
-    "desc": "Official CDC standard equation for metric and imperial adult body mass index calculation.",
-    "actionLabel": "Examine CDC Standards"
+    citationId: "Mosteller RD 1987 (Body Surface Area)",
+    title: "Simplified Calculation of Body-Surface Area",
+    authors: "Mosteller RD",
+    journal: "N Engl J Med. 1987 Oct 22; 317(17): 1098",
+    doi: "10.1056/NEJM198710223171717",
+    pmid: "3657876",
+    url: "https://pubmed.ncbi.nlm.nih.gov/3657876/",
+    category: "anthropometry",
+    categoryLabel: "Anthropometry & Dosing",
+    appliedCalculators: [
+      { name: "Body Surface Area Calculator", url: "/en/body-surface-area-calculator/" }
+    ],
+    summary: "Seminal correspondence in the New England Journal of Medicine proposing a mathematically simplified yet rigorous formulation for estimating human body surface area (BSA) without logarithmic tables.",
+    keyFinding: "BSA (m²) = √[(Height in cm × Weight in kg) / 3600]. Universally adopted across clinical oncology, cardiac index normalization, and renal clearance medicine."
   },
   {
-    "title": "A New Predictive Equation for Resting Energy Expenditure in Healthy Individuals",
-    "org": "American Journal of Clinical Nutrition (Mifflin MD, St Jeor ST)",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/2305711/",
-    "desc": "The Mifflin-St Jeor formula equation for calculating Basal Metabolic Rate (BMR) estimates.",
-    "actionLabel": "Read AJCN Paper"
+    citationId: "Devine BJ 1974 (Ideal Body Weight)",
+    title: "Gentamicin Therapy: Clinical Use and Dosing Guidelines",
+    authors: "Devine BJ",
+    journal: "Drug Intell Clin Pharm. 1974; 8(11): 650–655",
+    pmid: "4819440",
+    url: "https://pubmed.ncbi.nlm.nih.gov/4819440/",
+    category: "anthropometry",
+    categoryLabel: "Anthropometry & Dosing",
+    appliedCalculators: [
+      { name: "Ideal Weight Calculator", url: "/en/ideal-weight-calculator/" },
+      { name: "Healthy Weight by Height", url: "/en/healthy-weight-by-height/" }
+    ],
+    summary: "The foundational clinical pharmacological study providing height-based equations for calculating ideal body weight (IBW). Originally developed for narrow therapeutic index drug dosing (e.g. aminoglycosides), it remains the gold standard benchmark in clinical hospital medicine.",
+    keyFinding: "Men: IBW = 50.0 kg + 2.3 kg per inch over 5 feet. Women: IBW = 45.5 kg + 2.3 kg per inch over 5 feet."
   },
   {
-    "title": "US Navy Anthropometric Logarithmic Body Fat Equation",
-    "org": "Naval Health Research Center (Hodgdon JA, Beckett WS)",
-    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/",
-    "desc": "Logarithmic tape measurement equation for estimating body fat percentage from body circumferences.",
-    "actionLabel": "View Navy Study"
+    citationId: "Misra A, ICMR Consensus 2009 (Asian Indians)",
+    title: "Consensus Statement for Diagnosis of Obesity, Abdominal Obesity and the Metabolic Syndrome for Asian Indians",
+    authors: "Misra A, Chowbey P, Makkar BM, Vikram NK, et al.",
+    journal: "J Assoc Physicians India. 2009 Feb; 57: 163–170",
+    pmid: "19702033",
+    url: "https://pubmed.ncbi.nlm.nih.gov/19702033/",
+    category: "anthropometry",
+    categoryLabel: "South Asian Guidelines",
+    appliedCalculators: [
+      { name: "BMI Calculator for Indians", url: "/en/bmi-calculator-for-indians/" },
+      { name: "Diabetes Risk Calculator", url: "/en/diabetes-risk-calculator/" }
+    ],
+    summary: "Comprehensive consensus developed under the Indian Council of Medical Research (ICMR) and National Obesity Forum, addressing the South Asian 'thin-fat' phenotype (excess visceral fat, lower muscle mass, and premature atherogenic dyslipidemia at normal weight).",
+    keyFinding: "Defined official Indian adult thresholds: Normal (18.5–22.9 kg/m²), Overweight (23.0–24.9 kg/m²), Obesity (≥ 25.0 kg/m²); Waist circumference action cutoffs: ≥ 90 cm in men, ≥ 80 cm in women."
   },
   {
-    "title": "IDF International Consensus Statement on Abdominal Obesity & Metabolic Syndrome",
-    "org": "International Diabetes Federation (IDF)",
-    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2782373/",
-    "desc": "Waist circumference thresholds (>90cm men, >80cm women for Asian populations) for abdominal risk context.",
-    "actionLabel": "Read IDF Consensus"
+    citationId: "Hodgdon JA & Beckett MB 1984 (US Navy Body Fat)",
+    title: "Prediction of Percent Body Fat for U.S. Navy Men and Women from Body Circumferences and Height",
+    authors: "Hodgdon JA, Beckett MB",
+    journal: "Naval Health Research Center Technical Reports 84-29 & 84-11. San Diego, CA; 1984",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/",
+    category: "composition",
+    categoryLabel: "Body Composition",
+    appliedCalculators: [
+      { name: "Body Fat Calculator", url: "/en/body-fat-calculator/" },
+      { name: "Lean Body Mass Calculator", url: "/en/lean-body-mass-calculator/" }
+    ],
+    summary: "Rigorous empirical anthropometric modeling validated against underwater hydrostatic weighing across thousands of active military personnel. Provides precise logarithmic circumference conversions without requiring laboratory equipment.",
+    keyFinding: "Formulated sex-specific logarithmic models using abdomen/waist, neck, hip (for females), and standing height to predict body density and relative fat percentage."
   },
   {
-    "title": "Oxford 2.5 Exponent Height-Adjusted BMI Formula Proposal",
-    "org": "University of Oxford (Prof. Nick Trefethen)",
-    "url": "https://people.maths.ox.ac.uk/trefethen/bmi.html",
-    "desc": "Mathematical refinement compensating for 3D body volume height scaling distortion.",
-    "actionLabel": "View Oxford Research"
+    citationId: "Karvonen MJ 1957 (Heart Rate Reserve)",
+    title: "The Effects of Training on Heart Rate: A Longitudinal Study",
+    authors: "Karvonen MJ, Kentala E, Mustala O",
+    journal: "Ann Med Exp Biol Fenn. 1957; 35(3): 307–315",
+    pmid: "13470504",
+    url: "https://pubmed.ncbi.nlm.nih.gov/13470504/",
+    category: "cardiovascular",
+    categoryLabel: "Cardiovascular Physiology",
+    appliedCalculators: [
+      { name: "Karvonen Heart Rate Calculator", url: "/en/karvonen-heart-rate-calculator/" },
+      { name: "Heart Rate Zone Calculator", url: "/en/heart-rate-zone-calculator/" }
+    ],
+    summary: "Seminal exercise physiology investigation demonstrating that training intensity is determined by percentage of Heart Rate Reserve (HRR) rather than absolute heart rate, accounting for resting bradycardia in aerobically conditioned individuals.",
+    keyFinding: "Target Heart Rate = [(Max HR - Resting HR) × % Intensity] + Resting HR. Standardized cardiovascular zone targeting across exercise prescription."
+  },
+  {
+    citationId: "Boer P 1984 (Lean Body Mass)",
+    title: "Estimated Lean Body Mass as an Index for Normalization of Body Fluid Volumes in Humans",
+    authors: "Boer P",
+    journal: "Am J Physiol. 1984 Jul; 247(1 Pt 2): F632–F636",
+    doi: "10.1152/ajprenal.1984.247.4.F632",
+    pmid: "6497914",
+    url: "https://pubmed.ncbi.nlm.nih.gov/6497914/",
+    category: "composition",
+    categoryLabel: "Body Composition",
+    appliedCalculators: [
+      { name: "Lean Body Mass Calculator", url: "/en/lean-body-mass-calculator/" }
+    ],
+    summary: "Clinical investigation quantifying fat-free mass using anthropometric regressions, demonstrating superior clinical correlation with extracellular fluid volumes, circulating plasma volume, and creatinine clearance compared to total body mass.",
+    keyFinding: "Men: LBM = (0.407 × W) + (0.267 × H) - 19.2. Women: LBM = (0.252 × W) + (0.473 × H) - 48.3 (Weight in kg, Height in cm)."
+  },
+  {
+    citationId: "Ashwell M 2012 (Waist-to-Height Ratio)",
+    title: "Waist-to-Height Ratio is a Better Screening Tool Than Waist Circumference and BMI for Adult Cardiometabolic Risk Factors",
+    authors: "Ashwell M, Gunn P, Gibson S",
+    journal: "Obes Rev. 2012 Mar; 13(3): 275–286",
+    doi: "10.1111/j.1467-789X.2011.00952.x",
+    pmid: "22106927",
+    url: "https://pubmed.ncbi.nlm.nih.gov/22106927/",
+    category: "anthropometry",
+    categoryLabel: "Central Adiposity",
+    appliedCalculators: [
+      { name: "Waist-to-Hip Ratio Calculator", url: "/en/waist-to-hip-ratio-calculator/" },
+      { name: "BMI Calculator for Indians", url: "/en/bmi-calculator-for-indians/" },
+      { name: "Asian BMI Calculator", url: "/en/asian-bmi-calculator/" }
+    ],
+    summary: "Comprehensive systematic review and meta-analysis examining over 300,000 multi-ethnic participants across global cohorts, evaluating the discriminative power of BMI, waist circumference, and waist-to-height ratio for cardiometabolic disease endpoints.",
+    keyFinding: "Confirmed that maintaining Waist-to-Height Ratio (WHtR) < 0.5 ('keep waist circumference to less than half your height') provides superior sensitivity over BMI for early hypertension, dyslipidemia, and metabolic syndrome."
+  },
+  {
+    citationId: "Trefethen LN 2013 (Oxford New BMI)",
+    title: "BMI (Body Mass Index) Formulation Proposal",
+    authors: "Trefethen LN (Professor of Numerical Analysis)",
+    journal: "Mathematical Institute, University of Oxford; 2013",
+    url: "https://people.maths.ox.ac.uk/trefethen/bmi.html",
+    category: "anthropometry",
+    categoryLabel: "Geometric Modeling",
+    appliedCalculators: [
+      { name: "3D BMI Calculator", url: "/en/3d-bmi-calculator/" }
+    ],
+    summary: "Mathematical analysis examining the dimensional scaling flaw in standard Quetelet BMI (which divides by height² instead of height³). Trefethen proposed a realistic compromise exponent of 2.5 combined with a 1.3 scaling factor to preserve 24.0 kg/m² calibration for average-height adults.",
+    keyFinding: "New BMI = 1.3 × [Weight (kg) / Height (m)²·⁵]. Corrects distortions where standard BMI underestimates adiposity in shorter individuals and overestimates in tall individuals."
+  },
+  {
+    citationId: "Brzycki M 1993 (One-Repetition Maximum)",
+    title: "Strength Testing: Predicting a One-Rep Max from Reps-to-Fatigue",
+    authors: "Brzycki M",
+    journal: "J Phys Educ Recreat Dance. 1993; 64(1): 88–90",
+    doi: "10.1080/07303084.1993.10606684",
+    url: "https://www.tandfonline.com/doi/abs/10.1080/07303084.1993.10606684",
+    category: "cardiovascular",
+    categoryLabel: "Strength & Resistance Physiology",
+    appliedCalculators: [
+      { name: "1RM Calculator", url: "/en/1rm-calculator/" }
+    ],
+    summary: "Developed submaximal predictive algorithms to estimate 1RM without the orthopedic risk and cardiovascular strain of true maximal single lifts in clinical and athletic populations.",
+    keyFinding: "1RM = Weight Lifted / (1.0278 - 0.0278 × Repetitions to Fatigue). Validated as the most reliable linear prediction model for 1–10 submaximal repetitions."
+  },
+  {
+    citationId: "NASEM / IOM 2005 (Dietary Energy & Macronutrients)",
+    title: "Dietary Reference Intakes for Energy, Carbohydrate, Fiber, Fat, Fatty Acids, Cholesterol, Protein, and Amino Acids",
+    authors: "Institute of Medicine (National Academies of Sciences, Engineering, and Medicine)",
+    journal: "Washington, DC: The National Academies Press; 2005",
+    doi: "10.17226/10490",
+    url: "https://nap.nationalacademies.org/catalog/10490/",
+    category: "nutrition",
+    categoryLabel: "Dietary Science",
+    appliedCalculators: [
+      { name: "Macro Calculator", url: "/en/macro-calculator/" },
+      { name: "Protein Intake Calculator", url: "/en/protein-intake-calculator/" },
+      { name: "Water Intake Calculator", url: "/en/water-intake-calculator/" }
+    ],
+    summary: "Definitive clinical guidelines establishing Acceptable Macronutrient Distribution Ranges (AMDR) for healthy individuals: Carbohydrates (45–65% total calories), Dietary Fat (20–35% total calories), and Protein (10–35% total calories), plus baseline Recommended Dietary Allowance (RDA) of 0.8 g/kg body weight.",
+    keyFinding: "Established daily hydration adequate intake (AI) standards: 3.7 liters total water for adult men and 2.7 liters for adult women."
+  },
+  {
+    citationId: "Stern MP 2002 (Type 2 Diabetes Clinical Risk Model)",
+    title: "Identification of Persons at High Risk for Type 2 Diabetes, Do We Need the Oral Glucose Tolerance Test?",
+    authors: "Stern MP, Williams K, Haffner SM",
+    journal: "Ann Intern Med. 2002 Apr 16; 136(8): 575–581",
+    doi: "10.7326/0003-4819-136-8-200204160-00006",
+    pmid: "11955025",
+    url: "https://pubmed.ncbi.nlm.nih.gov/11955025/",
+    category: "cardiovascular",
+    categoryLabel: "Metabolic Risk Modeling",
+    appliedCalculators: [
+      { name: "Diabetes Risk Calculator", url: "/en/diabetes-risk-calculator/" }
+    ],
+    summary: "Large multi-cohort prospective epidemiological study formulating validated multivariate non-invasive screening models for 7-year incident Type 2 diabetes risk based on age, BMI, systolic blood pressure, fasting glucose, and family history.",
+    keyFinding: "Demonstrated that anthropometric indices (BMI and abdominal adiposity) combined with basic demographic markers identify high-risk individuals with accuracy comparable to expensive invasive laboratory tests."
   }
 ];
+
+const categoryCounts = {
+  all: sources.length,
+  anthropometry: sources.filter(s => s.category === 'anthropometry').length,
+  metabolism: sources.filter(s => s.category === 'metabolism').length,
+  composition: sources.filter(s => s.category === 'composition').length,
+  cardiovascular: sources.filter(s => s.category === 'cardiovascular').length,
+  nutrition: sources.filter(s => s.category === 'nutrition').length
+};
 ---
 
 <Layout 
-    title="Primary References & Research Sources | Real BMI"
-    description="Review primary research citations, published mathematical formulas, WHO cutoffs, and public health guidelines informing every calculation on Real BMI."
+    title="Primary Research Citations & Scientific Bibliography | Real BMI"
+    description="Examine direct peer-reviewed citations, clinical trial references, and mathematical equations informing every calculator on Real BMI, including WHO TRS 854, Lancet 2004, and Mifflin MD 1990."
+    canonicalURL="https://realbmicalculator.com/en/sources/"
 >
     <Navbar />
     <PageShell
-      title="Primary References & Research Sources"
-      eyebrow="Evidence-Based Health Standards"
-      description="These public-health agencies, research publications and peer-reviewed reference materials inform the formulas and reference ranges used on Real BMI."
+      title="Primary Research Citations & Scientific Bibliography"
+      eyebrow="Evidence-Based Medical Rigor"
+      description="Exact peer-reviewed publications, institutional reports, and mathematical models informing every algorithm on Real BMI."
       returnUrl="/en/"
       returnLabel="Home"
     >
-      <div class="space-y-8">
+      <div class="space-y-10">
+
+        <!-- Executive Rigor Notice -->
         <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] font-medium leading-relaxed space-y-4">
-          <p class="text-lg">
-            Scientific rigor and transparency guide every algorithm implemented on Real BMI. Our mathematical models, metabolic rate equations, and anthropometric reference ranges are sourced directly from global public health authorities and peer-reviewed clinical research.
+          <p class="text-base sm:text-lg leading-relaxed">
+            Real BMI does not use black-box estimation algorithms. Every calculator on this platform is directly anchored to published, peer-reviewed clinical literature from international public health authorities—including the <strong class="text-[var(--foreground)]">World Health Organization (WHO)</strong>, the <strong class="text-[var(--foreground)]">Indian Council of Medical Research (ICMR)</strong>, the <strong class="text-[var(--foreground)]">National Institutes of Health (NIH)</strong>, and landmark journals such as <em class="text-[var(--foreground)]">The Lancet</em> and <em class="text-[var(--foreground)]">The New England Journal of Medicine</em>.
           </p>
-          <p class="text-sm md:text-base">
-            Below are the primary scientific publications, institutional reports, and mathematical models referenced throughout our calculators:
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            Below is our complete academic bibliography, indexed with direct PubMed identifiers (PMID), Digital Object Identifiers (DOI), exact mathematical formulations, and mapped tools.
           </p>
         </div>
 
-        <div class="grid gap-6">
-          {sources.map((src) => (
-            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs hover:border-[var(--accent)]/40 transition-all">
-              <div class="flex items-center justify-between gap-4 flex-wrap">
-                <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
-                  {src.org}
-                </span>
-                <a 
-                  href={src.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent)] hover:underline"
-                  aria-label={`${src.actionLabel}: ${src.title}`}
-                >
-                  {src.actionLabel}
-                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                </a>
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2 pb-2 border-b border-[var(--border)]" id="sourcesFilterNav">
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-xs transition-all cursor-pointer" data-filter="all">
+            All Citations ({categoryCounts.all})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="anthropometry">
+            Anthropometry &amp; BMI ({categoryCounts.anthropometry})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="metabolism">
+            Metabolism &amp; BMR ({categoryCounts.metabolism})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="composition">
+            Body Composition ({categoryCounts.composition})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="cardiovascular">
+            Cardiology &amp; Exercise ({categoryCounts.cardiovascular})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="nutrition">
+            Nutrition &amp; Water ({categoryCounts.nutrition})
+          </button>
+        </div>
+
+        <!-- Direct Citation Cards List -->
+        <div class="space-y-6" id="sourcesList">
+          {sources.map((src, index) => (
+            <article class="source-card p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4 shadow-xs hover:border-[var(--accent)]/50 transition-all" data-category={src.category}>
+              <!-- Card Header -->
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[var(--border)]/60">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="w-6 h-6 rounded-full bg-[var(--accent)]/15 text-[var(--accent)] font-mono font-bold text-xs flex items-center justify-center">
+                    {index + 1}
+                  </span>
+                  <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-wider border border-[var(--accent)]/20">
+                    {src.citationId}
+                  </span>
+                  <span class="px-2.5 py-0.5 rounded-md bg-[var(--muted)]/50 text-[var(--muted-foreground)] text-xs font-semibold">
+                    {src.categoryLabel}
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  {src.pmid && (
+                    <span class="text-xs font-mono font-semibold text-[var(--muted-foreground)]">
+                      PMID: <strong class="text-[var(--foreground)]">{src.pmid}</strong>
+                    </span>
+                  )}
+                  <a 
+                    href={src.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity shrink-0"
+                    aria-label={`View Primary Source for ${src.citationId}`}
+                  >
+                    View Study
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  </a>
+                </div>
               </div>
-              <h2 class="text-xl font-display font-bold text-[var(--foreground)]">{src.title}</h2>
-              <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{src.desc}</p>
-            </div>
+
+              <!-- Main Citation Details -->
+              <div class="space-y-2">
+                <h2 class="text-lg sm:text-xl font-display font-bold text-[var(--foreground)] leading-snug">
+                  {src.title}
+                </h2>
+                <p class="text-xs sm:text-sm font-serif italic text-[var(--muted-foreground)]">
+                  {src.authors}. <span class="font-semibold text-[var(--foreground)]/80 not-italic">{src.journal}.</span>
+                  {src.doi && <span class="block sm:inline sm:ml-2 not-italic font-mono text-xs text-[var(--accent)]">DOI: {src.doi}</span>}
+                </p>
+              </div>
+
+              <!-- Summary & Key Finding -->
+              <div class="space-y-2 text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                <p>{src.summary}</p>
+                <div class="p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 text-[var(--foreground)]/90">
+                  <strong class="text-[var(--accent)] font-display uppercase tracking-wide text-xs block mb-0.5">Clinical Metric / Formula:</strong>
+                  <span class="font-mono text-xs text-[var(--foreground)]">{src.keyFinding}</span>
+                </div>
+              </div>
+
+              <!-- Applied Calculators on Real BMI -->
+              <div class="pt-3 border-t border-[var(--border)]/50 flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-bold text-[var(--foreground)] uppercase tracking-wider text-xs">Applied On Real BMI:</span>
+                {src.appliedCalculators.map(calc => (
+                  <a 
+                    href={calc.url} 
+                    class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[var(--muted)] text-[var(--foreground)] hover:text-[var(--accent)] hover:border-[var(--accent)]/40 border border-[var(--border)] transition-colors font-semibold"
+                  >
+                    <span>{calc.name}</span>
+                    <span class="text-[var(--accent)]">→</span>
+                  </a>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
+
       </div>
     </PageShell>
 </Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.source-tab');
+    const cards = document.querySelectorAll('.source-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.getAttribute('data-filter');
+
+        // Update active tab styles
+        tabs.forEach(t => {
+          t.classList.remove('bg-[var(--accent)]', 'text-white');
+          t.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+        });
+        tab.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+        tab.classList.add('bg-[var(--accent)]', 'text-white');
+
+        // Filter cards
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
