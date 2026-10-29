@@ -15,7 +15,7 @@ export interface WorkedExample {
 
 const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: string; input: string; steps: string; result: string; interp: string; disc: string }> = {
   en: {
-    eyebrow: "Verified Worked Example",
+    eyebrow: "Step-by-Step Calculation Example",
     title: "Step-by-Step Calculation & Educational Interpretation",
     subtitle: "See how this formula works step by step with sample measurements and clear health ranges.",
     input: "Sample Input Parameters",
@@ -25,9 +25,9 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
     disc: "Educational Notice: This calculation is an estimate for educational use, not medical advice."
   },
   es: {
-    eyebrow: "Ejemplo Práctico Verificado",
+    eyebrow: "Ejemplo Práctico Paso a Paso",
     title: "Cálculo Paso a Paso e Interpretación Educativa",
-    subtitle: "Examina una demostración detallada paso a paso que ilustra la aplicación práctica de las fórmulas clínicas y la interpretación del resultado.",
+    subtitle: "Examina una demostración detallada paso a paso que ilustra la aplicación práctica de las fórmulas matemáticas y la interpretación del resultado.",
     input: "Parámetros de Entrada de Muestra",
     steps: "Pasos de Derivación Matemática",
     result: "Resultado de Referencia Calculado",
@@ -35,9 +35,9 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
     disc: "Aviso: Cálculo de referencia educativa; no constituye un diagnóstico médico individualizado ni una prescripción clínica."
   },
   fr: {
-    eyebrow: "Exemple Pratique Vérifié",
+    eyebrow: "Exemple Pratique Étape par Étape",
     title: "Calcul Étape par Étape et Interprétation Éducative",
-    subtitle: "Découvrez une démonstration mathématique transparente étape par étape illustrant l'application des équations de référence et l'interprétation clinique.",
+    subtitle: "Découvrez une démonstration mathématique transparente étape par étape illustrant l'application des équations de référence et l'interprétation des résultats.",
     input: "Paramètres d'Entrée Types",
     steps: "Étapes de Dérivation Mathématique",
     result: "Résultat de Référence Obtenu",
@@ -45,7 +45,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
     disc: "Avis : Calcul de référence purement éducatif ; ne constitue en aucun cas un diagnostic médical ou une prescription."
   },
   de: {
-    eyebrow: "Verifiziertes Rechenbeispiel",
+    eyebrow: "Schritt-für-Schritt-Rechenbeispiel",
     title: "Schritt-für-Schritt-Berechnung & Einordnung",
     subtitle: "Verfolgen Sie eine transparente Beispielrechnung, die veranschaulicht, wie die Formelwerte mathematisch abgeleitet und physiologisch eingeordnet werden.",
     input: "Beispiel-Eingabeparameter",
@@ -55,7 +55,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
     disc: "Hinweis: Nur zur gesundheitlichen Orientierung; keine individuelle medizinische Diagnose oder Therapieempfehlung."
   },
   ko: {
-    eyebrow: "검증된 단계별 계산 예시",
+    eyebrow: "단계별 계산 예시",
     title: "단계별 산출 과정 및 건강 참조 해석",
     subtitle: "실제 신체 계측 입력값이 공식에 따라 어떻게 산출되는지 단계별 유도 과정과 공중보건 참조 범위 해석 지침을 확인하세요.",
     input: "기준 입력 파라미터 예시",
@@ -65,7 +65,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
     disc: "알림: 본 결과는 대중 보건 스크리닝 목적의 교육용 참고치이며, 전문의의 개별 진단이나 처방을 대신하지 않습니다."
   },
   hi: {
-    eyebrow: "सत्यापित व्यावहारिक उदाहरण",
+    eyebrow: "चरण-दर-चरण गणना उदाहरण",
     title: "चरण-दर-चरण गणना एवं स्वास्थ्य व्याख्या",
     subtitle: "एक स्पष्ट चरण-दर-चरण गणना उदाहरण देखें जो दिखाता है कि इनपुट मापों को आधिकारिक सूत्रों और स्वास्थ्य संदर्भ श्रेणियों में कैसे लागू किया जाता है।",
     input: "नमूना इनपुट मान",

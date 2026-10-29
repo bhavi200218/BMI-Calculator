@@ -610,7 +610,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
     },
     "contentHtml": {
       "en": `
-      <h2>Waist-to-Hip Ratio (WHR): Clinical Protocol and Diagnostic Value</h2>
+      <h2>Waist-to-Hip Ratio (WHR): Measurement Guidelines and Health Value</h2>
       <p>While Body Mass Index evaluates overall weight relative to height, it provides zero insight into where fat is stored on the body. Clinical cardiology and endocrinology recognize that <strong>fat distribution matters far more than total scale weight</strong> in predicting cardiovascular events, stroke, and metabolic syndrome. The <strong>Waist-to-Hip Ratio (WHR)</strong> is the gold-standard epidemiological measurement for distinguishing android (abdominal/apple) from gynoid (gluteofemoral/pear) fat distribution.</p>
 
       <h2>Official WHO and International Diabetes Federation (IDF) Risk Thresholds</h2>

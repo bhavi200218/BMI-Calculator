@@ -1,14 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
-import HeroBmiInstantCalculator from '../../components/HeroBmiInstantCalculator.astro';
-import UpperEvidenceCenter from '../../components/UpperEvidenceCenter.astro';
-import HeroQuickLaunch from '../../components/HeroQuickLaunch.astro';
-import PopularHealthTopics from '../../components/PopularHealthTopics.astro';
+import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
 import FeaturedResearchGuides from '../../components/FeaturedResearchGuides.astro';
 import LatestArticles from '../../components/LatestArticles.astro';
-import UnderstandNumbersSection from '../../components/UnderstandNumbersSection.astro';
-import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
 import HealthContent from '../../components/HealthContent.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
 import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
@@ -22,7 +17,7 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 	
 	<main class="pb-4 relative overflow-x-hidden">
 
-		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
+		<!-- ═══════════════════  1. HERO & MAIN HEADLINE  ═══════════════════ -->
 		<section class="pt-24 md:pt-28 pb-8 md:pb-12 px-4 md:px-6">
 			<div class="max-w-7xl mx-auto space-y-8">
 
@@ -48,13 +43,8 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 					</p>
 				</div>
 
-				<!-- Instant Quick BMI Calculator (First Screen Priority) -->
-				<div class="max-w-4xl mx-auto">
-					<HeroBmiInstantCalculator lang="hi" />
-				</div>
-
 				<!-- Stats Strip -->
-				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 pt-2">
+				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 pt-1">
 					{[
 						'18+ स्वास्थ्य कैलकुलेटर',
 						'30+ शोध एवं गाइड',
@@ -71,35 +61,43 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  SECTION 2: POPULAR CALCULATORS LAUNCHPAD  ═══════════════════ -->
-		<section id="popular-calculators" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/10 scroll-mt-20">
-			<div class="max-w-7xl mx-auto">
-				<HeroQuickLaunch lang="hi" />
+		<!-- ═══════════════════  2. COMPLETE INTERACTIVE DIRECTORY (TOP POSITION)  ═══════════════════ -->
+		<section id="calculators" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/10 scroll-mt-20">
+			<div class="max-w-7xl mx-auto space-y-8">
+				<div class="text-center max-w-3xl mx-auto space-y-3">
+					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+						संपूर्ण इंटरैक्टिव निर्देशिका
+					</div>
+					<h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+						सभी 18+ स्वास्थ्य एवं फिटनेस कैलकुलेटर
+					</h2>
+					<p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+						हमारे संपूर्ण स्वास्थ्य टूल्स का उपयोग करें — 100% ब्राउज़र-आधारित एवं शून्य स्वास्थ्य डेटा संग्रहण।
+					</p>
+				</div>
+
+				<HomepageHubWrapper lang="hi" />
 			</div>
 		</section>
 
-		<!-- ═══════════════════  SECTION 3: FEATURED RESEARCH GUIDES & ARTICLES  ═══════════════════ -->
-		<div id="featured-guides" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
+		<!-- ═══════════════════  3. 📚 RESEARCH GUIDES  ═══════════════════ -->
+		<section id="featured-guides" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
 				<FeaturedResearchGuides lang="hi" />
 			</div>
-		</div>
+		</section>
 
-		<div id="latest-articles" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
-			<div class="max-w-7xl mx-auto">
-				<LatestArticles lang="hi" limit={6} />
-			</div>
-		</div>
-
-		<!-- ═══════════════════  SECTION 4: WHY PEOPLE CHOOSE REAL BMI & RESEARCH FOUNDATION  ═══════════════════ -->
+		<!-- ═══════════════════  4. ⭐ TRUST SIGNALS & STANDARDS  ═══════════════════ -->
+		<!-- WHY PEOPLE CHOOSE REAL BMI -->
 		<section class="px-4 md:px-6 py-12 md:py-16 content-auto border-t border-[var(--border)]/40 space-y-12">
-			<div class="max-w-7xl mx-auto">
-				<div class="mb-10 sm:mb-12 space-y-3">
+			<div class="max-w-7xl mx-auto space-y-10">
+				<div class="space-y-3 text-center sm:text-left max-w-3xl">
 					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">पारदर्शी कैलकुलेटर विशेषताएं</p>
 					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
 						आपके स्वास्थ्य लक्ष्यों के लिए स्पष्टता
 					</h2>
-					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
+					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
 						चाहे आप अपनी प्रगति ट्रैक कर रहे हों या पोषण योजना बना रहे हों, Real BMI आपको प्रकाशित दिशानिर्देशों पर आधारित तेज़ और व्यावहारिक अनुमान प्रदान करता है।
 					</p>
 				</div>
@@ -111,7 +109,7 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 						{ title: 'सार्वजनिक मानकों पर आधारित', description: 'परिणामों को बेहतर संदर्भ और समझ के लिए डब्ल्यूएचओ और सीडीसी संदर्भ सीमाओं के साथ प्रस्तुत किया जाता है।' },
 						{ title: 'दैनिक स्वास्थ्य योजना के लिए उपयोगी', description: 'स्पष्ट गणना विधियों के साथ फिटनेस मेट्रिक्स, पोषण अनुमान और शरीर संरचना संदर्भों को समझें।' },
 					].map(item => (
-						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
+						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-3 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-sm hover:-translate-y-0.5">
 							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
 							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
 								{item.description}
@@ -131,55 +129,28 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 						</a>
 					</div>
 				</div>
-			</div>
 
-			<!-- Research Literature Matrix & Evidence Library -->
-			<div class="max-w-7xl mx-auto pt-6">
-				<UpperEvidenceCenter lang="hi" />
-			</div>
-		</section>
-
-		<!-- ═══════════════════  SECTION 5: COMPLETE 18+ CALCULATOR SUITE  ═══════════════════ -->
-		<section id="calculators" class="px-4 md:px-6 py-12 md:py-16 scroll-mt-24 border-t border-[var(--border)]/60 bg-[var(--card)]/30 content-auto">
-			<div id="all-calculators" class="scroll-mt-24" aria-hidden="true"></div>
-			<div class="max-w-7xl mx-auto space-y-8">
-				<div class="text-center max-w-3xl mx-auto space-y-3">
-					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
-						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
-						संपूर्ण इंटरैक्टिव निर्देशिका
-					</div>
-					<h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-						सभी 18+ स्वास्थ्य एवं फिटनेस कैलकुलेटर
-					</h2>
-					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-						हमारे संपूर्ण स्वास्थ्य और फिटनेस टूल्स सूट का अन्वेषण करें — 100% ब्राउज़र-आधारित एवं शून्य स्वास्थ्य डेटा संग्रहण।
-					</p>
+				<!-- Editorial & Research Verification Banner -->
+				<div class="pt-4">
+					<MedicalEEATBanner lang="hi" />
 				</div>
-				<HomepageHubWrapper lang="hi" />
 			</div>
 		</section>
 
-		<!-- ═══════════════════  SECTION 6: HEALTH TOPICS & FOUNDATIONS  ═══════════════════ -->
-		<div id="popular-topics" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
+		<!-- ═══════════════════  5. 📖 LATEST ARTICLES  ═══════════════════ -->
+		<section id="latest-articles" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
-				<PopularHealthTopics lang="hi" />
+				<LatestArticles lang="hi" limit={6} />
 			</div>
-		</div>
+		</section>
 
-		<div class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40">
-			<div class="max-w-7xl mx-auto">
-				<UnderstandNumbersSection lang="hi" />
-			</div>
-		</div>
-
-		<!-- ═══════════════════  SECTION 7: STANDARDS, METHODOLOGY & E-E-A-T  ═══════════════════ -->
-		<div class="px-4 md:px-6 pt-8 pb-14 content-auto border-t border-[var(--border)]/40">
+		<!-- ═══════════════════  6. ❓ REFERENCE STANDARDS & FAQ  ═══════════════════ -->
+		<section id="faq-standards" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
 			<div class="max-w-7xl mx-auto space-y-12">
 				<HealthContent lang="hi" />
 				<EmbedWidgetBox lang="hi" />
-				<MedicalEEATBanner lang="hi" />
 			</div>
-		</div>
+		</section>
 
 	</main>
 </Layout>
