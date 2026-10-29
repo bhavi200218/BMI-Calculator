@@ -30,12 +30,12 @@ const cleanPlainText = rawContentHtml.replace(/<[^>]+>/g, '').trim();
 const plainTextLen = cleanPlainText.length;
 const wordCount = cleanPlainText ? cleanPlainText.split(/\s+/).filter(Boolean).length : 0;
 const clinicalBadge: Record<string, string> = {
-  en: 'International Clinical Reference Data',
-  es: 'Datos de Referencia Clínica Internacional',
-  fr: 'Données de Référence Clinique Internationale',
-  de: 'Internationale klinische Referenzdaten',
-  ko: '국제 임상 참조 데이터',
-  hi: 'अंतर्राष्ट्रीय नैदानिक संदर्भ डेटा'
+  en: 'Evidence-Based Reference Standards',
+  es: 'Estándares de Referencia Basados en Evidencia',
+  fr: 'Normes de Référence Fondées sur des Preuves',
+  de: 'Evidenzbasierte Referenzstandards',
+  ko: '근거 기반 건강 참조 표준',
+  hi: 'प्रमाण-आधारित स्वास्थ्य संदर्भ मानक'
 };
 const badgeLabel = clinicalBadge[lang] || clinicalBadge.en;
 
@@ -91,12 +91,12 @@ const blogLabels = {
 };
 
 const bylineLabels: Record<string, { writtenBy: string; author: string; role: string; published: string; updated: string }> = {
-  en: { writtenBy: "Written by", author: "Real BMI Editorial Team", role: "Clinical Reference & Health Calculation Staff", published: "Published", updated: "Updated" },
-  es: { writtenBy: "Escrito por", author: "Equipo Editorial Real BMI", role: "Equipo de Referencia Clínica y Cálculos", published: "Publicado", updated: "Actualizado" },
-  fr: { writtenBy: "Rédigé par", author: "Équipe Éditoriale Real BMI", role: "Équipe de Référence Clinique et de Calcul", published: "Publié le", updated: "Mis à jour" },
-  de: { writtenBy: "Verfasst von", author: "Real BMI Redaktionsteam", role: "Klinische Referenz & Rechenredaktion", published: "Veröffentlicht", updated: "Aktualisiert" },
-  ko: { writtenBy: "작성자", author: "Real BMI 편집팀", role: "임상 참고 및 건강 지표 계산팀", published: "게시일", updated: "업데이트" },
-  hi: { writtenBy: "लेखक", author: "Real BMI संपादकीय टीम", role: "नैदानिक संदर्भ एवं स्वास्थ्य गणना टीम", published: "प्रकाशित", updated: "अद्यतित" }
+  en: { writtenBy: "Written by", author: "Real BMI Editorial Team", role: "Health Informatics & Research Review Staff", published: "Published", updated: "Updated" },
+  es: { writtenBy: "Escrito por", author: "Equipo Editorial Real BMI", role: "Equipo de Informática de Salud e Investigación", published: "Publicado", updated: "Actualizado" },
+  fr: { writtenBy: "Rédigé par", author: "Équipe Éditoriale Real BMI", role: "Équipe d'Informatique de Santé et de Recherche", published: "Publié le", updated: "Mis à jour" },
+  de: { writtenBy: "Verfasst von", author: "Real BMI Redaktionsteam", role: "Gesundheitsinformatik- & Forschungsteam", published: "Veröffentlicht", updated: "Aktualisiert" },
+  ko: { writtenBy: "작성자", author: "Real BMI 편집팀", role: "건강정보학 및 연구 리뷰팀", published: "게시일", updated: "업데이트" },
+  hi: { writtenBy: "लेखक", author: "Real BMI संपादकीय टीम", role: "स्वास्थ्य सूचना विज्ञान एवं अनुसंधान समीक्षा टीम", published: "प्रकाशित", updated: "अद्यतित" }
 };
 const byline = bylineLabels[lang] || bylineLabels.en;
 ---

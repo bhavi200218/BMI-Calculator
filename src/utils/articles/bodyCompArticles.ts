@@ -6,12 +6,12 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
     "datePublished": "2026-07-01",
     "dateModified": "2026-10-28",
     "title": {
-      "en": "BMI vs Body Fat Percentage: Key Differences & Clinical Meaning",
-      "hi": "बीएमआई बनाम बॉडी फैट प्रतिशत: मुख्य अंतर व स्वास्थ्य महत्व",
-      "ko": "BMI vs 체지방률: 측정 방식의 근본적 차이와 임상적 해석",
-      "de": "BMI vs. Körperfettanteil: Unterschiede & klinische Bedeutung",
-      "es": "IMC vs Porcentaje de Grasa Corporal: Diferencias Clínicas",
-      "fr": "IMC vs Pourcentage de Graisse : Différences et Diagnostic"
+      "en": "BMI vs Body Fat Percentage: Key Differences & Research Meaning",
+      "hi": "बीएमआई बनाम बॉडी फैट प्रतिशत: मुख्य अंतर व वैज्ञानिक महत्व",
+      "ko": "BMI vs 체지방률: 측정 방식의 근본적 차이와 연구적 해석",
+      "de": "BMI vs. Körperfettanteil: Unterschiede & wissenschaftliche Bedeutung",
+      "es": "IMC vs Porcentaje de Grasa Corporal: Diferencias y Significado Científico",
+      "fr": "IMC vs Pourcentage de Graisse : Différences et Portée Scientifique"
     },
     "category": {
       "en": "Body Composition Analysis",
@@ -270,17 +270,17 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "fr": "Méthodes de Mesure"
     },
     "description": {
-      "en": "Comprehensive clinical comparison of body fat measurement methods. Explore DEXA scans, hydrostatic weighing, skinfold calipers, the U.S. Navy circumference method, and bioimpedance scales.",
+      "en": "Comprehensive research-backed comparison of body fat measurement methods. Explore DEXA scans, hydrostatic weighing, skinfold calipers, the U.S. Navy circumference method, and bioimpedance scales.",
       "hi": "बॉडी फैट मापने की 5 प्रमुख विधियों का तुलनात्मक विश्लेषण। जानें डेक्सा स्कैन, हाइड्रोस्टैटिक वेइंग, स्किनफोल्ड कैलिपर्स, नेवी फॉर्मूला और बीआईए स्केल्स की सटीकता।",
-      "ko": "체지방률을 정밀하게 측정하는 5가지 임상 방법(DEXA 스캔, 수중 체중 측정법, 캘리퍼 피하지방 측정, 미 해군 신체둘레 공식, 생체전기임피던스 BIA)의 정확도와 비용을 전격 비교합니다.",
+      "ko": "체지방률을 측정하는 5가지 과학적 방법(DEXA 스캔, 수중 체중 측정법, 캘리퍼 피하지방 측정, 미 해군 신체둘레 공식, 생체전기임피던스 BIA)의 정확도와 접근성을 전격 비교합니다.",
       "de": "Wissenschaftlicher Vergleich der 5 Methoden zur Körperfettmessung: DEXA, hydrostatisches Wiegen, Hautfalten-Caliper, US-Navy-Formel und Bioimpedanzwaagen.",
       "es": "Comparativa de métodos para medir grasa corporal: DEXA, pesaje hidrostático, plicómetros, método de la Marina de EE. UU. y básculas de bioimpedancia.",
-      "fr": "Comparatif médical des méthodes de mesure de la graisse corporelle : scanner DEXA, pesée hydrostatique, pince à plis cutanés et balance impédancemètre."
+      "fr": "Comparatif scientifique des méthodes de mesure de la graisse corporelle : scanner DEXA, pesée hydrostatique, pince à plis cutanés et balance impédancemètre."
     },
     "contentHtml": {
       "en": `
-      <h2>Clinical Modalities for Measuring Human Body Fat Percentage</h2>
-      <p>Accurately determining human body fat percentage requires specialized diagnostic modalities. Each measurement technique balances clinical precision against cost, radiation exposure, and accessibility. Below, we compare the five primary modalities used in sports science and clinical medicine.</p>
+      <h2>Scientific Modalities for Measuring Human Body Fat Percentage</h2>
+      <p>Accurately determining human body fat percentage requires specialized measurement modalities. Each technique balances precision against cost, practical convenience, and accessibility. Below, we compare the five primary modalities used in sports science and health research.</p>
 
       <h2>The 5 Primary Body Fat Measurement Modalities Compared</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
@@ -288,7 +288,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
           <thead>
             <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
               <th class="p-3 border border-[#e6e6e6]">Modality</th>
-              <th class="p-3 border border-[#e6e6e6]">Clinical Accuracy</th>
+              <th class="p-3 border border-[#e6e6e6]">Accuracy Benchmark</th>
               <th class="p-3 border border-[#e6e6e6]">Underlying Mechanism</th>
               <th class="p-3 border border-[#e6e6e6]">Primary Limitation</th>
             </tr>
@@ -445,19 +445,19 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "fr": "Composition Corporelle"
     },
     "description": {
-      "en": "Clinical guide to Lean Body Mass (LBM). Compare Boer, James, and Hume formulas, understand step-by-step calculations, and connect LBM to BMR with Katch-McArdle.",
-      "hi": "लीन बॉडी मास (LBM) की क्लिनिकल गाइड। बोअर, जेम्स और ह्यूम सूत्रों की तुलना, चरणबद्ध गणना और कैच-मैकआर्डल सूत्र द्वारा बीएमआर का निर्धारण।",
-      "ko": "제지방량(LBM)을 정밀 산출하는 3대 의학 공식(Boer, James, Hume)의 장단점과 Katch-McArdle 기초대사량 공식을 심층 분석합니다.",
+      "en": "Evidence-based guide to Lean Body Mass (LBM). Compare Boer, James, and Hume formulas, understand step-by-step calculations, and connect LBM to BMR with Katch-McArdle.",
+      "hi": "लीन बॉडी मास (LBM) की प्रमाण-आधारित गाइड। बोअर, जेम्स और ह्यूम सूत्रों की तुलना, चरणबद्ध गणना और कैच-मैकआर्डल सूत्र द्वारा बीएमआर का निर्धारण।",
+      "ko": "제지방량(LBM)을 산출하는 3대 공식(Boer, James, Hume)의 장단점과 Katch-McArdle 기초대사량 공식을 심층 분석합니다.",
       "de": "Leitfaden zur fettfreien Magermasse (LBM): Boer, James und Hume Formeln im Vergleich sowie die Katch-McArdle-Stoffwechselgleichung.",
-      "es": "Guía clínica de masa magra corporal (LBM): comparativa de las fórmulas de Boer, James y Hume, y cómo calcular el metabolismo basal con Katch-McArdle.",
-      "fr": "Guide médical de la masse maigre (LBM) : formules de Boer, James et Hume, calcul pas à pas et lien avec le métabolisme de base (Katch-McArdle)."
+      "es": "Guía basada en evidencia de masa magra corporal (LBM): comparativa de las fórmulas de Boer, James y Hume, y cómo calcular el metabolismo basal con Katch-McArdle.",
+      "fr": "Guide de référence de la masse maigre (LBM) : formules de Boer, James et Hume, calcul pas à pas et lien avec le métabolisme de base (Katch-McArdle)."
     },
     "contentHtml": {
       "en": `
-      <h2>The Clinical Significance of Lean Body Mass (LBM)</h2>
+      <h2>The Significance of Lean Body Mass (LBM)</h2>
       <p><strong>Lean Body Mass (LBM)</strong>—also referred to as Fat-Free Mass (FFM)—represents the total weight of all non-adipose tissues in the human body: skeletal muscle, vital organs (heart, liver, kidneys, brain), bone mineral structure, and intracellular and extracellular fluids. Unlike total scale weight, LBM is the primary physiological driver of resting basal metabolic rate (BMR), systemic glucose disposal, and physical longevity.</p>
 
-      <h2>The Three Primary Clinical LBM Equations</h2>
+      <h2>The Three Primary LBM Equations</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
@@ -465,7 +465,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
               <th class="p-3 border border-[#e6e6e6]">Formula</th>
               <th class="p-3 border border-[#e6e6e6] text-blue-500">Men Equation (W in kg, H in cm)</th>
               <th class="p-3 border border-[#e6e6e6] text-rose-500">Women Equation (W in kg, H in cm)</th>
-              <th class="p-3 border border-[#e6e6e6]">Clinical Application</th>
+              <th class="p-3 border border-[#e6e6e6]">Primary Application</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6] font-mono text-xs">
@@ -742,27 +742,27 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "fr": "Formules du Poids Idéal : Comparatif Devine, Robinson, Miller et Hamwi"
     },
     "category": {
-      "en": "Clinical Pharmacokinetics & Weight",
-      "hi": "क्लिनिकल फार्माकोकाइनेटिक्स व वजन",
-      "ko": "임상 약동학 및 적정 체중",
+      "en": "Pharmacokinetics & Weight Formulas",
+      "hi": "फार्माकोकाइनेटिक्स व वजन फॉर्मूले",
+      "ko": "약동학 및 적정 체중 공식",
       "de": "Pharmakokinetik & Idealgewicht",
-      "es": "Farmacocinética y Peso Ideal",
+      "es": "Farmacocinética y Fórmulas de Peso",
       "fr": "Pharmacocinétique et Poids Idéal"
     },
     "description": {
-      "en": "Clinical comparison of the four major Ideal Body Weight (IBW) equations: Devine, Robinson, Miller, and Hamwi. Learn how hospitals dose medications and adjust weight for obesity.",
-      "hi": "चार प्रमुख आदर्श वजन (IBW) फॉर्मूलों की तुलना। जानें कि अस्पताल दवाओं की सही खुराक निर्धारित करने के लिए डिवाइन समीकरण का उपयोग कैसे करते हैं।",
-      "ko": "병원 임상 투약 및 인공호흡기 설정에 사용되는 4대 이상 체중(IBW) 공식(Devine, Robinson, Miller, Hamwi)의 산출식과 비만 환자를 위한 조정 체중(AdjBW)을 비교합니다.",
-      "de": "Klinischer Vergleich der 4 Idealgewicht-Formeln: Devine, Robinson, Miller und Hamwi sowie die Anwendung des korrigierten Körpergewichts.",
-      "es": "Comparativa de las cuatro fórmulas de peso ideal clínico: Devine, Robinson, Miller y Hamwi, y cómo calcular el peso corporal ajustado en obesidad.",
-      "fr": "Comparatif clinique des 4 formules de poids idéal (Devine, Robinson, Miller, Hamwi) et calcul du poids ajusté pour la posologie médicale."
+      "en": "Scientific comparison of the four major Ideal Body Weight (IBW) equations: Devine, Robinson, Miller, and Hamwi. Learn how research formulas calculate reference weight and adjust for body composition.",
+      "hi": "चार प्रमुख आदर्श वजन (IBW) फॉर्मूलों की वैज्ञानिक तुलना। डिवाइन, रॉबिन्सन, मिलर और हामवी समीकरणों के माध्यम से संदर्भ वजन की गणना समझें।",
+      "ko": "4대 이상 체중(IBW) 공식(Devine, Robinson, Miller, Hamwi)의 산출식과 신체 구성을 반영한 조정 체중(AdjBW)의 과학적 비교 분석.",
+      "de": "Wissenschaftlicher Vergleich der 4 Idealgewicht-Formeln: Devine, Robinson, Miller und Hamwi sowie die Anwendung des Referenzgewichts.",
+      "es": "Comparativa científica de las cuatro fórmulas de peso ideal: Devine, Robinson, Miller y Hamwi, y cómo calcular el peso corporal de referencia.",
+      "fr": "Comparatif scientifique des 4 formules de poids idéal (Devine, Robinson, Miller, Hamwi) et calcul du poids de référence selon la composition corporelle."
     },
     "contentHtml": {
       "en": `
-      <h2>The History and Clinical Science of Ideal Body Weight (IBW)</h2>
-      <p>In medical pharmacokinetics, toxicology, and nutritional therapy, healthcare professionals frequently need to determine an individual's <strong>Ideal Body Weight (IBW)</strong>. While standard Body Mass Index provides a broad healthy weight range spanning nearly 20 kilograms, clinical situations such as mechanical ventilation tidal volume calculation, chemotherapy dosing, and aminoglycoside antibiotic administration require exact single-number targets based on physiological lung volume and lean tissue distribution.</p>
+      <h2>The History and Science of Ideal Body Weight (IBW)</h2>
+      <p>In pharmacokinetics, toxicology, and nutritional science, researchers frequently determine an individual's <strong>Ideal Body Weight (IBW)</strong>. While standard Body Mass Index provides a broad healthy weight range spanning nearly 20 kilograms, physiological reference models such as ventilator tidal volumes and narrow-index compounds require specific benchmarks based on stature and lean tissue distribution.</p>
 
-      <h2>The Four Major Clinical Ideal Body Weight Formulas</h2>
+      <h2>The Four Major Ideal Body Weight Formulas</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
@@ -770,7 +770,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
               <th class="p-3 border border-[#e6e6e6]">Formula</th>
               <th class="p-3 border border-[#e6e6e6] text-blue-500">Men Equation (Height &gt; 5 ft / 60 inches)</th>
               <th class="p-3 border border-[#e6e6e6] text-rose-500">Women Equation (Height &gt; 5 ft / 60 inches)</th>
-              <th class="p-3 border border-[#e6e6e6]">Clinical Application</th>
+              <th class="p-3 border border-[#e6e6e6]">Primary Application</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6] font-mono text-xs">

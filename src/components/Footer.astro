@@ -1,174 +1,277 @@
 ---
-import { calculators } from '../utils/calculators';
-
 const year = new Date().getFullYear();
 const { currentLocale } = Astro;
 const lang = currentLocale || 'en';
 
+interface FooterLink {
+  name: string;
+  href: string;
+}
+
 interface FooterTranslation {
   tagline: string;
-  quickLinks: string;
-  healthTools?: string;
-  legalStatus: string;
-  legalText: string;
+  colPopular: string;
+  colGuides: string;
+  colCompany: string;
+  colLegal: string;
+  viewAllTools: string;
   copyright: string;
+  teamAttribution: string;
   whoBadge: string;
   privacyBadge: string;
   privacyFooter: string;
-  teamAttribution: string;
-  links: { name: string; href: string }[];
+  popularCalculators: FooterLink[];
+  researchGuides: FooterLink[];
+  companyLinks: FooterLink[];
+  legalLinks: FooterLink[];
 }
 
 const footerTranslations: Record<string, FooterTranslation> = {
   en: {
-    tagline: 'A privacy-focused BMI calculator for educational and reference use.',
-    quickLinks: 'Quick Links',
-    healthTools: 'Health & Fitness Calculators',
-    legalStatus: 'Medical Disclaimer',
-    legalText: '',
+    tagline: 'A privacy-focused health research platform & calculation suite.',
+    colPopular: 'Popular Calculators',
+    colGuides: 'Research & Standards',
+    colCompany: 'About Real BMI',
+    colLegal: 'Policies & Legal',
+    viewAllTools: 'All 25 Tools & Methodology →',
     copyright: `© ${year} Real BMI Calculator. All rights reserved.`,
     teamAttribution: 'Educational health calculators maintained by the Real BMI Team',
     whoBadge: 'WHO & CDC Aligned',
     privacyBadge: 'Free & Privacy-Focused',
-    privacyFooter: 'Privacy-First Health Calculators',
-    links: [
+    privacyFooter: 'Client-Side Calculations',
+    popularCalculators: [
+      { name: 'BMI Calculator', href: `/en/bmi-calculator/` },
+      { name: '3D BMI Visualizer', href: `/en/3d-bmi-calculator/` },
+      { name: 'BMR Calculator', href: `/en/bmr-calculator/` },
+      { name: 'TDEE Energy Calculator', href: `/en/tdee-calculator/` },
+      { name: 'Body Fat % Calculator', href: `/en/body-fat-calculator/` },
+      { name: 'Ideal Weight Calculator', href: `/en/ideal-weight-calculator/` }
+    ],
+    researchGuides: [
+      { name: 'BMI Reference Chart', href: `/en/bmi-chart/` },
+      { name: 'Asian BMI Thresholds', href: `/en/asian-bmi-calculator/` },
+      { name: 'Healthy Weight by Height', href: `/en/healthy-weight-by-height/` },
+      { name: 'Calculation Methodology', href: `/en/methodology/` },
+      { name: 'All Articles & Guides →', href: `/en/blog/` }
+    ],
+    companyLinks: [
       { name: 'About Us', href: `/en/about/` },
-      { name: 'Articles & Guides', href: `/en/blog/` },
-      { name: 'Contact Us', href: `/en/contact/` },
       { name: 'Editorial Policy', href: `/en/editorial-policy/` },
-      { name: 'Methodology & Formulas', href: `/en/methodology/` },
       { name: 'Sources & References', href: `/en/sources/` },
+      { name: 'Contact Us', href: `/en/contact/` }
+    ],
+    legalLinks: [
       { name: 'Privacy Policy', href: `/en/privacy-policy/` },
       { name: 'Terms & Conditions', href: `/en/terms-conditions/` },
       { name: 'Medical Disclaimer', href: `/en/disclaimer/` },
-      { name: 'Cookie Policy', href: `/en/cookie-policy/` },
       { name: 'Copyright & DMCA', href: `/en/dmca-policy/` },
-    ],
+      { name: 'Cookie Policy', href: `/en/cookie-policy/` }
+    ]
   },
   es: {
-    tagline: 'Calculadoras de salud y métricas de IMC educativas basadas en los estándares de la OMS y CDC.',
-    quickLinks: 'Enlaces Rápidos',
-    healthTools: 'Herramientas de Salud',
-    legalStatus: 'Aviso Médico',
-    legalText: '',
+    tagline: 'Plataforma educativa de investigación en salud y métricas antropométricas.',
+    colPopular: 'Calculadoras Populares',
+    colGuides: 'Investigación y Estándares',
+    colCompany: 'Sobre Real BMI',
+    colLegal: 'Políticas y Legal',
+    viewAllTools: 'Ver las 25 Herramientas y Metodología →',
     copyright: `© ${year} Real BMI Calculator. Todos los derechos reservados.`,
     teamAttribution: 'Herramientas educativas de salud mantenidas por el Equipo de Real BMI',
     whoBadge: 'Alineado con OMS y CDC',
     privacyBadge: 'Gratis y Privado',
-    privacyFooter: 'Calculadoras de Salud Privadas',
-    links: [
+    privacyFooter: 'Cálculos en el Navegador',
+    popularCalculators: [
+      { name: 'Calculadora de IMC', href: `/es/bmi-calculator/` },
+      { name: 'Visualizador de IMC 3D', href: `/es/3d-bmi-calculator/` },
+      { name: 'Calculadora de TMB (BMR)', href: `/es/bmr-calculator/` },
+      { name: 'Gasto Energético (TDEE)', href: `/es/tdee-calculator/` },
+      { name: 'Porcentaje de Grasa Corporal', href: `/es/body-fat-calculator/` },
+      { name: 'Calculadora de Peso Ideal', href: `/es/ideal-weight-calculator/` }
+    ],
+    researchGuides: [
+      { name: 'Tabla de Clasificación IMC', href: `/es/bmi-chart/` },
+      { name: 'Estándar de IMC Asiático', href: `/es/asian-bmi-calculator/` },
+      { name: 'Peso Saludable según Altura', href: `/es/healthy-weight-by-height/` },
+      { name: 'Metodología de Cálculo', href: `/es/methodology/` },
+      { name: 'Todos los Artículos y Guías →', href: `/es/blog/` }
+    ],
+    companyLinks: [
       { name: 'Sobre Nosotros', href: `/es/about/` },
-      { name: 'Artículos y Guías', href: `/es/blog/` },
-      { name: 'Contacto', href: `/es/contact/` },
       { name: 'Política Editorial', href: `/es/editorial-policy/` },
-      { name: 'Metodología y Fórmulas', href: `/es/methodology/` },
       { name: 'Fuentes y Referencias', href: `/es/sources/` },
+      { name: 'Contacto', href: `/es/contact/` }
+    ],
+    legalLinks: [
       { name: 'Política de Privacidad', href: `/es/privacy-policy/` },
       { name: 'Términos y Condiciones', href: `/es/terms-conditions/` },
       { name: 'Aviso Médico', href: `/es/disclaimer/` },
-      { name: 'Política de Cookies', href: `/es/cookie-policy/` },
       { name: 'Derechos de Autor y DMCA', href: `/es/dmca-policy/` },
-    ],
+      { name: 'Política de Cookies', href: `/es/cookie-policy/` }
+    ]
   },
   fr: {
-    tagline: 'Calculatrices de santé et métriques IMC basées sur les normes OMS et CDC.',
-    quickLinks: 'Liens Rapides',
-    healthTools: 'Calculateurs de Santé',
-    legalStatus: 'Avertissement Médical',
-    legalText: '',
+    tagline: 'Plateforme éducative de recherche en santé et calculatrices anthropométriques.',
+    colPopular: 'Calculateurs Populaires',
+    colGuides: 'Recherche & Normes',
+    colCompany: 'À Propos de Real BMI',
+    colLegal: 'Politiques & Mentions',
+    viewAllTools: 'Voir les 25 Outils et Méthodologie →',
     copyright: `© ${year} Real BMI Calculator. Tous droits réservés.`,
     teamAttribution: 'Outils de santé éducatifs maintenus par l’Équipe Real BMI',
     whoBadge: 'Aligné OMS & CDC',
     privacyBadge: 'Gratuit & Confidentiel',
-    privacyFooter: 'Calculateurs de Santé Confidentiels',
-    links: [
+    privacyFooter: 'Calculs Côté Client',
+    popularCalculators: [
+      { name: 'Calculateur d\'IMC', href: `/fr/bmi-calculator/` },
+      { name: 'Visualiseur IMC 3D', href: `/fr/3d-bmi-calculator/` },
+      { name: 'Calculateur Métabolisme (BMR)', href: `/fr/bmr-calculator/` },
+      { name: 'Dépense Énergétique (TDEE)', href: `/fr/tdee-calculator/` },
+      { name: 'Masse Grasse Corporelle', href: `/fr/body-fat-calculator/` },
+      { name: 'Calculateur de Poids Idéal', href: `/fr/ideal-weight-calculator/` }
+    ],
+    researchGuides: [
+      { name: 'Tableau de Référence IMC', href: `/fr/bmi-chart/` },
+      { name: 'Seuils de l\'IMC Asiatique', href: `/fr/asian-bmi-calculator/` },
+      { name: 'Poids Idéal selon la Taille', href: `/fr/healthy-weight-by-height/` },
+      { name: 'Méthodologie de Calcul', href: `/fr/methodology/` },
+      { name: 'Tous les Articles & Guides →', href: `/fr/blog/` }
+    ],
+    companyLinks: [
       { name: 'À Propos', href: `/fr/about/` },
-      { name: 'Articles et Guides', href: `/fr/blog/` },
-      { name: 'Contact', href: `/fr/contact/` },
       { name: 'Politique Éditoriale', href: `/fr/editorial-policy/` },
-      { name: 'Méthodologie et Formules', href: `/fr/methodology/` },
       { name: 'Sources et Références', href: `/fr/sources/` },
+      { name: 'Contact', href: `/fr/contact/` }
+    ],
+    legalLinks: [
       { name: 'Politique de Confidentialité', href: `/fr/privacy-policy/` },
       { name: 'Conditions Générales', href: `/fr/terms-conditions/` },
       { name: 'Avertissement Médical', href: `/fr/disclaimer/` },
-      { name: 'Politique de Cookies', href: `/fr/cookie-policy/` },
       { name: 'Droits d\'Auteur & DMCA', href: `/fr/dmca-policy/` },
-    ],
+      { name: 'Politique de Cookies', href: `/fr/cookie-policy/` }
+    ]
   },
   de: {
-    tagline: 'Gesundheitsrechner & BMI-Analysen nach WHO- und CDC-Standards.',
-    quickLinks: 'Schnelllinks',
-    healthTools: 'Gesundheits-Rechner',
-    legalStatus: 'Medizinischer Hinweis',
-    legalText: '',
+    tagline: 'Forschungsbasierte Plattform für Gesundheitsmetriken & anthropometrische Modelle.',
+    colPopular: 'Beliebte Rechner',
+    colGuides: 'Forschung & Richtwerte',
+    colCompany: 'Über Real BMI',
+    colLegal: 'Richtlinien & Rechtliches',
+    viewAllTools: 'Alle 25 Rechenmodelle & Methodik →',
     copyright: `© ${year} Real BMI Calculator. Alle Rechte vorbehalten.`,
     teamAttribution: 'Evidenzbasierte Gesundheitsrechner betreut vom Real BMI Team',
     whoBadge: 'WHO- & CDC-Konform',
     privacyBadge: 'Kostenlos & Datenschutz',
-    privacyFooter: 'Datenschutz-Gesundheitsrechner',
-    links: [
+    privacyFooter: 'Lokale Browser-Berechnungen',
+    popularCalculators: [
+      { name: 'BMI-Rechner', href: `/de/bmi-calculator/` },
+      { name: '3D-BMI-Visualisierer', href: `/de/3d-bmi-calculator/` },
+      { name: 'Grundumsatz-Rechner (BMR)', href: `/de/bmr-calculator/` },
+      { name: 'Gesamtenergiebedarf (TDEE)', href: `/de/tdee-calculator/` },
+      { name: 'Körperfettrechner', href: `/de/body-fat-calculator/` },
+      { name: 'Idealgewichtsrechner', href: `/de/ideal-weight-calculator/` }
+    ],
+    researchGuides: [
+      { name: 'BMI-Klassifikationstabelle', href: `/de/bmi-chart/` },
+      { name: 'Asiatische BMI-Richtwerte', href: `/de/asian-bmi-calculator/` },
+      { name: 'Idealgewicht nach Größe', href: `/de/healthy-weight-by-height/` },
+      { name: 'Berechnungsmethodik', href: `/de/methodology/` },
+      { name: 'Alle Artikel & Ratgeber →', href: `/de/blog/` }
+    ],
+    companyLinks: [
       { name: 'Über Uns', href: `/de/about/` },
-      { name: 'Artikel & Ratgeber', href: `/de/blog/` },
-      { name: 'Kontakt', href: `/de/contact/` },
       { name: 'Redaktionsrichtlinie', href: `/de/editorial-policy/` },
-      { name: 'Methodik & Formeln', href: `/de/methodology/` },
       { name: 'Quellen & Referenzen', href: `/de/sources/` },
+      { name: 'Kontakt', href: `/de/contact/` }
+    ],
+    legalLinks: [
       { name: 'Datenschutz', href: `/de/privacy-policy/` },
       { name: 'Nutzungsbedingungen', href: `/de/terms-conditions/` },
       { name: 'Medizinischer Hinweis', href: `/de/disclaimer/` },
-      { name: 'Cookie-Richtlinie', href: `/de/cookie-policy/` },
       { name: 'Urheberrecht & DMCA', href: `/de/dmca-policy/` },
-    ],
+      { name: 'Cookie-Richtlinie', href: `/de/cookie-policy/` }
+    ]
   },
   ko: {
-    tagline: 'WHO 및 CDC 표준에 기반한 개인정보 보호 건강 계산기.',
-    quickLinks: '빠른 링크',
-    healthTools: '건강 계산기 도구',
-    legalStatus: '의학적 면책조항',
-    legalText: '',
+    tagline: 'WHO 및 CDC 기준에 기반한 프라이버시 중심 건강 연구 플랫폼.',
+    colPopular: '인기 건강 계산기',
+    colGuides: '연구 및 참조 기준',
+    colCompany: 'Real BMI 소개',
+    colLegal: '정책 및 법적 고지',
+    viewAllTools: '전체 25개 도구 및 방법론 →',
     copyright: `© ${year} Real BMI Calculator. 모든 권리 보유.`,
     teamAttribution: 'Real BMI 팀이 연구 및 유지 관리하는 교육용 건강 도구',
     whoBadge: 'WHO 및 CDC 지침 준수',
     privacyBadge: '무료 및 개인정보 보호',
-    privacyFooter: '개인정보 보호 건강 계산기',
-    links: [
-      { name: '회사 소개', href: `/ko/about/` },
-      { name: '건강 아티클 및 가이드', href: `/ko/blog/` },
-      { name: '문의하기', href: `/ko/contact/` },
-      { name: '편집 정책', href: `/ko/editorial-policy/` },
+    privacyFooter: '브라우저 로컬 연산',
+    popularCalculators: [
+      { name: 'BMI 계산기', href: `/ko/bmi-calculator/` },
+      { name: '3D BMI 시각화 도구', href: `/ko/3d-bmi-calculator/` },
+      { name: '기초대사량 (BMR) 계산기', href: `/ko/bmr-calculator/` },
+      { name: '일일 총에너지소비량 (TDEE)', href: `/ko/tdee-calculator/` },
+      { name: '체지방률 계산기', href: `/ko/body-fat-calculator/` },
+      { name: '표준 체중 계산기', href: `/ko/ideal-weight-calculator/` }
+    ],
+    researchGuides: [
+      { name: 'BMI 분류 기준표', href: `/ko/bmi-chart/` },
+      { name: '아시아인 BMI 기준 안내', href: `/ko/asian-bmi-calculator/` },
+      { name: '신장별 건강 체중 가이드', href: `/ko/healthy-weight-by-height/` },
       { name: '계산 방법론 및 공식', href: `/ko/methodology/` },
+      { name: '전체 아티클 및 가이드 →', href: `/ko/blog/` }
+    ],
+    companyLinks: [
+      { name: '회사 소개', href: `/ko/about/` },
+      { name: '편집 정책', href: `/ko/editorial-policy/` },
       { name: '출처 및 참고문헌', href: `/ko/sources/` },
+      { name: '문의하기', href: `/ko/contact/` }
+    ],
+    legalLinks: [
       { name: '개인정보 처리방침', href: `/ko/privacy-policy/` },
       { name: '이용약관', href: `/ko/terms-conditions/` },
       { name: '의학적 면책조항', href: `/ko/disclaimer/` },
-      { name: '쿠키 정책', href: `/ko/cookie-policy/` },
       { name: '저작권 및 DMCA 정책', href: `/ko/dmca-policy/` },
-    ],
+      { name: '쿠키 정책', href: `/ko/cookie-policy/` }
+    ]
   },
   hi: {
-    tagline: 'WHO और CDC मानकों पर आधारित 100% सुरक्षित और मुफ़्त स्वास्थ्य कैलकुलेटर।',
-    quickLinks: 'त्वरित लिंक',
-    healthTools: 'स्वास्थ्य एवं फिटनेस कैलकुलेटर',
-    legalStatus: 'चिकित्सा अस्वीकरण',
-    legalText: '',
+    tagline: 'WHO और CDC मानकों पर आधारित सुरक्षित स्वास्थ्य शोध एवं कैलकुलेटर प्लेटफॉर्म।',
+    colPopular: 'लोकप्रिय कैलकुलेटर',
+    colGuides: 'अनुसंधान एवं संदर्भ मानक',
+    colCompany: 'रियल बीएमआई के बारे में',
+    colLegal: 'नीतियां एवं कानूनी शर्तें',
+    viewAllTools: 'सभी 25 कैलकुलेटर एवं विधियां →',
     copyright: `© ${year} Real BMI Calculator। सर्वाधिकार सुरक्षित।`,
     teamAttribution: 'Real BMI टीम द्वारा संचालित एवं प्रबंधित स्वास्थ्य कैलकुलेटर',
     whoBadge: 'WHO और CDC मानकों पर आधारित',
     privacyBadge: 'मुफ़्त और 100% सुरक्षित',
-    privacyFooter: 'गोपनीयता-प्रथम स्वास्थ्य कैलकुलेटर',
-    links: [
+    privacyFooter: 'ब्राउज़र-आधारित गणना',
+    popularCalculators: [
+      { name: 'बीएमआई (BMI) कैलकुलेटर', href: `/hi/bmi-calculator/` },
+      { name: '3D बीएमआई विज़ुअलाइज़र', href: `/hi/3d-bmi-calculator/` },
+      { name: 'बीएमआर (BMR) कैलकुलेटर', href: `/hi/bmr-calculator/` },
+      { name: 'टीडीईई (TDEE) कैलकुलेटर', href: `/hi/tdee-calculator/` },
+      { name: 'बॉडी फैट % कैलकुलेटर', href: `/hi/body-fat-calculator/` },
+      { name: 'आदर्श वजन कैलकुलेटर', href: `/hi/ideal-weight-calculator/` }
+    ],
+    researchGuides: [
+      { name: 'बीएमआई वर्गीकरण चार्ट', href: `/hi/bmi-chart/` },
+      { name: 'एशियाई बीएमआई मानक', href: `/hi/asian-bmi-calculator/` },
+      { name: 'कद अनुसार स्वस्थ वजन', href: `/hi/healthy-weight-by-height/` },
+      { name: 'गणना पद्धति एवं सूत्र', href: `/hi/methodology/` },
+      { name: 'सभी स्वास्थ्य लेख एवं गाइड →', href: `/hi/blog/` }
+    ],
+    companyLinks: [
       { name: 'हमारे बारे में', href: `/hi/about/` },
-      { name: 'स्वास्थ्य लेख एवं गाइड', href: `/hi/blog/` },
-      { name: 'संपर्क करें', href: `/hi/contact/` },
       { name: 'संपादकीय नीति', href: `/hi/editorial-policy/` },
-      { name: 'पद्धति एवं सूत्र', href: `/hi/methodology/` },
       { name: 'स्रोत एवं संदर्भ', href: `/hi/sources/` },
+      { name: 'संपर्क करें', href: `/hi/contact/` }
+    ],
+    legalLinks: [
       { name: 'गोपनीयता नीति', href: `/hi/privacy-policy/` },
       { name: 'नियम और शर्तें', href: `/hi/terms-conditions/` },
       { name: 'चिकित्सा अस्वीकरण', href: `/hi/disclaimer/` },
-      { name: 'कुकी नीति', href: `/hi/cookie-policy/` },
-      { name: 'कॉपीराइट एवं DMCA नीति', href: `/hi/dmca-policy/` },
-    ],
+      { name: 'कॉपीराइट एवं DMCA', href: `/hi/dmca-policy/` },
+      { name: 'कुकी नीति', href: `/hi/cookie-policy/` }
+    ]
   }
 };
 
@@ -183,115 +286,140 @@ const cookiePrefsLabels: Record<string, string> = {
 
 const cookiePrefsLabel = cookiePrefsLabels[lang] || cookiePrefsLabels.en;
 const ft = footerTranslations[lang] || footerTranslations.en;
-const healthToolsLabel = ft.healthTools || 'Health Calculators';
-
-const healthToolsLinks = calculators
-  .filter((calc) => calc.slug !== 'one-rep-max-calculator' && calc.slug !== '3d-body-visualizer')
-  .map((calc) => {
-  let name = calc.name[lang] || calc.name['en'];
-  if (lang === 'es') {
-    name = name.replace(/^Calculadora de(?:l)?\s+/i, '');
-    name = name.charAt(0).toUpperCase() + name.slice(1);
-  } else if (lang === 'fr') {
-    name = name.replace(/^Calculateur (?:de |d['’])/i, '');
-    name = name.charAt(0).toUpperCase() + name.slice(1);
-  } else if (lang === 'hi') {
-    name = name.replace(/\s+कैलकुलेटर$/i, '');
-  } else if (lang === 'ko') {
-    name = name.replace(/\s*계산기$/i, '');
-  }
-  return {
-    name,
-    href: `/${lang}/${calc.slug}/`
-  };
-});
 ---
 
-<footer class="w-full bg-[var(--card)]/95 backdrop-blur-xl border-t border-[var(--border)] mt-8 md:mt-10 pt-5 md:pt-6 pb-4 md:pb-5 text-[var(--foreground)] relative z-20">
-  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 md:space-y-4">
+<footer class="w-full bg-[var(--card)]/95 backdrop-blur-xl border-t border-[var(--border)] mt-8 pt-8 pb-4 text-[var(--foreground)] relative z-20">
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 
-    <!-- Row 1: Brand Info & Quick Links (Single Clean Level on Desktop) -->
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-[var(--border)]/60">
-      <div class="flex flex-wrap items-center gap-2.5">
-        <a href={`/${lang}/`} class="inline-flex items-center gap-2 group min-h-[48px] py-2 px-1">
-          <div class="w-7 h-7 rounded-md bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+    <!-- Top Brand & Mission Bar -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-[var(--border)]/60">
+      <div class="flex flex-wrap items-center gap-2">
+        <a href={`/${lang}/`} class="inline-flex items-center gap-2 group">
+          <div class="w-6 h-6 rounded-md bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
             <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
             </svg>
           </div>
-          <span class="font-display font-extrabold text-sm sm:text-base uppercase tracking-tight text-[var(--foreground)]">
+          <span class="font-display font-extrabold text-xs sm:text-sm uppercase tracking-tight text-[var(--foreground)]">
             Real BMI <span class="text-[var(--accent)]">Calculator</span>
           </span>
         </a>
         <span class="hidden sm:inline text-xs text-[var(--border)]">|</span>
-        <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+        <p class="text-xs text-[var(--muted-foreground)]">
           {ft.tagline}
         </p>
       </div>
 
-      <!-- Quick Trust & Legal Navigation Links -->
-      <nav class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm sm:text-base font-medium text-[var(--muted-foreground)]" aria-label="Footer quick links">
-        {ft.links.map((link) => (
-          <a
-            href={link.href}
-            class="hover:text-[var(--accent)] transition-colors py-2 px-1.5 min-h-[48px] inline-flex items-center hover:underline underline-offset-2"
-          >
-            {link.name}
-          </a>
-        ))}
-      </nav>
+      <div class="flex items-center gap-2 text-xs font-semibold text-[var(--muted-foreground)] self-start sm:self-auto">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        <span>{ft.privacyFooter}</span>
+      </div>
     </div>
 
-    <!-- Row 2: Health & Fitness Calculators (Sleek 6-column grid on desktop, 4 on tablet, 2 on mobile) -->
-    <div class="space-y-2.5">
-      <div class="flex items-center justify-between">
-        <p class="text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-[var(--accent)] flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <!-- 4 Semantic Columns Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-xs">
+      
+      <!-- Col 1: Popular Calculators -->
+      <div class="space-y-3">
+        <p class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-xs flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
           </svg>
-          {healthToolsLabel}
+          {ft.colPopular}
         </p>
-        <div class="hidden sm:flex items-center gap-2.5 text-xs text-[var(--muted-foreground)]">
-          <span class="inline-flex items-center gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            {ft.whoBadge}
-          </span>
-          <span>•</span>
-          <span>{ft.privacyBadge}</span>
-        </div>
+        <ul class="space-y-2">
+          {ft.popularCalculators.map((item) => (
+            <li>
+              <a href={item.href} class="text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors hover:underline underline-offset-2">
+                {item.name}
+              </a>
+            </li>
+          ))}
+          <li class="pt-1">
+            <a href={`/${lang}/methodology/`} class="font-semibold text-[var(--accent)] hover:underline underline-offset-2 inline-flex items-center gap-1">
+              <span>{ft.viewAllTools}</span>
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-3.5 gap-y-2.5 sm:gap-y-2 text-sm">
-        {healthToolsLinks.map((link) => (
-          <a
-            href={link.href}
-            class="text-xs sm:text-sm text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors py-2 px-1.5 min-h-[48px] inline-flex items-center truncate hover:underline underline-offset-2"
-            title={link.name}
-          >
-            {link.name}
-          </a>
-        ))}
+      <!-- Col 2: Research & Standards -->
+      <div class="space-y-3">
+        <p class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-xs flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          {ft.colGuides}
+        </p>
+        <ul class="space-y-2">
+          {ft.researchGuides.map((item) => (
+            <li>
+              <a href={item.href} class="text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors hover:underline underline-offset-2">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
+
+      <!-- Col 3: Company / About -->
+      <div class="space-y-3">
+        <p class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-xs flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+          {ft.colCompany}
+        </p>
+        <ul class="space-y-2">
+          {ft.companyLinks.map((item) => (
+            <li>
+              <a href={item.href} class="text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors hover:underline underline-offset-2">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 4: Policies & Legal -->
+      <div class="space-y-3">
+        <p class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-xs flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+          {ft.colLegal}
+        </p>
+        <ul class="space-y-2">
+          {ft.legalLinks.map((item) => (
+            <li>
+              <a href={item.href} class="text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors hover:underline underline-offset-2">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
     </div>
 
-    <!-- Row 3: Bottom Bar (Copyright, Attribution, Cookie Prefs) -->
-    <div class="pt-3 border-t border-[var(--border)]/60 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs sm:text-sm text-[var(--muted-foreground)]">
+    <!-- Bottom Bar (Copyright, Attribution, Cookie Prefs) -->
+    <div class="pt-4 border-t border-[var(--border)]/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] sm:text-xs text-[var(--muted-foreground)]">
       <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-center sm:text-left">
         <span class="font-display font-semibold text-[var(--foreground)]">{ft.copyright}</span>
         <span class="hidden sm:inline">•</span>
-        <span class="text-xs sm:text-sm text-[var(--muted-foreground)]/80">{ft.teamAttribution}</span>
+        <span class="text-[11px] sm:text-xs text-[var(--muted-foreground)]/80">{ft.teamAttribution}</span>
       </div>
 
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2.5">
         <button
           id="openCookiePreferencesBtn"
           type="button"
-          class="text-xs sm:text-sm font-medium text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors underline decoration-dotted underline-offset-2 cursor-pointer py-2 px-1.5 min-h-[48px] inline-flex items-center"
+          class="text-[11px] sm:text-xs font-medium text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors underline decoration-dotted underline-offset-2 cursor-pointer py-0.5"
         >
           {cookiePrefsLabel}
         </button>
         <span>•</span>
-        <span class="text-xs sm:text-sm opacity-75">{ft.privacyFooter}</span>
+        <span class="text-[11px] sm:text-xs opacity-75">{ft.privacyBadge}</span>
       </div>
     </div>
 

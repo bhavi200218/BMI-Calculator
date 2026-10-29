@@ -171,29 +171,29 @@ const variablesGuide = getInputVariablesGuide(currentCalc?.inputs || [], lang, e
 const clinicalGuide = getToolInterpretationAndLimitations(effectiveSlug, lang);
 
 const referenceTableSubtitle = {
-  en: `Official reference ranges, clinical thresholds, and validated benchmarks for ${currentData.title}.`,
-  es: `Rangos de referencia oficiales, umbrales clínicos y parámetros validados para ${currentData.title}.`,
-  fr: `Intervalles de référence officiels, seuils cliniques et repères validés pour ${currentData.title}.`,
-  de: `Offizielle Referenzbereiche, klinische Schwellenwerte und validierte Richtwerte für ${currentData.title}.`,
-  ko: `${currentData.title}에 대한 공식 참조 범위, 임상 기준치 및 검증된 생리학적 지표입니다.`,
-  hi: `${currentData.title} के लिए आधिकारिक संदर्भ सीमाएं, नैदानिक सीमाएं और मान्य बेंचमार्क।`
-}[lang] || `Official clinical benchmarks and reference ranges for ${currentData.title}.`;
+  en: `Official reference ranges, public health thresholds, and validated benchmarks for ${currentData.title}.`,
+  es: `Rangos de referencia oficiales, umbrales de salud pública y parámetros validados para ${currentData.title}.`,
+  fr: `Intervalles de référence officiels, seuils de santé publique et repères validés pour ${currentData.title}.`,
+  de: `Offizielle Referenzbereiche, gesundheitliche Schwellenwerte und validierte Richtwerte für ${currentData.title}.`,
+  ko: `${currentData.title}에 대한 공식 참조 범위, 공중보건 기준치 및 검증된 생리학적 지표입니다.`,
+  hi: `${currentData.title} के लिए आधिकारिक संदर्भ सीमाएं, सार्वजनिक स्वास्थ्य सीमाएं और मान्य बेंचमार्क।`
+}[lang] || `Official benchmarks and reference ranges for ${currentData.title}.`;
 
 const figCaptionText = {
-  en: `Figure 1.1: Clinical reference spectrum and classification cutoffs for ${currentData.title}. Source & Credit: World Health Organization (WHO) Technical Report Series 854 & CDC Clinical Guidelines. Published for educational reference.`,
-  es: `Figura 1.1: Espectro de referencia clínica y puntos de corte para ${currentData.title}. Fuente y Crédito: Serie de Informes Técnicos de la Organización Mundial de la Salud (OMS) y CDC. Publicado con fines educativos.`,
-  fr: `Figure 1.1 : Repères cliniques et seuils de référence pour ${currentData.title}. Source et Crédit : Série de Rapports Techniques de l'Organisation Mondiale de la Santé (OMS) et standards du CDC.`,
-  de: `Abbildung 1.1: Klinisches Referenzspektrum und Richtwerte für ${currentData.title}. Quelle & Urheber: Technische Berichtsreihe der Weltgesundheitsorganisation (WHO) und CDC-Standards.`,
-  ko: `그림 1.1: ${currentData.title}에 대한 임상 참조 스펙트럼 및 위험 기준치. 출처 및 크레딧: 세계보건기구(WHO) 기술 보고서 시리즈 854 및 CDC 임상 지침. 교육용 참고 목적으로 제공됨.`,
-  hi: `चित्र 1.1: ${currentData.title} के लिए नैदानिक संदर्भ स्पेक्ट्रम एवं सीमाएं। स्रोत एवं श्रेय: विश्व स्वास्थ्य संगठन (WHO) तकनीकी रिपोर्ट श्रृंखला 854 एवं CDC दिशानिर्देश।`
-}[lang] || `Figure 1.1: Clinical reference spectrum and classification cutoffs for ${currentData.title}. Source & Credit: WHO & CDC.`;
+  en: `Figure 1.1: Reference spectrum and classification cutoffs for ${currentData.title}. Source & Credit: World Health Organization (WHO) Technical Report Series 854 & CDC Guidelines. Published for educational reference.`,
+  es: `Figura 1.1: Espectro de referencia y puntos de corte para ${currentData.title}. Fuente y Crédito: Serie de Informes Técnicos de la Organización Mundial de la Salud (OMS) y CDC. Publicado con fines educativos.`,
+  fr: `Figure 1.1 : Repères et seuils de référence pour ${currentData.title}. Source et Crédit : Série de Rapports Techniques de l'Organisation Mondiale de la Santé (OMS) et standards du CDC.`,
+  de: `Abbildung 1.1: Referenzspektrum und Richtwerte für ${currentData.title}. Quelle & Urheber: Technische Berichtsreihe der Weltgesundheitsorganisation (WHO) und CDC-Standards.`,
+  ko: `그림 1.1: ${currentData.title}에 대한 참조 스펙트럼 및 기준치. 출처 및 크레딧: 세계보건기구(WHO) 기술 보고서 시리즈 854 및 CDC 지침. 교육용 참고 목적으로 제공됨.`,
+  hi: `चित्र 1.1: ${currentData.title} के लिए संदर्भ स्पेक्ट्रम एवं सीमाएं। स्रोत एवं श्रेय: विश्व स्वास्थ्य संगठन (WHO) तकनीकी रिपोर्ट श्रृंखला 854 एवं CDC दिशानिर्देश।`
+}[lang] || `Figure 1.1: Reference spectrum and classification cutoffs for ${currentData.title}. Source & Credit: WHO & CDC.`;
 
 const spectrumUi = {
   en: {
     badge: 'Visual Reference Infographic',
     titleSuffix: 'Visual Spectrum Diagram',
     source: 'WHO Technical Report Series',
-    desc: 'Graphical representation of clinical classification cutoffs and category ranges based on published WHO guidelines.',
+    desc: 'Graphical representation of standard classification cutoffs and category ranges based on published WHO guidelines.',
     underweight: 'Underweight / Low',
     normal: 'Normal / Healthy',
     overweight: 'Overweight / Moderate',
@@ -203,7 +203,7 @@ const spectrumUi = {
     badge: 'दृश्य संदर्भ इन्फोग्राफिक',
     titleSuffix: 'विज़ुअल स्पेक्ट्रम आरेख',
     source: 'डब्ल्यूएचओ तकनीकी रिपोर्ट श्रृंखला',
-    desc: 'प्रकाशित डब्ल्यूएचओ दिशानिर्देशों के आधार पर नैदानिक वर्गीकरण सीमाओं और श्रेणियों का आरेखीय निरूपण।',
+    desc: 'प्रकाशित डब्ल्यूएचओ दिशानिर्देशों के आधार पर संदर्भ वर्गीकरण सीमाओं और श्रेणियों का आरेखीय निरूपण।',
     underweight: 'कम वजन / निम्न',
     normal: 'सामान्य / स्वस्थ',
     overweight: 'अधिक वजन / मध्यम',
@@ -213,7 +213,7 @@ const spectrumUi = {
     badge: 'Infografía de Referencia Visual',
     titleSuffix: 'Diagrama de Espectro Visual',
     source: 'Serie de Informes Técnicos de la OMS',
-    desc: 'Representación gráfica de los puntos de corte de clasificación clínica basados en las directrices de la OMS.',
+    desc: 'Representación gráfica de los puntos de corte de clasificación basados en las directrices de la OMS.',
     underweight: 'Bajo peso / Bajo',
     normal: 'Normal / Saludable',
     overweight: 'Sobrepeso / Moderado',
@@ -223,7 +223,7 @@ const spectrumUi = {
     badge: 'Infographie de Référence Visuelle',
     titleSuffix: 'Diagramme du Spectre Visuel',
     source: 'Série de Rapports Techniques OMS',
-    desc: 'Représentation graphique des seuils de classification clinique selon les directives publiées par l\'OMS.',
+    desc: 'Représentation graphique des seuils de classification selon les directives publiées par l\'OMS.',
     underweight: 'Insuffisance pondérale',
     normal: 'Normal / Santé',
     overweight: 'Surpoids / Modéré',
@@ -233,7 +233,7 @@ const spectrumUi = {
     badge: 'Visuelle Referenz-Infografik',
     titleSuffix: 'Visuelles Spektrum-Diagramm',
     source: 'WHO Technische Berichtsreihe',
-    desc: 'Grafische Darstellung der klinischen Schwellenwerte basierend auf veröffentlichten WHO-Richtlinien.',
+    desc: 'Grafische Darstellung der Referenz-Schwellenwerte basierend auf veröffentlichten WHO-Richtlinien.',
     underweight: 'Untergewicht / Niedrig',
     normal: 'Normalgewicht / Gesund',
     overweight: 'Übergewicht / Moderat',
@@ -243,7 +243,7 @@ const spectrumUi = {
     badge: '시각적 참조 인포그래픽',
     titleSuffix: '시각적 스펙트럼 다이어그램',
     source: 'WHO 기술 보고서 시리즈',
-    desc: '공식 WHO 지침에 기반한 임상적 분류 기준치 및 범위의 그래픽 시각화입니다.',
+    desc: '공식 WHO 지침에 기반한 표준 분류 기준치 및 범위의 그래픽 시각화입니다.',
     underweight: '저체중 / 위험도 낮음',
     normal: '정상 / 건강 체중',
     overweight: '과체중 / 주의 요망',
@@ -253,7 +253,7 @@ const spectrumUi = {
   badge: 'Visual Reference Infographic',
   titleSuffix: 'Visual Spectrum Diagram',
   source: 'WHO Technical Report Series',
-  desc: 'Graphical representation of clinical classification cutoffs and category ranges based on published WHO guidelines.',
+  desc: 'Graphical representation of standard classification cutoffs and category ranges based on published WHO guidelines.',
   underweight: 'Underweight / Low',
   normal: 'Normal / Healthy',
   overweight: 'Overweight / Moderate',
@@ -601,12 +601,12 @@ const spectrumUi = {
            lang === 'hi' ? 'Real BMI संपादकीय टीम' :
            'Real BMI Editorial Team'} 
           <span class="text-xs font-normal text-[var(--muted-foreground)]">
-            {lang === 'es' ? '• Estándares Clínicos y Algorítmicos' :
-             lang === 'fr' ? '• Normes Cliniques et Algorithmiques' :
-             lang === 'de' ? '• Klinische & Algorithmische Standards' :
-             lang === 'ko' ? '• 임상 및 알고리즘 표준 관리' :
-             lang === 'hi' ? '• नैदानिक एवं एल्गोरिदम मानक' :
-             '• Clinical & Algorithmic Standards'}
+            {lang === 'es' ? '• Estándares de Investigación y Algoritmos' :
+             lang === 'fr' ? '• Normes de Recherche et Algorithmes' :
+             lang === 'de' ? '• Forschungs- & Algorithmische Standards' :
+             lang === 'ko' ? '• 연구 및 알고리즘 표준 관리' :
+             lang === 'hi' ? '• शोध एवं एल्गोरिदम मानक' :
+             '• Research & Algorithmic Standards'}
           </span>
         </p>
       </div>
@@ -616,7 +616,7 @@ const spectrumUi = {
         {lang === 'es' ? 'Fórmulas alineadas con estándares de la OMS, CDC e ICMR' :
          lang === 'fr' ? 'Formules alignées sur les publications OMS, CDC et ICMR' :
          lang === 'de' ? 'Formeln abgestimmt auf Standards von WHO, CDC & ICMR' :
-         lang === 'ko' ? 'WHO, CDC 및 ICMR 임상 지침에 맞춘 공식 적용' :
+         lang === 'ko' ? 'WHO, CDC 및 ICMR 지침에 맞춘 공식 적용' :
          lang === 'hi' ? 'WHO, CDC और ICMR साहित्य के अनुरूप गणितीय सूत्र' :
          'Formulas aligned with published WHO, CDC & ICMR benchmarks'}
       </p>

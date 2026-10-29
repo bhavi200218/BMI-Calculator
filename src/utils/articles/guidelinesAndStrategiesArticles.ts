@@ -6,32 +6,32 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "datePublished": "2026-10-01",
     "dateModified": "2026-10-26",
     "title": {
-      "en": "BMI Interpretation Guidelines: Clinical Categories, WHO Cutoffs & Context",
-      "es": "Guía de Interpretación del IMC: Categorías Clínicas y Pautas de la OMS",
-      "fr": "Guide d'Interprétation de l'IMC : Catégories Cliniques et Seuils de l'OMS",
-      "de": "BMI-Interpretationsleitfaden: Klinische Kategorien & WHO-Richtwerte",
-      "ko": "BMI 판정 가이드: WHO 임상 분류 기준 및 결과 해석 지침",
-      "hi": "बीएमआई व्याख्या दिशानिर्देश: नैदानिक श्रेणियां और डब्ल्यूएचओ मानक"
+      "en": "BMI Interpretation Guidelines: Reference Categories, WHO Cutoffs & Context",
+      "es": "Guía de Interpretación del IMC: Categorías de Referencia y Pautas de la OMS",
+      "fr": "Guide d'Interprétation de l'IMC : Catégories de Référence et Seuils de l'OMS",
+      "de": "BMI-Interpretationsleitfaden: Referenzkategorien & WHO-Richtwerte",
+      "ko": "BMI 판정 가이드: WHO 표준 분류 기준 및 결과 해석 지침",
+      "hi": "बीएमआई व्याख्या दिशानिर्देश: संदर्भ श्रेणियां और डब्ल्यूएचओ मानक"
     },
     "category": {
-      "en": "Clinical BMI & Methodology",
-      "es": "Metodología y Cribado Clínico",
-      "fr": "Méthodologie et Dépistage Clinique",
-      "de": "Klinische Methodik & Screening",
-      "ko": "임상 체질량 지표 및 방법론",
-      "hi": "नैदानिक बीएमआई एवं कार्यप्रणाली"
+      "en": "BMI Research & Methodology",
+      "es": "Metodología e Investigación del IMC",
+      "fr": "Méthodologie et Recherche sur l'IMC",
+      "de": "BMI-Methodik & Forschung",
+      "ko": "체질량 지표 연구 및 방법론",
+      "hi": "बीएमआई अनुसंधान एवं कार्यप्रणाली"
     },
     "description": {
-      "en": "A comprehensive clinical guide to interpreting Body Mass Index (BMI). Explore official World Health Organization (WHO) adult cutoff points, ethnic-specific adjustments, and complementary diagnostic measurements.",
-      "es": "Guía clínica exhaustiva para interpretar el Índice de Masa Corporal (IMC). Conozca los puntos de corte oficiales de la OMS, ajustes étnicos y medidas diagnósticas complementarias.",
-      "fr": "Guide clinique complet pour interpréter l'Indice de Masse Corporelle (IMC). Découvrez les seuils officiels de l'OMS, les ajustements ethniques et les mesures complémentaires.",
-      "de": "Ein umfassender Leitfaden zur Interpretation des Body-Mass-Index (BMI). Erfahren Sie mehr über offizielle WHO-Grenzwerte, ethnische Anpassungen und ergänzende Messungen.",
-      "ko": "체질량지수(BMI) 판정을 위한 종합 임상 가이드. 세계보건기구(WHO) 표준 체중 구간, 인종별 보정 기준 및 허리둘레를 활용한 복합 진단 방식을 설명합니다.",
-      "hi": "बॉडी मास इंडेक्स (बीएमआई) की व्याख्या के लिए व्यापक नैदानिक गाइड। डब्ल्यूएचओ के आधिकारिक कटऑफ बिंदु, जातीय समायोजन और पूरक मापों का विवरण।"
+      "en": "A comprehensive evidence-based guide to interpreting Body Mass Index (BMI). Explore official World Health Organization (WHO) adult cutoff points, ethnic-specific adjustments, and complementary screening measurements.",
+      "es": "Guía basada en evidencia para interpretar el Índice de Masa Corporal (IMC). Conozca los puntos de corte oficiales de la OMS, ajustes étnicos y medidas de detección complementarias.",
+      "fr": "Guide fondé sur des preuves pour interpréter l'Indice de Masse Corporelle (IMC). Découvrez les seuils officiels de l'OMS, les ajustements ethniques et les mesures complémentaires.",
+      "de": "Ein evidenzbasierter Leitfaden zur Interpretation des Body-Mass-Index (BMI). Erfahren Sie mehr über offizielle WHO-Grenzwerte, ethnische Anpassungen und ergänzende Screening-Messungen.",
+      "ko": "체질량지수(BMI) 판정을 위한 종합 연구 가이드. 세계보건기구(WHO) 표준 체중 구간, 인종별 보정 기준 및 허리둘레를 활용한 복합 스크리닝 방식을 설명합니다.",
+      "hi": "बॉडी मास इंडेक्स (बीएमआई) की व्याख्या के लिए व्यापक प्रमाण-आधारित गाइड। डब्ल्यूएचओ के आधिकारिक कटऑफ बिंदु, जातीय समायोजन और पूरक स्क्रीनिंग मापों का विवरण।"
     },
     "contentHtml": {
       "en": `
-      <h2>Clinical Foundation of Body Mass Index (BMI) Interpretation</h2>
+      <h2>Scientific Foundation of Body Mass Index (BMI) Interpretation</h2>
       <p>Body Mass Index (BMI), initially formulated by Belgian mathematician Adolphe Quetelet in the 19th century and adopted by the <strong>World Health Organization (WHO)</strong> in the 1970s, serves as the global standard epidemiological screening tool for classifying adult weight status. While calculated through the straightforward mathematical relationship of body mass divided by stature squared (kg/m²), proper clinical interpretation requires understanding statistical reference thresholds, physiological limitations, and complementary anthropometric assessments.</p>
       <p>BMI is fundamentally an indirect estimate of adiposity. It does not measure body fat directly, nor does it differentiate between fat mass, lean muscle mass, skeletal weight, or total body water. Consequently, clinicians utilize BMI not as a stand-alone diagnostic tool, but as an initial tier in comprehensive metabolic risk stratification.</p>
 
@@ -93,7 +93,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         <li><strong>Cardiometabolic Laboratory Panels:</strong> Fasting blood glucose, glycated hemoglobin (HbA1c), lipid panels (HDL, LDL, triglycerides), and resting blood pressure provide physiological verification of metabolic health.</li>
       </ol>
 
-      <h2>Clinical Case Studies: When BMI Fails Without Context</h2>
+      <h2>Case Studies: When BMI Fails Without Context</h2>
       <div class="my-6 space-y-4">
         <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-2">
           <h3 class="text-base font-bold text-[var(--accent)]">Case Study 1: The Muscular Athlete (False-Positive Risk)</h3>
@@ -114,7 +114,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         <li><strong>Protective Adiposity Reserve:</strong> Older adults with a "mildly overweight" BMI between <strong>25.0 and 28.5 kg/m²</strong> exhibit the lowest statistical mortality rates, as modest subcutaneous lipid reserves provide vital energy buffering during acute illnesses, major surgeries, or prolonged hospitalizations.</li>
       </ul>
 
-      <h2>Frequently Asked Questions on Clinical BMI Interpretation</h2>
+      <h2>Frequently Asked Questions on BMI Interpretation</h2>
       <div class="space-y-4 my-6">
         <div>
           <h3 class="text-base font-bold text-[var(--foreground)]">Why do healthcare providers still use BMI if it has recognized limitations?</h3>
@@ -1341,9 +1341,9 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       "hi": "हृदय स्वास्थ्य एवं फिटनेस"
     },
     "description": {
-      "en": "Explore the clinical significance of resting heart rate (RHR) and heart rate reserve. Learn how endurance conditioning lowers resting pulse and how to calculate targeted training zones.",
-      "es": "Descubra la importancia clínica de la frecuencia cardíaca en reposo y la reserva cardíaca. Guía para calcular zonas de entrenamiento y evaluar la salud cardiovascular.",
-      "fr": "Comprenez la signification clinique de la fréquence cardiaque au repos. Découvrez comment l'entraînement aérobie abaisse le pouls et optimise l'endurance.",
+      "en": "Explore the physiological significance of resting heart rate (RHR) and heart rate reserve. Learn how endurance conditioning lowers resting pulse and how to calculate targeted training zones.",
+      "es": "Descubra la importancia fisiológica de la frecuencia cardíaca en reposo y la reserva cardíaca. Guía para calcular zonas de entrenamiento y evaluar la salud cardiovascular.",
+      "fr": "Comprenez la signification physiologique de la fréquence cardiaque au repos. Découvrez comment l'entraînement aérobie abaisse le pouls et optimise l'endurance.",
       "de": "Erfahren Sie die Bedeutung des Ruhepulses für Ihre Gesundheit und wie Sie Herzfrequenz-Zonen für optimales Ausdauertraining berechnen.",
       "ko": "안정 시 심박수(RHR)가 나타내는 심혈관 건강 상태와 심박변이도, 그리고 카르보넨(Karvonen) 공식을 활용한 맞춤형 심박수 훈련 구간 설정법을 알아봅니다.",
       "hi": "विश्राम हृदय गति (RHR) के स्वास्थ्य महत्व और एरोबिक कंडीशनिंग के लाभ। अपने लक्ष्य के अनुसार व्यायाम के लिए हृदय गति क्षेत्र निर्धारित करें।"
@@ -1577,6 +1577,237 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         <li>Palatini P, Julius S. <em>Heart rate and the cardiovascular risk.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/9312151/" class="text-[#464feb] underline">J Hypertens 1997; 15(1):3-17. PMID: 9312151</a>.</li>
       </ul>
       `
+    }
+  },
+
+  "healthy-aging-and-sarcopenia": {
+    "datePublished": "2026-03-25",
+    "dateModified": "2026-10-28",
+    "title": {
+      "en": "Healthy Aging & Sarcopenia: Preserving Lean Muscle Mass & Functional Strength",
+      "hi": "स्वस्थ वृद्धावस्था और सार्कोपेनिया: मांसपेशियों और शारीरिक शक्ति का संरक्षण",
+      "ko": "건강한 노화와 근감소증(Sarcopenia): 골격근량 보존 및 기능적 근력 강화",
+      "de": "Gesundes Altern & Sarkopenie: Muskelerhalt & funktionelle Kraft im Alter",
+      "es": "Envejecimiento Saludable y Sarcopenia: Preservación Muscular y Fuerza Funcional",
+      "fr": "Vieillissement en Bonne Santé et Sarcopénie : Préserver la Masse Musculaire"
+    },
+    "category": {
+      "en": "Age & Lifespan Health",
+      "hi": "आयु एवं जीवनकाल स्वास्थ्य",
+      "ko": "연령 및 생애주기 건강",
+      "de": "Alter & Lebensspanne",
+      "es": "Edad y Salud Longevital",
+      "fr": "Âge et Longévité"
+    },
+    "description": {
+      "en": "Learn the biology of age-related muscle loss (sarcopenia). Discover why older adults require higher protein intake thresholds, the role of resistance exercise, and strategies for physical autonomy.",
+      "hi": "उम्र के साथ मांसपेशियों में होने वाले नुकसान (सार्कोपेनिया) का जीवविज्ञान। जानें कि बुजुर्गों को अधिक प्रोटीन की आवश्यकता क्यों होती है, शक्ति व्यायाम की भूमिका और स्वतंत्र गतिशीलता के उपाय।",
+      "ko": "연령 증가에 따른 근감소증(Sarcopenia)의 생리학적 기전. 노년층을 위한 고단백 영양 섭취 기준(끼니당 류신 3g), 필수 저항성 근력 운동 및 낙상 예방 지침을 설명합니다.",
+      "de": "Die Biologie des altersbedingten Muskelabbaus (Sarkopenie): Warum Senioren mehr Protein benötigen und wie gezieltes Krafttraining die Selbstständigkeit sichert.",
+      "es": "Comprende la biología de la sarcopenia. Por qué los adultos mayores necesitan mayor ingesta de proteína, el papel del entrenamiento de fuerza y cómo prevenir caídas.",
+      "fr": "Comprenez les mécanismes de la sarcopénie liée à l'âge : seuils protéiques accrus chez les seniors, exercices de renforcement et maintien de l'autonomie physique."
+    },
+    "contentHtml": {
+      "en": `
+      <h2>The Biology of Age-Related Muscle Loss (Sarcopenia)</h2>
+      <p>Beginning around age 30, sedentary adults lose approximately <strong>3% to 8% of their skeletal muscle mass per decade</strong>, a degenerative process known as <strong>sarcopenia</strong>. After age 60, this rate of atrophy accelerates dramatically, accompanied by preferential denervation of high-force Type II (fast-twitch) motor units. Sarcopenia is not merely a cosmetic change; muscle tissue is the primary metabolic reservoir for glucose clearance, amino acid storage, and biomechanical fall prevention.</p>
+
+      <h2>Anabolic Resistance: Why Older Adults Need More Protein</h2>
+      <p>A crucial physiological phenomenon discovered by geriatric researchers is <strong>anabolic resistance</strong>. In younger adults, consuming 20 grams of high-quality protein containing approximately 2 grams of the essential branched-chain amino acid L-leucine fully saturates the mTORC1 signaling cascade to maximize muscle protein synthesis. In adults aged 65 and older, however, blunted intracellular phosphorylation requires a <strong>higher per-meal leucine threshold (at least 3.0 to 3.5 grams of leucine, or ~35 to 40 grams of whole protein per meal)</strong> to trigger equivalent myofibrillar growth and repair.</p>
+
+      <h2>Sarcopenia Diagnostic Parameters &amp; Clinical Thresholds</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Assessment Metric</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Men Standard / Cutoff</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">Women Standard / Cutoff</th>
+              <th class="p-3 border border-[#e6e6e6]">Functional Significance</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Isometric Grip Strength</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">&lt; 27 kg (59 lbs)</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">&lt; 16 kg (35 lbs)</td>
+              <td class="p-3 border border-[#e6e6e6]">Valid surrogate for whole-body muscular force and frailty risk</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Gait Speed (4-Meter Walk)</td>
+              <td class="p-3 border border-[#e6e6e6]" colspan="2">&le; 0.8 m/sec</td>
+              <td class="p-3 border border-[#e6e6e6]">Identifies severe functional mobility limitation and fall vulnerability</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Appendicular Lean Mass Index (ALMI)</td>
+              <td class="p-3 border border-[#e6e6e6] text-blue-500">&lt; 7.0 kg/m²</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500">&lt; 5.5 kg/m²</td>
+              <td class="p-3 border border-[#e6e6e6]">DEXA-measured limb skeletal mass relative to stature squared</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Three Pillars of Healthy Muscle Aging</h2>
+      <ol class="space-y-2 my-4 list-decimal pl-5 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Progressive Resistance Training:</strong> Engaging in compound movements (squats, leg presses, rows, overhead presses) twice to three times weekly preserves motor unit innervation.</li>
+        <li><strong>Elevated Daily Protein Target:</strong> Geriatric research guidelines (PROT-AGE study group) recommend <strong>1.2 to 1.6 grams of protein per kilogram of body weight daily</strong> for healthy older adults.</li>
+        <li><strong>Vitamin D &amp; Omega-3 Fatty Acids:</strong> Maintaining serum 25(OH)D levels above 30 ng/mL supports muscular calcium handling, while EPA and DHA downregulate systemic muscle-wasting inflammatory cytokines.</li>
+      </ol>
+
+      <h2>Scientific References</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Cruz-Jentoft AJ, et al. <em>Sarcopenia: revised European consensus on definition and diagnosis.</em> Age Ageing 2019; 48(1):16-31. PMID: 30312372.</li>
+        <li>Bauer J, et al. <em>Evidence-based recommendations for optimal dietary protein intake in older people: a position paper from the PROT-AGE Study Group.</em> J Am Med Dir Assoc 2013; 14(8):542-559. PMID: 23867520.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>सार्कोपेनिया क्या है? उम्र के साथ मांसपेशियों की कमी का सच</h2>
+      <p>30 वर्ष की आयु के बाद गतिहीन वयस्कों में प्रति दशक 3% से 8% मांसपेशियां घटने लगती हैं। 60 वर्ष के बाद यह गति और तेज हो जाती है, जिसे <strong>सार्कोपेनिया</strong> कहा जाता है। मांसपेशियों की कमी से शरीर का संतुलन बिगड़ता है, गिरने और फ्रैक्चर का खतरा बढ़ता है और इंसुलिन प्रतिरोध उत्पन्न होता है।</p>
+
+      <h2>बुजुर्गों के लिए उच्च प्रोटीन और स्ट्रेंथ ट्रेनिंग</h2>
+      <p>बुजुर्गों में मांसपेशियों के निर्माण के लिए युवा वयस्कों की तुलना में अधिक प्रोटीन की आवश्यकता होती है। विशेषज्ञ प्रति दिन 1.2 से 1.6 ग्राम/किग्रा प्रोटीन और सप्ताह में कम से कम 2 दिन हल्का वजन उठाने या बॉडीवेट व्यायाम की सलाह देते हैं।</p>
+`,
+      "es": `
+      <h2>Sarcopenia y Longevidad Funcional</h2>
+      <p>La pérdida de masa muscular ligada a la edad reduce la autonomía y la salud metabólica. El grupo de estudio PROT-AGE recomienda entre 1.2 y 1.6 g de proteína/kg diarios en adultos mayores, junto con entrenamiento de fuerza dos veces por semana para contrarrestar la resistencia anabólica.</p>
+`,
+      "fr": `
+      <h2>La Sarcopénie : Enjeu Majeur du Vieillissement Actif</h2>
+      <p>La fonte musculaire liée à l'âge (sarcopénie) commence dès 30 ans et s'accélère après 60 ans. Maintenir un apport protéique suffisant (1,2 à 1,6 g/kg/jour) et pratiquer des exercices de résistance permet de conserver sa mobilité et son métabolisme.</p>
+`,
+      "de": `
+      <h2>Sarkopenie im Alter vorbeugen</h2>
+      <p>Altersbedingter Muskelschwund (Sarkopenie) gefährdet die Selbstständigkeit. Studien der PROT-AGE Gruppe belegen, dass Senioren zur Überwindung der anabolen Resistenz 1,2 bis 1,6 g Protein/kg Körpergewicht und gezieltes Krafttraining benötigen.</p>
+`,
+      "ko": `
+      <h2>노년기 근감소증(Sarcopenia) 예방과 단백질 섭취 전략</h2>
+      <p>60세 이후 급격히 진행되는 근감소증은 낙상, 골절 및 당뇨병의 주요 원인입니다. 노년층의 아나볼릭 저항성을 극복하기 위해 체중 kg당 1.2~1.6g의 충분한 단백질 섭취와 주 2~3회 점진적 근력 운동이 필수적입니다.</p>
+`
+    }
+  },
+
+  "blood-pressure-and-weight": {
+    "datePublished": "2026-03-30",
+    "dateModified": "2026-10-28",
+    "title": {
+      "en": "Blood Pressure Basics: Body Weight, Arterial Health & Lifestyle Management",
+      "hi": "रक्तचाप (Blood Pressure) के मूल सिद्धांत: वजन, धमनी स्वास्थ्य और जीवनशैली प्रबंधन",
+      "ko": "혈압의 기초 과학: 체중, 혈관 탄력도 및 생활 습관을 통한 혈압 관리",
+      "de": "Blutdruck-Grundlagen: Körpergewicht, Gefäßgesundheit & Lebensstil",
+      "es": "Bases de la Presión Arterial: Peso Corporal, Salud Arterial y Estilo de Vida",
+      "fr": "Comprendre la Pression Artérielle : Poids Corporel, Santé Artérielle et Mode de Vie"
+    },
+    "category": {
+      "en": "Cardiovascular & Preventive Health",
+      "hi": "हृदय एवं निवारक स्वास्थ्य",
+      "ko": "심혈관 및 예방 건강",
+      "de": "Herzgesundheit & Prävention",
+      "es": "Salud Cardiovascular y Preventiva",
+      "fr": "Santé Cardiovasculaire et Prévention"
+    },
+    "description": {
+      "en": "Understand the physiological mechanics of systolic and diastolic blood pressure. Learn how excess body weight strains the vascular endothelium, the power of the DASH sodium-potassium ratio, and non-pharmacological reduction strategies.",
+      "hi": "सिस्टोलिक और डायस्टोलिक रक्तचाप के शारीरिक सिद्धांत। जानें कि अतिरिक्त वजन धमनियों पर कैसे दबाव डालता है, DASH आहार में सोडियम-पोटेशियम अनुपात और बीपी नियंत्रित करने के प्राकृतिक उपाय।",
+      "ko": "수축기 및 이완기 혈압의 생리학적 메커니즘. 과도한 체중이 혈관 내피세포에 미치는 압력, DASH 식단의 나트륨-칼륨 비율 및 약물 없이 혈압을 낮추는 생활 습관을 안내합니다.",
+      "de": "Verstehen Sie die Mechanik des systolischen und diastolischen Blutdrucks: Gefäßwiderstand, der Einfluss von Übergewicht und die blutdrucksenkende Wirkung der DASH-Ernährung.",
+      "es": "Comprende la presión arterial sistólica y diastólica: cómo el exceso de peso afecta a las arterias, el equilibrio sodio-potasio de la dieta DASH y pautas no farmacológicas.",
+      "fr": "Comprenez les mécanismes de la pression artérielle systolique et diastolique : impact du poids sur la rigidité artérielle, équilibre sodium-potassium et régime DASH."
+    },
+    "contentHtml": {
+      "en": `
+      <h2>The Hemodynamics of Blood Pressure: Systolic vs. Diastolic</h2>
+      <p>Blood pressure represents the lateral hydrostatic force exerted by circulating blood against the internal endothelial walls of major arteries. It is expressed as a ratio of two numbers measured in millimeters of mercury (mmHg):</p>
+      <ul>
+        <li><strong>Systolic Pressure (Top Number):</strong> Peak arterial pressure generated during left ventricular contraction (systole) when oxygenated blood is forcefully propelled into the systemic aorta.</li>
+        <li><strong>Diastolic Pressure (Bottom Number):</strong> Baseline residual pressure sustained within the arterial tree during ventricular relaxation and filling (diastole), maintained by the elastic recoil of arterial walls.</li>
+      </ul>
+
+      <h2>The Direct Physiological Relationship Between Excess Body Weight and Hypertension</h2>
+      <p>Every kilogram of adipose tissue requires extensive microvascular capillary beds to supply oxygen and nutrients. As adipose volume expands, total systemic blood volume and cardiac output must increase proportionally to maintain tissue perfusion. Additionally, visceral adipose tissue stimulates the sympathetic nervous system and triggers hyperactivation of the <strong>Renin-Angiotensin-Aldosterone System (RAAS)</strong>:</p>
+      <ol class="space-y-1 my-3 list-decimal pl-5 text-sm text-[var(--muted-foreground)]">
+        <li>Angiotensin II triggers widespread systemic vasoconstriction, elevating total peripheral vascular resistance.</li>
+        <li>Aldosterone prompts the renal tubules to reabsorb sodium and retain water, increasing circulating intravascular fluid volume.</li>
+        <li>Elevated circulating insulin impairs vascular endothelial nitric oxide (NO) synthase, diminishing arterial flexibility.</li>
+      </ol>
+      <p>Clinical trials demonstrate that <strong>every 1 kilogram (2.2 lbs) of intentional weight loss lowers systolic blood pressure by approximately 1 mmHg</strong>.</p>
+
+      <h2>AHA / ACC Blood Pressure Classification Categories</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Blood Pressure Category</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Systolic mmHg</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Diastolic mmHg</th>
+              <th class="p-3 border border-[#e6e6e6]">Recommended Lifestyle Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6] font-mono">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">Normal Healthy</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&lt; 120</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&lt; 80</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Maintain balanced diet, regular aerobic exercise, and sleep hygiene</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-amber-500 font-bold">Elevated Blood Pressure</td>
+              <td class="p-3 border border-[#e6e6e6] text-amber-500 font-bold">120 – 129</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 80</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Adopt DASH dietary pattern; limit alcohol and sodium intake</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-500 font-bold">Stage 1 Hypertension</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">130 – 139</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">80 – 89</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Structured weight reduction protocol and routine home BP tracking</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-600 font-bold">Stage 2 Hypertension</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">&ge; 140</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">&ge; 90</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Comprehensive medical evaluation and combined lifestyle modifications</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Evidence-Based Lifestyle Strategies to Lower Blood Pressure</h2>
+      <ul class="space-y-2 my-4 list-disc pl-5 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Optimize the Sodium-to-Potassium Ratio:</strong> Consuming potassium-rich foods (bananas, potatoes, spinach, legumes) promotes renal sodium excretion and relaxes vascular smooth muscle.</li>
+        <li><strong>DASH Dietary Pattern:</strong> Emphasizes fruits, vegetables, whole grains, and lean proteins while minimizing saturated fats and ultra-processed sodium salts.</li>
+        <li><strong>Zone 2 Aerobic Conditioning:</strong> Performing 150 minutes of moderate aerobic activity weekly stimulates arterial endothelial nitric oxide release, reducing peripheral resistance.</li>
+      </ul>
+
+      <h2>Scientific References</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Whelton PK, et al. <em>2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults.</em> J Am Coll Cardiol 2018; 71(19):e127-e248. PMID: 29146535.</li>
+        <li>Sacks FM, et al. <em>Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet.</em> N Engl J Med 2001; 344(1):3-10. PMID: 11136953.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>रक्तचाप (Blood Pressure) क्या है? सिस्टोलिक बनाम डायस्टोलिक</h2>
+      <p><strong>सिस्टोलिक (ऊपरी संख्या)</strong> दिल के धड़कने के समय धमनियों पर पड़ने वाले अधिकतम दबाव को दर्शाता है, जबकि <strong>डायस्टोलिक (निचली संख्या)</strong> धड़कनों के बीच दिल के विश्राम के समय का दबाव है। सामान्य स्वस्थ रक्तचाप 120/80 mmHg से कम होना चाहिए।</p>
+
+      <h2>वजन और रक्तचाप का सीधा संबंध</h2>
+      <p>अध्ययनों के अनुसार, प्रत्येक 1 किलोग्राम वजन कम करने से सिस्टोलिक रक्तचाप में लगभग 1 mmHg की प्राकृतिक कमी आती है। DASH डाइट अपनाकर, नमक की मात्रा घटाकर और पोटेशियम से भरपूर खाद्य पदार्थ (केला, पालक, दालें) खाकर रक्तचाप को नियंत्रित रखा जा सकता है।</p>
+`,
+      "es": `
+      <h2>Presión Arterial y Control del Peso Corporal</h2>
+      <p>La presión arterial evalúa la fuerza que ejerce la sangre sobre las paredes arteriales. Cada kilogramo de peso corporal perdido reduce aproximadamente 1 mmHg de presión sistólica. La dieta DASH, rica en potasio y baja en sodio procesado, optimiza la vasodilatación endotelial.</p>
+`,
+      "fr": `
+      <h2>Comprendre la Pression Artérielle et le Rôle du Poids</h2>
+      <p>L'hypertension artérielle surcharge le muscle cardiaque et rigidifie les artères. Une perte de poids de 5 kg associée au régime DASH (riche en fruits, légumes et potassium) permet d'abaisser significativement la pression artérielle sans effets secondaires.</p>
+`,
+      "de": `
+      <h2>Blutdruck und Herzgesundheit</h2>
+      <p>Systolischer und diastolischer Blutdruck spiegeln den Gefäßwiderstand wider. Jedes verlorene Kilogramm Körpergewicht senkt den systolischen Blutdruck um rund 1 mmHg. Eine kaliumreiche DASH-Ernährung fördert die Gefäßelastizität.</p>
+`,
+      "ko": `
+      <h2>체중과 혈압의 생리학적 관계</h2>
+      <p>과도한 체지방은 혈액량 증가와 레닌-안지오텐신 시스템 활성화를 통해 혈관 저항을 높입니다. 체중 1kg 감량 시 수축기 혈압이 약 1mmHg 자연 감소하며, 나트륨을 줄이고 칼륨 섭취를 늘리는 DASH 식단은 최적의 혈관 탄력도를 회복시킵니다.</p>
+`
     }
   }
 };

@@ -1,0 +1,502 @@
+---
+import type { Locale } from '../utils/calculators';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+
+interface InstantBmiLocale {
+  badge: string;
+  title: string;
+  subtitle: string;
+  metricLabel: string;
+  imperialLabel: string;
+  heightLabel: string;
+  weightLabel: string;
+  calcBtn: string;
+  resultScoreLabel: string;
+  resultCatLabel: string;
+  healthyRangeLabel: string;
+  viewFullBtn: string;
+  badges: string[];
+  cats: {
+    underweight: string;
+    normal: string;
+    overweight: string;
+    obese: string;
+  };
+}
+
+const content: Record<Locale, InstantBmiLocale> = {
+  en: {
+    badge: "Instant Browser Tool",
+    title: "Calculate Your BMI Instantly",
+    subtitle: "Fast, private Body Mass Index screening based on WHO & CDC public health standards.",
+    metricLabel: "Metric (cm / kg)",
+    imperialLabel: "Imperial (ft / in / lbs)",
+    heightLabel: "Height",
+    weightLabel: "Weight",
+    calcBtn: "Calculate BMI",
+    resultScoreLabel: "Your BMI Score",
+    resultCatLabel: "Category",
+    healthyRangeLabel: "Healthy Weight Window",
+    viewFullBtn: "Open Full BMI Calculator & 3D Visualizer →",
+    badges: [
+      "100% Free & Instant",
+      "Privacy First (Zero Data Retained)",
+      "No Sign-up Required",
+      "WHO & CDC Standards"
+    ],
+    cats: {
+      underweight: "Underweight (< 18.5)",
+      normal: "Healthy Weight (18.5 – 24.9)",
+      overweight: "Overweight (25.0 – 29.9)",
+      obese: "Obesity (≥ 30.0)"
+    }
+  },
+  hi: {
+    badge: "त्वरित ब्राउज़र टूल",
+    title: "तुरंत अपना बीएमआई (BMI) निकालें",
+    subtitle: "WHO एवं CDC सार्वजनिक स्वास्थ्य मानकों पर आधारित तीव्र और 100% निजी स्क्रीनिंग।",
+    metricLabel: "मीट्रिक (सेमी / किग्रा)",
+    imperialLabel: "इंपीरियल (फीट / इंच / पाउंड)",
+    heightLabel: "ऊंचाई",
+    weightLabel: "वजन",
+    calcBtn: "बीएमआई की गणना करें",
+    resultScoreLabel: "आपका बीएमआई स्कोर",
+    resultCatLabel: "श्रेणी",
+    healthyRangeLabel: "स्वस्थ वजन सीमा",
+    viewFullBtn: "संपूर्ण बीएमआई कैलकुलेटर एवं 3D अवतार देखें →",
+    badges: [
+      "100% मुफ़्त एवं त्वरित",
+      "पूर्ण गोपनीयता (शून्य डेटा संग्रह)",
+      "साइन-अप की आवश्यकता नहीं",
+      "WHO एवं CDC मानक"
+    ],
+    cats: {
+      underweight: "कम वजन (< 18.5)",
+      normal: "स्वस्थ वजन (18.5 – 24.9)",
+      overweight: "अधिक वजन (25.0 – 29.9)",
+      obese: "मोटापा (≥ 30.0)"
+    }
+  },
+  es: {
+    badge: "Herramienta Instantánea en Navegador",
+    title: "Calcula tu IMC al Instante",
+    subtitle: "Cribado de Índice de Masa Corporal rápido y privado según las normas de la OMS y CDC.",
+    metricLabel: "Métrico (cm / kg)",
+    imperialLabel: "Imperial (pies / pulg / lbs)",
+    heightLabel: "Altura",
+    weightLabel: "Peso",
+    calcBtn: "Calcular IMC",
+    resultScoreLabel: "Tu Puntuación de IMC",
+    resultCatLabel: "Categoría",
+    healthyRangeLabel: "Rango de Peso Saludable",
+    viewFullBtn: "Abrir Calculadora Completa y Visualizador 3D →",
+    badges: [
+      "100% Gratis e Instantáneo",
+      "Privacidad Total (Sin Almacenamiento)",
+      "Sin Registro Requerido",
+      "Estándares OMS y CDC"
+    ],
+    cats: {
+      underweight: "Bajo peso (< 18.5)",
+      normal: "Peso saludable (18.5 – 24.9)",
+      overweight: "Sobrepeso (25.0 – 29.9)",
+      obese: "Obesidad (≥ 30.0)"
+    }
+  },
+  fr: {
+    badge: "Outil Instantané sur Navigateur",
+    title: "Calculez Votre IMC Instantanément",
+    subtitle: "Évaluation rapide et confidentielle de l'Indice de Masse Corporelle selon l'OMS et le CDC.",
+    metricLabel: "Métrique (cm / kg)",
+    imperialLabel: "Impérial (pi / po / lbs)",
+    heightLabel: "Taille",
+    weightLabel: "Poids",
+    calcBtn: "Calculer l'IMC",
+    resultScoreLabel: "Votre Score d'IMC",
+    resultCatLabel: "Catégorie",
+    healthyRangeLabel: "Plage de Poids Santé",
+    viewFullBtn: "Ouvrir le Calculateur Complet et Visualiseur 3D →",
+    badges: [
+      "100% Gratuit et Instantané",
+      "Confidentialité Totale (Zéro Donnée)",
+      "Aucune Inscription Requise",
+      "Normes OMS et CDC"
+    ],
+    cats: {
+      underweight: "Insuffisance pondérale (< 18,5)",
+      normal: "Poids santé (18,5 – 24,9)",
+      overweight: "Surpoids (25,0 – 29,9)",
+      obese: "Obésité (≥ 30,0)"
+    }
+  },
+  de: {
+    badge: "Sofortiges Browser-Tool",
+    title: "Berechnen Sie Ihren BMI Sofort",
+    subtitle: "Schnelle und private Body-Mass-Index-Ermittlung nach Standards der WHO und CDC.",
+    metricLabel: "Metrisch (cm / kg)",
+    imperialLabel: "Imperial (ft / in / lbs)",
+    heightLabel: "Körpergröße",
+    weightLabel: "Gewicht",
+    calcBtn: "BMI Berechnen",
+    resultScoreLabel: "Ihr BMI-Wert",
+    resultCatLabel: "Kategorie",
+    healthyRangeLabel: "Gesunder Gewichtsbereich",
+    viewFullBtn: "Vollständigen BMI-Rechner & 3D-Modell öffnen →",
+    badges: [
+      "100% Kostenlos & Sofort",
+      "Volle Privatsphäre (Keine Speicherung)",
+      "Keine Registrierung erforderlich",
+      "WHO- & CDC-Standards"
+    ],
+    cats: {
+      underweight: "Untergewicht (< 18,5)",
+      normal: "Normalgewicht (18,5 – 24,9)",
+      overweight: "Übergewicht (25,0 – 29,9)",
+      obese: "Adipositas (≥ 30,0)"
+    }
+  },
+  ko: {
+    badge: "브라우저 즉시 계산 도구",
+    title: "실시간 BMI 즉시 계산",
+    subtitle: "WHO 및 CDC 공중보건 기준에 따른 안전하고 빠른 체질량지수(BMI) 측정 도구입니다.",
+    metricLabel: "미터법 (cm / kg)",
+    imperialLabel: "야드파운드법 (ft / in / lbs)",
+    heightLabel: "신장 (키)",
+    weightLabel: "체중 (몸무게)",
+    calcBtn: "BMI 계산하기",
+    resultScoreLabel: "나의 BMI 점수",
+    resultCatLabel: "판정 범주",
+    healthyRangeLabel: "정상 체중 권장 범위",
+    viewFullBtn: "상세 BMI 계산기 및 3D 시각화 도구 열기 →",
+    badges: [
+      "100% 무료 및 즉시 연산",
+      "완전한 개인정보 보호 (데이터 미수집)",
+      "회원가입 필요 없음",
+      "WHO & CDC 표준 기준"
+    ],
+    cats: {
+      underweight: "저체중 (< 18.5)",
+      normal: "정상 체중 (18.5 – 24.9)",
+      overweight: "과체중 (25.0 – 29.9)",
+      obese: "비만 (≥ 30.0)"
+    }
+  }
+};
+
+const t = content[lang] || content.en;
+---
+
+<div class="w-full max-w-4xl mx-auto rounded-3xl border border-[var(--border)] bg-[var(--card)]/90 backdrop-blur-xl shadow-xl overflow-hidden text-left" id="instantBmiCard">
+  <!-- Top Header Bar -->
+  <div class="p-5 sm:p-7 border-b border-[var(--border)]/70 bg-gradient-to-r from-[var(--muted)]/40 via-transparent to-[var(--muted)]/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div class="space-y-1">
+      <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/10 text-[11px] font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+        <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+        {t.badge}
+      </div>
+      <h2 class="text-xl sm:text-2xl font-display font-bold text-[var(--foreground)] tracking-tight">
+        {t.title}
+      </h2>
+      <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium">
+        {t.subtitle}
+      </p>
+    </div>
+
+    <!-- Unit Toggle -->
+    <div class="inline-flex p-1 rounded-xl border border-[var(--border)] bg-[var(--muted)]/80 self-start sm:self-center shrink-0">
+      <button type="button" id="instantUnitMetric" class="px-3.5 py-1.5 rounded-lg text-xs font-display font-bold uppercase tracking-wider transition-all bg-[var(--accent)] text-white shadow-xs cursor-pointer">
+        {t.metricLabel}
+      </button>
+      <button type="button" id="instantUnitImperial" class="px-3.5 py-1.5 rounded-lg text-xs font-display font-bold uppercase tracking-wider transition-all text-[var(--muted-foreground)] hover:text-[var(--foreground)] cursor-pointer">
+        {t.imperialLabel}
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive Form & Live Result Body -->
+  <div class="p-5 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+    
+    <!-- Left Column: Inputs -->
+    <div class="lg:col-span-7 space-y-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        <!-- Height Container -->
+        <div class="space-y-1.5">
+          <label class="block text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]" for="instantHeightMetric">
+            {t.heightLabel}
+          </label>
+          
+          <!-- Metric Height Input -->
+          <div id="instantHeightMetricWrap" class="relative">
+            <input 
+              type="number" 
+              id="instantHeightMetric" 
+              min="80" 
+              max="250" 
+              value="175" 
+              step="0.5"
+              class="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--muted)]/30 text-[var(--foreground)] font-mono font-bold text-base focus:border-[var(--accent)] focus:outline-hidden transition-colors"
+              placeholder="175"
+              aria-label="Height in centimeters"
+            />
+            <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-mono font-semibold text-[var(--muted-foreground)] pointer-events-none">cm</span>
+          </div>
+
+          <!-- Imperial Height Input (Feet + Inches) -->
+          <div id="instantHeightImperialWrap" class="hidden grid-cols-2 gap-2">
+            <div class="relative">
+              <input 
+                type="number" 
+                id="instantHeightFt" 
+                min="2" 
+                max="8" 
+                value="5" 
+                class="w-full px-3 py-3 rounded-xl border border-[var(--border)] bg-[var(--muted)]/30 text-[var(--foreground)] font-mono font-bold text-base focus:border-[var(--accent)] focus:outline-hidden transition-colors"
+                placeholder="5"
+                aria-label="Height feet"
+              />
+              <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono font-semibold text-[var(--muted-foreground)] pointer-events-none">ft</span>
+            </div>
+            <div class="relative">
+              <input 
+                type="number" 
+                id="instantHeightIn" 
+                min="0" 
+                max="11" 
+                value="9" 
+                class="w-full px-3 py-3 rounded-xl border border-[var(--border)] bg-[var(--muted)]/30 text-[var(--foreground)] font-mono font-bold text-base focus:border-[var(--accent)] focus:outline-hidden transition-colors"
+                placeholder="9"
+                aria-label="Height inches"
+              />
+              <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono font-semibold text-[var(--muted-foreground)] pointer-events-none">in</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weight Container -->
+        <div class="space-y-1.5">
+          <label class="block text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]" for="instantWeight">
+            {t.weightLabel}
+          </label>
+          <div class="relative">
+            <input 
+              type="number" 
+              id="instantWeight" 
+              min="20" 
+              max="350" 
+              value="70" 
+              step="0.5"
+              class="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--muted)]/30 text-[var(--foreground)] font-mono font-bold text-base focus:border-[var(--accent)] focus:outline-hidden transition-colors"
+              placeholder="70"
+              aria-label="Weight"
+            />
+            <span id="instantWeightUnit" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-mono font-semibold text-[var(--muted-foreground)] pointer-events-none">kg</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculate Button -->
+      <button 
+        type="button" 
+        id="instantCalcBtn" 
+        class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[var(--accent)] to-[#d44f30] text-white font-display font-bold text-sm uppercase tracking-wider shadow-md hover:opacity-95 hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+        <span>{t.calcBtn}</span>
+      </button>
+    </div>
+
+    <!-- Right Column: Instant Live Output Studio -->
+    <div class="lg:col-span-5 p-5 rounded-2xl border border-[var(--border)] bg-[var(--muted)]/25 space-y-4 text-center sm:text-left">
+      <div class="space-y-1">
+        <p class="text-xs font-display font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">{t.resultScoreLabel}</p>
+        <div class="flex items-baseline justify-center sm:justify-start gap-2">
+          <span id="instantBmiScore" class="text-4xl sm:text-5xl font-display font-black tracking-tight text-[var(--foreground)]">22.9</span>
+          <span class="text-xs font-mono font-bold text-[var(--muted-foreground)]">kg/m²</span>
+        </div>
+      </div>
+
+      <!-- Category Pill -->
+      <div class="space-y-1">
+        <p class="text-[11px] font-display font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">{t.resultCatLabel}</p>
+        <div id="instantBmiCatBadge" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-display font-bold uppercase tracking-wide bg-emerald-500/10 text-emerald-500 border border-emerald-500/25">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span id="instantBmiCatText">{t.cats.normal}</span>
+        </div>
+      </div>
+
+      <!-- Healthy Range Estimate -->
+      <div class="pt-2 border-t border-[var(--border)]/60 text-xs text-[var(--muted-foreground)] font-medium flex items-center justify-between">
+        <span>{t.healthyRangeLabel}:</span>
+        <strong id="instantHealthyRange" class="font-mono text-[var(--foreground)]">56.7 – 76.3 kg</strong>
+      </div>
+
+      <!-- Deep Dive CTA -->
+      <a 
+        href={`/${lang}/bmi-calculator/`} 
+        class="block text-center text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:underline pt-1"
+      >
+        {t.viewFullBtn}
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Bottom Value Props Strip -->
+  <div class="px-5 py-3.5 border-t border-[var(--border)]/70 bg-[var(--muted)]/30 flex flex-wrap items-center justify-around gap-2 text-xs font-semibold text-[var(--muted-foreground)]">
+    {t.badges.map(b => (
+      <span class="inline-flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+        <span>{b}</span>
+      </span>
+    ))}
+  </div>
+</div>
+
+<script is:inline define:vars={{ cats: t.cats }}>
+  function initInstantBmi() {
+    let currentSystem = 'metric'; // 'metric' or 'imperial'
+    const btnMetric = document.getElementById('instantUnitMetric');
+    const btnImperial = document.getElementById('instantUnitImperial');
+    const heightMetricWrap = document.getElementById('instantHeightMetricWrap');
+    const heightImperialWrap = document.getElementById('instantHeightImperialWrap');
+    const heightMetric = document.getElementById('instantHeightMetric');
+    const heightFt = document.getElementById('instantHeightFt');
+    const heightIn = document.getElementById('instantHeightIn');
+    const weightInput = document.getElementById('instantWeight');
+    const weightUnit = document.getElementById('instantWeightUnit');
+    const calcBtn = document.getElementById('instantCalcBtn');
+
+    const scoreEl = document.getElementById('instantBmiScore');
+    const catBadge = document.getElementById('instantBmiCatBadge');
+    const catText = document.getElementById('instantBmiCatText');
+    const rangeEl = document.getElementById('instantHealthyRange');
+
+    if (!btnMetric || !btnImperial || !calcBtn) return;
+
+    function setSystem(sys) {
+      currentSystem = sys;
+      if (sys === 'metric') {
+        btnMetric.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+        btnMetric.classList.remove('text-[var(--muted-foreground)]');
+        btnImperial.classList.remove('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+        btnImperial.classList.add('text-[var(--muted-foreground)]');
+
+        heightMetricWrap.classList.remove('hidden');
+        heightImperialWrap.classList.add('hidden');
+        heightImperialWrap.classList.remove('grid');
+
+        weightUnit.textContent = 'kg';
+        // Convert weight if imperial
+        const currW = parseFloat(weightInput.value);
+        if (currW && currW > 100) {
+          weightInput.value = (currW * 0.453592).toFixed(1);
+        } else if (!currW) {
+          weightInput.value = '70';
+        }
+      } else {
+        btnImperial.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+        btnImperial.classList.remove('text-[var(--muted-foreground)]');
+        btnMetric.classList.remove('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+        btnMetric.classList.add('text-[var(--muted-foreground)]');
+
+        heightMetricWrap.classList.add('hidden');
+        heightImperialWrap.classList.remove('hidden');
+        heightImperialWrap.classList.add('grid');
+
+        weightUnit.textContent = 'lbs';
+        // Convert weight if metric
+        const currW = parseFloat(weightInput.value);
+        if (currW && currW < 120) {
+          weightInput.value = Math.round(currW * 2.20462);
+        } else if (!currW) {
+          weightInput.value = '154';
+        }
+      }
+      calculate();
+    }
+
+    function calculate() {
+      let heightCm = 0;
+      let weightKg = 0;
+
+      if (currentSystem === 'metric') {
+        heightCm = parseFloat(heightMetric.value) || 0;
+        weightKg = parseFloat(weightInput.value) || 0;
+      } else {
+        const ft = parseFloat(heightFt.value) || 0;
+        const inch = parseFloat(heightIn.value) || 0;
+        const totalIn = (ft * 12) + inch;
+        heightCm = totalIn * 2.54;
+        const weightLbs = parseFloat(weightInput.value) || 0;
+        weightKg = weightLbs * 0.453592;
+      }
+
+      if (heightCm <= 0 || weightKg <= 0) return;
+
+      const heightM = heightCm / 100;
+      const bmi = weightKg / (heightM * heightM);
+
+      if (!isFinite(bmi) || bmi <= 0) return;
+
+      scoreEl.textContent = bmi.toFixed(1);
+
+      // Category Determination
+      let catLabel = cats.normal;
+      let badgeClass = 'bg-emerald-500/10 text-emerald-500 border-emerald-500/25';
+      let dotColor = 'bg-emerald-500';
+
+      if (bmi < 18.5) {
+        catLabel = cats.underweight;
+        badgeClass = 'bg-sky-500/10 text-sky-500 border-sky-500/25';
+        dotColor = 'bg-sky-500';
+      } else if (bmi >= 25 && bmi < 30) {
+        catLabel = cats.overweight;
+        badgeClass = 'bg-amber-500/10 text-amber-500 border-amber-500/25';
+        dotColor = 'bg-amber-500';
+      } else if (bmi >= 30) {
+        catLabel = cats.obese;
+        badgeClass = 'bg-rose-500/10 text-rose-500 border-rose-500/25';
+        dotColor = 'bg-rose-500';
+      }
+
+      catText.textContent = catLabel;
+      catBadge.className = `inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-display font-bold uppercase tracking-wide border ${badgeClass}`;
+      const dot = catBadge.querySelector('span:first-child');
+      if (dot) dot.className = `w-2 h-2 rounded-full ${dotColor}`;
+
+      // Calculate healthy weight range
+      const minKg = 18.5 * heightM * heightM;
+      const maxKg = 24.9 * heightM * heightM;
+      if (currentSystem === 'metric') {
+        rangeEl.textContent = `${minKg.toFixed(1)} – ${maxKg.toFixed(1)} kg`;
+      } else {
+        const minLbs = minKg * 2.20462;
+        const maxLbs = maxKg * 2.20462;
+        rangeEl.textContent = `${Math.round(minLbs)} – ${Math.round(maxLbs)} lbs`;
+      }
+    }
+
+    btnMetric.onclick = () => setSystem('metric');
+    btnImperial.onclick = () => setSystem('imperial');
+    calcBtn.onclick = calculate;
+    [heightMetric, heightFt, heightIn, weightInput].forEach(inp => {
+      inp && inp.addEventListener('input', calculate);
+    });
+
+    calculate();
+  }
+
+  initInstantBmi();
+  document.addEventListener('astro:after-swap', initInstantBmi);
+</script>
+

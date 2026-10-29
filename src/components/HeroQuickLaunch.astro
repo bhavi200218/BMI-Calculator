@@ -18,17 +18,21 @@ interface QuickTool {
 interface QuickLaunchLocale {
   badge: string;
   title: string;
+  subtitle: string;
   allToolsBtn: string;
   browseResearchBtn: string;
+  openLabel: string;
   tools: QuickTool[];
 }
 
 const data: Record<Locale, QuickLaunchLocale> = {
   en: {
-    badge: "Quick Screening Launchpad",
-    title: "Essential Health Calculators",
+    badge: "🔥 Most Popular Calculators",
+    title: "Most Popular Health & Fitness Calculators",
+    subtitle: "Direct access to our most frequently used evidence-based screening and metabolic calculation tools.",
     allToolsBtn: "View All 18+ Calculators ↓",
-    browseResearchBtn: "Explore Health Topics & Guides ↓",
+    browseResearchBtn: "Explore Health Guides & Research ↓",
+    openLabel: "Open Calculator",
     tools: [
       {
         name: "BMI Calculator",
@@ -57,14 +61,44 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "Estimate lean mass vs body fat percentage via U.S. Navy circumference method.",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      },
+      {
+        name: "Water Intake Calculator",
+        tag: "Daily Hydration",
+        desc: "Determine daily optimal fluid requirements based on body mass, climate, and exercise.",
+        href: `/${lang}/water-intake-calculator/`,
+        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
+      },
+      {
+        name: "Protein Calculator",
+        tag: "Macronutrient Target",
+        desc: "Calculate daily protein targets tailored to body weight, resistance training, and goals.",
+        href: `/${lang}/protein-intake-calculator/`,
+        icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        name: "1RM Calculator",
+        tag: "Strength Metrics",
+        desc: "Estimate one-rep maximum lift capacity using Brzycki, Epley, and Lombardi formulas.",
+        href: `/${lang}/1rm-calculator/`,
+        icon: "M4 6h2v12H4zm14 0h2v12h-2zm-12 5h12v2H6z"
+      },
+      {
+        name: "Heart Rate Zone Calculator",
+        tag: "Cardiovascular",
+        desc: "Target aerobic, anaerobic, and recovery heart rate training zones via Karvonen.",
+        href: `/${lang}/heart-rate-zone-calculator/`,
+        icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
       }
     ]
   },
   hi: {
-    badge: "त्वरित स्क्रीनिंग लॉन्चपैड",
-    title: "आवश्यक स्वास्थ्य कैलकुलेटर",
+    badge: "🔥 सर्वाधिक लोकप्रिय कैलकुलेटर",
+    title: "सर्वाधिक लोकप्रिय स्वास्थ्य एवं फिटनेस कैलकुलेटर",
+    subtitle: "हमारे सबसे अधिक उपयोग किए जाने वाले साक्ष्य-आधारित स्क्रीनिंग एवं मेटाबॉलिक गणना उपकरण।",
     allToolsBtn: "सभी 18+ कैलकुलेटर देखें ↓",
-    browseResearchBtn: "स्वास्थ्य विषय एवं गाइड देखें ↓",
+    browseResearchBtn: "स्वास्थ्य गाइड एवं रिसर्च देखें ↓",
+    openLabel: "कैलकुलेटर खोलें",
     tools: [
       {
         name: "बीएमआई कैलकुलेटर",
@@ -93,14 +127,44 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "यू.एस. नेवी विधि द्वारा शरीर में वसा और लीन मास प्रतिशत का मापन।",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      },
+      {
+        name: "वॉटर इनटेक कैलकुलेटर",
+        tag: "दैनिक हाइड्रेशन",
+        desc: "वजन, जलवायु और व्यायाम के आधार पर दैनिक इष्टतम जल आवश्यकता की गणना करें।",
+        href: `/${lang}/water-intake-calculator/`,
+        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
+      },
+      {
+        name: "प्रोटीन कैलकुलेटर",
+        tag: "मैक्रोन्यूट्रिएंट लक्ष्य",
+        desc: "शारीरिक वजन, लक्ष्य और फिटनेस स्तर के आधार पर दैनिक प्रोटीन आवश्यकता मापें।",
+        href: `/${lang}/protein-intake-calculator/`,
+        icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        name: "1RM कैलकुलेटर",
+        tag: "स्ट्रेंथ मेट्रिक्स",
+        desc: "बर्ज़िकी एवं एपली समीकरणों से अपने 1-रिपीटिशन मैक्सिमम लिफ्टिंग क्षमता की गणना करें।",
+        href: `/${lang}/1rm-calculator/`,
+        icon: "M4 6h2v12H4zm14 0h2v12h-2zm-12 5h12v2H6z"
+      },
+      {
+        name: "हार्ट रेट ज़ोन कैलकुलेटर",
+        tag: "कार्डियो प्रशिक्षण",
+        desc: "कार्मोनेन सूत्र से एरोबिक, एनारोबिक और फैट बर्निंग हृदय गति ज़ोन निर्धारित करें।",
+        href: `/${lang}/heart-rate-zone-calculator/`,
+        icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
       }
     ]
   },
   es: {
-    badge: "Plataforma de Cribado Rápido",
-    title: "Calculadoras de Salud Esenciales",
+    badge: "🔥 Calculadoras Más Populares",
+    title: "Calculadoras de Salud y Fitness Más Populares",
+    subtitle: "Acceso directo a nuestras herramientas de cribado y cálculo metabólico más utilizadas.",
     allToolsBtn: "Ver las 18+ Calculadoras ↓",
-    browseResearchBtn: "Explorar Temas y Guías Clínicas ↓",
+    browseResearchBtn: "Explorar Guías de Salud e Investigación ↓",
+    openLabel: "Abrir herramienta",
     tools: [
       {
         name: "Calculadora de IMC",
@@ -118,7 +182,7 @@ const data: Record<Locale, QuickLaunchLocale> = {
       },
       {
         name: "Calculadora GETD (TDEE)",
-        tag: "Gasto Energético Total",
+        tag: "Gasto Energético",
         desc: "Estime las calorías diarias totales según su nivel de actividad física.",
         href: `/${lang}/tdee-calculator/`,
         icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
@@ -129,14 +193,44 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "Estime el porcentaje graso y masa magra según el método de la Marina de EE. UU.",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      },
+      {
+        name: "Calculadora de Agua",
+        tag: "Hidratación Diaria",
+        desc: "Determine los requerimientos óptimos de líquidos según peso, clima y ejercicio.",
+        href: `/${lang}/water-intake-calculator/`,
+        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
+      },
+      {
+        name: "Calculadora de Proteína",
+        tag: "Objetivo Macronutricional",
+        desc: "Calcule sus necesidades diarias de proteína adaptadas a su peso y objetivos deportivos.",
+        href: `/${lang}/protein-intake-calculator/`,
+        icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        name: "Calculadora 1RM",
+        tag: "Fuerza Máxima",
+        desc: "Estime su repetición máxima en fuerza usando las fórmulas de Brzycki y Epley.",
+        href: `/${lang}/1rm-calculator/`,
+        icon: "M4 6h2v12H4zm14 0h2v12h-2zm-12 5h12v2H6z"
+      },
+      {
+        name: "Zonas de Frecuencia Cardíaca",
+        tag: "Cardiovascular",
+        desc: "Establezca zonas de entrenamiento aeróbico, anaeróbico y recuperación con Karvonen.",
+        href: `/${lang}/heart-rate-zone-calculator/`,
+        icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
       }
     ]
   },
   fr: {
-    badge: "Lancement Rapide de Dépistage",
-    title: "Calculateurs Santé Indispensables",
+    badge: "🔥 Calculateurs les Plus Populaires",
+    title: "Calculateurs Santé et Forme les Plus Populaires",
+    subtitle: "Accès direct à nos outils de dépistage et de métabolisme les plus utilisés.",
     allToolsBtn: "Voir les 18+ Calculateurs ↓",
-    browseResearchBtn: "Explorer Thématiques & Guides ↓",
+    browseResearchBtn: "Explorer Guides Santé et Recherche ↓",
+    openLabel: "Ouvrir l'outil",
     tools: [
       {
         name: "Calculateur d'IMC",
@@ -165,14 +259,44 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "Estimez le taux de graisse et masse maigre par la méthode US Navy.",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      },
+      {
+        name: "Calculateur d'Eau",
+        tag: "Hydratation Quotidienne",
+        desc: "Déterminez vos besoins quotidiens en eau selon votre poids, le climat et l'exercice.",
+        href: `/${lang}/water-intake-calculator/`,
+        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
+      },
+      {
+        name: "Calculateur de Protéines",
+        tag: "Macro-nutrition",
+        desc: "Calculez vos besoins journaliers en protéines selon votre poids et vos objectifs.",
+        href: `/${lang}/protein-intake-calculator/`,
+        icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        name: "Calculateur 1RM",
+        tag: "Force Maximale",
+        desc: "Estimez votre charge maximale sur une répétition via les formules de Brzycki et Epley.",
+        href: `/${lang}/1rm-calculator/`,
+        icon: "M4 6h2v12H4zm14 0h2v12h-2zm-12 5h12v2H6z"
+      },
+      {
+        name: "Zones Cardiaques",
+        tag: "Cardiovasculaire",
+        desc: "Définissez vos zones d'entraînement aérobie et anaérobie selon la méthode de Karvonen.",
+        href: `/${lang}/heart-rate-zone-calculator/`,
+        icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
       }
     ]
   },
   de: {
-    badge: "Schnell-Screening Startbereich",
-    title: "Wichtigste Gesundheitsrechner",
+    badge: "🔥 Beliebteste Rechner",
+    title: "Beliebteste Gesundheits- & Fitnessrechner",
+    subtitle: "Direkter Zugang zu unseren meistgenutzten evidenzbasierten Screening- und Stoffwechselrechnern.",
     allToolsBtn: "Alle 18+ Rechner Anzeigen ↓",
-    browseResearchBtn: "Themen & Leitfäden Erkunden ↓",
+    browseResearchBtn: "Gesundheits-Guides & Forschung Erkunden ↓",
+    openLabel: "Rechner öffnen",
     tools: [
       {
         name: "BMI-Rechner",
@@ -201,14 +325,44 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "Schätzen Sie Körperfett- und fettfreie Masse nach der US-Navy-Methode.",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      },
+      {
+        name: "Wasserbedarf-Rechner",
+        tag: "Tägliche Hydratation",
+        desc: "Bestimmen Sie den optimalen täglichen Flüssigkeitsbedarf basierend auf Körpergewicht und Aktivität.",
+        href: `/${lang}/water-intake-calculator/`,
+        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
+      },
+      {
+        name: "Protein-Rechner",
+        tag: "Makronährstoff-Ziel",
+        desc: "Ermitteln Sie den täglichen Proteinbedarf abgestimmt auf Körpergewicht und Krafttraining.",
+        href: `/${lang}/protein-intake-calculator/`,
+        icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        name: "1RM-Rechner",
+        tag: "Maximalkraft",
+        desc: "Schätzen Sie Ihre Maximalwiederholung (1RM) mit den Formeln von Brzycki und Epley.",
+        href: `/${lang}/1rm-calculator/`,
+        icon: "M4 6h2v12H4zm14 0h2v12h-2zm-12 5h12v2H6z"
+      },
+      {
+        name: "Pulszonen-Rechner",
+        tag: "Herzkreislauf",
+        desc: "Ermitteln Sie aerobe, anaerobe und Fettverbrennungs-Pulsbereiche nach Karvonen.",
+        href: `/${lang}/heart-rate-zone-calculator/`,
+        icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
       }
     ]
   },
   ko: {
-    badge: "빠른 스크리닝 런치패드",
-    title: "핵심 건강 계산기",
+    badge: "🔥 가장 인기 있는 계산기",
+    title: "가장 인기 있는 건강 & 피트니스 계산기",
+    subtitle: "가장 널리 활용되는 근거 중심 스크리닝 및 대사율 산출 도구 모음입니다.",
     allToolsBtn: "18+ 전체 계산기 모음 보기 ↓",
-    browseResearchBtn: "인기 주제 및 연구 가이드 탐색 ↓",
+    browseResearchBtn: "건강 가이드 및 연구 탐색 ↓",
+    openLabel: "도구 열기",
     tools: [
       {
         name: "BMI 계산기",
@@ -237,6 +391,34 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "미 해군 둘레 측정 공식(US Navy)으로 체지방률과 제지방량을 평가합니다.",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      },
+      {
+        name: "수분 섭취량 계산기",
+        tag: "일일 수분 공급",
+        desc: "체중, 활동량 및 환경을 기반으로 하루 최적의 수분 섭취 권장량을 산출합니다.",
+        href: `/${lang}/water-intake-calculator/`,
+        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
+      },
+      {
+        name: "단백질 섭취량 계산기",
+        tag: "다량 영양소 목표",
+        desc: "체중, 근력 운동 수준 및 체중 감량/증량 목표에 맞춘 일일 단백질 섭취량을 계산합니다.",
+        href: `/${lang}/protein-intake-calculator/`,
+        icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      },
+      {
+        name: "1RM 계산기",
+        tag: "근력 지표",
+        desc: "Brzycki 및 Epley 공식을 활용하여 1회 최대 반복 중량(1RM)을 정밀 산출합니다.",
+        href: `/${lang}/1rm-calculator/`,
+        icon: "M4 6h2v12H4zm14 0h2v12h-2zm-12 5h12v2H6z"
+      },
+      {
+        name: "심박수 구간 계산기",
+        tag: "심혈관 트레이닝",
+        desc: "Karvonen 공식을 기반으로 유산소, 무산소 및 지방 연소 최적 심박수를 설정합니다.",
+        href: `/${lang}/heart-rate-zone-calculator/`,
+        icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
       }
     ]
   }
@@ -245,20 +427,33 @@ const data: Record<Locale, QuickLaunchLocale> = {
 const current = data[lang] || data.en;
 ---
 
-<div class="space-y-6">
-  <!-- 4 Core Calculators Grid -->
+<div class="space-y-8">
+  <!-- Section Header -->
+  <div class="text-center max-w-3xl mx-auto space-y-3">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
+      <span>{current.badge}</span>
+    </div>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+      {current.title}
+    </h2>
+    <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium leading-relaxed max-w-2xl mx-auto">
+      {current.subtitle}
+    </p>
+  </div>
+
+  <!-- 8 Core Calculators Grid -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
     {current.tools.map((tool) => (
       <a
         href={tool.href}
-        class="group p-5 rounded-2xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/[0.03] transition-all duration-300 flex flex-col justify-between space-y-3 shadow-xs hover:shadow-md no-underline"
+        class="group p-5 rounded-2xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/[0.03] transition-all duration-300 flex flex-col justify-between space-y-4 shadow-xs hover:shadow-md no-underline"
       >
-        <div class="space-y-2">
+        <div class="space-y-2.5">
           <div class="flex items-center justify-between gap-2">
             <span class="text-[10px] font-display font-bold uppercase tracking-wider text-[var(--accent)] px-2 py-0.5 rounded-md bg-[var(--accent)]/10 border border-[var(--accent)]/20">
               {tool.tag}
             </span>
-            <div class="w-7 h-7 rounded-lg bg-[var(--muted)]/50 flex items-center justify-center text-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white transition-colors">
+            <div class="w-8 h-8 rounded-lg bg-[var(--muted)]/50 flex items-center justify-center text-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.icon} />
               </svg>
@@ -271,9 +466,9 @@ const current = data[lang] || data.en;
             {tool.desc}
           </p>
         </div>
-        <div class="pt-2 flex items-center text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] gap-1 group-hover:translate-x-1 transition-transform">
-          <span>{lang === 'hi' ? 'कैलकुलेटर खोलें' : lang === 'es' ? 'Abrir herramienta' : lang === 'fr' ? "Ouvrir l'outil" : lang === 'de' ? 'Rechner öffnen' : lang === 'ko' ? '도구 열기' : 'Open Tool'}</span>
-          <span>→</span>
+        <div class="pt-2 border-t border-[var(--border)]/40 flex items-center justify-between text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+          <span>{current.openLabel}</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
         </div>
       </a>
     ))}
@@ -282,18 +477,18 @@ const current = data[lang] || data.en;
   <!-- Dual Action Jump Bar -->
   <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
     <a
-      href="#all-calculators"
-      class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all shadow-xs"
+      href="#calculators"
+      class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-[var(--accent)] bg-[var(--accent)] text-white text-xs font-display font-bold uppercase tracking-wider hover:bg-[var(--accent)]/90 transition-all shadow-sm"
     >
-      <svg class="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
       <span>{current.allToolsBtn}</span>
     </a>
     
     <a
-      href="#popular-topics"
-      class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all shadow-xs"
+      href="#featured-guides"
+      class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all shadow-xs"
     >
       <span>{current.browseResearchBtn}</span>
     </a>

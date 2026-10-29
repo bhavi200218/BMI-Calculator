@@ -56,7 +56,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
         </div>
       </div>
 
-      <h2>BMR vs. TDEE: Side-by-Side Clinical Comparison</h2>
+      <h2>BMR vs. TDEE: Side-by-Side Comparison</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
@@ -204,7 +204,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       "fr": "Métabolisme et Dépense Énergétique"
     },
     "description": {
-      "en": "Step-by-step clinical methodology for calculating Total Daily Energy Expenditure (TDEE). Learn physical activity level (PAL) multipliers, worked mathematical examples, and how to dial in calories.",
+      "en": "Step-by-step evidence-based methodology for calculating Total Daily Energy Expenditure (TDEE). Learn physical activity level (PAL) multipliers, worked mathematical examples, and how to dial in calories.",
       "hi": "टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) निकालने की वैज्ञानिक विधि। शारीरिक गतिविधि गुणक (PAL), गणितीय उदाहरण और वजन घटाने के लिए सटीक कैलोरी लक्ष्य।",
       "ko": "일일 총 에너지 소비량(TDEE)을 산출하는 표준 공식. 신체 활동 수준(PAL) 계수 선택법, 계산 예제 및 안전한 칼로리 설정법을 확인하세요.",
       "de": "Schritt-für-Schritt-Anleitung zur Berechnung des Gesamtumsatzes (TDEE) mittels PAL-Faktoren und präziser Kalorienbedarfsplanung.",
@@ -226,7 +226,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
             <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
               <th class="p-3 border border-[#e6e6e6]">Activity Level</th>
               <th class="p-3 border border-[#e6e6e6] font-mono text-blue-500">PAL Multiplier</th>
-              <th class="p-3 border border-[#e6e6e6]">Clinical Lifestyle Description</th>
+              <th class="p-3 border border-[#e6e6e6]">Lifestyle & Activity Description</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6]">
@@ -373,17 +373,17 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       "fr": "Métabolisme et Dépense Énergétique"
     },
     "description": {
-      "en": "Clinical comparison of predictive resting metabolic equations: Mifflin-St Jeor (1990), original Harris-Benedict (1919), revised Roza-Shizgal (1984), and Katch-McArdle.",
+      "en": "Research comparison of predictive resting metabolic equations: Mifflin-St Jeor (1990), original Harris-Benedict (1919), revised Roza-Shizgal (1984), and Katch-McArdle.",
       "hi": "बीएमआर फॉर्मूलों का वैज्ञानिक विश्लेषण। जानें कि अमेरिकन डायटेटिक एसोसिएशन मिफलिन-सेंट जियोर समीकरण को सबसे सटीक स्वर्ण मानक क्यों मानती है।",
-      "ko": "현대 임상 영양학의 표준 BMR 공식 비교. Mifflin-St Jeor(1990), Harris-Benedict(1919/1984 개정), Katch-McArdle 공식의 정확도와 차이점을 분석합니다.",
+      "ko": "현대 영양학의 표준 BMR 공식 비교. Mifflin-St Jeor(1990), Harris-Benedict(1919/1984 개정), Katch-McArdle 공식의 정확도와 차이점을 분석합니다.",
       "de": "Wissenschaftlicher Vergleich der Grundumsatzformeln: Warum Mifflin-St Jeor heute der anerkannte Goldstandard gegenüber Harris-Benedict ist.",
-      "es": "Comparativa clínica de fórmulas de metabolismo basal: por qué Mifflin-St Jeor supera a Harris-Benedict según la Asociación Americana de Dietética.",
-      "fr": "Comparatif clinique des formules de métabolisme basal : pourquoi Mifflin-St Jeor surpasse Harris-Benedict dans la recherche moderne."
+      "es": "Comparativa de fórmulas de metabolismo basal: por qué Mifflin-St Jeor supera a Harris-Benedict según la Asociación Americana de Dietética.",
+      "fr": "Comparatif des formules de métabolisme basal : pourquoi Mifflin-St Jeor surpasse Harris-Benedict dans la recherche moderne."
     },
     "contentHtml": {
       "en": `
       <h2>The Evolution of Predictive Metabolic Equations</h2>
-      <p>Estimating Resting Energy Expenditure (REE / BMR) is essential for clinical nutrition support and weight management. Direct and indirect calorimetry represent the physical gold standards, but require expensive metabolic carts. For non-laboratory settings, clinicians rely on validated regression formulas:</p>
+      <p>Estimating Resting Energy Expenditure (REE / BMR) is essential for nutrition planning and energy balance. Direct and indirect calorimetry represent the physical laboratory standards, but require expensive metabolic carts. For non-laboratory settings, researchers rely on validated regression formulas:</p>
 
       <h2>The Major BMR Predictive Equations Compared</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
@@ -393,7 +393,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
               <th class="p-3 border border-[#e6e6e6]">Equation</th>
               <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Men Formula</th>
               <th class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">Women Formula</th>
-              <th class="p-3 border border-[#e6e6e6]">Clinical Validation</th>
+              <th class="p-3 border border-[#e6e6e6]">Research Validation</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6] font-mono text-xs">
@@ -637,6 +637,254 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       "ko": `
       <h2>지속 가능한 칼로리 적자 설정 및 대사 보존</h2>
       <p>미국 국립보건원(NIH) Kevin Hall 박사의 연구에 따르면 주당 체중의 0.5~1.0%를 감량하는 <strong>300~500kcal의 완만한 칼로리 적자</strong>와 체중 kg당 1.6~2.2g의 단백질 섭취가 근손실을 막는 가장 완벽한 방법입니다.</p>
+`
+    }
+  },
+
+  "sleep-and-metabolism": {
+    "datePublished": "2026-03-01",
+    "dateModified": "2026-10-28",
+    "title": {
+      "en": "Sleep & Metabolism: Circadian Rhythms, Leptin, Ghrelin & Caloric Burn",
+      "hi": "नींद और चयापचय (Metabolism): लेप्टिन, घ्रेलिन और कैलोरी बर्न का विज्ञान",
+      "ko": "수면과 대사 과학: 렙틴, 그렐린 호르몬과 일일 칼로리 소비의 상관관계",
+      "de": "Schlaf & Stoffwechsel: Zirkadiane Rhythmen, Leptin, Ghrelin & Energieverbrauch",
+      "es": "Sueño y Metabolismo: Ritmos Circadianos, Leptina, Grelina y Quema de Calorías",
+      "fr": "Sommeil et Métabolisme : Rythmes Circadiens, Leptine, Ghréline et Dépense Énergétique"
+    },
+    "category": {
+      "en": "Metabolic Science & Energy",
+      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा",
+      "ko": "대사 과학 및 에너지",
+      "de": "Stoffwechsel & Kalorienbedarf",
+      "es": "Gasto Energético y Metabolismo",
+      "fr": "Métabolisme et Dépense Énergétique"
+    },
+    "description": {
+      "en": "Explore the profound scientific link between sleep deprivation and metabolic health. Learn how insufficient sleep alters leptin and ghrelin, increases cortisol, and impairs glucose regulation.",
+      "hi": "नींद की कमी और मेटाबॉलिज्म के बीच वैज्ञानिक संबंध। जानें कैसे अपर्याप्त नींद भूख हार्मोन (लेप्टिन व घ्रेलिन) को असंतुलित करती है और इंसुलिन संवेदनशीलता को प्रभावित करती है।",
+      "ko": "수면 부족이 신진대사에 미치는 과학적 영향. 렙틴과 그렐린의 불균형, 코르티솔 분비 증가, 인슐린 저항성 및 기초대사량 저하 메커니즘을 상세히 설명합니다.",
+      "de": "Erfahren Sie den wissenschaftlichen Zusammenhang zwischen Schlafmangel und Stoffwechsel: Wie Schlafdefizite Leptin und Ghrelin stören und Heißhunger auslösen.",
+      "es": "Descubre la conexión científica entre la falta de sueño y el metabolismo. Cómo la privación del sueño altera la leptina, la grelina y la sensibilidad a la insulina.",
+      "fr": "Découvrez le lien scientifique entre sommeil et métabolisme : impact sur la leptine, la ghréline, le cortisol et la dépense énergétique quotidienne."
+    },
+    "contentHtml": {
+      "en": `
+      <h2>The Neuroendocrine Architecture of Sleep and Metabolism</h2>
+      <p>In metabolic science, sleep is increasingly recognized as the fourth pillar of human health, sitting alongside nutrition, physical activity, and stress regulation. When individuals experience acute or chronic sleep restriction (fewer than 7 hours per night), the body's neuroendocrine signaling undergoes profound shifts that disrupt energy homeostasis, hunger signaling, and glucose disposal.</p>
+      <p>Laboratory sleep restriction studies conducted at the University of Chicago and published in the <em>Annals of Internal Medicine</em> demonstrate that restricting sleep to 4.5 to 5.5 hours per night for just one week produces a <strong>drop in systemic insulin sensitivity comparable to 10 to 20 years of chronological aging</strong>. When sleep-deprived subjects consume meals, their skeletal muscle cells fail to clear blood glucose efficiently, prompting prolonged postprandial hyperinsulinemia and preferential lipid storage in intra-abdominal visceral adipose tissue.</p>
+
+      <h2>The Leptin and Ghrelin Seesaw: Why Tired Brains Crave Calories</h2>
+      <p>Two primary peripheral peptide hormones govern central appetite signaling in the hypothalamus:</p>
+      <ul>
+        <li><strong>Leptin (Satiety Hormone):</strong> Synthesized primarily by subcutaneous adipocytes, leptin circulates in proportion to energy reserves and signals satiety to the arcuate nucleus of the hypothalamus. Sleep restriction suppresses circulating leptin levels by 15% to 20%, generating a persistent false starvation signal.</li>
+        <li><strong>Ghrelin (Hunger Hormone):</strong> Secreted by oxyntic cells in the gastric fundus, ghrelin stimulates appetite, gut motility, and food-seeking behavior. Sleep deprivation elevates circulating ghrelin by 20% to 30%, triggering heightened hedonic cravings for ultra-processed, energy-dense carbohydrates and saturated fats.</li>
+      </ul>
+
+      <h2>Metabolic Impact of Sleep Quality vs. Sleep Duration</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Sleep Parameter</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Optimal Range (7–9 Hours)</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">Sleep Deprived (&lt; 6 Hours)</th>
+              <th class="p-3 border border-[#e6e6e6]">Metabolic Consequence</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Morning Fasting Cortisol</td>
+              <td class="p-3 border border-[#e6e6e6]">Normal circadian spike &amp; rapid daytime decline</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">Prolonged evening elevation</td>
+              <td class="p-3 border border-[#e6e6e6]">Promotes skeletal muscle catabolism and visceral lipogenesis</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Growth Hormone (GH) Secretion</td>
+              <td class="p-3 border border-[#e6e6e6]">Robust pulse during slow-wave stage 3 sleep</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">Attenuated by 50% to 70%</td>
+              <td class="p-3 border border-[#e6e6e6]">Impairs cellular tissue repair and nitrogen retention</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Spontaneous Daily NEAT</td>
+              <td class="p-3 border border-[#e6e6e6]">Vibrant unconscious movement and posture</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">Suppressed by 200–400 kcal/day</td>
+              <td class="p-3 border border-[#e6e6e6]">Reduces overall Total Daily Energy Expenditure (TDEE)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Evidence-Based Sleep Hygiene Rules for Metabolic Health</h2>
+      <ol class="space-y-2 my-4 list-decimal pl-5 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Maintain a Consistent Sleep-Wake Schedule:</strong> Waking up at the same hour seven days a week locks in the master circadian clock located in the suprachiasmatic nucleus (SCN).</li>
+        <li><strong>Eliminate Evening Blue-Light Exposure:</strong> Blue wavelengths (450–480 nm) emitted by smartphones, laptops, and tablets suppress pineal melatonin secretion for up to 90 minutes.</li>
+        <li><strong>Thermal Sleep Environment:</strong> Cooler bedroom ambient temperatures (around 18°C to 19°C / 65°F to 67°F) facilitate the physiological core body temperature drop required for deep stage 3 slow-wave sleep.</li>
+        <li><strong>Avoid Late Caffeine and Heavy Meals:</strong> Caffeine has a half-life of 5 to 7 hours; consuming caffeine within 8 hours of bedtime fragments REM and slow-wave sleep architecture.</li>
+      </ol>
+
+      <h2>Scientific References</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Spiegel K, Tasali E, Penev P, Van Cauter E. <em>Brief communication: Sleep curtailment in healthy young men is associated with decreased leptin levels, elevated ghrelin levels, and increased hunger and appetite.</em> Ann Intern Med 2004; 141(11):846-850. PMID: 15583226.</li>
+        <li>Buxton OM, et al. <em>Adverse metabolic consequences in humans of prolonged sleep restriction combined with circadian disruption.</em> Sci Transl Med 2012; 4(129):129ra43. PMID: 22496545.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>नींद और मेटाबॉलिज्म का न्यूरोएंडोक्राइन विज्ञान</h2>
+      <p>मेटाबॉलिक स्वास्थ्य में नींद को आहार और व्यायाम जितना ही महत्वपूर्ण माना जाता है। जब कोई व्यक्ति लगातार 7 घंटे से कम सोता है, तो शरीर के भूख और तृप्ति को नियंत्रित करने वाले हार्मोन असंतुलित हो जाते हैं। यूनिवर्सिटी ऑफ शिकागो के अध्ययनों में पाया गया कि केवल एक सप्ताह तक 5 घंटे की नींद लेने से इंसुलिन संवेदनशीलता में भारी गिरावट आ जाती है।</p>
+
+      <h2>लेप्टिन और घ्रेलिन का असंतुलन: नींद की कमी से भूख क्यों बढ़ती है?</h2>
+      <p>नींद पूरी न होने पर वसा कोशिकाओं द्वारा स्रावित होने वाला <strong>लेप्टिन (तृप्ति हार्मोन)</strong> घट जाता है, जबकि पेट से निकलने वाला <strong>घ्रेलिन (भूख हार्मोन)</strong> 20% से 30% तक बढ़ जाता है। इसका परिणाम यह होता है कि मस्तिष्क को निरंतर ऊर्जा की कमी का संकेत मिलता है, जिससे मीठा, तला-भुना और अधिक कैलोरी वाला भोजन खाने की तीव्र इच्छा होती है।</p>
+
+      <h2>मेटाबॉलिक स्वास्थ्य के लिए स्वस्थ नींद की आदतें</h2>
+      <ul class="list-disc pl-5 my-3 space-y-1 text-sm text-[var(--muted-foreground)]">
+        <li>प्रतिदिन सोने और जागने का समय एक समान रखें।</li>
+        <li>सोने से कम से कम 1 घंटा पहले मोबाइल और टीवी की नीली रोशनी से बचें।</li>
+        <li>कमरे का तापमान ठंडा और शांत रखें ताकि गहरी नींद (Slow-Wave Sleep) आ सके।</li>
+      </ul>
+`,
+      "es": `
+      <h2>La Conexión Neuroendocrina entre Sueño y Metabolismo</h2>
+      <p>Dormir menos de 7 horas por noche altera profundamente la regulación hormonal del apetito y la glucosa. Los estudios demuestran que la falta de sueño disminuye la leptina (hormona de la saciedad) en un 18% y eleva la grelina (hormona del apetito) en un 28%, provocando antojos intensos de carbohidratos refinados y reduciendo el gasto energético diario.</p>
+`,
+      "fr": `
+      <h2>Lien entre Sommeil et Régulation Métabolique</h2>
+      <p>Le manque de sommeil réduit la sensibilité à l'insuline et perturbe l'équilibre entre la leptine et la ghréline. Les recherches confirment qu'une dette de sommeil chronique abaisse le métabolisme de repos et augmente le stockage des graisses viscérales.</p>
+`,
+      "de": `
+      <h2>Schlafmangel und Stoffwechselregulation</h2>
+      <p>Chronischer Schlafmangel (unter 7 Stunden) führt nachweislich zu Insulinresistenz und Dysregulation der Hungerhormone Leptin und Ghrelin. Die Folge sind Heißhungerattacken und ein reduzierter Kaloriengrundumsatz.</p>
+`,
+      "ko": `
+      <h2>수면 부족과 신진대사 저하의 의학적 상관관계</h2>
+      <p>수면 시간이 7시간 미만으로 줄어들면 포만감을 전달하는 렙틴 호르몬이 감소하고 식욕을 자극하는 그렐린 호르몬이 급증하여 당분과 고지방 식품에 대한 갈망이 심해집니다. 충분한 양질의 수면은 호르몬 균형과 기초대사량 유지의 핵심입니다.</p>
+`
+    }
+  },
+
+  "walking-calories-and-neat": {
+    "datePublished": "2026-03-05",
+    "dateModified": "2026-10-28",
+    "title": {
+      "en": "Walking Calories & NEAT: How Daily Steps Drive Non-Exercise Thermogenesis",
+      "hi": "पैदल चलना और NEAT: जानें दैनिक कदम कैसे बढ़ाते हैं कैलोरी बर्न",
+      "ko": "걷기 칼로리와 NEAT: 일상 속 걸음 수가 비운동성 활동 열생성에 미치는 영향",
+      "de": "Kalorienverbrauch beim Gehen & NEAT: Wie tägliche Schritte den Stoffwechsel antreiben",
+      "es": "Calorías al Caminar y NEAT: Cómo los Pasos Diarios Aumentan el Gasto Calórico",
+      "fr": "Calories Brûlées en Marchant et NEAT : Comment le Nombre de Pas Active la Thermogenèse"
+    },
+    "category": {
+      "en": "Metabolic Science & Energy",
+      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा",
+      "ko": "대사 과학 및 에너지",
+      "de": "Stoffwechsel & Kalorienbedarf",
+      "es": "Gasto Energético y Metabolismo",
+      "fr": "Métabolisme et Dépense Énergétique"
+    },
+    "description": {
+      "en": "Discover the science of Non-Exercise Activity Thermogenesis (NEAT). Learn how walking step counts impact daily caloric expenditure, cardiovascular health, and sustainable fat loss.",
+      "hi": "नॉन-एक्सरसाइज एक्टिविटी थर्मोजेनेसिस (NEAT) का विज्ञान। समझें कि दैनिक कदमों की संख्या कैसे कैलोरी खर्च, हृदय स्वास्थ्य और वजन घटाने में मदद करती है।",
+      "ko": "비운동성 열생성(NEAT)의 과학적 원리와 걷기 운동의 가치. 일일 걸음 수별 실제 칼로리 소비량과 지속 가능한 체지방 감량 전략을 안내합니다.",
+      "de": "Die Wissenschaft der alltagsbezogenen Aktivitätsthermogenese (NEAT): Wie Gehen und Schrittziele den Kalorienverbrauch ohne Erschöpfung maximieren.",
+      "es": "Aprende la ciencia de la termogénesis por actividad sin ejercicio (NEAT). Cómo el conteo de pasos influye en el gasto calórico diario y el control de peso.",
+      "fr": "Découvrez la science de la thermogenèse liée aux activités non sportives (NEAT) : comment la marche quotidienne optimise le métabolisme et la combustion des graisses."
+    },
+    "contentHtml": {
+      "en": `
+      <h2>The Overlooked Power of Non-Exercise Activity Thermogenesis (NEAT)</h2>
+      <p>When most people think about burning calories to lose weight or improve cardiovascular fitness, they imagine vigorous gym workouts, high-intensity interval training (HIIT), or strenuous running. However, in exercise physiology and metabolic balance, intentional workouts—known as <strong>Exercise Activity Thermogenesis (EAT)</strong>—typically account for only <strong>5% to 10% of Total Daily Energy Expenditure (TDEE)</strong> in average adults.</p>
+      <p>In contrast, <strong>Non-Exercise Activity Thermogenesis (NEAT)</strong>—the energy expended for everything we do that is not sleeping, eating, or sports-like exercise—can vary by up to <strong>1,000 to 2,000 calories per day between two individuals of identical body size</strong>. Pioneered by Dr. James Levine at the Mayo Clinic, NEAT research proves that ordinary daily physical activity, led primarily by walking step volume, is the single greatest adjustable variable in human daily energy expenditure.</p>
+
+      <h2>How Walking Burns Calories: The Biomechanics and MET Values</h2>
+      <p>Walking is a low-impact, highly sustainable aerobic movement powered primarily by the oxidation of free fatty acids. Energy expenditure during walking is quantified in <strong>Metabolic Equivalents of Task (METs)</strong>:</p>
+      <ul>
+        <li><strong>Casual walking (3.2 km/h / 2.0 mph):</strong> 2.5 METs (~150 kcal/hour for a 70 kg individual)</li>
+        <li><strong>Moderate walking (4.8 km/h / 3.0 mph):</strong> 3.3 METs (~230 kcal/hour for a 70 kg individual)</li>
+        <li><strong>Brisk walking (6.4 km/h / 4.0 mph):</strong> 5.0 METs (~350 kcal/hour for a 70 kg individual)</li>
+      </ul>
+
+      <h2>Step Volume vs. Daily Caloric Expenditure Reference Table</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Daily Steps</th>
+              <th class="p-3 border border-[#e6e6e6]">Activity Category</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Approx. Walking Caloric Burn (70 kg)</th>
+              <th class="p-3 border border-[#e6e6e6]">Cardiometabolic Health Impact</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">&lt; 5,000</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">Sedentary Lifestyle</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 150 kcal/day</td>
+              <td class="p-3 border border-[#e6e6e6]">Elevated risk of insulin resistance and endothelial stiffness</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">5,000 – 7,499</td>
+              <td class="p-3 border border-[#e6e6e6]">Low-Active Baseline</td>
+              <td class="p-3 border border-[#e6e6e6]">150 – 250 kcal/day</td>
+              <td class="p-3 border border-[#e6e6e6]">Baseline threshold associated with reduced all-cause mortality</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">7,500 – 9,999</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">Somewhat Active</td>
+              <td class="p-3 border border-[#e6e6e6]">250 – 350 kcal/day</td>
+              <td class="p-3 border border-[#e6e6e6]">Significant improvement in arterial elasticity and lipid clearance</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold text-emerald-600 font-bold">&ge; 10,000</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Highly Active</td>
+              <td class="p-3 border border-[#e6e6e6] font-bold text-emerald-600">350 – 500+ kcal/day</td>
+              <td class="p-3 border border-[#e6e6e6]">Optimal blood glucose stabilization and long-term weight maintenance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Practical Strategies to Increase Daily NEAT Effortlessly</h2>
+      <ul class="space-y-2 my-4 list-disc pl-5 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Take Short Walking Breaks Every Hour:</strong> Standing up and walking for 2 minutes every hour reactivates skeletal muscle lipoprotein lipase (LPL) enzymes that clear triglycerides from the bloodstream.</li>
+        <li><strong>Pace During Phone Calls:</strong> Turning 30 minutes of daily phone conversations into a walking habit adds 1,500 to 2,000 steps without taking dedicated workout time.</li>
+        <li><strong>Park Further and Choose Stairs:</strong> Simple environmental choices compound over weeks to create an effortless caloric deficit without triggering metabolic adaptation.</li>
+      </ul>
+
+      <h2>Scientific References</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Levine JA. <em>Non-exercise activity thermogenesis (NEAT).</em> Best Pract Res Clin Endocrinol Metab 2002; 16(4):679-702. PMID: 12468415.</li>
+        <li>Paluch AE, et al. <em>Daily steps and all-cause mortality: a meta-analysis of 15 international cohorts.</em> Lancet Public Health 2022; 7(3):e219-e228. PMID: 35247352.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>नॉन-एक्सरसाइज एक्टिविटी थर्मोजेनेसिस (NEAT) का महत्व</h2>
+      <p>अधिकांश लोग कैलोरी जलाने के लिए केवल भारी वर्कआउट या जिम पर ध्यान देते हैं। लेकिन वैज्ञानिक अध्ययनों (मेयो क्लिनिक) के अनुसार, जिम का व्यायाम कुल दैनिक ऊर्जा खर्च (TDEE) का केवल 5% से 10% होता है। इसके विपरीत, <strong>NEAT (गैर-व्यायाम गतिविधि 열생성)</strong> जैसे चलना, खड़े रहना और सीढ़ियां चढ़ना दिन भर में सैकड़ों अतिरिक्त कैलोरी खर्च कर सकता है।</p>
+
+      <h2>कदमों की संख्या और कैलोरी खर्च तालिका</h2>
+      <p>एक 70 किग्रा वयस्क 10,000 कदम चलने पर लगभग 350 से 450 कैलोरी जलाता है। यह कैलोरी मुख्य रूप से शरीर में संचित वसा से आती है, जिससे थकान या मांसपेशियों के नुकसान के बिना वजन नियंत्रित रहता है।</p>
+
+      <h2>NEAT बढ़ाने के सरल उपाय</h2>
+      <ul class="list-disc pl-5 my-3 space-y-1 text-sm text-[var(--muted-foreground)]">
+        <li>फोन पर बात करते समय टहलने की आदत डालें।</li>
+        <li>हर एक घंटे में 2 से 3 मिनट का वॉक ब्रेक लें।</li>
+        <li>लिफ्ट की जगह सीढ़ियों का उपयोग करें।</li>
+      </ul>
+`,
+      "es": `
+      <h2>El Poder del NEAT y los Pasos Diarios</h2>
+      <p>La termogénesis por actividad sin ejercicio (NEAT) representa la mayor parte del gasto energético variable. Caminar entre 8.000 y 10.000 pasos al día permite quemar entre 300 y 450 kcal adicionales sin inducir fatiga central ni apetito desmedido, siendo la herramienta más sostenible para el déficit calórico.</p>
+`,
+      "fr": `
+      <h2>La Marche et la Thermogenèse Non Liée à l'Exercice (NEAT)</h2>
+      <p>Les recherches de la Mayo Clinic démontrent que le NEAT peut faire varier la dépense énergétique journalière de plus de 1000 kcal entre deux personnes de même corpulence. Viser 8 000 à 10 000 pas par jour stabilise la glycémie et accélère la perte de masse grasse durablement.</p>
+`,
+      "de": `
+      <h2>Kalorienverbrauch durch Alltagsbewegung (NEAT)</h2>
+      <p>Nicht-sportliche Aktivitäts-Thermogenese (NEAT) ist der stärkste Hebel zur Steigerung des Gesamtenergieumsatzes. 8.000 bis 10.000 Schritte täglich verbrennen 300 bis 450 kcal, ohne die Regeneration zu belasten.</p>
+`,
+      "ko": `
+      <h2>비운동성 활동 열생성(NEAT)과 걷기 칼로리의 비밀</h2>
+      <p>메이요 클리닉(Mayo Clinic)의 연구에 따르면 일상 속 활동(NEAT)은 하루 1,000kcal 이상의 에너지 소비 차이를 만듭니다. 매일 8,000~10,000보를 걷는 습관은 무리한 고강도 운동 없이도 체지방을 안전하고 지속 가능하게 연소시키는 가장 효과적인 방법입니다.</p>
 `
     }
   }

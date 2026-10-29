@@ -22,12 +22,12 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     fr: "Bases de l'IMC"
   },
   description: {
-    en: "Comprehensive clinical guide to Body Mass Index (BMI). Learn its historical origins, metric and imperial formulas, WHO weight classification thresholds, Asian action triggers, physiological limitations, and complementary body composition markers.",
-    hi: "बॉडी मास इंडेक्स (BMI) की संपूर्ण क्लिनिकल गाइड। जानें इसका इतिहास, मीट्रिक और इंपीरियल फॉर्मूला, डब्ल्यूएचओ श्रेणियां, एशियाई मानक और स्वास्थ्य में इसका सही उपयोग।",
-    ko: "체질량지수(BMI)의 의학적 정의와 표준 계산 공식을 상세하게 확인하세요. 세계보건기구(WHO) 기준에 따른 저체중, 정상, 과체중, 비만 분류 체계와 아시아인 분별점, 측정 한계점을 종합 안내합니다.",
-    de: "Umfassender klinischer Leitfaden zum Body-Mass-Index (BMI). Definition, Formeln, WHO-Gewichtsklassen, asiatische Grenzwerte und physiologische Grenzen im Überblick.",
-    es: "Guía clínica completa sobre el Índice de Masa Corporal (IMC). Aprende sus orígenes, fórmulas métricas e imperiales, categorías diagnósticas de la OMS y limitaciones fisiológicas.",
-    fr: "Guide clinique complet sur l'Indice de Masse Corporelle (IMC). Histoire, formules métriques et impériales, classifications de l'OMS, seuils asiatiques et limites physiologiques."
+    en: "Comprehensive evidence-based guide to Body Mass Index (BMI). Learn its historical origins, metric and imperial formulas, WHO weight classification thresholds, Asian action triggers, physiological limitations, and complementary body composition markers.",
+    hi: "बॉडी मास इंडेक्स (BMI) की संपूर्ण प्रमाण-आधारित गाइड। जानें इसका इतिहास, मीट्रिक और इंपीरियल फॉर्मूला, डब्ल्यूएचओ श्रेणियां, एशियाई मानक और स्वास्थ्य में इसका सही उपयोग।",
+    ko: "체질량지수(BMI)의 정의와 표준 계산 공식을 상세하게 확인하세요. 세계보건기구(WHO) 기준에 따른 저체중, 정상, 과체중, 비만 분류 체계와 아시아인 분별점, 측정 한계점을 종합 안내합니다.",
+    de: "Umfassender evidenzbasierter Leitfaden zum Body-Mass-Index (BMI). Definition, Formeln, WHO-Gewichtsklassen, asiatische Grenzwerte und physiologische Grenzen im Überblick.",
+    es: "Guía completa basada en evidencia sobre el Índice de Masa Corporal (IMC). Aprende sus orígenes, fórmulas métricas e imperiales, categorías de la OMS y limitaciones fisiológicas.",
+    fr: "Guide complet fondé sur des preuves sur l'Indice de Masse Corporelle (IMC). Histoire, formules métriques et impériales, classifications de l'OMS, seuils asiatiques et limites physiologiques."
   },
   contentHtml: {
     en: `
@@ -379,34 +379,34 @@ export const bmiArticles: Record<string, BlogArticleData> = {
 
   "is-bmi-accurate": {
   datePublished: "2026-02-10",
-  dateModified: "2026-10-25",
+  dateModified: "2026-10-28",
   title: {
-    en: "Is BMI Accurate? Clinical Analysis, Limitations & Better Metrics",
-    hi: "क्या बीएमआई सटीक है? वैज्ञानिक विश्लेषण और सीमाएं",
-    ko: "BMI는 얼마나 정확한가? 비만도 측정의 임상적 한계와 대안",
-    de: "Ist der BMI genau? Grenzen & moderne Alternativen",
-    es: "¿Es Preciso el IMC? Limitaciones Clínicas y Mejores Alternativas",
-    fr: "L'IMC est-il Précis ? Analyse Critique et Alternatives Médicales"
+    en: "Is BMI Accurate? Research Analysis, Limitations & Better Metrics",
+    hi: "क्या बीएमआई सटीक है? अनुसंधान विश्लेषण, सीमाएं और बेहतर विकल्प",
+    ko: "BMI는 얼마나 정확한가? 비만도 측정의 연구 분석과 대안",
+    de: "Ist der BMI genau? Forschungsanalyse, Grenzen & moderne Alternativen",
+    es: "¿Es Preciso el IMC? Análisis de Investigación, Límites y Alternativas",
+    fr: "L'IMC est-il Précis ? Analyse Scientifique, Limites et Alternatives"
   },
   category: {
-    en: "Clinical Evidence & Limitations",
-    hi: "क्लिनिकल साक्ष्य और सीमाएं",
-    ko: "임상 근거 및 한계점",
-    de: "Klinische Evidenz & Kritik",
-    es: "Evidencia Clínica y Límites",
-    fr: "Évaluation Critique de l'IMC"
+    en: "Research Evidence & Limitations",
+    hi: "अनुसंधान साक्ष्य और सीमाएं",
+    ko: "연구 근거 및 한계점",
+    de: "Forschungsevidenz & Grenzen",
+    es: "Evidencia de Investigación y Límites",
+    fr: "Évaluation & Limites Scientifiques"
   },
   description: {
-    en: "An in-depth medical evaluation of Body Mass Index accuracy. Learn why BMI fails for muscular athletes, older adults, and ethnically diverse populations, and explore superior clinical alternatives like DEXA scans, WHtR, and visceral fat imaging.",
-    hi: "बॉडी मास इंडेक्स की सटीकता का गहरा चिकित्सीय विश्लेषण। जानें कि बीएमआई एथलीटों, बुजुर्गों और एशियाई लोगों में क्यों अधूरा साबित होता है और इसके बेहतर क्लिनिकल विकल्प क्या हैं।",
-    ko: "체질량지수(BMI)의 정확도와 의학적 타당성에 대한 심층 임상 분석. 근육형 운동선수, 고령층의 근감소증, 인종별 지방 분포 차이로 인한 왜곡 현상과 DEXA, 허리둘레-신장 비율(WHtR) 등 정밀 대체 지표를 상세히 안내합니다.",
-    de: "Detaillierte medizinische Analyse der Genauigkeit des Body-Mass-Index. Warum der BMI bei Sportlern und Senioren fehlerhaft sein kann und welche Alternativen wie WHtR und DEXA aussagekräftiger sind.",
-    es: "Evaluación médica rigurosa sobre la precisión del IMC. Por qué falla en atletas musculados y ancianos con sarcopenia, y qué métodos alternativos ofrecen un diagnóstico superior.",
-    fr: "Examen médical approfondi de la fiabilité de l'Indice de Masse Corporelle. Découvrez les limites chez les sportifs et les seniors, ainsi que les alternatives fiables comme le DEXA et le ratio taille-hauteur."
+    en: "An in-depth scientific evaluation of Body Mass Index accuracy. Learn why BMI fails for muscular athletes, older adults, and ethnically diverse populations, and explore superior alternative metrics like DEXA scans, WHtR, and visceral fat imaging.",
+    hi: "बॉडी मास इंडेक्स की सटीकता का गहन वैज्ञानिक विश्लेषण। जानें कि बीएमआई एथलीटों, बुजुर्गों और एशियाई लोगों में क्यों अधूरा साबित होता है और इसके बेहतर साक्ष्य-आधारित विकल्प क्या हैं।",
+    ko: "체질량지수(BMI)의 정확도에 대한 심층 연구 분석. 근육형 운동선수, 고령층의 근감소증, 인종별 지방 분포 차이로 인한 왜곡 현상과 DEXA, 허리둘레-신장 비율(WHtR) 등 정밀 대체 지표를 상세히 안내합니다.",
+    de: "Detaillierte wissenschaftliche Analyse der Genauigkeit des Body-Mass-Index. Warum der BMI bei Sportlern und Senioren fehlerhaft sein kann und welche Alternativen wie WHtR und DEXA aussagekräftiger sind.",
+    es: "Evaluación científica rigurosa sobre la precisión del IMC. Por qué falla en atletas musculados y ancianos con sarcopenia, y qué métodos alternativos ofrecen una valoración superior.",
+    fr: "Examen scientifique approfondi de la fiabilité de l'Indice de Masse Corporelle. Découvrez les limites chez les sportifs et les seniors, ainsi que les alternatives fiables comme le DEXA et le ratio taille-hauteur."
   },
   contentHtml: {
     en: `
-      <h2>The Paradox of Body Mass Index in Modern Clinical Practice</h2>
+      <h2>The Paradox of Body Mass Index in Modern Research & Practice</h2>
       <p>Body Mass Index (BMI) is arguably the most widely utilized anthropometric screening metric in contemporary medicine. Adopted by the World Health Organization (WHO), the National Institutes of Health (NIH), and healthcare institutions worldwide, its straightforward calculation—total weight in kilograms divided by height in meters squared—allows rapid population-level risk stratification at zero direct financial cost. However, the scientific premise upon which BMI rests has generated vigorous debate across endocrinology, cardiology, and sports medicine.</p>
       <p>The core clinical paradox is that <strong>BMI measures excess weight, not excess adiposity (fat tissue)</strong>. By combining skeletal muscle, internal organs, skeletal bone mineral density, extracellular fluids, and adipose tissue into a single gross numerator, BMI frequently produces misleading classifications across both athletic and sedentary clinical cohorts.</p>
 
@@ -433,7 +433,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
             <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
               <th class="p-3">Measurement Modality</th>
               <th class="p-3">Diagnostic Precision</th>
-              <th class="p-3">Clinical Strength</th>
+              <th class="p-3">Primary Advantage</th>
               <th class="p-3">Primary Limitation</th>
             </tr>
           </thead>
@@ -454,7 +454,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
               <td class="p-3 font-semibold">Dual-Energy X-Ray Absorptiometry (DEXA)</td>
               <td class="p-3 font-mono text-emerald-600 font-bold">Gold Standard</td>
               <td class="p-3">Precise quantification of bone, fat, and appendicular lean mass</td>
-              <td class="p-3">Requires medical clinical imaging facility; moderate cost</td>
+              <td class="p-3">Requires specialized imaging facility; moderate cost</td>
             </tr>
             <tr>
               <td class="p-3 font-semibold">Multi-Frequency Bioelectrical Impedance (BIA)</td>
@@ -473,11 +473,11 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       </div>
 
       <h2>The "Keep Your Waist to Less Than Half Your Height" Rule</h2>
-      <p>Because of BMI's blind spot toward central adiposity, preventive health agencies such as the UK National Institute for Health and Care Excellence (NICE) now officially recommend calculating the <strong>Waist-to-Height Ratio (WHtR)</strong> alongside standard BMI. The clinical formula is remarkably simple:</p>
+      <p>Because of BMI's blind spot toward central adiposity, preventive health agencies such as the UK National Institute for Health and Care Excellence (NICE) now officially recommend calculating the <strong>Waist-to-Height Ratio (WHtR)</strong> alongside standard BMI. The screening formula is remarkably simple:</p>
       <div class="my-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm">
         <code>Waist-to-Height Ratio = Waist Circumference / Stature (Both in Same Units)</code>
       </div>
-      <p>Clinical cut-offs for WHtR are consistent across adult men and women, ages, and ethnic backgrounds:</p>
+      <p>Evidence-based cut-offs for WHtR are consistent across adult men and women, ages, and ethnic backgrounds:</p>
       <ul>
         <li><strong>WHtR &lt; 0.40:</strong> Increased risk of undernutrition or sarcopenia</li>
         <li><strong>WHtR 0.40 to 0.49:</strong> Healthy normal visceral fat distribution (Lowest risk)</li>
@@ -750,7 +750,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
         </table>
       </div>
 
-      <h2>Clinical Significance of the Chart's Four Primary Quadrants</h2>
+      <h2>Evidence-Based Significance of the Chart's Four Primary Quadrants</h2>
       <div class="my-6 space-y-4">
         <div>
           <h3 class="text-base font-bold text-blue-500">1. Underweight Zone (BMI &lt; 18.5 kg/m²)</h3>
@@ -1012,14 +1012,14 @@ export const bmiArticles: Record<string, BlogArticleData> = {
 
   "healthy-weight-chart": {
     "datePublished": "2026-03-15",
-    "dateModified": "2026-10-25",
+    "dateModified": "2026-10-28",
     "title": {
-      "en": "Healthy Weight by Height: Clinical Determination & Formula Guide",
-      "hi": "कद के अनुसार स्वस्थ वजन: क्लिनिकल फॉर्मूला व संदर्भ तालिका",
-      "ko": "키별 적정 건강 체중: 임상 공식 및 신장별 권장 체중 가이드",
-      "de": "Idealgewicht nach Größe: Medizinische Richtwerte & Formeln",
-      "es": "Peso Saludable por Estatura: Fórmulas Clínicas y Rangos",
-      "fr": "Poids Idéal selon la Taille : Formules Médicales et Seuils"
+      "en": "Healthy Weight by Height: Evidence-Based Determination & Formula Guide",
+      "hi": "कद के अनुसार स्वस्थ वजन: प्रमाण-आधारित फॉर्मूला व संदर्भ तालिका",
+      "ko": "키별 적정 건강 체중: 근거 기반 공식 및 신장별 권장 체중 가이드",
+      "de": "Idealgewicht nach Größe: Evidenzbasierte Richtwerte & Formeln",
+      "es": "Peso Saludable por Estatura: Fórmulas Basadas en Evidencia y Rangos",
+      "fr": "Poids Idéal selon la Taille : Formules Fondées sur des Preuves et Seuils"
     },
     "category": {
       "en": "Body Composition & Weight",
@@ -1039,7 +1039,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     },
     "contentHtml": {
       "en": `
-      <h2>Clinical Principles of Healthy Weight by Stature</h2>
+      <h2>Research Principles of Healthy Weight by Stature</h2>
       <p>Determining your optimal healthy body weight is one of the most critical foundational benchmarks in preventive medicine. Rather than representing a rigid, single-number target on a scale, a <strong>healthy body weight</strong> is defined clinically as a <em>statistical weight range</em> for your specific stature that minimizes all-cause mortality, preserves cardiovascular elasticity, maintains normal insulin sensitivity, and prevents degenerative joint diseases such as osteoarthritis.</p>
       <p>Because individuals possess varying skeletal frame sizes (small, medium, or large wrist and elbow breadths) and genetic variations in lean muscle mass, health authorities utilize an anthropometric continuum rather than a dogmatic number. Below, we detail the mathematical formulas used to derive healthy weight ranges, compare international clinical standards, and provide an evidence-based height-to-weight reference chart.</p>
 
@@ -2129,7 +2129,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <h2>उम्र के साथ लंबाई में संकुचन (Stature Compression) का बीएमआई पर प्रभाव</h2>
       <p>उम्र बढ़ने के साथ रीढ़ की हड्डियों के बीच मौजूद कार्टिलेज डिस्क में पानी की मात्रा कम होने लगती है और ऑस्टियोपोरोसिस के कारण रीढ़ में हल्का झुकाव आ जाता है। औसतन, 40 वर्ष की आयु के बाद वयस्क प्रति दशक लगभग 1 से 2 सेमी लंबाई खो देते हैं, और 75 वर्ष तक यह कमी 3 से 5 सेमी तक हो सकती है। क्योंकि बीएमआई सूत्र में ऊंचाई का वर्ग हर (Denominator) में होता है, इसलिए लंबाई घटने से बिना किसी अतिरिक्त चर्बी बढ़े भी बीएमआई कृत्रिम रूप से 1.0 से 1.5 अंक बढ़ जाता है। बुजुर्गों के साथ काम करने वाले डॉक्टर वास्तविक कद का अनुमान लगाने के लिए आर्म स्पैन (हाथों का फैलाव) या घुटने की ऊंचाई मापते हैं।</p>
 
-      <h2>अक्सर पूछे जाने वाले नैदानिक प्रश्न (Clinical FAQs)</h2>
+      <h2>अक्सर पूछे जाने वाले महत्वपूर्ण प्रश्न (Frequently Asked Questions)</h2>
       <div class="space-y-4 my-6">
         <div>
           <h3 class="text-base font-bold text-[var(--foreground)]">क्या 70 वर्ष के व्यक्ति को 27 बीएमआई पर वजन कम करने की कोशिश करनी चाहिए?</h3>
@@ -2171,12 +2171,12 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Santé des Adolescents"
     },
     "description": {
-      "en": "Clinical guide to adolescent BMI screening. Learn why static adult cut-offs fail for teens, how CDC and WHO BMI-for-Age percentiles work, the role of Tanner pubertal staging, and healthy adolescent nutrition.",
-      "hi": "किशोरों (13-19 वर्ष) के बीएमआई की संपूर्ण क्लिनिकल गाइड। जानें कि वयस्कों के कट-ऑफ किशोरों पर क्यों लागू नहीं होते, सीडीसी पर्सेंटाइल चार्ट कैसे देखें और स्वस्थ खानपान के नियम।",
-      "ko": "청소년(13~19세) 체질량지수 평가를 위한 임상 가이드. 성인 고정 기준 대신 연령별 백분위수를 사용하는 이유와 탠너(Tanner) 사춘기 성숙도 단계의 중요성을 안내합니다.",
-      "de": "Medizinischer Leitfaden zum BMI bei Jugendlichen. Warum feste Erwachsenen-Grenzwerte ungeeignet sind und wie CDC-Perzentilkurven Wachstumsphasen berücksichtigen.",
-      "es": "Guía clínica sobre el IMC en adolescentes. Por qué los cortes de adultos no sirven, cómo interpretar los percentiles de los CDC y la influencia del desarrollo puberal.",
-      "fr": "Guide clinique sur l'IMC des adolescents. Pourquoi les seuils adultes sont inadaptés et comment interpréter les courbes de percentiles de croissance de l'OMS et des CDC."
+      "en": "Evidence-based guide to adolescent BMI screening. Learn why static adult cut-offs fail for teens, how CDC and WHO BMI-for-Age percentiles work, the role of Tanner pubertal staging, and healthy adolescent nutrition.",
+      "hi": "किशोरों (13-19 वर्ष) के बीएमआई की संपूर्ण प्रमाण-आधारित गाइड। जानें कि वयस्कों के कट-ऑफ किशोरों पर क्यों लागू नहीं होते, सीडीसी पर्सेंटाइल चार्ट कैसे देखें और स्वस्थ खानपान के नियम।",
+      "ko": "청소년(13~19세) 체질량지수 평가를 위한 가이드. 성인 고정 기준 대신 연령별 백분위수를 사용하는 이유와 탠너(Tanner) 사춘기 성숙도 단계의 중요성을 안내합니다.",
+      "de": "Evidenzbasierter Leitfaden zum BMI bei Jugendlichen. Warum feste Erwachsenen-Grenzwerte ungeeignet sind und wie CDC-Perzentilkurven Wachstumsphasen berücksichtigen.",
+      "es": "Guía basada en evidencia sobre el IMC en adolescentes. Por qué los cortes de adultos no sirven, cómo interpretar los percentiles de los CDC y la influencia del desarrollo puberal.",
+      "fr": "Guide fondé sur des preuves sur l'IMC des adolescents. Pourquoi les seuils adultes sont inadaptés et comment interpréter les courbes de percentiles de croissance de l'OMS et des CDC."
     },
     "contentHtml": {
       "en": `
@@ -2192,7 +2192,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
             <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
               <th class="p-3">CDC Percentile Range</th>
               <th class="p-3">Pediatric Weight Classification</th>
-              <th class="p-3">Clinical Interpretation & Action</th>
+              <th class="p-3">Interpretation & Guidance</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]">

@@ -22,16 +22,16 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
       "fr": "Santé Pratique et Nutrition"
     },
     "description": {
-      "en": "Comprehensive clinical action guide for applying Asian BMI thresholds in daily life. Learn South Asian carbohydrate reduction strategies, high-protein vegetarian swaps, daily step goals, and preventive blood tests.",
+      "en": "Comprehensive evidence-based action guide for applying Asian BMI thresholds in daily life. Learn South Asian carbohydrate reduction strategies, high-protein vegetarian swaps, daily step goals, and preventive blood tests.",
       "hi": "दैनिक जीवन में भारतीय बीएमआई मानकों को लागू करने की संपूर्ण गाइड। कार्बोहाइड्रेट नियंत्रण, उच्च प्रोटीन शाकाहारी विकल्प, व्यायाम और आवश्यक रक्त जांच।",
       "ko": "인도 및 아시아 인구의 일상생활 BMI 실천 지침. 정제 탄수화물 절제법, 경제적인 고단백 채식 식단 구성, 일일 유산소 운동 목표 및 정기 혈액 검사 항목을 종합 안내합니다.",
       "de": "Praktischer Leitfaden zur Umsetzung asiatischer BMI-Grenzwerte im Alltag: Reduzierung raffinierter Kohlenhydrate, günstige pflanzliche Proteine und kardiometabolische Vorsorge.",
-      "es": "Guía clínica práctica para aplicar el IMC en población india y asiática: sustitución de carbohidratos refinados, fuentes de proteína vegetal y pruebas diagnósticas anuales.",
-      "fr": "Guide clinique pour appliquer les seuils d'IMC asiatiques au quotidien : gestion des glucides, sources de protéines végétales, activité physique et bilans préventifs."
+      "es": "Guía basada en evidencia para aplicar el IMC en población india y asiática: sustitución de carbohidratos refinados, fuentes de proteína vegetal y pruebas preventivas.",
+      "fr": "Guide fondé sur des preuves pour appliquer les seuils d'IMC asiatiques au quotidien : gestion des glucides, sources de protéines végétales, activité physique et bilans préventifs."
     },
     "contentHtml": {
       "en": `
-      <h2>Translating Your Asian BMI Result into Daily Clinical & Nutritional Action</h2>
+      <h2>Translating Your Asian BMI Result into Practical Action</h2>
       <p>Calculating your Body Mass Index (BMI) using Asian population criteria—where <strong>18.5 to 22.9 kg/m² represents normal weight</strong>, <strong>23.0 to 24.9 kg/m² defines overweight</strong>, and <strong>&ge; 25.0 kg/m² signifies obesity</strong>—is an essential first-line educational screening milestone. However, the true preventative value emerges when you translate that calculation into tangible daily lifestyle adjustments tailored to the unique metabolic architecture of South Asian biology.</p>
       <p>Because individuals of Indian and broader South Asian descent carry a documented genetic and phenotypic predisposition toward premature visceral adiposity, higher abdominal fat distribution, and earlier beta-cell pancreatic exhaustion, proactive nutritional management, muscle preservation, and structured preventive clinical screenings are essential for lifelong cardiometabolic health.</p>
 
@@ -48,7 +48,7 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
               <th class="p-3 border border-[#e6e6e6]">Nutritional Category</th>
               <th class="p-3 border border-[#e6e6e6]">Traditional Dietary Choice</th>
               <th class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">Health-Promoting Kitchen Swap</th>
-              <th class="p-3 border border-[#e6e6e6]">Clinical Metabolic Mechanism</th>
+              <th class="p-3 border border-[#e6e6e6]">Metabolic Mechanism</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6]">
@@ -430,7 +430,7 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
               <th class="p-3 border border-[#e6e6e6]">Weight Status Category</th>
               <th class="p-3 border border-[#e6e6e6] font-mono text-blue-500">Standard WHO International Range</th>
               <th class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">Asian Indian / ICMR Guidelines</th>
-              <th class="p-3 border border-[#e6e6e6]">Clinical Action Trigger</th>
+              <th class="p-3 border border-[#e6e6e6]">Action Trigger</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6] font-mono">

@@ -123,8 +123,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "BMI uses only your height and weight. It does not measure body fat directly. It cannot tell the difference between heavy muscle and excess fat. Because of this, muscular athletes may score in the overweight range with very low body fat. Older adults who have lost muscle may score as healthy despite carrying excess fat."
         },
         {
-          "question": "Is BMI a clinical medical diagnosis?",
-          "answer": "No. BMI is only a quick screening tool. It does not diagnose illness. A doctor will check your blood pressure, cholesterol, blood sugar, and lifestyle to evaluate your true health."
+          "question": "Is BMI a medical diagnosis?",
+          "answer": "No. BMI is an educational population screening tool, not a medical diagnosis. It does not measure body fat directly or diagnose disease. A healthcare provider will check your blood pressure, cholesterol, blood sugar, and overall lifestyle to evaluate your health."
         }
       ]
     },

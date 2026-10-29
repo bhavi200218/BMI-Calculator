@@ -2,6 +2,7 @@
 // Root Homepage — Primary Interactive Health Suite & Global Gateway
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import HeroBmiInstantCalculator from '../components/HeroBmiInstantCalculator.astro';
 import UpperEvidenceCenter from '../components/UpperEvidenceCenter.astro';
 import HeroQuickLaunch from '../components/HeroQuickLaunch.astro';
 import PopularHealthTopics from '../components/PopularHealthTopics.astro';
@@ -15,8 +16,8 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 ---
 
 <Layout 
-	title="Real BMI — Clinical Evidence Center, Health Research & Screening Suite"
-	description="Real BMI is an evidence-based clinical health publication and calculation suite offering peer-reviewed metabolic guides, 15 indexed primary studies, and free private screening tools."
+	title="Real BMI — Health Research Hub, Evidence-Based Guides & Screening Suite"
+	description="Real BMI is an evidence-based health research platform and calculation suite offering peer-reviewed metabolic guides, 15 indexed primary studies, and free private screening tools."
 	canonicalURL="https://realbmicalculator.com/"
 >
 	<Navbar />
@@ -25,37 +26,42 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 
 		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
 		<section class="pt-24 md:pt-28 pb-8 md:pb-12 px-4 md:px-6">
-			<div class="max-w-7xl mx-auto space-y-10">
+			<div class="max-w-7xl mx-auto space-y-8">
 
 				<!-- Main H1 & Hero Header -->
 				<div class="text-center space-y-4 max-w-4xl mx-auto">
 					<!-- Eyebrow Tag / Pill -->
 					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						CLINICAL EVIDENCE CENTER • PEER-REVIEWED HEALTH RESEARCH & TOOLS
+						HEALTH RESEARCH HUB • EVIDENCE-BASED GUIDES & TOOLS
 					</div>
 
 					<!-- Main H1 headline -->
 					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Evidence-Based Health Research, Clinical Guides & Screening Tools
+						Evidence-Based Health Research, Metabolic Guides & Screening Tools
 					</h1>
 
 					<!-- Supporting H2 Subtitle & Intro -->
 					<p class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight font-display">
-						Peer-Reviewed Medical Literature • Dual-Unit Parity Algorithms • Zero Retention
+						Peer-Reviewed Research Literature • Dual-Unit Parity Algorithms • Client-Side Privacy
 					</p>
 					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed pt-1">
 						Explore authoritative health research, lifespan anthropometric guidelines, and private browser calculators built on published World Health Organization (WHO) and CDC epidemiological frameworks.
 					</p>
 				</div>
 
+				<!-- Instant Quick BMI Calculator (First Screen Priority) -->
+				<div class="max-w-4xl mx-auto">
+					<HeroBmiInstantCalculator lang="en" />
+				</div>
+
 				<!-- Stats Strip -->
-				<div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 pt-2">
 					{[
-						'25+ Clinical Guides',
-						'30+ Peer-Reviewed Articles',
-						'15 Indexed Landmark Studies',
-						'WHO & CDC Evidence Standards'
+						'18+ Health Calculators',
+						'30+ Research Guides',
+						'15 Indexed Primary Studies',
+						'WHO & CDC Standards'
 					].map(badge => (
 						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
 							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
@@ -63,9 +69,6 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 						</div>
 					))}
 				</div>
-
-				<!-- ═══════════════════  UPPER EVIDENCE & RESEARCH HUB  ═══════════════════ -->
-				<UpperEvidenceCenter lang="en" />
 
 			</div>
 		</section>
@@ -88,83 +91,28 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  FEATURED RESEARCH GUIDES  ═══════════════════ -->
-		<div id="featured-guides" class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
-			<div class="max-w-7xl mx-auto">
-				<FeaturedResearchGuides lang="en" />
-			</div>
-		</div>
-
-		<!-- ═══════════════════  LATEST HEALTH ARTICLES  ═══════════════════ -->
-		<div id="latest-articles" class="px-4 md:px-6 py-8 md:py-12 content-auto scroll-mt-20">
-			<div class="max-w-7xl mx-auto">
-				<LatestArticles lang="en" limit={6} />
-			</div>
-		</div>
-
-		<!-- ═══════════════════  QUICK SCREENING LAUNCHPAD  ═══════════════════ -->
-		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40">
+		<!-- ═══════════════════  SECTION 2: POPULAR CALCULATORS LAUNCHPAD  ═══════════════════ -->
+		<section id="popular-calculators" class="px-4 md:px-6 py-10 md:py-14 content-auto border-b border-[var(--border)]/40 bg-[var(--card)]/10 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
 				<HeroQuickLaunch lang="en" />
 			</div>
-		</div>
-					<a href="/fr/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇫🇷 Français</a>
-					<a href="/de/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇩🇪 Deutsch</a>
-					<a href="/ko/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇰🇷 한국어</a>
-					<a href="/hi/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇮🇳 हिन्दी</a>
-				</div>
-			</div>
 		</section>
 
-		<!-- ═══════════════════  POPULAR HEALTH TOPICS  ═══════════════════ -->
-		<div class="px-4 md:px-6 pt-8 pb-8 content-auto">
-			<div class="max-w-7xl mx-auto">
-				<PopularHealthTopics lang="en" />
-			</div>
-		</div>
-
-		<!-- ═══════════════════  FEATURED RESEARCH GUIDES  ═══════════════════ -->
-		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20">
+		<!-- ═══════════════════  SECTION 3: FEATURED RESEARCH GUIDES & ARTICLES  ═══════════════════ -->
+		<div id="featured-guides" class="px-4 md:px-6 py-10 md:py-14 content-auto border-b border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
 				<FeaturedResearchGuides lang="en" />
 			</div>
 		</div>
 
-		<!-- ═══════════════════  LATEST HEALTH ARTICLES  ═══════════════════ -->
-		<div class="px-4 md:px-6 py-8 md:py-12 content-auto">
+		<div id="latest-articles" class="px-4 md:px-6 py-10 md:py-14 content-auto border-b border-[var(--border)]/40 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
 				<LatestArticles lang="en" limit={6} />
 			</div>
 		</div>
 
-		<!-- ═══════════════════  PRACTICAL HEALTH FOUNDATIONS  ═══════════════════ -->
-		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40">
-			<div class="max-w-7xl mx-auto">
-				<UnderstandNumbersSection lang="en" />
-			</div>
-		</div>
-
-		<!-- ═══════════════════  COMPLETE 18+ CALCULATOR SUITE  ═══════════════════ -->
-		<section id="all-calculators" class="px-4 md:px-6 py-12 md:py-16 scroll-mt-24 border-t border-[var(--border)]/60 bg-[var(--card)]/30 content-auto">
-			<div class="max-w-7xl mx-auto space-y-8">
-				<div class="text-center max-w-3xl mx-auto space-y-3">
-					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
-						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
-						Complete Interactive Directory
-					</div>
-					<h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-						All 18+ Evidence-Based Health Calculators
-					</h2>
-					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-						Explore our complete suite of clinically referenced health and fitness tools — 100% browser-based with zero health data retention.
-					</p>
-				</div>
-				<HomepageHubWrapper lang="en" />
-			</div>
-		</section>
-
-		<!-- ═══════════════════  WHY PEOPLE CHOOSE REAL BMI  ═══════════════════ -->
-		<section class="px-4 md:px-6 py-12 md:py-16 content-auto border-t border-[var(--border)]/40">
+		<!-- ═══════════════════  SECTION 4: WHY PEOPLE CHOOSE REAL BMI & RESEARCH FOUNDATION  ═══════════════════ -->
+		<section class="px-4 md:px-6 py-12 md:py-16 content-auto border-b border-[var(--border)]/40 space-y-12">
 			<div class="max-w-7xl mx-auto">
 				<div class="mb-10 sm:mb-12 space-y-3">
 					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Transparent Calculator Features</p>
@@ -204,10 +152,48 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 					</div>
 				</div>
 			</div>
+
+			<!-- Research Literature Matrix & Evidence Library -->
+			<div class="max-w-7xl mx-auto pt-6">
+				<UpperEvidenceCenter lang="en" />
+			</div>
 		</section>
 
-		<!-- ═══════════════════  STANDARDS, METHODOLOGY & E-E-A-T  ═══════════════════ -->
-		<div class="px-4 md:px-6 pt-6 pb-12 content-auto">
+		<!-- ═══════════════════  SECTION 5: COMPLETE 18+ CALCULATOR SUITE  ═══════════════════ -->
+		<section id="calculators" class="px-4 md:px-6 py-12 md:py-16 scroll-mt-24 border-b border-[var(--border)]/60 bg-[var(--card)]/30 content-auto">
+			<div id="all-calculators" class="scroll-mt-24" aria-hidden="true"></div>
+			<div class="max-w-7xl mx-auto space-y-8">
+				<div class="text-center max-w-3xl mx-auto space-y-3">
+					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+						Complete Interactive Directory
+					</div>
+					<h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+						All 18+ Evidence-Based Health Calculators
+					</h2>
+					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+						Explore our complete suite of clinically referenced health and fitness tools — 100% browser-based with zero health data retention.
+					</p>
+				</div>
+				<HomepageHubWrapper lang="en" />
+			</div>
+		</section>
+
+		<!-- ═══════════════════  SECTION 6: HEALTH TOPICS & FOUNDATIONS  ═══════════════════ -->
+		<div id="popular-topics" class="px-4 md:px-6 py-10 md:py-14 content-auto border-b border-[var(--border)]/40 scroll-mt-20">
+			<div class="max-w-7xl mx-auto">
+				<PopularHealthTopics lang="en" />
+			</div>
+		</div>
+
+		<div class="px-4 md:px-6 py-10 md:py-14 content-auto border-b border-[var(--border)]/40">
+			<div class="max-w-7xl mx-auto">
+				<UnderstandNumbersSection lang="en" />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  SECTION 7: STANDARDS, METHODOLOGY & E-E-A-T  ═══════════════════ -->
+		<div class="px-4 md:px-6 pt-8 pb-14 content-auto">
 			<div class="max-w-7xl mx-auto space-y-12">
 				<HealthContent lang="en" />
 				<EmbedWidgetBox lang="en" />

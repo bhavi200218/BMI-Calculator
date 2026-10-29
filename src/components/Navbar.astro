@@ -273,6 +273,63 @@ const currentLangDisplay = langNames[lang] || lang;
     });
   }
 
-  initTheme(); attachThemeToggle(); attachLangDropdown(); attachMobileMenu();
-  document.addEventListener('astro:after-swap', () => { initTheme(); attachThemeToggle(); attachLangDropdown(); attachMobileMenu(); });
+  function attachSmoothScroll() {
+    const links = document.querySelectorAll('a[href*="#"]');
+    links.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (!href || !href.includes('#')) return;
+
+        const [path, hash] = href.split('#');
+        if (!hash) return;
+
+        const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+        const cleanPath = (path || '').replace(/\/+$/, '') || '/';
+
+        // Check if destination matches the current page (e.g. / vs /en or same locale path)
+        const isSamePage = !path ||
+          cleanPath === currentPath ||
+          (currentPath === '/' && (cleanPath === '/en' || cleanPath === '')) ||
+          (cleanPath === '/' && currentPath === '/en');
+
+        if (isSamePage) {
+          let target = document.getElementById(hash);
+          if (!target && hash === 'calculators') {
+            target = document.getElementById('all-calculators');
+          } else if (!target && hash === 'all-calculators') {
+            target = document.getElementById('calculators');
+          }
+
+          if (target) {
+            e.preventDefault();
+
+            // Ensure mobile menu closes smoothly
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+              mobileMenu.classList.remove('flex');
+            }
+
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.pushState(null, '', `#${hash}`);
+          }
+        }
+      });
+    });
+  }
+
+  function handleInitialHash() {
+    if (window.location.hash) {
+      const hash = window.location.hash.replace('#', '');
+      const target = document.getElementById(hash) || (hash === 'calculators' ? document.getElementById('all-calculators') : null);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }
+
+  initTheme(); attachThemeToggle(); attachLangDropdown(); attachMobileMenu(); attachSmoothScroll(); handleInitialHash();
+  document.addEventListener('astro:after-swap', () => { initTheme(); attachThemeToggle(); attachLangDropdown(); attachMobileMenu(); attachSmoothScroll(); handleInitialHash(); });
 </script>

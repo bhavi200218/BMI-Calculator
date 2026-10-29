@@ -77,7 +77,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'ऊंचाई / कद', desc: 'सीधे खड़े होने पर पैरों के तलवों से लेकर सिर के शीर्ष तक की ऊर्ध्वाधर माप।', metric: 'सेंटीमीटर (cm)', imperial: 'फीट और इंच (ft/in)' }
   },
   age: {
-    en: { name: 'Chronological Age', desc: 'Age in completed years. Used to calculate your daily energy needs.', metric: 'Years (integer)', imperial: 'Years (integer)' },
+    en: { name: 'Chronological Age', desc: 'Age in completed years. Used for age-adjusted metabolic coefficients and baseline health references.', metric: 'Years (integer)', imperial: 'Years (integer)' },
     es: { name: 'Edad Cronológica', desc: 'Años cumplidos, necesarios para coeficientes metabólicos ajustados por edad.', metric: 'Años (entero)', imperial: 'Años (entero)' },
     fr: { name: 'Âge Chronologique', desc: 'Années révolues, requises pour les coefficients métaboliques ajustés selon l’âge.', metric: 'Années (entier)', imperial: 'Années (entier)' },
     de: { name: 'Lebensalter', desc: 'Vollendete Lebensjahre, erforderlich für alterskorrigierte Stoffwechselkoeffizienten.', metric: 'Jahre (Ganzzahl)', imperial: 'Jahre (Ganzzahl)' },
@@ -85,7 +85,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'आयु', desc: 'पूर्ण किए गए जीवन वर्ष, जो आयु-समायोजित चयापचय गुणांक के लिए आवश्यक हैं।', metric: 'वर्ष (पूर्णांक)', imperial: 'वर्ष (पूर्णांक)' }
   },
   gender: {
-    en: { name: 'Biological Profile', desc: 'Biological gender profile. Needed because body fat and calorie burn differ between men and women.', metric: 'Male / Female', imperial: 'Male / Female' },
+    en: { name: 'Biological Profile', desc: 'Biological gender profile. Used for sex-specific metabolic baselines and reference body composition ranges.', metric: 'Male / Female', imperial: 'Male / Female' },
     es: { name: 'Género Biológico', desc: 'Requerido porque el perfil biológico determina la proporción de grasa esencial y la tasa metabólica basal.', metric: 'Masculino / Femenino', imperial: 'Masculino / Femenino' },
     fr: { name: 'Profil Biologique', desc: 'Nécessaire car le profil biologique influence la masse grasse essentielle et le métabolisme de base.', metric: 'Homme / Femme', imperial: 'Homme / Femme' },
     de: { name: 'Biologisches Geschlecht', desc: 'Erforderlich, da das biologische Geschlecht den essenziellen Fettanteil und den Grundumsatz bestimmt.', metric: 'Männlich / Weiblich', imperial: 'Männlich / Weiblich' },
@@ -172,8 +172,56 @@ const LIFT_VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; d
 export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale, slug: string = '', toolTitle?: string) {
   const ui = UI_TITLES[lang] || UI_TITLES.en;
   const is1RM = slug === '1rm-calculator' || slug === 'one-rep-max-calculator';
+  const isBmiDomain = [
+    'bmi-calculator', 
+    '3d-bmi-calculator', 
+    'bmi-calculator-for-indians', 
+    'asian-bmi-calculator', 
+    'bmi-chart', 
+    'new-bmi-calculator', 
+    '3d-body-visualizer'
+  ].includes(slug);
 
   const items: VariableGuideItem[] = inputs.map(input => {
+    // Tailor age and gender explanations accurately for BMI calculators
+    if (isBmiDomain && input.id === 'age') {
+      const ageBmiDesc: Record<Locale, string> = {
+        en: 'Age is collected for educational context and interpretation. Age is not part of the BMI equation.',
+        es: 'La edad se recopila para contexto educativo e interpretación. No forma parte de la ecuación del IMC.',
+        fr: 'L’âge est recueilli à des fins de contexte éducatif et d’interprétation. Il ne fait pas partie de l’équation de l’IMC.',
+        de: 'Das Alter dient dem pädagogischen Kontext und der Referenzinterpretation. Das Alter ist kein Bestandteil der BMI-Gleichung.',
+        ko: '연령은 교육적 맥락 및 기준선 해석을 위해 수집됩니다. 연령은 BMI 계산 공식 자체에는 영향을 주지 않습니다.',
+        hi: 'आयु शैक्षिक संदर्भ और व्याख्या के लिए एकत्र की जाती है। आयु बीएमआई समीकरण का हिस्सा नहीं है।'
+      };
+      const def = VARIABLE_DEFINITIONS.age[lang] || VARIABLE_DEFINITIONS.age.en;
+      return {
+        id: input.id,
+        name: def.name,
+        description: ageBmiDesc[lang] || ageBmiDesc.en,
+        metricUnit: def.metric,
+        imperialUnit: def.imperial
+      };
+    }
+
+    if (isBmiDomain && input.id === 'gender') {
+      const genderBmiDesc: Record<Locale, string> = {
+        en: 'Gender may be used for educational interpretation and related health references. It does not affect the BMI calculation itself.',
+        es: 'El género se puede utilizar para interpretación educativa y referencias de salud. No afecta el cálculo del IMC en sí.',
+        fr: 'Le genre peut être utilisé pour l’interprétation éducative et les références de santé. Il n’affecte pas le calcul de l’IMC lui-même.',
+        de: 'Das Geschlecht kann für die Interpretation und gesundheitliche Referenzen herangezogen werden. Es hat keinen Einfluss auf die eigentliche BMI-Berechnung.',
+        ko: '성별은 교육적 해석 및 관련 건강 기준을 위해 참조될 수 있으며, BMI 계산 공식 자체에는 영향을 주지 않습니다.',
+        hi: 'लिंग का उपयोग शैक्षिक व्याख्या और संबंधित स्वास्थ्य संदर्भों के लिए किया जा सकता है। यह स्वयं बीएमआई गणना को प्रभावित नहीं करता है।'
+      };
+      const def = VARIABLE_DEFINITIONS.gender[lang] || VARIABLE_DEFINITIONS.gender.en;
+      return {
+        id: input.id,
+        name: def.name,
+        description: genderBmiDesc[lang] || genderBmiDesc.en,
+        metricUnit: def.metric,
+        imperialUnit: def.imperial
+      };
+    }
+
     const sourceDefs = is1RM && LIFT_VARIABLE_DEFINITIONS[input.id] 
       ? LIFT_VARIABLE_DEFINITIONS 
       : VARIABLE_DEFINITIONS;
@@ -237,62 +285,62 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         interpretationText: 'A BMI between 18.5 and 24.9 is considered a healthy weight for adults by the World Health Organization (WHO) and CDC. A BMI between 25.0 and 29.9 falls in the overweight range. A score of 30.0 or higher falls into the obesity category. These numbers are general screening guidelines used to track health trends in large populations.',
         limitationsTitle: 'Key Limitations of BMI',
         limitationsText: 'BMI uses only your height and weight. It does not measure body fat directly or separate muscle from fat. Athletes with high muscle mass may score in the overweight range even with low body fat. In contrast, older adults who have lost muscle may have a normal BMI despite having excess body fat.',
-        medicalNoticeTitle: 'Clinical Screening Notice',
+        medicalNoticeTitle: 'Health Screening Notice',
         medicalNoticeText: 'BMI is a quick screening tool, not a medical diagnosis. Talk to your doctor for a complete health checkup, including blood pressure, blood sugar, and cholesterol tests.'
       },
       es: {
         domain: 'bmi',
-        sectionTitle: 'Interpretación de Resultados y Límites Clínicos',
+        sectionTitle: 'Interpretación de Resultados y Límites de Salud',
         sectionSubtitle: 'Cómo interpretar la puntuación obtenida y comprender los límites del cribado poblacional.',
         interpretationTitle: 'Interpretación según la Referencia Global de la OMS',
         interpretationText: 'Un Índice de Masa Corporal entre 18.5 y 24.9 kg/m² constituye el intervalo de referencia estándar para adultos según la Organización Mundial de la Salud (OMS) y los CDC. Los valores de 25.0 a 29.9 kg/m² indican sobrepeso, y ≥ 30.0 kg/m² definen obesidad. Estas clasificaciones son herramientas estadísticas de salud pública, no diagnósticos individuales.',
         limitationsTitle: 'Limitaciones Fisiológicas Clave',
         limitationsText: 'El IMC utiliza únicamente el peso y la estatura, sin diferenciar entre masa magra muscular, densidad ósea y tejido adiposo. Por este motivo, personas atléticas pueden registrar valores de sobrepeso con baja grasa corporal, mientras que adultos mayores con sarcopenia pueden tener un IMC normal pero un exceso de grasa visceral oculta.',
-        medicalNoticeTitle: 'Aviso de Consulta Médica',
+        medicalNoticeTitle: 'Aviso de Orientación en Salud',
         medicalNoticeText: 'Esta herramienta proporciona cálculos educativos preliminares. Para evaluar su estado de salud integral, consulte a un profesional médico colegiado que examine su presión arterial, perfil lipídico y glucemia en ayunas.'
       },
       fr: {
         domain: 'bmi',
-        sectionTitle: 'Interprétation des Résultats et Limites Cliniques',
+        sectionTitle: 'Interprétation des Résultats et Limites de Santé',
         sectionSubtitle: 'Comment analyser votre résultat et appréhender les seuils de dépistage épidémiologique.',
         interpretationTitle: 'Interprétation selon les Normes Mondiales de l’OMS',
         interpretationText: 'Un Indice de Masse Corporelle compris entre 18,5 et 24,9 kg/m² correspond à la norme de référence pour la population adulte selon l’OMS et les CDC. Les valeurs de 25,0 à 29,9 kg/m² indiquent un surpoids et celles ≥ 30,0 kg/m² définissent l’obésité. Ces fourchettes constituent des repères statistiques et non un bilan métabolique personnalisé.',
         limitationsTitle: 'Limites Physiologiques Essentielles',
         limitationsText: 'L’IMC repose uniquement sur le ratio masse/taille sans distinguer le muscle du tissu adipeux ni de la masse osseuse. Ainsi, un sportif musclé peut être classé en surpoids avec un taux de graisse faible, tandis qu’une personne âgée souffrant de sarcopénie peut présenter un IMC normal malgré un excès de graisse viscérale.',
-        medicalNoticeTitle: 'Avertissement Médical',
+        medicalNoticeTitle: 'Avis de Dépistage Santé',
         medicalNoticeText: 'Ce calculateur offre une estimation éducative. Pour un examen complet de votre santé métabolique, consultez un médecin qualifié (bilan lipidique, glycémie à jeun et tension artérielle).'
       },
       de: {
         domain: 'bmi',
-        sectionTitle: 'Ergebnisinterpretation & Klinische Grenzen',
+        sectionTitle: 'Ergebnisinterpretation & Gesundheitliche Grenzen',
         sectionSubtitle: 'So ordnen Sie Ihren berechneten Wert ein und verstehen die Grenzen des Screenings.',
         interpretationTitle: 'Interpretation nach weltweiten WHO-Referenzen',
         interpretationText: 'Ein Body-Mass-Index von 18,5 bis 24,9 kg/m² bildet den internationalen Referenzbereich für Erwachsene nach Vorgaben der WHO und der CDC. Werte zwischen 25,0 und 29,9 kg/m² gelten als Übergewicht, Werte ab 30,0 kg/m² als Adipositas. Diese Stufen dienen der epidemiologischen Früherkennung, nicht der individuellen Diagnose.',
         limitationsTitle: 'Wesentliche Physiologische Einschränkungen',
         limitationsText: 'Der BMI erfasst lediglich das Verhältnis von Körpergewicht zu Körpergröße, ohne Muskelmasse, Knochendichte oder Fettgewebe separat zu messen. Gut trainierte Personen fallen dadurch oft in die Kategorie Übergewicht, während ältere Menschen mit altersbedingtem Muskelabbau (Sarkopenie) trotz erhöhtem viszeralem Fett einen normalen BMI aufweisen können.',
-        medicalNoticeTitle: 'Ärztlicher Beratungshinweis',
+        medicalNoticeTitle: 'Gesundheitlicher Screening-Hinweis',
         medicalNoticeText: 'Dieses Werkzeug dient ausschließlich der gesundheitlichen Orientierung. Für eine fundierte Diagnose wenden Sie sich an einen Arzt zur Kontrolle von Blutdruck, Nüchternblutzucker und Lipidprofil.'
       },
       ko: {
         domain: 'bmi',
-        sectionTitle: '산출 결과 해석 및 임상적 한계점',
+        sectionTitle: '산출 결과 해석 및 보건학적 한계점',
         sectionSubtitle: '계산된 지표의 보건학적 의미와 집단 선별 검사의 한계점을 안내합니다.',
         interpretationTitle: 'WHO 글로벌 기준에 따른 해석',
         interpretationText: '세계보건기구(WHO)와 질병통제예방센터(CDC)에 따르면 성인의 표준 정상 BMI 범위는 18.5 ~ 24.9 kg/m²입니다. 25.0 ~ 29.9 kg/m²는 과체중, 30.0 kg/m² 이상은 비만으로 분류됩니다. 이 수치는 대중 보건 통계용 기준선이며 개인의 대사 건강 상태를 단독으로 확정하지 않습니다.',
         limitationsTitle: '주요 생리학적 한계점',
         limitationsText: 'BMI는 총 체중과 신장만을 연산하므로 근육량, 골밀도, 체지방의 구성을 구분하지 못합니다. 근육질 체형의 운동선수는 체지방이 낮아도 과체중으로 판정될 수 있으며, 노화로 인한 근감소증(Sarcopenia)이 있는 경우 내장지방이 많아도 정상 체중으로 나타날 수 있습니다.',
-        medicalNoticeTitle: '의학적 상담 안내',
+        medicalNoticeTitle: '건강 선별 안내',
         medicalNoticeText: '본 도구는 교육용 참고 수치만을 제공합니다. 정확한 건강 상태 평가는 전문의와 상담하여 혈압, 공복 혈당, 지질 수치 등을 종합적으로 확인해야 합니다.'
       },
       hi: {
         domain: 'bmi',
-        sectionTitle: 'परिणाम व्याख्या एवं नैदानिक सीमाएं',
+        sectionTitle: 'परिणाम व्याख्या एवं स्वास्थ्य सीमाएं',
         sectionSubtitle: 'अपने प्राप्त स्कोर का अर्थ समझें और जनसंख्या स्क्रीनिंग की सीमाओं को जानें।',
         interpretationTitle: 'डब्ल्यूएचओ वैश्विक संदर्भ व्याख्या',
         interpretationText: 'विश्व स्वास्थ्य संगठन (WHO) और सीडीसी के अनुसार वयस्कों के लिए 18.5 से 24.9 kg/m² सामान्य संदर्भ सीमा है। 25.0 से 29.9 kg/m² अधिक वजन और 30.0 या अधिक मोटापे को दर्शाता है। ये श्रेणियां सार्वजनिक स्वास्थ्य स्क्रीनिंग के लिए हैं, व्यक्तिगत नैदानिक पुष्टि के लिए नहीं।',
         limitationsTitle: 'प्रमुख शारीरिक सीमाएं',
         limitationsText: 'बीएमआई केवल ऊंचाई और कुल वजन पर आधारित है। यह मांसपेशियों और वसा के बीच अंतर नहीं कर सकता। मांसपेशियों वाले एथलीट कम वसा के बावजूद अधिक वजन की श्रेणी में आ सकते हैं, जबकि बुजुर्ग व्यक्ति मांसपेशियों की कमी (सार्कोपेनिया) के कारण सामान्य बीएमआई पर भी अतिरिक्त आंतरिक वसा रख सकते हैं।',
-        medicalNoticeTitle: 'चिकित्सीय परामर्श सूचना',
+        medicalNoticeTitle: 'स्वास्थ्य स्क्रीनिंग सूचना',
         medicalNoticeText: 'यह कैलकुलेटर केवल शैक्षिक स्क्रीनिंग संदर्भ प्रदान करता है। व्यक्तिगत स्वास्थ्य मूल्यांकन के लिए पंजीकृत चिकित्सक से परामर्श करें और रक्तचाप, ब्लड शुगर तथा लिपिड प्रोफाइल की जांच कराएं।'
       }
     },

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import HeroBmiInstantCalculator from '../../components/HeroBmiInstantCalculator.astro';
 import UpperEvidenceCenter from '../../components/UpperEvidenceCenter.astro';
 import HeroQuickLaunch from '../../components/HeroQuickLaunch.astro';
 import PopularHealthTopics from '../../components/PopularHealthTopics.astro';
@@ -14,8 +15,8 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 ---
 
 <Layout 
-	title="Real BMI — Centro de Evidencia Clínica, Investigación y Calculadoras de Salud"
-	description="Plataforma de publicación médica basada en evidencia y calculadoras clínicas de IMC, TMB, GETD y grasa corporal según los estándares de la OMS y los CDC."
+	title="Real BMI — Centro de Investigación en Salud y Calculadoras"
+	description="Plataforma de investigación en salud basada en evidencia y calculadoras de IMC, TMB, GETD y grasa corporal según los estándares de la OMS y los CDC."
 >
 	<Navbar />
 	
@@ -23,33 +24,43 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 
 		<!-- ═══════════════════  HERO & MAIN HEADLINE  ═══════════════════ -->
 		<section class="pt-24 md:pt-28 pb-8 md:pb-12 px-4 md:px-6">
-			<div class="max-w-7xl mx-auto space-y-10">
+			<div class="max-w-7xl mx-auto space-y-8">
 
 				<!-- Main H1 & Hero Header -->
 				<div class="text-center space-y-4 max-w-4xl mx-auto">
 					<!-- Eyebrow Tag / Pill -->
 					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						CENTRO DE EVIDENCIA CLÍNICA • INVESTIGACIÓN EN SALUD Y HERRAMIENTAS
+						CENTRO DE INVESTIGACIÓN EN SALUD • GUÍAS BASADAS EN EVIDENCIA Y HERRAMIENTAS
 					</div>
 
 					<!-- Main H1 headline -->
 					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Investigación en Salud Basada en Evidencia, Guías Clínicas y Cribado
+						Investigación en Salud Basada en Evidencia, Guías Metabólicas y Cribado
 					</h1>
 
 					<!-- Supporting H2 Subtitle & Intro -->
 					<p class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight font-display">
-						Literatura Médica Revisada por Pares • Algoritmos de Paridad • Privacidad Total
+						Literatura Científica Revisada por Pares • Algoritmos de Paridad • Privacidad Total
 					</p>
 					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed pt-1">
-						Explore investigaciones médicas rigurosas, guías antropométricas a lo largo de la vida y calculadoras privadas desarrolladas según los marcos de la OMS y los CDC.
+						Explore investigaciones rigurosas, guías antropométricas a lo largo de la vida y calculadoras privadas desarrolladas según los marcos de la OMS y los CDC.
 					</p>
 				</div>
 
+				<!-- Instant Quick BMI Calculator (First Screen Priority) -->
+				<div class="max-w-4xl mx-auto">
+					<HeroBmiInstantCalculator lang="es" />
+				</div>
+
 				<!-- Stats Strip -->
-				<div class="flex flex-wrap justify-center gap-3 sm:gap-4">
-					{["25+ Guías Clínicas","30+ Artículos Publicados","15 Estudios Indexados","Estándares OMS y CDC"].map(badge => (
+				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 pt-2">
+					{[
+						'18+ Calculadoras de Salud',
+						'30+ Guías de Investigación',
+						'15 Estudios Indexados',
+						'Estándares OMS y CDC'
+					].map(badge => (
 						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
 							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
 							{badge}
@@ -57,53 +68,80 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 					))}
 				</div>
 
-				<!-- ═══════════════════  UPPER EVIDENCE & RESEARCH HUB  ═══════════════════ -->
-				<UpperEvidenceCenter lang="es" />
-
 			</div>
 		</section>
 
-		<!-- ═══════════════════  FEATURED RESEARCH GUIDES  ═══════════════════ -->
-		<div id="featured-guides" class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
+		<!-- ═══════════════════  SECTION 2: POPULAR CALCULATORS LAUNCHPAD  ═══════════════════ -->
+		<section id="popular-calculators" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/10 scroll-mt-20">
+			<div class="max-w-7xl mx-auto">
+				<HeroQuickLaunch lang="es" />
+			</div>
+		</section>
+
+		<!-- ═══════════════════  SECTION 3: FEATURED RESEARCH GUIDES & ARTICLES  ═══════════════════ -->
+		<div id="featured-guides" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
 				<FeaturedResearchGuides lang="es" />
 			</div>
 		</div>
 
-		<!-- ═══════════════════  LATEST HEALTH ARTICLES  ═══════════════════ -->
-		<div id="latest-articles" class="px-4 md:px-6 py-8 md:py-12 content-auto scroll-mt-20">
+		<div id="latest-articles" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
 				<LatestArticles lang="es" limit={6} />
 			</div>
 		</div>
 
-		<!-- ═══════════════════  QUICK SCREENING LAUNCHPAD  ═══════════════════ -->
-		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40">
+		<!-- ═══════════════════  SECTION 4: WHY PEOPLE CHOOSE REAL BMI & RESEARCH FOUNDATION  ═══════════════════ -->
+		<section class="px-4 md:px-6 py-12 md:py-16 content-auto border-t border-[var(--border)]/40 space-y-12">
 			<div class="max-w-7xl mx-auto">
-				<HeroQuickLaunch lang="es" />
-			</div>
-		</div>
+				<div class="mb-10 sm:mb-12 space-y-3">
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Características Transparentes de las Calculadoras</p>
+					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
+						Claridad para sus objetivos de salud
+					</h2>
+					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
+						Ya sea que esté realizando un seguimiento de su progreso o planificando su nutrición, Real BMI le brinda estimaciones rápidas y prácticas fundamentadas en directrices publicadas.
+					</p>
+				</div>
 
-		<!-- ═══════════════════  POPULAR HEALTH TOPICS  ═══════════════════ -->
-		<div class="px-4 md:px-6 pt-4 pb-8 content-auto border-t border-[var(--border)]/40">
-			<div class="max-w-7xl mx-auto">
-				<PopularHealthTopics lang="es" />
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+					{[
+						{ title: 'Estimaciones basadas en fórmulas', description: 'Obtenga referencias claras de IMC, TMB, GETD y peso ideal utilizando ecuaciones matemáticas publicadas.' },
+						{ title: 'Privacidad en el navegador', description: 'Todos los cálculos se realizan localmente en su dispositivo — sin registros, cuentas ni almacenamiento de datos en servidores.' },
+						{ title: 'Basado en estándares públicos', description: 'Los resultados se presentan junto con los rangos de referencia epidemiológicos de la OMS y los CDC.' },
+						{ title: 'Útil para la planificación diaria', description: 'Explore métricas de condición física, estimaciones nutricionales y composición corporal con metodologías claras.' },
+					].map(item => (
+						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
+							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
+							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+								{item.description}
+							</p>
+						</div>
+					))}
+					
+					<!-- Brand & Methodology Box -->
+					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6 shadow-md">
+						<div class="space-y-2">
+							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">Metodología Transparente</p>
+							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">CÓMO FUNCIONAN NUESTRAS HERRAMIENTAS</p>
+							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">Explore nuestras fórmulas matemáticas, estándares de referencia, parámetros y limitaciones de las 18+ herramientas.</p>
+						</div>
+						<a href="/es/methodology/" class="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-display text-xs font-bold uppercase tracking-wider hover:bg-slate-100 transition-all shadow-xs">
+							Ver Metodología Completa →
+						</a>
+					</div>
+				</div>
 			</div>
-		</div>
-			<div class="max-w-7xl mx-auto">
-				<LatestArticles lang="es" limit={6} />
-			</div>
-		</div>
 
-		<!-- ═══════════════════  PRACTICAL HEALTH FOUNDATIONS  ═══════════════════ -->
-		<div class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40">
-			<div class="max-w-7xl mx-auto">
-				<UnderstandNumbersSection lang="es" />
+			<!-- Research Literature Matrix & Evidence Library -->
+			<div class="max-w-7xl mx-auto pt-6">
+				<UpperEvidenceCenter lang="es" />
 			</div>
-		</div>
+		</section>
 
-		<!-- ═══════════════════  COMPLETE 18+ CALCULATOR SUITE  ═══════════════════ -->
-		<section id="all-calculators" class="px-4 md:px-6 py-12 md:py-16 scroll-mt-24 border-t border-[var(--border)]/60 bg-[var(--card)]/30 content-auto">
+		<!-- ═══════════════════  SECTION 5: COMPLETE 18+ CALCULATOR SUITE  ═══════════════════ -->
+		<section id="calculators" class="px-4 md:px-6 py-12 md:py-16 scroll-mt-24 border-t border-[var(--border)]/60 bg-[var(--card)]/30 content-auto">
+			<div id="all-calculators" class="scroll-mt-24" aria-hidden="true"></div>
 			<div class="max-w-7xl mx-auto space-y-8">
 				<div class="text-center max-w-3xl mx-auto space-y-3">
 					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
@@ -114,53 +152,28 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 						Todas las 18+ Calculadoras Basadas en Evidencia
 					</h2>
 					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-						Explore nuestra suite completa de herramientas clínicas y de condición física — 100% privadas en su navegador y sin retención de datos de salud.
+						Explore nuestra gama completa de herramientas de salud y fitness — 100% basadas en navegador y sin retención de datos.
 					</p>
 				</div>
 				<HomepageHubWrapper lang="es" />
 			</div>
 		</section>
 
-		<!-- ═══════════════════  WHY PEOPLE CHOOSE REAL BMI  ═══════════════════ -->
-		<section class="px-4 md:px-6 py-12 md:py-16 content-auto border-t border-[var(--border)]/40">
+		<!-- ═══════════════════  SECTION 6: HEALTH TOPICS & FOUNDATIONS  ═══════════════════ -->
+		<div id="popular-topics" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
-				<div class="mb-10 sm:mb-12 space-y-3">
-					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Funciones Transparentes de la Calculadora</p>
-					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
-						Claridad para tus objetivos de salud
-					</h2>
-					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium max-w-xl">
-						Ya sea que estés haciendo un seguimiento de tu progreso, planificando la nutrición o revisando tus bases de fitness, Real BMI te ofrece estimaciones rápidas y prácticas basadas en guías publicadas.
-					</p>
-				</div>
-
-				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-					{[{"title":"Estimaciones basadas en fórmulas","desc":"Obtén bases claras para IMC, BMR, TDEE y peso ideal utilizando ecuaciones matemáticas publicadas."},{"title":"Privacidad en el navegador primero","desc":"Todos los cálculos permanecen en tu dispositivo: no se requieren cuentas, registros ni almacenamiento en el servidor."},{"title":"Basado en estándares públicos","desc":"Los resultados se presentan junto con los rangos de referencia públicos de la OMS y los CDC para mayor contexto."},{"title":"Útil para la planificación diaria","desc":"Explora métricas de fitness, estimaciones de nutrición y referencias de composición corporal con métodos de cálculo claros."}].map(item => (
-						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-4 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-[var(--shadow-accent)] hover:-translate-y-1">
-							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
-							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
-								{item.desc}
-							</p>
-						</div>
-					))}
-					
-					<!-- Brand & Methodology Box -->
-					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6 shadow-md">
-						<div class="space-y-2">
-							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">Metodología Transparente</p>
-							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">CÓMO FUNCIONAN NUESTRAS CALCULADORAS</p>
-							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">Explora nuestras fórmulas publicadas, estándares de referencia, entradas, salidas y limitaciones para las 18+ herramientas.</p>
-						</div>
-						<a href="/es/methodology/" class="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-display text-xs font-bold uppercase tracking-wider hover:bg-slate-100 transition-all shadow-xs">
-							Ver Metodología de Calculadoras →
-						</a>
-					</div>
-				</div>
+				<PopularHealthTopics lang="es" />
 			</div>
-		</section>
+		</div>
 
-		<!-- ═══════════════════  STANDARDS, METHODOLOGY & E-E-A-T  ═══════════════════ -->
-		<div class="px-4 md:px-6 pt-6 pb-12 content-auto">
+		<div class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40">
+			<div class="max-w-7xl mx-auto">
+				<UnderstandNumbersSection lang="es" />
+			</div>
+		</div>
+
+		<!-- ═══════════════════  SECTION 7: STANDARDS, METHODOLOGY & E-E-A-T  ═══════════════════ -->
+		<div class="px-4 md:px-6 pt-8 pb-14 content-auto border-t border-[var(--border)]/40">
 			<div class="max-w-7xl mx-auto space-y-12">
 				<HealthContent lang="es" />
 				<EmbedWidgetBox lang="es" />

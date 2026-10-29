@@ -23,16 +23,18 @@ interface TopicsLocaleData {
   subtitle: string;
   guidesLabel: string;
   toolsLabel: string;
+  takeawaysLabel: string;
   topics: TopicItem[];
 }
 
 const data: Record<Locale, TopicsLocaleData> = {
   en: {
     eyebrow: "Topical Research Hubs",
-    title: "Popular Health Topics & Clinical Domains",
-    subtitle: "Explore evidence-based research pillars combining peer-reviewed clinical guidelines, metabolic science, and interactive screening tools.",
+    title: "Popular Health Topics & Research Areas",
+    subtitle: "Explore evidence-based research pillars combining peer-reviewed reference guidelines, metabolic science, and interactive screening tools.",
     guidesLabel: "Flagship Research Guides:",
     toolsLabel: "Interactive Screening Tools:",
+    takeawaysLabel: "Key Research Takeaways",
     topics: [
       {
         id: "body-composition",
@@ -47,7 +49,7 @@ const data: Record<Locale, TopicsLocaleData> = {
         featuredGuides: [
           { title: "Visceral Fat vs. Subcutaneous Fat Analysis", href: `/${lang}/blog/visceral-fat-vs-subcutaneous-fat/` },
           { title: "BMI vs. Body Fat Percentage Comparison", href: `/${lang}/blog/bmi-vs-body-fat/` },
-          { title: "Age-Specific BMI & Clinical Growth Charts", href: `/${lang}/blog/age-specific-bmi-charts/` }
+          { title: "Age-Specific BMI & Growth Reference Charts", href: `/${lang}/blog/age-specific-bmi-charts/` }
         ],
         featuredTools: [
           { title: "Standard BMI Calculator", href: `/${lang}/bmi-calculator/` },
@@ -81,17 +83,17 @@ const data: Record<Locale, TopicsLocaleData> = {
       {
         id: "clinical-nutrition",
         badge: "Macronutrients & Hydration",
-        title: "Clinical Nutrition & Hydration Science",
+        title: "Nutritional Science & Daily Hydration",
         description: "Evidence-based macronutrient distribution and physiological fluid management. Learn optimal protein-per-kilogram thresholds for muscle preservation and seasonal climate hydration protocols.",
         keyInsights: [
-          "Clinical protein guidelines: 0.8 g/kg for sedentary baseline up to 1.6–2.2 g/kg for active athletes.",
+          "Evidence-based protein guidelines: 0.8 g/kg for sedentary baseline up to 1.6–2.2 g/kg for active athletes.",
           "Urine specific gravity and color index serve as practical daily hydration biomarkers.",
           "High-temperature climates and prolonged exercise elevate daily water and electrolyte requirements by 20–35%."
         ],
         featuredGuides: [
           { title: "Daily Protein Intake Science & Per-kg Tables", href: `/${lang}/blog/daily-protein-intake-science/` },
           { title: "Macro Split Guidelines for Fat Loss & Muscle", href: `/${lang}/blog/macro-split-calculator-guide/` },
-          { title: "Clinical Daily Hydration & Urine Color Guide", href: `/${lang}/blog/daily-water-intake-guide/` }
+          { title: "Daily Hydration & Urine Color Guide", href: `/${lang}/blog/daily-water-intake-guide/` }
         ],
         featuredTools: [
           { title: "Protein Intake Calculator", href: `/${lang}/protein-intake-calculator/` },
@@ -124,10 +126,11 @@ const data: Record<Locale, TopicsLocaleData> = {
   },
   hi: {
     eyebrow: "प्रमुख शोध एवं स्वास्थ्य स्तंभ",
-    title: "लोकप्रिय स्वास्थ्य विषय एवं नैदानिक क्षेत्र",
-    subtitle: "वैज्ञानिक स्वास्थ्य स्तंभों का अन्वेषण करें जिनमें सहकर्मी-समीक्षित नैदानिक दिशानिर्देश, चयापचय विज्ञान और इंटरैक्टिव स्क्रीनिंग टूल शामिल हैं।",
+    title: "लोकप्रिय स्वास्थ्य विषय एवं अनुसंधान क्षेत्र",
+    subtitle: "वैज्ञानिक स्वास्थ्य स्तंभों का अन्वेषण करें जिनमें सहकर्मी-समीक्षित संदर्भ दिशानिर्देश, चयापचय विज्ञान और इंटरैक्टिव स्क्रीनिंग टूल शामिल हैं।",
     guidesLabel: "प्रमुख शोध गाइड:",
     toolsLabel: "इंटरैक्टिव स्क्रीनिंग टूल्स:",
+    takeawaysLabel: "प्रमुख शोध निष्कर्ष",
     topics: [
       {
         id: "body-composition",
@@ -218,11 +221,12 @@ const data: Record<Locale, TopicsLocaleData> = {
     ]
   },
   es: {
-    eyebrow: "Áreas de Investigación Clínica",
-    title: "Temas de Salud Populares y Dominios Clínicos",
-    subtitle: "Explore áreas de investigación fundamentadas en evidencia que combinan directrices médicas revisadas por pares, ciencia metabólica y herramientas interactivas.",
+    eyebrow: "Áreas de Investigación en Salud",
+    title: "Temas de Salud Populares y Áreas de Investigación",
+    subtitle: "Explore áreas de investigación fundamentadas en evidencia que combinan directrices científicas revisadas por pares, ciencia metabólica y herramientas interactivas.",
     guidesLabel: "Guías de Investigación Destacadas:",
     toolsLabel: "Herramientas Interactivas de Cribado:",
+    takeawaysLabel: "Puntos Clave de Investigación",
     topics: [
       {
         id: "body-composition",
@@ -314,10 +318,11 @@ const data: Record<Locale, TopicsLocaleData> = {
   },
   fr: {
     eyebrow: "Pôles Thématiques de Recherche",
-    title: "Thématiques Santé Populaires et Domaines Cliniques",
-    subtitle: "Explorez nos piliers de recherche combinant recommandations médicales validées par les pairs, science métabolique et calculateurs interactifs.",
+    title: "Thématiques Santé Populaires et Domaines de Recherche",
+    subtitle: "Explorez nos piliers de recherche combinant recommandations scientifiques validées par les pairs, science métabolique et calculateurs interactifs.",
     guidesLabel: "Guides de Recherche Principaux :",
     toolsLabel: "Outils de Dépistage Interactifs :",
+    takeawaysLabel: "Points Clés de la Recherche",
     topics: [
       {
         id: "body-composition",
@@ -409,10 +414,11 @@ const data: Record<Locale, TopicsLocaleData> = {
   },
   de: {
     eyebrow: "Thematische Forschungsbereiche",
-    title: "Beliebte Gesundheitsthemen & Klinische Schwerpunkte",
-    subtitle: "Entdecken Sie evidenzbasierte Forschungsschwerpunkte, die medizinische Leitlinien, Stoffwechselphysiologie und interaktive Rechenwerkzeuge vereinen.",
+    title: "Beliebte Gesundheitsthemen & Forschungsschwerpunkte",
+    subtitle: "Entdecken Sie evidenzbasierte Forschungsschwerpunkte, die wissenschaftliche Leitlinien, Stoffwechselphysiologie und interaktive Rechenwerkzeuge vereinen.",
     guidesLabel: "Wichtige Forschungsleitfäden:",
     toolsLabel: "Interaktive Screening-Werkzeuge:",
+    takeawaysLabel: "Wesentliche Forschungserkenntnisse",
     topics: [
       {
         id: "body-composition",
@@ -504,10 +510,11 @@ const data: Record<Locale, TopicsLocaleData> = {
   },
   ko: {
     eyebrow: "주제별 연구 및 건강 허브",
-    title: "인기 건강 주제 및 임상 영역",
-    subtitle: "동료 검토를 거친 임상 지침, 대사 과학, 인터랙티브 건강 계산기가 결합된 근거 기반 연구 분야를 탐색하세요.",
+    title: "주요 건강 주제 및 연구 분야",
+    subtitle: "동료 검토를 거친 공중 보건 지침, 대사 과학, 인터랙티브 건강 계산기가 결합된 근거 기반 연구 분야를 탐색하세요.",
     guidesLabel: "핵심 연구 가이드:",
     toolsLabel: "인터랙티브 스크리닝 도구:",
+    takeawaysLabel: "핵심 연구 요약",
     topics: [
       {
         id: "body-composition",
@@ -641,7 +648,7 @@ const current = data[lang] || data.en;
           <!-- Key Scientific Takeaways / Bullet Box -->
           <div class="p-4 rounded-2xl bg-[var(--muted)]/30 border border-[var(--border)]/50 space-y-2">
             <div class="text-[11px] font-display font-bold uppercase tracking-wider text-[var(--accent)]">
-              Clinical Takeaways
+              {current.takeawaysLabel}
             </div>
             <ul class="space-y-1.5">
               {topic.keyInsights.map((insight) => (

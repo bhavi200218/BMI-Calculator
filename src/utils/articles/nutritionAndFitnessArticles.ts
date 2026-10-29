@@ -22,16 +22,16 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Nutrition et Protéines"
     },
     "description": {
-      "en": "Clinical guide to daily dietary protein intake. Learn why the 0.8 g/kg RDA is only a minimum floor, the leucine threshold for muscle protein synthesis, and DIAAS protein quality scores.",
+      "en": "Evidence-based guide to daily dietary protein intake. Learn why the 0.8 g/kg RDA is only a minimum floor, the leucine threshold for muscle protein synthesis, and DIAAS protein quality scores.",
       "hi": "दैनिक प्रोटीन की मात्रा का वैज्ञानिक विश्लेषण। जानें कि 0.8 g/kg केवल न्यूनतम सीमा क्यों है, ल्यूसीन ट्रिगर और मांसपेशियों के लिए उच्च गुणवत्ता वाले प्रोटीन स्रोत।",
-      "ko": "임상 영양학 기반 일일 단백질 섭취 가이드. 0.8g/kg 권장량이 단순 결핍 예방선인 이유, 류신(Leucine) 임계값과 DIAAS 단백질 품질 평가 지표를 상세 안내합니다.",
-      "de": "Wissenschaftlicher Leitfaden zum täglichen Proteinbedarf: Warum die RDA von 0,8 g/kg zu niedrig ist, die Leucin-Schwelle und DIAAS-Qualitätswerte.",
-      "es": "Guía clínica de proteína diaria: por qué el mínimo de 0.8 g/kg es insuficiente para deportistas, el umbral de leucina y las puntuaciones DIAAS de calidad.",
-      "fr": "Guide clinique sur les protéines : pourquoi les 0,8 g/kg constituent un simple minimum, le seuil de leucine et l'indice de qualité DIAAS."
+      "ko": "영양학 연구 기반 일일 단백질 섭취 가이드. 0.8g/kg 권장량이 단순 결핍 예방선인 이유, 류신(Leucine) 임계값과 DIAAS 단백질 품질 평가 지표를 상세 안내합니다.",
+      "de": "Evidenzbasierter Leitfaden zum täglichen Proteinbedarf: Warum die RDA von 0,8 g/kg zu niedrig ist, die Leucin-Schwelle und DIAAS-Qualitätswerte.",
+      "es": "Guía basada en evidencia de proteína diaria: por qué el mínimo de 0.8 g/kg es insuficiente para deportistas, el umbral de leucina y las puntuaciones DIAAS de calidad.",
+      "fr": "Guide scientifique sur les protéines : pourquoi les 0,8 g/kg constituent un simple minimum, le seuil de leucine et l'indice de qualité DIAAS."
     },
     "contentHtml": {
       "en": `
-      <h2>The Molecular and Clinical Science of Dietary Protein Requirements</h2>
+      <h2>The Science of Dietary Protein Requirements</h2>
       <p>Dietary protein is unique among the three primary macronutrients. Unlike carbohydrates and dietary fats, which are stored in substantial quantities as glycogen in the liver and skeletal muscle or as triglycerides in adipose depots for future energy mobilization, <strong>the human body maintains no dedicated, non-functional storage depot for amino acids</strong>. Every single gram of protein in your body serves an active, indispensable biological role: structural contractile myofibrils in skeletal muscle, circulating transport immunoglobulins, peptide hormones (such as insulin, glucagon, and growth hormone), neurotransmitters, digestive enzymes, and connective collagen fibers.</p>
 
       <h2>Evidence-Based Protein Intake Guidelines by Population</h2>
@@ -343,11 +343,11 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Hydratation et Physiologie"
     },
     "description": {
-      "en": "Clinical hydration science guide. Calculate daily water intake using the 30-35 mL/kg rule, decode the 8-cup myth, and use the clinical Armstrong urine color scale.",
-      "hi": "नैदानिक जलयोजन (हाइड्रेशन) विज्ञान गाइड। 30-35 मिली/किग्रा सूत्र, 8 गिलास पानी के मिथक का सच और आर्मस्ट्रांग यूरिन कलर चार्ट द्वारा जलयोजन जांच।",
-      "ko": "임상 수분 섭취 과학. 체중 kg당 30~35mL 공식, 잘못된 '하루 8잔' 미신 분석 및 Armstrong 임상 소변 색상 척도를 안내합니다.",
-      "de": "Wissenschaftlicher Leitfaden zum Wasserbedarf: Die 30-35 ml/kg Regel, der 8-Gläser-Mythos und die klinische Armstrong-Farbskala.",
-      "es": "Guía médica de hidratación: la regla de 30-35 ml/kg de peso, desmontando el mito de los 8 vasos y la escala de color de orina de Armstrong.",
+      "en": "Evidence-based hydration science guide. Calculate daily water intake using the 30-35 mL/kg rule, decode the 8-cup myth, and use the validated Armstrong urine color scale.",
+      "hi": "प्रमाण-आधारित जलयोजन (हाइड्रेशन) विज्ञान गाइड। 30-35 मिली/किग्रा सूत्र, 8 गिलास पानी के मिथक का सच और आर्मस्ट्रांग यूरिन कलर चार्ट द्वारा जलयोजन जांच।",
+      "ko": "수분 섭취 과학 가이드. 체중 kg당 30~35mL 공식, 잘못된 '하루 8잔' 미신 분석 및 Armstrong 소변 색상 척도를 안내합니다.",
+      "de": "Wissenschaftlicher Leitfaden zum Wasserbedarf: Die 30-35 ml/kg Regel, der 8-Gläser-Mythos und die Armstrong-Farbskala.",
+      "es": "Guía basada en evidencia de hidratación: la regla de 30-35 ml/kg de peso, desmontando el mito de los 8 vasos y la escala de Armstrong.",
       "fr": "Guide scientifique de l'hydratation : règle des 30-35 ml/kg de poids corporel, mythe des 8 verres et échelle de couleur urinaire d'Armstrong."
     },
     "contentHtml": {
@@ -359,21 +359,21 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
         <li><strong>Adult Women:</strong> 2.7 liters (91 oz) total daily fluid (including ~20% from food)</li>
       </ul>
 
-      <h2>The Weight-Based Clinical Hydration Formula</h2>
-      <p>Sports medicine clinicians use the validated body weight equation: <strong>30 to 35 mL of water per kilogram of body weight daily</strong> (plus 500 mL per hour of vigorous sweat exercise).</p>
+      <h2>The Weight-Based Hydration Formula</h2>
+      <p>Sports science researchers use the validated body weight equation: <strong>30 to 35 mL of water per kilogram of body weight daily</strong> (plus 500 mL per hour of vigorous sweat exercise).</p>
       <div class="my-4 p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)] font-mono text-sm">
         <code>Daily Fluid Target (Liters) = Body Weight (kg) &times; 0.033</code>
       </div>
       <p>For a 70 kg individual: <code>70 &times; 0.033 = 2.3 liters of pure drinking fluid daily</code>.</p>
 
-      <h2>Armstrong Clinical Urine Color Scale for Real-Time Hydration</h2>
+      <h2>Armstrong Urine Color Scale for Real-Time Hydration</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
             <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
               <th class="p-3 border border-[#e6e6e6]">Urine Shade</th>
-              <th class="p-3 border border-[#e6e6e6]">Clinical Hydration Status</th>
-              <th class="p-3 border border-[#e6e6e6]">Recommended Clinical Action</th>
+              <th class="p-3 border border-[#e6e6e6]">Hydration Status</th>
+              <th class="p-3 border border-[#e6e6e6]">Recommended Action</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6]">
@@ -484,20 +484,20 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Surface Corporelle (BSA) : Formules de Mosteller et Du Bois en Médecine"
     },
     "category": {
-      "en": "Clinical Pharmacokinetics & Weight",
-      "hi": "क्लिनिकल फार्माकोकाइनेटिक्स व वजन",
-      "ko": "임상 약동학 및 적정 체중",
-      "de": "Pharmakokinetik & Idealgewicht",
-      "es": "Farmacocinética y Peso Ideal",
-      "fr": "Pharmacocinétique et Poids Idéal"
+      "en": "Pharmacokinetics & Body Metrics",
+      "hi": "फार्माकोकाइनेटिक्स व शारीरिक माप",
+      "ko": "약동학 및 신체 지표",
+      "de": "Pharmakokinetik & Körpermaße",
+      "es": "Farmacocinética y Métricas Corporales",
+      "fr": "Pharmacocinétique et Mesures"
     },
     "description": {
-      "en": "Clinical guide to Body Surface Area (BSA). Compare Mosteller and Du Bois equations, understand why chemotherapy and GFR are indexed to BSA, and see step-by-step calculations.",
-      "hi": "बॉडी सरफेस एरिया (BSA) का चिकित्सीय महत्व। मोस्टेलर और डु बोइस सूत्रों की तुलना, कीमोथेरेपी खुराक और किडनी जीएफआर (GFR) में बीएसए की भूमिका।",
-      "ko": "체표면적(BSA)의 의학적 중요성. Mosteller 및 Du Bois 공식의 산출 방식, 항암 화학요법 투약량 결정 및 신장 사구체여과율(GFR) 표준화 원리를 설명합니다.",
-      "de": "Klinischer Leitfaden zur Körperoberfläche (BSA): Warum Chemotherapien und Nierenwerte nach Mosteller auf m² normiert werden.",
-      "es": "Guía clínica del Área de Superficie Corporal (BSA): fórmulas de Mosteller y Du Bois en oncología y ajuste de dosis farmacológica.",
-      "fr": "Guide médical de la surface corporelle (BSA) : équations de Mosteller et Du Bois pour la posologie des chimiothérapies et le débit de filtration glomérulaire."
+      "en": "Reference guide to Body Surface Area (BSA). Compare Mosteller and Du Bois equations, understand why chemotherapy and GFR are indexed to BSA, and see step-by-step calculations.",
+      "hi": "बॉडी सरफेस एरिया (BSA) का वैज्ञानिक महत्व। मोस्टेलर और डु बोइस सूत्रों की तुलना, कीमोथेरेपी खुराक और किडनी जीएफआर (GFR) में बीएसए की भूमिका।",
+      "ko": "체표면적(BSA)의 생리학적 중요성. Mosteller 및 Du Bois 공식의 산출 방식, 항암 화학요법 투약량 결정 및 신장 사구체여과율(GFR) 표준화 원리를 설명합니다.",
+      "de": "Referenzleitfaden zur Körperoberfläche (BSA): Warum Chemotherapien und Nierenwerte nach Mosteller auf m² normiert werden.",
+      "es": "Guía de referencia del Área de Superficie Corporal (BSA): fórmulas de Mosteller y Du Bois en oncología y ajuste de dosis farmacológica.",
+      "fr": "Guide de référence de la surface corporelle (BSA) : équations de Mosteller et Du Bois pour la posologie et le débit de filtration glomérulaire."
     },
     "contentHtml": {
       "en": `
@@ -511,14 +511,14 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
             <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
               <th class="p-3 border border-[#e6e6e6]">Formula</th>
               <th class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">Mathematical Equation</th>
-              <th class="p-3 border border-[#e6e6e6]">Clinical Use Case</th>
+              <th class="p-3 border border-[#e6e6e6]">Primary Application</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6]">
             <tr>
               <td class="p-3 border border-[#e6e6e6] font-semibold text-[#464feb]">Mosteller Formula (1987)</td>
               <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">BSA (m²) = &radic;([Height (cm) &times; Weight (kg)] / 3600)</td>
-              <td class="p-3 border border-[#e6e6e6]">Universal modern hospital standard, simple to compute, validated in clinical oncology</td>
+              <td class="p-3 border border-[#e6e6e6]">Universal modern reference standard, simple to compute, widely validated</td>
             </tr>
             <tr>
               <td class="p-3 border border-[#e6e6e6] font-semibold">Du Bois &amp; Du Bois (1916)</td>
@@ -651,7 +651,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
               <th class="p-3 border border-[#e6e6e6]">Zone</th>
               <th class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">Intensity (% HRR)</th>
               <th class="p-3 border border-[#e6e6e6]">Primary Energy Substrate</th>
-              <th class="p-3 border border-[#e6e6e6]">Clinical Training Adaptation</th>
+              <th class="p-3 border border-[#e6e6e6]">Physiological Adaptation</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6]">
@@ -796,7 +796,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Physiologie Cardiovasculaire"
     },
     "description": {
-      "en": "Clinical strength science guide to estimating your One-Rep Max (1RM). Compare the Brzycki and Epley equations, understand percentage-based loading, and lift safely.",
+      "en": "Evidence-based strength science guide to estimating your One-Rep Max (1RM). Compare the Brzycki and Epley equations, understand percentage-based loading, and lift safely.",
       "hi": "वन-रेप मैक्स (1RM) निकालने की वैज्ञानिक गाइड। ब्रज़ीकी और एपले सूत्रों की तुलना, प्रतिशत आधारित लोडिंग चार्ट और बिना चोट के अधिकतम ताकत का आकलन।",
       "ko": "최대 근력(1RM)을 부상 없이 정밀 추정하는 과학적 공식. Brzycki 및 Epley 공식의 정확도, 퍼센트 기반 중량 설정표 및 안전 수칙을 안내합니다.",
       "de": "Wissenschaftlicher Leitfaden zur 1RM-Berechnung: Brzycki und Epley Formeln im Vergleich sowie Prozenttabellen für das periodisierte Krafttraining.",
@@ -949,6 +949,363 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "ko": `
       <h2>1RM(최대 근력) 정밀 산출 공식</h2>
       <p>Brzycki 공식과 Epley 공식은 직접적인 1RM 측정 시 발생할 수 있는 관절 부상을 방지하고, 5~10회 반복 중량을 통해 최대 근력 및 퍼센트 기반 훈련 강도(85% 근력, 75% 근비대)를 안전하게 설정하도록 돕습니다.</p>
+`
+    }
+  },
+
+  "resistance-training-metabolism": {
+    "datePublished": "2026-03-10",
+    "dateModified": "2026-10-28",
+    "title": {
+      "en": "Resistance Training Science: Muscle Protein Synthesis & Metabolic Rate",
+      "hi": "स्ट्रेंथ ट्रेनिंग का विज्ञान: मसल प्रोटीन सिंथेसिस और मेटाबॉलिक दर",
+      "ko": "근력 운동의 과학: 근육 단백질 합성(MPS)과 기초대사량의 관계",
+      "de": "Wissenschaft des Krafttrainings: Muskelproteinsynthese & Grundumsatz",
+      "es": "Ciencia del Entrenamiento de Fuerza: Síntesis Proteica y Tasa Metabólica",
+      "fr": "Science de la Musculation : Synthèse des Protéines et Taux Métabolique"
+    },
+    "category": {
+      "en": "Strength & Exercise Physiology",
+      "hi": "स्ट्रेंथ और व्यायाम शरीरक्रिया विज्ञान",
+      "ko": "근력 및 운동 생리학",
+      "de": "Krafttraining & Physiologie",
+      "es": "Fisiología del Ejercicio y Fuerza",
+      "fr": "Physiologie de l'Exercice et Force"
+    },
+    "description": {
+      "en": "Understand the exercise physiology behind resistance training. Learn how mechanical tension triggers muscle protein synthesis (MPS), preserves resting metabolic rate (BMR), and accelerates fat loss.",
+      "hi": "रेजिस्टेंस ट्रेनिंग के पीछे का शारीरिक विज्ञान। समझें कि कैसे वजन उठाना मसल प्रोटीन सिंथेसिस (MPS) को सक्रिय करता है, रेस्टिंग मेटाबॉलिक रेट (BMR) को बनाए रखता है और फैट लॉस को तेज करता है।",
+      "ko": "저항성 근력 운동의 생리학적 메커니즘. 기계적 장력과 근육 단백질 합성(MPS), 기초대사량(BMR) 보존 및 안전한 점진적 과부하 원리를 상세히 안내합니다.",
+      "de": "Verstehen Sie die Physiologie des Krafttrainings: Wie mechanische Spannung Muskelproteinsynthese anregt und den Grundumsatz langfristig schützt.",
+      "es": "Descubre la fisiología detrás del entrenamiento con pesas: tensión mecánica, síntesis proteica muscular (MPS) y protección del metabolismo basal.",
+      "fr": "Comprenez la physiologie de l'entraînement contre résistance : tension mécanique, synthèse protéique (MPS) et préservation du métabolisme basal."
+    },
+    "contentHtml": {
+      "en": `
+      <h2>The Physiology of Progressive Mechanical Overload</h2>
+      <p>Resistance training—whether performed using free weights, cable machines, resistance bands, or bodyweight calisthenics—is the most potent non-pharmacological stimulus for preserving and augmenting human lean body mass. When skeletal muscle fibers contract against an external gravitational load, mechanosensors embedded in the sarcolemma (specifically focal adhesion kinases and costameres) transduce mechanical force into intracellular biochemical signals.</p>
+      <p>This biomechanical transduction upregulates the <strong>mechanistic target of rapamycin complex 1 (mTORC1)</strong> pathway. Active mTORC1 phosphorylates downstream effectors (p70S6K and 4E-BP1), initiating ribosome biogenesis and accelerating <strong>Muscle Protein Synthesis (MPS)</strong>. Over a typical 24- to 48-hour recovery window, when sufficient essential amino acids (notably L-leucine) are present in the bloodstream, muscle protein synthesis exceeds muscle protein breakdown (MPB), resulting in positive net nitrogen balance and skeletal muscle hypertrophy.</p>
+
+      <h2>How Muscle Mass Protects Resting Metabolic Rate (BMR) During Fat Loss</h2>
+      <p>During caloric deficits, the human body inevitably draws upon both adipose stores and functional lean tissue for energy. Without resistance training, up to <strong>25% to 35% of total lost scale weight comes from metabolically active skeletal muscle</strong>.</p>
+      <p>Because each kilogram of skeletal muscle burns approximately 13 kcal/day at rest (compared to only 4.5 kcal/day per kilogram of adipose tissue), losing muscle mass causes a permanent downturn in Basal Metabolic Rate (BMR), paving the way for the dreaded "rebound weight gain" cycle. Heavy resistance training provides the essential neuromuscular stimulus that signals the body to preserve muscle tissue while oxidizing fat reserves almost exclusively.</p>
+
+      <h2>Key Exercise Variables for Hypertrophy and Strength</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Training Parameter</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Strength Focus</th>
+              <th class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Hypertrophy (Muscle Growth)</th>
+              <th class="p-3 border border-[#e6e6e6]">Physiological Mechanism</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Intensity (% of 1RM)</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-blue-500">&ge; 85% 1RM</td>
+              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-emerald-600">65% – 80% 1RM</td>
+              <td class="p-3 border border-[#e6e6e6]">Higher loads recruit high-threshold Type IIx motor units</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Repetition Range</td>
+              <td class="p-3 border border-[#e6e6e6]">1 – 5 reps per set</td>
+              <td class="p-3 border border-[#e6e6e6]">6 – 15 reps per set</td>
+              <td class="p-3 border border-[#e6e6e6]">Balances high mechanical tension with cumulative metabolic stress</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Weekly Direct Sets per Muscle</td>
+              <td class="p-3 border border-[#e6e6e6]">6 – 12 hard sets</td>
+              <td class="p-3 border border-[#e6e6e6] font-bold text-emerald-600">10 – 20 hard sets</td>
+              <td class="p-3 border border-[#e6e6e6]">Dose-response curve plateaus around 15–20 sets/week per muscle group</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Rest Periods</td>
+              <td class="p-3 border border-[#e6e6e6]">3 – 5 minutes</td>
+              <td class="p-3 border border-[#e6e6e6]">2 – 3 minutes</td>
+              <td class="p-3 border border-[#e6e6e6]">Allows full phosphocreatine (PCr) resynthesis in mitochondria</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Scientific References</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Schoenfeld BJ, et al. <em>Dose-response relationship between weekly resistance training volume and increases in muscle mass: A systematic review and meta-analysis.</em> J Sports Sci 2017; 35(11):1073-1082. PMID: 27433992.</li>
+        <li>Phillips SM. <em>A brief review of critical processes in exercise-induced muscular hypertrophy.</em> Sports Med 2014; 44(Suppl 1):71-77. PMID: 24791918.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>स्ट्रेंथ ट्रेनिंग और मसल प्रोटीन सिंथेसिस का विज्ञान</h2>
+      <p>जब आप वजन उठाते हैं, तो मांसपेशियों के रेशों में सूक्ष्म खिंचाव होता है जो शरीर के mTORC1 पाथवे को सक्रिय करता है। यह प्रक्रिया प्रोटीन संश्लेषण (MPS) को बढ़ाती है, जिससे मांसपेशियां मजबूत और घनी होती हैं। जब पर्याप्त प्रोटीन (1.6 से 2.2 ग्राम/किग्रा) का सेवन किया जाता है, तो मांसपेशियां तेजी से रिकवर होती हैं।</p>
+
+      <h2>कैलोरी डेफिसिट में मांसपेशियों को बचाना क्यों आवश्यक है?</h2>
+      <p>डाइट करते समय यदि वजन उठाने का व्यायाम न किया जाए, तो घटने वाले कुल वजन का लगभग 25% हिस्सा मांसपेशियों का हो सकता है। क्योंकि मांसपेशियां आराम की स्थिति में भी ऊर्जा जलाती हैं, इसलिए स्ट्रेंथ ट्रेनिंग मेटाबॉलिज्म (BMR) को धीमा होने से बचाती है।</p>
+`,
+      "es": `
+      <h2>Fisiología del Entrenamiento de Fuerza e Hipertrofia</h2>
+      <p>El estímulo de la sobrecarga mecánica progresiva activa la vía mTORC1 y eleva la síntesis proteica muscular durante 24 a 48 horas. Durante un déficit calórico, levantar pesas previene la pérdida de masa muscular, asegurando que el peso perdido proceda exclusivamente del tejido graso.</p>
+`,
+      "fr": `
+      <h2>La Science de l'Hypertrophie et du Métabolisme Musculaire</h2>
+      <p>L'entraînement avec charges stimule la synthèse protéique musculaire (MPS) et protège le métabolisme de base (BMR). En maintenant 10 à 20 séries effectives par groupe musculaire chaque semaine, vous évitez la fonte musculaire liée aux restrictions caloriques.</p>
+`,
+      "de": `
+      <h2>Krafttraining und Muskelaufbau: Die biologischen Grundlagen</h2>
+      <p>Progressive mechanische Überlastung aktiviert den mTOR-Signalweg für 24 bis 48 Stunden. Im Kaloriendefizit schützt regelmäßiges Krafttraining die stoffwechselaktive Muskulatur vor Abbau und sichert einen hohen Grundumsatz.</p>
+`,
+      "ko": `
+      <h2>근력 운동과 근육 단백질 합성(MPS)의 생리학</h2>
+      <p>점진적 과부하 원리에 기반한 저항성 운동은 mTORC1 경로를 자극하여 24~48시간 동안 근육 단백질 합성을 촉진합니다. 다이어트 시 근력 운동을 병행하면 제지방량 손실을 원천 차단하여 요요 없는 기초대사량을 유지할 수 있습니다.</p>
+`
+    }
+  },
+
+  "vo2-max-and-cardio-health": {
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-10-28",
+    "title": {
+      "en": "VO2 Max & Aerobic Capacity: Cardiovascular Benchmarks & Longevity Science",
+      "hi": "VO2 Max और एरोबिक क्षमता: हृदय स्वास्थ्य मानक और दीर्घायु विज्ञान",
+      "ko": "VO2 Max와 최대 산소 섭취량: 심폐 지구력 기준치와 장수 의학",
+      "de": "VO2max & Ausdauerleistung: Kardiovaskuläre Richtwerte & Langlebigkeit",
+      "es": "VO2 Máx y Capacidad Aeróbica: Parámetros Cardiovasculares y Longevidad",
+      "fr": "VO2 Max et Capacité Aérobie : Valeurs de Référence Cardiovasculaires et Longévité"
+    },
+    "category": {
+      "en": "Cardiovascular & Fitness Metrics",
+      "hi": "हृदय स्वास्थ्य एवं फिटनेस",
+      "ko": "심혈관 건강 및 피트니스 지표",
+      "de": "Kardiovaskuläre Fitness",
+      "es": "Salud Cardiovascular y Entrenamiento",
+      "fr": "Santé Cardiovasculaire et Entraînement"
+    },
+    "description": {
+      "en": "Comprehensive guide to VO2 Max (maximal oxygen uptake). Explore age- and gender-specific reference standards, the Cooper 12-minute run protocol, and why cardiorespiratory fitness predicts longevity.",
+      "hi": "VO2 Max (अधिकतम ऑक्सीजन उपभोग) की संपूर्ण गाइड। आयु और लिंग के अनुसार संदर्भ मानक, कूपर 12-मिनट टेस्ट और यह समझें कि कार्डियोरेस्पिरेटरी फिटनेस दीर्घायु का सबसे बड़ा संकेतक क्यों है।",
+      "ko": "최대 산소 섭취량(VO2 Max) 완전 가이드. 연령별 및 성별 심폐 지구력 표준 백분위수, 쿠퍼 12분 러닝 테스트 산출 공식 및 장수 의학적 가치를 안내합니다.",
+      "de": "Wissenschaftlicher Leitfaden zur maximalen Sauerstoffaufnahme (VO2max): Tabellen nach Alter und Geschlecht, Cooper-Test-Berechnung und Zusammenhang mit der Lebenserwartung.",
+      "es": "Guía completa del VO2 Máx: tablas por edad y género, protocolo del test de Cooper y por qué la aptitud cardiorrespiratoria es el predictor número uno de longevidad.",
+      "fr": "Guide complet sur la VO2 Max : normes par âge et sexe, protocole du test de Cooper de 12 minutes et impact de l'endurance cardiorespiratoire sur la longévité."
+    },
+    "contentHtml": {
+      "en": `
+      <h2>What is VO2 Max and Why Is It the Gold Standard of Cardiorespiratory Fitness?</h2>
+      <p><strong>VO2 Max (Maximal Oxygen Uptake)</strong> measures the maximum volume of oxygen (in milliliters) that your body can transport and metabolize per kilogram of body weight per minute (mL/kg/min) during exhaustive, incremental exercise. It represents the physiological ceiling of your cardiorespiratory and oxidative energy system.</p>
+      <p>Cardiorespiratory capacity reflects the integrated harmony of three physiological subsystems:</p>
+      <ol class="space-y-1 my-3 list-decimal pl-5 text-sm text-[var(--muted-foreground)]">
+        <li><strong>Pulmonary Ventilation:</strong> Diffusion capacity of alveolar capillary membranes in the lungs.</li>
+        <li><strong>Cardiovascular Transport:</strong> Cardiac output (stroke volume &times; heart rate) and hemoglobin oxygen-carrying capacity.</li>
+        <li><strong>Muscular Extraction:</strong> Capillary density and mitochondrial density in working skeletal muscle fibers.</li>
+      </ol>
+
+      <h2>The Landmark Mandsager / Cleveland Clinic Study on Longevity</h2>
+      <p>In a landmark 2018 study published in <em>JAMA Network Open</em>, researchers evaluated 122,007 patients undergoing treadmill stress testing at the Cleveland Clinic over two decades. The researchers revealed that <strong>extremely high cardiorespiratory fitness (top 2.5% of VO2 Max) was associated with a 500% reduction in all-cause mortality</strong> compared to the lowest performing quintile—a protective health factor larger than avoiding smoking, diabetes, or hypertension.</p>
+
+      <h2>VO2 Max Reference Standards by Age and Gender (mL/kg/min)</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Age Group</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Men: Poor / Below Avg</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Men: Good / Excellent</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">Women: Poor / Below Avg</th>
+              <th class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">Women: Good / Excellent</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6] font-mono">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">20 – 29 years</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 38.0</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 46.5</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 32.0</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 39.5</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">30 – 39 years</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 35.5</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 44.0</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 30.0</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 37.0</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">40 – 49 years</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 33.5</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 42.0</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 28.0</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 35.0</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">50 – 59 years</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 31.0</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 39.0</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 25.5</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 32.5</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">&ge; 60 years</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 27.5</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 35.5</td>
+              <td class="p-3 border border-[#e6e6e6]">&lt; 22.5</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&gt; 29.5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>How to Estimate VO2 Max: The Cooper 12-Minute Run Test</h2>
+      <p>While direct measurement requires a metabolic cart with a face mask in a physiology laboratory, Dr. Kenneth Cooper's field test accurately estimates VO2 Max using a standard 12-minute run for maximum distance on a flat track:</p>
+      <div class="my-4 p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)] font-mono text-sm">
+        <code>Estimated VO2 Max (mL/kg/min) = (Distance in meters - 504.9) / 44.73</code>
+      </div>
+
+      <h2>Scientific References</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>Mandsager K, et al. <em>Association of cardiorespiratory fitness with long-term mortality among adults undergoing exercise treadmill testing.</em> JAMA Netw Open 2018; 1(6):e183605. PMID: 30646262.</li>
+        <li>Cooper KH. <em>A means of assessing maximal oxygen intake: Correlation between field and treadmill testing.</em> JAMA 1968; 203(3):201-204. PMID: 5694044.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>VO2 Max क्या है और यह क्यों महत्वपूर्ण है?</h2>
+      <p><strong>VO2 Max (अधिकतम ऑक्सीजन उपभोग)</strong> यह मापता है कि कठिन व्यायाम के दौरान आपका शरीर प्रति मिनट प्रति किलोग्राम वजन पर कितनी ऑक्सीजन का उपयोग कर सकता है। क्लीवलैंड क्लिनिक के 1,22,000 से अधिक लोगों पर किए गए 20-वर्षीय अध्ययन में पाया गया कि उच्च VO2 Max वाले व्यक्तियों में मृत्यु दर का जोखिम सबसे कम कार्डियो फिटनेस वालों की तुलना में 5 गुना तक कम होता है।</p>
+
+      <h2>कूपर 12-मिनट टेस्ट द्वारा VO2 Max का अनुमान</h2>
+      <p>12 मिनट में समतल ट्रैक पर अधिकतम दूरी दौड़ें। सूत्र: <code>VO2 Max = (दूरी मीटर में - 504.9) / 44.73</code>। नियमित एरोबिक और ज़ोन 2 कार्डियो प्रशिक्षण से VO2 Max में 15% से 25% तक का सुधार संभव है।</p>
+`,
+      "es": `
+      <h2>VO2 Máx: El Mayor Predictor de Salud y Longevidad</h2>
+      <p>El consumo máximo de oxígeno (VO2 Máx) evalúa la capacidad integrada de los pulmones, el corazón y las mitocondrias musculares. El estudio de la Clínica Cleveland demostró que una alta capacidad aeróbica reduce drásticamente la mortalidad por todas las causas, superando a otros marcadores preventivos.</p>
+`,
+      "fr": `
+      <h2>La VO2 Max et la Capacité Cardiorespiratoire</h2>
+      <p>La VO2 Max exprime le volume maximal d'oxygène utilisable par minute et par kilo de poids corporel. L'étude de la Cleveland Clinic (JAMA 2018) a confirmé qu'une excellente endurance cardiovasculaire est le facteur protecteur le plus puissant contre les maladies métaboliques et cardiaques.</p>
+`,
+      "de": `
+      <h2>VO2max: Der wissenschaftliche Goldstandard für Ausdauer</h2>
+      <p>Die maximale Sauerstoffaufnahme (VO2max) misst die Leistungsfähigkeit des Herz-Kreislauf-Systems. Studien der Cleveland Clinic belegen, dass eine Steigerung des VO2max-Werts das Sterblichkeitsrisiko deutlicher senkt als die meisten medizinischen Interventionen.</p>
+`,
+      "ko": `
+      <h2>최대 산소 섭취량(VO2 Max)과 수명의 상관관계</h2>
+      <p>클리블랜드 클리닉(Cleveland Clinic)의 12만 명 추적 관찰 연구(JAMA 2018)는 심폐 지구력(VO2 Max) 상위 그룹이 하위 그룹에 비해 조기 사망 위험이 5배 낮음을 입증했습니다. 꾸준한 유산소 훈련(존 2 트레이닝 및 인터벌)은 심장 박출량과 모세혈관 밀도를 획기적으로 개선합니다.</p>
+`
+    }
+  },
+
+  "understanding-nutrition-labels": {
+    "datePublished": "2026-03-20",
+    "dateModified": "2026-10-28",
+    "title": {
+      "en": "Understanding Nutrition Labels: Caloric Density, Serving Sizes & Hidden Sugars",
+      "hi": "न्यूट्रिशन लेबल कैसे पढ़ें: कैलोरी घनत्व, सर्विंग साइज और छिपी हुई चीनी",
+      "ko": "영양성분표 읽는 법: 1회 제공량, 칼로리 밀도 및 숨겨진 당류 완벽 해독",
+      "de": "Nährwerttabellen richtig lesen: Portionsgrößen, Kaloriendichte & versteckter Zucker",
+      "es": "Cómo Leer las Etiquetas Nutricionales: Tamaño de Porción, Densidad Calórica y Azúcares",
+      "fr": "Comprendre les Étiquettes Nutritionnelles : Portions, Densité Calorique et Sucres Cachés"
+    },
+    "category": {
+      "en": "Nutrition & Dietary Science",
+      "hi": "पोषण एवं आहार विज्ञान",
+      "ko": "영양 및 식이 과학",
+      "de": "Ernährung & Diätetik",
+      "es": "Nutrición y Ciencia Dietética",
+      "fr": "Nutrition et Diététique"
+    },
+    "description": {
+      "en": "Learn how to read food nutrition labels with scientific precision. Master serving size multipliers, calculate the 4-4-9 macronutrient formula, spot hidden sugars, and identify misleading front-of-package marketing claims.",
+      "hi": "खाद्य न्यूट्रिशन लेबल को सटीक रूप से पढ़ना सीखें। सर्विंग साइज, 4-4-9 मैक्रोन्यूट्रिएंट फॉर्मूला, विभिन्न नामों से छिपी चीनी और भ्रामक पैकेट दावों की पहचान।",
+      "ko": "가공식품 영양성분표를 과학적으로 판독하는 방법. 1회 제공량 곱셈법, 4-4-9 열량 계산법, 숨겨진 50여 가지 당류 명칭 식별 및 허위 건강 마케팅 구별법을 설명합니다.",
+      "de": "Leitfaden zum Entschlüsseln von Nährwertangaben: Portionsgrößen umrechnen, die 4-4-9 Formel anwenden und versteckte Zuckerquellen sicher enttarnen.",
+      "es": "Aprende a interpretar etiquetas nutricionales: cómo calcular calorías reales con la regla 4-4-9, desenmascarar azúcares añadidos y evitar trampas de marketing.",
+      "fr": "Guide pratique pour décrypter les étiquettes nutritionnelles : portions réelles, règle 4-4-9 des macronutriments, sucres cachés et pièges marketing."
+    },
+    "contentHtml": {
+      "en": `
+      <h2>The Critical Science of Food Label Literacy</h2>
+      <p>In contemporary food environments dominated by ultra-processed formulations, understanding how to decipher standardized nutrition fact panels is one of the most vital life skills for maintaining healthy body composition and preventing metabolic dysregulation. Food manufacturers often utilize psychological packaging tactics, unregulated front-of-package buzzwords ("natural", "multigrain", "gluten-free"), and unrealistically diminutive serving sizes to disguise high caloric density and excessive refined sugars.</p>
+
+      <h2>Step 1: Check the Serving Size and Servings Per Container</h2>
+      <p>The single most pervasive pitfall when reviewing food labels is assuming the displayed nutrient metrics represent the entire package. By regulatory mandate, all nutrient quantities (calories, carbohydrates, fats, sodium) correspond to a <strong>single standardized serving</strong>, not the entire bottle or bag.</p>
+      <div class="my-4 p-4 rounded-xl border border-[#e6e6e6] bg-[var(--card)] font-mono text-sm">
+        <code>Total Package Calories = Calories per Serving &times; Servings per Container</code>
+      </div>
+      <p>For instance, a commercial bottled smoothie displaying 140 calories with "2.5 servings per bottle" actually provides <strong>350 total calories</strong> and upwards of 55 grams of sugar when consumed in its entirety.</p>
+
+      <h2>Step 2: The Atwater 4-4-9 Calorie Verification Rule</h2>
+      <p>You can independently verify whether a food label's advertised caloric count matches its macronutrient profile using standard Atwater physiological combustion factors:</p>
+      <ul>
+        <li><strong>Protein:</strong> 4 calories per gram</li>
+        <li><strong>Carbohydrates:</strong> 4 calories per gram</li>
+        <li><strong>Dietary Fat:</strong> 9 calories per gram</li>
+      </ul>
+      <p>If a protein bar claims 150 calories with 10g protein (40 kcal), 20g carbs (80 kcal), and 8g fat (72 kcal), the true caloric sum is <code>40 + 80 + 72 = 192 calories</code>. Such discrepancies occur because regulatory frameworks permit manufacturers to round down numbers or deduct non-digestible fiber fractions.</p>
+
+      <h2>Common Hidden Aliases for Added Sugar on Ingredient Lists</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
+              <th class="p-3 border border-[#e6e6e6]">Sugar Category</th>
+              <th class="p-3 border border-[#e6e6e6]">Label Alias / Ingredient Name</th>
+              <th class="p-3 border border-[#e6e6e6]">Physiological Metabolic Impact</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6e6e6]">
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Syrups</td>
+              <td class="p-3 border border-[#e6e6e6]">High-fructose corn syrup, agave nectar, rice syrup, malt syrup</td>
+              <td class="p-3 border border-[#e6e6e6]">Rapid hepatic fructose extraction; drives visceral steatosis</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">Crystalline Sugars</td>
+              <td class="p-3 border border-[#e6e6e6]">Dextrose, maltodextrin, cane crystals, turbinado, sucrose</td>
+              <td class="p-3 border border-[#e6e6e6]">High glycemic index; spikes postprandial insulin surges</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-[#e6e6e6] font-semibold">"Natural" Concentrates</td>
+              <td class="p-3 border border-[#e6e6e6]">Apple juice concentrate, evaporated cane juice, grape concentrate</td>
+              <td class="p-3 border border-[#e6e6e6]">Stripped of dietary fiber matrix; behaves metabolically as table sugar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>The 5-20 Rule for Daily Values (%DV)</h2>
+      <p>The percent Daily Value (%DV) helps you determine whether a serving of food is high or low in a specific nutrient based on a 2,000-calorie reference intake:</p>
+      <ul>
+        <li><strong>5% DV or less:</strong> Low in that nutrient (aim low for added sugars, sodium, and saturated fats).</li>
+        <li><strong>20% DV or more:</strong> High in that nutrient (aim high for dietary fiber, calcium, iron, and potassium).</li>
+      </ul>
+
+      <h2>Scientific References</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>US Food and Drug Administration (FDA). <em>How to Understand and Use the Nutrition Facts Label.</em> Center for Food Safety and Applied Nutrition, 2024.</li>
+        <li>Hall KD, et al. <em>Ultra-processed diets cause excess calorie intake and weight gain: An inpatient randomized controlled trial of ad libitum food intake.</em> Cell Metab 2019; 30(1):67-77. PMID: 31105044.</li>
+      </ul>
+`,
+      "hi": `
+      <h2>न्यूट्रिशन लेबल पढ़ने का सही तरीका</h2>
+      <p>पैकेटबंद खाद्य पदार्थों पर सबसे पहले <strong>सर्विंग साइज (Serving Size)</strong> देखें। अक्सर पूरा पैकेट 2 या 3 सर्विंग का होता है, इसलिए पूरे पैकेट की कैलोरी निकालने के लिए प्रति सर्विंग कैलोरी को कुल सर्विंग से गुणा करें।</p>
+
+      <h2>छिपी हुई चीनी की पहचान कैसे करें?</h2>
+      <p>कंपनियां अक्सर चीनी को अलग-अलग नामों से लिखती हैं: कॉर्न सिरप, माल्टोडेक्सट्रिन, एगेव नेक्टर, फ्रुक्टोज या केन जूस। यदि सामग्री सूची (Ingredients) में पहले 3 स्थानों पर कोई मीठा पदार्थ है, तो वह उत्पाद अतिरिक्त चीनी से भरपूर है।</p>
+`,
+      "es": `
+      <h2>Cómo Interpretar la Información Nutricional</h2>
+      <p>Verifique siempre el tamaño de la porción y multiplique por el número de porciones del envase. Utilice la regla del 4-4-9 (4 kcal por gramo de proteína y carbohidrato, 9 kcal por gramo de grasa) para comprobar las calorías reales y vigile los azúcares añadidos bajo nombres como maltodextrina o jarabe de maíz.</p>
+`,
+      "fr": `
+      <h2>Déchiffrer les Étiquettes Nutritionnelles</h2>
+      <p>Ne vous fiez pas aux allégations marketing en façade. Calculez les calories réelles sur la base des portions consommées et appliquez la règle des 5/20 : moins de 5% d'AJR pour les sucres ajoutés et le sel, plus de 20% pour les fibres et les protéines.</p>
+`,
+      "de": `
+      <h2>Nährwertkennzeichnung wissenschaftlich verstehen</h2>
+      <p>Achten Sie auf Portionsgrößen und multiplizieren Sie diese mit dem Verpackungsinhalt. Nutzen Sie die Atwater-Faktoren (4-4-9 kcal/g) zur Gegenrechnung und erkennen Sie versteckte Zucker wie Maltodextrin oder Fructosesirup in der Zutatenliste.</p>
+`,
+      "ko": `
+      <h2>식품 영양성분표의 과학적 분석법</h2>
+      <p>포장 전면의 홍보 문구 대신 '1회 제공량'과 '총 내용량'을 반드시 대조하세요. 단백질·탄수화물은 g당 4kcal, 지방은 9kcal로 환산하는 Atwater 공식을 통해 실제 열량을 검증하고 50여 가지 다른 이름으로 표기되는 첨가당(말토덱스트린, 옥수수 시럽 등)을 식별해야 합니다.</p>
 `
     }
   }

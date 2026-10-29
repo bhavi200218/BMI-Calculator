@@ -13,7 +13,7 @@ import PageShell from '../components/PageShell.astro';
       "@context": "https://schema.org",
       "@type": "AboutPage",
       "name": "About Real BMI",
-      "description": "Organizational background, creator credentials, editorial review process, and clinical reference methodology for Real BMI.",
+      "description": "Organizational background, creator credentials, editorial review process, and evidence-based research methodology for Real BMI.",
       "url": "https://realbmicalculator.com/about/",
       "mainEntity": {
         "@type": "Organization",
@@ -43,7 +43,7 @@ import PageShell from '../components/PageShell.astro';
     <Navbar />
     <PageShell
       title="About Real BMI"
-      eyebrow="Mission & Clinical Methodology"
+      eyebrow="Mission & Evidence-Based Methodology"
       description="Maintained by the Real BMI health computation and editorial team using peer-reviewed literature and published WHO & CDC standards."
       returnUrl="/"
       returnLabel="Home"
@@ -53,7 +53,7 @@ import PageShell from '../components/PageShell.astro';
           <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium opacity-90">
             <p><strong>Real BMI</strong> is an independent digital health reference and engineering platform founded by <strong>Bhawanshi Dosi</strong> and maintained by the <strong>Real BMI Health Informatics &amp; Editorial Team</strong> based in Ahmedabad, Gujarat, India. The platform was built to solve a widespread problem online: confusing, privacy-invasive health tools cluttered with ad tracking and opaque math. Real BMI provides clear, mathematically verifiable calculators that run 100% locally on your device with zero health data retention.</p>
 
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">1. Health Informatics & Editorial Leadership</h2>
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">1. Health Informatics & Editorial Standards</h2>
             
             <!-- Health Informatics & Editorial Team Profile -->
             <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start" id="editorial-board">
@@ -69,11 +69,11 @@ import PageShell from '../components/PageShell.astro';
                 </div>
                 <p class="text-xs font-medium text-[var(--accent)]">Health Informatics, Biostatistics &amp; Primary Academic Literature (WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, Devine 1974)</p>
                 <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                  Our dedicated Health Informatics &amp; Editorial Team oversees mathematical formula derivation, population-level health benchmarks, clinical reference thresholds, and research verification protocols across all Real BMI calculators and educational guides.
+                  Our dedicated Health Informatics &amp; Editorial Team oversees mathematical formula derivation, population-level health benchmarks, research-backed reference ranges, and research &amp; source review processes across all Real BMI calculators and educational guides.
                 </p>
                 <div class="pt-2 flex flex-wrap gap-4">
                   <a href="/en/editorial-policy/" class="text-xs font-semibold text-[var(--accent)] hover:underline inline-flex items-center gap-1">
-                    Explore Editorial Policy &amp; Review Protocol →
+                    Explore Editorial Policy &amp; Review Process →
                   </a>
                 </div>
               </div>
@@ -92,30 +92,30 @@ import PageShell from '../components/PageShell.astro';
                   <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/15 text-[var(--accent)] border border-[var(--accent)]/30">Health Informatics Team</span>
                 </div>
                 <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                  Our team specializes in client-side health informatics, numerical computing, and browser privacy architecture. Real BMI was created to deliver clinical-grade formulas directly to users without intermediary servers, accounts, or persistent identifiers.
+                  Our team specializes in client-side health informatics, numerical computing, and browser privacy architecture. Real BMI was created to deliver transparent, research-backed mathematical formulas directly to users without intermediary servers, accounts, or persistent identifiers.
                 </p>
               </div>
             </div>
 
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2" id="medical-review">2. Clinical Methodology &amp; Direct Academic Citations</h2>
-            <p>Because anthropometric and metabolic calculations touch sensitive health decisions (YMYL — Your Money or Your Life), our computational models avoid generic claims and are strictly cross-referenced against exact, peer-reviewed clinical studies indexed in our <a href="/en/sources/" class="text-[var(--accent)] hover:underline font-semibold">Primary Citations &amp; Bibliography Matrix</a>:</p>
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2" id="medical-review">2. Evidence-Based Methodology &amp; Primary Academic Citations</h2>
+            <p>Because anthropometric and metabolic calculations touch sensitive health decisions (YMYL — Your Money or Your Life), our computational models avoid generic claims and are strictly cross-referenced against exact, peer-reviewed scientific studies indexed in our <a href="/en/sources/" class="text-[var(--accent)] hover:underline font-semibold">Primary Citations &amp; Bibliography Matrix</a>:</p>
             <ul>
               <li><strong>WHO Technical Report Series 854 (1995):</strong> Established global Body Mass Index cutoffs (Underweight &lt;18.5, Normal 18.5–24.9, Overweight 25.0–29.9, Obese ≥30 kg/m²). PMID 8594834.</li>
               <li><strong>The Lancet 2004 (WHO Asian BMI Consultation):</strong> Public health action triggers for Asian populations at lower thresholds (23.0 kg/m² increased risk, 27.5 kg/m² high risk). PMID 14726171.</li>
               <li><strong>Mifflin MD, St Jeor ST (1990):</strong> Validated indirect calorimetry equation for Resting Energy Expenditure (BMR) within 10% of measured REE. PMID 2305711.</li>
               <li><strong>Mosteller RD (1987):</strong> Simplified Body Surface Area (BSA) formula (√[H(cm) × W(kg) / 3600]) universally adopted across oncology and nephrology. PMID 3657876.</li>
-              <li><strong>Devine BJ (1974):</strong> Clinical height-based Ideal Body Weight (IBW) reference benchmark for clinical medication dosing. PMID 4819440.</li>
+              <li><strong>Devine BJ (1974):</strong> Height-based Ideal Body Weight (IBW) benchmark widely referenced in pharmacology and nutritional research. PMID 4819440.</li>
               <li><strong>Body Composition &amp; Cardiovascular Literature:</strong> U.S. Navy multi-site logarithmic equation (Hodgdon &amp; Beckett 1984), Karvonen Heart Rate Reserve (1957, PMID 13470504), Boer Lean Body Mass (1984, PMID 6497914), and Ashwell Waist-to-Height Ratio meta-analysis (2012, PMID 22106927).</li>
             </ul>
 
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">3. Our 5-Stage Pre-Publication &amp; Content Review Protocol</h2>
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">3. Our 5-Stage Research &amp; Source Review Process</h2>
             <p>To uphold uncompromising quality, data security, and full compliance with Google Publisher Policies, every tool, calculator algorithm, and reference guide undergoes a mandatory 5-step pre-publication review prior to public deployment:</p>
             <ol>
               <li><strong>Formula Derivation &amp; Primary Literature:</strong> Mathematical models are directly derived from published journal papers and international health guideline documents (WHO Technical Report 854, CDC NCHS, Mifflin-St Jeor 1990).</li>
               <li><strong>Unit Parity Validation:</strong> Algorithms are subjected to dual-stream automated unit testing across Metric (cm/kg) and Imperial (ft-in/lbs) systems to guarantee zero rounding divergence.</li>
               <li><strong>Pre-Publication Privacy &amp; Zero-PII Audit:</strong> A mandatory privacy audit ensures that no personally identifiable information (PII)—including personal names, private emails, phone numbers, or confidential user records—appears in public entries, calculator inputs, or URL parameters.</li>
               <li><strong>Client-Side Isolation Audit:</strong> Verification that biometric inputs remain strictly quarantined inside local device browser memory and are never transmitted over HTTP requests or stored in databases.</li>
-              <li><strong>Clinical Boundary &amp; Health Disclaimer Check:</strong> Calculators clearly display physiological edge cases, formula limitations (e.g., muscular athletes, elderly sarcopenia, pregnancy), and explicit educational disclaimers.</li>
+              <li><strong>Scope Boundaries &amp; Health Disclaimer Check:</strong> Calculators clearly display physiological edge cases, formula limitations (e.g., muscular athletes, elderly sarcopenia, pregnancy), and explicit educational disclaimers.</li>
             </ol>
 
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">4. Medical Disclaimer & Educational Purpose</h2>
@@ -149,7 +149,7 @@ import PageShell from '../components/PageShell.astro';
 
           <div class="space-y-4 text-xs text-[var(--muted-foreground)] leading-relaxed border-t border-[var(--border)] pt-4">
             <p><strong>Editorial Lead:</strong> Real BMI Health Informatics & Editorial Engineering Team</p>
-            <p><strong>Clinical Reference:</strong> <a href="/en/sources/" class="text-[var(--accent)] hover:underline font-semibold">15 Primary Citations</a> (WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, Devine 1974)</p>
+            <p><strong>Research References:</strong> <a href="/en/sources/" class="text-[var(--accent)] hover:underline font-semibold">15 Primary Citations</a> (WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, Devine 1974)</p>
             <p><strong>Execution Model:</strong> 100% Client-Side Browser Computing</p>
             <p><strong>Editorial Integrity:</strong> Independent, evidence-based, zero user data tracking</p>
           </div>
