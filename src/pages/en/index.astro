@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
-import HeroQuickLaunch from '../../components/HeroQuickLaunch.astro';
 import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
 import FeaturedResearchGuides from '../../components/FeaturedResearchGuides.astro';
 import LatestArticles from '../../components/LatestArticles.astro';
@@ -63,21 +62,17 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  2. 🔥 MOST POPULAR CALCULATORS (TOP LAUNCHPAD)  ═══════════════════ -->
-		<section id="popular-calculators" class="px-4 md:px-6 pt-2 pb-10 md:pb-14 content-auto scroll-mt-20">
-			<div class="max-w-7xl mx-auto space-y-8">
-				<HeroQuickLaunch lang="en" />
-			</div>
-		</section>
-
-		<!-- ═══════════════════  3. COMPLETE INTERACTIVE DIRECTORY  ═══════════════════ -->
-		<section id="calculators" class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
+		<!-- ═══════════════════  2. 🔥 ALL HEALTH & FITNESS CALCULATORS  ═══════════════════ -->
+		<section id="calculators" class="px-4 md:px-6 pt-2 pb-10 md:pb-14 content-auto scroll-mt-20">
 			<div class="max-w-7xl mx-auto space-y-6">
 				<div class="flex items-center justify-between gap-4 pb-3 border-b border-[var(--border)]/40">
-					<h2 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-						All Calculators by Category
-					</h2>
-					<span class="text-xs font-mono text-[var(--accent)] font-bold">
+					<div class="space-y-1">
+						<span class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">🔥 Evidence-Based Suite</span>
+						<h2 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+							All Health & Fitness Calculators
+						</h2>
+					</div>
+					<span class="text-xs font-mono text-[var(--accent)] font-bold px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20">
 						18+ Tools
 					</span>
 				</div>

@@ -473,24 +473,4 @@ const current = data[lang] || data.en;
       </a>
     ))}
   </div>
-
-  <!-- Dual Action Jump Bar -->
-  <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-    <a
-      href="#calculators"
-      class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-[var(--accent)] bg-[var(--accent)] text-white text-xs font-display font-bold uppercase tracking-wider hover:bg-[var(--accent)]/90 transition-all shadow-sm"
-    >
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-      <span>{current.allToolsBtn}</span>
-    </a>
-    
-    <a
-      href="#featured-guides"
-      class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all shadow-xs"
-    >
-      <span>{current.browseResearchBtn}</span>
-    </a>
-  </div>
 </div>

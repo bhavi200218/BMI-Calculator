@@ -2,7 +2,6 @@
 // Root Homepage — Primary Interactive Health Suite & Global Gateway
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
-import HeroQuickLaunch from '../components/HeroQuickLaunch.astro';
 import HomepageHubWrapper from '../components/HomepageHubWrapper.astro';
 import FeaturedResearchGuides from '../components/FeaturedResearchGuides.astro';
 import LatestArticles from '../components/LatestArticles.astro';
@@ -64,39 +63,17 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  MULTILINGUAL DISCOVERY BAR  ═══════════════════ -->
-		<section class="px-4 md:px-6 pt-2 pb-4">
-			<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left p-4 rounded-2xl bg-[var(--card)]/40 border border-[var(--border)]/50">
-				<div>
-					<p class="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">International Editions</p>
-					<p class="text-sm text-[var(--muted-foreground)]">Access Real BMI calculators in your preferred language:</p>
-				</div>
-				<div class="flex flex-wrap justify-center gap-2">
-					<a href="/en/" class="px-3 py-1.5 rounded-lg border border-[var(--accent)] bg-[var(--accent)]/15 text-xs font-bold text-[var(--accent)]">🇺🇸 English</a>
-					<a href="/es/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇪🇸 Español</a>
-					<a href="/fr/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇫🇷 Français</a>
-					<a href="/de/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇩🇪 Deutsch</a>
-					<a href="/ko/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇰🇷 한국어</a>
-					<a href="/hi/" class="px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs font-medium text-[var(--foreground)] hover:border-[var(--accent)] transition-colors">🇮🇳 हिन्दी</a>
-				</div>
-			</div>
-		</section>
-
-		<!-- ═══════════════════  2. 🔥 MOST POPULAR CALCULATORS (TOP LAUNCHPAD)  ═══════════════════ -->
-		<section id="popular-calculators" class="px-4 md:px-6 pt-2 pb-10 md:pb-14 content-auto scroll-mt-20">
-			<div class="max-w-7xl mx-auto space-y-8">
-				<HeroQuickLaunch lang="en" />
-			</div>
-		</section>
-
-		<!-- ═══════════════════  3. COMPLETE INTERACTIVE DIRECTORY  ═══════════════════ -->
-		<section id="calculators" class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
+		<!-- ═══════════════════  2. 🔥 ALL HEALTH & FITNESS CALCULATORS  ═══════════════════ -->
+		<section id="calculators" class="px-4 md:px-6 pt-2 pb-10 md:pb-14 content-auto scroll-mt-20">
 			<div class="max-w-7xl mx-auto space-y-6">
 				<div class="flex items-center justify-between gap-4 pb-3 border-b border-[var(--border)]/40">
-					<h2 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-						All Calculators by Category
-					</h2>
-					<span class="text-xs font-mono text-[var(--accent)] font-bold">
+					<div class="space-y-1">
+						<span class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">🔥 Evidence-Based Suite</span>
+						<h2 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+							All Health & Fitness Calculators
+						</h2>
+					</div>
+					<span class="text-xs font-mono text-[var(--accent)] font-bold px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20">
 						18+ Tools
 					</span>
 				</div>
