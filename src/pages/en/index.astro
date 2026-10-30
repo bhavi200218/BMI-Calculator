@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
-import FeaturedResearchGuides from '../../components/FeaturedResearchGuides.astro';
 import LatestArticles from '../../components/LatestArticles.astro';
 import HealthContent from '../../components/HealthContent.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
@@ -19,40 +18,40 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 	<main class="pb-4 relative overflow-x-hidden">
 
 		<!-- ═══════════════════  1. HERO & MAIN HEADLINE  ═══════════════════ -->
-		<section class="pt-24 md:pt-28 pb-8 md:pb-12 px-4 md:px-6">
-			<div class="max-w-7xl mx-auto space-y-8">
+		<section class="pt-20 md:pt-24 pb-6 px-4 md:px-6">
+			<div class="max-w-7xl mx-auto space-y-6">
 
 				<!-- Main H1 & Hero Header -->
-				<div class="text-center space-y-4 max-w-4xl mx-auto">
+				<div class="text-center space-y-3.5 max-w-4xl mx-auto">
 					<!-- Eyebrow Tag / Pill -->
 					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						HEALTH RESEARCH HUB • EVIDENCE-BASED GUIDES & TOOLS
+						WHO & CDC STANDARDS • 100% PRIVATE BROWSER CALCULATION
 					</div>
 
 					<!-- Main H1 headline -->
 					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Evidence-Based Health Research, Metabolic Guides & Screening Tools
+						Calculate Your Body Mass Index (BMI) & Health Metrics
 					</h1>
 
 					<!-- Supporting H2 Subtitle & Intro -->
-					<p class="text-lg sm:text-xl md:text-2xl text-[var(--accent)] font-semibold tracking-tight font-display">
-						Peer-Reviewed Research Literature • Dual-Unit Parity Algorithms • Client-Side Privacy
+					<p class="text-base sm:text-xl text-[var(--accent)] font-semibold tracking-tight font-display">
+						Free, Private & Instant Evidence-Based Screening
 					</p>
-					<p class="text-base sm:text-lg text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed pt-1">
-						Explore authoritative health research, lifespan anthropometric guidelines, and private browser calculators built on published World Health Organization (WHO) and CDC epidemiological frameworks.
+					<p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed">
+						Instant Body Mass Index screening and evidence-based metabolic calculators built on published World Health Organization (WHO) and CDC public health frameworks.
 					</p>
 				</div>
 
 				<!-- Stats Strip -->
-				<div class="flex flex-wrap justify-center gap-3 sm:gap-4 pt-1">
+				<div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 pt-1">
 					{[
+						'100% Free & Instant',
+						'Client-Side Privacy',
 						'18+ Health Calculators',
-						'30+ Research Guides',
-						'15 Indexed Primary Studies',
 						'WHO & CDC Standards'
 					].map(badge => (
-						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
+						<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
 							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
 							{badge}
 						</div>
@@ -63,7 +62,7 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 		</section>
 
 		<!-- ═══════════════════  2. 🔥 ALL HEALTH & FITNESS CALCULATORS  ═══════════════════ -->
-		<section id="calculators" class="px-4 md:px-6 pt-2 pb-10 md:pb-14 content-auto scroll-mt-20">
+		<section id="calculators" class="px-4 md:px-6 pt-0 pb-10 md:pb-14 content-auto scroll-mt-20">
 			<div class="max-w-7xl mx-auto space-y-6">
 				<div class="flex items-center justify-between gap-4 pb-3 border-b border-[var(--border)]/40">
 					<div class="space-y-1">
@@ -81,14 +80,7 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  4. 📚 RESEARCH GUIDES  ═══════════════════ -->
-		<section id="featured-guides" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/10 scroll-mt-20">
-			<div class="max-w-7xl mx-auto">
-				<FeaturedResearchGuides lang="en" />
-			</div>
-		</section>
-
-		<!-- ═══════════════════  5. ⭐ TRUST SIGNALS & STANDARDS  ═══════════════════ -->
+		<!-- ═══════════════════  3. ⭐ TRUST SIGNALS & STANDARDS  ═══════════════════ -->
 		<!-- WHY PEOPLE CHOOSE REAL BMI -->
 		<section class="px-4 md:px-6 py-12 md:py-16 content-auto border-t border-[var(--border)]/40 space-y-12">
 			<div class="max-w-7xl mx-auto space-y-10">

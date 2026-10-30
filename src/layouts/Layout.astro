@@ -526,17 +526,19 @@ const howToSchema = {
 		<!-- Hreflang Tags for International SEO (Dynamic Path Matching) -->
 		{!['/404/', '/500/', '/search/'].includes(normalizedPath) && !normalizedPath.startsWith('/embed/') && !normalizedPath.startsWith('/author/') && (
 			normalizedPath.startsWith('/blog/') ? (
-				normalizedPath === '/blog/bmi-interpretation-guidelines/' ? (
+				normalizedPath === '/blog/bmi-interpretation-guidelines/' && (currentLocale === 'en' || currentLocale === 'de') ? (
 					<>
 						<link rel="alternate" hreflang="en" href="https://realbmicalculator.com/en/blog/bmi-interpretation-guidelines/" />
 						<link rel="alternate" hreflang="de" href="https://realbmicalculator.com/de/blog/bmi-interpretation-guidelines/" />
 						<link rel="alternate" hreflang="x-default" href="https://realbmicalculator.com/en/blog/bmi-interpretation-guidelines/" />
 					</>
 				) : (
-					<>
-						<link rel="alternate" hreflang="en" href={`https://realbmicalculator.com/en${normalizedPath}`} />
-						<link rel="alternate" hreflang="x-default" href={`https://realbmicalculator.com/en${normalizedPath}`} />
-					</>
+					(currentLocale === 'en' || !currentLocale) ? (
+						<>
+							<link rel="alternate" hreflang="en" href={`https://realbmicalculator.com/en${normalizedPath}`} />
+							<link rel="alternate" hreflang="x-default" href={`https://realbmicalculator.com/en${normalizedPath}`} />
+						</>
+					) : null
 				)
 			) : (
 				<>
