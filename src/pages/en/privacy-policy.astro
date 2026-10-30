@@ -6,7 +6,7 @@ import PageShell from '../../components/PageShell.astro';
 
 <Layout 
     title="Privacy Policy & Data Protection | Real BMI"
-    description="Real BMI privacy and consent policy. Learn about zero-PII client-side computing, GDPR & CCPA rights, and Google Consent Mode v2 implementation."
+    description="Real BMI privacy and consent policy. Learn about client-side computing with no personal health data stored, GDPR & CCPA rights, and Google Consent Mode v2 implementation."
     canonicalURL="https://realbmicalculator.com/en/privacy-policy/"
 >
     <Navbar />
@@ -17,52 +17,191 @@ import PageShell from '../../components/PageShell.astro';
       returnUrl="/en/"
       returnLabel="Home"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-        <p>At <strong>Real BMI</strong>, we consider user privacy and biological data security fundamental rights. Our comprehensive suite of health calculators—including Body Mass Index (BMI), Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and body composition assessment tools—is built on an uncompromising privacy-first architecture where your physiological inputs remain exclusively under your control.</p>
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+        
+        <!-- Privacy at a Glance (Quick Summary Card) -->
+        <div class="not-prose p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                Privacy at a Glance
+              </h2>
+              <p class="text-xs text-[var(--muted-foreground)]">
+                A quick summary of how Real BMI protects your personal privacy
+              </p>
+            </div>
+          </div>
 
-        <h2>1. Zero Health Data Collection Architecture</h2>
-        <p>We do not collect, intercept, store, or transmit your individual biometric parameters. When you enter personal health measurements—such as your stature, body weight, age, biological gender profile, waist circumference, or activity level—all mathematical calculations execute purely on the client-side within your device's web browser JavaScript engine. These numbers never leave your device, are never transmitted across the network to our web servers, and are never saved to any database or persistent cloud storage.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>We do not store your BMI or health numbers</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>Calculations happen locally in your browser</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>No user account or registration required</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>No biometric or health data is ever sold</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium sm:col-span-2">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>You have 100% control over analytics and ad preferences</span>
+            </div>
+          </div>
+        </div>
 
-        <h2>2. Local Browser Computation & Ephemeral Memory</h2>
-        <p>Because computation occurs entirely locally, your session data is ephemeral. When you navigate away from the page, refresh your browser tab, or clear your session cache, all entered parameters and calculated results are instantly purged from volatile memory. Real BMI maintains no user accounts, requires no registration or login, and links no numerical scores to identifiable IP addresses.</p>
+        <!-- Core Trust Proposition Callout -->
+        <div class="not-prose p-5 rounded-2xl bg-[var(--accent)]/5 border-l-4 border-[var(--accent)] text-[var(--foreground)] space-y-1">
+          <p class="text-xs uppercase font-display font-bold tracking-wider text-[var(--accent)]">
+            Our Core Privacy Standard
+          </p>
+          <p class="text-sm sm:text-base font-semibold leading-relaxed">
+            All calculations execute purely on the client-side within your browser.
+          </p>
+          <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+            Your height, weight, age, and waist numbers never leave your device and are never sent to remote servers or saved in databases.
+          </p>
+        </div>
 
-        <h2>3. Aggregate Technical Telemetry & Essential Server Logs</h2>
-        <p>Like virtually all standard web properties, our hosting infrastructure automatically generates routine server access logs containing non-personally identifiable technical diagnostic data. This includes browser user-agent strings, operating system versions, referral URLs, requested file paths, and high-level geolocation (country and city level) to detect automated malicious traffic, mitigate distributed denial-of-service (DDoS) threats, and evaluate global server latency. These operational logs are strictly decoupled from calculator usage and contain zero health metrics.</p>
+        <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
+          At <strong>Real BMI</strong>, we believe user privacy and personal health data security are fundamental rights. Our calculator suite is built from the ground up on a privacy-first architecture where your biological measurements remain exclusively under your control.
+        </p>
 
-        <h2>4. Web Analytics, Advertising & Google AdSense Cookie Disclosures</h2>
-        <p>Real BMI is supported by privacy-compliant digital advertising and aggregated analytics to keep all calculators free, private, and accessible to the public:</p>
-        <ul>
-          <li><strong>Third-Party Vendors & Google AdSense:</strong> Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites on the Internet. Google's use of advertising cookies enables it and its certified partner ad networks to serve ads to our users based on their visit to Real BMI and/or other sites on the Internet.</li>
-          <li><strong>Opt-Out of Personalized Advertising:</strong> Users may opt out of personalized advertising at any time by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Google Ads Settings</a>. Alternatively, users can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">aboutads.info</a> or the <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">European Interactive Digital Advertising Alliance (EDAA)</a>.</li>
-          <li><strong>Third-Party Ad Networks:</strong> If you have not opted out of third-party ad serving, the cookies of other third-party vendors or certified ad networks may also be used to serve ads on our site in accordance with applicable privacy frameworks.</li>
-          <li><strong>Google Consent Mode v2 & Interactive CMP:</strong> Real BMI implements an interactive Google-certified Consent Management Platform (CMP) and Google Consent Mode v2. All non-essential advertising and analytics scripts remain blocked by default until you grant explicit consent. You can modify, grant, or revoke your consent at any time via the "Cookie Preferences" link in the website footer. For detailed cookie tables and retention durations, please review our comprehensive <a href="/en/cookie-policy/" class="text-[var(--accent)] underline font-medium">Cookie Policy</a>.</li>
-          <li><strong>Google Analytics 4 (Aggregated Telemetry):</strong> Subject to explicit consent, we use Google Analytics 4 with enforced IP anonymization to evaluate aggregate traffic patterns and improve calculator responsiveness. Diagnostic telemetry contains zero biometric entries and is never linked to individual calculations.</li>
-        </ul>
+        <!-- 1. Zero Health Data Storage -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            1. Zero Health Data Storage
+          </h2>
+          <p>
+            We do not collect, intercept, store, or transmit your individual biometric measurements.
+          </p>
+          <p>
+            When you enter your height, weight, age, waist circumference, or activity level, all mathematical formulas execute entirely inside your device's web browser using JavaScript.
+          </p>
+          <p>
+            These numbers never leave your phone, tablet, or computer, and are never saved to cloud storage or persistent databases.
+          </p>
+        </div>
 
-        <h2>5. Global Privacy Compliance: GDPR & CCPA/CPRA</h2>
-        <p>In accordance with the European Union General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA/CPRA), we affirm that Real BMI does not sell, rent, monetize, or disclose personal health information to third-party data brokers. Because our system does not collect or associate identifiers with health records, individual requests to delete or export data are inherently satisfied by our zero-retention infrastructure.</p>
+        <!-- 2. Browser-Only Processing & Session Reset -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            2. Browser-Only Processing & Session Reset
+          </h2>
+          <p>
+            Because computation occurs locally, your entered data exists only while you view the page.
+          </p>
+          <p>
+            When you close the tab, refresh the page, or clear your browser cache, all entered numbers and calculated outcomes are instantly cleared from device memory.
+          </p>
+          <p>
+            Real BMI requires no accounts, no logins, and links no scores to identifiable IP addresses.
+          </p>
+        </div>
 
-        <h2>6. Cryptographic Security Standards</h2>
-        <p>Our website enforces modern Transport Layer Security (TLS 1.3) with strict HTTP Strict Transport Security (HSTS) headers, modern cipher suites, and rigorous Content Security Policies (CSP) to ensure that your interaction with our calculators remains encrypted, tamper-proof, and shielded from eavesdropping or script injection.</p>
+        <!-- 3. Standard Technical Diagnostics -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            3. Standard Technical Diagnostics
+          </h2>
+          <p>
+            Like standard web services, our web host generates routine server access logs containing non-personal technical diagnostic data.
+          </p>
+          <p>
+            This includes browser user-agent strings, operating systems, and high-level geolocation (country/city level) to detect malicious automated traffic and keep server response times fast.
+          </p>
+          <p>
+            These operational logs contain zero health metrics and are strictly separated from calculator tools.
+          </p>
+        </div>
 
-        <h2>7. Policy Amendments & Contact Inquiries</h2>
-        <p>We may periodically update this Privacy Policy to reflect technical refinements or evolving international regulatory standards. Any revisions will be published immediately on this page with an updated timestamp. If you have inquiries regarding our data practices, browser execution model, or privacy choices, please reach out via our secure <a href="/en/contact/" class="text-[var(--accent)] underline font-medium">Contact &amp; Support Portal</a>.</p>
+        <!-- 4. Web Analytics & Advertising Disclosures -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            4. Web Analytics & Advertising Disclosures
+          </h2>
+          <p>
+            Real BMI is supported by privacy-friendly digital advertising and aggregated analytics to keep all calculators free:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>Google AdSense:</strong> Third-party vendors, including Google, use cookies to serve ads based on prior visits to our site or other websites.</li>
+            <li><strong>Opt-Out of Personalized Ads:</strong> You can turn off personalized advertising anytime via <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Google Ads Settings</a> or <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">aboutads.info</a>.</li>
+            <li><strong>Consent Management:</strong> We implement Google Consent Mode v2. Non-essential cookies for analytics and ads only activate when you give permission through our Cookie Preferences popup.</li>
+          </ul>
+        </div>
 
-        <h2>8. Pre-Publication Content Review & Zero-PII Protection Protocol</h2>
-        <p>In strict alignment with Google AdSense Publisher Policies and international privacy principles, Real BMI enforces a mandatory pre-publication content review step before any tool, calculation model, or educational guide is published. We do not host public discussion forums, comment sections, or user profile directories that could expose personally identifiable information (PII) such as personal phone numbers, physical addresses, or private emails. All technical communications received are processed privately by our editorial team and never exposed on public web entries.</p>
+        <!-- 5. Your Privacy Rights (GDPR & CCPA) -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            5. Your Privacy Rights (GDPR & CCPA)
+          </h2>
+          <p>
+            Whether you reside in the European Union, California, or elsewhere, you possess clear rights over your data:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>No Sale of Data:</strong> Real BMI does not sell, rent, monetize, or trade personal health numbers to data brokers.</li>
+            <li><strong>Right to Deletion:</strong> Because all calculations execute locally and zero health records are kept, your information is deleted by default.</li>
+            <li><strong>Preferences Control:</strong> You can update or revoke your cookie choices anytime using our interactive <a href="/en/cookie-policy/" class="text-[var(--accent)] underline font-medium">Cookie Preferences</a> center.</li>
+          </ul>
+        </div>
 
-        <h2>9. Children's Online Privacy Protection Act (COPPA) & Protection of Minors</h2>
-        <p>Real BMI is an educational calculation portal designed for a general audience aged 18 and older. In accordance with the Children's Online Privacy Protection Act (COPPA) and international child privacy regulations (including GDPR Article 8), we do not knowingly solicit, collect, store, or process personal information from children under the age of 13 (or under 16 within the European Economic Area and United Kingdom). All pediatric reference tools (such as BMI-for-age percentile charts) must be used under the direct supervision of a parent, legal guardian, or licensed healthcare provider. If you believe a minor has submitted personal information through our contact desk, please notify us via our <a href="/en/contact/" class="text-[var(--accent)] underline font-medium">Contact &amp; Privacy Portal</a>, and we will promptly purge such correspondence from our support logs.</p>
+        <!-- 6. Website Security & Encryption -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            6. Website Security & Encryption
+          </h2>
+          <p>
+            Our website uses modern Transport Layer Security (TLS) encryption and strict security headers to keep your connection safe, private, and tamper-proof.
+          </p>
+        </div>
 
-        <h2>10. California Consumer Privacy Act (CCPA/CPRA) & US State Privacy Rights</h2>
-        <p>Under the California Consumer Privacy Act as amended by the California Privacy Rights Act (CPRA), as well as comprehensive privacy laws in Virginia (VCDPA), Colorado (CPA), Connecticut (CTDPA), and Utah (UCPA), residents of these jurisdictions possess specific statutory rights regarding their personal data:</p>
-        <ul>
-          <li><strong>Right to Know and Access:</strong> You have the right to request disclosure of the categories and specific pieces of personal information collected about you.</li>
-          <li><strong>Right to Delete:</strong> You have the right to request deletion of personal information collected from you. Because Real BMI operates on an ephemeral, client-side zero-retention model, our servers store zero personal or biometric information, automatically honoring this right by design.</li>
-          <li><strong>Do Not Sell or Share My Personal Information:</strong> Real BMI does not sell, rent, release, disclose, disseminate, make available, transfer, or otherwise communicate consumers' personal information to third parties for monetary or other valuable consideration. We do not share personal information for cross-context behavioral advertising without affirmative consent.</li>
-          <li><strong>Right to Non-Discrimination:</strong> We will never discriminate against you, deny services, charge differing prices, or provide a disparate quality of service for exercising your privacy rights.</li>
-          <li><strong>Exercising Your Privacy Choices:</strong> You may manage tracking preferences anytime using our interactive <a href="/en/cookie-policy/" class="text-[var(--accent)] underline font-medium">Cookie Policy &amp; Consent Center</a>, or contact our designated Data Protection Officer via our <a href="/en/contact/" class="text-[var(--accent)] underline font-medium">Contact &amp; Privacy Portal</a>.</li>
-        </ul>
+        <!-- 7. Pre-Publication Review & Public Privacy -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            7. Pre-Publication Review & Public Privacy
+          </h2>
+          <p>
+            Before any calculator or guide is published, it undergoes rigorous editorial and privacy verification.
+          </p>
+          <p>
+            We do not host open forums, comment sections, or user profile directories where personal information could ever be exposed.
+          </p>
+        </div>
+
+        <!-- 8. Children's Privacy -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            8. Children's Privacy
+          </h2>
+          <p>
+            Real BMI is designed for a general adult audience. We do not knowingly collect or request personal information from children under 13 (or under 16 in the European Union).
+          </p>
+          <p>
+            Pediatric calculators (such as teen growth percentile charts) should always be used under the guidance of a parent, legal guardian, or healthcare provider.
+          </p>
+        </div>
+
+        <!-- 9. Contact & Support -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            9. Contact & Support
+          </h2>
+          <p>
+            If you have questions about our privacy practices, browser calculation architecture, or cookie settings, please contact our team via our <a href="/en/contact/" class="text-[var(--accent)] underline font-medium">Contact &amp; Support Page</a>.
+          </p>
+        </div>
+
       </div>
     </PageShell>
 </Layout>

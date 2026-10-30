@@ -7,6 +7,7 @@ import PageShell from '../../components/PageShell.astro';
 <Layout 
     title="Términos y Condiciones | Real BMI" 
     description="Consulte los términos y condiciones oficiales para el uso de Real BMI, nuestras calculadoras de salud gratuitas y herramientas educativas en el navegador."
+    canonicalURL="https://realbmicalculator.com/es/terms-conditions/"
 >
     <Navbar />
     <PageShell
@@ -16,55 +17,123 @@ import PageShell from '../../components/PageShell.astro';
         returnUrl="/es/"
         returnLabel="Inicio"
     >
-        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-10 text-lg md:text-xl font-medium opacity-85">
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-8 text-base sm:text-lg font-medium opacity-90">
+            <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
+                Los presentes Términos y Condiciones regulan el acceso y uso de la plataforma web <strong class="text-[var(--foreground)]">Real BMI</strong>, incluyendo todas las calculadoras interactivas, tablas de referencia y guías educativas.
+            </p>
             <p>
-                Los presentes Términos y Condiciones regulan el acceso y uso de la plataforma web <span class="text-[var(--foreground)] font-bold">Real BMI</span>, incluyendo todas las calculadoras interactivas, tablas de referencia, guías metodológicas y utilidades de software accesibles en nuestro sitio. Al acceder o interactuar con nuestros servicios, usted reconoce haber leído, comprendido y aceptado en su totalidad estas disposiciones. Si no está de acuerdo con alguno de estos términos, le rogamos abstenerse de utilizar el sitio.
+                Al acceder o interactuar con nuestros servicios, usted reconoce haber leído, comprendido y aceptado en su totalidad estas disposiciones. Si no está de acuerdo con alguno de estos términos, le rogamos abstenerse de utilizar el sitio.
             </p>
 
-            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">1. Ámbito Educativo y Propósito No Diagnóstico</h2>
-            <p>
-                Todas las calculadoras, puntuaciones antropométricas y modelos de referencia disponibles en Real BMI —incluyendo el Índice de Masa Corporal (IMC), Tasa Metabólica Basal (TMB), Gasto Energético Total Diario (GETD) y estimaciones de masa grasa y magra— han sido desarrolladas exclusivamente con fines educativos, de orientación general y de concienciación sobre el bienestar físico. Bajo ninguna circunstancia los resultados generados deben interpretarse como diagnósticos clínicos, dictámenes médicos vinculantes o planes dietéticos terapéuticos. Para cualquier evaluación sobre su estado de salud, consulte siempre a un médico colegiado o profesional sanitario cualificado.
-            </p>
+            <!-- 1. Ámbito Educativo y Propósito No Diagnóstico -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    1. Ámbito Educativo y Propósito No Diagnóstico
+                </h2>
+                <p>
+                    Todas las calculadoras y modelos de referencia disponibles en Real BMI han sido desarrolladas exclusivamente con fines educativos y de concienciación sobre el bienestar físico.
+                </p>
+                <p>
+                    Bajo ninguna circunstancia los resultados generados deben interpretarse como diagnósticos clínicos, dictámenes médicos vinculantes o planes dietéticos terapéuticos.
+                </p>
+                <p>
+                    Para cualquier evaluación médica o cambio en su estilo de vida, consulte siempre a un profesional sanitario cualificado.
+                </p>
+            </div>
 
-            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">2. Fórmulas Científicas y Limitaciones Técnicas</h2>
-            <p>
-                Nuestras herramientas aplican ecuaciones matemáticas reconocidas y documentadas en la literatura médica internacional (como los estándares de la Organización Mundial de la Salud, directrices de los CDC y fórmulas de Mifflin-St Jeor). No obstante, los modelos estadísticos presentan limitaciones inherentes frente a la variabilidad biológica individual: la densidad ósea, hipertrofia muscular deportiva, sarcopenia por envejecimiento y distribución del tejido adiposo pueden causar discrepancias respecto a la composición física real. Real BMI no es un dispositivo médico certificado ni un software de telemedicina.
-            </p>
+            <!-- 2. Fórmulas Científicas y Limitaciones Técnicas -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    2. Fórmulas Científicas y Limitaciones Técnicas
+                </h2>
+                <p>
+                    Nuestras herramientas aplican ecuaciones matemáticas reconocidas en la literatura científica internacional, como las directrices de la Organización Mundial de la Salud (OMS) y los CDC.
+                </p>
+                <p>
+                    No obstante, los modelos poblacionales presentan limitaciones frente a la variabilidad biológica individual: la densidad ósea, masa muscular deportiva y distribución adiposa pueden causar discrepancias.
+                </p>
+                <p>
+                    Real BMI no es un dispositivo médico certificado ni presta servicios de telemedicina clínica.
+                </p>
+            </div>
 
-            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">3. Procesamiento Local en el Navegador y Privacidad</h2>
-            <p>
-                Priorizamos la privacidad por diseño. Garantizamos que todos los cálculos matemáticos y las variables antropométricas introducidas (altura, peso, edad, género, perímetros) se procesan exclusivamente en la memoria local de su navegador web mediante JavaScript. Real BMI no recopila, almacena en servidores externos ni comercializa datos de salud personales con terceros.
-            </p>
+            <!-- 3. Procesamiento Local en el Navegador y Privacidad -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    3. Procesamiento Local en el Navegador y Privacidad
+                </h2>
+                <p>
+                    Priorizamos la privacidad por diseño. Todos los cálculos matemáticos se procesan exclusivamente en la memoria local de su navegador web mediante JavaScript.
+                </p>
+                <p>
+                    Real BMI no recopila, almacena en servidores externos ni comercializa datos personales de salud con terceros.
+                </p>
+            </div>
 
-            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">4. Condiciones de Uso Aceptable y Prohibiciones</h2>
-            <p>
-                Se concede al usuario una licencia revocable, no exclusiva e intransferible para acceder a Real BMI para su uso personal y educativo no comercial. Queda estrictamente prohibido realizar extracción automatizada masiva de datos (web scraping), ataques de denegación de servicio, ingeniería inversa del código fuente o la redistribución no autorizada de algoritmos y elementos interactivos sin nuestro consentimiento previo por escrito.
-            </p>
+            <!-- 4. Condiciones de Uso Aceptable y Prohibiciones -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    4. Condiciones de Uso Aceptable y Prohibiciones
+                </h2>
+                <p>
+                    Se concede al usuario una licencia revocable y no exclusiva para acceder a Real BMI para su uso personal y educativo no comercial.
+                </p>
+                <p>
+                    Queda estrictamente prohibido realizar extracción automatizada masiva de datos (web scraping), ataques de denegación de servicio o la redistribución no autorizada de nuestros algoritmos.
+                </p>
+            </div>
 
-            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">5. Derechos de Propiedad Intelectual</h2>
-            <p>
-                Todos los textos, interfaces gráficas, diseño visual, código fuente, modelos 3D WebGL, logotipos y materiales interactivos alojados en Real BMI están protegidos por las leyes y tratados internacionales de propiedad intelectual y derechos de autor. Queda prohibida su reproducción total o parcial con fines lucrativos sin autorización expresa.
-            </p>
+            <!-- 5. Derechos de Propiedad Intelectual -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    5. Derechos de Propiedad Intelectual
+                </h2>
+                <p>
+                    Todos los textos, interfaces gráficas, diseño visual, código fuente, modelos 3D WebGL y contenidos editoriales están protegidos por leyes de propiedad intelectual.
+                </p>
+                <p>
+                    Queda prohibida su reproducción total o parcial con fines comerciales sin autorización expresa previa y por escrito.
+                </p>
+            </div>
 
-            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">6. Limitación de Responsabilidad Legal</h2>
-            <p>
-                La plataforma se ofrece "tal cual" y según disponibilidad, sin garantías de ningún tipo, expresas o implícitas. Ni Real BMI ni sus creadores o colaboradores asumirán responsabilidad alguna por pérdidas, reclamaciones o consecuencias físicas o médicas derivadas de decisiones alimentarias, rutinas deportivas o interpretaciones personales basadas en las estimaciones informativas de este sitio.
-            </p>
+            <!-- 6. Limitación de Responsabilidad Legal -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    6. Limitación de Responsabilidad Legal
+                </h2>
+                <p>
+                    La plataforma se ofrece "tal cual" y según disponibilidad, sin garantías expresas o implícitas de ningún tipo.
+                </p>
+                <p>
+                    Ni Real BMI ni sus colaboradores asumirán responsabilidad alguna por decisiones alimentarias, rutinas deportivas o consecuencias derivadas de estimaciones informativas de este sitio.
+                </p>
+            </div>
 
-            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">7. Actualizaciones de los Términos</h2>
-            <p>
-                Nos reservamos el derecho de modificar o actualizar estos términos en cualquier momento para reflejar mejoras funcionales o adaptaciones regulatorias. El uso continuado del sitio tras la publicación de cualquier actualización constituye la aceptación plena y vinculante de los nuevos términos de uso.
-            </p>
-        
-            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">8. Legislación Aplicable y Resolución de Conflictos</h2>
-            <p>
-                Los presentes Términos y Condiciones se rigen por la legislación civil y mercantil aplicable a los servicios de la sociedad de la información y comercio electrónico. Cualquier controversia legal que surja en relación con el acceso o uso de Real BMI se resolverá preferentemente mediante negociación de buena fe y, en su defecto, ante los tribunales y juzgados competentes.
-            </p>
+            <!-- 7. Actualizaciones de los Términos -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    7. Actualizaciones de los Términos
+                </h2>
+                <p>
+                    Nos reservamos el derecho de actualizar estos términos en cualquier momento para reflejar mejoras funcionales o requerimientos regulatorios.
+                </p>
+                <p>
+                    El uso continuado del sitio tras la publicación de cualquier actualización constituye su aceptación plena y vinculante.
+                </p>
+            </div>
 
-            <h2 class="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">9. Exclusión de Relación Médico-Paciente y Revisión Jurídica</h2>
-            <p>
-                El acceso a Real BMI, el envío de formularios o la recepción de respuestas informativas por correo electrónico no establece en ningún caso una relación contractual médico-paciente ni un servicio sanitario regulado. Asimismo, se hace constar que estas cláusulas informativas reflejan el funcionamiento técnico del sitio y se aconseja su revisión periódica por un profesional del derecho para adecuarse a normativas locales específicas.
-            </p>
+            <!-- 8. Calidad de Contenidos y Protocolo de Privacidad -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    8. Calidad de Contenidos y Protocolo de Privacidad
+                </h2>
+                <p>
+                    Todas las calculadoras y artículos publicados en Real BMI se someten a una revisión editorial previa y a un control riguroso de privacidad.
+                </p>
+                <p>
+                    Prohibimos expresamente la publicación o recopilación de datos personales identificables. No gestionamos foros abiertos ni registros de usuarios donde su información privada pueda quedar expuesta.
+                </p>
+            </div>
         </div>
     </PageShell>
 </Layout>

@@ -47,8 +47,8 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 				<div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 pt-1">
 					{[
 						'100% Free & Instant',
+						'Accurate Metric & Imperial Calculations',
 						'Client-Side Privacy',
-						'18+ Health Calculators',
 						'WHO & CDC Standards'
 					].map(badge => (
 						<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
@@ -77,6 +77,13 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 				</div>
 
 				<HomepageHubWrapper lang="en" />
+			</div>
+		</section>
+
+		<!-- ═══════════════════  6. 📖 LATEST ARTICLES  ═══════════════════ -->
+		<section id="latest-articles" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
+			<div class="max-w-7xl mx-auto">
+				<LatestArticles lang="en" limit={6} />
 			</div>
 		</section>
 
@@ -126,13 +133,6 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 				<div class="pt-4">
 					<MedicalEEATBanner lang="en" />
 				</div>
-			</div>
-		</section>
-
-		<!-- ═══════════════════  6. 📖 LATEST ARTICLES  ═══════════════════ -->
-		<section id="latest-articles" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
-			<div class="max-w-7xl mx-auto">
-				<LatestArticles lang="en" limit={6} />
 			</div>
 		</section>
 

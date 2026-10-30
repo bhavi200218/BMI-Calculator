@@ -46,8 +46,8 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 				<div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 pt-1">
 					{[
 						'100% 무료 및 즉시 계산',
+						'정확한 미터법 및 야드파운드법 계산',
 						'클라이언트 측 개인정보 보호',
-						'18개 이상 건강 도구',
 						'WHO & CDC 표준 준수'
 					].map(badge => (
 						<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
@@ -76,6 +76,13 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 				</div>
 
 				<HomepageHubWrapper lang="ko" />
+			</div>
+		</section>
+
+		<!-- ═══════════════════  6. 📖 LATEST ARTICLES  ═══════════════════ -->
+		<section id="latest-articles" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
+			<div class="max-w-7xl mx-auto">
+				<LatestArticles lang="ko" limit={6} />
 			</div>
 		</section>
 
@@ -125,13 +132,6 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 				<div class="pt-4">
 					<MedicalEEATBanner lang="ko" />
 				</div>
-			</div>
-		</section>
-
-		<!-- ═══════════════════  6. 📖 LATEST ARTICLES  ═══════════════════ -->
-		<section id="latest-articles" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
-			<div class="max-w-7xl mx-auto">
-				<LatestArticles lang="ko" limit={6} />
 			</div>
 		</section>
 

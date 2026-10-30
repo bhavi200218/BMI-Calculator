@@ -14,13 +14,13 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
       "fr": "Guide d'IMC pour l'Inde : Nutrition, Sport et Bilan de Santé"
     },
     "category": {
-      "en": "Practical Health Guidance",
-      "hi": "व्यावहारिक स्वास्थ्य मार्गदर्शन",
-      "ko": "실천 건강 가이드",
-      "de": "Praxisorientierte Gesundheit",
-      "es": "Guía de Salud Práctica",
-      "fr": "Santé Pratique et Nutrition"
-    },
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
+  },
     "description": {
       "en": "Comprehensive evidence-based action guide for applying Asian BMI thresholds in daily life. Learn South Asian carbohydrate reduction strategies, high-protein vegetarian swaps, daily step goals, and preventive blood tests.",
       "hi": "दैनिक जीवन में भारतीय बीएमआई मानकों को लागू करने की संपूर्ण गाइड। कार्बोहाइड्रेट नियंत्रण, उच्च प्रोटीन शाकाहारी विकल्प, व्यायाम और आवश्यक रक्त जांच।",
@@ -399,13 +399,13 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
       "fr": "Plage Santé d'IMC pour l'Inde : Pourquoi les Normes Asiatiques Diffèrent"
     },
     "category": {
-      "en": "Ethnic Guidelines & Epidemiology",
-      "hi": "एशियाई स्वास्थ्य मानक और शोध",
-      "ko": "인종별 가이드라인",
-      "de": "Ethnische Richtwerte",
-      "es": "Criterios Étnicos y Salud",
-      "fr": "Normes Épidémiologiques"
-    },
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
+  },
     "description": {
       "en": "Discover why WHO and ICMR establish lower BMI cut-offs for Indians (18.5-22.9 healthy, 23+ overweight). Explore the 'Thin-Fat' phenotype, the Y-Y paradox, visceral adiposity, and tighter waist targets.",
       "hi": "जानें कि डब्ल्यूएचओ और आईसीएमआर ने भारतीयों के लिए कम बीएमआई सीमाएं (18.5-22.9 स्वस्थ, 23+ ओवरवेट) क्यों तय की हैं। वाई-वाई विरोधाभास और विसरल फैट का वैज्ञानिक विश्लेषण।",

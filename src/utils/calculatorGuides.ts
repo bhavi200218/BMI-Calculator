@@ -271,9 +271,10 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
   const isCardio = ['heart-rate-zone-calculator', 'karvonen-heart-rate-calculator'].includes(slug);
   const isStrength = ['1rm-calculator', 'one-rep-max-calculator'].includes(slug);
   const isDiabetes = slug === 'diabetes-risk-calculator';
-  const isSpecialty = ['protein-intake-calculator', 'water-intake-calculator', 'pregnancy-weight-gain-calculator'].includes(slug);
+  const isPregnancy = slug === 'pregnancy-weight-gain-calculator';
+  const isSpecialty = ['protein-intake-calculator', 'water-intake-calculator'].includes(slug);
 
-  const domain = isRegional ? 'regional' : (isMetabolic ? 'metabolic' : (isBodyComp ? 'bodycomp' : (isCardio ? 'cardio' : (isStrength ? 'strength' : (isDiabetes ? 'diabetes' : (isSpecialty ? 'specialty' : 'bmi'))))));
+  const domain = isRegional ? 'regional' : (isMetabolic ? 'metabolic' : (isBodyComp ? 'bodycomp' : (isCardio ? 'cardio' : (isStrength ? 'strength' : (isDiabetes ? 'diabetes' : (isPregnancy ? 'pregnancy' : (isSpecialty ? 'specialty' : 'bmi')))))));
 
   const GUIDES: Record<string, Record<Locale, DomainInterpretationGuide>> = {
     bmi: {
@@ -281,7 +282,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         domain: 'bmi',
         sectionTitle: 'BMI Results & Health Guide',
         sectionSubtitle: 'How to interpret your BMI score and understand its screening limits.',
-        interpretationTitle: 'WHO Adult BMI Categories',
+        interpretationTitle: 'Clinical Score Interpretation',
         interpretationText: 'A BMI between 18.5 and 24.9 is considered a healthy weight for adults by the World Health Organization (WHO) and CDC. A BMI between 25.0 and 29.9 falls in the overweight range. A score of 30.0 or higher falls into the obesity category. These numbers are general screening guidelines used to track health trends in large populations.',
         limitationsTitle: 'Key Limitations of BMI',
         limitationsText: 'BMI uses only your height and weight. It does not measure body fat directly or separate muscle from fat. Athletes with high muscle mass may score in the overweight range even with low body fat. In contrast, older adults who have lost muscle may have a normal BMI despite having excess body fat.',
@@ -292,7 +293,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         domain: 'bmi',
         sectionTitle: 'Interpretación de Resultados y Límites de Salud',
         sectionSubtitle: 'Cómo interpretar la puntuación obtenida y comprender los límites del cribado poblacional.',
-        interpretationTitle: 'Interpretación según la Referencia Global de la OMS',
+        interpretationTitle: 'Interpretación Clínica del Resultado',
         interpretationText: 'Un Índice de Masa Corporal entre 18.5 y 24.9 kg/m² constituye el intervalo de referencia estándar para adultos según la Organización Mundial de la Salud (OMS) y los CDC. Los valores de 25.0 a 29.9 kg/m² indican sobrepeso, y ≥ 30.0 kg/m² definen obesidad. Estas clasificaciones son herramientas estadísticas de salud pública, no diagnósticos individuales.',
         limitationsTitle: 'Limitaciones Fisiológicas Clave',
         limitationsText: 'El IMC utiliza únicamente el peso y la estatura, sin diferenciar entre masa magra muscular, densidad ósea y tejido adiposo. Por este motivo, personas atléticas pueden registrar valores de sobrepeso con baja grasa corporal, mientras que adultos mayores con sarcopenia pueden tener un IMC normal pero un exceso de grasa visceral oculta.',
@@ -303,7 +304,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         domain: 'bmi',
         sectionTitle: 'Interprétation des Résultats et Limites de Santé',
         sectionSubtitle: 'Comment analyser votre résultat et appréhender les seuils de dépistage épidémiologique.',
-        interpretationTitle: 'Interprétation selon les Normes Mondiales de l’OMS',
+        interpretationTitle: 'Interprétation Clinique du Score',
         interpretationText: 'Un Indice de Masse Corporelle compris entre 18,5 et 24,9 kg/m² correspond à la norme de référence pour la population adulte selon l’OMS et les CDC. Les valeurs de 25,0 à 29,9 kg/m² indiquent un surpoids et celles ≥ 30,0 kg/m² définissent l’obésité. Ces fourchettes constituent des repères statistiques et non un bilan métabolique personnalisé.',
         limitationsTitle: 'Limites Physiologiques Essentielles',
         limitationsText: 'L’IMC repose uniquement sur le ratio masse/taille sans distinguer le muscle du tissu adipeux ni de la masse osseuse. Ainsi, un sportif musclé peut être classé en surpoids avec un taux de graisse faible, tandis qu’une personne âgée souffrant de sarcopénie peut présenter un IMC normal malgré un excès de graisse viscérale.',
@@ -314,7 +315,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         domain: 'bmi',
         sectionTitle: 'Ergebnisinterpretation & Gesundheitliche Grenzen',
         sectionSubtitle: 'So ordnen Sie Ihren berechneten Wert ein und verstehen die Grenzen des Screenings.',
-        interpretationTitle: 'Interpretation nach weltweiten WHO-Referenzen',
+        interpretationTitle: 'Klinische Interpretation des Ergebnisses',
         interpretationText: 'Ein Body-Mass-Index von 18,5 bis 24,9 kg/m² bildet den internationalen Referenzbereich für Erwachsene nach Vorgaben der WHO und der CDC. Werte zwischen 25,0 und 29,9 kg/m² gelten als Übergewicht, Werte ab 30,0 kg/m² als Adipositas. Diese Stufen dienen der epidemiologischen Früherkennung, nicht der individuellen Diagnose.',
         limitationsTitle: 'Wesentliche Physiologische Einschränkungen',
         limitationsText: 'Der BMI erfasst lediglich das Verhältnis von Körpergewicht zu Körpergröße, ohne Muskelmasse, Knochendichte oder Fettgewebe separat zu messen. Gut trainierte Personen fallen dadurch oft in die Kategorie Übergewicht, während ältere Menschen mit altersbedingtem Muskelabbau (Sarkopenie) trotz erhöhtem viszeralem Fett einen normalen BMI aufweisen können.',
@@ -325,7 +326,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         domain: 'bmi',
         sectionTitle: '산출 결과 해석 및 보건학적 한계점',
         sectionSubtitle: '계산된 지표의 보건학적 의미와 집단 선별 검사의 한계점을 안내합니다.',
-        interpretationTitle: 'WHO 글로벌 기준에 따른 해석',
+        interpretationTitle: '측정 결과의 임상적 해석',
         interpretationText: '세계보건기구(WHO)와 질병통제예방센터(CDC)에 따르면 성인의 표준 정상 BMI 범위는 18.5 ~ 24.9 kg/m²입니다. 25.0 ~ 29.9 kg/m²는 과체중, 30.0 kg/m² 이상은 비만으로 분류됩니다. 이 수치는 대중 보건 통계용 기준선이며 개인의 대사 건강 상태를 단독으로 확정하지 않습니다.',
         limitationsTitle: '주요 생리학적 한계점',
         limitationsText: 'BMI는 총 체중과 신장만을 연산하므로 근육량, 골밀도, 체지방의 구성을 구분하지 못합니다. 근육질 체형의 운동선수는 체지방이 낮아도 과체중으로 판정될 수 있으며, 노화로 인한 근감소증(Sarcopenia)이 있는 경우 내장지방이 많아도 정상 체중으로 나타날 수 있습니다.',
@@ -336,7 +337,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         domain: 'bmi',
         sectionTitle: 'परिणाम व्याख्या एवं स्वास्थ्य सीमाएं',
         sectionSubtitle: 'अपने प्राप्त स्कोर का अर्थ समझें और जनसंख्या स्क्रीनिंग की सीमाओं को जानें।',
-        interpretationTitle: 'डब्ल्यूएचओ वैश्विक संदर्भ व्याख्या',
+        interpretationTitle: 'स्कोर की नैदानिक व्याख्या',
         interpretationText: 'विश्व स्वास्थ्य संगठन (WHO) और सीडीसी के अनुसार वयस्कों के लिए 18.5 से 24.9 kg/m² सामान्य संदर्भ सीमा है। 25.0 से 29.9 kg/m² अधिक वजन और 30.0 या अधिक मोटापे को दर्शाता है। ये श्रेणियां सार्वजनिक स्वास्थ्य स्क्रीनिंग के लिए हैं, व्यक्तिगत नैदानिक पुष्टि के लिए नहीं।',
         limitationsTitle: 'प्रमुख शारीरिक सीमाएं',
         limitationsText: 'बीएमआई केवल ऊंचाई और कुल वजन पर आधारित है। यह मांसपेशियों और वसा के बीच अंतर नहीं कर सकता। मांसपेशियों वाले एथलीट कम वसा के बावजूद अधिक वजन की श्रेणी में आ सकते हैं, जबकि बुजुर्ग व्यक्ति मांसपेशियों की कमी (सार्कोपेनिया) के कारण सामान्य बीएमआई पर भी अतिरिक्त आंतरिक वसा रख सकते हैं।',
@@ -622,7 +623,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         sectionTitle: 'Muscular Strength & 1RM Guide',
         sectionSubtitle: 'How to estimate your one-rep max and plan safe training weights.',
         interpretationTitle: 'What One-Rep Max (1RM) Means',
-        interpretationText: 'Your One-Rep Max (1RM) is the heaviest weight you can lift for one clean repetition. Formulas like Epley and Brzycki estimate this max from sets of 2 to 10 reps. This protects your joints by avoiding risky single-rep maximum attempts.',
+        interpretationText: 'Your One-Rep Max (1RM) is the heaviest weight you can lift for one clean repetition on key compound lifts—including the Bench Press, Back Squat, Deadlift, and Overhead Press. Validated formulas like Epley, Brzycki, and Lander estimate this max from submaximal sets of 2 to 10 reps, protecting your joints and ligaments while providing precise loading percentages for Hypertrophy (75–85%) and Maximal Strength (85–100%).',
         limitationsTitle: 'Best Repetition Ranges for Accuracy',
         limitationsText: 'Formulas are most accurate when you test between 2 and 6 reps. Sets with more than 10 reps measure muscle stamina rather than pure strength. This can make the estimated 1RM less reliable.',
         medicalNoticeTitle: 'Lifting Safety & Spotter Notice',
@@ -633,7 +634,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         sectionTitle: 'Guía de Fuerza Muscular y Estimación de 1RM',
         sectionSubtitle: 'Interpretación de repetición máxima, fórmulas submáximas y porcentajes de carga.',
         interpretationTitle: 'Principios de Repetición Máxima (1RM)',
-        interpretationText: 'La Repetición Máxima (1RM) define la mayor carga que un grupo muscular puede desplazar en una sola repetición con técnica adecuada. Ecuaciones como Brzycki, Epley y Lander permiten estimar este valor a partir de series submáximas, minimizando el riesgo de lesión osteoarticular.',
+        interpretationText: 'La Repetición Máxima (1RM) define la mayor carga que puedes mover en una sola repetición en los levantamientos fundamentales: press de banca, sentadilla, peso muerto y press militar. Ecuaciones como Epley, Brzycki y Lander estiman este valor a partir de series submáximas de 2 a 10 repeticiones, permitiendo programar rangos de hipertrofia (75–85%) y fuerza máxima (85–100%) sin riesgo de lesión articular.',
         limitationsTitle: 'Rangos de Repeticiones y Límites Mecánicos',
         limitationsText: 'Las fórmulas de 1RM ofrecen alta precisión cuando la serie se completa entre 2 y 10 repeticiones hasta el fallo técnico. Con más de 10 repeticiones, la resistencia muscular y la fatiga glucolítica distorsionan la estimación del peso máximo.',
         medicalNoticeTitle: 'Seguridad en Entrenamiento de Fuerza',
@@ -750,6 +751,74 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         limitationsText: 'यह स्कोर केवल एक सामान्य जीवनशैली मार्गदर्शिका है, कोई चिकित्सीय परीक्षण नहीं। यह सीधे ब्लड शुगर नहीं मापता। प्रीडायबिटीज वाले कई व्यक्तियों में कोई लक्षण दिखाई नहीं देते।',
         medicalNoticeTitle: 'नैदानिक परीक्षण सूचना',
         medicalNoticeText: 'केवल पंजीकृत चिकित्सक ही फास्टिंग ब्लड ग्लूकोज या HbA1c रक्त परीक्षण द्वारा प्रीडायबिटीज या डायबिटीज का वास्तविक निदान कर सकते हैं।'
+      }
+    },
+    pregnancy: {
+      en: {
+        domain: 'pregnancy',
+        sectionTitle: 'Pregnancy Trimester Trajectory & Clinical Guidelines',
+        sectionSubtitle: 'Evidence-based weight milestones, essential prenatal micronutrients, and clinical safety triggers.',
+        interpretationTitle: 'Gestational Weight Gain Milestones & Energy Demands',
+        interpretationText: 'Gestational weight accumulation is not uniform across all 40 weeks. During the first trimester (weeks 1–12), fetal growth requires minimal additional energy (0 extra kcal/day), with typical maternal gain of 0.5 to 2.0 kg (1–4.5 lbs) primarily from expanding blood volume and uterine tissue. During the second trimester (weeks 13–27), caloric requirements increase by approximately +340 kcal/day, supporting steady gain of ~0.42 kg (0.9 lbs) per week for normal BMI. In the third trimester (weeks 28–40), rapid fetal fat deposition and lung maturation demand +450 kcal/day with continued steady gain. Key micronutrient priorities include Folic Acid (400–600 mcg/day for neural tube defect prevention), Elemental Iron (27 mg/day for maternal hemoglobin expansion), Calcium (1,000 mg/day for fetal skeletal ossification), Choline (450 mg/day for neurodevelopment), and daily hydration of 2.5 to 3.0 liters.',
+        limitationsTitle: 'Clinical Warning Triggers, Preeclampsia & Red Flags',
+        limitationsText: 'Gestational weight targets are guidelines for singleton pregnancies, not rigid prescriptions. High-priority clinical red flags require immediate obstetric evaluation: (1) Rapid sudden weight gain of greater than 1 kg (2.2 lbs) in a single week during the 2nd or 3rd trimester, especially when accompanied by face or hand edema, severe headaches, or visual disturbances—a cardinal warning sign for preeclampsia; (2) Persistent weight loss or inability to maintain baseline weight due to severe nausea/vomiting (hyperemesis gravidarum), which carries risks of intrauterine growth restriction (IUGR); and (3) Atypical glucose tolerance, warranting gestational diabetes mellitus (GDM) oral screening routinely between weeks 24 and 28. Always consult your OB-GYN or certified midwife for individualized clinical monitoring.',
+        medicalNoticeTitle: 'Obstetric & Prenatal Health Notice',
+        medicalNoticeText: 'This calculator is an educational tracking reference based on published IOM/ACOG population standards. It does not replace individualized prenatal medical care, ultrasound biometry, or laboratory diagnostics. Twin and multiple gestations require separate specialized nutritional targets.'
+      },
+      es: {
+        domain: 'pregnancy',
+        sectionTitle: 'Trayectoria Gestacional por Trimestre y Pautas Clínicas',
+        sectionSubtitle: 'Hitos ponderales basados en evidencia, micronutrientes prenatales clave y alertas clínicas.',
+        interpretationTitle: 'Hitos de Aumento de Peso Gestacional y Demanda Energética',
+        interpretationText: 'El aumento de peso gestacional no es lineal a lo largo de las 40 semanas. Durante el primer trimestre (semanas 1–12), el gasto calórico fetal es mínimo (0 kcal adicionales/día), con un aumento habitual de 0.5 a 2.0 kg atribuible al volumen plasmático y tejido uterino. En el segundo trimestre (semanas 13–27), el requerimiento calórico asciende a +340 kcal/día, sosteniendo una ganancia promedio de ~0.42 kg/semana para IMC normal. En el tercer trimestre (semanas 28–40), el rápido crecimiento fetal exige +450 kcal/día. Los requerimientos esenciales de micronutrientes incluyen Ácido Fólico (400–600 mcg/día para prevenir defectos del tubo neural), Hierro Elemental (27 mg/día), Calcio (1,000 mg/día), Colina (450 mg/día) y una ingesta hídrica diaria de 2.5 a 3.0 litros.',
+        limitationsTitle: 'Signos de Alarma Clínica, Preeclampsia y Riesgos',
+        limitationsText: 'Las metas de aumento ponderal son pautas poblacionales para embarazos únicos. Ciertas señales de alerta exigen valoración obstétrica inmediata: (1) Aumento brusco y repentino superior a 1 kg (2.2 lbs) en una sola semana durante el 2.º o 3.er trimestre, en particular si se acompaña de edema facial o en manos, cefaleas intensas o fotopsias—signo de sospecha de preeclampsia; (2) Pérdida de peso continua o vómitos incoercibles (hiperémesis gravídica), con riesgo de retraso del crecimiento intrauterino (RCIU); y (3) Cribado rutinario de diabetes gestacional (SOG) entre las semanas 24 y 28. Consulte siempre con su ginecólogo u obstetra.',
+        medicalNoticeTitle: 'Aviso de Salud Obstétrica y Prenatal',
+        medicalNoticeText: 'Esta calculadora es una herramienta de orientación educativa fundamentada en consensos IOM/ACOG. No reemplaza las consultas de control prenatal, ecografías biométricas ni exámenes de laboratorio clínico. Los embarazos gemelares requieren metas nutricionales específicas.'
+      },
+      fr: {
+        domain: 'pregnancy',
+        sectionTitle: 'Trajectoire Gestationnelle par Trimestre et Repères Cliniques',
+        sectionSubtitle: 'Paliers de prise de poids validés, micronutriments prénataux essentiels et signaux d’alerte.',
+        interpretationTitle: 'Paliers Gestationnels et Besoins Énergétiques',
+        interpretationText: 'La prise de poids pendant la grossesse varie selon le terme. Au premier trimestre (semaines 1–12), les besoins énergétiques additionnels sont nuls (+0 kcal/jour) et la prise moyenne se situe entre 0,5 et 2,0 kg, correspondant à l expansion du volume plasmatique. Au deuxième trimestre (semaines 13–27), les besoins augmentent d environ +340 kcal/jour avec un rythme de ~0,42 kg/semaine pour un IMC normal. Au troisième trimestre (semaines 28–40), la maturation fœtale nécessite +450 kcal/jour. Les nutriments clés incluent l Acide Folique (400–600 mcg/jour pour la prévention des anomalies de fermeture du tube neural), le Fer Élémentaire (27 mg/jour), le Calcium (1 000 mg/jour), la Choline (450 mg/jour) et 2,5 à 3,0 litres d eau par jour.',
+        limitationsTitle: 'Signes d’Alerte Obstétrique, Prééclampsie et Limites',
+        limitationsText: 'Ces recommandations concernent les grossesses uniques. Plusieurs signes cliniques requièrent une consultation médicale sans délai : (1) Prise de poids brutale supérieure à 1 kg en une seule semaine au 2e ou 3e trimestre, surtout associée à des œdèmes du visage et des mains, céphalées persistantes ou troubles visuels—signe évocateur de prééclampsie ; (2) Perte de poids continue liée à des nausées sévères (hyperémèse gravidique) pouvant induire un retard de croissance intra-utérin (RCIU) ; et (3) Dépistage du diabète gestationnel systématique entre 24 et 28 semaines. Consultez systématiquement votre sage-femme ou gynécologue obstétricien.',
+        medicalNoticeTitle: 'Avertissement Médical et Suivi Prénatal',
+        medicalNoticeText: 'Ce calculateur est un repère éducatif basé sur les standards IOM et CNGOF. Il ne saurait se substituer au suivi prénatal personnalisé, aux échographies obstétricales ou aux bilans biologiques. Les grossesses multiples requièrent un suivi nutritionnel individualisé.'
+      },
+      de: {
+        domain: 'pregnancy',
+        sectionTitle: 'Schwangerschaftsverlauf nach Trimestern & Klinische Leitlinien',
+        sectionSubtitle: 'Evidenzbasierte Gewichtsetappen, essenzielle Mikronährstoffe und klinische Warnsignale.',
+        interpretationTitle: 'Gewichtsentwicklung und Kalorienbedarf in den Trimestern',
+        interpretationText: 'Die Gewichtszunahme in der Schwangerschaft verläuft nicht gleichförmig. Im ersten Trimester (Wochen 1–12) besteht kaum Mehrbedarf an Kalorien (+0 kcal/Tag); eine Zunahme von 0,5 bis 2,0 kg resultiert primär aus Blutvolumenerweiterung und Uterusgewebe. Im zweiten Trimester (Wochen 13–27) steigt der Energiebedarf um ca. +340 kcal/Tag bei einer Zunahme von ~0,42 kg/Woche bei normalem Ausgangs-BMI. Im dritten Trimester (Wochen 28–40) erfordert das fetale Wachstum +450 kcal/Tag. Wichtige Mikronährstoffe umfassen Folsäure (400–600 mcg/Tag zur Neuralrohrdefekt-Prävention), elementares Eisen (27 mg/Tag), Calcium (1.000 mg/Tag), Cholin (450 mg/Tag) sowie 2,5 bis 3,0 Liter tägliche Flüssigkeitszufuhr.',
+        limitationsTitle: 'Klinische Warnsignale, Präeklampsie & Risikobeurteilung',
+        limitationsText: 'Die IOM-Richtlinien gelten für Einlingsschwangerschaften. Folgende Warnzeichen erfordern umgehende ärztliche Abklärung: (1) Plötzliche, rapide Gewichtszunahme von mehr als 1 kg innerhalb einer einzigen Woche im 2. oder 3. Trimester, insbesondere bei begleitenden Ödemen an Händen/Gesicht, starken Kopfschmerzen oder Sehstörungen—ein Kardinalzeichen für Präeklampsie; (2) Anhaltender Gewichtsverlust oder schwere Hyperemesis gravidarum mit Risiko für intrauterine Wachstumsretardierung (IUGR); sowie (3) Das Standard-Screening auf Gestationsdiabetes (oGTT) in den Wochen 24 bis 28. Wenden Sie sich stets an Ihre betreuende Gynäkologin oder Hebamme.',
+        medicalNoticeTitle: 'Hinweis zur Schwangerschaftsvorsorge',
+        medicalNoticeText: 'Dieser Rechner dient als Bildungs- und Orientierungshilfe nach IOM/ACOG-Kriterien. Er ersetzt keinesfalls die regelmäßige Schwangerschaftsvorsorge, Ultraschallbiometrie oder Labordiagnostik. Bei Mehrlingsschwangerschaften gelten gesonderte Richtwerte.'
+      },
+      ko: {
+        domain: 'pregnancy',
+        sectionTitle: '임신 분기별 체중 증가 궤적 및 임상 가이드라인',
+        sectionSubtitle: '증거 기반 체중 증가 이정표, 필수 산전 미량영양소 및 주요 임상 위험 신호입니다.',
+        interpretationTitle: '임신 주기별 체중 증가 권장 기준 및 에너지 요구량',
+        interpretationText: '임신 40주 동안의 체중 증가는 균일하게 일어나지 않습니다. 임신 초기(1~12주)에는 태아 성장에 따른 추가 칼로리 소모가 거의 없어(+0 kcal/일) 모체 혈액량 및 자궁 조직 확장에 따른 0.5~2.0kg 증가가 일반적입니다. 임신 중기(13~27주)에는 에너지 요구량이 하루 약 +340 kcal 증가하며, 정상 체중 산모 기준 주당 약 0.42kg씩 꾸준히 증가합니다. 임신 후기(28~40주)에는 태아의 빠른 피하지방 축적과 폐 성숙을 위해 하루 +450 kcal가 추가로 필요합니다. 필수 미량영양소로는 엽산(신경관 결손 예방을 위한 400~600 mcg/일), 철분(27 mg/일), 칼슘(1,000 mg/일), 콜린(450 mg/일) 및 하루 2.5~3.0리터의 충분한 수분 섭취가 권장됩니다.',
+        limitationsTitle: '임상 주의 신호, 임신중독증(자간전증) 및 위험 징후',
+        limitationsText: '본 체중 증가 권장치는 단태아 임신을 기준으로 한 지침입니다. 다음 증상이 나타나면 즉시 산부인과 전문의의 진료를 받아야 합니다: (1) 임신 중기나 후기에 일주일 만에 1kg 이상 체중이 급격히 증가하고 얼굴이나 손 부종, 심한 두통, 시야 흐림이 동반되는 경우—임신중독증(자간전증)의 전형적인 경고 신호입니다; (2) 심한 입덧(임신오조)으로 인한 지속적인 체중 감소—태아 자궁내 성장지연(IUGR) 위험이 있습니다; (3) 임신 24~28주 사이에 시행하는 임신성 당뇨병(GDM) 선별 검사. 산모와 태아의 건강을 위해 반드시 정기 산전 검진을 받으시기 바랍니다.',
+        medicalNoticeTitle: '산전 관리 및 의학적 안내',
+        medicalNoticeText: '본 계산기는 미국 의학연구소(IOM) 및 미국산부인과학회(ACOG) 인구 통계 표준에 기반한 교육용 참고 도구입니다. 전문의의 정기 산전 진찰, 정밀 초음파 계측 또는 임상병리 검사를 대신할 수 없으며 다태아(쌍둥이) 임신은 별도의 전문 영양 관리가 필요합니다.'
+      },
+      hi: {
+        domain: 'pregnancy',
+        sectionTitle: 'गर्भावस्था तिमाही वजन प्रक्षेपवक्र एवं नैदानिक दिशानिर्देश',
+        sectionSubtitle: 'साक्ष्य-आधारित वजन मील के पत्थर, आवश्यक प्रसवपूर्व सूक्ष्म पोषक तत्व और नैदानिक सुरक्षा संकेत।',
+        interpretationTitle: 'गर्भावस्था वजन वृद्धि के चरण एवं ऊर्जा आवश्यकताएं',
+        interpretationText: '40 हफ्तों की गर्भावस्था के दौरान वजन वृद्धि एक समान नहीं होती। पहली तिमाही (सप्ताह 1–12) में भ्रूण विकास के लिए अतिरिक्त कैलोरी की आवश्यकता नहीं होती (0 अतिरिक्त kcal/दिन), और आमतौर पर 0.5 से 2.0 किग्रा वजन बढ़ता है जो मुख्य रूप से मातृ रक्त की मात्रा और गर्भाशय ऊतक के विस्तार के कारण होता है। दूसरी तिमाही (सप्ताह 13–27) में दैनिक कैलोरी आवश्यकता लगभग +340 kcal/दिन बढ़ जाती है, जिससे सामान्य बीएमआई पर प्रति सप्ताह ~0.42 किग्रा की स्थिर वृद्धि होती है। तीसरी तिमाही (सप्ताह 28–40) में भ्रूण के तेजी से विकास हेतु +450 kcal/दिन की आवश्यकता होती है। आवश्यक सूक्ष्म पोषक तत्वों में फोलिक एसिड (न्यूरल ट्यूब दोष रोकथाम के लिए 400–600 mcg/दिन), आयरन (27 mg/दिन), कैल्शियम (1,000 mg/दिन), कोलीन (450 mg/दिन) और रोजाना 2.5 से 3.0 लीटर पानी का सेवन शामिल है।',
+        limitationsTitle: 'नैदानिक चेतावनी संकेत, प्री-एक्लेम्पसिया एवं आपात स्थितियां',
+        limitationsText: 'गर्भावस्था वजन लक्ष्य एकल गर्भावस्था के लिए सामान्य दिशानिर्देश हैं। इन चेतावनी संकेतों में तुरंत डॉक्टर से संपर्क करना आवश्यक है: (1) दूसरी या तीसरी तिमाही में एक ही सप्ताह में 1 किग्रा से अधिक का अचानक तीव्र वजन बढ़ना, विशेष रूप से चेहरे या हाथों में सूजन, तेज सिरदर्द या आंखों में धुंधलापन दिखने पर—जो प्री-एक्लेम्पसिया का प्रमुख चेतावनी संकेत है; (2) गंभीर उल्टी (हाइपरएमिसिस ग्रेविडेरम) के कारण लगातार वजन कम होना, जिससे गर्भ में शिशु के धीमे विकास (IUGR) का खतरा होता है; तथा (3) सप्ताह 24 से 28 के बीच जेस्टेशनल डायबिटीज (GDM) की नियमित जांच। हमेशा अपने स्त्री रोग विशेषज्ञ (OB-GYN) से व्यक्तिगत परामर्श लें।',
+        medicalNoticeTitle: 'प्रसवपूर्व एवं प्रसूति स्वास्थ्य अस्वीकरण',
+        medicalNoticeText: 'यह कैलकुलेटर प्रकाशित IOM/ACOG मानकों पर आधारित एक शैक्षणिक संदर्भ उपकरण है। यह व्यक्तिगत डॉक्टर परामर्श, अल्ट्रासाउंड बायोमेट्री या प्रयोगशाला रक्त परीक्षण का विकल्प नहीं है। जुड़वां गर्भावस्था में अलग पोषण लक्ष्यों की आवश्यकता होती है।'
       }
     },
     specialty: {

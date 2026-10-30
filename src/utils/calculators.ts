@@ -99,6 +99,8 @@ export const calculators: CalculatorConfig[] = [
       };
     }
   },
+
+  
   {
     slug: '3d-bmi-calculator',
     name: { en: '3D BMI Calculator', es: 'Calculadora IMC 3D', fr: 'Calculateur IMC 3D', de: '3D BMI Rechner', ko: '3D BMI 계산기', hi: '3D बीएमआई कैलकुलेटर' },
@@ -157,12 +159,12 @@ export const calculators: CalculatorConfig[] = [
       hi: 'वयस्कों के लिए बीएमआई चार्ट - ऊंचाई एवं वजन तालिका (kg, cm, lbs)'
     },
     description: {
-      "en": "Official WHO BMI Chart for adults, men, and women. Interactive BMI scale calculator, height-weight metric lookup tables (kg & cm), WHO categories, and age reference guidance. Free to use with browser-based privacy.",
-      "es": "Tabla oficial de IMC de la OMS para adultos, hombres y mujeres. Calculadora interactiva de escala de IMC, tablas de consulta de altura y peso en sistema métrico (kg y cm), categorías de la OMS y guía de referencia por edad. Uso gratuito con privacidad en el navegador.",
-      "fr": "Tableau d'IMC officiel de l'OMS pour adultes, hommes et femmes. Calculateur d'échelle d'IMC interactif, tableaux de consultation taille-poids en unités métriques (kg et cm), catégories de l'OMS et repères d'âge. Gratuit avec confidentialité sur navigateur.",
-      "de": "Offizielle WHO BMI-Tabelle für Erwachsene, Männer und Frauen. Interaktiver BMI-Skala-Rechner, Größe-Gewicht-Referenztabellen in metrischen Einheiten (kg & cm), WHO-Kategorien und Altersreferenzwerte. Kostenlos und datenschutzorientiert im Browser.",
-      "ko": "성인, 남성 및 여성을 위한 공식 WHO BMI 차트. 대화형 BMI 지수 계산기, 신장-체중 미터법 진단표(kg & cm), WHO 범주 및 연령별 참조 지침을 제공합니다. 가입 없이 브라우저 내 100% 무료 구동.",
-      "hi": "वयस्कों, पुरुषों और महिलाओं के लिए आधिकारिक डब्ल्यूएचओ बीएमआई चार्ट। इंटरएक्टिव बीएमआई स्केल कैलकुलेटर, ऊंचाई-वजन मीट्रिक लुकअप टेबल (kg और cm), डब्ल्यूएचओ श्रेणियां और आयु संदर्भ मार्गदर्शन। मुफ़्त, गोपनीयता-केंद्रित और ब्राउज़र-आधारित।"
+      "en": "Official WHO BMI Chart for adults, men, and women. Interactive BMI scale calculator, height-weight metric lookup tables (kg & cm), standard classification thresholds, and healthy weight guidance. Free to use with browser-based privacy.",
+      "es": "Tabla oficial de IMC de la OMS para adultos, hombres y mujeres. Calculadora interactiva de escala de IMC, tablas de consulta de altura y peso en sistema métrico (kg y cm), umbrales de clasificación y guía de peso saludable. Uso gratuito con privacidad en el navegador.",
+      "fr": "Tableau d'IMC officiel de l'OMS pour adultes, hommes et femmes. Calculateur d'échelle d'IMC interactif, tableaux de consultation taille-poids en unités métriques (kg et cm), seuils de classification et repères santé. Gratuit avec confidentialité sur navigateur.",
+      "de": "Offizielle WHO BMI-Tabelle für Erwachsene, Männer und Frauen. Interaktiver BMI-Skala-Rechner, Größe-Gewicht-Referenztabellen in metrischen Einheiten (kg & cm), Klassifizierungsschwellenwerte und Normalgewicht-Leitfaden. Kostenlos und datenschutzorientiert im Browser.",
+      "ko": "성인, 남성 및 여성을 위한 공식 WHO BMI 차트. 대화형 BMI 지수 계산기, 신장-체중 미터법 진단표(kg & cm), 표준 분류 임계치 및 건강 체중 가이드라인을 제공합니다. 가입 없이 브라우저 내 100% 무료 구동.",
+      "hi": "वयस्कों, पुरुषों और महिलाओं के लिए आधिकारिक डब्ल्यूएचओ बीएमआई चार्ट। इंटरएक्टिव बीएमआई स्केल कैलकुलेटर, ऊंचाई-वजन मीट्रिक लुकअप टेबल (kg और cm), मानक वर्गीकरण सीमाएं और स्वस्थ वजन मार्गदर्शन। मुफ़्त, गोपनीयता-केंद्रित और ब्राउज़र-आधारित।"
     },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number' },
@@ -692,12 +694,91 @@ export const calculators: CalculatorConfig[] = [
       const conv = (v: number) => system === 'imperial' ? v / 0.453592 : v;
       const unitStr = system === 'imperial' ? 'lbs' : 'kg';
 
+      const waistLimit = isM ? 90 : 80;
+      let waistStatus: Record<string, string> = {
+        en: 'Not Provided (Optional)',
+        es: 'No Proporcionado (Opcional)',
+        fr: 'Non Fourni (Optionnel)',
+        de: 'Nicht Angegeben (Optional)',
+        ko: '미입력 (선택 사항)',
+        hi: 'उपलब्ध नहीं (वैकल्पिक)'
+      };
+      let riskStatus: Record<string, string> = {
+        en: 'Evaluated by BMI Alone',
+        es: 'Evaluado Solo por IMC',
+        fr: 'Évalué par l\'IMC Seul',
+        de: 'Nur nach BMI Bewertet',
+        ko: 'BMI 기준 단독 평가',
+        hi: 'केवल बीएमआई द्वारा मूल्यांकित'
+      };
+
+      if (waist > 0) {
+        if (waist >= waistLimit) {
+          waistStatus = {
+            en: isM ? 'Elevated Visceral Risk (≥ 90 cm)' : 'Elevated Visceral Risk (≥ 80 cm)',
+            es: isM ? 'Riesgo Visceral Elevado (≥ 90 cm)' : 'Riesgo Visceral Elevado (≥ 80 cm)',
+            fr: isM ? 'Risque Viscéral Élevé (≥ 90 cm)' : 'Risque Viscéral Élevé (≥ 80 cm)',
+            de: isM ? 'Erhöhtes Viszeralrisiko (≥ 90 cm)' : 'Erhöhtes Viszeralrisiko (≥ 80 cm)',
+            ko: isM ? '복부 내장지방 위험 (≥ 90 cm)' : '복부 내장지방 위험 (≥ 80 cm)',
+            hi: isM ? 'बढ़ा हुआ विसरल जोखिम (≥ 90 सेमी)' : 'बढ़ा हुआ विसरल जोखिम (≥ 80 सेमी)'
+          };
+          if (bmi < 23.0) {
+            riskStatus = {
+              en: 'Normal-Weight Visceral Risk (Action Advised)',
+              es: 'Riesgo Visceral con Peso Normal (Acción Aconsejada)',
+              fr: 'Risque Viscéral à Poids Normal (Action Conseillée)',
+              de: 'Viszeralrisiko bei Normalgewicht (Handlungsempfehlung)',
+              ko: '정상 체중 복부비만 위험 (생활습관 개선 권장)',
+              hi: 'सामान्य वजन में विसरल जोखिम (सक्रियता आवश्यक)'
+            };
+          } else {
+            riskStatus = {
+              en: 'High Combined Cardiometabolic Risk',
+              es: 'Alto Riesgo Cardiometabólico Combinado',
+              fr: 'Risque Cardiométabolique Combiné Élevé',
+              de: 'Hohes Kombiniertes Kardiometabolisches Risiko',
+              ko: '복합 대사 및 심혈관 고위험군',
+              hi: 'उच्च संयुक्त कार्डियोमेटाबॉलिक जोखिम'
+            };
+          }
+        } else {
+          waistStatus = {
+            en: isM ? 'Healthy / Normal (< 90 cm)' : 'Healthy / Normal (< 80 cm)',
+            es: isM ? 'Saludable / Normal (< 90 cm)' : 'Saludable / Normal (< 80 cm)',
+            fr: isM ? 'Sain / Normal (< 90 cm)' : 'Sain / Normal (< 80 cm)',
+            de: isM ? 'Gesund / Normal (< 90 cm)' : 'Gesund / Normal (< 80 cm)',
+            ko: isM ? '정상 허리둘레 (< 90 cm)' : '정상 허리둘레 (< 80 cm)',
+            hi: isM ? 'स्वस्थ / सामान्य (< 90 सेमी)' : 'स्वस्थ / सामान्य (< 80 सेमी)'
+          };
+          if (bmi < 23.0) {
+            riskStatus = {
+              en: 'Optimal / Low Cardiometabolic Risk',
+              es: 'Riesgo Cardiometabólico Bajo / Óptimo',
+              fr: 'Risque Cardiométabolique Faible / Optimal',
+              de: 'Optimales / Niedriges Kardiometabolisches Risiko',
+              ko: '최적 / 낮은 심혈관 및 대사 위험',
+              hi: 'इष्टतम / कम कार्डियोमेटाबॉलिक जोखिम'
+            };
+          } else {
+            riskStatus = {
+              en: 'Moderate Risk (BMI-Driven Action Trigger)',
+              es: 'Riesgo Moderado (Alerta Impulsada por IMC)',
+              fr: 'Risque Modéré (Alerte Liée à l\'IMC)',
+              de: 'Moderates Risiko (BMI-Ausgelöste Aktion)',
+              ko: '주의 단계 (BMI 기반 대사 위험 개시)',
+              hi: 'मध्यम जोखिम (बीएमआई-आधारित चेतावनी)'
+            };
+          }
+        }
+      }
+
       return {
         primary: { value: bmi.toFixed(1), label: { en: 'Asian Adjusted BMI', es: 'IMC Ajustado Asiático', fr: 'IMC Ajusté Asiatique', de: 'Asiatischer BMI-Wert', ko: '아시아인 보정 BMI', hi: 'एशियाई समायोजित बीएमआई' } },
         secondary: [
           { label: { en: 'WHO Asian Category', es: 'Categoría OMS Asiática', fr: 'Catégorie OMS Asiatique', de: 'WHO Asiatische Kategorie', ko: 'WHO 아시아인 범주', hi: 'WHO एशियाई श्रेणी' }, value: cat },
           { label: { en: 'Asian Healthy Weight Window', es: 'Rango de Peso Saludable Asiático', fr: 'Plage de Poids Santé Asiatique', de: 'Asiatisches Gesundes Gewicht', ko: '아시아인 권장 건강 체중 범위', hi: 'एशियाई स्वस्थ वजन सीमा' }, value: `${conv(minHealthy).toFixed(1)} - ${conv(maxHealthy).toFixed(1)}`, unit: unitStr },
-          { label: { en: 'Asian Action Cutoff', es: 'Corte de Acción Asiático', fr: 'Seuil d\'Action Asiatique', de: 'Asien Aktionsschwelle', ko: '아시아인 주의 개시 기준점', hi: 'एशियाई एक्शन कटऑफ' }, value: '23.0 kg/m²' }
+          { label: { en: 'Waist Visceral Risk Status', es: 'Estado de Riesgo en Cintura', fr: 'Statut Risque Tour de Taille', de: 'Taillen-Viszeralrisiko', ko: '허리둘레 복부비만 위험도', hi: 'कमर विसरल जोखिम स्थिति' }, value: waistStatus },
+          { label: { en: 'Combined Cardiometabolic Risk', es: 'Riesgo Cardiometabólico Combinado', fr: 'Risque Cardiométabolique Combiné', de: 'Kombiniertes Stoffwechselrisiko', ko: 'BMI-복부비만 복합 대사 위험도', hi: 'संयुक्त कार्डियोमेटाबॉलिक जोखिम' }, value: riskStatus }
         ]
       };
     }
@@ -1492,7 +1573,7 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: '1rm-calculator',
     name: { en: '1RM Strength Calculator (All Lifts)', es: 'Calculadora de Fuerza 1RM (Multiejercicio)', fr: 'Calculateur de Force 1RM (Tous Exercices)', de: '1RM Maximalkraft Rechner (Alle Übungen)', ko: '1RM 종합 근력 계산기 (3대 운동)', hi: '1RM शक्ति कैलकुलेटर (समस्त लिफ्ट्स)' },
-    title: { en: '1RM Strength Calculator – One Rep Max (Bench Press, Squat, Deadlift)', es: 'Calculadora de Fuerza 1RM – One Rep Max (Press, Sentadilla, Peso Muerto)', fr: 'Calculateur de Force 1RM – Rep Max (Développé Couché, Squat, Soulevé de Terre)', de: '1RM Maximalkraft Rechner – 1 Rep Max (Bankdrücken, Kniebeuge, Kreuzheben)', ko: '1RM 종합 근력 계산기 – 1회 최대 중량 (벤치프레스, 스쿼트, 데드리프트)', hi: '1RM शक्ति कैलकुलेटर - वन रेप मैक्स (बेंच प्रेस, स्क्वाट, डेडलिफ्ट)' },
+    title: { en: '1RM Strength Calculator – One Rep Max (Bench Press, Squat, Deadlift & OHP)', es: 'Calculadora de Fuerza 1RM – One Rep Max (Press Banca, Sentadilla, Peso Muerto, OHP)', fr: 'Calculateur de Force 1RM – Rep Max (Développé Couché, Squat, Soulevé de Terre, Militaire)', de: '1RM Maximalkraft Rechner – 1 Rep Max (Bankdrücken, Kniebeuge, Kreuzheben & OHP)', ko: '1RM 종합 근력 계산기 – 1회 최대 중량 (벤치프레스, 스쿼트, 데드리프트, OHP)', hi: '1RM शक्ति कैलकुलेटर – वन रेप मैक्स (बेंच प्रेस, स्क्वैट, डेडलिफ्ट व ओवरहेड प्रेस)' },
     description: {
       "en": "Free 1RM Calculator (One-Rep Max Calculator). Calculate one-rep max strength, weightlifting percentages, and rep max benchmarks using Epley and Brzycki equations with privacy-focused, browser calculations.",
       "es": "Calculadora de 1RM (Máximo para una repetición) gratuita. Calcula tu fuerza máxima para 1 repetición, porcentajes de levantamiento y marcas de repetición utilizando las ecuaciones de Epley y Brzycki con cálculos privados en el navegador.",

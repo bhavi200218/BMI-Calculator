@@ -14,13 +14,13 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "fr": "IMC vs Pourcentage de Graisse : Différences et Portée Scientifique"
     },
     "category": {
-      "en": "Body Composition Analysis",
-      "hi": "शारीरिक संरचना विश्लेषण",
-      "ko": "신체 구성 분석",
-      "de": "Körperzusammensetzung",
-      "es": "Análisis de Composición Corporal",
-      "fr": "Composition Corporelle"
-    },
+    "en": "Body Composition",
+    "hi": "बॉडी कंपोज़िशन",
+    "ko": "체성분 분석",
+    "de": "Körperzusammensetzung",
+    "es": "Composición Corporal",
+    "fr": "Composition Corporelle"
+  },
     "description": {
       "en": "Explore the critical differences between Body Mass Index and Body Fat Percentage. Learn the 2-compartment vs 4-compartment models, normal weight obesity (NWO), and how to combine both metrics.",
       "hi": "बॉडी मास इंडेक्स और बॉडी फैट प्रतिशत के बीच का अंतर। दो और चार कंपार्टमेंट मॉडल, सामान्य वजन में छिपा मोटापा (NWO) और दोनों मापों का सही संयोजन।",
@@ -262,13 +262,13 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "fr": "Comment Mesurer son Taux de Graisse : DEXA, Pince et Impédance"
     },
     "category": {
-      "en": "Measurement Science & Tools",
-      "hi": "मापन विज्ञान और उपकरण",
-      "ko": "측정 과학 및 도구",
-      "de": "Messmethoden & Diagnostik",
-      "es": "Métodos de Medición",
-      "fr": "Méthodes de Mesure"
-    },
+    "en": "Body Composition",
+    "hi": "बॉडी कंपोज़िशन",
+    "ko": "체성분 분석",
+    "de": "Körperzusammensetzung",
+    "es": "Composición Corporal",
+    "fr": "Composition Corporelle"
+  },
     "description": {
       "en": "Comprehensive research-backed comparison of body fat measurement methods. Explore DEXA scans, hydrostatic weighing, skinfold calipers, the U.S. Navy circumference method, and bioimpedance scales.",
       "hi": "बॉडी फैट मापने की 5 प्रमुख विधियों का तुलनात्मक विश्लेषण। जानें डेक्सा स्कैन, हाइड्रोस्टैटिक वेइंग, स्किनफोल्ड कैलिपर्स, नेवी फॉर्मूला और बीआईए स्केल्स की सटीकता।",
@@ -437,13 +437,13 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "fr": "Masse Maigre (LBM) : Comparatif des Formules Boer, James et Hume"
     },
     "category": {
-      "en": "Body Composition Analysis",
-      "hi": "शारीरिक संरचना विश्लेषण",
-      "ko": "신체 구성 분석",
-      "de": "Körperzusammensetzung",
-      "es": "Análisis de Composición Corporal",
-      "fr": "Composition Corporelle"
-    },
+    "en": "Body Composition",
+    "hi": "बॉडी कंपोज़िशन",
+    "ko": "체성분 분석",
+    "de": "Körperzusammensetzung",
+    "es": "Composición Corporal",
+    "fr": "Composition Corporelle"
+  },
     "description": {
       "en": "Evidence-based guide to Lean Body Mass (LBM). Compare Boer, James, and Hume formulas, understand step-by-step calculations, and connect LBM to BMR with Katch-McArdle.",
       "hi": "लीन बॉडी मास (LBM) की प्रमाण-आधारित गाइड। बोअर, जेम्स और ह्यूम सूत्रों की तुलना, चरणबद्ध गणना और कैच-मैकआर्डल सूत्र द्वारा बीएमआर का निर्धारण।",
@@ -593,13 +593,13 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "fr": "Ratio Taille-Hanches (RTH) : Protocole de Mesure et Risques Cardiaques"
     },
     "category": {
-      "en": "Cardiovascular Screening",
-      "hi": "हृदय स्वास्थ्य और स्क्रीनिंग",
-      "ko": "심혈관 건강 선별",
-      "de": "Kardiovaskuläres Screening",
-      "es": "Cribado Cardiovascular",
-      "fr": "Dépistage Cardiovasculaire"
-    },
+    "en": "Body Composition",
+    "hi": "बॉडी कंपोज़िशन",
+    "ko": "체성분 분석",
+    "de": "Körperzusammensetzung",
+    "es": "Composición Corporal",
+    "fr": "Composition Corporelle"
+  },
     "description": {
       "en": "Official guide to the Waist-to-Hip Ratio (WHR). Learn the standardized WHO measuring protocol, android vs gynoid fat distribution, and gender-specific cardiovascular risk thresholds.",
       "hi": "कमर-कूल्हा अनुपात (WHR) की आधिकारिक गाइड। डब्ल्यूएचओ मापन तकनीक, पेट की चर्बी (एंड्रॉइड) बनाम कूल्हे की चर्बी (गाइनॉइड) और हृदय रोग की सीमाएं।",
@@ -742,13 +742,13 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       "fr": "Formules du Poids Idéal : Comparatif Devine, Robinson, Miller et Hamwi"
     },
     "category": {
-      "en": "Pharmacokinetics & Weight Formulas",
-      "hi": "फार्माकोकाइनेटिक्स व वजन फॉर्मूले",
-      "ko": "약동학 및 적정 체중 공식",
-      "de": "Pharmakokinetik & Idealgewicht",
-      "es": "Farmacocinética y Fórmulas de Peso",
-      "fr": "Pharmacocinétique et Poids Idéal"
-    },
+    "en": "Body Composition",
+    "hi": "बॉडी कंपोज़िशन",
+    "ko": "체성분 분석",
+    "de": "Körperzusammensetzung",
+    "es": "Composición Corporal",
+    "fr": "Composition Corporelle"
+  },
     "description": {
       "en": "Scientific comparison of the four major Ideal Body Weight (IBW) equations: Devine, Robinson, Miller, and Hamwi. Learn how research formulas calculate reference weight and adjust for body composition.",
       "hi": "चार प्रमुख आदर्श वजन (IBW) फॉर्मूलों की वैज्ञानिक तुलना। डिवाइन, रॉबिन्सन, मिलर और हामवी समीकरणों के माध्यम से संदर्भ वजन की गणना समझें।",

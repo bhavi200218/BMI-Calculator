@@ -2053,3 +2053,52 @@ export function getBlogRelatedSlugs(slug: string): string[] {
   const meta = blogArticleToolsMap[slug] || blogArticleToolsMap['what-is-bmi'];
   return meta.relatedSlugs;
 }
+
+export const blogArticleRelatedGuides: Record<string, string[]> = {
+  // BMI & Standards
+  'what-is-bmi': ['is-bmi-accurate', 'bmi-chart-for-men-women', 'bmi-vs-body-fat'],
+  'is-bmi-accurate': ['what-is-bmi', 'bmi-vs-body-fat', 'how-to-measure-body-fat-percentage'],
+  'bmi-chart': ['bmi-chart-for-men-women', 'healthy-weight-chart', 'what-is-bmi'],
+  'healthy-weight-chart': ['bmi-chart', 'what-is-bmi', 'ideal-body-weight-formulas'],
+  'bmi-chart-for-men-women': ['what-is-bmi', 'bmi-chart', 'bmi-by-age'],
+  'bmi-by-age': ['age-specific-bmi-charts', 'what-is-bmi', 'healthy-aging-and-sarcopenia'],
+  'bmi-calculator-teens': ['bmi-by-age', 'what-is-bmi', 'healthy-weight-strategies'],
+  'bmi-interpretation-guidelines': ['what-is-bmi', 'is-bmi-accurate', 'healthy-weight-chart'],
+  'age-specific-bmi-charts': ['bmi-by-age', 'what-is-bmi', 'healthy-aging-and-sarcopenia'],
+  // Asian BMI
+  'bmi-calculator-india': ['healthy-bmi-range-indians', 'what-is-bmi', 'is-bmi-accurate'],
+  'healthy-bmi-range-indians': ['bmi-calculator-india', 'what-is-bmi', 'waist-to-hip-ratio-guide'],
+  // Body Composition
+  'bmi-vs-body-fat': ['how-to-measure-body-fat-percentage', 'lean-body-mass-calculation-guide', 'visceral-fat-vs-subcutaneous-fat'],
+  'how-to-measure-body-fat-percentage': ['bmi-vs-body-fat', 'waist-to-hip-ratio-guide', 'lean-body-mass-calculation-guide'],
+  'lean-body-mass-calculation-guide': ['how-to-measure-body-fat-percentage', 'bmi-vs-body-fat', 'daily-protein-intake-science'],
+  'waist-to-hip-ratio-guide': ['visceral-fat-vs-subcutaneous-fat', 'blood-pressure-and-weight', 'what-is-bmi'],
+  'ideal-body-weight-formulas': ['healthy-weight-chart', 'what-is-bmi', 'healthy-weight-strategies'],
+  'visceral-fat-vs-subcutaneous-fat': ['waist-to-hip-ratio-guide', 'bmi-vs-body-fat', 'healthy-calorie-deficit-guide'],
+  'healthy-aging-and-sarcopenia': ['daily-protein-intake-science', 'resistance-training-metabolism', 'bmi-by-age'],
+  // Metabolism & Calorie Deficit
+  'bmr-vs-tdee-calculator': ['how-to-calculate-tdee', 'bmr-formulas-mifflin-vs-harris-benedict', 'healthy-calorie-deficit-guide'],
+  'how-to-calculate-tdee': ['bmr-vs-tdee-calculator', 'walking-calories-and-neat', 'healthy-calorie-deficit-guide'],
+  'bmr-formulas-mifflin-vs-harris-benedict': ['bmr-vs-tdee-calculator', 'how-to-calculate-tdee', 'metabolic-adaptation-weight-loss'],
+  'healthy-calorie-deficit-guide': ['metabolic-adaptation-weight-loss', 'bmr-vs-tdee-calculator', 'healthy-weight-strategies'],
+  'sleep-and-metabolism': ['metabolic-adaptation-weight-loss', 'bmr-vs-tdee-calculator', 'resistance-training-metabolism'],
+  'walking-calories-and-neat': ['how-to-calculate-tdee', 'healthy-calorie-deficit-guide', 'cardiovascular-fitness-resting-heart-rate'],
+  'metabolic-adaptation-weight-loss': ['healthy-calorie-deficit-guide', 'bmr-vs-tdee-calculator', 'resistance-training-metabolism'],
+  'resistance-training-metabolism': ['one-rep-max-strength-guide', 'daily-protein-intake-science', 'metabolic-adaptation-weight-loss'],
+  // Nutrition & Fitness
+  'daily-protein-intake-science': ['macro-split-calculator-guide', 'resistance-training-metabolism', 'one-rep-max-strength-guide'],
+  'macro-split-calculator-guide': ['daily-protein-intake-science', 'healthy-calorie-deficit-guide', 'understanding-nutrition-labels'],
+  'daily-water-intake-guide': ['healthy-weight-strategies', 'cardiovascular-fitness-resting-heart-rate', 'sleep-and-metabolism'],
+  'body-surface-area-mosteller-guide': ['what-is-bmi', 'ideal-body-weight-formulas', 'lean-body-mass-calculation-guide'],
+  'target-heart-rate-training-zones': ['cardiovascular-fitness-resting-heart-rate', 'vo2-max-and-cardio-health', 'walking-calories-and-neat'],
+  'one-rep-max-strength-guide': ['resistance-training-metabolism', 'daily-protein-intake-science', 'target-heart-rate-training-zones'],
+  'vo2-max-and-cardio-health': ['target-heart-rate-training-zones', 'cardiovascular-fitness-resting-heart-rate', 'blood-pressure-and-weight'],
+  'cardiovascular-fitness-resting-heart-rate': ['blood-pressure-and-weight', 'target-heart-rate-training-zones', 'vo2-max-and-cardio-health'],
+  'understanding-nutrition-labels': ['macro-split-calculator-guide', 'daily-protein-intake-science', 'healthy-weight-strategies'],
+  'healthy-weight-strategies': ['healthy-calorie-deficit-guide', 'healthy-weight-chart', 'what-is-bmi'],
+  'blood-pressure-and-weight': ['cardiovascular-fitness-resting-heart-rate', 'waist-to-hip-ratio-guide', 'healthy-weight-strategies']
+};
+
+export function getBlogRelatedArticles(slug: string): string[] {
+  return blogArticleRelatedGuides[slug] || ['what-is-bmi', 'is-bmi-accurate', 'bmi-chart-for-men-women'];
+}

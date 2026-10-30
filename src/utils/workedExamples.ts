@@ -649,6 +649,94 @@ const EXAMPLES: Record<string, ToolData> = {
   },
 
   // 10. Protein Intake Calculator
+  'pregnancy-weight-gain-calculator': {
+    inputs: {
+      en: [
+        { label: "Pre-Pregnancy Weight", value: "60.0 kg (132.3 lbs)" },
+        { label: "Current Weight", value: "66.5 kg (146.6 lbs)" },
+        { label: "Gestational Week", value: "Week 24 (Trimester 2)" }
+      ],
+      es: [
+        { label: "Peso Pre-Embarazo", value: "60.0 kg (132.3 lbs)" },
+        { label: "Peso Actual", value: "66.5 kg (146.6 lbs)" },
+        { label: "Semana de Gestación", value: "Semana 24 (2.º Trimestre)" }
+      ],
+      fr: [
+        { label: "Poids Pré-Grossesse", value: "60,0 kg (132,3 lbs)" },
+        { label: "Poids Actuel", value: "66,5 kg (146,6 lbs)" },
+        { label: "Semaine de Grossesse", value: "Semaine 24 (2e Trimestre)" }
+      ],
+      de: [
+        { label: "Vor-Schwangerschaftsgewicht", value: "60,0 kg (132,3 lbs)" },
+        { label: "Aktuelles Gewicht", value: "66,5 kg (146,6 lbs)" },
+        { label: "Schwangerschaftswoche", value: "Woche 24 (2. Trimester)" }
+      ],
+      ko: [
+        { label: "임신 전 체중", value: "60.0 kg (132.3 lbs)" },
+        { label: "현재 체중", value: "66.5 kg (146.6 lbs)" },
+        { label: "임신 주수", value: "24주차 (임신 중기)" }
+      ],
+      hi: [
+        { label: "गर्भावस्था पूर्व वजन", value: "60.0 किग्रा (132.3 पाउंड)" },
+        { label: "वर्तमान वजन", value: "66.5 किग्रा (146.6 पाउंड)" },
+        { label: "गर्भावस्था सप्ताह", value: "सप्ताह 24 (दूसरी तिमाही)" }
+      ]
+    },
+    steps: {
+      en: [
+        "Step 1: Calculate net gestational weight gain: Current Weight (66.5 kg) − Pre-Pregnancy Weight (60.0 kg) = +6.5 kg (+14.3 lbs)",
+        "Step 2: Identify pre-pregnancy BMI category: Normal Pre-BMI (18.5–24.9) targets 11.5 to 16.0 kg total gain over 40 weeks",
+        "Step 3: Calculate expected target for Week 24: (24 / 40) × total range = 6.9 to 9.6 kg proportional reference target",
+        "Step 4: Assess gestational trajectory: A gain of +6.5 kg at Week 24 aligns closely with IOM & ACOG healthy progression milestones"
+      ],
+      es: [
+        "Paso 1: Calcular la ganancia neta gestacional: Peso Actual (66.5 kg) − Peso Previo (60.0 kg) = +6.5 kg (+14.3 lbs)",
+        "Paso 2: Identificar la categoría de IMC pregestacional: Con IMC normal (18.5–24.9), la meta total recomendada es de 11.5 a 16.0 kg",
+        "Paso 3: Calcular el rango esperado para la semana 24: (24 / 40) × rango total = 6.9 a 9.6 kg de referencia proporcional",
+        "Paso 4: Evaluar la trayectoria gestacional: La ganancia de +6.5 kg en la semana 24 se encuentra en un ritmo saludable según las pautas del IOM y ACOG"
+      ],
+      fr: [
+        "Étape 1 : Calculer la prise de poids nette : Poids actuel (66,5 kg) − Poids avant grossesse (60,0 kg) = +6,5 kg (+14,3 lbs)",
+        "Étape 2 : Identifier la catégorie d'IMC pré-grossesse : Pour un IMC normal (18,5–24,9), l'objectif total IOM est de 11,5 à 16,0 kg",
+        "Étape 3 : Calculer la fourchette proportionnelle à la 24e semaine : (24 / 40) × fourchette totale = 6,9 à 9,6 kg de référence",
+        "Étape 4 : Évaluer la courbe de progression : Un gain de +6,5 kg à 24 semaines traduit une évolution gestationnelle équilibrée et physiologique"
+      ],
+      de: [
+        "Schritt 1: Netto-Gewichtszunahme berechnen: Aktuelles Gewicht (66,5 kg) − Vor-Schwangerschaftsgewicht (60,0 kg) = +6,5 kg (+14,3 lbs)",
+        "Schritt 2: Ausgangs-BMI vor der Schwangerschaft einordnen: Bei normalem BMI (18,5–24,9) empfiehlt das IOM eine Gesamtzunahme von 11,5 bis 16,0 kg",
+        "Schritt 3: Erwarteten Richtwert für Woche 24 ermitteln: (24 / 40) × Gesamtziel = 6,9 bis 9,6 kg proportionaler Richtwert",
+        "Schritt 4: Verlaufskurve bewerten: Eine Zunahme von +6,5 kg in Woche 24 entspricht einem gesunden und stabilen Verlauf nach IOM- und ACOG-Standards"
+      ],
+      ko: [
+        "1단계: 순 임신 체중 증가량 계산: 현재 체중(66.5 kg) − 임신 전 체중(60.0 kg) = +6.5 kg (+14.3 lbs)",
+        "2단계: 임신 전 기준 BMI 분류 확인: 정상 BMI(18.5~24.9) 산모의 40주 총 권장 체중 증가는 11.5 ~ 16.0 kg",
+        "3단계: 24주차 비례 권장 범위 산출: (24 / 40) × 총 목표 범위 = 6.9 ~ 9.6 kg 권장 기준",
+        "4단계: 체중 증가 궤적 평가: 24주차에 +6.5 kg 증가는 미국 의학연구소(IOM) 및 산부인과학회(ACOG) 기준에 부합하는 매우 건강한 진행 상태입니다"
+      ],
+      hi: [
+        "चरण 1: शुद्ध गर्भावस्था वजन वृद्धि की गणना करें: वर्तमान वजन (66.5 किग्रा) − गर्भावस्था पूर्व वजन (60.0 किग्रा) = +6.5 किग्रा (+14.3 पाउंड)",
+        "चरण 2: गर्भावस्था पूर्व बीएमआई श्रेणी पहचानें: सामान्य बीएमआई (18.5–24.9) के लिए 40 सप्ताह में कुल 11.5 से 16.0 किग्रा अनुशंसित है",
+        "चरण 3: सप्ताह 24 के लिए आनुपातिक सीमा: (24 / 40) × कुल सीमा = 6.9 से 9.6 किग्रा संदर्भ सीमा",
+        "चरण 4: वृद्धि प्रक्षेपवक्र का मूल्यांकन: सप्ताह 24 पर +6.5 किग्रा की वृद्धि IOM एवं ACOG दिशानिर्देशों के अनुसार पूर्णतः स्वस्थ और संतुलित है"
+      ]
+    },
+    result: {
+      en: { label: "Gestational Weight Gain (Week 24)", value: "+6.5 kg (+14.3 lbs) — On Track" },
+      es: { label: "Ganancia Ponderal en Semana 24", value: "+6.5 kg (+14.3 lbs) — En Rango Óptimo" },
+      fr: { label: "Prise de Poids Gestationnelle (Semaine 24)", value: "+6,5 kg (+14,3 lbs) — Évolution Normale" },
+      de: { label: "Gewichtszunahme in Schwangerschaftswoche 24", value: "+6,5 kg (+14,3 lbs) — Im Zielbereich" },
+      ko: { label: "임신 24주차 누적 체중 증가", value: "+6.5 kg (+14.3 lbs) — 정상 진행 중" },
+      hi: { label: "गर्भावस्था वजन वृद्धि (सप्ताह 24)", value: "+6.5 किग्रा (+14.3 पाउंड) — संतुलित लक्ष्य में" }
+    },
+    interp: {
+      en: "A weight gain of 6.5 kg by Week 24 reflects healthy gestational progression for a mother with a normal pre-pregnancy BMI. Gestational weight gain is distributed across maternal blood volume expansion (+1.5 kg), the placenta (+0.6 kg), amniotic fluid (+0.8 kg), breast and uterine tissue (+1.5 kg), maternal energy stores (+3.0 kg), and the developing fetus (~0.7 kg at week 24). Continue regular prenatal visits with your healthcare provider.",
+      es: "Un aumento de 6.5 kg hacia la semana 24 indica una evolución gestacional saludable para una madre con IMC previo normal. El peso ganado se distribuye entre el aumento del volumen sanguíneo (+1.5 kg), la placenta (+0.6 kg), el líquido amniótico (+0.8 kg), tejido uterino y mamario (+1.5 kg), reservas maternas (+3.0 kg) y el feto (~0.7 kg a las 24 semanas). Mantenga sus revisiones prenatales periódicas.",
+      fr: "Un gain de 6,5 kg à la 24e semaine témoigne d'une prise de poids gestationnelle saine pour un IMC pré-grossesse normal. Cette prise de poids se répartit entre l'expansion du volume sanguin (+1,5 kg), le placenta (+0,6 kg), le liquide amniotique (+0,8 kg), les tissus utérins et mammaires (+1,5 kg), les réserves maternelles (+3,0 kg) et le fœtus (~0,7 kg à 24 semaines). Poursuivez un suivi régulier avec votre professionnel de santé.",
+      de: "Eine Gewichtszunahme von 6,5 kg bis zur 24. Schwangerschaftswoche spiegelt einen gesunden Verlauf bei normalem Ausgangs-BMI wider. Das zusätzliche Gewicht verteilt sich auf Blutvolumenzunahme (+1,5 kg), Plazenta (+0,6 kg), Fruchtwasser (+0,8 kg), Brust- und Gebärmuttergewebe (+1,5 kg), mütterliche Energiereserven (+3,0 kg) und das heranwachsende Kind (~0,7 kg in Woche 24). Halten Sie die regulären Vorsorgetermine ein.",
+      ko: "임신 전 정상 체중 산모가 24주차에 6.5kg 증가한 것은 매우 건강한 임신 진행을 나타냅니다. 임신 중 체중 증가는 순수 체지방뿐 아니라 모체 혈액량 증가(+1.5kg), 태반(+0.6kg), 양수(+0.8kg), 유선 및 자궁 발달(+1.5kg), 모체 영양 비축(+3.0kg), 태아 성장(24주차 약 0.7kg)으로 자연스럽게 분산됩니다. 정기적인 산전 검진을 꾸준히 유지하세요.",
+      hi: "गर्भावस्था के 24वें सप्ताह तक 6.5 किग्रा वजन बढ़ना सामान्य प्री-प्रेग्नेंसी बीएमआई वाली महिला के लिए एक स्वस्थ प्रगति दर्शाता है। गर्भावस्था में बढ़ा हुआ वजन केवल वसा नहीं होता, बल्कि मातृ रक्त की मात्रा में वृद्धि (+1.5 किग्रा), प्लेसेंटा (+0.6 किग्रा), एमनियोटिक द्रव (+0.8 किग्रा), गर्भाशय व स्तन ऊतक (+1.5 किग्रा), ऊर्जा भंडार (+3.0 किग्रा) और भ्रूण के विकास (24वें सप्ताह में ~0.7 किग्रा) में वितरित होता है। अपने डॉक्टर से नियमित परामर्श जारी रखें।"
+    }
+  },
   'protein-intake-calculator': {
     inputs: {
       en: [{ label: "Body Weight", value: "75.0 kg (165.3 lbs)" }, { label: "Activity Goal", value: "Strength Training & Muscle Growth (1.6 g/kg)" }],

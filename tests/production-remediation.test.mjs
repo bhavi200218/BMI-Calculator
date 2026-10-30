@@ -319,6 +319,8 @@ if (fs.existsSync(path.resolve('dist'))) {
       assert.strictEqual(html.includes('22.857'), false, 'Must NOT contain 22.857');
       assert.strictEqual(html.includes('light clothing without footwear'), false, 'Must NOT describe body weight scale mass');
       assert.strictEqual(html.includes('Completed years of life'), false, 'Must NOT describe chronological age in years');
+      assert.ok(html.includes('85% – 100% 1RM') || html.includes('85% – 100%'), 'Must include 1RM percentage intensity spectrum in infographic');
+      assert.strictEqual(html.includes('Underweight / Low'), false, 'Infographic must NOT contain adult BMI categories');
       assert.ok(html.includes('Real BMI Team') || html.includes('Real BMI'), 'Must have standardized footer attribution');
     });
   });

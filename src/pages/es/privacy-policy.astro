@@ -7,47 +7,185 @@ import PageShell from '../../components/PageShell.astro';
 <Layout 
     title="Política de Privacidad | Real BMI"
     description="Lea la política de privacidad de Real BMI. Todos los cálculos se realizan localmente en su navegador y nunca recopilamos ni almacenamos sus datos de salud."
+    canonicalURL="https://realbmicalculator.com/es/privacy-policy/"
 >
     <Navbar />
     <PageShell
       title="Política de Privacidad"
       eyebrow="Tus datos, tu privacidad"
-      description="Descubre cómo Real BMI protege tus datos y mantiene todos los cálculos seguros y privados."
+      description="Conozca cómo Real BMI protege sus medidas y garantiza la privacidad total de sus cálculos."
       returnUrl="/es/"
       returnLabel="Inicio"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-        <p>En <strong>Real BMI</strong>, consideramos la privacidad del usuario y la seguridad de los datos biométricos como derechos fundamentales. Nuestra plataforma de calculadoras de salud —incluyendo el Índice de Masa Corporal (IMC), la Tasa Metabólica Basal (TMB), el Gasto Energético Total Diario (GETD) y las herramientas de composición corporal— se basa en una arquitectura estricta de privacidad por diseño donde sus parámetros fisiológicos permanecen exclusivamente bajo su control.</p>
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+        
+        <!-- Privacy at a Glance (Quick Summary Card) -->
+        <div class="not-prose p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                Privacidad en Breve
+              </h2>
+              <p class="text-xs text-[var(--muted-foreground)]">
+                Un resumen claro de cómo Real BMI protege su privacidad
+              </p>
+            </div>
+          </div>
 
-        <h2>1. Arquitectura de Cero Recopilación de Datos de Salud</h2>
-        <p>No recopilamos, interceptamos, almacenamos ni transmitimos ningún parámetro biométrico individual. Cuando usted introduce sus medidas corporales (estatura, peso, edad, género biológico, circunferencia de cintura o nivel de actividad), todas las operaciones matemáticas se ejecutan localmente en el motor JavaScript de su propio navegador web. Estos datos nunca salen de su dispositivo ni se transmiten a servidores externos ni bases de datos en la nube.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>No almacenamos su IMC ni sus medidas de salud</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>Los cálculos se ejecutan localmente en su navegador</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>No requiere registro ni creación de cuenta</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>Nunca vendemos ni compartimos sus datos de salud</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium sm:col-span-2">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>Usted tiene control total sobre sus preferencias de cookies y anuncios</span>
+            </div>
+          </div>
+        </div>
 
-        <h2>2. Computación Local y Memoria Efímera</h2>
-        <p>Dado que todo el procesamiento se realiza en su terminal, su sesión es completamente efímera. En el momento en que cierra la pestaña, actualiza el navegador o borra su memoria caché, todos los valores numéricos introducidos y los resultados calculados se eliminan de forma inmediata de la memoria volátil. Real BMI no requiere registros ni cuentas de usuario y no vincula ningún cálculo con direcciones IP identificables.</p>
+        <!-- Core Trust Proposition Callout -->
+        <div class="not-prose p-5 rounded-2xl bg-[var(--accent)]/5 border-l-4 border-[var(--accent)] text-[var(--foreground)] space-y-1">
+          <p class="text-xs uppercase font-display font-bold tracking-wider text-[var(--accent)]">
+            Nuestro Estándar de Privacidad
+          </p>
+          <p class="text-sm sm:text-base font-semibold leading-relaxed">
+            Todos los cálculos se ejecutan exclusivamente en su navegador (lado del cliente).
+          </p>
+          <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+            Su estatura, peso, edad y medidas corporales jamás salen de su dispositivo ni se transmiten a servidores remotos.
+          </p>
+        </div>
 
-        <h2>3. Registros Técnicos de Diagnóstico y Servidor</h2>
-        <p>Como ocurre en la infraestructura estándar de Internet, nuestros servidores de alojamiento registran automáticamente datos técnicos de diagnóstico no identificables personalmente. Esto incluye cadenas de agente de usuario del navegador, versiones del sistema operativo, URL de referencia y geolocalización de alto nivel (país y ciudad) para mitigar ciberataques de denegación de servicio (DDoS) y analizar la latencia de red. Estos registros operativos están completamente disociados del uso de las calculadoras y no contienen ninguna métrica de salud.</p>
+        <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
+          En <strong>Real BMI</strong> consideramos que la privacidad y la seguridad de sus datos de salud son derechos fundamentales. Toda nuestra suite de herramientas está diseñada para que sus datos físicos permanezcan siempre bajo su control exclusivo.
+        </p>
 
-        <h2>4. Analítica Web, Publicidad y Política de Cookies</h2>
-        <p>Real BMI se financia mediante publicidad digital respetuosa y analítica agregada para mantener nuestras herramientas gratuitas:</p>
-        <ul>
-          <li><strong>Google Analytics 4 (Telemetría Anónima):</strong> Previo consentimiento expreso mediante nuestro panel de preferencias, utilizamos Google Analytics 4 para medir estadísticas agregadas y anónimas con anonimización de IP obligatoria. Ningún dato de salud se recopila ni se vincula.</li>
-          <li><strong>Google AdSense (Publicidad Digital):</strong> Con su consentimiento, Google y sus socios certificados emplean cookies para mostrar anuncios no invasivos que financian el alojamiento de las calculadoras.</li>
-          <li><strong>Modo de Consentimiento v2:</strong> Las cookies no esenciales permanecen bloqueadas por defecto hasta que usted otorgue su consentimiento expreso. Puede modificar sus preferencias en cualquier momento a través del enlace "Preferencias de Cookies" en el pie de página. Para más detalles, consulte nuestra <a href="/es/cookie-policy/" class="text-[var(--accent)] underline font-medium">Política de Cookies</a>.</li>
-        </ul>
-        <p>Los usuarios conservan total libertad para gestionar sus preferencias y pueden inhabilitar la publicidad personalizada a través de la <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Configuración de Anuncios de Google</a> o mediante portales como <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a> y la <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Alianza Europea de Publicidad Digital (EDAA)</a>.</p>
+        <!-- 1. Cero Almacenamiento de Datos de Salud -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            1. Cero Almacenamiento de Datos de Salud
+          </h2>
+          <p>
+            No recopilamos, interceptamos, almacenamos ni transmitimos sus mediciones biométricas individuales.
+          </p>
+          <p>
+            Cuando introduce su estatura, peso o edad, todos los cálculos matemáticos se procesan exclusivamente en la memoria local de su navegador mediante JavaScript.
+          </p>
+          <p>
+            Estos números nunca se envían a servidores externos ni se guardan en bases de datos persistentes.
+          </p>
+        </div>
 
-        <h2>5. Cumplimiento Normativo Global: RGPD y CCPA</h2>
-        <p>En estricta conformidad con el Reglamento General de Protección de Datos de la Unión Europea (RGPD) y la Ley de Privacidad del Consumidor de California (CCPA), afirmamos que Real BMI no vende, no alquila ni comercializa información personal o médica con intermediarios de datos. Al no almacenar identificadores personales, los derechos de acceso, rectificación y supresión quedan intrínsecamente salvaguardados.</p>
+        <!-- 2. Computación Local y Sesión Efímera -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            2. Computación Local y Sesión Efímera
+          </h2>
+          <p>
+            Al ejecutarse los cálculos localmente, sus datos existen únicamente mientras mantiene abierta la página.
+          </p>
+          <p>
+            Al cerrar la pestaña o recargar el navegador, todos los valores introducidos se eliminan al instante de la memoria temporal.
+          </p>
+          <p>
+            Real BMI no requiere cuentas de usuario ni vincula puntuaciones con direcciones IP.
+          </p>
+        </div>
 
-        <h2>6. Estándares Criptográficos de Seguridad</h2>
-        <p>Nuestro sitio web implementa cifrado avanzado Transport Layer Security (TLS 1.3), cabeceras HTTP Strict Transport Security (HSTS) y directivas de seguridad de contenido (CSP) para garantizar que toda interacción con nuestras herramientas sea segura, cifrada y protegida contra manipulaciones externas.</p>
+        <!-- 3. Diagnósticos Técnicos Estándar -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            3. Diagnósticos Técnicos Estándar
+          </h2>
+          <p>
+            Nuestros servidores generan registros rutinarios de acceso técnico no personal (como tipo de navegador y sistema operativo) para prevenir ciberataques y garantizar tiempos de carga rápidos.
+          </p>
+          <p>
+            Estos registros están completamente disociados del uso de las calculadoras y no contienen ningún dato de salud.
+          </p>
+        </div>
 
-        <h2>7. Actualizaciones de la Política y Contacto</h2>
-        <p>Nos reservamos el derecho de actualizar esta Política de Privacidad para adaptarla a mejoras técnicas o modificaciones legislativas. Cualquier cambio será publicado de forma inmediata en esta página. Para cualquier consulta sobre nuestras prácticas de privacidad o el funcionamiento del navegador, comuníquese a través de nuestra <a href="/es/contact/" class="text-[var(--accent)] underline font-medium">Página de Contacto</a> o escriba a nuestro correo de soporte: <span class="font-mono text-[var(--accent)] font-medium"><span>support</span><span>&#64;</span><span>realbmicalculator.com</span></span>.</p>
+        <!-- 4. Publicidad Digital y Opciones de Cookies -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            4. Publicidad Digital y Opciones de Cookies
+          </h2>
+          <p>
+            Real BMI se financia mediante publicidad digital respetuosa para mantener todos sus calculadores gratuitos y accesibles:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>Google AdSense:</strong> Proveedores terceros utilizan cookies para mostrar anuncios basados en visitas anteriores a este o a otros sitios.</li>
+            <li><strong>Desactivación de Anuncios Personalizados:</strong> Puede desactivar la publicidad personalizada en cualquier momento a través de <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Google Ads Settings</a> o <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">aboutads.info</a>.</li>
+            <li><strong>Gestión de Consentimiento:</strong> Cumplimos con Google Consent Mode v2. Las cookies no esenciales solo se activan si usted da su consentimiento expreso.</li>
+          </ul>
+        </div>
 
-        <h2>8. Revisión Editorial de Contenidos y Protección de Datos Personales</h2>
-        <p>En estricto cumplimiento de las Políticas para Editores de Google AdSense y los estándares de privacidad internacionales, Real BMI aplica un proceso riguroso de revisión de contenidos antes de publicar cualquier algoritmo o guía. Nuestro portal no admite foros abiertos, secciones de comentarios ni directorios públicos de usuarios que expongan datos personales como números telefónicos, direcciones físicas o correos electrónicos. Todas las comunicaciones recibidas son privadas y nunca se publican en entradas web públicas.</p>
+        <!-- 5. Sus Derechos de Privacidad (RGPD y CCPA) -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            5. Sus Derechos de Privacidad (RGPD y CCPA)
+          </h2>
+          <p>
+            Garantizamos el pleno respeto de sus derechos bajo normativas internacionales:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>No Venta de Datos:</strong> Real BMI no vende ni comercializa datos de salud con intermediarios comerciales.</li>
+            <li><strong>Supresión Automática:</strong> Al no conservar registros en servidores, su información se elimina por defecto al cerrar la sesión.</li>
+            <li><strong>Control de Preferencias:</strong> Puede cambiar sus preferencias de cookies en cualquier momento en nuestro <a href="/es/cookie-policy/" class="text-[var(--accent)] underline font-medium">Panel de Cookies</a>.</li>
+          </ul>
+        </div>
+
+        <!-- 6. Seguridad y Encriptación -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            6. Seguridad y Encriptación
+          </h2>
+          <p>
+            Utilizamos protocolos modernos de cifrado TLS y cabeceras de seguridad estrictas para garantizar que su conexión sea segura e inaccesible para terceros.
+          </p>
+        </div>
+
+        <!-- 7. Revisión de Contenidos y Privacidad Pública -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            7. Revisión de Contenidos y Privacidad Pública
+          </h2>
+          <p>
+            Toda herramienta o guía se revisa rigurosamente antes de su publicación.
+          </p>
+          <p>
+            No alojamos foros abiertos ni directorios donde información personal identificable pueda ser visible públicamente.
+          </p>
+        </div>
+
+        <!-- 8. Contacto y Soporte -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            8. Contacto y Soporte
+          </h2>
+          <p>
+            Si tiene alguna duda sobre nuestra política de privacidad o el funcionamiento técnico de las herramientas, comuníquese con nuestro equipo a través de la página de <a href="/es/contact/" class="text-[var(--accent)] underline font-medium">Contacto y Soporte</a>.
+          </p>
+        </div>
+
       </div>
     </PageShell>
 </Layout>

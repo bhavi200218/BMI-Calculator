@@ -7,7 +7,6 @@ import LatestArticles from '../../components/LatestArticles.astro';
 import ToolSEOContent from '../../components/ToolSEOContent.astro';
 import ThreeDBodyVisualizer from '../../components/ThreeDBodyVisualizer.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
-import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 import IndianBmiClinicalGuide from '../../components/IndianBmiClinicalGuide.astro';
 import { seoDatabase } from '../../data/seoDatabase';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
@@ -173,24 +172,24 @@ const relevantArticlesBySlug: Record<string, string[]> = {
   'healthy-weight-by-height': ['healthy-weight-chart', 'bmi-by-age', 'bmi-calculator-teens'],
   'bmi-calculator-for-indians': ['healthy-bmi-range-indians', 'bmi-calculator-india'],
   'asian-bmi-calculator': ['what-is-bmi', 'bmi-chart', 'is-bmi-accurate'],
-  'bmr-calculator': ['bmr-vs-tdee-calculator', 'what-is-bmi'],
-  'tdee-calculator': ['bmr-vs-tdee-calculator', 'what-is-bmi'],
-  'maintenance-calorie-calculator': ['bmr-vs-tdee-calculator', 'what-is-bmi'],
-  'calorie-calculator': ['bmr-vs-tdee-calculator', 'healthy-weight-chart'],
-  'macro-calculator': ['bmr-vs-tdee-calculator', 'bmi-vs-body-fat'],
-  'body-fat-calculator': ['bmi-vs-body-fat', 'is-bmi-accurate'],
-  'lean-body-mass-calculator': ['bmi-vs-body-fat', 'is-bmi-accurate'],
-  'ideal-weight-calculator': ['healthy-weight-chart', 'what-is-bmi'],
-  'waist-to-hip-ratio-calculator': ['bmi-vs-body-fat', 'is-bmi-accurate'],
-  'body-surface-area-calculator': ['what-is-bmi', 'is-bmi-accurate'],
-  'heart-rate-zone-calculator': ['is-bmi-accurate', 'bmr-vs-tdee-calculator'],
-  'karvonen-heart-rate-calculator': ['is-bmi-accurate', 'bmr-vs-tdee-calculator'],
-  '1rm-calculator': ['bmi-vs-body-fat', 'is-bmi-accurate'],
-  'one-rep-max-calculator': ['bmi-vs-body-fat', 'is-bmi-accurate'],
-  'protein-intake-calculator': ['bmr-vs-tdee-calculator', 'bmi-vs-body-fat'],
-  'water-intake-calculator': ['bmr-vs-tdee-calculator', 'healthy-weight-chart', 'bmi-calculator-teens'],
-  'pregnancy-weight-gain-calculator': ['what-is-bmi', 'healthy-weight-chart', 'bmi-by-age'],
-  'diabetes-risk-calculator': ['healthy-bmi-range-indians', 'bmi-by-age', 'what-is-bmi']
+  'bmr-calculator': ['bmr-vs-tdee-calculator', 'bmr-formulas-mifflin-vs-harris-benedict', 'how-to-calculate-tdee'],
+  'tdee-calculator': ['how-to-calculate-tdee', 'bmr-vs-tdee-calculator', 'walking-calories-and-neat'],
+  'maintenance-calorie-calculator': ['how-to-calculate-tdee', 'bmr-vs-tdee-calculator', 'healthy-calorie-deficit-guide'],
+  'calorie-calculator': ['healthy-calorie-deficit-guide', 'how-to-calculate-tdee', 'bmr-vs-tdee-calculator'],
+  'macro-calculator': ['macro-split-calculator-guide', 'daily-protein-intake-science', 'how-to-calculate-tdee'],
+  'body-fat-calculator': ['bmi-vs-body-fat', 'how-to-measure-body-fat-percentage', 'lean-body-mass-calculation-guide'],
+  'lean-body-mass-calculator': ['lean-body-mass-calculation-guide', 'bmi-vs-body-fat', 'how-to-measure-body-fat-percentage'],
+  'ideal-weight-calculator': ['healthy-weight-chart', 'ideal-body-weight-formulas', 'what-is-bmi'],
+  'waist-to-hip-ratio-calculator': ['waist-to-hip-ratio-guide', 'visceral-fat-vs-subcutaneous-fat', 'blood-pressure-and-weight'],
+  'body-surface-area-calculator': ['body-surface-area-mosteller-guide', 'is-bmi-accurate', 'what-is-bmi'],
+  'heart-rate-zone-calculator': ['target-heart-rate-training-zones', 'cardiovascular-fitness-resting-heart-rate', 'vo2-max-and-cardio-health'],
+  'karvonen-heart-rate-calculator': ['target-heart-rate-training-zones', 'cardiovascular-fitness-resting-heart-rate', 'vo2-max-and-cardio-health'],
+  '1rm-calculator': ['one-rep-max-strength-guide', 'resistance-training-metabolism', 'daily-protein-intake-science'],
+  'one-rep-max-calculator': ['one-rep-max-strength-guide', 'resistance-training-metabolism', 'daily-protein-intake-science'],
+  'protein-intake-calculator': ['daily-protein-intake-science', 'resistance-training-metabolism', 'macro-split-calculator-guide'],
+  'water-intake-calculator': ['daily-water-intake-guide', 'sleep-and-metabolism', 'walking-calories-and-neat'],
+  'pregnancy-weight-gain-calculator': ['healthy-weight-chart', 'bmi-by-age', 'what-is-bmi'],
+  'diabetes-risk-calculator': ['healthy-bmi-range-indians', 'bmi-by-age', 'visceral-fat-vs-subcutaneous-fat']
 };
 
 const relatedGuidesTitle: Record<string, string> = {
@@ -296,6 +295,75 @@ const relatedGuidesSubtitle: Record<string, string> = {
                 }[lang]}
               </a>
             </p>
+
+            <!-- Quick Jump-Links to Unique Indian Clinical Modules -->
+            <div class="pt-2 flex flex-wrap items-center gap-1.5 text-[11px] font-medium border-t border-amber-500/15">
+              <span class="text-[var(--muted-foreground)] font-semibold mr-0.5">
+                {{
+                  en: 'Jump to Clinical Guide:',
+                  es: 'Ir a la Guía Clínica:',
+                  fr: 'Accès Direct Guide Clinique :',
+                  de: 'Direkt zu klinischen Themen:',
+                  ko: '임상 가이드 바로가기:',
+                  hi: 'त्वरित नैदानिक विषय:'
+                }[lang]}
+              </span>
+              <a href="#thin-fat-phenotype" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--accent)] hover:text-white border border-[var(--border)] transition-colors inline-flex items-center gap-1 text-[var(--foreground)]">
+                <span>🧬</span>
+                <span>{{
+                  en: 'Thin-Fat Phenotype',
+                  es: 'Fenotipo Delgado-Graso',
+                  fr: 'Phénotype Mince-Gras',
+                  de: 'Thin-Fat Phänotyp',
+                  ko: '마른 비만 (Thin-Fat)',
+                  hi: 'थिन-फैट फेनोटाइप'
+                }[lang]}</span>
+              </a>
+              <a href="#waist-guide" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--accent)] hover:text-white border border-[var(--border)] transition-colors inline-flex items-center gap-1 text-[var(--foreground)]">
+                <span>📏</span>
+                <span>{{
+                  en: 'ICMR Waist Guide (90/80cm)',
+                  es: 'Guía Cintura ICMR (90/80cm)',
+                  fr: 'Tour de Taille ICMR (90/80cm)',
+                  de: 'ICMR Taillenumfang (90/80cm)',
+                  ko: 'ICMR 허리둘레 (90/80cm)',
+                  hi: 'कमर गाइड (90/80 सेमी)'
+                }[lang]}</span>
+              </a>
+              <a href="#indian-diet" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--accent)] hover:text-white border border-[var(--border)] transition-colors inline-flex items-center gap-1 text-[var(--foreground)]">
+                <span>🥗</span>
+                <span>{{
+                  en: 'Balanced Indian Thali',
+                  es: 'Thali Indio Equilibrado',
+                  fr: 'Thali Indien Équilibré',
+                  de: 'Ausgewogener Thali-Teller',
+                  ko: '균형 잡힌 탈리 식단',
+                  hi: 'संतुलित भारतीय थाली'
+                }[lang]}</span>
+              </a>
+              <a href="#sample-meal-plans" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--accent)] hover:text-white border border-[var(--border)] transition-colors inline-flex items-center gap-1 text-[var(--foreground)]">
+                <span>📋</span>
+                <span>{{
+                  en: 'Sample Meal Plans',
+                  es: 'Planes de Comidas',
+                  fr: 'Plans de Repas',
+                  de: 'Ernährungspläne',
+                  ko: '식단 구성 예시',
+                  hi: 'आहार योजना (Meal Plans)'
+                }[lang]}</span>
+              </a>
+              <a href="#food-swaps" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--accent)] hover:text-white border border-[var(--border)] transition-colors inline-flex items-center gap-1 text-[var(--foreground)]">
+                <span>🔄</span>
+                <span>{{
+                  en: 'Smart Food Swaps',
+                  es: 'Sustituciones Saludables',
+                  fr: 'Substitutions Saines',
+                  de: 'Smarte Food-Swaps',
+                  ko: '스마트 식재료 대체',
+                  hi: 'स्मार्ट फूड स्वैप'
+                }[lang]}</span>
+              </a>
+            </div>
           </div>
         </aside>
       )}

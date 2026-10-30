@@ -14,13 +14,13 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       "fr": "BMR vs TDEE : Métabolisme de Base et Dépense Énergétique Totale"
     },
     "category": {
-      "en": "Metabolic Science & Energy",
-      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा",
-      "ko": "대사 과학 및 에너지",
-      "de": "Stoffwechsel & Kalorienbedarf",
-      "es": "Gasto Energético y Metabolismo",
-      "fr": "Métabolisme et Dépense Énergétique"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "Learn the physiological differences between Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE). Discover the 4 pillars of metabolism (BMR, NEAT, TEF, EAT) and why eating below BMR is dangerous.",
       "hi": "बेसल मेटाबॉलिक रेट (BMR) और टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) में अंतर। मेटाबॉलिज्म के 4 स्तंभ और बीएमआर से कम कैलोरी खाने के खतरे।",
@@ -196,13 +196,13 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       "fr": "Comment Calculer son TDEE : Facteurs d'Activité et Déficit Calorique"
     },
     "category": {
-      "en": "Metabolic Science & Energy",
-      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा",
-      "ko": "대사 과학 및 에너지",
-      "de": "Stoffwechsel & Kalorienbedarf",
-      "es": "Gasto Energético y Metabolismo",
-      "fr": "Métabolisme et Dépense Énergétique"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "Step-by-step evidence-based methodology for calculating Total Daily Energy Expenditure (TDEE). Learn physical activity level (PAL) multipliers, worked mathematical examples, and how to dial in calories.",
       "hi": "टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) निकालने की वैज्ञानिक विधि। शारीरिक गतिविधि गुणक (PAL), गणितीय उदाहरण और वजन घटाने के लिए सटीक कैलोरी लक्ष्य।",
@@ -365,13 +365,13 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       "fr": "Formules du BMR Comparées : Mifflin-St Jeor vs Harris-Benedict"
     },
     "category": {
-      "en": "Metabolic Science & Energy",
-      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा",
-      "ko": "대사 과학 및 에너지",
-      "de": "Stoffwechsel & Kalorienbedarf",
-      "es": "Gasto Energético y Metabolismo",
-      "fr": "Métabolisme et Dépense Énergétique"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "Research comparison of predictive resting metabolic equations: Mifflin-St Jeor (1990), original Harris-Benedict (1919), revised Roza-Shizgal (1984), and Katch-McArdle.",
       "hi": "बीएमआर फॉर्मूलों का वैज्ञानिक विश्लेषण। जानें कि अमेरिकन डायटेटिक एसोसिएशन मिफलिन-सेंट जियोर समीकरण को सबसे सटीक स्वर्ण मानक क्यों मानती है।",
@@ -506,13 +506,13 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       "fr": "Guide du Déficit Calorique Sain : Rythme Idéal et Maintien Musculaire"
     },
     "category": {
-      "en": "Metabolic Science & Energy",
-      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा",
-      "ko": "대사 과학 및 에너지",
-      "de": "Stoffwechsel & Kalorienbedarf",
-      "es": "Gasto Energético y Metabolismo",
-      "fr": "Métabolisme et Dépense Énergétique"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "Evidence-based guide to setting a sustainable calorie deficit. Understand the Kevin Hall NIH dynamic metabolic model, optimal rates of loss (0.5–1.0% body weight/week), and protein targets.",
       "hi": "साक्ष्य-आधारित कैलोरी डेफिसिट गाइड। केविन हॉल का एनआईएच डायनेमिक मॉडल, सुरक्षित वजन घटाने की दर (0.5-1.0% प्रति सप्ताह) और मेटाबॉलिज्म की सुरक्षा।",
@@ -653,13 +653,13 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       "fr": "Sommeil et Métabolisme : Rythmes Circadiens, Leptine, Ghréline et Dépense Énergétique"
     },
     "category": {
-      "en": "Metabolic Science & Energy",
-      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा",
-      "ko": "대사 과학 및 에너지",
-      "de": "Stoffwechsel & Kalorienbedarf",
-      "es": "Gasto Energético y Metabolismo",
-      "fr": "Métabolisme et Dépense Énergétique"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "Explore the profound scientific link between sleep deprivation and metabolic health. Learn how insufficient sleep alters leptin and ghrelin, increases cortisol, and impairs glucose regulation.",
       "hi": "नींद की कमी और मेटाबॉलिज्म के बीच वैज्ञानिक संबंध। जानें कैसे अपर्याप्त नींद भूख हार्मोन (लेप्टिन व घ्रेलिन) को असंतुलित करती है और इंसुलिन संवेदनशीलता को प्रभावित करती है।",
@@ -774,13 +774,13 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
       "fr": "Calories Brûlées en Marchant et NEAT : Comment le Nombre de Pas Active la Thermogenèse"
     },
     "category": {
-      "en": "Metabolic Science & Energy",
-      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा",
-      "ko": "대사 과학 및 에너지",
-      "de": "Stoffwechsel & Kalorienbedarf",
-      "es": "Gasto Energético y Metabolismo",
-      "fr": "Métabolisme et Dépense Énergétique"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "Discover the science of Non-Exercise Activity Thermogenesis (NEAT). Learn how walking step counts impact daily caloric expenditure, cardiovascular health, and sustainable fat loss.",
       "hi": "नॉन-एक्सरसाइज एक्टिविटी थर्मोजेनेसिस (NEAT) का विज्ञान। समझें कि दैनिक कदमों की संख्या कैसे कैलोरी खर्च, हृदय स्वास्थ्य और वजन घटाने में मदद करती है।",

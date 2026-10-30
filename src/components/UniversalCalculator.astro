@@ -651,12 +651,92 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           const minW = isImp ? minHealthy * 2.20462 : minHealthy;
           const maxW = isImp ? maxHealthy * 2.20462 : maxHealthy;
 
+          const waistLimit = isM ? 90 : 80;
+          const waistMsgs = {
+            en: {
+              healthy: isM ? 'Healthy / Normal (< 90 cm)' : 'Healthy / Normal (< 80 cm)',
+              elevated: isM ? 'Elevated Visceral Risk (≥ 90 cm)' : 'Elevated Visceral Risk (≥ 80 cm)',
+              notProvided: 'Not Provided (Optional)',
+              riskLow: 'Optimal / Low Risk Profile',
+              riskVisceral: 'Normal-Weight Visceral Risk (Action Advised)',
+              riskModerate: 'Moderate Risk (BMI-Driven Action)',
+              riskHigh: 'High Combined Cardiometabolic Risk'
+            },
+            es: {
+              healthy: isM ? 'Saludable / Normal (< 90 cm)' : 'Saludable / Normal (< 80 cm)',
+              elevated: isM ? 'Riesgo Visceral Elevado (≥ 90 cm)' : 'Riesgo Visceral Elevado (≥ 80 cm)',
+              notProvided: 'No Proporcionado (Opcional)',
+              riskLow: 'Perfil de Riesgo Bajo / Óptimo',
+              riskVisceral: 'Riesgo Visceral con Peso Normal (Acción Aconsejada)',
+              riskModerate: 'Riesgo Moderado (Alerta de IMC)',
+              riskHigh: 'Alto Riesgo Cardiometabólico Combinado'
+            },
+            fr: {
+              healthy: isM ? 'Sain / Normal (< 90 cm)' : 'Sain / Normal (< 80 cm)',
+              elevated: isM ? 'Risque Viscéral Élevé (≥ 90 cm)' : 'Risque Viscéral Élevé (≥ 80 cm)',
+              notProvided: 'Non Fourni (Optionnel)',
+              riskLow: 'Profil de Risque Faible / Optimal',
+              riskVisceral: 'Risque Viscéral à Poids Normal (Action Conseillée)',
+              riskModerate: 'Risque Modéré (Seuil d\'Action IMC)',
+              riskHigh: 'Risque Cardiométabolique Combiné Élevé'
+            },
+            de: {
+              healthy: isM ? 'Gesund / Normal (< 90 cm)' : 'Gesund / Normal (< 80 cm)',
+              elevated: isM ? 'Erhöhtes Viszeralrisiko (≥ 90 cm)' : 'Erhöhtes Viszeralrisiko (≥ 80 cm)',
+              notProvided: 'Nicht Angegeben (Optional)',
+              riskLow: 'Optimales / Niedriges Risikoprofil',
+              riskVisceral: 'Viszeralrisiko bei Normalgewicht (Handlungsempfehlung)',
+              riskModerate: 'Moderates Risiko (BMI-Aktionsschwelle)',
+              riskHigh: 'Hohes Kombiniertes Kardiometabolisches Risiko'
+            },
+            ko: {
+              healthy: isM ? '정상 허리둘레 (< 90 cm)' : '정상 허리둘레 (< 80 cm)',
+              elevated: isM ? '복부 내장지방 위험 (≥ 90 cm)' : '복부 내장지방 위험 (≥ 80 cm)',
+              notProvided: '미입력 (선택 사항)',
+              riskLow: '최적 / 낮은 심혈관 및 대사 위험',
+              riskVisceral: '정상 체중 복부비만 위험 (생활습관 개선 권장)',
+              riskModerate: '주의 단계 (BMI 기반 대사 위험 개시)',
+              riskHigh: '복합 대사 및 심혈관 고위험군'
+            },
+            hi: {
+              healthy: isM ? 'स्वस्थ / सामान्य (< 90 सेमी)' : 'स्वस्थ / सामान्य (< 80 सेमी)',
+              elevated: isM ? 'बढ़ा हुआ विसरल जोखिम (≥ 90 सेमी)' : 'बढ़ा हुआ विसरल जोखिम (≥ 80 सेमी)',
+              notProvided: 'उपलब्ध नहीं (वैकल्पिक)',
+              riskLow: 'इष्टतम / कम कार्डियोमेटाबॉलिक जोखिम',
+              riskVisceral: 'सामान्य वजन में विसरल जोखिम (सक्रियता आवश्यक)',
+              riskModerate: 'मध्यम जोखिम (बीएमआई-आधारित चेतावनी)',
+              riskHigh: 'उच्च संयुक्त कार्डियोमेटाबॉलिक जोखिम'
+            }
+          }[lang] || {
+            healthy: isM ? 'Healthy / Normal (< 90 cm)' : 'Healthy / Normal (< 80 cm)',
+            elevated: isM ? 'Elevated Visceral Risk (≥ 90 cm)' : 'Elevated Visceral Risk (≥ 80 cm)',
+            notProvided: 'Not Provided (Optional)',
+            riskLow: 'Optimal / Low Risk Profile',
+            riskVisceral: 'Normal-Weight Visceral Risk (Action Advised)',
+            riskModerate: 'Moderate Risk (BMI-Driven Action)',
+            riskHigh: 'High Combined Cardiometabolic Risk'
+          };
+
+          let waistStatusStr = waistMsgs.notProvided;
+          let combinedRiskStr = bmi < 23.0 ? waistMsgs.riskLow : waistMsgs.riskModerate;
+
+          if (waistCm > 0) {
+            if (waistCm >= waistLimit) {
+              waistStatusStr = waistMsgs.elevated;
+              combinedRiskStr = bmi < 23.0 ? waistMsgs.riskVisceral : waistMsgs.riskHigh;
+            } else {
+              waistStatusStr = waistMsgs.healthy;
+              combinedRiskStr = bmi < 23.0 ? waistMsgs.riskLow : waistMsgs.riskModerate;
+            }
+          }
+
           calculated = {
             primary: { value: bmi.toFixed(1), label: { en: 'Asian Adjusted BMI', es: 'IMC Ajustado Asiático', fr: 'IMC Ajusté Asiatique', de: 'Asiatischer BMI-Wert', ko: '아시아인 보정 BMI', hi: 'एशियाई समायोजित बीएमआई' } },
             secondary: [
               { label: { en: 'WHO Asian Category', es: 'Categoría OMS Asiática', fr: 'Catégorie OMS Asiatique', de: 'WHO Asiatische Kategorie', ko: 'WHO 아시아인 범주', hi: 'WHO एशियाई श्रेणी' }, value: cat },
               { label: { en: 'Asian Healthy Weight Window', es: 'Rango de Peso Saludable Asiático', fr: 'Plage de Poids Santé Asiatique', de: 'Asiatisches Gesundes Gewicht', ko: '아시아인 권장 건강 체중 범위', hi: 'एशियाई स्वस्थ वजन सीमा' }, value: `${minW.toFixed(1)} - ${maxW.toFixed(1)}`, unit: isImp ? 'lbs' : 'kg' },
-              { label: { en: 'Asian Action Cutoff', es: 'Corte de Acción Asiático', fr: 'Seuil d\'Action Asiatique', de: 'Asien Aktionsschwelle', ko: '아시아인 주의 개시 기준점', hi: 'एशियाई एक्शन कटऑफ' }, value: '23.0 kg/m²' }
+              { label: { en: 'Waist Visceral Risk Status', es: 'Estado de Riesgo en Cintura', fr: 'Statut Risque Tour de Taille', de: 'Taillen-Viszeralrisiko', ko: '허리둘레 복부비만 위험도', hi: 'कमर विसरल जोखिम स्थिति' }, value: waistStatusStr },
+              { label: { en: 'Combined Cardiometabolic Risk', es: 'Riesgo Cardiometabólico Combinado', fr: 'Risque Cardiométabolique Combiné', de: 'Kombiniertes Stoffwechselrisiko', ko: 'BMI-복부비만 복합 대사 위험도', hi: 'संयुक्त कार्डियोमेटाबॉलिक जोखिम' }, value: combinedRiskStr }
             ]
           };
         }

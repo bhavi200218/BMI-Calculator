@@ -2,11 +2,10 @@
 import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import PageShell from '../../../components/PageShell.astro';
-import BlogRelatedCalculators from '../../../components/BlogRelatedCalculators.astro';
-import MedicalEEATBanner from '../../../components/MedicalEEATBanner.astro';
+import LatestArticles from '../../../components/LatestArticles.astro';
 import { blogArticles } from '../../../utils/blogArticles';
-import { type Locale } from '../../../utils/calculators';
-import { getBlogCta } from '../../../utils/blogRelatedTools';
+import { calculators, type Locale } from '../../../utils/calculators';
+import { getBlogCta, getBlogRelatedSlugs, getBlogRelatedArticles } from '../../../utils/blogRelatedTools';
 
 export function getStaticPaths() {
   const supportedLocales = ['es', 'fr', 'de', 'ko', 'hi'];
@@ -91,14 +90,47 @@ const blogLabels = {
 };
 
 const bylineLabels: Record<string, { writtenBy: string; author: string; role: string; published: string; updated: string }> = {
-  en: { writtenBy: "Written by", author: "Real BMI Editorial Team", role: "Health Informatics & Research Review Staff", published: "Published", updated: "Updated" },
-  es: { writtenBy: "Escrito por", author: "Equipo Editorial Real BMI", role: "Equipo de Informática de Salud e Investigación", published: "Publicado", updated: "Actualizado" },
-  fr: { writtenBy: "Rédigé par", author: "Équipe Éditoriale Real BMI", role: "Équipe d'Informatique de Santé et de Recherche", published: "Publié le", updated: "Mis à jour" },
-  de: { writtenBy: "Verfasst von", author: "Real BMI Redaktionsteam", role: "Gesundheitsinformatik- & Forschungsteam", published: "Veröffentlicht", updated: "Aktualisiert" },
-  ko: { writtenBy: "작성자", author: "Real BMI 편집팀", role: "건강정보학 및 연구 리뷰팀", published: "게시일", updated: "업데이트" },
-  hi: { writtenBy: "लेखक", author: "Real BMI संपादकीय टीम", role: "स्वास्थ्य सूचना विज्ञान एवं अनुसंधान समीक्षा टीम", published: "प्रकाशित", updated: "अद्यतित" }
+  en: { writtenBy: "Written by", author: "Real BMI Editorial Team", role: "Real BMI Editorial Team", published: "Published", updated: "Updated" },
+  es: { writtenBy: "Escrito por", author: "Equipo Editorial Real BMI", role: "Equipo Editorial Real BMI", published: "Publicado", updated: "Actualizado" },
+  fr: { writtenBy: "Rédigé par", author: "Équipe Éditoriale Real BMI", role: "Équipe Éditoriale Real BMI", published: "Publié le", updated: "Mis à jour" },
+  de: { writtenBy: "Verfasst von", author: "Real BMI Redaktionsteam", role: "Real BMI Redaktionsteam", published: "Veröffentlicht", updated: "Aktualisiert" },
+  ko: { writtenBy: "작성자", author: "Real BMI 편집팀", role: "Real BMI 편집팀", published: "게시일", updated: "업데이트" },
+  hi: { writtenBy: "लेखक", author: "Real BMI संपादकीय टीम", role: "Real BMI संपादकीय टीम", published: "प्रकाशित", updated: "अद्यतित" }
 };
 const byline = bylineLabels[lang] || bylineLabels.en;
+
+const relatedArticleSlugs = getBlogRelatedArticles(slug as string);
+const relatedToolSlugs = getBlogRelatedSlugs(slug as string);
+const relatedCalcs = relatedToolSlugs
+  .map(s => calculators.find(c => c.slug === s))
+  .filter(Boolean);
+
+const relatedGuidesTitle: Record<string, string> = {
+  en: 'Related Evidence-Based Guides',
+  es: 'Guías Basadas en Evidencia Relacionadas',
+  fr: 'Guides Basés sur des Preuves Associés',
+  de: 'Verwandte Evidenzbasierte Leitfäden',
+  ko: '관련 증거 기반 건강 가이드',
+  hi: 'संबंधित साक्ष्य-आधारित गाइड'
+};
+
+const relatedGuidesSubtitle: Record<string, string> = {
+  en: 'Explore complementary health guides, clinical classifications, and physiological reference standards.',
+  es: 'Explora guías de salud complementarias, clasificaciones clínicas y estándares de referencia.',
+  fr: 'Découvrez des guides santé complémentaires, classifications cliniques et repères physiologiques.',
+  de: 'Erkunden Sie ergänzende Gesundheitsleitfäden, klinische Klassifikationen und Referenzstandards.',
+  ko: '보완적인 건강 가이드, 임상 분류 및 생리학적 표준 참조 지침을 확인하세요.',
+  hi: 'पूरक स्वास्थ्य गाइड, नैदानिक वर्गीकरण और शारीरिक संदर्भ मानकों का अन्वेषण करें।'
+};
+
+const relatedToolsLabel: Record<string, string> = {
+  en: 'Explore related tools:',
+  es: 'Explora herramientas relacionadas:',
+  fr: 'Découvrir les outils associés :',
+  de: 'Verwandte Rechner entdecken:',
+  ko: '관련 건강 계산기 바로가기:',
+  hi: 'संबंधित टूल्स देखें:'
+};
 ---
 
 <Layout 
@@ -167,14 +199,20 @@ const byline = bylineLabels[lang] || bylineLabels.en;
           </div>
         )}
 
-        <!-- Editorial Transparency & Quality Standards -->
+        <!-- 1. Related Evidence-Based Guides -->
         <div class="mt-14 not-prose">
-          <MedicalEEATBanner lang={lang} />
+          <LatestArticles 
+            lang={lang}
+            slugs={relatedArticleSlugs}
+            limit={3}
+            title={relatedGuidesTitle[lang] || relatedGuidesTitle.en}
+            subtitle={relatedGuidesSubtitle[lang] || relatedGuidesSubtitle.en}
+          />
         </div>
 
-        <!-- Complementary Calculation Tools & Interactive Next Steps (Shifted to End of Article) -->
-        <div class="mt-14 pt-8 border-t border-[var(--border)] not-prose space-y-8">
-          <div class="p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border-2 border-[var(--accent)]/30 shadow-xl text-center space-y-4">
+        <!-- 2. Calculator CTA (Contextual Interactive Tool) -->
+        <div class="mt-8 not-prose space-y-4">
+          <div class="p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border-2 border-[var(--accent)]/30 shadow-xl text-center space-y-5">
             <h3 class="text-2xl font-bold font-display uppercase tracking-tight text-[var(--foreground)]">{cta.title}</h3>
             <p class="text-base text-[var(--muted-foreground)] max-w-xl mx-auto font-sans">
               {cta.descPrefix} <a href={`/${lang}/${cta.targetSlug}/`} class="text-[var(--accent)] underline font-bold hover:text-[var(--foreground)] transition-colors">{cta.linkText}</a> {cta.descSuffix}
@@ -182,9 +220,22 @@ const byline = bylineLabels[lang] || bylineLabels.en;
             <a href={`/${lang}/${cta.targetSlug}/`} class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105 active:scale-95 shadow-lg text-white">
               {cta.btnText}
             </a>
-          </div>
 
-          <BlogRelatedCalculators articleSlug={slug as string} lang={lang} />
+            <!-- Compact Related Tool Badges -->
+            {relatedCalcs.length > 0 && (
+              <div class="pt-4 border-t border-[var(--border)]/50 flex flex-wrap items-center justify-center gap-2 text-xs">
+                <span class="text-[var(--muted-foreground)] font-medium">{relatedToolsLabel[lang] || relatedToolsLabel.en}</span>
+                {relatedCalcs.map((c) => (
+                  <a 
+                    href={`/${lang}/${c!.slug}/`} 
+                    class="px-3 py-1 rounded-full bg-[var(--muted)]/50 hover:bg-[var(--accent)]/10 text-[var(--foreground)] hover:text-[var(--accent)] border border-[var(--border)] transition-colors font-semibold"
+                  >
+                    {c!.name[lang] || c!.name.en || c!.title[lang] || c!.title.en} →
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </article>
     </PageShell>

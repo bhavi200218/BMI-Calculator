@@ -14,12 +14,12 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     fr: "Qu'est-ce que l'IMC ? Définition, Calcul et Normes OMS"
   },
   category: {
-    en: "BMI & Health Basics",
-    hi: "बीएमआई और स्वास्थ्य मूल बातें",
-    ko: "BMI 기초",
-    de: "BMI & Grundlagen",
-    es: "Conceptos Básicos del IMC",
-    fr: "Bases de l'IMC"
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
   },
   description: {
     en: "Comprehensive evidence-based guide to Body Mass Index (BMI). Learn its historical origins, metric and imperial formulas, WHO weight classification thresholds, Asian action triggers, physiological limitations, and complementary body composition markers.",
@@ -389,12 +389,12 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     fr: "L'IMC est-il Précis ? Analyse Scientifique, Limites et Alternatives"
   },
   category: {
-    en: "Research Evidence & Limitations",
-    hi: "अनुसंधान साक्ष्य और सीमाएं",
-    ko: "연구 근거 및 한계점",
-    de: "Forschungsevidenz & Grenzen",
-    es: "Evidencia de Investigación y Límites",
-    fr: "Évaluation & Limites Scientifiques"
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
   },
   description: {
     en: "An in-depth scientific evaluation of Body Mass Index accuracy. Learn why BMI fails for muscular athletes, older adults, and ethnically diverse populations, and explore superior alternative metrics like DEXA scans, WHtR, and visceral fat imaging.",
@@ -418,11 +418,11 @@ export const bmiArticles: Record<string, BlogArticleData> = {
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
           <h3 class="text-base font-bold text-[var(--accent)]">2. Sarcopenic Obesity & Normal-Weight Metabolic Obesity (MONW)</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Conversely, the most dangerous clinical failure mode of BMI is the false negative. In older adults or sedentary individuals, progressive age-related muscle loss (sarcopenia) reduces total scale weight while visceral adipose tissue steadily accumulates around vital organs. An individual may register a completely "normal" BMI of <strong>22.5 kg/m²</strong>, yet carry over 35% body fat with severe insulin resistance, elevated liver enzymes, and systemic vascular inflammation—a phenomenon recognized medically as "Normal-Weight Obesity" (NWO) or the metabolically obese normal-weight phenotype.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">Conversely, one of the biggest blind spots of BMI is the false negative. In older adults or sedentary individuals, age-related muscle loss reduces total scale weight while visceral fat quietly accumulates around vital organs. An individual may register a completely "normal" BMI of <strong>22.5 kg/m²</strong>, yet carry over 35% body fat with insulin resistance, elevated liver markers, and chronic inflammation—a pattern known as Normal-Weight Obesity (NWO).</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
           <h3 class="text-base font-bold text-[var(--accent)]">3. Anatomical Distribution: Visceral vs. Subcutaneous Adiposity</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">BMI provides zero information regarding anatomical fat distribution. Subcutaneous adipose tissue deposited on the hips and thighs (gynoid pattern) carries minimal cardiometabolic penalty and may even exert protective metabolic effects. In contrast, <em>intra-abdominal visceral fat</em> (android pattern) surrounds the pancreas, liver, and intestines, secreting pro-inflammatory cytokines (IL-6, TNF-alpha) directly into the portal circulation and precipitating atherosclerosis, non-alcoholic steatohepatitis (NASH), and endothelial dysfunction.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">BMI provides zero information regarding where fat is stored. Subcutaneous fat deposited under the skin on the hips and thighs carries minimal health risk. In contrast, <em>deep visceral fat</em> surrounds the liver, pancreas, and intestines, releasing inflammatory compounds directly into the bloodstream and accelerating fatty liver, arterial plaque buildup, and early cardiovascular changes.</p>
         </div>
       </div>
 
@@ -648,13 +648,13 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Tableau Officiel de l'IMC : Guide des Seuils Poids et Taille"
     },
     "category": {
-      "en": "BMI & Health Basics",
-      "hi": "बीएमआई और स्वास्थ्य मूल बातें",
-      "ko": "BMI 기초",
-      "de": "BMI & Grundlagen",
-      "es": "Conceptos Básicos del IMC",
-      "fr": "Bases de l'IMC"
-    },
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
+  },
     "description": {
       "en": "Complete World Health Organization BMI reference chart. Find your exact height and weight intersection, understand the color-coded health risk quadrants, and see Asian population adjustments.",
       "hi": "विश्व स्वास्थ्य संगठन (WHO) का संपूर्ण बीएमआई संदर्भ चार्ट। अपनी लंबाई और वजन का मिलान करें, स्वास्थ्य श्रेणियों को समझें और एशियाई आबादी के विशेष मानक देखें।",
@@ -666,8 +666,8 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     "contentHtml": {
       "en": `
       <h2>The Global Standard: Understanding the Official BMI Chart</h2>
-      <p>A standardized <strong>Body Mass Index (BMI) Chart</strong> translates mathematical anthropometry into an intuitive, visual screening matrix. By aligning an individual's stature along one axis and total body weight along the other, the matrix immediately identifies which international health classification envelope an adult falls into. Established by the World Health Organization (WHO) and integrated into clinical preventive protocols by the National Institutes of Health (NIH) and Centers for Disease Control and Prevention (CDC), the chart provides an objective first-line assessment of cardiometabolic risk.</p>
-      <p>Rather than evaluating body weight in isolation, the chart recognizes that a weight of 75 kg (165 lbs) represents an entirely different physiological profile for an adult standing 155 cm (5'1") compared to one standing 190 cm (6'3"). Below is a clinical breakdown of the matrix, the color-coded risk tiers, and how to accurately interpret your position on the continuum.</p>
+      <p>A standardized <strong>Body Mass Index (BMI) Chart</strong> is an easy-to-read visual guide that links your height to your weight. By finding where your height and weight meet on the grid, you can quickly see which health category you fall into—underweight, healthy weight, overweight, or obesity. Established by the World Health Organization (WHO) and widely used by the CDC and NIH, this chart serves as a practical starting point for understanding weight and general health risk.</p>
+      <p>Rather than judging weight by itself, the chart takes your height into account. A weight of 75 kg (165 lbs) means something very different for someone who is 155 cm (5'1") compared to someone who is 190 cm (6'3"). Below is a straightforward breakdown of the chart, what each color-coded zone means, and how to read your numbers with confidence.</p>
 
       <h2>Comprehensive Adult Height vs. Weight BMI Reference Grid</h2>
       <p>The following standardized reference table provides exact Body Mass Index classifications across common adult statures (metric and imperial) and scale weights:</p>
@@ -754,19 +754,19 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <div class="my-6 space-y-4">
         <div>
           <h3 class="text-base font-bold text-blue-500">1. Underweight Zone (BMI &lt; 18.5 kg/m²)</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Falling below the 18.5 threshold indicates an inadequate energy reserve relative to stature. Clinical risks include protein-calorie undernutrition, compromised immune cell proliferation, delayed wound healing, amenorrhea in females, and progressive osteopenia resulting from reduced mechanical bone loading.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">Falling below the 18.5 threshold indicates that your weight is low relative to your height. Common health concerns in this range include lower energy reserves, weakened immunity, slower recovery from illness, menstrual changes in women, and reduced bone mineral density over time.</p>
         </div>
         <div>
           <h3 class="text-base font-bold text-emerald-500">2. Healthy Normal Envelope (BMI 18.5 – 24.9 kg/m²)</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Large-scale prospective epidemiological investigations (including the Global BMI Mortality Collaboration analyzing over 10.6 million participants) consistently demonstrate that all-cause mortality is lowest within this weight band. Cardiovascular strain is minimized, insulin receptors maintain high physiological sensitivity, and systemic inflammatory markers remain low.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">Large-scale population studies (including the Global BMI Mortality Collaboration analyzing over 10.6 million adults) consistently show that overall health risks and premature mortality are lowest in this range. Strain on your heart is minimized, your body regulates blood sugar more effectively, and inflammation linked to chronic disease remains low.</p>
         </div>
         <div>
           <h3 class="text-base font-bold text-amber-500">3. Overweight Pre-Obesity Band (BMI 25.0 – 29.9 kg/m²)</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">This transition zone marks progressive adipose accumulation. In non-athletic adults, reaching this threshold corresponds to gradual increases in resting blood pressure, elevated fasting triglycerides, and subclinical endothelial dysfunction. For strength-trained individuals, however, this zone frequently represents athletic muscular hypertrophy without metabolic pathology.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">This range indicates extra body weight for your height. In non-athletic adults, gradual increases in this band can be accompanied by higher resting blood pressure, elevated triglycerides, and early cardiovascular changes. For athletes and strength-trained individuals, however, this zone often reflects healthy muscle mass rather than excess body fat.</p>
         </div>
         <div>
           <h3 class="text-base font-bold text-rose-500">4. Obesity Spectrum (Class I: 30.0–34.9, Class II: 35.0–39.9, Class III: &ge;40.0 kg/m²)</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Crossing the 30.0 threshold significantly elevates the odds of developing obstructive sleep apnea, non-alcoholic fatty liver disease (NAFLD), osteoarthritis in weight-bearing joints (knees and hips), and cardiovascular events. Clinical guidelines recommend medical supervision and structured lifestyle or pharmacological intervention.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">A BMI of 30.0 or higher is linked to greater strain on the cardiovascular system and higher risk for type 2 diabetes, sleep apnea, fatty liver, and joint wear (especially on the knees and hips). Healthcare providers typically recommend personalized lifestyle adjustments, balanced nutrition, and regular physical activity to help lower these health risks.</p>
         </div>
       </div>
 
@@ -781,8 +781,8 @@ export const bmiArticles: Record<string, BlogArticleData> = {
 
       <h2>How to Accurately Plot Your Location on the Chart</h2>
       <ol class="space-y-2 my-4">
-        <li><strong>Measure Height Correctly:</strong> Remove footwear, stand upright against a flat vertical wall, look straight ahead in the Frankfort horizontal plane, and record stature to the nearest half-centimeter or quarter-inch.</li>
-        <li><strong>Measure Weight Consistently:</strong> Weigh yourself in the morning upon waking, after emptying your bladder and bowels, before consuming liquids or breakfast, wearing minimal light clothing.</li>
+        <li><strong>Measure Height Correctly:</strong> Remove footwear, stand upright against a flat wall, look straight ahead, and record your stature to the nearest half-centimeter or quarter-inch.</li>
+        <li><strong>Measure Weight Consistently:</strong> Weigh yourself in the morning upon waking, after using the restroom, before breakfast or large drinks, wearing minimal light clothing.</li>
         <li><strong>Find Your Intersection:</strong> Locate your height row and follow horizontally until reaching your current weight column. Note your boundary distance from neighboring categories.</li>
       </ol>
 
@@ -1022,13 +1022,13 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Poids Idéal selon la Taille : Formules Fondées sur des Preuves et Seuils"
     },
     "category": {
-      "en": "Body Composition & Weight",
-      "hi": "शारीरिक संरचना और वजन",
-      "ko": "신체 구성 및 체중",
-      "de": "Körperzusammensetzung & Gewicht",
-      "es": "Composición Corporal y Peso",
-      "fr": "Composition Corporelle"
-    },
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
+  },
     "description": {
       "en": "Find your optimal healthy weight range based on height using WHO standards, the Quetelet equation, Devine ideal body weight formula, and frame size considerations.",
       "hi": "डब्ल्यूएचओ मानकों, क्वेटलेट फॉर्मूला और डिवाइन समीकरण के आधार पर अपनी लंबाई के अनुसार स्वस्थ वजन सीमा जानें। शारीरिक ढांचे के अनुसार सटीक मार्गदर्शन।",
@@ -1040,8 +1040,8 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     "contentHtml": {
       "en": `
       <h2>Research Principles of Healthy Weight by Stature</h2>
-      <p>Determining your optimal healthy body weight is one of the most critical foundational benchmarks in preventive medicine. Rather than representing a rigid, single-number target on a scale, a <strong>healthy body weight</strong> is defined clinically as a <em>statistical weight range</em> for your specific stature that minimizes all-cause mortality, preserves cardiovascular elasticity, maintains normal insulin sensitivity, and prevents degenerative joint diseases such as osteoarthritis.</p>
-      <p>Because individuals possess varying skeletal frame sizes (small, medium, or large wrist and elbow breadths) and genetic variations in lean muscle mass, health authorities utilize an anthropometric continuum rather than a dogmatic number. Below, we detail the mathematical formulas used to derive healthy weight ranges, compare international health reference standards, and provide an evidence-based height-to-weight reference chart.</p>
+      <p>Finding your healthy body weight is a key step toward understanding overall wellness. Rather than aiming for a rigid, single number on the bathroom scale, a <strong>healthy body weight</strong> is best understood as a <em>practical weight range</em> for your height that is associated with lower health risks, supports long-term heart health, helps maintain balanced blood sugar, and reduces excess strain on joints like knees and hips.</p>
+      <p>Because people naturally have different body frames (small, medium, or larger bone structures) and varying amounts of muscle, health organizations recommend a sensible range rather than one fixed goal. Below, we break down the formulas used to calculate these ranges, compare international standards, and provide a clear height-to-weight reference guide.</p>
 
       <h2>Mathematical Derivation of the Healthy Weight Range</h2>
       <p>Under World Health Organization (WHO) and National Institutes of Health (NIH) criteria, an adult's healthy weight window corresponds to a Body Mass Index between <strong>18.5 kg/m²</strong> (lower boundary) and <strong>24.9 kg/m²</strong> (upper boundary). By algebraically rearranging the Quetelet formula (<code>BMI = Weight / Height²</code>), we derive the exact minimum and maximum healthy weights for any given stature:</p>
@@ -1327,13 +1327,13 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Tableau IMC Hommes et Femmes : Différences Biologiques et Graisse"
     },
     "category": {
-      "en": "Biological Differences & Adiposity",
-      "hi": "शारीरिक अंतर और फैट वितरण",
-      "ko": "성별 신체 지표",
-      "de": "Geschlecht & Fettverteilung",
-      "es": "Diferencias de Género y Grasa",
-      "fr": "Différences Hommes-Femmes"
-    },
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
+  },
     "description": {
       "en": "Explore biological differences in Body Mass Index between men and women. Understand why women naturally carry 8-12% more essential body fat, how estrogen and testosterone govern fat storage, and when waist circumference is essential.",
       "hi": "पुरुषों और महिलाओं के बीएमआई में शारीरिक अंतर। जानें कि महिलाओं में आवश्यक फैट 8-12% अधिक क्यों होता है और कमर का माप स्वास्थ्य में क्यों महत्वपूर्ण है।",
@@ -1345,18 +1345,18 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     "contentHtml": {
       "en": `
       <h2>Gender-Specific Anthropometry: The Biological Differences in Body Composition</h2>
-      <p>A frequent question in clinical anthropometry is whether <strong>men and women should use separate Body Mass Index charts</strong>. Under official World Health Organization (WHO) and Centers for Disease Control and Prevention (CDC) guidelines, standard adult BMI categories are strictly unisex. The mathematical calculation—body weight in kilograms divided by stature in meters squared—is calculated identically regardless of biological gender.</p>
-      <p>However, from a physiological and endocrinological perspective, men and women possess radically divergent body compositions at identical BMI values. Below, we examine the hormonal drivers of biological dimorphism in adipose storage, compare essential body fat percentages, explain why standard BMI tables can mask gender-specific health risks, review a side-by-side numerical case study, and examine complementary diagnostic measurements.</p>
+      <p>A frequent question when looking at weight charts is whether <strong>men and women should use separate Body Mass Index (BMI) charts</strong>. Under official World Health Organization (WHO) and Centers for Disease Control and Prevention (CDC) guidelines, standard adult BMI categories are unisex. The mathematical calculation—weight in kilograms divided by height in meters squared—is calculated identically for both men and women.</p>
+      <p>However, beneath the scale weight, men and women have naturally different body compositions and fat storage patterns at the exact same BMI. Hormones like estrogen and testosterone dictate where fat is stored and how muscle develops. Below, we explain why women naturally carry more essential body fat, why fat location matters more than total scale weight, and how to interpret your numbers with confidence.</p>
 
-      <h2>Hormonal Regulation of Adipose Distribution: Estrogen vs. Testosterone</h2>
+      <h2>Hormonal Regulation of Fat Storage: Estrogen vs. Testosterone</h2>
       <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">Female Endocrine Architecture</h3>
-          <p class="text-sm text-[var(--foreground)] mt-2">Circulating estrogens (estradiol) promote the accumulation of <strong>subcutaneous gynoid adipose tissue</strong> predominantly on the gluteofemoral region (hips, thighs, and buttocks). This subcutaneous fat serves essential evolutionary reproductive functions, supplying energy reserves for pregnancy and lactation. Crucially, gluteofemoral subcutaneous fat does not release free fatty acids directly into the hepatic circulation and produces elevated levels of adiponectin, an insulin-sensitizing anti-inflammatory hormone.</p>
+          <h3 class="text-base font-bold text-[var(--accent)]">Female Hormones & Natural Fat Storage (Estrogen)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-2">Estrogen naturally directs body fat to be stored as soft subcutaneous fat—under the skin on the hips, thighs, and buttocks (often called gluteofemoral fat or a pear-shaped pattern). This fat serves vital biological and reproductive roles, providing essential energy reserves. Crucially, fat stored around the hips and thighs is largely protective: it does not crowd internal organs and releases beneficial, anti-inflammatory hormones like adiponectin that support heart and metabolic health.</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">Male Endocrine Architecture</h3>
-          <p class="text-sm text-[var(--foreground)] mt-2">Testosterone and androgenic hormones promote greater skeletal muscle mass development and higher bone mineral density. However, when men enter an energy surplus, excess lipids are preferentially partitioned into <strong>intra-abdominal visceral fat depots</strong> (android pattern) surrounding the intestines, liver, and pancreas. Visceral fat is metabolically hyperactive, releasing inflammatory cytokines (TNF-&alpha;, IL-6) that accelerate atherosclerosis and hepatic steatosis.</p>
+          <h3 class="text-base font-bold text-[var(--accent)]">Male Hormones & Central Fat Storage (Testosterone)</h3>
+          <p class="text-sm text-[var(--foreground)] mt-2">Testosterone naturally supports higher muscle mass density and heavier bone structure. However, when men consume more calories than they burn, excess fat is primarily stored around the waist and belly as deep visceral fat (often called an apple-shaped pattern), surrounding the liver and intestines. Unlike fat on the hips, deep belly fat is metabolically active and releases inflammatory signals that can increase the risk of high blood pressure, fatty liver, and heart disease.</p>
         </div>
       </div>
 
@@ -1366,10 +1366,10 @@ export const bmiArticles: Record<string, BlogArticleData> = {
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
             <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">Adiposity Category</th>
+              <th class="p-3">Body Fat Category</th>
               <th class="p-3 text-blue-500">Men Body Fat %</th>
               <th class="p-3 text-rose-500">Women Body Fat %</th>
-              <th class="p-3">Physiological State</th>
+              <th class="p-3">Physiological Meaning</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)] font-mono">
@@ -1377,7 +1377,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
               <td class="p-3 font-sans font-semibold">Essential Biological Fat</td>
               <td class="p-3 text-blue-500">2% – 5%</td>
               <td class="p-3 text-rose-500">10% – 13%</td>
-              <td class="p-3 font-sans">Minimum physiological lipid required for organ insulation & nerve transmission</td>
+              <td class="p-3 font-sans">Minimum necessary fat for nerve protection, organ cushioning & hormone production</td>
             </tr>
             <tr>
               <td class="p-3 font-sans font-semibold">Athletic Level</td>
@@ -1395,13 +1395,13 @@ export const bmiArticles: Record<string, BlogArticleData> = {
               <td class="p-3 font-sans font-semibold">Acceptable Average</td>
               <td class="p-3 text-blue-500">18% – 24%</td>
               <td class="p-3 text-rose-500">25% – 31%</td>
-              <td class="p-3 font-sans">Typical sedentary population average; low immediate clinical risk</td>
+              <td class="p-3 font-sans">Typical active population range; low immediate health risk</td>
             </tr>
             <tr>
               <td class="p-3 font-sans font-semibold text-rose-500">Clinical Obesity Threshold</td>
               <td class="p-3 text-blue-500 font-bold">&ge; 25%</td>
               <td class="p-3 text-rose-500 font-bold">&ge; 32%</td>
-              <td class="p-3 font-sans text-rose-500">Elevated risk of insulin resistance, dyslipidemia, and metabolic syndrome</td>
+              <td class="p-3 font-sans text-rose-500">Elevated risk of insulin resistance, high triglycerides, and metabolic concerns</td>
             </tr>
           </tbody>
         </table>
@@ -1413,19 +1413,19 @@ export const bmiArticles: Record<string, BlogArticleData> = {
         <p class="text-[var(--foreground)]"><strong>Case A (Adult Male, Age 32):</strong></p>
         <p class="text-[var(--muted-foreground)]">&bull; Body Fat Percentage: ~15.5% (Total Adipose Mass: 11.6 kg)</p>
         <p class="text-[var(--muted-foreground)]">&bull; Lean Skeletal & Organ Mass: 63.4 kg</p>
-        <p class="text-[var(--muted-foreground)]">&bull; Waist Circumference: 81 cm (Low cardiometabolic risk)</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Waist Circumference: 81 cm (Low health risk)</p>
         <p class="text-[var(--foreground)] mt-2"><strong>Case B (Adult Female, Age 32):</strong></p>
         <p class="text-[var(--muted-foreground)]">&bull; Body Fat Percentage: ~25.0% (Total Adipose Mass: 18.8 kg)</p>
         <p class="text-[var(--muted-foreground)]">&bull; Lean Skeletal & Organ Mass: 56.2 kg</p>
-        <p class="text-[var(--muted-foreground)]">&bull; Waist Circumference: 74 cm (Normal healthy gynoid distribution)</p>
-        <p class="text-[var(--foreground)] font-bold mt-2">Clinical Finding: Both individuals register an identical 24.5 BMI within the normal WHO range, yet the female carries 7.2 kg more physiological fat without any cardiovascular penalty, reflecting natural male and female biology.</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Waist Circumference: 74 cm (Healthy natural hip/thigh distribution)</p>
+        <p class="text-[var(--foreground)] font-bold mt-2">Key Takeaway: Both individuals register an identical 24.5 BMI within the normal WHO range, yet the female carries 7.2 kg more natural body fat without any heart health penalty, reflecting healthy biological differences between men and women.</p>
       </div>
 
       <h2>Gender-Specific Waist Circumference and Ratio Guidelines</h2>
-      <p>Because unisex BMI fails to capture gender-specific fat distribution, the World Health Organization and International Diabetes Federation (IDF) established distinct waist circumference thresholds to define central abdominal obesity:</p>
+      <p>Because a unisex BMI scale cannot tell where fat is stored on your body, the World Health Organization (WHO) and International Diabetes Federation (IDF) recommend checking waist circumference alongside your BMI to assess belly fat:</p>
       <ul>
-        <li><strong>Men Action Threshold:</strong> Waist circumference &gt; 94 cm (37 inches) indicates increased cardiometabolic risk; &gt; 102 cm (40 inches) indicates substantial risk.</li>
-        <li><strong>Women Action Threshold:</strong> Waist circumference &gt; 80 cm (31.5 inches) indicates increased cardiometabolic risk; &gt; 88 cm (35 inches) indicates substantial risk.</li>
+        <li><strong>Men Action Threshold:</strong> Waist circumference &gt; 94 cm (37 inches) indicates increased health risk; &gt; 102 cm (40 inches) indicates higher risk.</li>
+        <li><strong>Women Action Threshold:</strong> Waist circumference &gt; 80 cm (31.5 inches) indicates increased health risk; &gt; 88 cm (35 inches) indicates higher risk.</li>
         <li><strong>Asian Specific Thresholds:</strong> For South and East Asian populations, cut-offs are stricter: &gt; 90 cm (35.4 inches) for men and &gt; 80 cm (31.5 inches) for women.</li>
       </ul>
 
@@ -1595,21 +1595,21 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     "datePublished": "2026-04-15",
     "dateModified": "2026-10-28",
     "title": {
-      "en": "BMI by Age: Lifespan Trajectory, Sarcopenia & Senior Guidelines",
-      "hi": "उम्र के अनुसार बीएमआई: जीवन के पड़ाव, मांसपेशी क्षय और बुजुर्गों के दिशानिर्देश",
-      "ko": "연령별 BMI 가이드: 생애주기별 비만도 변화와 노인 비만의 역설",
-      "de": "BMI nach Alter: Lebensphasen, Sarkopenie & Richtwerte für Senioren",
-      "es": "IMC por Edad: Trayectoria Vital, Sarcopenia y Guía para Mayores",
-      "fr": "L'IMC selon l'Âge : Évolution, Sarcopénie et Normes pour Seniors"
+      "en": "BMI by Age: Healthy Weight Ranges, Senior Guidelines (65+) & Sarcopenia",
+      "hi": "उम्र के अनुसार बीएमआई: बुजुर्गों (65+) के लिए गाइड, सार्कोपेनिया व स्वस्थ वजन",
+      "ko": "연령별 BMI 가이드: 65세 이상 고령층 체중 기준, 근감소증 및 장수 지표",
+      "de": "BMI nach Alter: Richtwerte für Senioren (65+), Sarkopenie & Langlebigkeit",
+      "es": "IMC por Edad: Rangos Saludables, Guía para Adultos Mayores (65+) y Sarcopenia",
+      "fr": "IMC selon l'Âge : Repères pour Seniors (65+), Sarcopénie et Longévité"
     },
     "category": {
-      "en": "Age & Lifespan Health",
-      "hi": "उम्र और दीर्घायु स्वास्थ्य",
-      "ko": "연령 및 노년 건강",
-      "de": "Alter & Geriatrie",
-      "es": "Edad y Salud Geriátrica",
-      "fr": "Âge et Gériatrie"
-    },
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
+  },
     "description": {
       "en": "Learn how Body Mass Index interpretation evolves across adulthood. Understand the Geriatric Obesity Paradox, age-related stature compression, sarcopenic obesity, and optimal BMI targets for seniors.",
       "hi": "जानें कि उम्र बढ़ने के साथ बीएमआई का आकलन कैसे बदलता है। जेरियाट्रिक ओबेसिटी पैराडॉक्स, मांसपेशियों का नुकसान (सार्कोपेनिया) और 65+ आयु वर्ग के लिए सुरक्षित वजन सीमा।",
@@ -1621,26 +1621,41 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     "contentHtml": {
       "en": `
       <h2>The Lifespan Continuum: How Age Influences Body Mass Index Interpretation</h2>
-      <p>Body composition is not a static physiological state; it evolves dramatically across every decade of human life. While the standard adult Body Mass Index (BMI) formula—body weight in kilograms divided by stature in meters squared—remains mathematically constant from age 20 to 100, its <strong>clinical interpretation must be adapted to age-specific biological changes</strong>. What represents an ideal, longevity-promoting BMI for a 22-year-old athlete can signify acute malnutrition and frailty in an 82-year-old nursing home resident.</p>
-      <p>Below, we examine the physiological progression of human body composition across four primary life stages, explore the clinical phenomenon known as the <em>Obesity Paradox in Geriatrics</em>, detail how age-related stature compression alters calculated BMI, and provide an evidence-based clinical reference guide.</p>
+      <p>How we evaluate body weight changes naturally as we grow older. While the standard Body Mass Index (BMI) formula—your weight divided by your height squared—is mathematically the same whether you are 25 or 75, <strong>how your doctor interprets that number should change with age</strong>. What represents an ideal, lean weight for a 22-year-old could actually signify frailty and muscle loss in someone over 65.</p>
+
+      <!-- Key Takeaways Quick Reference Box -->
+      <div class="my-6 p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs space-y-3">
+        <div class="flex items-center gap-2 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+          <span class="w-2 h-2 rounded-full bg-[var(--accent)]"></span>
+          Key Takeaways: BMI by Age
+        </div>
+        <ul class="space-y-1.5 text-xs sm:text-sm text-[var(--foreground)] font-medium list-disc pl-5">
+          <li><strong>BMI interpretation evolves with age:</strong> The standard 18.5–24.9 range works well for young and middle-aged adults, but older adults benefit from distinct guidelines.</li>
+          <li><strong>Seniors benefit from slightly higher BMI:</strong> Large gerontological studies show optimal longevity and lowest fall risks in adults over 65 occur at a BMI of <strong>23.5 to 28.0 kg/m²</strong>.</li>
+          <li><strong>Muscle loss can hide body fat:</strong> Sarcopenia (age-related muscle loss) can mask excess fat at completely normal scale weights.</li>
+          <li><strong>Height loss raises BMI artificially:</strong> Natural spinal disc compression (losing 1–3 cm with age) mathematically increases your calculated BMI without any true fat gain.</li>
+        </ul>
+      </div>
+
+      <p>Below, we examine how body composition naturally shifts across each decade of adulthood, why geriatric researchers recommend a slightly higher BMI for seniors (the <em>Geriatric Obesity Paradox</em>), how gradual height loss affects your score, and what target ranges best support longevity.</p>
 
       <h2>The Four Major Life Stages of Anthropometric Evolution</h2>
       <div class="my-6 space-y-4">
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
           <h3 class="text-base font-bold text-[var(--accent)]">1. Early Adulthood (Ages 20 to 39): Peak Bone Mass and Muscular Development</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">During young adulthood, individuals reach peak bone mineral density and maximum baseline skeletal muscle mass. The standard World Health Organization (WHO) healthy range of <strong>18.5 to 24.9 kg/m²</strong> demonstrates its highest diagnostic accuracy during this life stage. Because metabolic rates are elevated and hormonal profiles (growth hormone, testosterone, and estradiol) are robust, excess weight in this cohort almost exclusively reflects dietary energy surplus rather than age-related hormonal shifts.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">During young adulthood, individuals reach peak bone mineral density and maximum baseline muscle mass. The standard World Health Organization (WHO) healthy range of <strong>18.5 to 24.9 kg/m²</strong> demonstrates its highest diagnostic accuracy during this life stage. Because metabolic rates are elevated and growth hormones are robust, extra weight in this cohort almost exclusively reflects dietary energy surplus rather than age-related hormonal shifts.</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
           <h3 class="text-base font-bold text-[var(--accent)]">2. Middle Adulthood (Ages 40 to 64): Metabolic Slowdown & Visceral Redistribution</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Beginning in the fourth decade, resting metabolic rate declines by roughly 1% to 2% per decade, primarily driven by subclinical losses of appendicular lean muscle (sarcopenia) and decreased physical activity. In women, the perimenopausal drop in estrogens prompts a migration of adipose tissue from subcutaneous gluteofemoral depots to visceral abdominal locations. In men, gradual androgen declines lead to reduced muscular tone and increased hepatic fat deposition. An adult may maintain an unchanged scale weight of 70 kg throughout this period while covertly gaining 4 kg of visceral fat and losing 4 kg of muscle.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">Beginning in your forties, resting metabolic rate declines by roughly 1% to 2% per decade, primarily driven by gradual loss of lean muscle mass (sarcopenia) and decreased daily activity. In women, hormonal changes during perimenopause prompt body fat to naturally shift from the hips and thighs toward the belly. In men, gradual androgen declines lead to reduced muscular tone and increased abdominal fat deposition. An adult may maintain an unchanged scale weight of 70 kg throughout this period while covertly gaining 4 kg of visceral fat and losing 4 kg of muscle.</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
           <h3 class="text-base font-bold text-[var(--accent)]">3. Older Adulthood (Ages 65 to 74): The Emergence of Sarcopenic Obesity</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">In early seniority, muscle protein synthesis efficiency decreases in response to dietary amino acids. Adults who do not engage in targeted resistance exercise lose up to 3% to 5% of muscle mass per decade. Sarcopenic obesity—the simultaneous coexistence of high body fat and deficient skeletal muscle mass—frequently emerges. Clinicians advise against aggressive calorie-restriction diets in this age bracket unless accompanied by high protein intake and resistance training, as rapid weight loss accelerates muscular deterioration and fall risk.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">In early seniority, muscle protein synthesis efficiency decreases. Adults who do not engage in regular strength or resistance exercise lose up to 3% to 5% of muscle mass per decade. Sarcopenic obesity—where muscle mass drops while body fat increases, even if total scale weight stays steady—frequently emerges. Clinicians advise against aggressive calorie-restriction diets in this age bracket unless accompanied by high protein intake and resistance training, as rapid weight loss accelerates muscular deterioration and fall risk.</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
           <h3 class="text-base font-bold text-[var(--accent)]">4. Advanced Age (Ages 75+): Frailty and Involuntary Weight Loss</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">In late senescence, involuntary weight loss and cachexia represent severe clinical warning signs. A declining BMI below 22 kg/m² correlates strongly with increased mortality, susceptibility to severe respiratory infections, hip fractures following minor falls, and postoperative complications. Preserving nutritional reserves takes precedence over traditional weight-loss goals.</p>
+          <p class="text-sm text-[var(--foreground)] mt-1">In advanced seniority, involuntary weight loss is a serious medical concern. A declining BMI below 22 kg/m² correlates strongly with increased health complications, susceptibility to respiratory infections, and hip fractures following minor falls. Preserving nutritional reserves and muscle strength takes precedence over traditional weight-loss goals.</p>
         </div>
       </div>
 
@@ -2163,13 +2178,13 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Calculateur d'IMC pour Adolescents : Percentiles et Croissance"
     },
     "category": {
-      "en": "Pediatric & Teen Health",
-      "hi": "किशोर स्वास्थ्य एवं विकास",
-      "ko": "청소년 및 소아 건강",
-      "de": "Jugendgesundheit & Perzentile",
-      "es": "Salud de Adolescentes",
-      "fr": "Santé des Adolescents"
-    },
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
+  },
     "description": {
       "en": "Evidence-based guide to adolescent BMI screening. Learn why static adult cut-offs fail for teens, how CDC and WHO BMI-for-Age percentiles work, the role of Tanner pubertal staging, and healthy adolescent nutrition.",
       "hi": "किशोरों (13-19 वर्ष) के बीएमआई की संपूर्ण प्रमाण-आधारित गाइड। जानें कि वयस्कों के कट-ऑफ किशोरों पर क्यों लागू नहीं होते, सीडीसी पर्सेंटाइल चार्ट कैसे देखें और स्वस्थ खानपान के नियम।",

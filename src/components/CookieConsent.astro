@@ -22,6 +22,7 @@ interface CookieTranslations {
   analyticsDesc: string;
   marketingTitle: string;
   marketingDesc: string;
+  rejectOptional: string;
   savePreferences: string;
   policyLinkText: string;
   closeLabel: string;
@@ -44,6 +45,7 @@ const translations: Record<string, CookieTranslations> = {
     analyticsDesc: "Allows Google Analytics 4 to collect aggregated, anonymous traffic metrics so we can optimize calculator performance and usability.",
     marketingTitle: "Digital Advertising",
     marketingDesc: "Allows Google AdSense to serve non-intrusive advertisements that fund the free development and maintenance of our health tools.",
+    rejectOptional: "Reject Optional",
     savePreferences: "Save Preferences",
     policyLinkText: "Read our Cookie Policy",
     closeLabel: "Close cookie preferences",
@@ -64,6 +66,7 @@ const translations: Record<string, CookieTranslations> = {
     analyticsDesc: "Permite a Google Analytics 4 recopilar métricas de tráfico anónimas para optimizar el rendimiento y la facilidad de uso de los calculadores.",
     marketingTitle: "Publicidad Digital",
     marketingDesc: "Permite a Google AdSense mostrar anuncios no invasivos que financian el desarrollo y mantenimiento gratuito de nuestras herramientas de salud.",
+    rejectOptional: "Rechazar Opcionales",
     savePreferences: "Guardar Preferencias",
     policyLinkText: "Leer Política de Cookies",
     closeLabel: "Cerrar preferencias de cookies",
@@ -84,6 +87,7 @@ const translations: Record<string, CookieTranslations> = {
     analyticsDesc: "Permet à Google Analytics 4 de mesurer la fréquentation de manière agrégée et anonyme pour améliorer les outils.",
     marketingTitle: "Publicité Digitale",
     marketingDesc: "Permet à Google AdSense d'afficher des publicités soutenant le libre accès et la gratuité de nos calculateurs de santé.",
+    rejectOptional: "Refuser Optionnels",
     savePreferences: "Enregistrer mes Choix",
     policyLinkText: "Consulter la Politique de Cookies",
     closeLabel: "Fermer les préférences de cookies",
@@ -104,6 +108,7 @@ const translations: Record<string, CookieTranslations> = {
     analyticsDesc: "Ermöglicht Google Analytics 4 die Erfassung aggregierter, anonymisierter Nutzungsstatistiken zur technischen Optimierung.",
     marketingTitle: "Digitale Werbung",
     marketingDesc: "Ermöglicht Google AdSense dezente Anzeigen, welche die kostenfreie Bereitstellung unserer Rechner finanzieren.",
+    rejectOptional: "Optionale Ablehnen",
     savePreferences: "Auswahl Speichern",
     policyLinkText: "Cookie-Richtlinie lesen",
     closeLabel: "Cookie-Einstellungen schließen",
@@ -124,6 +129,7 @@ const translations: Record<string, CookieTranslations> = {
     analyticsDesc: "계산기 성능과 편의성 향상을 위해 Google Analytics 4를 통한 익명의 집계 트래픽 통계를 수집하도록 허용합니다.",
     marketingTitle: "디지털 광고",
     marketingDesc: "무료 건강 계산기 서비스 운영을 지원하기 위해 Google AdSense 광고 표시를 허용합니다.",
+    rejectOptional: "선택 항목 거부",
     savePreferences: "설정 저장",
     policyLinkText: "쿠키 정책 읽기",
     closeLabel: "쿠키 설정 닫기",
@@ -144,6 +150,7 @@ const translations: Record<string, CookieTranslations> = {
     analyticsDesc: "उपयोगिता को बेहतर बनाने के लिए Google Analytics 4 को अनाम ट्रैफ़िक मेट्रिक्स एकत्र करने की अनुमति देता है।",
     marketingTitle: "डिजिटल विज्ञापन",
     marketingDesc: "Google AdSense विज्ञापनों को सक्षम करता है जो इन स्वास्थ्य उपकरणों को मुफ़्त रखने में सहायता करते हैं।",
+    rejectOptional: "वैकल्पिक अस्वीकार करें",
     savePreferences: "प्राथमिकताएं सहेजें",
     policyLinkText: "कुकी नीति पढ़ें",
     closeLabel: "कुकी प्राथमिकताएं बंद करें",
@@ -298,18 +305,34 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
       </div>
     </div>
 
-    <div class="pt-2 border-t border-[var(--border)] flex flex-wrap items-center justify-between gap-3">
-      <a href={cookiePolicyUrl} class="text-xs text-[var(--accent)] underline hover:text-[var(--foreground)] font-semibold min-h-[48px] inline-flex items-center">
-        {t.policyLinkText}
-      </a>
-      <div class="flex items-center gap-2">
+    <div class="pt-4 border-t border-[var(--border)] space-y-3">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+        <button 
+          id="btnModalRejectOptional" 
+          type="button" 
+          class="min-h-[44px] px-3 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--border)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer text-center focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+        >
+          {t.rejectOptional}
+        </button>
         <button 
           id="btnSavePreferences" 
           type="button" 
-          class="min-h-[48px] px-5 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-md hover:brightness-110 active:scale-95 transition-all cursor-pointer"
+          class="min-h-[44px] px-3 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--card)] hover:bg-[var(--muted)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer text-center shadow-xs focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         >
           {t.savePreferences}
         </button>
+        <button 
+          id="btnModalAcceptAll" 
+          type="button" 
+          class="min-h-[44px] px-3 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-md hover:brightness-110 active:scale-95 transition-all cursor-pointer text-center focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+        >
+          {t.acceptAll}
+        </button>
+      </div>
+      <div class="flex items-center justify-between text-xs">
+        <a href={cookiePolicyUrl} class="text-[var(--accent)] underline hover:text-[var(--foreground)] font-semibold inline-flex items-center">
+          {t.policyLinkText}
+        </a>
       </div>
     </div>
   </div>
@@ -326,6 +349,8 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
     var btnCloseSheet = document.getElementById('btnCloseCookieSheet');
     var btnDismissBanner = document.getElementById('btnDismissBanner');
     var btnSavePrefs = document.getElementById('btnSavePreferences');
+    var btnModalReject = document.getElementById('btnModalRejectOptional');
+    var btnModalAccept = document.getElementById('btnModalAcceptAll');
     var prefAnalytics = document.getElementById('prefAnalytics');
     var prefMarketing = document.getElementById('prefMarketing');
 
@@ -461,6 +486,22 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
           prefAnalytics ? prefAnalytics.checked : false,
           prefMarketing ? prefMarketing.checked : false
         );
+      });
+    }
+
+    if (btnModalReject) {
+      btnModalReject.addEventListener('click', function() {
+        if (prefAnalytics) prefAnalytics.checked = false;
+        if (prefMarketing) prefMarketing.checked = false;
+        savePreferences(false, false);
+      });
+    }
+
+    if (btnModalAccept) {
+      btnModalAccept.addEventListener('click', function() {
+        if (prefAnalytics) prefAnalytics.checked = true;
+        if (prefMarketing) prefMarketing.checked = true;
+        savePreferences(true, true);
       });
     }
 

@@ -14,13 +14,13 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Apport Quotidien en Protéines : Grammes Optimaux pour les Muscles"
     },
     "category": {
-      "en": "Macronutrient Science",
-      "hi": "मैक्रोन्यूट्रिएंट विज्ञान",
-      "ko": "영양 대사 과학",
-      "de": "Sporternährung",
-      "es": "Ciencia de Macronutrientes",
-      "fr": "Nutrition et Protéines"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "Evidence-based guide to daily dietary protein intake. Learn why the 0.8 g/kg RDA is only a minimum floor, the leucine threshold for muscle protein synthesis, and DIAAS protein quality scores.",
       "hi": "दैनिक प्रोटीन की मात्रा का वैज्ञानिक विश्लेषण। जानें कि 0.8 g/kg केवल न्यूनतम सीमा क्यों है, ल्यूसीन ट्रिगर और मांसपेशियों के लिए उच्च गुणवत्ता वाले प्रोटीन स्रोत।",
@@ -168,13 +168,13 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Répartition des Macronutriments : Règle 4-4-9 et Calcul en Grammes"
     },
     "category": {
-      "en": "Macronutrient Science",
-      "hi": "मैक्रोन्यूट्रिएंट विज्ञान",
-      "ko": "영양 대사 과학",
-      "de": "Sporternährung",
-      "es": "Ciencia de Macronutrientes",
-      "fr": "Nutrition et Protéines"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "Learn the physiological Atwater 4-4-9 energy density rule. Calculate exact grams of protein, carbs, and fat tailored to your body composition and training volume.",
       "hi": "मैक्रोन्यूट्रिएंट्स को ग्राम में विभाजित करने की वैज्ञानिक विधि। एटवाटर 4-4-9 कैलोरी नियम, कार्ब्स-प्रोटीन-फैट का अनुपात और लक्ष्य आधारित विभाजन।",
@@ -335,13 +335,13 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Apport Journalier en Eau : Formule par Poids et Contrôle de l'Hydratation"
     },
     "category": {
-      "en": "Fluid Physiology & Hydration",
-      "hi": "जलीय शरीरक्रिया विज्ञान",
-      "ko": "수분 생리학 및 건강",
-      "de": "Hydratation & Gesundheit",
-      "es": "Fisiología de la Hidratación",
-      "fr": "Hydratation et Physiologie"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "Evidence-based hydration science guide. Calculate daily water intake using the 30-35 mL/kg rule, decode the 8-cup myth, and use the validated Armstrong urine color scale.",
       "hi": "प्रमाण-आधारित जलयोजन (हाइड्रेशन) विज्ञान गाइड। 30-35 मिली/किग्रा सूत्र, 8 गिलास पानी के मिथक का सच और आर्मस्ट्रांग यूरिन कलर चार्ट द्वारा जलयोजन जांच।",
@@ -484,13 +484,13 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Surface Corporelle (BSA) : Formules de Mosteller et Du Bois en Médecine"
     },
     "category": {
-      "en": "Pharmacokinetics & Body Metrics",
-      "hi": "फार्माकोकाइनेटिक्स व शारीरिक माप",
-      "ko": "약동학 및 신체 지표",
-      "de": "Pharmakokinetik & Körpermaße",
-      "es": "Farmacocinética y Métricas Corporales",
-      "fr": "Pharmacocinétique et Mesures"
-    },
+    "en": "Body Composition",
+    "hi": "बॉडी कंपोज़िशन",
+    "ko": "체성분 분석",
+    "de": "Körperzusammensetzung",
+    "es": "Composición Corporal",
+    "fr": "Composition Corporelle"
+  },
     "description": {
       "en": "Reference guide to Body Surface Area (BSA). Compare Mosteller and Du Bois equations, understand why chemotherapy and GFR are indexed to BSA, and see step-by-step calculations.",
       "hi": "बॉडी सरफेस एरिया (BSA) का वैज्ञानिक महत्व। मोस्टेलर और डु बोइस सूत्रों की तुलना, कीमोथेरेपी खुराक और किडनी जीएफआर (GFR) में बीएसए की भूमिका।",
@@ -617,13 +617,13 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Zones de Fréquence Cardiaque : Formule de Karvonen et les 5 Zones"
     },
     "category": {
-      "en": "Cardiovascular Physiology & Fitness",
-      "hi": "हृदय-संवहनी व्यायाम शरीरक्रिया विज्ञान",
-      "ko": "심폐 생리학 및 피트니스",
-      "de": "Kardiovaskuläre Leistungsdiagnostik",
-      "es": "Fisiología Cardiovascular y Fitness",
-      "fr": "Physiologie Cardiovasculaire"
-    },
+    "en": "Fitness & Performance",
+    "hi": "फिटनेस और परफॉर्मेंस",
+    "ko": "피트니스 및 운동 능력",
+    "de": "Fitness & Leistung",
+    "es": "Fitness y Rendimiento",
+    "fr": "Fitness & Performance"
+  },
     "description": {
       "en": "Master target heart rate training. Calculate your maximum heart rate with Tanaka (208 - 0.7 &times; Age), use the Karvonen Heart Rate Reserve formula, and train across 5 zones.",
       "hi": "टारगेट हार्ट रेट प्रशिक्षण की वैज्ञानिक गाइड। तनाका सूत्र से अधिकतम हृदय गति, कार्वोनेन हार्ट रेट रिजर्व फॉर्मूला और 5 एरोबिक प्रशिक्षण क्षेत्रों का सही उपयोग।",
@@ -788,13 +788,13 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Guide du 1RM (Répétition Maximale) : Formules Brzycki et Epley"
     },
     "category": {
-      "en": "Cardiovascular Physiology & Fitness",
-      "hi": "हृदय-संवहनी व्यायाम शरीरक्रिया विज्ञान",
-      "ko": "심폐 생리학 및 피트니스",
-      "de": "Kardiovaskuläre Leistungsdiagnostik",
-      "es": "Fisiología Cardiovascular y Fitness",
-      "fr": "Physiologie Cardiovasculaire"
-    },
+    "en": "Fitness & Performance",
+    "hi": "फिटनेस और परफॉर्मेंस",
+    "ko": "피트니스 및 운동 능력",
+    "de": "Fitness & Leistung",
+    "es": "Fitness y Rendimiento",
+    "fr": "Fitness & Performance"
+  },
     "description": {
       "en": "Evidence-based strength science guide to estimating your One-Rep Max (1RM). Compare the Brzycki and Epley equations, understand percentage-based loading, and lift safely.",
       "hi": "वन-रेप मैक्स (1RM) निकालने की वैज्ञानिक गाइड। ब्रज़ीकी और एपले सूत्रों की तुलना, प्रतिशत आधारित लोडिंग चार्ट और बिना चोट के अधिकतम ताकत का आकलन।",
@@ -965,13 +965,13 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Science de la Musculation : Synthèse des Protéines et Taux Métabolique"
     },
     "category": {
-      "en": "Strength & Exercise Physiology",
-      "hi": "स्ट्रेंथ और व्यायाम शरीरक्रिया विज्ञान",
-      "ko": "근력 및 운동 생리학",
-      "de": "Krafttraining & Physiologie",
-      "es": "Fisiología del Ejercicio y Fuerza",
-      "fr": "Physiologie de l'Exercice et Force"
-    },
+    "en": "Fitness & Performance",
+    "hi": "फिटनेस और परफॉर्मेंस",
+    "ko": "피트니스 및 운동 능력",
+    "de": "Fitness & Leistung",
+    "es": "Fitness y Rendimiento",
+    "fr": "Fitness & Performance"
+  },
     "description": {
       "en": "Understand the exercise physiology behind resistance training. Learn how mechanical tension triggers muscle protein synthesis (MPS), preserves resting metabolic rate (BMR), and accelerates fat loss.",
       "hi": "रेजिस्टेंस ट्रेनिंग के पीछे का शारीरिक विज्ञान। समझें कि कैसे वजन उठाना मसल प्रोटीन सिंथेसिस (MPS) को सक्रिय करता है, रेस्टिंग मेटाबॉलिक रेट (BMR) को बनाए रखता है और फैट लॉस को तेज करता है।",
@@ -1074,13 +1074,13 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "VO2 Max et Capacité Aérobie : Valeurs de Référence Cardiovasculaires et Longévité"
     },
     "category": {
-      "en": "Cardiovascular & Fitness Metrics",
-      "hi": "हृदय स्वास्थ्य एवं फिटनेस",
-      "ko": "심혈관 건강 및 피트니스 지표",
-      "de": "Kardiovaskuläre Fitness",
-      "es": "Salud Cardiovascular y Entrenamiento",
-      "fr": "Santé Cardiovasculaire et Entraînement"
-    },
+    "en": "Fitness & Performance",
+    "hi": "फिटनेस और परफॉर्मेंस",
+    "ko": "피트니스 및 운동 능력",
+    "de": "Fitness & Leistung",
+    "es": "Fitness y Rendimiento",
+    "fr": "Fitness & Performance"
+  },
     "description": {
       "en": "Comprehensive guide to VO2 Max (maximal oxygen uptake). Explore age- and gender-specific reference standards, the Cooper 12-minute run protocol, and why cardiorespiratory fitness predicts longevity.",
       "hi": "VO2 Max (अधिकतम ऑक्सीजन उपभोग) की संपूर्ण गाइड। आयु और लिंग के अनुसार संदर्भ मानक, कूपर 12-मिनट टेस्ट और यह समझें कि कार्डियोरेस्पिरेटरी फिटनेस दीर्घायु का सबसे बड़ा संकेतक क्यों है।",
@@ -1205,13 +1205,13 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       "fr": "Comprendre les Étiquettes Nutritionnelles : Portions, Densité Calorique et Sucres Cachés"
     },
     "category": {
-      "en": "Nutrition & Dietary Science",
-      "hi": "पोषण एवं आहार विज्ञान",
-      "ko": "영양 및 식이 과학",
-      "de": "Ernährung & Diätetik",
-      "es": "Nutrición y Ciencia Dietética",
-      "fr": "Nutrition et Diététique"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "Learn how to read food nutrition labels with scientific precision. Master serving size multipliers, calculate the 4-4-9 macronutrient formula, spot hidden sugars, and identify misleading front-of-package marketing claims.",
       "hi": "खाद्य न्यूट्रिशन लेबल को सटीक रूप से पढ़ना सीखें। सर्विंग साइज, 4-4-9 मैक्रोन्यूट्रिएंट फॉर्मूला, विभिन्न नामों से छिपी चीनी और भ्रामक पैकेट दावों की पहचान।",

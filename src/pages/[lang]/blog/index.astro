@@ -15,12 +15,72 @@ const { params } = Astro;
 const lang = (params.lang || 'en') as Locale;
 
 const headers = {
-  en: { title: "BMI & Health Articles (2026 Guide)", desc: "Explore evidence-based health guides on Body Mass Index (BMI), BMR, TDEE, protein intake, and official WHO & CDC healthy reference standards and charts." },
-  es: { title: "Artículos sobre IMC y Salud (Guía 2026)", desc: "Explora guías de salud basadas en evidencia sobre el Índice de Masa Corporal (IMC), BMR, TDEE, requerimiento de proteínas y estándares de salud de la OMS y CDC." },
-  fr: { title: "Articles sur l'IMC et la Santé (Guide 2026)", desc: "Explorez nos guides de santé fondés sur des preuves concernant l'IMC, le BMR, le TDEE, l'apport protéique et les normes de référence de l'OMS et du CDC." },
-  de: { title: "BMI & Gesundheitsartikel (Leitfaden 2026)", desc: "Entdecken Sie evidenzbasierte Gesundheitsleitfäden zu Body-Mass-Index (BMI), BMR, TDEE, Proteinbedarf sowie offiziellen WHO- und CDC-Referenztabellen." },
-  ko: { title: "BMI 및 건강 아티클 (2026 가이드)", desc: "세계보건기구(WHO) 및 질병관리청(CDC) 표준 지침에 따른 체질량지수(BMI), 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 단백질 섭취량 및 건강 체중 관리 종합 아티클 가이드를 확인하세요. 개인정보 수집 없는 안전한 브라우저 연산 제공." },
-  hi: { title: "बीएमआई और स्वास्थ्य लेख (2026 गाइड)", desc: "विश्व स्वास्थ्य संगठन (WHO) व सीडीसी मानकों पर आधारित बॉडी मास इंडेक्स (BMI), BMR, TDEE, प्रोटीन सेवन और स्वस्थ वजन श्रेणियों पर प्रमाणित लेख पढ़ें।" }
+  en: { 
+    title: "Health Articles & Research Guides", 
+    desc: "Explore evidence-based medical and health guides organized across 4 foundational pillars: BMI & Weight, Body Composition, Metabolism & Nutrition, and Fitness & Performance." 
+  },
+  es: { 
+    title: "Artículos y Guías de Salud", 
+    desc: "Explore guías de salud y medicina basadas en evidencia organizadas en 4 pilares: IMC y Peso, Composición Corporal, Metabolismo y Nutrición, y Fitness." 
+  },
+  fr: { 
+    title: "Articles & Guides de Recherche en Santé", 
+    desc: "Explorez des guides médicaux fondés sur des preuves organisés en 4 piliers fondamentaux : IMC & Poids, Composition Corporelle, Métabolisme & Nutrition, et Fitness." 
+  },
+  de: { 
+    title: "Gesundheitsartikel & Leitfäden", 
+    desc: "Entdecken Sie evidenzbasierte Leitfäden zu 4 Kernbereichen: BMI & Gewicht, Körperzusammensetzung, Stoffwechsel & Ernährung und Fitness & Leistung." 
+  },
+  ko: { 
+    title: "건강 정보 및 의학 연구 가이드", 
+    desc: "증거 기반 의학 및 건강 가이드를 4가지 핵심 영역(BMI 및 체중, 체성분, 대사 및 영양, 피트니스 및 운동 능력)별로 확인하세요." 
+  },
+  hi: { 
+    title: "स्वास्थ्य लेख एवं शोध गाइड", 
+    desc: "4 मुख्य श्रेणियों में व्यवस्थित प्रमाण-आधारित स्वास्थ्य गाइड: बीएमआई और वजन, बॉडी कंपोज़िशन, मेटाबॉलिज्म और पोषण, एवं फिटनेस।" 
+  }
+};
+
+const startHereHeaders = {
+  en: {
+    badge: "New Visitors? Start Here",
+    title: "Essential Foundation Guides",
+    desc: "The 5 cornerstone guides to understand Body Mass Index, official WHO thresholds, clinical limitations, and population-specific cutoffs."
+  },
+  es: {
+    badge: "¿Nuevo visitante? Comienza aquí",
+    title: "Guías Fundamentales Esenciales",
+    desc: "Las 5 guías clave para dominar el cálculo del IMC, los umbrales de la OMS, la precisión clínica y las pautas poblacionales."
+  },
+  fr: {
+    badge: "Nouveau visiteur ? Commencez ici",
+    title: "Guides Fondamentaux Essentiels",
+    desc: "Les 5 guides piliers pour comprendre l'Indice de Masse Corporelle, les seuils OMS, les limites cliniques et les repères démographiques."
+  },
+  de: {
+    badge: "Neu hier? Hier starten",
+    title: "Wesentliche Grundlagen-Leitfäden",
+    desc: "Die 5 wichtigsten Leitfäden zu Body-Mass-Index, offiziellen WHO-Grenzwerten, physiologischen Grenzen und populationsspezifischen Richtlinien."
+  },
+  ko: {
+    badge: "처음 방문하셨나요? 여기서 시작하세요",
+    title: "핵심 입문 가이드",
+    desc: "체질량지수(BMI), 세계보건기구(WHO) 기준치, 임상적 한계 및 아시아인 가이드라인을 이해하기 위한 5가지 필수 입문 가이드입니다."
+  },
+  hi: {
+    badge: "नए पाठक? यहाँ से शुरुआत करें",
+    title: "बुनियादी स्वास्थ्य और बीएमआई गाइड",
+    desc: "बॉडी मास इंडेक्स (BMI), विश्व स्वास्थ्य संगठन (WHO) के आधिकारिक मानक, शारीरिक सीमाएं और एशियाई दिशानिर्देशों को समझने के लिए 5 मुख्य लेख।"
+  }
+};
+
+const searchPlaceholders = {
+  en: "Search health guides by topic, formula, or keyword...",
+  es: "Buscar guías de salud por tema o palabra clave...",
+  fr: "Rechercher des guides de santé par sujet ou mot-clé...",
+  de: "Gesundheitsleitfäden nach Thema oder Stichwort durchsuchen...",
+  ko: "주제, 계산 공식 또는 키워드로 검색...",
+  hi: "विषय, फॉर्मूला या कीवर्ड द्वारा स्वास्थ्य गाइड खोजें..."
 };
 
 const homeLabels = {
@@ -32,18 +92,65 @@ const homeLabels = {
   hi: 'होम'
 };
 
+const coreTopics = [
+  { id: 'all', label: { en: 'All Guides', es: 'Todas las Guías', fr: 'Tous les Guides', de: 'Alle Leitfäden', ko: '전체 가이드', hi: 'सभी गाइड' } },
+  { id: 'bmi-weight', label: { en: 'BMI & Weight', es: 'IMC y Peso', fr: 'IMC & Poids', de: 'BMI & Gewicht', ko: 'BMI 및 체중', hi: 'बीएमआई और वजन' } },
+  { id: 'body-composition', label: { en: 'Body Composition', es: 'Composición Corporal', fr: 'Composition Corporelle', de: 'Körperzusammensetzung', ko: '체성분 분석', hi: 'बॉडी कंपोज़िशन' } },
+  { id: 'metabolism-nutrition', label: { en: 'Metabolism & Nutrition', es: 'Metabolismo y Nutrición', fr: 'Métabolisme & Nutrition', de: 'Stoffwechsel & Ernährung', ko: '대사 및 영양', hi: 'मेटाबॉलिज्म और पोषण' } },
+  { id: 'fitness-performance', label: { en: 'Fitness & Performance', es: 'Fitness y Rendimiento', fr: 'Fitness & Performance', de: 'Fitness & Leistung', ko: '피트니스 및 운동 능력', hi: 'फिटनेस और परफॉर्मेंस' } },
+];
+
+function getArticlePillarId(catEn: string): string {
+  const c = catEn.toLowerCase();
+  if (c.includes('bmi') || c.includes('weight')) return 'bmi-weight';
+  if (c.includes('composition')) return 'body-composition';
+  if (c.includes('metabolism') || c.includes('nutrition')) return 'metabolism-nutrition';
+  if (c.includes('fitness') || c.includes('performance')) return 'fitness-performance';
+  return 'bmi-weight';
+}
+
 const h = headers[lang] || headers.en;
+const startH = startHereHeaders[lang] || startHereHeaders.en;
 
 const articleSlugs = Object.keys(blogArticles);
 const articlesList = articleSlugs.map(slug => {
   const item = blogArticles[slug];
+  const catEn = item.category?.en || 'BMI & Weight';
+  const catLocalized = item.category ? (item.category[lang] || catEn) : catEn;
+  const pillarId = getArticlePillarId(catEn);
   return {
     slug,
     title: item.title[lang] || item.title.en,
-    category: item.category ? (item.category[lang] || item.category.en) : 'Health',
+    category: catLocalized,
+    pillarId,
     description: item.description ? (item.description[lang] || item.description.en) : '',
     datePublished: item.datePublished || '2026-01-15',
-    dateModified: item.dateModified || '2026-10-21',
+    dateModified: item.dateModified || '2026-10-25',
+  };
+});
+
+const topicCounts: Record<string, number> = {
+  all: articlesList.length,
+  'bmi-weight': articlesList.filter(a => a.pillarId === 'bmi-weight').length,
+  'body-composition': articlesList.filter(a => a.pillarId === 'body-composition').length,
+  'metabolism-nutrition': articlesList.filter(a => a.pillarId === 'metabolism-nutrition').length,
+  'fitness-performance': articlesList.filter(a => a.pillarId === 'fitness-performance').length,
+};
+
+const editorsPicksSlugs = [
+  { slug: 'what-is-bmi', step: '01', tag: { en: 'Definition & Formulas', es: 'Definición y Fórmulas', fr: 'Définition & Formules', de: 'Definition & Formeln', ko: '정의 및 공식', hi: 'परिभाषा और सूत्र' } },
+  { slug: 'bmi-chart', step: '02', tag: { en: 'Official WHO Matrix', es: 'Matriz Oficial OMS', fr: 'Matrice Officielle OMS', de: 'Offizielle WHO-Matrix', ko: 'WHO 공식 차트', hi: 'डब्ल्यूएचओ चार्ट' } },
+  { slug: 'is-bmi-accurate', step: '03', tag: { en: 'Clinical Nuance & Limits', es: 'Límites Clínicos', fr: 'Limites Cliniques', de: 'Klinische Grenzen', ko: '정확도 및 한계', hi: 'सटीकता और सीमाएं' } },
+  { slug: 'healthy-weight-chart', step: '04', tag: { en: 'Height-to-Weight Range', es: 'Rango Peso-Altura', fr: 'Poids selon Taille', de: 'Gewicht nach Größe', ko: '신장별 적정 체중', hi: 'ऊंचाई अनुसार वजन' } },
+  { slug: 'bmi-calculator-india', step: '05', tag: { en: 'Indian & Asian Standards', es: 'Estándares Asiáticos', fr: 'Normes Asiatiques', de: 'Asiatische Richtlinien', ko: '아시아/인도 기준표', hi: 'भारतीय/एशियाई मानक' } }
+];
+
+const editorsPicks = editorsPicksSlugs.map(pick => {
+  const art = blogArticles[pick.slug];
+  return {
+    ...pick,
+    title: art?.title?.[lang] || art?.title?.en || pick.slug,
+    description: art?.description?.[lang] || art?.description?.en || '',
   };
 });
 ---
@@ -58,47 +165,138 @@ const articlesList = articleSlugs.map(slug => {
 
   <PageShell
     title={h.title}
-    eyebrow="Health Articles & Guides"
+    eyebrow="Evidence-Based Health Library"
     description={h.desc}
     returnUrl={`/${lang}/`}
     returnLabel={homeLabels[lang] || homeLabels.en}
   >
-    <!-- Multilingual Library Notice -->
-    <div class="not-prose mb-6 p-4 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)] text-xs text-[var(--muted-foreground)] flex items-center justify-between gap-3">
-      <span>{{
-        en: "Complete evidence-based health research library available in the authoritative English edition.",
-        es: "Biblioteca completa de investigación en salud basada en evidencia en la edición oficial en inglés.",
-        fr: "Bibliothèque complète de recherche sur la santé fondée sur des preuves dans l'édition officielle en anglais.",
-        de: "Vollständige evidenzbasierte Gesundheitsforschungsbibliothek in der offiziellen englischen Ausgabe.",
-        ko: "공식 영문 에디션에서 전체 증거 기반 건강 연구 라이브러리를 확인하실 수 있습니다.",
-        hi: "संपूर्ण प्रमाण-आधारित स्वास्थ्य अनुसंधान लेख लाइब्रेरी आधिकारिक अंग्रेजी संस्करण में उपलब्ध है।"
-      }[lang]}</span>
-      <a href="/blog/" class="text-[var(--accent)] font-semibold underline shrink-0 hover:text-[var(--foreground)]">
-        {{
-          en: "View English library →",
-          es: "Ver biblioteca en inglés →",
-          fr: "Voir la bibliothèque en anglais →",
-          de: "Englische Bibliothek ansehen →",
-          ko: "영문 라이브러리 보기 →",
-          hi: "अंग्रेजी लाइब्रेरी देखें →"
-        }[lang]}
-      </a>
-    </div>
-    <!-- Category Hub Navigation -->
-    <div class="flex flex-wrap items-center gap-2 mb-8 pb-4 border-b border-[var(--border)]" id="categoryHubNav">
-      <button type="button" class="category-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--accent)] text-white transition-all shadow-xs cursor-pointer" data-filter="all">
-        All Guides ({articlesList.length})
-      </button>
-      {[...new Set(articlesList.map(a => a.category))].map(cat => (
-        <button type="button" class="category-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter={cat}>
-          {cat}
-        </button>
-      ))}
+    <!-- Multilingual Library Notice for non-English -->
+    {lang !== 'en' && (
+      <div class="not-prose mb-8 p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)] text-xs text-[var(--muted-foreground)] flex items-center justify-between gap-3">
+        <span>{{
+          es: "Biblioteca completa de investigación en salud basada en evidencia en la edición oficial en inglés.",
+          fr: "Bibliothèque complète de recherche sur la santé fondée sur des preuves dans l'édition officielle en anglais.",
+          de: "Vollständige evidenzbasierte Gesundheitsforschungsbibliothek in der offiziellen englischen Ausgabe.",
+          ko: "공식 영문 에디션에서 전체 증거 기반 건강 연구 라이브러리를 확인하실 수 있습니다.",
+          hi: "संपूर्ण प्रमाण-आधारित स्वास्थ्य अनुसंधान लेख लाइब्रेरी आधिकारिक अंग्रेजी संस्करण में उपलब्ध है।"
+        }[lang]}</span>
+        <a href="/en/blog/" class="text-[var(--accent)] font-semibold underline shrink-0 hover:text-[var(--foreground)]">
+          {{
+            es: "Ver biblioteca en inglés →",
+            fr: "Voir la bibliothèque en anglais →",
+            de: "Englische Bibliothek ansehen →",
+            ko: "영문 라이브러리 보기 →",
+            hi: "अंग्रेजी लाइब्रेरी देखें →"
+          }[lang]}
+        </a>
+      </div>
+    )}
+
+    <!-- 🌟 Beginner? Start Here — Editor's Core Picks -->
+    <section class="not-prose mb-12 p-6 sm:p-8 rounded-2xl border-2 border-[var(--accent)]/30 bg-gradient-to-br from-[var(--card)] via-[var(--card)] to-[var(--accent)]/5 shadow-sm space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[var(--border)] pb-4">
+        <div class="space-y-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-xs">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <span>{startH.badge}</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-[var(--foreground)] tracking-tight">
+            {startH.title}
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] max-w-md sm:text-right">
+          {startH.desc}
+        </p>
+      </div>
+
+      <!-- 5 Curated Foundation Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5">
+        {editorsPicks.map(card => (
+          <a 
+            href={`/${lang}/blog/${card.slug}/`}
+            class="group p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-3"
+          >
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-[var(--accent)]/15 text-[var(--accent)] font-mono text-xs font-bold">
+                  {card.step}
+                </span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--muted-foreground)]">
+                  {card.tag[lang] || card.tag.en}
+                </span>
+              </div>
+              <h3 class="text-xs sm:text-sm font-display font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors leading-snug line-clamp-2">
+                {card.title}
+              </h3>
+              <p class="text-[11px] text-[var(--muted-foreground)] line-clamp-2 leading-relaxed">
+                {card.description}
+              </p>
+            </div>
+            <div class="pt-2 border-t border-[var(--border)]/40 flex items-center justify-between text-[11px] font-bold text-[var(--accent)] uppercase tracking-wider">
+              <span>Read Guide</span>
+              <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Search & Filter Controls -->
+    <div class="space-y-6 mb-8">
+      <!-- Interactive Search Bar -->
+      <div class="relative w-full max-w-xl mx-auto">
+        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[var(--muted-foreground)]">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <input 
+          type="search" 
+          id="blogSearchInput" 
+          placeholder={searchPlaceholders[lang] || searchPlaceholders.en} 
+          autocomplete="off"
+          class="w-full pl-11 pr-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--card)] text-sm text-[var(--foreground)] placeholder-[var(--muted-foreground)]/70 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] shadow-xs transition-all"
+        />
+      </div>
+
+      <!-- 4 Core Pillars Category Hub Navigation -->
+      <div class="flex flex-wrap items-center justify-center gap-2 pb-4 border-b border-[var(--border)]" id="topicPillsContainer">
+        {coreTopics.map((topic, idx) => (
+          <button 
+            type="button" 
+            class={`topic-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${idx === 0 ? 'bg-[var(--accent)] text-white shadow-xs' : 'bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)]'}`}
+            data-topic={topic.id}
+          >
+            {topic.label[lang] || topic.label.en}
+            <span class="ml-1 opacity-75 font-mono text-[11px]">({topicCounts[topic.id] || 0})</span>
+          </button>
+        ))}
+      </div>
     </div>
 
+    <!-- Empty Results Message -->
+    <div id="noResultsMsg" class="hidden text-center py-12 space-y-2">
+      <p class="text-base font-display font-bold text-[var(--foreground)]">No health guides found</p>
+      <p class="text-xs text-[var(--muted-foreground)]">Try searching with a different term or clear the active filter.</p>
+      <button type="button" id="resetFilterBtn" class="mt-3 px-4 py-2 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity cursor-pointer">
+        Reset Search & Filters
+      </button>
+    </div>
+
+    <!-- 37 Articles Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="articlesGrid">
       {articlesList.map(article => (
-        <a href={`/${lang}/blog/${article.slug}/`} class="group block h-full article-item" data-category={article.category}>
+        <a 
+          href={`/${lang}/blog/${article.slug}/`} 
+          class="group block h-full article-item" 
+          data-category={article.category}
+          data-topic={article.pillarId}
+          data-search={`${article.title} ${article.description} ${article.category}`.toLowerCase()}
+        >
           <div class="h-full p-6 sm:p-7 rounded-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-4 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
             <div class="space-y-3">
               <div class="flex items-center justify-between gap-2">
@@ -127,26 +325,80 @@ const articlesList = articleSlugs.map(slug => {
 
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
-        const tabs = document.querySelectorAll('.category-tab');
+        const searchInput = document.getElementById('blogSearchInput');
+        const pills = document.querySelectorAll('.topic-pill');
         const cards = document.querySelectorAll('.article-item');
-        tabs.forEach(tab => {
-          tab.addEventListener('click', () => {
-            tabs.forEach(t => {
-              t.classList.remove('bg-[var(--accent)]', 'text-white', 'shadow-xs');
-              t.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]');
+        const noResults = document.getElementById('noResultsMsg');
+        const resetBtn = document.getElementById('resetFilterBtn');
+
+        let activeTopic = 'all';
+        let searchQuery = '';
+
+        function applyFilters() {
+          let visibleCount = 0;
+          cards.forEach(card => {
+            const cardTopic = card.getAttribute('data-topic');
+            const cardSearchText = card.getAttribute('data-search') || '';
+
+            const matchesTopic = activeTopic === 'all' || cardTopic === activeTopic;
+            const matchesSearch = !searchQuery || cardSearchText.includes(searchQuery);
+
+            if (matchesTopic && matchesSearch) {
+              card.style.display = '';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+          } else {
+            noResults.classList.add('hidden');
+          }
+        }
+
+        // Search Input event
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.trim().toLowerCase();
+            applyFilters();
+          });
+        }
+
+        // Topic Pills click
+        pills.forEach(pill => {
+          pill.addEventListener('click', () => {
+            pills.forEach(p => {
+              p.classList.remove('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+              p.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
             });
-            tab.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
-            tab.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]');
-            const filter = tab.getAttribute('data-filter');
-            cards.forEach(card => {
-              if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                card.style.display = '';
-              } else {
-                card.style.display = 'none';
-              }
-            });
+            pill.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+            pill.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+
+            activeTopic = pill.getAttribute('data-topic') || 'all';
+            applyFilters();
           });
         });
+
+        // Reset button click
+        if (resetBtn) {
+          resetBtn.addEventListener('click', () => {
+            if (searchInput) searchInput.value = '';
+            searchQuery = '';
+            activeTopic = 'all';
+            pills.forEach((p, idx) => {
+              if (idx === 0) {
+                p.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+                p.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+              } else {
+                p.classList.remove('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+                p.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+              }
+            });
+            applyFilters();
+          });
+        }
       });
     </script>
   </PageShell>

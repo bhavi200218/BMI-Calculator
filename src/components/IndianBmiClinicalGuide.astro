@@ -7,6 +7,32 @@ interface Props {
 
 const { lang = 'en' } = Astro.props;
 
+function formatFaqAnswer(text: string): { short: string; detailed: string } {
+  if (!text) return { short: '', detailed: '' };
+  const clean = text.trim();
+  const match = clean.match(/^((?:(?:Yes|No|Oui|Non|Ja|Nein|네|아니오|हाँ|नहीं)[.!?।]s+)?.*?(?:[.!?।](?!d)))s+([sS]+)$/);
+  if (match) {
+    return {
+      short: match[1].trim(),
+      detailed: match[2].trim()
+    };
+  }
+  return {
+    short: clean,
+    detailed: ''
+  };
+}
+
+const faqLabels: Record<string, { short: string; detailed: string }> = {
+  en: { short: 'Short Answer:', detailed: 'Detailed Explanation:' },
+  es: { short: 'Respuesta Breve:', detailed: 'Explicación Detallada:' },
+  fr: { short: 'En Bref :', detailed: 'Explication Détaillée :' },
+  de: { short: 'Kurzantwort:', detailed: 'Ausführliche Erklärung:' },
+  ko: { short: '핵심 답변:', detailed: '상세 설명:' },
+  hi: { short: 'संक्षिप्त उत्तर:', detailed: 'विस्तृत व्याख्या:' },
+};
+
+
 interface ClinicalPhenotypeLocale {
   eyebrow: string;
   phenotypeTitle: string;
@@ -563,7 +589,7 @@ const c = content[lang] || content.en;
 <section class="mt-12 pt-10 border-t border-[var(--border)] space-y-12" id="indian-clinical-guide">
   
   <!-- ═══════════════════  1. SOUTH ASIAN THIN-FAT PHENOTYPE  ═══════════════════ -->
-  <div class="space-y-6">
+  <div class="space-y-6 scroll-mt-24" id="thin-fat-phenotype">
     <div class="space-y-2">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
         <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
@@ -619,7 +645,7 @@ const c = content[lang] || content.en;
   </div>
 
   <!-- ═══════════════════  2. WAIST CIRCUMFERENCE & CENTRAL ADIPOSITY  ═══════════════════ -->
-  <div class="space-y-6 pt-6 border-t border-[var(--border)]/60">
+  <div class="space-y-6 pt-6 border-t border-[var(--border)]/60 scroll-mt-24" id="waist-guide">
     <div class="space-y-2">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-display font-bold uppercase tracking-widest border border-amber-500/20">
         ICMR Action Cutoffs
@@ -671,7 +697,7 @@ const c = content[lang] || content.en;
   </div>
 
   <!-- ═══════════════════  3. INDIAN DIET EXAMPLES & MEAL ARCHITECTURE  ═══════════════════ -->
-  <div class="space-y-6 pt-6 border-t border-[var(--border)]/60">
+  <div class="space-y-6 pt-6 border-t border-[var(--border)]/60 scroll-mt-24" id="indian-diet">
     <div class="space-y-2">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-display font-bold uppercase tracking-widest border border-emerald-500/20">
         Clinical Nutrition Strategy
@@ -707,7 +733,7 @@ const c = content[lang] || content.en;
     </div>
 
     <!-- Meal Plans Grid (Veg vs Non-Veg) -->
-    <div class="space-y-4">
+    <div class="space-y-4 scroll-mt-24" id="sample-meal-plans">
       <h3 class="text-lg sm:text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
         {c.sampleMealTitle}
       </h3>
@@ -761,7 +787,7 @@ const c = content[lang] || content.en;
     </div>
 
     <!-- Smart Swaps Table -->
-    <div class="space-y-3">
+    <div class="space-y-3 scroll-mt-24" id="food-swaps">
       <h3 class="text-lg sm:text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
         {c.swapsTitle}
       </h3>
@@ -789,7 +815,7 @@ const c = content[lang] || content.en;
   </div>
 
   <!-- ═══════════════════  4. CLINICAL FAQS SECTION  ═══════════════════ -->
-  <div class="space-y-6 pt-6 border-t border-[var(--border)]/60" id="indian-clinical-faqs">
+  <div class="space-y-6 pt-6 border-t border-[var(--border)]/60 scroll-mt-24" id="indian-clinical-faqs">
     <div class="space-y-2">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-display font-bold uppercase tracking-widest border border-blue-500/20">
         Clinical Inquiries
@@ -804,19 +830,40 @@ const c = content[lang] || content.en;
 
     <!-- FAQ Accordion / Cards List -->
     <div class="space-y-3">
-      {c.faqs.map(faq => (
-        <details class="group p-5 rounded-2xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)]/50 transition-colors shadow-xs">
-          <summary class="flex items-center justify-between cursor-pointer list-none font-display font-bold text-sm sm:text-base text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors select-none">
-            <span class="pr-4">{faq.q}</span>
-            <span class="w-6 h-6 rounded-full bg-[var(--muted)]/60 flex items-center justify-center shrink-0 text-xs transition-transform group-open:rotate-180">
-              ▼
-            </span>
-          </summary>
-          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed pt-3 border-t border-[var(--border)]/40 mt-3">
-            {faq.a}
-          </p>
-        </details>
-      ))}
+      {c.faqs.map(faq => {
+        const parsed = formatFaqAnswer(faq.a);
+        const fl = faqLabels[lang] || faqLabels.en;
+        return (
+          <details class="group p-5 rounded-2xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)]/50 transition-colors shadow-xs">
+            <summary class="flex items-center justify-between cursor-pointer list-none font-display font-bold text-sm sm:text-base text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors select-none">
+              <span class="pr-4">{faq.q}</span>
+              <span class="w-6 h-6 rounded-full bg-[var(--muted)]/60 flex items-center justify-center shrink-0 text-xs transition-transform group-open:rotate-180">
+                ▼
+              </span>
+            </summary>
+            {parsed.detailed ? (
+              <div class="pt-3 border-t border-[var(--border)]/40 mt-3 space-y-2.5">
+                <div class="p-3.5 rounded-xl bg-[var(--accent)]/5 border-l-[3px] border-[var(--accent)] text-xs sm:text-sm font-semibold text-[var(--foreground)]">
+                  <span class="text-[var(--accent)] uppercase tracking-wider text-[10px] font-bold block mb-1 font-display">
+                    {fl.short}
+                  </span>
+                  {parsed.short}
+                </div>
+                <div class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium space-y-1">
+                  <span class="text-[var(--foreground)] uppercase tracking-wider text-[10px] font-bold block opacity-75 font-display">
+                    {fl.detailed}
+                  </span>
+                  <p>{parsed.detailed}</p>
+                </div>
+              </div>
+            ) : (
+              <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed pt-3 border-t border-[var(--border)]/40 mt-3">
+                {faq.a}
+              </p>
+            )}
+          </details>
+        );
+      })}
     </div>
   </div>
 

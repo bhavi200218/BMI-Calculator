@@ -7,38 +7,125 @@ import PageShell from '../../components/PageShell.astro';
 <Layout 
     title="의학적 면책 조항 | Real BMI" 
     description="Real BMI의 공식 의학적 면책 조항 안내입니다. 당사의 건강 계산기와 수치는 순수 교육 및 참고 목적으로 제공되며 전문적인 의료 상담을 대체하지 않습니다."
+    canonicalURL="https://realbmicalculator.com/ko/disclaimer/"
 >
     <Navbar />
     <PageShell
       title="의학적 면책 조항"
       eyebrow="중요 건강 고지사항"
-      description="Real BMI가 교육용 건강 지표를 제공하는 방식과 의학적 결정을 위해 전문 의료진과 상담해야 하는 이유를 확인하세요."
+      description="Real BMI의 정보가 교육적 추정치로 제공되는 원리와 의료적 결정을 내릴 때 반드시 전문가와 상담해야 하는 이유를 안내합니다."
       returnUrl="/ko/"
       returnLabel="홈"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-        <p><strong>Real BMI</strong>에서 제공하는 모든 건강 계산기, 통계적 수치 및 정보는 순수한 교육적 목적과 개인 건강 인식 증진을 위해 마련되었습니다. 본 웹사이트의 모든 콘텐츠는 전문적인 의학적 진단, 임상적 처방 또는 맞춤형 치료 계획을 대체할 수 없으며 그렇게 해석되어서도 안 됩니다.</p>
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+        
+        <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
+          <strong>Real BMI</strong>에서 제공하는 모든 계산 도구, 인터랙티브 차트 및 건강 정보는 순수한 교육, 정보 전달 및 개인적인 건강 인식을 돕기 위한 목적으로 제작되었습니다.
+        </p>
 
-        <h2>교육적 범위 및 비임상적 목적</h2>
-        <p>당사의 계산기는 세계보건기구(WHO) 및 미국 질병통제예방센터(CDC) 등에서 발표한 공인된 역학 연구 공식과 인구 집단 지침을 기반으로 작동합니다. 이러한 수학적 모델은 성인 표준 인구 집단을 위한 통계적 참고용 지표이며, 개인의 유전적 요인, 호르몬 상태, 기저 질환 등 복합적인 생리학적 특성을 개별적으로 진단하지 못합니다.</p>
+        <!-- 1. What Real BMI Is -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Real BMI가 제공하는 서비스
+          </h2>
+          <p>
+            Real BMI는 근거 중심의 신체 지표 추정치를 무료로 제공하는 건강 정보 플랫폼입니다:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li>세계보건기구(WHO) 및 질병관리청(CDC) 등 공인된 공중보건 기준과 학술 연구 공식을 기반으로 한 수학적 추정치 제공.</li>
+            <li>신체 부피와 체질량 분포를 시각적으로 이해할 수 있는 교육용 3D 뷰어 제공.</li>
+            <li>일반 인구 집단 데이터를 바탕으로 자신의 수치를 객관적으로 비교해 볼 수 있는 통계적 참고 구간 안내.</li>
+          </ul>
+        </div>
 
-        <h2>전문 의료진 상담의 필요성</h2>
-        <p>Real BMI의 결과값을 바탕으로 질병을 자가 진단하거나, 의사가 처방한 약물 복용을 중단하거나, 의료진의 승인 없이 극단적인 식이요법 및 고강도 운동 프로그램을 시작하지 마십시오. 신체 증상, 만성 질환 관리 또는 영양 및 신체 활동 계획 변경에 관한 모든 사항은 반드시 공인된 전문의사 또는 임상영양사와 상의하시기 바랍니다.</p>
+        <!-- 2. What Real BMI Is Not -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Real BMI가 제공하지 않는 서비스
+          </h2>
+          <p>
+            Real BMI는 공인 의료기관이 아니며 임상 진료 서비스를 제공하지 않습니다:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>의학적 진단 불가:</strong> 본 사이트의 결과는 전문 의사의 소견, 공식적인 질병 진단 또는 맞춤형 치료 계획이 아닙니다.</li>
+            <li><strong>진단 장비 대체 불가:</strong> 계산기 수치만으로 심혈관 대사 질환, 호르몬 불균형, 영양 결핍 등의 잠재적 질환을 진단하거나 배제할 수 없습니다.</li>
+            <li><strong>처방 및 치료 지침 아님:</strong> 계산기 결과만을 근거로 복용 중인 처방약을 중단하거나 극단적인 절식 및 과도한 운동을 시작해서는 안 됩니다.</li>
+          </ul>
+        </div>
 
-        <h2>신체 계측 지표의 과학적 한계</h2>
-        <p>체질량지수(BMI)를 비롯한 전통적인 신체 계측법은 임상적 한계를 내포하고 있습니다. BMI는 키와 체중의 단순 비율(kg/m²)을 평가할 뿐, 골격근량, 골밀도, 피하지방과 내장지방의 분포 차이를 구별하지 못합니다. 근육량이 많은 운동선수, 노인성 근감소증(Sarcopenia) 환자, 임산부 및 수유부, 다양한 인종적 배경을 가진 개인의 경우 실제 심혈관 대사 위험도와 계산기 수치가 다를 수 있습니다.</p>
+        <!-- 3. Who Should Consult a Doctor -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            의사 상담이 반드시 필요한 경우
+          </h2>
+          <p>
+            다음과 같은 상황에 해당하시는 경우 반드시 전문의 또는 공인 임상영양사와 먼저 상담하시기 바랍니다:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li>급격한 체중 감량이나 증량, 또는 대대적인 식단 변경을 계획 중인 경우.</li>
+            <li>당뇨, 고혈압, 심혈관 질환, 갑상선 질환 등 만성 기저질환을 앓고 있는 경우.</li>
+            <li>임신 중이거나 수유 중인 여성, 또는 수술 후 회복 단계에 있는 경우.</li>
+            <li>식이장애(섭식장애)나 신체이형장애 병력이 있는 경우.</li>
+            <li>뚜렷한 원인 없이 체중이 급격하게 변하는 경우.</li>
+          </ul>
+        </div>
 
-        <h2>응급 상황 시 대처 요령</h2>
-        <p>Real BMI는 응급 의료 서비스를 제공하지 않습니다. 흉통, 급성 호흡곤란, 의식 저하, 급작스러운 마비 등 생명을 위협하는 응급 증상이 발생한 경우 즉시 지역 응급 의료 구조 서비스에 연락하거나 가장 가까운 응급의료센터를 방문하십시오.</p>
+        <!-- 4. Emergency Situations (Callout Box) -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-[var(--foreground)] space-y-2 not-prose">
+          <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-display font-bold uppercase tracking-wider text-xs sm:text-sm">
+            <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+            응급 상황 안내
+          </div>
+          <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">
+            즉각적인 응급 처치 및 진료
+          </h3>
+          <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">
+            Real BMI는 응급 의료 서비스를 제공하지 않습니다. 가슴 통증, 심각한 호흡 곤란, 급작스러운 어지럼증, 마비 증세 등 생명을 위협하는 응급 증상이 나타난 경우 지체 없이 119 또는 인근 병원 응급실로 연락하여 응급 처치를 받으시기 바랍니다.
+          </p>
+        </div>
 
-        <h2>책임의 제한 및 자발적 이용 원칙</h2>
-        <p>Real BMI 및 관련 개발자, 기여자는 당사 웹사이트의 정보 또는 계산 결과를 토대로 내린 결정, 식이 선택 및 이로 인해 발생하는 건강상의 결과에 대해 법적 책임을 지지 않습니다. 이용자는 본 사이트의 도구를 자발적이고 독립적인 판단 하에 이용함에 동의합니다.</p>
-      
-        <h2>개인별 임상 검사의 필요성 및 한계</h2>
-        <p>통계적으로 정상 범위에 속하는 BMI 수치가 고혈압, 당뇨병, 이상지질혈증 등의 만성 대사 질환이 없음을 보장하지 않습니다. 반대로 근육량이 많은 운동선수나 청년층의 높은 BMI가 반드시 건강 이상을 의미하지도 않습니다. 심혈관 및 대사 질환 위험을 정확히 진단하기 위해서는 공복 혈당, 당화혈색소(HbA1c), 중성지방, 콜레스테롤 수치 및 혈압 측정을 포함한 종합적인 건강검진이 필수적입니다.</p>
+        <!-- 5. BMI Limitations -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            BMI 지표의 한계
+          </h2>
+          <p>
+            표준 체질량지수(BMI)는 역학 조사 및 생리학적으로 명확한 한계를 지닙니다:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>체성분 반영 불가:</strong> BMI는 단순히 신장 대비 체중 비율(kg/m²)만 산출하므로 근육량, 골밀도, 내장지방을 구분하지 못합니다. 근육질의 운동선수는 체지방률이 극히 낮아도 '과체중' 또는 '비만'으로 분류될 수 있습니다.</li>
+            <li><strong>노화 및 근감소증:</strong> 60세 이상의 고령층은 자연스러운 골격근 감소(근감소증)로 인해 내장지방이 위험 수준이어도 BMI 수치는 '정상'으로 나타날 수 있습니다.</li>
+            <li><strong>인종별 기준 차이:</strong> 내장지방 축적률은 인종에 따라 다릅니다. WHO는 아시아인의 심혈관 대사 질환 위험을 고려하여 비만 기준점을 25.0 kg/m²가 아닌 23.0 kg/m² 이상으로 낮추어 적용하도록 권고합니다.</li>
+          </ul>
+        </div>
 
-        <h2>콘텐츠의 지속적 업데이트 및 정보 보증의 배제</h2>
-        <p>Real BMI는 세계보건기구(WHO) 및 유관 의학회의 가이드라인 개정 사항을 지속적으로 모니터링하여 계산 공식을 관리합니다. 그러나 인터넷 환경의 기술적 오류, 브라우저 호환성 문제 또는 이용자의 오입력으로 인한 결과값의 편차에 대해서는 어떠한 법적 보증도 제공하지 않습니다.</p>
+        <!-- 6. Privacy: No Personal Health Information Stored -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            개인정보 보호: 개인 건강 데이터 미저장 원칙
+          </h2>
+          <p>
+            사용자의 신체 계측 정보는 오직 사용자 본인만의 것입니다:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>브라우저 로컬 연산:</strong> 모든 계산은 사용자의 웹 브라우저 내부에서 자바스크립트를 통해 즉시 처리됩니다.</li>
+            <li><strong>서버 전송 및 저장 일체 없음:</strong> 키, 체중, 나이, 허리둘레 등의 개인 건강 측정값을 당사 서버로 전송하거나 데이터베이스에 보관하지 않습니다.</li>
+            <li><strong>공개 프로필 없음:</strong> 사용자의 건강 수치가 외부에 노출될 수 있는 회원제 게시판이나 커뮤니티 기능을 운영하지 않습니다.</li>
+          </ul>
+        </div>
+
+        <!-- 7. Legal Disclaimer -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            법적 면책 조항 및 책임의 한계
+          </h2>
+          <p>
+            Real BMI 개발자 및 기고자는 본 사이트의 도구 및 정보를 바탕으로 사용자가 내린 결정이나 건강상의 결과에 대해 어떠한 법적 책임도 지지 않습니다. Real BMI를 이용하는 것은 이용자 본인의 자발적 의사와 판단에 따른 것임을 확인합니다.
+          </p>
+        </div>
+
       </div>
     </PageShell>
 </Layout>

@@ -14,13 +14,13 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       "hi": "बीएमआई व्याख्या दिशानिर्देश: संदर्भ श्रेणियां और डब्ल्यूएचओ मानक"
     },
     "category": {
-      "en": "BMI Research & Methodology",
-      "es": "Metodología e Investigación del IMC",
-      "fr": "Méthodologie et Recherche sur l'IMC",
-      "de": "BMI-Methodik & Forschung",
-      "ko": "체질량 지표 연구 및 방법론",
-      "hi": "बीएमआई अनुसंधान एवं कार्यप्रणाली"
-    },
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
+  },
     "description": {
       "en": "A comprehensive evidence-based guide to interpreting Body Mass Index (BMI). Explore official World Health Organization (WHO) adult cutoff points, ethnic-specific adjustments, and complementary screening measurements.",
       "es": "Guía basada en evidencia para interpretar el Índice de Masa Corporal (IMC). Conozca los puntos de corte oficiales de la OMS, ajustes étnicos y medidas de detección complementarias.",
@@ -428,23 +428,23 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "datePublished": "2026-10-05",
     "dateModified": "2026-10-26",
     "title": {
-      "en": "Age-Specific BMI Charts: Interpreting Body Mass Index Across the Lifespan",
-      "es": "Tablas de IMC por Edad: Interpretación del Índice de Masa Corporal a lo Largo de la Vida",
-      "fr": "Courbes d'IMC par Âge : Interpréter l'Indice de Masse Corporelle au Fil de la Vie",
-      "de": "Altersabhängige BMI-Tabellen: Interpretation des Body-Mass-Index im Lebensverlauf",
-      "ko": "연령대별 BMI 도표: 생애주기별 체질량지수 분석 및 최적 기준",
-      "hi": "उम्र के अनुसार बीएमआई चार्ट: जीवन के विभिन्न चरणों में बीएमआई का विश्लेषण"
+      "en": "Pediatric & Adolescent BMI: CDC Percentiles, Growth Curves & Age Charts",
+      "es": "IMC Pediátrico y Adolescente: Percentiles de los CDC y Curvas de Crecimiento",
+      "fr": "IMC Pédiatrique et Adolescent : Centiles du CDC et Courbes de Croissance",
+      "de": "Pädiatrischer & Jugend-BMI: CDC-Perzentilen & Wachstumskurven",
+      "ko": "소아 및 청소년 BMI: CDC 백분위수, 성장 곡선 및 연령별 도표",
+      "hi": "बाल एवं किशोर बीएमआई: सीडीसी पर्सेंटाइल, विकास वक्र एवं आयु चार्ट"
     },
     "category": {
-      "en": "Population & Demographics",
-      "es": "Población y Demografía",
-      "fr": "Démographie et Populations",
-      "de": "Bevölkerung & Altersgruppen",
-      "ko": "연령대별 인구 보건 지표",
-      "hi": "जनसांख्यिकी एवं आयु वर्ग"
-    },
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
+  },
     "description": {
-      "en": "Explore age-adjusted BMI interpretations from adolescence to older adulthood. Understand the CDC percentile charts for youths and the 'Obesity Paradox' in elderly populations.",
+      "en": "Understand CDC BMI-for-age growth percentiles for children and teens (ages 2–19). Learn how pediatric growth curves differ from adult thresholds, with detailed clinical interpretation tables.",
       "es": "Examine la interpretación del IMC según la edad, desde la adolescencia hasta la vejez. Conozca las tablas de percentiles de los CDC y la paradoja de la obesidad en ancianos.",
       "fr": "Comprenez l'évolution de l'interprétation de l'IMC selon l'âge : centiles pédiatriques du CDC et seuils recommandés pour les personnes âgées.",
       "de": "Erfahren Sie, wie der BMI im Alter bewertet wird: Von den Perzentilkurven der CDC für Jugendliche bis zu höheren optimalen BMI-Werten bei Senioren.",
@@ -744,13 +744,13 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       "hi": "स्वस्थ वजन बनाए रखने की वैज्ञानिक रणनीतियाँ: स्थायी वसा हानि और ऊर्जा संतुलन"
     },
     "category": {
-      "en": "Nutrition & Body Transformation",
-      "es": "Nutrición y Composición Corporal",
-      "fr": "Nutrition et Composition Corporelle",
-      "de": "Ernährung & Gewichtsmanagement",
-      "ko": "영양학 및 지속 가능한 체중 관리",
-      "hi": "पोषण एवं वजन प्रबंधन"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "A scientific guide to sustainable weight management. Learn how to calculate a safe caloric deficit, optimize daily protein for lean muscle retention, and prevent weight regain.",
       "es": "Guía científica para el control de peso sostenible. Aprenda a calcular un déficit calórico seguro, optimizar la ingesta de proteínas y evitar el efecto rebote.",
@@ -942,13 +942,13 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       "hi": "मेटाबॉलिक अनुकूलन: अनुकूली थर्मोजेनेसिस और वजन घटाने के पठार (Plateau)"
     },
     "category": {
-      "en": "Metabolic Science & Energy",
-      "es": "Gasto Energético y Metabolismo",
-      "fr": "Métabolisme et Dépense Énergétique",
-      "de": "Stoffwechsel & Kalorienbedarf",
-      "ko": "대사 과학 및 에너지",
-      "hi": "मेटाबॉलिक विज्ञान व ऊर्जा"
-    },
+    "en": "Metabolism & Nutrition",
+    "hi": "मेटाबॉलिज्म और पोषण",
+    "ko": "대사 및 영양",
+    "de": "Stoffwechsel & Ernährung",
+    "es": "Metabolismo y Nutrición",
+    "fr": "Métabolisme & Nutrition"
+  },
     "description": {
       "en": "Discover why metabolism slows down during extended caloric restriction. Learn the physiology of adaptive thermogenesis, involuntary NEAT reduction, and strategies to overcome weight loss plateaus.",
       "es": "Descubra por qué el metabolismo se ralentiza durante el déficit calórico prolongado. Conozca la termogénesis adaptativa y estrategias para superar las mesetas de peso.",
@@ -1122,13 +1122,13 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       "hi": "आंत की वसा (Visceral Fat) बनाम उपचर्म वसा (Subcutaneous Fat): स्वास्थ्य जोखिम"
     },
     "category": {
-      "en": "Body Composition Assessment",
-      "es": "Composición Corporal y Medidas",
-      "fr": "Composition Corporelle et Mesures",
-      "de": "Körperzusammensetzung & Risiken",
-      "ko": "체성분 분석 및 건강 지표",
-      "hi": "शारीरिक संरचना एवं स्वास्थ्य"
-    },
+    "en": "Body Composition",
+    "hi": "बॉडी कंपोज़िशन",
+    "ko": "체성분 분석",
+    "de": "Körperzusammensetzung",
+    "es": "Composición Corporal",
+    "fr": "Composition Corporelle"
+  },
     "description": {
       "en": "Understand the crucial anatomical and metabolic differences between deep intra-abdominal visceral fat and pinchable subcutaneous fat. Explore waist-to-hip thresholds and disease risks.",
       "es": "Conozca las diferencias anatómicas y metabólicas entre la grasa visceral profunda y la subcutánea superficial. Guía de medición de cintura y prevención cardiovascular.",
@@ -1333,13 +1333,13 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       "hi": "विश्राम हृदय गति (Resting Heart Rate), हृदय स्वास्थ्य और प्रशिक्षण क्षेत्र"
     },
     "category": {
-      "en": "Cardiovascular & Fitness Metrics",
-      "es": "Salud Cardiovascular y Entrenamiento",
-      "fr": "Santé Cardiovasculaire et Entraînement",
-      "de": "Kardiovaskuläre Fitness",
-      "ko": "심혈관 건강 및 피트니스 지표",
-      "hi": "हृदय स्वास्थ्य एवं फिटनेस"
-    },
+    "en": "Fitness & Performance",
+    "hi": "फिटनेस और परफॉर्मेंस",
+    "ko": "피트니스 및 운동 능력",
+    "de": "Fitness & Leistung",
+    "es": "Fitness y Rendimiento",
+    "fr": "Fitness & Performance"
+  },
     "description": {
       "en": "Explore the physiological significance of resting heart rate (RHR) and heart rate reserve. Learn how endurance conditioning lowers resting pulse and how to calculate targeted training zones.",
       "es": "Descubra la importancia fisiológica de la frecuencia cardíaca en reposo y la reserva cardíaca. Guía para calcular zonas de entrenamiento y evaluar la salud cardiovascular.",
@@ -1592,13 +1592,13 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       "fr": "Vieillissement en Bonne Santé et Sarcopénie : Préserver la Masse Musculaire"
     },
     "category": {
-      "en": "Age & Lifespan Health",
-      "hi": "आयु एवं जीवनकाल स्वास्थ्य",
-      "ko": "연령 및 생애주기 건강",
-      "de": "Alter & Lebensspanne",
-      "es": "Edad y Salud Longevital",
-      "fr": "Âge et Longévité"
-    },
+    "en": "BMI & Weight",
+    "hi": "बीएमआई और वजन",
+    "ko": "BMI 및 체중",
+    "de": "BMI & Gewicht",
+    "es": "IMC y Peso",
+    "fr": "IMC & Poids"
+  },
     "description": {
       "en": "Learn the biology of age-related muscle loss (sarcopenia). Discover why older adults require higher protein intake thresholds, the role of resistance exercise, and strategies for physical autonomy.",
       "hi": "उम्र के साथ मांसपेशियों में होने वाले नुकसान (सार्कोपेनिया) का जीवविज्ञान। जानें कि बुजुर्गों को अधिक प्रोटीन की आवश्यकता क्यों होती है, शक्ति व्यायाम की भूमिका और स्वतंत्र गतिशीलता के उपाय।",
@@ -1699,13 +1699,13 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       "fr": "Comprendre la Pression Artérielle : Poids Corporel, Santé Artérielle et Mode de Vie"
     },
     "category": {
-      "en": "Cardiovascular & Preventive Health",
-      "hi": "हृदय एवं निवारक स्वास्थ्य",
-      "ko": "심혈관 및 예방 건강",
-      "de": "Herzgesundheit & Prävention",
-      "es": "Salud Cardiovascular y Preventiva",
-      "fr": "Santé Cardiovasculaire et Prévention"
-    },
+    "en": "Fitness & Performance",
+    "hi": "फिटनेस और परफॉर्मेंस",
+    "ko": "피트니스 및 운동 능력",
+    "de": "Fitness & Leistung",
+    "es": "Fitness y Rendimiento",
+    "fr": "Fitness & Performance"
+  },
     "description": {
       "en": "Understand the physiological mechanics of systolic and diastolic blood pressure. Learn how excess body weight strains the vascular endothelium, the power of the DASH sodium-potassium ratio, and non-pharmacological reduction strategies.",
       "hi": "सिस्टोलिक और डायस्टोलिक रक्तचाप के शारीरिक सिद्धांत। जानें कि अतिरिक्त वजन धमनियों पर कैसे दबाव डालता है, DASH आहार में सोडियम-पोटेशियम अनुपात और बीपी नियंत्रित करने के प्राकृतिक उपाय।",

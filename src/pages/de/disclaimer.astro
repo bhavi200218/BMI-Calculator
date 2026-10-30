@@ -7,38 +7,125 @@ import PageShell from '../../components/PageShell.astro';
 <Layout 
     title="Medizinischer Hinweis | Real BMI" 
     description="Offizieller medizinischer Haftungsausschluss von Real BMI. Unsere Rechner und Metriken dienen ausschließlich Bildungs- und Informationszwecken."
+    canonicalURL="https://realbmicalculator.com/de/disclaimer/"
 >
     <Navbar />
     <PageShell
       title="Medizinischer Hinweis"
       eyebrow="Wichtiger Gesundheitshinweis"
-      description="Erfahren Sie, wie Real BMI pädagogische Gesundheitsschätzungen bereitstellt und warum Sie stets medizinisches Fachpersonal konsultieren sollten."
+      description="Verstehen Sie, wie Real BMI bildungsbasierte Gesundheitsschätzungen liefert und warum Sie bei medizinischen Entscheidungen stets Fachpersonal konsultieren sollten."
       returnUrl="/de/"
       returnLabel="Startseite"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-        <p>Die auf <strong>Real BMI</strong> bereitgestellten Informationen, Berechnungstools und Gesundheitsmetriken dienen ausschließlich allgemeinen Informations- und Bildungszwecken sowie der persönlichen Orientierung. Sie stellen zu keinem Zeitpunkt eine professionelle medizinische Beratung, klinische Diagnosestellung oder individuelle Therapieplanung dar.</p>
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+        
+        <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
+          Die Berechnungswerkzeuge, interaktiven Diagramme und Gesundheitsmetriken auf <strong>Real BMI</strong> dienen ausschließlich Bildungs-, Informations- und persönlichen Orientierungszwecken.
+        </p>
 
-        <h2>Pädagogischer Rahmen & Nicht-Klinischer Zweck</h2>
-        <p>Unsere Rechner liefern mathematische Schätzwerte auf Grundlage öffentlich zugänglicher wissenschaftlicher Gleichungen und international anerkannter Leitlinien, einschließlich der Weltgesundheitsorganisation (WHO) und der Centers for Disease Control and Prevention (CDC). Diese statistischen Formeln sind für Referenzwerte in erwachsenen Gesamtpopulationen konzipiert und können persönliche Vorerkrankungen oder biologische Besonderheiten nicht erfassen.</p>
+        <!-- 1. What Real BMI Is -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Was Real BMI ist
+          </h2>
+          <p>
+            Real BMI ist eine kostenfreie digitale Plattform für evidenzbasierte anthropometrische Schätzungen:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li>Mathematische Näherungen basierend auf publizierten wissenschaftlichen Formeln und internationalen Richtlinien (wie WHO und CDC).</li>
+            <li>Interaktive visuelle Modelle zur Veranschaulichung von Körpervolumen und Massenverteilung.</li>
+            <li>Statistische Referenzbereiche zur besseren Einordnung allgemeiner biometrischer Parameter.</li>
+          </ul>
+        </div>
 
-        <h2>Kein Ersatz für Ärztliche Konsultation</h2>
-        <p>Die von Real BMI ermittelten Werte dürfen niemals als Grundlage für Selbstdiagnosen, das eigenmächtige Absetzen verschriebener Medikamente oder den Beginn extremer Diät- und Trainingsprogramme herangezogen werden. Bei gesundheitlichen Beschwerden, Fragen zu Ihren Messergebnissen oder geplanten Lebensstiländerungen sollten Sie stets eine approbierte Ärztin, einen approbierten Arzt oder qualifizierte Ernährungsfachkräfte konsultieren.</p>
+        <!-- 2. What Real BMI Is Not -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Was Real BMI nicht ist
+          </h2>
+          <p>
+            Real BMI ist kein medizinischer Dienstleister und bietet keine klinische Versorgung:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>Keine Medizinische Beratung:</strong> Unsere Ausgaben stellen weder ärztlichen Rat noch eine formelle Diagnose oder einen individuellen Behandlungsplan dar.</li>
+            <li><strong>Kein Diagnostisches Instrument:</strong> Berechnungsergebnisse können kardiometabolische Erkrankungen, hormonelle Störungen oder Mangelzustände weder erkennen noch ausschließen.</li>
+            <li><strong>Keine Behandlungsvorgabe:</strong> Verändern oder beenden Sie niemals ärztlich verordnete Medikationen und beginnen Sie keine extremen Diäten allein auf Basis dieser Rechner.</li>
+          </ul>
+        </div>
 
-        <h2>Wissenschaftliche Grenzen Anthropometrischer Formeln</h2>
-        <p>Klassische anthropometrische Messwerte wie der Body-Mass-Index (BMI) weisen methodische Grenzen auf. Der BMI setzt lediglich das Körpergewicht ins Verhältnis zum Quadrat der Körpergröße, unterscheidet jedoch nicht zwischen fettfreier Skelettmuskulatur, Knochendichte und viszeralem Fettgewebe. Bei Kraftsportlern, älteren Menschen mit altersbedingtem Muskelabbau (Sarkopenie), Schwangeren sowie Personen verschiedener ethnischer Herkunft können die Werte das kardiometabolische Risiko fehldarstellen.</p>
+        <!-- 3. Who Should Consult a Doctor -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Wer einen Arzt konsultieren sollte
+          </h2>
+          <p>
+            Wir empfehlen nachdrücklich die Rücksprache mit approbierten Ärzten oder Ernährungsberatern, insbesondere wenn Sie:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li>Eine signifikante Gewichtsreduktion, Gewichtszunahme oder umfassende Ernährungsumstellung planen.</li>
+            <li>An Vorerkrankungen wie Diabetes, Bluthochdruck oder Herz-Kreislauf-Erkrankungen leiden.</li>
+            <li>Schwanger sind, stillen oder sich von operativen Eingriffen erholen.</li>
+            <li>Eine Historie von Essstörungen oder Körperdysmorphie aufweisen.</li>
+            <li>Plötzliche, unerklärliche Gewichtsschwankungen feststellen.</li>
+          </ul>
+        </div>
 
-        <h2>Medizinische Notfälle & Akute Symptome</h2>
-        <p>Real BMI ist kein Notfalldienst. Sollten Sie akute Schmerzen in der Brust, Atemnot, plötzliche Bewusstseinsstörungen oder andere lebensbedrohliche Symptome verspüren, kontaktieren Sie unverzüglich den örtlichen Rettungsdienst oder begeben Sie sich sofort in die nächste Notaufnahme.</p>
+        <!-- 4. Emergency Situations (Callout Box) -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-[var(--foreground)] space-y-2 not-prose">
+          <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-display font-bold uppercase tracking-wider text-xs sm:text-sm">
+            <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+            Notfallsituationen
+          </div>
+          <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">
+            Sofortige Notfallversorgung
+          </h3>
+          <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">
+            Real BMI ist nicht für akute medizinische Notfälle konzipiert. Sollten Sie unter akuten Brustschmerzen, Atemnot, plötzlichem Schwindel, Schwächeanfällen oder lebensbedrohlichen Symptomen leiden, kontaktieren Sie umgehend den Notruf (112 in Deutschland/Europa) oder begeben Sie sich in die nächste Notaufnahme.
+          </p>
+        </div>
 
-        <h2>Haftungsausschluss & Eigenverantwortliche Nutzung</h2>
-        <p>Weder Real BMI noch die beteiligten Entwickler und Autoren übernehmen eine rechtliche Gewähr oder Haftung für Entscheidungen, Ernährungsmaßnahmen oder gesundheitliche Folgen, die sich aus der Nutzung unserer Rechner oder Webinhalte ergeben. Die Nutzung der bereitgestellten Tools erfolgt ausnahmslos freiwillig und in eigener Verantwortung.</p>
-      
-        <h2>Individuelle Risikofaktoren & Diagnostische Relevanz</h2>
-        <p>Ein numerisch unauffälliger oder idealer BMI-Wert schließt kardiovaskuläre Vorerkrankungen, Fettstoffwechselstörungen, Hypertonie oder eine beginnende Insulinresistenz keineswegs aus. Ebenso bedeutet ein erhöhter BMI-Wert bei muskulösen Sportlern nicht zwangsläufig ein pathologisches Gesundheitsrisiko. Für eine verlässliche kardiometabolische Gesamtbeurteilung sind weiterführende klinische Laboranalysen (einschließlich Nüchternglukose, HbA1c, Cholesterin-Fraktionen und Blutdruckmessungen) unerlässlich.</p>
+        <!-- 5. BMI Limitations -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Grenzen des BMI
+          </h2>
+          <p>
+            Der klassische Body-Mass-Index (BMI) unterliegt anerkannten epidemiologischen und physiologischen Grenzen:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>Körperzusammensetzung:</strong> Der BMI setzt lediglich Gewicht zur Körpergröße ins Verhältnis (kg/m²), unterscheidet jedoch nicht zwischen Muskelmasse, Knochendichte und viszeralem Fett. Kraftsportler fallen häufig in die Kategorie 'Übergewicht', obwohl ihr Körperfettanteil sehr gering ist.</li>
+            <li><strong>Alter & Sarkopenie:</strong> Im Alter führt der natürliche Muskelabbau (Sarkopenie) dazu, dass schädliches viszerales Bauchfett bei scheinbar 'normalem' BMI unentdeckt bleibt.</li>
+            <li><strong>Ethnische Unterschiede:</strong> Fettverteilung und metabolische Risikoprofile variieren. Für Personen asiatischer Herkunft empfiehlt die WHO daher strengere Grenzwerte (23,0 kg/m² statt 25,0 kg/m²).</li>
+          </ul>
+        </div>
 
-        <h2>Transparenz & Qualitätssicherung</h2>
-        <p>Real BMI überprüft und aktualisiert die mathematischen Formelgrundlagen regelmäßig anhand neuester wissenschaftlicher Veröffentlichungen internationaler Fachgesellschaften. Wir erheben jedoch keinen Anspruch auf Vollständigkeit, absolute Fehlerfreiheit oder dauerhafte Verfügbarkeit aller Rechnerfunktionen.</p>
+        <!-- 6. Privacy: No Personal Health Information Stored -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Datenschutz: Keine Speicherung Persönlicher Gesundheitsdaten
+          </h2>
+          <p>
+            Ihre biometrischen Messwerte gehören ausschließlich Ihnen:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>Clientseitige Ausführung:</strong> Sämtliche Berechnungen laufen lokal in Ihrem Browser über JavaScript ab.</li>
+            <li><strong>Keine Server-Datenspeicherung:</strong> Wir erfassen, speichern, übermitteln oder verkaufen weder Körpergröße, Gewicht, Alter noch Taillenmaße auf unseren Servern.</li>
+            <li><strong>Keine Öffentlichen Benutzerprofile:</strong> Real BMI betreibt keine Benutzerkonten oder Foren, auf denen sensible Gesundheitsdaten öffentlich sichtbar werden könnten.</li>
+          </ul>
+        </div>
+
+        <!-- 7. Legal Disclaimer -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Rechtlicher Haftungsausschluss & Haftungsbegrenzung
+          </h2>
+          <p>
+            Weder Real BMI noch die Entwickler oder Autoren übernehmen eine Haftung für Handlungen, Ernährungsentscheidungen oder gesundheitliche Folgen, die sich aus der Nutzung unserer Rechner ergeben. Mit der Nutzung von Real BMI erkennen Sie an, dass dies rein freiwillig und auf eigene persönliche Verantwortung geschieht.
+          </p>
+        </div>
+
       </div>
     </PageShell>
 </Layout>

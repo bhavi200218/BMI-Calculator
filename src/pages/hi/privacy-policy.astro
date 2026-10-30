@@ -5,49 +5,187 @@ import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
-    title="गोपनीयता नीति | Real BMI"
-    description="Real BMI की आधिकारिक गोपनीयता नीति: हमारे सभी स्वास्थ्य व फिटनेस कैलकुलेटर आपके स्थानीय ब्राउज़र में चलते हैं — हम कोई व्यक्तिगत डेटा संग्रहीत नहीं करते।"
+    title="गोपनीयता नीति | Real BMI" 
+    description="Real BMI की आधिकारिक गोपनीयता नीति: हमारी वेबसाइट पर सभी गणनाएं आपके ब्राउज़र में सुरक्षित रूप से होती हैं और हम कोई व्यक्तिगत स्वास्थ्य डेटा कभी स्टोर नहीं करते।"
+    canonicalURL="https://realbmicalculator.com/hi/privacy-policy/"
 >
     <Navbar />
     <PageShell
       title="गोपनीयता नीति"
-      eyebrow="डेटा सुरक्षा एवं गोपनीयता"
-      description="जानें कि Real BMI आपकी व्यक्तिगत जानकारी और स्वास्थ्य डेटा को कैसे पूर्णतः सुरक्षित व निजी रखता है।"
+      eyebrow="आपका डेटा, आपकी गोपनीयता"
+      description="जानें कि Real BMI आपके इनपुट डेटा की सुरक्षा कैसे करता है और सभी स्वास्थ्य गणनाओं को पूर्णतः गोपनीय और सुरक्षित रखता है।"
       returnUrl="/hi/"
-      returnLabel="होम"
+      returnLabel="मुख्य पृष्ठ"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg md:text-xl font-medium opacity-90">
-        <p><strong>Real BMI</strong> में, हम उपयोगकर्ता की गोपनीयता और व्यक्तिगत स्वास्थ्य डेटा की सुरक्षा को एक बुनियादी अधिकार मानते हैं। हमारे सभी स्वास्थ्य कैलकुलेटर—जैसे बॉडी मास इंडेक्स (BMI), बेसल मेटाबॉलिक रेट (BMR), कुल दैनिक ऊर्जा व्यय (TDEE) और शारीरिक संरचना टूल्स—एक सख्त 'गोपनीयता-प्रथम' (Privacy-First) वास्तुकला पर आधारित हैं, जहाँ आपके शारीरिक आँकड़े पूरी तरह से आपके नियंत्रण में रहते हैं।</p>
+      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+        
+        <!-- Privacy at a Glance (Quick Summary Card) -->
+        <div class="not-prose p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                गोपनीयता: एक नज़र में
+              </h2>
+              <p class="text-xs text-[var(--muted-foreground)]">
+                Real BMI आपकी व्यक्तिगत गोपनीयता की सुरक्षा कैसे करता है, इसका त्वरित सारांश
+              </p>
+            </div>
+          </div>
 
-        <h2>1. शून्य स्वास्थ्य डेटा संग्रह नीति</h2>
-        <p>हम किसी भी व्यक्तिगत बायोमेट्रिक डेटा को न तो एकत्र करते हैं, न संग्रहीत करते हैं और न ही किसी को प्रेषित करते हैं। जब आप अपनी ऊंचाई, वजन, उम्र, लिंग या कमर का माप दर्ज करते हैं, तो सभी गणितीय गणनाएं केवल आपके अपने डिवाइस के वेब ब्राउज़र के भीतर जावास्क्रिप्ट इंजन में निष्पादित होती हैं। यह डेटा कभी भी आपके डिवाइस से बाहर नहीं जाता और न ही हमारे सर्वर पर भेजा जाता है।</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>हम आपका बीएमआई या स्वास्थ्य संबंधी आंकड़े कभी स्टोर नहीं करते</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>सभी गणनाएं सीधे आपके वेब ब्राउज़र में स्थानीय रूप से होती हैं</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>किसी भी प्रकार के अकाउंट या रजिस्ट्रेशन की आवश्यकता नहीं है</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>आपका कोई भी स्वास्थ्य डेटा कभी बेचा या साझा नहीं किया जाता</span>
+            </div>
+            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium sm:col-span-2">
+              <span class="text-emerald-500 text-base leading-none">✓</span>
+              <span>एनालिटिक्स और विज्ञापन प्राथमिकताओं पर आपका 100% नियंत्रण है</span>
+            </div>
+          </div>
+        </div>
 
-        <h2>2. स्थानीय ब्राउज़र प्रोसेसिंग और अस्थायी मेमोरी</h2>
-        <p>क्योंकि सभी गणनाएं आपके अपने डिवाइस पर स्थानीय रूप से होती हैं, आपका सत्र पूरी तरह से अस्थायी होता है। जैसे ही आप वेब पेज बंद करते हैं, टैब रीफ़्रेश करते हैं या कैश साफ़ करते हैं, आपके द्वारा दर्ज किए गए सभी मान तुरंत मेमोरी से मिटा दिए जाते हैं। Real BMI पर किसी भी प्रकार के उपयोगकर्ता खाते, साइन-अप या लॉगिन की आवश्यकता नहीं होती है।</p>
+        <!-- Core Trust Proposition Callout -->
+        <div class="not-prose p-5 rounded-2xl bg-[var(--accent)]/5 border-l-4 border-[var(--accent)] text-[var(--foreground)] space-y-1">
+          <p class="text-xs uppercase font-display font-bold tracking-wider text-[var(--accent)]">
+            हमारा मुख्य गोपनीयता सिद्धांत
+          </p>
+          <p class="text-sm sm:text-base font-semibold leading-relaxed">
+            सभी गणनाएं विशुद्ध रूप से आपके वेब ब्राउज़र के भीतर क्लाइंट-साइड पर प्रोसेस होती हैं।
+          </p>
+          <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+            आपकी लंबाई, वजन, उम्र और कमर का माप कभी भी आपके डिवाइस से बाहर नहीं जाता और न ही किसी सर्वर पर भेजा जाता है।
+          </p>
+        </div>
 
-        <h2>3. तकनीकी निदान एवं आवश्यक सर्वर लॉग्स</h2>
-        <p>इंटरनेट की मानक कार्यप्रणाली के अनुरूप, हमारी होस्टिंग सेवा साइबर हमलों (DDoS) की रोकथाम और वेबसाइट की गति बनाए रखने के लिए गैर-व्यक्तिगत तकनीकी लॉग्स स्वचालित रूप से उत्पन्न कर सकती है। इसमें ब्राउज़र प्रकार, ऑपरेटिंग सिस्टम और सामान्य भौगोलिक स्थिति (देश और शहर) शामिल होती है। इन तकनीकी लॉग्स का कैलकुलेटर के उपयोग से कोई संबंध नहीं होता और इनमें कोई स्वास्थ्य जानकारी नहीं होती।</p>
+        <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
+          <strong>Real BMI</strong> पर हम उपयोगकर्ता की व्यक्तिगत गोपनीयता और स्वास्थ्य डेटा की सुरक्षा को एक बुनियादी अधिकार मानते हैं। हमारे सभी कैलकुलेटर गोपनीयता-प्रथम दृष्टिकोण पर आधारित हैं।
+        </p>
 
-        <h2>4. वेब एनालिटिक्स, डिजिटल विज्ञापन एवं कुकीज़ (Cookies)</h2>
-        <p>Real BMI जनता के लिए सभी स्वास्थ्य टूल्स को मुफ़्त व सुलभ बनाए रखने हेतु गोपनीयता-अनुरूप डिजिटल विज्ञापनों और समग्र एनालिटिक्स का उपयोग करता है:</p>
-        <ul>
-          <li><strong>Google Analytics 4 (अनाम समग्र टेलीमेट्री):</strong> कुकी सहमति बैनर के माध्यम से आपकी स्पष्ट सहमति के अधीन, हम साइट के प्रदर्शन को अनुकूलित करने के लिए पूरी तरह से अज्ञात और समग्र ट्रैफ़िक डेटा का विश्लेषण करते हैं। IP अनामीकरण डिफ़ॉल्ट रूप से सक्रिय रहता है और इसे कभी भी व्यक्तिगत गणनाओं से नहीं जोड़ा जाता है।</li>
-          <li><strong>Google AdSense (डिजिटल विज्ञापन समर्थन):</strong> पूर्व सहमति के साथ, Google और उसके प्रमाणित भागीदार प्रासंगिक विज्ञापन प्रदर्शित करने के लिए कुकीज़ का उपयोग करते हैं, जिससे हमारे सभी कैलकुलेटरों का मुफ़्त संचालन संभव होता है।</li>
-          <li><strong>Google Consent Mode v2 एवं उपयोगकर्ता नियंत्रण:</strong> हम Google Consent Mode v2 का पालन करते हैं। जब तक आप स्पष्ट सहमति नहीं देते, तब तक गैर-आवश्यक कुकीज़ और मार्केटिंग स्क्रिप्ट्स पूरी तरह से अवरुद्ध (blocked) रहते हैं। आप हमारे फ़ूटर में दिए गए "कुकी प्राथमिकताएँ" लिंक द्वारा किसी भी समय अपनी पसंद बदल सकते हैं। विस्तृत विवरण के लिए हमारी <a href="/hi/cookie-policy/" class="text-[var(--accent)] underline font-medium">कुकी नीति</a> देखें।</li>
-        </ul>
-        <p>उपयोगकर्ता व्यक्तिगत विज्ञापनों को किसी भी समय <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">Google विज्ञापन सेटिंग्स</a> या <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline">aboutads.info</a> पर जाकर बंद (Opt-out) कर सकते हैं।</p>
+        <!-- 1. शून्य स्वास्थ्य डेटा संग्रह नीति -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            1. शून्य स्वास्थ्य डेटा संग्रह नीति
+          </h2>
+          <p>
+            हम आपकी व्यक्तिगत लंबाई, वजन या अन्य शारीरिक मापों को कभी भी एकत्र, संचित या प्रेषित नहीं करते हैं।
+          </p>
+          <p>
+            जब आप कैलकुलेटर में अपनी जानकारी दर्ज करते हैं, तो सभी गणितीय गणनाएं जावास्क्रिप्ट के माध्यम से सीधे आपके वेब ब्राउज़र में ही प्रोसेस होती हैं।
+          </p>
+          <p>
+            ये आंकड़े कभी भी हमारे वेब सर्वर पर नहीं भेजे जाते और न ही किसी डेटाबेस में सहेजे जाते हैं।
+          </p>
+        </div>
 
-        <h2>5. अंतर्राष्ट्रीय गोपनीयता मानकों का अनुपालन</h2>
-        <p>हम पुष्टि करते हैं कि Real BMI किसी भी स्वास्थ्य या व्यक्तिगत जानकारी को डेटा दलालों को नहीं बेचता, किराए पर नहीं देता और न ही साझा करता है। शून्य-संग्रह संरचना के कारण आपकी गोपनीयता का स्वतः पूर्ण संरक्षण होता है।</p>
+        <!-- 2. स्थानीय ब्राउज़र प्रोसेसिंग और अस्थायी मेमोरी -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            2. स्थानीय ब्राउज़र प्रोसेसिंग और अस्थायी मेमोरी
+          </h2>
+          <p>
+            क्योंकि गणना आपके डिवाइस पर स्थानीय रूप से होती है, इसलिए आपका डेटा केवल पेज खुले रहने तक ही रहता है।
+          </p>
+          <p>
+            जैसे ही आप टैब बंद करते हैं या पेज को रीफ्रेश करते हैं, आपके द्वारा दर्ज किए गए सभी आंकड़े मेमोरी से तुरंत हट जाते हैं।
+          </p>
+          <p>
+            Real BMI में किसी अकाउंट की जरूरत नहीं होती और न ही हम आपके आईपी पते से कोई स्वास्थ्य डेटा जोड़ते हैं।
+          </p>
+        </div>
 
-        <h2>6. एन्क्रिप्शन और वेब सुरक्षा मानक</h2>
-        <p>हमारी वेबसाइट आधुनिक TLS 1.3 एन्क्रिप्शन और HSTS सुरक्षा मानकों का उपयोग करती है, जिससे आपके ब्राउज़र और हमारी साइट के बीच संचार पूरी तरह सुरक्षित और सुरक्षित रहता है।</p>
+        <!-- 3. तकनीकी निदान एवं आवश्यक सर्वर लॉग्स -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            3. तकनीकी निदान एवं आवश्यक सर्वर लॉग्स
+          </h2>
+          <p>
+            अन्य मानक वेबसाइटों की तरह, हमारी होस्टिंग सेवा साइबर हमलों से बचाव और वेबसाइट की गति सुनिश्चित करने के लिए गैर-व्यक्तिगत तकनीकी लॉग (ब्राउज़र का प्रकार, ऑपरेटिंग सिस्टम) उत्पन्न करती है।
+          </p>
+          <p>
+            ये लॉग कैलकुलेटर के उपयोग से पूरी तरह अलग होते हैं और इनमें कोई स्वास्थ्य डेटा नहीं होता।
+          </p>
+        </div>
 
-        <h2>7. नीति में संशोधन एवं संपर्क विवरण</h2>
-        <p>हम तकनीकी सुधारों अथवा नए विधिक मानकों के अनुरूप इस गोपनीयता नीति को समय-समय पर अद्यतन कर सकते हैं। कोई भी संशोधन तुरंत इस पृष्ठ पर तारीख के साथ प्रकाशित किया जाएगा। हमारी गोपनीयता प्रणाली अथवा अपने डेटा अधिकारों से संबंधित किसी भी प्रश्न के लिए आप हमारे <a href="/hi/contact/" class="text-[var(--accent)] underline font-medium">संपर्क पृष्ठ</a> के माध्यम से हमसे संपर्क कर सकते हैं या सीधे हमारे आधिकारिक संपर्क ईमेल <span class="font-mono text-[var(--accent)] font-medium"><span>support</span><span>&#64;</span><span>realbmicalculator.com</span></span> पर लिख सकते हैं।</p>
+        <!-- 4. वेब एनालिटिक्स और डिजिटल विज्ञापन -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            4. वेब एनालिटिक्स और डिजिटल विज्ञापन
+          </h2>
+          <p>
+            Real BMI इन कैलकुलेटरों को मुफ़्त रखने के लिए गैर-आक्रामक ऑनलाइन विज्ञापनों का उपयोग करता है:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>Google AdSense:</strong> Google सहित तृतीय-पक्ष विक्रेता वेबसाइट पर विज़िट के आधार पर विज्ञापन प्रदर्शित करने के लिए कुकीज़ का उपयोग करते हैं।</li>
+            <li><strong>व्यक्तिगत विज्ञापन बंद करना:</strong> आप <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Google Ads Settings</a> पर जाकर कभी भी व्यक्तिगत विज्ञापनों को बंद कर सकते हैं।</li>
+            <li><strong>कुकी प्राथमिकताओं का नियंत्रण:</strong> Google Consent Mode v2 के माध्यम से आप हमारे कुकी बैनर में कभी भी अपनी प्राथमिकताओं को बदल सकते हैं।</li>
+          </ul>
+        </div>
 
-        <h2>8. संपादकीय सामग्री समीक्षा एवं व्यक्तिगत पहचान (PII) सुरक्षा नीति</h2>
-        <p>Google AdSense प्रकाशक नीतियों और अंतर्राष्ट्रीय गोपनीयता मानकों के सख्त अनुपालन में, Real BMI किसी भी कैलकुलेटर टूल या लेख को प्रकाशित करने से पूर्व बहुस्तरीय संपादकीय समीक्षा अनिवार्य करता है। हम किसी भी सार्वजनिक टिप्पणी अनुभाग, चर्चा फ़ोरम या उपयोगकर्ता निर्देशिका का संचालन नहीं करते हैं, जिससे व्यक्तिगत फोन नंबर, पता या निजी ईमेल जैसी संवेदनशील जानकारी (PII) सार्वजनिक रूप से उजागर हो सके। सभी प्राप्त संचार निजी और गोपनीय रखे जाते हैं।</p>
+        <!-- 5. आपके डेटा अधिकार -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            5. आपके डेटा अधिकार
+          </h2>
+          <p>
+            अंतर्राष्ट्रीय गोपनीयता मानकों के अनुसार आपको अपने डेटा पर पूर्ण नियंत्रण प्राप्त है:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>डेटा बिक्री पर रोक:</strong> हम कभी भी किसी तीसरे पक्ष को आपका स्वास्थ्य डेटा नहीं बेचते।</li>
+            <li><strong>स्वचालित डेटा निष्कासन:</strong> सर्वर पर डेटा न होने के कारण सत्र समाप्त होते ही आपकी जानकारी स्वतः नष्ट हो जाती है।</li>
+            <li><strong>प्राथमिकताएं बदलना:</strong> आप हमारे <a href="/hi/cookie-policy/" class="text-[var(--accent)] underline font-medium">कुकी प्राथमिकता केंद्र</a> में जाकर किसी भी समय कुकीज़ प्रबंधित कर सकते हैं।</li>
+          </ul>
+        </div>
+
+        <!-- 6. एन्क्रिप्शन और वेब सुरक्षा मानक -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            6. एन्क्रिप्शन और वेब सुरक्षा मानक
+          </h2>
+          <p>
+            हम आधुनिक TLS एन्क्रिप्शन तकनीक का उपयोग करते हैं ताकि आपका ब्राउज़िंग अनुभव सुरक्षित रहे और कोई तीसरा पक्ष आपके डेटा को इंटरसेप्ट न कर सके।
+          </p>
+        </div>
+
+        <!-- 7. संपादकीय समीक्षा एवं डेटा गोपनीयता नीति -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            7. संपादकीय समीक्षा एवं डेटा गोपनीयता नीति
+          </h2>
+          <p>
+            सभी कैलकुलेटर और स्वास्थ्य लेख प्रकाशन से पहले कठोर समीक्षा से गुजरते हैं।
+          </p>
+          <p>
+            हम किसी भी प्रकार के सार्वजनिक फ़ोरम या उपयोगकर्ता निर्देशिका का संचालन नहीं करते हैं, जिससे आपकी पहचान पूर्णतः सुरक्षित रहती है।
+          </p>
+        </div>
+
+        <!-- 8. संपर्क एवं सहायता -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            8. संपर्क एवं सहायता
+          </h2>
+          <p>
+            यदि आपके पास हमारी गोपनीयता नीति या ब्राउज़र गणना मॉडल के बारे में कोई प्रश्न है, तो कृपया हमारे <a href="/hi/contact/" class="text-[var(--accent)] underline font-medium">संपर्क और सहायता पेज</a> के माध्यम से हमसे संपर्क करें।
+          </p>
+        </div>
+
       </div>
     </PageShell>
 </Layout>
