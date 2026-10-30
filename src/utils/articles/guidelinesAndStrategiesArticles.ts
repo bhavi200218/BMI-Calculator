@@ -581,7 +581,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         <li><strong>Gait Speed Assessment:</strong> A standard 4-meter walking test where gait speeds below 0.8 meters per second signal heightened frailty and fall risk.</li>
       </ul>
 
-      <h2>Clinical Summary</h2>
+      <h2>Evidence-Based Summary</h2>
       <p>Body Mass Index is not a static one-size-fits-all diagnostic metric. By tailoring BMI evaluations to chronological age—utilizing growth percentiles for youths, standard cutoffs coupled with waist metrics for middle-aged adults, and higher protective targets alongside functional strength testing for seniors—clinicians and individuals can make informed, health-preserving decisions across every phase of life.</p>
 `,
       "es": `
@@ -852,7 +852,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         <li><strong>Maintain Physical Activity Habits:</strong> The National Weight Control Registry (tracking thousands of individuals who have maintained a 30+ lb weight loss for over 5 years) reveals that consistent daily physical movement (averaging 60 minutes of moderate activity daily) is the single most universal habit of successful long-term weight maintainers.</li>
       </ol>
 
-      <h2>Clinical Summary</h2>
+      <h2>Evidence-Based Summary</h2>
       <p>Sustainable weight management is not about extreme deprivation or short-term quick fixes. By coupling a moderate caloric deficit with high protein intake, progressive resistance training, volumetric whole foods, and restorative sleep hygiene, individuals can transform their body composition while preserving metabolic vitality and long-term well-being.</p>
 `,
       "es": `
@@ -1051,7 +1051,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         <li><strong>Implement a Methodical Reverse Diet:</strong> Post-diet, gradually titrate calories upward by 100 to 150 kcal per week back to maintenance, allowing metabolic rate and leptin to recover without rapid fat overshoot.</li>
       </ul>
 
-      <h2>Clinical Summary &amp; Recovery Timeline</h2>
+      <h2>Research Summary &amp; Recovery Timeline</h2>
       <p>Following an extended caloric deficit, restoring metabolic equilibrium requires patience. While acute hormonal markers like leptin and ghrelin begin stabilizing within 1 to 2 weeks of eucaloric feeding, full normalization of resting metabolic rate and neuromuscular efficiency often takes 2 to 4 months. Recognizing that weight loss plateaus stem from predictable biological adaptations enables dieters to adjust deficits intelligently and achieve sustainable results.</p>
 `,
       "es": `
@@ -1232,7 +1232,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         <li><strong>Optimize Sleep Duration &amp; Stress Management:</strong> Chronic sleep restriction (&lt; 6 hours per night) and elevated psychological stress elevate nocturnal cortisol output. Glucocorticoid receptors are expressed at four-fold higher densities in visceral fat than subcutaneous fat, directly promoting visceral fat hypertrophy under chronic stress.</li>
       </ul>
 
-      <h2>Clinical Summary</h2>
+      <h2>Evidence-Based Summary</h2>
       <p>Evaluating health risk solely through the lens of body weight or standard BMI overlooks the critical physiological distinction between subcutaneous and visceral fat. By incorporating waist circumference and waist-to-height ratios into regular wellness assessments and focusing on aerobic conditioning, whole-food nutrition, and stress management, individuals can effectively reduce pathogenic visceral fat and protect cardiometabolic health.</p>
 `,
       "es": `
@@ -1502,7 +1502,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         <li><strong>Moderate Chronic Alcohol &amp; Stimulant Consumption:</strong> Regular alcohol intake significantly raises resting heart rate and suppresses parasympathetic vagal recovery during sleep. Hydration, electrolyte balance, and moderating high caffeine doses prevent sinus tachycardia.</li>
       </ul>
 
-      <h2>Clinical Summary</h2>
+      <h2>Evidence-Based Summary</h2>
       <p>Resting Heart Rate is an invaluable clinical window into autonomic nervous system health and myocardial work capacity. By understanding stroke volume adaptations, tracking target heart rate zones with the Karvonen formula, and engaging in structured Zone 2 and interval training, individuals can enhance their cardiovascular efficiency, reduce resting pulse, and significantly boost long-term healthspan.</p>
 `,
       "es": `
@@ -1615,7 +1615,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       <h2>Anabolic Resistance: Why Older Adults Need More Protein</h2>
       <p>A crucial physiological phenomenon discovered by geriatric researchers is <strong>anabolic resistance</strong>. In younger adults, consuming 20 grams of high-quality protein containing approximately 2 grams of the essential branched-chain amino acid L-leucine fully saturates the mTORC1 signaling cascade to maximize muscle protein synthesis. In adults aged 65 and older, however, blunted intracellular phosphorylation requires a <strong>higher per-meal leucine threshold (at least 3.0 to 3.5 grams of leucine, or ~35 to 40 grams of whole protein per meal)</strong> to trigger equivalent myofibrillar growth and repair.</p>
 
-      <h2>Sarcopenia Diagnostic Parameters &amp; Clinical Thresholds</h2>
+      <h2>Sarcopenia Diagnostic Parameters &amp; Reference Thresholds</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>

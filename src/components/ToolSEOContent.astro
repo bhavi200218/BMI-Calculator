@@ -259,6 +259,47 @@ const spectrumUi = {
   overweight: 'Overweight / Moderate',
   obese: 'Obese / High Risk'
 };
+
+const accordionTitles: Record<Locale, { formula: string; formulaSub: string; methodology: string; methodologySub: string }> = {
+  en: {
+    formula: 'Mathematical Formulas & Step-by-Step Worked Example',
+    formulaSub: 'Explore calculation equations, variable definitions, and worked numbers.',
+    methodology: 'Research Methodology, Interpretation & Limitations',
+    methodologySub: 'Published epidemiological criteria, screening boundaries, and guidance.'
+  },
+  es: {
+    formula: 'Fórmulas Matemáticas y Ejemplo de Cálculo Paso a Paso',
+    formulaSub: 'Explore las ecuaciones de cálculo, variables y valores numéricos.',
+    methodology: 'Metodología de Investigación, Interpretación y Limitaciones',
+    methodologySub: 'Criterios epidemiológicos publicados, límites de cribado y orientación.'
+  },
+  fr: {
+    formula: 'Formules Mathématiques et Exemple de Calcul Détaillé',
+    formulaSub: 'Consultez les équations de calcul, les variables et les valeurs chiffrées.',
+    methodology: 'Méthodologie de Recherche, Interprétation et Limites',
+    methodologySub: 'Critères épidémiologiques publiés, limites de dépistage et repères.'
+  },
+  de: {
+    formula: 'Mathematische Formeln & Schritt-für-Schritt-Rechenbeispiel',
+    formulaSub: 'Berechnungsgleichungen, Variablendefinitionen und Zahlenbeispiele.',
+    methodology: 'Forschungsmethodik, Interpretation & Grenzen',
+    methodologySub: 'Publizierte epidemiologische Kriterien, Screening-Grenzen und Orientierung.'
+  },
+  ko: {
+    formula: '수학적 계산 공식 및 단계별 계산 예시',
+    formulaSub: '산출 공식, 입력 변수 정의 및 단계별 계산 과정을 확인하세요.',
+    methodology: '연구 방법론, 결과 해석 및 지표의 한계점',
+    methodologySub: '공중보건 역학 기준, 선별 검사 한계 및 가이드라인입니다.'
+  },
+  hi: {
+    formula: 'गणितीय सूत्र एवं चरण-दर-चरण गणना उदाहरण',
+    formulaSub: 'गणना समीकरण, चर परिभाषाएं और विस्तृत संख्यात्मक उदाहरण देखें।',
+    methodology: 'अनुसंधान पद्धति, परिणाम व्याख्या एवं सीमाएं',
+    methodologySub: 'प्रकाशित महामारी विज्ञान मानदंड, स्क्रीनिंग सीमाएं और दिशानिर्देश।'
+  }
+};
+
+const curAccordion = accordionTitles[lang] || accordionTitles.en;
 ---
 
 <!-- Embed Tool-Specific FAQ Schema -->
@@ -279,145 +320,38 @@ const spectrumUi = {
     </p>
   </div>
 
-  <!-- Formula Box -->
-  <div class="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-lg space-y-4">
-    <div class="space-y-2">
-      <div class="flex items-center justify-between gap-4 flex-wrap">
-        <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-          {currentData.formulaTitle}
-        </h3>
-        {currentData.formulaCode && (
-          <span class="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] font-mono text-xs font-bold border border-[var(--accent)]/20">
-            {currentData.formulaCode}
-          </span>
-        )}
-      </div>
-      <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-sans font-medium pt-1">
-        {currentData.formulaDesc}
-      </p>
-    </div>
-  </div>
+  <!-- ═══════════════════ 1. IMMEDIATE VISIBLE FLOW: WHO REFERENCE TABLE ═══════════════════ -->
+  {currentData.tableRows && (
+    <div class="space-y-4">
+      <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+        {currentData.tableTitle}
+      </h3>
 
-  <!-- Input Variables & Measurement Units Guide -->
-  {variablesGuide.items.length > 0 && (
-    <div class="p-6 md:p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-md space-y-5">
-      <div class="space-y-1">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
-          <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
-          {variablesGuide.title}
-        </div>
-        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium">
-          {variablesGuide.subtitle}
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {variablesGuide.items.map((item) => (
-          <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)]/70 flex flex-col justify-between space-y-3">
-            <div class="space-y-1.5">
-              <h4 class="text-sm font-display font-bold text-[var(--foreground)] tracking-tight">
-                {item.name}
-              </h4>
-              <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
-                {item.description}
-              </p>
-            </div>
-            <div class="pt-2 border-t border-[var(--border)]/50 flex items-center justify-between gap-2 text-xs font-mono">
-              <span class="text-[var(--accent)] font-semibold">
-                <span class="text-[var(--muted-foreground)] font-sans">{variablesGuide.metricLabel}:</span> {item.metricUnit}
-              </span>
-              <span class="text-[var(--muted-foreground)]">|</span>
-              <span class="text-[var(--foreground)] font-semibold">
-                <span class="text-[var(--muted-foreground)] font-sans">{variablesGuide.imperialLabel}:</span> {item.imperialUnit}
-              </span>
-            </div>
-          </div>
-        ))}
+      <!-- Responsive Semantic Reference Table (Single Accessible Source of Truth) -->
+      <div class="rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-md overflow-x-auto">
+        <table class="w-full text-left border-collapse text-sm min-w-[500px]">
+          <thead>
+            <tr class="bg-[var(--muted)]/50 border-b border-[var(--border)] text-[var(--foreground)] font-display uppercase tracking-wider text-xs font-bold">
+              <th class="p-4">{ui.cat}</th>
+              <th class="p-4">{ui.metric}</th>
+              <th class="p-4">{ui.guidance}</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)] font-medium">
+            {(currentData.tableRows || []).map((row: { col1: string; col2: string; col3: string }) => (
+              <tr class="hover:bg-[var(--muted)]/30 transition-colors">
+                <td class="p-4 font-bold text-[var(--foreground)] whitespace-nowrap">{row.col1}</td>
+                <td class="p-4 font-mono whitespace-nowrap text-[var(--accent)] font-semibold">{row.col2}</td>
+                <td class="p-4 text-xs sm:text-sm">{row.col3}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   )}
 
-  <!-- Transparent Worked Example & Clinical/Educational Interpretation Guide -->
-  <div class="p-6 md:p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-md space-y-6">
-    <div class="space-y-1">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
-        <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-        {workedExample.eyebrow}
-      </div>
-      <h3 class="text-xl md:text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
-        {workedExample.title}
-      </h3>
-      {workedExample.subtitle && (
-        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium pt-1 leading-relaxed">
-          {workedExample.subtitle}
-        </p>
-      )}
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-      <!-- Left Column: Inputs & Derivation Steps -->
-      <div class="space-y-4">
-        <div class="p-4 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 space-y-2">
-          <h4 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
-            {workedExample.inputHeading}
-          </h4>
-          <div class="flex flex-wrap gap-2">
-            {workedExample.inputs.map((inp) => (
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs font-medium text-[var(--foreground)]">
-                <span class="text-[var(--muted-foreground)]">{inp.label}:</span>
-                <strong class="font-mono text-[var(--accent)]">{inp.value}</strong>
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div class="space-y-2">
-          <h4 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
-            {workedExample.stepsHeading}
-          </h4>
-          <ol class="space-y-2 text-xs sm:text-sm text-[var(--muted-foreground)] font-medium">
-            {workedExample.steps.map((st, sIdx) => (
-              <li class="flex items-start gap-2.5 p-2.5 rounded-lg bg-[var(--muted)]/20 border border-[var(--border)]/50">
-                <span class="flex items-center justify-center w-5 h-5 rounded-full bg-[var(--accent)]/15 text-[var(--accent)] text-xs font-bold font-mono shrink-0 mt-0.5">
-                  {sIdx + 1}
-                </span>
-                <span class="leading-relaxed">{st}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
-
-      <!-- Right Column: Result Output & Clinical Context -->
-      <div class="space-y-4">
-        <div class="p-5 rounded-xl bg-gradient-to-br from-[var(--accent)]/10 via-[var(--accent)]/5 to-transparent border border-[var(--accent)]/30 space-y-2">
-          <p class="text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
-            {workedExample.resultHeading}
-          </p>
-          <div class="text-lg sm:text-xl font-display font-bold text-[var(--foreground)]">
-            {workedExample.result.value}
-          </div>
-        </div>
-
-        <div class="space-y-2">
-          <h4 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
-            {workedExample.interpretationHeading}
-          </h4>
-          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
-            {workedExample.interpretation}
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Educational Transparency Notice -->
-    <div class="pt-3 border-t border-[var(--border)]/70 flex items-center gap-2 text-xs text-[var(--muted-foreground)] font-medium">
-      <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <span>{workedExample.disclaimer}</span>
-    </div>
-  </div>
-
-  <!-- Visual Reference Figure & Diagram (Accessible Infographic with Figcaption & Credit) -->
+  <!-- ═══════════════════ 2. VISUAL REFERENCE INFOGRAPHIC ═══════════════════ -->
   <figure role="group" aria-labelledby={`fig-caption-${effectiveSlug}`} class="p-6 md:p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-md space-y-4">
     <div class="flex items-center justify-between gap-4 flex-wrap">
       <div class="space-y-1">
@@ -463,101 +397,252 @@ const spectrumUi = {
     </figcaption>
   </figure>
 
-  <!-- Reference Table (Responsive: Stacked Cards on Mobile, Table on Desktop) -->
-  {currentData.tableRows && (
-    <div class="space-y-4">
-      <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {currentData.tableTitle}
-      </h3>
+  <!-- ═══════════════════ 3. STREAMLINED ACCORDION: MATHEMATICAL FORMULAS & WORKED EXAMPLE ═══════════════════ -->
+  <details class="group rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm transition-all overflow-hidden">
+    <summary class="p-6 md:p-7 flex items-center justify-between cursor-pointer list-none select-none hover:bg-[var(--muted)]/20 transition-colors">
+      <div class="flex items-center gap-3.5">
+        <div class="w-9 h-9 rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center font-bold text-base shrink-0">
+          📐
+        </div>
+        <div class="space-y-0.5 text-left">
+          <h3 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-open:text-[var(--accent)] transition-colors">
+            {curAccordion.formula}
+          </h3>
+          <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">
+            {curAccordion.formulaSub}
+          </p>
+        </div>
+      </div>
+      <div class="w-8 h-8 rounded-full bg-[var(--muted)]/60 flex items-center justify-center text-[var(--muted-foreground)] group-open:rotate-180 transition-transform shrink-0 ml-3">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+    </summary>
 
-      <!-- Responsive Semantic Reference Table (Single Accessible Source of Truth) -->
-      <div class="rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-md overflow-x-auto">
-        <table class="w-full text-left border-collapse text-sm min-w-[500px]">
-          <thead>
-            <tr class="bg-[var(--muted)]/50 border-b border-[var(--border)] text-[var(--foreground)] font-display uppercase tracking-wider text-xs font-bold">
-              <th class="p-4">{ui.cat}</th>
-              <th class="p-4">{ui.metric}</th>
-              <th class="p-4">{ui.guidance}</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)] font-medium">
-            {(currentData.tableRows || []).map((row: { col1: string; col2: string; col3: string }) => (
-              <tr class="hover:bg-[var(--muted)]/30 transition-colors">
-                <td class="p-4 font-bold text-[var(--foreground)] whitespace-nowrap">{row.col1}</td>
-                <td class="p-4 font-mono whitespace-nowrap text-[var(--accent)] font-semibold">{row.col2}</td>
-                <td class="p-4 text-xs sm:text-sm">{row.col3}</td>
-              </tr>
+    <div class="p-6 md:p-8 pt-2 border-t border-[var(--border)] space-y-6">
+      <!-- Formula Box -->
+      <div class="p-5 md:p-6 rounded-xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-sm space-y-3">
+        <div class="flex items-center justify-between gap-4 flex-wrap">
+          <h4 class="text-lg font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+            {currentData.formulaTitle}
+          </h4>
+          {currentData.formulaCode && (
+            <span class="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] font-mono text-xs font-bold border border-[var(--accent)]/20">
+              {currentData.formulaCode}
+            </span>
+          )}
+        </div>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-sans font-medium">
+          {currentData.formulaDesc}
+        </p>
+      </div>
+
+      <!-- Input Variables & Measurement Units Guide -->
+      {variablesGuide.items.length > 0 && (
+        <div class="p-5 md:p-6 rounded-xl bg-[var(--card)] border border-[var(--border)] shadow-sm space-y-4">
+          <div class="space-y-1">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
+              <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+              {variablesGuide.title}
+            </div>
+            <p class="text-xs text-[var(--muted-foreground)] font-medium">
+              {variablesGuide.subtitle}
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {variablesGuide.items.map((item) => (
+              <div class="p-3.5 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)]/70 flex flex-col justify-between space-y-2.5">
+                <div class="space-y-1">
+                  <h5 class="text-xs font-display font-bold text-[var(--foreground)] tracking-tight">
+                    {item.name}
+                  </h5>
+                  <p class="text-[11px] text-[var(--muted-foreground)] leading-relaxed font-medium">
+                    {item.description}
+                  </p>
+                </div>
+                <div class="pt-2 border-t border-[var(--border)]/50 flex items-center justify-between gap-2 text-[11px] font-mono">
+                  <span class="text-[var(--accent)] font-semibold">
+                    <span class="text-[var(--muted-foreground)] font-sans">{variablesGuide.metricLabel}:</span> {item.metricUnit}
+                  </span>
+                  <span class="text-[var(--muted-foreground)]">|</span>
+                  <span class="text-[var(--foreground)] font-semibold">
+                    <span class="text-[var(--muted-foreground)] font-sans">{variablesGuide.imperialLabel}:</span> {item.imperialUnit}
+                  </span>
+                </div>
+              </div>
             ))}
-          </tbody>
-        </table>
+          </div>
+        </div>
+      )}
+
+      <!-- Worked Example Guide -->
+      <div class="p-5 md:p-6 rounded-xl bg-[var(--card)] border border-[var(--border)] shadow-sm space-y-5">
+        <div class="space-y-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+            {workedExample.eyebrow}
+          </div>
+          <h4 class="text-lg md:text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
+            {workedExample.title}
+          </h4>
+          {workedExample.subtitle && (
+            <p class="text-xs text-[var(--muted-foreground)] font-medium pt-0.5 leading-relaxed">
+              {workedExample.subtitle}
+            </p>
+          )}
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
+          <!-- Inputs & Derivation Steps -->
+          <div class="space-y-3.5">
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 space-y-2">
+              <h5 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+                {workedExample.inputHeading}
+              </h5>
+              <div class="flex flex-wrap gap-2">
+                {workedExample.inputs.map((inp) => (
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs font-medium text-[var(--foreground)]">
+                    <span class="text-[var(--muted-foreground)]">{inp.label}:</span>
+                    <strong class="font-mono text-[var(--accent)]">{inp.value}</strong>
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <h5 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+                {workedExample.stepsHeading}
+              </h5>
+              <ol class="space-y-1.5 text-xs text-[var(--muted-foreground)] font-medium">
+                {workedExample.steps.map((st, sIdx) => (
+                  <li class="flex items-start gap-2 p-2 rounded-lg bg-[var(--muted)]/20 border border-[var(--border)]/50">
+                    <span class="flex items-center justify-center w-4 h-4 rounded-full bg-[var(--accent)]/15 text-[var(--accent)] text-[10px] font-bold font-mono shrink-0 mt-0.5">
+                      {sIdx + 1}
+                    </span>
+                    <span class="leading-relaxed">{st}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+
+          <!-- Result Output & Interpretation Context -->
+          <div class="space-y-3.5">
+            <div class="p-4 rounded-xl bg-gradient-to-br from-[var(--accent)]/10 via-[var(--accent)]/5 to-transparent border border-[var(--accent)]/30 space-y-1.5">
+              <p class="text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+                {workedExample.resultHeading}
+              </p>
+              <div class="text-lg font-display font-bold text-[var(--foreground)]">
+                {workedExample.result.value}
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <h5 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+                {workedExample.interpretationHeading}
+              </h5>
+              <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+                {workedExample.interpretation}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-[var(--border)]/70 flex items-center gap-2 text-xs text-[var(--muted-foreground)] font-medium">
+          <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>{workedExample.disclaimer}</span>
+        </div>
       </div>
     </div>
-  )}
+  </details>
 
-  <!-- Result Interpretation & Clinical Limitations Guide -->
-  <div class="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-md space-y-6">
-    <div class="space-y-1">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
-        <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
-        {clinicalGuide.sectionTitle}
+  <!-- ═══════════════════ 4. STREAMLINED ACCORDION: METHODOLOGY, HEALTH CONTEXT & LIMITATIONS ═══════════════════ -->
+  <details class="group rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm transition-all overflow-hidden">
+    <summary class="p-6 md:p-7 flex items-center justify-between cursor-pointer list-none select-none hover:bg-[var(--muted)]/20 transition-colors">
+      <div class="flex items-center gap-3.5">
+        <div class="w-9 h-9 rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center font-bold text-base shrink-0">
+          🔬
+        </div>
+        <div class="space-y-0.5 text-left">
+          <h3 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-open:text-[var(--accent)] transition-colors">
+            {curAccordion.methodology}
+          </h3>
+          <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">
+            {curAccordion.methodologySub}
+          </p>
+        </div>
       </div>
-      <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium">
-        {clinicalGuide.sectionSubtitle}
-      </p>
+      <div class="w-8 h-8 rounded-full bg-[var(--muted)]/60 flex items-center justify-center text-[var(--muted-foreground)] group-open:rotate-180 transition-transform shrink-0 ml-3">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+    </summary>
+
+    <div class="p-6 md:p-8 pt-2 border-t border-[var(--border)] space-y-6">
+      <div class="p-5 md:p-6 rounded-xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-sm space-y-5">
+        <div class="space-y-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+            {clinicalGuide.sectionTitle}
+          </div>
+          <p class="text-xs text-[var(--muted-foreground)] font-medium">
+            {clinicalGuide.sectionSubtitle}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Interpretation Panel -->
+          <div class="p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] space-y-2">
+            <h4 class="text-sm font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              {clinicalGuide.interpretationTitle}
+            </h4>
+            <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+              {clinicalGuide.interpretationText}
+            </p>
+          </div>
+
+          <!-- Limitations Panel -->
+          <div class="p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] space-y-2">
+            <h4 class="text-sm font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
+              <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              {clinicalGuide.limitationsTitle}
+            </h4>
+            <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
+              {clinicalGuide.limitationsText}
+            </p>
+          </div>
+        </div>
+
+        <!-- Consultation Notice -->
+        <div class="p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 flex items-start gap-2.5">
+          <svg class="w-4 h-4 text-blue-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div class="space-y-0.5 text-xs text-[var(--muted-foreground)] font-medium">
+            <strong class="text-[var(--foreground)]">{clinicalGuide.medicalNoticeTitle}:</strong> {clinicalGuide.medicalNoticeText}
+          </div>
+        </div>
+      </div>
     </div>
+  </details>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Interpretation Panel -->
-      <div class="p-5 rounded-xl bg-[var(--card)] border border-[var(--border)] space-y-2.5">
-        <h4 class="text-sm sm:text-base font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
-          <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          {clinicalGuide.interpretationTitle}
-        </h4>
-        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
-          {clinicalGuide.interpretationText}
-        </p>
-      </div>
-
-      <!-- Limitations Panel -->
-      <div class="p-5 rounded-xl bg-[var(--card)] border border-[var(--border)] space-y-2.5">
-        <h4 class="text-sm sm:text-base font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
-          <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-          {clinicalGuide.limitationsTitle}
-        </h4>
-        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
-          {clinicalGuide.limitationsText}
-        </p>
-      </div>
-    </div>
-
-    <!-- Educational Consultation Banner -->
-    <div class="p-4 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 flex items-start gap-3">
-      <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <div class="space-y-0.5 text-xs text-[var(--muted-foreground)] font-medium">
-        <strong class="text-[var(--foreground)]">{clinicalGuide.medicalNoticeTitle}:</strong> {clinicalGuide.medicalNoticeText}
-      </div>
-    </div>
-  </div>
-
-  <!-- FAQ Accordion List -->
+  <!-- ═══════════════════ 5. FAQ SECTION (HIGH VISIBILITY & INTENT) ═══════════════════ -->
   <div class="space-y-6 pt-4">
     <div class="space-y-1">
       <h3 class="text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
         {ui.faq}
       </h3>
       {ui.faqSubtitle && (
-        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium pt-1 leading-relaxed">
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium pt-0.5 leading-relaxed">
           {ui.faqSubtitle}
         </p>
       )}
     </div>
-    <div class="grid gap-4">
+    <div class="grid gap-3.5">
       {(currentData.faqs || []).map((faq: { question: string; answer: string }) => (
-        <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2">
-          <h4 class="text-base md:text-lg font-display font-bold text-[var(--foreground)]">
+        <div class="p-5 md:p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-1.5 shadow-xs">
+          <h4 class="text-sm md:text-base font-display font-bold text-[var(--foreground)]">
             {faq.question}
           </h4>
-          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
             {faq.answer}
           </p>
         </div>
@@ -566,9 +651,9 @@ const spectrumUi = {
   </div>
 
   <!-- Authority Medical Reference Badges & External Citations -->
-  <div class="p-6 rounded-2xl bg-[var(--muted)]/40 border border-[var(--border)] space-y-3">
+  <div class="p-5 md:p-6 rounded-2xl bg-[var(--muted)]/40 border border-[var(--border)] space-y-3">
     <div class="text-xs font-display font-bold uppercase tracking-widest text-[var(--accent)]">{ui.refs}</div>
-    <div class="flex flex-wrap gap-6 text-xs font-semibold text-[var(--muted-foreground)]">
+    <div class="flex flex-wrap gap-4 sm:gap-6 text-xs font-semibold text-[var(--muted-foreground)]">
       {activeReferences.map((ref) => (
         <a href={ref.url} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[var(--accent)] transition-colors underline decoration-[var(--accent)]/40 underline-offset-4">
           <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
@@ -578,14 +663,14 @@ const spectrumUi = {
     </div>
   </div>
 
-  <!-- Editorial Architecture & Author Verification Card -->
-  <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+  <!-- ═══════════════════ 7. EDITORIAL ATTR & TRANSPARENCY CARD ═══════════════════ -->
+  <div class="p-5 md:p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
     <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-bold text-sm shadow">
+      <div class="w-9 h-9 rounded-full bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-bold text-xs shadow-xs">
         RB
       </div>
       <div>
-        <p class="text-xs uppercase tracking-wider font-semibold text-[var(--muted-foreground)]">
+        <p class="text-[11px] uppercase tracking-wider font-semibold text-[var(--muted-foreground)]">
           {lang === 'es' ? 'Diseño y Modelado Matemático' :
            lang === 'fr' ? 'Conception et Modélisation Mathématique' :
            lang === 'de' ? 'Design & Mathematische Modellierung' :
@@ -593,7 +678,7 @@ const spectrumUi = {
            lang === 'hi' ? 'उपकरण डिज़ाइन और गणितीय मॉडलिंग' :
            'Tool Design & Mathematical Modeling'}
         </p>
-        <p class="text-sm font-bold text-[var(--foreground)]">
+        <p class="text-xs sm:text-sm font-bold text-[var(--foreground)]">
           {lang === 'es' ? 'Equipo Editorial de Real BMI' :
            lang === 'fr' ? 'Équipe Éditoriale Real BMI' :
            lang === 'de' ? 'Real BMI Redaktionsteam' :
@@ -612,7 +697,7 @@ const spectrumUi = {
       </div>
     </div>
     <div class="text-xs text-[var(--muted-foreground)] sm:text-right space-y-1">
-      <p>
+      <p class="text-[11px] sm:text-xs">
         {lang === 'es' ? 'Fórmulas alineadas con estándares de la OMS, CDC e ICMR' :
          lang === 'fr' ? 'Formules alignées sur les publications OMS, CDC et ICMR' :
          lang === 'de' ? 'Formeln abgestimmt auf Standards von WHO, CDC & ICMR' :
@@ -620,7 +705,7 @@ const spectrumUi = {
          lang === 'hi' ? 'WHO, CDC और ICMR साहित्य के अनुरूप गणितीय सूत्र' :
          'Formulas aligned with published WHO, CDC & ICMR benchmarks'}
       </p>
-      <div class="flex flex-wrap sm:justify-end gap-3 font-semibold text-[var(--accent)]">
+      <div class="flex flex-wrap sm:justify-end gap-3 font-semibold text-[var(--accent)] text-xs">
         <a href={`/${lang}/about/`} class="underline hover:text-[var(--foreground)]">
           {lang === 'es' ? 'Sobre el Equipo' :
            lang === 'fr' ? 'À Propos de l\'Équipe' :

@@ -11,266 +11,191 @@ interface FooterLink {
 interface FooterTranslation {
   tagline: string;
   colPopular: string;
-  colGuides: string;
   colCompany: string;
   colLegal: string;
   viewAllTools: string;
   copyright: string;
   teamAttribution: string;
-  whoBadge: string;
   privacyBadge: string;
   privacyFooter: string;
   popularCalculators: FooterLink[];
-  researchGuides: FooterLink[];
   companyLinks: FooterLink[];
   legalLinks: FooterLink[];
 }
 
 const footerTranslations: Record<string, FooterTranslation> = {
   en: {
-    tagline: 'A privacy-focused health research platform & calculation suite.',
+    tagline: 'An independent health information and reference calculation project.',
     colPopular: 'Popular Calculators',
-    colGuides: 'Research & Standards',
-    colCompany: 'About Real BMI',
-    colLegal: 'Policies & Legal',
-    viewAllTools: 'All 25 Tools & Methodology →',
+    colCompany: 'Company',
+    colLegal: 'Legal & Policies',
+    viewAllTools: 'All 18+ Calculators & Methodology →',
     copyright: `© ${year} Real BMI Calculator. All rights reserved.`,
-    teamAttribution: 'Educational health calculators maintained by the Real BMI Team',
-    whoBadge: 'WHO & CDC Aligned',
-    privacyBadge: 'Free & Privacy-Focused',
+    teamAttribution: 'Maintained by the Real BMI Team',
+    privacyBadge: 'Free & Privacy First',
     privacyFooter: 'Client-Side Calculations',
     popularCalculators: [
       { name: 'BMI Calculator', href: `/en/bmi-calculator/` },
-      { name: '3D BMI Visualizer', href: `/en/3d-bmi-calculator/` },
+      { name: '3D BMI Calculator', href: `/en/3d-bmi-calculator/` },
       { name: 'BMR Calculator', href: `/en/bmr-calculator/` },
       { name: 'TDEE Energy Calculator', href: `/en/tdee-calculator/` },
-      { name: 'Body Fat % Calculator', href: `/en/body-fat-calculator/` },
-      { name: 'Ideal Weight Calculator', href: `/en/ideal-weight-calculator/` }
-    ],
-    researchGuides: [
-      { name: 'BMI Reference Chart', href: `/en/bmi-chart/` },
-      { name: 'Asian BMI Thresholds', href: `/en/asian-bmi-calculator/` },
-      { name: 'Healthy Weight by Height', href: `/en/healthy-weight-by-height/` },
-      { name: 'Calculation Methodology', href: `/en/methodology/` },
-      { name: 'All Articles & Guides →', href: `/en/blog/` }
+      { name: 'Body Fat Calculator', href: `/en/body-fat-calculator/` }
     ],
     companyLinks: [
       { name: 'About Us', href: `/en/about/` },
+      { name: 'Contact Us', href: `/en/contact/` },
       { name: 'Editorial Policy', href: `/en/editorial-policy/` },
-      { name: 'Sources & References', href: `/en/sources/` },
-      { name: 'Contact Us', href: `/en/contact/` }
+      { name: 'Sources & Research', href: `/en/sources/` }
     ],
     legalLinks: [
       { name: 'Privacy Policy', href: `/en/privacy-policy/` },
-      { name: 'Terms & Conditions', href: `/en/terms-conditions/` },
-      { name: 'Medical Disclaimer', href: `/en/disclaimer/` },
-      { name: 'Copyright & DMCA', href: `/en/dmca-policy/` },
-      { name: 'Cookie Policy', href: `/en/cookie-policy/` }
+      { name: 'Terms of Service', href: `/en/terms-conditions/` },
+      { name: 'Medical Disclaimer', href: `/en/disclaimer/` }
     ]
   },
   es: {
-    tagline: 'Plataforma educativa de investigación en salud y métricas antropométricas.',
+    tagline: 'Proyecto independiente de información de salud y cálculos de referencia.',
     colPopular: 'Calculadoras Populares',
-    colGuides: 'Investigación y Estándares',
-    colCompany: 'Sobre Real BMI',
-    colLegal: 'Políticas y Legal',
-    viewAllTools: 'Ver las 25 Herramientas y Metodología →',
+    colCompany: 'Compañía',
+    colLegal: 'Legal y Políticas',
+    viewAllTools: 'Ver las 18+ Calculadoras y Metodología →',
     copyright: `© ${year} Real BMI Calculator. Todos los derechos reservados.`,
-    teamAttribution: 'Herramientas educativas de salud mantenidas por el Equipo de Real BMI',
-    whoBadge: 'Alineado con OMS y CDC',
+    teamAttribution: 'Mantenido por el Equipo de Real BMI Team',
     privacyBadge: 'Gratis y Privado',
     privacyFooter: 'Cálculos en el Navegador',
     popularCalculators: [
       { name: 'Calculadora de IMC', href: `/es/bmi-calculator/` },
-      { name: 'Visualizador de IMC 3D', href: `/es/3d-bmi-calculator/` },
+      { name: 'Calculadora IMC 3D', href: `/es/3d-bmi-calculator/` },
       { name: 'Calculadora de TMB (BMR)', href: `/es/bmr-calculator/` },
       { name: 'Gasto Energético (TDEE)', href: `/es/tdee-calculator/` },
-      { name: 'Porcentaje de Grasa Corporal', href: `/es/body-fat-calculator/` },
-      { name: 'Calculadora de Peso Ideal', href: `/es/ideal-weight-calculator/` }
-    ],
-    researchGuides: [
-      { name: 'Tabla de Clasificación IMC', href: `/es/bmi-chart/` },
-      { name: 'Estándar de IMC Asiático', href: `/es/asian-bmi-calculator/` },
-      { name: 'Peso Saludable según Altura', href: `/es/healthy-weight-by-height/` },
-      { name: 'Metodología de Cálculo', href: `/es/methodology/` },
-      { name: 'Todos los Artículos y Guías →', href: `/es/blog/` }
+      { name: 'Calculadora de Grasa Corporal', href: `/es/body-fat-calculator/` }
     ],
     companyLinks: [
       { name: 'Sobre Nosotros', href: `/es/about/` },
+      { name: 'Contacto', href: `/es/contact/` },
       { name: 'Política Editorial', href: `/es/editorial-policy/` },
-      { name: 'Fuentes y Referencias', href: `/es/sources/` },
-      { name: 'Contacto', href: `/es/contact/` }
+      { name: 'Fuentes y Referencias', href: `/es/sources/` }
     ],
     legalLinks: [
       { name: 'Política de Privacidad', href: `/es/privacy-policy/` },
       { name: 'Términos y Condiciones', href: `/es/terms-conditions/` },
-      { name: 'Aviso Médico', href: `/es/disclaimer/` },
-      { name: 'Derechos de Autor y DMCA', href: `/es/dmca-policy/` },
-      { name: 'Política de Cookies', href: `/es/cookie-policy/` }
+      { name: 'Aviso Médico', href: `/es/disclaimer/` }
     ]
   },
   fr: {
-    tagline: 'Plateforme éducative de recherche en santé et calculatrices anthropométriques.',
+    tagline: 'Projet indépendant d\'information sur la santé et outils de référence.',
     colPopular: 'Calculateurs Populaires',
-    colGuides: 'Recherche & Normes',
-    colCompany: 'À Propos de Real BMI',
-    colLegal: 'Politiques & Mentions',
-    viewAllTools: 'Voir les 25 Outils et Méthodologie →',
+    colCompany: 'Entreprise',
+    colLegal: 'Mentions Légales',
+    viewAllTools: 'Voir les 18+ Calculateurs et Méthodologie →',
     copyright: `© ${year} Real BMI Calculator. Tous droits réservés.`,
-    teamAttribution: 'Outils de santé éducatifs maintenus par l’Équipe Real BMI',
-    whoBadge: 'Aligné OMS & CDC',
+    teamAttribution: 'Maintenu par l\'Équipe Real BMI Team',
     privacyBadge: 'Gratuit & Confidentiel',
     privacyFooter: 'Calculs Côté Client',
     popularCalculators: [
       { name: 'Calculateur d\'IMC', href: `/fr/bmi-calculator/` },
-      { name: 'Visualiseur IMC 3D', href: `/fr/3d-bmi-calculator/` },
+      { name: 'Calculateur IMC 3D', href: `/fr/3d-bmi-calculator/` },
       { name: 'Calculateur Métabolisme (BMR)', href: `/fr/bmr-calculator/` },
       { name: 'Dépense Énergétique (TDEE)', href: `/fr/tdee-calculator/` },
-      { name: 'Masse Grasse Corporelle', href: `/fr/body-fat-calculator/` },
-      { name: 'Calculateur de Poids Idéal', href: `/fr/ideal-weight-calculator/` }
-    ],
-    researchGuides: [
-      { name: 'Tableau de Référence IMC', href: `/fr/bmi-chart/` },
-      { name: 'Seuils de l\'IMC Asiatique', href: `/fr/asian-bmi-calculator/` },
-      { name: 'Poids Idéal selon la Taille', href: `/fr/healthy-weight-by-height/` },
-      { name: 'Méthodologie de Calcul', href: `/fr/methodology/` },
-      { name: 'Tous les Articles & Guides →', href: `/fr/blog/` }
+      { name: 'Calculateur Masse Grasse', href: `/fr/body-fat-calculator/` }
     ],
     companyLinks: [
       { name: 'À Propos', href: `/fr/about/` },
+      { name: 'Contact', href: `/fr/contact/` },
       { name: 'Politique Éditoriale', href: `/fr/editorial-policy/` },
-      { name: 'Sources et Références', href: `/fr/sources/` },
-      { name: 'Contact', href: `/fr/contact/` }
+      { name: 'Sources & Références', href: `/fr/sources/` }
     ],
     legalLinks: [
       { name: 'Politique de Confidentialité', href: `/fr/privacy-policy/` },
-      { name: 'Conditions Générales', href: `/fr/terms-conditions/` },
-      { name: 'Avertissement Médical', href: `/fr/disclaimer/` },
-      { name: 'Droits d\'Auteur & DMCA', href: `/fr/dmca-policy/` },
-      { name: 'Politique de Cookies', href: `/fr/cookie-policy/` }
+      { name: 'Conditions d\'Utilisation', href: `/fr/terms-conditions/` },
+      { name: 'Avertissement Médical', href: `/fr/disclaimer/` }
     ]
   },
   de: {
-    tagline: 'Forschungsbasierte Plattform für Gesundheitsmetriken & anthropometrische Modelle.',
+    tagline: 'Unabhängiges Projekt für Gesundheitsinformationen und Referenzrechner.',
     colPopular: 'Beliebte Rechner',
-    colGuides: 'Forschung & Richtwerte',
-    colCompany: 'Über Real BMI',
-    colLegal: 'Richtlinien & Rechtliches',
-    viewAllTools: 'Alle 25 Rechenmodelle & Methodik →',
+    colCompany: 'Unternehmen',
+    colLegal: 'Rechtliches & Datenschutz',
+    viewAllTools: 'Alle 18+ Rechner & Methodik →',
     copyright: `© ${year} Real BMI Calculator. Alle Rechte vorbehalten.`,
-    teamAttribution: 'Evidenzbasierte Gesundheitsrechner betreut vom Real BMI Team',
-    whoBadge: 'WHO- & CDC-Konform',
+    teamAttribution: 'Betreut vom Real BMI Team',
     privacyBadge: 'Kostenlos & Datenschutz',
     privacyFooter: 'Lokale Browser-Berechnungen',
     popularCalculators: [
       { name: 'BMI-Rechner', href: `/de/bmi-calculator/` },
-      { name: '3D-BMI-Visualisierer', href: `/de/3d-bmi-calculator/` },
+      { name: '3D BMI Rechner', href: `/de/3d-bmi-calculator/` },
       { name: 'Grundumsatz-Rechner (BMR)', href: `/de/bmr-calculator/` },
       { name: 'Gesamtenergiebedarf (TDEE)', href: `/de/tdee-calculator/` },
-      { name: 'Körperfettrechner', href: `/de/body-fat-calculator/` },
-      { name: 'Idealgewichtsrechner', href: `/de/ideal-weight-calculator/` }
-    ],
-    researchGuides: [
-      { name: 'BMI-Klassifikationstabelle', href: `/de/bmi-chart/` },
-      { name: 'Asiatische BMI-Richtwerte', href: `/de/asian-bmi-calculator/` },
-      { name: 'Idealgewicht nach Größe', href: `/de/healthy-weight-by-height/` },
-      { name: 'Berechnungsmethodik', href: `/de/methodology/` },
-      { name: 'Alle Artikel & Ratgeber →', href: `/de/blog/` }
+      { name: 'Körperfettrechner', href: `/de/body-fat-calculator/` }
     ],
     companyLinks: [
       { name: 'Über Uns', href: `/de/about/` },
+      { name: 'Kontakt', href: `/de/contact/` },
       { name: 'Redaktionsrichtlinie', href: `/de/editorial-policy/` },
-      { name: 'Quellen & Referenzen', href: `/de/sources/` },
-      { name: 'Kontakt', href: `/de/contact/` }
+      { name: 'Quellen & Referenzen', href: `/de/sources/` }
     ],
     legalLinks: [
       { name: 'Datenschutz', href: `/de/privacy-policy/` },
       { name: 'Nutzungsbedingungen', href: `/de/terms-conditions/` },
-      { name: 'Medizinischer Hinweis', href: `/de/disclaimer/` },
-      { name: 'Urheberrecht & DMCA', href: `/de/dmca-policy/` },
-      { name: 'Cookie-Richtlinie', href: `/de/cookie-policy/` }
+      { name: 'Medizinischer Hinweis', href: `/de/disclaimer/` }
     ]
   },
   ko: {
-    tagline: 'WHO 및 CDC 기준에 기반한 프라이버시 중심 건강 연구 플랫폼.',
+    tagline: '공중보건 가이드라인에 기반한 프라이버시 중심 건강 정보 프로젝트.',
     colPopular: '인기 건강 계산기',
-    colGuides: '연구 및 참조 기준',
-    colCompany: 'Real BMI 소개',
-    colLegal: '정책 및 법적 고지',
-    viewAllTools: '전체 25개 도구 및 방법론 →',
+    colCompany: '소개',
+    colLegal: '정책 및 약관',
+    viewAllTools: '전체 18+ 계산기 및 방법론 →',
     copyright: `© ${year} Real BMI Calculator. 모든 권리 보유.`,
-    teamAttribution: 'Real BMI 팀이 연구 및 유지 관리하는 교육용 건강 도구',
-    whoBadge: 'WHO 및 CDC 지침 준수',
+    teamAttribution: 'Real BMI Team에 의해 운영 및 관리됨',
     privacyBadge: '무료 및 개인정보 보호',
     privacyFooter: '브라우저 로컬 연산',
     popularCalculators: [
       { name: 'BMI 계산기', href: `/ko/bmi-calculator/` },
-      { name: '3D BMI 시각화 도구', href: `/ko/3d-bmi-calculator/` },
+      { name: '3D BMI 계산기', href: `/ko/3d-bmi-calculator/` },
       { name: '기초대사량 (BMR) 계산기', href: `/ko/bmr-calculator/` },
       { name: '일일 총에너지소비량 (TDEE)', href: `/ko/tdee-calculator/` },
-      { name: '체지방률 계산기', href: `/ko/body-fat-calculator/` },
-      { name: '표준 체중 계산기', href: `/ko/ideal-weight-calculator/` }
-    ],
-    researchGuides: [
-      { name: 'BMI 분류 기준표', href: `/ko/bmi-chart/` },
-      { name: '아시아인 BMI 기준 안내', href: `/ko/asian-bmi-calculator/` },
-      { name: '신장별 건강 체중 가이드', href: `/ko/healthy-weight-by-height/` },
-      { name: '계산 방법론 및 공식', href: `/ko/methodology/` },
-      { name: '전체 아티클 및 가이드 →', href: `/ko/blog/` }
+      { name: '체지방률 계산기', href: `/ko/body-fat-calculator/` }
     ],
     companyLinks: [
       { name: '회사 소개', href: `/ko/about/` },
+      { name: '문의하기', href: `/ko/contact/` },
       { name: '편집 정책', href: `/ko/editorial-policy/` },
-      { name: '출처 및 참고문헌', href: `/ko/sources/` },
-      { name: '문의하기', href: `/ko/contact/` }
+      { name: '출처 및 참고문헌', href: `/ko/sources/` }
     ],
     legalLinks: [
       { name: '개인정보 처리방침', href: `/ko/privacy-policy/` },
       { name: '이용약관', href: `/ko/terms-conditions/` },
-      { name: '의학적 면책조항', href: `/ko/disclaimer/` },
-      { name: '저작권 및 DMCA 정책', href: `/ko/dmca-policy/` },
-      { name: '쿠키 정책', href: `/ko/cookie-policy/` }
+      { name: '의학적 면책조항', href: `/ko/disclaimer/` }
     ]
   },
   hi: {
-    tagline: 'WHO और CDC मानकों पर आधारित सुरक्षित स्वास्थ्य शोध एवं कैलकुलेटर प्लेटफॉर्म।',
+    tagline: 'स्वतंत्र स्वास्थ्य सूचना एवं संदर्भ गणना प्लेटफॉर्म।',
     colPopular: 'लोकप्रिय कैलकुलेटर',
-    colGuides: 'अनुसंधान एवं संदर्भ मानक',
-    colCompany: 'रियल बीएमआई के बारे में',
+    colCompany: 'कंपनी',
     colLegal: 'नीतियां एवं कानूनी शर्तें',
-    viewAllTools: 'सभी 25 कैलकुलेटर एवं विधियां →',
+    viewAllTools: 'सभी 18+ कैलकुलेटर एवं कार्यप्रणाली →',
     copyright: `© ${year} Real BMI Calculator। सर्वाधिकार सुरक्षित।`,
-    teamAttribution: 'Real BMI टीम द्वारा संचालित एवं प्रबंधित स्वास्थ्य कैलकुलेटर',
-    whoBadge: 'WHO और CDC मानकों पर आधारित',
+    teamAttribution: 'Real BMI Team द्वारा संचालित एवं प्रबंधित',
     privacyBadge: 'मुफ़्त और 100% सुरक्षित',
     privacyFooter: 'ब्राउज़र-आधारित गणना',
     popularCalculators: [
       { name: 'बीएमआई (BMI) कैलकुलेटर', href: `/hi/bmi-calculator/` },
-      { name: '3D बीएमआई विज़ुअलाइज़र', href: `/hi/3d-bmi-calculator/` },
+      { name: '3D बीएमआई कैलकुलेटर', href: `/hi/3d-bmi-calculator/` },
       { name: 'बीएमआर (BMR) कैलकुलेटर', href: `/hi/bmr-calculator/` },
       { name: 'टीडीईई (TDEE) कैलकुलेटर', href: `/hi/tdee-calculator/` },
-      { name: 'बॉडी फैट % कैलकुलेटर', href: `/hi/body-fat-calculator/` },
-      { name: 'आदर्श वजन कैलकुलेटर', href: `/hi/ideal-weight-calculator/` }
-    ],
-    researchGuides: [
-      { name: 'बीएमआई वर्गीकरण चार्ट', href: `/hi/bmi-chart/` },
-      { name: 'एशियाई बीएमआई मानक', href: `/hi/asian-bmi-calculator/` },
-      { name: 'कद अनुसार स्वस्थ वजन', href: `/hi/healthy-weight-by-height/` },
-      { name: 'गणना पद्धति एवं सूत्र', href: `/hi/methodology/` },
-      { name: 'सभी स्वास्थ्य लेख एवं गाइड →', href: `/hi/blog/` }
+      { name: 'बॉडी फैट % कैलकुलेटर', href: `/hi/body-fat-calculator/` }
     ],
     companyLinks: [
       { name: 'हमारे बारे में', href: `/hi/about/` },
+      { name: 'संपर्क करें', href: `/hi/contact/` },
       { name: 'संपादकीय नीति', href: `/hi/editorial-policy/` },
-      { name: 'स्रोत एवं संदर्भ', href: `/hi/sources/` },
-      { name: 'संपर्क करें', href: `/hi/contact/` }
+      { name: 'स्रोत एवं संदर्भ', href: `/hi/sources/` }
     ],
     legalLinks: [
       { name: 'गोपनीयता नीति', href: `/hi/privacy-policy/` },
       { name: 'नियम और शर्तें', href: `/hi/terms-conditions/` },
-      { name: 'चिकित्सा अस्वीकरण', href: `/hi/disclaimer/` },
-      { name: 'कॉपीराइट एवं DMCA', href: `/hi/dmca-policy/` },
-      { name: 'कुकी नीति', href: `/hi/cookie-policy/` }
+      { name: 'चिकित्सा अस्वीकरण', href: `/hi/disclaimer/` }
     ]
   }
 };
@@ -291,7 +216,7 @@ const ft = footerTranslations[lang] || footerTranslations.en;
 <footer class="w-full bg-[var(--card)]/95 backdrop-blur-xl border-t border-[var(--border)] mt-8 pt-8 pb-4 text-[var(--foreground)] relative z-20">
   <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 
-    <!-- Top Brand & Mission Bar -->
+    <!-- Top Brand & Tagline Bar -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-[var(--border)]/60">
       <div class="flex flex-wrap items-center gap-2">
         <a href={`/${lang}/`} class="inline-flex items-center gap-2 group">
@@ -305,7 +230,7 @@ const ft = footerTranslations[lang] || footerTranslations.en;
           </span>
         </a>
         <span class="hidden sm:inline text-xs text-[var(--border)]">|</span>
-        <p class="text-xs text-[var(--muted-foreground)]">
+        <p class="text-xs text-[var(--muted-foreground)] font-medium">
           {ft.tagline}
         </p>
       </div>
@@ -316,8 +241,8 @@ const ft = footerTranslations[lang] || footerTranslations.en;
       </div>
     </div>
 
-    <!-- 4 Semantic Columns Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-xs">
+    <!-- 3 Clean Columns Grid (Streamlined & Non-Repetitive) -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-xs">
       
       <!-- Col 1: Popular Calculators -->
       <div class="space-y-3">
@@ -335,7 +260,7 @@ const ft = footerTranslations[lang] || footerTranslations.en;
               </a>
             </li>
           ))}
-          <li class="pt-1">
+          <li class="pt-1.5">
             <a href={`/${lang}/methodology/`} class="font-semibold text-[var(--accent)] hover:underline underline-offset-2 inline-flex items-center gap-1">
               <span>{ft.viewAllTools}</span>
             </a>
@@ -343,26 +268,7 @@ const ft = footerTranslations[lang] || footerTranslations.en;
         </ul>
       </div>
 
-      <!-- Col 2: Research & Standards -->
-      <div class="space-y-3">
-        <p class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-xs flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-          </svg>
-          {ft.colGuides}
-        </p>
-        <ul class="space-y-2">
-          {ft.researchGuides.map((item) => (
-            <li>
-              <a href={item.href} class="text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors hover:underline underline-offset-2">
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Col 3: Company / About -->
+      <!-- Col 2: Company -->
       <div class="space-y-3">
         <p class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-xs flex items-center gap-1.5">
           <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -381,7 +287,7 @@ const ft = footerTranslations[lang] || footerTranslations.en;
         </ul>
       </div>
 
-      <!-- Col 4: Policies & Legal -->
+      <!-- Col 3: Legal & Policies -->
       <div class="space-y-3">
         <p class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-xs flex items-center gap-1.5">
           <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -397,12 +303,21 @@ const ft = footerTranslations[lang] || footerTranslations.en;
               </a>
             </li>
           ))}
+          <li class="pt-0.5">
+            <button
+              id="openCookiePreferencesBtn"
+              type="button"
+              class="text-[11px] sm:text-xs font-medium text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors underline decoration-dotted underline-offset-2 cursor-pointer py-0.5"
+            >
+              {cookiePrefsLabel}
+            </button>
+          </li>
         </ul>
       </div>
 
     </div>
 
-    <!-- Bottom Bar (Copyright, Attribution, Cookie Prefs) -->
+    <!-- Bottom Bar (Copyright, Attribution, Privacy Badge) -->
     <div class="pt-4 border-t border-[var(--border)]/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] sm:text-xs text-[var(--muted-foreground)]">
       <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-center sm:text-left">
         <span class="font-display font-semibold text-[var(--foreground)]">{ft.copyright}</span>
@@ -410,15 +325,8 @@ const ft = footerTranslations[lang] || footerTranslations.en;
         <span class="text-[11px] sm:text-xs text-[var(--muted-foreground)]/80">{ft.teamAttribution}</span>
       </div>
 
-      <div class="flex items-center gap-2.5">
-        <button
-          id="openCookiePreferencesBtn"
-          type="button"
-          class="text-[11px] sm:text-xs font-medium text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors underline decoration-dotted underline-offset-2 cursor-pointer py-0.5"
-        >
-          {cookiePrefsLabel}
-        </button>
-        <span>•</span>
+      <div class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
         <span class="text-[11px] sm:text-xs opacity-75">{ft.privacyBadge}</span>
       </div>
     </div>

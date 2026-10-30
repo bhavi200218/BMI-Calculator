@@ -203,12 +203,12 @@ const relatedGuidesTitle: Record<string, string> = {
 };
 
 const relatedGuidesSubtitle: Record<string, string> = {
-  en: 'Curated clinical reference articles and educational explanations tailored to this calculator.',
-  es: 'Artículos de referencia clínica y explicaciones educativas seleccionadas para esta calculadora.',
-  fr: 'Articles de référence clinique et explications pédagogiques adaptés à ce calculateur.',
-  de: 'Ausgewählte klinische Referenzartikel und Erläuterungen passend zu diesem Rechner.',
-  ko: '이 계산기에 특화된 임상 참고 문헌 및 교육용 설명 자료입니다.',
-  hi: 'इस कैलकुलेटर के लिए विशेष रूप से तैयार किए गए नैदानिक संदर्भ लेख और शैक्षिक विवरण।'
+  en: 'Curated evidence-based health guides and reference explanations tailored to this calculator.',
+  es: 'Guías de salud basadas en evidencia y explicaciones de referencia seleccionadas para esta calculadora.',
+  fr: 'Guides de santé fondés sur des preuves et explications pédagogiques adaptés à ce calculateur.',
+  de: 'Ausgewählte evidenzbasierte Leitfäden und Erläuterungen passend zu diesem Rechner.',
+  ko: '이 계산기에 특화된 근거 중심 건강 가이드 및 교육용 설명 자료입니다.',
+  hi: 'इस कैलकुलेटर के लिए विशेष रूप से तैयार किए गए साक्ष्य-आधारित गाइड और संदर्भ विवरण।'
 };
 ---
 
@@ -365,7 +365,7 @@ const relatedGuidesSubtitle: Record<string, string> = {
       )}
 
       <!-- Extended Content & Educational Reference Knowledge Base for Search Indexing -->
-      <div class="pt-4 space-y-12">
+      <div class="pt-4 space-y-10">
         <ToolSEOContent slug={calc.slug} lang={lang} calculator={calc} />
         {calc.slug === 'bmi-calculator-for-indians' && <IndianBmiClinicalGuide lang={lang} />}
         {calc.slug === 'bmi-calculator' && <EmbedWidgetBox lang={lang} />}
@@ -375,7 +375,6 @@ const relatedGuidesSubtitle: Record<string, string> = {
           title={relatedGuidesTitle[lang] || relatedGuidesTitle.en}
           subtitle={relatedGuidesSubtitle[lang] || relatedGuidesSubtitle.en}
         />
-        <MedicalEEATBanner lang={lang} />
       </div>
 
     </div>

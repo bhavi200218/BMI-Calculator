@@ -42,6 +42,13 @@ const data: Record<Locale, QuickLaunchLocale> = {
         icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
       },
       {
+        name: "3D BMI Calculator",
+        tag: "3D Visualizer",
+        desc: "Interactive 3D body preview with Oxford 2.5 height-adjusted exponent scaling.",
+        href: `/${lang}/3d-bmi-calculator/`,
+        icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+      },
+      {
         name: "BMR Calculator",
         tag: "Basal Metabolism",
         desc: "Calculate vital baseline calorie burn at rest via Mifflin-St Jeor formula.",
@@ -61,13 +68,6 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "Estimate lean mass vs body fat percentage via U.S. Navy circumference method.",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-      },
-      {
-        name: "Water Intake Calculator",
-        tag: "Daily Hydration",
-        desc: "Determine daily optimal fluid requirements based on body mass, climate, and exercise.",
-        href: `/${lang}/water-intake-calculator/`,
-        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
       },
       {
         name: "Protein Calculator",
@@ -108,6 +108,13 @@ const data: Record<Locale, QuickLaunchLocale> = {
         icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
       },
       {
+        name: "3D बीएमआई कैलकुलेटर",
+        tag: "3D विजुअलाइज़र",
+        desc: "ऑक्सफोर्ड 2.5 फॉर्मूला एवं 360° इंटरैक्टिव 3D बॉडी मॉडल विजुअलाइजेशन।",
+        href: `/${lang}/3d-bmi-calculator/`,
+        icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+      },
+      {
         name: "बीएमआर कैलकुलेटर",
         tag: "बेसल मेटाबॉलिज्म",
         desc: "मिफ्लिन-सेंट जेओर सूत्र से विश्राम अवस्था में आवश्यक दैनिक कैलोरी मापें।",
@@ -127,13 +134,6 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "यू.एस. नेवी विधि द्वारा शरीर में वसा और लीन मास प्रतिशत का मापन।",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-      },
-      {
-        name: "वॉटर इनटेक कैलकुलेटर",
-        tag: "दैनिक हाइड्रेशन",
-        desc: "वजन, जलवायु और व्यायाम के आधार पर दैनिक इष्टतम जल आवश्यकता की गणना करें।",
-        href: `/${lang}/water-intake-calculator/`,
-        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
       },
       {
         name: "प्रोटीन कैलकुलेटर",
@@ -174,6 +174,13 @@ const data: Record<Locale, QuickLaunchLocale> = {
         icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
       },
       {
+        name: "Calculadora IMC 3D",
+        tag: "Visualizador 3D",
+        desc: "Vista previa corporal interactiva en 3D con fórmula de exponente Oxford 2.5.",
+        href: `/${lang}/3d-bmi-calculator/`,
+        icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+      },
+      {
         name: "Calculadora TMB",
         tag: "Metabolismo Basal",
         desc: "Calcule el gasto calórico vital en reposo mediante Mifflin-St Jeor.",
@@ -193,13 +200,6 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "Estime el porcentaje graso y masa magra según el método de la Marina de EE. UU.",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-      },
-      {
-        name: "Calculadora de Agua",
-        tag: "Hidratación Diaria",
-        desc: "Determine los requerimientos óptimos de líquidos según peso, clima y ejercicio.",
-        href: `/${lang}/water-intake-calculator/`,
-        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
       },
       {
         name: "Calculadora de Proteína",
@@ -240,6 +240,13 @@ const data: Record<Locale, QuickLaunchLocale> = {
         icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
       },
       {
+        name: "Calculateur IMC 3D",
+        tag: "Visualiseur 3D",
+        desc: "Aperçu corporel 3D interactif basé sur la formule ajustée d'Oxford 2.5.",
+        href: `/${lang}/3d-bmi-calculator/`,
+        icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+      },
+      {
         name: "Calculateur TMB",
         tag: "Métabolisme de Base",
         desc: "Calculez vos besoins caloriques vitaux au repos avec Mifflin-St Jeor.",
@@ -259,13 +266,6 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "Estimez le taux de graisse et masse maigre par la méthode US Navy.",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-      },
-      {
-        name: "Calculateur d'Eau",
-        tag: "Hydratation Quotidienne",
-        desc: "Déterminez vos besoins quotidiens en eau selon votre poids, le climat et l'exercice.",
-        href: `/${lang}/water-intake-calculator/`,
-        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
       },
       {
         name: "Calculateur de Protéines",
@@ -306,6 +306,13 @@ const data: Record<Locale, QuickLaunchLocale> = {
         icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
       },
       {
+        name: "3D BMI Rechner",
+        tag: "3D-Visualisierer",
+        desc: "Interaktive 3D-Körperansicht mit höhenkorrigierter Oxford 2.5 Formel.",
+        href: `/${lang}/3d-bmi-calculator/`,
+        icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+      },
+      {
         name: "BMR-Rechner",
         tag: "Grundumsatz",
         desc: "Berechnen Sie Ihren lebenswichtigen Ruheenergiebedarf nach Mifflin-St Jeor.",
@@ -325,13 +332,6 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "Schätzen Sie Körperfett- und fettfreie Masse nach der US-Navy-Methode.",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-      },
-      {
-        name: "Wasserbedarf-Rechner",
-        tag: "Tägliche Hydratation",
-        desc: "Bestimmen Sie den optimalen täglichen Flüssigkeitsbedarf basierend auf Körpergewicht und Aktivität.",
-        href: `/${lang}/water-intake-calculator/`,
-        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
       },
       {
         name: "Protein-Rechner",
@@ -372,6 +372,13 @@ const data: Record<Locale, QuickLaunchLocale> = {
         icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
       },
       {
+        name: "3D BMI 계산기",
+        tag: "3D 시각화 도구",
+        desc: "옥스포드 2.5 공식 기반 대화형 3D 아바타 체형 시각화 모델.",
+        href: `/${lang}/3d-bmi-calculator/`,
+        icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+      },
+      {
         name: "BMR 계산기",
         tag: "기초대사량",
         desc: "Mifflin-St Jeor 공식을 통해 안정 시 필수 기초 칼로리 소모량을 산출합니다.",
@@ -391,13 +398,6 @@ const data: Record<Locale, QuickLaunchLocale> = {
         desc: "미 해군 둘레 측정 공식(US Navy)으로 체지방률과 제지방량을 평가합니다.",
         href: `/${lang}/body-fat-calculator/`,
         icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-      },
-      {
-        name: "수분 섭취량 계산기",
-        tag: "일일 수분 공급",
-        desc: "체중, 활동량 및 환경을 기반으로 하루 최적의 수분 섭취 권장량을 산출합니다.",
-        href: `/${lang}/water-intake-calculator/`,
-        icon: "M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"
       },
       {
         name: "단백질 섭취량 계산기",

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
+import HeroQuickLaunch from '../../components/HeroQuickLaunch.astro';
 import HomepageHubWrapper from '../../components/HomepageHubWrapper.astro';
 import FeaturedResearchGuides from '../../components/FeaturedResearchGuides.astro';
 import LatestArticles from '../../components/LatestArticles.astro';
@@ -61,34 +62,37 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  2. COMPLETE INTERACTIVE DIRECTORY (TOP POSITION)  ═══════════════════ -->
-		<section id="calculators" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/10 scroll-mt-20">
+		<!-- ═══════════════════  2. 🔥 MOST POPULAR CALCULATORS (TOP LAUNCHPAD)  ═══════════════════ -->
+		<section id="popular-calculators" class="px-4 md:px-6 pt-2 pb-10 md:pb-14 content-auto scroll-mt-20">
 			<div class="max-w-7xl mx-auto space-y-8">
-				<div class="text-center max-w-3xl mx-auto space-y-3">
-					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
-						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
-						Répertoire Interactif Complet
-					</div>
-					<h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-						Tous les 18+ Calculateurs de Santé et Forme
+				<HeroQuickLaunch lang="fr" />
+			</div>
+		</section>
+
+		<!-- ═══════════════════  3. COMPLETE INTERACTIVE DIRECTORY  ═══════════════════ -->
+		<section id="calculators" class="px-4 md:px-6 py-8 md:py-12 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
+			<div class="max-w-7xl mx-auto space-y-6">
+				<div class="flex items-center justify-between gap-4 pb-3 border-b border-[var(--border)]/40">
+					<h2 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+						Tous les Calculateurs par Catégorie
 					</h2>
-					<p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
-						Explorez notre suite complète d'outils de santé — 100% exécutés dans votre navigateur sans conservation de données.
-					</p>
+					<span class="text-xs font-mono text-[var(--accent)] font-bold">
+						18+ Outils
+					</span>
 				</div>
 
 				<HomepageHubWrapper lang="fr" />
 			</div>
 		</section>
 
-		<!-- ═══════════════════  3. 📚 RESEARCH GUIDES  ═══════════════════ -->
-		<section id="featured-guides" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/20 scroll-mt-20">
+		<!-- ═══════════════════  4. 📚 RESEARCH GUIDES  ═══════════════════ -->
+		<section id="featured-guides" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 bg-[var(--card)]/10 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
 				<FeaturedResearchGuides lang="fr" />
 			</div>
 		</section>
 
-		<!-- ═══════════════════  4. ⭐ TRUST SIGNALS & STANDARDS  ═══════════════════ -->
+		<!-- ═══════════════════  5. ⭐ TRUST SIGNALS & STANDARDS  ═══════════════════ -->
 		<!-- WHY PEOPLE CHOOSE REAL BMI -->
 		<section class="px-4 md:px-6 py-12 md:py-16 content-auto border-t border-[var(--border)]/40 space-y-12">
 			<div class="max-w-7xl mx-auto space-y-10">
@@ -137,14 +141,14 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  5. 📖 LATEST ARTICLES  ═══════════════════ -->
+		<!-- ═══════════════════  6. 📖 LATEST ARTICLES  ═══════════════════ -->
 		<section id="latest-articles" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
 			<div class="max-w-7xl mx-auto">
 				<LatestArticles lang="fr" limit={6} />
 			</div>
 		</section>
 
-		<!-- ═══════════════════  6. ❓ REFERENCE STANDARDS & FAQ  ═══════════════════ -->
+		<!-- ═══════════════════  7. ❓ REFERENCE STANDARDS & FAQ  ═══════════════════ -->
 		<section id="faq-standards" class="px-4 md:px-6 py-10 md:py-14 content-auto border-t border-[var(--border)]/40 scroll-mt-20">
 			<div class="max-w-7xl mx-auto space-y-12">
 				<HealthContent lang="fr" />

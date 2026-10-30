@@ -101,7 +101,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
       <h2>The 'Skinny-Fat' Phenomenon: Normal Weight Obesity (NWO)</h2>
       <p>A dangerous cardiometabolic condition termed <strong>Normal Weight Obesity (NWO)</strong> occurs when an individual maintains a normal BMI (18.5 to 24.9 kg/m²) but carries an excessive proportion of body fat (&gt; 25% in men or &gt; 35% in women) alongside underdeveloped skeletal muscle. Individuals with NWO face a four-fold higher risk of developing metabolic syndrome, systemic low-grade inflammation (elevated hs-CRP), and dyslipidemia compared to lean adults of identical weight.</p>
 
-      <h2>Clinical Reference Ranges for Body Fat Percentage</h2>
+      <h2>Standard Reference Ranges for Body Fat Percentage</h2>
       <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
         <li><strong>Men:</strong> Essential Fat: 2–5% | Athletes: 6–13% | Fitness: 14–17% | Average: 18–24% | Obesity: &ge; 25%</li>
         <li><strong>Women:</strong> Essential Fat: 10–13% | Athletes: 14–20% | Fitness: 21–24% | Average: 25–31% | Obesity: &ge; 32%</li>
