@@ -222,6 +222,55 @@ export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale, 
       };
     }
 
+    if (slug === 'protein-intake-calculator' && input.id === 'goal') {
+      const proteinGoalDefs: Record<Locale, { name: string; desc: string; metric: string; imperial: string }> = {
+        en: {
+          name: 'Dietary & Fitness Goal',
+          desc: 'Your body composition goal: Maintenance (1.6 g/kg), Weight Loss (2.0 g/kg to protect muscle during a deficit), or Weight Gain (2.2 g/kg for hypertrophy).',
+          metric: 'Target Factor (g/kg/day)',
+          imperial: 'Target Factor (g/lb/day)'
+        },
+        es: {
+          name: 'Objetivo Físico y Dietético',
+          desc: 'Meta de composición corporal: Mantenimiento (1.6 g/kg), Pérdida de Peso (2.0 g/kg para preservar masa muscular) o Ganancia de Peso (2.2 g/kg para hipertrofia).',
+          metric: 'Factor Objetivo (g/kg/día)',
+          imperial: 'Factor Objetivo (g/lb/día)'
+        },
+        fr: {
+          name: 'Objectif Physique et Diététique',
+          desc: 'Objectif de composition corporelle : Maintien (1,6 g/kg), Perte de Poids (2,0 g/kg pour préserver le muscle) ou Prise de Masse (2,2 g/kg pour l’hypertrophie).',
+          metric: 'Facteur Cible (g/kg/jour)',
+          imperial: 'Facteur Cible (g/lb/jour)'
+        },
+        de: {
+          name: 'Trainings- & Ernährungsziel',
+          desc: 'Individuelles Ziel: Gewichtserhalt (1,6 g/kg), Fettabbau (2,0 g/kg zum Muskelschutz) oder Muskelaufbau (2,2 g/kg für Hypertrophie).',
+          metric: 'Zielwert (g/kg/Tag)',
+          imperial: 'Zielwert (g/lb/Tag)'
+        },
+        ko: {
+          name: '운동 및 식단 관리 목표',
+          desc: '체성분 목표: 체중 유지(1.6 g/kg), 감량(다이어트 중 근손실 방지 2.0 g/kg), 근육 증량(근비대 극대화 2.2 g/kg).',
+          metric: '목표 계수 (g/kg/일)',
+          imperial: '목표 계수 (g/lb/일)'
+        },
+        hi: {
+          name: 'फिटनेस एवं आहार लक्ष्य',
+          desc: 'शारीरिक लक्ष्य: वजन बनाए रखना (1.6 ग्राम/किग्रा), वजन घटाना (मांसपेशियों की सुरक्षा हेतु 2.0 ग्राम/किग्रा), या वजन बढ़ाना (मांसपेशी निर्माण हेतु 2.2 ग्राम/किग्रा)।',
+          metric: 'लक्षित गुणक (ग्राम/किग्रा/दिन)',
+          imperial: 'लक्षित गुणक (ग्राम/पाउंड/दिन)'
+        }
+      };
+      const def = proteinGoalDefs[lang] || proteinGoalDefs.en;
+      return {
+        id: input.id,
+        name: def.name,
+        description: def.desc,
+        metricUnit: def.metric,
+        imperialUnit: def.imperial
+      };
+    }
+
     const sourceDefs = is1RM && LIFT_VARIABLE_DEFINITIONS[input.id] 
       ? LIFT_VARIABLE_DEFINITIONS 
       : VARIABLE_DEFINITIONS;
@@ -266,17 +315,300 @@ export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale, 
 
 export function getToolInterpretationAndLimitations(slug: string, lang: Locale): DomainInterpretationGuide {
   const isRegional = ['bmi-calculator-for-indians', 'asian-bmi-calculator', 'bmi-calculator-india'].includes(slug);
-  const isMetabolic = ['bmr-calculator', 'tdee-calculator', 'maintenance-calorie-calculator', 'calorie-calculator', 'macro-calculator'].includes(slug);
-  const isBodyComp = ['body-fat-calculator', 'lean-body-mass-calculator', 'ideal-weight-calculator', 'waist-to-hip-ratio-calculator', 'body-surface-area-calculator'].includes(slug);
+  const isHydration = slug === 'water-intake-calculator';
+  const isCalorieDeficit = slug === 'calorie-calculator';
+  const isTdee = slug === 'tdee-calculator';
+  const isBmr = slug === 'bmr-calculator';
+  const isMetabolic = slug === 'maintenance-calorie-calculator';
+  const isMacro = slug === 'macro-calculator';
+  const isIdealWeight = slug === 'ideal-weight-calculator';
+  const isLbm = slug === 'lean-body-mass-calculator';
+  const isHealthyWeight = slug === 'healthy-weight-by-height';
+  const isBodyComp = slug === 'body-fat-calculator';
+  const isWHR = slug === 'waist-to-hip-ratio-calculator';
+  const isBsa = slug === 'body-surface-area-calculator';
   const isCardio = ['heart-rate-zone-calculator', 'karvonen-heart-rate-calculator'].includes(slug);
   const isStrength = ['1rm-calculator', 'one-rep-max-calculator'].includes(slug);
   const isDiabetes = slug === 'diabetes-risk-calculator';
   const isPregnancy = slug === 'pregnancy-weight-gain-calculator';
-  const isSpecialty = ['protein-intake-calculator', 'water-intake-calculator'].includes(slug);
+  const isSpecialty = ['protein-intake-calculator'].includes(slug);
 
-  const domain = isRegional ? 'regional' : (isMetabolic ? 'metabolic' : (isBodyComp ? 'bodycomp' : (isCardio ? 'cardio' : (isStrength ? 'strength' : (isDiabetes ? 'diabetes' : (isPregnancy ? 'pregnancy' : (isSpecialty ? 'specialty' : 'bmi')))))));
+  const domain = isBmr ? 'bmr' : (isRegional ? 'regional' : (isHydration ? 'hydration' : (isMacro ? 'macro' : (isCalorieDeficit ? 'calorieDeficit' : (isTdee ? 'tdee' : (isIdealWeight ? 'idealWeight' : (isLbm ? 'lbm' : (isHealthyWeight ? 'healthyWeight' : (isMetabolic ? 'metabolic' : (isBsa ? 'bsa' : (isWHR ? 'whr' : (isBodyComp ? 'bodycomp' : (isCardio ? 'cardio' : (isStrength ? 'strength' : (isDiabetes ? 'diabetes' : (isPregnancy ? 'pregnancy' : (isSpecialty ? 'specialty' : 'bmi')))))))))))))))));
 
   const GUIDES: Record<string, Record<Locale, DomainInterpretationGuide>> = {
+    whr: {
+      en: {
+        domain: 'whr',
+        sectionTitle: 'Waist-to-Hip Ratio & Fat Distribution Guide',
+        sectionSubtitle: 'Understanding body shape, visceral adiposity, and cardiovascular health risks.',
+        interpretationTitle: 'Apple vs. Pear Body Shape & Fat Distribution',
+        interpretationText: 'Waist-to-Hip Ratio (WHR) assesses where your body stores fat rather than overall weight. Lower WHR values indicate a "pear" body shape (gynoid pattern), where fat is stored subcutaneously around the hips and thighs (gluteofemoral fat), which is metabolically neutral or protective. Higher WHR values indicate an "apple" body shape (android pattern), signaling central obesity where fat accumulates around internal abdominal organs (visceral adipose tissue). According to World Health Organization (WHO) benchmarks, a WHR above 0.85 for women or above 0.90 for men signifies substantially increased risk for insulin resistance, hypertension, dyslipidemia, and cardiovascular disease.',
+        limitationsTitle: 'Measurement Technique, Skeletal Structure & Pregnancy',
+        limitationsText: 'WHR measures proportion, not absolute body fat percentage. Individuals with wide pelvic bone structures naturally exhibit lower ratios, while narrow-hipped individuals may register elevated ratios despite low visceral fat. WHR is inaccurate during pregnancy due to uterine expansion. For clinical accuracy, measure waist circumference at the midpoint between the lower margin of the last rib and the top of the iliac crest at the end of normal expiration, and measure hips at the widest circumference over the buttocks.',
+        medicalNoticeTitle: 'Cardiometabolic Screening Notice',
+        medicalNoticeText: 'WHR is a primary screening index for metabolic risk, not a diagnostic medical test. Combine WHR insights with blood pressure checks, fasting blood glucose tests, and lipid panels under medical supervision.'
+      },
+      es: {
+        domain: 'whr',
+        sectionTitle: 'Índice Cintura-Cadera y Distribución de Grasa Corporal',
+        sectionSubtitle: 'Comprenda la forma corporal (manzana vs. pera), la grasa visceral y el riesgo cardiovascular.',
+        interpretationTitle: 'Morfología en Manzana vs. Pera y Adiposidad Visceral',
+        interpretationText: 'El Índice Cintura-Cadera (ICC) evalúa la localización del tejido adiposo en lugar del peso total. Los valores bajos reflejan un patrón ginoide o en forma de pera, con almacenamiento subcutáneo en caderas y muslos (grasa femoroglútea), el cual resulta metabólicamente protector. Valores elevados indican un patrón androide o en forma de manzana, característico de la obesidad central con acumulación de grasa visceral alrededor de órganos vitales. Según la OMS, un ICC superior a 0.85 en mujeres o a 0.90 en hombres se asocia a un riesgo significativamente mayor de resistencia a la insulina y patología cardiovascular.',
+        limitationsTitle: 'Estructura Ósea, Técnica de Medición y Embarazo',
+        limitationsText: 'El ICC es una proporción relativa, no una medición de grasa total. Personas con pelvis ancha pueden presentar índices bajos a pesar de un perímetro abdominal elevado, mientras que personas con caderas estrechas pueden registrar valores altos con poca grasa. No es aplicable durante el embarazo. Mida la cintura en el punto medio entre la última costilla y la cresta ilíaca al final de una espiración normal.',
+        medicalNoticeTitle: 'Aviso de Cribado Cardiometabólico',
+        medicalNoticeText: 'El ICC es un indicador epidemiológico de riesgo cardiovascular, no un diagnóstico definitivo. Complemente este cálculo con análisis de lípidos, glucemia en ayunas y presión arterial.'
+      },
+      fr: {
+        domain: 'whr',
+        sectionTitle: 'Rapport Taille-Hanches et Distribution des Graisses',
+        sectionSubtitle: 'Comprendre la morphologie (pomme vs poire), la graisse viscérale et les risques cardiovasculaires.',
+        interpretationTitle: 'Morphologie en Pomme vs Poire et Graisse Viscérale',
+        interpretationText: 'Le Rapport Taille-Hanches (RTH) évalue la répartition régionale de la masse grasse plutôt que le poids brut. Un RTH bas caractérise une silhouette gynoïde ou en poire, où la graisse est stockée sous la peau au niveau des hanches et des cuisses (graisse fémoro-fessière), protectrice sur le plan métabolique. Un RTH élevé traduit une silhouette androïde ou en pomme, révélant une obésité abdominale centrale avec excès de graisse viscérale autour des organes. Selon l\'OMS, un ratio supérieur à 0,85 chez la femme ou à 0,90 chez l\'homme indique un risque cardiométabolique et diabétique accru.',
+        limitationsTitle: 'Morphologie Squelettique, Mesures et Grossesse',
+        limitationsText: 'Le RTH évalue un rapport géométrique et non le pourcentage de graisse absolu. Un bassin large réduit mécaniquement le ratio, tandis qu\'un bassin étroit peut le surévaluer. Le RTH est inapplicable durant la grossesse. Pour une mesure fiable, placez le ruban à mi-distance entre la dernière côte palpable et la crête iliaque en fin d\'expiration normale.',
+        medicalNoticeTitle: 'Information Médicale Cardiométabolique',
+        medicalNoticeText: 'Le RTH est un indice de dépistage préventif. Consultez votre médecin pour compléter ce bilan par une mesure de la tension artérielle, de la glycémie à jeun et du profil lipidique.'
+      },
+      de: {
+        domain: 'whr',
+        sectionTitle: 'Taille-Hüft-Verhältnis & Fettverteilungsmuster',
+        sectionSubtitle: 'Körpertypen (Apfel- vs. Birnenform), viszerales Bauchfett und kardiovaskuläre Risiken verstehen.',
+        interpretationTitle: 'Apfel- vs. Birnenform & Viszerale Adipositas',
+        interpretationText: 'Das Taille-Hüft-Verhältnis (THV/WHR) erfasst die Verteilung des Fettgewebes anstelle des reinen Gesamtgewichts. Ein niedriges THV kennzeichnet den gynoiden Körpertyp (Birnenform), bei dem Fett vorwiegend subkutan an Hüften und Oberschenkeln gespeichert wird – was metabolisch neutral bis schützend wirkt. Ein hohes THV signalisiert den androiden Körpertyp (Apfelform) mit viszeralem Fettgewebe um die Bauchorgane. Nach WHO-Kriterien bedeutet ein THV von über 0,85 bei Frauen oder über 0,90 bei Männern ein deutlich erhöhtes Risiko für Insulinresistenz, Bluthochdruck und Herz-Kreislauf-Erkrankungen.',
+        limitationsTitle: 'Knochenbau, Messtechnik und Schwangerschaft',
+        limitationsText: 'Das THV spiegelt ein geometrisches Verhältnis wider, keinen absoluten Körperfettanteil. Ein breiter Beckenknochen führt rechnerisch zu niedrigeren Werten, während schmale Hüften den Wert erhöhen können. In der Schwangerschaft ist das THV nicht aussagekräftig. Messen Sie die Taille am Mittelpunkt zwischen unterstem Rippenbogen und Beckenkamm am Ende einer normalen Ausatmung.',
+        medicalNoticeTitle: 'Kardiometabolistischer Screening-Hinweis',
+        medicalNoticeText: 'Das THV dient der epidemiologischen Früherkennung von Bauchfett-Risiken. Lassen Sie Ihr Gesamtrisiko durch Blutdruck-, Nüchternblutzucker- und Lipidkontrollen beim Arzt abklären.'
+      },
+      ko: {
+        domain: 'whr',
+        sectionTitle: '허리-엉덩이 비율(WHR) 및 체지방 분포 가이드',
+        sectionSubtitle: '사과형 vs 배형 체형, 복부 내장지방 축적 및 심혈관 대사 질환 위험을 안내합니다.',
+        interpretationTitle: '사과형 vs 배형 체형과 복부 내장지방의 임상적 의미',
+        interpretationText: '허리-엉덩이 비율(WHR)은 단순 체중이 아닌 체지방의 신체 부위별 분포를 정밀하게 평가합니다. 낮은 WHR 수치는 둔부와 대퇴부 피하에 지방이 저장되는 배형(gynoid, 여성형) 체형을 나타내며 대사적으로 비교적 안전합니다. 반면 높은 WHR 수치는 복부 장기 주변에 내장지방이 과다 축적되는 사과형(android, 남성형) 중심성 비만을 나타냅니다. 세계보건기구(WHO) 기준에 따르면 여성 0.85 초과, 남성 0.90 초과 시 인슐린 저항성, 제2형 당뇨병, 고혈압 및 심혈관 질환 발병 위험이 현저히 증가합니다.',
+        limitationsTitle: '골격 구조 편차, 계측 오차 및 임신 중 제한',
+        limitationsText: 'WHR은 비율 지표이므로 절대적인 총 체지방률을 직접 측정하지는 못합니다. 골반 골격이 선천적으로 넓은 사람은 상대적으로 수치가 낮게 나오고, 골반이 좁은 체형은 수치가 높게 나타날 수 있습니다. 임신 중에는 자궁 팽창으로 적용할 수 없습니다. 정확한 측정을 위해 마지막 갈비뼈 밑단과 골반 장골능 능선 중간 지점에서 정상 호기(숨을 내쉰 상태) 시 수평으로 허리둘레를 측정하세요.',
+        medicalNoticeTitle: '심혈관 대사 건강 안내',
+        medicalNoticeText: 'WHR은 복부 비만에 따른 대사 위험을 선별하는 지표입니다. 정확한 건강 상태 진단을 위해 혈압, 공복 혈당, 중성지방 및 콜레스테롤 검사를 정기적으로 병행하시기 바랍니다.'
+      },
+      hi: {
+        domain: 'whr',
+        sectionTitle: 'कमर-से-कूल्हा अनुपात (WHR) एवं वसा वितरण गाइड',
+        sectionSubtitle: 'सेब बनाम नाशपाती शारीरिक आकार, आंतरिक पेट की चर्बी और हृदय जोखिम को समझें।',
+        interpretationTitle: 'सेब बनाम नाशपाती शरीर का आकार एवं विसरल फैट',
+        interpretationText: 'कमर-से-कूल्हा अनुपात (WHR) कुल वजन के बजाय यह मापता है कि शरीर में वसा कहां जमा हो रही है। कम WHR मान नाशपाती के आकार (गायनोइड पैटर्न) को दर्शाता है, जहां वसा मुख्य रूप से कूल्हों और जांघों पर त्वचा के नीचे जमा होती है, जो चयापचय दृष्टि से सुरक्षित मानी जाती है। उच्च WHR मान सेब के आकार (एंड्रॉइड पैटर्न) को दर्शाता है, जो पेट के आंतरिक अंगों के आसपास हानिकारक आंतरिक वसा (विसरल फैट) के संचय का संकेत है। विश्व स्वास्थ्य संगठन (WHO) के अनुसार, महिलाओं के लिए 0.85 से अधिक और पुरुषों के लिए 0.90 से अधिक WHR इंसुलिन प्रतिरोध, उच्च रक्तचाप और हृदय रोगों के जोखिम को काफी बढ़ा देता है।',
+        limitationsTitle: 'शारीरिक संरचना, मापन तकनीक एवं गर्भावस्था की सीमाएं',
+        limitationsText: 'WHR एक अनुपात है, यह कुल वसा प्रतिशत नहीं मापता। चौड़े कूल्हे की हड्डियों वाले व्यक्तियों में यह अनुपात स्वाभाविक रूप से कम आ सकता है, जबकि संकरे कूल्हों वाले व्यक्तियों में वसा कम होने पर भी अनुपात अधिक दिख सकता है। गर्भावस्था के दौरान यह लागू नहीं होता। सटीक माप के लिए अंतिम पसली और कूल्हे की हड्डी के मध्य बिंदु पर सामान्य सांस छोड़ने के बाद कमर मापें।',
+        medicalNoticeTitle: 'हृदय-चयापचय स्वास्थ्य सूचना',
+        medicalNoticeText: 'WHR पेट की चर्बी के जोखिम की प्रारंभिक जांच के लिए है, किसी डॉक्टर के स्वतंत्र निदान का विकल्प नहीं। इसके साथ रक्तचाप, फास्टिंग ब्लड शुगर और लिपिड प्रोफाइल की नियमित जांच कराएं।'
+      }
+    },
+    bsa: {
+      en: {
+        domain: 'bsa',
+        sectionTitle: 'Body Surface Area & Clinical Physiology Guide',
+        sectionSubtitle: 'Understanding how BSA standardizes metabolic rates, cardiac index, and pharmacokinetics.',
+        interpretationTitle: 'Mosteller Formula & Physiological Normalization',
+        interpretationText: 'Body Surface Area (BSA) measures the total external surface area of the human body in square meters (m²). The standard reference average is roughly 1.90 m² for adult men and 1.60 m² for adult women (with 1.73 m² serving as the universal reference standard in renal clearance formulas). In clinical physiology, BSA correlates much more strongly with circulating blood volume, cardiac output (Cardiac Index = Cardiac Output ÷ BSA), and basal metabolic rate than total body weight alone, because heat dissipation and cellular respiration scale with surface boundary area.',
+        limitationsTitle: 'Clinical Context & Pharmacological Limitations',
+        limitationsText: 'Mathematical BSA formulas approximate standard human geometries. Variations can occur in individuals with severe obesity, extreme fluid retention (ascites, severe edema), or limb amputations. While oncologists and nephrologists calculate BSA to determine narrow-therapeutic-index chemotherapy and medication dosages, this calculator is strictly an educational tool and must never be used for independent clinical dosing.',
+        medicalNoticeTitle: 'Clinical Medication & Dosing Safety Notice',
+        medicalNoticeText: 'This tool provides educational estimates of surface area. Never alter medication doses, chemotherapy schedules, or clinical protocols without direct oversight from your medical team.'
+      },
+      es: {
+        domain: 'bsa',
+        sectionTitle: 'Superficie Corporal y Fisiología Clínica',
+        sectionSubtitle: 'Cómo la superficie corporal (BSA) estandariza el metabolismo, el índice cardíaco y la dosificación.',
+        interpretationTitle: 'Fórmula de Mosteller y Normalización Fisiológica',
+        interpretationText: 'La Superficie Corporal (BSA) cuantifica el área externa total del organismo en metros cuadrados (m²). La media de referencia ronda 1.90 m² en hombres y 1.60 m² en mujeres (con 1.73 m² como estándar en depuración renal). En fisiología clínica, la BSA se correlaciona con mayor precisión que el peso con el volumen sanguíneo circulante y el gasto cardíaco.',
+        limitationsTitle: 'Contexto Clínico y Limitaciones Farmacológicas',
+        limitationsText: 'Las ecuaciones de BSA son aproximaciones geométricas. Pueden existir discrepancias en casos de obesidad mórbida o retención hídrica masiva (anasarca, ascitis). Aunque se utiliza para dosificar fármacos oncológicos, esta herramienta no debe emplearse con fines terapéuticos independientes.',
+        medicalNoticeTitle: 'Aviso de Seguridad y Dosificación Clínica',
+        medicalNoticeText: 'Esta herramienta ofrece estimaciones puramente educativas. Nunca modifique dosis de medicamentos, quimioterapia ni tratamientos clínicos sin la supervisión directa de su médico especialista.'
+      },
+      fr: {
+        domain: 'bsa',
+        sectionTitle: 'Surface Corporelle et Guide de Physiologie Clinique',
+        sectionSubtitle: 'Comprendre comment la surface corporelle (BSA) standardise le métabolisme, l\'index cardiaque et l\'élimination.',
+        interpretationTitle: 'Formule de Mosteller et Normalisation Physiologique',
+        interpretationText: 'La Surface Corporelle (BSA) mesure l\'aire externe totale du corps humain en mètres carrés (m²). La moyenne standard est d\'environ 1,90 m² chez l\'homme adulte et 1,60 m² chez la femme adulte (avec 1,73 m² comme norme universelle de référence en clairance rénale). En physiologie clinique, la surface corporelle est bien plus corrélée au volume sanguin, au débit cardiaque (Index Cardiaque = Débit ÷ BSA) et au métabolisme de base que le poids corporel brut.',
+        limitationsTitle: 'Contexte Clinique et Limites Pharmacologiques',
+        limitationsText: 'Les formules mathématiques de BSA reposent sur une géométrie anatomique théorique. Des écarts peuvent survenir chez les sujets atteints d\'obésité massive, d\'œdèmes majeurs (ascite, anasarque) ou d\'amputations. Bien que la BSA serve en oncologie et néphrologie pour calibrer certains traitements à marge étroite, cet outil ne doit en aucun cas servir à l\'autothérapie.',
+        medicalNoticeTitle: 'Avertissement Médical et Posologie',
+        medicalNoticeText: 'Ce calculateur propose une estimation éducative. Ne modifiez jamais une posologie médicamenteuse ou un protocole de chimiothérapie sans la supervision directe de votre équipe médicale oncologique.'
+      },
+      de: {
+        domain: 'bsa',
+        sectionTitle: 'Körperoberfläche & Klinische Physiologie',
+        sectionSubtitle: 'Wie die Körperoberfläche (KOF/BSA) Stoffwechselrate, Herzindex und pharmakologische Skalierung standardisiert.',
+        interpretationTitle: 'Mosteller-Formel & Physiologische Normalisierung',
+        interpretationText: 'Die Körperoberfläche (KOF oder BSA) erfasst die gesamte äußere Körperhülle in Quadratmetern (m²). Der weltweite Referenzmittelwert liegt bei ca. 1,90 m² für Männer und 1,60 m² für Frauen (wobei 1,73 m² als universeller Standardwert in der Nephrologie gilt). In der klinischen Physiologie korreliert die KOF enger mit Blutvolumen, Herzzeitvolumen (Herzindex = HZV ÷ KOF) und Grundumsatz als das reine Körpergewicht, da Wärmeverlust und Organleistung an die Oberfläche gekoppelt sind.',
+        limitationsTitle: 'Klinischer Kontext & Pharmakologische Grenzen',
+        limitationsText: 'Mathematische KOF-Formeln basieren auf standardisierten Körperproportionen. Bei extremer Adipositas, ausgeprägten Ödemen (Aszites, Anasarka) oder Amputationen können Abweichungen auftreten. Obwohl Onkologen und Nierenfachärzte die KOF zur Dosierung engmaschiger Medikamente heranziehen, darf dieser Rechner niemals zur eigenmächtigen Dosierungsanpassung genutzt werden.',
+        medicalNoticeTitle: 'Hinweis zu Medikamentendosierung & Klinischer Sicherheit',
+        medicalNoticeText: 'Dieses Werkzeug dient ausschließlich der physiologischen Orientierung. Verändern Sie keinesfalls eigenständig Medikamentendosierungen, Chemotherapien oder klinische Behandlungen ohne direkte Anweisung Ihres Onkologen oder Facharztes.'
+      },
+      ko: {
+        domain: 'bsa',
+        sectionTitle: '체표면적(BSA) 및 임상 생리학 가이드',
+        sectionSubtitle: '체표면적이 대사율, 심박출 지수(Cardiac Index) 및 약동학적 표준화에 어떻게 활용되는지 안내합니다.',
+        interpretationTitle: 'Mosteller 공식과 생리학적 표준화 원리',
+        interpretationText: '체표면적(Body Surface Area, BSA)은 인체 외피의 총면적을 제곱미터(m²) 단위로 계측한 지표입니다. 성인 남성의 평균 체표면적은 약 1.90 m², 성인 여성은 약 1.60 m²이며, 신장내과 사구체여과율(eGFR) 표준화에는 1.73 m²가 범용 기준선으로 사용됩니다. 임상 생리학에서 체표면적은 단순 체중보다 순환 혈액량, 심박출 지수(심박출량 ÷ BSA), 기초대사량과 훨씬 더 밀접한 상관관계를 가집니다.',
+        limitationsTitle: '임상적 적용 맥락 및 약리학적 한계점',
+        limitationsText: '수학적 BSA 공식은 일반적인 신체 해부학적 비례를 전제로 합니다. 고도 비만 환자(지방 조직 증가율이 표면적 확장률을 초과함), 중증 체액 저류(복수, 전신 부종) 또는 사지 절단 환자의 경우 공식 추정치와 실제 면적 간에 편차가 발생할 수 있습니다. 항암 화학요법 등의 투약 용량 결정에 사용되나, 온라인 도구를 자가 투약 기준으로 삼아서는 절대 안 됩니다.',
+        medicalNoticeTitle: '임상 투약 안전 주의 안내',
+        medicalNoticeText: '본 계산기는 생리학적 교육 참고 목적으로만 제공됩니다. 종양내과 전문의나 담당 의료진의 정밀한 처방 없이 항암제 또는 전문 의약품의 용량을 임의로 산정하거나 조정하지 마십시오.'
+      },
+      hi: {
+        domain: 'bsa',
+        sectionTitle: 'शारीरिक सतह क्षेत्र (BSA) एवं नैदानिक शरीर क्रिया विज्ञान',
+        sectionSubtitle: 'समझें कि BSA चयापचय दर, कार्डियक इंडेक्स और नैदानिक मानकों को कैसे मानकीकृत करता है।',
+        interpretationTitle: 'मोस्टेलर फॉर्मूला एवं शारीरिक मानकीकरण',
+        interpretationText: 'शारीरिक सतह क्षेत्र (BSA) वर्ग मीटर (m²) में मानव शरीर की कुल बाहरी सतह को मापता है। वैश्विक मानक औसत वयस्क पुरुषों के लिए लगभग 1.90 m² और महिलाओं के लिए 1.60 m² है (गुर्दे की जांच में 1.73 m² को सार्वभौमिक संदर्भ माना जाता है)। नैदानिक शरीर क्रिया विज्ञान में, BSA केवल वजन की तुलना में रक्त की मात्रा, कार्डियक इंडेक्स (कार्डियक आउटपुट ÷ BSA) और बेसल मेटाबोलिक दर से अधिक निकटता से संबंधित है।',
+        limitationsTitle: 'नैदानिक संदर्भ एवं औषधीय सीमाएं',
+        limitationsText: 'गणितीय BSA सूत्र मानक शारीरिक ज्यामिति मानते हैं। अत्यधिक मोटापे, गंभीर सूजन (एडिमा/जलोदर) या अंग विच्छेदन के मामलों में भिन्नता हो सकती है। यद्यपि कैंसर विशेषज्ञ कीमोथेरेपी दवाओं के सटीक निर्धारण के लिए BSA का उपयोग करते हैं, इस ऑनलाइन कैलकुलेटर का उपयोग कभी भी स्वयं दवा की खुराक तय करने के लिए नहीं किया जाना चाहिए।',
+        medicalNoticeTitle: 'नैदानिक दवा खुराक एवं सुरक्षा सूचना',
+        medicalNoticeText: 'यह उपकरण केवल शैक्षिक संदर्भ के लिए है। अपने पंजीकृत ऑन्कोलॉजिस्ट या डॉक्टर के प्रत्यक्ष परामर्श के बिना कभी भी किसी दवा, कीमोथेरेपी या उपचार की खुराक को स्वयं समायोजित न करें।'
+      }
+    },
+    macro: {
+      en: {
+        domain: 'macro',
+        sectionTitle: 'Macronutrient Split & Nutritional Partitioning Guide',
+        sectionSubtitle: 'How macronutrient ratios influence body composition, satiety, metabolic rate, and athletic performance.',
+        interpretationTitle: 'Thermic Effect of Food, Satiety & Fuel Partitioning',
+        interpretationText: 'While total calorie balance governs overall weight change, macronutrient distribution determines whether weight loss comes from adipose tissue or lean muscle mass. Protein exerts the highest Thermic Effect of Food (TEF ~20%–30%), meaning roughly a quarter of its caloric value is dissipated as heat during digestion and protein synthesis, while stimulating gut satiety hormones (peptide YY, GLP-1) to suppress hunger. Dietary carbohydrates replenish hepatic and muscle glycogen stores to sustain high-intensity anaerobic training and spare muscle tissue from gluconeogenesis. Dietary fats are essential for steroid hormone synthesis (including testosterone and estrogen), lipid-soluble vitamin absorption (A, D, E, K), and cellular membrane integrity.',
+        limitationsTitle: 'Dietary Adherence, Food Quality & Individual Metabolism',
+        limitationsText: 'Calculated macronutrient gram targets serve as an evidence-based starting baseline, not an immutable prescription. A mathematically sound macro split can still fail if food quality is neglected; prioritize whole, minimally processed foods, adequate dietary fiber (at least 14 g per 1,000 kcal), and micronutrient density. Furthermore, individual carbohydrate tolerance varies according to peripheral insulin sensitivity, training volume, and glycogen depletion rates. Track body weight trends, training performance, and energy levels over 2 to 4 weeks before adjusting carbohydrate and fat allocations.',
+        medicalNoticeTitle: 'Clinical & Nutritional Supervision Notice',
+        medicalNoticeText: 'Macronutrient guidelines provide educational targets for healthy adults. Individuals with chronic kidney disease (CKD), liver cirrhosis, metabolic disorders, or diabetes should consult a registered dietitian or physician before undertaking high-protein or restrictive ketogenic diets.'
+      },
+      es: {
+        domain: 'macro',
+        sectionTitle: 'Distribución de Macronutrientes y Partición Nutricional',
+        sectionSubtitle: 'Cómo influyen las proporciones de macronutrientes en la composición corporal, la saciedad y el rendimiento.',
+        interpretationTitle: 'Efecto Térmico de los Alimentos, Saciedad y Partición Energética',
+        interpretationText: 'Si bien el balance calórico total determina el cambio de peso, la distribución de macronutrientes modula si la pérdida procede de tejido adiposo o masa muscular magra. La proteína posee el mayor Efecto Térmico de los Alimentos (ETA ~20%–30%), disipando una cuarta parte de su valor calórico en la digestión y estimulando hormonas de saciedad (PYY, GLP-1). Los carbohidratos reponen el glucógeno muscular y hepático para entrenamientos intensos y protegen la masa muscular. Las grasas dietéticas son indispensables para la síntesis de hormonas esteroideas, la absorción de vitaminas liposolubles (A, D, E, K) y la integridad de las membranas celulares.',
+        limitationsTitle: 'Adherencia Dietética, Calidad de los Alimentos y Tolerancia Individual',
+        limitationsText: 'Las metas en gramos de macronutrientes son una referencia inicial fundamentada en la evidencia. La calidad nutricional es primordial: priorice alimentos mínimamente procesados, fibra dietética (mínimo 14 g por cada 1.000 kcal) y densidad de micronutrientes. Asimismo, la tolerancia a los carbohidratos depende de la sensibilidad a la insulina y el volumen de entrenamiento. Evalúe su rendimiento y peso durante 2 a 4 semanas antes de reajustar carbohidratos y grasas.',
+        medicalNoticeTitle: 'Aviso de Supervisión Clínica y Nutricional',
+        medicalNoticeText: 'Estas recomendaciones son educativas para adultos sanos. Personas con enfermedad renal crónica, patologías hepáticas o diabetes deben consultar a un dietista colegiado o médico antes de adoptar dietas hiperproteicas o cetogénicas.'
+      },
+      fr: {
+        domain: 'macro',
+        sectionTitle: 'Répartition des Macronutriments et Partition Énergétique',
+        sectionSubtitle: 'Comment les ratios nutritionnels influencent la composition corporelle, la satiété et la performance.',
+        interpretationTitle: 'Effet Thermique des Aliments, Satiété et Rôle Physiologique',
+        interpretationText: 'Si le bilan calorique régit la variation de masse corporelle, la répartition en macronutriments détermine si la perte pondérale cible le tissu adipeux ou préserve la masse musculaire. Les protéines présentent l’Effet Thermique des Aliments (ETA ~20 % à 30 %) le plus élevé, stimulant les peptides de satiété (PYY, GLP-1) pour réguler l’appétit. Les glucides reconstituent les réserves de glycogène musculaire indispensables aux efforts intenses et évitent le catabolisme musculaire. Les lipides alimentaires sont essentiels à la synthèse des hormones stéroïdiennes, à l’absorption des vitamines liposolubles (A, D, E, K) et à la structure membranaire.',
+        limitationsTitle: 'Adhésion au Régime, Qualité Nutritionnelle et Tolérance Métabolique',
+        limitationsText: 'Les objectifs en grammes constituent un point de départ fondé sur des preuves scientifiques. La qualité globale des aliments demeure déterminante : privilégiez les produits bruts, un apport en fibres suffisant (au moins 14 g par 1 000 kcal) et une bonne densité en micronutriments. La tolérance aux glucides varie selon la sensibilité à l’insuline et le volume d’activité. Ajustez vos apports après 2 à 4 semaines de suivi régulier.',
+        medicalNoticeTitle: 'Mise en Garde Diététique et Médicale',
+        medicalNoticeText: 'Ces repères s’adressent aux adultes en bonne santé à visée éducative. En cas d’insuffisance rénale, de troubles hépatiques ou de diabète, consultez un diététicien-nutritionniste ou un médecin avant tout régime hyperprotéiné ou cétogène.'
+      },
+      de: {
+        domain: 'macro',
+        sectionTitle: 'Makronährstoff-Verteilung & Nährstoff-Partitionierung',
+        sectionSubtitle: 'Wie Makronährstoffverhältnisse Körperzusammensetzung, Sättigung, Stoffwechsel und Leistungsfähigkeit steuern.',
+        interpretationTitle: 'Thermischer Effekt der Nahrung, Sättigung & Stoffwechselsteuerung',
+        interpretationText: 'Während die Gesamtenergiebilanz das Körpergewicht steuert, entscheidet die Makronährstoffverteilung darüber, ob Gewicht als Fettgewebe oder fettfreie Muskelmasse abgebaut wird. Protein besitzt den höchsten thermischen Effekt (TEF ~20 %–30 %), wodurch rund ein Viertel seiner Energie bei der Verdauung als Wärme freigesetzt wird, während Sättigungshormone (PYY, GLP-1) den Appetit dämpfen. Kohlenhydrate füllen Muskel- und Leberglykogenspeicher für hochintensives Training auf und schützen Muskelgewebe vor Glukoneogenese. Nahrungsfette sind essenziell für die Synthese von Steroidhormonen, fettlöslichen Vitaminen (A, D, E, K) und Zellmembranen.',
+        limitationsTitle: 'Ernährungsqualität, Ballaststoffe & Individuelle Glukosetoleranz',
+        limitationsText: 'Berechnete Grammzahlen bieten eine evidenzbasierte Basis, keine starre Vorgabe. Neben den Makros entscheidet die Lebensmittelqualität: Achten Sie auf unverarbeitete Vollwertkost, mindestens 14 g Ballaststoffe pro 1.000 kcal und Mikronährstoffdichte. Die Kohlenhydrattoleranz hängt zudem von der individuellen Insulinsensitivität und dem Trainingsvolumen ab. Beobachten Sie Trainingsleistung und Körpergewicht über 2 bis 4 Wochen vor Anpassungen.',
+        medicalNoticeTitle: 'Klinischer & Ernährungsmedizinischer Hinweis',
+        medicalNoticeText: 'Diese Leitlinien dienen der allgemeinen Bildung gesunder Erwachsener. Personen mit chronischer Nierenerkrankung, Leberleiden oder Diabetes sollten vor proteinreichen oder ketogenen Ernährungsformen ärztlichen oder ernährungswissenschaftlichen Rat einholen.'
+      },
+      ko: {
+        domain: 'macro',
+        sectionTitle: '다량영양소 분배 및 영양소 대사 가이드',
+        sectionSubtitle: '탄수화물·단백질·지방 비율이 체성분, 포만감, 대사율 및 운동 수행 능력에 미치는 영향입니다.',
+        interpretationTitle: '식이성 발열효과(TEF), 포만감 및 영양소 체내 분배',
+        interpretationText: '총 칼로리 균형이 체중 변화의 폭을 결정한다면, 다량영양소의 비율은 감량 체중이 체지방에서 나오는지 제지방 근육에서 빠져나가는지를 결정합니다. 단백질은 가장 높은 식이성 발열효과(TEF ~20%–30%)를 지녀 소화 과정에서 열량의 4분의 1가량이 소모되며 포만 호르몬(PYY, GLP-1) 분비를 촉진합니다. 탄수화물은 간과 근육의 글리코겐을 재합성하여 고강도 운동을 지원하고 근단백 분해를 억제합니다. 지방은 성호르몬 합성, 지용성 비타민(A, D, E, K) 흡수, 세포막 유지에 필수적입니다.',
+        limitationsTitle: '식단 지속 가능성, 식품의 질 및 대사 민감도',
+        limitationsText: '계산된 영양소별 그램(g) 목표는 과학적 기초 출발선입니다. 가공식품을 줄이고 통곡물과 채소 위주의 식단, 충분한 식이섬유(1,000 kcal당 최소 14g) 및 미량영양소 밀도를 확보해야 합니다. 또한 개인의 인슐린 감수성과 활동량에 따라 탄수화물 반응이 다르므로 2~4주간 체중 및 컨디션 추이를 살피며 섭취량을 조절하세요.',
+        medicalNoticeTitle: '임상 및 영양 상담 안내',
+        medicalNoticeText: '본 가이드라인은 건강한 성인을 위한 교육용 지침입니다. 만성 신장 질환, 간 질환, 대사 증후군 또는 당뇨병이 있는 경우 고단백 또는 케토제닉 식단을 시작하기 전 전문의 또는 임상영양사와 상담하십시오.'
+      },
+      hi: {
+        domain: 'macro',
+        sectionTitle: 'मैक्रोन्यूट्रिएंट वितरण एवं पोषण विभाजन दिशानिर्देश',
+        sectionSubtitle: 'मैक्रोन्यूट्रिएंट अनुपात शरीर की संरचना, तृप्ति, चयापचय और फिटनेस प्रदर्शन को कैसे प्रभावित करते हैं।',
+        interpretationTitle: 'भोजन का थर्मिक प्रभाव (TEF), तृप्ति एवं शारीरिक ईंधन विभाजन',
+        interpretationText: 'यद्यपि कुल कैलोरी संतुलन समग्र वजन परिवर्तन को नियंत्रित करता है, लेकिन मैक्रोन्यूट्रिएंट अनुपात यह तय करते हैं कि वजन वसा से घट रहा है या मांसपेशियों से। प्रोटीन में भोजन का थर्मिक प्रभाव (TEF ~20%–30%) सबसे अधिक होता है, जिससे पाचन के दौरान इसकी लगभग एक चौथाई कैलोरी ऊष्मा के रूप में खर्च हो जाती है और भूख दबाने वाले हार्मोन (PYY, GLP-1) सक्रिय होते हैं। कार्बोहाइड्रेट उच्च तीव्रता वाले वर्कआउट के लिए मांसपेशियों में ग्लाइकोजन की पूर्ति करते हैं और मांसपेशियों को सुरक्षित रखते हैं। वसा हार्मोन संश्लेषण (टेस्टोस्टेरोन आदि), वसा में घुलनशील विटामिन (A, D, E, K) के अवशोषण और कोशिका स्वास्थ्य के लिए आवश्यक है।',
+        limitationsTitle: 'आहार निरंतरता, भोजन की गुणवत्ता और व्यक्तिगत सहनशीलता',
+        limitationsText: 'गणना किए गए ग्राम लक्ष्य एक वैज्ञानिक प्रारंभिक बिंदु हैं। पोषक तत्वों की गुणवत्ता अत्यंत महत्वपूर्ण है: संपूर्ण अप्रसंस्कृत खाद्य पदार्थों, पर्याप्त फाइबर (प्रति 1,000 kcal कम से कम 14 ग्राम) और सूक्ष्म पोषक तत्वों को प्राथमिकता दें। इसके अतिरिक्त, इंसुलिन संवेदनशीलता और वर्कआउट की मात्रा के आधार पर कार्बोहाइड्रेट की आवश्यकता भिन्न हो सकती है। बदलाव करने से पहले 2 से 4 सप्ताह तक प्रगति की निगरानी करें।',
+        medicalNoticeTitle: 'चिकित्सीय एवं पोषण संबंधी सूचना',
+        medicalNoticeText: 'यह दिशा-निर्देश स्वस्थ वयस्कों के लिए शैक्षिक संदर्भ हैं। क्रोनिक किडनी रोग, लीवर रोग या मधुमेह वाले व्यक्तियों को उच्च-प्रोटीन या कीटो आहार शुरू करने से पहले योग्य पोषण विशेषज्ञ या चिकित्सक से परामर्श करना चाहिए।'
+      }
+    },
+    hydration: {
+      en: {
+        domain: 'hydration',
+        sectionTitle: 'Hydration Physiology & Electrolyte Balance Guide',
+        sectionSubtitle: 'How fluid turnover, sweat rates, sodium-potassium balance, and climate affect daily hydration needs.',
+        interpretationTitle: 'Hydration Physiology, Electrolytes & Sweat Loss Science',
+        interpretationText: 'Maintaining optimal fluid balance is critical for cellular metabolism, cardiovascular stroke volume, body temperature regulation, and renal filtration. Baseline water requirements (~30–35 mL per kg of body weight) satisfy standard metabolic turnover under temperate conditions. However, physical activity accelerates fluid loss through sweat, ranging from 0.5 to 2.0 Liters per hour depending on exercise intensity and environment. Sweat contains both water and essential electrolytes, predominantly sodium and chloride, with smaller concentrations of potassium and magnesium. Adequate sodium intake maintains plasma osmolality and stimulates thirst, preventing the dehydration-induced cardiovascular strain that elevates heart rate and perceived exertion.',
+        limitationsTitle: 'Exercise Sweat Loss, Heat Stress & Hyponatremia (Overhydration)',
+        limitationsText: 'Thirst is a delayed physiological indicator—by the time thirst is felt, 1% to 2% of body weight in fluids is often already lost, impairing aerobic endurance and cognitive vigilance. Check hydration proactively using the 8-level Armstrong Urine Color Scale: pale straw (levels 1–3) signals normal equilibrium, while amber or dark tea hues (levels 6–8) require immediate rehydration. Crucially, during prolonged endurance events (>4 hours in heat), consuming excessive plain water without sodium replacement risks Exercise-Associated Hyponatremia (EAH), a potentially dangerous condition where blood sodium levels fall too low. In endurance sessions, include electrolyte beverages.',
+        medicalNoticeTitle: 'Clinical Hydration & Fluid Restriction Notice',
+        medicalNoticeText: 'Standard fluid intake formulas assume normal kidney, heart, and liver function. Individuals diagnosed with congestive heart failure (CHF), chronic kidney disease (CKD), end-stage renal disease (ESRD), or those prescribed diuretic medications must strictly adhere to their nephrologist\'s or cardiologist\'s individualized fluid restriction guidelines.'
+      },
+      es: {
+        domain: 'hydration',
+        sectionTitle: 'Fisiología de la Hidratación y Equilibrio de Electrólitos',
+        sectionSubtitle: 'Cómo el recambio hídrico, la tasa de sudoración, el sodio y el clima determinan las necesidades de líquidos.',
+        interpretationTitle: 'Fisiología Hídrica, Electrólitos y Pérdida por Sudoración',
+        interpretationText: 'Mantener un adecuado volumen hídrico es fundamental para la función cardiovascular, la termorregulación y la filtración renal. El requerimiento basal (~30–35 mL por kg de peso corporal) cubre el metabolismo estándar en condiciones templadas. Durante el ejercicio, la tasa de sudoración oscila entre 0,5 y 2,0 litros por hora. El sudor contiene agua y electrólitos esenciales, principalmente sodio y cloruro, junto a potasio y magnesio. El sodio preserva la osmolaridad plasmática y estimula la sed fisiológica, evitando la sobrecarga cardiovascular asociada a la deshidratación.',
+        limitationsTitle: 'Estrés Térmico, Pérdida de Sudor e Hiponatremia por Dilución',
+        limitationsText: 'La sensación de sed presenta un retraso biológico: al manifestarse, ya se ha perdido entre el 1% y el 2% del peso corporal, reduciendo el rendimiento físico y cognitivo. Supervise el estado de hidratación mediante la escala de color de orina de Armstrong (tonos pálidos niveles 1–3 reflejan hidratación óptima; ámbar niveles 6–8 exigen rehidratación inmediata). En esfuerzos prolongados (>4 horas en calor), consumir agua sin sodio puede provocar hiponatremia asociada al ejercicio (HAE). Añada soluciones isotónicas con electrólitos en entrenamientos extensos.',
+        medicalNoticeTitle: 'Aviso Clínico de Restricción Hídrica',
+        medicalNoticeText: 'Estas pautas presuponen una función renal y cardíaca normal. Pacientes con insuficiencia cardíaca congestiva, nefropatía crónica o bajo tratamiento con diuréticos deben seguir de forma estricta las restricciones de líquidos prescritas por su especialista médico.'
+      },
+      fr: {
+        domain: 'hydration',
+        sectionTitle: 'Physiologie de l’Hydratation et Équilibre Électrolytique',
+        sectionSubtitle: 'Comment le renouvellement hydrique, la sudation, les électrolytes et le climat déterminent vos besoins quotidiens.',
+        interpretationTitle: 'Bases Physiologiques de l’Hydratation et Pertes Sudorales',
+        interpretationText: 'L’équilibre hydrique assure la volémie cardiovasculaire, la thermorégulation et la filtration rénale. Le besoin de base (~30 à 35 mL par kg de poids) compense le métabolisme de repos en climat tempéré. L’activité physique augmente les pertes sudorales entre 0,5 et 2,0 litres par heure. La sueur est composée d’eau et d’électrolytes majeurs, en particulier le sodium et le chlorure, avec du potassium et du magnésium. Le sodium maintient la pression osmotique plasmatique et prévient la dérive cardiovasculaire qui augmente la fatigue perçue.',
+        limitationsTitle: 'Stress Thermique, Sudation à l’Effort et Hyponatrémie',
+        limitationsText: 'La soif est un signal tardif qui apparaît souvent après une perte hydrique de 1 % à 2 % de la masse corporelle, altérant l’endurance et la vigilance. Évaluez votre état avec l’échelle colorimétrique urinaire d’Armstrong (jaune paille niveaux 1–3 = équilibre optimal ; ambré niveaux 6–8 = déshydratation nette). Lors d’efforts d’endurance de plus de 4 heures par forte chaleur, boire exclusivement de l’eau pure sans apport de sodium expose au risque d’hyponatrémie d’effort. Intégrez des boissons électrolytiques adaptées.',
+        medicalNoticeTitle: 'Avertissement Médical et Restriction Hydrique',
+        medicalNoticeText: 'Ces recommandations s’appliquent aux adultes ayant une fonction rénale et cardiaque saine. En cas d’insuffisance cardiaque ou d’insuffisance rénale chronique, ou sous traitement diurétique, respectez impérativement la prescription de restriction hydrique de votre cardiologue ou néphrologue.'
+      },
+      de: {
+        domain: 'hydration',
+        sectionTitle: 'Hydratationsphysiologie & Elektrolythaushalt',
+        sectionSubtitle: 'Wie Flüssigkeitsumsatz, Schweißraten, Natrium-Kalium-Balance und Umgebungstemperaturen den Wasserbedarf steuern.',
+        interpretationTitle: 'Wissenschaftliche Grundlagen zu Flüssigkeitsbedarf & Schweißverlust',
+        interpretationText: 'Ein ausgeglichener Flüssigkeitshaushalt ist unabdingbar für Blutvolumen, Thermoregulation und Nierenfunktion. Der Ruhebedarf (~30–35 ml je kg Körpergewicht) sichert den Grundstoffwechsel unter gemäßigten Klimabedingungen. Körperliche Anstrengung erhöht den Flüssigkeitsverlust über Schweißbildung auf 0,5 bis 2,0 Liter pro Stunde. Schweiß enthält neben Wasser vor allem Natrium und Chlorid sowie geringere Mengen Kalium und Magnesium. Natrium stabilisiert die Plasma-Osmolalität und verhindert kardiovaskuläre Drift, die Herzfrequenz und Belastungsempfinden ansteigen lässt.',
+        limitationsTitle: 'Hitzebelastung, Schweißverlust & Hyponatriämie (Überwässerung)',
+        limitationsText: 'Das Durstgefühl setzt mit physiologischer Verzögerung ein – oft erst nach einem Flüssigkeitsverlust von 1 % bis 2 % des Körpergewichts, was Ausdauer und Konzentration mindert. Nutzen Sie zur Früherkennung die 8-stufige Armstrong-Urinfarbskala (helles Strohgelb Stufe 1–3 = optimal; Bernstein bis Teebraun Stufe 6–8 = akuter Rehydratationsbedarf). Bei extremen Ausdauerbelastungen (>4 Stunden bei Hitze) birgt das alleinige Trinken von reinem Wasser ohne Natriumzufuhr das Risiko einer belastungsassoziierten Hyponatriämie. Nutzen Sie elektrolythaltige Sportgetränke.',
+        medicalNoticeTitle: 'Klinischer Hinweis zu Flüssigkeitsrestriktionen',
+        medicalNoticeText: 'Diese Richtwerte setzen gesunde Nieren und ein gesundes Herz-Kreislauf-System voraus. Bei Herzinsuffizienz, chronischer Niereninsuffizienz oder Diuretika-Einnahme gelten streng ärztlich überwachte Flüssigkeitsbegrenzungen.'
+      },
+      ko: {
+        domain: 'hydration',
+        sectionTitle: '수분 생리학 및 전해질 균형 가이드',
+        sectionSubtitle: '체내 수분 대사, 발한량, 나트륨·칼륨 균형 및 기후 환경이 일일 수분 요구량에 미치는 영향입니다.',
+        interpretationTitle: '체내 수분 대사, 전해질 조절 및 발한 손실 원리',
+        interpretationText: '적절한 체액량 유지는 혈액 순환, 심박출량, 체온 조절 및 신장 여과 기능의 핵심입니다. 기초 수분 요구량(체중 1kg당 약 30~35mL)은 온화한 기후에서 안정 시 대사를 충족합니다. 그러나 운동 시 땀 배출량은 강도와 환경에 따라 시간당 0.5 ~ 2.0리터에 달합니다. 땀에는 수분과 함께 나트륨, 염소, 칼륨, 마그네슘 등 필수 전해질이 함께 배출됩니다. 충분한 나트륨 섭취는 혈장 삼투압을 유지하고 탈수로 인한 심박수 급상승(심혈관 표류)을 억제합니다.',
+        limitationsTitle: '열 스트레스, 발한 손실 및 운동성 저나트륨혈증(과수분)',
+        limitationsText: '갈증 신호는 생리학적으로 지연되어 나타납니다. 갈증을 느낄 때는 이미 체중의 1% ~ 2%에 달하는 수분이 손실되어 유산소 능력과 집중력이 저하됩니다. 암스트롱 소변 색상 지표(연한 짚색 1~3단계는 적정, 호박색·갈색 6~8단계는 즉시 보충)를 통해 수분 상태를 점검하세요. 특히 4시간 이상의 장거리 지구력 운동 시 나트륨 보충 없이 맹물만 과다 섭취하면 운동성 저나트륨혈증(EAH) 위험이 발생하므로 전해질 음료를 병행해야 합니다.',
+        medicalNoticeTitle: '임상 수분 제한 및 질환 주의사항',
+        medicalNoticeText: '본 계산 수치는 신장과 심장 기능이 정상인 성인을 기준으로 합니다. 울혈성 심부전(CHF), 만성 신장 질환(CKD) 환자나 이뇨제를 복용 중인 분은 담당 전문의가 처방한 수분 제한 지침을 엄격히 준수해야 합니다.'
+      },
+      hi: {
+        domain: 'hydration',
+        sectionTitle: 'जलयोजन शरीरक्रिया विज्ञान एवं इलेक्ट्रोलाइट संतुलन गाइड',
+        sectionSubtitle: 'शारीरिक जल स्तर, पसीने की दर, सोडियम-पोटेशियम संतुलन और जलवायु दैनिक पानी की आवश्यकता को कैसे प्रभावित करते हैं।',
+        interpretationTitle: 'जलयोजन विज्ञान, इलेक्ट्रोलाइट्स एवं पसीने से द्रव की कमी',
+        interpretationText: 'शरीर में पर्याप्त जल संतुलन बनाए रखना रक्त परिसंचरण, तापमान नियंत्रण और गुर्दे की कार्यप्रणाली के लिए अनिवार्य है। आधारभूत पानी की आवश्यकता (लगभग 30–35 मिली प्रति किग्रा वजन) सामान्य मौसम में चयापचय जरूरतों को पूरा करती है। शारीरिक व्यायाम के दौरान पसीने के माध्यम से प्रति घंटे 0.5 से 2.0 लीटर तक पानी की कमी हो सकती है। पसीने में सोडियम, क्लोराइड, पोटेशियम और मैग्नीशियम जैसे आवश्यक इलेक्ट्रोलाइट्स भी बाहर निकलते हैं। पर्याप्त सोडियम रक्त के परासरण दाब को बनाए रखता है और निर्जलीकरण से हृदय पर पड़ने वाले दबाव को रोकता है।',
+        limitationsTitle: 'गर्मी का प्रभाव, पसीना और हाइपोनेट्रेमिया (अत्यधिक पानी पीने का जोखिम)',
+        limitationsText: 'प्यास लगना एक विलंबित शारीरिक संकेत है—जब तक प्यास का अनुभव होता है, तब तक शरीर 1% से 2% तरल पदार्थ खो चुका होता है जिससे ऊर्जा और एकाग्रता घटती है। आर्मस्ट्रांग यूरिन कलर स्केल (हल्का पीला स्तर 1–3 सामान्य, गहरा भूरा स्तर 6–8 निर्जलीकरण) से अपने जलयोजन स्तर की जांच करें। 4 घंटे से अधिक समय तक चलने वाले लंबे खेलों में बिना सोडियम के केवल सादा पानी अधिक मात्रा में पीने से एक्सरसाइज-एसोसिएटेड हाइपोनेट्रेमिया (EAH) का खतरा हो सकता है। ऐसे समय में इलेक्ट्रोलाइट्स का उपयोग करें।',
+        medicalNoticeTitle: 'चिकित्सीय द्रव प्रतिबंध एवं स्वास्थ्य सूचना',
+        medicalNoticeText: 'यह गणना सामान्य गुर्दे और हृदय स्वास्थ्य वाले व्यक्तियों के लिए है। कंजेस्टिव हार्ट फेल्योर, क्रोनिक किडनी रोग या मूत्रवर्धक (diuretics) दवाएं लेने वाले रोगियों को डॉक्टर द्वारा निर्धारित तरल प्रतिबंध दिशानिर्देशों का कड़ाई से पालन करना चाहिए।'
+      }
+    },
+
     bmi: {
       en: {
         domain: 'bmi',
@@ -413,7 +745,416 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         medicalNoticeText: '18.5 से 22.9 kg/m² का बीएमआई स्कोर एक शैक्षिक संदर्भ है। सटीक स्वास्थ्य स्थिति के लिए डॉक्टर से रक्तचाप, ब्लड शुगर और लिपिड प्रोफाइल की नियमित जांच कराएं।'
       }
     },
-    metabolic: {
+    calorieDeficit: {
+      en: {
+        domain: 'calorieDeficit',
+        sectionTitle: 'Caloric Deficit Physiology & Fat Loss Guide',
+        sectionSubtitle: 'Dynamic energy balance, adaptive thermogenesis, and safe fat reduction rates.',
+        interpretationTitle: 'The 3,500 kcal Rule vs. Kevin Hall Dynamic Metabolic Model',
+        interpretationText: 'Historical dietetics relied on the Wishnofsky rule, assuming a cumulative 3,500 kcal deficit invariably yields one pound (0.45 kg) of fat loss linearly. However, NIH mathematical modeling spearheaded by Dr. Kevin Hall demonstrates that human metabolism is dynamic. As body mass declines, resting energy expenditure and non-exercise activity thermogenesis (NEAT) involuntarily drop (adaptive thermogenesis). To achieve predictable, steady progress, a moderate deficit of 15% to 25% below TDEE (typically 300 to 500 kcal/day) is optimal. This preserves lean muscle mass, maintains healthy leptin and thyroid hormone signaling, and avoids severe metabolic plateaus.',
+        limitationsTitle: 'Adaptive Thermogenesis, Caloric Tracking Variance & Lean Mass Retention',
+        limitationsText: 'Calculated targets assume precise dietary adherence. In real life, unmeasured cooking oils, sauces, and temporary water retention (due to cortisol or sodium fluctuations) can obscure fat loss on the scale for several weeks. Crucially, crash diets with severe deficits (>1,000 kcal/day) trigger muscle catabolism and metabolic downregulation. To protect lean mass, always pair your deficit with resistance training and elevated protein intake (1.6 to 2.2 g/kg).',
+        medicalNoticeTitle: 'Biological Safety Floors & Nutritional Precaution',
+        medicalNoticeText: 'Daily calorie intake should not drop below biological safety thresholds (generally 1,200 kcal/day for adult females and 1,500 kcal/day for adult males) without physician supervision, to prevent gallstone formation, electrolyte imbalances, and micronutrient deficiencies. Individuals with a history of eating disorders, pregnant individuals, or those with endocrine conditions must consult a licensed medical provider or registered dietitian before initiating an energy deficit.'
+      },
+      es: {
+        domain: 'calorieDeficit',
+        sectionTitle: 'Fisiología del Déficit Calórico y Pérdida de Grasa',
+        sectionSubtitle: 'Balance energético dinámico, termogénesis adaptativa y ritmos seguros de pérdida de grasa.',
+        interpretationTitle: 'La Regla de 3,500 kcal vs. el Modelo Dinámico de Kevin Hall',
+        interpretationText: 'La dietética tradicional se basó en la regla de Wishnofsky, asumiendo que un déficit acumulado de 3,500 kcal genera invariablemente 0.45 kg (1 lb) de pérdida de grasa de forma lineal. No obstante, los modelos dinámicos del NIH dirigidos por el Dr. Kevin Hall demuestran que el metabolismo humano es adaptable. A medida que disminuye el peso corporal, el gasto basal y la actividad involuntaria (NEAT) descienden (termogénesis adaptativa). Para un progreso continuo y seguro, un déficit moderado del 15% al 25% respecto al TDEE (300 a 500 kcal/día) es idóneo para preservar masa muscular y hormonas tiroideas activas.',
+        limitationsTitle: 'Termogénesis Adaptativa, Desviación en el Registro y Retención Muscular',
+        limitationsText: 'Las estimaciones matemáticas asumen un cumplimiento exacto. En la práctica diaria, calorías ocultas en aderezos y la retención hídrica por cortisol o sodio pueden disimular la pérdida de grasa en la báscula durante semanas. Las restricciones extremas (>1,000 kcal/día) provocan catabolismo muscular. Proteja su masa libre de grasa combinando el déficit con entrenamiento de fuerza y consumo óptimo de proteína (1.6 a 2.2 g/kg).',
+        medicalNoticeTitle: 'Límites Biológicos de Seguridad y Precaución Nutricional',
+        medicalNoticeText: 'La ingesta energética nunca debe descender por debajo de los umbrales fisiológicos de seguridad (generalmente 1,200 kcal/día en mujeres y 1,500 kcal/día en hombres) sin monitorización médica, para evitar deficiencias de micronutrientes y litiasis biliar. Personas con antecedentes de trastornos alimentarios o patologías endocrinas deben consultar con un profesional cualificado.'
+      },
+      fr: {
+        domain: 'calorieDeficit',
+        sectionTitle: 'Physiologie du Déficit Calorique et Perte de Masse Grasse',
+        sectionSubtitle: 'Bilan énergétique dynamique, thermogenèse adaptative et rythmes de perte sains.',
+        interpretationTitle: 'La Règle des 3 500 kcal vs Modèle Dynamique de Kevin Hall',
+        interpretationText: 'La diététique conventionnelle s’est longtemps appuyée sur la règle de Wishnofsky, affirmant qu’un déficit de 3 500 kcal induisait la perte linéaire de 0,45 kg de graisse. Or, les recherches biomathématiques du NIH menées par le Dr Kevin Hall prouvent que l’organisme s’adapte dynamiquement. Avec la réduction pondérale, le métabolisme de repos et la dépense spontanée hors sport (NEAT) diminuent (thermogenèse adaptative). Un déficit énergétique modéré de 15 % à 25 % sous la DEJ (300 à 500 kcal/jour) offre le meilleur compromis pour perdre du tissu adipeux tout en préservant le tissu musculaire et la fonction thyroïdienne.',
+        limitationsTitle: 'Thermogenèse Adaptative, Marge d’Erreur et Préservation Musculaire',
+        limitationsText: 'Les prévisions supposent une traçabilité alimentaire infaillible. En réalité, les matières grasses invisibles et la rétention d’eau réactionnelle (cortisol) peuvent masquer l’évolution sur la balance pendant plusieurs semaines. Les restrictions agressives (> 1 000 kcal/jour) majorent la dégradation musculaire. Associez obligatoirement le déficit à des exercices de musculation et une ration protéique renforcée (1,6 à 2,2 g/kg).',
+        medicalNoticeTitle: 'Seuils Biologiques Minimaux et Précautions Médicales',
+        medicalNoticeText: 'L’apport journalier ne doit pas chuter sous les planchers de sécurité physiologique (1 200 kcal/jour pour les femmes et 1 500 kcal/jour pour les hommes) sans encadrement médical, au risque de provoquer des carences aiguës ou des calculs biliaires. Les personnes avec antécédents de troubles des conduites alimentaires doivent consulter un médecin spécialisé.'
+      },
+      de: {
+        domain: 'calorieDeficit',
+        sectionTitle: 'Physiologie des Kaloriendefizits & Fettabbau-Leitfaden',
+        sectionSubtitle: 'Dynamische Energiebilanz, adaptive Thermogenese und sichere Fettabbau-Raten.',
+        interpretationTitle: 'Die 3.500-kcal-Regel vs. Dynamisches Stoffwechselmodell nach Kevin Hall',
+        interpretationText: 'Die traditionelle Ernährungslehre postulierte nach der Wishnofsky-Regel, dass 3.500 kcal Einsparung exakt 0,45 kg Fettabbau bewirken. Computermodelle des NIH unter Leitung von Dr. Kevin Hall widerlegen jedoch eine starre Linearität: Bei Gewichtsverlust sinken Ruheumsatz und die unbewusste Alltagsbewegung (NEAT) automatisch ab (adaptive Thermogenese). Ein moderates Defizit von 15 % bis 25 % unterhalb des Gesamtenergiebedarfs (300 bis 500 kcal/Tag) gilt als physiologisch ideal, um gezielt Fett zu verbrennen und den Abbau von Skelettmuskulatur zu minimieren.',
+        limitationsTitle: 'Adaptive Thermogenese, Tracking-Toleranzen & Muskelschutz',
+        limitationsText: 'Modellrechnungen setzen eine lückenlose Nährwertprotokollierung voraus. Versteckte Fette und stressbedingte Wassereinlagerungen (Cortisol) täuschen auf der Waage häufig wochenlange Plateaus vor. Ein Übermaß an Kalorienrestriktion (>1.000 kcal/Tag) forciert den Verlust von Muskelsubstanz. Um fettfreie Masse zu sichern, muss jedes Energiedefizit von Krafttraining und einer gezielten Proteinzufuhr (1,6 bis 2,2 g/kg) begleitet werden.',
+        medicalNoticeTitle: 'Biologische Mindestgrenzen & Medizinische Hinweise',
+        medicalNoticeText: 'Die tägliche Nahrungszufuhr sollte ohne ärztliche Aufsicht niemals unter die physiologischen Sicherheitsgrenzen (1.200 kcal/Tag für Frauen, 1.500 kcal/Tag für Männer) sinken, um Gallensteinbildung und Mangelerscheinungen abzuwenden. Bei Schilddrüsenerkrankungen oder Essstörungen ist eine fachärztliche oder ernährungstherapeutische Betreuung zwingend ratsam.'
+      },
+      ko: {
+        domain: 'calorieDeficit',
+        sectionTitle: '칼로리 적자 대사 생리학 및 체지방 감량 가이드',
+        sectionSubtitle: '동적 에너지 균형, 적응형 열발생(대사 저하), 안전한 주간 체지방 감량 기준.',
+        interpretationTitle: '전통적 3,500 kcal 법칙 대 케빈 홀(NIH) 동적 대사 모델',
+        interpretationText: '전통적인 칼로리 이론은 3,500 kcal 적자가 누적되면 정확히 1파운드(0.45 kg)의 지방이 감량된다고 보았습니다. 그러나 미국 국립보건원(NIH) 케빈 홀 박사의 수학적 대사 모델에 따르면 체중이 감소함에 따라 인체는 기초대사량과 비운동성 활동 열발생(NEAT)을 무의식적으로 낮추는 적응형 열발생을 일으킵니다. 따라서 유지 칼로리(TDEE) 대비 15~25% 수준의 절제된 적자(하루 300~500 kcal)를 설정하는 것이 근육량 보존과 갑상선 호르몬 안정성에 가장 효과적입니다.',
+        limitationsTitle: '적응형 대사 저하, 식단 기록 오차 및 근육량 보존 전략',
+        limitationsText: '이론상 수치는 완벽한 식단 준수를 전제합니다. 실제로는 조리유 누락 및 나트륨·코르티솔 분비에 따른 수분 저류로 인해 2~3주간 체중계 눈금이 정체될 수 있습니다. 하루 1,000 kcal 이상의 극단적 결핍은 심각한 근손실을 유발하므로, 반드시 규칙적인 저항성 근력 운동과 충분한 단백질 섭취(1.6~2.2 g/kg)를 병행해야 합니다.',
+        medicalNoticeTitle: '생물학적 최소 섭취 하한선 및 임상 안전 공지',
+        medicalNoticeText: '담석증 및 미량 영양소 결핍을 예방하기 위해 의학적 감독 없이 생물학적 최저 안전 하한선(성인 여성 1,200 kcal/일, 성인 남성 1,500 kcal/일) 이하로 식단을 제한해서는 안 됩니다. 섭식장애 병력자, 임산부 및 내분비 질환자는 감량 전 전문의 또는 임상영양사와 상의해야 합니다.'
+      },
+      hi: {
+        domain: 'calorieDeficit',
+        sectionTitle: 'कैलोरी घाटा शरीर विज्ञान एवं वसा हानि गाइड',
+        sectionSubtitle: 'गतिशील ऊर्जा संतुलन, अनुकूलक थर्मोजेनेसिस और सुरक्षित वसा हानि दरें।',
+        interpretationTitle: 'पारंपरिक 3,500 कैलोरी नियम बनाम केविन हॉल गतिशील चयापचय मॉडल',
+        interpretationText: 'पारंपरिक पोषण विज्ञान विशोनोफ़्स्की नियम पर निर्भर था, जिसके अनुसार 3,500 कैलोरी का कुल घाटा सीधे 1 पाउंड (0.45 किग्रा) वसा कम करता है। हालांकि, अमेरिकी स्वास्थ्य संस्थान (NIH) के डॉ. केविन हॉल के गतिशील गणितीय मॉडल दर्शाते हैं कि वजन घटने के साथ शरीर का बेसल चयापचय और गैर-व्यायाम गतिविधि व्यय (NEAT) स्वाभाविक रूप से धीमा हो जाता है (अनुकूलक थर्मोजेनेसिस)। निरंतर प्रगति के लिए मेंटेनेंस टीडीईई से 15% से 25% (लगभग 300 से 500 कैलोरी/दिन) का मध्यम घाटा सबसे प्रभावी है, जो मांसपेशियों की रक्षा करता है और चयापचय को स्थिर रखता है।',
+        limitationsTitle: 'अनुकूलक थर्मोजेनेसिस, ट्रैकिंग भिन्नता और मांसपेशियों की सुरक्षा',
+        limitationsText: 'गणना किए गए लक्ष्य सटीक आहार ट्रैकिंग पर निर्भर करते हैं। वास्तविक जीवन में खाना पकाने के तेल या सोडियम और तनाव (कोर्टिसोल) के कारण पानी रुकने से वजन में बदलाव 2 से 3 सप्ताह तक छिप सकता है। प्रतिदिन 1,000 से अधिक कैलोरी का अत्यधिक घाटा मांसपेशियों के नुकसान का कारण बनता है। मांसपेशियों की सुरक्षा के लिए घाटे के साथ स्ट्रेंth ट्रेनिंग और पर्याप्त प्रोटीन (1.6 से 2.2 ग्राम/किग्रा) का सेवन अनिवार्य है।',
+        medicalNoticeTitle: 'जैविक सुरक्षा सीमा एवं चिकित्सकीय परामर्श',
+        medicalNoticeText: 'पोषक तत्वों की कमी और पित्त पथरी के जोखिम से बचने के लिए डॉक्टर की देखरेख के बिना दैनिक सेवन को न्यूनतम जैविक सुरक्षा सीमा (महिलाओं के लिए 1,200 कैलोरी/दिन और पुरुषों के लिए 1,500 कैलोरी/दिन) से नीचे नहीं ले जाना चाहिए। गर्भवती महिलाओं या ईटिंग डिसऑर्डर के इतिहास वाले व्यक्तियों को आहार शुरू करने से पहले डॉक्टर से परामर्श लेना चाहिए।'
+      }
+    },
+    lbm: {
+      en: {
+        domain: 'lbm',
+        sectionTitle: 'Lean Body Mass (LBM) & Fat-Free Tissue Guide',
+        sectionSubtitle: 'Boer, James, and Hume predictive equations, metabolic rate, and muscle tracking.',
+        interpretationTitle: 'What is Lean Body Mass & Why Does it Drive Metabolism?',
+        interpretationText: 'Lean Body Mass (LBM), often referred to interchangeably with Fat-Free Mass (FFM), represents your total body weight minus storage adipose tissue. It comprises skeletal muscle, bone minerals, vital internal organs (heart, liver, kidneys, brain), and extracellular fluid. While standard BMI treats every kilogram of scale weight identically, LBM is the primary biological driver of your Basal Metabolic Rate (BMR)—each kilogram of active skeletal muscle and vital organ tissue burns substantially more energy at rest than fat tissue. Tracking LBM across training programs or caloric deficits confirms that weight loss reflects genuine fat reduction rather than detrimental muscle catabolism.',
+        limitationsTitle: 'Boer vs. James vs. Hume Formulas & Hydration Fluctuations',
+        limitationsText: 'Statistical equations (Boer 1984, James 1976, Hume 1966) estimate LBM using population regression models based on height, weight, and biological sex. While fast, accessible, and non-invasive, these formulas can underestimate lean mass in competitive bodybuilders or individuals with heavy bone density. Furthermore, acute glycogen depletion, high sodium intake, or transient dehydration alter cellular fluid volumes, temporarily skewing mathematical estimates. For the most reliable trends, evaluate measurements consistently under identical morning conditions.',
+        medicalNoticeTitle: 'Clinical Evaluation & Sarcopenia Screening Notice',
+        medicalNoticeText: 'Calculated LBM provides an educational fitness estimate. For formal medical diagnosis of sarcopenia, muscle-wasting disorders, or cachexia in clinical settings, healthcare providers use dual-energy X-ray absorptiometry (DEXA), bioelectrical impedance spectroscopy (BIS), or magnetic resonance imaging (MRI).'
+      },
+      es: {
+        domain: 'lbm',
+        sectionTitle: 'Guía de Masa Corporal Magra (LBM) y Tejido Libre de Grasa',
+        sectionSubtitle: 'Ecuaciones predictivas de Boer, James y Hume, gasto metabólico y control muscular.',
+        interpretationTitle: '¿Qué es la Masa Corporal Magra y Por Qué Impulsa el Metabolismo?',
+        interpretationText: 'La Masa Corporal Magra (LBM), o Masa Libre de Grasa (FFM), representa el peso corporal total tras restar el tejido adiposo de reserva. Incluye masa muscular esquelética, contenido mineral óseo, órganos vitales y agua corporal. Mientras que el IMC estándar trata todos los kilogramos de peso por igual, el LBM es el principal motor biológico de la Tasa Metabólica Basal (TMB). Monitorizar el LBM en fases de déficit calórico confirma que la pérdida de peso proviene de grasa subcutánea y visceral y no de la masa muscular.',
+        limitationsTitle: 'Fórmulas de Boer, James y Hume y Fluctuaciones de Hidratación',
+        limitationsText: 'Las ecuaciones antropométricas (Boer 1984, James 1976, Hume 1966) estiman el LBM mediante regresiones estadísticas basadas en altura, peso y sexo. Si bien son prácticas y accesibles, pueden subestimar la masa muscular en culturistas con gran hipertrofia o complexión ósea muy densa. Además, fluctuaciones en la hidratación o depleción de glucógeno alteran temporalmente los resultados. Evalúe sus datos siempre en ayunas y a la misma hora.',
+        medicalNoticeTitle: 'Aviso sobre Evaluación Clínica y Detección de Sarcopenia',
+        medicalNoticeText: 'Los valores de LBM ofrecen una estimación orientativa para fitness y acondicionamiento. Para diagnósticos clínicos de sarcopenia o desnutrición proteica, los profesionales sanitarios emplean densitometría DEXA, espectroscopía de bioimpedancia o resonancia magnética.'
+      },
+      fr: {
+        domain: 'lbm',
+        sectionTitle: 'Guide de la Masse Corporelle Maigre (LBM) et Tissu Aqueux',
+        sectionSubtitle: 'Équations de Boer, James et Hume, dépense métabolique et suivi musculaire.',
+        interpretationTitle: 'Qu’est-ce que la Masse Maigre et Pourquoi Stimule-t-elle le Métabolisme ?',
+        interpretationText: 'La Masse Corporelle Maigre (LBM), ou Masse Non Grasse (FFM), désigne la masse totale du corps déduction faite des réserves de tissu adipeux. Elle englobe les muscles squelettiques, la charpente minérale osseuse, les organes vitaux et l’eau corporelle. Contrairement à l’IMC qui assimile tous les kilos sans distinction, la masse maigre constitue le principal moteur du métabolisme de base (MB). Le suivi du LBM permet de vérifier qu\'une perte de poids résulte bien d\'un déstockage lipidique et non d\'une fonte musculaire délétère.',
+        limitationsTitle: 'Équations de Boer, James et Hume et Fluctuations Hydriques',
+        limitationsText: 'Les équations prédictives (Boer 1984, James 1976, Hume 1966) estiment la masse maigre à partir de régressions statistiques combinant taille, poids et profil biologique. Très accessibles, elles peuvent sous-estimer la masse maigre chez les athlètes très musclés. De plus, la déshydratation temporaire ou la déplétion en glycogène influencent le volume hydrique et faussent temporairement le calcul mathématique. Effectuez vos pesées de contrôle le matin à jeun.',
+        medicalNoticeTitle: 'Avis Médical et Dépistage de la Sarcopénie',
+        medicalNoticeText: 'Les estimations de LBM ont une vocation éducative et sportive. Pour le diagnostic clinique de sarcopénie ou de dénutrition, les praticiens de santé ont recours à l\'ostéodensitométrie DEXA, à la bio-impédancemétrie médicale ou à l\'IRM.'
+      },
+      de: {
+        domain: 'lbm',
+        sectionTitle: 'Leitfaden zur fettfreien Körpermasse (LBM)',
+        sectionSubtitle: 'Prädiktive Formeln nach Boer, James und Hume, Grundumsatz und Muskelschutz.',
+        interpretationTitle: 'Was ist fettfreie Masse (LBM) und warum steuert sie den Grundumsatz?',
+        interpretationText: 'Die fettfreie Körpermasse (LBM bzw. FFM) bezeichnet das Gesamtgewicht abzüglich des speichernden Fettgewebes. Sie setzt sich aus Skelettmuskulatur, Knochenmineralien, inneren Organen und Körperwasser zusammen. Während der Standard-BMI jedes Kilogramm gleich bewertet, ist die fettfreie Masse der entscheidende physiologische Motor des Grundumsatzes (BMR). Die Kontrolle der LBM stellt sicher, dass Gewichtsreduktionen auf den Abbau von Fettgewebe und nicht auf den Verlust stoffwechselaktiver Muskelmasse zurückzuführen sind.',
+        limitationsTitle: 'Formeln nach Boer, James und Hume & Hydratationsschwankungen',
+        limitationsText: 'Anthropometrische Regressionsformeln (Boer 1984, James 1976, Hume 1966) schätzen die fettfreie Masse auf Basis von Größe, Gewicht und Geschlecht. Bei Leistungssportlern mit außergewöhnlicher Muskelhypertrophie unterschätzen diese Formeln mitunter die tatsächliche Magermasse. Ebenso können Schwankungen im Wasserhaushalt und der Glykogenspeicher das rechnerische Ergebnis kurzfristig beeinflussen. Messen Sie stets unter identischen Bedingungen am Morgen.',
+        medicalNoticeTitle: 'Klinischer Hinweis & Sarkopenie-Diagnostik',
+        medicalNoticeText: 'Die berechnete fettfreie Masse dient als Fitness-Richtschnur. Zur medizinischen Diagnostik von Sarkopenie, Kachexie oder Muskeldystrophie verwenden Fachärzte Goldstandard-Methoden wie DEXA-Ganzkörperscans oder die Magnetresonanztomographie (MRT).'
+      },
+      ko: {
+        domain: 'lbm',
+        sectionTitle: '제지방량(LBM) 및 체조직 분석 임상 가이드',
+        sectionSubtitle: 'Boer, James, Hume 예측 공식, 기초대사량 연계 및 근육량 보존 전략.',
+        interpretationTitle: '제지방량(LBM)의 정의와 대사율을 결정하는 생리학적 이유',
+        interpretationText: '제지방량(LBM)은 전체 체중에서 저장 지방(체지방)을 제외한 모든 신체 조직(골격근, 뼈 미네랄, 주요 장기 및 세포 수분)의 총합을 의미합니다. 기존 BMI는 체중계에 찍힌 모든 무게를 동일하게 취급하지만, 제지방량은 기초대사량(BMR)을 결정하는 핵심 생물학적 지표입니다. 다이어트나 운동 프로그램 중 LBM을 추적하면 체중 감량이 소중한 근육 손실 없이 순수 체지방 위주로 진행되는지 정확히 검증할 수 있습니다.',
+        limitationsTitle: 'Boer, James, Hume 공식 간 차이 및 체내 수분 변동의 영향',
+        limitationsText: '통계적 추정 공식(Boer 1984, James 1976, Hume 1966)은 신장, 체중, 성별을 조합한 인구 회귀 모델을 기반으로 합니다. 일상적인 추적에는 매우 유용하지만, 근육 발달이 극대화된 보디빌더나 골밀도가 높은 운동선수는 실제 제지방량이 과소평가될 수 있습니다. 또한 글리코겐 고갈이나 체내 수분 저류에 따라 단기적 오차가 발생할 수 있으므로, 항상 기상 직후 동일한 조건에서 측정 추이를 확인해야 합니다.',
+        medicalNoticeTitle: '임상 진단 및 근감소증(Sarcopenia) 평가 안내',
+        medicalNoticeText: '산출된 제지방량 수치는 피트니스 관리를 위한 교육용 추정치입니다. 노인성 근감소증(Sarcopenia), 악액질 또는 질환성 근육 소모의 정밀한 임상 진단을 위해서는 병원에서 DEXA(이중에너지 X선 흡수계측법) 스캔이나 정밀 체성분 분석을 받아야 합니다.'
+      },
+      hi: {
+        domain: 'lbm',
+        sectionTitle: 'लीन बॉडी मास (LBM) एवं वसा रहित द्रव्यमान गाइड',
+        sectionSubtitle: 'बोअर, जेम्स और ह्यूम समीकरण, चयापचय दर और मांसपेशियों की ट्रैकिंग।',
+        interpretationTitle: 'लीन बॉडी मास (LBM) क्या है और यह चयापचय को क्यों बढ़ाता है?',
+        interpretationText: 'लीन बॉडी मास (LBM) शरीर के कुल वजन में से अतिरिक्त वसा को घटाने के बाद बचा हुआ द्रव्यमान है। इसमें कंकाल की मांसपेशियां, हड्डियां, आंतरिक अंग और पानी शामिल हैं। पारंपरिक बीएमआई हर वजन को एक जैसा मानता है, जबकि LBM आपके बेसल मेटाबोलिक दर (BMR) का मुख्य निर्धारक है। वजन घटाने के दौरान LBM ट्रैक करने से यह पक्का होता है कि वजन वसा से कम हो रहा है, मांसपेशियों से नहीं।',
+        limitationsTitle: 'बोअर, जेम्स और ह्यूम सूत्र और जलयोजन (हाइड्रेशन) में बदलाव',
+        limitationsText: 'सांख्यिकीय सूत्र (बोअर 1984, जेम्स 1976, ह्यूम 1966) ऊंचाई, वजन और लिंग के आधार पर LBM का अनुमान लगाते हैं। यह रोजमर्रा की फिटनेस के लिए बहुत उपयोगी हैं, लेकिन अत्यधिक मांसपेशियों वाले बॉडीबिल्डर्स में यह वास्तविक लीन मास को थोड़ा कम आंक सकते हैं। पानी की कमी या नमक के कारण वजन में आए तात्कालिक बदलाव भी गणना को प्रभावित कर सकते हैं। सटीक रुझान के लिए हमेशा सुबह खाली पेट मापें।',
+        medicalNoticeTitle: 'चिकित्सीय मूल्यांकन एवं सार्कोपेनिया सूचना',
+        medicalNoticeText: 'यह गणना की गई LBM फिटनेस मार्गदर्शन के लिए एक अनुमान है। सार्कोपेनिया (मांसपेशियों के क्षय) या कुपोषण के औपचारिक चिकित्सीय निदान के लिए डॉक्टरों द्वारा DEXA स्कैन या एमआरआई जैसी आधुनिक तकनीकों का उपयोग किया जाता है।'
+      }
+    },
+    idealWeight: {
+      en: {
+        domain: 'idealWeight',
+        sectionTitle: 'Ideal Body Weight (IBW) Clinical Guide',
+        sectionSubtitle: 'Medical formula origins, pharmacological dosing, and body frame variance.',
+        interpretationTitle: 'Pharmacokinetic Origins & Why IBW is Not an Aesthetic Goal',
+        interpretationText: 'The primary formulas for Ideal Body Weight—Devine (1974), Robinson (1983), Miller (1983), and Hamwi (1964)—were not developed for personal cosmetic targets. Dr. Ben J. Devine introduced his equation in clinical pharmacokinetics to calibrate therapeutic drug clearances (such as theophylline, aminoglycosides, and anesthetic agents) that distribute selectively into lean fat-free mass rather than adipose tissue. For general health assessment, IBW serves as a baseline reference point. When compared against the World Health Organization healthy BMI range (18.5 to 24.9 kg/m²), IBW typically aligns near a BMI of 21.5 to 23.0 kg/m² for average-framed adults.',
+        limitationsTitle: 'Skeletal Frame Size, Muscular Hypertrophy & Dosing Adjustments',
+        limitationsText: 'Standard IBW equations assume an average skeletal frame and typical body composition. People with small skeletal frames naturally register healthy weights 5% to 10% below formula baselines, while broad-framed individuals require 5% to 10% higher ranges. Furthermore, athletes with high lean muscle mass will exceed IBW targets without excess adiposity. In clinical medicine for patients with significant obesity, physicians calculate Adjusted Body Weight (AdjBW = IBW + 0.4 × [Actual Weight - IBW]) to prevent dangerous medication under- or overdosing.',
+        medicalNoticeTitle: 'Clinical Application & Pharmacotherapy Notice',
+        medicalNoticeText: 'Ideal Body Weight figures provided by this calculator are educational benchmarks and should not be used for direct clinical self-prescription or critical hospital dosing calculations. Drug regimens, ventilator settings, and nutritional support should always be calibrated by licensed clinicians and hospital pharmacists based on comprehensive diagnostic evaluations.'
+      },
+      es: {
+        domain: 'idealWeight',
+        sectionTitle: 'Guía Clínica del Peso Corporal Ideal (IBW)',
+        sectionSubtitle: 'Orígenes médicos, dosificación farmacológica y variabilidad de complexión.',
+        interpretationTitle: 'Orígenes Farmacocinéticos y Por Qué el IBW no es un Estándar Estético',
+        interpretationText: 'Las principales fórmulas de Peso Corporal Ideal—Devine (1974), Robinson (1983), Miller (1983) y Hamwi (1964)—no se concibieron como metas estéticas. El Dr. Ben J. Devine diseñó su ecuación en farmacocinética hospitalaria para ajustar la dosificación de medicamentos (teofilina, aminoglucósidos, anestésicos) que se distribuyen en masa libre de grasa. A nivel poblacional, el IBW representa un valor de referencia neutro que generalmente equivale a un IMC de 21.5 a 23.0 kg/m² en individuos de complexión mediana según la OMS.',
+        limitationsTitle: 'Tamaño de Complexión Ósea, Hipertrofia Muscular y Peso Ajustado',
+        limitationsText: 'Las ecuaciones asumen una complexión ósea estándar. Individuos con constitución delgada tienen un peso saludable un 5% a 10% inferior al cálculo, mientras que quienes poseen una estructura ósea ancha se sitúan un 5% a 10% por encima. Asimismo, atletas con gran masa muscular superarán el IBW sin que ello represente exceso de grasa. En farmacología clínica, para pacientes con obesidad se recurre al Peso Corporal Ajustado (AdjBW = IBW + 0.4 × [Peso Real - IBW]).',
+        medicalNoticeTitle: 'Aviso sobre Aplicación Clínica y Farmacoterapia',
+        medicalNoticeText: 'Los valores de Peso Corporal Ideal calculados tienen un propósito exclusivamente educativo y no deben emplearse para automedicación ni ajuste de fármacos hospitalarios. La pauta de tratamientos debe ser establecida por médicos y farmacéuticos clínicos basándose en una valoración completa.'
+      },
+      fr: {
+        domain: 'idealWeight',
+        sectionTitle: 'Guide Clinique du Poids Idéal Théorique (IBW)',
+        sectionSubtitle: 'Origines pharmacologiques, posologie médicamenteuse et morphologie osseuse.',
+        interpretationTitle: 'Origines Pharmacocinétiques et Définition Non Esthétique de l’IBW',
+        interpretationText: 'Les formules canoniques de Poids Idéal Théorique (IBW)—Devine (1974), Robinson (1983), Miller (1983) et Hamwi (1964)—n\'ont pas été établies à des fins esthétiques. Le Dr Ben J. Devine a conçu son équation en pharmacocinétique clinique afin de doser avec précision les médicaments hydrosolubles (théophylline, aminosides, anesthésiques) qui diffusent dans la masse maigre. Sur le plan de la santé générale, l\'IBW fournit une valeur repère médiane qui coïncide généralement avec un IMC compris entre 21,5 et 23,0 kg/m² selon les standards de l\'OMS.',
+        limitationsTitle: 'Morphologie Osseuse, Masse Musculaire et Poids Ajusté',
+        limitationsText: 'Les équations d\'IBW postulent une charpente osseuse moyenne. Les morphologies fines présentent un poids de forme inférieur de 5 % à 10 %, tandis que les ossatures larges nécessitent une marge supérieure de 5 % à 10 %. Les sportifs musclés dépassent fréquemment l\'IBW théorique sans présenter d\'excès adipeux. Chez les patients obèses en milieu hospitalier, les cliniciens emploient le Poids Ajusté (AdjBW = IBW + 0,4 × [Poids Réel - IBW]) pour doser les traitements en toute sécurité.',
+        medicalNoticeTitle: 'Avis Médical et Utilisation Pharmacologique',
+        medicalNoticeText: 'Les valeurs de Poids Idéal fournies sont des repères éducatifs et ne doivent en aucun cas être utilisées pour l\'auto-prescription ou le paramétrage de perfusions médicales. Tout protocole thérapeutique doit être validé par un médecin ou un pharmacien hospitalier qualifié.'
+      },
+      de: {
+        domain: 'idealWeight',
+        sectionTitle: 'Klinischer Leitfaden zum Idealgewicht (IBW)',
+        sectionSubtitle: 'Medizinische Formelursprünge, Arzneimitteldosierung und Körperbautypen.',
+        interpretationTitle: 'Pharmakokinetische Ursprünge & Warum IBW kein ästhetisches Ideal ist',
+        interpretationText: 'Die klassischen Idealgewichtsformeln—Devine (1974), Robinson (1983), Miller (1983) und Hamwi (1964)—wurden nicht als ästhetische Schlankheitsideale formuliert. Dr. Ben J. Devine entwickelte seine Formel für die klinische Pharmakokinetik zur exakten Dosierung renal eliminierter Arzneistoffe (z. B. Theophyllin, Aminoglykoside), die sich überwiegend im fettfreien Gewebe verteilen. Im medizinischen Alltag dient das IBW als stabiler Referenzwert, der bei durchschnittlichem Knochenbau typischerweise einem BMI von etwa 21,5 bis 23,0 kg/m² nach WHO-Kriterien entspricht.',
+        limitationsTitle: 'Knochenbau-Klassifikation, Muskelhypertrophie & Dosierungsanpassung',
+        limitationsText: 'Standard-IBW-Formeln gehen von einem mittleren Skelettbau aus. Personen mit feingliedrigem Knochenbau liegen natürlicherweise 5 % bis 10 % unter dem Wert, während breite Knochenstrukturen einen 5 % bis 10 % höheren Zielwert erfordern. Kraftsportler mit hoher Muskelmasse überschreiten das IBW regelmäßig ohne schädlichen Fettanteil. Bei ausgeprägter Adipositas nutzen Mediziner das adjustierte Körpergewicht (AdjBW = IBW + 0,4 × [Ist-Gewicht - IBW]) für eine sichere Medikation.',
+        medicalNoticeTitle: 'Hinweis zu klinischer Anwendung und Pharmakotherapie',
+        medicalNoticeText: 'Die ermittelten Idealgewichtswerte dienen der Orientierung und dürfen nicht zur selbstständigen Medikamentendosierung herangezogen werden. Klinische Arzneimittelgaben und Ernährungstherapien obliegen stets der fachärztlichen und pharmazeutischen Beurteilung.'
+      },
+      ko: {
+        domain: 'idealWeight',
+        sectionTitle: '표준 이상 체중(IBW) 임상 해석 가이드',
+        sectionSubtitle: '약물 투약 용량 산출 기원, 골격 크기(체형) 보정 및 임상적 활용.',
+        interpretationTitle: '약동학적 산출 기원 및 IBW가 미용적 기준이 아닌 이유',
+        interpretationText: '대표적인 표준 이상 체중(IBW) 공식인 드바인(Devine, 1974), 로빈슨(1983), 밀러(1983), 함위(1964)는 미용 목적이 아닌 임상 약리학에서 출발했습니다. 벤 드바인 박사는 지방 조직이 아닌 제지방 조직에 주로 분포하는 치료 약물(아미노글리코사이드계 항생제, 테오필린, 마취제 등)의 투약 용량을 계산하기 위해 이 공식을 고안했습니다. 공중보건학적으로 IBW는 표준 골격을 가진 성인의 WHO 정상 BMI 구간(18.5~24.9 kg/m²) 중 중간 지점(약 21.5~23.0 kg/m²)과 밀접하게 일치합니다.',
+        limitationsTitle: '골격 프레임 크기, 근육량 발달 및 조정 체중(AdjBW) 적용',
+        limitationsText: '표준 공식은 중간 크기의 골격을 가정합니다. 손목이나 팔꿈치 너비가 좁은 작은 체형은 산출치보다 5~10% 낮게, 골격이 굵고 넓은 체형은 5~10% 높게 유지하는 것이 생리학적으로 정상입니다. 근육량이 많은 운동선수는 체지방이 적어도 IBW를 크게 초과할 수 있습니다. 임상에서 비만 환자의 약물 용량 결정 시에는 과소 또는 과다 투약을 방지하기 위해 조정 체중(AdjBW = IBW + 0.4 × [실제 체중 - IBW])을 별도로 산출하여 적용합니다.',
+        medicalNoticeTitle: '임상 적용 및 약물 요법 관련 안내',
+        medicalNoticeText: '본 계산기가 제공하는 수치는 참고용 교육 지표이며, 개인의 임의 약물 복용이나 병원 내 투약 기준으로 직접 사용할 수 없습니다. 정확한 치료 약물 용량 및 영양 공급 계획은 반드시 의사 및 병원 약사의 전문적 진단을 거쳐야 합니다.'
+      },
+      hi: {
+        domain: 'idealWeight',
+        sectionTitle: 'आदर्श शारीरिक वजन (IBW) चिकित्सीय गाइड',
+        sectionSubtitle: 'चिकित्सीय सूत्रों की उत्पत्ति, दवा खुराक निर्धारण और शारीरिक संरचना भिन्नता।',
+        interpretationTitle: 'औषधीय खुराक उत्पत्ति और IBW एक सौंदर्य मानक क्यों नहीं है',
+        interpretationText: 'आदर्श शारीरिक वजन (IBW) के मुख्य सूत्र—डिवाइन (1974), रॉबिन्सन (1983), मिलर (1983) और हमवी (1964)—व्यक्तिगत सौंदर्य के लिए नहीं बनाए गए थे। डॉ. बेन जे. डिवाइन ने यह सूत्र अस्पताल में दवाओं (जैसे थियोफिलाइन, एंटीबायोटिक्स और एनेस्थेटिक्स) की सटीक खुराक निर्धारित करने के लिए विकसित किया था, जो वसा के बजाय दुबली मांसपेशियों में वितरित होती हैं। स्वास्थ्य मूल्यांकन में यह एक संदर्भ बिंदु है जो आमतौर पर 21.5 से 23.0 के स्वस्थ बीएमआई से मेल खाता है।',
+        limitationsTitle: 'हड्डी का ढांचा (फ्रेम साइज), मांसपेशी निर्माण और समायोजित वजन',
+        limitationsText: 'मानक सूत्र औसत हड्डी के ढांचे को मानकर चलते हैं। पतले फ्रेम वाले लोगों का स्वस्थ वजन फॉर्मूले से 5% से 10% कम हो सकता है, जबकि चौड़े फ्रेम वालों का 5% से 10% अधिक। मांसपेशियों वाले एथलीट बिना अतिरिक्त वसा के भी IBW से अधिक वजन के हो सकते हैं। चिकित्सा में गंभीर मोटापे वाले रोगियों के लिए डॉक्टर सुरक्षित दवा खुराक हेतु एडजस्टेड बॉडी वेट (AdjBW) सूत्र का उपयोग करते हैं।',
+        medicalNoticeTitle: 'चिकित्सीय उपयोग एवं दवा संबंधी सूचना',
+        medicalNoticeText: 'इस कैलकुलेटर द्वारा दिए गए आदर्श वजन केवल शैक्षिक संदर्भ के लिए हैं और इनका उपयोग दवाओं के स्व-प्रिस्क्रिप्शन या अस्पताल की खुराक के लिए नहीं किया जाना चाहिए। दवा की खुराक हमेशा योग्य डॉक्टरों और फार्मासिस्टों द्वारा निर्धारित की जानी चाहिए।'
+      }
+    },
+    healthyWeight: {
+      en: {
+        domain: 'healthyWeight',
+        sectionTitle: 'Healthy Weight Range & Body Frame Guide',
+        sectionSubtitle: 'Why healthy weight is a flexible physiological spectrum rather than a single rigid number.',
+        interpretationTitle: 'Weight Spectrum vs. Single Ideal Target: Skeletal Frame & Composition',
+        interpretationText: 'For any given height, the World Health Organization (WHO) defines a healthy weight window spanning approximately 15 to 22 kg (BMI 18.5 to 24.9 kg/m²). Clinical formulas like Devine or Robinson generate a single target value, but human biology varies widely by skeletal frame size and lean tissue mass. Individuals with small skeletal frames (measured via wrist circumference or elbow breadth) naturally maintain lower weights within the healthy spectrum without nutritional deficit. Conversely, individuals with broad shoulders, denser bone structure, or large skeletal frames typically thrive at the upper tier of the range. Furthermore, strength-trained individuals and athletes carry significant fat-free muscle mass, placing them near or slightly above the statistical upper threshold while preserving optimal cardiovascular and metabolic biomarker profiles.',
+        limitationsTitle: 'Frame Size Adjustments, Muscularity & Geriatric Targets',
+        limitationsText: 'Standard height-to-weight tables do not directly differentiate between dense skeletal muscle and adipose tissue. For clinical personalization: 1) Frame size adjustments typically shift ideal targets by ±10% based on wrist circumference (<16.5 cm small, 16.5-18.5 cm medium, >18.5 cm large for men). 2) Older adults (aged 65+) benefit from slightly higher BMI cutoffs (23.0 to 29.9 kg/m²) to protect against sarcopenia, osteoporosis, and frailty. 3) Individuals of South Asian and East Asian ancestry face elevated cardiometabolic risk at lower BMI cutoffs (overweight at ≥23.0 kg/m² instead of 25.0 kg/m²).',
+        medicalNoticeTitle: 'Clinical Weight Management Notice',
+        medicalNoticeText: 'Height-weight tables serve as population screening tools. Body composition (fat mass vs. muscle mass), waist circumference, blood pressure, and metabolic blood panels provide a far more complete assessment of health than body weight alone. Consult a physician or registered dietitian before beginning restrictive weight loss programs.'
+      },
+      es: {
+        domain: 'healthyWeight',
+        sectionTitle: 'Guía de Rango de Peso Saludable y Contextura Corporal',
+        sectionSubtitle: 'Por qué el peso saludable es un espectro fisiológico flexible y no una cifra rígida única.',
+        interpretationTitle: 'Espectro de Peso vs. Peso Ideal Único: Contextura y Composición',
+        interpretationText: 'Para cualquier estatura determinada, la Organización Mundial de la Salud (OMS) establece una ventana de peso saludable de 15 a 22 kg (IMC 18.5 a 24.9 kg/m²). Fórmulas clásicas como Devine o Robinson calculan un peso ideal único, pero la variabilidad biológica depende de la contextura ósea (medida por el perímetro de muñeca o anchura del codo) y de la masa muscular. Una contextura delgada o pequeña se sitúa de forma saludable en el tercio inferior del rango sin déficit nutricional. Por el contrario, personas con contextura ancha, alta densidad ósea o atletas con masa muscular desarrollada se ubican de manera óptima en el límite superior, manteniendo una excelente salud metabólica.',
+        limitationsTitle: 'Ajustes por Contextura, Musculatura y Consideraciones Geriátricas',
+        limitationsText: 'Las tablas estándar de peso por altura no distinguen directamente entre masa muscular magra y grasa corporal. Consideraciones clínicas: 1) La contextura ósea ajusta los objetivos en un ±10% según el perímetro de muñeca (pequeña, mediana, grande). 2) En adultos mayores de 65 años, un IMC ligeramente más elevado (23.0 a 29.9 kg/m²) se asocia con menor mortalidad y protección contra la sarcopenia y fragilidad. 3) En poblaciones asiáticas, el riesgo cardiometabólico se incrementa a partir de un IMC de 23.0 kg/m².',
+        medicalNoticeTitle: 'Aviso de Manejo Clínico del Peso',
+        medicalNoticeText: 'Las tablas de peso por altura son herramientas de cribado poblacional. La composición corporal (grasa vs. músculo), el perímetro abdominal y los análisis clínicos ofrecen una visión de salud mucho más precisa que la báscula sola. Consulte con un médico o nutricionista colegiado antes de emprender programas dietéticos restrictivos.'
+      },
+      fr: {
+        domain: 'healthyWeight',
+        sectionTitle: 'Guide des Plages de Poids Santé et Morphotype',
+        sectionSubtitle: 'Comprendre pourquoi le poids santé est une fourchette dynamique et non un chiffre unique figé.',
+        interpretationTitle: 'Fourchette de Poids vs Poids Idéal Unique : Morphologie et Composition',
+        interpretationText: 'Pour une taille donnée, l\'Organisation mondiale de la santé (OMS) définit une plage de poids santé s\'étendant sur 15 à 22 kg (IMC 18,5 à 24,9 kg/m²). Les formules cliniques comme Devine ou Robinson indiquent une valeur cible unique, mais la morphologie humaine dépend de l\'ossature (mesurée au poignet ou à la largeur du coude) et de la masse musculaire. Une ossature fine s\'épanouit naturellement dans le bas de la fourchette sans carence, tandis qu\'une ossature large ou une masse musculaire développée pousse le poids vers le haut de la plage tout en préservant d\'excellents paramètres cardiovasculaires et métaboliques.',
+        limitationsTitle: 'Ajustement par Ossature, Masse Musculaire et Cibles Gériatriques',
+        limitationsText: 'Les tables standards ne distinguent pas la masse musculaire de la masse grasse. Recommandations cliniques : 1) La morphologie ajuste les cibles de ±10 % selon le tour de poignet (fin, moyen, large). 2) Chez les seniors (65 ans et plus), un IMC légèrement supérieur (23,0 à 29,9 kg/m²) protège contre la sarcopénie et l\'ostéoporose. 3) Chez les personnes d\'origine asiatique, le seuil de risque cardiométabolique débute dès 23,0 kg/m².',
+        medicalNoticeTitle: 'Avis Médical de Gestion du Poids',
+        medicalNoticeText: 'Les tables taille-poids sont des outils de dépistage statistique. La composition corporelle (graisse vs muscle), le tour de taille et les bilans biologiques fournissent une évaluation médicale bien plus précise que le poids brut. Consultez un médecin avant d\'entreprendre une restriction calorique sévère.'
+      },
+      de: {
+        domain: 'healthyWeight',
+        sectionTitle: 'Leitfaden für gesunde Gewichtsbereiche und Körperbau',
+        sectionSubtitle: 'Warum ein gesundes Körpergewicht eine flexible Bandbreite statt einer starren Zahl ist.',
+        interpretationTitle: 'Gewichtsspektrum vs. starres Idealgewicht: Knochenbau & Zusammensetzung',
+        interpretationText: 'Für jede Körpergröße definiert die Weltgesundheitsorganisation (WHO) ein Normalgewicht-Spektrum von ca. 15 bis 22 kg (BMI 18,5 bis 24,9 kg/m²). Klassische Formeln wie Devine oder Robinson liefern einen einzelnen Punktwert, doch der individuelle Körperbau variiert beträchtlich nach Knochenbau (Handgelenksumfang) und Muskelmasse. Zierliche Personen mit schmalem Knochenbau fühlen sich im unteren Bereich des Spektrums wohl, während Personen mit breitem Knochenbau oder trainierte Sportler naturgemäß im oberen Bereich oder leicht darüber liegen, ohne überschüssiges Fettgewebe aufzuweisen.',
+        limitationsTitle: 'Knochenbau-Korrektur, Muskelmasse und Altersgrenzen',
+        limitationsText: 'Standardtabellen unterscheiden nicht zwischen Muskelmasse und Fettgewebe. Klinische Differenzierung: 1) Der Knochenbau variiert das Zielgewicht um ca. ±10 % (Handgelenksumfang: zierlich, mittel, kräftig). 2) Für Senioren ab 65 Jahren gilt ein leicht höherer BMI-Bereich (23,0 bis 29,9 kg/m²) als schützend gegen Muskelabbau (Sarkopenie) und Frakturen. 3) Für asiatische Bevölkerungsgruppen liegt die kardiovaskuläre Risikoschwelle bereits bei einem BMI von 23,0 kg/m².',
+        medicalNoticeTitle: 'Klinischer Hinweis zum Gewichtsmanagement',
+        medicalNoticeText: 'Größe-Gewicht-Tabellen sind epidemiologische Orientierungswerte. Körperzusammensetzung (Fett vs. Muskel), Bauchumfang und Blutwerte liefern ein deutlich valideres Bild der Gesundheit als das reine Waagengewicht. Konsultieren Sie einen Arzt oder Ernährungsberater vor einer drastischen Gewichtsreduktion.'
+      },
+      ko: {
+        domain: 'healthyWeight',
+        sectionTitle: '키별 적정 체중 구간 및 골격 프레임 가이드',
+        sectionSubtitle: '건강 체중이 고정된 단일 숫자가 아닌 유연한 생리학적 체중 스펙트럼인 이유.',
+        interpretationTitle: '단일 이상 체중 vs 체중 스펙트럼: 골격 크기와 체성분',
+        interpretationText: '동일한 신장이라 하더라도 세계보건기구(WHO) 기준 정상 체중 범위는 약 15~22kg의 유연한 구간(BMI 18.5~24.9 kg/m²)을 가집니다. Devine이나 Robinson 같은 고전 공식은 단일 목표 수치를 제시하지만, 실제 최적 체중은 손목 둘레 등으로 측정되는 골격 프레임(체형)과 제지방 근육량에 따라 크게 달라집니다. 골격이 가는 체형은 정상 구간 하단에서 건강을 유지하고, 골격이 크거나 근력 운동으로 근육량이 많은 성인은 상단 근처에 위치하더라도 대사 질환 위험 없이 최상의 심혈관 지표를 나타냅니다.',
+        limitationsTitle: '골격 보정 계수, 근육량 및 노년층 맞춤 기준',
+        limitationsText: '표준 신장별 체중표는 근육과 지방의 질적 차이를 반영하지 못합니다. 임상적 고려사항: 1) 손목 둘레에 따른 골격 크기(소형, 중형, 대형)에 따라 체중 목표치를 약 ±10% 보정합니다. 2) 65세 이상 노년층은 근감소증(사코페니아)과 골다공증 예방을 위해 약간 높은 BMI(23.0~29.9 kg/m²) 유지가 생리학적으로 권장됩니다. 3) 아시아계 인구는 체지방 비율이 높아 BMI 23.0 kg/m²부터 심혈관 및 대사 질환 위험이 증가합니다.',
+        medicalNoticeTitle: '임상 체중 관리 안내',
+        medicalNoticeText: '키별 체중표는 일반 인구 대상 선별 참고 자료입니다. 단순 체중계 수치보다는 체성분(체지방률 및 골격근량), 허리둘레, 혈압 및 혈액 대사 검사를 종합하여 전문의와 상담하는 것이 바람직합니다.'
+      },
+      hi: {
+        domain: 'healthyWeight',
+        sectionTitle: 'ऊंचाई अनुसार स्वस्थ वजन सीमा एवं शारीरिक संरचना गाइड',
+        sectionSubtitle: 'समझें कि स्वस्थ वजन एक कठोर संख्या नहीं बल्कि एक लचीला शारीरिक दायरा क्यों है।',
+        interpretationTitle: 'एकल आदर्श वजन बनाम वजन दायरा: शारीरिक ढांचा एवं संरचना',
+        interpretationText: 'किसी भी निश्चित ऊंचाई के लिए, विश्व स्वास्थ्य संगठन (WHO) लगभग 15 से 22 किलोग्राम (बीएमआई 18.5 से 24.9 kg/m²) की एक स्वस्थ वजन सीमा निर्धारित करता है। डिवाइन या रॉबिन्सन जैसे सूत्र एक निश्चित संख्या देते हैं, लेकिन मानव शरीर रचना हड्डियों के ढांचे (कलाई का घेरा) और मांसपेशियों के द्रव्यमान पर निर्भर करती है। पतले ढांचे वाले व्यक्ति स्वस्थ सीमा के निचले हिस्से में रहते हैं, जबकि चौड़े ढांचे वाले व्यक्ति और नियमित व्यायाम करने वाले एथलीट बिना किसी अतिरिक्त वसा के ऊपरी सीमा पर भी पूरी तरह स्वस्थ रहते हैं।',
+        limitationsTitle: 'शारीरिक ढांचे का समायोजन, मांसपेशियां एवं वरिष्ठ नागरिकों के मानक',
+        limitationsText: 'मानक ऊंचाई-वजन तालिकाएं मांसपेशियों और वसा के बीच अंतर नहीं करती हैं। नैदानिक मार्गदर्शन: 1) कलाई के घेरे के आधार पर शारीरिक ढांचे के अनुसार लक्ष्य में ±10% का समायोजन किया जाता है। 2) 65 वर्ष से अधिक उम्र के वरिष्ठ नागरिकों के लिए मांसपेशियों के क्षय (सार्कोपेनिया) से बचाव हेतु थोड़ा अधिक बीएमआई (23.0 से 29.9 kg/m²) सुरक्षित माना जाता है। 3) एशियाई आबादी में 23.0 बीएमआई से ही चयापचय जोखिम बढ़ने लगता है।',
+        medicalNoticeTitle: 'नैदानिक वजन प्रबंधन सूचना',
+        medicalNoticeText: 'ऊंचाई-वजन तालिका एक प्रारंभिक संदर्भ उपकरण है। केवल वजन के बजाय शरीर की संरचना (वसा बनाम मांसपेशी), कमर का घेरा और रक्त परीक्षण स्वास्थ्य का अधिक सटीक मूल्यांकन करते हैं। किसी भी कठोर आहार कार्यक्रम से पहले डॉक्टर से परामर्श लें।'
+      }
+    },
+    tdee: {
+      en: {
+        domain: 'tdee',
+        sectionTitle: 'Total Daily Energy Expenditure (TDEE) & Metabolism Guide',
+        sectionSubtitle: 'Where your daily calories actually go: The 4 physiological components of human metabolism.',
+        interpretationTitle: 'The 4 Pillars of Daily Burn: BMR, NEAT, TEF, and Exercise',
+        interpretationText: 'Total Daily Energy Expenditure (TDEE) is not a single static engine—it is the dynamic sum of four distinct biological processes: 1) Basal Metabolic Rate (BMR, 60–70% of total burn): The baseline energy consumed by vital organs (brain, liver, heart, kidneys) at rest. 2) Non-Exercise Activity Thermogenesis (NEAT, 15–20% of burn): All unplanned, spontaneous physical movement—fidgeting, standing, walking, typing, and occupational tasks. NEAT is the most variable component of daily burn, varying by up to 800 kcal between individuals. 3) Thermic Effect of Food (TEF, 8–10% of burn): Energy required to digest and assimilate macronutrients (protein demands 20–30% of its caloric value to process, compared to 5–10% for carbs and 0–3% for fats). 4) Exercise Activity Thermogenesis (EAT, 5–10% of burn): Dedicated athletic training and structured cardio/resistance workouts.',
+        limitationsTitle: 'Metabolic Adaptation & The Subconscious NEAT Drop',
+        limitationsText: 'During prolonged caloric restriction, the human body deploys adaptive survival defenses: 1) Adaptive thermogenesis depresses resting metabolic rate beyond weight loss predictions. 2) Subconscious down-regulation of NEAT occurs—individuals unconsciously move more sluggishly, sit more, and fidget less, frequently erasing 200 to 400 kcal of daily expenditure without noticing. 3) Mathematical formulas like Mifflin-St Jeor carry an empirical variance of ±10–15%. Use the calculated TDEE as an initial baseline and monitor average scale weight across 3 to 4 weeks to determine your true biological energy balance.',
+        medicalNoticeTitle: 'Clinical Energy Balance Notice',
+        medicalNoticeText: 'TDEE figures are calculated estimates for dietary planning. Consult a registered dietitian or physician before embarking on aggressive caloric deficits or high-volume athletic energy protocols.'
+      },
+      es: {
+        domain: 'tdee',
+        sectionTitle: 'Guía del Gasto Energético Total Diario (TDEE) y Metabolismo',
+        sectionSubtitle: 'A dónde van realmente sus calorías diarias: Los 4 componentes fisiológicos del gasto energético.',
+        interpretationTitle: 'Los 4 Pilares del Gasto Calórico: TMB, NEAT, TEF y Ejercicio',
+        interpretationText: 'El Gasto Energético Total Diario (TDEE) no es un motor único y estático, sino la suma dinámica de cuatro procesos biológicos: 1) Tasa Metabólica Basal (TMB, 60–70% del gasto): Energía vital consumida por órganos vitales en reposo. 2) Termogénesis por Actividad No Asociada al Ejercicio (NEAT, 15–20%): Movimiento espontáneo no estructurado (caminar, gesticular, subir escaleras, estar de pie). Es el componente más variable entre personas (hasta 800 kcal de diferencia). 3) Efecto Térmico de los Alimentos (TEF, 8–10%): Energía requerida para digerir y procesar nutrientes (las proteínas consumen el 20–30% de sus calorías en digerirse). 4) Termogénesis por Ejercicio (EAT, 5–10%): Entrenamientos estructurados de fuerza y cardio.',
+        limitationsTitle: 'Adaptación Metabólica y Reducción Inconsciente del NEAT',
+        limitationsText: 'En déficits calóricos prolongados, el organismo activa mecanismos de defensa evolutiva: 1) La adaptación metabólica ralentiza el gasto basal. 2) Ocurre una caída involuntaria del NEAT (la persona se mueve menos, gesticula menos y se sienta más tiempo), reduciendo el gasto en 200–400 kcal/día sin advertirlo. 3) Las fórmulas presentan un margen de variación de ±10–15%. Ajuste su ingesta observando la tendencia de peso durante 3 o 4 semanas.',
+        medicalNoticeTitle: 'Aviso sobre Balance Energético Clínico',
+        medicalNoticeText: 'El TDEE es una estimación de referencia para la planificación nutricional. Consulte a un médico o dietista colegiado antes de adoptar déficits calóricos severos.'
+      },
+      fr: {
+        domain: 'tdee',
+        sectionTitle: 'Guide de la Dépense Énergétique Totale (TDEE) et Métabolisme',
+        sectionSubtitle: 'Où vont réellement vos calories quotidiennes : Les 4 composantes de la dépense métabolique.',
+        interpretationTitle: 'Les 4 Piliers de la Dépense : MB, NEAT, TEF et Exercice',
+        interpretationText: 'La Dépense Énergétique Totale (TDEE) représente l\'addition de quatre mécanismes physiologiques : 1) Métabolisme de Base (MB, 60–70 %) : Énergie minimale vitale pour les organes nobles au repos. 2) Thermogenèse des Activités Non Sportives (NEAT, 15–20 %) : Mouvements spontanés de la vie quotidienne (marche, maintien postural, tâches domestiques). C\'est la variable la plus modulable (jusqu\'à 800 kcal d\'écart interindividuel). 3) Effet Thermique des Aliments (TEF, 8–10 %) : Coût énergétique de la digestion (les protéines requièrent 20–30 % de leur apport pour être assimilées). 4) Thermogenèse liée à l\'Exercice (EAT, 5–10 %) : Séances d\'entraînement programmées.',
+        limitationsTitle: 'Adaptation Métabolique et Chute Inconsciente du NEAT',
+        limitationsText: 'Lors d\'une restriction calorique soutenue, l\'organisme réagit : 1) L\'adaptation métabolique réduit le métabolisme de base. 2) Une baisse subconsciente du NEAT intervient (on bouge moins, on s\'assoit davantage), effaçant souvent 200 à 400 kcal de déficit journalier à notre insu. 3) Les équations prédictives comportent une incertitude de ±10 à 15 %. Évaluez l\'évolution pondérale sur 3 à 4 semaines pour calibrer votre maintien réel.',
+        medicalNoticeTitle: 'Avis Médical sur l\'Équilibre Énergétique',
+        medicalNoticeText: 'La valeur de TDEE est une estimation théorique. Demandez conseil à un professionnel de santé avant d\'entreprendre une restriction calorique importante.'
+      },
+      de: {
+        domain: 'tdee',
+        sectionTitle: 'Leitfaden für den Gesamtenergiebedarf (TDEE) & Stoffwechsel',
+        sectionSubtitle: 'Wohin Ihre täglichen Kalorien fließen: Die 4 physiologischen Komponenten des Verbrauchs.',
+        interpretationTitle: 'Die 4 Säulen des Kalorienverbrauchs: BMR, NEAT, TEF und Training',
+        interpretationText: 'Der Gesamtenergiebedarf (TDEE) setzt sich aus vier physiologischen Säulen zusammen: 1) Grundumsatz (BMR, 60–70 %): Energieverbrauch der lebenswichtigen Organe in Ruhe. 2) Nicht-sportliche Alltagsaktivität (NEAT, 15–20 %): Unbewusste Alltagsbewegung (Gehen, Stehen, Treppensteigen, Gestikulieren). NEAT variiert interindividuell um bis zu 800 kcal täglich. 3) Thermischer Effekt der Nahrung (TEF, 8–10 %): Verdauungsenergie für Nährstoffe (Proteine verbrauchen 20–30 % ihres Brennwerts zur Verstoffwechselung). 4) Trainingsaktivität (EAT, 5–10 %): Gezielt geplante Sport- und Fitnesseinheiten.',
+        limitationsTitle: 'Metabolische Adaptation & unbewusster NEAT-Abfall',
+        limitationsText: 'Bei längeren Kaloriendefiziten greifen evolutionäre Schutzmechanismen: 1) Die metabolische Anpassung senkt den Energieumsatz. 2) Das NEAT sinkt unbewusst drastisch ab (weniger Spontanbewegung, längeres Sitzen), was oft 200 bis 400 kcal des Defizits unbemerkt aufhebt. 3) Mathematische Formeln haben eine Streuung von ±10–15 %. Dokumentieren Sie Ihr Gewicht über 3 bis 4 Wochen zur exakten Ermittlung.',
+        medicalNoticeTitle: 'Klinischer Hinweis zum Energiehaushalt',
+        medicalNoticeText: 'TDEE-Werte sind Orientierungswerte für Ernährungspläne. Konsultieren Sie einen Ernährungsmediziner oder Diätassistenten vor extremen Reduktionsdiäten.'
+      },
+      ko: {
+        domain: 'tdee',
+        sectionTitle: '일일 총 에너지 소비량(TDEE) 및 대사 생리학 가이드',
+        sectionSubtitle: '하루 동안 소비되는 칼로리의 실제 행방: 인체 대사의 4대 생리학적 구성 요소.',
+        interpretationTitle: 'TDEE 4대 핵심 기둥: 기초대사량, NEAT, 식품열역학, 운동',
+        interpretationText: '일일 총 에너지 소비량(TDEE)은 단일 수치가 아니며 4가지 대사 경로의 합산입니다: 1) 기초대사량 (BMR, 60~70%): 생명 유지 장기(뇌, 간, 심장, 신장)가 안정 시 소비하는 고정 에너지. 2) 비운동성 활동 열생성 (NEAT, 15~20%): 걷기, 서 있기, 자세 유지 등 일상생활 속 모든 자발적 움직임. 개인 간 하루 최대 800 kcal 이상 차이를 유발하는 가장 가변적인 영역입니다. 3) 식사성 발열효과 (TEF, 8~10%): 영양소 소화·흡수 대사비용 (단백질은 섭취 칼로리의 20~30% 소모). 4) 운동 활동 열생성 (EAT, 5~10%): 계획된 웨이트 트레이닝 및 유산소 운동.',
+        limitationsTitle: '대사 적응 및 무의식적 NEAT 활동 저하 현상',
+        limitationsText: '장기적인 다이어트(칼로리 결손) 지속 시 인체는 방어 기전을 가동합니다: 1) 대사 적응으로 인해 기초 에너지 소모가 둔화됩니다. 2) 무의식적인 NEAT 감소가 발생하여 활동량이 줄어들고 쉽게 피로해지며, 본인도 모르는 사이에 하루 200~400 kcal의 소비량이 증발할 수 있습니다. 3) Mifflin-St Jeor 등 수학 공식은 ±10~15%의 통계적 오차를 가집니다. 일정한 식단을 3~4주간 유지하며 체중 변화 추이를 관찰해 실제 유지 칼로리를 확정하세요.',
+        medicalNoticeTitle: '에너지 대사 임상 안내',
+        medicalNoticeText: '산출된 TDEE는 식단 구성을 위한 기준 추정치입니다. 극단적인 초저칼로리 식이요법 시작 전에는 반드시 의사 또는 전문 임상영양사와 상담하십시오.'
+      },
+      hi: {
+        domain: 'tdee',
+        sectionTitle: 'कुल दैनिक ऊर्जा व्यय (TDEE) एवं चयापचय गाइड',
+        sectionSubtitle: 'आपकी दैनिक कैलोरी वास्तव में कहां खर्च होती है: मानव चयापचय के 4 मुख्य शारीरिक घटक।',
+        interpretationTitle: 'दैनिक कैलोरी व्यय के 4 मुख्य स्तंभ: BMR, NEAT, TEF एवं व्यायाम',
+        interpretationText: 'कुल दैनिक ऊर्जा व्यय (TDEE) कोई स्थिर इंजन नहीं है, बल्कि चार जैविक प्रक्रियाओं का योग है: 1) बेसल मेटाबॉलिक रेट (BMR, 60–70%): विश्राम की अवस्था में मस्तिष्क, हृदय, यकृत और गुर्दे द्वारा खर्च की जाने वाली ऊर्जा। 2) गैर-व्यायाम गतिविधि थर्मोजेनेसिस (NEAT, 15–20%): दिन भर की सहज गतिविधियां (चलना, खड़े रहना, सीढ़ियां चढ़ना)। यह व्यक्तियों के बीच 800 कैलोरी तक भिन्न हो सकती है। 3) भोजन का थर्मिक प्रभाव (TEF, 8–10%): पोषक तत्वों को पचाने में खर्च ऊर्जा (प्रोटीन पचाने में 20–30% ऊर्जा लगती है)। 4) व्यायाम थर्मोजेनेसिस (EAT, 5–10%): संरचित जिम वर्कआउट और कार्डियो।',
+        limitationsTitle: 'चयापचय अनुकूलन एवं अवचेतन NEAT में गिरावट',
+        limitationsText: 'लंबे समय तक कैलोरी की कमी (डाइट) में रहने पर शरीर रक्षात्मक अनुकूलन अपनाता है: 1) चयापचय अनुकूलन से बेसल बर्न घट जाता है। 2) अवचेतन रूप से NEAT में गिरावट आती है (व्यक्ति अनजाने में अधिक बैठता है और कम हिलता-डुलता है), जिससे बिना पता चले प्रतिदिन 200 से 400 कैलोरी का व्यय कम हो जाता है। 3) गणितीय सूत्रों में ±10-15% का अंतर हो सकता है। सटीक ऊर्जा संतुलन जानने के लिए 3 से 4 सप्ताह तक शरीर के वजन के रुझान को ट्रैक करें।',
+        medicalNoticeTitle: 'नैदानिक ऊर्जा संतुलन सूचना',
+        medicalNoticeText: 'TDEE के आंकड़े आहार योजना के लिए शैक्षिक अनुमान हैं। अत्यधिक कैलोरी घाटा शुरू करने से पहले योग्य पोषण विशेषज्ञ या डॉक्टर से परामर्श लें।'
+      }
+    },
+        bmr: {
+      en: {
+        domain: 'bmr',
+        sectionTitle: 'Basal Metabolism & Organ Demands Guide',
+        sectionSubtitle: 'Understanding the physiological metabolic floor, vital organ caloric consumption, and endocrine regulation.',
+        interpretationTitle: 'Organ Energy Partitioning & The Non-Negotiable Metabolic Floor',
+        interpretationText: 'Basal Metabolic Rate (BMR) represents the non-negotiable energy floor required to sustain life at complete rest in a thermoneutral environment. According to seminal metabolic research by Elia (1992) and Gallagher et al. (1998), internal organs account for the vast majority of BMR despite making up less than 6% of total body weight: the liver consumes ~20–22% (glycogen synthesis and detoxification), the brain ~19–20% (continuous neuronal ion pumping), skeletal muscle ~20–22% (resting muscle tone and protein turnover), the heart and kidneys ~15–17% (myocardial pumping and renal filtration), and residual tissues ~20–24%. Chronically consuming fewer calories than your BMR triggers severe adaptive thermogenesis, thyroid down-regulation (decreased active T3), leptin suppression, and hormonal disruption.',
+        limitationsTitle: 'Predictive Equation Variances: Mifflin vs Katch-McArdle',
+        limitationsText: 'Standard formulas like Mifflin-St Jeor rely on total body weight, height, age, and sex, achieving an accuracy of ±10% for the general population. However, because adipose fat tissue is metabolically inert (~4.5 kcal/kg/day) compared to lean muscle tissue (~13 kcal/kg/day), individuals with high muscularity or substantial adiposity benefit more from body-composition-based formulas like Katch-McArdle: BMR = 370 + (21.6 × LBM in kg).',
+        medicalNoticeTitle: 'Metabolic Health & Endocrine Screening Notice',
+        medicalNoticeText: 'Calculated BMR values reflect statistical norms for healthy euthyroid adults. Clinical conditions including hypothyroidism (lowering metabolic rate), hyperthyroidism (accelerating burn), polycystic ovary syndrome (PCOS), and severe prolonged starvation alter cellular energy expenditure. If experiencing unexplained weight fluctuations or chronic fatigue, consult a qualified physician or endocrinologist for thyroid panel (TSH, free T3/T4) and indirect calorimetry testing.'
+      },
+      es: {
+        domain: 'bmr',
+        sectionTitle: 'Guía de Metabolismo Basal y Demandas Orgánicas',
+        sectionSubtitle: 'Comprende el suelo metabólico vital, el consumo calórico de los órganos internos y el control endocrino.',
+        interpretationTitle: 'Distribución Energética por Órganos y el Suelo Metabólico Vital',
+        interpretationText: 'La Tasa Metabólica Basal (TMB) representa el suelo energético obligatorio para sostener la vida en reposo total y temperatura neutra. Según investigaciones de Elia (1992) y Gallagher et al. (1998), los órganos internos consumen la mayor parte de la TMB a pesar de representar menos del 6% del peso corporal: el hígado consume ~20–22%, el cerebro ~19–20%, el músculo esquelético ~20–22%, el corazón y riñones ~15–17%, y los tejidos residuales ~20–24%. Consumir crónicamente menos calorías que tu TMB desencadena una adaptación metabólica severa, supresión de la hormona tiroidea activa (T3) y pérdida muscular acelerada.',
+        limitationsTitle: 'Variaciones entre Ecuaciones: Mifflin vs Katch-McArdle',
+        limitationsText: 'La fórmula de Mifflin-St Jeor utiliza peso, estatura, edad y sexo, con una precisión de ±10% en población general. Sin embargo, dado que el tejido graso es metabólicamente poco activo (~4.5 kcal/kg/día) comparado con el músculo (~13 kcal/kg/día), atletas o personas con composición corporal diferenciada obtienen mayor precisión con la fórmula de Katch-McArdle basada en masa magra: TMB = 370 + (21.6 × MCM en kg).',
+        medicalNoticeTitle: 'Aviso de Salud Metabólica y Cribado Endocrino',
+        medicalNoticeText: 'Los valores de TMB calculados representan normas estadísticas para adultos con función tiroidea normal. Trastornos como hipotiroidismo, hipertiroidismo o fatiga suprarrenal modifican sustancialmente el gasto celular. Ante variaciones inexplicables de peso o cansancio crónico, consulte a un endocrinólogo.'
+      },
+      fr: {
+        domain: 'bmr',
+        sectionTitle: 'Guide du Métabolisme de Base et Dépenses Organiques',
+        sectionSubtitle: 'Comprendre le seuil métabolique vital, la consommation énergétique des organes internes et la régulation endocrinienne.',
+        interpretationTitle: 'Répartition Énergétique par Organe et Seuil Métabolique Incompressible',
+        interpretationText: 'Le Métabolisme de Base (MB) constitue le plancher énergétique vital nécessaire au maintien des fonctions cellulaires au repos complet. Selon les travaux d\'Elia (1992) et de Gallagher et al. (1998), les organes internes consomment l\'essentiel du MB bien qu\'ils représentent moins de 6% du poids corporel : le foie ~20–22%, le cerveau ~19–20%, le muscle squelettique ~20–22%, le cœur et les reins ~15–17%, et les tissus résiduels ~20–24%. Un apport calorique chroniquement inférieur à votre MB déclenche une thermogenèse adaptative sévère, un effondrement de l\'hormone thyroïdienne T3 et une fonte musculaire.',
+        limitationsTitle: 'Variabilité des Équations : Mifflin vs Katch-McArdle',
+        limitationsText: 'La formule de Mifflin-St Jeor se base sur le poids, la taille, l\'âge et le sexe, avec une marge de précision de ±10% en population générale. Toutefois, le tissu adipeux étant métaboliquement peu actif (~4,5 kcal/kg/jour) face au muscle (~13 kcal/kg/jour), les sportifs musclés ont intérêt à utiliser la formule de Katch-McArdle fondée sur la masse maigre : MB = 370 + (21,6 × masse maigre en kg).',
+        medicalNoticeTitle: 'Avis Médical et Bilan Endocrinien',
+        medicalNoticeText: 'Les valeurs calculées reflètent les normes statistiques chez l\'adulte euthyroïdien. Les dysfonctionnements tels que l\'hypothyroïdie ou l\'hyperthyroïdie modifient profondément la dépense basale. En cas de fatigue inexpliquée ou de blocage pondéral, consultez un médecin ou un endocrinologue.'
+      },
+      de: {
+        domain: 'bmr',
+        sectionTitle: 'Leitfaden zum Grundumsatz & Organenergiebedarf',
+        sectionSubtitle: 'Physiologischer Minimalbedarf, Kalorienverbrauch lebenswichtiger Organe und endokrine Regulation.',
+        interpretationTitle: 'Energieaufteilung der Organe & Der Unverzichtbare Grundumsatz',
+        interpretationText: 'Der Grundumsatz (BMR) beziffert das unumstößliche physiologische Minimum, das der Organismus bei völliger Ruhe benötigt. Nach grundlegenden Studien von Elia (1992) und Gallagher et al. (1998) verbrauchen die inneren Organe den Löwenanteil des BMR, obwohl sie unter 6% des Körpergewichts ausmachen: die Leber ~20–22%, das Gehirn ~19–20%, die Skelettmuskulatur ~20–22%, Herz und Nieren ~15–17% und übrige Gewebe ~20–24%. Wer chronisch unter seinem Grundumsatz isst, riskiert eine drastische adaptive Thermogenese, Schilddrüsendrosselung (T3-Abfall) und Muskelabbau.',
+        limitationsTitle: 'Formelunterschiede: Mifflin-St Jeor vs. Katch-McArdle',
+        limitationsText: 'Die Mifflin-St Jeor-Formel stützt sich auf Gesamtgewicht, Größe, Alter und Geschlecht mit einer Genauigkeit von ±10% für die Allgemeinbevölkerung. Da Fettgewebe mit ~4,5 kcal/kg/Tag metabolisch deutlich inaktiver ist als Muskelgewebe (~13 kcal/kg/Tag), liefert bei trainierten Athleten die Katch-McArdle-Formel präzisere Ergebnisse: BMR = 370 + (21,6 × Magermasse in kg).',
+        medicalNoticeTitle: 'Medizinischer Hinweis zur Stoffwechselgesundheit',
+        medicalNoticeText: 'Die berechneten BMR-Werte spiegeln statistische Richtwerte für schilddrüsengesunde Erwachsene wider. Erkrankungen wie Hypothyreose oder Hyperthyreose verändern den zellulären Energieverbrauch maßgeblich. Bei unerklärlichen Gewichtsschwankungen oder chronischer Erschöpfung wird ein ärztlicher Schilddrüsentest empfohlen.'
+      },
+      ko: {
+        domain: 'bmr',
+        sectionTitle: '기초대사량(BMR) 및 장기별 에너지 소비 가이드',
+        sectionSubtitle: '생명 유지를 위한 최소 대사 기준치, 내부 장기별 칼로리 소모 및 내분비계 조절 기전 이해.',
+        interpretationTitle: '주요 장기별 에너지 분배와 타협할 수 없는 기초대사량 기준선',
+        interpretationText: '기초대사량(BMR)은 완전한 안정 상태에서 체온 유지와 생명 유지를 위해 요구되는 필수적인 에너지의 마지노선입니다. Elia(1992)와 Gallagher 등(1998)의 인체 대사 연구에 따르면, 내부 장기는 체중의 6% 미만에 불과하지만 기초대사량의 대부분을 소비합니다: 간 ~20–22%(해독 및 글리코겐 대사), 뇌 ~19–20%(신경 세포 이온 펌프), 골격근 ~20–22%(안정 시 근긴장 및 단백질 교체), 심장 및 신장 ~15–17%(심근 박동 및 사구체 여과), 기타 조직 ~20–24%. 기초대사량 미만으로 만성적인 절식 다이어트를 지속하면 적응성 열발생으로 인한 대사 저하, 갑상선 호르몬(T3) 감소, 렙틴 억제 및 근손실이 초래됩니다.',
+        limitationsTitle: '산출 공식별 특성: 미플린-세인트 지어 vs 캐치-맥아들',
+        limitationsText: 'Mifflin-St Jeor 공식은 일반 성인 기준 ±10%의 높은 정확도를 보입니다. 그러나 체지방 조직의 휴식기 에너지 소비량(~4.5 kcal/kg/일)은 제지방 근육 조직(~13 kcal/kg/일)에 비해 훨씬 적으므로, 근육량이 많거나 체지방률 편차가 큰 경우에는 순수 제지방량을 반영하는 Katch-McArdle 공식[BMR = 370 + (21.6 × 제지방량 kg)]을 활용하는 것이 더욱 정확합니다.',
+        medicalNoticeTitle: '대사 건강 및 내분비계 임상 안내',
+        medicalNoticeText: '계산된 BMR 수치는 갑상선 기능이 정상인 성인의 통계적 평균치입니다. 갑상선기능저하증(대사 저하), 갑상선기능항진증(대사 급증) 등의 내분비 질환은 세포 에너지 소모량을 크게 변화시킵니다. 원인 불명의 급격한 체중 변화나 만성 피로가 동반될 경우 내분비내과 전문의와 상담하여 혈액 검사(TSH, 유리 T3/T4)를 받아보시기 바랍니다.'
+      },
+      hi: {
+        domain: 'bmr',
+        sectionTitle: 'बेसल मेटाबॉलिज्म एवं अंग ऊर्जा आवश्यकता गाइड',
+        sectionSubtitle: 'शारीरिक मेटाबॉलिक न्यूनतम सीमा, आंतरिक अंगों की कैलोरी खपत और अंतःस्रावी नियंत्रण को समझें।',
+        interpretationTitle: 'अंगों द्वारा ऊर्जा विभाजन एवं अनिवार्य न्यूनतम मेटाबॉलिक सीमा',
+        interpretationText: 'बेसल मेटाबॉलिक रेट (BMR) पूर्ण विश्राम की स्थिति में जीवन बनाए रखने के लिए आवश्यक न्यूनतम ऊर्जा सीमा है। एलिया (1992) और गैलाघर एट अल (1998) के शोध के अनुसार, आंतरिक अंग शरीर के वजन के 6% से भी कम होने के बावजूद अधिकांश BMR का उपभोग करते हैं: यकृत (लिवर) ~20–22%, मस्तिष्क ~19–20%, कंकाल की मांसपेशियां ~20–22%, हृदय और गुर्दे ~15–17%, और अन्य ऊतक ~20–24%। अपने BMR से लगातार कम कैलोरी खाने से गंभीर मेटाबॉलिक मंदी (अडैप्टिव थर्मोजेनेसिस), थायरॉयड T3 हार्मोन में गिरावट और मांसपेशियों का क्षय होता है।',
+        limitationsTitle: 'पूर्वानुमान सूत्रों में भिन्नता: मिफ्लिन बनाम कैच-मैकआर्डल',
+        limitationsText: 'मिफ्लिन-सेंट जेओर फॉर्मूला सामान्य आबादी के लिए ±10% सटीक है। हालांकि, चूंकि वसा ऊतक (~4.5 कैलोरी/किग्रा/दिन) मांसपेशियों (~13 कैलोरी/किग्रा/दिन) की तुलना में बहुत कम सक्रिय है, इसलिए एथलीटों के लिए लीन बॉडी मास पर आधारित कैच-मैकआर्डल फॉर्मूला [BMR = 370 + (21.6 × लीन मास किग्रा)] अधिक सटीक परिणाम देता है।',
+        medicalNoticeTitle: 'मेटाबॉलिक स्वास्थ्य एवं अंतःस्रावी सूचना',
+        medicalNoticeText: 'यह BMR मान सामान्य थायरॉयड स्वास्थ्य वाले वयस्कों के लिए सांख्यिकीय अनुमान हैं। हाइपोथायरायडिज्म (कम मेटाबॉलिज्म) या हाइपरथायरायडिज्म (तेज मेटाबॉलिज्म) जैसी स्थितियां ऊर्जा व्यय को बदल देती हैं। अकारण वजन परिवर्तन या अत्यधिक थकान होने पर एंडोक्रिनोलॉजिस्ट से परामर्श लें।'
+      }
+    },
+
+metabolic: {
       en: {
         domain: 'metabolic',
         sectionTitle: 'Energy Expenditure & Calorie Guide',
@@ -484,69 +1225,69 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     bodycomp: {
       en: {
         domain: 'bodycomp',
-        sectionTitle: 'Body Composition & Weight Guide',
-        sectionSubtitle: 'Understanding body fat, lean muscle, and healthy weight ranges.',
-        interpretationTitle: 'Body Measurement & Composition Models',
-        interpretationText: 'Body composition formulas estimate the balance of muscle, bone, and body fat. Weight formulas give a healthy target range for your height. Tape measurements use your neck, waist, and hip size to estimate body fat. These tools help you see if weight changes come from muscle or fat.',
-        limitationsTitle: 'Accuracy of Body Fat & Weight Formulas',
-        limitationsText: 'Tape measurements can vary by 3% to 4% compared to clinical body scans. Fluid retention, recent meals, and tape position can change your daily numbers. Measure at the same time each day for the most reliable trends.',
-        medicalNoticeTitle: 'Health Assessment Notice',
-        medicalNoticeText: 'These calculations offer helpful fitness guidelines. They do not replace a medical exam by your doctor.'
+        sectionTitle: 'Body Fat Measurement Methods & Anatomical Guide',
+        sectionSubtitle: 'US Navy circumference method, DEXA scans, hydrostatic weighing, and measurement technique.',
+        interpretationTitle: 'US Navy Circumference Method vs. Laboratory Standards (DEXA & Hydrostatic)',
+        interpretationText: 'The US Navy circumference method (developed by Hodgdon and Beckett at the Naval Health Research Center in 1984) estimates body fat percentage using anatomical circumferences and height. By measuring the difference between the abdomen (waist) and the neck, the formula models body density (Db), which is then converted into fat percentage via the Siri equation. In validation trials against dual-energy X-ray absorptiometry (DEXA) and underwater hydrostatic weighing (the 4-compartment model), the US Navy method demonstrated a high correlation coefficient (r ≈ 0.85 to 0.90) with an average standard error of approximately 3% to 3.5% in typical active adults.',
+        limitationsTitle: 'Standardized Tape Placement & Bioelectrical Impedance (BIA) Differences',
+        limitationsText: 'Precision depends strictly on standardized anatomical tape placement: (1) Neck: Measured just inferior to the larynx (Adam’s apple) with tape perpendicular to the neck axis; (2) Waist for Men: Measured horizontally across the abdomen at the level of the umbilicus (navel) at the end of a normal exhalation; (3) Waist for Women: Measured at the narrowest torso point between ribs and iliac crest; (4) Hips for Women: Measured horizontally at the widest posterior protrusion of the buttocks. Unlike bioelectrical impedance analysis (BIA) scales, which fluctuate wildly based on recent hydration, caffeine, and food intake, circumference measurements remain impervious to fluid balance shifts.',
+        medicalNoticeTitle: 'Cardiometabolic Risk & Body Composition Notice',
+        medicalNoticeText: 'Body fat percentage is a far superior predictor of cardiometabolic health than scale weight or standard BMI alone, as it differentiates visceral and subcutaneous adiposity from metabolically protective lean tissue. For individuals with cardiovascular disease, hormonal disorders, or competitive athletic requirements, clinical DEXA scans provide the ultimate reference standard for regional fat distribution.'
       },
       es: {
         domain: 'bodycomp',
-        sectionTitle: 'Composición Corporal y Estimaciones Antropométricas',
-        sectionSubtitle: 'Interpretación del porcentaje de grasa, masa magra y fórmulas de perímetro.',
-        interpretationTitle: 'Modelos de Estimación Antropométrica',
-        interpretationText: 'Las fórmulas de perímetros corporales (como el método de la Marina de EE. UU.) y las de peso magro (Boer, Devine) estiman la proporción entre tejido adiposo y masa libre de grasa, ayudando a distinguir la masa muscular del exceso de grasa.',
-        limitationsTitle: 'Precisión de Medición y Límites Técnicos',
-        limitationsText: 'Las mediciones con cinta métrica presentan un margen de error del 3% al 4% frente a densitometrías DEXA o pesaje hidrostático. La tensión de la cinta, la ubicación exacta y la retención de líquidos pueden alterar los resultados.',
-        medicalNoticeTitle: 'Contexto Clínico',
-        medicalNoticeText: 'Estas estimaciones son útiles para el seguimiento deportivo y educativo. Para evaluaciones precisas de densidad ósea y composición corporal, se recomienda un escaneo DEXA clínico.'
+        sectionTitle: 'Métodos de Medición de Grasa Corporal y Guía Anatómica',
+        sectionSubtitle: 'Método US Navy, densitometría DEXA, pesaje hidrostático y técnica de medición.',
+        interpretationTitle: 'Método de la Marina de EE. UU. vs. Estándares de Laboratorio (DEXA e Hidrostático)',
+        interpretationText: 'El método de perímetros de la Marina de EE. UU. (Hodgdon y Beckett, 1984) estima el porcentaje de grasa mediante perímetros corporales y estatura. Relacionando la diferencia abdomen-cuello, la ecuación modela la densidad corporal (Db) para derivar la grasa mediante la fórmula de Siri. Frente al pesaje hidrostático y la absorciometría DEXA, presenta una correlación de r ≈ 0.85 a 0.90 con un error estándar de solo 3% a 3.5%.',
+        limitationsTitle: 'Ubicación Anatómica de la Cinta y Diferencias con Bioimpedancia (BIA)',
+        limitationsText: 'La precisión requiere ubicar la cinta rigurosamente: (1) Cuello: justo debajo de la manzana de Adán; (2) Cintura hombres: horizontal a nivel del ombligo tras una espiración normal; (3) Cintura mujeres: en el punto más estrecho del torso; (4) Caderas mujeres: en la máxima prominencia glútea. A diferencia de las básculas de bioimpedancia (BIA), que oscilan con la hidratación o el café, el método de perímetros no se altera por fluctuaciones de líquidos.',
+        medicalNoticeTitle: 'Aviso sobre Riesgo Cardiometabólico y Composición Corporal',
+        medicalNoticeText: 'El porcentaje de grasa corporal predice el riesgo metabólico con mayor exactitud que el peso o el IMC al aislar la grasa visceral. Para deportistas de élite o patologías metabólicas, el escaneo DEXA hospitalario constituye el estándar de referencia absoluto.'
       },
       fr: {
         domain: 'bodycomp',
-        sectionTitle: 'Composition Corporelle et Estimations Anthropométriques',
-        sectionSubtitle: 'Interprétation du taux de masse grasse, de la masse maigre et des mesures au ruban.',
-        interpretationTitle: 'Modèles d’Évaluation Anthropométrique',
-        interpretationText: 'Les formules basées sur les circonférences (telles que celle de l’US Navy) et sur la taille (Boer, Devine) évaluent la répartition entre masse maigre et tissu adipeux afin de mieux cerner le profil corporel que le seul IMC.',
-        limitationsTitle: 'Précision et Tolérances Techniques',
-        limitationsText: 'L’évaluation anthropométrique présente une marge d’écart de 3 à 4 % par rapport à l’ostéodensitométrie DEXA. La précision du ruban, la tension appliquée et l’état d’hydratation influencent les résultats.',
-        medicalNoticeTitle: 'Information Médicale',
-        medicalNoticeText: 'Ces calculs sont destinés au suivi forme et éducation. Pour une mesure médicale exacte de la composition corporelle, effectuez un bilan DEXA en centre spécialisé.'
+        sectionTitle: 'Méthodes de Mesure de Graisse Corporelle et Repères Anatomiques',
+        sectionSubtitle: 'Méthode US Navy, absorptiométrie DEXA, pesée hydrostatique et technique de mesure.',
+        interpretationTitle: 'Méthode US Navy vs Standards de Laboratoire (DEXA et Pesée Hydrostatique)',
+        interpretationText: 'La méthode anthropométrique de l’US Navy (Hodgdon et Beckett, 1984) évalue le taux de masse grasse à partir des circonférences et de la taille. En confrontant l’abdomen au cou, l’équation modélise la densité corporelle (Db) convertie par la formule de Siri. Face à la pesée hydrostatique et au scanner DEXA, elle démontre une excellente corrélation (r ≈ 0,85 à 0,90) avec un écart moyen de 3 à 3,5 % chez l’adulte.',
+        limitationsTitle: 'Repères Anatomiques du Ruban et Différences avec l’Impédancemétrie (BIA)',
+        limitationsText: 'La précision exige une pose anatomique rigoureuse : (1) Cou : immédiatement sous la pomme d’Adam ; (2) Taille homme : horizontalement au niveau du nombril en fin d’expiration normale ; (3) Taille femme : au niveau le plus étroit du buste ; (4) Hanches femme : à la circonférence fessière maximale. Contrairement aux balances à impédancemétrie (BIA) sensibles à l’eau et au café, les mesures au ruban ne subissent pas les variations hydriques immédiates.',
+        medicalNoticeTitle: 'Avis Médical sur la Composition Corporelle',
+        medicalNoticeText: 'Le pourcentage de masse grasse reflète le profil cardiométabolique bien plus fidèlement que le simple IMC. Pour les sportifs d’élite ou le suivi médicalisé, l’ostéodensitométrie DEXA hospitalière demeure la référence absolue.'
       },
       de: {
         domain: 'bodycomp',
-        sectionTitle: 'Körperzusammensetzung & Anthropometrische Schätzungen',
-        sectionSubtitle: 'Einordnung von Körperfettanteil, fettfreier Masse und Umfangsmessungen.',
-        interpretationTitle: 'Anthropometrische Berechnungsmodelle',
-        interpretationText: 'Umfangsbasierte Verfahren (wie die US Navy-Methode) und Formeln zur fettfreien Masse (Boer, Devine) schätzen das Verhältnis von stoffwechselaktiver Muskelmasse zu Fettgewebe, um muskuläre Dichte von Übergewicht abzugrenzen.',
-        limitationsTitle: 'Messgenauigkeit & Technische Grenzen',
-        limitationsText: 'Umfangsmessungen haben gegenüber klinischen DEXA-Scans eine methodische Abweichung von ca. 3 % bis 4 %. Exakte Platzierung des Maßbands, Bandspannung und der Hydratationszustand beeinflussen das Ergebnis.',
-        medicalNoticeTitle: 'Klinischer Hinweis',
-        medicalNoticeText: 'Diese Formeln bieten Orientierung für Fitness und Training. Für eine medizinisch präzise Analyse empfiehlt sich ein klinischer DEXA-Körperscan.'
+        sectionTitle: 'Körperfett-Messmethoden & Anatomischer Leitfaden',
+        sectionSubtitle: 'US-Navy-Methode, DEXA-Scans, hydrostatisches Wiegen und Messtechnik.',
+        interpretationTitle: 'US-Navy-Umfangsmethode vs. Laborstandards (DEXA & Hydrostatik)',
+        interpretationText: 'Die US-Navy-Methode (Hodgdon & Beckett, 1984) schätzt den Körperfettanteil über anatomische Umfangsmaße und Körpergröße. Über die Differenz von Bauch- und Nackenumfang berechnet die Formel die Körperdichte (Db), welche über die Siri-Gleichung in Körperfett umgerechnet wird. In Vergleichsstudien mit DEXA und hydrostatischem Wiegen erreicht die Methode eine Korrelation von r ≈ 0,85 bis 0,90 bei einem Standardfehler von 3 % bis 3,5 %.',
+        limitationsTitle: 'Anatomische Maßband-Platzierung & Abgrenzung zur Bioimpedanz (BIA)',
+        limitationsText: 'Exakte Ergebnisse erfordern standardisierte Messpunkte: (1) Nacken: unmittelbar unterhalb des Kehlkopfs; (2) Taille Männer: horizontal auf Nabelhöhe nach normaler Ausatmung; (3) Taille Frauen: an der schmalsten Stelle des Rumpfes; (4) Hüfte Frauen: an der breitesten Stelle des Gesäßes. Im Gegensatz zu Bioimpedanz-Waagen (BIA), die stark auf Kaffeekonsum oder Flüssigkeitsschwankungen reagieren, bleiben Umfangsmessungen unbeeinflusst vom akuten Wasserhaushalt.',
+        medicalNoticeTitle: 'Klinischer Hinweis zu Kardiometabolischem Risiko',
+        medicalNoticeText: 'Der prozentuale Körperfettanteil liefert eine überlegene Aussagekraft gegenüber dem bloßen Skalengewicht oder Standard-BMI. Für klinische Fragestellungen oder Leistungssportler bietet der DEXA-Scan die höchste diagnostische Präzision.'
       },
       ko: {
         domain: 'bodycomp',
-        sectionTitle: '신체 구성 및 인체 계측 추정치 가이드',
-        sectionSubtitle: '체지방률, 제지방량(LBM) 및 신체 둘레 측정 공식의 해석 기준입니다.',
-        interpretationTitle: '인체 계측 기반 신체 구성 모델',
-        interpretationText: '미 해군(US Navy) 체지방 공식 및 Boer 제지방량 공식은 신체 둘레 및 체중을 활용하여 체지방 조직과 근육 조직의 비율을 추정합니다. 이는 단순 체중만으로 알 수 없는 근육 발달도를 평가하는 데 유용합니다.',
-        limitationsTitle: '측정 정확도 및 기술적 한계',
-        limitationsText: '줄자 측정 기반 공식은 임상 정밀 DEXA 스캔 대비 통상 3% ~ 4%의 측정 편차를 가집니다. 줄자의 측정 위치, 당김 장력, 수분 저류 상태에 따라 오차가 발생할 수 있습니다.',
-        medicalNoticeTitle: '임상 신체 구성 검사 안내',
-        medicalNoticeText: '본 도구는 운동 및 건강 관리 추세를 모니터링하기 위한 교육용 추정치입니다. 정밀한 골밀도 및 체지방률 진단을 위해서는 병원 DEXA 검사를 권장합니다.'
+        sectionTitle: '체지방률 측정 방식 비교 및 인체 계측 임상 가이드',
+        sectionSubtitle: '미 해군(US Navy) 둘레 측정법, DEXA 스캔, 수중 체밀도법 및 정밀 측정 위치 안내.',
+        interpretationTitle: '미 해군(US Navy) 둘레법 대 정밀 검사(DEXA 및 수중 체밀도법) 비교',
+        interpretationText: '미 해군 체지방 측정법(1984년 해군 건강연구센터 Hodgdon & Beckett 개발)은 신체 둘레와 신장을 이용하여 체지방률을 추정합니다. 복부(허리)와 목둘레의 비율 차이를 통해 신체 밀도(Db)를 산출하고 이를 Siri 공식에 대입하여 최종 체지방률을 구합니다. 4구획 모델 표준인 수중 체밀도법 및 임상 DEXA 스캔과의 상관계수는 r ≈ 0.85~0.90에 달하며 평균 표준 오차는 3%~3.5% 수준으로 매우 신뢰성이 높습니다.',
+        limitationsTitle: '해부학적 표준 측정 부위 및 생체전기임피던스(BIA) 인바디와의 차이',
+        limitationsText: '정확한 측정을 위해 엄격한 부위 선정이 필수적입니다: (1) 목둘레: 목젖(후두 융기) 바로 아랫부분을 수평 측정; (2) 남성 허리둘레: 숨을 편안히 내쉰 상태에서 배꼽 높이 수평 측정; (3) 여성 허리둘레: 갈비뼈와 골반 사이 가장 잘록한 부위; (4) 여성 엉덩이둘레: 둔부의 가장 넓은 돌출 부위. 체내 수분량, 염분 섭취, 카페인에 따라 수치가 요동치는 가정용 BIA 체지방계와 달리, 줄자 둘레법은 단기 수분 변동에 영향을 받지 않습니다.',
+        medicalNoticeTitle: '심장대사 위험도 및 체성분 평가 안내',
+        medicalNoticeText: '체지방률은 체중이나 표준 BMI보다 심혈관 및 대사 질환 위험을 훨씬 정확하게 반영합니다. 내장지방과 피하지방의 정밀 구분이 필요한 환자나 엘리트 선수는 병원 DEXA 검사를 통해 정밀 체조직 분포를 확인하십시오.'
       },
       hi: {
         domain: 'bodycomp',
-        sectionTitle: 'शारीरिक संरचना एवं मानवशास्त्रीय अनुमान',
-        sectionSubtitle: 'शरीर में वसा प्रतिशत, लीन बॉडी मास और नाप सूत्रों की व्याख्या।',
-        interpretationTitle: 'मानवशास्त्रीय आकलन मॉडल',
-        interpretationText: 'अमेरिकी नौसेना सूत्र और बोएर लीन मास समीकरण शारीरिक परिधियों के आधार पर वसा और मांसपेशियों के अनुपात का अनुमान लगाते हैं, जिससे वजन और वसा के बीच अंतर स्पष्ट होता है।',
-        limitationsTitle: 'मापन सटीकता एवं सीमाएं',
-        limitationsText: 'डेक्सा (DEXA) स्कैन की तुलना में फीते की माप में लगभग 3% से 4% का अंतर आ सकता है। फीते का सही स्थान, खिंचाव और शरीर में पानी की मात्रा परिणामों को प्रभावित कर सकती है।',
-        medicalNoticeTitle: 'नैदानिक संदर्भ',
-        medicalNoticeText: 'यह अनुमान फिटनेस ट्रैकिंग के लिए है। सटीक शारीरिक संरचना विश्लेषण के लिए अस्पताल में डेक्सा स्कैन करवाएं।'
+        sectionTitle: 'बॉडी फैट मापन विधियां एवं शारीरिक गाइड',
+        sectionSubtitle: 'अमेरिकी नौसेना विधि, डेक्सा (DEXA) स्कैन, हाइड्रोस्टैटिक वजन और सटीक नाप तकनीक।',
+        interpretationTitle: 'अमेरिकी नौसेना विधि बनाम प्रयोगशाला मानक (DEXA और हाइड्रोस्टैटिक)',
+        interpretationText: 'अमेरिकी नौसेना परिधि विधि (हॉजडन और बेकेट, 1984) शारीरिक परिधियों और ऊंचाई का उपयोग करके बॉडी फैट का सटीक अनुमान लगाती है। पेट और गर्दन के अनुपात से शारीरिक घनत्व (Db) की गणना होती है, जिसे सिरी समीकरण द्वारा वसा प्रतिशत में बदला जाता है। अस्पताल के डेक्सा स्कैन और पानी के अंदर वजन मापने की तकनीकों के मुकाबले यह विधि 85% से 90% सटीक बैठती है (मानक त्रुटि केवल 3% से 3.5%)।',
+        limitationsTitle: 'फीते का सही शारीरिक स्थान एवं बायोइम्पीडेंस (BIA) से अंतर',
+        limitationsText: 'सटीक परिणाम के लिए फीते का सही स्थान आवश्यक है: (1) गर्दन: एडम्स एप्पल के ठीक नीचे; (2) पुरुष कमर: सामान्य सांस छोड़ने के बाद नाभि के स्तर पर क्षैतिज; (3) महिला कमर: पसलियों और कूल्हे के बीच सबसे संकरा भाग; (4) महिला कूल्हे: नितंबों का सबसे चौड़ा भाग। बायोइम्पीडेंस (BIA) मशीनों के विपरीत जो पानी या कॉफी पीने से बदल जाती हैं, फीते की नाप तात्कालिक पानी के उतार-चढ़ाव से अप्रभावित रहती है।',
+        medicalNoticeTitle: 'हृदय एवं चयापचय स्वास्थ्य सूचना',
+        medicalNoticeText: 'बॉडी फैट प्रतिशत तराजू के वजन या बीएमआई की तुलना में आंतरिक स्वास्थ्य का बहुत बेहतर सूचक है। चिकित्सीय आवश्यकताओं या पेशेवर एथलीटों के लिए अस्पताल का डेक्सा स्कैन अंतिम स्वर्ण मानक है।'
       }
     },
     cardio: {
@@ -824,69 +1565,69 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     specialty: {
       en: {
         domain: 'specialty',
-        sectionTitle: 'Nutrition & Daily Needs Guide',
-        sectionSubtitle: 'Evidence-based guidelines for daily protein, hydration, and wellness targets.',
-        interpretationTitle: 'Daily Protein & Nutrition Guidelines',
-        interpretationText: 'Your daily protein needs depend on your weight and activity level. Sedentary adults need about 0.8 grams of protein per kilogram of body weight. Active adults and lifters usually benefit from 1.2 to 2.0 grams per kilogram. Eating protein across three or four meals helps support muscle recovery.',
-        limitationsTitle: 'Health Conditions & Dietary Adjustments',
-        limitationsText: 'Standard protein targets assume normal kidney and liver function. People with kidney conditions should follow protein limits set by their doctor. Drink plenty of fresh water throughout the day to support healthy digestion.',
-        medicalNoticeTitle: 'Dietary Guidance Notice',
-        medicalNoticeText: 'These numbers are educational guidelines. Talk to a doctor or dietitian before making large diet changes.'
+        sectionTitle: 'Dietary Protein Physiology & Muscle Protein Synthesis Guide',
+        sectionSubtitle: 'How protein targets, the leucine threshold, per-meal distribution, and caloric state drive muscle repair and metabolic health.',
+        interpretationTitle: 'Muscle Protein Synthesis (MPS), Leucine Threshold & Nitrogen Balance',
+        interpretationText: 'The standard Recommended Dietary Allowance (RDA) of 0.8 g/kg/day represents a statistical baseline to prevent overt protein deficiency and negative nitrogen balance in sedentary adults—it is not an optimal target for active individuals or those seeking muscle preservation. Clinical exercise physiology confirms that active individuals and lifters require 1.4 to 2.2 g/kg/day to maximize fractional Muscle Protein Synthesis (MPS) rates via the mTORC1 signaling pathway. Triggering MPS requires reaching the "leucine threshold" (~2.5 to 3.0 grams of leucine per meal), achievable with approximately 25 to 40 grams of high-quality, bioavailable intact protein (such as eggs, poultry, whey, fish, or dairy) evenly spaced across 3 to 5 meals throughout the day.',
+        limitationsTitle: 'Renal Safety, Protein Quality (DIAAS) & Hypocaloric Muscle Sparing',
+        limitationsText: 'Extensive clinical trials by the International Society of Sports Nutrition (ISSN) demonstrate that high protein intakes (up to 3.0 g/kg/day) cause no detrimental changes to glomerular filtration rate, renal function, or bone mineral density in healthy individuals. During a caloric deficit for fat loss, protein requirements increase to 1.8 to 2.4 g/kg/day to protect skeletal muscle from gluconeogenesis and elevate the Thermic Effect of Food (TEF). Plant-based athletes should combine complementary protein sources (legumes and grains) to ensure complete essential amino acid profiles and overcome lower Digestible Indispensable Amino Acid Scores (DIAAS).',
+        medicalNoticeTitle: 'Clinical Renal & Hepatic Medical Notice',
+        medicalNoticeText: 'High-protein targets apply exclusively to individuals with healthy kidney and liver function. Patients diagnosed with Chronic Kidney Disease (CKD Stages 3–5), diabetic nephropathy, hepatic encephalopathy, or those on medically prescribed low-protein regimens must adhere strictly to clinical guidelines under the direct supervision of a nephrologist or registered clinical dietitian.'
       },
       es: {
         domain: 'specialty',
-        sectionTitle: 'Pautas Nutricionales y Contexto Clínico',
-        sectionSubtitle: 'Interpretación de requerimientos proteicos, hidratación y cribados especializados.',
-        interpretationTitle: 'Pautas de Nutrición y Fisiología Basadas en Evidencia',
-        interpretationText: 'Los objetivos nutricionales siguen directrices respaldadas por la investigación científica (como las pautas de la ISSN de 1.4–2.0 g/kg de proteína en deportistas) y estándares de hidratación recomendados.',
-        limitationsTitle: 'Condiciones de Salud Específicas',
-        limitationsText: 'Estas pautas presuponen una función renal y hepática normal. Pacientes con insuficiencia renal o hepática precisan límites específicos de líquidos y proteínas supervisados por un médico. Los cribados no sustituyen análisis clínicos.',
-        medicalNoticeTitle: 'Aviso Médico y Nutricional',
-        medicalNoticeText: 'Consulte a un dietista colegiado o a su médico antes de modificar drásticamente su dieta o si presenta factores de riesgo clínicos.'
+        sectionTitle: 'Fisiología Proteica y Síntesis de Masa Muscular',
+        sectionSubtitle: 'Cómo las metas proteicas, el umbral de leucina y la distribución por comida optimizan la masa magra y la salud metabólica.',
+        interpretationTitle: 'Síntesis Proteica Muscular (SPM), Umbral de Leucina y Balance de Nitrógeno',
+        interpretationText: 'La ingesta recomendada básica de 0.8 g/kg/día previene deficiencias en adultos sedentarios, pero resulta insuficiente para deportistas y personas activas. En fisiología del ejercicio, se requieren de 1.4 a 2.2 g/kg/día para maximizar la síntesis proteica muscular (SPM) mediante la vía mTORC1. Para activar la SPM de forma óptima se necesita alcanzar el umbral de leucina (~2.5 a 3.0 g por toma), lo que se logra con 25 a 40 g de proteína de alto valor biológico repartidos en 3 a 5 comidas.',
+        limitationsTitle: 'Seguridad Renal, Calidad de Proteína (DIAAS) y Protección Muscular en Déficit',
+        limitationsText: 'Los consensos de la ISSN ratifican que ingestas elevadas de hasta 3.0 g/kg/día son plenamente seguras para la función renal y la densidad ósea en personas sanas. En etapas de déficit calórico para definición, los requerimientos aumentan a 1.8–2.4 g/kg para evitar el catabolismo muscular. Quienes sigan dietas vegetales deben combinar legumbres y cereales para optimizar el perfil de aminoácidos esenciales y la puntuación DIAAS.',
+        medicalNoticeTitle: 'Aviso Médico sobre Función Renal y Hepática',
+        medicalNoticeText: 'Estas recomendaciones asumen una función hepatorrenal sana. Pacientes con enfermedad renal crónica (estadios 3 a 5) o hepatopatías deben seguir dietas normo o hipoproteicas estrictamente supervisadas por su médico especialista.'
       },
       fr: {
         domain: 'specialty',
-        sectionTitle: 'Bases Nutritionnelles et Contexte Clinique',
-        sectionSubtitle: 'Interprétation des apports protéiques, de l’hydratation et des scores spécialisés.',
-        interpretationTitle: 'Recommandations Nutritionnelles Fondées sur les Preuves',
-        interpretationText: 'Les repères nutritionnels s’appuient sur les recommandations internationales (comme celles de l’ISSN préconisant 1,4 à 2,0 g/kg de protéines pour les sportifs) et les normes de santé publique en matière d’hydratation.',
-        limitationsTitle: 'Pathologies et Restrictions Spécifiques',
-        limitationsText: 'Ces calculs s’appliquent aux personnes ayant une fonction rénale et hépatique saine. En cas d’insuffisance rénale ou hépatique, les apports en protéines et en eau doivent faire l’objet d’un contrôle médical strict.',
-        medicalNoticeTitle: 'Mise en Garde Diététique',
-        medicalNoticeText: 'Ces valeurs sont purement indicatives. Consultez un professionnel de santé ou un diététicien avant tout changement alimentaire important.'
+        sectionTitle: 'Physiologie des Protéines et Synthèse Musculaire',
+        sectionSubtitle: 'Comment les cibles protéiques, le seuil de leucine et la répartition par repas optimisent la masse musculaire et la santé métabolique.',
+        interpretationTitle: 'Synthèse Protéique Musculaire, Seuil de Leucine et Bilan Azoté',
+        interpretationText: 'L’apport minimal recommandé de 0,8 g/kg/jour prévient les carences chez le sédentaire, mais ne répond pas aux besoins du sportif. En physiologie sportive, un apport de 1,4 à 2,2 g/kg/jour est requis pour stimuler la synthèse protéique musculaire (SPM) via la voie mTORC1. Chaque repas principal doit atteindre le seuil de leucine (~2,5 à 3,0 g), soit environ 25 à 40 g de protéines complètes, idéalement fractionnés en 3 à 5 prises quotidiennes.',
+        limitationsTitle: 'Sécurité Rénale, Qualité des Protéines (DIAAS) et Préservation en Déficit',
+        limitationsText: 'Les études cliniques de l’ISSN confirment qu’un apport allant jusqu’à 3,0 g/kg/jour ne détériore ni la filtration glomérulaire ni la santé osseuse chez l’adulte sain. En période de restriction calorique (sèche), les besoins montent à 1,8–2,4 g/kg pour contrer le catabolisme musculaire. Les sportifs végétariens veilleront à associer légumineuses et céréales pour assurer un indice DIAAS optimal.',
+        medicalNoticeTitle: 'Avertissement Médical sur la Fonction Rénale et Hépatique',
+        medicalNoticeText: 'Ces apports s’adressent exclusivement aux personnes sans insuffisance rénale ni pathologie hépatique. Les patients atteints de maladie rénale chronique ou d’encéphalopathie hépatique doivent impérativement respecter les restrictions protéiques prescrites par leur médecin.'
       },
       de: {
         domain: 'specialty',
-        sectionTitle: 'Ernährungsbasen & Klinischer Kontext',
-        sectionSubtitle: 'Einordnung von Proteinbedarf, Flüssigkeitszufuhr und Risikoscores.',
-        interpretationTitle: 'Evidenzbasierte Ernährungs- und Hydratationsleitlinien',
-        interpretationText: 'Die Nährstoffempfehlungen orientieren sich an anerkannten Standards der Sportwissenschaft (z. B. ISSN-Leitlinien von 1,4–2,0 g/kg Protein für Aktive) und offiziellen Richtwerten zur Flüssigkeitsversorgung.',
-        limitationsTitle: 'Individuelle Vorerkrankungen & Einschränkungen',
-        limitationsText: 'Die Orientierungswerte setzen eine gesunde Nieren- und Leberfunktion voraus. Bei chronischen Nierenerkrankungen sind Protein- und Flüssigkeitsmengen zwingend ärztlich anzupassen. Risiko-Scores ersetzen keine Labordiagnostik.',
-        medicalNoticeTitle: 'Ernährungsmedizinischer Hinweis',
-        medicalNoticeText: 'Wenden Sie sich vor gravierenden Ernährungsumstellungen oder bei auffälligen Screeningwerten an einen Arzt oder qualifizierten Ernährungsberater.'
+        sectionTitle: 'Proteinphysiologie & Muskelproteinsynthese',
+        sectionSubtitle: 'Wie Proteinmengen, die Leucin-Schwelle und die Mahlzeitenverteilung Muskelregeneration und Stoffwechsel optimieren.',
+        interpretationTitle: 'Muskelproteinsynthese (MPS), Leucin-Schwelle & Stickstoffbilanz',
+        interpretationText: 'Der empfohlene Mindestbedarf von 0,8 g/kg/Tag sichert das Überleben ohne Mangel bei Inaktivität, ist aber für Trainierende unzureichend. Sportwissenschaftliche Leitlinien belegen einen optimalen Bereich von 1,4 bis 2,2 g/kg/Tag zur Maximierung der Muskelproteinsynthese (MPS) über mTORC1. Entscheidend ist das Erreichen der Leucin-Schwelle (ca. 2,5 bis 3,0 g Leucin pro Mahlzeit), was durch 25 bis 40 g hochwertige Proteine über 3 bis 5 Tagesmahlzeiten erreicht wird.',
+        limitationsTitle: 'Nierensicherheit, Proteinqualität (DIAAS) & Muskelschutz im Defizit',
+        limitationsText: 'Klinische Studien der ISSN belegen, dass Proteinzufuhren von bis zu 3,0 g/kg/Tag bei gesunden Erwachsenen weder Nierenfiltration noch Knochendichte beeinträchtigen. Bei Kaloriendefiziten zur Fettreduktion steigt der Bedarf auf 1,8 bis 2,4 g/kg, um Muskelverlust durch Glukoneogenese zu verhindern. Pflanzliche Sportler sollten Hülsenfrüchte und Getreide kombinieren, um optimale DIAAS-Aminosäurewerte zu erzielen.',
+        medicalNoticeTitle: 'Klinischer Hinweis zu Nieren- und Lebererkrankungen',
+        medicalNoticeText: 'Erhöhte Proteinempfehlungen gelten ausschließlich für nieren- und lebergesunde Personen. Bei chronischer Niereninsuffizienz (CKD) oder Leberzirrhose sind strenge diätetische Eiweißbeschränkungen unter nephrologischer Kontrolle zwingend einzuhalten.'
       },
       ko: {
         domain: 'specialty',
-        sectionTitle: '영양 기준치 및 임상 고려사항',
-        sectionSubtitle: '단백질 권장 섭취량, 수분 섭취 기준 및 전문 선별 지표의 해석입니다.',
-        interpretationTitle: '증거 기반 영양 및 수분 섭취 가이드라인',
-        interpretationText: '본 영양 가이드라인은 국제스포츠영양학회(ISSN)의 활성 성인 단백질 권장 기준(체중 1kg당 1.4 ~ 2.0g) 및 의학 수분 섭취 기준을 따릅니다. 전문 선별 도구는 기초 통계 위험도를 안내합니다.',
-        limitationsTitle: '기저 질환 및 식이 제한 사항',
-        limitationsText: '이 계산은 신장 및 간 기능이 정상인 성인을 전제로 합니다. 만성 신부전(CKD)이나 간 질환이 있는 경우 단백질과 수분 섭취를 의학적으로 제한해야 합니다. 선별 점수는 진단 혈액 검사를 대신하지 않습니다.',
-        medicalNoticeTitle: '임상 영양 상담 안내',
-        medicalNoticeText: '급격한 식단 변경이나 임상 위험 점수 해석이 필요한 경우 공인 영양사 또는 주치의와 상담하십시오.'
+        sectionTitle: '식이 단백질 생리학 및 근단백질 합성(MPS) 가이드',
+        sectionSubtitle: '단백질 섭취량, 류신 임계치, 끼니별 분배 및 칼로리 상태가 근육 회복과 대사 건강에 미치는 영향입니다.',
+        interpretationTitle: '근단백질 합성(MPS), 류신 임계치 및 질소 평형의 과학',
+        interpretationText: '일반 권장 섭취량(RDA)인 체중 1kg당 0.8g은 비운동 성인의 질소 결핍을 막는 최소한의 기준선일 뿐, 운동선수와 활성 성인의 근육 보존에는 부족합니다. 임상 운동 생리학에 따르면 체중 1kg당 1.4 ~ 2.2g을 섭취해야 mTORC1 경로를 통한 근단백질 합성(MPS)이 극대화됩니다. 한 끼 식사 시 류신 임계치(~2.5~3.0g)를 충족해야 하므로 25~40g의 양질의 단백질을 하루 3~5회 분할 섭취하는 것이 가장 이상적입니다.',
+        limitationsTitle: '신장 안전성, 단백질 품질(DIAAS) 및 다이어트 중 근손실 방지',
+        limitationsText: '국제스포츠영양학회(ISSN)의 대규모 임상 연구에 따르면 건강한 성인의 경우 하루 최대 3.0g/kg의 고단백 식단을 유지해도 사구체 여과율이나 골밀도에 악영향이 없습니다. 체지방 감량을 위한 칼로리 적자 상태에서는 근육 분해를 막기 위해 1.8~2.4g/kg까지 증량하는 것이 권장됩니다. 채식 운동선수는 콩류와 곡류를 조합하여 아미노산 점수(DIAAS)를 보완해야 합니다.',
+        medicalNoticeTitle: '신장 및 간 질환 임상 주의사항',
+        medicalNoticeText: '고단백 식단 가이드라인은 신장과 간 기능이 정상인 성인을 전제로 합니다. 만성 신부전(CKD 3~5단계), 당뇨병성 신증 또는 간 질환이 있는 환자는 반드시 신장내과 전문의가 지정한 단백질 제한 식단을 따라야 합니다.'
       },
       hi: {
         domain: 'specialty',
-        sectionTitle: 'पोषण संदर्भ एवं नैदानिक विचार',
-        sectionSubtitle: 'प्रोटीन लक्ष्य, जलयोजन आवश्यकता और विशेष स्क्रीनिंग स्कोर की व्याख्या।',
-        interpretationTitle: 'साक्ष्य-आधारित पोषण और जलयोजन मानक',
-        interpretationText: 'पोषण लक्ष्य अंतरराष्ट्रीय खेल पोषण दिशा-निर्देशों (सक्रिय व्यक्तियों के लिए 1.4–2.0 ग्राम/किग्रा प्रोटीन) और सामान्य जलयोजन मानकों पर आधारित हैं।',
-        limitationsTitle: 'व्यक्तिगत स्वास्थ्य स्थितियां और सीमाएं',
-        limitationsText: 'ये आंकड़े सामान्य गुर्दे और यकृत कार्यप्रणाली वाले वयस्कों के लिए हैं। गुर्दे की बीमारी वाले व्यक्तियों को चिकित्सकीय देखरेख में प्रोटीन और तरल पदार्थ सीमित करने की आवश्यकता होती है।',
-        medicalNoticeTitle: 'चिकित्सीय एवं पोषण सलाह अस्वीकरण',
-        medicalNoticeText: 'आहार में बड़ा बदलाव करने से पहले पंजीकृत आहार विशेषज्ञ या डॉक्टर से परामर्श करें।'
+        sectionTitle: 'आहार प्रोटीन शरीर क्रिया विज्ञान एवं मांसपेशी संश्लेषण गाइड',
+        sectionSubtitle: 'प्रोटीन लक्ष्य, ल्यूसीन सीमा, भोजन-वार वितरण और कैलोरी स्थिति मांसपेशियों की मरम्मत को कैसे अनुकूलित करते हैं।',
+        interpretationTitle: 'मांसपेशी प्रोटीन संश्लेषण (MPS), ल्यूसीन सीमा एवं नाइट्रोजन संतुलन',
+        interpretationText: 'सामान्य अनुशंसित 0.8 ग्राम/किग्रा/दिन का स्तर केवल गतिहीन वयस्कों में प्रोटीन की कमी और नाइट्रोजन घाटे को रोकने के लिए न्यूनतम सीमा है। सक्रिय व्यक्तियों और भारोत्तोलकों को mTORC1 मार्ग द्वारा मांसपेशी प्रोटीन संश्लेषण (MPS) को अधिकतम करने के लिए 1.4 से 2.2 ग्राम/किग्रा की आवश्यकता होती है। इसके लिए प्रति भोजन ल्यूसीन सीमा (~2.5 से 3.0 ग्राम ल्यूसीन) तक पहुंचना आवश्यक है, जो दिन भर में 3 से 5 भोजन में 25 से 40 ग्राम उच्च गुणवत्ता वाले प्रोटीन द्वारा प्राप्त होता है।',
+        limitationsTitle: 'गुर्दे की सुरक्षा, प्रोटीन गुणवत्ता (DIAAS) और कैलोरी कमी में मांसपेशियों की सुरक्षा',
+        limitationsText: 'इंटरनेशनल सोसाइटी ऑफ स्पोर्ट्स न्यूट्रिशन (ISSN) के अध्ययनों से सिद्ध होता है कि स्वस्थ वयस्कों में 3.0 ग्राम/किग्रा/दिन तक का प्रोटीन गुर्दे की कार्यप्रणाली या हड्डियों के घनत्व को कोई नुकसान नहीं पहुंचाता। वजन घटाने (कैलोरी की कमी) के दौरान मांसपेशियों के क्षय को रोकने के लिए 1.8 से 2.4 ग्राम/किग्रा आवश्यक होता है। शाकाहारी एथलीटों को संपूर्ण अमीनो एसिड प्रोफाइल के लिए दालों और अनाजों का संयोजन करना चाहिए।',
+        medicalNoticeTitle: 'गुर्दे एवं यकृत संबंधी चिकित्सीय सूचना',
+        medicalNoticeText: 'यह उच्च-प्रोटीन लक्ष्य केवल सामान्य गुर्दे और यकृत स्वास्थ्य वाले व्यक्तियों पर लागू होते हैं। क्रोनिक किडनी रोग (CKD), डायबिटिक नेफ्रोपैथी या यकृत रोग से पीड़ित रोगियों को अपने डॉक्टर द्वारा निर्धारित कम-प्रोटीन आहार का कड़ाई से पालन करना चाहिए।'
       }
     }
   };

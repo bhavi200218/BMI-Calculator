@@ -1457,8 +1457,82 @@ const searchPlaceholders: Record<string, string> = {
   >
     <div class="space-y-12">
       
-      <!-- Unified Calculator Methodology Matrix Table with Instant Search -->
-      <div class="space-y-6">
+      <!-- Intro & Product Statement Box -->
+      <div class="p-6 md:p-8 rounded-2xl border border-[var(--accent)]/20 bg-[var(--card)] space-y-4 shadow-sm">
+        <h2 class="text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+          {currentI18n.statementTitle}
+        </h2>
+        <p class="text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+          {currentI18n.statementDesc}
+        </p>
+      </div>
+
+      <!-- Core Pillars Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {currentI18n.pillars.map(pillar => (
+          <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2.5">
+            <h3 class="text-lg font-display font-bold text-[var(--foreground)] uppercase tracking-wide">{pillar.title}</h3>
+            <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{pillar.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Executive Algorithm & Formula Reference Table (Formula & Source Verification Table) -->
+      <div class="space-y-4">
+        <div class="space-y-1">
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}</p>
+          <h2 class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
+            {currentI18n.tableViewTitle}
+          </h2>
+          <p class="text-sm text-[var(--muted-foreground)] font-medium">
+            {currentI18n.tableViewDesc}
+          </p>
+        </div>
+
+        <div class="methodology-table-wrap p-4 sm:p-6 shadow-xs">
+          <table class="methodology-matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 18%;">{currentI18n.tableColTool}</th>
+                <th style="width: 20%;">{currentI18n.tableColFormula}</th>
+                <th style="width: 18%;">{currentI18n.tableColSource}</th>
+                <th style="width: 14%;">{currentI18n.tableColInputs}</th>
+                <th style="width: 15%;">{currentI18n.tableColOutputs}</th>
+                <th style="width: 15%;">{currentI18n.tableColLimitations}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {methodologyMatrix.map((item) => {
+                const foundCalc = calculators.find(c => c.slug === item.slug);
+                const localizedName = foundCalc ? (foundCalc.name[lang] || foundCalc.name.en) : item.name;
+                const locFormula = item.formula[lang] || item.formula.en;
+                const locSource = item.source[lang] || item.source.en;
+                const locInputs = item.inputs[lang] || item.inputs.en;
+                const locOutput = item.output[lang] || item.output.en;
+                const locLimitations = item.limitations[lang] || item.limitations.en;
+
+                return (
+                  <tr>
+                    <td>
+                      <a href={`/${lang}/${item.slug}/`} class="font-bold">
+                        {localizedName}
+                      </a>
+                    </td>
+                    <td class="font-mono text-xs">{locFormula}</td>
+                    <td class="text-xs">{locSource}</td>
+                    <td>{locInputs}</td>
+                    <td>{locOutput}</td>
+                    <td class="text-xs leading-relaxed">{locLimitations}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Interactive Detailed Methodology Accordion (25 Tools with Search) -->
+      <div class="space-y-6 pt-4 border-t border-[var(--border)]">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div class="space-y-1">
             <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}</p>
@@ -1470,188 +1544,161 @@ const searchPlaceholders: Record<string, string> = {
             </p>
           </div>
 
-          <!-- Interactive Search Input & Tool Counter -->
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
-            <div class="relative w-full sm:w-72">
-              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[var(--muted-foreground)]">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-              <input 
-                type="search" 
-                id="methodologySearchInput" 
-                placeholder={searchPlaceholders[lang] || searchPlaceholders.en} 
-                autocomplete="off"
-                class="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--card)] text-xs text-[var(--foreground)] placeholder-[var(--muted-foreground)]/70 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] shadow-xs transition-all"
-              />
+          <!-- Interactive Search Input -->
+          <div class="relative w-full sm:max-w-xs shrink-0">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[var(--muted-foreground)]">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
             </div>
-            <span id="matchingCountBadge" class="hidden sm:inline-flex items-center px-3 py-2 rounded-xl text-xs font-mono font-bold bg-[var(--muted)] border border-[var(--border)] text-[var(--muted-foreground)] shrink-0">
-              {methodologyMatrix.length} / {methodologyMatrix.length} Tools
-            </span>
+            <input 
+              type="search" 
+              id="methodologySearchInput" 
+              placeholder={searchPlaceholders[lang] || searchPlaceholders.en} 
+              autocomplete="off"
+              class="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--card)] text-xs text-[var(--foreground)] placeholder-[var(--muted-foreground)]/70 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] shadow-xs transition-all"
+            />
           </div>
         </div>
 
-        <!-- Matrix Table -->
-        <div class="methodology-table-wrap p-4 sm:p-6 shadow-xs">
-          <table class="methodology-matrix-table" id="methodologyTable">
-            <thead>
-              <tr>
-                <th style="width: 17%;">{currentI18n.tableColTool}</th>
-                <th style="width: 22%;">{currentI18n.tableColFormula}</th>
-                <th style="width: 17%;">{currentI18n.tableColSource}</th>
-                <th style="width: 13%;">{currentI18n.tableColInputs}</th>
-                <th style="width: 14%;">{currentI18n.tableColOutputs}</th>
-                <th style="width: 17%;">{currentI18n.tableColLimitations}</th>
-              </tr>
-            </thead>
-            <tbody id="methodologyTableBody">
-              {methodologyMatrix.map((item) => {
-                const foundCalc = calculators.find(c => c.slug === item.slug);
-                const localizedName = foundCalc ? (foundCalc.name[lang] || foundCalc.name.en) : item.name;
-                const locFormula = item.formula[lang] || item.formula.en;
-                const locSource = item.source[lang] || item.source.en;
-                const locInputs = item.inputs[lang] || item.inputs.en;
-                const locOutput = item.output[lang] || item.output.en;
-                const locLimitations = item.limitations[lang] || item.limitations.en;
+        <!-- Accordion List -->
+        <div class="space-y-3" id="methodologyAccordionList">
+          {methodologyMatrix.map((item) => {
+            const foundCalc = calculators.find(c => c.slug === item.slug);
+            const localizedName = foundCalc ? (foundCalc.name[lang] || foundCalc.name.en) : item.name;
 
-                return (
-                  <tr 
-                    class="methodology-row"
-                    data-search={`${localizedName} ${locFormula} ${locSource} ${locInputs} ${locOutput} ${locLimitations} ${item.slug}`.toLowerCase()}
-                  >
-                    <td>
-                      <a href={`/${lang}/${item.slug}/`} class="font-bold flex items-center gap-1.5 group">
-                        <span>{localizedName}</span>
-                        <svg class="w-3.5 h-3.5 opacity-60 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                        </svg>
-                      </a>
-                    </td>
-                    <td class="font-mono text-xs text-[var(--foreground)] font-medium leading-relaxed">{locFormula}</td>
-                    <td class="text-xs leading-relaxed text-[var(--muted-foreground)]">{locSource}</td>
-                    <td class="text-xs text-[var(--foreground)]">{locInputs}</td>
-                    <td class="text-xs text-[var(--foreground)]">{locOutput}</td>
-                    <td class="text-xs leading-relaxed text-[var(--muted-foreground)]">{locLimitations}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+            const locFormula = item.formula[lang] || item.formula.en;
+            const locSource = item.source[lang] || item.source.en;
+            const locInputs = item.inputs[lang] || item.inputs.en;
+            const locOutput = item.output[lang] || item.output.en;
+            const locLimitations = item.limitations[lang] || item.limitations.en;
 
-          <!-- Empty Search State -->
-          <div id="noTableResults" class="hidden text-center py-10 space-y-2">
-            <p class="text-sm font-display font-bold text-[var(--foreground)]">No matching calculator formulas found</p>
-            <p class="text-xs text-[var(--muted-foreground)]">Try searching by tool name (e.g. BMI, BMR, TDEE, Fat) or formula author.</p>
-            <button type="button" id="resetTableFilterBtn" class="mt-3 px-4 py-2 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity cursor-pointer">
-              Reset Search Filter
-            </button>
-          </div>
+            return (
+              <details 
+                class="methodology-accordion group rounded-xl border border-[var(--border)] bg-[var(--card)] overflow-hidden transition-all duration-200 hover:border-[var(--accent)]/50 shadow-xs"
+                data-search={`${localizedName} ${locFormula} ${locSource} ${item.slug}`.toLowerCase()}
+              >
+                <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer select-none list-none gap-4">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[var(--accent)] shrink-0"></span>
+                    <h3 class="text-base sm:text-lg font-display font-bold text-[var(--foreground)] truncate">
+                      {localizedName}
+                    </h3>
+                    <span class="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[var(--muted)] border border-[var(--border)] text-[var(--muted-foreground)] truncate max-w-[220px]">
+                      {locOutput}
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-3 shrink-0">
+                    <a 
+                      href={`/${lang}/${item.slug}/`} 
+                      class="hidden md:inline-flex items-center gap-1 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:underline"
+                    >
+                      {currentI18n.openTool}
+                      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                    <span class="w-6 h-6 rounded-lg bg-[var(--muted)]/50 flex items-center justify-center text-[var(--muted-foreground)] group-open:rotate-180 transition-transform duration-200">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </span>
+                  </div>
+                </summary>
+
+                <div class="p-5 sm:p-6 pt-2 border-t border-[var(--border)]/60 bg-[var(--muted)]/10 space-y-4">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                    <div class="space-y-1.5 p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
+                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.equationLabel}</span>
+                      <p class="font-mono text-[var(--foreground)] font-semibold break-words">{locFormula}</p>
+                    </div>
+                    <div class="space-y-1.5 p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
+                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.sourceLabel}</span>
+                      <p class="text-[var(--foreground)] font-medium leading-relaxed">{locSource}</p>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-1">
+                    <div class="p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
+                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.inputsLabel}</span>
+                      <p class="text-[var(--foreground)] font-semibold">{locInputs}</p>
+                    </div>
+                    <div class="p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
+                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.outputLabel}</span>
+                      <p class="text-[var(--foreground)] font-semibold">{locOutput}</p>
+                    </div>
+                    <div class="p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
+                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.limitationsLabel}</span>
+                      <p class="text-[var(--muted-foreground)] font-medium leading-relaxed">{locLimitations}</p>
+                    </div>
+                  </div>
+
+                  <div class="pt-2 flex justify-end md:hidden">
+                    <a 
+                      href={`/${lang}/${item.slug}/`} 
+                      class="inline-flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:underline"
+                    >
+                      {currentI18n.openTool} →
+                    </a>
+                  </div>
+                </div>
+              </details>
+            );
+          })}
         </div>
 
         <script is:inline>
           document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('methodologySearchInput');
-            const rows = document.querySelectorAll('.methodology-row');
-            const countBadge = document.getElementById('matchingCountBadge');
-            const noResults = document.getElementById('noTableResults');
-            const resetBtn = document.getElementById('resetTableFilterBtn');
-            const totalCount = rows.length;
+            const accordions = document.querySelectorAll('.methodology-accordion');
+            if (!searchInput || !accordions.length) return;
 
-            function filterTable() {
-              const q = (searchInput?.value || '').trim().toLowerCase();
-              let visibleCount = 0;
-
-              rows.forEach(row => {
-                const searchData = row.getAttribute('data-search') || '';
+            searchInput.addEventListener('input', (e) => {
+              const q = e.target.value.trim().toLowerCase();
+              accordions.forEach(item => {
+                const searchData = item.getAttribute('data-search') || '';
                 if (!q || searchData.includes(q)) {
-                  row.style.display = '';
-                  visibleCount++;
+                  item.style.display = '';
+                  if (q.length >= 2) {
+                    item.open = true;
+                  }
                 } else {
-                  row.style.display = 'none';
+                  item.style.display = 'none';
                 }
               });
-
-              if (countBadge) {
-                countBadge.textContent = `${visibleCount} / ${totalCount} Tools`;
-              }
-
-              if (noResults) {
-                if (visibleCount === 0) {
-                  noResults.classList.remove('hidden');
-                } else {
-                  noResults.classList.add('hidden');
-                }
-              }
-            }
-
-            if (searchInput) {
-              searchInput.addEventListener('input', filterTable);
-            }
-
-            if (resetBtn) {
-              resetBtn.addEventListener('click', () => {
-                if (searchInput) searchInput.value = '';
-                filterTable();
-              });
-            }
+            });
           });
         </script>
       </div>
 
       <!-- Direct Academic Citations & Sources Cross-Link Banner -->
-      <div class="p-6 md:p-8 rounded-2xl border-2 border-indigo-500/30 bg-indigo-500/5 space-y-4 not-prose shadow-sm">
-        <div class="flex flex-wrap items-center justify-between gap-3">
-          <span class="text-xs font-bold font-display uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
-            {lang === 'hi' ? 'प्राथमिक अकादमिक शोध उद्धरण एवं संदर्भ' : (lang === 'es' ? 'Citas Académicas Primarias y Bibliografía' : (lang === 'fr' ? 'Citations Académiques Primaires & Bibliographie' : (lang === 'de' ? 'Primäre wissenschaftliche Zitate & Bibliographie' : (lang === 'ko' ? '직접 학술 연구 논문 인용 및 참고문헌' : 'Primary Academic Research Citations & Sources'))))}
-          </span>
-          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
-            {currentI18n.studiesBadge}
-          </span>
-        </div>
-        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
-          {lang === 'hi' 
-            ? 'केवल सामान्य संदर्भों के बजाय, Real BMI प्रत्येक कैलकुलेटर को सटीक अध्ययनों से जोड़ता है: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, और Devine 1974।'
-            : (lang === 'es'
-              ? 'En lugar de menciones genéricas, Real BMI vincula cada calculadora con estudios fundamentales exactos: OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 y Devine 1974.'
-              : (lang === 'fr'
-                ? 'Plutôt que de simples mentions institutionnelles, Real BMI adosse chaque outil à des études fondamentales précises : OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 et Devine 1974.'
-                : (lang === 'de'
-                  ? 'Statt pauschaler Angaben verknüpft Real BMI jeden Rechner mit exakten Studien: WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 und Devine 1974.'
-                  : (lang === 'ko'
-                    ? '모호한 기관명 약어 대신, Real BMI는 모든 계산기를 정밀한 논문(WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, Devine 1974)과 직접 연결합니다.'
-                    : 'Rather than relying on vague acronym claims (WHO, CDC, NIH, ACSM), Real BMI links every calculator to exact landmark studies: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, and Devine 1974.'))))}
-        </p>
-        <div class="pt-2">
-          <a 
-            href={`/${lang}/sources/`} 
-            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-95 transition-opacity"
-          >
-            <span>{lang === 'hi' ? 'प्राथमिक शोध उद्धरण मैट्रिक्स देखें (15 अध्ययन) →' : (lang === 'es' ? 'Explorar Matriz de Citas de Investigación (15 Estudios) →' : (lang === 'fr' ? 'Consulter la Matrice des Citations de Recherche (15 Études) →' : (lang === 'de' ? 'Forschungszitate-Matrix erkunden (15 Studien) →' : (lang === 'ko' ? '학술 연구 인용 매트릭스 탐색 (15편 연구) →' : 'Explore Primary Research Citations & Matrix (15 Studies) →'))))}</span>
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Independent Calculator Architecture & Privacy Guarantee -->
-      <div class="space-y-6 pt-4 border-t border-[var(--border)]">
-        <div class="p-6 md:p-8 rounded-2xl border border-[var(--accent)]/20 bg-[var(--card)] space-y-4 shadow-sm">
-          <h2 class="text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-            {currentI18n.statementTitle}
-          </h2>
-          <p class="text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
-            {currentI18n.statementDesc}
+        <div class="p-6 md:p-8 rounded-2xl border-2 border-indigo-500/30 bg-indigo-500/5 space-y-4 not-prose shadow-sm">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <span class="text-xs font-bold font-display uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
+              {lang === 'hi' ? 'प्राथमिक अकादमिक शोध उद्धरण एवं संदर्भ' : (lang === 'es' ? 'Citas Académicas Primarias y Bibliografía' : (lang === 'fr' ? 'Citations Académiques Primaires & Bibliographie' : (lang === 'de' ? 'Primäre wissenschaftliche Zitate & Bibliographie' : (lang === 'ko' ? '직접 학술 연구 논문 인용 및 참고문헌' : 'Primary Academic Research Citations & Sources'))))}
+            </span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+              {currentI18n.studiesBadge}
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+            {lang === 'hi' 
+              ? 'केवल सामान्य संदर्भों के बजाय, Real BMI प्रत्येक कैलकुलेटर को सटीक अध्ययनों से जोड़ता है: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, और Devine 1974।'
+              : (lang === 'es'
+                ? 'En lugar de menciones genéricas, Real BMI vincula cada calculadora con estudios fundamentales exactos: OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 y Devine 1974.'
+                : (lang === 'fr'
+                  ? 'Plutôt que de simples mentions institutionnelles, Real BMI adosse chaque outil à des études fondamentales précises : OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 et Devine 1974.'
+                  : (lang === 'de'
+                    ? 'Statt pauschaler Angaben verknüpft Real BMI jeden Rechner mit exakten Studien: WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 und Devine 1974.'
+                    : (lang === 'ko'
+                      ? '모호한 기관명 약어 대신, Real BMI는 모든 계산기를 정밀한 논문(WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, Devine 1974)과 직접 연결합니다.'
+                      : 'Rather than relying on vague acronym claims (WHO, CDC, NIH, ACSM), Real BMI links every calculator to exact landmark studies: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, and Devine 1974.'))))}
           </p>
-        </div>
-
-        <!-- Core Pillars Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {currentI18n.pillars.map(pillar => (
-            <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2.5">
-              <h3 class="text-lg font-display font-bold text-[var(--foreground)] uppercase tracking-wide">{pillar.title}</h3>
-              <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{pillar.desc}</p>
-            </div>
-          ))}
+          <div class="pt-2">
+            <a 
+              href={`/${lang}/sources/`} 
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-95 transition-opacity"
+            >
+              <span>{lang === 'hi' ? 'प्राथमिक शोध उद्धरण मैट्रिक्स देखें (15 अध्ययन) →' : (lang === 'es' ? 'Explorar Matriz de Citas de Investigación (15 Estudios) →' : (lang === 'fr' ? 'Consulter la Matrice des Citations de Recherche (15 Études) →' : (lang === 'de' ? 'Forschungszitate-Matrix erkunden (15 Studien) →' : (lang === 'ko' ? '학술 연구 인용 매트릭스 탐색 (15편 연구) →' : 'Explore Primary Research Citations & Matrix (15 Studies) →'))))}</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -1674,7 +1721,7 @@ const searchPlaceholders: Record<string, string> = {
   }
   .methodology-matrix-table a {
     text-decoration: none;
-    color: var(--accent);
+    color: #464feb;
     font-weight: 600;
   }
   .methodology-matrix-table a:hover {
@@ -1682,24 +1729,29 @@ const searchPlaceholders: Record<string, string> = {
   }
   .methodology-matrix-table tr th,
   .methodology-matrix-table tr td {
-    border: 1px solid var(--border);
+    border: 1px solid #e6e6e6;
     padding: 0.85rem 1rem;
     vertical-align: top;
     text-align: left;
   }
   .methodology-matrix-table tr th {
-    background-color: var(--muted);
+    background-color: #f5f5f5;
     font-weight: 700;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--foreground);
+    color: #1f2937;
     white-space: nowrap;
   }
-  .methodology-matrix-table tbody tr {
-    transition: background-color 0.15s ease;
+  :global(.dark) .methodology-matrix-table tr th,
+  :global(.dark) .methodology-matrix-table tr td {
+    border-color: rgba(255, 255, 255, 0.12);
   }
-  .methodology-matrix-table tbody tr:hover {
-    background-color: var(--muted);
+  :global(.dark) .methodology-matrix-table tr th {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #f3f4f6;
+  }
+  :global(.dark) .methodology-matrix-table a {
+    color: #818cf8;
   }
 </style>

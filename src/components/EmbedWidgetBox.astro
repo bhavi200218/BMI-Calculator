@@ -114,23 +114,36 @@ const embedCode = `<iframe src="https://realbmicalculator.com/embed/bmi-calculat
       </div>
     </div>
 
-    <!-- Feature Checklist -->
-    <div class="flex flex-wrap items-center justify-between gap-3 text-xs text-[var(--muted-foreground)] pt-1 font-medium">
-      <div class="flex flex-wrap items-center gap-4 sm:gap-6">
-        <span class="flex items-center gap-1.5 text-emerald-500 font-semibold">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          {{ en: '100% Free Forever', es: '100% Gratis Siempre', fr: '100% Gratuit pour Toujours', de: '100% Dauerhaft Kostenlos', ko: '평생 100% 무료', hi: '100% हमेशा के लिए मुफ़्त' }[lang] || '100% Free Forever'}
+    <!-- Feature Checklist & Webmaster Benefits -->
+    <div class="space-y-2 pt-2 border-t border-[var(--border)]/60">
+      <p class="text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+        {{
+          en: 'Webmaster & Blogger Benefits:',
+          es: 'Beneficios para Webmasters y Bloggers:',
+          fr: 'Avantages Webmaster & Blogueurs :',
+          de: 'Vorteile für Webmaster & Blogger:',
+          ko: '웹마스터 및 블로거 핵심 혜택:',
+          hi: 'वेबमास्टर एवं ब्लॉगर लाभ:'
+        }[lang] || 'Webmaster & Blogger Benefits:'}
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs text-[var(--foreground)] font-medium">
+        <span class="inline-flex items-center gap-1.5 p-2 rounded-lg bg-[var(--muted)]/40 border border-[var(--border)]/60">
+          <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          {{ en: 'Mobile Responsive', es: 'Adaptable a Móviles', fr: 'Adapté aux Mobiles', de: 'Mobil Optimiert', ko: '모바일 반응형', hi: 'मोबाइल रिस्पॉन्सिव' }[lang] || 'Mobile Responsive'}
         </span>
-        <span class="flex items-center gap-1.5 text-emerald-500 font-semibold">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          {{ en: 'Fully Responsive', es: 'Totalmente Adaptable', fr: 'Entièrement Adaptatif', de: 'Vollständig Responsive', ko: '완벽한 반응형 지원', hi: 'पूर्णतः उत्तरदायी (Responsive)' }[lang] || 'Fully Responsive'}
+        <span class="inline-flex items-center gap-1.5 p-2 rounded-lg bg-[var(--muted)]/40 border border-[var(--border)]/60">
+          <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          {{ en: 'No API Required', es: 'Sin Clave API', fr: 'Sans Clé API', de: 'Kein API-Schlüssel', ko: 'API 키 불필요', hi: 'कोई API आवश्यक नहीं' }[lang] || 'No API Required'}
         </span>
-        <span class="flex items-center gap-1.5 text-emerald-500 font-semibold">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          {{ en: 'Automatic Updates', es: 'Actualizaciones Automáticas', fr: 'Mises à Jour Automatiques', de: 'Automatische Updates', ko: '자동 업데이트', hi: 'स्वचालित अपडेट' }[lang] || 'Automatic Updates'}
+        <span class="inline-flex items-center gap-1.5 p-2 rounded-lg bg-[var(--muted)]/40 border border-[var(--border)]/60">
+          <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          {{ en: 'Free Commercial Use', es: 'Uso Comercial Gratis', fr: 'Usage Commercial Gratuit', de: 'Freie Kommerzielle Nutzung', ko: '무료 상업적 이용', hi: 'मुफ़्त व्यावसायिक उपयोग' }[lang] || 'Free Commercial Use'}
+        </span>
+        <span class="inline-flex items-center gap-1.5 p-2 rounded-lg bg-[var(--muted)]/40 border border-[var(--border)]/60">
+          <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          {{ en: 'Updates Automatically', es: 'Actualizaciones Automáticas', fr: 'Mises à Jour Automatiques', de: 'Automatische Updates', ko: '자동 업데이트', hi: 'स्वचालित अपडेट' }[lang] || 'Updates Automatically'}
         </span>
       </div>
-      <span class="text-[var(--accent)] font-semibold uppercase tracking-wider text-xs">{{ en: 'No API Keys Required', es: 'Sin Claves API', fr: 'Sans Clé API', de: 'Keine API-Schlüssel', ko: 'API 키 필요 없음', hi: 'कोई API कुंजी आवश्यक नहीं' }[lang] || 'No API Keys Required'}</span>
     </div>
   </div>
 </section>

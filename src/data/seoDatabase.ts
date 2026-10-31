@@ -1225,10 +1225,10 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "bmi-calculator-for-indians": {
     "en": {
       "eyebrow": "ICMR & WHO South Asian Standards",
-      "title": "BMI Calculator for Indians – Healthy Indian BMI Chart & ICMR Cutoffs",
-      "intro": "Free online BMI Calculator for Indians (BMI calculator India) based on Indian Council of Medical Research (ICMR) and WHO South Asian guidelines. Compute your Indian BMI using kg and cm, check whether your weight falls into the healthy BMI for Indians range (18.5 – 22.9 kg/m²), and understand why the Indian obesity cutoff begins at 25.0 kg/m².",
+      "title": "BMI Calculator for Indians – Healthy Weight Chart & Cutoffs",
+      "intro": "Free online BMI Calculator for Indians based on Indian Council of Medical Research (ICMR) and WHO Asia-Pacific reference standards. Compute your Body Mass Index (BMI) using kg and cm, check whether your weight falls into the healthy Indian range (18.5 – 22.9 kg/m²), and review ICMR waist circumference guidelines.",
       "formulaTitle": "Official ICMR Indian BMI Formula (kg & cm)",
-      "formulaDesc": "BMI = Weight (kg) / [Height (m)]² | Healthy BMI for Indians: 18.5 – 22.9 kg/m² | Indian Overweight Cutoff: ≥ 23.0 kg/m² | Indian Obesity Cutoff: ≥ 25.0 kg/m²",
+      "formulaDesc": "BMI = Weight (kg) / [Height (m)]² | Healthy Range for Indians: 18.5 – 22.9 kg/m² | Overweight Cutoff: ≥ 23.0 kg/m²",
       "formulaCode": "BMI = Weight (kg) / [(Height in cm / 100)²]",
       "tableTitle": "ICMR & WHO Adult BMI Reference Chart for Indians (kg/m²)",
       "tableRows": [
@@ -1260,12 +1260,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       ],
       "faqs": [
         {
-          "question": "What is the healthy BMI for Indians?",
-          "answer": "According to the Indian Council of Medical Research (ICMR) and WHO South Asian guidelines, the healthy BMI for Indians is 18.5 to 22.9 kg/m², which is lower than the international cutoff of 24.9 kg/m²."
+          "question": "What is the healthy BMI range for Indians?",
+          "answer": "According to ICMR and WHO South Asian guidelines, the healthy BMI range for Indian men and women is 18.5 to 22.9 kg/m²."
         },
         {
-          "question": "Why is the Indian overweight cutoff 23.0 and obesity cutoff 25.0 kg/m²?",
-          "answer": "The Indian overweight cutoff (≥ 23.0 kg/m²) and Indian obesity cutoff (≥ 25.0 kg/m²) are set by ICMR consensus guidelines because South Asian individuals possess a higher percentage of visceral fat and develop insulin resistance at lower BMI levels."
+          "question": "Why is the overweight cutoff 23.0 for Indians instead of 25.0?",
+          "answer": "South Asian populations exhibit higher visceral fat percentages at lower Body Mass Index scores, increasing cardiometabolic risk starting at a BMI of 23.0 kg/m² under ICMR and WHO guidelines."
         },
         {
           "question": "How to calculate ideal body weight for height in India?",
@@ -1476,9 +1476,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "hi": {
       "eyebrow": "आईसीएमआर एवं डब्ल्यूएचओ भारतीय मानक",
       "title": "भारतीयों के लिए बीएमआई कैलकुलेटर – स्वस्थ वजन चार्ट एवं ICMR कटऑफ",
-      "intro": "भारतीय चिकित्सा अनुसंधान परिषद (ICMR) और WHO दक्षिण एशियाई दिशानिर्देशों पर आधारित भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। किलोग्राम और सेंटीमीटर में अपने बीएमआई और स्वस्थ भारतीय वजन सीमा (18.5 – 22.9 kg/m²) की गणना करें, और समझें कि भारत में मोटापा कटऑफ 25.0 kg/m² से क्यों शुरू होता है।",
+      "intro": "भारतीय चिकित्सा अनुसंधान परिषद (ICMR) और WHO दक्षिण एशियाई दिशानिर्देशों पर आधारित भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। किलोग्राम और सेंटीमीटर में अपने बीएमआई और स्वस्थ वजन सीमा की गणना करें।",
       "formulaTitle": "भारतीय बीएमआई सूत्र",
-      "formulaDesc": "बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | भारतीयों के लिए स्वस्थ सीमा: 18.5 – 22.9 kg/m² | अधिक वजन कटऑफ: ≥ 23.0 kg/m² | मोटापा कटऑफ: ≥ 25.0 kg/m²",
+      "formulaDesc": "बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | भारतीयों के लिए स्वस्थ सीमा: 18.5 - 22.9 kg/m²",
       "formulaCode": "BMI = kg / m²",
       "tableTitle": "भारतीय वयस्कों के लिए बीएमआई श्रेणी चार्ट (ICMR मानक)",
       "tableRows": [
@@ -1514,8 +1514,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "ICMR और WHO दक्षिण एशियाई दिशानिर्देशों के अनुसार भारतीय पुरुषों और महिलाओं के लिए स्वस्थ बीएमआई सीमा 18.5 से 22.9 kg/m² है।"
         },
         {
-          "question": "भारतीयों के लिए अधिक वजन का कटऑफ 23.0 और मोटापा 25.0 क्यों है?",
-          "answer": "ICMR सर्वसम्मति दिशानिर्देशों के तहत अधिक वजन कटऑफ 23.0 kg/m² और मोटापा कटऑफ 25.0 kg/m² निर्धारित किया गया है, क्योंकि दक्षिण एशियाई लोगों में कम बीएमआई पर भी विसरल फैट (आंतरिक वसा) अधिक होता है।"
+          "question": "भारतीयों के लिए अधिक वजन का कटऑफ 25.0 के बजाय 23.0 क्यों है?",
+          "answer": "दक्षिण एशियाई आबादी कम बॉडी मास इंडेक्स पर भी उच्च विसरल वसा प्रतिशत प्रदर्शित करती है, जिससे ICMR और WHO दिशानिर्देशों के तहत 23.0 kg/m² पर कार्डियोमेटाबॉलिक जोखिम बढ़ने लगता है।"
         },
         {
           "question": "भारत में ऊंचाई के अनुसार आदर्श शरीर भार की गणना कैसे करें?",
@@ -6899,8 +6899,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "1rm-calculator": {
     "en": {
       "eyebrow": "Strength Conditioning Science",
-      "title": "1RM Calculator – Bench Press, Squat, Deadlift & Overhead Press",
-      "intro": "Accurately calculate your One-Rep Max (1RM) for the Big 4 compound lifts: Bench Press, Back Squat, Deadlift, and Overhead Press. Using the validated Epley, Brzycki, and Lander formulas, this calculator safely predicts your true maximal strength from submaximal sets, accompanied by a complete NSCA 10-tier training percentage spectrum.",
+      "title": "1RM Calculator – One Rep Max Bench, Squat, Deadlift",
+      "intro": "Find your one-rep max with our free 1RM Calculator. It estimates the heaviest weight you can lift for a single rep on the bench press, squat, or deadlift using the validated Epley, Brzycki, and Lander formulas, along with a full 10-tier training percentages chart.",
       "formulaTitle": "One-Rep Max Calculation Formulas: Epley, Brzycki & Lander",
       "formulaDesc": "Predict your true maximal single lift safely from repetition testing using three established mathematical models:\\n• Epley Formula (1985): 1RM = Weight × (1 + Reps / 30)\\n• Brzycki Formula (1993): 1RM = Weight × [36 / (37 - Reps)]\\n• Lander Formula (1985): 1RM = (100 × Weight) / (101.3 - 2.67123 × Reps)\\nThese submaximal formulas protect joints and ligaments by preventing dangerous single-rep maximum attempts to failure.",
       "formulaCode": "Epley: W×(1+R/30) | Brzycki: W×(36/(37-R)) | Lander: (100×W)/(101.3-2.67123×R)",
@@ -6982,7 +6982,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Ciencia del Acondicionamiento de Fuerza",
-      "title": "Calculadora de 1RM – Press Banca, Sentadilla, Peso Muerto y Press Militar",
+      "title": "Calculadora de 1RM – Repetición Máxima Press Banca y Sentadilla",
       "intro": "Calcula tu fuerza máxima para 1 repetición (1RM) con las fórmulas validadas de Epley, Brzycki y Lander, y consulta la tabla completa de porcentajes de entrenamiento.",
       "formulaTitle": "Fórmulas Validadas de 1RM: Epley, Brzycki y Lander",
       "formulaDesc": "Predicción de fuerza máxima a partir de repeticiones submáximas:\\n• Epley (1985): 1RM = Peso × (1 + Reps / 30)\\n• Brzycki (1993): 1RM = Peso × [36 / (37 - Reps)]\\n• Lander (1985): 1RM = (100 × Peso) / (101.3 - 2.67123 × Reps)\\nEvita intentos máximos lesivos evaluando series de 2 a 10 repeticiones con técnica perfecta.",
@@ -7053,8 +7053,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Science de la Musculation et de la Force",
-      "title": "Calculateur de 1RM – Développé Couché, Squat, Soulevé de Terre et Militaire",
-      "intro": "Estimez précisément votre répétition maximale (1RM) pour le développé couché, squat, soulevé de terre et développé militaire. Utilisez les équations d'Epley, Brzycki et Lander à partir de séries sous-maximales avec tableau complet des pourcentages d'intensité.",
+      "title": "Calculateur de 1RM – Répétition Maximale Développé Couché et Squat",
+      "intro": "Estimez votre charge maximale pour 1 répétition (1RM) avec les formules d'Epley, Brzycki et Lander et planifiez vos séances avec la table des pourcentages d'entraînement.",
       "formulaTitle": "Formules Validées de Calcul du 1RM : Epley, Brzycki et Lander",
       "formulaDesc": "Équations d'extrapolation biomécanique :\\n• Epley (1985) : 1RM = Charge × (1 + Répétitions / 30)\\n• Brzycki (1993) : 1RM = Charge × [36 / (37 - Répétitions)]\\n• Lander (1985) : 1RM = (100 × Charge) / (101,3 - 2,67123 × Répétitions)\\nCes méthodes évitent les risques articulaires des tests maximaux directs.",
       "formulaCode": "Epley: W×(1+R/30) | Brzycki: W×(36/(37-R)) | Lander: (100×W)/(101.3-2.67123×R)",
@@ -7124,7 +7124,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Trainingswissenschaft & Kraftsport",
-      "title": "1RM-Rechner – Bankdrücken, Kniebeugen, Kreuzheben & Schulterdrücken",
+      "title": "1RM-Rechner – Maximalkraft Bankdrücken, Kniebeugen & Kreuzheben",
       "intro": "Berechnen Sie Ihr One-Rep Max (1RM) verletzungsfrei anhand der Formeln von Epley, Brzycki und Lander inklusive 10-stufiger Trainings-Prozentsatztabelle.",
       "formulaTitle": "Validierte 1RM-Maximalkraft-Formeln: Epley, Brzycki & Lander",
       "formulaDesc": "Mathematische Näherungsverfahren zur Maximalkraftbestimmung:\\n• Epley (1985): 1RM = Gewicht × (1 + Wdh / 30)\\n• Brzycki (1993): 1RM = Gewicht × [36 / (37 - Wdh)]\\n• Lander (1985): 1RM = (100 × Gewicht) / (101,3 - 2,67123 × Wdh)\\nSubmaximale Tests schonen Sehnen und Gelenke vor Überlastung.",
@@ -7195,8 +7195,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "ko": {
       "eyebrow": "근력 트레이닝 운동과학",
-      "title": "1RM 계산기 – 벤치프레스, 스쿼트, 데드리프트 및 오버헤드프레스",
-      "intro": "벤치프레스, 스쿼트, 데드리프트, 오버헤드프레스 등 3대·4대 복합 운동의 1RM을 부상 위험 없이 검증된 Epley, Brzycki, Lander 공식으로 안전하게 산출하고 10단계 강도별 트레이닝 부하 비율표를 확인하세요.",
+      "title": "1RM 계산기 – 1회 최대 중량 (벤치프레스, 스쿼트, 데드리프트)",
+      "intro": "위험한 1회 최대 중량 시도 없이, 검증된 Epley, Brzycki, Lander 공식을 통해 안전하게 1RM을 산출하고 10단계 훈련 부하 비율(%) 표를 확인하세요.",
       "formulaTitle": "검증된 1RM 최대 근력 산출 공식: Epley, Brzycki 및 Lander",
       "formulaDesc": "하위최대(Submaximal) 반복 기반 1RM 산출 방정식:\\n• Epley 공식 (1985): 1RM = 중량 × (1 + 반복 ÷ 30)\\n• Brzycki 공식 (1993): 1RM = 중량 × [36 ÷ (37 - 반복)]\\n• Lander 공식 (1985): 1RM = (100 × 중량) ÷ (101.3 - 2.67123 × 반복)\\n관절 및 인대 부상 위험을 최소화하면서 95% 이상의 정확도로 최고 근력을 예측합니다.",
       "formulaCode": "Epley: W×(1+R/30) | Brzycki: W×(36/(37-R)) | Lander: (100×W)/(101.3-2.67123×R)",
@@ -7266,8 +7266,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "स्ट्रेंथ कंडीशनिंग विज्ञान",
-      "title": "1RM कैलकुलेटर – बेंच प्रेस, स्क्वैट, डेडलिफ्ट एवं ओवरहेड प्रेस",
-      "intro": "बेंच प्रेस, स्क्वैट, डेडलिफ्ट और ओवरहेड प्रेस जैसे मुख्य कंपाउंड अभ्यासों के लिए 1RM (वन रेप मैक्स) सुरक्षित रूप से निकालें। प्रमाणित एपले, ब्रज़िकी और लैंडर सूत्रों से सबमैक्सिमल रेप्स द्वारा सटीक ताकत का अनुमान लगाएं।",
+      "title": "1RM कैलकुलेटर – वन रेप मैक्स (बेंच प्रेस, स्क्वाट, डेडलिफ्ट)",
+      "intro": "बिना किसी चोट जोखिम के, प्रमाणित एपले, ब्रज़िकी और लैंडर सूत्रों से अपना 1RM निकालें और संपूर्ण 10-स्तरीय प्रशिक्षण प्रतिशत चार्ट देखें।",
       "formulaTitle": "प्रमाणित 1RM शक्ति सूत्र: एपले, ब्रज़िकी और लैंडर",
       "formulaDesc": "सब-मैक्सिमल रिपीटीशन आधारित 1RM भविष्यवाणी सूत्र:\\n• एपले फॉर्मूला (1985): 1RM = वजन × (1 + रेप्स ÷ 30)\\n• ब्रज़िकी फॉर्मूला (1993): 1RM = वजन × [36 ÷ (37 - रेप्स)]\\n• लैंडर फॉर्मूला (1985): 1RM = (100 × वजन) ÷ (101.3 - 2.67123 × रेप्स)\\nयह जोड़ों को सुरक्षित रखते हुए अधिकतम लिफ्टिंग क्षमता की सटीक भविष्यवाणी करता है।",
       "formulaCode": "Epley: W×(1+R/30) | Brzycki: W×(36/(37-R)) | Lander: (100×W)/(101.3-2.67123×R)",
@@ -7359,11 +7359,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col1": "Overweight (25.0-29.9)",
           "col2": "7.0 – 11.5 kg (15 - 25 lbs)",
           "col3": "~0.3 kg / week in 2nd/3rd trimester"
-        },
-        {
-          "col1": "Obese (≥30.0)",
-          "col2": "5.0 – 9.0 kg (11 - 20 lbs)",
-          "col3": "~0.2 kg / week in 2nd/3rd trimester"
         }
       ],
       "faqs": [
@@ -7411,11 +7406,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col1": "Sobrepeso (25.0–29.9)",
           "col2": "7.0 – 11.5 kg (15 - 25 lbs)",
           "col3": "~0.3 kg / semana en el 2.º y 3.er trimestre"
-        },
-        {
-          "col1": "Obesidad pregestacional (≥ 30.0)",
-          "col2": "5.0 – 9.0 kg (11 - 20 lbs)",
-          "col3": "~0.2 kg / semana en el 2.º y 3.er trimestre"
         }
       ],
       "faqs": [
@@ -7463,11 +7453,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col1": "Surpoids (25.0–29.9)",
           "col2": "7.0 – 11.5 kg (15 - 25 lbs)",
           "col3": "~0,3 kg / semaine au 2e et 3e trimestre"
-        },
-        {
-          "col1": "Obésité pré-grossesse (≥ 30.0)",
-          "col2": "5.0 – 9.0 kg (11 - 20 lbs)",
-          "col3": "~0,2 kg / semaine au 2e et 3e trimestre"
         }
       ],
       "faqs": [
@@ -7515,11 +7500,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col1": "Übergewicht (25.0–29.9)",
           "col2": "7.0 – 11.5 kg (15 - 25 lbs)",
           "col3": "~0,3 kg / Woche im 2. und 3. Trimester"
-        },
-        {
-          "col1": "Adipositas vor Schwangerschaft (≥ 30.0)",
-          "col2": "5.0 – 9.0 kg (11 - 20 lbs)",
-          "col3": "~0,2 kg / Woche im 2. und 3. Trimester"
         }
       ],
       "faqs": [
@@ -7567,11 +7547,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col1": "과체중 (25.0–29.9)",
           "col2": "7.0 – 11.5 kg (15 - 25 lbs)",
           "col3": "임신 2/3분기 주당 약 0.3kg"
-        },
-        {
-          "col1": "임신 전 비만 (≥ 30.0)",
-          "col2": "5.0 – 9.0 kg (11 - 20 lbs)",
-          "col3": "임신 2/3분기 주당 약 0.2kg"
         }
       ],
       "faqs": [
@@ -7619,11 +7594,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col1": "अधिक वजन (25.0–29.9)",
           "col2": "7.0 – 11.5 kg (15 - 25 lbs)",
           "col3": "दूसरी/तीसरी तिमाही में ~0.3 किग्रा/सप्ताह"
-        },
-        {
-          "col1": "गर्भावस्था पूर्व मोटापा (≥ 30.0)",
-          "col2": "5.0 – 9.0 kg (11 - 20 lbs)",
-          "col3": "दूसरी/तीसरी तिमाही में ~0.2 किग्रा/सप्ताह"
         }
       ],
       "faqs": [

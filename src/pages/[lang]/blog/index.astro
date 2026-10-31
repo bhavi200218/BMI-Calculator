@@ -16,71 +16,38 @@ const lang = (params.lang || 'en') as Locale;
 
 const headers = {
   en: { 
-    title: "Health Articles & Research Guides", 
-    desc: "Explore evidence-based medical and health guides organized across 4 foundational pillars: BMI & Weight, Body Composition, Metabolism & Nutrition, and Fitness & Performance." 
+    title: "Health Articles & Guides", 
+    desc: "Explore evidence-based research guides on Body Mass Index, metabolism, nutrition, and cardiovascular wellness based on WHO & CDC standards." 
   },
   es: { 
     title: "Artículos y Guías de Salud", 
-    desc: "Explore guías de salud y medicina basadas en evidencia organizadas en 4 pilares: IMC y Peso, Composición Corporal, Metabolismo y Nutrición, y Fitness." 
+    desc: "Explore guías de investigación basadas en evidencia sobre IMC, metabolismo, nutrición y salud cardiovascular según estándares de la OMS y CDC." 
   },
   fr: { 
-    title: "Articles & Guides de Recherche en Santé", 
-    desc: "Explorez des guides médicaux fondés sur des preuves organisés en 4 piliers fondamentaux : IMC & Poids, Composition Corporelle, Métabolisme & Nutrition, et Fitness." 
+    title: "Articles & Guides de Santé", 
+    desc: "Explorez des guides de recherche fondés sur des preuves sur l'IMC, le métabolisme, la nutrition et le bien-être cardiovasculaire selon les normes OMS et CDC." 
   },
   de: { 
     title: "Gesundheitsartikel & Leitfäden", 
-    desc: "Entdecken Sie evidenzbasierte Leitfäden zu 4 Kernbereichen: BMI & Gewicht, Körperzusammensetzung, Stoffwechsel & Ernährung und Fitness & Leistung." 
+    desc: "Entdecken Sie evidenzbasierte Leitfäden zu BMI, Stoffwechsel, Ernährung und Herz-Kreislauf-Fitness auf Grundlage von WHO- und CDC-Standards." 
   },
   ko: { 
-    title: "건강 정보 및 의학 연구 가이드", 
-    desc: "증거 기반 의학 및 건강 가이드를 4가지 핵심 영역(BMI 및 체중, 체성분, 대사 및 영양, 피트니스 및 운동 능력)별로 확인하세요." 
+    title: "건강 정보 및 의학 가이드", 
+    desc: "WHO 및 CDC 기준에 따른 체질량지수(BMI), 기초대사량, 영양 섭취 및 심혈관 건강에 대한 근거 중심의 신뢰할 수 있는 가이드를 확인하세요." 
   },
   hi: { 
     title: "स्वास्थ्य लेख एवं शोध गाइड", 
-    desc: "4 मुख्य श्रेणियों में व्यवस्थित प्रमाण-आधारित स्वास्थ्य गाइड: बीएमआई और वजन, बॉडी कंपोज़िशन, मेटाबॉलिज्म और पोषण, एवं फिटनेस।" 
-  }
-};
-
-const startHereHeaders = {
-  en: {
-    badge: "New Visitors? Start Here",
-    title: "Essential Foundation Guides",
-    desc: "The 5 cornerstone guides to understand Body Mass Index, official WHO thresholds, clinical limitations, and population-specific cutoffs."
-  },
-  es: {
-    badge: "¿Nuevo visitante? Comienza aquí",
-    title: "Guías Fundamentales Esenciales",
-    desc: "Las 5 guías clave para dominar el cálculo del IMC, los umbrales de la OMS, la precisión clínica y las pautas poblacionales."
-  },
-  fr: {
-    badge: "Nouveau visiteur ? Commencez ici",
-    title: "Guides Fondamentaux Essentiels",
-    desc: "Les 5 guides piliers pour comprendre l'Indice de Masse Corporelle, les seuils OMS, les limites cliniques et les repères démographiques."
-  },
-  de: {
-    badge: "Neu hier? Hier starten",
-    title: "Wesentliche Grundlagen-Leitfäden",
-    desc: "Die 5 wichtigsten Leitfäden zu Body-Mass-Index, offiziellen WHO-Grenzwerten, physiologischen Grenzen und populationsspezifischen Richtlinien."
-  },
-  ko: {
-    badge: "처음 방문하셨나요? 여기서 시작하세요",
-    title: "핵심 입문 가이드",
-    desc: "체질량지수(BMI), 세계보건기구(WHO) 기준치, 임상적 한계 및 아시아인 가이드라인을 이해하기 위한 5가지 필수 입문 가이드입니다."
-  },
-  hi: {
-    badge: "नए पाठक? यहाँ से शुरुआत करें",
-    title: "बुनियादी स्वास्थ्य और बीएमआई गाइड",
-    desc: "बॉडी मास इंडेक्स (BMI), विश्व स्वास्थ्य संगठन (WHO) के आधिकारिक मानक, शारीरिक सीमाएं और एशियाई दिशानिर्देशों को समझने के लिए 5 मुख्य लेख।"
+    desc: "विश्व स्वास्थ्य संगठन (WHO) एवं सीडीसी मानकों पर आधारित बॉडी मास इंडेक्स (BMI), मेटाबॉलिज्म, पोषण और हृदय स्वास्थ्य पर साक्ष्य-आधारित गाइड।" 
   }
 };
 
 const searchPlaceholders = {
-  en: "Search health guides by topic, formula, or keyword...",
-  es: "Buscar guías de salud por tema o palabra clave...",
-  fr: "Rechercher des guides de santé par sujet ou mot-clé...",
-  de: "Gesundheitsleitfäden nach Thema oder Stichwort durchsuchen...",
-  ko: "주제, 계산 공식 또는 키워드로 검색...",
-  hi: "विषय, फॉर्मूला या कीवर्ड द्वारा स्वास्थ्य गाइड खोजें..."
+  en: "Search Health Guides...",
+  es: "Buscar Guías de Salud...",
+  fr: "Rechercher des Guides de Santé...",
+  de: "Gesundheitsleitfäden durchsuchen...",
+  ko: "건강 가이드 검색...",
+  hi: "स्वास्थ्य गाइड खोजें..."
 };
 
 const homeLabels = {
@@ -93,66 +60,44 @@ const homeLabels = {
 };
 
 const coreTopics = [
-  { id: 'all', label: { en: 'All Guides', es: 'Todas las Guías', fr: 'Tous les Guides', de: 'Alle Leitfäden', ko: '전체 가이드', hi: 'सभी गाइड' } },
-  { id: 'bmi-weight', label: { en: 'BMI & Weight', es: 'IMC y Peso', fr: 'IMC & Poids', de: 'BMI & Gewicht', ko: 'BMI 및 체중', hi: 'बीएमआई और वजन' } },
-  { id: 'body-composition', label: { en: 'Body Composition', es: 'Composición Corporal', fr: 'Composition Corporelle', de: 'Körperzusammensetzung', ko: '체성분 분석', hi: 'बॉडी कंपोज़िशन' } },
-  { id: 'metabolism-nutrition', label: { en: 'Metabolism & Nutrition', es: 'Metabolismo y Nutrición', fr: 'Métabolisme & Nutrition', de: 'Stoffwechsel & Ernährung', ko: '대사 및 영양', hi: 'मेटाबॉलिज्म और पोषण' } },
-  { id: 'fitness-performance', label: { en: 'Fitness & Performance', es: 'Fitness y Rendimiento', fr: 'Fitness & Performance', de: 'Fitness & Leistung', ko: '피트니스 및 운동 능력', hi: 'फिटनेस और परफॉर्मेंस' } },
+  { id: 'all', label: { en: 'All', es: 'Todos', fr: 'Tous', de: 'Alle', ko: '전체', hi: 'सभी' } },
+  { id: 'bmi', label: { en: 'BMI', es: 'IMC', fr: 'IMC', de: 'BMI', ko: 'BMI', hi: 'बीएमआई' } },
+  { id: 'weight', label: { en: 'Weight', es: 'Peso', fr: 'Poids', de: 'Gewicht', ko: '체중', hi: 'वजन' } },
+  { id: 'metabolism', label: { en: 'Metabolism', es: 'Metabolismo', fr: 'Métabolisme', de: 'Stoffwechsel', ko: '대사', hi: 'मेटाबॉलिज्म' } },
+  { id: 'nutrition', label: { en: 'Nutrition', es: 'Nutrición', fr: 'Nutrition', de: 'Ernährung', ko: '영양', hi: 'पोषण' } },
+  { id: 'fitness', label: { en: 'Fitness', es: 'Fitness', fr: 'Fitness', de: 'Fitness', ko: '피트니스', hi: 'फिटनेस' } },
+  { id: 'heart', label: { en: 'Heart Health', es: 'Salud Cardíaca', fr: 'Santé Cardiaque', de: 'Herzgesundheit', ko: '심혈관 건강', hi: 'हृदय स्वास्थ्य' } },
 ];
 
-function getArticlePillarId(catEn: string): string {
-  const c = catEn.toLowerCase();
-  if (c.includes('bmi') || c.includes('weight')) return 'bmi-weight';
-  if (c.includes('composition')) return 'body-composition';
-  if (c.includes('metabolism') || c.includes('nutrition')) return 'metabolism-nutrition';
-  if (c.includes('fitness') || c.includes('performance')) return 'fitness-performance';
-  return 'bmi-weight';
+function getArticleTopic(cat: string): string {
+  const c = cat.toLowerCase();
+  if (c.includes('bmi') || c.includes('pediatric') || c.includes('ethnic') || c.includes('biological') || c.includes('practical') || c.includes('population')) return 'bmi';
+  if (c.includes('weight') || c.includes('composition') || c.includes('measurement') || c.includes('pharmacokinetics') || c.includes('body')) return 'weight';
+  if (c.includes('metabol') || c.includes('energy') || c.includes('evidence')) return 'metabolism';
+  if (c.includes('nutrition') || c.includes('macronutrient') || c.includes('protein') || c.includes('water') || c.includes('fluid') || c.includes('hydration') || c.includes('dietary')) return 'nutrition';
+  if (c.includes('strength') || c.includes('exercise') || c.includes('fitness') || c.includes('age') || c.includes('senior') || c.includes('demographics')) return 'fitness';
+  if (c.includes('cardio') || c.includes('heart') || c.includes('preventive') || c.includes('pressure') || c.includes('pulse')) return 'heart';
+  return 'bmi';
 }
 
 const h = headers[lang] || headers.en;
-const startH = startHereHeaders[lang] || startHereHeaders.en;
 
 const articleSlugs = Object.keys(blogArticles);
 const articlesList = articleSlugs.map(slug => {
   const item = blogArticles[slug];
-  const catEn = item.category?.en || 'BMI & Weight';
-  const catLocalized = item.category ? (item.category[lang] || catEn) : catEn;
-  const pillarId = getArticlePillarId(catEn);
+  const cat = item.category ? (item.category[lang] || item.category.en) : 'Health';
   return {
     slug,
     title: item.title[lang] || item.title.en,
-    category: catLocalized,
-    pillarId,
+    category: cat,
+    topicGroup: getArticleTopic(item.category?.en || cat),
     description: item.description ? (item.description[lang] || item.description.en) : '',
     datePublished: item.datePublished || '2026-01-15',
-    dateModified: item.dateModified || '2026-10-25',
+    dateModified: item.dateModified || '2026-10-21',
   };
 });
 
-const topicCounts: Record<string, number> = {
-  all: articlesList.length,
-  'bmi-weight': articlesList.filter(a => a.pillarId === 'bmi-weight').length,
-  'body-composition': articlesList.filter(a => a.pillarId === 'body-composition').length,
-  'metabolism-nutrition': articlesList.filter(a => a.pillarId === 'metabolism-nutrition').length,
-  'fitness-performance': articlesList.filter(a => a.pillarId === 'fitness-performance').length,
-};
-
-const editorsPicksSlugs = [
-  { slug: 'what-is-bmi', step: '01', tag: { en: 'Definition & Formulas', es: 'Definición y Fórmulas', fr: 'Définition & Formules', de: 'Definition & Formeln', ko: '정의 및 공식', hi: 'परिभाषा और सूत्र' } },
-  { slug: 'bmi-chart', step: '02', tag: { en: 'Official WHO Matrix', es: 'Matriz Oficial OMS', fr: 'Matrice Officielle OMS', de: 'Offizielle WHO-Matrix', ko: 'WHO 공식 차트', hi: 'डब्ल्यूएचओ चार्ट' } },
-  { slug: 'is-bmi-accurate', step: '03', tag: { en: 'Clinical Nuance & Limits', es: 'Límites Clínicos', fr: 'Limites Cliniques', de: 'Klinische Grenzen', ko: '정확도 및 한계', hi: 'सटीकता और सीमाएं' } },
-  { slug: 'healthy-weight-chart', step: '04', tag: { en: 'Height-to-Weight Range', es: 'Rango Peso-Altura', fr: 'Poids selon Taille', de: 'Gewicht nach Größe', ko: '신장별 적정 체중', hi: 'ऊंचाई अनुसार वजन' } },
-  { slug: 'bmi-calculator-india', step: '05', tag: { en: 'Indian & Asian Standards', es: 'Estándares Asiáticos', fr: 'Normes Asiatiques', de: 'Asiatische Richtlinien', ko: '아시아/인도 기준표', hi: 'भारतीय/एशियाई मानक' } }
-];
-
-const editorsPicks = editorsPicksSlugs.map(pick => {
-  const art = blogArticles[pick.slug];
-  return {
-    ...pick,
-    title: art?.title?.[lang] || art?.title?.en || pick.slug,
-    description: art?.description?.[lang] || art?.description?.en || '',
-  };
-});
+const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort();
 ---
 
 <Layout 
@@ -170,9 +115,25 @@ const editorsPicks = editorsPicksSlugs.map(pick => {
     returnUrl={`/${lang}/`}
     returnLabel={homeLabels[lang] || homeLabels.en}
   >
+    <!-- Interactive Search Bar -->
+    <div class="relative w-full max-w-xl mx-auto mb-6">
+      <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[var(--muted-foreground)]">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+      <input 
+        type="search" 
+        id="blogSearchInput" 
+        placeholder={searchPlaceholders[lang] || "Search Health Guides..."} 
+        autocomplete="off"
+        class="w-full pl-11 pr-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--card)] text-sm text-[var(--foreground)] placeholder-[var(--muted-foreground)]/70 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] shadow-xs transition-all"
+      />
+    </div>
+
     <!-- Multilingual Library Notice for non-English -->
     {lang !== 'en' && (
-      <div class="not-prose mb-8 p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)] text-xs text-[var(--muted-foreground)] flex items-center justify-between gap-3">
+      <div class="not-prose mb-6 p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)] text-xs text-[var(--muted-foreground)] flex items-center justify-between gap-3">
         <span>{{
           es: "Biblioteca completa de investigación en salud basada en evidencia en la edición oficial en inglés.",
           fr: "Bibliothèque complète de recherche sur la santé fondée sur des preuves dans l'édition officielle en anglais.",
@@ -192,109 +153,54 @@ const editorsPicks = editorsPicksSlugs.map(pick => {
       </div>
     )}
 
-    <!-- 🌟 Beginner? Start Here — Editor's Core Picks -->
-    <section class="not-prose mb-12 p-6 sm:p-8 rounded-2xl border-2 border-[var(--accent)]/30 bg-gradient-to-br from-[var(--card)] via-[var(--card)] to-[var(--accent)]/5 shadow-sm space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[var(--border)] pb-4">
-        <div class="space-y-1">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-xs">
-            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <span>{startH.badge}</span>
-          </div>
-          <h2 class="text-xl sm:text-2xl font-display font-bold text-[var(--foreground)] tracking-tight">
-            {startH.title}
-          </h2>
-        </div>
-        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] max-w-md sm:text-right">
-          {startH.desc}
-        </p>
-      </div>
-
-      <!-- 5 Curated Foundation Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5">
-        {editorsPicks.map(card => (
-          <a 
-            href={`/${lang}/blog/${card.slug}/`}
-            class="group p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-3"
-          >
-            <div class="space-y-2">
-              <div class="flex items-center justify-between">
-                <span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-[var(--accent)]/15 text-[var(--accent)] font-mono text-xs font-bold">
-                  {card.step}
-                </span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-[var(--muted-foreground)]">
-                  {card.tag[lang] || card.tag.en}
-                </span>
-              </div>
-              <h3 class="text-xs sm:text-sm font-display font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors leading-snug line-clamp-2">
-                {card.title}
-              </h3>
-              <p class="text-[11px] text-[var(--muted-foreground)] line-clamp-2 leading-relaxed">
-                {card.description}
-              </p>
-            </div>
-            <div class="pt-2 border-t border-[var(--border)]/40 flex items-center justify-between text-[11px] font-bold text-[var(--accent)] uppercase tracking-wider">
-              <span>Read Guide</span>
-              <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </div>
-          </a>
-        ))}
-      </div>
-    </section>
-
-    <!-- Search & Filter Controls -->
-    <div class="space-y-6 mb-8">
-      <!-- Interactive Search Bar -->
-      <div class="relative w-full max-w-xl mx-auto">
-        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[var(--muted-foreground)]">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </div>
-        <input 
-          type="search" 
-          id="blogSearchInput" 
-          placeholder={searchPlaceholders[lang] || searchPlaceholders.en} 
-          autocomplete="off"
-          class="w-full pl-11 pr-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--card)] text-sm text-[var(--foreground)] placeholder-[var(--muted-foreground)]/70 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] shadow-xs transition-all"
-        />
-      </div>
-
-      <!-- 4 Core Pillars Category Hub Navigation -->
-      <div class="flex flex-wrap items-center justify-center gap-2 pb-4 border-b border-[var(--border)]" id="topicPillsContainer">
+    <!-- Category Hub Navigation: 7 Core Pills + More Dropdown -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8 pb-4 border-b border-[var(--border)]" id="categoryHubNav">
+      <!-- Visible Core Pills -->
+      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2" id="topicPillsContainer">
         {coreTopics.map((topic, idx) => (
           <button 
             type="button" 
-            class={`topic-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${idx === 0 ? 'bg-[var(--accent)] text-white shadow-xs' : 'bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)]'}`}
+            class={`topic-pill px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${idx === 0 ? 'bg-[var(--accent)] text-white shadow-xs' : 'bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)]'}`}
             data-topic={topic.id}
           >
             {topic.label[lang] || topic.label.en}
-            <span class="ml-1 opacity-75 font-mono text-[11px]">({topicCounts[topic.id] || 0})</span>
+            {idx === 0 ? ` (${articlesList.length})` : ''}
           </button>
         ))}
+      </div>
+
+      <!-- More Categories Dropdown -->
+      <div class="shrink-0">
+        <select 
+          id="moreCategoriesDropdown" 
+          aria-label="Filter by specific category"
+          class="w-full sm:w-auto px-3 py-1.5 sm:py-2 rounded-xl text-xs font-semibold uppercase tracking-wider bg-[var(--card)] text-[var(--foreground)] border border-[var(--border)] hover:border-[var(--accent)] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40"
+        >
+          <option value="all">More Categories ▾</option>
+          {detailedCategories.map(cat => (
+            <option value={cat}>{cat}</option>
+          ))}
+        </select>
       </div>
     </div>
 
     <!-- Empty Results Message -->
     <div id="noResultsMsg" class="hidden text-center py-12 space-y-2">
       <p class="text-base font-display font-bold text-[var(--foreground)]">No health guides found</p>
-      <p class="text-xs text-[var(--muted-foreground)]">Try searching with a different term or clear the active filter.</p>
-      <button type="button" id="resetFilterBtn" class="mt-3 px-4 py-2 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity cursor-pointer">
+      <p class="text-xs text-[var(--muted-foreground)]">Try searching with a different term or clear the filter.</p>
+      <button type="button" id="resetFilterBtn" class="mt-3 px-4 py-2 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity">
         Reset Search & Filters
       </button>
     </div>
 
-    <!-- 37 Articles Grid -->
+    <!-- Articles Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="articlesGrid">
       {articlesList.map(article => (
         <a 
           href={`/${lang}/blog/${article.slug}/`} 
           class="group block h-full article-item" 
           data-category={article.category}
-          data-topic={article.pillarId}
+          data-topic={article.topicGroup}
           data-search={`${article.title} ${article.description} ${article.category}`.toLowerCase()}
         >
           <div class="h-full p-6 sm:p-7 rounded-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-4 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
@@ -327,23 +233,27 @@ const editorsPicks = editorsPicksSlugs.map(pick => {
       document.addEventListener('DOMContentLoaded', () => {
         const searchInput = document.getElementById('blogSearchInput');
         const pills = document.querySelectorAll('.topic-pill');
+        const dropdown = document.getElementById('moreCategoriesDropdown');
         const cards = document.querySelectorAll('.article-item');
         const noResults = document.getElementById('noResultsMsg');
         const resetBtn = document.getElementById('resetFilterBtn');
 
         let activeTopic = 'all';
+        let activeCategory = 'all';
         let searchQuery = '';
 
         function applyFilters() {
           let visibleCount = 0;
           cards.forEach(card => {
             const cardTopic = card.getAttribute('data-topic');
+            const cardCategory = card.getAttribute('data-category');
             const cardSearchText = card.getAttribute('data-search') || '';
 
             const matchesTopic = activeTopic === 'all' || cardTopic === activeTopic;
+            const matchesCategory = activeCategory === 'all' || cardCategory === activeCategory;
             const matchesSearch = !searchQuery || cardSearchText.includes(searchQuery);
 
-            if (matchesTopic && matchesSearch) {
+            if (matchesTopic && matchesCategory && matchesSearch) {
               card.style.display = '';
               visibleCount++;
             } else {
@@ -377,9 +287,32 @@ const editorsPicks = editorsPicksSlugs.map(pick => {
             pill.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
 
             activeTopic = pill.getAttribute('data-topic') || 'all';
+            activeCategory = 'all';
+            if (dropdown) dropdown.value = 'all';
             applyFilters();
           });
         });
+
+        // More Categories Dropdown change
+        if (dropdown) {
+          dropdown.addEventListener('change', (e) => {
+            activeCategory = e.target.value;
+            if (activeCategory !== 'all') {
+              activeTopic = 'all';
+              pills.forEach(p => {
+                p.classList.remove('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+                p.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+              });
+            } else {
+              const allPill = document.querySelector('.topic-pill[data-topic="all"]');
+              if (allPill) {
+                allPill.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+                allPill.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+              }
+            }
+            applyFilters();
+          });
+        }
 
         // Reset button click
         if (resetBtn) {
@@ -387,6 +320,8 @@ const editorsPicks = editorsPicksSlugs.map(pick => {
             if (searchInput) searchInput.value = '';
             searchQuery = '';
             activeTopic = 'all';
+            activeCategory = 'all';
+            if (dropdown) dropdown.value = 'all';
             pills.forEach((p, idx) => {
               if (idx === 0) {
                 p.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');

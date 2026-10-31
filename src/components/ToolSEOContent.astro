@@ -3,6 +3,7 @@ import { calculators, type CalculatorConfig, type Locale } from '../utils/calcul
 import { seoDatabase, tableUi, type ToolContent } from '../data/seoDatabase';
 import { getWorkedExample } from '../utils/workedExamples';
 import { getInputVariablesGuide, getToolInterpretationAndLimitations } from '../utils/calculatorGuides';
+import { getToolInfographic } from '../utils/toolInfographics';
 
 interface Props {
   slug: string;
@@ -76,9 +77,22 @@ const faqSchema = {
 };
 
 const toolSpecificReferences: Record<string, { name: string; url: string }[]> = {
+  '3d-bmi-calculator': [
+    { name: 'Trefethen LN. A New BMI Calculation (Mathematical Institute, University of Oxford, 2013)', url: 'https://people.maths.ox.ac.uk/trefethen/bmi.html' },
+    { name: 'University of Oxford Mathematical Institute: New Body Mass Index Research', url: 'https://www.maths.ox.ac.uk/about-us/life-oxford-mathematics/oxford-mathematicians/nick-trefethen/bmi' },
+    { name: 'WHO Body Mass Index Classifications & Global Health Observatory', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' },
+    { name: 'CDC Body Mass Index (BMI) Adult Reference Guidelines', url: 'https://www.cdc.gov/bmi/faq/' }
+  ],
+  '3d-body-visualizer': [
+    { name: 'Trefethen LN. A New BMI Calculation (Mathematical Institute, University of Oxford, 2013)', url: 'https://people.maths.ox.ac.uk/trefethen/bmi.html' },
+    { name: 'University of Oxford Mathematical Institute: New Body Mass Index Research', url: 'https://www.maths.ox.ac.uk/about-us/life-oxford-mathematics/oxford-mathematicians/nick-trefethen/bmi' },
+    { name: 'WHO Body Mass Index Classifications & Global Health Observatory', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' }
+  ],
   'bmr-calculator': [
     { name: 'Mifflin MD, St Jeor GE, et al. Predictive BMR Equation Study (AJCN)', url: 'https://pubmed.ncbi.nlm.nih.gov/2305711/' },
-    { name: 'NIH PMC Research: Evaluation of Predictive Energy Equations', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4564867/' }
+    { name: 'NIH PMC Research: Evaluation of Predictive Energy Equations', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4564867/' },
+    { name: 'Elia M. Organ and tissue contribution to metabolic rate (Energy Metabolism: Tissue Determinants and Cellular Corollaries 1992)', url: 'https://pubmed.ncbi.nlm.nih.gov/' },
+    { name: 'Gallagher D, et al. Organ-tissue biology of metabolic rate (Am J Clin Nutr 1998)', url: 'https://pubmed.ncbi.nlm.nih.gov/9537604/' }
   ],
   'tdee-calculator': [
     { name: 'FAO/WHO/UNU Human Energy Requirements Guidelines', url: 'https://www.fao.org/3/y5686e/y5686e00.htm' },
@@ -89,15 +103,24 @@ const toolSpecificReferences: Record<string, { name: string; url: string }[]> = 
     { name: 'NIH National Library of Medicine: Energy Balance & Activity Multipliers', url: 'https://www.ncbi.nlm.nih.gov/books/NBK218769/' }
   ],
   'calorie-calculator': [
+    { name: 'Hall KD, et al. Quantification of the effect of energy imbalance on bodyweight (The Lancet 2011)', url: 'https://pubmed.ncbi.nlm.nih.gov/21872751/' },
     { name: 'NIH / NIDDK (National Institute of Diabetes and Digestive and Kidney Diseases) Body Weight Planner', url: 'https://www.niddk.nih.gov/bwp' },
     { name: 'CDC Steps for Losing Weight & Energy Balance Reference', url: 'https://www.cdc.gov/healthy-weight-growth/losing-weight/' }
   ],
   'ideal-weight-calculator': [
     { name: 'Devine BJ. Ideal Body Weight Equations (Drug Intell Clin Pharm 1974)', url: 'https://pubmed.ncbi.nlm.nih.gov/4819440/' },
+    { name: 'Robinson JD, et al. Determination of Ideal Body Weight for Drug Dosing (Am J Hosp Pharm 1983)', url: 'https://pubmed.ncbi.nlm.nih.gov/6869387/' },
     { name: 'NIH PMC Evaluation of Historical Ideal Body Weight Formulas', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4891157/' }
+  ],
+  'healthy-weight-by-height': [
+    { name: 'WHO Global Health Observatory Adult BMI Range & Healthy Weight Standards', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' },
+    { name: 'Devine BJ. Ideal Body Weight Equations (Drug Intell Clin Pharm 1974)', url: 'https://pubmed.ncbi.nlm.nih.gov/4819440/' },
+    { name: 'CDC Healthy Weight, Nutrition, and Physical Activity Guidelines', url: 'https://www.cdc.gov/healthy-weight-growth/losing-weight/' },
+    { name: 'Hamwi GJ. Therapy: Changing concepts in diabetes mellitus (Diabetes Mellitus: Diagnosis and Treatment 1964)', url: 'https://pubmed.ncbi.nlm.nih.gov/' }
   ],
   'lean-body-mass-calculator': [
     { name: 'Boer P. Estimated Lean Body Mass Index Study (1984)', url: 'https://pubmed.ncbi.nlm.nih.gov/6497914/' },
+    { name: 'Hume R. Prediction of Lean Body Mass from Height and Weight (J Clin Pathol 1966)', url: 'https://pubmed.ncbi.nlm.nih.gov/5918412/' },
     { name: 'NIH PMC Research: Anthropometric Equations for Body Composition', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC7355018/' }
   ],
   'macro-calculator': [
@@ -146,8 +169,21 @@ const toolSpecificReferences: Record<string, { name: string; url: string }[]> = 
     { name: 'Brzycki M. Strength Testing—Predicting a One-Rep Max (JOHPERD)', url: 'https://www.tandfonline.com/doi/abs/10.1080/07303084.1993.10606684' }
   ],
   'body-fat-calculator': [
+    { name: 'Hodgdon JA, Beckett MB. Prediction of percent body fat for U.S. Navy men and women from body circumferences (Naval Health Res Ctr 1984)', url: 'https://apps.dtic.mil/sti/citations/ADA143896' },
+    { name: 'Siri WE. Body composition from fluid spaces and density (Tech Rep Donner Lab Univ Calif 1961)', url: 'https://pubmed.ncbi.nlm.nih.gov/' },
     { name: 'US Navy Physical Readiness Program Body Composition Method', url: 'https://www.navyfitness.org/fitness/500-physical-readiness/physical-readiness-test' },
     { name: 'ACE Body Fat Norms & Classification Standards', url: 'https://www.acefitness.org/resources/everyone/blog/percent-body-fat-norms-for-men-and-women/' }
+  ],
+  'body-surface-area-calculator': [
+    { name: 'Mosteller RD. Simplified Calculation of Body-Surface Area (N Engl J Med 1987)', url: 'https://pubmed.ncbi.nlm.nih.gov/3657876/' },
+    { name: 'Du Bois D, Du Bois EF. A formula to estimate approximate surface area if height and weight be known (Arch Intern Med 1916)', url: 'https://pubmed.ncbi.nlm.nih.gov/2520314/' },
+    { name: 'Haycock GB, Schwartz GJ, Wisotsky DH. Geometric method for measuring body surface area (J Pediatr 1978)', url: 'https://pubmed.ncbi.nlm.nih.gov/650486/' },
+    { name: 'Boyd E. The Growth of the Surface Area of the Human Body (Univ Minn Press 1935)', url: 'https://archive.org/details/growthofsurfacea0000boyd' }
+  ],
+  'diabetes-risk-calculator': [
+    { name: 'American Diabetes Association (ADA) Standards of Medical Care in Diabetes', url: 'https://diabetesjournals.org/care/issue/47/Supplement_1' },
+    { name: 'Lindström J, Tuomilehto J. The Diabetes Risk Score: A practical tool to predict type 2 diabetes risk (Diabetes Care 2003)', url: 'https://pubmed.ncbi.nlm.nih.gov/12610029/' },
+    { name: 'CDC National Diabetes Statistics Report & Prediabetes Risk Assessment', url: 'https://www.cdc.gov/diabetes/data/statistics-report/index.html' }
   ],
   'bmi-calculator-for-indians': [
     { name: 'WHO Expert Consultation: Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies (Lancet 2004)', url: 'https://pubmed.ncbi.nlm.nih.gov/14726171/' },
@@ -195,6 +231,338 @@ const currentCalc = propCalc || calculators.find(c => c.slug === slug || c.slug 
 const workedExample = getWorkedExample(effectiveSlug, lang, currentData.title);
 const variablesGuide = getInputVariablesGuide(currentCalc?.inputs || [], lang, effectiveSlug, currentData.title);
 const clinicalGuide = getToolInterpretationAndLimitations(effectiveSlug, lang);
+const infographic = getToolInfographic(effectiveSlug, lang, currentData.title);
+
+const numSegments = infographic.segments.length;
+const totalSvgWidth = 760;
+const svgGap = 10;
+const segWidth = (totalSvgWidth - (numSegments - 1) * svgGap) / numSegments;
+
+const proteinQuickChart = {
+  badge: {
+    en: 'Quick Reference Targets',
+    es: 'Metas de Referencia Rápida',
+    fr: 'Repères de Référence Rapide',
+    de: 'Schnellübersicht Protein',
+    ko: '체중별 빠른 단백질 표',
+    hi: 'त्वरित प्रोटीन संदर्भ'
+  },
+  title: {
+    en: 'Daily Protein Intake by Body Weight',
+    es: 'Consumo Diario de Proteínas según el Peso Corporal',
+    fr: 'Apport Quotidien en Protéines selon le Poids',
+    de: 'Täglicher Proteinbedarf nach Körpergewicht',
+    ko: '체중별 일일 단백질 섭취 권장량 요약',
+    hi: 'शरीर के वजन के अनुसार दैनिक प्रोटीन की मात्रा'
+  },
+  note: {
+    en: 'From Sedentary (0.8 g/kg) to Muscle Growth (2.2 g/kg).',
+    es: 'Desde Sedentario (0.8 g/kg) hasta Hipertrofia (2.2 g/kg).',
+    fr: 'De Sédentaire (0,8 g/kg) à Prise de Masse (2,2 g/kg).',
+    de: 'Vom Grundbedarf (0,8 g/kg) bis Muskelaufbau (2,2 g/kg).',
+    ko: '기초(0.8 g/kg)부터 근육 성장(2.2 g/kg)까지 단계별 기준.',
+    hi: 'गतिहीन (0.8 g/kg) से मांसपेशी निर्माण (2.2 g/kg) तक।'
+  },
+  thWeight: {
+    en: 'Body Weight',
+    es: 'Peso Corporal',
+    fr: 'Poids Corporel',
+    de: 'Körpergewicht',
+    ko: '체중',
+    hi: 'शरीर का वजन'
+  },
+  rows: [
+    { weight: '50 kg (110 lbs)', rda: '40 g', fitness: '80 g', muscle: '110 g', perMeal: { en: '25 – 35 g/meal', es: '25 – 35 g/toma', fr: '25 – 35 g/repas', de: '25 – 35 g/Portion', ko: '끼니당 25 – 35g', hi: '25 – 35 ग्रा/भोजन' } },
+    { weight: '60 kg (132 lbs)', rda: '48 g', fitness: '96 g', muscle: '132 g', perMeal: { en: '30 – 40 g/meal', es: '30 – 40 g/toma', fr: '30 – 40 g/repas', de: '30 – 40 g/Portion', ko: '끼니당 30 – 40g', hi: '30 – 40 ग्रा/भोजन' } },
+    { weight: '70 kg (154 lbs)', rda: '56 g', fitness: '112 g', muscle: '154 g', perMeal: { en: '35 – 45 g/meal', es: '35 – 45 g/toma', fr: '35 – 45 g/repas', de: '35 – 45 g/Portion', ko: '끼니당 35 – 45g', hi: '35 – 45 ग्रा/भोजन' } },
+    { weight: '80 kg (176 lbs)', rda: '64 g', fitness: '128 g', muscle: '176 g', perMeal: { en: '40 – 50 g/meal', es: '40 – 50 g/toma', fr: '40 – 50 g/repas', de: '40 – 50 g/Portion', ko: '끼니당 40 – 50g', hi: '40 – 50 ग्रा/भोजन' } },
+    { weight: '90 kg (198 lbs)', rda: '72 g', fitness: '144 g', muscle: '198 g', perMeal: { en: '45 – 55 g/meal', es: '45 – 55 g/toma', fr: '45 – 55 g/repas', de: '45 – 55 g/Portion', ko: '끼니당 45 – 55g', hi: '45 – 55 ग्रा/भोजन' } },
+    { weight: '100 kg (220 lbs)', rda: '80 g', fitness: '160 g', muscle: '220 g', perMeal: { en: '50 – 60 g/meal', es: '50 – 60 g/toma', fr: '50 – 60 g/repas', de: '50 – 60 g/Portion', ko: '끼니당 50 – 60g', hi: '50 – 60 ग्रा/भोजन' } },
+  ]
+};
+
+
+
+
+
+const bodyFatQuickGrid = {
+  badge: {
+    en: 'ACE Body Fat Norms',
+    es: 'Normas de Grasa Corporal ACE',
+    fr: 'Normes de Masse Grasse ACE',
+    de: 'ACE-Körperfettnormen',
+    ko: 'ACE 체지방 표준 기준표',
+    hi: 'ACE बॉडी फैट मानक तालिका'
+  },
+  title: {
+    en: 'Body Fat Percentage Categories (ACE / ACSM)',
+    es: 'Categorías de Porcentaje de Grasa Corporal (ACE / ACSM)',
+    fr: 'Catégories de Taux de Masse Grasse (ACE / ACSM)',
+    de: 'Körperfettanteil-Kategorien (ACE / ACSM)',
+    ko: '체지방률 공식 분류 기준 (ACE / ACSM)',
+    hi: 'बॉडी फैट प्रतिशत श्रेणियां (ACE / ACSM)'
+  },
+  note: {
+    en: 'Essential fat is biologically required for hormonal and neurological health.',
+    es: 'La grasa esencial es indispensable para la salud hormonal y neurológica.',
+    fr: 'La graisse essentielle est biologiquement requise pour l’équilibre hormonal.',
+    de: 'Essenzielles Fett ist für das hormonelle und neurologische Gleichgewicht lebensnotwendig.',
+    ko: '필수 지방은 호르몬 합성 및 중추신경계 보호를 위한 생물학적 필수 조직입니다.',
+    hi: 'हार्मोनल और तंत्रिका स्वास्थ्य के लिए आवश्यक वसा अनिवार्य है।'
+  },
+  menLabel: {
+    en: 'Men Range',
+    es: 'Rango Hombres',
+    fr: 'Plage Hommes',
+    de: 'Männer-Bereich',
+    ko: '남성 범위',
+    hi: 'पुरुष सीमा'
+  },
+  womenLabel: {
+    en: 'Women Range',
+    es: 'Rango Mujeres',
+    fr: 'Plage Femmes',
+    de: 'Frauen-Bereich',
+    ko: '여성 범위',
+    hi: 'महिला सीमा'
+  },
+  items: [
+    { category: { en: 'Essential Fat', es: 'Grasa Esencial', fr: 'Graisse Essentielle', de: 'Essenzielles Fett', ko: '필수 지방', hi: 'आवश्यक वसा' }, men: '2 – 5%', women: '10 – 13%', desc: { en: 'Physiological minimum floor', es: 'Mínimo fisiológico vital', fr: 'Plancher vital minimal', de: 'Lebensnotwendiges Minimum', ko: '생명 유지 최소 한계선', hi: 'न्यूनतम जीवन रेखा' } },
+    { category: { en: 'Athletes', es: 'Atletas', fr: 'Athlètes', de: 'Athleten', ko: '운동선수', hi: 'एथलीट' }, men: '6 – 13%', women: '14 – 20%', desc: { en: 'High muscular definition', es: 'Definición muscular máxima', fr: 'Définition musculaire poussée', de: 'Maximale Muskeldefinition', ko: '선명한 근육 윤곽', hi: 'उच्च मांसपेशी परिभाषा' } },
+    { category: { en: 'Fitness', es: 'Fitness', fr: 'Forme Physique', de: 'Fitness', ko: '피트니스', hi: 'फिटनेस' }, men: '14 – 17%', women: '21 – 24%', desc: { en: 'Optimal lean conditioning', es: 'Condición física óptima', fr: 'Condition physique optimale', de: 'Optimale athletische Form', ko: '이상적인 건강 컨디션', hi: 'उत्कृष्ट स्वस्थ स्थिति' } },
+    { category: { en: 'Average', es: 'Promedio', fr: 'Moyenne Santé', de: 'Durchschnitt', ko: '일반 건강', hi: 'सामान्य' }, men: '18 – 24%', women: '25 – 31%', desc: { en: 'Healthy general baseline', es: 'Rango saludable estándar', fr: 'Plage santé habituelle', de: 'Gesunder Standardbereich', ko: '표준 성인 건강 구간', hi: 'स्वस्थ सामान्य सीमा' } },
+    { category: { en: 'Moderate Overfat', es: 'Sobregrasa Moderada', fr: 'Surpoids Adipeux', de: 'Erhöhter Fettanteil', ko: '경도 과체지방', hi: 'मध्यम अधिक वसा' }, men: '25 – 29%', women: '32 – 37%', desc: { en: 'Elevated adiposity warning', es: 'Adiposidad incrementada', fr: 'Masse grasse excédentaire', de: 'Leichtes Übergewicht', ko: '체지방 관리 권고 구간', hi: 'वसा नियंत्रण आवश्यक' } },
+    { category: { en: 'High Adiposity', es: 'Obesidad Adiposa', fr: 'Obésité Adipeuse', de: 'Adipositas', ko: '비만 관리 대상', hi: 'उच्च वसा / मोटापा' }, men: '30%+', women: '38%+', desc: { en: 'Cardiometabolic risk zone', es: 'Zona de riesgo cardiometabólico', fr: 'Zone de risque cardiométabolique', de: 'Kardiometabolische Risikozone', ko: '심혈관 대사 위험 구간', hi: 'हृदय रोग जोखिम क्षेत्र' } }
+  ]
+};
+
+const lbmQuickGrid = {
+  badge: {
+    en: 'LBM Reference Estimates',
+    es: 'Estimaciones de Referencia LBM',
+    fr: 'Estimations Repères de LBM',
+    de: 'LBM-Referenzwerte',
+    ko: '체중별 제지방량(LBM) 요약표',
+    hi: 'लीन बॉडी मास संदर्भ तालिका'
+  },
+  title: {
+    en: 'Lean Body Mass by Body Weight (at 175 cm / 5\'9")',
+    es: 'Masa Corporal Magra según el Peso (para 175 cm)',
+    fr: 'Masse Maigre selon le Poids Corporel (pour 175 cm)',
+    de: 'Fettfreie Masse nach Körpergewicht (bei 175 cm)',
+    ko: '체중별 제지방량 및 비율 (신장 175cm 기준)',
+    hi: 'शरीर के वजन के अनुसार लीन बॉडी मास (175 सेमी पर)'
+  },
+  note: {
+    en: 'Calculated via Boer formula across adult weight profiles.',
+    es: 'Calculado mediante la fórmula de Boer para perfiles adultos.',
+    fr: 'Calculé selon la formule de Boer pour différents poids adultes.',
+    de: 'Berechnet nach der Boer-Formel für erwachsene Gewichtsprofile.',
+    ko: '성인 체중 구간별 Boer 공식을 적용하여 산출된 지표.',
+    hi: 'वयस्क वजन प्रोफाइल हेतु बोअर सूत्र द्वारा गणना।'
+  },
+  maleLabel: {
+    en: 'Men LBM',
+    es: 'Hombres LBM',
+    fr: 'Hommes LBM',
+    de: 'Männer LBM',
+    ko: '남성 LBM',
+    hi: 'पुरुष LBM'
+  },
+  femaleLabel: {
+    en: 'Women LBM',
+    es: 'Mujeres LBM',
+    fr: 'Femmes LBM',
+    de: 'Frauen LBM',
+    ko: '여성 LBM',
+    hi: 'महिला LBM'
+  },
+  items: [
+    { weight: '55 kg (121 lbs)', male: '49.9 kg', female: '48.3 kg', maleRatio: '90.7%', femaleRatio: '87.8%' },
+    { weight: '65 kg (143 lbs)', male: '54.0 kg', female: '50.9 kg', maleRatio: '83.1%', femaleRatio: '78.3%' },
+    { weight: '75 kg (165 lbs)', male: '58.1 kg', female: '53.4 kg', maleRatio: '77.5%', femaleRatio: '71.2%' },
+    { weight: '85 kg (187 lbs)', male: '62.1 kg', female: '55.9 kg', maleRatio: '73.1%', femaleRatio: '65.8%' },
+    { weight: '95 kg (209 lbs)', male: '66.2 kg', female: '58.4 kg', maleRatio: '69.7%', femaleRatio: '61.5%' },
+    { weight: '105 kg (231 lbs)', male: '70.3 kg', female: '60.9 kg', maleRatio: '67.0%', femaleRatio: '58.0%' }
+  ]
+};
+
+const idealWeightQuickGrid = {
+  badge: {
+    en: 'Height-Based IBW Targets',
+    es: 'Metas de IBW por Estatura',
+    fr: 'Repères IBW par Taille',
+    de: 'IBW-Richtwerte nach Größe',
+    ko: '신장별 표준 이상 체중표',
+    hi: 'ऊंचाई के अनुसार आदर्श वजन'
+  },
+  title: {
+    en: 'Ideal Body Weight Comparison by Height',
+    es: 'Comparativa de Peso Ideal según la Estatura',
+    fr: 'Comparatif du Poids Idéal selon la Stature',
+    de: 'Idealgewichts-Vergleich nach Körpergröße',
+    ko: '신장별 이상 체중(Devine) 및 WHO 정상 체중 범위',
+    hi: 'ऊंचाई के अनुसार आदर्श वजन (डिवाइन) एवं सामान्य सीमा'
+  },
+  note: {
+    en: 'Devine formula baseline compared with WHO Healthy BMI Range (18.5 – 24.9 kg/m²).',
+    es: 'Fórmula Devine comparada con el rango de peso saludable de la OMS (18.5 a 24.9 kg/m²).',
+    fr: 'Formule Devine comparée à la plage d’IMC santé de l’OMS (18,5 à 24,9 kg/m²).',
+    de: 'Devine-Formel im Vergleich zum gesunden WHO-Gewichtsbereich (BMI 18,5 – 24,9 kg/m²).',
+    ko: '드바인(Devine) 기준치와 WHO 정상 체중 구간(BMI 18.5 ~ 24.9 kg/m²) 비교.',
+    hi: 'डब्ल्यूएचओ स्वस्थ वजन सीमा (18.5 से 24.9 kg/m²) के साथ डिवाइन फॉर्मूला तुलना।'
+  },
+  maleLabel: {
+    en: 'Devine Male',
+    es: 'Devine Hombre',
+    fr: 'Devine Homme',
+    de: 'Devine Mann',
+    ko: '드바인 남성',
+    hi: 'डिवाइन पुरुष'
+  },
+  femaleLabel: {
+    en: 'Devine Female',
+    es: 'Devine Mujer',
+    fr: 'Devine Femme',
+    de: 'Devine Frau',
+    ko: '드바인 여성',
+    hi: 'डिवाइन महिला'
+  },
+  whoLabel: {
+    en: 'WHO Healthy Range',
+    es: 'Rango Saludable OMS',
+    fr: 'Plage Santé OMS',
+    de: 'WHO-Normalbereich',
+    ko: 'WHO 정상 구간',
+    hi: 'WHO सामान्य सीमा'
+  },
+  items: [
+    { height: "160 cm (5'3\")", male: '56.9 kg', female: '52.4 kg', who: '47.4 – 63.7 kg' },
+    { height: "165 cm (5'5\")", male: '61.5 kg', female: '57.0 kg', who: '50.4 – 67.8 kg' },
+    { height: "170 cm (5'7\")", male: '65.9 kg', female: '61.4 kg', who: '53.5 – 72.0 kg' },
+    { height: "175 cm (5'9\")", male: '70.5 kg', female: '66.0 kg', who: '56.7 – 76.3 kg' },
+    { height: "180 cm (5'11\")", male: '75.0 kg', female: '70.5 kg', who: '59.9 – 80.7 kg' },
+    { height: "185 cm (6'1\")", male: '79.5 kg', female: '75.0 kg', who: '63.3 – 85.2 kg' }
+  ]
+};
+
+const calorieDeficitQuickGrid = {
+  badge: {
+    en: 'Calorie Deficit Targets',
+    es: 'Metas de Déficit Calórico',
+    fr: 'Objectifs de Déficit Calorique',
+    de: 'Ziel-Kaloriendefizite',
+    ko: '유지 칼로리별 감량 목표표',
+    hi: 'कैलोरी घाटा लक्ष्य तालिका'
+  },
+  title: {
+    en: 'Daily Calorie Targets by Maintenance TDEE',
+    es: 'Calorías Objetivo según el Gasto Total Diario (TDEE)',
+    fr: 'Cibles Caloriques selon la Dépense Journalière (DEJ)',
+    de: 'Zielkalorien nach Gesamtenergiebedarf (TDEE)',
+    ko: '유지 대사량(TDEE)별 일일 감량 칼로리 요약',
+    hi: 'दैनिक मेंटेनेंस TDEE के अनुसार लक्षित कैलोरी'
+  },
+  note: {
+    en: 'Moderate deficit (-500 kcal/day) yields ~0.45 kg (1 lb) fat loss/week.',
+    es: 'Un déficit moderado (-500 kcal/día) produce ~0.45 kg de pérdida de grasa/sem.',
+    fr: 'Un déficit modéré (-500 kcal/jour) induit ~0,45 kg de perte de graisse/semaine.',
+    de: 'Ein moderates Defizit (-500 kcal/Tag) bewirkt ~0,45 kg Fettverlust/Woche.',
+    ko: '하루 500 kcal 적자는 주당 약 0.45 kg(1 lb)의 순수 체지방 감량을 유도합니다.',
+    hi: 'मध्यम घाटा (-500 कैलोरी/दिन) प्रति सप्ताह ~0.45 किग्रा वसा हानि देता है।'
+  },
+  mildLabel: {
+    en: 'Mild (-250)',
+    es: 'Leve (-250)',
+    fr: 'Léger (-250)',
+    de: 'Leicht (-250)',
+    ko: '완만 (-250)',
+    hi: 'हल्का (-250)'
+  },
+  paceLabel: {
+    en: '-500 kcal Target',
+    es: 'Objetivo -500 kcal',
+    fr: 'Cible -500 kcal',
+    de: '-500 kcal Zielwert',
+    ko: '-500 kcal 적자 목표',
+    hi: '-500 कैलोरी लक्ष्य'
+  },
+  items: [
+    { tdee: '1,800 kcal', mild: '1,550 kcal', standard: '1,300 kcal' },
+    { tdee: '2,000 kcal', mild: '1,750 kcal', standard: '1,500 kcal' },
+    { tdee: '2,200 kcal', mild: '1,950 kcal', standard: '1,700 kcal' },
+    { tdee: '2,400 kcal', mild: '2,150 kcal', standard: '1,900 kcal' },
+    { tdee: '2,600 kcal', mild: '2,350 kcal', standard: '2,100 kcal' },
+    { tdee: '2,800 kcal', mild: '2,550 kcal', standard: '2,300 kcal' }
+  ]
+};
+
+const hydrationQuickChart = {
+  badge: {
+    en: 'Quick Reference Chart',
+    es: 'Tabla de Referencia Rápida',
+    fr: 'Tableau de Référence Rapide',
+    de: 'Schnellübersicht',
+    ko: '체중별 빠른 권장량 표',
+    hi: 'त्वरित संदर्भ चार्ट'
+  },
+  title: {
+    en: 'Daily Water Intake by Body Weight',
+    es: 'Consumo Diario de Agua según el Peso Corporal',
+    fr: 'Apport Quotidien en Eau selon le Poids Corporel',
+    de: 'Täglicher Wasserbedarf nach Körpergewicht',
+    ko: '체중별 일일 수분 섭취 권장량 요약',
+    hi: 'शरीर के वजन के अनुसार दैनिक पानी की आवश्यकता'
+  },
+  note: {
+    en: 'Based on 35 mL/kg baseline + 750 mL active workout compensation.',
+    es: 'Basado en 35 mL/kg basal + 750 mL por ejercicio activo.',
+    fr: 'Basé sur 35 mL/kg au repos + 750 mL pour effort actif.',
+    de: 'Basis 35 ml/kg + 750 ml Trainingszuschlag.',
+    ko: '기초 35 mL/kg + 활동적 운동 시 750 mL 보충 기준.',
+    hi: 'आधारभूत 35 मिली/किग्रा + सक्रिय व्यायाम हेतु 750 मिली।'
+  },
+  thWeight: {
+    en: 'Body Weight',
+    es: 'Peso Corporal',
+    fr: 'Poids Corporel',
+    de: 'Körpergewicht',
+    ko: '체중',
+    hi: 'शरीर का वजन'
+  },
+  thBaseline: {
+    en: 'Sedentary Baseline (35 mL/kg)',
+    es: 'Sedentario Base (35 mL/kg)',
+    fr: 'Base Sédentaire (35 mL/kg)',
+    de: 'Basisbedarf (35 ml/kg)',
+    ko: '기초 권장량 (35 mL/kg)',
+    hi: 'आधारभूत आवश्यकता (35 मिली/किग्रा)'
+  },
+  thActive: {
+    en: 'Active / Daily Exercise (+750 mL)',
+    es: 'Activo / Ejercicio (+750 mL)',
+    fr: 'Actif / Sport Quotidien (+750 mL)',
+    de: 'Aktiv / Training (+750 ml)',
+    ko: '운동 / 활동적 (+750 mL)',
+    hi: 'सक्रिय / दैनिक व्यायाम (+750 मिली)'
+  },
+  thGlasses: {
+    en: 'Standard Glasses (250 mL)',
+    es: 'Vasos Estándar (250 mL)',
+    fr: 'Verres Standards (250 mL)',
+    de: 'Standardgläser (250 ml)',
+    ko: '일반 컵 기준 (250 mL)',
+    hi: 'मानक गिलास (250 मिली)'
+  },
+  rows: [
+    { weight: '50 kg (110 lbs)', baseline: '1.75 L (~59 oz)', active: '2.50 L (~85 oz)', glasses: { en: '7 – 10 glasses', es: '7 – 10 vasos', fr: '7 – 10 verres', de: '7 – 10 Gläser', ko: '약 7 – 10잔', hi: '7 – 10 गिलास' } },
+    { weight: '60 kg (132 lbs)', baseline: '2.10 L (~71 oz)', active: '2.85 L (~96 oz)', glasses: { en: '8.5 – 11.5 glasses', es: '8.5 – 11.5 vasos', fr: '8,5 – 11,5 verres', de: '8,5 – 11,5 Gläser', ko: '약 8.5 – 11.5잔', hi: '8.5 – 11.5 गिलास' } },
+    { weight: '70 kg (154 lbs)', baseline: '2.45 L (~83 oz)', active: '3.20 L (~108 oz)', glasses: { en: '10 – 13 glasses', es: '10 – 13 vasos', fr: '10 – 13 verres', de: '10 – 13 Gläser', ko: '약 10 – 13잔', hi: '10 – 13 गिलास' } },
+    { weight: '80 kg (176 lbs)', baseline: '2.80 L (~95 oz)', active: '3.55 L (~120 oz)', glasses: { en: '11 – 14 glasses', es: '11 – 14 vasos', fr: '11 – 14 verres', de: '11 – 14 Gläser', ko: '약 11 – 14잔', hi: '11 – 14 गिलास' } },
+    { weight: '90 kg (198 lbs)', baseline: '3.15 L (~107 oz)', active: '3.90 L (~132 oz)', glasses: { en: '12.5 – 15.5 glasses', es: '12.5 – 15.5 vasos', fr: '12,5 – 15,5 verres', de: '12,5 – 15,5 Gläser', ko: '약 12.5 – 15.5잔', hi: '12.5 – 15.5 गिलास' } },
+    { weight: '100 kg (220 lbs)', baseline: '3.50 L (~118 oz)', active: '4.25 L (~144 oz)', glasses: { en: '14 – 17 glasses', es: '14 – 17 vasos', fr: '14 – 17 verres', de: '14 – 17 Gläser', ko: '약 14 – 17잔', hi: '14 – 17 गिलास' } },
+  ]
+};
 
 const referenceTableSubtitle = {
   en: `Official reference ranges, public health thresholds, and validated benchmarks for ${currentData.title}.`,
@@ -204,492 +572,6 @@ const referenceTableSubtitle = {
   ko: `${currentData.title}에 대한 공식 참조 범위, 공중보건 기준치 및 검증된 생리학적 지표입니다.`,
   hi: `${currentData.title} के लिए आधिकारिक संदर्भ सीमाएं, सार्वजनिक स्वास्थ्य सीमाएं और मान्य बेंचमार्क।`
 }[lang] || `Official benchmarks and reference ranges for ${currentData.title}.`;
-
-const isIndianBmi = effectiveSlug === 'bmi-calculator-for-indians' || effectiveSlug === 'bmi-calculator-india';
-const isAsianBmi = effectiveSlug === 'asian-bmi-calculator';
-const isPregnancy = effectiveSlug === 'pregnancy-weight-gain-calculator';
-const is1RM = effectiveSlug === '1rm-calculator' || effectiveSlug === 'one-rep-max-calculator';
-const isCardio = effectiveSlug === 'heart-rate-zone-calculator' || effectiveSlug === 'karvonen-heart-rate-calculator';
-const isBodyFat = effectiveSlug === 'body-fat-calculator' || effectiveSlug === 'lean-body-mass-calculator';
-const isProtein = effectiveSlug === 'protein-intake-calculator';
-const isWater = effectiveSlug === 'water-intake-calculator';
-const isWHR = effectiveSlug === 'waist-to-hip-ratio-calculator';
-const isMetabolic = ['bmr-calculator', 'tdee-calculator', 'maintenance-calorie-calculator', 'calorie-calculator', 'macro-calculator'].includes(effectiveSlug);
-const isDiabetes = effectiveSlug === 'diabetes-risk-calculator';
-
-const spectrumRanges = isIndianBmi
-  ? {
-      range1: '< 18.5',
-      range2: '18.5 – 22.9',
-      range3: '23.0 – 24.9',
-      range4: '≥ 25.0',
-    }
-  : isAsianBmi
-  ? {
-      range1: '< 18.5',
-      range2: '18.5 – 22.9',
-      range3: '23.0 – 27.4',
-      range4: '≥ 27.5',
-    }
-  : isPregnancy
-  ? {
-      range1: '12.5 – 18.0 kg (28–40 lbs)',
-      range2: '11.5 – 16.0 kg (25–35 lbs)',
-      range3: '7.0 – 11.5 kg (15–25 lbs)',
-      range4: '5.0 – 9.0 kg (11–20 lbs)',
-    }
-  : is1RM
-  ? {
-      range1: '50% – 60% 1RM',
-      range2: '60% – 70% 1RM',
-      range3: '75% – 85% 1RM',
-      range4: '85% – 100% 1RM',
-    }
-  : isCardio
-  ? {
-      range1: '50% – 60% HRmax',
-      range2: '60% – 70% HRmax',
-      range3: '70% – 85% HRmax',
-      range4: '85% – 100% HRmax',
-    }
-  : isBodyFat
-  ? {
-      range1: '2–5% M / 10–13% F',
-      range2: '6–13% M / 14–20% F',
-      range3: '14–17% M / 21–24% F',
-      range4: '≥ 18% M / ≥ 25% F',
-    }
-  : isProtein
-  ? {
-      range1: '0.8 g/kg',
-      range2: '1.2 – 1.6 g/kg',
-      range3: '1.6 – 2.0 g/kg',
-      range4: '2.0 – 2.4 g/kg',
-    }
-  : isWater
-  ? {
-      range1: '2.0 – 2.5 L / day',
-      range2: '2.5 – 3.2 L / day',
-      range3: '3.2 – 4.0 L / day',
-      range4: '> 4.0 L / day',
-    }
-  : isWHR
-  ? {
-      range1: '< 0.85 M / < 0.75 F',
-      range2: '0.85–0.90 M / 0.75–0.80 F',
-      range3: '0.90–0.95 M / 0.80–0.85 F',
-      range4: '≥ 0.95 M / ≥ 0.85 F',
-    }
-  : isMetabolic
-  ? {
-      range1: '-500 kcal / day',
-      range2: '-250 kcal / day',
-      range3: '0 kcal (TDEE)',
-      range4: '+300 to +500 kcal',
-    }
-  : isDiabetes
-  ? {
-      range1: '< 7 Points',
-      range2: '7 – 11 Points',
-      range3: '12 – 14 Points',
-      range4: '≥ 15 Points',
-    }
-  : {
-      range1: '< 18.5',
-      range2: '18.5 – 24.9',
-      range3: '25.0 – 29.9',
-      range4: '≥ 30.0',
-    };
-
-const figCaptionText = {
-  en: isIndianBmi
-    ? `Figure 1.1: Consensus BMI classification cutoffs for Asian Indians. Source & Credit: Consensus Guidelines for Asian Indians (Misra et al., JAPI / Indian Council of Medical Research ICMR). Published for educational reference.`
-    : isAsianBmi
-    ? `Figure 1.1: Regional BMI classification cutoffs for Asian populations. Source & Credit: WHO Expert Consultation (Lancet 2004) & WHO Western Pacific Regional Office (WPRO). Published for educational reference.`
-    : isPregnancy
-    ? `Figure 1.1: Recommended total gestational weight gain ranges for singleton pregnancies by pre-pregnancy BMI category. Source & Credit: Institute of Medicine (IOM) & American College of Obstetricians and Gynecologists (ACOG). Published for educational reference.`
-    : is1RM
-    ? `Figure 1.1: Standard resistance training intensity zones and percentage-based loading brackets relative to One-Rep Max (1RM) for Bench Press, Squat, Deadlift, and Overhead Press. Source & Credit: National Strength & Conditioning Association (NSCA) & ACSM. Published for educational reference.`
-    : isCardio
-    ? `Figure 1.1: Standard cardiovascular target heart rate zones and training intensity percentages. Source & Credit: American Heart Association (AHA) & ACSM Guidelines. Published for educational reference.`
-    : isBodyFat
-    ? `Figure 1.1: Body fat percentage reference ranges and clinical classification categories. Source & Credit: American Council on Exercise (ACE) Clinical Standards. Published for educational reference.`
-    : isProtein
-    ? `Figure 1.1: Daily dietary protein intake targets relative to body weight and physical training demands. Source & Credit: International Society of Sports Nutrition (ISSN) Consensus. Published for educational reference.`
-    : isWater
-    ? `Figure 1.1: Daily fluid hydration guidelines based on physical activity and climate demands. Source & Credit: National Academies of Sciences (IOM) & EFSA. Published for educational reference.`
-    : isWHR
-    ? `Figure 1.1: Waist-to-hip ratio (WHR) cardiometabolic disease risk cutoffs. Source & Credit: World Health Organization (WHO) STEPS Protocol. Published for educational reference.`
-    : isMetabolic
-    ? `Figure 1.1: Caloric deficit and surplus targets relative to total daily energy expenditure (TDEE). Source & Credit: Mifflin-St Jeor & ACSM Energy Balance Models. Published for educational reference.`
-    : isDiabetes
-    ? `Figure 1.1: Type 2 Diabetes 10-year statistical risk scoring continuum. Source & Credit: FINDRISC & American Diabetes Association (ADA). Published for educational reference.`
-    : `Figure 1.1: Reference spectrum and classification cutoffs for ${currentData.title}. Source & Credit: World Health Organization (WHO) Technical Report Series 854 & CDC Guidelines. Published for educational reference.`,
-  es: isIndianBmi
-    ? `Figura 1.1: Puntos de corte de clasificación del IMC para la población india. Fuente y Crédito: Directrices de Consenso para Indios Asiáticos (ICMR / JAPI). Publicado con fines educativos.`
-    : isAsianBmi
-    ? `Figura 1.1: Puntos de corte regionales de clasificación del IMC para poblaciones asiáticas. Fuente y Crédito: Consulta de Expertos de la OMS (Lancet 2004) y Oficina Regional del Pacífico Occidental (WPRO).`
-    : isPregnancy
-    ? `Figura 1.1: Rangos recomendados de aumento de peso gestacional total para embarazos únicos según el IMC pregestacional. Fuente y Crédito: Instituto de Medicina (IOM) y ACOG. Publicado con fines educativos.`
-    : is1RM
-    ? `Figura 1.1: Zonas estándar de intensidad de entrenamiento y rangos de porcentaje de carga relativos al 1RM para press de banca, sentadilla, peso muerto y press militar. Fuente y Crédito: NSCA y ACSM. Publicado con fines educativos.`
-    : `Figura 1.1: Espectro de referencia y puntos de corte para ${currentData.title}. Fuente y Crédito: Estándares científicos internacionales y directrices de salud. Publicado con fines educativos.`,
-  fr: isIndianBmi
-    ? `Figure 1.1 : Seuils de classification de l'IMC pour les populations indiennes. Source et Crédit : Directives de consensus pour les Indiens d'Asie (ICMR / JAPI).`
-    : isAsianBmi
-    ? `Figure 1.1 : Seuils régionaux de classification de l'IMC pour les populations asiatiques. Source et Crédit : Consultation d'experts de l'OMS (Lancet 2004) et Bureau régional du Pacifique occidental (WPRO).`
-    : isPregnancy
-    ? `Figure 1.1 : Recommandations de prise de poids gestationnelle totale pour grossesses uniques selon la catégorie d'IMC avant grossesse. Source et Crédit : Institute of Medicine (IOM) et ACOG. Publié à titre éducatif.`
-    : is1RM
-    ? `Figure 1.1 : Zones standards d'intensité et pourcentages de charge relatifs au 1RM pour développé couché, squat, soulevé de terre et développé militaire. Source et Crédit : NSCA et ACSM. Publié à titre éducatif.`
-    : `Figure 1.1 : Repères et seuils de référence pour ${currentData.title}. Source et Crédit : Normes scientifiques publiées. Publié à titre éducatif.`,
-  de: isIndianBmi
-    ? `Abbildung 1.1: BMI-Klassifizierungsgrenzwerte für asiatische Inder. Quelle & Urheber: Konsensrichtlinien für asiatische Inder (ICMR / JAPI).`
-    : isAsianBmi
-    ? `Abbildung 1.1: Regionale BMI-Klassifizierungsgrenzwerte für asiatische Populationen. Quelle & Urheber: WHO-Expertenkonsultation (Lancet 2004) und WHO-Regionalbüro für den westlichen Pazifik (WPRO).`
-    : isPregnancy
-    ? `Abbildung 1.1: Richtlinien für die empfohlene Gesamtzunahme in der Einlingsschwangerschaft nach Ausgangs-BMI. Quelle & Urheber: Institute of Medicine (IOM) und ACOG. Zu Bildungszwecken veröffentlicht.`
-    : is1RM
-    ? `Abbildung 1.1: Standard-Trainingsintensitätszonen und prozentuale Lastbereiche bezogen auf das 1RM für Bankdrücken, Kniebeuge, Kreuzheben und Schulterdrücken. Quelle & Urheber: NSCA & ACSM. Zu Bildungszwecken veröffentlicht.`
-    : `Abbildung 1.1: Referenzspektrum und Richtwerte für ${currentData.title}. Quelle & Urheber: Veröffentlichte wissenschaftliche Standards. Zu Bildungszwecken veröffentlicht.`,
-  ko: isIndianBmi
-    ? `그림 1.1: 아시아계 인도인을 위한 BMI 분류 기준치. 출처 및 크레딧: 인도인을 위한 합의 가이드라인 (ICMR / JAPI). 교육용 참고 목적으로 제공됨.`
-    : isAsianBmi
-    ? `그림 1.1: 아시아인을 위한 지역별 BMI 분류 기준치. 출처 및 크레딧: WHO 전문가 협의회 (Lancet 2004) 및 WHO 서태평양 지역사무소 (WPRO).`
-    : isPregnancy
-    ? `그림 1.1: 임신 전 체질량지수(BMI) 분류에 따른 단태아 임신 기간 총 권장 체중 증가 지침. 출처 및 크레딧: 미국 의학연구소(IOM) 및 미국산부인과학회(ACOG). 교육용 참고 목적으로 제공됨.`
-    : is1RM
-    ? `그림 1.1: 벤치프레스, 스쿼트, 데드리프트, 오버헤드프레스의 1RM 백분율 기준 공식 트레이닝 강도 구간. 출처 및 크레딧: 미국체력관리학회(NSCA) 및 ACSM. 교육용 참고 목적으로 제공됨.`
-    : `그림 1.1: ${currentData.title}에 대한 참조 스펙트럼 및 기준치. 출처 및 크레딧: 공인 과학 가이드라인. 교육용 참고 목적으로 제공됨.`,
-  hi: isIndianBmi
-    ? `चित्र 1.1: भारतीय वयस्कों के लिए सर्वसम्मति बीएमआई वर्गीकरण सीमाएं। स्रोत एवं श्रेय: एशियाई भारतीयों के लिए सर्वसम्मति दिशानिर्देश (आईसीएमआर / जेएपीआई, मिश्रा et al.)।`
-    : isAsianBmi
-    ? `चित्र 1.1: एशियाई आबादी के लिए क्षेत्रीय बीएमआई वर्गीकरण सीमाएं। स्रोत एवं श्रेय: विश्व स्वास्थ्य संगठन (WHO) पश्चिमी प्रशांत क्षेत्रीय कार्यालय (WPRO) एवं लैंसेट 2004।`
-    : isPregnancy
-    ? `चित्र 1.1: गर्भावस्था पूर्व बीएमआई श्रेणी के आधार पर एकल गर्भावस्था के लिए अनुशंसित कुल वजन वृद्धि सीमाएं। स्रोत एवं श्रेय: इंस्टीट्यूट ऑफ मेडिसिन (IOM) एवं अमेरिकन कॉलेज ऑफ ऑब्स्टेट्रिशियन एंड गायनेकोलॉजिस्ट (ACOG)। शैक्षणिक संदर्भ के लिए प्रकाशित।`
-    : is1RM
-    ? `चित्र 1.1: बेंच प्रेस, स्क्वैट, डेडलिफ्ट और ओवरहेड प्रेस के लिए 1RM के सापेक्ष मानक ट्रेनिंग तीव्रता क्षेत्र और प्रतिशत-आधारित भार सीमाएं। स्रोत एवं श्रेय: नेशनल स्ट्रेंथ एंड कंडीशनिंग एसोसिएशन (NSCA) एवं ACSM। शैक्षणिक संदर्भ के लिए प्रकाशित।`
-    : `चित्र 1.1: ${currentData.title} के लिए संदर्भ स्पेक्ट्रम एवं सीमाएं। स्रोत एवं श्रेय: प्रकाशित वैज्ञानिक मानक। शैक्षणिक संदर्भ के लिए प्रकाशित।`
-}[lang] || (is1RM
-  ? `Figure 1.1: Standard resistance training intensity zones relative to 1RM. Source & Credit: NSCA & ACSM.`
-  : isPregnancy
-  ? `Figure 1.1: Recommended total gestational weight gain ranges for singleton pregnancies. Source & Credit: IOM & ACOG.`
-  : `Figure 1.1: Reference spectrum and classification cutoffs for ${currentData.title}.`);
-
-const rawSpectrumUi = {
-  en: {
-    badge: 'Visual Reference Infographic',
-    titleSuffix: isPregnancy
-      ? 'IOM Gestational Gain Spectrum'
-      : is1RM
-      ? '1RM Training Intensity Spectrum'
-      : isCardio
-      ? 'Target Heart Rate Training Zones'
-      : isBodyFat
-      ? 'Body Fat Percentage Spectrum'
-      : isProtein
-      ? 'Daily Protein Target Brackets'
-      : isWater
-      ? 'Daily Fluid Hydration Brackets'
-      : isWHR
-      ? 'Waist-to-Hip Ratio Health Spectrum'
-      : isMetabolic
-      ? 'Caloric Deficit & Surplus Continuum'
-      : isDiabetes
-      ? 'FINDRISC Statistical Risk Spectrum'
-      : 'Visual Spectrum Diagram',
-    source: isIndianBmi
-      ? 'ICMR / Consensus Guidelines for Asian Indians'
-      : isAsianBmi
-      ? 'WHO Western Pacific Region (WPRO)'
-      : isPregnancy
-      ? 'Institute of Medicine (IOM) & ACOG'
-      : is1RM
-      ? 'NSCA & ACSM Resistance Training Guidelines'
-      : isCardio
-      ? 'American Heart Association (AHA) & ACSM'
-      : isBodyFat
-      ? 'American Council on Exercise (ACE)'
-      : isProtein
-      ? 'International Society of Sports Nutrition (ISSN)'
-      : isWater
-      ? 'National Academies of Sciences (IOM) & EFSA'
-      : isWHR
-      ? 'World Health Organization (WHO) STEPS'
-      : isMetabolic
-      ? 'Mifflin-St Jeor & ACSM Energy Balance Models'
-      : isDiabetes
-      ? 'FINDRISC & American Diabetes Association (ADA)'
-      : 'WHO Technical Report Series',
-    desc: isIndianBmi
-      ? 'Graphical representation of ICMR South Asian classification cutoffs tailored for Indian body composition and cardiometabolic risk.'
-      : isAsianBmi
-      ? 'Graphical representation of WHO Asia-Pacific classification cutoffs tailored for Asian body composition.'
-      : isPregnancy
-      ? 'Graphical visualization of IOM and ACOG total pregnancy weight gain recommendations categorized by maternal pre-pregnancy BMI.'
-      : is1RM
-      ? 'Graphical visualization of resistance training percentage zones and physiological adaptations relative to One-Rep Max for Bench Press, Squat, Deadlift, and Overhead Press.'
-      : isCardio
-      ? 'Graphical visualization of target cardiovascular heart rate training zones from active recovery to maximum effort.'
-      : isBodyFat
-      ? 'Graphical representation of body fat percentage brackets and health classification tiers.'
-      : isProtein
-      ? 'Graphical representation of daily dietary protein recommendations relative to activity level and hypertrophy goals.'
-      : isWater
-      ? 'Graphical representation of daily baseline and active hydration fluid volume guidelines.'
-      : isWHR
-      ? 'Graphical visualization of waist-to-hip ratio cutoffs and associated cardiometabolic health risk.'
-      : isMetabolic
-      ? 'Graphical representation of caloric deficit, maintenance, and muscle building surplus ranges.'
-      : isDiabetes
-      ? 'Graphical visualization of statistical 10-year type 2 diabetes risk score categories.'
-      : 'Graphical representation of standard classification cutoffs and category ranges based on published WHO guidelines.',
-    underweight: isPregnancy
-      ? 'Pre < 18.5 (Underweight)'
-      : is1RM
-      ? 'Warm-up / Recovery'
-      : isCardio
-      ? 'Zone 1 (Recovery)'
-      : isBodyFat
-      ? 'Essential Fat'
-      : isProtein
-      ? 'Sedentary Minimum'
-      : isWater
-      ? 'Baseline Fluid'
-      : isWHR
-      ? 'Low Health Risk'
-      : isMetabolic
-      ? 'Fat Loss Deficit'
-      : isDiabetes
-      ? 'Low Risk (<1%)'
-      : 'Underweight / Low',
-    normal: isPregnancy
-      ? 'Pre 18.5–24.9 (Normal)'
-      : is1RM
-      ? 'Endurance (12-15+ reps)'
-      : isCardio
-      ? 'Zone 2 (Aerobic Base)'
-      : isBodyFat
-      ? 'Athletes / Lean'
-      : isProtein
-      ? 'Active / Endurance'
-      : isWater
-      ? 'Active Adult'
-      : isWHR
-      ? 'Moderate Risk'
-      : isMetabolic
-      ? 'Mild Deficit'
-      : isDiabetes
-      ? 'Slight Risk (4%)'
-      : 'Normal / Healthy',
-    overweight: isPregnancy
-      ? 'Pre 25–29.9 (Overweight)'
-      : is1RM
-      ? 'Hypertrophy (6-12 reps)'
-      : isCardio
-      ? 'Zone 3-4 (Tempo/Threshold)'
-      : isBodyFat
-      ? 'Fitness / Healthy'
-      : isProtein
-      ? 'Hypertrophy Target'
-      : isWater
-      ? 'Fitness & Exercise'
-      : isWHR
-      ? 'High Risk'
-      : isMetabolic
-      ? 'Maintenance Balance'
-      : isDiabetes
-      ? 'Moderate Risk (17%)'
-      : 'Overweight / Moderate',
-    obese: isPregnancy
-      ? 'Pre ≥ 30 (Obese)'
-      : is1RM
-      ? 'Max Strength (1-5 reps)'
-      : isCardio
-      ? 'Zone 5 (Max Peak)'
-      : isBodyFat
-      ? 'Average / Elevated Fat'
-      : isProtein
-      ? 'Deficit Retention'
-      : isWater
-      ? 'Intense Sport / Heat'
-      : isWHR
-      ? 'Very High Risk'
-      : isMetabolic
-      ? 'Hypertrophy Surplus'
-      : isDiabetes
-      ? 'High Risk (33-50%)'
-      : 'Obese / High Risk'
-  },
-  hi: {
-    badge: 'दृश्य संदर्भ इन्फोग्राफिक',
-    titleSuffix: isPregnancy
-      ? 'आईओएम गर्भावस्था वजन वृद्धि स्पेक्ट्रम'
-      : is1RM
-      ? '1RM ट्रेनिंग तीव्रता स्पेक्ट्रम'
-      : 'विज़ुअल स्पेक्ट्रम आरेख',
-    source: isIndianBmi
-      ? 'आईसीएमआर / एशियाई भारतीयों के लिए सर्वसम्मति दिशानिर्देश'
-      : isAsianBmi
-      ? 'डब्ल्यूएचओ पश्चिमी प्रशांत क्षेत्रीय कार्यालय (WPRO)'
-      : isPregnancy
-      ? 'इंस्टीट्यूट ऑफ मेडिसिन (IOM) एवं ACOG'
-      : is1RM
-      ? 'एनएससीए (NSCA) एवं एसीएसएम (ACSM) दिशानिर्देश'
-      : 'डब्ल्यूएचओ तकनीकी रिपोर्ट श्रृंखला',
-    desc: isIndianBmi
-      ? 'भारतीय शारीरिक संरचना एवं स्वास्थ्य जोखिम के अनुरूप आईसीएमआर दक्षिण एशियाई वर्गीकरण सीमाओं का आरेखीय निरूपण।'
-      : isAsianBmi
-      ? 'एशियाई शारीरिक संरचना के अनुरूप डब्ल्यूएचओ एशिया-प्रशांत वर्गीकरण सीमाओं का आरेखीय निरूपण।'
-      : isPregnancy
-      ? 'गर्भावस्था पूर्व बीएमआई के आधार पर आईओएम (IOM) और एकॉग (ACOG) कुल अनुशंसित वजन वृद्धि सीमाओं का आरेखीय निरूपण।'
-      : is1RM
-      ? 'बेंच प्रेस, स्क्वैट, डेडलिफ्ट और ओवरहेड प्रेस के लिए 1RM अधिकतम क्षमता के सापेक्ष प्रतिशत प्रशिक्षण क्षेत्र और शारीरिक अनुकूलन का आरेखीय निरूपण।'
-      : 'प्रकाशित वैज्ञानिक दिशानिर्देशों के आधार पर संदर्भ वर्गीकरण सीमाओं और श्रेणियों का आरेखीय निरूपण।',
-    underweight: isPregnancy
-      ? 'पूर्व <18.5 (कम वजन)'
-      : is1RM
-      ? 'वार्म-अप / रिकवरी'
-      : 'कम वजन / निम्न',
-    normal: isPregnancy
-      ? 'पूर्व 18.5–24.9 (सामान्य)'
-      : is1RM
-      ? 'मांसपेशी सहनशक्ति (12-15)'
-      : 'सामान्य / स्वस्थ',
-    overweight: isPregnancy
-      ? 'पूर्व 25–29.9 (अधिक वजन)'
-      : is1RM
-      ? 'हाइपरट्रॉफी / विकास (6-12)'
-      : 'अधिक वजन / मध्यम',
-    obese: isPregnancy
-      ? 'पूर्व ≥30.0 (मोटापा)'
-      : is1RM
-      ? 'अधिकतम ताकत / 1RM (1-5)'
-      : 'मोटापा / उच्च जोखिम'
-  },
-  es: {
-    badge: 'Infografía de Referencia Visual',
-    titleSuffix: isPregnancy
-      ? 'Espectro de Ganancia Gestacional IOM'
-      : is1RM
-      ? 'Espectro de Intensidad 1RM'
-      : 'Diagrama de Espectro Visual',
-    source: isIndianBmi
-      ? 'ICMR / Directrices de Consenso para Indios Asiáticos'
-      : isAsianBmi
-      ? 'OMS Región del Pacífico Occidental (WPRO)'
-      : isPregnancy
-      ? 'Instituto de Medicina (IOM) y ACOG'
-      : is1RM
-      ? 'Pautas de Fuerza de la NSCA y ACSM'
-      : 'Serie de Informes Técnicos de la OMS',
-    desc: isIndianBmi
-      ? 'Representación gráfica de los puntos de corte del ICMR adaptados a la composición corporal india.'
-      : isAsianBmi
-      ? 'Representación gráfica de los puntos de corte de la OMS para la región Asia-Pacífico adaptados a la composición corporal asiática.'
-      : isPregnancy
-      ? 'Representación gráfica de las recomendaciones de ganancia de peso gestacional total del IOM y ACOG según el IMC pregestacional.'
-      : is1RM
-      ? 'Visualización gráfica de zonas de intensidad en porcentaje del 1RM para press de banca, sentadilla, peso muerto y press militar.'
-      : 'Representación gráfica de los puntos de corte de clasificación basados en directrices publicadas.',
-    underweight: isPregnancy ? 'Pre < 18.5 (Bajo Peso)' : is1RM ? 'Calentamiento / Recup.' : 'Bajo peso / Bajo',
-    normal: isPregnancy ? 'Pre 18.5–24.9 (Normal)' : is1RM ? 'Resistencia (12-15 reps)' : 'Normal / Saludable',
-    overweight: isPregnancy ? 'Pre 25–29.9 (Sobrepeso)' : is1RM ? 'Hipertrofia (6-12 reps)' : 'Sobrepeso / Moderado',
-    obese: isPregnancy ? 'Pre ≥ 30.0 (Obesidad)' : is1RM ? 'Fuerza Máxima (1-5 reps)' : 'Obesidad / Alto riesgo'
-  },
-  fr: {
-    badge: 'Infographie de Référence Visuelle',
-    titleSuffix: isPregnancy
-      ? 'Spectre de Gain Gestationnel IOM'
-      : is1RM
-      ? 'Spectre d\'Intensité 1RM'
-      : 'Diagramme du Spectre Visuel',
-    source: isIndianBmi
-      ? 'ICMR / Directives de consensus pour les Indiens d\'Asie'
-      : isAsianBmi
-      ? 'OMS Bureau Régional du Pacifique Occidental (WPRO)'
-      : isPregnancy
-      ? 'Institute of Medicine (IOM) & ACOG'
-      : is1RM
-      ? 'Directives de Musculation NSCA & ACSM'
-      : 'Série de Rapports Techniques OMS',
-    desc: isIndianBmi
-      ? 'Représentation graphique des seuils ICMR adaptés à la composition corporelle des populations indiennes.'
-      : isAsianBmi
-      ? 'Représentation graphique des seuils OMS Asie-Pacifique adaptés à la composition corporelle asiatique.'
-      : isPregnancy
-      ? 'Représentation graphique des recommandations de prise de poids gestationnelle selon les directives IOM et ACOG.'
-      : is1RM
-      ? 'Visualisation graphique des zones d\'intensité en pourcentage du 1RM pour développé couché, squat, soulevé de terre et développé militaire.'
-      : 'Représentation graphique des seuils de classification selon les directives publiées.',
-    underweight: isPregnancy ? 'Pré < 18,5 (Insuffisance)' : is1RM ? 'Échauffement / Récup.' : 'Insuffisance pondérale',
-    normal: isPregnancy ? 'Pré 18,5–24,9 (Normal)' : is1RM ? 'Endurance (12-15 reps)' : 'Normal / Santé',
-    overweight: isPregnancy ? 'Pré 25–29,9 (Surpoids)' : is1RM ? 'Hypertrophie (6-12 reps)' : 'Surpoids / Modéré',
-    obese: isPregnancy ? 'Pré ≥ 30,0 (Obésité)' : is1RM ? 'Force Maximale (1-5 reps)' : 'Obésité / Risque élevé'
-  },
-  de: {
-    badge: 'Visuelle Referenz-Infografik',
-    titleSuffix: isPregnancy
-      ? 'IOM Gestations-Zunahmespektrum'
-      : is1RM
-      ? '1RM-Trainingsintensitäts-Spektrum'
-      : 'Visuelles Spektrum-Diagramm',
-    source: isIndianBmi
-      ? 'ICMR / Konsensrichtlinien für asiatische Inder'
-      : isAsianBmi
-      ? 'WHO Regionalbüro für den westlichen Pazifik (WPRO)'
-      : isPregnancy
-      ? 'Institute of Medicine (IOM) & ACOG'
-      : is1RM
-      ? 'NSCA & ACSM Krafttrainings-Standards'
-      : 'WHO Technische Berichtsreihe',
-    desc: isIndianBmi
-      ? 'Grafische Darstellung der ICMR-Grenzwerte, angepasst an die indische Körperzusammensetzung.'
-      : isAsianBmi
-      ? 'Grafische Darstellung der WHO Asien-Pazifik-Grenzwerte, angepasst an die asiatische Körperzusammensetzung.'
-      : isPregnancy
-      ? 'Grafische Darstellung der empfohlenen Schwangerschafts-Gesamtzunahme nach den Richtlinien des IOM und ACOG.'
-      : is1RM
-      ? 'Grafische Darstellung der Trainingszonen in Prozent des 1RM für Bankdrücken, Kniebeuge, Kreuzheben und Schulterdrücken.'
-      : 'Grafische Darstellung der Referenz-Schwellenwerte basierend auf veröffentlichten Richtlinien.',
-    underweight: isPregnancy ? 'Vor < 18,5 (Untergewicht)' : is1RM ? 'Aufwärmen / Erholung' : 'Untergewicht / Niedrig',
-    normal: isPregnancy ? 'Vor 18,5–24,9 (Normalgewicht)' : is1RM ? 'Kraftausdauer (12-15 Wdh.)' : 'Normalgewicht / Gesund',
-    overweight: isPregnancy ? 'Vor 25–29,9 (Übergewicht)' : is1RM ? 'Hypertrophie (6-12 Wdh.)' : 'Übergewicht / Moderat',
-    obese: isPregnancy ? 'Vor ≥ 30,0 (Adipositas)' : is1RM ? 'Maximalkraft (1-5 Wdh.)' : 'Adipositas / Hohes Risiko'
-  },
-  ko: {
-    badge: '시각적 참조 인포그래픽',
-    titleSuffix: isPregnancy
-      ? 'IOM 임신 주수별 체중 증가 스펙트럼'
-      : is1RM
-      ? '1RM 트레이닝 강도 스펙트럼'
-      : '시각적 스펙트럼 다이어그램',
-    source: isIndianBmi
-      ? 'ICMR / 아시아계 인도인 표준 합의 가이드라인'
-      : isAsianBmi
-      ? 'WHO 서태평양 지역사무소 (WPRO)'
-      : isPregnancy
-      ? '미국 의학연구소(IOM) 및 산부인과학회(ACOG)'
-      : is1RM
-      ? '미국체력관리학회(NSCA) & ACSM 지침'
-      : 'WHO 기술 보고서 시리즈',
-    desc: isIndianBmi
-      ? '인도인의 체성분과 심혈관 대사 위험에 맞춘 ICMR 남아시아 분류 기준치의 그래픽 시각화입니다.'
-      : isAsianBmi
-      ? '아시아인의 체성분에 맞춘 WHO 아시아-태평양 분류 기준치의 그래픽 시각화입니다.'
-      : isPregnancy
-      ? '임신 전 BMI에 따른 미국 IOM 및 ACOG 총 권장 임신 체중 증가량 가이드라인의 시각화입니다.'
-      : is1RM
-      ? '벤치프레스, 스쿼트, 데드리프트, 오버헤드프레스의 1RM 백분율 기준 훈련 강도 구간 및 생리학적 적응의 시각화입니다.'
-      : '공식 과학 지침에 기반한 표준 분류 기준치 및 범위의 그래픽 시각화입니다.',
-    underweight: isPregnancy ? '임신전 <18.5 (저체중)' : is1RM ? '웜업 / 컨디셔닝' : '저체중 / 위험도 낮음',
-    normal: isPregnancy ? '임신전 18.5–24.9 (정상)' : is1RM ? '근지구력 (12-15회)' : '정상 / 건강 체중',
-    overweight: isPregnancy ? '임신전 25–29.9 (과체중)' : is1RM ? '근비대 / 성장 (6-12회)' : '과체중 / 주의 요망',
-    obese: isPregnancy ? '임신전 ≥30.0 (비만)' : is1RM ? '최대 근력 (1-5회)' : '비만 / 고위험군'
-  }
-};
-
-const spectrumUi = rawSpectrumUi[lang] || rawSpectrumUi.en;
 
 const accordionTitles: Record<Locale, { formula: string; formulaSub: string; limitations: string; limitationsSub: string }> = {
   en: {
@@ -751,6 +633,237 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
     </p>
   </div>
 
+  <!-- ═══════════════════ 0. WATER INTAKE QUICK REFERENCE CHART (SPECIFIC TO HYDRATION) ═══════════════════ -->
+  {effectiveSlug === 'water-intake-calculator' && (
+    <div class="space-y-4">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+            {hydrationQuickChart.badge[lang] || hydrationQuickChart.badge.en}
+          </span>
+          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
+            {hydrationQuickChart.title[lang] || hydrationQuickChart.title.en}
+          </h3>
+        </div>
+        <p class="text-xs text-[var(--muted-foreground)]">
+          {hydrationQuickChart.note[lang] || hydrationQuickChart.note.en}
+        </p>
+      </div>
+
+      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        {hydrationQuickChart.rows.map((row) => (
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
+            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
+              {row.weight}
+            </span>
+            <div class="text-base font-bold font-mono text-[var(--accent)]">
+              {row.baseline.split(' ')[0]} L
+            </div>
+            <div class="text-[11px] text-[var(--foreground)] font-mono font-medium">
+              {row.active.split(' ')[0]} L (act.)
+            </div>
+            <span class="text-[11px] text-[var(--muted-foreground)] block pt-0.5">
+              {row.glasses[lang] || row.glasses.en}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- ═══════════════════ 0C. CALORIE DEFICIT QUICK REFERENCE GRID ═══════════════════ -->
+  {effectiveSlug === 'calorie-calculator' && (
+    <div class="space-y-4">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+            {calorieDeficitQuickGrid.badge[lang] || calorieDeficitQuickGrid.badge.en}
+          </span>
+          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
+            {calorieDeficitQuickGrid.title[lang] || calorieDeficitQuickGrid.title.en}
+          </h3>
+        </div>
+        <p class="text-xs text-[var(--muted-foreground)]">
+          {calorieDeficitQuickGrid.note[lang] || calorieDeficitQuickGrid.note.en}
+        </p>
+      </div>
+
+      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        {calorieDeficitQuickGrid.items.map((item) => (
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
+            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
+              {item.tdee}
+            </span>
+            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
+              {calorieDeficitQuickGrid.mildLabel[lang] || calorieDeficitQuickGrid.mildLabel.en}: <span class="font-bold text-[var(--foreground)]">{item.mild}</span>
+            </div>
+            <div class="text-base font-bold font-mono text-[var(--accent)]">
+              {item.standard}
+            </div>
+            <span class="text-[11px] text-[var(--muted-foreground)] block pt-0.5">
+              {calorieDeficitQuickGrid.paceLabel[lang] || calorieDeficitQuickGrid.paceLabel.en}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- ═══════════════════ 0B. PROTEIN INTAKE QUICK REFERENCE GRID ═══════════════════ -->
+  {effectiveSlug === 'protein-intake-calculator' && (
+    <div class="space-y-4">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+            {proteinQuickChart.badge[lang] || proteinQuickChart.badge.en}
+          </span>
+          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
+            {proteinQuickChart.title[lang] || proteinQuickChart.title.en}
+          </h3>
+        </div>
+        <p class="text-xs text-[var(--muted-foreground)]">
+          {proteinQuickChart.note[lang] || proteinQuickChart.note.en}
+        </p>
+      </div>
+
+      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        {proteinQuickChart.rows.map((row) => (
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
+            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
+              {row.weight}
+            </span>
+            <div class="text-base font-bold font-mono text-[var(--accent)]">
+              {row.fitness}
+            </div>
+            <div class="text-[11px] text-[var(--foreground)] font-mono font-medium">
+              {row.muscle} (hypertr.)
+            </div>
+            <span class="text-[11px] text-[var(--muted-foreground)] block pt-0.5">
+              {row.perMeal[lang] || row.perMeal.en}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- ═══════════════════ 0D. IDEAL WEIGHT QUICK REFERENCE GRID ═══════════════════ -->
+  {effectiveSlug === 'ideal-weight-calculator' && (
+    <div class="space-y-4">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+            {idealWeightQuickGrid.badge[lang] || idealWeightQuickGrid.badge.en}
+          </span>
+          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
+            {idealWeightQuickGrid.title[lang] || idealWeightQuickGrid.title.en}
+          </h3>
+        </div>
+        <p class="text-xs text-[var(--muted-foreground)]">
+          {idealWeightQuickGrid.note[lang] || idealWeightQuickGrid.note.en}
+        </p>
+      </div>
+
+      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        {idealWeightQuickGrid.items.map((item) => (
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
+            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
+              {item.height}
+            </span>
+            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
+              {idealWeightQuickGrid.maleLabel[lang] || idealWeightQuickGrid.maleLabel.en}: <span class="font-bold text-[var(--accent)]">{item.male}</span>
+            </div>
+            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
+              {idealWeightQuickGrid.femaleLabel[lang] || idealWeightQuickGrid.femaleLabel.en}: <span class="font-bold text-[var(--foreground)]">{item.female}</span>
+            </div>
+            <div class="text-[10px] text-[var(--muted-foreground)] pt-1 border-t border-[var(--border)]/50">
+              {item.who}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- ═══════════════════ 0E. LEAN BODY MASS QUICK REFERENCE GRID ═══════════════════ -->
+  {effectiveSlug === 'lean-body-mass-calculator' && (
+    <div class="space-y-4">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+            {lbmQuickGrid.badge[lang] || lbmQuickGrid.badge.en}
+          </span>
+          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
+            {lbmQuickGrid.title[lang] || lbmQuickGrid.title.en}
+          </h3>
+        </div>
+        <p class="text-xs text-[var(--muted-foreground)]">
+          {lbmQuickGrid.note[lang] || lbmQuickGrid.note.en}
+        </p>
+      </div>
+
+      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        {lbmQuickGrid.items.map((item) => (
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
+            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
+              {item.weight}
+            </span>
+            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
+              {lbmQuickGrid.maleLabel[lang] || lbmQuickGrid.maleLabel.en}: <span class="font-bold text-[var(--accent)]">{item.male}</span> <span class="text-[10px]">({item.maleRatio})</span>
+            </div>
+            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
+              {lbmQuickGrid.femaleLabel[lang] || lbmQuickGrid.femaleLabel.en}: <span class="font-bold text-[var(--foreground)]">{item.female}</span> <span class="text-[10px]">({item.femaleRatio})</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- ═══════════════════ 0F. BODY FAT PERCENTAGE QUICK REFERENCE GRID ═══════════════════ -->
+  {effectiveSlug === 'body-fat-calculator' && (
+    <div class="space-y-4">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+            {bodyFatQuickGrid.badge[lang] || bodyFatQuickGrid.badge.en}
+          </span>
+          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
+            {bodyFatQuickGrid.title[lang] || bodyFatQuickGrid.title.en}
+          </h3>
+        </div>
+        <p class="text-xs text-[var(--muted-foreground)]">
+          {bodyFatQuickGrid.note[lang] || bodyFatQuickGrid.note.en}
+        </p>
+      </div>
+
+      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        {bodyFatQuickGrid.items.map((item) => (
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
+            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
+              {item.category[lang] || item.category.en}
+            </span>
+            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
+              {bodyFatQuickGrid.menLabel[lang] || bodyFatQuickGrid.menLabel.en}: <span class="font-bold text-[var(--accent)]">{item.men}</span>
+            </div>
+            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
+              {bodyFatQuickGrid.womenLabel[lang] || bodyFatQuickGrid.womenLabel.en}: <span class="font-bold text-[var(--foreground)]">{item.women}</span>
+            </div>
+            <div class="text-[10px] text-[var(--muted-foreground)] pt-1 border-t border-[var(--border)]/50">
+              {item.desc[lang] || item.desc.en}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
   <!-- ═══════════════════ 1. IMMEDIATE VISIBLE FLOW: WHO REFERENCE TABLE ═══════════════════ -->
   {currentData.tableRows && (
     <div class="space-y-4">
@@ -787,44 +900,40 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
     <div class="flex items-center justify-between gap-4 flex-wrap">
       <div class="space-y-1">
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
-          {spectrumUi.badge}
+          {infographic.badge}
         </span>
         <h4 class="text-base sm:text-lg font-display font-bold text-[var(--foreground)] uppercase">
-          {currentData.title} — {spectrumUi.titleSuffix}
+          {currentData.title} — {infographic.titleSuffix}
         </h4>
       </div>
       <span class="text-xs text-[var(--muted-foreground)] font-mono">
-        {spectrumUi.source}
+        {infographic.source}
       </span>
     </div>
 
     <!-- Scalable Visual Spectrum Diagram -->
     <div class="w-full bg-[var(--muted)]/50 rounded-xl p-4 border border-[var(--border)] overflow-x-auto">
       <svg class="w-full min-w-[500px] h-auto max-h-36 text-[var(--foreground)]" viewBox="0 0 800 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={`Infographic illustrating ${currentData.title}`}>
-        <title>{currentData.title} — {spectrumUi.titleSuffix}</title>
-        <desc>{spectrumUi.desc}</desc>
-        <!-- Bar Segments -->
-        <rect x="20" y="20" width="180" height="38" rx="6" fill="#38bdf8" fill-opacity="0.25" stroke="#38bdf8" stroke-width="2"/>
-        <text x="110" y="44" text-anchor="middle" fill="#38bdf8" font-size="12" font-weight="700" font-family="sans-serif">{spectrumUi.underweight}</text>
-        <text x="110" y="78" text-anchor="middle" fill="#8FA7A7" font-size="11" font-family="sans-serif">{spectrumRanges.range1}</text>
-
-        <rect x="210" y="20" width="180" height="38" rx="6" fill="#34d399" fill-opacity="0.25" stroke="#34d399" stroke-width="2"/>
-        <text x="300" y="44" text-anchor="middle" fill="#34d399" font-size="12" font-weight="700" font-family="sans-serif">{spectrumUi.normal}</text>
-        <text x="300" y="78" text-anchor="middle" fill="#8FA7A7" font-size="11" font-family="sans-serif">{spectrumRanges.range2}</text>
-
-        <rect x="400" y="20" width="180" height="38" rx="6" fill="#fbbf24" fill-opacity="0.25" stroke="#fbbf24" stroke-width="2"/>
-        <text x="490" y="44" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700" font-family="sans-serif">{spectrumUi.overweight}</text>
-        <text x="490" y="78" text-anchor="middle" fill="#8FA7A7" font-size="11" font-family="sans-serif">{spectrumRanges.range3}</text>
-
-        <rect x="590" y="20" width="190" height="38" rx="6" fill="#f87171" fill-opacity="0.25" stroke="#f87171" stroke-width="2"/>
-        <text x="685" y="44" text-anchor="middle" fill="#f87171" font-size="12" font-weight="700" font-family="sans-serif">{spectrumUi.obese}</text>
-        <text x="685" y="78" text-anchor="middle" fill="#8FA7A7" font-size="11" font-family="sans-serif">{spectrumRanges.range4}</text>
+        <title>{currentData.title} — {infographic.titleSuffix}</title>
+        <desc>{infographic.desc}</desc>
+        <!-- Dynamic Bar Segments -->
+        {infographic.segments.map((seg, i) => {
+          const x = 20 + i * (segWidth + svgGap);
+          const centerX = x + segWidth / 2;
+          return (
+            <g key={seg.label}>
+              <rect x={x} y="20" width={segWidth} height="38" rx="6" fill={seg.color} fill-opacity="0.25" stroke={seg.color} stroke-width="2"/>
+              <text x={centerX} y="44" text-anchor="middle" fill={seg.color} font-size={numSegments >= 5 ? "11" : "12"} font-weight="700" font-family="sans-serif">{seg.label}</text>
+              <text x={centerX} y="78" text-anchor="middle" fill="#8FA7A7" font-size="11" font-family="sans-serif">{seg.range}</text>
+            </g>
+          );
+        })}
       </svg>
     </div>
 
     <!-- Official Accessible Figcaption & Image Credit Signal -->
     <figcaption id={`fig-caption-${effectiveSlug}`} class="text-xs text-[var(--muted-foreground)] leading-relaxed text-center pt-2">
-      {figCaptionText}
+      {infographic.caption}
     </figcaption>
   </figure>
 
@@ -906,6 +1015,201 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
       <span>{workedExample.disclaimer}</span>
     </div>
   </div>
+
+  <!-- Next Step Contextual Bridge (Maintenance / TDEE -> Macro Calculator) -->
+  {['maintenance-calorie-calculator', 'calorie-calculator', 'tdee-calculator'].includes(effectiveSlug) && (
+    <div class="p-5 md:p-6 rounded-2xl bg-gradient-to-r from-[var(--accent)]/10 via-[var(--card)] to-[var(--card)] border border-[var(--accent)]/30 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="space-y-1">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[var(--accent)]/20 text-[var(--accent)] text-[10px] font-display font-bold uppercase tracking-wider">
+          {lang === 'es' ? 'Siguiente Paso Recomendado' :
+           lang === 'fr' ? 'Prochaine Étape Recommandée' :
+           lang === 'de' ? 'Empfohlener Nächster Schritt' :
+           lang === 'ko' ? '다음 권장 단계' :
+           lang === 'hi' ? 'अनुशंसित अगला कदम' :
+           'Recommended Next Step'}
+        </div>
+        <h4 class="text-sm sm:text-base font-display font-bold text-[var(--foreground)] uppercase">
+          {lang === 'es' ? 'Convierte tus Calorías en Macronutrientes' :
+           lang === 'fr' ? 'Convertissez vos Calories en Macronutriments' :
+           lang === 'de' ? 'Wandeln Sie Ihre Kalorien in Makronährstoffe um' :
+           lang === 'ko' ? '칼로리를 맞춤 탄단지 매크로 비율로 전환하세요' :
+           lang === 'hi' ? 'अपनी कैलोरी को दैनिक मैक्रोज़ में बदलें' :
+           'Turn Your Calories into an Optimal Macro Split'}
+        </h4>
+        <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+          {lang === 'es' ? 'Calcula la distribución óptima de proteínas, carbohidratos y grasas para tu objetivo.' :
+           lang === 'fr' ? 'Calculez la répartition idéale en protéines, glucides et lipides selon vos objectifs.' :
+           lang === 'de' ? 'Berechnen Sie die optimale Protein-, Kohlenhydrat- und Fettverteilung für Ihr Ziel.' :
+           lang === 'ko' ? '체중 유지, 감량 또는 벌크업 목표에 맞춘 최적의 단백질, 탄수화물, 지방 그램을 산출하세요.' :
+           lang === 'hi' ? 'अपने लक्ष्य के अनुसार प्रोटीन, कार्ब्स और वसा का सटीक दैनिक अनुपात जानें।' :
+           'Calculate your personalized protein, carbohydrate, and dietary fat grams for fat loss or muscle gain.'}
+        </p>
+      </div>
+      <a
+        href={`/${lang}/macro-calculator/`}
+        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--accent)] text-[var(--accent-foreground)] font-display font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity shrink-0 shadow-sm"
+      >
+        <span>
+          {lang === 'es' ? 'Calcular Macros →' :
+           lang === 'fr' ? 'Calculer les Macros →' :
+           lang === 'de' ? 'Makros Berechnen →' :
+           lang === 'ko' ? '매크로 계산하기 →' :
+           lang === 'hi' ? 'मैक्रोज़ कैलकुलेट करें →' :
+           'Calculate Macros →'}
+        </span>
+      </a>
+    </div>
+  )}
+
+  <!-- TDEE Specific: Where Your Calories Go (The 4 Pillars of Daily Energy Expenditure) -->
+  {effectiveSlug === 'tdee-calculator' && (
+    <div class="p-6 md:p-7 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm space-y-5">
+      <div class="space-y-1.5">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-500 text-[10px] font-display font-bold uppercase tracking-wider">
+          {lang === 'es' ? 'Fisiología Energética' :
+           lang === 'fr' ? 'Physiologie Énergétique' :
+           lang === 'de' ? 'Energiephysiologie' :
+           lang === 'ko' ? '인체 에너지 대사 생리학' :
+           lang === 'hi' ? 'ऊर्जा शरीरक्रिया विज्ञान' :
+           'Energy Metabolism Breakdown'}
+        </div>
+        <h3 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+          {lang === 'es' ? 'A Dónde Van tus Calorías: Los 4 Pilares del TDEE' :
+           lang === 'fr' ? 'Où Partent vos Calories : Les 4 Piliers du TDEE' :
+           lang === 'de' ? 'Wohin Ihre Kalorien fließen: Die 4 Säulen des TDEE' :
+           lang === 'ko' ? '칼로리는 어디에 쓰이는가: 일일 에너지 소비(TDEE)의 4대 기둥' :
+           lang === 'hi' ? 'आपकी कैलोरी कहाँ खर्च होती है: TDEE के 4 मुख्य घटक' :
+           'Where Your Calories Go: The 4 Pillars of TDEE'}
+        </h3>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
+          {lang === 'es' ? 'El gasto energético total no es solo ejercicio. Se compone de 4 compartimentos metabólicos distintos que determinan tu quema diaria:' :
+           lang === 'fr' ? 'La dépense énergétique journalière ne se résume pas au sport. Elle se divise en 4 compartiments métaboliques distincts :' :
+           lang === 'de' ? 'Der tägliche Gesamtumsatz besteht nicht nur aus Sport. Er setzt sich aus 4 physiologischen Säulen zusammen:' :
+           lang === 'ko' ? '총 일일 에너지 소비량(TDEE)은 단순한 운동량만이 아닙니다. 인체 대사는 4가지 뚜렷한 영역으로 구성됩니다:' :
+           lang === 'hi' ? 'कुल दैनिक ऊर्जा व्यय (TDEE) केवल व्यायाम नहीं है। यह 4 अलग-अलग चयापचय घटकों से मिलकर बनता है:' :
+           'Total Daily Energy Expenditure (TDEE) is not just exercise. It is composed of 4 distinct physiological compartments:'}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+        <!-- Pillar 1: BMR -->
+        <div class="p-4 rounded-xl bg-gradient-to-b from-blue-500/10 via-[var(--card)] to-[var(--card)] border border-blue-500/20 flex flex-col justify-between space-y-2.5">
+          <div class="space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-display font-bold uppercase tracking-wider text-blue-400">BMR</span>
+              <span class="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-[10px] font-mono font-bold">~60–70%</span>
+            </div>
+            <h4 class="text-sm font-display font-bold text-[var(--foreground)]">
+              {lang === 'es' ? 'Metabolismo Basal' :
+               lang === 'fr' ? 'Métabolisme de Base' :
+               lang === 'de' ? 'Grundumsatz' :
+               lang === 'ko' ? '기초대사량' :
+               lang === 'hi' ? 'बेसल मेटाबॉलिज्म' :
+               'Basal Metabolism'}
+            </h4>
+          </div>
+          <p class="text-[11px] text-[var(--muted-foreground)] leading-relaxed">
+            {lang === 'es' ? 'Energía obligatoria para mantener órganos vitales (cerebro, hígado, corazón) y respiración en reposo total.' :
+             lang === 'fr' ? 'Énergie indispensable pour alimenter les organes vitaux (cerveau, foie, cœur) et fonctions cellulaires au repos complet.' :
+             lang === 'de' ? 'Überlebensnotwendige Energie für Vitalorgane (Gehirn, Leber, Herz) und Zellatmung in völliger Ruhe.' :
+             lang === 'ko' ? '완전한 휴식 상태에서 뇌, 간, 심장 등 생명 유지 장기를 가동하고 세포 대사를 유지하는 필수 에너지.' :
+             lang === 'hi' ? 'मस्तिष्क, हृदय और अंगों को पूर्ण विश्राम की स्थिति में जीवित रखने के लिए अनिवार्य न्यूनतम ऊर्जा।' :
+             'Non-negotiable baseline energy required to power vital organs (brain, liver, heart, kidneys) and cellular respiration at complete rest.'}
+          </p>
+          <div class="pt-1.5 border-t border-blue-500/15 text-[10px] font-mono text-blue-400">
+            ~1,730 kcal/day
+          </div>
+        </div>
+
+        <!-- Pillar 2: NEAT -->
+        <div class="p-4 rounded-xl bg-gradient-to-b from-emerald-500/10 via-[var(--card)] to-[var(--card)] border border-emerald-500/20 flex flex-col justify-between space-y-2.5">
+          <div class="space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-display font-bold uppercase tracking-wider text-emerald-400">NEAT</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-mono font-bold">~15%</span>
+            </div>
+            <h4 class="text-sm font-display font-bold text-[var(--foreground)]">
+              {lang === 'es' ? 'Actividad Sin Ejercicio' :
+               lang === 'fr' ? 'Activité Spontanée' :
+               lang === 'de' ? 'Alltagsaktivität' :
+               lang === 'ko' ? '비운동성 활동' :
+               lang === 'hi' ? 'गैर-व्यायाम गति' :
+               'Non-Exercise Activity'}
+            </h4>
+          </div>
+          <p class="text-[11px] text-[var(--muted-foreground)] leading-relaxed">
+            {lang === 'es' ? 'Calorías quemadas en pasos diarios, postura corporal, tareas del hogar e inquietud motora. El factor más variable (200–800 kcal).' :
+             lang === 'fr' ? 'Calories brûlées par la marche, posture, tâches ménagères et agitation motrice. Facteur le plus variable (200–800 kcal).' :
+             lang === 'de' ? 'Kalorien durch Gehen, Haltung, Hausarbeit und Alltagsbewegung. Größte Varianz zwischen Personen (200–800 kcal).' :
+             lang === 'ko' ? '보행, 자세 유지, 집안일, 무의식적 움직임으로 소모되는 칼로리. 개인차를 만드는 최대 변수 (200~800 kcal).' :
+             lang === 'hi' ? 'चलने, खड़े रहने, घरेलू काम और दैनिक गतिविधियों से जलने वाली कैलोरी। व्यक्तियों के बीच सबसे बड़ा अंतर (200-800 कैलोरी)।' :
+             'Calories burned through walking, posture, household chores, and subconscious fidgeting. The single most variable component (200–800 kcal).' }
+          </p>
+          <div class="pt-1.5 border-t border-emerald-500/15 text-[10px] font-mono text-emerald-400">
+            ~400 kcal/day
+          </div>
+        </div>
+
+        <!-- Pillar 3: EAT -->
+        <div class="p-4 rounded-xl bg-gradient-to-b from-purple-500/10 via-[var(--card)] to-[var(--card)] border border-purple-500/20 flex flex-col justify-between space-y-2.5">
+          <div class="space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-display font-bold uppercase tracking-wider text-purple-400">EAT</span>
+              <span class="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-mono font-bold">~5–10%</span>
+            </div>
+            <h4 class="text-sm font-display font-bold text-[var(--foreground)]">
+              {lang === 'es' ? 'Ejercicio Deportivo' :
+               lang === 'fr' ? 'Exercice Physique' :
+               lang === 'de' ? 'Sportliche Bewegung' :
+               lang === 'ko' ? '운동성 열발생' :
+               lang === 'hi' ? 'व्यायाम जनित ऊर्जा' :
+               'Exercise Activity'}
+            </h4>
+          </div>
+          <p class="text-[11px] text-[var(--muted-foreground)] leading-relaxed">
+            {lang === 'es' ? 'Energía consumida durante entrenamientos estructurados de fuerza, cardio, HIIT o práctica de deportes.' :
+             lang === 'fr' ? 'Énergie dépensée lors des séances de musculation, course, HIIT ou sports planifiés.' :
+             lang === 'de' ? 'Verbrauch durch bewusstes Fitnesstraining, Kraftsport, Ausdauerlauf oder Sportarten.' :
+             lang === 'ko' ? '계획된 웨이트 트레이닝, 러닝, 인터벌 운동(HIIT) 등 의도적 스포츠 활동 중 소모되는 열량.' :
+             lang === 'hi' ? 'नियमित जिम, वजन प्रशिक्षण, दौड़ने और खेलों के दौरान खर्च होने वाली ऊर्जा।' :
+             'Energy burned during intentional workouts, resistance lifting, cardiovascular conditioning, and competitive athletic training.'}
+          </p>
+          <div class="pt-1.5 border-t border-purple-500/15 text-[10px] font-mono text-purple-400">
+            ~280 kcal/day
+          </div>
+        </div>
+
+        <!-- Pillar 4: TEF -->
+        <div class="p-4 rounded-xl bg-gradient-to-b from-amber-500/10 via-[var(--card)] to-[var(--card)] border border-amber-500/20 flex flex-col justify-between space-y-2.5">
+          <div class="space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-display font-bold uppercase tracking-wider text-amber-400">TEF</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-mono font-bold">~8–10%</span>
+            </div>
+            <h4 class="text-sm font-display font-bold text-[var(--foreground)]">
+              {lang === 'es' ? 'Efecto Térmico Alimentos' :
+               lang === 'fr' ? 'Effet Thermique Aliments' :
+               lang === 'de' ? 'Nahrungsthermogenese' :
+               lang === 'ko' ? '식사성 열발생' :
+               lang === 'hi' ? 'भोजन का थर्मिक प्रभाव' :
+               'Thermic Effect of Food'}
+            </h4>
+          </div>
+          <p class="text-[11px] text-[var(--muted-foreground)] leading-relaxed">
+            {lang === 'es' ? 'Costo metabólico de digestión: la proteína quema 20–30% de sus calorías procesándose; los carbohidratos 5–10% y las grasas 0–3%.' :
+             lang === 'fr' ? "Coût digestif : les protéines brûlent 20–30% de leurs calories à l'assimilation, les glucides 5–10%, les lipides 0–3%." :
+             lang === 'de' ? 'Verdauungsenergie: Protein verbrennt 20–30% seiner Kalorien beim Verstoffwechseln, Kohlenhydrate 5–10%, Fett 0–3%.' :
+             lang === 'ko' ? '소화 흡수 대사 비용: 단백질은 자체 칼로리의 20~30%를 소화에 소모하며, 탄수화물은 5~10%, 지방은 0~3%를 소모합니다.' :
+             lang === 'hi' ? 'पाचन लागत: प्रोटीन अपने कैलोरी का 20-30% पचाने में जला देता है, कार्बोहाइड्रेट 5-10%, और वसा 0-3%।' :
+             'Digestive metabolic cost: protein expends 20–30% of its calories during assimilation, carbohydrates 5–10%, and dietary fats 0–3%.'}
+          </p>
+          <div class="pt-1.5 border-t border-amber-500/15 text-[10px] font-mono text-amber-400">
+            ~272 kcal/day
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
 
   <!-- ═══════════════════ 4. COLLAPSIBLE ACCORDION: FORMULA DETAILS, INPUT VARIABLES & MEASUREMENT UNITS ═══════════════════ -->
   <details class="group rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm transition-all overflow-hidden">

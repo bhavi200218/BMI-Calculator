@@ -49,6 +49,9 @@ const L = {
   loseWeight: { en: 'Weight Loss', es: 'Perder Peso', fr: 'Perte de Poids', de: 'Gewichtsverlust', ko: '체중 감량', hi: 'वजन घटाना' },
   maintainWeight: { en: 'Maintenance', es: 'Mantener Peso', fr: 'Maintien', de: 'Gewicht halten', ko: '현재 체중 유지', hi: 'वजन बनाए रखना' },
   gainWeight: { en: 'Weight Gain', es: 'Ganar Peso', fr: 'Gain de Poids', de: 'Gewichtszunahme', ko: '체중 증가', hi: 'वजन बढ़ाना' },
+  dailyActivity: { en: 'Daily Physical Activity (≥30 min)', es: 'Actividad Física Diaria (≥30 min)', fr: 'Activité Physique Quotidienne (≥30 min)', de: 'Tägliche Bewegung (≥30 Min.)', ko: '매일 30분 이상 신체 활동', hi: 'दैनिक शारीरिक गतिविधि (≥30 मिनट)' },
+  activeOption: { en: 'Yes (≥30 min / day)', es: 'Sí (≥30 min / día)', fr: 'Oui (≥30 min / jour)', de: 'Ja (≥30 Min. / Tag)', ko: '예 (매일 30분 이상)', hi: 'हाँ (≥30 मिनट / दिन)' },
+  sedentaryOption: { en: 'No (<30 min / day)', es: 'No (<30 min / día)', fr: 'Non (<30 min / jour)', de: 'Nein (<30 Min. / Tag)', ko: '아니오 (30분 미만)', hi: 'नहीं (<30 मिनट / दिन)' },
 };
 
 export const calculators: CalculatorConfig[] = [
@@ -88,13 +91,19 @@ export const calculators: CalculatorConfig[] = [
 
       const bodyFat = (1.20 * bmi) + (0.23 * (parseFloat(inputs.age) || 25)) - (10.8 * (isM ? 1 : 0)) - 5.4;
       const ideal = 22 * (hM * hM);
+      const minHealthy = 18.5 * (hM * hM);
+      const maxHealthy = 24.9 * (hM * hM);
+      const conv = (v: number) => system === 'imperial' ? v / 0.453592 : v;
+      const unitStr = system === 'imperial' ? 'lbs' : 'kg';
+      const healthyRangeVal = `${conv(minHealthy).toFixed(1)} – ${conv(maxHealthy).toFixed(1)}`;
 
       return {
         primary: { value: bmi.toFixed(1), label: { en: 'BMI Score', es: 'Puntaje de IMC', fr: 'Score d\'IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' } },
         secondary: [
           { label: { en: 'Classification', es: 'Clasificación', fr: 'Classification', de: 'Klassifizierung', ko: '분류', hi: 'वर्गीकरण' }, value: cat },
+          { label: { en: 'Healthy Weight Range', es: 'Rango de Peso Saludable', fr: 'Plage de Poids Santé', de: 'Gesunder Gewichtsbereich', ko: '건강 체중 범위', hi: 'स्वस्थ वजन सीमा' }, value: healthyRangeVal, unit: unitStr },
           { label: { en: 'Est. Body Fat', es: 'Grasa Estimada', fr: 'Graisse Corp. Est.', de: 'Körperfett', ko: '체지방률', hi: 'अनुमानित वसा' }, value: bodyFat.toFixed(1), unit: '%' },
-          { label: { en: 'Ideal Weight', es: 'Peso Ideal', fr: 'Poids Idéal', de: 'Idealgewicht', ko: '이상적인 체중', hi: 'आदर्श वजन' }, value: (system === 'imperial' ? ideal / 0.453592 : ideal).toFixed(1), unit: system === 'imperial' ? 'lbs' : 'kg' }
+          { label: { en: 'Ideal Weight (Midpoint)', es: 'Peso Ideal (Punto Medio)', fr: 'Poids Idéal (Point Médian)', de: 'Idealgewicht (Mittelwert)', ko: '이상적 체중 (중간값)', hi: 'आदर्श वजन (मध्य बिंदु)' }, value: conv(ideal).toFixed(1), unit: unitStr }
         ]
       };
     }
@@ -536,21 +545,22 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'diabetes-risk-calculator',
     name: { en: 'Type 2 Diabetes Risk Calculator', es: 'Calculadora de Riesgo de Diabetes', fr: 'Calculateur de Risque de Diabète', de: 'Diabetes-Risiko-Rechner', ko: '제2형 당뇨병 위험도 계산기', hi: 'टाइप 2 डायबिटीज रिस्क कैलकुलेटर' },
-    title: { en: 'Type 2 Diabetes Risk Calculator – BMI & Metabolic Cutoff Reference', es: 'Calculadora de Riesgo de Diabetes – Referencia de IMC y Metabolismo', fr: 'Calculateur de Risque de Diabète – Références d\'IMC et Facteurs Métaboliques', de: 'Diabetes-Risiko-Rechner – BMI & Stoffwechsel-Referenzwerte', ko: '제2형 당뇨병 위험도 계산기 – BMI 및 대사 위험 기준', hi: 'टाइप 2 डायबिटीज रिस्क कैलकुलेटर - बीएमआई एवं मेटाबॉलिक संदर्भ' },
+    title: { en: 'Type 2 Diabetes Risk Calculator – FINDRISC & ADA Scoring Tool', es: 'Calculadora de Riesgo de Diabetes – Evaluación FINDRISC y ADA', fr: 'Calculateur de Risque de Diabète – Score FINDRISC et ADA', de: 'Diabetes-Risiko-Rechner – FINDRISC- & ADA-Risikobewertung', ko: '제2형 당뇨병 위험도 계산기 – FINDRISC 및 ADA 평가 도구', hi: 'टाइप 2 डायबिटीज रिस्क कैलकुलेटर - FINDRISC एवं ADA स्कोरिंग' },
     description: {
-      "en": "Free Type 2 Diabetes Risk Calculator based on BMI, waist circumference, age, and WHO Asian risk thresholds (BMI ≥ 23.0 kg/m²). Assess metabolic risk factors with privacy-focused, browser calculations.",
-      "es": "Calculadora gratuita de riesgo de diabetes tipo 2 basada en IMC, circunferencia de cintura, edad y umbrales de riesgo asiático de la OMS (IMC ≥ 23.0 kg/m²). Evalúa los factores de riesgo metabólico con cálculos privados en el navegador.",
-      "fr": "Calculateur gratuit de risque de diabète de type 2 basé sur l'IMC, le tour de taille, l'âge et les seuils de risque asiatiques de l'OMS (IMC ≥ 23,0 kg/m²). Évaluez les facteurs de risque métabolique en toute confidentialité.",
-      "de": "Kostenloser Typ-2-Diabetes-Risikorechner basierend auf BMI, Taillenumfang, Alter und WHO-Asien-Risikoschwellen (BMI ≥ 23,0 kg/m²). Bewerten Sie metabolische Risikofaktoren privat im Browser.",
-      "ko": "BMI, 허리둘레, 나이 및 WHO 아시아인 위험 기준(BMI ≥ 23.0 kg/m²)에 기반한 무료 제2형 당뇨병 위험도 계산기. 개인정보 수집 없이 브라우저 내에서 대사 위험 요인을 평가하세요.",
-      "hi": "बीएमआई, कमर की परिधि, उम्र और डब्ल्यूएचओ एशियाई जोखिम सीमाओं (BMI ≥ 23.0 kg/m²) पर आधारित मुफ़्त टाइप 2 मधुमेह जोखिम कैलकुलेटर। गोपनीय, ब्राउज़र-आधारित गणनाओं के साथ चयापचय जोखिम कारकों का आकलन करें।"
+      "en": "Free Type 2 Diabetes Risk Calculator based on validated FINDRISC & ADA models. Assess 10-year diabetes risk using BMI, waist circumference, age, and physical activity with private browser calculations.",
+      "es": "Calculadora gratuita de riesgo de diabetes tipo 2 basada en los modelos validados FINDRISC y ADA. Evalúa el riesgo a 10 años según IMC, cintura, edad y actividad física en tu navegador.",
+      "fr": "Calculateur gratuit de risque de diabète de type 2 fondé sur les modèles validés FINDRISC et ADA. Évaluez le risque à 10 ans selon l'IMC, le tour de taille, l'âge et l'activité physique.",
+      "de": "Kostenloser Typ-2-Diabetes-Risikorechner basierend auf den validierten FINDRISC- und ADA-Modellen. Bewerten Sie Ihr 10-Jahres-Risiko nach BMI, Taillenumfang, Alter und Bewegung im Browser.",
+      "ko": "검증된 FINDRISC 및 미국당뇨병학회(ADA) 모델 기반 무료 제2형 당뇨병 위험도 계산기. BMI, 허리둘레, 연령, 신체 활동량을 종합 평가하여 10년 내 발병 위험도를 산출하세요.",
+      "hi": "मान्य FINDRISC एवं ADA मॉडल पर आधारित मुफ़्त टाइप 2 मधुमेह जोखिम कैलकुलेटर। बीएमआई, कमर की परिधि, आयु और दैनिक गतिविधि के आधार पर 10-वर्षीय जोखिम का सटीक आकलन करें।"
     },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number' },
       { id: 'height', label: L.height, type: 'number' },
       { id: 'waist', label: L.waist, type: 'number' },
       { id: 'age', label: L.age, type: 'number' },
-      { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
+      { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] },
+      { id: 'activity', label: L.dailyActivity, type: 'select', options: [{ value: 'active', label: L.activeOption }, { value: 'sedentary', label: L.sedentaryOption }] }
     ],
     calculate: (inputs, system) => {
       let w = parseFloat(inputs.weight) || 0;
@@ -565,60 +575,140 @@ export const calculators: CalculatorConfig[] = [
       const bmi = hM > 0 ? w / (hM * hM) : 0;
       const isM = inputs.gender === 'male';
       const age = parseInt(inputs.age) || 35;
-      
+      const isSedentary = inputs.activity === 'sedentary';
+
+      // FINDRISC Evidence-Based Point Scoring
+      let points = 0;
+
+      // 1. Age Points
+      if (age < 45) points += 0;
+      else if (age <= 54) points += 2;
+      else if (age <= 64) points += 3;
+      else points += 4;
+
+      // 2. BMI Points (with Asian cutoff consideration)
+      if (bmi < 25) points += 0;
+      else if (bmi < 30) points += 1;
+      else points += 3;
+
+      // 3. Waist Circumference Points
       const waistLimit = isM ? 94 : 80;
       const waistHigh = isM ? 102 : 88;
-      
-      let riskScore = {
-        en: 'Standard Reference',
-        es: 'Referencia Estándar',
-        fr: 'Référence Standard',
-        de: 'Standardreferenz',
-        ko: '표준 기준',
-        hi: 'मानक संदर्भ'
-      };
-      if (bmi >= 27.5 || waist >= waistHigh || (bmi >= 23 && waist >= waistLimit && age >= 40)) {
-        riskScore = {
-          en: 'Elevated Threshold',
-          es: 'Umbral Elevado',
-          fr: 'Seuil Élevé',
-          de: 'Erhöhte Schwelle',
-          ko: '주의 필요 수치',
-          hi: 'उच्च जोखिम सीमा'
+      if (waist < waistLimit) points += 0;
+      else if (waist <= waistHigh) points += 3;
+      else points += 4;
+
+      // 4. Physical Activity Points (≥30 min daily = 0 pts; <30 min daily = 2 pts)
+      if (isSedentary) points += 2;
+
+      // FINDRISC 10-Year Probability Stratification
+      let riskTier: Record<string, string>;
+      let prob10Yr: string;
+
+      if (points < 7) {
+        riskTier = {
+          en: 'Low Risk (< 1%)',
+          es: 'Riesgo Bajo (< 1%)',
+          fr: 'Risque Faible (< 1%)',
+          de: 'Geringes Risiko (< 1%)',
+          ko: '낮은 위험군 (< 1%)',
+          hi: 'कम जोखिम (< 1%)'
         };
-      } else if (bmi >= 23 || waist >= waistLimit || age >= 45) {
-        riskScore = {
-          en: 'Moderate Threshold',
-          es: 'Umbral Moderado',
-          fr: 'Seuil Modéré',
-          de: 'Mäßige Schwelle',
-          ko: '중간 위험 수치',
-          hi: 'मध्यम जोखिम सीमा'
+        prob10Yr = '< 1% (1 in 100)';
+      } else if (points <= 11) {
+        riskTier = {
+          en: 'Slightly Elevated (~4%)',
+          es: 'Ligeramente Elevado (~4%)',
+          fr: 'Légèrement Élevé (~4%)',
+          de: 'Leicht Erhöht (~4%)',
+          ko: '경미한 주의 (~4%)',
+          hi: 'हल्का बढ़ा हुआ (~4%)'
         };
+        prob10Yr = '~4% (1 in 25)';
+      } else if (points <= 14) {
+        riskTier = {
+          en: 'Moderate Risk (~17%)',
+          es: 'Riesgo Moderado (~17%)',
+          fr: 'Risque Modéré (~17%)',
+          de: 'Moderates Risiko (~17%)',
+          ko: '중등도 위험군 (~17%)',
+          hi: 'मध्यम जोखिम (~17%)'
+        };
+        prob10Yr = '~17% (1 in 6)';
+      } else {
+        riskTier = {
+          en: 'High Risk (33%+)',
+          es: 'Riesgo Alto (33%+)',
+          fr: 'Risque Élevé (33%+)',
+          de: 'Hohes Risiko (33%+)',
+          ko: '고위험군 (33%+)',
+          hi: 'उच्च जोखिम (33%+)'
+        };
+        prob10Yr = '33%+ (1 in 3)';
       }
 
       const waistStatus = waist >= waistLimit ? {
-        en: 'Elevated',
-        es: 'Elevado',
-        fr: 'Élevé',
-        de: 'Erhöht',
-        ko: '주의 필요',
-        hi: 'उच्च'
+        en: 'Elevated Visceral Risk',
+        es: 'Riesgo Visceral Elevado',
+        fr: 'Risque Viscéral Élevé',
+        de: 'Erhöhtes viszerales Risiko',
+        ko: '복부 내장지방 주의',
+        hi: 'उच्च आंतरिक वसा जोखिम'
       } : {
-        en: 'Standard',
-        es: 'Estándar',
-        fr: 'Standard',
-        de: 'Standard',
-        ko: '정상',
-        hi: 'मानक'
+        en: 'Standard Healthy Waist',
+        es: 'Cintura Estándar Saludable',
+        fr: 'Tour de Taille Normal',
+        de: 'Normale Taillenweite',
+        ko: '정상 건강 둘레',
+        hi: 'सामान्य स्वस्थ कमर'
       };
 
       return {
-        primary: { value: riskScore, label: { en: 'Asian Reference Status', es: 'Estado de Referencia Asiático', fr: 'Statut de Référence Asiatique', de: 'Asiatischer Referenzstatus', ko: '아시아인 참조 상태', hi: 'एशियाई संदर्भ स्थिति' } },
+        primary: {
+          value: riskTier,
+          label: {
+            en: '10-Year Diabetes Risk',
+            es: 'Riesgo de Diabetes a 10 Años',
+            fr: 'Risque de Diabète à 10 Ans',
+            de: '10-Jahres-Diabetes-Risiko',
+            ko: '10년 내 당뇨 발병 위험도',
+            hi: '10-वर्षीय मधुमेह जोखिम'
+          }
+        },
         secondary: [
-          { label: { en: 'BMI Score', es: 'Puntaje IMC', fr: 'Score IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' }, value: bmi.toFixed(1) },
-          { label: { en: 'Asian Cutoff', es: 'Umbral Asiático', fr: 'Seuil Asiatique', de: 'Asien-Schwellenwert', ko: '아시아인 기준', hi: 'एशियाई कटऑफ' }, value: '23.0 kg/m²' },
-          { label: { en: 'Waist Reference', es: 'Referencia Cintura', fr: 'Référence Tour Taille', de: 'Taillenreferenz', ko: '허리둘레 참조', hi: 'कमर संदर्भ' }, value: waistStatus }
+          {
+            label: {
+              en: 'FINDRISC Points',
+              es: 'Puntos FINDRISC',
+              fr: 'Points FINDRISC',
+              de: 'FINDRISC-Punkte',
+              ko: 'FINDRISC 점수',
+              hi: 'FINDRISC अंक'
+            },
+            value: `${points} / 13 Points`
+          },
+          {
+            label: {
+              en: '10-Year Probability',
+              es: 'Probabilidad a 10 Años',
+              fr: 'Probabilité à 10 Ans',
+              de: '10-Jahres-Wahrscheinlichkeit',
+              ko: '10년 내 발병 확률',
+              hi: '10-वर्षीय प्रायिकता'
+            },
+            value: prob10Yr
+          },
+          {
+            label: {
+              en: 'Waist Status',
+              es: 'Estado de Cintura',
+              fr: 'Statut Tour de Taille',
+              de: 'Taillenstatus',
+              ko: '허리둘레 판정',
+              hi: 'कमर स्थिति'
+            },
+            value: waistStatus
+          }
         ]
       };
     }

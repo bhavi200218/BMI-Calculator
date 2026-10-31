@@ -7,6 +7,7 @@ import LatestArticles from '../../components/LatestArticles.astro';
 import ToolSEOContent from '../../components/ToolSEOContent.astro';
 import ThreeDBodyVisualizer from '../../components/ThreeDBodyVisualizer.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
+import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 import IndianBmiClinicalGuide from '../../components/IndianBmiClinicalGuide.astro';
 import { seoDatabase } from '../../data/seoDatabase';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
@@ -170,26 +171,27 @@ const relevantArticlesBySlug: Record<string, string[]> = {
   '3d-body-visualizer': ['what-is-bmi', 'bmi-vs-body-fat', 'bmi-chart-for-men-women'],
   'bmi-chart': ['bmi-chart-for-men-women', 'bmi-chart', 'bmi-by-age'],
   'healthy-weight-by-height': ['healthy-weight-chart', 'bmi-by-age', 'bmi-calculator-teens'],
-  'bmi-calculator-for-indians': ['healthy-bmi-range-indians', 'bmi-calculator-india'],
-  'asian-bmi-calculator': ['what-is-bmi', 'bmi-chart', 'is-bmi-accurate'],
+  'bmi-calculator-for-indians': ['healthy-bmi-range-indians', 'bmi-calculator-india', 'waist-to-hip-ratio-guide'],
+  'bmi-calculator-india': ['healthy-bmi-range-indians', 'bmi-calculator-india', 'waist-to-hip-ratio-guide'],
+  'asian-bmi-calculator': ['healthy-bmi-range-indians', 'bmi-calculator-india', 'what-is-bmi'],
   'bmr-calculator': ['bmr-vs-tdee-calculator', 'bmr-formulas-mifflin-vs-harris-benedict', 'how-to-calculate-tdee'],
   'tdee-calculator': ['how-to-calculate-tdee', 'bmr-vs-tdee-calculator', 'walking-calories-and-neat'],
   'maintenance-calorie-calculator': ['how-to-calculate-tdee', 'bmr-vs-tdee-calculator', 'healthy-calorie-deficit-guide'],
-  'calorie-calculator': ['healthy-calorie-deficit-guide', 'how-to-calculate-tdee', 'bmr-vs-tdee-calculator'],
-  'macro-calculator': ['macro-split-calculator-guide', 'daily-protein-intake-science', 'how-to-calculate-tdee'],
-  'body-fat-calculator': ['bmi-vs-body-fat', 'how-to-measure-body-fat-percentage', 'lean-body-mass-calculation-guide'],
-  'lean-body-mass-calculator': ['lean-body-mass-calculation-guide', 'bmi-vs-body-fat', 'how-to-measure-body-fat-percentage'],
-  'ideal-weight-calculator': ['healthy-weight-chart', 'ideal-body-weight-formulas', 'what-is-bmi'],
+  'calorie-calculator': ['healthy-calorie-deficit-guide', 'metabolic-adaptation-weight-loss', 'how-to-calculate-tdee'],
+  'macro-calculator': ['macro-split-calculator-guide', 'daily-protein-intake-science', 'understanding-nutrition-labels'],
+  'body-fat-calculator': ['bmi-vs-body-fat', 'how-to-measure-body-fat-percentage', 'visceral-fat-vs-subcutaneous-fat'],
+  'lean-body-mass-calculator': ['lean-body-mass-calculation-guide', 'how-to-measure-body-fat-percentage', 'daily-protein-intake-science'],
+  'ideal-weight-calculator': ['ideal-body-weight-formulas', 'healthy-weight-chart', 'healthy-weight-strategies'],
   'waist-to-hip-ratio-calculator': ['waist-to-hip-ratio-guide', 'visceral-fat-vs-subcutaneous-fat', 'blood-pressure-and-weight'],
-  'body-surface-area-calculator': ['body-surface-area-mosteller-guide', 'is-bmi-accurate', 'what-is-bmi'],
+  'body-surface-area-calculator': ['body-surface-area-mosteller-guide', 'what-is-bmi', 'lean-body-mass-calculation-guide'],
   'heart-rate-zone-calculator': ['target-heart-rate-training-zones', 'cardiovascular-fitness-resting-heart-rate', 'vo2-max-and-cardio-health'],
   'karvonen-heart-rate-calculator': ['target-heart-rate-training-zones', 'cardiovascular-fitness-resting-heart-rate', 'vo2-max-and-cardio-health'],
   '1rm-calculator': ['one-rep-max-strength-guide', 'resistance-training-metabolism', 'daily-protein-intake-science'],
   'one-rep-max-calculator': ['one-rep-max-strength-guide', 'resistance-training-metabolism', 'daily-protein-intake-science'],
-  'protein-intake-calculator': ['daily-protein-intake-science', 'resistance-training-metabolism', 'macro-split-calculator-guide'],
-  'water-intake-calculator': ['daily-water-intake-guide', 'sleep-and-metabolism', 'walking-calories-and-neat'],
-  'pregnancy-weight-gain-calculator': ['healthy-weight-chart', 'bmi-by-age', 'what-is-bmi'],
-  'diabetes-risk-calculator': ['healthy-bmi-range-indians', 'bmi-by-age', 'visceral-fat-vs-subcutaneous-fat']
+  'protein-intake-calculator': ['daily-protein-intake-science', 'macro-split-calculator-guide', 'resistance-training-metabolism'],
+  'water-intake-calculator': ['daily-water-intake-guide', 'healthy-weight-strategies', 'cardiovascular-fitness-resting-heart-rate'],
+  'pregnancy-weight-gain-calculator': ['healthy-weight-chart', 'healthy-weight-strategies', 'what-is-bmi'],
+  'diabetes-risk-calculator': ['healthy-bmi-range-indians', 'waist-to-hip-ratio-guide', 'visceral-fat-vs-subcutaneous-fat']
 };
 
 const relatedGuidesTitle: Record<string, string> = {
@@ -295,75 +297,6 @@ const relatedGuidesSubtitle: Record<string, string> = {
                 }[lang]}
               </a>
             </p>
-
-            <!-- Quick Jump-Links to Unique Indian Clinical Modules -->
-            <div class="pt-2 flex flex-wrap items-center gap-1.5 text-[11px] font-medium border-t border-amber-500/15">
-              <span class="text-[var(--muted-foreground)] font-semibold mr-0.5">
-                {{
-                  en: 'Jump to Clinical Guide:',
-                  es: 'Ir a la Guía Clínica:',
-                  fr: 'Accès Direct Guide Clinique :',
-                  de: 'Direkt zu klinischen Themen:',
-                  ko: '임상 가이드 바로가기:',
-                  hi: 'त्वरित नैदानिक विषय:'
-                }[lang]}
-              </span>
-              <a href="#thin-fat-phenotype" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--accent)] hover:text-white border border-[var(--border)] transition-colors inline-flex items-center gap-1 text-[var(--foreground)]">
-                <span>🧬</span>
-                <span>{{
-                  en: 'Thin-Fat Phenotype',
-                  es: 'Fenotipo Delgado-Graso',
-                  fr: 'Phénotype Mince-Gras',
-                  de: 'Thin-Fat Phänotyp',
-                  ko: '마른 비만 (Thin-Fat)',
-                  hi: 'थिन-फैट फेनोटाइप'
-                }[lang]}</span>
-              </a>
-              <a href="#waist-guide" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--accent)] hover:text-white border border-[var(--border)] transition-colors inline-flex items-center gap-1 text-[var(--foreground)]">
-                <span>📏</span>
-                <span>{{
-                  en: 'ICMR Waist Guide (90/80cm)',
-                  es: 'Guía Cintura ICMR (90/80cm)',
-                  fr: 'Tour de Taille ICMR (90/80cm)',
-                  de: 'ICMR Taillenumfang (90/80cm)',
-                  ko: 'ICMR 허리둘레 (90/80cm)',
-                  hi: 'कमर गाइड (90/80 सेमी)'
-                }[lang]}</span>
-              </a>
-              <a href="#indian-diet" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--accent)] hover:text-white border border-[var(--border)] transition-colors inline-flex items-center gap-1 text-[var(--foreground)]">
-                <span>🥗</span>
-                <span>{{
-                  en: 'Balanced Indian Thali',
-                  es: 'Thali Indio Equilibrado',
-                  fr: 'Thali Indien Équilibré',
-                  de: 'Ausgewogener Thali-Teller',
-                  ko: '균형 잡힌 탈리 식단',
-                  hi: 'संतुलित भारतीय थाली'
-                }[lang]}</span>
-              </a>
-              <a href="#sample-meal-plans" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--accent)] hover:text-white border border-[var(--border)] transition-colors inline-flex items-center gap-1 text-[var(--foreground)]">
-                <span>📋</span>
-                <span>{{
-                  en: 'Sample Meal Plans',
-                  es: 'Planes de Comidas',
-                  fr: 'Plans de Repas',
-                  de: 'Ernährungspläne',
-                  ko: '식단 구성 예시',
-                  hi: 'आहार योजना (Meal Plans)'
-                }[lang]}</span>
-              </a>
-              <a href="#food-swaps" class="px-2.5 py-1 rounded-lg bg-[var(--card)] hover:bg-[var(--accent)] hover:text-white border border-[var(--border)] transition-colors inline-flex items-center gap-1 text-[var(--foreground)]">
-                <span>🔄</span>
-                <span>{{
-                  en: 'Smart Food Swaps',
-                  es: 'Sustituciones Saludables',
-                  fr: 'Substitutions Saines',
-                  de: 'Smarte Food-Swaps',
-                  ko: '스마트 식재료 대체',
-                  hi: 'स्मार्ट फूड स्वैप'
-                }[lang]}</span>
-              </a>
-            </div>
           </div>
         </aside>
       )}
@@ -403,6 +336,73 @@ const relatedGuidesSubtitle: Record<string, string> = {
                 }[lang]}
               </a>
             </p>
+          </div>
+        </aside>
+      )}
+
+      {calc.slug === 'bmi-calculator' && (
+        <aside class="p-4 sm:p-5 rounded-2xl border border-[var(--border)] bg-[var(--card)] text-xs text-[var(--foreground)] max-w-4xl mx-auto shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] font-bold shrink-0 text-base">🎯</span>
+              <div class="space-y-0.5">
+                <span class="font-bold text-[var(--foreground)] text-sm block">
+                  {{
+                    en: 'Looking for a specialized BMI calculator?',
+                    es: '¿Buscas una calculadora de IMC especializada?',
+                    fr: 'Vous recherchez un calculateur d\'IMC spécialisé ?',
+                    de: 'Suchen Sie nach einem spezialisierten BMI-Rechner?',
+                    ko: '맞춤형 특수 BMI 계산기를 찾으시나요?',
+                    hi: 'क्या आप किसी विशिष्ट बीएमआई कैलकुलेटर की तलाश कर रहे हैं?'
+                  }[lang]}
+                </span>
+                <span class="text-[var(--muted-foreground)] text-xs">
+                  {{
+                    en: 'Standard WHO cutoffs may not reflect ethnic differences or 3D body composition:',
+                    es: 'Los cortes estándar de la OMS pueden no reflejar diferencias étnicas o composición 3D:',
+                    fr: 'Les seuils de l\'OMS peuvent ne pas refléter les variations ethniques ou la silhouette 3D :',
+                    de: 'Standard-WHO-Grenzwerte berücksichtigen ethnische Unterschiede oder 3D-Körperbau oft nicht:',
+                    ko: '표준 WHO 기준은 인종별 체지방 특성이나 3D 체형을 모두 반영하지 못할 수 있습니다:',
+                    hi: 'मानक डब्ल्यूएचओ कटऑफ जातीय भिन्नताओं या 3D शारीरिक संरचना को पूरी तरह नहीं दर्शाते:'
+                  }[lang]}
+                </span>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 pt-1 md:pt-0 shrink-0">
+              <a href={`/${lang}/bmi-calculator-for-indians/`} class="px-3 py-1.5 rounded-lg bg-[var(--muted)]/70 hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
+                <span>🇮🇳</span>
+                {{
+                  en: 'BMI for Indians (ICMR)',
+                  es: 'IMC para Indios (ICMR)',
+                  fr: 'IMC pour Indiens (ICMR)',
+                  de: 'BMI für Inder (ICMR)',
+                  ko: '인도인 전용 BMI (ICMR)',
+                  hi: 'भारतीयों के लिए BMI (ICMR)'
+                }[lang]}
+              </a>
+              <a href={`/${lang}/asian-bmi-calculator/`} class="px-3 py-1.5 rounded-lg bg-[var(--muted)]/70 hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
+                <span>🌏</span>
+                {{
+                  en: 'Asian BMI (WHO WPRO)',
+                  es: 'IMC Asiático (OMS)',
+                  fr: 'IMC Asiatique (OMS)',
+                  de: 'Asiatischer BMI (WHO)',
+                  ko: '아시아인 BMI (WHO)',
+                  hi: 'एशियाई बीएमआई (WHO)'
+                }[lang]}
+              </a>
+              <a href={`/${lang}/3d-bmi-calculator/`} class="px-3 py-1.5 rounded-lg bg-[var(--muted)]/70 hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
+                <span>🧍</span>
+                {{
+                  en: '3D BMI Visualizer',
+                  es: 'Visualizador IMC 3D',
+                  fr: 'Visualiseur IMC 3D',
+                  de: '3D BMI Visualisierer',
+                  ko: '3D 체형 시각화 도구',
+                  hi: '3D बीएमआई विजुअलाइज़र'
+                }[lang]}
+              </a>
+            </div>
           </div>
         </aside>
       )}
