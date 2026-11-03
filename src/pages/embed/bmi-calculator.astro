@@ -6,6 +6,7 @@ import Layout from '../../layouts/Layout.astro';
   title="Real BMI Calculator Widget - Free Embeddable Tool"
   description="Embed the Real BMI Calculator on your website or blog for free."
   robots="noindex, follow"
+  isEmbed={true}
 >
   <div class="w-full h-full p-4 md:p-6 bg-[var(--background)] text-[var(--foreground)] font-sans antialiased flex flex-col justify-between items-center box-border min-h-[550px]">
     
@@ -225,5 +226,23 @@ import Layout from '../../layouts/Layout.astro';
     }
 
     calcBtn.addEventListener('click', calculate);
+
+    // Enter key support for instant calculation
+    const inputElements = [
+      document.getElementById('embed-height-cm'),
+      document.getElementById('embed-height-ft'),
+      document.getElementById('embed-height-in'),
+      weightInput
+    ];
+    inputElements.forEach(function(input) {
+      if (input) {
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            calculate();
+          }
+        });
+      }
+    });
   })();
 </script>

@@ -428,6 +428,102 @@ if (fs.existsSync(path.resolve('dist'))) {
       assert.strictEqual(html.includes('sm:hidden'), false, 'Must NOT contain duplicate sm:hidden table cards');
     });
   });
+
+  // 11.7 Embed Widget dist/ HTML: Completely AdSense-free, CMP-free, CookieBanner-free, and Footer-free
+  runTest('dist/embed/bmi-calculator: 100% AdSense-free, CMP-free, CookieBanner-free, and Footer-free (AdSense Policy Compliant)', () => {
+    const embedHtmlPath = path.resolve('dist/embed/bmi-calculator/index.html');
+    assert.ok(fs.existsSync(embedHtmlPath), `File must exist: ${embedHtmlPath}`);
+    const embedHtml = fs.readFileSync(embedHtmlPath, 'utf8');
+
+    // Must be noindex
+    assert.ok(embedHtml.includes('noindex, follow'), 'Embed page must be noindex');
+
+    // Must NOT contain AdSense auto-ads or account tag
+    assert.strictEqual(embedHtml.includes('adsbygoogle.js'), false, 'Embed page must NOT load adsbygoogle.js');
+    assert.strictEqual(embedHtml.includes('google-adsense-account'), false, 'Embed page must NOT have google-adsense-account tag');
+
+    // Must NOT contain Funding Choices CMP script
+    assert.strictEqual(embedHtml.includes('fundingchoicesmessages.google.com/i/pub'), false, 'Embed page must NOT load Funding Choices CMP script');
+
+    // Must NOT contain Cookie Consent banner or preferences modal
+    assert.strictEqual(embedHtml.includes('cookieConsentBanner'), false, 'Embed page must NOT render cookieConsentBanner');
+    assert.strictEqual(embedHtml.includes('cookiePreferencesSheet'), false, 'Embed page must NOT render cookiePreferencesSheet');
+
+    // Must NOT render full site footer
+    assert.strictEqual(embedHtml.includes('<footer'), false, 'Embed page must NOT render full site footer');
+
+    // Must NOT render slideshow DOM
+    assert.strictEqual(embedHtml.includes('bg-slideshow'), false, 'Embed page must NOT render background slideshow');
+
+    // Must contain functional calculator widget form
+    assert.ok(embedHtml.includes('embed-widget-form'), 'Embed page must render embed-widget-form');
+    assert.ok(embedHtml.includes('Powered by'), 'Embed page must contain attribution backlink');
+  });
+
+  // 12. METHODOLOGY & LIVE CALCULATOR SUITE ALIGNMENT AUDIT
+  runTest('12.1 seoDatabase: ideal-weight-calculator.en formula is in English (no Hindi leakage)', () => {
+    const seoContent = fs.readFileSync(path.resolve('src/data/seoDatabase.ts'), 'utf8');
+    const ibwMatch = seoContent.match(/"ideal-weight-calculator":\s*\{[\s\S]*?"en":\s*\{[\s\S]*?"formulaCode":\s*"([^"]+)"/);
+    assert.ok(ibwMatch, 'ideal-weight-calculator en entry must exist');
+    const formulaCode = ibwMatch[1];
+    assert.ok(formulaCode.includes('IBW (Devine)'), 'Formula must reference Devine');
+    assert.strictEqual(/[\u0900-\u097F]/.test(formulaCode), false, 'Formula code must NOT contain Devanagari characters');
+  });
+
+  runTest('12.2 HubGrid: filters alias slugs so directory buttons link strictly to canonical 200 URLs', () => {
+    const hubGrid = fs.readFileSync(path.resolve('src/components/HubGrid.astro'), 'utf8');
+    assert.ok(hubGrid.includes('aliasSlugs'), 'HubGrid must define aliasSlugs');
+    assert.ok(hubGrid.includes('activeCalculators'), 'HubGrid must filter calculators using activeCalculators');
+    assert.strictEqual(hubGrid.includes('calculators.map'), false, 'HubGrid must NOT map over unfiltered calculators');
+  });
+
+  runTest('12.3 methodology.astro: contains documentation for all 25 calculator slugs', () => {
+    const methodology = fs.readFileSync(path.resolve('src/pages/[lang]/methodology.astro'), 'utf8');
+    const slugs = [...methodology.matchAll(/"slug":\s*"([^"]+)"/g)].map(m => m[1]);
+    assert.strictEqual(slugs.length, 25, 'Methodology matrix must have exactly 25 items');
+    assert.ok(slugs.includes('pregnancy-weight-gain-calculator'), 'Must include pregnancy calculator');
+    assert.ok(slugs.includes('diabetes-risk-calculator'), 'Must include diabetes risk calculator');
+  });
+
+  runTest('12.4 calculatorGuides & methodology: clinical limitations explicitly defined for pregnancy & diabetes', () => {
+    const guides = fs.readFileSync(path.resolve('src/utils/calculatorGuides.ts'), 'utf8');
+    assert.ok(guides.includes('singleton pregnancies'), 'Pregnancy guide must state limitation to singleton pregnancies');
+    assert.ok(guides.includes('preeclampsia'), 'Pregnancy guide must alert on preeclampsia warning signs');
+    assert.ok(guides.includes('Only a doctor can diagnose'), 'Diabetes guide must clarify that only a doctor can diagnose');
+    assert.ok(guides.includes('lifestyle screening guide, not a medical test'), 'Diabetes guide must clarify lifestyle screening guide');
+
+    const methodology = fs.readFileSync(path.resolve('src/pages/[lang]/methodology.astro'), 'utf8');
+    assert.ok(methodology.includes('singleton pregnancies') || methodology.includes('gestational'), 'Methodology must detail pregnancy limitations');
+  });
+
+  runTest('12.5 CalculatorResult: no unsupported medical diagnosis or treatment claims', () => {
+    const resultComp = fs.readFileSync(path.resolve('src/components/CalculatorResult.astro'), 'utf8');
+    assert.strictEqual(resultComp.includes('hasDiagnosticClaim: true'), false, 'CalculatorResult must NOT assert diagnostic claims');
+  });
+
+  runTest('12.6 dist/: all 23 active unique calculators exist across all 6 locales (138 pages)', () => {
+    const activeSlugs = [
+      'bmi-calculator', '3d-bmi-calculator', 'bmi-chart', 'bmi-calculator-for-indians',
+      'healthy-weight-by-height', 'diabetes-risk-calculator', 'asian-bmi-calculator',
+      'bmr-calculator', 'tdee-calculator', 'maintenance-calorie-calculator',
+      'body-fat-calculator', 'lean-body-mass-calculator', 'ideal-weight-calculator',
+      'calorie-calculator', 'protein-intake-calculator', 'water-intake-calculator',
+      'macro-calculator', 'waist-to-hip-ratio-calculator', 'body-surface-area-calculator',
+      'heart-rate-zone-calculator', 'karvonen-heart-rate-calculator', '1rm-calculator',
+      'pregnancy-weight-gain-calculator'
+    ];
+    let count = 0;
+    for (const lang of LOCALES) {
+      for (const slug of activeSlugs) {
+        const filePath = path.resolve(`dist/${lang}/${slug}/index.html`);
+        assert.ok(fs.existsSync(filePath), `Calculator page must exist: dist/${lang}/${slug}/index.html`);
+        const stats = fs.statSync(filePath);
+        assert.ok(stats.size > 1000, `Calculator page dist/${lang}/${slug}/index.html must not be empty`);
+        count++;
+      }
+    }
+    assert.strictEqual(count, 138, 'Must verify all 138 unique calculator locale pages');
+  });
 }
 
 console.log('====================================================');

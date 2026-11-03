@@ -110,23 +110,23 @@ import PageShell from '../../components/PageShell.astro';
           </p>
         </div>
 
-        <!-- 3. 표준 시스템 진단 로그 -->
+        <!-- 3. 표준 시스템 진단 로그 및 Cloudflare 엣지 인프라 -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            3. 표준 시스템 진단 로그
+            3. 표준 시스템 진단 로그 및 Cloudflare 엣지 인프라
           </h2>
           <p>
-            일반적인 웹사이트와 마찬가지로 서버 안정성과 사이버 공격 방어를 위해 비개인적 기술 로그(브라우저 종류, 운영체제)가 자동 생성될 수 있습니다.
+            Real BMI는 Cloudflare Pages의 글로벌 엣지 네트워크를 통해 정적으로 호스팅됩니다. 시스템 진단 로그에는 개인 식별자나 건강 데이터가 일체 포함되지 않습니다.
           </p>
           <p>
-            이러한 로그는 계산기 이용 정보와 철저히 분리되어 있으며 건강 지표는 포함되지 않습니다.
+            이러한 로그는 계산기 이용 정보와 철저히 분리되어 있으며 오직 DDoS 위협 차단과 빠른 페이지 로딩 보장을 위해서만 사용됩니다.
           </p>
         </div>
 
-        <!-- 4. 웹 분석 및 디지털 광고 안내 -->
+        <!-- 4. 웹 분석, Google 동의 모드 v2 및 인증된 CMP 안내 -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            4. 웹 분석 및 디지털 광고 안내
+            4. 웹 분석, Google 동의 모드 v2 및 인증된 CMP 안내
           </h2>
           <p>
             Real BMI는 모든 계산 도구를 무료로 제공하기 위해 건전한 온라인 광고와 통계 분석을 활용합니다:
@@ -134,7 +134,9 @@ import PageShell from '../../components/PageShell.astro';
           <ul class="list-disc pl-6 space-y-1.5">
             <li><strong>Google AdSense:</strong> 제3자 제공업체는 쿠키를 사용하여 사용자의 이전 방문 기록을 바탕으로 광고를 게재합니다.</li>
             <li><strong>맞춤 광고 거부:</strong> <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Google 광고 설정</a> 또는 <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">aboutads.info</a>에서 언제든지 맞춤형 광고를 해제할 수 있습니다.</li>
-            <li><strong>동의 기반 제어:</strong> Google 동의 모드 v2를 지원하여 동의 배너에서 비필수 쿠키의 활성화 여부를 직접 제어할 수 있습니다.</li>
+            <li><strong>Google 동의 모드 v2 (Consent Mode v2):</strong> 기본 상태에서 모든 추적 쿠키가 거부 상태(<code>ad_storage: 'denied'</code>, <code>analytics_storage: 'denied'</code>)로 설정되며, 사용자의 명시적 동의 후에만 활성화됩니다.</li>
+            <li><strong>유럽경제지역(EEA) 및 영국 방문자 (공식 인증 CMP):</strong> IAB TCF v2.2를 준수하는 공식 Google 인증 동의 관리 플랫폼(Google Funding Choices)을 통해 동의 절차를 진행합니다.</li>
+            <li><strong>동의 철회:</strong> 웹사이트 하단의 '쿠키 설정' 링크를 통해 언제든지 동의를 철회할 수 있으며, 철회 시 비필수 추적 쿠키가 브라우저에서 즉시 영구 삭제됩니다.</li>
           </ul>
         </div>
 

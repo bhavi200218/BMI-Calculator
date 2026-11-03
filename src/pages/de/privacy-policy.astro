@@ -110,31 +110,33 @@ import PageShell from '../../components/PageShell.astro';
           </p>
         </div>
 
-        <!-- 3. Technische Serverprotokolle & Diagnosedaten -->
+        <!-- 3. Technische Serverprotokolle & Cloudflare Edge-Infrastruktur -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            3. Technische Serverprotokolle & Diagnosedaten
+            3. Technische Serverprotokolle & Cloudflare Edge-Infrastruktur
           </h2>
           <p>
-            Wie bei Webangeboten üblich, erzeugen unsere Server standardmäßige technische Zugriffsprotokolle (Browsertyp, Betriebssystem), um Angriffe abzuwehren und Ladezeiten zu sichern.
+            Real BMI wird statisch generiert und global über das Edge-Netzwerk von Cloudflare Pages ausgeliefert. Routinemäßige Zugriffsprotokolle enthalten keine persönlichen Identifikatoren oder Gesundheitswerte.
           </p>
           <p>
-            Diese Protokolle sind vollständig von den Rechnern getrennt und enthalten keinerlei gesundheitsbezogene Daten.
+            Diese Protokolle sind vollständig von den Rechnern getrennt und dienen ausschließlich der Abwehr von DDoS-Bedrohungen und der Sicherstellung schneller Antwortzeiten.
           </p>
         </div>
 
-        <!-- 4. Webanalyse, Digitale Werbung & Cookie-Richtlinien -->
+        <!-- 4. Webanalyse, Google Consent Mode v2 & Zertifizierte CMP -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            4. Webanalyse, Digitale Werbung & Cookie-Richtlinien
+            4. Webanalyse, Google Consent Mode v2 & Zertifizierte CMP
           </h2>
           <p>
-            Real BMI finanziert sich über dezente Online-Werbung, um alle Rechner kostenfrei bereitzustellen:
+            Real BMI finanziert sich über datenschutzfreundliche Online-Werbung, um alle Rechner kostenfrei bereitzustellen:
           </p>
           <ul class="list-disc pl-6 space-y-1.5">
             <li><strong>Google AdSense:</strong> Drittanbieter nutzen Cookies, um Anzeigen basierend auf früheren Besuchen auszuspielen.</li>
             <li><strong>Deaktivierung Personalisierter Werbung:</strong> Sie können personalisierte Werbung jederzeit über <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Google Ads Settings</a> oder <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">aboutads.info</a> abschalten.</li>
-            <li><strong>Google Consent Mode v2:</strong> Optionale Werbe- und Analysecookies werden nur aktiviert, wenn Sie im Cookie-Banner zustimmen.</li>
+            <li><strong>Google Consent Mode v2:</strong> Wir implementieren Consent Mode v2 mit standardmäßig verweigertem Status (<code>ad_storage: 'denied'</code>, <code>analytics_storage: 'denied'</code>). Optionale Cookies werden erst nach ausdrücklicher Einwilligung aktiviert.</li>
+            <li><strong>Besucher aus EWR & UK (Google-zertifizierte CMP):</strong> Die Einwilligung wird über eine offizielle Google-zertifizierte Consent-Management-Plattform (Google Funding Choices mit IAB TCF v2.2) eingeholt.</li>
+            <li><strong>Widerruf der Einwilligung:</strong> Sie können Ihre Einstellungen jederzeit über den Link "Cookie-Einstellungen" im Footer ändern oder widerrufen; Tracking-Cookies werden dabei sofort bereinigt.</li>
           </ul>
         </div>
 

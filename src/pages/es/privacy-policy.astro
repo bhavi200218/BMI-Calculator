@@ -110,23 +110,23 @@ import PageShell from '../../components/PageShell.astro';
           </p>
         </div>
 
-        <!-- 3. Diagnósticos Técnicos Estándar -->
+        <!-- 3. Diagnósticos Técnicos e Infraestructura Cloudflare -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            3. Diagnósticos Técnicos Estándar
+            3. Diagnósticos Técnicos e Infraestructura Cloudflare
           </h2>
           <p>
-            Nuestros servidores generan registros rutinarios de acceso técnico no personal (como tipo de navegador y sistema operativo) para prevenir ciberataques y garantizar tiempos de carga rápidos.
+            Real BMI se genera estáticamente y se sirve globalmente a través de la red perimetral de Cloudflare Pages. Los registros técnicos de diagnóstico no contienen identificadores personales ni métricas de salud.
           </p>
           <p>
-            Estos registros están completamente disociados del uso de las calculadoras y no contienen ningún dato de salud.
+            Estos registros están completamente disociados del uso de las calculadoras y se emplean exclusivamente para mitigar amenazas DDoS y garantizar alta velocidad.
           </p>
         </div>
 
-        <!-- 4. Publicidad Digital y Opciones de Cookies -->
+        <!-- 4. Publicidad Digital, Google Consent Mode v2 y CMP -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            4. Publicidad Digital y Opciones de Cookies
+            4. Publicidad Digital, Google Consent Mode v2 y CMP
           </h2>
           <p>
             Real BMI se financia mediante publicidad digital respetuosa para mantener todos sus calculadores gratuitos y accesibles:
@@ -134,7 +134,9 @@ import PageShell from '../../components/PageShell.astro';
           <ul class="list-disc pl-6 space-y-1.5">
             <li><strong>Google AdSense:</strong> Proveedores terceros utilizan cookies para mostrar anuncios basados en visitas anteriores a este o a otros sitios.</li>
             <li><strong>Desactivación de Anuncios Personalizados:</strong> Puede desactivar la publicidad personalizada en cualquier momento a través de <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Google Ads Settings</a> o <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">aboutads.info</a>.</li>
-            <li><strong>Gestión de Consentimiento:</strong> Cumplimos con Google Consent Mode v2. Las cookies no esenciales solo se activan si usted da su consentimiento expreso.</li>
+            <li><strong>Google Consent Mode v2:</strong> Implementamos Google Consent Mode v2 con valores denegados por defecto (<code>ad_storage: 'denied'</code>, <code>analytics_storage: 'denied'</code>). Las cookies opcionales solo se cargan tras su aprobación explícita.</li>
+            <li><strong>Visitantes del EEE y Reino Unido (CMP Certificada):</strong> El consentimiento se gestiona mediante la Plataforma de Gestión de Consentimiento certificada por Google (Funding Choices con soporte IAB TCF v2.2).</li>
+            <li><strong>Revocación del Consentimiento:</strong> Puede modificar o revocar su autorización en cualquier momento mediante el enlace "Preferencias de Cookies" en el pie de página, purgando de inmediato las cookies de rastreo no esenciales.</li>
           </ul>
         </div>
 

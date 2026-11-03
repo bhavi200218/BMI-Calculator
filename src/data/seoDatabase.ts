@@ -860,9 +860,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Tabla de IMC para Adultos – Consulta de Altura y Peso (kg y cm)",
       "intro": "Tabla oficial de IMC de la OMS para adultos, hombres y mujeres. Calculadora interactiva de escala de IMC, tablas de consulta de altura y peso en sistema métrico (kg y cm), categorías de la OMS y guía de referencia por edad. Uso gratuito con privacidad en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "BMI = kg / m²",
+      "formulaTitle": "Fórmulas de la Tabla de IMC Métrica e Imperial",
+      "formulaDesc": "Métrico: IMC = Peso (kg) / [Altura (m)]² | Imperial: IMC = [Peso (lbs) / Altura (pulgadas)²] × 703",
+      "formulaCode": "IMC = kg / m²",
       "tableTitle": "Categorías Oficiales de IMC para Adultos de la OMS",
       "tableRows": [
         {
@@ -933,9 +933,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Normes de Référence de Santé",
       "title": "Tableau de l'IMC Adultes – Table Poids et Taille",
       "intro": "Tableau d'IMC officiel de l'OMS pour adultes, hommes et femmes. Calculateur d'échelle d'IMC interactif, tableaux de consultation taille-poids en unités métriques (kg et cm), catégories de l'OMS et repères d'âge. Gratuit avec confidentialité sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "BMI = kg / m²",
+      "formulaTitle": "Formules du Tableau d'IMC Métrique et Impérial",
+      "formulaDesc": "Métrique : IMC = Poids (kg) / [Taille (m)]² | Impérial : IMC = [Poids (lbs) / Taille (pouces)²] × 703",
+      "formulaCode": "IMC = kg / m²",
       "tableTitle": "Catégories Officielles d'IMC pour Adultes de l'OMS",
       "tableRows": [
         {
@@ -1006,8 +1006,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Gesundheits-Referenzstandards",
       "title": "BMI-Tabelle für Erwachsene – Größen- & Gewichtstabelle (kg)",
       "intro": "Offizielle WHO BMI-Tabelle für Erwachsene, Männer und Frauen. Interaktiver BMI-Skala-Rechner, Größe-Gewicht-Referenztabellen in metrischen Einheiten (kg & cm), WHO-Kategorien und Altersreferenzwerte. Kostenlos und datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
+      "formulaTitle": "Standardmetrische & Imperiale BMI-Tabellenformeln",
+      "formulaDesc": "Metrisch: BMI = Gewicht (kg) / [Größe (m)]² | Imperial: BMI = [Gewicht (lbs) / Größe (Zoll)²] × 703",
       "formulaCode": "BMI = kg / m²",
       "tableTitle": "Offizielle WHO-BMI-Kategorien für Erwachsene",
       "tableRows": [
@@ -1079,8 +1079,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "건강 참조 표준 지침",
       "title": "성인 BMI 표준 체중표 – 신장 및 체중 비교 차트 (kg 및 cm) – 참조 계산기",
       "intro": "성인 남성과 여성을 위한 공식 WHO BMI 차트입니다. 대화형 BMI 지수 계산기, 신장-체중 미터법 진단표(kg & cm), WHO 체중 범주 및 연령별 건강 체중 참조 지침을 브라우저에서 100% 무료로 확인하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
+      "formulaTitle": "미터법 및 야드파운드법 표준 BMI 산출 공식",
+      "formulaDesc": "미터법: BMI = 체중 (kg) / [신장 (m)]² | 야드파운드법: BMI = [체중 (lbs) / 신장 (인치)²] × 703",
       "formulaCode": "BMI = kg / m²",
       "tableTitle": "WHO 공식 성인 BMI 분류 기준표",
       "tableRows": [
@@ -1152,8 +1152,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "डब्ल्यूएचओ आधिकारिक वयस्क बीएमआई स्केल",
       "title": "वयस्कों के लिए बीएमआई चार्ट - ऊंचाई एवं वजन तालिका",
       "intro": "हमारा विस्तृत बीएमआई चार्ट (BMI Chart) और तालिका वयस्क पुरुषों और महिलाओं के लिए तुरंत दृश्य संदर्भ प्रदान करती है। विश्व स्वास्थ्य संगठन (WHO) और CDC मानकों के अनुसार मीट्रिक (किग्रा और सेमी) और इंपीरियल (पाउंड और इंच) श्रेणियों में अपना बीएमआई देखें।",
-      "formulaTitle": "मानक बीएमआई चार्ट फॉर्मूला",
-      "formulaDesc": "मीट्रिक: बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]²",
+      "formulaTitle": "मीट्रिक एवं इम्पीरियल बीएमआई चार्ट सूत्र",
+      "formulaDesc": "मीट्रिक: बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | इम्पीरियल: बीएमआई = [वजन (पाउंड) / ऊंचाई (इंच)²] × 703",
       "formulaCode": "BMI = kg / m²",
       "tableTitle": "वयस्कों के लिए आधिकारिक डब्ल्यूएचओ बीएमआई श्रेणियां",
       "tableRows": [
@@ -1607,9 +1607,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Tabla de Peso Saludable por Altura – Rango de Peso Ideal",
       "intro": "Calculadora gratuita de peso saludable por altura y matriz de peso corporal ideal. Consulta rangos de peso saludable por altura (cm, pies, pulgadas) según los estándares OMS IMC 18.5 - 24.9 y la fórmula de Devine con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "Min Healthy (kg) = 18.5 × m²  |  Max Healthy (kg) = 24.9 × m²",
+      "formulaTitle": "Ecuaciones de Peso Saludable según la Estatura (OMS y Devine)",
+      "formulaDesc": "Rango Saludable OMS: Peso Mínimo = 18.5 × [Altura (m)]² | Peso Máximo = 24.9 × [Altura (m)]² | Devine Hombres: 50 kg + 2.3 kg/pulgada >5ft | Devine Mujeres: 45.5 kg + 2.3 kg/pulgada >5ft",
+      "formulaCode": "Peso Mín (kg) = 18.5 × m² | Peso Máx (kg) = 24.9 × m²",
       "tableTitle": "Tabla de Peso y Altura para Hombres y Mujeres (Rango Saludable Oficial OMS en kg y lbs)",
       "tableRows": [
         {
@@ -1685,9 +1685,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Normes de Référence de Santé",
       "title": "Tableau du Poids Santé selon la Taille – Plage Idéale",
       "intro": "Calculateur gratuit de poids idéal par taille et matrice de poids santé. Consultez les plages de poids santé selon la taille (cm, pieds, pouces) basées sur les normes OMS IMC 18,5 - 24,9 et la formule de Devine avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "Min Healthy (kg) = 18.5 × m²  |  Max Healthy (kg) = 24.9 × m²",
+      "formulaTitle": "Équations de Poids Idéal et Santé selon la Taille (OMS & Devine)",
+      "formulaDesc": "Plage Santé OMS : Poids Min = 18,5 × [Taille (m)]² | Poids Max = 24,9 × [Taille (m)]² | Devine Hommes : 50 kg + 2,3 kg/pouce >5ft | Devine Femmes : 45,5 kg + 2,3 kg/pouce >5ft",
+      "formulaCode": "Poids Min (kg) = 18,5 × m² | Poids Max (kg) = 24,9 × m²",
       "tableTitle": "Tableau Poids-Taille pour Hommes et Femmes (Plage Santé Officielle OMS en kg et lbs)",
       "tableRows": [
         {
@@ -1763,9 +1763,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Gesundheits-Referenzstandards",
       "title": "Gesundes Gewicht nach Größe – Idealer Gewichtsbereich",
       "intro": "Kostenloser Idealgewicht-nach-Größe-Rechner & Körpergewicht-Matrix. Schlagen Sie gesunde Gewichtsbereiche nach Körpergröße (cm, Fuß, Zoll) basierend auf WHO-BMI-Normen (18,5 - 24,9) und Devine-Formel datenschutzorientiert im Browser nach.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "Min Healthy (kg) = 18.5 × m²  |  Max Healthy (kg) = 24.9 × m²",
+      "formulaTitle": "Gleichungen für Normalgewicht und Idealgewicht nach Körpergröße",
+      "formulaDesc": "WHO-Normalbereich: Mindestgewicht = 18,5 × [Größe (m)]² | Höchstgewicht = 24,9 × [Größe (m)]² | Devine Männer: 50 kg + 2,3 kg/Zoll >5ft | Devine Frauen: 45,5 kg + 2,3 kg/Zoll >5ft",
+      "formulaCode": "Min-Gewicht (kg) = 18,5 × m² | Max-Gewicht (kg) = 24,9 × m²",
       "tableTitle": "Größen- und Gewichtstabelle für Männer & Frauen (Offizieller WHO-Gesundheitsbereich in kg & lbs)",
       "tableRows": [
         {
@@ -1841,9 +1841,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "건강 참조 표준 지침",
       "title": "키별 건강 체중 차트 – 남성 및 여성 이상적인 체중 범위 – 참조 계산기",
       "intro": "신장별 정상 체중 무료 계산기 및 이상적 체중 진단표. 세계보건기구(WHO) BMI 18.5 - 24.9 기준 및 Devine 공식에 따라 신장(cm, 피트, 인치)별 건강한 체중 참조 범위를 브라우저에서 안전하게 조회하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "Min Healthy (kg) = 18.5 × m²  |  Max Healthy (kg) = 24.9 × m²",
+      "formulaTitle": "신장별 WHO 정상 체중 범위 및 Devine 이상 체중 공식",
+      "formulaDesc": "WHO 정상 체중 범위: 최소 체중 = 18.5 × [신장(m)]² | 최대 체중 = 24.9 × [신장(m)]² | 드바인 남성: 50kg + 5피트 초과 인치당 2.3kg | 드바인 여성: 45.5kg + 5피트 초과 인치당 2.3kg",
+      "formulaCode": "최소 체중 (kg) = 18.5 × m² | 최대 체중 (kg) = 24.9 × m²",
       "tableTitle": "남녀 신장별 적정 체중 차트 (WHO 공식 표준 체중 범위 kg 및 lbs)",
       "tableRows": [
         {
@@ -1919,9 +1919,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "डब्ल्यूएचओ एवं डिवाइन संदर्भ तालिका",
       "title": "ऊंचाई के अनुसार स्वस्थ वजन चार्ट – पुरुषों व महिलाओं का आदर्श वजन",
       "intro": "पुरुषों और महिलाओं के लिए ऊंचाई के अनुसार स्वस्थ वजन संदर्भ सीमाओं और हाइट-वेट चार्ट की समीक्षा करें। WHO, CDC और डिवाइन फॉर्मूला के आधार पर किलोग्राम (kg) और पाउंड (lbs) में अपनी ऊंचाई के अनुसार आदर्श वजन खोजें।",
-      "formulaTitle": "ऊंचाई के अनुसार स्वस्थ वजन का गणितीय सूत्र",
-      "formulaDesc": "न्यूनतम स्वस्थ वजन = 18.5 × [ऊंचाई (मीटर)]² | अधिकतम स्वस्थ वजन = 24.9 × [ऊंचाई (मीटर)]²",
-      "formulaCode": "Min (kg) = 18.5 × m²  |  Max (kg) = 24.9 × m²",
+      "formulaTitle": "ऊंचाई के अनुसार स्वस्थ वजन और आदर्श शरीर द्रव्यमान समीकरण",
+      "formulaDesc": "WHO स्वस्थ वजन सीमा: न्यूनतम वजन = 18.5 × [ऊंचाई (मी)]² | अधिकतम वजन = 24.9 × [ऊंचाई (मी)]² | डिवाइन पुरुष: 50 किग्रा + 2.3 किग्रा/इंच (>5 फीट) | डिवाइन महिला: 45.5 किग्रा + 2.3 किग्रा/इंच (>5 फीट)",
+      "formulaCode": "न्यूनतम वजन (kg) = 18.5 × m² | अधिकतम वजन (kg) = 24.9 × m²",
       "tableTitle": "पुरुषों एवं महिलाओं के लिए हाइट-वेट चार्ट (डब्ल्यूएचओ स्वस्थ वजन सीमा)",
       "tableRows": [
         {
@@ -2334,9 +2334,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de IMC Asiático – Estándares de Referencia OMS Asia",
       "intro": "Calculadora de IMC asiático gratuita basada en los cortes asiáticos revisados de la OMS (Saludable: 18.5-22.9, Sobrepeso: 23.0-27.4, Obesidad: ≥ 27.5 kg/m²). Calcula tu IMC étnico y rango de peso saludable con cálculos en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "Asian BMI = kg / m²",
+      "formulaTitle": "Fórmula de IMC Asiático de la OMS (WPRO)",
+      "formulaDesc": "Métrico: IMC = Peso (kg) / [Altura (m)]² | Corte Sobrepeso Asiático: IMC ≥ 23.0 kg/m² | Corte Obesidad Asiática: IMC ≥ 27.5 kg/m²",
+      "formulaCode": "IMC Asiático = kg / m²",
       "tableTitle": "Escala de IMC y Clasificación para Adultos de Asia-Pacífico de la OMS",
       "tableRows": [
         {
@@ -2379,9 +2379,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Normes de Référence de Santé",
       "title": "Calculateur d'IMC Asiatique – Normes de Référence OMS Asie",
       "intro": "Calculateur d'IMC asiatique gratuit basé sur les seuils asiatiques révisés de l'OMS (Normal : 18,5-22,9, Surpoids : 23,0-27,4, Obésité : ≥ 27,5 kg/m²). Calculez votre score d'IMC éthnique et poids idéal avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "Asian BMI = kg / m²",
+      "formulaTitle": "Formule d'IMC Asiatique de l'OMS (WPRO)",
+      "formulaDesc": "Métrique : IMC = Poids (kg) / [Taille (m)]² | Seuil Surpoids Asiatique : IMC ≥ 23,0 kg/m² | Seuil Obésité Asiatique : IMC ≥ 27,5 kg/m²",
+      "formulaCode": "IMC Asiatique = kg / m²",
       "tableTitle": "Échelle et Classification de l'IMC Adulte Asie-Pacifique de l'OMS",
       "tableRows": [
         {
@@ -2424,9 +2424,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "WHO Asien-Pazifik Standards",
       "title": "Asiatischer BMI Rechner – WHO WPRO & ICMR Klassifikation",
       "intro": "Berechnen Sie Ihren Body-Mass-Index nach den offiziellen Leitlinien der WHO-Region Westlicher Pazifik (WPRO) und des Indian Council of Medical Research (ICMR). Asiatische Populationen weisen bereits bei niedrigeren BMI-Werten einen signifikant höheren Körperfettanteil und vermehrt viszerales Bauchfett auf, weshalb standardisierte westliche Grenzwerte das kardiometabolische Risiko unterschätzen.",
-      "formulaTitle": "Asiatische BMI-Berechnung & Spezifische Risikoschwellen",
-      "formulaDesc": "Der mathematische Quotient entspricht der Standardformel: BMI = Körpergewicht (kg) / [Körpergröße (m)]². Die klinische Besonderheit liegt in den adaptierten Schwellenwerten: Bereits ab einem BMI von 23,0 kg/m² gilt eine Person in asiatischen Leitlinien als übergewichtig (erhöhtes Risiko für Typ-2-Diabetes), und ab 27,5 kg/m² liegt Adipositas vor.",
-      "formulaCode": "BMI = kg / m² (Asien-Aktionspunkte: 23,0 & 27,5)",
+      "formulaTitle": "WHO Asiatische BMI-Formel (WPRO-Klassifikation)",
+      "formulaDesc": "Metrisch: BMI = Gewicht (kg) / [Größe (m)]² | Asiatische Übergewichtsschwelle: BMI ≥ 23,0 kg/m² | Asiatische Adipositasschwelle: BMI ≥ 27,5 kg/m²",
+      "formulaCode": "Asiatischer BMI = kg / m²",
       "tableTitle": "WHO WPRO Klassifikationsmatrix für asiatische Erwachsene",
       "tableRows": [
         {
@@ -2487,9 +2487,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "건강 참조 표준 지침",
       "title": "아시아인 전용 BMI 계산기 – WHO 아시아 공중보건 참조 기준",
       "intro": "개정된 WHO 아시아인 판정 기준(정상: 18.5-22.9, 과체중: 23.0-27.4, 비만: ≥ 27.5 kg/m²)에 맞춘 무료 아시아인 BMI 계산기. 아시아인 전용 BMI 점수와 건강 체중 범위를 브라우저에서 안전하게 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "Asian BMI = kg / m²",
+      "formulaTitle": "WHO 서태평양(WPRO) 아시아인 표준 BMI 산출 공식",
+      "formulaDesc": "미터법: BMI = 체중 (kg) / [신장 (m)]² | 아시아인 과체중 주의 기준: BMI ≥ 23.0 kg/m² | 아시아인 비만 판정 기준: BMI ≥ 27.5 kg/m²",
+      "formulaCode": "아시아인 BMI = kg / m²",
       "tableTitle": "WHO 아시아-태평양 성인 BMI 기준치 및 분류 매트릭스",
       "tableRows": [
         {
@@ -2532,9 +2532,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "डब्ल्यूएचओ एशिया-पैसिफिक मानक",
       "title": "एशियाई बीएमआई कैलकुलेटर – डब्ल्यूएचओ एशियाई संदर्भ कटऑफ",
       "intro": "WHO विशेषज्ञ परामर्श मानकों पर आधारित एशियाई बीएमआई कैलकुलेटर। एशियाई आबादी में कम बीएमआई (23.0 kg/m²) पर भी अधिक वसा और स्वास्थ्य जोखिम का मूल्यांकन करें।",
-      "formulaTitle": "डब्ल्यूएचओ एशियाई बीएमआई सूत्र",
-      "formulaDesc": "बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | एशियाई ओवरवेट कटऑफ: 23.0 kg/m²",
-      "formulaCode": "Asian BMI = kg / m²",
+      "formulaTitle": "WHO एशियाई बीएमआई सूत्र (WPRO मानक)",
+      "formulaDesc": "मीट्रिक: बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | एशियाई अधिक वजन सीमा: बीएमआई ≥ 23.0 kg/m² | एशियाई मोटापा सीमा: बीएमआई ≥ 27.5 kg/m²",
+      "formulaCode": "एशियाई बीएमआई = kg / m²",
       "tableTitle": "डब्ल्यूएचओ एशियाई वयस्क बीएमआई वर्गीकरण तालिका",
       "tableRows": [
         {
@@ -3285,9 +3285,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de Calorías de Mantenimiento – Necesidades Diarias",
       "intro": "Calculadora de calorías de mantenimiento gratuita en línea. Calcula tus calorías diarias de mantenimiento, gasto energético total diario (TDEE) y calorías objetivo para pérdida de peso por edad, altura (cm) y peso (kg) con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "Maintenance = BMR × PAL",
+      "formulaTitle": "Matemática de Calorías de Mantenimiento y Balance Energético",
+      "formulaDesc": "Calorías de Mantenimiento = Tasa Metabólica Basal (TMB) × Nivel de Actividad Física (PAL). Consumir tus calorías de mantenimiento equilibra el gasto diario y mantiene tu peso estable.",
+      "formulaCode": "Calorías de Mantenimiento = TMB × Factor de Actividad",
       "tableTitle": "Mantenimiento Calórico y Desglose por Objetivos de Peso",
       "tableRows": [
         {
@@ -3343,9 +3343,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Normes de Référence de Santé",
       "title": "Calculateur de Calories de Maintien – Besoin Calorique",
       "intro": "Calculateur gratuit de calories de maintien en ligne. Calculez vos calories quotidiennes de maintien, votre dépense énergétique totale (TDEE) et vos objectifs de déficit calorigène selon l'âge, la taille (cm) et le poids (kg) avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "Maintenance = BMR × PAL",
+      "formulaTitle": "Calcul des Calories de Maintien et Équilibre Énergétique",
+      "formulaDesc": "Calories de Maintien = Métabolisme de Base (MB) × Niveau d'Activité Physique (NAP). Consommer ce total énergétique stabilise parfaitement votre masse corporelle.",
+      "formulaCode": "Calories de Maintien = MB × Facteur d'Activité",
       "tableTitle": "Maintien Calorique et Répartition selon les Objectifs de Poids",
       "tableRows": [
         {
@@ -3401,9 +3401,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Gesundheits-Referenzstandards",
       "title": "Rechner für Erhaltungskalorien – Kalorienbedarf",
       "intro": "Kostenloser Erhaltungskalorien-Rechner online. Berechnen Sie Ihre täglichen Erhaltungskalorien, Ihren Gesamtenergiebedarf (TDEE) und Zielkalorien zum Abnehmen nach Alter, Größe (cm) und Gewicht (kg) datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "Maintenance = BMR × PAL",
+      "formulaTitle": "Erhaltungskalorien-Berechnung & Energiebilanz",
+      "formulaDesc": "Erhaltungskalorien = Grundumsatz (BMR) × Physisches Aktivitätslevel (PAL). Diese Kalorienmenge gleicht Ihren täglichen Energieverbrauch aus und hält Ihr Gewicht konstant.",
+      "formulaCode": "Erhaltungskalorien = Grundumsatz × Aktivitätsfaktor",
       "tableTitle": "Erhaltungskalorien & Kalorienaufteilung nach Gewichtsziel",
       "tableRows": [
         {
@@ -3459,9 +3459,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "건강 참조 표준 지침",
       "title": "유지 칼로리 계산기 – 일일 에너지 소모량 측정을 위한 참조 도구",
       "intro": "무료 온라인 유지 칼로리 계산기. 나이, 신장(cm), 체중(kg) 및 활동량 계수에 따라 일일 유지 칼로리, 총 에너지 소모량(TDEE) 및 건강한 다이어트 목표 칼로리를 브라우저 내에서 안전하게 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "Maintenance = BMR × PAL",
+      "formulaTitle": "유지 칼로리 산출 공식 및 일일 에너지 균형",
+      "formulaDesc": "유지 칼로리 = 기초대사량(BMR) × 신체활동수준(PAL). 유지 칼로리를 섭취하면 일일 총 에너지 소모량과 균형을 이루어 체중이 안정적으로 유지됩니다.",
+      "formulaCode": "유지 칼로리 = 기초대사량(BMR) × 활동 계수(PAL)",
       "tableTitle": "유지 칼로리 및 체중 조절 목표별 칼로리 산출표",
       "tableRows": [
         {
@@ -3517,9 +3517,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "ऊर्जा संतुलन एवं पोषण योजना",
       "title": "मेंटेनेंस कैलोरी कैलकुलेटर – दैनिक ऊर्जा आवश्यकता की गणना",
       "intro": "हमारा मुफ़्त Maintenance Calorie Calculator आपकी दैनिक ऊर्जा आवश्यकता, कुल दैनिक व्यय (TDEE) और स्वस्थ शारीरिक भार प्रबंधन के लिए आवश्यक पोषण लक्ष्यों का पारदर्शी आकलन करता है।",
-      "formulaTitle": "दैनिक मेंटेनेंस कैलोरी सूत्र एवं ऊर्जा संतुलन",
-      "formulaDesc": "मेंटेनेंस कैलोरी = BMR × शारीरिक गतिविधि गुणक (PAL)। व्यक्तिगत लक्ष्यों और जीवनशैली के अनुसार ऊर्जा का सटीक समायोजन किया जाता है।",
-      "formulaCode": "Maintenance = BMR × PAL",
+      "formulaTitle": "रखरखाव कैलोरी गणना एवं ऊर्जा संतुलन",
+      "formulaDesc": "रखरखाव कैलोरी = बेसल मेटाबॉलिक रेट (BMR) × शारीरिक गतिविधि स्तर (PAL)। इस कैलोरी स्तर पर आपका वजन स्थिर रहता है और दैनिक ऊर्जा व्यय संतुलित होता है।",
+      "formulaCode": "रखरखाव कैलोरी = BMR × गतिविधि कारक",
       "tableTitle": "ऊर्जा आवश्यकता एवं शारीरिक भार लक्ष्य तालिका",
       "tableRows": [
         {
@@ -3927,8 +3927,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Boer Predictive Equation",
       "title": "Lean Body Mass Calculator & LBM Reference Tool",
       "intro": "Using the Boer formula, estimate lean body mass from height, weight and gender. LBM is a mathematical estimate and is not the same as skeletal muscle mass or organ weight.",
-      "formulaTitle": "Boer Formula for LBM",
-      "formulaDesc": "Men: LBM = (0.407 × W) + (0.267 × H) - 19.2 | Women: LBM = (0.252 × W) + (0.473 × H) - 48.3",
+      "formulaTitle": "Boer Formula for Lean Body Mass",
+      "formulaDesc": "Men: LBM = (0.407 × Weight kg) + (0.267 × Height cm) - 19.2 | Women: LBM = (0.252 × Weight kg) + (0.473 × Height cm) - 48.3",
+      "formulaCode": "Men = 0.407W + 0.267H - 19.2 | Women = 0.252W + 0.473H - 48.3",
       "tableTitle": "Boer Equation Formula Reference",
       "tableRows": [
         {
@@ -3957,8 +3958,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de Masa Magra – Índice de Masa Libre de Grasa LBM",
       "intro": "Calculadora de masa corporal magra (LBM) gratuita. Calcula la masa corporal magra, el porcentaje de masa libre de grasa y la composición corporal utilizando las ecuaciones de Boer, James y Hume por altura y peso con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
+      "formulaTitle": "Fórmula de Boer para la Masa Corporal Magra (LBM)",
+      "formulaDesc": "Hombres: LBM (kg) = (0.407 × Peso kg) + (0.267 × Altura cm) - 19.2 | Mujeres: LBM (kg) = (0.252 × Peso kg) + (0.473 × Altura cm) - 48.3",
+      "formulaCode": "Hombres = 0.407P + 0.267A - 19.2 | Mujeres = 0.252P + 0.473A - 48.3",
       "tableTitle": "Referencia de la Fórmula de la Ecuación de Boer",
       "tableRows": [
         {
@@ -3987,8 +3989,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Normes de Référence de Santé",
       "title": "Calculateur de Masse Maigre – Estimation de l'Indice LBM",
       "intro": "Calculateur de masse corporelle maigre (LBM) gratuit. Calculez la masse corporelle maigre, le pourcentage de masse sans graisse et la composition corporelle à l'aide des équations de Boer, James et Hume selon la taille et le poids avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
+      "formulaTitle": "Formule de Boer pour la Masse Corporelle Maigre (LBM)",
+      "formulaDesc": "Hommes : LBM (kg) = (0,407 × Poids kg) + (0,267 × Taille cm) - 19,2 | Femmes : LBM (kg) = (0,252 × Poids kg) + (0,473 × Taille cm) - 48,3",
+      "formulaCode": "Hommes = 0,407P + 0,267T - 19,2 | Femmes = 0,252P + 0,473T - 48,3",
       "tableTitle": "Référence de la Formule de l'Équation de Boer",
       "tableRows": [
         {
@@ -4017,8 +4020,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Gesundheits-Referenzstandards",
       "title": "Rechner für fettfreie Körpermasse – LBM Referenz",
       "intro": "Kostenloser Magermasse-Rechner (LBM-Rechner). Berechnen Sie Ihre magere Körpermasse, den fettfreien Masseprozentsatz und die Körperzusammensetzung mit den Formeln nach Boer, James und Hume datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
+      "formulaTitle": "Boer-Formel für fettfreie Masse (Lean Body Mass)",
+      "formulaDesc": "Männer: LBM (kg) = (0,407 × Gewicht kg) + (0,267 × Größe cm) - 19,2 | Frauen: LBM (kg) = (0,252 × Gewicht kg) + (0,473 × Größe cm) - 48,3",
+      "formulaCode": "Männer = 0,407G + 0,267H - 19,2 | Frauen = 0,252G + 0,473H - 48,3",
       "tableTitle": "Boer-Formel Referenzübersicht",
       "tableRows": [
         {
@@ -4047,8 +4051,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "건강 참조 표준 지침",
       "title": "제지방량(LBM) 계산기 – 체성분 측정 및 한국 표준 가이드",
       "intro": "무료 제지방량(LBM) 계산기. Boer, James 및 Hume 공식을 활용하여 신장과 체중별 제지방량, 무지방 체중 비율 및 골격근 체성분 지표를 정확하게 산출하세요. 개인정보 수집 없는 100% 브라우저 계산. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
+      "formulaTitle": "제지방량(LBM) 산출을 위한 Boer 공식",
+      "formulaDesc": "남성: LBM (kg) = (0.407 × 체중 kg) + (0.267 × 신장 cm) - 19.2 | 여성: LBM (kg) = (0.252 × 체중 kg) + (0.473 × 신장 cm) - 48.3",
+      "formulaCode": "남성 = 0.407W + 0.267H - 19.2 | 여성 = 0.252W + 0.473H - 48.3",
       "tableTitle": "보어 공식(Boer Equation) 제지방량 참조 산출식",
       "tableRows": [
         {
@@ -4077,8 +4082,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "लीन बॉडी मास (LBM) कैलकुलेटर – शरीर संरचना संदर्भ टूल",
       "intro": "मुफ़्त लीन बॉडी मास कैलकुलेटर (LBM Calculator)। ऊंचाई और वजन के अनुसार बोअर, जेम्स और ह्यूम समीकरणों का उपयोग करके दुबले शरीर के द्रव्यमान, वसा रहित द्रव्यमान प्रतिशत और शरीर की संरचना की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
-      "formulaTitle": "मानक संदर्भ सूत्र",
-      "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
+      "formulaTitle": "लीन बॉडी मास (LBM) के लिए बोअर सूत्र",
+      "formulaDesc": "पुरुष: LBM (किग्रा) = (0.407 × वजन kg) + (0.267 × ऊंचाई cm) - 19.2 | महिला: LBM (किग्रा) = (0.252 × वजन kg) + (0.473 × ऊंचाई cm) - 48.3",
       "tableTitle": "बोअर समीकरण फॉर्मूला संदर्भ तालिका",
       "tableRows": [
         {
@@ -4111,7 +4116,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "intro": "Find your ideal body weight with our free calculator. It estimates healthy weight ranges based on your height and gender profile. Compare four classic formulas: Devine, Robinson, Miller, and Hamwi. View your target weight and WHO healthy range in seconds.",
       "formulaTitle": "Standard IBW Formulas (Devine, Robinson, Miller & Hamwi)",
       "formulaDesc": "Each formula calculates a healthy baseline starting at 5 feet tall. These numbers are reference guides, not strict rules. Frame size, muscle mass, and bone density all shape your healthy weight.",
-      "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
+      "formulaCode": "IBW (Devine) = 50 kg (Men) / 45.5 kg (Women) + 2.3 kg × (Inches over 5ft)",
       "tableTitle": "Ideal Body Weight (IBW) Comparison Table by Height & Formula",
       "tableRows": [
         {
@@ -4167,9 +4172,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de Peso Corporal Ideal – Fórmulas IBW",
       "intro": "Calculadora de peso ideal gratuita. Calcula rangos de referencia de peso corporal ideal (IBW) utilizando las ecuaciones médicas de Devine, Robinson, Miller y Hamwi según altura y género con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
+      "formulaTitle": "Fórmulas de Peso Corporal Ideal (Devine, Robinson, Miller y Hamwi)",
+      "formulaDesc": "Devine Hombres: 50 kg + 2.3 kg/pulgada sobre 5 pies | Devine Mujeres: 45.5 kg + 2.3 kg/pulgada sobre 5 pies. Ecuaciones validadas para dosificación clínica y referencia saludable.",
+      "formulaCode": "PCI = Peso Base + (Factor × Pulgadas sobre 5 pies)",
       "tableTitle": "Tabla Comparativa de Peso Corporal Ideal (IBW) por Altura y Fórmula",
       "tableRows": [
         {
@@ -4225,9 +4230,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Normes de Référence de Santé",
       "title": "Calculateur de Poids Idéal – Équations IBW Devine et Robinson",
       "intro": "Calculateur de poids idéal gratuit. Calculez les plages de référence du poids idéal (IBW) à l'aide des équations médicales de Devine, Robinson, Miller et Hamwi selon la taille et le genre avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
+      "formulaTitle": "Formules de Poids Idéal Théorique (Devine, Robinson, Miller et Hamwi)",
+      "formulaDesc": "Devine Hommes : 50 kg + 2,3 kg/pouce au-delà de 5 pieds | Devine Femmes : 45,5 kg + 2,3 kg/pouce au-delà de 5 pieds. Référence validée pour l'évaluation clinique.",
+      "formulaCode": "IBW = Poids de Base + (Facteur × Pouces au-delà de 5 pieds)",
       "tableTitle": "Tableau Comparatif du Poids Idéal (IBW) selon la Taille et la Formule",
       "tableRows": [
         {
@@ -4283,9 +4288,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Gesundheits-Referenzstandards",
       "title": "Idealgewicht-Rechner – IBW-Formeln nach Devine & Robinson",
       "intro": "Kostenloser Idealgewicht-Rechner. Berechnen Sie den Referenzbereich für das ideale Körpergewicht (IBW) mit den medizinischen Formeln nach Devine, Robinson, Miller und Hamwi nach Körpergröße und Geschlecht datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
+      "formulaTitle": "Idealgewichtsformeln (Devine, Robinson, Miller & Hamwi)",
+      "formulaDesc": "Devine Männer: 50 kg + 2,3 kg pro Zoll über 5 Fuß | Devine Frauen: 45,5 kg + 2,3 kg pro Zoll über 5 Fuß. Klinisch etablierte Berechnungen für pharmakologische und metabolische Richtwerte.",
+      "formulaCode": "IBW = Basisgewicht + (Faktor × Zoll über 5 Fuß)",
       "tableTitle": "Idealgewicht-Vergleichstabelle (IBW) nach Größe und Formel",
       "tableRows": [
         {
@@ -4341,9 +4346,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "건강 참조 표준 지침",
       "title": "이상적인 체중 계산기 – Devine 및 Robinson 공식 기반 IBW 분석 – 참조 계산기",
       "intro": "무료 이상 체중 계산기. 신장과 성별에 따라 Devine, Robinson, Miller 및 Hamwi 의학 공식을 종합 적용하여 개인별 이상적인 체중(IBW) 권장 범위를 산출하세요. 가입 없이 구동되는 100% 브라우저 계산. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
+      "formulaTitle": "표준 이상 체중 산출 공식 (Devine, Robinson, Miller, Hamwi)",
+      "formulaDesc": "드바인 남성: 50kg + 5피트 초과 1인치당 2.3kg | 드바인 여성: 45.5kg + 5피트 초과 1인치당 2.3kg. 임상 약물 용량 및 표준 체중 산출에 널리 사용되는 공식.",
+      "formulaCode": "이상 체중 = 기본 체중 + (5피트 초과 인치당 가산 계수)",
       "tableTitle": "신장 및 산출 공식별 이상적 표준 체중(IBW) 비교표",
       "tableRows": [
         {
@@ -4399,9 +4404,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "आदर्श वजन संदर्भ",
       "title": "आदर्श वजन कैलकुलेटर – ऊंचाई के अनुसार आइडियल बॉडी वेट (IBW)",
       "intro": "हमारा मुफ़्त Ideal Weight Calculator (IBW Calculator) आपकी ऊंचाई (सेमी या इंच) और लिंग (महिला या पुरुष) के आधार पर आदर्श वजन का अनुमान लगाता है। Devine, Robinson, Miller और Hamwi सूत्रों की तुलना करें।",
-      "formulaTitle": "मानक IBW सूत्र (Devine, Robinson, Miller & Hamwi)",
-      "formulaDesc": "Devine, Robinson, Miller और Hamwi सूत्र विभिन्न संदर्भ अनुमान प्रदान करते हैं; इन्हें सार्वभौमिक \"आदर्श\" या चिकित्सीय आवश्यकता नहीं माना जाना चाहिए।",
-      "formulaCode": "IBW = Base Weight + (Factor × Height over 5ft)",
+      "formulaTitle": "आदर्श शरीर भार सूत्र (डिवाइन, रॉबिन्सन, मिलर एवं हामवी)",
+      "formulaDesc": "डिवाइन पुरुष: 50 किग्रा + 2.3 किग्रा/इंच (>5 फीट) | डिवाइन महिला: 45.5 किग्रा + 2.3 किग्रा/इंच (>5 फीट)। नैदानिक खुराक और स्वस्थ शारीरिक संदर्भ के लिए प्रमाणित सूत्र।",
+      "formulaCode": "आदर्श भार = आधार भार + (5 फीट से ऊपर प्रति इंच वृद्धि)",
       "tableTitle": "ऊंचाई एवं सूत्र के अनुसार आदर्श शरीर वजन (IBW) तालिका",
       "tableRows": [
         {
@@ -5509,9 +5514,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de Macronutrientes – Distribución Diaria de Macros",
       "intro": "Calculadora de macronutrientes gratuita. Calcula tus objetivos diarios de macronutrientes (proteínas, carbohidratos, grasas en gramos) para definición, mantenimiento o volumen según tu TDEE y objetivos con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9",
+      "formulaTitle": "Fórmulas de Conversión Calórica de Macronutrientes",
+      "formulaDesc": "Los carbohidratos y las proteínas aportan 4 kcal por gramo. Las grasas aportan 9 kcal por gramo. El cálculo distribuye tus calorías diarias según tus porcentajes objetivo y las convierte en gramos exactos.",
+      "formulaCode": "Carbohidratos = (kcal × C%) / 4 | Proteínas = (kcal × P%) / 4 | Grasas = (kcal × G%) / 9",
       "tableTitle": "Densidad Energética de Macronutrientes y Ratios Nutricionales",
       "tableRows": [
         {
@@ -5557,9 +5562,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Normes de Référence de Santé",
       "title": "Calculateur de Macronutriments – Répartition des Macros",
       "intro": "Calculateur de macronutriments gratuit. Calculez vos objectifs quotidiens en macronutriments (protéines, glucides, lipides en grammes) pour la sèche, le maintien ou la prise de masse selon votre TDEE avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9",
+      "formulaTitle": "Formules de Conversion des Macronutriments en Grammes",
+      "formulaDesc": "Les glucides et protéines fournissent 4 kcal par gramme. Les lipides fournissent 9 kcal par gramme. Vos calories journalières sont réparties selon vos ratios cibles puis divisées par la densité énergétique de chaque nutriment.",
+      "formulaCode": "Glucides = (kcal × G%) / 4 | Protéines = (kcal × P%) / 4 | Lipides = (kcal × L%) / 9",
       "tableTitle": "Densité Énergétique des Macronutriments et Ratios Nutritionnels",
       "tableRows": [
         {
@@ -5605,9 +5610,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Gesundheits-Referenzstandards",
       "title": "Makronährstoff-Rechner – Tägliche Makroverteilung berechnen",
       "intro": "Kostenloser Makronährstoff-Rechner. Berechnen Sie Ihre optimalen täglichen Makroziele (Proteine, Kohlenhydrate, Fette in Gramm) zum Abnehmen, Halten oder Muskelaufbau basierend auf Ihrem TDEE datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9",
+      "formulaTitle": "Makronährstoff-Umrechnungsformeln in Gramm",
+      "formulaDesc": "Kohlenhydrate und Protein liefern jeweils 4 kcal pro Gramm. Fette liefern 9 kcal pro Gramm. Ihre Tageskalorien werden entsprechend der Zielverteilung aufgeteilt und in exakte Grammangaben umgerechnet.",
+      "formulaCode": "Kohlenhydrate = (kcal × KH%) / 4 | Protein = (kcal × P%) / 4 | Fett = (kcal × F%) / 9",
       "tableTitle": "Makronährstoff-Energiedichte & empfohlene Ernährungsverhältnisse",
       "tableRows": [
         {
@@ -5653,9 +5658,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "건강 참조 표준 지침",
       "title": "매크로 영양소 계산기 – 일일 탄단지 영양소 비율 계산",
       "intro": "무료 매크로 영양소 계산기. TDEE 및 피트니스 목표에 따라 다이어트, 체중 유지 또는 근육 증량을 위한 일일 맞춤형 영양소 비율(단백질, 탄수화물, 지방 g)을 브라우저 내에서 정확하게 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9",
+      "formulaTitle": "탄수화물·단백질·지방 칼로리 및 그램수 환산 공식",
+      "formulaDesc": "탄수화물과 단백질은 1g당 4kcal의 에너지를, 지방은 1g당 9kcal를 공급합니다. 일일 섭취 목표 칼로리를 목표 영양소 비율에 따라 배분한 뒤 각 영양소의 에너지 밀도로 나누어 그램수를 산출합니다.",
+      "formulaCode": "탄수화물 = (kcal × C%) / 4 | 단백질 = (kcal × P%) / 4 | 지방 = (kcal × F%) / 9",
       "tableTitle": "영양소별 에너지 밀도 및 다이어트 목표별 영양 비율표",
       "tableRows": [
         {
@@ -5701,9 +5706,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "मैक्रो पोषक तत्व कैलकुलेटर – दैनिक मैक्रो अनुपात की गणना",
       "intro": "मुफ़्त मैक्रो कैलकुलेटर। अपने TDEE और फिटनेस लक्ष्यों के आधार पर कटिंग, रखरखाव या मांसपेशियों को बढ़ाने के लिए इष्टतम दैनिक मैक्रोन्यूट्रिएंट लक्ष्यों (प्रोटीन, कार्ब्स, ग्राम में वसा) की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
-      "formulaTitle": "मानक संदर्भ सूत्र",
-      "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
-      "formulaCode": "Carbs = (kcal × C%) / 4 | Protein = (kcal × P%) / 4 | Fat = (kcal × F%) / 9",
+      "formulaTitle": "मैक्रोन्यूट्रिएंट्स कैलोरी रूपांतरण सूत्र",
+      "formulaDesc": "कार्बोहाइड्रेट और प्रोटीन प्रति ग्राम 4 कैलोरी प्रदान करते हैं। वसा प्रति ग्राम 9 कैलोरी प्रदान करती है। यह कैलकुलेटर आपकी दैनिक कैलोरी को लक्ष्य प्रतिशत के अनुसार सटीक ग्राम में परिवर्तित करता है।",
+      "formulaCode": "कार्ब्स = (kcal × C%) / 4 | प्रोटीन = (kcal × P%) / 4 | फैट = (kcal × F%) / 9",
       "tableTitle": "मैक्रोन्यूट्रिएंट ऊर्जा घनत्व और आहार अनुपात तालिका",
       "tableRows": [
         {
@@ -5799,9 +5804,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de Relación Cintura-Cadera – Índice WHR de Salud",
       "intro": "Calculadora de relación cintura-cadera (WHR) gratuita. Calcula tu relación cintura-cadera, tipo de forma corporal (manzana vs pera) y clasificación de riesgo cardiovascular de la OMS con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "WHR = Waist / Hip",
+      "formulaTitle": "Ecuación de Relación Cintura-Cadera de la OMS",
+      "formulaDesc": "RCC = Perímetro de Cintura (en el punto más estrecho o a nivel umbilical) / Perímetro de Cadera (en la parte más ancha de los glúteos). Evalúa la distribución de grasa abdominal.",
+      "formulaCode": "RCC = Cintura / Cadera",
       "tableTitle": "Umbrales de Riesgo de Salud del Índice Cintura-Cadera (OMS)",
       "tableRows": [
         {
@@ -5847,9 +5852,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Normes de Référence de Santé",
       "title": "Calculateur Ratio Taille-Hanche – Indice WHR et Références",
       "intro": "Calculateur du rapport taille/hanches (WHR) gratuit. Calculez votre rapport taille/hanches, votre morphologie (pomme vs poire) et la classification des risques cardiovasculaires selon l'OMS avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "WHR = Waist / Hip",
+      "formulaTitle": "Équation du Rapport Taille-Hanche de l'OMS",
+      "formulaDesc": "RTH = Tour de taille (au point le plus étroit ou niveau du nombril) / Tour de hanches (au point le plus large des fessiers). Indique la répartition adipeuse androïde vs gynoïde.",
+      "formulaCode": "RTH = Tour de Taille / Tour de Hanche",
       "tableTitle": "Seuils de Risque pour la Santé du Ratio Taille-Hanches (OMS)",
       "tableRows": [
         {
@@ -5895,9 +5900,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Gesundheits-Referenzstandards",
       "title": "Taille-Hüft-Verhältnis Rechner – WHR-Wert & Referenztabelle",
       "intro": "Kostenloser Taille-Hüft-Verhältnis Rechner (WHR-Rechner). Berechnen Sie Ihr Taille-Hüft-Verhältnis, Ihren Körpertyp (Apfel vs. Birne) und die WHO-Risikoklassifizierung für kardiovaskuläre Gesundheit datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "WHR = Waist / Hip",
+      "formulaTitle": "WHO Taille-Hüft-Verhältnis Formel (Waist-to-Hip Ratio)",
+      "formulaDesc": "THV = Taillenumfang (an der schmalsten Stelle oder auf Bauchnabelhöhe) / Hüftumfang (an der breitesten Stelle des Gesäßes). Differenziert viszerales von subkutanem Fettgewebe.",
+      "formulaCode": "THV = Taillenumfang / Hüftumfang",
       "tableTitle": "WHO-Grenzwerte für das Taille-Hüft-Verhältnis (WHR)",
       "tableRows": [
         {
@@ -5943,9 +5948,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "건강 참조 표준 지침",
       "title": "허리 엉덩이 비율 계산기 – WHR 수치 및 건강 참조 도구",
       "intro": "무료 허리-엉덩이 둘레 비율 계산기 (WHR Calculator). 허리둘레와 엉덩이둘레 비율(WHR), 체형 유형(사과형 vs 배형) 및 WHO 심혈관 질환 위험 범주를 브라우저 내에서 즉시 산출하세요. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "WHR = Waist / Hip",
+      "formulaTitle": "WHO 공인 허리-엉덩이 둘레 비율(WHR) 공식",
+      "formulaDesc": "WHR = 허리둘레 (가장 잘록한 부위 또는 배꼽 높이) / 엉덩이둘레 (둔부의 가장 넓은 부위). 내장 지방 축적 및 복부 비만 심혈관 위험도를 평가하는 핵심 지표.",
+      "formulaCode": "WHR = 허리둘레 / 엉덩이둘레",
       "tableTitle": "WHO 허리-엉덩이 비율(WHR) 건강 위험 기준표",
       "tableRows": [
         {
@@ -5991,9 +5996,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "कमर से कूल्हे के अनुपात का कैलकुलेटर – WHR संदर्भ टूल",
       "intro": "मुफ़्त कमर-से-कूल्हे का अनुपात कैलकुलेटर (WHR Calculator)। अपने कमर-से-कूल्हे के अनुपात, शरीर के आकार के प्रकार (सेब बनाम नाशपाती) और डब्ल्यूएचओ हृदय स्वास्थ्य जोखिम वर्गीकरण की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
-      "formulaTitle": "मानक संदर्भ सूत्र",
-      "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
-      "formulaCode": "WHR = Waist / Hip",
+      "formulaTitle": "WHO कमर-से-कूल्हे का अनुपात (WHR) सूत्र",
+      "formulaDesc": "WHR = कमर की परिधि (नाभि के स्तर पर या सबसे संकीर्ण बिंदु) / कूल्हे की परिधि (नितंबों के सबसे चौड़े हिस्से पर)। पेट की चर्बी और हृदय स्वास्थ्य जोखिम का आकलन करता है।",
+      "formulaCode": "WHR = कमर की परिधि / कूल्हे की परिधि",
       "tableTitle": "डब्ल्यूएचओ कमर से कूल्हे के अनुपात (WHR) स्वास्थ्य जोखिम सीमा",
       "tableRows": [
         {
@@ -6086,9 +6091,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de Superficie Corporal – Ecuaciones BSA",
       "intro": "Calculadora de superficie corporal (BSA) gratuita. Calcula la superficie corporal total en metros cuadrados (m²) utilizando las ecuaciones publicadas de Mosteller, DuBois, Haycock y Boyd con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
+      "formulaTitle": "Ecuaciones de Superficie Corporal de Mosteller y Du Bois",
+      "formulaDesc": "Mosteller ASC (m²) = √ [ Altura (cm) × Peso (kg) / 3600 ] | Du Bois ASC (m²) = 0.007184 × Altura (cm)^0.725 × Peso (kg)^0.425. Estándar de oro para dosificación farmacológica y parámetros cardíacos.",
+      "formulaCode": "ASC (m²) = √ [ (Altura cm × Peso kg) / 3600 ]",
       "tableTitle": "Rangos de Referencia Poblacionales de Superficie Corporal (m²)",
       "tableRows": [
         {
@@ -6131,9 +6136,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Normes de Référence de Santé",
       "title": "Calculateur de Surface Corporelle – Formules BSA",
       "intro": "Calculateur de surface corporelle (BSA) gratuit. Calculez la surface corporelle totale en mètres carrés (m²) à l'aide des équations publiées de Mosteller, DuBois, Haycock et Boyd avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
+      "formulaTitle": "Équations de Surface Corporelle de Mosteller et Du Bois",
+      "formulaDesc": "Mosteller BSA (m²) = √ [ Taille (cm) × Poids (kg) / 3600 ] | Du Bois BSA (m²) = 0,007184 × Taille (cm)^0,725 × Poids (kg)^0,425. Standard clinique pour la posologie médicale et l'index cardiaque.",
+      "formulaCode": "BSA (m²) = √ [ (Taille cm × Poids kg) / 3600 ]",
       "tableTitle": "Plages de Référence de la Surface Corporelle Adulte (m²)",
       "tableRows": [
         {
@@ -6176,9 +6181,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Gesundheits-Referenzstandards",
       "title": "Körperoberflächen-Rechner – KOF / BSA Formeln nach Mosteller",
       "intro": "Kostenloser Körperoberflächen-Rechner (BSA-Rechner). Berechnen Sie die gesamte Körperoberfläche in Quadratmetern (m²) mit den publizierten Formeln nach Mosteller, DuBois, Haycock und Boyd datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
+      "formulaTitle": "Körperoberflächen-Formeln nach Mosteller & Du Bois (KOF/BSA)",
+      "formulaDesc": "Mosteller KOF (m²) = √ [ Größe (cm) × Gewicht (kg) / 3600 ] | Du Bois KOF (m²) = 0,007184 × Größe (cm)^0,725 × Gewicht (kg)^0,425. Maßgeblich für Pharmakotherapie und physiologische Normalisierung.",
+      "formulaCode": "BSA (m²) = √ [ (Größe cm × Gewicht kg) / 3600 ]",
       "tableTitle": "Körperoberfläche (m²) Referenzbereiche für Erwachsene & Populationen",
       "tableRows": [
         {
@@ -6221,9 +6226,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "건강 참조 표준 지침",
       "title": "체표면적(BSA) 계산기 – Mosteller 및 Du Bois 계산 공식",
       "intro": "무료 체표면적 계산기 (BSA Calculator). Mosteller, DuBois, Haycock 및 Boyd 공식을 사용하여 제곱미터(m²) 단위의 전체 신체 표면적을 안전하게 산출하세요. 개인정보 수집 없는 100% 무료 도구. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
+      "formulaTitle": "Mosteller 및 Du Bois 체표면적(BSA) 산출 공식",
+      "formulaDesc": "Mosteller BSA (m²) = √ [ 신장 (cm) × 체중 (kg) / 3600 ] | Du Bois BSA (m²) = 0.007184 × 신장 (cm)^0.725 × 체중 (kg)^0.425. 임상 화학요법, 신기능 약물 용량 및 심장지수 정규화의 표준 공식.",
+      "formulaCode": "BSA (m²) = √ [ (신장 cm × 체중 kg) / 3600 ]",
       "tableTitle": "체표면적(BSA, m²) 연령별 및 성인 평균 참조 범위",
       "tableRows": [
         {
@@ -6266,9 +6271,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "बॉडी सरफेस एरिया (BSA) कैलकुलेटर – मोस्टेलर सूत्र",
       "intro": "मुफ़्त बॉडी सरफेस एरिया कैलकुलेटर (BSA Calculator)। मोस्टेलर, डुबॉइस, हेकॉक और बॉयड प्रकाशित समीकरणों का उपयोग करके वर्ग मीटर (m²) में कुल शरीर के सतह क्षेत्र की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।",
-      "formulaTitle": "मानक संदर्भ सूत्र",
-      "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
-      "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
+      "formulaTitle": "मोस्टेलर एवं डु बोइस शरीर की सतह का क्षेत्रफल (BSA) सूत्र",
+      "formulaDesc": "मोस्टेलर BSA (m²) = √ [ ऊंचाई (cm) × वजन (kg) / 3600 ] | डु बोइस BSA (m²) = 0.007184 × ऊंचाई (cm)^0.725 × वजन (kg)^0.425। चिकित्सीय दवा खुराक और शारीरिक सूचकांक के लिए आधिकारिक सूत्र।",
+      "formulaCode": "BSA (m²) = √ [ (ऊंचाई सेमी × वजन किग्रा) / 3600 ]",
       "tableTitle": "वयस्क और जनसंख्या के लिए शरीर की सतह का क्षेत्रफल (m²) संदर्भ सीमा",
       "tableRows": [
         {
@@ -6657,9 +6662,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora Karvonen – Reserva de Frecuencia Cardíaca HRR",
       "intro": "Calculadora de frecuencia cardíaca Karvonen gratuita. Calcula las zonas de frecuencia cardíaca objetivo (THR) utilizando la fórmula de Karvonen (método de Reserva de Frecuencia Cardíaca %) según edad y frecuencia en reposo (BPM) con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
-      "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
+      "formulaTitle": "Ecuación de Reserva de Frecuencia Cardíaca de Karvonen",
+      "formulaDesc": "Frecuencia Cardíaca de Entrenamiento = [(FC Máxima - FC Reposo) × % Intensidad] + FC Reposo. La frecuencia máxima estimada es (220 - edad), ajustando la intensidad a tu capacidad aeróbica real.",
+      "formulaCode": "FCE = (RFC × % Intensidad) + FCR",
       "tableTitle": "Desglose de Zonas de Entrenamiento de Frecuencia Cardíaca de Karvonen",
       "tableRows": [
         {
@@ -6703,9 +6708,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Normes de Référence de Santé",
       "title": "Calculateur Karvonen – Réserve Cardiaque HRR & Zones de Forme",
       "intro": "Calculateur de fréquence cardiaque Karvonen gratuit. Calculez les zones cibles (THR) avec la formule de Karvonen (méthode de Réserve de Fréquence Cardiaque %) selon l'âge et le pouls au repos avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
-      "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
+      "formulaTitle": "Formule de Karvonen et Réserve Cardiaque (HRR)",
+      "formulaDesc": "Fréquence Cardiaque Cible = [(FC Max - FC Repos) × % Intensité] + FC Repos. La FC maximale est calculée par (220 - âge), calibrant l'entraînement sur votre réserve cardiovasculaire individuelle.",
+      "formulaCode": "FCE = (RHR × % Intensité) + FC Repos",
       "tableTitle": "Répartition des Zones d'Entraînement Cardiaque selon Karvonen",
       "tableRows": [
         {
@@ -6749,9 +6754,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Gesundheits-Referenzstandards",
       "title": "Karvonen Herzfrequenz-Rechner – Herzfrequenzreserve HRR Zonen",
       "intro": "Kostenloser Karvonen-Herzfrequenz-Rechner. Berechnen Sie Ihre Zielherzfrequenz (THR) mit der Karvonen-Formel (Herzfrequenzreserve-%-Methode) nach Alter und Ruhepuls (BPM) datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
-      "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
+      "formulaTitle": "Karvonen-Formel & Herzfrequenzreserve (HFR)",
+      "formulaDesc": "Trainingsherzfrequenz = [(Maximalpuls - Ruhepuls) × % Intensität] + Ruhepuls. Die maximale Herzfrequenz wird mit (220 - Alter) abgeschätzt, um Trainingszonen individuell anzupassen.",
+      "formulaCode": "THF = (HFR × Intensität%) + Ruhepuls",
       "tableTitle": "Karvonen-Herzfrequenz-Trainingszonen im Überblick",
       "tableRows": [
         {
@@ -6795,9 +6800,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "건강 참조 표준 지침",
       "title": "Karvonen 심박수 계산기 – 심박 예비능(HRR) 측정",
       "intro": "무료 카보넨(Karvonen) 심박수 계산기. 나이와 안정 시 심박수(BPM)를 활용하여 심박수 예비능(HRR) 공식으로 목표 운동 심박수 트레이닝 구간을 브라우저 내에서 안전하게 계산하세요. 100% 무료 도구. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
-      "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
+      "formulaTitle": "카르보넨(Karvonen) 심박수 예비량(HRR) 산출 공식",
+      "formulaDesc": "목표 심박수 = [(최대 심박수 - 안정시 심박수) × % 운동강도] + 안정시 심박수. 최대 심박수는 (220 - 나이)로 추정되며, 안정시 심박수와의 차이(HRR)를 반영하여 개별 맞춤 운동 강도를 도출합니다.",
+      "formulaCode": "목표 심박수 = (심박수 예비량 × 강도%) + 안정시 심박수",
       "tableTitle": "카르보넨 예비 심박수(HRR) 기반 트레이닝 구간 분석표",
       "tableRows": [
         {
@@ -6841,9 +6846,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "कार्डियोवैस्कुलर फिजियोलॉजी",
       "title": "कार्वोनेन हार्ट रेट कैलकुलेटर – हार्ट रेट रिजर्व (HRR) ज़ोन",
       "intro": "कार्वोनेन फॉर्मूला और हार्ट रेट रिजर्व (HRR) का उपयोग करके फैट बर्निंग और कार्डियो फिटनेस के लिए अपने लक्षित व्यायाम हार्ट रेट ज़ोन की सटीक और सुरक्षित गणना करें।",
-      "formulaTitle": "आधिकारिक कार्वोनेन सूत्र",
-      "formulaDesc": "Target HR = [(HRmax - HRrest) × %intensity] + HRrest",
-      "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
+      "formulaTitle": "कार्वोनेन हृदय गति रिजर्व (HRR) समीकरण",
+      "formulaDesc": "लक्ष्य हृदय गति = [(अधिकतम HR - विश्राम HR) × % तीव्रता] + विश्राम HR। अधिकतम हृदय गति (220 - आयु) अनुमानित की जाती है, जो आपकी व्यक्तिगत एरोबिक क्षमता के अनुसार सटीक प्रशिक्षण क्षेत्र निर्धारित करती है।",
+      "formulaCode": "लक्ष्य HR = (HRR × तीव्रता%) + विश्राम HR",
       "tableTitle": "कार्वोनेन हार्ट रेट ट्रेनिंग ज़ोन तालिका",
       "tableRows": [
         {
@@ -7342,7 +7347,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "title": "Gestational Weight Tracker & Pregnancy Growth Stages",
       "intro": "Track maternal mass changes and developmental benchmarks based on published National Academies/IOM and ACOG clinical consensus guidelines. Understand personalized targets calculated from pre-pregnancy BMI.",
       "formulaTitle": "IOM Maternal Progression Recommendations",
-      "formulaDesc": "Normal BMI (18.5-24.9): 11.5 - 16.0 kg total (25 - 35 lbs)",
+      "formulaDesc": "Normal BMI (18.5-24.9): 11.5 - 16.0 kg total (25 - 35 lbs) | Overweight: 7.0 - 11.5 kg (15 - 25 lbs) | Underweight: 12.5 - 18.0 kg (28 - 40 lbs) | Obese: 5.0 - 9.0 kg (11 - 20 lbs)",
+      "formulaCode": "IOM: Normal BMI Target = 11.5 – 16.0 kg (25 – 35 lbs)",
       "tableTitle": "IOM Trimester Maternal Progress Reference Chart",
       "tableRows": [
         {
@@ -7388,8 +7394,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de Aumento de Peso en el Embarazo",
       "intro": "Calculadora gratuita de peso en el embarazo según las guías del ACOG y el IOM. Realiza un seguimiento del aumento de peso gestacional semana a semana por trimestre e IMC previo al embarazo con cálculos privados en el navegador.",
-      "formulaTitle": "Fórmula de Referencia Estándar",
-      "formulaDesc": "Calculado utilizando ecuaciones estándar validadas.",
+      "formulaTitle": "Recomendaciones de Aumento de Peso Gestacional del IOM y ACOG",
+      "formulaDesc": "IMC Normal (18.5–24.9): 11.5 – 16.0 kg total (25 – 35 lbs) | Sobrepeso: 7.0 – 11.5 kg (15 – 25 lbs) | Bajo peso: 12.5 – 18.0 kg (28 – 40 lbs) | Obesidad: 5.0 – 9.0 kg (11 – 20 lbs). Basado en el IMC previo al embarazo.",
+      "formulaCode": "IOM: Meta IMC Normal = 11.5 – 16.0 kg (25 – 35 lbs)",
       "tableTitle": "Tabla de Peso Objetivo por Trimestre según el IOM",
       "tableRows": [
         {
@@ -7435,8 +7442,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Normes de Référence de Santé",
       "title": "Calculateur de Prise de Poids pendant la Grossesse",
       "intro": "Calculateur gratuit de prise de poids pendant la grossesse selon les directives de l'ACOG et de l'IOM. Suivez l'évolution du poids gestationnel semaine par semaine par trimestre et IMC avant grossesse avec calculs sur navigateur.",
-      "formulaTitle": "Formule de Référence Standard",
-      "formulaDesc": "Calculé à l'aide d'équations standards validées.",
+      "formulaTitle": "Recommandations de Gain Pondéral Gestationnel (IOM & ACOG)",
+      "formulaDesc": "IMC Normal (18,5–24,9) : 11,5 – 16,0 kg au total (25 – 35 lbs) | Surpoids : 7,0 – 11,5 kg (15 – 25 lbs) | Sous-poids : 12,5 – 18,0 kg (28 – 40 lbs) | Obésité : 5,0 – 9,0 kg (11 – 20 lbs). Calibré sur l'IMC pré-gestationnel.",
+      "formulaCode": "IOM : Cible IMC Normal = 11,5 – 16,0 kg (25 – 35 lbs)",
       "tableTitle": "Tableau de Prise de Poids Recommandée par Trimestre (IOM)",
       "tableRows": [
         {
@@ -7482,8 +7490,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Gesundheits-Referenzstandards",
       "title": "Schwangerschafts-Gewichtszunahme Rechner – Trimester-Tracking",
       "intro": "Kostenloser Schwangerschafts-Gewichtszunahme-Rechner nach ACOG- und IOM-Richtlinien. Verfolgen Sie die wöchentliche Gewichtszunahme nach Trimester und BMI vor der Schwangerschaft datenschutzorientiert im Browser.",
-      "formulaTitle": "Standard-Referenzformel",
-      "formulaDesc": "Berechnet mit standardmäßig validierten Gleichungen.",
+      "formulaTitle": "Gewichtszunahme-Empfehlungen in der Schwangerschaft (IOM & ACOG)",
+      "formulaDesc": "Normaler BMI (18,5–24,9): 11,5 – 16,0 kg gesamt (25 – 35 lbs) | Übergewicht: 7,0 – 11,5 kg (15 – 25 lbs) | Untergewicht: 12,5 – 18,0 kg (28 – 40 lbs) | Adipositas: 5,0 – 9,0 kg (11 – 20 lbs). Bezogen auf den präkonzeptionellen BMI.",
+      "formulaCode": "IOM: Normaler BMI Zielwert = 11,5 – 16,0 kg (25 – 35 lbs)",
       "tableTitle": "IOM-Gewichtszunahme-Empfehlungen nach Trimestern",
       "tableRows": [
         {
@@ -7529,8 +7538,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "건강 참조 표준 지침",
       "title": "임신 중 체중 증가 계산기 – 분기별 체중 증가 권장 범위",
       "intro": "미국 산부인과학회(ACOG) 및 IOM 지침에 맞춘 무료 임신 주수별 체중 증가 계산기. 임신 전 BMI 및 분기별 주수별 권장 체중 증가 범위를 브라우저 내에서 안전하게 확인하세요. 100% 무료 도구. 세계보건기구(WHO) 기준에 따른 안전한 무료 건강 도구입니다.",
-      "formulaTitle": "표준 계산 공식",
-      "formulaDesc": "검증된 표준 공식을 사용하여 계산됩니다.",
+      "formulaTitle": "미국 의학연구원(IOM) 및 산부인과학회(ACOG) 임신 중 체중 증가 권고 기준",
+      "formulaDesc": "임신 전 정상 BMI (18.5–24.9): 총 11.5 – 16.0 kg (25 – 35 lbs) | 과체중: 7.0 – 11.5 kg (15 – 25 lbs) | 저체중: 12.5 – 18.0 kg (28 – 40 lbs) | 비만: 5.0 – 9.0 kg (11 – 20 lbs). 임신 전 기초 BMI 기준 산출.",
+      "formulaCode": "IOM: 정상 BMI 권고치 = 11.5 – 16.0 kg (25 – 35 lbs)",
       "tableTitle": "미국의학연구소(IOM) 임신 분기별 권장 체중 증가표",
       "tableRows": [
         {
@@ -7576,8 +7586,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "स्वास्थ्य संदर्भ मानक",
       "title": "गर्भावस्था में वजन वृद्धि का कैलकुलेटर – तिमाही ट्रैकिंग",
       "intro": "ACOG और IOM दिशानिर्देशों के अनुसार मुफ़्त गर्भावस्था वजन बढ़ना कैलकुलेटर। गर्भावस्था से पहले के बीएमआई और तिमाही के अनुसार सप्ताह-दर-सप्ताह वजन संचय को ट्रैक करें। मुफ़्त और गोपनीयता-केंद्रित।",
-      "formulaTitle": "मानक संदर्भ सूत्र",
-      "formulaDesc": "मानक सत्यापित समीकरणों का उपयोग करके गणना की गई।",
+      "formulaTitle": "गर्भावस्था में वजन वृद्धि के लिए IOM एवं ACOG सिफारिशें",
+      "formulaDesc": "सामान्य बीएमआई (18.5–24.9): कुल 11.5 – 16.0 किग्रा (25 – 35 lbs) | अधिक वजन: 7.0 – 11.5 किग्रा (15 – 25 lbs) | कम वजन: 12.5 – 18.0 किग्रा (28 – 40 lbs) | मोटापा: 5.0 – 9.0 किग्रा (11 – 20 lbs)। गर्भावस्था से पहले के बीएमआई पर आधारित।",
+      "formulaCode": "IOM: सामान्य बीएमआई लक्ष्य = 11.5 – 16.0 kg (25 – 35 lbs)",
       "tableTitle": "आईओएम तिमाही लक्षित वजन वृद्धि संदर्भ चार्ट",
       "tableRows": [
         {

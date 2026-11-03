@@ -7,6 +7,9 @@ interface Props {
 
 const { lang } = Astro.props;
 
+const aliasSlugs = new Set(['one-rep-max-calculator', '3d-body-visualizer']);
+const activeCalculators = calculators.filter(c => !aliasSlugs.has(c.slug));
+
 const headers = {
   en: { title: 'Quick Tools Directory', desc: 'Browse our complete catalog of educational health calculators.' },
   es: { title: 'Directorio de herramientas', desc: 'Explora nuestro catálogo de calculadoras de salud.' },
@@ -31,7 +34,7 @@ const headers = {
   </div>
 
   <div class="flex flex-wrap justify-center gap-3 pt-4">
-    {calculators.map(calc => {
+    {activeCalculators.map(calc => {
       const url = `/${lang}/${calc.slug}/`;
       const name = calc.name[lang] || calc.name['en'];
       

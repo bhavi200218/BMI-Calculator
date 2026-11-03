@@ -110,23 +110,23 @@ import PageShell from '../../components/PageShell.astro';
           </p>
         </div>
 
-        <!-- 3. Diagnostics Techniques Standards -->
+        <!-- 3. Diagnostics Techniques & Infrastructure Cloudflare -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            3. Diagnostics Techniques Standards
+            3. Diagnostics Techniques & Infrastructure Cloudflare
           </h2>
           <p>
-            Nos serveurs génèrent des journaux d'accès techniques usuels (type de navigateur, système d'exploitation) pour prévenir les attaques et assurer des temps de réponse rapides.
+            Real BMI est généré statiquement et hébergé à l'échelle mondiale sur le réseau périphérique Cloudflare Pages. Les journaux techniques opérationnels ne contiennent aucun identifiant personnel ni aucune métrique de santé.
           </p>
           <p>
-            Ces données opérationnelles sont totalement indépendantes des outils de calcul et ne contiennent aucune métrique de santé.
+            Ces données opérationnelles sont totalement indépendantes des outils de calcul et servent exclusivement à prévenir les attaques DDoS et garantir une haute disponibilité.
           </p>
         </div>
 
-        <!-- 4. Publicité Numérique et Gestion des Cookies -->
+        <!-- 4. Publicité Numérique, Google Consent Mode v2 & CMP -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            4. Publicité Numérique et Gestion des Cookies
+            4. Publicité Numérique, Google Consent Mode v2 & CMP
           </h2>
           <p>
             Real BMI est soutenu par des annonces numériques respectueuses afin de maintenir l'accès libre et gratuit à l'ensemble des calculateurs :
@@ -134,7 +134,9 @@ import PageShell from '../../components/PageShell.astro';
           <ul class="list-disc pl-6 space-y-1.5">
             <li><strong>Google AdSense :</strong> Des fournisseurs tiers utilisent des cookies pour diffuser des annonces adaptées aux visites antérieures.</li>
             <li><strong>Désactivation :</strong> Vous pouvez désactiver les annonces personnalisées à tout moment sur <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Paramètres des annonces Google</a> ou <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">aboutads.info</a>.</li>
-            <li><strong>Google Consent Mode v2 :</strong> Les cookies optionnels ne sont activés qu'avec votre accord explicite via notre fenêtre de préférences.</li>
+            <li><strong>Google Consent Mode v2 :</strong> Nous appliquons le mode Consentement v2 avec refus par défaut (<code>ad_storage: 'denied'</code>, <code>analytics_storage: 'denied'</code>). Les cookies optionnels ne sont activés qu'après consentement explicite.</li>
+            <li><strong>Visiteurs EEE et Royaume-Uni (CMP Certifiée) :</strong> Le recueil du consentement est assuré par la plateforme officielle certifiée par Google (Funding Choices avec conformité IAB TCF v2.2).</li>
+            <li><strong>Révocation du Consentement :</strong> Vous pouvez à tout moment modifier ou révoquer vos choix en cliquant sur "Préférences de Cookies" en pied de page, ce qui supprime immédiatement les cookies non essentiels du navigateur.</li>
           </ul>
         </div>
 

@@ -110,16 +110,16 @@ import PageShell from '../../components/PageShell.astro';
           </p>
         </div>
 
-        <!-- 3. Standard Technical Diagnostics -->
+        <!-- 3. Standard Technical Diagnostics & Hosting Infrastructure -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            3. Standard Technical Diagnostics
+            3. Standard Technical Diagnostics & Hosting Infrastructure
           </h2>
           <p>
-            Like standard web services, our web host generates routine server access logs containing non-personal technical diagnostic data.
+            Real BMI is statically generated and served globally via Cloudflare Pages edge network. Routine edge server access logs generate non-personal technical diagnostic data.
           </p>
           <p>
-            This includes browser user-agent strings, operating systems, and high-level geolocation (country/city level) to detect malicious automated traffic and keep server response times fast.
+            This includes browser user-agent strings, operating systems, and high-level geolocation (country/city level) to detect malicious automated traffic, mitigate DDoS threats, and keep server response times fast.
           </p>
           <p>
             These operational logs contain zero health metrics and are strictly separated from calculator tools.
@@ -129,7 +129,7 @@ import PageShell from '../../components/PageShell.astro';
         <!-- 4. Web Analytics & Advertising Disclosures -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            4. Web Analytics & Advertising Disclosures
+            4. Web Analytics, Google Consent Mode v2 & Advertising
           </h2>
           <p>
             Real BMI is supported by privacy-friendly digital advertising and aggregated analytics to keep all calculators free:
@@ -137,7 +137,9 @@ import PageShell from '../../components/PageShell.astro';
           <ul class="list-disc pl-6 space-y-1.5">
             <li><strong>Google AdSense:</strong> Third-party vendors, including Google, use cookies to serve ads based on prior visits to our site or other websites.</li>
             <li><strong>Opt-Out of Personalized Ads:</strong> You can turn off personalized advertising anytime via <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Google Ads Settings</a> or <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">aboutads.info</a>.</li>
-            <li><strong>Consent Management:</strong> We implement Google Consent Mode v2. Non-essential cookies for analytics and ads only activate when you give permission through our Cookie Preferences popup.</li>
+            <li><strong>Google Consent Mode v2:</strong> We implement Google Consent Mode v2 with default denied states (<code>ad_storage: 'denied'</code>, <code>ad_user_data: 'denied'</code>, <code>ad_personalization: 'denied'</code>, <code>analytics_storage: 'denied'</code>). Non-essential cookies for analytics and ads only activate after explicit opt-in.</li>
+            <li><strong>EEA & UK Consent (Google-Certified CMP):</strong> For visitors in the European Economic Area (EEA) and the United Kingdom, consent is managed using an official Google-certified Consent Management Platform (Google Funding Choices CMP supporting IAB TCF v2.2).</li>
+            <li><strong>Consent Revocation:</strong> You can update or revoke your cookie choices anytime using the "Cookie Preferences" link in the footer. Revoking consent immediately updates tag consent states and purges non-essential tracking cookies.</li>
           </ul>
         </div>
 
