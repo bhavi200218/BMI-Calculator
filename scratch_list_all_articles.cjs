@@ -50,3 +50,4 @@ for (const f of files) {
     console.log(`  DESC:  ${descEn}`);
   }
 }
+

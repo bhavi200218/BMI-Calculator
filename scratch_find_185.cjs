@@ -21,3 +21,4 @@ function checkFile(path) {
 
 checkFile('dist/index.html');
 checkFile('dist/en/index.html');
+

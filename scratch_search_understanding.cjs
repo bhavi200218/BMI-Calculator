@@ -27,3 +27,4 @@ function searchAll(dir) {
 }
 
 searchAll('.');
+

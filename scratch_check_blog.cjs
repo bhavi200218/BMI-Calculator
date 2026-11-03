@@ -13,3 +13,4 @@ if (fs.existsSync('dist/en/blog/index.html')) {
 } else {
   console.log('dist/en/blog/index.html does not exist');
 }
+
