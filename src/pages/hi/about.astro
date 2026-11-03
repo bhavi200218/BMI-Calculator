@@ -6,7 +6,7 @@ import PageShell from '../../components/PageShell.astro';
 
 <Layout 
     title="Real BMI के बारे में - संस्थापक एवं कार्यपद्धति मानक"
-    description="Real BMI, संस्थापक Bhawanshi Dosi, साक्ष्य-आधारित WHO व CDC संदर्भ मानकों और डेटा गोपनीयता सुरक्षा उपायों के बारे में जानें।"
+    description="Real BMI, संस्थापक Bhawanshi Dosi, साक्ष्य-आधारित WHO व CDC संदर्भ मानकों, स्वचालित परीक्षण और डेटा गोपनीयता सुरक्षा उपायों के बारे में जानें।"
 >
     <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -41,7 +41,8 @@ import PageShell from '../../components/PageShell.astro';
           "बेसल मेटाबॉलिक रेट (BMR)",
           "कुल दैनिक ऊर्जा व्यय (TDEE)",
           "शरीर संरचना आकलन",
-          "मानवशास्त्रीय संदर्भ दिशानिर्देश"
+          "मानवशास्त्रीय संदर्भ दिशानिर्देश",
+          "स्वचालित एल्गोरिथम परीक्षण"
         ]
       }
     })}></script>
@@ -49,15 +50,87 @@ import PageShell from '../../components/PageShell.astro';
     <PageShell
       title="Real BMI के बारे में"
       eyebrow="मिशन एवं साक्ष्य-आधारित कार्यप्रणाली"
-      description="संस्थापक Bhawanshi Dosi द्वारा आधिकारिक WHO एवं CDC मानकों के आधार पर संचालित।"
+      description="संस्थापक एवं सॉफ्टवेयर इंजीनियर Bhawanshi Dosi द्वारा आधिकारिक WHO एवं CDC मानकों के आधार पर संचालित।"
       returnUrl="/hi/"
       returnLabel="मुख्य पृष्ठ"
     >
       <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
         <div class="space-y-8">
           <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
-            <p><strong>Real BMI</strong> बांसवाड़ा, राजस्थान, भारत स्थित <strong>Bhawanshi Dosi</strong> द्वारा स्थापित, विकसित एवं संचालित एक व्यक्तिगत स्वास्थ्य गणना और शैक्षिक वेबसाइट है। इस परियोजना की शुरुआत आधुनिक ऑनलाइन स्वास्थ्य उपकरणों की गंभीर समस्याओं को हल करने के लिए की गई थी: अपारदर्शी गणितीय सूत्र, अत्यधिक विज्ञापन और व्यक्तिगत स्वास्थ्य डेटा की आक्रामक ट्रैकिंग। Real BMI वैज्ञानिक रूप से मान्य पारदर्शी मॉडल प्रदान करता है जो आपके डिवाइस पर 100% स्थानीय रूप से निष्पादित होते हैं।</p>
+            <p><strong>Real BMI</strong> बांसवाड़ा, राजस्थान, भारत स्थित सॉफ्टवेयर इंजीनियर <strong>Bhawanshi Dosi</strong> द्वारा स्थापित, विकसित एवं संचालित एक व्यक्तिगत स्वास्थ्य गणना और शैक्षिक संदर्भ वेबसाइट है। इस परियोजना की शुरुआत आधुनिक ऑनलाइन स्वास्थ्य उपकरणों की गंभीर समस्याओं को हल करने के लिए की गई थी: अपारदर्शी गणितीय सूत्र, अत्यधिक विज्ञापन और व्यक्तिगत स्वास्थ्य डेटा की आक्रामक ट्रैकिंग। Real BMI वैज्ञानिक रूप से मान्य पारदर्शी मॉडल प्रदान करता है जो आपके डिवाइस पर 100% स्थानीय रूप से निष्पादित होते हैं।</p>
             
+            <!-- Creator Profile Card -->
+            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-black text-2xl shadow-md shrink-0">
+                BD
+              </div>
+              <div class="space-y-2 flex-grow">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-xl font-bold text-[var(--foreground)]">Bhawanshi Dosi</h3>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/15 text-[var(--accent)] border border-[var(--accent)]/30">संस्थापक एवं सॉफ्टवेयर इंजीनियर</span>
+                </div>
+                <p class="text-xs font-medium text-[var(--accent)]">बांसवाड़ा, राजस्थान, भारत &bull; निर्माता एवं वेबमास्टर</p>
+                <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+                  क्लाइंट-साइड शून्य-डेटा प्रतिधारण गणना इंजन में विशेषज्ञ सॉफ्टवेयर इंजीनियर। Bhawanshi व्यक्तिगत रूप से Real BMI के सभी 23 कैलकुलेटरों का शोध, डिज़ाइन, कोडिंग और रखरखाव करती हैं तथा हर एल्गोरिथ्म को आधिकारिक वैज्ञानिक स्रोतों (WHO, CDC, ICMR) के अनुसार कैलिब्रेट करती हैं।
+                </p>
+              </div>
+            </div>
+
+            <!-- Non-Clinical Disclosure Banner -->
+            <div class="p-5 rounded-xl border border-amber-500/30 bg-amber-500/5 text-amber-200/90 text-sm leading-relaxed space-y-2 not-prose">
+              <div class="flex items-center gap-2 font-bold text-amber-400">
+                <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>पारदर्शी प्रशासन एवं गैर-चिकित्सकीय प्रकटीकरण</span>
+              </div>
+              <p>
+                Real BMI एक स्वतंत्र व्यक्तिगत सॉफ्टवेयर इंजीनियरिंग परियोजना है जिसे केवल Bhawanshi Dosi द्वारा संचालित किया जाता है। यह वेबसाइट <strong>किसी भी प्रकार का क्लिनिकल मेडिकल रिव्यू बोर्ड, डॉक्टरों का पैनल या मेडिकल सलाहकार समिति संचालित नहीं करती है</strong>। सभी उपकरण केवल शैक्षिक जागरूकता और सामान्य जीवनशैली योजना के लिए वैज्ञानिक साहित्य के गणितीय कार्यान्वयन हैं, किसी चिकित्सा निदान के लिए नहीं।
+              </p>
+            </div>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">स्वचालित गणितीय परीक्षण एवं सत्यापन प्रक्रिया</h2>
+            <p>क्योंकि Real BMI किसी व्यक्तिपरक मेडिकल बोर्ड पर निर्भर नहीं है, सटीकता और विश्वसनीयता <strong>कड़े परीक्षण-संचालित सॉफ्टवेयर इंजीनियरिंग (TDD)</strong> द्वारा हासिल की जाती है। हर सूत्र, रूपांतरण गुणांक और सीमा मान को 920 से अधिक स्वचालित यूनिट और रिग्रेशन परीक्षणों द्वारा सत्यापित किया जाता है:</p>
+
+            <div class="grid gap-4 sm:grid-cols-2 not-prose pt-1">
+              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+                <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  सहकर्मी-समीक्षित सूत्रों की सटीकता
+                </h4>
+                <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+                  सभी सूत्र (मिफ्लिन-सेंट जेओर 1990, मोस्टेलर 1987, डिवाइन 1974, WHO रिपोर्ट 854) नैदानिक बेंचमार्क डेटा सेट के विरुद्ध परीक्षण किए जाते हैं।
+                </p>
+              </div>
+              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+                <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  मीट्रिक एवं इम्पीरियल समानता
+                </h4>
+                <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+                  मीट्रिक (kg/cm) और इम्पीरियल (lbs/inches) गणनाओं को 703.06957964 गुणांक और &plusmn;0.01 टॉलरेंस के साथ स्वचालित रूप से सत्यापित किया जाता है।
+                </p>
+              </div>
+              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+                <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  सीमा एवं श्रेणी परीक्षण
+                </h4>
+                <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+                  यूनिट परीक्षण मानक WHO कटऑफ (18.5, 25.0, 30.0) और एशियाई जोखिम थ्रेसहोल्ड (23.0, 27.5 kg/m&sup2;) को सीमांत इनपुट पर मान्य करते हैं।
+                </p>
+              </div>
+              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+                <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  शून्य-डेटा गोपनीयता ऑडिट
+                </h4>
+                <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+                  स्वचालित आर्किटेक्चरल परीक्षण सुनिश्चित करते हैं कि कोई भी बायोमेट्रिक इनपुट कभी भी नेटवर्क पर प्रेषित या कुकीज़ में संग्रहीत न हो।
+                </p>
+              </div>
+            </div>
+
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">साक्ष्य-आधारित गणितीय मानक</h2>
             <p>Real BMI का प्रत्येक सूत्र प्रकाशित वैज्ञानिक शोध और सार्वजनिक स्वास्थ्य दिशानिर्देशों पर आधारित है, जिनमें विश्व स्वास्थ्य संगठन (WHO तकनीकी रिपोर्ट 854), <em>The Lancet</em> में प्रकाशित एशियाई आबादी हेतु WHO परामर्श, मिफ्लिन-सेंट जेओर अप्रत्यक्ष कैलोरीमेट्री समीकरण, मोस्टेलर बॉडी सरफेस एरिया फॉर्मूला और डिवाइन आइडियल बॉडी वेट मानक शामिल हैं।</p>
 
@@ -71,7 +144,7 @@ import PageShell from '../../components/PageShell.astro';
 
         <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 sm:p-8 shadow-[var(--shadow-soft)] space-y-6">
           <div class="space-y-2">
-            <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">निर्माता एवं मानक</p>
+            <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">निर्माता एवं सत्यापन</p>
             <h2 class="text-xl sm:text-2xl font-black text-[var(--foreground)] uppercase tracking-tight font-display">स्वतंत्र संदर्भ प्लेटफॉर्म</h2>
             <p class="text-xs text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi द्वारा व्यक्तिगत रूप से संचालित</p>
           </div>
@@ -84,6 +157,14 @@ import PageShell from '../../components/PageShell.astro';
             <div>
               <span class="font-bold text-[var(--foreground)] block">परिचालन केंद्र:</span>
               <span class="text-[var(--muted-foreground)] font-medium">बांसवाड़ा, राजस्थान, भारत</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">सत्यापन विधि:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">920+ स्वचालित एल्गोरिथम परीक्षण</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">मेडिकल बोर्ड दावे:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">कोई नहीं (गैर-चिकित्सकीय शैक्षिक टूल)</span>
             </div>
             <div>
               <span class="font-bold text-[var(--foreground)] block">कंप्यूटिंग मॉडल:</span>
@@ -100,8 +181,11 @@ import PageShell from '../../components/PageShell.astro';
           </div>
 
           <div class="space-y-3 pt-4 border-t border-[var(--border)]">
+            <a href="/hi/sources/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] hover:bg-[var(--accent)]/15 transition text-center">
+              प्राथमिक शोध संदर्भ (15 अध्ययन) →
+            </a>
             <a href="/hi/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition text-center">
-              कार्यप्रणाली एवं सूत्र देखें →
+              कार्यप्रणाली एवं सूत्र देखें (सभी 23) →
             </a>
             <a href="/hi/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15 text-center">
               निर्माता से संपर्क करें →
