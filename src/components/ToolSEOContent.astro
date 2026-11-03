@@ -921,7 +921,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           const x = 20 + i * (segWidth + svgGap);
           const centerX = x + segWidth / 2;
           return (
-            <g key={seg.label}>
+            <g>
               <rect x={x} y="20" width={segWidth} height="38" rx="6" fill={seg.color} fill-opacity="0.25" stroke={seg.color} stroke-width="2"/>
               <text x={centerX} y="44" text-anchor="middle" fill={seg.color} font-size={numSegments >= 5 ? "11" : "12"} font-weight="700" font-family="sans-serif">{seg.label}</text>
               <text x={centerX} y="78" text-anchor="middle" fill="#8FA7A7" font-size="11" font-family="sans-serif">{seg.range}</text>
@@ -1458,12 +1458,12 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
       </p>
       <div class="flex flex-wrap sm:justify-end gap-3 font-semibold text-[var(--accent)] text-xs">
         <a href={`/${lang}/about/`} class="underline hover:text-[var(--foreground)]">
-          {lang === 'es' ? 'Sobre el Equipo' :
-           lang === 'fr' ? 'À Propos de l\'Équipe' :
-           lang === 'de' ? 'Über das Team' :
-           lang === 'ko' ? '팀 소개' :
-           lang === 'hi' ? 'टीम परिचय' :
-           'About Team'}
+          {lang === 'es' ? 'Sobre la Creadora' :
+           lang === 'fr' ? 'À Propos de la Créatrice' :
+           lang === 'de' ? 'Über die Entwicklerin' :
+           lang === 'ko' ? '제작자 소개' :
+           lang === 'hi' ? 'निर्माता परिचय' :
+           'About Creator'}
         </a>
         <a href={`/${lang}/editorial-policy/`} class="underline hover:text-[var(--foreground)]">
           {lang === 'es' ? 'Política Editorial' :

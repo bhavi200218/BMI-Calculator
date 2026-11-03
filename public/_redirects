@@ -11,48 +11,56 @@
 /author/  /en/about/  301
 /en/author  /en/about/  301
 /en/author/  /en/about/  301
-/privacy  /privacy-policy/  301
-/privacy/  /privacy-policy/  301
-/privacypolicy  /privacy-policy/  301
-/privacypolicy/  /privacy-policy/  301
-/terms  /terms-conditions/  301
-/terms/  /terms-conditions/  301
-/terms-of-service  /terms-conditions/  301
-/terms-of-service/  /terms-conditions/  301
+/privacy  /en/privacy-policy/  301
+/privacy/  /en/privacy-policy/  301
+/privacypolicy  /en/privacy-policy/  301
+/privacypolicy/  /en/privacy-policy/  301
+/terms  /en/terms-conditions/  301
+/terms/  /en/terms-conditions/  301
+/terms-of-service  /en/terms-conditions/  301
+/terms-of-service/  /en/terms-conditions/  301
 /en/terms  /en/terms-conditions/  301
 /en/terms/  /en/terms-conditions/  301
 /en/terms-of-service  /en/terms-conditions/  301
 /en/terms-of-service/  /en/terms-conditions/  301
-/terms-and-conditions  /terms-conditions/  301
-/terms-and-conditions/  /terms-conditions/  301
-/termsandconditions  /terms-conditions/  301
-/termsandconditions/  /terms-conditions/  301
-/teras-conditions  /terms-conditions/  301
-/teras-conditions/  /terms-conditions/  301
+/terms-and-conditions  /en/terms-conditions/  301
+/terms-and-conditions/  /en/terms-conditions/  301
+/termsandconditions  /en/terms-conditions/  301
+/termsandconditions/  /en/terms-conditions/  301
+/teras-conditions  /en/terms-conditions/  301
+/teras-conditions/  /en/terms-conditions/  301
 /es/teras-conditions  /es/terms-conditions/  301
 /es/teras-conditions/  /es/terms-conditions/  301
-# Multilingual thin blog stubs redirecting 301 to authoritative English articles
-/es/blog/*  /blog/:splat  301
-/fr/blog/*  /blog/:splat  301
-/de/blog/*  /blog/:splat  301
-/ko/blog/*  /blog/:splat  301
-/hi/blog/*  /blog/:splat  301
-/es/blog/  /blog/  301
-/fr/blog/  /blog/  301
-/de/blog/  /blog/  301
-/ko/blog/  /blog/  301
-/hi/blog/  /blog/  301
-/es/blog  /blog/  301
-/fr/blog  /blog/  301
-/de/blog  /blog/  301
-/ko/blog  /blog/  301
-/hi/blog  /blog/  301
+/privacy-policy  /en/privacy-policy/  301
+/privacy-policy/  /en/privacy-policy/  301
+/terms-conditions  /en/terms-conditions/  301
+/terms-conditions/  /en/terms-conditions/  301
+/cookie-policy  /en/cookie-policy/  301
+/cookie-policy/  /en/cookie-policy/  301
+/disclaimer  /en/disclaimer/  301
+/disclaimer/  /en/disclaimer/  301
+# Multilingual thin blog stubs redirecting 301 directly to canonical English articles (Zero chains, Zero 404s)
+/es/blog/*  /en/blog/:splat  301
+/fr/blog/*  /en/blog/:splat  301
+/de/blog/*  /en/blog/:splat  301
+/ko/blog/*  /en/blog/:splat  301
+/hi/blog/*  /en/blog/:splat  301
+/es/blog/  /en/blog/  301
+/fr/blog/  /en/blog/  301
+/de/blog/  /en/blog/  301
+/ko/blog/  /en/blog/  301
+/hi/blog/  /en/blog/  301
+/es/blog  /en/blog/  301
+/fr/blog  /en/blog/  301
+/de/blog  /en/blog/  301
+/ko/blog  /en/blog/  301
+/hi/blog  /en/blog/  301
 
-/fr/blog/1s-bei-accurate  /blog/is-bmi-accurate/  301
-/fr/blog/1s-bei-accurate/  /blog/is-bmi-accurate/  301
-/fr/blog/1s-bei-accurate/*  /blog/is-bmi-accurate/  301
-/fr/blog/is-bmi-accurate/2026-81-81  /blog/is-bmi-accurate/  301
-/fr/blog/is-bmi-accurate/2026-01-01  /blog/is-bmi-accurate/  301
+/fr/blog/1s-bei-accurate  /en/blog/is-bmi-accurate/  301
+/fr/blog/1s-bei-accurate/  /en/blog/is-bmi-accurate/  301
+/fr/blog/1s-bei-accurate/*  /en/blog/is-bmi-accurate/  301
+/fr/blog/is-bmi-accurate/2026-81-81  /en/blog/is-bmi-accurate/  301
+/fr/blog/is-bmi-accurate/2026-01-01  /en/blog/is-bmi-accurate/  301
 /editorial-policy  /en/editorial-policy/  301
 /editorial-policy/  /en/editorial-policy/  301
 /dmca-policy  /en/dmca-policy/  301
@@ -80,8 +88,8 @@
 /ideal-weight-calculator/  /en/ideal-weight-calculator/  301
 /macro-calculator  /en/macro-calculator/  301
 /macro-calculator/  /en/macro-calculator/  301
-/waist-to-height-calculator  /en/waist-to-height-calculator/  301
-/waist-to-height-calculator/  /en/waist-to-height-calculator/  301
+/waist-to-height-calculator  /en/waist-to-hip-ratio-calculator/  301
+/waist-to-height-calculator/  /en/waist-to-hip-ratio-calculator/  301
 /whr-calculator  /en/waist-to-hip-ratio-calculator/  301
 /whr-calculator/  /en/waist-to-hip-ratio-calculator/  301
 /navy-body-fat-calculator  /en/body-fat-calculator/  301
@@ -140,6 +148,7 @@
 /ko/one-rep-max-calculator/  /ko/1rm-calculator/  301
 /hi/one-rep-max-calculator  /hi/1rm-calculator/  301
 /hi/one-rep-max-calculator/  /hi/1rm-calculator/  301
+
 /pregnancy-weight-gain-calculator  /en/pregnancy-weight-gain-calculator/  301
 /pregnancy-weight-gain-calculator/  /en/pregnancy-weight-gain-calculator/  301
 /pediatric-bmi-calculator  /en/bmi-calculator/  301
@@ -171,22 +180,6 @@
 /body-surface-area-calculator/  /en/body-surface-area-calculator/  301
 /karvonen-heart-rate-calculator  /en/karvonen-heart-rate-calculator/  301
 /karvonen-heart-rate-calculator/  /en/karvonen-heart-rate-calculator/  301
-/1rm-calculator  /en/1rm-calculator/  301
-/1rm-calculator/  /en/1rm-calculator/  301
-/one-rep-max-calculator  /en/1rm-calculator/  301
-/one-rep-max-calculator/  /en/1rm-calculator/  301
-/en/one-rep-max-calculator  /en/1rm-calculator/  301
-/en/one-rep-max-calculator/  /en/1rm-calculator/  301
-/es/one-rep-max-calculator  /es/1rm-calculator/  301
-/es/one-rep-max-calculator/  /es/1rm-calculator/  301
-/fr/one-rep-max-calculator  /fr/1rm-calculator/  301
-/fr/one-rep-max-calculator/  /fr/1rm-calculator/  301
-/de/one-rep-max-calculator  /de/1rm-calculator/  301
-/de/one-rep-max-calculator/  /de/1rm-calculator/  301
-/ko/one-rep-max-calculator  /ko/1rm-calculator/  301
-/ko/one-rep-max-calculator/  /ko/1rm-calculator/  301
-/hi/one-rep-max-calculator  /hi/1rm-calculator/  301
-/hi/one-rep-max-calculator/  /hi/1rm-calculator/  301
 /heart-rate-zone-calculator  /en/heart-rate-zone-calculator/  301
 /heart-rate-zone-calculator/  /en/heart-rate-zone-calculator/  301
 
@@ -230,12 +223,8 @@
 /bmi-calculator-chart  /en/bmi-chart/  301
 /bmi-calculator-chart/  /en/bmi-chart/  301
 
-/3d-bmi-calculator  /en/3d-bmi-calculator/  301
-/3d-bmi-calculator/  /en/3d-bmi-calculator/  301
 /3d-bmi-calculator-online  /en/3d-bmi-calculator/  301
 /3d-bmi-calculator-online/  /en/3d-bmi-calculator/  301
-/3d-body-visualizer  /en/3d-bmi-calculator/  301
-/3d-body-visualizer/  /en/3d-bmi-calculator/  301
 /bmi-body-visualizer  /en/3d-bmi-calculator/  301
 /bmi-body-visualizer/  /en/3d-bmi-calculator/  301
 /bmi-3d-calculator  /en/3d-bmi-calculator/  301
@@ -246,21 +235,8 @@
 /bmi-visualizer/  /en/3d-bmi-calculator/  301
 /bmi-body-type-calculator  /en/3d-bmi-calculator/  301
 /bmi-body-type-calculator/  /en/3d-bmi-calculator/  301
-/en/3d-body-visualizer  /en/3d-bmi-calculator/  301
-/en/3d-body-visualizer/  /en/3d-bmi-calculator/  301
-/es/3d-body-visualizer  /es/3d-bmi-calculator/  301
-/es/3d-body-visualizer/  /es/3d-bmi-calculator/  301
-/fr/3d-body-visualizer  /fr/3d-bmi-calculator/  301
-/fr/3d-body-visualizer/  /fr/3d-bmi-calculator/  301
-/de/3d-body-visualizer  /de/3d-bmi-calculator/  301
-/de/3d-body-visualizer/  /de/3d-bmi-calculator/  301
-/ko/3d-body-visualizer  /ko/3d-bmi-calculator/  301
-/ko/3d-body-visualizer/  /ko/3d-bmi-calculator/  301
-/hi/3d-body-visualizer  /hi/3d-bmi-calculator/  301
-/hi/3d-body-visualizer/  /hi/3d-bmi-calculator/  301
 
-/bmr-calculator  /en/bmr-calculator/  301
-/bmr-calculator/  /en/bmr-calculator/  301
+
 /bmr-calculator-online  /en/bmr-calculator/  301
 /bmr-calculator-online/  /en/bmr-calculator/  301
 /basal-metabolic-rate-calculator  /en/bmr-calculator/  301
@@ -278,8 +254,6 @@
 /mifflin-st-jeor-calculator  /en/bmr-calculator/  301
 /mifflin-st-jeor-calculator/  /en/bmr-calculator/  301
 
-/tdee-calculator  /en/tdee-calculator/  301
-/tdee-calculator/  /en/tdee-calculator/  301
 /tdee-calculator-online  /en/tdee-calculator/  301
 /tdee-calculator-online/  /en/tdee-calculator/  301
 /tdee-calculator-for-weight-loss  /en/tdee-calculator/  301
@@ -297,8 +271,6 @@
 /calorie-maintenance-calculator  /en/maintenance-calorie-calculator/  301
 /calorie-maintenance-calculator/  /en/maintenance-calorie-calculator/  301
 
-/ideal-weight-calculator  /en/ideal-weight-calculator/  301
-/ideal-weight-calculator/  /en/ideal-weight-calculator/  301
 /ideal-weight-for-height  /en/ideal-weight-calculator/  301
 /ideal-weight-for-height/  /en/ideal-weight-calculator/  301
 /what-is-my-ideal-weight  /en/ideal-weight-calculator/  301
@@ -360,12 +332,8 @@
 /bmr-vs-tdee/  /en/bmr-calculator/  301
 /tdee-vs-bmr  /en/tdee-calculator/  301
 /tdee-vs-bmr/  /en/tdee-calculator/  301
-/bmr-calculator-by-age  /en/bmr-calculator/  301
-/bmr-calculator-by-age/  /en/bmr-calculator/  301
 /lbm-calculator  /en/lean-body-mass-calculator/  301
 /lbm-calculator/  /en/lean-body-mass-calculator/  301
-/whr-calculator  /en/waist-to-hip-ratio-calculator/  301
-/whr-calculator/  /en/waist-to-hip-ratio-calculator/  301
 /body-fat  /en/body-fat-calculator/  301
 /body-fat/  /en/body-fat-calculator/  301
 
@@ -374,20 +342,6 @@
 /blog/*  /en/blog/:splat  301
 
 # Indian BMI Calculator consolidation (redirect duplicate calculator to canonical /bmi-calculator-for-indians/)
-/bmi-calculator-india  /en/bmi-calculator-for-indians/  301
-/bmi-calculator-india/  /en/bmi-calculator-for-indians/  301
-/en/bmi-calculator-india  /en/bmi-calculator-for-indians/  301
-/en/bmi-calculator-india/  /en/bmi-calculator-for-indians/  301
-/es/bmi-calculator-india  /es/bmi-calculator-for-indians/  301
-/es/bmi-calculator-india/  /es/bmi-calculator-for-indians/  301
-/fr/bmi-calculator-india  /fr/bmi-calculator-for-indians/  301
-/fr/bmi-calculator-india/  /fr/bmi-calculator-for-indians/  301
-/de/bmi-calculator-india  /de/bmi-calculator-for-indians/  301
-/de/bmi-calculator-india/  /de/bmi-calculator-for-indians/  301
-/ko/bmi-calculator-india  /ko/bmi-calculator-for-indians/  301
-/ko/bmi-calculator-india/  /ko/bmi-calculator-for-indians/  301
-/hi/bmi-calculator-india  /hi/bmi-calculator-for-indians/  301
-/hi/bmi-calculator-india/  /hi/bmi-calculator-for-indians/  301
 
 # Search, 404, 500 & Embed utility normalizations
 /en/search  /search  301

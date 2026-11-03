@@ -8,5 +8,23 @@ export function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-return Astro.redirect(`/en/blog/${slug}/`, 301);
+const targetUrl = `/en/blog/${slug}/`;
+const canonical = `https://realbmicalculator.com${targetUrl}`;
 ---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting to Health Article</title>
+  <meta http-equiv="refresh" content={`0;url=${targetUrl}`} />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href={canonical} />
+  <script is:inline define:vars={{ targetUrl }}>
+    window.location.replace(targetUrl);
+  </script>
+</head>
+<body style="background:#091212;color:#8FA7A7;font-family:sans-serif;padding:2rem;text-align:center;">
+  <p>Redirecting to <a href={targetUrl} style="color:#E8674A;font-weight:bold;">Health Guide</a>...</p>
+</body>
+</html>
