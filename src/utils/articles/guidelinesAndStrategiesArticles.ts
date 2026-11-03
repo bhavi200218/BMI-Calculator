@@ -85,25 +85,118 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         <li><strong>Asian High Risk (Obesity Cutoff):</strong> 25.0 kg/m² for Indian and South Asian populations (ICMR guidelines) and 27.5 kg/m² for broader East Asian populations (WHO WPRO).</li>
       </ul>
 
-      <h2>Essential Complementary Biomarkers in Health Assessment</h2>
-      <p>To avoid misclassifying muscular athletes as obese or overlooking sarcopenic obesity in older adults, clinical consensus guidelines recommend coupling BMI with complementary screening tools:</p>
-      <ol class="list-decimal pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
-        <li><strong>Waist-to-Hip Ratio (WHR) &amp; Waist Circumference:</strong> Assesses central visceral adiposity surrounding internal organs. Abdominal waist circumference exceeding 102 cm (40 in) in men or 88 cm (35 in) in women strongly correlates with metabolic syndrome independent of total BMI.</li>
-        <li><strong>Body Fat Percentage (%BF):</strong> Measured via dual-energy X-ray absorptiometry (DEXA), bioelectrical impedance, or standardized skinfold calipers to directly quantify lean tissue vs. lipid storage.</li>
-        <li><strong>Cardiometabolic Laboratory Panels:</strong> Fasting blood glucose, glycated hemoglobin (HbA1c), lipid panels (HDL, LDL, triglycerides), and resting blood pressure provide physiological verification of metabolic health.</li>
-      </ol>
+      <h2>Step-by-Step Practical Worked Examples</h2>
 
-      <h2>Case Studies: When BMI Fails Without Context</h2>
       <div class="my-6 space-y-4">
-        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-2">
-          <h3 class="text-base font-bold text-[var(--accent)]">Case Study 1: The Muscular Athlete (False-Positive Risk)</h3>
-          <p class="text-sm text-[var(--foreground)]">A 28-year-old male competitive powerlifter measures 180 cm (5'11") and weighs 96 kg (211 lbs). Calculating his standard BMI yields <strong>29.6 kg/m²</strong>, placing him on the verge of clinical Class I Obesity according to WHO tables.</p>
-          <p class="text-sm text-[var(--muted-foreground)]">However, a dual-energy X-ray absorptiometry (DEXA) scan reveals a body fat percentage of merely <strong>11.5%</strong>, an abdominal waist circumference of 82 cm (32 in), and normal resting systolic/diastolic blood pressure (118/74 mmHg). Because skeletal muscle tissue possesses a biological density of 1.06 g/cm³ compared to adipose density of 0.90 g/cm³, his elevated gravitational mass stems entirely from hypertrophied contractile protein. Treating this athlete for obesity would be clinically inappropriate.</p>
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            Worked Example 1: South Asian Adult Navigating Conflicting Cutoffs
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>Persona: Amit</strong> | Age: 36 years | Stature: 174 cm (1.74 m) | Weight: 78 kg | Waist Circumference: 88 cm.
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>Step 1: Calculate Stature Squared</strong>: 1.74 &times; 1.74 = <strong>3.0276 m²</strong></p>
+            <p><strong>Step 2: Calculate BMI</strong>: 78 / 3.0276 = <strong>25.76 kg/m²</strong> (&approx; 25.8 kg/m²)</p>
+            <p><strong>Step 3: Western WHO Classification</strong>: 25.8 falls into <em>Overweight</em> (25.0–29.9 kg/m²)</p>
+            <p><strong>Step 4: ICMR South Asian Classification</strong>: 25.8 falls into <em>Class I Obesity</em> (&ge; 25.0 kg/m²)</p>
+            <p><strong>Step 5: Waist-to-Height Ratio (WHtR) Check</strong>: 88 cm / 174 cm = <strong>0.505</strong> (&gt; 0.50 risk threshold)</p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>Clinical Interpretation & Action Plan:</strong> If Amit relied purely on a Western chart, he would be categorized as mildly overweight. Under South Asian clinical guidelines and his elevated WHtR, he carries high visceral metabolic risk. Actionable steps: Target a modest 300 kcal daily deficit, achieve 8,500 daily steps, and screen fasting blood glucose and lipid panels.
+          </p>
         </div>
-        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-2">
-          <h3 class="text-base font-bold text-[var(--accent)]">Case Study 2: Normal Weight Obesity / "TOFI" (False-Negative Risk)</h3>
-          <p class="text-sm text-[var(--foreground)]">A 52-year-old sedentary office worker measures 165 cm (5'5") and weighs 62 kg (136 lbs). Her BMI calculates to <strong>22.8 kg/m²</strong>, comfortably within the conventional WHO "healthy weight" corridor.</p>
-          <p class="text-sm text-[var(--muted-foreground)]">Despite her normal BMI, she exhibits severe sarcopenia (skeletal muscle deficiency) combined with an abdominal waist circumference of 91 cm (36 in) and a DEXA-confirmed body fat percentage of <strong>36.2%</strong>. Her routine lipid panel reveals fasting triglycerides of 210 mg/dL, elevated fasting glucose of 108 mg/dL, and fatty liver infiltration on abdominal ultrasound. This presentation—clinically termed Normal Weight Obesity (NWO) or Thin-Outside-Fat-Inside (TOFI)—carries identical cardiovascular mortality risks to Class I obesity, yet standard BMI screening completely overlooks it.</p>
+
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            Worked Example 2: Normal Weight Obesity ("TOFI" Persona)
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>Persona: Sunita</strong> | Age: 48 years | Stature: 158 cm (1.58 m) | Weight: 52 kg | Waist: 82 cm.
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>Step 1: Calculate BMI</strong>: 52 / (1.58)² = 52 / 2.4964 = <strong>20.83 kg/m²</strong> (&approx; 20.8)</p>
+            <p><strong>Step 2: Adult Standard Assessment</strong>: 20.8 is "Normal Healthy Weight" (18.5–24.9)</p>
+            <p><strong>Step 3: Waist-to-Height Ratio Check</strong>: 82 cm / 158 cm = <strong>0.519</strong> (&gt; 0.50 threshold)</p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>Clinical Interpretation & Action Plan:</strong> Despite an ideal BMI, Sunita presents with severe sarcopenia (low skeletal muscle) and visceral abdominal fat. Her metabolic profile mirrors that of Class I obesity. Actionable steps: Do NOT lose weight; initiate progressive resistance training 3 days weekly and consume 1.4–1.6 g/kg of dietary protein to rebuild muscle tissue.
+          </p>
+        </div>
+      </div>
+
+      <h2>The 4-Quadrant BMI &amp; Waist Risk Decision Matrix</h2>
+      <p>To avoid false positives in athletes and false negatives in normal weight obesity, reference this clinical triage matrix combining BMI with Waist-to-Height Ratio (WHtR):</p>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Quadrant Profile</th>
+              <th class="p-3">BMI Status</th>
+              <th class="p-3">Waist (WHtR)</th>
+              <th class="p-3">Clinical Assessment</th>
+              <th class="p-3">Primary Action Strategy</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] text-[var(--muted-foreground)]">
+            <tr>
+              <td class="p-3 font-semibold text-emerald-600 dark:text-emerald-400 font-bold">Q1: Lean & Healthy</td>
+              <td class="p-3 font-mono">18.5–24.9 (Asian 18.5–22.9)</td>
+              <td class="p-3 font-mono text-emerald-600 dark:text-emerald-400">&lt; 0.50</td>
+              <td class="p-3">Optimal metabolic health; low visceral fat</td>
+              <td class="p-3">Maintain caloric balance, preserve lean muscle</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-amber-600 dark:text-amber-400 font-bold">Q2: Normal Weight Obesity</td>
+              <td class="p-3 font-mono">18.5–24.9 (Asian 18.5–22.9)</td>
+              <td class="p-3 font-mono text-rose-500 font-bold">&ge; 0.50</td>
+              <td class="p-3">Hidden visceral fat, sarcopenic muscle deficit</td>
+              <td class="p-3">Resistance training, increase protein (1.6 g/kg), do not crash diet</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-blue-500 font-bold">Q3: Muscular Athlete</td>
+              <td class="p-3 font-mono">&ge; 25.0 (Asian &ge; 23.0)</td>
+              <td class="p-3 font-mono text-emerald-600 dark:text-emerald-400">&lt; 0.50</td>
+              <td class="p-3">False positive; dense muscle mass, low body fat</td>
+              <td class="p-3">No weight loss required; track performance & blood pressure</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-rose-600 dark:text-rose-400 font-bold">Q4: Cardiometabolic Risk</td>
+              <td class="p-3 font-mono">&ge; 25.0 (Asian &ge; 23.0)</td>
+              <td class="p-3 font-mono text-rose-500 font-bold">&ge; 0.50</td>
+              <td class="p-3">True excess adiposity; heightened vascular risk</td>
+              <td class="p-3">300–500 kcal deficit, daily Zone 2 walking, check HbA1c/lipids</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Category-by-Category User Guidance</h2>
+      <div class="my-4 space-y-3">
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h4 class="font-bold text-sm text-sky-500">Underweight (&lt; 18.5 kg/m²)</h4>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] pt-1">
+            Focus on nutrient-dense calorie surplus (+300 to +500 kcal/day) incorporating healthy fats (avocados, nuts, olive oil) and consistent protein (1.6 g/kg). Pair with progressive resistance training to promote functional muscle mass accretion rather than purely subcutaneous fat.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h4 class="font-bold text-sm text-emerald-500">Normal Weight (18.5–24.9 kg/m² / Asian 18.5–22.9)</h4>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] pt-1">
+            Prioritize body recomposition and metabolic flexibility. Maintain daily energy balance, perform at least 150 minutes of weekly Zone 2 aerobic conditioning, and monitor waist circumference annually to guard against insidious visceral fat creep.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h4 class="font-bold text-sm text-amber-500">Overweight (25.0–29.9 kg/m² / Asian 23.0–24.9)</h4>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] pt-1">
+            Implement a moderate 300 to 500 kcal daily energy deficit. Prioritize high-satiety dietary fiber (30+ grams/day) and structured resistance training to ensure weight lost is adipose tissue rather than skeletal muscle.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h4 class="font-bold text-sm text-rose-500">Obesity (&ge; 30.0 kg/m² / Asian &ge; 25.0)</h4>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] pt-1">
+            Consult a physician for metabolic blood panels (fasting glucose, HbA1c, comprehensive lipid panel). Utilize low-impact cardiovascular exercise (swimming, cycling, brisk walking) to protect knee and hip joint cartilage while implementing sustainable dietary changes.
+          </p>
         </div>
       </div>
 
@@ -114,35 +207,15 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         <li><strong>Protective Adiposity Reserve:</strong> Older adults with a "mildly overweight" BMI between <strong>25.0 and 28.5 kg/m²</strong> exhibit the lowest statistical mortality rates, as modest subcutaneous lipid reserves provide vital energy buffering during acute illnesses, major surgeries, or prolonged hospitalizations.</li>
       </ul>
 
-      <h2>Frequently Asked Questions on BMI Interpretation</h2>
-      <div class="space-y-4 my-6">
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Why do healthcare providers still use BMI if it has recognized limitations?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">BMI remains the cornerstone of primary screening because it is 100% non-invasive, incurs zero financial cost, requires no complex imaging calibration, and correlates reliably with cardiovascular disease and all-cause mortality at population scales. When interpreted correctly as an initial triage signal rather than a definitive diagnosis, it alerts clinicians to investigate further with waist measurements and blood panels.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">How does ethnicity alter the clinical threshold for obesity?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Genetics and evolutionary adaptations dictate where individuals store excess lipids. Individuals of South Asian, East Asian, and Filipino descent tend to accumulate visceral fat in the abdominal cavity and hepatic parenchyma at substantially lower total weights. Consequently, the WHO and ICMR recommend defining overweight at &ge; 23.0 kg/m² and obesity at &ge; 25.0 kg/m² for Asian populations to prevent under-diagnosing diabetes and hypertension.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">What is the single best metric to combine with BMI for personal tracking?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Waist circumference or the Waist-to-Height Ratio (WHtR) is the most powerful complement to BMI. Keeping your waist circumference below half your height (WHtR &lt; 0.50) strongly guards against visceral adipose buildup regardless of whether you have heavy bone structure, high muscularity, or a light frame.</p>
-        </div>
-        <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Can someone be metabolically healthy while classified as obese?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">A subset of individuals classified as Obese Class I (BMI 30–34.9) exhibit "Metabolically Healthy Obesity" (MHO), displaying normal insulin sensitivity, healthy blood lipids, and absent hepatic steatosis due to subcutaneous rather than visceral fat distribution. However, longitudinal cohort studies demonstrate that roughly half of MHO individuals transition to metabolically unhealthy states within 10 to 15 years, indicating that excess mass places cumulative mechanical stress on joints and vascular endothelium.</p>
-        </div>
-      </div>
-
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>World Health Organization. <em>Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.</em> Lancet 2004; 363(9403):157-163.</li>
         <li>Flegal KM, et al. <em>Association of all-cause mortality with overweight and obesity using standard body mass index categories.</em> JAMA 2013; 309(1):71-82.</li>
         <li>Romero-Corral A, et al. <em>Normal weight obesity: a risk factor for cardiometabolic dysregulation and cardiovascular mortality.</em> Eur Heart J 2010; 31(6):737-746.</li>
         <li>Winter JE, et al. <em>BMI and all-cause mortality in older adults: a meta-analysis.</em> Am J Clin Nutr 2014; 99(4):875-890.</li>
-        <li>National Heart, Lung, and Blood Institute. <em>Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults.</em> NIH Publication No. 98-4083, 1998.</li>
+        <li>Misra A, et al. <em>Consensus statement for diagnosis of obesity, abdominal obesity and the metabolic syndrome for Asian Indians.</em> J Assoc Physicians India 2009; 57:163-170.</li>
       </ul>
-      `,
+`,
       "es": `
       <h2>Fundamento Clínico de la Interpretación del IMC</h2>
       <p>El Índice de Masa Corporal (IMC) es el estándar internacional adoptado por la <strong>Organización Mundial de la Salud (OMS)</strong> para clasificar el estado ponderal en adultos. Aunque su fórmula matemática es sencilla (peso en kilogramos dividido por la estatura en metros al cuadrado), su correcta interpretación clínica requiere evaluar umbrales estadísticos, límites fisiológicos y parámetros antropométricos complementarios.</p>
@@ -377,9 +450,9 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       </div>
       `,
       "hi": `
-      <h2>बॉडी मास इंडेक्स (बीएमआई) की नैदानिक व्याख्या</h2>
-      <p>बॉडी मास इंडेक्स (बीएमआई) <strong>विश्व स्वास्थ्य संगठन (WHO)</strong> द्वारा वयस्कों के वजन की स्थिति को वर्गीकृत करने के लिए इस्तेमाल किया जाने वाला प्राथमिक स्क्रीनिंग टूल है। यह शरीर के वजन (किलोग्राम) को ऊंचाई के वर्ग (मीटर²) से विभाजित करके निकाला जाता है।</p>
-      <p>चूंकि बीएमआई वसा और मांसपेशियों के बीच अंतर नहीं करता है, इसलिए इसका उपयोग एक शुरुआती स्वास्थ्य मूल्यांकन उपकरण के रूप में किया जाता है।</p>
+      <h2>बॉडी मास इंडेक्स (बीएमआई) की वैज्ञानिक व्याख्या</h2>
+      <p>बॉडी मास इंडेक्स (बीएमआई) <strong>विश्व स्वास्थ्य संगठन (WHO)</strong> द्वारा वयस्कों के वजन की स्थिति को वर्गीकृत करने के लिए इस्तेमाल किया जाने वाला प्राथमिक जनसंख्या स्क्रीनिंग टूल है। यह शरीर के वजन (किलोग्राम) को ऊंचाई के वर्ग (मीटर²) से विभाजित करके निकाला जाता है (kg/m²)।</p>
+      <p>बीएमआई केवल ऊंचाई और वजन का अनुपात बताता है; यह सीधे तौर पर मांसपेशियों, हड्डियों के घनत्व और चर्बी में अंतर नहीं करता। इसलिए, नैदानिक रूप से बीएमआई का उपयोग स्वतंत्र बीमारी निदान के बजाय समग्र चयापचय जोखिम को समझने के शुरुआती चरण के रूप में किया जाता है।</p>
 
       <h2>डब्ल्यूएचओ मानक वयस्क वर्गीकरण तालिका</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
@@ -388,39 +461,138 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
             <tr class="border-b border-[var(--border)] text-[var(--foreground)] font-bold">
               <th class="py-2.5 px-3">श्रेणी</th>
               <th class="py-2.5 px-3">मानक सीमा (kg/m²)</th>
-              <th class="py-2.5 px-3">स्वास्थ्य जोखिम</th>
+              <th class="py-2.5 px-3">स्वास्थ्य जोखिम प्रोफाइल</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)]">
             <tr>
               <td class="py-2.5 px-3 font-semibold text-sky-400">कम वजन (Underweight)</td>
               <td class="py-2.5 px-3 font-mono">&lt; 18.5</td>
-              <td class="py-2.5 px-3">पोषक तत्वों की कमी और कमजोर प्रतिरक्षा प्रणाली का जोखिम।</td>
+              <td class="py-2.5 px-3">पोषक तत्वों की कमी, ऑस्टियोपोरोसिस और कमजोर प्रतिरक्षा प्रणाली का जोखिम।</td>
             </tr>
             <tr>
               <td class="py-2.5 px-3 font-semibold text-emerald-400">सामान्य वजन (Normal)</td>
               <td class="py-2.5 px-3 font-mono">18.5 – 24.9</td>
-              <td class="py-2.5 px-3">हृदय रोग और मधुमेह का न्यूनतम सांख्यिकीय जोखिम।</td>
+              <td class="py-2.5 px-3">हृदय रोग, टाइप-2 डायबिटीज और अकाल मृत्यु का न्यूनतम सांख्यिकीय जोखिम।</td>
             </tr>
             <tr>
               <td class="py-2.5 px-3 font-semibold text-amber-400">अधिक वजन (Overweight)</td>
               <td class="py-2.5 px-3 font-mono">25.0 – 29.9</td>
-              <td class="py-2.5 px-3">उच्च रक्तचाप और मेटाबॉलिक तनाव का बढ़ा हुआ जोखिम।</td>
+              <td class="py-2.5 px-3">रक्तचाप, डिस्लिपिडेमिया और चयापचय तनाव का मध्यम जोखिम।</td>
             </tr>
             <tr>
               <td class="py-2.5 px-3 font-semibold text-rose-400">मोटापा श्रेणी I (Obesity I)</td>
               <td class="py-2.5 px-3 font-mono">30.0 – 34.9</td>
-              <td class="py-2.5 px-3">इंसुलिन प्रतिरोध और हृदय समस्याओं का उच्च जोखिम।</td>
+              <td class="py-2.5 px-3">इंसुलिन प्रतिरोध, स्लीप एप्निया और जोड़ों के दर्द का उच्च जोखिम।</td>
             </tr>
             <tr>
               <td class="py-2.5 px-3 font-semibold text-red-500">गंभीर मोटापा (Obesity II &amp; III)</td>
               <td class="py-2.5 px-3 font-mono">&ge; 35.0</td>
-              <td class="py-2.5 px-3">गंभीर हृदय रोग और जोड़ों पर अत्यधिक तनाव।</td>
+              <td class="py-2.5 px-3">गंभीर हृदय रोग, फैटी लिवर और गतिशीलता में अत्यधिक कठिनाई।</td>
             </tr>
           </tbody>
         </table>
       </div>
-      `
+
+      <h2>भारतीय एवं एशियाई आबादी के लिए संशोधित मानक (ICMR Guidelines)</h2>
+      <p>द लैंसेट (Lancet 2004) और आईसीएमआर (ICMR 2009) के अध्ययनों के अनुसार, एशियाई और भारतीय लोगों में कम वजन पर भी आंतरिक चर्बी (विसेरल फैट) अधिक पाई जाती है:</p>
+      <ul class="list-disc pl-5 my-3 space-y-1.5 text-xs sm:text-sm text-[var(--muted-foreground)]">
+        <li><strong>एशियाई अधिक वजन सीमा:</strong> 23.0 से 24.9 kg/m² (पश्चिमी देशों में यह 25.0 से शुरू होती है)।</li>
+        <li><strong>एशियाई मोटापा सीमा:</strong> 25.0 kg/m² या अधिक (पश्चिमी देशों में यह 30.0 से शुरू होती है)।</li>
+      </ul>
+
+      <h2>कदम-दर-कदम व्यावहारिक उदाहरण (Worked Examples)</h2>
+
+      <div class="my-6 space-y-4">
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            उदाहरण 1: एशियाई वयस्क और कटऑफ का अंतर
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>व्यक्ति: अमित</strong> | उम्र: 36 वर्ष | ऊंचाई: 174 सेमी (1.74 मी) | वजन: 78 किग्रा | कमर: 88 सेमी.
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>स्टेप 1: ऊंचाई का वर्ग</strong>: 1.74 &times; 1.74 = <strong>3.0276 मी²</strong></p>
+            <p><strong>स्टेप 2: बीएमआई की गणना</strong>: 78 / 3.0276 = <strong>25.76 kg/m²</strong> (&approx; 25.8)</p>
+            <p><strong>स्टेप 3: पश्चिमी WHO चार्ट</strong>: 25.8 = <em>ओवरवेट (अधिक वजन)</em> श्रेणी</p>
+            <p><strong>स्टेप 4: भारतीय ICMR चार्ट</strong>: 25.8 = <em>मोटापा श्रेणी I (Obesity I)</em> श्रेणी</p>
+            <p><strong>स्टेप 5: कमर-से-ऊंचाई अनुपात (WHtR)</strong>: 88 / 174 = <strong>0.505</strong> (&gt; 0.50 जोखिम सीमा)</p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>व्यावहारिक सलाह:</strong> पश्चिमी पैमाने पर केवल हल्का अधिक वजन दिखने के बावजूद, भारतीय मानकों के अनुसार अमित क्लास I मोटापे के दायरे में है। उसे रोजाना 8,500 कदम चलने, चीनी कम करने और ब्लड शुगर जांचने की सलाह दी जाती है।
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            उदाहरण 2: सामान्य वजन मोटापा ("TOFI" स्थिति)
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>व्यक्ति: सुनीता</strong> | उम्र: 48 वर्ष | ऊंचाई: 158 सेमी | वजन: 52 किग्रा | कमर: 82 सेमी.
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>स्टेप 1: बीएमआई गणना</strong>: 52 / (1.58)² = <strong>20.8 kg/m²</strong> (मानक रूप से सामान्य)</p>
+            <p><strong>स्टेप 2: कमर-से-ऊंचाई अनुपात</strong>: 82 / 158 = <strong>0.519</strong> (&gt; 0.50 सुरक्षित सीमा से अधिक)</p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>व्यावहारिक सलाह:</strong> वजन सही होने के बावजूद पेट पर विसरल चर्बी अधिक है और मांसपेशियां कम हैं। सुनीता को वजन घटाने के लिए भूखा रहने के बजाय स्ट्रेंथ ट्रेनिंग करने और प्रोटीन बढ़ाने की आवश्यकता है।
+          </p>
+        </div>
+      </div>
+
+      <h2>बीएमआई एवं कमर अनुपात की 4-क्वाड्रेंट निर्णय मैट्रिक्स</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">स्थिति</th>
+              <th class="p-3">बीएमआई</th>
+              <th class="p-3">कमर अनुपात (WHtR)</th>
+              <th class="p-3">स्वास्थ्य मूल्यांकन</th>
+              <th class="p-3">कार्रवाई की प्राथमिकता</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] text-[var(--muted-foreground)]">
+            <tr>
+              <td class="p-3 font-semibold text-emerald-600 dark:text-emerald-400 font-bold">1: स्वस्थ व लीन</td>
+              <td class="p-3 font-mono">18.5–24.9 (एशियाई 18.5–22.9)</td>
+              <td class="p-3 font-mono text-emerald-600 dark:text-emerald-400">&lt; 0.50</td>
+              <td class="p-3">उत्कृष्ट चयापचय स्वास्थ्य</td>
+              <td class="p-3">वर्तमान दिनचर्या जारी रखें</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-amber-600 dark:text-amber-400 font-bold">2: सामान्य वजन मोटापा (TOFI)</td>
+              <td class="p-3 font-mono">18.5–24.9 (एशियाई 18.5–22.9)</td>
+              <td class="p-3 font-mono text-rose-500 font-bold">&ge; 0.50</td>
+              <td class="p-3">छिपी हुई आंतरिक पेट की चर्बी</td>
+              <td class="p-3">वजन घटाने से बचें, स्ट्रेंथ ट्रेनिंग करें, प्रोटीन लें</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-blue-500 font-bold">3: मांसपेशीयुक्त एथलीट</td>
+              <td class="p-3 font-mono">&ge; 25.0 (एशियाई &ge; 23.0)</td>
+              <td class="p-3 font-mono text-emerald-600 dark:text-emerald-400">&lt; 0.50</td>
+              <td class="p-3">घनी मांसपेशियां, कम चर्बी (फाल्स पॉजिटिव)</td>
+              <td class="p-3">डाइट कम करने की कोई जरूरत नहीं</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-rose-600 dark:text-rose-400 font-bold">4: चयापचय जोखिम (मोटापा)</td>
+              <td class="p-3 font-mono">&ge; 25.0 (एशियाई &ge; 23.0)</td>
+              <td class="p-3 font-mono text-rose-500 font-bold">&ge; 0.50</td>
+              <td class="p-3">अत्यधिक चर्बी, हृदय व शुगर का वास्तविक जोखिम</td>
+              <td class="p-3">300-500 कैलोरी की कमी, दैनिक वॉक, लिपिड/HbA1c जांच</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>वैज्ञानिक संदर्भ</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>World Health Organization. <em>Appropriate body-mass index for Asian populations.</em> Lancet 2004; 363:157-163.</li>
+        <li>Romero-Corral A, et al. <em>Normal weight obesity: a risk factor for cardiometabolic dysregulation.</em> Eur Heart J 2010; 31:737-746.</li>
+        <li>Winter JE, et al. <em>BMI and all-cause mortality in older adults: a meta-analysis.</em> Am J Clin Nutr 2014; 99:875-890.</li>
+        <li>Misra A, et al. <em>Consensus statement for diagnosis of obesity for Asian Indians.</em> JAPI 2009; 57:163-170.</li>
+      </ul>
+`
     }
   },
 
@@ -500,7 +672,61 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
         </table>
       </div>
 
-      <p>A critical nuance in pediatric assessment is tracking growth velocity across time. A single isolated percentile measurement is less clinically meaningful than the child's longitudinal curve. An individual tracking consistently along the 80th percentile for years is typically healthy, whereas a sudden cross-percentile jump from the 50th to the 90th percentile over six months signals an acute metabolic imbalance.</p>
+      <h2>Step-by-Step Practical Worked Example: The Dramatic Pediatric Inversion</h2>
+      <p>To understand why adult BMI calculators are clinically dangerous for children, examine this real-world pediatric calculation:</p>
+
+      <div class="my-6 p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+        <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+          Worked Example: 8-Year-Old Boy (Age: 8 Years, 4 Months)
+        </h3>
+        <p class="text-sm text-[var(--foreground)]">
+          <strong>Child: Aarav</strong> | Age: 8 years, 4 months | Stature: 128 cm (1.28 m) | Weight: 29.5 kg (65 lbs).
+        </p>
+        <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+          <p><strong>Step 1: Calculate Stature Squared</strong>: 1.28 &times; 1.28 = <strong>1.6384 m²</strong></p>
+          <p><strong>Step 2: Calculate Raw BMI Score</strong>: 29.5 / 1.6384 = <strong>18.00 kg/m²</strong></p>
+          <p class="pt-1 text-rose-500 font-bold"><strong>The Adult Chart Fallacy:</strong></p>
+          <p>&bull; If entered into a standard adult calculator: 18.0 kg/m² is classified as <strong>"UNDERWEIGHT"</strong> (&lt; 18.5)!</p>
+          <p>&bull; An uninformed caregiver might mistakenly force-feed the child extra calories thinking he is malnourished.</p>
+          <p class="pt-1 text-emerald-600 dark:text-emerald-400 font-bold"><strong>The CDC Pediatric Growth Chart Truth:</strong></p>
+          <p>&bull; For an 8-year, 4-month-old boy, the median (50th percentile) BMI is <strong>15.8 kg/m²</strong>.</p>
+          <p>&bull; The 85th percentile threshold (Overweight cutoff) is <strong>17.8 kg/m²</strong>.</p>
+          <p>&bull; The 95th percentile threshold (Obesity cutoff) is <strong>19.4 kg/m²</strong>.</p>
+          <p>&bull; Plotted on the official CDC growth chart, Aarav's BMI of 18.0 corresponds to the <strong>86th Percentile</strong>!</p>
+        </div>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+          <strong>Clinical Conclusion:</strong> Aarav is actually in the <strong>Overweight percentile bracket (85th to &lt;95th percentile)</strong>. This dramatic reversal illustrates why pediatric BMI-for-age percentiles are mandatory for anyone under age 20.
+        </p>
+      </div>
+
+      <h2>The Longitudinal Growth Velocity Rule: When to Worry vs. When to Reassure</h2>
+      <p>A single isolated percentile measurement is a static snapshot. In pediatric medicine, <strong>growth velocity across time</strong> is vastly more significant than any single reading:</p>
+      <ul class="list-disc pl-5 my-3 space-y-2 text-xs sm:text-sm text-[var(--muted-foreground)]">
+        <li><strong>Channel Tracking (Reassuring):</strong> A child who tracks consistently along the 80th percentile from age 5 through age 12 is generally healthy, reflecting their unique genetic bone structure and familial stature.</li>
+        <li><strong>Crossing Two Major Percentile Lines (Clinical Red Flag):</strong> A sudden vertical jump—such as moving from the 50th percentile to the 88th percentile in under 9 months—warrants pediatric consultation. It signals an acute change in energy balance, thyroid function, or emotional stress.</li>
+        <li><strong>Height Velocity Deceleration:</strong> If weight percentile continues rising while linear height velocity flattens out, pediatric endocrinologists screen for growth hormone or endocrine discrepancies.</li>
+      </ul>
+
+      <h2>Evidence-Based Guidance for Parents &amp; Caregivers: The "Do's and Don'ts" Framework</h2>
+      <div class="my-6 grid sm:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl border border-rose-500/20 bg-rose-500/5 space-y-2">
+          <h4 class="font-bold text-sm text-rose-600 dark:text-rose-400 font-display uppercase tracking-wide">What NOT to Do (Harmful Practices)</h4>
+          <ul class="text-xs text-[var(--muted-foreground)] space-y-1.5 list-disc pl-4">
+            <li><strong>Never place a growing child on a restrictive calorie diet.</strong> Caloric restriction during puberty compromises linear bone elongation and peak brain development.</li>
+            <li><strong>Never weigh children daily or comment on their body shape.</strong> Frequent weighing strongly correlates with adolescent anxiety and eating disorders.</li>
+            <li><strong>Do not ban individual foods entirely.</strong> Demonizing specific snacks creates forbidden-food fixation and secret bingeing behaviors.</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5 space-y-2">
+          <h4 class="font-bold text-sm text-emerald-600 dark:text-emerald-400 font-display uppercase tracking-wide">What TO Do (Clinical Best Practices)</h4>
+          <ul class="text-xs text-[var(--muted-foreground)] space-y-1.5 list-disc pl-4">
+            <li><strong>Adopt the "Division of Responsibility" (Ellyn Satter Model):</strong> Parents decide <em>what, when, and where</em> family meals are served; the child decides <em>whether and how much</em> to eat.</li>
+            <li><strong>Eliminate Liquid Sugars:</strong> Replace sodas, sweetened juices, and energy drinks with water and whole milk.</li>
+            <li><strong>Ensure 60 Minutes of Active Daily Play:</strong> Emphasize fun movement (cycling, swimming, playground games) rather than structured "workouts".</li>
+            <li><strong>Protect 9 to 11 Hours of Nightly Sleep:</strong> Chronic sleep deprivation disrupts adolescent growth hormone surges and elevates daytime carbohydrate cravings.</li>
+          </ul>
+        </div>
+      </div>
 
       <h2>Adults in Mid-Life (Ages 20 to 65): Sarcopenic Shifts</h2>
       <p>For adults between ages 20 and 65, the conventional WHO range of 18.5 to 24.9 kg/m² serves as a robust indicator of cardiometabolic health and longevity in broad epidemiological studies. However, physiological changes during middle adulthood often mask underlying health risks if weight alone is tracked:</p>
@@ -660,11 +886,58 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       <h2>1. बच्चे व किशोर (आयु 2 से 19 वर्ष): विकास पर्सेंटाइल (Growth Percentiles)</h2>
       <p>बच्चों में स्थिर बीएमआई संख्या के बजाय उम्र और लिंग आधारित विकास पर्सेंटाइल का उपयोग किया जाता है:</p>
       <ul>
-        <li><strong>कम वजन (अंडरवेट):</strong> 5वें पर्सेंटाइल से कम</li>
-        <li><strong>स्वस्थ / सामान्य वजन:</strong> 5वें से 85वें पर्सेंटाइल के बीच</li>
-        <li><strong>अधिक वजन (ओवरवेट):</strong> 85वें से 95वें पर्सेंटाइल के बीच</li>
-        <li><strong>मोटापा (ओबेसिटी):</strong> 95वें पर्सेंटाइल या उससे अधिक</li>
+        <li><strong>कम वजन (अंडरवेट):</strong> 5वें पर्सेंटाइल से कम (पोषण संबंधी जांच आवश्यक)</li>
+        <li><strong>स्वस्थ / सामान्य वजन:</strong> 5वें से 85वें पर्सेंटाइल के बीच (संतुलित विकास)</li>
+        <li><strong>अधिक वजन (ओवरवेट):</strong> 85वें से 95वें पर्सेंटाइल के बीच (जीवनशैली में सुधार आवश्यक)</li>
+        <li><strong>मोटापा (ओबेसिटी):</strong> 95वें पर्सेंटाइल या उससे अधिक (बाल रोग विशेषज्ञ से परामर्श)</li>
       </ul>
+
+      <h2>कदम-दर-कदम व्यावहारिक उदाहरण: बच्चों में वयस्क चार्ट का धोखा</h2>
+      <p>बच्चों के लिए वयस्क बीएमआई कैलकुलेटर का उपयोग करना चिकित्सकीय रूप से कितना भ्रामक हो सकता है, इसे इस वास्तविक उदाहरण से समझें:</p>
+
+      <div class="my-6 p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+        <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+          व्यावहारिक उदाहरण: 8 वर्षीय बालक (आयु: 8 वर्ष, 4 महीने)
+        </h3>
+        <p class="text-sm text-[var(--foreground)]">
+          <strong>बच्चा: आरव</strong> | आयु: 8 वर्ष, 4 महीने | ऊंचाई: 128 सेमी (1.28 मी) | वजन: 29.5 किग्रा.
+        </p>
+        <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+          <p><strong>स्टेप 1: ऊंचाई का वर्ग</strong>: 1.28 &times; 1.28 = <strong>1.6384 मी²</strong></p>
+          <p><strong>स्टेप 2: रॉ बीएमआई स्कोर</strong>: 29.5 / 1.6384 = <strong>18.00 kg/m²</strong></p>
+          <p class="pt-1 text-rose-500 font-bold"><strong>वयस्क चार्ट का भ्रामक परिणाम:</strong></p>
+          <p>&bull; यदि इसे सामान्य वयस्क कैलकुलेटर में देखा जाए, तो 18.0 को <strong>"कम वजन (Underweight)"</strong> (&lt; 18.5) बताया जाएगा!</p>
+          <p>&bull; अनजाने में माता-पिता बच्चे को कुपोषित समझकर अधिक भोजन खिलाने की गलती कर सकते हैं।</p>
+          <p class="pt-1 text-emerald-600 dark:text-emerald-400 font-bold"><strong>सीडीसी बाल विकास चार्ट (CDC Growth Chart) की सच्चाई:</strong></p>
+          <p>&bull; 8 वर्ष 4 महीने के लड़के का औसत (50वां पर्सेंटाइल) बीएमआई केवल <strong>15.8 kg/m²</strong> होता है।</p>
+          <p>&bull; 85वां पर्सेंटाइल (अधिक वजन की सीमा) <strong>17.8 kg/m²</strong> है।</p>
+          <p>&bull; सीडीसी चार्ट पर 18.0 बीएमआई वास्तव में <strong>86वें पर्सेंटाइल</strong> पर आता है!</p>
+        </div>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+          <strong>निष्कर्ष:</strong> आरव वास्तव में <strong>अधिक वजन (Overweight)</strong> की श्रेणी में है। यह भारी अंतर दर्शाता है कि 20 वर्ष से कम उम्र के बच्चों और किशोरों के लिए केवल उम्र-आधारित पर्सेंटाइल का ही उपयोग करना अनिवार्य है।
+        </p>
+      </div>
+
+      <h2>माता-पिता के लिए व्यावहारिक गाइड: क्या करें और क्या न करें</h2>
+      <div class="my-6 grid sm:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl border border-rose-500/20 bg-rose-500/5 space-y-2">
+          <h4 class="font-bold text-sm text-rose-600 dark:text-rose-400 font-display uppercase tracking-wide">क्या न करें (नुकसानदेह आदतें)</h4>
+          <ul class="text-xs text-[var(--muted-foreground)] space-y-1.5 list-disc pl-4">
+            <li><strong>बढ़ते बच्चे को कभी क्रैश डाइट पर न डालें।</strong> प्यूबर्टी में कम कैलोरी से हड्डियों और मस्तिष्क का विकास रुक जाता है।</li>
+            <li><strong>रोजाना वजन न मापें और शरीर पर नकारात्मक टिप्पणी न करें।</strong> इससे बच्चे में चिंता और खानपान के विकार पैदा होते हैं।</li>
+            <li><strong>किसी एक भोजन को पूरी तरह बैन न करें।</strong> अत्यधिक पाबंदी से बच्चे छिपकर खाने लगते हैं।</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5 space-y-2">
+          <h4 class="font-bold text-sm text-emerald-600 dark:text-emerald-400 font-display uppercase tracking-wide">क्या करें (सर्वोत्तम वैज्ञानिक तरीके)</h4>
+          <ul class="text-xs text-[var(--muted-foreground)] space-y-1.5 list-disc pl-4">
+            <li><strong>जिम्मेदारी का विभाजन मॉडल:</strong> माता-पिता तय करें कि <em>क्या, कब और कहाँ</em> खाना है; बच्चा तय करे कि <em>कितना</em> खाना है।</li>
+            <li><strong>मीठे पेय पदार्थ बंद करें:</strong> कोल्ड ड्रिंक, पैकेज्ड जूस की जगह सादा पानी और दूध दें।</li>
+            <li><strong>दैनिक 60 मिनट का खेलकूद:</strong> जिम कसरत के बजाय साइकिल चलाना, तैरना और पार्क में दौड़ना प्रोत्साहित करें।</li>
+            <li><strong>9 से 11 घंटे की नींद सुनिश्चित करें:</strong> पर्याप्त नींद से ग्रोथ हार्मोन सही रूप से कार्य करता है।</li>
+          </ul>
+        </div>
+      </div>
 
       <h2>2. मध्य वयस्कता (आयु 20 से 64 वर्ष): सरकोपेनिया की शुरुआत</h2>
       <p>30 वर्ष की आयु के बाद गतिहीन वयस्कों में प्रति दशक 3% से 8% मांसपेशियां स्वाभाविक रूप से घटने लगती हैं। वजन स्थिर रहने पर भी मांसपेशियों की जगह पेट में आंतरिक चर्बी (विसरल फैट) बढ़ने लगती है, जिससे टाइप-2 डायबिटीज का खतरा बढ़ जाता है।</p>

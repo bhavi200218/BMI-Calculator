@@ -94,17 +94,17 @@ const data: Record<string, any> = {
         desc: "मानक बीएमआई फॉर्मूला गर्भवती महिलाओं, 19 वर्ष से कम उम्र के बच्चों/किशोरों, 65+ वरिष्ठ नागरिकों और एथलीटों के लिए सीमित संदर्भात्मक मान प्रस्तुत करता है।"
       }
     ],
-    compBadge: "प्रमाण-आधारित तुलना",
-    compTitle: "मानक बीएमआई बनाम Real BMI कैलकुलेटर",
-    compDesc: "मानक बॉडी मास इंडेक्स (BMI) की तुलना पूरक चयापचय और शारीरिक संरचना संकेतकों से करें। यद्यपि मानक बीएमआई वजन और ऊंचाई के आधार पर त्वरित स्क्रीनिंग प्रदान करता है, यह मांसपेशियों और वसा के बीच अंतर नहीं कर पाता और न ही पेट की आंतरिक चर्बी को मापता है। जानें कि कैसे बीएमआर (BMR), टीडीईई (TDEE), कमर का माप और डब्ल्यूएचओ एशियाई मानकों का समन्वय आपके स्वास्थ्य का अधिक सटीक मूल्यांकन करता है।",
-    colMetric: "स्वास्थ्य मीट्रिक / सीमा",
-    colStd: "मानक बीएमआई",
-    colReal: "Real BMI कैलकुलेटर",
+    compBadge: "स्वास्थ्य संकेतक अवलोकन",
+    compTitle: "मानक बीएमआई एवं पूरक स्वास्थ्य संकेतक",
+    compDesc: "मानक बॉडी मास इंडेक्स (BMI) की तुलना पूरक चयापचय और शारीरिक संरचना संकेतकों के साथ समझें। यद्यपि मानक बीएमआई वजन और ऊंचाई (kg/m²) के आधार पर एक त्वरित जनसंख्या-स्तरीय बेसलाइन प्रदान करता है, यह मांसपेशियों और वसा के ऊतकों के बीच अंतर नहीं करता और न ही पेट की आंतरिक विसरल चर्बी को मापता है। जानें कि कैसे बीएमआर (BMR), टीडीईई (TDEE), कमर का माप और डब्ल्यूएचओ क्षेत्रीय कटऑफ दिशानिर्देश मिलकर आपके शारीरिक स्वास्थ्य का अधिक व्यापक संदर्भ प्रस्तुत करते हैं।",
+    colMetric: "स्वास्थ्य संकेतक",
+    colStd: "मानक बीएमआई बेसलाइन फोकस",
+    colReal: "यह क्या मूल्यांकन करता है",
     compRows: [
-      { title: "मांसपेशी घनत्व (एथलीट)", std: "❌ मांसपेशियों के वजन को 'अधिक वजन' या 'मोटापा' श्रेणी में रख सकता है", real: "✅ बीएमआर एवं कमर संदर्भ के साथ विस्तृत समायोजन करता है" },
-      { title: "डब्ल्यूएचओ एशियाई कटऑफ", std: "❌ एशियाई 23.0 kg/m² सीमा की अनदेखी करता है", real: "✅ डब्ल्यूएचओ एशियाई संशोधित कटऑफ को पूर्णतः एकीकृत करता है" },
-      { title: "मेटाबॉलिक कैलोरी लक्ष्य", std: "❌ केवल एक स्थिर वजन-ऊंचाई संख्या देता है", real: "✅ दैनिक बीएमआर एवं टीडीईई कैलोरी आवश्यकताओं की गणना करता है" },
-      { title: "कमर की परिधि एवं वसा", std: "❌ कमर की परिधि का आकलन नहीं कर पाता", real: "✅ बीएमआई को कमर-से-हिप अनुपात उपकरण के साथ जोड़ता है" }
+      { title: "मानक बीएमआई स्कोर", std: "ऊंचाई के सापेक्ष वजन (kg/m²)", real: "WHO एवं CDC जनसंख्या स्क्रीनिंग बेसलाइन (यह बीएमआई स्कोर को बदलता या समायोजित नहीं करता)" },
+      { title: "कमर-से-ऊंचाई अनुपात (WHtR)", std: "केंद्रीय वसा संचय की प्राथमिक जांच", real: "पेट की आंतरिक विसरल वसा जोखिम और वितरण का स्वतंत्र संदर्भ" },
+      { title: "WHO एशियाई कटऑफ दिशानिर्देश", std: "जातीय संवेदनशीलता सीमाएं", real: "संशोधित 23.0 kg/m² अधिक वजन जोखिम श्रेणी का संदर्भ" },
+      { title: "BMR एवं TDEE चयापचय अनुमान", std: "दैनिक ऊर्जा व्यय समीकरण", real: "दैनिक कैलोरी रखरखाव और पोषण योजना के लिए पूरक बेसलाइन" }
     ],
     ctaTitle: "क्या आप जानना चाहते हैं कि बीएमआई आपके लिए कितना उपयोगी है?",
     ctaDesc: "मांसपेशियों के घनत्व और डब्ल्यूएचओ दिशानिर्देशों पर हमारी पूरी गाइड पढ़ें।",
@@ -146,17 +146,17 @@ const data: Record<string, any> = {
         desc: "표준 BMI 공식은 임산부(임신 체중 증가), 19세 미만 소아청소년(백분위 성장 곡선 필요), 65세 이상 노년층(보호적 근육 예비량) 및 보디빌더에게 제한적인 정확도를 가집니다."
       }
     ],
-    compBadge: "방법론적 비교 분석",
-    compTitle: "표준 BMI vs 상보적 건강 지표 비교",
-    compDesc: "표준 체질량지수(BMI)와 보완적인 대사 건강 및 신체 구성 지표를 비교해 보세요. 표준 BMI는 신장과 체중을 이용한 신속한 1차 스크리닝 기준이지만, 골격근량과 체지방을 구분하지 못하며 복부 내장지방을 측정할 수 없습니다. 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레 및 WHO 아시아 기준을 함께 고려하여 보다 정밀한 건강 평가를 확인하세요.",
-    colMetric: "건강 지표 / 평가 기준",
-    colStd: "표준 BMI 기준",
-    colReal: "Real BMI 종합 평가",
+    compBadge: "건강 지표 개요",
+    compTitle: "표준 BMI 및 상보적 건강 지표",
+    compDesc: "표준 체질량지수(BMI)와 상보적인 대사 건강 및 신체 구성 지표를 비교해 보세요. 표준 BMI는 신장과 체중을 이용한 신속한 인구 집단 스크리닝 기준이지만, 골격근량과 지방 조직을 구분하지 못하며 복부 내장지방을 측정할 수 없습니다. 기초대사량(BMR), 일일 총 에너지 소비량(TDEE), 허리둘레 및 WHO 지역별 기준이 어떻게 신체 건강에 대한 보다 포괄적인 맥락을 제공하는지 확인해 보세요.",
+    colMetric: "건강 지표",
+    colStd: "표준 기준선 초점",
+    colReal: "평가 목적 및 내용",
     compRows: [
-      { title: "운동선수 골격근 밀도", std: "❌ 근육량을 구분하지 못해 '과체중' 또는 '비만'으로 오분류", real: "✅ BMR 및 체지방률 추정 지표로 보완하여 평가" },
-      { title: "WHO 아시아 내장지방 기준", std: "❌ 아시아인 과체중 위험 기준(23.0 kg/m²)을 간과", real: "✅ WHO 아시아 개정 진단 기준(23.0 kg/m²) 완벽 통합" },
-      { title: "대사 칼로리 및 에너지 목표", std: "❌ 단순히 체중 대비 신장 비율 수치만 정적으로 제공", real: "✅ 일일 기초대사량(BMR) 및 활동 소비량(TDEE) 맞춤 산출" },
-      { title: "복부 내장지방 위험 평가", std: "❌ 허리둘레 및 중심성 비만 위험을 측정 불가", real: "✅ BMI를 허리-엉덩이 비율(WHR) 및 허리-키 비율(WHtR)과 연계" }
+      { title: "표준 BMI 점수", std: "신장 제곱 대비 체중 비율 (kg/m²)", real: "WHO 및 CDC 인구 집단 선별 기준선 (BMI 점수를 변경하거나 보정하지 않음)" },
+      { title: "허리둘레-신장비 (WHtR)", std: "복부 중심 비만 선별", real: "복부 내장지방 축적 및 심혈관 위험 분포 참고" },
+      { title: "WHO 아시아 기준 지침", std: "인종별 대사 위험 기준", real: "수정된 23.0 kg/m² 과체중 위험 분류 참고" },
+      { title: "BMR 및 TDEE 대사 추정치", std: "일일 에너지 소비량 계산", real: "영양 및 칼로리 유지를 위한 상보적 대사 기준선" }
     ],
     ctaTitle: "BMI가 본인에게 정말 정확한지 확인하고 싶으신가요?",
     ctaDesc: "근육 밀도 요인, 최신 건강 연구 및 WHO 인종별 가이드라인을 담은 전문 가이드를 확인하세요.",
@@ -198,17 +198,17 @@ const data: Record<string, any> = {
         desc: "El IMC estándar presenta limitaciones conocidas en mujeres embarazadas (peso gestacional), menores de 19 años (curvas percentilares), adultos mayores de 65 años y atletas."
       }
     ],
-    compBadge: "Comparación Metodológica",
-    compTitle: "IMC Estándar vs Indicadores de Salud Complementarios",
-    compDesc: "Compare el Índice de Masa Corporal (IMC) tradicional con indicadores de salud metabólica y composición corporal complementarios. Aunque el IMC ofrece un cribado poblacional rápido basado en peso y estatura, presenta limitaciones claras: no diferencia entre masa muscular y tejido adiposo ni localiza la grasa visceral profunda. A continuación, analizamos cómo la integración de la Tasa Metabólica Basal (TMB), el Gasto Energético Total Diario (GETD) y el perímetro de cintura proporciona una visión más completa y precisa de su estado físico.",
-    colMetric: "Métrica / Criterio de Salud",
-    colStd: "Enfoque IMC Estándar",
-    colReal: "Evaluación Real BMI",
+    compBadge: "Resumen de Indicadores de Salud",
+    compTitle: "IMC Estándar e Indicadores de Salud Complementarios",
+    compDesc: "Compare los cálculos estándar del Índice de Masa Corporal (IMC) con métricas complementarias de metabolismo y composición corporal. Si bien el IMC estándar proporciona una línea de base rápida a nivel poblacional utilizando el peso y la estatura (kg/m²), no distingue la masa muscular del tejido adiposo ni mide la grasa abdominal profunda. Conozca cómo la Tasa Metabólica Basal (BMR), el Gasto Energético Total Diario (TDEE), las mediciones de cintura y los umbrales regionales de la OMS ofrecen un contexto de salud más amplio.",
+    colMetric: "Indicador de Salud",
+    colStd: "Enfoque de Referencia Estándar",
+    colReal: "Aspecto que Evalúa",
     compRows: [
-      { title: "Densidad Muscular en Atletas", std: "❌ Clasifica erróneamente el músculo como 'Sobrepeso' u 'Obesidad'", real: "✅ Se ajusta con estimaciones de BMR y % de grasa corporal" },
-      { title: "Límite Visceral Asiático de la OMS", std: "❌ Ignora el umbral asiático de sobrepeso de 23.0 kg/m²", real: "✅ Integra completamente los límites revisados de la OMS" },
-      { title: "Objetivo de Calorías Metabólicas", std: "❌ Solo proporciona un número estático de peso a altura", real: "✅ Calcula las necesidades calóricas diarias de BMR y TDEE" },
-      { title: "Evaluación de Grasa Visceral Abdominal", std: "❌ No mide la circunferencia de cintura ni el riesgo visceral", real: "✅ Combina el IMC con la herramienta de índice Cintura-Cadera" }
+      { title: "Puntuación de IMC Estándar", std: "Peso relativo a la estatura² (kg/m²)", real: "Línea de base de cribado poblacional de la OMS y CDC (no modifica ni altera el IMC)" },
+      { title: "Índice Cintura-Estatura (ICE/WHtR)", std: "Cribado de adiposidad central", real: "Distribución del riesgo de grasa visceral abdominal" },
+      { title: "Directrices de la OMS para Poblaciones Asiáticas", std: "Adaptación por sensibilidad étnica", real: "Categoría de riesgo de sobrepeso revisada a 23.0 kg/m²" },
+      { title: "Estimaciones Metabólicas de BMR y TDEE", std: "Ecuaciones de gasto energético", real: "Base de referencia complementaria para mantenimiento calórico y nutrición" }
     ],
     ctaTitle: "¿Quieres saber si el IMC es realmente preciso para ti?",
     ctaDesc: "Lee nuestro desglose de referencia completo sobre masa muscular y pautas de la OMS.",
@@ -250,18 +250,17 @@ const data: Record<string, any> = {
         desc: "Les formules d'IMC habituelles possèdent des limites documentées pour les femmes enceintes (poids gestationnel), les enfants et adolescents de moins de 19 ans (courbes de percentiles), les seniors de plus de 65 ans (masse musculaire protectrice) et les personnes très sportives."
       }
     ],
-    compBadge: "Comparaison Méthodologique",
-    compTitle: "IMC Standard vs Indicateurs de Santé Complémentaires",
-    compDesc: "Comparez l'Indice de Masse Corporelle (IMC) classique avec les métriques complémentaires de santé métabolique et de composition corporelle. Si l'IMC fournit une première estimation rapide basée sur la taille et le poids, il ne distingue pas la masse musculaire du tissu adipeux et ignore la répartition des graisses viscérales abdominales. Découvrez ci-dessous comment l'intégration du métabolisme de base (BMR), de la dépense énergétique journalière (TDEE), du tour de taille et des seuils régionaux de l'OMS affine considérablement votre évaluation.",
-    colMetric: "Métrique / Critère de Santé",
-    colStd: "Approche Standard (Taille / Poids)",
-    colReal: "Évaluation Approfondie Real BMI",
+    compBadge: "Aperçu des Indicateurs de Santé",
+    compTitle: "IMC Standard et Indicateurs de Santé Complémentaires",
+    compDesc: "Comparez les calculs standard de l'Indice de Masse Corporelle (IMC) avec des indicateurs complémentaires de métabolisme et de composition corporelle. Bien que l'IMC standard fournisse une estimation rapide au niveau populationnel basée sur la taille et le poids (kg/m²), il ne fait pas la distinction entre la masse musculaire squelettique et le tissu adipeux, et ne mesure pas la graisse viscérale abdominale. Découvrez comment le métabolisme de base (BMR), la dépense énergétique journalière (TDEE), les mesures de tour de taille et les seuils régionaux de l'OMS apportent un contexte plus complet.",
+    colMetric: "Indicateur de Santé",
+    colStd: "Focus de Référence Standard",
+    colReal: "Aspect Évalué",
     compRows: [
-      { title: "Score IMC Standard", std: "❌ Masse globale divisée par la taille² sans distinction tissulaire", real: "✅ Base de dépistage préliminaire standardisée OMS & CDC" },
-      { title: "Densité Musculaire des Sportifs", std: "❌ Classe fréquemment la masse musculaire en 'Surpoids' ou 'Obésité'", real: "✅ Corrèle avec les estimations de BMR et le taux de graisse corporelle" },
-      { title: "Seuil Viscéral Asiatique de l'OMS", std: "❌ Ignore le seuil d'alerte spécifique de 23,0 kg/m²", real: "✅ Intègre pleinement les critères révisés de l'OMS pour populations asiatiques" },
-      { title: "Besoins Métaboliques & Dépense Énergétique", std: "❌ Fournit uniquement un ratio poids/taille statique", real: "✅ Calcule la dépense au repos (BMR) et l'énergie quotidienne totale (TDEE)" },
-      { title: "Évaluation de l'Adiposité Abdominale", std: "❌ Ne mesure ni le tour de taille ni l'adiposité viscérale profonde", real: "✅ Complète l'analyse avec les ratios Taille-Hanche (WHR) et Taille-Hauteur" }
+      { title: "Score IMC Standard", std: "Poids rapporté à la taille² (kg/m²)", real: "Ligne de base de dépistage populationnel OMS & CDC (ne modifie ni n'ajuste l'IMC)" },
+      { title: "Ratio Tour de Taille / Taille (WHtR)", std: "Dépistage de l'adiposité centrale", real: "Distribution et évaluation du risque de graisse viscérale abdominale" },
+      { title: "Directrices de l'OMS pour Populations Asiatiques", std: "Sensibilité ethnique régionale", real: "Seuil d'alerte au surpoids abaissé à 23,0 kg/m²" },
+      { title: "Estimations Métaboliques BMR & TDEE", std: "Équations de dépense énergétique", real: "Repères complémentaires pour le maintien calorique et l'équilibre nutritionnel" }
     ],
     ctaTitle: "Souhaitez-vous savoir si l'IMC est réellement adapté à votre profil ?",
     ctaDesc: "Consultez notre guide approfondi sur la densité musculaire, les recherches cliniques et les recommandations régionales de l'OMS.",
@@ -303,17 +302,17 @@ const data: Record<string, any> = {
         desc: "Standard-BMI-Formeln haben dokumentierte Grenzen bei Schwangeren (Gestationsgewicht), Jugendlichen unter 19 (Perzentilenkurven), Senioren ab 65 und Kraftsportlern."
       }
     ],
-    compBadge: "Methodischer Vergleich",
-    compTitle: "Standard-BMI vs. Ergänzende Gesundheitsindikatoren",
-    compDesc: "Vergleichen Sie den klassischen Body-Mass-Index (BMI) mit ergänzenden Stoffwechsel- und Körperzusammensetzungs-Parametern. Während der Standard-BMI eine schnelle statistische Orientierung anhand von Größe und Gewicht bietet, kann er nicht zwischen Muskelmasse und Fettgewebe differenzieren und erfasst kein viszerales Bauchfett. Erfahren Sie hier, wie die Einbeziehung von Grundumsatz (BMR), Gesamtenergiebedarf (TDEE), Taillenumfang und WHO-Schwellenwerten Ihre Auswertung präzisiert.",
-    colMetric: "Gesundheitsmetrik / Kriterium",
-    colStd: "Standard-BMI-Skala",
-    colReal: "Real BMI Gesamtanalyse",
+    compBadge: "Übersicht der Gesundheitsindikatoren",
+    compTitle: "Standard-BMI und Ergänzende Gesundheitsindikatoren",
+    compDesc: "Vergleichen Sie klassische Body-Mass-Index (BMI)-Berechnungen mit ergänzenden Stoffwechsel- und Körperzusammensetzungs-Parametern. Während der Standard-BMI eine schnelle statistische Orientierung auf Bevölkerungsebene anhand von Größe und Gewicht (kg/m²) bietet, differenziert er nicht zwischen Muskelmasse und Fettgewebe und erfasst kein tiefes viszerales Bauchfett. Erfahren Sie, wie Grundumsatz (BMR), Gesamtenergieumsatz (TDEE), Taillenumfang und regionale WHO-Schwellenwerte einen umfassenderen gesundheitlichen Kontext liefern.",
+    colMetric: "Gesundheitsindikator",
+    colStd: "Standard-Referenzfokus",
+    colReal: "Bewerteter Aspekt",
     compRows: [
-      { title: "Muskeldichte bei Sportlern", std: "❌ Stuft Muskelmasse fälschlicherweise als 'Übergewichtig' ein", real: "✅ Passt sich mit BMR- & Körperfett-Schätzungen an" },
-      { title: "Asiatischer WHO-Viszeralgrenzwert", std: "❌ Ignoriert den asiatischen Grenzwert von 23,0 kg/m²", real: "✅ Integriert die überarbeiteten WHO-Grenzwerte vollständig" },
-      { title: "Stoffwechsel-Kalorienziel", std: "❌ Bietet nur eine statische Gewicht-zu-Größe-Zahl", real: "✅ Berechnet täglichen BMR- & TDEE-Kalorienbedarf" },
-      { title: "Beurteilung von Bauchfett", std: "❌ Kann Taillenumfang oder viszerales Risiko nicht messen", real: "✅ Kombiniert BMI mit dem Taille-Hüfte-Verhältnis-Tool" }
+      { title: "Standard-BMI-Wert", std: "Gewicht im Verhältnis zur Größe² (kg/m²)", real: "Basis-Screening-Richtwert der WHO & CDC (verändert oder passt den BMI-Wert nicht an)" },
+      { title: "Taille-zu-Größe-Verhältnis (WHtR)", std: "Screening zentraler Adipositas", real: "Unabhängige Risikobewertung von viszeralem Bauchfett" },
+      { title: "Asiatische WHO-Grenzwerte", std: "Ethnische Schwellenwert-Anpassung", real: "Überarbeitete Übergewichts-Risikokategorie ab 23,0 kg/m²" },
+      { title: "Stoffwechsel-Schätzungen (BMR & TDEE)", std: "Gleichungen zum Energieverbrauch", real: "Ergänzende Richtwerte für Kalorienbedarf und Ernährungsplanung" }
     ],
     ctaTitle: "Möchten Sie wissen, ob der BMI für Sie wirklich genau ist?",
     ctaDesc: "Lesen Sie unsere detaillierte Analyse zu Muskeldichte und WHO-Richtlinien.",
@@ -376,22 +375,22 @@ const t = data[lang] || data.en;
       <table class="w-full text-left border-collapse">
         <thead>
           <tr class="bg-[var(--muted)] text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-            <th class="px-6 py-4">{t.colMetric || "Formula Benchmark"}</th>
-            <th class="px-6 py-4 text-rose-500 dark:text-rose-400">{t.colStd || "Standard Scale BMI"}</th>
-            <th class="px-6 py-4 text-emerald-600 dark:text-emerald-400">{t.colReal || "Real BMI Calculator"}</th>
+            <th class="px-6 py-4 text-[var(--foreground)]">{t.colMetric || "Health Metric"}</th>
+            <th class="px-6 py-4 text-[var(--foreground)]">{t.colStd || "Standard Baseline Focus"}</th>
+            <th class="px-6 py-4 text-[var(--foreground)]">{t.colReal || "What It Evaluates"}</th>
           </tr>
         </thead>
         <tbody class="text-xs sm:text-sm font-medium divide-y divide-[var(--border)]/40">
           {(t.compRows || [
-            { title: "Muscular Athlete Density", std: "❌ Mislabels lean muscle mass as 'Overweight' or 'Obese'", real: "✅ Adjusts with BMR & Body Fat % estimates" },
-            { title: "WHO Asian Visceral Cutoff", std: "❌ Ignores Asian 23.0 kg/m² overweight risk threshold", real: "✅ Fully integrates WHO Asian revised cutoffs" },
-            { title: "Metabolic Calorie Target", std: "❌ Only provides static weight-to-height number", real: "✅ Calculates BMR & TDEE daily calorie needs" },
-            { title: "Abdominal Visceral Fat Assessment", std: "❌ Cannot measure waist circumference or visceral risk", real: "✅ Pairs BMI with Waist-to-Hip Ratio tool" }
+            { title: "Standard BMI Score", std: "Weight relative to height²", real: "WHO & CDC population screening baseline" },
+            { title: "Waist-to-Height Ratio (WHtR)", std: "Central adiposity screening", real: "Abdominal visceral fat risk distribution" },
+            { title: "WHO Asian Cutoff Guidelines", std: "Ethnic threshold adjustment", real: "Revised 23.0 kg/m² overweight risk category" },
+            { title: "BMR & TDEE Metabolic Estimates", std: "Energy expenditure equations", real: "Estimated daily calorie maintenance requirements" }
           ]).map((row: any, i: number) => (
             <tr class={`hover:bg-[var(--muted)]/40 transition-colors ${i % 2 === 1 ? 'bg-[var(--muted)]/10' : ''}`}>
               <td class="px-6 py-4 font-bold text-[var(--foreground)] font-display uppercase">{row.title}</td>
-              <td class="px-6 py-4 text-rose-500 dark:text-rose-400">{row.std}</td>
-              <td class="px-6 py-4 text-emerald-600 dark:text-emerald-400">{row.real}</td>
+              <td class="px-6 py-4 text-[var(--muted-foreground)]">{row.std}</td>
+              <td class="px-6 py-4 text-[var(--foreground)]">{row.real}</td>
             </tr>
           ))}
         </tbody>
@@ -401,16 +400,16 @@ const t = data[lang] || data.en;
     <!-- Mobile Responsive Cards (visible on mobile, no side scrollbar) -->
     <div class="md:hidden space-y-3">
       {(t.compRows || [
-        { title: "Muscular Athlete Density", std: "❌ Mislabels lean muscle mass as 'Overweight' or 'Obese'", real: "✅ Adjusts with BMR & Body Fat % estimates" },
-        { title: "WHO Asian Visceral Cutoff", std: "❌ Ignores Asian 23.0 kg/m² overweight risk threshold", real: "✅ Fully integrates WHO Asian revised cutoffs" },
-        { title: "Metabolic Calorie Target", std: "❌ Only provides static weight-to-height number", real: "✅ Calculates BMR & TDEE daily calorie needs" },
-        { title: "Abdominal Visceral Fat Assessment", std: "❌ Cannot measure waist circumference or visceral risk", real: "✅ Pairs BMI with Waist-to-Hip Ratio tool" }
+        { title: "Standard BMI Score", std: "Weight relative to height²", real: "WHO & CDC population screening baseline" },
+        { title: "Waist-to-Height Ratio (WHtR)", std: "Central adiposity screening", real: "Abdominal visceral fat risk distribution" },
+        { title: "WHO Asian Cutoff Guidelines", std: "Ethnic threshold adjustment", real: "Revised 23.0 kg/m² overweight risk category" },
+        { title: "BMR & TDEE Metabolic Estimates", std: "Energy expenditure equations", real: "Estimated daily calorie maintenance requirements" }
       ]).map((item: any) => (
         <div class="p-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2 text-xs font-medium">
           <div class="font-bold text-[var(--foreground)] font-display uppercase text-xs border-b border-[var(--border)]/40 pb-2">{item.title}</div>
-          <div class="space-y-1 pt-1">
-            <div class="text-rose-500 dark:text-rose-400"><strong class="text-[var(--foreground)] font-semibold">{t.colStd || "Standard BMI"}:</strong> {item.std}</div>
-            <div class="text-emerald-600 dark:text-emerald-400"><strong class="text-[var(--foreground)] font-semibold">{t.colReal || "Real BMI"}:</strong> {item.real}</div>
+          <div class="space-y-1.5 pt-1">
+            <div class="text-[var(--muted-foreground)]"><strong class="text-[var(--foreground)] font-semibold">{t.colStd || "Standard Focus"}:</strong> {item.std}</div>
+            <div class="text-[var(--foreground)]"><strong class="text-[var(--foreground)] font-semibold">{t.colReal || "Evaluates"}:</strong> {item.real}</div>
           </div>
         </div>
       ))}

@@ -634,127 +634,340 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     },
     "contentHtml": {
       "en": `
-      <h2>The Physiology of Cardiovascular Conditioning</h2>
-      <p>Cardiorespiratory training improves mitochondrial density, increases left-ventricular stroke volume, and optimizes vascular compliance. Maximizing training efficiency requires tailoring exercise intensity to your physiological heart rate zones.</p>
+      <h2>The Physiology of Cardiovascular Conditioning: Beyond "Just Working Hard"</h2>
+      <p>Cardiorespiratory fitness is not merely about accumulating fatigue or burning immediate calories; it is governed by the physiological formula of cardiac output:</p>
+      <div class="my-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm text-center">
+        <strong>Cardiac Output (Q) = Stroke Volume (SV) &times; Heart Rate (HR)</strong>
+      </div>
+      <p>Training at random intensities often fails to stimulate the specific cellular adaptations you need. Exercising too intensely elevates systemic cortisol, produces excessive lactate, and prevents mitochondrial biogenesis. Conversely, training with inadequate intensity fails to elicit vascular remodelling. Tailoring your workout sessions to distinct physiological heart rate zones allows you to target pure fatty acid oxidation, raise your anaerobic threshold, or expand maximal oxygen uptake (VO2 max) with surgical precision.</p>
 
-      <h2>The Two Essential Mathematical Equations</h2>
-      <ul>
-        <li><strong>Tanaka Equation (Max Heart Rate):</strong> <code>HRmax = 208 - (0.7 &times; Age)</code> (significantly more accurate than the obsolete 220 - Age formula)</li>
-        <li><strong>Karvonen Heart Rate Reserve (HRR) Formula:</strong> <code>Target HR = Resting HR + [(HRmax - Resting HR) &times; % Intensity]</code></li>
-      </ul>
-
-      <h2>The 5 Evidence-Based Cardiovascular Training Zones</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+      <h2>Comparing Heart Rate Formulas: Fox vs. Tanaka vs. Karvonen</h2>
+      <p>Not all heart rate calculations are created equal. Depending on which mathematical equation you use, your target heart rate zones can swing by as much as 15 to 20 beats per minute (bpm):</p>
+      
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
-              <th class="p-3 border border-[#e6e6e6]">Zone</th>
-              <th class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">Intensity (% HRR)</th>
-              <th class="p-3 border border-[#e6e6e6]">Primary Energy Substrate</th>
-              <th class="p-3 border border-[#e6e6e6]">Physiological Adaptation</th>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Formula Model</th>
+              <th class="p-3 font-mono text-[#464feb] font-bold">Mathematical Equation</th>
+              <th class="p-3">Standard Error</th>
+              <th class="p-3">Clinical Evaluation & Limitations</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#e6e6e6]">
+          <tbody class="divide-y divide-[var(--border)] text-[var(--muted-foreground)]">
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold">Zone 1: Active Recovery</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono">50% – 60%</td>
-              <td class="p-3 border border-[#e6e6e6]">Pure fatty acid oxidation</td>
-              <td class="p-3 border border-[#e6e6e6]">Post-exercise lactate clearance, restorative blood flow</td>
+              <td class="p-3 font-semibold text-[var(--foreground)]">Fox Formula (1971)</td>
+              <td class="p-3 font-mono">HRmax = 220 - Age</td>
+              <td class="p-3 font-mono">&plusmn;11 to 12 bpm</td>
+              <td class="p-3">Outdated clinical legacy. Significantly underestimates max HR in adults over 40 and overestimates in young athletes.</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold text-emerald-600 font-bold">Zone 2: Aerobic Base (FatMax)</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-emerald-600">60% – 70%</td>
-              <td class="p-3 border border-[#e6e6e6]">Peak fat oxidation rate (FatMax)</td>
-              <td class="p-3 border border-[#e6e6e6]">Mitochondrial biogenesis, metabolic flexibility, longevity</td>
+              <td class="p-3 font-semibold text-emerald-600 dark:text-emerald-400 font-bold">Tanaka Equation (2001)</td>
+              <td class="p-3 font-mono font-bold text-emerald-600 dark:text-emerald-400">HRmax = 208 - (0.7 &times; Age)</td>
+              <td class="p-3 font-mono">&plusmn;6 to 7 bpm</td>
+              <td class="p-3">Modern scientific benchmark based on meta-analysis of 18,712 subjects across 351 studies. Far more reliable for age scaling.</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold text-blue-500 font-bold">Zone 3: Tempo / Aerobic Power</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono text-blue-500">70% – 80%</td>
-              <td class="p-3 border border-[#e6e6e6]">Mixed carbohydrates and fats</td>
-              <td class="p-3 border border-[#e6e6e6]">Aerobic endurance capacity, heart stroke volume</td>
-            </tr>
-            <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold text-amber-600 font-bold">Zone 4: Lactate Threshold</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-amber-600">80% – 90%</td>
-              <td class="p-3 border border-[#e6e6e6]">Primarily muscle glycogen</td>
-              <td class="p-3 border border-[#e6e6e6]">Buffering hydrogen ions, raising anaerobic threshold</td>
-            </tr>
-            <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold text-rose-600 font-bold">Zone 5: Neuromuscular / VO2 Max</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-rose-600">90% – 100%</td>
-              <td class="p-3 border border-[#e6e6e6]">Anaerobic glycolysis &amp; phosphagen</td>
-              <td class="p-3 border border-[#e6e6e6]">Maximal oxygen consumption (VO2 max), peak athletic output</td>
+              <td class="p-3 font-semibold text-blue-500 font-bold">Karvonen Method (HRR)</td>
+              <td class="p-3 font-mono font-bold text-blue-500">Target = RHR + [(HRmax - RHR) &times; %]</td>
+              <td class="p-3 font-mono">Personalized</td>
+              <td class="p-3">Gold standard for personalized training. Factors in your Resting Heart Rate (RHR), preventing overtraining in conditioned individuals.</td>
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <h2>Step-by-Step Practical Worked Examples</h2>
+
+      <div class="my-6 space-y-4">
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            Worked Example 1: Intermediate Fitness Trainee Targeting Zone 2 FatMax
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>Persona: Sarah</strong> | Age: 38 years | Resting Heart Rate (RHR): 62 bpm | Goal: Mitochondrial density and optimal fat oxidation (Zone 2: 60%–70% HRR).
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>Step 1: Calculate Tanaka HRmax</strong></p>
+            <p>&bull; HRmax = 208 - (0.7 &times; 38) = 208 - 26.6 = <strong>181.4 bpm</strong> (round to 181 bpm)</p>
+            <p class="pt-1"><strong>Step 2: Calculate Heart Rate Reserve (HRR)</strong></p>
+            <p>&bull; HRR = HRmax - RHR = 181 - 62 = <strong>119 bpm</strong></p>
+            <p class="pt-1"><strong>Step 3: Calculate Zone 2 Target Range (60% to 70% HRR)</strong></p>
+            <p>&bull; Lower Bound (60%): 62 + (119 &times; 0.60) = 62 + 71.4 = <strong>133.4 bpm</strong> (&approx; 133 bpm)</p>
+            <p>&bull; Upper Bound (70%): 62 + (119 &times; 0.70) = 62 + 83.3 = <strong>145.3 bpm</strong> (&approx; 145 bpm)</p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>Actionable Coaching Plan:</strong> During her 45-minute incline walks or light cycling sessions, Sarah should calibrate her effort so her monitor reads between <strong>133 and 145 bpm</strong>. Note that if Sarah had relied on the outdated Fox percentage method without accounting for resting heart rate (182 &times; 60% = 109 bpm), her workouts would have been drastically under-stimulating!
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            Worked Example 2: Master Runner Calibrating Zone 4 Lactate Threshold
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>Persona: David</strong> | Age: 55 years | Resting Heart Rate (RHR): 52 bpm (conditioned) | Goal: Lactate threshold tempo intervals (Zone 4: 80%–90% HRR).
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>Step 1: Calculate Tanaka HRmax</strong></p>
+            <p>&bull; HRmax = 208 - (0.7 &times; 55) = 208 - 38.5 = <strong>169.5 bpm</strong> (&approx; 170 bpm)</p>
+            <p class="pt-1"><strong>Step 2: Calculate Heart Rate Reserve (HRR)</strong></p>
+            <p>&bull; HRR = 170 - 52 = <strong>118 bpm</strong></p>
+            <p class="pt-1"><strong>Step 3: Calculate Zone 4 Threshold Range (80% to 90% HRR)</strong></p>
+            <p>&bull; Lower Threshold (80%): 52 + (118 &times; 0.80) = 52 + 94.4 = <strong>146.4 bpm</strong> (&approx; 146 bpm)</p>
+            <p>&bull; Upper Threshold (90%): 52 + (118 &times; 0.90) = 52 + 106.2 = <strong>158.2 bpm</strong> (&approx; 158 bpm)</p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>Actionable Coaching Plan:</strong> For 4 &times; 4-minute Norwegian interval repeats, David should hold his heart rate between <strong>146 and 158 bpm</strong>, allowing active recovery intervals to drop below 115 bpm before starting the next repetition.
+          </p>
+        </div>
+      </div>
+
+      <h2>The 5 Cardiovascular Training Zones: Physiology & Field Testing</h2>
+      <p>To train effectively, reference this master framework combining heart rate reserve percentages, physiological fuel sources, and the practical "Talk Test":</p>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Zone</th>
+              <th class="p-3 font-mono text-[#464feb] font-bold">% HRR</th>
+              <th class="p-3">Primary Fuel</th>
+              <th class="p-3">The "Talk Test" Field Marker</th>
+              <th class="p-3">Primary Biological Adaptation</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] text-[var(--muted-foreground)]">
+            <tr>
+              <td class="p-3 font-semibold text-[var(--foreground)]">Zone 1: Active Recovery</td>
+              <td class="p-3 font-mono">50%–60%</td>
+              <td class="p-3">Fatty Acids (>85%)</td>
+              <td class="p-3">Can sing a song or hold an effortless conversation</td>
+              <td class="p-3">Lactate clearance, restorative tissue blood perfusion</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-emerald-600 dark:text-emerald-400 font-bold">Zone 2: Aerobic Base (FatMax)</td>
+              <td class="p-3 font-mono font-bold text-emerald-600 dark:text-emerald-400">60%–70%</td>
+              <td class="p-3">Peak Fat Oxidation</td>
+              <td class="p-3">Can speak in complete sentences comfortably; cannot sing</td>
+              <td class="p-3">Mitochondrial biogenesis, metabolic flexibility, capillary density</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-blue-500 font-bold">Zone 3: Tempo / Aerobic Power</td>
+              <td class="p-3 font-mono text-blue-500">70%–80%</td>
+              <td class="p-3">50% Fat / 50% Glycogen</td>
+              <td class="p-3">Sentences broken into short 4 to 5-word phrases</td>
+              <td class="p-3">Left-ventricular stroke volume, glycogen storage capacity</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-amber-600 dark:text-amber-400 font-bold">Zone 4: Lactate Threshold</td>
+              <td class="p-3 font-mono font-bold text-amber-600 dark:text-amber-400">80%–90%</td>
+              <td class="p-3">Muscle Glycogen (>80%)</td>
+              <td class="p-3">Can only utter 1 to 2 words between heavy breaths</td>
+              <td class="p-3">Buffering hydrogen ions, delaying anaerobic fatigue</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-rose-600 dark:text-rose-400 font-bold">Zone 5: Neuromuscular / VO2 Max</td>
+              <td class="p-3 font-mono font-bold text-rose-600 dark:text-rose-400">90%–100%</td>
+              <td class="p-3">Phosphagen & Glycolysis</td>
+              <td class="p-3">Zero speech possible; gasping for air</td>
+              <td class="p-3">Peak cardiac output, fast-twitch fiber recruitment</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>The 80/20 Polarized Cardio Protocol: Avoiding the "Zone 3 Black Hole"</h2>
+      <p>The single most widespread training error made by recreational runners, cyclists, and gym-goers is falling into the <strong>Zone 3 Black Hole</strong>. Training at 70%–80% intensity feels hard enough to satisfy the ego, but it carries two major physiological drawbacks:</p>
+      <ul class="list-disc pl-5 my-3 space-y-1.5 text-xs sm:text-sm text-[var(--muted-foreground)]">
+        <li>It is too intense to maximize mitochondrial fat oxidation (carbohydrate metabolism suppresses fat burning).</li>
+        <li>It creates too much central nervous system fatigue to allow high-quality Zone 4 or Zone 5 high-intensity interval training (HIIT).</li>
+      </ul>
+      <p>World-class endurance athletes follow a <strong>Polarized 80/20 Schedule</strong>: 80% of total weekly training volume is spent strictly in <strong>Zone 2</strong> (building an immense aerobic engine), while the remaining 20% is concentrated in <strong>Zone 4 and Zone 5</strong>. This combination yields superior cardiovascular adaptations without chronic fatigue or overtraining.</p>
+
+      <h2>Practical Troubleshooting: Cardiac Drift & Special Populations</h2>
+      <div class="my-4 space-y-3">
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h4 class="font-bold text-sm text-[var(--foreground)]">1. Why does heart rate drift upward at the same running pace? (Cardiac Drift)</h4>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] pt-1">
+            During prolonged exercise (30+ minutes), sweating reduces plasma blood volume. To maintain the same cardiac output (Q = SV &times; HR), stroke volume falls and the heart must beat faster. If your heart rate drifts from 138 bpm into 152 bpm on a hot day, <strong>slow your pace down</strong> to remain in your true metabolic Zone 2.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h4 class="font-bold text-sm text-[var(--foreground)]">2. Cardiovascular Medications (Beta-Blockers)</h4>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] pt-1">
+            If you take beta-blockers (such as metoprolol or atenolol), these medications pharmacologically cap your sinoatrial node response. Standard age-predicted formulas (Tanaka, Karvonen) are completely invalid. Patients on beta-blockers must use the subjective <strong>Borg Rating of Perceived Exertion (RPE 6 to 20 scale)</strong> or the Talk Test.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
+          <h4 class="font-bold text-sm text-[var(--foreground)]">3. How to Measure Your True Resting Heart Rate (RHR)</h4>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] pt-1">
+            Do not measure resting heart rate during the workday. Measure your pulse across <strong>3 consecutive mornings</strong> immediately upon waking while lying quietly in bed, before standing up, checking your phone, or consuming caffeine. Take the 3-day average for your Karvonen calculations.
+          </p>
+        </div>
       </div>
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>Tanaka H, Monahan KD, Seals DR. <em>Age-predicted maximal heart rate revisited.</em> J Am Coll Cardiol 2001; 37(1):153-156. PMID: 11153730.</li>
-        <li>Karvonen MJ, Kentala E, Mustala O. <em>The effects of training on heart rate; a longitudinal study.</em> Ann Med Exp Biol Fenn 1957; 35(3):307-315.</li>
+        <li>Karvonen MJ, Kentala E, Mustala O. <em>The effects of training on heart rate; a longitudinal study.</em> Ann Med Exp Biol Fenn 1957; 35(3):307-315. PMID: 13470504.</li>
+        <li>Seiler S. <em>What is best practice for training intensity and duration distribution in endurance athletes?</em> Int J Sports Physiol Perform 2010; 5(3):276-291.</li>
+        <li>San-Millán I, Brooks GA. <em>Assessment of Metabolic Flexibility and Lactate Clearance in Elite Cyclists.</em> Sports Med 2018; 48(2):467-479.</li>
       </ul>
 `,
       "hi": `
-      <h2>हृदय गति प्रशिक्षण का शरीरक्रिया विज्ञान</h2>
-      <p>कार्डियोवस्कुलर व्यायाम से हृदय की मांसपेशियां मजबूत होती हैं, स्ट्रोक वॉल्यूम बढ़ता है और माइटोकॉन्ड्रिया की संख्या बढ़ती है। मनमाने ढंग से दौड़ने के बजाय अपनी हृदय गति (Heart Rate) को मापकर विशिष्ट ज़ोन में व्यायाम करना सबसे प्रभावी होता है।</p>
+      <h2>हृदय गति प्रशिक्षण का शरीरक्रिया विज्ञान: केवल पसीना बहाने से आगे</h2>
+      <p>कार्डियोवस्कुलर व्यायाम केवल कैलोरी जलाने या थकने का नाम नहीं है। यह सीधे तौर पर <strong>कार्डियक आउटपुट (Cardiac Output)</strong> के नियम पर काम करता है:</p>
+      <div class="my-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm text-center">
+        <strong>कार्डियक आउटपुट (Q) = स्ट्रोक वॉल्यूम (SV) &times; हृदय गति (HR)</strong>
+      </div>
+      <p>बिना योजना के बहुत तेज़ दौड़ने से कोर्टिसोल और लैक्टिक एसिड बढ़ता है, जिससे माइटोकॉन्ड्रिया का विकास रुक जाता है। वहीं बहुत धीमी गति से दिल को पर्याप्त स्टिमुलस नहीं मिलता। अपनी हृदय गति को वैज्ञानिक ज़ोन (Zones) में मापकर दौड़ने से आप अधिकतम वसा दहन (Fat Burning), लैक्टेट थ्रेशोल्ड और VO2 Max का सटीक विकास कर सकते हैं।</p>
 
-      <h2>हृदय गति निकालने के दो बुनियादी गणितीय सूत्र</h2>
-      <ul>
-        <li><strong>तनाका सूत्र (अधिकतम हृदय गति):</strong> <code>HRmax = 208 - (0.7 &times; उम्र)</code> (यह पुराने 220 - उम्र सूत्र से कहीं अधिक सटीक है)</li>
-        <li><strong>कार्वोनेन हार्ट रेट रिजर्व (HRR) सूत्र:</strong> <code>टारगेट HR = रेस्टिंग HR + [(HRmax - रेस्टिंग HR) &times; % तीव्रता]</code></li>
-      </ul>
+      <h2>हृदय गति फॉर्मूलों की तुलना: फॉक्स बनाम तनाका बनाम कार्वोनेन</h2>
+      <p>अलग-अलग गणितीय समीकरणों से आपकी टारगेट हार्ट रेट में 15 से 20 बीट्स प्रति मिनट (bpm) तक का भारी अंतर आ सकता है:</p>
 
-      <h2>5 वैज्ञानिक एरोबिक प्रशिक्षण ज़ोन (5 Training Zones)</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
-              <th class="p-3 border border-[#e6e6e6]">ज़ोन</th>
-              <th class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">तीव्रता (% HRR)</th>
-              <th class="p-3 border border-[#e6e6e6]">ऊर्जा का मुख्य स्रोत</th>
-              <th class="p-3 border border-[#e6e6e6]">प्रमुख स्वास्थ्य व फिटनेस लाभ</th>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">फॉर्मूला मॉडल</th>
+              <th class="p-3 font-mono text-[#464feb] font-bold">गणितीय समीकरण</th>
+              <th class="p-3">संभावित त्रुटि</th>
+              <th class="p-3">नैदानिक मूल्यांकन एवं सीमाएं</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#e6e6e6]">
+          <tbody class="divide-y divide-[var(--border)] text-[var(--muted-foreground)]">
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold">ज़ोन 1: एक्टिव रिकवरी</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono">50% – 60%</td>
-              <td class="p-3 border border-[#e6e6e6]">शुद्ध फैटी एसिड ऑक्सीकरण</td>
-              <td class="p-3 border border-[#e6e6e6]">कसरत के बाद लैक्टेट हटाना और रक्त संचार बढ़ाना</td>
+              <td class="p-3 font-semibold text-[var(--foreground)]">फॉक्स फॉर्मूला (1971)</td>
+              <td class="p-3 font-mono">HRmax = 220 - उम्र</td>
+              <td class="p-3 font-mono">&plusmn;11 से 12 bpm</td>
+              <td class="p-3">पुराना फॉर्मूला। 40 वर्ष से अधिक उम्र में अधिकतम हृदय गति को कम और युवाओं में अधिक आंकता है।</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold text-emerald-600 font-bold">ज़ोन 2: एरोबिक बेस (FatMax)</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-emerald-600">60% – 70%</td>
-              <td class="p-3 border border-[#e6e6e6]">अधिकतम वसा दहन (फैट बर्निंग)</td>
-              <td class="p-3 border border-[#e6e6e6]">माइटोकॉन्ड्रिया का विकास, इंसुलिन संवेदनशीलता व दीर्घायु</td>
+              <td class="p-3 font-semibold text-emerald-600 dark:text-emerald-400 font-bold">तनाका समीकरण (2001)</td>
+              <td class="p-3 font-mono font-bold text-emerald-600 dark:text-emerald-400">HRmax = 208 - (0.7 &times; उम्र)</td>
+              <td class="p-3 font-mono">&plusmn;6 से 7 bpm</td>
+              <td class="p-3">18,712 व्यक्तियों पर हुए 351 अध्ययनों के मेटा-विश्लेषण पर आधारित आधुनिक गोल्ड स्टैंडर्ड।</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold text-blue-500 font-bold">ज़ोन 3: टेम्पो पेस</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono text-blue-500">70% – 80%</td>
-              <td class="p-3 border border-[#e6e6e6]">कार्ब्स व फैट का मिश्रित उपयोग</td>
-              <td class="p-3 border border-[#e6e6e6]">धीरज (Endurance) क्षमता और हृदय का पंपिंग वॉल्यूम</td>
-            </tr>
-            <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold text-amber-600 font-bold">ज़ोन 4: लैक्टेट थ्रेशोल्ड</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-amber-600">80% – 90%</td>
-              <td class="p-3 border border-[#e6e6e6]">मुख्य रूप से मसल ग्लाइकोजन</td>
-              <td class="p-3 border border-[#e6e6e6]">थकान सहने की क्षमता और तेज गति बनाए रखना</td>
-            </tr>
-            <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold text-rose-600 font-bold">ज़ोन 5: VO2 Max (चरम तीव्रता)</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-rose-600">90% – 100%</td>
-              <td class="p-3 border border-[#e6e6e6]">एनारोबिक ऊर्जा सिस्टम</td>
-              <td class="p-3 border border-[#e6e6e6]">अधिकतम ऑक्सीजन खपत (VO2 max) और एथलेटिक गति</td>
+              <td class="p-3 font-semibold text-blue-500 font-bold">कार्वोनेन विधि (HRR)</td>
+              <td class="p-3 font-mono font-bold text-blue-500">Target = RHR + [(HRmax - RHR) &times; %]</td>
+              <td class="p-3 font-mono">व्यक्तिगत</td>
+              <td class="p-3">सर्वश्रेष्ठ व्यक्तिगत विधि। यह आपकी रेस्टिंग हार्ट रेट (RHR) को शामिल करती है।</td>
             </tr>
           </tbody>
         </table>
       </div>
 
+      <h2>कदम-दर-कदम व्यावहारिक उदाहरण (Worked Examples)</h2>
+
+      <div class="my-6 space-y-4">
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            उदाहरण 1: ज़ोन 2 फैट-बर्निंग लक्ष्य (मध्यम फिटनेस स्तर)
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>व्यक्ति: प्रिया</strong> | उम्र: 38 वर्ष | रेस्टिंग हार्ट रेट (RHR): 62 bpm | लक्ष्य: अधिकतम वसा दहन व माइटोकॉन्ड्रिया विकास (ज़ोन 2: 60%–70% HRR).
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>स्टेप 1: तनाका फॉर्मूले से अधिकतम हृदय गति (HRmax) निकालें</strong></p>
+            <p>&bull; HRmax = 208 - (0.7 &times; 38) = 208 - 26.6 = <strong>181.4 bpm</strong> (&approx; 181 bpm)</p>
+            <p class="pt-1"><strong>स्टेप 2: हार्ट रेट रिजर्व (HRR) की गणना करें</strong></p>
+            <p>&bull; HRR = HRmax - RHR = 181 - 62 = <strong>119 bpm</strong></p>
+            <p class="pt-1"><strong>स्टेप 3: ज़ोन 2 लक्ष्य सीमा निकालें (60% से 70% HRR)</strong></p>
+            <p>&bull; निचली सीमा (60%): 62 + (119 &times; 0.60) = 62 + 71.4 = <strong>133.4 bpm</strong> (&approx; 133 bpm)</p>
+            <p>&bull; ऊपरी सीमा (70%): 62 + (119 &times; 0.70) = 62 + 83.3 = <strong>145.3 bpm</strong> (&approx; 145 bpm)</p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>प्रशिक्षण मार्गदर्शन:</strong> प्रिया को अपनी 45 मिनट की वॉक या जॉगिंग के दौरान हृदय गति <strong>133 से 145 bpm</strong> के बीच रखनी चाहिए। यदि वह पुराने फॉक्स फॉर्मूले का उपयोग करती (182 &times; 60% = 109 bpm), तो कसरत बहुत धीमी और अप्रभावी रह जाती!
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            उदाहरण 2: ज़ोन 4 लैक्टेट थ्रेशोल्ड इंटरवल (अनुभवी धावक)
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>व्यक्ति: राजेश</strong> | उम्र: 55 वर्ष | रेस्टिंग हार्ट रेट (RHR): 52 bpm (प्रशिक्षित) | लक्ष्य: लैक्टेट थ्रेशोल्ड गति (ज़ोन 4: 80%–90% HRR).
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>स्टेप 1: तनाका HRmax</strong>: 208 - (0.7 &times; 55) = 208 - 38.5 = <strong>170 bpm</strong></p>
+            <p><strong>स्टेप 2: HRR</strong>: 170 - 52 = <strong>118 bpm</strong></p>
+            <p><strong>स्टेप 3: ज़ोन 4 सीमा (80% से 90% HRR)</strong>:</p>
+            <p>&bull; 80% सीमा: 52 + (118 &times; 0.80) = 52 + 94.4 = <strong>146.4 bpm</strong> (&approx; 146 bpm)</p>
+            <p>&bull; 90% सीमा: 52 + (118 &times; 0.90) = 52 + 106.2 = <strong>158.2 bpm</strong> (&approx; 158 bpm)</p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>प्रशिक्षण मार्गदर्शन:</strong> राजेश को अपने 4 &times; 4 मिनट के इंटरवल <strong>146 से 158 bpm</strong> पर पूरे करने चाहिए।
+          </p>
+        </div>
+      </div>
+
+      <h2>5 वैज्ञानिक एरोबिक प्रशिक्षण ज़ोन एवं "टॉक टेस्ट" गाइड</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">ज़ोन</th>
+              <th class="p-3 font-mono text-[#464feb] font-bold">% HRR</th>
+              <th class="p-3">ऊर्जा का मुख्य स्रोत</th>
+              <th class="p-3">टॉक टेस्ट (बातचीत की स्थिति)</th>
+              <th class="p-3">प्रमुख फिटनेस लाभ</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] text-[var(--muted-foreground)]">
+            <tr>
+              <td class="p-3 font-semibold text-[var(--foreground)]">ज़ोन 1: एक्टिव रिकवरी</td>
+              <td class="p-3 font-mono">50%–60%</td>
+              <td class="p-3">शुद्ध फैटी एसिड (>85%)</td>
+              <td class="p-3">गाना गा सकते हैं या सहज बातचीत कर सकते हैं</td>
+              <td class="p-3">कसरत के बाद लैक्टेट हटाना और मांसपेशियों की रिकवरी</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-emerald-600 dark:text-emerald-400 font-bold">ज़ोन 2: एरोबिक बेस (FatMax)</td>
+              <td class="p-3 font-mono font-bold text-emerald-600 dark:text-emerald-400">60%–70%</td>
+              <td class="p-3">अधिकतम वसा दहन</td>
+              <td class="p-3">पूरे वाक्यों में बात कर सकते हैं, पर गा नहीं सकते</td>
+              <td class="p-3">माइटोकॉन्ड्रिया का विकास, इंसुलिन संवेदनशीलता व धीरज</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-blue-500 font-bold">ज़ोन 3: टेम्पो पेस</td>
+              <td class="p-3 font-mono text-blue-500">70%–80%</td>
+              <td class="p-3">कार्ब्स और फैट 50/50</td>
+              <td class="p-3">केवल छोटे 4–5 शब्दों के वाक्य बोल सकते हैं</td>
+              <td class="p-3">एरोबिक शक्ति और हृदय का पंपिंग वॉल्यूम</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-amber-600 dark:text-amber-400 font-bold">ज़ोन 4: लैक्टेट थ्रेशोल्ड</td>
+              <td class="p-3 font-mono font-bold text-amber-600 dark:text-amber-400">80%–90%</td>
+              <td class="p-3">मांसपेशियों का ग्लाइकोजन</td>
+              <td class="p-3">सांसों के बीच केवल 1–2 शब्द निकल पाते हैं</td>
+              <td class="p-3">लैक्टिक एसिड सहने की क्षमता व तेज गति बनाए रखना</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-rose-600 dark:text-rose-400 font-bold">ज़ोन 5: VO2 Max (चरम तीव्रता)</td>
+              <td class="p-3 font-mono font-bold text-rose-600 dark:text-rose-400">90%–100%</td>
+              <td class="p-3">एनारोबिक ऊर्जा सिस्टम</td>
+              <td class="p-3">बोलना असंभव; भारी हांफना</td>
+              <td class="p-3">अधिकतम ऑक्सीजन खपत (VO2 max) और शीर्ष गति</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>80/20 पोलराइज्ड कार्डियो नियम: "ज़ोन 3 के जाल" से बचें</h2>
+      <p>अधिकांश धावक और जिम जाने वाले लोग हमेशा मध्यम तीव्रता (ज़ोन 3: 70%–80%) में दौड़ते हैं। इसे खेल विज्ञान में <strong>"ज़ोन 3 ब्लैक होल"</strong> कहा जाता है:</p>
+      <ul class="list-disc pl-5 my-3 space-y-1.5 text-xs sm:text-sm text-[var(--muted-foreground)]">
+        <li>यह वसा जलाने के लिए बहुत तेज़ है (कार्बोहाइड्रेट जलने से फैट बर्निंग बंद हो जाती है)।</li>
+        <li>यह बहुत अधिक तंत्रिका थकान पैदा करता है जिससे आप कभी भी उच्च-तीव्रता वाले ज़ोन 4/5 के फायदे नहीं ले पाते।</li>
+      </ul>
+      <p>विश्व स्तरीय एथलीट <strong>80/20 पोलराइज्ड प्रोटोकॉल</strong> अपनाते हैं: अपने पूरे साप्ताहिक समय का 80% कड़ाई से <strong>ज़ोन 2</strong> में बिताएं और केवल 20% समय <strong>ज़ोन 4 या 5</strong> में लगाएं।</p>
+
       <h2>वैज्ञानिक संदर्भ</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>Tanaka H, et al. <em>Age-predicted maximal heart rate revisited.</em> J Am Coll Cardiol 2001; 37:153-156. PMID: 11153730.</li>
-        <li>Karvonen MJ, et al. <em>The effects of training on heart rate.</em> Ann Med Exp Biol Fenn 1957; 35:307-315.</li>
+        <li>Karvonen MJ, et al. <em>The effects of training on heart rate.</em> Ann Med Exp Biol Fenn 1957; 35:307-315. PMID: 13470504.</li>
+        <li>Seiler S. <em>What is best practice for training intensity distribution in endurance athletes?</em> Int J Sports Physiol Perform 2010; 5:276-291.</li>
       </ul>
 `,
       "es": `
@@ -805,124 +1018,287 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     },
     "contentHtml": {
       "en": `
-      <h2>The Physiology of Maximal Neuromuscular Strength (1RM)</h2>
-      <p>A One-Repetition Maximum (1RM) represents the heaviest gravitational load an athlete can lift for a single, technically complete repetition through a full range of motion. Direct 1RM testing carries substantial injury risks for connective tissue. Therefore, exercise physiologists use validated submaximal prediction formulas.</p>
+      <h2>The Neuromuscular Physiology of 1RM: Why You Shouldn't Max Out Every Month</h2>
+      <p>A One-Repetition Maximum (1RM) represents the absolute highest gravitational load your neuromuscular system can move through a standardized range of motion for a single technical completion. While lifting a true 1RM on the platform is exciting, attempting true 1RM lifts frequently carries severe clinical and athletic penalties:</p>
+      <ul class="list-disc pl-5 my-3 space-y-1.5 text-xs sm:text-sm text-[var(--muted-foreground)]">
+        <li><strong>Connective Tissue Shear:</strong> Ligaments, joint capsules, and tendon insertions experience extreme peak tension, elevating the risk of pectoral tears, patellar tendinopathy, and spinal disc herniation.</li>
+        <li><strong>Central Nervous System (CNS) Fatigue:</strong> Maximal voluntary motor unit recruitment depletes neurotransmitters, requiring 7 to 14 days for complete systemic neuromuscular recovery.</li>
+      </ul>
+      <p>Exercise scientists use validated <strong>submaximal prediction equations</strong> (testing 3 to 6 repetitions with submaximal loads) to calculate true 1RM with over 97% statistical accuracy while preserving connective tissue integrity.</p>
 
-      <h2>The Two Gold-Standard 1RM Formulas Compared</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+      <h2>The Formula Showdown: Brzycki vs. Epley vs. Lombardi</h2>
+      <p>Different muscle groups and movement mechanics fatigue along different mathematical curves. Understanding which equation fits your specific lift prevents overloading your training cycles:</p>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
-              <th class="p-3 border border-[#e6e6e6]">Equation</th>
-              <th class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">Mathematical Formula</th>
-              <th class="p-3 border border-[#e6e6e6]">Optimal Application Range</th>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Formula</th>
+              <th class="p-3 font-mono text-[#464feb] font-bold">Mathematical Model</th>
+              <th class="p-3">Optimal Movement Domain</th>
+              <th class="p-3">Engineering Breakdown & Limitations</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#e6e6e6]">
+          <tbody class="divide-y divide-[var(--border)] text-[var(--muted-foreground)]">
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold text-[#464feb]">Brzycki Formula (1993)</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1RM = Weight / (1.0278 - 0.0278 &times; Reps)</td>
-              <td class="p-3 border border-[#e6e6e6]">Highest accuracy for heavy sets between 3 and 8 repetitions</td>
+              <td class="p-3 font-semibold text-emerald-600 dark:text-emerald-400 font-bold">Brzycki Formula (1993)</td>
+              <td class="p-3 font-mono font-bold text-emerald-600 dark:text-emerald-400">1RM = Weight / (1.0278 - 0.0278 &times; Reps)</td>
+              <td class="p-3 font-medium">Upper-Body Compound (Bench Press, Overhead Press)</td>
+              <td class="p-3">Assumes linear loss of ~2.78% strength per repetition. Exceptional accuracy between 3 and 8 reps. Tends to overpredict past 10 reps.</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold">Epley Formula (1985)</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono">1RM = Weight &times; (1 + Reps / 30)</td>
-              <td class="p-3 border border-[#e6e6e6]">Widely used in powerlifting; reliable up to 10 repetitions</td>
+              <td class="p-3 font-semibold text-blue-500 font-bold">Epley Formula (1985)</td>
+              <td class="p-3 font-mono font-bold text-blue-500">1RM = Weight &times; (1 + Reps / 30)</td>
+              <td class="p-3 font-medium">Lower-Body Compound (Squat, Deadlift)</td>
+              <td class="p-3">Powerlifting gold standard. Accounts for the greater stretch-shortening cycle and fatigue resistance of large lower-body muscle groups up to 10 reps.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-[var(--foreground)]">Lombardi Formula (1989)</td>
+              <td class="p-3 font-mono">1RM = Weight &times; Reps<sup>0.10</sup></td>
+              <td class="p-3 font-medium">High-Repetition Screening</td>
+              <td class="p-3">Power-function curve that moderates exponential inflation on sets between 8 and 12 reps.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Percentage-Based Training Load Chart</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
-        <table class="w-full text-left border-collapse text-xs sm:text-sm font-mono">
+      <div class="my-4 p-4 rounded-xl border border-amber-500/20 bg-amber-500/5 text-xs text-[var(--foreground)]">
+        <strong class="text-amber-600 dark:text-amber-400 font-bold">The Repetition Cutoff Rule:</strong> Never calculate 1RM from a set exceeding 10 repetitions. Beyond 10 reps, cardiovascular endurance, capillary density, and lactate buffering dominate the set rather than pure neuromuscular force production, rendering mathematical predictions unreliable.
+      </div>
+
+      <h2>Step-by-Step Practical Worked Examples</h2>
+
+      <div class="my-6 space-y-4">
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            Worked Example 1: Barbell Bench Press Submaximal Test
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>Lifter: Marcus</strong> | Lift: Barbell Bench Press | Test Set: 82.5 kg (182 lbs) performed for 5 clean, unassisted repetitions.
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>Method A: Brzycki Calculation (Recommended for Bench Press)</strong></p>
+            <p>&bull; Denominator: 1.0278 - (0.0278 &times; 5) = 1.0278 - 0.1390 = <strong>0.8888</strong></p>
+            <p>&bull; Estimated 1RM: 82.5 / 0.8888 = <strong>92.82 kg</strong> (&approx; 93 kg)</p>
+            <p class="pt-1"><strong>Method B: Epley Calculation</strong></p>
+            <p>&bull; Multiplier: 1 + (5 / 30) = 1 + 0.1667 = <strong>1.1667</strong></p>
+            <p>&bull; Estimated 1RM: 82.5 &times; 1.1667 = <strong>96.25 kg</strong> (&approx; 96 kg)</p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>Coaching Application:</strong> Because upper-body presses fatigue faster than leg movements, the conservative <strong>Brzycki estimate of 93 kg</strong> is the superior baseline for programming working sets. Basing Marcus's training cycles on 96 kg would cause premature failure during heavy 5&times;5 cycles.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            Worked Example 2: Squat with Reps in Reserve (RIR / RPE Method)
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>Lifter: Priya</strong> | Lift: Barbell Back Squat | Completed: 105 kg for 4 reps | Rating: RPE 8 (2 Reps in Reserve left in the tank).
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>Step 1: Calculate Effective Repetitions to Failure</strong></p>
+            <p>&bull; Effective Reps = Completed Reps (4) + Reps in Reserve (2) = <strong>6 reps</strong></p>
+            <p class="pt-1"><strong>Step 2: Apply Epley Formula for Squats</strong></p>
+            <p>&bull; Estimated 1RM = 105 &times; [1 + (6 / 30)] = 105 &times; 1.20 = <strong>126.0 kg</strong></p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>Coaching Takeaway:</strong> By using the RPE/RIR method, Priya calculated her exact 126 kg maximum squat without ever risking joint injury or needing a spotter to pull a grinding failure rep off her back!
+          </p>
+        </div>
+      </div>
+
+      <h2>Complete Percentage-Based Training Load Chart</h2>
+      <p>Once you calculate your baseline 1RM, structure your training microcycles using these validated loading brackets:</p>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
-              <th class="p-3 border border-[#e6e6e6]">Percent of 1RM</th>
-              <th class="p-3 border border-[#e6e6e6]">Maximum Repetitions</th>
-              <th class="p-3 border border-[#e6e6e6]">Primary Training Adaptation</th>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">% of 1RM</th>
+              <th class="p-3 font-mono text-[#464feb] font-bold">Rep Target</th>
+              <th class="p-3">Target RPE</th>
+              <th class="p-3">Primary Training Stimulus</th>
+              <th class="p-3">Rest Interval</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#e6e6e6]">
+          <tbody class="divide-y divide-[var(--border)] text-[var(--muted-foreground)]">
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-bold text-rose-600">100%</td>
-              <td class="p-3 border border-[#e6e6e6]">1 Repetition</td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">Maximal neuromuscular motor unit recruitment</td>
+              <td class="p-3 font-bold font-mono text-emerald-600 dark:text-emerald-400">60%–65%</td>
+              <td class="p-3 font-mono">12–15 Reps</td>
+              <td class="p-3 font-mono">6–7</td>
+              <td class="p-3">Muscular endurance, connective tissue remodeling, warm-up</td>
+              <td class="p-3">60–90 sec</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-bold text-amber-600">85%</td>
-              <td class="p-3 border border-[#e6e6e6]">5–6 Repetitions</td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">Mechanical tension and functional strength</td>
+              <td class="p-3 font-bold font-mono text-blue-500">70%–75%</td>
+              <td class="p-3 font-mono">8–12 Reps</td>
+              <td class="p-3 font-mono">7–8</td>
+              <td class="p-3">Optimal muscular hypertrophy (muscle building) and sarcoplasmic volume</td>
+              <td class="p-3">2 min</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-bold text-blue-500">75%</td>
-              <td class="p-3 border border-[#e6e6e6]">10 Repetitions</td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">Optimal muscular hypertrophy and volume</td>
+              <td class="p-3 font-bold font-mono text-amber-600 dark:text-amber-400">80%–85%</td>
+              <td class="p-3 font-mono">4–6 Reps</td>
+              <td class="p-3 font-mono">8–9</td>
+              <td class="p-3">Functional myofibrillar strength and mechanical tension</td>
+              <td class="p-3">3–4 min</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold font-mono text-rose-600 dark:text-rose-400">90%–95%</td>
+              <td class="p-3 font-mono">1–3 Reps</td>
+              <td class="p-3 font-mono">9–10</td>
+              <td class="p-3">Peak neuromuscular recruitment, competition peaking</td>
+              <td class="p-3">4–5 min</td>
             </tr>
           </tbody>
         </table>
       </div>
+
+      <h2>Standardized Submaximal Testing Warm-Up Protocol</h2>
+      <p>To obtain an accurate submaximal test without fatiguing muscle glycogen before your scoring set, use this precise ramp-up sequence:</p>
+      <ol class="list-decimal pl-5 my-3 space-y-1.5 text-xs sm:text-sm text-[var(--muted-foreground)]">
+        <li><strong>Set 1:</strong> Empty barbell &times; 10 reps (warm joint synovial fluid and rehearse bar path).</li>
+        <li><strong>Set 2:</strong> 50% of estimated 1RM &times; 5 reps (moderate speed, 1 min rest).</li>
+        <li><strong>Set 3:</strong> 70% of estimated 1RM &times; 3 reps (explosive concentric phase, 2 min rest).</li>
+        <li><strong>Set 4:</strong> 80% of estimated 1RM &times; 1 rep (neural potentiation without fatigue, 3 min rest).</li>
+        <li><strong>Work Test Set:</strong> ~85% of estimated 1RM &times; Max Clean Reps (aiming for 3 to 6 reps; stop immediately when technical form degrades).</li>
+      </ol>
 
       <h2>Scientific References</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>Brzycki M. <em>Strength testing—predicting a one-rep max from reps-to-fatigue.</em> JOPERD 1993; 64(1):88-90.</li>
         <li>Epley B. <em>Poundage Chart.</em> Lincoln, NE: Boyd Epley Workout, 1985.</li>
+        <li>Lombardi VP. <em>Beginning Weight Training.</em> Dubuque, IA: Wm. C. Brown Publishers, 1989.</li>
+        <li>Helms ER, et al. <em>Application of the repetitions in reserve-based rating of perceived exertion scale for resistance training.</em> Strength Cond J 2016; 38(4):42-49.</li>
       </ul>
 `,
       "hi": `
-      <h2>अधिकतम न्यूरोमस्कुलर ताकत (1RM) का शरीरक्रिया विज्ञान</h2>
-      <p>वन-रेप मैक्स (1RM) वह अधिकतम वजन है जिसे कोई व्यक्ति सही तकनीक और पूर्ण गति के साथ केवल एक बार उठा सकता है। सीधे तौर पर 1RM वजन उठाने की कोशिश करने से जोड़ों और टेंडन में गंभीर चोट का खतरा रहता है। इसीलिए खेल वैज्ञानिक सब-मैक्सिमल (कम वजन से अधिक रेप्स) फॉर्मूलों द्वारा 1RM का सटीक अनुमान लगाते हैं।</p>
+      <h2>अधिकतम ताकत (1RM) का न्यूरोमस्कुलर शरीरक्रिया विज्ञान</h2>
+      <p>वन-रेप मैक्स (1RM) वह अधिकतम भार है जिसे कोई एथलीट सही तकनीक और पूर्ण गति के साथ केवल एक बार उठा सकता है। हालाँकि हर महीने सीधे 1RM वजन उठाने की कोशिश करना बहुत खतरनाक हो सकता है:</p>
+      <ul class="list-disc pl-5 my-3 space-y-1.5 text-xs sm:text-sm text-[var(--muted-foreground)]">
+        <li><strong>जोड़ों और टेंडन पर अत्यधिक दबाव:</strong> लिगामेंट्स और टेंडन में गंभीर चोट, पेक्टोरल मसल फटने या डिस्क खिसकने का खतरा बढ़ जाता है।</li>
+        <li><strong>केंद्रीय तंत्रिका तंत्र (CNS) की अत्यधिक थकान:</strong> 100% ताकत वाले सिंगल लिफ्ट से नर्वस सिस्टम को ठीक होने में 7 से 14 दिन का समय लग सकता है।</li>
+      </ul>
+      <p>इसीलिए खेल वैज्ञानिक सब-मैक्सिमल टेस्ट (3 से 6 रेप्स) का उपयोग करते हैं, जो बिना किसी चोट के जोखिम के 97% से अधिक सटीकता से 1RM का सटीक अनुमान लगाते हैं।</p>
 
-      <h2>दो प्रमुख वैज्ञानिक 1RM सूत्र</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
+      <h2>फॉर्मूलों का आमना-सामना: ब्रज़ीकी बनाम एपले बनाम लोम्बार्डी</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
-              <th class="p-3 border border-[#e6e6e6]">सूत्र का नाम</th>
-              <th class="p-3 border border-[#e6e6e6] font-mono text-[#464feb] font-bold">गणितीय समीकरण</th>
-              <th class="p-3 border border-[#e6e6e6]">सर्वोत्तम उपयोगिता सीमा</th>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">फॉर्मूला</th>
+              <th class="p-3 font-mono text-[#464feb] font-bold">समीकरण</th>
+              <th class="p-3">सर्वोत्तम उपयोगिता</th>
+              <th class="p-3">वैज्ञानिक विश्लेषण व सीमाएं</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#e6e6e6]">
+          <tbody class="divide-y divide-[var(--border)] text-[var(--muted-foreground)]">
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold text-[#464feb]">ब्रज़ीकी फॉर्मूला (Brzycki 1993)</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono font-bold text-[#464feb]">1RM = वजन / (1.0278 - 0.0278 &times; रेप्स)</td>
-              <td class="p-3 border border-[#e6e6e6]">3 से 8 रेप्स के भारी सेट्स में सबसे सटीक परिणाम देता है</td>
+              <td class="p-3 font-semibold text-emerald-600 dark:text-emerald-400 font-bold">ब्रज़ीकी सूत्र (Brzycki 1993)</td>
+              <td class="p-3 font-mono font-bold text-emerald-600 dark:text-emerald-400">1RM = भार / (1.0278 - 0.0278 &times; रेप्स)</td>
+              <td class="p-3 font-medium">ऊपरी शरीर के लिफ्ट्स (बेंच प्रेस, शोल्डर प्रेस)</td>
+              <td class="p-3">प्रति रेप लगभग 2.78% ताकत में कमी मानता है। 3 से 8 रेप्स के लिए अत्यंत सटीक।</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-semibold">एपले फॉर्मूला (Epley 1985)</td>
-              <td class="p-3 border border-[#e6e6e6] font-mono">1RM = वजन &times; (1 + रेप्स / 30)</td>
-              <td class="p-3 border border-[#e6e6e6]">पावरलिफ्टिंग में लोकप्रिय; 10 रेप्स तक के सेट्स के लिए विश्वसनीय</td>
+              <td class="p-3 font-semibold text-blue-500 font-bold">एपले सूत्र (Epley 1985)</td>
+              <td class="p-3 font-mono font-bold text-blue-500">1RM = भार &times; (1 + रेप्स / 30)</td>
+              <td class="p-3 font-medium">निचले शरीर के लिफ्ट्स (स्क्वाट, डेडलिफ्ट)</td>
+              <td class="p-3">पावरलिफ्टिंग का गोल्ड स्टैंडर्ड। बड़ी मांसपेशियों के धीरज को ध्यान में रखता है।</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold text-[var(--foreground)]">लोम्बार्डी सूत्र (1989)</td>
+              <td class="p-3 font-mono">1RM = भार &times; रेप्स<sup>0.10</sup></td>
+              <td class="p-3 font-medium">उच्च रेप्स स्क्रीनिंग</td>
+              <td class="p-3">8 से 12 रेप्स के बीच घातांकीय वृद्धि को नियंत्रित करता है।</td>
             </tr>
           </tbody>
         </table>
       </div>
 
+      <div class="my-4 p-4 rounded-xl border border-amber-500/20 bg-amber-500/5 text-xs text-[var(--foreground)]">
+        <strong class="text-amber-600 dark:text-amber-400 font-bold">10 रेप्स का नियम:</strong> कभी भी 10 से अधिक रेप्स वाले सेट से 1RM की गणना न करें। 10 रेप्स के बाद शुद्ध ताकत के बजाय कार्डियोवस्कुलर धीरज परिणाम को प्रभावित करता है।
+      </div>
+
+      <h2>कदम-दर-कदम व्यावहारिक उदाहरण (Worked Examples)</h2>
+
+      <div class="my-6 space-y-4">
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            उदाहरण 1: बेंच प्रेस सब-मैक्सिमल टेस्ट
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>लिफ्टर: रोहित</strong> | व्यायाम: बारबेल बेंच प्रेस | टेस्ट सेट: 82.5 किग्रा वजन से पूरे 5 तकनीकी रूप से सही रेप्स।
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>विधि A: ब्रज़ीकी फॉर्मूला (बेंच प्रेस के लिए अनुशंसित)</strong></p>
+            <p>&bull; हर (Denominator): 1.0278 - (0.0278 &times; 5) = 1.0278 - 0.1390 = <strong>0.8888</strong></p>
+            <p>&bull; अनुमानित 1RM: 82.5 / 0.8888 = <strong>92.82 किग्रा</strong> (&approx; 93 किग्रा)</p>
+            <p class="pt-1"><strong>विधि B: एपले फॉर्मूला</strong></p>
+            <p>&bull; 82.5 &times; [1 + (5 / 30)] = 82.5 &times; 1.1667 = <strong>96.25 किग्रा</strong> (&approx; 96 किग्रा)</p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>कोचिंग विश्लेषण:</strong> बेंच प्रेस में ब्रज़ीकी का <strong>93 किग्रा</strong> अनुमान अधिक सुरक्षित है, ताकि आगे की ट्रेनिंग में अत्यधिक भार से चोट न लगे।
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+          <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
+            उदाहरण 2: स्क्वाट में रिज़र्व रेप्स (RIR / RPE विधि)
+          </h3>
+          <p class="text-sm text-[var(--foreground)]">
+            <strong>लिफ्टर: पूजा</strong> | व्यायाम: बारबेल स्क्वाट | 105 किग्रा वजन से 4 रेप्स पूरे किए, 2 रेप्स की क्षमता बची थी (RPE 8)।
+          </p>
+          <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
+            <p><strong>स्टेप 1: विफलता तक कुल संभावित रेप्स</strong>: 4 + 2 = <strong>6 रेप्स</strong></p>
+            <p><strong>स्टेप 2: एपले फॉर्मूला</strong>: 105 &times; [1 + (6 / 30)] = 105 &times; 1.20 = <strong>126.0 किग्रा</strong></p>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
+            <strong>कोचिंग विश्लेषण:</strong> पूजा ने बिना किसी चोट के जोखिम के जान लिया कि उसका अधिकतम स्क्वाट लगभग 126 किग्रा है।
+          </p>
+        </div>
+      </div>
+
       <h2>प्रतिशत-आधारित ट्रेनिंग भार तालिका (Percentage Load Chart)</h2>
-      <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
-        <table class="w-full text-left border-collapse text-xs sm:text-sm font-mono">
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
-              <th class="p-3 border border-[#e6e6e6]">1RM का प्रतिशत</th>
-              <th class="p-3 border border-[#e6e6e6]">अधिकतम संभावित रेप्स</th>
-              <th class="p-3 border border-[#e6e6e6]">मुख्य प्रशिक्षण अनुकूलन</th>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">1RM का %</th>
+              <th class="p-3 font-mono text-[#464feb] font-bold">रेप्स लक्ष्य</th>
+              <th class="p-3">लक्षित RPE</th>
+              <th class="p-3">मुख्य प्रशिक्षण लाभ</th>
+              <th class="p-3">विश्राम समय</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#e6e6e6]">
+          <tbody class="divide-y divide-[var(--border)] text-[var(--muted-foreground)]">
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-bold text-rose-600">100%</td>
-              <td class="p-3 border border-[#e6e6e6]">1 रेप</td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">अधिकतम न्यूरोमस्कुलर मोटर यूनिट सक्रियण</td>
+              <td class="p-3 font-bold font-mono text-emerald-600 dark:text-emerald-400">60%–65%</td>
+              <td class="p-3 font-mono">12–15 रेप्स</td>
+              <td class="p-3 font-mono">6–7</td>
+              <td class="p-3">मांसपेशियों का धीरज, टेंडन की मजबूती, वॉर्म-अप</td>
+              <td class="p-3">60–90 सेकेंड</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-bold text-amber-600">85%</td>
-              <td class="p-3 border border-[#e6e6e6]">5–6 रेप्स</td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">मैकेनिकल टेंशन और शुद्ध ताकत (Strength)</td>
+              <td class="p-3 font-bold font-mono text-blue-500">70%–75%</td>
+              <td class="p-3 font-mono">8–12 रेप्स</td>
+              <td class="p-3 font-mono">7–8</td>
+              <td class="p-3">मांसपेशियों का आकार बढ़ना (हाइपरट्रॉफी)</td>
+              <td class="p-3">2 मिनट</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-bold text-blue-500">75%</td>
-              <td class="p-3 border border-[#e6e6e6]">10 रेप्स</td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">मांसपेशियों के आकार में वृद्धि (हाइपरट्रॉफी)</td>
+              <td class="p-3 font-bold font-mono text-amber-600 dark:text-amber-400">80%–85%</td>
+              <td class="p-3 font-mono">4–6 रेप्स</td>
+              <td class="p-3 font-mono">8–9</td>
+              <td class="p-3">कार्यात्मक ताकत (Strength) और भारी वजन उठाने की क्षमता</td>
+              <td class="p-3">3–4 मिनट</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold font-mono text-rose-600 dark:text-rose-400">90%–95%</td>
+              <td class="p-3 font-mono">1–3 रेप्स</td>
+              <td class="p-3 font-mono">9–10</td>
+              <td class="p-3">चरम न्यूरोमस्कुलर शक्ति और कॉम्पिटिशन पीकिंग</td>
+              <td class="p-3">4–5 मिनट</td>
             </tr>
           </tbody>
         </table>
@@ -931,7 +1307,8 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       <h2>वैज्ञानिक संदर्भ</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
         <li>Brzycki M. <em>Strength testing—predicting a one-rep max from reps-to-fatigue.</em> JOPERD 1993; 64:88-90.</li>
-        <li>Epley B. <em>Poundage Chart.</em> Boyd Epley Workout 1985.</li>
+        <li>Epley B. <em>Poundage Chart.</em> Boyd Epley Workout, 1985.</li>
+        <li>Helms ER, et al. <em>Application of the repetitions in reserve-based rating of perceived exertion scale.</em> Strength Cond J 2016; 38:42-49.</li>
       </ul>
 `,
       "es": `

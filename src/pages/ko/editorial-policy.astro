@@ -17,7 +17,7 @@ import PageShell from '../../components/PageShell.astro';
       returnLabel="홈"
     >
       <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
-        <p><strong>Real BMI 편집팀</strong>이 독립적으로 운영하는 건강 계산기 웹사이트인 <strong>Real BMI</strong>의 목표는 명확하고 투명하며 참조 기반의 건강 계산기를 제공하여 사용자가 체질량지수(BMI), 기초대사량(BMR), 일일 총 에너지 소비량(TDEE) 및 보완적 신체 지표를 추정할 수 있도록 돕는 것입니다.</p>
+        <p>인도 라자스탄주 반스와라에 거주하는 <strong>Bhawanshi Dosi</strong>가 설립, 개발 및 유지 관리하는 개인 건강 계산 및 교육 플랫폼인 <strong>Real BMI</strong>의 목표는 명확하고 투명하며 공인 참조 기반의 건강 계산기를 제공하는 것입니다.</p>
 
         <h2>1. 근거 기반 참조 가이드라인</h2>
         <p>Real BMI에 게시된 모든 공식 및 참조 범위는 공식 보건 기구의 공개된 수학적 방정식과 공중 보건 가이드라인을 바탕으로 제작되었습니다:</p>
@@ -27,11 +27,13 @@ import PageShell from '../../components/PageShell.astro';
           <li><strong>공개된 연구 논문:</strong> Mifflin-St Jeor, Harris-Benedict, Boer, Devine, Mosteller, Epley 등 저명한 연구자들의 방정식.</li>
         </ul>
 
-        <h2>2. 콘텐츠 제작 및 유지 관리</h2>
-        <p>Real BMI는 Real BMI 편집 및 헬스 엔지니어링 팀이 독립적으로 제작 및 유지 관리합니다:</p>
+        <h2>2. 개인 제작자 신원 및 방법론적 표준</h2>
+        <p>Real BMI는 투명한 개인 개발자 거버넌스 하에 운영되는 독립적인 개인 프로젝트입니다:</p>
         <ul>
-          <li><strong>편집 및 기술 위원회:</strong> Real BMI 헬스 툴스 팀</li>
-          <li><strong>방법론 기반:</strong> 공개된 수학적 공식 및 공중 보건 참조 가이드라인</li>
+          <li><strong>설립자, 개발자 겸 작성자:</strong> <strong>Bhawanshi Dosi</strong>가 소프트웨어 엔지니어링, 알고리즘 정확도, 기본 문헌 조사(WHO, CDC, NIH), 단위 테스트 및 브라우저 무보관 프라이버시 아키텍처 전체를 총괄합니다.</li>
+          <li><strong>근거 기반 계산 표준:</strong> 모든 계산기는 공식 발표된 피어 리뷰 논문 및 공중보건 공식(Mifflin-St Jeor, Boer, Devine, Mosteller, WHO TRS 854)의 직접적이고 검증된 소프트웨어 구현체입니다.</li>
+          <li><strong>비임상 명시 조항:</strong> Real BMI는 개인 웹사이트이자 교육용 리소스이며, 병원, 임상 의료 기관 또는 의사가 검토하는 서비스가 아닙니다. 의사로 구성된 임상 검토 위원회를 운영한다고 주장하지 않습니다. 모든 계산기는 일반적인 교육 및 라이프스타일 인식을 위해 설계된 계산 도구입니다.</li>
+          <li><strong>학술 피드백 개방:</strong> 의료 전문가, 연구자 및 사용자의 공식 검증 피드백과 인용 제안을 문의 페이지를 통해 환영합니다.</li>
         </ul>
 
         <h2>3. 투명성 및 지속적인 업데이트</h2>
@@ -47,7 +49,7 @@ import PageShell from '../../components/PageShell.astro';
         <p>Real BMI는 탑재된 모든 계산 공식, 임상 분별점 표 및 참고 지표에 대해 반기별 엄격한 정기 감사 프로토콜을 수행합니다. WHO, CDC 또는 아시아 태평양 보건 학술 기구에서 새로운 역학 통계치나 지침을 발표하면, 즉시 공식 백서를 대조하여 연산 엔진을 재검증합니다. 모든 알고리즘 코드는 단위 테스트(Unit Testing)와 경계값 회귀 테스트를 거쳐 배포됩니다.</p>
 
         <h2>7. 독창성 및 인간 작성자 원칙</h2>
-        <p>웹사이트의 모든 설명 가이드, 단계별 수학적 풀이 예시 및 자주 묻는 질문(FAQ)은 Real BMI 편집팀이 공식 의학 1차 문헌을 참조하여 직접 정성껏 작성합니다. 무분별한 콘텐츠 복제(스크래핑), 대량의 인위적 문장 생성, 무의미한 키워드 반복을 엄격히 배제하며, 사용자에게 실질적인 교육적 가치를 제공합니다.</p>
+        <p>모든 작성 가이드, 계산 예제, 단계별 수학적 풀이 및 FAQ 답변은 Bhawanshi Dosi가 인용된 기본 출처를 바탕으로 독창적으로 작성합니다.</p>
 
         <h2>8. 오탈자 정정 및 사용자 피드백 정책</h2>
         <p>계산 공식의 불일치, 불명확한 용어 정의 또는 보완이 필요한 출처를 발견하신 경우 문의 페이지를 통해 언제든지 제보해 주시기 바랍니다. 검증된 지적 사항은 개발 소스 코드에 신속히 반영되며, 투명하게 관리됩니다.</p>

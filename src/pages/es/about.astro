@@ -5,8 +5,8 @@ import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
-    title="Sobre Real BMI - Estándares Clínicos y Equipo Editorial"
-    description="Conozca Real BMI, nuestro equipo de informática médica y editorial, estándares de la OMS y CDC, y nuestro compromiso con la privacidad sin registro."
+    title="Sobre Real BMI - Fundadora y Estándares Metodológicos"
+    description="Conozca Real BMI, plataforma individual de calculadoras de salud fundada y mantenida por Bhawanshi Dosi. Fórmulas de la OMS y los CDC."
 >
     <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -19,10 +19,23 @@ import PageShell from '../../components/PageShell.astro';
         "name": "Real BMI",
         "url": "https://realbmicalculator.com",
         "founder": {
-          "@type": "Organization",
-          "name": "Equipo Editorial Real BMI",
-          "description": "Equipo de desarrollo e informática médica especializado en algoritmos computacionales y arquitectura de privacidad del navegador."
+          "@type": "Person",
+          "name": "Bhawanshi Dosi",
+          "jobTitle": "Fundadora y Desarrolladora Principal",
+          "description": "Ingeniera de software y creadora de Real BMI, especializada en motores de cálculo de salud en el navegador sin retención de datos.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Banswara",
+            "addressRegion": "Rajasthan",
+            "addressCountry": "IN"
+          }
         },
+        "author": {
+        "@type": "Person",
+        "name": "Bhawanshi Dosi",
+        "jobTitle": "Founder & Lead Developer",
+        "url": "https://realbmicalculator.com/es/about/"
+      },
         "knowsAbout": [
           "Índice de Masa Corporal (IMC)",
           "Tasa Metabólica Basal (TMB)",
@@ -36,110 +49,14 @@ import PageShell from '../../components/PageShell.astro';
     <PageShell
       title="Sobre Real BMI"
       eyebrow="Misión y Metodología Basada en Evidencia"
-      description="Mantenido por el Equipo Editorial de Real BMI utilizando literatura científica y estándares de la OMS y los CDC."
+      description="Fundada y desarrollada por Bhawanshi Dosi utilizando literatura científica y estándares de la OMS y los CDC."
       returnUrl="/es/"
       returnLabel="Inicio"
     >
       <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
         <div class="space-y-10">
           <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium opacity-90">
-            <p><strong>Real BMI</strong> es una plataforma independiente de cálculo bioplatafórmico y referencia antropométrica, fundada por <strong>Bhawanshi Dosi</strong> y gestionada por el <strong>Equipo Editorial de Real BMI</strong> (Ahmedabad, Gujarat, India). El proyecto nació para resolver un problema crítico en la web de la salud: herramientas saturadas de rastreo invasivo, publicidad engañosa y fórmulas opacas sin respaldo documental. Real BMI ofrece calculadoras transparentes y verificables que se ejecutan 100 % en el navegador local, con cero almacenamiento de datos de salud.</p>
-
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">1. Liderazgo Editorial y Equipo de Investigación</h2>
-            
-            <!-- Perfil del Consejo de Revisión Clínica -->
-            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start" id="editorial-board">
-              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-black text-xl shadow-md shrink-0">
-                ERT
-              </div>
-              <div class="space-y-2 flex-grow">
-                <div class="flex flex-wrap items-center gap-2">
-                  <h3 class="text-lg font-bold text-[var(--foreground)]">
-                    Equipo Editorial Real BMI
-                  </h3>
-                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">Equipo de Investigación y Revisión de Evidencia</span>
-                </div>
-                <p class="text-xs font-medium text-[var(--accent)]">Informática en Salud, Bioestadística y Literatura Académica Primaria (OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, Devine 1974)</p>
-                <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                  Nuestro equipo especializado en informática de la salud y redacción médica supervisa la derivación matemática de las fórmulas, los umbrales de referencia poblacional y los protocolos de verificación para todas las herramientas y guías de Real BMI.
-                </p>
-                <div class="pt-1">
-                  <a href="/es/editorial-policy/" class="text-xs font-semibold text-[var(--accent)] hover:underline inline-flex items-center gap-1">
-                    Consultar Política Editorial y Protocolo de Revisión →
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Consejo de Ingeniería y Redacción -->
-            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start">
-              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--muted)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] font-display font-black text-xl shadow-md shrink-0">
-                RB
-              </div>
-              <div class="space-y-2">
-                <div class="flex flex-wrap items-center gap-2">
-                  <h3 class="text-lg font-bold text-[var(--foreground)]">Producto y Desarrollo</h3>
-                  <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/15 text-[var(--accent)] border border-[var(--accent)]/30">Informática en Salud</span>
-                </div>
-                <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                  Especializados en computación client-side y privacidad digital. Real BMI ofrece resultados inmediatos calculados localmente en su dispositivo sin servidores intermedios, cuentas obligatorias ni identificadores persistentes.
-                </p>
-              </div>
-            </div>
-
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2" id="medical-review">2. Metodología Clínica y Estándares de Referencia</h2>
-            <p>Debido a que las decisiones de salud y nutrición pueden influir en el bienestar, todas las fórmulas se revisan minuciosamente a partir de referencias científicas publicadas e indexadas en nuestra <a href="/es/sources/" class="text-[var(--accent)] hover:underline font-semibold">Matriz de Citas Académicas</a>:</p>
-            <ul>
-              <li><strong>Organización Mundial de la Salud (OMS):</strong> Serie de Informes Técnicos 854 y pautas regionales para poblaciones asiáticas (sobrepeso a partir de 23 kg/m², obesidad desde 25 kg/m²).</li>
-              <li><strong>Centros para el Control y la Prevención de Enfermedades (CDC):</strong> Puntos de corte percentilares del NCHS para jóvenes y tablas de distribución adulta.</li>
-              <li><strong>Ecuaciones de Metabolismo y Calorías:</strong> Fórmula de Mifflin-St Jeor (1990) como el estándar predictivo más exacto para el metabolismo basal; revisión Roza-Shizgal de Harris-Benedict (1984); modelos Katch-McArdle basados en masa magra.</li>
-              <li><strong>Composición Corporal y Superficie:</strong> Ecuación de circunferencia de la Marina de EE. UU. (Hodgdon &amp; Beckett, 1984), fórmula de Mosteller para el área de superficie corporal (BSA, 1987) y visualización 3D.</li>
-            </ul>
-
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">3. Proceso de Revisión y Calidad Previo a la Publicación</h2>
-            <p>Para asegurar la máxima exactitud matemática y claridad educativa, cada herramienta y artículo supera una revisión previa a su publicación:</p>
-            <ol>
-              <li><strong>Derivación Directa de Fuentes Primarias:</strong> Las fórmulas se extraen directamente de estudios científicos revisados por pares y documentos técnicos de la OMS y los CDC.</li>
-              <li><strong>Validación de Paridad de Unidades:</strong> Pruebas automáticas duales entre el sistema métrico (cm/kg) y el imperial (ft-in/lbs) garantizan equivalencia numérica sin discrepancias por redondeo.</li>
-              <li><strong>Auditoría de Privacidad y Protección de Datos:</strong> Verificación estricta de que ningún dato personal (nombres, correos, teléfonos) quede registrado en entradas públicas ni en parámetros URL.</li>
-              <li><strong>Aislamiento en Memoria del Navegador:</strong> Confirmación técnica de que las métricas biométricas se procesan exclusivamente en la memoria volátil del dispositivo y jamás se transmiten a servidores externos.</li>
-              <li><strong>Límites Clínicos y Advertencia Sanitaria:</strong> Se detallan claramente los casos límite (deportistas musculados, adultos mayores con sarcopenia, mujeres embarazadas) y se incluye una advertencia educativa explícita.</li>
-            </ol>
-
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">4. Aviso Médico y Propósito Educativo</h2>
-            <p>Real BMI es un portal de estimación matemática y educación preventiva, no un centro médico, hospital ni proveedor de diagnóstico sanitario. Las cifras y clasificaciones ofrecidas buscan fomentar la conciencia física personal y facilitar un diálogo informado con profesionales sanitarios colegiados.</p>
-          </div>
-
-          <div class="grid gap-6 sm:grid-cols-2">
-            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Ecuaciones Publicadas</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Cálculos basados en fórmulas matemáticas documentadas y puntos de referencia poblacionales.</p>
-            </div>
-            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Privacidad Primero</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Los datos permanecen exclusivamente en su dispositivo y se purgan al cerrar la sesión.</p>
-            </div>
-            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Estándares OMS &amp; CDC</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Rangos oficiales internacionales y clasificaciones específicas para poblaciones asiáticas.</p>
-            </div>
-            <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-              <p class="text-sm uppercase tracking-[0.3em] font-bold text-[var(--accent)]">Estimaciones Educativas</p>
-              <p class="mt-4 text-base text-[var(--foreground)] font-semibold">Referencias prácticas y orientativas para la planificación del estilo de vida y nutrición.</p>
-            </div>
-          </div>
-        </div>
-
-        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-6">
-          <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Misión del Proyecto</p>
-          <h2 class="text-2xl font-black text-[var(--foreground)]">Herramientas Transparentes</h2>
-          <p class="text-sm leading-relaxed text-[var(--muted-foreground)]">Real BMI nació para ofrecer cálculos de salud accesibles, transparentes y respetuosos con la privacidad. Rechazamos los algoritmos cerrados: cada cálculo expone su fórmula exacta y sus referencias científicas.</p>
-
-          <div class="space-y-4 text-xs text-[var(--muted-foreground)] leading-relaxed border-t border-[var(--border)] pt-4">
-            <p><strong>Dirección Editorial:</strong> Equipo Editorial de Real BMI</p>
-            <p><strong>Referencias Clínicas:</strong> <a href="/es/sources/" class="text-[var(--accent)] hover:underline font-semibold">15 Citas Primarias</a> (OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, Devine 1974)</p>
-            <p><strong>Modelo de Ejecución:</strong> Computación 100 % en el navegador del usuario</p>
-            <p><strong>Privacidad:</strong> Cumplimiento RGPD y Políticas para Editores de Google</p>
+            <p><strong>Real BMI</strong> es una plataforma individual de cálculo de salud y referencia antropométrica fundada, desarrollada y administrada por <strong>Bhawanshi Dosi</strong> (Banswara, Rajastán, India). El proyecto nació para resolver un problema crítico en la web de la salud: herramientas saturadas de rastreo invasivo, publicidad engañosa y fórmulas opacas sin respaldo documental. Real BMI ofrece calculadoras transparentes y verificables que se ejecutan 100 % en el navegador local, con cero almacenamiento de datos de salud.</p>
           </div>
 
           <div class="space-y-3 pt-2">
@@ -147,7 +64,7 @@ import PageShell from '../../components/PageShell.astro';
               Consultar Metodología y Fórmulas →
             </a>
             <a href="/es/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">
-              Contactar al Equipo Editorial
+              Contactar a la Desarrolladora
             </a>
           </div>
         </aside>
