@@ -132,11 +132,12 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       </div>
 
       <h2>Scientific References and Foundational Literature</h2>
-      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>World Health Organization. <em>Physical status: The use and interpretation of anthropometry.</em> WHO Technical Report Series 854. Geneva: WHO, 1995.</li>
-        <li>Keys A, Fidanza F, Karvonen MJ, Kimura N, Taylor HL. <em>Indices of relative weight and obesity.</em> Journal of Chronic Diseases, 1972; 25(6-7):329-343.</li>
-        <li>WHO Expert Consultation. <em>Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.</em> The Lancet, 2004; 363(9403):157-163.</li>
-        <li>National Institutes of Health. <em>Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults.</em> Obes Res 1998; 6(Suppl 2):51S-209S.</li>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-2">
+        <li class="my-1.5"><a href="https://pubmed.ncbi.nlm.nih.gov/8594834/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--accent)] underline font-medium text-[var(--foreground)]/90 transition-colors">World Health Organization. <em>Physical status: The use and interpretation of anthropometry.</em> WHO Technical Report Series 854 (PMID: 8594834). Geneva: WHO, 1995 &rarr;</a></li>
+        <li class="my-1.5"><a href="https://pubmed.ncbi.nlm.nih.gov/4650629/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--accent)] underline font-medium text-[var(--foreground)]/90 transition-colors">Keys A, Fidanza F, Karvonen MJ, Kimura N, Taylor HL. <em>Indices of relative weight and obesity.</em> Journal of Chronic Diseases, 1972; 25(6-7):329-343 &rarr;</a></li>
+        <li class="my-1.5"><a href="https://pubmed.ncbi.nlm.nih.gov/14726171/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--accent)] underline font-medium text-[var(--foreground)]/90 transition-colors">WHO Expert Consultation. <em>Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.</em> The Lancet, 2004; 363(9403):157-163 &rarr;</a></li>
+        <li class="my-1.5"><a href="https://www.nhlbi.nih.gov/health-topics/guidelines-for-obesity-treatment" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--accent)] underline font-medium text-[var(--foreground)]/90 transition-colors">National Institutes of Health. <em>Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults.</em> Obes Res 1998; 6(Suppl 2):51S-209S &rarr;</a></li>
+        <li class="my-1.5"><a href="https://www.cdc.gov/bmi/faq/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--accent)] underline font-medium text-[var(--foreground)]/90 transition-colors">Centers for Disease Control and Prevention. <em>About Adult BMI.</em> CDC Division of Nutrition, Physical Activity, and Obesity &rarr;</a></li>
       </ul>
     `,
     es: `

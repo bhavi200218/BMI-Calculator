@@ -6,6 +6,7 @@ import LatestArticles from '../../../components/LatestArticles.astro';
 import { blogArticles } from '../../../utils/blogArticles';
 import { calculators } from '../../../utils/calculators';
 import { getBlogCta, getBlogRelatedSlugs, getBlogRelatedArticles } from '../../../utils/blogRelatedTools';
+import { enhanceArticleReferences } from '../../../utils/articleReferences';
 
 export function getStaticPaths() {
   return Object.keys(blogArticles).map((slug) => ({
@@ -20,7 +21,8 @@ const lang = 'en';
 const articleTitle = article.title[lang] || article.title.en;
 const articleCategory = article.category ? (article.category[lang] || article.category.en) : 'Health';
 const articleDescription = article.description[lang] || article.description.en;
-const articleContentHtml = article.contentHtml ? (article.contentHtml[lang] || article.contentHtml.en) : null;
+const rawContentHtml = article.contentHtml ? (article.contentHtml[lang] || article.contentHtml.en) : null;
+const articleContentHtml = rawContentHtml ? enhanceArticleReferences(slug as string, rawContentHtml, lang) : null;
 const articleBody: string[] = (article.body ? (article.body[lang] || article.body.en) : []) || [];
 
 const canonicalUrl = `https://realbmicalculator.com/en/blog/${slug}/`;
@@ -77,22 +79,37 @@ const dateModified = article.dateModified || "2026-10-21";
       returnLabel="Back to Articles"
     >
       <!-- Visible Editorial Byline & Verification Card -->
-      <div class="not-prose mb-8 p-4 sm:p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-bold text-sm shadow">
-            BD
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-xs uppercase tracking-wider font-semibold text-[var(--muted-foreground)]">Written by</span>
-              <a href="/en/about/" class="text-sm font-bold text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">Bhawanshi Dosi</a>
+      <div class="not-prose mb-8 p-5 sm:p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-full bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-bold text-sm shadow">
+              BD
             </div>
-            <p class="text-xs text-[var(--muted-foreground)]">Software Engineer &amp; Creator (Banswara, Rajasthan, India)</p>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs uppercase tracking-wider font-semibold text-[var(--muted-foreground)]">Written by</span>
+                <a href="/en/about/" class="text-sm font-bold text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">Bhawanshi Dosi</a>
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">Creator &amp; Engineer</span>
+              </div>
+              <p class="text-xs text-[var(--muted-foreground)]">Software Engineer &amp; Creator &bull; Banswara, Rajasthan, India</p>
+            </div>
+          </div>
+          <div class="text-xs text-[var(--muted-foreground)] sm:text-right space-y-0.5 border-t sm:border-t-0 pt-2 sm:pt-0 border-[var(--border)]">
+            <p><span class="font-medium text-[var(--foreground)]">Published:</span> {datePublished}</p>
+            <p><span class="font-medium text-[var(--foreground)]">Last Updated:</span> {dateModified}</p>
           </div>
         </div>
-        <div class="text-xs text-[var(--muted-foreground)] sm:text-right space-y-0.5 border-t sm:border-t-0 pt-2 sm:pt-0 border-[var(--border)]">
-          <p><span class="font-medium text-[var(--foreground)]">Published:</span> {datePublished}</p>
-          <p><span class="font-medium text-[var(--foreground)]">Updated:</span> {dateModified}</p>
+
+        <!-- Verification & Review Transparency Badges -->
+        <div class="pt-3 border-t border-[var(--border)] flex flex-wrap items-center gap-2 text-xs">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-medium border border-emerald-500/20">
+            <svg class="w-3.5 h-3.5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            Algorithmic Verification (WHO &amp; CDC Published Equations)
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-200 font-medium border border-amber-500/20">
+            <svg class="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+            Educational Resource &bull; Non-Physician Authored
+          </span>
         </div>
       </div>
 
@@ -106,6 +123,53 @@ const dateModified = article.dateModified || "2026-10-21";
             ))}
           </div>
         )}
+
+        <!-- Author Profile & Clinical Transparency Section -->
+        <div class="mt-12 not-prose p-6 sm:p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm space-y-6">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 pb-6 border-b border-[var(--border)]">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-black text-xl shadow-md shrink-0">
+              BD
+            </div>
+            <div class="space-y-1.5">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-xs uppercase tracking-wider font-semibold text-[var(--muted-foreground)]">About the Author</span>
+                <h4 class="text-lg font-bold text-[var(--foreground)]">Bhawanshi Dosi</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">Software Engineer &amp; Creator</span>
+              </div>
+              <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+                Bhawanshi Dosi is a software engineer based in Banswara, Rajasthan, India, and the sole creator of Real BMI. She builds privacy-first, evidence-based health screening tools and educational reference resources built strictly on standardized formulas published by the World Health Organization (WHO), Centers for Disease Control and Prevention (CDC), and National Institutes of Health (NIH).
+              </p>
+              <div class="pt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-semibold text-[var(--accent)]">
+                <a href="/en/about/" class="hover:underline">About Bhawanshi &rarr;</a>
+                <a href="/en/methodology/" class="hover:underline">Calculation Methodology &rarr;</a>
+                <a href="/en/sources/" class="hover:underline">Clinical Reference Sources &rarr;</a>
+                <a href="/en/editorial-policy/" class="hover:underline">Editorial &amp; Review Policy &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+            <div class="p-4 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)] space-y-1.5">
+              <div class="flex items-center gap-2 font-bold text-[var(--foreground)]">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span>Automated Algorithmic Verification</span>
+              </div>
+              <p class="text-[var(--muted-foreground)] leading-normal">
+                Every equation, imperial conversion constant (703), and metabolic formula (Mifflin-St Jeor, WHO cut-offs) cited in this guide is verified against published academic literature using automated test suites.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)] space-y-1.5">
+              <div class="flex items-center gap-2 font-bold text-[var(--foreground)]">
+                <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                <span>Non-Physician Educational Disclaimer</span>
+              </div>
+              <p class="text-[var(--muted-foreground)] leading-normal">
+                Real BMI is an independent educational tool, <strong>not a physician-reviewed or clinical healthcare service</strong>. This content is for educational screening only and is not medical advice. Always consult a licensed medical professional for clinical diagnosis or treatment.
+              </p>
+            </div>
+          </div>
+        </div>
 
         <!-- 1. Related Evidence-Based Guides -->
         <div class="mt-14 not-prose">
@@ -152,11 +216,12 @@ const dateModified = article.dateModified || "2026-10-21";
 <style is:global>
   /* Academic Reference & Table Standards */
   article.article-container a:not(.calc-btn-gradient) {
-    text-decoration: none;
-    color: #464feb;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--accent, #464feb);
   }
   article.article-container a:not(.calc-btn-gradient):hover {
-    text-decoration: underline;
+    color: var(--foreground);
   }
   article.article-container tr th,
   article.article-container tr td {

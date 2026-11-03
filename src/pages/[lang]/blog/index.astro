@@ -69,14 +69,24 @@ const coreTopics = [
   { id: 'heart', label: { en: 'Heart Health', es: 'Salud Cardíaca', fr: 'Santé Cardiaque', de: 'Herzgesundheit', ko: '심혈관 건강', hi: 'हृदय स्वास्थ्य' } },
 ];
 
-function getArticleTopic(cat: string): string {
+function getArticleTopic(slug: string, cat: string): string {
+  const s = slug.toLowerCase();
   const c = cat.toLowerCase();
-  if (c.includes('bmi') || c.includes('pediatric') || c.includes('ethnic') || c.includes('biological') || c.includes('practical') || c.includes('population')) return 'bmi';
-  if (c.includes('weight') || c.includes('composition') || c.includes('measurement') || c.includes('pharmacokinetics') || c.includes('body')) return 'weight';
-  if (c.includes('metabol') || c.includes('energy') || c.includes('evidence')) return 'metabolism';
-  if (c.includes('nutrition') || c.includes('macronutrient') || c.includes('protein') || c.includes('water') || c.includes('fluid') || c.includes('hydration') || c.includes('dietary')) return 'nutrition';
-  if (c.includes('strength') || c.includes('exercise') || c.includes('fitness') || c.includes('age') || c.includes('senior') || c.includes('demographics')) return 'fitness';
-  if (c.includes('cardio') || c.includes('heart') || c.includes('preventive') || c.includes('pressure') || c.includes('pulse')) return 'heart';
+
+  // Specific high-intent topics mapped directly
+  if (s.includes('nutrition') || s.includes('protein') || s.includes('macro') || s.includes('water') || s.includes('deficit')) return 'nutrition';
+  if (s.includes('heart') || s.includes('blood-pressure') || s.includes('vo2') || s.includes('cardio') || s.includes('waist-to-hip')) return 'heart';
+  if (s.includes('strength') || s.includes('resistance') || s.includes('neat') || s.includes('sarcopenia')) return 'fitness';
+  if (s.includes('bmr') || s.includes('tdee') || s.includes('metabol') || s.includes('sleep')) return 'metabolism';
+  if (s.includes('body-fat') || s.includes('lean-body-mass') || s.includes('ideal-body-weight') || s.includes('body-surface') || s.includes('visceral') || s.includes('healthy-weight')) return 'weight';
+  if (s.includes('bmi')) return 'bmi';
+
+  // Fallback category matching
+  if (c.includes('nutrition') || c.includes('protein') || c.includes('fluid')) return 'nutrition';
+  if (c.includes('cardio') || c.includes('heart') || c.includes('pressure')) return 'heart';
+  if (c.includes('fitness') || c.includes('exercise') || c.includes('strength')) return 'fitness';
+  if (c.includes('metabol') || c.includes('energy')) return 'metabolism';
+  if (c.includes('weight') || c.includes('composition')) return 'weight';
   return 'bmi';
 }
 
@@ -90,7 +100,7 @@ const articlesList = articleSlugs.map(slug => {
     slug,
     title: item.title[lang] || item.title.en,
     category: cat,
-    topicGroup: getArticleTopic(item.category?.en || cat),
+    topicGroup: getArticleTopic(slug, item.category?.en || cat),
     description: item.description ? (item.description[lang] || item.description.en) : '',
     datePublished: item.datePublished || '2026-01-15',
     dateModified: item.dateModified || '2026-10-21',
@@ -245,7 +255,7 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
     </div>
 
     <!-- Empty Results Message -->
-    <div id="noResultsMsg" class="hidden text-center py-12 space-y-2">
+    <div id="noResultsMsg" class="hidden text-center py-12 space-y-2" style="display: none;" hidden>
       <p class="text-base font-display font-bold text-[var(--foreground)]">{(emptyStates[lang] || emptyStates.en).title}</p>
       <p class="text-xs text-[var(--muted-foreground)]">{(emptyStates[lang] || emptyStates.en).desc}</p>
       <button type="button" id="resetFilterBtn" class="mt-3 px-4 py-2 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity">
@@ -290,13 +300,15 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
     </div>
 
     <script is:inline>
-      document.addEventListener('DOMContentLoaded', () => {
+      function initBlogFilters() {
         const searchInput = document.getElementById('blogSearchInput');
         const pills = document.querySelectorAll('.topic-pill');
         const dropdown = document.getElementById('moreCategoriesDropdown');
         const cards = document.querySelectorAll('.article-item');
         const noResults = document.getElementById('noResultsMsg');
         const resetBtn = document.getElementById('resetFilterBtn');
+
+        if (!cards.length) return;
 
         let activeTopic = 'all';
         let activeCategory = 'all';
@@ -321,10 +333,16 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
             }
           });
 
-          if (visibleCount === 0) {
-            noResults.classList.remove('hidden');
-          } else {
-            noResults.classList.add('hidden');
+          if (noResults) {
+            if (visibleCount === 0) {
+              noResults.style.display = 'block';
+              noResults.removeAttribute('hidden');
+              noResults.classList.remove('hidden');
+            } else {
+              noResults.style.display = 'none';
+              noResults.setAttribute('hidden', '');
+              noResults.classList.add('hidden');
+            }
           }
         }
 
@@ -394,7 +412,17 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
             applyFilters();
           });
         }
-      });
+
+        // Ensure filters and empty-state are correctly evaluated on initial page load
+        applyFilters();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBlogFilters);
+      } else {
+        initBlogFilters();
+      }
+      document.addEventListener('astro:page-load', initBlogFilters);
     </script>
   </PageShell>
 </Layout>
