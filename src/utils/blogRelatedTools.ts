@@ -1773,7 +1773,7 @@ export const blogArticleToolsMap: Record<string, BlogToolMeta> = {
     }
   },
   'resistance-training-metabolism': {
-    targetSlug: 'one-rep-max-calculator',
+    targetSlug: '1rm-calculator',
     relatedSlugs: ['protein-intake-calculator', 'lean-body-mass-calculator', 'macro-calculator'],
     cta: {
       en: {
@@ -1782,7 +1782,7 @@ export const blogArticleToolsMap: Record<string, BlogToolMeta> = {
         linkText: "One-Rep Max Calculator",
         descSuffix: "using validated Brzycki and Epley equations.",
         btnText: "Determine Your 1RM Now →",
-        targetSlug: "one-rep-max-calculator"
+        targetSlug: "1rm-calculator"
       },
       es: {
         title: "Estima tu Repetición Máxima (1RM) con Seguridad",
@@ -1790,7 +1790,7 @@ export const blogArticleToolsMap: Record<string, BlogToolMeta> = {
         linkText: "Calculadora de 1RM",
         descSuffix: "científica.",
         btnText: "Obtener Mi Fuerza 1RM →",
-        targetSlug: "one-rep-max-calculator"
+        targetSlug: "1rm-calculator"
       },
       fr: {
         title: "Évaluez Votre Force Maximale (1RM) en Toute Sécurité",
@@ -1798,7 +1798,7 @@ export const blogArticleToolsMap: Record<string, BlogToolMeta> = {
         linkText: "Calculateur de 1RM",
         descSuffix: "scientifique.",
         btnText: "Évaluer Mon 1RM Maintenant →",
-        targetSlug: "one-rep-max-calculator"
+        targetSlug: "1rm-calculator"
       },
       de: {
         title: "Ermitteln Sie Ihre Maximalkraft (1RM) verletzungsfrei",
@@ -1806,7 +1806,7 @@ export const blogArticleToolsMap: Record<string, BlogToolMeta> = {
         linkText: "1RM-Rechner",
         descSuffix: "nach Brzycki und Epley.",
         btnText: "Maximalkraft 1RM ermitteln →",
-        targetSlug: "one-rep-max-calculator"
+        targetSlug: "1rm-calculator"
       },
       ko: {
         title: "부상 없이 1RM(최대 근력) 추정하기",
@@ -1814,7 +1814,7 @@ export const blogArticleToolsMap: Record<string, BlogToolMeta> = {
         linkText: "1RM 계산기",
         descSuffix: "를 활용하세요.",
         btnText: "최대 근력 1RM 산출하기 →",
-        targetSlug: "one-rep-max-calculator"
+        targetSlug: "1rm-calculator"
       },
       hi: {
         title: "बिना चोट के अपना अधिकतम वजन (1RM) निकालें",
@@ -1822,7 +1822,7 @@ export const blogArticleToolsMap: Record<string, BlogToolMeta> = {
         linkText: "1RM कैलकुलेटर",
         descSuffix: "से तुरंत जांचें।",
         btnText: "अपनी अधिकतम ताकत जानें →",
-        targetSlug: "one-rep-max-calculator"
+        targetSlug: "1rm-calculator"
       }
     }
   },
