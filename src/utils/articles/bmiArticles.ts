@@ -1370,7 +1370,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
               <td class="p-3 font-sans font-semibold">Devine Formula (1974)</td>
               <td class="p-3">50.0 kg + 2.3 kg &times; (Height in inches - 60)</td>
               <td class="p-3">45.5 kg + 2.3 kg &times; (Height in inches - 60)</td>
-              <td class="p-3 font-sans">Mechanical ventilation settings, renal clearance clearance</td>
+              <td class="p-3 font-sans">Mechanical ventilation settings, renal clearance</td>
             </tr>
             <tr>
               <td class="p-3 font-semibold font-sans">Robinson Formula (1983)</td>
