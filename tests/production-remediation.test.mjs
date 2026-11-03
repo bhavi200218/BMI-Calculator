@@ -141,10 +141,9 @@ calculators.forEach(calc => {
 });
 
 // 4. Footer Attribution Tests
-runTest('Footer Attribution: Universally Displays institutional "Real BMI Team" with zero PII', () => {
+runTest('Footer Attribution: Displays verified author identity (Bhawanshi Dosi) and transparent governance', () => {
   const footerContent = fs.readFileSync(path.resolve('src/components/Footer.astro'), 'utf8');
-  assert.ok(footerContent.includes('Real BMI Team') || footerContent.includes('Real BMI'), 'Footer must contain institutional attribution');
-  assert.strictEqual(footerContent.includes('Bhawanshi'), false, 'Footer must contain ZERO personal PII');
+  assert.ok(footerContent.includes('Bhawanshi Dosi'), 'Footer must prominently display verified creator Bhawanshi Dosi');
 });
 
 // 5. Homepage Information Architecture Tests
@@ -523,6 +522,38 @@ if (fs.existsSync(path.resolve('dist'))) {
       }
     }
     assert.strictEqual(count, 138, 'Must verify all 138 unique calculator locale pages');
+  });
+
+  runTest('12.7 Calculator count consistency: verified exactly 23 live tools across homepages, contact, footer, and methodology', () => {
+    // 1. Homepage hub wrapper renders exactly 23 cards
+    const hubWrapper = fs.readFileSync(path.resolve('src/components/HomepageHubWrapper.astro'), 'utf8');
+    assert.ok(hubWrapper.includes('karvonen-heart-rate-calculator'), 'HubWrapper must include karvonen calculator');
+    assert.ok(hubWrapper.includes('bmi-chart'), 'HubWrapper must include bmi-chart');
+
+    // 2. Root index and en index badges say 23
+    const rootIndex = fs.readFileSync(path.resolve('src/pages/index.astro'), 'utf8');
+    assert.ok(rootIndex.includes('23 Tools'), 'Root index must say 23 Tools');
+    assert.strictEqual(rootIndex.includes('18+ Tools'), false, 'Root index must NOT say 18+ Tools');
+
+    const enIndex = fs.readFileSync(path.resolve('src/pages/en/index.astro'), 'utf8');
+    assert.ok(enIndex.includes('23 Tools'), 'EN index must say 23 Tools');
+    assert.strictEqual(enIndex.includes('18+ Tools'), false, 'EN index must NOT say 18+ Tools');
+    assert.strictEqual(enIndex.includes('15+'), false, 'EN index must NOT say 15+');
+
+    // 3. Contact page scope says 23
+    const enContact = fs.readFileSync(path.resolve('src/pages/en/contact.astro'), 'utf8');
+    assert.ok(enContact.includes('23 Free Health Calculators'), 'EN contact page must state 23 Free Health Calculators');
+    assert.strictEqual(enContact.includes('25 Free Health Calculators'), false, 'EN contact page must NOT state 25');
+
+    // 4. Methodology table view desc says 23
+    const methodology = fs.readFileSync(path.resolve('src/pages/[lang]/methodology.astro'), 'utf8');
+    assert.ok(methodology.includes('all 23 computational health tools'), 'Methodology must state 23 computational health tools');
+    assert.strictEqual(methodology.includes('all 25 computational health tools'), false, 'Methodology must NOT state 25');
+
+    // 5. Footer says 23
+    const footer = fs.readFileSync(path.resolve('src/components/Footer.astro'), 'utf8');
+    assert.ok(footer.includes('All 23 Calculators'), 'Footer must state All 23 Calculators');
+    assert.strictEqual(footer.includes('All 18+ Calculators'), false, 'Footer must NOT state 18+');
   });
 }
 

@@ -93,7 +93,7 @@ const i18nData: Record<string, {
     "tableColLimitations": "Clinical Limitations",
     "studiesBadge": "15 Indexed Landmark Studies",
     "tableViewTitle": "Executive Algorithm & Formula Reference Table",
-    "tableViewDesc": "Comprehensive cross-reference of all 25 computational health tools on Real BMI:"
+    "tableViewDesc": "Comprehensive cross-reference of all 23 computational health tools on Real BMI:"
   },
   "hi": {
     "title": "कैलकुलेटर पद्धति एवं सूत्र | Real BMI",
@@ -139,7 +139,7 @@ const i18nData: Record<string, {
     "tableColLimitations": "नैदानिक एवं शारीरिक सीमाएं",
     "studiesBadge": "15 अनुक्रमित ऐतिहासिक अध्ययन",
     "tableViewTitle": "कार्यकारी एल्गोरिदम एवं सूत्र संदर्भ तालिका",
-    "tableViewDesc": "Real BMI पर उपलब्ध समस्त 25 स्वास्थ्य गणना उपकरणों का विस्तृत संदर्भ मैट्रिक्स:"
+    "tableViewDesc": "Real BMI पर उपलब्ध समस्त 23 स्वास्थ्य गणना उपकरणों का विस्तृत संदर्भ मैट्रिक्स:"
   },
   "es": {
     "title": "Metodología y Fórmulas de las Calculadoras | Real BMI",
@@ -185,7 +185,7 @@ const i18nData: Record<string, {
     "tableColLimitations": "Limitaciones Clínicas",
     "studiesBadge": "15 Estudios Indexados de Referencia",
     "tableViewTitle": "Tabla Ejecutiva de Fórmulas y Algoritmos",
-    "tableViewDesc": "Referencia comparativa completa de las 25 herramientas de salud digital de Real BMI:"
+    "tableViewDesc": "Referencia comparativa completa de las 23 herramientas de salud digital de Real BMI:"
   },
   "fr": {
     "title": "Méthodologie et Formules des Calculateurs | Real BMI",
@@ -231,7 +231,7 @@ const i18nData: Record<string, {
     "tableColLimitations": "Limites Physiologiques",
     "studiesBadge": "15 Études de Référence Indexées",
     "tableViewTitle": "Tableau Récapitulatif des Algorithmes et Formules",
-    "tableViewDesc": "Référence croisée complète des 25 outils de santé computationnelle de Real BMI :"
+    "tableViewDesc": "Référence croisée complète des 23 outils de santé computationnelle de Real BMI :"
   },
   "de": {
     "title": "Methodik und Formeln der Rechner | Real BMI",
@@ -277,7 +277,7 @@ const i18nData: Record<string, {
     "tableColLimitations": "Klinische Einschränkungen",
     "studiesBadge": "15 indexierte Referenzstudien",
     "tableViewTitle": "Übersichtstabelle der Algorithmen & mathematischen Modelle",
-    "tableViewDesc": "Vollständige Referenztabelle aller 25 digitalen Gesundheitsrechner auf Real BMI:"
+    "tableViewDesc": "Vollständige Referenztabelle aller 23 digitalen Gesundheitsrechner auf Real BMI:"
   },
   "ko": {
     "title": "계산기 방법론 및 산출 공식 | Real BMI",
@@ -323,7 +323,7 @@ const i18nData: Record<string, {
     "tableColLimitations": "생리학적 및 임상적 한계점",
     "studiesBadge": "15편의 색인된 공인 임상 연구",
     "tableViewTitle": "알고리즘 및 수학 공식 검증 종합 안내표",
-    "tableViewDesc": "Real BMI의 25개 전 건강 연산 도구에 대한 공식 교차 검증 데이터:"
+    "tableViewDesc": "Real BMI의 23개 전 건강 연산 도구에 대한 공식 교차 검증 데이터:"
   }
 };
 
@@ -1440,6 +1440,9 @@ const searchPlaceholders: Record<string, string> = {
   ko: "계산기 공식 검색 (예: BMI, BMR, TDEE, 체지방률)...",
   hi: "कैलकुलेटर सूत्र खोजें (जैसे बीएमआई, BMR, TDEE, शरीर की चर्बी)..."
 };
+
+const aliasSlugs = new Set(['one-rep-max-calculator', '3d-body-visualizer']);
+const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.slug));
 ---
 
 <Layout 
@@ -1502,7 +1505,7 @@ const searchPlaceholders: Record<string, string> = {
               </tr>
             </thead>
             <tbody>
-              {methodologyMatrix.map((item) => {
+              {activeMethodology.map((item) => {
                 const foundCalc = calculators.find(c => c.slug === item.slug);
                 const localizedName = foundCalc ? (foundCalc.name[lang] || foundCalc.name.en) : item.name;
                 const locFormula = item.formula[lang] || item.formula.en;
@@ -1531,7 +1534,7 @@ const searchPlaceholders: Record<string, string> = {
         </div>
       </div>
 
-      <!-- Interactive Detailed Methodology Accordion (25 Tools with Search) -->
+      <!-- Interactive Detailed Methodology Accordion (23 Tools with Search) -->
       <div class="space-y-6 pt-4 border-t border-[var(--border)]">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div class="space-y-1">
@@ -1563,7 +1566,7 @@ const searchPlaceholders: Record<string, string> = {
 
         <!-- Accordion List -->
         <div class="space-y-3" id="methodologyAccordionList">
-          {methodologyMatrix.map((item) => {
+          {activeMethodology.map((item) => {
             const foundCalc = calculators.find(c => c.slug === item.slug);
             const localizedName = foundCalc ? (foundCalc.name[lang] || foundCalc.name.en) : item.name;
 
