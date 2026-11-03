@@ -42,7 +42,7 @@ const currentLangDisplay = langNames[lang] || lang;
     <div class="hidden lg:flex items-center gap-3 lg:gap-5">
       <a href={`/${lang}/`} class="nav-link">{t.home}</a>
       <a href={`/${lang}/#calculators`} class="nav-link">{t.calculators}</a>
-      <a href={`/${lang}/blog/`} class="nav-link">{t.blog}</a>
+      <a href="/en/blog/" class="nav-link">{t.blog}</a>
       <a href={`/${lang}/#insights`} class="nav-link">{t.insights}</a>
       <a href={`/${lang}/#faq`} class="nav-link">{t.faq}</a>
     </div>
@@ -73,13 +73,15 @@ const currentLangDisplay = langNames[lang] || lang;
               if (cleanPath.startsWith('/404') || cleanPath.startsWith('/500')) {
                 targetPath = `/${code}/`;
               } else if (cleanPath.startsWith('/search')) {
-                targetPath = '/search';
+                targetPath = '/search/';
               } else if (cleanPath.startsWith('/embed/')) {
                 targetPath = cleanPath;
               } else if (cleanPath.startsWith('/author/') && code !== 'en') {
                 targetPath = `/${code}/about/`;
               } else if (cleanPath.startsWith('/terms-of-service') || (cleanPath.startsWith('/terms') && !cleanPath.startsWith('/terms-conditions'))) {
                 targetPath = `/${code}/terms-conditions/`;
+              } else if (cleanPath.startsWith('/blog')) {
+                targetPath = `/en${cleanPath}`.replace(/\/+/g, '/');
               }
 
               return (
@@ -140,7 +142,7 @@ const currentLangDisplay = langNames[lang] || lang;
       <a href={`/${lang}/#calculators`} class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
         {t.calculators}
       </a>
-      <a href={`/${lang}/blog/`} class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+      <a href="/en/blog/" class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
         {t.blog}
       </a>
       <a href={`/${lang}/#insights`} class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">

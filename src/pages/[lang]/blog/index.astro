@@ -257,7 +257,7 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="articlesGrid">
       {articlesList.map(article => (
         <a 
-          href={`/${lang}/blog/${article.slug}/`} 
+          href={`/en/blog/${article.slug}/`} 
           class="group block h-full article-item" 
           data-category={article.category}
           data-topic={article.topicGroup}

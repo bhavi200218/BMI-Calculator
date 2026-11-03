@@ -145,17 +145,17 @@ function sanitizeSeoDescription(rawDesc: string, locale: string = 'en'): string 
 	}
 	let d = rawDesc.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
-	// If too long (> 155 chars in HTML), find sentence boundary or word boundary
+	// If too long (> 155 chars in HTML), cut cleanly at word boundary
 	if (getHtmlLength(d) > 155) {
 		const sentences = d.match(/[^.!?]+[.!?]+/g) || [d];
-		// Try first sentence
-		if (sentences[0] && getHtmlLength(sentences[0].trim()) >= 50 && getHtmlLength(sentences[0].trim()) <= 155) {
+		// Try first sentence if it has optimal length
+		if (sentences[0] && sentences[0].trim().length >= 115 && getHtmlLength(sentences[0].trim()) <= 155) {
 			return sentences[0].trim();
 		}
 		// Try first two sentences
 		if (sentences.length >= 2) {
 			const two = (sentences[0] + ' ' + sentences[1]).trim();
-			if (getHtmlLength(two) >= 50 && getHtmlLength(two) <= 155) {
+			if (two.length >= 115 && getHtmlLength(two) <= 155) {
 				return two;
 			}
 		}
@@ -170,24 +170,54 @@ function sanitizeSeoDescription(rawDesc: string, locale: string = 'en'): string 
 				break;
 			}
 		}
-		const candidate = base + '...';
-		if (getHtmlLength(candidate) >= 50 && getHtmlLength(candidate) <= 160) {
-			return candidate;
-		}
-		d = candidate;
+		d = base + '...';
 	}
 
-	// If too short (< 50 chars), pad with authoritative context
-	if (d.length < 50) {
-		const pad: Record<string, string> = {
-			en: " Evidence-based, free, and private calculation tool.",
-			es: " Herramienta de cálculo gratuita, privada y basada en evidencia.",
-			fr: " Outil de calcul gratuit, privé et fondé sur des preuves.",
-			de: " Evidenzbasierter, kostenloser und privater Onlinerechner.",
-			ko: " WHO 표준 기반의 신뢰할 수 있는 무료 온라인 건강 계산기입니다.",
-			hi: " डब्ल्यूएचओ मानकों पर आधारित निःशुल्क एवं सुरक्षित कैलकुलेटर।"
+	// If too short (< 115 chars), pad with natural authoritative context
+	if (d.length < 115) {
+		const pads: Record<string, string[]> = {
+			en: [
+				" Evidence-based health calculations, reference metrics, and privacy-first tools.",
+				" Calculate instant, reliable results based on published WHO and CDC standards.",
+				" Free, private, and evidence-based calculation platform."
+			],
+			es: [
+				" Cálculos de salud basados en evidencia y estándares de la OMS.",
+				" Herramienta gratuita, privada y basada en directrices oficiales.",
+				" Resultados instantáneos y privados en su navegador."
+			],
+			fr: [
+				" Calculs de santé fondés sur les preuves et normes de l'OMS.",
+				" Outil gratuit, confidentiel et basé sur les directives officielles.",
+				" Résultats immédiats et confidentiels dans votre navigateur."
+			],
+			de: [
+				" Evidenzbasierte Gesundheitsberechnungen nach offiziellen WHO-Standards.",
+				" Kostenloser, privater Onlinerechner mit sofortigen Ergebnissen.",
+				" Wissenschaftliche Richtlinien für verlässliche Orientierungswerte."
+			],
+			ko: [
+				" WHO 및 CDC 공식 지침에 기반한 신뢰할 수 있는 무료 건강 계산기입니다.",
+				" 개인정보 수집 없는 안전한 브라우저 로컬 연산 건강 도구입니다.",
+				" 과학적 근거에 기반한 정확한 건강 지표를 확인하세요."
+			],
+			hi: [
+				" डब्ल्यूएचओ और सीडीसी के वैज्ञानिक मानकों पर आधारित निःशुल्क एवं सुरक्षित कैलकुलेटर।",
+				" साक्ष्य-आधारित स्वास्थ्य गणना एवं प्रामाणिक संदर्भ दिशानिर्देश।",
+				" बिना किसी डेटा संग्रह के 100% सुरक्षित और तेज़ गणना।"
+			]
 		};
-		d = `${d}${pad[locale] || pad['en']}`;
+
+		const list = pads[locale] || pads.en;
+		for (const p of list) {
+			const candidate = d.replace(/[.]+$/, '') + '.' + p;
+			if (getHtmlLength(candidate) >= 110 && getHtmlLength(candidate) <= 160) {
+				d = candidate;
+				break;
+			} else if (getHtmlLength(candidate) <= 160 && candidate.length > d.length) {
+				d = candidate;
+			}
+		}
 	}
 
 	return d;
@@ -544,20 +574,12 @@ const howToSchema = {
 		<!-- Hreflang Tags for International SEO (Dynamic Path Matching) -->
 		{!['/404/', '/500/', '/search/'].includes(normalizedPath) && !normalizedPath.startsWith('/embed/') && !normalizedPath.startsWith('/author/') && (
 			normalizedPath.startsWith('/blog/') ? (
-				normalizedPath === '/blog/bmi-interpretation-guidelines/' && (currentLocale === 'en' || currentLocale === 'de') ? (
+				(currentLocale === 'en' || !currentLocale) ? (
 					<>
-						<link rel="alternate" hreflang="en" href="https://realbmicalculator.com/en/blog/bmi-interpretation-guidelines/" />
-						<link rel="alternate" hreflang="de" href="https://realbmicalculator.com/de/blog/bmi-interpretation-guidelines/" />
-						<link rel="alternate" hreflang="x-default" href="https://realbmicalculator.com/en/blog/bmi-interpretation-guidelines/" />
+						<link rel="alternate" hreflang="en" href={`https://realbmicalculator.com/en${normalizedPath}`} />
+						<link rel="alternate" hreflang="x-default" href={`https://realbmicalculator.com/en${normalizedPath}`} />
 					</>
-				) : (
-					(currentLocale === 'en' || !currentLocale) ? (
-						<>
-							<link rel="alternate" hreflang="en" href={`https://realbmicalculator.com/en${normalizedPath}`} />
-							<link rel="alternate" hreflang="x-default" href={`https://realbmicalculator.com/en${normalizedPath}`} />
-						</>
-					) : null
-				)
+				) : null
 			) : (
 				<>
 					<link rel="alternate" hreflang="en" href={`https://realbmicalculator.com/en${(normalizedPath === '/terms/' || normalizedPath === '/terms-of-service/') ? '/terms-conditions/' : normalizedPath}`} />

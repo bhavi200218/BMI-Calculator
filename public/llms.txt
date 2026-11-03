@@ -24,7 +24,7 @@
 - [Waist-to-Hip Ratio Calculator](https://realbmicalculator.com/en/waist-to-hip-ratio-calculator/): Assess cardiovascular health risk using waist-to-hip ratio analysis.
 - [Body Surface Area Calculator](https://realbmicalculator.com/en/body-surface-area-calculator/): Calculate body surface area reference estimates for metabolic context.
 - [Target Heart Rate Zone Calculator](https://realbmicalculator.com/en/heart-rate-zone-calculator/): Identify exercise heart rate zones for fat burn, cardio, and performance training.
-- [One Rep Max Calculator](https://realbmicalculator.com/en/one-rep-max-calculator/): Estimate your strength capacity and max lift weight using standard fitness formulas.
+- [One Rep Max Calculator](https://realbmicalculator.com/en/1rm-calculator/): Estimate your strength capacity and max lift weight using standard fitness formulas.
 - [Pregnancy Weight Gain Calculator](https://realbmicalculator.com/en/pregnancy-weight-gain-calculator/): Track recommended gestational weight gain and support healthy pregnancy progress.
 
 ## In-Depth Guides & Clinical Resources

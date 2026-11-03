@@ -347,8 +347,8 @@ if (fs.existsSync(path.resolve('dist'))) {
         assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
         const html = fs.readFileSync(htmlPath, 'utf8');
 
-        // Extract article links rendered in the LatestArticles section
-        const articleMatches = html.match(new RegExp(`href="/${lang}/blog/[a-z0-9-]+/"`, 'g')) || [];
+        // Extract article links rendered in the LatestArticles section (canonical /en/blog/ or localized)
+        const articleMatches = html.match(/href="\/(?:en|[a-z]{2})\/blog\/[a-z0-9-]+\/"/g) || [];
         // Unique article slugs linked
         const uniqueArticles = [...new Set(articleMatches)];
         assert.ok(uniqueArticles.length >= 2 && uniqueArticles.length <= 3, 
@@ -554,6 +554,12 @@ if (fs.existsSync(path.resolve('dist'))) {
     const footer = fs.readFileSync(path.resolve('src/components/Footer.astro'), 'utf8');
     assert.ok(footer.includes('All 23 Calculators'), 'Footer must state All 23 Calculators');
     assert.strictEqual(footer.includes('All 18+ Calculators'), false, 'Footer must NOT state 18+');
+  });
+
+  runTest('12.8 Hreflang integrity: zero hreflang links point to redirects or broken pages', () => {
+    const layout = fs.readFileSync(path.resolve('src/layouts/Layout.astro'), 'utf8');
+    assert.strictEqual(layout.includes('/de/blog/bmi-interpretation-guidelines/'), false, 'Layout must NOT output German hreflang for blog stubs');
+    assert.strictEqual(layout.includes('hreflang="de" href="https://realbmicalculator.com/de/blog/'), false, 'Layout must NOT have redirecting blog hreflang');
   });
 }
 
