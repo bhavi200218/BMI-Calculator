@@ -1,10 +1,14 @@
-# Common legal aliases redirecting directly to root 200 OK legal pages
-/author/dr-michael-vance  /about/  301
-/author/dr-michael-vance/  /about/  301
+# Author and core route redirects
+/about  /en/about/  301
+/about/  /en/about/  301
+/contact  /en/contact/  301
+/contact/  /en/contact/  301
+/author/dr-michael-vance  /en/about/  301
+/author/dr-michael-vance/  /en/about/  301
 /en/author/dr-michael-vance  /en/about/  301
 /en/author/dr-michael-vance/  /en/about/  301
-/author  /about/  301
-/author/  /about/  301
+/author  /en/about/  301
+/author/  /en/about/  301
 /en/author  /en/about/  301
 /en/author/  /en/about/  301
 /privacy  /privacy-policy/  301

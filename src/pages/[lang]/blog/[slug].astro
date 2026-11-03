@@ -167,15 +167,16 @@ const relatedToolsLabel: Record<string, string> = {
           <p><span class="font-medium text-[var(--foreground)]">{byline.published}:</span> {datePublished}</p>
           <p><span class="font-medium text-[var(--foreground)]">{byline.updated}:</span> {dateModified}</p>
         </div>
+      </div>
       <!-- Editorial Edition Notice -->
       <div class="not-prose mb-6 p-4 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)] text-xs text-[var(--muted-foreground)] flex items-center justify-between gap-3">
         <span>{{
-          en: "Complete clinical guide available in the authoritative English edition.",
-          es: "Guía clínica completa disponible en la edición oficial en inglés.",
-          fr: "Guide clinique complet disponible dans l'édition officielle en anglais.",
-          de: "Umfassender klinischer Leitfaden in der offiziellen englischen Ausgabe verfügbar.",
-          ko: "공식 영문 에디션에서 전체 심층 임상 가이드를 확인하실 수 있습니다.",
-          hi: "संपूर्ण नैदानिक गाइड आधिकारिक अंग्रेजी संस्करण में उपलब्ध है।"
+          en: "Complete reference guide available in the primary English edition.",
+          es: "Guía completa de referencia disponible en la edición principal en inglés.",
+          fr: "Guide complet de référence disponible dans l'édition principale en anglais.",
+          de: "Umfassender Referenzleitfaden in der offiziellen englischen Ausgabe verfügbar.",
+          ko: "공식 영문 에디션에서 전체 심층 참조 가이드를 확인하실 수 있습니다.",
+          hi: "संपूर्ण संदर्भ गाइड मुख्य अंग्रेजी संस्करण में उपलब्ध है।"
         }[lang]}</span>
         <a href={`/blog/${slug}/`} class="text-[var(--accent)] font-semibold underline shrink-0 hover:text-[var(--foreground)]">
           {{

@@ -14,7 +14,7 @@ interface Props {
 }
 
 const { 
-	title = "Real BMI Calculator – 3D Body Visualizer & BMI Tools", 
+	title = "Real BMI Calculator — Health & Body Metrics", 
 	description = "Real BMI Calculator provides instant BMI, BMR, TDEE, and ideal weight estimates based on published WHO & CDC standards. Free, browser-based, and private.",
 	keywords = "",
 	ogImage = "/seo-dark.png",
@@ -50,11 +50,11 @@ function sanitizeSeoTitle(rawTitle: string, locale: string = 'en'): string {
 
 		if (/Real BMI/i.test(clean)) {
 			const nonBrandSuffixes: Record<string, string[]> = {
-				en: [" — Health Tools", " — Clinical Guidelines", " — Free Health Tools", " — Official Guidelines", " — Evidence-Based Guide"],
-				es: [" — Herramientas", " — Pautas Clínicas", " — Valores de Referencia", " — Guía Oficial"],
-				fr: [" — Outils Santé", " — Repères Cliniques", " — Normes et Outils", " — Guide Gratuit"],
-				de: [" — Rechner Tools", " — Klinische Standards", " — Offizielle Werte", " — Leitfaden"],
-				ko: [" — 건강 계산기", " — 공식 임상 지침", " — 신뢰할 수 있는 가이드"],
+				en: [" — Health Tools", " — Research Standards", " — Free Health Tools", " — Official Guidelines", " — Evidence-Based Guide"],
+				es: [" — Herramientas", " — Normas Científicas", " — Valores de Referencia", " — Guía Oficial"],
+				fr: [" — Outils Santé", " — Normes Scientifiques", " — Normes et Outils", " — Guide Gratuit"],
+				de: [" — Rechner Tools", " — Wissenschaftliche Standards", " — Offizielle Werte", " — Leitfaden"],
+				ko: [" — 건강 계산기", " — 과학적 표준 가이드", " — 신뢰할 수 있는 가이드"],
 				hi: [" — स्वास्थ्य टूल्स", " — आधिकारिक दिशानिर्देश", " — स्वास्थ्य मानक"]
 			};
 			const list = nonBrandSuffixes[locale] || nonBrandSuffixes.en;
@@ -249,12 +249,12 @@ const webSiteSchema = {
 
 // 2. SoftwareApplication Schema for Search Engines
 const softwareAppDescriptions: Record<string, string> = {
-  en: "Free evidence-based Real BMI Calculator for instant Body Mass Index, BMR, TDEE, and 3D body shape reference estimates based on WHO and CDC standards.",
-  es: "Calculadora de IMC Real gratuita basada en evidencia para estimaciones instantáneas de IMC, TMB, TDEE y visualización corporal 3D según estándares de la OMS y CDC.",
-  fr: "Calculateur d'IMC Réel gratuit fondé sur des preuves scientifiques pour des estimations instantanées de l'IMC, du BMR, du TDEE et de la morphologie 3D selon les normes OMS et CDC.",
-  de: "Kostenloser, evidenzbasierter Real BMI Rechner für sofortige Schätzungen von BMI, BMR, TDEE und 3D-Körperformen nach WHO- und CDC-Standards.",
-  ko: "WHO 및 CDC 기준에 따른 체질량지수(BMI), 기초대사량(BMR), 총 에너지 소비량(TDEE) 및 3D 체형 시각화를 제공하는 신뢰할 수 있는 무료 BMI 계산기.",
-  hi: "डब्ल्यूएचओ और सीडीसी मानकों पर आधारित बॉडी मास इंडेक्स (बीएमआई), बीएमआर, टीडीईई और 3D बॉडी शेप अनुमान के लिए साक्ष्य-आधारित निःशुल्क कैलकुलेटर।"
+  en: "Free evidence-based Real BMI Calculator for instant Body Mass Index, BMR, and TDEE estimates based on published WHO and CDC standards.",
+  es: "Calculadora de IMC Real gratuita basada en evidencia para estimaciones instantáneas de IMC, TMB y TDEE según estándares de la OMS y CDC.",
+  fr: "Calculateur d'IMC Réel gratuit fondé sur des preuves scientifiques pour des estimations instantanées de l'IMC, du BMR et du TDEE selon les normes OMS et CDC.",
+  de: "Kostenlose, evidenzbasierte Bildungs-Suite für Body-Mass-Index (BMI), BMR und TDEE nach anerkannten Standards der WHO und CDC.",
+  ko: "WHO 및 CDC 기준에 따른 체질량지수(BMI), 기초대사량(BMR), 총 에너지 소비량(TDEE) 추정치를 제공하는 신뢰할 수 있는 무료 건강 계산기.",
+  hi: "डब्ल्यूएचओ और सीडीसी मानकों पर आधारित बॉडी मास इंडेक्स (बीएमआई), बीएमआर और टीडीईई अनुमान के लिए साक्ष्य-आधारित निःशुल्क कैलकुलेटर।"
 };
 
 const softwareAppSchema = {

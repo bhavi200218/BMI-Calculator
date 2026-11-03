@@ -1,3 +1,20 @@
 ---
-return Astro.redirect('/en/contact/', 301);
+// Standalone root redirect page with noindex to de-index legacy un-prefixed URLs
 ---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting to Contact Real BMI</title>
+  <meta http-equiv="refresh" content="0;url=/en/contact/" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://realbmicalculator.com/en/contact/" />
+  <script is:inline>
+    window.location.replace("/en/contact/");
+  </script>
+</head>
+<body style="background:#091212;color:#8FA7A7;font-family:sans-serif;padding:2rem;text-align:center;">
+  <p>Redirecting to <a href="/en/contact/" style="color:#E8674A;font-weight:bold;">Contact Real BMI</a>...</p>
+</body>
+</html>

@@ -5,14 +5,14 @@ import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
-    title="Sobre Real BMI - Fundadora y Estándares Metodológicos"
-    description="Conozca Real BMI, plataforma individual de calculadoras de salud fundada y mantenida por Bhawanshi Dosi. Fórmulas de la OMS y los CDC."
+    title="Sobre Real BMI - Fundadora y Normas Metodológicas"
+    description="Conozca Real BMI, una plataforma independiente de calculadoras de salud fundada por Bhawanshi Dosi, basada en los estándares revisados por pares de la OMS y los CDC."
 >
     <script type="application/ld+json" slot="json-ld" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "AboutPage",
       "name": "Sobre Real BMI",
-      "description": "Antecedentes organizacionales, metodología de cálculo y protocolo de revisión editorial de Real BMI.",
+      "description": "Antecedentes organizativos, credenciales de la creadora y metodología de investigación basada en evidencia de Real BMI.",
       "url": "https://realbmicalculator.com/es/about/",
       "mainEntity": {
         "@type": "Organization",
@@ -22,7 +22,7 @@ import PageShell from '../../components/PageShell.astro';
           "@type": "Person",
           "name": "Bhawanshi Dosi",
           "jobTitle": "Fundadora y Desarrolladora Principal",
-          "description": "Ingeniera de software y creadora de Real BMI, especializada en motores de cálculo de salud en el navegador sin retención de datos.",
+          "description": "Ingeniera de software y creadora de Real BMI, especializada en motores de cálculo biométrico del lado del cliente sin retención de datos.",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Banswara",
@@ -31,17 +31,17 @@ import PageShell from '../../components/PageShell.astro';
           }
         },
         "author": {
-        "@type": "Person",
-        "name": "Bhawanshi Dosi",
-        "jobTitle": "Founder & Lead Developer",
-        "url": "https://realbmicalculator.com/es/about/"
-      },
+          "@type": "Person",
+          "name": "Bhawanshi Dosi",
+          "jobTitle": "Fundadora y Desarrolladora Principal",
+          "url": "https://realbmicalculator.com/es/about/"
+        },
         "knowsAbout": [
           "Índice de Masa Corporal (IMC)",
-          "Tasa Metabólica Basal (TMB)",
-          "Gasto Energético Total Diario (TDEE)",
+          "Tasa Metabólica Basal (BMR)",
+          "Gasto Energético Diario Total (TDEE)",
           "Composición Corporal",
-          "Pautas Antropométricas Oficiales"
+          "Pautas de Referencia Antropométrica"
         ]
       }
     })}></script>
@@ -54,17 +54,57 @@ import PageShell from '../../components/PageShell.astro';
       returnLabel="Inicio"
     >
       <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
-        <div class="space-y-10">
-          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium opacity-90">
-            <p><strong>Real BMI</strong> es una plataforma individual de cálculo de salud y referencia antropométrica fundada, desarrollada y administrada por <strong>Bhawanshi Dosi</strong> (Banswara, Rajastán, India). El proyecto nació para resolver un problema crítico en la web de la salud: herramientas saturadas de rastreo invasivo, publicidad engañosa y fórmulas opacas sin respaldo documental. Real BMI ofrece calculadoras transparentes y verificables que se ejecutan 100 % en el navegador local, con cero almacenamiento de datos de salud.</p>
+        <div class="space-y-8">
+          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+            <p><strong>Real BMI</strong> es una plataforma individual de cálculo de salud y educación antropométrica fundada, desarrollada y administrada por <strong>Bhawanshi Dosi</strong> (Banswara, Rajastán, India). El proyecto nació para resolver un problema crítico en la web: herramientas de salud confusas, saturadas de rastreo invasivo, publicidad engañosa y fórmulas matemáticas opacas. Real BMI ofrece calculadoras transparentes y verificables que se ejecutan 100 % en el navegador local, con cero almacenamiento de datos de salud.</p>
+            
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Estándares Matemáticos Basados en Evidencia</h2>
+            <p>Cada ecuación implementada en Real BMI se deriva directamente de la literatura científica validada y las pautas internacionales de salud pública: la serie de informes técnicos 854 de la Organización Mundial de la Salud (OMS), la consulta de la región Asia-Pacífico de la OMS publicada en <em>The Lancet</em>, el modelo de calorimetría indirecta de Mifflin-St Jeor, la fórmula de área de superficie corporal de Mosteller y el estándar de peso corporal ideal de Devine.</p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Arquitectura de Privacidad sin Retención de Datos</h2>
+            <p>A diferencia de las aplicaciones comerciales que recolectan biometría, Real BMI realiza todos los cálculos exclusivamente en la memoria del navegador del usuario mediante JavaScript del lado del cliente. Ningún peso, altura, edad o dato de salud se transmite a servidores remotos ni se guarda en bases de datos.</p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Propósito Educativo y Descargo de Responsabilidad</h2>
+            <p>Real BMI es una herramienta de orientación y cálculo educativo, no un centro médico, hospital o servicio de diagnóstico clínico. Los resultados obtenidos son estimaciones matemáticas para fomentar la conciencia personal sobre la salud y respaldar el diálogo informado con médicos, nutricionistas o profesionales sanitarios cualificados.</p>
+          </div>
+        </div>
+
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 sm:p-8 shadow-[var(--shadow-soft)] space-y-6">
+          <div class="space-y-2">
+            <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Creadora y Estándares</p>
+            <h2 class="text-xl sm:text-2xl font-black text-[var(--foreground)] uppercase tracking-tight font-display">Plataforma Independiente</h2>
+            <p class="text-xs text-[var(--muted-foreground)] font-medium">Mantenida personalmente por Bhawanshi Dosi</p>
           </div>
 
-          <div class="space-y-3 pt-2">
-            <a href="/es/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition">
+          <div class="space-y-4 pt-3 border-t border-[var(--border)] text-xs">
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">Fundadora y Desarrolladora:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi (Ingeniera de Software)</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">Sede Operativa:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">Banswara, Rajastán, India</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">Modelo de Ejecución:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">100 % en el Navegador del Cliente</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">Privacidad de Datos:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">Cero Almacenamiento de Datos de Salud</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">Marco Científico:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">OMS, CDC y Estudios Científicos</span>
+            </div>
+          </div>
+
+          <div class="space-y-3 pt-4 border-t border-[var(--border)]">
+            <a href="/es/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition text-center">
               Consultar Metodología y Fórmulas →
             </a>
-            <a href="/es/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">
-              Contactar a la Desarrolladora
+            <a href="/es/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15 text-center">
+              Contactar a la Desarrolladora →
             </a>
           </div>
         </aside>

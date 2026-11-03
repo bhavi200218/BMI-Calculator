@@ -97,6 +97,66 @@ const articlesList = articleSlugs.map(slug => {
   };
 });
 
+const libraryEyebrows: Record<string, string> = {
+  en: "Evidence-Based Health Library",
+  es: "Biblioteca de Salud Basada en Evidencia",
+  fr: "Bibliothèque de Santé Fondée sur des Preuves",
+  de: "Evidenzbasierte Gesundheitsbibliothek",
+  ko: "근거 기반 건강 연구 라이브러리",
+  hi: "प्रमाण-आधारित स्वास्थ्य अनुसंधान लाइब्रेरी"
+};
+
+const moreCategoriesLabels: Record<string, string> = {
+  en: "More Categories ▾",
+  es: "Más Categorías ▾",
+  fr: "Plus de Catégories ▾",
+  de: "Weitere Kategorien ▾",
+  ko: "더 많은 카테고리 ▾",
+  hi: "अन्य श्रेणियां ▾"
+};
+
+const emptyStates: Record<string, { title: string; desc: string; reset: string }> = {
+  en: {
+    title: "No health guides found",
+    desc: "Try searching with a different term or clear the filter.",
+    reset: "Reset Search & Filters"
+  },
+  es: {
+    title: "No se encontraron guías de salud",
+    desc: "Prueba buscando con otro término o restablece los filtros.",
+    reset: "Restablecer Búsqueda y Filtros"
+  },
+  fr: {
+    title: "Aucun guide de santé trouvé",
+    desc: "Essayez avec un autre mot-clé ou réinitialisez les filtres.",
+    reset: "Réinitialiser la Recherche"
+  },
+  de: {
+    title: "Keine Gesundheitsleitfäden gefunden",
+    desc: "Versuchen Sie es mit einem anderen Begriff oder setzen Sie die Filter zurück.",
+    reset: "Suche & Filter zurücksetzen"
+  },
+  ko: {
+    title: "일치하는 건강 가이드가 없습니다",
+    desc: "다른 검색어를 입력하시거나 필터를 초기화해 보세요.",
+    reset: "검색 및 필터 초기화"
+  },
+  hi: {
+    title: "कोई स्वास्थ्य गाइड नहीं मिली",
+    desc: "कृपया दूसरा शब्द खोजें या फ़िल्टर रीसेट करें।",
+    reset: "सर्च और फ़िल्टर रीसेट करें"
+  }
+};
+
+const cardLabels: Record<string, { updated: string; readMore: string }> = {
+  en: { updated: "Updated", readMore: "Read Full Article" },
+  es: { updated: "Actualizado", readMore: "Leer Artículo Completo" },
+  fr: { updated: "Mis à jour", readMore: "Lire l'Article Complet" },
+  de: { updated: "Aktualisiert", readMore: "Vollständigen Artikel lesen" },
+  ko: { updated: "업데이트", readMore: "전체 아티클 읽기" },
+  hi: { updated: "अद्यतित", readMore: "पूरा लेख पढ़ें" }
+};
+
 const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort();
 ---
 
@@ -110,7 +170,7 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
 
   <PageShell
     title={h.title}
-    eyebrow="Evidence-Based Health Library"
+    eyebrow={libraryEyebrows[lang] || libraryEyebrows.en}
     description={h.desc}
     returnUrl={`/${lang}/`}
     returnLabel={homeLabels[lang] || homeLabels.en}
@@ -176,7 +236,7 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
           aria-label="Filter by specific category"
           class="w-full sm:w-auto px-3 py-1.5 sm:py-2 rounded-xl text-xs font-semibold uppercase tracking-wider bg-[var(--card)] text-[var(--foreground)] border border-[var(--border)] hover:border-[var(--accent)] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40"
         >
-          <option value="all">More Categories ▾</option>
+          <option value="all">{moreCategoriesLabels[lang] || moreCategoriesLabels.en}</option>
           {detailedCategories.map(cat => (
             <option value={cat}>{cat}</option>
           ))}
@@ -186,10 +246,10 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
 
     <!-- Empty Results Message -->
     <div id="noResultsMsg" class="hidden text-center py-12 space-y-2">
-      <p class="text-base font-display font-bold text-[var(--foreground)]">No health guides found</p>
-      <p class="text-xs text-[var(--muted-foreground)]">Try searching with a different term or clear the filter.</p>
+      <p class="text-base font-display font-bold text-[var(--foreground)]">{(emptyStates[lang] || emptyStates.en).title}</p>
+      <p class="text-xs text-[var(--muted-foreground)]">{(emptyStates[lang] || emptyStates.en).desc}</p>
       <button type="button" id="resetFilterBtn" class="mt-3 px-4 py-2 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity">
-        Reset Search & Filters
+        {(emptyStates[lang] || emptyStates.en).reset}
       </button>
     </div>
 
@@ -209,7 +269,7 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
                 <span class="inline-block px-2.5 py-1 rounded-md text-xs font-display font-semibold tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/20">
                   {article.category}
                 </span>
-                <span class="text-xs font-mono text-[var(--muted-foreground)]">Updated {article.dateModified}</span>
+                <span class="text-xs font-mono text-[var(--muted-foreground)]">{(cardLabels[lang] || cardLabels.en).updated} {article.dateModified}</span>
               </div>
               <h2 class="text-xl font-display font-bold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors duration-200">
                 {article.title}
@@ -219,7 +279,7 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
               </p>
             </div>
             <div class="flex items-center justify-between text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] pt-4 border-t border-[var(--border)]/40">
-              <span>Read Full Article</span>
+              <span>{(cardLabels[lang] || cardLabels.en).readMore}</span>
               <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>

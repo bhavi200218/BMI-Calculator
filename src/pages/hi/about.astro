@@ -31,11 +31,11 @@ import PageShell from '../../components/PageShell.astro';
           }
         },
         "author": {
-        "@type": "Person",
-        "name": "Bhawanshi Dosi",
-        "jobTitle": "Founder & Lead Developer",
-        "url": "https://realbmicalculator.com/hi/about/"
-      },
+          "@type": "Person",
+          "name": "Bhawanshi Dosi",
+          "jobTitle": "संस्थापक एवं मुख्य डेवलपर",
+          "url": "https://realbmicalculator.com/hi/about/"
+        },
         "knowsAbout": [
           "बॉडी मास इंडेक्स (BMI)",
           "बेसल मेटाबॉलिक रेट (BMR)",
@@ -54,17 +54,57 @@ import PageShell from '../../components/PageShell.astro';
       returnLabel="मुख्य पृष्ठ"
     >
       <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
-        <div class="space-y-10">
-          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium opacity-90">
+        <div class="space-y-8">
+          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
             <p><strong>Real BMI</strong> बांसवाड़ा, राजस्थान, भारत स्थित <strong>Bhawanshi Dosi</strong> द्वारा स्थापित, विकसित एवं संचालित एक व्यक्तिगत स्वास्थ्य गणना और शैक्षिक वेबसाइट है। इस परियोजना की शुरुआत आधुनिक ऑनलाइन स्वास्थ्य उपकरणों की गंभीर समस्याओं को हल करने के लिए की गई थी: अपारदर्शी गणितीय सूत्र, अत्यधिक विज्ञापन और व्यक्तिगत स्वास्थ्य डेटा की आक्रामक ट्रैकिंग। Real BMI वैज्ञानिक रूप से मान्य पारदर्शी मॉडल प्रदान करता है जो आपके डिवाइस पर 100% स्थानीय रूप से निष्पादित होते हैं।</p>
+            
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">साक्ष्य-आधारित गणितीय मानक</h2>
+            <p>Real BMI का प्रत्येक सूत्र प्रकाशित वैज्ञानिक शोध और सार्वजनिक स्वास्थ्य दिशानिर्देशों पर आधारित है, जिनमें विश्व स्वास्थ्य संगठन (WHO तकनीकी रिपोर्ट 854), <em>The Lancet</em> में प्रकाशित एशियाई आबादी हेतु WHO परामर्श, मिफ्लिन-सेंट जेओर अप्रत्यक्ष कैलोरीमेट्री समीकरण, मोस्टेलर बॉडी सरफेस एरिया फॉर्मूला और डिवाइन आइडियल बॉडी वेट मानक शामिल हैं।</p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">शून्य डेटा प्रतिधारण क्लाइंट-साइड आर्किटेक्चर</h2>
+            <p>उपयोगकर्ताओं के बायोमेट्रिक्स को स्टोर करने वाले व्यावसायिक ऐप्स के विपरीत, Real BMI सभी गणनाओं को आपके वेब ब्राउज़र में जावास्क्रिप्ट के माध्यम से स्थानीय स्तर पर निष्पादित करता है। कोई भी ऊंचाई, वजन, आयु या स्वास्थ्य माप कभी भी बाहरी सर्वर पर नहीं भेजा जाता और न ही किसी डेटाबेस में संग्रहीत किया जाता है।</p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">शैक्षिक दायरा एवं चिकित्सा अस्वीकरण</h2>
+            <p>Real BMI एक शैक्षिक गणना और संदर्भ मंच है, कोई पंजीकृत चिकित्सालय या नैदानिक अस्पताल नहीं। हमारे उपकरणों द्वारा दिए गए परिणाम व्यक्तिगत तंदुरुस्ती जागरूकता और योग्य चिकित्सकों या आहार विशेषज्ञों के साथ सूचित परामर्श हेतु बनाए गए हैं।</p>
+          </div>
+        </div>
+
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 sm:p-8 shadow-[var(--shadow-soft)] space-y-6">
+          <div class="space-y-2">
+            <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">निर्माता एवं मानक</p>
+            <h2 class="text-xl sm:text-2xl font-black text-[var(--foreground)] uppercase tracking-tight font-display">स्वतंत्र संदर्भ प्लेटफॉर्म</h2>
+            <p class="text-xs text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi द्वारा व्यक्तिगत रूप से संचालित</p>
           </div>
 
-          <div class="space-y-3 pt-2">
-            <a href="/hi/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition">
+          <div class="space-y-4 pt-3 border-t border-[var(--border)] text-xs">
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">संस्थापक एवं डेवलपर:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi (सॉफ्टवेयर इंजीनियर)</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">परिचालन केंद्र:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">बांसवाड़ा, राजस्थान, भारत</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">कंप्यूटिंग मॉडल:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">100% ब्राउज़र क्लाइंट-साइड निष्पादन</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">डेटा गोपनीयता:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">शून्य स्वास्थ्य डेटा प्रतिधारण</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">वैज्ञानिक आधार:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">WHO, CDC एवं सहकर्मी-समीक्षित शोध</span>
+            </div>
+          </div>
+
+          <div class="space-y-3 pt-4 border-t border-[var(--border)]">
+            <a href="/hi/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition text-center">
               कार्यप्रणाली एवं सूत्र देखें →
             </a>
-            <a href="/hi/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">
-              निर्माता से संपर्क करें
+            <a href="/hi/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15 text-center">
+              निर्माता से संपर्क करें →
             </a>
           </div>
         </aside>

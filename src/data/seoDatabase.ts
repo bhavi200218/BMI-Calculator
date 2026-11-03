@@ -138,7 +138,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "Categorías Oficiales de IMC para Adultos de la OMS",
       "tableRows": [
         {
-          "col1": "Bajo Peso (< 18.5 kg/m²)",
+          "col1": "Bajo Peso",
           "col2": "< 18.5 kg/m²",
           "col3": "Rango de referencia de bajo peso"
         },
@@ -153,12 +153,12 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Rango de referencia de sobrepeso (Corte asiático: 23.0 kg/m²)"
         },
         {
-          "col1": "Obesidad Clase I (25.0 – 29.9 kg/m²)",
+          "col1": "Obesidad Clase I",
           "col2": "30.0 – 34.9 kg/m²",
           "col3": "Rango de referencia de obesidad clase I"
         },
         {
-          "col1": "Obesidad Clase II (≥ 30.0 kg/m²)",
+          "col1": "Obesidad Clase II",
           "col2": "35.0 – 39.9 kg/m²",
           "col3": "Rango de referencia de obesidad clase II"
         },
@@ -183,7 +183,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "¿Qué contexto adicional proporciona Real BMI?",
-          "answer": "Real BMI presenta el cálculo estándar de IMC junto con métricas de referencia seleccionadas y estimaciones complementarias (como BMR y TDEE) para ofrecer un contexto educativo."
+          "answer": "Real BMI calcula el IMC estándar según las fórmulas oficiales de la OMS sin modificarlo, y presenta estimaciones complementarias (como la TMB y el GETD) como contexto educativo separado. El valor del IMC no es alterado ni ajustado por estas métricas."
         },
         {
           "question": "¿Es precisa una calculadora de IMC estándar para atletas musculosos?",
@@ -246,7 +246,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Quel contexte supplémentaire Real BMI fournit-il ?",
-          "answer": "Real BMI présente le calcul d'IMC standard aux côtés de métriques de référence sélectionnées et d'estimations complémentaires (telles que le BMR et le TDEE) pour offrir un contexte éducatif."
+          "answer": "Real BMI calcule l'IMC standard selon les formules officielles de l'OMS sans le modifier, et présente des estimations complémentaires (comme le BMR et le TDEE) pour offrir un contexte éducatif séparé. La valeur de l'IMC n'est ni altérée ni ajustée."
         },
         {
           "question": "Un calculateur d'IMC standard est-il précis pour les athlètes musclés ?",
@@ -309,7 +309,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Welchen zusätzlichen Kontext bietet Real BMI?",
-          "answer": "Real BMI zeigt die Standard-BMI-Berechnung zusammen mit ausgewählten Referenzwerten und ergänzenden Schätzungen (wie BMR und TDEE) an, um lehrreichen Kontext zu bieten."
+          "answer": "Real BMI berechnet den Standard-BMI nach offiziellen WHO-Formeln unverändert und stellt ergänzende Schätzungen (wie BMR und TDEE) als separaten Bildungskontext bereit. Der BMI-Wert wird dadurch nicht modifiziert oder angepasst."
         },
         {
           "question": "Ist ein Standard-BMI-Rechner für muskulöse Sportler genau?",
@@ -327,7 +327,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableTitle": "WHO 공식 성인 BMI 분류 기준표",
       "tableRows": [
         {
-          "col1": "저체중 (< 18.5 kg/m²)",
+          "col1": "저체중",
           "col2": "< 18.5 kg/m²",
           "col3": "저체중 참조 범위"
         },
@@ -342,17 +342,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "과체중 참조 범위 (아시아인 기준: 23.0 kg/m²)"
         },
         {
-          "col1": "비만 1단계 (비만 1단계)",
+          "col1": "비만 1단계 (경도 비만)",
           "col2": "30.0 – 34.9 kg/m²",
           "col3": "비만 1단계 참조 범위"
         },
         {
-          "col1": "비만 2단계 (2단계 비만)",
+          "col1": "비만 2단계 (중등도 비만)",
           "col2": "35.0 – 39.9 kg/m²",
           "col3": "비만 2단계 참조 범위"
         },
         {
-          "col1": "비만 3단계 (3단계 고도비만)",
+          "col1": "비만 3단계 (고도 비만)",
           "col2": "≥ 40.0 kg/m²",
           "col3": "비만 3단계 참조 범위"
         }
@@ -367,16 +367,16 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "성인 남성과 여성의 BMI 계산 방식은 동일하며 신장과 체중 수치를 기반으로 합니다."
         },
         {
-          "question": "공식 WHO BMI 차트와 진단 기준은 무엇인가요?",
+          "question": "공식 WHO BMI 차트와 분류 기준은 무엇인가요?",
           "answer": "WHO 차트는 성인을 저체중(<18.5), 정상 체중(18.5–24.9), 과체중(25.0–29.9), 비만(≥30.0)의 4가지 주요 범위로 분류합니다."
         },
         {
           "question": "Real BMI는 어떤 추가 컨텍스트를 제공하나요?",
-          "answer": "Real BMI는 표준 BMI 계산과 함께 BMR 및 TDEE와 같은 보완적 추정 지표를 함께 제공하여 교육적 참고 컨텍스트를 제시합니다."
+          "answer": "Real BMI는 본 교육 플랫폼의 명칭이며 표준 BMI 수치를 변경하지 않습니다. 공식 WHO 기준의 표준 BMI 계산과 함께 BMR, TDEE, 허리둘레 등 검증된 보완적 지표들을 나란히 제공하여 폭넓은 교육적 참고 컨텍스트를 제시합니다."
         },
         {
           "question": "표준 BMI 계산기는 근육질 운동선수에게도 정확한가요?",
-          "answer": "표준 BMI 계산기는 키 대비 전체 체중을 측정합니다. 근육질 운동선수는 근육량이 지방 mass와 구분되지 않아 BMI가 25 이상으로 나올 수 있습니다."
+          "answer": "표준 BMI 계산기는 키 대비 전체 체중을 측정합니다. 근육질 운동선수는 근육량이 체지방과 구분되지 않아 BMI가 25 이상으로 나올 수 있습니다."
         }
       ]
     },

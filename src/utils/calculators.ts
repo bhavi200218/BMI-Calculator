@@ -156,7 +156,7 @@ export const calculators: CalculatorConfig[] = [
       es: 'Tabla y Gráfico de IMC',
       fr: 'Tableau et Graphique IMC',
       de: 'BMI-Tabelle & Diagramm',
-      ko: 'BMI 차트 및 진단표',
+      ko: 'BMI 차트 및 표준 분류표',
       hi: 'बीएमआई चार्ट और टेबल (BMI Chart & Table)'
     },
     title: {

@@ -12,7 +12,7 @@ import PageShell from '../../components/PageShell.astro';
       "@context": "https://schema.org",
       "@type": "AboutPage",
       "name": "Über Real BMI",
-      "description": "Organisatorischer Hintergrund, redaktionelles Prüfverfahren und wissenschaftliche Referenzmethodik für Real BMI.",
+      "description": "Organisatorischer Hintergrund, Qualifikationen der Gründerin und wissenschaftliche Referenzmethodik für Real BMI.",
       "url": "https://realbmicalculator.com/de/about/",
       "mainEntity": {
         "@type": "Organization",
@@ -31,11 +31,11 @@ import PageShell from '../../components/PageShell.astro';
           }
         },
         "author": {
-        "@type": "Person",
-        "name": "Bhawanshi Dosi",
-        "jobTitle": "Founder & Lead Developer",
-        "url": "https://realbmicalculator.com/de/about/"
-      },
+          "@type": "Person",
+          "name": "Bhawanshi Dosi",
+          "jobTitle": "Gründerin und Leitende Entwicklerin",
+          "url": "https://realbmicalculator.com/de/about/"
+        },
         "knowsAbout": [
           "Body-Mass-Index (BMI)",
           "Grundumsatz (BMR)",
@@ -54,17 +54,57 @@ import PageShell from '../../components/PageShell.astro';
       returnLabel="Startseite"
     >
       <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
-        <div class="space-y-10">
-          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium opacity-90">
-            <p><strong>Real BMI</strong> ist eine individuelle Plattform für digitale Gesundheitsberechnungen und biometrische Orientierungswerte, gegründet, entwickelt und gepflegt von <strong>Bhawanshi Dosi</strong> (Banswara, Rajasthan, Indien). Das Projekt entstand, um eine zentrale Schwachstelle moderner Online-Portale zu beseitigen: intransparente Rechenmodelle, überladene Werbelayouts und invasive Tracking-Mechanismen.</p>
+        <div class="space-y-8">
+          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+            <p><strong>Real BMI</strong> ist eine individuelle Plattform für digitale Gesundheitsberechnungen und biometrische Orientierungswerte, gegründet, entwickelt und gepflegt von <strong>Bhawanshi Dosi</strong> (Banswara, Rajasthan, Indien). Das Projekt entstand, um eine zentrale Schwachstelle moderner Online-Portale zu beseitigen: intransparente Rechenmodelle, überladene Werbelayouts und invasive Tracking-Mechanismen. Real BMI bietet transparente, mathematisch nachvollziehbare Rechner, die zu 100 % lokal auf Ihrem Endgerät ausgeführt werden.</p>
+            
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Evidenzbasierte mathematische Standards</h2>
+            <p>Jede Formel auf Real BMI basiert unmittelbar auf publizierter medizinischer Fachliteratur und Richtlinien des öffentlichen Gesundheitswesens: dem technischen Bericht 854 der Weltgesundheitsorganisation (WHO), der in <em>The Lancet</em> veröffentlichten WHO-Konsultation für den asiatisch-pazifischen Raum, den Mifflin-St-Jeor-Berechnungsmodellen, der Mosteller-Körperoberflächenformel und den Devine-Idealgewichtsstandards.</p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Datenschutz durch rein clientseitige Verarbeitung</h2>
+            <p>Im Gegensatz zu vielen kommerziellen Gesundheits-Apps speichert Real BMI keine biometrischen Daten. Sämtliche Eingaben wie Körpergröße, Gewicht oder Alter werden ausschließlich im lokalen Arbeitsspeicher Ihres Browsers verarbeitet und niemals an externe Server übertragen.</p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Pädagogischer Zweck &amp; Medizinischer Hinweis</h2>
+            <p>Real BMI ist ein didaktisches Referenzwerkzeug und ersetzt keinesfalls eine ärztliche Konsultation, Diagnose oder Therapie. Die bereitgestellten Richtwerte dienen der persönlichen Orientierung und als fundierte Grundlage für das Gespräch mit qualifiziertem medizinischem Fachpersonal oder Ernährungsberatern.</p>
+          </div>
+        </div>
+
+        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 sm:p-8 shadow-[var(--shadow-soft)] space-y-6">
+          <div class="space-y-2">
+            <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Gründerin &amp; Standards</p>
+            <h2 class="text-xl sm:text-2xl font-black text-[var(--foreground)] uppercase tracking-tight font-display">Unabhängige Plattform</h2>
+            <p class="text-xs text-[var(--muted-foreground)] font-medium">Persönlich gepflegt von Bhawanshi Dosi</p>
           </div>
 
-          <div class="space-y-3 pt-2">
-            <a href="/de/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition">
+          <div class="space-y-4 pt-3 border-t border-[var(--border)] text-xs">
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">Gründerin &amp; Entwicklerin:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi (Software-Ingenieurin)</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">Standort:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">Banswara, Rajasthan, Indien</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">Architektur:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">100 % Client-Side im Webbrowser</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">Datenschutz:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">Keine Speicherung von Gesundheitsdaten</span>
+            </div>
+            <div>
+              <span class="font-bold text-[var(--foreground)] block">Wissenschaftliche Basis:</span>
+              <span class="text-[var(--muted-foreground)] font-medium">WHO-, CDC- &amp; Fachstudien</span>
+            </div>
+          </div>
+
+          <div class="space-y-3 pt-4 border-t border-[var(--border)]">
+            <a href="/de/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition text-center">
               Methodik &amp; Formeln einsehen →
             </a>
-            <a href="/de/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15">
-              Entwicklerin Kontaktieren
+            <a href="/de/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15 text-center">
+              Entwicklerin Kontaktieren →
             </a>
           </div>
         </aside>

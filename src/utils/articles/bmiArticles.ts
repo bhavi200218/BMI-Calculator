@@ -24,10 +24,10 @@ export const bmiArticles: Record<string, BlogArticleData> = {
   description: {
     en: "Comprehensive evidence-based guide to Body Mass Index (BMI). Learn its historical origins, metric and imperial formulas, WHO weight classification thresholds, Asian action triggers, physiological limitations, and complementary body composition markers.",
     hi: "बॉडी मास इंडेक्स (BMI) की संपूर्ण प्रमाण-आधारित गाइड। जानें इसका इतिहास, मीट्रिक और इंपीरियल फॉर्मूला, डब्ल्यूएचओ श्रेणियां, एशियाई मानक और स्वास्थ्य में इसका सही उपयोग।",
-    ko: "체질량지수(BMI)의 정의와 표준 계산 공식을 상세하게 확인하세요. 세계보건기구(WHO) 기준에 따른 저체중, 정상, 과체중, 비만 분류 체계와 아시아인 분별점, 측정 한계점을 종합 안내합니다.",
-    de: "Umfassender evidenzbasierter Leitfaden zum Body-Mass-Index (BMI). Definition, Formeln, WHO-Gewichtsklassen, asiatische Grenzwerte und physiologische Grenzen im Überblick.",
-    es: "Guía completa basada en evidencia sobre el Índice de Masa Corporal (IMC). Aprende sus orígenes, fórmulas métricas e imperiales, categorías de la OMS y limitaciones fisiológicas.",
-    fr: "Guide complet fondé sur des preuves sur l'Indice de Masse Corporelle (IMC). Histoire, formules métriques et impériales, classifications de l'OMS, seuils asiatiques et limites physiologiques."
+    ko: "체질량지수(BMI)의 의학적 정의와 표준 계산 공식을 상세하게 확인하세요. 세계보건기구(WHO) 기준 및 아시아인 맞춤 비만 기준표, 단계별 계산 실례와 신체 측정 한계점을 완벽 안내합니다.",
+    de: "Umfassender evidenzbasierter Leitfaden zum Body-Mass-Index (BMI). Entdecken Sie Ursprung, metrische und imperiale Formeln, WHO-Klassifikation, asiatische Schwellenwerte, Rechenbeispiele und Grenzen.",
+    es: "Guía completa basada en evidencia sobre el Índice de Masa Corporal (IMC). Aprende sus orígenes históricos, fórmulas métricas e imperiales, rangos de la OMS, puntos de corte asiáticos, ejemplos prácticos de cálculo y limitaciones fisiológicas.",
+    fr: "Guide complet fondé sur des preuves sur l'Indice de Masse Corporelle (IMC). Découvrez son histoire, formules métriques et impériales, classifications OMS, seuils asiatiques, exemples de calcul et limites physiologiques."
   },
   contentHtml: {
     en: `
@@ -140,150 +140,442 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       </ul>
     `,
     es: `
-      <h2>Definición y Origen Histórico del Índice de Masa Corporal</h2>
-      <p>El <strong>Índice de Masa Corporal (IMC)</strong> es un parámetro antropométrico internacionalmente estandarizado diseñado para evaluar la relación entre la masa corporal y la estatura de un adulto. Concebido entre 1830 y 1850 por el astrónomo y estadístico belga <strong>Lambert Adolphe Jacques Quetelet</strong>, se conoció originariamente como el <em>Índice de Quetelet</em>. Quetelet determinó que en personas sanas la masa corporal aumenta de forma aproximadamente proporcional al cuadrado de la estatura.</p>
-      <p>En 1972, el fisiólogo estadounidense Ancel Keys publicó un estudio pionero en el <em>Journal of Chronic Diseases</em> con 7.424 hombres de cinco países, acuñando formalmente el término "Índice de Masa Corporal". La Organización Mundial de la Salud (OMS), los CDC y los NIH adoptaron posteriormente el IMC como el estándar universal de cribado poblacional.</p>
+      <h2>¿Qué es el Índice de Masa Corporal (IMC)?</h2>
+      <p>El <strong>Índice de Masa Corporal (IMC)</strong> es un parámetro antropométrico internacionalmente estandarizado para la evaluación inicial del peso corporal en relación con la estatura de una persona. Su objetivo fundamental es determinar si la masa corporal se encuentra dentro de un intervalo estadísticamente saludable y equilibrado, o si presenta desviaciones hacia el bajo peso, el sobrepeso o los distintos grados de obesidad.</p>
+      <p>La fórmula fue concebida entre 1830 y 1850 por el matemático, astrónomo y estadístico belga <strong>Lambert Adolphe Jacques Quetelet</strong>, razón por la cual se denominó históricamente el <em>Índice de Quetelet</em>. En 1972, el fisiólogo e investigador estadounidense Ancel Keys publicó un estudio de referencia en el <em>Journal of Chronic Diseases</em> con una cohorte de 7.424 hombres en cinco países, demostrando que la relación peso/estatura² era el indicador antropométrico indirecto con mayor correlación con la masa grasa corporal real. En la actualidad, la <strong>Organización Mundial de la Salud (OMS)</strong> y los <strong>Centros para el Control y la Prevención de Enfermedades (CDC)</strong> lo utilizan a nivel global como el estándar primario de cribado epidemiológico.</p>
 
-      <h2>Fórmulas Matemáticas Oficiales</h2>
-      <ul>
-        <li><strong>Fórmula Métrica Oficial:</strong> <code>IMC = Peso (kg) / [Estatura (m)]²</code></li>
-        <li><strong>Fórmula Imperial:</strong> <code>IMC = [Peso (lbs) &times; 703] / [Estatura (pulgadas)]²</code></li>
+      <div class="my-5 p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+        <p class="font-bold text-[var(--accent)] text-xs uppercase tracking-wider">Puntos Clave Esenciales:</p>
+        <ul class="text-sm space-y-1.5 text-[var(--foreground)] list-disc pl-5">
+          <li><strong>Propósito fundamental:</strong> Clasificar de forma rápida, no invasiva y segura las categorías ponderales en grandes poblaciones adultas.</li>
+          <li><strong>Rango de referencia saludable:</strong> De 18,5 a 24,9 kg/m² para la mayoría de los adultos según los estándares de la OMS.</li>
+          <li><strong>Ventaja principal:</strong> Metodología universalmente reproducible, de cálculo inmediato y sin requerimiento de instrumentación clínica invasiva.</li>
+          <li><strong>Limitación crucial:</strong> No mide de manera directa el porcentaje de grasa corporal ni diferencia la masa muscular magra del tejido adiposo.</li>
+        </ul>
+      </div>
+
+      <h2>Fórmulas Matemáticas Oficiales: Sistema Métrico e Imperial</h2>
+      <p>El Índice de Masa Corporal se obtiene dividiendo el peso corporal entre el cuadrado de la estatura. La unidad universal estandarizada de expresión es kilogramos por metro cuadrado (kg/m²):</p>
+      <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
+        <li><strong>Fórmula Métrica Oficial (Sistema Internacional):</strong> <code>IMC = Peso (kg) / [Estatura (m)]²</code></li>
+        <li><strong>Fórmula Imperial (EE. UU.):</strong> <code>IMC = [Peso (lbs) &times; 703] / [Estatura (pulgadas)]²</code></li>
       </ul>
-      <p>El factor <strong>703</strong> proviene de la conversión exacta de libras a kilogramos y de pulgadas a metros: <code>0.45359237 / (0.0254)² &asymp; 703.07</code>.</p>
+      <p>El factor numérico <strong>703</strong> es la constante matemática exacta que convierte libras a kilogramos (1 lb &asymp; 0,453592 kg) y pulgadas a metros (1 pulgada = 0,0254 m; 0,0254² = 0,00064516 m²), permitiendo obtener el resultado directamente en kg/m² a partir de mediciones imperiales.</p>
 
-      <h2>Clasificación Oficial de la Organización Mundial de la Salud</h2>
+      <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-2">
+        <p class="font-bold text-[var(--accent)]">Ejemplos Numéricos de Cálculo Paso a Paso:</p>
+        <p class="text-[var(--foreground)]"><strong>Ejemplo en Sistema Métrico:</strong> Una mujer adulta con un peso corporal de 68,0 kg y una estatura de 1,68 metros:</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Paso 1: Elevar la estatura al cuadrado: 1,68 &times; 1,68 = 2,8224 m²</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Paso 2: Dividir la masa corporal entre la estatura al cuadrado: 68,0 / 2,8224 = <strong>24,09 kg/m²</strong> (Peso Saludable Normal)</p>
+        <p class="text-[var(--foreground)] mt-2"><strong>Ejemplo en Sistema Imperial:</strong> Un varón adulto con un peso de 185,0 libras y una estatura de 5 pies 11 pulgadas (71 pulgadas):</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Paso 1: Elevar la estatura en pulgadas al cuadrado: 71 &times; 71 = 5.041 in²</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Paso 2: Multiplicar el peso en libras por la constante imperial: 185,0 &times; 703 = 130.055</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Paso 3: Dividir el producto obtenido entre las pulgadas al cuadrado: 130.055 / 5.041 = <strong>25,80 kg/m²</strong> (Sobrepeso / Pre-obesidad)</p>
+      </div>
+
+      <h2>Matriz de Clasificación para Adultos de la Organización Mundial de la Salud (OMS)</h2>
+      <p>La OMS establece categorías antropométricas de referencia para estratificar el estado nutricional y evaluar el riesgo estadístico relativo de afecciones cardiometabólicas:</p>
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-sm">
           <thead>
             <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
               <th class="p-3">Categoría de la OMS</th>
               <th class="p-3 font-mono text-[var(--accent)]">Rango de IMC (kg/m²)</th>
-              <th class="p-3">Significado Clínico</th>
+              <th class="p-3">Estado Fisiológico y Ponderal</th>
+              <th class="p-3">Perfil de Riesgo Cardiometabólico</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]">
-            <tr><td class="p-3 font-semibold">Bajo Peso Severo</td><td class="p-3 font-mono">&lt; 16.0</td><td class="p-3">Desnutrición calórico-proteica grave, riesgo inmunitario</td></tr>
-            <tr><td class="p-3 font-semibold">Bajo Peso Moderado</td><td class="p-3 font-mono">16.0 – 16.9</td><td class="p-3">Déficit ponderal, fatiga crónica y fragilidad ósea</td></tr>
-            <tr><td class="p-3 font-semibold">Bajo Peso Leve</td><td class="p-3 font-mono">17.0 – 18.4</td><td class="p-3">Reserva energética reducida, fenotipo delgado</td></tr>
-            <tr><td class="p-3 font-semibold text-[var(--accent)]">Peso Saludable Normal</td><td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 24.9</td><td class="p-3">Mínimo riesgo estadístico de morbilidad cardiometabólica</td></tr>
-            <tr><td class="p-3 font-semibold">Sobrepeso (Pre-obesidad)</td><td class="p-3 font-mono">25.0 – 29.9</td><td class="p-3">Ligero incremento del riesgo cardiovascular y dislipemia</td></tr>
-            <tr><td class="p-3 font-semibold">Obesidad Clase I</td><td class="p-3 font-mono">30.0 – 34.9</td><td class="p-3">Incremento sustancial de riesgo de diabetes tipo 2</td></tr>
-            <tr><td class="p-3 font-semibold">Obesidad Clase II</td><td class="p-3 font-mono">35.0 – 39.9</td><td class="p-3">Adiposidad visceral severa, apnea obstructiva</td></tr>
-            <tr><td class="p-3 font-semibold">Obesidad Clase III</td><td class="p-3 font-mono">&ge; 40.0</td><td class="p-3">Riesgo crítico; requiere abordaje clínico multidisciplinar</td></tr>
+            <tr><td class="p-3 font-semibold">Bajo Peso Severo</td><td class="p-3 font-mono">&lt; 16,0</td><td class="p-3">Déficit energético y proteico grave, astenia</td><td class="p-3">Riesgo inmunitario, infeccioso y electrolítico elevado</td></tr>
+            <tr><td class="p-3 font-semibold">Bajo Peso Moderado</td><td class="p-3 font-mono">16,0 – 16,9</td><td class="p-3">Baja reserva metabólica y masa muscular reducida</td><td class="p-3">Mayor riesgo de osteopenia, hipotermia y fatiga crónica</td></tr>
+            <tr><td class="p-3 font-semibold">Bajo Peso Leve</td><td class="p-3 font-mono">17,0 – 18,4</td><td class="p-3">Fenotipo delgado natural o reserva energética baja</td><td class="p-3">Riesgo basal ligeramente superior al rango óptimo</td></tr>
+            <tr><td class="p-3 font-semibold text-[var(--accent)]">Peso Saludable Normal</td><td class="p-3 font-mono font-bold text-[var(--accent)]">18,5 – 24,9</td><td class="p-3">Composición corporal equilibrada</td><td class="p-3">Mínimo riesgo estadístico de mortalidad por todas las causas</td></tr>
+            <tr><td class="p-3 font-semibold">Sobrepeso (Pre-obesidad)</td><td class="p-3 font-mono">25,0 – 29,9</td><td class="p-3">Exceso de masa grasa o densidad muscular atlética</td><td class="p-3">Elevación gradual de tensión arterial y colesterol LDL</td></tr>
+            <tr><td class="p-3 font-semibold">Obesidad Clase I</td><td class="p-3 font-mono">30,0 – 34,9</td><td class="p-3">Acumulación adiposa moderada</td><td class="p-3">Incremento sustancial del riesgo de diabetes tipo 2 e hipertensión</td></tr>
+            <tr><td class="p-3 font-semibold">Obesidad Clase II</td><td class="p-3 font-mono">35,0 – 39,9</td><td class="p-3">Adiposidad central acentuada</td><td class="p-3">Alto riesgo de cardiopatía isquémica, apnea del sueño y artrosis</td></tr>
+            <tr><td class="p-3 font-semibold">Obesidad Clase III</td><td class="p-3 font-mono">&ge; 40,0</td><td class="p-3">Impacto metabólico y sistémico crítico</td><td class="p-3">Riesgo cardiovascular crítico; se recomienda seguimiento clínico</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Limitaciones Fisiológicas del IMC</h2>
-      <p>El IMC es una métrica de cribado y no distingue entre tejido adiposo y masa muscular magra. Atletas con hipertrofia muscular pueden presentar un IMC superior a 28 sin sobrepeso graso. Por ello, se recomienda complementar el IMC con la medición de la circunferencia de cintura y el porcentaje de grasa corporal.</p>
-    `,
-    fr: `
-      <h2>Définition et Origine Historique de l'IMC</h2>
-      <p>L'<strong>Indice de Masse Corporelle (IMC)</strong> est une mesure anthropométrique internationale conçue pour estimer la corpulence d'un individu en rapportant son poids au carré de sa taille. Développé entre 1830 et 1850 par le mathématicien belge <strong>Lambert Adolphe Jacques Quetelet</strong> sous le nom d'<em>Indice de Quetelet</em>, ce paramètre a été validé en 1972 par Ancel Keys puis adopté par l'Organisation Mondiale de la Santé (OMS).</p>
+      <h2>Umbrales Étnicos y Puntos de Acción para Poblaciones Asiáticas</h2>
+      <p>La relación entre el IMC y la proporción real de grasa corporal presenta una considerable variabilidad genética y poblacional. Investigaciones epidemiológicas dirigidas por la Oficina Regional del Pacífico Occidental de la OMS (WPRO) y el Consejo Indio de Investigación Médica (ICMR) han demostrado que las personas de ascendencia asiática suelen presentar un porcentaje significativamente mayor de grasa visceral intraabdominal con valores de IMC sensiblemente más bajos que las poblaciones caucásicas.</p>
+      <p>Por este motivo, los comités de expertos internacionales establecieron <strong>Puntos de Acción Específicos para Poblaciones Asiáticas</strong>:</p>
+      <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
+        <li><strong>Rango Saludable Normal Asiático:</strong> 18,5 a 22,9 kg/m²</li>
+        <li><strong>Punto de Acción para Sobrepeso Asiático:</strong> 23,0 a 24,9 kg/m²</li>
+        <li><strong>Punto de Acción para Obesidad Asiática:</strong> 25,0 kg/m² o superior</li>
+      </ul>
+      <p>Estos umbrales más estrictos posibilitan la detección temprana de anomalías en el metabolismo glucídico y lipídico, permitiendo intervenciones preventivas de estilo de vida antes de que se desarrolle resistencia a la insulina o hipertensión arterial establecida.</p>
 
-      <h2>Formules de Calcul Officielles</h2>
-      <ul>
-        <li><strong>Système Métrique :</strong> <code>IMC = Poids (kg) / [Taille (m)]²</code></li>
-        <li><strong>Système Impérial :</strong> <code>IMC = [Poids (lbs) &times; 703] / [Taille (pouces)]²</code></li>
+      <h2>Limitaciones Fisiológicas: Lo que el IMC No Puede Evaluar</h2>
+      <p>A pesar de su gran utilidad diagnóstica en salud pública, el IMC es exclusivamente una herramienta de cribado preliminar y presenta limitaciones biológicas que deben considerarse al evaluar a una persona de forma individual:</p>
+      <ul class="my-3 space-y-2 list-disc pl-5 text-sm">
+        <li><strong>Masa Muscular vs. Adiposidad:</strong> El IMC trata cada kilogramo de peso corporal con el mismo valor matemático. Un deportista o levantador de pesas con un alto desarrollo de masa muscular magra puede arrojar un resultado de 27 o 29 kg/m² (clasificado como sobrepeso) manteniendo niveles de grasa corporal extremadamente reducidos y un estado metabólico excelente.</li>
+        <li><strong>Distribución Anatómica del Tejido Graso:</strong> La grasa visceral profunda (situada alrededor de los órganos abdominales) libera adipocinas proinflamatorias y genera un riesgo cardiovascular notablemente superior al de la grasa subcutánea periférica (almacenada en caderas y extremidades). El IMC carece de la capacidad de identificar en qué región anatómica se almacena el tejido graso.</li>
+        <li><strong>Edad, Sarcopenia y Compresión Vertebral:</strong> Con el envejecimiento, la compresión de los discos de la columna vertebral provoca una reducción gradual de la estatura, elevando matemáticamente el IMC calculado sin que exista ganancia real de tejido adiposo. Asimismo, la sarcopenia (pérdida progresiva de músculo) en adultos mayores puede enmascarar un incremento relativo de grasa aunque el peso total se mantenga estable.</li>
       </ul>
 
-      <h2>Grille de Classification Internationale OMS</h2>
+      <h2>Evaluaciones Complementarias para Combinar con tu IMC</h2>
+      <p>Para construir una visión integral y rigurosa de la condición física y metabólica, los profesionales recomiendan complementar el resultado del IMC con las siguientes evaluaciones objetivas:</p>
+      <ol class="space-y-2 my-4 list-decimal pl-5 text-sm">
+        <li><strong>Índice Cintura-Estatura (ICE / WHtR):</strong> Procurar que la circunferencia de la cintura sea inferior a la mitad de la estatura (ratio menor a 0,50) para garantizar que la acumulación de grasa abdominal se mantenga en umbrales metabólicamente seguros.</li>
+        <li><strong>Gasto Energético Diario (TMB y TDEE):</strong> Estimar la tasa metabólica basal y el gasto calórico diario total para diseñar planes nutricionales y de actividad física adaptados a la realidad energética de cada organismo.</li>
+        <li><strong>Parámetros Bioquímicos de Laboratorio:</strong> Pruebas clínicas de glucemia en ayunas, perfil lipídico (colesterol HDL, LDL y triglicéridos) y monitorización de la presión arterial proporcionan la confirmación directa del estado de salud interno.</li>
+      </ol>
+
+      <h2>Preguntas Frecuentes sobre el Índice de Masa Corporal</h2>
+      <div class="space-y-4 my-6">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">¿Un IMC de 25 kg/m² se considera siempre sobrepeso?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">En los criterios estándar para población general adulta, 25,0 kg/m² señala el límite inicial de sobrepeso. No obstante, en personas con un entrenamiento de fuerza regular, este valor elevado suele reflejar tejido muscular denso y no exceso de grasa. En contraste, para adultos de origen asiático, un IMC de 25,0 kg/m² ya constituye el umbral formal de obesidad clínica debido a su mayor predisposición a acumular grasa visceral.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">¿El estándar del IMC se aplica de igual forma a hombres y mujeres?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Los intervalos de referencia de la OMS son unisex para adultos. Sin embargo, las mujeres poseen de manera natural y fisiológica entre un 8% y un 12% más de grasa biológica esencial que los hombres con el mismo valor de IMC. Por esta razón, asociar la circunferencia de cintura al cálculo del IMC resulta indispensable para distinguir una distribución ginecoide saludable de una acumulación androide perjudicial.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">¿Con qué frecuencia se debe registrar y calcular el IMC?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Para la mayoría de los adultos sanos es suficiente calcular el IMC una vez al mes o de forma trimestral. Las oscilaciones diarias de peso corporal en la báscula suelen responder a fluctuaciones en la retención de líquidos, ingesta de sodio o depósitos de glucógeno, y no a variaciones significativas en la masa muscular o en el tejido adiposo.</p>
+        </div>
+      </div>
+
+      <h2>Referencias Científicas y Literatura Fundamental</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>World Health Organization. <em>Physical status: The use and interpretation of anthropometry.</em> WHO Technical Report Series 854. Ginebra: OMS, 1995.</li>
+        <li>Keys A, Fidanza F, Karvonen MJ, Kimura N, Taylor HL. <em>Indices of relative weight and obesity.</em> Journal of Chronic Diseases, 1972; 25(6-7):329-343.</li>
+        <li>WHO Expert Consultation. <em>Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.</em> The Lancet, 2004; 363(9403):157-163.</li>
+        <li>National Institutes of Health. <em>Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults.</em> Obes Res 1998; 6(Suppl 2):51S-209S.</li>
+      </ul>
+    `,
+    fr: `
+      <h2>Qu'est-ce que l'Indice de Masse Corporelle (IMC) ?</h2>
+      <p>L'<strong>Indice de Masse Corporelle (IMC)</strong> est un paramètre anthropométrique internationalement reconnu pour le dépistage initial et l'évaluation de la corpulence d'un individu en rapportant sa masse corporelle au carré de sa taille. Son objectif fondamental est de déterminer si le poids d'une personne se situe dans un intervalle physiologiquement sain et équilibré, ou s'il présente un écart vers l'insuffisance pondérale, le surpoids ou les différents stades de l'obésité.</p>
+      <p>La formule a été mise au point entre 1830 et 1850 par le mathématicien, astronome et statisticien belge <strong>Lambert Adolphe Jacques Quetelet</strong>, ce qui lui valut initialement l'appellation d'<em>Indice de Quetelet</em>. En 1972, le chercheur et physiologiste américain Ancel Keys publia une étude clinique de référence dans le <em>Journal of Chronic Diseases</em> portant sur 7 424 hommes issus de cinq pays, démontrant que le ratio poids/taille² constituait la mesure indirecte la plus fortement corrélée à la masse grasse corporelle réelle. Aujourd'hui, l'<strong>Organisation Mondiale de la Santé (OMS)</strong> et les <strong>CDC</strong> l'utilisent à l'échelle mondiale comme le standard de référence pour le dépistage pondéral des adultes.</p>
+
+      <div class="my-5 p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+        <p class="font-bold text-[var(--accent)] text-xs uppercase tracking-wider">Points Clés Essentiels :</p>
+        <ul class="text-sm space-y-1.5 text-[var(--foreground)] list-disc pl-5">
+          <li><strong>Objectif premier :</strong> Dépistage rapide, sûr et non invasif des catégories pondérales au sein des populations adultes.</li>
+          <li><strong>Plage de référence saine :</strong> De 18,5 à 24,9 kg/m² pour la majorité des adultes selon les standards de l'OMS.</li>
+          <li><strong>Atout majeur :</strong> Méthode universellement standardisée, calculable instantanément et sans coût d'examen clinique.</li>
+          <li><strong>Limite fondamentale :</strong> Ne quantifie pas directement le pourcentage de graisse corporelle et ne différencie pas la masse musculaire maigre du tissu adipeux.</li>
+        </ul>
+      </div>
+
+      <h2>Formules de Calcul Officielles : Système Métrique et Impérial</h2>
+      <p>L'Indice de Masse Corporelle s'obtient en divisant la masse corporelle en kilogrammes par le carré de la taille en mètres. L'unité de mesure universelle est le kilogramme par mètre carré (kg/m²) :</p>
+      <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
+        <li><strong>Formule Métrique Officielle (Système International) :</strong> <code>IMC = Poids (kg) / [Taille (m)]²</code></li>
+        <li><strong>Formule Impériale (États-Unis) :</strong> <code>IMC = [Poids (lbs) &times; 703] / [Taille (pouces)]²</code></li>
+      </ul>
+      <p>Le nombre <strong>703</strong> est le facteur de conversion mathématique exact entre les unités impériales (livres et pouces) et les unités métriques (kilogrammes et mètres) : 1 livre &asymp; 0,453592 kg et 1 pouce = 0,0254 m (0,0254² = 0,00064516 m²), soit <code>0,453592 / 0,00064516 &asymp; 703,07</code>.</p>
+
+      <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-2">
+        <p class="font-bold text-[var(--accent)]">Exemples Numériques de Calcul Étape par Étape :</p>
+        <p class="text-[var(--foreground)]"><strong>Exemple en Système Métrique :</strong> Une femme adulte pesant 68,0 kg pour une taille de 1,68 mètre :</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Étape 1 : Calculer le carré de la taille : 1,68 &times; 1,68 = 2,8224 m²</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Étape 2 : Diviser la masse par la taille au carré : 68,0 / 2,8224 = <strong>24,09 kg/m²</strong> (Corpulence Normale / Poids Sain)</p>
+        <p class="text-[var(--foreground)] mt-2"><strong>Exemple en Système Impérial :</strong> Un homme adulte pesant 185,0 livres pour une taille de 5 pieds 11 pouces (71 pouces) :</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Étape 1 : Calculer le carré de la taille en pouces : 71 &times; 71 = 5 041 in²</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Étape 2 : Multiplier le poids par la constante impériale : 185,0 &times; 703 = 130 055</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Étape 3 : Diviser le produit par la taille au carré : 130 055 / 5 041 = <strong>25,80 kg/m²</strong> (Surpoids)</p>
+      </div>
+
+      <h2>Grille de Classification pour Adultes de l'Organisation Mondiale de la Santé (OMS)</h2>
+      <p>L'OMS classe les résultats d'IMC des adultes en catégories standardisées afin d'orienter l'évaluation nutritionnelle et le profil de risque cardiométabolique :</p>
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-sm">
           <thead>
             <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
               <th class="p-3">Classification OMS</th>
               <th class="p-3 font-mono text-[var(--accent)]">Intervalle d'IMC (kg/m²)</th>
-              <th class="p-3">Signification Médicale</th>
+              <th class="p-3">État Physiologique et Corporel</th>
+              <th class="p-3">Profil de Risque Cardiométabolique</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]">
-            <tr><td class="p-3 font-semibold">Insuffisance pondérale sévère</td><td class="p-3 font-mono">&lt; 16,0</td><td class="p-3">Dénutrition aiguë, risque immunitaire élevé</td></tr>
-            <tr><td class="p-3 font-semibold">Insuffisance pondérale modérée</td><td class="p-3 font-mono">16,0 – 16,9</td><td class="p-3">Fragilité osseuse, carences chroniques</td></tr>
-            <tr><td class="p-3 font-semibold">Insuffisance pondérale légère</td><td class="p-3 font-mono">17,0 – 18,4</td><td class="p-3">Faible réserve métabolique, morphotype mince</td></tr>
-            <tr><td class="p-3 font-semibold text-[var(--accent)]">Corpulence normale</td><td class="p-3 font-mono font-bold text-[var(--accent)]">18,5 – 24,9</td><td class="p-3">Risque de mortalité cardiométabolique minimal</td></tr>
-            <tr><td class="p-3 font-semibold">Surpoids</td><td class="p-3 font-mono">25,0 – 29,9</td><td class="p-3">Risque accru d'hypertension et de dyslipidémie</td></tr>
-            <tr><td class="p-3 font-semibold">Obésité classe I</td><td class="p-3 font-mono">30,0 – 34,9</td><td class="p-3">Risque modéré de diabète de type 2</td></tr>
-            <tr><td class="p-3 font-semibold">Obésité classe II</td><td class="p-3 font-mono">35,0 – 39,9</td><td class="p-3">Risque élevé d'apnée du sommeil et de maladies coronariennes</td></tr>
-            <tr><td class="p-3 font-semibold">Obésité classe III (morbide)</td><td class="p-3 font-mono">&ge; 40,0</td><td class="p-3">Risque critique justifiant une prise en charge médicale</td></tr>
+            <tr><td class="p-3 font-semibold">Insuffisance pondérale sévère</td><td class="p-3 font-mono">&lt; 16,0</td><td class="p-3">Dénutrition aiguë, fonte musculaire, asthénie</td><td class="p-3">Vulnérabilité immunitaire et risque infectieux élevés</td></tr>
+            <tr><td class="p-3 font-semibold">Insuffisance pondérale modérée</td><td class="p-3 font-mono">16,0 – 16,9</td><td class="p-3">Réserves énergétiques faibles, carences chroniques</td><td class="p-3">Risque accru d'ostéopénie, frilosité et fatigue</td></tr>
+            <tr><td class="p-3 font-semibold">Insuffisance pondérale légère</td><td class="p-3 font-mono">17,0 – 18,4</td><td class="p-3">Morphotype mince constitutionnel ou faible adiposité</td><td class="p-3">Légère augmentation du risque de base</td></tr>
+            <tr><td class="p-3 font-semibold text-[var(--accent)]">Corpulence normale (Poids sain)</td><td class="p-3 font-mono font-bold text-[var(--accent)]">18,5 – 24,9</td><td class="p-3">Composition corporelle équilibrée</td><td class="p-3">Risque statistique de mortalité toutes causes confondues le plus bas</td></tr>
+            <tr><td class="p-3 font-semibold">Surpoids (Pré-obésité)</td><td class="p-3 font-mono">25,0 – 29,9</td><td class="p-3">Excédent adipeux modéré ou masse musculaire athlétique</td><td class="p-3">Élévation progressive de la tension artérielle et du cholestérol LDL</td></tr>
+            <tr><td class="p-3 font-semibold">Obésité classe I (Modérée)</td><td class="p-3 font-mono">30,0 – 34,9</td><td class="p-3">Accumulation significative de tissu adipeux</td><td class="p-3">Augmentation substantielle du risque de diabète de type 2</td></tr>
+            <tr><td class="p-3 font-semibold">Obésité classe II (Sévère)</td><td class="p-3 font-mono">35,0 – 39,9</td><td class="p-3">Adiposité viscérale et centrale prononcée</td><td class="p-3">Risque élevé de coronaropathie, d'apnée du sommeil et d'arthrose</td></tr>
+            <tr><td class="p-3 font-semibold">Obésité classe III (Morbide)</td><td class="p-3 font-mono">&ge; 40,0</td><td class="p-3">Impact métabolique et systémique majeur</td><td class="p-3">Risque cardiométabolique critique ; prise en charge médicale recommandée</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Limites Cliniques et Mesures Complémentaires</h2>
-      <p>L'IMC ne différencie pas la masse musculaire de la masse adipeuse. Pour une évaluation de précision, associez votre résultat au ratio taille-hanches et à la composition corporelle par bio-impédancemétrie.</p>
-    `,
-    de: `
-      <h2>Definition und Geschichte des Body-Mass-Index (BMI)</h2>
-      <p>Der <strong>Body-Mass-Index (BMI)</strong> ist ein international standardisierter anthropometrischer Messwert, der das Körpergewicht zur Körpergröße ins Verhältnis setzt. Erfunden wurde die Formel zwischen 1830 und 1850 vom belgischen Gelehrten <strong>Lambert Adolphe Jacques Quetelet</strong>. 1972 wies Ancel Keys nach, dass der Quetelet-Index die beste Korrelation mit dem gemessenen Körperfett aufweist, woraufhin die WHO den BMI als weltweites Standardmaß übernahm.</p>
+      <h2>Seuils d'Action et Spécificités Éthniques : Populations Asiatiques</h2>
+      <p>La relation entre l'IMC et le pourcentage réel de graisse corporelle varie selon le patrimoine génétique et les populations. Les études épidémiologiques menées par le Bureau régional du Pacifique occidental de l'OMS (WPRO) et le Conseil indien de la recherche médicale (ICMR) démontrent que les personnes d'origine asiatique présentent généralement une proportion plus élevée de graisse viscérale abdominale pour un IMC inférieur à celui des populations d'origine caucasienne.</p>
+      <p>Face à ce constat, les comités d'experts ont établi des <strong>Seuils d'Action Spécifiques pour les Populations Asiatiques</strong> :</p>
+      <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
+        <li><strong>Plage Normale Saine Asiatique :</strong> 18,5 à 22,9 kg/m²</li>
+        <li><strong>Seuil de Déclenchement pour Surpoids Asiatique :</strong> 23,0 à 24,9 kg/m²</li>
+        <li><strong>Seuil de Déclenchement pour Obésité Asiatique :</strong> 25,0 kg/m² ou plus</li>
+      </ul>
+      <p>Ces repères abaissés permettent une détection précoce des troubles du métabolisme du glucose et des lipides, autorisant des ajustements nutritionnels et sportifs avant l'apparition d'un diabète de type 2 ou d'une hypertension artérielle confirmée.</p>
 
-      <h2>Mathematische Formeln</h2>
-      <ul>
-        <li><strong>Metrische Formel:</strong> <code>BMI = Gewicht (kg) / [Größe (m)]²</code></li>
-        <li><strong>Imperiale Formel:</strong> <code>BMI = [Gewicht (lbs) &times; 703] / [Größe (Zoll)]²</code></li>
+      <h2>Limites Physiologiques : Ce que l'IMC Ne Peut Pas Mesurer</h2>
+      <p>Bien que l'IMC constitue un outil de dépistage épidémiologique indispensable, il ne fournit pas une description exhaustive de la santé individuelle. Trois limites majeures doivent être prises en compte :</p>
+      <ul class="my-3 space-y-2 list-disc pl-5 text-sm">
+        <li><strong>Masse Musculaire vs Tissu Adipeux :</strong> L'IMC attribue la même valeur mathématique à chaque kilogramme de masse corporelle. Un sportif ou un athlète de force doté d'une forte masse musculaire maigre peut ainsi être classé en « surpoids » (IMC de 27 à 29 kg/m²) tout en ayant un pourcentage de masse grasse particulièrement bas et une santé cardiovasculaire excellente.</li>
+        <li><strong>Localisation Anatomique des Graisses :</strong> La graisse viscérale intra-abdominale entourant les organes internes libère des cytokines pro-inflammatoires et présente un risque cardiométabolique nettement supérieur à la graisse sous-cutanée périphérique située sur les hanches ou les cuisses. L'IMC ne peut pas détecter la répartition anatomique du tissu adipeux.</li>
+        <li><strong>Âge, Sarcopénie et Tassement Vertébral :</strong> Avec le vieillissement, la déshydratation des disques intervertébraux entraîne une diminution de la taille physique, ce qui augmente mathématiquement l'IMC sans variation réelle du tissu adipeux. Parallèlement, la sarcopénie (perte progressive de masse musculaire) chez les personnes âgées peut masquer une augmentation relative de la masse grasse alors que le poids total reste constant.</li>
       </ul>
 
-      <h2>Offizielle WHO-Klassifikation für Erwachsene</h2>
+      <h2>Évaluations Complémentaires à Associer à Votre IMC</h2>
+      <p>Pour obtenir un bilan morphologique et métabolique précis, les professionnels de santé recommandent de combiner l'IMC avec ces mesures complémentaires :</p>
+      <ol class="space-y-2 my-4 list-decimal pl-5 text-sm">
+        <li><strong>Ratio Taille-Hauteur (RTH) :</strong> Viser un tour de taille inférieur à la moitié de sa stature (ratio inférieur à 0,50) pour s'assurer que le niveau d'adiposité abdominale reste dans des limites protectrices.</li>
+        <li><strong>Dépense Énergétique Quotidienne (MB et TDEE) :</strong> Calculer son métabolisme de base et sa dépense énergétique journalière totale pour structurer un apport calorique adapté à ses besoins réels sans provoquer de fonte musculaire.</li>
+        <li><strong>Examens Biologiques de Laboratoire :</strong> Glycémie à jeun, hémoglobine glyquée (HbA1c), bilan lipidique complet (cholestérol HDL, LDL et triglycérides) et mesure de la tension artérielle au repos offrent une confirmation directe de la santé métabolique interne.</li>
+      </ol>
+
+      <h2>Foire Aux Questions Concernant l'Indice de Masse Corporelle</h2>
+      <div class="space-y-4 my-6">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Un IMC de 25 kg/m² est-il toujours synonyme de surpoids ?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Dans les critères internationaux pour la population adulte générale, 25,0 kg/m² constitue le seuil d'entrée dans le surpoids. Toutefois, chez les sportifs pratiquant la musculation, cette valeur reflète souvent une masse musculaire dense et non un excès graisseux. En revanche, pour les adultes d'origine sud-asiatique ou est-asiatique, 25,0 kg/m² correspond déjà au seuil formel d'obésité clinique.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">L'IMC s'applique-t-il de la même façon aux hommes et aux femmes ?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Les seuils de l'OMS sont unisexes. Néanmoins, les femmes possèdent physiologiquement et naturellement environ 8 % à 12 % de graisse corporelle essentielle en plus que les hommes à un IMC identique. L'évaluation conjointe du tour de taille permet de distinguer une répartition gynoïde saine d'une accumulation androïde à risque.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">À quelle fréquence convient-il de calculer son IMC ?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Pour un adulte en bonne santé, un suivi mensuel ou trimestriel est amplement suffisant. Les fluctuations quotidiennes sur la balance traduisent principalement des variations d'hydratation, d'apport sodé et de réserves de glycogène plutôt que des modifications réelles de la masse musculaire ou du tissu adipeux.</p>
+        </div>
+      </div>
+
+      <h2>Références Scientifiques et Littérature Fondamentale</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>World Health Organization. <em>Physical status: The use and interpretation of anthropometry.</em> Rapport d'un comité d'experts de l'OMS. OMS Série de Rapports Techniques 854. Genève : OMS, 1995.</li>
+        <li>Keys A, Fidanza F, Karvonen MJ, Kimura N, Taylor HL. <em>Indices of relative weight and obesity.</em> Journal of Chronic Diseases, 1972; 25(6-7):329-343.</li>
+        <li>WHO Expert Consultation. <em>Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.</em> The Lancet, 2004; 363(9403):157-163.</li>
+        <li>National Institutes of Health. <em>Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults.</em> Obes Res 1998; 6(Suppl 2):51S-209S.</li>
+      </ul>
+    `,
+    de: `
+      <h2>Was ist der Body-Mass-Index (BMI)?</h2>
+      <p>Der <strong>Body-Mass-Index (BMI)</strong> ist ein international standardisierter anthropometrischer Messwert zur ersten Einschätzung des Körpergewichts im Verhältnis zur Körpergröße eines Erwachsenen. Das primäre Ziel der Messung besteht darin, festzustellen, ob das Körpergewicht in einem statistisch gesunden, physiologisch ausgewogenen Bereich liegt oder Abweichungen in Richtung Untergewicht, Übergewicht oder Adipositas vorliegen.</p>
+      <p>Entwickelt wurde die Berechnungsformel zwischen 1830 und 1850 vom belgischen Astronomen, Mathematiker und Statistiker <strong>Lambert Adolphe Jacques Quetelet</strong>, weshalb sie ursprünglich als <em>Quetelet-Index</em> bezeichnet wurde. Im Jahr 1972 wies der renommierte US-amerikanische Physiologe Ancel Keys anhand einer epidemiologischen Kohorte von 7.424 Männern aus fünf Ländern (veröffentlicht im <em>Journal of Chronic Diseases</em>) nach, dass das Verhältnis Gewicht/Größe² unter allen einfachen Messgrößen die stärkste Korrelation mit dem tatsächlichen Körperfettanteil aufweist. Heute nutzen die <strong>Weltgesundheitsorganisation (WHO)</strong> und die <strong>CDC</strong> den BMI weltweit als epidemiologischen Standard für das primäre Gewichtsscreening bei Erwachsenen.</p>
+
+      <div class="my-5 p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+        <p class="font-bold text-[var(--accent)] text-xs uppercase tracking-wider">Wichtige Kernaussagen auf einen Blick:</p>
+        <ul class="text-sm space-y-1.5 text-[var(--foreground)] list-disc pl-5">
+          <li><strong>Hauptzweck:</strong> Nicht-invasives, sicheres und schnelles Screening von Gewichtsklassen in großen Erwachsenenpopulationen.</li>
+          <li><strong>Gesunder Referenzbereich:</strong> 18,5 bis 24,9 kg/m² für die Mehrheit der Erwachsenen nach WHO-Standards.</li>
+          <li><strong>Zentraler Vorteil:</strong> Universell standardisiert, sofort und ohne apparative Laborkosten berechenbar.</li>
+          <li><strong>Wesentliche Einschränkung:</strong> Misst den prozentualen Körperfettanteil nicht direkt und unterscheidet nicht zwischen Muskel- und Fettmasse.</li>
+        </ul>
+      </div>
+
+      <h2>Offizielle mathematische Formeln: Metrisch &amp; Imperial</h2>
+      <p>Der Body-Mass-Index errechnet sich aus dem Körpergewicht geteilt durch das Quadrat der Körpergröße. Die weltweit standardisierte Einheit ist Kilogramm pro Quadratmeter (kg/m²):</p>
+      <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
+        <li><strong>Offizielle metrische Formel (SI-Einheitensystem):</strong> <code>BMI = Gewicht (kg) / [Größe (m)]²</code></li>
+        <li><strong>Imperiale Formel (US-System):</strong> <code>BMI = [Gewicht (lbs) &times; 703] / [Größe (Zoll)]²</code></li>
+      </ul>
+      <p>Die Konstante <strong>703</strong> ist der exakte mathematische Umrechnungsfaktor zwischen imperialen Einheiten (Pfund und Zoll) und metrischen Einheiten (Kilogramm und Meter): 1 lb &asymp; 0,453592 kg und 1 Zoll = 0,0254 m (0,0254² = 0,00064516 m²), woraus sich <code>0,453592 / 0,00064516 &asymp; 703,07</code> ergibt.</p>
+
+      <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-2">
+        <p class="font-bold text-[var(--accent)]">Schritt-für-Schritt Rechenbeispiele:</p>
+        <p class="text-[var(--foreground)]"><strong>Metrisches Rechenbeispiel:</strong> Eine erwachsene Frau mit einem Körpergewicht von 68,0 kg und einer Körpergröße von 1,68 Metern:</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Schritt 1: Quadrieren der Körpergröße: 1,68 &times; 1,68 = 2,8224 m²</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Schritt 2: Körpergewicht durch quadrierte Größe teilen: 68,0 / 2,8224 = <strong>24,09 kg/m²</strong> (Normalgewicht / Gesunder Bereich)</p>
+        <p class="text-[var(--foreground)] mt-2"><strong>Imperiales Rechenbeispiel:</strong> Ein erwachsener Mann mit einem Gewicht von 185,0 lbs und einer Körpergröße von 5 Fuß 11 Zoll (71 Zoll):</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Schritt 1: Quadrieren der Größe in Zoll: 71 &times; 71 = 5.041 in²</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Schritt 2: Gewicht mit imperialer Konstante multiplizieren: 185,0 &times; 703 = 130.055</p>
+        <p class="text-[var(--muted-foreground)]">&bull; Schritt 3: Produkt durch quadrierte Zoll teilen: 130.055 / 5.041 = <strong>25,80 kg/m²</strong> (Präadipositas / Übergewicht)</p>
+      </div>
+
+      <h2>Offizielle WHO-Klassifikationsmatrix für Erwachsene</h2>
+      <p>Die Weltgesundheitsorganisation unterteilt BMI-Werte in acht standardisierte Kategorien, um den Ernährungszustand und das relative kardiometabolische Gesundheitsrisiko einzustufen:</p>
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-sm">
           <thead>
             <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
               <th class="p-3">WHO-Kategorie</th>
               <th class="p-3 font-mono text-[var(--accent)]">BMI-Bereich (kg/m²)</th>
-              <th class="p-3">Gesundheitliche Einstufung</th>
+              <th class="p-3">Physiologischer Ernährungszustand</th>
+              <th class="p-3">Kardiometabolisches Risikoprofil</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]">
-            <tr><td class="p-3 font-semibold">Starkes Untergewicht</td><td class="p-3 font-mono">&lt; 16,0</td><td class="p-3">Akute Mangelernährung, Immunschwäche</td></tr>
-            <tr><td class="p-3 font-semibold">Mäßiges Untergewicht</td><td class="p-3 font-mono">16,0 – 16,9</td><td class="p-3">Chronisches Energiedefizit, Osteoporoserisiko</td></tr>
-            <tr><td class="p-3 font-semibold">Leichtes Untergewicht</td><td class="p-3 font-mono">17,0 – 18,4</td><td class="p-3">Geringe Energiereserven, schlanker Phänotyp</td></tr>
-            <tr><td class="p-3 font-semibold text-[var(--accent)]">Normalgewicht</td><td class="p-3 font-mono font-bold text-[var(--accent)]">18,5 – 24,9</td><td class="p-3">Geringstes relatives Krankheits- und Sterberisiko</td></tr>
-            <tr><td class="p-3 font-semibold">Präadipositas (Übergewicht)</td><td class="p-3 font-mono">25,0 – 29,9</td><td class="p-3">Leicht erhöhtes Risiko für Bluthochdruck</td></tr>
-            <tr><td class="p-3 font-semibold">Adipositas Grad I</td><td class="p-3 font-mono">30,0 – 34,9</td><td class="p-3">Deutlich erhöhtes Risiko für Diabetes Typ 2</td></tr>
-            <tr><td class="p-3 font-semibold">Adipositas Grad II</td><td class="p-3 font-mono">35,0 – 39,9</td><td class="p-3">Hohes Risiko für kardiovaskuläre Folgeerkrankungen</td></tr>
-            <tr><td class="p-3 font-semibold">Adipositas Grad III</td><td class="p-3 font-mono">&ge; 40,0</td><td class="p-3">Kritisch; umfassende ärztliche Therapie erforderlich</td></tr>
+            <tr><td class="p-3 font-semibold">Starkes Untergewicht</td><td class="p-3 font-mono">&lt; 16,0</td><td class="p-3">Akute Mangelernährung, Muskelabbau, Erschöpfung</td><td class="p-3">Hohes Risiko für Immunschwäche und Elektrolytstörungen</td></tr>
+            <tr><td class="p-3 font-semibold">Mäßiges Untergewicht</td><td class="p-3 font-mono">16,0 – 16,9</td><td class="p-3">Geringe Energiereserven, Nährstoffdefizite</td><td class="p-3">Erhöhtes Risiko für Osteoporose und chronische Müdigkeit</td></tr>
+            <tr><td class="p-3 font-semibold">Leichtes Untergewicht</td><td class="p-3 font-mono">17,0 – 18,4</td><td class="p-3">Schlanker Phänotyp oder geringe Fettreserven</td><td class="p-3">Leicht erhöhtes relatives Grundrisiko</td></tr>
+            <tr><td class="p-3 font-semibold text-[var(--accent)]">Normalgewicht (Gesundes Gewicht)</td><td class="p-3 font-mono font-bold text-[var(--accent)]">18,5 – 24,9</td><td class="p-3">Ausgewogene Körperzusammensetzung</td><td class="p-3">Statistisch geringste Gesamtmortalität und Krankheitslast</td></tr>
+            <tr><td class="p-3 font-semibold">Präadipositas (Übergewicht)</td><td class="p-3 font-mono">25,0 – 29,9</td><td class="p-3">Moderater Fettüberschuss oder hohe Muskelmasse</td><td class="p-3">Allmählicher Anstieg von Blutdruck, LDL und Insulinresistenz</td></tr>
+            <tr><td class="p-3 font-semibold">Adipositas Grad I (Moderat)</td><td class="p-3 font-mono">30,0 – 34,9</td><td class="p-3">Deutliche Akkumulation von Fettgewebe</td><td class="p-3">Substanziell erhöhtes Risiko für Typ-2-Diabetes und Hypertonie</td></tr>
+            <tr><td class="p-3 font-semibold">Adipositas Grad II (Schwer)</td><td class="p-3 font-mono">35,0 – 39,9</td><td class="p-3">Ausgeprägte viszerale Stammfettsucht</td><td class="p-3">Hohes Risiko für koronare Herzkrankheit, Schlafapnoe und Arthrose</td></tr>
+            <tr><td class="p-3 font-semibold">Adipositas Grad III (Extrem)</td><td class="p-3 font-mono">&ge; 40,0</td><td class="p-3">Kritische systemische und metabolische Belastung</td><td class="p-3">Kritisches kardiovaskuläres Risiko; ärztliche Therapie erforderlich</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Grenzen des BMI</h2>
-      <p>Der BMI unterscheidet nicht zwischen Muskelgewebe und Fettgewebe. Sportler sollten ergänzend das Taillen-Größen-Verhältnis (WHtR) oder eine Körperfettmessung durchführen.</p>
-    `,
-    ko: `
-      <h2>체질량지수(BMI)의 의학적 정의와 역사</h2>
-      <p><strong>체질량지수(Body Mass Index, BMI)</strong>는 성인의 신장과 체중의 상관관계를 통계적으로 표준화한 대표적인 비만도 선별 지표입니다. 1830년대 벨기에의 천문학자이자 통계학자인 <strong>아돌프 케틀레(Adolphe Quetelet)</strong>가 인간의 신체 질량이 대략 키의 제곱에 비례한다는 사실을 발견하면서 <em>케틀레 지수</em>로 처음 명명되었습니다. 이후 1972년 안셀 키스(Ancel Keys) 박사의 대규모 연구를 거쳐 세계보건기구(WHO)의 글로벌 표준 선별 지표로 공식 채택되었습니다.</p>
+      <h2>Ethnische Anpassungen: Risikoprofile asiatischer Populationen</h2>
+      <p>Die Relation zwischen dem BMI und dem tatsächlichen Körperfettanteil variiert je nach genetischer Abstammung. Epidemiologische Untersuchungen des WHO-Regionalbüros für den westlichen Pazifik (WPRO) und des Indian Council of Medical Research (ICMR) belegen, dass Personen asiatischer Herkunft bei vergleichsweise niedrigem BMI einen signifikant höheren Anteil an viszeralem Bauchfett und ein früheres Risiko für Stoffwechselstörungen aufweisen (sogenannter <em>Thin-Fat-Phänotyp</em>).</p>
+      <p>Aus diesem Grund gelten für asiatische Populationen spezifische <strong>vorgezogene Handlungsschwellenwerte</strong>:</p>
+      <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
+        <li><strong>Gesunder Normalbereich für Asiaten:</strong> 18,5 bis 22,9 kg/m²</li>
+        <li><strong>Übergewichts-Aktionspunkt:</strong> 23,0 bis 24,9 kg/m²</li>
+        <li><strong>Adipositas-Aktionspunkt:</strong> 25,0 kg/m² und darüber</li>
+      </ul>
+      <p>Diese herabgesetzten Schwellenwerte ermöglichen eine frühzeitige Erkennung von kardiometabolischen Risikofaktoren wie gestörter Glukosetoleranz und Dyslipidämie, sodass präventive Lebensstilinterventionen rechtzeitig greifen können.</p>
 
-      <h2>공식 계산 공식</h2>
-      <ul>
-        <li><strong>미터법 표준 공식:</strong> <code>BMI = 체중(kg) / [신장(m)]²</code></li>
-        <li><strong>야드파운드법 공식:</strong> <code>BMI = [체중(lbs) &times; 703] / [신장(인치)]²</code></li>
+      <h2>Physiologische Grenzen: Was der BMI nicht erfassen kann</h2>
+      <p>Der BMI ist ein pragmatisches Instrument zur schnellen Orientierung, liefert jedoch kein vollständiges Abbild der individuellen Körperzusammensetzung. Drei wesentliche physiologische Begrenzungen sind zu beachten:</p>
+      <ul class="my-3 space-y-2 list-disc pl-5 text-sm">
+        <li><strong>Muskelmasse vs. Fettgewebe:</strong> Der BMI bewertet jedes Kilogramm rechnerisch gleich. Kraftsportler oder Bodybuilder mit starker Muskelhypertrophie weisen häufig einen BMI von über 27 bis 29 kg/m² auf und gelten formell als übergewichtig, obwohl ihr Körperfettanteil extrem niedrig und ihr Stoffwechsel optimal ist.</li>
+        <li><strong>Anatomische Fettverteilung:</strong> Tiefes viszerales Bauchfett um die inneren Organe schüttet entzündungsfördernde Botenstoffe aus und birgt ein weit höheres Gefäßrisiko als peripheres Unterhautfett an Hüften und Oberschenkeln. Der BMI kann den anatomischen Speicherort des Fettes nicht unterscheiden.</li>
+        <li><strong>Alterungsprozess, Sarkopenie und Größenverlust:</strong> Mit zunehmendem Alter schrumpfen Menschen durch die natürliche Kompression der Bandscheiben um mehrere Zentimeter, was den berechneten BMI rein rechnerisch erhöht. Gleichzeitig kann altersbedingter Muskelschwund (Sarkopenie) einen Anstieg des relativen Fettanteils bei konstantem Gesamtgewicht verschleiern.</li>
       </ul>
 
-      <h2>세계보건기구(WHO) 성인 표준 체중 분류 기준표</h2>
+      <h2>Ergänzende Messwerte zur Kombination mit dem BMI</h2>
+      <p>Für eine fundierte und ganzheitliche Beurteilung des Gesundheitsstatus empfehlen Gesundheitsexperten, den BMI mit folgenden Kennzahlen zu kombinieren:</p>
+      <ol class="space-y-2 my-4 list-decimal pl-5 text-sm">
+        <li><strong>Taille-zu-Größe-Verhältnis (WHtR):</strong> Der Taillenumfang sollte idealerweise weniger als die Hälfte der Körpergröße betragen (Verhältnis unter 0,50), um ein gesundes Maß an intraabdominalem Bauchfett sicherzustellen.</li>
+        <li><strong>Täglicher Energiebedarf (Grundumsatz BMR &amp; TDEE):</strong> Die Berechnung des Ruheenergiebedarfs und des Gesamtenergiebedarfs hilft, Mahlzeiten und Trainingspläne mit gesichertem Kalorienhaushalt ohne Muskelverlust zu steuern.</li>
+        <li><strong>Klinische Laborwerte:</strong> Nüchternglukose, HbA1c, Blutfettwerte (HDL, LDL, Triglyceride) sowie der Ruhedruck liefern den direkten objektiven Nachweis über die innere Gefäß- und Stoffwechselgesundheit.</li>
+      </ol>
+
+      <h2>Häufig gestellte Fragen zum Body-Mass-Index (FAQ)</h2>
+      <div class="space-y-4 my-6">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Bedeutet ein BMI von 25 immer ungesundes Übergewicht?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">In den internationalen Richtlinien für die Allgemeinbevölkerung markiert 25,0 kg/m² die Schwelle zu Übergewicht. Bei trainierten Kraftsportlern spiegelt dieser Wert jedoch meist dichte Muskelmasse wider. Im Gegensatz dazu gilt für Erwachsene südasiatischer und ostasiatischer Abstammung ein BMI von 25,0 kg/m² bereits als klinische Adipositasgrenze.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Gilt der BMI gleichermaßen für Männer und Frauen?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Die WHO-Skala ist für Erwachsene geschlechtsneutral. Frauen besitzen jedoch biologisch und hormonell bedingt bei identischem BMI etwa 8 % bis 12 % mehr essentielles Körperfett als Männer. Die zusätzliche Erfassung des Taillenumfangs hilft, eine gesunde gynoide Fettverteilung von einer risikoreichen androiden Stammfettsucht abzugrenzen.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Wie oft sollte man seinen BMI ermitteln?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Für gesunde Erwachsene reicht eine Überprüfung einmal im Monat oder quartalsweise vollkommen aus. Tägliche Gewichtsschwankungen auf der Waage sind primär auf Wasserhaushalt, Natriumaufnahme und Glykogenspeicher zurückzuführen und stellen keine echten Veränderungen der Muskel- oder Fettmasse dar.</p>
+        </div>
+      </div>
+
+      <h2>Wissenschaftliche Referenzen und Standardliteratur</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>World Health Organization. <em>Physical status: The use and interpretation of anthropometry.</em> WHO Technical Report Series 854. Genf: WHO, 1995.</li>
+        <li>Keys A, Fidanza F, Karvonen MJ, Kimura N, Taylor HL. <em>Indices of relative weight and obesity.</em> Journal of Chronic Diseases, 1972; 25(6-7):329-343.</li>
+        <li>WHO Expert Consultation. <em>Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.</em> The Lancet, 2004; 363(9403):157-163.</li>
+        <li>National Institutes of Health. <em>Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults.</em> Obes Res 1998; 6(Suppl 2):51S-209S.</li>
+      </ul>
+    `,
+    ko: `
+      <h2>체질량지수(BMI)의 정의와 역사적 배경</h2>
+      <p><strong>체질량지수(Body Mass Index, BMI)</strong>는 성인의 신장과 체중의 비율을 수학적으로 표준화하여 전반적인 체중 상태를 신속하고 객관적으로 평가하는 대표적인 1차 건강 선별 지표입니다. 개인의 체중이 키 대비 통계적으로 안전하고 건강한 범위에 속하는지, 또는 저체중, 과체중, 비만 영역에 해당하는지 선별하는 데 활용됩니다.</p>
+      <p>이 산출 공식은 1830년대 벨기에의 천문학자이자 통계학자인 <strong>아돌프 케틀레(Lambert Adolphe Jacques Quetelet)</strong>가 인간의 신체 질량이 대략 키의 제곱에 비례한다는 사실을 발견하면서 개발되었으며, 초기에는 <em>케틀레 지수(Quetelet Index)</em>로 불렸습니다. 이후 1972년 미국 생리학자 안셀 키스(Ancel Keys) 박사가 5개국 7,424명의 성인 남성을 대상으로 진행한 대규모 임상 연구를 통해 체중/신장² 비율이 실제 체지방량과 가장 높은 상관관계를 보인다는 점을 입증하였습니다. 현재 <strong>세계보건기구(WHO)</strong>와 <strong>미국 질병통제예방센터(CDC)</strong>는 전 세계 성인 비만도 선별의 기본 표준으로 BMI를 공인하여 활용하고 있습니다.</p>
+
+      <div class="my-5 p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+        <p class="font-bold text-[var(--accent)] text-xs uppercase tracking-wider">핵심 요약 포인트:</p>
+        <ul class="text-sm space-y-1.5 text-[var(--foreground)] list-disc pl-5">
+          <li><strong>주요 목적:</strong> 비침습적이고 안전하며 신속하게 대규모 성인 인구의 체중 범주를 1차 선별.</li>
+          <li><strong>표준 정상 범위:</strong> WHO 기준 대다수 성인에서 18.5 ~ 24.9 kg/m².</li>
+          <li><strong>핵심 장점:</strong> 복잡한 검사 장비 없이 즉시 계산 가능한 전 세계 표준화 산출법.</li>
+          <li><strong>근본적 한계:</strong> 체지방률을 직접 측정하지 못하며, 골격근량과 체지방을 구분하지 못함.</li>
+        </ul>
+      </div>
+
+      <h2>공식 산출 공식: 미터법 및 야드파운드법</h2>
+      <p>체질량지수는 체중을 신장의 제곱으로 나누어 계산하며, 국제 표준 단위는 <strong>kg/m²</strong>입니다:</p>
+      <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
+        <li><strong>미터법 공식 (국제 표준 SI 단위):</strong> <code>BMI = 체중(kg) / [신장(m)]²</code></li>
+        <li><strong>야드파운드법 공식 (미국 단위계):</strong> <code>BMI = [체중(lbs) &times; 703] / [신장(인치)]²</code></li>
+      </ul>
+      <p>여기서 <strong>703</strong>은 파운드(lbs)를 킬로그램(kg)으로, 인치(inches)를 미터(m)로 변환하는 정확한 수학적 변환 계수(1 lb &asymp; 0.453592 kg, 1 in = 0.0254 m; 0.453592 / 0.0254² &asymp; 703.07)입니다.</p>
+
+      <div class="my-6 p-6 rounded-xl border border-[var(--border)] bg-[var(--card)] font-mono text-sm leading-relaxed space-y-2">
+        <p class="font-bold text-[var(--accent)]">단계별 상세 계산 실례 (Step-by-Step):</p>
+        <p class="text-[var(--foreground)]"><strong>미터법 실례:</strong> 신장 168cm(1.68m), 체중 68.0kg인 성인 여성의 경우:</p>
+        <p class="text-[var(--muted-foreground)]">&bull; 1단계: 신장의 제곱 계산: 1.68 &times; 1.68 = 2.8224 m²</p>
+        <p class="text-[var(--muted-foreground)]">&bull; 2단계: 체중을 신장 제곱으로 나누기: 68.0 / 2.8224 = <strong>24.09 kg/m²</strong> (정상 건강 체중)</p>
+        <p class="text-[var(--foreground)] mt-2"><strong>야드파운드법 실례:</strong> 신장 5피트 11인치(71인치), 체중 185.0파운드인 성인 남성의 경우:</p>
+        <p class="text-[var(--muted-foreground)]">&bull; 1단계: 인치 단위 신장의 제곱 계산: 71 &times; 71 = 5,041 in²</p>
+        <p class="text-[var(--muted-foreground)]">&bull; 2단계: 체중에 변환 상수 703 곱하기: 185.0 &times; 703 = 130,055</p>
+        <p class="text-[var(--muted-foreground)]">&bull; 3단계: 신장 제곱으로 나누기: 130,055 / 5,041 = <strong>25.80 kg/m²</strong> (과체중 / 비만 전단계)</p>
+      </div>
+
+      <h2>세계보건기구(WHO) 성인 비만도 표준 분류 매트릭스</h2>
+      <p>세계보건기구는 성인의 BMI 점수를 8가지 표준 범주로 세분화하여 영양 상태와 심혈관 및 대사 질환 위험도를 평가합니다:</p>
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-sm">
           <thead>
             <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
-              <th class="p-3">분류 명칭</th>
-              <th class="p-3 font-mono text-[var(--accent)]">BMI 범위(kg/m²)</th>
-              <th class="p-3">의학적 특징 및 대사 위험도</th>
+              <th class="p-3">WHO 분류 기준</th>
+              <th class="p-3 font-mono text-[var(--accent)]">BMI 범위 (kg/m²)</th>
+              <th class="p-3">영양 및 생리 상태</th>
+              <th class="p-3">심혈관 및 대사 질환 위험도</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]">
-            <tr><td class="p-3 font-semibold">고도 저체중</td><td class="p-3 font-mono">&lt; 16.0</td><td class="p-3">급성 영양 결핍, 면역 저하 및 부정맥 위험</td></tr>
-            <tr><td class="p-3 font-semibold">중등도 저체중</td><td class="p-3 font-mono">16.0 – 16.9</td><td class="p-3">만성 영양 부족, 골밀도 감소 및 피로</td></tr>
-            <tr><td class="p-3 font-semibold">경도 저체중</td><td class="p-3 font-mono">17.0 – 18.4</td><td class="p-3">기초 대사 예비력 부족, 마른 체형</td></tr>
-            <tr><td class="p-3 font-semibold text-[var(--accent)]">정상 건강 체중</td><td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 24.9</td><td class="p-3">통계학적으로 가장 낮은 심혈관 및 전체 사망률</td></tr>
-            <tr><td class="p-3 font-semibold">과체중 (비만 전단계)</td><td class="p-3 font-mono">25.0 – 29.9</td><td class="p-3">고혈압, 이상지질혈증 발생 위험 완만 상승</td></tr>
-            <tr><td class="p-3 font-semibold">1단계 비만</td><td class="p-3 font-mono">30.0 – 34.9</td><td class="p-3">내장지방 누적, 제2형 당뇨병 유병률 대폭 증가</td></tr>
-            <tr><td class="p-3 font-semibold">2단계 비만</td><td class="p-3 font-mono">35.0 – 39.9</td><td class="p-3">중증 복부 비만, 폐쇄성 수면무호흡증 위험</td></tr>
-            <tr><td class="p-3 font-semibold">3단계 비만 (고도 비만)</td><td class="p-3 font-mono">&ge; 40.0</td><td class="p-3">임상적 다학제 치료가 필수적인 고위험 상태</td></tr>
+            <tr><td class="p-3 font-semibold">고도 저체중 (중증)</td><td class="p-3 font-mono">&lt; 16.0</td><td class="p-3">급성 영양 결핍, 근감소, 만성 쇠약</td><td class="p-3">면역 기능 저하, 전해질 불균형 및 감염 위험 급증</td></tr>
+            <tr><td class="p-3 font-semibold">중등도 저체중</td><td class="p-3 font-mono">16.0 – 16.9</td><td class="p-3">기초 대사 예비력 부족, 체지방 결핍</td><td class="p-3">골밀도 감소(골다공증), 만성 피로 및 저체온증 위험</td></tr>
+            <tr><td class="p-3 font-semibold">경도 저체중</td><td class="p-3 font-mono">17.0 – 18.4</td><td class="p-3">자연적 마른 체형 또는 가벼운 영양 부족</td><td class="p-3">기준선 대비 경미한 대사 위험</td></tr>
+            <tr><td class="p-3 font-semibold text-[var(--accent)]">정상 건강 체중</td><td class="p-3 font-mono font-bold text-[var(--accent)]">18.5 – 24.9</td><td class="p-3">균형 잡힌 신체 구성 상태</td><td class="p-3">통계학적으로 가장 낮은 전인적 사망 위험률</td></tr>
+            <tr><td class="p-3 font-semibold">과체중 (비만 전단계)</td><td class="p-3 font-mono">25.0 – 29.9</td><td class="p-3">체지방 축적 또는 골격근량 증가</td><td class="p-3">혈압, 중성지방, 인슐린 저항성 완만 상승</td></tr>
+            <tr><td class="p-3 font-semibold">1단계 비만 (경도)</td><td class="p-3 font-mono">30.0 – 34.9</td><td class="p-3">유의미한 지방 축적 진행</td><td class="p-3">제2형 당뇨병, 고지혈증, 관상동맥 질환 위험 대폭 증가</td></tr>
+            <tr><td class="p-3 font-semibold">2단계 비만 (중등도)</td><td class="p-3 font-mono">35.0 – 39.9</td><td class="p-3">고도 복부 지방 및 내장 비만</td><td class="p-3">수면무호흡증, 무릎 관절염, 심혈관 합병증 위험 심화</td></tr>
+            <tr><td class="p-3 font-semibold">3단계 비만 (고도 비만)</td><td class="p-3 font-mono">&ge; 40.0</td><td class="p-3">중대한 대사계 및 전신 합병증</td><td class="p-3">생명 위협 수준의 심혈관 위험; 전문 의료진 치료 필수</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>아시아인 맞춤형 기준점</h2>
-      <p>한국을 포함한 동아시아 성인은 동일한 체중에서도 내장지방 축적이 빠르기 때문에 과체중 기준이 23.0 kg/m², 비만 기준이 25.0 kg/m²로 하향 조정 적용됩니다.</p>
+      <h2>동아시아 및 한국인 맞춤형 비만 기준점 (Asian Action Triggers)</h2>
+      <p>유전적 특성과 신체 구조 차이로 인해 인종별 체성분 구성은 상이합니다. 세계보건기구 서태평양지역(WHO WPRO)과 대한비만학회(KSSO)의 역학 연구에 따르면, 한국인을 포함한 아시아계 성인은 서양인에 비해 상대적으로 낮은 BMI에서도 복부 내장지방 축적이 활발하고 인슐린 저항성이 빠르게 나타나는 <strong>'마른 비만(Thin-Fat Phenotype)'</strong> 경향을 보입니다.</p>
+      <p>이에 따라 공인된 <strong>아시아인 맞춤형 비만 기준 분별점</strong>이 적용됩니다:</p>
+      <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
+        <li><strong>정상 건강 체중:</strong> 18.5 ~ 22.9 kg/m²</li>
+        <li><strong>비만 전단계 (과체중):</strong> 23.0 ~ 24.9 kg/m²</li>
+        <li><strong>1단계 비만:</strong> 25.0 ~ 29.9 kg/m²</li>
+        <li><strong>2단계 비만:</strong> 30.0 ~ 34.9 kg/m²</li>
+        <li><strong>3단계 비만 (고도비만):</strong> 35.0 kg/m² 이상</li>
+      </ul>
+      <p>이처럼 하향 조정된 기준점을 적용함으로써 심혈관 질환 및 제2형 당뇨병의 위험을 조기에 발견하고 식단과 운동을 통한 선제적 관리가 가능해집니다.</p>
+
+      <h2>생리학적 한계점: BMI가 판별하지 못하는 요소</h2>
+      <p>BMI는 신속한 1차 선별 검사로서 탁월하지만, 개인의 정밀한 신체 구성을 완벽히 반영하지 못하므로 다음과 같은 세 가지 주요 한계점을 반드시 고려해야 합니다:</p>
+      <ul class="my-3 space-y-2 list-disc pl-5 text-sm">
+        <li><strong>근육량 대 체지방량 미구분:</strong> BMI는 체중 1kg을 성분에 관계없이 동일하게 취급합니다. 웨이트 트레이닝을 꾸준히 하는 보디빌더나 운동선수는 골격근량이 많아 체지방률이 10% 미만임에도 BMI가 26~29 kg/m²로 나타나 '과체중'으로 오분류될 수 있습니다.</li>
+        <li><strong>체지방 분포 부위 확인 불가:</strong> 복부 장기 주변에 쌓이는 내장지방은 염증성 사이토카인을 분비하여 혈관 및 심장에 치명적인 반면, 둔부나 허벅지의 피하지방은 상대적으로 안전합니다. BMI는 지방이 신체 어느 부위에 분포하는지 판별하지 못합니다.</li>
+        <li><strong>연령별 신장 감소 및 근감소증:</strong> 노화가 진행되면 척추 디스크의 퇴행성 수축으로 키가 줄어들어 체지방 증가 없이도 BMI 수치가 수학적으로 상승합니다. 또한 노인성 근감소증(Sarcopenia)으로 인해 체중은 그대로여도 근육이 줄고 지방 비율이 급증하는 현상을 BMI 단독으로는 발견하기 어렵습니다.</li>
+      </ul>
+
+      <h2>BMI와 함께 병행해야 할 보완적 신체 지표</h2>
+      <p>신체 건강 상태를 종합적으로 평가하기 위해 임상 전문가들은 BMI 계산과 함께 다음의 지표를 병행 측정할 것을 강력히 권장합니다:</p>
+      <ol class="space-y-2 my-4 list-decimal pl-5 text-sm">
+        <li><strong>허리둘레-신장 비율 (WHtR):</strong> 허리둘레가 자신의 키의 절반(비율 0.50 미만)을 넘지 않도록 유지하는 것이 이상적이며, 복부 비만 선별에 있어 BMI보다 우수한 정확도를 제공합니다.</li>
+        <li><strong>일일 에너지 소비량 (BMR 및 TDEE):</strong> 기초대사량(BMR)과 일일 총 에너지 소비량(TDEE)을 산출하여 과도한 절식 없이 안전하고 지속 가능한 맞춤형 칼로리 계획을 수립합니다.</li>
+        <li><strong>정기 혈액 검사 및 생체 징후:</strong> 공복 혈당, 당화혈색소(HbA1c), 지질 프로필(HDL, LDL, 중성지방) 및 안정 시 혈압 측정을 통해 내부 장기의 실제 대사 건강 상태를 직접 확인합니다.</li>
+      </ol>
+
+      <h2>체질량지수(BMI) 관련 자주 묻는 질문 (FAQ)</h2>
+      <div class="space-y-4 my-6">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">BMI 25는 무조건 비만이나 과체중인가요?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">일반 성인 국제 기준에서 25.0 kg/m²는 과체중의 시작점입니다. 그러나 근육량이 풍부한 스포츠 선수에게 이 수치는 고밀도 근육을 반영할 가능성이 높습니다. 반면 한국인을 포함한 아시아계 성인에게는 25.0 kg/m²가 임상 비만의 공식 진입 기준점에 해당합니다.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">남성과 여성에게 동일한 BMI 기준이 적용되나요?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">WHO의 BMI 수치 기준 자체는 남녀 공통(Unisex)입니다. 그러나 여성은 생리학적 및 호르몬 특성상 동일한 BMI에서 남성보다 필수 체지방률이 약 8%~12% 더 높습니다. 따라서 허리둘레 측정을 반드시 병행하여 건강한 지방 분포인지 확인하는 것이 필수적입니다.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground)]">BMI는 얼마나 자주 측정하는 것이 적절한가요?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">일반적인 건강 관리 목적이라면 1개월에 1회 또는 분기별(3개월) 1회 측정이 가장 적절합니다. 매일 체중계에 오를 때 나타나는 일일 체중 변화는 체지방이나 근육의 변화가 아니라 체내 수분량, 염분 섭취, 글리코겐 저장량의 일시적 변동인 경우가 대부분입니다.</p>
+        </div>
+      </div>
+
+      <h2>공인 학술 문헌 및 연구 참고 자료</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
+        <li>World Health Organization. <em>Physical status: The use and interpretation of anthropometry.</em> WHO Technical Report Series 854. Geneva: WHO, 1995.</li>
+        <li>Keys A, Fidanza F, Karvonen MJ, Kimura N, Taylor HL. <em>Indices of relative weight and obesity.</em> Journal of Chronic Diseases, 1972; 25(6-7):329-343.</li>
+        <li>WHO Expert Consultation. <em>Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies.</em> The Lancet, 2004; 363(9403):157-163.</li>
+        <li>National Institutes of Health. <em>Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults.</em> Obes Res 1998; 6(Suppl 2):51S-209S.</li>
+      </ul>
     `,
     hi: `
       <h2>बॉडी मास इंडेक्स (बीएमआई) क्या है?</h2>
