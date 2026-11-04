@@ -459,6 +459,42 @@ if (fs.existsSync(path.resolve('dist'))) {
     assert.ok(embedHtml.includes('Powered by'), 'Embed page must contain attribution backlink');
   });
 
+  // 11.8 Error Pages dist/ HTML: Completely AdSense-free and CMP-free (AdSense Policy Compliant)
+  runTest('dist/404.html & dist/500.html: 100% AdSense-free and CMP-free (AdSense Policy Compliant)', () => {
+    ['dist/404.html', 'dist/500.html'].forEach(filePath => {
+      const fullPath = path.resolve(filePath);
+      assert.ok(fs.existsSync(fullPath), `Error page file must exist: ${fullPath}`);
+      const html = fs.readFileSync(fullPath, 'utf8');
+
+      // Must NOT contain AdSense auto-ads or account tag
+      assert.strictEqual(html.includes('adsbygoogle.js'), false, `${filePath} must NOT load adsbygoogle.js`);
+      assert.strictEqual(html.includes('google-adsense-account'), false, `${filePath} must NOT have google-adsense-account tag`);
+
+      // Must NOT contain Funding Choices CMP script
+      assert.strictEqual(html.includes('fundingchoicesmessages.google.com/i/pub'), false, `${filePath} must NOT load Funding Choices CMP script`);
+    });
+  });
+
+  // 11.9 Blog Directory dist/ HTML: Empty-state message not rendered in SSR (AdSense Under-Construction & Low-Value Policy Compliant)
+  runTest('dist/en/blog/index.html: #noResultsMsg container is empty in SSR and carries dynamic data attributes', () => {
+    const blogHtmlPath = path.resolve('dist/en/blog/index.html');
+    assert.ok(fs.existsSync(blogHtmlPath), `Blog directory must exist: ${blogHtmlPath}`);
+    const blogHtml = fs.readFileSync(blogHtmlPath, 'utf8');
+
+    // Container must exist and be empty of pre-rendered text in SSR
+    const match = blogHtml.match(/<div id="noResultsMsg"[^>]*>([\s\S]*?)<\/div>/i);
+    assert.ok(match, '#noResultsMsg must exist');
+    assert.strictEqual(match[1].trim(), '', '#noResultsMsg must NOT render text content in SSR');
+
+    // Must carry data attributes for dynamic client-side rendering
+    assert.ok(blogHtml.includes('data-empty-title="No health guides found"'), 'Must have data-empty-title');
+    assert.ok(blogHtml.includes('data-empty-desc="Try searching with a different term or clear the filter."'), 'Must have data-empty-desc');
+
+    // All 37 article cards must be present
+    const cardMatches = blogHtml.match(/class="[^"]*article-item[^"]*"/g) || [];
+    assert.strictEqual(cardMatches.length, 37, 'Must render all 37 blog article cards in SSR');
+  });
+
   // 12. METHODOLOGY & LIVE CALCULATOR SUITE ALIGNMENT AUDIT
   runTest('12.1 seoDatabase: ideal-weight-calculator.en formula is in English (no Hindi leakage)', () => {
     const seoContent = fs.readFileSync(path.resolve('src/data/seoDatabase.ts'), 'utf8');

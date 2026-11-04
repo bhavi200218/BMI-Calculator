@@ -254,14 +254,16 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
       </div>
     </div>
 
-    <!-- Empty Results Message -->
-    <div id="noResultsMsg" class="hidden text-center py-12 space-y-2" style="display: none;" hidden>
-      <p class="text-base font-display font-bold text-[var(--foreground)]">{(emptyStates[lang] || emptyStates.en).title}</p>
-      <p class="text-xs text-[var(--muted-foreground)]">{(emptyStates[lang] || emptyStates.en).desc}</p>
-      <button type="button" id="resetFilterBtn" class="mt-3 px-4 py-2 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity">
-        {(emptyStates[lang] || emptyStates.en).reset}
-      </button>
-    </div>
+    <!-- Empty Results Container (Populated dynamically via JavaScript only on zero-match search/filter) -->
+    <div 
+      id="noResultsMsg" 
+      class="hidden text-center py-12 space-y-2" 
+      style="display: none;" 
+      hidden
+      data-empty-title={(emptyStates[lang] || emptyStates.en).title}
+      data-empty-desc={(emptyStates[lang] || emptyStates.en).desc}
+      data-empty-reset={(emptyStates[lang] || emptyStates.en).reset}
+    ></div>
 
     <!-- Articles Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="articlesGrid">
@@ -306,13 +308,32 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
         const dropdown = document.getElementById('moreCategoriesDropdown');
         const cards = document.querySelectorAll('.article-item');
         const noResults = document.getElementById('noResultsMsg');
-        const resetBtn = document.getElementById('resetFilterBtn');
 
         if (!cards.length) return;
 
         let activeTopic = 'all';
         let activeCategory = 'all';
         let searchQuery = '';
+
+        function renderEmptyState() {
+          if (!noResults) return;
+          if (noResults.children.length === 0) {
+            const title = noResults.getAttribute('data-empty-title') || 'No health guides found';
+            const desc = noResults.getAttribute('data-empty-desc') || 'Try searching with a different term or clear the filter.';
+            const reset = noResults.getAttribute('data-empty-reset') || 'Reset Search & Filters';
+            noResults.innerHTML = `
+              <p class="text-base font-display font-bold text-[var(--foreground)]">${title}</p>
+              <p class="text-xs text-[var(--muted-foreground)]">${desc}</p>
+              <button type="button" id="resetFilterBtn" class="mt-3 px-4 py-2 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity cursor-pointer">
+                ${reset}
+              </button>
+            `;
+            const newResetBtn = noResults.querySelector('#resetFilterBtn');
+            if (newResetBtn) {
+              newResetBtn.addEventListener('click', handleReset);
+            }
+          }
+        }
 
         function applyFilters() {
           let visibleCount = 0;
@@ -335,6 +356,7 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
 
           if (noResults) {
             if (visibleCount === 0) {
+              renderEmptyState();
               noResults.style.display = 'block';
               noResults.removeAttribute('hidden');
               noResults.classList.remove('hidden');
@@ -344,6 +366,24 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
               noResults.classList.add('hidden');
             }
           }
+        }
+
+        function handleReset() {
+          if (searchInput) searchInput.value = '';
+          searchQuery = '';
+          activeTopic = 'all';
+          activeCategory = 'all';
+          if (dropdown) dropdown.value = 'all';
+          pills.forEach((p, idx) => {
+            if (idx === 0) {
+              p.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+              p.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+            } else {
+              p.classList.remove('bg-[var(--accent)]', 'text-white', 'shadow-xs');
+              p.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
+            }
+          });
+          applyFilters();
         }
 
         // Search Input event
@@ -388,27 +428,6 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
                 allPill.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
               }
             }
-            applyFilters();
-          });
-        }
-
-        // Reset button click
-        if (resetBtn) {
-          resetBtn.addEventListener('click', () => {
-            if (searchInput) searchInput.value = '';
-            searchQuery = '';
-            activeTopic = 'all';
-            activeCategory = 'all';
-            if (dropdown) dropdown.value = 'all';
-            pills.forEach((p, idx) => {
-              if (idx === 0) {
-                p.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
-                p.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
-              } else {
-                p.classList.remove('bg-[var(--accent)]', 'text-white', 'shadow-xs');
-                p.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
-              }
-            });
             applyFilters();
           });
         }
