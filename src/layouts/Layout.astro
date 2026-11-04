@@ -12,6 +12,7 @@ interface Props {
 	canonicalURL?: string;
 	robots?: string;
 	isEmbed?: boolean;
+	isErrorPage?: boolean;
 }
 
 const { 
@@ -21,7 +22,8 @@ const {
 	ogImage = "/seo-dark.png",
 	canonicalURL: customCanonicalURL,
 	robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-	isEmbed: propIsEmbed = false
+	isEmbed: propIsEmbed = false,
+	isErrorPage: propIsErrorPage = false
 } = Astro.props;
 
 const { currentLocale } = Astro;
@@ -246,6 +248,7 @@ if (!normalizedPath.endsWith('/')) {
   normalizedPath += '/';
 }
 const isEmbed = propIsEmbed || normalizedPath.startsWith('/embed/');
+const isErrorPage = propIsErrorPage || normalizedPath === '/404/' || normalizedPath === '/500/' || Astro.url.pathname.includes('/404') || Astro.url.pathname.includes('/500');
 
 const pagePath = Astro.url.pathname.split('/').filter(Boolean);
 const breadcrumbItems: any[] = [];
@@ -510,7 +513,7 @@ const howToSchema = {
 		)}
 
 		<!-- Google AdSense Account Verification & Auto-Ads Script (Excluded on Embed & Utility Widgets for AdSense Policy Compliance) -->
-		{!isEmbed && (
+		{!isEmbed && !isErrorPage && (
 			<>
 				<meta name="google-adsense-account" content="ca-pub-6643535431949281" />
 				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643535431949281" crossorigin="anonymous" referrerpolicy="strict-origin-when-cross-origin"></script>
@@ -518,7 +521,7 @@ const howToSchema = {
 		)}
 
 		<!-- Google Funding Choices Official Certified CMP Tag (GDPR & AdSense Compliance, Excluded on Embed Widgets) -->
-		{!isEmbed && (
+		{!isEmbed && !isErrorPage && (
 			<>
 				<script async src="https://fundingchoicesmessages.google.com/i/pub-6643535431949281?ers=1" crossorigin="anonymous" referrerpolicy="strict-origin-when-cross-origin"></script>
 				<script is:inline>
