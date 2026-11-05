@@ -554,12 +554,12 @@ export const calculators: CalculatorConfig[] = [
       hi: 'टाइप 2 डायबिटीज रिस्क कैलकुलेटर - 4-कारक जीवनशैली स्क्रीनिंग' 
     },
     description: {
-      "en": "Free Type 2 Diabetes Risk Calculator. Get an abbreviated lifestyle screening estimate based on 4 primary indicators (Age, BMI, Waist, Physical Activity) adapted from FINDRISC guidelines.",
-      "es": "Calculadora gratuita de riesgo de diabetes tipo 2. Obtén una estimación abreviada de cribado según 4 indicadores (edad, IMC, cintura y actividad física) adaptados de FINDRISC.",
-      "fr": "Calculateur gratuit de risque de diabète de type 2. Obtenez une estimation de dépistage abrégée basée sur 4 indicateurs (âge, IMC, tour de taille et activité physique) adaptés de FINDRISC.",
-      "de": "Kostenloser Typ-2-Diabetes-Risikorechner. Erhalten Sie ein verkürztes Lebensstil-Screening basierend auf 4 Indikatoren (Alter, BMI, Taille und Bewegung) angelehnt an FINDRISC.",
-      "ko": "무료 제2형 당뇨병 위험도 계산기. FINDRISC 지침을 기반으로 한 4가지 핵심 지표(연령, BMI, 허리둘레, 신체활동) 중심의 간이 생활습관 선별 평가 도구입니다.",
-      "hi": "मुफ़्त टाइप 2 मधुमेह जोखिम कैलकुलेटर। FINDRISC दिशानिर्देशों पर आधारित 4 प्रमुख संकेतकों (आयु, बीएमआई, कमर और गतिविधि) के अनुसार संक्षिप्त जीवनशैली स्क्रीनिंग अनुमान प्राप्त करें।"
+      "en": "Free Type 2 Diabetes Risk Calculator. Provides a simplified, unvalidated 4-factor educational score evaluating selected lifestyle factors also considered in FINDRISC (Age, BMI, Waist, Physical Activity), without predicting clinical risk or diagnosis.",
+      "es": "Calculadora gratuita de riesgo de diabetes tipo 2. Proporciona una puntuación educativa simplificada y no validada de 4 factores que evalúa factores seleccionados considerados también en FINDRISC (edad, IMC, cintura, actividad física), sin predecir riesgo clínico ni diagnóstico.",
+      "fr": "Calculateur gratuit de risque de diabète de type 2. Fournit un score éducatif simplifié et non validé à 4 facteurs évaluant des facteurs sélectionnés également considérés dans le FINDRISC (âge, IMC, tour de taille, activité physique), sans prédiction de risque clinique ni diagnostic.",
+      "de": "Kostenloser Typ-2-Diabetes-Risikorechner. Bietet eine vereinfachte, nicht validierte pädagogische 4-Faktoren-Punktzahl, die ausgewählte, auch im FINDRISC berücksichtigte Faktoren bewertet (Alter, BMI, Taille, Bewegung), ohne klinische Risikovorhersage oder Diagnose.",
+      "ko": "무료 제2형 당뇨병 위험도 계산기. FINDRISC에서도 다루는 주요 생활습관 요인(연령, BMI, 허리둘레, 신체활동)을 선별 반영한 단순화된 검증되지 않은 4요소 교육용 점수이며, 임상 위험도를 예측하거나 진단하지 않습니다.",
+      "hi": "मुफ़्त टाइप 2 मधुमेह जोखिम कैलकुलेटर। FINDRISC में भी विचार किए गए चुनिंदा जीवनशैली कारकों (आयु, बीएमआई, कमर, शारीरिक गतिविधि) पर आधारित एक सरलीकृत, गैर-सत्यापित 4-कारक शैक्षिक स्कोर प्रदान करता है, जो किसी नैदानिक जोखिम या निदान की भविष्यवाणी नहीं करता।"
     },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number' },
@@ -584,7 +584,7 @@ export const calculators: CalculatorConfig[] = [
       const age = parseInt(inputs.age) || 35;
       const isSedentary = inputs.activity === 'sedentary';
 
-      // Abbreviated 4-Factor Point Scoring (Adapted from FINDRISC non-invasive criteria)
+      // Simplified 4-Factor Educational Scoring (Uses selected lifestyle factors also considered in FINDRISC)
       let points = 0;
 
       // 1. Age Points
@@ -623,7 +623,7 @@ export const calculators: CalculatorConfig[] = [
         es: 'Puntuación educativa no validada; no predice la probabilidad ni el riesgo de diabetes a 10 años. Se requieren análisis de laboratorio (como HbA1c o glucosa en ayunas) supervisados por un médico para evaluar el estado glucémico.',
         fr: 'Score éducatif non validé ; ne prédit pas la probabilité ni le risque de diabète à 10 ans. Des examens sanguins de laboratoire (tels que l\'HbA1c ou la glycémie à jeun) prescrits par un médecin sont nécessaires pour évaluer l\'état de santé.',
         de: 'Nicht validierter pädagogischer Wert; prognostiziert kein tatsächliches Diabetesrisiko oder 10-Jahres-Risiko. Zur verlässlichen Beurteilung sind ärztliche Labortests (wie HbA1c oder Nüchternblutzucker) erforderlich.',
-        ko: '비공인 교육용 점수이며 실제 당뇨 발병 확률이나 10년 위험도를 예측하지 않습니다. 정확한 의학적 진단을 위해서는 전문 의료진의 혈액 검사(당화혈색소 HbA1c 또는 공복 혈당)가 필수적입니다.',
+        ko: '검증되지 않은 교육용 점수이며 실제 당뇨 발병 확률이나 10년 위험도를 예측하지 않습니다. 정확한 의학적 진단을 위해서는 전문 의료진의 혈액 검사(당화혈색소 HbA1c 또는 공복 혈당)가 필수적입니다.',
         hi: 'गैर-सत्यापित शैक्षिक स्कोर; यह मधुमेह की वास्तविक संभावना या 10-वर्षीय जोखिम का अनुमान नहीं लगाता है। स्थिति के औपचारिक मूल्यांकन हेतु डॉक्टर द्वारा रक्त परीक्षण (जैसे HbA1c या फास्टिंग ग्लूकोज) अनिवार्य है।'
       };
 
@@ -647,12 +647,12 @@ export const calculators: CalculatorConfig[] = [
         primary: {
           value: rawScoreValue,
           label: {
-            en: 'Raw Screening Score',
-            es: 'Puntuación Bruta de Cribado',
-            fr: 'Score Brut de Dépistage',
-            de: 'Unberechneter Screening-Wert',
-            ko: '간이 선별 원점수',
-            hi: 'मूल स्क्रीनिंग स्कोर'
+            en: 'Raw Educational Score',
+            es: 'Puntuación Educativa Bruta',
+            fr: 'Score Éducatif Brut',
+            de: 'Pädagogischer Rohwert',
+            ko: '교육용 원점수',
+            hi: 'शैक्षिक मूल स्कोर'
           }
         },
         secondary: [
@@ -670,7 +670,7 @@ export const calculators: CalculatorConfig[] = [
               es: 'Índice de Estilo de Vida de 4 Factores (No Validado)',
               fr: 'Indice de Mode de Vie à 4 Facteurs (Non Validé)',
               de: '4-Faktoren-Lebensstil-Index (Nicht validiert)',
-              ko: '4요소 생활습관 지표 (비공인 도구)',
+              ko: '4요소 생활습관 지표 (검증되지 않은 교육용 도구)',
               hi: '4-कारक जीवनशैली सूचकांक (गैर-सत्यापित)'
             }
           },

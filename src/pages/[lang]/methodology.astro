@@ -606,12 +606,12 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "교육용 4요소 생활습관 지표: 연령(0~4점) + BMI(0~3점) + 허리둘레(0~4점) + 신체활동(0~2점) [원점수 범위: 0~13점]"
     },
     "source": {
-      "en": "Items adapted from Finnish Diabetes Risk Score (FINDRISC) criteria (Lindström J, Tuomilehto J. Diabetes Care. 2003;26:725-731); Unvalidated educational screener displaying raw score only",
-      "hi": "FINDRISC मानदंडों से अनुकूलित प्रश्न (Lindström J, Tuomilehto J. 2003); गैर-सत्यापित शैक्षिक टूल जो केवल मूल स्कोर प्रदर्शित करता है",
-      "es": "Variables adaptadas de criterios FINDRISC (Lindström J, Tuomilehto J. 2003); Herramienta educativa no validada que muestra solo la puntuación bruta",
-      "fr": "Variables adaptées des critères FINDRISC (Lindström J, Tuomilehto J. 2003) ; Outil éducatif non validé affichant uniquement le score brut",
-      "de": "Kriterien adaptiert nach FINDRISC (Lindström J, Tuomilehto J. 2003); Nicht validiertes pädagogisches Instrument mit reiner Rohwert-Ausgabe",
-      "ko": "핀란드 당뇨 위험 점수(FINDRISC) 기준 일부 항목 각색 (Lindström & Tuomilehto 2003); 임상 위험 등급 없이 원점수만 표시하는 비공인 교육용 도구"
+      "en": "Uses selected factors also considered in the Finnish Diabetes Risk Score (FINDRISC; Lindström J, Tuomilehto J. Diabetes Care. 2003;26:725-731), but is a simplified, unvalidated 4-factor educational score displaying raw score only without clinical thresholds",
+      "hi": "फिनिश डायबिटीज रिस्क स्कोर (FINDRISC; Lindström J, Tuomilehto J. 2003) में विचार किए गए चुनिंदा कारकों का उपयोग करता है, किंतु यह बिना किसी नैदानिक सीमा के केवल मूल स्कोर प्रदर्शित करने वाला एक सरलीकृत, गैर-सत्यापित 4-कारक शैक्षिक स्कोर है",
+      "es": "Utiliza factores seleccionados considerados también en el Finnish Diabetes Risk Score (FINDRISC; Lindström J, Tuomilehto J. 2003), pero es una puntuación educativa simplificada y no validada de 4 factores que muestra solo la puntuación bruta sin umbrales clínicos",
+      "fr": "Utilise des facteurs sélectionnés également pris en compte dans le Finnish Diabetes Risk Score (FINDRISC ; Lindström J, Tuomilehto J. 2003), mais constitue un score éducatif simplifié et non validé à 4 facteurs affichant uniquement le score brut sans seuils cliniques",
+      "de": "Verwendet ausgewählte, auch im Finnish Diabetes Risk Score (FINDRISC; Lindström J, Tuomilehto J. 2003) berücksichtigte Faktoren, ist jedoch eine vereinfachte, nicht validierte pädagogische 4-Faktoren-Punktzahl mit reiner Rohwert-Ausgabe ohne klinische Schwellenwerte",
+      "ko": "핀란드 당뇨 위험 점수(FINDRISC; Lindström & Tuomilehto 2003)에서 다루는 요인 중 일부를 선별 활용하였으나, 임상 기준치 없이 원점수만 표시하는 단순화된 검증되지 않은 4요소 교육용 점수 모델입니다"
     },
     "inputs": {
       "en": "Biological Sex (Male/Female), Body Weight, Height, Waist Circumference (cm or in), Age, Physical Activity (Active/Sedentary)",
@@ -622,12 +622,12 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "생물학적 성별(남성/여성), 체중, 신장, 허리둘레(cm/in), 연령, 일상 신체 활동(활동적/비활동적)"
     },
     "output": {
-      "en": "Raw Screening Score (out of 13), Assessment Type, Advisory Notice, Waist Status",
-      "hi": "मूल स्क्रीनिंग स्कोर (13 में से), मूल्यांकन प्रकार, परामर्श सूचना, कमर स्थिति",
-      "es": "Puntuación Bruta de Cribado (de 13), Tipo de Evaluación, Aviso Informativo, Estado de Cintura",
-      "fr": "Score Brut de Dépistage (sur 13), Type d'Évaluation, Avis Informatif, Statut du Tour de Taille",
-      "de": "Unberechnete Screening-Rohpunktzahl (von 13), Bewertungsart, Wichtiger Hinweis, Taillenstatus",
-      "ko": "선별 원점수(13점 만점), 평가 유형, 안내 사항, 허리둘레 상태"
+      "en": "Raw Educational Score (out of 13), Assessment Type, Advisory Notice, Waist Status",
+      "hi": "शैक्षिक मूल स्कोर (13 में से), मूल्यांकन प्रकार, परामर्श सूचना, कमर स्थिति",
+      "es": "Puntuación Educativa Bruta (de 13), Tipo de Evaluación, Aviso Informativo, Estado de Cintura",
+      "fr": "Score Éducatif Brut (sur 13), Type d'Évaluation, Avis Informatif, Statut du Tour de Taille",
+      "de": "Pädagogischer Rohwert (von 13), Bewertungsart, Wichtiger Hinweis, Taillenstatus",
+      "ko": "교육용 원점수(13점 만점), 평가 유형, 안내 사항, 허리둘레 상태"
     },
     "limitations": {
       "en": "Unvalidated educational tool displaying raw score (0–13) only without clinical risk categorization. Does not estimate actual diabetes probability or 10-year risk, and does not capture family history, hypertension, or direct glycemic biomarkers. A formal clinical evaluation requires diagnostic blood tests (HbA1c or fasting plasma glucose).",
@@ -635,7 +635,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "es": "Herramienta educativa no validada que muestra únicamente la puntuación bruta (0–13) sin categorización de riesgo clínico. No estima la probabilidad real de diabetes ni el riesgo a 10 años, y no evalúa antecedentes familiares ni análisis glucémicos. La evaluación clínica formal requiere pruebas diagnósticas de laboratorio (HbA1c o glucosa en ayunas).",
       "fr": "Outil éducatif non validé affichant uniquement le score brut (0–13) sans classification de risque clinique. Il n'estime pas la probabilité réelle de diabète ni le risque à 10 ans et n'intègre pas les antécédents familiaux ni la glycémie. Un diagnostic formel requiert des examens sanguins prescrits par un médecin (HbA1c ou glycémie à jeun).",
       "de": "Nicht validiertes Lehrmittel, das lediglich die Rohpunktzahl (0–13) ohne klinische Risikoeinstufung anzeigt. Schätzt kein tatsächliches Diabetesrisiko oder 10-Jahres-Risiko ab und erfasst weder Vorerkrankungen noch Blutwerte. Eine formelle Abklärung erfordert ärztliche Labortests (HbA1c oder Nüchternblutzucker).",
-      "ko": "임상 위험도 등급 없이 원점수(0~13점)만을 제공하는 비공인 교육용 도구입니다. 실제 당뇨 발병 확률이나 10년 위험도를 예측하지 않으며 가족력이나 혈당 바이오마커를 반영하지 않습니다. 정확한 진단은 전문의의 혈액 검사(공복혈당, 당화혈색소)를 통해 이루어져야 합니다."
+      "ko": "임상 위험도 등급 없이 원점수(0~13점)만을 제공하는 검증되지 않은 교육용 도구입니다. 실제 당뇨 발병 확률이나 10년 위험도를 예측하지 않으며 가족력이나 혈당 바이오마커를 반영하지 않습니다. 정확한 진단은 전문의의 혈액 검사(공복혈당, 당화혈색소)를 통해 이루어져야 합니다."
     }
   },
   {

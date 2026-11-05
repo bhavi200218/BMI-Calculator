@@ -1621,69 +1621,69 @@ const EXAMPLES: Record<string, ToolData> = {
     },
     steps: {
       en: [
-        "Step 1: Age Scoring (FINDRISC criteria): Age 48 sits in the 45–54 bracket = +2 points",
+        "Step 1: Age Scoring (selected lifestyle factor): Age 48 sits in the 45–54 bracket = +2 points",
         "Step 2: BMI Calculation & Scoring: 82.0 kg ÷ (1.75 m)² = 26.78 kg/m² (BMI 25–30 overweight range) = +1 point",
         "Step 3: Central Visceral Waist Scoring: Waist circumference of 96.0 cm (male 94–102 cm range) = +3 points",
         "Step 4: Physical Activity Scoring: Performing ≥30 min of daily physical exercise = +0 points (protective effect against insulin resistance)",
         "Step 5: Cumulative Screener Total: 2 + 1 + 3 + 0 = 6 Points (out of 13 screening points)",
-        "Step 6: Raw Score Output: 6 points out of 13 possible screening points on this unvalidated 4-factor lifestyle model"
+        "Step 6: Raw Educational Score: 6 points out of 13 possible points on this unvalidated 4-factor educational model"
       ],
       es: [
-        "Paso 1: Puntuación por Edad (criterios FINDRISC): 48 años (franja 45–54) = +2 puntos",
+        "Paso 1: Puntuación por Edad (factor seleccionado): 48 años (franja 45–54) = +2 puntos",
         "Paso 2: Cálculo y Puntuación de IMC: 82.0 ÷ (1.75)² = 26.78 kg/m² (rango 25–30) = +1 punto",
         "Paso 3: Puntuación por Circunferencia de Cintura: 96.0 cm (hombres 94–102 cm) = +3 puntos",
         "Paso 4: Actividad Física: ≥30 min diarios de ejercicio = 0 puntos (factor protector)",
         "Paso 5: Puntuación Total del Cribado: 2 + 1 + 3 + 0 = 6 Puntos (de 13 puntos posibles)",
-        "Paso 6: Resultado de Puntuación Bruta: 6 puntos de 13 posibles en este modelo educativo no validado"
+        "Paso 6: Puntuación Educativa Bruta: 6 puntos de 13 posibles en este modelo educativo no validado"
       ],
       fr: [
-        "Étape 1 : Cotation Âge (critères FINDRISC) : 48 ans (tranche 45–54 ans) = +2 points",
+        "Étape 1 : Cotation Âge (facteur sélectionné) : 48 ans (tranche 45–54 ans) = +2 points",
         "Étape 2 : Calcul et Cotation de l'IMC : 82,0 ÷ (1,75)² = 26,78 kg/m² (plage 25–30) = +1 point",
         "Étape 3 : Cotation du Tour de Taille : 96,0 cm (hommes 94–102 cm) = +3 points",
         "Étape 4 : Activité Physique : ≥30 min par jour = 0 point (effet protecteur métabolique)",
         "Étape 5 : Score Total du Dépistage : 2 + 1 + 3 + 0 = 6 Points (sur 13 points possibles)",
-        "Étape 6 : Sortie du Score Brut : 6 points sur 13 possibles sur ce modèle éducatif non validé"
+        "Étape 6 : Score Éducatif Brut : 6 points sur 13 possibles sur ce modèle éducatif non validé"
       ],
       de: [
-        "Schritt 1: Altersbewertung (FINDRISC-Kriterien): 48 Jahre (Gruppe 45–54 Jahre) = +2 Punkte",
+        "Schritt 1: Altersbewertung (ausgewählter Einzelfaktor): 48 Jahre (Gruppe 45–54 Jahre) = +2 Punkte",
         "Schritt 2: BMI-Berechnung & Punkte: 82,0 ÷ (1,75)² = 26,78 kg/m² (Bereich 25–30) = +1 Punkt",
         "Schritt 3: Taillenumfang-Bewertung: 96,0 cm (Männer 94–102 cm) = +3 Punkte",
         "Schritt 4: Körperliche Aktivität: ≥30 Min. täglich = 0 Punkte (metabolischer Schutzfaktor)",
         "Schritt 5: Screening-Gesamtergebnis: 2 + 1 + 3 + 0 = 6 Punkte (von 13 möglichen Punkten)",
-        "Schritt 6: Rohwert-Ergebnis: 6 Punkte von 13 möglichen Punkten in diesem nicht validierten Modell"
+        "Schritt 6: Pädagogischer Rohwert: 6 Punkte von 13 möglichen Punkten in diesem nicht validierten Modell"
       ],
       ko: [
-        "1단계: 연령 점수 부여(FINDRISC 기준): 48세(45~54세 구간) = +2점",
+        "1단계: 연령 점수 부여(선별된 생활습관 지표): 48세(45~54세 구간) = +2점",
         "2단계: BMI 산출 및 점수: 82.0 ÷ (1.75)² = 26.78 kg/m² (25~30 과체중 구간) = +1점",
         "3단계: 복부 내장지방 허리둘레 점수: 96.0 cm (남성 94~102 cm 구간) = +3점",
         "4단계: 일일 신체 활동 점수: 매일 30분 이상 운동 = +0점 (인슐린 감수성 보호 효과)",
-        "5단계: 간이 스크리닝 종합 점수 합산: 2 + 1 + 3 + 0 = 6점 (총 13점 만점)",
-        "6단계: 원점수 도출: 비공인 4요소 모델 기준 13점 만점 중 6점 도출"
+        "5단계: 간이 교육용 종합 점수 합산: 2 + 1 + 3 + 0 = 6점 (총 13점 만점)",
+        "6단계: 교육용 원점수 도출: 검증되지 않은 4요소 모델 기준 13점 만점 중 6점 도출"
       ],
       hi: [
-        "चरण 1: आयु स्कोर (FINDRISC मानदंड): 48 वर्ष (45-54 वर्ष वर्ग) = +2 अंक",
+        "चरण 1: आयु स्कोर (चुनिंदा जीवनशैली कारक): 48 वर्ष (45-54 वर्ष वर्ग) = +2 अंक",
         "चरण 2: बीएमआई गणना एवं स्कोर: 82.0 ÷ (1.75)² = 26.78 kg/m² (25-30 अधिक वजन सीमा) = +1 अंक",
         "चरण 3: पेट की चर्बी कमर स्कोर: 96.0 सेमी (पुरुष 94-102 सेमी) = +3 अंक",
         "चरण 4: शारीरिक गतिविधि स्कोर: ≥30 मिनट दैनिक व्यायाम = +0 अंक (सुरक्षात्मक प्रभाव)",
         "चरण 5: कुल स्क्रीनिंग स्कोर: 2 + 1 + 3 + 0 = 6 अंक (13 संभावित अंकों में से)",
-        "चरण 6: मूल स्कोर परिणाम: इस गैर-सत्यापित 4-कारक मॉडल पर 13 संभावित अंकों में से 6 अंक"
+        "चरण 6: शैक्षिक मूल स्कोर परिणाम: इस गैर-सत्यापित 4-कारक मॉडल पर 13 संभावित अंकों में से 6 अंक"
       ]
     },
     result: {
-      en: { label: "Raw Screening Score", value: "6 / 13 Points" },
-      es: { label: "Puntuación Bruta de Cribado", value: "6 / 13 Puntos" },
-      fr: { label: "Score Brut de Dépistage", value: "6 / 13 Points" },
-      de: { label: "Unberechneter Screening-Wert", value: "6 / 13 Punkte" },
-      ko: { label: "간이 선별 원점수", value: "6 / 13점" },
-      hi: { label: "मूल स्क्रीनिंग स्कोर", value: "6 / 13 अंक" }
+      en: { label: "Raw Educational Score", value: "6 / 13 Points" },
+      es: { label: "Puntuación Educativa Bruta", value: "6 / 13 Puntos" },
+      fr: { label: "Score Éducatif Brut", value: "6 / 13 Points" },
+      de: { label: "Pädagogischer Rohwert", value: "6 / 13 Punkte" },
+      ko: { label: "교육용 원점수", value: "6 / 13점" },
+      hi: { label: "शैक्षिक मूल स्कोर", value: "6 / 13 अंक" }
     },
     interp: {
-      en: "This example yields a raw screening score of 6 out of 13 points on our 4-factor lifestyle screener. This tool is an unvalidated educational demonstration and does not assign clinical risk categories, predict actual diabetes probability, or estimate 10-year risk. A formal clinical evaluation requires diagnostic laboratory blood testing (such as HbA1c or fasting plasma glucose) administered by a licensed healthcare provider.",
-      es: "Este ejemplo da como resultado una puntuación bruta de 6 sobre 13 puntos en nuestro cribado educativo de 4 factores. Esta herramienta es una demostración educativa no validada y no asigna categorías de riesgo clínico ni predice la probabilidad real de diabetes ni el riesgo a 10 años. La evaluación formal requiere pruebas diagnósticas de laboratorio (como HbA1c o glucosa plasmática en ayunas) prescritas por un médico.",
-      fr: "Cet exemple produit un score brut de 6 sur 13 points selon notre outil de dépistage éducatif à 4 facteurs. Cet outil est une démonstration éducative non validée qui n'attribue pas de catégorie de risque clinique et ne prédit ni la probabilité réelle de diabète ni le risque à 10 ans. Une évaluation clinique formelle nécessite des examens biologiques (tels que l'HbA1c ou la glycémie à jeun) réalisés sous contrôle médical.",
-      de: "Dieses Beispiel ergibt eine Rohpunktzahl von 6 von 13 Punkten in unserem pädagogischen 4-Faktoren-Screening. Dieses Instrument ist ein nicht validiertes Lehrmittel und ordnet weder klinische Risikokategorien zu noch prognostiziert es eine tatsächliche Erkrankungswahrscheinlichkeit oder ein 10-Jahres-Risiko. Für eine verlässliche Diagnose sind ärztliche Laboruntersuchungen (wie HbA1c oder Nüchternglukose) erforderlich.",
-      ko: "이 예시는 4요소 생활습관 간이 도구에서 13점 만점 중 원점수 6점을 나타냅니다. 본 도구는 비공인 교육용 도구이며 임상적 질환 위험 등급을 부여하거나 실제 당뇨 발병 확률 및 10년 위험도를 예측하지 않습니다. 정확한 진단을 위해서는 전문 의료진을 통한 혈액 검사(당화혈색소 HbA1c 또는 공복 혈당)가 반드시 필요합니다.",
-      hi: "यह उदाहरण हमारे 4-कारक जीवनशैली टूल पर 13 में से 6 अंकों का मूल स्क्रीनिंग स्कोर दर्शाता है। यह टूल एक गैर-सत्यापित शैक्षिक प्रदर्शन है और यह कोई नैदानिक जोखिम श्रेणी निर्धारित नहीं करता है, न ही वास्तविक मधुमेह संभावना या 10-वर्षीय जोखिम का अनुमान लगाता है। औपचारिक नैदानिक मूल्यांकन के लिए डॉक्टर द्वारा रक्त परीक्षण (जैसे HbA1c या फास्टिंग ग्लूकोज) कराना अनिवार्य है।"
+      en: "This example yields a raw educational score of 6 out of 13 points on our 4-factor lifestyle tool. This tool is an unvalidated educational demonstration and does not assign clinical risk categories, predict actual diabetes probability, or estimate 10-year risk. A formal clinical evaluation requires diagnostic laboratory blood testing (such as HbA1c or fasting plasma glucose) administered by a licensed healthcare provider.",
+      es: "Este ejemplo da como resultado una puntuación educativa bruta de 6 sobre 13 puntos en nuestra herramienta educativa de 4 factores. Esta herramienta es una demostración educativa no validada y no asigna categorías de riesgo clínico ni predice la probabilidad real de diabetes ni el riesgo a 10 años. La evaluación formal requiere pruebas diagnósticas de laboratorio (como HbA1c o glucosa plasmática en ayunas) prescritas por un médico.",
+      fr: "Cet exemple produit un score éducatif brut de 6 sur 13 points selon notre outil éducatif à 4 facteurs. Cet outil est une démonstration éducative non validée qui n'attribue pas de catégorie de risque clinique et ne prédit ni la probabilité réelle de diabète ni le risque à 10 ans. Une évaluation clinique formelle nécessite des examens biologiques (tels que l'HbA1c ou la glycémie à jeun) réalisés sous contrôle médical.",
+      de: "Dieses Beispiel ergibt einen pädagogischen Rohwert von 6 von 13 Punkten in unserem pädagogischen 4-Faktoren-Modell. Dieses Instrument ist ein nicht validiertes Lehrmittel und ordnet weder klinische Risikokategorien zu noch prognostiziert es eine tatsächliche Erkrankungswahrscheinlichkeit oder ein 10-Jahres-Risiko. Für eine verlässliche Diagnose sind ärztliche Laboruntersuchungen (wie HbA1c oder Nüchternglukose) erforderlich.",
+      ko: "이 예시는 4요소 생활습관 간이 도구에서 13점 만점 중 교육용 원점수 6점을 나타냅니다. 본 도구는 검증되지 않은 교육용 도구이며 임상적 질환 위험 등급을 부여하거나 실제 당뇨 발병 확률 및 10년 위험도를 예측하지 않습니다. 정확한 진단을 위해서는 전문 의료진을 통한 혈액 검사(당화혈색소 HbA1c 또는 공복 혈당)가 반드시 필요합니다.",
+      hi: "यह उदाहरण हमारे 4-कारक जीवनशैली टूल पर 13 में से 6 अंकों का शैक्षिक मूल स्कोर दर्शाता है। यह टूल एक गैर-सत्यापित शैक्षिक प्रदर्शन है और यह कोई नैदानिक जोखिम श्रेणी निर्धारित नहीं करता है, न ही वास्तविक मधुमेह संभावना या 10-वर्षीय जोखिम का अनुमान लगाता है। औपचारिक नैदानिक मूल्यांकन के लिए डॉक्टर द्वारा रक्त परीक्षण (जैसे HbA1c या फास्टिंग ग्लूकोज) कराना अनिवार्य है।"
     }
   },
 

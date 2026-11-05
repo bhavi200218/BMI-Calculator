@@ -569,7 +569,7 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
     };
   }
 
-  // 9. DIABETES RISK (Raw Score Educational Scale)
+  // 9. DIABETES RISK (Continuous 0–13 Raw Score Scale with Tick Marks)
   if (isDiabetes) {
     const badges: Record<Locale, string> = {
       en: 'Type 2 Diabetes Screening',
@@ -580,57 +580,53 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
       hi: 'टाइप 2 मधुमेह स्क्रीनिंग'
     };
     const titleSuffixes: Record<Locale, string> = {
-      en: 'Raw Score Continuum (0–13 Points)',
-      es: 'Continuo de Puntuación Bruta (0–13 Puntos)',
-      fr: 'Continuum du Score Brut (0–13 Points)',
-      de: 'Punkteskala (0–13 Punkte)',
-      ko: '원점수 연속 척도 (0~13점)',
-      hi: 'मूल स्कोर सातत्य (0–13 अंक)'
+      en: 'Continuous Raw-Score Scale (0–13 Points)',
+      es: 'Escala Continua de Puntuación Bruta (0–13 Puntos)',
+      fr: 'Échelle Continue du Score Brut (0–13 Points)',
+      de: 'Kontinuierliche Rohwert-Skala (0–13 Punkte)',
+      ko: '연속 원점수 척도 (0~13점)',
+      hi: 'निरंतर मूल स्कोर पैमाना (0–13 अंक)'
     };
     const descs: Record<Locale, string> = {
-      en: 'Raw score distribution (0–13 points) based on 4 lifestyle indicators; unvalidated educational score, does not predict clinical diabetes probability.',
-      es: 'Distribución de puntuación bruta (0–13 puntos) basada en 4 indicadores; herramienta educativa no validada, no predice la probabilidad clínica de diabetes.',
-      fr: 'Distribution du score brut (0–13 points) basée sur 4 indicateurs ; outil éducatif non validé, ne prédit pas le risque de diabète.',
-      de: 'Verteilung der Rohpunktzahl (0–13 Punkte) aus 4 Lebensstilindikatoren; nicht validiertes pädagogisches Instrument, prognostiziert kein klinisches Diabetesrisiko.',
-      ko: '4가지 생활습관 지표에 따른 원점수 분포(0~13점). 비공인 교육용 도구이며 실제 당뇨 발병 확률을 예측하지 않습니다.',
-      hi: '4 जीवनशैली संकेतकों पर आधारित मूल स्कोर वितरण (0–13 अंक); यह गैर-सत्यापित शैक्षिक उपकरण है और चिकित्सकीय मधुमेह जोखिम की भविष्यवाणी नहीं करता है।'
+      en: 'Continuous 0–13 raw-score scale with simple tick marks. Simplified, unvalidated 4-factor educational score; does not use risk tiers or predict clinical diabetes probability.',
+      es: 'Escala continua de puntuación bruta de 0 a 13 con marcas graduadas. Puntuación educativa simplificada y no validada de 4 factores; no utiliza niveles de riesgo ni predice la probabilidad clínica de diabetes.',
+      fr: 'Échelle continue de score brut de 0 à 13 avec repères gradués. Score éducatif simplifié et non validé à 4 facteurs ; n\'utilise aucun palier de risque et ne prédit pas le risque de diabète.',
+      de: 'Kontinuierliche 0–13-Punkte-Rohwertskala mit Skalenstrichen. Vereinfachte, nicht validierte pädagogische 4-Faktoren-Punktzahl ohne Risikostufen oder klinische Risikovorhersage.',
+      ko: '눈금이 표시된 0~13점 연속 원점수 척도. 위험 등급을 부여하거나 임상 당뇨 발병 확률을 예측하지 않는 단순화된 검증되지 않은 4요소 교육용 점수입니다.',
+      hi: 'चिह्नों के साथ 0–13 निरंतर मूल स्कोर पैमाना। सरलीकृत गैर-सत्यापित 4-कारक शैक्षिक स्कोर; किसी जोखिम स्तर का उपयोग नहीं करता और न ही चिकित्सकीय मधुमेह जोखिम का अनुमान लगाता है।'
     };
     const captions: Record<Locale, string> = {
-      en: `Figure 1.1: Raw score distribution (0–13 points) across 4 non-invasive lifestyle indicators. This educational tool is unvalidated and does not predict clinical diabetes risk or probability.`,
-      es: `Figura 1.1: Distribución de puntuación bruta (0–13 puntos) sobre 4 indicadores no invasivos. Esta herramienta educativa no está validada y no predice la probabilidad clínica de diabetes.`,
-      fr: `Figure 1.1 : Distribution du score brut (0–13 points) sur 4 indicateurs non invasifs. Cet outil éducatif n'est pas validé et ne prédit pas le risque clinique de diabète.`,
-      de: `Abbildung 1.1: Verteilung der Rohpunktzahl (0–13 Punkte) über 4 nicht-invasive Faktoren. Dieses Lehrmittel ist nicht validiert und schätzt kein klinisches Diabetesrisiko ab.`,
-      ko: `그림 1.1: 4가지 비침습적 생활습관 지표에 따른 원점수 분포(0~13점). 본 교육용 도구는 비공인 도구이며 임상 당뇨 발병 확률을 예측하지 않습니다.`,
-      hi: `चित्र 1.1: 4 गैर-आक्रामक संकेतकों पर आधारित मूल स्कोर वितरण (0–13 अंक)। यह शैक्षिक टूल गैर-सत्यापित है और वास्तविक मधुमेह जोखिम का अनुमान नहीं लगाता है।`
+      en: `Figure 1.1: Continuous raw-score scale (0–13 points) with simple tick marks. This educational tool uses selected factors also considered in FINDRISC, but is a simplified, unvalidated educational score. It does not use risk categories or predict clinical diabetes risk.`,
+      es: `Figura 1.1: Escala continua de puntuación bruta (0–13 puntos) con marcas graduadas. Esta herramienta educativa utiliza factores seleccionados considerados también en FINDRISC, pero es una puntuación educativa simplificada y no validada. No utiliza categorías de riesgo ni predice el riesgo clínico de diabetes.`,
+      fr: `Figure 1.1 : Échelle continue de score brut (0–13 points) avec repères gradués. Cet outil éducatif utilise des facteurs sélectionnés également pris en compte dans FINDRISC, mais constitue un score éducatif simplifié et non validé. Il n'utilise aucune catégorie de risque et ne prédit pas le risque clinique de diabète.`,
+      de: `Abbildung 1.1: Kontinuierliche Rohwertskala (0–13 Punkte) mit einfachen Skalenstrichen. Dieses Lehrmittel verwendet ausgewählte Faktoren, die auch im FINDRISC berücksichtigt werden, ist jedoch eine vereinfachte, nicht validierte pädagogische Punktzahl ohne Risikokategorien oder klinische Risikovorhersage.`,
+      ko: `그림 1.1: 단순 눈금이 적용된 연속 원점수 척도(0~13점). 본 교육용 도구는 FINDRISC에서 다루는 주요 요인을 일부 선별하여 활용하였으나, 위험 등급 구분이나 임상 당뇨 위험도를 예측하지 않는 단순화된 검증되지 않은 교육용 점수입니다.`,
+      hi: `चित्र 1.1: सरल चिह्नों के साथ निरंतर मूल स्कोर पैमाना (0–13 अंक)। यह शैक्षिक उपकरण FINDRISC में शामिल चुनिंदा कारकों का उपयोग करता है, किंतु यह जोखिम श्रेणियों या नैदानिक मधुमेह जोखिम की भविष्यवाणी किए बिना एक सरलीकृत, गैर-सत्यापित शैक्षिक स्कोर है।`
     };
     const sources: Record<Locale, string> = {
-      en: 'Educational 4-Factor Screener (items adapted from FINDRISC criteria; unvalidated)',
-      es: 'Cribado Educativo de 4 Factores (adaptado de criterios FINDRISC; no validado)',
-      fr: 'Dépistage Éducatif à 4 Facteurs (adapté des critères FINDRISC ; non validé)',
-      de: 'Pädagogisches 4-Faktoren-Screening (adaptiert nach FINDRISC-Kriterien; nicht validiert)',
-      ko: '교육용 4요소 스크리너 (FINDRISC 항목 기반 각색; 비공인 도구)',
-      hi: 'शैक्षिक 4-कारक स्क्रीनिंग (FINDRISC मानदंडों पर आधारित; गैर-सत्यापित)'
+      en: 'Simplified Educational Screener (uses selected factors also considered in FINDRISC; unvalidated)',
+      es: 'Cribado Educativo Simplificado (utiliza factores seleccionados considerados también en FINDRISC; no validado)',
+      fr: 'Dépistage Éducatif Simplifié (utilise des facteurs sélectionnés également considérés dans FINDRISC ; non validé)',
+      de: 'Vereinfachtes pädagogisches Screening (nutzt ausgewählte Faktoren, die auch im FINDRISC berücksichtigt werden; nicht validiert)',
+      ko: '단순화된 교육용 도구 (FINDRISC 고려 요인 중 일부 선별; 검증되지 않은 교육용 도구)',
+      hi: 'सरलीकृत शैक्षिक स्क्रीनिंग (FINDRISC में शामिल चुनिंदा कारकों का उपयोग; गैर-सत्यापित)'
     };
-
-    const dLabels: Record<Locale, [string, string, string, string]> = {
-      en: ['Points 0–3', 'Points 4–6', 'Points 7–9', 'Points 10–13'],
-      es: ['Puntos 0–3', 'Puntos 4–6', 'Puntos 7–9', 'Puntos 10–13'],
-      fr: ['Points 0–3', 'Points 4–6', 'Points 7–9', 'Points 10–13'],
-      de: ['Punkte 0–3', 'Punkte 4–6', 'Punkte 7–9', 'Punkte 10–13'],
-      ko: ['0~3점 구간', '4~6점 구간', '7~9점 구간', '10~13점 구간'],
-      hi: ['0–3 अंक वर्ग', '4–6 अंक वर्ग', '7–9 अंक वर्ग', '10–13 अंक वर्ग']
+    const segLabels: Record<Locale, string> = {
+      en: 'Raw Score 0–13',
+      es: 'Puntuación Bruta 0–13',
+      fr: 'Score Brut 0–13',
+      de: 'Rohwert 0–13',
+      ko: '원점수 0~13점',
+      hi: 'मूल स्कोर 0–13'
     };
-    const dl = dLabels[lang] || dLabels.en;
-
-    const ranges: Record<Locale, [string, string, string, string]> = {
-      en: ['0 – 3 Points', '4 – 6 Points', '7 – 9 Points', '10 – 13 Points'],
-      es: ['0 – 3 Puntos', '4 – 6 Puntos', '7 – 9 Puntos', '10 – 13 Puntos'],
-      fr: ['0 – 3 Points', '4 – 6 Points', '7 – 9 Points', '10 – 13 Points'],
-      de: ['0 – 3 Punkte', '4 – 6 Punkte', '7 – 9 Punkte', '10 – 13 Punkte'],
-      ko: ['0~3점', '4~6점', '7~9점', '10~13점'],
-      hi: ['0–3 अंक', '4–6 अंक', '7–9 अंक', '10–13 अंक']
+    const segRanges: Record<Locale, string> = {
+      en: '0 – 13 Points',
+      es: '0 – 13 Puntos',
+      fr: '0 – 13 Points',
+      de: '0 – 13 Punkte',
+      ko: '0~13점',
+      hi: '0–13 अंक'
     };
-    const r = ranges[lang] || ranges.en;
 
     return {
       badge: badges[lang] || badges.en,
@@ -639,10 +635,7 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
       desc: descs[lang] || descs.en,
       caption: captions[lang] || captions.en,
       segments: [
-        { label: dl[0], range: r[0], color: '#34d399' },
-        { label: dl[1], range: r[1], color: '#38bdf8' },
-        { label: dl[2], range: r[2], color: '#fbbf24' },
-        { label: dl[3], range: r[3], color: '#f87171' }
+        { label: segLabels[lang] || segLabels.en, range: segRanges[lang] || segRanges.en, color: '#38bdf8' }
       ]
     };
   }
