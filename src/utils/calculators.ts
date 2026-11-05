@@ -545,14 +545,21 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'diabetes-risk-calculator',
     name: { en: 'Type 2 Diabetes Risk Calculator', es: 'Calculadora de Riesgo de Diabetes', fr: 'Calculateur de Risque de Diabète', de: 'Diabetes-Risiko-Rechner', ko: '제2형 당뇨병 위험도 계산기', hi: 'टाइप 2 डायबिटीज रिस्क कैलकुलेटर' },
-    title: { en: 'Type 2 Diabetes Risk Calculator – FINDRISC & ADA Scoring Tool', es: 'Calculadora de Riesgo de Diabetes – Evaluación FINDRISC y ADA', fr: 'Calculateur de Risque de Diabète – Score FINDRISC et ADA', de: 'Diabetes-Risiko-Rechner – FINDRISC- & ADA-Risikobewertung', ko: '제2형 당뇨병 위험도 계산기 – FINDRISC 및 ADA 평가 도구', hi: 'टाइप 2 डायबिटीज रिस्क कैलकुलेटर - FINDRISC एवं ADA स्कोरिंग' },
+    title: { 
+      en: 'Type 2 Diabetes Risk Calculator – 4-Factor Lifestyle Screener', 
+      es: 'Calculadora de Riesgo de Diabetes – Cribado de Estilo de Vida (4 Factores)', 
+      fr: 'Calculateur de Risque de Diabète – Dépistage du Mode de Vie (4 Facteurs)', 
+      de: 'Diabetes-Risiko-Rechner – 4-Faktoren-Lebensstil-Screening', 
+      ko: '제2형 당뇨병 위험도 계산기 – 4요소 생활습관 선별 평가', 
+      hi: 'टाइप 2 डायबिटीज रिस्क कैलकुलेटर - 4-कारक जीवनशैली स्क्रीनिंग' 
+    },
     description: {
-      "en": "Free Type 2 Diabetes Risk Calculator based on validated FINDRISC & ADA models. Assess 10-year diabetes risk using BMI, waist circumference, age, and physical activity with private browser calculations.",
-      "es": "Calculadora gratuita de riesgo de diabetes tipo 2 basada en los modelos validados FINDRISC y ADA. Evalúa el riesgo a 10 años según IMC, cintura, edad y actividad física en tu navegador.",
-      "fr": "Calculateur gratuit de risque de diabète de type 2 fondé sur les modèles validés FINDRISC et ADA. Évaluez le risque à 10 ans selon l'IMC, le tour de taille, l'âge et l'activité physique.",
-      "de": "Kostenloser Typ-2-Diabetes-Risikorechner basierend auf den validierten FINDRISC- und ADA-Modellen. Bewerten Sie Ihr 10-Jahres-Risiko nach BMI, Taillenumfang, Alter und Bewegung im Browser.",
-      "ko": "검증된 FINDRISC 및 미국당뇨병학회(ADA) 모델 기반 무료 제2형 당뇨병 위험도 계산기. BMI, 허리둘레, 연령, 신체 활동량을 종합 평가하여 10년 내 발병 위험도를 산출하세요.",
-      "hi": "मान्य FINDRISC एवं ADA मॉडल पर आधारित मुफ़्त टाइप 2 मधुमेह जोखिम कैलकुलेटर। बीएमआई, कमर की परिधि, आयु और दैनिक गतिविधि के आधार पर 10-वर्षीय जोखिम का सटीक आकलन करें।"
+      "en": "Free Type 2 Diabetes Risk Calculator. Get an abbreviated lifestyle screening estimate based on 4 primary indicators (Age, BMI, Waist, Physical Activity) adapted from FINDRISC guidelines.",
+      "es": "Calculadora gratuita de riesgo de diabetes tipo 2. Obtén una estimación abreviada de cribado según 4 indicadores (edad, IMC, cintura y actividad física) adaptados de FINDRISC.",
+      "fr": "Calculateur gratuit de risque de diabète de type 2. Obtenez une estimation de dépistage abrégée basée sur 4 indicateurs (âge, IMC, tour de taille et activité physique) adaptés de FINDRISC.",
+      "de": "Kostenloser Typ-2-Diabetes-Risikorechner. Erhalten Sie ein verkürztes Lebensstil-Screening basierend auf 4 Indikatoren (Alter, BMI, Taille und Bewegung) angelehnt an FINDRISC.",
+      "ko": "무료 제2형 당뇨병 위험도 계산기. FINDRISC 지침을 기반으로 한 4가지 핵심 지표(연령, BMI, 허리둘레, 신체활동) 중심의 간이 생활습관 선별 평가 도구입니다.",
+      "hi": "मुफ़्त टाइप 2 मधुमेह जोखिम कैलकुलेटर। FINDRISC दिशानिर्देशों पर आधारित 4 प्रमुख संकेतकों (आयु, बीएमआई, कमर और गतिविधि) के अनुसार संक्षिप्त जीवनशैली स्क्रीनिंग अनुमान प्राप्त करें।"
     },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number' },
@@ -577,7 +584,7 @@ export const calculators: CalculatorConfig[] = [
       const age = parseInt(inputs.age) || 35;
       const isSedentary = inputs.activity === 'sedentary';
 
-      // FINDRISC Evidence-Based Point Scoring
+      // Abbreviated 4-Factor Point Scoring (Adapted from FINDRISC non-invasive criteria)
       let points = 0;
 
       // 1. Age Points
@@ -586,7 +593,7 @@ export const calculators: CalculatorConfig[] = [
       else if (age <= 64) points += 3;
       else points += 4;
 
-      // 2. BMI Points (with Asian cutoff consideration)
+      // 2. BMI Points
       if (bmi < 25) points += 0;
       else if (bmi < 30) points += 1;
       else points += 3;
@@ -601,51 +608,24 @@ export const calculators: CalculatorConfig[] = [
       // 4. Physical Activity Points (≥30 min daily = 0 pts; <30 min daily = 2 pts)
       if (isSedentary) points += 2;
 
-      // FINDRISC 10-Year Probability Stratification
-      let riskTier: Record<string, string>;
-      let prob10Yr: string;
+      // Unvalidated 4-Factor Educational Screener: Raw Score Output (0–13 Points)
+      const rawScoreValue: Record<string, string> = {
+        en: `${points} / 13 Points`,
+        es: `${points} / 13 Puntos`,
+        fr: `${points} / 13 Points`,
+        de: `${points} / 13 Punkte`,
+        ko: `${points} / 13점`,
+        hi: `${points} / 13 अंक`
+      };
 
-      if (points < 7) {
-        riskTier = {
-          en: 'Low Risk (< 1%)',
-          es: 'Riesgo Bajo (< 1%)',
-          fr: 'Risque Faible (< 1%)',
-          de: 'Geringes Risiko (< 1%)',
-          ko: '낮은 위험군 (< 1%)',
-          hi: 'कम जोखिम (< 1%)'
-        };
-        prob10Yr = '< 1% (1 in 100)';
-      } else if (points <= 11) {
-        riskTier = {
-          en: 'Slightly Elevated (~4%)',
-          es: 'Ligeramente Elevado (~4%)',
-          fr: 'Légèrement Élevé (~4%)',
-          de: 'Leicht Erhöht (~4%)',
-          ko: '경미한 주의 (~4%)',
-          hi: 'हल्का बढ़ा हुआ (~4%)'
-        };
-        prob10Yr = '~4% (1 in 25)';
-      } else if (points <= 14) {
-        riskTier = {
-          en: 'Moderate Risk (~17%)',
-          es: 'Riesgo Moderado (~17%)',
-          fr: 'Risque Modéré (~17%)',
-          de: 'Moderates Risiko (~17%)',
-          ko: '중등도 위험군 (~17%)',
-          hi: 'मध्यम जोखिम (~17%)'
-        };
-        prob10Yr = '~17% (1 in 6)';
-      } else {
-        riskTier = {
-          en: 'High Risk (33%+)',
-          es: 'Riesgo Alto (33%+)',
-          fr: 'Risque Élevé (33%+)',
-          de: 'Hohes Risiko (33%+)',
-          ko: '고위험군 (33%+)',
-          hi: 'उच्च जोखिम (33%+)'
-        };
-        prob10Yr = '33%+ (1 in 3)';
-      }
+      const advisoryNotice: Record<string, string> = {
+        en: 'Unvalidated educational score; does not predict diabetes probability or 10-year risk. Diagnostic laboratory blood testing (such as HbA1c or fasting glucose) by a licensed healthcare professional is required to evaluate diabetes status.',
+        es: 'Puntuación educativa no validada; no predice la probabilidad ni el riesgo de diabetes a 10 años. Se requieren análisis de laboratorio (como HbA1c o glucosa en ayunas) supervisados por un médico para evaluar el estado glucémico.',
+        fr: 'Score éducatif non validé ; ne prédit pas la probabilité ni le risque de diabète à 10 ans. Des examens sanguins de laboratoire (tels que l\'HbA1c ou la glycémie à jeun) prescrits par un médecin sont nécessaires pour évaluer l\'état de santé.',
+        de: 'Nicht validierter pädagogischer Wert; prognostiziert kein tatsächliches Diabetesrisiko oder 10-Jahres-Risiko. Zur verlässlichen Beurteilung sind ärztliche Labortests (wie HbA1c oder Nüchternblutzucker) erforderlich.',
+        ko: '비공인 교육용 점수이며 실제 당뇨 발병 확률이나 10년 위험도를 예측하지 않습니다. 정확한 의학적 진단을 위해서는 전문 의료진의 혈액 검사(당화혈색소 HbA1c 또는 공복 혈당)가 필수적입니다.',
+        hi: 'गैर-सत्यापित शैक्षिक स्कोर; यह मधुमेह की वास्तविक संभावना या 10-वर्षीय जोखिम का अनुमान नहीं लगाता है। स्थिति के औपचारिक मूल्यांकन हेतु डॉक्टर द्वारा रक्त परीक्षण (जैसे HbA1c या फास्टिंग ग्लूकोज) अनिवार्य है।'
+      };
 
       const waistStatus = waist >= waistLimit ? {
         en: 'Elevated Visceral Risk',
@@ -665,38 +645,45 @@ export const calculators: CalculatorConfig[] = [
 
       return {
         primary: {
-          value: riskTier,
+          value: rawScoreValue,
           label: {
-            en: '10-Year Diabetes Risk',
-            es: 'Riesgo de Diabetes a 10 Años',
-            fr: 'Risque de Diabète à 10 Ans',
-            de: '10-Jahres-Diabetes-Risiko',
-            ko: '10년 내 당뇨 발병 위험도',
-            hi: '10-वर्षीय मधुमेह जोखिम'
+            en: 'Raw Screening Score',
+            es: 'Puntuación Bruta de Cribado',
+            fr: 'Score Brut de Dépistage',
+            de: 'Unberechneter Screening-Wert',
+            ko: '간이 선별 원점수',
+            hi: 'मूल स्क्रीनिंग स्कोर'
           }
         },
         secondary: [
           {
             label: {
-              en: 'FINDRISC Points',
-              es: 'Puntos FINDRISC',
-              fr: 'Points FINDRISC',
-              de: 'FINDRISC-Punkte',
-              ko: 'FINDRISC 점수',
-              hi: 'FINDRISC अंक'
+              en: 'Assessment Type',
+              es: 'Tipo de Evaluación',
+              fr: 'Type d\'Évaluation',
+              de: 'Bewertungsart',
+              ko: '평가 유형',
+              hi: 'मूल्यांकन प्रकार'
             },
-            value: `${points} / 13 Points`
+            value: {
+              en: '4-Factor Lifestyle Index (Unvalidated)',
+              es: 'Índice de Estilo de Vida de 4 Factores (No Validado)',
+              fr: 'Indice de Mode de Vie à 4 Facteurs (Non Validé)',
+              de: '4-Faktoren-Lebensstil-Index (Nicht validiert)',
+              ko: '4요소 생활습관 지표 (비공인 도구)',
+              hi: '4-कारक जीवनशैली सूचकांक (गैर-सत्यापित)'
+            }
           },
           {
             label: {
-              en: '10-Year Probability',
-              es: 'Probabilidad a 10 Años',
-              fr: 'Probabilité à 10 Ans',
-              de: '10-Jahres-Wahrscheinlichkeit',
-              ko: '10년 내 발병 확률',
-              hi: '10-वर्षीय प्रायिकता'
+              en: 'Advisory Notice',
+              es: 'Aviso Informativo',
+              fr: 'Avis Informatif',
+              de: 'Wichtiger Hinweis',
+              ko: '안내 사항',
+              hi: 'परामर्श सूचना'
             },
-            value: prob10Yr
+            value: advisoryNotice
           },
           {
             label: {
@@ -1396,12 +1383,12 @@ export const calculators: CalculatorConfig[] = [
     name: { en: 'Daily Water Intake Calculator', es: 'Calculadora de Consumo de Agua Diario', fr: 'Calculateur d\'Hydratation Journalier', de: 'Täglicher Wasserbedarf Rechner', ko: '하루 물 섭취량 계산기', hi: 'दैनिक पानी का सेवन कैलकुलेटर' },
     title: { en: 'Daily Water Intake Calculator – Hydration by Weight Tool', es: 'Calculadora de Consumo de Agua Diario por Peso', fr: 'Calculateur d\'Hydratation selon le Poids', de: 'Wasserbedarf Rechner nach Körpergewicht – Täglicher Zielwert', ko: '하루 물 섭취량 계산기 – 체중별 일일 수분 섭취 권장량', hi: 'दैनिक पानी का सेवन कैलकुलेटर - वजन के अनुसार हाइड्रेशन' },
     description: {
-      "en": "Free Daily Water Intake Calculator. Calculate recommended daily water consumption in liters, glasses, and ounces based on body weight, climate, exercise duration, and activity level with privacy-focused, browser calculations.",
-      "es": "Calculadora de ingesta diaria de agua gratuita. Calcula el consumo diario recomendado de agua en litros, vasos u onzas según el peso corporal, el clima, la duración del ejercicio y el nivel de actividad con cálculos privados en el navegador.",
-      "fr": "Calculateur d'apport quotidien en eau gratuit selon votre poids corporel. Calculez votre consommation en litres et verres selon l'exercice.",
-      "de": "Kostenloser Wasserbedarf-Rechner. Berechnen Sie Ihre empfohlene tägliche Wasseraufnahme in Litern, Gläsern und Unzen basierend auf Körpergewicht, Klima, Trainingsdauer und Aktivität datenschutzorientiert im Browser.",
-      "ko": "일일 권장 수분 섭취량 무료 계산기. 체중, 기후, 운동 시간 및 일상 활동량에 따라 리터(L), 컵 및 온스 단위로 권장 일일 수분 섭취량을 계산하세요. 가입 없이 브라우저 내 100% 무료 구동.",
-      "hi": "मुफ़्त दैनिक जल सेवन कैलकुलेटर। शरीर के वजन, जलवायु, व्यायाम की अवधि और गतिविधि स्तर के आधार पर लीटर, ग्लास और औंस में अनुशंसित दैनिक पानी की खपत की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
+      "en": "Free Daily Water Intake Calculator. Calculate recommended daily water consumption in liters and standard glasses based on body weight and physical activity level with privacy-focused, browser calculations.",
+      "es": "Calculadora de ingesta diaria de agua gratuita. Calcula el consumo diario recomendado de agua en litros y vasos según el peso corporal y el nivel de actividad física con cálculos privados en el navegador.",
+      "fr": "Calculateur d'apport quotidien en eau gratuit selon votre poids corporel et votre niveau d'activité physique. Calculez votre consommation en litres et verres.",
+      "de": "Kostenloser Wasserbedarf-Rechner. Berechnen Sie Ihre empfohlene tägliche Wasseraufnahme in Litern und Gläsern basierend auf Körpergewicht und körperlicher Aktivität datenschutzorientiert im Browser.",
+      "ko": "일일 권장 수분 섭취량 무료 계산기. 체중과 일상 신체 활동 수준에 따라 리터(L)와 표준 컵 단위로 권장 일일 수분 섭취량을 계산하세요. 브라우저 내 100% 무료 구동.",
+      "hi": "मुफ़्त दैनिक जल सेवन कैलकुलेटर। शरीर के वजन और शारीरिक गतिविधि स्तर के आधार पर लीटर और सामान्य गिलास में अनुशंसित दैनिक पानी की खपत की गणना करें।"
     },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number' },

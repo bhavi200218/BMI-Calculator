@@ -5047,10 +5047,10 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Hydration Guidelines",
       "title": "Water Intake Calculator & Daily Hydration Target Tool",
-      "intro": "Calculate your daily fluid requirements with our free Water Intake Calculator. Using clinically validated hydration formulas based on body weight, climate adjustments (summer vs winter), workout sweat losses, and the Armstrong urine color guide, discover your personalized daily fluid target.",
-      "formulaTitle": "Hydration Mathematical Equation & Climate/Workout Factors",
-      "formulaDesc": "Daily Fluid Target (L) = [Body Weight (kg) × 35 mL] / 1000 + Workout Sweat Replacement (500–1,000 mL/hr) + Climate Adjustment (Summer: +500 to +1,000 mL/day vs Winter: standard baseline with warm fluid compensation). Evaluate systemic hydration status with the validated Armstrong Urine Color Scale.",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "intro": "Calculate your daily fluid requirements with our free Water Intake Calculator. Using clinical fluid estimation guidelines based on body weight and physical activity levels alongside the Armstrong urine color scale, discover your personalized daily fluid target.",
+      "formulaTitle": "Illustrative Fluid Estimation Heuristic & Optional Exercise Adjustment",
+      "formulaDesc": "Daily Fluid Target (L) = [Body Weight (kg) × 35 mL] / 1,000 + Optional Exercise Adjustment (+0.75 L for active individuals). The 35 mL/kg multiplier serves strictly as an approximate illustrative calculator estimate rather than an established clinical recommendation or universal physiological requirement; individual hydration needs vary widely based on ambient climate, kidney function, and personal sweat rate. The +750 mL adjustment provides an illustrative optional estimate for exercise rather than a universal requirement for all active individuals. Population total-water reference values are derived from National Academy of Medicine (NAM / IOM 2005) Adequate Intake benchmarks (2.7 L/day for adult females and 3.7 L/day for adult males for total water from all dietary sources, including plain drinking water, beverages, and moisture in food).",
+      "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
       "tableTitle": "Comprehensive Hydration Guide — Climate Adjustments, Workouts & Urine Color",
       "tableRows": [
         {
@@ -5125,10 +5125,10 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
       "title": "Calculadora de Consumo de Agua – Meta Diaria de Hidratación",
-      "intro": "Calcula tu consumo diario de agua según peso, clima (verano vs invierno), sudoración por ejercicio y guía de color de orina de Armstrong.",
-      "formulaTitle": "Ecuación de Hidratación Diaria, Clima y Ejercicio",
-      "formulaDesc": "Agua Diaria (L) = (Peso_kg × 0.035) + Factor de Ejercicio + Ajuste Climático (Verano: +500 a +1000 ml vs Invierno: línea base con líquidos templados). Monitorea tu hidratación con la escala cromática de orina.",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "intro": "Calcula tu consumo diario estimado de agua según tu peso corporal, nivel de actividad física y la escala de color de orina de Armstrong.",
+      "formulaTitle": "Heurística Ilustrativa de Estimación de Fluidos y Ajuste Opcional",
+      "formulaDesc": "Agua Diaria (L) = [Peso (kg) × 35 ml] / 1.000 + Ajuste Opcional por Ejercicio (+0,75 L para personas activas). El factor de 35 ml/kg constituye estrictamente una estimación ilustrativa aproximada de la calculadora y no una recomendación médica establecida ni una norma universal; las necesidades individuales varían con el clima, la masa corporal y la sudoración. El ajuste de +750 ml es un valor opcional ilustrativo y no un requisito fijo. Los valores de referencia de agua total proceden de las recomendaciones de Ingesta Adecuada de la Academia Nacional de Medicina (NAM / IOM 2005, 2,7 L en mujeres y 3,7 L en hombres para el agua total procedente de alimentos y bebidas).",
+      "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
       "tableTitle": "Guía Integral de Hidratación: Ajustes Climáticos (Verano vs Invierno), Entrenamiento y Color de Orina",
       "tableRows": [
         {
@@ -5195,10 +5195,10 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "fr": {
       "eyebrow": "Recommandations d'Hydratation",
       "title": "Calculateur d'Apport en Eau – Besoins Hydriques Quotidiens",
-      "intro": "Évaluez votre apport quotidien en eau selon votre poids, les saisons (été vs hiver), l'effort physique et l'échelle colorimétrique urinaire d'Armstrong.",
-      "formulaTitle": "Équation d'Hydratation, Facteurs Climatiques et Sport",
-      "formulaDesc": "Eau (L) = (Poids_kg × 0,035) + Pertes à l'effort + Ajustement climatique (Été : +500 à +1000 ml vs Hiver : maintien avec boissons chaudes).",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "intro": "Évaluez votre apport quotidien estimé en eau selon votre poids corporel, votre niveau d'activité physique et l'échelle colorimétrique urinaire d'Armstrong.",
+      "formulaTitle": "Heuristique Illustrative d'Estimation des Fluides & Ajustement Optionnel",
+      "formulaDesc": "Eau Quotidienne (L) = [Poids (kg) × 35 ml] / 1 000 + Ajustement Optionnel pour l'Exercice (+0,75 L si actif). Le coefficient de 35 ml/kg représente une estimation illustrative approximative et non une recommandation clinique consensuelle ou une exigence universelle ; les besoins réels dépendent du climat, de la santé rénale et de la sudation. L'ajustement de +750 ml est une estimation illustrative optionnelle. Les valeurs repères d'eau totale sont issues des apports adéquats de l'Académie Nationale de Médecine (NAM / IOM 2005 : 2,7 L/jour pour les femmes et 3,7 L/jour pour les hommes, incluant eau, boissons et eau des aliments).",
+      "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
       "tableTitle": "Guide Complet d'Hydratation : Ajustements Climatiques (Été vs Hiver), Sport et Échelle des Urines",
       "tableRows": [
         {
@@ -5261,10 +5261,10 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "de": {
       "eyebrow": "Hydratations-Leitlinien",
       "title": "Wasserbedarf-Rechner – Täglicher Flüssigkeitsbedarf",
-      "intro": "Ermitteln Sie Ihren täglichen Wasserbedarf basierend auf Körpergewicht, Jahreszeit (Sommer vs. Winter), Schweißverlusten beim Sport und der Armstrong-Urinfarbenskala.",
-      "formulaTitle": "Flüssigkeitsbedarfsformel, Klimafaktoren und Trainingsausgleich",
-      "formulaDesc": "Tägliches Wasser (L) = (Gewicht_kg × 0,035) + Trainingsverlust + Klimaanpassung (Sommer: +500 bis +1000 ml vs. Winter: Grundbedarf mit warmen Getränken).",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "intro": "Ermitteln Sie Ihren geschätzten täglichen Wasserbedarf basierend auf Körpergewicht, körperlicher Aktivität und der Armstrong-Urinfarbenskala.",
+      "formulaTitle": "Illustrative Schätzheuristik & Optionaler Trainingsausgleich",
+      "formulaDesc": "Tägliches Wasser (L) = [Körpergewicht (kg) × 35 ml] / 1.000 + Optionaler Trainingsausgleich (+0,75 L bei aktiver Betätigung). Der Faktor von 35 ml/kg dient rein als ungefähre illustrative Rechner-Schätzung und nicht als etablierte klinische Konsensempfehlung oder universelle physiologische Vorgabe; der individuelle Flüssigkeitsbedarf variiert nach Klima, Nierenfunktion und Schweißrate. Der Zuschlag von +750 ml ist ein beispielhafter optionaler Wert und keine feste Vorgabe. Gesamtwasser-Referenzwerte basieren auf den Empfehlungen der National Academy of Medicine (NAM / IOM 2005 : 2,7 L für Frauen, 3,7 L für Männer für Gesamtwasser aus allen Quellen inklusive Nahrung).",
+      "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
       "tableTitle": "Umfassender Hydratations-Leitfaden: Klimaanpassung (Sommer vs. Winter), Sport & Urinfarben-Skala",
       "tableRows": [
         {
@@ -5327,10 +5327,10 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "ko": {
       "eyebrow": "공인 수분 섭취 가이드라인",
       "title": "물 섭취량 계산기 – 일일 수분 섭취 권장량",
-      "intro": "체중, 계절별 기후 보정(여름 vs 겨울), 운동 중 땀 배출량 및 암스트롱 소변 색상 지표를 반영하여 하루 필요한 정확한 수분 섭취량을 계산하세요.",
-      "formulaTitle": "일일 수분 섭취 방정식 및 기후/운동 보정 계수",
-      "formulaDesc": "일일 수분(L) = (체중_kg × 0.035) + 운동 시간당 보충량(500~1000ml) + 기후 보정 계수(여름: +500~1000ml vs 겨울: 미온수 중심 기본 섭취 유지). 소변 색상표로 탈수 여부를 확인합니다.",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "intro": "체중, 일일 신체 활동량 및 암스트롱 소변 색상 지표를 바탕으로 하루에 필요한 개인 맞춤 권장 수분 섭취량을 계산하세요.",
+      "formulaTitle": "예시적 수분 추정 경험칙 및 선택적 운동 보정",
+      "formulaDesc": "일일 수분 섭취량(L) = [체중(kg) × 35 ml] / 1,000 + 선택적 운동 보정(+0.75 L 활동적인 경우). 체중당 35 ml 공식은 계산기상의 예시적 어림 추정치일 뿐 공인된 임상 권고나 보편적 필수 요구량이 아닙니다. 실제 수분 필요량은 기후, 체성분 및 개인별 발한량에 따라 크게 달라집니다. +750 ml 보정치는 운동 시 예시적인 선택 옵션일 뿐 모든 활동적인 사람의 필수 기준이 아닙니다. 총 수분 기준치는 미국 국립의학원(NAM / IOM 2005)의 충분 섭취량(성인 여성 2.7 L/일, 성인 남성 3.7 L/일, 음식물 수분 포함)을 참조합니다.",
+      "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
       "tableTitle": "종합 수분 섭취 가이드 — 기후별 보정 (여름철 vs 겨울철), 운동 수분 보충 및 소변 색상 판정표",
       "tableRows": [
         {
@@ -5397,10 +5397,10 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "hi": {
       "eyebrow": "जलयोजन संदर्भ दिशानिर्देश",
       "title": "जल सेवन कैलकुलेटर – दैनिक जल आवश्यकता",
-      "intro": "अपने शरीर के वजन, मौसम समायोजन (गर्मी बनाम सर्दी), कसरत में पसीने की कमी और आर्मस्ट्रांग मूत्र रंग गाइड के आधार पर दैनिक पानी की आवश्यकता की गणना करें।",
-      "formulaTitle": "दैनिक जल आवश्यकता सूत्र, जलवायु एवं कसरत कारक",
-      "formulaDesc": "दैनिक जल (लीटर) = (वजन_किग्रा × 0.035) + कसरत पूर्ति + जलवायु कारक (गर्मी: +500 से +1000 मिली बनाम सर्दी: गुनगुने तरल पदार्थों के साथ आधार सेवन)। मूत्र रंग पैमाने से शरीर के जलयोजन की जांच करें।",
-      "formulaCode": "Water (L) = (W_kg × 0.035) + (Exercise_hrs × 0.75) + Climate_Factor",
+      "intro": "अपने शरीर के वजन, शारीरिक गतिविधि स्तर और आर्मस्ट्रांग मूत्र रंग गाइड के आधार पर दैनिक पानी की आवश्यकता की गणना करें।",
+      "formulaTitle": "उदाहरणार्थ जल अनुमान एवं वैकल्पिक कसरत समायोजन",
+      "formulaDesc": "दैनिक जल सेवन (लीटर) = [शरीर का वजन (किग्रा) × 35 मिली] / 1,000 + वैकल्पिक कसरत समायोजन (+0.75 ली सक्रिय व्यक्तियों हेतु)। 35 मिली/किग्रा का कारक केवल एक सन्निकट उदाहरणार्थ अनुमान है, कोई स्थापित नैदानिक सिफारिश या सार्वभौमिक आवश्यकता नहीं; व्यक्तिगत जल आवश्यकताएं तापमान, स्वास्थ्य और पसीने के अनुसार बदलती हैं। +750 मिली का समायोजन कसरत के लिए एक उदाहरण मात्र है, कोई अनिवार्य मानक नहीं। कुल जल के संदर्भ मानक नेशनल एकेडमी ऑफ मेडिसिन (NAM / IOM 2005) के पर्याप्त सेवन (महिलाओं हेतु 2.7 ली और पुरुषों हेतु 3.7 ली, भोजन की नमी सहित) पर आधारित हैं।",
+      "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
       "tableTitle": "व्यापक जलयोजन गाइड — जलवायु समायोजन (गर्मी बनाम सर्दी), कसरत जलयोजन और मूत्र रंग गाइड",
       "tableRows": [
         {

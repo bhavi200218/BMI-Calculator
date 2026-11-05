@@ -357,60 +357,60 @@ const EXAMPLES: Record<string, ToolData> = {
   // 5. Water Intake Calculator
   'water-intake-calculator': {
     inputs: {
-      en: [{ label: "Body Weight", value: "70.0 kg" }, { label: "Exercise Duration", value: "45 minutes moderate" }],
-      es: [{ label: "Peso Corporal", value: "70.0 kg" }, { label: "Ejercicio Diario", value: "45 minutos moderados" }],
-      fr: [{ label: "Poids Corporel", value: "70,0 kg" }, { label: "Activité Quotidienne", value: "45 minutes modérées" }],
-      de: [{ label: "Körpergewicht", value: "70,0 kg" }, { label: "Tägliches Training", value: "45 Minuten moderat" }],
-      ko: [{ label: "체중", value: "70.0 kg" }, { label: "운동 시간", value: "45분 보통 강도" }],
-      hi: [{ label: "शरीर का वजन", value: "70.0 किग्रा" }, { label: "व्यायाम की अवधि", value: "45 मिनट मध्यम" }]
+      en: [{ label: "Body Weight", value: "70.0 kg" }, { label: "Physical Activity Level", value: "Active Exercise" }],
+      es: [{ label: "Peso Corporal", value: "70.0 kg" }, { label: "Nivel de Actividad", value: "Ejercicio Activo" }],
+      fr: [{ label: "Poids Corporel", value: "70,0 kg" }, { label: "Niveau d'Activité", value: "Activité Physique Régulière" }],
+      de: [{ label: "Körpergewicht", value: "70,0 kg" }, { label: "Aktivitätslevel", value: "Aktive Betätigung" }],
+      ko: [{ label: "체중", value: "70.0 kg" }, { label: "신체 활동량", value: "규칙적 운동 (활동적)" }],
+      hi: [{ label: "शरीर का वजन", value: "70.0 किग्रा" }, { label: "शारीरिक गतिविधि स्तर", value: "सक्रिय व्यायाम" }]
     },
     steps: {
       en: [
-        "Step 1: Baseline hydration: 35 mL per kg body weight: 70 × 35 = 2,450 mL",
-        "Step 2: Add sweat loss replacement: ~400 mL for 45 minutes exercise",
-        "Step 3: Total daily recommended fluids: 2,450 + 400 = 2,850 mL (2.85 Liters)"
+        "Step 1: Baseline illustrative estimate: 35 mL per kg body weight: 70 × 35 = 2,450 mL",
+        "Step 2: Optional illustrative exercise adjustment: +750 mL for active individuals",
+        "Step 3: Total estimated fluid target: 2,450 + 750 = 3,200 mL (3.20 Liters)"
       ],
       es: [
-        "Paso 1: Hidratación base: 35 mL por kg de peso: 70 × 35 = 2,450 mL",
-        "Paso 2: Compensación de sudor: +400 mL por 45 minutos de ejercicio",
-        "Paso 3: Total diario recomendado: 2,450 + 400 = 2,850 mL (2.85 Litros)"
+        "Paso 1: Estimación ilustrativa base: 35 mL por kg de peso: 70 × 35 = 2,450 mL",
+        "Paso 2: Ajuste ilustrativo opcional por ejercicio: +750 mL para personas activas",
+        "Paso 3: Total estimado de líquidos: 2,450 + 750 = 3,200 mL (3.20 Litros)"
       ],
       fr: [
-        "Étape 1 : Hydratation de base : 35 mL par kg : 70 × 35 = 2 450 mL",
-        "Étape 2 : Compensation de la transpiration : +400 mL pour 45 min d'effort",
-        "Étape 3 : Total hydrique recommandé : 2 450 + 400 = 2 850 mL (2,85 Litres)"
+        "Étape 1 : Estimation illustrative de base : 35 mL par kg : 70 × 35 = 2 450 mL",
+        "Étape 2 : Ajustement d'exercice optionnel et illustratif : +750 mL si actif",
+        "Étape 3 : Cible totale estimée de liquides : 2 450 + 750 = 3 200 mL (3,20 Litres)"
       ],
       de: [
-        "Schritt 1: Basisbedarf: 35 ml je kg Körpergewicht: 70 × 35 = 2.450 ml",
-        "Schritt 2: Schweißverlust ausgleichen: +400 ml für 45 Minuten Sport",
-        "Schritt 3: Täglicher Gesamtbedarf: 2.450 + 400 = 2.850 ml (2,85 Liter)"
+        "Schritt 1: Illustrative Basisschätzung: 35 ml je kg Körpergewicht: 70 × 35 = 2.450 ml",
+        "Schritt 2: Optionaler illustrativer Trainingsausgleich: +750 ml für aktive Personen",
+        "Schritt 3: Geschätzter Gesamtzielwert: 2.450 + 750 = 3.200 ml (3,20 Liter)"
       ],
       ko: [
-        "1단계: 기초 수분 권장량: 체중 kg당 35 mL 산출: 70 × 35 = 2,450 mL",
-        "2단계: 45분 운동에 따른 땀 배출 보충: +400 mL",
-        "3단계: 일일 총 권장 수분 섭취량: 2,450 + 400 = 2,850 mL (약 2.85리터)"
+        "1단계: 체중 기준 예시적 추정치: 체중 kg당 35 mL 산출: 70 × 35 = 2,450 mL",
+        "2단계: 선택적 예시적 운동 보정: 활동적인 경우 +750 mL 추가",
+        "3단계: 추정 총 일일 수분 목표량: 2,450 + 750 = 3,200 mL (3.20리터)"
       ],
       hi: [
-        "चरण 1: आधारभूत पानी की आवश्यकता: 35 मिली प्रति किग्रा: 70 × 35 = 2,450 मिली",
-        "चरण 2: 45 मिनट के व्यायाम से निकले पसीने की भरपाई: +400 मिली",
-        "चरण 3: दैनिक कुल अनुशंसित पानी: 2,450 + 400 = 2,850 मिली (लगभग 2.85 लीटर)"
+        "चरण 1: आधारभूत उदाहरणार्थ अनुमान: 35 मिली प्रति किग्रा: 70 × 35 = 2,450 मिली",
+        "चरण 2: वैकल्पिक उदाहरणार्थ कसरत समायोजन: सक्रिय व्यक्तियों हेतु +750 मिली",
+        "चरण 3: कुल अनुमानित तरल लक्ष्य: 2,450 + 750 = 3,200 मिली (3.20 लीटर)"
       ]
     },
     result: {
-      en: { label: "Recommended Total Water Intake", value: "2.85 Liters / day (~12 cups)" },
-      es: { label: "Ingesta Diaria de Agua Recomendada", value: "2.85 Litros / día (~12 vasos)" },
-      fr: { label: "Apport Hydrique Quotidien Conseillé", value: "2,85 Litres / jour (~12 verres)" },
-      de: { label: "Empfohlene tägliche Trinkmenge", value: "2,85 Liter / Tag (~12 Gläser)" },
-      ko: { label: "일일 권장 수분 섭취량", value: "약 2.85 리터 / 일 (약 12잔)" },
-      hi: { label: "दैनिक अनुशंसित पानी की मात्रा", value: "2.85 लीटर / दिन (लगभग 12 गिलास)" }
+      en: { label: "Recommended Total Water Intake", value: "3.20 Liters / day (~13.5 cups)" },
+      es: { label: "Ingesta Diaria de Agua Recomendada", value: "3.20 Litros / día (~13.5 vasos)" },
+      fr: { label: "Apport Hydrique Quotidien Conseillé", value: "3,20 Litres / jour (~13,5 verres)" },
+      de: { label: "Empfohlene tägliche Trinkmenge", value: "3,20 Liter / Tag (~13,5 Gläser)" },
+      ko: { label: "일일 권장 수분 섭취량", value: "3.20 리터 / 일 (약 13.5잔)" },
+      hi: { label: "दैनिक अनुशंसित पानी की मात्रा", value: "3.20 लीटर / दिन (लगभग 13.5 गिलास)" }
     },
     interp: {
-      en: "This guideline includes drinking water, herbal teas, and moisture from fruits and vegetables (accounting for ~20% of total fluid intake). In hot climates or high humidity, fluid intake should be adjusted upward.",
-      es: "Esta guía incluye agua, infusiones y el agua contenida en alimentos como frutas y verduras (aproximadamente el 20% del total). En climas calurosos, aumente la ingesta según la sed.",
-      fr: "Ce volume comprend l'eau de boisson, les tisanes et l'eau contenue dans les aliments (fruits et légumes). Adaptez à la hausse par temps chaud ou forte humidité.",
-      de: "Dieser Richtwert umfasst Trinkwasser, ungesüßte Tees und die Flüssigkeit aus Obst und Gemüse. Bei hohen Temperaturen sollte die Menge weiter erhöht werden.",
-      ko: "본 수치에는 순수 음용수뿐만 아니라 과일 및 채소에 포함된 수분(전체의 약 20%)도 포함됩니다. 고온 다습한 환경에서는 섭취량을 늘리는 것이 좋습니다.",
-      hi: "इसमें पीने का पानी, हर्बल चाय और फलों-सब्जियों से मिलने वाला पानी (कुल तरल का लगभग 20%) शामिल है। गर्म मौसम में पानी की मात्रा और बढ़ाएं।"
+      en: "This calculation illustrates an approximate dietetic estimation heuristic (35 mL/kg) combined with an illustrative optional activity adjustment (+750 mL). It is not a universal requirement or clinical prescription; individual fluid needs vary with ambient temperature, humidity, and individual sweat rates. Total fluid intake includes plain water, other beverages, and water content in whole foods (which typically accounts for ~20% of total dietary water, aligning with National Academy of Medicine population Adequate Intake benchmarks).",
+      es: "Este cálculo ilustra una heurística dietética aproximada (35 mL/kg) con un ajuste opcional ilustrativo por ejercicio (+750 mL). No constituye un requisito universal ni una prescripción clínica; las necesidades individuales varían con el clima y la sudoración. El agua total incluye agua de bebida, infusiones y la humedad de los alimentos (~20% del total, según las pautas de Ingesta Adecuada de la Academia Nacional de Medicina).",
+      fr: "Ce calcul illustre une heuristique diététique approximative (35 mL/kg) associée à un ajustement optionnel pour l'exercice (+750 mL). Il ne s'agit pas d'une règle universelle ou d'une prescription médicale ; les besoins varient selon la température, l'humidité et la sudation individuelle. L'apport hydrique global inclut l'eau, les boissons et l'eau des aliments (~20 % du total, en phase avec les apports adéquats de l'Académie Nationale de Médecine).",
+      de: "Dieses Beispiel veranschaulicht eine ungefähre diätetische Schätzheuristik (35 ml/kg) in Kombination mit einem optionalen illustrativen Trainingsausgleich (+750 ml). Es stellt keine universelle Vorgabe oder klinische Empfehlung dar; der Bedarf schwankt je nach Temperatur, Luftfeuchtigkeit und Schweißverlust. Das Gesamtwasser umfasst Trinkwasser, Getränke und Feuchtigkeit aus Lebensmitteln (~20 % der Gesamtmenge gemäß den Richtwerten der National Academy of Medicine).",
+      ko: "이 계산은 대략적인 식이 추정 경험칙(35 mL/kg)과 선택적 예시 보정량(+750 mL)을 적용한 결과입니다. 이는 보편적인 필수량이 아니며 기후, 습도, 개인별 발한량에 따라 수분 필요량이 달라집니다. 총 수분 섭취량에는 순수 음용수와 식품 속 수분(전체의 약 20%, 미국 국립의학원 인구집단 충분 섭취량 기준 부합)이 포함됩니다.",
+      hi: "यह गणना एक सन्निकट पोषण अनुमान (35 मिली/किग्रा) और वैकल्पिक कसरत समायोजन (+750 मिली) को दर्शाती है। यह कोई सार्वभौमिक नियम या चिकित्सकीय नुस्खा नहीं है; व्यक्तिगत पानी की जरूरतें तापमान, आर्द्रता और पसीने के अनुसार भिन्न होती हैं। कुल जल में पीने का पानी, पेय पदार्थ और भोजन की नमी (कुल का लगभग 20%, नेशनल एकेडमी ऑफ मेडिसिन के पर्याप्त सेवन मानकों के अनुरूप) शामिल हैं।"
     }
   },
 
@@ -1621,69 +1621,69 @@ const EXAMPLES: Record<string, ToolData> = {
     },
     steps: {
       en: [
-        "Step 1: Age Scoring (FINDRISC): Age 48 sits in the 45–54 bracket = +2 points",
+        "Step 1: Age Scoring (FINDRISC criteria): Age 48 sits in the 45–54 bracket = +2 points",
         "Step 2: BMI Calculation & Scoring: 82.0 kg ÷ (1.75 m)² = 26.78 kg/m² (BMI 25–30 overweight range) = +1 point",
         "Step 3: Central Visceral Waist Scoring: Waist circumference of 96.0 cm (male 94–102 cm range) = +3 points",
         "Step 4: Physical Activity Scoring: Performing ≥30 min of daily physical exercise = +0 points (protective effect against insulin resistance)",
-        "Step 5: Cumulative FINDRISC Total: 2 + 1 + 3 + 0 = 6 Points (out of 13 primary biometric criteria)",
-        "Step 6: Clinical Risk Stratification: Score 6 falls in the Low Risk category (< 7 threshold), corresponding to a < 1% 10-year probability of Type 2 diabetes"
+        "Step 5: Cumulative Screener Total: 2 + 1 + 3 + 0 = 6 Points (out of 13 screening points)",
+        "Step 6: Raw Score Output: 6 points out of 13 possible screening points on this unvalidated 4-factor lifestyle model"
       ],
       es: [
-        "Paso 1: Puntuación por Edad (FINDRISC): 48 años (franja 45–54) = +2 puntos",
+        "Paso 1: Puntuación por Edad (criterios FINDRISC): 48 años (franja 45–54) = +2 puntos",
         "Paso 2: Cálculo y Puntuación de IMC: 82.0 ÷ (1.75)² = 26.78 kg/m² (rango 25–30) = +1 punto",
         "Paso 3: Puntuación por Circunferencia de Cintura: 96.0 cm (hombres 94–102 cm) = +3 puntos",
         "Paso 4: Actividad Física: ≥30 min diarios de ejercicio = 0 puntos (factor protector)",
-        "Paso 5: Puntuación Total Acumulada: 2 + 1 + 3 + 0 = 6 Puntos",
-        "Paso 6: Estratificación Clínica: Puntuación de 6 clasifica en Riesgo Bajo (< 7 puntos, probabilidad < 1% a 10 años)"
+        "Paso 5: Puntuación Total del Cribado: 2 + 1 + 3 + 0 = 6 Puntos (de 13 puntos posibles)",
+        "Paso 6: Resultado de Puntuación Bruta: 6 puntos de 13 posibles en este modelo educativo no validado"
       ],
       fr: [
-        "Étape 1 : Cotation Âge (FINDRISC) : 48 ans (tranche 45–54 ans) = +2 points",
+        "Étape 1 : Cotation Âge (critères FINDRISC) : 48 ans (tranche 45–54 ans) = +2 points",
         "Étape 2 : Calcul et Cotation de l'IMC : 82,0 ÷ (1,75)² = 26,78 kg/m² (plage 25–30) = +1 point",
         "Étape 3 : Cotation du Tour de Taille : 96,0 cm (hommes 94–102 cm) = +3 points",
         "Étape 4 : Activité Physique : ≥30 min par jour = 0 point (effet protecteur métabolique)",
-        "Étape 5 : Score FINDRISC Total : 2 + 1 + 3 + 0 = 6 Points",
-        "Étape 6 : Stratification Clinique : Score de 6 points = Risque Faible (< 7 points, probabilité < 1% à 10 ans)"
+        "Étape 5 : Score Total du Dépistage : 2 + 1 + 3 + 0 = 6 Points (sur 13 points possibles)",
+        "Étape 6 : Sortie du Score Brut : 6 points sur 13 possibles sur ce modèle éducatif non validé"
       ],
       de: [
-        "Schritt 1: Altersbewertung (FINDRISC): 48 Jahre (Gruppe 45–54 Jahre) = +2 Punkte",
+        "Schritt 1: Altersbewertung (FINDRISC-Kriterien): 48 Jahre (Gruppe 45–54 Jahre) = +2 Punkte",
         "Schritt 2: BMI-Berechnung & Punkte: 82,0 ÷ (1,75)² = 26,78 kg/m² (Bereich 25–30) = +1 Punkt",
         "Schritt 3: Taillenumfang-Bewertung: 96,0 cm (Männer 94–102 cm) = +3 Punkte",
         "Schritt 4: Körperliche Aktivität: ≥30 Min. täglich = 0 Punkte (metabolischer Schutzfaktor)",
-        "Schritt 5: FINDRISC-Gesamtergebnis: 2 + 1 + 3 + 0 = 6 Punkte",
-        "Schritt 6: Klinische Risikoeinstufung: 6 Punkte bedeuten Geringes Risiko (< 7 Punkte, < 1% 10-Jahres-Wahrscheinlichkeit)"
+        "Schritt 5: Screening-Gesamtergebnis: 2 + 1 + 3 + 0 = 6 Punkte (von 13 möglichen Punkten)",
+        "Schritt 6: Rohwert-Ergebnis: 6 Punkte von 13 möglichen Punkten in diesem nicht validierten Modell"
       ],
       ko: [
-        "1단계: 연령 점수 부여(FINDRISC): 48세(45~54세 구간) = +2점",
+        "1단계: 연령 점수 부여(FINDRISC 기준): 48세(45~54세 구간) = +2점",
         "2단계: BMI 산출 및 점수: 82.0 ÷ (1.75)² = 26.78 kg/m² (25~30 과체중 구간) = +1점",
         "3단계: 복부 내장지방 허리둘레 점수: 96.0 cm (남성 94~102 cm 구간) = +3점",
         "4단계: 일일 신체 활동 점수: 매일 30분 이상 운동 = +0점 (인슐린 감수성 보호 효과)",
-        "5단계: FINDRISC 종합 점수 합산: 2 + 1 + 3 + 0 = 6점",
-        "6단계: 임상 위험도 판정: 6점은 낮은 위험군(< 7점 기준선 미만)으로 10년 내 당뇨 발병 확률 < 1%에 해당"
+        "5단계: 간이 스크리닝 종합 점수 합산: 2 + 1 + 3 + 0 = 6점 (총 13점 만점)",
+        "6단계: 원점수 도출: 비공인 4요소 모델 기준 13점 만점 중 6점 도출"
       ],
       hi: [
-        "चरण 1: आयु स्कोर (FINDRISC): 48 वर्ष (45-54 वर्ष वर्ग) = +2 अंक",
+        "चरण 1: आयु स्कोर (FINDRISC मानदंड): 48 वर्ष (45-54 वर्ष वर्ग) = +2 अंक",
         "चरण 2: बीएमआई गणना एवं स्कोर: 82.0 ÷ (1.75)² = 26.78 kg/m² (25-30 अधिक वजन सीमा) = +1 अंक",
         "चरण 3: पेट की चर्बी कमर स्कोर: 96.0 सेमी (पुरुष 94-102 सेमी) = +3 अंक",
         "चरण 4: शारीरिक गतिविधि स्कोर: ≥30 मिनट दैनिक व्यायाम = +0 अंक (सुरक्षात्मक प्रभाव)",
-        "चरण 5: कुल FINDRISC स्कोर: 2 + 1 + 3 + 0 = 6 अंक",
-        "चरण 6: नैदानिक जोखिम वर्गीकरण: 6 अंक कम जोखिम (< 7 सीमा) दर्शाता है, जो 10 वर्षों में < 1% जोखिम के अनुरूप है"
+        "चरण 5: कुल स्क्रीनिंग स्कोर: 2 + 1 + 3 + 0 = 6 अंक (13 संभावित अंकों में से)",
+        "चरण 6: मूल स्कोर परिणाम: इस गैर-सत्यापित 4-कारक मॉडल पर 13 संभावित अंकों में से 6 अंक"
       ]
     },
     result: {
-      en: { label: "Diabetes Risk Stratification", value: "6 Points (Low Risk: < 1% 10-Year Probability)" },
-      es: { label: "Estratificación de Riesgo", value: "6 Puntos (Riesgo Bajo: < 1% Probabilidad a 10 Años)" },
-      fr: { label: "Score de Risque Diabète", value: "6 Points (Risque Faible : < 1% Probabilité à 10 Ans)" },
-      de: { label: "Diabetes-Risikoeinstufung", value: "6 Punkte (Geringes Risiko: < 1% 10-Jahres-Wahrscheinlichkeit)" },
-      ko: { label: "당뇨병 위험도 판정", value: "6점 (낮은 위험군: 10년 내 발병 확률 < 1%)" },
-      hi: { label: "मधुमेह जोखिम वर्गीकरण", value: "6 अंक (कम जोखिम: 10 वर्षों में < 1% प्रायिकता)" }
+      en: { label: "Raw Screening Score", value: "6 / 13 Points" },
+      es: { label: "Puntuación Bruta de Cribado", value: "6 / 13 Puntos" },
+      fr: { label: "Score Brut de Dépistage", value: "6 / 13 Points" },
+      de: { label: "Unberechneter Screening-Wert", value: "6 / 13 Punkte" },
+      ko: { label: "간이 선별 원점수", value: "6 / 13점" },
+      hi: { label: "मूल स्क्रीनिंग स्कोर", value: "6 / 13 अंक" }
     },
     interp: {
-      en: "A cumulative score of 6 points places this patient in the Low Risk category (< 7 points), corresponding to a < 1% probability of developing Type 2 diabetes over the next decade. Daily aerobic exercise (≥30 minutes) serves as a potent protective counterweight against the elevated waist circumference (96 cm) and BMI (26.8 kg/m²). If physical activity drops below 30 minutes daily (+2 points), the score rises to 8 points, shifting the clinical classification into the Slightly Elevated risk tier (~4% probability).",
-      es: "Una puntuación de 6 puntos sitúa a este paciente en la categoría de Riesgo Bajo (< 7 puntos), con menos del 1% de probabilidad de desarrollar diabetes tipo 2 a 10 años. El ejercicio aeróbico diario (≥30 min) compensa eficazmente la cintura (96 cm) y el IMC (26.8). Si el paciente se vuelve sedentario (+2 puntos), la puntuación subiría a 8 puntos, pasando a la categoría Ligeramente Elevada (~4%).",
-      fr: "Un score de 6 points classe ce patient dans la catégorie Risque Faible (< 7 points), soit moins de 1% de probabilité de développer un diabète de type 2 d'ici 10 ans. La pratique quotidienne d'activité physique (≥30 min) protège efficacement contre le tour de taille (96 cm) et l'IMC (26,8). En cas d'inactivité (+2 points), le score monterait à 8 points, atteignant le palier Légèrement Élevé (~4%).",
-      de: "Eine Punktzahl von 6 stuft den Patienten in die Kategorie Geringes Risiko ein (< 7 Punkte), was einer 10-Jahres-Wahrscheinlichkeit von unter 1% entspricht. Tägliche Bewegung (≥30 Min.) wirkt dem erhöhten Taillenumfang (96 cm) und BMI (26,8) schützend entgegen. Fällt die Bewegung weg (+2 Punkte), steigt der Score auf 8 Punkte in die leicht erhöhte Risikostufe (~4%).",
-      ko: "종합 6점은 10년 내 당뇨 발병 확률 < 1%에 해당하는 '낮은 위험군'(7점 미만)에 해당합니다. 매일 30분 이상의 유산소 신체 활동은 다소 높은 허리둘레(96 cm)와 과체중 BMI(26.8 kg/m²)에 대항하는 강력한 인슐린 감수성 보호 요인으로 작용합니다. 만약 신체 활동이 부족해질 경우(+2점), 총점이 8점으로 상승하여 '경미한 주의 단계(~4% 발병률)'로 전환됩니다.",
-      hi: "6 अंकों का संचयी स्कोर इस मरीज को कम जोखिम (< 7 अंक) श्रेणी में रखता है, जो अगले 10 वर्षों में टाइप 2 मधुमेह के 1% से भी कम जोखिम के अनुरूप है। दैनिक एरोबिक व्यायाम (≥30 मिनट) बढ़े हुए कमर के घेरे (96 सेमी) और बीएमआई (26.8) के खिलाफ शक्तिशाली सुरक्षा कवच का काम करता है। यदि व्यायाम छूट जाए (+2 अंक), तो स्कोर 8 अंक हो जाता है, जो थोड़ा बढ़ा हुआ जोखिम (~4%) दर्शाता है।"
+      en: "This example yields a raw screening score of 6 out of 13 points on our 4-factor lifestyle screener. This tool is an unvalidated educational demonstration and does not assign clinical risk categories, predict actual diabetes probability, or estimate 10-year risk. A formal clinical evaluation requires diagnostic laboratory blood testing (such as HbA1c or fasting plasma glucose) administered by a licensed healthcare provider.",
+      es: "Este ejemplo da como resultado una puntuación bruta de 6 sobre 13 puntos en nuestro cribado educativo de 4 factores. Esta herramienta es una demostración educativa no validada y no asigna categorías de riesgo clínico ni predice la probabilidad real de diabetes ni el riesgo a 10 años. La evaluación formal requiere pruebas diagnósticas de laboratorio (como HbA1c o glucosa plasmática en ayunas) prescritas por un médico.",
+      fr: "Cet exemple produit un score brut de 6 sur 13 points selon notre outil de dépistage éducatif à 4 facteurs. Cet outil est une démonstration éducative non validée qui n'attribue pas de catégorie de risque clinique et ne prédit ni la probabilité réelle de diabète ni le risque à 10 ans. Une évaluation clinique formelle nécessite des examens biologiques (tels que l'HbA1c ou la glycémie à jeun) réalisés sous contrôle médical.",
+      de: "Dieses Beispiel ergibt eine Rohpunktzahl von 6 von 13 Punkten in unserem pädagogischen 4-Faktoren-Screening. Dieses Instrument ist ein nicht validiertes Lehrmittel und ordnet weder klinische Risikokategorien zu noch prognostiziert es eine tatsächliche Erkrankungswahrscheinlichkeit oder ein 10-Jahres-Risiko. Für eine verlässliche Diagnose sind ärztliche Laboruntersuchungen (wie HbA1c oder Nüchternglukose) erforderlich.",
+      ko: "이 예시는 4요소 생활습관 간이 도구에서 13점 만점 중 원점수 6점을 나타냅니다. 본 도구는 비공인 교육용 도구이며 임상적 질환 위험 등급을 부여하거나 실제 당뇨 발병 확률 및 10년 위험도를 예측하지 않습니다. 정확한 진단을 위해서는 전문 의료진을 통한 혈액 검사(당화혈색소 HbA1c 또는 공복 혈당)가 반드시 필요합니다.",
+      hi: "यह उदाहरण हमारे 4-कारक जीवनशैली टूल पर 13 में से 6 अंकों का मूल स्क्रीनिंग स्कोर दर्शाता है। यह टूल एक गैर-सत्यापित शैक्षिक प्रदर्शन है और यह कोई नैदानिक जोखिम श्रेणी निर्धारित नहीं करता है, न ही वास्तविक मधुमेह संभावना या 10-वर्षीय जोखिम का अनुमान लगाता है। औपचारिक नैदानिक मूल्यांकन के लिए डॉक्टर द्वारा रक्त परीक्षण (जैसे HbA1c या फास्टिंग ग्लूकोज) कराना अनिवार्य है।"
     }
   },
 

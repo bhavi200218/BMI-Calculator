@@ -569,7 +569,7 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
     };
   }
 
-  // 9. DIABETES RISK (FINDRISC / ADA Score)
+  // 9. DIABETES RISK (Raw Score Educational Scale)
   if (isDiabetes) {
     const badges: Record<Locale, string> = {
       en: 'Type 2 Diabetes Screening',
@@ -580,43 +580,69 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
       hi: 'टाइप 2 मधुमेह स्क्रीनिंग'
     };
     const titleSuffixes: Record<Locale, string> = {
-      en: 'FINDRISC & ADA Risk Score Tiers',
-      es: 'Niveles de Puntuación de Riesgo FINDRISC y ADA',
-      fr: 'Paliers de Risque FINDRISC et ADA',
-      de: 'FINDRISC- & ADA-Risikostufen',
-      ko: 'FINDRISC 및 미국당뇨병학회(ADA) 위험도 단계',
-      hi: 'FINDRISC एवं ADA जोखिम स्कोर स्तर'
+      en: 'Raw Score Continuum (0–13 Points)',
+      es: 'Continuo de Puntuación Bruta (0–13 Puntos)',
+      fr: 'Continuum du Score Brut (0–13 Points)',
+      de: 'Punkteskala (0–13 Punkte)',
+      ko: '원점수 연속 척도 (0~13점)',
+      hi: 'मूल स्कोर सातत्य (0–13 अंक)'
+    };
+    const descs: Record<Locale, string> = {
+      en: 'Raw score distribution (0–13 points) based on 4 lifestyle indicators; unvalidated educational score, does not predict clinical diabetes probability.',
+      es: 'Distribución de puntuación bruta (0–13 puntos) basada en 4 indicadores; herramienta educativa no validada, no predice la probabilidad clínica de diabetes.',
+      fr: 'Distribution du score brut (0–13 points) basée sur 4 indicateurs ; outil éducatif non validé, ne prédit pas le risque de diabète.',
+      de: 'Verteilung der Rohpunktzahl (0–13 Punkte) aus 4 Lebensstilindikatoren; nicht validiertes pädagogisches Instrument, prognostiziert kein klinisches Diabetesrisiko.',
+      ko: '4가지 생활습관 지표에 따른 원점수 분포(0~13점). 비공인 교육용 도구이며 실제 당뇨 발병 확률을 예측하지 않습니다.',
+      hi: '4 जीवनशैली संकेतकों पर आधारित मूल स्कोर वितरण (0–13 अंक); यह गैर-सत्यापित शैक्षिक उपकरण है और चिकित्सकीय मधुमेह जोखिम की भविष्यवाणी नहीं करता है।'
     };
     const captions: Record<Locale, string> = {
-      en: `Figure 1.1: 10-Year Type 2 diabetes probability tiers based on FINDRISC and American Diabetes Association (ADA) criteria.`,
-      es: `Figura 1.1: Niveles de probabilidad de diabetes tipo 2 según la escala FINDRISC y la ADA.`,
-      fr: `Figure 1.1 : Paliers de probabilité de diabète de type 2 fondés sur les critères FINDRISC et ADA.`,
-      de: `Abbildung 1.1: 10-Jahres-Wahrscheinlichkeitsstufen für Typ-2-Diabetes nach FINDRISC und ADA.`,
-      ko: `그림 1.1: FINDRISC 및 미국당뇨병학회(ADA) 기준에 따른 10년 내 제2형 당뇨병 발병 위험도.`,
-      hi: `चित्र 1.1: FINDRISC और अमेरिकन डायबिटीज एसोसिएशन (ADA) मानदंडों पर आधारित टाइप 2 मधुमेह जोखिम स्तर।`
+      en: `Figure 1.1: Raw score distribution (0–13 points) across 4 non-invasive lifestyle indicators. This educational tool is unvalidated and does not predict clinical diabetes risk or probability.`,
+      es: `Figura 1.1: Distribución de puntuación bruta (0–13 puntos) sobre 4 indicadores no invasivos. Esta herramienta educativa no está validada y no predice la probabilidad clínica de diabetes.`,
+      fr: `Figure 1.1 : Distribution du score brut (0–13 points) sur 4 indicateurs non invasifs. Cet outil éducatif n'est pas validé et ne prédit pas le risque clinique de diabète.`,
+      de: `Abbildung 1.1: Verteilung der Rohpunktzahl (0–13 Punkte) über 4 nicht-invasive Faktoren. Dieses Lehrmittel ist nicht validiert und schätzt kein klinisches Diabetesrisiko ab.`,
+      ko: `그림 1.1: 4가지 비침습적 생활습관 지표에 따른 원점수 분포(0~13점). 본 교육용 도구는 비공인 도구이며 임상 당뇨 발병 확률을 예측하지 않습니다.`,
+      hi: `चित्र 1.1: 4 गैर-आक्रामक संकेतकों पर आधारित मूल स्कोर वितरण (0–13 अंक)। यह शैक्षिक टूल गैर-सत्यापित है और वास्तविक मधुमेह जोखिम का अनुमान नहीं लगाता है।`
+    };
+    const sources: Record<Locale, string> = {
+      en: 'Educational 4-Factor Screener (items adapted from FINDRISC criteria; unvalidated)',
+      es: 'Cribado Educativo de 4 Factores (adaptado de criterios FINDRISC; no validado)',
+      fr: 'Dépistage Éducatif à 4 Facteurs (adapté des critères FINDRISC ; non validé)',
+      de: 'Pädagogisches 4-Faktoren-Screening (adaptiert nach FINDRISC-Kriterien; nicht validiert)',
+      ko: '교육용 4요소 스크리너 (FINDRISC 항목 기반 각색; 비공인 도구)',
+      hi: 'शैक्षिक 4-कारक स्क्रीनिंग (FINDRISC मानदंडों पर आधारित; गैर-सत्यापित)'
     };
 
     const dLabels: Record<Locale, [string, string, string, string]> = {
-      en: ['Low Risk (< 1%)', 'Slightly Elevated (4%)', 'Moderate Risk (17%)', 'High Risk (33%+)'],
-      es: ['Riesgo Bajo (< 1%)', 'Ligeramente Elevado (4%)', 'Riesgo Moderado (17%)', 'Riesgo Alto (33%+)'],
-      fr: ['Risque Faible (< 1%)', 'Légèrement Élevé (4%)', 'Risque Modéré (17%)', 'Risque Élevé (33%+)'],
-      de: ['Geringes Risiko (< 1%)', 'Leicht Erhöht (4%)', 'Mittleres Risiko (17%)', 'Hohes Risiko (33%+)'],
-      ko: ['낮은 위험 (< 1%)', '약간 증가 (약 4%)', '중등도 위험 (약 17%)', '고위험군 (33% 이상)'],
-      hi: ['कम जोखिम (< 1%)', 'हल्का बढ़ा हुआ (4%)', 'मध्यम जोखिम (17%)', 'उच्च जोखिम (33%+)']
+      en: ['Points 0–3', 'Points 4–6', 'Points 7–9', 'Points 10–13'],
+      es: ['Puntos 0–3', 'Puntos 4–6', 'Puntos 7–9', 'Puntos 10–13'],
+      fr: ['Points 0–3', 'Points 4–6', 'Points 7–9', 'Points 10–13'],
+      de: ['Punkte 0–3', 'Punkte 4–6', 'Punkte 7–9', 'Punkte 10–13'],
+      ko: ['0~3점 구간', '4~6점 구간', '7~9점 구간', '10~13점 구간'],
+      hi: ['0–3 अंक वर्ग', '4–6 अंक वर्ग', '7–9 अंक वर्ग', '10–13 अंक वर्ग']
     };
     const dl = dLabels[lang] || dLabels.en;
+
+    const ranges: Record<Locale, [string, string, string, string]> = {
+      en: ['0 – 3 Points', '4 – 6 Points', '7 – 9 Points', '10 – 13 Points'],
+      es: ['0 – 3 Puntos', '4 – 6 Puntos', '7 – 9 Puntos', '10 – 13 Puntos'],
+      fr: ['0 – 3 Points', '4 – 6 Points', '7 – 9 Points', '10 – 13 Points'],
+      de: ['0 – 3 Punkte', '4 – 6 Punkte', '7 – 9 Punkte', '10 – 13 Punkte'],
+      ko: ['0~3점', '4~6점', '7~9점', '10~13점'],
+      hi: ['0–3 अंक', '4–6 अंक', '7–9 अंक', '10–13 अंक']
+    };
+    const r = ranges[lang] || ranges.en;
 
     return {
       badge: badges[lang] || badges.en,
       titleSuffix: titleSuffixes[lang] || titleSuffixes.en,
-      source: 'American Diabetes Association (ADA) & FINDRISC',
-      desc: 'Validated non-invasive clinical risk tiers estimating 10-year probability of developing Type 2 diabetes.',
+      source: sources[lang] || sources.en,
+      desc: descs[lang] || descs.en,
       caption: captions[lang] || captions.en,
       segments: [
-        { label: dl[0], range: '< 7 Points', color: '#34d399' },
-        { label: dl[1], range: '7 – 11 Points', color: '#38bdf8' },
-        { label: dl[2], range: '12 – 14 Points', color: '#fbbf24' },
-        { label: dl[3], range: '≥ 15 Points', color: '#f87171' }
+        { label: dl[0], range: r[0], color: '#34d399' },
+        { label: dl[1], range: r[1], color: '#38bdf8' },
+        { label: dl[2], range: r[2], color: '#fbbf24' },
+        { label: dl[3], range: r[3], color: '#f87171' }
       ]
     };
   }
@@ -673,7 +699,7 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
     };
   }
 
-  // 11. WATER INTAKE (National Academies / ACSM Hydration)
+  // 11. WATER INTAKE (Illustrative Estimation Continuum)
   if (isWater) {
     const badges: Record<Locale, string> = {
       en: 'Daily Hydration Standards',
@@ -691,13 +717,29 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
       ko: '활동량 및 기후별 일일 수분 섭취 연속체',
       hi: 'दैनिक जलयोजन लक्ष्य सातत्य'
     };
+    const descs: Record<Locale, string> = {
+      en: 'Approximate illustrative fluid baseline (35 mL/kg estimate) with optional exercise adjustment.',
+      es: 'Línea base ilustrativa de hidratación (estimación de 35 ml/kg) con ajuste opcional por ejercicio.',
+      fr: 'Base hydrique illustrative (estimation à 35 ml/kg) avec ajustement optionnel pour l\'exercice.',
+      de: 'Ungefähre illustrative Flüssigkeitsbasis (35 ml/kg Schätzung) mit optionalem Trainingsausgleich.',
+      ko: '체중 기준 예시적 수분 섭취량 추정(35 mL/kg) 및 운동 시 선택적 보정량.',
+      hi: 'सन्निकट उदाहरणार्थ जल आधार रेखा (35 मिली/किग्रा) एवं वैकल्पिक कसरत समायोजन।'
+    };
     const captions: Record<Locale, string> = {
-      en: `Figure 1.1: Recommended daily fluid intake baseline and active exercise compensation. Source: National Academies & ACSM.`,
-      es: `Figura 1.1: Pautas de ingesta diaria de líquidos según las Academias Nacionales y ACSM.`,
-      fr: `Figure 1.1 : Repères d'apport hydrique quotidien selon les Académies Nationales et l'ACSM.`,
-      de: `Abbildung 1.1: Richtwerte für die tägliche Flüssigkeitsaufnahme nach National Academies & ACSM.`,
-      ko: `그림 1.1: 미국 한림원(National Academies) 및 ACSM 지침에 따른 일일 수분 섭취 기준.`,
-      hi: `चित्र 1.1: नेशनल एकेडमीज और ACSM दिशानिर्देशों पर आधारित दैनिक तरल सेवन संदर्भ।`
+      en: `Figure 1.1: Approximate daily fluid intake baseline (35 mL/kg estimate) with optional exercise adjustment. Population total-water benchmark: National Academy of Medicine (NAM / IOM 2005).`,
+      es: `Figura 1.1: Línea base ilustrativa de ingesta de líquidos (estimación de 35 ml/kg) con ajuste opcional por ejercicio. Referencia poblacional de agua total: Academia Nacional de Medicina (NAM / IOM 2005).`,
+      fr: `Figure 1.1 : Repère indicatif d'apport hydrique (estimation à 35 ml/kg) avec ajustement optionnel d'exercice. Référence en eau totale : Académie Nationale de Médecine (NAM / IOM 2005).`,
+      de: `Abbildung 1.1: Richtwerte für die ungefähre tägliche Flüssigkeitsaufnahme (35 ml/kg Schätzung) mit optionalem Trainingsausgleich. Referenzwert für Gesamtwasser: National Academy of Medicine (NAM / IOM 2005).`,
+      ko: `그림 1.1: 일일 수분 섭취 예시적 추정치(35 mL/kg) 및 선택적 운동 보정. 인구집단 총 수분 참고 기준: 미국 국립의학원(NAM / IOM 2005).`,
+      hi: `चित्र 1.1: दैनिक तरल सेवन का अनुमान (35 मिली/किग्रा) एवं वैकल्पिक कसरत समायोजन। कुल जल संदर्भ: नेशनल एकेडमी ऑफ मेडिसिन (NAM / IOM 2005)।`
+    };
+    const sources: Record<Locale, string> = {
+      en: 'Illustrative Calculator Heuristic & NAM (2005) Total Water AI',
+      es: 'Heurística Ilustrativa y NAM (2005) Ingesta Adecuada de Agua Total',
+      fr: 'Heuristique Illustrative et NAM (2005) Apport Adéquat en Eau Totale',
+      de: 'Illustrative Schätzheuristik & NAM (2005) Gesamtwasser-Referenzwert',
+      ko: '예시적 추정 경험칙 및 미국 국립의학원(NAM 2005) 총 수분 AI',
+      hi: 'उदाहरणार्थ अनुमान एवं नेशनल एकेडमी ऑफ मेडिसिन (2005) कुल जल AI'
     };
 
     const wLabels: Record<Locale, [string, string, string, string]> = {
@@ -710,17 +752,27 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
     };
     const wl = wLabels[lang] || wLabels.en;
 
+    const ranges: Record<Locale, [string, string, string, string]> = {
+      en: ['2.0 – 2.5 L / day', '2.5 – 3.0 L / day', '3.0 – 3.8 L / day', '3.8 – 4.5+ L / day'],
+      es: ['2.0 – 2.5 L / día', '2.5 – 3.0 L / día', '3.0 – 3.8 L / día', '3.8 – 4.5+ L / día'],
+      fr: ['2,0 – 2,5 L / jour', '2,5 – 3,0 L / jour', '3,0 – 3,8 L / jour', '3,8 – 4,5+ L / jour'],
+      de: ['2,0 – 2,5 L / Tag', '2,5 – 3,0 L / Tag', '3,0 – 3,8 L / Tag', '3,8 – 4,5+ L / Tag'],
+      ko: ['2.0~2.5 L / 일', '2.5~3.0 L / 일', '3.0~3.8 L / 일', '3.8~4.5+ L / 일'],
+      hi: ['2.0 – 2.5 ली / दिन', '2.5 – 3.0 ली / दिन', '3.0 – 3.8 ली / दिन', '3.8 – 4.5+ ली / दिन']
+    };
+    const wr = ranges[lang] || ranges.en;
+
     return {
       badge: badges[lang] || badges.en,
       titleSuffix: titleSuffixes[lang] || titleSuffixes.en,
-      source: 'National Academies of Sciences & ACSM',
-      desc: 'Baseline daily fluid intake adjusted for physical exercise sweat losses and environmental heat.',
+      source: sources[lang] || sources.en,
+      desc: descs[lang] || descs.en,
       caption: captions[lang] || captions.en,
       segments: [
-        { label: wl[0], range: '2.0 – 2.5 L / day', color: '#38bdf8' },
-        { label: wl[1], range: '2.5 – 3.0 L / day', color: '#34d399' },
-        { label: wl[2], range: '3.0 – 3.8 L / day', color: '#fbbf24' },
-        { label: wl[3], range: '3.8 – 4.5+ L / day', color: '#f87171' }
+        { label: wl[0], range: wr[0], color: '#38bdf8' },
+        { label: wl[1], range: wr[1], color: '#34d399' },
+        { label: wl[2], range: wr[2], color: '#fbbf24' },
+        { label: wl[3], range: wr[3], color: '#f87171' }
       ]
     };
   }
