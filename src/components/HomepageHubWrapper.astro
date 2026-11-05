@@ -23,6 +23,48 @@ const gTitle = {
   regional: groupTitles.regional[lang] || groupTitles.regional.en,
 };
 
+const groupDescriptions: Record<string, Record<string, string>> = {
+  core: {
+    en: 'Foundational metabolic and anthropometric screening tools based on WHO and CDC reference standards.',
+    es: 'Herramientas fundamentales de cribado metabólico y antropométrico basadas en estándares de la OMS y los CDC.',
+    fr: "Outils fondamentaux de dépistage métabolique et anthropométrique basés sur les normes de l'OMS et du CDC.",
+    de: 'Grundlegende metabolische und anthropometrische Screening-Tools basierend auf WHO- und CDC-Referenzstandards.',
+    ko: 'WHO 및 CDC 참조 표준을 바탕으로 한 기본 대사 및 신체 계측 스크리닝 도구입니다.',
+    hi: 'WHO और CDC संदर्भ मानकों पर आधारित मौलिक चयापचय और शारीरिक माप स्क्रीनिंग उपकरण।'
+  },
+  performance: {
+    en: 'Body composition, energy balance, and evidence-based nutrition estimation formulas.',
+    es: 'Fórmulas de estimación de composición corporal, equilibrio energético y nutrición basadas en evidencia.',
+    fr: "Formules d'estimation de la composition corporelle, de l'équilibre énergétique et de la nutrition.",
+    de: 'Evidenzbasierte Schätzformeln für Körperzusammensetzung, Energiebilanz und Ernährung.',
+    ko: '체성분, 에너지 균형 및 근거 기반 영양 추정 공식 모음입니다.',
+    hi: 'शारीरिक संरचना, ऊर्जा संतुलन और साक्ष्य-आधारित पोषण अनुमान सूत्र।'
+  },
+  specialty: {
+    en: 'Specialized calculators for cardiovascular zones, training intensity, and clinical reference metrics.',
+    es: 'Calculadoras especializadas para zonas cardiovasculares, intensidad de entrenamiento y métricas clínicas.',
+    fr: "Calculateurs spécialisés pour les zones cardiovasculaires, l'intensité d'entraînement et les métriques de référence.",
+    de: 'Spezifische Rechner für kardiovaskuläre Zonen, Trainingsintensität und klinische Referenzwerte.',
+    ko: '심혈관 훈련 구간, 운동 강도 및 임상 참고 지표를 위한 전문 계산기입니다.',
+    hi: 'कार्डियोवैस्कुलर ज़ोन, प्रशिक्षण तीव्रता और नैदानिक संदर्भ मेट्रिक्स के लिए विशेष कैलकुलेटर।'
+  },
+  regional: {
+    en: 'Consensus cutoff thresholds adapted for Asian and South Asian population phenotypes.',
+    es: 'Umbrales de corte de consenso adaptados a los fenotipos de poblaciones asiáticas y del sur de Asia.',
+    fr: 'Seuils de consensus adaptés aux phénotypes des populations asiatiques et sud-asiatiques.',
+    de: 'Konsens-Grenzwerte angepasst an Phänotypen asiatischer und südasiatischer Bevölkerungen.',
+    ko: '아시아 및 남아시아 인구 집단의 신체적 특성에 맞춘 합의 기준치 도구입니다.',
+    hi: 'एशियाई और दक्षिण एशियाई जनसंख्या फेनोटाइप के लिए अनुकूलित सहमति कटऑफ सीमाएं।'
+  }
+};
+
+const gDesc = {
+  core: groupDescriptions.core[lang] || groupDescriptions.core.en,
+  performance: groupDescriptions.performance[lang] || groupDescriptions.performance.en,
+  specialty: groupDescriptions.specialty[lang] || groupDescriptions.specialty.en,
+  regional: groupDescriptions.regional[lang] || groupDescriptions.regional.en,
+};
+
 const regionalMeta: Record<string, Record<Locale, { tag: string; cutoff: string }>> = {
   'bmi-calculator-for-indians': {
     en: { tag: 'ICMR Consensus · South Asia', cutoff: 'Obesity threshold ≥ 25.0 kg/m² · Includes ICMR waist action cutoffs (90cm / 80cm)' },
@@ -49,7 +91,10 @@ const regionalMeta: Record<string, Record<Locale, { tag: string; cutoff: string 
   <div class="space-y-6">
     <!-- Group 1: Core Calculators (Global Focus) -->
     <div class="calc-group space-y-3">
-      <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.core}</div>
+      <div class="space-y-0.5">
+        <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.core}</div>
+        <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">{gDesc.core}</p>
+      </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
         {calculators.filter(c=>['bmi-calculator','3d-bmi-calculator','bmi-chart','bmr-calculator','tdee-calculator','maintenance-calorie-calculator','diabetes-risk-calculator'].includes(c.slug)).map(calc => (
           <a
@@ -66,7 +111,10 @@ const regionalMeta: Record<string, Record<Locale, { tag: string; cutoff: string 
 
     <!-- Group 2: Performance & Goals -->
     <div class="calc-group space-y-3">
-      <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.performance}</div>
+      <div class="space-y-0.5">
+        <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.performance}</div>
+        <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">{gDesc.performance}</p>
+      </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
         {calculators.filter(c=>['healthy-weight-by-height','body-fat-calculator','lean-body-mass-calculator','ideal-weight-calculator','calorie-calculator','protein-intake-calculator','water-intake-calculator'].includes(c.slug)).map(calc => (
           <a
@@ -83,7 +131,10 @@ const regionalMeta: Record<string, Record<Locale, { tag: string; cutoff: string 
 
     <!-- Group 3: Specialty Metrics -->
     <div class="calc-group space-y-3">
-      <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.specialty}</div>
+      <div class="space-y-0.5">
+        <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.specialty}</div>
+        <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">{gDesc.specialty}</p>
+      </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3">
         {calculators.filter(c=>['macro-calculator','waist-to-hip-ratio-calculator','body-surface-area-calculator','heart-rate-zone-calculator','karvonen-heart-rate-calculator','1rm-calculator','pregnancy-weight-gain-calculator'].includes(c.slug)).map(calc => (
           <a
@@ -100,7 +151,10 @@ const regionalMeta: Record<string, Record<Locale, { tag: string; cutoff: string 
 
     <!-- Group 4: Clearly Labelled Regional & Population Resources -->
     <div class="calc-group space-y-3">
-      <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.regional}</div>
+      <div class="space-y-0.5">
+        <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.regional}</div>
+        <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">{gDesc.regional}</p>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
         {calculators.filter(c=>['bmi-calculator-for-indians','asian-bmi-calculator'].includes(c.slug)).map(calc => {
           const meta = regionalMeta[calc.slug]?.[lang] || regionalMeta[calc.slug]?.['en'];
