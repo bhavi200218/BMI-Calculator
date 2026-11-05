@@ -1521,37 +1521,37 @@ const EXAMPLES: Record<string, ToolData> = {
         "Step 1: Energy equivalent of adipose tissue: 1 kg human adipose fat contains ~7,700 kcal of stored energy (0.5 kg fat = ~3,850 kcal weekly deficit)",
         "Step 2: Daily deficit calculation: 3,850 kcal ÷ 7 days = 550 kcal/day (standardized clinical target: 500 kcal/day deficit)",
         "Step 3: Daily caloric target: Maintenance (2,500 kcal) − Deficit (500 kcal) = 2,000 kcal/day",
-        "Step 4: Clinical Safety Check: A 500 kcal deficit represents 20% of TDEE, well within the safe 15–25% metabolic threshold to avert metabolic slowdown"
+        "Step 4: Illustrative Deficit Context: A 500 kcal deficit represents 20% of TDEE, a commonly referenced illustrative target for steady weight loss"
       ],
       es: [
         "Paso 1: Equivalente energético adiposo: 1 kg de grasa corporal almacena ~7,700 kcal (0.5 kg = déficit semanal de ~3,850 kcal)",
         "Paso 2: Cálculo del déficit diario: 3,850 ÷ 7 días = 550 kcal/día (objetivo clínico estándar: 500 kcal/día)",
         "Paso 3: Ingesta calórica prescrita: Mantenimiento (2,500 kcal) − Déficit (500 kcal) = 2,000 kcal/día",
-        "Paso 4: Verificación de seguridad: El déficit del 20% se mantiene en la franja segura (15–25%) para prevenir la adaptación metabólica severa"
+        "Paso 4: Contexto ilustrativo del déficit: Un déficit del 20% representa una meta ilustrativa habitual para una pérdida de peso gradual"
       ],
       fr: [
         "Étape 1 : Équivalent tissu adipeux : 1 kg de graisse équivaut à ~7 700 kcal (0,5 kg = ~3 850 kcal de déficit hebdomadaire)",
         "Étape 2 : Déficit quotidien requis : 3 850 kcal ÷ 7 jours = 550 kcal/jour (cible clinique usuelle : 500 kcal/jour)",
         "Étape 3 : Cible calorique journalière : Dépense (2 500 kcal) − Déficit (500 kcal) = 2 000 kcal/jour",
-        "Étape 4 : Seuil de sécurité métabolique : Un déficit de 20% préserve le taux métabolique basal sans effondrement thyroïdien"
+        "Étape 4 : Contexte illustratif du déficit : Un déficit de 20% constitue un repère indicatif couramment utilisé pour une perte de poids progressive"
       ],
       de: [
         "Schritt 1: Energieäquivalent Fettgewebe: 1 kg Körperfett entspricht ~7.700 kcal (0,5 kg = ~3.850 kcal Wochendefizit)",
         "Schritt 2: Tägliches Defizit: 3.850 kcal ÷ 7 Tage = 550 kcal/Tag (standardisiertes klinisches Ziel: 500 kcal/Tag)",
         "Schritt 3: Täglicher Zielwert: Erhaltung (2.500 kcal) − Defizit (500 kcal) = 2.000 kcal/Tag",
-        "Schritt 4: Stoffwechselprüfung: Ein Defizit von 20% liegt ideal im sicheren Bereich (15–25%), um adaptive Thermogenese zu minimieren"
+        "Schritt 4: Anschaulicher Kontext: Ein Defizit von 20% stellt einen häufig herangezogenen Orientierungswert für eine stetige Gewichtsabnahme dar"
       ],
       ko: [
         "1단계: 지방 조직 에너지 환산: 체지방 1 kg은 약 7,700 kcal의 저장 에너지 (주당 0.5 kg 감량 = 주간 약 3,850 kcal 결손 필요)",
         "2단계: 일일 칼로리 결손 산출: 3,850 kcal ÷ 7일 = 550 kcal/일 (임상 표준 안전 결손치: 하루 500 kcal)",
         "3단계: 일일 처방 칼로리: 유지 칼로리(2,500 kcal) − 결손(500 kcal) = 2,000 kcal/일",
-        "4단계: 대사 안전성 점검: 20% 결손율은 급격한 기초대사량 저하(적응성 열발생)를 방지하는 15~25% 안전 가이드라인에 완벽히 부합"
+        "4단계: 예시적 결손 범위: 20% 결손율은 점진적이고 지속 가능한 체중 감량을 위해 자주 참고되는 예시적 지표입니다"
       ],
       hi: [
         "चरण 1: वसा ऊतक का ऊर्जा समतुल्य: 1 किग्रा शरीर की वसा में ~7,700 कैलोरी होती है (0.5 किग्रा = ~3,850 कैलोरी साप्ताहिक घाटा)",
         "चरण 2: दैनिक घाटे की गणना: 3,850 ÷ 7 दिन = 550 कैलोरी/दिन (मानक नैदानिक लक्ष्य: 500 कैलोरी/दिन घाटा)",
         "चरण 3: दैनिक कैलोरी लक्ष्य: मेंटेनेंस (2,500 कैलोरी) − घाटा (500 कैलोरी) = 2,000 कैलोरी/दिन",
-        "चरण 4: सुरक्षा जांच: 20% घाटा सुरक्षित सीमा (15-25%) के भीतर है जिससे मेटाबॉलिज्म धीमा नहीं होता"
+        "चरण 4: सांकेतिक घाटा संदर्भ: 20% का कैलोरी घाटा स्थिर वजन घटाने के लिए आमतौर पर उपयोग किया जाने वाला एक सांकेतिक लक्ष्य है"
       ]
     },
     result: {
@@ -1563,12 +1563,12 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "घाटा कैलोरी लक्ष्य", value: "2,000 कैलोरी / दिन (0.5 किग्रा/सप्ताह कमी के लिए -500 कैलोरी घाटा)" }
     },
     interp: {
-      en: "Consuming 2,000 kcal per day creates a predictable 500 kcal daily energy deficit below your 2,500 kcal maintenance requirement. Over seven days, this 3,500 kcal cumulative deficit mobilizes approximately 0.45 to 0.5 kg (1 lb) of stored adipose tissue. According to NIH and CDC guidelines, this moderate deficit preserves lean muscle mass, maintains resting metabolic rate, and prevents the hormonal rebound frequently caused by crash dieting.",
-      es: "Consumir 2,000 kcal/día establece un déficit diario de 500 kcal bajo tu gasto de mantenimiento de 2,500 kcal. En una semana, este déficit acumulado de 3,500 kcal moviliza entre 0.45 y 0.5 kg de grasa corporal almacenada. Las pautas de los NIH y CDC confirman que este déficit moderado protege la masa muscular y minimiza la ralentización metabólica.",
-      fr: "Un apport de 2 000 kcal/jour génère un déficit quotidien de 500 kcal sous votre niveau de maintien de 2 500 kcal. Sur sept jours, ce déficit cumulé de 3 500 kcal permet de déstocker environ 0,45 à 0,5 kg de tissu adipeux. Selon les recommandations du NIH et du CDC, ce rythme préserve la masse maigre et évite l'effet rebond.",
-      de: "Eine Zufuhr von 2.000 kcal/Tag erzeugt ein kontrolliertes Defizit von 500 kcal unter Ihrem Erhaltungsbedarf von 2.500 kcal. Über eine Woche summiert sich dies auf ein Defizit von 3.500 kcal, was einem Fettabbau von ca. 0,45 bis 0,5 kg entspricht. Dieses moderate Defizit schützt Muskelgewebe und verhindert Heißhungerattacken.",
-      ko: "하루 2,000 kcal를 섭취하면 일일 유지 칼로리(2,500 kcal) 대비 500 kcal의 계획된 에너지 결손이 발생합니다. 7일간 누적 3,500 kcal의 결손은 체지방 약 0.45~0.5 kg을 지속 가능하게 연소시킵니다. 미국 국립보건원(NIH) 및 CDC 연구에 따르면, 이러한 완만한 결손 속도는 근손실을 방지하고 기초대사량 저하를 최소화합니다.",
-      hi: "प्रतिदिन 2,000 कैलोरी लेने से आपकी 2,500 कैलोरी मेंटेनेंस जरूरत से 500 कैलोरी का सुरक्षित घाटा बनता है। सात दिनों में 3,500 कैलोरी का यह संचयी घाटा लगभग 0.45 से 0.5 किग्रा वसा जलाता है। NIH और CDC दिशानिर्देशों के अनुसार, यह मध्यम घाटा मांसपेशियों को सुरक्षित रखता है और मेटाबॉलिज्म को धीमा होने से बचाता है।"
+      en: "Consuming 2,000 kcal per day creates a predictable 500 kcal daily energy deficit below your 2,500 kcal maintenance requirement. Over seven days, this 3,500 kcal cumulative deficit mobilizes approximately 0.45 to 0.5 kg (1 lb) of stored adipose tissue. General public health guidance from the NIH and CDC suggests that a gradual, moderate deficit helps minimize muscle loss and supports long-term weight maintenance compared to severe restriction.",
+      es: "Consumir 2,000 kcal/día establece un déficit diario de 500 kcal bajo tu gasto de mantenimiento de 2,500 kcal. En una semana, este déficit acumulado de 3,500 kcal moviliza entre 0.45 y 0.5 kg de grasa corporal almacenada. Las recomendaciones generales de salud sugieren que un déficit moderado y gradual ayuda a mitigar la pérdida de masa magra y facilita el mantenimiento a largo plazo frente a restricciones severas.",
+      fr: "Un apport de 2 000 kcal/jour génère un déficit quotidien de 500 kcal sous votre niveau de maintien de 2 500 kcal. Sur sept jours, ce déficit cumulé de 3 500 kcal permet de déstocker environ 0,45 à 0,5 kg de tissu adipeux. Les repères généraux de santé publique indiquent qu'un déficit modéré et progressif contribue à limiter la perte de masse musculaire et favorise la pérennité des résultats par rapport aux régimes draconiens.",
+      de: "Eine Zufuhr von 2.000 kcal/Tag erzeugt ein kontrolliertes Defizit von 500 kcal unter Ihrem Erhaltungsbedarf von 2.500 kcal. Über eine Woche summiert sich dies auf ein Defizit von 3.500 kcal, was einem Fettabbau von ca. 0,45 bis 0,5 kg entspricht. Allgemeine Empfehlungen legen nahe, dass ein moderates, stufenweises Defizit dazu beitragen kann, den Verlust fettfreier Masse zu begrenzen und den langfristigen Erfolg im Vergleich zu Crash-Diäten zu unterstützen.",
+      ko: "하루 2,000 kcal를 섭취하면 일일 유지 칼로리(2,500 kcal) 대비 500 kcal의 계획된 에너지 결손이 발생합니다. 7일간 누적 3,500 kcal의 결손은 체지방 약 0.45~0.5 kg을 지속 가능하게 연소시킵니다. 일반적인 공중보건 지침에 따르면, 점진적이고 완만한 칼로리 결손은 극단적인 절식에 비해 제지방 감소를 줄이고 장기적인 체중 유지에 도움을 줄 수 있습니다.",
+      hi: "प्रतिदिन 2,000 कैलोरी लेने से आपकी 2,500 कैलोरी मेंटेनेंस जरूरत से 500 कैलोरी का सुरक्षित घाटा बनता है। सात दिनों में 3,500 कैलोरी का यह संचयी घाटा लगभग 0.45 से 0.5 किग्रा वसा जलाता है। सामान्य स्वास्थ्य दिशानिर्देशों के अनुसार, क्रैश डाइटिंग की तुलना में धीमा और मध्यम घाटा मांसपेशियों के नुकसान को कम करने और दीर्घकालिक स्थिरता बनाए रखने में सहायक होता है।"
     }
   }
 ,

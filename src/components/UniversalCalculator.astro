@@ -823,37 +823,79 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
             ]
           };
         }
-        else if (slug === 'diabetes-risk-calculator') {
+            else if (slug === 'diabetes-risk-calculator') {
           const hM = heightCm / 100;
           const bmi = weightKg / (hM * hM);
           const waistLimit = isM ? 94 : 80;
           const waistHigh = isM ? 102 : 88;
 
-          const rLabels = {
-            en: { std: 'Standard Reference', elevated: 'Elevated Threshold', moderate: 'Moderate Threshold', elevVal: 'Elevated', stdVal: 'Standard' },
-            es: { std: 'Referencia Estándar', elevated: 'Umbral Elevado', moderate: 'Umbral Moderado', elevVal: 'Elevado', stdVal: 'Estándar' },
-            fr: { std: 'Référence Standard', elevated: 'Seuil Élevé', moderate: 'Seuil Modéré', elevVal: 'Élevé', stdVal: 'Standard' },
-            de: { std: 'Standardreferenz', elevated: 'Erhöhte Schwelle', moderate: 'Mäßige Schwelle', elevVal: 'Erhöht', stdVal: 'Standard' },
-            ko: { std: '표준 기준', elevated: '주의 필요 수치', moderate: '중간 위험 수치', elevVal: '주의 필요', stdVal: '정상' },
-            hi: { std: 'मानक संदर्भ', elevated: 'उच्च जोखिम सीमा', moderate: 'मध्यम जोखिम सीमा', elevVal: 'उच्च', stdVal: 'मानक' }
-          }[lang] || { std: 'Standard Reference', elevated: 'Elevated Threshold', moderate: 'Moderate Threshold', elevVal: 'Elevated', stdVal: 'Standard' };
+          // 4-Factor Educational Scoring (0 to 13 points total)
+          // 1. Age points (0-4)
+          let agePts = 0;
+          if (ageNum >= 65) agePts = 4;
+          else if (ageNum >= 55) agePts = 3;
+          else if (ageNum >= 45) agePts = 2;
+          else if (ageNum >= 35) agePts = 1;
 
-          let riskScore = rLabels.std;
-          if (bmi >= 27.5 || waistCm >= waistHigh || (bmi >= 23 && waistCm >= waistLimit && ageNum >= 40)) {
-            riskScore = rLabels.elevated;
-          } else if (bmi >= 23 || waistCm >= waistLimit && ageNum >= 45) {
-            riskScore = rLabels.moderate;
+          // 2. BMI points (0-3)
+          let bmiPts = 0;
+          if (bmi >= 30) bmiPts = 3;
+          else if (bmi >= 25) bmiPts = 1;
+
+          // 3. Waist points (0-4)
+          let waistPts = 0;
+          if (waistCm > 0) {
+            if (waistCm >= waistHigh) waistPts = 4;
+            else if (waistCm >= waistLimit) waistPts = 3;
           }
 
+          // 4. Physical activity points (0 or 2)
+          const actPts = activityVal === 'sedentary' ? 2 : 0;
+          const totalPoints = agePts + bmiPts + waistPts + actPts;
+
+          const unitStr = {
+            en: 'Points',
+            es: 'Puntos',
+            fr: 'Points',
+            de: 'Punkte',
+            ko: '점',
+            hi: 'अंक'
+          }[lang] || 'Points';
+
+          const waistStatusStr = waistCm > 0
+            ? (waistCm >= waistLimit
+                ? ({ en: 'Above Reference', es: 'Sobre Referencia', fr: 'Au-dessus Référence', de: 'Über Referenzwert', ko: '기준치 초과', hi: 'संदर्भ से अधिक' }[lang] || 'Above Reference')
+                : ({ en: 'Within Reference', es: 'En Referencia', fr: 'Dans la Norme', de: 'Im Normbereich', ko: '기준치 이내', hi: 'संदर्भ के भीतर' }[lang] || 'Within Reference'))
+            : ({ en: 'Not Provided', es: 'No Proporcionado', fr: 'Non Fourni', de: 'Nicht Angegeben', ko: '미입력', hi: 'उपलब्ध नहीं' }[lang] || 'Not Provided');
+
+          const toolStatusStr = {
+            en: 'Unvalidated Educational Score',
+            es: 'Puntuación Educativa No Validada',
+            fr: 'Score Éducatif Non Validé',
+            de: 'Nicht validierter pädagogischer Score',
+            ko: '검증되지 않은 교육용 점수',
+            hi: 'गैर-सत्यापित शैक्षिक स्कोर'
+          }[lang] || 'Unvalidated Educational Score';
+
           calculated = {
-            primary: { value: riskScore, label: { en: 'Asian Reference Status', es: 'Estado de Referencia Asiático', fr: 'Statut de Référence Asiatique', de: 'Asiatischer Referenzstatus', ko: '아시아인 참조 상태', hi: 'एशियाई संदर्भ स्थिति' } },
+            primary: {
+              value: `${totalPoints} / 13 ${unitStr}`,
+              label: {
+                en: 'Raw Educational Score',
+                es: 'Puntuación Educativa Bruta',
+                fr: 'Score Éducatif Brut',
+                de: 'Pädagogischer Rohwert',
+                ko: '교육용 원점수',
+                hi: 'शैक्षिक मूल स्कोर'
+              }
+            },
             secondary: [
-              { label: { en: 'BMI Score', es: 'Puntaje IMC', fr: 'Score IMC', de: 'BMI-Wert', ko: 'BMI 점수', hi: 'बीएमआई स्कोर' }, value: bmi.toFixed(1) },
-              { label: { en: 'Asian Cutoff', es: 'Umbral Asiático', fr: 'Seuil Asiatique', de: 'Asien-Schwellenwert', ko: '아시아인 기준', hi: 'एशियाई कटऑफ' }, value: '23.0 kg/m²' },
-              { label: { en: 'Waist Reference', es: 'Referencia Cintura', fr: 'Référence Tour Taille', de: 'Taillenreferenz', ko: '허리둘레 참조', hi: 'कमर संदर्भ' }, value: waistCm >= waistLimit ? rLabels.elevVal : rLabels.stdVal }
+              { label: { en: 'Calculated BMI', es: 'IMC Calculado', fr: 'IMC Calculé', de: 'Berechneter BMI', ko: '산출 BMI', hi: 'गणना किया गया बीएमआई' }, value: bmi.toFixed(1) },
+              { label: { en: 'Waist Reference Status', es: 'Estado de Cintura', fr: 'Statut Tour de Taille', de: 'Taillenstatus', ko: '허리둘레 상태', hi: 'कमर स्थिति' }, value: waistStatusStr },
+              { label: { en: 'Tool Classification', es: 'Tipo de Herramienta', fr: 'Classification Outil', de: 'Einstufung', ko: '도구 분류', hi: 'उपकरण वर्गीकरण' }, value: toolStatusStr }
             ]
           };
-        } 
+        }
         else if (slug === 'bmr-calculator') {
           const bmr = isM
             ? (10 * weightKg) + (6.25 * heightCm) - (5 * ageNum) + 5
@@ -981,15 +1023,20 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         } 
         else if (slug === 'water-intake-calculator') {
           let waterMl = weightKg * 35;
-          if (activityVal === 'active') waterMl += 750;
+          const exerciseOffset = activityVal === 'active' ? 750 : 0;
+          waterMl += exerciseOffset;
+
+          const baseLiters = ((weightKg * 35) / 1000).toFixed(2);
+          const offsetLiters = activityVal === 'active' ? '+0.75' : '0.00';
+          const namBenchmark = isM ? '3.70' : '2.70';
 
           calculated = {
             primary: { value: (waterMl / 1000).toFixed(2), label: { en: 'Daily Baseline Water', es: 'Objetivo de Agua', fr: 'Objectif d\'Hydratation', de: 'Täglicher Wasserbedarf', ko: '목표 수분 섭취량', hi: 'पानी का लक्ष्य' }, unit: 'Liters/day' },
             secondary: [
               { label: { en: 'Standard Glasses (250ml)', es: 'Vasos Estándar (250ml)', fr: 'Verres Standards (250ml)', de: 'Gläser (250ml)', ko: '일반 컵 횟수 (250ml)', hi: 'मानक गिलास (250 मिली)' }, value: Math.round(waterMl / 250), unit: 'glasses' },
-              { label: { en: 'Summer Heat Target (+750ml)', es: 'Verano (+750ml)', fr: 'Chaleur Été (+750ml)', de: 'Sommerhitze (+750ml)', ko: '여름철 권장량 (+750ml)', hi: 'गर्मी का मौसम (+750ml)' }, value: ((waterMl + 750) / 1000).toFixed(2), unit: 'Liters/day' },
-              { label: { en: 'Winter Baseline Intake', es: 'Invierno (Línea Base)', fr: 'Hiver (Apport de Base)', de: 'Winter Grundbedarf', ko: '겨울철 권장량', hi: 'सर्दियों का सेवन' }, value: ((weightKg * 32) / 1000).toFixed(2), unit: 'Liters/day' },
-              { label: { en: 'Workout Hydration (per hour)', es: 'Hidratación por Hora de Ejercicio', fr: 'Hydratation par Heure d\'Effort', de: 'Training pro Stunde', ko: '운동 시 시간당 수분', hi: 'प्रति घंटा कसरत' }, value: '500 - 1000', unit: 'ml/hour' }
+              { label: { en: 'Base Heuristic (35 mL/kg)', es: 'Estimación Base (35 mL/kg)', fr: 'Estimation de Base (35 mL/kg)', de: 'Basis-Schätzwert (35 ml/kg)', ko: '기본 추정치 (35 mL/kg)', hi: 'आधारभूत अनुमान (35 मिली/किग्रा)' }, value: baseLiters, unit: 'Liters/day' },
+              { label: { en: 'Optional Exercise Offset', es: 'Ajuste Opcional por Ejercicio', fr: 'Ajustement Optionnel d\'Effort', de: 'Optionaler Aktivitätszuschlag', ko: '선택적 활동량 보정치', hi: 'वैकल्पिक व्यायाम समायोजन' }, value: offsetLiters, unit: 'Liters/day' },
+              { label: { en: 'NAM AI Fluid Benchmark', es: 'Referencia AI Total (NAM)', fr: 'Repère AI Total (NAM)', de: 'NAM AI Referenzwert', ko: 'NAM AI 총 수분 기준치', hi: 'एनएएम एआई कुल तरल बेंचमार्क' }, value: namBenchmark, unit: 'Liters/day' }
             ]
           };
         } 

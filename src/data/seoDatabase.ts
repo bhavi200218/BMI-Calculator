@@ -2002,22 +2002,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "IDF & WHO Diabetes Screening Guidelines",
       "formulaDesc": "Key risk factors include a BMI of 25 or higher (23 for Asian adults), a larger waist size (over 94 cm for men and 80 cm for women), and age 40 or older.",
       "formulaCode": "Risk Level = Based on BMI, Waist Size, Age, and Activity",
-      "tableTitle": "Type 2 Diabetes Screening Risk Levels",
+      "tableTitle": "4-Factor Educational Scoring Component Breakdown",
       "tableRows": [
         {
-          "col1": "Standard Risk",
-          "col2": "BMI under 25 (under 23 for Asian adults) & Normal Waist",
-          "col3": "Baseline range with lower statistical risk of type 2 diabetes"
+          "col1": "Age Factor",
+          "col2": "0 to 4 Points (<45: 0 pts, 45–54: 2 pts, 55–64: 3 pts, ≥65: 4 pts)",
+          "col3": "Educational points reflecting chronological age progression"
         },
         {
-          "col1": "Moderate Risk",
-          "col2": "BMI 23–27.4 (Asian adults) or Waist at warning level",
-          "col3": "Early warning range. Healthy eating and regular exercise help lower your risk"
+          "col1": "BMI Factor",
+          "col2": "0 to 3 Points (<25: 0 pts, 25–30: 1 pt, >30: 3 pts)",
+          "col3": "Educational points reflecting weight-to-height ratio categories"
         },
         {
-          "col1": "Elevated Risk",
-          "col2": "BMI 27.5 or higher, or High Waist with Age 40+",
-          "col3": "Higher statistical risk. A formal clinical checkup with your doctor is recommended"
+          "col1": "Waist Factor",
+          "col2": "0 to 4 Points (Men: 94/102 cm; Women: 80/88 cm)",
+          "col3": "Educational points reflecting sex-specific abdominal circumference"
+        },
+        {
+          "col1": "Physical Activity",
+          "col2": "0 or 2 Points (≥30 min/day: 0 pts, Sedentary: 2 pts)",
+          "col3": "Educational points reflecting daily physical movement status"
         }
       ],
       "faqs": [
@@ -2034,8 +2039,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Your waist measurement checks for deep belly fat around your organs. Research shows that belly fat predicts diabetes risk better than total body weight alone."
         },
         {
-          "question": "What do the diabetes risk score levels mean?",
-          "answer": "The scores show your risk compared to large population health studies. Standard risk means lower odds. Moderate risk suggests improving daily habits. Elevated risk means you should talk to a doctor."
+          "question": "What does the 0–13 raw educational score represent?",
+          "answer": "The score (0 to 13 points) provides an unvalidated demonstration of how four common lifestyle and biometric factors combine numerically. It is an educational tool and does not predict individual diabetes probability, assign validated clinical risk categories, or replace clinical laboratory blood testing (such as HbA1c or fasting plasma glucose)."
         },
         {
           "question": "Can this calculator diagnose type 2 diabetes?",
@@ -2050,22 +2055,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "Criterios de Riesgo Cardiometabólico de la IDF y OMS",
       "formulaDesc": "Criterios combinados: IMC ≥ 25.0 kg/m² (≥ 23.0 adultos asiáticos), cintura ≥ 94 cm hombres (≥ 90 cm asiáticos) y ≥ 80 cm mujeres, edad ≥ 40-45 años.",
       "formulaCode": "Índice de Riesgo Metabólico = f(IMC, Cintura, Edad, Género)",
-      "tableTitle": "Matriz de Categorías de Riesgo de Diabetes Tipo 2",
+      "tableTitle": "Desglose de Componentes de la Puntuación Educativa de 4 Factores",
       "tableRows": [
         {
-          "col1": "Referencia Estándar",
-          "col2": "IMC < 23 (Asiático) / < 25 (Global) & Cintura Normal",
-          "col3": "Rango de referencia metabólica basal con bajo riesgo estadístico"
+          "col1": "Factor Edad",
+          "col2": "0 a 4 Puntos (<45: 0 pts, 45–54: 2 pts, 55–64: 3 pts, ≥65: 4 pts)",
+          "col3": "Puntos educativos según rangos de edad cronológica"
         },
         {
-          "col1": "Umbral Moderado",
-          "col2": "IMC 23–27.4 (Asiático) o Cintura en umbral",
-          "col3": "Rango de acción temprana; se aconsejan hábitos saludables"
+          "col1": "Factor IMC",
+          "col2": "0 a 3 Puntos (<25: 0 pts, 25–30: 1 pt, >30: 3 pts)",
+          "col3": "Puntos educativos según categorías de índice de masa corporal"
         },
         {
-          "col1": "Umbral Elevado",
-          "col2": "IMC ≥ 27.5 o Cintura Elevada con Edad ≥ 40",
-          "col3": "Corte de riesgo metabólico aumentado; evaluación clínica sugerida"
+          "col1": "Factor Cintura",
+          "col2": "0 a 4 Puntos (Hombres: 94/102 cm; Mujeres: 80/88 cm)",
+          "col3": "Puntos educativos según perímetro abdominal específico por sexo"
+        },
+        {
+          "col1": "Actividad Física",
+          "col2": "0 o 2 Puntos (≥30 min/día: 0 pts, Sedentario: 2 pts)",
+          "col3": "Puntos educativos según nivel de ejercicio físico habitual"
         }
       ],
       "faqs": [
@@ -2082,8 +2092,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "La circunferencia de cintura evalúa la grasa visceral que rodea los órganos internos, siendo un indicador más directo de alteraciones metabólicas que el peso total por sí solo."
         },
         {
-          "question": "¿Qué significan las categorías de puntuación de riesgo?",
-          "answer": "Indican riesgo estadístico poblacional: Referencia Estándar refleja riesgo basal bajo, Umbral Moderado sugiere optimizar hábitos, y Umbral Elevado recomienda revisión médica."
+          "question": "¿Qué representa la puntuación educativa bruta de 0 a 13 puntos?",
+          "answer": "La puntuación (0 a 13 puntos) ofrece una demostración educativa no validada de cómo se combinan numéricamente cuatro factores comunes de estilo de vida y biometría. No predice la probabilidad real de diabetes, no asigna categorías clínicas de riesgo ni sustituye a los análisis clínicos de laboratorio (como glucemia en ayunas o HbA1c)."
         },
         {
           "question": "¿Esta calculadora proporciona un diagnóstico médico de diabetes?",
@@ -2098,22 +2108,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "Critères d'Évaluation du Risque Cardiométabolique FID & OMS",
       "formulaDesc": "Critères combinés : IMC ≥ 25,0 kg/m² (≥ 23,0 populations asiatiques), tour de taille ≥ 94 cm hommes (≥ 90 cm asiatiques) et ≥ 80 cm femmes, âge ≥ 40-45 ans.",
       "formulaCode": "Indice de Risque Métabolique = f(IMC, Tour de Taille, Âge, Sexe)",
-      "tableTitle": "Matrice des Catégories de Risque de Diabète de Type 2",
+      "tableTitle": "Décomposition des Composantes du Score Éducatif à 4 Facteurs",
       "tableRows": [
         {
-          "col1": "Référence Standard",
-          "col2": "IMC < 23 (Asiatique) / < 25 (Global) & Tour Normal",
-          "col3": "Plage de référence métabolique avec risque statistique faible"
+          "col1": "Composante Âge",
+          "col2": "0 à 4 Points (<45 : 0 pt, 45–54 : 2 pts, 55–64 : 3 pts, ≥65 : 4 pts)",
+          "col3": "Points éducatifs selon les tranches d'âge chronologique"
         },
         {
-          "col1": "Seuil Modéré",
-          "col2": "IMC 23–27,4 (Asiatique) ou Tour de taille limite",
-          "col3": "Zone d'action préventive ; suivi de l'hygiène de vie conseillé"
+          "col1": "Composante IMC",
+          "col2": "0 à 3 Points (<25 : 0 pt, 25–30 : 1 pt, >30 : 3 pts)",
+          "col3": "Points éducatifs selon les catégories d'indice de masse corporelle"
         },
         {
-          "col1": "Seuil Élevé",
-          "col2": "IMC ≥ 27,5 ou Tour Élevé avec Âge ≥ 40 ans",
-          "col3": "Seuil de risque accru ; bilan médical recommandé"
+          "col1": "Composante Tour de Taille",
+          "col2": "0 à 4 Points (Hommes : 94/102 cm ; Femmes : 80/88 cm)",
+          "col3": "Points éducatifs selon la circonférence abdominale par sexe"
+        },
+        {
+          "col1": "Activité Physique",
+          "col2": "0 ou 2 Points (≥30 min/jour : 0 pt, Sédentaire : 2 pts)",
+          "col3": "Points éducatifs selon le niveau d'activité physique quotidienne"
         }
       ],
       "faqs": [
@@ -2130,8 +2145,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Le tour de taille cible la graisse abdominale profonde autour des organes, constituant un prédicteur métabolique plus précis que le simple ratio poids-taille."
         },
         {
-          "question": "Que signifient les catégories de résultat ?",
-          "answer": "Elles reflètent un niveau de risque statistique : Référence Standard correspond au risque de base, Seuil Modéré invite à la vigilance, et Seuil Élevé conseille un bilan médical."
+          "question": "Que représente le score éducatif brut de 0 à 13 points ?",
+          "answer": "Le score (0 à 13 points) illustre de façon purement éducative et non validée la combinaison numérique de quatre facteurs de mode de vie. Il ne prédit pas la probabilité réelle de diabète, n'attribue aucune catégorie de risque clinique et ne remplace pas les analyses biologiques médicales (comme l'HbA1c ou la glycémie à jeun)."
         },
         {
           "question": "Ce calculateur fournit-il un diagnostic médical ?",
@@ -2146,22 +2161,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "IDF & WHO Kardiometabolische Risikokriterien",
       "formulaDesc": "Kombinierte Kriterien: BMI ≥ 25,0 kg/m² (≥ 23,0 asiatische Erwachsene), Taillenumfang ≥ 94 cm Männer (≥ 90 cm asiatisch) und ≥ 80 cm Frauen, Alter ≥ 40-45 Jahre.",
       "formulaCode": "Metabolischer Risiko-Index = f(BMI, Taillenumfang, Alter, Geschlecht)",
-      "tableTitle": "Matrix der Risikokategorien für Typ-2-Diabetes",
+      "tableTitle": "Aufschlüsselung der Komponenten des pädagogischen 4-Faktoren-Scores",
       "tableRows": [
         {
-          "col1": "Standardreferenz",
-          "col2": "BMI < 23 (Asiatisch) / < 25 (Global) & Normaler Umfang",
-          "col3": "Metabolischer Basis-Referenzbereich mit geringem statistischem Risiko"
+          "col1": "Komponente Alter",
+          "col2": "0 bis 4 Punkte (<45: 0 Pkt, 45–54: 2 Pkt, 55–64: 3 Pkt, ≥65: 4 Pkt)",
+          "col3": "Pädagogische Punkte entsprechend den Altersgruppen"
         },
         {
-          "col1": "Mäßige Schwelle",
-          "col2": "BMI 23–27,4 (Asiatisch) oder Taillenumfang am Grenzwert",
-          "col3": "Frühzeitiger Handlungsbereich ; Überprüfung der Lebensgewohnheiten ratsam"
+          "col1": "Komponente BMI",
+          "col2": "0 bis 3 Punkte (<25: 0 Pkt, 25–30: 1 Pkt, >30: 3 Pkt)",
+          "col3": "Pädagogische Punkte entsprechend den BMI-Kategorien"
         },
         {
-          "col1": "Erhöhte Schwelle",
-          "col2": "BMI ≥ 27,5 oder erhöhter Taillenumfang & Alter ≥ 40",
-          "col3": "Erhöhter metabolischer Risikowert ; ärztliche Abklärung empfohlen"
+          "col1": "Komponente Taillenumfang",
+          "col2": "0 bis 4 Punkte (Männer: 94/102 cm; Frauen: 80/88 cm)",
+          "col3": "Pädagogische Punkte nach geschlechtsspezifischem Taillenumfang"
+        },
+        {
+          "col1": "Körperliche Aktivität",
+          "col2": "0 oder 2 Punkte (≥30 Min./Tag: 0 Pkt, Inaktiv: 2 Pkt)",
+          "col3": "Pädagogische Punkte nach täglicher Bewegungsgewohnheit"
         }
       ],
       "faqs": [
@@ -2178,8 +2198,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "Der Taillenumfang erfasst das stoffwechselaktive Bauchfett um die Organe, welches ein zuverlässigerer Prädiktor für metabolische Risiken ist als das reine Körpergewicht."
         },
         {
-          "question": "Was bedeuten die Risikostufen?",
-          "answer": "Sie beschreiben statistische Risikokategorien: Standardreferenz bedeutet Basisrisiko, Mäßige Schwelle rät zu gesundem Lebensstil, und Erhöhte Schwelle empfiehlt ärztlichen Rat."
+          "question": "Was sagt der pädagogische Rohwert von 0 bis 13 Punkten aus?",
+          "answer": "Der Score (0 bis 13 Punkte) dient als nicht validiertes pädagogisches Demonstrationsmodell dafür, wie sich vier Lebensstil- und Biometriefaktoren rechnerisch summieren. Er prognostiziert keine individuelle Erkrankungswahrscheinlichkeit, ordnet keine klinischen Risikostufen zu und ersetzt keine ärztliche Labordiagnostik (wie HbA1c oder Nüchternglukose)."
         },
         {
           "question": "Ersetzt dieser Rechner eine ärztliche Diagnose?",
@@ -2194,22 +2214,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "IDF 및 WHO 심대사 질환 위험 평가 기준",
       "formulaDesc": "종합 선별 기준: BMI ≥ 25.0 kg/m² (아시아 성인 ≥ 23.0), 허리둘레 남성 ≥ 90 cm 및 여성 ≥ 80 cm, 연령 40-45세 이상 복합 평가.",
       "formulaCode": "대사 위험 지표 = f(BMI, 허리둘레, 연령, 성별)",
-      "tableTitle": "제2형 당뇨병 대사 위험 단계별 분류 매트릭스",
+      "tableTitle": "4요소 교육용 점수 산출 구성표",
       "tableRows": [
         {
-          "col1": "표준 기준",
-          "col2": "BMI < 23 (아시아) / < 25 (서구) & 정상 허리둘레",
-          "col3": "통계적 위험도가 낮은 표준 대사 건강 참조 구간"
+          "col1": "연령 요소",
+          "col2": "0~4점 (45세 미만: 0점, 45~54세: 2점, 55~64세: 3점, 65세 이상: 4점)",
+          "col3": "연령대별 단순 합산 교육용 점수"
         },
         {
-          "col1": "주의 필요 수치",
-          "col2": "BMI 23–27.4 (아시아) 또는 경계치 허리둘레",
-          "col3": "조기 생활 습관 개선 및 정기 모니터링 권장 구간"
+          "col1": "BMI 요소",
+          "col2": "0~3점 (25 미만: 0점, 25~30: 1점, 30 초과: 3점)",
+          "col3": "체질량지수 구간별 교육용 점수"
         },
         {
-          "col1": "고위험군 판정 기준",
-          "col2": "BMI ≥ 27.5 또는 복부비만 & 40세 이상",
-          "col3": "심대사 질환 위험 증가 구간 ; 전문의 상담 권장"
+          "col1": "허리둘레 요소",
+          "col2": "0~4점 (남성: 94/102 cm, 여성: 80/88 cm 기준)",
+          "col3": "성별 허리둘레 구간별 교육용 점수"
+        },
+        {
+          "col1": "신체 활동 요소",
+          "col2": "0 또는 2점 (하루 30분 이상 운동: 0점, 비활동적: 2점)",
+          "col3": "일상 신체 활동 여부에 따른 교육용 점수"
         }
       ],
       "faqs": [
@@ -2226,8 +2251,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "허리둘레는 장기 주변에 쌓인 내장 지방을 직접 반영하므로, 단순 체중이나 BMI보다 대사 이상을 예측하는 데 훨씬 정확한 지표로 활용됩니다."
         },
         {
-          "question": "위험도 결과 단계는 무엇을 의미하나요?",
-          "answer": "표준 기준은 통계적 기본 상태, 주의 필요 수치는 식습관 및 유산소 운동 관리 권장, 고위험군은 의료진을 통한 혈당 검진이 권장됨을 나타냅니다."
+          "question": "0~13점의 교육용 원점수는 무엇을 나타내나요?",
+          "answer": "원점수(0~13점)는 4가지 주요 생활습관 및 신체 지표가 수치상 어떻게 결합되는지 보여주는 검증되지 않은 교육용 예시 모델입니다. 개별 질환 발생 확률이나 10년 위험도를 예측하지 않으며, 임상 위험 등급을 부여하거나 전문 의료진의 혈액 검사(당화혈색소 HbA1c 또는 공복 혈당)를 대체하지 않습니다."
         },
         {
           "question": "이 계산기로 당뇨병을 의학적으로 진단할 수 있나요?",
@@ -2242,22 +2267,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "आईडीएफ एवं डब्ल्यूएचओ चयापचय जोखिम मूल्यांकन मानदंड",
       "formulaDesc": "संयुक्त स्क्रीनिंग मानदंड: बीएमआई ≥ 25.0 kg/m² (एशियाई वयस्कों में ≥ 23.0), कमर की माप पुरुषों में ≥ 90 सेमी व महिलाओं में ≥ 80 सेमी, उम्र ≥ 40-45 वर्ष।",
       "formulaCode": "चयापचय जोखिम सूचकांक = f(बीएमआई, कमर माप, उम्र, लिंग)",
-      "tableTitle": "टाइप 2 मधुमेह स्क्रीनिंग जोखिम श्रेणी मैट्रिक्स",
+      "tableTitle": "4-कारक शैक्षिक स्कोर घटक तालिका",
       "tableRows": [
         {
-          "col1": "मानक संदर्भ",
-          "col2": "BMI < 23 (एशियाई) / < 25 (वैश्विक) एवं सामान्य कमर",
-          "col3": "कम सांख्यिकीय जोखिम वाली सामान्य संदर्भ सीमा"
+          "col1": "आयु कारक",
+          "col2": "0 से 4 अंक (<45: 0 अंक, 45–54: 2 अंक, 55–64: 3 अंक, ≥65: 4 अंक)",
+          "col3": "आयु वर्ग के अनुसार शैक्षिक स्कोर बिंदु"
         },
         {
-          "col1": "मध्यम जोखिम सीमा",
-          "col2": "BMI 23–27.4 (एशियाई) या कमर सीमा पर",
-          "col3": "प्रारंभिक जीवनशैली समीक्षा एवं सतर्कता अनुशंसित"
+          "col1": "बीएमआई कारक",
+          "col2": "0 से 3 अंक (<25: 0 अंक, 25–30: 1 अंक, >30: 3 अंक)",
+          "col3": "बॉडी मास इंडेक्स श्रेणी के अनुसार शैक्षिक स्कोर बिंदु"
         },
         {
-          "col1": "उच्च जोखिम सीमा",
-          "col2": "BMI ≥ 27.5 या उच्च कमर एवं उम्र ≥ 40 वर्ष",
-          "col3": "उन्नत चयापचय जोखिम कटऑफ; चिकित्सीय जांच की सलाह"
+          "col1": "कमर घेरा कारक",
+          "col2": "0 से 4 अंक (पुरुष: 94/102 सेमी; महिला: 80/88 सेमी)",
+          "col3": "लिंग-विशिष्ट कमर माप के अनुसार शैक्षिक स्कोर बिंदु"
+        },
+        {
+          "col1": "शारीरिक गतिविधि",
+          "col2": "0 या 2 अंक (≥30 मिनट/दिन: 0 अंक, गतिहीन: 2 अंक)",
+          "col3": "दैनिक शारीरिक सक्रियता के अनुसार शैक्षिक स्कोर बिंदु"
         }
       ],
       "faqs": [
@@ -2274,8 +2304,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "कमर की माप आंतरिक अंगों के आसपास जमा हानिकारक विसरल वसा को दर्शाती है, जो केवल कुल शरीर वजन की तुलना में चयापचय संबंधी बीमारियों का बेहतर संकेतक है।"
         },
         {
-          "question": "जोखिम स्कोर श्रेणियों का क्या अर्थ है?",
-          "answer": "मानक संदर्भ कम सांख्यिकीय जोखिम दर्शाता है, मध्यम सीमा जीवनशैली में सुधार की आवश्यकता बताती है, और उच्च सीमा चिकित्सक से स्वास्थ्य जांच कराने की सलाह देती है।"
+          "question": "0–13 का शैक्षिक मूल स्कोर क्या दर्शाता है?",
+          "answer": "यह स्कोर (0 से 13 अंक) चार सामान्य जीवनशैली और बायोमेट्रिक कारकों के संख्यात्मक योग का एक गैर-सत्यापित शैक्षिक प्रदर्शन प्रस्तुत करता है। यह मधुमेह की वास्तविक संभावना का अनुमान नहीं लगाता है, कोई नैदानिक जोखिम श्रेणी निर्धारित नहीं करता है, और न ही डॉक्टर द्वारा नैदानिक रक्त परीक्षण (जैसे HbA1c या फास्टिंग प्लाज्मा ग्लूकोज) का विकल्प है।"
         },
         {
           "question": "क्या यह कैलकुलेटर कोई मेडिकल डायग्नोसिस प्रदान करता है?",
@@ -4538,9 +4568,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "TDEE estimado para mantenimiento de peso"
         },
         {
-          "col1": "Categoría / Nivel 4",
-          "col2": "0 kcal net difference / week",
-          "col3": "Balance energético estimado según TDEE para estabilizar peso"
+          "col1": "Escenario C: Déficit de 750 kcal/día",
+          "col2": "~5,250 kcal de diferencia semanal",
+          "col3": "Ejemplo matemático de un déficit diario mayor"
         }
       ],
       "faqs": [
@@ -4591,9 +4621,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "TDEE estimé pour stabiliser le poids"
         },
         {
-          "col1": "Catégorie / Niveau 4",
-          "col2": "0 kcal net difference / week",
-          "col3": "Équilibre énergétique TDEE estimé pour la stabilisation du poids"
+          "col1": "Scénario C : Déficit de 750 kcal/jour",
+          "col2": "~5 250 kcal de différence par semaine",
+          "col3": "Exemple de déficit quotidien plus élevé"
         }
       ],
       "faqs": [
@@ -4644,9 +4674,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "Geschätzter TDEE zur Gewichtserhaltung"
         },
         {
-          "col1": "Kategorie / Stufe 4",
-          "col2": "0 kcal net difference / week",
-          "col3": "Geschätzte TDEE-Energiebilanz zur Gewichtsstabilisierung"
+          "col1": "Szenario C: 750 kcal/Tag Defizit",
+          "col2": "~5.250 kcal Differenz / Woche",
+          "col3": "Mathematisches Beispiel für ein höheres Defizit"
         }
       ],
       "faqs": [
@@ -4697,9 +4727,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "col3": "체중 유지를 위한 추정 TDEE"
         },
         {
-          "col1": "범주 / 단계 4",
-          "col2": "0 kcal net difference / week",
-          "col3": "체중 유지를 위한 추정 TDEE 에너지 균형"
+          "col1": "시나리오 C: 일 750 kcal 결손",
+          "col2": "주당 약 5,250 kcal 차이",
+          "col3": "높은 일일 칼로리 감축 예시"
         }
       ],
       "faqs": [
@@ -5051,74 +5081,64 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "Illustrative Fluid Estimation Heuristic & Optional Exercise Adjustment",
       "formulaDesc": "Daily Fluid Target (L) = [Body Weight (kg) × 35 mL] / 1,000 + Optional Exercise Adjustment (+0.75 L for active individuals). The 35 mL/kg multiplier serves strictly as an approximate illustrative calculator estimate rather than an established clinical recommendation or universal physiological requirement; individual hydration needs vary widely based on ambient climate, kidney function, and personal sweat rate. The +750 mL adjustment provides an illustrative optional estimate for exercise rather than a universal requirement for all active individuals. Population total-water reference values are derived from National Academy of Medicine (NAM / IOM 2005) Adequate Intake benchmarks (2.7 L/day for adult females and 3.7 L/day for adult males for total water from all dietary sources, including plain drinking water, beverages, and moisture in food).",
       "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
-      "tableTitle": "Comprehensive Hydration Guide — Climate Adjustments, Workouts & Urine Color",
+      "tableTitle": "Daily Hydration Benchmarks, Heuristic Breakdown & Monitoring",
       "tableRows": [
         {
-          "col1": "Sedentary Baseline Hydration",
-          "col2": "30 – 35 mL / kg / day (~2.0 – 2.5 L)",
-          "col3": "Baseline metabolic fluid volume required for cellular homeostasis, organ perfusion, and renal clearance under temperate conditions."
+          "col1": "Base Estimation Heuristic",
+          "col2": "35 mL / kg / day (Approximate Benchmark)",
+          "col3": "An illustrative formula heuristic providing a practical starting estimate; actual fluid requirements vary with body mass, environment, and personal physiology."
         },
         {
-          "col1": "Climate Adjustments — Summer Heat",
-          "col2": "+500 to +1,000 mL / day (+2 to 4 glasses)",
-          "col3": "Elevated ambient heat and humidity dramatically increase evaporative sweat rates. Increase fluid and electrolyte intake to avoid cumulative dehydration and thermoregulatory strain."
+          "col1": "Optional Exercise Adjustment",
+          "col2": "+750 mL (Illustrative Active Offset)",
+          "col3": "An optional volume added for physically active individuals to offset typical perspiration, rather than a universal clinical mandate."
         },
         {
-          "col1": "Climate Adjustments — Winter Cold",
-          "col2": "Baseline 30 – 35 mL / kg / day (Warm Fluids)",
-          "col3": "Cold-induced diuresis and dry heated indoor air elevate insensible respiratory fluid losses. Maintain consistent water and herbal tea consumption despite blunted thirst sensations."
+          "col1": "Population Total Water AI (Females)",
+          "col2": "2.7 Liters / day (National Academy of Medicine)",
+          "col3": "Population Adequate Intake (AI) benchmark for adult women, covering total water from all dietary sources (plain water, beverages, and moisture in food)."
         },
         {
-          "col1": "Workout Hydration — Pre-Exercise",
-          "col2": "500 mL (17 oz) 2–3 hours before workout",
-          "col3": "Establishes optimal pre-exercise blood volume and cardiovascular stroke volume. Drink an additional 200–250 mL 15 minutes prior to starting."
+          "col1": "Population Total Water AI (Males)",
+          "col2": "3.7 Liters / day (National Academy of Medicine)",
+          "col3": "Population Adequate Intake (AI) benchmark for adult men, covering total water from all dietary sources (plain water, beverages, and moisture in food)."
         },
         {
-          "col1": "Workout Hydration — During Training",
-          "col2": "150 – 250 mL every 15–20 minutes",
-          "col3": "Replaces ongoing sweat losses, prevents core temperature spikes, and preserves cardiovascular output. Add sodium/electrolytes for sessions exceeding 60 minutes."
-        },
-        {
-          "col1": "Workout Hydration — Post-Exercise",
-          "col2": "1.25 – 1.5 L per 1 kg (2.2 lbs) sweat lost",
-          "col3": "Restores whole-body fluid balance, re-establishes plasma volume, and supports glycogen replenishment over 2 to 4 hours post-workout."
-        },
-        {
-          "col1": "Urine Color Guide — Level 1 to 3",
+          "col1": "Armstrong Hydration Scale (Levels 1–3)",
           "col2": "Pale Straw to Light Lemonade",
-          "col3": "Optimal Hydration (Armstrong Scale): Kidneys are in fluid equilibrium. Maintain your current hydration routine."
+          "col3": "Indicates well-maintained fluid equilibrium. Drink according to natural thirst and normal daily routine."
         },
         {
-          "col1": "Urine Color Guide — Level 4 to 5",
-          "col2": "Bright Yellow to Dark Golden",
-          "col3": "Mild Dehydration: Consume 250 to 500 mL of water promptly. Avoid diuretic energy drinks or excessive caffeine until color normalizes."
+          "col1": "Armstrong Hydration Scale (Levels 4–5)",
+          "col2": "Dark Yellow to Golden",
+          "col3": "Indicates mild fluid deficit. Increase fluid consumption gradually across the day."
         },
         {
-          "col1": "Urine Color Guide — Level 6 to 8",
-          "col2": "Amber, Copper to Tea Brown",
-          "col3": "Significant Dehydration: Rehydrate immediately with water and electrolyte-rich fluids. If urine remains dark despite fluid intake or dizziness occurs, seek medical attention."
+          "col1": "Armstrong Hydration Scale (Levels 6–8)",
+          "col2": "Amber to Tea Brown",
+          "col3": "Indicates notable fluid deficit. Rehydrate promptly with water and electrolyte-containing fluids."
         }
       ],
       "faqs": [
         {
-          "question": "How should I adjust my daily water intake between summer and winter climates?",
-          "answer": "In summer, high ambient heat and humidity trigger elevated perspiration for thermoregulation; add 500 to 1,000 mL (2 to 4 glasses) of water daily plus sodium. In winter, cold-induced diuresis and dry heated indoor air accelerate respiratory moisture loss; maintain your baseline (30–35 mL/kg) using warm water, broths, and herbal teas even when your thirst sensation feels blunted."
+          "question": "How does the calculator determine my baseline daily water estimate?",
+          "answer": "The calculator uses an illustrative estimation heuristic of approximately 35 mL per kilogram of body weight. This formula provides an approximate educational benchmark under temperate conditions. Actual individual hydration needs vary widely based on ambient climate, metabolic rate, dietary moisture, and individual sweat rates."
         },
         {
-          "question": "What is the recommended workout hydration protocol before, during, and after exercise?",
-          "answer": "Follow the evidence-based 3-phase athletic hydration protocol: (1) Pre-workout: Drink 500 mL 2–3 hours before training, plus 200–250 mL 15 minutes prior; (2) During exercise: Sip 150–250 mL every 15–20 minutes; (3) Post-workout: Drink 1.25 to 1.5 Liters of water with electrolytes for every 1 kg (2.2 lbs) of body weight lost through sweat."
+          "question": "What is the +750 mL exercise adjustment based on?",
+          "answer": "The +750 mL adjustment is an optional, illustrative estimate designed to reflect increased fluid losses during physical activity. It is not a rigid universal requirement, as sweat rates during exercise vary from 0.5 to over 2.0 Liters per hour depending on intensity, duration, and ambient temperature."
         },
         {
-          "question": "How do I use the urine color guide (Armstrong Hydration Scale) to check my status?",
-          "answer": "Compare your urine color during morning urination and throughout the day against the validated Armstrong 8-level scale: Levels 1–3 (pale straw or transparent yellow) indicate optimal hydration; levels 4–5 (dark yellow or golden) signal mild dehydration requiring 250–500 mL of water; and levels 6–8 (amber to tea brown) indicate significant dehydration requiring prompt fluid and electrolyte replacement."
+          "question": "What are the National Academy of Medicine (NAM) Adequate Intake recommendations?",
+          "answer": "The National Academy of Medicine (formerly IOM) established Adequate Intake (AI) benchmarks for total water: 2.7 Liters per day for adult women and 3.7 Liters per day for adult men. These population benchmarks represent total water intake from all sources combined—approximately 80% from drinking water and other beverages, and 20% from the moisture in food."
         },
         {
-          "question": "Why do people often become dehydrated in cold winter months without feeling thirsty?",
-          "answer": "Cold weather causes peripheral vasoconstriction, shifting blood to the core and signaling the kidneys to excrete more water (cold-induced diuresis). Furthermore, cold temperatures blunt brain thirst perception by up to 40%, and breathing cold, dry air causes substantial respiratory fluid loss, leading to unnoticed dehydration."
+          "question": "How can I monitor my daily hydration without measuring every glass?",
+          "answer": "A practical clinical method is observing urine color using the Armstrong Urine Color Scale: pale straw or light yellow (levels 1–3) suggests good fluid balance, whereas darker amber or tea-brown hues (levels 6–8) indicate fluid deficit. Thirst, daily energy, and voiding frequency also provide useful everyday cues."
         },
         {
-          "question": "When should I drink electrolyte sports drinks rather than plain water?",
-          "answer": "Plain water is sufficient for workouts under 60 minutes in moderate conditions. Electrolyte solutions (providing sodium, potassium, and magnesium) are recommended for training lasting longer than 60 minutes, during intense summer heat/humidity, or for heavy sweaters to prevent hyponatremia and cramping."
+          "question": "Who should follow individualized medical fluid guidelines rather than standard calculators?",
+          "answer": "Individuals with congestive heart failure (CHF), chronic kidney disease (CKD), end-stage renal disease (ESRD), or those taking diuretic medications should not rely on general formulas. They must adhere strictly to the individualized fluid intake limits prescribed by their nephrologist or cardiologist."
         }
       ]
     },
@@ -5129,66 +5149,64 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "Heurística Ilustrativa de Estimación de Fluidos y Ajuste Opcional",
       "formulaDesc": "Agua Diaria (L) = [Peso (kg) × 35 ml] / 1.000 + Ajuste Opcional por Ejercicio (+0,75 L para personas activas). El factor de 35 ml/kg constituye estrictamente una estimación ilustrativa aproximada de la calculadora y no una recomendación médica establecida ni una norma universal; las necesidades individuales varían con el clima, la masa corporal y la sudoración. El ajuste de +750 ml es un valor opcional ilustrativo y no un requisito fijo. Los valores de referencia de agua total proceden de las recomendaciones de Ingesta Adecuada de la Academia Nacional de Medicina (NAM / IOM 2005, 2,7 L en mujeres y 3,7 L en hombres para el agua total procedente de alimentos y bebidas).",
       "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
-      "tableTitle": "Guía Integral de Hidratación: Ajustes Climáticos (Verano vs Invierno), Entrenamiento y Color de Orina",
+      "tableTitle": "Referencias de Hidratación, Desglose Heurístico y Monitorización",
       "tableRows": [
         {
-          "col1": "Línea Base Adulto Sedentario",
-          "col2": "30 – 35 ml / kg / día (~2.0 – 2.5 L)",
-          "col3": "Volumen mínimo para homeostasis celular, perfusión orgánica y filtración renal en clima templado."
+          "col1": "Heurística de Estimación Base",
+          "col2": "35 mL / kg / día (Referencia Aproximada)",
+          "col3": "Fórmula heurística ilustrativa como punto de partida práctico; los requerimientos reales varían según masa corporal, clima y fisiología."
         },
         {
-          "col1": "Ajuste Climático — Verano",
-          "col2": "+500 a +1,000 ml / día (+2 a 4 vasos)",
-          "col3": "Compensa la mayor sudoración termorreguladora y previene el estrés térmico en días calurosos."
+          "col1": "Ajuste Opcional por Ejercicio",
+          "col2": "+750 mL (Ajuste Ilustrativo Activo)",
+          "col3": "Volumen opcional sugerido para personas activas para compensar la sudoración, sin constituir un mandato clínico universal."
         },
         {
-          "col1": "Ajuste Climático — Invierno",
-          "col2": "Línea Base 30 – 35 ml / kg / día",
-          "col3": "La diuresis inducida por frío y el aire seco de calefacción aumentan pérdidas respiratorias; beber líquidos templados."
+          "col1": "Ingesta Adecuada de Agua Total (Mujeres)",
+          "col2": "2,7 Litros / día (Academia Nacional de Medicina)",
+          "col3": "Referencia poblacional (NAM / IOM) para mujeres adultas que cubre el agua de todas las fuentes (agua de bebida, bebidas y alimentos)."
         },
         {
-          "col1": "Entrenamiento — Pre-Ejercicio",
-          "col2": "500 ml 2–3 horas antes",
-          "col3": "Garantiza volumen plasmático óptimo y gasto cardíaco antes del entrenamiento (+250 ml 15 min antes)."
+          "col1": "Ingesta Adecuada de Agua Total (Hombres)",
+          "col2": "3,7 Litros / día (Academia Nacional de Medicina)",
+          "col3": "Referencia poblacional (NAM / IOM) para hombres adultos que cubre el agua de todas las fuentes (agua de bebida, bebidas y alimentos)."
         },
         {
-          "col1": "Entrenamiento — Durante",
-          "col2": "150 – 250 ml cada 15–20 minutos",
-          "col3": "Repone pérdidas continuas de sudor y evita picos de temperatura central."
-        },
-        {
-          "col1": "Entrenamiento — Post-Ejercicio",
-          "col2": "1.25 – 1.5 L por cada kg perdido",
-          "col3": "Restaura el déficit hídrico corporal y los electrolitos durante las 2 a 4 horas posteriores."
-        },
-        {
-          "col1": "Guía de Color de Orina — Niveles 1 a 3",
+          "col1": "Escala Armstrong (Niveles 1–3)",
           "col2": "Paja Pálido a Amarillo Claro",
-          "col3": "Hidratación Óptima (Escala Armstrong): Los riñones están en equilibrio hídrico."
+          "col3": "Indica un adecuado equilibrio de fluidos. Beba según su sed fisiológica y su rutina diaria normal."
         },
         {
-          "col1": "Guía de Color de Orina — Niveles 4 a 5",
+          "col1": "Escala Armstrong (Niveles 4–5)",
           "col2": "Amarillo Oscuro a Dorado",
-          "col3": "Deshidratación Leve: Beber 250 a 500 ml de agua de inmediato."
+          "col3": "Indica un déficit hídrico leve. Incremente el consumo de líquidos de forma gradual durante el día."
         },
         {
-          "col1": "Guía de Color de Orina — Niveles 6 a 8",
-          "col2": "Ámbar, Cobre a Marrón Té",
-          "col3": "Deshidratación Severa: Rehidratar urgentemente con agua y electrolitos orales."
+          "col1": "Escala Armstrong (Niveles 6–8)",
+          "col2": "Ámbar a Marrón Té",
+          "col3": "Indica un déficit hídrico notable. Rehidrátese con prontitud con agua y líquidos con electrolitos."
         }
       ],
       "faqs": [
         {
-          "question": "¿Cómo ajustar el consumo de agua entre verano e invierno?",
-          "answer": "En verano añada entre 500 y 1,000 ml diarios para compensar el sudor; en invierno mantenga su consumo basal con líquidos templados e infusiones a pesar de la menor sensación de sed."
+          "question": "¿Cómo calcula esta herramienta mi estimación diaria de agua?",
+          "answer": "La calculadora utiliza una heurística ilustrativa de aproximadamente 35 mL por kilogramo de peso corporal como referencia orientativa en clima templado. Las necesidades hídricas reales varían ampliamente según temperatura ambiente, tasa metabólica y sudoración individual."
         },
         {
-          "question": "¿Cuál es el protocolo de hidratación para antes, durante y después del ejercicio?",
-          "answer": "Beba 500 ml 2-3 horas antes, 150-250 ml cada 15-20 minutos durante el ejercicio, y 1.25 a 1.5 litros por cada kilogramo de sudor perdido tras finalizar."
+          "question": "¿En qué se fundamenta el ajuste de +750 mL por ejercicio?",
+          "answer": "El ajuste de +750 mL es una estimación ilustrativa opcional para reflejar las mayores pérdidas de líquido por transpiración. No es un requisito universal fijo, ya que las tasas de sudoración oscilan entre 0,5 y más de 2,0 L por hora según intensidad y clima."
         },
         {
-          "question": "¿Cómo interpretar la escala de color de la orina de Armstrong?",
-          "answer": "Los tonos paja pálido (niveles 1-3) reflejan hidratación óptima; el amarillo oscuro (4-5) avisa de deshidratación leve; y los tonos ámbar o té (6-8) indican deshidratación grave que exige rehidratación inmediata."
+          "question": "¿Cuáles son las recomendaciones de Ingesta Adecuada de la Academia Nacional de Medicina (NAM)?",
+          "answer": "La Academia Nacional de Medicina fijó referencias de Ingesta Adecuada (AI) de agua total: 2,7 L diarios para mujeres y 3,7 L para hombres adultos. Estas referencias poblacionales comprenden el agua de todas las fuentes (aproximadamente 80% bebidas y 20% alimentos)."
+        },
+        {
+          "question": "¿Cómo puedo monitorizar mi hidratación sin medir cada vaso?",
+          "answer": "Un método práctico habitual consiste en observar el color de la orina mediante la escala de Armstrong: tonos claros (niveles 1–3) reflejan buen equilibrio, mientras que tonos ámbar o té (6–8) señalan déficit de líquidos. La sed y la frecuencia miccional también son señales útiles."
+        },
+        {
+          "question": "¿Quién debe seguir pautas médicas individuales en lugar de fórmulas generales?",
+          "answer": "Personas con insuficiencia cardíaca congestiva, enfermedad renal crónica o bajo tratamiento con diuréticos no deben guiarse por calculadoras generales. Deben seguir estrictamente los límites de líquidos fijados por su especialista médico."
         }
       ]
     },
@@ -5199,62 +5217,64 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "Heuristique Illustrative d'Estimation des Fluides & Ajustement Optionnel",
       "formulaDesc": "Eau Quotidienne (L) = [Poids (kg) × 35 ml] / 1 000 + Ajustement Optionnel pour l'Exercice (+0,75 L si actif). Le coefficient de 35 ml/kg représente une estimation illustrative approximative et non une recommandation clinique consensuelle ou une exigence universelle ; les besoins réels dépendent du climat, de la santé rénale et de la sudation. L'ajustement de +750 ml est une estimation illustrative optionnelle. Les valeurs repères d'eau totale sont issues des apports adéquats de l'Académie Nationale de Médecine (NAM / IOM 2005 : 2,7 L/jour pour les femmes et 3,7 L/jour pour les hommes, incluant eau, boissons et eau des aliments).",
       "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
-      "tableTitle": "Guide Complet d'Hydratation : Ajustements Climatiques (Été vs Hiver), Sport et Échelle des Urines",
+      "tableTitle": "Repères d'Hydratation, Heuristique de Base et Suivi Urinaire",
       "tableRows": [
         {
-          "col1": "Base Adulte Sédentaire",
-          "col2": "30 – 35 ml / kg / jour (~2,0 – 2,5 L)",
-          "col3": "Volume physiologique de base pour la clairance rénale et l'homéostasie cellulaire en climat tempéré."
+          "col1": "Heuristique d'Estimation de Base",
+          "col2": "35 mL / kg / jour (Repère Indicatif)",
+          "col3": "Formule illustrative servant de point de départ pratique ; les besoins hydriques réels varient selon la masse corporelle, le climat et la physiologie."
         },
         {
-          "col1": "Ajustement Climatique — Été",
-          "col2": "+500 à +1 000 ml / jour (+2 à 4 verres)",
-          "col3": "Compense la sudation accrue pour éviter l'épuisement thermique par temps chaud."
+          "col1": "Ajustement Optionnel d'Effort",
+          "col2": "+750 mL (Majoration Indicative pour Actifs)",
+          "col3": "Volume indicatif optionnel suggéré pour les personnes physiquement actives afin de compenser la transpiration, sans être une règle universelle."
         },
         {
-          "col1": "Ajustement Climatique — Hiver",
-          "col2": "Base 30 – 35 ml / kg / jour",
-          "col3": "La diurèse induite par le froid et le chauffage sec augmentent les pertes respiratoires ; boire chaud régulièrement."
+          "col1": "Apport Adéquat en Eau Totale (Femmes)",
+          "col2": "2,7 Litres / jour (Académie Nationale de Médecine)",
+          "col3": "Valeur repère populationnelle (NAM / IOM) pour femmes adultes, couvrant l'eau totale issue des boissons et de l'humidité des aliments."
         },
         {
-          "col1": "Sport — Avant l'Effort",
-          "col2": "500 ml 2–3 heures avant",
-          "col3": "Assure un débit cardiaque et un volume sanguin pré-exercice optimaux (+250 ml 15 min avant)."
+          "col1": "Apport Adéquat en Eau Totale (Hommes)",
+          "col2": "3,7 Litres / jour (Académie Nationale de Médecine)",
+          "col3": "Valeur repère populationnelle (NAM / IOM) pour hommes adultes, couvrant l'eau totale issue des boissons et de l'humidité des aliments."
         },
         {
-          "col1": "Sport — Pendant l'Effort",
-          "col2": "150 – 250 ml toutes les 15–20 minutes",
-          "col3": "Prévient les hausses de température corporelle et maintient l'endurance."
-        },
-        {
-          "col1": "Sport — Après l'Effort",
-          "col2": "1,25 – 1,5 L par kg perdu",
-          "col3": "Restaure le déficit hydrique et les électrolytes dans les 2 à 4 heures post-effort."
-        },
-        {
-          "col1": "Couleur des Urines — Niveaux 1 à 3",
+          "col1": "Échelle d'Armstrong (Niveaux 1 à 3)",
           "col2": "Paille Clair à Jaune Pâle",
-          "col3": "Hydratation Optimale (Échelle d'Armstrong) : Les reins sont à l'équilibre hydrique."
+          "col3": "Indique un bon équilibre hydrique. Buvez selon votre soif naturelle et vos habitudes quotidiennes."
         },
         {
-          "col1": "Couleur des Urines — Niveaux 4 à 5",
+          "col1": "Échelle d'Armstrong (Niveaux 4 à 5)",
           "col2": "Jaune Foncé à Doré",
-          "col3": "Déshydratation Légère : Boire immédiatement 250 à 500 ml d'eau."
+          "col3": "Indique un léger déficit hydrique. Augmentez progressivement votre consommation d'eau au cours de la journée."
         },
         {
-          "col1": "Couleur des Urines — Niveaux 6 à 8",
-          "col2": "Ambré, Cuivre à Brun Thé",
-          "col3": "Déshydratation Sévère : Réhydrater sans attendre avec eau et électrolytes."
+          "col1": "Échelle d'Armstrong (Niveaux 6 à 8)",
+          "col2": "Ambré à Brun Thé",
+          "col3": "Indique un déficit hydrique net. Réhydratez-vous sans tarder avec de l'eau et des boissons contenant des électrolytes."
         }
       ],
       "faqs": [
         {
-          "question": "Comment adapter son hydratation entre été et hiver ?",
-          "answer": "En été, augmentez votre apport de 500 à 1000 ml par jour pour compenser la transpiration. En hiver, buvez régulièrement de l'eau tiède et des tisanes malgré l'atténuation de la sensation de soif."
+          "question": "Comment le calculateur établit-il l'estimation de base en eau ?",
+          "answer": "Le calculateur applique une heuristique indicative d'environ 35 mL par kilogramme de poids corporel en climat tempéré. Les besoins réels fluctuent selon la température, l'activité et le taux de sudation individuel."
         },
         {
-          "question": "Quel est le protocole d'hydratation sportive recommandé ?",
-          "answer": "Buvez 500 ml 2 à 3 heures avant la séance, 150 à 250 ml toutes les 15 à 20 minutes pendant l'effort, et 1,25 à 1,5 litre par kilo de transpiration perdue après la séance."
+          "question": "Sur quoi repose l'ajustement optionnel de +750 mL pour l'exercice ?",
+          "answer": "L'ajustement de +750 mL est une majoration indicative optionnelle reflétant l'effort physique. Ce n'est pas une règle absolue, les pertes sudorales pouvant aller de 0,5 à plus de 2,0 L par heure selon l'intensité et le climat."
+        },
+        {
+          "question": "Quels sont les apports de référence de l'Académie Nationale de Médecine (NAM) ?",
+          "answer": "L'Académie Nationale de Médecine (ex-IOM) a établi des repères d'Apport Adéquat (AI) pour l'eau totale : 2,7 L par jour pour les femmes et 3,7 L pour les hommes, englobant boissons (~80%) et eau des aliments (~20%)."
+        },
+        {
+          "question": "Comment évaluer son statut hydrique au quotidien sans tout mesurer ?",
+          "answer": "L'observation de la couleur des urines selon l'échelle d'Armstrong constitue un indicateur pratique : les teintes claires (1 à 3) témoignent d'une bonne hydratation, tandis que les teintes foncées (6 à 8) signalent un besoin d'apport hydrique."
+        },
+        {
+          "question": "Qui doit suivre une prescription médicale plutôt qu'un calculateur généraliste ?",
+          "answer": "Les patients atteints d'insuffisance cardiaque, d'insuffisance rénale chronique ou sous diurétiques doivent se conformer strictement aux restrictions liquidiennes prescrites par leur médecin spécialiste."
         }
       ]
     },
@@ -5265,62 +5285,64 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "Illustrative Schätzheuristik & Optionaler Trainingsausgleich",
       "formulaDesc": "Tägliches Wasser (L) = [Körpergewicht (kg) × 35 ml] / 1.000 + Optionaler Trainingsausgleich (+0,75 L bei aktiver Betätigung). Der Faktor von 35 ml/kg dient rein als ungefähre illustrative Rechner-Schätzung und nicht als etablierte klinische Konsensempfehlung oder universelle physiologische Vorgabe; der individuelle Flüssigkeitsbedarf variiert nach Klima, Nierenfunktion und Schweißrate. Der Zuschlag von +750 ml ist ein beispielhafter optionaler Wert und keine feste Vorgabe. Gesamtwasser-Referenzwerte basieren auf den Empfehlungen der National Academy of Medicine (NAM / IOM 2005 : 2,7 L für Frauen, 3,7 L für Männer für Gesamtwasser aus allen Quellen inklusive Nahrung).",
       "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
-      "tableTitle": "Umfassender Hydratations-Leitfaden: Klimaanpassung (Sommer vs. Winter), Sport & Urinfarben-Skala",
+      "tableTitle": "Hydratations-Richtwerte, Schätzheuristik & Urin-Monitoring",
       "tableRows": [
         {
-          "col1": "Grundbedarf Sitzender Erwachsener",
-          "col2": "30 – 35 ml / kg / Tag (~2,0 – 2,5 L)",
-          "col3": "Physiologischer Basisbedarf für Zellstoffwechsel und Nierenfunktion bei gemäßigtem Klima."
+          "col1": "Basis-Schätzheuristik",
+          "col2": "35 ml / kg / Tag (Anschaulicher Richtwert)",
+          "col3": "Eine illustrative Formelheuristik als praktischer Orientierungswert; der tatsächliche Bedarf variiert nach Körperbau, Klima und Physiologie."
         },
         {
-          "col1": "Klimaanpassung — Sommer",
-          "col2": "+500 bis +1.000 ml / Tag (+2 bis 4 Gläser)",
-          "col3": "Gleicht erhöhte Schweißverluste durch Hitze aus und beugt Hitzestress vor."
+          "col1": "Optionaler Trainingszuschlag",
+          "col2": "+750 ml (Illustrativer Aktivitätszuschlag)",
+          "col3": "Eine optionale Mehrmenge für körperlich aktive Menschen zum Ausgleich typischen Schwitzens, keine universelle klinische Vorschrift."
         },
         {
-          "col1": "Klimaanpassung — Winter",
-          "col2": "Basis 30 – 35 ml / kg / Tag",
-          "col3": "Kälte-Diurese und trockene Heizungsluft steigern Atemwegsverluste; regelmäßig warme Flüssigkeiten trinken."
+          "col1": "Gesamtwasser-Richtwert AI (Frauen)",
+          "col2": "2,7 Liter / Tag (National Academy of Medicine)",
+          "col3": "Poblationsbezogene Angemessene Zufuhr (AI) für erwachsene Frauen für Gesamtwasser aus allen Quellen (Getränke und Nahrung)."
         },
         {
-          "col1": "Sport — Vor dem Training",
-          "col2": "500 ml 2–3 Stunden vor dem Sport",
-          "col3": "Sichert optimales Blutvolumen und Schlagvolumen (+250 ml 15 Min. vor Beginn)."
+          "col1": "Gesamtwasser-Richtwert AI (Männer)",
+          "col2": "3,7 Liter / Tag (National Academy of Medicine)",
+          "col3": "Poblationsbezogene Angemessene Zufuhr (AI) für erwachsene Männer für Gesamtwasser aus allen Quellen (Getränke und Nahrung)."
         },
         {
-          "col1": "Sport — Während des Trainings",
-          "col2": "150 – 250 ml alle 15–20 Minuten",
-          "col3": "Verhindert Leistungsabfall und Anstieg der Körperkerntemperatur."
-        },
-        {
-          "col1": "Sport — Nach dem Training",
-          "col2": "1,25 – 1,5 L pro kg Gewichtsverlust",
-          "col3": "Gleicht Flüssigkeits- und Elektrolytdefizite innerhalb von 2 bis 4 Stunden aus."
-        },
-        {
-          "col1": "Urinfarben-Guide — Stufe 1 bis 3",
+          "col1": "Armstrong-Skala (Stufe 1–3)",
           "col2": "Blassgelb bis Helles Stroh",
-          "col3": "Optimale Hydratation (Armstrong-Skala): Der Flüssigkeitshaushalt ist im Gleichgewicht."
+          "col3": "Zeigt einen ausgeglichenen Flüssigkeitshaushalt an. Trinken Sie nach natürlichem Durstgefühl und Gewohnheit."
         },
         {
-          "col1": "Urinfarben-Guide — Stufe 4 bis 5",
+          "col1": "Armstrong-Skala (Stufe 4–5)",
           "col2": "Dunkelgelb bis Gold",
-          "col3": "Leichte Dehydratation: Zeitnah 250 bis 500 ml Wasser trinken."
+          "col3": "Zeigt ein leichtes Flüssigkeitsdefizit an. Erhöhen Sie die Trinkmenge schrittweise über den Tag."
         },
         {
-          "col1": "Urinfarben-Guide — Stufe 6 bis 8",
-          "col2": "Bernstein, Kupfer bis Teebraun",
-          "col3": "Erhebliche Dehydratation: Sofort mit Wasser und Elektrolyten rehydrieren."
+          "col1": "Armstrong-Skala (Stufe 6–8)",
+          "col2": "Bernstein bis Teebraun",
+          "col3": "Zeigt ein deutliches Flüssigkeitsdefizit an. Trinken Sie zeitnah Wasser und elektrolythaltige Flüssigkeiten."
         }
       ],
       "faqs": [
         {
-          "question": "Wie passt man die Wasserzufuhr zwischen Sommer und Winter an?",
-          "answer": "Im Sommer sollten Sie 500 bis 1000 ml zusätzlich trinken, um Schwitzen auszugleichen. Im Winter trinken Sie trotz verringertem Durstgefühl regelmäßig warmes Wasser oder ungesüßte Kräutertees."
+          "question": "Wie ermittelt dieser Rechner den Basiswert für die tägliche Wasserzufuhr?",
+          "answer": "Der Rechner nutzt eine anschauliche Schätzheuristik von etwa 35 ml pro kg Körpergewicht als Orientierungswert bei gemäßigten Temperaturen. Der tatsächliche Bedarf hängt von Umgebungstemperatur, Stoffwechsel und Schweißrate ab."
         },
         {
-          "question": "Wie lautet das empfohlene Trinkprotokoll beim Sport?",
-          "answer": "Trinken Sie 500 ml 2-3 Stunden vor dem Training, 150-250 ml alle 15-20 Minuten währenddessen und 1,25 bis 1,5 Liter für jedes durch Schweiß verlorene Kilogramm danach."
+          "question": "Worauf basiert der optionale Aktivitätszuschlag von +750 ml?",
+          "answer": "Der Zuschlag von +750 ml ist ein beispielhafter Orientierungswert zur Berücksichtigung sportlicher Aktivität. Er ist keine starre Pflicht, da Schweißraten je nach Intensität und Wetter zwischen 0,5 und über 2,0 Litern pro Stunde variieren."
+        },
+        {
+          "question": "Was besagen die Empfehlungen der National Academy of Medicine (NAM)?",
+          "answer": "Die NAM legte Richtwerte für die Gesamtwasseraufnahme (Adequate Intake) fest: 2,7 Liter pro Tag für Frauen und 3,7 Liter für Männer, bezogen auf alle Quellen (ca. 80 % Getränke, 20 % Nahrung)."
+        },
+        {
+          "question": "Wie lässt sich der Flüssigkeitsstatus im Alltag ohne ständiges Messen prüfen?",
+          "answer": "Die Beobachtung der Urinfarbe anhand der Armstrong-Skala bietet eine einfache Orientierung: Helles Strohgelb (Stufen 1–3) spricht für gute Hydratation, dunklere Farben (6–8) mahnen zur Flüssigkeitsaufnahme."
+        },
+        {
+          "question": "Wer sollte sich an individuelle medizinische Vorgaben statt an Online-Rechner halten?",
+          "answer": "Personen mit Herzinsuffizienz, chronischer Nierenerkrankung oder unter Diuretika-Therapie dürfen sich nicht an allgemeinen Rechnern orientieren, sondern müssen die ärztlich verordnete Trinkmenge strikt einhalten."
         }
       ]
     },
@@ -5331,66 +5353,64 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "예시적 수분 추정 경험칙 및 선택적 운동 보정",
       "formulaDesc": "일일 수분 섭취량(L) = [체중(kg) × 35 ml] / 1,000 + 선택적 운동 보정(+0.75 L 활동적인 경우). 체중당 35 ml 공식은 계산기상의 예시적 어림 추정치일 뿐 공인된 임상 권고나 보편적 필수 요구량이 아닙니다. 실제 수분 필요량은 기후, 체성분 및 개인별 발한량에 따라 크게 달라집니다. +750 ml 보정치는 운동 시 예시적인 선택 옵션일 뿐 모든 활동적인 사람의 필수 기준이 아닙니다. 총 수분 기준치는 미국 국립의학원(NAM / IOM 2005)의 충분 섭취량(성인 여성 2.7 L/일, 성인 남성 3.7 L/일, 음식물 수분 포함)을 참조합니다.",
       "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
-      "tableTitle": "종합 수분 섭취 가이드 — 기후별 보정 (여름철 vs 겨울철), 운동 수분 보충 및 소변 색상 판정표",
+      "tableTitle": "일일 수분 섭취 기준치, 추정 경험식 및 소변 지표 판정표",
       "tableRows": [
         {
-          "col1": "좌식 성인 기준 섭취량",
-          "col2": "30 – 35 ml / kg / 일 (~2.0 – 2.5 L)",
-          "col3": "온화한 환경에서 신장 여과 기능 및 세포 항상성을 유지하기 위한 기본 대사 수분량."
+          "col1": "기본 추정 경험식",
+          "col2": "35 mL / kg / 일 (어림 기준치)",
+          "col3": "실용적인 출발점 역할을 하는 예시적 공식으로, 실제 수분 요구량은 체중, 기후 및 개인 생리에 따라 다릅니다."
         },
         {
-          "col1": "기후 보정 — 여름철 고온다습",
-          "col2": "+500 ~ +1,000 ml / 일 (+2~4잔)",
-          "col3": "체온 조절을 위한 급격한 땀 증발 손실을 보충하고 열 탈진을 예방하기 위한 추가 섭취."
+          "col1": "선택적 운동 보정치",
+          "col2": "+750 mL (활동성 예시 보정)",
+          "col3": "활동적인 성인의 발한 손실을 감안한 예시적 선택 수치이며, 보편적인 임상 의무 사항이 아닙니다."
         },
         {
-          "col1": "기후 보정 — 겨울철 한랭건조",
-          "col2": "기준 섭취량 30 – 35 ml / kg / 일 유지",
-          "col3": "한랭 이뇨 작용과 난방 건조로 호흡기 수분 손실 증가; 갈증 인지 저하에도 미온수 주기적 섭취."
+          "col1": "총 수분 충분 섭취량 (여성)",
+          "col2": "2.7 L / 일 (미국 국립의학원 NAM)",
+          "col3": "성인 여성을 위한 인구집단 총 수분 충분 섭취량(AI) 지표로, 음용수와 식사 중 수분을 모두 포함합니다."
         },
         {
-          "col1": "운동 수분 보충 — 운동 2~3시간 전",
-          "col2": "500 ml 섭취 (운동 15분 전 250ml 추가)",
-          "col3": "운동 시작 전 체내 최적의 혈액량과 심박출량을 확보하여 운동 수행 능력 향상."
+          "col1": "총 수분 충분 섭취량 (남성)",
+          "col2": "3.7 L / 일 (미국 국립의학원 NAM)",
+          "col3": "성인 남성을 위한 인구집단 총 수분 충분 섭취량(AI) 지표로, 음용수와 식사 중 수분을 모두 포함합니다."
         },
         {
-          "col1": "운동 수분 보충 — 운동 중 섭취",
-          "col2": "15~20분마다 150 – 250 ml",
-          "col3": "운동 중 지속적인 땀 배출을 보충하고 심부 체온의 급격한 상승을 억제."
-        },
-        {
-          "col1": "운동 수분 보충 — 운동 후 회복",
-          "col2": "체중 1kg 감소당 1.25 – 1.5 L",
-          "col3": "운동 후 2~4시간 동안 소실된 체액과 전해질을 완전히 보충하여 빠른 피로 회복 유도."
-        },
-        {
-          "col1": "소변 색상 가이드 — 1~3단계",
+          "col1": "암스트롱 척도 (1~3단계)",
           "col2": "연한 짚색 ~ 맑은 레모네이드색",
-          "col3": "최적의 수분 상태 (암스트롱 척도): 신장 수분 밸런스가 정상입니다."
+          "col3": "체내 수분 밸런스가 원활함을 나타냅니다. 자연스러운 갈증과 일상 습관에 맞추어 섭취하세요."
         },
         {
-          "col1": "소변 색상 가이드 — 4~5단계",
+          "col1": "암스트롱 척도 (4~5단계)",
           "col2": "진한 노란색 ~ 황금색",
-          "col3": "경미한 탈수 상태: 즉시 물 250~500ml를 섭취하여 수분을 보충하세요."
+          "col3": "경미한 수분 부족을 나타냅니다. 하루 동안 수분 섭취량을 점진적으로 늘려주세요."
         },
         {
-          "col1": "소변 색상 가이드 — 6~8단계",
-          "col2": "호박색, 구리색 ~ 진한 홍차색",
-          "col3": "심각한 탈수 상태: 물과 전해질 음료를 즉시 섭취하고 현기증 지속 시 진료를 권장합니다."
+          "col1": "암스트롱 척도 (6~8단계)",
+          "col2": "호박색 ~ 진한 홍차색",
+          "col3": "뚜렷한 수분 결핍을 의미합니다. 물과 전해질 함유 음료를 신속하게 보충하세요."
         }
       ],
       "faqs": [
         {
-          "question": "여름철과 겨울철 기후에 따라 물 섭취량을 어떻게 조절해야 하나요?",
-          "answer": "여름철에는 땀 배출이 크게 늘어나므로 하루 500~1,000ml의 수분을 추가로 섭취해야 합니다. 겨울철에는 갈증 중추가 둔화되지만 찬 공기와 난방으로 호흡기 수분 손실이 크므로, 미온수와 차를 통해 하루 30~35 ml/kg을 꾸준히 마셔야 합니다."
+          "question": "이 계산기는 기본 하루 수분 추정치를 어떻게 산출하나요?",
+          "answer": "온화한 환경을 전제로 체중 1kg당 약 35mL의 예시적 추정 경험식을 적용합니다. 개인의 실제 필요량은 주변 온도, 대사율 및 발한량에 따라 상이합니다."
         },
         {
-          "question": "운동 전, 중, 후에 지켜야 할 스포츠 수분 섭취 원칙은 무엇인가요?",
-          "answer": "운동 2~3시간 전 500ml, 운동 중에는 15~20분마다 150~250ml를 마시고, 운동이 끝난 후에는 땀으로 빠진 체중 1kg당 1.25~1.5L의 물과 전해질을 나누어 마시는 것이 이상적입니다."
+          "question": "운동 시 +750 mL 선택 보정은 어떤 근거인가요?",
+          "answer": "신체 활동 중 발생하는 땀 배출을 감안하기 위한 예시적 추가량입니다. 운동 중 발한량은 시간당 0.5~2.0L 이상으로 상이하므로 고정된 절대 기준이 아닙니다."
         },
         {
-          "question": "암스트롱 소변 색상 가이드(Armstrong Scale)는 어떻게 활용하나요?",
-          "answer": "소변 색상이 연한 짚색(1~3단계)이면 최적의 상태이며, 진한 노란색(4~5단계)은 경미한 탈수로 즉각 300ml 이상의 수분 섭취가 필요합니다. 짙은 갈색이나 홍차색(6~8단계)은 즉시 전해질과 수분을 보충해야 하는 위험 신호입니다."
+          "question": "미국 국립의학원(NAM)의 충분 섭취량(AI) 권고치는 무엇인가요?",
+          "answer": "미국 국립의학원은 성인 여성 2.7L, 성인 남성 3.7L의 일일 총 수분(음료수 약 80% 및 음식물 수분 약 20% 포함) 섭취를 인구집단 기준치로 제시했습니다."
+        },
+        {
+          "question": "물 섭취량을 매번 계량하지 않고 어떻게 확인할 수 있나요?",
+          "answer": "암스트롱 소변 색상표를 관찰하는 것이 실용적입니다. 연한 짚색(1~3단계)은 적절한 수분 상태를, 짙은 갈색(6~8단계)은 즉각적인 수분 보충 필요성을 나타냅니다."
+        },
+        {
+          "question": "일반 계산 공식 대신 의학적 개별 지침을 따라야 하는 대상은 누구인가요?",
+          "answer": "울혈성 심부전, 만성 신장 질환 환자 또는 이뇨제를 복용 중인 분은 일반 계산기를 이용해서는 안 되며 담당 전문의의 수분 제한 지침을 엄격히 따라야 합니다."
         }
       ]
     },
@@ -5401,62 +5421,64 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "formulaTitle": "उदाहरणार्थ जल अनुमान एवं वैकल्पिक कसरत समायोजन",
       "formulaDesc": "दैनिक जल सेवन (लीटर) = [शरीर का वजन (किग्रा) × 35 मिली] / 1,000 + वैकल्पिक कसरत समायोजन (+0.75 ली सक्रिय व्यक्तियों हेतु)। 35 मिली/किग्रा का कारक केवल एक सन्निकट उदाहरणार्थ अनुमान है, कोई स्थापित नैदानिक सिफारिश या सार्वभौमिक आवश्यकता नहीं; व्यक्तिगत जल आवश्यकताएं तापमान, स्वास्थ्य और पसीने के अनुसार बदलती हैं। +750 मिली का समायोजन कसरत के लिए एक उदाहरण मात्र है, कोई अनिवार्य मानक नहीं। कुल जल के संदर्भ मानक नेशनल एकेडमी ऑफ मेडिसिन (NAM / IOM 2005) के पर्याप्त सेवन (महिलाओं हेतु 2.7 ली और पुरुषों हेतु 3.7 ली, भोजन की नमी सहित) पर आधारित हैं।",
       "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
-      "tableTitle": "व्यापक जलयोजन गाइड — जलवायु समायोजन (गर्मी बनाम सर्दी), कसरत जलयोजन और मूत्र रंग गाइड",
+      "tableTitle": "दैनिक जलयोजन मानक, सांकेतिक अनुमान एवं मूत्र रंग निगरानी",
       "tableRows": [
         {
-          "col1": "गतिहीन वयस्क आधार जलयोजन",
-          "col2": "30 – 35 मिली / किग्रा / दिन (~2.0 – 2.5 L)",
-          "col3": "सामान्य तापमान में अंगों के कार्य और गुर्दे की सफाई के लिए आवश्यक न्यूनतम मात्रा।"
+          "col1": "आधारभूत अनुमान (ह्यूरिस्टिक)",
+          "col2": "35 मिली / किग्रा / दिन (सांकेतिक मानक)",
+          "col3": "एक व्यावहारिक प्रारंभिक अनुमान प्रदान करने वाला सांकेतिक सूत्र; वास्तविक आवश्यकता वजन, मौसम और शारीरिक जरूरतों पर निर्भर करती है।"
         },
         {
-          "col1": "जलवायु समायोजन — गर्मी का मौसम",
-          "col2": "+500 से +1,000 मिली / दिन (+2 से 4 गिलास)",
-          "col3": "अधिक पसीने के कारण होने वाले जल नुकसान की भरपाई और हीट स्ट्रोक से बचाव हेतु।"
+          "col1": "वैकल्पिक व्यायाम समायोजन",
+          "col2": "+750 मिली (सांकेतिक सक्रिय समायोजन)",
+          "col3": "शारीरिक रूप से सक्रिय व्यक्तियों में पसीने की भरपाई के लिए एक वैकल्पिक सांकेतिक मात्रा, कोई सार्वभौमिक अनिवार्य नियम नहीं।"
         },
         {
-          "col1": "जलवायु समायोजन — सर्दी का मौसम",
-          "col2": "आधार 30 – 35 मिली / किग्रा / दिन",
-          "col3": "सर्दियों में प्यास कम लगती है किंतु शुष्क हवा में जल हानि होती है; गुनगुना पानी पिएं।"
+          "col1": "कुल जल पर्याप्त सेवन AI (महिलाएं)",
+          "col2": "2.7 लीटर / दिन (नेशनल एकेडमी ऑफ मेडिसिन)",
+          "col3": "वयस्क महिलाओं हेतु जनसंख्या पर्याप्त सेवन (AI) मानक, जिसमें पेय जल, अन्य पेय और भोजन की नमी शामिल है।"
         },
         {
-          "col1": "कसरत जलयोजन — कसरत से पहले",
-          "col2": "500 मिली कसरत से 2–3 घंटे पूर्व",
-          "col3": "व्यायाम से पहले रक्त प्रवाह और हृदय क्षमता को अनुकूल बनाए रखने के लिए।"
+          "col1": "कुल जल पर्याप्त सेवन AI (पुरुष)",
+          "col2": "3.7 लीटर / दिन (नेशनल एकेडमी ऑफ मेडिसिन)",
+          "col3": "वयस्क पुरुषों हेतु जनसंख्या पर्याप्त सेवन (AI) मानक, जिसमें पेय जल, अन्य पेय और भोजन की नमी शामिल है।"
         },
         {
-          "col1": "कसरत जलयोजन — कसरत के दौरान",
-          "col2": "150 – 250 मिली प्रत्येक 15–20 मिनट में",
-          "col3": "पसीने से होने वाली कमी को तुरंत पूरा करने और शारीरिक तापमान नियंत्रित रखने हेतु।"
-        },
-        {
-          "col1": "कसरत जलयोजन — कसरत के बाद",
-          "col2": "1.25 – 1.5 L प्रति किग्रा वजन कमी",
-          "col3": "कसरत के दौरान पसीने में घटे प्रत्येक 1 किग्रा वजन के लिए 2-4 घंटे में जल पूर्ति करें।"
-        },
-        {
-          "col1": "मूत्र रंग गाइड — स्तर 1 से 3",
+          "col1": "आर्मस्ट्रांग पैमाना (स्तर 1–3)",
           "col2": "हल्का पीला / पारदर्शी पुआल",
-          "col3": "उत्तम जलयोजन (आर्मस्ट्रांग पैमाना): शरीर में पानी का संतुलन एकदम सही है।"
+          "col3": "शरीर में जल संतुलन के सामान्य होने का संकेत। अपनी स्वाभाविक प्यास और दैनिक दिनचर्या के अनुसार पानी पिएं।"
         },
         {
-          "col1": "मूत्र रंग गाइड — स्तर 4 से 5",
-          "col2": "गहरा पीला / सुनहरा",
-          "col3": "हल्का डिहाइड्रेशन: तुरंत 250 से 500 मिली पानी पिएं।"
+          "col1": "आर्मस्ट्रांग पैमाना (स्तर 4–5)",
+          "col2": "गहरा पीला से सुनहरा",
+          "col3": "हल्की जल कमी का संकेत। दिन भर में धीरे-धीरे तरल पदार्थों का सेवन बढ़ाएं।"
         },
         {
-          "col1": "मूत्र रंग गाइड — स्तर 6 से 8",
-          "col2": "गहरा एम्बर / चाय जैसा भूरा",
-          "col3": "गंभीर डिहाइड्रेशन: तुरंत ओआरएस/इलेक्ट्रोलाइट और पानी पिएं; डॉक्टर से संपर्क करें।"
+          "col1": "आर्मस्ट्रांग पैमाना (स्तर 6–8)",
+          "col2": "अंबर से चाय जैसा गहरा भूरा",
+          "col3": "उल्लेखनीय जल कमी का संकेत। पानी और इलेक्ट्रोलाइट्स युक्त तरल पदार्थों से तुरंत जलयोजन करें।"
         }
       ],
       "faqs": [
         {
-          "question": "गर्मी और सर्दी के मौसम में पानी के सेवन में क्या बदलाव करना चाहिए?",
-          "answer": "गर्मियों में पसीने की भरपाई के लिए रोजाना 500 से 1000 मिली अतिरिक्त पानी पिएं। सर्दियों में प्यास कम लगने पर भी गुनगुना पानी और सूप पीकर 30-35 मिली/किग्रा का लक्ष्य बनाए रखें।"
+          "question": "यह कैलकुलेटर मेरे दैनिक पानी की आवश्यकता का अनुमान कैसे लगाता है?",
+          "answer": "यह कैलकुलेटर सामान्य तापमान में शरीर के वजन के प्रति किलोग्राम लगभग 35 मिली का एक सांकेतिक अनुमान सूत्र उपयोग करता है। व्यक्तिगत जरूरतें तापमान, चयापचय और पसीने के अनुसार भिन्न होती हैं।"
         },
         {
-          "question": "कसरत से पहले, दौरान और बाद में पानी पीने का सही नियम क्या है?",
-          "answer": "कसरत से 2-3 घंटे पहले 500 मिली, कसरत के दौरान हर 15-20 मिनट में 150-250 मिली और कसरत के बाद पसीने में घटे प्रत्येक 1 किग्रा वजन के लिए 1.25 से 1.5 लीटर पानी पिएं।"
+          "question": "व्यायाम के लिए +750 मिली का समायोजन किस पर आधारित है?",
+          "answer": "यह +750 मिली का समायोजन कसरत के दौरान पसीने से होने वाली जल हानि को ध्यान में रखने के लिए एक वैकल्पिक अनुमान है। यह कोई निश्चित नियम नहीं है क्योंकि पसीने की दर तीव्रता के अनुसार भिन्न होती है।"
+        },
+        {
+          "question": "नेशनल एकेडमी ऑफ मेडिसिन (NAM) के पर्याप्त सेवन (AI) मानक क्या हैं?",
+          "answer": "नेशनल एकेडमी ऑफ मेडिसिन ने कुल जल के लिए संदर्भ मानक तय किए हैं: महिलाओं के लिए 2.7 लीटर प्रतिदिन और पुरुषों के लिए 3.7 लीटर प्रतिदिन, जिसमें सभी पेय और भोजन की नमी शामिल है।"
+        },
+        {
+          "question": "हर गिलास को मापे बिना मैं अपने जलयोजन स्तर की जांच कैसे कर सकता हूं?",
+          "answer": "आर्मस्ट्रांग यूरिन कलर चार्ट एक व्यावहारिक तरीका है: हल्का पीला रंग (स्तर 1–3) संतुलित जल स्तर दर्शाता है, जबकि गहरा अंबर या भूरा रंग (स्तर 6–8) तुरंत पानी पीने का संकेत देता है।"
+        },
+        {
+          "question": "किन्हें सामान्य कैलकुलेटर के बजाय डॉक्टर द्वारा निर्धारित दिशानिर्देशों का पालन करना चाहिए?",
+          "answer": "हार्ट फेल्योर, क्रोनिक किडनी रोग या मूत्रवर्धक (diuretic) दवाएं लेने वाले व्यक्तियों को सामान्य कैलकुलेटर पर निर्भर नहीं रहना चाहिए और डॉक्टर द्वारा तय तरल सीमा का पालन करना चाहिए।"
         }
       ]
     }
