@@ -22,7 +22,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
     steps: "Mathematical Derivation Steps",
     result: "Calculated Reference Output",
     interp: "Practical Interpretation & Context",
-    disc: "Educational Notice: This calculation is an estimate for educational use, not medical advice."
+    disc: "Educational Notice: This is not medical advice. This calculation is an estimate for educational use and does not provide medical diagnosis, treatment, therapy, or prescriptions."
   },
   es: {
     eyebrow: "Ejemplo Práctico Paso a Paso",
@@ -32,7 +32,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
     steps: "Pasos de Derivación Matemática",
     result: "Resultado de Referencia Calculado",
     interp: "Interpretación Práctica y Contexto",
-    disc: "Aviso: Cálculo de referencia educativa; no constituye un diagnóstico médico individualizado ni una prescripción clínica."
+    disc: "Aviso: Esto no es asesoramiento médico. Cálculo de referencia educativa; no proporciona diagnóstico, tratamiento, terapia ni prescripción médica."
   },
   fr: {
     eyebrow: "Exemple Pratique Étape par Étape",
@@ -42,7 +42,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
     steps: "Étapes de Dérivation Mathématique",
     result: "Résultat de Référence Obtenu",
     interp: "Interprétation Pratique et Contexte",
-    disc: "Avis : Calcul de référence purement éducatif ; ne constitue en aucun cas un diagnostic médical ou une prescription."
+    disc: "Avis : Ceci ne constitue pas un avis médical. Calcul de référence purement éducatif ; ne fournit aucun diagnostic, traitement, thérapie ou prescription."
   },
   de: {
     eyebrow: "Schritt-für-Schritt-Rechenbeispiel",
@@ -52,7 +52,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
     steps: "Mathematische Rechenschritte",
     result: "Berechneter Referenzwert",
     interp: "Praktische Interpretation & Kontext",
-    disc: "Hinweis: Nur zur gesundheitlichen Orientierung; keine individuelle medizinische Diagnose oder Therapieempfehlung."
+    disc: "Hinweis: Dies ist keine medizinische Beratung. Nur zur gesundheitlichen Orientierung; keine medizinische Diagnose, Behandlung, Therapie oder Verschreibung."
   },
   ko: {
     eyebrow: "단계별 계산 예시",
@@ -62,7 +62,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
     steps: "수학적 산출 공식 단계",
     result: "최종 산출 참조 결과값",
     interp: "실제 해석 지침 및 한계점",
-    disc: "알림: 본 결과는 대중 보건 스크리닝 목적의 교육용 참고치이며, 전문의의 개별 진단이나 처방을 대신하지 않습니다."
+    disc: "알림: 이것은 의학적 조언이 아닙니다. 본 결과는 교육용 참고치이며 의학적 진단, 치료, 요법 또는 처방을 제공하지 않습니다."
   },
   hi: {
     eyebrow: "चरण-दर-चरण गणना उदाहरण",
@@ -72,7 +72,7 @@ const UI_HEADINGS: Record<string, { eyebrow: string; title: string; subtitle: st
     steps: "गणितीय गणना के चरण",
     result: "अनुमानित संदर्भ परिणाम",
     interp: "व्यावहारिक व्याख्या और संदर्भ",
-    disc: "सूचना: यह गणना केवल शैक्षिक स्वास्थ्य संदर्भ के लिए है; यह किसी डॉक्टर की चिकित्सीय सलाह या स्वतंत्र निदान का विकल्प नहीं है।"
+    disc: "सूचना: यह कोई चिकित्सीय सलाह नहीं है। यह गणना केवल शैक्षिक स्वास्थ्य संदर्भ के लिए है; यह चिकित्सीय निदान, उपचार, थेरेपी या दवा के नुस्खे का विकल्प नहीं है।"
   }
 };
 

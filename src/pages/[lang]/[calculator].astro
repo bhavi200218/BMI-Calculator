@@ -437,6 +437,7 @@ const relatedGuidesSubtitle: Record<string, string> = {
         <ToolSEOContent slug={calc.slug} lang={lang} calculator={calc} />
         {calc.slug === 'bmi-calculator-for-indians' && <IndianBmiClinicalGuide lang={lang} />}
         {calc.slug === 'bmi-calculator' && <EmbedWidgetBox lang={lang} />}
+        <MedicalEEATBanner lang={lang} />
         <LatestArticles 
           lang={lang} 
           slugs={relevantArticlesBySlug[calc.slug] || ['what-is-bmi', 'is-bmi-accurate']}

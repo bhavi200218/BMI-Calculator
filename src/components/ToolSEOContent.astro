@@ -1517,4 +1517,31 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
     </div>
   </div>
 
+  <!-- ═══════════════════ 8. YMYL MEDICAL & EDUCATIONAL DISCLAIMER ═══════════════════ -->
+  <aside class="p-4 sm:p-5 rounded-2xl border border-amber-500/25 bg-amber-500/5 text-xs text-[var(--foreground)] shadow-xs flex items-start gap-3.5">
+    <div class="w-7 h-7 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5 font-bold">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+      </svg>
+    </div>
+    <div class="space-y-1">
+      <p class="font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider text-[11px]">
+        {lang === 'es' ? 'Aviso Médico y Exención de Responsabilidad Clínica' :
+         lang === 'fr' ? 'Avertissement Médical & Clause de Non-Responsabilité' :
+         lang === 'de' ? 'Medizinischer Haftungsausschluss & Rechtlicher Hinweis' :
+         lang === 'ko' ? '의학적 면책 조항 및 임상적 고지' :
+         lang === 'hi' ? 'चिकित्सीय अस्वीकरण एवं विधिक सूचना' :
+         'Medical Disclaimer & Clinical Notice'}
+      </p>
+      <p class="text-[var(--muted-foreground)] leading-relaxed font-sans">
+        {lang === 'es' ? 'Esto no es asesoramiento médico. Real BMI es un sitio web individual creado y mantenido por Bhawanshi Dosi (Banswara, Rajastán, India). Todos los cálculos y tablas de referencia son estimaciones con fines puramente educativos basadas en fórmulas científicas publicadas (OMS, CDC). Esta herramienta no proporciona diagnóstico, tratamiento, terapia ni prescripción médica, ni sustituye el juicio de un profesional de la salud colegiado.' :
+         lang === 'fr' ? 'Ceci ne constitue pas un avis médical. Real BMI est un site web individuel conçu et géré par Bhawanshi Dosi (Banswara, Rajasthan, Inde). Tous les calculs et plages de référence sont des estimations éducatives fondées sur des publications scientifiques reconnues (OMS, CDC). Cet outil ne fournit aucun diagnostic, traitement, thérapie ou prescription, et ne remplace pas une consultation médicale auprès d\'un professionnel qualifié.' :
+         lang === 'de' ? 'Dies ist keine medizinische Beratung. Real BMI ist eine persönliche Bildungsplattform, entwickelt und betrieben von Bhawanshi Dosi (Banswara, Rajasthan, Indien). Alle Berechnungen und Referenztabellen dienen ausschließlich zu Informations- und Bildungszwecken auf Basis wissenschaftlicher Formeln (WHO, CDC). Diese Website bietet keine Diagnose, Behandlung, Therapie oder Verschreibung und ersetzt keinesfalls das Urteil eines qualifizierten Arztes.' :
+         lang === 'ko' ? '이것은 의학적 조언이 아닙니다. Real BMI는 인도 라자스탄주 반스와라의 Bhawanshi Dosi가 개발 및 운영하는 개인 교육용 건강 리소스입니다. 제공되는 모든 계산 결과와 참조표는 공인된 학술 공식(WHO, CDC)에 기반한 교육용 추정치입니다. 본 도구는 의학적 진단, 치료, 요법 또는 처방을 제공하지 않으며 자격을 갖춘 의료 전문가의 진료를 대체할 수 없습니다.' :
+         lang === 'hi' ? 'यह कोई चिकित्सीय सलाह नहीं है। Real BMI बांसवाड़ा, राजस्थान, भारत स्थित Bhawanshi Dosi द्वारा विकसित और संचालित एक व्यक्तिगत शैक्षिक स्वास्थ्य मंच है। सभी गणनाएं और संदर्भ सारणियां प्रकाशित वैज्ञानिक सूत्रों (WHO, CDC) पर आधारित केवल शैक्षिक अनुमान हैं। यह उपकरण कोई नैदानिक निदान, उपचार, थेरेपी या दवा का नुस्खा प्रदान नहीं करता है और किसी योग्य चिकित्सक के परामर्श का विकल्प नहीं है।' :
+         'This is not medical advice. Real BMI is an individual educational website founded and maintained by Bhawanshi Dosi (Banswara, Rajasthan, India). All calculations, reference brackets, and target ranges are educational estimates based on published scientific literature and public health frameworks (WHO, CDC). This tool does not provide medical diagnosis, treatment, therapy, or prescriptions, and is not a substitute for professional clinical judgment from a licensed healthcare provider.'}
+      </p>
+    </div>
+  </aside>
+
 </section>
