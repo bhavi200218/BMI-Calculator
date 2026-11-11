@@ -540,6 +540,84 @@ const EXAMPLES: Record<string, ToolData> = {
     }
   },
 
+  // 7b. Target Heart Rate Zones Calculator (%HRmax 5-Zone Model)
+  'heart-rate-zone-calculator': {
+    inputs: {
+      en: [{ label: "Chronological Age", value: "35 years" }],
+      es: [{ label: "Edad Cronológica", value: "35 años" }],
+      fr: [{ label: "Âge Chronologique", value: "35 ans" }],
+      de: [{ label: "Lebensalter", value: "35 Jahre" }],
+      ko: [{ label: "만 나이", value: "35세" }],
+      hi: [{ label: "आयु", value: "35 वर्ष" }]
+    },
+    steps: {
+      en: [
+        "Step 1: Estimate Maximum Heart Rate: HRmax = 220 - Age = 220 - 35 = 185 bpm",
+        "Step 2: Zone 1 Active Recovery (50–60% HRmax): 185 × 0.50 to 185 × 0.60 = 93 to 111 bpm",
+        "Step 3: Zone 2 Aerobic Base / Fat Burn (60–70% HRmax): 185 × 0.60 to 185 × 0.70 = 111 to 130 bpm",
+        "Step 4: Zone 3 Aerobic Tempo (70–80% HRmax): 185 × 0.70 to 185 × 0.80 = 130 to 148 bpm",
+        "Step 5: Zone 4 Lactate Threshold (80–90% HRmax): 185 × 0.80 to 185 × 0.90 = 148 to 167 bpm",
+        "Step 6: Zone 5 VO2 Max Peak (90–100% HRmax): 185 × 0.90 to 185 = 167 to 185 bpm"
+      ],
+      es: [
+        "Paso 1: Estimar Frecuencia Cardíaca Máxima: FCmax = 220 - Edad = 220 - 35 = 185 lpm",
+        "Paso 2: Zona 1 Recuperación Activa (50–60% FCmax): 185 × 0.50 a 185 × 0.60 = 93 a 111 lpm",
+        "Paso 3: Zona 2 Base Aeróbica / Quema Grasa (60–70% FCmax): 185 × 0.60 a 185 × 0.70 = 111 a 130 lpm",
+        "Paso 4: Zona 3 Ritmo Aeróbico (70–80% FCmax): 185 × 0.70 a 185 × 0.80 = 130 a 148 lpm",
+        "Paso 5: Zona 4 Umbral de Lactato (80–90% FCmax): 185 × 0.80 a 185 × 0.90 = 148 a 167 lpm",
+        "Paso 6: Zona 5 Pico VO2 Máx (90–100% FCmax): 185 × 0.90 a 185 = 167 a 185 lpm"
+      ],
+      fr: [
+        "Étape 1 : Estimer la Fréquence Cardiaque Maximale : FCmax = 220 - Âge = 220 - 35 = 185 bpm",
+        "Étape 2 : Zone 1 Récupération Active (50–60 % FCmax) : 185 × 0,50 à 185 × 0,60 = 93 à 111 bpm",
+        "Étape 3 : Zone 2 Base Aérobie (60–70 % FCmax) : 185 × 0,60 à 185 × 0,70 = 111 à 130 bpm",
+        "Étape 4 : Zone 3 Tempo Aérobie (70–80 % FCmax) : 185 × 0,70 à 185 × 0,80 = 130 à 148 bpm",
+        "Étape 5 : Zone 4 Seuil Lactique (80–90 % FCmax) : 185 × 0,80 à 185 × 0,90 = 148 à 167 bpm",
+        "Étape 6 : Zone 5 Pic VO2 Max (90–100 % FCmax) : 185 × 0,90 à 185 = 167 à 185 bpm"
+      ],
+      de: [
+        "Schritt 1: Maximale Herzfrequenz schätzen: HFmax = 220 - Alter = 220 - 35 = 185 S/min",
+        "Schritt 2: Zone 1 Aktive Regeneration (50–60 % HFmax): 185 × 0,50 bis 185 × 0,60 = 93 bis 111 S/min",
+        "Schritt 3: Zone 2 Aerobe Grundausdauer (60–70 % HFmax): 185 × 0,60 bis 185 × 0,70 = 111 bis 130 S/min",
+        "Schritt 4: Zone 3 Aerobes Tempo (70–80 % HFmax): 185 × 0,70 bis 185 × 0,80 = 130 bis 148 S/min",
+        "Schritt 5: Zone 4 Laktatschwelle (80–90 % HFmax): 185 × 0,80 bis 185 × 0,90 = 148 bis 167 S/min",
+        "Schritt 6: Zone 5 VO2-Max-Spitze (90–100 % HFmax): 185 × 0,90 bis 185 = 167 bis 185 S/min"
+      ],
+      ko: [
+        "1단계: 최대 심박수(HRmax) 추정: 220 - 나이 = 220 - 35 = 185 bpm",
+        "2단계: Zone 1 적극적 회복 구간 (50–60% HRmax): 185 × 0.50 ~ 185 × 0.60 = 93 ~ 111 bpm",
+        "3단계: Zone 2 유산소 기초 지구력 / 지방 연소 (60–70% HRmax): 185 × 0.60 ~ 185 × 0.70 = 111 ~ 130 bpm",
+        "4단계: Zone 3 템포 유산소 (70–80% HRmax): 185 × 0.70 ~ 185 × 0.80 = 130 ~ 148 bpm",
+        "5단계: Zone 4 젖산 역치 (80–90% HRmax): 185 × 0.80 ~ 185 × 0.90 = 148 ~ 167 bpm",
+        "6단계: Zone 5 최대 산소섭취량(VO2 Max) 정점 (90–100% HRmax): 185 × 0.90 ~ 185 = 167 ~ 185 bpm"
+      ],
+      hi: [
+        "चरण 1: अधिकतम हृदय गति (HRmax) का अनुमान: 220 - आयु = 220 - 35 = 185 धड़कन/मिनट",
+        "चरण 2: ज़ोन 1 सक्रिय रिकवरी (HRmax का 50-60%): 185 × 0.50 से 185 × 0.60 = 93 से 111 BPM",
+        "चरण 3: ज़ोन 2 एरोबिक बेस / फैट बर्न (HRmax का 60-70%): 185 × 0.60 से 185 × 0.70 = 111 से 130 BPM",
+        "चरण 4: ज़ोन 3 एरोबिक टेम्पो (HRmax का 70-80%): 185 × 0.70 से 185 × 0.80 = 130 से 148 BPM",
+        "चरण 5: ज़ोन 4 लैक्टेट थ्रेशोल्ड (HRmax का 80-90%): 185 × 0.80 से 185 × 0.90 = 148 से 167 BPM",
+        "चरण 6: ज़ोन 5 VO2 मैक्स पीक (HRmax का 90-100%): 185 × 0.90 से 185 = 167 से 185 BPM"
+      ]
+    },
+    result: {
+      en: { label: "Primary Aerobic Base Range (Zone 2: 60–70% HRmax)", value: "111 – 130 bpm" },
+      es: { label: "Rango de Base Aeróbica (Zona 2: 60–70% FCmax)", value: "111 – 130 lpm" },
+      fr: { label: "Zone d'Endurance Fondamentale (Zone 2 : 60–70 % FCmax)", value: "111 – 130 bpm" },
+      de: { label: "Aerobe Grundausdauer (Zone 2: 60–70 % HFmax)", value: "111 – 130 S/min" },
+      ko: { label: "유산소 기초 지구력 구간 (Zone 2: 60–70% HRmax)", value: "111 – 130 bpm" },
+      hi: { label: "प्राथमिक एरोबिक बेस रेंज (ज़ोन 2: 60–70% HRmax)", value: "111 – 130 BPM" }
+    },
+    interp: {
+      en: "The standard 5-zone cardiovascular model uses your age-predicted peak output (185 bpm via Fox 220 - Age) to define five training intensities. Maintaining 111 to 130 bpm targets Zone 2, developing mitochondrial density, capillary perfusion, and sustainable aerobic energy without excessive systemic fatigue. Peak pulse estimates have a biological standard deviation of approximately ±10 to 12 bpm across healthy populations. Adjust pacing based on perceived exertion and hydration levels.",
+      es: "El modelo cardiovascular estándar de 5 zonas utiliza la frecuencia máxima teórica (185 lpm según Fox: 220 - Edad) para estructurar el esfuerzo. Mantener entre 111 y 130 lpm sitúa el ejercicio en la Zona 2, optimizando la densidad mitocondrial y la oxidación de grasas sin fatiga neuromuscular excesiva. Las fórmulas teóricas de FCmax presentan una variabilidad biológica de ±10 a 12 lpm. Modere el ritmo según la percepción subjetiva de esfuerzo.",
+      fr: "Le modèle cardiovasculaire classique à 5 zones s'appuie sur la fréquence maximale théorique (185 bpm selon la formule de Fox : 220 - Âge). Un entraînement compris entre 111 et 130 bpm correspond à la Zone 2, favorisant le développement des capillaires et l'endurance aérobie sans épuisement glycogénique rapide. La formule 220-âge comporte une marge d'erreur physiologique de ±10 à 12 bpm. Adaptez votre cadence en fonction de votre ressenti et de la météo.",
+      de: "Das klassische 5-Zonen-Modell nutzt die altersabhängige Maximalfrequenz (185 S/min nach der Fox-Formel: 220 - Alter) zur Strukturierung des Trainings. Ein Belastungspuls von 111 bis 130 S/min entspricht der Zone 2, die den Fettstoffwechsel und die mitochondriale Dichte ohne Überlastung stärkt. Statistische Maximalpuls-Formeln weisen eine individuelle Streuung von ca. ±10 bis 12 S/min auf. Passen Sie die Belastung stets dem subjektiven Belastungsempfinden an.",
+      ko: "표준 5단계 심박수 존 모델은 연령 기반 최대 심박수(Fox 공식: 220 - 나이 = 185 bpm)를 기준으로 훈련 강도를 분할합니다. 111 ~ 130 bpm을 유지하는 Zone 2는 미토콘드리아 밀도 향상 및 효율적인 유산소 지방 산화를 유도하며 전신 피로 누적을 최소화합니다. 연령 공식에 의한 최대 심박수는 개인에 따라 약 ±10~12 bpm의 자연스러운 오차가 발생하므로 주관적 피로도와 함께 조절해야 합니다.",
+      hi: "मानक 5-ज़ोन कार्डियो मॉडल आयु-आधारित अधिकतम पल्स (फॉक्स फॉर्मूला: 220 - आयु = 185 BPM) का उपयोग करके कसरत की तीव्रता निर्धारित करता है। 111 से 130 BPM के बीच रहना ज़ोन 2 को लक्षित करता है, जो बिना अत्यधिक थकान के एरोबिक सहनशक्ति और वसा ऑक्सीकरण में सुधार करता है। अधिकतम हृदय गति के सूत्रों में स्वाभाविक रूप से ±10 से 12 BPM का अंतर हो सकता है। अपनी शारीरिक क्षमता और परिश्रम के स्तर अनुसार गति तय करें।"
+    }
+  },
+
   // 8. Karvonen Heart Rate Reserve Calculator
   'karvonen-heart-rate-calculator': {
     inputs: {

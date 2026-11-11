@@ -1,3 +1,7 @@
+# Cloudflare email protection defensive redirect (prevents crawler 404s)
+/cdn-cgi/l/email-protection*  /en/contact/  301
+/cdn-cgi/l/email-protection  /en/contact/  301
+
 # Author and core route redirects
 /about  /en/about/  301
 /about/  /en/about/  301

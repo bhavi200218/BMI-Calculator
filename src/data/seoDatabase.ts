@@ -6348,34 +6348,34 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Cardiovascular Training Protocol",
       "title": "Target Heart Rate Zones Calculator – 5 Exercise Training Zones",
       "intro": "Identify your five cardiovascular intensity zones to optimize endurance, recovery, and metabolic conditioning. Using your age and resting pulse, this tool provides clear target boundaries so you can pace warm-ups, aerobic foundation building, and sprint intervals with precision.",
-      "formulaTitle": "Cardiorespiratory Training Intensity Equation",
-      "formulaDesc": "Max Heart Rate = 220 - Age. Heart Rate Reserve (HRR) = Max HR - Resting Pulse. Target Pulse = Resting Pulse + [HRR × Intensity %]. Calculate each of your five physiological zones using the Karvonen method.",
-      "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
+      "formulaTitle": "Fox & Haskell %HRmax Cardiorespiratory Equation",
+      "formulaDesc": "Estimated Maximum Heart Rate (HRmax) = 220 - Age. Training zones are calculated as direct percentage thresholds of HRmax: Zone 1 (50–60%), Zone 2 (60–70%), Zone 3 (70–80%), Zone 4 (80–90%), and Zone 5 (90–100%). This classical framework provides immediate target intensity boundaries without requiring a resting pulse baseline.",
+      "formulaCode": "HRmax = 220 - Age | Target Zone = HRmax × Intensity %",
       "tableTitle": "5-Zone Heart Rate Training Intensity Table — Zone 1 to Zone 5 Physiology & Training Targets",
       "tableRows": [
         {
           "col1": "Zone 1",
-          "col2": "50% – 60% HRR (or HRmax)",
+          "col2": "50% – 60% HRmax",
           "col3": "Active Recovery & Warm-Up: Very light effort. Stimulates capillary blood circulation, clears metabolic waste, enhances joint mobility, and activates the parasympathetic recovery branch."
         },
         {
           "col1": "Zone 2",
-          "col2": "60% – 70% HRR (or HRmax)",
+          "col2": "60% – 70% HRmax",
           "col3": "Aerobic Base & Fat Oxidation: Conversational endurance pace. Stimulates mitochondrial biogenesis, capillarization, and optimizes fatty acid oxidation; foundation of polarized 80/20 endurance."
         },
         {
           "col1": "Zone 3",
-          "col2": "70% – 80% HRR (or HRmax)",
+          "col2": "70% – 80% HRmax",
           "col3": "Aerobic Stamina & Tempo: Moderate sustained effort. Enhances cardiac stroke volume, glycogen utilization efficiency, and builds cardiovascular stamina for steady-state pacing."
         },
         {
           "col1": "Zone 4",
-          "col2": "80% – 90% HRR (or HRmax)",
+          "col2": "80% – 90% HRmax",
           "col3": "Anaerobic & Lactate Threshold: Hard, challenging pace. Elevates the second ventilatory threshold (VT2), improves muscle buffer capacity against hydrogen ions, and increases sustained race power."
         },
         {
           "col1": "Zone 5",
-          "col2": "90% – 100% HRR (or HRmax)",
+          "col2": "90% – 100% HRmax",
           "col3": "Neuromuscular Sprint & VO2 Max Peak: All-out maximal effort. Maximizes peak cardiac output, recruits fast-twitch motor units, and enhances sprint speed and high-intensity interval capacity."
         }
       ],
@@ -6404,36 +6404,36 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Zonas de Frecuencia Cardíaca – Fórmula Karvonen",
-      "intro": "Calcula tus 5 zonas objetivo de entrenamiento (Recuperación, Base Aeróbica, Cardio Tempo, Umbral Anaeróbico y Pico VO2 Máx) según edad, frecuencia en reposo y frecuencia máxima.",
-      "formulaTitle": "Ecuación de Zonas de Entrenamiento Cardiorrespiratorio",
-      "formulaDesc": "Frecuencia Cardíaca Máxima = 220 - Edad. Reserva de Frecuencia Cardíaca (RFC) = FC Máx - FC Reposo. FC Objetivo = FC Reposo + [RFC × % Intensidad].",
-      "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
+      "title": "Calculadora de Zonas de Frecuencia Cardíaca – 5 Zonas de Entrenamiento",
+      "intro": "Calcula tus 5 zonas objetivo de entrenamiento (Recuperación, Base Aeróbica, Cardio Tempo, Umbral Anaeróbico y Pico VO2 Máx) según edad y frecuencia cardíaca máxima.",
+      "formulaTitle": "Ecuación de Intensidad Cardíaca de Fox y Haskell (%FCmax)",
+      "formulaDesc": "Frecuencia Cardíaca Máxima Teórica (FCmax) = 220 - Edad. Las 5 zonas de entrenamiento se calculan como porcentajes directos de FCmax: Zona 1 (50–60%), Zona 2 (60–70%), Zona 3 (70–80%), Zona 4 (80–90%) y Zona 5 (90–100%). Este modelo clásico permite fijar la intensidad sin necesidad de medir el pulso en reposo.",
+      "formulaCode": "FCmax = 220 - Edad | Zona Objetivo = FCmax × % Intensidad",
       "tableTitle": "Tabla de Frecuencia Cardíaca de 5 Zonas: Fisiología y Objetivos de Entrenamiento (Zona 1 a 5)",
       "tableRows": [
         {
           "col1": "Zona 1",
-          "col2": "50% – 60% RFC / FCmáx",
+          "col2": "50% – 60% FCmax",
           "col3": "Recuperación Activa y Calentamiento: Esfuerzo muy suave. Favorece el retorno venoso, elimina residuos metabólicos y activa la recuperación parasimpática."
         },
         {
           "col1": "Zona 2",
-          "col2": "60% – 70% RFC / FCmáx",
+          "col2": "60% – 70% FCmax",
           "col3": "Base Aeróbica y Oxidación de Grasas: Ritmo conversacional. Estimula la biogénesis mitocondrial y la capilarización; pilar del entrenamiento polarizado 80/20."
         },
         {
           "col1": "Zona 3",
-          "col2": "70% – 80% RFC / FCmáx",
+          "col2": "70% – 80% FCmax",
           "col3": "Resistencia Aeróbica y Tempo: Esfuerzo moderado sostenido. Aumenta el volumen sistólico cardíaco y la eficiencia en el uso de glucógeno."
         },
         {
           "col1": "Zona 4",
-          "col2": "80% – 90% RFC / FCmáx",
+          "col2": "80% – 90% FCmax",
           "col3": "Umbral Anaeróbico y Lactato: Ritmo exigente. Eleva el umbral ventilatorio (VT2) y entrena la tolerancia al lactato para competición."
         },
         {
           "col1": "Zona 5",
-          "col2": "90% – 100% RFC / FCmáx",
+          "col2": "90% – 100% FCmax",
           "col3": "Pico de VO2 Máx y Sprint: Esfuerzo máximo en intervalos cortos. Recluta fibras rápidas y maximiza el gasto cardíaco pico."
         }
       ],
@@ -6452,9 +6452,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "Protocole d'Entraînement Cardiorespiratoire",
       "title": "Calculateur de Zones de Fréquence Cardiaque – 5 Zones d'Exercice",
       "intro": "Identifiez vos cinq zones d'intensité cardiaque pour structurer vos séances d'endurance, de tempo et d'intervalles selon la formule de Karvonen.",
-      "formulaTitle": "Équation d'Intensité Cardiorespiratoire de Karvonen",
-      "formulaDesc": "Fréquence Cardiaque Maximale = 220 - Âge. Réserve Cardiaque (FCR) = FC Max - FC Repos. FC Cible = FC Repos + [FCR × % Intensité].",
-      "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
+      "formulaTitle": "Équation d'Intensité Cardiorespiratoire de Fox & Haskell (%FCmax)",
+      "formulaDesc": "Fréquence Cardiaque Maximale Théorique (FCmax) = 220 - Âge. Les 5 zones d'effort sont définies en pourcentages directs de la FCmax : Zone 1 (50–60 %), Zone 2 (60–70 %), Zone 3 (70–80 %), Zone 4 (80–90 %) et Zone 5 (90–100 %). Ce modèle classique structure les allures d'entraînement sans nécessiter la mesure du pouls au repos.",
+      "formulaCode": "FCmax = 220 - Âge | Zone Cible = FCmax × % Intensité",
       "tableTitle": "Tableau des 5 Zones de Fréquence Cardiaque : Physiologie et Objectifs (Zone 1 à Zone 5)",
       "tableRows": [
         {
@@ -6544,9 +6544,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "심폐 지구력 트레이닝 프로토콜",
       "title": "심박수 운동 강도 구간 계산기 – 5단계 트레이닝 존",
       "intro": "나이와 안정 시 심박수를 기반으로 카르보넨 공식을 적용하여 회복, 유산소 기초, 템포 지구력, 무산소 역치, VO2 최대 강도의 5개 심박수 구간을 계산합니다.",
-      "formulaTitle": "카르보넨 심박수 예비량(HRR) 산출 공식",
-      "formulaDesc": "최대 심박수 = 220 - 나이. 심박수 예비량(HRR) = 최대 심박수 - 안정 시 심박수. 목표 심박수 = 안정 시 심박수 + [HRR × 운동 강도 %].",
-      "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
+      "formulaTitle": "Fox & Haskell 최대 심박수(%HRmax) 5단계 공식",
+      "formulaDesc": "연령 기반 최대 심박수(HRmax) = 220 - 나이. 5단계 트레이닝 존은 최대 심박수의 백분율 구간으로 산출됩니다: Zone 1 (50~60%), Zone 2 (60~70%), Zone 3 (70~80%), Zone 4 (80~90%), Zone 5 (90~100%). 안정 시 심박수 측정 없이도 직관적인 유산소 운동 강도를 설정할 수 있는 세계 표준 모델입니다.",
+      "formulaCode": "HRmax = 220 - 나이 | 목표 구간 = HRmax × 운동 강도 %",
       "tableTitle": "5단계 심박수 트레이닝 강도표 — 존 1부터 존 5 생리학적 적응 및 훈련 목표",
       "tableRows": [
         {
@@ -6590,9 +6590,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "eyebrow": "कार्डियोवैस्कुलर प्रशिक्षण प्रोटोकॉल",
       "title": "हृदय गति प्रशिक्षण क्षेत्र कैलकुलेटर – 5 व्यायाम ज़ोन",
       "intro": "अपनी आयु और विश्राम हृदय गति के आधार पर कार्वोनेन सूत्र से अपने 5 कार्डियोवैस्कुलर तीव्रता क्षेत्र (रिकवरी, फैट बर्न, टेम्पो, लैक्टेट थ्रेशोल्ड, VO2 मैक्स) ज्ञात करें।",
-      "formulaTitle": "कार्वोनेन हार्ट रेट रिजर्व (HRR) सूत्र",
-      "formulaDesc": "अधिकतम हृदय गति = 220 - आयु। हार्ट रेट रिजर्व (HRR) = अधिकतम धड़कन - आराम की धड़कन। लक्षित हृदय गति = आराम की धड़कन + [HRR × तीव्रता %]।",
-      "formulaCode": "Target HR = RHR + [(220 - Age - RHR) × % Intensity]",
+      "formulaTitle": "फॉक्स और हास्केल %HRmax कार्डियोरेस्पिरेटरी समीकरण",
+      "formulaDesc": "अनुमानित अधिकतम हृदय गति (HRmax) = 220 - आयु। कसरत के 5 प्रशिक्षण क्षेत्र सीधे HRmax के प्रतिशत के रूप में तय किए जाते हैं: ज़ोन 1 (50-60%), ज़ोन 2 (60-70%), ज़ोन 3 (70-80%), ज़ोन 4 (80-90%), और ज़ोन 5 (90-100%)। यह मानक मॉडल बिना विश्राम पल्स मापे त्वरित तीव्रता मार्गदर्शन प्रदान करता है।",
+      "formulaCode": "HRmax = 220 - आयु | लक्षित ज़ोन = HRmax × तीव्रता %",
       "tableTitle": "5-ज़ोन हृदय गति प्रशिक्षण तीव्रता तालिका — ज़ोन 1 से ज़ोन 5 शरीर विज्ञान एवं प्रशिक्षण लक्ष्य",
       "tableRows": [
         {

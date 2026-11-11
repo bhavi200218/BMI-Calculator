@@ -12,6 +12,13 @@ export async function onRequest(context: EventContext): Promise<Response> {
     return Response.redirect(url.toString(), 301);
   }
 
+  // 1b. Handle legacy Cloudflare email protection crawler probes with 301 to /en/contact/
+  if (url.pathname.startsWith('/cdn-cgi/l/email-protection')) {
+    url.hostname = 'realbmicalculator.com';
+    url.pathname = '/en/contact/';
+    return Response.redirect(url.toString(), 301);
+  }
+
   // 2. Consolidate duplicate Indian BMI calculator URL into canonical /bmi-calculator-for-indians/
   const indianCalcMatch = url.pathname.match(/^(\/(?:en|es|fr|de|ko|hi))?\/bmi-calculator-india(\/?)$/);
   if (indianCalcMatch) {

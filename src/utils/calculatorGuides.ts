@@ -327,13 +327,33 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
   const isBodyComp = slug === 'body-fat-calculator';
   const isWHR = slug === 'waist-to-hip-ratio-calculator';
   const isBsa = slug === 'body-surface-area-calculator';
-  const isCardio = ['heart-rate-zone-calculator', 'karvonen-heart-rate-calculator'].includes(slug);
+  const isKarvonen = slug === 'karvonen-heart-rate-calculator';
+  const isHrZones = slug === 'heart-rate-zone-calculator';
   const isStrength = ['1rm-calculator', 'one-rep-max-calculator'].includes(slug);
   const isDiabetes = slug === 'diabetes-risk-calculator';
   const isPregnancy = slug === 'pregnancy-weight-gain-calculator';
   const isSpecialty = ['protein-intake-calculator'].includes(slug);
 
-  const domain = isBmr ? 'bmr' : (isRegional ? 'regional' : (isHydration ? 'hydration' : (isMacro ? 'macro' : (isCalorieDeficit ? 'calorieDeficit' : (isTdee ? 'tdee' : (isIdealWeight ? 'idealWeight' : (isLbm ? 'lbm' : (isHealthyWeight ? 'healthyWeight' : (isMetabolic ? 'metabolic' : (isBsa ? 'bsa' : (isWHR ? 'whr' : (isBodyComp ? 'bodycomp' : (isCardio ? 'cardio' : (isStrength ? 'strength' : (isDiabetes ? 'diabetes' : (isPregnancy ? 'pregnancy' : (isSpecialty ? 'specialty' : 'bmi')))))))))))))))));
+  let domain = 'bmi';
+  if (isBmr) domain = 'bmr';
+  else if (isRegional) domain = 'regional';
+  else if (isHydration) domain = 'hydration';
+  else if (isMacro) domain = 'macro';
+  else if (isCalorieDeficit) domain = 'calorieDeficit';
+  else if (isTdee) domain = 'tdee';
+  else if (isIdealWeight) domain = 'idealWeight';
+  else if (isLbm) domain = 'lbm';
+  else if (isHealthyWeight) domain = 'healthyWeight';
+  else if (isMetabolic) domain = 'metabolic';
+  else if (isBsa) domain = 'bsa';
+  else if (isWHR) domain = 'whr';
+  else if (isBodyComp) domain = 'bodycomp';
+  else if (isKarvonen) domain = 'cardio';
+  else if (isHrZones) domain = 'hrzones';
+  else if (isStrength) domain = 'strength';
+  else if (isDiabetes) domain = 'diabetes';
+  else if (isPregnancy) domain = 'pregnancy';
+  else if (isSpecialty) domain = 'specialty';
 
   const GUIDES: Record<string, Record<Locale, DomainInterpretationGuide>> = {
     whr: {
@@ -1288,6 +1308,74 @@ metabolic: {
         limitationsText: 'सटीक परिणाम के लिए फीते का सही स्थान आवश्यक है: (1) गर्दन: एडम्स एप्पल के ठीक नीचे; (2) पुरुष कमर: सामान्य सांस छोड़ने के बाद नाभि के स्तर पर क्षैतिज; (3) महिला कमर: पसलियों और कूल्हे के बीच सबसे संकरा भाग; (4) महिला कूल्हे: नितंबों का सबसे चौड़ा भाग। बायोइम्पीडेंस (BIA) मशीनों के विपरीत जो पानी या कॉफी पीने से बदल जाती हैं, फीते की नाप तात्कालिक पानी के उतार-चढ़ाव से अप्रभावित रहती है।',
         medicalNoticeTitle: 'हृदय एवं चयापचय स्वास्थ्य सूचना',
         medicalNoticeText: 'बॉडी फैट प्रतिशत तराजू के वजन या बीएमआई की तुलना में आंतरिक स्वास्थ्य का बहुत बेहतर सूचक है। चिकित्सीय आवश्यकताओं या पेशेवर एथलीटों के लिए अस्पताल का डेक्सा स्कैन अंतिम स्वर्ण मानक है।'
+      }
+    },
+    hrzones: {
+      en: {
+        domain: 'hrzones',
+        sectionTitle: 'Standard 5-Zone Cardiovascular Training Guide',
+        sectionSubtitle: 'Target intensities, aerobic base development, and the Fox & Haskell %HRmax model.',
+        interpretationTitle: 'The 5-Zone Cardiovascular Model & Aerobic Development',
+        interpretationText: 'Cardiorespiratory training zones divide exercise intensity into five metabolic domains based on a percentage of your maximum heart rate (%HRmax). Zone 1 (50–60%) serves as active recovery, promoting blood circulation without joint strain. Zone 2 (60–70%) represents the aerobic foundation, maximizing mitochondrial biogenesis and sustainable lipid oxidation. Zone 3 (70–80%) develops aerobic tempo and cardiovascular stamina, while Zone 4 (80–90%) targets the lactate threshold where metabolic byproducts accumulate. Zone 5 (90–100%) pushes peak neuromuscular recruitment and VO2 max power. Structuring weekly workouts primarily around Zone 2 develops robust endurance while minimizing chronic overtraining syndrome.',
+        limitationsTitle: 'Fox Equation Variance, Tanaka Model & Cardiac Drift',
+        limitationsText: 'The traditional Fox and Haskell formula (220 - Age) provides a widely recognized baseline across fitness equipment and sports monitors, but carries an individual standard deviation of approximately ±10 to 12 bpm. Endurance athletes and older individuals often find alternate formulas, such as the Tanaka equation (208 - 0.7 × Age), offer closer alignment with lab data. Additionally, prolonged sessions induce "cardiac drift," where heart rate gradually rises despite constant pacing due to dehydration and thermoregulatory strain.',
+        medicalNoticeTitle: 'Cardiovascular Clearance & Exercise Screening',
+        medicalNoticeText: 'Consult a physician or certified exercise physiologist prior to initiating high-intensity Zone 4 or Zone 5 training, particularly if you have a history of hypertension, cardiovascular disease, or are taking medications that affect cardiac rhythm (such as beta-blockers).'
+      },
+      es: {
+        domain: 'hrzones',
+        sectionTitle: 'Guía del Modelo Cardiovascular de 5 Zonas de Entrenamiento',
+        sectionSubtitle: 'Intensidades objetivo, desarrollo de base aeróbica y fórmula estándar %FCmax.',
+        interpretationTitle: 'El Modelo de 5 Zonas y Fisiología del Entrenamiento Aeróbico',
+        interpretationText: 'El sistema cardiovascular de cinco zonas clasifica la intensidad según el porcentaje de la frecuencia cardíaca máxima (%FCmax). La Zona 1 (50–60%) facilita la recuperación activa y el flujo sanguíneo sin impacto articular. La Zona 2 (60–70%) es el pilar de la resistencia aeróbica, optimizando la biogénesis mitocondrial y la oxidación de ácidos grasos. La Zona 3 (70–80%) consolida el ritmo de carrera y la resistencia glucolítica, mientras que la Zona 4 (80–90%) entrena el umbral de lactato. La Zona 5 (90–100%) desarrolla la potencia aeróbica máxima (VO2 máx). Priorizar el volumen en Zona 2 permite acumular adaptaciones de resistencia con baja sobrecarga neuromuscular.',
+        limitationsTitle: 'Variabilidad de la Fórmula de Fox, Modelo Tanaka y Deriva Cardíaca',
+        limitationsText: 'La ecuación clásica de Fox (220 - Edad) sirve como referencia estándar en pulsómetros y gimnasios, con una dispersión biológica de ±10 a 12 lpm. Atletas experimentados o personas de mayor edad a menudo emplean la ecuación de Tanaka (208 - 0,7 × Edad) para mayor correspondencia con pruebas de esfuerzo. Además, sesiones prolongadas provocan deriva cardíaca (elevación del pulso por termorregulación y deshidratación sin incremento de velocidad).',
+        medicalNoticeTitle: 'Aprobación Médica y Seguridad en Ejercicio Intenso',
+        medicalNoticeText: 'Solicite valoración cardiológica previa a entrenamientos de alta intensidad en Zonas 4 y 5, especialmente si presenta hipertensión, antecedentes vasculares o consume fármacos moduladores del pulso (como betabloqueantes).'
+      },
+      fr: {
+        domain: 'hrzones',
+        sectionTitle: 'Guide du Modèle Cardiovasculaire à 5 Zones d’Entraînement',
+        sectionSubtitle: 'Intensités cibles, développement de l’endurance fondamentale et modèle %FCmax.',
+        interpretationTitle: 'Le Modèle à 5 Zones et la Physiologie de l’Endurance Aérobie',
+        interpretationText: 'Les cinq zones cardiorespiratoires structurent l’effort en fonction du pourcentage de la fréquence cardiaque maximale (%FCmax). La Zone 1 (50–60 %) stimule la récupération active et l’irrigation capillaire. La Zone 2 (60–70 %) constitue le socle fondamental de l’endurance, favorisant la multiplication des mitochondries et l’utilisation préférentielle des lipides. La Zone 3 (70–80 %) améliore l’endurance active et le débit cardiaque, tandis que la Zone 4 (80–90 %) cible le seuil d’accumulation du lactate. La Zone 5 (90–100 %) sollicite la consommation maximale d’oxygène (VO2 max). Axer l’entraînement majoritairement sur la Zone 2 permet de bâtir une condition physique durable sans épuiser le système nerveux.',
+        limitationsTitle: 'Écart-Type de la Formule de Fox, Modèle Tanaka et Dérive Cardiaque',
+        limitationsText: 'La formule traditionnelle de Fox et Haskell (220 - Âge) offre un repère commode mais comporte une variation naturelle de ±10 à 12 bpm. Des modèles alternatifs comme celui de Tanaka (208 - 0,7 × Âge) peuvent offrir une précision accrue chez les seniors ou sportifs réguliers. Par ailleurs, la dérive cardiaque (augmentation progressive du rythme liée à la déshydratation et à la chaleur) doit être prise en compte lors des sorties longues.',
+        medicalNoticeTitle: 'Avis Cardiologique et Précautions d’Effort',
+        medicalNoticeText: 'Consultez un médecin avant d’aborder les intensités maximales en Zones 4 et 5, particulièrement en présence de facteurs de risque cardiovasculaire ou de traitements modulant la fréquence cardiaque.'
+      },
+      de: {
+        domain: 'hrzones',
+        sectionTitle: 'Leitfaden zum klassischen 5-Zonen-Herzfrequenztraining',
+        sectionSubtitle: 'Belastungsintensitäten, aerobe Basisentwicklung und das Fox-%HFmax-Modell.',
+        interpretationTitle: 'Das 5-Zonen-Modell & Physiologie der aeroben Leistungsfähigkeit',
+        interpretationText: 'Das klassische Fünf-Zonen-System unterteilt die kardiovaskuläre Belastung anhand des Prozentsatzes der maximalen Herzfrequenz (%HFmax). Zone 1 (50–60 %) dient der aktiven Regeneration und fördert die kapillare Durchblutung. Zone 2 (60–70 %) bildet das Fundament der Grundlagenausdauer mit optimaler mitochondrialer Fettoxidation. Zone 3 (70–80 %) schult das aerobe Tempovermögen, während Zone 4 (80–90 %) die anaerobe Laktatschwelle trainiert. Zone 5 (90–100 %) fordert das Herz-Kreislauf-System im Bereich der maximalen Sauerstoffaufnahme (VO2 max). Ein Trainingsaufbau mit hohem Zone-2-Anteil sichert langfristige Ausdaueranpassungen bei minimiertem Überlastungsrisiko.',
+        limitationsTitle: 'Streuung der Fox-Formel, Tanaka-Gleichung & kardialer Drift',
+        limitationsText: 'Die Standardformel nach Fox (220 - Alter) dient als weltweiter Richtwert für Fitnessgeräte, besitzt jedoch eine statistische Streuung von ca. ±10 bis 12 S/min. Alternativen wie die Tanaka-Formel (208 - 0,7 × Alter) spiegeln das Belastungsprofil älterer oder trainierter Sportler oft präziser wider. Bei langen Trainingseinheiten tritt zudem der „kardiale Drift“ auf, bei dem die Herzfrequenz durch Wärmestau und Flüssigkeitsverlust trotz gleichbleibendem Tempo ansteigt.',
+        medicalNoticeTitle: 'Kardiologische Freigabe & Belastungshinweis',
+        medicalNoticeText: 'Lassen Sie intensive Belastungen in den Zonen 4 und 5 sportärztlich abklären, insbesondere bei Vorerkrankungen, Hypertonie oder der Einnahme pulssenkender Medikamente.'
+      },
+      ko: {
+        domain: 'hrzones',
+        sectionTitle: '표준 5단계 심혈관 운동 심박수 존 가이드',
+        sectionSubtitle: '운동 강도 분할, 유산소 기초 지구력 및 Fox & Haskell %HRmax 모델 분석.',
+        interpretationTitle: '5단계 심박수 구간과 유산소 대사 생리학',
+        interpretationText: '심폐 훈련 5개 영역은 최대 심박수 백분율(%HRmax)을 기준으로 운동 강도를 체계적으로 분류합니다. Zone 1(50~60%)은 적극적 회복과 관절 부담 없는 모세혈관 순환을 돕습니다. Zone 2(60~70%)는 유산소 기초 지구력의 핵심으로, 미토콘드리아 생합성과 지속 가능한 지방 산화를 극대화합니다. Zone 3(70~80%)은 템포 지구력을 키우고, Zone 4(80~90%)는 젖산 역치 구간으로 무산소 내성을 강화합니다. Zone 5(90~100%)는 최대 산소섭취량(VO2 max) 파워를 발휘하는 최고 강도 구간입니다. 주간 운동량의 상당 부분을 Zone 2에 배치하면 만성 피로 없이 견고한 심폐 능력을 구축할 수 있습니다.',
+        limitationsTitle: 'Fox 공식의 편차, Tanaka 모델 및 심박 표류 현상',
+        limitationsText: '전통적인 Fox 공식(220 - 나이)은 전 세계 피트니스 기기 표준으로 널리 사용되지만, 개인별로 약 ±10~12 bpm의 생리적 편차가 존재합니다. 숙련된 지구력 운동선수나 장년층의 경우 Tanaka 공식(208 - 0.7 × 나이)이 실험실 수치에 더 근접할 수 있습니다. 또한 장시간 운동 시 탈수와 체온 상승으로 페이스 변화 없이 심박수가 서서히 오르는 심박 표류(cardiac drift) 현상을 고려해야 합니다.',
+        medicalNoticeTitle: '심혈관 건강 및 고강도 운동 전 의학적 확인',
+        medicalNoticeText: 'Zone 4 및 Zone 5의 고강도 심폐 인터벌 운동을 시작하기 전, 특히 고혈압이나 심혈관 질환 병력이 있는 경우 전문의의 운동 부하 검사 및 상담을 권장합니다.'
+      },
+      hi: {
+        domain: 'hrzones',
+        sectionTitle: 'मानक 5-ज़ोन कार्डियोवैस्कुलर ट्रेनिंग गाइड',
+        sectionSubtitle: 'लक्षित व्यायाम तीव्रता, एरोबिक बेस विकास और फॉक्स %HRmax मॉडल।',
+        interpretationTitle: '5-ज़ोन कार्डियो मॉडल और एरोबिक विकास का शरीर विज्ञान',
+        interpretationText: 'कार्डियोरेस्पिरेटरी प्रशिक्षण क्षेत्र अधिकतम हृदय गति के प्रतिशत (%HRmax) के आधार पर व्यायाम की तीव्रता को पांच मेटाबॉलिक श्रेणियों में विभाजित करते हैं। ज़ोन 1 (50-60%) सक्रिय रिकवरी का काम करता है। ज़ोन 2 (60-70%) एरोबिक सहनशक्ति की नींव है, जो माइटोकॉन्ड्रियल घनत्व और वसा ऑक्सीकरण को अनुकूलित करता है। ज़ोन 3 (70-80%) टेम्पो गति और कार्डियो स्टैमिना बढ़ाता है, जबकि ज़ोन 4 (80-90%) लैक्टेट थ्रेशोल्ड को प्रशिक्षित करता है। ज़ोन 5 (90-100%) अधिकतम ऑक्सीजन खपत (VO2 max) को चुनौती देता है। साप्ताहिक वर्कआउट को मुख्य रूप से ज़ोन 2 में रखने से बिना अत्यधिक थकान के मजबूत कार्डियो क्षमता विकसित होती है।',
+        limitationsTitle: 'फॉक्स समीकरण की विभिन्नता, तनाका मॉडल एवं कार्डियक ड्रिफ्ट',
+        limitationsText: 'पारंपरिक फॉक्स और हास्केल फॉर्मूला (220 - आयु) जिम उपकरणों और फिटनेस ट्रैकर्स के लिए एक वैश्विक मानक है, लेकिन इसमें स्वाभाविक रूप से लगभग ±10 से 12 BPM का अंतर हो सकता है। बुजुर्गों या अनुभवी धावकों के लिए तनाका फॉर्मूला (208 - 0.7 × आयु) अधिक सटीक हो सकता है। इसके अलावा, लंबे व्यायाम सत्रों में पसीने और तापमान वृद्धि के कारण हृदय गति धीरे-धीरे बढ़ने लगती है (कार्डियक ड्रिफ्ट)।',
+        medicalNoticeTitle: 'हृदय स्वास्थ्य जांच एवं डॉक्टरी सावधानी',
+        medicalNoticeText: 'ज़ोन 4 या ज़ोन 5 के उच्च-तीव्रता वाले वर्कआउट शुरू करने से पहले डॉक्टर से परामर्श लें, विशेषकर यदि उच्च रक्तचाप या हृदय रोग की कोई पूर्व समस्या हो।'
       }
     },
     cardio: {
