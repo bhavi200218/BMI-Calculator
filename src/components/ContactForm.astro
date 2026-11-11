@@ -22,6 +22,7 @@ interface ContactDict {
   copiedToast: string;
   responseTime: string;
   departmentsTitle: string;
+  departmentsSubtext: string;
   departments: DeptItem[];
   ugcPolicyTitle: string;
   ugcPolicyText: string;
@@ -43,6 +44,7 @@ const dicts: Record<string, ContactDict> = {
     copiedToast: '✓ Email address copied to clipboard!',
     responseTime: 'Typical Response Time: Within 24–48 business hours',
     departmentsTitle: 'Select an Inquiry Category (Pre-Configures Subject Line):',
+    departmentsSubtext: 'Select an inquiry topic below to start a pre-addressed email draft with the appropriate subject tag directly to our developer inbox.',
     departments: [
       {
         title: 'Formula Feedback & Academic Research',
@@ -83,6 +85,7 @@ const dicts: Record<string, ContactDict> = {
     copiedToast: '✓ E-Mail-Adresse in die Zwischenablage kopiert!',
     responseTime: 'Antwortzeit: Binnen 24–48 Geschäftsstunden',
     departmentsTitle: 'Wählen Sie eine Anfrage-Kategorie (Öffnet vorformatierte E-Mail):',
+    departmentsSubtext: 'Wählen Sie unten ein Thema, um einen vorformatierten E-Mail-Entwurf mit passender Betreffzeile direkt an unser Postfach zu senden.',
     departments: [
       {
         title: 'Formelmethodik & Wissenschaftliches Feedback',
@@ -123,6 +126,7 @@ const dicts: Record<string, ContactDict> = {
     copiedToast: '✓ ¡Dirección de correo copiada al portapapeles!',
     responseTime: 'Tiempo de respuesta habitual: Dentro de 24–48 horas hábiles',
     departmentsTitle: 'Seleccione una Categoría de Consulta (Preconfigura el Asunto):',
+    departmentsSubtext: 'Seleccione un tema de consulta a continuación para abrir un borrador de correo con el asunto correspondiente dirigido a nuestro buzón.',
     departments: [
       {
         title: 'Metodología Científica y Validación de Fórmulas',
@@ -163,6 +167,7 @@ const dicts: Record<string, ContactDict> = {
     copiedToast: '✓ Adresse e-mail copiée dans le presse-papiers !',
     responseTime: 'Délai moyen de réponse : Sous 24 à 48 heures ouvrées',
     departmentsTitle: 'Sélectionnez une Catégorie (Pré-remplit l\'Objet du Message) :',
+    departmentsSubtext: 'Sélectionnez un sujet de demande ci-dessous pour ouvrir un brouillon d\'e-mail préformaté adressé directement à notre équipe.',
     departments: [
       {
         title: 'Méthodologie Scientifique et Validation des Formules',
@@ -203,6 +208,7 @@ const dicts: Record<string, ContactDict> = {
     copiedToast: '✓ 이메일 주소가 클립보드에 복사되었습니다!',
     responseTime: '응대 기준: 영업일 기준 24~48시간 이내 회신',
     departmentsTitle: '문의 유형 선택 (제목이 자동으로 사전 설정됩니다):',
+    departmentsSubtext: '아래에서 문의 주제를 선택하시면 적절한 제목이 설정된 이메일 작성 창이 바로 열립니다.',
     departments: [
       {
         title: '계산 공식 검증 및 학술 연구 피드백',
@@ -243,6 +249,7 @@ const dicts: Record<string, ContactDict> = {
     copiedToast: '✓ ईमेल पता क्लिपबोर्ड पर कॉपी हो गया!',
     responseTime: 'प्रतिक्रिया समय: 24–48 व्यावसायिक घंटों के भीतर',
     departmentsTitle: 'पूछताछ की श्रेणी चुनें (विषय स्वतः सेट हो जाएगा):',
+    departmentsSubtext: 'डेवलपर इनबॉक्स में उपयुक्त विषय के साथ ईमेल संदेश भेजने के लिए नीचे दी गई सूची से संबंधित श्रेणी चुनें।',
     departments: [
       {
         title: 'वैज्ञानिक सूत्र एवं अकादमिक शोध प्रतिक्रिया',
@@ -339,10 +346,13 @@ const d = dicts[lang] || dicts.en;
 
   <!-- Categorized Inquiry Dispatch Grid -->
   <div class="space-y-4">
-    <div class="space-y-1">
+    <div class="space-y-1.5">
       <h3 class="text-sm font-mono font-bold uppercase tracking-wider text-[var(--accent)]">
         {d.departmentsTitle}
       </h3>
+      <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">
+        {d.departmentsSubtext}
+      </p>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
@@ -374,9 +384,9 @@ const d = dicts[lang] || dicts.en;
       <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
-      <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-blue-500">
+      <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue-500 block">
         {d.ugcPolicyTitle}
-      </h3>
+      </span>
     </div>
     <p class="text-xs text-[var(--foreground)]/90 leading-relaxed font-medium">
       {d.ugcPolicyText}

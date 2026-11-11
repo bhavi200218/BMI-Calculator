@@ -902,9 +902,9 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
           {infographic.badge}
         </span>
-        <h4 class="text-base sm:text-lg font-display font-bold text-[var(--foreground)] uppercase">
+        <p class="text-base sm:text-lg font-display font-bold text-[var(--foreground)] uppercase">
           {currentData.title} — {infographic.titleSuffix}
-        </h4>
+        </p>
       </div>
       <span class="text-xs text-[var(--muted-foreground)] font-mono">
         {infographic.source}
@@ -985,9 +985,9 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
       <!-- Inputs & Derivation Steps -->
       <div class="space-y-3.5">
         <div class="p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 space-y-2">
-          <h4 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+          <p class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
             {workedExample.inputHeading}
-          </h4>
+          </p>
           <div class="flex flex-wrap gap-2">
             {workedExample.inputs.map((inp) => (
               <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs font-medium text-[var(--foreground)]">

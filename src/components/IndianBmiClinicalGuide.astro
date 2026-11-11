@@ -712,9 +712,19 @@ const c = content[lang] || content.en;
 
     <!-- Thali Concept Breakdown (3 Pillars) -->
     <div class="p-6 md:p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] shadow-sm space-y-5">
-      <h3 class="text-lg sm:text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-        {c.thaliConceptTitle}
-      </h3>
+      <div class="space-y-1">
+        <h3 class="text-lg sm:text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+          {c.thaliConceptTitle}
+        </h3>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
+          {lang === 'de' ? 'Das vom ICMR-NIN entwickelte Tellermodell empfiehlt eine gezielte Aufteilung zur Senkung des glykämischen Index traditioneller Mahlzeiten.' :
+           lang === 'es' ? 'El modelo de plato del ICMR-NIN propone una distribución visual específica para reducir el impacto glucémico de las comidas tradicionales.' :
+           lang === 'fr' ? 'Le modèle d\'assiette élaboré par l\'ICMR-NIN définit une répartition visuelle équilibrée pour modérer la charge glycémique des repas.' :
+           lang === 'ko' ? 'ICMR-NIN의 접시 모델은 전통 식단의 혈당 부하를 낮추기 위해 권장되는 시각적 영양소 분할 지침입니다.' :
+           lang === 'hi' ? 'ICMR-NIN द्वारा विकसित थाली मॉडल पारंपरिक भोजन के ग्लाइसेमिक इंडेक्स को नियंत्रित करने के लिए स्पष्ट अनुपात प्रदान करता है।' :
+           'The ICMR-NIN plate model establishes a visual proportion framework designed to reduce the glycemic load of traditional meals.'}
+        </p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {c.thaliComponents.map(comp => (
           <div class="p-5 rounded-2xl bg-[var(--muted)]/30 border border-[var(--border)]/70 space-y-2">
@@ -734,9 +744,19 @@ const c = content[lang] || content.en;
 
     <!-- Meal Plans Grid (Veg vs Non-Veg) -->
     <div class="space-y-4">
-      <h3 class="text-lg sm:text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-        {c.sampleMealTitle}
-      </h3>
+      <div class="space-y-1">
+        <h3 class="text-lg sm:text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+          {c.sampleMealTitle}
+        </h3>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
+          {lang === 'de' ? 'Praktische Tagesbeispiele zur Optimierung des Protein- und Ballaststoffanteils bei südasiatischen Ernährungsgewohnheiten.' :
+           lang === 'es' ? 'Ejemplos prácticos de menús diarios diseñados para optimizar el aporte de fibra y proteína en patrones dietéticos del sur de Asia.' :
+           lang === 'fr' ? 'Exemples pratiques de repas quotidiens structurés pour optimiser les apports en protéines et fibres.' :
+           lang === 'ko' ? '남아시아 식이 패턴에서 단백질과 식이섬유 비율을 최적화하도록 설계된 실질적인 일일 식단 예시입니다.' :
+           lang === 'hi' ? 'दक्षिण एशियाई आहार पैटर्न में प्रोटीन और फाइबर संतुलन को अनुकूलित करने के लिए तैयार किए गए व्यावहारिक दैनिक भोजन विकल्प।' :
+           'Practical daily meal templates structured to optimize protein and fiber ratios within South Asian dietary patterns.'}
+        </p>
+      </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         <!-- Vegetarian Plan -->

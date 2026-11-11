@@ -86,6 +86,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       </ul>
 
       <h2>Step-by-Step Practical Worked Examples</h2>
+      <p>The following real-world worked scenarios illustrate how these formulas, clinical thresholds, and physiological variables apply across practical individual cases:</p>
 
       <div class="my-6 space-y-4">
         <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
@@ -502,6 +503,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       </ul>
 
       <h2>कदम-दर-कदम व्यावहारिक उदाहरण (Worked Examples)</h2>
+      <p>निम्नलिखित व्यावहारिक उदाहरण दर्शाते हैं कि ये गणितीय सूत्र, नैदानिक सीमाएं और शारीरिक कारक वास्तविक जीवन में कैसे लागू होते हैं:</p>
 
       <div class="my-6 space-y-4">
         <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
