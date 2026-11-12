@@ -615,7 +615,7 @@ const hydrationQuickChart = {
 
 const bmiChartMatrixGrid = {
   intro: {
-    en: 'Look up your standing height across the official World Health Organization baseline matrix to determine your healthy adult weight span in both metric kilograms and imperial pounds.',
+    en: 'Look up your standing height in the WHO reference matrix. Find your healthy adult weight span in kilograms and pounds.',
     es: 'Consulta tu estatura en la matriz de la Organización Mundial de la Salud para conocer tu rango de peso saludable en kilogramos y libras.',
     fr: 'Consultez votre taille sur la matrice officielle de l\'Organisation Mondiale de la Santé pour connaître votre poids santé en kilogrammes et livres.',
     de: 'Finden Sie Ihre Körpergröße in der offiziellen WHO-Referenzmatrix, um Ihren gesunden Normalgewichtsbereich in Kilogramm und Pfund abzulesen.',
@@ -670,7 +670,7 @@ const bmiChartMatrixGrid = {
 
 const hrZonesQuickGrid = {
   intro: {
-    en: 'Target exercise heart rate zones based on the classic Fox & Haskell formula (%HRmax = 220 - Age). These direct percentage boundaries guide warm-up, aerobic base endurance, and maximum cardiorespiratory capacity without requiring resting pulse measurement.',
+    en: 'Target heart rate zones using the Fox formula (%HRmax = 220 - Age). These percentage zones guide warm-up, aerobic base, and tempo pacing. No resting pulse is needed.',
     es: 'Zonas de entrenamiento basadas en la fórmula clásica de Fox y Haskell (%FCmax = 220 - Edad). Estos umbrales directos estructuran el calentamiento, la base aeróbica y el esfuerzo máximo sin requerir medición en reposo.',
     fr: 'Zones d\'entraînement cardiaque selon la formule de Fox & Haskell (%FCmax = 220 - Âge). Ces repères en pourcentage direct guident l\'échauffement, l\'endurance aérobie et la puissance maximale sans mesure au repos.',
     de: 'Herzfrequenzzonen basierend auf der klassischen Fox-Formel (%HFmax = 220 - Alter). Diese Prozentbereiche steuern Aufwärmen, aerobe Ausdauer und Spitzenleistung ohne erforderliche Ruhepulsmessung.',
@@ -753,12 +753,12 @@ const karvonenQuickGrid = {
 };
 
 const referenceTableSubtitle = {
-  en: `Official reference ranges, public health thresholds, and validated benchmarks for ${currentData.title}.`,
-  es: `Rangos de referencia oficiales, umbrales de salud pública y parámetros validados para ${currentData.title}.`,
-  fr: `Intervalles de référence officiels, seuils de santé publique et repères validés pour ${currentData.title}.`,
-  de: `Offizielle Referenzbereiche, gesundheitliche Schwellenwerte und validierte Richtwerte für ${currentData.title}.`,
-  ko: `${currentData.title}에 대한 공식 참조 범위, 공중보건 기준치 및 검증된 생리학적 지표입니다.`,
-  hi: `${currentData.title} के लिए आधिकारिक संदर्भ सीमाएं, सार्वजनिक स्वास्थ्य सीमाएं और मान्य बेंचमार्क।`
+  en: `Official benchmarks and health reference ranges for ${currentData.title}.`,
+  es: `Rangos de referencia y umbrales de salud para ${currentData.title}.`,
+  fr: `Intervalles de référence et seuils de santé pour ${currentData.title}.`,
+  de: `Offizielle Richtwerte und Referenzbereiche für ${currentData.title}.`,
+  ko: `${currentData.title}에 대한 공식 참조 범위 및 기준 지표입니다.`,
+  hi: `${currentData.title} के लिए आधिकारिक स्वास्थ्य संदर्भ और बेंचमार्क।`
 }[lang] || `Official benchmarks and reference ranges for ${currentData.title}.`;
 
 const accordionTitles: Record<Locale, { formula: string; formulaSub: string; limitations: string; limitationsSub: string }> = {

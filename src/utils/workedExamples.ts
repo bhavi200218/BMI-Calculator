@@ -1945,12 +1945,12 @@ export function getWorkedExample(slug: string, lang: string, toolTitle?: string)
   const curLang = (data.inputs[lang]) ? lang : 'en';
 
   const dynamicSubtitle = toolTitle ? ({
-    en: `See how this formula works step by step for ${toolTitle} with sample measurements and clear health ranges.`,
-    es: `Examina una demostración detallada paso a paso que ilustra la aplicación práctica de las fórmulas para ${toolTitle}.`,
-    fr: `Découvrez une démonstration mathématique étape par étape illustrant l'application des équations de calcul pour ${toolTitle}.`,
-    de: `Verfolgen Sie eine transparente Beispielrechnung für ${toolTitle}, die veranschaulicht, wie die Formelwerte mathematisch abgeleitet werden.`,
-    ko: `${toolTitle}에 대한 실제 계측 입력값이 공식에 따라 산출되는 유도 과정과 해석 지침입니다.`,
-    hi: `${toolTitle} के लिए विस्तृत चरण-दर-चरण गणना और मानकीकृत संदर्भ समझें।`
+    en: `Step-by-step calculation and health reference ranges for ${toolTitle}.`,
+    es: `Cálculo paso a paso y rangos de referencia para ${toolTitle}.`,
+    fr: `Calcul étape par étape et repères de référence pour ${toolTitle}.`,
+    de: `Schritt-für-Schritt-Berechnung und Referenzbereiche für ${toolTitle}.`,
+    ko: `${toolTitle} 단계별 계산 과정 및 건강 참조 지침.`,
+    hi: `${toolTitle} के लिए चरण-दर-चरण गणना और स्वास्थ्य संदर्भ।`
   }[lang] || headings.subtitle) : headings.subtitle;
 
   return {

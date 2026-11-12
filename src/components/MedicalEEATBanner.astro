@@ -292,10 +292,10 @@ const disclaimerTitles: Record<string, string> = {
       <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[var(--border)]/50">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-          <span class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">{t.authorBadge}</span>
+          <span class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">{t.authorBadge}<span class="sr-only">. </span></span>
         </div>
         <a href={`/${lang}/about/`} class="text-xs font-display font-semibold text-[var(--accent)] hover:underline inline-flex items-center gap-1">
-          <span>{t.authorProfileLink}</span>
+          <span>{t.authorProfileLink}<span class="sr-only">. </span></span>
           <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
         </a>
       </div>
@@ -304,16 +304,16 @@ const disclaimerTitles: Record<string, string> = {
         <!-- Lead Creator & Developer Column -->
         <div class="flex gap-4 items-start">
           <a href={`/${lang}/about/`} class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white font-display font-black text-base flex items-center justify-center shrink-0 shadow-md ring-2 ring-[var(--accent)]/30 hover:opacity-90 transition-opacity">
-            BD
+            BD<span class="sr-only">. </span>
           </a>
           <div class="space-y-1.5">
             <div class="flex flex-wrap items-center gap-2">
               <a href={`/${lang}/about/`} class="text-base font-display font-bold text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">
-                {t.authorName}
+                {t.authorName}<span class="sr-only">. </span>
               </a>
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">{t.verifiedBadge || 'Developer'}</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">{t.verifiedBadge || 'Developer'}<span class="sr-only">. </span></span>
             </div>
-            <p class="text-xs font-medium text-[var(--accent)]">{t.authorRole}</p>
+            <p class="text-xs font-medium text-[var(--accent)]">{t.authorRole}<span class="sr-only">. </span></p>
             <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-sans">{t.authorBio}</p>
             <div class="flex flex-wrap gap-1.5 pt-1">
               {t.authorCredentials.map((cred: string) => (
@@ -334,14 +334,14 @@ const disclaimerTitles: Record<string, string> = {
           </div>
           <div class="space-y-1.5">
             <div class="flex flex-wrap items-center gap-2">
-              <h3 class="text-base font-display font-bold text-[var(--foreground)]">{t.reviewPanelName}</h3>
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/30">{t.reviewProtocolTitle}</span>
+              <h3 class="text-base font-display font-bold text-[var(--foreground)]">{t.reviewPanelName}<span class="sr-only">. </span></h3>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/30">{t.reviewProtocolTitle}<span class="sr-only">. </span></span>
             </div>
             <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-sans">{t.reviewProtocolDesc}</p>
             <div class="flex flex-wrap gap-3 pt-1 text-xs font-medium">
-              <a href={`/${lang}/editorial-policy/`} class="text-[var(--foreground)] hover:text-[var(--accent)] underline decoration-dotted transition-colors">{t.editorialPolicy}</a>
-              <a href={`/${lang}/sources/`} class="text-[var(--foreground)] hover:text-[var(--accent)] underline decoration-dotted transition-colors">{t.scientificSources}</a>
-              <a href={`/${lang}/contact/`} class="text-[var(--foreground)] hover:text-[var(--accent)] underline decoration-dotted transition-colors">{t.editorialContact}</a>
+              <a href={`/${lang}/editorial-policy/`} class="text-[var(--foreground)] hover:text-[var(--accent)] underline decoration-dotted transition-colors">{t.editorialPolicy}</a><span class="sr-only">. </span>
+              <a href={`/${lang}/sources/`} class="text-[var(--foreground)] hover:text-[var(--accent)] underline decoration-dotted transition-colors">{t.scientificSources}</a><span class="sr-only">. </span>
+              <a href={`/${lang}/contact/`} class="text-[var(--foreground)] hover:text-[var(--accent)] underline decoration-dotted transition-colors">{t.editorialContact}</a><span class="sr-only">. </span>
             </div>
           </div>
         </div>
