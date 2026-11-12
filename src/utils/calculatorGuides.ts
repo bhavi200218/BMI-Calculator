@@ -478,14 +478,14 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     bsa: {
       en: {
         domain: 'bsa',
-        sectionTitle: 'Body Surface Area & Clinical Physiology Guide',
-        sectionSubtitle: 'Understanding how BSA standardizes metabolic rates, cardiac index, and pharmacokinetics.',
-        interpretationTitle: 'Mosteller Formula & Physiological Normalization',
-        interpretationText: 'Body Surface Area (BSA) measures the outside surface of your body in square meters (m²). The average score is about 1.90 m² for men and 1.60 m² for women. In medicine, BSA links closely to blood flow, heart output, and daily energy burn. It offers a clearer guide than body weight alone because heat loss links directly to skin area.',
-        limitationsTitle: 'Clinical Context & Pharmacological Limitations',
-        limitationsText: 'BSA formulas provide estimates based on average body shapes. Differences happen with high body fat, fluid buildup, or limb loss. Doctors use BSA to guide medicine and hospital treatments. However, this calculator is only an educational tool. Never use it to set medication doses on your own.',
+        sectionTitle: 'Body Surface Area & Health Guide',
+        sectionSubtitle: 'How skin surface area relates to body size, heart work, and daily energy needs.',
+        interpretationTitle: 'Mosteller Formula & Body Size Benchmarks',
+        interpretationText: 'Body Surface Area (BSA) measures the outside surface of your body in square meters (m²). Typical averages are about 1.90 m² for men and 1.60 m² for women. In medicine, BSA relates to blood flow, heart output, and heat loss. It often gives a clearer benchmark than scale weight alone.',
+        limitationsTitle: 'Body Shape Differences & Safe Limits',
+        limitationsText: 'BSA formulas use average body shapes. Results differ with high body fat, fluid retention, or limb loss. Doctors use BSA to help calculate medicine amounts in clinics. This online calculator is for learning only. Never use it to adjust medicine doses on your own.',
         medicalNoticeTitle: 'Clinical Medication & Dosing Safety Notice',
-        medicalNoticeText: 'This tool provides educational estimates of surface area. Never alter medication doses, chemotherapy schedules, or clinical protocols without direct oversight from your medical team.'
+        medicalNoticeText: 'This tool provides learning estimates only. Never adjust medication doses or medical treatments without direct guidance from your doctor.'
       },
       es: {
         domain: 'bsa',
@@ -546,14 +546,14 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     macro: {
       en: {
         domain: 'macro',
-        sectionTitle: 'Macronutrient Split & Nutritional Partitioning Guide',
-        sectionSubtitle: 'How macronutrient ratios influence body composition, satiety, metabolic rate, and athletic performance.',
-        interpretationTitle: 'Thermic Effect of Food, Satiety & Fuel Partitioning',
-        interpretationText: 'Total calories control your weight. Macronutrients control whether you lose fat or keep muscle. Protein helps you stay full and protects lean muscle. Your body burns calories just digesting protein. Carbs supply quick energy for workouts and daily tasks. Fats support healthy hormone levels and help you absorb key vitamins.',
-        limitationsTitle: 'Dietary Adherence, Food Quality & Individual Metabolism',
-        limitationsText: 'Macro targets are helpful starting guides, not strict laws. Food quality matters just as much as numbers. Eat plenty of fiber, vegetables, and whole foods. Carb needs also depend on how much you exercise each day. Track your weight and energy for three weeks before making adjustments.',
+        sectionTitle: 'Daily Macro Split & Nutrition Guide',
+        sectionSubtitle: 'How protein, carb, and fat balances affect your body shape, fullness, and daily energy.',
+        interpretationTitle: 'Fullness, Energy & How Your Body Uses Food',
+        interpretationText: 'Total calories set your weight changes. Macros decide whether you lose fat or keep muscle. Protein keeps you full and protects lean muscle. Your body also burns calories just digesting protein. Carbs provide quick fuel for workouts and daily tasks. Healthy fats support hormones and help you absorb key vitamins.',
+        limitationsTitle: 'Food Quality & Daily Habits',
+        limitationsText: 'Macro goals are helpful guides, not strict rules. Food quality matters just as much as daily numbers. Eat plenty of fiber, vegetables, and whole foods. Carb needs depend on how much you move each day. Track your weight and energy for three weeks before making changes.',
         medicalNoticeTitle: 'Clinical & Nutritional Supervision Notice',
-        medicalNoticeText: 'Macronutrient guidelines provide educational targets for healthy adults. Individuals with chronic kidney disease (CKD), liver cirrhosis, metabolic disorders, or diabetes should consult a registered dietitian or physician before undertaking high-protein or restrictive ketogenic diets.'
+        medicalNoticeText: 'These macro numbers are for healthy adults. People with kidney issues, liver conditions, or diabetes should talk to a doctor or dietitian before trying high-protein or keto diets.'
       },
       es: {
         domain: 'macro',
@@ -683,14 +683,14 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
     bmiChart: {
       en: {
         domain: 'bmiChart',
-        sectionTitle: 'How to Read & Interpret BMI Reference Charts',
-        sectionSubtitle: 'Understanding height-weight matrix lookup, color bands, and clinical population screening.',
-        interpretationTitle: 'Interpreting Matrix Cells & Weight Classifications',
-        interpretationText: 'A standard adult BMI chart maps height across the vertical axis and weight across the horizontal axis to cross-reference weight status instantly without arithmetic computation. Green bands highlight WHO normal weight (18.5 – 24.9 kg/m²), while yellow and red zones signal overweight (25.0 – 29.9 kg/m²) and obesity (≥ 30.0 kg/m²). Charts serve as rapid visual screening matrices for clinical offices and community health screenings.',
-        limitationsTitle: 'Chart Resolution & Demographic Considerations',
-        limitationsText: 'Reference charts use discrete 2-to-5 cm height rows and 2-to-5 kg weight intervals, creating minor rounding steps compared to exact digital division. Furthermore, standard adult charts apply to individuals aged 20 and older; pediatric children require CDC percentile growth curves, and elderly adults (65+) often benefit from slightly higher target bands.',
+        sectionTitle: 'How to Read & Use BMI Reference Charts',
+        sectionSubtitle: 'How to read height and weight tables, color zones, and healthy ranges.',
+        interpretationTitle: 'Reading the Table & Health Categories',
+        interpretationText: 'An adult BMI chart pairs your height with your weight. You can check your BMI range instantly without doing any math. Green rows show the WHO healthy weight zone (18.5 to 24.9 kg/m²). Yellow rows mark overweight (25.0 to 29.9 kg/m²). Red rows mark obesity (30.0 kg/m² or higher). These charts give doctors and nurses a fast visual screening tool.',
+        limitationsTitle: 'Table Steps & Age Groups',
+        limitationsText: 'Reference charts use steps of 2 to 5 cm in height and 2 to 5 kg in weight. This creates slight rounding compared to exact digital division. Standard adult charts are for people age 20 and older. Children need CDC growth percentiles. Older adults (65+) often do best with slightly higher target ranges.',
         medicalNoticeTitle: 'Visual Screening Reference Notice',
-        medicalNoticeText: 'BMI reference charts provide educational visual screening. Always consult a healthcare provider for comprehensive cardiometabolic evaluations.'
+        medicalNoticeText: 'BMI reference charts provide educational visual screening. Always talk with your doctor for complete health checks.'
       },
       es: {
         domain: 'bmiChart',
@@ -1296,14 +1296,14 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
 metabolic: {
       en: {
         domain: 'metabolic',
-        sectionTitle: 'Energy Expenditure & Calorie Guide',
-        sectionSubtitle: 'How your body burns calories at rest and during physical activity.',
-        interpretationTitle: 'Mifflin-St Jeor Formula & Activity Multipliers',
-        interpretationText: 'Your Basal Metabolic Rate (BMR) is the energy your body burns at complete rest. It powers vital organ functions like breathing, blood flow, and cell repair. Your Total Daily Energy Expenditure (TDEE) adds the calories you burn through movement and exercise. Eating at your maintenance level keeps your weight stable. Eating fewer calories creates a deficit for weight loss. Eating more calories supports muscle growth and weight gain.',
-        limitationsTitle: 'Individual Differences in Calorie Formulas',
-        limitationsText: 'Calorie formulas provide an estimate, typically within 10% to 15% of your true burn. Real metabolic rates vary from person to person. Genetics, muscle mass, age, and hormone levels all affect your daily calorie burn. Track your scale weight for three to four weeks. Then adjust your daily calorie intake based on your real-world progress.',
+        sectionTitle: 'Daily Calories & Energy Burn Guide',
+        sectionSubtitle: 'How your body burns calories at rest and during daily exercise.',
+        interpretationTitle: 'BMR, Daily Activity & Energy Balance',
+        interpretationText: 'Your Basal Metabolic Rate (BMR) is the energy burned at complete rest. It powers basic bodily functions like breathing, heartbeat, and cell repair. Your Total Daily Energy Expenditure (TDEE) adds what you burn walking and exercising. Eating your maintenance calories keeps your weight steady. Eating less creates a calorie deficit to lose fat. Eating more helps you gain muscle and weight.',
+        limitationsTitle: 'Formula Accuracy & Individual Variance',
+        limitationsText: 'Calorie formulas give a close estimate, usually within 10% to 15% of your true burn. True rates vary by person. Muscle mass, age, genetics, and thyroid health all play a role. Track your body weight for three to four weeks. Then adjust your daily calories based on real-world results.',
         medicalNoticeTitle: 'Nutritional Guidance Notice',
-        medicalNoticeText: 'Calorie targets are educational estimates. Speak with a doctor or dietitian before starting a strict diet, especially if you have a medical condition.'
+        medicalNoticeText: 'Calorie targets are educational guides. Speak with a doctor or dietitian before starting a strict diet, especially if you have a health condition.'
       },
       es: {
         domain: 'metabolic',
@@ -1364,14 +1364,14 @@ metabolic: {
     bodycomp: {
       en: {
         domain: 'bodycomp',
-        sectionTitle: 'Body Fat Measurement Methods & Anatomical Guide',
-        sectionSubtitle: 'US Navy circumference method, DEXA scans, hydrostatic weighing, and measurement technique.',
-        interpretationTitle: 'US Navy Circumference Method vs. Laboratory Standards (DEXA & Hydrostatic)',
-        interpretationText: 'The US Navy method estimates body fat using simple tape measurements and your height. It compares your waist and neck size to estimate your body density. In clinical tests against DEXA scans, this method proved to be quite accurate for most active adults. It gives a much clearer view of your fitness than scale weight alone.',
-        limitationsTitle: 'Standardized Tape Placement & Bioelectrical Impedance (BIA) Differences',
-        limitationsText: 'Good results depend on measuring the same spots each time. Measure your neck just below your throat. For men, measure the waist level with the belly button. For women, measure the waist at the narrowest point and hips at the widest point. Keep the tape snug but not tight against the skin.',
-        medicalNoticeTitle: 'Cardiometabolic Risk & Body Composition Notice',
-        medicalNoticeText: 'Body fat shows your health better than weight alone. It separates healthy muscle from stored fat. Talk to your doctor or trainer for clinical body scans if needed.'
+        sectionTitle: 'Body Fat & Muscle Composition Guide',
+        sectionSubtitle: 'How tape measurements, DEXA scans, and body fat numbers compare.',
+        interpretationTitle: 'US Navy Tape Method vs. Clinical Scans',
+        interpretationText: 'The US Navy method estimates body fat using a soft tape measure and your height. It compares your waist and neck size to find your body density. In tests with DEXA scans, this method proved reliable for most adults. It gives a clearer picture of your fitness than scale weight alone.',
+        limitationsTitle: 'How to Measure Accurately',
+        limitationsText: 'Good results come from measuring the exact same spots each time. Measure your neck just below your throat. Men should measure the waist level with the belly button. Women should measure the waist at the narrowest point and hips at the widest point. Keep the tape flat and snug, not tight.',
+        medicalNoticeTitle: 'Health & Body Composition Notice',
+        medicalNoticeText: 'Body fat shows your fitness better than scale weight alone. It separates lean muscle from stored fat. Talk to your doctor if you need full clinical body scans.'
       },
       es: {
         domain: 'bodycomp',
@@ -1500,14 +1500,14 @@ metabolic: {
     cardio: {
       en: {
         domain: 'cardio',
-        sectionTitle: 'Cardiovascular Training Bands & Intensity Guide',
-        sectionSubtitle: 'How to utilize target exertion levels for safe and effective aerobic conditioning.',
+        sectionTitle: 'Heart Rate Training Zones & Intensity Guide',
+        sectionSubtitle: 'How to use target pulse levels for safe, effective workouts.',
         interpretationTitle: 'Training Intensity & The Karvonen Method',
-        interpretationText: 'Pacing zones help you exercise at the right intensity for your fitness goals. Lower zones improve aerobic endurance, fat oxidation, and vascular conditioning. Higher zones build anaerobic power and speed. The Karvonen formula factors in your resting pulse, yielding a more personalized workout window than basic age formulas.',
-        limitationsTitle: 'Physiological Factors Affecting Pulse',
-        limitationsText: 'Age-predicted maximums provide a baseline, but individual peak readings vary by 10 to 12 beats per minute. Medications (such as beta-blockers), caffeine, hydration, heat, and stress all change exertion pulse. Always listen to your body and moderate pace if you experience lightheadedness or excessive breathlessness.',
+        interpretationText: 'Heart zones help you train at the right pace. Lower zones build your aerobic base and burn fat. Higher zones build speed and muscle power. The Karvonen formula uses your resting pulse. This gives you a more accurate workout target than simple age formulas.',
+        limitationsTitle: 'Factors That Change Your Pulse',
+        limitationsText: 'Age formulas give a good start. But your true peak pulse can vary by 10 to 12 beats per minute. Blood pressure medicine, caffeine, water intake, heat, and stress all change your pulse. Slow down if you feel dizzy or short of breath.',
         medicalNoticeTitle: 'Cardiovascular Safety Notice',
-        medicalNoticeText: 'Speak with your doctor before starting vigorous cardio workouts, especially if you have high blood pressure, heart disease, or chest discomfort.'
+        medicalNoticeText: 'Talk to your doctor before starting hard workouts. This is vital if you have high blood pressure or heart conditions.'
       },
       es: {
         domain: 'cardio',
@@ -1639,9 +1639,9 @@ metabolic: {
         sectionTitle: 'Type 2 Diabetes Screening Guide',
         sectionSubtitle: 'Understanding lifestyle risk factors, statistical scores, and medical testing limits.',
         interpretationTitle: 'What This Risk Score Estimates',
-        interpretationText: 'This tool checks key lifestyle habits linked to Type 2 Diabetes risk. It looks at your age, weight, waist size, and daily exercise. A higher score signals higher odds of insulin resistance or high blood sugar over time.',
+        interpretationText: 'This tool checks daily habits linked to diabetes risk. It looks at your age, weight, waist size, and daily exercise. Higher scores suggest higher odds of high blood sugar over time.',
         limitationsTitle: 'Important Screening Limits',
-        limitationsText: 'This online score is a lifestyle screening guide, not a medical test. It cannot measure your blood sugar directly. Many people with prediabetes have no symptoms at all. You can have elevated blood sugar even with a lower risk score.',
+        limitationsText: 'This online score is a lifestyle screening guide, not a medical test. It cannot check your blood sugar directly. Many people with prediabetes have no symptoms at all. You can have high blood sugar even with a lower risk score.',
         medicalNoticeTitle: 'Clinical Diagnosis Notice',
         medicalNoticeText: 'Only a doctor can diagnose prediabetes or Type 2 Diabetes using laboratory blood tests, such as fasting blood sugar or an HbA1c test. If your score is moderate or high, schedule a routine checkup with your healthcare provider.'
       },
@@ -1704,14 +1704,14 @@ metabolic: {
     pregnancy: {
       en: {
         domain: 'pregnancy',
-        sectionTitle: 'Pregnancy Trimester Trajectory & Clinical Guidelines',
-        sectionSubtitle: 'Evidence-based weight milestones, essential prenatal micronutrients, and clinical safety triggers.',
-        interpretationTitle: 'Gestational Weight Gain Milestones & Energy Demands',
-        interpretationText: 'Weight gain during pregnancy happens in stages across all 40 weeks. In the first trimester (weeks 1 to 12), weight gain is light (about 0.5 to 2 kg). Calorie needs do not change yet. In the second trimester (weeks 13 to 27), you need about 340 extra calories per day to support steady baby growth. In the third trimester (weeks 28 to 40), you need about 450 extra calories per day as the baby grows quickly. Key nutrients include folic acid, iron, calcium, and drinking plenty of water each day.',
-        limitationsTitle: 'Clinical Warning Triggers, Preeclampsia & Red Flags',
-        limitationsText: 'Gestational weight targets are guidelines for singleton pregnancies, not rigid prescriptions. Watch for key clinical warning signs: First, rapid weight gain over 1 kg (2.2 lbs) in one week can signal preeclampsia, especially with hand or facial swelling. Second, ongoing weight loss from severe nausea needs prompt medical care. Third, doctors screen for gestational diabetes between weeks 24 and 28. Always consult your OB-GYN or midwife for individualized care.',
+        sectionTitle: 'Pregnancy Weight Milestones & Guidelines',
+        sectionSubtitle: 'Healthy weight goals across each trimester and key safety checks.',
+        interpretationTitle: 'Trimester Weight Gain & Extra Calories',
+        interpretationText: 'Pregnancy weight gain happens in three stages. In the first trimester (weeks 1 to 12), weight gain is light (about 0.5 to 2 kg). Calorie needs do not change yet. In the second trimester (weeks 13 to 27), you need about 340 extra calories per day to support baby growth. In the third trimester (weeks 28 to 40), you need about 450 extra calories per day. Key needs include folic acid, iron, and water.',
+        limitationsTitle: 'Warning Signs & Preeclampsia Checks',
+        limitationsText: 'Gestational weight targets are guidelines for singleton pregnancies, not rigid prescriptions. Watch for key clinical warning signs: First, rapid weight gain over 1 kg (2.2 lbs) in one week can signal preeclampsia, especially with hand or facial swelling. Second, ongoing nausea needs prompt medical care. Third, doctors screen for gestational diabetes near week 26. Always consult your OB-GYN or midwife for individualized care.',
         medicalNoticeTitle: 'Obstetric & Prenatal Health Notice',
-        medicalNoticeText: 'This calculator is an educational tracking reference based on published IOM/ACOG population standards. It does not replace individualized prenatal medical care, ultrasound biometry, or laboratory diagnostics. Twin and multiple gestations require separate specialized nutritional targets.'
+        medicalNoticeText: 'This tool is an educational guide based on IOM/ACOG standards. It does not replace prenatal medical care, ultrasounds, or lab tests. Twin and multiple pregnancies require separate medical targets.'
       },
       es: {
         domain: 'pregnancy',
@@ -1772,14 +1772,14 @@ metabolic: {
     specialty: {
       en: {
         domain: 'specialty',
-        sectionTitle: 'Dietary Protein Physiology & Muscle Protein Synthesis Guide',
-        sectionSubtitle: 'How protein targets, the leucine threshold, per-meal distribution, and caloric state drive muscle repair and metabolic health.',
-        interpretationTitle: 'Muscle Protein Synthesis (MPS), Leucine Threshold & Nitrogen Balance',
-        interpretationText: 'The baseline recommendation of 0.8 g/kg per day is a minimum floor to prevent deficiency. Active adults and lifters benefit from 1.4 to 2.2 g/kg per day to repair and build muscle. Aiming for 25 to 40 grams of quality protein per meal (from eggs, poultry, fish, tofu, or dairy) spaced across the day helps your body build and protect lean muscle.',
-        limitationsTitle: 'Renal Safety, Protein Quality (DIAAS) & Hypocaloric Muscle Sparing',
-        limitationsText: 'Clinical studies show that high protein diets are safe for kidneys in healthy adults. When eating in a calorie deficit to lose fat, higher protein (1.8 to 2.4 g/kg) helps protect your muscle. Plant-based eaters can combine beans, grains, and soy foods to get all essential amino acids throughout the day.',
-        medicalNoticeTitle: 'Clinical Renal & Hepatic Medical Notice',
-        medicalNoticeText: 'High-protein targets apply exclusively to individuals with healthy kidney and liver function. Patients diagnosed with Chronic Kidney Disease (CKD Stages 3–5), diabetic nephropathy, hepatic encephalopathy, or those on medically prescribed low-protein regimens must adhere strictly to clinical guidelines under the direct supervision of a nephrologist or registered clinical dietitian.'
+        sectionTitle: 'Daily Protein Needs & Muscle Health Guide',
+        sectionSubtitle: 'How daily protein targets help repair muscle, manage appetite, and protect strength.',
+        interpretationTitle: 'Protein Goals & Daily Muscle Repair',
+        interpretationText: 'The standard minimum of 0.8 g/kg per day prevents nutrient deficiency. Active adults and gym lifters do best with 1.4 to 2.2 g/kg per day to build and repair muscle. Aim for 25 to 40 grams of protein per meal from eggs, chicken, fish, tofu, or yogurt. Spacing protein across the day helps your body protect lean muscle.',
+        limitationsTitle: 'Kidney Safety & Plant Protein Sources',
+        limitationsText: 'Medical studies confirm that higher protein intake is safe for healthy adults. When cutting calories to lose fat, eating extra protein helps save muscle. Plant eaters can mix beans, lentils, whole grains, and soy to get all key amino acids.',
+        medicalNoticeTitle: 'Clinical Kidney & Liver Notice',
+        medicalNoticeText: 'High-protein goals are only for people with healthy kidneys and liver. Anyone with kidney disease or liver conditions must follow a doctor’s advice.'
       },
       es: {
         domain: 'specialty',

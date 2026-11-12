@@ -32,19 +32,19 @@ interface CookieTranslations {
 const translations: Record<string, CookieTranslations> = {
   en: {
     bannerTitle: "Cookie & Privacy Choices",
-    bannerDesc: "We use essential local storage for theme and measurement units (metric/imperial). With your permission, we also use privacy-friendly cookies for anonymous analytics and ads to keep our health calculators 100% free.",
+    bannerDesc: "We use basic local storage to remember your theme and units. With your consent, we use privacy-friendly cookies for anonymous stats. This keeps all health tools free.",
     acceptAll: "Accept All",
     rejectNonEssential: "Reject Non-Essential",
     customize: "Customize Preferences",
     modalTitle: "Customize Cookie Preferences",
-    modalDesc: "Manage which cookies and local storage technologies you permit on Real BMI. Essential functional preferences cannot be disabled.",
+    modalDesc: "Manage which cookies you permit on Real BMI. Essential functional settings cannot be turned off.",
     essentialTitle: "Essential Functionality",
     essentialStatus: "Always Active",
-    essentialDesc: "Required to store your dark/light theme and metric/imperial calculator units locally in your browser. Contains zero personal tracking data.",
+    essentialDesc: "Required to store your theme and calculator units locally in your browser. We never store personal health data.",
     analyticsTitle: "Anonymous Analytics",
-    analyticsDesc: "Allows Google Analytics 4 to collect aggregated, anonymous traffic metrics so we can optimize calculator performance and usability.",
+    analyticsDesc: "Allows Google Analytics to collect anonymous metrics. This helps us optimize speed and usability.",
     marketingTitle: "Digital Advertising",
-    marketingDesc: "Allows Google AdSense to serve non-intrusive advertisements that fund the free development and maintenance of our health tools.",
+    marketingDesc: "Allows Google AdSense to show helpful ads. This funds free development of our health tools.",
     rejectOptional: "Reject Optional",
     savePreferences: "Save Preferences",
     policyLinkText: "Read our Cookie Policy",
@@ -190,7 +190,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
           type="button"
           class="min-h-[44px] px-4 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--border)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         >
-          {t.rejectNonEssential}
+          {t.rejectNonEssential}<span class="sr-only">. </span>
         </button>
 
         <button 
@@ -198,7 +198,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
           type="button"
           class="min-h-[44px] px-4 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-transparent hover:bg-[var(--muted)] text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         >
-          {t.customize}
+          {t.customize}<span class="sr-only">. </span>
         </button>
 
         <button 
@@ -206,7 +206,7 @@ const cookiePolicyUrl = `/${lang}/cookie-policy/`;
           type="button"
           class="min-h-[44px] px-5 py-2 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-gradient-to-r from-[var(--accent)] to-[#d44f30] text-white shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         >
-          {t.acceptAll}
+          {t.acceptAll}<span class="sr-only">. </span>
         </button>
 
         <!-- Quick 1-tap dismiss button to avoid intrusive blocking on mobile -->

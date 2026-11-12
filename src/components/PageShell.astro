@@ -24,11 +24,11 @@ const {
       <header class="space-y-6 mb-10 border-b border-[var(--border)]/60 pb-8">
         <a href={returnUrl} class="inline-flex items-center gap-2 min-h-[48px] px-3 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)] hover:text-[var(--foreground)] transition-colors rounded-lg">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-          {returnLabel}
+          {returnLabel}<span class="sr-only">. </span>
         </a>
-        {eyebrow && <p class="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">{eyebrow}</p>}
+        {eyebrow && <p class="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">{eyebrow}<span class="sr-only">. </span></p>}
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tight leading-tight text-[var(--foreground)]">
-          {title}
+          {title}<span class="sr-only">. </span>
         </h1>
         {description && <p class="max-w-3xl text-base md:text-lg leading-relaxed text-[var(--muted-foreground)]">{description}</p>}
       </header>

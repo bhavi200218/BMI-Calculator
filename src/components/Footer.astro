@@ -247,19 +247,19 @@ const ft = footerTranslations[lang] || footerTranslations.en;
       <!-- Col 1: Popular Calculators -->
       <div class="space-y-2">
         <p class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-xs">
-          {ft.colPopular}
+          {ft.colPopular}<span class="sr-only">. </span>
         </p>
         <ul class="space-y-1.5">
           {ft.popularCalculators.map((item) => (
             <li>
               <a href={item.href} class="text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors hover:underline underline-offset-2">
-                {item.name}
+                {item.name}<span class="sr-only">. </span>
               </a>
             </li>
           ))}
           <li class="pt-1">
             <a href={`/${lang}/methodology/`} class="font-semibold text-[var(--accent)] hover:underline underline-offset-2 inline-flex items-center gap-1">
-              <span>{ft.viewAllTools}</span>
+              <span>{ft.viewAllTools}<span class="sr-only">. </span></span>
             </a>
           </li>
         </ul>
@@ -268,13 +268,13 @@ const ft = footerTranslations[lang] || footerTranslations.en;
       <!-- Col 2: Company -->
       <div class="space-y-2">
         <p class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-xs">
-          {ft.colCompany}
+          {ft.colCompany}<span class="sr-only">. </span>
         </p>
         <ul class="space-y-1.5">
           {ft.companyLinks.map((item) => (
             <li>
               <a href={item.href} class="text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors hover:underline underline-offset-2">
-                {item.name}
+                {item.name}<span class="sr-only">. </span>
               </a>
             </li>
           ))}
@@ -284,13 +284,13 @@ const ft = footerTranslations[lang] || footerTranslations.en;
       <!-- Col 3: Legal & Policies -->
       <div class="space-y-2">
         <p class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-xs">
-          {ft.colLegal}
+          {ft.colLegal}<span class="sr-only">. </span>
         </p>
         <ul class="space-y-1.5">
           {ft.legalLinks.map((item) => (
             <li>
               <a href={item.href} class="text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors hover:underline underline-offset-2">
-                {item.name}
+                {item.name}<span class="sr-only">. </span>
               </a>
             </li>
           ))}
@@ -300,7 +300,7 @@ const ft = footerTranslations[lang] || footerTranslations.en;
               type="button"
               class="text-[11px] font-medium text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors underline decoration-dotted underline-offset-2 cursor-pointer py-0.5"
             >
-              {cookiePrefsLabel}
+              {cookiePrefsLabel}<span class="sr-only">. </span>
             </button>
           </li>
         </ul>
@@ -311,14 +311,14 @@ const ft = footerTranslations[lang] || footerTranslations.en;
     <!-- Bottom Bar (Compact Copyright & Attribution) -->
     <div class="pt-3 border-t border-[var(--border)]/50 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[var(--muted-foreground)]">
       <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-center sm:text-left">
-        <span class="font-display font-semibold text-[var(--foreground)]">{ft.copyright}</span>
+        <span class="font-display font-semibold text-[var(--foreground)]">{ft.copyright}<span class="sr-only">. </span></span>
         <span class="hidden sm:inline">•</span>
-        <span class="text-[11px] text-[var(--muted-foreground)]/80">{ft.teamAttribution}</span>
+        <span class="text-[11px] text-[var(--muted-foreground)]/80">{ft.teamAttribution}<span class="sr-only">. </span></span>
       </div>
 
       <div class="flex items-center gap-2">
         <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
-        <span class="text-[11px] opacity-75">{ft.privacyBadge}</span>
+        <span class="text-[11px] opacity-75">{ft.privacyBadge}<span class="sr-only">. </span></span>
       </div>
     </div>
 

@@ -44,11 +44,11 @@ const faqUrl = lang === 'en' ? '/#faq' : `/${lang}/#faq`;
 
     <!-- Desktop Links -->
     <div class="hidden lg:flex items-center gap-3 lg:gap-5">
-      <a href={homeUrl} class="nav-link">{t.home}</a>
-      <a href={calcUrl} class="nav-link">{t.calculators}</a>
-      <a href="/en/blog/" class="nav-link">{t.blog}</a>
-      <a href={insightsUrl} class="nav-link">{t.insights}</a>
-      <a href={faqUrl} class="nav-link">{t.faq}</a>
+      <a href={homeUrl} class="nav-link">{t.home}<span class="sr-only">. </span></a>
+      <a href={calcUrl} class="nav-link">{t.calculators}<span class="sr-only">. </span></a>
+      <a href="/en/blog/" class="nav-link">{t.blog}<span class="sr-only">. </span></a>
+      <a href={insightsUrl} class="nav-link">{t.insights}<span class="sr-only">. </span></a>
+      <a href={faqUrl} class="nav-link">{t.faq}<span class="sr-only">. </span></a>
     </div>
 
     <!-- Right Controls -->
@@ -143,19 +143,19 @@ const faqUrl = lang === 'en' ? '/#faq' : `/${lang}/#faq`;
       </button>
       
       <a href={homeUrl} class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
-        {t.home}
+        {t.home}<span class="sr-only">. </span>
       </a>
       <a href={calcUrl} class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
-        {t.calculators}
+        {t.calculators}<span class="sr-only">. </span>
       </a>
       <a href="/en/blog/" class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
-        {t.blog}
+        {t.blog}<span class="sr-only">. </span>
       </a>
       <a href={insightsUrl} class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
-        {t.insights}
+        {t.insights}<span class="sr-only">. </span>
       </a>
       <a href={faqUrl} class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
-        {t.faq}
+        {t.faq}<span class="sr-only">. </span>
       </a>
     </div>
   </nav>
