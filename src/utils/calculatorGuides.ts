@@ -1160,12 +1160,12 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
       en: {
         domain: 'tdee',
         sectionTitle: 'Total Daily Energy Expenditure (TDEE) & Metabolism Guide',
-        sectionSubtitle: 'Where your daily calories actually go: The 4 physiological components of human metabolism.',
-        interpretationTitle: 'The 4 Pillars of Daily Burn: BMR, NEAT, TEF, and Exercise',
+        sectionSubtitle: 'Where your daily calories go: the 4 main parts of daily metabolism.',
+        interpretationTitle: 'The 4 Ways Your Body Burns Daily Calories',
         interpretationText: 'Your Total Daily Energy Expenditure (TDEE) is the total calories you burn each day. It comes from four main areas. First is your resting burn, which powers your organs. Second is digesting food. Third is daily movement like walking and chores. Fourth is planned exercise. Daily steps and movement make a huge difference in your total burn. Knowing your TDEE helps you pick the right calorie target for your goals.',
-        limitationsTitle: 'Metabolic Changes & Daily Movement Levels',
+        limitationsTitle: 'Activity Levels & Daily Movement Changes',
         limitationsText: 'When you eat fewer calories for several weeks, your body burns slightly less energy to save fuel. You might also sit more and fidget less without noticing. Activity levels on calculators are estimates. Treat your score as a helpful starting point. Watch your scale weight over three to four weeks to see your true daily burn.',
-        medicalNoticeTitle: 'Clinical Energy Balance Notice',
+        medicalNoticeTitle: 'Daily Energy Balance Notice',
         medicalNoticeText: 'TDEE scores are estimates for meal planning. Talk to a dietitian or doctor before making big changes to your diet.'
       },
       es: {
@@ -1228,12 +1228,12 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
       en: {
         domain: 'bmr',
         sectionTitle: 'Basal Metabolism & Organ Demands Guide',
-        sectionSubtitle: 'Understanding the physiological metabolic floor, vital organ caloric consumption, and endocrine regulation.',
-        interpretationTitle: 'Organ Energy Partitioning & The Non-Negotiable Metabolic Floor',
+        sectionSubtitle: 'Understanding resting burn, organ energy use, and metabolism.',
+        interpretationTitle: 'How Organs Burn Calories at Rest',
         interpretationText: 'Your Basal Metabolic Rate (BMR) is the energy your body burns while resting in bed. Even when asleep, your organs work non-stop to keep you alive. Key organs use most of your resting energy. Your liver burns about 21%. Your brain uses about 20%. Muscles use about 21%. Heart and kidneys need about 16%. Other tissues use about 22%. Eating too few calories for long periods can cause your body to slow down its resting burn.',
-        limitationsTitle: 'Predictive Equation Variances: Mifflin vs Katch-McArdle',
+        limitationsTitle: 'Formula Accuracy for Muscle vs Fat',
         limitationsText: 'Formulas like Mifflin-St Jeor use your total weight, height, age, and sex. They are accurate within 10% for most adults. However, body fat burns very few calories (~4.5 kcal/kg/day) compared to lean muscle (~13 kcal/kg/day). Because of this, muscular lifters get more accurate results from the Katch-McArdle formula, which uses measured lean muscle mass.',
-        medicalNoticeTitle: 'Metabolic Health & Endocrine Screening Notice',
+        medicalNoticeTitle: 'Health & Thyroid Screening Notice',
         medicalNoticeText: 'BMR scores reflect healthy resting averages. Health conditions like thyroid issues or low food intake can change your daily burn rate. If you have sudden weight changes or feel very tired, talk with your doctor. They can check your thyroid and metabolic health.'
       },
       es: {

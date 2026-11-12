@@ -448,7 +448,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Oxford 2.5-Power BMI Formula & Mathematical Analysis",
       "title": "3D BMI Calculator – Oxford Height-Adjusted 2.5 Formula",
-      "intro": "Our free 3D BMI Calculator and 3D Body Visualizer applies the Oxford 2.5-power height-adjusted formula (1.3 × weight / height²·⁵) proposed by Oxford mathematician Prof. Nick Trefethen. Compare standard 2D Quetelet scaling against volumetric 3D exponent curves to understand how height affects BMI accuracy for tall and short statures while interacting with a 360° virtual mannequin in mesh, wireframe, and heatmap modes.",
+      "intro": "Our free 3D BMI Calculator uses the Oxford 2.5 formula created by Prof. Nick Trefethen. This model adjusts for height differences in tall and short adults. Compare 2D scaling with 3D curves to see how height affects body size. You can also view a 3D avatar in your browser. Rotate the model 360 degrees in mesh, wireframe, or heatmap mode.",
       "formulaTitle": "Oxford 2.5-Power Height-Adjusted 3D BMI Formula",
       "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵ | Proposed by Oxford mathematician Prof. Nick Trefethen as an educational mathematical alternative to standard 2D BMI height scaling.",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
@@ -2040,7 +2040,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "What does the 0–13 raw educational score represent?",
-          "answer": "The score (0 to 13 points) provides an unvalidated demonstration of how four common lifestyle and biometric factors combine numerically. It is an educational tool and does not predict individual diabetes probability, assign validated clinical risk categories, or replace clinical laboratory blood testing (such as HbA1c or fasting plasma glucose)."
+          "answer": "The score (0 to 13 points) shows how four lifestyle factors combine. It is an educational tool, not a medical test. It does not predict diabetes or assign clinical categories. It does not replace blood tests like fasting glucose or an HbA1c test."
         },
         {
           "question": "Can this calculator diagnose type 2 diabetes?",
@@ -3956,7 +3956,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Boer Predictive Equation",
       "title": "Lean Body Mass Calculator & LBM Reference Tool",
-      "intro": "Using the Boer formula, estimate lean body mass from height, weight and gender. LBM is a mathematical estimate and is not the same as skeletal muscle mass or organ weight.",
+      "intro": "Estimate your lean body mass with our free calculator. It uses the Boer formula based on your height, weight, and sex. Lean body mass is a helpful estimate of your non-fat weight.",
       "formulaTitle": "Boer Formula for Lean Body Mass",
       "formulaDesc": "Men: LBM = (0.407 × Weight kg) + (0.267 × Height cm) - 19.2 | Women: LBM = (0.252 × Weight kg) + (0.473 × Height cm) - 48.3",
       "formulaCode": "Men = 0.407W + 0.267H - 19.2 | Women = 0.252W + 0.473H - 48.3",
