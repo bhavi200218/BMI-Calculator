@@ -545,7 +545,7 @@ const howToSchema = {
 		)}
 
 		<!-- Preload hero background for desktop screens -->
-		<link rel="preload" as="image" href="/images/bg/2.webp" type="image/webp" media="(min-width: 768px)" />
+		<link rel="preload" as="image" href="/images/bg/2.webp" type="image/webp" media="(min-width: 48rem)" />
 
 		<!-- Theme Initialization (Runs synchronously before DOM render to prevent flash) -->
 		<script is:inline>
@@ -638,7 +638,7 @@ const howToSchema = {
 					let currentSlide = 0;
 
 					function startSlideshow() {
-						if (window.innerWidth < 768) return;
+						if (window.matchMedia('(max-width: 48rem)').matches) return;
 						if (slideshowTimer) clearInterval(slideshowTimer);
 						const slides = document.querySelectorAll('#bg-slideshow .bg-slide');
 						if (!slides || slides.length <= 1) return;
