@@ -1177,7 +1177,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
   {currentData.tableRows && (
     <div class="space-y-4">
       <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {currentData.tableTitle}
+        {currentData.tableTitle}<span class="sr-only">. </span>
       </h3>
 
       <!-- Responsive Semantic Reference Table (Single Accessible Source of Truth) -->
@@ -1185,17 +1185,17 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
         <table class="w-full text-left border-collapse text-sm min-w-[30rem]">
           <thead>
             <tr class="bg-[var(--muted)]/50 border-b border-[var(--border)] text-[var(--foreground)] font-display uppercase tracking-wider text-xs font-bold">
-              <th class="p-4">{ui.cat}</th>
-              <th class="p-4">{ui.metric}</th>
-              <th class="p-4">{ui.guidance}</th>
+              <th class="p-4">{ui.cat}<span class="sr-only">. </span></th>
+              <th class="p-4">{ui.metric}<span class="sr-only">. </span></th>
+              <th class="p-4">{ui.guidance}<span class="sr-only">. </span></th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)] font-medium">
             {(currentData.tableRows || []).map((row: { col1: string; col2: string; col3: string }) => (
               <tr class="hover:bg-[var(--muted)]/30 transition-colors">
-                <td class="p-4 font-bold text-[var(--foreground)] whitespace-nowrap">{row.col1}</td>
-                <td class="p-4 font-mono whitespace-nowrap text-[var(--accent)] font-semibold">{row.col2}</td>
-                <td class="p-4 text-xs sm:text-sm">{row.col3}</td>
+                <td class="p-4 font-bold text-[var(--foreground)] whitespace-nowrap">{row.col1}<span class="sr-only">. </span></td>
+                <td class="p-4 font-mono whitespace-nowrap text-[var(--accent)] font-semibold">{row.col2}<span class="sr-only">. </span></td>
+                <td class="p-4 text-xs sm:text-sm">{row.col3}<span class="sr-only">. </span></td>
               </tr>
             ))}
           </tbody>
@@ -1209,14 +1209,14 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
     <div class="flex items-center justify-between gap-4 flex-wrap">
       <div class="space-y-1">
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
-          {infographic.badge}
+          {infographic.badge}<span class="sr-only">. </span>
         </span>
         <p class="text-base sm:text-lg font-display font-bold text-[var(--foreground)] uppercase">
-          {currentData.title} — {infographic.titleSuffix}
+          {currentData.title} — {infographic.titleSuffix}<span class="sr-only">. </span>
         </p>
       </div>
       <span class="text-xs text-[var(--muted-foreground)] font-mono">
-        {infographic.source}
+        {infographic.source}<span class="sr-only">. </span>
       </span>
     </div>
 
@@ -1278,10 +1278,10 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
     <div class="space-y-1">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
         <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-        {workedExample.eyebrow}
+        {workedExample.eyebrow}<span class="sr-only">. </span>
       </div>
       <h3 class="text-xl md:text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
-        {workedExample.title}
+        {workedExample.title}<span class="sr-only">. </span>
       </h3>
       {workedExample.subtitle && (
         <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium pt-0.5 leading-relaxed">
@@ -1295,13 +1295,13 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
       <div class="space-y-3.5">
         <div class="p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 space-y-2">
           <p class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
-            {workedExample.inputHeading}
+            {workedExample.inputHeading}<span class="sr-only">. </span>
           </p>
           <div class="flex flex-wrap gap-2">
             {workedExample.inputs.map((inp) => (
               <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs font-medium text-[var(--foreground)]">
                 <span class="text-[var(--muted-foreground)]">{inp.label}:</span>
-                <strong class="font-mono text-[var(--accent)]">{inp.value}</strong>
+                <strong class="font-mono text-[var(--accent)]">{inp.value}</strong><span class="sr-only">. </span>
               </span>
             ))}
           </div>
@@ -1309,7 +1309,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
 
         <div class="space-y-2">
           <h4 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
-            {workedExample.stepsHeading}
+            {workedExample.stepsHeading}<span class="sr-only">. </span>
           </h4>
           <ol class="space-y-1.5 text-xs text-[var(--muted-foreground)] font-medium">
             {workedExample.steps.map((st, sIdx) => (
@@ -1317,7 +1317,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
                 <span class="flex items-center justify-center w-4 h-4 rounded-full bg-[var(--accent)]/15 text-[var(--accent)] text-[10px] font-bold font-mono shrink-0 mt-0.5">
                   {sIdx + 1}
                 </span>
-                <span class="leading-relaxed">{st}</span>
+                <span class="leading-relaxed">{st}<span class="sr-only">. </span></span>
               </li>
             ))}
           </ol>
@@ -1328,10 +1328,10 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
       <div class="space-y-3.5">
         <div class="p-4 rounded-xl bg-gradient-to-br from-[var(--accent)]/10 via-[var(--accent)]/5 to-transparent border border-[var(--accent)]/30 space-y-1.5">
           <p class="text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
-            {workedExample.resultHeading}
+            {workedExample.resultHeading}<span class="sr-only">. </span>
           </p>
           <div class="text-lg md:text-xl font-display font-bold text-[var(--foreground)]">
-            {workedExample.result.value}
+            {workedExample.result.value}<span class="sr-only">. </span>
           </div>
           {workedExample.result.label && (
             <p class="text-xs font-medium text-[var(--muted-foreground)]">
@@ -1342,7 +1342,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
 
         <div class="space-y-1.5">
           <h4 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
-            {workedExample.interpretationHeading}
+            {workedExample.interpretationHeading}<span class="sr-only">. </span>
           </h4>
           <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
             {workedExample.interpretation}
@@ -1561,10 +1561,10 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
         </div>
         <div class="space-y-0.5 text-left">
           <h3 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-open:text-[var(--accent)] transition-colors">
-            {curAccordion.formula}
+            {curAccordion.formula}<span class="sr-only">. </span>
           </h3>
           <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">
-            {curAccordion.formulaSub}
+            {curAccordion.formulaSub}<span class="sr-only">. </span>
           </p>
         </div>
       </div>
@@ -1578,11 +1578,11 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
       <div class="p-5 md:p-6 rounded-xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-sm space-y-3">
         <div class="flex items-center justify-between gap-4 flex-wrap">
           <h4 class="text-lg font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-            {currentData.formulaTitle}
+            {currentData.formulaTitle}<span class="sr-only">. </span>
           </h4>
           {currentData.formulaCode && (
             <span class="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] font-mono text-xs font-bold border border-[var(--accent)]/20">
-              {currentData.formulaCode}
+              {currentData.formulaCode}<span class="sr-only">. </span>
             </span>
           )}
         </div>
@@ -1597,7 +1597,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           <div class="space-y-1">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
               <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
-              {variablesGuide.title}
+              {variablesGuide.title}<span class="sr-only">. </span>
             </div>
             <p class="text-xs text-[var(--muted-foreground)] font-medium">
               {variablesGuide.subtitle}
@@ -1609,7 +1609,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
               <div class="p-3.5 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)]/70 flex flex-col justify-between space-y-2.5">
                 <div class="space-y-1">
                   <h5 class="text-xs font-display font-bold text-[var(--foreground)] tracking-tight">
-                    {item.name}
+                    {item.name}<span class="sr-only">. </span>
                   </h5>
                   <p class="text-[11px] text-[var(--muted-foreground)] leading-relaxed font-medium">
                     {item.description}
@@ -1641,10 +1641,10 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
         </div>
         <div class="space-y-0.5 text-left">
           <h3 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-open:text-[var(--accent)] transition-colors">
-            {curAccordion.limitations}
+            {curAccordion.limitations}<span class="sr-only">. </span>
           </h3>
           <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">
-            {curAccordion.limitationsSub}
+            {curAccordion.limitationsSub}<span class="sr-only">. </span>
           </p>
         </div>
       </div>
@@ -1658,7 +1658,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
         <div class="space-y-1">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
             <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
-            {clinicalGuide.sectionTitle}
+            {clinicalGuide.sectionTitle}<span class="sr-only">. </span>
           </div>
           <p class="text-xs text-[var(--muted-foreground)] font-medium">
             {clinicalGuide.sectionSubtitle}
@@ -1670,7 +1670,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           <div class="p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] space-y-2">
             <h4 class="text-sm font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
               <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              {clinicalGuide.interpretationTitle}
+              {clinicalGuide.interpretationTitle}<span class="sr-only">. </span>
             </h4>
             <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
               {clinicalGuide.interpretationText}
@@ -1681,7 +1681,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           <div class="p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] space-y-2">
             <h4 class="text-sm font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
               <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-              {clinicalGuide.limitationsTitle}
+              {clinicalGuide.limitationsTitle}<span class="sr-only">. </span>
             </h4>
             <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
               {clinicalGuide.limitationsText}
@@ -1704,7 +1704,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
   <div class="space-y-6 pt-4">
     <div class="space-y-1">
       <h3 class="text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {ui.faq}
+        {ui.faq}<span class="sr-only">. </span>
       </h3>
       {ui.faqSubtitle && (
         <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium pt-0.5 leading-relaxed">
@@ -1719,19 +1719,19 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
         return (
           <div class="p-5 md:p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs">
             <h4 class="text-sm md:text-base font-display font-bold text-[var(--foreground)]">
-              {faq.question}
+              {faq.question}<span class="sr-only">. </span>
             </h4>
             {parsed.detailed ? (
               <div class="space-y-2.5 pt-0.5">
                 <div class="p-3.5 rounded-xl bg-[var(--accent)]/5 border-l-[3px] border-[var(--accent)] text-xs sm:text-sm font-semibold text-[var(--foreground)]">
                   <span class="text-[var(--accent)] uppercase tracking-wider text-[10px] font-bold block mb-1 font-display">
-                    {fl.short}
+                    {fl.short}<span class="sr-only">. </span>
                   </span>
                   {parsed.short}
                 </div>
                 <div class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium space-y-1">
                   <span class="text-[var(--foreground)] uppercase tracking-wider text-[10px] font-bold block opacity-75 font-display">
-                    {fl.detailed}
+                    {fl.detailed}<span class="sr-only">. </span>
                   </span>
                   <p>{parsed.detailed}</p>
                 </div>

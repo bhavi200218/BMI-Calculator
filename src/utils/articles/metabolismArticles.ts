@@ -22,7 +22,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Learn the physiological differences between Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE). Discover the 4 pillars of metabolism (BMR, NEAT, TEF, EAT) and why eating below BMR is dangerous.",
+      "en": "Learn how daily calorie burn works. See how your resting burn and daily steps shape your energy needs.",
       "hi": "बेसल मेटाबॉलिक रेट (BMR) और टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) में अंतर। मेटाबॉलिज्म के 4 स्तंभ और बीएमआर से कम कैलोरी खाने के खतरे।",
       "ko": "기초대사량(BMR)과 일일 총 에너지 소비량(TDEE)의 생리학적 차이. 신진대사의 4대 구성 요소(BMR, NEAT, TEF, EAT)와 BMR 이하 초저열량 식단의 위험성을 상세히 알아봅니다.",
       "de": "Verstehen Sie den Unterschied zwischen Grundumsatz (BMR) und Gesamtumsatz (TDEE), die 4 Säulen des Stoffwechsels und warum extremes Hungern schadet.",
@@ -204,7 +204,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Step-by-step evidence-based methodology for calculating Total Daily Energy Expenditure (TDEE). Learn physical activity level (PAL) multipliers, worked mathematical examples, and how to dial in calories.",
+      "en": "Find your total daily calorie burn in simple steps. Learn how your daily movement changes your calorie goals.",
       "hi": "टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) निकालने की वैज्ञानिक विधि। शारीरिक गतिविधि गुणक (PAL), गणितीय उदाहरण और वजन घटाने के लिए सटीक कैलोरी लक्ष्य।",
       "ko": "일일 총 에너지 소비량(TDEE)을 산출하는 표준 공식. 신체 활동 수준(PAL) 계수 선택법, 계산 예제 및 안전한 칼로리 설정법을 확인하세요.",
       "de": "Schritt-für-Schritt-Anleitung zur Berechnung des Gesamtumsatzes (TDEE) mittels PAL-Faktoren und präziser Kalorienbedarfsplanung.",
@@ -373,7 +373,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Research comparison of predictive resting metabolic equations: Mifflin-St Jeor (1990), original Harris-Benedict (1919), revised Roza-Shizgal (1984), and Katch-McArdle.",
+      "en": "Compare the top formulas used to find your resting burn. See which math works best for your body.",
       "hi": "बीएमआर फॉर्मूलों का वैज्ञानिक विश्लेषण। जानें कि अमेरिकन डायटेटिक एसोसिएशन मिफलिन-सेंट जियोर समीकरण को सबसे सटीक स्वर्ण मानक क्यों मानती है।",
       "ko": "현대 영양학의 표준 BMR 공식 비교. Mifflin-St Jeor(1990), Harris-Benedict(1919/1984 개정), Katch-McArdle 공식의 정확도와 차이점을 분석합니다.",
       "de": "Wissenschaftlicher Vergleich der Grundumsatzformeln: Warum Mifflin-St Jeor heute der anerkannte Goldstandard gegenüber Harris-Benedict ist.",
@@ -514,7 +514,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Evidence-based guide to setting a sustainable calorie deficit. Understand the Kevin Hall NIH dynamic metabolic model, optimal rates of loss (0.5–1.0% body weight/week), and protein targets.",
+      "en": "Learn how to set a safe calorie target for fat loss. Protect your muscle and keep off lost weight.",
       "hi": "साक्ष्य-आधारित कैलोरी डेफिसिट गाइड। केविन हॉल का एनआईएच डायनेमिक मॉडल, सुरक्षित वजन घटाने की दर (0.5-1.0% प्रति सप्ताह) और मेटाबॉलिज्म की सुरक्षा।",
       "ko": "지속 가능한 칼로리 적자 설정법. NIH Kevin Hall 박사의 동적 대사 모델, 주당 적정 감량률(체중의 0.5~1.0%) 및 근육 보존 단백질 섭취법을 안내합니다.",
       "de": "Evidenzbasierter Leitfaden für ein nachhaltiges Kaloriendefizit nach dem dynamischen Kevin-Hall-Modell der NIH: Fettabbau ohne Muskelverlust.",
@@ -661,7 +661,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Explore the profound scientific link between sleep deprivation and metabolic health. Learn how insufficient sleep alters leptin and ghrelin, increases cortisol, and impairs glucose regulation.",
+      "en": "Discover how good sleep helps you burn calories and stay fit. Learn simple habits for deeper rest.",
       "hi": "नींद की कमी और मेटाबॉलिज्म के बीच वैज्ञानिक संबंध। जानें कैसे अपर्याप्त नींद भूख हार्मोन (लेप्टिन व घ्रेलिन) को असंतुलित करती है और इंसुलिन संवेदनशीलता को प्रभावित करती है।",
       "ko": "수면 부족이 신진대사에 미치는 과학적 영향. 렙틴과 그렐린의 불균형, 코르티솔 분비 증가, 인슐린 저항성 및 기초대사량 저하 메커니즘을 상세히 설명합니다.",
       "de": "Erfahren Sie den wissenschaftlichen Zusammenhang zwischen Schlafmangel und Stoffwechsel: Wie Schlafdefizite Leptin und Ghrelin stören und Heißhunger auslösen.",
@@ -782,7 +782,7 @@ export const metabolismArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Discover the science of Non-Exercise Activity Thermogenesis (NEAT). Learn how walking step counts impact daily caloric expenditure, cardiovascular health, and sustainable fat loss.",
+      "en": "Learn how daily walking burns calories without hard workouts. See how daily steps boost heart health.",
       "hi": "नॉन-एक्सरसाइज एक्टिविटी थर्मोजेनेसिस (NEAT) का विज्ञान। समझें कि दैनिक कदमों की संख्या कैसे कैलोरी खर्च, हृदय स्वास्थ्य और वजन घटाने में मदद करती है।",
       "ko": "비운동성 열생성(NEAT)의 과학적 원리와 걷기 운동의 가치. 일일 걸음 수별 실제 칼로리 소비량과 지속 가능한 체지방 감량 전략을 안내합니다.",
       "de": "Die Wissenschaft der alltagsbezogenen Aktivitätsthermogenese (NEAT): Wie Gehen und Schrittziele den Kalorienverbrauch ohne Erschöpfung maximieren.",

@@ -22,7 +22,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Evidence-based guide to daily protein intake. Learn healthy targets for muscle health, daily recovery, and active fitness goals.",
+      "en": "Find out how much protein you need each day. Support your muscles, stay full, and reach your goals.",
       "hi": "दैनिक प्रोटीन की मात्रा का वैज्ञानिक विश्लेषण। जानें कि 0.8 g/kg केवल न्यूनतम सीमा क्यों है, ल्यूसीन ट्रिगर और मांसपेशियों के लिए उच्च गुणवत्ता वाले प्रोटीन स्रोत।",
       "ko": "영양학 연구 기반 일일 단백질 섭취 가이드. 0.8g/kg 권장량이 단순 결핍 예방선인 이유, 류신(Leucine) 임계값과 DIAAS 단백질 품질 평가 지표를 상세 안내합니다.",
       "de": "Evidenzbasierter Leitfaden zum täglichen Proteinbedarf: Warum die RDA von 0,8 g/kg zu niedrig ist, die Leucin-Schwelle und DIAAS-Qualitätswerte.",
@@ -176,7 +176,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Learn the physiological Atwater 4-4-9 energy density rule. Calculate exact grams of protein, carbs, and fat tailored to your body composition and training volume.",
+      "en": "Learn how to balance protein, carbs, and fats. Set up simple meals that match your daily workouts.",
       "hi": "मैक्रोन्यूट्रिएंट्स को ग्राम में विभाजित करने की वैज्ञानिक विधि। एटवाटर 4-4-9 कैलोरी नियम, कार्ब्स-प्रोटीन-फैट का अनुपात और लक्ष्य आधारित विभाजन।",
       "ko": "애트워터(Atwater) 4-4-9 에너지 밀도 원칙을 적용한 맞춤형 탄수화물·단백질·지방 그램(g) 산출법 및 목표별 최적 분배 비율 안내.",
       "de": "Praxisleitfaden zur Makroverteilung nach der Atwater 4-4-9 Regel: Exakte Grammwerte für Protein, Kohlenhydrate und Fett berechnen.",
@@ -343,7 +343,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "A simple guide to healthy daily hydration. Calculate your water target by body weight and learn easy tips to stay hydrated.",
+      "en": "Find your daily water goal based on your body weight. Learn easy ways to stay hydrated all day.",
       "hi": "प्रमाण-आधारित जलयोजन (हाइड्रेशन) विज्ञान गाइड। 30-35 मिली/किग्रा सूत्र, 8 गिलास पानी के मिथक का सच और आर्मस्ट्रांग यूरिन कलर चार्ट द्वारा जलयोजन जांच।",
       "ko": "수분 섭취 과학 가이드. 체중 kg당 30~35mL 공식, 잘못된 '하루 8잔' 미신 분석 및 Armstrong 소변 색상 척도를 안내합니다.",
       "de": "Wissenschaftlicher Leitfaden zum Wasserbedarf: Die 30-35 ml/kg Regel, der 8-Gläser-Mythos und die Armstrong-Farbskala.",
@@ -492,7 +492,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Composition Corporelle"
   },
     "description": {
-      "en": "Reference guide to Body Surface Area (BSA). Compare standard formulas and see clear step-by-step examples.",
+      "en": "Learn how doctors check total body surface area. See simple math and clear sample steps.",
       "hi": "बॉडी सरफेस एरिया (BSA) का वैज्ञानिक महत्व। मोस्टेलर और डु बोइस सूत्रों की तुलना, कीमोथेरेपी खुराक और किडनी जीएफआर (GFR) में बीएसए की भूमिका।",
       "ko": "체표면적(BSA)의 생리학적 중요성. Mosteller 및 Du Bois 공식의 산출 방식, 항암 화학요법 투약량 결정 및 신장 사구체여과율(GFR) 표준화 원리를 설명합니다.",
       "de": "Referenzleitfaden zur Körperoberfläche (BSA): Warum Chemotherapien und Nierenwerte nach Mosteller auf m² normiert werden.",
@@ -625,7 +625,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Fitness & Performance"
   },
     "description": {
-      "en": "Master target heart rate training. Calculate your maximum heart rate with Tanaka (208 - 0.7 &times; Age), use the Karvonen Heart Rate Reserve formula, and train across 5 zones.",
+      "en": "Train at the right pace with 5 heart rate zones. Find your max heart rate and build endurance.",
       "hi": "टारगेट हार्ट रेट प्रशिक्षण की वैज्ञानिक गाइड। तनाका सूत्र से अधिकतम हृदय गति, कार्वोनेन हार्ट रेट रिजर्व फॉर्मूला और 5 एरोबिक प्रशिक्षण क्षेत्रों का सही उपयोग।",
       "ko": "목표 심박수 트레이닝 완벽 가이드. Tanaka 공식(208 - 0.7 &times; 나이)과 Karvonen 심박 예비력(HRR) 공식을 활용한 5가지 맞춤형 운동 강도 영역을 확인하세요.",
       "de": "Kardiovaskuläres Zonentraining: Tanaka-Formel für HRmax, Karvonen-Herzfrequenzreserve und gezielte Fettverbrennung in Zone 2.",
@@ -1011,7 +1011,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Fitness & Performance"
   },
     "description": {
-      "en": "Evidence-based strength science guide to estimating your One-Rep Max (1RM). Compare the Brzycki and Epley equations, understand percentage-based loading, and lift safely.",
+      "en": "Estimate your top lift with safe math formulas. Plan your gym sets and build strength with ease.",
       "hi": "वन-रेप मैक्स (1RM) निकालने की वैज्ञानिक गाइड। ब्रज़ीकी और एपले सूत्रों की तुलना, प्रतिशत आधारित लोडिंग चार्ट और बिना चोट के अधिकतम ताकत का आकलन।",
       "ko": "최대 근력(1RM)을 부상 없이 정밀 추정하는 과학적 공식. Brzycki 및 Epley 공식의 정확도, 퍼센트 기반 중량 설정표 및 안전 수칙을 안내합니다.",
       "de": "Wissenschaftlicher Leitfaden zur 1RM-Berechnung: Brzycki und Epley Formeln im Vergleich sowie Prozenttabellen für das periodisierte Krafttraining.",
@@ -1354,7 +1354,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Fitness & Performance"
   },
     "description": {
-      "en": "Understand the exercise physiology behind resistance training. Learn how mechanical tension triggers muscle protein synthesis (MPS), preserves resting metabolic rate (BMR), and accelerates fat loss.",
+      "en": "Learn how lifting weights speeds up your daily calorie burn. Build lean muscle and boost metabolism.",
       "hi": "रेजिस्टेंस ट्रेनिंग के पीछे का शारीरिक विज्ञान। समझें कि कैसे वजन उठाना मसल प्रोटीन सिंथेसिस (MPS) को सक्रिय करता है, रेस्टिंग मेटाबॉलिक रेट (BMR) को बनाए रखता है और फैट लॉस को तेज करता है।",
       "ko": "저항성 근력 운동의 생리학적 메커니즘. 기계적 장력과 근육 단백질 합성(MPS), 기초대사량(BMR) 보존 및 안전한 점진적 과부하 원리를 상세히 안내합니다.",
       "de": "Verstehen Sie die Physiologie des Krafttrainings: Wie mechanische Spannung Muskelproteinsynthese anregt und den Grundumsatz langfristig schützt.",
@@ -1463,7 +1463,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Fitness & Performance"
   },
     "description": {
-      "en": "Comprehensive guide to VO2 Max (maximal oxygen uptake). Explore age- and gender-specific reference standards, the Cooper 12-minute run protocol, and why cardiorespiratory fitness predicts longevity.",
+      "en": "Discover what VO2 max tells you about your heart health. See simple tests to check your fitness level.",
       "hi": "VO2 Max (अधिकतम ऑक्सीजन उपभोग) की संपूर्ण गाइड। आयु और लिंग के अनुसार संदर्भ मानक, कूपर 12-मिनट टेस्ट और यह समझें कि कार्डियोरेस्पिरेटरी फिटनेस दीर्घायु का सबसे बड़ा संकेतक क्यों है।",
       "ko": "최대 산소 섭취량(VO2 Max) 완전 가이드. 연령별 및 성별 심폐 지구력 표준 백분위수, 쿠퍼 12분 러닝 테스트 산출 공식 및 장수 의학적 가치를 안내합니다.",
       "de": "Wissenschaftlicher Leitfaden zur maximalen Sauerstoffaufnahme (VO2max): Tabellen nach Alter und Geschlecht, Cooper-Test-Berechnung und Zusammenhang mit der Lebenserwartung.",
@@ -1594,7 +1594,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Learn how to read food nutrition labels with scientific precision. Master serving size multipliers, calculate the 4-4-9 macronutrient formula, spot hidden sugars, and identify misleading front-of-package marketing claims.",
+      "en": "Read food labels with confidence. Check serving sizes, spot hidden sugars, and choose better foods.",
       "hi": "खाद्य न्यूट्रिशन लेबल को सटीक रूप से पढ़ना सीखें। सर्विंग साइज, 4-4-9 मैक्रोन्यूट्रिएंट फॉर्मूला, विभिन्न नामों से छिपी चीनी और भ्रामक पैकेट दावों की पहचान।",
       "ko": "가공식품 영양성분표를 과학적으로 판독하는 방법. 1회 제공량 곱셈법, 4-4-9 열량 계산법, 숨겨진 50여 가지 당류 명칭 식별 및 허위 건강 마케팅 구별법을 설명합니다.",
       "de": "Leitfaden zum Entschlüsseln von Nährwertangaben: Portionsgrößen umrechnen, die 4-4-9 Formel anwenden und versteckte Zuckerquellen sicher enttarnen.",

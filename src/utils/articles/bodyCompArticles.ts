@@ -22,7 +22,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
     "fr": "Composition Corporelle"
   },
     "description": {
-      "en": "Explore the critical differences between Body Mass Index and Body Fat Percentage. Learn the 2-compartment vs 4-compartment models, normal weight obesity (NWO), and how to combine both metrics.",
+      "en": "Compare body mass index with body fat tests. Learn why muscle mass changes your true health numbers.",
       "hi": "बॉडी मास इंडेक्स और बॉडी फैट प्रतिशत के बीच का अंतर। दो और चार कंपार्टमेंट मॉडल, सामान्य वजन में छिपा मोटापा (NWO) और दोनों मापों का सही संयोजन।",
       "ko": "체질량지수(BMI)와 체지방률(%BF)의 생리학적 차이점을 완벽 비교합니다. 마른 비만(정상체중 비만)의 위험성과 2구획 및 4구획 신체 구성 분석 모델을 상세 안내합니다.",
       "de": "Der Unterschied zwischen BMI und Körperfett: Erfahren Sie, warum die Waage täuschen kann, was 'Skinny Fat' bedeutet und wie beide Werte kombiniert werden.",
@@ -270,7 +270,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
     "fr": "Composition Corporelle"
   },
     "description": {
-      "en": "Comprehensive research-backed comparison of body fat measurement methods. Explore DEXA scans, hydrostatic weighing, skinfold calipers, the U.S. Navy circumference method, and bioimpedance scales.",
+      "en": "Compare five simple ways to measure body fat. See how home tape tests match up with lab scans.",
       "hi": "बॉडी फैट मापने की 5 प्रमुख विधियों का तुलनात्मक विश्लेषण। जानें डेक्सा स्कैन, हाइड्रोस्टैटिक वेइंग, स्किनफोल्ड कैलिपर्स, नेवी फॉर्मूला और बीआईए स्केल्स की सटीकता।",
       "ko": "체지방률을 측정하는 5가지 과학적 방법(DEXA 스캔, 수중 체중 측정법, 캘리퍼 피하지방 측정, 미 해군 신체둘레 공식, 생체전기임피던스 BIA)의 정확도와 접근성을 전격 비교합니다.",
       "de": "Wissenschaftlicher Vergleich der 5 Methoden zur Körperfettmessung: DEXA, hydrostatisches Wiegen, Hautfalten-Caliper, US-Navy-Formel und Bioimpedanzwaagen.",
@@ -445,7 +445,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
     "fr": "Composition Corporelle"
   },
     "description": {
-      "en": "Evidence-based guide to Lean Body Mass (LBM). Compare Boer, James, and Hume formulas, understand step-by-step calculations, and connect LBM to BMR with Katch-McArdle.",
+      "en": "Learn what lean body mass is and why it matters. Use simple math to track your muscle and burn.",
       "hi": "लीन बॉडी मास (LBM) की प्रमाण-आधारित गाइड। बोअर, जेम्स और ह्यूम सूत्रों की तुलना, चरणबद्ध गणना और कैच-मैकआर्डल सूत्र द्वारा बीएमआर का निर्धारण।",
       "ko": "제지방량(LBM)을 산출하는 3대 공식(Boer, James, Hume)의 장단점과 Katch-McArdle 기초대사량 공식을 심층 분석합니다.",
       "de": "Leitfaden zur fettfreien Magermasse (LBM): Boer, James und Hume Formeln im Vergleich sowie die Katch-McArdle-Stoffwechselgleichung.",
@@ -601,7 +601,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
     "fr": "Composition Corporelle"
   },
     "description": {
-      "en": "Official guide to the Waist-to-Hip Ratio (WHR). Learn the standardized WHO measuring protocol, android vs gynoid fat distribution, and gender-specific cardiovascular risk thresholds.",
+      "en": "Learn how to measure your waist and hips with ease. See why belly fat shapes your heart health.",
       "hi": "कमर-कूल्हा अनुपात (WHR) की आधिकारिक गाइड। डब्ल्यूएचओ मापन तकनीक, पेट की चर्बी (एंड्रॉइड) बनाम कूल्हे की चर्बी (गाइनॉइड) और हृदय रोग की सीमाएं।",
       "ko": "세계보건기구(WHO) 공인 허리-엉덩이 둘레 비율(WHR) 가이드. 사과형(내장지방)과 서양배형(피하지방) 체형 구분법과 성별 심혈관 질환 위험 기준치를 확인하세요.",
       "de": "Leitfaden zum Taille-Hüft-Verhältnis (WHR): WHO-Messanleitung, viszerales Bauchfett vs. subkutanes Hüftfett und kardiovaskuläre Risikoschwellen.",
@@ -750,7 +750,7 @@ export const bodyCompArticles: Record<string, BlogArticleData> = {
     "fr": "Composition Corporelle"
   },
     "description": {
-      "en": "Scientific comparison of the four major Ideal Body Weight (IBW) equations: Devine, Robinson, Miller, and Hamwi. Learn how research formulas calculate reference weight and adjust for body composition.",
+      "en": "Compare the top four ideal body weight formulas. Find your best weight range with simple charts.",
       "hi": "चार प्रमुख आदर्श वजन (IBW) फॉर्मूलों की वैज्ञानिक तुलना। डिवाइन, रॉबिन्सन, मिलर और हामवी समीकरणों के माध्यम से संदर्भ वजन की गणना समझें।",
       "ko": "4대 이상 체중(IBW) 공식(Devine, Robinson, Miller, Hamwi)의 산출식과 신체 구성을 반영한 조정 체중(AdjBW)의 과학적 비교 분석.",
       "de": "Wissenschaftlicher Vergleich der 4 Idealgewicht-Formeln: Devine, Robinson, Miller und Hamwi sowie die Anwendung des Referenzgewichts.",

@@ -22,7 +22,7 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
     "fr": "IMC & Poids"
   },
     "description": {
-      "en": "Comprehensive evidence-based action guide for applying Asian BMI thresholds in daily life. Learn South Asian carbohydrate reduction strategies, high-protein vegetarian swaps, daily step goals, and preventive blood tests.",
+      "en": "Learn why healthy weight cutoffs are lower for Asian bodies. Get simple tips for diet, steps, and health checks.",
       "hi": "दैनिक जीवन में भारतीय बीएमआई मानकों को लागू करने की संपूर्ण गाइड। कार्बोहाइड्रेट नियंत्रण, उच्च प्रोटीन शाकाहारी विकल्प, व्यायाम और आवश्यक रक्त जांच।",
       "ko": "인도 및 아시아 인구의 일상생활 BMI 실천 지침. 정제 탄수화물 절제법, 경제적인 고단백 채식 식단 구성, 일일 유산소 운동 목표 및 정기 혈액 검사 항목을 종합 안내합니다.",
       "de": "Praktischer Leitfaden zur Umsetzung asiatischer BMI-Grenzwerte im Alltag: Reduzierung raffinierter Kohlenhydrate, günstige pflanzliche Proteine und kardiometabolische Vorsorge.",
@@ -407,7 +407,7 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
     "fr": "IMC & Poids"
   },
     "description": {
-      "en": "Discover why WHO and ICMR establish lower BMI cut-offs for Indians (18.5-22.9 healthy, 23+ overweight). Explore the 'Thin-Fat' phenotype, the Y-Y paradox, visceral adiposity, and tighter waist targets.",
+      "en": "See the official healthy weight cutoffs for Indian adults. Learn how to spot hidden belly fat early.",
       "hi": "जानें कि डब्ल्यूएचओ और आईसीएमआर ने भारतीयों के लिए कम बीएमआई सीमाएं (18.5-22.9 स्वस्थ, 23+ ओवरवेट) क्यों तय की हैं। वाई-वाई विरोधाभास और विसरल फैट का वैज्ञानिक विश्लेषण।",
       "ko": "세계보건기구(WHO)와 인도의학연구위원회(ICMR)가 아시아인에게 더 엄격한 BMI 기준(18.5~22.9 정상, 23 이상 과체중)을 적용하는 이유와 '마른 비만(Thin-Fat)'의 의학적 실체를 밝힙니다.",
       "de": "Warum für Menschen südasiatischer Herkunft strengere BMI-Grenzwerte gelten (18,5–22,9 normal, ab 23 Übergewicht): Das Y-Y-Paradoxon und viszerales Bauchfett im Fokus.",

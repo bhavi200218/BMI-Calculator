@@ -22,7 +22,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     fr: "Bases de l'IMC"
   },
   description: {
-    en: "Complete guide to Body Mass Index (BMI). Learn metric and imperial formulas, WHO weight thresholds, and healthy screening ranges.",
+    en: "Learn how Body Mass Index works. Check your healthy weight range with clear WHO standards.",
     hi: "बॉडी मास इंडेक्स (BMI) की संपूर्ण प्रमाण-आधारित गाइड। जानें इसका इतिहास, मीट्रिक और इंपीरियल फॉर्मूला, डब्ल्यूएचओ श्रेणियां, एशियाई मानक और स्वास्थ्य में इसका सही उपयोग।",
     ko: "체질량지수(BMI)의 의학적 정의와 표준 계산 공식을 상세하게 확인하세요. 세계보건기구(WHO) 기준 및 아시아인 맞춤 비만 기준표, 단계별 계산 실례와 신체 측정 한계점을 완벽 안내합니다.",
     de: "Umfassender evidenzbasierter Leitfaden zum Body-Mass-Index (BMI). Entdecken Sie Ursprung, metrische und imperiale Formeln, WHO-Klassifikation, asiatische Schwellenwerte, Rechenbeispiele und Grenzen.",
@@ -690,7 +690,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     fr: "Évaluation & Limites Scientifiques"
   },
   description: {
-    en: "Scientific guide to Body Mass Index accuracy. Learn why BMI can fail for muscular athletes and older adults. Explore helpful alternatives like body fat testing.",
+    en: "Find out when BMI works well and when it falls short. See better checks for muscle, fat, and age.",
     hi: "बॉडी मास इंडेक्स की सटीकता का गहन वैज्ञानिक विश्लेषण। जानें कि बीएमआई एथलीटों, बुजुर्गों और एशियाई लोगों में क्यों अधूरा साबित होता है और इसके बेहतर साक्ष्य-आधारित विकल्प क्या हैं।",
     ko: "체질량지수(BMI)의 정확도에 대한 심층 연구 분석. 근육형 운동선수, 고령층의 근감소증, 인종별 지방 분포 차이로 인한 왜곡 현상과 DEXA, 허리둘레-신장 비율(WHtR) 등 정밀 대체 지표를 상세히 안내합니다.",
     de: "Detaillierte wissenschaftliche Analyse der Genauigkeit des Body-Mass-Index. Warum der BMI bei Sportlern und Senioren fehlerhaft sein kann und welche Alternativen wie WHtR und DEXA aussagekräftiger sind.",
@@ -949,7 +949,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Bases de l'IMC"
     },
     "description": {
-      "en": "Complete World Health Organization BMI reference chart. Find your exact height and weight intersection, understand the color-coded health risk quadrants, and see Asian population adjustments.",
+      "en": "Explore the official WHO body mass chart. Find your height and weight to see your health range.",
       "hi": "विश्व स्वास्थ्य संगठन (WHO) का संपूर्ण बीएमआई संदर्भ चार्ट। अपनी लंबाई और वजन का मिलान करें, स्वास्थ्य श्रेणियों को समझें और एशियाई आबादी के विशेष मानक देखें।",
       "ko": "세계보건기구(WHO) 표준 성인 BMI 대조표. 신장과 체중의 교차점을 통해 본인의 체질량지수를 즉시 확인하고 정상, 과체중, 비만 판정 기준과 아시아인 전용 기준을 비교 검토하세요.",
       "de": "Offizielle WHO-Referenztabelle für den Body-Mass-Index. Finden Sie Ihre Schnittmenge aus Größe und Gewicht und verstehen Sie die klinischen Risikostufen.",
@@ -1323,7 +1323,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Composition Corporelle"
     },
     "description": {
-      "en": "Find your healthy weight range by height using WHO standards. Learn how body frame and height affect your target weight.",
+      "en": "Find your healthy weight range by height. See how your height shapes your ideal body weight.",
       "hi": "डब्ल्यूएचओ मानकों, क्वेटलेट फॉर्मूला और डिवाइन समीकरण के आधार पर अपनी लंबाई के अनुसार स्वस्थ वजन सीमा जानें। शारीरिक ढांचे के अनुसार सटीक मार्गदर्शन।",
       "ko": "세계보건기구(WHO) 기준과 드바인(Devine) 공식을 활용하여 본인의 신장에 맞는 적정 건강 체중 범위를 확인하세요. 골격 크기 및 체지방률을 고려한 실천 지침을 제공합니다.",
       "de": "Ermitteln Sie Ihren gesunden Gewichtsbereich nach der Körpergröße mit WHO-Standards, der Devine-Formel und Anpassungen an den individuellen Knochenbau.",
@@ -1628,7 +1628,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Différences Hommes-Femmes"
     },
     "description": {
-      "en": "Explore biological differences in body mass between men and women. Learn how body fat and hormones influence healthy weight ranges.",
+      "en": "See how body mass differs between men and women. Learn why body fat and muscle matter.",
       "hi": "पुरुषों और महिलाओं के बीएमआई में शारीरिक अंतर। जानें कि महिलाओं में आवश्यक फैट 8-12% अधिक क्यों होता है और कमर का माप स्वास्थ्य में क्यों महत्वपूर्ण है।",
       "ko": "남성과 여성의 체지방 분포 및 BMI 해석 차이를 의학적으로 분석합니다. 에스트로겐과 테스토스테론의 작용, 필수 지방률 차이, 허리둘레 기준치를 상세히 안내합니다.",
       "de": "Erfahren Sie, warum Frauen biologisch 8–12 % mehr Fettgewebe benötigen, wie Hormone die Fettverteilung steuern und warum der Taillenumfang unverzichtbar ist.",
@@ -1904,7 +1904,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Âge et Gériatrie"
     },
     "description": {
-      "en": "Learn how Body Mass Index interpretation evolves across adulthood. Understand the Geriatric Obesity Paradox, age-related stature compression, sarcopenic obesity, and optimal BMI targets for seniors.",
+      "en": "Learn how healthy body weight changes as you grow older. Check safe weight ranges for seniors.",
       "hi": "जानें कि उम्र बढ़ने के साथ बीएमआई का आकलन कैसे बदलता है। जेरियाट्रिक ओबेसिटी पैराडॉक्स, मांसपेशियों का नुकसान (सार्कोपेनिया) और 65+ आयु वर्ग के लिए सुरक्षित वजन सीमा।",
       "ko": "나이에 따른 체질량지수(BMI)의 의학적 해석 변화를 종합 분석합니다. 65세 이상 고령층의 '비만의 역설', 근감소성 비만 예방법 및 연령대별 최적 체중 목표를 확인하세요.",
       "de": "Verstehen Sie, wie sich der BMI im Alter verändert, warum Senioren von einem leicht höheren BMI profitieren (Adipositas-Paradoxon) und wie Sarkopenie erkannt wird.",
@@ -2464,7 +2464,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Santé des Adolescents"
     },
     "description": {
-      "en": "A clear guide to teen BMI screening. Learn how CDC and WHO percentiles work, and why teen growth charts differ from adult tables.",
+      "en": "A clear guide to teen growth charts. Learn how growth percentiles help track healthy weight.",
       "hi": "किशोरों (13-19 वर्ष) के बीएमआई की संपूर्ण प्रमाण-आधारित गाइड। जानें कि वयस्कों के कट-ऑफ किशोरों पर क्यों लागू नहीं होते, सीडीसी पर्सेंटाइल चार्ट कैसे देखें और स्वस्थ खानपान के नियम।",
       "ko": "청소년(13~19세) 체질량지수 평가를 위한 가이드. 성인 고정 기준 대신 연령별 백분위수를 사용하는 이유와 탠너(Tanner) 사춘기 성숙도 단계의 중요성을 안내합니다.",
       "de": "Evidenzbasierter Leitfaden zum BMI bei Jugendlichen. Warum feste Erwachsenen-Grenzwerte ungeeignet sind und wie CDC-Perzentilkurven Wachstumsphasen berücksichtigen.",

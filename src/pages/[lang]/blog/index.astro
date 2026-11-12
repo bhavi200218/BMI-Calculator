@@ -287,11 +287,11 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
                 {article.title}<span class="sr-only">. </span>
               </h2>
               <p class="text-sm text-[var(--muted-foreground)] leading-relaxed font-medium line-clamp-3">
-                {article.description}
+                {article.description}<span class="sr-only">. </span>
               </p>
             </div>
             <div class="flex items-center justify-between text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] pt-4 border-t border-[var(--border)]/40">
-              <span>{(cardLabels[lang] || cardLabels.en).readMore}</span>
+              <span>{(cardLabels[lang] || cardLabels.en).readMore}<span class="sr-only">. </span></span>
               <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
