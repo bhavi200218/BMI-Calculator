@@ -377,7 +377,7 @@ if (fs.existsSync(path.resolve('dist'))) {
   // 11.4 Homepage HTML pillars & footer
   LOCALES.forEach(lang => {
     runTest(`dist/[${lang}] Homepage: 4 distinct HealthContent pillars and standardized footer`, () => {
-      const htmlPath = path.resolve(lang === 'en' ? 'dist/index.html' : `dist/${lang}/index.html`);
+      const htmlPath = path.resolve(`dist/${lang}/index.html`);
       assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
       const html = fs.readFileSync(htmlPath, 'utf8');
 
@@ -387,13 +387,6 @@ if (fs.existsSync(path.resolve('dist'))) {
     });
   });
 
-  // 11.4.1 English Homepage Consolidation (Zero Duplicate Pages)
-  runTest('dist/en/index.html: Consolidates English homepage by redirecting to root / (Zero Duplicate Content)', () => {
-    const htmlPath = path.resolve('dist/en/index.html');
-    assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
-    const html = fs.readFileSync(htmlPath, 'utf8');
-    assert.ok(html.includes('url=/') || html.includes('Redirecting to: /'), 'dist/en/index.html must redirect to /');
-  });
 
   // 11.5 Blog Articles dist/ HTML: Contextual CTA and 3-4 Related Calculators (No HubGrid Dump)
   allArticleSlugs.forEach(slug => {
@@ -427,11 +420,11 @@ if (fs.existsSync(path.resolve('dist'))) {
   // 11.6 Homepage dist/ HTML: Exactly one table and in-depth chart link present
   LOCALES.forEach(lang => {
     runTest(`dist/[${lang}] Homepage: Single responsive WHO table and in-depth chart link`, () => {
-      const htmlPath = path.resolve(lang === 'en' ? 'dist/index.html' : `dist/${lang}/index.html`);
+      const htmlPath = path.resolve(`dist/${lang}/index.html`);
       assert.ok(fs.existsSync(htmlPath), `File must exist: ${htmlPath}`);
       const html = fs.readFileSync(htmlPath, 'utf8');
 
-      assert.ok(html.includes(`href="/${lang === 'en' ? 'en' : lang}/bmi-chart/"`), `Must link to dedicated in-depth BMI chart /${lang === 'en' ? 'en' : lang}/bmi-chart/`);
+      assert.ok(html.includes(`href="/${lang}/bmi-chart/"`), `Must link to dedicated in-depth BMI chart /${lang}/bmi-chart/`);
       assert.strictEqual(html.includes('sm:hidden'), false, 'Must NOT contain duplicate sm:hidden table cards');
     });
   });
