@@ -1,7 +1,3 @@
-# Root English homepage consolidation (eliminates / vs /en/ duplicate content)
-/en/  /  301
-/en  /  301
-
 # Cloudflare email protection defensive redirect (prevents crawler 404s)
 /cdn-cgi/l/email-protection*  /en/contact/  301
 /cdn-cgi/l/email-protection  /en/contact/  301

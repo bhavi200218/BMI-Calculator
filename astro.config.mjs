@@ -16,7 +16,6 @@ export default defineConfig({
       filter: (page) => {
         if (page === 'https://realbmicalculator.com/' || page === 'https://realbmicalculator.com') return true;
         const path = page.replace('https://realbmicalculator.com', '');
-        if (path === '/en/' || path === '/en') return false;
         if (path.startsWith('/embed/') || path.startsWith('/search/') || path.includes('/one-rep-max-calculator/') || path.includes('/3d-body-visualizer/') || path.includes('/author/') || path.includes('/terms-of-service') || path === '/terms/' || path === '/terms') return false;
         // Exclude all non-English blog articles and blog indexes from sitemap to eliminate low-value/thin multilingual content
         if (/^\/(es|fr|de|ko|hi)\/blog(\/|$)/.test(path)) {

@@ -58,10 +58,10 @@ const embedCode = `<iframe src="https://realbmicalculator.com/embed/bmi-calculat
       <div class="space-y-2 max-w-2xl">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] shadow-xs">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-          {{ en: 'Free Webmaster & Blogger Tool', es: 'Herramienta Gratuita para Webmasters y Bloggers', fr: 'Outil Gratuit pour Webmasters & Blogueurs', de: 'Kostenloses Webmaster- & Blogger-Tool', ko: '무료 웹마스터 및 블로거 도구', hi: 'मुफ़्त वेबमास्टर और ब्लॉगर टूल' }[lang] || 'Free Webmaster & Blogger Tool'}
+          {{ en: 'Free Webmaster & Blogger Tool', es: 'Herramienta Gratuita para Webmasters y Bloggers', fr: 'Outil Gratuit pour Webmasters & Blogueurs', de: 'Kostenloses Webmaster- & Blogger-Tool', ko: '무료 웹마스터 및 블로거 도구', hi: 'मुफ़्त वेबमास्टर और ब्लॉगर टूल' }[lang] || 'Free Webmaster & Blogger Tool'}<span class="sr-only">. </span>
         </div>
         <h3 class="text-2xl sm:text-3xl font-display font-extrabold uppercase text-[var(--foreground)] tracking-tight">
-          {titles[lang] || titles.en}
+          {titles[lang] || titles.en}<span class="sr-only">. </span>
         </h3>
         <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
           {subtitles[lang] || subtitles.en}

@@ -11,6 +11,7 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 <Layout 
 	title="Real BMI English — Evidence-Based Health Calculators"
 	description="Access Real BMI's complete English health research platform and calculation suite with 23 free private health calculators and screening tools. Explore peer-reviewed metabolic guides, academic literature, and private browser screening tools."
+	canonicalURL="https://realbmicalculator.com/"
 >
 	<Navbar />
 	
@@ -38,7 +39,7 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 						Comprehensive Physiological Reference Formulas & Private Screening<span class="sr-only">. </span>
 					</p>
 					<p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed">
-						Explore Real BMI's global English portal featuring 23 peer-reviewed health calculators, validated anthropometric equations, and metabolic guidelines from the WHO, CDC, and NIH. All calculations execute privately in your browser.
+						Check your body mass index, calories, and fitness stats in seconds. Our tools follow official WHO and CDC guidelines. All math runs on your device.
 					</p>
 				</div>
 
@@ -65,16 +66,16 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 			<div class="max-w-7xl mx-auto space-y-6">
 				<header class="space-y-3 pb-4 border-b border-[var(--border)]/40">
 					<div class="flex items-center justify-between gap-4">
-						<span class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">🔥 Global Tool Index</span>
+						<span class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">🔥 Global Tool Index<span class="sr-only">. </span></span>
 						<span class="text-xs font-mono text-[var(--accent)] font-bold px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 shrink-0">
 							23 Tools
 						</span>
 					</div>
 					<h2 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-								Complete Health & Fitness Calculator Directory
-							</h2>
+						Complete Health & Fitness Calculator Directory<span class="sr-only">. </span>
+					</h2>
 					<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium max-w-3xl leading-relaxed">
-						Access our complete index of 23 specialized health calculators covering body mass index, basal metabolic rate, total daily energy expenditure, body composition, and cardiovascular training zones. Every calculator operates client-side with zero data collection.
+						Explore all 23 health and fitness tools. Check your BMI, daily energy needs, body fat, and heart rate zones. Every calculation runs on your device with complete privacy.
 					</p>
 				</header>
 
@@ -94,12 +95,12 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 		<section class="px-4 md:px-6 py-12 md:py-16 border-t border-[var(--border)]/40 space-y-12">
 			<div class="max-w-7xl mx-auto space-y-10">
 				<div class="space-y-3 text-center sm:text-left max-w-3xl">
-					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Transparent Calculator Features</p>
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Transparent Calculator Features<span class="sr-only">. </span></p>
 					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
-						Clarity for your health goals
+						Clarity for your health goals<span class="sr-only">. </span>
 					</h2>
 					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-						Whether you are tracking progress, planning nutrition, or reviewing fitness baselines, Real BMI gives you fast, practical estimates grounded in published guidelines.
+						Real BMI gives you fast, practical estimates. All tools follow published public health guidelines.
 					</p>
 				</div>
 
@@ -111,7 +112,7 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 						{ title: 'Useful for daily planning', description: 'Explore fitness metrics, nutrition estimates, and body composition references with clear calculation methods.' },
 					].map(item => (
 						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-3 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-sm hover:-translate-y-0.5">
-							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
+							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}<span class="sr-only">. </span></h3>
 							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
 								{item.description}
 							</p>
@@ -121,8 +122,8 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 					<!-- Brand & Methodology Box -->
 					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6 shadow-md">
 						<div class="space-y-2">
-							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">Transparent Methodology</p>
-							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">HOW OUR CALCULATORS WORK</p>
+							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">Transparent Methodology<span class="sr-only">. </span></p>
+							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">HOW OUR CALCULATORS WORK<span class="sr-only">. </span></p>
 							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">Explore our published formulas, reference standards, inputs, outputs, and limitations for all 23 tools.</p>
 						</div>
 						<a href="/en/methodology/" class="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-display text-xs font-bold uppercase tracking-wider hover:bg-slate-100 transition-all shadow-xs">
