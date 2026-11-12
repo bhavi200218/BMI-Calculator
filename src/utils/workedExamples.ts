@@ -144,6 +144,78 @@ const EXAMPLES: Record<string, ToolData> = {
     }
   },
 
+  // 1b. BMI Chart & Matrix Lookup
+  'bmi-chart': {
+    inputs: {
+      en: [{ label: "Adult Stature (Height)", value: "175.0 cm (5'9\")" }, { label: "Target Weight Cell", value: "70.0 kg (154.3 lbs)" }],
+      es: [{ label: "Estatura de Adulto (Altura)", value: "175.0 cm (5'9\")" }, { label: "Celda de Peso Objetivo", value: "70.0 kg (154.3 lbs)" }],
+      fr: [{ label: "Stature Adulte (Taille)", value: "175,0 cm (5'9\")" }, { label: "Cellule de Poids Cible", value: "70,0 kg (154,3 lbs)" }],
+      de: [{ label: "Körpergröße (Erwachsene)", value: "175,0 cm (5'9\")" }, { label: "Zielgewicht im Raster", value: "70,0 kg (154,3 lbs)" }],
+      ko: [{ label: "성인 신장 기준선", value: "175.0 cm (5'9\")" }, { label: "목표 체중 격자 셀", value: "70.0 kg (154.3 lbs)" }],
+      hi: [{ label: "वयस्क कद (ऊंचाई)", value: "175.0 सेमी (5'9\")" }, { label: "लक्षित वजन ग्रिड सेल", value: "70.0 किग्रा (154.3 lbs)" }]
+    },
+    steps: {
+      en: [
+        "Step 1: Locate Stature Axis: Find the horizontal row corresponding to your measured height (175 cm / 5'9\").",
+        "Step 2: Trace Weight Column: Move across the table columns to locate your current weight (70 kg / 154 lbs).",
+        "Step 3: Read Matrix Intersection: The intersecting grid cell identifies your baseline Body Mass Index value (22.9 kg/m²).",
+        "Step 4: Check WHO Color Category: Locate 22.9 within the WHO classification bands (Normal Weight: 18.5 – 24.9 kg/m²).",
+        "Step 5: Identify Height Boundaries: For 175 cm stature, healthy weight thresholds span from 56.7 kg (minimum) to 76.3 kg (maximum)."
+      ],
+      es: [
+        "Paso 1: Localizar Fila de Estatura: Encuentra la fila correspondiente a tu altura (175 cm / 5'9\").",
+        "Paso 2: Rastrear Columna de Peso: Desplázate horizontalmente hasta ubicar tu peso medido (70 kg / 154 lbs).",
+        "Paso 3: Leer la Intersección: La celda de cruce señala tu valor de Índice de Masa Corporal (22.9 kg/m²).",
+        "Paso 4: Cotejar Banda de la OMS: Ubica 22.9 dentro de los cortes oficiales (Peso Normal: 18.5 – 24.9 kg/m²).",
+        "Paso 5: Identificar Límites de Peso: Para 175 cm de altura, la franja saludable se extiende de 56.7 kg a 76.3 kg."
+      ],
+      fr: [
+        "Étape 1 : Repérer la Ligne de Stature : Trouvez la ligne horizontale correspondant à votre taille (175 cm / 5'9\").",
+        "Étape 2 : Suivre la Colonne de Poids : Progressez sur la ligne jusqu'à repérer votre poids (70 kg / 154 lbs).",
+        "Étape 3 : Lire la Case d'Intersection : La cellule croisée indique votre indice d'IMC de référence (22,9 kg/m²).",
+        "Étape 4 : Vérifier la Couleur OMS : Repérez 22,9 parmi les tranches officielles (Poids Normal : 18,5 – 24,9 kg/m²).",
+        "Étape 5 : Noter les Seuils pour 175 cm : Pour 175 cm, la plage de poids santé se situe entre 56,7 kg et 76,3 kg."
+      ],
+      de: [
+        "Schritt 1: Höhenachse wählen: Finden Sie die Zeile für Ihre Körpergröße (175 cm / 5'9\").",
+        "Schritt 2: Gewichtsspalte nachverfolgen: Bewegen Sie sich entlang der Zeile zum Spaltenwert Ihres Gewichts (70 kg / 154 lbs).",
+        "Schritt 3: Schnittpunkt ablesen: Das Schnittfeld zeigt den resultierenden Body-Mass-Index (22,9 kg/m²).",
+        "Schritt 4: WHO-Farbbereich prüfen: Ordnen Sie 22,9 in die Klassifikation ein (Normalgewicht: 18,5 – 24,9 kg/m²).",
+        "Schritt 5: Schwellenwerte für 175 cm: Der Bereich für gesundes Normalgewicht reicht hier von 56,7 kg bis 76,3 kg."
+      ],
+      ko: [
+        "1단계: 신장 행 위치 확인: 차트 세로축에서 본인의 측정 신장(175 cm / 5'9\") 행을 찾습니다.",
+        "2단계: 체중 열 탐색: 해당 행을 따라 가로로 이동하여 측정 체중(70 kg / 154 lbs) 열을 찾습니다.",
+        "3단계: 교차점 지수 판독: 두 축이 만나는 격자 셀에서 산출된 기준 BMI(22.9 kg/m²)를 확인합니다.",
+        "4단계: WHO 분류 색상 대조: 22.9 지수가 WHO 표준 정상 체중 구간(18.5 ~ 24.9 kg/m²)에 속함을 판별합니다.",
+        "5단계: 신장별 정상 한계선 파악: 175 cm 신장의 경우 건강 정상 체중 하한선은 56.7 kg, 상한선은 76.3 kg입니다."
+      ],
+      hi: [
+        "चरण 1: ऊंचाई पंक्ति ढूंढें: चार्ट की लंबवत धुरी पर अपने कद (175 सेमी / 5'9\") की पंक्ति खोजें।",
+        "चरण 2: वजन कॉलम देखें: उस पंक्ति के साथ आगे बढ़ते हुए अपने मापे गए वजन (70 किग्रा / 154 lbs) का कॉलम खोजें।",
+        "चरण 3: प्रतिच्छेदन मान पढ़ें: दोनों अक्षों के मिलन बिंदु पर स्थित सेल में बीएमआई मान (22.9 kg/m²) पढ़ें।",
+        "चरण 4: डब्ल्यूएचओ श्रेणी जांचें: 22.9 मान को डब्ल्यूएचओ के सामान्य वजन वर्ग (18.5 – 24.9 kg/m²) में सत्यापित करें।",
+        "चरण 5: ऊंचाई अनुसार स्वस्थ सीमाएं: 175 सेमी कद के लिए सामान्य स्वस्थ वजन 56.7 किग्रा से 76.3 किग्रा तक होता है।"
+      ]
+    },
+    result: {
+      en: { label: "WHO Chart Matrix Lookup (175 cm Stature, 70 kg Mass)", value: "BMI 22.9 kg/m² (Normal Weight Band)" },
+      es: { label: "Consulta en Matriz de la OMS (175 cm Estatura, 70 kg Peso)", value: "IMC 22.9 kg/m² (Banda de Peso Normal)" },
+      fr: { label: "Matrice de Référence OMS (175 cm Taille, 70 kg Masse)", value: "IMC 22,9 kg/m² (Plage de Poids Normal)" },
+      de: { label: "WHO-Matrixtabelle (175 cm Größe, 70 kg Gewicht)", value: "BMI 22,9 kg/m² (Bereich Normalgewicht)" },
+      ko: { label: "WHO 표준 차트 매트릭스 판독 (신장 175cm, 체중 70kg)", value: "BMI 22.9 kg/m² (정상 체중 구간)" },
+      hi: { label: "डब्ल्यूएचओ चार्ट मैट्रिक्स लुकअप (175 सेमी कद, 70 किग्रा वजन)", value: "बीएमआई 22.9 kg/m² (सामान्य वजन सीमा)" }
+    },
+    interp: {
+      en: "A standard adult BMI chart cross-references standing height and body weight to reveal weight classifications instantly without electronic calculation. At 175 cm, any weight between 56.7 kg and 76.3 kg sits within the healthy reference zone. Reading lookup charts provides a quick visual benchmark, though athletic bodybuilders and elderly adults should evaluate body composition alongside grid numbers.",
+      es: "Una tabla de IMC para adultos cruza estatura y masa corporal para identificar la clasificación ponderal sin necesidad de cálculo manual. Para 175 cm, cualquier peso entre 56.7 kg y 76.3 kg se mantiene en la franja saludable de la OMS. Las tablas ofrecen una referencia visual rápida, aunque atletas musculados y adultos mayores deben evaluar la composición corporal.",
+      fr: "Un tableau d'IMC adulte croise stature et masse pour situer immédiatement votre tranche pondérale sans calculatrice. Pour 175 cm, tout poids situé entre 56,7 kg et 76,3 kg relève de la zone de référence saine de l'OMS. Les grilles visuelles offrent un repère pratique, bien que les sportifs musclés et personnes âgées doivent considérer leur masse musculaire réelle.",
+      de: "Eine BMI-Tabelle für Erwachsene setzt Körpergröße und Gewicht visuell in Beziehung, um Gewichtskategorien auf einen Blick darzustellen. Bei 175 cm Körpergröße liegt jeder Wert zwischen 56,7 kg und 76,3 kg im gesunden WHO-Referenzbereich. Tabellenraster bieten schnelle Orientierung, sollten bei Sportlern und Senioren jedoch stets durch Körperfettanalysen ergänzt werden.",
+      ko: "성인 BMI 차트는 신장과 체중을 격자 축으로 교차하여 전자 계산기 없이도 체중 분류를 시각적으로 즉시 확인하도록 돕습니다. 신장 175 cm 성인의 경우 56.7 kg에서 76.3 kg 사이의 체중은 모두 WHO 정상 체중 범위에 해당합니다. 차트 판독은 빠른 건강 스크리닝에 유용하나, 고근육량 운동선수나 노년층은 체지방률을 함께 검토해야 합니다.",
+      hi: "वयस्क बीएमआई चार्ट बिना डिजिटल गणना के ऊंचाई और वजन को क्रॉस-रेफरेंस करके वजन वर्ग की तत्काल पहचान करता है। 175 सेमी कद के लिए 56.7 किग्रा से 76.3 किग्रा के बीच का कोई भी वजन डब्ल्यूएचओ की स्वस्थ श्रेणी में आता है। लुकअप टेबल त्वरित दृश्य संदर्भ प्रदान करती है, हालांकि एथलीटों और बुजुर्गों को शारीरिक संरचना पर भी ध्यान देना चाहिए।"
+    }
+  },
+
   // 2. Indian BMI Calculator
   'bmi-calculator-for-indians': {
     inputs: {
@@ -1863,14 +1935,10 @@ export function getWorkedExample(slug: string, lang: string, toolTitle?: string)
   let normalizedSlug = slug;
   if (slug === '3d-body-visualizer') {
     normalizedSlug = '3d-bmi-calculator';
-  } else if (slug === 'bmi-chart') {
-    normalizedSlug = 'bmi-calculator';
   } else if (slug === 'bmi-calculator-india') {
     normalizedSlug = 'bmi-calculator-for-indians';
   } else if (slug === 'one-rep-max-calculator') {
     normalizedSlug = '1rm-calculator';
-  } else if (slug === 'heart-rate-zone-calculator') {
-    normalizedSlug = 'karvonen-heart-rate-calculator';
   }
 
   const data = EXAMPLES[normalizedSlug] || EXAMPLES['bmi-calculator'];

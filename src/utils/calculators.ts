@@ -1559,44 +1559,40 @@ export const calculators: CalculatorConfig[] = [
     name: { en: 'Target Heart Rate Zones Calculator', es: 'Calculadora de Zonas Cardíacas Objetivo', fr: 'Calculateur de Zones de Fréquence Cardiaque', de: 'Herzfrequenz-Zielzonen Rechner', ko: '목표 심박수 구간 계산기', hi: 'टारगेट हार्ट रेट ज़ोन कैलकुलेटर' },
     title: { en: 'Target Heart Rate Zones Calculator – 5 Exercise Training Zones', es: 'Calculadora de Zonas Cardíacas Objetivo – 5 Zonas de Entrenamiento', fr: 'Calculateur de Zones Cardiaques Cibles – 5 Zones d\'Entraînement', de: 'Herzfrequenz-Zielzonen Rechner – 5 Trainingszonen', ko: '목표 심박수 구간 계산기 – 5가지 운동 심박 영역', hi: 'टारगेट हार्ट रेट ज़ोन कैलकुलेटर - 5 प्रशिक्षण क्षेत्र' },
     description: {
-      "en": "Calculate target training intensity zones (Fat Burn, Aerobic, Anaerobic, Peak) based on age, resting pulse, and estimated maximum cardiac capacity with privacy-focused, browser calculations.",
-      "es": "Calculadora de zonas de frecuencia cardíaca gratuita. Calcula tus zonas objetivo de entrenamiento (Quema de grasa, Aeróbica, Anaeróbica, Pico) según edad, frecuencia en reposo y frecuencia máxima con cálculos privados en el navegador.",
-      "fr": "Calculateur de zones de fréquence cardiaque gratuit. Calculez vos zones cibles d'entraînement (Brûle-graisse, Aérobie, Anaérobie, Maximale) selon l'âge, le pouls au repos et la fréquence maximale avec calculs sur navigateur.",
-      "de": "Kostenloser Herzfrequenzzonen-Rechner. Berechnen Sie Ihre Ziel-Trainingszonen (Fettverbrennung, Aerob, Anaerob, Maximal) basierend auf Alter, Ruhepuls und maximaler Herzfrequenz datenschutzorientiert im Browser.",
-      "ko": "무료 심박수 구간 계산기. 나이, 안정시 심박수 및 최대 심박수를 바탕으로 목표 운동 심박수 구간(지방 연소, 유산소, 무산소, 최대 심박 구간)을 정확하게 산출하세요. 가입 없이 브라우저 내 100% 무료 구동.",
-      "hi": "मुफ़्त हृदय गति क्षेत्र कैलकुलेटर। उम्र, विश्राम हृदय गति और अधिकतम हृदय गति के आधार पर लक्षित प्रशिक्षण हृदय गति क्षेत्रों (फैट बर्न, एरोबिक, एनारोबिक, पीक) की गणना करें। मुफ़्त और गोपनीयता-केंद्रित।"
+      "en": "Calculate target exercise intensity zones (Fat Burn, Aerobic Base, Tempo, Anaerobic, VO2 Max) based on age and Fox %HRmax (220 - Age) formula with privacy-focused, browser calculations.",
+      "es": "Calculadora de zonas de frecuencia cardíaca de Fox. Calcula 5 zonas de entrenamiento (Recuperación, Base Aeróbica, Tempo, Umbral, VO2 Máx) según tu edad mediante la fórmula %FCmax con privacidad en el navegador.",
+      "fr": "Calculateur de zones de fréquence cardiaque Fox (%FCmax). Déterminez vos 5 zones d'entraînement cardiaque (Récupération, Base Aérobie, Tempo, Seuil Lactique, VO2 Max) selon l'âge avec calculs sur navigateur.",
+      "de": "Herzfrequenz-Zielzonen-Rechner nach der klassischen Fox-Formel (%HFmax). Ermitteln Sie Ihre 5 Trainingszonen (Regeneration, Aerobe Ausdauer, Tempo, Schwellentraining, VO2-Max) nach Alter im Browser.",
+      "ko": "Fox & Haskell 공식(%HRmax) 기반 목표 심박수 계산기. 만 나이를 바탕으로 5단계 운동 심박 구간(회복, 유산소 기초, 템포, 젖산 역치, VO2 Max)을 브라우저 내에서 즉시 산출하세요.",
+      "hi": "उम्र के अनुसार 5-ज़ोन कार्डियो इंटेंसिटी की गणना करें। फॉक्स फॉर्मूला (%HRmax = 220 - आयु) पर आधारित त्वरित, सटीक और पूर्ण गोपनीयता-केंद्रित इनपुट।"
     },
     inputs: [
-      { id: 'age', label: L.age, type: 'number' },
-      { id: 'rhr', label: { en: 'Resting Heart Rate', es: 'Frecuencia Cardíaca en Reposo', fr: 'Fréquence Cardiaque Repos', de: 'Ruhepuls', ko: '안정시 심박수', hi: 'विश्राम हार्ट रेट' }, type: 'number' }
+      { id: 'age', label: L.age, type: 'number' }
     ],
     calculate: (inputs) => {
       const age = parseInt(inputs.age) || 25;
-      const rhr = parseInt(inputs.rhr) || 60;
-      const maxHr = 220 - age;
-      const hrr = Math.max(0, maxHr - rhr);
+      const maxHr = Math.max(1, 220 - age);
 
-      const zone1Min = Math.round(rhr + (hrr * 0.5));
-      const zone1Max = Math.round(rhr + (hrr * 0.6));
-      const zone2Min = Math.round(rhr + (hrr * 0.6));
-      const zone2Max = Math.round(rhr + (hrr * 0.7));
-      const zone3Min = Math.round(rhr + (hrr * 0.7));
-      const zone3Max = Math.round(rhr + (hrr * 0.8));
-      const zone4Min = Math.round(rhr + (hrr * 0.8));
-      const zone4Max = Math.round(rhr + (hrr * 0.9));
-      const zone5Min = Math.round(rhr + (hrr * 0.9));
-      const zone5Max = Math.round(rhr + (hrr * 1.0));
+      const zone1Min = Math.round(maxHr * 0.5);
+      const zone1Max = Math.round(maxHr * 0.6);
+      const zone2Min = Math.round(maxHr * 0.6);
+      const zone2Max = Math.round(maxHr * 0.7);
+      const zone3Min = Math.round(maxHr * 0.7);
+      const zone3Max = Math.round(maxHr * 0.8);
+      const zone4Min = Math.round(maxHr * 0.8);
+      const zone4Max = Math.round(maxHr * 0.9);
+      const zone5Min = Math.round(maxHr * 0.9);
+      const zone5Max = maxHr;
 
       return {
-        primary: { value: `${zone2Min} - ${zone2Max}`, label: { en: 'Fat Burn Zone (Zone 2)', es: 'Zona Quema Grasa (Zona 2)', fr: 'Zone Brûle-Graisse (Zone 2)', de: 'Fettverbrennung (Zone 2)', ko: '지방 연소 구간 (Zone 2)', hi: 'फैट बर्न ज़ोन (ज़ोन 2)' }, unit: 'bpm' },
+        primary: { value: `${zone2Min} - ${zone2Max}`, label: { en: 'Aerobic Base (Zone 2: 60-70%)', es: 'Base Aeróbica (Zona 2: 60-70%)', fr: 'Base Aérobie (Zone 2 : 60-70%)', de: 'Aerobe Grundausdauer (Zone 2: 60-70%)', ko: '유산소 기초 구간 (Zone 2: 60-70%)', hi: 'एरोबिक बेस (ज़ोन 2: 60-70%)' }, unit: 'bpm' },
         secondary: [
-          { label: { en: 'Zone 1: Recovery (50-60%)', es: 'Zona 1: Recuperación (50-60%)', fr: 'Zone 1: Récupération (50-60%)', de: 'Zone 1: Regeneration (50-60%)', ko: 'Zone 1: 회복 (50-60%)', hi: 'ज़ोन 1: रिकवरी (50-60%)' }, value: `${zone1Min} - ${zone1Max}`, unit: 'bpm' },
-          { label: { en: 'Zone 2: Fat Burn (60-70%)', es: 'Zona 2: Quema Grasa (60-70%)', fr: 'Zone 2: Brûle-Graisse (60-70%)', de: 'Zone 2: Fettverbrennung (60-70%)', ko: 'Zone 2: 지방 연소 (60-70%)', hi: 'ज़ोन 2: फैट बर्न (60-70%)' }, value: `${zone2Min} - ${zone2Max}`, unit: 'bpm' },
-          { label: { en: 'Zone 3: Aerobic (70-80%)', es: 'Zona 3: Cardio (70-80%)', fr: 'Zone 3: Cardio (70-80%)', de: 'Zone 3: Aerob (70-80%)', ko: 'Zone 3: 유산소 (70-80%)', hi: 'ज़ोन 3: एरोबिक (70-80%)' }, value: `${zone3Min} - ${zone3Max}`, unit: 'bpm' },
-          { label: { en: 'Zone 4: Anaerobic (80-90%)', es: 'Zona 4: Anaeróbico (80-90%)', fr: 'Zone 4: Anaérobie (80-90%)', de: 'Zone 4: Anaerob (80-90%)', ko: 'Zone 4: 무산소 (80-90%)', hi: 'ज़ोन 4: एनएरोबिक (80-90%)' }, value: `${zone4Min} - ${zone4Max}`, unit: 'bpm' },
-          { label: { en: 'Zone 5: VO2 Max (90-100%)', es: 'Zona 5: Máximo (90-100%)', fr: 'Zone 5: VO2 Max (90-100%)', de: 'Zone 5: VO2 Max (90-100%)', ko: 'Zone 5: VO2 Max (90-100%)', hi: 'ज़ोन 5: VO2 मैक्स (90-100%)' }, value: `${zone5Min} - ${zone5Max}`, unit: 'bpm' },
-          { label: { en: 'Max Heart Rate (HRmax)', es: 'Frecuencia Cardíaca Máxima', fr: 'Fréquence Cardiaque Max', de: 'Maximale Herzfrequenz', ko: '최대 심박수', hi: 'अधिकतम हार्ट रेट' }, value: maxHr, unit: 'bpm' },
-          { label: { en: 'Heart Rate Reserve (HRR)', es: 'Reserva de Frecuencia Cardíaca', fr: 'Réserve Cardiaque (HRR)', de: 'Herzfrequenzreserve', ko: '심박 예비능 (HRR)', hi: 'हार्ट रेट रिजर्व' }, value: hrr, unit: 'bpm' }
+          { label: { en: 'Zone 1: Active Recovery (50-60%)', es: 'Zona 1: Recuperación Activa (50-60%)', fr: 'Zone 1: Récupération Active (50-60%)', de: 'Zone 1: Aktive Regeneration (50-60%)', ko: 'Zone 1: 적극적 회복 (50-60%)', hi: 'ज़ोन 1: सक्रिय रिकवरी (50-60%)' }, value: `${zone1Min} - ${zone1Max}`, unit: 'bpm' },
+          { label: { en: 'Zone 2: Aerobic Base (60-70%)', es: 'Zona 2: Base Aeróbica (60-70%)', fr: 'Zone 2: Base Aérobie (60-70%)', de: 'Zone 2: Aerobe Ausdauer (60-70%)', ko: 'Zone 2: 유산소 지구력 (60-70%)', hi: 'ज़ोन 2: एरोबिक बेस (60-70%)' }, value: `${zone2Min} - ${zone2Max}`, unit: 'bpm' },
+          { label: { en: 'Zone 3: Tempo Pace (70-80%)', es: 'Zona 3: Ritmo Tempo (70-80%)', fr: 'Zone 3: Tempo Aérobie (70-80%)', de: 'Zone 3: Aerobes Tempo (70-80%)', ko: 'Zone 3: 템포 페이스 (70-80%)', hi: 'ज़ोन 3: टेम्पो गति (70-80%)' }, value: `${zone3Min} - ${zone3Max}`, unit: 'bpm' },
+          { label: { en: 'Zone 4: Anaerobic Threshold (80-90%)', es: 'Zona 4: Umbral Anaeróbico (80-90%)', fr: 'Zone 4: Seuil Anaérobie (80-90%)', de: 'Zone 4: Anaerobe Schwelle (80-90%)', ko: 'Zone 4: 무산소 역치 (80-90%)', hi: 'ज़ोन 4: एनएरोबिक थ्रेशोल्ड (80-90%)' }, value: `${zone4Min} - ${zone4Max}`, unit: 'bpm' },
+          { label: { en: 'Zone 5: VO2 Max Sprint (90-100%)', es: 'Zona 5: Pico VO2 Máx (90-100%)', fr: 'Zone 5: Pic VO2 Max (90-100%)', de: 'Zone 5: VO2-Max-Sprint (90-100%)', ko: 'Zone 5: 최대 산소섭취량 (90-100%)', hi: 'ज़ोन 5: VO2 मैक्स स्प्रिंट (90-100%)' }, value: `${zone5Min} - ${zone5Max}`, unit: 'bpm' },
+          { label: { en: 'Max Heart Rate (HRmax = 220 - Age)', es: 'Frecuencia Cardíaca Máxima (FCmax)', fr: 'Fréquence Cardiaque Maximale (FCmax)', de: 'Maximale Herzfrequenz (HFmax)', ko: '예측 최대 심박수 (HRmax)', hi: 'अधिकतम हृदय गति (HRmax)' }, value: maxHr, unit: 'bpm' }
         ]
       };
     }

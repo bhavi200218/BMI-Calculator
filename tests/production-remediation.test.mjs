@@ -100,24 +100,51 @@ function runTest(name, fn) {
   });
 });
 
-// 2. Karvonen Heart Rate Calculator Tests
-['karvonen-heart-rate-calculator', 'heart-rate-zone-calculator'].forEach(slug => {
-  LOCALES.forEach(lang => {
-    runTest(`Karvonen [${slug}] [${lang}]: Worked example calculates HRR with zero BMI contamination`, () => {
-      const ex = getWorkedExample(slug, lang);
-      assert.ok(ex, 'Worked example must exist');
+// 2. Cardiovascular & Chart Worked Example Tests
+LOCALES.forEach(lang => {
+  runTest(`Karvonen [karvonen-heart-rate-calculator] [${lang}]: Worked example calculates HRR with zero BMI contamination`, () => {
+    const ex = getWorkedExample('karvonen-heart-rate-calculator', lang);
+    assert.ok(ex, 'Worked example must exist');
 
-      const allSteps = ex.steps.join(' ');
-      assert.ok(allSteps.includes('190'), `Steps must calculate Max HR = 190 bpm: ${allSteps}`);
-      assert.ok(allSteps.includes('130'), `Steps must calculate HRR = 130 bpm: ${allSteps}`);
-      assert.ok(allSteps.includes('138') && allSteps.includes('151'), `Steps must calculate Zone 2 bounds 138 - 151: ${allSteps}`);
-      assert.ok(ex.result.value.includes('138') && ex.result.value.includes('151'), `Result must show 138 – 151: ${ex.result.value}`);
+    const allSteps = ex.steps.join(' ');
+    assert.ok(allSteps.includes('190'), `Steps must calculate Max HR = 190 bpm: ${allSteps}`);
+    assert.ok(allSteps.includes('130'), `Steps must calculate HRR = 130 bpm: ${allSteps}`);
+    assert.ok(allSteps.includes('138') && allSteps.includes('151'), `Steps must calculate Zone 2 bounds 138 - 151: ${allSteps}`);
+    assert.ok(ex.result.value.includes('138') && ex.result.value.includes('151'), `Result must show 138 – 151: ${ex.result.value}`);
 
-      // Assert ZERO BMI contamination
-      assert.strictEqual(allSteps.includes('Square height'), false, 'Karvonen steps must NOT contain Square height');
-      assert.strictEqual(allSteps.includes('3.0625'), false, 'Karvonen steps must NOT contain 3.0625');
-      assert.strictEqual(ex.result.label.toLowerCase().includes('bmi'), false, 'Result label must not mention BMI');
-    });
+    // Assert ZERO BMI contamination
+    assert.strictEqual(allSteps.includes('Square height'), false, 'Karvonen steps must NOT contain Square height');
+    assert.strictEqual(allSteps.includes('3.0625'), false, 'Karvonen steps must NOT contain 3.0625');
+    assert.strictEqual(ex.result.label.toLowerCase().includes('bmi'), false, 'Result label must not mention BMI');
+  });
+
+  runTest(`Target Heart Rate Zones [heart-rate-zone-calculator] [${lang}]: Worked example calculates Fox %HRmax with zero BMI contamination`, () => {
+    const ex = getWorkedExample('heart-rate-zone-calculator', lang);
+    assert.ok(ex, 'Worked example must exist');
+
+    const allSteps = ex.steps.join(' ');
+    assert.ok(allSteps.includes('185'), `Steps must calculate Max HR = 185 bpm: ${allSteps}`);
+    assert.ok(allSteps.includes('111') && allSteps.includes('130'), `Steps must calculate Zone 2 bounds 111 - 130: ${allSteps}`);
+    assert.ok(ex.result.value.includes('111') && ex.result.value.includes('130'), `Result must show 111 – 130: ${ex.result.value}`);
+
+    // Assert ZERO BMI contamination
+    assert.strictEqual(allSteps.includes('Square height'), false, 'Heart rate steps must NOT contain Square height');
+    assert.strictEqual(allSteps.includes('3.0625'), false, 'Heart rate steps must NOT contain 3.0625');
+    assert.strictEqual(ex.result.label.toLowerCase().includes('bmi'), false, 'Result label must not mention BMI');
+  });
+
+  runTest(`BMI Chart [bmi-chart] [${lang}]: Worked example performs Matrix Lookup with zero BMI formula duplication`, () => {
+    const ex = getWorkedExample('bmi-chart', lang);
+    assert.ok(ex, 'Worked example must exist');
+
+    const allSteps = ex.steps.join(' ');
+    assert.ok(allSteps.includes('175') || allSteps.includes('70'), `Steps must reference lookup coordinates: ${allSteps}`);
+    assert.ok(allSteps.includes('22.9') || allSteps.includes('22,9'), `Steps must identify 22.9 matrix value: ${allSteps}`);
+    assert.ok(ex.result.value.includes('22.9') || ex.result.value.includes('22,9'), `Result must show 22.9 kg/m²: ${ex.result.value}`);
+
+    // Assert ZERO raw formula duplication (it's a matrix lookup, not arithmetic square height)
+    assert.strictEqual(allSteps.includes('Square height in meters'), false, 'Chart steps must NOT contain Square height in meters');
+    assert.strictEqual(allSteps.includes('3.0625'), false, 'Chart steps must NOT contain 3.0625');
   });
 });
 

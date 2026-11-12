@@ -612,6 +612,146 @@ const hydrationQuickChart = {
   ]
 };
 
+
+const bmiChartMatrixGrid = {
+  intro: {
+    en: 'Look up your standing height across the official World Health Organization baseline matrix to determine your healthy adult weight span in both metric kilograms and imperial pounds.',
+    es: 'Consulta tu estatura en la matriz de la Organización Mundial de la Salud para conocer tu rango de peso saludable en kilogramos y libras.',
+    fr: 'Consultez votre taille sur la matrice officielle de l\'Organisation Mondiale de la Santé pour connaître votre poids santé en kilogrammes et livres.',
+    de: 'Finden Sie Ihre Körpergröße in der offiziellen WHO-Referenzmatrix, um Ihren gesunden Normalgewichtsbereich in Kilogramm und Pfund abzulesen.',
+    ko: '세계보건기구(WHO) 표준 체중 매트릭스에서 신장을 확인하여 미터법(kg) 및 야드파운드법(lbs) 기준의 정상 체중 범위를 즉시 파악하세요.',
+    hi: 'आधिकारिक विश्व स्वास्थ्य संगठन (WHO) मैट्रिक्स में अपना कद देखकर मीट्रिक किलोग्राम और पाउंड में अपनी स्वस्थ वजन सीमा जानें।'
+  },
+  badge: {
+    en: 'WHO Height-to-Weight Matrix',
+    es: 'Matriz Altura-Peso OMS',
+    fr: 'Matrice Taille-Poids OMS',
+    de: 'WHO-Größen-Gewichts-Matrix',
+    ko: 'WHO 신장별 정상 체중 매트릭스',
+    hi: 'डब्ल्यूएचओ ऊंचाई-वजन मैट्रिक्स'
+  },
+  title: {
+    en: 'Adult Healthy Weight Lookup by Height (BMI 18.5 – 24.9)',
+    es: 'Consulta de Peso Saludable por Altura (IMC 18.5 – 24.9)',
+    fr: 'Poids Santé selon la Taille (IMC 18,5 – 24,9)',
+    de: 'Normalgewicht nach Körpergröße (BMI 18,5 – 24,9)',
+    ko: '신장별 표준 정상 체중 구간 (BMI 18.5 – 24.9)',
+    hi: 'कद के अनुसार स्वस्थ वजन तालिका (BMI 18.5 – 24.9)'
+  },
+  note: {
+    en: 'Calculated using standard WHO adult thresholds for men and women.',
+    es: 'Calculado según los umbrales de la OMS para hombres y mujeres adultos.',
+    fr: 'Calculé selon les seuils de l\'OMS pour hommes et femmes adultes.',
+    de: 'Berechnet nach Standard-WHO-Schwellenwerten für Erwachsene.',
+    ko: '성인 남녀 공통 WHO 표준 정상 체중 공식 적용.',
+    hi: 'वयस्क पुरुषों और महिलाओं के लिए डब्ल्यूएचओ मानक सीमाओं द्वारा गणना।'
+  },
+  thHeight: {
+    en: 'Stature',
+    es: 'Estatura',
+    fr: 'Taille',
+    de: 'Körpergröße',
+    ko: '신장',
+    hi: 'कद'
+  },
+  items: [
+    { height: '150 cm (4\'11")', kg: '41.6 – 56.0 kg', lbs: '92 – 123 lbs' },
+    { height: '155 cm (5\'1")', kg: '44.4 – 59.8 kg', lbs: '98 – 132 lbs' },
+    { height: '160 cm (5\'3")', kg: '47.4 – 63.7 kg', lbs: '104 – 140 lbs' },
+    { height: '165 cm (5\'5")', kg: '50.4 – 67.8 kg', lbs: '111 – 149 lbs' },
+    { height: '170 cm (5\'7")', kg: '53.5 – 72.0 kg', lbs: '118 – 159 lbs' },
+    { height: '175 cm (5\'9")', kg: '56.7 – 76.3 kg', lbs: '125 – 168 lbs' },
+    { height: '180 cm (5\'11")', kg: '59.9 – 80.7 kg', lbs: '132 – 178 lbs' },
+    { height: '185 cm (6\'1")', kg: '63.3 – 85.2 kg', lbs: '140 – 188 lbs' },
+    { height: '190 cm (6\'3")', kg: '66.8 – 89.9 kg', lbs: '147 – 198 lbs' },
+    { height: '195 cm (6\'5")', kg: '70.3 – 94.7 kg', lbs: '155 – 209 lbs' }
+  ]
+};
+
+const hrZonesQuickGrid = {
+  intro: {
+    en: 'Target exercise heart rate zones based on the classic Fox & Haskell formula (%HRmax = 220 - Age). These direct percentage boundaries guide warm-up, aerobic base endurance, and maximum cardiorespiratory capacity without requiring resting pulse measurement.',
+    es: 'Zonas de entrenamiento basadas en la fórmula clásica de Fox y Haskell (%FCmax = 220 - Edad). Estos umbrales directos estructuran el calentamiento, la base aeróbica y el esfuerzo máximo sin requerir medición en reposo.',
+    fr: 'Zones d\'entraînement cardiaque selon la formule de Fox & Haskell (%FCmax = 220 - Âge). Ces repères en pourcentage direct guident l\'échauffement, l\'endurance aérobie et la puissance maximale sans mesure au repos.',
+    de: 'Herzfrequenzzonen basierend auf der klassischen Fox-Formel (%HFmax = 220 - Alter). Diese Prozentbereiche steuern Aufwärmen, aerobe Ausdauer und Spitzenleistung ohne erforderliche Ruhepulsmessung.',
+    ko: '전통적인 Fox & Haskell 공식(%HRmax = 220 - 나이)에 따른 연령별 심박수 구간입니다. 안정시 심박수 측정 없이도 워밍업, 유산소 기초 지구력 및 최대 유산소 능력을 안내합니다.',
+    hi: 'पारंपरिक फॉक्स फॉर्मूला (%HRmax = 220 - आयु) पर आधारित लक्षित हृदय गति क्षेत्र। ये प्रतिशत सीमाएं बिना विश्राम पल्स के वार्म-अप, एरोबिक बेस और कार्डियो क्षमता का मार्गदर्शन करती हैं।'
+  },
+  badge: {
+    en: 'Fox & Haskell Continuum',
+    es: 'Continuo de Fox y Haskell',
+    fr: 'Modèle Fox & Haskell',
+    de: 'Fox & Haskell Modell',
+    ko: 'Fox 공식 연령별 심박표',
+    hi: 'फॉक्स एवं हास्केल मॉडल'
+  },
+  title: {
+    en: 'Age-Based Exercise Heart Rate Targets (%HRmax)',
+    es: 'Objetivos de Frecuencia Cardíaca por Edad (%FCmax)',
+    fr: 'Fréquence Cardiaque Cible par Âge (%FCmax)',
+    de: 'Herzfrequenz-Zielbereiche nach Alter (%HFmax)',
+    ko: '연령별 목표 운동 심박수 기준표 (%HRmax)',
+    hi: 'उम्र के अनुसार लक्षित हृदय गति क्षेत्र (%HRmax)'
+  },
+  note: {
+    en: 'Zone 2 (60–70%) develops aerobic mitochondrial base; Zone 4 (80–90%) targets lactate threshold.',
+    es: 'Zona 2 (60–70%) optimiza la base mitocondrial; Zona 4 (80–90%) entrena el umbral de lactato.',
+    fr: 'Zone 2 (60–70 %) développe la base aérobie ; Zone 4 (80–90 %) cible le seuil lactique.',
+    de: 'Zone 2 (60–70 %) stärkt aerobe Grundlagen; Zone 4 (80–90 %) trainiert die Laktatschwelle.',
+    ko: 'Zone 2(60–70%)는 유산소 기초를 향상시키며, Zone 4(80–90%)는 젖산 역치를 강화합니다.',
+    hi: 'ज़ोन 2 (60-70%) एरोबिक बेस बनाता है; ज़ोन 4 (80-90%) लैक्टेट थ्रेशोल्ड को लक्षित करता है।'
+  },
+  items: [
+    { age: '20 yrs', maxHr: '200 bpm', z2: '120 – 140 bpm', z4: '160 – 180 bpm' },
+    { age: '30 yrs', maxHr: '190 bpm', z2: '114 – 133 bpm', z4: '152 – 171 bpm' },
+    { age: '40 yrs', maxHr: '180 bpm', z2: '108 – 126 bpm', z4: '144 – 162 bpm' },
+    { age: '50 yrs', maxHr: '170 bpm', z2: '102 – 119 bpm', z4: '136 – 153 bpm' },
+    { age: '60 yrs', maxHr: '160 bpm', z2: '96 – 112 bpm', z4: '128 – 144 bpm' },
+    { age: '70 yrs', maxHr: '150 bpm', z2: '90 – 105 bpm', z4: '120 – 135 bpm' }
+  ]
+};
+
+const karvonenQuickGrid = {
+  intro: {
+    en: 'How baseline resting heart rate (RHR) shifts training zones using the Karvonen Heart Rate Reserve (HRR) equation at age 30 (HRmax = 190 bpm). Superior aerobic fitness manifests in lower resting pulse, expanding usable heart rate reserve.',
+    es: 'Cómo influye la frecuencia cardíaca en reposo (RHR) en las zonas de Karvonen a los 30 años (FCmax = 190 lpm). Un pulso en reposo más bajo amplía la reserva cardíaca útil.',
+    fr: 'Impact du pouls au repos sur les zones de Karvonen à 30 ans (FCmax = 190 bpm). Une excellente condition physique abaisse le pouls au repos et élargit la réserve cardiaque utile.',
+    de: 'Einfluss des Ruhepulses auf Karvonen-Trainingszonen im Alter von 30 Jahren (HFmax = 190 S/min). Ein niedrigerer Ruhepuls vergrößert die Herzfrequenzreserve (HRR).',
+    ko: '안정시 심박수(RHR)가 만 30세(최대 심박수 190 bpm) 기준 카르보넨 심박수 예비능(HRR)과 운동 구간에 미치는 영향입니다. 우수한 유산소 체력은 안정시 맥박을 낮추어 심박 예비능을 확장합니다.',
+    hi: '30 वर्ष की आयु (HRmax = 190 BPM) पर विश्राम हृदय गति (RHR) कार्वोनेन हार्ट रेट रिजर्व (HRR) और कसरत क्षेत्रों को कैसे प्रभावित करती है।'
+  },
+  badge: {
+    en: 'Karvonen HRR Impact',
+    es: 'Impacto de Reserva Karvonen',
+    fr: 'Impact de Réserve Karvonen',
+    de: 'Karvonen HRR-Wirkung',
+    ko: '카르보넨 심박 예비능 분석',
+    hi: 'कार्वोनेन HRR प्रभाव'
+  },
+  title: {
+    en: 'Resting Heart Rate Impact on Karvonen Zones (Age 30)',
+    es: 'Impacto del Pulso en Reposo en Zonas Karvonen (30 Años)',
+    fr: 'Effet du Pouls au Repos sur les Zones Karvonen (30 Ans)',
+    de: 'Einfluss des Ruhepulses auf Karvonen-Zonen (Alter 30)',
+    ko: '안정시 심박수에 따른 카르보넨 목표 구간 변화 (30세 기준)',
+    hi: 'विश्राम पल्स का कार्वोनेन ज़ोन पर प्रभाव (आयु 30 वर्ष)'
+  },
+  note: {
+    en: 'Lower resting pulse reflects higher stroke volume and autonomic parasympathetic tone.',
+    es: 'Un menor pulso en reposo refleja mayor volumen sistólico y tono parasimpático.',
+    fr: 'Un pouls au repos plus bas témoigne d\'un meilleur volume d\'éjection systolique.',
+    de: 'Ein niedriger Ruhepuls spiegelt ein größeres Schlagvolumen und gute Regeneration wider.',
+    ko: '낮은 안정시 맥박은 강력한 1회 박출량과 부교감신경 회복력을 나타냅니다.',
+    hi: 'कम विश्राम पल्स उच्च स्ट्रोक वॉल्यूम और मजबूत हृदय स्वास्थ्य को दर्शाता है।'
+  },
+  items: [
+    { rhr: '50 bpm (Athletic)', hrr: '140 bpm HRR', z2: '134 – 148 bpm', z4: '162 – 176 bpm' },
+    { rhr: '60 bpm (Fit)', hrr: '130 bpm HRR', z2: '138 – 151 bpm', z4: '164 – 177 bpm' },
+    { rhr: '70 bpm (Average)', hrr: '120 bpm HRR', z2: '142 – 154 bpm', z4: '166 – 178 bpm' },
+    { rhr: '80 bpm (Elevated)', hrr: '110 bpm HRR', z2: '146 – 157 bpm', z4: '168 – 179 bpm' }
+  ]
+};
+
 const referenceTableSubtitle = {
   en: `Official reference ranges, public health thresholds, and validated benchmarks for ${currentData.title}.`,
   es: `Rangos de referencia oficiales, umbrales de salud pública y parámetros validados para ${currentData.title}.`,
@@ -912,6 +1052,121 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
             <div class="text-[10px] text-[var(--muted-foreground)] pt-1 border-t border-[var(--border)]/50">
               {item.desc[lang] || item.desc.en}
             </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  
+  <!-- ═══════════════════ 0G. BMI CHART MATRIX QUICK REFERENCE GRID ═══════════════════ -->
+  {effectiveSlug === 'bmi-chart' && (
+    <section class="space-y-4" aria-labelledby="bmi-chart-matrix-heading">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+          {bmiChartMatrixGrid.badge[lang] || bmiChartMatrixGrid.badge.en}
+        </span>
+        <p class="text-xs text-[var(--muted-foreground)]">
+          {bmiChartMatrixGrid.note[lang] || bmiChartMatrixGrid.note.en}
+        </p>
+      </div>
+      <h3 id="bmi-chart-matrix-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+        {bmiChartMatrixGrid.title[lang] || bmiChartMatrixGrid.title.en}
+      </h3>
+      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
+        {bmiChartMatrixGrid.intro[lang] || bmiChartMatrixGrid.intro.en}
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        {bmiChartMatrixGrid.items.map((item) => (
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
+            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
+              {item.height}
+            </span>
+            <div class="text-sm font-bold font-mono text-[var(--accent)]">
+              {item.kg}
+            </div>
+            <span class="text-[11px] text-[var(--muted-foreground)] block pt-0.5 font-mono">
+              {item.lbs}
+            </span>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- ═══════════════════ 0H. HEART RATE ZONES QUICK GRID (%HRMAX) ═══════════════════ -->
+  {effectiveSlug === 'heart-rate-zone-calculator' && (
+    <section class="space-y-4" aria-labelledby="hr-zones-quick-heading">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+          {hrZonesQuickGrid.badge[lang] || hrZonesQuickGrid.badge.en}
+        </span>
+        <p class="text-xs text-[var(--muted-foreground)]">
+          {hrZonesQuickGrid.note[lang] || hrZonesQuickGrid.note.en}
+        </p>
+      </div>
+      <h3 id="hr-zones-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+        {hrZonesQuickGrid.title[lang] || hrZonesQuickGrid.title.en}
+      </h3>
+      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
+        {hrZonesQuickGrid.intro[lang] || hrZonesQuickGrid.intro.en}
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        {hrZonesQuickGrid.items.map((item) => (
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
+            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
+              {item.age}
+            </span>
+            <div class="text-[11px] text-[var(--muted-foreground)] font-mono">
+              Max: <strong class="text-[var(--foreground)]">{item.maxHr}</strong>
+            </div>
+            <div class="text-xs font-bold font-mono text-[var(--accent)]">
+              {item.z2}
+            </div>
+            <span class="text-[10px] text-[var(--muted-foreground)] block pt-0.5 font-mono">
+              Zone 4: {item.z4}
+            </span>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- ═══════════════════ 0I. KARVONEN HRR QUICK GRID ═══════════════════ -->
+  {effectiveSlug === 'karvonen-heart-rate-calculator' && (
+    <section class="space-y-4" aria-labelledby="karvonen-quick-heading">
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+          {karvonenQuickGrid.badge[lang] || karvonenQuickGrid.badge.en}
+        </span>
+        <p class="text-xs text-[var(--muted-foreground)]">
+          {karvonenQuickGrid.note[lang] || karvonenQuickGrid.note.en}
+        </p>
+      </div>
+      <h3 id="karvonen-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+        {karvonenQuickGrid.title[lang] || karvonenQuickGrid.title.en}
+      </h3>
+      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
+        {karvonenQuickGrid.intro[lang] || karvonenQuickGrid.intro.en}
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        {karvonenQuickGrid.items.map((item) => (
+          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
+            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
+              {item.rhr}
+            </span>
+            <div class="text-[11px] text-[var(--muted-foreground)] font-mono">
+              {item.hrr}
+            </div>
+            <div class="text-sm font-bold font-mono text-[var(--accent)]">
+              Zone 2: {item.z2}
+            </div>
+            <span class="text-[11px] text-[var(--muted-foreground)] block pt-0.5 font-mono">
+              Zone 4: {item.z4}
+            </span>
           </div>
         ))}
       </div>
