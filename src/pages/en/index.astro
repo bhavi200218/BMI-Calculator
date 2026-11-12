@@ -26,17 +26,17 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 					<!-- Eyebrow Tag / Pill -->
 					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						WHO & CDC STANDARDS • PRIVATE CLIENT-SIDE CALCULATION
+						WHO & CDC STANDARDS • PRIVATE CLIENT-SIDE CALCULATION<span class="sr-only">. </span>
 					</div>
 
 					<!-- Main H1 headline -->
 					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Calculate Your Body Mass Index (BMI) & Health Metrics
+						Calculate Your Body Mass Index (BMI) & Health Metrics<span class="sr-only">. </span>
 					</h1>
 
 					<!-- Supporting H2 Subtitle & Intro -->
 					<p class="text-base sm:text-xl text-[var(--accent)] font-semibold tracking-tight font-display">
-						Free, Private & Instant Evidence-Based Screening
+						Free, Private & Instant Evidence-Based Screening<span class="sr-only">. </span>
 					</p>
 					<p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed">
 						Instant Body Mass Index screening and evidence-based metabolic calculators built on published World Health Organization (WHO) and CDC public health frameworks.
@@ -53,7 +53,7 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 					].map(badge => (
 						<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
 							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
-							{badge}
+							{badge}<span class="sr-only">. </span>
 						</div>
 					))}
 				</div>

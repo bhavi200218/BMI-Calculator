@@ -51,7 +51,7 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
       hi: '5-ज़ोन हृदय गति प्रशिक्षण सातत्य'
     };
     const descs: Record<Locale, string> = {
-      en: 'Cardiovascular training intensity zones based on maximum heart rate and Karvonen heart rate reserve standards.',
+      en: 'Training zones based on maximum heart rate standards.',
       es: 'Zonas de intensidad de entrenamiento cardiovascular basadas en la frecuencia cardíaca máxima y de reserva.',
       fr: 'Zones d\'intensité d\'entraînement cardiovasculaire basées sur la fréquence cardiaque maximale et de réserve.',
       de: 'Kardiovaskuläre Trainingszonen basierend auf maximaler Herzfrequenz und Herzfrequenzreserve nach Karvonen.',
@@ -423,7 +423,7 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
       hi: 'विश्राम अवस्था में प्रमुख अंगों द्वारा ऊर्जा व्यय'
     };
     const descs: Record<Locale, string> = {
-      en: 'Proportional contribution of vital internal organs and skeletal muscle to Basal Metabolic Rate (BMR) at complete rest.',
+      en: 'How vital organs and muscle share your resting energy burn.',
       es: 'Contribución proporcional de los órganos vitales y la masa muscular al metabolismo basal en reposo completo.',
       fr: 'Contribution proportionnelle des organes vitaux et du muscle squelettique au métabolisme de base au repos complet.',
       de: 'Prozentualer Anteil lebenswichtiger Organe und der Skelettmuskulatur am Grundumsatz (BMR) in völliger Ruhe.',
@@ -588,7 +588,7 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
       hi: 'निरंतर मूल स्कोर पैमाना (0–13 अंक)'
     };
     const descs: Record<Locale, string> = {
-      en: 'Continuous 0–13 raw-score scale with simple tick marks. Simplified, unvalidated 4-factor educational score; does not use risk tiers or predict clinical diabetes probability.',
+      en: 'Simple 0–13 point scale. This educational tool does not use risk tiers or predict diabetes.',
       es: 'Escala continua de puntuación bruta de 0 a 13 con marcas graduadas. Puntuación educativa simplificada y no validada de 4 factores; no utiliza niveles de riesgo ni predice la probabilidad clínica de diabetes.',
       fr: 'Échelle continue de score brut de 0 à 13 avec repères gradués. Score éducatif simplifié et non validé à 4 facteurs ; n\'utilise aucun palier de risque et ne prédit pas le risque de diabète.',
       de: 'Kontinuierliche 0–13-Punkte-Rohwertskala mit Skalenstrichen. Vereinfachte, nicht validierte pädagogische 4-Faktoren-Punktzahl ohne Risikostufen oder klinische Risikovorhersage.',
@@ -711,7 +711,7 @@ export function getToolInfographic(slug: string, lang: Locale, toolTitle: string
       hi: 'दैनिक जलयोजन लक्ष्य सातत्य'
     };
     const descs: Record<Locale, string> = {
-      en: 'Approximate illustrative fluid baseline (35 mL/kg estimate) with optional exercise adjustment.',
+      en: 'Daily water guide based on 35 mL per kg with exercise adjustments.',
       es: 'Línea base ilustrativa de hidratación (estimación de 35 ml/kg) con ajuste opcional por ejercicio.',
       fr: 'Base hydrique illustrative (estimation à 35 ml/kg) avec ajustement optionnel pour l\'exercice.',
       de: 'Ungefähre illustrative Flüssigkeitsbasis (35 ml/kg Schätzung) mit optionalem Trainingsausgleich.',

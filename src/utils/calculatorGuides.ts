@@ -1111,11 +1111,11 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
         sectionTitle: 'Basal Metabolism & Organ Demands Guide',
         sectionSubtitle: 'Understanding the physiological metabolic floor, vital organ caloric consumption, and endocrine regulation.',
         interpretationTitle: 'Organ Energy Partitioning & The Non-Negotiable Metabolic Floor',
-        interpretationText: 'Your Basal Metabolic Rate (BMR) is the energy your body burns while resting in bed. Even when asleep, your organs work non-stop to keep you alive. Research by Gallagher shows that your vital organs use most of your resting energy: your liver burns ~20–22%, your brain uses ~19–20%, skeletal muscle burns ~20–22%, your heart and kidneys need ~15–17%, and other tissues use ~20–24%. Eating far too few calories for long periods can cause your body to slow down its resting burn over time.',
+        interpretationText: 'Your Basal Metabolic Rate (BMR) is the energy your body burns while resting in bed. Even when asleep, your organs work non-stop to keep you alive. Key organs use most of your resting energy. Your liver burns about 21%. Your brain uses about 20%. Muscles use about 21%. Heart and kidneys need about 16%. Other tissues use about 22%. Eating too few calories for long periods can cause your body to slow down its resting burn.',
         limitationsTitle: 'Predictive Equation Variances: Mifflin vs Katch-McArdle',
         limitationsText: 'Formulas like Mifflin-St Jeor use your total weight, height, age, and sex. They are accurate within 10% for most adults. However, body fat burns very few calories (~4.5 kcal/kg/day) compared to lean muscle (~13 kcal/kg/day). Because of this, muscular lifters get more accurate results from the Katch-McArdle formula, which uses measured lean muscle mass.',
         medicalNoticeTitle: 'Metabolic Health & Endocrine Screening Notice',
-        medicalNoticeText: 'Calculated BMR values reflect statistical norms for healthy euthyroid adults. Clinical conditions including hypothyroidism (lowering metabolic rate), hyperthyroidism (accelerating burn), polycystic ovary syndrome (PCOS), and severe prolonged starvation alter cellular energy expenditure. If experiencing unexplained weight fluctuations or chronic fatigue, consult a qualified physician or endocrinologist for thyroid panel (TSH, free T3/T4) and indirect calorimetry testing.'
+        medicalNoticeText: 'BMR scores reflect healthy resting averages. Health conditions like thyroid issues or low food intake can change your daily burn rate. If you have sudden weight changes or feel very tired, talk with your doctor. They can check your thyroid and metabolic health.'
       },
       es: {
         domain: 'bmr',
