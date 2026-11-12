@@ -3606,58 +3606,58 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "US Navy Anthropometric Reference",
       "title": "Body Composition & Navy Tape Method Calculator",
-      "intro": "Estimate your adipose and lean tissue distribution using the US Navy circumference model. By entering your waist, neck, height, and hip measurements, this tool calculates estimated body fat percentage, lean mass ratio, and ACE reference thresholds.",
-      "formulaTitle": "US Navy Circumference Equations (Logarithmic Tape Method)",
-      "formulaDesc": "Men: %Fat = 495 / [1.0324 - 0.19077 × log10(waist - neck in cm) + 0.15456 × log10(height in cm)] - 450 | Women: %Fat = 495 / [1.29579 - 0.35004 × log10(waist + hip - neck in cm) + 0.22100 × log10(height in cm)] - 450",
+      "intro": "Estimate your body fat with the US Navy tape method. Enter your waist, neck, height, and hip measurements. This tool calculates your body fat percentage and compares it to standard fitness ranges.",
+      "formulaTitle": "US Navy Body Fat Formulas",
+      "formulaDesc": "Men: calculates body density from waist and neck sizes compared to height. Women: calculates body density from waist, hip, and neck sizes compared to height.",
       "formulaCode": "Men: 495 / [ 1.0324 - 0.19077 log10(W - N) + 0.15456 log10(H) ] - 450 | Women: 495 / [ 1.29579 - 0.35004 log10(W + Hip - N) + 0.22100 log10(H) ] - 450",
       "tableTitle": "ACE & US Navy Body Composition Classification Matrix",
       "tableRows": [
         {
           "col1": "Essential Fat Level",
           "col2": "Men: 2% - 5% | Women: 10% - 13%",
-          "col3": "Essential adipose threshold required for hormonal and cellular health"
+          "col3": "Minimum fat needed for basic organ health"
         },
         {
           "col1": "Athletes Category",
           "col2": "Men: 6% - 13% | Women: 14% - 20%",
-          "col3": "Lean athletic range typical for endurance and strength athletes"
+          "col3": "Lean athletic range for trained sports athletes"
         },
         {
           "col1": "Fitness Level",
           "col2": "Men: 14% - 17% | Women: 21% - 24%",
-          "col3": "Optimal fitness proportion for active adults"
+          "col3": "Healthy fitness level for active adults"
         },
         {
           "col1": "Average Population",
           "col2": "Men: 18% - 24% | Women: 25% - 31%",
-          "col3": "Standard population baseline for general health"
+          "col3": "Typical healthy baseline for adults"
         },
         {
           "col1": "Obese Classification",
           "col2": "Men: ≥ 25% | Women: ≥ 32%",
-          "col3": "Elevated adiposity threshold indicating increased metabolic risk"
+          "col3": "Higher fat range with added metabolic risks"
         }
       ],
       "faqs": [
         {
-          "question": "How does the US Navy circumference method estimate body composition?",
-          "answer": "This method was developed by the Naval Health Research Center. It calculates relative adiposity using logarithmic equations comparing waist, neck, and hip circumferences against total stature."
+          "question": "How does the US Navy tape method work?",
+          "answer": "The US Navy method estimates body fat from body measurements. It compares your neck, waist, and hip size to your height. This helps estimate your body shape and fat levels."
         },
         {
-          "question": "How do tape-based estimates compare to DEXA scans?",
-          "answer": "Anthropometric calculations provide an accessible home screening benchmark within roughly 3% to 4% of dual-energy X-ray absorptiometry (DEXA), though fluid retention and measuring technique can introduce variance."
+          "question": "How accurate is the tape method compared to DEXA scans?",
+          "answer": "The tape method is accurate within 3% to 4% of a DEXA scan for most adults. It offers a quick and easy way to track changes at home without special equipment."
         },
         {
-          "question": "What is the recommended technique for taking circumference measurements?",
-          "answer": "For men: measure the neck just below the larynx and the waist horizontally at navel level. For women: measure the neck below the larynx, the narrowest point of the natural waist, and the hips at the widest protrusion of the gluteal muscles."
+          "question": "How should I measure my body with a tape measure?",
+          "answer": "Men: measure your neck just below your throat and your waist at your belly button. Women: measure your neck below your throat, your waist at its narrowest point, and your hips at the widest point."
         },
         {
-          "question": "Why evaluate circumferences rather than bathroom scale weight alone?",
-          "answer": "Standard scale weight cannot distinguish between dense skeletal muscle and adipose tissue. Evaluating abdominal circumferences isolates central adiposity, which correlates more closely with cardiovascular and metabolic health."
+          "question": "Why is body fat better to track than scale weight alone?",
+          "answer": "A scale only tells you total weight. It cannot tell muscle from fat. Checking your body fat helps you see if you are losing fat while keeping your lean muscle."
         },
         {
-          "question": "What are the recommended health categories defined by the American Council on Exercise (ACE)?",
-          "answer": "ACE guidelines identify 14%–17% for men and 21%–24% for women as a typical fitness range. Acceptable general health spans 18%–24% for men and 25%–31% for women, while essential biological minimums are 2%–5% and 10%–13% respectively."
+          "question": "What are healthy body fat ranges for men and women?",
+          "answer": "For men, a fit range is 14% to 17%, and an average range is 18% to 24%. For women, a fit range is 21% to 24%, and an average range is 25% to 31%. Essential fat is 2% to 5% for men and 10% to 13% for women."
         }
       ]
     },
