@@ -683,23 +683,21 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
 
   <!-- ═══════════════════ 0. WATER INTAKE QUICK REFERENCE CHART (SPECIFIC TO HYDRATION) ═══════════════════ -->
   {effectiveSlug === 'water-intake-calculator' && (
-    <div class="space-y-4">
+    <section class="space-y-4" aria-labelledby="water-intake-quick-heading">
       <div class="flex items-center justify-between gap-3 flex-wrap">
-        <div>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-            {hydrationQuickChart.badge[lang] || hydrationQuickChart.badge.en}
-          </span>
-          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
-            {hydrationQuickChart.title[lang] || hydrationQuickChart.title.en}
-          </h3>
-        </div>
-        <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full mt-1.5">
-          {hydrationQuickChart.intro[lang] || hydrationQuickChart.intro.en}
-        </p>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+          {hydrationQuickChart.badge[lang] || hydrationQuickChart.badge.en}
+        </span>
         <p class="text-xs text-[var(--muted-foreground)]">
           {hydrationQuickChart.note[lang] || hydrationQuickChart.note.en}
         </p>
       </div>
+      <h3 id="water-intake-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+        {hydrationQuickChart.title[lang] || hydrationQuickChart.title.en}
+      </h3>
+      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
+        {hydrationQuickChart.intro[lang] || hydrationQuickChart.intro.en}
+      </p>
 
       <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -720,28 +718,26 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )}
 
   <!-- ═══════════════════ 0C. CALORIE DEFICIT QUICK REFERENCE GRID ═══════════════════ -->
   {effectiveSlug === 'calorie-calculator' && (
-    <div class="space-y-4">
+    <section class="space-y-4" aria-labelledby="calorie-deficit-quick-heading">
       <div class="flex items-center justify-between gap-3 flex-wrap">
-        <div>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-            {calorieDeficitQuickGrid.badge[lang] || calorieDeficitQuickGrid.badge.en}
-          </span>
-          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
-            {calorieDeficitQuickGrid.title[lang] || calorieDeficitQuickGrid.title.en}
-          </h3>
-        </div>
-        <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full mt-1.5">
-          {calorieDeficitQuickGrid.intro[lang] || calorieDeficitQuickGrid.intro.en}
-        </p>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+          {calorieDeficitQuickGrid.badge[lang] || calorieDeficitQuickGrid.badge.en}
+        </span>
         <p class="text-xs text-[var(--muted-foreground)]">
           {calorieDeficitQuickGrid.note[lang] || calorieDeficitQuickGrid.note.en}
         </p>
       </div>
+      <h3 id="calorie-deficit-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+        {calorieDeficitQuickGrid.title[lang] || calorieDeficitQuickGrid.title.en}
+      </h3>
+      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
+        {calorieDeficitQuickGrid.intro[lang] || calorieDeficitQuickGrid.intro.en}
+      </p>
 
       <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -762,28 +758,26 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )}
 
   <!-- ═══════════════════ 0B. PROTEIN INTAKE QUICK REFERENCE GRID ═══════════════════ -->
   {effectiveSlug === 'protein-intake-calculator' && (
-    <div class="space-y-4">
+    <section class="space-y-4" aria-labelledby="protein-quick-heading">
       <div class="flex items-center justify-between gap-3 flex-wrap">
-        <div>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-            {proteinQuickChart.badge[lang] || proteinQuickChart.badge.en}
-          </span>
-          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
-            {proteinQuickChart.title[lang] || proteinQuickChart.title.en}
-          </h3>
-        </div>
-        <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full mt-1.5">
-          {proteinQuickChart.intro[lang] || proteinQuickChart.intro.en}
-        </p>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+          {proteinQuickChart.badge[lang] || proteinQuickChart.badge.en}
+        </span>
         <p class="text-xs text-[var(--muted-foreground)]">
           {proteinQuickChart.note[lang] || proteinQuickChart.note.en}
         </p>
       </div>
+      <h3 id="protein-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+        {proteinQuickChart.title[lang] || proteinQuickChart.title.en}
+      </h3>
+      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
+        {proteinQuickChart.intro[lang] || proteinQuickChart.intro.en}
+      </p>
 
       <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -804,28 +798,26 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )}
 
   <!-- ═══════════════════ 0D. IDEAL WEIGHT QUICK REFERENCE GRID ═══════════════════ -->
   {effectiveSlug === 'ideal-weight-calculator' && (
-    <div class="space-y-4">
+    <section class="space-y-4" aria-labelledby="ideal-weight-quick-heading">
       <div class="flex items-center justify-between gap-3 flex-wrap">
-        <div>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-            {idealWeightQuickGrid.badge[lang] || idealWeightQuickGrid.badge.en}
-          </span>
-          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
-            {idealWeightQuickGrid.title[lang] || idealWeightQuickGrid.title.en}
-          </h3>
-        </div>
-        <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full mt-1.5">
-          {idealWeightQuickGrid.intro[lang] || idealWeightQuickGrid.intro.en}
-        </p>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+          {idealWeightQuickGrid.badge[lang] || idealWeightQuickGrid.badge.en}
+        </span>
         <p class="text-xs text-[var(--muted-foreground)]">
           {idealWeightQuickGrid.note[lang] || idealWeightQuickGrid.note.en}
         </p>
       </div>
+      <h3 id="ideal-weight-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+        {idealWeightQuickGrid.title[lang] || idealWeightQuickGrid.title.en}
+      </h3>
+      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
+        {idealWeightQuickGrid.intro[lang] || idealWeightQuickGrid.intro.en}
+      </p>
 
       <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -846,28 +838,26 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )}
 
   <!-- ═══════════════════ 0E. LEAN BODY MASS QUICK REFERENCE GRID ═══════════════════ -->
   {effectiveSlug === 'lean-body-mass-calculator' && (
-    <div class="space-y-4">
+    <section class="space-y-4" aria-labelledby="lean-body-mass-quick-heading">
       <div class="flex items-center justify-between gap-3 flex-wrap">
-        <div>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-            {lbmQuickGrid.badge[lang] || lbmQuickGrid.badge.en}
-          </span>
-          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
-            {lbmQuickGrid.title[lang] || lbmQuickGrid.title.en}
-          </h3>
-        </div>
-        <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full mt-1.5">
-          {lbmQuickGrid.intro[lang] || lbmQuickGrid.intro.en}
-        </p>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+          {lbmQuickGrid.badge[lang] || lbmQuickGrid.badge.en}
+        </span>
         <p class="text-xs text-[var(--muted-foreground)]">
           {lbmQuickGrid.note[lang] || lbmQuickGrid.note.en}
         </p>
       </div>
+      <h3 id="lean-body-mass-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+        {lbmQuickGrid.title[lang] || lbmQuickGrid.title.en}
+      </h3>
+      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
+        {lbmQuickGrid.intro[lang] || lbmQuickGrid.intro.en}
+      </p>
 
       <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -885,28 +875,26 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )}
 
   <!-- ═══════════════════ 0F. BODY FAT PERCENTAGE QUICK REFERENCE GRID ═══════════════════ -->
   {effectiveSlug === 'body-fat-calculator' && (
-    <div class="space-y-4">
+    <section class="space-y-4" aria-labelledby="body-fat-quick-heading">
       <div class="flex items-center justify-between gap-3 flex-wrap">
-        <div>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-            {bodyFatQuickGrid.badge[lang] || bodyFatQuickGrid.badge.en}
-          </span>
-          <h3 class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide mt-1">
-            {bodyFatQuickGrid.title[lang] || bodyFatQuickGrid.title.en}
-          </h3>
-        </div>
-        <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full mt-1.5">
-          {bodyFatQuickGrid.intro[lang] || bodyFatQuickGrid.intro.en}
-        </p>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
+          {bodyFatQuickGrid.badge[lang] || bodyFatQuickGrid.badge.en}
+        </span>
         <p class="text-xs text-[var(--muted-foreground)]">
           {bodyFatQuickGrid.note[lang] || bodyFatQuickGrid.note.en}
         </p>
       </div>
+      <h3 id="body-fat-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
+        {bodyFatQuickGrid.title[lang] || bodyFatQuickGrid.title.en}
+      </h3>
+      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
+        {bodyFatQuickGrid.intro[lang] || bodyFatQuickGrid.intro.en}
+      </p>
 
       <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -927,7 +915,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )}
 
   <!-- ═══════════════════ 1. IMMEDIATE VISIBLE FLOW: WHO REFERENCE TABLE ═══════════════════ -->
@@ -984,7 +972,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           <title>{currentData.title} — {infographic.titleSuffix}</title>
           <desc>{infographic.desc}</desc>
           <!-- Continuous 0–13 Raw Score Scale Track (Single Uniform Neutral Color, No Risk Bands) -->
-          <rect x="50" y="38" width="700" height="8" rx="4" fill="#38bdf8" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1.5"/>
+          <line x1="50" y1="42" x2="750" y2="42" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" stroke-opacity="0.35"/>
           <!-- Scale End Reference Points -->
           <text x="50" y="24" text-anchor="start" fill="var(--muted-foreground)" font-size="11" font-weight="700" font-family="sans-serif">{lang === 'de' ? '0 Punkte (Min)' : lang === 'es' ? '0 Puntos (Mín)' : lang === 'fr' ? '0 Points (Min)' : lang === 'ko' ? '0점 (최소)' : lang === 'hi' ? '0 अंक (न्यूनतम)' : '0 Points (Min)'}</text>
           <text x="750" y="24" text-anchor="end" fill="var(--muted-foreground)" font-size="11" font-weight="700" font-family="sans-serif">{lang === 'de' ? '13 Punkte (Max)' : lang === 'es' ? '13 Puntos (Máx)' : lang === 'fr' ? '13 Points (Max)' : lang === 'ko' ? '13점 (최대)' : lang === 'hi' ? '13 अंक (अधिकतम)' : '13 Points (Max)'}</text>

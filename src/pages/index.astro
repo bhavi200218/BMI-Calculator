@@ -4,7 +4,6 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import HomepageHubWrapper from '../components/HomepageHubWrapper.astro';
 import LatestArticles from '../components/LatestArticles.astro';
-import HealthContent from '../components/HealthContent.astro';
 import EmbedWidgetBox from '../components/EmbedWidgetBox.astro';
 import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 ---
@@ -73,8 +72,8 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 						</span>
 					</div>
 					<h2 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-								All Health & Fitness Calculators
-							</h2>
+						All Health & Fitness Calculators
+					</h2>
 					<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium max-w-3xl leading-relaxed">
 						Explore our complete suite of 23 evidence-based health, body composition, and metabolic screening calculators. Built in accordance with published World Health Organization (WHO), CDC, and National Institutes of Health (NIH) physiological frameworks, every tool operates 100% client-side for complete privacy.
 					</p>
@@ -98,19 +97,19 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 				<div class="space-y-3 text-center sm:text-left max-w-3xl">
 					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Transparent Calculator Features</p>
 					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
-						Clarity for your health goals
+						Scientific Accuracy & Data Privacy
 					</h2>
 					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-						Whether you are tracking progress, planning nutrition, or reviewing fitness baselines, Real BMI gives you fast, practical estimates grounded in published guidelines.
+						Real BMI delivers verified physiological calculations grounded in peer-reviewed clinical research, public health standards, and a strict client-side data privacy architecture.
 					</p>
 				</div>
 
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 					{[
-						{ title: 'Formula-based estimates', description: 'Get clear baselines for BMI, BMR, TDEE, and ideal weight using published mathematical equations.' },
-						{ title: 'Browser privacy first', description: 'All calculations stay on your device — no accounts, sign-ups, or server storage required.' },
-						{ title: 'Built on public standards', description: 'Results are presented alongside WHO and CDC public reference ranges for context.' },
-						{ title: 'Useful for daily planning', description: 'Explore fitness metrics, nutrition estimates, and body composition references with clear calculation methods.' },
+						{ title: 'Algorithmic Transparency', description: 'Every formula is implemented directly from published peer-reviewed literature, including Mifflin-St Jeor, Devine, Mosteller, and Karvonen.' },
+						{ title: 'Zero Biometric Telemetry', description: 'Your physiological data never leaves your device. All calculations execute in local browser memory with zero tracking cookies or cloud storage.' },
+						{ title: 'Multidimensional Analysis', description: 'Body mass index is interpreted alongside waist-to-hip ratio, body fat percentage, and basal metabolic rate for comprehensive health context.' },
+						{ title: 'Validated Reference Norms', description: 'Calculations are presented with official classification cutoffs established by the WHO, CDC, American Heart Association, and NIH.' },
 					].map(item => (
 						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-3 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-sm hover:-translate-y-0.5">
 							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
@@ -140,10 +139,142 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  7. ❓ REFERENCE STANDARDS & FAQ  ═══════════════════ -->
+		<!-- ═══════════════════  7. ❓ GLOBAL RESEARCH FRAMEWORK & FAQ  ═══════════════════ -->
 		<section id="faq-standards" class="px-4 md:px-6 py-10 md:py-14 border-b border-[var(--border)]/40 scroll-mt-20">
 			<div class="max-w-7xl mx-auto space-y-12">
-				<HealthContent lang="en" />
+				
+				<!-- Global Health Research Pillars -->
+				<div class="space-y-6">
+					<div class="space-y-2 max-w-3xl">
+						<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+							Methodological Foundation
+						</span>
+						<h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+							Anthropometric Science & Metabolic Frameworks
+						</h2>
+						<p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed">
+							Explore the clinical rationales, physiological equations, and population-level health standards that govern accurate body metric interpretation.
+						</p>
+					</div>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
+								1. Screening Metrics vs. Clinical Diagnosis
+							</h3>
+							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+								Body Mass Index (BMI) is an epidemiological screening index conceived by Adolphe Quetelet. While highly correlated with adipose mass across broad demographic cohorts, BMI does not directly quantify visceral fat or distinguish skeletal muscle hypertrophy from adiposity. Consequently, health authorities advise pairing BMI with waist circumference or hydrostatic/DEXA body composition assessments.
+							</p>
+						</div>
+
+						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
+								2. Metabolic Energy & Basal Expenditure
+							</h3>
+							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+								Basal Metabolic Rate (BMR) quantifies the thermal energy required to sustain vegetative cellular function at rest in a thermoneutral environment. The Mifflin-St Jeor equation provides the highest clinical accuracy for modern non-obese and obese populations, serving as the mathematical cornerstone for estimating Total Daily Energy Expenditure (TDEE).
+							</p>
+						</div>
+
+						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
+								3. Cardiovascular Autonomic Conditioning
+							</h3>
+							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+								Individualized cardiovascular conditioning relies on Heart Rate Reserve (HRR) computation via the Karvonen formula rather than crude peak-heart-rate estimations. Accounting for resting autonomic tone enables calibrated aerobic, anaerobic, and VO2-max training zones that enhance endurance while reducing overtraining risk.
+							</p>
+						</div>
+
+						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
+								4. Ethnic Variations in Cardiometabolic Risk
+							</h3>
+							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+								Standard international WHO BMI cutoffs frequently underestimate visceral adiposity and cardiovascular disease susceptibility in individuals of Asian and South Asian descent. Real BMI provides population-adjusted thresholds where overweight classification begins at 23 kg/m² and obesity at 25 kg/m² in alignment with WHO Asian consultation standards.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Historical Evolution & Biometric Matrix -->
+				<div class="space-y-6 pt-4 border-t border-[var(--border)]/40">
+					<div class="space-y-2 max-w-3xl">
+						<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+							Clinical Context
+						</span>
+						<h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+							The Evolution of Body Composition & Anthropometry
+						</h2>
+						<p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed">
+							Understanding how modern biometric indices evolved from 19th-century statistical sociology into contemporary physiological medicine.
+						</p>
+					</div>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
+								From Quetelet's Social Physics to Ancel Keys
+							</h3>
+							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+								In 1832, Belgian mathematician Adolphe Quetelet introduced the weight-to-height-squared ratio to identify the characteristics of the average man. Over a century later in 1972, physiologist Ancel Keys validated Quetelet's index across 7,400 men across multiple continents, demonstrating that weight divided by height squared correlated most closely with body fat percentage while remaining independent of stature. Keys formally named this parameter the Body Mass Index (BMI).
+							</p>
+						</div>
+
+						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
+							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
+								Beyond Height and Weight: Modern 3D & Metabolic Metrics
+							</h3>
+							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+								Today, sports scientists and clinical practitioners acknowledge that weight and height alone cannot distinguish adipose tissue from visceral fat, bone mineral density, or skeletal muscle volume. By integrating waist-to-hip ratio, Jackson-Pollock skinfold equations, US Navy circumference models, and digital 3D optical scanning, Real BMI bridges historical population metrics with modern body composition science.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Dedicated Global Hub FAQ -->
+				<div class="space-y-6 pt-4 border-t border-[var(--border)]/40">
+					<div class="space-y-2 max-w-3xl">
+						<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+							Platform Inquiries
+						</span>
+						<h2 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+							Frequently Asked Questions
+						</h2>
+						<p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed">
+							Essential answers regarding calculator precision, algorithmic formulas, and data privacy safeguards.
+						</p>
+					</div>
+
+					<div class="space-y-4">
+						<div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2">
+							<h3 class="text-base font-display font-bold uppercase text-[var(--foreground)]">
+								How do the 23 calculators on Real BMI complement each other?
+							</h3>
+							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+								No single anthropometric index captures the totality of physical wellness. Our suite connects foundational screening tools (BMI, 3D BMI) with functional metabolic equations (BMR, TDEE, Calorie Deficit) and specialized performance metrics (Heart Rate Zones, 1RM, Body Surface Area) to provide a complete, interconnected physiological profile.
+							</p>
+						</div>
+
+						<div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2">
+							<h3 class="text-base font-display font-bold uppercase text-[var(--foreground)]">
+								Why does Real BMI process all calculations client-side?
+							</h3>
+							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+								Biometric measurements such as height, weight, body fat, and age constitute personal health information. By executing all mathematical formulas directly in your web browser via client-side JavaScript, Real BMI ensures your metrics never travel over external networks or get logged in remote databases.
+							</p>
+						</div>
+
+						<div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2">
+							<h3 class="text-base font-display font-bold uppercase text-[var(--foreground)]">
+								How should these metrics be used alongside medical care?
+							</h3>
+							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+								Real BMI calculators serve as informative screening guides and baseline educational tools. They do not replace diagnostic examinations, blood panels, or personalized therapeutic advice from licensed healthcare professionals. Always discuss unexpected or extreme metric shifts with your primary care physician.
+							</p>
+						</div>
+					</div>
+				</div>
+
 				<EmbedWidgetBox lang="en" />
 			</div>
 		</section>

@@ -301,7 +301,7 @@ const softwareAppSchema = {
   "applicationCategory": "HealthApplication",
   "browserRequirements": "Requires JavaScript. Requires HTML5.",
   "description": softwareAppDescriptions[currentLocale || 'en'] || softwareAppDescriptions['en'],
-  "url": normalizedPath === '/bmi-calculator/' ? canonicalURL : `https://realbmicalculator.com/${currentLocale || 'en'}/`,
+  "url": normalizedPath === '/bmi-calculator/' ? canonicalURL : ((currentLocale === 'en' || !currentLocale) && normalizedPath === '/' ? 'https://realbmicalculator.com/' : `https://realbmicalculator.com/${currentLocale || 'en'}/`),
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -585,7 +585,7 @@ const howToSchema = {
 				) : null
 			) : (
 				<>
-					<link rel="alternate" hreflang="en" href={`https://realbmicalculator.com/en${(normalizedPath === '/terms/' || normalizedPath === '/terms-of-service/') ? '/terms-conditions/' : normalizedPath}`} />
+					<link rel="alternate" hreflang="en" href={normalizedPath === '/' ? 'https://realbmicalculator.com/' : `https://realbmicalculator.com/en${(normalizedPath === '/terms/' || normalizedPath === '/terms-of-service/') ? '/terms-conditions/' : normalizedPath}`} />
 					<link rel="alternate" hreflang="es" href={`https://realbmicalculator.com/es${(normalizedPath === '/terms/' || normalizedPath === '/terms-of-service/') ? '/terms-conditions/' : normalizedPath}`} />
 					<link rel="alternate" hreflang="fr" href={`https://realbmicalculator.com/fr${(normalizedPath === '/terms/' || normalizedPath === '/terms-of-service/') ? '/terms-conditions/' : normalizedPath}`} />
 					<link rel="alternate" hreflang="de" href={`https://realbmicalculator.com/de${(normalizedPath === '/terms/' || normalizedPath === '/terms-of-service/') ? '/terms-conditions/' : normalizedPath}`} />
