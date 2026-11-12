@@ -9,7 +9,7 @@ test('UI & Reference Table Repetition Regression Tests', async (t) => {
 
   await t.test('ToolSEOContent: Exactly one reference table rendered (no duplicate md:hidden card list)', () => {
     assert.strictEqual(toolSeoContent.includes('md:hidden'), false, 'Should not contain duplicate md:hidden card list in DOM');
-    assert.strictEqual(toolSeoContent.includes('<table class="w-full text-left border-collapse text-sm min-w-[500px]">'), true, 'Should contain responsive table');
+    assert.strictEqual(toolSeoContent.includes('<table class="w-full text-left border-collapse text-sm min-w-[30rem]">'), true, 'Should contain responsive table');
     const tableOccurrences = (toolSeoContent.match(/<table/g) || []).length;
     assert.strictEqual(tableOccurrences, 1, 'Exactly one <table> should exist in ToolSEOContent');
   });
