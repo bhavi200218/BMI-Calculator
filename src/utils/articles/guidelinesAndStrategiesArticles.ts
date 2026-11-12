@@ -1027,7 +1027,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "A scientific guide to sustainable weight management. Learn how to calculate a safe caloric deficit, optimize daily protein for lean muscle retention, and prevent weight regain.",
+      "en": "A practical guide to healthy weight management. Learn how to set safe calorie targets, protect muscle, and keep weight off.",
       "es": "Guía científica para el control de peso sostenible. Aprenda a calcular un déficit calórico seguro, optimizar la ingesta de proteínas y evitar el efecto rebote.",
       "fr": "Guide scientifique pour une gestion durable du poids. Apprenez à calculer un déficit calorique modéré, à optimiser les protéines et à préserver la masse musculaire.",
       "de": "Ein wissenschaftlicher Leitfaden für nachhaltiges Gewichtsmanagement. Erfahren Sie, wie Sie ein sicheres Kaloriendefizit berechnen und Muskelmasse erhalten.",
@@ -1875,7 +1875,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "fr": "IMC & Poids"
   },
     "description": {
-      "en": "Learn the biology of age-related muscle loss (sarcopenia). Discover why older adults require higher protein intake thresholds, the role of resistance exercise, and strategies for physical autonomy.",
+      "en": "Learn how to protect muscle mass as you age. Discover healthy protein habits and simple strength exercises for lifelong vitality.",
       "hi": "उम्र के साथ मांसपेशियों में होने वाले नुकसान (सार्कोपेनिया) का जीवविज्ञान। जानें कि बुजुर्गों को अधिक प्रोटीन की आवश्यकता क्यों होती है, शक्ति व्यायाम की भूमिका और स्वतंत्र गतिशीलता के उपाय।",
       "ko": "연령 증가에 따른 근감소증(Sarcopenia)의 생리학적 기전. 노년층을 위한 고단백 영양 섭취 기준(끼니당 류신 3g), 필수 저항성 근력 운동 및 낙상 예방 지침을 설명합니다.",
       "de": "Die Biologie des altersbedingten Muskelabbaus (Sarkopenie): Warum Senioren mehr Protein benötigen und wie gezieltes Krafttraining die Selbstständigkeit sichert.",
@@ -1982,7 +1982,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "fr": "Fitness & Performance"
   },
     "description": {
-      "en": "Understand the physiological mechanics of systolic and diastolic blood pressure. Learn how excess body weight strains the vascular endothelium, the power of the DASH sodium-potassium ratio, and non-pharmacological reduction strategies.",
+      "en": "Understand how body weight affects your blood pressure. Learn practical lifestyle habits and nutrition tips for cardiovascular health.",
       "hi": "सिस्टोलिक और डायस्टोलिक रक्तचाप के शारीरिक सिद्धांत। जानें कि अतिरिक्त वजन धमनियों पर कैसे दबाव डालता है, DASH आहार में सोडियम-पोटेशियम अनुपात और बीपी नियंत्रित करने के प्राकृतिक उपाय।",
       "ko": "수축기 및 이완기 혈압의 생리학적 메커니즘. 과도한 체중이 혈관 내피세포에 미치는 압력, DASH 식단의 나트륨-칼륨 비율 및 약물 없이 혈압을 낮추는 생활 습관을 안내합니다.",
       "de": "Verstehen Sie die Mechanik des systolischen und diastolischen Blutdrucks: Gefäßwiderstand, der Einfluss von Übergewicht und die blutdrucksenkende Wirkung der DASH-Ernährung.",

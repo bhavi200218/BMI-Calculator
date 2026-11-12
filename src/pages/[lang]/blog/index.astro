@@ -235,7 +235,7 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
           >
             {topic.label[lang] || topic.label.en}
             {idx === 0 ? ` (${articlesList.length})` : ''}
-          </button>
+          </button><span class="sr-only">. </span>
         ))}
       </div>
 

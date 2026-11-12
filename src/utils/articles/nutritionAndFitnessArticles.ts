@@ -22,7 +22,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Evidence-based guide to daily dietary protein intake. Learn why the 0.8 g/kg RDA is only a minimum floor, the leucine threshold for muscle protein synthesis, and DIAAS protein quality scores.",
+      "en": "Evidence-based guide to daily protein intake. Learn healthy targets for muscle health, daily recovery, and active fitness goals.",
       "hi": "दैनिक प्रोटीन की मात्रा का वैज्ञानिक विश्लेषण। जानें कि 0.8 g/kg केवल न्यूनतम सीमा क्यों है, ल्यूसीन ट्रिगर और मांसपेशियों के लिए उच्च गुणवत्ता वाले प्रोटीन स्रोत।",
       "ko": "영양학 연구 기반 일일 단백질 섭취 가이드. 0.8g/kg 권장량이 단순 결핍 예방선인 이유, 류신(Leucine) 임계값과 DIAAS 단백질 품질 평가 지표를 상세 안내합니다.",
       "de": "Evidenzbasierter Leitfaden zum täglichen Proteinbedarf: Warum die RDA von 0,8 g/kg zu niedrig ist, die Leucin-Schwelle und DIAAS-Qualitätswerte.",
@@ -343,7 +343,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Evidence-based hydration science guide. Calculate daily water intake using the 30-35 mL/kg rule, decode the 8-cup myth, and use the validated Armstrong urine color scale.",
+      "en": "A simple guide to healthy daily hydration. Calculate your water target by body weight and learn easy tips to stay hydrated.",
       "hi": "प्रमाण-आधारित जलयोजन (हाइड्रेशन) विज्ञान गाइड। 30-35 मिली/किग्रा सूत्र, 8 गिलास पानी के मिथक का सच और आर्मस्ट्रांग यूरिन कलर चार्ट द्वारा जलयोजन जांच।",
       "ko": "수분 섭취 과학 가이드. 체중 kg당 30~35mL 공식, 잘못된 '하루 8잔' 미신 분석 및 Armstrong 소변 색상 척도를 안내합니다.",
       "de": "Wissenschaftlicher Leitfaden zum Wasserbedarf: Die 30-35 ml/kg Regel, der 8-Gläser-Mythos und die Armstrong-Farbskala.",
@@ -492,7 +492,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
     "fr": "Composition Corporelle"
   },
     "description": {
-      "en": "Reference guide to Body Surface Area (BSA). Compare Mosteller and Du Bois equations, understand why chemotherapy and GFR are indexed to BSA, and see step-by-step calculations.",
+      "en": "Reference guide to Body Surface Area (BSA). Compare standard formulas and see clear step-by-step examples.",
       "hi": "बॉडी सरफेस एरिया (BSA) का वैज्ञानिक महत्व। मोस्टेलर और डु बोइस सूत्रों की तुलना, कीमोथेरेपी खुराक और किडनी जीएफआर (GFR) में बीएसए की भूमिका।",
       "ko": "체표면적(BSA)의 생리학적 중요성. Mosteller 및 Du Bois 공식의 산출 방식, 항암 화학요법 투약량 결정 및 신장 사구체여과율(GFR) 표준화 원리를 설명합니다.",
       "de": "Referenzleitfaden zur Körperoberfläche (BSA): Warum Chemotherapien und Nierenwerte nach Mosteller auf m² normiert werden.",

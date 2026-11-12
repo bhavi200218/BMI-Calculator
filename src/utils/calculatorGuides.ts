@@ -183,6 +183,55 @@ export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale, 
   ].includes(slug);
 
   const items: VariableGuideItem[] = inputs.map(input => {
+    if (slug === 'bmi-chart') {
+      const chartVarDefs: Record<string, Record<Locale, { name: string; desc: string }>> = {
+        weight: {
+          en: { name: 'Measured Body Weight', desc: 'Locate this measurement column along the horizontal weight axis of the lookup table. Metric kilograms or imperial pounds.' },
+          es: { name: 'Peso Corporal Medido', desc: 'Ubica esta columna de medición a lo largo del eje horizontal de peso de la tabla. Kilogramos o libras.' },
+          fr: { name: 'Poids Corporel Mesuré', desc: 'Repérez cette colonne de mesure sur l\'axe horizontal de poids du tableau. Kilogrammes ou livres.' },
+          de: { name: 'Gemessenes Körpergewicht', desc: 'Finden Sie diese Messspalte entlang der horizontalen Gewichtsachse der Referenztabelle. Kilogramm oder Pfund.' },
+          ko: { name: '측정 체중 열', desc: '차트 가로축에서 본인의 측정 체중 열을 탐색합니다. 미터법(kg) 또는 야드파운드법(lbs).' },
+          hi: { name: 'मापा गया शारीरिक वजन', desc: 'तालिका की क्षैतिज वजन धुरी पर इस माप कॉलम का पता लगाएं। मीट्रिक किलोग्राम या पाउंड।' }
+        },
+        height: {
+          en: { name: 'Standing Stature (Height)', desc: 'Locate this measurement row along the vertical stature axis of the lookup matrix. Metric centimeters or imperial feet/inches.' },
+          es: { name: 'Estatura de Pie (Altura)', desc: 'Ubica esta fila de medición a lo largo del eje vertical de estatura de la matriz. Centímetros o pies/pulgadas.' },
+          fr: { name: 'Taille Debout (Stature)', desc: 'Repérez cette ligne de mesure le long de l\'axe vertical de taille de la matrice. Centimètres ou pieds/pouces.' },
+          de: { name: 'Körpergröße im Stehen', desc: 'Finden Sie diese Messzeile entlang der vertikalen Größenachse der Referenzmatrix. Zentimeter oder Fuß/Zoll.' },
+          ko: { name: '측정 신장 행', desc: '차트 세로축에서 본인의 측정 신장 행을 확인합니다. 미터법(cm) 또는 피트/인치.' },
+          hi: { name: 'खड़े होने पर कद (ऊंचाई)', desc: 'मैट्रिक्स की लंबवत कद धुरी पर इस माप पंक्ति का पता लगाएं। मीट्रिक सेंटीमीटर या फीट/इंच।' }
+        },
+        age: {
+          en: { name: 'Chronological Age Bracket', desc: 'Guides demographic context across age-specific charts. Standard adult cutoff grids apply 20+, whereas seniors 65+ often reference higher protective ranges.' },
+          es: { name: 'Grupo de Edad Cronológica', desc: 'Aporta contexto demográfico en tablas por edad. Los cortes estándar aplican a partir de 20 años; mayores de 65 años suelen usar rangos protectores más altos.' },
+          fr: { name: 'Tranche d\'Âge Chronologique', desc: 'Fournit le contexte démographique sur les grilles par âge. Les seuils adultes s\'appliquent dès 20 ans ; les seniors (65+) bénéficient de tranches légèrement supérieures.' },
+          de: { name: 'Altersgruppe', desc: 'Dient der demografischen Einordnung in altersspezifischen Tabellen. Standardgrenzwerte gelten ab 20 Jahren; für Senioren (65+) gelten oft höhere Schutzbereiche.' },
+          ko: { name: '연령대 기준선', desc: '연령별 비교 차트에서 인구통계학적 참고 기준을 제공합니다. 표준 성인 표는 만 20세 이상에 적용되며, 65세 이상 노년층은 완화된 기준을 참조합니다.' },
+          hi: { name: 'आयु वर्ग संदर्भ', desc: 'आयु-विशिष्ट चार्ट में जनसांख्यिकीय संदर्भ प्रदान करता है। मानक वयस्क कटऑफ 20+ वर्ष पर लागू होते हैं, जबकि बुजुर्ग (65+) थोड़े अधिक सुरक्षात्मक रेंज का उपयोग करते हैं।' }
+        },
+        gender: {
+          en: { name: 'Biological Sex Reference', desc: 'Provides biological context for body composition and adipose distribution. Standard WHO height-weight lookup grids apply uniformly across adult sexes.' },
+          es: { name: 'Referencia de Sexo Biológico', desc: 'Aporta contexto biológico sobre composición y distribución adiposa. Las cuadrículas de la OMS aplican de manera uniforme para ambos sexos adultos.' },
+          fr: { name: 'Sexe Biologique de Référence', desc: 'Fournit le contexte biologique de répartition des graisses. Les grilles de l\'OMS s\'appliquent de manière identique pour les deux sexes adultes.' },
+          de: { name: 'Biologisches Geschlecht', desc: 'Liefert biologischen Kontext zur Fettverteilung. Die Standard-Referenzraster der WHO gelten für erwachsene Männer und Frauen gleichermaßen.' },
+          ko: { name: '생물학적 성별 구분', desc: '체지방 분포 특성에 대한 생물학적 맥락을 제공합니다. WHO 표준 성인 신장-체중 조회 격자는 남녀 공통으로 적용됩니다.' },
+          hi: { name: 'जैविक लिंग संदर्भ', desc: 'शारीरिक संरचना और वसा वितरण के लिए जैविक संदर्भ प्रदान करता है। डब्ल्यूएचओ मानक वयस्क लुकअप ग्रिड सभी वयस्कों पर समान रूप से लागू होते हैं।' }
+        }
+      };
+
+      const def = chartVarDefs[input.id]?.[lang] || chartVarDefs[input.id]?.en;
+      if (def) {
+        const stdDef = VARIABLE_DEFINITIONS[input.id]?.[lang] || VARIABLE_DEFINITIONS[input.id]?.en || { metric: '', imperial: '' };
+        return {
+          id: input.id,
+          name: def.name,
+          description: def.desc,
+          metricUnit: stdDef.metric,
+          imperialUnit: stdDef.imperial
+        };
+      }
+    }
+
     // Tailor age and gender explanations accurately for BMI calculators
     if (isBmiDomain && input.id === 'age') {
       const ageBmiDesc: Record<Locale, string> = {
@@ -318,6 +367,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
   const isHydration = slug === 'water-intake-calculator';
   const isCalorieDeficit = slug === 'calorie-calculator';
   const isTdee = slug === 'tdee-calculator';
+  const isBmiChart = slug === 'bmi-chart';
   const isBmr = slug === 'bmr-calculator';
   const isMetabolic = slug === 'maintenance-calorie-calculator';
   const isMacro = slug === 'macro-calculator';
@@ -335,6 +385,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
   const isSpecialty = ['protein-intake-calculator'].includes(slug);
 
   let domain = 'bmi';
+  if (isBmiChart) domain = 'bmiChart';
   if (isBmr) domain = 'bmr';
   else if (isRegional) domain = 'regional';
   else if (isHydration) domain = 'hydration';
@@ -629,6 +680,74 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
       }
     },
 
+    bmiChart: {
+      en: {
+        domain: 'bmiChart',
+        sectionTitle: 'How to Read & Interpret BMI Reference Charts',
+        sectionSubtitle: 'Understanding height-weight matrix lookup, color bands, and clinical population screening.',
+        interpretationTitle: 'Interpreting Matrix Cells & Weight Classifications',
+        interpretationText: 'A standard adult BMI chart maps height across the vertical axis and weight across the horizontal axis to cross-reference weight status instantly without arithmetic computation. Green bands highlight WHO normal weight (18.5 – 24.9 kg/m²), while yellow and red zones signal overweight (25.0 – 29.9 kg/m²) and obesity (≥ 30.0 kg/m²). Charts serve as rapid visual screening matrices for clinical offices and community health screenings.',
+        limitationsTitle: 'Chart Resolution & Demographic Considerations',
+        limitationsText: 'Reference charts use discrete 2-to-5 cm height rows and 2-to-5 kg weight intervals, creating minor rounding steps compared to exact digital division. Furthermore, standard adult charts apply to individuals aged 20 and older; pediatric children require CDC percentile growth curves, and elderly adults (65+) often benefit from slightly higher target bands.',
+        medicalNoticeTitle: 'Visual Screening Reference Notice',
+        medicalNoticeText: 'BMI reference charts provide educational visual screening. Always consult a healthcare provider for comprehensive cardiometabolic evaluations.'
+      },
+      es: {
+        domain: 'bmiChart',
+        sectionTitle: 'Cómo Leer e Interpretar las Tablas de Referencia de IMC',
+        sectionSubtitle: 'Comprenda la matriz de altura y peso, las bandas de color y el cribado poblacional de la OMS.',
+        interpretationTitle: 'Interpretación de Celdas Matriciales y Categorías Ponderales',
+        interpretationText: 'Una tabla de IMC para adultos cruza la estatura en el eje vertical y el peso en el eje horizontal para determinar la clasificación ponderal sin cálculos aritméticos. Las franjas verdes destacan el peso normal de la OMS (18.5 – 24.9 kg/m²), mientras que las zonas amarillas y rojas identifican sobrepeso y obesidad. Las tablas son herramientas visuales de cribado rápido en consultas y salud pública.',
+        limitationsTitle: 'Resolución de Cuadrícula y Factores Demográficos',
+        limitationsText: 'Las tablas de referencia emplean intervalos escalonados de 2 a 5 cm de altura y de 2 a 5 kg de peso, lo que introduce pequeñas aproximaciones frente a la división digital exacta. Además, las matrices estándar aplican a mayores de 20 años; la población pediátrica requiere percentiles de crecimiento CDC y los adultos mayores (65+) suelen beneficiarse de rangos ligeramente superiores.',
+        medicalNoticeTitle: 'Aviso de Cribado Visual',
+        medicalNoticeText: 'Las tablas de IMC proporcionan orientación visual educativa. Consulte a un médico para evaluaciones metabólicas y cardiovasculares completas.'
+      },
+      fr: {
+        domain: 'bmiChart',
+        sectionTitle: 'Comment Lire et Interpréter les Tableaux d\'IMC',
+        sectionSubtitle: 'Comprendre la matrice taille-poids, les codes couleurs et le dépistage épidémiologique de l\'OMS.',
+        interpretationTitle: 'Interprétation des Cellules et Tranches Pondérales',
+        interpretationText: 'Un tableau d\'IMC pour adultes croise la taille sur l\'axe vertical et le poids sur l\'axe horizontal pour repérer instantanément la corpulence sans calcul manuel. Les zones vertes signalent le poids normal OMS (18,5 – 24,9 kg/m²), tandis que les zones jaunes et rouges indiquent le surpoids et l\'obésité. Ces grilles constituent des outils de dépistage visuel rapide en consultation de santé.',
+        limitationsTitle: 'Résolution Matricielle et Facteurs Démographiques',
+        limitationsText: 'Les tableaux de référence utilisent des intervalles discrets de 2 à 5 cm et de 2 à 5 kg, créant de légers arrondis par rapport à la division numérique continue. Par ailleurs, ces grilles s\'adressent aux adultes dès 20 ans ; les enfants nécessitent les courbes de croissance en percentiles et les seniors (65+) bénéficient souvent de seuils protecteurs légèrement rehaussés.',
+        medicalNoticeTitle: 'Information de Dépistage Visuel',
+        medicalNoticeText: 'Les tableaux d\'IMC constituent un repère visuel pédagogique. Consultez votre médecin pour tout bilan cardiométabolique complet.'
+      },
+      de: {
+        domain: 'bmiChart',
+        sectionTitle: 'BMI-Referenztabellen Richtig Lesen & Verstehen',
+        sectionSubtitle: 'Größen-Gewichts-Matrizen, Farbbereiche und das WHO-Bevölkerungsscreening nachvollziehen.',
+        interpretationTitle: 'Interpretation von Rasterfeldern & Gewichtsstufen',
+        interpretationText: 'Eine BMI-Tabelle für Erwachsene stellt die Körpergröße auf der vertikalen und das Gewicht auf der horizontalen Achse gegenüber, um den Gewichtsstatus ohne Taschenrechner abzulesen. Grüne Farbbänder kennzeichnen das WHO-Normalgewicht (18,5 – 24,9 kg/m²), während gelbe und rote Zonen Übergewicht und Adipositas signalisieren. Tabellen dienen der schnellen visuellen Orientierung in Praxis und Vorsorge.',
+        limitationsTitle: 'Rasterauflösung & Demografische Besonderheiten',
+        limitationsText: 'Referenztabellen nutzen Schrittweiten von 2 bis 5 cm bzw. 2 bis 5 kg, was gegenüber stufenlosen Rechnern minimale Rundungsdifferenzen erzeugt. Zudem gelten Standardtabellen ab 20 Jahren; für Kinder und Jugendliche sind CDC-Wachstumsperzentilen erforderlich, während für Senioren (65+) oft leicht höhere Richtwerte empfohlen werden.',
+        medicalNoticeTitle: 'Hinweis zum Visuellen Screening',
+        medicalNoticeText: 'BMI-Tabellen dienen als visuelle Orientierungshilfe. Wenden Sie sich für kardiometabolische Gesamtdiagnosen an einen qualifizierten Arzt.'
+      },
+      ko: {
+        domain: 'bmiChart',
+        sectionTitle: '성인 BMI 차트 및 체중표 판독 가이드',
+        sectionSubtitle: '신장-체중 격자 매트릭스, 색상별 판정 구간 및 공중보건 스크리닝 원리를 안내합니다.',
+        interpretationTitle: '격자 교차 셀 판독 및 체중 단계 분류',
+        interpretationText: '성인 BMI 차트는 세로축의 신장과 가로축의 체중을 교차하여 복잡한 수치 연산 없이도 비만도를 시각적으로 즉시 확인하도록 구성되어 있습니다. 녹색 구간은 WHO 표준 정상 체중(18.5 ~ 24.9 kg/m²), 노란색과 붉은색 구간은 각각 과체중과 비만을 나타냅니다. 차트는 건강 검진 현장에서 빠른 1차 스크리닝 매트릭스로 널리 활용됩니다.',
+        limitationsTitle: '격자 단위 간격 및 인구학적 고려사항',
+        limitationsText: '참조 차트는 2~5 cm 신장 구간과 2~5 kg 체중 간격 단위로 인쇄되어 정밀한 소수점 디지털 연산과 약간의 반올림 편차가 발생할 수 있습니다. 또한 표준 성인 차트는 만 20세 이상 성인에게 적용되며, 소아청소년은 연령별 성장 백분위수를, 65세 이상 노년층은 완화된 체중 기준을 참조해야 합니다.',
+        medicalNoticeTitle: '시각적 스크리닝 참고 안내',
+        medicalNoticeText: 'BMI 차트는 교육용 시각 선별 도구입니다. 정확한 대사 건강 평가는 전문의와 상담하여 혈압, 혈당 및 체성분 검사를 병행하세요.'
+      },
+      hi: {
+        domain: 'bmiChart',
+        sectionTitle: 'बीएमआई संदर्भ चार्ट कैसे पढ़ें और समझें',
+        sectionSubtitle: 'ऊंचाई-वजन मैट्रिक्स, रंगीन बैंड और डब्ल्यूएचओ स्वास्थ्य स्क्रीनिंग को समझें।',
+        interpretationTitle: 'मैट्रिक्स ग्रिड सेल एवं वजन श्रेणियों की व्याख्या',
+        interpretationText: 'वयस्क बीएमआई चार्ट बिना किसी गणना के लंबवत अक्ष पर ऊंचाई और क्षैतिज अक्ष पर वजन को मिलाकर वजन श्रेणी दिखाता है। हरे रंग का बैंड डब्ल्यूएचओ सामान्य वजन (18.5 – 24.9 kg/m²) दर्शाता है, जबकि पीला और लाल क्षेत्र अधिक वजन और मोटापे को इंगित करता है। चार्ट स्वास्थ्य शिविरों और क्लीनिकों में त्वरित दृश्य स्क्रीनिंग का काम करते हैं।',
+        limitationsTitle: 'ग्रिड अंतराल एवं जनसांख्यिकीय विचार',
+        limitationsText: 'संदर्भ चार्ट 2 से 5 सेमी ऊंचाई और 2 से 5 किग्रा वजन के निश्चित अंतराल का उपयोग करते हैं, जिससे डिजिटल गणना की तुलना में मामूली अंतर आ सकता है। मानक चार्ट 20 वर्ष और उससे अधिक आयु के लिए हैं; बच्चों के लिए विकास प्रतिशतक और बुजुर्गों (65+) के लिए थोड़ा उच्च सुरक्षित दायरा देखा जाता है।',
+        medicalNoticeTitle: 'दृश्य स्क्रीनिंग संदर्भ सूचना',
+        medicalNoticeText: 'बीएमआई चार्ट केवल शैक्षिक दृश्य स्क्रीनिंग प्रदान करते हैं। समग्र हृदय व चयापचय स्वास्थ्य के लिए डॉक्टर से परामर्श लें।'
+      }
+    },
     bmi: {
       en: {
         domain: 'bmi',
