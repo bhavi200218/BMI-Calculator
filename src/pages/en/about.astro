@@ -57,7 +57,7 @@ import PageShell from '../../components/PageShell.astro';
       <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
         <div class="space-y-8">
           <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
-            <p><strong>Real BMI</strong> is an independent health calculation and educational platform founded, developed, and maintained by <strong>Bhawanshi Dosi</strong>, a software engineer based in Banswara, Rajasthan, India. The platform was built to solve a widespread problem across digital wellness: confusing, privacy-invasive health tools cluttered with intrusive advertisements, opaque math, and unverified estimates. Real BMI provides transparent, mathematically verifiable calculators that run 100% locally in your web browser with zero health data retention.</p>
+            <p><strong>Real BMI</strong> is an independent health calculation website. It was built and is run by <strong>Bhawanshi Dosi</strong>, a software engineer living in Banswara, Rajasthan, India. Many online fitness tools are full of ads, confusing math, and privacy risks. Real BMI solves this problem. We provide clear, accurate calculators that run 100% in your browser. We never save or track your private numbers.</p>
             
             <!-- Creator Profile Card -->
             <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start">
@@ -131,14 +131,29 @@ import PageShell from '../../components/PageShell.astro';
               </div>
             </div>
 
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">The Genesis of Real BMI: Why This Site Was Built</h2>
+            <p>Real BMI began with a simple goal. Most online health tools are packed with pop-ups and slow scripts. Many tools collect your personal body numbers to sell to advertisers. Many do not explain how their math works.</p>
+            <p>Bhawanshi Dosi built Real BMI to fix these issues. We use clean code and open math formulas from the WHO and CDC. You get fast, private health checks on any phone or laptop.</p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Core Engineering Principles: Speed &amp; Privacy</h2>
+            <p>Every tool on Real BMI runs locally on your device. We use a zero-retention model:</p>
+            <ul>
+              <li><strong>Zero Data Kept:</strong> Your height, weight, and age never leave your device. We run no database of user numbers.</li>
+              <li><strong>Fast Results:</strong> All math runs in under 16 milliseconds. You get instant updates as you type.</li>
+              <li><strong>Works Offline:</strong> Once loaded, our tools work even if your internet connection drops.</li>
+            </ul>
+
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Evidence-Based Mathematical Standards</h2>
-            <p>Every formula on Real BMI is derived directly from peer-reviewed scientific literature and established public health guidelines, including the World Health Organization (WHO Technical Report Series 854), the WHO Western Pacific Region Asian BMI consultation published in <em>The Lancet</em>, Mifflin-St Jeor indirect calorimetry standards, the Mosteller body surface area equation, and the Devine ideal body weight benchmark.</p>
+            <p>Every formula on Real BMI comes from trusted medical studies. These include the World Health Organization (WHO Technical Report 854), the CDC, the Mifflin-St Jeor equation, the Mosteller body surface formula, and the Devine ideal weight formula.</p>
 
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Zero-Retention Client-Side Architecture</h2>
-            <p>Unlike commercial wellness applications that collect and store user biometrics, Real BMI executes all mathematical calculations locally in your web browser via client-side JavaScript. No heights, weights, ages, or body measurements are ever transmitted over the network or saved in any database.</p>
+            <p>Unlike commercial wellness apps that store your health numbers, Real BMI calculates everything inside your web browser. No measurements are ever sent over the network or saved to remote disks.</p>
 
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Educational Scope &amp; Medical Disclaimer</h2>
-            <p>Real BMI is an educational calculation reference, not a licensed medical clinic, hospital, or diagnostic healthcare provider. The calculations provided by our tools are intended to support personal wellness awareness and facilitate informed discussions with qualified physicians, registered dietitians, or certified health professionals.</p>
+            <p>Real BMI is an educational resource, not a medical clinic or hospital. Our tools provide general awareness. They help you ask good questions when you visit your doctor or dietitian.</p>
+
+            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Open Equations &amp; Long-Term Commitment</h2>
+            <p>We believe health math should be open to all. Each calculator includes step-by-step math and links to original medical papers. We maintain over 920 unit tests to ensure our tools stay accurate. Real BMI remains free for users worldwide.</p>
           </div>
         </div>
 

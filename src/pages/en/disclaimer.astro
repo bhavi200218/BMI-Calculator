@@ -20,7 +20,7 @@ import PageShell from '../../components/PageShell.astro';
       <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
         
         <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
-          The computational tools, interactive charts, and health information provided by <strong>Real BMI</strong> are designed strictly for educational, informational, and personal awareness purposes.
+          The health tools, charts, and articles on <strong>Real BMI</strong> are built for learning and personal awareness only. They help you check basic body numbers at home.
         </p>
 
         <!-- 1. What Real BMI Is -->
@@ -29,12 +29,12 @@ import PageShell from '../../components/PageShell.astro';
             What Real BMI Is
           </h2>
           <p>
-            Real BMI is a free, evidence-based digital health screening suite. We provide:
+            Real BMI is a free digital health tool set. We offer:
           </p>
           <ul class="list-disc pl-6 space-y-1.5">
-            <li>Mathematical estimates based on published scientific formulas and international public health guidelines (such as the WHO, CDC, and NIH).</li>
-            <li>Interactive body volume and mass visualizers for educational conceptualization.</li>
-            <li>General population reference ranges to help you understand common biometric benchmarks.</li>
+            <li>Body mass estimates based on published formulas from the WHO and CDC.</li>
+            <li>Simple 3D body models that help you see your body shape.</li>
+            <li>Standard health charts to help you check your numbers against public guides.</li>
           </ul>
         </div>
 
@@ -44,12 +44,12 @@ import PageShell from '../../components/PageShell.astro';
             What Real BMI Is Not
           </h2>
           <p>
-            Real BMI is not a licensed medical provider and does not offer clinical services:
+            Real BMI is not a clinic or hospital. We do not offer medical care:
           </p>
           <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Not Medical Advice:</strong> Our outputs do not constitute professional medical advice, formal clinical diagnosis, or individualized treatment plans.</li>
-            <li><strong>Not a Diagnostic Tool:</strong> A calculator result cannot detect, diagnose, or rule out underlying cardiometabolic conditions, hormonal imbalances, or nutritional deficiencies.</li>
-            <li><strong>Not a Prescriptive Guide:</strong> You should never start or stop medications, or undertake severe calorie restriction or extreme exercise programs based solely on calculator scores.</li>
+            <li><strong>Not Medical Advice:</strong> Our scores are not clinical checks or treatment plans.</li>
+            <li><strong>Not a Diagnostic Tool:</strong> Only a doctor can diagnose health problems like heart disease or diabetes.</li>
+            <li><strong>Not a Diet Plan:</strong> You should never start extreme diets or stop your pills based on calculator scores.</li>
           </ul>
         </div>
 
@@ -59,14 +59,14 @@ import PageShell from '../../components/PageShell.astro';
             Who Should Consult a Doctor
           </h2>
           <p>
-            We strongly advise discussing your health metrics with a licensed physician, registered dietitian, or qualified healthcare provider, especially if you:
+            We urge you to talk with a licensed doctor or dietitian if you:
           </p>
           <ul class="list-disc pl-6 space-y-1.5">
-            <li>Are planning significant weight loss, weight gain, or major dietary changes.</li>
-            <li>Have existing chronic conditions such as diabetes, hypertension, cardiovascular disease, or thyroid disorders.</li>
-            <li>Are pregnant, lactating, or recovering from medical procedures.</li>
-            <li>Have a personal history of eating disorders or body dysmorphia.</li>
-            <li>Notice sudden, unexplained fluctuations in body weight.</li>
+            <li>Plan to lose or gain a large amount of body weight.</li>
+            <li>Live with long-term conditions like diabetes, high blood pressure, or heart trouble.</li>
+            <li>Are pregnant, nursing, or recovering from surgery.</li>
+            <li>Have had an eating disorder or struggle with body image.</li>
+            <li>Notice quick, sudden shifts in your body weight.</li>
           </ul>
         </div>
 
@@ -82,7 +82,7 @@ import PageShell from '../../components/PageShell.astro';
             Immediate Medical Assistance
           </h3>
           <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">
-            Real BMI is not designed for acute or emergency medical care. If you are experiencing chest pain, shortness of breath, sudden dizziness, acute weakness, or any life-threatening symptoms, immediately call your local emergency medical services (such as 911 in the US, 112 in Europe/India, or local emergency number) or proceed to the nearest hospital emergency department.
+            Real BMI is not made for medical emergencies. If you have chest pain, shortness of breath, sudden dizziness, or bad weakness, call 911 or 112 right away. You can also go to the nearest emergency room.
           </p>
         </div>
 
@@ -92,12 +92,12 @@ import PageShell from '../../components/PageShell.astro';
             BMI Limitations
           </h2>
           <p>
-            Standard Body Mass Index (BMI) has recognized epidemiological and physiological limitations:
+            Standard BMI has known limits that you should keep in mind:
           </p>
           <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Body Composition:</strong> BMI calculates weight relative to height squared (kg/m²), but cannot distinguish between lean muscle mass, bone density, and visceral fat. Muscular athletes often register an 'overweight' BMI despite maintaining very low body fat.</li>
-            <li><strong>Age & Sarcopenia:</strong> Older adults naturally lose skeletal muscle (sarcopenia), which can mask elevated visceral fat under a 'normal' BMI score.</li>
-            <li><strong>Ethnic Variance:</strong> Visceral fat distribution and cardiometabolic risks vary across populations. For instance, WHO expert consultations established lower public health thresholds for Asian populations (23.0 kg/m² vs 25.0 kg/m²).</li>
+            <li><strong>Body Makeup:</strong> BMI compares weight to height. It cannot tell muscle from fat. An athlete with dense muscle can show a high BMI score even with very low body fat.</li>
+            <li><strong>Age and Muscle Loss:</strong> Older adults often lose muscle as they age. This loss can hide body fat under a normal BMI score.</li>
+            <li><strong>Ethnic Background:</strong> Body fat patterns differ across world groups. The WHO uses lower risk points for Asian adults (23.0 instead of 25.0).</li>
           </ul>
         </div>
 
@@ -107,22 +107,89 @@ import PageShell from '../../components/PageShell.astro';
             Privacy: No Personal Health Information Stored
           </h2>
           <p>
-            Your health numbers belong solely to you:
+            Your health numbers stay private to you:
           </p>
           <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Client-Side Processing:</strong> All calculations run directly inside your web browser using local JavaScript.</li>
-            <li><strong>No Storage or Tracking:</strong> We do not collect, store, transmit, or share your height, weight, age, waist measurements, or calculated health outcomes on our servers.</li>
-            <li><strong>Zero Public Records:</strong> Real BMI does not host public message boards, member directories, or user profiles where personal data could ever be exposed.</li>
+            <li><strong>Runs in Your Browser:</strong> All calculations run directly on your own device using local JavaScript.</li>
+            <li><strong>No Tracking:</strong> We never save, store, or share your height, weight, age, or waist numbers on our servers.</li>
+            <li><strong>No Public Profiles:</strong> Real BMI does not have public user lists or message boards where your data could be seen.</li>
           </ul>
         </div>
 
         <!-- 7. Legal Disclaimer -->
         <div class="space-y-2">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Legal Disclaimer & Limitation of Liability
+            Legal Disclaimer &amp; Limitation of Liability
           </h2>
           <p>
-            Neither Real BMI, its creators, nor contributing authors assume any legal liability or responsibility for decisions, dietary choices, or health outcomes resulting from the use of our calculators or website content. By using Real BMI, you acknowledge and agree that your engagement with our calculators is undertaken voluntarily and at your own sole discretion.
+            Real BMI and its creators take no legal blame for choices you make based on this site. You use these tools of your own free choice and at your own risk.
+          </p>
+        </div>
+
+        <!-- 8. Special Clinical Situations: Pregnancy, Pediatric Growth & Sarcopenia -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Special Clinical Situations: Pregnancy, Pediatric Growth &amp; Sarcopenia
+          </h2>
+          <p>
+            Standard BMI ranges apply only to non-pregnant adults aged 18 to 65. Certain groups need special care from a doctor:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>Pregnancy:</strong> In singleton pregnancies, healthy weight gain depends on pre-pregnancy BMI. Sudden weight gain or severe swelling can point to preeclampsia. This is a serious condition that requires prompt obstetric care.</li>
+            <li><strong>Children and Teens:</strong> Growing children must never be judged using adult BMI cutoffs. A pediatrician should check their growth using CDC growth charts.</li>
+            <li><strong>Older Adults:</strong> In seniors, muscle loss (sarcopenia) can mask fat gains. A slightly higher BMI between 23.0 and 27.9 often protects against bone breaks in seniors.</li>
+          </ul>
+        </div>
+
+        <!-- 9. Lifestyle Screening Guide vs. Clinical Diagnostic Evaluation -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Lifestyle Screening Guide vs. Clinical Diagnostic Evaluation
+          </h2>
+          <p>
+            Each tool on this site is a lifestyle screening guide, not a medical test. Only a doctor can diagnose health issues like high blood pressure, diabetes, or heart risks.
+          </p>
+          <p>
+            All 23 computational health tools on Real BMI provide helpful estimates. They help you ask good questions at your next doctor visit.
+          </p>
+        </div>
+
+        <!-- 10. Medication, Severe Caloric Restriction & Extreme Fitness Risks -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Medication, Severe Caloric Restriction &amp; Extreme Fitness Risks
+          </h2>
+          <p>
+            If you take prescription medicine, like insulin, blood pressure pills, or thyroid pills, do not change your dose based on web tools. Weight changes can alter how your body processes pills.
+          </p>
+          <p>
+            Also, eating under 1,200 calories per day without a doctor's care carries real health risks. It can lead to low energy, gallstones, and muscle loss. Always ask a doctor before you make big diet cuts.
+          </p>
+        </div>
+
+        <!-- 11. Laboratory Biomarkers & Holistic Clinical Diagnostics -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Laboratory Biomarkers &amp; Holistic Clinical Diagnostics
+          </h2>
+          <p>
+            Numbers like BMI and body fat are starting points. True heart health needs lab tests done in a clinic.
+          </p>
+          <p>
+            We urge you to get regular checkups. Your doctor can test your fasting blood sugar, HbA1c, and cholesterol levels. They will also check your resting blood pressure. Real BMI supports doctor visits, but never replaces them.
+          </p>
+        </div>
+
+        <!-- 12. Verification Standards & Professional Inquiries -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            Verification Standards &amp; Professional Inquiries
+          </h2>
+          <p>
+            Real BMI is managed by software engineer <strong>Bhawanshi Dosi</strong> in Banswara, Rajasthan, India. All formulas match public papers from the WHO and CDC.
+          </p>
+          <p>
+            If you have questions or want to verify a formula, write to us at <strong>support@realbmicalculator.com</strong>.
           </p>
         </div>
 

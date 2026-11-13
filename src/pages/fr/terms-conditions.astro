@@ -12,127 +12,150 @@ import PageShell from '../../components/PageShell.astro';
     <Navbar />
     <PageShell
         title="Conditions d'Utilisation"
-        eyebrow="Standards Professionnels"
+        eyebrow="Standards Professionnels & Cadre Juridique"
         description="Consultez les règles d'utilisation des calculateurs, métriques de santé et engagements de confidentialité de Real BMI."
         returnUrl="/fr/"
         returnLabel="Accueil"
     >
         <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed space-y-8 text-base sm:text-lg font-medium opacity-90">
             <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
-                Les présentes Conditions d'Utilisation régissent l'accès et l'usage de la plateforme <strong class="text-[var(--foreground)]">Real BMI</strong>, incluant tous les calculateurs interactifs, graphiques et contenus éducatifs.
+                Les présentes Conditions d'Utilisation régissent l'accès et l'usage de la plateforme Real BMI, incluant tous les calculateurs interactifs, graphiques et contenus éducatifs.
             </p>
             <p>
-                En naviguant sur ce site, vous reconnaissez avoir lu, compris et accepté ces dispositions. Si vous refusez l'une de ces clauses, veuillez ne pas utiliser nos services.
+                En naviguant sur ce site, vous reconnaissez avoir lu, compris et accepté ces dispositions dans leur intégralité. Si vous refusez l'une quelconque de ces clauses, veuillez interrompre immédiatement votre navigation.
             </p>
 
-            <!-- 1. Périmètre Éducatif et Absence de Diagnostic Médical -->
+            <!-- 1. 1. Périmètre Éducatif et Absence de Diagnostic Médical -->
             <div class="space-y-3">
                 <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
                     1. Périmètre Éducatif et Absence de Diagnostic Médical
                 </h2>
-                <p>
-                    L'ensemble des outils de calcul et scores proposés sur Real BMI sont développés dans un but strictement éducatif et d'information personnelle.
-                </p>
-                <p>
-                    Les résultats ne doivent en aucun cas être interprétés comme des diagnostics médicaux, avis cliniques ou prescriptions thérapeutiques.
-                </p>
-                <p>
-                    Pour toute décision relative à votre santé ou modification de vos habitudes de vie, consultez toujours un professionnel de santé qualifié.
-                </p>
+                <p>L'ensemble des outils de calcul, tables de référence biométriques et guides pédagogiques publiés sur Real BMI sont développés dans un but strictement éducatif et d'information personnelle.</p>
+        <p>En aucun cas les résultats, scores ou estimations caloriques générés par nos outils ne sauraient constituer un diagnostic médical, une évaluation clinique personnalisée ou une prescription thérapeutique. Real BMI n'est ni un cabinet médical, ni une clinique, ni un établissement hospitalier.</p>
+        <p>Les utilisateurs doivent impérativement consulter un médecin ou professionnel de santé qualifié avant d'entreprendre tout programme de perte ou de prise de poids, tout déficit calorique strict ou tout entraînement physique intensif.</p>
             </div>
 
-            <!-- 2. Validité Scientifique des Formules et Limites Techniques -->
+            <!-- 2. 2. Formules Scientifiques, Modèles Statistiques et Limites Techniques -->
             <div class="space-y-3">
                 <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-                    2. Validité Scientifique des Formules et Limites Techniques
+                    2. Formules Scientifiques, Modèles Statistiques et Limites Techniques
                 </h2>
-                <p>
-                    Nos algorithmes reposent sur des formules scientifiques reconnues, telles que les standards publiés par l'Organisation Mondiale de la Santé (OMS) et le CDC.
-                </p>
-                <p>
-                    Cependant, la diversité biologique humaine (masse musculaire, densité osseuse, âge) induit des écarts naturels par rapport aux moyennes statistiques.
-                </p>
-                <p>
-                    Real BMI n'est ni un dispositif médical certifié ni un service de télémédecine.
-                </p>
+                <p>Real BMI met en œuvre des formules mathématiques reconnues et validées par la communauté scientifique internationale, notamment celles de l'Organisation Mondiale de la Santé (OMS, rapport technique 854), des CDC américains, ainsi que les équations de Mifflin-St Jeor (1990), Mosteller (1987) et Devine (1974).</p>
+        <p>Bien que nos algorithmes respectent scrupuleusement la littérature scientifique, les modèles statistiques de population comportent des limites inhérentes. Ils ne permettent pas d'évaluer directement la composition corporelle réelle, la masse musculaire squelettique, l'hydratation ou la densité osseuse.</p>
+        <p>Ainsi, les athlètes très musclés peuvent obtenir un IMC faussement élevé malgré un faible taux de graisse, tandis que les personnes âgées souffrant de sarcopénie peuvent afficher un IMC normal malgré un excès de graisse viscérale.</p>
             </div>
 
-            <!-- 3. Traitement Local dans le Navigateur et Confidentialité -->
+            <!-- 3. 3. Calcul Local dans le Navigateur et Architecture Zéro Rétention -->
             <div class="space-y-3">
                 <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-                    3. Traitement Local dans le Navigateur et Confidentialité
+                    3. Calcul Local dans le Navigateur et Architecture Zéro Rétention
                 </h2>
-                <p>
-                    La protection de la vie privée est au cœur de notre architecture. Tous les calculs s'exécutent localement dans votre navigateur web via JavaScript.
-                </p>
-                <p>
-                    Real BMI ne transmet, ne stocke, ne revend ni n'enregistre aucune donnée de santé personnelle sur des serveurs distants.
-                </p>
+                <p>Nous considérons la protection des données de santé comme une exigence absolue. Real BMI repose sur une architecture informatique s'exécutant intégralement côté client. Vos données biométriques (taille, poids, âge, sexe, tour de taille) sont traitées en temps réel dans votre propre navigateur via JavaScript.</p>
+        <p>Aucune de vos données physiques n'est envoyée à nos serveurs, enregistrée dans une base de données ou vendue à des tiers. Dès la fermeture de votre onglet, toutes les informations saisies disparaissent immédiatement de la mémoire vive.</p>
             </div>
 
-            <!-- 4. Conditions d'Accès et Engagements de l'Utilisateur -->
+            <!-- 4. 4. Utilisation Personnelle Autorisée et Obligations de l'Utilisateur -->
             <div class="space-y-3">
                 <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-                    4. Conditions d'Accès et Engagements de l'Utilisateur
+                    4. Utilisation Personnelle Autorisée et Obligations de l'Utilisateur
                 </h2>
-                <p>
-                    Une licence révocable et non exclusive vous est accordée pour un usage personnel et non commercial de nos outils.
-                </p>
-                <p>
-                    L'extraction automatisée (scraping), les attaques par déni de service et la redistribution non autorisée de nos algorithmes sont strictement interdites.
-                </p>
+                <p>Real BMI vous accorde une licence limitée, révocable, non exclusive et non transférable d'accès et d'utilisation du site pour vos besoins personnels et non commerciaux.</p>
+        <p>Il vous est formellement interdit de perturber le bon fonctionnement de la plateforme :</p>
+        <ul>
+          <li>L'utilisation de robots d'extraction de données (scraping) ou de scripts automatisés pour dupliquer notre contenu ou nos algorithmes est prohibée.</li>
+          <li>Toute tentative de contournement des protections de sécurité ou de saturation du réseau (attaques DDoS) fera l'objet de poursuites.</li>
+          <li>L'intégration par iframe de nos outils dans un cadre commercial sans accord écrit préalable est interdite.</li>
+        </ul>
             </div>
 
-            <!-- 5. Propriété Intellectuelle et Droits Réservés -->
+            <!-- 5. 5. Propriété Intellectuelle et Droits d'Auteur -->
             <div class="space-y-3">
                 <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-                    5. Propriété Intellectuelle et Droits Réservés
+                    5. Propriété Intellectuelle et Droits d'Auteur
                 </h2>
-                <p>
-                    Les interfaces, textes, visuels, modèles 3D WebGL et codes sources sont protégés par le droit d'auteur et les traités internationaux.
-                </p>
-                <p>
-                    Toute reproduction ou exploitation commerciale sans autorisation écrite préalable est formellement prohibée.
-                </p>
+                <p>L'ensemble des contenus, codes sources, architectures de design, feuilles de style, visualisations 3D WebGL et articles d'analyse publiés sur Real BMI sont la propriété intellectuelle exclusive du fondateur Bhawanshi Dosi et sont protégés par le droit d'auteur international.</p>
+        <p>Toute reproduction, modification, ingénierie inverse ou diffusion commerciale sans accord écrit préalable est formellement interdite.</p>
             </div>
 
-            <!-- 6. Limitation de Responsabilité -->
+            <!-- 6. 6. Exclusion de Garanties -->
             <div class="space-y-3">
                 <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-                    6. Limitation de Responsabilité
+                    6. Exclusion de Garanties
                 </h2>
-                <p>
-                    Le service est fourni "en l'état" et selon sa disponibilité, sans garantie expresse ou implicite.
-                </p>
-                <p>
-                    Real BMI et ses auteurs déclinent toute responsabilité quant aux choix nutritionnels, sportifs ou médicaux pris à la suite de la consultation de ces estimations.
-                </p>
+                <p>La plateforme Real BMI et l'ensemble de ses calculateurs sont mis à disposition 'en l'état' et 'selon disponibilité', sans garantie d'aucune sorte, expresse ou implicite.</p>
+        <p>Nous ne garantissons pas que les outils répondront parfaitement à vos attentes individuelles ou que le service sera exempt d'interruptions ou d'anomalies techniques mineures.</p>
             </div>
 
-            <!-- 7. Évolution des Conditions -->
+            <!-- 7. 7. Limitation Générale de Responsabilité -->
             <div class="space-y-3">
                 <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-                    7. Évolution des Conditions
+                    7. Limitation Générale de Responsabilité
                 </h2>
-                <p>
-                    Nous nous réservons le droit d'adapter ces conditions à tout moment pour tenir compte des évolutions techniques ou réglementaires.
-                </p>
-                <p>
-                    La poursuite de votre navigation vaut acceptation pleine et entière des conditions révisées.
-                </p>
+                <p>Dans la mesure permise par la loi applicable, ni Real BMI ni son fondateur Bhawanshi Dosi ne sauraient être tenus responsables des dommages directs, indirects ou accessoires résultant de l'utilisation de nos calculateurs ou des décisions prises sur la base de nos estimations chiffrées.</p>
             </div>
 
-            <!-- 8. Qualité Éditoriale et Respect de la Vie Privée -->
+            <!-- 8. 8. Liens Externes, Citations et Publicité Numérique -->
             <div class="space-y-3">
                 <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-                    8. Qualité Éditoriale et Respect de la Vie Privée
+                    8. Liens Externes, Citations et Publicité Numérique
                 </h2>
-                <p>
-                    Toutes nos publications sont vérifiées en amont afin d'assurer l'exactitude scientifique et la stricte confidentialité des utilisateurs.
-                </p>
-                <p>
-                    Nous n'opérons aucun forum public ni répertoire d'utilisateurs où des informations personnelles pourraient être exposées.
-                </p>
+                <p>Nos articles s'appuient sur des publications issues d'organismes de santé faisant autorité (OMS, CDC, NIH). Le site diffuse également des annonces non intrusives via Google AdSense pour financer son fonctionnement libre et gratuit.</p>
+        <p>Nous n'exerçons aucun contrôle sur le contenu ou les pratiques de confidentialité des sites web tiers liés. La consultation de ces sites relève de votre entière responsabilité.</p>
+            </div>
+
+            <!-- 9. 9. Indemnisation et Protection des Exploitants -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    9. Indemnisation et Protection des Exploitants
+                </h2>
+                <p>Vous acceptez d'indemniser et de dégager de toute responsabilité Real BMI et ses administrateurs techniques contre toute réclamation ou préjudice financier résultant d'une violation de votre part des présentes conditions générales.</p>
+            </div>
+
+            <!-- 10. 10. Divisibilité et Intégralité de l'Accord -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    10. Divisibilité et Intégralité de l'Accord
+                </h2>
+                <p>Si l'une des dispositions des présentes conditions est déclarée invalide ou inapplicable, les autres dispositions demeureront pleinement en vigueur.</p>
+        <p>Ces conditions, complétées par notre Politique de Confidentialité et notre Politique de Cookies, constituent l'accord complet liant l'utilisateur à Real BMI.</p>
+            </div>
+
+            <!-- 11. 11. Droit Applicable et Juridiction Compétente -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    11. Droit Applicable et Juridiction Compétente
+                </h2>
+                <p>Les présentes Conditions d'Utilisation sont régies et interprétées conformément au droit applicable. Tout litige relatif à leur interprétation relèvera de la compétence exclusive des juridictions compétentes de Banswara, Rajasthan, Inde.</p>
+            </div>
+
+            <!-- 12. 12. Mises à Jour et Évolution des Conditions -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    12. Mises à Jour et Évolution des Conditions
+                </h2>
+                <p>Nous nous réservons le droit de modifier les présentes conditions à tout moment pour refléter les évolutions légales ou techniques de notre plateforme. Votre utilisation continue du service vaut acceptation pleine et entière des conditions actualisées.</p>
+            </div>
+
+            <!-- 13. 13. Protocole de Contrôle de Qualité et Respect de la Vie Privée -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    13. Protocole de Contrôle de Qualité et Respect de la Vie Privée
+                </h2>
+                <p>Tous nos 23 calculateurs de santé et guides associés font l'objet d'un audit de conformité préalable avant chaque publication :</p>
+        <ul>
+          <li><strong>Vérification des Sources :</strong> Confrontation directe des équations avec les publications de référence de l'OMS et des CDC.</li>
+          <li><strong>Tests Automatisés :</strong> Exécution de plus de 920 tests unitaires validant la précision des conversions métriques et impériales.</li>
+          <li><strong>Audit de Confidentialité :</strong> Garantie de l'absence totale d'exposition publique de données personnelles identifiantes.</li>
+        </ul>
+            </div>
+
+            <!-- 14. 14. Identité de l'Éditeur et Contact Légal -->
+            <div class="space-y-3">
+                <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                    14. Identité de l'Éditeur et Contact Légal
+                </h2>
+                <p>Le site Real BMI est édité et maintenu par <strong>Bhawanshi Dosi</strong>, ingénieur logiciel résidant à Banswara, Rajasthan, Inde.</p>
+        <p>Pour toute question ou notification légale, veuillez nous écrire à <strong>support@realbmicalculator.com</strong> ou via notre <a href="/fr/contact/" class="text-[var(--accent)] underline font-medium">Page de Contact</a>.</p>
             </div>
         </div>
     </PageShell>

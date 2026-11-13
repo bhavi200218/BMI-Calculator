@@ -126,6 +126,86 @@ import PageShell from '../../components/PageShell.astro';
           </p>
         </div>
 
+        <!-- 8. 특수 생리학적 대상군: 임신부, 소아청소년 및 노년층 -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            특수 생리학적 대상군: 임신부, 소아청소년 및 노년층
+          </h2>
+          <p>
+            일반 성인용 BMI 기준은 임신하지 않은 만 18세 이상 65세 이하 성인에게만 적용됩니다. 다음과 같은 특수 인구군은 개별적인 의료 모니터링이 필수적입니다:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>임신 및 모성 건강 (singleton pregnancies):</strong> 일반 BMI 계산기는 단태아 임신 중의 정상적인 체중 증가 추세를 평가할 수 없습니다. 임신 중 급격한 체중 변화나 부종은 자간전증(preeclampsia) 등 심각한 산과적 합병증의 징후일 수 있으므로 즉시 산부인과 전문의의 진료를 받아야 합니다.</li>
+            <li><strong>소아 및 청소년:</strong> 성장기 소아청소년은 성인 BMI 기준표를 적용해서는 안 되며, 반드시 소아과 전문의가 판독하는 CDC 또는 WHO 연령별·성별 성장 백분위수를 기준으로 평가해야 합니다.</li>
+            <li><strong>노년기 근감소증:</strong> 65세 이상의 노년층에서는 노화로 인한 근감소증(Sarcopenia)으로 인해 체지방률이 높아도 BMI는 '정상'으로 오인될 수 있습니다. 노년기에는 약간 높은 BMI(23.0~27.9 kg/m²)가 골절 예방 및 생존율 향상에 유리합니다.</li>
+          </ul>
+        </div>
+
+        <!-- 9. 생활 습관 자가 스크리닝 도구와 임상 진단의 명확한 구분 -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            생활 습관 자가 스크리닝 도구와 임상 진단의 명확한 구분
+          </h2>
+          <p>
+            Real BMI의 모든 도구는 lifestyle screening guide, not a medical test입니다. Only a doctor can diagnose 고혈압, 당뇨병, 대사증후군 및 이상지질혈증과 같은 임상 질환을 진단할 수 있습니다.
+          </p>
+          <p>
+            All 23 computational health tools는 이용자가 병원 진료나 전문 영양사 상담 전 자신의 신체 수치를 종합적으로 점검하기 위한 교육적 참고 자료로만 기능합니다.
+          </p>
+        </div>
+
+        <!-- 10. 개발자 정보 및 학술 문의 -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            개발자 정보 및 학술 문의 창구
+          </h2>
+          <p>
+            Real BMI는 인도 라자스탄주 반스와라에 소재한 소프트웨어 엔지니어 <strong>Bhawanshi Dosi</strong>가 개발하고 관리합니다. 모든 알고리즘은 WHO 및 CDC의 공개 의학 문헌을 기반으로 검증되었습니다.
+          </p>
+          <p>
+            공식 문의 사항은 <strong>support@realbmicalculator.com</strong>으로 문의해 주시기 바랍니다.
+          </p>
+        
+        <!-- 11. 약물 복용자 주의사항, 극단적 식단 제한 및 운동 위험 고지 -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            약물 복용자 주의사항, 극단적 식단 제한 및 운동 위험 고지
+          </h2>
+          <p>
+            인슐린, 혈압 강하제, 갑상선 호르몬제, 당뇨병 치료제 또는 체중 조절 약물(GLP-1 유사체 등)을 복용 중인 이용자는 온라인 계산기 수치에 의존하여 약물 복용량을 임의로 증감하거나 중단해서는 안 됩니다. 급격한 체중 감량은 약물의 체내 대사 및 청소율에 지대한 영향을 미칩니다.
+          </p>
+          <p>
+            또한 의사의 지도 없는 극단적인 초저열량 식단(여성 1,200 kcal, 남성 1,500 kcal 미만)은 전해질 불균형, 담석증, 심부정맥 및 근골격계 손상을 유발할 수 있습니다. 생활 습관을 크게 변경하기 전에는 반드시 주치의와 상의하십시오.
+          </p>
+        </div>
+
+        <!-- 12. 임상 혈액 검사 및 종합적인 심혈관 대사 건강 평가 -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            임상 혈액 검사 및 종합적인 심혈관 대사 건강 평가
+          </h2>
+          <p>
+            체질량지수(BMI), 허리-엉덩이 비율(WHR), 체지방률 등은 신체 외형을 바탕으로 한 1차 스크리닝 지표일 뿐입니다. 진정한 심혈관 및 대사 건강 상태는 의료기관의 객관적인 혈액 진단 검사를 통해 판정되어야 합니다.
+          </p>
+          <p>
+            공복 혈당, 당화혈색소(HbA1c), 지질 패널(HDL, LDL, 중성지방), 안정 시 혈압 및 간·신장 기능 검사를 정기적으로 받으실 것을 강력히 권장합니다. Real BMI의 계산 도구는 이러한 의학적 정밀 진단을 대체할 수 없습니다.
+          </p>
+        </div>
+      
+        <!-- 13. 정신 건강, 섭식 장애 예방 및 신체 이미지 감수성 -->
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            정신 건강, 섭식 장애 예방 및 신체 이미지 감수성
+          </h2>
+          <p>
+            체중, 칼로리 및 신체 둘레 수치에 대한 지나친 집착은 거식증, 폭식증 또는 신체이형장애(Body Dysmorphia)와 같은 섭식 장애를 유발하거나 악화시킬 수 있습니다. 건강한 삶은 단 하나의 신체 수치로 정의될 수 없습니다.
+          </p>
+          <p>
+            본인 또는 주변 사람이 체중 조절에 대한 강박으로 심리적 고통을 겪고 있다면 전문 심리 상담이나 의료 지원을 받으시기 바랍니다. 한국생명의전화(1588-9191) 또는 정신건강 위기상담전화(1577-0199)를 통해 24시간 전문 상담을 받으실 수 있습니다.
+          </p>
+        </div>
+      </div>
+
       </div>
     </PageShell>
 </Layout>

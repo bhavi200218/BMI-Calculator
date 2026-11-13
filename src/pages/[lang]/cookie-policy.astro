@@ -13,262 +13,638 @@ export function getStaticPaths() {
 const { lang } = Astro.params as { lang: Locale };
 
 const content = {
-  en: {
-    pageTitle: "Cookie Policy | Real BMI",
-    pageDescription: "Read the official Cookie Policy for Real BMI. Learn about the essential local storage and privacy-focused cookies we use.",
-    title: "Cookie Policy",
-    eyebrow: "Transparency & Data Control",
-    description: "Detailed disclosure of the browser storage and cookie technologies utilized across Real BMI calculators.",
-    homeLabel: "Home",
-    sections: [
+  "en": {
+    "pageTitle": "Cookie Policy | Real BMI",
+    "pageDescription": "Read the official Cookie Policy for Real BMI. Learn about the essential local storage and privacy-focused cookies we use.",
+    "title": "Cookie Policy",
+    "eyebrow": "Transparency & Data Control",
+    "description": "Detailed disclosure of the browser storage and cookie technologies utilized across Real BMI calculators.",
+    "homeLabel": "Home",
+    "sections": [
       {
-        heading: "1. Overview of Technologies Used",
-        body: "Real BMI uses a privacy-first web architecture. When you calculate your BMI, BMR, or caloric expenditure, all physiological numbers are processed entirely within your browser's local JavaScript runtime. We never transmit your health measurements to our servers. To deliver a smooth, high-performance experience and support free access, we utilize minimal browser local storage and third-party cookies as detailed below."
+        "heading": "1. Overview of Technologies Used & Zero-Retention Architecture",
+        "body": "Real BMI is built upon a strict privacy-first web architecture. When you calculate your Body Mass Index (BMI), Basal Metabolic Rate (BMR), or Total Daily Energy Expenditure (TDEE), all computations execute completely within your personal web browser's local JavaScript engine. We never transmit your health measurements, height, weight, age, or physical metrics to remote web servers or third-party databases. To deliver a smooth, high-performance experience and support free public access, we utilize minimal browser local storage and third-party cookies as detailed below. You maintain complete control over which non-essential cookies you permit."
       },
       {
-        heading: "2. Strictly Necessary Functional Storage",
-        body: "These items are required for the website and calculators to operate correctly. They do not store personal identifiers and cannot be disabled in our preference center:"
+        "heading": "2. Strictly Necessary Functional Storage & UI Persistence",
+        "body": "These items are technically required for the website and calculators to operate smoothly. They do not store personal identifiers, IP addresses, or medical data and cannot be disabled in our preference center. For example, we remember whether you prefer light mode or dark mode to avoid visual jarring when moving between pages. We also save your preference between metric units (centimeters and kilograms) and imperial units (feet, inches, and pounds). These preferences reside purely inside your local browser storage and are never uploaded to any remote server or shared across domains."
       },
       {
-        heading: "3. Anonymous Analytics (Optional)",
-        body: "With your consent, we use Google Analytics 4 to understand aggregate website usage and improve calculator functionality. Google Analytics sets cookies such as _ga and _ga_* with a retention period of up to 2 years. These cookies collect anonymized telemetry such as page views and general device categories. No health data or personal identifiers are ever collected or linked."
+        "heading": "3. Anonymous Analytics & Telemetry (Optional, Consent-Gated)",
+        "body": "Only with your explicit, prior permission do we use Google Analytics 4 to understand aggregate website usage patterns and optimize calculator performance. Google Analytics sets cookies such as _ga and _ga_* with a retention period of up to two years. These cookies collect anonymized telemetry such as page views, visitor referral channels, screen resolutions, and general device categories. We never collect or link names, email addresses, IP addresses, or medical calculations through analytics tools."
       },
       {
-        heading: "4. Digital Advertising Cookies (Optional)",
-        body: "With your consent, Google AdSense uses advertising cookies such as __gads and __gpi (retention up to 13 months) to display non-intrusive advertisements that fund the free development and hosting of our tools. If you reject non-essential cookies, non-personalized advertising settings or no advertising cookies are used."
+        "heading": "4. Digital Advertising Cookies & Free Service Sustainability",
+        "body": "With your consent, Google AdSense uses advertising cookies such as __gads and __gpi (retained for up to 13 months) to display non-intrusive advertisements. These advertisements fund the ongoing hosting, development, and free public availability of all 23 computational health tools. If you decline advertising cookies, only non-personalized, contextual advertisements are served. We never permit pop-ups, autoplay audio, deceptive redirects, or intrusive full-screen interstitials."
       },
       {
-        heading: "5. How to Manage or Withdraw Your Consent",
-        body: "You have complete control over your cookie choices. You can modify or withdraw your consent at any time by clicking the 'Cookie Preferences' link located in the footer of every page on this website. Additionally, you can configure your browser settings to block or delete cookies at any time."
+        "heading": "5. How to Manage, Modify, or Withdraw Your Consent",
+        "body": "You have complete control over your cookie choices at all times. You can open our interactive Cookie Preferences panel at any moment by clicking the 'Cookie Preferences' link located in the footer of every page on this website. From this panel, you can turn optional analytics and advertising cookies on or off with a single click. Your updated preferences apply immediately across all calculators and are stored locally for up to 12 months."
       },
       {
-        heading: "6. Browser Settings, Clearing Storage & Cross-Device Privacy",
-        body: "You can permanently clear or block stored items directly through your web browser settings (Chrome, Safari, Firefox, Edge). Clearing your browser cookies or local site data immediately removes your theme preferences, measurement units, and saved consent choices without affecting calculator functionality. Our calculators remain fully functional and mathematically accurate even if all third-party cookies and tracking scripts are blocked by browser extensions or strict privacy modes."
+        "heading": "6. Browser Settings, Clearing Storage & Cross-Device Privacy",
+        "body": "You can permanently delete or block cookies and local site data directly within your web browser settings (Chrome, Safari, Firefox, Edge). Clearing your browser cookies or cache will immediately remove your saved theme preferences, measurement units, and consent choices without affecting the mathematical functionality of our tools. Real BMI remains fully functional and mathematically precise even if you block all cookies or browse in strict private mode."
+      },
+      {
+        "heading": "7. Cloudflare Edge Security & Network Integrity Storage",
+        "body": "Real BMI is served globally through Cloudflare Pages edge network. Cloudflare may set essential security tokens (such as __cf_bm or cf_clearance) to detect malicious bot traffic, prevent automated content scraping, and protect our platform from distributed denial-of-service (DDoS) attacks. These security cookies do not track individual users across unrelated sites, do not build personal profiles, and contain zero personal health information."
+      },
+      {
+        "heading": "8. Global Privacy Rights & Regulatory Compliance",
+        "body": "We comply with major international privacy laws. This includes the European Union General Data Protection Regulation (GDPR), the ePrivacy Directive, the California Consumer Privacy Act (CCPA/CPRA), the UK Data Protection Act, and India's Digital Personal Data Protection (DPDP) Act. We honor Global Privacy Control (GPC) signals sent by modern web browsers. Under no circumstances do we sell, rent, or trade user data to data brokers or commercial marketing firms."
+      },
+      {
+        "heading": "9. Global Privacy Control (GPC) & Do-Not-Track (DNT) Handling",
+        "body": "Our website actively listens for Global Privacy Control (GPC) and Do-Not-Track (DNT) signals broadcast by your browser. When our platform detects an active GPC or DNT signal, all non-essential analytics and digital advertising cookies are automatically deactivated by default. In this scenario, only strictly necessary functional local storage elements required to render the user interface are enabled."
+      },
+      {
+        "heading": "10. Step-by-Step Instructions: Managing Cookies in Popular Browsers",
+        "body": "You can manage or delete cookies directly in your browser settings at any time: In Google Chrome, navigate to Settings > Privacy and Security > Third-Party Cookies. In Apple Safari, go to Settings > Privacy and choose 'Block All Cookies'. In Mozilla Firefox, select Settings > Privacy & Security > Cookies and Site Data. In Microsoft Edge, open Settings > Cookies and Site Permissions > Manage and Delete Cookies. Mobile users on iOS and Android can similarly manage cookies within their respective browser app preferences."
+      },
+      {
+        "heading": "11. Third-Party Vendor Technical Disclosures",
+        "body": "We maintain full transparency regarding all third-party vendors utilized on Real BMI. Our primary infrastructure partner is Cloudflare, Inc. (101 Townsend St, San Francisco, CA 94107, USA), providing edge CDN hosting and DDoS protection. Our advertising and analytics partner is Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA), operating Google AdSense and Google Analytics 4 under strict data processing agreements and standard contractual clauses."
+      },
+      {
+        "heading": "12. Continuous Audit Cycle, Policy Updates & Contact",
+        "body": "We perform a formal review of all scripts, cookies, and local storage items every six months to guarantee ongoing compliance with evolving privacy regulations. Any updates to our cookie practices will be published directly on this page with an updated revision date. If you have questions regarding our cookie practices, please contact founder and developer Bhawanshi Dosi in Banswara, Rajasthan, India, by emailing privacy@realbmicalculator.com."
       }
     ],
-    storageTableTitle: "Active Storage & Cookie Registry",
-    tableHeaders: ["Name / Key", "Type & Provider", "Purpose", "Duration"],
-    storageRows: [
-      ["theme", "Local Storage (Real BMI)", "Remembers your light or dark mode visual preference to prevent flashing.", "Persistent"],
-      ["bmiUnit", "Local Storage (Real BMI)", "Remembers your preferred units (metric cm/kg vs imperial ft/lbs) across calculators.", "Persistent"],
-      ["cookie_consent_preferences", "Local Storage (Real BMI)", "Records your cookie consent choices so we do not repeatedly prompt you.", "12 Months"],
-      ["_ga, _ga_*", "Cookie (Google Analytics)", "Measures anonymous aggregate traffic to improve tool performance and usability.", "Up to 2 Years"],
-      ["__gads, __gpi", "Cookie (Google AdSense)", "Serves non-intrusive ads to maintain free, open access to all health calculators.", "Up to 13 Months"]
+    "storageTableTitle": "Active Storage & Cookie Registry",
+    "tableHeaders": [
+      "Name / Key",
+      "Type & Provider",
+      "Purpose",
+      "Duration"
+    ],
+    "storageRows": [
+      [
+        "theme",
+        "Local Storage (Real BMI)",
+        "Remembers your light or dark mode visual preference to prevent screen flickering.",
+        "Persistent"
+      ],
+      [
+        "bmiUnit",
+        "Local Storage (Real BMI)",
+        "Remembers your preferred units (metric cm/kg vs imperial ft/lbs) across calculators.",
+        "Persistent"
+      ],
+      [
+        "cookie_consent_preferences",
+        "Local Storage (Real BMI)",
+        "Records your cookie consent choices so we do not repeatedly show consent prompts.",
+        "12 Months"
+      ],
+      [
+        "_ga, _ga_*",
+        "Cookie (Google Analytics)",
+        "Measures anonymous aggregate traffic to improve tool performance and usability.",
+        "Up to 2 Years"
+      ],
+      [
+        "__gads, __gpi",
+        "Cookie (Google AdSense)",
+        "Serves non-intrusive ads to maintain free, open access to all health calculators.",
+        "Up to 13 Months"
+      ],
+      [
+        "__cf_bm, cf_clearance",
+        "Cookie (Cloudflare Security)",
+        "Essential edge security token to identify trusted web traffic and mitigate bot attacks.",
+        "Up to 1 Year"
+      ]
     ]
   },
-  es: {
-    pageTitle: "Política de Cookies | Real BMI",
-    pageDescription: "Consulte la Política de Cookies oficial de Real BMI. Conozca las tecnologías de almacenamiento local y cookies que utilizamos.",
-    title: "Política de Cookies",
-    eyebrow: "Transparencia y Control de Datos",
-    description: "Detalle completo del almacenamiento en navegador y cookies utilizadas en las calculadoras de Real BMI.",
-    homeLabel: "Inicio",
-    sections: [
+  "es": {
+    "pageTitle": "Política de Cookies | Real BMI",
+    "pageDescription": "Consulte la Política de Cookies oficial de Real BMI. Conozca las tecnologías de almacenamiento local y cookies que utilizamos.",
+    "title": "Política de Cookies",
+    "eyebrow": "Transparencia y Control de Datos",
+    "description": "Detalle completo del almacenamiento en navegador y cookies utilizadas en las calculadoras de Real BMI.",
+    "homeLabel": "Inicio",
+    "sections": [
       {
-        heading: "1. Información General sobre las Tecnologías Utilizadas",
-        body: "Real BMI opera con una arquitectura orientada a la privacidad. Al calcular su IMC, TMB o gasto calórico, todos los datos se procesan localmente en el motor JavaScript de su navegador. Nunca enviamos sus medidas de salud a nuestros servidores. Para garantizar un servicio óptimo y gratuito, utilizamos almacenamiento local mínimo y cookies según se describe a continuación."
+        "heading": "1. Información General sobre las Tecnologías Utilizadas y Arquitectura Sin Retención",
+        "body": "Real BMI opera bajo una estricta arquitectura orientada a la total privacidad del usuario. Al calcular su índice de masa corporal (IMC), su tasa metabólica basal (TMB) o su gasto calórico diario (TDEE), todas las operaciones matemáticas se ejecutan de manera íntegra y exclusiva en el motor JavaScript local de su propio navegador web. Jamás transmitimos sus medidas corporales, estatura, peso, edad o circunferencias a servidores web externos ni a bases de datos de terceros. Para garantizar una experiencia fluida, segura y gratuita, empleamos un almacenamiento local mínimo y cookies técnicas según se describe en esta política."
       },
       {
-        heading: "2. Almacenamiento Funcional Estrictamente Necesario",
-        body: "Estos elementos son indispensables para el funcionamiento correcto de la web y las calculadoras. No recopilan identificadores personales y no se pueden desactivar en el panel de preferencias:"
+        "heading": "2. Almacenamiento Funcional Estrictamente Necesario y Persistencia de Interfaz",
+        "body": "Estos elementos técnicos resultan indispensables para que las calculadoras y la interfaz gráfica del portal funcionen de manera óptima. No recopilan datos identificativos personales, direcciones IP ni historiales médicos, y no pueden desactivarse en nuestro centro de preferencias. Se utilizan exclusivamente para recordar sus elecciones de visualización (modo claro o modo oscuro) y su sistema de unidades preferido (métrico decimal en centímetros y kilogramos o imperial en pies y libras). Estos datos permanecen en su propio dispositivo."
       },
       {
-        heading: "3. Análisis Web Anónimo (Opcional)",
-        body: "Con su consentimiento, utilizamos Google Analytics 4 para conocer el uso general del sitio y optimizar las herramientas. Google Analytics establece cookies como _ga y _ga_* con retención de hasta 2 años. Recopilan métricas agregadas anónimas sin almacenar datos médicos."
+        "heading": "3. Análisis Web Anónimo y Telemetría Agregada (Opcional, Sujeto a Consentimiento)",
+        "body": "Únicamente con su consentimiento previo, explícito e informado, empleamos Google Analytics 4 para comprender los patrones generales de tráfico y perfeccionar la usabilidad de las herramientas. Google Analytics instala cookies como _ga y _ga_* con un periodo de retención máximo de dos años. Toda la información recopilada es estrictamente anónima y agregada (visitas a páginas, tipo de dispositivo, resolución de pantalla). Nunca se recopilan nombres, correos electrónicos ni datos sobre cálculos de salud."
       },
       {
-        heading: "4. Cookies de Publicidad Digital (Opcional)",
-        body: "Con su autorización, Google AdSense emplea cookies publicitarias como __gads y __gpi (retención de hasta 13 meses) para financiar el mantenimiento de las calculadoras gratuitas."
+        "heading": "4. Cookies de Publicidad Digital y Sostenibilidad del Servicio Gratuito",
+        "body": "Con su consentimiento previo, Google AdSense utiliza cookies publicitarias como __gads y __gpi (con una vigencia máxima de 13 meses) para mostrar anuncios discretos y pertinentes. Estos anuncios financian los costes de infraestructura, servidores y el desarrollo continuado de nuestras 23 calculadoras de salud. Si rechaza las cookies publicitarias opcionales, solo se mostrarán avisos contextuales no personalizados, sin molestos anuncios emergentes."
       },
       {
-        heading: "5. Cómo Gestionar o Revocar su Consentimiento",
-        body: "Usted tiene control absoluto sobre sus preferencias. Puede cambiar o retirar su consentimiento en cualquier momento haciendo clic en el enlace 'Preferencias de Cookies' ubicado en el pie de página de la web."
+        "heading": "5. Cómo Gestionar, Modificar o Revocar su Consentimiento",
+        "body": "Usted conserva en todo momento el control total sobre sus preferencias de privacidad. Puede abrir el panel interactivo de 'Preferencias de Cookies' en cualquier instante haciendo clic en el enlace permanente ubicado en el pie de página de cualquier sección del portal. Desde este menú interactivo, puede activar o desactivar las cookies opcionales de análisis y publicidad con un solo clic, aplicándose los cambios de inmediato."
       },
       {
-        heading: "6. Configuración del Navegador, Borrado de Almacenamiento y Privacidad",
-        body: "Puede borrar o bloquear permanentemente las cookies y el almacenamiento local directamente desde los ajustes de su navegador web (Chrome, Safari, Firefox, Edge). Eliminar los datos del sitio web restablece de inmediato sus preferencias de visualización, unidades de medida y elecciones de consentimiento sin afectar a la precisión matemática de las herramientas. Nuestras calculadoras continúan funcionando al 100% incluso si bloquea completamente las cookies de terceros mediante extensiones o navegación privada."
+        "heading": "6. Configuración del Navegador, Borrado de Almacenamiento y Privacidad",
+        "body": "Asimismo, puede inspeccionar, bloquear o eliminar permanentemente las cookies y el almacenamiento local directamente desde el panel de configuración de su navegador web preferido (Chrome, Safari, Firefox o Edge). El borrado del almacenamiento local restablecerá sus opciones visuales y de unidades, pero nuestras calculadoras continuarán funcionando con exactitud matemática plena incluso en modo de navegación privada o incógnito."
+      },
+      {
+        "heading": "7. Seguridad Perimetral Cloudflare e Integridad del Servidor",
+        "body": "Real BMI se distribuye a nivel global a través de la red perimetral de Cloudflare Pages. Cloudflare puede establecer cookies técnicas de seguridad imprescindibles (tales como __cf_bm o cf_clearance) para identificar patrones de tráfico automatizado malicioso, prevenir raspados de contenido y mitigar ataques de denegación de servicio distribuido (DDoS). Dichas cookies técnicas no rastrean la actividad en sitios ajenos y no contienen información médica."
+      },
+      {
+        "heading": "8. Derechos de Privacidad Globales y Cumplimiento Normativo (RGPD, CCPA y LOPD)",
+        "body": "Cumplimos escrupulosamente con los principales marcos normativos internacionales sobre protección de datos, incluidos el Reglamento General de Protección de Datos de la Unión Europea (RGPD), la Directiva ePrivacy, la Ley de Privacidad del Consumidor de California (CCPA/CPRA) y las legislaciones iberoamericanas correspondientes. Reconocemos la señal Global Privacy Control (GPC). No vendemos ni cedemos datos a intermediarios comerciales."
+      },
+      {
+        "heading": "9. Reconocimiento de Señales Global Privacy Control (GPC) y Do-Not-Track",
+        "body": "Nuestra infraestructura web detecta y respeta automáticamente las señales de cabecera Global Privacy Control (GPC) y Do-Not-Track (DNT) emitidas por su navegador. Cuando se detecta dicha señal, todos los scripts opcionales de analítica y publicidad digital se deshabilitan por defecto, manteniéndose activos únicamente los elementos de almacenamiento local estrictamente necesarios para la presentación visual de la página."
+      },
+      {
+        "heading": "10. Guía Paso a Paso: Gestión de Cookies en los Principales Navegadores",
+        "body": "Puede gestionar o bloquear cookies en cualquier momento desde su navegador: En Google Chrome, acceda a Configuración > Privacidad y seguridad > Cookies de terceros. En Apple Safari, seleccione Ajustes > Privacidad y marque 'Bloquear todas las cookies'. En Mozilla Firefox, diríjase a Ajustes > Privacidad y seguridad > Cookies y datos del sitio. En Microsoft Edge, ingrese en Configuración > Cookies y permisos del sitio > Administrar y eliminar cookies."
+      },
+      {
+        "heading": "11. Identificación y Divulgación de Proveedores Tecnológicos Externos",
+        "body": "Mantenemos total transparencia respecto a nuestros proveedores de servicios tecnológicos: Nuestra infraestructura perimetral es provista por Cloudflare, Inc. (101 Townsend St, San Francisco, CA 94107, EE. UU.), encargada de la distribución CDN y mitigación de tráfico hostil. Nuestros servicios analíticos y publicitarios son provistos por Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, EE. UU.) bajo cláusulas contractuales tipo."
+      },
+      {
+        "heading": "12. Ciclo de Auditoría Semestral, Actualizaciones y Contacto",
+        "body": "Realizamos una auditoría exhaustiva de todos los scripts y elementos de almacenamiento del sitio web cada seis meses para asegurar el cumplimiento continuo de los estándares de privacidad. Cualquier modificación será publicada directamente en esta página. Para cualquier consulta sobre cookies, puede dirigirse al fundador y desarrollador Bhawanshi Dosi en Banswara, Rajastán, India, a través del correo privacy@realbmicalculator.com."
       }
     ],
-    storageTableTitle: "Registro de Cookies y Almacenamiento Local",
-    tableHeaders: ["Nombre / Clave", "Tipo y Proveedor", "Finalidad", "Duración"],
-    storageRows: [
-      ["theme", "Almacenamiento Local (Real BMI)", "Guarda su preferencia de tema (claro u oscuro).", "Persistente"],
-      ["bmiUnit", "Almacenamiento Local (Real BMI)", "Recuerda sus unidades preferidas (métrico o imperial).", "Persistente"],
-      ["cookie_consent_preferences", "Almacenamiento Local (Real BMI)", "Registra sus decisiones de consentimiento de cookies.", "12 Meses"],
-      ["_ga, _ga_*", "Cookie (Google Analytics)", "Mide estadísticas de visitas anónimas para optimizar el sitio.", "Hasta 2 Años"],
-      ["__gads, __gpi", "Cookie (Google AdSense)", "Muestra anuncios para mantener el acceso gratuito a las herramientas.", "Hasta 13 Meses"]
+    "storageTableTitle": "Registro de Cookies y Almacenamiento Local",
+    "tableHeaders": [
+      "Nombre / Clave",
+      "Tipo y Proveedor",
+      "Finalidad",
+      "Duración"
+    ],
+    "storageRows": [
+      [
+        "theme",
+        "Almacenamiento Local (Real BMI)",
+        "Guarda su preferencia de tema (claro u oscuro) para evitar parpadeos de pantalla.",
+        "Persistente"
+      ],
+      [
+        "bmiUnit",
+        "Almacenamiento Local (Real BMI)",
+        "Recuerda sus unidades preferidas (métrico o imperial) en todas las herramientas.",
+        "Persistente"
+      ],
+      [
+        "cookie_consent_preferences",
+        "Almacenamiento Local (Real BMI)",
+        "Registra sus decisiones de consentimiento de cookies para evitar solicitudes reiteradas.",
+        "12 Meses"
+      ],
+      [
+        "_ga, _ga_*",
+        "Cookie (Google Analytics)",
+        "Mide estadísticas de visitas anónimas agregadas para optimizar el sitio web.",
+        "Hasta 2 Años"
+      ],
+      [
+        "__gads, __gpi",
+        "Cookie (Google AdSense)",
+        "Muestra anuncios discretos para mantener el acceso gratuito a todas las calculadoras.",
+        "Hasta 13 Meses"
+      ],
+      [
+        "__cf_bm, cf_clearance",
+        "Cookie (Seguridad Cloudflare)",
+        "Token de seguridad perimetral para mitigar bots maliciosos y ataques distribuidos.",
+        "Hasta 1 Año"
+      ]
     ]
   },
-  fr: {
-    pageTitle: "Politique de Cookies | Real BMI",
-    pageDescription: "Consultez la Politique de Cookies officielle de Real BMI. Découvrez les technologies de stockage local et de cookies utilisées.",
-    title: "Politique de Cookies",
-    eyebrow: "Transparence & Contrôle des Données",
-    description: "Divulgation complète des technologies de stockage local et cookies sur Real BMI.",
-    homeLabel: "Accueil",
-    sections: [
+  "fr": {
+    "pageTitle": "Politique de Cookies | Real BMI",
+    "pageDescription": "Consultez la Politique de Cookies officielle de Real BMI. Découvrez les technologies de stockage local et de cookies utilisées.",
+    "title": "Politique de Cookies",
+    "eyebrow": "Transparence & Contrôle des Données",
+    "description": "Divulgation complète des technologies de stockage local et cookies sur Real BMI.",
+    "homeLabel": "Accueil",
+    "sections": [
       {
-        heading: "1. Présentation des Technologies Utilisées",
-        body: "Real BMI applique une architecture axée sur la confidentialité. Toutes vos saisies physiologiques sont calculées localement dans votre navigateur sans être transmises à des serveurs. Nous utilisons un stockage local minimal et des cookies pour assurer les fonctionnalités et financer l'accès gratuit."
+        "heading": "1. Présentation des Technologies Utilisées et Architecture Zéro Rétention",
+        "body": "Real BMI applique une architecture technique rigoureusement axée sur le respect de la vie privée. Lorsque vous évaluez votre indice de masse corporelle (IMC), votre métabolisme de base (BMR) ou votre dépense calorique quotidienne (TDEE), l'ensemble des calculs mathématiques s'exécute exclusivement au sein du moteur JavaScript local de votre propre navigateur web. Nous ne transmettons jamais vos mesures physiques, votre taille, votre poids ou votre âge à des serveurs distants ou des bases de données tierces. Pour garantir un service fluide, rapide et gratuit, nous utilisons un stockage local minimal et des témoins de connexion décrits ci-après."
       },
       {
-        heading: "2. Stockage Fonctionnel Strictement Nécessaire",
-        body: "Ces paramètres sont indispensables au bon fonctionnement du site et ne collectent aucune donnée personnelle identifiables :"
+        "heading": "2. Stockage Fonctionnel Strictement Nécessaire et Persistance Visuelle",
+        "body": "Ces éléments techniques sont indispensables au fonctionnement normal du site web et de ses calculateurs interactifs. Ils ne collectent aucun identifiant personnel direct, adresse IP ou donnée de santé, et ne peuvent être désactivés dans notre centre de préférences. Ils servent uniquement à mémoriser vos choix d'affichage visuel (mode sombre ou mode clair pour éviter tout clignotement) et vos unités de calcul préférées (système métrique en centimètres et kilogrammes ou système impérial en pieds et livres). Ces informations demeurent sur votre appareil."
       },
       {
-        heading: "3. Statistiques et Analyses Anonymes (Optionnel)",
-        body: "Avec votre accord, nous utilisons Google Analytics 4 pour analyser la fréquentation de manière agrégée et anonyme via les cookies _ga et _ga_* (conservés jusqu'à 2 ans)."
+        "heading": "3. Statistiques et Analyses Anonymes (Optionnel, Soumis au Consentement)",
+        "body": "Uniquement avec votre consentement préalable et éclairé, nous utilisons Google Analytics 4 afin d'analyser la fréquentation globale du site et d'optimiser l'ergonomie de nos 23 outils. Google Analytics installe des témoins tels que _ga et _ga_* conservés pour une durée maximale de deux ans. Ces témoins recueillent des statistiques agrégées strictement anonymes (pages consultées, type d'appareil, résolution d'écran). Aucune donnée médicale, nom ou adresse électronique n'est collectée."
       },
       {
-        heading: "4. Cookies Publicitaires (Optionnel)",
-        body: "Avec votre consentement, Google AdSense utilise des cookies tels que __gads et __gpi (durée maximale de 13 mois) pour afficher des annonces finançant l'accès gratuit."
+        "heading": "4. Cookies Publicitaires et Pérennité du Service Gratuit",
+        "body": "Avec votre accord préalable, Google AdSense utilise des témoins publicitaires tels que __gads et __gpi (durée maximale de 13 mois) pour afficher des annonces discrètes et adaptées. Ces revenus publicitaires financent l'hébergement, la sécurité et la maintenance continue de nos 23 outils de santé. En cas de refus des témoins publicitaires, seules des annonces contextuelles non personnalisées sont présentées, sans fenêtres intempestives ni bannières trompeuses."
       },
       {
-        heading: "5. Gestion et Retrait du Consentement",
-        body: "Vous pouvez modifier ou retirer votre consentement à tout moment en cliquant sur 'Préférences de Cookies' en bas de page."
+        "heading": "5. Gestion, Modification et Retrait du Consentement",
+        "body": "Vous conservez une maîtrise totale sur vos choix de confidentialité à chaque instant. Vous pouvez ouvrir notre panneau interactif de gestion des témoins en cliquant sur le lien 'Préférences de Cookies' présent dans le pied de page de chaque page de notre site. Ce panneau vous permet d'activer ou de révoquer les témoins d'analyse et de publicité d'un simple clic avec effet immédiat."
       },
       {
-        heading: "6. Configuration du Navigateur, Suppression du Stockage et Confidentialité",
-        body: "Vous pouvez à tout moment supprimer ou bloquer les cookies et les éléments de stockage local directement dans les paramètres de votre navigateur (Chrome, Safari, Firefox, Edge). L'effacement des données de navigation réinitialise immédiatement vos préférences visuelles, vos unités de mesure et vos choix de consentement, sans jamais altérer la précision mathématique de nos calculateurs. Tous nos outils restent pleinement opérationnels même si vous bloquez les cookies tiers via un bloqueur ou le mode de navigation privée."
+        "heading": "6. Paramètres du Navigateur, Suppression du Stockage et Confidentialité",
+        "body": "Vous pouvez également vérifier, bloquer ou supprimer définitivement les témoins et données de stockage local directement dans les paramètres de votre navigateur Internet (Google Chrome, Apple Safari, Mozilla Firefox ou Microsoft Edge). La suppression de ces éléments réinitialisera vos préférences d'affichage, mais n'altérera en rien la rigueur mathématique de nos calculateurs, qui demeurent pleinement fonctionnels même en navigation privée."
+      },
+      {
+        "heading": "7. Sécurité Réseau Cloudflare et Protection contre les Attaques",
+        "body": "Le site Real BMI est distribué à l'échelle mondiale par le biais du réseau périphérique Cloudflare Pages. Cloudflare peut positionner des témoins techniques essentiels de sécurité (comme __cf_bm ou cf_clearance) afin d'identifier les requêtes automatisées malveillantes et prévenir les attaques par déni de service distribué (DDoS). Ces traceurs techniques ne tracent aucune activité sur des sites tiers et ne contiennent aucune donnée de santé."
+      },
+      {
+        "heading": "8. Droits Fondamentaux et Conformité Réglementaire (RGPD & ePrivacy)",
+        "body": "Nous appliquons scrupuleusement les exigences du Règlement Général sur la Protection des Données (RGPD) de l'Union Européenne, de la directive ePrivacy et des recommandations de la CNIL. Nous respectons la directive californienne CCPA/CPRA et la loi indienne DPDP. Nous ne vendons, ne louons et ne cédons aucune donnée d'utilisateur à des courtiers en données ou des tiers commerciaux."
+      },
+      {
+        "heading": "9. Prise en Compte des Signaux Global Privacy Control (GPC) et Do-Not-Track",
+        "body": "Notre infrastructure reconnaît automatiquement les signaux de confidentialité Global Privacy Control (GPC) et Do-Not-Track (DNT) transmis par votre navigateur. Dès lors qu'un signal GPC ou DNT est détecté, l'ensemble des témoins optionnels de mesure d'audience et de publicité est automatiquement désactivé par défaut, ne laissant actifs que les composants strictement nécessaires à l'affichage."
+      },
+      {
+        "heading": "10. Instructions Pratiques : Gestion des Témoins dans Votre Navigateur",
+        "body": "Vous pouvez gérer ou interdire les témoins à tout moment : Dans Google Chrome, rendez-vous dans Paramètres > Confidentialité et sécurité > Témoins tiers. Dans Apple Safari, accédez à Réglages > Confidentialité > Bloquer tous les témoins. Dans Mozilla Firefox, ouvrez Paramètres > Vie privée et sécurité > Témoins et données de sites. Dans Microsoft Edge, allez dans Paramètres > Cookies et autorisations de site > Gérer et supprimer les témoins."
+      },
+      {
+        "heading": "11. Transparence Relative aux Prestataires Techniques Tiers",
+        "body": "Nous garantissons une totale clarté sur nos prestataires techniques : Notre hébergement et réseau de diffusion sont fournis par Cloudflare, Inc. (101 Townsend St, San Francisco, CA 94107, États-Unis). Nos solutions d'analyse et de diffusion publicitaire sont fournies par Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, États-Unis) sous clauses contractuelles types."
+      },
+      {
+        "heading": "12. Cycle d'Audit Semestriel, Mises à Jour et Contact",
+        "body": "Nous réalisons un audit systématique de tous les scripts et traceurs du site web tous les six mois pour nous assurer du respect absolu des règles de protection de la vie privée. En cas d'évolution, cette notice sera actualisée. Pour toute question, veuillez contacter le fondateur Bhawanshi Dosi à Banswara, Rajasthan, Inde, à l'adresse privacy@realbmicalculator.com."
       }
     ],
-    storageTableTitle: "Registre des Cookies et Stockages Locaux",
-    tableHeaders: ["Nom / Clé", "Type & Fournisseur", "Finalité", "Durée"],
-    storageRows: [
-      ["theme", "Stockage Local (Real BMI)", "Mémorise le thème sombre ou clair.", "Persistant"],
-      ["bmiUnit", "Stockage Local (Real BMI)", "Mémorise les unités choisies (métrique ou impérial).", "Persistant"],
-      ["cookie_consent_preferences", "Stockage Local (Real BMI)", "Enregistre vos choix de consentement aux cookies.", "12 Mois"],
-      ["_ga, _ga_*", "Cookie (Google Analytics)", "Mesure d'audience anonyme agrégée.", "Jusqu'à 2 Ans"],
-      ["__gads, __gpi", "Cookie (Google AdSense)", "Affichage d'annonces soutenant les outils gratuits.", "Jusqu'à 13 Mois"]
+    "storageTableTitle": "Registre des Cookies et Stockages Locaux",
+    "tableHeaders": [
+      "Nom / Clé",
+      "Type & Fournisseur",
+      "Finalité",
+      "Durée"
+    ],
+    "storageRows": [
+      [
+        "theme",
+        "Stockage Local (Real BMI)",
+        "Mémorise le thème sombre ou clair pour éviter tout clignotement de l'écran.",
+        "Persistant"
+      ],
+      [
+        "bmiUnit",
+        "Stockage Local (Real BMI)",
+        "Mémorise les unités choisies (métrique ou impérial) sur tous les calculateurs.",
+        "Persistant"
+      ],
+      [
+        "cookie_consent_preferences",
+        "Stockage Local (Real BMI)",
+        "Enregistre vos choix de consentement pour éviter les invites répétées.",
+        "12 Mois"
+      ],
+      [
+        "_ga, _ga_*",
+        "Cookie (Google Analytics)",
+        "Mesure d'audience globale et anonyme pour améliorer l'expérience utilisateur.",
+        "Jusqu'à 2 Ans"
+      ],
+      [
+        "__gads, __gpi",
+        "Cookie (Google AdSense)",
+        "Affichage d'annonces non intrusives soutenant les outils gratuits.",
+        "Jusqu'à 13 Mois"
+      ],
+      [
+        "__cf_bm, cf_clearance",
+        "Cookie (Sécurité Cloudflare)",
+        "Jeton de sécurité réseau pour contrer les robots malveillants et attaques DDoS.",
+        "Jusqu'à 1 An"
+      ]
     ]
   },
-  de: {
-    pageTitle: "Cookie-Richtlinie | Real BMI",
-    pageDescription: "Lesen Sie die offizielle Cookie-Richtlinie von Real BMI. Erfahren Sie mehr über die verwendeten Cookies und lokalen Speicherungen.",
-    title: "Cookie-Richtlinie",
-    eyebrow: "Transparenz & Datenkontrolle",
-    description: "Vollständige Offenlegung der Browser-Speichertechnologien und Cookies auf Real BMI.",
-    homeLabel: "Startseite",
-    sections: [
+  "de": {
+    "pageTitle": "Cookie-Richtlinie | Real BMI",
+    "pageDescription": "Lesen Sie die offizielle Cookie-Richtlinie von Real BMI. Erfahren Sie mehr über die verwendeten Cookies und lokalen Speicherungen.",
+    "title": "Cookie-Richtlinie",
+    "eyebrow": "Transparenz & Datenkontrolle",
+    "description": "Vollständige Offenlegung der Browser-Speichertechnologien und Cookies auf Real BMI.",
+    "homeLabel": "Startseite",
+    "sections": [
       {
-        heading: "1. Übersicht der eingesetzten Technologien",
-        body: "Real BMI setzt auf kompromisslosen Datenschutz. Sämtliche physiologischen Berechnungen (BMI, BMR, TDEE, Körperfettanteil) erfolgen ausschließlich lokal in der JavaScript-Laufzeitumgebung Ihres Webbrowsers. Wir übertragen zu keinem Zeitpunkt persönliche Messwerte an externe Webserver oder Datenbanken. Zur Gewährleistung einer reibungslosen Benutzerführung und zur Unterstützung unseres kostenfreien Angebots nutzen wir ein Minimum an lokalem Browserspeicher und Cookies."
+        "heading": "1. Übersicht der eingesetzten Technologien und Zero-Retention-Architektur",
+        "body": "Real BMI setzt auf ein klares, datenschutzorientiertes Grundkonzept. Sämtliche physiologischen Berechnungen (Body-Mass-Index, Grundumsatz, Gesamtenergiebedarf, Körperfettanteil) erfolgen ausnahmslos lokal in der JavaScript-Laufzeitumgebung Ihres Webbrowsers. Wir übermitteln zu keinem Zeitpunkt persönliche Messwerte, Körpergrößen, Gewichte oder Rechenergebnisse an externe Server oder Datenbanken. Zur Gewährleistung einer reibungslosen Benutzerführung und zur Unterstützung unseres kostenfreien Bildungsangebots nutzen wir ein Minimum an lokalem Browserspeicher und Cookies gemäß den nachfolgenden Erläuterungen."
       },
       {
-        heading: "2. Technisch notwendige lokale Speicherungen",
-        body: "Diese Einträge sind für den reibungslosen Betrieb der Rechner und die Beibehaltung Ihrer Benutzereinstellungen unerlässlich. Sie erfassen keine personenbezogenen Identifikatoren und können in unserer Datenschutzzentrale nicht deaktiviert werden:"
+        "heading": "2. Technisch notwendige lokale Speicherungen und UI-Persistenz",
+        "body": "Diese technischen Elemente sind für den stabilen Betrieb der Webanwendung und der interaktiven Rechner zwingend erforderlich. Sie erfassen keinerlei persönliche Identifikatoren, IP-Adressen oder medizinische Historien und können in unserem Einstellungsmenü nicht abgewählt werden. Konkret speichern wir lediglich Ihre Darstellungsvorliebe (Hell- oder Dunkelmodus zur Vermeidung störender Flackereffekte) sowie Ihr bevorzugtes Maßsystem (metrische Einheiten in Zentimetern und Kilogramm oder imperiale Einheiten in Fuß, Zoll und Pfund). Diese Parameter verbleiben auf Ihrem Endgerät."
       },
       {
-        heading: "3. Anonyme Webanalyse (Optional)",
-        body: "Mit Ihrer ausdrücklichen Einwilligung nutzen wir Google Analytics 4 mit Cookies wie _ga und _ga_* (Speicherdauer bis zu 2 Jahre) zur anonymen, aggregierten Nutzungsanalyse. Es werden keinerlei Gesundheitsdaten oder persönliche Merkmale erhoben oder verknüpft."
+        "heading": "3. Anonyme Webanalyse und Reichweitenmessung (Optional mit Einwilligung)",
+        "body": "Nur mit Ihrer ausdrücklichen und informierten Einwilligung setzen wir Google Analytics 4 ein, um die allgemeine Websitenutzung statistisch zu erfassen und unsere Rechner kontinuierlich zu optimieren. Google Analytics verwendet hierfür Cookies wie _ga und _ga_* mit einer Speicherdauer von bis zu zwei Jahren. Es werden ausschließlich anonymisierte Zugriffsdaten wie Seitenaufrufe, Verweildauern und Gerätetypen erfasst; Gesundheitsdaten oder persönliche Profile werden niemals erhoben."
       },
       {
-        heading: "4. Digitale Werbe-Cookies (Optional)",
-        body: "Mit Ihrer Zustimmung nutzt Google AdSense Werbe-Cookies wie __gads und __gpi (Speicherdauer bis zu 13 Monate) zur Anzeige dezenter Werbemittel, die den Betrieb und die freie Bereitstellung unserer Gesundheitstools finanzieren. Bei Ablehnung werden keine personalisierten Werbe-Cookies gesetzt."
+        "heading": "4. Digitale Werbe-Cookies und Finanzierung des freien Zugangs",
+        "body": "Mit Ihrer vorherigen Zustimmung verwendet Google AdSense Werbe-Cookies wie __gads und __gpi (Gültigkeit bis zu 13 Monate), um dezente Werbeanzeigen einzublenden. Diese Werbeeinnahmen tragen zur Deckung der Serverkosten und zur dauerhaft kostenfreien Bereitstellung unserer 23 Gesundheitstools bei. Bei Ablehnung optionaler Werbe-Cookies werden lediglich nicht-personalisierte Anzeigen ausgeliefert, ohne störende Popups oder irreführende Weiterleitungen."
       },
       {
-        heading: "5. Verwaltung und Widerruf Ihrer Einwilligung",
-        body: "Sie können Ihre Cookie-Zustimmung jederzeit über den Link 'Cookie-Einstellungen' in der Fußzeile jeder Seite ändern oder widerrufen."
+        "heading": "5. Verwaltung und jederzeitiger Widerruf Ihrer Einwilligung",
+        "body": "Sie behalten zu jedem Zeitpunkt die vollständige Kontrolle über Ihre Datenschutzeinstellungen. Sie können Ihre Einwilligung jederzeit anpassen oder widerrufen, indem Sie auf den Link 'Cookie-Einstellungen' in der Fußzeile jeder Unterseite klicken. Das Präferenzmenü ermöglicht es Ihnen, Analyse- und Werbe-Cookies mit sofortiger Wirkung für die Zukunft ein- oder auszuschalten."
       },
       {
-        heading: "6. Browser-Einstellungen, Speicherbereinigung und Datenschutzkontrolle",
-        body: "Sie können gespeicherte Cookies und lokale Web-Daten jederzeit eigenständig über die Einstellungen Ihres Browsers (Chrome, Safari, Firefox, Edge) löschen oder blockieren. Das Bereinigen der Browserdaten setzt Ihre Darstellungsoptionen, Maßeinheiten und Einwilligungseinstellungen unverzüglich zurück, ohne die mathematische Genauigkeit unserer Rechner zu beeinträchtigen. Sämtliche Berechnungstools von Real BMI bleiben auch bei vollständiger Deaktivierung von Drittanbieter-Cookies oder im privaten Surfmodus uneingeschränkt funktionsfähig."
+        "heading": "6. Browser-Einstellungen, Speicherbereinigung und Geräteschutz",
+        "body": "Sie können gespeicherte Cookies und lokale Websitedaten jederzeit über die Einstellungen Ihres Webbrowsers (Chrome, Safari, Firefox, Edge) prüfen, selektiv sperren oder vollständig löschen. Das Löschen des Browserspeichers setzt Ihre Theme- und Einheitenpräferenzen zurück, berührt jedoch die Funktionsfähigkeit und mathematische Präzision unserer Rechner in keiner Weise. Alle Tools bleiben auch bei blockierten Drittanbieter-Cookies oder im privaten Surfmodus voll einsatzfähig."
+      },
+      {
+        "heading": "7. Cloudflare Edge-Sicherheit und Netzwerkintegrität",
+        "body": "Real BMI wird über das weltweite Edge-Netzwerk von Cloudflare Pages ausgeliefert. Cloudflare setzt technische Sicherheits-Cookies (wie __cf_bm oder cf_clearance) ein, um bösartige Bot-Netzwerke zu erkennen und die Plattform vor Distributed-Denial-of-Service-Angriffen (DDoS) zu schützen. Diese Sicherheits-Cookies verfolgen kein nutzerübergreifendes Verhalten und enthalten keinerlei gesundheitsbezogene Daten."
+      },
+      {
+        "heading": "8. Einhaltung europäischer und internationaler Datenschutzstandards (DSGVO & ePrivacy)",
+        "body": "Unsere Plattform erfüllt vollumfänglich die Vorgaben der europäischen Datenschutz-Grundverordnung (DSGVO), der ePrivacy-Richtlinie und des deutschen Telekommunikation-Telemedien-Datenschutz-Gesetzes (TDDDG). Wir respektieren das automatische 'Global Privacy Control' (GPC) Signal. Ein Verkauf, eine Vermietung oder eine Weitergabe von Nutzerdaten an Datenhändler ist vertraglich und technisch ausgeschlossen."
+      },
+      {
+        "heading": "9. Automatische Beachtung von Global Privacy Control (GPC) und Do-Not-Track (DNT)",
+        "body": "Unsere Webanwendung erkennt automatisch im Browser gesetzte GPC- (Global Privacy Control) und DNT-Signale (Do-Not-Track). Sobald ein solches Signal vom Browser übermittelt wird, werden alle nicht-essenziellen Tracking- und Werbe-Skripte standardmäßig blockiert, sodass lediglich zwingend erforderliche technische Einstellungen im lokalen Speicher erhalten bleiben."
+      },
+      {
+        "heading": "10. Anleitung: Cookie-Verwaltung in gängigen Webbrowsern",
+        "body": "Sie können Cookies in Ihrem Browser jederzeit anpassen: In Google Chrome unter Einstellungen > Datenschutz und Sicherheit > Drittanbieter-Cookies. In Apple Safari unter Einstellungen > Datenschutz > 'Alle Cookies blockieren'. In Mozilla Firefox unter Einstellungen > Datenschutz & Sicherheit > Cookies und Website-Daten. In Microsoft Edge unter Einstellungen > Cookies und Websiteberechtigungen > Cookies und Websitedaten verwalten und löschen."
+      },
+      {
+        "heading": "11. Transparenz über externe Technologiepartner",
+        "body": "Wir legen alle externen Dienstleister offen: Hosting und DDoS-Schutz werden durch Cloudflare, Inc. (101 Townsend St, San Francisco, CA 94107, USA) bereitgestellt. Analyse- und Werbedienste werden von Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) im Rahmen strenger Auftragsverarbeitungsverträge mit Standardvertragsklauseln erbracht."
+      },
+      {
+        "heading": "12. Regelmäßige Überprüfungszyklen, Richtlinienanpassungen und Kontakt",
+        "body": "Wir führen halbjährlich ein systematisches Audit aller eingebundenen Skripte durch, um die strikte Einhaltung unserer Datenschutzgrundsätze zu garantieren. Aktualisierungen dieser Richtlinie werden direkt auf dieser Seite veröffentlicht. Bei Fragen wenden Sie sich bitte an Gründer Bhawanshi Dosi in Banswara, Rajasthan, Indien, über die E-Mail-Adresse privacy@realbmicalculator.com."
+      },
+      {
+        "heading": "13. Google-zertifizierte CMP und IAB Europe TCF v2.2 Standard",
+        "body": "Für alle Besucher aus dem Europäischen Wirtschaftsraum (EWR), dem Vereinigten Königreich und der Schweiz setzen wir eine offizielle, von Google zertifizierte Consent Management Plattform (CMP) gemäß dem IAB Europe Transparency and Consent Framework (TCF v2.2) ein. Dies garantiert eine lückenlose Protokollierung Ihrer Einwilligungsentscheidungen nach den strengsten europäischen Datenschutzmaßstäben. Sie können Ihre getroffene Auswahl jederzeit im Footer über den Link 'Cookie-Einstellungen' überprüfen und mit rechtlicher Wirkung für die Zukunft ändern."
+      },
+      {
+        "heading": "14. Spezifische Betroffenenrechte nach Art. 15 bis 22 DSGVO",
+        "body": "Als Nutzer in der Europäischen Union haben Sie das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO), das Recht auf Berichtigung unrichtiger Daten (Art. 16 DSGVO), das Recht auf Löschung ('Recht auf Vergessenwerden', Art. 17 DSGVO), das Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO), das Recht auf Datenübertragbarkeit (Art. 20 DSGVO) sowie das Recht auf Widerspruch gegen bestimmte Verarbeitungen (Art. 21 DSGVO). Da unsere Berechnungsmodelle keine personenbezogenen Daten auf unseren Servern speichern, verbleibt die vollständige Datenhoheit auf Ihrem Endgerät."
       }
     ],
-    storageTableTitle: "Verzeichnis der Cookies und Speicherungen",
-    tableHeaders: ["Name / Schlüssel", "Typ & Anbieter", "Zweck", "Dauer"],
-    storageRows: [
-      ["theme", "Lokaler Speicher (Real BMI)", "Speichert Ihre Hell-/Dunkel-Einstellung.", "Persistent"],
-      ["bmiUnit", "Lokaler Speicher (Real BMI)", "Speichert Ihre bevorzugten Einheiten (metrisch/imperial).", "Persistent"],
-      ["cookie_consent_preferences", "Lokaler Speicher (Real BMI)", "Speichert Ihre Cookie-Entscheidungen.", "12 Monate"],
-      ["_ga, _ga_*", "Cookie (Google Analytics)", "Erfasst anonyme Gesamtzugriffszahlen.", "Bis zu 2 Jahre"],
-      ["__gads, __gpi", "Cookie (Google AdSense)", "Finanzierung der kostenlosen Rechner durch Anzeigen.", "Bis zu 13 Monate"]
+    "storageTableTitle": "Verzeichnis der Cookies und Speicherungen",
+    "tableHeaders": [
+      "Name / Schlüssel",
+      "Typ & Anbieter",
+      "Zweck",
+      "Dauer"
+    ],
+    "storageRows": [
+      [
+        "theme",
+        "Lokaler Speicher (Real BMI)",
+        "Speichert Ihre Hell-/Dunkel-Einstellung zur Vermeidung von Bildschirmflackern.",
+        "Persistent"
+      ],
+      [
+        "bmiUnit",
+        "Lokaler Speicher (Real BMI)",
+        "Speichert Ihre bevorzugten Einheiten (metrisch/imperial) für alle Rechner.",
+        "Persistent"
+      ],
+      [
+        "cookie_consent_preferences",
+        "Lokaler Speicher (Real BMI)",
+        "Speichert Ihre Cookie-Entscheidungen, um wiederholte Banner zu vermeiden.",
+        "12 Monate"
+      ],
+      [
+        "_ga, _ga_*",
+        "Cookie (Google Analytics)",
+        "Erfasst anonyme Gesamtzugriffszahlen zur fortlaufenden Qualitätsverbesserung.",
+        "Bis zu 2 Jahre"
+      ],
+      [
+        "__gads, __gpi",
+        "Cookie (Google AdSense)",
+        "Finanzierung der kostenlosen Rechner durch nicht-störende Werbeanzeigen.",
+        "Bis zu 13 Monate"
+      ],
+      [
+        "__cf_bm, cf_clearance",
+        "Cookie (Cloudflare Sicherheit)",
+        "Technischer Sicherheitstoken zur Bot-Erkennung und DDoS-Abwehr.",
+        "Bis zu 1 Jahr"
+      ]
     ]
   },
-  ko: {
-    pageTitle: "쿠키 정책 | Real BMI",
-    pageDescription: "Real BMI의 공식 쿠키 정책을 확인하세요. 사용하는 필수 로컬 저장소 및 개인정보 보호 쿠키에 대해 안내합니다.",
-    title: "쿠키 정책",
-    eyebrow: "투명성 및 데이터 통제",
-    description: "Real BMI 계산기에서 사용하는 브라우저 저장소 및 쿠키 기술에 대한 상세한 안내입니다.",
-    homeLabel: "홈",
-    sections: [
+  "ko": {
+    "pageTitle": "쿠키 정책 | Real BMI",
+    "pageDescription": "Real BMI의 공식 쿠키 정책을 확인하세요. 사용하는 필수 로컬 저장소 및 개인정보 보호 쿠키에 대해 안내합니다.",
+    "title": "쿠키 정책",
+    "eyebrow": "투명성 및 데이터 통제",
+    "description": "Real BMI 계산기에서 사용하는 브라우저 저장소 및 쿠키 기술에 대한 상세한 안내입니다.",
+    "homeLabel": "홈",
+    "sections": [
       {
-        heading: "1. 사용 기술 개요",
-        body: "Real BMI는 철저한 프라이버시 우선 원칙을 기반으로 운영됩니다. 이용자가 입력하는 체질량지수(BMI), 기초대사량(BMR), 일일 칼로리 소모량(TDEE) 등 모든 신체 계측 수치는 전적으로 이용자의 로컬 웹 브라우저 JavaScript 런타임 환경에서만 실시간 연산됩니다. 당사는 이용자의 민감한 건강 수치를 외부 서버로 전송하거나 보관하지 않습니다. 원활한 서비스 편의성과 무료 운영 유지를 위해 필요한 최소한의 브라우저 로컬 저장소 및 서드파티 쿠키 기술을 활용합니다."
+        "heading": "1. 사용 기술 개요 및 데이터 제로 보존 아키텍처",
+        "body": "Real BMI는 철저한 프라이버시 우선 원칙을 기반으로 운영됩니다. 이용자가 입력하는 체질량지수(BMI), 기초대사량(BMR), 일일 칼로리 소모량(TDEE) 등 모든 신체 계측 수치는 전적으로 이용자의 로컬 웹 브라우저 JavaScript 런타임 환경에서만 실시간 연산됩니다. 당사는 이용자의 민감한 건강 수치, 신장, 체중, 연령 정보를 외부 서버로 전송하거나 원격 데이터베이스에 보관하지 않습니다. 원활한 서비스 편의성과 23종의 건강 도구를 지속적으로 무료 제공하기 위해 필요한 최소한의 브라우저 로컬 저장소 및 서드파티 쿠키 기술을 투명하게 활용합니다."
       },
       {
-        heading: "2. 필수 기능 로컬 저장소",
-        body: "웹사이트와 건강 계산기가 정상적으로 작동하고 사용자가 선택한 시각적 환경을 유지하기 위해 필수적인 기술 항목으로, 개인 식별 정보를 수집하지 않으며 비활성화할 수 없습니다:"
+        "heading": "2. 필수 기능 로컬 저장소 및 사용자 인터페이스 설정 유지",
+        "body": "웹사이트와 건강 계산기가 정상적으로 작동하고 사용자가 선택한 시각적 환경을 유지하기 위해 필수적인 기술 항목입니다. 개인 식별 정보, IP 주소 또는 건강 이력을 수집하지 않으며 사이트 기본 설정 센터에서 비활성화할 수 없습니다. 이용자가 선택한 다크 모드 또는 라이트 모드 테마, 미터법(cm, kg) 또는 야드파운드법(ft, lbs) 측정 단위 설정만을 사용자 로컬 브라우저에 안전하게 보관합니다."
       },
       {
-        heading: "3. 익명 웹 통계 분석 (선택)",
-        body: "이용자의 사전 동의 시 Google Analytics 4를 사용하여 익명의 집계 트래픽 통계를 분석합니다(_ga 및 _ga_* 쿠키, 최대 2년 보관). 이 과정에서 개인의 건강 수치나 개별 식별자는 일체 수집되거나 연결되지 않습니다."
+        "heading": "3. 익명 웹 통계 분석 및 품질 측정 (선택 동의 기반)",
+        "body": "이용자의 사전 동의 시 Google Analytics 4를 사용하여 익명의 집계 트래픽 통계를 분석합니다. Google Analytics는 _ga 및 _ga_* 쿠키를 생성하며 최대 2년간 유지됩니다. 이 과정에서 페이지 조회수, 방문 경로, 기기 유형 등 전반적인 통계 지표만을 수집하며, 개인의 신체 계측치, 성명, 이메일 주소 등 식별 정보는 일체 수집되거나 연결되지 않습니다."
       },
       {
-        heading: "4. 디지털 광고 쿠키 (선택)",
-        body: "이용자의 사전 동의 시 Google AdSense 광고 쿠키(__gads 및 __gpi, 최대 13개월 보관)를 사용하여 비침해적인 광고를 표시하며, 이를 통해 무료 건강 도구의 개발과 호스팅을 유지합니다. 비필수 쿠키 거부 시 맞춤형 광고 쿠키는 사용되지 않습니다."
+        "heading": "4. 디지털 광고 쿠키 및 무료 건강 서비스 운영 지원",
+        "body": "이용자의 사전 동의 시 Google AdSense 광고 쿠키(__gads 및 __gpi, 최대 13개월 보관)를 사용하여 비침해적인 광고를 표시하며, 이를 통해 고성능 서버 호스팅과 23종의 건강 계산기 무료 개발을 지속합니다. 선택적 광고 쿠키를 거부하시는 경우 맞춤형 타깃 광고가 배제되고 비맞춤형 안내 광고만 노출됩니다."
       },
       {
-        heading: "5. 동의 변경 및 철회 방법",
-        body: "이용자는 쿠키 설정에 대한 완전한 통제권을 가집니다. 언제든지 웹사이트 모든 페이지 하단 푸터에 위치한 '쿠키 설정' 링크를 클릭하여 동의 내역을 자유롭게 변경하거나 즉시 철회할 수 있습니다."
+        "heading": "5. 동의 변경 및 언제든지 철회할 수 있는 권리",
+        "body": "이용자는 쿠키 설정에 대한 완전한 통제권을 행사할 수 있습니다. 웹사이트 모든 페이지 하단 푸터에 위치한 '쿠키 설정' 링크를 클릭하면 언제든지 인터랙티브 환경설정 패널을 열어 분석 및 광고 쿠키 동의 여부를 즉시 변경하거나 철회할 수 있으며, 변경 사항은 사이트 전반에 즉시 반영됩니다."
       },
       {
-        heading: "6. 브라우저 환경설정, 저장 데이터 삭제 및 개인정보 통제권",
-        body: "이용자는 웹 브라우저(Chrome, Safari, Edge, Firefox 등)의 개인정보 설정을 통해 언제든지 저장된 쿠키와 로컬 데이터를 직접 삭제하거나 차단할 수 있습니다. 브라우저 캐시 및 사이트 데이터를 삭제하면 저장된 화면 테마, 선호 측정 단위 및 쿠키 동의 내역이 즉시 초기화되지만, 계산기의 계산 정확도나 사용성에는 일절 영향을 주지 않습니다. Real BMI의 모든 건강 지표 도구는 서드파티 쿠키를 차단하거나 시크릿 브라우징 모드를 활성화한 상태에서도 100% 정상 작동합니다."
+        "heading": "6. 웹 브라우저 환경설정, 로컬 캐시 삭제 및 개인정보 통제권",
+        "body": "이용자는 사용하는 웹 브라우저(Chrome, Safari, Edge, Firefox 등)의 설정 메뉴를 통해 언제든지 저장된 쿠키와 로컬 데이터를 직접 검토, 차단 또는 삭제할 수 있습니다. 로컬 사이트 데이터를 삭제하면 화면 테마 및 단위 선택이 초기화되지만 계산기의 수학적 계산 정확도나 사용성에는 영향을 주지 않으며, 시크릿 모드에서도 모든 도구를 정상 이용하실 수 있습니다."
+      },
+      {
+        "heading": "7. Cloudflare 에지 네트워크 보안 및 분산 공격(DDoS) 방어 기술",
+        "body": "Real BMI는 글로벌 에지 네트워크인 Cloudflare Pages를 통해 전 세계에 신속하고 안전하게 배포됩니다. Cloudflare는 악의적인 봇 트래픽을 탐지하고 분산 서비스 거부(DDoS) 공격으로부터 서버를 보호하기 위해 필수적인 보안 토큰(__cf_bm 또는 cf_clearance)을 설정할 수 있습니다. 이러한 기술 쿠키는 개별 사용자의 타 사이트 활동을 추적하지 않으며 건강 정보를 포함하지 않습니다."
+      },
+      {
+        "heading": "8. 글로벌 개인정보 보호 규정 준수 (GDPR, CCPA 및 대한민국 개인정보보호법)",
+        "body": "당사는 유럽연합 일반개인정보보호법(GDPR), 캘리포니아 소비자 프라이버시법(CCPA), 대한민국 개인정보보호법(PIPA) 등 국제적인 데이터 보호 규범을 충실히 준수합니다. Global Privacy Control(GPC) 신호를 존중하며, 이용자의 데이터를 제3자나 데이터 중개업자에게 판매, 임대 또는 무단 제공하지 않습니다."
+      },
+      {
+        "heading": "9. Global Privacy Control (GPC) 및 Do-Not-Track (DNT) 신호 대응",
+        "body": "당사 웹사이트는 이용자 브라우저에서 전송되는 GPC(Global Privacy Control) 및 DNT(Do-Not-Track) 프라이버시 신호를 자동으로 감지합니다. 해당 신호가 감지되면 비필수 분석 및 광고 쿠키는 즉시 비활성화되며 오직 사이트 인터페이스 표시에 필요한 필수 로컬 저장소만 동작합니다."
+      },
+      {
+        "heading": "10. 주요 웹 브라우저별 쿠키 설정 및 삭제 방법",
+        "body": "이용자는 브라우저 설정을 통해 쿠키를 관리할 수 있습니다: Google Chrome에서는 설정 > 개인정보 보호 및 보안 > 서드 파티 쿠키 메뉴를 이용합니다. Apple Safari에서는 환경설정 > 개인정보 보호 > '모든 쿠키 차단'을 선택합니다. Mozilla Firefox에서는 설정 > 개인 정보 및 보안 > 쿠키 및 사이트 데이터에서 관리합니다. Microsoft Edge에서는 설정 > 쿠키 및 사이트 권한 > 쿠키 및 사이트 데이터 관리 및 삭제 메뉴를 사용합니다."
+      },
+      {
+        "heading": "11. 외부 기술 서비스 제공업체 명시",
+        "body": "당사는 이용 기술 제공업체를 투명하게 공시합니다: 글로벌 콘텐츠 전송 및 DDoS 방어 인프라는 Cloudflare, Inc.(101 Townsend St, San Francisco, CA 94107, USA)를 통해 제공됩니다. 웹사이트 분석 및 광고 송출은 Google LLC(1600 Amphitheatre Parkway, Mountain View, CA 94043, USA)의 표준 계약 조항 하에 운영됩니다."
+      },
+      {
+        "heading": "12. 정기 감사 주기, 정책 개정 공지 및 문의 창구",
+        "body": "당사는 웹사이트에 적용된 스크립트 및 쿠키 항목을 6개월 주기로 정기 점검하여 동의 없는 추적 요소가 유입되지 않도록 관리합니다. 쿠키 정책 개정 시 본 페이지를 통해 공지합니다. 문의 사항은 인도 라자스탄주 반스와라에 소재한 설립자 겸 수석 개발자 Bhawanshi Dosi의 이메일(privacy@realbmicalculator.com)로 연락 주시기 바랍니다."
+      },
+      {
+        "heading": "13. 대한민국 개인정보보호법(PIPA) 제30조에 따른 권익 구제 및 침해 신고",
+        "body": "이용자는 개인정보주체로서 언제든지 개인정보 열람, 정정, 삭제 및 처리정지를 요구할 수 있습니다. 당사의 모든 건강 도구는 서버에 개인 식별 정보나 건강 수치를 일절 보존하지 않으므로 사용자의 브라우저 캐시 삭제만으로 즉시 완전한 정보 소멸이 이루어집니다. 개인정보 침해에 관한 상담이 필요하신 경우 개인정보분쟁조정위원회(kopico.go.kr), 대검찰청 사이버수사과(spo.go.kr), 경찰청 사이버안전국(cyberbureau.police.go.kr) 등으로 문의하실 수 있습니다."
+      },
+      {
+        "heading": "14. 행태정보 및 맞춤형 광고 수집 통제 절차 안내",
+        "body": "당사는 서비스 이용 과정에서 정보주체에게 최적화된 맞춤형 광고를 제공하기 위해 Google AdSense를 이용할 수 있습니다. 이용자는 언제든지 맞춤형 광고 수신을 거부할 권리가 있으며, 본 정책의 환경설정 패널이나 브라우저 설정을 통해 쿠키 수집을 전면 차단할 수 있습니다. 맞춤형 광고를 차단하더라도 23종의 건강 계산기 기능은 아무런 제약 없이 무료로 온전히 이용 가능합니다."
       }
     ],
-    storageTableTitle: "쿠키 및 저장소 레지스트리",
-    tableHeaders: ["항목명 / 키", "유형 및 제공자", "목적", "보관 기간"],
-    storageRows: [
-      ["theme", "로컬 저장소 (Real BMI)", "다크/라이트 화면 모드 설정 유지", "영구 (삭제 전까지)"],
-      ["bmiUnit", "로컬 저장소 (Real BMI)", "미터법/야드파운드법 선호 단위 기억", "영구 (삭제 전까지)"],
-      ["cookie_consent_preferences", "로컬 저장소 (Real BMI)", "쿠키 동의 결정 내역 저장", "12개월"],
-      ["_ga, _ga_*", "쿠키 (Google Analytics)", "익명 집계 방문 통계 분석", "최대 2년"],
-      ["__gads, __gpi", "쿠키 (Google AdSense)", "무료 서비스 유지를 위한 비침해적 광고 표시", "최대 13개월"]
+    "storageTableTitle": "쿠키 및 저장소 레지스트리",
+    "tableHeaders": [
+      "항목명 / 키",
+      "유형 및 제공자",
+      "목적",
+      "보관 기간"
+    ],
+    "storageRows": [
+      [
+        "theme",
+        "로컬 저장소 (Real BMI)",
+        "다크/라이트 화면 모드 설정 유지로 화면 깜빡임 방지",
+        "영구 (삭제 전까지)"
+      ],
+      [
+        "bmiUnit",
+        "로컬 저장소 (Real BMI)",
+        "미터법/야드파운드법 선호 단위 모든 계산기에 기억",
+        "영구 (삭제 전까지)"
+      ],
+      [
+        "cookie_consent_preferences",
+        "로컬 저장소 (Real BMI)",
+        "쿠키 동의 결정 내역 저장으로 반복 안내 방지",
+        "12개월"
+      ],
+      [
+        "_ga, _ga_*",
+        "Cookie (Google Analytics)",
+        "익명 집계 방문 통계 분석 및 사이트 품질 개선",
+        "최대 2년"
+      ],
+      [
+        "__gads, __gpi",
+        "Cookie (Google AdSense)",
+        "무료 서비스 유지를 위한 비침해적 광고 표시",
+        "최대 13개월"
+      ],
+      [
+        "__cf_bm, cf_clearance",
+        "Cookie (Cloudflare 보안)",
+        "악성 봇 식별 및 DDoS 분산 공격 방어 보안 토큰",
+        "최대 1년"
+      ]
     ]
   },
-  hi: {
-    pageTitle: "कुकी नीति | Real BMI",
-    pageDescription: "Real BMI की आधिकारिक कुकी नीति पढ़ें। हमारे द्वारा उपयोग की जाने वाली आवश्यक स्थानीय मेमोरी और कुकीज़ के बारे में जानें।",
-    title: "कुकी नीति",
-    eyebrow: "पारदर्शिता एवं डेटा नियंत्रण",
-    description: "Real BMI कैलकुलेटर में उपयोग की जाने वाली ब्राउज़र मेमोरी और कुकीज़ का विवरण।",
-    homeLabel: "होम",
-    sections: [
+  "hi": {
+    "pageTitle": "कुकी नीति | Real BMI",
+    "pageDescription": "Real BMI की आधिकारिक कुकी नीति पढ़ें। हमारे द्वारा उपयोग की जाने वाली आवश्यक स्थानीय मेमोरी और कुकीज़ के बारे में जानें।",
+    "title": "कुकी नीति",
+    "eyebrow": "पारदर्शिता एवं डेटा नियंत्रण",
+    "description": "Real BMI कैलकुलेटर में उपयोग की जाने वाली ब्राउज़र मेमोरी और कुकीज़ का विवरण।",
+    "homeLabel": "होम",
+    "sections": [
       {
-        heading: "1. उपयोग की गई तकनीकों का अवलोकन",
-        body: "Real BMI पूर्ण गोपनीयता वास्तुकला पर आधारित है। सभी शारीरिक गणनाएं (BMI, BMR, TDEE आदि) आपके वेब ब्राउज़र के लोकल जावास्क्रिप्ट रनटाइम में ही निष्पादित होती हैं। आपके स्वास्थ्य संबंधी आंकड़े हमारे सर्वर पर कभी नहीं भेजे जाते हैं। सेवा की सुविधा और मुफ़्त पहुंच बनाए रखने के लिए न्यूनतम लोकल स्टोरेज और कुकीज़ का उपयोग किया जाता है।"
+        "heading": "1. उपयोग की गई तकनीकों का अवलोकन एवं शून्य-डेटा प्रतिधारण वास्तुकला",
+        "body": "Real BMI संपूर्ण उपयोगकर्ता गोपनीयता वास्तुकला पर आधारित है। जब आप अपने बॉडी मास इंडेक्स (BMI), बेसल मेटाबॉलिक रेट (BMR) या दैनिक कैलोरी खर्च की गणना करते हैं, तो सभी गणितीय प्रक्रियाएं आपके वेब ब्राउज़र के लोकल जावास्क्रिप्ट रनटाइम में ही निष्पादित होती हैं। हम आपके स्वास्थ्य आंकड़े, ऊंचाई, वजन या शारीरिक माप किसी भी बाहरी सर्वर या डेटाबेस पर कभी नहीं भेजते हैं। सेवा को सुचारू, तेज़ और सभी 23 स्वास्थ्य उपकरणों को मुफ़्त बनाए रखने के लिए न्यूनतम स्थानीय मेमोरी और कुकीज़ का उपयोग किया जाता है। गैर-ज़रूरी कुकीज़ पर आपका पूर्ण नियंत्रण रहता है।"
       },
       {
-        heading: "2. आवश्यक कार्यात्मक स्थानीय भंडारण",
-        body: "वेबसाइट के सुचारू संचालन और उपयोगकर्ता प्राथमिकताओं (जैसे डार्क/लाइट थीम और माप इकाइयाँ) को बनाए रखने के लिए ये प्रविष्टियां अनिवार्य हैं और इन्हें बंद नहीं किया जा सकता:"
+        "heading": "2. आवश्यक कार्यात्मक स्थानीय भंडारण एवं उपयोगकर्ता इंटरफ़ेस प्राथमिकताएं",
+        "body": "वेबसाइट और स्वास्थ्य कैलकुलेटर के सुचारू संचालन और उपयोगकर्ता प्राथमिकताओं को बनाए रखने के लिए ये प्रविष्टियां अनिवार्य हैं। ये व्यक्तिगत पहचान डेटा, आईपी एड्रेस या मेडिकल रिकॉर्ड एकत्र नहीं करती हैं और वरीयता केंद्र में इन्हें बंद नहीं किया जा सकता है। इनका उपयोग केवल आपकी स्क्रीन थीम (डार्क या लाइट मोड) और आपकी पसंदीदा माप इकाइयों (सेंटीमीटर/किलोग्राम या फीट/पाउंड) को आपके डिवाइस पर सहेजने के लिए किया जाता है।"
       },
       {
-        heading: "3. अनाम एनालिटिक्स (वैकल्पिक)",
-        body: "आपकी सहमति से, हम Google Analytics 4 का उपयोग समग्र ट्रैफ़िक को समझने और उपकरणों को बेहतर बनाने के लिए करते हैं (_ga कुकीज़, 2 वर्ष तक)। इसमें कोई स्वास्थ्य डेटा या व्यक्तिगत पहचानकर्ता शामिल नहीं होता।"
+        "heading": "3. अनाम एनालिटिक्स एवं ट्रैफ़िक विश्लेषण (सहमति पर आधारित)",
+        "body": "आपकी स्पष्ट सहमति से, हम Google Analytics 4 का उपयोग समग्र विज़िट के रुझानों को समझने और कैलकुलेटर की उपयोगिता को बेहतर बनाने के लिए करते हैं। यह सेवा _ga और _ga_* जैसी कुकीज़ का उपयोग करती है जो 2 वर्ष तक सक्रिय रह सकती हैं। इसमें केवल अनाम आंकड़े जैसे पृष्ठ दृश्य और डिवाइस प्रकार शामिल होते हैं; कोई व्यक्तिगत पहचानकर्ता या चिकित्सीय डेटा एकत्र नहीं किया जाता है।"
       },
       {
-        heading: "4. डिजिटल विज्ञापन कुकीज़ (वैकल्पिक)",
-        body: "आपकी सहमति से, Google AdSense विज्ञापन कुकीज़ (__gads, 13 महीने तक) का उपयोग मुफ़्त सेवा बनाए रखने के लिए करता है। अस्वीकार करने पर गैर-वैयक्तिकृत विज्ञापन सेटिंग्स लागू होती हैं।"
+        "heading": "4. डिजिटल विज्ञापन कुकीज़ एवं मुफ़्त सेवा की निरंतरता",
+        "body": "आपकी पूर्व सहमति से, Google AdSense विज्ञापन कुकीज़ (__gads और __gpi, 13 महीने तक) का उपयोग विनीत विज्ञापन दिखाने के लिए करता है। ये विज्ञापन हमारे 23 स्वास्थ्य उपकरणों की मुफ़्त होस्टिंग और विकास का समर्थन करते हैं। यदि आप इन्हें अस्वीकार करते हैं, तो केवल गैर-वैयक्तिकृत सामान्य विज्ञापन प्रदर्शित होंगे, बिना किसी पॉपअप या रुकावट के।"
       },
       {
-        heading: "5. सहमति का प्रबंधन या वापस लेना",
-        body: "आप किसी भी समय वेबसाइट के फुटर में 'कुकी प्राथमिकताएं' लिंक पर क्लिक करके अपनी पसंद बदल सकते हैं या सहमति वापस ले सकते हैं।"
+        "heading": "5. सहमति का प्रबंधन, संशोधन या वापस लेना",
+        "body": "आपको अपनी कुकी प्राथमिकताओं पर हर समय पूरा नियंत्रण प्राप्त है। आप किसी भी समय वेबसाइट के प्रत्येक पृष्ठ के नीचे फुटर में स्थित 'कुकी प्राथमिकताएं' लिंक पर क्लिक करके प्राथमिकता पैनल खोल सकते हैं और एक क्लिक में वैकल्पिक कुकीज़ की अनुमति दे सकते हैं या वापस ले सकते हैं, जो तुरंत प्रभावी होती हैं।"
       },
       {
-        heading: "6. ब्राउज़र सेटिंग्स, मेमोरी साफ़ करना और गोपनीयता नियंत्रण",
-        body: "आप अपने वेब ब्राउज़र (Chrome, Safari, Firefox, Edge) की सेटिंग्स के माध्यम से किसी भी समय सहेजी गई कुकीज़ और स्थानीय मेमोरी को हटा या ब्लॉक कर सकते हैं। ब्राउज़र डेटा साफ़ करने से आपकी थीम प्राथमिकताएं, माप इकाइयां और सहमति विकल्प रीसेट हो जाते हैं, लेकिन इससे कैलकुलेटर की गणितीय सटीकता पर कोई प्रभाव नहीं पड़ता। तृतीय-पक्ष कुकीज़ पूरी तरह से अवरुद्ध होने या गुप्त (Incognito) मोड में भी Real BMI के सभी स्वास्थ्य उपकरण पूरी तरह कार्यात्मक रहते हैं।"
+        "heading": "6. ब्राउज़र सेटिंग्स, मेमोरी साफ़ करना एवं गोपनीयता नियंत्रण",
+        "body": "आप अपने वेब ब्राउज़र (Chrome, Safari, Firefox, Edge) की सेटिंग्स के माध्यम से किसी भी समय सहेजी गई कुकीज़ और स्थानीय मेमोरी को देख, हटा या ब्लॉक कर सकते हैं। मेमोरी साफ़ करने से आपकी थीम और इकाइयां रीसेट हो जाएंगी, लेकिन इससे कैलकुलेटर की गणितीय सटीकता पर कोई प्रभाव नहीं पड़ेगा। सभी कैलकुलेटर इनकॉग्निटो मोड में भी पूरी तरह काम करते हैं।"
+      },
+      {
+        "heading": "7. क्लाउडफ्लेयर सुरक्षा एवं नेटवर्क अखंडता भंडारण",
+        "body": "Real BMI को वैश्विक स्तर पर Cloudflare Pages एज नेटवर्क के माध्यम से वितरित किया जाता है। क्लाउडफ्लेयर दुर्भावनापूर्ण बॉट हमलों और DDoS हमलों से सुरक्षा के लिए आवश्यक तकनीकी सुरक्षा टोकन (__cf_bm या cf_clearance) सेट कर सकता है। ये सुरक्षा कुकीज़ किसी भी बाहरी साइट पर उपयोगकर्ता को ट्रैक नहीं करती हैं और इनमें कोई स्वास्थ्य डेटा नहीं होता।"
+      },
+      {
+        "heading": "8. वैश्विक गोपनीयता अधिकार एवं नियामक अनुपालन (DPDP, GDPR व CCPA)",
+        "body": "हम भारत के डिजिटल पर्सनल डेटा प्रोटेक्शन (DPDP) अधिनियम, यूरोपीय संघ के GDPR और कैलिफ़ोर्निया के CCPA नियमों का पूर्ण पालन करते हैं। हम ग्लोबल प्राइवेसी कंट्रोल (GPC) संकेतों का सम्मान करते हैं। हम उपयोगकर्ताओं का डेटा कभी भी किसी डेटा ब्रोकर को बेचते या किराए पर नहीं देते हैं।"
+      },
+      {
+        "heading": "9. ग्लोबल प्राइवेसी कंट्रोल (GPC) एवं डू-नॉट-ट्रैक (DNT) अनुपालन",
+        "body": "हमारी वेबसाइट आपके ब्राउज़र द्वारा भेजे जाने वाले GPC और DNT गोपनीयता संकेतों को स्वचालित रूप से पहचानती है। संकेत मिलने पर सभी वैकल्पिक एनालिटिक्स और विज्ञापन कुकीज़ स्वतः बंद हो जाती हैं और केवल बुनियादी कार्यशील स्टोरेज ही सक्रिय रहता है।"
+      },
+      {
+        "heading": "10. प्रमुख वेब ब्राउज़रों में कुकीज़ प्रबंधित करने की चरणबद्ध मार्गदर्शिका",
+        "body": "आप अपने ब्राउज़र में कभी भी कुकीज़ नियंत्रित कर सकते हैं: Google Chrome में सेटिंग्स > गोपनीयता और सुरक्षा > तृतीय-पक्ष कुकीज़ में जाएं। Apple Safari में सेटिंग्स > गोपनीयता > 'सभी कुकीज़ ब्लॉक करें' चुनें। Mozilla Firefox में सेटिंग्स > गोपनीयता और सुरक्षा > कुकीज़ और साइट डेटा में जाएं। Microsoft Edge में सेटिंग्स > कुकीज़ और साइट अनुमतियाँ में जाएं।"
+      },
+      {
+        "heading": "11. तृतीय-पक्ष तकनीकी सेवा प्रदाताओं का पूर्ण प्रकटीकरण",
+        "body": "हम अपने तकनीकी साझेदारों का पूरा विवरण साझा करते हैं: हमारी होस्टिंग और सुरक्षा Cloudflare, Inc. (101 Townsend St, San Francisco, CA 94107, USA) द्वारा प्रबंधित है। हमारे विज्ञापन और एनालिटिक्स Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) द्वारा संचालित हैं।"
+      },
+      {
+        "heading": "12. नियमित समीक्षा चक्र, नीति अपडेट एवं संपर्क विवरण",
+        "body": "हम हर छह महीने में अपनी सभी कुकीज़ और स्क्रिप्ट्स की व्यवस्थित समीक्षा करते हैं। नीति में किसी भी बदलाव को इसी पृष्ठ पर तुरंत प्रकाशित किया जाता है। किसी भी प्रश्न के लिए, कृपया बांसवाड़ा, राजस्थान, भारत स्थित संस्थापक भावांशी दोशी से privacy@realbmicalculator.com पर संपर्क करें।"
       }
     ],
-    storageTableTitle: "कुकी एवं स्टोरेज तालिका",
-    tableHeaders: ["नाम / कुंजी", "प्रकार एवं प्रदाता", "उद्देश्य", "अवधि"],
-    storageRows: [
-      ["theme", "स्थानीय मेमोरी (Real BMI)", "डार्क/लाइट मोड प्राथमिकता को याद रखता है।", "स्थायी"],
-      ["bmiUnit", "स्थानीय मेमोरी (Real BMI)", "मीट्रिक/इंपीरियल इकाइयों को याद रखता है।", "स्थायी"],
-      ["cookie_consent_preferences", "स्थानीय मेमोरी (Real BMI)", "कुकी सहमति निर्णयों को सहेजता है।", "12 महीने"],
-      ["_ga, _ga_*", "कुकी (Google Analytics)", "उपयोगिता सुधार हेतु अनाम ट्रैफ़िक मापन।", "2 वर्ष तक"],
-      ["__gads, __gpi", "कुकी (Google AdSense)", "मुफ़्त स्वास्थ्य उपकरण बनाए रखने हेतु विज्ञापन।", "13 महीने तक"]
+    "storageTableTitle": "कुकी एवं स्टोरेज तालिका",
+    "tableHeaders": [
+      "नाम / कुंजी",
+      "प्रकार एवं प्रदाता",
+      "उद्देश्य",
+      "अवधि"
+    ],
+    "storageRows": [
+      [
+        "theme",
+        "स्थानीय मेमोरी (Real BMI)",
+        "स्क्रीन टिमटिमाहट रोकने के लिए डार्क/लाइट मोड प्राथमिकता को सहेजता है।",
+        "स्थायी"
+      ],
+      [
+        "bmiUnit",
+        "स्थानीय मेमोरी (Real BMI)",
+        "सभी कैलकुलेटरों में मीट्रिक/इंपीरियल इकाइयों की पसंद को याद रखता है।",
+        "स्थायी"
+      ],
+      [
+        "cookie_consent_preferences",
+        "स्थानीय मेमोरी (Real BMI)",
+        "कुकी सहमति निर्णयों को सहेजता है ताकि बार-बार बैनर न दिखे।",
+        "12 महीने"
+      ],
+      [
+        "_ga, _ga_*",
+        "Cookie (Google Analytics)",
+        "उपयोगिता सुधार हेतु अनाम समग्र ट्रैफ़िक मापन।",
+        "2 वर्ष तक"
+      ],
+      [
+        "__gads, __gpi",
+        "Cookie (Google AdSense)",
+        "मुफ़्त स्वास्थ्य उपकरण बनाए रखने हेतु गैर-आक्रामक विज्ञापन।",
+        "13 महीने तक"
+      ],
+      [
+        "__cf_bm, cf_clearance",
+        "Cookie (क्लाउडफ्लेयर सुरक्षा)",
+        "दुर्भावनापूर्ण बॉट्स को रोकने और DDoS सुरक्षा हेतु आवश्यक सुरक्षा टोकन।",
+        "1 वर्ष तक"
+      ]
     ]
   }
 };
