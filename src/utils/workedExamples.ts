@@ -267,7 +267,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "आईसीएमआर एशियाई वर्गीकरण", value: "23.5 kg/m² (अधिक वजन / मध्यम स्वास्थ्य जोखिम)" }
     },
     interp: {
-      en: "While 23.5 kg/m² is considered 'normal' under standard international cutoffs, it qualifies as Overweight (Action Threshold) under ICMR and WHO Asian guidelines due to the higher relative percentage of visceral abdominal fat in South Asian populations.",
+      en: "This example uses official ICMR guidelines for Indian adults. A healthy BMI is 18.5 to 22.9. Overweight starts at 23, and obesity starts at 25. These lower ranges help detect heart and sugar risks early.",
       es: "Aunque 23.5 kg/m² se considera 'normal' en Occidente, en las guías asiáticas de la OMS e ICMR entra en sobrepeso debido a la mayor acumulación de grasa visceral en personas de origen sudasiático.",
       fr: "Bien que 23,5 kg/m² soit normal selon les normes occidentales, l'OMS classe cette valeur en surpoids pour les populations asiatiques en raison d'une adiposité viscérale plus précoce.",
       de: "Während 23,5 kg/m² international als Normalgewicht gilt, stufen die WHO und die ICMR diesen Wert für asiatische Erwachsene als Übergewicht ein, da bei niedrigerem BMI mehr Bauchfett vorliegt.",
@@ -477,7 +477,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "दैनिक अनुशंसित पानी की मात्रा", value: "3.20 लीटर / दिन (लगभग 13.5 गिलास)" }
     },
     interp: {
-      en: "This calculation illustrates an approximate dietetic estimation heuristic (35 mL/kg) combined with an illustrative optional activity adjustment (+750 mL). It is not a universal requirement or clinical prescription; individual fluid needs vary with ambient temperature, humidity, and individual sweat rates. Total fluid intake includes plain water, other beverages, and water content in whole foods (which typically accounts for ~20% of total dietary water, aligning with National Academy of Medicine population Adequate Intake benchmarks).",
+      en: "This example estimates daily fluid needs using 35 mL per kilogram of body weight, plus 750 mL for active exercise. Total fluid needs change with hot weather and heavy sweating. Your daily intake includes drinking water, other beverages, and water found in fruits and meals.",
       es: "Este cálculo ilustra una heurística dietética aproximada (35 mL/kg) con un ajuste opcional ilustrativo por ejercicio (+750 mL). No constituye un requisito universal ni una prescripción clínica; las necesidades individuales varían con el clima y la sudoración. El agua total incluye agua de bebida, infusiones y la humedad de los alimentos (~20% del total, según las pautas de Ingesta Adecuada de la Academia Nacional de Medicina).",
       fr: "Ce calcul illustre une heuristique diététique approximative (35 mL/kg) associée à un ajustement optionnel pour l'exercice (+750 mL). Il ne s'agit pas d'une règle universelle ou d'une prescription médicale ; les besoins varient selon la température, l'humidité et la sudation individuelle. L'apport hydrique global inclut l'eau, les boissons et l'eau des aliments (~20 % du total, en phase avec les apports adéquats de l'Académie Nationale de Médecine).",
       de: "Dieses Beispiel veranschaulicht eine ungefähre diätetische Schätzheuristik (35 ml/kg) in Kombination mit einem optionalen illustrativen Trainingsausgleich (+750 ml). Es stellt keine universelle Vorgabe oder klinische Empfehlung dar; der Bedarf schwankt je nach Temperatur, Luftfeuchtigkeit und Schweißverlust. Das Gesamtwasser umfasst Trinkwasser, Getränke und Feuchtigkeit aus Lebensmitteln (~20 % der Gesamtmenge gemäß den Richtwerten der National Academy of Medicine).",
@@ -537,7 +537,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "अनुमानित बॉडी फैट प्रतिशत", value: "16.8% (पुरुषों के लिए फिटनेस श्रेणी)" }
     },
     interp: {
-      en: "For adult men, 14–17% body fat represents a healthy fitness classification with athletic muscular definition. This provides far more granular insight into actual tissue composition than total scale weight alone.",
+      en: "This example uses the US Navy tape method to estimate body fat. It compares your neck and waist sizes to your height. It gives a helpful view of fat versus lean muscle.",
       es: "Para hombres adultos, un 14–17% de grasa corresponde a una excelente condición física con definición muscular visible. Es mucho más informativo que el peso de la báscula.",
       fr: "Pour un homme adulte, 14 à 17 % correspond à une excellente forme physique avec définition musculaire, bien plus précis que le simple poids sur la balance.",
       de: "Für erwachsene Männer entspricht ein Wert von 14–17 % einer sportlichen Fitness-Einstufung mit guter Muskeldefinition, deutlich präziser als das bloße Körpergewicht.",
@@ -681,7 +681,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "प्राथमिक एरोबिक बेस रेंज (ज़ोन 2: 60–70% HRmax)", value: "111 – 130 BPM" }
     },
     interp: {
-      en: "The standard 5-zone cardiovascular model uses your age-predicted peak output (185 bpm via Fox 220 - Age) to define five training intensities. Maintaining 111 to 130 bpm targets Zone 2, developing mitochondrial density, capillary perfusion, and sustainable aerobic energy without excessive systemic fatigue. Peak pulse estimates have a biological standard deviation of approximately ±10 to 12 bpm across healthy populations. Adjust pacing based on perceived exertion and hydration levels.",
+      en: "This example uses your age to find your peak heart rate. It then splits your heart rate into five simple training zones. Exercising in zone two builds aerobic fitness and burns fat. Higher zones build speed and power.",
       es: "El modelo cardiovascular estándar de 5 zonas utiliza la frecuencia máxima teórica (185 lpm según Fox: 220 - Edad) para estructurar el esfuerzo. Mantener entre 111 y 130 lpm sitúa el ejercicio en la Zona 2, optimizando la densidad mitocondrial y la oxidación de grasas sin fatiga neuromuscular excesiva. Las fórmulas teóricas de FCmax presentan una variabilidad biológica de ±10 a 12 lpm. Modere el ritmo según la percepción subjetiva de esfuerzo.",
       fr: "Le modèle cardiovasculaire classique à 5 zones s'appuie sur la fréquence maximale théorique (185 bpm selon la formule de Fox : 220 - Âge). Un entraînement compris entre 111 et 130 bpm correspond à la Zone 2, favorisant le développement des capillaires et l'endurance aérobie sans épuisement glycogénique rapide. La formule 220-âge comporte une marge d'erreur physiologique de ±10 à 12 bpm. Adaptez votre cadence en fonction de votre ressenti et de la météo.",
       de: "Das klassische 5-Zonen-Modell nutzt die altersabhängige Maximalfrequenz (185 S/min nach der Fox-Formel: 220 - Alter) zur Strukturierung des Trainings. Ein Belastungspuls von 111 bis 130 S/min entspricht der Zone 2, die den Fettstoffwechsel und die mitochondriale Dichte ohne Überlastung stärkt. Statistische Maximalpuls-Formeln weisen eine individuelle Streuung von ca. ±10 bis 12 S/min auf. Passen Sie die Belastung stets dem subjektiven Belastungsempfinden an.",
@@ -1302,10 +1302,10 @@ const EXAMPLES: Record<string, ToolData> = {
     },
     steps: {
       en: [
-        "Step 1: Standardized measurement protocol: Waist at midpoint between lowest rib and iliac crest (82 cm); Hips at widest gluteal diameter (98 cm)",
-        "Step 2: Formula execution: WHR = Waist Circumference ÷ Hip Circumference",
-        "Step 3: Ratio computation: 82.0 ÷ 98.0 = 0.8367 (rounded to 0.84)",
-        "Step 4: WHO Cardiometabolic Stratification for Women: Low Risk < 0.85 | Moderate Risk 0.85–0.89 | High Visceral Risk ≥ 0.90"
+        "Step 1: Measure waist (82 cm) at narrow point; measure hips (98 cm) around widest point",
+        "Step 2: Formula: WHR = Waist Circumference ÷ Hip Circumference",
+        "Step 3: Calculate ratio: 82.0 ÷ 98.0 = 0.8367 (rounded to 0.84)",
+        "Step 4: WHO Health Categories for Women: Low Risk < 0.85 | Moderate Risk 0.85–0.89 | High Risk ≥ 0.90"
       ],
       es: [
         "Paso 1: Medición según protocolo OMS: Cintura en punto medio entre costilla y cresta ilíaca (82 cm); Caderas en punto más ancho (98 cm)",
@@ -1339,7 +1339,7 @@ const EXAMPLES: Record<string, ToolData> = {
       ]
     },
     result: {
-      en: { label: "Waist-to-Hip Ratio (WHR)", value: "0.84 WHR (Low Cardiometabolic Risk)" },
+      en: { label: "Waist-to-Hip Ratio (WHR)", value: "0.84 WHR (Low Health Risk)" },
       es: { label: "Índice Cintura-Cadera (ICC)", value: "0.84 ICC (Riesgo Cardiometabólico Bajo)" },
       fr: { label: "Ratio Taille-Hanches (RTH)", value: "0,84 RTH (Risque Cardiométabolique Faible)" },
       de: { label: "Taille-Hüft-Verhältnis (THV)", value: "0,84 THV (Geringes Kardiometabolisches Risiko)" },
@@ -1347,7 +1347,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "कमर-कूल्हा अनुपात (WHR)", value: "0.84 WHR (कम कार्डियोमेटाबॉलिक जोखिम)" }
     },
     interp: {
-      en: "A Waist-to-Hip Ratio of 0.84 places this female individual within the WHO Low Cardiometabolic Risk classification (< 0.85 for women; < 0.90 for men). Unlike standard BMI, WHR specifically differentiates health-protective peripheral subcutaneous fat (gynoid pear distribution) from pathogenic deep visceral adipose tissue around vital abdominal organs, which secretes inflammatory cytokines that accelerate cardiovascular and metabolic disorders.",
+      en: "This example shows a waist to hip ratio of 0.81. This number falls in the healthy range for women. Measuring both waist and hips helps you track belly fat and protect your heart health.",
       es: "Un Índice Cintura-Cadera de 0.84 sitúa a esta mujer en la categoría de Bajo Riesgo Cardiometabólico de la OMS (< 0.85 en mujeres; < 0.90 en hombres). A diferencia del IMC, el ICC aísla el tejido adiposo visceral intraabdominal, el cual se asocia directamente a resistencia a la insulina, dislipidemia aterogénica y enfermedades cardiovasculares.",
       fr: "Un ratio taille-hanches de 0,84 classe cette femme dans la catégorie de risque cardiométabolique faible selon l'OMS (< 0,85 pour les femmes ; < 0,90 pour les hommes). Contrairement à l'IMC classique, le RTH distingue la masse grasse fessière protectrice de la graisse viscérale abdominale profonde, responsable de l'inflammation systémique et des maladies métaboliques.",
       de: "Ein Taille-Hüft-Verhältnis von 0,84 stuft die Person in das geringe kardiometabolische Risiko der WHO ein (< 0,85 für Frauen; < 0,90 für Männer). Im Gegensatz zum Standard-BMI isoliert das THV das stoffwechselaktive viszerale Bauchfett, welches das Risiko für Typ-2-Diabetes und Arteriosklerose signifikant steuert.",
@@ -1533,7 +1533,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "लीन बॉडी मास (LBM)", value: "58.9 किग्रा (78.5% वसा-मुक्त द्रव्यमान)" }
     },
     interp: {
-      en: "A Lean Body Mass of 58.9 kg (78.5% of total body weight) represents skeletal muscle, bone mineral content, vital organs, and bodily water, excluding adipose fat tissue. In clinical pharmacology, LBM is essential for calculating water-soluble medication dosages and anesthetic agents. In athletic training, tracking LBM ensures that weight-loss phases burn body fat while preserving metabolically active muscle tissue.",
+      en: "This example uses the Boer formula to find your lean body mass. It shows how much of your weight comes from muscle, bone, and organs rather than body fat.",
       es: "Una Masa Corporal Magra de 58.9 kg (78.5% del peso total) comprende el músculo esquelético, masa ósea, órganos vitales y agua intra/extracelular. En farmacología, el MCM es indispensable para dosificar fármacos hidrosolubles y anestesia. En el ámbito deportivo, permite monitorizar la retención de masa muscular durante etapas de pérdida de grasa.",
       fr: "Une masse maigre de 58,9 kg (78,5% du poids corporel) englobe les muscles squelettiques, le squelette osseux, les viscères et l'eau corporelle. En pharmacologie hospitalière, la masse maigre sert au dosage précis des médicaments hydrosolubles et anesthésiques. En nutrition sportive, elle permet de vérifier la préservation du muscle lors d'un déficit.",
       de: "Eine fettfreie Masse von 58,9 kg (78,5% des Gesamtgewichts) umfasst Skelettmuskulatur, Knochen, innere Organe und Körperwasser ohne Fettgewebe. In der klinischen Medizin dient die LBM zur Dosierung wasserlöslicher Arzneimittel. Im Kraftsport ist sie die Schlüsselmetrik zur Sicherung des Muskelerhalts in der Diät.",
@@ -1623,7 +1623,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "मैक्रोन्यूट्रिएंट वितरण", value: "150g प्रोटीन | 265g कार्ब्स | 60g वसा (2,200 कैलोरी)" }
     },
     interp: {
-      en: "This macronutrient split fulfills USDA Acceptable Macronutrient Distribution Ranges (AMDR: Protein 10–35%, Carbs 45–65%, Fat 20–35%) and aligns with the International Society of Sports Nutrition (ISSN) guidelines. The high-protein intake (2.0 g/kg) minimizes muscle catabolism during caloric restriction, healthy fats (0.8 g/kg) maintain endocrine testosterone and thyroid synthesis, and complex carbs (265 g) fuel glycogen replenishment and high-intensity workout performance.",
+      en: "This example divides your daily calories into protein, carbs, and fats. A balanced split gives you steady energy for workouts and helps repair muscle tissue.",
       es: "Esta distribución de macronutrientes cumple con los rangos AMDR del USDA (Proteínas 10–35%, Carbohidratos 45–65%, Grasas 20–35%) y las directrices de la ISSN. La ingesta elevada de proteína (2.0 g/kg) preserva la masa magra en déficit, las grasas (0.8 g/kg) sustentan la síntesis hormonal y los carbohidratos (265 g) reponen el glucógeno muscular.",
       fr: "Cette répartition respecte les plages AMDR de l'USDA et les protocoles de l'ISSN. L'apport protéique ciblé (2,0 g/kg) protège la masse musculaire en déficit calorique, les lipides (0,8 g/kg) assurent la synthèse hormonale et l'assimilation vitaminique, et les glucides (265 g) soutiennent l'intensité à l'entraînement.",
       de: "Diese Makroverteilung erfüllt die AMDR-Richtlinien der USDA sowie wissenschaftliche ISSN-Standards. Die hohe Proteinzufuhr (2,0 g/kg) schützt Muskelgewebe im Defizit, gesunde Fette (0,8 g/kg) sichern die Hormonproduktion und Kohlenhydrate (265 g) füllen Glykogenspeicher für optimale Trainingsleistung.",
@@ -1828,7 +1828,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "शैक्षिक मूल स्कोर", value: "6 / 13 अंक" }
     },
     interp: {
-      en: "This example yields a raw educational score of 6 out of 13 points on our 4-factor lifestyle tool. This tool is an unvalidated educational demonstration and does not assign clinical risk categories, predict actual diabetes probability, or estimate 10-year risk. A formal clinical evaluation requires diagnostic laboratory blood testing (such as HbA1c or fasting plasma glucose) administered by a licensed healthcare provider.",
+      en: "This example shows a screening score based on waist size and BMI. It helps you see how body weight links to blood sugar risk. This tool is for learning only and does not diagnose diabetes. Talk with your doctor for clinical blood tests.",
       es: "Este ejemplo da como resultado una puntuación educativa bruta de 6 sobre 13 puntos en nuestra herramienta educativa de 4 factores. Esta herramienta es una demostración educativa no validada y no asigna categorías de riesgo clínico ni predice la probabilidad real de diabetes ni el riesgo a 10 años. La evaluación formal requiere pruebas diagnósticas de laboratorio (como HbA1c o glucosa plasmática en ayunas) prescritas por un médico.",
       fr: "Cet exemple produit un score éducatif brut de 6 sur 13 points selon notre outil éducatif à 4 facteurs. Cet outil est une démonstration éducative non validée qui n'attribue pas de catégorie de risque clinique et ne prédit ni la probabilité réelle de diabète ni le risque à 10 ans. Une évaluation clinique formelle nécessite des examens biologiques (tels que l'HbA1c ou la glycémie à jeun) réalisés sous contrôle médical.",
       de: "Dieses Beispiel ergibt einen pädagogischen Rohwert von 6 von 13 Punkten in unserem pädagogischen 4-Faktoren-Modell. Dieses Instrument ist ein nicht validiertes Lehrmittel und ordnet weder klinische Risikokategorien zu noch prognostiziert es eine tatsächliche Erkrankungswahrscheinlichkeit oder ein 10-Jahres-Risiko. Für eine verlässliche Diagnose sind ärztliche Laboruntersuchungen (wie HbA1c oder Nüchternglukose) erforderlich.",
@@ -1918,7 +1918,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "एशियाई बीएमआई वर्गीकरण", value: "23.5 kg/m² (एशियाई अधिक वजन / बढ़ा हुआ जोखिम)" }
     },
     interp: {
-      en: "A BMI of 23.5 kg/m² illustrates the clinical necessity of ethnic-specific thresholds. Under universal Western WHO criteria, 23.5 is categorized as normal. However, extensive anthropological studies (the 'thin-fat' Asian phenotype) prove that South and East Asian individuals exhibit higher body fat percentages, less protective skeletal muscle, and significantly greater visceral fat accumulation around abdominal organs at lower BMI levels. Consequently, Type 2 diabetes and coronary artery disease manifest at BMI ≥ 23.0 kg/m², marking this result as Overweight requiring proactive nutritional management.",
+      en: "This example uses the official WHO Asian weight ranges. For adults of Asian descent, healthy weight is 18.5 to 22.9. Health risk rises at a BMI of 23 because belly fat can build up at lighter weights.",
       es: "Un IMC de 23.5 kg/m² ejemplifica la necesidad médica de utilizar puntos de corte específicos. Según la norma internacional de la OMS, 23.5 se considera peso normal. Sin embargo, estudios demuestran que las poblaciones asiáticas presentan mayor porcentaje de grasa corporal y grasa visceral con menor masa muscular para el mismo IMC. Por tanto, el riesgo de diabetes y cardiopatías se incrementa a partir de 23.0 kg/m², clasificando este resultado como sobrepeso.",
       fr: "Un IMC de 23,5 kg/m² démontre l'importance clinique des seuils ethniques adaptés. Selon la classification mondiale classique, 23,5 est un poids normal. Or, les études démontrent le phénotype asiatique 'mince-gras' : à IMC égal, les populations asiatiques accumulent plus de graisse viscérale et possèdent moins de masse musculaire. L'insulinorésistance et les maladies coronariennes surviennent dès 23,0 kg/m², classant cette personne en surpoids.",
       de: "Ein BMI von 23,5 kg/m² verdeutlicht die Relevanz populationsspezifischer Grenzwerte. Nach weltweitem Standard gilt 23,5 noch als Normalgewicht. Wissenschaftliche Daten zeigen jedoch das 'Thin-Fat'-Phänomen: Bei gleichem BMI besitzen Personen asiatischer Herkunft einen höheren Körperfettanteil und mehr viszerales Bauchfett. Daher steigen Risiken für Typ-2-Diabetes bereits ab 23,0 kg/m² signifikant an.",

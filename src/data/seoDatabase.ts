@@ -448,56 +448,56 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Oxford 2.5-Power BMI Formula & Mathematical Analysis",
       "title": "3D BMI Calculator – Oxford Height-Adjusted 2.5 Formula",
-      "intro": "Our free 3D BMI Calculator uses the Oxford 2.5 formula created by Prof. Nick Trefethen. This model adjusts for height differences in tall and short adults. Compare 2D scaling with 3D curves to see how height affects body size. You can also view a 3D avatar in your browser. Rotate the model 360 degrees in mesh, wireframe, or heatmap mode.",
+      "intro": "Our free 3D BMI Calculator uses the Oxford 2.5 formula created by Prof. Nick Trefethen. This formula adjusts for height differences in tall and short adults. Compare standard 2D BMI with 3D curves to see how height shapes body size. You can also view a 3D avatar in your browser. Rotate the model 360 degrees in mesh, wireframe, or heatmap mode.",
       "formulaTitle": "Oxford 2.5-Power Height-Adjusted 3D BMI Formula",
-      "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵ | Proposed by Oxford mathematician Prof. Nick Trefethen as an educational mathematical alternative to standard 2D BMI height scaling.",
+      "formulaDesc": "3D BMI = 1.3 × Weight (kg) / [Height (m)]²·⁵. Oxford mathematician Prof. Nick Trefethen created this formula as a better alternative to standard BMI height scaling.",
       "formulaCode": "3D BMI = 1.3 × kg / m²·⁵",
       "tableTitle": "Standard 2D BMI vs. Oxford 3D Height-Adjusted BMI Comparison",
       "tableRows": [
         {
-          "col1": "Shorter Adults (< 160 cm / 5'3\")",
-          "col2": "Standard 2D BMI underestimates height scaling",
-          "col3": "3D BMI adjusts score proportionally for shorter statures"
+          "col1": "Shorter Adults (< 160 cm / 5 ft 3 in)",
+          "col2": "Standard 2D BMI can score slightly too high",
+          "col3": "3D BMI adjusts score down to match smaller frame volume."
         },
         {
-          "col1": "Average Height Adults (170 cm / 5'7\")",
+          "col1": "Average Height Adults (170 cm / 5 ft 7 in)",
           "col2": "Standard 2D & 3D BMI produce identical results",
-          "col3": "No difference between 2D and 3D formula categories"
+          "col3": "Both formulas give the same healthy weight ranges."
         },
         {
-          "col1": "Taller Adults (> 185 cm / 6'1\")",
-          "col2": "Standard 2D BMI overestimates height scaling",
-          "col3": "3D BMI corrects volumetric distortion for taller statures"
+          "col1": "Taller Adults (> 185 cm / 6 ft 1 in)",
+          "col2": "Standard 2D BMI can score slightly too low",
+          "col3": "3D BMI adjusts score to reflect real body volume."
         }
       ],
       "faqs": [
         {
           "question": "How does 3D BMI differ from standard 2D BMI?",
-          "answer": "Standard 2D BMI divides weight by height squared (m²), whereas 3D BMI uses height raised to the 2.5 power (m²·⁵) to account for 3D body volume scaling."
+          "answer": "Standard BMI divides weight by height squared. 3D BMI uses height to the 2.5 power to better match three-dimensional human volume."
         },
         {
           "question": "How does the interactive 3D body visualizer work?",
-          "answer": "It renders an interactive 3D avatar in your browser using height-to-weight proportions derived from your inputs. You can rotate the avatar 360° and toggle mesh, wireframe, and heatmap modes."
+          "answer": "It builds a 3D body model right in your browser using your height and weight. You can rotate the avatar 360 degrees and change visual modes."
         },
         {
-          "question": "What do solid mesh, wireframe, and heatmap modes represent?",
-          "answer": "Solid mesh shows body shape volume, wireframe shows 3D geometric structure, and heatmap highlights weight category distribution."
+          "question": "What do mesh, wireframe, and heatmap modes show?",
+          "answer": "Mesh mode shows your body shape. Wireframe shows geometric lines. Heatmap highlights weight distribution across the body."
         },
         {
-          "question": "Why is the Oxford 2.5-power formula better for tall or short individuals?",
-          "answer": "Proposed by Prof. Nick Trefethen at Oxford University, the 2.5-power equation provides an alternative height-scaling approach that changes how height is represented in the BMI calculation for tall and short statures."
+          "question": "Why is the Oxford 2.5 formula helpful for tall and short people?",
+          "answer": "Standard BMI can overestimate body fat in tall people and underestimate it in short people. The 2.5 formula corrects this scaling bias."
         },
         {
           "question": "Does the 3D visualizer store photos or personal data?",
-          "answer": "No. The 3D model is generated mathematically in real time inside your browser. No photos are required, and no data is uploaded or stored."
+          "answer": "No. The 3D model is built using math right inside your web browser. No photos are taken, and no personal data is saved."
         },
         {
-          "question": "Can I use the 3D Body Visualizer on mobile devices?",
-          "answer": "Yes, the 3D visualizer is fully responsive and optimized for mobile touch controls, allowing 360° rotation and pinch-to-zoom on smartphones and tablets."
+          "question": "Can I use the 3D visualizer on phones and tablets?",
+          "answer": "Yes. The 3D tool works on all mobile screens. You can drag with your finger to rotate and pinch to zoom."
         },
         {
-          "question": "How does body mass index relate to 3D avatar proportion scaling?",
-          "answer": "The 3D avatar dynamically adjusts mesh thickness, waist curvature, and volumetric proportions based on your height-to-weight ratio and calculated BMI score."
+          "question": "How does your BMI shape the 3D avatar?",
+          "answer": "The 3D model adjusts waist width, frame thickness, and body curves to match your exact height, weight, and BMI score."
         }
       ]
     },
@@ -2616,7 +2616,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Resting Metabolism & BER",
       "title": "BMR Calculator Online – Basal Metabolic Rate for Men & Women",
-      "intro": "Find your daily Basal Metabolic Rate (BMR) with our free online calculator. BMR is the number of calories your body burns at complete rest each day. In clinical nutrition, it is also called your Basal Energy Requirement (BER). We use the proven Mifflin-St Jeor equation to give you fast, accurate results.",
+      "intro": "Find your daily Basal Metabolic Rate (BMR) with our free calculator. BMR is the number of calories your body burns at rest each day. It is also called your Basal Energy Requirement (BER). We use the Mifflin-St Jeor formula to give you fast results.",
       "formulaTitle": "Mifflin-St Jeor BMR Calculator Formulas",
       "formulaDesc": "For men: (10 × weight in kg) + (6.25 × height in cm) - (5 × age) + 5. For women: (10 × weight in kg) + (6.25 × height in cm) - (5 × age) - 161. These formulas estimate your baseline daily calorie burn.",
       "formulaCode": "Men: BMR = 10W + 6.25H - 5A + 5  |  Women: BMR = 10W + 6.25H - 5A - 161",
@@ -2645,7 +2645,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "What is the difference between BMR and BER (Basal Energy Requirement)?",
-          "answer": "BMR and BER refer to the same biological measurement. In sports nutrition and clinical dietetics, Basal Energy Requirement (BER) is simply another name for your daily basal metabolic rate."
+          "answer": "BMR and BER mean the same thing. In nutrition, Basal Energy Requirement (BER) is another name for your daily resting calorie burn."
         },
         {
           "question": "What is the Mifflin-St Jeor formula for men and women?",
@@ -3256,9 +3256,9 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Daily Energy Balance",
       "title": "Maintenance Calorie Calculator – Daily Calorie Needs",
-      "intro": "Find how many calories you need to keep your current weight. Our free Maintenance Calorie Calculator combines your resting metabolism with your daily workouts. Enter your age, gender, height, weight, and exercise habits to see your daily target in seconds.",
+      "intro": "Find how many calories you need to keep your current weight. Our free tool combines your resting burn with your daily activity. Enter your age, gender, height, weight, and exercise to see your target in seconds.",
       "formulaTitle": "Maintenance Calorie Math & Energy Balance",
-      "formulaDesc": "Maintenance Calories = Basal Metabolic Rate (BMR) × Physical Activity Level (PAL). Eating at maintenance matches your daily burn and keeps your weight steady.",
+      "formulaDesc": "Maintenance calories equal your resting burn (BMR) times your daily activity factor. Eating at maintenance matches your daily burn and keeps your weight steady.",
       "formulaCode": "Maintenance Calories = BMR × Activity Factor",
       "tableTitle": "Calorie Maintenance and Goal Planning Table",
       "tableRows": [
@@ -4493,53 +4493,53 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Calorie Planning Reference",
       "title": "Daily Calorie Target & Energy Balance Calculator",
-      "intro": "Use our free Calorie Calculator to plan your daily meals and weight goals. It estimates how many calories you burn each day based on BMR and TDEE. You can easily see how small calorie changes affect your weight over time. Simply enter your age, gender, height, weight, and activity level to get started.",
-      "formulaTitle": "Energy Expenditure & Caloric Adjustment Math",
-      "formulaDesc": "Daily Target = TDEE - Planned Deficit. A negative energy balance of 500 kcal daily totals 3,500 kcal per week, roughly equivalent to one pound of fat tissue.",
-      "formulaCode": "Target Calories = TDEE - Planned Reduction",
+      "intro": "Use our free Calorie Calculator to plan your daily meals and weight goals. It estimates how many calories you burn each day based on your body and workouts. You can easily see how small calorie changes affect your weight over time.",
+      "formulaTitle": "Calorie Deficit Math & Daily Targets",
+      "formulaDesc": "Daily Target = Maintenance Calories - Planned Deficit. Eating 500 calories below maintenance each day creates a 3,500-calorie deficit per week, which equals about one pound of fat loss.",
+      "formulaCode": "Target Calories = Maintenance - Daily Deficit",
       "tableTitle": "Example Calorie Differences & Weight-Change Math",
       "tableRows": [
         {
-          "col1": "Scenario A: 250 kcal/day difference",
-          "col2": "~1,750 kcal net difference / week",
-          "col3": "Mathematical example of a 250 kcal daily energy difference"
+          "col1": "Mild Deficit (-250 kcal/day)",
+          "col2": "1,750 kcal weekly difference",
+          "col3": "Gradual fat loss of about half a pound per week."
         },
         {
-          "col1": "Scenario B: 500 kcal/day difference",
-          "col2": "~3,500 kcal net difference / week",
-          "col3": "Mathematical example of a 500 kcal daily energy difference"
+          "col1": "Standard Deficit (-500 kcal/day)",
+          "col2": "3,500 kcal weekly difference",
+          "col3": "Standard target for losing about one pound per week."
         },
         {
-          "col1": "Scenario C: 750 kcal/day difference",
-          "col2": "~5,250 kcal net difference / week",
-          "col3": "Mathematical example of a 750 kcal daily energy difference"
+          "col1": "Moderate Deficit (-750 kcal/day)",
+          "col2": "5,250 kcal weekly difference",
+          "col3": "Faster fat loss for people with higher calorie needs."
         },
         {
-          "col1": "Energy Balance Baseline (0 kcal difference)",
-          "col2": "0 kcal net difference / week",
-          "col3": "Estimated TDEE energy balance for weight stabilization"
+          "col1": "Maintenance (0 kcal/day)",
+          "col2": "0 kcal weekly difference",
+          "col3": "Balances calories in and out to keep your weight steady."
         }
       ],
       "faqs": [
         {
-          "question": "What is an energy deficit and how does this calculator determine daily intake?",
-          "answer": "An energy deficit occurs when daily intake is lower than total daily energy expenditure (TDEE). The tool calculates your maintenance expenditure and applies a gradual adjustment to establish your daily target."
+          "question": "What is a calorie deficit and how does it work?",
+          "answer": "A calorie deficit means eating fewer calories than your body burns. When this happens, your body burns stored fat for energy."
         },
         {
-          "question": "How does caloric reduction translate to weight loss over time?",
-          "answer": "One pound of adipose tissue holds approximately 3,500 kcal of stored energy. Creating a 500 kcal daily gap creates a 3,500 kcal weekly deficit, which typically yields roughly one pound of gradual fat reduction."
+          "question": "How many calories equal one pound of fat?",
+          "answer": "One pound of body fat equals about 3,500 calories. A daily deficit of 500 calories equals about one pound of fat loss each week."
         },
         {
-          "question": "What reduction rate is recommended for sustainable progress?",
-          "answer": "A moderate deficit of 300 to 500 calories per day provides steady fat loss while preserving metabolic health. Excessive restriction risks lethargy, micronutrient deficiency, and muscle loss."
+          "question": "What is a safe calorie deficit for weight loss?",
+          "answer": "A deficit of 300 to 500 calories per day is safe and sustainable. It helps you lose fat without feeling tired or hungry."
         },
         {
-          "question": "How much protein should I consume during a cutting phase?",
-          "answer": "Consuming 1.6 to 2.2 grams of protein per kilogram of body weight helps preserve lean muscle tissue and increases satiety while in a negative energy balance."
+          "question": "How much protein should I eat when losing weight?",
+          "answer": "Eat plenty of protein to protect your muscle mass. Aim for a palm-sized portion of protein with each meal."
         },
         {
-          "question": "Why does weight loss sometimes stall during an extended diet?",
-          "answer": "Metabolic adaptation occurs as body mass drops, slightly reducing daily expenditure. Track portion accuracy and recalculate your TDEE every 4 to 6 weeks to adjust your target intake."
+          "question": "Why does weight loss slow down over time?",
+          "answer": "As you lose weight, your body burns slightly fewer calories. Check your calorie needs every month to adjust your targets."
         }
       ]
     },
@@ -5077,68 +5077,68 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Hydration Guidelines",
       "title": "Water Intake Calculator & Daily Hydration Target Tool",
-      "intro": "Calculate your daily fluid requirements with our free Water Intake Calculator. Using clinical fluid estimation guidelines based on body weight and physical activity levels alongside the Armstrong urine color scale, discover your personalized daily fluid target.",
-      "formulaTitle": "Illustrative Fluid Estimation Heuristic & Optional Exercise Adjustment",
-      "formulaDesc": "Daily Fluid Target (L) = [Body Weight (kg) × 35 mL] / 1,000 + Optional Exercise Adjustment (+0.75 L for active individuals). The 35 mL/kg multiplier serves strictly as an approximate illustrative calculator estimate rather than an established clinical recommendation or universal physiological requirement; individual hydration needs vary widely based on ambient climate, kidney function, and personal sweat rate. The +750 mL adjustment provides an illustrative optional estimate for exercise rather than a universal requirement for all active individuals. Population total-water reference values are derived from National Academy of Medicine (NAM / IOM 2005) Adequate Intake benchmarks (2.7 L/day for adult females and 3.7 L/day for adult males for total water from all dietary sources, including plain drinking water, beverages, and moisture in food).",
+      "intro": "Find your daily water goal with our free Water Intake Calculator. Enter your weight and activity level to see how much fluid you need each day. Use the simple urine color chart to stay healthy and hydrated.",
+      "formulaTitle": "Fluid Estimation & Exercise Adjustment",
+      "formulaDesc": "Daily Water Goal (L) = [Body Weight (kg) × 35 mL] / 1,000. Add about 0.75 L if you work out. This rule gives a helpful estimate for healthy adults. Your real fluid needs depend on heat, sweating, and daily movement. National standards recommend about 2.7 liters per day for women and 3.7 liters per day for men. This includes drinking water, beverages, and moisture in food.",
       "formulaCode": "Water (L) = (Weight_kg × 0.035) + Optional_Exercise_Offset",
-      "tableTitle": "Daily Hydration Benchmarks, Heuristic Breakdown & Monitoring",
+      "tableTitle": "Daily Hydration Benchmarks & Urine Color Guide",
       "tableRows": [
         {
-          "col1": "Base Estimation Heuristic",
-          "col2": "35 mL / kg / day (Approximate Benchmark)",
-          "col3": "An illustrative formula heuristic providing a practical starting estimate; actual fluid requirements vary with body mass, environment, and personal physiology."
+          "col1": "Base Water Estimate",
+          "col2": "35 mL per kg each day",
+          "col3": "A simple baseline formula to estimate your daily fluid goal."
         },
         {
-          "col1": "Optional Exercise Adjustment",
-          "col2": "+750 mL (Illustrative Active Offset)",
-          "col3": "An optional volume added for physically active individuals to offset typical perspiration, rather than a universal clinical mandate."
+          "col1": "Workout Adjustment",
+          "col2": "+750 mL for active days",
+          "col3": "Extra water to replace fluid lost through sweating during exercise."
         },
         {
-          "col1": "Population Total Water AI (Females)",
-          "col2": "2.7 Liters / day (National Academy of Medicine)",
-          "col3": "Population Adequate Intake (AI) benchmark for adult women, covering total water from all dietary sources (plain water, beverages, and moisture in food)."
+          "col1": "Target for Women",
+          "col2": "2.7 Liters per day",
+          "col3": "Total daily water goal for adult women from all drinks and food."
         },
         {
-          "col1": "Population Total Water AI (Males)",
-          "col2": "3.7 Liters / day (National Academy of Medicine)",
-          "col3": "Population Adequate Intake (AI) benchmark for adult men, covering total water from all dietary sources (plain water, beverages, and moisture in food)."
+          "col1": "Target for Men",
+          "col2": "3.7 Liters per day",
+          "col3": "Total daily water goal for adult men from all drinks and food."
         },
         {
-          "col1": "Armstrong Hydration Scale (Levels 1–3)",
-          "col2": "Pale Straw to Light Lemonade",
-          "col3": "Indicates well-maintained fluid equilibrium. Drink according to natural thirst and normal daily routine."
+          "col1": "Light Straw Yellow",
+          "col2": "Levels 1 to 3",
+          "col3": "Shows good fluid balance. Drink when you feel thirsty."
         },
         {
-          "col1": "Armstrong Hydration Scale (Levels 4–5)",
-          "col2": "Dark Yellow to Golden",
-          "col3": "Indicates mild fluid deficit. Increase fluid consumption gradually across the day."
+          "col1": "Dark Yellow",
+          "col2": "Levels 4 to 5",
+          "col3": "Shows mild fluid loss. Drink a glass of water soon."
         },
         {
-          "col1": "Armstrong Hydration Scale (Levels 6–8)",
-          "col2": "Amber to Tea Brown",
-          "col3": "Indicates notable fluid deficit. Rehydrate promptly with water and electrolyte-containing fluids."
+          "col1": "Amber or Tea Brown",
+          "col2": "Levels 6 to 8",
+          "col3": "Shows high fluid loss. Drink water with electrolytes right away."
         }
       ],
       "faqs": [
         {
-          "question": "How does the calculator determine my baseline daily water estimate?",
-          "answer": "The calculator uses an illustrative estimation heuristic of approximately 35 mL per kilogram of body weight. This formula provides an approximate educational benchmark under temperate conditions. Actual individual hydration needs vary widely based on ambient climate, metabolic rate, dietary moisture, and individual sweat rates."
+          "question": "How does the calculator estimate my daily water needs?",
+          "answer": "The calculator multiplies your body weight in kilograms by 35 milliliters. This gives a simple baseline water target for normal indoor days."
         },
         {
-          "question": "What is the +750 mL exercise adjustment based on?",
-          "answer": "The +750 mL adjustment is an optional, illustrative estimate designed to reflect increased fluid losses during physical activity. It is not a rigid universal requirement, as sweat rates during exercise vary from 0.5 to over 2.0 Liters per hour depending on intensity, duration, and ambient temperature."
+          "question": "How does exercise change my water target?",
+          "answer": "Workouts make you sweat. The calculator adds about 750 milliliters to replace lost fluids during active days."
         },
         {
-          "question": "What are the National Academy of Medicine (NAM) Adequate Intake recommendations?",
-          "answer": "The National Academy of Medicine (formerly IOM) established Adequate Intake (AI) benchmarks for total water: 2.7 Liters per day for adult women and 3.7 Liters per day for adult men. These population benchmarks represent total water intake from all sources combined—approximately 80% from drinking water and other beverages, and 20% from the moisture in food."
+          "question": "What are standard daily water guidelines?",
+          "answer": "Health guidelines recommend about 2.7 liters per day for women and 3.7 liters per day for men. This counts plain water, tea, and water in food."
         },
         {
-          "question": "How can I monitor my daily hydration without measuring every glass?",
-          "answer": "A practical clinical method is observing urine color using the Armstrong Urine Color Scale: pale straw or light yellow (levels 1–3) suggests good fluid balance, whereas darker amber or tea-brown hues (levels 6–8) indicate fluid deficit. Thirst, daily energy, and voiding frequency also provide useful everyday cues."
+          "question": "How can I tell if I am drinking enough water?",
+          "answer": "Check your urine color. Pale straw yellow shows good fluid balance. Dark yellow or brown means you need to drink more water."
         },
         {
-          "question": "Who should follow individualized medical fluid guidelines rather than standard calculators?",
-          "answer": "Individuals with congestive heart failure (CHF), chronic kidney disease (CKD), end-stage renal disease (ESRD), or those taking diuretic medications should not rely on general formulas. They must adhere strictly to the individualized fluid intake limits prescribed by their nephrologist or cardiologist."
+          "question": "Who needs custom medical water limits?",
+          "answer": "People with heart failure or kidney disease must follow specific fluid limits from their doctor. General formulas do not apply to these conditions."
         }
       ]
     },
@@ -5777,48 +5777,48 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "WHR Reference Standard",
       "title": "Waist-to-Hip Ratio (WHR) Calculator & Body Proportions Tool",
-      "intro": "Evaluate your waist-to-hip proportion using our free WHR screening tool. Aligned with World Health Organization (WHO) reference guidelines, it provides insight into body composition and adipose distribution patterns.",
+      "intro": "Check your waist-to-hip ratio with our free calculator. It follows World Health Organization guidelines to show where your body stores fat. Find out if your shape is apple or pear in seconds.",
       "formulaTitle": "WHO Circumference Ratio Equation",
-      "formulaDesc": "WHR = Waist Circumference (at narrowest point or navel) / Hip Circumference (at widest point of buttocks)",
+      "formulaDesc": "Waist to Hip Ratio = Waist Circumference / Hip Circumference. Divide your waist size by your hip size.",
       "formulaCode": "WHR = Waist / Hip",
-      "tableTitle": "WHO Waist-to-Hip Proportion Reference Categories",
+      "tableTitle": "WHO Waist-to-Hip Ratio Health Categories",
       "tableRows": [
         {
-          "col1": "Lower Reference Category",
-          "col2": "Men: < 0.90 | Women: < 0.80",
-          "col3": "Subcutaneous fat distribution reference window"
+          "col1": "Low Risk Category",
+          "col2": "Men: under 0.90 | Women: under 0.80",
+          "col3": "Healthy fat distribution across hips and thighs."
         },
         {
-          "col1": "Moderate Reference Category",
-          "col2": "Men: 0.90 – 0.99 | Women: 0.80 – 0.84",
-          "col3": "Moderate abdominal central fat reference window"
+          "col1": "Moderate Risk Category",
+          "col2": "Men: 0.90 to 0.99 | Women: 0.80 to 0.84",
+          "col3": "Moderate fat storage around your waist."
         },
         {
-          "col1": "Higher Reference Category",
-          "col2": "Men: ≥ 1.00 | Women: ≥ 0.85",
-          "col3": "Higher central fat distribution reference window; additional screening context"
+          "col1": "High Risk Category",
+          "col2": "Men: 1.00 or higher | Women: 0.85 or higher",
+          "col3": "Higher fat storage around belly organs."
         }
       ],
       "faqs": [
         {
-          "question": "What is the Waist-to-Hip Ratio (WHR) index?",
-          "answer": "This anthropometric screening metric compares waist circumference to hip circumference to evaluate regional adipose distribution and assess central body fat placement."
+          "question": "What is the Waist-to-Hip Ratio (WHR)?",
+          "answer": "This ratio compares your waist size to your hip size. It shows whether you carry fat around your belly or your hips."
         },
         {
-          "question": "How do you calculate WHR with circumference measurements?",
-          "answer": "Divide waist circumference by hip circumference using identical units. For example, an 80 cm waist divided by a 100 cm hip yields a proportion of 0.80."
+          "question": "How do you calculate WHR?",
+          "answer": "Divide your waist size by your hip size using the same units. For example, a 32-inch waist divided by a 40-inch hip gives a ratio of 0.80."
         },
         {
-          "question": "What are the standard WHO health thresholds for men and women?",
-          "answer": "World Health Organization (WHO) guidelines define low risk as a ratio below 0.90 for men and below 0.85 for women, reflecting reduced abdominal fat concentration."
+          "question": "What are standard WHO health thresholds for men and women?",
+          "answer": "The World Health Organization defines low risk as a ratio below 0.90 for men and below 0.85 for women."
         },
         {
-          "question": "Why evaluate body proportions alongside Body Mass Index?",
-          "answer": "While BMI measures total weight relative to stature, circumference proportions reveal body shape and fat distribution, differentiating between android (apple-shaped) and gynoid (pear-shaped) fat patterns."
+          "question": "Why check body shape in addition to BMI?",
+          "answer": "BMI measures total weight for your height. Waist ratio shows where fat is stored. Belly fat carries higher health risks than hip fat."
         },
         {
-          "question": "What is the proper technique for measuring waist and hips?",
-          "answer": "Stand relaxed and exhale naturally. Measure your waist midway between the lowest rib and iliac crest (or at navel level). Measure hips horizontally across the widest point of the buttocks."
+          "question": "What is the proper way to measure waist and hips?",
+          "answer": "Stand relaxed and breathe out normally. Measure your waist at the narrowest point above your hips. Measure your hips around the widest part of your glutes."
         }
       ]
     },
@@ -6067,45 +6067,45 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Body Surface Area Reference",
       "title": "Body Surface Area Calculator — Mosteller & Du Bois BSA",
-      "intro": "BSA is an estimated body-surface-area value calculated from height and weight. Some medical research protocols use BSA as one input, but this calculator does not provide medication doses or treatment recommendations.",
+      "intro": "Body surface area estimates your total skin surface from your height and weight. Doctors and researchers use this number to study metabolism and organ size. Our free tool calculates your surface area in seconds.",
       "formulaTitle": "Mosteller & Du Bois BSA Equations",
-      "formulaDesc": "Mosteller BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ] | Du Bois BSA (m²) = 0.007184 × Height (cm)^0.725 × Weight (kg)^0.425",
+      "formulaDesc": "Mosteller BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ]. Du Bois BSA (m²) = 0.007184 × Height^0.725 × Weight^0.425. Both formulas estimate your total body surface in square meters.",
       "formulaCode": "BSA (m²) = √ [ (Height cm × Weight kg) / 3600 ]",
-      "tableTitle": "Body Surface Area (m²) Adult & Population Reference Ranges",
+      "tableTitle": "Body Surface Area (m²) Population Reference Ranges",
       "tableRows": [
         {
           "col1": "Infants (0–12 months)",
           "col2": "0.25 m² – 0.35 m²",
-          "col3": "Infant population reference range"
+          "col3": "Typical reference range for healthy infants."
         },
         {
           "col1": "Children (1–12 years)",
           "col2": "0.50 m² – 1.07 m²",
-          "col3": "Child population reference range"
+          "col3": "Typical reference range for growing children."
         },
         {
           "col1": "Adult Women Average",
           "col2": "1.60 m²",
-          "col3": "Standard adult female population average"
+          "col3": "Standard population average for adult women."
         },
         {
           "col1": "Adult Men Average",
           "col2": "1.90 m²",
-          "col3": "Standard adult male population average"
+          "col3": "Standard population average for adult men."
         }
       ],
       "faqs": [
         {
           "question": "What is Body Surface Area (BSA)?",
-          "answer": "Body Surface Area (BSA) is the measured or calculated surface of a human body expressed in square meters (m²). In physiological research and clinical assessment, BSA is widely utilized to normalize metabolic rates, cardiac index, and renal clearance across individuals of differing statures."
+          "answer": "Body Surface Area is the total surface of your body in square meters. Medical researchers use it to compare metabolic rates between people of different heights."
         },
         {
-          "question": "How is BSA calculated using the Mosteller equation?",
-          "answer": "The Mosteller equation multiplies height in cm by weight in kg, divides by 3600, and takes the square root: BSA = √ (Height × Weight / 3600)."
+          "question": "How is BSA calculated with the Mosteller formula?",
+          "answer": "Multiply height in centimeters by weight in kilograms, divide by 3600, and take the square root. This gives your estimated surface area."
         },
         {
           "question": "What is the average body surface area for adults?",
-          "answer": "The average estimated body surface area is approximately 1.60 m² for adult women and 1.90 m² for adult men."
+          "answer": "The average surface area is about 1.60 square meters for women and 1.90 square meters for men."
         }
       ]
     },

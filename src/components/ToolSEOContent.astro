@@ -753,7 +753,7 @@ const karvonenQuickGrid = {
 };
 
 const referenceTableSubtitle = {
-  en: `Official benchmarks and health reference ranges for ${currentData.title}.`,
+  en: `Standard benchmarks and healthy ranges for ${currentData.title}.`,
   es: `Rangos de referencia y umbrales de salud para ${currentData.title}.`,
   fr: `Intervalles de référence et seuils de santé pour ${currentData.title}.`,
   de: `Offizielle Richtwerte und Referenzbereiche für ${currentData.title}.`,
@@ -764,9 +764,9 @@ const referenceTableSubtitle = {
 const accordionTitles: Record<Locale, { formula: string; formulaSub: string; limitations: string; limitationsSub: string }> = {
   en: {
     formula: 'Formula Details, Input Variables & Measurement Units',
-    formulaSub: 'Mathematical calculation equations, variable specifications, and metric / imperial conversion units.',
+    formulaSub: 'How the math works, key inputs, and measurement units for this tool.',
     limitations: 'Clinical Limitations & Physiological Context',
-    limitationsSub: 'Key physiological constraints, edge cases (athletes, elderly), and screening guidelines.'
+    limitationsSub: 'Important body limits, special cases for athletes or seniors, and safety tips.'
   },
   es: {
     formula: 'Detalles de la Fórmula, Variables y Unidades de Medida',
@@ -1719,7 +1719,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
         return (
           <div class="p-5 md:p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs">
             <h4 class="text-sm md:text-base font-display font-bold text-[var(--foreground)]">
-              {faq.question}<span class="sr-only">. </span>
+              {faq.question}
             </h4>
             {parsed.detailed ? (
               <div class="space-y-2.5 pt-0.5">

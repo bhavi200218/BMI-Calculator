@@ -77,7 +77,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'ऊंचाई / कद', desc: 'सीधे खड़े होने पर पैरों के तलवों से लेकर सिर के शीर्ष तक की ऊर्ध्वाधर माप।', metric: 'सेंटीमीटर (cm)', imperial: 'फीट और इंच (ft/in)' }
   },
   age: {
-    en: { name: 'Chronological Age', desc: 'Age in completed years. Used for age-adjusted metabolic coefficients and baseline health references.', metric: 'Years (integer)', imperial: 'Years (integer)' },
+    en: { name: 'Age', desc: 'Age in completed years. Used to adjust calorie needs and health metrics for your life stage.', metric: 'Years', imperial: 'Years' },
     es: { name: 'Edad Cronológica', desc: 'Años cumplidos, necesarios para coeficientes metabólicos ajustados por edad.', metric: 'Años (entero)', imperial: 'Años (entero)' },
     fr: { name: 'Âge Chronologique', desc: 'Années révolues, requises pour les coefficients métaboliques ajustés selon l’âge.', metric: 'Années (entier)', imperial: 'Années (entier)' },
     de: { name: 'Lebensalter', desc: 'Vollendete Lebensjahre, erforderlich für alterskorrigierte Stoffwechselkoeffizienten.', metric: 'Jahre (Ganzzahl)', imperial: 'Jahre (Ganzzahl)' },
@@ -85,7 +85,7 @@ const VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; desc: 
     hi: { name: 'आयु', desc: 'पूर्ण किए गए जीवन वर्ष, जो आयु-समायोजित चयापचय गुणांक के लिए आवश्यक हैं।', metric: 'वर्ष (पूर्णांक)', imperial: 'वर्ष (पूर्णांक)' }
   },
   gender: {
-    en: { name: 'Biological Profile', desc: 'Biological gender profile. Used for sex-specific metabolic baselines and reference body composition ranges.', metric: 'Male / Female', imperial: 'Male / Female' },
+    en: { name: 'Biological Sex', desc: 'Used to set sex-specific calorie burn, fat baselines, and lean body mass ranges.', metric: 'Male / Female', imperial: 'Male / Female' },
     es: { name: 'Género Biológico', desc: 'Requerido porque el perfil biológico determina la proporción de grasa esencial y la tasa metabólica basal.', metric: 'Masculino / Femenino', imperial: 'Masculino / Femenino' },
     fr: { name: 'Profil Biologique', desc: 'Nécessaire car le profil biologique influence la masse grasse essentielle et le métabolisme de base.', metric: 'Homme / Femme', imperial: 'Homme / Femme' },
     de: { name: 'Biologisches Geschlecht', desc: 'Erforderlich, da das biologische Geschlecht den essenziellen Fettanteil und den Grundumsatz bestimmt.', metric: 'Männlich / Weiblich', imperial: 'Männlich / Weiblich' },
@@ -345,7 +345,7 @@ export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale, 
   });
 
   const dynamicSubtitle = toolTitle ? ({
-    en: `Standardized measurement parameters and unit conversions for ${toolTitle}.`,
+    en: `Measurement units and simple input rules for ${toolTitle}.`,
     es: `Parámetros de medición estandarizados y conversiones de unidades empleados en ${toolTitle}.`,
     fr: `Paramètres de mesure standardisés et conversions d’unités utilisés pour ${toolTitle}.`,
     de: `Standardisierte Messparameter und Einheitenumrechnungen für ${toolTitle}.`,
