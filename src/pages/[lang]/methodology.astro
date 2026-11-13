@@ -1474,7 +1474,7 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {currentI18n.pillars.map(pillar => (
           <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2.5">
-            <h3 class="text-lg font-display font-bold text-[var(--foreground)] uppercase tracking-wide">{pillar.title}<span class="sr-only">. </span></h3>
+            <h3 class="text-lg font-display font-bold text-[var(--foreground)] uppercase tracking-wide">{pillar.title}</h3>
             <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{pillar.desc}</p>
           </div>
         ))}
@@ -1483,9 +1483,9 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
       <!-- Executive Algorithm & Formula Reference Table (Formula & Source Verification Table) -->
       <div class="space-y-4">
         <div class="space-y-1">
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}<span class="sr-only">. </span></p>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}</p>
           <h2 class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
-            {currentI18n.tableViewTitle}<span class="sr-only">. </span>
+            {currentI18n.tableViewTitle}
           </h2>
           <p class="text-sm text-[var(--muted-foreground)] font-medium">
             {currentI18n.tableViewDesc}
@@ -1496,12 +1496,12 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
           <table class="methodology-matrix-table">
             <thead>
               <tr>
-                <th style="width: 18%;">{currentI18n.tableColTool}<span class="sr-only">. </span></th>
-                <th style="width: 20%;">{currentI18n.tableColFormula}<span class="sr-only">. </span></th>
-                <th style="width: 18%;">{currentI18n.tableColSource}<span class="sr-only">. </span></th>
-                <th style="width: 14%;">{currentI18n.tableColInputs}<span class="sr-only">. </span></th>
-                <th style="width: 15%;">{currentI18n.tableColOutputs}<span class="sr-only">. </span></th>
-                <th style="width: 15%;">{currentI18n.tableColLimitations}<span class="sr-only">. </span></th>
+                <th style="width: 18%;">{currentI18n.tableColTool}</th>
+                <th style="width: 20%;">{currentI18n.tableColFormula}</th>
+                <th style="width: 18%;">{currentI18n.tableColSource}</th>
+                <th style="width: 14%;">{currentI18n.tableColInputs}</th>
+                <th style="width: 15%;">{currentI18n.tableColOutputs}</th>
+                <th style="width: 15%;">{currentI18n.tableColLimitations}</th>
               </tr>
             </thead>
             <tbody>
@@ -1520,13 +1520,13 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
                       <a href={`/${lang}/${item.slug}/`} class="font-bold">
                         {localizedName}
                       </a>
-                      <span class="sr-only">. </span>
+                      
                     </td>
-                    <td class="font-mono text-xs">{locFormula}<span class="sr-only">. </span></td>
-                    <td class="text-xs">{locSource}<span class="sr-only">. </span></td>
-                    <td>{locInputs}<span class="sr-only">. </span></td>
-                    <td>{locOutput}<span class="sr-only">. </span></td>
-                    <td class="text-xs leading-relaxed">{locLimitations}<span class="sr-only">. </span></td>
+                    <td class="font-mono text-xs">{locFormula}</td>
+                    <td class="text-xs">{locSource}</td>
+                    <td>{locInputs}</td>
+                    <td>{locOutput}</td>
+                    <td class="text-xs leading-relaxed">{locLimitations}</td>
                   </tr>
                 );
               })}
@@ -1586,10 +1586,10 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
                   <div class="flex items-center gap-3 min-w-0">
                     <span class="w-2.5 h-2.5 rounded-full bg-[var(--accent)] shrink-0"></span>
                     <h3 class="text-base sm:text-lg font-display font-bold text-[var(--foreground)] truncate">
-                      {localizedName}<span class="sr-only">. </span>
+                      {localizedName}
                     </h3>
                     <span class="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[var(--muted)] border border-[var(--border)] text-[var(--muted-foreground)] truncate max-w-[220px]">
-                      {locOutput}<span class="sr-only">. </span>
+                      {locOutput}
                     </span>
                   </div>
                   <div class="flex items-center gap-3 shrink-0">
@@ -1609,28 +1609,19 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
                 <div class="p-5 sm:p-6 pt-2 border-t border-[var(--border)]/60 bg-[var(--muted)]/10 space-y-4">
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                     <div class="space-y-1.5 p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.equationLabel}<span class="sr-only">. </span></span>
-                      <p class="font-mono text-[var(--foreground)] font-semibold break-words">{locFormula}<span class="sr-only">. </span></p>
+                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.equationLabel}</span>
+                      <p class="font-mono text-[var(--foreground)] font-semibold break-words">{locFormula}</p>
                     </div>
                     <div class="space-y-1.5 p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.sourceLabel}<span class="sr-only">. </span></span>
-                      <p class="text-[var(--foreground)] font-medium leading-relaxed">{locSource}<span class="sr-only">. </span></p>
+                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.sourceLabel}</span>
+                      <p class="text-[var(--foreground)] font-medium leading-relaxed">{locSource}</p>
                     </div>
                   </div>
 
-                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-1">
-                    <div class="p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.inputsLabel}<span class="sr-only">. </span></span>
-                      <p class="text-[var(--foreground)] font-semibold">{locInputs}<span class="sr-only">. </span></p>
-                    </div>
-                    <div class="p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.outputLabel}<span class="sr-only">. </span></span>
-                      <p class="text-[var(--foreground)] font-semibold">{locOutput}<span class="sr-only">. </span></p>
-                    </div>
-                    <div class="p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.limitationsLabel}<span class="sr-only">. </span></span>
-                      <p class="text-[var(--muted-foreground)] font-medium leading-relaxed">{locLimitations}<span class="sr-only">. </span></p>
-                    </div>
+                  <div class="p-3.5 rounded-lg bg-[var(--card)] border border-[var(--border)] space-y-1.5 text-xs">
+                    <p><strong class="text-[var(--foreground)]">{currentI18n.inputsLabel}:</strong> <span class="text-[var(--muted-foreground)] font-medium">{locInputs}</span></p>
+                    <p><strong class="text-[var(--foreground)]">{currentI18n.outputLabel}:</strong> <span class="text-[var(--muted-foreground)] font-medium">{locOutput}</span></p>
+                    <p><strong class="text-[var(--foreground)]">{currentI18n.limitationsLabel}:</strong> <span class="text-[var(--muted-foreground)] font-medium leading-relaxed">{locLimitations}</span></p>
                   </div>
 
                   <div class="pt-2 flex justify-end md:hidden">
@@ -1675,10 +1666,10 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
         <div class="p-6 md:p-8 rounded-2xl border-2 border-indigo-500/30 bg-indigo-500/5 space-y-4 not-prose shadow-sm">
           <div class="flex flex-wrap items-center justify-between gap-3">
             <span class="text-xs font-bold font-display uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
-              {lang === 'hi' ? 'प्राथमिक अकादमिक शोध उद्धरण एवं संदर्भ' : (lang === 'es' ? 'Citas Académicas Primarias y Bibliografía' : (lang === 'fr' ? 'Citations Académiques Primaires & Bibliographie' : (lang === 'de' ? 'Primäre wissenschaftliche Zitate & Bibliographie' : (lang === 'ko' ? '직접 학술 연구 논문 인용 및 참고문헌' : 'Primary Academic Research Citations & Sources'))))}<span class="sr-only">. </span>
+              {lang === 'hi' ? 'प्राथमिक अकादमिक शोध उद्धरण एवं संदर्भ' : (lang === 'es' ? 'Citas Académicas Primarias y Bibliografía' : (lang === 'fr' ? 'Citations Académiques Primaires & Bibliographie' : (lang === 'de' ? 'Primäre wissenschaftliche Zitate & Bibliographie' : (lang === 'ko' ? '직접 학술 연구 논문 인용 및 참고문헌' : 'Primary Academic Research Citations & Sources'))))}
             </span>
             <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
-              {currentI18n.studiesBadge}<span class="sr-only">. </span>
+              {currentI18n.studiesBadge}
             </span>
           </div>
           <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">

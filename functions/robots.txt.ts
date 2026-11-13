@@ -5,6 +5,7 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
 Disallow: /embed/
+Disallow: /cdn-cgi/
 
 User-agent: Googlebot
 Allow: /
