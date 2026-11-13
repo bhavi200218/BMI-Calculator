@@ -1913,37 +1913,36 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     },
     "contentHtml": {
       "en": `
-      <h2>The Lifespan Continuum: How Age Influences Body Mass Index Interpretation</h2>
-      <p>Body composition is not a static physiological state; it evolves dramatically across every decade of human life. While the standard adult Body Mass Index (BMI) formula—body weight in kilograms divided by stature in meters squared—remains mathematically constant from age 20 to 100, its <strong>clinical interpretation must be adapted to age-specific biological changes</strong>. What represents an ideal, longevity-promoting BMI for a 22-year-old athlete can signify acute malnutrition and frailty in an 82-year-old nursing home resident.</p>
-      <p>Below, we examine the physiological progression of human body composition across four primary life stages, explore the clinical phenomenon known as the <em>Obesity Paradox in Geriatrics</em>, detail how age-related stature compression alters calculated BMI, and provide an evidence-based clinical reference guide.</p>
+      <h2>How Age Changes Your Body Mass Index</h2>
+      <p>Your body changes across every decade of life. The standard Body Mass Index (BMI) formula divides weight by height squared. While this formula stays the same from age 20 to 100, what the numbers mean changes with age. A BMI that is healthy for a 22-year-old athlete may signal frailty in an 82-year-old senior.</p>
+      <p>Below, we look at how body shape shifts across four life stages. We also explain why a slightly higher weight can protect older adults.</p>
 
-      <h2>The Four Major Life Stages of Anthropometric Evolution</h2>
+      <h2>The Four Life Stages of Body Changes</h2>
       <div class="my-6 space-y-4">
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">1. Early Adulthood (Ages 20 to 39): Peak Bone Mass and Muscular Development</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">During young adulthood, individuals reach peak bone mineral density and maximum baseline skeletal muscle mass. The standard World Health Organization (WHO) healthy range of <strong>18.5 to 24.9 kg/m²</strong> demonstrates its highest diagnostic accuracy during this life stage. Because metabolic rates are elevated and hormonal profiles (growth hormone, testosterone, and estradiol) are robust, excess weight in this cohort almost exclusively reflects dietary energy surplus rather than age-related hormonal shifts.</p>
+          <h3 class="text-base font-bold text-[var(--accent)]">1. Early Adulthood (Ages 20 to 39): Peak Bone and Muscle Mass</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Young adults have their highest bone density and muscle mass. The standard World Health Organization (WHO) healthy range of <strong>18.5 to 24.9 kg/m²</strong> works best in this stage. Metabolic rates are high, and energy levels are strong. In this group, extra weight usually comes from eating more calories than you burn.</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">2. Middle Adulthood (Ages 40 to 64): Metabolic Slowdown & Visceral Redistribution</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Beginning in the fourth decade, resting metabolic rate declines by roughly 1% to 2% per decade, primarily driven by subclinical losses of appendicular lean muscle (sarcopenia) and decreased physical activity. In women, the perimenopausal drop in estrogens prompts a migration of adipose tissue from subcutaneous gluteofemoral depots to visceral abdominal locations. In men, gradual androgen declines lead to reduced muscular tone and increased hepatic fat deposition. An adult may maintain an unchanged scale weight of 70 kg throughout this period while covertly gaining 4 kg of visceral fat and losing 4 kg of muscle.</p>
+          <h3 class="text-base font-bold text-[var(--accent)]">2. Middle Adulthood (Ages 40 to 64): Slower Burn and Shifting Fat</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Starting in your 40s, resting burn drops by about 1% to 2% each decade. This drop happens as adults lose small amounts of muscle and move less. In women, hormone shifts during menopause cause fat to move from the hips to the belly. In men, lower hormone levels reduce muscle tone. An adult can stay at the same scale weight of 70 kg while losing muscle and gaining belly fat.</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">3. Older Adulthood (Ages 65 to 74): The Emergence of Sarcopenic Obesity</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">In early seniority, muscle protein synthesis efficiency decreases in response to dietary amino acids. Adults who do not engage in targeted resistance exercise lose up to 3% to 5% of muscle mass per decade. Sarcopenic obesity—the simultaneous coexistence of high body fat and deficient skeletal muscle mass—frequently emerges. Clinicians advise against aggressive calorie-restriction diets in this age bracket unless accompanied by high protein intake and resistance training, as rapid weight loss accelerates muscular deterioration and fall risk.</p>
+          <h3 class="text-base font-bold text-[var(--accent)]">3. Older Adulthood (Ages 65 to 74): Muscle Loss and Weight Balance</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">In your 60s, the body builds muscle more slowly from food. Adults who do not lift weights can lose up to 5% of their muscle mass each decade. This loss of muscle paired with higher body fat is called sarcopenic obesity. Doctors advise older adults not to go on crash diets. Fast weight loss can weaken muscles and increase fall risks. Instead, seniors should eat plenty of protein and do gentle strength training.</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">4. Advanced Age (Ages 75+): Frailty and Involuntary Weight Loss</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">In late senescence, involuntary weight loss and cachexia represent severe clinical warning signs. A declining BMI below 22 kg/m² correlates strongly with increased mortality, susceptibility to severe respiratory infections, hip fractures following minor falls, and postoperative complications. Preserving nutritional reserves takes precedence over traditional weight-loss goals.</p>
+          <h3 class="text-base font-bold text-[var(--accent)]">4. Advanced Age (Ages 75+): Staying Strong and Preventing Weight Loss</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">In late senior years, unintentional weight loss is a serious health risk. A BMI below 22 in seniors links to higher illness risks and weak bones. Minor falls can lead to hip fractures when body padding is low. In this stage, keeping a steady weight and good nutrition matters more than losing weight.</p>
         </div>
       </div>
 
-      <h2>The Geriatric Obesity Paradox: Why Higher BMI Protects Older Adults</h2>
-      <p>One of the most robust findings in geriatric epidemiology is the <strong>"Obesity Paradox."</strong> Across dozens of large-scale international prospective studies, the lowest all-cause mortality rate for adults aged 65 and older occurs not at the standard adult ideal of 21 to 23 kg/m², but rather between <strong>25.0 and 29.9 kg/m²</strong> (traditionally classified as "overweight").</p>
-      <p>Gerontologists identify several protective biological mechanisms explaining this paradox:</p>
+      <h2>Why a Slightly Higher BMI Protects Seniors</h2>
+      <p>In geriatric medicine, researchers found what they call the <strong>"Obesity Paradox."</strong> Studies show that for adults 65 and older, the lowest health risks occur between a BMI of <strong>25.0 and 29.9 kg/m²</strong>. In younger adults, this range is called overweight. For seniors, it offers clear benefits:</p>
       <ul>
-        <li><strong>Metabolic Reserve Capacity:</strong> Modest fat reserves provide essential catabolic substrate during acute medical events such as pneumonia, sepsis, major orthopedic surgery, or cancer treatments.</li>
-        <li><strong>Mechanical Cushioning:</strong> Greater subcutaneous adipose tissue over the greater trochanter of the femur absorbs impact energy during falls, directly reducing the incidence of catastrophic hip fractures.</li>
-        <li><strong>Protection Against Undernutrition:</strong> Older adults with higher baseline weights are far less likely to suffer from micronutrient deficiencies, zinc depletion, and severe immune compromise.</li>
+        <li><strong>Extra Energy Reserves:</strong> A small amount of extra body fat provides energy during unexpected illnesses or hospital stays.</li>
+        <li><strong>Natural Padding:</strong> Soft tissue around the hips cushions the bones during a fall. This lowers the chance of broken bones.</li>
+        <li><strong>Better Nutrition:</strong> Seniors who keep a steady weight have fewer vitamin gaps and stronger immune systems.</li>
       </ul>
 
       <h2>Age-Stratified Recommended BMI Reference Targets</h2>
@@ -1953,57 +1952,57 @@ export const bmiArticles: Record<string, BlogArticleData> = {
             <tr style="background-color: #f5f5f5;">
               <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Age Bracket</th>
               <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981; background-color: #f5f5f5;">Optimal Longevity BMI Target</th>
-              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Primary Anthropometric Focus</th>
-              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Clinical Screening Priorities</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Primary Health Goal</th>
+              <th style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #1e293b; background-color: #f5f5f5;">Key Health Focus</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">18 – 35 Years</td>
               <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">19.0 – 24.5 kg/m²</td>
-              <td style="border: 1px solid #e6e6e6; padding: 12px;">Cardiorespiratory fitness, muscular development</td>
-              <td style="border: 1px solid #e6e6e6; padding: 12px;">Baseline lipid panels, blood pressure monitoring</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Heart health, build muscle</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Blood pressure, regular exercise</td>
             </tr>
             <tr>
               <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">36 – 54 Years</td>
               <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">20.5 – 25.5 kg/m²</td>
-              <td style="border: 1px solid #e6e6e6; padding: 12px;">Visceral fat prevention, waist-to-height ratio &lt; 0.50</td>
-              <td style="border: 1px solid #e6e6e6; padding: 12px;">Fasting blood glucose, HbA1c, liver function tests</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Keep waist trim, protect lean mass</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Blood sugar, lipid checks</td>
             </tr>
             <tr>
               <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">55 – 64 Years</td>
               <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">22.0 – 26.5 kg/m²</td>
-              <td style="border: 1px solid #e6e6e6; padding: 12px;">Preservation of skeletal muscle, joint preservation</td>
-              <td style="border: 1px solid #e6e6e6; padding: 12px;">Cardiovascular stress testing, carotid ultrasound</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Protect muscle and joints</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Heart health, joint mobility</td>
             </tr>
             <tr>
               <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600;">65 – 74 Years</td>
               <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">23.5 – 28.0 kg/m²</td>
-              <td style="border: 1px solid #e6e6e6; padding: 12px;">Sarcopenia prevention, balance, functional mobility</td>
-              <td style="border: 1px solid #e6e6e6; padding: 12px;">DEXA bone density scan, grip strength dynamometry</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Prevent muscle loss, keep balance</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Bone density, grip strength</td>
             </tr>
             <tr>
               <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 600; color: #464feb;">75+ Years</td>
               <td style="border: 1px solid #e6e6e6; padding: 12px; font-weight: 700; color: #10b981;">24.0 – 29.0 kg/m²</td>
-              <td style="border: 1px solid #e6e6e6; padding: 12px;">Nutritional density, fall prevention, frailty avoidance</td>
-              <td style="border: 1px solid #e6e6e6; padding: 12px;">Mini Nutritional Assessment (MNA), albumin screening</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Healthy meals, prevent falls</td>
+              <td style="border: 1px solid #e6e6e6; padding: 12px;">Good nutrition, steady weight</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>The Impact of Age-Related Stature Compression</h2>
-      <p>As humans age, the hydration and thickness of intervertebral fibrocartilaginous discs decline, and subtle osteoporotic microfractures can lead to mild spinal kyphosis. On average, adults lose approximately 1 to 2 cm of height per decade after age 40, and up to 3 to 5 cm by age 75. Because height is squared in the BMI denominator, this stature loss artificially inflates calculated BMI by 1.0 to 1.5 units without any true gain in adipose mass. Clinicians working with older adults frequently measure arm span or knee height as surrogate markers to estimate original stature.</p>
+      <h2>How Losing Height Changes Your BMI</h2>
+      <p>As you grow older, the cushions between your spine bones lose fluid and shrink. Most adults lose 1 to 2 cm of height each decade after age 40. By age 75, many people are 3 to 5 cm shorter. Because BMI divides weight by height squared, losing height makes your BMI score look higher on paper, even when your body fat has not changed. Doctors often check arm span or knee height to estimate your true adult height.</p>
 
       <h2>Frequently Asked Questions on BMI Across Ages</h2>
       <div class="space-y-4 my-6">
         <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">Should a 70-year-old attempt to lose weight if their BMI is 27?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">In the absence of severe mobility impairment or uncontrolled Type 2 diabetes, most geriatricians recommend maintaining weight rather than dieting at a BMI of 27. Unsupervised dieting in seniors disproportionately strips away vital lean muscle tissue and bone density.</p>
+          <h3 class="text-base font-bold text-[var(--foreground)]">Should a 70-year-old try to lose weight if their BMI is 27?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Unless advised by a doctor for knee pain or blood sugar, keeping your weight steady is safer. Strict dieting in seniors can cause fast muscle loss and weaker bones.</p>
         </div>
         <div>
-          <h3 class="text-base font-bold text-[var(--foreground)]">What is the most dangerous weight pattern in older adults?</h3>
-          <p class="text-sm text-[var(--muted-foreground)]">Involuntary weight loss exceeding 5% of body weight over 6 to 12 months is a major clinical indicator of frailty, malignancy, or chronic malabsorption, warranting immediate medical investigation.</p>
+          <h3 class="text-base font-bold text-[var(--foreground)]">What is the most risky weight change for seniors?</h3>
+          <p class="text-sm text-[var(--muted-foreground)]">Losing weight without trying is a key warning sign. If a senior loses more than 5% of their weight in six months, they should see a doctor right away.</p>
         </div>
       </div>
 

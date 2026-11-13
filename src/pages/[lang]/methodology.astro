@@ -80,17 +80,17 @@ const i18nData: Record<string, {
     "matrixTitle": "Comprehensive Calculator Methodology Matrix",
     "matrixDesc": "Review the equation, data source, inputs, outputs, and limitations for each calculator tool.",
     "openTool": "Open Tool",
-    "equationLabel": "Mathematical Equation",
-    "sourceLabel": "Primary Source Authority",
-    "inputsLabel": "Input Variables:",
-    "outputLabel": "Output Metrics:",
-    "limitationsLabel": "Clinical Limitations:",
-    "tableColTool": "Calculator Tool",
-    "tableColFormula": "Mathematical Formula / Model",
-    "tableColSource": "Clinical Reference Authority",
-    "tableColInputs": "Input Variables",
-    "tableColOutputs": "Output Metrics",
-    "tableColLimitations": "Clinical Limitations",
+    "equationLabel": "Formula",
+    "sourceLabel": "Source",
+    "inputsLabel": "Inputs:",
+    "outputLabel": "Outputs:",
+    "limitationsLabel": "Limits:",
+    "tableColTool": "Tool",
+    "tableColFormula": "Formula",
+    "tableColSource": "Source",
+    "tableColInputs": "Inputs",
+    "tableColOutputs": "Outputs",
+    "tableColLimitations": "Limits",
     "studiesBadge": "15 Indexed Landmark Studies",
     "tableViewTitle": "Executive Algorithm & Formula Reference Table",
     "tableViewDesc": "Comprehensive cross-reference of all 23 computational health tools on Real BMI:"
@@ -366,7 +366,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "체질량지수(BMI) 수치 및 WHO 비만도 분류"
     },
     "limitations": {
-      "en": "Measures total mass relative to height; does not distinguish muscle mass from adipose fat tissue.",
+      "en": "Measures total body weight against height. It does not separate lean muscle from body fat.",
       "hi": "ऊंचाई के अनुपात में कुल शारीरिक भार मापता है; यह मांसपेशियों के द्रव्यमान और वसा ऊतक (फैट) में अंतर नहीं करता।",
       "es": "Mide la masa total respecto a la altura; no distingue la masa muscular del tejido adiposo.",
       "fr": "Mesure la masse totale par rapport à la taille ; ne distingue pas la masse musculaire du tissu adipeux.",
@@ -410,7 +410,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "인터랙티브 3D 체형 시뮬레이션, BMI 수치 및 건강 위험 영역"
     },
     "limitations": {
-      "en": "Population-average visual simulation; does not capture unique skeletal frame widths or localized subcutaneous deposits.",
+      "en": "Visual body simulation for learning. It does not show individual bone widths or exact fat stores.",
       "hi": "दृश्य सिमुलेशन जनसंख्या औसत पर आधारित है; यह व्यक्तिगत हड्डियों की बनावट या वसा वितरण को पूरी तरह नहीं दर्शाता।",
       "es": "Simulación visual basada en promedios poblacionales; no refleja variaciones óseas individuales ni depósitos localizados.",
       "fr": "Simulation visuelle basée sur des moyennes statistiques ; ne remplace pas une imagerie médicale diagnostique.",
@@ -454,7 +454,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "종합 BMI 대조표, 정상 체중 범위 격자 및 세부 체중 분류 체계"
     },
     "limitations": {
-      "en": "Population-level reference tool; not tailored for elderly populations with sarcopenia or pregnant individuals.",
+      "en": "General reference tool for adults. It is not designed for pregnancy or age-related muscle loss.",
       "hi": "जनसंख्या-स्तर संदर्भ उपकरण; वरिष्ठ नागरिकों (सार्कोपेनिया) या गर्भवती महिलाओं पर सीधे लागू नहीं होता।",
       "es": "Herramienta de referencia poblacional; no aplicable para adultos mayores con sarcopenia o personas embarazadas.",
       "fr": "Outil de référence populationnel ; non adapté aux personnes âgées souffrant de sarcopénie ou aux femmes enceintes.",
@@ -542,7 +542,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "인도인 맞춤형 BMI 점수, 하향 조정된 비만 분류 및 심혈관 대사 위험 알림"
     },
     "limitations": {
-      "en": "Tailored specifically for South Asian phenotypes with higher visceral fat at lower BMI; does not apply to Caucasian or African populations.",
+      "en": "Designed for South Asian body types with higher belly fat at lower BMI. It is not intended for other groups.",
       "hi": "दक्षिण एशियाई लोगों में कम बीएमआई पर उच्च आंतों की वसा (विसरल फैट) को लक्षित करता है; कोकेशियन या अफ्रीकी मूल पर लागू नहीं होता।",
       "es": "Diseñado para fenotipos sudasiáticos con mayor adiposidad visceral; no debe aplicarse a poblaciones caucásicas.",
       "fr": "Spécifique aux populations sud-asiatiques à adiposité viscérale précoce ; non applicable aux populations caucasiennes.",
@@ -630,7 +630,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "교육용 원점수(13점 만점), 평가 유형, 안내 사항, 허리둘레 상태"
     },
     "limitations": {
-      "en": "Unvalidated educational tool displaying raw score (0–13) only without clinical risk categorization. Does not estimate actual diabetes probability or 10-year risk, and does not capture family history, hypertension, or direct glycemic biomarkers. A formal clinical evaluation requires diagnostic blood tests (HbA1c or fasting plasma glucose).",
+      "en": "Educational lifestyle guide with a simple score (0 to 13). It is not a clinical test. It does not measure blood sugar, blood pressure, or family history. Only a doctor can evaluate diabetes with official lab tests.",
       "hi": "यह गैर-सत्यापित शैक्षिक टूल है जो बिना किसी नैदानिक जोखिम वर्गीकरण के केवल मूल स्कोर (0–13) दिखाता है। यह मधुमेह की वास्तविक संभावना या 10-वर्षीय जोखिम का अनुमान नहीं लगाता है। औपचारिक निदान हेतु डॉक्टर से रक्त परीक्षण (HbA1c या फास्टिंग ग्लूकोज) कराना आवश्यक है।",
       "es": "Herramienta educativa no validada que muestra únicamente la puntuación bruta (0–13) sin categorización de riesgo clínico. No estima la probabilidad real de diabetes ni el riesgo a 10 años, y no evalúa antecedentes familiares ni análisis glucémicos. La evaluación clínica formal requiere pruebas diagnósticas de laboratorio (HbA1c o glucosa en ayunas).",
       "fr": "Outil éducatif non validé affichant uniquement le score brut (0–13) sans classification de risque clinique. Il n'estime pas la probabilité réelle de diabète ni le risque à 10 ans et n'intègre pas les antécédents familiaux ni la glycémie. Un diagnostic formel requiert des examens sanguins prescrits par un médecin (HbA1c ou glycémie à jeun).",
@@ -674,7 +674,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "아시아인 기준 맞춤 체질량지수 점수 및 공중보건 권고 비만 분류"
     },
     "limitations": {
-      "en": "Accounts for population-level body fat variations in East and Southeast Asian cohorts; requires waist circumference for central adiposity verification.",
+      "en": "Reflects Asian body composition data. Use waist size to double-check belly fat.",
       "hi": "पूर्वी व दक्षिण-पूर्वी एशियाई समूहों में वसा भिन्नताओं को दर्शाता है; आंतों की चर्बी की पुष्टि के लिए कमर माप आवश्यक है।",
       "es": "Refleja la mayor proporción de grasa a menor IMC en asiáticos; se recomienda complementar con perímetro de cintura.",
       "fr": "Prend en compte la masse grasse plus élevée à IMC identique ; nécessite la mesure du tour de taille pour l'adiposité viscérale.",
@@ -850,7 +850,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "체지방률(%), 체지방량, 제지방량(LBM) 및 ACE 체지방 단계 분류"
     },
     "limitations": {
-      "en": "Measuring tape tension and localized subcutaneous fat variations introduce ±3–4% margin of error compared to hydrodensitometry.",
+      "en": "Tape measure tension and fat storage can vary results by 3% to 4% compared to lab tests.",
       "hi": "टेप माप सटीकता और व्यक्तिगत वसा संचय पैटर्न पर निर्भर; हाइड्रोस्टैटिक वजन या DEXA स्कैन जितना सटीक नहीं।",
       "es": "La tensión de la cinta métrica y la grasa localizada pueden inducir un margen de error de ±3-4% frente a DEXA.",
       "fr": "La tension du ruban et la répartition des graisses introduisent une marge d'erreur de ±3-4 % par rapport à l'imagerie DEXA.",
@@ -982,7 +982,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "안전한 체지방 감량을 위한 일일 권장 섭취 칼로리 및 목표 도달 예상 기간"
     },
     "limitations": {
-      "en": "Low-Calorie Diet Reference Ranges: The NHLBI (1998) clinical guidelines described historical reference ranges for structured low-calorie diets (typically 1,000–1,200 kcal/day for women and 1,200–1,500 kcal/day for men) aimed at providing adequate micronutrients during weight reduction. These are historical reference parameters rather than universal minimums or safety guarantees. Specific clinical and medical supervision is indicated for very-low-calorie diets (VLCDs, under 800 kcal/day).",
+      "en": "Diet Reference Ranges. Historical NHLBI guidelines describe structured low-calorie diet ranges. These were 1,000 to 1,200 kcal daily for women, and 1,200 to 1,500 kcal daily for men. They helped provide basic vitamins during weight loss. These numbers are historical reference guides, not universal guarantees. Diets under 800 kcal daily require direct medical supervision.",
       "hi": "कम कैलोरी आहार संदर्भ सीमाएं: NHLBI (1998) नैदानिक दिशानिर्देशों ने संरचित कम-कैलोरी आहार (LCD) के लिए ऐतिहासिक संदर्भ सीमाएं (आमतौर पर महिलाओं के लिए 1,000–1,200 और पुरुषों के लिए 1,200–1,500 kcal/दिन) बताई हैं ताकि पोषण संबंधी पर्याप्तता बनी रहे। ये ऐतिहासिक संदर्भ बिंदु हैं, कोई सार्वभौमिक न्यूनतम सीमा या सुरक्षा गारंटी नहीं। अत्यधिक कम कैलोरी वाले आहार (VLCD, 800 kcal/दिन से कम) के लिए विशेष चिकित्सकीय देखरेख अनिवार्य है।",
       "es": "Rangos de Referencia para Dietas Hipocalóricas: Las directrices clínicas del NHLBI (1998) describieron rangos de referencia históricos para dietas bajas en calorías estructuradas (típicamente 1,000–1,200 kcal/día en mujeres y 1,200–1,500 kcal/día en hombres) orientados a mantener micronutrientes adecuados. Representan parámetros de referencia y no mínimos universales ni garantías de seguridad. La supervisión médica específica está indicada para dietas muy bajas en calorías (VLCD, menos de 800 kcal/día).",
       "fr": "Repères pour Régimes Hypocaloriques : Les lignes directrices du NHLBI (1998) ont défini des plages de référence historiques pour les régimes hypocaloriques structurés (typiquement 1 000–1 200 kcal/jour pour les femmes et 1 200–1 500 kcal/jour pour les hommes) afin de préserver les apports nutritionnels. Ce sont des repères indicatifs et non des minima universels ou des garanties absolues. Un suivi médical spécifique est impératif pour les régimes très basses calories (VLCD, moins de 800 kcal/jour).",
@@ -1026,7 +1026,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "일일 총 단백질 권장 섭취량(g/일), 끼니별 분배 가이드 및 총 칼로리 대비 비율"
     },
     "limitations": {
-      "en": "Individuals with pre-existing renal impairment or chronic kidney disease must consult a clinical nephrologist prior to high-protein regimens.",
+      "en": "Anyone with kidney disease or reduced kidney function must speak with a doctor before starting high-protein diets.",
       "hi": "गुर्दे (किडनी) रोग से पीड़ित व्यक्तियों को उच्च प्रोटीन सेवन से पूर्व डॉक्टर से परामर्श लेना चाहिए।",
       "es": "Personas con disfunción renal preexistente deben consultar a un nefrólogo antes de aumentar el consumo proteico.",
       "fr": "Les personnes souffrant d'insuffisance rénale doivent impérativement consulter un néphrologue.",
@@ -1070,7 +1070,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "일일 총 권장 수분 섭취량(리터 단위 및 표준 컵 기준 잔 수)"
     },
     "limitations": {
-      "en": "The 35 mL/kg multiplier is an approximate illustrative calculator estimate, not an established clinical consensus recommendation or universal physiological requirement. Actual daily fluid needs vary significantly based on environmental climate, age, kidney function, and individual sweat rates. The optional +750 mL adjustment is an illustrative estimate for exercise, not a universal requirement for every active person. Individuals with congestive heart failure, chronic kidney disease, or other fluid-sensitive conditions must follow medically prescribed fluid restrictions.",
+      "en": "Fluid Guide. The 35 mL per kg calculation is a general daily guide. It is not a fixed medical rule. Daily fluid needs change with climate, heat, age, and sweat. The optional 750 mL add-on is a simple guide for active days. People with kidney disease or heart failure must follow a doctor's fluid limits.",
       "hi": "35 मिली/किग्रा का सूत्र केवल एक सन्निकट उदाहरणार्थ कैलकुलेटर अनुमान है, कोई स्थापित नैदानिक आम सहमति या सार्वभौमिक नियम नहीं है। वास्तविक पानी की आवश्यकता जलवायु, गुर्दे के स्वास्थ्य और व्यक्तिगत पसीने की दर के अनुसार भिन्न होती है। +750 मिली का वैकल्पिक समायोजन कसरत के लिए एक उदाहरण मात्र है, कोई अनिवार्य नियम नहीं। हृदय विफलता या गुर्दे की बीमारी से पीड़ित व्यक्तियों को डॉक्टर द्वारा निर्धारित तरल प्रतिबंधों का पालन करना चाहिए।",
       "es": "El factor de 35 ml/kg es una estimación ilustrativa aproximada, no una recomendación médica establecida de consenso ni un requisito universal. Las necesidades hídricas reales varían notablemente según el clima, la función renal y la tasa individual de sudoración. El ajuste opcional de +750 ml es una referencia orientativa y no un requisito fijo. Pacientes con insuficiencia cardíaca o enfermedad renal deben seguir restricciones prescritas por su médico.",
       "fr": "Le coefficient de 35 ml/kg est une estimation illustrative approximative, et non une recommandation clinique consensuelle ou une exigence universelle. Les besoins hydriques réels varient selon le climat, la fonction rénale et la sudation individuelle. L'ajustement optionnel de +750 ml constitue une estimation illustrative et non une règle absolue. Les personnes atteintes d'insuffisance cardiaque ou rénale doivent respecter les restrictions prescrites par leur médecin.",
@@ -1202,7 +1202,7 @@ const methodologyMatrix: MethodologyItem[] = [
       "ko": "총 체표면적(BSA, m² 단위) 및 Du Bois 공식 대조 결과"
     },
     "limitations": {
-      "en": "Assumes standard anatomical limb proportions; severe limb amputations or extreme congenital morphometries require specialized corrections.",
+      "en": "Assumes standard body proportions. It does not account for limb loss or atypical body frames.",
       "hi": "औसत शरीर संरचना मानता है; गंभीर अंग विच्छेदन या असाधारण शरीर अनुपात में नैदानिक सुधार आवश्यक है।",
       "es": "Asume proporciones anatómicas convencionales; amputaciones o displasias requieren corrección clínica.",
       "fr": "Repose sur des proportions anatomiques standard ; les amputations nécessitent des facteurs correctifs.",
@@ -1474,7 +1474,7 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {currentI18n.pillars.map(pillar => (
           <div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2.5">
-            <h3 class="text-lg font-display font-bold text-[var(--foreground)] uppercase tracking-wide">{pillar.title}</h3>
+            <h3 class="text-lg font-display font-bold text-[var(--foreground)] uppercase tracking-wide">{pillar.title}<span class="sr-only">. </span></h3>
             <p class="text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">{pillar.desc}</p>
           </div>
         ))}
@@ -1483,9 +1483,9 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
       <!-- Executive Algorithm & Formula Reference Table (Formula & Source Verification Table) -->
       <div class="space-y-4">
         <div class="space-y-1">
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}</p>
+          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}<span class="sr-only">. </span></p>
           <h2 class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
-            {currentI18n.tableViewTitle}
+            {currentI18n.tableViewTitle}<span class="sr-only">. </span>
           </h2>
           <p class="text-sm text-[var(--muted-foreground)] font-medium">
             {currentI18n.tableViewDesc}
@@ -1496,12 +1496,12 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
           <table class="methodology-matrix-table">
             <thead>
               <tr>
-                <th style="width: 18%;">{currentI18n.tableColTool}</th>
-                <th style="width: 20%;">{currentI18n.tableColFormula}</th>
-                <th style="width: 18%;">{currentI18n.tableColSource}</th>
-                <th style="width: 14%;">{currentI18n.tableColInputs}</th>
-                <th style="width: 15%;">{currentI18n.tableColOutputs}</th>
-                <th style="width: 15%;">{currentI18n.tableColLimitations}</th>
+                <th style="width: 18%;">{currentI18n.tableColTool}<span class="sr-only">. </span></th>
+                <th style="width: 20%;">{currentI18n.tableColFormula}<span class="sr-only">. </span></th>
+                <th style="width: 18%;">{currentI18n.tableColSource}<span class="sr-only">. </span></th>
+                <th style="width: 14%;">{currentI18n.tableColInputs}<span class="sr-only">. </span></th>
+                <th style="width: 15%;">{currentI18n.tableColOutputs}<span class="sr-only">. </span></th>
+                <th style="width: 15%;">{currentI18n.tableColLimitations}<span class="sr-only">. </span></th>
               </tr>
             </thead>
             <tbody>
@@ -1520,12 +1520,13 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
                       <a href={`/${lang}/${item.slug}/`} class="font-bold">
                         {localizedName}
                       </a>
+                      <span class="sr-only">. </span>
                     </td>
-                    <td class="font-mono text-xs">{locFormula}</td>
-                    <td class="text-xs">{locSource}</td>
-                    <td>{locInputs}</td>
-                    <td>{locOutput}</td>
-                    <td class="text-xs leading-relaxed">{locLimitations}</td>
+                    <td class="font-mono text-xs">{locFormula}<span class="sr-only">. </span></td>
+                    <td class="text-xs">{locSource}<span class="sr-only">. </span></td>
+                    <td>{locInputs}<span class="sr-only">. </span></td>
+                    <td>{locOutput}<span class="sr-only">. </span></td>
+                    <td class="text-xs leading-relaxed">{locLimitations}<span class="sr-only">. </span></td>
                   </tr>
                 );
               })}
@@ -1585,10 +1586,10 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
                   <div class="flex items-center gap-3 min-w-0">
                     <span class="w-2.5 h-2.5 rounded-full bg-[var(--accent)] shrink-0"></span>
                     <h3 class="text-base sm:text-lg font-display font-bold text-[var(--foreground)] truncate">
-                      {localizedName}
+                      {localizedName}<span class="sr-only">. </span>
                     </h3>
                     <span class="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[var(--muted)] border border-[var(--border)] text-[var(--muted-foreground)] truncate max-w-[220px]">
-                      {locOutput}
+                      {locOutput}<span class="sr-only">. </span>
                     </span>
                   </div>
                   <div class="flex items-center gap-3 shrink-0">
@@ -1608,27 +1609,27 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
                 <div class="p-5 sm:p-6 pt-2 border-t border-[var(--border)]/60 bg-[var(--muted)]/10 space-y-4">
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                     <div class="space-y-1.5 p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.equationLabel}</span>
-                      <p class="font-mono text-[var(--foreground)] font-semibold break-words">{locFormula}</p>
+                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.equationLabel}<span class="sr-only">. </span></span>
+                      <p class="font-mono text-[var(--foreground)] font-semibold break-words">{locFormula}<span class="sr-only">. </span></p>
                     </div>
                     <div class="space-y-1.5 p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.sourceLabel}</span>
-                      <p class="text-[var(--foreground)] font-medium leading-relaxed">{locSource}</p>
+                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.sourceLabel}<span class="sr-only">. </span></span>
+                      <p class="text-[var(--foreground)] font-medium leading-relaxed">{locSource}<span class="sr-only">. </span></p>
                     </div>
                   </div>
 
                   <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-1">
                     <div class="p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.inputsLabel}</span>
-                      <p class="text-[var(--foreground)] font-semibold">{locInputs}</p>
+                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.inputsLabel}<span class="sr-only">. </span></span>
+                      <p class="text-[var(--foreground)] font-semibold">{locInputs}<span class="sr-only">. </span></p>
                     </div>
                     <div class="p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.outputLabel}</span>
-                      <p class="text-[var(--foreground)] font-semibold">{locOutput}</p>
+                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.outputLabel}<span class="sr-only">. </span></span>
+                      <p class="text-[var(--foreground)] font-semibold">{locOutput}<span class="sr-only">. </span></p>
                     </div>
                     <div class="p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.limitationsLabel}</span>
-                      <p class="text-[var(--muted-foreground)] font-medium leading-relaxed">{locLimitations}</p>
+                      <span class="font-display font-bold uppercase text-[var(--muted-foreground)] text-[10px] block mb-1">{currentI18n.limitationsLabel}<span class="sr-only">. </span></span>
+                      <p class="text-[var(--muted-foreground)] font-medium leading-relaxed">{locLimitations}<span class="sr-only">. </span></p>
                     </div>
                   </div>
 
@@ -1674,10 +1675,10 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
         <div class="p-6 md:p-8 rounded-2xl border-2 border-indigo-500/30 bg-indigo-500/5 space-y-4 not-prose shadow-sm">
           <div class="flex flex-wrap items-center justify-between gap-3">
             <span class="text-xs font-bold font-display uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
-              {lang === 'hi' ? 'प्राथमिक अकादमिक शोध उद्धरण एवं संदर्भ' : (lang === 'es' ? 'Citas Académicas Primarias y Bibliografía' : (lang === 'fr' ? 'Citations Académiques Primaires & Bibliographie' : (lang === 'de' ? 'Primäre wissenschaftliche Zitate & Bibliographie' : (lang === 'ko' ? '직접 학술 연구 논문 인용 및 참고문헌' : 'Primary Academic Research Citations & Sources'))))}
+              {lang === 'hi' ? 'प्राथमिक अकादमिक शोध उद्धरण एवं संदर्भ' : (lang === 'es' ? 'Citas Académicas Primarias y Bibliografía' : (lang === 'fr' ? 'Citations Académiques Primaires & Bibliographie' : (lang === 'de' ? 'Primäre wissenschaftliche Zitate & Bibliographie' : (lang === 'ko' ? '직접 학술 연구 논문 인용 및 참고문헌' : 'Primary Academic Research Citations & Sources'))))}<span class="sr-only">. </span>
             </span>
             <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
-              {currentI18n.studiesBadge}
+              {currentI18n.studiesBadge}<span class="sr-only">. </span>
             </span>
           </div>
           <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">

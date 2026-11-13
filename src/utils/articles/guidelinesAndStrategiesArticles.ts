@@ -627,190 +627,179 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     },
     "contentHtml": {
       "en": `
-      <h2>The Critical Influence of Chronological Age on BMI Assessment</h2>
-      <p>Standard adult Body Mass Index (BMI) guidelines established by the <strong>World Health Organization (WHO)</strong> designate a fixed normal weight category between 18.5 and 24.9 kg/m² for all adults aged 20 years and older. While this single epidemiological baseline provides a practical tool for broad population statistics, human body composition is dynamic. Over the course of the human lifespan, the relationship between body weight, skeletal stature, fat-free muscle mass, adipose tissue distribution, and mortality risk undergoes profound physiological transformations.</p>
-      <p>A BMI of 22.0 kg/m² carries drastically different clinical implications for an 18-year-old competitive athlete, a 45-year-old sedentary office worker, and an 82-year-old nursing home resident. To interpret Body Mass Index accurately, healthcare practitioners and individuals must evaluate BMI in the context of biological age cohorts, pubertal growth trajectories, and the clinical realities of aging physiology.</p>
+      <h2>How Age Affects Your BMI Score</h2>
+      <p>Body Mass Index (BMI) is a helpful screening tool. For most adults, the <strong>World Health Organization (WHO)</strong> defines a normal weight as a BMI between 18.5 and 24.9. But human bodies change as we get older. Muscle mass, bone density, and body fat change across every life stage.</p>
+      <p>A BMI of 22 means different things for an 18-year-old athlete, a 45-year-old office worker, and an 80-year-old senior. To understand what your score means, you must look at your biological age and physical health.</p>
 
-      <h2>Pediatric &amp; Adolescent Growth (Ages 2 to 19): CDC Percentiles</h2>
-      <p>In children and adolescents, applying adult absolute BMI thresholds is medically invalid. Throughout childhood, body proportions change rapidly as long bones lengthen, organs mature, and pubertal hormonal surges trigger distinct sexual dimorphic body composition changes (increased skeletal muscle accretion in adolescent boys, and essential gynoid adipose deposition in adolescent girls).</p>
-      <p>To account for these asynchronous physiological changes, pediatricians and public health authorities—including the <strong>U.S. Centers for Disease Control and Prevention (CDC)</strong> and the WHO—utilize <strong>BMI-for-Age Growth Percentiles</strong>. Rather than categorizing a child by an absolute number, their calculated BMI is plotted against statistical reference distributions of thousands of healthy children of the exact same chronological age (measured in months) and biological sex:</p>
+      <h2>Children and Teens (Ages 2 to 19): CDC Growth Percentiles</h2>
+      <p>Adult BMI charts do not work for kids and teenagers. During childhood, young bodies grow quickly. Children get taller, bones gain mineral weight, and hormones shift. Boys naturally build more muscle. Girls naturally store more essential fat.</p>
+      <p>Because children grow at different rates, pediatricians use <strong>BMI-for-Age Growth Percentiles</strong> from the <strong>U.S. Centers for Disease Control and Prevention (CDC)</strong>. Your child's score is compared to thousands of healthy children of the exact same age in months and sex:</p>
 
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left text-sm border-collapse">
           <thead>
             <tr class="border-b border-[var(--border)] text-[var(--foreground)] font-bold">
-              <th class="py-2.5 px-3">Pediatric Weight Category</th>
-              <th class="py-2.5 px-3">CDC Percentile Range</th>
-              <th class="py-2.5 px-3">Clinical Evaluation &amp; Health Significance</th>
+              <th class="py-2.5 px-3">Category. </th>
+              <th class="py-2.5 px-3">CDC Percentile. </th>
+              <th class="py-2.5 px-3">What This Means. </th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)]">
             <tr>
-              <td class="py-2.5 px-3 font-semibold text-sky-400">Underweight</td>
-              <td class="py-2.5 px-3 font-mono">&lt; 5th percentile</td>
-              <td class="py-2.5 px-3">Requires clinical screening for nutritional deficiencies, malabsorption disorders, or chronic pediatric illness.</td>
+              <td class="py-2.5 px-3 font-semibold text-sky-400">Underweight. </td>
+              <td class="py-2.5 px-3 font-mono">Below 5th percentile. </td>
+              <td class="py-2.5 px-3">Ask a pediatrician to check overall growth and daily nutrition. </td>
             </tr>
             <tr>
-              <td class="py-2.5 px-3 font-semibold text-emerald-400">Healthy Weight</td>
-              <td class="py-2.5 px-3 font-mono">5th to &lt; 85th percentile</td>
-              <td class="py-2.5 px-3">Optimal growth curve associated with balanced physiological and cognitive development.</td>
+              <td class="py-2.5 px-3 font-semibold text-emerald-400">Healthy Weight. </td>
+              <td class="py-2.5 px-3 font-mono">5th to 84th percentile. </td>
+              <td class="py-2.5 px-3">Growth is balanced and steady for normal development. </td>
             </tr>
             <tr>
-              <td class="py-2.5 px-3 font-semibold text-amber-400">Overweight</td>
-              <td class="py-2.5 px-3 font-mono">85th to &lt; 95th percentile</td>
-              <td class="py-2.5 px-3">Elevated likelihood of adult obesity; warrants family-based lifestyle and activity optimization.</td>
+              <td class="py-2.5 px-3 font-semibold text-amber-400">Overweight. </td>
+              <td class="py-2.5 px-3 font-mono">85th to 94th percentile. </td>
+              <td class="py-2.5 px-3">Encourage active family play and balanced home-cooked meals. </td>
             </tr>
             <tr>
-              <td class="py-2.5 px-3 font-semibold text-rose-400">Obesity</td>
-              <td class="py-2.5 px-3 font-mono">&ge; 95th percentile</td>
-              <td class="py-2.5 px-3">Significantly increased risk of pediatric hypertension, dyslipidemia, early insulin resistance, and hepatic steatosis.</td>
-            </tr>
-            <tr>
-              <td class="py-2.5 px-3 font-semibold text-purple-400">Severe Obesity</td>
-              <td class="py-2.5 px-3 font-mono">&ge; 120% of 95th percentile</td>
-              <td class="py-2.5 px-3">Indicates urgent need for structured pediatric multidisciplinary lifestyle or clinical medical intervention.</td>
+              <td class="py-2.5 px-3 font-semibold text-rose-400">Obesity. </td>
+              <td class="py-2.5 px-3 font-mono">95th percentile and above. </td>
+              <td class="py-2.5 px-3">Talk with your doctor about healthy family eating habits. </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Step-by-Step Practical Worked Example: The Dramatic Pediatric Inversion</h2>
-      <p>To understand why adult BMI calculators are clinically dangerous for children, examine this real-world pediatric calculation:</p>
+      <h2>Real Example: Why Adult Charts Mislead Parents</h2>
+      <p>Here is an example showing why adult charts give wrong answers for children:</p>
 
       <div class="my-6 p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
         <h3 class="text-base font-bold text-[var(--accent)] font-display uppercase tracking-wide">
-          Worked Example: 8-Year-Old Boy (Age: 8 Years, 4 Months)
+          Example: 8-Year-Old Boy (Age 8 Years, 4 Months)
         </h3>
         <p class="text-sm text-[var(--foreground)]">
-          <strong>Child: Aarav</strong> | Age: 8 years, 4 months | Stature: 128 cm (1.28 m) | Weight: 29.5 kg (65 lbs).
+          <strong>Child: Aarav</strong>. Age: 8 years, 4 months. Height: 128 cm (1.28 m). Weight: 29.5 kg (65 lbs). 
         </p>
         <div class="p-4 rounded-lg bg-[var(--muted)]/40 font-mono text-xs sm:text-sm space-y-1.5 leading-relaxed">
-          <p><strong>Step 1: Calculate Stature Squared</strong>: 1.28 &times; 1.28 = <strong>1.6384 m²</strong></p>
-          <p><strong>Step 2: Calculate Raw BMI Score</strong>: 29.5 / 1.6384 = <strong>18.00 kg/m²</strong></p>
-          <p class="pt-1 text-rose-500 font-bold"><strong>The Adult Chart Fallacy:</strong></p>
-          <p>&bull; If entered into a standard adult calculator: 18.0 kg/m² is classified as <strong>"UNDERWEIGHT"</strong> (&lt; 18.5)!</p>
-          <p>&bull; An uninformed caregiver might mistakenly force-feed the child extra calories thinking he is malnourished.</p>
-          <p class="pt-1 text-emerald-600 dark:text-emerald-400 font-bold"><strong>The CDC Pediatric Growth Chart Truth:</strong></p>
-          <p>&bull; For an 8-year, 4-month-old boy, the median (50th percentile) BMI is <strong>15.8 kg/m²</strong>.</p>
-          <p>&bull; The 85th percentile threshold (Overweight cutoff) is <strong>17.8 kg/m²</strong>.</p>
-          <p>&bull; The 95th percentile threshold (Obesity cutoff) is <strong>19.4 kg/m²</strong>.</p>
-          <p>&bull; Plotted on the official CDC growth chart, Aarav's BMI of 18.0 corresponds to the <strong>86th Percentile</strong>!</p>
+          <p><strong>Step 1: Calculate Height Squared</strong>: 1.28 &times; 1.28 = <strong>1.64 m²</strong>. </p>
+          <p><strong>Step 2: Calculate BMI</strong>: 29.5 / 1.64 = <strong>18.0 kg/m²</strong>. </p>
+          <p class="pt-1 text-rose-500 font-bold"><strong>The Adult Chart Mistake:</strong></p>
+          <p>&bull; On an adult chart, 18.0 looks <strong>"UNDERWEIGHT"</strong> (under 18.5). </p>
+          <p>&bull; A parent might think the child needs extra food. </p>
+          <p class="pt-1 text-emerald-600 dark:text-emerald-400 font-bold"><strong>The CDC Pediatric Truth:</strong></p>
+          <p>&bull; For an 8-year-old boy, average BMI is <strong>15.8 kg/m²</strong>. </p>
+          <p>&bull; The 85th percentile cutoff is <strong>17.8 kg/m²</strong>. </p>
+          <p>&bull; Aarav's BMI of 18.0 places him in the <strong>86th Percentile</strong>. </p>
         </div>
         <p class="text-xs sm:text-sm text-[var(--muted-foreground)]">
-          <strong>Clinical Conclusion:</strong> Aarav is actually in the <strong>Overweight percentile bracket (85th to &lt;95th percentile)</strong>. This dramatic reversal illustrates why pediatric BMI-for-age percentiles are mandatory for anyone under age 20.
+          <strong>Clinical Conclusion:</strong> Aarav is actually in the <strong>Overweight percentile bracket</strong>. This proves why parents must only use pediatric growth percentiles for anyone under age 20.
         </p>
       </div>
 
-      <h2>The Longitudinal Growth Velocity Rule: When to Worry vs. When to Reassure</h2>
-      <p>A single isolated percentile measurement is a static snapshot. In pediatric medicine, <strong>growth velocity across time</strong> is vastly more significant than any single reading:</p>
+      <h2>Growth Over Time: Tracking the Curve</h2>
+      <p>A single test is just one snapshot. Doctors focus on <strong>growth velocity over time</strong>:</p>
       <ul class="list-disc pl-5 my-3 space-y-2 text-xs sm:text-sm text-[var(--muted-foreground)]">
-        <li><strong>Channel Tracking (Reassuring):</strong> A child who tracks consistently along the 80th percentile from age 5 through age 12 is generally healthy, reflecting their unique genetic bone structure and familial stature.</li>
-        <li><strong>Crossing Two Major Percentile Lines (Clinical Red Flag):</strong> A sudden vertical jump—such as moving from the 50th percentile to the 88th percentile in under 9 months—warrants pediatric consultation. It signals an acute change in energy balance, thyroid function, or emotional stress.</li>
-        <li><strong>Height Velocity Deceleration:</strong> If weight percentile continues rising while linear height velocity flattens out, pediatric endocrinologists screen for growth hormone or endocrine discrepancies.</li>
+        <li><strong>Steady Tracking:</strong> A child who stays along the 80th percentile each year is growing well. That matches their natural genetics and body frame.</li>
+        <li><strong>Sudden Big Changes:</strong> A jump from the 50th percentile to the 90th in a few months warrants a visit to your doctor. It can point to rapid changes in diet, sleep, or stress.</li>
+        <li><strong>Height Slowdown:</strong> If weight climbs while height stops growing, a pediatrician will check hormone levels.</li>
       </ul>
 
-      <h2>Evidence-Based Guidance for Parents &amp; Caregivers: The "Do's and Don'ts" Framework</h2>
+      <h2>Practical Guide for Parents</h2>
       <div class="my-6 grid sm:grid-cols-2 gap-4">
         <div class="p-4 rounded-xl border border-rose-500/20 bg-rose-500/5 space-y-2">
-          <h4 class="font-bold text-sm text-rose-600 dark:text-rose-400 font-display uppercase tracking-wide">What NOT to Do (Harmful Practices)</h4>
+          <h4 class="font-bold text-sm text-rose-600 dark:text-rose-400 font-display uppercase tracking-wide">What to Avoid</h4>
           <ul class="text-xs text-[var(--muted-foreground)] space-y-1.5 list-disc pl-4">
-            <li><strong>Never place a growing child on a restrictive calorie diet.</strong> Caloric restriction during puberty compromises linear bone elongation and peak brain development.</li>
-            <li><strong>Never weigh children daily or comment on their body shape.</strong> Frequent weighing strongly correlates with adolescent anxiety and eating disorders.</li>
-            <li><strong>Do not ban individual foods entirely.</strong> Demonizing specific snacks creates forbidden-food fixation and secret bingeing behaviors.</li>
+            <li><strong>Never put a child on a strict diet.</strong> Kids need good fuel for growing bones and brain health.</li>
+            <li><strong>Avoid daily weighing.</strong> Checking the scale too often can trigger anxiety about body shape.</li>
+            <li><strong>Do not ban favorite snacks.</strong> Forbidding foods makes kids want them even more in secret.</li>
           </ul>
         </div>
         <div class="p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5 space-y-2">
-          <h4 class="font-bold text-sm text-emerald-600 dark:text-emerald-400 font-display uppercase tracking-wide">What TO Do (Clinical Best Practices)</h4>
+          <h4 class="font-bold text-sm text-emerald-600 dark:text-emerald-400 font-display uppercase tracking-wide">Helpful Daily Habits</h4>
           <ul class="text-xs text-[var(--muted-foreground)] space-y-1.5 list-disc pl-4">
-            <li><strong>Adopt the "Division of Responsibility" (Ellyn Satter Model):</strong> Parents decide <em>what, when, and where</em> family meals are served; the child decides <em>whether and how much</em> to eat.</li>
-            <li><strong>Eliminate Liquid Sugars:</strong> Replace sodas, sweetened juices, and energy drinks with water and whole milk.</li>
-            <li><strong>Ensure 60 Minutes of Active Daily Play:</strong> Emphasize fun movement (cycling, swimming, playground games) rather than structured "workouts".</li>
-            <li><strong>Protect 9 to 11 Hours of Nightly Sleep:</strong> Chronic sleep deprivation disrupts adolescent growth hormone surges and elevates daytime carbohydrate cravings.</li>
+            <li><strong>Share the Job:</strong> Parents choose what and when to serve. Kids decide how much to eat.</li>
+            <li><strong>Skip Sweet Drinks:</strong> Drink cool water or plain milk instead of sodas and sweet juice.</li>
+            <li><strong>Move Every Day:</strong> Get 60 minutes of fun active play like bike riding or running outside.</li>
+            <li><strong>Protect Night Sleep:</strong> Ensure 9 to 11 hours of quiet sleep every night.</li>
           </ul>
         </div>
       </div>
 
-      <h2>Adults in Mid-Life (Ages 20 to 65): Sarcopenic Shifts</h2>
-      <p>For adults between ages 20 and 65, the conventional WHO range of 18.5 to 24.9 kg/m² serves as a robust indicator of cardiometabolic health and longevity in broad epidemiological studies. However, physiological changes during middle adulthood often mask underlying health risks if weight alone is tracked:</p>
-
+      <h2>Adults in Mid-Life (Ages 20 to 65)</h2>
+      <p>For adults between 20 and 65, the WHO normal range of 18.5 to 24.9 works well to track health risk. But adults should also watch body composition:</p>
       <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
-        <li><strong>Age-Related Sarcopenia Begins:</strong> Starting around age 30, sedentary adults experience a gradual loss of 3% to 8% of skeletal muscle mass per decade, accompanied by a 1% to 2% decline in basal metabolic rate.</li>
-        <li><strong>Redistribution toward Visceral Depots:</strong> Even when scale weight and BMI remain completely stable year after year, progressive muscular atrophy combined with insidious visceral adipose accumulation often elevates diabetes and cardiovascular risk—a state termed <em>Normal Weight Obesity</em>.</li>
-        <li><strong>Athletic Muscle Mass Overestimation:</strong> In young, heavily resistance-trained adults and strength athletes, dense muscular development frequently pushes calculated BMI into the 'overweight' (25.0–29.9 kg/m²) or 'obese' (&ge; 30.0 kg/m²) brackets despite exceptionally low body fat percentages (&lt; 12% in men, &lt; 20% in women).</li>
+        <li><strong>Natural Muscle Loss:</strong> Starting around age 30, adults lose 3% to 8% of muscle mass each decade if they do not lift weights.</li>
+        <li><strong>Hidden Belly Fat:</strong> Even if your weight stays steady on the bathroom scale, muscle can turn into belly fat. Keep an eye on your waist size.</li>
+        <li><strong>Muscular Athletes:</strong> People who lift heavy weights often have high BMI numbers. Their extra weight is dense muscle rather than body fat.</li>
       </ul>
 
-      <h2>Older Adults (Ages 65 and Older): The 'Obesity Paradox'</h2>
-      <p>In geriatric medicine, the standard adult healthy weight threshold (18.5 to 24.9 kg/m²) is frequently suboptimal and potentially dangerous. Multiple large-scale epidemiological meta-analyses published in leading clinical journals—including <em>The Lancet</em> and <em>The American Journal of Clinical Nutrition</em>—demonstrate a U-shaped or J-shaped relationship between BMI and all-cause mortality in populations aged 65 and older.</p>
-      <p>Unexpectedly, older adults classified as 'normal weight' by adult standards (particularly those with a BMI between 18.5 and 22.0 kg/m²) exhibit significantly higher mortality rates than those categorized as mildly overweight (BMI 25.0 to 28.0 kg/m²). This clinical reality is termed the <strong>Geriatric Obesity Paradox</strong>:</p>
+      <h2>Older Adults (Ages 65 and Older): The Protective Cushion</h2>
+      <p>In older adults, the standard normal cutoff (under 25) is not always ideal. Large medical studies show that seniors with a slightly higher BMI (between 25 and 28) often stay healthier and live longer. Doctors call this the <strong>Geriatric Obesity Paradox</strong>:</p>
 
       <div class="my-6 space-y-4">
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">1. Nutritional &amp; Metabolic Reserve</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Older adults are prone to acute catabolic illnesses such as pneumonia, sepsis, major surgical interventions, or hip fractures. Individuals with a modest adipose reserve (BMI 25.0–28.0 kg/m²) possess the physiological buffer necessary to survive extended hypercatabolic hospital stays without suffering catastrophic organ failure or cachexia.</p>
+          <h3 class="text-base font-bold text-[var(--accent)]">1. Healing Reserves</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Illnesses like flu, pneumonia, or surgery demand extra energy. A modest reserve helps seniors heal and recover safely.</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">2. Mechanical Cushioning Against Fall Injuries</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">Accidental falls represent the leading cause of injury-related mortality among elderly individuals. Subcutaneous adipose padding over the greater trochanter of the femur absorbs kinetic impact energy, significantly reducing the incidence of catastrophic femoral neck fractures.</p>
+          <h3 class="text-base font-bold text-[var(--accent)]">2. Cushion Against Falls</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Falls are a top concern for older people. Extra soft tissue over the hips acts like a natural cushion against broken bones.</p>
         </div>
         <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]">
-          <h3 class="text-base font-bold text-[var(--accent)]">3. Frailty &amp; Underweight Risks Exceed Mild Overweight Risks</h3>
-          <p class="text-sm text-[var(--foreground)] mt-1">In geriatric populations, unmanaged intentional or unintentional weight loss frequently strips away precious remaining lean muscle and bone mineral density, accelerating frailty, loss of physical autonomy, and premature mortality far more rapidly than mild excess adiposity.</p>
+          <h3 class="text-base font-bold text-[var(--accent)]">3. Frailty Risks</h3>
+          <p class="text-sm text-[var(--foreground)] mt-1">Being too thin causes rapid muscle loss and weak bones. Keeping a sturdy weight helps seniors stay active and independent.</p>
         </div>
       </div>
 
-      <h2>Lifespan BMI Target Reference Guide</h2>
-      <p>To synthesize how optimal BMI targets evolve across chronological age, clinicians reference the following lifespan continuum:</p>
-
+      <h2>Lifespan Target Summary</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
         <table class="w-full text-left text-sm border-collapse">
           <thead>
             <tr class="border-b border-[var(--border)] text-[var(--foreground)] font-bold">
-              <th class="py-2.5 px-3">Age Bracket</th>
-              <th class="py-2.5 px-3">Primary Assessment Tool</th>
-              <th class="py-2.5 px-3">Target Range / Benchmark</th>
-              <th class="py-2.5 px-3">Primary Clinical Focus</th>
+              <th class="py-2.5 px-3">Age Group. </th>
+              <th class="py-2.5 px-3">Best Tool. </th>
+              <th class="py-2.5 px-3">Target Range. </th>
+              <th class="py-2.5 px-3">Main Focus. </th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)]">
             <tr>
-              <td class="py-2.5 px-3 font-semibold text-[var(--accent)]">Children (Ages 2–11)</td>
-              <td class="py-2.5 px-3">CDC/WHO Growth Percentiles</td>
-              <td class="py-2.5 px-3 font-mono">5th to &lt; 85th percentile</td>
-              <td class="py-2.5 px-3">Healthy linear skeletal growth, dietary micronutrient adequacy, active motor play.</td>
+              <td class="py-2.5 px-3 font-semibold text-[var(--accent)]">Kids (Ages 2 to 11). </td>
+              <td class="py-2.5 px-3">CDC Percentiles. </td>
+              <td class="py-2.5 px-3 font-mono">5th to 84th percentile. </td>
+              <td class="py-2.5 px-3">Healthy bone growth, good food, and fun outdoor play. </td>
             </tr>
             <tr>
-              <td class="py-2.5 px-3 font-semibold text-sky-400">Teens (Ages 12–19)</td>
-              <td class="py-2.5 px-3">CDC Percentiles + Tanner Staging</td>
-              <td class="py-2.5 px-3 font-mono">5th to &lt; 85th percentile</td>
-              <td class="py-2.5 px-3">Pubertal bone mineralization, athletic development, positive body image.</td>
+              <td class="py-2.5 px-3 font-semibold text-sky-400">Teens (Ages 12 to 19). </td>
+              <td class="py-2.5 px-3">CDC Percentiles. </td>
+              <td class="py-2.5 px-3 font-mono">5th to 84th percentile. </td>
+              <td class="py-2.5 px-3">Strong bones, sports, and positive body image. </td>
             </tr>
             <tr>
-              <td class="py-2.5 px-3 font-semibold text-emerald-400">Adults (Ages 20–64)</td>
-              <td class="py-2.5 px-3">Standard WHO Adult BMI + Waist</td>
-              <td class="py-2.5 px-3 font-mono">18.5 – 24.9 kg/m²</td>
-              <td class="py-2.5 px-3">Cardiometabolic disease prevention, visceral fat control, lean mass retention.</td>
+              <td class="py-2.5 px-3 font-semibold text-emerald-400">Adults (Ages 20 to 64). </td>
+              <td class="py-2.5 px-3">Standard BMI plus Waist. </td>
+              <td class="py-2.5 px-3 font-mono">18.5 to 24.9. </td>
+              <td class="py-2.5 px-3">Heart health, managing belly fat, and keeping muscle. </td>
             </tr>
             <tr>
-              <td class="py-2.5 px-3 font-semibold text-amber-400">Seniors (Ages 65+)</td>
-              <td class="py-2.5 px-3">Geriatric-Adjusted BMI + Functional Tests</td>
-              <td class="py-2.5 px-3 font-mono">23.0 – 28.0 kg/m²</td>
-              <td class="py-2.5 px-3">Prevention of sarcopenia, fall mitigation, immune reserve, functional independence.</td>
+              <td class="py-2.5 px-3 font-semibold text-amber-400">Seniors (Ages 65+). </td>
+              <td class="py-2.5 px-3">Senior-Adjusted BMI. </td>
+              <td class="py-2.5 px-3 font-mono">23.0 to 28.0. </td>
+              <td class="py-2.5 px-3">Preventing falls, keeping strength, and staying active. </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Complementary Functional Biomarkers in Older Adults</h2>
-      <p>Because BMI alone cannot identify sarcopenic obesity in older adults, geriatric evaluations incorporate functional physical performance assessments alongside height and weight measurements:</p>
-
+      <h2>Physical Tests for Seniors</h2>
+      <p>Because numbers alone do not tell the whole story, doctors also check physical strength:</p>
       <ul class="list-disc pl-5 my-4 space-y-2 text-sm text-[var(--muted-foreground)]">
-        <li><strong>Handgrip Dynamometry:</strong> Measures maximal isometric upper-body grip strength. Thresholds below <strong>27 kg for men</strong> and <strong>16 kg for women</strong> indicate sarcopenia, strongly predicting future disability and cardiovascular mortality regardless of BMI.</li>
-        <li><strong>Five-Times Sit-to-Stand Test (5XSTS):</strong> Measures lower-extremity strength and neuromuscular coordination. Requiring more than 12 to 15 seconds to stand from a chair five consecutive times indicates functional muscle frailty.</li>
-        <li><strong>Gait Speed Assessment:</strong> A standard 4-meter walking test where gait speeds below 0.8 meters per second signal heightened frailty and fall risk.</li>
+        <li><strong>Handgrip Test:</strong> Measures grip strength. A strong grip is a top sign of good muscle and heart health.</li>
+        <li><strong>Chair Stand Test:</strong> Standing up from a chair five times in a row checks leg power and balance.</li>
+        <li><strong>Walking Speed:</strong> Walking comfortably at a steady pace shows good stamina and lower fall risk.</li>
       </ul>
 
-      <h2>Evidence-Based Summary</h2>
-      <p>Body Mass Index is not a static one-size-fits-all diagnostic metric. By tailoring BMI evaluations to chronological age—utilizing growth percentiles for youths, standard cutoffs coupled with waist metrics for middle-aged adults, and higher protective targets alongside functional strength testing for seniors—clinicians and individuals can make informed, health-preserving decisions across every phase of life.</p>
+      <h2>Key Takeaways</h2>
+      <p>BMI is not a one-size-fits-all number. Check percentiles for kids, watch waist size in middle age, and keep a sturdy weight in senior years. These steps help you protect your vitality at every stage of life.</p>
 `,
       "es": `
       <h2>Influencia de la Edad en la Evaluación del IMC</h2>
@@ -1991,73 +1980,68 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     },
     "contentHtml": {
       "en": `
-      <h2>The Hemodynamics of Blood Pressure: Systolic vs. Diastolic</h2>
-      <p>Blood pressure represents the lateral hydrostatic force exerted by circulating blood against the internal endothelial walls of major arteries. It is expressed as a ratio of two numbers measured in millimeters of mercury (mmHg):</p>
+      <h2>How Blood Pressure Works: Systolic and Diastolic</h2>
+      <p>Blood pressure is the force of blood pushing against the walls of your arteries. A monitor gives you two numbers:</p>
       <ul>
-        <li><strong>Systolic Pressure (Top Number):</strong> Peak arterial pressure generated during left ventricular contraction (systole) when oxygenated blood is forcefully propelled into the systemic aorta.</li>
-        <li><strong>Diastolic Pressure (Bottom Number):</strong> Baseline residual pressure sustained within the arterial tree during ventricular relaxation and filling (diastole), maintained by the elastic recoil of arterial walls.</li>
+        <li><strong>Top number (Systolic):</strong> The pressure when your heart beats and pumps blood into your body.</li>
+        <li><strong>Bottom number (Diastolic):</strong> The pressure when your heart rests between beats.</li>
       </ul>
 
-      <h2>The Direct Physiological Relationship Between Excess Body Weight and Hypertension</h2>
-      <p>Every kilogram of adipose tissue requires extensive microvascular capillary beds to supply oxygen and nutrients. As adipose volume expands, total systemic blood volume and cardiac output must increase proportionally to maintain tissue perfusion. Additionally, visceral adipose tissue stimulates the sympathetic nervous system and triggers hyperactivation of the <strong>Renin-Angiotensin-Aldosterone System (RAAS)</strong>:</p>
-      <ol class="space-y-1 my-3 list-decimal pl-5 text-sm text-[var(--muted-foreground)]">
-        <li>Angiotensin II triggers widespread systemic vasoconstriction, elevating total peripheral vascular resistance.</li>
-        <li>Aldosterone prompts the renal tubules to reabsorb sodium and retain water, increasing circulating intravascular fluid volume.</li>
-        <li>Elevated circulating insulin impairs vascular endothelial nitric oxide (NO) synthase, diminishing arterial flexibility.</li>
-      </ol>
-      <p>Clinical trials demonstrate that <strong>every 1 kilogram (2.2 lbs) of intentional weight loss lowers systolic blood pressure by approximately 1 mmHg</strong>.</p>
+      <h2>How Body Weight Affects Blood Pressure</h2>
+      <p>Extra body fat requires extra blood flow. Your heart must pump more blood through extra blood vessels. Body fat also signals your kidneys to hold on to extra salt and water. This raises the fluid volume in your veins and arteries. Blood vessels can also become stiffer when body fat is high.</p>
+      <p>The good news is simple. Clinical trials show that <strong>losing 1 kilogram (about 2.2 pounds) can lower your systolic blood pressure by about 1 point</strong>.</p>
 
-      <h2>AHA / ACC Blood Pressure Classification Categories</h2>
+      <h2>Blood Pressure Categories</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
             <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
-              <th class="p-3 border border-[#e6e6e6]">Blood Pressure Category</th>
-              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Systolic mmHg</th>
-              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Diastolic mmHg</th>
-              <th class="p-3 border border-[#e6e6e6]">Recommended Lifestyle Action</th>
+              <th class="p-3 border border-[#e6e6e6]">Category. </th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Systolic (Top). </th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Diastolic (Bottom). </th>
+              <th class="p-3 border border-[#e6e6e6]">Daily Steps to Take. </th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6] font-mono">
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">Normal Healthy</td>
-              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&lt; 120</td>
-              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">&lt; 80</td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">Maintain balanced diet, regular aerobic exercise, and sleep hygiene</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">Normal. </td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Under 120. </td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Under 80. </td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Eat whole foods, stay active, and sleep well. </td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-amber-500 font-bold">Elevated Blood Pressure</td>
-              <td class="p-3 border border-[#e6e6e6] text-amber-500 font-bold">120 – 129</td>
-              <td class="p-3 border border-[#e6e6e6]">&lt; 80</td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">Adopt DASH dietary pattern; limit alcohol and sodium intake</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-amber-500 font-bold">Elevated. </td>
+              <td class="p-3 border border-[#e6e6e6] text-amber-500 font-bold">120 to 129. </td>
+              <td class="p-3 border border-[#e6e6e6]">Under 80. </td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Cut down on table salt, drink water, and walk daily. </td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-500 font-bold">Stage 1 Hypertension</td>
-              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">130 – 139</td>
-              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">80 – 89</td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">Structured weight reduction protocol and routine home BP tracking</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-500 font-bold">Stage 1 High. </td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">130 to 139. </td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">80 to 89. </td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Aim to lose extra weight and track your pressure at home. </td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-600 font-bold">Stage 2 Hypertension</td>
-              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">&ge; 140</td>
-              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">&ge; 90</td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">Comprehensive medical evaluation and combined lifestyle modifications</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-600 font-bold">Stage 2 High. </td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">140 or higher. </td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">90 or higher. </td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">See your doctor promptly and begin healthy habits. </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Evidence-Based Lifestyle Strategies to Lower Blood Pressure</h2>
+      <h2>Simple Habits That Lower Blood Pressure</h2>
       <ul class="space-y-2 my-4 list-disc pl-5 text-sm text-[var(--muted-foreground)]">
-        <li><strong>Optimize the Sodium-to-Potassium Ratio:</strong> Consuming potassium-rich foods (bananas, potatoes, spinach, legumes) promotes renal sodium excretion and relaxes vascular smooth muscle.</li>
-        <li><strong>DASH Dietary Pattern:</strong> Emphasizes fruits, vegetables, whole grains, and lean proteins while minimizing saturated fats and ultra-processed sodium salts.</li>
-        <li><strong>Zone 2 Aerobic Conditioning:</strong> Performing 150 minutes of moderate aerobic activity weekly stimulates arterial endothelial nitric oxide release, reducing peripheral resistance.</li>
+        <li><strong>Eat More Potassium:</strong> Foods like bananas, spinach, beans, and potatoes help your body flush out excess sodium.</li>
+        <li><strong>Follow the DASH Food Guide:</strong> Fill your plate with fresh fruits, vegetables, and whole grains. Avoid salty snacks and processed meats.</li>
+        <li><strong>Walk for 30 Minutes:</strong> Daily walking relaxes blood vessels and strengthens your heart muscle over time.</li>
       </ul>
 
-      <h2>Scientific References</h2>
+      <h2>Medical Sources and Guidelines</h2>
       <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>Whelton PK, et al. <em>2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults.</em> J Am Coll Cardiol 2018; 71(19):e127-e248. PMID: 29146535.</li>
-        <li>Sacks FM, et al. <em>Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet.</em> N Engl J Med 2001; 344(1):3-10. PMID: 11136953.</li>
+        <li>American Heart Association and American College of Cardiology High Blood Pressure Guidelines. </li>
+        <li>National Institutes of Health DASH Diet Research Studies. </li>
       </ul>
 `,
       "hi": `
