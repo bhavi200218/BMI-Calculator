@@ -3,22 +3,81 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 
 Astro.response.status = 404;
+
+const popularCalculators = [
+  { name: "BMI Calculator", slug: "bmi-calculator", desc: "Calculate your standard Body Mass Index and WHO weight category." },
+  { name: "BMR Calculator", slug: "bmr-calculator", desc: "Estimate daily basal metabolic rate calories burned at rest." },
+  { name: "TDEE Calculator", slug: "tdee-calculator", desc: "Determine your total daily energy expenditure based on activity." },
+  { name: "Body Fat Calculator", slug: "body-fat-calculator", desc: "Estimate body fat percentage using US Navy tape measurements." },
+  { name: "Calorie Deficit Calculator", slug: "calorie-calculator", desc: "Plan safe daily caloric targets for healthy fat loss." },
+  { name: "Ideal Weight Calculator", slug: "ideal-weight-calculator", desc: "Compare target healthy weight ranges across 4 clinical formulas." }
+];
 ---
 
 <Layout title="404 - Page Not Found | Real BMI" description="The page you requested could not be found on Real BMI. Return to our verified health calculation tools." robots="noindex, nofollow" canonicalURL="https://realbmicalculator.com/404/" isErrorPage={true}>
-    <Navbar />
-    <main class="min-h-screen flex flex-col items-center justify-center p-6 text-center">
-        <div aria-hidden="true" class="text-[12rem] font-black tracking-tighter opacity-10 leading-none select-none">404</div>
-        <div class="space-y-6 -mt-20 relative z-10">
-            <h1 class="text-4xl font-black uppercase tracking-tighter">404 — Lost in Metric Space?</h1>
-            <p class="text-lg text-[var(--muted-foreground)] max-w-md mx-auto font-bold opacity-60">
-                The page you're looking for doesn't exist. Let's get you back to our main calculators.
+  <Navbar />
+  <main class="min-h-[85vh] flex flex-col items-center justify-center p-6 text-center max-w-4xl mx-auto my-8">
+    <div aria-hidden="true" class="text-8xl md:text-9xl font-display font-black tracking-tighter text-[var(--accent)] opacity-20 leading-none select-none">
+      404
+    </div>
+    
+    <div class="space-y-4 -mt-10 relative z-10">
+      <h1 class="text-3xl sm:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+        Page Not Found
+      </h1>
+      <p class="text-base text-[var(--muted-foreground)] max-w-lg mx-auto leading-relaxed">
+        The link you followed may be broken, or the page may have been moved. Explore our popular health tools below or return to the main dashboard.
+      </p>
+      
+      <div class="pt-2 flex flex-wrap justify-center gap-3">
+        <a href="/en/" class="px-6 py-3 bg-[var(--accent)] text-white rounded-xl font-bold uppercase tracking-wider text-xs hover:opacity-90 active:scale-95 transition-all shadow-md inline-flex items-center gap-2">
+          <span>Go to Homepage &amp; All 23 Tools</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+        <a href="/en/blog/" class="px-6 py-3 bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] rounded-xl font-bold uppercase tracking-wider text-xs hover:bg-[var(--muted)]/50 active:scale-95 transition-all inline-flex items-center gap-2">
+          <span>Browse Health Articles</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Helpful Quick Links Grid -->
+    <div class="mt-12 w-full text-left space-y-4">
+      <div class="border-t border-[var(--border)] pt-8 flex items-center justify-between">
+        <h2 class="text-xs font-display font-bold uppercase tracking-widest text-[var(--accent)]">
+          Popular Health Calculators
+        </h2>
+        <a href="/en/" class="text-xs font-bold text-[var(--accent)] hover:underline">
+          View All 23 Tools →
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+        {popularCalculators.map(calc => (
+          <a 
+            href={`/en/${calc.slug}/`}
+            class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)]/50 hover:shadow-xs transition-all block group"
+          >
+            <h3 class="text-sm font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors flex items-center justify-between">
+              <span>{calc.name}</span>
+              <span class="text-xs text-[var(--muted-foreground)] group-hover:translate-x-0.5 transition-transform">→</span>
+            </h3>
+            <p class="text-xs text-[var(--muted-foreground)] mt-1.5 leading-relaxed line-clamp-2">
+              {calc.desc}
             </p>
-            <div class="pt-6">
-                <a href="/en/" class="px-10 py-5 bg-[var(--foreground)] text-[var(--background)] rounded-2xl font-black uppercase tracking-widest text-xs hover:brightness-95 active:scale-95 transition-all shadow-xl inline-block">
-                    Return to Calculator
-                </a>
-            </div>
-        </div>
-    </main>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Additional Useful Resources -->
+    <div class="mt-8 pt-6 border-t border-[var(--border)] w-full flex flex-wrap justify-center gap-6 text-xs text-[var(--muted-foreground)] font-medium">
+      <a href="/en/methodology/" class="hover:text-[var(--accent)] hover:underline">Calculation Methodology</a>
+      <span>•</span>
+      <a href="/en/sources/" class="hover:text-[var(--accent)] hover:underline">Scientific Research Citations</a>
+      <span>•</span>
+      <a href="/en/editorial-policy/" class="hover:text-[var(--accent)] hover:underline">Editorial Policy</a>
+      <span>•</span>
+      <a href="/en/contact/" class="hover:text-[var(--accent)] hover:underline">Contact Support</a>
+    </div>
+  </main>
 </Layout>
