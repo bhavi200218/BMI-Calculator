@@ -66,44 +66,44 @@ interface ClinicalPhenotypeLocale {
 
 const content: Record<Locale, ClinicalPhenotypeLocale> = {
   en: {
-    eyebrow: "South Asian Cardiometabolic Endocrinology",
-    phenotypeTitle: "The South Asian 'Thin-Fat' Phenotype (MONW)",
-    phenotypeSubtitle: "Why standard Western BMI standards severely underestimate metabolic risk in individuals of Indian descent.",
-    phenotypeLead: "The 'Thin-Fat' Phenotype—known clinically as Metabolically Obese Normal Weight (MONW)—is the distinct biological profile observed across South Asian populations.",
-    phenotypeP1: "Individuals of Indian heritage characteristically possess higher total body fat percentage (typically 5% to 8% higher than Caucasians of identical BMI), higher abdominal visceral fat, and significantly reduced skeletal muscle mass. Consequently, a South Asian adult with a 'normal' BMI of 22.0 kg/m² frequently presents the cardiometabolic risk profile of a Caucasian individual with a BMI of 28.0 to 30.0 kg/m².",
-    phenotypeP2: "Deep visceral adipose tissue around the liver, pancreas, and mesenteric organs secretes inflammatory adipokines (TNF-alpha, IL-6), precipitating premature insulin resistance, elevated triglycerides, low HDL cholesterol, and early onset of Type 2 diabetes and coronary artery disease (CAD)—often 10 to 15 years earlier than in Western populations. This prompted the Indian Council of Medical Research (ICMR) and WHO Asia-Pacific expert consultation to revise diagnostic criteria downwards.",
+    eyebrow: "South Asian Body Health Guide",
+    phenotypeTitle: "The South Asian Body Type: Why Waist and Fat Matter",
+    phenotypeSubtitle: "Standard Western BMI charts can miss health risks in people of Indian descent.",
+    phenotypeLead: "People of Indian descent often have a unique body makeup. Doctors call this the thin-fat body type.",
+    phenotypeP1: "South Asian adults often have higher body fat than Western adults of the same weight. They also tend to have less lean muscle. Because of this, an Indian adult with a BMI of 22 can have the same health risks as a Western adult with a BMI of 28.",
+    phenotypeP2: "Extra belly fat around inner organs can raise blood sugar and cholesterol earlier in life. This is why the ICMR and WHO lowered the healthy BMI cutoff for Indians. Overweight starts at 23.0 kg/m² instead of 25.0 kg/m².",
     comparisonTitle: "Clinical Body Composition Comparison: South Asian vs. Western Caucasian",
-    compHeaders: { marker: "Physiological Marker", southAsian: "South Asian (Indian) Profile", western: "Western Caucasian Profile" },
+    compHeaders: { marker: "Health Marker", southAsian: "South Asian (Indian) Profile", western: "Western Caucasian Profile" },
     compRows: [
       { marker: "Body Fat % at BMI 22 kg/m²", southAsian: "26% – 32% (Men) | 33% – 40% (Women)", western: "16% – 21% (Men) | 23% – 28% (Women)" },
-      { marker: "Visceral Adipose Tissue (VAT)", southAsian: "Significantly Higher at identical total weight", western: "Lower proportion; fat stored subcutaneously" },
-      { marker: "Skeletal Muscle Mass", southAsian: "Reduced (Sarcopenic predisposition)", western: "Higher baseline lean muscle density" },
-      { marker: "Overweight Diagnostic Cutoff", southAsian: "BMI ≥ 23.0 kg/m² (ICMR consensus)", western: "BMI ≥ 25.0 kg/m² (WHO International)" },
-      { marker: "Obesity Diagnostic Cutoff", southAsian: "BMI ≥ 25.0 kg/m² (ICMR consensus)", western: "BMI ≥ 30.0 kg/m² (WHO International)" },
-      { marker: "Insulin Resistance Trigger", southAsian: "Manifests at BMI 21.5 – 23.5 kg/m²", western: "Typically manifests at BMI > 27.5 kg/m²" }
+      { marker: "Deep Belly Fat (VAT)", southAsian: "Higher at the same body weight", western: "Lower proportion of inner fat" },
+      { marker: "Lean Muscle Mass", southAsian: "Lower on average", western: "Higher baseline muscle density" },
+      { marker: "Overweight Cutoff", southAsian: "BMI ≥ 23.0 kg/m² (ICMR standard)", western: "BMI ≥ 25.0 kg/m² (WHO standard)" },
+      { marker: "Obesity Cutoff", southAsian: "BMI ≥ 25.0 kg/m² (ICMR standard)", western: "BMI ≥ 30.0 kg/m² (WHO standard)" },
+      { marker: "Blood Sugar Risk Trigger", southAsian: "Starts at BMI 21.5 – 23.5 kg/m²", western: "Often starts at BMI > 27.5 kg/m²" }
     ],
-    waistTitle: "ICMR Waist Circumference & Central Adiposity Guide",
-    waistSubtitle: "Why your waistline is a more potent predictor of heart disease and diabetes than your bathroom scale weight.",
+    waistTitle: "ICMR Waist Size and Health Guide",
+    waistSubtitle: "Your waist size tells you more about heart and sugar health than your total weight.",
     waistCutoffs: [
-      { group: "Indian Adult Men", threshold: "≥ 90 cm (35.4 inches)", context: "Indicates abdominal visceral obesity and requires clinical screening for insulin resistance and lipid abnormalities." },
-      { group: "Indian Adult Women", threshold: "≥ 80 cm (31.5 inches)", context: "Indicates abdominal visceral obesity with heightened risk for metabolic syndrome and gestational complications." }
+      { group: "Indian Adult Men", threshold: "≥ 90 cm (35.4 inches)", context: "Waist of 90 cm or more shows higher belly fat. It suggests checking your blood sugar and lipids." },
+      { group: "Indian Adult Women", threshold: "≥ 80 cm (31.5 inches)", context: "Waist of 80 cm or more shows higher belly fat. It suggests checking your blood sugar and blood pressure." }
     ],
-    waistStepsTitle: "Standardized Measurement Guidelines (ICMR Guidelines)",
+    waistStepsTitle: "How to Measure Your Waist Correctly (ICMR Guide)",
     waistSteps: [
-      "Stand upright with feet shoulder-width apart, arms hanging naturally at your sides.",
-      "Locate the narrowest point of your torso, precisely midway between the lowest palpable rib and the top of the iliac crest (hip bone).",
-      "Wrap a non-elastic, flexible measuring tape horizontally around bare skin, keeping it parallel to the floor without compressing soft tissue.",
-      "Breathe out gently (measure at the end of normal expiration) and record the measurement to the nearest 0.5 cm or 0.1 inch."
+      "Stand straight with your feet shoulder-width apart. Let your arms rest at your sides.",
+      "Find the narrow part of your waist, right between your lower ribs and hip bone.",
+      "Place a flexible tape measure flat around your bare skin. Do not pull it too tight.",
+      "Breathe out gently and read the number to the nearest half centimeter or quarter inch."
     ],
-    whtrRuleTitle: "The Waist-to-Height Ratio (WHtR) Rule of Thumb",
-    whtrRuleText: "Keep your waist circumference under half your height (WHtR < 0.5). For example, a 170 cm tall person should maintain a waistline below 85 cm. A ratio exceeding 0.5 correlates strongly with subclinical atherosclerosis and fatty liver disease regardless of overall BMI.",
-    dietTitle: "Indian Diet Optimization & Balanced Thali Architecture",
-    dietSubtitle: "Countering the Indian carbohydrate paradox with evidence-based meal architecture and targeted protein swaps.",
-    thaliConceptTitle: "The Cardiometabolic Indian Plate (ICMR-NIN MyPlate Concept)",
+    whtrRuleTitle: "Keep Your Waist Under Half Your Height",
+    whtrRuleText: "Keep your waist smaller than half your height. For example, if you are 170 cm tall, keep your waist under 85 cm. This simple rule helps protect your heart and liver.",
+    dietTitle: "Healthy Indian Plate: Better Food Choices",
+    dietSubtitle: "Simple food swaps to add more protein, eat more vegetables, and feel full longer.",
+    thaliConceptTitle: "The Healthy Indian Thali (ICMR-NIN MyPlate Guide)",
     thaliComponents: [
-      { portion: "50% (Half the Plate)", name: "Non-Starchy Vegetables & Raw Fiber", items: "Bhindi, lauki, palak, methi, tori, karela, cabbage, bell peppers, cucumber, and tomato salad. High soluble fiber blunts postprandial glucose spikes." },
-      { portion: "25% (One-Quarter)", name: "High-Quality Protein", items: "100g low-fat paneer or tofu, soya chunks, boiled sprouts (moong/chana), thick dal, rajma, or grilled fish/chicken breast for non-vegetarians." },
-      { portion: "25% (One-Quarter)", name: "Complex Unpolished Whole Grains", items: "1-2 small rotis made of jowar, bajra, ragi, or besan-missi atta, or 1 small cup cooked foxtail/barnyard millet instead of polished white rice." }
+      { portion: "50% (Half the Plate)", name: "Fresh Vegetables & Salad", items: "Bhindi, lauki, palak, methi, tori, cabbage, cucumber, and tomatoes. High fiber helps keep blood sugar steady." },
+      { portion: "25% (One-Quarter)", name: "Good Protein", items: "Low-fat paneer, tofu, boiled sprouts, thick dal, rajma, eggs, or grilled fish." },
+      { portion: "25% (One-Quarter)", name: "Whole Grains", items: "1-2 small rotis made of jowar, bajra, ragi, or a small cup of brown rice or millets." }
     ],
     sampleMealTitle: "Sample Daily Indian Meal Plans for Healthy Weight",
     vegMeals: [
@@ -118,36 +118,36 @@ const content: Record<Locale, ClinicalPhenotypeLocale> = {
       { meal: "Evening Snack (5:00 PM)", details: "Sprouted moong and chana salad with cucumber, tomato, green chilies, and lemon juice." },
       { meal: "Dinner (8:00 PM)", details: "Grilled fish fillet or chicken stew with steamed broccoli, carrots, and french beans + small portion brown basmati rice." }
     ],
-    swapsTitle: "Smart Clinical Ingredient Swaps for Indian Kitchens",
+    swapsTitle: "Smart Food Swaps for Indian Kitchens",
     swaps: [
-      { insteadOf: "Polished White Rice (Glycemic Index ~73)", chooseThis: "Foxtail Millet, Little Millet, or Parboiled Brown Basmati", why: "Lowers glycemic load, increases dietary fiber by 300%, and stabilizes 2-hour postprandial glucose." },
-      { insteadOf: "Maida / Refined Wheat Flour Parathas", chooseThis: "Jowar, Bajra, Ragi, or Besan-Enriched Missi Rotis", why: "Provides rich magnesium, slow-release complex starches, and naturally gluten-free fiber." },
-      { insteadOf: "Deep-Fried Samosas, Bhujia & Namkeen", chooseThis: "Roasted Makhana (Foxnuts) & Roasted Bengal Gram", why: "Eliminates industrial trans-fats and lipid peroxidation while providing bioavailable protein." },
-      { insteadOf: "Sugar-Sweetened Milky Chai (3–4 cups/day)", chooseThis: "Masala Chai with Stevia or Spiced Chaas (Buttermilk)", why: "Saves 150–250 kcal of refined sugar per day and provides gut-friendly lactobacillus." },
-      { insteadOf: "Thin, Watery Dal with Heavy Ghee Tadka", chooseThis: "Thick Sprouted Moong / Chana Dal with 1 tsp Cold-Pressed Oil", why: "Triples protein density per bowl and avoids saturated fat accumulation in hepatic tissue." }
+      { insteadOf: "White Rice", chooseThis: "Millets or Brown Rice", why: "High fiber slows down digestion. It keeps your blood sugar steady after meals." },
+      { insteadOf: "Refined Flour (Maida) Parathas", chooseThis: "Jowar, Bajra, or Besan Rotis", why: "Adds healthy fiber and minerals. Helps you stay full longer." },
+      { insteadOf: "Deep-Fried Samosas & Namkeen", chooseThis: "Roasted Makhana & Roasted Chana", why: "Cuts out bad oils and gives you clean, plant-based protein." },
+      { insteadOf: "Sweet Milk Tea (3–4 cups a day)", chooseThis: "Chai with Less Sugar or Spiced Chaas", why: "Cuts out excess sugar and adds gut-friendly nutrients." },
+      { insteadOf: "Watery Dal with Heavy Ghee", chooseThis: "Thick Sprouted Moong Dal with 1 tsp Oil", why: "Doubles your protein per bowl and cuts down on heavy saturated fats." }
     ],
-    faqTitle: "Frequently Asked Questions: Indian BMI & Cardiometabolic Health",
-    faqSubtitle: "Detailed clinical answers regarding the thin-fat phenotype, dietary adjustments, and ICMR standards.",
+    faqTitle: "Frequently Asked Questions: Indian BMI & Health",
+    faqSubtitle: "Clear answers about the thin-fat body type, healthy foods, and ICMR standards.",
     faqs: [
       {
-        q: "Why is an Indian adult with a BMI of 22.5 kg/m² advised to monitor their diet closely?",
-        a: "While a BMI of 22.5 kg/m² is classified as 'normal' under Western standards, it sits near the top of the healthy Indian range (18.5–22.9 kg/m²). Due to the South Asian thin-fat phenotype, individuals at this level often carry substantial visceral fat and elevated fasting insulin. Monitoring waist circumference and dietary glycemic index prevents progression to prediabetes."
+        q: "Why should an Indian adult with a BMI of 22.5 check their diet?",
+        a: "A BMI of 22.5 is near the top of the healthy Indian range (18.5 to 22.9). Many Indian adults carry more belly fat even at normal weights. Keeping track of your waist size and eating more fiber helps prevent high blood sugar."
       },
       {
-        q: "Can someone with a normal BMI in India develop Type 2 diabetes?",
-        a: "Yes. Clinical registries indicate that up to 30% of newly diagnosed Type 2 diabetes patients in India have a BMI under 23.0 kg/m². This occurs because pancreatic beta cells in South Asians have lower compensatory reserve, and modest visceral fat deposition in the liver and pancreas triggers metabolic dysfunction even without apparent obesity."
+        q: "Can someone with a normal BMI in India get Type 2 diabetes?",
+        a: "Yes. Studies show that up to 30% of newly diagnosed diabetes patients in India have a BMI under 23.0. Even small amounts of fat around the liver and pancreas can raise blood sugar."
       },
       {
-        q: "How does the ICMR waist circumference cutoff compare to international guidelines?",
-        a: "The ICMR recommends cutoffs of ≥ 90 cm for Indian men and ≥ 80 cm for Indian women. In contrast, Western guidelines use 102 cm for men and 88 cm for women. Using Western cutoffs in India misses over 50% of adults with clinically dangerous visceral adiposity."
+        q: "How do Indian waist cutoffs compare to Western guidelines?",
+        a: "ICMR sets waist cutoffs at 90 cm for Indian men and 80 cm for Indian women. Western cutoffs are higher at 102 cm and 88 cm. Using Western cutoffs in India misses many adults with high belly fat."
       },
       {
-        q: "How much protein should an Indian vegetarian consume each day?",
-        a: "The ICMR recommends a baseline of 0.83 grams of protein per kilogram of body weight per day, which increases to 1.2 to 1.6 g/kg for active adults seeking fat loss or muscle preservation. For a 65 kg adult, this equates to 55 to 80 grams daily, best achieved by combining paneer, tofu, soya, sprouts, lentils, and curd across all meals."
+        q: "How much protein should an Indian vegetarian eat each day?",
+        a: "Aim for about 0.8 to 1.2 grams of protein per kilogram of body weight. For a 65 kg adult, this is about 55 to 75 grams daily. You can reach this by eating paneer, dal, sprouts, curd, and tofu across your meals."
       },
       {
-        q: "What type of exercise is most effective for reversing the South Asian thin-fat phenotype?",
-        a: "A combination of progressive resistance training (weight training or calisthenics 2–3 times per week) and moderate aerobic exercise (such as brisk walking at 5–6 km/h for 150–300 minutes weekly). Resistance training directly increases skeletal muscle mass and glucose uptake via GLUT4 transporters, reducing insulin resistance."
+        q: "What exercise works best for the thin-fat body type?",
+        a: "Combine strength training with daily walking. Lift weights or do bodyweight moves 2 to 3 times a week. Walk briskly for 30 minutes each day. Building muscle helps your body handle blood sugar better."
       }
     ]
   },

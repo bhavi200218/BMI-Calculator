@@ -1226,7 +1226,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "ICMR & WHO South Asian Standards",
       "title": "BMI Calculator for Indians – Healthy Weight Chart & Cutoffs",
-      "intro": "Free online BMI Calculator for Indians based on Indian Council of Medical Research (ICMR) and WHO Asia-Pacific reference standards. Compute your Body Mass Index (BMI) using kg and cm, check whether your weight falls into the healthy Indian range (18.5 – 22.9 kg/m²), and review ICMR waist circumference guidelines.",
+      "intro": "Check your BMI with official ICMR standards for Indian adults. Enter your weight in kg and height in cm. See if your weight is in the healthy range of 18.5 to 22.9 kg/m².",
       "formulaTitle": "Official ICMR Indian BMI Formula (kg & cm)",
       "formulaDesc": "BMI = Weight (kg) / [Height (m)]² | Healthy Range for Indians: 18.5 – 22.9 kg/m² | Overweight Cutoff: ≥ 23.0 kg/m²",
       "formulaCode": "BMI = Weight (kg) / [(Height in cm / 100)²]",
@@ -1235,27 +1235,27 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Underweight (< 18.5 kg/m²)",
           "col2": "< 18.5 kg/m²",
-          "col3": "Nutritional deficiency and low body mass risk"
+          "col3": "Low body weight. May need more nutrition."
         },
         {
           "col1": "Optimal Normal Weight (18.5 – 22.9 kg/m²)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Recommended healthy target range for Indian adults"
+          "col3": "Healthy weight range for Indian adults."
         },
         {
           "col1": "Overweight / Elevated Risk (23.0 – 24.9 kg/m²)",
           "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Action threshold for cardiometabolic screening"
+          "col3": "Early risk zone for blood sugar and heart health."
         },
         {
           "col1": "Obese Class I (25.0 – 29.9 kg/m²)",
           "col2": "25.0 – 29.9 kg/m²",
-          "col3": "Moderate obesity threshold under ICMR guidelines"
+          "col3": "Moderate obesity under ICMR guidelines."
         },
         {
           "col1": "Obese Class II (≥ 30.0 kg/m²)",
           "col2": "≥ 30.0 kg/m²",
-          "col3": "Severe obesity risk bracket requiring medical guidance"
+          "col3": "Higher obesity zone. Talk with your doctor."
         }
       ],
       "faqs": [
@@ -1265,11 +1265,11 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Why is the overweight cutoff 23.0 for Indians instead of 25.0?",
-          "answer": "South Asian populations exhibit higher visceral fat percentages at lower Body Mass Index scores, increasing cardiometabolic risk starting at a BMI of 23.0 kg/m² under ICMR and WHO guidelines."
+          "answer": "South Asian adults tend to carry more belly fat at lower weights. Because of this, health risks like diabetes can start at a BMI of 23.0 instead of 25.0 under ICMR guidelines."
         },
         {
           "question": "How to calculate ideal body weight for height in India?",
-          "answer": "Multiply your height in meters squared by 18.5 for the minimum healthy weight and by 22.9 for the maximum recommended healthy weight under WHO and ICMR Indian standards."
+          "answer": "Multiply your height in meters by itself. Then multiply by 18.5 for your low weight goal and by 22.9 for your top weight goal under Indian standards."
         }
       ]
     },
@@ -3256,36 +3256,36 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Daily Energy Balance",
       "title": "Maintenance Calorie Calculator – Daily Calorie Needs",
-      "intro": "Find how many calories you need to keep your current weight. Our free tool combines your resting burn with your daily activity. Enter your age, gender, height, weight, and exercise to see your target in seconds.",
+      "intro": "Find how many calories you need to keep your current weight. Our free tool combines your resting burn with your daily activity. Enter your age, sex, height, weight, and exercise to see your target in seconds.",
       "formulaTitle": "Maintenance Calorie Math & Energy Balance",
-      "formulaDesc": "Maintenance calories equal your resting burn (BMR) times your daily activity factor. Eating at maintenance matches your daily burn and keeps your weight steady.",
+      "formulaDesc": "Maintenance calories match the energy you burn each day. Eating at maintenance keeps your weight flat. It balances food intake with daily activity.",
       "formulaCode": "Maintenance Calories = BMR × Activity Factor",
       "tableTitle": "Calorie Maintenance and Goal Planning Table",
       "tableRows": [
         {
           "col1": "Maintenance Level",
           "col2": "100% of TDEE (Zero net change)",
-          "col3": "Keeps your current weight and daily energy in balance"
+          "col3": "Keeps your weight steady and energy in balance."
         },
         {
           "col1": "Mild Deficit (-250 kcal/day)",
           "col2": "TDEE minus 250 kcal/day",
-          "col3": "Gradual fat loss of about half a pound per week"
+          "col3": "Slow fat loss of about half a pound per week."
         },
         {
           "col1": "Standard Deficit (-500 kcal/day)",
           "col2": "TDEE minus 500 kcal/day",
-          "col3": "Standard deficit for losing about one pound per week"
+          "col3": "Standard goal for losing about one pound per week."
         },
         {
           "col1": "Moderate Deficit (-750 kcal/day)",
           "col2": "TDEE minus 750 kcal/day",
-          "col3": "Faster fat loss for people with higher calorie needs"
+          "col3": "Quicker fat loss for people with higher calorie needs."
         },
         {
           "col1": "Lean Surplus (+250 kcal/day)",
           "col2": "TDEE plus 250 kcal/day",
-          "col3": "Helps build lean muscle while limiting extra body fat"
+          "col3": "Builds lean muscle while keeping fat gain low."
         }
       ],
       "faqs": [
@@ -3308,6 +3308,34 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "How do I adjust calories for weight loss or muscle gain?",
           "answer": "To lose fat, eat 300 to 500 calories below maintenance each day. To build muscle, eat 200 to 300 calories above maintenance while lifting weights."
+        },
+        {
+          "question": "What is the best way to track daily food intake?",
+          "answer": "Use a simple free app or a paper notebook. Write down what you eat and drink. Measure your food with a small kitchen scale for the first two weeks. This helps you learn true portion sizes."
+        },
+        {
+          "question": "How does sleep and water affect daily calories?",
+          "answer": "Good sleep keeps hunger hormones in balance. Drinking plenty of water helps your body digest food and gives you steady energy for daily walks."
+        },
+        {
+          "question": "What foods keep you full on maintenance calories?",
+          "answer": "Eat plenty of protein and fiber. Foods like eggs, chicken, fish, beans, oats, apples, and green salads help you feel satisfied. They digest slowly and give you steady energy throughout the day."
+        },
+        {
+          "question": "How does daily walking help maintain weight?",
+          "answer": "Walking is easy on your joints. A 30-minute daily walk burns extra calories without making you extra hungry. It keeps your heart healthy and helps your body burn fat."
+        },
+        {
+          "question": "Should you count calories every single day?",
+          "answer": "No, you do not need to count forever. Track your food for two to three weeks to learn portion sizes. Once you know how much food your body needs, you can eat by habit."
+        },
+        {
+          "question": "How does drinking water help with daily calories?",
+          "answer": "Drink a tall glass of cool water before each meal. Water fills your stomach and helps digestion. Often, feelings of thirst get confused with feelings of hunger."
+        },
+        {
+          "question": "What should you do if your weight goes up slightly?",
+          "answer": "Do not panic over daily weight changes. Water, salt, and food weight can cause small shifts of one to three pounds. Watch your weekly trend over three weeks before cutting calories."
         }
       ]
     },

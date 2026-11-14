@@ -1298,11 +1298,11 @@ metabolic: {
         domain: 'metabolic',
         sectionTitle: 'Daily Calories & Energy Burn Guide',
         sectionSubtitle: 'How your body burns calories at rest and during daily exercise.',
-        interpretationTitle: 'BMR, Daily Activity & Energy Balance',
-        interpretationText: 'Your Basal Metabolic Rate (BMR) is the energy burned at complete rest. It powers basic bodily functions like breathing, heartbeat, and cell repair. Your Total Daily Energy Expenditure (TDEE) adds what you burn walking and exercising. Eating your maintenance calories keeps your weight steady. Eating less creates a calorie deficit to lose fat. Eating more helps you gain muscle and weight.',
-        limitationsTitle: 'Formula Accuracy & Individual Variance',
-        limitationsText: 'Calorie formulas give a close estimate, usually within 10% to 15% of your true burn. True rates vary by person. Muscle mass, age, genetics, and thyroid health all play a role. Track your body weight for three to four weeks. Then adjust your daily calories based on real-world results.',
-        medicalNoticeTitle: 'Nutritional Guidance Notice',
+        interpretationTitle: 'Daily Burn and Energy Balance',
+        interpretationText: 'Your resting burn (BMR) is what your body burns just staying alive. It powers basic needs like breathing, heart rate, and cell repair. Your daily burn (TDEE) adds the energy you use walking and working out. Eating at maintenance keeps your weight steady. Eating less creates a calorie deficit to lose fat. Eating more helps you gain muscle.',
+        limitationsTitle: 'Formula Accuracy and Body Variance',
+        limitationsText: 'Calorie formulas give a close estimate, usually within 10% to 15% of your true burn. Real needs vary from person to person. Muscle mass, age, and genetics all play a role. Track your daily weight for three weeks. Then adjust your food based on real results.',
+        medicalNoticeTitle: 'Nutrition Guidance Notice',
         medicalNoticeText: 'Calorie targets are educational guides. Speak with a doctor or dietitian before starting a strict diet, especially if you have a health condition.'
       },
       es: {

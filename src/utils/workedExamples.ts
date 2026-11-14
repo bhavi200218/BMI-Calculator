@@ -1114,11 +1114,11 @@ const EXAMPLES: Record<string, ToolData> = {
     },
     steps: {
       en: [
-        "Step 1: Compute Basal Metabolic Rate (Mifflin-St Jeor): 10(75) + 6.25(178) - 5(30) + 5 = 1,730 kcal/day",
-        "Step 2: Multiply by Moderate Activity PAL (1.55): 1,730 × 1.55 = 2,682 kcal/day (Maintenance Baseline)",
-        "Step 3: Standard Fat Loss Target (-500 kcal/day): 2,682 - 500 = 2,182 kcal/day (~0.45 kg / 1 lb fat loss/wk)",
-        "Step 4: Aggressive Fat Loss Target (-750 kcal/day): 2,682 - 750 = 1,932 kcal/day (Accelerated deficit)",
-        "Step 5: Lean Bulking Surplus Target (+250 kcal/day): 2,682 + 250 = 2,932 kcal/day (Hypertrophy with minimal fat gain)"
+        "Step 1: Find resting burn (BMR): 10(75) + 6.25(178) - 5(30) + 5 = 1,730 kcal/day.",
+        "Step 2: Multiply by daily activity (1.55): 1,730 × 1.55 = 2,682 kcal/day to maintain weight.",
+        "Step 3: Standard fat loss goal (-500 kcal): 2,682 - 500 = 2,182 kcal/day to lose 1 lb per week.",
+        "Step 4: Faster fat loss goal (-750 kcal): 2,682 - 750 = 1,932 kcal/day for quicker weight loss.",
+        "Step 5: Lean muscle gain (+250 kcal): 2,682 + 250 = 2,932 kcal/day to build lean muscle."
       ],
       es: [
         "Paso 1: Calcular Metabolismo Basal (Mifflin-St Jeor): 10(75) + 6.25(178) - 5(30) + 5 = 1,730 kcal/día",
@@ -1165,7 +1165,7 @@ const EXAMPLES: Record<string, ToolData> = {
       hi: { label: "दैनिक ऊर्जा लक्ष्य", value: "मेंटेनेंस: 2,682 कैलोरी | फैट लॉस: 2,182 कैलोरी | लीन बल्क: 2,932 कैलोरी" }
     },
     interp: {
-      en: "Consuming 2,682 kcal/day sustains your body weight at moderate activity. To shed body fat sustainably, target 2,182 kcal/day (-500 kcal deficit). For muscle hypertrophy with minimal fat gain, aim for 2,932 kcal/day (+250 kcal surplus). Next step: Convert these daily calories into specific protein, carbohydrate, and fat grams using the Macro Calculator.",
+      en: "Eating 2,682 calories each day keeps your weight steady with moderate exercise. To lose body fat, eat 2,182 calories per day. To build muscle, eat 2,932 calories per day while lifting weights. Next, use our Macro Calculator to split your calories into protein, carbs, and healthy fats.",
       es: "Consumir 2,682 kcal/día mantiene su peso corporal con actividad moderada. Para perder grasa gradualmente, consuma 2,182 kcal/día (-500 kcal). Para ganar músculo limpio, apunte a 2,932 kcal/día (+250 kcal). Siguiente paso: Convierta estas calorías en gramos de proteínas, carbohidratos y grasas con la Calculadora de Macros.",
       fr: "Un apport de 2 682 kcal/jour stabilise votre poids avec une activité modérée. Pour perdre de la masse grasse, visez 2 182 kcal/jour (-500 kcal). Pour développer votre masse musculaire, ciblez 2 932 kcal/jour (+250 kcal). Prochaine étape : Répartissez ces calories en grammes de protéines, glucides et lipides via le Calculateur de Macros.",
       de: "Eine Zufuhr von 2.682 kcal/Tag stabilisiert Ihr Gewicht bei moderater Bewegung. Für nachhaltigen Fettabbau sind 2.182 kcal/Tag (-500 kcal) ideal; für sauberen Muskelaufbau 2.932 kcal/Tag (+250 kcal). Nächster Schritt: Wandeln Sie diese Kalorien mit dem Makro-Rechner in Gramm für Eiweiß, Kohlenhydrate und Fett um.",
