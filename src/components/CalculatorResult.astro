@@ -268,6 +268,47 @@ const resultDescription = {
       }).join('');
     }
 
+    function copyTextToClipboard(text, onSuccess, onError) {
+      if (typeof navigator !== 'undefined' && navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => {
+          if (onSuccess) onSuccess();
+        }).catch(() => {
+          fallbackCopyText(text, onSuccess, onError);
+        });
+      } else {
+        fallbackCopyText(text, onSuccess, onError);
+      }
+    }
+
+    function fallbackCopyText(text, onSuccess, onError) {
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.top = '0';
+        textArea.style.left = '0';
+        textArea.style.width = '2em';
+        textArea.style.height = '2em';
+        textArea.style.padding = '0';
+        textArea.style.border = 'none';
+        textArea.style.outline = 'none';
+        textArea.style.boxShadow = 'none';
+        textArea.style.background = 'transparent';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        if (successful) {
+          if (onSuccess) onSuccess();
+        } else {
+          if (onError) onError();
+        }
+      } catch (err) {
+        if (onError) onError();
+      }
+    }
+
     // Enable Action Buttons on valid calculation
     const copyBtn = document.getElementById('copyBtn');
     if (copyBtn) {
@@ -292,13 +333,13 @@ const resultDescription = {
           fr: '✓ Copié !',
           de: '✓ Kopiert!',
           ko: '✓ 복사됨!',
-          hi: '✓ कॉपी किया गया!'
+          hi: '✓ कॉपी हो गया!'
         }[lang] || '✓ Copied!';
 
-        navigator.clipboard.writeText(report).then(() => {
+        copyTextToClipboard(report, () => {
           const orig = copyBtn.innerHTML;
-          copyBtn.innerHTML = `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> ${copySuccess}`;
-          setTimeout(() => copyBtn.innerHTML = orig, 2000);
+          copyBtn.innerHTML = `<svg class="w-4 h-4 shrink-0 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> ${copySuccess}`;
+          setTimeout(() => { copyBtn.innerHTML = orig; }, 2000);
         });
       };
     }
@@ -330,10 +371,24 @@ const resultDescription = {
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
+
+        const lang = (document.documentElement.lang || 'en').slice(0, 2);
+        const dlSuccess = {
+          en: '✓ Downloaded!',
+          es: '✓ ¡Descargado!',
+          fr: '✓ Téléchargé !',
+          de: '✓ Heruntergeladen!',
+          ko: '✓ 다운로드됨!',
+          hi: '✓ डाउनलोड हो गया!'
+        }[lang] || '✓ Downloaded!';
+
+        const orig = downloadBtn.innerHTML;
+        downloadBtn.innerHTML = `<svg class="w-4 h-4 shrink-0 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> ${dlSuccess}`;
+        setTimeout(() => { downloadBtn.innerHTML = orig; }, 2000);
       };
     }
 
-    // Share Click
+    // Share Click (Mobile: Web Share API / Desktop: Copy Link Fallback)
     const shareBtn = document.getElementById('shareBtn');
     if (shareBtn) {
       shareBtn.disabled = false;
@@ -341,13 +396,39 @@ const resultDescription = {
       shareBtn.classList.remove('opacity-50', 'cursor-not-allowed');
       shareBtn.classList.add('cursor-pointer', 'hover:opacity-85');
       shareBtn.onclick = async () => {
-        try {
-          await navigator.share({
-            title: primaryLabel,
-            text: `${primaryLabel}: ${primary.value} ${primary.unit || ''}`,
-            url: location.href
-          });
-        } catch {}
+        const lang = (document.documentElement.lang || 'en').slice(0, 2);
+        const linkCopied = {
+          en: '✓ Link Copied!',
+          es: '✓ ¡Enlace Copiado!',
+          fr: '✓ Lien Copié !',
+          de: '✓ Link Kopiert!',
+          ko: '✓ 링크 복사됨!',
+          hi: '✓ लिंक कॉपी हो गया!'
+        }[lang] || '✓ Link Copied!';
+
+        const showShareSuccess = (msg) => {
+          const orig = shareBtn.innerHTML;
+          shareBtn.innerHTML = `<svg class="w-4 h-4 shrink-0 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> ${msg}`;
+          setTimeout(() => { shareBtn.innerHTML = orig; }, 2000);
+        };
+
+        if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
+          try {
+            await navigator.share({
+              title: primaryLabel,
+              text: `${primaryLabel}: ${primary.value} ${primary.unit || ''}`,
+              url: location.href
+            });
+            showShareSuccess(linkCopied);
+          } catch (err) {
+            if (err && err.name !== 'AbortError') {
+              copyTextToClipboard(location.href, () => showShareSuccess(linkCopied));
+            }
+          }
+        } else {
+          // Desktop fallback: copy current page URL to clipboard
+          copyTextToClipboard(location.href, () => showShareSuccess(linkCopied));
+        }
       };
     }
   }
