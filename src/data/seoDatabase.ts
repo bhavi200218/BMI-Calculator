@@ -67,7 +67,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "bmi-calculator": {
     "en": {
       "eyebrow": "WHO Health Standards",
-      "title": "BMI Calculator – Calculate Body Mass Index",
+      "title": "BMI Calculator – Free Body Mass Index Calculator Online",
       "intro": "Calculate your Body Mass Index (BMI) instantly with our free calculator. BMI compares your weight to your height using official World Health Organization (WHO) and CDC standards. Find your category and healthy weight range in seconds.",
       "formulaTitle": "Standard WHO BMI Calculator Formula",
       "formulaDesc": "Metric: BMI = Weight (kg) / [Height (m)]² | Imperial: BMI = [Weight (lbs) / Height (inches)²] × 703",
@@ -193,7 +193,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Santé de l'OMS",
-      "title": "Calculateur d'IMC – Calculez votre Indice de Masse Corporelle",
+      "title": "Calculateur d'IMC – Calculez votre Indice Masse Corporelle",
       "intro": "Notre calculateur d'IMC gratuit est un outil d'évaluation basé sur les normes de l'OMS et du CDC. Calculez votre catégorie d'IMC et consultez les plages de poids de référence.",
       "formulaTitle": "Formule de Référence IMC de l'OMS",
       "formulaDesc": "Métrique : IMC = Poids (kg) / [Taille (m)]² | Impérial : IMC = [Poids (lbs) / Taille (pouces)²] × 703",
@@ -503,7 +503,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Fórmula de IMC Exponencial de Oxford 2.5 y Análisis Matemático",
-      "title": "Calculadora de IMC 3D – Fórmula de Oxford Ajustada a la Altura",
+      "title": "Calculadora de IMC 3D – Fórmula de Oxford Ajustada",
       "intro": "Calcula tu índice de masa corporal con la fórmula exponencial de Oxford 2.5 (1.3 × peso / altura²·⁵) propuesta por el matemático Prof. Nick Trefethen de la Universidad de Oxford. Compara el escalado clásico 2D frente a curvas volumétricas 3D para corregir distorsiones de estatura.",
       "formulaTitle": "Fórmula Exponencial 3D de Oxford Ajustada a la Altura",
       "formulaDesc": "IMC 3D Ajustado = 1.3 × Peso (kg) / [Altura (m)]²·⁵ | Propuesta por el matemático de Oxford Prof. Nick Trefethen como una alternativa matemática educativa al IMC 2D tradicional.",
@@ -785,7 +785,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "bmi-chart": {
     "en": {
       "eyebrow": "WHO Official Adult BMI Scales",
-      "title": "BMI Chart for Adults – Height & Weight Lookup Table",
+      "title": "BMI Chart for Adults – Height & Weight Reference Table",
       "intro": "Our comprehensive adult BMI Chart and BMI Table provides an instant visual reference for adult men and women. Look up your Body Mass Index (BMI) category across standard metric ranges (kg & cm) and imperial units (lbs & inches) aligned with World Health Organization (WHO) and CDC population standards.",
       "formulaTitle": "Standard Metric & Imperial BMI Chart Formulas",
       "formulaDesc": "Metric: BMI = Weight (kg) / [Height (m)]²  |  Imperial: BMI = [Weight (lbs) / Height (inches)²] × 703",
@@ -858,7 +858,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Tabla de IMC para Adultos – Consulta de Altura y Peso (kg y cm)",
+      "title": "Tabla de IMC para Adultos – Consulta de Altura y Peso",
       "intro": "Tabla oficial de IMC de la OMS para adultos, hombres y mujeres. Calculadora interactiva de escala de IMC, tablas de consulta de altura y peso en sistema métrico (kg y cm), categorías de la OMS y guía de referencia por edad. Uso gratuito con privacidad en el navegador.",
       "formulaTitle": "Fórmulas de la Tabla de IMC Métrica e Imperial",
       "formulaDesc": "Métrico: IMC = Peso (kg) / [Altura (m)]² | Imperial: IMC = [Peso (lbs) / Altura (pulgadas)²] × 703",
@@ -1225,7 +1225,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "bmi-calculator-for-indians": {
     "en": {
       "eyebrow": "ICMR & WHO South Asian Standards",
-      "title": "BMI Calculator for Indians – Healthy Weight Chart & Cutoffs",
+      "title": "BMI Calculator for Indians – ICMR Healthy Weight Chart",
       "intro": "Check your BMI with official ICMR standards for Indian adults. Enter your weight in kg and height in cm. See if your weight is in the healthy range of 18.5 to 22.9 kg/m².",
       "formulaTitle": "Official ICMR Indian BMI Formula (kg & cm)",
       "formulaDesc": "BMI = Weight (kg) / [Height (m)]² | Healthy Range for Indians: 18.5 – 22.9 kg/m² | Overweight Cutoff: ≥ 23.0 kg/m²",
@@ -1475,7 +1475,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "आईसीएमआर एवं डब्ल्यूएचओ भारतीय मानक",
-      "title": "भारतीयों के लिए बीएमआई कैलकुलेटर – स्वस्थ वजन चार्ट एवं ICMR कटऑफ",
+      "title": "भारतीयों के लिए बीएमआई कैलकुलेटर – ICMR स्वस्थ चार्ट",
       "intro": "भारतीय चिकित्सा अनुसंधान परिषद (ICMR) और WHO दक्षिण एशियाई दिशानिर्देशों पर आधारित भारतीयों के लिए मुफ़्त बीएमआई कैलकुलेटर। किलोग्राम और सेंटीमीटर में अपने बीएमआई और स्वस्थ वजन सीमा की गणना करें।",
       "formulaTitle": "भारतीय बीएमआई सूत्र",
       "formulaDesc": "बीएमआई = वजन (किग्रा) / [ऊंचाई (मीटर)]² | भारतीयों के लिए स्वस्थ सीमा: 18.5 - 22.9 kg/m²",
@@ -1527,7 +1527,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "healthy-weight-by-height": {
     "en": {
       "eyebrow": "WHO & Devine Reference Charts",
-      "title": "Optimal Weight by Height Chart & Recommended Ranges",
+      "title": "Healthy Weight by Height – Ideal Weight Chart & Ranges",
       "intro": "Explore standard adult weight brackets and stature lookup tables for men and women. Check your target body mass in kilograms (kg) and pounds (lbs) based on World Health Organization (WHO), CDC, and Devine clinical formulas.",
       "formulaTitle": "Standard Target Weight & Ideal Body Mass Equations",
       "formulaDesc": "WHO Healthy Weight Range: Min Weight = 18.5 × [Height (m)]² | Max Weight = 24.9 × [Height (m)]² | Devine IBW Male: 50kg + 2.3kg/inch >5ft | Devine IBW Female: 45.5kg + 2.3kg/inch >5ft",
@@ -1917,7 +1917,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "डब्ल्यूएचओ एवं डिवाइन संदर्भ तालिका",
-      "title": "ऊंचाई के अनुसार स्वस्थ वजन चार्ट – पुरुषों व महिलाओं का आदर्श वजन",
+      "title": "ऊंचाई अनुसार स्वस्थ वजन चार्ट – आदर्श वजन तालिका",
       "intro": "पुरुषों और महिलाओं के लिए ऊंचाई के अनुसार स्वस्थ वजन संदर्भ सीमाओं और हाइट-वेट चार्ट की समीक्षा करें। WHO, CDC और डिवाइन फॉर्मूला के आधार पर किलोग्राम (kg) और पाउंड (lbs) में अपनी ऊंचाई के अनुसार आदर्श वजन खोजें।",
       "formulaTitle": "ऊंचाई के अनुसार स्वस्थ वजन और आदर्श शरीर द्रव्यमान समीकरण",
       "formulaDesc": "WHO स्वस्थ वजन सीमा: न्यूनतम वजन = 18.5 × [ऊंचाई (मी)]² | अधिकतम वजन = 24.9 × [ऊंचाई (मी)]² | डिवाइन पुरुष: 50 किग्रा + 2.3 किग्रा/इंच (>5 फीट) | डिवाइन महिला: 45.5 किग्रा + 2.3 किग्रा/इंच (>5 फीट)",
@@ -1997,7 +1997,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "diabetes-risk-calculator": {
     "en": {
       "eyebrow": "Health Risk Screening",
-      "title": "Type 2 Diabetes Risk Calculator – BMI & Waist Risk Reference",
+      "title": "Type 2 Diabetes Risk Calculator – BMI & Risk Assessment",
       "intro": "Use our free Type 2 Diabetes Risk Calculator to check your risk factors. It uses your BMI, waist size, age, and activity habits. All calculations run privately in your web browser.",
       "formulaTitle": "IDF & WHO Diabetes Screening Guidelines",
       "formulaDesc": "Key risk factors include a BMI of 25 or higher (23 for Asian adults), a larger waist size (over 94 cm for men and 80 cm for women), and age 40 or older.",
@@ -2103,7 +2103,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Dépistage du Risque Cardiométabolique",
-      "title": "Calculateur de Risque de Diabète Type 2 – IMC et Tour de Taille",
+      "title": "Calculateur de Risque de Diabète Type 2 – Score IMC",
       "intro": "Calculateur gratuit de risque de diabète de type 2 basé sur l'IMC, le tour de taille et l'âge selon l'OMS. Évaluez vos facteurs de risque en toute confidentialité.",
       "formulaTitle": "Critères d'Évaluation du Risque Cardiométabolique FID & OMS",
       "formulaDesc": "Critères combinés : IMC ≥ 25,0 kg/m² (≥ 23,0 populations asiatiques), tour de taille ≥ 94 cm hommes (≥ 90 cm asiatiques) et ≥ 80 cm femmes, âge ≥ 40-45 ans.",
@@ -2317,7 +2317,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "asian-bmi-calculator": {
     "en": {
       "eyebrow": "WHO Asia-Pacific Guidelines",
-      "title": "Asian BMI Calculator – WHO Asian Cutoff Reference Standards",
+      "title": "Asian BMI Calculator – WHO Asian Healthy Weight Cutoffs",
       "intro": "Free online Asian BMI Calculator designed specifically for individuals of Asian descent based on official WHO Expert Consultation reference standards. The World Health Organization established lower BMI cutoffs for Asian populations (Overweight at 23.0 kg/m², Obese at 27.5 kg/m²) because Asians experience higher body fat percentages and metabolic health risks at lower BMI values than Western populations. For individuals seeking guidelines specific to Indian adults under ICMR standards (where obesity begins at 25.0 kg/m²), visit our <a href=\"/en/bmi-calculator-for-indians/\" class=\"text-[var(--accent)] hover:underline font-bold\">BMI Calculator for Indians</a>.",
       "formulaTitle": "WHO Asian BMI Formula (kg & cm / lbs & in)",
       "formulaDesc": "Metric: BMI = Weight (kg) / [Height (m)]² | Asian Overweight Cutoff: BMI ≥ 23.0 kg/m² | Asian Obese Cutoff: BMI ≥ 27.5 kg/m²",
@@ -2362,7 +2362,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de IMC Asiático – Estándares de Referencia OMS Asia",
+      "title": "Calculadora de IMC Asiático – Estándares de la OMS Asia",
       "intro": "Calculadora de IMC asiático gratuita basada en los cortes asiáticos revisados de la OMS (Saludable: 18.5-22.9, Sobrepeso: 23.0-27.4, Obesidad: ≥ 27.5 kg/m²). Calcula tu IMC étnico y rango de peso saludable con cálculos en el navegador.",
       "formulaTitle": "Fórmula de IMC Asiático de la OMS (WPRO)",
       "formulaDesc": "Métrico: IMC = Peso (kg) / [Altura (m)]² | Corte Sobrepeso Asiático: IMC ≥ 23.0 kg/m² | Corte Obesidad Asiática: IMC ≥ 27.5 kg/m²",
@@ -2615,7 +2615,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "bmr-calculator": {
     "en": {
       "eyebrow": "Resting Metabolism & BER",
-      "title": "BMR Calculator Online – Basal Metabolic Rate for Men & Women",
+      "title": "BMR Calculator Online – Basal Metabolic Rate Calculator",
       "intro": "Find your daily Basal Metabolic Rate (BMR) with our free calculator. BMR is the number of calories your body burns at rest each day. It is also called your Basal Energy Requirement (BER). We use the Mifflin-St Jeor formula to give you fast results.",
       "formulaTitle": "Mifflin-St Jeor BMR Calculator Formulas",
       "formulaDesc": "For men: (10 × weight in kg) + (6.25 × height in cm) - (5 × age) + 5. For women: (10 × weight in kg) + (6.25 × height in cm) - (5 × age) - 161. These formulas estimate your baseline daily calorie burn.",
@@ -2905,7 +2905,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "tdee-calculator": {
     "en": {
       "eyebrow": "Daily Energy Expenditure",
-      "title": "TDEE Calculator – Total Daily Energy Expenditure",
+      "title": "TDEE Calculator – Total Daily Energy Expenditure Tool",
       "intro": "Find your Total Daily Energy Expenditure (TDEE) with our free calculator. TDEE is the total number of calories you burn every day. It combines your resting burn with your daily movement and workouts. Use your result to set clear calorie targets for weight loss, maintenance, or muscle gain.",
       "formulaTitle": "TDEE Formula (BMR × Activity Multiplier)",
       "formulaDesc": "First, estimate your resting calorie burn (BMR). Then multiply it by your activity factor: Sedentary (1.2), Lightly Active (1.375), Moderately Active (1.55), or Very Active (1.725).",
@@ -3195,7 +3195,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "hi": {
       "eyebrow": "ऊर्जा संतुलन और चयापचय",
-      "title": "टीडीईई कैलकुलेटर ऑनलाइन – कुल दैनिक ऊर्जा व्यय और रखरखाव कैलोरी",
+      "title": "टीडीईई कैलकुलेटर – दैनिक ऊर्जा व्यय और रखरखाव कैलोरी",
       "intro": "हमारा मुफ़्त TDEE कैलकुलेटर (Total Daily Energy Expenditure) आपकी उम्र, लिंग, वजन (किग्रा या पाउंड), ऊंचाई (सेमी या इंच) और शारीरिक गतिविधि स्तर के आधार पर आपकी दैनिक रखरखाव कैलोरी का अनुमान लगाता है।",
       "formulaTitle": "TDEE गणना सूत्र (मिफ्लिन-सेंट जिओर एवं गतिविधि गुणक)",
       "formulaDesc": "चरण 1: BMR निकालें: पुरुष: (10 × W) + (6.25 × H) - (5 × A) + 5 | महिला: (10 × W) + (6.25 × H) - (5 × A) - 161। चरण 2: BMR को गतिविधि स्तर (1.2 से 1.725) से गुणा करें।",
@@ -3255,7 +3255,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "maintenance-calorie-calculator": {
     "en": {
       "eyebrow": "Daily Energy Balance",
-      "title": "Maintenance Calorie Calculator – Daily Calorie Needs",
+      "title": "Maintenance Calorie Calculator – Daily Caloric Needs",
       "intro": "Find how many calories you need to keep your current weight. Our free tool combines your resting burn with your daily activity. Enter your age, sex, height, weight, and exercise to see your target in seconds.",
       "formulaTitle": "Maintenance Calorie Math & Energy Balance",
       "formulaDesc": "Maintenance calories match the energy you burn each day. Eating at maintenance keeps your weight flat. It balances food intake with daily activity.",
@@ -3341,7 +3341,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Calorías de Mantenimiento – Necesidades Diarias",
+      "title": "Calculadora de Calorías de Mantenimiento – TDEE Diario",
       "intro": "Calculadora de calorías de mantenimiento gratuita en línea. Calcula tus calorías diarias de mantenimiento, gasto energético total diario (TDEE) y calorías objetivo para pérdida de peso por edad, altura (cm) y peso (kg) con cálculos privados en el navegador.",
       "formulaTitle": "Matemática de Calorías de Mantenimiento y Balance Energético",
       "formulaDesc": "Calorías de Mantenimiento = Tasa Metabólica Basal (TMB) × Nivel de Actividad Física (PAL). Consumir tus calorías de mantenimiento equilibra el gasto diario y mantiene tu peso estable.",
@@ -3633,7 +3633,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "body-fat-calculator": {
     "en": {
       "eyebrow": "US Navy Anthropometric Reference",
-      "title": "Body Composition & Navy Tape Method Calculator",
+      "title": "Body Fat Calculator – Free Navy Body Fat Percentage Tool",
       "intro": "Estimate your body fat with the US Navy tape method. Enter your waist, neck, height, and hip measurements. This tool calculates your body fat percentage and compares it to standard fitness ranges.",
       "formulaTitle": "US Navy Body Fat Formulas",
       "formulaDesc": "Men: calculates body density from waist and neck sizes compared to height. Women: calculates body density from waist, hip, and neck sizes compared to height.",
@@ -3983,7 +3983,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "lean-body-mass-calculator": {
     "en": {
       "eyebrow": "Boer Predictive Equation",
-      "title": "Lean Body Mass Calculator & LBM Reference Tool",
+      "title": "Lean Body Mass Calculator – Free LBM Boer & James Tool",
       "intro": "Estimate your lean body mass with our free calculator. It uses the Boer formula based on your height, weight, and sex. Lean body mass is a helpful estimate of your non-fat weight.",
       "formulaTitle": "Boer Formula for Lean Body Mass",
       "formulaDesc": "Men: LBM = (0.407 × Weight kg) + (0.267 × Height cm) - 19.2 | Women: LBM = (0.252 × Weight kg) + (0.473 × Height cm) - 48.3",
@@ -4014,7 +4014,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Masa Magra – Índice de Masa Libre de Grasa LBM",
+      "title": "Calculadora de Masa Magra – Índice Libre de Grasa LBM",
       "intro": "Calculadora de masa corporal magra (LBM) gratuita. Calcula la masa corporal magra, el porcentaje de masa libre de grasa y la composición corporal utilizando las ecuaciones de Boer, James y Hume por altura y peso con cálculos privados en el navegador.",
       "formulaTitle": "Fórmula de Boer para la Masa Corporal Magra (LBM)",
       "formulaDesc": "Hombres: LBM (kg) = (0.407 × Peso kg) + (0.267 × Altura cm) - 19.2 | Mujeres: LBM (kg) = (0.252 × Peso kg) + (0.473 × Altura cm) - 48.3",
@@ -4170,7 +4170,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "ideal-weight-calculator": {
     "en": {
       "eyebrow": "Ideal Body Weight Reference",
-      "title": "Estimate Ideal Body Weight (IBW) using commonly cited equations",
+      "title": "Ideal Weight Calculator – Free Ideal Body Weight (IBW)",
       "intro": "Find your ideal body weight with our free calculator. It estimates healthy weight ranges based on your height and gender profile. Compare four classic formulas: Devine, Robinson, Miller, and Hamwi. View your target weight and WHO healthy range in seconds.",
       "formulaTitle": "Standard IBW Formulas (Devine, Robinson, Miller & Hamwi)",
       "formulaDesc": "Each formula calculates a healthy baseline starting at 5 feet tall. These numbers are reference guides, not strict rules. Frame size, muscle mass, and bone density all shape your healthy weight.",
@@ -4286,7 +4286,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur de Poids Idéal – Équations IBW Devine et Robinson",
+      "title": "Calculateur de Poids Idéal – Formules IBW Reconnues",
       "intro": "Calculateur de poids idéal gratuit. Calculez les plages de référence du poids idéal (IBW) à l'aide des équations médicales de Devine, Robinson, Miller et Hamwi selon la taille et le genre avec calculs sur navigateur.",
       "formulaTitle": "Formules de Poids Idéal Théorique (Devine, Robinson, Miller et Hamwi)",
       "formulaDesc": "Devine Hommes : 50 kg + 2,3 kg/pouce au-delà de 5 pieds | Devine Femmes : 45,5 kg + 2,3 kg/pouce au-delà de 5 pieds. Référence validée pour l'évaluation clinique.",
@@ -4520,7 +4520,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "calorie-calculator": {
     "en": {
       "eyebrow": "Calorie Planning Reference",
-      "title": "Daily Calorie Target & Energy Balance Calculator",
+      "title": "Calorie Calculator – Daily Calorie Needs & Deficit Tool",
       "intro": "Use our free Calorie Calculator to plan your daily meals and weight goals. It estimates how many calories you burn each day based on your body and workouts. You can easily see how small calorie changes affect your weight over time.",
       "formulaTitle": "Calorie Deficit Math & Daily Targets",
       "formulaDesc": "Daily Target = Maintenance Calories - Planned Deficit. Eating 500 calories below maintenance each day creates a 3,500-calorie deficit per week, which equals about one pound of fat loss.",
@@ -4626,7 +4626,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Planification Calorique",
-      "title": "Calculateur de Déficit Calorique – Planification des Calories",
+      "title": "Calculateur de Déficit Calorique – Perte de Poids",
       "intro": "Utilisez notre calculateur gratuit de déficit calorique pour estimer vos besoins caloriques quotidiens en fonction de vos objectifs de poids.",
       "formulaTitle": "Formules de Calcul du Déficit Calorique",
       "formulaDesc": "Apport Calorique Cible = TDEE - Déficit Souhaité | Référence énergétique : ~7700 kcal par kg de masse.",
@@ -4840,7 +4840,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "protein-intake-calculator": {
     "en": {
       "eyebrow": "Daily Nutrition Reference",
-      "title": "Protein Intake Calculator – Daily Protein Reference",
+      "title": "Protein Intake Calculator – Daily Protein Target & Grams",
       "intro": "Find your daily protein target with our free Protein Intake Calculator. It estimates how much protein you need each day based on your body weight, workout routine, and fitness goals. View your personalized recommendations in grams per day.",
       "formulaTitle": "Protein Intake Formula & Activity Multipliers",
       "formulaDesc": "Daily Protein (g) = Body Weight (kg) × Goal Multiplier. Sedentary adults need about 0.8 g/kg. Active endurance athletes require 1.2 to 2.0 g/kg. Individuals in a caloric deficit for weight loss need 1.8 to 2.4 g/kg to protect lean muscle, while lifters building muscle benefit from 1.6 to 2.2 g/kg.",
@@ -5514,7 +5514,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "macro-calculator": {
     "en": {
       "eyebrow": "Macronutrient Reference",
-      "title": "Macro Calculator – Estimated Daily Macro Split",
+      "title": "Macro Calculator – Daily Macronutrient Split Calculator",
       "intro": "Calculate your daily protein, carbohydrate, and fat targets with our free Macro Calculator. It turns your daily calorie goal into practical gram amounts for easy meal planning. Pick a balanced, low-carb, or high-protein split to match your fitness routine.",
       "formulaTitle": "Macro Caloric Conversion Formulas",
       "formulaDesc": "Carbohydrates and protein each provide 4 calories per gram. Dietary fats supply 9 calories per gram. The calculator multiplies your daily calories by your macro split, then divides by each nutrient's energy density.",
@@ -5562,7 +5562,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Macronutrientes – Distribución Diaria de Macros",
+      "title": "Calculadora de Macronutrientes – Reparto Diario Macros",
       "intro": "Calculadora de macronutrientes gratuita. Calcula tus objetivos diarios de macronutrientes (proteínas, carbohidratos, grasas en gramos) para definición, mantenimiento o volumen según tu TDEE y objetivos con cálculos privados en el navegador.",
       "formulaTitle": "Fórmulas de Conversión Calórica de Macronutrientes",
       "formulaDesc": "Los carbohidratos y las proteínas aportan 4 kcal por gramo. Las grasas aportan 9 kcal por gramo. El cálculo distribuye tus calorías diarias según tus porcentajes objetivo y las convierte en gramos exactos.",
@@ -5804,7 +5804,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "waist-to-hip-ratio-calculator": {
     "en": {
       "eyebrow": "WHR Reference Standard",
-      "title": "Waist-to-Hip Ratio (WHR) Calculator & Body Proportions Tool",
+      "title": "Waist-to-Hip Ratio Calculator – WHR Health Risk Tool",
       "intro": "Check your waist-to-hip ratio with our free calculator. It follows World Health Organization guidelines to show where your body stores fat. Find out if your shape is apple or pear in seconds.",
       "formulaTitle": "WHO Circumference Ratio Equation",
       "formulaDesc": "Waist to Hip Ratio = Waist Circumference / Hip Circumference. Divide your waist size by your hip size.",
@@ -6094,7 +6094,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "body-surface-area-calculator": {
     "en": {
       "eyebrow": "Body Surface Area Reference",
-      "title": "Body Surface Area Calculator — Mosteller & Du Bois BSA",
+      "title": "Body Surface Area Calculator – Mosteller & Du Bois BSA",
       "intro": "Body surface area estimates your total skin surface from your height and weight. Doctors and researchers use this number to study metabolism and organ size. Our free tool calculates your surface area in seconds.",
       "formulaTitle": "Mosteller & Du Bois BSA Equations",
       "formulaDesc": "Mosteller BSA (m²) = √ [ Height (cm) × Weight (kg) / 3600 ]. Du Bois BSA (m²) = 0.007184 × Height^0.725 × Weight^0.425. Both formulas estimate your total body surface in square meters.",
@@ -6374,7 +6374,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "heart-rate-zone-calculator": {
     "en": {
       "eyebrow": "Cardiovascular Training Protocol",
-      "title": "Target Heart Rate Zones Calculator – 5 Exercise Training Zones",
+      "title": "Target Heart Rate Calculator – Cardio Training Zones",
       "intro": "Identify your five cardiovascular intensity zones to optimize endurance, recovery, and metabolic conditioning. Using your age and resting pulse, this tool provides clear target boundaries so you can pace warm-ups, aerobic foundation building, and sprint intervals with precision.",
       "formulaTitle": "Fox & Haskell %HRmax Cardiorespiratory Equation",
       "formulaDesc": "Estimated Maximum Heart Rate (HRmax) = 220 - Age. Training zones are calculated as direct percentage thresholds of HRmax: Zone 1 (50–60%), Zone 2 (60–70%), Zone 3 (70–80%), Zone 4 (80–90%), and Zone 5 (90–100%). This classical framework provides immediate target intensity boundaries without requiring a resting pulse baseline.",
@@ -6432,7 +6432,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Estándares de Referencia de Salud",
-      "title": "Calculadora de Zonas de Frecuencia Cardíaca – 5 Zonas de Entrenamiento",
+      "title": "Calculadora de Frecuencia Cardíaca – Zonas de Cardio",
       "intro": "Calcula tus 5 zonas objetivo de entrenamiento (Recuperación, Base Aeróbica, Cardio Tempo, Umbral Anaeróbico y Pico VO2 Máx) según edad y frecuencia cardíaca máxima.",
       "formulaTitle": "Ecuación de Intensidad Cardíaca de Fox y Haskell (%FCmax)",
       "formulaDesc": "Frecuencia Cardíaca Máxima Teórica (FCmax) = 220 - Edad. Las 5 zonas de entrenamiento se calculan como porcentajes directos de FCmax: Zona 1 (50–60%), Zona 2 (60–70%), Zona 3 (70–80%), Zona 4 (80–90%) y Zona 5 (90–100%). Este modelo clásico permite fijar la intensidad sin necesidad de medir el pulso en reposo.",
@@ -6478,7 +6478,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Protocole d'Entraînement Cardiorespiratoire",
-      "title": "Calculateur de Zones de Fréquence Cardiaque – 5 Zones d'Exercice",
+      "title": "Calculateur de Fréquence Cardiaque – Zones de Cardio",
       "intro": "Identifiez vos cinq zones d'intensité cardiaque pour structurer vos séances d'endurance, de tempo et d'intervalles selon la formule de Karvonen.",
       "formulaTitle": "Équation d'Intensité Cardiorespiratoire de Fox & Haskell (%FCmax)",
       "formulaDesc": "Fréquence Cardiaque Maximale Théorique (FCmax) = 220 - Âge. Les 5 zones d'effort sont définies en pourcentages directs de la FCmax : Zone 1 (50–60 %), Zone 2 (60–70 %), Zone 3 (70–80 %), Zone 4 (80–90 %) et Zone 5 (90–100 %). Ce modèle classique structure les allures d'entraînement sans nécessiter la mesure du pouls au repos.",
@@ -6664,7 +6664,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "karvonen-heart-rate-calculator": {
     "en": {
       "eyebrow": "Cardiovascular Physiology",
-      "title": "Karvonen Calculator – Target Heart Rate Zones & HRR",
+      "title": "Karvonen Calculator – Heart Rate Reserve & Cardio Zones",
       "intro": "Determine your personal aerobic and anaerobic training zones using the Heart Rate Reserve (HRR) methodology. By combining your age with your baseline resting pulse, this tool provides customized exertion ranges for fat oxidation, stamina development, and high-intensity interval training.",
       "formulaTitle": "Heart Rate Reserve Equation",
       "formulaDesc": "Target Exertion = [(Max Pulse - Resting Pulse) × % Intensity] + Resting Pulse. Maximum rate is estimated as 220 minus age, with reserve representing the span between baseline rest and peak effort.",
@@ -6756,7 +6756,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Normes de Référence de Santé",
-      "title": "Calculateur Karvonen – Réserve Cardiaque HRR & Zones de Forme",
+      "title": "Calculateur Karvonen – Réserve Cardiaque HRR & Cardio",
       "intro": "Calculateur de fréquence cardiaque Karvonen gratuit. Calculez les zones cibles (THR) avec la formule de Karvonen (méthode de Réserve de Fréquence Cardiaque %) selon l'âge et le pouls au repos avec calculs sur navigateur.",
       "formulaTitle": "Formule de Karvonen et Réserve Cardiaque (HRR)",
       "formulaDesc": "Fréquence Cardiaque Cible = [(FC Max - FC Repos) × % Intensité] + FC Repos. La FC maximale est calculée par (220 - âge), calibrant l'entraînement sur votre réserve cardiovasculaire individuelle.",
@@ -6802,7 +6802,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Karvonen Herzfrequenz-Rechner – Herzfrequenzreserve HRR Zonen",
+      "title": "Karvonen Rechner – Herzfrequenzreserve & Cardiozonen",
       "intro": "Kostenloser Karvonen-Herzfrequenz-Rechner. Berechnen Sie Ihre Zielherzfrequenz (THR) mit der Karvonen-Formel (Herzfrequenzreserve-%-Methode) nach Alter und Ruhepuls (BPM) datenschutzorientiert im Browser.",
       "formulaTitle": "Karvonen-Formel & Herzfrequenzreserve (HFR)",
       "formulaDesc": "Trainingsherzfrequenz = [(Maximalpuls - Ruhepuls) × % Intensität] + Ruhepuls. Die maximale Herzfrequenz wird mit (220 - Alter) abgeschätzt, um Trainingszonen individuell anzupassen.",
@@ -6954,7 +6954,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "1rm-calculator": {
     "en": {
       "eyebrow": "Strength Conditioning Science",
-      "title": "1RM Calculator – One Rep Max Bench, Squat, Deadlift",
+      "title": "1RM Calculator – One Rep Max Bench, Squat & Deadlift",
       "intro": "Find your one-rep max with our free 1RM Calculator. It estimates the heaviest weight you can lift for a single rep on the bench press, squat, or deadlift using the validated Epley, Brzycki, and Lander formulas, along with a full 10-tier training percentages chart.",
       "formulaTitle": "One-Rep Max Calculation Formulas: Epley, Brzycki & Lander",
       "formulaDesc": "Predict your true maximal single lift safely from repetition testing using three established mathematical models:\\n• Epley Formula (1985): 1RM = Weight × (1 + Reps / 30)\\n• Brzycki Formula (1993): 1RM = Weight × [36 / (37 - Reps)]\\n• Lander Formula (1985): 1RM = (100 × Weight) / (101.3 - 2.67123 × Reps)\\nThese submaximal formulas protect joints and ligaments by preventing dangerous single-rep maximum attempts to failure.",
@@ -7037,7 +7037,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "es": {
       "eyebrow": "Ciencia del Acondicionamiento de Fuerza",
-      "title": "Calculadora de 1RM – Repetición Máxima Press Banca y Sentadilla",
+      "title": "Calculadora de 1RM – Repetición Máxima Fuerza y Cargas",
       "intro": "Calcula tu fuerza máxima para 1 repetición (1RM) con las fórmulas validadas de Epley, Brzycki y Lander, y consulta la tabla completa de porcentajes de entrenamiento.",
       "formulaTitle": "Fórmulas Validadas de 1RM: Epley, Brzycki y Lander",
       "formulaDesc": "Predicción de fuerza máxima a partir de repeticiones submáximas:\\n• Epley (1985): 1RM = Peso × (1 + Reps / 30)\\n• Brzycki (1993): 1RM = Peso × [36 / (37 - Reps)]\\n• Lander (1985): 1RM = (100 × Peso) / (101.3 - 2.67123 × Reps)\\nEvita intentos máximos lesivos evaluando series de 2 a 10 repeticiones con técnica perfecta.",
@@ -7108,7 +7108,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "fr": {
       "eyebrow": "Science de la Musculation et de la Force",
-      "title": "Calculateur de 1RM – Répétition Maximale Développé Couché et Squat",
+      "title": "Calculateur de 1RM – Répétition Maximale Force & Charges",
       "intro": "Estimez votre charge maximale pour 1 répétition (1RM) avec les formules d'Epley, Brzycki et Lander et planifiez vos séances avec la table des pourcentages d'entraînement.",
       "formulaTitle": "Formules Validées de Calcul du 1RM : Epley, Brzycki et Lander",
       "formulaDesc": "Équations d'extrapolation biomécanique :\\n• Epley (1985) : 1RM = Charge × (1 + Répétitions / 30)\\n• Brzycki (1993) : 1RM = Charge × [36 / (37 - Répétitions)]\\n• Lander (1985) : 1RM = (100 × Charge) / (101,3 - 2,67123 × Répétitions)\\nCes méthodes évitent les risques articulaires des tests maximaux directs.",
@@ -7179,7 +7179,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Trainingswissenschaft & Kraftsport",
-      "title": "1RM-Rechner – Maximalkraft Bankdrücken, Kniebeugen & Kreuzheben",
+      "title": "1RM-Rechner – Maximalkraft Bankdrücken & Kniebeugen",
       "intro": "Berechnen Sie Ihr One-Rep Max (1RM) verletzungsfrei anhand der Formeln von Epley, Brzycki und Lander inklusive 10-stufiger Trainings-Prozentsatztabelle.",
       "formulaTitle": "Validierte 1RM-Maximalkraft-Formeln: Epley, Brzycki & Lander",
       "formulaDesc": "Mathematische Näherungsverfahren zur Maximalkraftbestimmung:\\n• Epley (1985): 1RM = Gewicht × (1 + Wdh / 30)\\n• Brzycki (1993): 1RM = Gewicht × [36 / (37 - Wdh)]\\n• Lander (1985): 1RM = (100 × Gewicht) / (101,3 - 2,67123 × Wdh)\\nSubmaximale Tests schonen Sehnen und Gelenke vor Überlastung.",
@@ -7394,7 +7394,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
   "pregnancy-weight-gain-calculator": {
     "en": {
       "eyebrow": "Gestational Health Reference",
-      "title": "Gestational Weight Tracker & Pregnancy Growth Stages",
+      "title": "Pregnancy Weight Gain Calculator – Target Growth Guide",
       "intro": "Track maternal mass changes and developmental benchmarks based on published National Academies/IOM and ACOG clinical consensus guidelines. Understand personalized targets calculated from pre-pregnancy BMI.",
       "formulaTitle": "IOM Maternal Progression Recommendations",
       "formulaDesc": "Normal BMI (18.5-24.9): 11.5 - 16.0 kg total (25 - 35 lbs) | Overweight: 7.0 - 11.5 kg (15 - 25 lbs) | Underweight: 12.5 - 18.0 kg (28 - 40 lbs) | Obese: 5.0 - 9.0 kg (11 - 20 lbs)",
@@ -7538,7 +7538,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     },
     "de": {
       "eyebrow": "Gesundheits-Referenzstandards",
-      "title": "Schwangerschafts-Gewichtszunahme Rechner – Trimester-Tracking",
+      "title": "Schwangerschafts-Gewichtszunahme Rechner – Trimester",
       "intro": "Kostenloser Schwangerschafts-Gewichtszunahme-Rechner nach ACOG- und IOM-Richtlinien. Verfolgen Sie die wöchentliche Gewichtszunahme nach Trimester und BMI vor der Schwangerschaft datenschutzorientiert im Browser.",
       "formulaTitle": "Gewichtszunahme-Empfehlungen in der Schwangerschaft (IOM & ACOG)",
       "formulaDesc": "Normaler BMI (18,5–24,9): 11,5 – 16,0 kg gesamt (25 – 35 lbs) | Übergewicht: 7,0 – 11,5 kg (15 – 25 lbs) | Untergewicht: 12,5 – 18,0 kg (28 – 40 lbs) | Adipositas: 5,0 – 9,0 kg (11 – 20 lbs). Bezogen auf den präkonzeptionellen BMI.",

@@ -211,11 +211,105 @@ const relatedGuidesSubtitle: Record<string, string> = {
   ko: '이 계산기에 특화된 근거 중심 건강 가이드 및 교육용 설명 자료입니다.',
   hi: 'इस कैलकुलेटर के लिए विशेष रूप से तैयार किए गए साक्ष्य-आधारित गाइड और संदर्भ विवरण।'
 };
+const calcKeywordsMap: Record<string, Record<string, string>> = {
+  'bmi-calculator': {
+    en: 'bmi calculator, calculate bmi, body mass index, free bmi calculator online, real bmi calculator, bmi score, healthy weight range, adult bmi',
+    es: 'calculadora de imc, calcular imc, indice de masa corporal, calculadora imc gratis, rango peso saludable, imc adultos',
+    fr: 'calculateur imc, calculer imc, indice de masse corporelle, calculateur imc gratuit, poids sante, imc adulte',
+    de: 'bmi rechner, bmi berechnen, body mass index, bmi rechner online, normalgewicht berechnen, gesundes gewicht',
+    ko: 'bmi 계산기, 체질량지수 계산기, bmi 계산, 비만도 계산기, 정상 체중 범위, 무료 bmi 계산기',
+    hi: 'बीएमआई कैलकुलेटर, बॉडी मास इंडेक्स, बीएमआई गणना, स्वस्थ वजन सीमा, बीएमआई चार्ट'
+  },
+  'ideal-weight-calculator': {
+    en: 'ideal weight calculator, ideal body weight, ibw calculator, healthy weight calculator, weight for height, devine formula',
+    es: 'calculadora de peso ideal, peso ideal, calcular peso corporal ideal, formula de devine, peso segun altura',
+    fr: 'calculateur de poids ideal, poids ideal, formule de devine, poids sante selon la taille',
+    de: 'idealgewicht rechner, idealgewicht berechnen, normalgewicht, devine formel, gewicht nach groesse',
+    ko: '이상적인 체중 계산기, 적정 체중 계산기, 표준 체중, 체중 계산기, 드바인 공식',
+    hi: 'आदर्श वजन कैलकुलेटर, सही वजन, ऊंचाई के अनुसार वजन, आदर्श शारीरिक वजन'
+  },
+  'body-fat-calculator': {
+    en: 'body fat calculator, navy body fat calculator, body fat percentage, calculate body fat, us navy method, lean mass',
+    es: 'calculadora de grasa corporal, porcentaje de grasa, metodo us navy, calcular grasa corporal',
+    fr: 'calculateur de graisse corporelle, taux de masse grasse, formule us navy, pourcentage graisse',
+    de: 'koerperfett rechner, koerperfettanteil berechnen, us navy methode, koerperfett prozent',
+    ko: '체지방 계산기, 체지방률 계산기, 미 해군 공식, 체지방 측정, 체지방 계산',
+    hi: 'बॉडी फैट कैलकुलेटर, शरीर में वसा प्रतिशत, यूएस नेवी फॉर्मूला, वसा प्रतिशत गणना'
+  },
+  'calorie-calculator': {
+    en: 'calorie calculator, daily calorie needs, calorie deficit calculator, calories to lose weight, maintenance calories',
+    es: 'calculadora de calorias, deficit calorico, calorias diarias, calorias para adelgazar, mantenimiento calorico',
+    fr: 'calculateur de calories, deficit calorique, besoin calorique journalier, calories perte de poids',
+    de: 'kalorienrechner, kalorienbedarf rechner, kaloriendefizit, kalorien zum abnehmen',
+    ko: '칼로리 계산기, 일일 칼로리 필요량, 칼로리 적자, 다이어트 칼로리, 유지 칼로리',
+    hi: 'कैलोरी कैलकुलेटर, दैनिक कैलोरी आवश्यकता, कैलोरी डेफिसिट, वजन घटाने के लिए कैलोरी'
+  },
+  'bmr-calculator': {
+    en: 'bmr calculator, basal metabolic rate calculator, calculate bmr, daily calorie burn, mifflin st jeor',
+    es: 'calculadora bmr, tasa metabolica basal, calcular bmr, formula mifflin st jeor, metabolismo basal',
+    fr: 'calculateur bmr, metabolisme de base, calculer bmr, formule mifflin st jeor, depense energetique',
+    de: 'bmr rechner, grundumsatz rechner, grundumsatz berechnen, mifflin st jeor formel',
+    ko: 'bmr 계산기, 기초대사량 계산기, 기초대사량 계산, 미플린 세인트 지오 공식',
+    hi: 'बीएमआर कैलकुलेटर, बेसल मेटाबॉलिक रेट, बीएमआर गणना, बुनियादी कैलोरी'
+  },
+  'tdee-calculator': {
+    en: 'tdee calculator, total daily energy expenditure, maintenance calories, daily calorie burn, activity level calories',
+    es: 'calculadora tdee, gasto energetico total diario, calorias de mantenimiento, gasto calorico diario',
+    fr: 'calculateur tdee, depense energetique totale journaliere, calories maintien, depense calorique quotidienne',
+    de: 'tdee rechner, gesamtenergieumsatz, tagesbedarf kalorien, erhaltungskalorien berechnen',
+    ko: 'tdee 계산기, 일일 총 에너지 소비량, 유지 칼로리, 하루 칼로리 소비량',
+    hi: 'टीडीईई कैलकुलेटर, कुल दैनिक ऊर्जा व्यय, रखरखाव कैलोरी, दैनिक कैलोरी बर्न'
+  },
+  'protein-intake-calculator': {
+    en: 'protein intake calculator, daily protein calculator, how much protein do i need, protein for muscle, grams of protein',
+    es: 'calculadora de proteinas, requerimiento diario de proteina, cuanta proteina necesito, proteinas para musculo',
+    fr: 'calculateur de proteines, apport journalier en proteines, quantite proteines par jour, proteines musculation',
+    de: 'protein rechner, eiweissbedarf rechner, wie viel protein pro tag, eiweiss fuer muskelaufbau',
+    ko: '단백질 섭취 계산기, 하루 단백질 필요량, 단백질 계산기, 근육 단백질 섭취량',
+    hi: 'प्रोटीन सेवन कैलकुलेटर, दैनिक प्रोटीन आवश्यकता, मुझे कितना प्रोटीन चाहिए, मांसपेशियों के लिए प्रोटीन'
+  },
+  'water-intake-calculator': {
+    en: 'water intake calculator, daily water intake, how much water should i drink, hydration calculator, fluid intake',
+    es: 'calculadora de agua diaria, cuanta agua beber al dia, ingesta de agua recomendada, hidratacion diaria',
+    fr: 'calculateur d eau par jour, combien d eau boire par jour, hydratation journaliere, besoin en eau',
+    de: 'wasserbedarf rechner, wie viel wasser trinken pro tag, taegliche trinkmenge, hydratation rechner',
+    ko: '물 섭취량 계산기, 하루 물 권장량, 하루에 물 얼마나 마셔야 하나, 수분 섭취 계산',
+    hi: 'पानी सेवन कैलकुलेटर, रोजाना कितना पानी पिएं, दैनिक जल आवश्यकता, हाइड्रेशन कैलकुलेटर'
+  },
+  'pregnancy-weight-gain-calculator': {
+    en: 'pregnancy weight gain calculator, pregnancy weight gain chart, target pregnancy weight, gestational weight gain',
+    es: 'calculadora aumento de peso embarazo, tabla peso embarazo, ganancia de peso gestacional',
+    fr: 'calculateur prise de poids grossesse, courbe de poids grossesse, prise de poids recommandee',
+    de: 'gewichtszunahme schwangerschaft rechner, gewichtskurve schwangerschaft, gesunde gewichtszunahme',
+    ko: '임신 중 체중 증가 계산기, 임신 체중 증가 표, 임신 권장 체중, 임신 주수별 체중',
+    hi: 'गर्भावस्था वजन वृद्धि कैलकुलेटर, गर्भावस्था में वजन बढ़ना, गर्भकालीन वजन चार्ट'
+  },
+  'healthy-weight-by-height': {
+    en: 'healthy weight by height, ideal weight by height, height weight chart, weight for height range',
+    es: 'peso saludable por altura, peso ideal segun altura, tabla de peso y altura, rango de peso saludable',
+    fr: 'poids ideal par taille, poids sante selon la taille, tableau poids taille, plage de poids normal',
+    de: 'gesundes gewicht nach groesse, idealgewicht tabelle, groesse gewicht tabelle, normalgewicht groesse',
+    ko: '키별 표준 체중, 키에 따른 정상 체중, 키 체중 조견표, 건강 체중 범위',
+    hi: 'ऊंचाई के अनुसार स्वस्थ वजन, कद और वजन का चार्ट, ऊंचाई के हिसाब से सही वजन'
+  },
+  'bmi-calculator-for-indians': {
+    en: 'bmi calculator for indians, indian bmi calculator, icmr bmi chart, asian indian bmi cutoffs, healthy weight for indians',
+    es: 'calculadora de imc para indios, tabla de imc icmr, valores de imc asiatica, peso saludable indios',
+    fr: 'calculateur imc pour indiens, grille imc icmr, seuils imc asiatique, poids sante indiens',
+    de: 'bmi rechner fuer inder, icmr bmi tabelle, asiatische bmi grenzwerte, normalgewicht fuer inder',
+    ko: '인도인 전용 bmi 계산기, icmr 체질량지수 표, 인도 성인 비만 기준, 아시아인 bmi',
+    hi: 'भारतीयों के लिए बीएमआई कैलकुलेटर, आईसीएमआर बीएमआई चार्ट, भारतीय वजन सीमा, एशियाई बीएमआई'
+  }
+};
+
+const calcKeywords = calcKeywordsMap[calc.slug]?.[lang] 
+  || `${calc.name[lang] || calc.name['en']}, ${calc.slug.replace(/-/g, ' ')}, health calculator, reference standards, real bmi`;
 ---
 
 <Layout 
   title={pageTitle}
   description={metaDesc}
+  keywords={calcKeywords}
   canonicalURL={canonicalUrl}
 >
   <!-- Inject WebApplication and MedicalWebPage JSON-LD dynamically inside Layout context -->

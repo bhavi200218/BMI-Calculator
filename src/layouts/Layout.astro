@@ -118,7 +118,8 @@ function sanitizeSeoTitle(rawTitle: string, locale: string = 'en'): string {
 		}
 
 		// Clean up trailing prepositions/conjunctions
-		base = base.replace(/\s+(and|und|oder|et|ou|y|o|in|im|at|for|für|pour|de|des|der|die|das|den|dem|with|mit|avec|con|vs\.?|&|&amp;)$/i, '').trim();
+		base = base.replace(/\s*\([^)]*$/, '').replace(/\s*\[[^\]]*$/, '').trim();
+		base = base.replace(/\s+(and|und|oder|et|ou|y|o|in|im|at|for|für|pour|de|des|der|die|das|den|dem|with|mit|avec|con|la|le|les|el|los|las|del|al|un|una|vs\.?|&|&amp;|का|की|के|में|और|तथा|व|एवं)$/i, '').trim();
 		clean = base;
 
 		// Post-trim guarantee: if dropping a long word reduced length below 40 chars, snap with compact brand
@@ -227,6 +228,18 @@ function sanitizeSeoDescription(rawDesc: string, locale: string = 'en'): string 
 
 const seoTitle = sanitizeSeoTitle(title, currentLocale || 'en');
 const seoDescription = sanitizeSeoDescription(description, currentLocale || 'en');
+
+const defaultKeywordsMap: Record<string, string> = {
+  en: "bmi calculator, calculate bmi, body mass index, free bmi calculator online, real bmi calculator, ideal weight calculator, calorie calculator, bmr calculator, tdee calculator, body fat calculator, healthy weight, WHO bmi standards",
+  es: "calculadora de imc, calcular imc, indice de masa corporal, calculadora imc gratis, peso ideal, calculadora de calorias, tasa metabolica basal, grasa corporal, normas oms",
+  fr: "calculateur imc, calculer imc, indice de masse corporelle, calculateur imc gratuit, poids ideal, calculateur calories, metabolisme de base, taux de masse grasse",
+  de: "bmi rechner, bmi berechnen, body mass index, bmi rechner kostenlos, idealgewicht berechnen, kalorienbedarf rechner, grundumsatz berechnen, korperfettanteil berechnen",
+  ko: "bmi 계산기, 체질량지수 계산기, bmi 계산, 비만도 계산기, 기초대사량 계산기, 이상적인 체중 계산기, 칼로리 계산기, 체지방률 계산기",
+  hi: "बीएमआई कैलकुलेटर, बॉडी मास इंडेक्स, बीएमआई गणना, आदर्श वजन कैलकुलेटर, कैलोरी कैलकुलेटर, बीएमआर कैलकुलेटर, शरीर में वसा, स्वस्थ वजन"
+};
+const seoKeywords = (keywords && keywords.trim().length > 0) 
+  ? keywords.trim() 
+  : (defaultKeywordsMap[currentLocale || 'en'] || defaultKeywordsMap.en);
 
 const localeOgMap: Record<string, string> = {
   en: 'en_US',
@@ -439,6 +452,7 @@ const howToSchema = {
 		<!-- SEO Meta Tags -->
 		<title>{seoTitle}</title>
 		<meta name="description" content={seoDescription} />
+		<meta name="keywords" content={seoKeywords} />
 		<meta name="robots" content={robots} />
 		<link rel="canonical" href={canonicalURL} />
 
