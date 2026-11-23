@@ -1674,37 +1674,36 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
       </div>
 
       <!-- Direct Academic Citations & Sources Cross-Link Banner -->
-        <div class="p-6 md:p-8 rounded-2xl border-2 border-indigo-500/30 bg-indigo-500/5 space-y-4 not-prose shadow-sm">
-          <div class="flex flex-wrap items-center justify-between gap-3">
-            <span class="text-xs font-bold font-display uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
-              {lang === 'hi' ? 'प्राथमिक अकादमिक शोध उद्धरण एवं संदर्भ' : (lang === 'es' ? 'Citas Académicas Primarias y Bibliografía' : (lang === 'fr' ? 'Citations Académiques Primaires & Bibliographie' : (lang === 'de' ? 'Primäre wissenschaftliche Zitate & Bibliographie' : (lang === 'ko' ? '직접 학술 연구 논문 인용 및 참고문헌' : 'Primary Academic Research Citations & Sources'))))}
-            </span>
-            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
-              {currentI18n.studiesBadge}
-            </span>
-          </div>
-          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
-            {lang === 'hi' 
-              ? 'केवल सामान्य संदर्भों के बजाय, Real BMI प्रत्येक कैलकुलेटर को सटीक अध्ययनों से जोड़ता है: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, और Devine 1974।'
-              : (lang === 'es'
-                ? 'En lugar de menciones genéricas, Real BMI vincula cada calculadora con estudios fundamentales exactos: OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 y Devine 1974.'
-                : (lang === 'fr'
-                  ? 'Plutôt que de simples mentions institutionnelles, Real BMI adosse chaque outil à des études fondamentales précises : OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 et Devine 1974.'
-                  : (lang === 'de'
-                    ? 'Statt pauschaler Angaben verknüpft Real BMI jeden Rechner mit exakten Studien: WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 und Devine 1974.'
-                    : (lang === 'ko'
-                      ? '모호한 기관명 약어 대신, Real BMI는 모든 계산기를 정밀한 논문(WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, Devine 1974)과 직접 연결합니다.'
-                      : 'Rather than relying on vague acronym claims (WHO, CDC, NIH, ACSM), Real BMI links every calculator to exact landmark studies: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, and Devine 1974.'))))}
-          </p>
-          <div class="pt-2">
-            <a 
-              href={`/${lang}/sources/`} 
-              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-95 transition-opacity"
-            >
-              <span>{lang === 'hi' ? 'प्राथमिक शोध उद्धरण मैट्रिक्स देखें (15 अध्ययन) →' : (lang === 'es' ? 'Explorar Matriz de Citas de Investigación (15 Estudios) →' : (lang === 'fr' ? 'Consulter la Matrice des Citations de Recherche (15 Études) →' : (lang === 'de' ? 'Forschungszitate-Matrix erkunden (15 Studien) →' : (lang === 'ko' ? '학술 연구 인용 매트릭스 탐색 (15편 연구) →' : 'Explore Primary Research Citations & Matrix (15 Studies) →'))))}</span>
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </a>
-          </div>
+      <div class="p-6 md:p-8 rounded-2xl border-2 border-indigo-500/30 bg-indigo-500/5 space-y-4 not-prose shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <span class="text-xs font-bold font-display uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
+            {lang === 'hi' ? 'प्राथमिक अकादमिक शोध उद्धरण एवं संदर्भ' : (lang === 'es' ? 'Citas Académicas Primarias y Bibliografía' : (lang === 'fr' ? 'Citations Académiques Primaires & Bibliographie' : (lang === 'de' ? 'Primäre wissenschaftliche Zitate & Bibliographie' : (lang === 'ko' ? '직접 학술 연구 논문 인용 및 참고문헌' : 'Primary Academic Research Citations & Sources'))))}
+          </span>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+            {currentI18n.studiesBadge}
+          </span>
+        </div>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+          {lang === 'hi' 
+            ? 'केवल सामान्य संदर्भों के बजाय, Real BMI प्रत्येक कैलकुलेटर को सटीक अध्ययनों से जोड़ता है: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, और Devine 1974।'
+            : (lang === 'es'
+              ? 'En lugar de menciones genéricas, Real BMI vincula cada calculadora con estudios fundamentales exactos: OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 y Devine 1974.'
+              : (lang === 'fr'
+                ? 'Plutôt que de simples mentions institutionnelles, Real BMI adosse chaque outil à des études fondamentales précises : OMS TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 et Devine 1974.'
+                : (lang === 'de'
+                  ? 'Statt pauschaler Angaben verknüpft Real BMI jeden Rechner mit exakten Studien: WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987 und Devine 1974.'
+                  : (lang === 'ko'
+                    ? '모호한 기관명 약어 대신, Real BMI는 모든 계산기를 정밀한 논문(WHO TRS 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, Devine 1974)과 직접 연결합니다.'
+                    : 'Rather than relying on vague acronym claims (WHO, CDC, NIH, ACSM), Real BMI links every calculator to exact landmark studies: WHO Technical Report Series 854, Lancet 2004, Mifflin MD 1990, Mosteller 1987, and Devine 1974.'))))}
+        </p>
+        <div class="pt-2">
+          <a 
+            href={`/${lang}/sources/`} 
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider hover:opacity-95 transition-opacity"
+          >
+            <span>{lang === 'hi' ? 'प्राथमिक शोध उद्धरण मैट्रिक्स देखें (15 अध्ययन) →' : (lang === 'es' ? 'Explorar Matriz de Citas de Investigación (15 Estudios) →' : (lang === 'fr' ? 'Consulter la Matrice des Citations de Recherche (15 Études) →' : (lang === 'de' ? 'Forschungszitate-Matrix erkunden (15 Studien) →' : (lang === 'ko' ? '학술 연구 인용 매트릭스 탐색 (15편 연구) →' : 'Explore Primary Research Citations & Matrix (15 Studies) →'))))}</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
         </div>
       </div>
 
