@@ -198,6 +198,15 @@ const disclaimerTitles: Record<string, string> = {
   hi: "चिकित्सा अस्वीकरण एवं संदर्भ सूचना (Medical Disclaimer)"
 };
 
+const medicalNotices: Record<string, string> = {
+  en: "Medical Notice: Information on Real BMI is for learning only. It is not medical advice. Always talk to a doctor for health decisions.",
+  es: "Aviso Médico: La información en Real BMI es únicamente para fines educativos. No constituye asesoramiento médico. Consulte siempre a un médico para decisiones sobre su salud.",
+  fr: "Avis Médical : Les informations sur Real BMI sont fournies à des fins éducatives uniquement. Elles ne constituent pas un avis médical. Consultez toujours un médecin pour vos décisions de santé.",
+  de: "Medizinischer Hinweis: Die Informationen auf Real BMI dienen ausschließlich Lern- und Bildungszwecken. Sie stellen keine medizinische Beratung dar. Konsultieren Sie für gesundheitliche Entscheidungen stets einen Arzt.",
+  ko: "의학적 고지: Real BMI의 정보는 학습 및 교육 목적으로만 제공됩니다. 의학적 조언이 아니므로 건강 관련 결정은 항상 의사와 상담하십시오.",
+  hi: "चिकित्सीय सूचना: Real BMI पर दी गई जानकारी केवल सीखने और शैक्षिक संदर्भ के लिए है। यह कोई चिकित्सीय सलाह नहीं है। स्वास्थ्य संबंधी किसी भी निर्णय के लिए हमेशा योग्य चिकित्सक से परामर्श लें।"
+};
+
 ---
 
 <section class="px-4 md:px-6 max-w-7xl mx-auto my-10 space-y-6">
@@ -360,7 +369,7 @@ const disclaimerTitles: Record<string, string> = {
         {t.disclaimer}
       </p>
       <p class="text-[11px] text-[var(--muted-foreground)]/80 italic border-t border-amber-500/20 pt-2 font-sans">
-        Medical Notice: Information on Real BMI is for learning only. It is not medical advice. Always talk to a doctor for health decisions.
+        {medicalNotices[lang] || medicalNotices.en}
       </p>
     </aside>
 

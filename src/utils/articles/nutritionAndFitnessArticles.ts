@@ -202,7 +202,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
               <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Protein %</th>
               <th class="p-3 border border-[#e6e6e6] text-amber-600 font-bold">Carbohydrate %</th>
               <th class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">Dietary Fat %</th>
-              <th class="p-3 border border-[#e6e6e6]">Optimal Application</th>
+              <th class="p-3 border border-[#e6e6e6]">Common Practical Application</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6] font-mono">
@@ -229,6 +229,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
             </tr>
           </tbody>
         </table>
+        <p class="text-xs text-[var(--muted-foreground)] mt-2">Note: Individual macronutrient requirements vary according to age, biological sex, activity level, and metabolic goals. These templates serve as practical reference frameworks rather than universally optimal distributions.</p>
       </div>
 
       <h2>Step-by-Step Gram Calculation for a 2,000 kcal Target (40/30/30 Split)</h2>
@@ -241,9 +242,9 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
       <h2>Selecting High-Quality Whole Foods for Each Macronutrient</h2>
       <p>Hitting your target macronutrient distribution is most effective when prioritized through nutrient-dense, minimally processed whole foods:</p>
       <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
-        <li><strong>Quality Protein Sources:</strong> Skinless poultry, wild fish, eggs, Greek yogurt, lentils, tofu, and lean beef supply complete amino acid profiles necessary for muscle repair and satiety.</li>
+        <li><strong>Quality Protein Sources:</strong> Poultry, wild fish, eggs, Greek yogurt, and lean beef supply complete essential amino acid profiles. Plant sources such as tofu, tempeh, lentils, and legumes provide complementary amino acids and dietary fiber to support muscle protein synthesis and satiety.</li>
         <li><strong>Complex Carbohydrate Sources:</strong> Rolled oats, brown rice, quinoa, sweet potatoes, legumes, and fresh berries provide sustained glycogen replenishment alongside dietary fiber for glycemic stability.</li>
-        <li><strong>Essential Dietary Fats:</strong> Extra virgin olive oil, avocados, raw nuts, seeds, and fatty fish (salmon, sardines) deliver essential omega-3 fatty acids critical for hormonal regulation and cellular health.</li>
+        <li><strong>Healthy Dietary Fats:</strong> Extra virgin olive oil and avocados deliver heart-healthy monounsaturated fatty acids (oleic acid), while fatty fish (salmon, sardines), flaxseeds, and walnuts provide essential omega-3 polyunsaturated fatty acids (EPA, DHA, and ALA) critical for cardiovascular and cellular function.</li>
       </ul>
 
       <h2>Scientific References</h2>
@@ -270,7 +271,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
               <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">प्रोटीन %</th>
               <th class="p-3 border border-[#e6e6e6] text-amber-600 font-bold">कार्ब्स %</th>
               <th class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">फैट %</th>
-              <th class="p-3 border border-[#e6e6e6]">सर्वोत्तम अनुप्रयोग</th>
+              <th class="p-3 border border-[#e6e6e6]">सामान्य व्यावहारिक अनुप्रयोग</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6] font-mono">
@@ -297,6 +298,7 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
             </tr>
           </tbody>
         </table>
+        <p class="text-xs text-[var(--muted-foreground)] mt-2">नोट: मैक्रोन्यूट्रिएंट्स की आवश्यकताएं उम्र, लिंग, शारीरिक गतिविधि और स्वास्थ्य स्थिति के अनुसार भिन्न हो सकती हैं। यह अनुपात एक सामान्य व्यावहारिक संदर्भ ढांचा प्रदान करते हैं।</p>
       </div>
 
       <h2>2,000 कैलोरी लक्ष्य के लिए चरणबद्ध ग्राम गणना (40/30/30 स्प्लिट)</h2>

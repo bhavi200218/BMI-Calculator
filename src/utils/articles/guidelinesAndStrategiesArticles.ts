@@ -1989,43 +1989,43 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
 
       <h2>How Body Weight Affects Blood Pressure</h2>
       <p>Extra body fat requires extra blood flow. Your heart must pump more blood through extra blood vessels. Body fat also signals your kidneys to hold on to extra salt and water. This raises the fluid volume in your veins and arteries. Blood vessels can also become stiffer when body fat is high.</p>
-      <p>The good news is simple. Clinical trials show that <strong>losing 1 kilogram (about 2.2 pounds) can lower your systolic blood pressure by about 1 point</strong>.</p>
+      <p>The good news is simple. According to Table 15 of the 2017 ACC/AHA High Blood Pressure Guidelines, <strong>losing 1 kilogram (about 2.2 pounds) of body weight is expected to reduce systolic blood pressure by approximately 1 mm Hg</strong> for adults who are overweight.</p>
 
       <h2>Blood Pressure Categories</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
         <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
             <tr class="border-b border-[#e6e6e6] bg-[#f5f5f5] font-bold text-[#1f2937]">
-              <th class="p-3 border border-[#e6e6e6]">Category. </th>
-              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Systolic (Top). </th>
-              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Diastolic (Bottom). </th>
-              <th class="p-3 border border-[#e6e6e6]">Daily Steps to Take. </th>
+              <th class="p-3 border border-[#e6e6e6]">Category</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Systolic (Top)</th>
+              <th class="p-3 border border-[#e6e6e6] text-blue-500 font-bold">Diastolic (Bottom)</th>
+              <th class="p-3 border border-[#e6e6e6]">Daily Steps to Take</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[#e6e6e6] font-mono">
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">Normal. </td>
-              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Under 120. </td>
-              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Under 80. </td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">Eat whole foods, stay active, and sleep well. </td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">Normal</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Under 120 and</td>
+              <td class="p-3 border border-[#e6e6e6] text-emerald-600 font-bold">Under 80</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Eat whole foods, stay active, and sleep well.</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-amber-500 font-bold">Elevated. </td>
-              <td class="p-3 border border-[#e6e6e6] text-amber-500 font-bold">120 to 129. </td>
-              <td class="p-3 border border-[#e6e6e6]">Under 80. </td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">Cut down on table salt, drink water, and walk daily. </td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-amber-500 font-bold">Elevated</td>
+              <td class="p-3 border border-[#e6e6e6] text-amber-500 font-bold">120 to 129 and</td>
+              <td class="p-3 border border-[#e6e6e6]">Under 80</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Cut down on table salt, drink water, and walk daily.</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-500 font-bold">Stage 1 High. </td>
-              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">130 to 139. </td>
-              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">80 to 89. </td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">Aim to lose extra weight and track your pressure at home. </td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-500 font-bold">Stage 1 High</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">130 to 139 or</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-500 font-bold">80 to 89</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">Aim to lose extra weight and track your pressure at home.</td>
             </tr>
             <tr>
-              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-600 font-bold">Stage 2 High. </td>
-              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">140 or higher. </td>
-              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">90 or higher. </td>
-              <td class="p-3 border border-[#e6e6e6] font-sans">See your doctor promptly and begin healthy habits. </td>
+              <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-rose-600 font-bold">Stage 2 High</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">140 or higher or</td>
+              <td class="p-3 border border-[#e6e6e6] text-rose-600 font-bold">90 or higher</td>
+              <td class="p-3 border border-[#e6e6e6] font-sans">See your doctor promptly and begin healthy habits.</td>
             </tr>
           </tbody>
         </table>
@@ -2059,7 +2059,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       <p><strong>सिस्टोलिक (ऊपरी संख्या)</strong> दिल के धड़कने के समय धमनियों पर पड़ने वाले अधिकतम दबाव को दर्शाता है, जबकि <strong>डायस्टोलिक (निचली संख्या)</strong> धड़कनों के बीच दिल के विश्राम के समय का दबाव है। सामान्य स्वस्थ रक्तचाप 120/80 mmHg से कम होना चाहिए।</p>
 
       <h2>वजन और रक्तचाप का सीधा संबंध</h2>
-      <p>अध्ययनों के अनुसार, प्रत्येक 1 किलोग्राम वजन कम करने से सिस्टोलिक रक्तचाप में लगभग 1 mmHg की प्राकृतिक कमी आती है। DASH डाइट अपनाकर, नमक की मात्रा घटाकर और पोटेशियम से भरपूर खाद्य पदार्थ (केला, पालक, दालें) खाकर रक्तचाप को नियंत्रित रखा जा सकता है।</p>
+      <p>2017 ACC/AHA दिशानिर्देशों (Table 15) के अनुसार, अधिक वजन वाले वयस्कों में प्रत्येक 1 किलोग्राम वजन कम करने से सिस्टोलिक रक्तचाप में लगभग 1 mmHg की प्राकृतिक कमी दर्ज की जाती है। DASH डाइट अपनाकर, नमक की मात्रा घटाकर और पोटेशियम से भरपूर खाद्य पदार्थ (केला, पालक, दालें) खाकर रक्तचाप को नियंत्रित रखा जा सकता है।</p>
 `,
       "es": `
       <h2>Presión Arterial y Control del Peso Corporal</h2>
