@@ -312,13 +312,13 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
             <tr>
               <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">Untergewicht</td>
               <td class="p-3 border border-[#e6e6e6]">&lt; 18,5</td>
-              <td class="p-3 border border-[#e6e6e6] text-[#464feb]">&lt; 18,0</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb]">&lt; 18,5</td>
               <td class="p-3 border border-[#e6e6e6] font-sans">Nährstoffdefizit, Anämierisiko</td>
             </tr>
             <tr>
               <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">Normalgewicht</td>
               <td class="p-3 border border-[#e6e6e6]">18,5 – 24,9</td>
-              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">18,0 – 22,9</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">18,5 – 22,9</td>
               <td class="p-3 border border-[#e6e6e6] font-sans">Optimaler kardiometabolischer Bereich</td>
             </tr>
             <tr>
@@ -437,13 +437,13 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
             <tr>
               <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">Underweight</td>
               <td class="p-3 border border-[#e6e6e6] text-blue-500">&lt; 18.5 kg/m²</td>
-              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">&lt; 18.0 kg/m²</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">&lt; 18.5 kg/m²</td>
               <td class="p-3 border border-[#e6e6e6] font-sans">Screen for malnutrition, anemia, and micronutrient deficits</td>
             </tr>
             <tr>
               <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">Healthy / Normal Weight</td>
               <td class="p-3 border border-[#e6e6e6] text-blue-500">18.5 – 24.9 kg/m²</td>
-              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">18.0 – 22.9 kg/m²</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">18.5 – 22.9 kg/m²</td>
               <td class="p-3 border border-[#e6e6e6] font-sans text-emerald-600 font-bold">Optimal longevity window; lowest cardiometabolic risk</td>
             </tr>
             <tr>
@@ -526,13 +526,13 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
             <tr>
               <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">कम वजन (अंडरवेट)</td>
               <td class="p-3 border border-[#e6e6e6] text-blue-500">&lt; 18.5</td>
-              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">&lt; 18.0</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">&lt; 18.5</td>
               <td class="p-3 border border-[#e6e6e6] font-sans">कुपोषण, एनीमिया और पोषण संबंधी कमियों की जांच</td>
             </tr>
             <tr>
               <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">स्वस्थ / सामान्य वजन</td>
               <td class="p-3 border border-[#e6e6e6] text-blue-500">18.5 – 24.9</td>
-              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">18.0 – 22.9</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">18.5 – 22.9</td>
               <td class="p-3 border border-[#e6e6e6] font-sans text-emerald-600 font-bold">दीर्घायु व न्यूनतम कार्डियोमेटाबोलिक जोखिम</td>
             </tr>
             <tr>
@@ -595,7 +595,7 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
       "es": `
       <h2>Por Qué la Población India Requiere Límites de IMC Más Bajos</h2>
       <p>Durante décadas, los sistemas de salud internacionales evaluaron el peso corporal con las clasificaciones de la OMS basadas en poblaciones caucásicas (18.5 a 24.9 normal, 25 a 29.9 sobrepeso, &ge; 30 obesidad). Sin embargo, los investigadores observaron que los adultos del sur de Asia desarrollaban diabetes tipo 2 y cardiopatía isquémica con valores de IMC muy inferiores.</p>
-      <p>En respuesta, la OMS y el Consejo Indio de Investigación Médica (ICMR) fijaron puntos de corte específicos: <strong>18.0 a 22.9 kg/m² normal</strong>, <strong>23.0 a 24.9 kg/m² sobrepeso</strong> y <strong>&ge; 25.0 kg/m² obesidad</strong>.</p>
+      <p>En respuesta, la OMS y el Consejo Indio de Investigación Médica (ICMR) fijaron puntos de corte específicos: <strong>18.5 a 22.9 kg/m² normal</strong>, <strong>23.0 a 24.9 kg/m² sobrepeso</strong> y <strong>&ge; 25.0 kg/m² obesidad</strong>.</p>
 
       <h2>Comparativa: Criterios Internacionales vs. Criterios para Población India (ICMR)</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
@@ -612,13 +612,13 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
             <tr>
               <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">Bajo peso</td>
               <td class="p-3 border border-[#e6e6e6]">&lt; 18.5</td>
-              <td class="p-3 border border-[#e6e6e6] text-[#464feb]">&lt; 18.0</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb]">&lt; 18.5</td>
               <td class="p-3 border border-[#e6e6e6] font-sans">Descartar anemia y déficit nutricional</td>
             </tr>
             <tr>
               <td class="p-3 border border-[#e6e6e6] font-sans font-semibold text-emerald-600 font-bold">Peso saludable</td>
               <td class="p-3 border border-[#e6e6e6]">18.5 – 24.9</td>
-              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">18.0 – 22.9</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">18.5 – 22.9</td>
               <td class="p-3 border border-[#e6e6e6] font-sans text-emerald-600 font-bold">Rango óptimo cardiometabólico</td>
             </tr>
             <tr>
@@ -648,7 +648,7 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
 `,
       "fr": `
       <h2>Pourquoi les Seuils d'IMC sont Réduits pour les Populations Asiatiques</h2>
-      <p>Les études épidémiologiques ont démontré que les personnes d'origine sud-asiatique présentent un risque cardiométabolique élevé à des valeurs d'IMC considérées comme normales en Occident. L'OMS et l'ICMR recommandent donc les seuils suivants : <strong>18,0 à 22,9 kg/m² pour le poids normal</strong>, <strong>23,0 à 24,9 kg/m² pour le surpoids</strong> et <strong>&ge; 25,0 kg/m² pour l'obésité</strong>.</p>
+      <p>Les études épidémiologiques ont démontré que les personnes d'origine sud-asiatique présentent un risque cardiométabolique élevé à des valeurs d'IMC considérées comme normales en Occident. L'OMS et l'ICMR recommandent donc les seuils suivants : <strong>18,5 à 22,9 kg/m² pour le poids normal</strong>, <strong>23,0 à 24,9 kg/m² pour le surpoids</strong> et <strong>&ge; 25,0 kg/m² pour l'obésité</strong>.</p>
 
       <h2>Comparatif des Seuils d'IMC : OMS Global vs. ICMR Asie</h2>
       <div class="my-6 overflow-x-auto rounded-xl border border-[#e6e6e6] bg-[var(--card)] p-4">
@@ -665,7 +665,7 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
             <tr>
               <td class="p-3 border border-[#e6e6e6] font-sans font-semibold">Poids normal</td>
               <td class="p-3 border border-[#e6e6e6]">18,5 – 24,9</td>
-              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">18,0 – 22,9</td>
+              <td class="p-3 border border-[#e6e6e6] text-[#464feb] font-bold">18,5 – 22,9</td>
               <td class="p-3 border border-[#e6e6e6] font-sans text-emerald-600 font-bold">Zone optimale de longévité</td>
             </tr>
             <tr>
@@ -690,7 +690,7 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
       "de": `
       <h2>Warum für Indien gesonderte BMI-Richtwerte gelten</h2>
       <p>Das Y-Y-Paradoxon belegt, dass Menschen südasiatischer Herkunft bei gleichem BMI einen deutlich höheren viszeralen Fettanteil aufweisen, weshalb Übergewicht bereits ab 23,0 kg/m² definiert wird.</p>
-      <p>Das Indian Council of Medical Research (ICMR) und die Weltgesundheitsorganisation legten daher fest: <strong>18,0 bis 22,9 kg/m² Normalgewicht</strong>, <strong>23,0 bis 24,9 kg/m² Übergewicht</strong> und <strong>&ge; 25,0 kg/m² Adipositas</strong>.</p>
+      <p>Das Indian Council of Medical Research (ICMR) und die Weltgesundheitsorganisation legten daher fest: <strong>18,5 bis 22,9 kg/m² Normalgewicht</strong>, <strong>23,0 bis 24,9 kg/m² Übergewicht</strong> und <strong>&ge; 25,0 kg/m² Adipositas</strong>.</p>
 
       <h2>Spezifische Taillenumfang-Grenzwerte</h2>
       <ul>
@@ -701,7 +701,7 @@ export const asianBmiArticles: Record<string, BlogArticleData> = {
       "ko": `
       <h2>아시아인 맞춤형 기준점의 의학적 필요성</h2>
       <p>'마른 비만(Thin-Fat)' 현상으로 인해 아시아 성인은 동일한 BMI에서도 체지방률이 높고 복부 내장 지방이 많아 23.0 kg/m²부터 심대사 위험이 급격히 증가합니다.</p>
-      <p>세계보건기구(WHO)와 인도의학연구위원회(ICMR)의 공식 가이드라인은 <strong>18.0~22.9 kg/m²를 정상 체중</strong>, <strong>23.0~24.9 kg/m²를 과체중</strong>, <strong>&ge; 25.0 kg/m²를 비만</strong>으로 분류합니다.</p>
+      <p>세계보건기구(WHO)와 인도의학연구위원회(ICMR)의 공식 가이드라인은 <strong>18.5~22.9 kg/m²를 정상 체중</strong>, <strong>23.0~24.9 kg/m²를 과체중</strong>, <strong>&ge; 25.0 kg/m²를 비만</strong>으로 분류합니다.</p>
 
       <h2>허리둘레 기준치 및 심대사 예방</h2>
       <ul>

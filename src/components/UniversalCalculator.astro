@@ -1136,13 +1136,17 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
           const week = parseInt(ageVal) || 1;
 
           const diff = curW - preW;
-          const minGain = (week / 40) * 11.5;
-          const maxGain = (week / 40) * 16.0;
+          const isImp = currentUnitSystem === 'imperial';
+          const minGainKg = (week / 40) * 11.5;
+          const maxGainKg = (week / 40) * 16.0;
+          const minGain = isImp ? minGainKg * 2.20462 : minGainKg;
+          const maxGain = isImp ? maxGainKg * 2.20462 : maxGainKg;
+          const unitStr = isImp ? 'lbs' : 'kg';
 
           calculated = {
-            primary: { value: diff.toFixed(1), label: { en: 'Current Gain', es: 'Ganancia Actual', fr: 'Gain Actuel', de: 'Aktuelle Zunahme', ko: '현재 증량 무게', hi: 'वर्तमान वजन बढ़ना' }, unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' },
+            primary: { value: diff.toFixed(1), label: { en: 'Current Gain', es: 'Ganancia Actual', fr: 'Gain Actuel', de: 'Aktuelle Zunahme', ko: '현재 증량 무게', hi: 'वर्तमान वजन बढ़ना' }, unit: unitStr },
             secondary: [
-              { label: { en: 'Target Range for Week', es: 'Rango Recomendado para la Semana', fr: 'Fourchette Cible pour la Semaine', de: 'Empfohlene Zunahme für diese Woche', ko: '해당 주수의 적정 권장 범위', hi: 'सप्ताह के लिए लक्षित सीमा' }, value: `${minGain.toFixed(1)} - ${maxGain.toFixed(1)}`, unit: currentUnitSystem === 'imperial' ? 'lbs' : 'kg' }
+              { label: { en: 'Target Range for Week', es: 'Rango Recomendado para la Semana', fr: 'Fourchette Cible pour la Semaine', de: 'Empfohlene Zunahme für diese Woche', ko: '해당 주수의 적정 권장 범위', hi: 'सप्ताह के लिए लक्षित सीमा' }, value: `${minGain.toFixed(1)} - ${maxGain.toFixed(1)}`, unit: unitStr }
             ]
           };
         }

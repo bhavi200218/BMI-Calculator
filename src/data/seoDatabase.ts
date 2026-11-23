@@ -456,8 +456,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableRows": [
         {
           "col1": "Shorter Adults (< 160 cm / 5 ft 3 in)",
-          "col2": "Standard 2D BMI can score slightly too high",
-          "col3": "3D BMI adjusts score down to match smaller frame volume."
+          "col2": "Standard 2D BMI scores relatively lower",
+          "col3": "Oxford 3D BMI calculates a higher comparison score"
         },
         {
           "col1": "Average Height Adults (170 cm / 5 ft 7 in)",
@@ -466,8 +466,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "col1": "Taller Adults (> 185 cm / 6 ft 1 in)",
-          "col2": "Standard 2D BMI can score slightly too low",
-          "col3": "3D BMI adjusts score to reflect real body volume."
+          "col2": "Standard 2D BMI scores relatively higher",
+          "col3": "Oxford 3D BMI calculates a lower comparison score"
         }
       ],
       "faqs": [
@@ -481,7 +481,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "What do mesh, wireframe, and heatmap modes show?",
-          "answer": "Mesh mode shows your body shape. Wireframe shows geometric lines. Heatmap highlights weight distribution across the body."
+          "answer": "Mesh mode shows your body shape. Wireframe shows geometric lines. Heatmap color represents your overall BMI category; it does not measure anatomical fat distribution or individual body regions."
         },
         {
           "question": "Why is the Oxford 2.5 formula helpful for tall and short people?",
@@ -512,8 +512,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableRows": [
         {
           "col1": "Personas Bajas (< 160 cm)",
-          "col2": "El IMC 2D estándar suele subestimar el resultado",
-          "col3": "El IMC 3D compensa la estatura menor adecuadamente"
+          "col2": "El IMC 2D estándar suele puntuar relativamente más bajo",
+          "col3": "El IMC 3D de Oxford calcula una puntuación comparativa más alta"
         },
         {
           "col1": "Estatura Promedio (170 cm)",
@@ -522,8 +522,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "col1": "Personas Altas (> 185 cm)",
-          "col2": "El IMC 2D estándar suele sobreestimar el exceso de peso",
-          "col3": "El IMC 3D ajusta el volumen tridimensional real"
+          "col2": "El IMC 2D estándar suele puntuar relativamente más alto",
+          "col3": "El IMC 3D de Oxford calcula una puntuación comparativa más baja"
         }
       ],
       "faqs": [
@@ -537,7 +537,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "¿Qué representan los modos Malla, Alambre y Mapa de Calor?",
-          "answer": "El modo sólido muestra la masa corporal, la malla de alambre muestra los contornos estructurales, y el mapa de calor resalta las zonas según el nivel de IMC."
+          "answer": "El modo sólido muestra la masa corporal, la malla de alambre muestra los contornos estructurales, y el color del mapa de calor representa tu categoría general de IMC; no mide la distribución anatómica de grasa ni regiones corporales individuales."
         },
         {
           "question": "¿Es precisa la fórmula de Oxford 2.5 para personas muy altas?",
@@ -568,8 +568,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableRows": [
         {
           "col1": "Personnes de Petite Taille (< 160 cm)",
-          "col2": "L'IMC 2D sous-estime souvent la catégorie",
-          "col3": "L'IMC 3D réajuste le score proportionnellement"
+          "col2": "L'IMC 2D standard donne un score relativement plus bas",
+          "col3": "L'IMC 3D d'Oxford calcule un score comparatif plus élevé"
         },
         {
           "col1": "Taille Moyenne (170 cm)",
@@ -578,8 +578,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "col1": "Personnes de Grande Taille (> 185 cm)",
-          "col2": "L'IMC 2D surestime le niveau de surpoids",
-          "col3": "L'IMC 3D corrige la distorsion volumétrique"
+          "col2": "L'IMC 2D standard donne un score relativement plus élevé",
+          "col3": "L'IMC 3D d'Oxford calcule un score comparatif plus bas"
         }
       ],
       "faqs": [
@@ -593,7 +593,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Que signifient les modes Maillage, Fil de fer et Carte de chaleur ?",
-          "answer": "Le mode solide montre la masse, le fil de fer révèle la structure géométrique, et la carte de chaleur indique les zones d'IMC."
+          "answer": "Le mode solide montre la masse, le fil de fer révèle la structure géométrique, et la couleur de la carte de chaleur représente votre catégorie globale d'IMC ; elle ne mesure pas la répartition anatomique des graisses ni les régions corporelles individuelles."
         },
         {
           "question": "Pourquoi la formule d'Oxford 2.5 est-elle recommandée pour les grands ?",
@@ -624,8 +624,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableRows": [
         {
           "col1": "Kleine Personen (< 160 cm)",
-          "col2": "Standard 2D-BMI zeigt tendenziell zu niedrige Werte",
-          "col3": "3D-Formel gleicht die Körpergröße aus"
+          "col2": "Standard 2D-BMI liefert relativ niedrigere Werte",
+          "col3": "Oxford 3D-BMI errechnet einen höheren Vergleichswert"
         },
         {
           "col1": "Durchschnittliche Größe (170 cm)",
@@ -634,8 +634,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "col1": "Große Personen (> 185 cm)",
-          "col2": "Standard 2D-BMI zeigt oft zu hohe Werte",
-          "col3": "3D-Formel berücksichtigt das dreidimensionale Volumen"
+          "col2": "Standard 2D-BMI liefert relativ höhere Werte",
+          "col3": "Oxford 3D-BMI errechnet einen niedrigeren Vergleichswert"
         }
       ],
       "faqs": [
@@ -649,7 +649,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "Was bedeuten Drahtmodell, Solid-Mesh und Heatmap?",
-          "answer": "Solid-Mesh zeigt die Körperoberfläche, das Drahtmodell zeigt die Gitterstruktur und die Heatmap hebt BMI-Zonen farblich hervor."
+          "answer": "Solid-Mesh zeigt die Körpersilhouette, das Drahtmodell zeigt die Gitterstruktur und die Heatmap stellt Ihre allgemeine BMI-Kategorie farblich dar; sie misst keine anatomische Fettverteilung oder einzelne Körperregionen."
         },
         {
           "question": "Warum ist die Oxford 2.5 Formel für große Menschen genauer?",
@@ -680,8 +680,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableRows": [
         {
           "col1": "단신 성인 (< 160 cm)",
-          "col2": "표준 2D 공식은 상대적으로 낮게 측정됨",
-          "col3": "3D 보정 공식이 올바른 수치 보정"
+          "col2": "표준 2D BMI는 상대적으로 낮게 산출됨",
+          "col3": "옥스포드 3D BMI는 더 높은 비교 수치를 산출함"
         },
         {
           "col1": "평균 신장 (170 cm)",
@@ -690,8 +690,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "col1": "장신 성인 (> 185 cm)",
-          "col2": "표준 2D 공식은 과도하게 높게 측정됨",
-          "col3": "3D 보정 공식이 3차원 부피 왜곡 보정"
+          "col2": "표준 2D BMI는 상대적으로 높게 산출됨",
+          "col3": "옥스포드 3D BMI는 더 낮은 비교 수치를 산출함"
         }
       ],
       "faqs": [
@@ -705,7 +705,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "솔리드, 와이어프레임, 히트맵 모드의 차이는 무엇인가요?",
-          "answer": "솔리드는 체형 실루엣, 와이어프레임은 3D 구조 망, 히트맵은 BMI 범주별 색상 위험도를 시각적으로 표현합니다."
+          "answer": "솔리드는 체형 실루엣, 와이어프레임은 3D 기하학적 구조 망을 나타내며, 히트맵 색상은 전반적인 BMI 범주를 나타냅니다. 이는 신체 부위별 해부학적 지방 분포나 개별 체형 부위를 직접 측정하는 것이 아닙니다."
         },
         {
           "question": "키가 큰 사람에게 옥스포드 2.5 공식이 더 정확한 이유는?",
@@ -736,8 +736,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "tableRows": [
         {
           "col1": "कम ऊंचाई वाले वयस्क (< 160 सेमी)",
-          "col2": "मानक 2D बीएमआई कम स्कोर दिखाता है",
-          "col3": "3D फॉर्मूला सही ऊंचाई अनुपात को समायोजित करता है"
+          "col2": "मानक 2D बीएमआई अपेक्षाकृत कम स्कोर देता है",
+          "col3": "ऑक्सफोर्ड 3D बीएमआई तुलनात्मक रूप से अधिक स्कोर देता है"
         },
         {
           "col1": "औसत ऊंचाई (170 सेमी)",
@@ -746,8 +746,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "col1": "अधिक ऊंचाई वाले वयस्क (> 185 सेमी)",
-          "col2": "मानक 2D बीएमआई अधिक स्कोर दिखाता है",
-          "col3": "3D फॉर्मूला 3D आयतन को संतुलित करता है"
+          "col2": "मानक 2D बीएमआई अपेक्षाकृत अधिक स्कोर देता है",
+          "col3": "ऑक्सफोर्ड 3D बीएमआई तुलनात्मक रूप से कम स्कोर देता है"
         }
       ],
       "faqs": [
@@ -761,7 +761,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         },
         {
           "question": "वायरफ्रेम, मेश और हीटमैप व्यू क्या दर्शाते हैं?",
-          "answer": "मेश शरीर के आकार को दिखाता है, वायरफ्रेम ज्यामितीय लाइनों को दिखाता है, और हीटमैप बीएमआई श्रेणी के अनुसार रंगों से जोखिम क्षेत्र दिखाता है।"
+          "answer": "मेश शरीर के आकार को दिखाता है, वायरफ्रेम ज्यामितीय रेखाओं को दिखाता है, और हीटमैप का रंग आपकी समग्र बीएमआई श्रेणी को दर्शाता है; यह शारीरिक वसा वितरण या शरीर के अलग-अलग अंगों की वसा को नहीं मापता है।"
         },
         {
           "question": "लंबे लोगों के लिए ऑक्सफोर्ड 2.5 फॉर्मूला क्यों बेहतर है?",
