@@ -1746,8 +1746,10 @@ export const calculators: CalculatorConfig[] = [
 
       const diff = curW - preW;
       const isImperial = system === 'imperial';
-      const minTotal = isImperial ? 25 : 11.5;
-      const maxTotal = isImperial ? 35 : 16.0;
+      const minTotalKg = 11.5;
+      const maxTotalKg = 16.0;
+      const minTotal = isImperial ? minTotalKg * 2.20462 : minTotalKg;
+      const maxTotal = isImperial ? maxTotalKg * 2.20462 : maxTotalKg;
 
       const minGain = (week / 40) * minTotal;
       const maxGain = (week / 40) * maxTotal;

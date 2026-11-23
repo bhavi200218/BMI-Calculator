@@ -457,17 +457,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Shorter Adults (< 160 cm / 5 ft 3 in)",
           "col2": "Standard 2D BMI scores relatively lower",
-          "col3": "Oxford 3D BMI calculates a higher comparison score"
+          "col3": "Oxford 3D BMI is relatively higher than Standard BMI"
         },
         {
-          "col1": "Average Height Adults (170 cm / 5 ft 7 in)",
-          "col2": "Standard 2D & 3D BMI produce identical results",
-          "col3": "Both formulas give the same healthy weight ranges."
+          "col1": "Average Height / Crossover Point (~169 cm / 5 ft 7 in)",
+          "col2": "Standard 2D & Oxford 3D BMI values are approximately equal",
+          "col3": "Near this crossover height, both formulas yield matching comparison scores."
         },
         {
           "col1": "Taller Adults (> 185 cm / 6 ft 1 in)",
           "col2": "Standard 2D BMI scores relatively higher",
-          "col3": "Oxford 3D BMI calculates a lower comparison score"
+          "col3": "Oxford 3D BMI is relatively lower than Standard BMI"
         }
       ],
       "faqs": [
@@ -513,17 +513,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Personas Bajas (< 160 cm)",
           "col2": "El IMC 2D estándar suele puntuar relativamente más bajo",
-          "col3": "El IMC 3D de Oxford calcula una puntuación comparativa más alta"
+          "col3": "El IMC 3D de Oxford es relativamente más alto que el IMC estándar"
         },
         {
-          "col1": "Estatura Promedio (170 cm)",
-          "col2": "Alineación de clasificación idéntica",
-          "col3": "Sin diferencia entre la fórmula 2D y 3D"
+          "col1": "Estatura Promedio / Punto de Cruce (~169 cm)",
+          "col2": "Los valores de IMC 2D y 3D son aproximadamente iguales",
+          "col3": "Cerca de esta altura de cruce, ambas fórmulas arrojan puntuaciones de comparación coincidentes."
         },
         {
           "col1": "Personas Altas (> 185 cm)",
           "col2": "El IMC 2D estándar suele puntuar relativamente más alto",
-          "col3": "El IMC 3D de Oxford calcula una puntuación comparativa más baja"
+          "col3": "El IMC 3D de Oxford es relativamente más bajo que el IMC estándar"
         }
       ],
       "faqs": [
@@ -569,17 +569,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Personnes de Petite Taille (< 160 cm)",
           "col2": "L'IMC 2D standard donne un score relativement plus bas",
-          "col3": "L'IMC 3D d'Oxford calcule un score comparatif plus élevé"
+          "col3": "L'IMC 3D d'Oxford est relativement plus élevé que l'IMC standard"
         },
         {
-          "col1": "Taille Moyenne (170 cm)",
-          "col2": "Résultats identiques sur les deux formules",
-          "col3": "Aucune différence de catégorie"
+          "col1": "Taille Moyenne / Point de Croisement (~169 cm)",
+          "col2": "Les valeurs d'IMC 2D et 3D sont approximativement égales",
+          "col3": "Proche de cette taille de croisement, les deux formules produisent des scores comparatifs concordants."
         },
         {
           "col1": "Personnes de Grande Taille (> 185 cm)",
           "col2": "L'IMC 2D standard donne un score relativement plus élevé",
-          "col3": "L'IMC 3D d'Oxford calcule un score comparatif plus bas"
+          "col3": "L'IMC 3D d'Oxford est relativement plus bas que l'IMC standard"
         }
       ],
       "faqs": [
@@ -625,17 +625,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Kleine Personen (< 160 cm)",
           "col2": "Standard 2D-BMI liefert relativ niedrigere Werte",
-          "col3": "Oxford 3D-BMI errechnet einen höheren Vergleichswert"
+          "col3": "Oxford 3D-BMI ist relativ höher als der Standard-BMI"
         },
         {
-          "col1": "Durchschnittliche Größe (170 cm)",
-          "col2": "Identische Ergebnisse bei beiden Formeln",
-          "col3": "Kein Unterschied in der Kategorie"
+          "col1": "Durchschnittsgröße / Schnittpunkt (~169 cm)",
+          "col2": "Standard 2D- und Oxford 3D-Werte sind annähernd gleich",
+          "col3": "Nahe dieser Schnittpunkthöhe liefern beide Formeln übereinstimmende Vergleichswerte."
         },
         {
           "col1": "Große Personen (> 185 cm)",
           "col2": "Standard 2D-BMI liefert relativ höhere Werte",
-          "col3": "Oxford 3D-BMI errechnet einen niedrigeren Vergleichswert"
+          "col3": "Oxford 3D-BMI ist relativ niedriger als der Standard-BMI"
         }
       ],
       "faqs": [
@@ -681,17 +681,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "단신 성인 (< 160 cm)",
           "col2": "표준 2D BMI는 상대적으로 낮게 산출됨",
-          "col3": "옥스포드 3D BMI는 더 높은 비교 수치를 산출함"
+          "col3": "옥스포드 3D BMI는 표준 BMI보다 상대적으로 높게 산출됨"
         },
         {
-          "col1": "평균 신장 (170 cm)",
-          "col2": "두 공식 결과 동일",
-          "col3": "범주 차이 없음 (동일)"
+          "col1": "평균 신장 / 교차 지점 (~169 cm)",
+          "col2": "표준 2D 및 옥스포드 3D BMI 수치가 거의 일치함",
+          "col3": "이 교차 신장 부근에서는 두 공식이 거의 동일한 비교 점수를 산출함"
         },
         {
           "col1": "장신 성인 (> 185 cm)",
           "col2": "표준 2D BMI는 상대적으로 높게 산출됨",
-          "col3": "옥스포드 3D BMI는 더 낮은 비교 수치를 산출함"
+          "col3": "옥스포드 3D BMI는 표준 BMI보다 상대적으로 낮게 산출됨"
         }
       ],
       "faqs": [
@@ -737,17 +737,17 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "कम ऊंचाई वाले वयस्क (< 160 सेमी)",
           "col2": "मानक 2D बीएमआई अपेक्षाकृत कम स्कोर देता है",
-          "col3": "ऑक्सफोर्ड 3D बीएमआई तुलनात्मक रूप से अधिक स्कोर देता है"
+          "col3": "ऑक्सफोर्ड 3D बीएमआई मानक बीएमआई से अपेक्षाकृत अधिक स्कोर देता है"
         },
         {
-          "col1": "औसत ऊंचाई (170 सेमी)",
-          "col2": "दोनों फॉर्मूलों में समान परिणाम",
-          "col3": "कोई अंतर नहीं (समान श्रेणी)"
+          "col1": "औसत ऊंचाई / क्रॉसओवर बिंदु (~169 सेमी)",
+          "col2": "मानक 2D और ऑक्सफोर्ड 3D बीएमआई मान लगभग बराबर हैं",
+          "col3": "इस क्रॉसओवर ऊंचाई के निकट, दोनों फॉर्मूले समान तुलनात्मक स्कोर उत्पन्न करते हैं।"
         },
         {
           "col1": "अधिक ऊंचाई वाले वयस्क (> 185 सेमी)",
           "col2": "मानक 2D बीएमआई अपेक्षाकृत अधिक स्कोर देता है",
-          "col3": "ऑक्सफोर्ड 3D बीएमआई तुलनात्मक रूप से कम स्कोर देता है"
+          "col3": "ऑक्सफोर्ड 3D बीएमआई मानक बीएमआई से अपेक्षाकृत कम स्कोर देता है"
         }
       ],
       "faqs": [
