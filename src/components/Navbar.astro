@@ -127,7 +127,7 @@ const faqUrl = lang === 'en' ? '/#faq' : `/${lang}/#faq`;
 
       <!-- Mobile Menu Button -->
       <button id="mobileMenuBtn" class="lg:hidden w-12 h-12 min-w-[48px] min-h-[48px] rounded-2xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
-        aria-label="Toggle Menu">
+        aria-label="Toggle Menu" aria-expanded="false">
         <svg class="w-5 h-5 text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 7h16M4 12h16M4 17h16" />
         </svg>
@@ -267,12 +267,25 @@ const faqUrl = lang === 'en' ? '/#faq' : `/${lang}/#faq`;
     if (!btn || !mobileMenu || !closeBtn) return;
     
     let isOpen = false;
-    const open = () => { isOpen = true; mobileMenu.classList.remove('hidden'); mobileMenu.classList.add('flex'); };
-    const close = () => { isOpen = false; mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); };
+    const open = () => {
+      isOpen = true;
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+      btn.setAttribute('aria-expanded', 'true');
+    };
+    const close = () => {
+      isOpen = false;
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+      btn.setAttribute('aria-expanded', 'false');
+    };
+    
+    btn.setAttribute('aria-expanded', 'false');
     
     btn.addEventListener('click', (e) => { e.stopPropagation(); isOpen ? close() : open(); });
     closeBtn.addEventListener('click', (e) => { e.stopPropagation(); close(); });
     document.addEventListener('click', (e) => { if (!btn.contains(e.target) && !mobileMenu.contains(e.target)) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && isOpen) close(); });
 
     mobileMenu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
@@ -316,6 +329,8 @@ const faqUrl = lang === 'en' ? '/#faq' : `/${lang}/#faq`;
             if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
               mobileMenu.classList.add('hidden');
               mobileMenu.classList.remove('flex');
+              const mobileBtn = document.getElementById('mobileMenuBtn');
+              if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
             }
 
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
