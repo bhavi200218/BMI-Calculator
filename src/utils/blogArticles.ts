@@ -16,3 +16,17 @@ export const blogArticles: Record<string, BlogArticleData> = {
   ...nutritionAndFitnessArticles,
   ...guidelinesAndStrategiesArticles,
 };
+
+/**
+ * Evaluates whether an article contains substantial, clinically in-depth content
+ * in the specified locale (vs. a placeholder summary or thin stub).
+ */
+export function isSubstantialArticle(slug: string, lang: string): boolean {
+  if (lang === 'en') return true;
+  const art = blogArticles[slug];
+  if (!art || !art.contentHtml || !art.contentHtml[lang]) return false;
+  const len = art.contentHtml[lang].trim().length;
+  if (lang === 'hi') return len >= 500;
+  return len >= 800;
+}
+

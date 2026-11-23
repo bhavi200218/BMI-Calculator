@@ -2,7 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import PageShell from '../../../components/PageShell.astro';
-import { blogArticles } from '../../../utils/blogArticles';
+import { blogArticles, isSubstantialArticle } from '../../../utils/blogArticles';
 import { locales, type Locale } from '../../../utils/calculators';
 
 export function getStaticPaths() {
@@ -92,8 +92,12 @@ function getArticleTopic(slug: string, cat: string): string {
 
 const h = headers[lang] || headers.en;
 
+const isEn = lang === 'en';
 const articleSlugs = Object.keys(blogArticles);
-const articlesList = articleSlugs.map(slug => {
+// Suppress thin placeholder articles on non-English blog listings while preserving genuinely complete translated articles
+const visibleSlugs = isEn ? articleSlugs : articleSlugs.filter(slug => isSubstantialArticle(slug, lang));
+
+const articlesList = visibleSlugs.map(slug => {
   const item = blogArticles[slug];
   const cat = item.category ? (item.category[lang] || item.category.en) : 'Health';
   return {
@@ -269,7 +273,7 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="articlesGrid">
       {articlesList.map(article => (
         <a 
-          href={`/en/blog/${article.slug}/`} 
+          href={`/${lang}/blog/${article.slug}/`} 
           class="group block h-full article-item" 
           data-category={article.category}
           data-topic={article.topicGroup}

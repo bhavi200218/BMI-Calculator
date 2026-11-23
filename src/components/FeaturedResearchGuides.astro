@@ -1,5 +1,5 @@
 ---
-import { blogArticles } from '../utils/blogArticles';
+import { blogArticles, isSubstantialArticle } from '../utils/blogArticles';
 import type { Locale } from '../utils/calculators';
 
 interface Props {
@@ -133,7 +133,7 @@ const guides = featuredSlugs
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {guides.map((guide) => (
       <a
-        href={`/en/blog/${guide.slug}/`}
+        href={isSubstantialArticle(guide.slug, lang) ? `/${lang}/blog/${guide.slug}/` : `/en/blog/${guide.slug}/`}
         class="group block h-full no-underline"
       >
         <article class="h-full p-6 sm:p-7 rounded-3xl border border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-5 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
