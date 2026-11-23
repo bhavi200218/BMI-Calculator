@@ -238,10 +238,18 @@ export const nutritionAndFitnessArticles: Record<string, BlogArticleData> = {
         <li><strong>Fat (30%):</strong> <code>(2,000 &times; 0.30) / 9 kcal/g = 600 / 9 = 67 grams</code></li>
       </ul>
 
+      <h2>Selecting High-Quality Whole Foods for Each Macronutrient</h2>
+      <p>Hitting your target macronutrient distribution is most effective when prioritized through nutrient-dense, minimally processed whole foods:</p>
+      <ul class="my-3 space-y-1.5 list-disc pl-5 text-sm">
+        <li><strong>Quality Protein Sources:</strong> Skinless poultry, wild fish, eggs, Greek yogurt, lentils, tofu, and lean beef supply complete amino acid profiles necessary for muscle repair and satiety.</li>
+        <li><strong>Complex Carbohydrate Sources:</strong> Rolled oats, brown rice, quinoa, sweet potatoes, legumes, and fresh berries provide sustained glycogen replenishment alongside dietary fiber for glycemic stability.</li>
+        <li><strong>Essential Dietary Fats:</strong> Extra virgin olive oil, avocados, raw nuts, seeds, and fatty fish (salmon, sardines) deliver essential omega-3 fatty acids critical for hormonal regulation and cellular health.</li>
+      </ul>
+
       <h2>Scientific References</h2>
-      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>Atwater WO. <em>Principles of Nutrition and Nutritive Value of Food.</em> USDA Farmers' Bulletin 1902; 142.</li>
-        <li>Thomas DT, Erdman KA, Burke LM. <em>Position of the Academy of Nutrition and Dietetics: Nutrition and Athletic Performance.</em> J Acad Nutr Diet 2016; 116(3):501-528.</li>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-2">
+        <li class="my-1.5"><a href="https://naldc.nal.usda.gov/catalog/IND43894451" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--accent)] underline font-medium text-[var(--foreground)]/90 transition-colors">Atwater WO. <em>Principles of Nutrition and Nutritive Value of Food.</em> USDA Farmers' Bulletin 1902; 142 &rarr;</a></li>
+        <li class="my-1.5"><a href="https://pubmed.ncbi.nlm.nih.gov/26920240/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--accent)] underline font-medium text-[var(--foreground)]/90 transition-colors">Thomas DT, Erdman KA, Burke LM. <em>Position of the Academy of Nutrition and Dietetics: Nutrition and Athletic Performance.</em> J Acad Nutr Diet 2016; 116(3):501-528 (PMID: 26920240) &rarr;</a></li>
       </ul>
 `,
       "hi": `

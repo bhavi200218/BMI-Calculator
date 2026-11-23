@@ -2048,10 +2048,10 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
       <p>Sixth, track your numbers at home. Use a simple arm cuff monitor. Sit quietly for five minutes before you test. Keep your feet flat on the floor. Rest your arm on a table at heart level. Do not speak while the cuff fills with air. Write your numbers down with the time and date. Share these notes with your doctor at your next visit.</p>
       <p>Remember, small changes add up. Eating more greens, walking each day, and keeping a steady sleep routine all protect your heart.</p>
 
-      <h2>Medical Sources and Guidelines</h2>
-      <ul class="text-xs text-[var(--muted-foreground)] space-y-1">
-        <li>American Heart Association and American College of Cardiology High Blood Pressure Guidelines. </li>
-        <li>National Institutes of Health DASH Diet Research Studies. </li>
+      <h2>Scientific References and Clinical Sources</h2>
+      <ul class="text-xs text-[var(--muted-foreground)] space-y-2">
+        <li class="my-1.5"><a href="https://pubmed.ncbi.nlm.nih.gov/29146535/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--accent)] underline font-medium text-[var(--foreground)]/90 transition-colors">Whelton PK, Carey RM, Aronow WS, et al. <em>2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults.</em> J Am Coll Cardiol 2018; 71(19):e127-e248 (PMID: 29146535) &rarr;</a></li>
+        <li class="my-1.5"><a href="https://pubmed.ncbi.nlm.nih.gov/11136953/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--accent)] underline font-medium text-[var(--foreground)]/90 transition-colors">Sacks FM, Svetkey LP, Vollmer WM, et al. <em>Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet.</em> N Engl J Med 2001; 344(1):3-10 (PMID: 11136953) &rarr;</a></li>
       </ul>
 `,
       "hi": `
