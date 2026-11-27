@@ -379,8 +379,8 @@ const webPageSchema = {
     "audienceType": "GeneralPublic"
   },
   "aspect": "Health screening, body metrics, and mathematical calculations",
-  "datePublished": "2026-01-15T00:00:00Z",
-  "dateModified": "2026-11-20T00:00:00Z",
+  "datePublished": "2026-10-15T00:00:00Z",
+  "dateModified": "2026-11-25T00:00:00Z",
   "author": {
     "@type": "Person",
     "name": "Bhawanshi Dosi",
@@ -554,8 +554,17 @@ const howToSchema = isCalculatorPage ? {
 		<meta name="description" content={seoDescription} />
 		<meta name="keywords" content={seoKeywords} />
 		<meta name="robots" content={robots} />
-		<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-		<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		{robots.includes('noindex') || isErrorPage ? (
+			<>
+				<meta name="googlebot" content="noindex, nofollow" />
+				<meta name="bingbot" content="noindex, nofollow" />
+			</>
+		) : (
+			<>
+				<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+				<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+			</>
+		)}
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-title" content="Real BMI" />

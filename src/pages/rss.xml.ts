@@ -14,7 +14,7 @@ export const GET: APIRoute = async () => {
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');
-    const pubDate = art.datePublished ? new Date(art.datePublished).toUTCString() : new Date('2026-01-15').toUTCString();
+    const pubDate = art.datePublished ? new Date(art.datePublished).toUTCString() : new Date('2026-10-15').toUTCString();
     const link = `https://realbmicalculator.com/en/blog/${slug}/`;
 
     return `    <item>

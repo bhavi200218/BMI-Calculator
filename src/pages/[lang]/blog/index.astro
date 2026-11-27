@@ -16,7 +16,7 @@ const lang = (params.lang || 'en') as Locale;
 const headers = {
   en: { 
     title: "Evidence-Based Health Articles", 
-    desc: "Explore educational articles on BMI interpretation, metabolic energy expenditure, body composition, and cardiovascular fitness based on published WHO and CDC standards." 
+    desc: "Read clear guides on BMI, daily calories, and body health. All articles use trusted WHO and CDC standards to help you track your health." 
   },
   es: { 
     title: "Artículos de Salud Basados en Evidencia", 
@@ -103,8 +103,8 @@ const articlesList = visibleSlugs.map(slug => {
     category: cat,
     topicGroup: getArticleTopic(slug, item.category?.en || cat),
     description: item.description ? (item.description[lang] || item.description.en) : '',
-    datePublished: item.datePublished || '2026-01-15',
-    dateModified: item.dateModified || '2026-10-21',
+    datePublished: item.datePublished || '2026-10-15',
+    dateModified: item.dateModified || '2026-11-25',
   };
 });
 

@@ -3,8 +3,8 @@ import type { BlogArticleData } from './types';
 
 export const bmiArticles: Record<string, BlogArticleData> = {
   "what-is-bmi": {
-  datePublished: "2026-01-15",
-  dateModified: "2026-10-25",
+  datePublished: "2026-10-15",
+  dateModified: "2026-11-25",
   title: {
     en: "What is BMI? Definition, Formula & Standards",
     hi: "बीएमआई क्या है? परिभाषा, फॉर्मूला और मानक",

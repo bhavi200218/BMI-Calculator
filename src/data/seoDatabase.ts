@@ -4469,7 +4469,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
       "title": "Calorie Calculator – Daily Calorie Needs & Deficit Tool",
       "intro": "Use our free Calorie Calculator to plan your daily meals and weight goals. It estimates how many calories you burn each day based on your body and workouts. You can easily see how small calorie changes affect your weight over time.",
       "formulaTitle": "Calorie Deficit Math & Daily Targets",
-      "formulaDesc": "Daily Target = Maintenance Calories - Planned Deficit. Eating 500 calories below maintenance each day creates a 3,500-calorie deficit per week, which equals about one pound of fat loss.",
+      "formulaDesc": "Daily Target = Maintenance Calories - Planned Deficit. Eating 500 calories below maintenance creates a 3,500-calorie deficit each week. This equals about one pound of fat loss.",
       "formulaCode": "Target Calories = Maintenance - Daily Deficit",
       "tableTitle": "Example Calorie Differences & Weight-Change Math",
       "tableRows": [
@@ -6575,7 +6575,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Cardiovascular Physiology",
       "title": "Karvonen Calculator – Heart Rate Reserve & Cardio Zones",
-      "intro": "Determine your personal aerobic and anaerobic training zones using the Heart Rate Reserve (HRR) methodology. By combining your age with your baseline resting pulse, this tool provides customized exertion ranges for fat oxidation, stamina development, and high-intensity interval training.",
+      "intro": "Find your personal heart rate zones using the Karvonen formula. The tool combines your age with your resting heart rate. You get custom targets for fat burn, endurance, and cardio workouts.",
       "formulaTitle": "Heart Rate Reserve Equation",
       "formulaDesc": "Target Exertion = [(Max Pulse - Resting Pulse) × % Intensity] + Resting Pulse. Maximum rate is estimated as 220 minus age, with reserve representing the span between baseline rest and peak effort.",
       "formulaCode": "THR = (HRR × Intensity%) + Resting HR",
@@ -6853,7 +6853,7 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
     "en": {
       "eyebrow": "Strength Conditioning Science",
       "title": "1RM Calculator – One Rep Max Bench, Squat & Deadlift",
-      "intro": "Find your one-rep max with our free 1RM Calculator. It estimates the heaviest weight you can lift for a single rep on the bench press, squat, or deadlift using the validated Epley, Brzycki, and Lander formulas, along with a full 10-tier training percentages chart.",
+      "intro": "Find your one-rep max with our free 1RM Calculator. It estimates your top lift on the bench press, squat, or deadlift. The tool uses trusted formulas like Epley, Brzycki, and Lander. You also get a complete training percentage chart.",
       "formulaTitle": "One-Rep Max Calculation Formulas: Epley, Brzycki & Lander",
       "formulaDesc": "Predict your true maximal single lift safely from repetition testing using three established mathematical models:\\n• Epley Formula (1985): 1RM = Weight × (1 + Reps / 30)\\n• Brzycki Formula (1993): 1RM = Weight × [36 / (37 - Reps)]\\n• Lander Formula (1985): 1RM = (100 × Weight) / (101.3 - 2.67123 × Reps)\\nThese submaximal formulas protect joints and ligaments by preventing dangerous single-rep maximum attempts to failure.",
       "formulaCode": "Epley: W×(1+R/30) | Brzycki: W×(36/(37-R)) | Lander: (100×W)/(101.3-2.67123×R)",
