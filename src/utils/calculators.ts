@@ -258,59 +258,6 @@ export const calculators: CalculatorConfig[] = [
     }
   },
   {
-    slug: '3d-body-visualizer',
-    name: {
-      en: '3D Body Visualizer',
-      es: 'Visualizador Corporal 3D',
-      fr: 'Visualiseur Corporel 3D',
-      de: '3D Body Visualizer',
-      ko: '3D 바디 비주얼라이저',
-      hi: '3D बॉडी विजुअलाइज़र'
-    },
-    title: {
-      en: '3D Body Visualizer & 3D BMI Calculator Online – BMI Visualizer Tool',
-      es: 'Visualizador Corporal 3D y Calculadora IMC 3D Online',
-      fr: 'Visualiseur Corporel 3D et Calculateur IMC 3D en Ligne',
-      de: '3D Body Visualizer & 3D BMI Rechner Online',
-      ko: '3D 바디 비주얼라이저 & 온라인 3D BMI 계산기',
-      hi: '3D बॉडी विजुअलाइज़र और ऑनलाइन 3D बीएमआई कैलकुलेटर'
-    },
-    description: {
-      "en": "Free 3D Body Visualizer & 3D BMI Calculator online. View interactive 360° front, side & back 3D body type avatar model, wireframe, and BMI heatmap modes with real-time sliders. 100% free with browser-based calculations.",
-      "es": "Visualizador corporal 3D interactivo y calculadora de IMC 3D en línea gratuita. Observa tu modelo de avatar 3D en 360° con vistas frontal, lateral y posterior, modo alambre y mapa de calor con deslizadores en tiempo real. 100% gratuito con cálculos en navegador.",
-      "fr": "Visualiseur corporel 3D gratuit et calculateur d'IMC 3D en ligne. Visualisez votre avatar 3D à 360° de face, de profil et de dos en modes maillage, fil de fer et carte thermique avec curseurs en temps réel. 100% gratuit et axé sur la confidentialité.",
-      "de": "Kostenloser 3D Body Visualizer & 3D BMI Rechner online. Betrachten Sie Ihr interaktives 360° 3D-Körpermodell von vorne, der Seite und von hinten mit Drahtmodell und Heatmap über Echtzeit-Regler. 100% kostenlos direkt im Browser.",
-      "ko": "무료 온라인 3D 바디 비주얼라이저 및 3D BMI 계산기. 실시간 슬라이더 조작을 통해 360° 전면, 측면, 후면 3D 아바타, 와이어프레임 및 BMI 히트맵을 확인하세요. 개인정보 수집 없는 100% 무료 도구입니다.",
-      "hi": "मुफ़्त 3D बॉडी विजुअलाइज़र और ऑनलाइन 3D बीएमआई कैलकुलेटर। रियल-टाइम स्लाइडर्स के साथ 360° फ्रंट, साइड और बैक 3D अवतार मॉडल, वायरफ्रेम और बीएमआई हीटमैप मोड में अपना शरीर तुरंत देखें। 100% मुफ़्त और ब्राउज़र-आधारित गणना।"
-    },
-    inputs: [
-      { id: 'weight', label: L.weight, type: 'number' },
-      { id: 'height', label: L.height, type: 'number' },
-      { id: 'age', label: L.age, type: 'number' },
-      { id: 'gender', label: L.gender, type: 'select', options: [{ value: 'male', label: L.male }, { value: 'female', label: L.female }] }
-    ],
-    calculate: (inputs, system) => {
-      let w = parseFloat(inputs.weight) || 0;
-      let h = parseFloat(inputs.height) || 0;
-      if (system === 'imperial') {
-        w = w * 0.453592;
-        h = h * 2.54;
-      }
-      const hM = h / 100;
-      const stdBmi = hM > 0 ? w / (hM * hM) : 0;
-      const newBmi = hM > 0 ? (1.3 * w) / Math.pow(hM, 2.5) : 0;
-      const diff = newBmi - stdBmi;
-
-      return {
-        primary: { value: newBmi.toFixed(1), label: { en: '3D Height-Adjusted BMI', es: 'IMC 3D Ajustado', fr: 'IMC 3D Ajusté', de: '3D-Höhen-BMI', ko: '3D 신장 보정 BMI', hi: '3D ऊंचाई-समायोजित बीएमआई' } },
-        secondary: [
-          { label: { en: 'Standard BMI', es: 'IMC Estándar', fr: 'IMC Standard', de: 'Standard-BMI', ko: '표준 BMI', hi: 'मानक बीएमआई' }, value: stdBmi.toFixed(1) },
-          { label: { en: '3D Volume Scale Factor', es: 'Escala Volumétrica 3D', fr: 'Échelle Volumétrique 3D', de: 'Volumen-Skalierungsfaktor', ko: '3D 볼륨 스케일 팩터', hi: '3D वॉल्यूम स्केल फैक्टर' }, value: (newBmi > 0 ? (newBmi / 22.5).toFixed(2) : '0.00'), unit: 'x' }
-        ]
-      };
-    }
-  },
-  {
     slug: 'bmi-calculator-for-indians',
     name: {
       en: 'BMI Calculator for Indians',
@@ -1677,47 +1624,6 @@ export const calculators: CalculatorConfig[] = [
           { label: { en: '90% 1RM Heavy Strength (3 Reps)', es: '90% del Máximo (3 Reps)', fr: '90% du 1RM (3 Reps)', de: '90% 1RM (3 Wdh)', ko: '90% 훈련 무게 (3회)', hi: '90% 1RM Target' }, value: Math.round(epley1RM * 0.90), unit: unitStr },
           { label: { en: '85% 1RM Muscle Hypertrophy (5 Reps)', es: '85% del Máximo (5 Reps)', fr: '85% du 1RM (5 Reps)', de: '85% 1RM (5 Wdh)', ko: '85% 훈련 무게 (5회)', hi: '85% 1RM Target' }, value: Math.round(epley1RM * 0.85), unit: unitStr },
           { label: { en: '75% 1RM Endurance Volume (10 Reps)', es: '75% del Máximo (10 Reps)', fr: '75% du 1RM (10 Reps)', de: '75% 1RM (10 Wdh)', ko: '75% 훈련 무게 (10회)', hi: '75% 1RM Target' }, value: Math.round(epley1RM * 0.75), unit: unitStr }
-        ]
-      };
-    }
-  },
-  {
-    slug: 'one-rep-max-calculator',
-    name: { en: 'Bench Press 1RM Calculator', es: 'Calculadora 1RM Press de Banca', fr: 'Calculateur 1RM Développé Couché', de: 'Bankdrücken 1RM Rechner', ko: '벤치프레스 1RM 계산기', hi: 'बेंच प्रेस 1RM कैलकुलेटर' },
-    title: { en: 'Bench Press 1RM Calculator – One Rep Max (Epley & Brzycki)', es: 'Calculadora 1RM Press de Banca – Epley y Brzycki Fuerza Máxima', fr: 'Calculateur 1RM Développé Couché – Epley et Brzycki Force Max', de: 'Bankdrücken 1RM Rechner – Epley & Brzycki Maximalkraft', ko: '벤치프레스 1RM 계산기 – 무료 Epley 공식 1회 최대 중량', hi: 'बेंच प्रेस 1RM कैलकुलेटर - वन रेप मैक्स (एपले एवं ब्रज़िकी)' },
-    description: {
-      "en": "Free One-Rep Max Calculator & Bench Press 1RM Tool. Estimate max lift capacity, 5RM, 10RM strength levels, and training percentages based on weight lifted and reps completed with privacy-focused, browser calculations.",
-      "es": "Calculadora gratuita de 1RM y herramienta de press de banca. Estima tu capacidad máxima de levantamiento, niveles de fuerza 5RM y 10RM, y porcentajes de entrenamiento según peso y repeticiones con cálculos privados en el navegador.",
-      "fr": "Calculateur gratuit de 1RM et outil de développé couché. Estimez votre capacité maximale de soulevé, vos niveaux 5RM et 10RM, et vos pourcentages d'entraînement selon le poids et les répétitions avec calculs sur navigateur.",
-      "de": "Kostenloser Maximalkraft-Rechner (1RM & Bankdrücken Tool). Schätzen Sie Ihre maximale Hebekapazität, 5RM- und 10RM-Kraftwerte sowie Trainings-Prozentsätze basierend auf Gewicht und Wiederholungen datenschutzorientiert im Browser.",
-      "ko": "무료 1회 최대 중량 및 벤치프레스 1RM 도구. 들어올린 중량과 반복 횟수를 바탕으로 최대 중량 수행 능력, 5RM, 10RM 근력 수준 및 훈련 비율(%)을 계산하세요. 가입 없는 100% 무료 도구.",
-      "hi": "मुफ़्त वन-रेप मैक्स कैलकुलेटर और बेंच प्रेस 1RM टूल। उठाए गए वजन और पूरी की गई पुनरावृत्तियों के आधार पर अधिकतम लिफ्ट क्षमता, 5RM, 10RM शक्ति स्तर और प्रशिक्षण प्रतिशत का अनुमान लगाएं। मुफ़्त और गोपनीयता-केंद्रित।"
-    },
-    inputs: [
-      { id: 'weight', label: { en: 'Weight Lifted', es: 'Peso Levantado', fr: 'Charge Soulevée', de: 'Gewicht', ko: '리프팅 무게', hi: 'उठाया गया वजन' }, type: 'number' },
-      { id: 'age', label: { en: 'Reps Performed', es: 'Repeticiones', fr: 'Répétitions', de: 'Wiederholungen', ko: '반복 횟수(Reps)', hi: 'रेप्स' }, type: 'number' }
-    ],
-    calculate: (inputs, system) => {
-      const w = parseFloat(inputs.weight) || 0;
-      const r = parseInt(inputs.age) || 1;
-
-      // Epley Formula: 1RM = W * (1 + R/30)
-      const epley1RM = w * (1 + (r / 30));
-      // Brzycki Formula: 1RM = W * (36 / (37 - R))
-      const brzycki1RM = r < 37 ? w * (36 / (37 - r)) : epley1RM;
-      // Lander Formula: (100 * W) / (101.3 - 2.67123 * R)
-      const lander1RM = (100 * w) / Math.max(1, 101.3 - (2.67123 * r));
-
-      const unitStr = system === 'imperial' ? 'lbs' : 'kg';
-
-      return {
-        primary: { value: Math.round(epley1RM), label: { en: 'Epley Estimated 1RM Bench Press', es: '1RM Estimado Epley', fr: '1RM Estimé Epley', de: 'Epley 1RM Wert', ko: 'Epley 추정 1RM 무게', hi: 'एपले अनुमानित 1RM' }, unit: unitStr },
-        secondary: [
-          { label: { en: 'Brzycki Formula 1RM', es: '1RM Fórmula Brzycki', fr: '1RM Formule Brzycki', de: 'Brzycki 1RM Wert', ko: 'Brzycki 추정 1RM', hi: 'ब्रज़िकी 1RM' }, value: Math.round(brzycki1RM), unit: unitStr },
-          { label: { en: 'Lander Formula 1RM', es: '1RM Fórmula Lander', fr: '1RM Formule Lander', de: 'Lander 1RM Wert', ko: 'Lander 추정 1RM', hi: 'लैंडर 1RM' }, value: Math.round(lander1RM), unit: unitStr },
-          { label: { en: '90% 1RM (3 Rep Heavy Load)', es: '90% del Máximo (3 Reps)', fr: '90% du 1RM (3 Reps)', de: '90% 1RM (3 Wdh)', ko: '90% 훈련 무게 (3회)', hi: '90% 1RM Target' }, value: Math.round(epley1RM * 0.90), unit: unitStr },
-          { label: { en: '85% 1RM (5 Rep Hypertrophy)', es: '85% del Máximo (5 Reps)', fr: '85% du 1RM (5 Reps)', de: '85% 1RM (5 Wdh)', ko: '85% 훈련 무게 (5회)', hi: '85% 1RM Target' }, value: Math.round(epley1RM * 0.85), unit: unitStr },
-          { label: { en: '75% 1RM (10 Rep Volume)', es: '75% del Máximo (10 Reps)', fr: '75% du 1RM (10 Reps)', de: '75% 1RM (10 Wdh)', ko: '75% 훈련 무게 (10회)', hi: '75% 1RM Target' }, value: Math.round(epley1RM * 0.75), unit: unitStr }
         ]
       };
     }

@@ -48,7 +48,7 @@ function runTest(name, fn) {
 }
 
 // 1. 1RM Calculator Tests
-['1rm-calculator', 'one-rep-max-calculator'].forEach(slug => {
+['1rm-calculator'].forEach(slug => {
   LOCALES.forEach(lang => {
     runTest(`1RM [${slug}] [${lang}]: Worked example calculates 1RM with zero BMI contamination`, () => {
       const ex = getWorkedExample(slug, lang);
@@ -367,7 +367,7 @@ if (fs.existsSync(path.resolve('dist'))) {
   });
 
   // 11.3 Contextual article counts and footer across canonical calculators in all 6 locales
-  calculators.filter(c => c.slug !== 'one-rep-max-calculator' && c.slug !== '3d-body-visualizer').forEach(calc => {
+  calculators.forEach(calc => {
     LOCALES.forEach(lang => {
       runTest(`dist/[${lang}] [${calc.slug}]: Exactly 2-3 curated articles rendered & standardized footer`, () => {
         const htmlPath = path.resolve(`dist/${lang}/${calc.slug}/index.html`);
@@ -540,10 +540,10 @@ if (fs.existsSync(path.resolve('dist'))) {
     assert.strictEqual(hubGrid.includes('calculators.map'), false, 'HubGrid must NOT map over unfiltered calculators');
   });
 
-  runTest('12.3 methodology.astro: contains documentation for all 25 calculator slugs', () => {
+  runTest('12.3 methodology.astro: contains documentation for all 23 calculator slugs', () => {
     const methodology = fs.readFileSync(path.resolve('src/pages/[lang]/methodology.astro'), 'utf8');
     const slugs = [...methodology.matchAll(/"slug":\s*"([^"]+)"/g)].map(m => m[1]);
-    assert.strictEqual(slugs.length, 25, 'Methodology matrix must have exactly 25 items');
+    assert.strictEqual(slugs.length, 23, 'Methodology matrix must have exactly 23 items');
     assert.ok(slugs.includes('pregnancy-weight-gain-calculator'), 'Must include pregnancy calculator');
     assert.ok(slugs.includes('diabetes-risk-calculator'), 'Must include diabetes risk calculator');
   });

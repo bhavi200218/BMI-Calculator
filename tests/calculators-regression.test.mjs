@@ -38,8 +38,8 @@ function test(name, testFn) {
 }
 
 // 1. Verify all 25 calculators are loaded
-test('Calculators Registry: Exactly 25 canonical calculators defined', () => {
-  assert.strictEqual(calculators.length, 25, `Expected 25 calculators, found ${calculators.length}`);
+test('Calculators Registry: Exactly 23 canonical calculators defined', () => {
+  assert.strictEqual(calculators.length, 23, `Expected 23 calculators, found ${calculators.length}`);
 });
 
 const calcMap = new Map();

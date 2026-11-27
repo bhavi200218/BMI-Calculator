@@ -2462,32 +2462,22 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "col1": "Untergewicht",
           "col2": "< 18.5 kg/m²",
-          "col3": "Erhöhtes Risiko für Nährstoffmangel, Osteoporose und Infektanfälligkeit"
+          "col3": "Erhöhtes Risiko für Nährstoffmangel und Infektanfälligkeit (< 18.5 kg/m²)"
         },
         {
           "col1": "Normalgewicht (Asiatischer Standard)",
           "col2": "18.5 – 22.9 kg/m²",
-          "col3": "Optimaler Gesundheitsbereich mit niedrigstem kardiometabolischem Grundrisiko"
+          "col3": "Optimaler Gesundheitsbereich für asiatische Erwachsene"
         },
         {
-          "col1": "Übergewicht / Warnstufe 1",
-          "col2": "23.0 – 24.9 kg/m²",
-          "col3": "Früher Interventionspunkt für Insulinresistenz, Hypertonie und Fettleber (NAFLD)"
+          "col1": "Übergewicht / Erhöhtes Risiko",
+          "col2": "23.0 – 27.4 kg/m²",
+          "col3": "Erhöhtes Risiko für kardiometabolische Erkrankungen und Typ-2-Diabetes"
         },
         {
-          "col1": "Prä-Adipositas / Warnstufe 2",
-          "col2": "25.0 – 27.4 kg/m²",
-          "col3": "Moderat erhöhtes kardiometabolisches und atherosklerotisches Gefäßrisiko"
-        },
-        {
-          "col1": "Adipositas Grad I (Hohes Risiko)",
-          "col2": "27.5 – 32.4 kg/m²",
-          "col3": "Deutlich erhöhtes Risiko für Typ-2-Diabetes und koronare Herzkrankheit"
-        },
-        {
-          "col1": "Adipositas Grad II (Schweres Risiko)",
-          "col2": "≥ 32.5 kg/m²",
-          "col3": "Schwere metabolische Belastung mit dringender multidisziplinärer Interventionsindikation"
+          "col1": "Adipositas (Hohes Risiko)",
+          "col2": "≥ 27.5 kg/m²",
+          "col3": "Hohes Adipositasrisiko nach WHO-Kriterien für die Westpazifik-Region"
         }
       ],
       "faqs": [
@@ -2502,14 +2492,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Ab welchem BMI-Wert beginnt bei asiatischen Populationen das Risiko für Typ-2-Diabetes?",
           "answer": "Klinische Daten zeigen, dass das relative Risiko für Insulinresistenz und Typ-2-Diabetes bei Asiaten bereits in der Übergewichtszone zwischen 23,0 und 24,9 kg/m² steil ansteigt, weshalb die WHO diesen Bereich als primären 'Action Trigger' für Lebensstilinterventionen empfiehlt."
-        },
-        {
-          "question": "Welche Rolle spielt der Taillenumfang bei der asiatischen BMI-Beurteilung?",
-          "answer": "Der Taillenumfang ist für asiatische Patienten ein entscheidender komplementärer Marker. Laut ICMR und WHO WPRO liegt das Risiko für zentrale Adipositas bei asiatischen Männern bereits ab 90 cm Taillenumfang und bei asiatischen Frauen ab 80 cm vor (im Vergleich zu 102 cm / 88 cm in westlichen Standards)."
-        },
-        {
-          "question": "Warum kann eine schlank wirkende asiatische Person trotzdem metabolisch gefährdet sein (TOFI-Phänotyp)?",
-          "answer": "Der TOFI-Phänotyp ('Thin on the Outside, Fat on the Inside') beschreibt Personen mit normalem oder niedrigem BMI, die dennoch unbemerkt gefährliches Fett um innere Organe wie Leber und Bauchspeicheldrüse anlagern. Regelmäßige Stoffwechsel-Screenings (Blutzucker, Blutfette) sind daher auch bei normalem BMI ratsam."
         }
       ]
     },
@@ -2600,14 +2582,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "23.0 kg/m² का एक्शन कटऑफ क्या है?",
           "answer": "यह वह सीमा है जहाँ से एशियाई आबादी में चयापचय संबंधी जोखिमों की निगरानी और जीवनशैली में सुधार की सिफारिश की जाती है।"
-        },
-        {
-          "question": "क्या एशियाई बीएमआई पुरुषों और महिलाओं पर समान लागू होता है?",
-          "answer": "हाँ, डब्ल्यूएचओ एशिया-प्रशांत दिशानिर्देश दोनों लिंगों के लिए 23.0 kg/m² की समान कटऑफ सीमा का उपयोग करते हैं।"
-        },
-        {
-          "question": "एशियाई बीएमआई को बेहतर बनाने के लिए क्या कदम उठाएं?",
-          "answer": "कमर के आकार को नियंत्रित करना, सक्रिय जीवनशैली अपनाना और प्रसंस्कृत भोजन कम करना सहायक है।"
         }
       ]
     }
@@ -3308,34 +3282,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "How do I adjust calories for weight loss or muscle gain?",
           "answer": "To lose fat, eat 300 to 500 calories below maintenance each day. To build muscle, eat 200 to 300 calories above maintenance while lifting weights."
-        },
-        {
-          "question": "What is the best way to track daily food intake?",
-          "answer": "Use a simple free app or a paper notebook. Write down what you eat and drink. Measure your food with a small kitchen scale for the first two weeks. This helps you learn true portion sizes."
-        },
-        {
-          "question": "How does sleep and water affect daily calories?",
-          "answer": "Good sleep keeps hunger hormones in balance. Drinking plenty of water helps your body digest food and gives you steady energy for daily walks."
-        },
-        {
-          "question": "What foods keep you full on maintenance calories?",
-          "answer": "Eat plenty of protein and fiber. Foods like eggs, chicken, fish, beans, oats, apples, and green salads help you feel satisfied. They digest slowly and give you steady energy throughout the day."
-        },
-        {
-          "question": "How does daily walking help maintain weight?",
-          "answer": "Walking is easy on your joints. A 30-minute daily walk burns extra calories without making you extra hungry. It keeps your heart healthy and helps your body burn fat."
-        },
-        {
-          "question": "Should you count calories every single day?",
-          "answer": "No, you do not need to count forever. Track your food for two to three weeks to learn portion sizes. Once you know how much food your body needs, you can eat by habit."
-        },
-        {
-          "question": "How does drinking water help with daily calories?",
-          "answer": "Drink a tall glass of cool water before each meal. Water fills your stomach and helps digestion. Often, feelings of thirst get confused with feelings of hunger."
-        },
-        {
-          "question": "What should you do if your weight goes up slightly?",
-          "answer": "Do not panic over daily weight changes. Water, salt, and food weight can cause small shifts of one to three pounds. Watch your weekly trend over three weeks before cutting calories."
         }
       ]
     },
@@ -4876,18 +4822,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Can consuming 2.0+ grams of protein per kg harm kidney function or bone density in healthy adults?",
           "answer": "Extensive clinical research, including systematic reviews from the International Society of Sports Nutrition (ISSN), confirms that high-protein diets (up to 3.0 g/kg/day) do not impair glomerular filtration rate, kidney function, or bone mineral density in healthy individuals. Those with pre-existing renal disease or compromised kidney function must consult a nephrologist for clinical restrictions."
-        },
-        {
-          "question": "How should I distribute my daily protein per kg across meals?",
-          "answer": "Sports scientists recommend consuming 0.40 to 0.55 g of protein per kilogram of body weight per meal (approximately 25 to 45 grams per meal for most adults) distributed evenly across 3 to 5 meals throughout the day. This provides repeated leucine-mediated triggers for the mTORC1 pathway, optimizing round-the-clock muscle protein synthesis."
-        },
-        {
-          "question": "What whole food sources provide the best amino acid profiles to hit athletic and muscle building targets?",
-          "answer": "Complete protein sources rich in branched-chain amino acids (especially leucine) include skinless chicken breast (31g per 100g), wild salmon (25g per 100g), whole eggs (6g each), Greek yogurt (10g per 100g), and cottage cheese (11g per 100g). Plant-based options with complete amino acid profiles include edamame (18g per cup), firm tofu (10g per 100g), tempeh (19g per 100g), and lentil-quinoa combinations."
-        },
-        {
-          "question": "Is the post-workout 'anabolic window' real, and does total daily protein per kg matter more?",
-          "answer": "Consuming protein within 1 to 2 hours post-workout is beneficial, but modern sports nutrition confirms that total daily protein intake per kilogram and consistent per-meal distribution are far more impactful for muscle growth and recovery than rushing to drink a shake within an arbitrary 30-minute window."
         }
       ]
     },
@@ -4929,10 +4863,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "¿Afecta una ingesta elevada de proteínas (2 g/kg o más) la salud renal en personas sanas?",
           "answer": "Los estudios clínicos de la ISSN confirman que ingestas de hasta 2.5-3.0 g/kg/día no causan daño renal ni pérdida ósea en personas sanas. Pacientes con patologías renales previas deben consultar a su especialista."
-        },
-        {
-          "question": "¿Cómo se debe distribuir la proteína diaria por kilogramo entre las comidas?",
-          "answer": "Se aconseja distribuir entre 0.40 y 0.55 g/kg por comida en 3 a 5 tomas a lo largo del día (25-45 g por comida) para estimular periódicamente la vía mTORC1 y la síntesis muscular."
         }
       ]
     },
@@ -6357,16 +6287,8 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
           "answer": "मोस्टेलर सूत्र BSA = √[ (ऊंचाई सेमी × वजन किग्रा) / 3600 ] का उपयोग करके तुरंत वर्ग मीटर निकालता है।"
         },
         {
-          "question": "BSA का उपयोग किन क्षेत्रों में होता है?",
-          "answer": "BSA का उपयोग मुख्य रूप से फिजियोलॉजी, मेडिकल स्केलिंग और नैदानिक अनुसंधानों में किया जाता है।"
-        },
-        {
           "question": "औसत वयस्क का BSA कितना होता है?",
           "answer": "एक औसत वयस्क पुरुष का BSA लगभग 1.9 m² और वयस्क महिला का लगभग 1.6 m² होता है।"
-        },
-        {
-          "question": "क्या इस कैलकुलेटर का उपयोग दवा की खुराक के लिए कर सकते हैं?",
-          "answer": "नहीं, यह एक शैक्षणिक कैलकुलेटर है। दवा की खुराक केवल योग्य चिकित्सक द्वारा तय की जानी चाहिए।"
         }
       ]
     }
@@ -6415,18 +6337,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "Why do elite endurance athletes spend 80% of their training volume in Zone 2?",
           "answer": "Zone 2 endurance training stimulates mitochondrial biogenesis and capillary network growth with minimal nervous system fatigue. This enables athletes to build immense cardiovascular efficiency and fat metabolism without triggering chronic overtraining."
-        },
-        {
-          "question": "How does the Karvonen formula differ from the standard 220-Age equation?",
-          "answer": "The Fox formula (220 - Age) only considers age to estimate peak pulse. The Karvonen formula incorporates your resting heart rate (Heart Rate Reserve = Max HR - Resting HR), producing customized training zones that adjust dynamically as your cardiovascular fitness improves."
-        },
-        {
-          "question": "How long should training intervals last in Zone 4 versus Zone 5?",
-          "answer": "Zone 4 threshold blocks typically range from 8 to 25 minutes of sustained hard effort. In contrast, Zone 5 intervals are held for 30 seconds to 4 minutes due to rapid glycogen depletion, severe lactic acid accumulation, and neuromuscular exhaustion."
-        },
-        {
-          "question": "What is cardiac drift and how does it affect target heart rate zones?",
-          "answer": "Cardiac drift is the upward climb in heart rate during prolonged steady exercise despite keeping the same speed or power. It is caused by dehydration, rising internal body temperature, and reduced plasma volume, requiring you to slow down to remain in your true target zone."
         }
       ]
     },
@@ -6935,18 +6845,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "एरोबिक ज़ोन (70-80%) के क्या फायदे हैं?",
           "answer": "यह ज़ोन आपके स्टैमिना, फेफड़ों की क्षमता और कार्डियोवैस्कुलर सहनशक्ति को मजबूत बनाता है।"
-        },
-        {
-          "question": "क्या उम्र बढ़ने से अधिकतम हृदय गति कम होती है?",
-          "answer": "हाँ, 220 - उम्र सूत्र के अनुसार उम्र बढ़ने के साथ अधिकतम हृदय गति स्वाभाविक रूप से घटती है।"
-        },
-        {
-          "question": "कसरत के दौरान हृदय गति की निगरानी कैसे करें?",
-          "answer": "आप स्मार्टवॉच, चेस्ट स्ट्रैप या वर्कआउट के बीच 10 सेकंड की नब्ज गिनकर हृदय गति जांच सकते हैं।"
-        },
-        {
-          "question": "ज़ोन 1 (50-60%) का उपयोग कब किया जाता है?",
-          "answer": "ज़ोन 1 का उपयोग वार्म-अप, कूल-डाउन और हल्की रिकवरी कसरत के दौरान किया जाता है।"
         }
       ]
     }
@@ -7020,18 +6918,6 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
         {
           "question": "What are the recommended training percentages for strength vs muscle hypertrophy vs muscular endurance?",
           "answer": "Training adaptations depend on load percentage: Train at 85% to 100% of 1RM (1 to 6 reps) for maximal neural strength; train at 65% to 85% of 1RM (6 to 12 reps) for optimal muscular hypertrophy (muscle building); and train at 50% to 65% of 1RM (15 to 25+ reps) for muscular endurance and vascular capillarization."
-        },
-        {
-          "question": "Why is estimating 1RM from submaximal sets safer than performing a true 1-rep maximum test?",
-          "answer": "Attempting a true single-rep maximum to failure subjects joint capsules, spinal erectors, and tendon insertions to extreme mechanical strain. Testing a submaximal set of 3 to 6 reps provides 95%+ statistical accuracy while keeping a buffer against catastrophic injury or form breakdown."
-        },
-        {
-          "question": "Up to how many repetitions are the Epley, Brzycki, and Lander formulas accurate?",
-          "answer": "The formulas are most accurate when tested between 2 and 6 repetitions performed with strict technique to technical failure. When sets exceed 10 repetitions, muscle stamina, fiber type distribution (slow-twitch vs fast-twitch), and lactic acid tolerance distort the estimation."
-        },
-        {
-          "question": "How should I structure my warm-up sets leading up to a heavy working set?",
-          "answer": "Use percentage-based warm-up progressions: (1) Empty barbell for 10–12 reps; (2) 50% of working weight for 5 reps; (3) 70% of working weight for 3 reps; (4) 85% of working weight for 1–2 reps; followed by a 3-minute rest before your primary working set."
         }
       ]
     },
@@ -7685,5 +7571,3 @@ export const seoDatabase: Record<string, Record<string, ToolContent>> = {
 
 // Legacy and alternate slug aliases for 100% data consistency
 seoDatabase['bmi-calculator-india'] = seoDatabase['bmi-calculator-for-indians'];
-seoDatabase['3d-body-visualizer'] = seoDatabase['3d-bmi-calculator'];
-seoDatabase['one-rep-max-calculator'] = seoDatabase['1rm-calculator'];

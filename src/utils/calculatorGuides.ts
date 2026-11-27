@@ -171,15 +171,13 @@ const LIFT_VARIABLE_DEFINITIONS: Record<string, Record<Locale, { name: string; d
 
 export function getInputVariablesGuide(inputs: InputField[] = [], lang: Locale, slug: string = '', toolTitle?: string) {
   const ui = UI_TITLES[lang] || UI_TITLES.en;
-  const is1RM = slug === '1rm-calculator' || slug === 'one-rep-max-calculator';
+  const is1RM = slug === '1rm-calculator';
   const isBmiDomain = [
     'bmi-calculator', 
     '3d-bmi-calculator', 
     'bmi-calculator-for-indians', 
     'asian-bmi-calculator', 
-    'bmi-chart', 
-    'new-bmi-calculator', 
-    '3d-body-visualizer'
+    'bmi-chart'
   ].includes(slug);
 
   const items: VariableGuideItem[] = inputs.map(input => {
@@ -379,7 +377,7 @@ export function getToolInterpretationAndLimitations(slug: string, lang: Locale):
   const isBsa = slug === 'body-surface-area-calculator';
   const isKarvonen = slug === 'karvonen-heart-rate-calculator';
   const isHrZones = slug === 'heart-rate-zone-calculator';
-  const isStrength = ['1rm-calculator', 'one-rep-max-calculator'].includes(slug);
+  const isStrength = slug === '1rm-calculator';
   const isDiabetes = slug === 'diabetes-risk-calculator';
   const isPregnancy = slug === 'pregnancy-weight-gain-calculator';
   const isSpecialty = ['protein-intake-calculator'].includes(slug);

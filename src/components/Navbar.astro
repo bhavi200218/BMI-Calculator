@@ -89,7 +89,7 @@ const faqUrl = `/${lang}/#faq`;
             } else if (cleanPath === '/blog' || cleanPath === '/blog/') {
               targetPath = `/${code}/blog/`;
             } else if (cleanPath.startsWith('/blog/')) {
-              targetPath = `/en${cleanPath}`.replace(/\/+/g, '/');
+              targetPath = `/${code}${cleanPath}`.replace(/\/+/g, '/');
             }
 
             return (
@@ -197,7 +197,7 @@ const faqUrl = `/${lang}/#faq`;
   }
 </style>
 
-<script is:inline>
+<script>
   function applyTheme(isDark) {
     const sun = document.getElementById('sunIcon');
     const moon = document.getElementById('moonIcon');

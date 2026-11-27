@@ -382,7 +382,7 @@ const relatedToolsLabel: Record<string, string> = {
           <div class="p-8 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border-2 border-[var(--accent)]/30 shadow-xl text-center space-y-5">
             <h3 class="text-2xl font-bold font-display uppercase tracking-tight text-[var(--foreground)]">{cta.title}</h3>
             <p class="text-base text-[var(--muted-foreground)] max-w-xl mx-auto font-sans">
-              {cta.descPrefix} <a href={`/${lang}/${cta.targetSlug}/`} class="text-[var(--accent)] underline font-bold hover:text-[var(--foreground)] transition-colors">{cta.linkText}</a> {cta.descSuffix}
+              {cta.descPrefix} <span class="text-[var(--accent)] font-bold">{cta.linkText}</span> {cta.descSuffix}
             </p>
             <a href={`/${lang}/${cta.targetSlug}/`} class="calc-btn-gradient px-8 py-4 rounded-xl font-black uppercase text-xs tracking-widest inline-block transition-all hover:scale-105 active:scale-95 shadow-lg text-white">
               {cta.btnText}

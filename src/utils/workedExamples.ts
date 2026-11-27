@@ -1931,14 +1931,10 @@ const EXAMPLES: Record<string, ToolData> = {
 export function getWorkedExample(slug: string, lang: string, toolTitle?: string): WorkedExample {
   const headings = UI_HEADINGS[lang] || UI_HEADINGS.en;
   
-  // Normalization for visualizer and alias slugs
+  // Normalization for alias slugs
   let normalizedSlug = slug;
-  if (slug === '3d-body-visualizer') {
-    normalizedSlug = '3d-bmi-calculator';
-  } else if (slug === 'bmi-calculator-india') {
+  if (slug === 'bmi-calculator-india') {
     normalizedSlug = 'bmi-calculator-for-indians';
-  } else if (slug === 'one-rep-max-calculator') {
-    normalizedSlug = '1rm-calculator';
   }
 
   const data = EXAMPLES[normalizedSlug] || EXAMPLES['bmi-calculator'];

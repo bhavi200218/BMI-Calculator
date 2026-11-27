@@ -15,32 +15,6 @@ const { slug, lang = 'en', calculator: propCalc } = Astro.props;
 
 const ui = tableUi[lang] || tableUi.en;
 
-function formatFaqAnswer(text: string): { short: string; detailed: string } {
-  if (!text) return { short: '', detailed: '' };
-  const clean = text.trim();
-  const match = clean.match(/^((?:(?:Yes|No|Oui|Non|Ja|Nein|네|아니오|हाँ|नहीं)[.!?।]s+)?.*?(?:[.!?।](?!d)))s+([sS]+)$/);
-  if (match) {
-    return {
-      short: match[1].trim(),
-      detailed: match[2].trim()
-    };
-  }
-  return {
-    short: clean,
-    detailed: ''
-  };
-}
-
-const faqLabels: Record<string, { short: string; detailed: string }> = {
-  en: { short: 'Short Answer:', detailed: 'Detailed Explanation:' },
-  es: { short: 'Respuesta Breve:', detailed: 'Explicación Detallada:' },
-  fr: { short: 'En Bref :', detailed: 'Explication Détaillée :' },
-  de: { short: 'Kurzantwort:', detailed: 'Ausführliche Erklärung:' },
-  ko: { short: '핵심 답변:', detailed: '상세 설명:' },
-  hi: { short: 'संक्षिप्त उत्तर:', detailed: 'विस्तृत व्याख्या:' },
-};
-
-
 const effectiveSlug = (slug === 'new-bmi-calculator') ? '3d-bmi-calculator' : slug;
 const enData = seoDatabase[effectiveSlug]?.['en'] || seoDatabase['bmi-calculator']['en'];
 const langFallback = seoDatabase[effectiveSlug]?.[lang] || seoDatabase['bmi-calculator']?.[lang] || enData;
@@ -82,11 +56,6 @@ const toolSpecificReferences: Record<string, { name: string; url: string }[]> = 
     { name: 'University of Oxford Mathematical Institute: New Body Mass Index Research', url: 'https://www.maths.ox.ac.uk/about-us/life-oxford-mathematics/oxford-mathematicians/nick-trefethen/bmi' },
     { name: 'WHO Body Mass Index Classifications & Global Health Observatory', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' },
     { name: 'CDC Body Mass Index (BMI) Adult Reference Guidelines', url: 'https://www.cdc.gov/bmi/faq/' }
-  ],
-  '3d-body-visualizer': [
-    { name: 'Trefethen LN. A New BMI Calculation (Mathematical Institute, University of Oxford, 2013)', url: 'https://people.maths.ox.ac.uk/trefethen/bmi.html' },
-    { name: 'University of Oxford Mathematical Institute: New Body Mass Index Research', url: 'https://www.maths.ox.ac.uk/about-us/life-oxford-mathematics/oxford-mathematicians/nick-trefethen/bmi' },
-    { name: 'WHO Body Mass Index Classifications & Global Health Observatory', url: 'https://www.who.int/data/gho/data/themes/topics/indicator-groups/GHO/bmi-among-adults' }
   ],
   'bmr-calculator': [
     { name: 'Mifflin MD, St Jeor GE, et al. Predictive BMR Equation Study (AJCN)', url: 'https://pubmed.ncbi.nlm.nih.gov/2305711/' },
@@ -162,12 +131,6 @@ const toolSpecificReferences: Record<string, { name: string; url: string }[]> = 
     { name: 'Epley B. Poundage Chart. Boyd Epley Workout', url: 'https://pubmed.ncbi.nlm.nih.gov/9565931/' },
     { name: 'Brzycki M. Strength Testing—Predicting a One-Rep Max (JOHPERD)', url: 'https://www.tandfonline.com/doi/abs/10.1080/07303084.1993.10606684' }
   ],
-  'one-rep-max-calculator': [
-    { name: 'ACSM Position Stand: Progression Models in Resistance Training for Healthy Adults', url: 'https://pubmed.ncbi.nlm.nih.gov/19204579/' },
-    { name: 'LeSuer DA, et al. Accuracy of Prediction Equations for Estimating 1-RM Performance (J Strength Cond Res)', url: 'https://pubmed.ncbi.nlm.nih.gov/9565931/' },
-    { name: 'Epley B. Poundage Chart. Boyd Epley Workout', url: 'https://pubmed.ncbi.nlm.nih.gov/9565931/' },
-    { name: 'Brzycki M. Strength Testing—Predicting a One-Rep Max (JOHPERD)', url: 'https://www.tandfonline.com/doi/abs/10.1080/07303084.1993.10606684' }
-  ],
   'body-fat-calculator': [
     { name: 'Hodgdon JA, Beckett MB. Prediction of percent body fat for U.S. Navy men and women from body circumferences (Naval Health Res Ctr 1984)', url: 'https://apps.dtic.mil/sti/citations/ADA143896' },
     { name: 'Siri WE. Body composition from fluid spaces and density (Tech Rep Donner Lab Univ Calif 1961)', url: 'https://pubmed.ncbi.nlm.nih.gov/' },
@@ -238,520 +201,6 @@ const numSegments = infographic.segments.length;
 const totalSvgWidth = 760;
 const svgGap = 10;
 const segWidth = (totalSvgWidth - (numSegments - 1) * svgGap) / numSegments;
-
-const proteinQuickChart = {
-  intro: {
-    en: 'Dietary protein targets depend on body mass, baseline activity, and physical conditioning goals. This quick reference table highlights daily protein intake thresholds from sedentary baseline needs up to athletic muscle protein synthesis targets.',
-    es: 'Las metas de ingesta de proteínas dependen de la masa corporal, la actividad física y los objetivos deportivos. Esta tabla de referencia resume los requerimientos diarios desde el nivel basal sedentario hasta la hipertrofia muscular.',
-    fr: 'Les besoins quotidiens en protéines dépendent du poids corporel, du niveau d\'activité et des objectifs de conditionnement physique. Ce tableau récapitule les seuils recommandés du maintien sédentaire à la synthèse musculaire sportive.',
-    de: 'Der tägliche Proteinbedarf richtet sich nach Körpergewicht, Alltagsaktivität und sportlichen Trainingszielen. Diese Referenztabelle veranschaulicht empfohlene Eiweißmengen vom Erhaltungsbedarf bis zum gezielten Muskelaufbau.',
-    ko: '단백질 섭취 권장량은 체중, 일상 활동량 및 근력 훈련 목표에 따라 결정됩니다. 본 참조표는 기본 생존 유지량부터 운동선수 및 근육 합성 극대화를 위한 체중별 단백질 목표치를 단계별로 제시합니다.',
-    hi: 'दैनिक प्रोटीन की मात्रा शरीर के वजन, शारीरिक गतिविधि और फिटनेस लक्ष्यों पर आधारित होती है। यह त्वरित तालिका गतिहीन जीवनशैली से लेकर मांसपेशियों के विकास हेतु अनुशंसित प्रोटीन स्तर दर्शाती है।'
-  },
-  badge: {
-    en: 'Quick Reference Targets',
-    es: 'Metas de Referencia Rápida',
-    fr: 'Repères de Référence Rapide',
-    de: 'Schnellübersicht Protein',
-    ko: '체중별 빠른 단백질 표',
-    hi: 'त्वरित प्रोटीन संदर्भ'
-  },
-  title: {
-    en: 'Daily Protein Intake by Body Weight',
-    es: 'Consumo Diario de Proteínas según el Peso Corporal',
-    fr: 'Apport Quotidien en Protéines selon le Poids',
-    de: 'Täglicher Proteinbedarf nach Körpergewicht',
-    ko: '체중별 일일 단백질 섭취 권장량 요약',
-    hi: 'शरीर के वजन के अनुसार दैनिक प्रोटीन की मात्रा'
-  },
-  note: {
-    en: 'From Sedentary (0.8 g/kg) to Muscle Growth (2.2 g/kg).',
-    es: 'Desde Sedentario (0.8 g/kg) hasta Hipertrofia (2.2 g/kg).',
-    fr: 'De Sédentaire (0,8 g/kg) à Prise de Masse (2,2 g/kg).',
-    de: 'Vom Grundbedarf (0,8 g/kg) bis Muskelaufbau (2,2 g/kg).',
-    ko: '기초(0.8 g/kg)부터 근육 성장(2.2 g/kg)까지 단계별 기준.',
-    hi: 'गतिहीन (0.8 g/kg) से मांसपेशी निर्माण (2.2 g/kg) तक।'
-  },
-  thWeight: {
-    en: 'Body Weight',
-    es: 'Peso Corporal',
-    fr: 'Poids Corporel',
-    de: 'Körpergewicht',
-    ko: '체중',
-    hi: 'शरीर का वजन'
-  },
-  rows: [
-    { weight: '50 kg (110 lbs)', rda: '40 g', fitness: '80 g', muscle: '110 g', perMeal: { en: '25 – 35 g/meal', es: '25 – 35 g/toma', fr: '25 – 35 g/repas', de: '25 – 35 g/Portion', ko: '끼니당 25 – 35g', hi: '25 – 35 ग्रा/भोजन' } },
-    { weight: '60 kg (132 lbs)', rda: '48 g', fitness: '96 g', muscle: '132 g', perMeal: { en: '30 – 40 g/meal', es: '30 – 40 g/toma', fr: '30 – 40 g/repas', de: '30 – 40 g/Portion', ko: '끼니당 30 – 40g', hi: '30 – 40 ग्रा/भोजन' } },
-    { weight: '70 kg (154 lbs)', rda: '56 g', fitness: '112 g', muscle: '154 g', perMeal: { en: '35 – 45 g/meal', es: '35 – 45 g/toma', fr: '35 – 45 g/repas', de: '35 – 45 g/Portion', ko: '끼니당 35 – 45g', hi: '35 – 45 ग्रा/भोजन' } },
-    { weight: '80 kg (176 lbs)', rda: '64 g', fitness: '128 g', muscle: '176 g', perMeal: { en: '40 – 50 g/meal', es: '40 – 50 g/toma', fr: '40 – 50 g/repas', de: '40 – 50 g/Portion', ko: '끼니당 40 – 50g', hi: '40 – 50 ग्रा/भोजन' } },
-    { weight: '90 kg (198 lbs)', rda: '72 g', fitness: '144 g', muscle: '198 g', perMeal: { en: '45 – 55 g/meal', es: '45 – 55 g/toma', fr: '45 – 55 g/repas', de: '45 – 55 g/Portion', ko: '끼니당 45 – 55g', hi: '45 – 55 ग्रा/भोजन' } },
-    { weight: '100 kg (220 lbs)', rda: '80 g', fitness: '160 g', muscle: '220 g', perMeal: { en: '50 – 60 g/meal', es: '50 – 60 g/toma', fr: '50 – 60 g/repas', de: '50 – 60 g/Portion', ko: '끼니당 50 – 60g', hi: '50 – 60 ग्रा/भोजन' } },
-  ]
-};
-
-
-
-
-
-const bodyFatQuickGrid = {
-  intro: {
-    en: 'Body fat percentage reflects the proportion of adipose tissue relative to total body weight according to clinical ACE and ACSM guidelines. Categorizing body composition helps distinguish healthy athletic conditioning from cardiometabolic risk zones.',
-    es: 'El porcentaje de grasa corporal refleja la proporción de tejido adiposo respecto al peso total según las directrices de ACE y ACSM. Clasificar la composición corporal ayuda a diferenciar la forma atlética de los riesgos cardiometabólicos.',
-    fr: 'Le taux de masse grasse mesure la proportion de tissu adipeux par rapport au poids total selon les normes de l\'ACE et de l\'ACSM. Ce classement permet de distinguer une condition physique saine des zones de risque métabolique.',
-    de: 'Der Körperfettanteil spiegelt das Verhältnis von Fettgewebe zum Gesamtgewicht gemäß ACE- und ACSM-Richtlinien wider. Diese Klassifizierung hilft dabei, athletische Fitness von kardiometabolischen Risikobereichen zu unterscheiden.',
-    ko: '체지방률은 ACE 및 ACSM 가이드라인에 따라 총 체중 대비 지방 조직의 비율을 나타냅니다. 체성분 분류는 건강한 운동 컨디션과 심혈관 대사 질환 위험 구간을 구분하는 핵심 지표입니다.',
-    hi: 'बॉडी फैट प्रतिशत कुल शरीर के वजन के सापेक्ष वसा ऊतक के अनुपात को दर्शाता है। यह वर्गीकरण स्वस्थ शारीरिक फिटनेस और हृदय रोग जोखिम क्षेत्रों के बीच अंतर करने में मदद करता है।'
-  },
-  badge: {
-    en: 'ACE Body Fat Norms',
-    es: 'Normas de Grasa Corporal ACE',
-    fr: 'Normes de Masse Grasse ACE',
-    de: 'ACE-Körperfettnormen',
-    ko: 'ACE 체지방 표준 기준표',
-    hi: 'ACE बॉडी फैट मानक तालिका'
-  },
-  title: {
-    en: 'Body Fat Percentage Categories (ACE / ACSM)',
-    es: 'Categorías de Porcentaje de Grasa Corporal (ACE / ACSM)',
-    fr: 'Catégories de Taux de Masse Grasse (ACE / ACSM)',
-    de: 'Körperfettanteil-Kategorien (ACE / ACSM)',
-    ko: '체지방률 공식 분류 기준 (ACE / ACSM)',
-    hi: 'बॉडी फैट प्रतिशत श्रेणियां (ACE / ACSM)'
-  },
-  note: {
-    en: 'Essential fat is biologically required for hormonal and neurological health.',
-    es: 'La grasa esencial es indispensable para la salud hormonal y neurológica.',
-    fr: 'La graisse essentielle est biologiquement requise pour l’équilibre hormonal.',
-    de: 'Essenzielles Fett ist für das hormonelle und neurologische Gleichgewicht lebensnotwendig.',
-    ko: '필수 지방은 호르몬 합성 및 중추신경계 보호를 위한 생물학적 필수 조직입니다.',
-    hi: 'हार्मोनल और तंत्रिका स्वास्थ्य के लिए आवश्यक वसा अनिवार्य है।'
-  },
-  menLabel: {
-    en: 'Men Range',
-    es: 'Rango Hombres',
-    fr: 'Plage Hommes',
-    de: 'Männer-Bereich',
-    ko: '남성 범위',
-    hi: 'पुरुष सीमा'
-  },
-  womenLabel: {
-    en: 'Women Range',
-    es: 'Rango Mujeres',
-    fr: 'Plage Femmes',
-    de: 'Frauen-Bereich',
-    ko: '여성 범위',
-    hi: 'महिला सीमा'
-  },
-  items: [
-    { category: { en: 'Essential Fat', es: 'Grasa Esencial', fr: 'Graisse Essentielle', de: 'Essenzielles Fett', ko: '필수 지방', hi: 'आवश्यक वसा' }, men: '2 – 5%', women: '10 – 13%', desc: { en: 'Physiological minimum floor', es: 'Mínimo fisiológico vital', fr: 'Plancher vital minimal', de: 'Lebensnotwendiges Minimum', ko: '생명 유지 최소 한계선', hi: 'न्यूनतम जीवन रेखा' } },
-    { category: { en: 'Athletes', es: 'Atletas', fr: 'Athlètes', de: 'Athleten', ko: '운동선수', hi: 'एथलीट' }, men: '6 – 13%', women: '14 – 20%', desc: { en: 'High muscular definition', es: 'Definición muscular máxima', fr: 'Définition musculaire poussée', de: 'Maximale Muskeldefinition', ko: '선명한 근육 윤곽', hi: 'उच्च मांसपेशी परिभाषा' } },
-    { category: { en: 'Fitness', es: 'Fitness', fr: 'Forme Physique', de: 'Fitness', ko: '피트니스', hi: 'फिटनेस' }, men: '14 – 17%', women: '21 – 24%', desc: { en: 'Optimal lean conditioning', es: 'Condición física óptima', fr: 'Condition physique optimale', de: 'Optimale athletische Form', ko: '이상적인 건강 컨디션', hi: 'उत्कृष्ट स्वस्थ स्थिति' } },
-    { category: { en: 'Average', es: 'Promedio', fr: 'Moyenne Santé', de: 'Durchschnitt', ko: '일반 건강', hi: 'सामान्य' }, men: '18 – 24%', women: '25 – 31%', desc: { en: 'Healthy general baseline', es: 'Rango saludable estándar', fr: 'Plage santé habituelle', de: 'Gesunder Standardbereich', ko: '표준 성인 건강 구간', hi: 'स्वस्थ सामान्य सीमा' } },
-    { category: { en: 'Moderate Overfat', es: 'Sobregrasa Moderada', fr: 'Surpoids Adipeux', de: 'Erhöhter Fettanteil', ko: '경도 과체지방', hi: 'मध्यम अधिक वसा' }, men: '25 – 29%', women: '32 – 37%', desc: { en: 'Elevated adiposity warning', es: 'Adiposidad incrementada', fr: 'Masse grasse excédentaire', de: 'Leichtes Übergewicht', ko: '체지방 관리 권고 구간', hi: 'वसा नियंत्रण आवश्यक' } },
-    { category: { en: 'High Adiposity', es: 'Obesidad Adiposa', fr: 'Obésité Adipeuse', de: 'Adipositas', ko: '비만 관리 대상', hi: 'उच्च वसा / मोटापा' }, men: '30%+', women: '38%+', desc: { en: 'Cardiometabolic risk zone', es: 'Zona de riesgo cardiometabólico', fr: 'Zone de risque cardiométabolique', de: 'Kardiometabolische Risikozone', ko: '심혈관 대사 위험 구간', hi: 'हृदय रोग जोखिम क्षेत्र' } }
-  ]
-};
-
-const lbmQuickGrid = {
-  intro: {
-    en: 'Lean body mass encompasses skeletal muscle, bone density, organs, and body water, excluding adipose tissue. This table summarizes estimated lean mass values across body weights to help assess metabolic health and strength potential.',
-    es: 'La masa corporal magra incluye el músculo esquelético, los huesos, los órganos y el agua corporal, excluyendo el tejido adiposo. Esta tabla resume los valores estimados de masa magra para evaluar la salud metabólica y muscular.',
-    fr: 'La masse corporelle maigre comprend les muscles, les os, les organes et l\'eau corporelle, à l\'exclusion du tissu adipeux. Ce tableau présente les estimations de masse maigre pour évaluer la santé métabolique et le potentiel musculaire.',
-    de: 'Die fettfreie Körpermasse umfasst Skelettmuskeln, Knochen, Organe und Körperwasser ohne Speicherfett. Diese Tabelle fasst geschätzte Werte fettfreier Masse zusammen, um Stoffwechselgesundheit und Muskelstatus zu beurteilen.',
-    ko: '제지방량은 지방을 제외한 골격근, 골밀도, 장기 및 체수분의 총합을 의미합니다. 본 요약표는 체중별 예상 제지방량을 제공하여 기초대사 건강 및 근력 잠재력을 평가하는 데 도움을 줍니다.',
-    hi: 'लीन बॉडी मास में वसा ऊतक को छोड़कर कंकाल की मांसपेशियां, हड्डियां, अंग और शरीर का पानी शामिल होता है। यह तालिका चयापचय स्वास्थ्य का आकलन करने हेतु शरीर के वजन के अनुसार लीन मास दर्शाती है।'
-  },
-  badge: {
-    en: 'LBM Reference Estimates',
-    es: 'Estimaciones de Referencia LBM',
-    fr: 'Estimations Repères de LBM',
-    de: 'LBM-Referenzwerte',
-    ko: '체중별 제지방량(LBM) 요약표',
-    hi: 'लीन बॉडी मास संदर्भ तालिका'
-  },
-  title: {
-    en: 'Lean Body Mass by Body Weight (at 175 cm / 5\'9")',
-    es: 'Masa Corporal Magra según el Peso (para 175 cm)',
-    fr: 'Masse Maigre selon le Poids Corporel (pour 175 cm)',
-    de: 'Fettfreie Masse nach Körpergewicht (bei 175 cm)',
-    ko: '체중별 제지방량 및 비율 (신장 175cm 기준)',
-    hi: 'शरीर के वजन के अनुसार लीन बॉडी मास (175 सेमी पर)'
-  },
-  note: {
-    en: 'Calculated via Boer formula across adult weight profiles.',
-    es: 'Calculado mediante la fórmula de Boer para perfiles adultos.',
-    fr: 'Calculé selon la formule de Boer pour différents poids adultes.',
-    de: 'Berechnet nach der Boer-Formel für erwachsene Gewichtsprofile.',
-    ko: '성인 체중 구간별 Boer 공식을 적용하여 산출된 지표.',
-    hi: 'वयस्क वजन प्रोफाइल हेतु बोअर सूत्र द्वारा गणना।'
-  },
-  maleLabel: {
-    en: 'Men LBM',
-    es: 'Hombres LBM',
-    fr: 'Hommes LBM',
-    de: 'Männer LBM',
-    ko: '남성 LBM',
-    hi: 'पुरुष LBM'
-  },
-  femaleLabel: {
-    en: 'Women LBM',
-    es: 'Mujeres LBM',
-    fr: 'Femmes LBM',
-    de: 'Frauen LBM',
-    ko: '여성 LBM',
-    hi: 'महिला LBM'
-  },
-  items: [
-    { weight: '55 kg (121 lbs)', male: '49.9 kg', female: '48.3 kg', maleRatio: '90.7%', femaleRatio: '87.8%' },
-    { weight: '65 kg (143 lbs)', male: '54.0 kg', female: '50.9 kg', maleRatio: '83.1%', femaleRatio: '78.3%' },
-    { weight: '75 kg (165 lbs)', male: '58.1 kg', female: '53.4 kg', maleRatio: '77.5%', femaleRatio: '71.2%' },
-    { weight: '85 kg (187 lbs)', male: '62.1 kg', female: '55.9 kg', maleRatio: '73.1%', femaleRatio: '65.8%' },
-    { weight: '95 kg (209 lbs)', male: '66.2 kg', female: '58.4 kg', maleRatio: '69.7%', femaleRatio: '61.5%' },
-    { weight: '105 kg (231 lbs)', male: '70.3 kg', female: '60.9 kg', maleRatio: '67.0%', femaleRatio: '58.0%' }
-  ]
-};
-
-const idealWeightQuickGrid = {
-  intro: {
-    en: 'Ideal body weight estimations provide standardized reference ranges across common adult heights using peer-reviewed anthropometric formulas. These benchmarks serve as screening indicators alongside comprehensive body composition measures.',
-    es: 'Las estimaciones de peso ideal proporcionan rangos de referencia estandarizados para diferentes alturas adultas utilizando fórmulas antropométricas validadas. Estos valores sirven como indicadores orientativos de salud general.',
-    fr: 'Les estimations de poids corporel idéal offrent des plages de référence standardisées selon la taille adulte à l\'aide de formules anthropométriques éprouvées. Ces repères constituent des indicateurs éducatifs utiles.',
-    de: 'Das ideale Körpergewicht liefert standardisierte Orientierungsbereiche für verschiedene Körpergrößen basierend auf anerkannten anthropometrischen Formeln. Diese Werte dienen als informative Richtgröße für gesundes Gewicht.',
-    ko: '이상적인 체중 추정치는 검증된 인체측정학적 공식을 사용하여 성인 신장별 표준 체중 범위를 제공합니다. 본 지표는 전반적인 체성분 평가와 함께 활용할 수 있는 건강 기준점입니다.',
-    hi: 'आदर्श शरीर का वजन विभिन्न वयस्क ऊंचाइयों के लिए वैज्ञानिक सूत्रों पर आधारित मानक संदर्भ सीमा प्रदान करता है। ये अनुमान शरीर संरचना और स्वस्थ वजन के मूल्यांकन में सहायक होते हैं।'
-  },
-  badge: {
-    en: 'Height-Based IBW Targets',
-    es: 'Metas de IBW por Estatura',
-    fr: 'Repères IBW par Taille',
-    de: 'IBW-Richtwerte nach Größe',
-    ko: '신장별 표준 이상 체중표',
-    hi: 'ऊंचाई के अनुसार आदर्श वजन'
-  },
-  title: {
-    en: 'Ideal Body Weight Comparison by Height',
-    es: 'Comparativa de Peso Ideal según la Estatura',
-    fr: 'Comparatif du Poids Idéal selon la Stature',
-    de: 'Idealgewichts-Vergleich nach Körpergröße',
-    ko: '신장별 이상 체중(Devine) 및 WHO 정상 체중 범위',
-    hi: 'ऊंचाई के अनुसार आदर्श वजन (डिवाइन) एवं सामान्य सीमा'
-  },
-  note: {
-    en: 'Devine formula baseline compared with WHO Healthy BMI Range (18.5 – 24.9 kg/m²).',
-    es: 'Fórmula Devine comparada con el rango de peso saludable de la OMS (18.5 a 24.9 kg/m²).',
-    fr: 'Formule Devine comparée à la plage d’IMC santé de l’OMS (18,5 à 24,9 kg/m²).',
-    de: 'Devine-Formel im Vergleich zum gesunden WHO-Gewichtsbereich (BMI 18,5 – 24,9 kg/m²).',
-    ko: '드바인(Devine) 기준치와 WHO 정상 체중 구간(BMI 18.5 ~ 24.9 kg/m²) 비교.',
-    hi: 'डब्ल्यूएचओ स्वस्थ वजन सीमा (18.5 से 24.9 kg/m²) के साथ डिवाइन फॉर्मूला तुलना।'
-  },
-  maleLabel: {
-    en: 'Devine Male',
-    es: 'Devine Hombre',
-    fr: 'Devine Homme',
-    de: 'Devine Mann',
-    ko: '드바인 남성',
-    hi: 'डिवाइन पुरुष'
-  },
-  femaleLabel: {
-    en: 'Devine Female',
-    es: 'Devine Mujer',
-    fr: 'Devine Femme',
-    de: 'Devine Frau',
-    ko: '드바인 여성',
-    hi: 'डिवाइन महिला'
-  },
-  whoLabel: {
-    en: 'WHO Healthy Range',
-    es: 'Rango Saludable OMS',
-    fr: 'Plage Santé OMS',
-    de: 'WHO-Normalbereich',
-    ko: 'WHO 정상 구간',
-    hi: 'WHO सामान्य सीमा'
-  },
-  items: [
-    { height: "160 cm (5'3\")", male: '56.9 kg', female: '52.4 kg', who: '47.4 – 63.7 kg' },
-    { height: "165 cm (5'5\")", male: '61.5 kg', female: '57.0 kg', who: '50.4 – 67.8 kg' },
-    { height: "170 cm (5'7\")", male: '65.9 kg', female: '61.4 kg', who: '53.5 – 72.0 kg' },
-    { height: "175 cm (5'9\")", male: '70.5 kg', female: '66.0 kg', who: '56.7 – 76.3 kg' },
-    { height: "180 cm (5'11\")", male: '75.0 kg', female: '70.5 kg', who: '59.9 – 80.7 kg' },
-    { height: "185 cm (6'1\")", male: '79.5 kg', female: '75.0 kg', who: '63.3 – 85.2 kg' }
-  ]
-};
-
-const calorieDeficitQuickGrid = {
-  intro: {
-    en: 'Calorie deficit targets determine the rate of sustainable adipose tissue reduction while safeguarding lean muscle mass. This guide outlines standard deficit levels from mild gradual fat loss to structured deficit plans aligned with clinical guidelines.',
-    es: 'Las metas de déficit calórico determinan el ritmo de pérdida de grasa corporal preservando la masa muscular magra. Esta guía describe niveles estándar de déficit, desde enfoques graduales hasta planes estructurados según pautas clínicas.',
-    fr: 'Le déficit calorique détermine le rythme de perte de masse grasse tout en préservant la masse musculaire maigre. Ce guide présente les paliers recommandés, de la perte modérée et durable aux plans structurés conformes aux recommandations nutritionnelles.',
-    de: 'Ein gezieltes Kaloriendefizit steuert den Fettabbau bei gleichzeitigem Erhalt fettfreier Muskelmasse. Diese Übersicht veranschaulicht gängige Defizitstufen von moderatem Fettverlust bis hin zu strukturierten wissenschaftlichen Ernährungsplänen.',
-    ko: '칼로리 결손 목표는 제지방 근육량을 보존하면서 건강한 체지방 감량을 달성하는 속도를 결정합니다. 본 표는 완만한 감량부터 임상 지침에 맞춘 구조화된 결손 단계까지 표준 권장량을 요약합니다.',
-    hi: 'कैलोरी घाटे के लक्ष्य लीन मांसपेशियों को सुरक्षित रखते हुए वसा कम करने की दर निर्धारित करते हैं। यह गाइड सुरक्षित और सतत वजन प्रबंधन हेतु विभिन्न स्तरों के अनुशंसित कैलोरी लक्ष्यों को दर्शाती है।'
-  },
-  badge: {
-    en: 'Calorie Deficit Targets',
-    es: 'Metas de Déficit Calórico',
-    fr: 'Objectifs de Déficit Calorique',
-    de: 'Ziel-Kaloriendefizite',
-    ko: '유지 칼로리별 감량 목표표',
-    hi: 'कैलोरी घाटा लक्ष्य तालिका'
-  },
-  title: {
-    en: 'Daily Calorie Targets by Maintenance TDEE',
-    es: 'Calorías Objetivo según el Gasto Total Diario (TDEE)',
-    fr: 'Cibles Caloriques selon la Dépense Journalière (DEJ)',
-    de: 'Zielkalorien nach Gesamtenergiebedarf (TDEE)',
-    ko: '유지 대사량(TDEE)별 일일 감량 칼로리 요약',
-    hi: 'दैनिक मेंटेनेंस TDEE के अनुसार लक्षित कैलोरी'
-  },
-  note: {
-    en: 'Moderate deficit (-500 kcal/day) yields ~0.45 kg (1 lb) fat loss/week.',
-    es: 'Un déficit moderado (-500 kcal/día) produce ~0.45 kg de pérdida de grasa/sem.',
-    fr: 'Un déficit modéré (-500 kcal/jour) induit ~0,45 kg de perte de graisse/semaine.',
-    de: 'Ein moderates Defizit (-500 kcal/Tag) bewirkt ~0,45 kg Fettverlust/Woche.',
-    ko: '하루 500 kcal 적자는 주당 약 0.45 kg(1 lb)의 순수 체지방 감량을 유도합니다.',
-    hi: 'मध्यम घाटा (-500 कैलोरी/दिन) प्रति सप्ताह ~0.45 किग्रा वसा हानि देता है।'
-  },
-  mildLabel: {
-    en: 'Mild (-250)',
-    es: 'Leve (-250)',
-    fr: 'Léger (-250)',
-    de: 'Leicht (-250)',
-    ko: '완만 (-250)',
-    hi: 'हल्का (-250)'
-  },
-  paceLabel: {
-    en: '-500 kcal Target',
-    es: 'Objetivo -500 kcal',
-    fr: 'Cible -500 kcal',
-    de: '-500 kcal Zielwert',
-    ko: '-500 kcal 적자 목표',
-    hi: '-500 कैलोरी लक्ष्य'
-  },
-  items: [
-    { tdee: '1,800 kcal', mild: '1,550 kcal', standard: '1,300 kcal' },
-    { tdee: '2,000 kcal', mild: '1,750 kcal', standard: '1,500 kcal' },
-    { tdee: '2,200 kcal', mild: '1,950 kcal', standard: '1,700 kcal' },
-    { tdee: '2,400 kcal', mild: '2,150 kcal', standard: '1,900 kcal' },
-    { tdee: '2,600 kcal', mild: '2,350 kcal', standard: '2,100 kcal' },
-    { tdee: '2,800 kcal', mild: '2,550 kcal', standard: '2,300 kcal' }
-  ]
-};
-
-const hydrationQuickChart = {
-  intro: {
-    en: 'Daily water requirements vary based on body mass, climate, and exercise volume. This reference table estimates baseline metabolic hydration targets alongside workout compensations to support proper thermoregulation, nutrient transport, and renal health.',
-    es: 'Los requerimientos diarios de agua varían según la masa corporal, el clima y la actividad física. Esta tabla de referencia estima metas basales de hidratación y compensación por ejercicio para mantener una termorregulación y función renal óptimas.',
-    fr: 'Les besoins quotidiens en eau varient selon la masse corporelle, le climat et l\'activité physique. Ce tableau de référence estime les apports hydriques de base et la compensation sportive pour soutenir la thermorégulation et la fonction rénale.',
-    de: 'Der tägliche Wasserbedarf hängt von Körpergewicht, Umgebungstemperatur und sportlicher Belastung ab. Diese Referenztabelle zeigt empfohlene Basismengen sowie Trainingszuschläge zur optimalen Thermoregulation und Nierenfunktion.',
-    ko: '일일 수분 필요량은 체중, 기후 및 신체 활동량에 따라 달라집니다. 본 참조표는 체온 조절, 영양소 운반 및 신장 기능 유지를 위해 체중별 기초 수분 섭취 권장량과 운동 시 추가 보충량을 제시합니다.',
-    hi: 'दैनिक पानी की आवश्यकता शरीर के वजन, मौसम और शारीरिक गतिविधि पर निर्भर करती है। यह संदर्भ तालिका इष्टतम थर्मोरेग्यूलेशन और गुर्दे के स्वास्थ्य के लिए बुनियादी जल लक्ष्य और व्यायाम क्षतिपूर्ति प्रदान करती है।'
-  },
-  badge: {
-    en: 'Quick Reference Chart',
-    es: 'Tabla de Referencia Rápida',
-    fr: 'Tableau de Référence Rapide',
-    de: 'Schnellübersicht',
-    ko: '체중별 빠른 권장량 표',
-    hi: 'त्वरित संदर्भ चार्ट'
-  },
-  title: {
-    en: 'Daily Water Intake by Body Weight',
-    es: 'Consumo Diario de Agua según el Peso Corporal',
-    fr: 'Apport Quotidien en Eau selon le Poids Corporel',
-    de: 'Täglicher Wasserbedarf nach Körpergewicht',
-    ko: '체중별 일일 수분 섭취 권장량 요약',
-    hi: 'शरीर के वजन के अनुसार दैनिक पानी की आवश्यकता'
-  },
-  note: {
-    en: 'Based on 35 mL/kg baseline + 750 mL active workout compensation.',
-    es: 'Basado en 35 mL/kg basal + 750 mL por ejercicio activo.',
-    fr: 'Basé sur 35 mL/kg au repos + 750 mL pour effort actif.',
-    de: 'Basis 35 ml/kg + 750 ml Trainingszuschlag.',
-    ko: '기초 35 mL/kg + 활동적 운동 시 750 mL 보충 기준.',
-    hi: 'आधारभूत 35 मिली/किग्रा + सक्रिय व्यायाम हेतु 750 मिली।'
-  },
-  thWeight: {
-    en: 'Body Weight',
-    es: 'Peso Corporal',
-    fr: 'Poids Corporel',
-    de: 'Körpergewicht',
-    ko: '체중',
-    hi: 'शरीर का वजन'
-  },
-  thBaseline: {
-    en: 'Sedentary Baseline (35 mL/kg)',
-    es: 'Sedentario Base (35 mL/kg)',
-    fr: 'Base Sédentaire (35 mL/kg)',
-    de: 'Basisbedarf (35 ml/kg)',
-    ko: '기초 권장량 (35 mL/kg)',
-    hi: 'आधारभूत आवश्यकता (35 मिली/किग्रा)'
-  },
-  thActive: {
-    en: 'Active / Daily Exercise (+750 mL)',
-    es: 'Activo / Ejercicio (+750 mL)',
-    fr: 'Actif / Sport Quotidien (+750 mL)',
-    de: 'Aktiv / Training (+750 ml)',
-    ko: '운동 / 활동적 (+750 mL)',
-    hi: 'सक्रिय / दैनिक व्यायाम (+750 मिली)'
-  },
-  thGlasses: {
-    en: 'Standard Glasses (250 mL)',
-    es: 'Vasos Estándar (250 mL)',
-    fr: 'Verres Standards (250 mL)',
-    de: 'Standardgläser (250 ml)',
-    ko: '일반 컵 기준 (250 mL)',
-    hi: 'मानक गिलास (250 मिली)'
-  },
-  rows: [
-    { weight: '50 kg (110 lbs)', baseline: '1.75 L (~59 oz)', active: '2.50 L (~85 oz)', glasses: { en: '7 – 10 glasses', es: '7 – 10 vasos', fr: '7 – 10 verres', de: '7 – 10 Gläser', ko: '약 7 – 10잔', hi: '7 – 10 गिलास' } },
-    { weight: '60 kg (132 lbs)', baseline: '2.10 L (~71 oz)', active: '2.85 L (~96 oz)', glasses: { en: '8.5 – 11.5 glasses', es: '8.5 – 11.5 vasos', fr: '8,5 – 11,5 verres', de: '8,5 – 11,5 Gläser', ko: '약 8.5 – 11.5잔', hi: '8.5 – 11.5 गिलास' } },
-    { weight: '70 kg (154 lbs)', baseline: '2.45 L (~83 oz)', active: '3.20 L (~108 oz)', glasses: { en: '10 – 13 glasses', es: '10 – 13 vasos', fr: '10 – 13 verres', de: '10 – 13 Gläser', ko: '약 10 – 13잔', hi: '10 – 13 गिलास' } },
-    { weight: '80 kg (176 lbs)', baseline: '2.80 L (~95 oz)', active: '3.55 L (~120 oz)', glasses: { en: '11 – 14 glasses', es: '11 – 14 vasos', fr: '11 – 14 verres', de: '11 – 14 Gläser', ko: '약 11 – 14잔', hi: '11 – 14 गिलास' } },
-    { weight: '90 kg (198 lbs)', baseline: '3.15 L (~107 oz)', active: '3.90 L (~132 oz)', glasses: { en: '12.5 – 15.5 glasses', es: '12.5 – 15.5 vasos', fr: '12,5 – 15,5 verres', de: '12,5 – 15,5 Gläser', ko: '약 12.5 – 15.5잔', hi: '12.5 – 15.5 गिलास' } },
-    { weight: '100 kg (220 lbs)', baseline: '3.50 L (~118 oz)', active: '4.25 L (~144 oz)', glasses: { en: '14 – 17 glasses', es: '14 – 17 vasos', fr: '14 – 17 verres', de: '14 – 17 Gläser', ko: '약 14 – 17잔', hi: '14 – 17 गिलास' } },
-  ]
-};
-
-
-const bmiChartMatrixGrid = {
-  intro: {
-    en: 'Look up your standing height in the WHO reference matrix. Find your healthy adult weight span in kilograms and pounds.',
-    es: 'Consulta tu estatura en la matriz de la Organización Mundial de la Salud para conocer tu rango de peso saludable en kilogramos y libras.',
-    fr: 'Consultez votre taille sur la matrice officielle de l\'Organisation Mondiale de la Santé pour connaître votre poids santé en kilogrammes et livres.',
-    de: 'Finden Sie Ihre Körpergröße in der offiziellen WHO-Referenzmatrix, um Ihren gesunden Normalgewichtsbereich in Kilogramm und Pfund abzulesen.',
-    ko: '세계보건기구(WHO) 표준 체중 매트릭스에서 신장을 확인하여 미터법(kg) 및 야드파운드법(lbs) 기준의 정상 체중 범위를 즉시 파악하세요.',
-    hi: 'आधिकारिक विश्व स्वास्थ्य संगठन (WHO) मैट्रिक्स में अपना कद देखकर मीट्रिक किलोग्राम और पाउंड में अपनी स्वस्थ वजन सीमा जानें।'
-  },
-  badge: {
-    en: 'WHO Height-to-Weight Matrix',
-    es: 'Matriz Altura-Peso OMS',
-    fr: 'Matrice Taille-Poids OMS',
-    de: 'WHO-Größen-Gewichts-Matrix',
-    ko: 'WHO 신장별 정상 체중 매트릭스',
-    hi: 'डब्ल्यूएचओ ऊंचाई-वजन मैट्रिक्स'
-  },
-  title: {
-    en: 'Adult Healthy Weight Lookup by Height (BMI 18.5 – 24.9)',
-    es: 'Consulta de Peso Saludable por Altura (IMC 18.5 – 24.9)',
-    fr: 'Poids Santé selon la Taille (IMC 18,5 – 24,9)',
-    de: 'Normalgewicht nach Körpergröße (BMI 18,5 – 24,9)',
-    ko: '신장별 표준 정상 체중 구간 (BMI 18.5 – 24.9)',
-    hi: 'कद के अनुसार स्वस्थ वजन तालिका (BMI 18.5 – 24.9)'
-  },
-  note: {
-    en: 'Calculated using standard WHO adult thresholds for men and women.',
-    es: 'Calculado según los umbrales de la OMS para hombres y mujeres adultos.',
-    fr: 'Calculé selon les seuils de l\'OMS pour hommes et femmes adultes.',
-    de: 'Berechnet nach Standard-WHO-Schwellenwerten für Erwachsene.',
-    ko: '성인 남녀 공통 WHO 표준 정상 체중 공식 적용.',
-    hi: 'वयस्क पुरुषों और महिलाओं के लिए डब्ल्यूएचओ मानक सीमाओं द्वारा गणना।'
-  },
-  thHeight: {
-    en: 'Stature',
-    es: 'Estatura',
-    fr: 'Taille',
-    de: 'Körpergröße',
-    ko: '신장',
-    hi: 'कद'
-  },
-  items: [
-    { height: '150 cm (4\'11")', kg: '41.6 – 56.0 kg', lbs: '92 – 123 lbs' },
-    { height: '155 cm (5\'1")', kg: '44.4 – 59.8 kg', lbs: '98 – 132 lbs' },
-    { height: '160 cm (5\'3")', kg: '47.4 – 63.7 kg', lbs: '104 – 140 lbs' },
-    { height: '165 cm (5\'5")', kg: '50.4 – 67.8 kg', lbs: '111 – 149 lbs' },
-    { height: '170 cm (5\'7")', kg: '53.5 – 72.0 kg', lbs: '118 – 159 lbs' },
-    { height: '175 cm (5\'9")', kg: '56.7 – 76.3 kg', lbs: '125 – 168 lbs' },
-    { height: '180 cm (5\'11")', kg: '59.9 – 80.7 kg', lbs: '132 – 178 lbs' },
-    { height: '185 cm (6\'1")', kg: '63.3 – 85.2 kg', lbs: '140 – 188 lbs' },
-    { height: '190 cm (6\'3")', kg: '66.8 – 89.9 kg', lbs: '147 – 198 lbs' },
-    { height: '195 cm (6\'5")', kg: '70.3 – 94.7 kg', lbs: '155 – 209 lbs' }
-  ]
-};
-
-const hrZonesQuickGrid = {
-  intro: {
-    en: 'Target heart rate zones using the Fox formula (%HRmax = 220 - Age). These percentage zones guide warm-up, aerobic base, and tempo pacing. No resting pulse is needed.',
-    es: 'Zonas de entrenamiento basadas en la fórmula clásica de Fox y Haskell (%FCmax = 220 - Edad). Estos umbrales directos estructuran el calentamiento, la base aeróbica y el esfuerzo máximo sin requerir medición en reposo.',
-    fr: 'Zones d\'entraînement cardiaque selon la formule de Fox & Haskell (%FCmax = 220 - Âge). Ces repères en pourcentage direct guident l\'échauffement, l\'endurance aérobie et la puissance maximale sans mesure au repos.',
-    de: 'Herzfrequenzzonen basierend auf der klassischen Fox-Formel (%HFmax = 220 - Alter). Diese Prozentbereiche steuern Aufwärmen, aerobe Ausdauer und Spitzenleistung ohne erforderliche Ruhepulsmessung.',
-    ko: '전통적인 Fox & Haskell 공식(%HRmax = 220 - 나이)에 따른 연령별 심박수 구간입니다. 안정시 심박수 측정 없이도 워밍업, 유산소 기초 지구력 및 최대 유산소 능력을 안내합니다.',
-    hi: 'पारंपरिक फॉक्स फॉर्मूला (%HRmax = 220 - आयु) पर आधारित लक्षित हृदय गति क्षेत्र। ये प्रतिशत सीमाएं बिना विश्राम पल्स के वार्म-अप, एरोबिक बेस और कार्डियो क्षमता का मार्गदर्शन करती हैं।'
-  },
-  badge: {
-    en: 'Fox & Haskell Continuum',
-    es: 'Continuo de Fox y Haskell',
-    fr: 'Modèle Fox & Haskell',
-    de: 'Fox & Haskell Modell',
-    ko: 'Fox 공식 연령별 심박표',
-    hi: 'फॉक्स एवं हास्केल मॉडल'
-  },
-  title: {
-    en: 'Age-Based Exercise Heart Rate Targets (%HRmax)',
-    es: 'Objetivos de Frecuencia Cardíaca por Edad (%FCmax)',
-    fr: 'Fréquence Cardiaque Cible par Âge (%FCmax)',
-    de: 'Herzfrequenz-Zielbereiche nach Alter (%HFmax)',
-    ko: '연령별 목표 운동 심박수 기준표 (%HRmax)',
-    hi: 'उम्र के अनुसार लक्षित हृदय गति क्षेत्र (%HRmax)'
-  },
-  note: {
-    en: 'Zone 2 (60–70%) develops aerobic mitochondrial base; Zone 4 (80–90%) targets lactate threshold.',
-    es: 'Zona 2 (60–70%) optimiza la base mitocondrial; Zona 4 (80–90%) entrena el umbral de lactato.',
-    fr: 'Zone 2 (60–70 %) développe la base aérobie ; Zone 4 (80–90 %) cible le seuil lactique.',
-    de: 'Zone 2 (60–70 %) stärkt aerobe Grundlagen; Zone 4 (80–90 %) trainiert die Laktatschwelle.',
-    ko: 'Zone 2(60–70%)는 유산소 기초를 향상시키며, Zone 4(80–90%)는 젖산 역치를 강화합니다.',
-    hi: 'ज़ोन 2 (60-70%) एरोबिक बेस बनाता है; ज़ोन 4 (80-90%) लैक्टेट थ्रेशोल्ड को लक्षित करता है।'
-  },
-  items: [
-    { age: '20 yrs', maxHr: '200 bpm', z2: '120 – 140 bpm', z4: '160 – 180 bpm' },
-    { age: '30 yrs', maxHr: '190 bpm', z2: '114 – 133 bpm', z4: '152 – 171 bpm' },
-    { age: '40 yrs', maxHr: '180 bpm', z2: '108 – 126 bpm', z4: '144 – 162 bpm' },
-    { age: '50 yrs', maxHr: '170 bpm', z2: '102 – 119 bpm', z4: '136 – 153 bpm' },
-    { age: '60 yrs', maxHr: '160 bpm', z2: '96 – 112 bpm', z4: '128 – 144 bpm' },
-    { age: '70 yrs', maxHr: '150 bpm', z2: '90 – 105 bpm', z4: '120 – 135 bpm' }
-  ]
-};
-
-const karvonenQuickGrid = {
-  intro: {
-    en: 'How baseline resting heart rate (RHR) shifts training zones using the Karvonen Heart Rate Reserve (HRR) equation at age 30 (HRmax = 190 bpm). Superior aerobic fitness manifests in lower resting pulse, expanding usable heart rate reserve.',
-    es: 'Cómo influye la frecuencia cardíaca en reposo (RHR) en las zonas de Karvonen a los 30 años (FCmax = 190 lpm). Un pulso en reposo más bajo amplía la reserva cardíaca útil.',
-    fr: 'Impact du pouls au repos sur les zones de Karvonen à 30 ans (FCmax = 190 bpm). Une excellente condition physique abaisse le pouls au repos et élargit la réserve cardiaque utile.',
-    de: 'Einfluss des Ruhepulses auf Karvonen-Trainingszonen im Alter von 30 Jahren (HFmax = 190 S/min). Ein niedrigerer Ruhepuls vergrößert die Herzfrequenzreserve (HRR).',
-    ko: '안정시 심박수(RHR)가 만 30세(최대 심박수 190 bpm) 기준 카르보넨 심박수 예비능(HRR)과 운동 구간에 미치는 영향입니다. 우수한 유산소 체력은 안정시 맥박을 낮추어 심박 예비능을 확장합니다.',
-    hi: '30 वर्ष की आयु (HRmax = 190 BPM) पर विश्राम हृदय गति (RHR) कार्वोनेन हार्ट रेट रिजर्व (HRR) और कसरत क्षेत्रों को कैसे प्रभावित करती है।'
-  },
-  badge: {
-    en: 'Karvonen HRR Impact',
-    es: 'Impacto de Reserva Karvonen',
-    fr: 'Impact de Réserve Karvonen',
-    de: 'Karvonen HRR-Wirkung',
-    ko: '카르보넨 심박 예비능 분석',
-    hi: 'कार्वोनेन HRR प्रभाव'
-  },
-  title: {
-    en: 'Resting Heart Rate Impact on Karvonen Zones (Age 30)',
-    es: 'Impacto del Pulso en Reposo en Zonas Karvonen (30 Años)',
-    fr: 'Effet du Pouls au Repos sur les Zones Karvonen (30 Ans)',
-    de: 'Einfluss des Ruhepulses auf Karvonen-Zonen (Alter 30)',
-    ko: '안정시 심박수에 따른 카르보넨 목표 구간 변화 (30세 기준)',
-    hi: 'विश्राम पल्स का कार्वोनेन ज़ोन पर प्रभाव (आयु 30 वर्ष)'
-  },
-  note: {
-    en: 'Lower resting pulse reflects higher stroke volume and autonomic parasympathetic tone.',
-    es: 'Un menor pulso en reposo refleja mayor volumen sistólico y tono parasimpático.',
-    fr: 'Un pouls au repos plus bas témoigne d\'un meilleur volume d\'éjection systolique.',
-    de: 'Ein niedriger Ruhepuls spiegelt ein größeres Schlagvolumen und gute Regeneration wider.',
-    ko: '낮은 안정시 맥박은 강력한 1회 박출량과 부교감신경 회복력을 나타냅니다.',
-    hi: 'कम विश्राम पल्स उच्च स्ट्रोक वॉल्यूम और मजबूत हृदय स्वास्थ्य को दर्शाता है।'
-  },
-  items: [
-    { rhr: '50 bpm (Athletic)', hrr: '140 bpm HRR', z2: '134 – 148 bpm', z4: '162 – 176 bpm' },
-    { rhr: '60 bpm (Fit)', hrr: '130 bpm HRR', z2: '138 – 151 bpm', z4: '164 – 177 bpm' },
-    { rhr: '70 bpm (Average)', hrr: '120 bpm HRR', z2: '142 – 154 bpm', z4: '166 – 178 bpm' },
-    { rhr: '80 bpm (Elevated)', hrr: '110 bpm HRR', z2: '146 – 157 bpm', z4: '168 – 179 bpm' }
-  ]
-};
 
 const sectionHeading = {
   en: `${cleanToolName} Standards & Reference Ranges`,
@@ -831,358 +280,6 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
     </p>
   </div>
 
-  <!-- ═══════════════════ 0. WATER INTAKE QUICK REFERENCE CHART (SPECIFIC TO HYDRATION) ═══════════════════ -->
-  {effectiveSlug === 'water-intake-calculator' && (
-    <section class="space-y-4" aria-labelledby="water-intake-quick-heading">
-      <div class="flex items-center justify-between gap-3 flex-wrap">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-          {hydrationQuickChart.badge[lang] || hydrationQuickChart.badge.en}
-        </span>
-        <p class="text-xs text-[var(--muted-foreground)]">
-          {hydrationQuickChart.note[lang] || hydrationQuickChart.note.en}
-        </p>
-      </div>
-      <h3 id="water-intake-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {hydrationQuickChart.title[lang] || hydrationQuickChart.title.en}
-      </h3>
-      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
-        {hydrationQuickChart.intro[lang] || hydrationQuickChart.intro.en}
-      </p>
-
-      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        {hydrationQuickChart.rows.map((row) => (
-          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
-            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
-              {row.weight}
-            </span>
-            <div class="text-base font-bold font-mono text-[var(--accent)]">
-              {row.baseline.split(' ')[0]} L
-            </div>
-            <div class="text-[11px] text-[var(--foreground)] font-mono font-medium">
-              {row.active.split(' ')[0]} L (act.)
-            </div>
-            <span class="text-[11px] text-[var(--muted-foreground)] block pt-0.5">
-              {row.glasses[lang] || row.glasses.en}
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
-  <!-- ═══════════════════ 0C. CALORIE DEFICIT QUICK REFERENCE GRID ═══════════════════ -->
-  {effectiveSlug === 'calorie-calculator' && (
-    <section class="space-y-4" aria-labelledby="calorie-deficit-quick-heading">
-      <div class="flex items-center justify-between gap-3 flex-wrap">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-          {calorieDeficitQuickGrid.badge[lang] || calorieDeficitQuickGrid.badge.en}
-        </span>
-        <p class="text-xs text-[var(--muted-foreground)]">
-          {calorieDeficitQuickGrid.note[lang] || calorieDeficitQuickGrid.note.en}
-        </p>
-      </div>
-      <h3 id="calorie-deficit-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {calorieDeficitQuickGrid.title[lang] || calorieDeficitQuickGrid.title.en}
-      </h3>
-      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
-        {calorieDeficitQuickGrid.intro[lang] || calorieDeficitQuickGrid.intro.en}
-      </p>
-
-      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        {calorieDeficitQuickGrid.items.map((item) => (
-          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
-            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
-              {item.tdee}
-            </span>
-            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
-              {calorieDeficitQuickGrid.mildLabel[lang] || calorieDeficitQuickGrid.mildLabel.en}: <span class="font-bold text-[var(--foreground)]">{item.mild}</span>
-            </div>
-            <div class="text-base font-bold font-mono text-[var(--accent)]">
-              {item.standard}
-            </div>
-            <span class="text-[11px] text-[var(--muted-foreground)] block pt-0.5">
-              {calorieDeficitQuickGrid.paceLabel[lang] || calorieDeficitQuickGrid.paceLabel.en}
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
-  <!-- ═══════════════════ 0B. PROTEIN INTAKE QUICK REFERENCE GRID ═══════════════════ -->
-  {effectiveSlug === 'protein-intake-calculator' && (
-    <section class="space-y-4" aria-labelledby="protein-quick-heading">
-      <div class="flex items-center justify-between gap-3 flex-wrap">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-          {proteinQuickChart.badge[lang] || proteinQuickChart.badge.en}
-        </span>
-        <p class="text-xs text-[var(--muted-foreground)]">
-          {proteinQuickChart.note[lang] || proteinQuickChart.note.en}
-        </p>
-      </div>
-      <h3 id="protein-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {proteinQuickChart.title[lang] || proteinQuickChart.title.en}
-      </h3>
-      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
-        {proteinQuickChart.intro[lang] || proteinQuickChart.intro.en}
-      </p>
-
-      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        {proteinQuickChart.rows.map((row) => (
-          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
-            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
-              {row.weight}
-            </span>
-            <div class="text-base font-bold font-mono text-[var(--accent)]">
-              {row.fitness}
-            </div>
-            <div class="text-[11px] text-[var(--foreground)] font-mono font-medium">
-              {row.muscle} (hypertr.)
-            </div>
-            <span class="text-[11px] text-[var(--muted-foreground)] block pt-0.5">
-              {row.perMeal[lang] || row.perMeal.en}
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
-  <!-- ═══════════════════ 0D. IDEAL WEIGHT QUICK REFERENCE GRID ═══════════════════ -->
-  {effectiveSlug === 'ideal-weight-calculator' && (
-    <section class="space-y-4" aria-labelledby="ideal-weight-quick-heading">
-      <div class="flex items-center justify-between gap-3 flex-wrap">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-          {idealWeightQuickGrid.badge[lang] || idealWeightQuickGrid.badge.en}
-        </span>
-        <p class="text-xs text-[var(--muted-foreground)]">
-          {idealWeightQuickGrid.note[lang] || idealWeightQuickGrid.note.en}
-        </p>
-      </div>
-      <h3 id="ideal-weight-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {idealWeightQuickGrid.title[lang] || idealWeightQuickGrid.title.en}
-      </h3>
-      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
-        {idealWeightQuickGrid.intro[lang] || idealWeightQuickGrid.intro.en}
-      </p>
-
-      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        {idealWeightQuickGrid.items.map((item) => (
-          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
-            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
-              {item.height}
-            </span>
-            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
-              {idealWeightQuickGrid.maleLabel[lang] || idealWeightQuickGrid.maleLabel.en}: <span class="font-bold text-[var(--accent)]">{item.male}</span>
-            </div>
-            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
-              {idealWeightQuickGrid.femaleLabel[lang] || idealWeightQuickGrid.femaleLabel.en}: <span class="font-bold text-[var(--foreground)]">{item.female}</span>
-            </div>
-            <div class="text-[10px] text-[var(--muted-foreground)] pt-1 border-t border-[var(--border)]/50">
-              {item.who}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
-  <!-- ═══════════════════ 0E. LEAN BODY MASS QUICK REFERENCE GRID ═══════════════════ -->
-  {effectiveSlug === 'lean-body-mass-calculator' && (
-    <section class="space-y-4" aria-labelledby="lean-body-mass-quick-heading">
-      <div class="flex items-center justify-between gap-3 flex-wrap">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-          {lbmQuickGrid.badge[lang] || lbmQuickGrid.badge.en}
-        </span>
-        <p class="text-xs text-[var(--muted-foreground)]">
-          {lbmQuickGrid.note[lang] || lbmQuickGrid.note.en}
-        </p>
-      </div>
-      <h3 id="lean-body-mass-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {lbmQuickGrid.title[lang] || lbmQuickGrid.title.en}
-      </h3>
-      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
-        {lbmQuickGrid.intro[lang] || lbmQuickGrid.intro.en}
-      </p>
-
-      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        {lbmQuickGrid.items.map((item) => (
-          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
-            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
-              {item.weight}
-            </span>
-            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
-              {lbmQuickGrid.maleLabel[lang] || lbmQuickGrid.maleLabel.en}: <span class="font-bold text-[var(--accent)]">{item.male}</span> <span class="text-[10px]">({item.maleRatio})</span>
-            </div>
-            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
-              {lbmQuickGrid.femaleLabel[lang] || lbmQuickGrid.femaleLabel.en}: <span class="font-bold text-[var(--foreground)]">{item.female}</span> <span class="text-[10px]">({item.femaleRatio})</span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
-  <!-- ═══════════════════ 0F. BODY FAT PERCENTAGE QUICK REFERENCE GRID ═══════════════════ -->
-  {effectiveSlug === 'body-fat-calculator' && (
-    <section class="space-y-4" aria-labelledby="body-fat-quick-heading">
-      <div class="flex items-center justify-between gap-3 flex-wrap">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-          {bodyFatQuickGrid.badge[lang] || bodyFatQuickGrid.badge.en}
-        </span>
-        <p class="text-xs text-[var(--muted-foreground)]">
-          {bodyFatQuickGrid.note[lang] || bodyFatQuickGrid.note.en}
-        </p>
-      </div>
-      <h3 id="body-fat-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {bodyFatQuickGrid.title[lang] || bodyFatQuickGrid.title.en}
-      </h3>
-      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
-        {bodyFatQuickGrid.intro[lang] || bodyFatQuickGrid.intro.en}
-      </p>
-
-      <!-- Responsive Quick Lookup Card Grid (Accessible & High Legibility) -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        {bodyFatQuickGrid.items.map((item) => (
-          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
-            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
-              {item.category[lang] || item.category.en}
-            </span>
-            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
-              {bodyFatQuickGrid.menLabel[lang] || bodyFatQuickGrid.menLabel.en}: <span class="font-bold text-[var(--accent)]">{item.men}</span>
-            </div>
-            <div class="text-[11px] text-[var(--muted-foreground)] font-mono font-medium">
-              {bodyFatQuickGrid.womenLabel[lang] || bodyFatQuickGrid.womenLabel.en}: <span class="font-bold text-[var(--foreground)]">{item.women}</span>
-            </div>
-            <div class="text-[10px] text-[var(--muted-foreground)] pt-1 border-t border-[var(--border)]/50">
-              {item.desc[lang] || item.desc.en}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
-  
-  <!-- ═══════════════════ 0G. BMI CHART MATRIX QUICK REFERENCE GRID ═══════════════════ -->
-  {effectiveSlug === 'bmi-chart' && (
-    <section class="space-y-4" aria-labelledby="bmi-chart-matrix-heading">
-      <div class="flex items-center justify-between gap-3 flex-wrap">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-          {bmiChartMatrixGrid.badge[lang] || bmiChartMatrixGrid.badge.en}
-        </span>
-        <p class="text-xs text-[var(--muted-foreground)]">
-          {bmiChartMatrixGrid.note[lang] || bmiChartMatrixGrid.note.en}
-        </p>
-      </div>
-      <h3 id="bmi-chart-matrix-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {bmiChartMatrixGrid.title[lang] || bmiChartMatrixGrid.title.en}
-      </h3>
-      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
-        {bmiChartMatrixGrid.intro[lang] || bmiChartMatrixGrid.intro.en}
-      </p>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-        {bmiChartMatrixGrid.items.map((item) => (
-          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
-            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
-              {item.height}
-            </span>
-            <div class="text-sm font-bold font-mono text-[var(--accent)]">
-              {item.kg}
-            </div>
-            <span class="text-[11px] text-[var(--muted-foreground)] block pt-0.5 font-mono">
-              {item.lbs}
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
-  <!-- ═══════════════════ 0H. HEART RATE ZONES QUICK GRID (%HRMAX) ═══════════════════ -->
-  {effectiveSlug === 'heart-rate-zone-calculator' && (
-    <section class="space-y-4" aria-labelledby="hr-zones-quick-heading">
-      <div class="flex items-center justify-between gap-3 flex-wrap">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-          {hrZonesQuickGrid.badge[lang] || hrZonesQuickGrid.badge.en}
-        </span>
-        <p class="text-xs text-[var(--muted-foreground)]">
-          {hrZonesQuickGrid.note[lang] || hrZonesQuickGrid.note.en}
-        </p>
-      </div>
-      <h3 id="hr-zones-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {hrZonesQuickGrid.title[lang] || hrZonesQuickGrid.title.en}
-      </h3>
-      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
-        {hrZonesQuickGrid.intro[lang] || hrZonesQuickGrid.intro.en}
-      </p>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        {hrZonesQuickGrid.items.map((item) => (
-          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
-            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
-              {item.age}
-            </span>
-            <div class="text-[11px] text-[var(--muted-foreground)] font-mono">
-              Max: <strong class="text-[var(--foreground)]">{item.maxHr}</strong>
-            </div>
-            <div class="text-xs font-bold font-mono text-[var(--accent)]">
-              {item.z2}
-            </div>
-            <span class="text-[10px] text-[var(--muted-foreground)] block pt-0.5 font-mono">
-              Zone 4: {item.z4}
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
-  <!-- ═══════════════════ 0I. KARVONEN HRR QUICK GRID ═══════════════════ -->
-  {effectiveSlug === 'karvonen-heart-rate-calculator' && (
-    <section class="space-y-4" aria-labelledby="karvonen-quick-heading">
-      <div class="flex items-center justify-between gap-3 flex-wrap">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 uppercase tracking-wider">
-          {karvonenQuickGrid.badge[lang] || karvonenQuickGrid.badge.en}
-        </span>
-        <p class="text-xs text-[var(--muted-foreground)]">
-          {karvonenQuickGrid.note[lang] || karvonenQuickGrid.note.en}
-        </p>
-      </div>
-      <h3 id="karvonen-quick-heading" class="text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-        {karvonenQuickGrid.title[lang] || karvonenQuickGrid.title.en}
-      </h3>
-      <p class="text-sm text-[var(--muted-foreground)] leading-relaxed w-full">
-        {karvonenQuickGrid.intro[lang] || karvonenQuickGrid.intro.en}
-      </p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-        {karvonenQuickGrid.items.map((item) => (
-          <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs hover:border-[var(--accent)]/40 transition-colors space-y-1.5 text-center">
-            <span class="text-xs font-bold font-display uppercase tracking-wider text-[var(--foreground)] block">
-              {item.rhr}
-            </span>
-            <div class="text-[11px] text-[var(--muted-foreground)] font-mono">
-              {item.hrr}
-            </div>
-            <div class="text-sm font-bold font-mono text-[var(--accent)]">
-              Zone 2: {item.z2}
-            </div>
-            <span class="text-[11px] text-[var(--muted-foreground)] block pt-0.5 font-mono">
-              Zone 4: {item.z4}
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
   <!-- ═══════════════════ 1. IMMEDIATE VISIBLE FLOW: WHO REFERENCE TABLE ═══════════════════ -->
   {currentData.tableRows && (
     <div class="space-y-4">
@@ -1215,7 +312,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
   )}
 
   <!-- ═══════════════════ 2. VISUAL REFERENCE INFOGRAPHIC ═══════════════════ -->
-  <figure role="group" aria-labelledby={`fig-caption-${effectiveSlug}`} class="p-6 md:p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-md space-y-4">
+  <figure role="group" aria-labelledby={`fig-caption-${effectiveSlug}`} class="p-4 sm:p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs space-y-3">
     <div class="flex items-center justify-between gap-4 flex-wrap">
       <div class="space-y-1">
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
@@ -1284,32 +381,34 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
   </figure>
 
   <!-- ═══════════════════ 3. STEP-BY-STEP WORKED EXAMPLE (HIGH CLARITY & VISIBLE) ═══════════════════ -->
-  <div class="p-6 md:p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-md space-y-5">
-    <div class="space-y-1">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
-        <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-        {workedExample.eyebrow}<span class="sr-only">. </span>
+  <div class="p-4 sm:p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs space-y-4">
+    <div class="flex items-center justify-between gap-3 flex-wrap">
+      <div class="space-y-1">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-[10px] font-display font-bold uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+          {workedExample.eyebrow}<span class="sr-only">. </span>
+        </div>
+        <h3 class="text-base sm:text-lg md:text-xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
+          {workedExample.title}<span class="sr-only">. </span>
+        </h3>
       </div>
-      <h3 class="text-xl md:text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
-        {workedExample.title}<span class="sr-only">. </span>
-      </h3>
       {workedExample.subtitle && (
-        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium pt-0.5 leading-relaxed">
+        <p class="text-xs text-[var(--muted-foreground)] font-medium max-w-md">
           {workedExample.subtitle}
         </p>
       )}
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
       <!-- Inputs & Derivation Steps -->
-      <div class="space-y-3.5">
-        <div class="p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 space-y-2">
-          <p class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+      <div class="space-y-3">
+        <div class="p-3 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)]/70 space-y-1.5">
+          <p class="text-[11px] font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
             {workedExample.inputHeading}<span class="sr-only">. </span>
           </p>
-          <div class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap gap-1.5">
             {workedExample.inputs.map((inp) => (
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs font-medium text-[var(--foreground)]">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[var(--card)] border border-[var(--border)] text-xs font-medium text-[var(--foreground)]">
                 <span class="text-[var(--muted-foreground)]">{inp.label}:</span>
                 <strong class="font-mono text-[var(--accent)]">{inp.value}</strong><span class="sr-only">. </span>
               </span>
@@ -1317,13 +416,13 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           </div>
         </div>
 
-        <div class="space-y-2">
-          <h4 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+        <div class="space-y-1.5">
+          <p class="text-[11px] font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
             {workedExample.stepsHeading}<span class="sr-only">. </span>
-          </h4>
-          <ol class="space-y-1.5 text-xs text-[var(--muted-foreground)] font-medium">
+          </p>
+          <ol class="space-y-1 text-xs text-[var(--muted-foreground)] font-medium">
             {workedExample.steps.map((st, sIdx) => (
-              <li class="flex items-start gap-2 p-2 rounded-lg bg-[var(--muted)]/20 border border-[var(--border)]/50">
+              <li class="flex items-start gap-2 p-1.5 rounded-lg bg-[var(--muted)]/20 border border-[var(--border)]/50">
                 <span class="flex items-center justify-center w-4 h-4 rounded-full bg-[var(--accent)]/15 text-[var(--accent)] text-[10px] font-bold font-mono shrink-0 mt-0.5">
                   {sIdx + 1}
                 </span>
@@ -1335,12 +434,12 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
       </div>
 
       <!-- Result Output & Interpretation Context -->
-      <div class="space-y-3.5">
-        <div class="p-4 rounded-xl bg-gradient-to-br from-[var(--accent)]/10 via-[var(--accent)]/5 to-transparent border border-[var(--accent)]/30 space-y-1.5">
-          <p class="text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)]">
+      <div class="space-y-3">
+        <div class="p-3.5 rounded-xl bg-gradient-to-br from-[var(--accent)]/10 via-[var(--accent)]/5 to-transparent border border-[var(--accent)]/30 space-y-1">
+          <p class="text-[11px] font-display font-bold uppercase tracking-wider text-[var(--accent)]">
             {workedExample.resultHeading}<span class="sr-only">. </span>
           </p>
-          <div class="text-lg md:text-xl font-display font-bold text-[var(--foreground)]">
+          <div class="text-base sm:text-lg font-display font-bold text-[var(--foreground)]">
             {workedExample.result.value}<span class="sr-only">. </span>
           </div>
           {workedExample.result.label && (
@@ -1350,221 +449,21 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           )}
         </div>
 
-        <div class="space-y-1.5">
-          <h4 class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
+        <div class="space-y-1">
+          <p class="text-[11px] font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
             {workedExample.interpretationHeading}<span class="sr-only">. </span>
-          </h4>
-          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+          </p>
+          <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
             {workedExample.interpretation}
           </p>
         </div>
       </div>
     </div>
-
-    <div class="pt-2 border-t border-[var(--border)]/70 flex items-center gap-2 text-xs text-[var(--muted-foreground)] font-medium">
-      <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <span>{workedExample.disclaimer}</span>
-    </div>
   </div>
 
-  <!-- Next Step Contextual Bridge (Maintenance / TDEE -> Macro Calculator) -->
-  {['maintenance-calorie-calculator', 'calorie-calculator', 'tdee-calculator'].includes(effectiveSlug) && (
-    <div class="p-5 md:p-6 rounded-2xl bg-gradient-to-r from-[var(--accent)]/10 via-[var(--card)] to-[var(--card)] border border-[var(--accent)]/30 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <div class="space-y-1">
-        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[var(--accent)]/20 text-[var(--accent)] text-[10px] font-display font-bold uppercase tracking-wider">
-          {lang === 'es' ? 'Siguiente Paso Recomendado' :
-           lang === 'fr' ? 'Prochaine Étape Recommandée' :
-           lang === 'de' ? 'Empfohlener Nächster Schritt' :
-           lang === 'ko' ? '다음 권장 단계' :
-           lang === 'hi' ? 'अनुशंसित अगला कदम' :
-           'Recommended Next Step'}
-        </div>
-        <h4 class="text-sm sm:text-base font-display font-bold text-[var(--foreground)] uppercase">
-          {lang === 'es' ? 'Convierte tus Calorías en Macronutrientes' :
-           lang === 'fr' ? 'Convertissez vos Calories en Macronutriments' :
-           lang === 'de' ? 'Wandeln Sie Ihre Kalorien in Makronährstoffe um' :
-           lang === 'ko' ? '칼로리를 맞춤 탄단지 매크로 비율로 전환하세요' :
-           lang === 'hi' ? 'अपनी कैलोरी को दैनिक मैक्रोज़ में बदलें' :
-           'Turn Your Calories into an Optimal Macro Split'}
-        </h4>
-        <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
-          {lang === 'es' ? 'Calcula la distribución óptima de proteínas, carbohidratos y grasas para tu objetivo.' :
-           lang === 'fr' ? 'Calculez la répartition idéale en protéines, glucides et lipides selon vos objectifs.' :
-           lang === 'de' ? 'Berechnen Sie die optimale Protein-, Kohlenhydrat- und Fettverteilung für Ihr Ziel.' :
-           lang === 'ko' ? '체중 유지, 감량 또는 벌크업 목표에 맞춘 최적의 단백질, 탄수화물, 지방 그램을 산출하세요.' :
-           lang === 'hi' ? 'अपने लक्ष्य के अनुसार प्रोटीन, कार्ब्स और वसा का सटीक दैनिक अनुपात जानें।' :
-           'Calculate your personalized protein, carbohydrate, and dietary fat grams for fat loss or muscle gain.'}
-        </p>
-      </div>
-      <a
-        href={`/${lang}/macro-calculator/`}
-        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--accent)] text-[var(--accent-foreground)] font-display font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity shrink-0 shadow-sm"
-      >
-        <span>
-          {lang === 'es' ? 'Calcular Macros →' :
-           lang === 'fr' ? 'Calculer les Macros →' :
-           lang === 'de' ? 'Makros Berechnen →' :
-           lang === 'ko' ? '매크로 계산하기 →' :
-           lang === 'hi' ? 'मैक्रोज़ कैलकुलेट करें →' :
-           'Calculate Macros →'}
-        </span>
-      </a>
-    </div>
-  )}
-
-  <!-- TDEE Specific: Where Your Calories Go (The 4 Pillars of Daily Energy Expenditure) -->
-  {effectiveSlug === 'tdee-calculator' && (
-    <div class="p-6 md:p-7 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm space-y-5">
-      <div class="space-y-1.5">
-        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-500 text-[10px] font-display font-bold uppercase tracking-wider">
-          {lang === 'es' ? 'Fisiología Energética' :
-           lang === 'fr' ? 'Physiologie Énergétique' :
-           lang === 'de' ? 'Energiephysiologie' :
-           lang === 'ko' ? '인체 에너지 대사 생리학' :
-           lang === 'hi' ? 'ऊर्जा शरीरक्रिया विज्ञान' :
-           'Energy Metabolism Breakdown'}
-        </div>
-        <h3 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-          {lang === 'es' ? 'A Dónde Van tus Calorías: Los 4 Pilares del TDEE' :
-           lang === 'fr' ? 'Où Partent vos Calories : Les 4 Piliers du TDEE' :
-           lang === 'de' ? 'Wohin Ihre Kalorien fließen: Die 4 Säulen des TDEE' :
-           lang === 'ko' ? '칼로리는 어디에 쓰이는가: 일일 에너지 소비(TDEE)의 4대 기둥' :
-           lang === 'hi' ? 'आपकी कैलोरी कहाँ खर्च होती है: TDEE के 4 मुख्य घटक' :
-           'Where Your Calories Go: The 4 Pillars of TDEE'}
-        </h3>
-        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
-          {lang === 'es' ? 'El gasto energético total no es solo ejercicio. Se compone de 4 compartimentos metabólicos distintos que determinan tu quema diaria:' :
-           lang === 'fr' ? 'La dépense énergétique journalière ne se résume pas au sport. Elle se divise en 4 compartiments métaboliques distincts :' :
-           lang === 'de' ? 'Der tägliche Gesamtumsatz besteht nicht nur aus Sport. Er setzt sich aus 4 physiologischen Säulen zusammen:' :
-           lang === 'ko' ? '총 일일 에너지 소비량(TDEE)은 단순한 운동량만이 아닙니다. 인체 대사는 4가지 뚜렷한 영역으로 구성됩니다:' :
-           lang === 'hi' ? 'कुल दैनिक ऊर्जा व्यय (TDEE) केवल व्यायाम नहीं है। यह 4 अलग-अलग चयापचय घटकों से मिलकर बनता है:' :
-           'Total Daily Energy Expenditure (TDEE) is not just exercise. It is composed of 4 distinct physiological compartments:'}
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-        <!-- Pillar 1: BMR -->
-        <div class="p-4 rounded-xl bg-gradient-to-b from-blue-500/10 via-[var(--card)] to-[var(--card)] border border-blue-500/20 flex flex-col justify-between space-y-2.5">
-          <div class="space-y-1">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-display font-bold uppercase tracking-wider text-blue-400">BMR</span>
-              <span class="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-[10px] font-mono font-bold">~60–70%</span>
-            </div>
-            <h4 class="text-sm font-display font-bold text-[var(--foreground)]">
-              {lang === 'es' ? 'Metabolismo Basal' :
-               lang === 'fr' ? 'Métabolisme de Base' :
-               lang === 'de' ? 'Grundumsatz' :
-               lang === 'ko' ? '기초대사량' :
-               lang === 'hi' ? 'बेसल मेटाबॉलिज्म' :
-               'Basal Metabolism'}
-            </h4>
-          </div>
-          <p class="text-[11px] text-[var(--muted-foreground)] leading-relaxed">
-            {lang === 'es' ? 'Energía obligatoria para mantener órganos vitales (cerebro, hígado, corazón) y respiración en reposo total.' :
-             lang === 'fr' ? 'Énergie indispensable pour alimenter les organes vitaux (cerveau, foie, cœur) et fonctions cellulaires au repos complet.' :
-             lang === 'de' ? 'Überlebensnotwendige Energie für Vitalorgane (Gehirn, Leber, Herz) und Zellatmung in völliger Ruhe.' :
-             lang === 'ko' ? '완전한 휴식 상태에서 뇌, 간, 심장 등 생명 유지 장기를 가동하고 세포 대사를 유지하는 필수 에너지.' :
-             lang === 'hi' ? 'मस्तिष्क, हृदय और अंगों को पूर्ण विश्राम की स्थिति में जीवित रखने के लिए अनिवार्य न्यूनतम ऊर्जा।' :
-             'Non-negotiable baseline energy required to power vital organs (brain, liver, heart, kidneys) and cellular respiration at complete rest.'}
-          </p>
-          <div class="pt-1.5 border-t border-blue-500/15 text-[10px] font-mono text-blue-400">
-            ~1,730 kcal/day
-          </div>
-        </div>
-
-        <!-- Pillar 2: NEAT -->
-        <div class="p-4 rounded-xl bg-gradient-to-b from-emerald-500/10 via-[var(--card)] to-[var(--card)] border border-emerald-500/20 flex flex-col justify-between space-y-2.5">
-          <div class="space-y-1">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-display font-bold uppercase tracking-wider text-emerald-400">NEAT</span>
-              <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-mono font-bold">~15%</span>
-            </div>
-            <h4 class="text-sm font-display font-bold text-[var(--foreground)]">
-              {lang === 'es' ? 'Actividad Sin Ejercicio' :
-               lang === 'fr' ? 'Activité Spontanée' :
-               lang === 'de' ? 'Alltagsaktivität' :
-               lang === 'ko' ? '비운동성 활동' :
-               lang === 'hi' ? 'गैर-व्यायाम गति' :
-               'Non-Exercise Activity'}
-            </h4>
-          </div>
-          <p class="text-[11px] text-[var(--muted-foreground)] leading-relaxed">
-            {lang === 'es' ? 'Calorías quemadas en pasos diarios, postura corporal, tareas del hogar e inquietud motora. El factor más variable (200–800 kcal).' :
-             lang === 'fr' ? 'Calories brûlées par la marche, posture, tâches ménagères et agitation motrice. Facteur le plus variable (200–800 kcal).' :
-             lang === 'de' ? 'Kalorien durch Gehen, Haltung, Hausarbeit und Alltagsbewegung. Größte Varianz zwischen Personen (200–800 kcal).' :
-             lang === 'ko' ? '보행, 자세 유지, 집안일, 무의식적 움직임으로 소모되는 칼로리. 개인차를 만드는 최대 변수 (200~800 kcal).' :
-             lang === 'hi' ? 'चलने, खड़े रहने, घरेलू काम और दैनिक गतिविधियों से जलने वाली कैलोरी। व्यक्तियों के बीच सबसे बड़ा अंतर (200-800 कैलोरी)।' :
-             'Calories burned through walking, posture, household chores, and subconscious fidgeting. The single most variable component (200–800 kcal).' }
-          </p>
-          <div class="pt-1.5 border-t border-emerald-500/15 text-[10px] font-mono text-emerald-400">
-            ~400 kcal/day
-          </div>
-        </div>
-
-        <!-- Pillar 3: EAT -->
-        <div class="p-4 rounded-xl bg-gradient-to-b from-purple-500/10 via-[var(--card)] to-[var(--card)] border border-purple-500/20 flex flex-col justify-between space-y-2.5">
-          <div class="space-y-1">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-display font-bold uppercase tracking-wider text-purple-400">EAT</span>
-              <span class="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-mono font-bold">~5–10%</span>
-            </div>
-            <h4 class="text-sm font-display font-bold text-[var(--foreground)]">
-              {lang === 'es' ? 'Ejercicio Deportivo' :
-               lang === 'fr' ? 'Exercice Physique' :
-               lang === 'de' ? 'Sportliche Bewegung' :
-               lang === 'ko' ? '운동성 열발생' :
-               lang === 'hi' ? 'व्यायाम जनित ऊर्जा' :
-               'Exercise Activity'}
-            </h4>
-          </div>
-          <p class="text-[11px] text-[var(--muted-foreground)] leading-relaxed">
-            {lang === 'es' ? 'Energía consumida durante entrenamientos estructurados de fuerza, cardio, HIIT o práctica de deportes.' :
-             lang === 'fr' ? 'Énergie dépensée lors des séances de musculation, course, HIIT ou sports planifiés.' :
-             lang === 'de' ? 'Verbrauch durch bewusstes Fitnesstraining, Kraftsport, Ausdauerlauf oder Sportarten.' :
-             lang === 'ko' ? '계획된 웨이트 트레이닝, 러닝, 인터벌 운동(HIIT) 등 의도적 스포츠 활동 중 소모되는 열량.' :
-             lang === 'hi' ? 'नियमित जिम, वजन प्रशिक्षण, दौड़ने और खेलों के दौरान खर्च होने वाली ऊर्जा।' :
-             'Energy burned during intentional workouts, resistance lifting, cardiovascular conditioning, and competitive athletic training.'}
-          </p>
-          <div class="pt-1.5 border-t border-purple-500/15 text-[10px] font-mono text-purple-400">
-            ~280 kcal/day
-          </div>
-        </div>
-
-        <!-- Pillar 4: TEF -->
-        <div class="p-4 rounded-xl bg-gradient-to-b from-amber-500/10 via-[var(--card)] to-[var(--card)] border border-amber-500/20 flex flex-col justify-between space-y-2.5">
-          <div class="space-y-1">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-display font-bold uppercase tracking-wider text-amber-400">TEF</span>
-              <span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-mono font-bold">~8–10%</span>
-            </div>
-            <h4 class="text-sm font-display font-bold text-[var(--foreground)]">
-              {lang === 'es' ? 'Efecto Térmico Alimentos' :
-               lang === 'fr' ? 'Effet Thermique Aliments' :
-               lang === 'de' ? 'Nahrungsthermogenese' :
-               lang === 'ko' ? '식사성 열발생' :
-               lang === 'hi' ? 'भोजन का थर्मिक प्रभाव' :
-               'Thermic Effect of Food'}
-            </h4>
-          </div>
-          <p class="text-[11px] text-[var(--muted-foreground)] leading-relaxed">
-            {lang === 'es' ? 'Costo metabólico de digestión: la proteína quema 20–30% de sus calorías procesándose; los carbohidratos 5–10% y las grasas 0–3%.' :
-             lang === 'fr' ? "Coût digestif : les protéines brûlent 20–30% de leurs calories à l'assimilation, les glucides 5–10%, les lipides 0–3%." :
-             lang === 'de' ? 'Verdauungsenergie: Protein verbrennt 20–30% seiner Kalorien beim Verstoffwechseln, Kohlenhydrate 5–10%, Fett 0–3%.' :
-             lang === 'ko' ? '소화 흡수 대사 비용: 단백질은 자체 칼로리의 20~30%를 소화에 소모하며, 탄수화물은 5~10%, 지방은 0~3%를 소모합니다.' :
-             lang === 'hi' ? 'पाचन लागत: प्रोटीन अपने कैलोरी का 20-30% पचाने में जला देता है, कार्बोहाइड्रेट 5-10%, और वसा 0-3%।' :
-             'Digestive metabolic cost: protein expends 20–30% of its calories during assimilation, carbohydrates 5–10%, and dietary fats 0–3%.'}
-          </p>
-          <div class="pt-1.5 border-t border-amber-500/15 text-[10px] font-mono text-amber-400">
-            ~272 kcal/day
-          </div>
-        </div>
-      </div>
-    </div>
-  )}
-
   <!-- ═══════════════════ 4. COLLAPSIBLE ACCORDION: FORMULA DETAILS, INPUT VARIABLES & MEASUREMENT UNITS ═══════════════════ -->
-  <details open class="group rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm transition-all overflow-hidden">
-    <summary class="p-6 md:p-7 flex items-center justify-between cursor-pointer list-none select-none hover:bg-[var(--muted)]/20 transition-colors">
+  <details class="group rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs transition-all overflow-hidden">
+    <summary class="p-4 sm:p-5 flex items-center justify-between cursor-pointer list-none select-none hover:bg-[var(--muted)]/20 transition-colors">
       <div class="flex items-center gap-3.5">
         <div class="w-9 h-9 rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center font-bold text-base shrink-0">
           <svg class="w-5 h-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
@@ -1583,9 +482,9 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
       </div>
     </summary>
 
-    <div class="p-6 md:p-8 pt-2 border-t border-[var(--border)] space-y-6">
+    <div class="p-4 sm:p-5 pt-2 border-t border-[var(--border)] space-y-4">
       <!-- Formula Box -->
-      <div class="p-5 md:p-6 rounded-xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-sm space-y-3">
+      <div class="p-3.5 sm:p-4 rounded-xl bg-[var(--muted)]/20 border border-[var(--border)] space-y-2.5">
         <div class="flex items-center justify-between gap-4 flex-wrap">
           <h4 class="text-lg font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
             {currentData.formulaTitle}<span class="sr-only">. </span>
@@ -1603,7 +502,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
 
       <!-- Input Variables & Measurement Units Guide -->
       {variablesGuide.items.length > 0 && (
-        <div class="p-5 md:p-6 rounded-xl bg-[var(--card)] border border-[var(--border)] shadow-sm space-y-4">
+        <div class="p-3.5 sm:p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] shadow-xs space-y-3">
           <div class="space-y-1">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
               <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
@@ -1618,9 +517,9 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
             {variablesGuide.items.map((item) => (
               <div class="p-3.5 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)]/70 flex flex-col justify-between space-y-2.5">
                 <div class="space-y-1">
-                  <h5 class="text-xs font-display font-bold text-[var(--foreground)] tracking-tight">
+                  <p class="text-xs font-display font-bold text-[var(--foreground)] tracking-tight">
                     {item.name}<span class="sr-only">. </span>
-                  </h5>
+                  </p>
                   <p class="text-[11px] text-[var(--muted-foreground)] leading-relaxed font-medium">
                     {item.description}
                   </p>
@@ -1643,8 +542,8 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
   </details>
 
   <!-- ═══════════════════ 5. COLLAPSIBLE ACCORDION: CLINICAL LIMITATIONS & PHYSIOLOGICAL CONTEXT ═══════════════════ -->
-  <details open class="group rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-sm transition-all overflow-hidden">
-    <summary class="p-6 md:p-7 flex items-center justify-between cursor-pointer list-none select-none hover:bg-[var(--muted)]/20 transition-colors">
+  <details class="group rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs transition-all overflow-hidden">
+    <summary class="p-4 sm:p-5 flex items-center justify-between cursor-pointer list-none select-none hover:bg-[var(--muted)]/20 transition-colors">
       <div class="flex items-center gap-3.5">
         <div class="w-9 h-9 rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center font-bold text-base shrink-0">
           <svg class="w-5 h-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
@@ -1663,8 +562,8 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
       </div>
     </summary>
 
-    <div class="p-6 md:p-8 pt-2 border-t border-[var(--border)] space-y-6">
-      <div class="p-5 md:p-6 rounded-xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-sm space-y-5">
+    <div class="p-4 sm:p-5 pt-2 border-t border-[var(--border)] space-y-4">
+      <div class="p-3.5 sm:p-4 rounded-xl bg-[var(--muted)]/20 border border-[var(--border)] space-y-4">
         <div class="space-y-1">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-display font-bold uppercase tracking-widest border border-[var(--accent)]/20">
             <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
@@ -1678,10 +577,10 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <!-- Interpretation Panel -->
           <div class="p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] space-y-2">
-            <h4 class="text-sm font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
+            <p class="text-sm font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
               <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               {clinicalGuide.interpretationTitle}<span class="sr-only">. </span>
-            </h4>
+            </p>
             <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
               {clinicalGuide.interpretationText}
             </p>
@@ -1689,10 +588,10 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
 
           <!-- Limitations Panel -->
           <div class="p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] space-y-2">
-            <h4 class="text-sm font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
+            <p class="text-sm font-display font-bold text-[var(--foreground)] uppercase tracking-wide flex items-center gap-2">
               <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
               {clinicalGuide.limitationsTitle}<span class="sr-only">. </span>
-            </h4>
+            </p>
             <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
               {clinicalGuide.limitationsText}
             </p>
@@ -1722,38 +621,17 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
         </p>
       )}
     </div>
-    <div class="grid gap-3.5">
-      {(currentData.faqs || []).map((faq: { question: string; answer: string }) => {
-        const parsed = formatFaqAnswer(faq.answer);
-        const fl = faqLabels[lang] || faqLabels.en;
-        return (
-          <div class="p-5 md:p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3 shadow-xs">
-            <h4 class="text-sm md:text-base font-display font-bold text-[var(--foreground)]">
-              {faq.question}
-            </h4>
-            {parsed.detailed ? (
-              <div class="space-y-2.5 pt-0.5">
-                <div class="p-3.5 rounded-xl bg-[var(--accent)]/5 border-l-[3px] border-[var(--accent)] text-xs sm:text-sm font-semibold text-[var(--foreground)]">
-                  <span class="text-[var(--accent)] uppercase tracking-wider text-[10px] font-bold block mb-1 font-display">
-                    {fl.short}<span class="sr-only">. </span>
-                  </span>
-                  {parsed.short}
-                </div>
-                <div class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium space-y-1">
-                  <span class="text-[var(--foreground)] uppercase tracking-wider text-[10px] font-bold block opacity-75 font-display">
-                    {fl.detailed}<span class="sr-only">. </span>
-                  </span>
-                  <p>{parsed.detailed}</p>
-                </div>
-              </div>
-            ) : (
-              <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
-                {faq.answer}
-              </p>
-            )}
-          </div>
-        );
-      })}
+    <div class="grid gap-3">
+      {(currentData.faqs || []).map((faq: { question: string; answer: string }) => (
+        <div class="p-4 sm:p-5 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2 shadow-xs">
+          <h4 class="text-sm md:text-base font-display font-bold text-[var(--foreground)]">
+            {faq.question}
+          </h4>
+          <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+            {faq.answer}
+          </p>
+        </div>
+      ))}
     </div>
   </div>
 
@@ -1770,43 +648,35 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
     </div>
   </div>
 
-  <!-- ═══════════════════ 7. EDITORIAL ATTR & TRANSPARENCY CARD ═══════════════════ -->
-  <div class="p-5 md:p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-    <div class="flex items-center gap-3">
-      <div class="w-9 h-9 rounded-full bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-bold text-xs shadow-xs">
-        RB
+    <!-- ═══════════════════ 7. CLINICAL GOVERNANCE & E-E-A-T NOTICE ═══════════════════ -->
+  <div class="p-4 sm:p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs space-y-3.5">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[var(--border)]/60">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-bold text-xs shadow-xs shrink-0">
+          RB
+        </div>
+        <div>
+          <p class="text-xs font-bold text-[var(--foreground)]">
+            Bhawanshi Dosi
+            <span class="font-normal text-[var(--muted-foreground)]">
+              {lang === 'es' ? '• Creadora y Desarrolladora (Banswara, Rajastán, India)' :
+               lang === 'fr' ? '• Créatrice & Développeuse (Banswara, Rajasthan, Inde)' :
+               lang === 'de' ? '• Schöpferin & Entwicklerin (Banswara, Rajasthan, Indien)' :
+               lang === 'ko' ? '• 제작자 겸 소프트웨어 개발자 (인도 라자스탄주 반스와라)' :
+               lang === 'hi' ? '• निर्माता एवं मुख्य डेवलपर (बांसवाड़ा, राजस्थान, भारत)' :
+               '• Creator & Lead Developer (Banswara, Rajasthan, India)'}<span class="sr-only">. </span>
+            </span>
+          </p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">
+            {lang === 'es' ? 'Fórmulas alineadas con estándares de la OMS, CDC e ICMR' :
+             lang === 'fr' ? 'Formules alignées sur les publications OMS, CDC et ICMR' :
+             lang === 'de' ? 'Formeln abgestimmt auf Standards von WHO, CDC & ICMR' :
+             lang === 'ko' ? 'WHO, CDC 및 ICMR 지침에 맞춘 공식 적용' :
+             lang === 'hi' ? 'WHO, CDC और ICMR साहित्य के अनुरूप गणितीय सूत्र' :
+             'Formulas aligned with published WHO, CDC & ICMR benchmarks'}<span class="sr-only">. </span>
+          </p>
+        </div>
       </div>
-      <div>
-        <p class="text-[11px] uppercase tracking-wider font-semibold text-[var(--muted-foreground)]">
-          {lang === 'es' ? 'Diseño y Modelado Matemático' :
-           lang === 'fr' ? 'Conception et Modélisation Mathématique' :
-           lang === 'de' ? 'Design & Mathematische Modellierung' :
-           lang === 'ko' ? '도구 설계 및 수학적 모델링' :
-           lang === 'hi' ? 'उपकरण डिज़ाइन और गणितीय मॉडलिंग' :
-           'Tool Design & Mathematical Modeling'}<span class="sr-only">. </span>
-        </p>
-        <p class="text-xs sm:text-sm font-bold text-[var(--foreground)]">
-          Bhawanshi Dosi
-          <span class="text-xs font-normal text-[var(--muted-foreground)]">
-            {lang === 'es' ? '• Creadora y Desarrolladora (Banswara, Rajastán, India)' :
-             lang === 'fr' ? '• Créatrice & Développeuse (Banswara, Rajasthan, Inde)' :
-             lang === 'de' ? '• Schöpferin & Entwicklerin (Banswara, Rajasthan, Indien)' :
-             lang === 'ko' ? '• 제작자 겸 소프트웨어 개발자 (인도 라자스탄주 반스와라)' :
-             lang === 'hi' ? '• निर्माता एवं मुख्य डेवलपर (बांसवाड़ा, राजस्थान, भारत)' :
-             '• Creator & Lead Developer (Banswara, Rajasthan, India)'}<span class="sr-only">. </span>
-          </span>
-        </p>
-      </div>
-    </div>
-    <div class="text-xs text-[var(--muted-foreground)] sm:text-right space-y-1">
-      <p class="text-[11px] sm:text-xs">
-        {lang === 'es' ? 'Fórmulas alineadas con estándares de la OMS, CDC e ICMR' :
-         lang === 'fr' ? 'Formules alignées sur les publications OMS, CDC et ICMR' :
-         lang === 'de' ? 'Formeln abgestimmt auf Standards von WHO, CDC & ICMR' :
-         lang === 'ko' ? 'WHO, CDC 및 ICMR 지침에 맞춘 공식 적용' :
-         lang === 'hi' ? 'WHO, CDC और ICMR साहित्य के अनुरूप गणितीय सूत्र' :
-         'Formulas aligned with published WHO, CDC & ICMR benchmarks'}<span class="sr-only">. </span>
-      </p>
       <div class="flex flex-wrap sm:justify-end gap-3 font-semibold text-[var(--accent)] text-xs">
         <a href={`/${lang}/about/`} class="underline hover:text-[var(--foreground)]">
           {lang === 'es' ? 'Sobre la Creadora' :
@@ -1834,33 +704,29 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
         </a>
       </div>
     </div>
-  </div>
 
-  <!-- ═══════════════════ 8. YMYL MEDICAL & EDUCATIONAL DISCLAIMER ═══════════════════ -->
-  <aside class="p-4 sm:p-5 rounded-2xl border border-amber-500/25 bg-amber-500/5 text-xs text-[var(--foreground)] shadow-xs flex items-start gap-3.5">
-    <div class="w-7 h-7 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <!-- Unified Clinical Disclaimer -->
+    <div class="flex items-start gap-2.5 text-xs text-[var(--muted-foreground)] leading-relaxed">
+      <svg class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
       </svg>
-    </div>
-    <div class="space-y-1">
-      <p class="font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider text-[11px]">
-        {lang === 'es' ? 'Aviso Médico y Exención de Responsabilidad Clínica' :
-         lang === 'fr' ? 'Avertissement Médical & Clause de Non-Responsabilité' :
-         lang === 'de' ? 'Medizinischer Haftungsausschluss & Rechtlicher Hinweis' :
-         lang === 'ko' ? '의학적 면책 조항 및 임상적 고지' :
-         lang === 'hi' ? 'चिकित्सीय अस्वीकरण एवं विधिक सूचना' :
-         'Medical Disclaimer & Clinical Notice'}
-      </p>
-      <p class="text-[var(--muted-foreground)] leading-relaxed font-sans">
+      <p>
+        <strong class="text-[var(--foreground)]">
+          {lang === 'es' ? 'Aviso Médico:' :
+           lang === 'fr' ? 'Avertissement Médical :' :
+           lang === 'de' ? 'Medizinischer Hinweis:' :
+           lang === 'ko' ? '의학적 고지:' :
+           lang === 'hi' ? 'चिकित्सीय सूचना:' :
+           'Clinical Notice:'}
+        </strong>{' '}
         {lang === 'es' ? 'Esto no es asesoramiento médico. Real BMI es un sitio web individual creado y mantenido por Bhawanshi Dosi (Banswara, Rajastán, India). Todos los cálculos y tablas de referencia son estimaciones con fines puramente educativos basadas en fórmulas científicas publicadas (OMS, CDC). Esta herramienta no proporciona diagnóstico, tratamiento, terapia ni prescripción médica, ni sustituye el juicio de un profesional de la salud colegiado.' :
          lang === 'fr' ? 'Ceci ne constitue pas un avis médical. Real BMI est un site web individuel conçu et géré par Bhawanshi Dosi (Banswara, Rajasthan, Inde). Tous les calculs et plages de référence sont des estimations éducatives fondées sur des publications scientifiques reconnues (OMS, CDC). Cet outil ne fournit aucun diagnostic, traitement, thérapie ou prescription, et ne remplace pas une consultation médicale auprès d\'un professionnel qualifié.' :
          lang === 'de' ? 'Dies ist keine medizinische Beratung. Real BMI ist eine persönliche Bildungsplattform, entwickelt und betrieben von Bhawanshi Dosi (Banswara, Rajasthan, Indien). Alle Berechnungen und Referenztabellen dienen ausschließlich zu Informations- und Bildungszwecken auf Basis wissenschaftlicher Formeln (WHO, CDC). Diese Website bietet keine Diagnose, Behandlung, Therapie oder Verschreibung und ersetzt keinesfalls das Urteil eines qualifizierten Arztes.' :
          lang === 'ko' ? '이것은 의학적 조언이 아닙니다. Real BMI는 인도 라자스탄주 반스와라의 Bhawanshi Dosi가 개발 및 운영하는 개인 교육용 건강 리소스입니다. 제공되는 모든 계산 결과와 참조표는 공인된 학술 공식(WHO, CDC)에 기반한 교육용 추정치입니다. 본 도구는 의학적 진단, 치료, 요법 또는 처방을 제공하지 않으며 자격을 갖춘 의료 전문가의 진료를 대체할 수 없습니다.' :
          lang === 'hi' ? 'यह कोई चिकित्सीय सलाह नहीं है। Real BMI बांसवाड़ा, राजस्थान, भारत स्थित Bhawanshi Dosi द्वारा विकसित और संचालित एक व्यक्तिगत शैक्षिक स्वास्थ्य मंच है। सभी गणनाएं और संदर्भ सारणियां प्रकाशित वैज्ञानिक सूत्रों (WHO, CDC) पर आधारित केवल शैक्षिक अनुमान हैं। यह उपकरण कोई नैदानिक निदान, उपचार, थेरेपी या दवा का नुस्खा प्रदान नहीं करता है और किसी योग्य चिकित्सक के परामर्श का विकल्प नहीं है।' :
-         'This is not medical advice. Real BMI is an educational website founded by Bhawanshi Dosi in Banswara, India. All calculations are educational estimates based on WHO and CDC guidelines. This tool does not provide a medical diagnosis or treatment plan. It does not replace therapy or doctor prescriptions. Always seek clinical advice from a licensed medical provider.'}
+         'This is not medical advice. Real BMI is an educational website founded by Bhawanshi Dosi in Banswara, India. All calculations are educational estimates based on WHO and CDC guidelines. This tool does not provide a medical diagnosis or treatment plan. Always seek clinical advice from a licensed medical provider.'}
       </p>
     </div>
-  </aside>
+  </div>
 
 </section>

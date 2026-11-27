@@ -26,7 +26,13 @@ const imperialLabel = { en: 'Imperial', es: 'Imperial', fr: 'Impérial', de: 'Im
 const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence', de: 'Referenz', ko: '기준', hi: 'संदर्भ' }[lang];
 ---
 
-<div id={`calculator-${calculator.slug}`} data-slug={calculator.slug} class="melove-card p-4 sm:p-6 md:p-7 lg:p-8 space-y-5 sm:space-y-6 h-full scroll-mt-28 w-full max-w-full overflow-hidden">
+<div 
+  id={`calculator-${calculator.slug}`} 
+  data-slug={calculator.slug} 
+  data-lang={lang}
+  data-enter-prompt={t.enterPrompt}
+  class="melove-card p-4 sm:p-6 md:p-7 lg:p-8 space-y-5 sm:space-y-6 h-full scroll-mt-28 w-full max-w-full overflow-hidden"
+>
   
   <!-- Header -->
   <div class="space-y-2">
@@ -263,8 +269,15 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
   }
 </style>
 
-<script is:inline define:vars={{ slug: calculator.slug, lang, enterPrompt: t.enterPrompt }}>
-  (function() {
+<script>
+  function setupUniversalCalculator(container: any) {
+    if (!container || container.dataset.calcInit === 'true') return;
+    container.dataset.calcInit = 'true';
+
+    const slug = container.dataset.slug || '';
+    const lang = container.dataset.lang || (document.documentElement.lang || 'en').slice(0, 2);
+    const enterPrompt = container.dataset.enterPrompt || 'Please enter your measurements above.';
+
     let currentUnitSystem = 'metric';
     let currentBmiReference = 'standard';
     let hasCalculated = false;
@@ -450,7 +463,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
 
       // Age check for age-dependent calculators
       const ageEl = document.getElementById(`input-${slug}-age`);
-      if (ageEl && ['bmr-calculator', 'tdee-calculator', 'calorie-calculator', 'maintenance-calorie-calculator', 'heart-rate-zone-calculator', 'karvonen-heart-rate-calculator', 'one-rep-max-calculator', 'pregnancy-weight-gain-calculator'].includes(slug)) {
+      if (ageEl && ['bmr-calculator', 'tdee-calculator', 'calorie-calculator', 'maintenance-calorie-calculator', 'heart-rate-zone-calculator', 'karvonen-heart-rate-calculator',  'pregnancy-weight-gain-calculator'].includes(slug)) {
         const aVal = parseFloat(val('age'));
         if (isNaN(aVal) || aVal <= 0) missing = true;
       }
@@ -810,7 +823,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
             ]
           };
         }
-        else if (slug === '1rm-calculator' || slug === 'one-rep-max-calculator') {
+        else if (slug === '1rm-calculator' ) {
           const liftW = parseFloat(val('weight')) || 0;
           const reps = parseInt(val('age')) || 1;
           const epley1RM = liftW * (1 + (reps / 30));
@@ -1110,7 +1123,7 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
             ]
           };
         } 
-        else if (slug === '1rm-calculator' || slug === 'one-rep-max-calculator') {
+        else if (slug === '1rm-calculator' ) {
           const liftW = parseFloat(val('weight')) || 0;
           const reps = parseInt(ageVal) || 1;
           const epley1RM = liftW * (1 + (reps / 30));
@@ -1168,23 +1181,24 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
     }
 
     // Event Delegation for Calculate and Reset buttons
-    document.addEventListener('click', (e) => {
-      const calcBtn = e.target.closest('#runCalcBtn-' + slug);
-      if (calcBtn) {
+    const calcBtn = document.getElementById('runCalcBtn-' + slug);
+    if (calcBtn) {
+      calcBtn.addEventListener('click', (e) => {
         e.preventDefault();
         runCalculation(true);
-        return;
-      }
+      });
+    }
 
-      const resetBtn = e.target.closest('#resetCalcBtn-' + slug);
-      if (resetBtn) {
+    const resetBtn = document.getElementById('resetCalcBtn-' + slug);
+    if (resetBtn) {
+      resetBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const card = document.getElementById('calculator-' + slug);
         if (card) {
-          card.querySelectorAll('input[type="number"], input[type="text"]').forEach(input => {
+          card.querySelectorAll('input[type="number"], input[type="text"]').forEach((input: any) => {
             input.value = '';
           });
-          card.querySelectorAll('select').forEach(select => {
+          card.querySelectorAll('select').forEach((select: any) => {
             select.selectedIndex = 0;
           });
         }
@@ -1196,7 +1210,23 @@ const bmiReferenceLabel = { en: 'Reference', es: 'Referencia', fr: 'Référence'
         hasCalculated = false;
         window.dispatchEvent(new CustomEvent('calculationCompleted', { detail: null }));
         window.dispatchEvent(new CustomEvent('calculationReset'));
-      }
+      });
+    }
+  }
+
+  function initAllCalculators() {
+    document.querySelectorAll('[data-slug]').forEach((el) => {
+      setupUniversalCalculator(el);
     });
-  })();
+  }
+
+  if (typeof window !== 'undefined') {
+    initAllCalculators();
+    document.addEventListener('astro:after-swap', () => {
+      document.querySelectorAll('[data-slug]').forEach((el: any) => {
+        el.dataset.calcInit = 'false';
+        setupUniversalCalculator(el);
+      });
+    });
+  }
 </script>

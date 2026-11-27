@@ -33,8 +33,8 @@ const calcCode = fs.readFileSync(path.join(WORKSPACE, 'src/utils/calculators.ts'
 const calcSlugsMatch = [...calcCode.matchAll(/slug:\s*'([^']+)'/g)];
 const calcSlugs = Array.from(new Set(calcSlugsMatch.map(m => m[1])));
 
-test('Calculators Config: Contains all 25 canonical calculator definitions', () => {
-  assert.strictEqual(calcSlugs.length >= 25, true, `Expected >= 26 calculators, found ${calcSlugs.length}`);
+test('Calculators Config: Contains all 23 canonical calculator definitions', () => {
+  assert.strictEqual(calcSlugs.length, 23, `Expected 23 calculators, found ${calcSlugs.length}`);
 });
 
 // 1. Calculator Configuration Parity (Inputs, Labels, Primary & Secondary Outputs)
@@ -86,8 +86,8 @@ const fn = new Function('module', 'exports', res.outputFiles[0].text + '\nreturn
 const { seoDatabase: seoDb } = fn({ exports: {} }, {});
 const seoSlugs = Object.keys(seoDb);
 
-test('seoDatabase: Contains all 26 public calculator SEO entries', () => {
-  assert.strictEqual(seoSlugs.length >= 26, true, `Expected >= 26 calculators, found ${seoSlugs.length}`);
+test('seoDatabase: Contains all canonical calculator SEO entries', () => {
+  assert.strictEqual(seoSlugs.length >= 23, true, `Expected >= 23 calculators, found ${seoSlugs.length}`);
 });
 
 const forbiddenFallbacks = [

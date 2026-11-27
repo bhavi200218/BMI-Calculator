@@ -7,17 +7,14 @@ import LatestArticles from '../../components/LatestArticles.astro';
 import ToolSEOContent from '../../components/ToolSEOContent.astro';
 import ThreeDBodyVisualizer from '../../components/ThreeDBodyVisualizer.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
-import IndianBmiClinicalGuide from '../../components/IndianBmiClinicalGuide.astro';
 import { seoDatabase } from '../../data/seoDatabase';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
 
 // Define static paths for active unique calculators across 6 languages (aliases handled via _redirects)
 export function getStaticPaths() {
   const paths: any[] = [];
-  const aliasSlugs = new Set(['one-rep-max-calculator', '3d-body-visualizer']);
   for (const lang of locales) {
     for (const calc of calculators) {
-      if (aliasSlugs.has(calc.slug)) continue;
       paths.push({
         params: { lang, calculator: calc.slug },
         props: { calc, lang }
@@ -549,75 +546,6 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
         </aside>
       )}
 
-      {calc.slug === 'bmi-calculator' && (
-        <aside class="p-3.5 sm:p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/80 text-xs text-[var(--foreground)] max-w-4xl mx-auto shadow-xs">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
-            <div class="flex items-center gap-2.5">
-              <span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] shrink-0">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="1.75"/><circle cx="12" cy="12" r="3" stroke-width="2"/></svg>
-              </span>
-              <div class="space-y-0.5">
-                <span class="font-bold text-[var(--foreground)] text-xs sm:text-sm block">
-                  {{
-                    en: 'Looking for a specialized BMI calculator?',
-                    es: '¿Buscas una calculadora de IMC especializada?',
-                    fr: 'Vous recherchez un calculateur d\'IMC spécialisé ?',
-                    de: 'Suchen Sie nach einem spezialisierten BMI-Rechner?',
-                    ko: '맞춤형 특수 BMI 계산기를 찾으시나요?',
-                    hi: 'क्या आप किसी विशिष्ट बीएमआई कैलकुलेटर की तलाश कर रहे हैं?'
-                  }[lang]}
-                </span>
-                <span class="text-[var(--muted-foreground)] text-[11px] sm:text-xs">
-                  {{
-                    en: 'Standard WHO cutoffs may not reflect ethnic differences or 3D body composition:',
-                    es: 'Los cortes estándar de la OMS pueden no reflejar diferencias étnicas o composición 3D:',
-                    fr: 'Les seuils de l\'OMS peuvent ne pas refléter les variations ethniques ou la silhouette 3D :',
-                    de: 'Standard-WHO-Grenzwerte berücksichtigen ethnische Unterschiede oder 3D-Körperbau oft nicht:',
-                    ko: '표준 WHO 기준은 인종별 체지방 특성이나 3D 체형을 모두 반영하지 못할 수 있습니다:',
-                    hi: 'मानक डब्ल्यूएचओ कटऑफ जातीय भिन्नताओं या 3D शारीरिक संरचना को पूरी तरह नहीं दर्शाते:'
-                  }[lang]}
-                </span>
-              </div>
-            </div>
-            <div class="flex flex-wrap items-center gap-1.5 shrink-0">
-              <a href={`/${lang}/bmi-calculator-for-indians/`} class="px-2.5 py-1.5 rounded-lg bg-[var(--muted)] hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="2"/></svg>
-                {{
-                  en: 'BMI for Indians (ICMR)',
-                  es: 'IMC para Indios (ICMR)',
-                  fr: 'IMC pour Indiens (ICMR)',
-                  de: 'BMI für Inder (ICMR)',
-                  ko: '인도인 전용 BMI (ICMR)',
-                  hi: 'भारतीयों के लिए BMI (ICMR)'
-                }[lang]}
-              </a>
-              <a href={`/${lang}/asian-bmi-calculator/`} class="px-2.5 py-1.5 rounded-lg bg-[var(--muted)] hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="1.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                {{
-                  en: 'Asian BMI (WHO WPRO)',
-                  es: 'IMC Asiático (OMS)',
-                  fr: 'IMC Asiatique (OMS)',
-                  de: 'Asiatischer BMI (WHO)',
-                  ko: '아시아인 BMI (WHO)',
-                  hi: 'एशियाई बीएमआई (WHO)'
-                }[lang]}
-              </a>
-              <a href={`/${lang}/3d-bmi-calculator/`} class="px-2.5 py-1.5 rounded-lg bg-[var(--muted)] hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-                {{
-                  en: '3D BMI Visualizer',
-                  es: 'Visualizador IMC 3D',
-                  fr: 'Visualiseur IMC 3D',
-                  de: '3D BMI Visualisierer',
-                  ko: '3D 체형 시각화 도구',
-                  hi: '3D बीएमआई विजुअलाइज़र'
-                }[lang]}
-              </a>
-            </div>
-          </div>
-        </aside>
-      )}
-
       <!-- Main Calculator Layout -->
       {calc.slug === '3d-bmi-calculator' ? (
         <div class="space-y-8 animate-in" style="animation-delay:100ms">
@@ -696,7 +624,6 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
       <!-- Extended Content & Educational Reference Knowledge Base for Search Indexing -->
       <div class="pt-2 space-y-8 sm:space-y-10">
         <ToolSEOContent slug={calc.slug} lang={lang} calculator={calc} />
-        {calc.slug === 'bmi-calculator-for-indians' && <IndianBmiClinicalGuide lang={lang} />}
         {calc.slug === 'bmi-calculator' && <EmbedWidgetBox lang={lang} />}
         <LatestArticles 
           lang={lang} 

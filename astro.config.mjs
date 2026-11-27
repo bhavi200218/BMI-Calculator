@@ -6,7 +6,7 @@ export default defineConfig({
   site: 'https://realbmicalculator.com',
   trailingSlash: 'ignore',
   build: {
-    inlineStylesheets: 'always',
+    inlineStylesheets: 'auto',
   },
   integrations: [
     sitemap({

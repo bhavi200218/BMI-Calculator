@@ -17,7 +17,7 @@ export interface ToolInfographicConfig {
 
 export function getToolInfographic(slug: string, lang: Locale, toolTitle: string): ToolInfographicConfig {
   const isHeartRate = ['heart-rate-zone-calculator', 'karvonen-heart-rate-calculator'].includes(slug);
-  const isStrength = ['1rm-calculator', 'one-rep-max-calculator'].includes(slug);
+  const isStrength = slug === '1rm-calculator';
   const isPregnancy = slug === 'pregnancy-weight-gain-calculator';
   const isIndianBmi = ['bmi-calculator-for-indians', 'bmi-calculator-india'].includes(slug);
   const isAsianBmi = slug === 'asian-bmi-calculator';

@@ -80,7 +80,7 @@ const resultDescription = {
       <div>
         <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{resultEyebrow}</p>
         <h2 id="resultHeaderLabel" class="text-xl sm:text-2xl font-display font-bold uppercase text-[var(--foreground)] break-words"></h2>
-        <p id="resultDescLabel" class="text-xs text-[var(--muted-foreground)] mt-0.5">{resultDescription}</p>
+        <p id="resultDescLabel" class="text-xs text-[var(--muted-foreground)] mt-0.5" data-default={resultDescription}>{resultDescription}</p>
       </div>
       <span id="primaryUnitLabel" class="hidden px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] text-xs font-display font-semibold uppercase tracking-widest whitespace-nowrap shadow-[var(--shadow-accent)] shrink-0"></span>
     </div>
@@ -131,8 +131,8 @@ const resultDescription = {
   }
 </style>
 
-<script is:inline define:vars={{ resultDescription }}>
-  let lastCalcResult = null;
+<script>
+  let lastCalcResult: any = null;
 
   function resetResultState() {
     lastCalcResult = null;
@@ -154,7 +154,7 @@ const resultDescription = {
     const headerLabel = document.getElementById('resultHeaderLabel');
     if (headerLabel) headerLabel.textContent = '';
     const descLabel = document.getElementById('resultDescLabel');
-    if (descLabel) descLabel.textContent = '';
+    if (descLabel) descLabel.textContent = descLabel.getAttribute('data-default') || '';
     const unitLabel = document.getElementById('primaryUnitLabel');
     if (unitLabel) {
       unitLabel.textContent = '';
@@ -163,21 +163,21 @@ const resultDescription = {
     const secGrid = document.getElementById('secondaryGrid');
     if (secGrid) secGrid.innerHTML = '';
 
-    const copyBtn = document.getElementById('copyBtn');
+    const copyBtn = document.getElementById('copyBtn') as HTMLButtonElement | null;
     if (copyBtn) {
       copyBtn.disabled = true;
       copyBtn.setAttribute('aria-disabled', 'true');
       copyBtn.classList.add('opacity-50', 'cursor-not-allowed');
       copyBtn.classList.remove('cursor-pointer', 'hover:border-[var(--accent)]', 'hover:bg-[var(--card-hover)]');
     }
-    const downloadBtn = document.getElementById('downloadBtn');
+    const downloadBtn = document.getElementById('downloadBtn') as HTMLButtonElement | null;
     if (downloadBtn) {
       downloadBtn.disabled = true;
       downloadBtn.setAttribute('aria-disabled', 'true');
       downloadBtn.classList.add('opacity-50', 'cursor-not-allowed');
       downloadBtn.classList.remove('cursor-pointer', 'hover:border-[var(--accent)]', 'hover:bg-[var(--card-hover)]');
     }
-    const shareBtn = document.getElementById('shareBtn');
+    const shareBtn = document.getElementById('shareBtn') as HTMLButtonElement | null;
     if (shareBtn) {
       shareBtn.disabled = true;
       shareBtn.setAttribute('aria-disabled', 'true');
@@ -186,19 +186,20 @@ const resultDescription = {
     }
   }
 
-  const getStr = (obj) => {
+  const getStr = (obj: any): string => {
     if (!obj && obj !== 0) return '';
-    if (typeof obj === 'string' || typeof obj === 'number') return obj;
+    if (typeof obj === 'string' || typeof obj === 'number') return String(obj);
     const docLang = (document.documentElement.lang || 'en').slice(0, 2);
     return obj[docLang] || obj['en'] || Object.values(obj)[0] || '';
   };
 
-  window.addEventListener('calculationCompleted', (e) => {
-    if (!e.detail) {
+  window.addEventListener('calculationCompleted', (e: Event) => {
+    const ce = e as CustomEvent;
+    if (!ce.detail) {
       resetResultState();
       return;
     }
-    lastCalcResult = e.detail;
+    lastCalcResult = ce.detail;
     renderCalcOutput();
   });
 
@@ -232,7 +233,7 @@ const resultDescription = {
     const headerLabel = document.getElementById('resultHeaderLabel');
     if (headerLabel) headerLabel.textContent = primaryLabel;
     const descLabel = document.getElementById('resultDescLabel');
-    if (descLabel) descLabel.textContent = typeof resultDescription !== 'undefined' ? resultDescription : '';
+    if (descLabel) descLabel.textContent = descLabel.getAttribute('data-default') || '';
 
     const unitLabel = document.getElementById('primaryUnitLabel');
     if (unitLabel) {
@@ -253,7 +254,7 @@ const resultDescription = {
 
     const grid = document.getElementById('secondaryGrid');
     if (grid && Array.isArray(secondary)) {
-      grid.innerHTML = secondary.map(s => {
+      grid.innerHTML = secondary.map((s: any) => {
         const label = getStr(s.label);
         const valStr = getStr(s.value);
         const unitStr = s.unit ? `<span class="text-xs font-sans font-medium opacity-40">${s.unit}</span>` : '';
@@ -268,7 +269,7 @@ const resultDescription = {
       }).join('');
     }
 
-    function copyTextToClipboard(text, onSuccess, onError) {
+    function copyTextToClipboard(text: string, onSuccess?: () => void, onError?: () => void) {
       if (typeof navigator !== 'undefined' && navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text).then(() => {
           if (onSuccess) onSuccess();
@@ -280,7 +281,7 @@ const resultDescription = {
       }
     }
 
-    function fallbackCopyText(text, onSuccess, onError) {
+    function fallbackCopyText(text: string, onSuccess?: () => void, onError?: () => void) {
       try {
         const textArea = document.createElement('textarea');
         textArea.value = text;
@@ -310,7 +311,7 @@ const resultDescription = {
     }
 
     // Enable Action Buttons on valid calculation
-    const copyBtn = document.getElementById('copyBtn');
+    const copyBtn = document.getElementById('copyBtn') as HTMLButtonElement | null;
     if (copyBtn) {
       copyBtn.disabled = false;
       copyBtn.removeAttribute('aria-disabled');
@@ -319,7 +320,7 @@ const resultDescription = {
       copyBtn.onclick = () => {
         let report = `${primaryLabel}: ${primary.value} ${primary.unit || ''}\n`;
         if (Array.isArray(secondary)) {
-          secondary.forEach(s => {
+          secondary.forEach((s: any) => {
             const label = getStr(s.label);
             const val = getStr(s.value);
             report += `${label}: ${val} ${s.unit || ''}\n`;
@@ -345,7 +346,7 @@ const resultDescription = {
     }
 
     // Download CSV Click
-    const downloadBtn = document.getElementById('downloadBtn');
+    const downloadBtn = document.getElementById('downloadBtn') as HTMLButtonElement | null;
     if (downloadBtn) {
       downloadBtn.disabled = false;
       downloadBtn.removeAttribute('aria-disabled');
@@ -356,7 +357,7 @@ const resultDescription = {
         const ts = new Date().toISOString();
         csv += `"${primaryLabel}","${primary.value}","${primary.unit || ''}","${ts}"\n`;
         if (Array.isArray(secondary)) {
-          secondary.forEach(s => {
+          secondary.forEach((s: any) => {
             const label = getStr(s.label);
             const val = getStr(s.value);
             csv += `"${label}","${val}","${s.unit || ''}","${ts}"\n`;
@@ -389,7 +390,7 @@ const resultDescription = {
     }
 
     // Share Click (Mobile: Web Share API / Desktop: Copy Link Fallback)
-    const shareBtn = document.getElementById('shareBtn');
+    const shareBtn = document.getElementById('shareBtn') as HTMLButtonElement | null;
     if (shareBtn) {
       shareBtn.disabled = false;
       shareBtn.removeAttribute('aria-disabled');
@@ -406,7 +407,7 @@ const resultDescription = {
           hi: '✓ लिंक कॉपी हो गया!'
         }[lang] || '✓ Link Copied!';
 
-        const showShareSuccess = (msg) => {
+        const showShareSuccess = (msg: string) => {
           const orig = shareBtn.innerHTML;
           shareBtn.innerHTML = `<svg class="w-4 h-4 shrink-0 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> ${msg}`;
           setTimeout(() => { shareBtn.innerHTML = orig; }, 2000);
@@ -420,7 +421,7 @@ const resultDescription = {
               url: location.href
             });
             showShareSuccess(linkCopied);
-          } catch (err) {
+          } catch (err: any) {
             if (err && err.name !== 'AbortError') {
               copyTextToClipboard(location.href, () => showShareSuccess(linkCopied));
             }
