@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import HomepageHubWrapper from '../components/HomepageHubWrapper.astro';
 import LatestArticles from '../components/LatestArticles.astro';
+import HealthContent from '../components/HealthContent.astro';
 import EmbedWidgetBox from '../components/EmbedWidgetBox.astro';
 import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 ---
@@ -19,38 +20,38 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 	<main class="pb-4 relative overflow-x-hidden">
 
 		<!-- ═══════════════════  1. HERO & MAIN HEADLINE  ═══════════════════ -->
-		<section class="pt-20 md:pt-24 pb-6 px-4 md:px-6">
-			<div class="max-w-7xl mx-auto space-y-6">
+		<section class="pt-20 md:pt-24 pb-6 px-4 sm:px-6 lg:px-8 xl:px-12">
+			<div class="w-full max-w-[1600px] mx-auto space-y-6">
 
 				<!-- Main H1 & Hero Header -->
 				<div class="text-center space-y-3.5 max-w-4xl mx-auto">
 					<!-- Eyebrow Tag / Pill -->
 					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						WHO & CDC STANDARDS • PRIVATE CLIENT-SIDE CALCULATION<span class="sr-only">. </span>
+						BMI & HEALTH CALCULATORS<span class="sr-only">. </span>
 					</div>
 
 					<!-- Main H1 headline -->
 					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Calculate Your Body Mass Index (BMI) & Health Metrics<span class="sr-only">. </span>
+						Body Mass Index (BMI) Calculator<span class="sr-only">. </span>
 					</h1>
 
 					<!-- Supporting H2 Subtitle & Intro -->
 					<p class="text-base sm:text-xl text-[var(--accent)] font-semibold tracking-tight font-display">
-						Free, Private & Instant Evidence-Based Screening<span class="sr-only">. </span>
+						Know your BMI and understand your healthy weight range.<span class="sr-only">. </span>
 					</p>
 					<p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed">
-						Check your body mass index, daily calories, and fitness stats in seconds. Our tools follow official WHO and CDC guidelines.
+						Calculate your BMI, healthy weight range, and daily calorie needs with our free health calculators. Results use established WHO and CDC guidelines and are calculated directly in your browser.
 					</p>
 				</div>
 
 				<!-- Stats Strip -->
 				<div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 pt-1">
 					{[
-						'100% Free & Instant',
-						'Accurate Metric & Imperial Calculations',
-						'Client-Side Privacy',
-						'WHO & CDC Standards'
+						'Free to use',
+						'kg & lbs',
+						'Private calculations',
+						'WHO & CDC guidelines'
 					].map(badge => (
 						<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
 							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
@@ -62,22 +63,16 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  2. 🔥 ALL HEALTH & FITNESS CALCULATORS  ═══════════════════ -->
-		<section id="calculators" class="px-4 md:px-6 pt-0 pb-10 md:pb-14 scroll-mt-20">
-			<div class="max-w-7xl mx-auto space-y-6">
-				<header class="space-y-3 pb-4 border-b border-[var(--border)]/40">
-					<div class="flex items-center justify-between gap-4">
-						<span class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">🔥 Evidence-Based Suite<span class="sr-only">. </span></span>
-						<span class="text-xs font-mono text-[var(--accent)] font-bold px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 shrink-0">
-							23 Tools
-						</span>
-					</div>
+		<!-- ═══════════════════  2. HEALTH & FITNESS CALCULATORS  ═══════════════════ -->
+		<section id="calculators" class="px-4 sm:px-6 lg:px-8 xl:px-12 pt-0 pb-8 md:pb-10 scroll-mt-20">
+			<div class="w-full max-w-[1600px] mx-auto space-y-6">
+				<header class="flex items-center justify-between gap-4 pb-2">
 					<h2 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-						All Health & Fitness Calculators<span class="sr-only">. </span>
+						Health & Fitness Calculators<span class="sr-only">. </span>
 					</h2>
-					<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium max-w-3xl leading-relaxed">
-						Explore all 23 health, body, and fitness calculators. Each tool uses clear health standards from the WHO and CDC. All math runs on your device to keep your data safe.
-					</p>
+					<span class="text-xs font-mono text-[var(--accent)] font-bold px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 shrink-0">
+						23 Tools
+					</span>
 				</header>
 
 				<HomepageHubWrapper lang="en" />
@@ -85,197 +80,66 @@ import MedicalEEATBanner from '../components/MedicalEEATBanner.astro';
 		</section>
 
 		<!-- ═══════════════════  6. 📖 LATEST ARTICLES  ═══════════════════ -->
-		<section id="latest-articles" class="px-4 md:px-6 py-10 md:py-14 border-b border-[var(--border)]/40 scroll-mt-20">
-			<div class="max-w-7xl mx-auto">
+		<section id="latest-articles" class="px-4 sm:px-6 lg:px-8 xl:px-12 pt-8 md:pt-10 pb-10 md:pb-14 scroll-mt-20">
+			<div class="w-full max-w-[1600px] mx-auto">
 				<LatestArticles lang="en" limit={6} />
 			</div>
 		</section>
 
 		<!-- ═══════════════════  3. ⭐ TRUST SIGNALS & STANDARDS  ═══════════════════ -->
 		<!-- WHY PEOPLE CHOOSE REAL BMI -->
-		<section class="px-4 md:px-6 py-12 md:py-16 border-b border-[var(--border)]/40 space-y-12">
-			<div class="max-w-7xl mx-auto space-y-10">
-				<div class="space-y-3 text-center sm:text-left max-w-3xl">
-					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Transparent Calculator Features<span class="sr-only">. </span></p>
-					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
+		<section class="px-4 sm:px-6 lg:px-8 xl:px-12 py-8 md:py-10">
+			<div class="w-full max-w-[1600px] mx-auto space-y-6">
+				<div class="space-y-2 text-center sm:text-left max-w-3xl">
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">Transparent Calculator Features<span class="sr-only">. </span></p>
+					<h2 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
 						Scientific Accuracy & Data Privacy<span class="sr-only">. </span>
 					</h2>
-					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
+					<p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-normal leading-relaxed">
 						Real BMI delivers verified health formulas. Every tool runs in your browser to protect your personal privacy.
 					</p>
 				</div>
 
-				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 					{[
 						{ title: 'Clear Math Formulas', description: 'Every tool uses published formulas such as Mifflin-St Jeor, Devine, and Karvonen.' },
 						{ title: 'Zero Data Collection', description: 'Your health numbers stay on your device. We do not store or track your private inputs.' },
 						{ title: 'Multiple Body Checks', description: 'Compare your BMI with your body fat percentage and waist size for a better view.' },
 						{ title: 'Official Health Cutoffs', description: 'All results are shown next to standard health ranges from the WHO and CDC.' },
 					].map(item => (
-						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-3 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-sm hover:-translate-y-0.5">
-							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}<span class="sr-only">. </span></h3>
-							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+						<div class="p-4 sm:p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-1.5 transition-all duration-200 hover:border-[var(--accent)]/50 hover:shadow-xs">
+							<h3 class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}<span class="sr-only">. </span></h3>
+							<p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-normal leading-relaxed">
 								{item.description}
 							</p>
 						</div>
 					))}
-					
-					<!-- Brand & Methodology Box -->
-					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6 shadow-md">
-						<div class="space-y-2">
-							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">Transparent Methodology<span class="sr-only">. </span></p>
-							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">HOW OUR CALCULATORS WORK<span class="sr-only">. </span></p>
-							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">Explore our published formulas, reference standards, inputs, outputs, and limitations for all 23 tools.</p>
+				</div>
+
+				<!-- Transparent Methodology Strip -->
+				<div class="p-4 sm:p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all duration-200 hover:border-[var(--accent)]/40">
+					<div class="space-y-1">
+						<div class="flex items-center gap-2">
+							<span class="w-2 h-2 rounded-full bg-[var(--accent)]"></span>
+							<span class="text-[11px] font-display font-bold uppercase tracking-wider text-[var(--accent)]">Transparent Methodology<span class="sr-only">. </span></span>
 						</div>
-						<a href="/en/methodology/" class="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-display text-xs font-bold uppercase tracking-wider hover:bg-slate-100 transition-all shadow-xs">
-							View Calculator Methodology →
-						</a>
+						<h3 class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)]">How Our 23 Calculators Work<span class="sr-only">. </span></h3>
+						<p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-normal">Explore published formulas, reference standards, inputs, and limitations for all tools.</p>
 					</div>
+					<a href="/en/methodology/" class="px-4 py-2.5 rounded-xl bg-[var(--accent)] text-white font-display text-xs font-bold uppercase tracking-wider hover:opacity-95 transition-all shadow-xs inline-flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
+						<span>View Calculator Methodology →</span>
+					</a>
 				</div>
 
 				<!-- Editorial & Research Verification Banner -->
-				<div class="pt-4">
-					<MedicalEEATBanner lang="en" />
-				</div>
+				<MedicalEEATBanner lang="en" />
 			</div>
 		</section>
 
-		<!-- ═══════════════════  7. ❓ GLOBAL RESEARCH FRAMEWORK & FAQ  ═══════════════════ -->
-		<section id="faq-standards" class="px-4 md:px-6 py-10 md:py-14 border-b border-[var(--border)]/40 scroll-mt-20">
-			<div class="max-w-7xl mx-auto space-y-12">
-				
-				<!-- Global Health Research Pillars -->
-				<div class="space-y-6">
-					<div class="space-y-2 max-w-3xl">
-						<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
-							Methodological Foundation<span class="sr-only">. </span>
-						</span>
-						<h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-							Anthropometric Science & Metabolic Frameworks<span class="sr-only">. </span>
-						</h2>
-						<p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed">
-							Learn how our formulas work. Understand the science behind body mass, resting calories, and heart rate training.
-						</p>
-					</div>
-
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
-							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
-								1. Screening Metrics vs. Clinical Diagnosis<span class="sr-only">. </span>
-							</h3>
-							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-								Body Mass Index is a quick tool to check body size. It compares your weight to your height. But BMI cannot tell the difference between fat and muscle. An athlete with high muscle mass may have a high BMI. For this reason, doctors also look at waist size and body fat percentage.
-							</p>
-						</div>
-
-						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
-							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
-								2. Metabolic Energy & Basal Expenditure<span class="sr-only">. </span>
-							</h3>
-							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-								Basal metabolic rate is the energy your body burns at rest. Your body needs calories to breathe, pump blood, and repair cells. The Mifflin-St Jeor formula is one of the best ways to estimate this number. When you add daily movement, you get your total daily calorie needs. Knowing these numbers helps you plan your meals with confidence.
-							</p>
-						</div>
-
-						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
-							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
-								3. Cardiovascular Autonomic Conditioning<span class="sr-only">. </span>
-							</h3>
-							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-								Heart rate training helps you exercise at the right intensity. The Karvonen formula uses both your resting heart rate and your max heart rate. This gives you five distinct heart rate zones. Zone two builds basic aerobic fitness and burns fat. Higher zones build speed and power. Training in the right zone protects your heart and prevents burnout.
-							</p>
-						</div>
-
-						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
-							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
-								4. Ethnic Variations in Cardiometabolic Risk<span class="sr-only">. </span>
-							</h3>
-							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-								Body fat risk can vary by ethnic background. Standard WHO BMI ranges can miss hidden belly fat in people of Asian descent. For people of Asian heritage, health risk often rises at a BMI of 23. Obesity is often defined at 25 instead of 30. Using lower cutoffs helps detect health risks earlier.
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Historical Evolution & Biometric Matrix -->
-				<div class="space-y-6 pt-4 border-t border-[var(--border)]/40">
-					<div class="space-y-2 max-w-3xl">
-						<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
-							Clinical Context<span class="sr-only">. </span>
-						</span>
-						<h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-							The Evolution of Body Composition & Anthropometry<span class="sr-only">. </span>
-						</h2>
-						<p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed">
-							Learn how body size formulas grew from early math into modern health tools.
-						</p>
-					</div>
-
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
-							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
-								From Quetelet's Social Physics to Ancel Keys<span class="sr-only">. </span>
-							</h3>
-							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-								In 1832, Adolphe Quetelet came up with a simple way to compare weight to height. He divided weight by height squared to study population averages. In 1972, researcher Ancel Keys tested this formula on thousands of men. Keys showed that this ratio tracked body fat better than other simple tools. He called this ratio Body Mass Index.
-							</p>
-						</div>
-
-						<div class="p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
-							<h3 class="text-lg font-display font-bold uppercase text-[var(--foreground)]">
-								Beyond Height and Weight: Modern 3D & Metabolic Metrics<span class="sr-only">. </span>
-							</h3>
-							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-								Today, health experts know that weight and height do not tell the whole story. A scale cannot tell fat from muscle or bone. Modern tools give a clearer picture. We look at waist to hip ratios, body fat tests, and 3D body scans. These tools help you see your real body shape. Real BMI combines these tools to give you clear, honest numbers.
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Dedicated Global Hub FAQ -->
-				<div class="space-y-6 pt-4 border-t border-[var(--border)]/40">
-					<div class="space-y-2 max-w-3xl">
-						<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
-							Platform Inquiries<span class="sr-only">. </span>
-						</span>
-						<h2 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-							Frequently Asked Questions<span class="sr-only">. </span>
-						</h2>
-						<p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed">
-							Quick answers about our calculation accuracy, health formulas, and privacy protection.
-						</p>
-					</div>
-
-					<div class="space-y-4">
-						<div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2">
-							<h3 class="text-base font-display font-bold uppercase text-[var(--foreground)]">
-								How do the 23 calculators on Real BMI complement each other?<span class="sr-only">. </span>
-							</h3>
-							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-								No single tool tells the whole story. Our tools connect basic BMI screening with metabolic formulas like BMR and TDEE. We also offer tools for heart rate, body fat, and strength. Together, they give you a clear, complete view of your body.
-							</p>
-						</div>
-
-						<div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2">
-							<h3 class="text-base font-display font-bold uppercase text-[var(--foreground)]">
-								Why does Real BMI process all calculations client-side?<span class="sr-only">. </span>
-							</h3>
-							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-								Your health data belongs to you alone. We run all formulas right in your web browser. Your height, weight, and age are never sent to a server. We do not store your private numbers in any database.
-							</p>
-						</div>
-
-						<div class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-2">
-							<h3 class="text-base font-display font-bold uppercase text-[var(--foreground)]">
-								How should these metrics be used alongside medical care?<span class="sr-only">. </span>
-							</h3>
-							<p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-								Real BMI tools are for learning and lifestyle guidance. They do not replace a visit to your doctor. A calculator cannot diagnose illnesses or prescribe treatments. Always talk with a healthcare provider before making major health changes.
-							</p>
-						</div>
-					</div>
-				</div>
-
+		<!-- ═══════════════════  7. ❓ REFERENCE STANDARDS & FAQ  ═══════════════════ -->
+		<section id="faq-standards" class="px-4 sm:px-6 lg:px-8 xl:px-12 py-10 md:py-14 scroll-mt-20">
+			<div class="w-full max-w-[1600px] mx-auto space-y-12">
+				<HealthContent lang="en" />
 				<EmbedWidgetBox lang="en" />
 			</div>
 		</section>

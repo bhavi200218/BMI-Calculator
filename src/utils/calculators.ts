@@ -152,12 +152,12 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'bmi-chart',
     name: {
-      en: 'BMI Chart & Table',
-      es: 'Tabla y Gráfico de IMC',
-      fr: 'Tableau et Graphique IMC',
-      de: 'BMI-Tabelle & Diagramm',
-      ko: 'BMI 차트 및 표준 분류표',
-      hi: 'बीएमआई चार्ट और टेबल (BMI Chart & Table)'
+      en: 'BMI Chart',
+      es: 'Tabla de IMC',
+      fr: 'Tableau de l\'IMC',
+      de: 'BMI-Tabelle',
+      ko: 'BMI 차트',
+      hi: 'बीएमआई चार्ट'
     },
     title: {
       en: 'BMI Chart for Adults – Height & Weight Matrix (kg, cm, lbs)',
@@ -168,12 +168,12 @@ export const calculators: CalculatorConfig[] = [
       hi: 'वयस्कों के लिए बीएमआई चार्ट - ऊंचाई एवं वजन तालिका (kg, cm, lbs)'
     },
     description: {
-      "en": "Official WHO BMI Chart for adults, men, and women. Interactive BMI scale calculator, height-weight metric lookup tables (kg & cm), standard classification thresholds, and healthy weight guidance. Free to use with browser-based privacy.",
-      "es": "Tabla oficial de IMC de la OMS para adultos, hombres y mujeres. Calculadora interactiva de escala de IMC, tablas de consulta de altura y peso en sistema métrico (kg y cm), umbrales de clasificación y guía de peso saludable. Uso gratuito con privacidad en el navegador.",
-      "fr": "Tableau d'IMC officiel de l'OMS pour adultes, hommes et femmes. Calculateur d'échelle d'IMC interactif, tableaux de consultation taille-poids en unités métriques (kg et cm), seuils de classification et repères santé. Gratuit avec confidentialité sur navigateur.",
-      "de": "Offizielle WHO BMI-Tabelle für Erwachsene, Männer und Frauen. Interaktiver BMI-Skala-Rechner, Größe-Gewicht-Referenztabellen in metrischen Einheiten (kg & cm), Klassifizierungsschwellenwerte und Normalgewicht-Leitfaden. Kostenlos und datenschutzorientiert im Browser.",
-      "ko": "성인, 남성 및 여성을 위한 공식 WHO BMI 차트. 대화형 BMI 지수 계산기, 신장-체중 미터법 진단표(kg & cm), 표준 분류 임계치 및 건강 체중 가이드라인을 제공합니다. 가입 없이 브라우저 내 100% 무료 구동.",
-      "hi": "वयस्कों, पुरुषों और महिलाओं के लिए आधिकारिक डब्ल्यूएचओ बीएमआई चार्ट। इंटरएक्टिव बीएमआई स्केल कैलकुलेटर, ऊंचाई-वजन मीट्रिक लुकअप टेबल (kg और cm), मानक वर्गीकरण सीमाएं और स्वस्थ वजन मार्गदर्शन। मुफ़्त, गोपनीयता-केंद्रित और ब्राउज़र-आधारित।"
+      "en": "Official WHO BMI Chart for adults. Height-weight metric lookup tables (kg & cm), standard classification thresholds, and healthy weight reference ranges based on World Health Organization standards.",
+      "es": "Tabla oficial de IMC de la OMS para adultos. Tablas de referencia de altura y peso (kg y cm), umbrales de clasificación estándar y rangos de peso saludable según la OMS.",
+      "fr": "Tableau d'IMC officiel de l'OMS pour adultes. Tableaux de référence taille-poids (kg et cm), seuils de classification et repères de poids santé selon l'OMS.",
+      "de": "Offizielle WHO-BMI-Tabelle für Erwachsene. Größe-Gewicht-Referenztabellen (kg & cm), Standard-Klassifizierungsschwellenwerte und Normalgewichtsbereiche nach WHO-Standards.",
+      "ko": "성인을 위한 공식 WHO BMI 차트. 세계보건기구(WHO) 기준에 따른 신장별 표준 체중표(kg & cm), 체질량지수 분류 기준 및 건강 체중 참조 범위를 제공합니다.",
+      "hi": "वयस्कों के लिए आधिकारिक डब्ल्यूएचओ बीएमआई चार्ट। विश्व स्वास्थ्य संगठन के मानकों पर आधारित कद-वजन संदर्भ सारणी (kg एवं cm), वर्गीकरण सीमाएं और स्वस्थ वजन मार्गदर्शन।"
     },
     inputs: [
       { id: 'weight', label: L.weight, type: 'number' },
@@ -441,12 +441,12 @@ export const calculators: CalculatorConfig[] = [
   {
     slug: 'healthy-weight-by-height',
     name: {
-      en: 'Healthy Weight by Height',
-      es: 'Peso Saludable por Altura',
-      fr: 'Poids Santé selon la Taille',
-      de: 'Gesundes Gewicht nach Körpergröße',
-      ko: '키별 건강 체중 계산기',
-      hi: 'ऊंचाई के अनुसार स्वस्थ वजन'
+      en: 'Healthy Weight Calculator',
+      es: 'Calculadora de Peso Saludable',
+      fr: 'Calculateur de Poids Santé',
+      de: 'Normalgewicht-Rechner',
+      ko: '적정 체중 계산기',
+      hi: 'स्वस्थ वजन कैलकुलेटर'
     },
     title: {
       en: 'Healthy Weight by Height Chart – Ideal Weight Range for Men & Women',
@@ -1518,7 +1518,7 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'body-surface-area-calculator',
-    name: { en: 'Mosteller BSA Calculator (Square Root Method)', es: 'Calculadora BSA Método Mosteller (Metros Cuadrados)', fr: 'Calculateur BSA Formule Mosteller (Mètres Carrés)', de: 'Mosteller BSA Rechner (Quadratmeter)', ko: 'Mosteller 체표면적 계산기', hi: 'मोस्टेलर BSA कैलकुलेटर (वर्ग मीटर)' },
+    name: { en: 'Body Surface Area (BSA)', es: 'Área de Superficie Corporal (ASC)', fr: 'Surface Corporelle (BSA)', de: 'Körperoberfläche (BSA)', ko: '체표면적(BSA)', hi: 'बॉडी सरफेस एरिया (BSA)' },
     title: { en: 'Mosteller BSA Calculator (Square Root Method) – Body Surface Area m² Tool', es: 'Calculadora BSA Fórmula Mosteller en Metros Cuadrados (m²)', fr: 'Calculateur de Surface Corporelle BSA Formule Mosteller m²', de: 'Mosteller BSA Rechner Quadratmeter (m²) – Körperoberfläche', ko: 'Mosteller BSA 체표면적 계산기 – 신체 표면적(㎡) 측정', hi: 'मोस्टेलर BSA कैलकुलेटर square meters - बॉडी सरफेस एरिया' },
     description: {
       "en": "Free Body Surface Area Calculator (BSA Calculator). Calculate total body surface area in square meters (m²) using Mosteller, DuBois, Haycock, and Boyd published equations with privacy-focused, browser calculations.",
@@ -1599,7 +1599,7 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: 'karvonen-heart-rate-calculator',
-    name: { en: 'Karvonen Heart Rate Reserve Calculator', es: 'Calculadora de Reserva Cardíaca Karvonen', fr: 'Calculateur de Fréquence Cardiaque Karvonen', de: 'Karvonen-Formel Pulsreserve Rechner', ko: '카르보넨 예비 심박수(HRR) 계산기', hi: 'कार्वोनेन हार्ट रेट रिजर्व कैलकुलेटर' },
+    name: { en: 'Karvonen Heart Rate', es: 'Frecuencia Cardíaca Karvonen', fr: 'Fréquence Cardiaque Karvonen', de: 'Karvonen-Herzfrequenz', ko: '카르보넨 심박수', hi: 'कार्वोनेन हार्ट रेट' },
     title: { en: 'Karvonen Heart Rate Reserve Calculator – Target HR & HRR Training', es: 'Calculadora Karvonen – Reserva de Frecuencia Cardíaca (HRR)', fr: 'Calculateur Karvonen – Fréquence Cardiaque et Réserve (HRR)', de: 'Karvonen Pulsreserve Rechner – Zielpuls & HRR-Training', ko: '카르보넨 심박수 계산기 – 심박수 예비량(HRR) 기반 트레이닝', hi: 'कार्वोनेन हार्ट रेट रिजर्व कैलकुलेटर - टारगेट एवं HRR' },
     description: {
       "en": "Free Karvonen Heart Rate Reserve Calculator. Calculate target cardiovascular training zones using the Karvonen formula (% HRR method) by age and resting pulse with privacy-focused, browser calculations.",
@@ -1645,7 +1645,7 @@ export const calculators: CalculatorConfig[] = [
   },
   {
     slug: '1rm-calculator',
-    name: { en: '1RM Strength Calculator (All Lifts)', es: 'Calculadora de Fuerza 1RM (Multiejercicio)', fr: 'Calculateur de Force 1RM (Tous Exercices)', de: '1RM Maximalkraft Rechner (Alle Übungen)', ko: '1RM 종합 근력 계산기 (3대 운동)', hi: '1RM शक्ति कैलकुलेटर (समस्त लिफ्ट्स)' },
+    name: { en: 'One-Rep Max (1RM)', es: 'Una Repetición Máxima (1RM)', fr: 'Répétition Maximale (1RM)', de: 'Maximalkraft (1RM)', ko: '1RM 최대 근력', hi: 'वन-रिप मैक्स (1RM)' },
     title: { en: '1RM Strength Calculator – One Rep Max (Bench Press, Squat, Deadlift & OHP)', es: 'Calculadora de Fuerza 1RM – One Rep Max (Press Banca, Sentadilla, Peso Muerto, OHP)', fr: 'Calculateur de Force 1RM – Rep Max (Développé Couché, Squat, Soulevé de Terre, Militaire)', de: '1RM Maximalkraft Rechner – 1 Rep Max (Bankdrücken, Kniebeuge, Kreuzheben & OHP)', ko: '1RM 종합 근력 계산기 – 1회 최대 중량 (벤치프레스, 스쿼트, 데드리프트, OHP)', hi: '1RM शक्ति कैलकुलेटर – वन रेप मैक्स (बेंच प्रेस, स्क्वैट, डेडलिफ्ट व ओवरहेड प्रेस)' },
     description: {
       "en": "Free 1RM Calculator (One-Rep Max Calculator). Calculate one-rep max strength, weightlifting percentages, and rep max benchmarks using Epley and Brzycki equations with privacy-focused, browser calculations.",

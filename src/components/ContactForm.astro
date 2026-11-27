@@ -12,9 +12,6 @@ interface DeptItem {
 }
 
 interface ContactDict {
-  badge: string;
-  heading: string;
-  subtext: string;
   emailTitle: string;
   emailAddress: string;
   openEmailApp: string;
@@ -24,118 +21,91 @@ interface ContactDict {
   departmentsTitle: string;
   departmentsSubtext: string;
   departments: DeptItem[];
-  ugcPolicyTitle: string;
-  ugcPolicyText: string;
-  privacyTitle: string;
-  privacyText: string;
-  privacyLinkText: string;
-  privacySuffix: string;
 }
 
 const dicts: Record<string, ContactDict> = {
   en: {
-    badge: 'Direct Inquiries & Developer Correspondence',
-    heading: 'Contact Bhawanshi Dosi (Creator & Webmaster)',
-    subtext: 'To ensure data privacy, prevent unmoderated web content, and guarantee human-verified answers, Real BMI handles all academic feedback, technical inquiries, and embedding requests via direct, confidential email correspondence.',
-    emailTitle: 'Official Editorial & Support Inbox',
-    emailAddress: 'support&#64;realbmicalculator.com',
+    emailTitle: 'Official Support Inbox',
+    emailAddress: 'support@realbmicalculator.com',
     openEmailApp: 'Compose Email via Mail App →',
     copyEmail: 'Copy Email Address',
     copiedToast: '✓ Email address copied to clipboard!',
     responseTime: 'Typical Response Time: Within 24–48 business hours',
-    departmentsTitle: 'Select an Inquiry Category (Pre-Configures Subject Line):',
-    departmentsSubtext: 'Select an inquiry topic below to start a pre-addressed email draft with the appropriate subject tag directly to our developer inbox.',
+    departmentsTitle: 'Select an Inquiry Topic (Pre-Configures Subject Line):',
+    departmentsSubtext: 'Click an inquiry topic below to open a pre-addressed email draft with the appropriate subject line.',
     departments: [
       {
         title: 'Formula Feedback & Academic Research',
-        desc: 'Questions regarding the Mifflin-St Jeor equation, Oxford 2.5 BMI model, or WHO Asian population risk cutoffs.',
+        desc: 'Questions or citations regarding Mifflin-St Jeor, Oxford BMI, or WHO Asian cutoffs.',
         subject: '[Academic Feedback] Formula & Methodology Inquiry'
       },
       {
-        title: '3D Body Visualizer & Technical Bug Reports',
-        desc: 'Report WebGL rendering glitches, device compatibility errors, or responsive layout issues.',
+        title: 'Technical & 3D Bug Reports',
+        desc: 'Report WebGL rendering issues, device compatibility, or layout display bugs.',
         subject: '[Technical Support] Bug Report'
       },
       {
-        title: 'Calculator Embedding & Iframe Integration',
-        desc: 'Inquire about embedding free, privacy-first interactive calculators on health or educational portals.',
+        title: 'Calculator Embedding & Integration',
+        desc: 'Inquire about embedding free, privacy-first calculator widgets on your website.',
         subject: '[Partnership] Calculator Embedding Request'
       },
       {
-        title: 'Editorial Policy & Reference Table Updates',
-        desc: 'Submit newly published peer-reviewed medical citations or revised national guideline cutoffs.',
+        title: 'Editorial & Reference Updates',
+        desc: 'Submit peer-reviewed studies, clinical research papers, or revised public health guidelines.',
         subject: '[Reference Inquiry] Guideline Update & Feedback'
       }
-    ],
-    ugcPolicyTitle: 'User-Generated Content (UGC) & Moderation Policy',
-    ugcPolicyText: 'In strict compliance with Google AdSense Publisher Policies, Real BMI does NOT host, accept, or render public user-generated content (UGC), visitor comment sections, public reviews, or forum threads on this website. All incoming communications are private correspondence reviewed directly by human editors and are never published to public web pages.',
-    privacyTitle: 'Confidentiality & Privacy Guarantee:',
-    privacyText: 'Correspondence sent to our support address is handled in strict accordance with our',
-    privacyLinkText: 'Privacy Policy',
-    privacySuffix: '. We never sell, rent, or distribute personal contact details to third-party advertising or marketing networks.'
+    ]
   },
   de: {
-    badge: 'Direkte Entwickler-Kommunikation',
-    heading: 'Kontakt zu Bhawanshi Dosi (Gründerin & Entwicklerin)',
-    subtext: 'Aus Gründen des Datenschutzes und zur Gewährleistung qualifizierter Antworten wickelt Real BMI alle fachlichen Anfragen, Fehlerberichte und Kooperationswünsche über direkte, vertrauliche E-Mail-Korrespondenz ab.',
-    emailTitle: 'Offizielles Redaktions- und Support-Postfach',
-    emailAddress: 'support&#64;realbmicalculator.com',
+    emailTitle: 'Offizielles Support-Postfach',
+    emailAddress: 'support@realbmicalculator.com',
     openEmailApp: 'E-Mail im Mail-Programm öffnen →',
     copyEmail: 'E-Mail-Adresse kopieren',
     copiedToast: '✓ E-Mail-Adresse in die Zwischenablage kopiert!',
     responseTime: 'Antwortzeit: Binnen 24–48 Geschäftsstunden',
-    departmentsTitle: 'Wählen Sie eine Anfrage-Kategorie (Öffnet vorformatierte E-Mail):',
-    departmentsSubtext: 'Wählen Sie unten ein Thema, um einen vorformatierten E-Mail-Entwurf mit passender Betreffzeile direkt an unser Postfach zu senden.',
+    departmentsTitle: 'Thema der Anfrage auswählen (Öffnet vorbereitete E-Mail):',
+    departmentsSubtext: 'Wählen Sie unten ein Thema, um einen E-Mail-Entwurf mit passender Betreffzeile zu öffnen.',
     departments: [
       {
         title: 'Formelmethodik & Wissenschaftliches Feedback',
-        desc: 'Fragen zur Mifflin-St-Jeor-Gleichung, den Oxford-2.5-Modellen oder den WHO-Asien-Schwellenwerten.',
+        desc: 'Fragen zur Mifflin-St-Jeor-Gleichung, Oxford-2.5-Modellen oder WHO-Asien-Schwellenwerten.',
         subject: '[Wissenschaft] Formel- und Methodik-Anfrage'
       },
       {
-        title: '3D-Körper-Visualisierer & Technischer Support',
+        title: 'Technischer Support & 3D-WebGL-Fehlerberichte',
         desc: 'Melden Sie WebGL-Darstellungsfehler, Browser-Inkompatibilitäten oder Anzeigeprobleme.',
         subject: '[Support] Technischer Fehlerbericht'
       },
       {
         title: 'Rechner-Einbindung & Iframe-Integration',
-        desc: 'Anfragen zur kostenlosen Einbindung unserer datenschutzfreundlichen Rechner auf Ihrer Website.',
+        desc: 'Kostenlose Einbindung unserer datenschutzfreundlichen Rechner-Widgets auf Ihrer Website anfragen.',
         subject: '[Partnerschaft] Rechner-Einbindung'
       },
       {
-        title: 'Redaktionelle Richtlinien & Referenztabellen',
+        title: 'Redaktionelle Richtlinien & Quellen-Updates',
         desc: 'Einreichung neuer evidenzbasierter Studien oder behördlicher Richtlinien-Updates.',
         subject: '[Redaktion] Richtlinien- und Quellenvorschlag'
       }
-    ],
-    ugcPolicyTitle: 'Richtlinie zu nutzergenerierten Inhalten (UGC) & Moderation',
-    ugcPolicyText: 'In Übereinstimmung mit den Google AdSense Publisher-Richtlinien werden auf Real BMI KEINE öffentlichen nutzergenerierten Inhalte (UGC), Kommentarbereiche, Gästebücher oder Forenbeiträge betrieben oder angezeigt. Alle Mitteilungen stellen vertrauliche Korrespondenz dar, werden manuell geprüft und niemals öffentlich auf Webseiten veröffentlicht.',
-    privacyTitle: 'Datenschutz- & Vertraulichkeitsgarantie:',
-    privacyText: 'E-Mail-Anfragen werden streng nach den Vorgaben unserer',
-    privacyLinkText: 'Datenschutzerklärung',
-    privacySuffix: ' verarbeitet. Wir verkaufen oder vermieten niemals Kontaktdaten an Werbenetzwerke Dritter.'
+    ]
   },
   es: {
-    badge: 'Consultas Directas y Correspondencia',
-    heading: 'Contacto con Bhawanshi Dosi (Creadora y Administradora)',
-    subtext: 'Para garantizar la privacidad y respuestas verificadas por profesionales, Real BMI gestiona todas las consultas académicas, avisos técnicos y solicitudes de integración mediante correspondencia directa y confidencial por correo electrónico.',
-    emailTitle: 'Buzón Oficial Editorial y de Soporte',
-    emailAddress: 'support&#64;realbmicalculator.com',
+    emailTitle: 'Buzón Oficial de Soporte',
+    emailAddress: 'support@realbmicalculator.com',
     openEmailApp: 'Redactar Correo en la Aplicación →',
     copyEmail: 'Copiar Dirección de Correo',
     copiedToast: '✓ ¡Dirección de correo copiada al portapapeles!',
     responseTime: 'Tiempo de respuesta habitual: Dentro de 24–48 horas hábiles',
-    departmentsTitle: 'Seleccione una Categoría de Consulta (Preconfigura el Asunto):',
-    departmentsSubtext: 'Seleccione un tema de consulta a continuación para abrir un borrador de correo con el asunto correspondiente dirigido a nuestro buzón.',
+    departmentsTitle: 'Seleccione un Tema de Consulta (Preconfigura el Asunto):',
+    departmentsSubtext: 'Haga clic en un tema para abrir un borrador de correo con el asunto correspondiente.',
     departments: [
       {
-        title: 'Metodología Científica y Validación de Fórmulas',
-        desc: 'Consultas sobre la fórmula Mifflin-St Jeor, modelos de Oxford 2.5 o puntos de corte de la OMS.',
+        title: 'Validación de Fórmulas y Metodología Científica',
+        desc: 'Consultas sobre la fórmula Mifflin-St Jeor, modelos Oxford BMI o puntos de corte de la OMS.',
         subject: '[Metodología] Consulta Científica y Fórmulas'
       },
       {
-        title: 'Visualizador Corporal 3D y Soporte Técnico',
-        desc: 'Notifique incidencias de renderizado WebGL, compatibilidad con dispositivos o fallos visuales.',
+        title: 'Soporte Técnico y Reporte de Errores 3D',
+        desc: 'Notifique incidencias de renderizado WebGL, compatibilidad móvil o fallos visuales.',
         subject: '[Soporte Técnico] Reporte de Error'
       },
       {
@@ -144,65 +114,47 @@ const dicts: Record<string, ContactDict> = {
         subject: '[Alianzas] Solicitud de Integración iFrame'
       },
       {
-        title: 'Política Editorial y Tablas de Referencia',
-        desc: 'Proponga revisiones de estudios revisados por pares o actualizaciones de guías nacionales de salud.',
+        title: 'Actualización de Políticas y Guías Sanitarias',
+        desc: 'Proponga revisiones de estudios revisados por pares o actualizaciones de guías de salud.',
         subject: '[Metodología] Actualización de Tablas de Referencia'
       }
-    ],
-    ugcPolicyTitle: 'Política de Contenido Generado por el Usuario (UGC) y Moderación',
-    ugcPolicyText: 'En estricto cumplimiento con las Políticas para Editores de Google AdSense, Real BMI NO aloja, acepta ni muestra públicamente contenido generado por usuarios (UGC), comentarios de visitantes, reseñas abiertas ni foros en este sitio web. Todas las consultas son comunicaciones privadas examinadas de forma manual por editores y jamás se publican en páginas web abiertas.',
-    privacyTitle: 'Garantía de Privacidad y Confidencialidad:',
-    privacyText: 'Las comunicaciones recibidas se gestionan exclusivamente conforme a nuestra',
-    privacyLinkText: 'Política de Privacidad',
-    privacySuffix: '. Jamás comercializamos ni compartimos datos de contacto con redes de publicidad externas.'
+    ]
   },
   fr: {
-    badge: 'Contact Direct & Correspondance',
-    heading: 'Contacter Bhawanshi Dosi (Créatrice & Développeuse)',
-    subtext: 'Afin d\'assurer la protection des données et de fournir des réponses validées par des spécialistes, Real BMI traite l\'ensemble des retours méthodologiques, questions techniques et demandes d\'intégration via une correspondance privée et directe par courriel.',
-    emailTitle: 'Boîte de Réception Officielle Support & Rédaction',
-    emailAddress: 'support&#64;realbmicalculator.com',
+    emailTitle: 'Boîte de Réception Officielle Support',
+    emailAddress: 'support@realbmicalculator.com',
     openEmailApp: 'Rédiger un E-mail via votre Messagerie →',
     copyEmail: 'Copier l\'Adresse E-mail',
     copiedToast: '✓ Adresse e-mail copiée dans le presse-papiers !',
     responseTime: 'Délai moyen de réponse : Sous 24 à 48 heures ouvrées',
-    departmentsTitle: 'Sélectionnez une Catégorie (Pré-remplit l\'Objet du Message) :',
-    departmentsSubtext: 'Sélectionnez un sujet de demande ci-dessous pour ouvrir un brouillon d\'e-mail préformaté adressé directement à notre équipe.',
+    departmentsTitle: 'Sélectionnez un Objet de Demande (Pré-remplit l\'Objet) :',
+    departmentsSubtext: 'Cliquez sur un sujet ci-dessous pour ouvrir un brouillon d\'e-mail avec l\'objet correspondant.',
     departments: [
       {
-        title: 'Méthodologie Scientifique et Validation des Formules',
-        desc: 'Questions sur l\'équation de Mifflin-St Jeor, l\'IMC Oxford 2.5 ou les seuils régionaux de l\'OMS.',
+        title: 'Validation des Formules et Recherche Scientifique',
+        desc: 'Questions sur l\'équation de Mifflin-St Jeor, l\'IMC Oxford ou les seuils de l\'OMS.',
         subject: '[Méthodologie] Question sur les Formules Médicales'
       },
       {
-        title: 'Visualiseur 3D et Débogage Technique',
-        desc: 'Signalez des anomalies d\'affichage WebGL, des dysfonctionnements mobiles ou de mise en page.',
+        title: 'Support Technique et Débogage 3D WebGL',
+        desc: 'Signalez une anomalie d\'affichage WebGL, un dysfonctionnement mobile ou d\'interface.',
         subject: '[Support Technique] Rapport de Bug'
       },
       {
-        title: 'Intégration de Calculateurs & Widgets iFrame',
+        title: 'Intégration de Calculateurs et Widgets iFrame',
         desc: 'Demandez l\'intégration gratuite de nos calculateurs interactifs sur votre portail éducatif.',
         subject: '[Partenariat] Demande d\'Intégration iFrame'
       },
       {
-        title: 'Ligne Éditoriale et Mise à Jour des Références',
-        desc: 'Proposez de nouvelles études cliniques publiées ou des révisions de directives sanitaires.',
+        title: 'Mise à Jour Éditoriale et Références Cliniques',
+        desc: 'Proposez de nouvelles études publiées avec comité de lecture ou des directives révisées.',
         subject: '[Méthodologie] Proposition de Référence'
       }
-    ],
-    ugcPolicyTitle: 'Politique relative au Contenu Généré par les Utilisateurs (UGC) et Modération',
-    ugcPolicyText: 'Conformément aux Règles pour les Éditeurs de Google AdSense, Real BMI n\'héberge, n\'accepte et n\'affiche AUCUN contenu généré par les utilisateurs (UGC), espace de commentaires public, avis d\'internautes ou forum sur ce site. Tous les échanges constituent une correspondance privée modérée manuellement et ne sont en aucun cas publiés sur le web.',
-    privacyTitle: 'Engagement de Confidentialité et Protection des Données :',
-    privacyText: 'Vos correspondances sont traitées dans le strict respect de notre',
-    privacyLinkText: 'Politique de Confidentialité',
-    privacySuffix: '. Vos données de contact ne sont jamais transmises ni vendues à des régies publicitaires tierces.'
+    ]
   },
   ko: {
-    badge: '제작자 직접 문의 및 지원',
-    heading: 'Real BMI 제작자 및 개발자 직통 문의',
-    subtext: '개인정보 보호를 철저히 준수하고 비검증 웹 게시물로 인한 문제를 차단하기 위해, Real BMI는 모든 학술 검증, 기술 오류 제보, 계산기 위젯 연동 요청을 100% 비공개 직통 이메일로 접수 및 처리합니다.',
-    emailTitle: '공식 지원 및 문의 직통 수신함',
-    emailAddress: 'support&#64;realbmicalculator.com',
+    emailTitle: '공식 지원 직통 수신함',
+    emailAddress: 'support@realbmicalculator.com',
     openEmailApp: '이메일 앱에서 메시지 작성하기 →',
     copyEmail: '이메일 주소 복사',
     copiedToast: '✓ 이메일 주소가 클립보드에 복사되었습니다!',
@@ -212,11 +164,11 @@ const dicts: Record<string, ContactDict> = {
     departments: [
       {
         title: '계산 공식 검증 및 학술 연구 피드백',
-        desc: '미플린-세인트 지어 공식, 옥스퍼드 2.5 지수, 아시아인 기준치에 대한 학술적 질의 및 제안.',
+        desc: '미플린-세인트 지어 공식, 옥스퍼드 2.5 BMI 모델, WHO 아시아인 기준치 질의.',
         subject: '[학술 피드백] 계산 공식 및 의학적 근거 문의'
       },
       {
-        title: '3D 바디 시각화 도구 및 그래픽 오류 제보',
+        title: '기술 지원 및 3D 그래픽 버그 제보',
         desc: 'WebGL 3D 모델 렌더링 지연, 모바일 디바이스 비호환, 인터페이스 오류 제보.',
         subject: '[기술 지원] 시스템 및 렌더링 버그 제보'
       },
@@ -230,123 +182,92 @@ const dicts: Record<string, ContactDict> = {
         desc: '국내외 보건 당국의 최신 개정 가이드라인 또는 학술 논문 인용 제안.',
         subject: '[편집위원회] 참고 기준치 개정 제안'
       }
-    ],
-    ugcPolicyTitle: '사용자 생성 콘텐츠(UGC) 비게시 및 모니터링 정책',
-    ugcPolicyText: 'Google AdSense 게시자 정책을 철저히 준수하기 위해, Real BMI는 웹사이트 내에 공개 사용자 생성 콘텐츠(UGC), 방문자 공개 댓글창, 후기 리뷰, 자유 게시판을 일체 운영하지 않습니다. 전송되는 모든 메시지는 담당 전문 편집자가 직접 검토하는 비공개 서신으로만 취급되며 공개 웹페이지에 노출되지 않습니다.',
-    privacyTitle: '개인정보 보호 및 기밀 유지 서약:',
-    privacyText: '접수된 모든 전자우편 서신은 당사의',
-    privacyLinkText: '개인정보 처리방침',
-    privacySuffix: '에 따라 엄격히 비밀로 보호되며, 외부 마케팅 업체에 일체 판매되거나 공유되지 않습니다.'
+    ]
   },
   hi: {
-    badge: 'सीधा सहयोग एवं संपादकीय संचार',
-    heading: 'Real BMI डेवलपर से संपर्क करें',
-    subtext: 'डेटा गोपनीयता सुनिश्चित करने और गैर-समीक्षित वेब सामग्री को रोकने के लिए, Real BMI सभी शैक्षणिक प्रतिक्रियाओं, तकनीकी त्रुटि रिपोर्टों और कैलकुलेटर एम्बेडिंग अनुरोधों का समाधान सीधे, निजी ईमेल पत्राचार के माध्यम से करता है।',
     emailTitle: 'आधिकारिक डेवलपर सहायता इनबॉक्स',
-    emailAddress: 'support&#64;realbmicalculator.com',
+    emailAddress: 'support@realbmicalculator.com',
     openEmailApp: 'ईमेल ऐप द्वारा संदेश भेजें →',
     copyEmail: 'ईमेल पता कॉपी करें',
     copiedToast: '✓ ईमेल पता क्लिपबोर्ड पर कॉपी हो गया!',
     responseTime: 'प्रतिक्रिया समय: 24–48 व्यावसायिक घंटों के भीतर',
     departmentsTitle: 'पूछताछ की श्रेणी चुनें (विषय स्वतः सेट हो जाएगा):',
-    departmentsSubtext: 'डेवलपर इनबॉक्स में उपयुक्त विषय के साथ ईमेल संदेश भेजने के लिए नीचे दी गई सूची से संबंधित श्रेणी चुनें।',
+    departmentsSubtext: 'डेवलपर इनबॉक्स में उपयुक्त विषय के साथ ईमेल संदेश भेजने के लिए नीचे दी गई श्रेणी चुनें।',
     departments: [
       {
         title: 'वैज्ञानिक सूत्र एवं अकादमिक शोध प्रतिक्रिया',
-        desc: 'मिफ्लिन-सेन्ट जिओर समीकरण, ऑक्सफ़ोर्ड 2.5 मॉडल और डब्ल्यूएचओ एशियाई कटऑफ से संबंधित प्रश्न।',
+        desc: 'मिफ्लिन-सेन्ट जिओर समीकरण, ऑक्सफ़ोर्ड BMI मॉडल और WHO एशियाई कटऑफ से संबंधित प्रश्न।',
         subject: '[अकादमिक प्रतिक्रिया] सूत्र व कार्यप्रणाली संबंधी प्रश्न'
       },
       {
         title: '3D बॉडी विज़ुअलाइज़र एवं तकनीकी बग रिपोर्ट',
-        desc: 'WebGL रेंडरिंग समस्या, मोबाइल स्क्रीन अनुकूलता या प्रदर्शन संबंधी खामी की सूचना दें।',
+        desc: 'WebGL रेंडरिंग समस्या, स्क्रीन अनुकूलता या प्रदर्शन संबंधी खामी की सूचना दें।',
         subject: '[तकनीकी सहायता] बग रिपोर्ट'
       },
       {
         title: 'कैलकुलेटर एम्बेडिंग एवं iFrame एकीकरण',
-        desc: 'अपनी वेबसाइट या शैक्षणिक पोर्टल पर निःशुल्क कैलकुलेटर जोड़ने हेतु संपर्क करें।',
+        desc: 'अपनी वेबसाइट या शैक्षणिक पोर्टल पर निःशुल्क कैलकुलेटर विजेट जोड़ने हेतु संपर्क करें।',
         subject: '[साझेदारी] कैलकुलेटर एम्बेडिंग अनुरोध'
       },
       {
         title: 'संपादकीय नीति एवं संदर्भ तालिका अपडेट',
-        desc: 'हाल ही में प्रकाशित चिकित्सा शोध या राष्ट्रीय स्वास्थ्य दिशा-निर्देशों के संशोधन साझा करें।',
+        desc: 'हाल ही में प्रकाशित चिकित्सा शोध या राष्ट्रीय स्वास्थ्य दिशा-निर्देश साझा करें।',
         subject: '[संपादकीय बोर्ड] संदर्भ दिशा-निर्देश अपडेट'
       }
-    ],
-    ugcPolicyTitle: 'उपयोगकर्ता-जनित सामग्री (UGC) एवं मॉडरेशन नीति',
-    ugcPolicyText: 'Google AdSense प्रकाशक नीतियों के पूर्ण अनुपालन में, Real BMI इस वेबसाइट पर किसी भी सार्वजनिक उपयोगकर्ता-जनित सामग्री (UGC), सार्वजनिक टिप्पणी अनुभाग, समीक्षा या फोरम पोस्ट की अनुमति नहीं देता है। सभी संचार निजी पत्राचार के रूप में संभाले जाते हैं और संपादकों द्वारा प्रत्यक्ष रूप से जाँचे जाते हैं; इन्हें कभी भी सार्वजनिक रूप से वेब पर प्रकाशित नहीं किया जाता है।',
-    privacyTitle: 'गोपनीयता एवं सुरक्षा गारंटी:',
-    privacyText: 'हमारे इनबॉक्स में भेजा गया पत्राचार हमारी',
-    privacyLinkText: 'गोपनीयता नीति',
-    privacySuffix: ' के अनुसार सुरक्षित रखा जाता है। हम व्यक्तिगत विवरण कभी किसी बाहरी विज्ञापन नेटवर्क को साझा या विक्रय नहीं करते हैं।'
+    ]
   }
 };
 
 const d = dicts[lang] || dicts.en;
 ---
 
-<div class="space-y-8">
-  <!-- Primary Verified Direct Email Card -->
-  <div class="rounded-2xl border-2 border-[var(--accent)]/30 bg-[var(--card)] p-6 sm:p-8 shadow-md space-y-6 relative overflow-hidden">
-    <div class="space-y-2">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-mono font-bold uppercase tracking-wider">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        {d.badge}
-      </div>
-      <h2 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-        {d.heading}
-      </h2>
-      <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium leading-relaxed max-w-2xl">
-        {d.subtext}
+<div class="space-y-6">
+  <!-- Official Email Action Box -->
+  <div class="rounded-2xl border border-[var(--border)] bg-[var(--card)]/80 p-6 sm:p-8 shadow-xs space-y-5">
+    <div class="space-y-1.5">
+      <p class="text-xs font-mono font-bold uppercase tracking-wider text-[var(--accent)]">
+        {d.emailTitle}
+      </p>
+      <p class="text-xl sm:text-2xl font-mono font-bold text-[var(--foreground)] select-all break-all" id="officialEmailText">
+        <span>support</span><span>&#64;</span><span>realbmicalculator.com</span>
+      </p>
+      <p class="text-xs text-[var(--muted-foreground)] font-medium pt-0.5">
+        {d.responseTime}
       </p>
     </div>
 
-    <!-- Official Email Action Box -->
-    <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--muted)]/50 space-y-4">
-      <div class="space-y-1">
-        <p class="text-xs font-mono font-bold uppercase tracking-wider text-[var(--muted-foreground)]">
-          {d.emailTitle}
-        </p>
-        <p class="text-xl sm:text-2xl font-mono font-bold text-[var(--accent)] select-all break-all" id="officialEmailText">
-          <span>support</span><span>&#64;</span><span>realbmicalculator.com</span>
-        </p>
-        <p class="text-xs text-[var(--muted-foreground)] font-medium pt-1">
-          {d.responseTime}
-        </p>
-      </div>
+    <div class="flex flex-wrap items-center gap-3 pt-1">
+      <a 
+        href="#officialEmailText"
+        data-mailto-action
+        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--accent)] text-white text-xs font-display font-bold uppercase tracking-wider hover:opacity-90 active:scale-[0.99] transition-all shadow-sm cursor-pointer min-h-[44px]"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        {d.openEmailApp}
+      </a>
 
-      <div class="flex flex-wrap items-center gap-3 pt-2">
-        <a 
-          href="#officialEmailText"
-          data-mailto-action
-          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[var(--accent)] text-white text-xs font-display font-bold uppercase tracking-wider hover:opacity-90 active:scale-[0.99] transition-all shadow-sm cursor-pointer"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-          {d.openEmailApp}
-        </a>
+      <button 
+        type="button"
+        id="copyEmailBtn"
+        class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:bg-[var(--muted)] text-[var(--foreground)] text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer min-h-[44px]"
+      >
+        <svg class="w-4 h-4 text-[var(--muted-foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10a2 2 0 00-2 2v3a2 2 0 002 2h10a2 2 0 002-2v-3a2 2 0 00-2-2z" />
+        </svg>
+        <span id="copyEmailText">{d.copyEmail}</span>
+      </button>
+    </div>
 
-        <button 
-          type="button"
-          id="copyEmailBtn"
-          class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:bg-[var(--muted)] text-[var(--foreground)] text-xs font-display font-bold uppercase tracking-wider transition-all cursor-pointer"
-        >
-          <svg class="w-4 h-4 text-[var(--muted-foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10a2 2 0 00-2 2v3a2 2 0 002 2h10a2 2 0 002-2v-3a2 2 0 00-2-2z" />
-          </svg>
-          <span id="copyEmailText">{d.copyEmail}</span>
-        </button>
-      </div>
-
-      <div id="copyToast" class="hidden text-xs font-bold text-emerald-500 pt-1">
-        {d.copiedToast}
-      </div>
+    <div id="copyToast" class="hidden text-xs font-bold text-emerald-500 pt-0.5">
+      {d.copiedToast}
     </div>
   </div>
 
   <!-- Categorized Inquiry Dispatch Grid -->
-  <div class="space-y-4">
-    <div class="space-y-1.5">
+  <div class="space-y-4 pt-1">
+    <div class="space-y-1">
       <h3 class="text-sm font-mono font-bold uppercase tracking-wider text-[var(--accent)]">
         {d.departmentsTitle}
       </h3>
@@ -355,19 +276,19 @@ const d = dicts[lang] || dicts.en;
       </p>
     </div>
 
-    <div class="grid gap-4 sm:grid-cols-2">
+    <div class="grid gap-3.5 sm:grid-cols-2">
       {d.departments.map((dept) => (
         <a 
           href="#officialEmailText"
           data-mailto-dept={dept.subject}
-          class="group block p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] hover:bg-[var(--muted)]/40 transition-all space-y-2 shadow-xs cursor-pointer"
+          class="group block p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] hover:bg-[var(--muted)]/40 transition-all space-y-1.5 shadow-xs cursor-pointer"
         >
           <div class="flex items-start justify-between gap-2">
             <h4 class="text-sm font-display font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
               {dept.title}
             </h4>
             <span class="text-xs font-mono text-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity">
-              →
+              &rarr;
             </span>
           </div>
           <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
@@ -376,28 +297,6 @@ const d = dicts[lang] || dicts.en;
         </a>
       ))}
     </div>
-  </div>
-
-  <!-- Mandatory AdSense UGC & Moderation Policy Card -->
-  <div class="rounded-xl border border-blue-500/30 bg-blue-500/5 p-5 space-y-2">
-    <div class="flex items-center gap-2">
-      <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-      <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue-500 block">
-        {d.ugcPolicyTitle}
-      </span>
-    </div>
-    <p class="text-xs text-[var(--foreground)]/90 leading-relaxed font-medium">
-      {d.ugcPolicyText}
-    </p>
-  </div>
-
-  <!-- Privacy Notice Guarantee -->
-  <div class="rounded-xl border border-[var(--border)] bg-[var(--muted)]/30 p-4">
-    <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-medium">
-      <strong class="text-[var(--foreground)]">{d.privacyTitle}</strong> {d.privacyText} <a href={`/${lang}/privacy-policy/`} class="text-[var(--accent)] underline hover:text-[var(--foreground)]">{d.privacyLinkText}</a>{d.privacySuffix}
-    </p>
   </div>
 </div>
 

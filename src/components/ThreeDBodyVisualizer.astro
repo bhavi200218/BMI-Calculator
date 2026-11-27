@@ -152,14 +152,17 @@ const l = labels[lang] || labels.en;
 
     <!-- Mode Controls -->
     <div class="flex flex-wrap items-center gap-2 shrink-0">
-      <button id="toggleWireframe3D" class="min-h-[48px] px-4 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--accent)]/20 text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer">
-        ⚡ {l.wireframe}
+      <button id="toggleWireframe3D" class="min-h-[48px] px-3.5 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--accent)]/20 text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer inline-flex items-center gap-2">
+        <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        <span>{l.wireframe}</span>
       </button>
-      <button id="toggleHeatmap3D" class="min-h-[48px] px-4 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--accent)]/20 text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer">
-        🔥 {l.heatmap}
+      <button id="toggleHeatmap3D" class="min-h-[48px] px-3.5 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--accent)]/20 text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer inline-flex items-center gap-2">
+        <svg class="w-3.5 h-3.5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        <span>{l.heatmap}</span>
       </button>
-      <button id="resetCam3D" class="min-h-[48px] px-4 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--accent)]/20 text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer">
-        🔄 {l.reset}
+      <button id="resetCam3D" class="min-h-[48px] px-3.5 py-2.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-[var(--muted)] hover:bg-[var(--accent)]/20 text-[var(--foreground)] border border-[var(--border)] transition-all cursor-pointer inline-flex items-center gap-2">
+        <svg class="w-3.5 h-3.5 text-[var(--muted-foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        <span>{l.reset}</span>
       </button>
     </div>
   </div>

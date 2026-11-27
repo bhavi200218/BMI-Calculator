@@ -6,62 +6,147 @@ import PageShell from '../../components/PageShell.astro';
 
 <Layout 
     title="Politique Éditoriale et Normes de Référence | Real BMI"
-    description="Découvrez notre politique éditoriale : contenus fondés sur les preuves, méthodologies issues de la littérature scientifique et transparence totale."
+    description="Découvrez notre politique éditoriale pour des contenus de santé fondés sur les preuves, une méthodologie validée par les pairs et une totale transparence."
+    canonicalURL="https://realbmicalculator.com/fr/editorial-policy/"
 >
     <Navbar />
     <PageShell
       title="Politique Éditoriale"
       eyebrow="Méthodologie et Transparence"
-      description="Comment Bhawanshi Dosi documente, référence et maintient des outils de santé fondés sur des preuves."
+      description="Comment Bhawanshi Dosi effectue ses recherches, cite ses sources et entretient des outils et contenus éducatifs fondés sur les preuves."
       returnUrl="/fr/"
       returnLabel="Accueil"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
-        <p>Chez <strong>Real BMI</strong>, une plateforme individuelle de calcul et d'éducation en santé fondée, développée et maintenue par <strong>Bhawanshi Dosi</strong> (Banswara, Rajasthan, Inde), l'objectif est de fournir des calculatrices claires, transparentes et basées sur des références pour aider les utilisateurs à estimer leur indice de masse corporelle, leur métabolisme de base, leur dépense énergétique quotidienne et leurs métriques corporelles complémentaires.</p>
+      <div class="max-w-5xl space-y-8 prose prose-zinc dark:prose-invert text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+        <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
+          Chez <strong>Real BMI</strong>, une plateforme numérique indépendante de calcul et d'éducation sanitaire fondée, développée et maintenue par <strong>Bhawanshi Dosi</strong> à Banswara, Rajasthan, Inde, notre mission est d'offrir des estimations claires, fiables et scientifiquement vérifiées d'indicateurs corporels fondamentaux tels que l'Indice de Masse Corporelle (IMC), le Métabolisme de Base (MB) et la Dépense Énergétique Journalière (DEJ).
+        </p>
 
-        <h2>1. Directives de Référence Basées sur des Preuves</h2>
-        <p>Toutes nos formules et plages de référence publiées sur ce portail sont issues d'équations mathématiques établies et de directives de santé publique publiées par des organismes de santé reconnus :</p>
-        <ul>
-          <li><strong>Organisation Mondiale de la Santé (OMS) :</strong> Classifications mondiales de l'obésité et seuils d'IMC pour les populations asiatiques (23,0 kg/m²).</li>
-          <li><strong>CDC (Centers for Disease Control and Prevention) :</strong> Formules d'IMC pour adultes et courbes de croissance.</li>
-          <li><strong>Recherche Publiée :</strong> Équations d'chercheurs reconnus (tels que Mifflin-St Jeor, Harris-Benedict, Boer, Devine, Mosteller et Epley).</li>
-        </ul>
+        <!-- 1. Directives de Référence Basées sur des Preuves -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            1. Directives de Référence Basées sur des Preuves
+          </h2>
+          <p>
+            Tous les algorithmes de calcul et intervalles de référence sur Real BMI s'appuient directement sur la littérature médicale publiée et les recommandations des instances de santé publique :
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5 text-sm sm:text-base">
+            <li><strong>Organisation Mondiale de la Santé (OMS) :</strong> Seuils internationaux de l'IMC (TRS 854), critères d'action régionaux pour les populations asiatiques (23,0 kg/m² surpoids, 27,5 kg/m² obésité) et ratios taille-hanches.</li>
+            <li><strong>Centers for Disease Control and Prevention (CDC) :</strong> Métriques de référence en population générale, courbes de croissance pédiatriques et cadres de dépistage.</li>
+            <li><strong>Indian Council of Medical Research (ICMR) :</strong> Recommandations spécifiques adaptées aux particularités métaboliques des populations asiatiques (adiposité viscérale accrue à IMC modéré).</li>
+            <li><strong>Équations Publiées et Évaluées :</strong> Modèles mathématiques éprouvés tels que Mifflin-St Jeor (dépense énergétique au repos), Devine (poids corporel idéal), Mosteller (surface corporelle), Boer (masse maigre) et Hodgdon (formule de la marine américaine pour la masse grasse).</li>
+          </ul>
+        </div>
 
-        <h2>2. Identité de l'Auteure et Normes Méthodologiques</h2>
-        <p>Real BMI est un projet individuel indépendant fonctionnant sous une gouvernance logicielle transparente et rigoureuse :</p>
-        <ul>
-          <li><strong>Fondatrice, Développeuse &amp; Auteure :</strong> <strong>Bhawanshi Dosi</strong> supervise l'ingénierie logicielle, la conformité algorithmique, l'examen de la littérature primaire (OMS, CDC, NIH), les tests unitaires et la confidentialité client sans rétention.</li>
-          <li><strong>Normes Computationnelles Fondées sur des Preuves :</strong> Chaque calculatrice est une implémentation exacte des formules publiées dans la littérature scientifique (Mifflin-St Jeor, Boer, Devine, Mosteller, OMS TRS 854).</li>
-          <li><strong>Divulgation Non Clinique :</strong> Real BMI est un site web individuel et une ressource éducative, non un hôpital, un cabinet médical ou un service revu par des médecins. Nous ne prétendons pas diriger un comité d'examen clinique médical. Tous les outils sont des calculs éducatifs destinés à un usage personnel.</li>
-          <li><strong>Retours Scientifiques &amp; Académiques :</strong> Nous accueillons avec plaisir les suggestions de formules, citations et retours de chercheurs via notre page de contact.</li>
-        </ul>
+        <!-- 2. Identité de l'Auteure et Normes de Travail -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            2. Identité de l'Auteure et Normes de Travail
+          </h2>
+          <p>
+            Real BMI fonctionne sous un modèle de développement individuel rigoureux et transparent :
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5 text-sm sm:text-base">
+            <li><strong>Fondatrice et Développeuse :</strong> <strong>Bhawanshi Dosi</strong> assure personnellement l'ingénierie logicielle, la modélisation mathématique, les tests unitaires et la conception du site.</li>
+            <li><strong>Exécution Locale Côté Client Sans Rétention :</strong> Tous les calculs s'exécutent entièrement dans votre navigateur grâce à JavaScript. Vos données biométriques (taille, poids, âge) ne sont jamais transmises à des serveurs distants ni enregistrées dans des bases de données.</li>
+            <li><strong>Ressource Éducative Non Médicale :</strong> Real BMI est un site informatif indépendant, et non un cabinet médical, un hôpital ou un ordre professionnel de praticiens. Nos outils procurent une sensibilisation générale et ne remplacent pas un avis clinique.</li>
+          </ul>
+        </div>
 
-        <h2>3. Transparence et Mises à Jour</h2>
-        <p>Les directives de santé et les plages de référence sont révisées périodiquement. Nous mettons à jour nos calculatrices et articles pour refléter le consensus scientifique publié.</p>
+        <!-- 3. Transparence et Mises à Jour Régulières -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            3. Transparence et Mises à Jour Régulières
+          </h2>
+          <p>
+            Nous défendons la totale auditabilité des outils de calcul. Chaque page expose la formule mathématique employée, la logique de conversion, les paramètres requis, les limites physiologiques et des liens directs vers les études de référence indexées (PubMed / DOI). Aucun algorithme opaque de boîte noire n'est utilisé.
+          </p>
+          <p>
+            Pour assurer une accessibilité internationale sans barrière, les 23 outils sont traduits et maintenus en six langues (anglais, espagnol, français, allemand, coréen et hindi) avec une cohérence mathématique absolue.
+          </p>
+        </div>
 
-        <h2>4. Indépendance et Intégrité</h2>
-        <p>Cette plateforme fonctionne comme un projet indépendant. Les décisions de contenu sont prises sans influence commerciale ou pharmaceutique.</p>
+        <!-- 4. Indépendance Éditoriale et Éthique Publicitaire -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            4. Indépendance Éditoriale et Éthique Publicitaire
+          </h2>
+          <p>
+            Afin de maintenir un accès entièrement gratuit sans abonnement, Real BMI est financé par une publicité numérique discrète diffusée via Google AdSense.
+          </p>
+          <p>
+            Nous appliquons une étanchéité éditoriale stricte : aucun annonceur, laboratoire pharmaceutique ou fabricant de suppléments n'exerce la moindre influence sur nos algorithmes mathématiques, nos mises en garde ou nos articles. Nous refusons tout classement rémunéré ou résultat sponsorisé.
+          </p>
+        </div>
 
-        <h2>5. Avertissement Éducatif</h2>
-        <p>Les indicateurs fournis sur ce site sont des estimations éducatives. Cette plateforme n'est pas un cabinet médical, un hôpital ou une clinique, et ne fournit pas de diagnostic ou de traitement médical. Consultez toujours un professionnel de la santé qualifié.</p>
+        <!-- 5. Avertissement Éducatif et Cadre Non Clinique -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            5. Avertissement Éducatif et Cadre Non Clinique
+          </h2>
+          <p>
+            Tous les résultats fournis par Real BMI constituent des estimations éducatives destinées à l'évaluation personnelle et à la sensibilisation générale. Ils ne constituent en aucun cas des diagnostics formels ou des régimes alimentaires prescrits.
+          </p>
+          <p>
+            Les simples mesures de taille et de poids ne permettent pas d'évaluer la composition musculaire, la densité osseuse, l'hydratation ou les antécédents médicaux. Consultez impérativement un médecin ou un diététicien qualifié avant d'entreprendre tout programme de perte de poids.
+          </p>
+        </div>
 
-        <h2>6. Cycle d'Audit Semestriel et Vérification des Faits</h2>
-        <p>Nous appliquons un protocole rigoureux de révision semestrielle pour l'ensemble des formules, tableaux et intervalles de référence. Lorsque les instances internationales (OMS, CDC, autorités sanitaires européennes) publient de nouvelles recommandations épidémiologiques, nos algorithmes sont réévalués et confrontés aux publications médicales officielles. Chaque fonction mathématique fait l'objet de tests de régression automatisés pour assurer une précision absolue.</p>
+        <!-- 6. Cycle d'Audit et Validation Automatisée -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            6. Cycle d'Audit et Validation Automatisée
+          </h2>
+          <p>
+            Nous suivons un protocole d'audit semestriel de toutes les équations et tables de référence. Lors de la publication de nouvelles recommandations par les instances officielles (OMS, CDC, ICMR), nos modèles sont réexaminés à l'aune des publications primaires.
+          </p>
+          <p>
+            La précision logicielle est validée par plus de 500 tests unitaires automatisés qui vérifient la conformité entre unités métriques et impériales (avec une tolérance stricte de 0,01) ainsi que la stabilité des valeurs extrêmes avant tout déploiement.
+          </p>
+        </div>
 
-        <h2>7. Engagement d'Originalité et Rédaction Humaine</h2>
-        <p>Tous les guides explicatifs, les calculs étape par étape et les réponses aux questions fréquentes sont rédigés originellement par Bhawanshi Dosi à partir de sources primaires référencées. Nous récusons catégoriquement le pillage de contenu (scraping), la génération automatisée artificielle et le bourrage de mots-clés.</p>
+        <!-- 7. Rédaction Humaine et Originalité -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            7. Rédaction Humaine et Originalité
+          </h2>
+          <p>
+            L'ensemble des guides explicatifs, des résolutions mathématiques pas à pas et des réponses aux questions fréquentes est rédigé personnellement par Bhawanshi Dosi en s'appuyant sur des travaux scientifiques reconnus.
+          </p>
+          <p>
+            Nous ne publions aucun contenu généré automatiquement par intelligence artificielle sans relecture humaine approfondie. Chaque passage fait l'objet d'un examen minutieux pour garantir son exactitude et sa clarté.
+          </p>
+        </div>
 
-        <h2>8. Signalement d'Erreurs et Prise en Compte des Retours</h2>
-        <p>Si vous constatez une imprécision de calcul, une référence nécessitant une mise à jour ou une explication perfectible, vous pouvez nous écrire via notre page Contact. Toute observation légitime fait l'objet d'un examen approfondi et d'une correction transparente dans notre code source.</p>
+        <!-- 8. Politique de Correction et Retours Utilisateurs -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            8. Politique de Correction et Retours Utilisateurs
+          </h2>
+          <p>
+            La rigueur scientifique constitue notre exigence cardinale. Si vous constatez une divergence mathématique, un terme ambigu ou une citation obsolète, nous vous invitons à nous le signaler via notre <a href="/fr/contact/" class="text-[var(--accent)] underline font-medium">Page de Contact</a>.
+          </p>
+          <p>
+            Toute remarque fondée fait l'objet d'une analyse rapide et d'une intégration dans le code public sous 24 à 48 heures, assortie d'une trace transparente dans l'historique du projet.
+          </p>
+        </div>
 
-        <h2>9. Revue Pré-Publication et Protection de la Confidentialité</h2>
-        <p>Afin de préserver la vie privée des utilisateurs et de respecter scrupuleusement les exigences des règles relatives aux éditeurs Google (AdSense), ainsi que le RGPD européen, Real BMI impose un contrôle éditorial systématique avant toute mise en ligne :</p>
-        <ul>
-          <li><strong>Étape 1 : Vérification des Preuves Scientifiques :</strong> Toutes les formules et données de référence sont rigoureusement validées auprès des publications médicales officielles (OMS, CDC).</li>
-          <li><strong>Étape 2 : Contrôle de Précision Mathématique :</strong> Les fonctions algorithmiques et arrondis sont testés sur l'ensemble des cas limites métriques et impériaux.</li>
-          <li><strong>Étape 3 : Filtrage Strict et Confidentialité :</strong> Un audit automatisé et humain garantit qu'aucune information personnelle identifiable (noms de particuliers, adresses e-mail personnelles, numéros de téléphone) n'est jamais exposée publiquement.</li>
-          <li><strong>Étape 4 : Revue Finale :</strong> Tous les contenus sont vérifiés pour leur exactitude, leur mise en page, leurs références et le respect de la vie privée avant publication.</li>
-        </ul>
+        <!-- 9. Revue Pré-Publication et Protection de la Confidentialité -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            9. Revue Pré-Publication et Protection de la Confidentialité
+          </h2>
+          <p>
+            Avant toute mise en ligne, chaque calculateur ou guide fait l'objet d'un protocole d'assurance qualité en 4 étapes :
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5 text-sm sm:text-base">
+            <li><strong>Étape 1 : Vérification Bibliographique :</strong> Confirmation des équations auprès des publications scientifiques primaires (OMS, CDC).</li>
+            <li><strong>Étape 2 : Test de Parité Mathématique :</strong> Validation du comportement identique entre unités métriques (kg, cm) et impériales (livres, pouces).</li>
+            <li><strong>Étape 3 : Audit de Confidentialité :</strong> Contrôle strict garantissant qu'aucune donnée biométrique n'est journalisée ou transmise.</li>
+            <li><strong>Étape 4 : Revue Éditoriale Finale :</strong> Vérification de la mise en page, des références, des avertissements et de la lisibilité globale.</li>
+          </ul>
+        </div>
+
       </div>
     </PageShell>
 </Layout>

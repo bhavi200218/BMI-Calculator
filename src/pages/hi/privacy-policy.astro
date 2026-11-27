@@ -17,10 +17,10 @@ import PageShell from '../../components/PageShell.astro';
       returnUrl="/hi/"
       returnLabel="मुख्य पृष्ठ"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+      <div class="max-w-5xl space-y-8 prose prose-zinc dark:prose-invert text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
         
         <!-- Privacy at a Glance (Quick Summary Card) -->
-        <div class="not-prose p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs space-y-4">
+        <div class="not-prose p-6 rounded-2xl bg-[var(--card)]/60 border border-[var(--border)]/60 space-y-4">
           <div class="flex items-center gap-2.5">
             <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -40,23 +40,19 @@ import PageShell from '../../components/PageShell.astro';
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
             <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
               <span class="text-emerald-500 text-base leading-none">✓</span>
-              <span>हम आपका बीएमआई या स्वास्थ्य संबंधी आंकड़े कभी स्टोर नहीं करते</span>
+              <span><strong>शून्य स्वास्थ्य डेटा संग्रह:</strong> सभी गणनाएं सीधे आपके ब्राउज़र में होती हैं</span>
             </div>
             <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
               <span class="text-emerald-500 text-base leading-none">✓</span>
-              <span>सभी गणनाएं सीधे आपके वेब ब्राउज़र में स्थानीय रूप से होती हैं</span>
+              <span><strong>बिना अकाउंट या लॉगिन:</strong> बिना किसी रजिस्ट्रेशन के सभी 23 टूल्स का उपयोग करें</span>
             </div>
             <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
               <span class="text-emerald-500 text-base leading-none">✓</span>
-              <span>किसी भी प्रकार के अकाउंट या रजिस्ट्रेशन की आवश्यकता नहीं है</span>
+              <span><strong>डेटा बिक्री पर रोक:</strong> आपका कोई भी बायोमेट्रिक डेटा कभी बेचा या साझा नहीं किया जाता</span>
             </div>
             <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
               <span class="text-emerald-500 text-base leading-none">✓</span>
-              <span>आपका कोई भी स्वास्थ्य डेटा कभी बेचा या साझा नहीं किया जाता</span>
-            </div>
-            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium sm:col-span-2">
-              <span class="text-emerald-500 text-base leading-none">✓</span>
-              <span>एनालिटिक्स और विज्ञापन प्राथमिकताओं पर आपका 100% नियंत्रण है</span>
+              <span><strong>कुकी नियंत्रण:</strong> फुटर में दिए लिंक से कभी भी सहमति प्रबंधित करें</span>
             </div>
           </div>
         </div>
@@ -75,116 +71,119 @@ import PageShell from '../../components/PageShell.astro';
         </div>
 
         <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
-          <strong>Real BMI</strong> पर हम उपयोगकर्ता की व्यक्तिगत गोपनीयता और स्वास्थ्य डेटा की सुरक्षा को एक बुनियादी अधिकार मानते हैं। हमारे सभी कैलकुलेटर गोपनीयता-प्रथम दृष्टिकोण पर आधारित हैं।
+          <strong>Real BMI</strong> पर हम उपयोगकर्ता की व्यक्तिगत गोपनीयता और स्वास्थ्य डेटा की सुरक्षा को एक बुनियादी अधिकार मानते हैं। हमारे सभी स्वास्थ्य उपकरण गोपनीयता-प्रथम दृष्टिकोण पर आधारित हैं।
         </p>
 
-        <!-- 1. शून्य स्वास्थ्य डेटा संग्रह नीति -->
+        <!-- 1. क्लाइंट-साइड प्रोसेसिंग एवं शून्य स्वास्थ्य डेटा संग्रह -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            1. शून्य स्वास्थ्य डेटा संग्रह नीति
+            1. क्लाइंट-साइड प्रोसेसिंग एवं शून्य स्वास्थ्य डेटा संग्रह
           </h2>
           <p>
-            हम आपकी व्यक्तिगत लंबाई, वजन या अन्य शारीरिक मापों को कभी भी एकत्र, संचित या प्रेषित नहीं करते हैं।
+            हम आपकी व्यक्तिगत लंबाई, वजन, उम्र, कमर का माप या अन्य शारीरिक मापों को कभी भी एकत्र, संचित या प्रेषित नहीं करते हैं।
           </p>
           <p>
             जब आप कैलकुलेटर में अपनी जानकारी दर्ज करते हैं, तो सभी गणितीय गणनाएं जावास्क्रिप्ट के माध्यम से सीधे आपके वेब ब्राउज़र में ही प्रोसेस होती हैं।
           </p>
           <p>
-            ये आंकड़े कभी भी हमारे वेब सर्वर पर नहीं भेजे जाते और न ही किसी डेटाबेस में सहेजे जाते हैं।
+            क्योंकि गणना आपके डिवाइस पर स्थानीय रूप से होती है, इसलिए आपका डेटा केवल पेज खुले रहने तक ब्राउज़र मेमोरी में रहता है। जैसे ही आप टैब बंद करते हैं या पेज रीफ्रेश करते हैं, आपके दर्ज किए गए आंकड़े तुरंत मिट जाते हैं।
           </p>
         </div>
 
-        <!-- 2. स्थानीय ब्राउज़र प्रोसेसिंग और अस्थायी मेमोरी -->
+        <!-- 2. तकनीकी सर्वर लॉग एवं होस्टिंग इंफ्रास्ट्रक्चर -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            2. स्थानीय ब्राउज़र प्रोसेसिंग और अस्थायी मेमोरी
+            2. तकनीकी सर्वर लॉग एवं होस्टिंग इंफ्रास्ट्रक्चर
           </h2>
           <p>
-            क्योंकि गणना आपके डिवाइस पर स्थानीय रूप से होती है, इसलिए आपका डेटा केवल पेज खुले रहने तक ही रहता है।
+            Real BMI स्थिर रूप से उत्पन्न (Statically Generated) है और वैश्विक स्तर पर Cloudflare Pages एज नेटवर्क पर होस्ट की जाती है। बुनियादी तकनीकी लॉग साइबर हमलों (DDoS) से बचाव और तेज़ लोडिंग सुनिश्चित करते हैं।
           </p>
           <p>
-            जैसे ही आप टैब बंद करते हैं या पेज को रीफ्रेश करते हैं, आपके द्वारा दर्ज किए गए सभी आंकड़े मेमोरी से तुरंत हट जाते हैं।
+            इन तकनीकी लॉग्स में ब्राउज़र प्रकार, ऑपरेटिंग सिस्टम और उच्च-स्तरीय स्थान (देश/शहर) जैसी सामान्य डायग्नोस्टिक जानकारी होती है।
           </p>
           <p>
-            Real BMI में किसी अकाउंट की जरूरत नहीं होती और न ही हम आपके आईपी पते से कोई स्वास्थ्य डेटा जोड़ते हैं।
+            ये तकनीकी लॉग कैलकुलेटर के उपयोग से पूरी तरह अलग होते हैं और इनमें कोई व्यक्तिगत पहचान या स्वास्थ्य डेटा शामिल नहीं होता।
           </p>
         </div>
 
-        <!-- 3. तकनीकी निदान एवं Cloudflare Pages होस्टिंग -->
+        <!-- 3. डिजिटल विज्ञापन एवं Google AdSense प्रकटीकरण -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            3. तकनीकी निदान एवं Cloudflare Pages होस्टिंग
+            3. डिजिटल विज्ञापन एवं Google AdSense प्रकटीकरण
           </h2>
           <p>
-            Real BMI स्थिर रूप से उत्पन्न है और वैश्विक स्तर पर Cloudflare Pages एज नेटवर्क पर होस्ट की जाती है। बुनियादी तकनीकी लॉग साइबर हमलों (DDoS) से बचाव और तेज़ लोडिंग सुनिश्चित करते हैं।
-          </p>
-          <p>
-            ये लॉग कैलकुलेटर के उपयोग से पूरी तरह अलग होते हैं और इनमें कोई व्यक्तिगत पहचान या स्वास्थ्य डेटा नहीं होता।
-          </p>
-        </div>
-
-        <!-- 4. वेब एनालिटिक्स, Google Consent Mode v2 एवं CMP -->
-        <div class="space-y-3">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            4. वेब एनालिटिक्स, Google Consent Mode v2 एवं CMP
-          </h2>
-          <p>
-            Real BMI इन कैलकुलेटरों को मुफ़्त रखने के लिए गैर-आक्रामक ऑनलाइन विज्ञापनों का उपयोग करता है:
+            Real BMI अपने सभी 23 स्वास्थ्य कैलकुलेटरों को आम जनता के लिए मुफ़्त रखने हेतु ऑनलाइन विज्ञापनों का उपयोग करता है:
           </p>
           <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Google AdSense:</strong> Google सहित तृतीय-पक्ष विक्रेता वेबसाइट पर विज़िट के आधार पर विज्ञापन प्रदर्शित करने के लिए कुकीज़ का उपयोग करते हैं।</li>
-            <li><strong>व्यक्तिगत विज्ञापन बंद करना:</strong> आप <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Google Ads Settings</a> पर जाकर कभी भी व्यक्तिगत विज्ञापनों को बंद कर सकते हैं।</li>
-            <li><strong>Google Consent Mode v2:</strong> डिफ़ॉल्ट रूप से सभी विज्ञापन और एनालिटिक्स कुकीज़ अस्वीकृत (<code>denied</code>) रहती हैं, और केवल आपकी स्पष्ट सहमति के बाद ही सक्रिय होती हैं।</li>
-            <li><strong>EEA एवं यूके विज़िटर्स (Google-प्रमाणित CMP):</strong> यूरोपीय आर्थिक क्षेत्र और ब्रिटेन के उपयोगकर्ताओं के लिए Google Funding Choices (IAB TCF v2.2 प्रमाणित) द्वारा सहमति ली जाती है।</li>
-            <li><strong>सहमति वापस लेना:</strong> फुटर में "कुकी प्राथमिकताएं" लिंक पर क्लिक करके आप कभी भी अपनी सहमति वापस ले सकते हैं, जिससे ट्रैकिंग कुकीज़ तुरंत हट जाती हैं।</li>
+            <li><strong>Google AdSense:</strong> Google सहित तृतीय-पक्ष विक्रेता हमारी वेबसाइट या इंटरनेट की अन्य साइटों पर पूर्व विज़िट के आधार पर प्रासंगिक विज्ञापन दिखाने के लिए कुकीज़ का उपयोग करते हैं।</li>
+            <li><strong>व्यक्तिगत विज्ञापन बंद करना:</strong> आप <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Google Ads Settings</a> या <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">aboutads.info</a> पर जाकर कभी भी व्यक्तिगत विज्ञापनों को बंद कर सकते हैं।</li>
+            <li><strong>गैर-व्यक्तिगत विज्ञापन:</strong> यदि आप ट्रैकिंग अस्वीकार करते हैं, तो बिना कुकीज़ के केवल सामान्य पृष्ठ संदर्भ पर आधारित विज्ञापन प्रदर्शित किए जाते हैं।</li>
           </ul>
         </div>
 
-        <!-- 5. आपके डेटा अधिकार -->
+        <!-- 4. Google Consent Mode v2 एवं कुकी प्राथमिकताएं -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            5. आपके डेटा अधिकार
+            4. Google Consent Mode v2 एवं कुकी प्राथमिकताएं
           </h2>
           <p>
-            अंतर्राष्ट्रीय गोपनीयता मानकों के अनुसार आपको अपने डेटा पर पूर्ण नियंत्रण प्राप्त है:
+            हम आपकी कुकी प्राथमिकताओं का पूर्ण सम्मान करते हैं:
           </p>
           <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>डेटा बिक्री पर रोक:</strong> हम कभी भी किसी तीसरे पक्ष को आपका स्वास्थ्य डेटा नहीं बेचते।</li>
-            <li><strong>स्वचालित डेटा निष्कासन:</strong> सर्वर पर डेटा न होने के कारण सत्र समाप्त होते ही आपकी जानकारी स्वतः नष्ट हो जाती है।</li>
-            <li><strong>प्राथमिकताएं बदलना:</strong> आप हमारे <a href="/hi/cookie-policy/" class="text-[var(--accent)] underline font-medium">कुकी प्राथमिकता केंद्र</a> में जाकर किसी भी समय कुकीज़ प्रबंधित कर सकते हैं।</li>
+            <li><strong>Google Consent Mode v2:</strong> डिफ़ॉल्ट रूप से सभी विज्ञापन और एनालिटिक्स कुकीज़ अस्वीकृत (<code>ad_storage: 'denied'</code>, <code>ad_user_data: 'denied'</code>, <code>ad_personalization: 'denied'</code>, <code>analytics_storage: 'denied'</code>) रहती हैं। ये केवल आपकी स्पष्ट सहमति के बाद ही सक्रिय होती हैं।</li>
+            <li><strong>EEA एवं यूके विज़िटर्स (Google-प्रमाणित CMP):</strong> यूरोपीय आर्थिक क्षेत्र और ब्रिटेन के आगंतुकों के लिए आधिकारिक Google Funding Choices (IAB TCF v2.2 प्रमाणित) द्वारा सहमति ली जाती है।</li>
+            <li><strong>सहमति वापस लेना:</strong> फुटर में "कुकी प्राथमिकताएं" लिंक पर क्लिक करके आप कभी भी अपनी सहमति बदल या वापस ले सकते हैं, जिससे ट्रैकिंग कुकीज़ तुरंत हट जाती हैं।</li>
           </ul>
         </div>
 
-        <!-- 6. एन्क्रिप्शन और वेब सुरक्षा मानक -->
+        <!-- 5. आपके कानूनी अधिकार (GDPR एवं अंतर्राष्ट्रीय गोपनीयता) -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            6. एन्क्रिप्शन और वेब सुरक्षा मानक
+            5. आपके कानूनी अधिकार (GDPR एवं अंतर्राष्ट्रीय गोपनीयता)
           </h2>
           <p>
-            हम आधुनिक TLS एन्क्रिप्शन तकनीक का उपयोग करते हैं ताकि आपका ब्राउज़िंग अनुभव सुरक्षित रहे और कोई तीसरा पक्ष आपके डेटा को इंटरसेप्ट न कर सके।
+            चाहे आप यूरोपीय संघ, कैलिफोर्निया या दुनिया में कहीं भी रहते हों, आपको अपनी गोपनीयता पर पूर्ण अधिकार प्राप्त हैं:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>डेटा बिक्री पर रोक:</strong> हम कभी भी किसी डेटा ब्रोकर या तीसरे पक्ष को आपका स्वास्थ्य डेटा नहीं बेचते या किराए पर नहीं देते।</li>
+            <li><strong>डेटा निष्कासन का अधिकार:</strong> सर्वर पर डेटा न होने के कारण सत्र समाप्त होते ही आपकी जानकारी स्वतः मिट जाती है।</li>
+            <li><strong>प्राथमिकताएं बदलना:</strong> आप हमारे <a href="/hi/cookie-policy/" class="text-[var(--accent)] underline font-medium">कुकी नीति केंद्र</a> में जाकर किसी भी समय अपनी कुकीज़ प्रबंधित कर सकते हैं।</li>
+          </ul>
+        </div>
+
+        <!-- 6. वेबसाइट सुरक्षा एवं TLS एन्क्रिप्शन -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            6. वेबसाइट सुरक्षा एवं TLS एन्क्रिप्शन
+          </h2>
+          <p>
+            हम आधुनिक ट्रांसपोर्ट लेयर सिक्योरिटी (TLS 1.3) एन्क्रिप्शन और कड़े सुरक्षा हेडर का उपयोग करते हैं, ताकि आपका ब्राउज़िंग अनुभव सुरक्षित रहे और कोई तीसरा पक्ष आपके डेटा को इंटरसेप्ट न कर सके।
           </p>
         </div>
 
-        <!-- 7. संपादकीय समीक्षा एवं डेटा गोपनीयता नीति -->
+        <!-- 7. बच्चों की गोपनीयता सुरक्षा -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            7. संपादकीय समीक्षा एवं डेटा गोपनीयता नीति
+            7. बच्चों की गोपनीयता सुरक्षा
           </h2>
           <p>
-            सभी कैलकुलेटर और स्वास्थ्य लेख प्रकाशन से पहले कठोर समीक्षा से गुजरते हैं।
+            Real BMI सामान्य वयस्क दर्शकों के लिए डिज़ाइन किया गया है। हम 13 वर्ष से कम उम्र के बच्चों (या यूरोपीय संघ में 16 वर्ष से कम) से जानबूझकर कोई व्यक्तिगत जानकारी एकत्र नहीं करते हैं।
           </p>
           <p>
-            हम किसी भी प्रकार के सार्वजनिक फ़ोरम या उपयोगकर्ता निर्देशिका का संचालन नहीं करते हैं, जिससे आपकी पहचान पूर्णतः सुरक्षित रहती है।
+            किशोर विकास कैलकुलेटर केवल शैक्षिक मार्गदर्शिका हैं और इनका उपयोग माता-पिता, अभिभावक या चिकित्सक के मार्गदर्शन में ही किया जाना चाहिए।
           </p>
         </div>
 
-        <!-- 8. संपर्क एवं सहायता -->
+        <!-- 8. डेटा नियंत्रक एवं संपर्क जानकारी -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            8. संपर्क एवं सहायता
+            8. डेटा नियंत्रक एवं संपर्क जानकारी
           </h2>
           <p>
-            यदि आपके पास हमारी गोपनीयता नीति या ब्राउज़र गणना मॉडल के बारे में कोई प्रश्न है, तो कृपया हमारे <a href="/hi/contact/" class="text-[var(--accent)] underline font-medium">संपर्क और सहायता पेज</a> के माध्यम से हमसे संपर्क करें।
+            Real BMI बांसवाड़ा, राजस्थान, भारत स्थित <strong>Bhawanshi Dosi</strong> (स्वतंत्र सॉफ्टवेयर इंजीनियर) द्वारा निर्मित एवं प्रबंधित एक स्वतंत्र वेबसाइट है।
+          </p>
+          <p>
+            यदि आपके पास हमारी गोपनीयता प्रथाओं, ब्राउज़र गणना इंजन या कुकी सेटिंग्स के बारे में कोई प्रश्न हैं, तो कृपया हमारे <a href="/hi/contact/" class="text-[var(--accent)] underline font-medium">संपर्क पेज</a> के माध्यम से हमसे संपर्क करें।
           </p>
         </div>
 

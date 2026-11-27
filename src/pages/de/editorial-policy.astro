@@ -6,74 +6,147 @@ import PageShell from '../../components/PageShell.astro';
 
 <Layout 
     title="Redaktionelle Richtlinien & Referenzstandards | Real BMI"
-    description="Erfahren Sie mehr über unsere redaktionellen Leitlinien: evidenzbasierte Methoden, wissenschaftlich geprüfte Formeln und transparente Rechner-Tools."
+    description="Lesen Sie unsere redaktionellen Richtlinien für evidenzbasierte Gesundheitsinhalte, peer-reviewte Methoden, Screening-Definitionen und Nutzertransparenz."
+    canonicalURL="https://realbmicalculator.com/de/editorial-policy/"
 >
     <Navbar />
     <PageShell
       title="Redaktionelle Richtlinien"
       eyebrow="Methodik & Transparenz"
-      description="Wie unsere Redaktion evidenzbasierte Gesundheitsrechner und wissenschaftliche Fachinhalte recherchiert, referenziert und pflegt."
+      description="Wie Bhawanshi Dosi evidenzbasierte Gesundheitswerkzeuge und Aufklärungsinhalte recherchiert, referenziert und pflegt."
       returnUrl="/de/"
       returnLabel="Startseite"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
-        <p>Bei <strong>Real BMI</strong>, einer individuellen Plattform für digitale Gesundheitsberechnungen und Aufklärung, gegründet, entwickelt und gepflegt von <strong>Bhawanshi Dosi</strong> (Banswara, Rajasthan, Indien), steht die Bereitstellung transparenter, evidenzbasierter Berechnungen im Mittelpunkt.</p>
+      <div class="max-w-5xl space-y-8 prose prose-zinc dark:prose-invert text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+        <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
+          Willkommen bei <strong>Real BMI</strong>, einer unabhängigen digitalen Plattform für Gesundheitsberechnung und Aufklärung, gegründet, entwickelt und persönlich betreut von <strong>Bhawanshi Dosi</strong> in Banswara, Rajasthan, Indien. Unser Ziel ist es, verlässliche, transparente und wissenschaftlich fundierte Werkzeuge zur Verfügung zu stellen, mit denen Einzelpersonen, Lehrkräfte und medizinisches Fachpersonal grundlegende physiologische Kennzahlen – wie den Body-Mass-Index (BMI), den Grundumsatz (BMR) und den Gesamtenergiebedarf (TDEE) – kostenfrei und geschützt ermitteln können.
+        </p>
 
-        <h2>1. Evidenzbasierte Referenzrichtlinien</h2>
-        <p>Alle auf diesem Fachportal publizierten Formeln und Referenzbereiche stammen aus etablierten mathematischen Gleichungen und Leitlinien der öffentlichen Gesundheit von anerkannten Organisationen:</p>
-        <ul>
-          <li><strong>Weltgesundheitsorganisation (WHO):</strong> Globale Adipositas-Klassifikationen und asiatische BMI-Schwellenwerte (23,0 kg/m²).</li>
-          <li><strong>CDC (Centers for Disease Control and Prevention):</strong> Standardformeln für den Body-Mass-Index bei Erwachsenen.</li>
-          <li><strong>Veröffentlichte Forschung:</strong> Gleichungen renommierter Forscher (wie Mifflin-St Jeor, Harris-Benedict, Boer, Devine, Mosteller und Epley).</li>
-        </ul>
+        <!-- 1. Evidenzbasierte Referenzrichtlinien -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            1. Evidenzbasierte Referenzrichtlinien
+          </h2>
+          <p>
+            Alle Berechnungsmodelle und Referenzbereiche auf Real BMI basieren unmittelbar auf veröffentlichter medizinischer Fachliteratur und Richtlinien anerkannter Gesundheitsorganisationen:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5 text-sm sm:text-base">
+            <li><strong>Weltgesundheitsorganisation (WHO):</strong> Internationale BMI-Klassifikationen für Erwachsene (TRS 854), regionale asiatische Schwellenwerte (23,0 kg/m² Übergewicht, 27,5 kg/m² Adipositas) und Taille-Hüft-Verhältnis.</li>
+            <li><strong>Centers for Disease Control and Prevention (CDC):</strong> Populationsbezogene Referenzdaten, Perzentilenkurven für Kinder und Jugendliche sowie Screening-Leitlinien.</li>
+            <li><strong>Indian Council of Medical Research (ICMR):</strong> Spezifische Konsenswerte für asiatische Populationen unter Berücksichtigung des erhöhten viszeralen Fettanteils bei niedrigerem BMI.</li>
+            <li><strong>Veröffentlichte Formeln aus Studien:</strong> Etablierte Formeln renommierter Wissenschaftler wie Mifflin-St Jeor (Ruheumsatz), Devine (Idealgewicht), Mosteller (Körperoberfläche), Boer (Magermasse) und Hodgdon (U.S. Navy Körperfettformel).</li>
+          </ul>
+        </div>
 
-        <h2>2. Individuelle Autorenschaft & Methodische Standards</h2>
-        <p>Real BMI ist ein unabhängiges Einzelprojekt unter transparenter persönlicher Entwicklerführung:</p>
-        <ul>
-          <li><strong>Gründerin, Entwicklerin &amp; Autorin:</strong> <strong>Bhawanshi Dosi</strong> leitet die gesamte Softwareentwicklung, algorithmische Modellierung, Recherche primärer Fachliteratur (WHO, CDC, NIH), Unittests und clientseitige Datenschutzarchitektur.</li>
-          <li><strong>Evidenzbasierte Rechenstandards:</strong> Jeder Rechner ist eine direkte, geprüfte Implementierung publizierter Gleichungen (Mifflin-St Jeor, Boer, Devine, Mosteller, WHO TRS 854) mit automatisierter doppelter Einheitenprüfung.</li>
-          <li><strong>Nicht-klinischer Hinweis:</strong> Real BMI ist eine persönliche Website und eine Bildungsressource, keine Klinik, Arztpraxis oder ärztlich überprüfter Dienst. Wir beanspruchen kein klinisches Ärztegremium. Alle Rechner dienen allgemeinen Bildungs- und Orientierungszwecken.</li>
-          <li><strong>Offenes Fachfeedback:</strong> Wissenschaftliche Hinweise, Formelkorrekturen und Literaturzitate nehmen wir über unsere Kontaktseite gerne entgegen.</li>
-        </ul>
+        <!-- 2. Individuelle Autorenschaft & Methodische Standards -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            2. Individuelle Autorenschaft & Methodische Standards
+          </h2>
+          <p>
+            Real BMI wird nach einem transparenten Entwicklungsmodell mit uneingeschränkter persönlicher Verantwortung betrieben:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5 text-sm sm:text-base">
+            <li><strong>Gründerin & Softwareentwicklerin:</strong> <strong>Bhawanshi Dosi</strong> verantwortet eigenständig die gesamte Softwarearchitektur, mathematische Implementierung, Testautomatisierung und das Interface-Design.</li>
+            <li><strong>Client-Side-Berechnung ohne Datenspeicherung:</strong> Sämtliche Berechnungen laufen zu 100% lokal per JavaScript in Ihrem Webbrowser ab. Biometrische Eingaben (Größe, Gewicht, Alter) werden niemals an Server übertragen oder in Datenbanken gespeichert.</li>
+            <li><strong>Nicht-klinisches Bildungsangebot:</strong> Real BMI ist eine unabhängige Informationsplattform und kein Krankenhaus, keine Arztpraxis und kein medizinisches Beratergremium. Unsere Rechner dienen der Orientierung und ersetzen keine klinische Diagnostik.</li>
+          </ul>
+        </div>
 
-        <h2>3. Transparenz & Kontinuierliche Aktualisierungen</h2>
-        <p>Gesundheitsrichtlinien und Referenzbereiche werden regelmäßig überprüft. Wir aktualisieren unsere Rechner und Artikel kontinuierlich, um den veröffentlichten wissenschaftlichen Konsens widerzuspiegeln.</p>
+        <!-- 3. Transparenz & Kontinuierliche Aktualisierungen -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            3. Transparenz & Kontinuierliche Aktualisierungen
+          </h2>
+          <p>
+            Wir sind der Überzeugung, dass gesundheitsbezogene Algorithmen vollkommen transparent sein müssen. Jede Rechnerseite legt die exakte Formel, Einheitenumrechnungen, physiologische Grenzen und direkte Verlinkungen zu indexierten Primärstudien (PubMed / DOI) offen. Wir verwenden keine intransparenten Black-Box-Schätzungen.
+          </p>
+          <p>
+            Um globale Zugänglichkeit zu gewährleisten, werden alle 23 Werkzeuge in sechs Sprachen (Englisch, Spanisch, Französisch, Deutsch, Koreanisch und Hindi) mit identischer mathematischer Logik gepflegt.
+          </p>
+        </div>
 
-        <h2>4. Unabhängigkeit & Integrität</h2>
-        <p>Dieses Informationsangebot operiert als unabhängiges Rechnerprojekt. Sämtliche Inhaltsentscheidungen erfolgen streng nach wissenschaftlichen Kriterien ohne kommerziellen oder pharmazeutischen Einfluss.</p>
+        <!-- 4. Redaktionelle Unabhängigkeit & Ethische Werbung -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            4. Redaktionelle Unabhängigkeit & Ethische Werbung
+          </h2>
+          <p>
+            Damit alle Rechner ohne Abonnements oder Bezahlschranken frei zugänglich bleiben, finanziert sich Real BMI durch datenschutzkonforme Online-Werbung via Google AdSense.
+          </p>
+          <p>
+            Wir wahren eine strikte redaktionelle Trennung: Weder Werbetreibende noch Pharmahersteller haben Einfluss auf unsere Berechnungsmodelle, klinischen Hinweise oder redaktionellen Texte. Wir akzeptieren weder gesponserte Ergebnisse noch bezahlte Rankings.
+          </p>
+        </div>
 
-        <h2>5. Pädagogischer Hinweis</h2>
-        <p>Die ausgegebenen Kennzahlen stellen pädagogisch-informative Orientierungswerte dar. Dieses Portal betreibt keine medizinische Praxis, kein Krankenhaus und keine klinische Einrichtung und bietet keine individuellen Diagnosen oder Therapien an. Konsultieren Sie bei gesundheitlichen Fragen stets qualifiziertes medizinisches Fachpersonal.</p>
+        <!-- 5. Pädagogischer Hinweis & Nicht-Klinische Grenzen -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            5. Pädagogischer Hinweis & Nicht-Klinische Grenzen
+          </h2>
+          <p>
+            Alle Berechnungen auf Real BMI sind rein informative Richtwerte zur allgemeinen Orientierung und persönlichen Vorsorge. Sie stellen weder eine formelle medizinische Diagnose noch einen individuellen Ernährungsplan dar.
+          </p>
+          <p>
+            Einfache anthropometrische Eingaben erfassen keine individuellen Faktoren wie Muskelmasse, Knochendichte, Flüssigkeitshaushalt oder Vorerkrankungen. Konsultieren Sie vor grundlegenden Lebensstil- oder Diätänderungen stets einen Arzt oder qualifizierten Ernährungsberater.
+          </p>
+        </div>
 
-        <h2>6. Halbjährlicher Prüfzyklus & Faktenprüfung</h2>
-        <p>Wir führen ein halbjährliches Audit für sämtliche hinterlegten Formeln, Tabellenwerte und Grenzbereiche durch. Sobald globale Gesundheitsorganisationen (wie WHO oder CDC) neue statistische Benchmarks veröffentlichen, werden unsere Berechnungsmodelle neu validiert und anhand offizieller Weißbücher geprüft. Jede Formelimplementierung durchläuft automatisierte Regressions- und Einheitentests, um mathematische Exaktheit zu gewährleisten.</p>
+        <!-- 6. Prüfzyklus & Automatisierte Tests -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            6. Prüfzyklus & Automatisierte Tests
+          </h2>
+          <p>
+            Wir unterziehen alle Formeln und Tabellen einer regelmäßigen halbjährlichen Revision. Veröffentlichen maßgebliche Institutionen (WHO, CDC, ICMR) neue Konsensleitlinien, gleichen wir unsere Modelle systematisch mit den Primärquellen ab.
+          </p>
+          <p>
+            Die Softwarequalität sichern über 500 automatisierte Unittests ab, die vor jedem Update die exakte Parität zwischen metrischen und imperialen Einheiten (Toleranz: 0,01) sowie Grenzwerteingaben überprüfen.
+          </p>
+        </div>
 
-        <h2>7. Originalität & Autorenverpflichtung</h2>
-        <p>Alle Leitfäden, Berechnungsbeispiele, mathematischen Schritt-für-Schritt-Anleitungen und FAQs werden von Bhawanshi Dosi eigenständig verfasst und transparent mit Primärquellen belegt.</p>
+        <!-- 7. Menschliche Autorenschaft & Originalität -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            7. Menschliche Autorenschaft & Originalität
+          </h2>
+          <p>
+            Alle Ratgebertexte, mathematischen Schritt-für-Schritt-Beispiele und Antworten auf häufige Fragen werden von Bhawanshi Dosi persönlich anhand wissenschaftlicher Fachliteratur verfasst.
+          </p>
+          <p>
+            Wir veröffentlichen keine automatisierten KI-Generierungen ohne menschliche Prüfung. Jeder Text wird sorgfältig auf wissenschaftliche Validität, Verständlichkeit und Ausgewogenheit geprüft.
+          </p>
+        </div>
 
-        <h2>8. Fehlerkorrektur & Feedback-Verfahren</h2>
-        <p>Sollten Sie eine mathematische Unstimmigkeit, eine missverständliche Formulierung oder ein veraltetes Zitat entdecken, können Sie uns jederzeit über die Kontaktseite benachrichtigen. Berechtigte Hinweise werden umgehend überprüft, im Quellcode korrigiert und transparent dokumentiert.</p>
+        <!-- 8. Fehlerkorrektur & Nutzer-Feedback -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            8. Fehlerkorrektur & Nutzer-Feedback
+          </h2>
+          <p>
+            Wissenschaftliche Präzision hat oberste Priorität. Sollten Sie eine mathematische Abweichung, unklare Formulierung oder einen veralteten Verweis bemerken, bitten wir um eine Rückmeldung über unsere <a href="/de/contact/" class="text-[var(--accent)] underline font-medium">Kontaktseite</a>.
+          </p>
+          <p>
+            Geprüfte Hinweise werden zügig analysiert und innerhalb von 24 bis 48 Stunden transparent im Live-Code aktualisiert und dokumentiert.
+          </p>
+        </div>
 
-        <h2>9. Vorveröffentlichungsprüfung & Datenschutzprotokoll</h2>
-        <p>Zum Schutz der Privatsphäre der Nutzer und zur strikten Einhaltung der Google-Publisher-Richtlinien (AdSense) und der DSGVO führt Real BMI vor jeder Veröffentlichung einen verbindlichen Kontrollprozess durch:</p>
-        <ul>
-          <li><strong>Schritt 1: Evidenz- und Quellenprüfung:</strong> Alle Formeln und klinischen Schwellenwerte werden anhand primärer Fachliteratur (WHO, CDC) verifiziert.</li>
-          <li><strong>Schritt 2: Mathematische Genauigkeitsprüfung:</strong> Algorithmen und Rundungen werden für Extrem- und Grenzwerte im metrischen und imperialen System getestet.</li>
-          <li><strong>Schritt 3: Datenschutz- und Sicherheitsprüfung:</strong> Eine strikte Prüfung stellt sicher, dass keinerlei personenbezogene Daten (Namen von Privatpersonen, persönliche E-Mails, Telefonnummern) in öffentlichen Einträgen oder URL-Parametern exponiert werden.</li>
-          <li><strong>Schritt 4: Finale redaktionelle Freigabe:</strong> Die Redaktion prüft Lesbarkeit und didaktischen Mehrwert vor dem Live-Deployment.</li>
-        </ul>
-      
-        <h2>10. Methoden der mathematischen Algorithmen-Kalibrierung</h2>
-        <p>Jedes der 23 Berechnungstools auf Real BMI durchläuft vor der Bereitstellung ein striktes Software-Engineering-Verfahren. Alle physiologischen Formeln (wie Mifflin-St Jeor 1990, Mosteller 1987, Boer 1984 und Devine 1974) werden gegen publizierte klinische Benchmark-Datensätze abgeglichen. Für metrische und imperiale Einheiten verwenden wir den exakten Umrechnungsfaktor 703,06957964 mit einer Fließkommatoleranz von maximal &plusmn;0,01. Dadurch schließen wir Rundungsverzerrungen systematisch aus.</p>
+        <!-- 9. Vorveröffentlichungsprüfung & Datenschutzprotokoll -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            9. Vorveröffentlichungsprüfung & Datenschutzprotokoll
+          </h2>
+          <p>
+            Vor jeder Veröffentlichung durchläuft jedes Berechnungswerkzeug und jeder Artikel eine 4-stufige Qualitätssicherung:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5 text-sm sm:text-base">
+            <li><strong>Stufe 1: Literaturverifikation:</strong> Abgleich aller Formeln und Tabellen mit offiziellen Primärquellen (WHO, CDC).</li>
+            <li><strong>Stufe 2: Mathematische Paritätsprüfung:</strong> Nachweis identischer Rechenergebnisse im metrischen (kg, cm) und imperialen (lbs, inch) System.</li>
+            <li><strong>Stufe 3: Datenschutzprüfung:</strong> Sicherstellung, dass keinerlei persönliche Identifikatoren erfasst oder gespeichert werden.</li>
+            <li><strong>Stufe 4: Finale redaktionelle Endabnahme:</strong> Prüfung von Formatierung, Verlinkungen, Hinweisen und sprachlicher Verständlichkeit.</li>
+          </ul>
+        </div>
 
-        <h2>11. Menschliche Autorenschaft & Ausschluss automatisierter Fehlinformationen</h2>
-        <p>In einer Zeit zunehmender KI-generierter Masseninhalte legt Real BMI größten Wert auf authentische menschliche Autorenschaft. Alle Formelerklärungen, Beispielrechnungen, didaktischen Tabellen und FAQs werden von Softwareentwicklerin Bhawanshi Dosi persönlich verfasst, strukturiert und mit Primärquellen verknüpft. Wir verzichten vollständig auf ungeprüfte automatisierte Textgenerierung und garantieren höchste redaktionelle Sorgfalt.</p>
-
-        <h2>12. Transparenter Versionsverlauf & Redaktionskontakt</h2>
-        <p>Alle Anpassungen an unseren Berechnungsmodellen werden lückenlos im Quellcode-Repository versioniert und archiviert. Für methodische Anfragen, wissenschaftliche Korrekturhinweise oder Forschungskooperationen steht Ihnen Gründerin Bhawanshi Dosi in Banswara, Rajasthan, Indien über unsere <a href="/de/contact/" class="text-[var(--accent)] underline font-medium">Kontaktseite</a> zur Verfügung.</p>
-      
-        <h2>13. Ethische Werberichtlinien & Gemeinnütziger Bildungsauftrag</h2>
-        <p>Um sämtliche 23 Gesundheitsrechner für Privatpersonen, Studierende und medizinisches Fachpersonal dauerhaft kostenfrei bereitzustellen, finanziert sich Real BMI über dezente, nicht-aufdringliche Online-Werbung via Google AdSense. Wir wahren eine strikte redaktionelle Trennung: Weder Werbepartner noch pharmazeutische Unternehmen oder Nahrungsergänzungsmittelhersteller haben Einfluss auf unsere mathematischen Formeln, wissenschaftlichen Quellen oder didaktischen Leitfäden. Unsere Rechner bleiben kompromisslos objektiv und streng an den evidenzbasierten Richtlinien der Weltgesundheitsorganisation ausgerichtet.</p>
       </div>
     </PageShell>
 </Layout>

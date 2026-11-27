@@ -8,52 +8,54 @@ const { lang = 'en' } = Astro.props;
 const labels: Record<string, any> = {
   en: {
     reviewedTag: "Methodology & Sources",
-    reviewedTitle: "Based on Published WHO & CDC Guidelines",
-    reviewedDesc: "Our calculators use published formulas from trusted health groups. These include standards from the World Health Organization (WHO) and the CDC. We also use tested equations like Mifflin-St Jeor.",
+    reviewedTitle: "Evidence-Based Formulas & Public Health Standards",
+    reviewedDesc: "Calculations follow published scientific equations (such as Mifflin-St Jeor, Devine, and Karvonen) and reference cutoffs established by the World Health Organization (WHO) and CDC.",
     boardLabel: "Reference Framework",
-    boardValue: "Published Guidelines and Studies",
+    boardValue: "Peer-Reviewed Literature & WHO Guidelines",
     lastUpdated: "Updated: 2026",
     icdCode: "Standard Health Formulas",
     authorBadge: "Creator & Standards",
     authorName: "Bhawanshi Dosi",
-    authorRole: "Founder & Lead Developer (Banswara, Rajasthan, India)",
-    authorCredentials: ["Published Guidelines & Equations", "Client-Side Privacy", "Metric and Imperial Testing"],
-    authorBio: "Software engineer based in Banswara, Rajasthan, India. Creator of Real BMI. She builds private, in-browser health tools based on published WHO and CDC guidelines.",
+    authorInitials: "BD",
+    authorRole: "Independent Software Engineer (Banswara, Rajasthan, India)",
+    authorCredentials: ["Published Guidelines", "Client-Side Privacy", "Automated Testing"],
+    authorBio: "Solo creator and developer of Real BMI. Built as an independent project to provide private, browser-based health calculation tools based on published WHO and CDC guidelines.",
     authorProfileLink: "Creator Profile & Methodology",
-    verifiedBadge: "Creator & Webmaster",
-    reviewPanelName: "Formula & Code Checks",
-    reviewProtocolTitle: "Automated Code Checks",
-    reviewProtocolDesc: "Formulas follow published health guidelines from the WHO and the CDC. We test both metric and imperial units with automated code checks. Real BMI is an educational project and does not offer medical care.",
+    verifiedBadge: "Solo Creator & Webmaster",
+    reviewPanelName: "Code & Formula Verification",
+    reviewProtocolTitle: "Automated Unit Tests",
+    reviewProtocolDesc: "Calculations are verified against published WHO and CDC reference equations using automated test suites. Real BMI is an independent educational tool maintained by Bhawanshi Dosi.",
     editorialPolicy: "Editorial Policy",
     scientificSources: "Scientific Sources",
     editorialContact: "Contact Webmaster",
-    sourcesTitle: "Key Reference Sources",
+    sourcesTitle: "Primary Reference Sources",
     sources: [
       { name: "WHO Obesity Guidelines", url: "https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight", org: "World Health Organization" },
       { name: "ACS Body Weight Standards", url: "https://www.cancer.org/cancer/risk-prevention/diet-physical-activity/body-weight-and-cancer-risk.html", org: "American Cancer Society (ACS)" },
       { name: "CDC Adult BMI Standards", url: "https://www.cdc.gov/bmi/faq/", org: "CDC National Center for Health Statistics" },
       { name: "NIH Body Composition Assessment", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/", org: "National Institutes of Health (PMC)" }
     ],
-    disclaimer: "Educational Notice: This is not medical advice. Real BMI is an educational website created by Bhawanshi Dosi in Banswara, Rajasthan, India. Our tools give helpful estimates using published formulas. They do not offer medical diagnosis or treatment. Real BMI is not a clinic or hospital."
+    disclaimer: "Real BMI is an independent educational website created by Bhawanshi Dosi in Banswara, Rajasthan, India. Calculators provide general estimates based on published formulas from the WHO and CDC. They do not offer medical diagnosis, clinical treatment, or professional advice. Always consult a qualified healthcare provider for personal health decisions."
   },
   hi: {
     reviewedTag: "विधि एवं शोध स्रोत",
-    reviewedTitle: "WHO एवं CDC दिशानिर्देशों के संदर्भों पर आधारित",
-    reviewedDesc: "गणनाएं और संदर्भ श्रेणियां प्रकाशित गणितीय सूत्रों और सहकर्मी-समीक्षित वैज्ञानिक साहित्य (WHO व CDC के मानवशास्त्रीय मानक, मिफ्लिन-सेंट जेओर मेटाबॉलिक समीकरण एवं मान्य खेल विज्ञान मॉडल) पर आधारित हैं।",
+    reviewedTitle: "साक्ष्य-आधारित सूत्र एवं सार्वजनिक स्वास्थ्य मानक",
+    reviewedDesc: "सभी गणनाएं मिफ्लिन-सेंट जेओर, डिवाइन और कार्वोनेन जैसे प्रकाशित वैज्ञानिक सूत्रों और विश्व स्वास्थ्य संगठन (WHO) व सीडीसी (CDC) द्वारा स्थापित संदर्भ सीमाओं पर आधारित हैं।",
     boardLabel: "संदर्भ रूपरेखा",
     boardValue: "प्रकाशित दिशानिर्देश एवं वैज्ञानिक साहित्य",
-    lastUpdated: "विधि अद्यतन: 2026",
-    icdCode: "संदर्भ-आधारित कैलकुलेटर विधि",
-    authorBadge: "निर्माता एवं कार्यपद्धति मानक",
-    authorName: "Bhawanshi Dosi",
-    authorRole: "संस्थापक एवं मुख्य डेवलपर (बांसवाड़ा, राजस्थान, भारत)",
-    authorCredentials: ["प्रकाशित दिशानिर्देश एवं सूत्र", "स्थानीय गोपनीयता सुरक्षा", "सटीक मीट्रिक एवं इम्पीरियल गणना"],
-    authorBio: "बांसवाड़ा, राजस्थान, भारत स्थित स्वतंत्र सॉफ्टवेयर इंजीनियर एवं Real BMI की निर्माता। क्लाइंट-साइड शून्य-डेटा प्रतिधारण गोपनीयता, स्वास्थ्य गणना एल्गोरिदम और WHO तथा CDC दिशानिर्देशों पर आधारित साक्ष्य-आधारित विधियों में विशेषज्ञता।",
+    lastUpdated: "अद्यतन: 2026",
+    icdCode: "मानक स्वास्थ्य सूत्र",
+    authorBadge: "निर्माता एवं तकनीकी मानक",
+    authorName: "भवांशी दोसी",
+    authorInitials: "भ.दो.",
+    authorRole: "स्वतंत्र सॉफ्टवेयर इंजीनियर (बांसवाड़ा, राजस्थान, भारत)",
+    authorCredentials: ["प्रकाशित सूत्र एवं मानक", "100% स्थानीय गोपनीयता", "स्वचालित कोड परीक्षण"],
+    authorBio: "Real BMI की एकल निर्माता एवं डेवलपर। यह वेबसाइट प्रकाशित WHO और CDC दिशानिर्देशों पर आधारित पूर्णतः निजी और ब्राउज़र-आधारित स्वास्थ्य गणना उपकरण प्रदान करने के लिए बनाई गई है।",
     authorProfileLink: "निर्माता प्रोफाइल एवं विधि",
-    verifiedBadge: "निर्माता एवं वेबमास्टर",
-    reviewPanelName: "एल्गोरिदम एवं स्रोत सत्यापन",
-    reviewProtocolTitle: "स्वचालित कोड परीक्षण",
-    reviewProtocolDesc: "सभी गणितीय मॉडल और संदर्भ श्रेणियां प्रकाशित आधिकारिक संदर्भों (WHO रिपोर्ट 854, CDC, मिफ्लिन-सेंट जेओर 1990) के आधार पर स्वचालित कोड परीक्षण द्वारा सत्यापित हैं। Real BMI एक व्यक्तिगत शैक्षिक वेबसाइट है और डॉक्टरों का क्लिनिकल बोर्ड संचालित नहीं करती।",
+    verifiedBadge: "एकल निर्माता एवं वेबमास्टर",
+    reviewPanelName: "सूत्र एवं कोड सत्यापन",
+    reviewProtocolTitle: "स्वचालित यूनिट परीक्षण",
+    reviewProtocolDesc: "सभी गणितीय गणनाएं स्वचालित टेस्ट सुइट्स द्वारा प्रकाशित WHO और CDC संदर्भ सूत्रों के अनुसार सत्यापित की जाती हैं। Real BMI भवांशी दोसी द्वारा संचालित एक स्वतंत्र शैक्षिक प्रोजेक्ट है।",
     editorialPolicy: "संपादकीय नीति",
     scientificSources: "वैज्ञानिक स्रोत",
     editorialContact: "वेबमास्टर संपर्क",
@@ -64,26 +66,27 @@ const labels: Record<string, any> = {
       { name: "सीडीसी एडल्ट बीएमआई मानक", url: "https://www.cdc.gov/bmi/faq/", org: "सीडीसी हेल्थ स्टैटिस्टिक्स" },
       { name: "एनआईएच शरीर संरचना मूल्यांकन", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/", org: "नेशनल इंस्टीट्यूट ऑफ हेल्थ" }
     ],
-    disclaimer: "शैक्षिक अस्वीकरण: यह कोई चिकित्सीय सलाह नहीं है। Real BMI बांसवाड़ा, राजस्थान, भारत स्थित Bhawanshi Dosi द्वारा संचालित एक व्यक्तिगत शैक्षिक वेबसाइट है। सभी कैलकुलेटर प्रकाशित वैज्ञानिक सूत्रों पर आधारित केवल शैक्षिक अनुमान प्रदान करते हैं और कोई चिकित्सीय निदान, उपचार, थेरेपी या दवा का नुस्खा प्रदान नहीं करते हैं। यह कोई मेडिकल प्रैक्टिस, अस्पताल या डॉक्टर द्वारा समीक्षित सेवा नहीं है।"
+    disclaimer: "Real BMI बांसवाड़ा (राजस्थान, भारत) स्थित भवांशी दोसी द्वारा संचालित एक स्वतंत्र शैक्षिक वेबसाइट है। यहाँ उपलब्ध कैलकुलेटर WHO और CDC के प्रकाशित सूत्रों पर आधारित सामान्य अनुमान प्रदान करते हैं। यह कोई चिकित्सीय सलाह, निदान या उपचार नहीं है। स्वास्थ्य संबंधी किसी भी निर्णय के लिए हमेशा योग्य चिकित्सक से परामर्श लें।"
   },
   es: {
     reviewedTag: "Metodología y Fuentes",
-    reviewedTitle: "Basado en Directrices de la OMS y los CDC",
-    reviewedDesc: "Los cálculos y rangos de referencia se basan en ecuaciones matemáticas publicadas y literatura científica revisada por pares, incluyendo estándares antropométricos de la OMS y los CDC, modelos metabólicos (Mifflin-St Jeor) y fórmulas validadas de ciencias del deporte.",
+    reviewedTitle: "Fórmulas Basadas en Evidencia y Estándares Públicos",
+    reviewedDesc: "Los cálculos se basan en ecuaciones científicas publicadas (como Mifflin-St Jeor, Devine y Karvonen) y rangos de referencia oficiales de la Organización Mundial de la Salud (OMS) y los CDC.",
     boardLabel: "Marco de Referencia",
-    boardValue: "Pautas Publicadas y Literatura Científica",
-    lastUpdated: "Metodología actualizada: 2026",
-    icdCode: "Metodología basada en referencias",
-    authorBadge: "Creadora y Estándares Metodológicos",
+    boardValue: "Literatura Científica y Directrices OMS",
+    lastUpdated: "Actualizado: 2026",
+    icdCode: "Fórmulas Estándar de Salud",
+    authorBadge: "Creadora y Estándares Técnicos",
     authorName: "Bhawanshi Dosi",
-    authorRole: "Fundadora y Desarrolladora (Banswara, Rajastán, India)",
-    authorCredentials: ["Directrices y Ecuaciones Publicadas", "Privacidad del Lado del Cliente", "Precisión Métrica e Imperial"],
-    authorBio: "Ingeniera de software independiente y creadora de Real BMI (Banswara, Rajastán, India), especializada en algoritmos computacionales de salud, arquitectura de privacidad sin retención en el navegador y directrices antropométricas de la OMS y los CDC.",
+    authorInitials: "BD",
+    authorRole: "Ingeniera de Software Independiente (Banswara, Rajastán, India)",
+    authorCredentials: ["Fórmulas Publicadas", "Privacidad en el Navegador", "Pruebas Automatizadas"],
+    authorBio: "Creadora y desarrolladora única de Real BMI. Proyecto independiente diseñado para ofrecer herramientas de cálculo de salud privadas en el navegador, basadas en directrices públicas de la OMS y los CDC.",
     authorProfileLink: "Perfil de la Creadora y Metodología",
-    verifiedBadge: "Creadora y Desarrolladora",
-    reviewPanelName: "Verificación Algorítmica y Fuentes",
-    reviewProtocolTitle: "Pruebas Automatizadas de Código",
-    reviewProtocolDesc: "Las fórmulas y rangos de referencia se verifican frente a la literatura médica primaria (OMS Informe 854, CDC, Mifflin-St Jeor 1990) mediante pruebas matemáticas automatizadas. Real BMI es un sitio web individual y no opera un comité clínico médico.",
+    verifiedBadge: "Creadora Única y Desarrolladora",
+    reviewPanelName: "Verificación de Código y Fórmulas",
+    reviewProtocolTitle: "Pruebas Unitarias Automatizadas",
+    reviewProtocolDesc: "Todas las ecuaciones se verifican frente a los estándares publicados de la OMS y los CDC mediante suites de pruebas automatizadas. Real BMI es un proyecto educativo independiente mantenido por Bhawanshi Dosi.",
     editorialPolicy: "Política Editorial",
     scientificSources: "Fuentes Científicas",
     editorialContact: "Contacto con la Creadora",
@@ -94,26 +97,27 @@ const labels: Record<string, any> = {
       { name: "Estándar de IMC de los CDC", url: "https://www.cdc.gov/bmi/faq/", org: "CDC Centro de Estadísticas de Salud" },
       { name: "Evaluación de Composición Corporal de los NIH", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/", org: "Institutos Nacionales de Salud" }
     ],
-    disclaimer: "Aviso Educativo: Esto no es asesoramiento médico. Real BMI es un sitio web individual creado y administrado por Bhawanshi Dosi (Banswara, Rajastán, India). Todas las calculadoras proporcionan estimaciones educativas basadas en fórmulas científicas y no proporcionan diagnóstico médico, tratamiento, terapia ni prescripción médica. No es una clínica médica ni un servicio revisado por médicos."
+    disclaimer: "Real BMI es un sitio web educativo independiente creado por Bhawanshi Dosi en Banswara (Rajastán, India). Las calculadoras ofrecen estimaciones generales basadas en fórmulas publicadas de la OMS y los CDC. No proporcionan diagnóstico médico, tratamiento clínico ni asesoramiento profesional. Consulte siempre a un médico calificado para decisiones de salud."
   },
   fr: {
     reviewedTag: "Méthodologie & Sources",
-    reviewedTitle: "Basé sur les Directives de l'OMS et des CDC",
-    reviewedDesc: "Les calculs et plages de référence sont fondés sur des équations mathématiques publiées et la littérature scientifique évaluée par des pairs, comprenant les normes anthropométriques de l'OMS et des CDC, des modèles métaboliques (Mifflin-St Jeor) et des formules validées en sciences du sport.",
+    reviewedTitle: "Formules Fondées sur la Science & Normes Publiques",
+    reviewedDesc: "Les calculs appliquent des équations scientifiques publiées (telles que Mifflin-St Jeor, Devine et Karvonen) et les seuils de référence de l'Organisation Mondiale de la Santé (OMS) et des CDC.",
     boardLabel: "Cadre de Référence",
-    boardValue: "Directives Publiées & Littérature Scientifique",
-    lastUpdated: "Méthodologie mise à jour: 2026",
-    icdCode: "Méthodologie basée sur des références",
-    authorBadge: "Créatrice & Normes Méthodologiques",
+    boardValue: "Publications Scientifiques & Directives OMS",
+    lastUpdated: "Mis à jour : 2026",
+    icdCode: "Formules de Santé Publiées",
+    authorBadge: "Créatrice & Normes Techniques",
     authorName: "Bhawanshi Dosi",
-    authorRole: "Fondatrice & Développeuse (Banswara, Rajasthan, Inde)",
-    authorCredentials: ["Directives & Équations Publiées", "Confidentialité Côté Client", "Précision Double Unité"],
-    authorBio: "Ingénieure logicielle indépendante et créatrice de Real BMI (Banswara, Rajasthan, Inde), spécialisée dans les algorithmes de santé, l'architecture de confidentialité sans conservation de données et les normes anthropométriques de l'OMS et des CDC.",
+    authorInitials: "BD",
+    authorRole: "Ingénieure Logicielle Indépendante (Banswara, Rajasthan, Inde)",
+    authorCredentials: ["Formules Publiées", "Confidentialité en Local", "Tests Automatisés"],
+    authorBio: "Créatrice et développeuse unique de Real BMI. Projet indépendant conçu pour fournir des outils de calcul de santé privés s'exécutant dans le navigateur, basés sur les normes de l'OMS et des CDC.",
     authorProfileLink: "Profil de la Créatrice & Méthodologie",
-    verifiedBadge: "Créatrice & Développeuse",
-    reviewPanelName: "Vérification Algorithmique & Sources",
-    reviewProtocolTitle: "Tests Automatisés du Code",
-    reviewProtocolDesc: "Les formules et seuils de référence sont vérifiés par rapport aux publications scientifiques (OMS Rapport 854, CDC, Mifflin-St Jeor 1990) au moyen de suites de tests unitaires automatisés. Real BMI est un site individuel et n'emploie pas de comité clinique médical.",
+    verifiedBadge: "Créatrice Unique & Webmaster",
+    reviewPanelName: "Vérification du Code & des Formules",
+    reviewProtocolTitle: "Tests Unitaires Automatisés",
+    reviewProtocolDesc: "Les équations sont vérifiées par rapport aux directives de l'OMS et des CDC à l'aide de suites de tests automatisés. Real BMI est un projet éducatif indépendant maintenu par Bhawanshi Dosi.",
     editorialPolicy: "Politique Éditoriale",
     scientificSources: "Sources Scientifiques",
     editorialContact: "Contact Développeuse",
@@ -124,26 +128,27 @@ const labels: Record<string, any> = {
       { name: "Norme d'IMC des CDC", url: "https://www.cdc.gov/bmi/faq/", org: "CDC National Center for Health Statistics" },
       { name: "Évaluation de la Composition Corporelle du NIH", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/", org: "National Institutes of Health" }
     ],
-    disclaimer: "Avertissement Éducatif : Ceci ne constitue pas un avis médical. Real BMI est un site web individuel créé et maintenu par Bhawanshi Dosi (Banswara, Rajasthan, Inde). Tous les calculateurs fournissent des estimations éducatives basées sur des formules publiées et ne dispensent aucun diagnostic médical, traitement, thérapie ou prescription. Il s'agit d'un projet éducatif indépendant et non d'un service médical."
+    disclaimer: "Real BMI est un site éducatif indépendant créé par Bhawanshi Dosi à Banswara (Rajasthan, Inde). Les calculateurs fournissent des estimations générales fondées sur les formules publiées de l'OMS et des CDC. Ils ne constituent pas un avis médical, un diagnostic clinique ou un traitement. Consultez toujours un professionnel de santé qualifié pour vos décisions médicales."
   },
   de: {
     reviewedTag: "Methodik & Quellen",
-    reviewedTitle: "Basiert auf WHO- & CDC-Richtlinien",
-    reviewedDesc: "Die Berechnungen und Referenzbereiche basieren auf veröffentlichten mathematischen Formeln und begutachteter Fachliteratur – darunter anthropometrische Standards von WHO und CDC, Stoffwechselmodelle (Mifflin-St Jeor) sowie validierte sportwissenschaftliche Gleichungen.",
+    reviewedTitle: "Evidenzbasierte Formeln & Öffentliche Standards",
+    reviewedDesc: "Alle Berechnungen basieren auf publizierten wissenschaftlichen Gleichungen (wie Mifflin-St Jeor, Devine und Karvonen) sowie Referenzbereichen der Weltgesundheitsorganisation (WHO) und der CDC.",
     boardLabel: "Referenzrahmen",
-    boardValue: "Veröffentlichte Richtlinien & Fachliteratur",
-    lastUpdated: "Methodik aktualisiert: 2026",
-    icdCode: "Referenzbasierte Rechner-Methodik",
-    authorBadge: "Schöpferin & Methodische Standards",
+    boardValue: "Wissenschaftliche Literatur & WHO-Richtlinien",
+    lastUpdated: "Aktualisiert: 2026",
+    icdCode: "Wissenschaftliche Standardformeln",
+    authorBadge: "Schöpferin & Technische Standards",
     authorName: "Bhawanshi Dosi",
-    authorRole: "Gründerin & Leitende Entwicklerin (Banswara, Rajasthan, Indien)",
-    authorCredentials: ["Veröffentlichte Richtlinien & Formeln", "Lokaler Datenschutz im Browser", "Mathematische Genauigkeit"],
-    authorBio: "Unabhängige Softwareentwicklerin und Schöpferin von Real BMI (Banswara, Rajasthan, Indien), spezialisiert auf digitale Gesundheitsrechner, datenschutzfreundliche Client-Architektur und evidenzbasierte anthropometrische Standards nach WHO- und CDC-Richtlinien.",
+    authorInitials: "BD",
+    authorRole: "Unabhängige Softwareentwicklerin (Banswara, Rajasthan, Indien)",
+    authorCredentials: ["Publizierte Formeln", "Lokaler Datenschutz", "Automatisierte Tests"],
+    authorBio: "Alleinige Schöpferin und Entwicklerin von Real BMI. Ein unabhängiges Projekt für private, browserbasierte Gesundheitsrechner auf Basis veröffentlichter WHO- und CDC-Richtlinien.",
     authorProfileLink: "Entwicklerprofil & Methodik",
-    verifiedBadge: "Schöpferin & Entwicklerin",
-    reviewPanelName: "Algorithmische & Quell-Validierung",
-    reviewProtocolTitle: "Automatisierte Code-Prüfung",
-    reviewProtocolDesc: "Berechnungsmodelle und Referenzwerte werden anhand primärer Fachpublikationen (WHO Bericht 854, CDC, Mifflin-St Jeor 1990) durch automatisierte Testsuiten geprüft. Real BMI ist eine individuelle Website ohne klinisches Ärztegremium.",
+    verifiedBadge: "Alleinige Schöpferin & Webmaster",
+    reviewPanelName: "Code- & Formelprüfung",
+    reviewProtocolTitle: "Automatisierte Unit-Tests",
+    reviewProtocolDesc: "Berechnungen werden anhand veröffentlichter WHO- und CDC-Referenzen durch automatisierte Testsuiten geprüft. Real BMI ist ein unabhängiges Bildungsprojekt, betreut von Bhawanshi Dosi.",
     editorialPolicy: "Redaktionelle Richtlinien",
     scientificSources: "Wissenschaftliche Quellen",
     editorialContact: "Entwicklerkontakt",
@@ -154,26 +159,27 @@ const labels: Record<string, any> = {
       { name: "CDC Erwachsenen-BMI-Standard", url: "https://www.cdc.gov/bmi/faq/", org: "CDC National Center for Health Statistics" },
       { name: "NIH Körperzusammensetzung Bewertung", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/", org: "National Institutes of Health" }
     ],
-    disclaimer: "Bildungshinweis: Dies ist keine medizinische Beratung. Real BMI ist eine persönliche Bildungswebsite, gegründet und gepflegt von Bhawanshi Dosi (Banswara, Rajasthan, Indien). Alle Rechner liefern rein informative Richtwerte und bieten keine medizinische Diagnose, Behandlung, Therapie oder Verschreibung. Es ist keine medizinische Praxis oder ärztlich überprüfte Dienstleistung."
+    disclaimer: "Real BMI ist eine unabhängige Bildungswebsite, erstellt von Bhawanshi Dosi in Banswara (Rajasthan, Indien). Die Rechner liefern allgemeine Schätzwerte auf Grundlage veröffentlichter Formeln der WHO und CDC. Sie bieten keine medizinische Beratung, Diagnose oder Behandlung. Wenden Sie sich bei gesundheitlichen Fragen stets an qualifiziertes medizinisches Fachpersonal."
   },
   ko: {
     reviewedTag: "방법론 및 출처",
-    reviewedTitle: "WHO 및 CDC 지침 준수",
-    reviewedDesc: "모든 계산 모델과 참고 기준치는 WHO 및 CDC의 인체측정 표준, Mifflin-St Jeor 대사 방정식, 검증된 스포츠 과학 모델 등 공식 발표된 수학적 공식과 학술 문헌을 기반으로 구현되었습니다.",
+    reviewedTitle: "근거 기반 공식 및 공공 보건 기준",
+    reviewedDesc: "모든 연산은 Mifflin-St Jeor, Devine, Karvonen 등 공인된 학술 방정식과 세계보건기구(WHO) 및 질병관리청(CDC)의 인체측정 참고 기준치를 기반으로 수행됩니다.",
     boardLabel: "참조 프레임워크",
     boardValue: "공식 발표 지침 및 학술 연구 문헌",
-    lastUpdated: "방법론 업데이트: 2026",
-    icdCode: "참조 기반 계산기 방법론",
-    authorBadge: "제작자 및 방법론 표준",
-    authorName: "Bhawanshi Dosi",
-    authorRole: "설립자 겸 수석 개발자 (인도 라자스탄주 반스와라)",
-    authorCredentials: ["공식 발표 지침 및 계산식", "클라이언트 무보관 개인정보 보호", "이중 단위 정합성 검증"],
-    authorBio: "인도 라자스탄주 반스와라에 거주하는 독립 소프트웨어 엔지니어이자 Real BMI의 제작자입니다. 브라우저 기반 무보관 프라이버시 아키텍처 및 WHO·CDC 표준 기반 인체 측정 계산 엔진을 전문으로 개발합니다.",
+    lastUpdated: "업데이트: 2026년",
+    icdCode: "표준 건강 계산 공식",
+    authorBadge: "제작자 및 기술 기준",
+    authorName: "바완시 도시 (Bhawanshi Dosi)",
+    authorInitials: "바",
+    authorRole: "독립 소프트웨어 엔지니어 (인도 라자스탄주 반스와라)",
+    authorCredentials: ["공표된 공식 준수", "기기 내 단독 연산", "자동화된 코드 검증"],
+    authorBio: "Real BMI의 1인 제작자 겸 개발자입니다. 공표된 WHO 및 CDC 기준에 근거하여 기기 내에서 안전하게 작동하는 건강 계산 도구를 제공하는 독립적인 프로젝트입니다.",
     authorProfileLink: "제작자 프로필 및 방법론",
-    verifiedBadge: "제작자 및 웹마스터",
-    reviewPanelName: "알고리즘 및 출처 검증",
-    reviewProtocolTitle: "자동화된 코드 검증",
-    reviewProtocolDesc: "모든 계산 공식과 기준치는 공식 발표 자료(WHO 기술 보고서 854, CDC, Mifflin-St Jeor 1990)를 기반으로 자동화된 단위 테스트를 통해 검증됩니다. Real BMI는 개인이 운영하는 웹사이트이며 의사로 구성된 임상 검토 위원회를 운영하지 않습니다.",
+    verifiedBadge: "1인 제작자 및 웹마스터",
+    reviewPanelName: "코드 및 수식 검증",
+    reviewProtocolTitle: "자동화된 단위 테스트",
+    reviewProtocolDesc: "모든 수식은 자동화된 테스트 제품군을 통해 공표된 WHO 및 CDC 기준과 일치하도록 검증됩니다. Real BMI는 바완시 도시(Bhawanshi Dosi)가 독립적으로 운영하는 교육용 프로젝트입니다.",
     editorialPolicy: "편집 정책",
     scientificSources: "학술 출처",
     editorialContact: "제작자 문의",
@@ -184,32 +190,23 @@ const labels: Record<string, any> = {
       { name: "CDC 성인 BMI 표준", url: "https://www.cdc.gov/bmi/faq/", org: "CDC 국립보건통계센터" },
       { name: "NIH 체성분 평가", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2872290/", org: "미국 국립보건원" }
     ],
-    disclaimer: "교육용 면책 조항: 이것은 의학적 조언이 아닙니다. Real BMI는 인도 라자스탄주 반스와라의 Bhawanshi Dosi가 운영하는 개인 교육용 웹사이트입니다. 모든 계산기는 교육적 추정치만을 제공하며 임상적 진단, 치료, 요법 또는 처방을 제공하지 않습니다. 의료 기관이나 의사가 검토하는 서비스가 아닙니다."
+    disclaimer: "Real BMI는 인도 라자스탄주 반스와라의 바완시 도시(Bhawanshi Dosi)가 운영하는 독립적인 교육용 웹사이트입니다. 본 사이트의 계산기는 WHO 및 CDC의 공표된 공식에 기반한 일반적인 추정치만을 제공합니다. 의학적 진단, 치료 또는 전문적인 의료 조언을 제공하지 않으므로, 건강 관련 결정은 항상 전문 의료진과 상담하십시오."
   }
 };
 
 const t = labels[lang] || labels.en;
 const disclaimerTitles: Record<string, string> = {
-  en: "Medical Disclaimer & Educational Reference Notice",
-  es: "Aviso y Descargo de Responsabilidad Médica (Medical Disclaimer)",
-  fr: "Avertissement Médical et Notice Éducative (Medical Disclaimer)",
-  de: "Medizinischer Hinweis & Haftungsausschluss (Medical Disclaimer)",
-  ko: "의학적 면책 조항 및 건강 정보 안내 (Medical Disclaimer)",
-  hi: "चिकित्सा अस्वीकरण एवं संदर्भ सूचना (Medical Disclaimer)"
-};
-
-const medicalNotices: Record<string, string> = {
-  en: "Medical Notice: Information on Real BMI is for learning only. It is not medical advice. Always talk to a doctor for health decisions.",
-  es: "Aviso Médico: La información en Real BMI es únicamente para fines educativos. No constituye asesoramiento médico. Consulte siempre a un médico para decisiones sobre su salud.",
-  fr: "Avis Médical : Les informations sur Real BMI sont fournies à des fins éducatives uniquement. Elles ne constituent pas un avis médical. Consultez toujours un médecin pour vos décisions de santé.",
-  de: "Medizinischer Hinweis: Die Informationen auf Real BMI dienen ausschließlich Lern- und Bildungszwecken. Sie stellen keine medizinische Beratung dar. Konsultieren Sie für gesundheitliche Entscheidungen stets einen Arzt.",
-  ko: "의학적 고지: Real BMI의 정보는 학습 및 교육 목적으로만 제공됩니다. 의학적 조언이 아니므로 건강 관련 결정은 항상 의사와 상담하십시오.",
-  hi: "चिकित्सीय सूचना: Real BMI पर दी गई जानकारी केवल सीखने और शैक्षिक संदर्भ के लिए है। यह कोई चिकित्सीय सलाह नहीं है। स्वास्थ्य संबंधी किसी भी निर्णय के लिए हमेशा योग्य चिकित्सक से परामर्श लें।"
+  en: "Medical Disclaimer & Educational Notice",
+  es: "Aviso Médico y Descargo Educativo",
+  fr: "Avertissement Médical & Notice Éducative",
+  de: "Medizinischer Hinweis & Haftungsausschluss",
+  ko: "의학적 면책 조항 및 건강 안내",
+  hi: "चिकित्सा अस्वीकरण एवं शैक्षिक सूचना"
 };
 
 ---
 
-<section class="px-4 md:px-6 max-w-7xl mx-auto my-10 space-y-6">
+<div class="w-full pt-2 space-y-6">
   <div class="space-y-6">
     
     <!-- Top Badges Strip -->
@@ -239,56 +236,48 @@ const medicalNotices: Record<string, string> = {
     </div>
 
     <!-- Main Content Grid: Reference Framework & Citations -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
       
       <!-- Left Column: Title, Description & Reference Framework -->
-      <div class="lg:col-span-7 space-y-4">
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold text-[var(--foreground)] tracking-tight">
-            {t.reviewedTitle}<span class="sr-only">. </span>
-          </h2>
-          <p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
-            {t.reviewedDesc}
-          </p>
-        </div>
+      <div class="lg:col-span-6 space-y-3">
+        <h3 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+          {t.reviewedTitle}<span class="sr-only">. </span>
+        </h3>
+        <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
+          {t.reviewedDesc}
+        </p>
 
-        <div class="flex items-center gap-3 pt-1">
-          <div class="w-9 h-9 rounded-full bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] font-bold shrink-0">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </div>
-          <div>
-            <div class="text-xs uppercase tracking-wider text-[var(--muted-foreground)] font-semibold">{t.boardLabel}<span class="sr-only">. </span></div>
-            <div class="text-sm font-display font-bold text-[var(--foreground)]">{t.boardValue}<span class="sr-only">. </span></div>
-          </div>
+        <div class="inline-flex items-center gap-2 pt-1 text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+          <span class="font-display font-semibold uppercase tracking-wider text-[var(--foreground)]">{t.boardLabel}:</span>
+          <span class="text-[var(--muted-foreground)]">{t.boardValue}<span class="sr-only">. </span></span>
         </div>
       </div>
 
-      <!-- Right Column: Scientific Sources & Citations -->
-      <div class="lg:col-span-5 bg-[var(--muted)]/20 p-4 sm:p-5 rounded-xl border border-[var(--border)]/70 space-y-3">
+      <!-- Right Column: Scientific Sources & Citations (Clean 2x2 Grid) -->
+      <div class="lg:col-span-6 space-y-2.5">
         <div class="flex items-center gap-2 text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">
-          <svg class="w-4 h-4 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <svg class="w-3.5 h-3.5 text-[var(--accent)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
           </svg>
           {t.sourcesTitle}<span class="sr-only">. </span>
         </div>
 
-        <div class="space-y-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {t.sources.map((src: any) => (
             <a 
               href={src.url} 
               target="_blank" 
               rel="noopener noreferrer"
-              class="group flex items-center justify-between gap-2 p-2.5 rounded-lg bg-[var(--card)] border border-[var(--border)]/50 hover:border-[var(--accent)]/50 hover:shadow-xs transition-all text-xs font-medium text-[var(--foreground)]"
+              class="group flex flex-col justify-between p-2.5 rounded-lg bg-[var(--card)] border border-[var(--border)] hover:border-[var(--accent)]/60 hover:shadow-2xs transition-all text-xs"
             >
-              <div>
-                <div class="font-semibold group-hover:text-[var(--accent)] transition-colors">{src.name}<span class="sr-only">. </span></div>
-                <div class="text-xs text-[var(--muted-foreground)]">{src.org}<span class="sr-only">. </span></div>
+              <div class="flex items-start justify-between gap-1.5">
+                <span class="font-semibold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors line-clamp-1">{src.name}<span class="sr-only">. </span></span>
+                <svg class="w-3 h-3 text-[var(--muted-foreground)] group-hover:text-[var(--accent)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
               </div>
-              <svg class="w-3.5 h-3.5 text-[var(--muted-foreground)] group-hover:text-[var(--accent)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
+              <span class="text-[11px] text-[var(--muted-foreground)] pt-0.5 line-clamp-1">{src.org}<span class="sr-only">. </span></span>
             </a>
           ))}
         </div>
@@ -297,30 +286,24 @@ const medicalNotices: Record<string, string> = {
     </div>
 
     <!-- Author & Technical Verification (E-E-A-T Compliance, pure SVG/CSS monogram badges, zero image files) -->
-    <div class="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5 sm:p-6 space-y-5">
-      <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[var(--border)]/50">
-        <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-          <span class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">{t.authorBadge}<span class="sr-only">. </span></span>
-        </div>
-        <a href={`/${lang}/about/`} class="text-xs font-display font-semibold text-[var(--accent)] hover:underline inline-flex items-center gap-1">
-          <span>{t.authorProfileLink}<span class="sr-only">. </span></span>
-          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-        </a>
+    <div class="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 sm:p-5 space-y-4">
+      <div class="flex items-center gap-2 pb-1">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        <span class="text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)]">{t.authorBadge}<span class="sr-only">. </span></span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
         <!-- Lead Creator & Developer Column -->
-        <div class="flex gap-4 items-start">
-          <a href={`/${lang}/about/`} class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white font-display font-black text-base flex items-center justify-center shrink-0 shadow-md ring-2 ring-[var(--accent)]/30 hover:opacity-90 transition-opacity">
-            BD<span class="sr-only">. </span>
+        <div class="flex gap-3.5 items-start">
+          <a href={`/${lang}/about/`} class="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white font-display font-black text-sm flex items-center justify-center shrink-0 shadow-2xs ring-1 ring-[var(--accent)]/30 hover:opacity-90 transition-opacity">
+            {t.authorInitials || 'BD'}<span class="sr-only">. </span>
           </a>
-          <div class="space-y-1.5">
+          <div class="space-y-1">
             <div class="flex flex-wrap items-center gap-2">
-              <a href={`/${lang}/about/`} class="text-base font-display font-bold text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">
+              <a href={`/${lang}/about/`} class="text-sm sm:text-base font-display font-bold text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">
                 {t.authorName}<span class="sr-only">. </span>
               </a>
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">{t.verifiedBadge || 'Developer'}<span class="sr-only">. </span></span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/30">{t.verifiedBadge || 'Developer'}<span class="sr-only">. </span></span>
             </div>
             <p class="text-xs font-medium text-[var(--accent)]">{t.authorRole}<span class="sr-only">. </span></p>
             <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-sans">{t.authorBio}</p>
@@ -335,15 +318,15 @@ const medicalNotices: Record<string, string> = {
         </div>
 
         <!-- Algorithmic Verification Protocol Column -->
-        <div class="flex gap-4 items-start">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white flex items-center justify-center shrink-0 shadow-md ring-2 ring-emerald-500/30">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <div class="flex gap-3.5 items-start">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white flex items-center justify-center shrink-0 shadow-2xs ring-1 ring-emerald-500/30">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
           </div>
-          <div class="space-y-1.5">
+          <div class="space-y-1">
             <div class="flex flex-wrap items-center gap-2">
-              <h3 class="text-base font-display font-bold text-[var(--foreground)]">{t.reviewPanelName}<span class="sr-only">. </span></h3>
+              <h4 class="text-sm sm:text-base font-display font-bold text-[var(--foreground)]">{t.reviewPanelName}<span class="sr-only">. </span></h4>
               <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/30">{t.reviewProtocolTitle}<span class="sr-only">. </span></span>
             </div>
             <p class="text-xs text-[var(--muted-foreground)] leading-relaxed font-sans">{t.reviewProtocolDesc}</p>
@@ -358,7 +341,7 @@ const medicalNotices: Record<string, string> = {
     </div>
 
     <!-- Explicit Semantic Medical Disclaimer Region (Universal AdSense, YMYL & Quality Scanner Recognition) -->
-    <aside id="medical-disclaimer" class="medical-disclaimer rounded-2xl border border-amber-500/30 bg-amber-500/5 p-4 sm:p-5 text-xs text-[var(--foreground)] font-sans leading-relaxed space-y-2.5 shadow-xs" aria-label="Medical Disclaimer">
+    <aside id="medical-disclaimer" class="medical-disclaimer rounded-xl border border-amber-500/30 bg-amber-500/5 p-3.5 sm:p-4 text-xs text-[var(--foreground)] font-sans leading-relaxed space-y-1.5 shadow-2xs" aria-label="Medical Disclaimer">
       <div class="flex items-center gap-2 text-amber-500 font-display font-bold uppercase tracking-wider text-xs">
         <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -368,10 +351,7 @@ const medicalNotices: Record<string, string> = {
       <p class="text-[var(--muted-foreground)] leading-relaxed font-sans">
         {t.disclaimer}
       </p>
-      <p class="text-[11px] text-[var(--muted-foreground)]/80 italic border-t border-amber-500/20 pt-2 font-sans">
-        {medicalNotices[lang] || medicalNotices.en}
-      </p>
     </aside>
 
   </div>
-</section>
+</div>

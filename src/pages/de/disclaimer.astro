@@ -6,7 +6,7 @@ import PageShell from '../../components/PageShell.astro';
 
 <Layout 
     title="Medizinischer Hinweis | Real BMI" 
-    description="Offizieller medizinischer Haftungsausschluss von Real BMI. Unsere Rechner und Metriken dienen ausschließlich Bildungs- und Informationszwecken."
+    description="Offizieller medizinischer Haftungsausschluss von Real BMI. Unsere Rechner und Metriken dienen ausschließlich Bildungs- und Informationszwecken und ersetzen keine Diagnose."
     canonicalURL="https://realbmicalculator.com/de/disclaimer/"
 >
     <Navbar />
@@ -17,194 +17,121 @@ import PageShell from '../../components/PageShell.astro';
       returnUrl="/de/"
       returnLabel="Startseite"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+      <div class="max-w-5xl space-y-8 text-[var(--muted-foreground)] leading-relaxed text-base font-normal">
         
-        <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
-          Die Berechnungswerkzeuge, interaktiven Diagramme und Gesundheitsmetriken auf <strong>Real BMI</strong> dienen ausschließlich Bildungs-, Informations- und persönlichen Orientierungszwecken.
-        </p>
-
-        <!-- 1. What Real BMI Is -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Was Real BMI ist
-          </h2>
-          <p>
-            Real BMI ist eine kostenfreie digitale Plattform für evidenzbasierte anthropometrische Schätzungen:
+        <!-- Summary Callout -->
+        <div class="p-5 rounded-2xl bg-[var(--card)]/60 border border-[var(--border)]/60">
+          <p class="text-base sm:text-lg text-[var(--foreground)] leading-relaxed font-medium">
+            Die Gesundheitsrechner, Referenztabellen und Fachartikel auf <strong>Real BMI</strong> dienen ausschließlich der persönlichen Information und allgemeinen Orientierung. Sie veranschaulichen etablierte Richtwerte der öffentlichen Gesundheit, stellen jedoch zu keinem Zeitpunkt eine medizinische Beratung oder klinische Diagnose dar.
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li>Mathematische Näherungen basierend auf publizierten wissenschaftlichen Formeln und internationalen Richtlinien (wie WHO und CDC).</li>
-            <li>Interaktive visuelle Modelle zur Veranschaulichung von Körpervolumen und Massenverteilung.</li>
-            <li>Statistische Referenzbereiche zur besseren Einordnung allgemeiner biometrischer Parameter.</li>
-          </ul>
         </div>
 
-        <!-- 2. What Real BMI Is Not -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Was Real BMI nicht ist
+        <!-- 1. Educational Scope & Non-Diagnostic Notice -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            1. Bildungsbereich &amp; Nicht-Klinischer Charakter
           </h2>
           <p>
-            Real BMI ist kein medizinischer Dienstleister und bietet keine klinische Versorgung:
+            Real BMI bietet computergestützte Werkzeuge, die auf veröffentlichten Standards der Weltgesundheitsorganisation (WHO), der Centers for Disease Control and Prevention (CDC) und begutachteter Fachliteratur basieren:
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Keine Medizinische Beratung:</strong> Unsere Ausgaben stellen weder ärztlichen Rat noch eine formelle Diagnose oder einen individuellen Behandlungsplan dar.</li>
-            <li><strong>Kein Diagnostisches Instrument:</strong> Berechnungsergebnisse können kardiometabolische Erkrankungen, hormonelle Störungen oder Mangelzustände weder erkennen noch ausschließen.</li>
-            <li><strong>Keine Behandlungsvorgabe:</strong> Verändern oder beenden Sie niemals ärztlich verordnete Medikationen und beginnen Sie keine extremen Diäten allein auf Basis dieser Rechner.</li>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Mathematische Näherungswerte:</strong> Orientierungsmetriken (wie BMI, BMR, TDEE und Körperfettanteil), abgeleitet aus anerkannten Formeln.</li>
+            <li><strong>Statistische Schwellenwerte:</strong> Offizielle Referenzbereiche zur demografischen Einordnung individueller Körpermaße.</li>
+            <li><strong>Eigenverantwortliche Orientierung:</strong> Sachliche Fakten zur Vorbereitung fundierter Gespräche mit Ihrer ärztlichen Praxis.</li>
           </ul>
-        </div>
-
-        <!-- 3. Who Should Consult a Doctor -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Wer einen Arzt konsultieren sollte
-          </h2>
-          <p>
-            Wir empfehlen nachdrücklich die Rücksprache mit approbierten Ärzten oder Ernährungsberatern, insbesondere wenn Sie:
+          <p class="pt-1">
+            <strong>Was Real BMI nicht leistet:</strong> Wir betreiben keine Arztpraxis, keine Klinik und keinen medizinischen Beirat. Die Ausgaben sind weder Diagnosen noch Therapiepläne. Ändern Sie niemals eigenmächtig verordnete Medikamentendosierungen oder beginnen extreme Ernährungsformen allein auf Basis dieser Rechenwerte.
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li>Eine signifikante Gewichtsreduktion, Gewichtszunahme oder umfassende Ernährungsumstellung planen.</li>
-            <li>An Vorerkrankungen wie Diabetes, Bluthochdruck oder Herz-Kreislauf-Erkrankungen leiden.</li>
-            <li>Schwanger sind, stillen oder sich von operativen Eingriffen erholen.</li>
-            <li>Eine Historie von Essstörungen oder Körperdysmorphie aufweisen.</li>
-            <li>Plötzliche, unerklärliche Gewichtsschwankungen feststellen.</li>
-          </ul>
-        </div>
+        </section>
 
-        <!-- 4. Emergency Situations (Callout Box) -->
-        <div class="p-5 sm:p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-[var(--foreground)] space-y-2 not-prose">
+        <!-- 2. Emergency Situations (Callout Box) -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-amber-500/5 border border-amber-500/20 text-[var(--foreground)] space-y-2">
           <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-display font-bold uppercase tracking-wider text-xs sm:text-sm">
             <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
             </svg>
-            Notfallsituationen
+            2. Medizinische Notfälle &amp; Akuthilfe
           </div>
           <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">
-            Sofortige Notfallversorgung
+            Sofortige Hilfe bei akuten Alarmsymptomen
           </h3>
-          <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">
-            Real BMI ist nicht für akute medizinische Notfälle konzipiert. Sollten Sie unter akuten Brustschmerzen, Atemnot, plötzlichem Schwindel, Schwächeanfällen oder lebensbedrohlichen Symptomen leiden, kontaktieren Sie umgehend den Notruf (112 in Deutschland/Europa) oder begeben Sie sich in die nächste Notaufnahme.
+          <p class="text-sm leading-relaxed text-[var(--muted-foreground)]">
+            Real BMI ist kein Notfalldienst. Sollten Sie oder Personen in Ihrem Umfeld unter akutem Brustschmerz, Atemnot, plötzlichem Schwindel, Lähmungserscheinungen oder lebensbedrohlichen Beschwerden leiden, wählen Sie sofort den europäischen Notruf 112 (in Deutschland, Österreich, Schweiz) bzw. 911 (USA) oder begeben Sie sich in die nächste Notaufnahme.
           </p>
         </div>
 
-        <!-- 5. BMI Limitations -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Grenzen des BMI
+        <!-- 3. When to Consult a Qualified Doctor or Dietitian -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            3. Wann eine ärztliche Konsultation erforderlich ist
           </h2>
           <p>
-            Der klassische Body-Mass-Index (BMI) unterliegt anerkannten epidemiologischen und physiologischen Grenzen:
+            Wir raten dringend zu einer fachärztlichen oder ernährungswissenschaftlichen Beratung, insbesondere wenn Sie:
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Körperzusammensetzung:</strong> Der BMI setzt lediglich Gewicht zur Körpergröße ins Verhältnis (kg/m²), unterscheidet jedoch nicht zwischen Muskelmasse, Knochendichte und viszeralem Fett. Kraftsportler fallen häufig in die Kategorie 'Übergewicht', obwohl ihr Körperfettanteil sehr gering ist.</li>
-            <li><strong>Alter & Sarkopenie:</strong> Im Alter führt der natürliche Muskelabbau (Sarkopenie) dazu, dass schädliches viszerales Bauchfett bei scheinbar 'normalem' BMI unentdeckt bleibt.</li>
-            <li><strong>Ethnische Unterschiede:</strong> Fettverteilung und metabolische Risikoprofile variieren. Für Personen asiatischer Herkunft empfiehlt die WHO daher strengere Grenzwerte (23,0 kg/m² statt 25,0 kg/m²).</li>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Eine signifikante Gewichtsreduktion, rasche Zunahme oder drastische Ernährungsumstellung anstreben.</li>
+            <li>An chronischen Grunderkrankungen leiden (z. B. Typ-2-Diabetes, arterielle Hypertonie, Herz-Kreislauf- oder Schilddrüsenerkrankungen).</li>
+            <li>Rezeptpflichtige Medikamente einnehmen, deren Dosierung gewichtsabhängig ist (z. B. Insulin, Antihypertensiva).</li>
+            <li>Schwanger sind, stillen oder sich von operativen Eingriffen erholen.</li>
+            <li>Eine Vorgeschichte von Essstörungen oder schwerwiegenden Körperbildkonflikten aufweisen.</li>
+            <li>Unerklärliche, rapide Gewichtsschwankungen oder Wassereinlagerungen bemerken.</li>
           </ul>
-        </div>
+        </section>
 
-        <!-- 6. Privacy: No Personal Health Information Stored -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Datenschutz: Keine Speicherung Persönlicher Gesundheitsdaten
+        <!-- 4. Scientific & Physiological Limitations of Screening Tools -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            4. Wissenschaftliche &amp; Physiologische Grenzen
           </h2>
           <p>
-            Ihre biometrischen Messwerte gehören ausschließlich Ihnen:
+            Standardisierte anthropometrische Screening-Methoden unterliegen bekannten biologischen Limitationen:
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Clientseitige Ausführung:</strong> Sämtliche Berechnungen laufen lokal in Ihrem Browser über JavaScript ab.</li>
-            <li><strong>Keine Server-Datenspeicherung:</strong> Wir erfassen, speichern, übermitteln oder verkaufen weder Körpergröße, Gewicht, Alter noch Taillenmaße auf unseren Servern.</li>
-            <li><strong>Keine Öffentlichen Benutzerprofile:</strong> Real BMI betreibt keine Benutzerkonten oder Foren, auf denen sensible Gesundheitsdaten öffentlich sichtbar werden könnten.</li>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Körperzusammensetzung vs. Gesamtgewicht:</strong> Der BMI setzt lediglich Gewicht und Größe ins Verhältnis (kg/m²). Er unterscheidet nicht zwischen Skelettmuskelmasse, Knochendichte und Viszeralfett. Kraftsportler werden häufig fälschlich als „übergewichtig“ eingestuft.</li>
+            <li><strong>Altersbedingte Sarkopenie:</strong> Bei über 65-Jährigen kann altersbedingter Muskelverlust (Sarkopenie) inneres Fettgewebe hinter einem „normalen“ BMI verbergen. Geriatrische Leitlinien stufen einen leicht höheren Bereich (23,0 bis 27,9 kg/m²) oft als protektiv gegen Frakturen und Gebrechlichkeit ein.</li>
+            <li><strong>Ethnische Kardiometabolische Varianzen:</strong> Die Fettverteilung variiert populationsspezifisch. Die WHO betont, dass asiatische Populationen bereits bei niedrigerem BMI erhöhte Risiken für Insulinresistenz aufweisen, weshalb hier die Übergewichtsgrenze bei 23,0 kg/m² liegt.</li>
+            <li><strong>Kinder &amp; Jugendliche:</strong> Erwachsenen-BMI-Formeln dürfen keinesfalls auf Minderjährige unter 18 Jahren angewendet werden. Das kindliche Wachstum erfordert alters- und geschlechtsspezifische Perzentilenkurven (CDC/WHO).</li>
           </ul>
-        </div>
+        </section>
 
-        <!-- 7. Legal Disclaimer -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Rechtlicher Haftungsausschluss & Haftungsbegrenzung
+        <!-- 5. Risks of Severe Caloric Restriction & Medication Adjustments -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            5. Risiken drastischer Kaloriendefizite &amp; Medikamentenrisiken
           </h2>
           <p>
-            Weder Real BMI noch die Entwickler oder Autoren übernehmen eine Haftung für Handlungen, Ernährungsentscheidungen oder gesundheitliche Folgen, die sich aus der Nutzung unserer Rechner ergeben. Mit der Nutzung von Real BMI erkennen Sie an, dass dies rein freiwillig und auf eigene persönliche Verantwortung geschieht.
+            Ändern oder pausieren Sie verschriebene Medikamente keinesfalls auf Grundlage automatisierter Rechnerwerte. Gewichtsveränderungen beeinflussen die Wirkstoffausscheidung; Dosisanpassungen obliegen ausschließlich Ihrem behandelnden Arzt.
           </p>
-        </div>
+          <p>
+            Zudem bergen unüberwachte radikale Kaloriendefizite (unter 1.200 kcal/Tag bei Frauen bzw. 1.500 kcal/Tag bei Männern) erhebliche gesundheitliche Gefahren wie Stoffwechselverlangsamung, Gallensteinbildung, Mikronährstoffmängel und Muskelabbau.
+          </p>
+        </section>
 
-        <!-- 8. Besondere physiologische Zielgruppen: Schwangerschaft, Kinder & Senioren -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Besondere physiologische Zielgruppen: Schwangerschaft, Kinder & Senioren
+        <!-- 6. Directional Proxies vs. Diagnostic Laboratory Biomarkers -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            6. Orientierungswerte vs. Laboranalytische Diagnostik
           </h2>
           <p>
-            Standardmäßige BMI-Klassifikationen gelten ausschließlich für nicht-schwangere Erwachsene im Alter von 18 bis 65 Jahren. Besondere Bevölkerungsgruppen erfordern spezialisierte medizinische Aufmerksamkeit:
+            Kennzahlen wie BMI, Taille-Hüfte-Verhältnis und geschätzter Körperfettanteil sind primäre Screening-Parameter. Sie bieten wertvolle statistische Anhaltspunkte, ersetzen jedoch keine ärztliche Gesamtdiagnostik.
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Schwangerschaft (singleton pregnancies):</strong> Der Standard-BMI kann die physiologische Gewichtszunahme während einer Einlingsschwangerschaft nicht bewerten. Plötzliche Gewichtszunahmen oder starke Ödeme können Warnzeichen für ernsthafte Komplikationen wie eine Präeklampsie (preeclampsia) darstellen und erfordern eine unverzügliche gynäkologische Untersuchung.</li>
-            <li><strong>Kinder und Jugendliche:</strong> Wachsende Kinder dürfen keinesfalls nach Erwachsenen-BMI-Tabellen beurteilt werden. Hierfür sind alters- und geschlechtsspezifische CDC- oder WHO-Wachstumsperzentilen heranzuziehen, die von einem Kinderarzt interpretiert werden.</li>
-            <li><strong>Senioren & Sarkopenie:</strong> Bei Erwachsenen über 65 Jahren kann altersbedingter Muskelschwund (Sarkopenie) durch einen numerisch normalen BMI verschleiert werden. Ein etwas höherer BMI (23,0 bis 27,9 kg/m²) wird bei älteren Menschen häufig mit geringerer Gesamtmortalität und Knochenschutz assoziiert.</li>
-          </ul>
-        </div>
+          <p>
+            Eine verlässliche kardiometabolische Zustandsanalyse erfordert laborchemische Biomarker: Nüchternblutzucker, Langzeitblutzucker (HbA1c), vollständiges Lipidprofil (Gesamtcholesterin, HDL, LDL, Triglyzeride) sowie klinische Ruheblutdruckmessungen. Nutzen Sie unsere Tools, um informierte Fragen für Ihren nächsten Kontrolltermin vorzubereiten.
+          </p>
+        </section>
 
-        <!-- 9. Orientierungsleitfaden statt klinischer Diagnostik -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Orientierungsleitfaden statt klinischer Diagnostik
+        <!-- 7. Limitation of Liability & Independent Governance -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            7. Haftungsbegrenzung &amp; Unabhängige Administration
           </h2>
           <p>
-            Jedes unserer Werkzeuge fungiert als lifestyle screening guide, not a medical test. Only a doctor can diagnose metabolische Syndrome, Bluthochdruck, Fettstoffwechselstörungen oder kardiovaskuläre Risiken.
+            Real BMI ist ein unabhängiges Softwareprojekt, entwickelt und betreut von <strong>Bhawanshi Dosi</strong> (Banswara, Rajasthan, Indien) auf Grundlage verifizierter Leitlinien von WHO, CDC und ICMR. Die Plattform unterhält weder einen Krankenhausbetrieb noch einen klinischen Mitarbeiterstab.
           </p>
           <p>
-            All 23 computational health tools auf Real BMI liefern rein theoretische mathematische Näherungswerte, um informierte Gespräche mit Ihrem Hausarzt oder Ernährungsberater vorzubereiten.
+            Im gesetzlich zulässigen Rahmen schließen Real BMI und seine Urheber jede Haftung für gesundheitliche Entscheidungen, Trainingsprogramme oder Ernährungsumstellungen aus, die aus der Nutzung dieser Website resultieren. Die Nutzung erfolgt eigenverantwortlich und auf eigenes Risiko. Bei Fragen zu den Berechnungsmodellen kontaktieren Sie uns bitte über unsere <a href="/de/contact/" class="text-[var(--accent)] underline font-medium hover:text-[var(--foreground)] transition-colors">Kontaktseite</a>.
           </p>
-        </div>
-
-        <!-- 10. Entwicklerangaben und fachliche Anfragen -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Entwicklerangaben und wissenschaftlicher Austausch
-          </h2>
-          <p>
-            Real BMI wird unabhängig von Softwareentwickler <strong>Bhawanshi Dosi</strong> in Banswara, Rajasthan, Indien gepflegt. Sämtliche Formeln werden kontinuierlich anhand offizieller Richtlinien von WHO und CDC überprüft.
-          </p>
-          <p>
-            Für wissenschaftliche Hinweise oder fachliche Rückfragen erreichen Sie uns über unsere <a href="/de/contact/" class="text-[var(--accent)] underline font-medium">Kontaktseite</a>.
-          </p>
-        
-        <!-- 11. Medikamente, drastische Kalorienrestriktion & Trainingsrisiken -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Medikamente, drastische Kalorienrestriktion & Trainingsrisiken
-          </h2>
-          <p>
-            Personen, die verschreibungspflichtige Arzneimittel einnehmen – wie GLP-1-Rezeptoragonisten, Insulin, Blutdrucksenker oder Schilddrüsenhormone –, dürfen Dosierungen unter keinen Umständen auf Grundlage von Online-Rechnern eigenmächtig anpassen. Schnelle Gewichtsveränderungen beeinflussen die pharmakokinetische Verstoffwechselung erheblich.
-          </p>
-          <p>
-            Zudem bergen unüberwachte Crash-Diäten (unter 1.200 kcal/Tag bei Frauen bzw. 1.500 kcal/Tag bei Männern) erhebliche gesundheitliche Risiken wie Elektrolytentgleisungen, Gallensteinbildung und Herzrhythmusstörungen. Konsultieren Sie vor radikalen Ernährungs- oder Trainingsumstellungen stets einen Arzt.
-          </p>
-        </div>
-
-        <!-- 12. Laborbiomarker & ganzheitliche medizinische Diagnostik -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Laborbiomarker & ganzheitliche medizinische Diagnostik
-          </h2>
-          <p>
-            Anthropometrische Werte wie BMI, Taille-Hüft-Verhältnis und geschätzter Körperfettanteil sind rein statistische Schätzungen. Das reale kardiometabolische Risiko kann verlässlich nur durch klinische Labordiagnostik festgestellt werden.
-          </p>
-          <p>
-            Wir empfehlen die regelmäßige Durchführung von Vorsorgeuntersuchungen mit Messung von Nüchternglukose, HbA1c-Langzeitblutzucker, Fettstoffwechselprofil (HDL, LDL, Triglyceride) und Ruheblutdruck. Unsere 23 Rechenwerkzeuge dienen ausschließlich der informativen Vorbereitung solcher medizinischen Fachgespräche.
-          </p>
-        </div>
-      
-        <!-- 13. Psychische Gesundheit, Essstörungen & Körperbild-Sensibilität -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Psychische Gesundheit, Essstörungen & Körperbild-Sensibilität
-          </h2>
-          <p>
-            Die ständige numerische Überwachung von Körpergewicht und Kalorienzufuhr kann bei disponierten Personen dysfunktionale Essmuster, Orthorexie, Anorexia nervosa oder Bulimie begünstigen. Ein gesunder Lebensstil definiert sich nicht über eine isolierte Kennzahl.
-          </p>
-          <p>
-            Sollten Sie oder Angehörige unter zwanghaftem Kontrollverhalten bezüglich des Gewichts leiden, empfehlen wir dringend professionelle psychotherapeutische Unterstützung. In Deutschland bietet die Bundeszentrale für gesundheitliche Aufklärung (BZgA) unter der Telefonnummer 0221 892031 kostenfreie und anonyme Beratung bei Essstörungen an.
-          </p>
-        </div>
-      </div>
+        </section>
 
       </div>
     </PageShell>

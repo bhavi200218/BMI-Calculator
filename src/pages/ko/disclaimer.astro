@@ -5,206 +5,133 @@ import PageShell from '../../components/PageShell.astro';
 ---
 
 <Layout 
-    title="의학적 면책 조항 | Real BMI" 
-    description="Real BMI의 공식 의학적 면책 조항 안내입니다. 당사의 건강 계산기와 수치는 순수 교육 및 참고 목적으로 제공되며 전문적인 의료 상담을 대체하지 않습니다."
+    title="의학적 면책조항 | Real BMI" 
+    description="Real BMI 공식 의학적 면책조항: 본 사이트의 건강 계산기는 WHO 및 CDC 공식 지침에 기반한 교육용 참고치이며, 의학적 진단이나 치료를 대신할 수 없습니다."
     canonicalURL="https://realbmicalculator.com/ko/disclaimer/"
 >
     <Navbar />
     <PageShell
-      title="의학적 면책 조항"
-      eyebrow="중요 건강 고지사항"
-      description="Real BMI의 정보가 교육적 추정치로 제공되는 원리와 의료적 결정을 내릴 때 반드시 전문가와 상담해야 하는 이유를 안내합니다."
+      title="의학적 면책조항"
+      eyebrow="중요 건강 고지"
+      description="Real BMI가 제공하는 교육용 건강 추정치의 성격과 의학적 결정 시 전문 의료진 상담이 필수적인 이유를 확인하세요."
       returnUrl="/ko/"
-      returnLabel="홈"
+      returnLabel="홈으로"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+      <div class="max-w-5xl space-y-8 text-[var(--muted-foreground)] leading-relaxed text-base font-normal">
         
-        <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
-          <strong>Real BMI</strong>에서 제공하는 모든 계산 도구, 인터랙티브 차트 및 건강 정보는 순수한 교육, 정보 전달 및 개인적인 건강 인식을 돕기 위한 목적으로 제작되었습니다.
-        </p>
-
-        <!-- 1. What Real BMI Is -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Real BMI가 제공하는 서비스
-          </h2>
-          <p>
-            Real BMI는 근거 중심의 신체 지표 추정치를 무료로 제공하는 건강 정보 플랫폼입니다:
+        <!-- Summary Callout -->
+        <div class="p-5 rounded-2xl bg-[var(--card)]/60 border border-[var(--border)]/60">
+          <p class="text-base sm:text-lg text-[var(--foreground)] leading-relaxed font-medium">
+            <strong>Real BMI</strong>의 모든 건강 계산기, 신체 지표 차트 및 가이드 콘텐츠는 순수한 정보 제공 및 개인 건강 지표 자가 점검을 위해 제공됩니다. 공중보건 기준을 이해하는 데 도움을 드리지만, 전문적인 의학적 진단, 치료 또는 처방을 대체하지 않습니다.
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li>세계보건기구(WHO) 및 질병관리청(CDC) 등 공인된 공중보건 기준과 학술 연구 공식을 기반으로 한 수학적 추정치 제공.</li>
-            <li>신체 부피와 체질량 분포를 시각적으로 이해할 수 있는 교육용 3D 뷰어 제공.</li>
-            <li>일반 인구 집단 데이터를 바탕으로 자신의 수치를 객관적으로 비교해 볼 수 있는 통계적 참고 구간 안내.</li>
-          </ul>
         </div>
 
-        <!-- 2. What Real BMI Is Not -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Real BMI가 제공하지 않는 서비스
+        <!-- 1. Educational Scope & Non-Diagnostic Notice -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            1. 교육용 범위 및 비임상적 목적 안내
           </h2>
           <p>
-            Real BMI는 공인 의료기관이 아니며 임상 진료 서비스를 제공하지 않습니다:
+            Real BMI는 세계보건기구(WHO), 미국 질병통제예방센터(CDC) 및 동료 평가 학술 논문에 발표된 공인 공식을 기반으로 계산 결과를 제공합니다:
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>의학적 진단 불가:</strong> 본 사이트의 결과는 전문 의사의 소견, 공식적인 질병 진단 또는 맞춤형 치료 계획이 아닙니다.</li>
-            <li><strong>진단 장비 대체 불가:</strong> 계산기 수치만으로 심혈관 대사 질환, 호르몬 불균형, 영양 결핍 등의 잠재적 질환을 진단하거나 배제할 수 없습니다.</li>
-            <li><strong>처방 및 치료 지침 아님:</strong> 계산기 결과만을 근거로 복용 중인 처방약을 중단하거나 극단적인 절식 및 과도한 운동을 시작해서는 안 됩니다.</li>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>수학적 추정 지표:</strong> 검증된 생체 공식에 따라 산출된 BMI, BMR, TDEE 및 체지방률 등의 방향성 참고치.</li>
+            <li><strong>통계적 비교 기준:</strong> 일반 인구 집단 가이드라인에 비추어 본인의 신체 수치를 점검할 수 있는 표준 컷오프.</li>
+            <li><strong>주도적 건강 인식:</strong> 주치의 또는 임상영양사와의 전문 진료 시 유용한 질문을 준비하기 위한 참고 지표.</li>
           </ul>
-        </div>
-
-        <!-- 3. Who Should Consult a Doctor -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            의사 상담이 반드시 필요한 경우
-          </h2>
-          <p>
-            다음과 같은 상황에 해당하시는 경우 반드시 전문의 또는 공인 임상영양사와 먼저 상담하시기 바랍니다:
+          <p class="pt-1">
+            <strong>Real BMI가 제공하지 않는 서비스:</strong> 본 사이트는 의료기관, 병원 또는 임상 자문 위원회를 운영하지 않습니다. 계산 결과는 개별 임상 진단, 전문 의료 소견 또는 치료 처방이 아닙니다. 자동 계산기 수치만을 근거로 약물 복용량을 임의로 변경하거나 극단적인 식이요법을 시작하지 마십시오.
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li>급격한 체중 감량이나 증량, 또는 대대적인 식단 변경을 계획 중인 경우.</li>
-            <li>당뇨, 고혈압, 심혈관 질환, 갑상선 질환 등 만성 기저질환을 앓고 있는 경우.</li>
-            <li>임신 중이거나 수유 중인 여성, 또는 수술 후 회복 단계에 있는 경우.</li>
-            <li>식이장애(섭식장애)나 신체이형장애 병력이 있는 경우.</li>
-            <li>뚜렷한 원인 없이 체중이 급격하게 변하는 경우.</li>
-          </ul>
-        </div>
+        </section>
 
-        <!-- 4. Emergency Situations (Callout Box) -->
-        <div class="p-5 sm:p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-[var(--foreground)] space-y-2 not-prose">
+        <!-- 2. Emergency Situations (Callout Box) -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-amber-500/5 border border-amber-500/20 text-[var(--foreground)] space-y-2">
           <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-display font-bold uppercase tracking-wider text-xs sm:text-sm">
             <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
             </svg>
-            응급 상황 안내
+            2. 응급 의료 상황 및 즉각적인 조치
           </div>
           <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">
-            즉각적인 응급 처치 및 진료
+            위급 증상 발생 시 즉시 대처 요령
           </h3>
-          <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">
-            Real BMI는 응급 의료 서비스를 제공하지 않습니다. 가슴 통증, 심각한 호흡 곤란, 급작스러운 어지럼증, 마비 증세 등 생명을 위협하는 응급 증상이 나타난 경우 지체 없이 119 또는 인근 병원 응급실로 연락하여 응급 처치를 받으시기 바랍니다.
+          <p class="text-sm leading-relaxed text-[var(--muted-foreground)]">
+            Real BMI는 응급 의료 서비스가 아닙니다. 흉통, 호흡 곤란, 갑작스러운 극심한 어지럼증, 신체 마비 또는 생명을 위협하는 증상이 나타나면 즉시 119(한국), 911(미국/캐나다), 112(유럽) 등 관할 응급 구조대에 연락하거나 가장 가까운 병원 응급실로 이동하십시오.
           </p>
         </div>
 
-        <!-- 5. BMI Limitations -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            BMI 지표의 한계
+        <!-- 3. When to Consult a Qualified Doctor or Dietitian -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            3. 의사 또는 전문 영양사 상담이 필수적인 경우
           </h2>
           <p>
-            표준 체질량지수(BMI)는 역학 조사 및 생리학적으로 명확한 한계를 지닙니다:
+            다음 상황에 해당하는 경우, 생활 습관 변경 전에 반드시 공인 전문의 또는 임상영양사의 진료를 받으시기 바랍니다:
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>체성분 반영 불가:</strong> BMI는 단순히 신장 대비 체중 비율(kg/m²)만 산출하므로 근육량, 골밀도, 내장지방을 구분하지 못합니다. 근육질의 운동선수는 체지방률이 극히 낮아도 '과체중' 또는 '비만'으로 분류될 수 있습니다.</li>
-            <li><strong>노화 및 근감소증:</strong> 60세 이상의 고령층은 자연스러운 골격근 감소(근감소증)로 인해 내장지방이 위험 수준이어도 BMI 수치는 '정상'으로 나타날 수 있습니다.</li>
-            <li><strong>인종별 기준 차이:</strong> 내장지방 축적률은 인종에 따라 다릅니다. WHO는 아시아인의 심혈관 대사 질환 위험을 고려하여 비만 기준점을 25.0 kg/m²가 아닌 23.0 kg/m² 이상으로 낮추어 적용하도록 권고합니다.</li>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>급격한 체중 감량이나 증량, 또는 극단적인 칼로리 제한 식단을 계획 중인 경우.</li>
+            <li>제2형 당뇨병, 고혈압, 심혈관 질환, 신장 질환, 갑상선 질환 등 만성 기저질환을 앓고 있는 경우.</li>
+            <li>체중이나 대사율에 따라 복용 용량이 달라지는 처방약(예: 인슐린, 혈압강하제)을 복용 중인 경우.</li>
+            <li>임신 중이거나 수유기, 또는 수술 후 회복 단계에 있는 경우.</li>
+            <li>식이장애(섭식장애) 병력이 있거나 신체 이미지에 대한 극심한 스트레스를 겪는 경우.</li>
+            <li>원인 불명의 급격한 체중 변동이나 지속적인 부종이 관찰되는 경우.</li>
           </ul>
-        </div>
+        </section>
 
-        <!-- 6. Privacy: No Personal Health Information Stored -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            개인정보 보호: 개인 건강 데이터 미저장 원칙
+        <!-- 4. Scientific & Physiological Limitations of Screening Tools -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            4. 자가 스크리닝 지표의 과학적·생리학적 한계
           </h2>
           <p>
-            사용자의 신체 계측 정보는 오직 사용자 본인만의 것입니다:
+            표준 인체 계측 도구는 다음과 같은 고유한 생리학적 한계점을 가집니다:
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>브라우저 로컬 연산:</strong> 모든 계산은 사용자의 웹 브라우저 내부에서 자바스크립트를 통해 즉시 처리됩니다.</li>
-            <li><strong>서버 전송 및 저장 일체 없음:</strong> 키, 체중, 나이, 허리둘레 등의 개인 건강 측정값을 당사 서버로 전송하거나 데이터베이스에 보관하지 않습니다.</li>
-            <li><strong>공개 프로필 없음:</strong> 사용자의 건강 수치가 외부에 노출될 수 있는 회원제 게시판이나 커뮤니티 기능을 운영하지 않습니다.</li>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>신체 구성 대 단순 체중:</strong> BMI는 신장 대비 체중 비율(kg/m²)만 산출하며, 근육량, 골밀도 및 내장지방을 구분하지 못합니다. 근육량이 많은 운동선수는 체지방률이 낮음에도 '과체중' 또는 '비만'으로 분류될 수 있습니다.</li>
+            <li><strong>연령 증가와 근감소증(Sarcopenia):</strong> 만 65세 이상 노년층은 노화에 따른 근육 감소로 인해 내장지방이 많아도 겉보기에 '정상 BMI'로 나타날 수 있습니다. 노년기에는 골절 예방을 위해 약간 높은 수치(23.0~27.9 kg/m²)가 권장되기도 합니다.</li>
+            <li><strong>인종별 심혈관 대사 위험 차이:</strong> 지방 축적 방식은 인종에 따라 다릅니다. WHO는 아시아계 성인이 서구인보다 낮은 BMI에서도 인슐린 저항성 위험이 높다는 점을 반영하여 과체중 기준을 23.0 kg/m²로 낮추어 적용하도록 권고합니다.</li>
+            <li><strong>소아청소년 성장 평가:</strong> 성인용 공식은 만 18세 미만 성장기 소아청소년에게 절대 적용할 수 없습니다. 소아는 소아청소년과 전문의가 연령 및 성별 백분위수 성장 도표(CDC/WHO)를 통해 판정해야 합니다.</li>
           </ul>
-        </div>
+        </section>
 
-        <!-- 7. Legal Disclaimer -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            법적 면책 조항 및 책임의 한계
+        <!-- 5. Risks of Severe Caloric Restriction & Medication Adjustments -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            5. 무리한 식단 제한 및 임의 약물 조절의 위험
           </h2>
           <p>
-            Real BMI 개발자 및 기고자는 본 사이트의 도구 및 정보를 바탕으로 사용자가 내린 결정이나 건강상의 결과에 대해 어떠한 법적 책임도 지지 않습니다. Real BMI를 이용하는 것은 이용자 본인의 자발적 의사와 판단에 따른 것임을 확인합니다.
+            웹 계산기 결과를 바탕으로 처방 약물(특히 인슐린, 혈압약, 갑상선 호르몬제)의 복용량을 임의로 늘리거나 줄여서는 안 됩니다. 체중 변화는 약물 대사율에 영향을 미치므로, 약물 조절은 오직 처방 의사의 진단 하에 이루어져야 합니다.
           </p>
-        </div>
+          <p>
+            또한 의료진 지도 없는 초저열량 식단(여성 1,200 kcal/일, 남성 1,500 kcal/일 미만)은 대사 저하, 담석증, 미량 영양소 결핍 및 골격근 손실 등 심각한 부작용을 초래할 수 있습니다.
+          </p>
+        </section>
 
-        <!-- 8. 특수 생리학적 대상군: 임신부, 소아청소년 및 노년층 -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            특수 생리학적 대상군: 임신부, 소아청소년 및 노년층
+        <!-- 6. Directional Proxies vs. Diagnostic Laboratory Biomarkers -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            6. 간이 선별 지표 대 임상 혈액 정밀 검사
           </h2>
           <p>
-            일반 성인용 BMI 기준은 임신하지 않은 만 18세 이상 65세 이하 성인에게만 적용됩니다. 다음과 같은 특수 인구군은 개별적인 의료 모니터링이 필수적입니다:
+            BMI, 허리-엉덩이 비율(WHR), 체지방률 추정치는 예비 스크리닝 지표일 뿐이며 정밀 건강 검진을 대체하지 못합니다.
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>임신 및 모성 건강 (singleton pregnancies):</strong> 일반 BMI 계산기는 단태아 임신 중의 정상적인 체중 증가 추세를 평가할 수 없습니다. 임신 중 급격한 체중 변화나 부종은 자간전증(preeclampsia) 등 심각한 산과적 합병증의 징후일 수 있으므로 즉시 산부인과 전문의의 진료를 받아야 합니다.</li>
-            <li><strong>소아 및 청소년:</strong> 성장기 소아청소년은 성인 BMI 기준표를 적용해서는 안 되며, 반드시 소아과 전문의가 판독하는 CDC 또는 WHO 연령별·성별 성장 백분위수를 기준으로 평가해야 합니다.</li>
-            <li><strong>노년기 근감소증:</strong> 65세 이상의 노년층에서는 노화로 인한 근감소증(Sarcopenia)으로 인해 체지방률이 높아도 BMI는 '정상'으로 오인될 수 있습니다. 노년기에는 약간 높은 BMI(23.0~27.9 kg/m²)가 골절 예방 및 생존율 향상에 유리합니다.</li>
-          </ul>
-        </div>
+          <p>
+            정확한 심혈관 대사 건강 평가는 임상 검사실 바이오마커 검사(공복 혈당, 당화혈색소(HbA1c), 총콜레스테롤, HDL, LDL, 중성지방)와 안정 시 혈압 측정을 통해 종합적으로 이루어집니다. 본 사이트의 도구를 정기 건강검진 전 유용한 대화 준비 자료로 활용하십시오.
+          </p>
+        </section>
 
-        <!-- 9. 생활 습관 자가 스크리닝 도구와 임상 진단의 명확한 구분 -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            생활 습관 자가 스크리닝 도구와 임상 진단의 명확한 구분
+        <!-- 7. Limitation of Liability & Independent Governance -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            7. 법적 책임의 한계 및 독립적 운영 고지
           </h2>
           <p>
-            Real BMI의 모든 도구는 lifestyle screening guide, not a medical test입니다. Only a doctor can diagnose 고혈압, 당뇨병, 대사증후군 및 이상지질혈증과 같은 임상 질환을 진단할 수 있습니다.
+            Real BMI는 인도 라자스탄주 반스와라의 소프트웨어 엔지니어 <strong>바완시 도시(Bhawanshi Dosi)</strong>가 공인 공중보건 문헌을 바탕으로 단독 개발 및 운영하는 기술 프로젝트입니다. 본 플랫폼은 병원이나 전문 의료 자문단과 제휴되어 있지 않습니다.
           </p>
           <p>
-            All 23 computational health tools는 이용자가 병원 진료나 전문 영양사 상담 전 자신의 신체 수치를 종합적으로 점검하기 위한 교육적 참고 자료로만 기능합니다.
+            관련 법률이 허용하는 최대 범위 내에서, Real BMI 및 개발자는 본 사이트 정보 활용으로 인해 발생하는 개인 건강 결정, 식단 변경 또는 건강 결과에 대해 어떠한 법적 책임도 지지 않습니다. 모든 도구의 이용은 사용자의 전적인 자율적 판단과 책임 하에 이루어집니다. 공식에 관한 문의는 <a href="/ko/contact/" class="text-[var(--accent)] underline font-medium hover:text-[var(--foreground)] transition-colors">문의 페이지</a>를 이용해 주십시오.
           </p>
-        </div>
-
-        <!-- 10. 개발자 정보 및 학술 문의 -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            개발자 정보 및 학술 문의 창구
-          </h2>
-          <p>
-            Real BMI는 인도 라자스탄주 반스와라에 소재한 소프트웨어 엔지니어 <strong>Bhawanshi Dosi</strong>가 개발하고 관리합니다. 모든 알고리즘은 WHO 및 CDC의 공개 의학 문헌을 기반으로 검증되었습니다.
-          </p>
-          <p>
-            공식 문의 사항은 <a href="/ko/contact/" class="text-[var(--accent)] underline font-medium">공식 문의 페이지</a>를 이용해 주시기 바랍니다.
-          </p>
-        
-        <!-- 11. 약물 복용자 주의사항, 극단적 식단 제한 및 운동 위험 고지 -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            약물 복용자 주의사항, 극단적 식단 제한 및 운동 위험 고지
-          </h2>
-          <p>
-            인슐린, 혈압 강하제, 갑상선 호르몬제, 당뇨병 치료제 또는 체중 조절 약물(GLP-1 유사체 등)을 복용 중인 이용자는 온라인 계산기 수치에 의존하여 약물 복용량을 임의로 증감하거나 중단해서는 안 됩니다. 급격한 체중 감량은 약물의 체내 대사 및 청소율에 지대한 영향을 미칩니다.
-          </p>
-          <p>
-            또한 의사의 지도 없는 극단적인 초저열량 식단(여성 1,200 kcal, 남성 1,500 kcal 미만)은 전해질 불균형, 담석증, 심부정맥 및 근골격계 손상을 유발할 수 있습니다. 생활 습관을 크게 변경하기 전에는 반드시 주치의와 상의하십시오.
-          </p>
-        </div>
-
-        <!-- 12. 임상 혈액 검사 및 종합적인 심혈관 대사 건강 평가 -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            임상 혈액 검사 및 종합적인 심혈관 대사 건강 평가
-          </h2>
-          <p>
-            체질량지수(BMI), 허리-엉덩이 비율(WHR), 체지방률 등은 신체 외형을 바탕으로 한 1차 스크리닝 지표일 뿐입니다. 진정한 심혈관 및 대사 건강 상태는 의료기관의 객관적인 혈액 진단 검사를 통해 판정되어야 합니다.
-          </p>
-          <p>
-            공복 혈당, 당화혈색소(HbA1c), 지질 패널(HDL, LDL, 중성지방), 안정 시 혈압 및 간·신장 기능 검사를 정기적으로 받으실 것을 강력히 권장합니다. Real BMI의 계산 도구는 이러한 의학적 정밀 진단을 대체할 수 없습니다.
-          </p>
-        </div>
-      
-        <!-- 13. 정신 건강, 섭식 장애 예방 및 신체 이미지 감수성 -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            정신 건강, 섭식 장애 예방 및 신체 이미지 감수성
-          </h2>
-          <p>
-            체중, 칼로리 및 신체 둘레 수치에 대한 지나친 집착은 거식증, 폭식증 또는 신체이형장애(Body Dysmorphia)와 같은 섭식 장애를 유발하거나 악화시킬 수 있습니다. 건강한 삶은 단 하나의 신체 수치로 정의될 수 없습니다.
-          </p>
-          <p>
-            본인 또는 주변 사람이 체중 조절에 대한 강박으로 심리적 고통을 겪고 있다면 전문 심리 상담이나 의료 지원을 받으시기 바랍니다. 한국생명의전화(1588-9191) 또는 정신건강 위기상담전화(1577-0199)를 통해 24시간 전문 상담을 받으실 수 있습니다.
-          </p>
-        </div>
-      </div>
+        </section>
 
       </div>
     </PageShell>

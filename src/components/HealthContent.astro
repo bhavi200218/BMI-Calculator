@@ -46,15 +46,15 @@ const reviewBadge: Record<string, string> = {
 
 const content: Record<string, any> = {
   "en": {
-    "insightSub": "Health Insights",
-    "insightsMainTitle": "Health Standards & Daily Metabolism",
-    "insightsMainDesc": "Learn how health guidelines, daily calorie burn, and waist measurements work together to give you a clear picture of your wellness.",
+    "insightSub": "Methodological Foundation",
+    "insightsMainTitle": "Anthropometric Science & Metabolic Frameworks",
+    "insightsMainDesc": "Explore the evidence-based equations behind body mass screening, resting energy expenditure, and cardiovascular fitness.",
     "whoSub": "WHO Standards",
     "whoTableTitle": "WHO BMI Classification Standards",
     "disclaimer": "BMI is a screening measure and does not independently diagnose disease or determine an individual's overall health risk.",
     "whoDesc": "The World Health Organization (WHO) breaks BMI scores down into categorized reference ranges to mark health and nutritional indicators.",
     "colCategory": "Classification Category",
-    "colRange": "BMI Range Box",
+    "colRange": "BMI Range (kg/m²)",
     "colRisk": "Reference Category",
     "sourcesTitle": "Sources & References",
     "sourcesSubtitle": "Standards based on official WHO & CDC global guidelines.",
@@ -70,159 +70,145 @@ const content: Record<string, any> = {
       {
         "title": "Anthropometric Screening & International Reference Standards",
         "paragraphs": [
-          "Body Mass Index (BMI) compares your weight to your height. Health groups like the World Health Organization (WHO) and CDC use BMI as a quick health check. It divides scores into four main groups: Underweight (under 18.5), Healthy Weight (18.5 to 24.9), Overweight (25.0 to 29.9), and Obesity (30.0 and above).",
-          "These groups help track wellness trends across large populations. For Asian adults, health panels suggest lower cutoff points. They set the overweight cutoff at 23.0 and obesity at 27.5. This is because Asian adults often carry more body fat around their organs at lower weights.",
-          "Age and biological sex also shape your body. Women carry more essential body fat (10 to 13 percent) than men (2 to 5 percent) for hormonal balance. As we grow older, natural muscle loss also changes how weight links to wellness."
+          "Body Mass Index provides an initial statistical screening by evaluating weight relative to height squared. Public health agencies, including the World Health Organization and CDC, classify adult scores across standard reference categories: Underweight (under 18.5), Healthy Weight (18.5 to 24.9), Overweight (25.0 to 29.9), and Obesity (30.0 and above). For Asian adults, lower risk action points (23.0 for overweight, 27.5 for obesity) account for higher visceral adiposity at lower weights."
         ],
         "bullets": [
-          "Standard healthy reference range: 18.5 to 24.9 BMI based on WHO and CDC guidelines.",
-          "Asian population guidelines: Action points start at 23.0 for increased risk and 27.5 for high risk.",
-          "Helpful limitation reminder: BMI is a screening tool that does not measure body fat percentage directly."
+          "Standard WHO healthy reference range: 18.5 to 24.9 BMI.",
+          "Asian adult guidelines: Action points start at 23.0 and 27.5."
         ],
         "toolLink": {
           "name": "Calculate Standard BMI",
           "href": "/en/bmi-calculator/"
-        },
-        "text": "Body Mass Index (BMI) compares your body weight to your height squared. Health organizations like the World Health Organization (WHO) and CDC use BMI to screen baseline population health across four main ranges: Underweight (below 18.5), Healthy Weight (18.5 to 24.9), Overweight (25.0 to 29.9), and Obesity (30.0 and above). These standard categories help track health risks across large populations. For Asian adults, international health panels recommend a lower overweight cutoff of 23.0 and an obesity cutoff of 27.5. This lower threshold exists because Asian individuals tend to store more body fat around vital organs at lower body weights. Age and biological gender also influence your body composition. Women naturally carry more essential body fat (10 to 13 percent) than men (2 to 5 percent) to support hormone health. As adults grow older, natural muscle loss can change how weight relates to overall health."
+        }
       },
       {
         "title": "Metabolic Energy Balance: Integrating BMR & TDEE",
         "paragraphs": [
-          "While BMI checks your weight, metabolic formulas calculate your daily calorie burn. Your Basal Metabolic Rate (BMR) uses the Mifflin-St Jeor formula to estimate the energy you burn at complete rest in bed.",
-          "Total Daily Energy Expenditure (TDEE) builds on your BMR. It adds the calories you burn while walking, working, and exercising. Activity levels range from desk jobs (1.2) up to intense daily sports (1.725 to 1.9).",
-          "Knowing your TDEE helps you plan daily meals with confidence. Eating at your TDEE keeps your weight steady. To lose fat at a safe pace, experts recommend eating 300 to 500 calories below your TDEE."
+          "While BMI screens physical proportions, metabolic equations calculate daily energy expenditure. The Mifflin-St Jeor equation determines Basal Metabolic Rate (BMR)—the calories required to sustain vital organ function at rest—while Total Daily Energy Expenditure (TDEE) incorporates daily movement and exercise. A controlled deficit of 300 to 500 calories below TDEE supports gradual fat loss while preserving lean tissue."
         ],
         "bullets": [
-          "BMR shows the baseline energy your body needs each day just to stay alive at rest.",
-          "TDEE calculates your total calorie burn by including all daily movement and workouts.",
-          "Steady progress: A modest daily deficit of 300 to 500 calories helps you lose fat while keeping muscle."
+          "BMR: Baseline energy needed for vital organs at rest.",
+          "TDEE: Complete 24-hour calorie expenditure including daily activity."
         ],
         "toolLink": {
           "name": "Calculate Your BMR & TDEE",
           "href": "/en/tdee-calculator/"
-        },
-        "text": "While BMI looks at your weight and height, metabolic formulas calculate how many calories you burn each day. Your Basal Metabolic Rate (BMR) uses the Mifflin-St Jeor equation to estimate the calories needed just to keep your heart, lungs, and brain working at complete rest. Total Daily Energy Expenditure (TDEE) builds on your BMR. It adds the calories you burn while digesting food, walking, working, and exercising. Activity factors range from sedentary desk work (1.2) up to very active training (1.725 to 1.9). Knowing your TDEE helps you plan your daily meals with confidence. Eating at your TDEE keeps your body weight steady. For gradual and healthy fat loss, health experts recommend eating 300 to 500 calories below your TDEE."
+        }
       },
       {
         "title": "Body Composition & Abdominal Visceral Adiposity",
         "paragraphs": [
-          "A standard bathroom scale cannot tell muscle from body fat. Fat stored deep inside your belly carries higher health risks than fat stored just under the skin on your hips or legs.",
-          "Health groups recommend checking your waist size along with your BMI. For good long-term health, men should aim for a waist under 94 cm (90 cm for Asian men). Women should aim for under 80 cm."
+          "Standard scale weight cannot distinguish between lean muscle tissue and adipose tissue. Intra-abdominal visceral fat surrounding internal organs carries significantly higher cardiometabolic risk than peripheral subcutaneous fat on the hips or legs. Health guidelines strongly recommend measuring waist circumference alongside BMI—aiming to keep waist circumference under half your height."
         ],
         "bullets": [
-          "Deep belly fat is closely tied to insulin resistance and cardiovascular health risks.",
-          "Waist-to-Height Ratio target: Keeping your waist under half your height supports lifelong wellness.",
-          "Waist-to-Hip Ratio helps identify whether you carry fat primarily in your midsection or hips."
+          "Visceral abdominal fat is directly linked to insulin resistance.",
+          "Waist-to-Height Ratio: Keeping waist under half your height is optimal."
         ],
         "toolLink": {
           "name": "Check Waist-to-Hip Ratio",
           "href": "/en/waist-to-hip-ratio-calculator/"
-        },
-        "text": "A standard scale cannot tell how much of your weight is muscle, bone, or fat. Deep belly fat stored around internal organs carries much higher health risks than fat stored under the skin on your hips or legs. Health organizations recommend checking your waist size along with your BMI. For optimal long-term health, men should aim for a waist size under 94 cm (90 cm for Asian men), and women should aim for under 80 cm."
+        }
       },
       {
         "title": "Clinical Limitations & Screening Scope",
         "paragraphs": [
-          "Online calculators offer helpful educational checks, but they cannot diagnose illnesses. Muscular lifters often get an overweight BMI score even with low body fat. Older adults can have a normal BMI despite carrying extra fat and less muscle.",
-          "A single number never tells your whole health story. A complete health check includes visits with your doctor, blood pressure readings, and regular blood tests."
+          "Screening equations provide educational approximations based on population data, not clinical diagnoses. Muscular athletes often show an elevated BMI without excess adiposity, while natural sarcopenia in older adults can mask higher body fat behind a normal BMI reading. A comprehensive health checkup should always combine screening numbers with medical evaluations and blood markers."
         ],
         "bullets": [
-          "Athletes and muscle: Dense muscle can produce higher BMI scores without excess body fat.",
-          "Older adults: Aging can cause muscle loss that simple height-weight formulas miss.",
-          "Next step: Share your screening numbers with your doctor during your regular wellness checkups."
+          "Athletic conditioning: Dense muscle can elevate BMI without excess fat.",
+          "Age-related sarcopenia: Natural muscle loss can alter standard readings."
         ],
         "toolLink": {
           "name": "Explore Ideal Weight by Height",
           "href": "/en/ideal-weight-calculator/"
-        },
-        "text": "Online calculators provide helpful educational estimates, but they cannot diagnose illnesses. Muscular athletes often receive an overweight BMI score even with very low body fat, while older adults may have a normal BMI despite carrying extra fat and lower muscle mass. A single number never tells the whole story of your health. A complete health checkup includes doctor exams, blood pressure checks, and routine blood tests for blood sugar and cholesterol."
+        }
       }
     ],
     "whoTable": [
       {
         "category": "Underweight",
         "range": "< 18.5",
-        "risk": "Underweight reference range",
+        "risk": "Underweight (Reference Range)",
         "status": "underweight"
       },
       {
         "category": "Healthy Weight",
         "range": "18.5 – 24.9",
-        "risk": "Healthy-weight reference range",
+        "risk": "Healthy Weight (Optimal Reference)",
         "status": "normal"
       },
       {
         "category": "Overweight",
         "range": "25.0 – 29.9",
-        "risk": "Overweight reference range",
+        "risk": "Overweight (Increased Risk)",
         "status": "overweight"
       },
       {
         "category": "Obesity Class I",
         "range": "30.0 – 34.9",
-        "risk": "Obesity Class I reference range",
+        "risk": "Obesity Class I (Elevated Risk)",
         "status": "obesity-1"
       },
       {
         "category": "Obesity Class II",
         "range": "35.0 – 39.9",
-        "risk": "Obesity Class II reference range",
+        "risk": "Obesity Class II (High Risk)",
         "status": "obesity-2"
       },
       {
         "category": "Obesity Class III",
         "range": "≥ 40.0",
-        "risk": "Obesity Class III reference range",
+        "risk": "Obesity Class III (Severe Risk)",
         "status": "obesity-3"
       }
     ],
     "faq": [
       {
         "q": "How accurate is BMI as an individual health metric?",
-        "a": "BMI is a quick screening tool, not a medical test. It spots weight trends across large groups. But it cannot tell the difference between muscle, bone, and body fat. For your personal health, check your waist size and body fat along with BMI."
+        "a": "BMI is an epidemiological screening metric, not an individual clinical diagnosis. While it reliably tracks statistical cardiometabolic risk across large population groups, it does not differentiate between skeletal muscle mass, bone density, and body fat distribution. For an individual, BMI provides the greatest clinical value when interpreted alongside waist circumference, body fat percentage, and routine blood panels."
       },
       {
         "q": "Why do Asian BMI thresholds differ from standard WHO ranges?",
-        "a": "Studies in The Lancet show that Asian adults carry more body fat at lower weights. They also store more fat deep in the belly. Because of this, Asian cutoff points are lower: 23.0 for increased risk and 27.5 for high risk."
+        "a": "Research published in The Lancet (2004) and WHO expert consultations established that Asian populations often exhibit higher body fat percentages and elevated visceral adiposity at lower body weights. To enable earlier preventive screening, public health guidelines set lower risk action points for Asian adults: 23.0 kg/m² for increased risk (overweight) and 27.5 kg/m² for high risk (obesity), compared to standard cutoffs of 25.0 and 30.0 kg/m²."
       },
       {
         "q": "Can athletes and muscular individuals have a high BMI?",
-        "a": "Yes. Muscle is much denser than body fat. Lifters and athletes often have a BMI over 25 or 30 while staying lean. In these cases, BMI overestimates body fat. A waist measurement or DEXA scan gives a clearer picture."
+        "a": "Yes. Skeletal muscle tissue has a significantly higher density (~1.06 g/cm³) than adipose tissue (~0.90 g/cm³). Strength athletes and bodybuilders frequently register BMI values above 25.0 or 30.0 despite maintaining low body fat levels (often below 12–15%). In these instances, BMI overestimates adiposity, and metrics like waist-to-height ratio or DEXA scans offer a far more accurate assessment."
       },
       {
         "q": "Why should you check waist-to-height ratio alongside BMI?",
-        "a": "Waist-to-height ratio checks belly fat. Belly fat surrounds vital organs and links closely to heart disease and diabetes. A simple rule is to keep your waist size under half your height."
+        "a": "The waist-to-height ratio directly evaluates intra-abdominal visceral fat surrounding vital organs. Visceral fat is strongly linked to insulin resistance, type 2 diabetes, and hypertension. An established, evidence-based rule for adults across diverse backgrounds is to maintain your waist circumference below half your height (WHtR < 0.50)."
       },
       {
         "q": "What does a BMI score of 25.0 represent?",
-        "a": "A BMI of 25.0 is the start of the overweight range under WHO guidelines. It is not an illness. It is simply a helpful signal to review your daily food, workouts, and sleep habits."
+        "a": "A BMI of 25.0 kg/m² marks the standard statistical threshold between healthy weight and overweight under WHO guidelines. It is not an immediate clinical diagnosis, but rather an educational screening benchmark indicating that lifestyle factors—including nutrition, physical activity, and blood pressure—should be reviewed with a qualified physician."
       },
       {
         "q": "What is a healthy BMI reference range for adult men and women?",
-        "a": "For most adults, a BMI between 18.5 and 24.9 is considered healthy. For Asian adults, the target range is 18.5 to 22.9. These ranges apply to both men and women."
+        "a": "Under standard WHO guidelines, a BMI between 18.5 and 24.9 kg/m² represents the healthy reference range associated with the lowest statistical risk of chronic disease. For Asian adults, the recommended optimal range is 18.5 to 22.9 kg/m². While adult women naturally require a higher percentage of essential body fat for endocrine health, international screening thresholds apply equally to both men and women."
       },
       {
         "q": "Why is visceral fat more hazardous than subcutaneous fat?",
-        "a": "Visceral fat sits deep inside your belly around your organs. It is active fat. It releases fatty acids and signals that can harm your heart. Subcutaneous fat sits just under your skin on your hips and arms. It mainly stores energy. Because of this, your waist size tells doctors more about heart health than your scale weight alone."
+        "a": "Visceral fat surrounds abdominal organs and is metabolically active, secreting pro-inflammatory cytokines and free fatty acids directly into the portal circulation. In contrast, subcutaneous fat beneath the skin serves primarily as passive energy storage. Consequently, waist circumference and abdominal fat distribution reflect cardiometabolic risk far more accurately than total scale weight alone."
       },
       {
         "q": "How do aging and sarcopenia affect BMI interpretation in older adults?",
-        "a": "After age 60, adults naturally lose muscle mass. Extra body fat can replace lost muscle without changing scale weight. Because of this, a slightly higher BMI (23 to 27) often protects older adults from weakness."
+        "a": "After age 60, natural age-related muscle loss (sarcopenia) can mask increases in body fat, resulting in a normal BMI despite reduced muscle mass and higher visceral fat. In geriatric medicine, a slightly higher BMI range (23.0 to 27.0 kg/m²) is often associated with greater longevity and protection against frailty and malnutrition."
       },
       {
         "q": "How do BMR and TDEE formulas complement BMI screening?",
-        "a": "BMI checks your weight against your height. BMR tells you how many calories you burn while resting in bed. TDEE adds the calories you burn from walking, chores, and workouts. Together, they help you plan your daily meals."
+        "a": "While BMI evaluates static body proportions, metabolic formulas estimate dynamic daily caloric expenditure. Basal Metabolic Rate (BMR), calculated using the validated Mifflin-St Jeor equation, measures baseline energy required at rest, while Total Daily Energy Expenditure (TDEE) accounts for daily activity and exercise to establish sustainable nutritional maintenance."
       },
       {
         "q": "What is the difference between standard BMI and Real BMI screening?",
-        "a": "Standard BMI only checks height and weight. Real BMI pairs your score with other helpful tools. You can check waist size, daily calorie burn, and body fat together. We keep all your numbers private in your browser."
+        "a": "Standard BMI evaluates body weight relative to height using published formulas from the WHO and CDC (kg/m²). Real BMI is an independent educational health platform created by software engineer Bhawanshi Dosi in Banswara, Rajasthan, India. It presents unaltered standard BMI calculations alongside validated complementary metrics—such as waist-to-height ratio, BMR, and TDEE—processed entirely in your browser without collecting, transmitting, or storing personal data."
       }
     ]
   },
   "es": {
-    "insightSub": "Información de Salud",
-    "insightsMainTitle": "Estándares Antropométricos y Evidencia Metabólica",
-    "insightsMainDesc": "Descubre cómo los estándares epidemiológicos internacionales, el gasto energético metabólico y la adiposidad visceral fundamentan el cribado de salud.",
+    "insightSub": "Fundamento Metodológico",
+    "insightsMainTitle": "Ciencia Antropométrica y Marcos Metabólicos",
+    "insightsMainDesc": "Conozca las ecuaciones científicas del índice de masa corporal, el gasto metabólico basal y el acondicionamiento cardiovascular.",
     "whoSub": "Estándares OMS",
     "whoTableTitle": "Estándares de Clasificación de IMC de la OMS",
     "disclaimer": "Nota: Esta tabla de clasificación se basa en los criterios de cribado epidemiológico de la Organización Mundial de la Salud (OMS) y no sustituye una evaluación médica personalizada. Atletas con gran masa muscular o adultos mayores pueden presentar lecturas particulares; consulte a un profesional médico para una evaluación integral de su salud cardiometabólica.",
@@ -244,72 +230,58 @@ const content: Record<string, any> = {
       {
         "title": "Cribado Antropométrico y Estándares Internacionales",
         "paragraphs": [
-          "El Índice de Masa Corporal (IMC = kg/m²) es un estándar epidemiológico internacional que relaciona el peso corporal con la estatura al cuadrado. Según los criterios unificados de la Organización Mundial de la Salud (OMS) y los CDC, los adultos se clasifican en cuatro categorías de referencia: Bajo peso (< 18.5), Peso saludable (18.5–24.9), Sobrepeso (25.0–29.9) y Obesidad Clases I–III (≥ 30.0).",
-          "Estos baremos reflejan correlaciones estadísticas a escala poblacional con el riesgo cardiometabólico. Sin embargo, los paneles de expertos de la OMS establecieron puntos de acción preventivos específicos para poblaciones asiáticas: riesgo incrementado a partir de 23.0 kg/m² y alto riesgo a partir de 27.5 kg/m², debido a una mayor acumulación de grasa visceral y adiposidad a pesos corporales menores.",
-          "La edad y el género biológico introducen variables determinantes. Las mujeres requieren un porcentaje mayor de grasa esencial (10–13%) que los hombres (2–5%) para el equilibrio hormonal, mientras que el envejecimiento favorece una pérdida natural de masa muscular (sarcopenia) que altera la lectura del peso."
+          "El Índice de Masa Corporal ofrece un cribado estadístico inicial al comparar el peso con la estatura al cuadrado. Según la OMS y los CDC, los adultos se clasifican en: bajo peso (< 18.5), peso saludable (18.5–24.9), sobrepeso (25.0–29.9) y obesidad (≥ 30.0). En personas de origen asiático, los puntos de acción preventiva inician en 23.0 y 27.5 debido a una mayor grasa visceral a menor peso."
         ],
         "bullets": [
-          "Rango estándar de referencia OMS: 18.5–24.9 kg/m² para vigilancia en adultos.",
-          "Puntos de acción para poblaciones asiáticas: 23.0 kg/m² (alerta) y 27.5 kg/m² (riesgo elevado).",
-          "Limitación principal: El IMC no mide la grasa corporal directamente ni su localización anatómica."
+          "Rango saludable de referencia OMS: 18.5 a 24.9 de IMC.",
+          "Puntos de acción para población asiática: alertas en 23.0 y 27.5."
         ],
         "toolLink": {
           "name": "Calcular IMC Estándar",
           "href": "/es/bmi-calculator/"
-        },
-        "text": "El Índice de Masa Corporal (IMC = kg/m²) es un estándar epidemiológico internacional que relaciona el peso corporal con la estatura al cuadrado. Según los criterios unificados de la Organización Mundial de la Salud (OMS) y los CDC, los adultos se clasifican en cuatro categorías de referencia: Bajo peso (< 18.5), Peso saludable (18.5–24.9), Sobrepeso (25.0–29.9) y Obesidad Clases I–III (≥ 30.0). Estos baremos reflejan correlaciones estadísticas a escala poblacional con el riesgo cardiometabólico. Sin embargo, los paneles de expertos de la OMS establecieron puntos de acción preventivos específicos para poblaciones asiáticas: riesgo incrementado a partir de 23.0 kg/m² y alto riesgo a partir de 27.5 kg/m², debido a una mayor acumulación de grasa visceral y adiposidad a pesos corporales menores. La edad y el género biológico introducen variables determinantes. Las mujeres requieren un porcentaje mayor de grasa esencial (10–13%) que los hombres (2–5%) para el equilibrio hormonal, mientras que el envejecimiento favorece una pérdida natural de masa muscular (sarcopenia) que altera la lectura del peso."
+        }
       },
       {
         "title": "Balance Energético Metabólico: Integración de TMB y TDEE",
         "paragraphs": [
-          "Mientras que el IMC evalúa proporciones físicas estáticas, los cálculos metabólicos estiman el gasto calórico dinámico diario. La Tasa Metabólica Basal (TMB), calculada mediante la ecuación validada de Mifflin-St Jeor, cuantifica la energía mínima indispensable para el funcionamiento de los órganos vitales (cerebro, corazón, hígado) en reposo.",
-          "El Gasto Energético Total Diario (TDEE / GETD) complementa la TMB incorporando el efecto térmico de los alimentos (~10%) y el nivel de actividad física (multiplicadores de 1.2 para vida sedentaria hasta 1.9 para deportistas de alto rendimiento).",
-          "En el diseño nutricional, el TDEE representa tu nivel calórico de equilibrio. Un déficit moderado de 300 a 500 kcal diarias promueve la pérdida de grasa de forma sostenible sin provocar adaptaciones metabólicas adversas ni pérdida muscular."
+          "Mientras que el IMC evalúa proporciones físicas, las ecuaciones metabólicas estiman el gasto calórico diario. La fórmula de Mifflin-St Jeor determina la Tasa Metabólica Basal (TMB)—la energía vital en reposo—, mientras que el Gasto Energético Total Diario (TDEE) añade la actividad y el ejercicio. Un déficit moderado de 300 a 500 kcal favorece la pérdida de grasa protegiendo el músculo."
         ],
         "bullets": [
-          "La TMB representa el suelo energético biológico necesario para la supervivencia en reposo.",
-          "El TDEE estima el consumo energético total en 24 horas incluyendo movimiento y digestión.",
-          "Pauta práctica: Un déficit controlado de 500 kcal/día propicia una pérdida gradual y saludable."
+          "TMB: Energía básica necesaria para los órganos vitales en reposo.",
+          "TDEE: Gasto calórico completo en 24 horas incluyendo movimiento."
         ],
         "toolLink": {
           "name": "Calcular TMB y GETD",
           "href": "/es/tdee-calculator/"
-        },
-        "text": "Mientras que el IMC evalúa proporciones físicas estáticas, los cálculos metabólicos estiman el gasto calórico dinámico diario. La Tasa Metabólica Basal (TMB), calculada mediante la ecuación validada de Mifflin-St Jeor, cuantifica la energía mínima indispensable para el funcionamiento de los órganos vitales (cerebro, corazón, hígado) en reposo. El Gasto Energético Total Diario (TDEE / GETD) complementa la TMB incorporando el efecto térmico de los alimentos (~10%) y el nivel de actividad física (multiplicadores de 1.2 para vida sedentaria hasta 1.9 para deportistas de alto rendimiento). En el diseño nutricional, el TDEE representa tu nivel calórico de equilibrio. Un déficit moderado de 300 a 500 kcal diarias promueve la pérdida de grasa de forma sostenible sin provocar adaptaciones metabólicas adversas ni pérdida muscular."
+        }
       },
       {
         "title": "Composición Corporal y Adiposidad Visceral Abdominal",
         "paragraphs": [
-          "El IMC no puede diferenciar entre masa muscular magra, masa ósea y grasa corporal. La grasa visceral depositada en la cavidad abdominal alrededor de los órganos internos libera citocinas inflamatorias y eleva el riesgo de diabetes tipo 2 y cardiopatías mucho más que la grasa subcutánea periférica.",
-          "Por este motivo, las sociedades médicas recomiendan medir el perímetro de cintura: valores ≥ 90 cm en hombres asiáticos o ≥ 80 cm en mujeres (frente a ≥ 102 cm y ≥ 88 cm en poblaciones occidentales) señalan un riesgo cardiometabólico incrementado."
+          "El peso en báscula no distingue entre masa muscular y tejido graso. La grasa visceral en la cavidad abdominal conlleva un riesgo cardiometabólico superior al de la grasa subcutánea periférica. Por ello, las guías médicas recomiendan medir el perímetro de cintura junto al IMC, manteniendo la cintura por debajo de la mitad de la estatura."
         ],
         "bullets": [
-          "La grasa visceral profunda está fuertemente vinculada a la resistencia a la insulina.",
-          "Ratio cintura-estatura: Mantener la cintura por debajo de la mitad de tu altura es un marcador preventivo clave.",
-          "El índice cintura-cadera distingue la distribución corporal androide (manzana) de la ginoide (pera)."
+          "La grasa visceral abdominal se relaciona con la resistencia a la insulina.",
+          "Relación cintura-estatura: Mantener la cintura bajo la mitad de la altura es óptimo."
         ],
         "toolLink": {
           "name": "Calcular Relación Cintura-Cadera",
           "href": "/es/waist-to-hip-ratio-calculator/"
-        },
-        "text": "El IMC no puede diferenciar entre masa muscular magra, masa ósea y grasa corporal. La grasa visceral depositada en la cavidad abdominal alrededor de los órganos internos libera citocinas inflamatorias y eleva el riesgo de diabetes tipo 2 y cardiopatías mucho más que la grasa subcutánea periférica. Por este motivo, las sociedades médicas recomiendan medir el perímetro de cintura: valores ≥ 90 cm en hombres asiáticos o ≥ 80 cm en mujeres (frente a ≥ 102 cm y ≥ 88 cm en poblaciones occidentales) señalan un riesgo cardiometabólico incrementado."
+        }
       },
       {
         "title": "Límites Epidemiológicos y Orientación Preventiva",
         "paragraphs": [
-          "Las calculadoras digitales aportan estimaciones estadísticas educativas y en ningún caso sustituyen un diagnóstico médico clínico. Atletas con gran desarrollo muscular suelen clasificarse erróneamente en sobrepeso a pesar de tener poca grasa, mientras que personas mayores con sarcopenia pueden tener un IMC normal pero con exceso de grasa interna.",
-          "La evaluación completa de la salud cardiovascular exige pruebas clínicas analíticas: tensión arterial, glucemia basal, hemoglobina glicada (HbA1c) y perfil lipídico supervisadas por un médico colegiado."
+          "Las fórmulas de cribado ofrecen estimaciones estadísticas para fines educativos, no diagnósticos clínicos. Atletas con gran masa muscular pueden registrar un IMC elevado sin exceso de grasa, mientras que la sarcopenia en adultos mayores puede enmascarar mayor grasa interna con un peso normal. Una evaluación médica integral siempre debe incluir analíticas clínicas."
         ],
         "bullets": [
-          "Paradoja del deportista: El tejido muscular denso eleva el peso sin significar sobrepeso adiposo.",
-          "Obesidad sarcopénica: Pérdida muscular en adultos mayores con peso aparentemente normal.",
-          "Paso siguiente: Comenta tus resultados con tu médico de cabecera junto con análisis regulares."
+          "Masa muscular atlética: El músculo denso puede elevar el IMC sin sobrepeso graso.",
+          "Sarcopenia por edad: La pérdida natural de músculo altera lecturas convencionales."
         ],
         "toolLink": {
           "name": "Consultar Peso Ideal por Altura",
           "href": "/es/ideal-weight-calculator/"
-        },
-        "text": "Las calculadoras digitales aportan estimaciones estadísticas educativas y en ningún caso sustituyen un diagnóstico médico clínico. Atletas con gran desarrollo muscular suelen clasificarse erróneamente en sobrepeso a pesar de tener poca grasa, mientras que personas mayores con sarcopenia pueden tener un IMC normal pero con exceso de grasa interna. La evaluación completa de la salud cardiovascular exige pruebas clínicas analíticas: tensión arterial, glucemia basal, hemoglobina glicada (HbA1c) y perfil lipídico supervisadas por un médico colegiado."
+        }
       }
     ],
     "whoTable": [
@@ -389,14 +361,14 @@ const content: Record<string, any> = {
       },
       {
         "q": "¿Cuál es la diferencia entre el IMC estándar y Real BMI?",
-        "a": "El IMC estándar evalúa el peso corporal en relación con la estatura según las fórmulas matemáticas oficiales de la OMS y los CDC (kg/m²). Real BMI no es una medición médica independiente ni una fórmula modificada que ajuste o altere el valor del IMC estándar. Real BMI es el nombre de nuestra plataforma educativa. Presentamos el valor del IMC estándar sin alteraciones junto con indicadores complementarios establecidos como el índice cintura-estatura (ICE/WHtR), la tasa metabólica basal (TMB/BMR) y el gasto energético total diario (GETD/TDEE) para ofrecer un contexto educativo integral, de forma totalmente privada en el navegador y sin almacenar datos de salud personales."
+        "a": "El IMC estándar evalúa el peso corporal en relación con la estatura según las fórmulas matemáticas oficiales de la OMS y los CDC (kg/m²). Real BMI es una plataforma educativa independiente creada por la desarrolladora de software Bhawanshi Dosi (Banswara, Rajastán, India). Presenta el valor del IMC estándar oficial sin alteraciones junto con indicadores complementarios establecidos como el índice cintura-estatura (ICE/WHtR), la tasa metabólica basal (TMB/BMR) y el gasto energético total diario (GETD/TDEE) para ofrecer un contexto educativo integral, de forma totalmente privada en el navegador y sin almacenar datos de salud personales."
       }
     ]
   },
   "fr": {
-    "insightSub": "Informations de Santé",
-    "insightsMainTitle": "Normes Anthropométriques et Données Métaboliques",
-    "insightsMainDesc": "Comprenez comment les repères épidémiologiques mondiaux, les modèles de dépense énergétique et la graisse viscérale guident le dépistage de santé.",
+    "insightSub": "Fondements Méthodologiques",
+    "insightsMainTitle": "Science Anthropométrique & Cadres Métaboliques",
+    "insightsMainDesc": "Découvrez les équations scientifiques régissant la masse corporelle, le métabolisme de base et l'entraînement cardiorespiratoire.",
     "whoSub": "Normes OMS",
     "whoTableTitle": "Classification de l'IMC selon l'OMS",
     "disclaimer": "L'IMC est un indicateur de dépistage et ne constitue pas un diagnostic médical individuel ni une évaluation globale des risques.",
@@ -418,72 +390,58 @@ const content: Record<string, any> = {
       {
         "title": "Dépistage Anthropométrique et Normes Internationales",
         "paragraphs": [
-          "L'Indice de Masse Corporelle (IMC = kg/m²) est une mesure épidémiologique internationale reliant la masse corporelle au carré de la taille. Selon les critères établis par l'Organisation Mondiale de la Santé (OMS), les adultes sont répartis en quatre paliers : Sous-poids (< 18,5), Poids normal (18,5–24,9), Surpoids (25,0–29,9) et Obésité (≥ 30,0).",
-          "Ces seuils reflètent des corrélations statistiques avec le risque cardiométabolique au niveau de populations entières. Toutefois, l'OMS recommande des seuils d'action abaissés pour les populations asiatiques (alerte à 23,0 kg/m² et haut risque à 27,5 kg/m²) en raison d'un tissu adipeux viscéral plus développé à poids équivalent.",
-          "L'âge et le sexe influencent naturellement l'interprétation : les femmes possèdent un taux de graisse essentielle plus élevé (10–13%) pour l'équilibre endocrinien, tandis que l'avancée en âge s'accompagne d'une fonte musculaire (sarcopénie)."
+          "L'Indice de Masse Corporelle fournit un dépistage statistique initial en reliant le poids au carré de la taille. Selon l'OMS et le CDC, les adultes sont classés en : sous-poids (< 18,5), poids normal (18,5–24,9), surpoids (25,0–29,9) et obésité (≥ 30,0). Pour les populations asiatiques, des seuils d'action abaissés (23,0 et 27,5) signalent un risque cardiométabolique accru à un poids corporel moindre."
         ],
         "bullets": [
-          "Seuil de référence OMS mondial : 18,5–24,9 kg/m² pour l'adulte standard.",
-          "Seuils d'alerte populations asiatiques : 23,0 kg/m² (surpoids) et 27,5 kg/m² (obésité).",
-          "Limite majeure : L'IMC ne distingue pas la masse musculaire du tissu adipeux."
+          "Plage saine de référence OMS : 18,5 à 24,9 d'IMC.",
+          "Seuils populations asiatiques : repères d'alerte dès 23,0 et 27,5."
         ],
         "toolLink": {
           "name": "Calculer son IMC",
           "href": "/fr/bmi-calculator/"
-        },
-        "text": "L'Indice de Masse Corporelle (IMC = kg/m²) est une mesure épidémiologique internationale reliant la masse corporelle au carré de la taille. Selon les critères établis par l'Organisation Mondiale de la Santé (OMS), les adultes sont répartis en quatre paliers : Sous-poids (< 18,5), Poids normal (18,5–24,9), Surpoids (25,0–29,9) et Obésité (≥ 30,0). Ces seuils reflètent des corrélations statistiques avec le risque cardiométabolique au niveau de populations entières. Toutefois, l'OMS recommande des seuils d'action abaissés pour les populations asiatiques (alerte à 23,0 kg/m² et haut risque à 27,5 kg/m²) en raison d'un tissu adipeux viscéral plus développé à poids équivalent. L'âge et le sexe influencent naturellement l'interprétation : les femmes possèdent un taux de graisse essentielle plus élevé (10–13%) pour l'équilibre endocrinien, tandis que l'avancée en âge s'accompagne d'une fonte musculaire (sarcopénie)."
+        }
       },
       {
         "title": "Équilibre Métabolique : Intégration du BMR et TDEE",
         "paragraphs": [
-          "Tandis que l'IMC analyse un rapport statique, les équations métaboliques mesurent la dépense énergétique journalière. Le Métabolisme de Base (BMR), calculé selon la formule Mifflin-St Jeor, isole l'énergie vitale nécessaire au fonctionnement des organes nobles (cœur, cerveau, reins) au repos absolu.",
-          "La Dépense Énergétique Totale (TDEE) complète le métabolisme de base en intégrant le niveau d'activité physique (facteur 1,2 sédentaire à 1,9 très actif) et la thermogenèse des repas (~10%).",
-          "En pratique nutritionnelle, le TDEE est votre niveau de maintien calorique. Un déficit modéré de 300 à 500 kcal par jour favorise un amincissement durable sans altérer la masse musculaire."
+          "Tandis que l'IMC analyse des proportions statiques, les équations métaboliques mesurent la dépense calorique quotidienne. La formule Mifflin-St Jeor calcule le Métabolisme de Base (BMR)—l'énergie vitale au repos—, complété par la Dépense Énergétique Totale (TDEE) intégrant l'activité physique. Un déficit modéré de 300 à 500 kcal par jour soutient une perte de graisse saine en préservant la masse maigre."
         ],
         "bullets": [
-          "Le BMR fixe le seuil calorique minimal incompressible de survie au repos.",
-          "Le TDEE représente la dépense globale réelle en 24h activité comprise.",
-          "Règle d'or : Un déficit calorique modéré préserve le métabolisme et évite l'effet yoyo."
+          "BMR : Énergie vitale minimale requise par les organes au repos.",
+          "TDEE : Dépense énergétique réelle sur 24h incluant l'activité."
         ],
         "toolLink": {
           "name": "Calculer son BMR et TDEE",
           "href": "/fr/tdee-calculator/"
-        },
-        "text": "Tandis que l'IMC analyse un rapport statique, les équations métaboliques mesurent la dépense énergétique journalière. Le Métabolisme de Base (BMR), calculé selon la formule Mifflin-St Jeor, isole l'énergie vitale nécessaire au fonctionnement des organes nobles (cœur, cerveau, reins) au repos absolu. La Dépense Énergétique Totale (TDEE) complète le métabolisme de base en intégrant le niveau d'activité physique (facteur 1,2 sédentaire à 1,9 très actif) et la thermogenèse des repas (~10%). En pratique nutritionnelle, le TDEE est votre niveau de maintien calorique. Un déficit modéré de 300 à 500 kcal par jour favorise un amincissement durable sans altérer la masse musculaire."
+        }
       },
       {
         "title": "Composition Corporelle et Adiposité Viscérale",
         "paragraphs": [
-          "L'IMC traditionnel ne localise pas la répartition des graisses. La graisse viscérale profonde logée autour des organes de l'abdomen libère des molécules inflammatoires et induit des risques cardiovasculaires bien plus critiques que la graisse sous-cutanée des membres.",
-          "Les autorités de santé préconisent donc de mesurer le tour de taille : un seuil ≥ 90 cm chez l'homme asiatique ou ≥ 80 cm chez la femme (contre ≥ 102 cm et ≥ 88 cm en Occident) caractérise un risque cardiométabolique accru."
+          "Le poids sur la balance ne distingue pas le tissu musculaire de la masse adipeuse. La graisse viscérale logée autour des organes abdominaux présente un risque cardiométabolique bien plus élevé que la graisse sous-cutanée des hanches ou des membres. Les experts préconisent ainsi de mesurer le tour de taille en complément de l'IMC, en visant une valeur inférieure à la moitié de la taille."
         ],
         "bullets": [
-          "La graisse viscérale intra-abdominale est directement associée à la résistance à l'insuline.",
-          "Rapport taille-hauteur : Garder un tour de taille inférieur à la moitié de sa stature est protecteur.",
-          "Le ratio taille-hanches différencie la morphologie androïde (pomme) de la morphologie gynoïde (poire)."
+          "La graisse viscérale abdominale est liée à l'insulinorésistance.",
+          "Ratio tour de taille-hauteur : Rester sous la moitié de sa stature est optimal."
         ],
         "toolLink": {
           "name": "Calculer le Ratio Taille-Hanches",
           "href": "/fr/waist-to-hip-ratio-calculator/"
-        },
-        "text": "L'IMC traditionnel ne localise pas la répartition des graisses. La graisse viscérale profonde logée autour des organes de l'abdomen libère des molécules inflammatoires et induit des risques cardiovasculaires bien plus critiques que la graisse sous-cutanée des membres. Les autorités de santé préconisent donc de mesurer le tour de taille : un seuil ≥ 90 cm chez l'homme asiatique ou ≥ 80 cm chez la femme (contre ≥ 102 cm et ≥ 88 cm en Occident) caractérise un risque cardiométabolique accru."
+        }
       },
       {
         "title": "Limites Épidémiologiques et Démarche Médicale",
         "paragraphs": [
-          "Les calculateurs en ligne délivrent des repères statistiques et ne remplacent pas une consultation clinique. Un profil très musclé peut afficher un IMC de surpoids avec un taux de graisse très bas, tandis qu'un sénior sarcopénique peut afficher un IMC normal malgré un excès de graisse profonde.",
-          "Une analyse de santé personnalisée nécessite l'évaluation de la tension artérielle, de la glycémie à jeun, de l'HbA1c et du profil lipidique par un médecin diplômé."
+          "Les formules de dépistage délivrent des repères statistiques éducatifs et ne remplacent pas un diagnostic clinique. Des sportifs très musclés peuvent présenter un IMC élevé sans surplus graisseux, tandis que la sarcopénie chez le senior peut masquer une adiposité accrue derrière un poids normal. Une évaluation de santé complète repose toujours sur des examens médicaux et des bilans biologiques."
         ],
         "bullets": [
-          "Biais athlétique : La densité musculaire augmente la masse totale sans adiposité pathologique.",
-          "Obésité sarcopénique : Perte de force musculaire masquée par un poids normal chez le senior.",
-          "Recommandation : Faites vérifier régulièrement vos constantes biologiques par votre praticien."
+          "Masse musculaire sportive : Le muscle dense peut élever l'IMC sans excès de graisse.",
+          "Sarcopénie liée à l'âge : La baisse musculaire naturelle modifie les repères usuels."
         ],
         "toolLink": {
           "name": "Consulter le Poids Idéal par Taille",
           "href": "/fr/ideal-weight-calculator/"
-        },
-        "text": "Les calculateurs en ligne délivrent des repères statistiques et ne remplacent pas une consultation clinique. Un profil très musclé peut afficher un IMC de surpoids avec un taux de graisse très bas, tandis qu'un sénior sarcopénique peut afficher un IMC normal malgré un excès de graisse profonde. Une analyse de santé personnalisée nécessite l'évaluation de la tension artérielle, de la glycémie à jeun, de l'HbA1c et du profil lipidique par un médecin diplômé."
+        }
       }
     ],
     "whoTable": [
@@ -563,14 +521,14 @@ const content: Record<string, any> = {
       },
       {
         "q": "Quelle est la différence entre l'IMC standard et le Real BMI ?",
-        "a": "L'IMC standard évalue le poids corporel par rapport à la taille selon les formules mathématiques officielles de l'OMS et des CDC (kg/m²). Real BMI n'est ni une mesure médicale distincte ni une formule modifiée qui ajuste ou change votre score d'IMC standard. Real BMI est le nom de notre plateforme éducative. Nous présentons le calcul d'IMC standard officiel inchangé aux côtés d'indicateurs complémentaires établis (tels que le ratio tour de taille / taille, le BMR et le TDEE) afin d'offrir un contexte éducatif élargi — de manière 100 % privée dans votre navigateur et sans stocker la moindre donnée de santé personnelle."
+        "a": "L'IMC standard évalue le poids corporel par rapport à la taille selon les formules mathématiques officielles de l'OMS et des CDC (kg/m²). Real BMI est une plateforme éducative indépendante créée par l'ingénieure logiciel Bhawanshi Dosi (Banswara, Rajasthan, Inde). Elle présente le calcul d'IMC standard officiel inchangé aux côtés d'indicateurs complémentaires établis (tels que le ratio taille-hauteur, le BMR et le TDEE) afin d'offrir un contexte éducatif élargi — de manière 100 % privée dans votre navigateur et sans stocker la moindre donnée de santé personnelle."
       }
     ]
   },
   "de": {
-    "insightSub": "Gesundheitsanalysen",
-    "insightsMainTitle": "Anthropometrische Standards & Stoffwechselempfehlungen",
-    "insightsMainDesc": "Erfahren Sie, wie internationale Richtwerte, der tägliche Energieumsatz und viszerale Fettindikatoren fundierte Orientierung bieten.",
+    "insightSub": "Methodische Grundlagen",
+    "insightsMainTitle": "Anthropometrische Wissenschaft & Stoffwechselrahmen",
+    "insightsMainDesc": "Verstehen Sie die wissenschaftlichen Gleichungen für Körpermasse, Grundumsatz und kardiovaskuläre Trainingsbereiche.",
     "whoSub": "WHO Standards",
     "whoTableTitle": "WHO BMI-Klassifikationstabelle",
     "disclaimer": "Der BMI ist ein statistisches Screening-Werkzeug und ersetzt keine individuelle ärztliche Diagnostik.",
@@ -592,72 +550,58 @@ const content: Record<string, any> = {
       {
         "title": "Anthropometrisches Screening & Internationale WHO-Standards",
         "paragraphs": [
-          "Der Body-Mass-Index (BMI = kg/m²) ist ein weltweit eingesetztes statistisches Screening-Maß, das das Körpergewicht mit der quadrierten Körpergröße ins Verhältnis setzt. Die Weltgesundheitsorganisation (WHO) und die CDC unterteilen Erwachsene in vier Hauptstufen: Untergewicht (< 18,5), Normalgewicht (18,5–24,9), Übergewicht (25,0–29,9) und Adipositas Grad I–III (≥ 30,0).",
-          "Diese Einteilungen basieren auf epidemiologischen Daten zur Gesamtmortalität. Allerdings hat die WHO-Expertenkommission für asiatische Bevölkerungen herabgesetzte Schwellenwerte definiert: erhöhtes Risiko ab 23,0 kg/m² und hohes Risiko ab 27,5 kg/m², da in diesen Populationen viszerales Bauchfett bei geringerem Gewicht vermehrt auftritt.",
-          "Alter und biologisches Geschlecht spielen eine erhebliche Rolle: Frauen benötigen einen höheren Anteil essenziellen Fetts (10–13%) gegenüber Männern (2–5%), während im Alter der Muskelabbau (Sarkopenie) das Gewichtsbild verschiebt."
+          "Der Body-Mass-Index bietet ein erstes statistisches Screening, indem er das Körpergewicht ins Verhältnis zur quadrierten Körpergröße setzt. Laut WHO und CDC gelten für Erwachsene vier Kernstufen: Untergewicht (< 18,5), Normalgewicht (18,5–24,9), Übergewicht (25,0–29,9) und Adipositas (≥ 30,0). Für asiatische Erwachsene empfehlen WHO-Leitlinien vorgezogene Interventionspunkte bei 23,0 und 27,5 wegen erhöhter viszeraler Fetteinlagerung bei geringerem Gewicht."
         ],
         "bullets": [
-          "Globaler WHO-Standardbereich: 18,5–24,9 kg/m² für Erwachsene.",
-          "Asiatische Aktionspunkte: 23,0 kg/m² (Vorstufe) und 27,5 kg/m² (Adipositas-Risiko).",
-          "Grenze des BMI: Er misst weder Fettverteilung noch Knochendichte oder Muskelmasse."
+          "Standard-WHO-Referenzbereich für Erwachsene: 18,5 bis 24,9 BMI.",
+          "Asiatische Richtwerte: Interventionsschwellen beginnen bei 23,0 und 27,5."
         ],
         "toolLink": {
           "name": "Standard-BMI berechnen",
           "href": "/de/bmi-calculator/"
-        },
-        "text": "Der Body-Mass-Index (BMI = kg/m²) ist ein weltweit eingesetztes statistisches Screening-Maß, das das Körpergewicht mit der quadrierten Körpergröße ins Verhältnis setzt. Die Weltgesundheitsorganisation (WHO) und die CDC unterteilen Erwachsene in vier Hauptstufen: Untergewicht (< 18,5), Normalgewicht (18,5–24,9), Übergewicht (25,0–29,9) und Adipositas Grad I–III (≥ 30,0). Diese Einteilungen basieren auf epidemiologischen Daten zur Gesamtmortalität. Allerdings hat die WHO-Expertenkommission für asiatische Bevölkerungen herabgesetzte Schwellenwerte definiert: erhöhtes Risiko ab 23,0 kg/m² und hohes Risiko ab 27,5 kg/m², da in diesen Populationen viszerales Bauchfett bei geringerem Gewicht vermehrt auftritt. Alter und biologisches Geschlecht spielen eine erhebliche Rolle: Frauen benötigen einen höheren Anteil essenziellen Fetts (10–13%) gegenüber Männern (2–5%), während im Alter der Muskelabbau (Sarkopenie) das Gewichtsbild verschiebt."
+        }
       },
       {
         "title": "Metabolische Energiebalance: BMR und TDEE integrieren",
         "paragraphs": [
-          "Während der BMI statische Körperproportionen abbildet, ermitteln Stoffwechselformeln den täglichen Kalorienverbrauch. Der Grundumsatz (BMR nach Mifflin-St Jeor) beziffert die Mindestenergie, die lebenswichtige Organe (Gehirn, Herz, Nieren) im absoluten Ruhezustand verbrauchen.",
-          "Der Gesamtenergiebedarf (TDEE) baut auf dem Grundumsatz auf und berücksichtigt den Aktivitätsfaktor (PAL 1,2 für Sitzende bis 1,9 für Leistungssportler) sowie die nahrungsinduzierte Thermogenese (~10%).",
-          "In der Ernährungsplanung markiert der TDEE Ihre Erhaltungskalorien. Ein moderates Defizit von 300 bis 500 kcal pro Tag ermöglicht einen stetigen Fettabbau ohne schädliche Stoffwechselverlangsamung."
+          "Während der BMI statische Körpermaße bewertet, berechnen Stoffwechselgleichungen den täglichen Energieverbrauch. Die Mifflin-St Jeor-Formel ermittelt den Grundumsatz (BMR)—den Mindestenergiebedarf lebenswichtiger Organe in Ruhe—, während der Gesamtenergiebedarf (TDEE) Bewegung und Sport einbezieht. Ein kontrolliertes Defizit von 300 bis 500 kcal unter dem TDEE unterstützt nachhaltigen Fettabbau bei Muskelschutz."
         ],
         "bullets": [
-          "BMR ist das biologische Energieminimum im Ruhezustand.",
-          "TDEE umfasst den gesamten Energieverbrauch in 24 Stunden inklusive Bewegung.",
-          "Empfehlung: Ein moderates Kaloriendefizit schützt die wertvolle Muskelmasse."
+          "BMR: Biologischer Grundenergiebedarf der Organe im Ruhezustand.",
+          "TDEE: Gesamter 24-Stunden-Kalorienverbrauch inklusive Alltagsbewegung."
         ],
         "toolLink": {
           "name": "BMR und TDEE berechnen",
           "href": "/de/tdee-calculator/"
-        },
-        "text": "Während der BMI statische Körperproportionen abbildet, ermitteln Stoffwechselformeln den täglichen Kalorienverbrauch. Der Grundumsatz (BMR nach Mifflin-St Jeor) beziffert die Mindestenergie, die lebenswichtige Organe (Gehirn, Herz, Nieren) im absoluten Ruhezustand verbrauchen. Der Gesamtenergiebedarf (TDEE) baut auf dem Grundumsatz auf und berücksichtigt den Aktivitätsfaktor (PAL 1,2 für Sitzende bis 1,9 für Leistungssportler) sowie die nahrungsinduzierte Thermogenese (~10%). In der Ernährungsplanung markiert der TDEE Ihre Erhaltungskalorien. Ein moderates Defizit von 300 bis 500 kcal pro Tag ermöglicht einen stetigen Fettabbau ohne schädliche Stoffwechselverlangsamung."
+        }
       },
       {
         "title": "Körperzusammensetzung und viszerales Bauchfett",
         "paragraphs": [
-          "Der Standard-BMI kann nicht zwischen stoffwechselaktiver Muskelmasse und Fettgewebe unterscheiden. Tiefes viszerales Fett in der Bauchhöhle umgibt Leber und Bauchspeicheldrüse und setzt Entzündungsstoffe frei, die ein weitaus höheres Risiko darstellen als peripheres Unterhautfettgewebe.",
-          "Gesundheitsexperten empfehlen daher dringend die Messung des Taillenumfangs: Ab ≥ 90 cm bei Männern und ≥ 80 cm bei Frauen (in Asien) bzw. ≥ 102 cm und ≥ 88 cm (im Westen) steigt das Risiko für Herz-Kreislauf-Erkrankungen."
+          "Das reine Körpergewicht unterscheidet nicht zwischen Muskelgewebe und Fettmasse. Tiefes viszerales Bauchfett um innere Organe birgt ein deutlich höheres kardiometabolisches Risiko als peripheres Unterhautfett an Hüfte oder Beinen. Fachgesellschaften empfehlen daher die ergänzende Messung des Taillenumfangs mit dem Ziel, den Taillenumfang unter der Hälfte der Körpergröße zu halten."
         ],
         "bullets": [
-          "Viszerales Bauchfett begünstigt Insulinresistenz und Arteriosklerose.",
-          "Taille-zu-Größe-Verhältnis (WHtR): Ein Wert unter 0,5 signalisiert ein geringes Risiko.",
-          "Das Taille-zu-Hüfte-Verhältnis (WHR) unterscheidet Apfel- von Birnenkörperformen."
+          "Viszerales Bauchfett steht in direktem Zusammenhang mit Insulinresistenz.",
+          "Taille-zu-Größe-Verhältnis: Taillenumfang unter der halben Körpergröße ist optimal."
         ],
         "toolLink": {
           "name": "Taillenumfang & WHR prüfen",
           "href": "/de/waist-to-hip-ratio-calculator/"
-        },
-        "text": "Der Standard-BMI kann nicht zwischen stoffwechselaktiver Muskelmasse und Fettgewebe unterscheiden. Tiefes viszerales Fett in der Bauchhöhle umgibt Leber und Bauchspeicheldrüse und setzt Entzündungsstoffe frei, die ein weitaus höheres Risiko darstellen als peripheres Unterhautfettgewebe. Gesundheitsexperten empfehlen daher dringend die Messung des Taillenumfangs: Ab ≥ 90 cm bei Männern und ≥ 80 cm bei Frauen (in Asien) bzw. ≥ 102 cm und ≥ 88 cm (im Westen) steigt das Risiko für Herz-Kreislauf-Erkrankungen."
+        }
       },
       {
         "title": "Klinische Grenzen und medizinischer Ablauf",
         "paragraphs": [
-          "Online-Rechner liefern statistische Schätzungen für Bildungszwecke, aber keine ärztliche Diagnose. Muskulöse Kraftsportler fallen aufgrund ihrer Muskelmasse oft in die Kategorie Übergewicht, während Senioren trotz Normalgewichts zu viel Bauchfett aufweisen können.",
-          "Für eine verlässliche kardiometabolische Gesamteinschätzung sind Laborwerte wie Blutdruck, Nüchternblutzucker, Langzeitzucker (HbA1c) und Blutfettwerte durch einen Arzt erforderlich."
+          "Screening-Formeln liefern statistische Richtwerte für Bildungszwecke, aber keine ärztliche Diagnose. Muskulöse Sportler weisen oft einen erhöhten BMI ohne Fettüberschuss auf, während altersbedingte Sarkopenie bei Senioren einen höheren Fettanteil hinter normalem Gewicht verbergen kann. Eine fundierte Gesundheitsbewertung erfordert stets eine ärztliche Untersuchung samt Labordiagnostik."
         ],
         "bullets": [
-          "Sportler-Paradox: Dichte Muskelmasse führt oft zu irreführend hohen BMI-Werten.",
-          "Sarkopene Adipositas: Muskelverlust im Alter bei optisch normalem Gewicht.",
-          "Empfehlung: Besprechen Sie Ihre Werte mit Ihrem Hausarzt bei der Routineuntersuchung."
+          "Athletische Muskelmasse: Dichtes Muskelgewebe kann den BMI ohne Fettübermaß erhöhen.",
+          "Altersbedingte Sarkopenie: Natürlicher Muskelverlust verändert Standardmesswerte."
         ],
         "toolLink": {
           "name": "Idealgewicht nach Größe prüfen",
           "href": "/de/ideal-weight-calculator/"
-        },
-        "text": "Online-Rechner liefern statistische Schätzungen für Bildungszwecke, aber keine ärztliche Diagnose. Muskulöse Kraftsportler fallen aufgrund ihrer Muskelmasse oft in die Kategorie Übergewicht, während Senioren trotz Normalgewichts zu viel Bauchfett aufweisen können. Für eine verlässliche kardiometabolische Gesamteinschätzung sind Laborwerte wie Blutdruck, Nüchternblutzucker, Langzeitzucker (HbA1c) und Blutfettwerte durch einen Arzt erforderlich."
+        }
       }
     ],
     "whoTable": [
@@ -737,14 +681,14 @@ const content: Record<string, any> = {
       },
       {
         "q": "Was ist der Unterschied zwischen dem Standard-BMI und Real BMI?",
-        "a": "Der Standard-BMI bewertet das Körpergewicht im Verhältnis zur Körpergröße streng nach den offiziellen mathematischen Formeln der WHO und CDC (kg/m²). Real BMI ist weder ein eigenständiger medizinischer Messwert noch eine modifizierte Berechnungsformel, die den Standard-BMI-Wert anpasst oder verändert. Real BMI ist der Name unserer Bildungsplattform. Wir stellen den unveränderten Standard-BMI-Wert neben etablierte ergänzende Indikatoren wie das Taille-zu-Größe-Verhältnis (WHtR), den Grundumsatz (BMR) und den Gesamtenergiebedarf (TDEE), um einen umfassenden Bildungskontext zu bieten – vollständig privat im Browser und ohne Speicherung persönlicher Gesundheitsdaten."
+        "a": "Der Standard-BMI bewertet das Körpergewicht im Verhältnis zur Körpergröße streng nach den offiziellen mathematischen Formeln der WHO und CDC (kg/m²). Real BMI ist eine unabhängige Bildungsplattform, die von der Softwareentwicklerin Bhawanshi Dosi (Banswara, Rajasthan, Indien) entwickelt wurde. Sie stellt den unveränderten Standard-BMI-Wert neben etablierte ergänzende Indikatoren wie das Taille-zu-Größe-Verhältnis (WHtR), den Grundumsatz (BMR) und den Gesamtenergiebedarf (TDEE), um einen umfassenden Bildungskontext zu bieten – vollständig privat im Browser und ohne Speicherung persönlicher Gesundheitsdaten."
       }
     ]
   },
   "ko": {
-    "insightSub": "건강 지표 가이드",
-    "insightsMainTitle": "인체계측 기준 및 대사 건강 가이드",
-    "insightsMainDesc": "국제 역학 기준, 기초 및 총 대사 에너지 소비량, 복부 내장 지방 지표를 통해 본인의 신체 상태를 과학적으로 해석하세요.",
+    "insightSub": "방법론적 기반",
+    "insightsMainTitle": "인체계측 과학 및 대사 프레임워크",
+    "insightsMainDesc": "체질량지수(BMI) 스크리닝, 기초대사량(BMR) 및 심폐 건강에 적용된 근거 기반 공식을 안내합니다.",
     "whoSub": "WHO 표준",
     "whoTableTitle": "WHO 체질량지수(BMI) 분류 기준표",
     "disclaimer": "참고: 본 BMI 기준표는 세계보건기구(WHO)의 인구 집단 역학 선별 기준에 기반하며, 개별적인 의학적 진단을 대신하지 않습니다. 정확한 건강 상태 평가는 허리둘레, 혈액 검사 및 의료 전문가와의 상담을 통해 이루어져야 합니다.",
@@ -766,72 +710,58 @@ const content: Record<string, any> = {
       {
         "title": "인체 계측 스크리닝 및 국제 WHO 표준 기준",
         "paragraphs": [
-          "체질량지수(BMI = kg/m²)는 신장의 제곱에 대비한 체중 비율을 평가하는 세계보건기구(WHO) 및 질병관리청 표준 1차 스크리닝 지표입니다. 성인 기준은 통상 저체중(< 18.5), 정상 체중(18.5~24.9), 과체중(25.0~29.9), 비만 1~3단계(≥ 30.0)로 나뉩니다.",
-          "그러나 아시아 및 한국인 성인의 경우 동일 체중에서도 내장 지방 비율이 높아 당뇨병과 고혈압 발병 위험이 조기에 나타납니다. 이에 따라 WHO 아시아 전문가 패널은 과체중 기준을 23.0 kg/m², 고위험 비만 기준을 27.5 kg/m²로 하향 조정한 실행 분별점을 권고합니다.",
-          "연령과 생물학적 성별 또한 중요한 해석 요인입니다. 여성은 내분비 유지를 위해 남성보다 높은 필수 지방(10~13%)을 보유하며, 노화에 따른 근감소증은 체중이 정상이어도 내장 지방이 축적되는 원인이 됩니다."
+          "체질량지수는 신장 대비 체중 비율을 평가하는 통계적 1차 스크리닝 도구입니다. 세계보건기구(WHO)와 질병통제예방센터(CDC) 기준 성인은 저체중(18.5 미만), 정상 체중(18.5~24.9), 과체중(25.0~29.9), 비만(30.0 이상)으로 분류됩니다. 아시아 성인의 경우 동일 체중에서도 내장 지방 축적 비율이 높아 조기 주의 기준(과체중 23.0, 비만 27.5)을 별도로 적용합니다."
         ],
         "bullets": [
-          "글로벌 WHO 표준 구간: 성인 18.5~24.9 kg/m² 정상 기준.",
-          "아시아 인구 분별점: 23.0 kg/m² (위험 증가) 및 27.5 kg/m² (고위험).",
-          "한계점: 골격근량과 체지방의 체내 분포를 분별하지 못함."
+          "국제 WHO 표준 정상 체중 구간: BMI 18.5 ~ 24.9.",
+          "아시아 성인 건강 가이드라인: 23.0 및 27.5에서 조기 관리 권고."
         ],
         "toolLink": {
           "name": "표준 BMI 계산기",
           "href": "/ko/bmi-calculator/"
-        },
-        "text": "체질량지수(BMI = kg/m²)는 신장의 제곱에 대비한 체중 비율을 평가하는 세계보건기구(WHO) 및 질병관리청 표준 1차 스크리닝 지표입니다. 성인 기준은 통상 저체중(< 18.5), 정상 체중(18.5~24.9), 과체중(25.0~29.9), 비만 1~3단계(≥ 30.0)로 나뉩니다. 그러나 아시아 및 한국인 성인의 경우 동일 체중에서도 내장 지방 비율이 높아 당뇨병과 고혈압 발병 위험이 조기에 나타납니다. 이에 따라 WHO 아시아 전문가 패널은 과체중 기준을 23.0 kg/m², 고위험 비만 기준을 27.5 kg/m²로 하향 조정한 실행 분별점을 권고합니다. 연령과 생물학적 성별 또한 중요한 해석 요인입니다. 여성은 내분비 유지를 위해 남성보다 높은 필수 지방(10~13%)을 보유하며, 노화에 따른 근감소증은 체중이 정상이어도 내장 지방이 축적되는 원인이 됩니다."
+        }
       },
       {
         "title": "대사 에너지 균형: BMR과 TDEE의 통합",
         "paragraphs": [
-          "BMI가 정적인 신체 비율을 보여준다면, 대사 공식은 하루에 소모되는 동적인 에너지양을 계산합니다. 미플린-세인트 지어(Mifflin-St Jeor) 공식으로 산출되는 기초대사량(BMR)은 뇌, 심장, 간 등 주요 장기가 휴식 상태에서 소모하는 최소 생명 유지 칼로리입니다.",
-          "일일 총 에너지 소비량(TDEE)은 기초대사량에 신체 활동 수준(좌식 1.2 ~ 고강도 운동 1.9)과 식사 유도성 열 발생(~10%)을 더해 하루 총 소비 칼로리를 산출합니다.",
-          "체중 관리 시 TDEE는 체중 유지선이 되며, 건강한 감량을 위해서는 TDEE에서 하루 300~500 kcal 정도의 완만한 적자를 설정하여 대사 저하를 방지해야 합니다."
+          "BMI가 정적인 신체 비율을 측정한다면, 대사 방정식은 일일 에너지 소비량을 산출합니다. 미플린-세인트 지어 공식은 휴식 시 주요 장기 기능 유지에 필요한 기초대사량(BMR)을 계산하고, 일일 총 에너지 소비량(TDEE)은 활동과 운동량을 반영합니다. TDEE 기준 하루 300~500 kcal의 완만한 칼로리 조절은 근육 손실 없이 지속적인 체지방 관리를 돕습니다."
         ],
         "bullets": [
-          "BMR: 휴식 중 생존 유지를 위한 최소 필수 칼로리 하한선.",
-          "TDEE: 모든 일상 활동과 운동을 포함한 하루 총 에너지 소비량.",
-          "감량 원칙: 완만한 500 kcal 적자가 안전한 체지방 연소를 유도합니다."
+          "BMR: 휴식 중 생명 유지에 필요한 최소 기초 에너지 요구량.",
+          "TDEE: 일상 활동과 운동을 모두 포함한 24시간 총 칼로리 소비량."
         ],
         "toolLink": {
           "name": "BMR 및 TDEE 계산기",
           "href": "/ko/tdee-calculator/"
-        },
-        "text": "BMI가 정적인 신체 비율을 보여준다면, 대사 공식은 하루에 소모되는 동적인 에너지양을 계산합니다. 미플린-세인트 지어(Mifflin-St Jeor) 공식으로 산출되는 기초대사량(BMR)은 뇌, 심장, 간 등 주요 장기가 휴식 상태에서 소모하는 최소 생명 유지 칼로리입니다. 일일 총 에너지 소비량(TDEE)은 기초대사량에 신체 활동 수준(좌식 1.2 ~ 고강도 운동 1.9)과 식사 유도성 열 발생(~10%)을 더해 하루 총 소비 칼로리를 산출합니다. 체중 관리 시 TDEE는 체중 유지선이 되며, 건강한 감량을 위해서는 TDEE에서 하루 300~500 kcal 정도의 완만한 적자를 설정하여 대사 저하를 방지해야 합니다."
+        }
       },
       {
         "title": "체성분과 복부 내장 지방 지표",
         "paragraphs": [
-          "단순 체중계 수치로는 지방이 축적된 해부학적 위치를 알 수 없습니다. 복부 장기 주변에 쌓인 내장 지방은 피하지방보다 염증 유발 사이토카인을 분비하여 대사 질환 위험을 급격히 높입니다.",
-          "따라서 의료계에서는 BMI와 허리둘레 측정을 반드시 병행할 것을 권장합니다. 아시아 남성 90cm, 여성 85cm 이상은 복부 비만으로 간주하여 주의가 필요합니다."
+          "단순 체중계 수치만으로는 근육 조직과 체지방 조직을 구분할 수 없습니다. 복부 내부 장기를 둘러싼 내장 지방은 피하지방보다 심대사 질환 위험을 크게 높입니다. 따라서 보건 지침에서는 BMI와 함께 허리둘레를 측정하여 허리둘레를 신장의 절반 미만으로 유지하는 허리둘레-신장 비율(WHtR) 관리를 권장합니다."
         ],
         "bullets": [
-          "복부 내장 지방은 인슐린 저항성과 지방간을 촉진합니다.",
-          "허리둘레-신장 비율(WHtR): 허리둘레가 키의 절반(0.5 미만)을 넘지 않도록 관리.",
-          "허리-엉덩이 비율(WHR)로 상체 중심 비만을 조기에 판별."
+          "복부 내장 지방은 인슐린 저항성 및 대사 위험과 직접적으로 연관됩니다.",
+          "허리둘레-신장 비율: 허리둘레를 키의 절반 미만으로 유지하는 것이 이상적입니다."
         ],
         "toolLink": {
           "name": "허리-엉덩이 비율(WHR) 계산기",
           "href": "/ko/waist-to-hip-ratio-calculator/"
-        },
-        "text": "단순 체중계 수치로는 지방이 축적된 해부학적 위치를 알 수 없습니다. 복부 장기 주변에 쌓인 내장 지방은 피하지방보다 염증 유발 사이토카인을 분비하여 대사 질환 위험을 급격히 높입니다. 따라서 의료계에서는 BMI와 허리둘레 측정을 반드시 병행할 것을 권장합니다. 아시아 남성 90cm, 여성 85cm 이상은 복부 비만으로 간주하여 주의가 필요합니다."
+        }
       },
       {
         "title": "역학적 스크리닝의 한계 및 건강검진 권고사항",
         "paragraphs": [
-          "온라인 건강 계산기는 통계적 교육 도구이며 의학적 진단을 대신하지 않습니다. 근육량이 많은 운동선수는 체지방이 낮아도 과체중으로 판정될 수 있고, 노년층은 정상 체중이어도 근육 감소로 내장 지방 위험이 높을 수 있습니다.",
-          "정확한 심대사 건강 평가를 위해서는 전문의와의 정기 진료 및 혈압, 공복 혈당, 당화혈색소(HbA1c), 지질 검사를 종합적으로 확인해야 합니다."
+          "건강 스크리닝 공식은 대규모 통계에 기반한 교육적 참고치이며 의학적 진단이 아닙니다. 근육량이 많은 운동선수는 체지방이 적어도 높은 BMI가 나올 수 있으며, 노년기 자연스러운 근감소증은 정상 체중 뒤에 높은 체지방을 숨길 수 있습니다. 종합적인 건강 상태 확인은 전문의 진료와 정기 혈액 검사를 통해 이루어져야 합니다."
         ],
         "bullets": [
-          "운동선수 왜곡: 골격근량이 높으면 수치가 과대평가될 수 있음.",
-          "근감소성 비만: 체중이 정상이어도 근육 결핍과 내장 지방이 공존하는 상태.",
-          "행동 요령: 정기 건강검진 혈액 검사를 통해 신체 지표를 교차 검증하세요."
+          "운동선수 체형 특성: 발달된 근육량으로 인해 체지방 없이도 수치가 높게 나타날 수 있습니다.",
+          "연령별 근감소증: 자연스러운 근육 소실로 표준 체중 지표 해석이 달라질 수 있습니다."
         ],
         "toolLink": {
           "name": "신장별 표준 이상 체중 확인",
           "href": "/ko/ideal-weight-calculator/"
-        },
-        "text": "온라인 건강 계산기는 통계적 교육 도구이며 의학적 진단을 대신하지 않습니다. 근육량이 많은 운동선수는 체지방이 낮아도 과체중으로 판정될 수 있고, 노년층은 정상 체중이어도 근육 감소로 내장 지방 위험이 높을 수 있습니다. 정확한 심대사 건강 평가를 위해서는 전문의와의 정기 진료 및 혈압, 공복 혈당, 당화혈색소(HbA1c), 지질 검사를 종합적으로 확인해야 합니다."
+        }
       }
     ],
     "whoTable": [
@@ -911,14 +841,14 @@ const content: Record<string, any> = {
       },
       {
         "q": "표준 BMI와 Real BMI의 차이점은 무엇인가요?",
-        "a": "표준 BMI는 세계보건기구(WHO) 및 질병통제예방센터(CDC)의 공식 수학 공식(kg/m²)에 따라 신장 대비 체중을 평가합니다. Real BMI는 별도의 의학적 측정 지표가 아니며, 표준 BMI 수치를 임의로 수정하거나 변경·조정하는 계산 공식이 아닙니다. Real BMI는 본 교육용 건강 플랫폼의 명칭입니다. 저희 플랫폼은 왜곡 없는 표준 BMI 수치를 그대로 제공하는 동시에, 허리둘레-신장비(WHtR), 기초대사량(BMR), 일일 총에너지소비량(TDEE) 등 검증된 상호보완적 지표들을 나란히 제시하여 보다 폭넓은 교육적 맥락을 제공합니다. 모든 계산은 개인 건강 데이터를 서버에 저장하지 않고 브라우저 내부에서 100% 안전하게 처리됩니다."
+        "a": "표준 BMI는 세계보건기구(WHO) 및 질병통제예방센터(CDC)의 공식 수학 공식(kg/m²)에 따라 신장 대비 체중을 평가합니다. Real BMI는 소프트웨어 엔지니어 바완시 도시(Bhawanshi Dosi, 인도 라자스탄주 반스와라)가 제작한 독립적인 교육용 건강 플랫폼입니다. 본 웹사이트는 공식 표준 BMI 수치를 왜곡 없이 제공함과 동시에, 허리둘레-신장비(WHtR), 기초대사량(BMR), 일일 총에너지소비량(TDEE) 등 검증된 상호보완적 지표들을 나란히 제시하여 폭넓은 교육적 맥락을 제공합니다. 모든 계산은 개인 건강 데이터를 서버에 저장하지 않고 브라우저 내부에서 100% 안전하게 처리됩니다."
       }
     ]
   },
   "hi": {
-    "insightSub": "स्वास्थ्य अंतर्दृष्टि",
-    "insightsMainTitle": "शारीरिक मानक एवं मेटाबॉलिक साक्ष्य",
-    "insightsMainDesc": "अंतरराष्ट्रीय मानक, दैनिक ऊर्जा व्यय और आंतरिक चर्बी के संकेतक आपके स्वास्थ्य मूल्यांकन को कैसे दिशा देते हैं, समझें।",
+    "insightSub": "विधि एवं वैज्ञानिक आधार",
+    "insightsMainTitle": "शारीरिक विज्ञान एवं मेटाबॉलिक संरचना",
+    "insightsMainDesc": "शरीर द्रव्यमान (BMI), विश्राम कालीन दैनिक ऊर्जा (BMR) और हृदय गति ज़ोन के प्रमाणित सूत्रों को समझें।",
     "whoSub": "डब्ल्यूएचओ (WHO) मानक",
     "whoTableTitle": "डब्ल्यूएचओ बीएमआई वर्गीकरण मानक",
     "disclaimer": "बीएमआई एक प्राथमिक जांच माप (स्क्रीनिंग टूल) है और यह स्वतंत्र रूप से बीमारी का निदान या किसी व्यक्ति के समग्र स्वास्थ्य जोखिम का निर्धारण नहीं करता है।",
@@ -940,72 +870,58 @@ const content: Record<string, any> = {
       {
         "title": "एंथ्रोपोमेट्रिक स्क्रीनिंग एवं अंतरराष्ट्रीय संदर्भ मानक",
         "paragraphs": [
-          "बॉडी मास इंडेक्स (BMI = किग्रा/मी²) ऊंचाई के अनुपात में शरीर के वजन का मूल्यांकन करने वाला अंतरराष्ट्रीय पैमाना है। विश्व स्वास्थ्य संगठन (WHO) और सीडीसी दिशानिर्देशों के तहत वयस्कों को चार मुख्य श्रेणियों में वर्गीकृत किया गया है: कम वजन (< 18.5), सामान्य वजन (18.5–24.9), अधिक वजन (25.0–29.9) और मोटापा (≥ 30.0)।",
-          "यह पैमाना आबादी के स्तर पर बीमारियों के जोखिम को समझने के लिए बना है। हालांकि, भारतीय और एशियाई आबादी में कम वजन पर भी आंतरिक चर्बी अधिक पाई जाती है, जिसके कारण डब्ल्यूएचओ विशेषज्ञ परामर्श ने एशियाई आबादी के लिए अधिक वजन का संकेत 23.0 kg/m² और मोटापे का संकेत 27.5 kg/m² निर्धारित किया है।",
-          "उम्र और लिंग का प्रभाव भी महत्वपूर्ण है। महिलाओं में हार्मोनल संतुलन के लिए आवश्यक वसा (10–13%) पुरुषों (2–5%) से अधिक होती है, और उम्र बढ़ने के साथ मांसपेशियों का क्षय वजन के संतुलन को बदल देता है।"
+          "बॉडी मास इंडेक्स ऊंचाई के अनुपात में वजन का आकलन करने वाला एक प्राथमिक सांख्यिकीय पैमाना है। विश्व स्वास्थ्य संगठन (WHO) और सीडीसी के अनुसार वयस्कों को चार श्रेणियों में विभाजित किया गया है: कम वजन (18.5 से कम), स्वस्थ वजन (18.5 से 24.9), अधिक वजन (25.0 से 29.9) और मोटापा (30.0 या अधिक)। एशियाई और भारतीय वयस्कों में कम वजन पर भी आंतरिक चर्बी अधिक होने के कारण 23.0 पर सतर्कता और 27.5 पर मोटापे का पैमाना तय है।"
         ],
         "bullets": [
-          "वैश्विक डब्ल्यूएचओ मानक सीमा: वयस्कों के लिए 18.5–24.9 kg/m²।",
-          "एशियाई आबादी सीमा: 23.0 kg/m² (बढ़ा हुआ जोखिम) और 27.5 kg/m² (उच्च जोखिम)।",
-          "मुख्य सीमा: बीएमआई मांसपेशियों और चर्बी के वितरण में अंतर नहीं कर पाता।"
+          "वैश्विक डब्ल्यूएचओ स्वस्थ संदर्भ सीमा: 18.5 से 24.9 बीएमआई।",
+          "एशियाई वयस्क दिशानिर्देश: 23.0 और 27.5 पर स्वास्थ्य सतर्कता बिंदु।"
         ],
         "toolLink": {
           "name": "मानक बीएमआई की गणना करें",
           "href": "/hi/bmi-calculator/"
-        },
-        "text": "बॉडी मास इंडेक्स (BMI = किग्रा/मी²) ऊंचाई के अनुपात में शरीर के वजन का मूल्यांकन करने वाला अंतरराष्ट्रीय पैमाना है। विश्व स्वास्थ्य संगठन (WHO) और सीडीसी दिशानिर्देशों के तहत वयस्कों को चार मुख्य श्रेणियों में वर्गीकृत किया गया है: कम वजन (< 18.5), सामान्य वजन (18.5–24.9), अधिक वजन (25.0–29.9) और मोटापा (≥ 30.0)। यह पैमाना आबादी के स्तर पर बीमारियों के जोखिम को समझने के लिए बना है। हालांकि, भारतीय और एशियाई आबादी में कम वजन पर भी आंतरिक चर्बी अधिक पाई जाती है, जिसके कारण डब्ल्यूएचओ विशेषज्ञ परामर्श ने एशियाई आबादी के लिए अधिक वजन का संकेत 23.0 kg/m² और मोटापे का संकेत 27.5 kg/m² निर्धारित किया है। उम्र और लिंग का प्रभाव भी महत्वपूर्ण है। महिलाओं में हार्मोनल संतुलन के लिए आवश्यक वसा (10–13%) पुरुषों (2–5%) से अधिक होती है, और उम्र बढ़ने के साथ मांसपेशियों का क्षय वजन के संतुलन को बदल देता है।"
+        }
       },
       {
         "title": "चयापचय ऊर्जा संतुलन: बीएमआर और टीडीईई का समन्वय",
         "paragraphs": [
-          "जहां बीएमआई स्थिर शारीरिक संरचना को मापता है, वहीं बीएमआर और टीडीईई दैनिक कैलोरी ऊर्जा व्यय का अनुमान लगाते हैं। मिफ्लिन-सेंट जेओर फॉर्मूले द्वारा निकाला गया बेसल मेटाबॉलिक रेट (BMR) विश्राम अवस्था में अंगों के कार्य की ऊर्जा दर्शाता है।",
-          "टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) इसमें शारीरिक गतिविधि कारक (1.2 से 1.9) और भोजन पचाने की ऊर्जा जोड़ता है।",
-          "आहार नियोजन में TDEE आपका वजन बनाए रखने वाला कैलोरी स्तर है। सुरक्षित और टिकाऊ वजन घटाने के लिए रोजाना 300 से 500 कैलोरी की मध्यम कमी रखने की सलाह दी जाती है।"
+          "बीएमआई जहां शरीर के आकार का प्रारंभिक संकेत देता है, वहीं चयापचय सूत्र दैनिक ऊर्जा खपत का अनुमान लगाते हैं। मिफ्लिन-सेंट जेओर फॉर्मूला बेसल मेटाबॉलिक रेट (BMR) की गणना करता है—जो विश्राम अवस्था में अंगों के कार्य की ऊर्जा है—और टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) इसमें दैनिक गतिविधियों को जोड़ता है। TDEE से 300 से 500 कैलोरी की मध्यम कमी मांसपेशियों को सुरक्षित रखते हुए स्वस्थ फैट बर्न में मदद करती है।"
         ],
         "bullets": [
-          "BMR: विश्राम अवस्था में जीवित रहने के लिए आवश्यक न्यूनतम ऊर्जा।",
-          "TDEE: 24 घंटे में शारीरिक गतिविधि सहित कुल कैलोरी खपत।",
-          "संतुलन नियम: 500 कैलोरी की दैनिक कमी से सुरक्षित रूप से वजन घटता है।"
+          "बीएमआर (BMR): विश्राम अवस्था में महत्वपूर्ण अंगों के लिए आवश्यक ऊर्जा।",
+          "टीडीईई (TDEE): शारीरिक गतिशीलता सहित 24 घंटे का कुल कैलोरी व्यय।"
         ],
         "toolLink": {
           "name": "बीएमआर और टीडीईई जांचें",
           "href": "/hi/tdee-calculator/"
-        },
-        "text": "जहां बीएमआई स्थिर शारीरिक संरचना को मापता है, वहीं बीएमआर और टीडीईई दैनिक कैलोरी ऊर्जा व्यय का अनुमान लगाते हैं। मिफ्लिन-सेंट जेओर फॉर्मूले द्वारा निकाला गया बेसल मेटाबॉलिक रेट (BMR) विश्राम अवस्था में अंगों के कार्य की ऊर्जा दर्शाता है। टोटल डेली एनर्जी एक्सपेंडिचर (TDEE) इसमें शारीरिक गतिविधि कारक (1.2 से 1.9) और भोजन पचाने की ऊर्जा जोड़ता है। आहार नियोजन में TDEE आपका वजन बनाए रखने वाला कैलोरी स्तर है। सुरक्षित और टिकाऊ वजन घटाने के लिए रोजाना 300 से 500 कैलोरी की मध्यम कमी रखने की सलाह दी जाती है।"
+        }
       },
       {
         "title": "शारीरिक संरचना एवं आंतरिक पेट की चर्बी (कमर संदर्भ)",
         "paragraphs": [
-          "बीएमआई यह नहीं बताता कि चर्बी शरीर में कहाँ स्थित है। पेट के आंतरिक अंगों के आसपास जमा विसरल फैट (आंतरिक वसा) त्वचा के नीचे की वसा से कहीं अधिक हानिकारक होता है और शुगर व हृदय रोग को बढ़ावा देता है।",
-          "इसलिए स्वास्थ्य विशेषज्ञ बीएमआई के साथ कमर की माप लेने की सलाह देते हैं: एशियाई पुरुषों में कमर ≥ 90 सेमी और महिलाओं में ≥ 80 सेमी होना बढ़े हुए स्वास्थ्य जोखिम का संकेत है।"
+          "साधारण वजन कांटा मांसपेशियों और शरीर की चर्बी में अंतर नहीं कर सकता। पेट के आंतरिक अंगों के आसपास जमा विसरल फैट (आंतरिक वसा) त्वचा के नीचे की वसा की तुलना में अधिक स्वास्थ्य जोखिम पैदा करता है। इसलिए चिकित्सा विशेषज्ञ बीएमआई के साथ कमर का घेरा मापने की सलाह देते हैं—जिसमें कमर का माप आपकी कुल लंबाई के आधे से कम रखना सबसे सुरक्षित माना जाता है।"
         ],
         "bullets": [
-          "आंतरिक वसा इंसुलिन रेजिस्टेंस और फैटी लिवर का मुख्य कारण बनती है।",
-          "कमर-से-ऊंचाई अनुपात: अपनी कमर को अपनी ऊंचाई के आधे से कम रखना सुरक्षित है।",
-          "कमर-से-कूल्हा अनुपात सेब और नाशपाती जैसे शरीर के आकार को स्पष्ट करता है।"
+          "पेट की आंतरिक चर्बी इंसुलिन प्रतिरोध और चयापचय जोखिमों से सीधे जुड़ी है।",
+          "कमर-से-ऊंचाई अनुपात: कमर को अपनी लंबाई के आधे से कम रखना सर्वोत्तम है।"
         ],
         "toolLink": {
           "name": "कमर-से-कूल्हा अनुपात कैलकुलेटर",
           "href": "/hi/waist-to-hip-ratio-calculator/"
-        },
-        "text": "बीएमआई यह नहीं बताता कि चर्बी शरीर में कहाँ स्थित है। पेट के आंतरिक अंगों के आसपास जमा विसरल फैट (आंतरिक वसा) त्वचा के नीचे की वसा से कहीं अधिक हानिकारक होता है और शुगर व हृदय रोग को बढ़ावा देता है। इसलिए स्वास्थ्य विशेषज्ञ बीएमआई के साथ कमर की माप लेने की सलाह देते हैं: एशियाई पुरुषों में कमर ≥ 90 सेमी और महिलाओं में ≥ 80 सेमी होना बढ़े हुए स्वास्थ्य जोखिम का संकेत है।"
+        }
       },
       {
         "title": "नैदानिक सीमाएं एवं शैक्षिक स्क्रीनिंग का दायरा",
         "paragraphs": [
-          "यह कैलकुलेटर केवल शैक्षिक और सामान्य जानकारी के लिए है, किसी बीमारी का चिकित्सकीय निदान नहीं। मांसपेशियों वाले खिलाड़ियों का बीएमआई अधिक वसा न होने पर भी अधिक आ सकता है, जबकि बुजुर्ग व्यक्ति सामान्य बीएमआई पर भी आंतरिक चर्बी रख सकते हैं।",
-          "सटीक स्वास्थ्य मूल्यांकन के लिए पंजीकृत डॉक्टर से रक्तचाप, ब्लड शुगर, एचबीए1सी (HbA1c) और लिपिड प्रोफाइल की नियमित जांच करवाएं।"
+          "स्क्रीनिंग सूत्र जनसंख्या के आंकड़ों पर आधारित शैक्षिक अनुमान प्रदान करते हैं, कोई चिकित्सीय निदान नहीं। अत्यधिक मांसपेशियों वाले एथलीटों का बीएमआई चर्बी न होने पर भी अधिक आ सकता है, जबकि बुजुर्गों में उम्र के साथ मांसपेशियों की कमी (सार्कोपेनिया) सामान्य वजन के पीछे अधिक आंतरिक वसा को छिपा सकती है। संपूर्ण स्वास्थ्य मूल्यांकन के लिए हमेशा पंजीकृत चिकित्सक से परामर्श और नियमित जांच कराएं।"
         ],
         "bullets": [
-          "एथलीट विसंगति: घनी मांसपेशियां बीएमआई स्कोर को अधिक दिखा सकती हैं।",
-          "सार्कोपेनिक मोटापा: बुजुर्गों में मांसपेशियों की कमी और आंतरिक वसा का बढ़ना।",
-          "परामर्श: नियमित स्वास्थ्य जांच के लिए अपने डॉक्टर से परामर्श अवश्य लें।"
+          "एथलीट शरीर संरचना: घनी मांसपेशियां अतिरिक्त चर्बी के बिना भी बीएमआई बढ़ा सकती हैं।",
+          "उम्र बढ़ने पर मांसपेशियों की कमी: प्राकृतिक सार्कोपेनिया सामान्य माप को प्रभावित करता है।",
         ],
         "toolLink": {
           "name": "ऊंचाई अनुसार आदर्श वजन देखें",
           "href": "/hi/ideal-weight-calculator/"
-        },
-        "text": "यह कैलकुलेटर केवल शैक्षिक और सामान्य जानकारी के लिए है, किसी बीमारी का चिकित्सकीय निदान नहीं। मांसपेशियों वाले खिलाड़ियों का बीएमआई अधिक वसा न होने पर भी अधिक आ सकता है, जबकि बुजुर्ग व्यक्ति सामान्य बीएमआई पर भी आंतरिक चर्बी रख सकते हैं। सटीक स्वास्थ्य मूल्यांकन के लिए पंजीकृत डॉक्टर से रक्तचाप, ब्लड शुगर, एचबीए1सी (HbA1c) और लिपिड प्रोफाइल की नियमित जांच करवाएं।"
+        }
       }
     ],
     "whoTable": [
@@ -1085,7 +1001,7 @@ const content: Record<string, any> = {
       },
       {
         "q": "मानक बीएमआई और Real BMI में क्या अंतर है?",
-        "a": "मानक बीएमआई आधिकारिक WHO और CDC सूत्र (kg/m²) के आधार पर ऊंचाई के सापेक्ष वजन का मूल्यांकन करता है। Real BMI कोई अलग चिकित्सा माप या बीएमआई स्कोर को बदलने/समायोजित करने वाला फॉर्मूला नहीं है। Real BMI हमारी शैक्षिक वेबसाइट का नाम है, जो मानक बीएमआई स्कोर के साथ-साथ कमर-से-ऊंचाई अनुपात, बीएमआर और टीडीईई जैसे स्थापित पूरक टूल्स को एक ही स्थान पर संदर्भात्मक रूप में प्रस्तुत करती है — बिना किसी व्यक्तिगत डेटा को एकत्र या स्टोर किए।"
+        "a": "मानक बीएमआई आधिकारिक WHO और CDC सूत्र (kg/m²) के आधार पर ऊंचाई के सापेक्ष वजन का मूल्यांकन करता है। Real BMI सॉफ्टवेयर इंजीनियर भवांशी दोसी (बांसवाड़ा, राजस्थान, भारत) द्वारा निर्मित एक स्वतंत्र शैक्षिक स्वास्थ्य वेबसाइट है। यह मानक बीएमआई स्कोर के साथ-साथ कमर-से-ऊंचाई अनुपात, बीएमआर और टीडीईई जैसे स्थापित पूरक टूल्स को एक ही स्थान पर संदर्भात्मक रूप में प्रस्तुत करती है — बिना किसी व्यक्तिगत स्वास्थ्य डेटा को एकत्र या स्टोर किए।"
       }
     ]
   }
@@ -1106,28 +1022,30 @@ const faqSchema = {
 
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-<section id="insights" class="px-4 md:px-6 max-w-7xl mx-auto space-y-10 md:space-y-12 py-8 md:py-12 scroll-mt-24">
+<section id="insights" class="w-full space-y-10 md:space-y-12 py-4 scroll-mt-24">
 
   <!-- ═══════════════════  HEALTH INSIGHTS HEADER & CARDS  ═══════════════════ -->
   <div class="space-y-6">
     <div class="space-y-2 max-w-3xl">
-      <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.insightSub}</p>
-      <h2 class="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-tight">
-        {t.insightsMainTitle}
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-display font-bold uppercase tracking-wider bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+        {t.insightSub}<span class="sr-only">. </span>
+      </span>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-tight">
+        {t.insightsMainTitle}<span class="sr-only">. </span>
       </h2>
-      <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
+      <p class="text-xs sm:text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
         {t.insightsMainDesc}
       </p>
     </div>
 
     <div class="grid sm:grid-cols-2 gap-4 md:gap-5">
       {t.sections.map((section: any, idx: number) => (
-        <article class="p-5 md:p-6 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] transition-all duration-200 flex flex-col justify-between group">
+        <article class="p-5 md:p-6 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] transition-all duration-200 flex flex-col justify-start group">
           
           <div class="space-y-2.5">
             <div class="flex items-center justify-between">
               <span class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] px-2.5 py-0.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20">
-                {t.insightSub} 0{idx + 1}<span class="sr-only">. </span>
+                Pillar 0{idx + 1}<span class="sr-only">. </span>
               </span>
             </div>
             
@@ -1140,7 +1058,7 @@ const faqSchema = {
             </p>
 
             {section.bullets && (
-              <ul class="space-y-1 pt-2 border-t border-[var(--border)]/50 text-xs text-[var(--muted-foreground)]">
+              <ul class="space-y-1 pt-2 text-xs text-[var(--muted-foreground)]">
                 {section.bullets.slice(0, 2).map((bullet: string) => (
                   <li class="flex items-start gap-1.5 leading-relaxed">
                     <span class="w-1 h-1 rounded-full bg-[var(--accent)] shrink-0 mt-1.5"></span>
@@ -1150,18 +1068,6 @@ const faqSchema = {
               </ul>
             )}
           </div>
-
-          {section.toolLink && (
-            <div class="pt-3 border-t border-[var(--border)]/50 mt-3 flex items-center justify-between">
-              <a 
-                href={section.toolLink.href} 
-                class="inline-flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:underline"
-              >
-                <span>{section.toolLink.name}</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-              </a>
-            </div>
-          )}
         </article>
       ))}
     </div>
@@ -1169,7 +1075,7 @@ const faqSchema = {
 
   <!-- ═══════════════════  WHO TABLE & SOURCES  ═══════════════════ -->
   {t.whoTable && (
-    <div class="space-y-8 pt-8 border-t border-[var(--border)]">
+    <div class="space-y-8 pt-4">
       <div class="space-y-3">
         <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.whoSub}<span class="sr-only">. </span></p>
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
@@ -1182,22 +1088,22 @@ const faqSchema = {
 
       <!-- Responsive Table Version -->
       <div class="rounded-2xl border-[1.5px] border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-soft)] overflow-hidden">
-        <div class="overflow-x-auto">
-          <table class="w-full text-left min-w-[30rem] border-collapse">
+        <div class="w-full">
+          <table class="w-full text-left border-collapse table-auto">
             <thead>
               <tr class="bg-[var(--muted)]">
-                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colCategory}</th>
-                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colRange}</th>
-                <th class="px-6 py-5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colRisk}</th>
+                <th class="px-2.5 py-3 sm:px-6 sm:py-3.5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colCategory}</th>
+                <th class="px-2.5 py-3 sm:px-6 sm:py-3.5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colRange}</th>
+                <th class="px-2.5 py-3 sm:px-6 sm:py-3.5 text-xs font-display font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">{t.colRisk}</th>
               </tr>
             </thead>
             <tbody>
               {t.whoTable.map((row: any, i: number) => (
                 <tr class={`transition-colors hover:bg-[var(--muted)]/50 ${i % 2 === 1 ? 'bg-[var(--muted)]/20' : ''}`}>
-                  <td class="px-6 py-5 font-display font-bold text-[var(--foreground)] uppercase text-sm">{row.category}</td>
-                  <td class="px-6 py-5 font-sans text-[var(--foreground)] text-sm font-semibold">{row.range}</td>
-                  <td class="px-6 py-5">
-                    <span class={`text-xs font-display font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full border ${
+                  <td class="px-2.5 py-3 sm:px-6 sm:py-3.5 font-display font-bold text-[var(--foreground)] uppercase text-xs sm:text-sm">{row.category}</td>
+                  <td class="px-2.5 py-3 sm:px-6 sm:py-3.5 font-sans text-[var(--foreground)] text-xs sm:text-sm font-semibold">{row.range}</td>
+                  <td class="px-2.5 py-3 sm:px-6 sm:py-3.5">
+                    <span class={`inline-block text-[10px] sm:text-xs font-display font-bold uppercase tracking-wider px-2 py-0.5 sm:px-3 sm:py-1 rounded-full border ${
                       row.status === 'normal'      ? 'border-emerald-500/40 dark:border-emerald-500/50 text-emerald-950 dark:text-emerald-200 bg-emerald-100/90 dark:bg-emerald-950/60' :
                       row.status === 'underweight' ? 'border-sky-500/40 dark:border-sky-500/50 text-sky-950 dark:text-sky-200 bg-sky-100/90 dark:bg-sky-950/60' :
                       row.status === 'overweight'  ? 'border-amber-500/40 dark:border-amber-500/50 text-amber-950 dark:text-amber-200 bg-amber-100/90 dark:bg-amber-950/60' :
@@ -1211,12 +1117,12 @@ const faqSchema = {
         </div>
       </div>
 
-      <p class="text-xs text-[var(--muted-foreground)] font-medium pt-3 italic">
+      <p class="text-xs text-[var(--muted-foreground)] font-medium pt-2 italic">
         {t.disclaimer}
       </p>
 
       <!-- Dedicated In-Depth Reference Banner -->
-      <div class="rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-5 md:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div class="space-y-1">
           <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{t.inDepthTitle}<span class="sr-only">. </span></p>
           <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium">{t.inDepthSubtitle}</p>
@@ -1227,17 +1133,17 @@ const faqSchema = {
       </div>
 
       <!-- Sources & References Box -->
-      <div class="rounded-xl border border-[var(--border)] bg-[var(--card)]/80 p-5 md:p-6 shadow-[var(--shadow-soft)] flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="rounded-xl border border-[var(--border)] bg-[var(--card)]/80 p-4 sm:p-5 shadow-[var(--shadow-soft)] flex flex-col md:flex-row md:items-center justify-between gap-3">
         <div>
           <p class="text-xs font-display font-bold uppercase tracking-[0.25em] text-[var(--accent)]">{t.sourcesTitle}<span class="sr-only">. </span></p>
-          <p class="text-xs text-[var(--muted-foreground)] mt-1 font-medium">{t.sourcesSubtitle}</p>
+          <p class="text-xs text-[var(--muted-foreground)] mt-0.5 font-medium">{t.sourcesSubtitle}</p>
         </div>
-        <div class="flex flex-wrap gap-2.5">
-          <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-4 py-2.5 min-h-[48px] text-xs font-semibold text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors bg-[var(--muted)]/30">
+        <div class="flex flex-wrap gap-2">
+          <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3.5 py-2 min-h-[44px] text-xs font-semibold text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors bg-[var(--muted)]/30">
             <span>{t.whoLink}</span>
             <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
-          <a href="https://www.cdc.gov/bmi/faq/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-4 py-2.5 min-h-[48px] text-xs font-semibold text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors bg-[var(--muted)]/30">
+          <a href="https://www.cdc.gov/bmi/faq/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3.5 py-2 min-h-[44px] text-xs font-semibold text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors bg-[var(--muted)]/30">
             <span>{t.cdcLink}</span>
             <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
@@ -1247,39 +1153,39 @@ const faqSchema = {
   )}
 
   <!-- ═══════════════════  FAQ ACCORDION  ═══════════════════ -->
-  <div id="faq" class="space-y-12 pt-8 border-t border-[var(--border)] scroll-mt-28">
-    <div class="space-y-3 text-center">
+  <div id="faq" class="space-y-6 sm:space-y-8 pt-6 sm:pt-8 scroll-mt-28">
+    <div class="space-y-2 text-center">
       <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">{t.helpCenter}<span class="sr-only">. </span></p>
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase text-[var(--foreground)]">{t.faqTitle}<span class="sr-only">. </span></h2>
-      <p class="text-base text-[var(--muted-foreground)] max-w-xl mx-auto font-medium">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase text-[var(--foreground)] tracking-tight">{t.faqTitle}<span class="sr-only">. </span></h2>
+      <p class="text-xs sm:text-sm text-[var(--muted-foreground)] max-w-xl mx-auto font-medium">
         {t.faqSubtitle}
       </p>
     </div>
 
-    <div class="space-y-4 max-w-7xl mx-auto">
+    <div class="space-y-3 w-full">
       {t.faq.map((item: { q: string; a: string }) => {
         const parsed = formatFaqAnswer(item.a);
         const fl = faqLabels[lang] || faqLabels.en;
         return (
-          <details class="group rounded-xl border-[1.5px] border-[var(--border)] bg-[var(--card)] overflow-hidden cursor-pointer hover:border-[var(--accent)] transition-all duration-200 shadow-[var(--shadow-soft)]">
-            <summary class="flex justify-between items-center font-display font-semibold text-base py-5 px-6 select-none list-none uppercase tracking-tight text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">
-              <span class="pr-8">{item.q}</span>
+          <details class="group rounded-xl border border-[var(--border)] bg-[var(--card)] overflow-hidden cursor-pointer hover:border-[var(--accent)] transition-all duration-200 shadow-[var(--shadow-soft)]">
+            <summary class="flex justify-between items-center font-display font-semibold text-sm sm:text-base py-3.5 px-4 sm:py-4 sm:px-6 select-none list-none uppercase tracking-tight text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">
+              <span class="pr-6">{item.q}</span>
               <span class="text-[var(--muted-foreground)] group-open:rotate-180 transition-transform duration-200 flex-shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
                 </svg>
               </span>
             </summary>
-            <div class="px-6 pb-6 text-sm md:text-base leading-relaxed font-medium pt-4 bg-[var(--muted)]/10 space-y-3">
+            <div class="px-4 pb-4 sm:px-6 sm:pb-6 text-xs sm:text-sm md:text-base leading-relaxed font-medium pt-3 bg-[var(--muted)]/10 space-y-3">
               {parsed.detailed ? (
                 <>
-                  <div class="p-3.5 sm:p-4 rounded-xl bg-[var(--accent)]/5 border-l-[3px] border-[var(--accent)] text-xs sm:text-sm md:text-base font-semibold text-[var(--foreground)]">
+                  <div class="p-3 sm:p-3.5 rounded-lg bg-[var(--accent)]/5 border-l-[3px] border-[var(--accent)] text-xs sm:text-sm font-semibold text-[var(--foreground)]">
                     <span class="text-[var(--accent)] uppercase tracking-wider text-[11px] font-bold block mb-1 font-display">
                       {fl.short}<span class="sr-only">. </span>
                     </span>
                     {parsed.short}
                   </div>
-                  <div class="text-xs sm:text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium space-y-1 pt-0.5">
+                  <div class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium space-y-1 pt-0.5">
                     <span class="text-[var(--foreground)] uppercase tracking-wider text-[10px] font-bold block opacity-75 font-display">
                       {fl.detailed}<span class="sr-only">. </span>
                     </span>
@@ -1287,7 +1193,7 @@ const faqSchema = {
                   </div>
                 </>
               ) : (
-                <p class="text-xs sm:text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">{item.a}</p>
+                <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">{item.a}</p>
               )}
             </div>
           </details>

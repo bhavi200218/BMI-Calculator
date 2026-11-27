@@ -228,10 +228,11 @@ const defaultReferencesByLang: Record<Locale, { name: string; url: string }[]> =
 
 const activeReferences = toolSpecificReferences[effectiveSlug] || (defaultReferencesByLang[lang] || defaultReferencesByLang.en);
 const currentCalc = propCalc || calculators.find(c => c.slug === slug || c.slug === effectiveSlug);
-const workedExample = getWorkedExample(effectiveSlug, lang, currentData.title);
-const variablesGuide = getInputVariablesGuide(currentCalc?.inputs || [], lang, effectiveSlug, currentData.title);
+const cleanToolName = currentCalc?.name[lang] || currentCalc?.name?.en || (currentData.title ? currentData.title.split('–')[0].split('—')[0].split('-')[0].trim() : 'Calculator');
+const workedExample = getWorkedExample(effectiveSlug, lang, cleanToolName);
+const variablesGuide = getInputVariablesGuide(currentCalc?.inputs || [], lang, effectiveSlug, cleanToolName);
 const clinicalGuide = getToolInterpretationAndLimitations(effectiveSlug, lang);
-const infographic = getToolInfographic(effectiveSlug, lang, currentData.title);
+const infographic = getToolInfographic(effectiveSlug, lang, cleanToolName);
 
 const numSegments = infographic.segments.length;
 const totalSvgWidth = 760;
@@ -752,14 +753,23 @@ const karvonenQuickGrid = {
   ]
 };
 
+const sectionHeading = {
+  en: `${cleanToolName} Standards & Reference Ranges`,
+  es: `Estándares y Rangos de Referencia para ${cleanToolName}`,
+  fr: `Normes et Repères de Référence pour ${cleanToolName}`,
+  de: `Standards & Referenzbereiche für ${cleanToolName}`,
+  ko: `${cleanToolName} 공식 기준 및 참조 범위`,
+  hi: `${cleanToolName} के लिए आधिकारिक मानक एवं संदर्भ सीमाएं`
+}[lang] || `${cleanToolName} Standards & Reference Ranges`;
+
 const referenceTableSubtitle = {
-  en: `Standard benchmarks and healthy ranges for ${currentData.title}.`,
-  es: `Rangos de referencia y umbrales de salud para ${currentData.title}.`,
-  fr: `Intervalles de référence et seuils de santé pour ${currentData.title}.`,
-  de: `Offizielle Richtwerte und Referenzbereiche für ${currentData.title}.`,
-  ko: `${currentData.title}에 대한 공식 참조 범위 및 기준 지표입니다.`,
-  hi: `${currentData.title} के लिए आधिकारिक स्वास्थ्य संदर्भ और बेंचमार्क।`
-}[lang] || `Official benchmarks and reference ranges for ${currentData.title}.`;
+  en: `Official public health benchmarks, clinical calculation steps, and reference ranges for ${cleanToolName}.`,
+  es: `Pautas oficiales de salud pública, pasos de cálculo clínico y rangos de referencia para ${cleanToolName}.`,
+  fr: `Directives officielles de santé publique, étapes de calcul clinique et plages de référence pour ${cleanToolName}.`,
+  de: `Offizielle Richtlinien der öffentlichen Gesundheit, klinische Berechnungsschritte und Referenzbereiche für ${cleanToolName}.`,
+  ko: `${cleanToolName}에 대한 공식 공중보건 기준, 임상적 계산 절차 및 건강 참조 범위 요약.`,
+  hi: `${cleanToolName} के लिए आधिकारिक सार्वजनिक स्वास्थ्य मानक, नैदानिक गणना चरण और स्वास्थ्य संदर्भ सीमाएं।`
+}[lang] || `Official benchmarks and reference ranges for ${cleanToolName}.`;
 
 const accordionTitles: Record<Locale, { formula: string; formulaSub: string; limitations: string; limitationsSub: string }> = {
   en: {
@@ -806,15 +816,15 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
 <!-- Embed Tool-Specific FAQ Schema -->
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 
-<section class="mt-6 pt-6 border-t border-[var(--border)] space-y-8">
+<section class="mt-8 space-y-8">
   
   <!-- Header -->
   <div class="space-y-3">
     <p class="text-xs font-display font-bold uppercase tracking-[0.25em] text-[var(--accent)]">
       {currentData.eyebrow}<span class="sr-only">. </span>
     </p>
-    <h2 class="text-3xl md:text-4xl font-display font-bold text-[var(--foreground)] tracking-tight uppercase leading-tight">
-      {currentData.title}<span class="sr-only">. </span>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-[var(--foreground)] tracking-tight uppercase leading-tight">
+      {sectionHeading}<span class="sr-only">. </span>
     </h2>
     <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium pt-1">
       {referenceTableSubtitle}
@@ -1193,8 +1203,8 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           <tbody class="divide-y divide-[var(--border)]/60 text-[var(--muted-foreground)] font-medium">
             {(currentData.tableRows || []).map((row: { col1: string; col2: string; col3: string }) => (
               <tr class="hover:bg-[var(--muted)]/30 transition-colors">
-                <td class="p-4 font-bold text-[var(--foreground)] whitespace-nowrap">{row.col1}<span class="sr-only">. </span></td>
-                <td class="p-4 font-mono whitespace-nowrap text-[var(--accent)] font-semibold">{row.col2}<span class="sr-only">. </span></td>
+                <td class="p-4 font-bold text-[var(--foreground)] sm:whitespace-nowrap">{row.col1}<span class="sr-only">. </span></td>
+                <td class="p-4 font-mono sm:whitespace-nowrap text-[var(--accent)] font-semibold">{row.col2}<span class="sr-only">. </span></td>
                 <td class="p-4 text-xs sm:text-sm">{row.col3}<span class="sr-only">. </span></td>
               </tr>
             ))}
@@ -1212,7 +1222,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           {infographic.badge}<span class="sr-only">. </span>
         </span>
         <p class="text-base sm:text-lg font-display font-bold text-[var(--foreground)] uppercase">
-          {currentData.title} — {infographic.titleSuffix}<span class="sr-only">. </span>
+          {cleanToolName} — {infographic.titleSuffix}<span class="sr-only">. </span>
         </p>
       </div>
       <span class="text-xs text-[var(--muted-foreground)] font-mono">
@@ -1221,10 +1231,10 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
     </div>
 
     <!-- Scalable Visual Spectrum Diagram -->
-    <div class="w-full bg-[var(--muted)]/50 rounded-xl p-4 border border-[var(--border)] overflow-x-auto">
+    <div class="w-full bg-[var(--muted)]/50 rounded-xl p-3 sm:p-4 border border-[var(--border)] overflow-hidden">
       {effectiveSlug === 'diabetes-risk-calculator' ? (
-        <svg class="w-full min-w-[30rem] h-auto max-h-36 text-[var(--foreground)]" viewBox="0 0 800 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={lang === 'de' ? `Infografik zu ${currentData.title}` : lang === 'es' ? `Infografía ilustrativa de ${currentData.title}` : lang === 'fr' ? `Infographie illustrant ${currentData.title}` : lang === 'ko' ? `${currentData.title} 인포그래픽` : lang === 'hi' ? `${currentData.title} इन्फोग्राफिक` : `Infographic illustrating ${currentData.title}`}>
-          <title>{currentData.title} — {infographic.titleSuffix}</title>
+        <svg class="w-full h-auto max-h-36 text-[var(--foreground)]" viewBox="0 0 800 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={lang === 'de' ? `Infografik zu ${cleanToolName}` : lang === 'es' ? `Infografía ilustrativa de ${cleanToolName}` : lang === 'fr' ? `Infographie illustrant ${cleanToolName}` : lang === 'ko' ? `${cleanToolName} 인포그래픽` : lang === 'hi' ? `${cleanToolName} इन्फोग्राफिक` : `Infographic illustrating ${cleanToolName}`}>
+          <title>{cleanToolName} — {infographic.titleSuffix}</title>
           <desc>{infographic.desc}</desc>
           <!-- Continuous 0–13 Raw Score Scale Track (Single Uniform Neutral Color, No Risk Bands) -->
           <line x1="50" y1="42" x2="750" y2="42" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" stroke-opacity="0.35"/>
@@ -1248,8 +1258,8 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
           </text>
         </svg>
       ) : (
-        <svg class="w-full min-w-[30rem] h-auto max-h-36 text-[var(--foreground)]" viewBox="0 0 800 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={lang === 'de' ? `Infografik zu ${currentData.title}` : lang === 'es' ? `Infografía ilustrativa de ${currentData.title}` : lang === 'fr' ? `Infographie illustrant ${currentData.title}` : lang === 'ko' ? `${currentData.title} 인포그래픽` : lang === 'hi' ? `${currentData.title} इन्फोग्राफिक` : `Infographic illustrating ${currentData.title}`}>
-          <title>{currentData.title} — {infographic.titleSuffix}</title>
+        <svg class="w-full h-auto max-h-36 text-[var(--foreground)]" viewBox="0 0 800 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={lang === 'de' ? `Infografik zu ${cleanToolName}` : lang === 'es' ? `Infografía ilustrativa de ${cleanToolName}` : lang === 'fr' ? `Infographie illustrant ${cleanToolName}` : lang === 'ko' ? `${cleanToolName} 인포그래픽` : lang === 'hi' ? `${cleanToolName} इन्फोग्राफिक` : `Infographic illustrating ${cleanToolName}`}>
+          <title>{cleanToolName} — {infographic.titleSuffix}</title>
           <desc>{infographic.desc}</desc>
           <!-- Dynamic Bar Segments -->
           {infographic.segments.map((seg, i) => {
@@ -1557,7 +1567,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
     <summary class="p-6 md:p-7 flex items-center justify-between cursor-pointer list-none select-none hover:bg-[var(--muted)]/20 transition-colors">
       <div class="flex items-center gap-3.5">
         <div class="w-9 h-9 rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center font-bold text-base shrink-0">
-          📐
+          <svg class="w-5 h-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
         </div>
         <div class="space-y-0.5 text-left">
           <h3 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-open:text-[var(--accent)] transition-colors">
@@ -1637,7 +1647,7 @@ const curAccordion = accordionTitles[lang] || accordionTitles.en;
     <summary class="p-6 md:p-7 flex items-center justify-between cursor-pointer list-none select-none hover:bg-[var(--muted)]/20 transition-colors">
       <div class="flex items-center gap-3.5">
         <div class="w-9 h-9 rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center font-bold text-base shrink-0">
-          🔬
+          <svg class="w-5 h-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
         </div>
         <div class="space-y-0.5 text-left">
           <h3 class="text-base sm:text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-open:text-[var(--accent)] transition-colors">

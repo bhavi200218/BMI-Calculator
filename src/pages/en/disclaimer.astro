@@ -6,7 +6,7 @@ import PageShell from '../../components/PageShell.astro';
 
 <Layout 
     title="Medical Disclaimer | Real BMI"
-    description="Review the Real BMI medical disclaimer. Our calculators offer educational health estimates based on WHO & CDC references and are not diagnostic tools."
+    description="Review the official Real BMI medical disclaimer. Our calculators offer educational health estimates based on WHO & CDC references and are not diagnostic tools."
     canonicalURL="https://realbmicalculator.com/en/disclaimer/"
 >
     <Navbar />
@@ -17,181 +17,121 @@ import PageShell from '../../components/PageShell.astro';
       returnUrl="/en/"
       returnLabel="Home"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+      <div class="max-w-5xl space-y-8 text-[var(--muted-foreground)] leading-relaxed text-base font-normal">
         
-        <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
-          The health tools, charts, and articles on <strong>Real BMI</strong> are built for learning and personal awareness only. They help you check basic body numbers at home.
-        </p>
-
-        <!-- 1. What Real BMI Is -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            What Real BMI Is
-          </h2>
-          <p>
-            Real BMI is a free digital health tool set. We offer:
+        <!-- Summary Callout -->
+        <div class="p-5 rounded-2xl bg-[var(--card)]/60 border border-[var(--border)]/60">
+          <p class="text-base sm:text-lg text-[var(--foreground)] leading-relaxed font-medium">
+            The health calculators, reference charts, and educational articles on <strong>Real BMI</strong> are provided strictly for informational awareness and personal wellness tracking. They are designed to help you understand public health benchmarks at home, but they do not constitute medical advice or clinical diagnosis.
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li>Body mass estimates based on published formulas from the WHO and CDC.</li>
-            <li>Simple 3D body models that help you see your body shape.</li>
-            <li>Standard health charts to help you check your numbers against public guides.</li>
-          </ul>
         </div>
 
-        <!-- 2. What Real BMI Is Not -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            What Real BMI Is Not
+        <!-- 1. Educational Scope & Non-Diagnostic Notice -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            1. Educational Scope &amp; Non-Diagnostic Nature
           </h2>
           <p>
-            Real BMI is not a clinic or hospital. We do not offer medical care:
+            Real BMI offers computational health tools calibrated directly to published literature from the World Health Organization (WHO), Centers for Disease Control and Prevention (CDC), and peer-reviewed journals. What our platform provides:
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Not Medical Advice:</strong> Our scores are not clinical checks or treatment plans.</li>
-            <li><strong>Not a Diagnostic Tool:</strong> Only a doctor can diagnose health problems like heart disease or diabetes.</li>
-            <li><strong>Not a Diet Plan:</strong> You should never start extreme diets or stop your pills based on calculator scores.</li>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Mathematical Estimations:</strong> Directional metrics (such as BMI, BMR, TDEE, and body composition) derived from established clinical equations.</li>
+            <li><strong>Reference Benchmarks:</strong> Standard statistical cutoffs to help contextualize your numbers against general population guidelines.</li>
+            <li><strong>Self-Directed Awareness:</strong> Educational information intended to help you formulate informed questions for your healthcare provider.</li>
           </ul>
-        </div>
-
-        <!-- 3. Who Should Consult a Doctor -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Who Should Consult a Doctor
-          </h2>
-          <p>
-            We urge you to talk with a licensed doctor or dietitian if you:
+          <p class="pt-1">
+            <strong>What Real BMI does not provide:</strong> We do not operate a clinic, medical practice, or healthcare advisory board. Output values are never medical diagnoses, individualized clinical evaluations, or therapeutic prescriptions. Never alter medication doses or initiate drastic lifestyle changes based solely on automated calculation results.
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li>Plan to lose or gain a large amount of body weight.</li>
-            <li>Live with long-term conditions like diabetes, high blood pressure, or heart trouble.</li>
-            <li>Are pregnant, nursing, or recovering from surgery.</li>
-            <li>Have had an eating disorder or struggle with body image.</li>
-            <li>Notice quick, sudden shifts in your body weight.</li>
-          </ul>
-        </div>
+        </section>
 
-        <!-- 4. Emergency Situations (Callout Box) -->
-        <div class="p-5 sm:p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-[var(--foreground)] space-y-2 not-prose">
+        <!-- 2. Emergency Situations (Callout Box) -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-amber-500/5 border border-amber-500/20 text-[var(--foreground)] space-y-2">
           <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-display font-bold uppercase tracking-wider text-xs sm:text-sm">
             <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
             </svg>
-            Emergency Situations
+            2. Emergency Medical Assistance
           </div>
           <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">
-            Immediate Medical Assistance
+            Immediate Care for Urgent Symptoms
           </h3>
-          <p class="text-sm leading-relaxed text-[var(--muted-foreground)] font-medium">
-            Real BMI is not made for medical emergencies. If you have chest pain, shortness of breath, sudden dizziness, or bad weakness, call 911 or 112 right away. You can also go to the nearest emergency room.
+          <p class="text-sm leading-relaxed text-[var(--muted-foreground)]">
+            Real BMI is not designed or equipped for medical emergencies. If you or someone with you experiences chest pressure, shortness of breath, sudden numbness, severe dizziness, heart palpitations, or any life-threatening symptoms, immediately call your local emergency service (911 in the United States and Canada, 112 in Europe and India, 999 in the United Kingdom) or go to the nearest emergency room.
           </p>
         </div>
 
-        <!-- 5. BMI Limitations -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            BMI Limitations
+        <!-- 3. When to Consult a Qualified Doctor or Dietitian -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            3. When to Consult a Healthcare Professional
           </h2>
           <p>
-            Standard BMI has known limits that you should keep in mind:
+            We strongly urge you to consult a licensed physician, clinical dietitian, or certified health professional before taking action, especially if you:
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Body Makeup:</strong> BMI compares weight to height. It cannot tell muscle from fat. An athlete with dense muscle can show a high BMI score even with very low body fat.</li>
-            <li><strong>Age and Muscle Loss:</strong> Older adults often lose muscle as they age. This loss can hide body fat under a normal BMI score.</li>
-            <li><strong>Ethnic Background:</strong> Body fat patterns differ across world groups. The WHO uses lower risk points for Asian adults (23.0 instead of 25.0).</li>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Plan to undertake significant weight loss, rapid weight gain, or restrictive dietary regimens.</li>
+            <li>Manage chronic medical conditions such as type 2 diabetes, cardiovascular disease, hypertension, kidney disorders, or thyroid imbalances.</li>
+            <li>Take prescription medications whose therapeutic dosage correlates with body mass or metabolic rate (e.g., insulin, antihypertensives).</li>
+            <li>Are pregnant, planning pregnancy, breastfeeding, or recovering from surgery.</li>
+            <li>Have a personal history of eating disorders, disordered eating patterns, or severe body image distress.</li>
+            <li>Notice unexplained, rapid fluctuations in your body weight or persistent fluid retention.</li>
           </ul>
-        </div>
+        </section>
 
-        <!-- 6. Privacy: No Personal Health Information Stored -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Privacy: No Personal Health Information Stored
+        <!-- 4. Scientific & Physiological Limitations of Screening Tools -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            4. Scientific &amp; Physiological Limitations
           </h2>
           <p>
-            Your health numbers stay private to you:
+            Standard anthropometric screening tools possess inherent physiological limitations that must be considered when reviewing results:
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Runs in Your Browser:</strong> All calculations run directly on your own device using local JavaScript.</li>
-            <li><strong>No Tracking:</strong> We never save, store, or share your height, weight, age, or waist numbers on our servers.</li>
-            <li><strong>No Public Profiles:</strong> Real BMI does not have public user lists or message boards where your data could be seen.</li>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Body Composition vs. Total Mass:</strong> BMI calculates the mass-to-height ratio (kg/m²). It cannot differentiate between dense skeletal muscle, bone mineral density, and adipose tissue. Muscular athletes frequently classify as "overweight" or "obese" despite having very low body fat percentages.</li>
+            <li><strong>Age-Related Sarcopenia:</strong> In adults aged 65 and older, natural muscle wasting (sarcopenia) can mask significant abdominal adiposity behind a seemingly "normal" BMI score. Geriatric clinical literature often identifies a slightly higher BMI (23.0 to 27.9 kg/m²) as protective against bone fractures and frailty.</li>
+            <li><strong>Ethnic Cardiometabolic Differences:</strong> Adiposity distribution varies significantly by ancestry. The WHO recognizes that adults of Asian and South Asian heritage face heightened risks of insulin resistance and cardiovascular disease at lower thresholds, recommending an overweight cutoff of 23.0 kg/m² instead of 25.0 kg/m².</li>
+            <li><strong>Pediatric &amp; Adolescent Growth:</strong> Adult BMI formulas must never be applied to individuals under 18. Growing children must be evaluated using age- and sex-specific growth percentiles (CDC/WHO growth charts) interpreted by a pediatrician.</li>
           </ul>
-        </div>
+        </section>
 
-        <!-- 7. Legal Disclaimer -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Legal Disclaimer &amp; Limitation of Liability
+        <!-- 5. Risks of Severe Caloric Restriction & Medication Adjustments -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            5. Risks of Unsupervised Caloric Deficits &amp; Medication Changes
           </h2>
           <p>
-            Real BMI and its creators take no legal blame for choices you make based on this site. You use these tools of your own free choice and at your own risk.
+            Never alter, titrate, or discontinue prescription medications based on metrics obtained from our tools. Changes in body composition and weight alter pharmacokinetics and drug clearance; dosage adjustments must be supervised by your prescribing physician.
           </p>
-        </div>
+          <p>
+            Additionally, adopting severe caloric restrictions (such as consuming fewer than 1,200 kcal/day for women or 1,500 kcal/day for men) without clinical oversight carries substantial health risks, including metabolic adaptation, electrolyte imbalances, gallstone development, nutrient deficiencies, and lean tissue loss. Always seek clinical guidance before implementing major nutritional adjustments.
+          </p>
+        </section>
 
-        <!-- 8. Special Clinical Situations: Pregnancy, Pediatric Growth & Sarcopenia -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Special Clinical Situations: Pregnancy, Pediatric Growth &amp; Sarcopenia
+        <!-- 6. Directional Proxies vs. Diagnostic Laboratory Biomarkers -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            6. Screening Proxies vs. Comprehensive Laboratory Diagnostics
           </h2>
           <p>
-            Standard BMI ranges apply only to non-pregnant adults aged 18 to 65. Certain groups need special care from a doctor:
+            Anthropometric indices (such as BMI, waist-to-hip ratio, and body fat estimates) are preliminary screening proxies. While they provide useful population-level correlations, they do not replace comprehensive clinical health evaluations.
           </p>
-          <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Pregnancy:</strong> In singleton pregnancies, healthy weight gain depends on pre-pregnancy BMI. Sudden weight gain or severe swelling can point to preeclampsia. This is a serious condition that requires prompt obstetric care.</li>
-            <li><strong>Children and Teens:</strong> Growing children must never be judged using adult BMI cutoffs. A pediatrician should check their growth using CDC growth charts.</li>
-            <li><strong>Older Adults:</strong> In seniors, muscle loss (sarcopenia) can mask fat gains. A slightly higher BMI between 23.0 and 27.9 often protects against bone breaks in seniors.</li>
-          </ul>
-        </div>
+          <p>
+            Authentic cardiometabolic assessment requires direct diagnostic biomarkers: fasting plasma glucose, HbA1c, comprehensive lipid panels (total cholesterol, HDL, LDL, triglycerides), and resting blood pressure measurements conducted in a clinical setting. Use our tools to prepare informed, constructive questions for your routine healthcare checkups.
+          </p>
+        </section>
 
-        <!-- 9. Lifestyle Screening Guide vs. Clinical Diagnostic Evaluation -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Lifestyle Screening Guide vs. Clinical Diagnostic Evaluation
+        <!-- 7. Limitation of Liability & Independent Governance -->
+        <section class="space-y-3">
+          <h2 class="text-xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            7. Limitation of Liability &amp; Independent Governance
           </h2>
           <p>
-            Each tool on this site is a lifestyle screening guide, not a medical test. Only a doctor can diagnose health issues like high blood pressure, diabetes, or heart risks.
+            Real BMI is an independent software engineering initiative created and maintained by <strong>Bhawanshi Dosi</strong> (Banswara, Rajasthan, India). All calculation models are implemented directly from published WHO, CDC, and ICMR standards. The platform does not operate a multidisciplinary medical board, hospital affiliation, or physician review committee.
           </p>
           <p>
-            All 23 computational health tools on Real BMI provide helpful estimates. They help you ask good questions at your next doctor visit.
+            To the fullest extent permitted by applicable law, Real BMI and its creators disclaim all liability for any personal health decisions, dietary adjustments, physical training regimens, or health outcomes resulting from the use of information or calculations on this website. You utilize these computational tools voluntarily and at your sole discretion. For questions regarding our mathematical models or research citations, please visit our <a href="/en/contact/" class="text-[var(--accent)] underline font-medium hover:text-[var(--foreground)] transition-colors">Contact page</a>.
           </p>
-        </div>
-
-        <!-- 10. Medication, Severe Caloric Restriction & Extreme Fitness Risks -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Medication, Severe Caloric Restriction &amp; Extreme Fitness Risks
-          </h2>
-          <p>
-            If you take prescription medicine, like insulin, blood pressure pills, or thyroid pills, do not change your dose based on web tools. Weight changes can alter how your body processes pills.
-          </p>
-          <p>
-            Also, eating under 1,200 calories per day without a doctor's care carries real health risks. It can lead to low energy, gallstones, and muscle loss. Always ask a doctor before you make big diet cuts.
-          </p>
-        </div>
-
-        <!-- 11. Laboratory Biomarkers & Holistic Clinical Diagnostics -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Laboratory Biomarkers &amp; Holistic Clinical Diagnostics
-          </h2>
-          <p>
-            Numbers like BMI and body fat are starting points. True heart health needs lab tests done in a clinic.
-          </p>
-          <p>
-            We urge you to get regular checkups. Your doctor can test your fasting blood sugar, HbA1c, and cholesterol levels. They will also check your resting blood pressure. Real BMI supports doctor visits, but never replaces them.
-          </p>
-        </div>
-
-        <!-- 12. Verification Standards & Professional Inquiries -->
-        <div class="space-y-2">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            Verification Standards &amp; Professional Inquiries
-          </h2>
-          <p>
-            Real BMI is managed by software engineer <strong>Bhawanshi Dosi</strong> in Banswara, Rajasthan, India. All formulas match public papers from the WHO and CDC.
-          </p>
-          <p>
-            If you have questions or want to verify a formula, reach us through our <a href="/en/contact/" class="text-[var(--accent)] underline font-medium">contact page</a>.
-          </p>
-        </div>
+        </section>
 
       </div>
     </PageShell>

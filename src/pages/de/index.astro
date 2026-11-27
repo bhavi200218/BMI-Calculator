@@ -19,42 +19,42 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 	<main class="pb-4 relative overflow-x-hidden">
 
 		<!-- ═══════════════════  1. HERO & MAIN HEADLINE  ═══════════════════ -->
-		<section class="pt-20 md:pt-24 pb-6 px-4 md:px-6">
-			<div class="max-w-7xl mx-auto space-y-6">
+		<section class="pt-20 md:pt-24 pb-6 px-4 sm:px-6 lg:px-8 xl:px-12">
+			<div class="w-full max-w-[1600px] mx-auto space-y-6">
 
 				<!-- Main H1 & Hero Header -->
 				<div class="text-center space-y-3.5 max-w-4xl mx-auto">
 					<!-- Eyebrow Tag / Pill -->
 					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-xs">
 						<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-						WHO- & CDC-STANDARDS • LOKALE BROWSER-BERECHNUNG
+						BMI- & GESUNDHEITSRECHNER<span class="sr-only">. </span>
 					</div>
 
 					<!-- Main H1 headline -->
 					<h1 class="text-2xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[1.1] text-[var(--foreground)]">
-						Berechnen Sie Ihren Body-Mass-Index (BMI) & Gesundheitswerte
+						Body-Mass-Index (BMI) Rechner<span class="sr-only">. </span>
 					</h1>
 
 					<!-- Supporting H2 Subtitle & Intro -->
 					<p class="text-base sm:text-xl text-[var(--accent)] font-semibold tracking-tight font-display">
-						Kostenlose, private & sofortige evidenzbasierte Rechner
+						Erfahren Sie Ihren BMI und verstehen Sie Ihr Normalgewicht.<span class="sr-only">. </span>
 					</p>
 					<p class="text-sm sm:text-base text-[var(--muted-foreground)] font-medium max-w-2xl mx-auto leading-relaxed">
-						Schnelle Bestimmung des Body-Mass-Index und Stoffwechselrechner auf Grundlage veröffentlichter Standards der Weltgesundheitsorganisation (WHO) und CDC.
+						Berechnen Sie Ihren BMI, Ihr Normalgewicht und Ihren täglichen Kalorienbedarf mit unseren kostenlosen Gesundheitsrechnern. Die Ergebnisse basieren auf den Richtlinien von WHO und CDC und werden direkt in Ihrem Browser berechnet.
 					</p>
 				</div>
 
 				<!-- Stats Strip -->
 				<div class="flex flex-wrap justify-center gap-2.5 sm:gap-3 pt-1">
 					{[
-						'100% Kostenlos & Sofort',
-						'Zuverlässige metrische & imperiale Berechnungen',
-						'Volle Privatsphäre',
-						'WHO- & CDC-Standards'
+						'Kostenlos nutzbar',
+						'kg & lbs',
+						'Private Berechnungen',
+						'WHO- & CDC-Richtlinien'
 					].map(badge => (
 						<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--border)] bg-[var(--card)] text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] shadow-xs">
 							<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
-							{badge}
+							{badge}<span class="sr-only">. </span>
 						</div>
 					))}
 				</div>
@@ -62,22 +62,16 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 			</div>
 		</section>
 
-		<!-- ═══════════════════  2. 🔥 ALL HEALTH & FITNESS CALCULATORS  ═══════════════════ -->
-		<section id="calculators" class="px-4 md:px-6 pt-0 pb-10 md:pb-14 scroll-mt-20">
-			<div class="max-w-7xl mx-auto space-y-6">
-				<header class="space-y-3 pb-4 border-b border-[var(--border)]/40">
-					<div class="flex items-center justify-between gap-4">
-						<span class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">🔥 Evidenzbasierte Suite</span>
-						<span class="text-xs font-mono text-[var(--accent)] font-bold px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 shrink-0">
-							23 Rechner
-						</span>
-					</div>
+		<!-- ═══════════════════  2. GESUNDHEITS- & FITNESS-RECHNER  ═══════════════════ -->
+		<section id="calculators" class="px-4 sm:px-6 lg:px-8 xl:px-12 pt-0 pb-8 md:pb-10 scroll-mt-20">
+			<div class="w-full max-w-[1600px] mx-auto space-y-6">
+				<header class="flex items-center justify-between gap-4 pb-2">
 					<h2 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-								Alle Gesundheits- & Fitness-Rechner
-							</h2>
-					<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium max-w-3xl leading-relaxed">
-						Entdecken Sie unsere vollständige Suite aus 23 evidenzbasierten Gesundheits-, Körperzusammensetzungs- und Stoffwechselrechnern. Entwickelt auf Grundlage wissenschaftlicher Leitlinien der WHO, CDC und NIH – mit vollständiger clientseitiger Privatsphäre.
-					</p>
+						Gesundheits- & Fitness-Rechner<span class="sr-only">. </span>
+					</h2>
+					<span class="text-xs font-mono text-[var(--accent)] font-bold px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 shrink-0">
+						23 Rechner
+					</span>
 				</header>
 
 				<HomepageHubWrapper lang="de" />
@@ -85,64 +79,65 @@ import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 		</section>
 
 		<!-- ═══════════════════  6. 📖 LATEST ARTICLES  ═══════════════════ -->
-		<section id="latest-articles" class="px-4 md:px-6 py-10 md:py-14 border-t border-[var(--border)]/40 scroll-mt-20">
-			<div class="max-w-7xl mx-auto">
+		<section id="latest-articles" class="px-4 sm:px-6 lg:px-8 xl:px-12 pt-8 md:pt-10 pb-10 md:pb-14 scroll-mt-20">
+			<div class="w-full max-w-[1600px] mx-auto">
 				<LatestArticles lang="de" limit={6} />
 			</div>
 		</section>
 
 		<!-- ═══════════════════  3. ⭐ TRUST SIGNALS & STANDARDS  ═══════════════════ -->
 		<!-- WHY PEOPLE CHOOSE REAL BMI -->
-		<section class="px-4 md:px-6 py-12 md:py-16 border-t border-[var(--border)]/40 space-y-12">
-			<div class="max-w-7xl mx-auto space-y-10">
-				<div class="space-y-3 text-center sm:text-left max-w-3xl">
-					<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">Transparente Rechner-Funktionen</p>
-					<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase leading-[0.98] text-[var(--foreground)]">
-						Klarheit für Ihre Gesundheitsziele
+		<section class="px-4 sm:px-6 lg:px-8 xl:px-12 py-8 md:py-10">
+			<div class="w-full max-w-[1600px] mx-auto space-y-6">
+				<div class="space-y-2 text-center sm:text-left max-w-3xl">
+					<p class="text-xs font-display font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">Transparente Rechner-Standards</p>
+					<h2 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+						Wissenschaftliche Genauigkeit & Datenschutz
 					</h2>
-					<p class="text-base md:text-lg text-[var(--muted-foreground)] font-medium leading-relaxed">
-						Ob Sie Fortschritte überwachen oder Ihre Ernährung planen: Real BMI liefert Ihnen schnelle, alltagstaugliche Schätzungen auf Basis veröffentlichter Richtlinien.
+					<p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-normal leading-relaxed">
+						Real BMI liefert geprüfte Gesundheitsformeln. Jedes Tool läuft direkt in Ihrem Browser, um Ihre Privatsphäre zu schützen.
 					</p>
 				</div>
 
-				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 					{[
-						{ title: 'Formelbasierte Richtwerte', description: 'Erhalten Sie nachvollziehbare Ausgangswerte für BMI, BMR, TDEE und Idealgewicht mit wissenschaftlich publizierten Gleichungen.' },
-						{ title: 'Datenschutz im Browser', description: 'Alle Berechnungen laufen lokal auf Ihrem Endgerät ab — ohne Benutzerkonten, Registrierung oder Datenspeicherung.' },
-						{ title: 'Fundiert auf öffentlichen Standards', description: 'Die Ergebnisse werden im Kontext der epidemiologischen Referenzbereiche von WHO und CDC dargestellt.' },
-						{ title: 'Praktisch für die Tagesplanung', description: 'Erkunden Sie Fitness-Kennzahlen, Nährwertschätzungen und Körperzusammensetzungen mit transparenten Methoden.' },
+						{ title: 'Klare Mathematische Formeln', description: 'Jedes Tool verwendet publizierte Formeln wie Mifflin-St Jeor, Devine und Karvonen.' },
+						{ title: 'Keine Datenerfassung', description: 'Ihre Gesundheitsdaten verbleiben auf Ihrem Gerät. Wir speichern oder erfassen keine privaten Eingaben.' },
+						{ title: 'Mehrstufige Körperanalyse', description: 'Vergleichen Sie Ihren BMI mit Körperfettanteil und Taillenumfang für ein vollständiges Bild.' },
+						{ title: 'Offizielle Referenzbereiche', description: 'Alle Ergebnisse werden neben den offiziellen Referenzwerten der WHO und CDC dargestellt.' },
 					].map(item => (
-						<div class="group p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] space-y-3 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-sm hover:-translate-y-0.5">
-							<h3 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
-							<p class="text-sm md:text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+						<div class="p-4 sm:p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-1.5 transition-all duration-200 hover:border-[var(--accent)]/50 hover:shadow-xs">
+							<h3 class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)]">{item.title}</h3>
+							<p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-normal leading-relaxed">
 								{item.description}
 							</p>
 						</div>
 					))}
-					
-					<!-- Brand & Methodology Box -->
-					<div class="p-7 md:p-8 rounded-[var(--radius)] border-[1.5px] border-[var(--accent)]/20 bg-gradient-to-br from-[var(--accent)] to-[#d44f30] text-white flex flex-col items-start justify-between gap-6 shadow-md">
-						<div class="space-y-2">
-							<p class="text-xs font-display font-semibold uppercase tracking-[0.3em] opacity-80">Transparente Methodik</p>
-							<p class="text-2xl md:text-3xl font-display font-bold tracking-tight uppercase">WIE UNSERE RECHNER FUNKTIONIEREN</p>
-							<p class="text-xs md:text-sm font-medium opacity-90 leading-relaxed pt-1">Erfahren Sie mehr über unsere publizierten Formeln, Referenzstandards, Eingaben und Grenzen aller 23 Rechner.</p>
+				</div>
+
+				<!-- Transparent Methodology Strip -->
+				<div class="p-4 sm:p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all duration-200 hover:border-[var(--accent)]/40">
+					<div class="space-y-1">
+						<div class="flex items-center gap-2">
+							<span class="w-2 h-2 rounded-full bg-[var(--accent)]"></span>
+							<span class="text-[11px] font-display font-bold uppercase tracking-wider text-[var(--accent)]">Transparente Methodik</span>
 						</div>
-						<a href="/de/methodology/" class="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-display text-xs font-bold uppercase tracking-wider hover:bg-slate-100 transition-all shadow-xs">
-							Zur Rechner-Methodik →
-						</a>
+						<h3 class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)]">Wie Unsere 23 Rechner Funktionieren</h3>
+						<p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-normal">Erfahren Sie mehr über publizierte Formeln, Referenzstandards, Eingaben und Grenzen aller Rechner.</p>
 					</div>
+					<a href="/de/methodology/" class="px-4 py-2.5 rounded-xl bg-[var(--accent)] text-white font-display text-xs font-bold uppercase tracking-wider hover:opacity-95 transition-all shadow-xs inline-flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
+						<span>Zur Rechner-Methodik →</span>
+					</a>
 				</div>
 
 				<!-- Editorial & Research Verification Banner -->
-				<div class="pt-4">
-					<MedicalEEATBanner lang="de" />
-				</div>
+				<MedicalEEATBanner lang="de" />
 			</div>
 		</section>
 
 		<!-- ═══════════════════  7. ❓ REFERENCE STANDARDS & FAQ  ═══════════════════ -->
-		<section id="faq-standards" class="px-4 md:px-6 py-10 md:py-14 border-t border-[var(--border)]/40 scroll-mt-20">
-			<div class="max-w-7xl mx-auto space-y-12">
+		<section id="faq-standards" class="px-4 sm:px-6 lg:px-8 xl:px-12 py-10 md:py-14 scroll-mt-20">
+			<div class="w-full max-w-[1600px] mx-auto space-y-12">
 				<HealthContent lang="de" />
 				<EmbedWidgetBox lang="de" />
 			</div>

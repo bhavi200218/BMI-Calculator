@@ -9,7 +9,6 @@ interface FooterLink {
 }
 
 interface FooterTranslation {
-  tagline: string;
   colPopular: string;
   colCompany: string;
   colLegal: string;
@@ -25,11 +24,10 @@ interface FooterTranslation {
 
 const footerTranslations: Record<string, FooterTranslation> = {
   en: {
-    tagline: 'An independent health information and reference calculation project.',
     colPopular: 'Popular Calculators',
-    colCompany: 'About & Contact',
-    colLegal: 'Legal & Policies',
-    viewAllTools: 'All 23 Calculators & Methodology →',
+    colCompany: 'About Us',
+    colLegal: 'Legal & Privacy',
+    viewAllTools: 'All 23 Calculators →',
     copyright: `© ${year} Real BMI Calculator. All rights reserved.`,
     teamAttribution: 'Maintained personally by Bhawanshi Dosi',
     privacyBadge: 'Free & Privacy First',
@@ -38,12 +36,12 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'BMI Calculator', href: `/en/bmi-calculator/` },
       { name: '3D BMI Calculator', href: `/en/3d-bmi-calculator/` },
       { name: 'BMR Calculator', href: `/en/bmr-calculator/` },
-      { name: 'TDEE Energy Calculator', href: `/en/tdee-calculator/` },
+      { name: 'TDEE Calculator', href: `/en/tdee-calculator/` },
       { name: 'Body Fat Calculator', href: `/en/body-fat-calculator/` }
     ],
     companyLinks: [
-      { name: 'About Real BMI', href: `/en/about/` },
-      { name: 'Contact Creator', href: `/en/contact/` },
+      { name: 'About Us', href: `/en/about/` },
+      { name: 'Contact Us', href: `/en/contact/` },
       { name: 'Editorial Policy', href: `/en/editorial-policy/` },
       { name: 'Sources & Research', href: `/en/sources/` }
     ],
@@ -54,11 +52,10 @@ const footerTranslations: Record<string, FooterTranslation> = {
     ]
   },
   es: {
-    tagline: 'Proyecto independiente de información de salud y cálculos de referencia.',
     colPopular: 'Calculadoras Populares',
-    colCompany: 'Plataforma y Autor',
-    colLegal: 'Legal y Políticas',
-    viewAllTools: 'Ver las 23 Calculadoras y Metodología →',
+    colCompany: 'Sobre Nosotros',
+    colLegal: 'Legal y Privacidad',
+    viewAllTools: 'Las 23 Calculadoras →',
     copyright: `© ${year} Real BMI Calculator. Todos los derechos reservados.`,
     teamAttribution: 'Mantenido personalmente por Bhawanshi Dosi',
     privacyBadge: 'Gratis y Privado',
@@ -67,12 +64,12 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Calculadora de IMC', href: `/es/bmi-calculator/` },
       { name: 'Calculadora IMC 3D', href: `/es/3d-bmi-calculator/` },
       { name: 'Calculadora de TMB (BMR)', href: `/es/bmr-calculator/` },
-      { name: 'Gasto Energético (TDEE)', href: `/es/tdee-calculator/` },
+      { name: 'Calculadora TDEE', href: `/es/tdee-calculator/` },
       { name: 'Calculadora de Grasa Corporal', href: `/es/body-fat-calculator/` }
     ],
     companyLinks: [
-      { name: 'Sobre Real BMI', href: `/es/about/` },
-      { name: 'Contacto', href: `/es/contact/` },
+      { name: 'Sobre Nosotros', href: `/es/about/` },
+      { name: 'Contáctanos', href: `/es/contact/` },
       { name: 'Política Editorial', href: `/es/editorial-policy/` },
       { name: 'Fuentes y Referencias', href: `/es/sources/` }
     ],
@@ -83,11 +80,10 @@ const footerTranslations: Record<string, FooterTranslation> = {
     ]
   },
   fr: {
-    tagline: 'Projet indépendant d\'information sur la santé et outils de référence.',
     colPopular: 'Calculateurs Populaires',
-    colCompany: 'Plateforme et Auteur',
-    colLegal: 'Mentions Légales',
-    viewAllTools: 'Voir les 23 Calculateurs et Méthodologie →',
+    colCompany: 'À Propos de Nous',
+    colLegal: 'Légal et Confidentialité',
+    viewAllTools: 'Les 23 Calculateurs →',
     copyright: `© ${year} Real BMI Calculator. Tous droits réservés.`,
     teamAttribution: 'Maintenu personnellement par Bhawanshi Dosi',
     privacyBadge: 'Gratuit & Confidentiel',
@@ -96,12 +92,12 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'Calculateur d\'IMC', href: `/fr/bmi-calculator/` },
       { name: 'Calculateur IMC 3D', href: `/fr/3d-bmi-calculator/` },
       { name: 'Calculateur Métabolisme (BMR)', href: `/fr/bmr-calculator/` },
-      { name: 'Dépense Énergétique (TDEE)', href: `/fr/tdee-calculator/` },
+      { name: 'Calculateur TDEE', href: `/fr/tdee-calculator/` },
       { name: 'Calculateur Masse Grasse', href: `/fr/body-fat-calculator/` }
     ],
     companyLinks: [
-      { name: 'À Propos de Real BMI', href: `/fr/about/` },
-      { name: 'Contact', href: `/fr/contact/` },
+      { name: 'À Propos de Nous', href: `/fr/about/` },
+      { name: 'Contactez-Nous', href: `/fr/contact/` },
       { name: 'Politique Éditoriale', href: `/fr/editorial-policy/` },
       { name: 'Sources & Références', href: `/fr/sources/` }
     ],
@@ -112,11 +108,10 @@ const footerTranslations: Record<string, FooterTranslation> = {
     ]
   },
   de: {
-    tagline: 'Unabhängiges Projekt für Gesundheitsinformationen und Referenzrechner.',
     colPopular: 'Beliebte Rechner',
-    colCompany: 'Über Real BMI',
+    colCompany: 'Über Uns',
     colLegal: 'Rechtliches & Datenschutz',
-    viewAllTools: 'Alle 23 Rechner & Methodik →',
+    viewAllTools: 'Alle 23 Rechner →',
     copyright: `© ${year} Real BMI Calculator. Alle Rechte vorbehalten.`,
     teamAttribution: 'Persönlich betreut von Bhawanshi Dosi',
     privacyBadge: 'Kostenlos & Datenschutz',
@@ -125,11 +120,11 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'BMI-Rechner', href: `/de/bmi-calculator/` },
       { name: '3D BMI Rechner', href: `/de/3d-bmi-calculator/` },
       { name: 'Grundumsatz-Rechner (BMR)', href: `/de/bmr-calculator/` },
-      { name: 'Gesamtenergiebedarf (TDEE)', href: `/de/tdee-calculator/` },
+      { name: 'TDEE-Rechner', href: `/de/tdee-calculator/` },
       { name: 'Körperfettrechner', href: `/de/body-fat-calculator/` }
     ],
     companyLinks: [
-      { name: 'Über Real BMI', href: `/de/about/` },
+      { name: 'Über Uns', href: `/de/about/` },
       { name: 'Kontakt', href: `/de/contact/` },
       { name: 'Redaktionsrichtlinie', href: `/de/editorial-policy/` },
       { name: 'Quellen & Referenzen', href: `/de/sources/` }
@@ -141,24 +136,23 @@ const footerTranslations: Record<string, FooterTranslation> = {
     ]
   },
   ko: {
-    tagline: '공중보건 가이드라인에 기반한 프라이버시 중심 건강 정보 프로젝트.',
     colPopular: '인기 건강 계산기',
-    colCompany: '소개 및 문의',
+    colCompany: '소개 및 고객지원',
     colLegal: '정책 및 약관',
-    viewAllTools: '전체 23개 계산기 및 방법론 →',
+    viewAllTools: '전체 23개 계산기 →',
     copyright: `© ${year} Real BMI Calculator. 모든 권리 보유.`,
-    teamAttribution: 'Bhawanshi Dosi가 직접 운영 및 관리함',
+    teamAttribution: '바완시 도시(Bhawanshi Dosi)가 직접 운영 및 관리',
     privacyBadge: '무료 및 개인정보 보호',
     privacyFooter: '브라우저 로컬 연산',
     popularCalculators: [
       { name: 'BMI 계산기', href: `/ko/bmi-calculator/` },
       { name: '3D BMI 계산기', href: `/ko/3d-bmi-calculator/` },
       { name: '기초대사량 (BMR) 계산기', href: `/ko/bmr-calculator/` },
-      { name: '일일 총에너지소비량 (TDEE)', href: `/ko/tdee-calculator/` },
+      { name: 'TDEE 계산기', href: `/ko/tdee-calculator/` },
       { name: '체지방률 계산기', href: `/ko/body-fat-calculator/` }
     ],
     companyLinks: [
-      { name: 'Real BMI 소개', href: `/ko/about/` },
+      { name: '회사 소개', href: `/ko/about/` },
       { name: '문의하기', href: `/ko/contact/` },
       { name: '편집 정책', href: `/ko/editorial-policy/` },
       { name: '출처 및 참고문헌', href: `/ko/sources/` }
@@ -170,15 +164,14 @@ const footerTranslations: Record<string, FooterTranslation> = {
     ]
   },
   hi: {
-    tagline: 'स्वतंत्र स्वास्थ्य सूचना एवं संदर्भ गणना प्लेटफॉर्म।',
     colPopular: 'लोकप्रिय कैलकुलेटर',
-    colCompany: 'परिचय एवं संपर्क',
+    colCompany: 'हमारे बारे में',
     colLegal: 'नीतियां एवं कानूनी शर्तें',
-    viewAllTools: 'सभी 23 कैलकुलेटर एवं कार्यप्रणाली →',
+    viewAllTools: 'सभी 23 कैलकुलेटर →',
     copyright: `© ${year} Real BMI Calculator। सर्वाधिकार सुरक्षित।`,
-    teamAttribution: 'भवंशी दोसी द्वारा व्यक्तिगत रूप से प्रबंधित',
+    teamAttribution: 'भवांशी दोसी द्वारा व्यक्तिगत रूप से प्रबंधित',
     privacyBadge: 'मुफ़्त और 100% सुरक्षित',
-    privacyFooter: 'ब्राउज़र-आधारित गणना',
+    privacyFooter: 'ब्राउज़र-आधारित सुरक्षित गणना',
     popularCalculators: [
       { name: 'बीएमआई (BMI) कैलकुलेटर', href: `/hi/bmi-calculator/` },
       { name: '3D बीएमआई कैलकुलेटर', href: `/hi/3d-bmi-calculator/` },
@@ -187,7 +180,7 @@ const footerTranslations: Record<string, FooterTranslation> = {
       { name: 'बॉडी फैट % कैलकुलेटर', href: `/hi/body-fat-calculator/` }
     ],
     companyLinks: [
-      { name: 'Real BMI परिचय', href: `/hi/about/` },
+      { name: 'हमारे बारे में', href: `/hi/about/` },
       { name: 'संपर्क करें', href: `/hi/contact/` },
       { name: 'संपादकीय नीति', href: `/hi/editorial-policy/` },
       { name: 'स्रोत एवं संदर्भ', href: `/hi/sources/` }
@@ -214,26 +207,20 @@ const ft = footerTranslations[lang] || footerTranslations.en;
 ---
 
 <footer class="w-full bg-[var(--card)]/95 backdrop-blur-xl border-t border-[var(--border)] mt-6 pt-5 pb-3 text-[var(--foreground)] relative z-20">
-  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+  <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-4">
 
-    <!-- Top Brand & Tagline Bar (Compact) -->
+    <!-- Top Brand & Trust Bar (Compact) -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[var(--border)]/50">
-      <div class="flex flex-wrap items-center gap-2">
-        <a href={`/${lang}/`} class="inline-flex items-center gap-1.5 group">
-          <div class="w-5 h-5 rounded-md bg-[#D33A18] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
-            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-            </svg>
-          </div>
-          <span class="font-display font-bold text-xs uppercase tracking-tight text-[var(--foreground)]">
-            Real BMI <span class="text-[var(--accent)]">Calculator</span>
-          </span>
-        </a>
-        <span class="hidden sm:inline text-xs text-[var(--border)]">|</span>
-        <p class="text-xs text-[var(--muted-foreground)] font-medium">
-          {ft.tagline}
-        </p>
-      </div>
+      <a href={`/${lang}/`} class="inline-flex items-center gap-2 group">
+        <div class="w-5 h-5 rounded-md bg-[#D33A18] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+          <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+          </svg>
+        </div>
+        <span class="font-display font-bold text-xs uppercase tracking-tight text-[var(--foreground)]">
+          Real BMI <span class="text-[var(--accent)]">Calculator</span>
+        </span>
+      </a>
 
       <div class="flex items-center gap-1.5 text-xs font-semibold text-[var(--muted-foreground)] self-start sm:self-auto">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
@@ -258,7 +245,7 @@ const ft = footerTranslations[lang] || footerTranslations.en;
             </li>
           ))}
           <li class="pt-1">
-            <a href={`/${lang}/methodology/`} class="font-semibold text-[var(--accent)] hover:underline underline-offset-2 inline-flex items-center gap-1">
+            <a href={`/${lang}/#calculators`} class="font-semibold text-[var(--accent)] hover:underline underline-offset-2 inline-flex items-center gap-1">
               <span>{ft.viewAllTools}<span class="sr-only">. </span></span>
             </a>
           </li>

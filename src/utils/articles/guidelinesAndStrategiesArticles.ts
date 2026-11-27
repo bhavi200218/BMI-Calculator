@@ -22,7 +22,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "fr": "IMC & Poids"
   },
     "description": {
-      "en": "A simple guide to understanding your BMI score. See standard cutoffs and clear steps to take next.",
+      "en": "Evidence-based clinical guide to BMI interpretation: standard WHO cutoffs, ethnic population thresholds, and multi-metric screening alongside waist circumference.",
       "es": "Guía basada en evidencia para interpretar el Índice de Masa Corporal (IMC). Conozca los puntos de corte oficiales de la OMS, ajustes étnicos y medidas de detección complementarias.",
       "fr": "Guide fondé sur des preuves pour interpréter l'Indice de Masse Corporelle (IMC). Découvrez les seuils officiels de l'OMS, les ajustements ethniques et les mesures complémentaires.",
       "de": "Ein evidenzbasierter Leitfaden zur Interpretation des Body-Mass-Index (BMI). Erfahren Sie mehr über offizielle WHO-Grenzwerte, ethnische Anpassungen und ergänzende Screening-Messungen.",
@@ -618,7 +618,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "fr": "IMC & Poids"
   },
     "description": {
-      "en": "See how healthy weight targets change from youth to older age. Check simple charts for every life stage.",
+      "en": "Age-specific BMI evaluation from CDC adolescent percentiles to the geriatric obesity paradox, explaining why optimal weight targets differ across the human lifespan.",
       "es": "Examine la interpretación del IMC según la edad, desde la adolescencia hasta la vejez. Conozca las tablas de percentiles de los CDC y la paradoja de la obesidad en ancianos.",
       "fr": "Comprenez l'évolution de l'interprétation de l'IMC selon l'âge : centiles pédiatriques du CDC et seuils recommandés pour les personnes âgées.",
       "de": "Erfahren Sie, wie der BMI im Alter bewertet wird: Von den Perzentilkurven der CDC für Jugendliche bis zu höheren optimalen BMI-Werten bei Senioren.",
@@ -1016,7 +1016,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Follow practical steps to reach and maintain a healthy weight. Protect your muscle and build daily habits.",
+      "en": "Evidence-based framework for sustainable weight management: setting conservative caloric deficits, optimizing protein for lean tissue preservation, and preventing weight regain.",
       "es": "Guía científica para el control de peso sostenible. Aprenda a calcular un déficit calórico seguro, optimizar la ingesta de proteínas y evitar el efecto rebote.",
       "fr": "Guide scientifique pour une gestion durable du poids. Apprenez à calculer un déficit calorique modéré, à optimiser les protéines et à préserver la masse musculaire.",
       "de": "Ein wissenschaftlicher Leitfaden für nachhaltiges Gewichtsmanagement. Erfahren Sie, wie Sie ein sicheres Kaloriendefizit berechnen und Muskelmasse erhalten.",
@@ -1214,7 +1214,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "fr": "Métabolisme & Nutrition"
   },
     "description": {
-      "en": "Find out why weight loss can slow down over time. Learn smart ways to break through weight loss plateaus.",
+      "en": "The physiology of adaptive thermogenesis during caloric restriction: why metabolic rate slows during fat loss and evidence-based strategies for overcoming weight loss plateaus.",
       "es": "Descubra por qué el metabolismo se ralentiza durante el déficit calórico prolongado. Conozca la termogénesis adaptativa y estrategias para superar las mesetas de peso.",
       "fr": "Découvrez pourquoi le métabolisme ralentit lors d'un régime prolongé. Analyse de la thermogenèse adaptative et solutions pour surmonter les paliers de perte de poids.",
       "de": "Verstehen Sie, warum der Stoffwechsel bei längeren Diäten verlangsamt: Ursachen der adaptiven Thermogenese und Wege zur Überwindung von Gewichtsstillstand.",
@@ -1394,7 +1394,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "fr": "Composition Corporelle"
   },
     "description": {
-      "en": "Learn the difference between belly fat and surface fat. Check simple waist targets to protect your heart.",
+      "en": "Anatomical and metabolic differences between deep visceral adipose tissue and subcutaneous fat, waist circumference screening targets, and cardiometabolic risk factors.",
       "es": "Conozca las diferencias anatómicas y metabólicas entre la grasa visceral profunda y la subcutánea superficial. Guía de medición de cintura y prevención cardiovascular.",
       "fr": "Comprenez les différences fondamentales entre graisse viscérale profonde et graisse sous-cutanée. Seuils de tour de taille et prévention cardiométabolique.",
       "de": "Erfahren Sie die Unterschiede zwischen gefährlichem tiefem Bauchfett (Viszeralfett) und Unterhautfettgewebe sowie deren Bedeutung für Herz und Stoffwechsel.",
@@ -1605,7 +1605,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "fr": "Fitness & Performance"
   },
     "description": {
-      "en": "See what your resting pulse says about your heart fitness. Learn how aerobic exercise lowers your heart rate.",
+      "en": "Physiological guide to resting heart rate and heart rate reserve: cardiovascular conditioning baselines, autonomic nervous system tone, and aerobic training adaptations.",
       "es": "Descubra la importancia fisiológica de la frecuencia cardíaca en reposo y la reserva cardíaca. Guía para calcular zonas de entrenamiento y evaluar la salud cardiovascular.",
       "fr": "Comprenez la signification physiologique de la fréquence cardiaque au repos. Découvrez comment l'entraînement aérobie abaisse le pouls et optimise l'endurance.",
       "de": "Erfahren Sie die Bedeutung des Ruhepulses für Ihre Gesundheit und wie Sie Herzfrequenz-Zonen für optimales Ausdauertraining berechnen.",
@@ -1864,7 +1864,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "fr": "IMC & Poids"
   },
     "description": {
-      "en": "Learn how to protect your muscle strength as you get older. Follow simple tips for food and daily movement.",
+      "en": "The biology of age-related sarcopenia: why older adults require higher daily protein intakes, the role of progressive resistance exercise, and preserving functional mobility.",
       "hi": "उम्र के साथ मांसपेशियों में होने वाले नुकसान (सार्कोपेनिया) का जीवविज्ञान। जानें कि बुजुर्गों को अधिक प्रोटीन की आवश्यकता क्यों होती है, शक्ति व्यायाम की भूमिका और स्वतंत्र गतिशीलता के उपाय।",
       "ko": "연령 증가에 따른 근감소증(Sarcopenia)의 생리학적 기전. 노년층을 위한 고단백 영양 섭취 기준(끼니당 류신 3g), 필수 저항성 근력 운동 및 낙상 예방 지침을 설명합니다.",
       "de": "Die Biologie des altersbedingten Muskelabbaus (Sarkopenie): Warum Senioren mehr Protein benötigen und wie gezieltes Krafttraining die Selbstständigkeit sichert.",
@@ -1971,7 +1971,7 @@ export const guidelinesAndStrategiesArticles: Record<string, BlogArticleData> = 
     "fr": "Fitness & Performance"
   },
     "description": {
-      "en": "Learn how your body weight affects your blood pressure. See simple daily habits that keep your heart strong.",
+      "en": "Physiological mechanics of systolic and diastolic blood pressure: how excess adipose mass increases vascular resistance, the DASH sodium-potassium balance, and lifestyle controls.",
       "hi": "सिस्टोलिक और डायस्टोलिक रक्तचाप के शारीरिक सिद्धांत। जानें कि अतिरिक्त वजन धमनियों पर कैसे दबाव डालता है, DASH आहार में सोडियम-पोटेशियम अनुपात और बीपी नियंत्रित करने के प्राकृतिक उपाय।",
       "ko": "수축기 및 이완기 혈압의 생리학적 메커니즘. 과도한 체중이 혈관 내피세포에 미치는 압력, DASH 식단의 나트륨-칼륨 비율 및 약물 없이 혈압을 낮추는 생활 습관을 안내합니다.",
       "de": "Verstehen Sie die Mechanik des systolischen und diastolischen Blutdrucks: Gefäßwiderstand, der Einfluss von Übergewicht und die blutdrucksenkende Wirkung der DASH-Ernährung.",

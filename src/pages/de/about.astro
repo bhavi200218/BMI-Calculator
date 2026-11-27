@@ -54,13 +54,12 @@ import PageShell from '../../components/PageShell.astro';
       returnUrl="/de/"
       returnLabel="Startseite"
     >
-      <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
-        <div class="space-y-8">
-          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+      <div class="max-w-5xl space-y-10">
+        <div class="space-y-6 prose prose-zinc dark:prose-invert text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
             <p><strong>Real BMI</strong> ist eine individuelle Plattform für digitale Gesundheitsberechnungen und biometrische Orientierungswerte, gegründet, entwickelt und gepflegt von <strong>Bhawanshi Dosi</strong>, einer Software-Ingenieurin aus Banswara, Rajasthan, Indien. Das Projekt entstand, um eine zentrale Schwachstelle moderner Online-Portale zu beseitigen: intransparente Rechenmodelle, überladene Werbelayouts und invasive Tracking-Mechanismen. Real BMI bietet transparente, mathematisch nachvollziehbare Rechner, die zu 100 % lokal auf Ihrem Endgerät ausgeführt werden.</p>
             
             <!-- Creator Profile Card -->
-            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start">
+            <div class="p-6 rounded-2xl rounded-2xl bg-[var(--card)]/60 border border-[var(--border)]/60 not-prose flex flex-col sm:flex-row gap-5 items-start">
               <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-black text-2xl shadow-md shrink-0">
                 BD
               </div>
@@ -77,7 +76,7 @@ import PageShell from '../../components/PageShell.astro';
             </div>
 
             <!-- Non-Clinical Disclosure Banner -->
-            <div class="p-5 rounded-xl border border-amber-500/30 bg-amber-500/5 text-amber-200/90 text-sm leading-relaxed space-y-2 not-prose">
+            <div class="p-5 rounded-xl border border-amber-500/20 bg-amber-500/5 text-amber-200/90 text-sm leading-relaxed space-y-2 not-prose">
               <div class="flex items-center gap-2 font-bold text-amber-400">
                 <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -93,7 +92,7 @@ import PageShell from '../../components/PageShell.astro';
             <p>Da Real BMI auf ein subjektives ärztliches Redaktionsteam verzichtet, wird wissenschaftliche Präzision durch <strong>strikte testgetriebene Softwareentwicklung (TDD)</strong> gewährleistet. Jede Formel, Umrechnungskonstante und Grenzbereichsdefinition wird vor jeder Bereitstellung durch eine Suite aus über 920 automatisierten Unit- und Regressionstests verifiziert:</p>
 
             <div class="grid gap-4 sm:grid-cols-2 not-prose pt-1">
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   Präzision wissenschaftlicher Formeln
@@ -102,7 +101,7 @@ import PageShell from '../../components/PageShell.astro';
                   Modelle (Mifflin-St Jeor 1990, Mosteller 1987, Devine 1974, WHO TRS 854) werden mit klinischen Referenzdatensätzen abgeglichen.
                 </p>
               </div>
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   Metrische &amp; imperiale Parität
@@ -111,7 +110,7 @@ import PageShell from '../../components/PageShell.astro';
                   Metrische (kg/cm) und imperiale (lbs/in) Rechenpfade werden mit Umrechnungsfaktor 703,06957964 bei &plusmn;0,01 Toleranz automatisiert abgeglichen.
                 </p>
               </div>
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   Grenzwerte &amp; Kategorienprüfung
@@ -120,7 +119,7 @@ import PageShell from '../../components/PageShell.astro';
                   Unit-Tests prüfen WHO-Standardschwellen (18,5, 25,0, 30,0) und asiatische Risikogrenzen (23,0, 27,5 kg/m&sup2;) an extremen Eingabewerten.
                 </p>
               </div>
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   Datenschutz-Audit (Zero-Retention)
@@ -132,83 +131,67 @@ import PageShell from '../../components/PageShell.astro';
             </div>
 
             
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Die Entstehung von Real BMI: Digitale Gesundheitstools neu gedacht</h2>
-            <p>Die Entstehung von Real BMI geht auf eine grundlegende Beobachtung zurück: Die Mehrheit bestehender Online-Gesundheitsrechner ist mit aufdringlicher Werbung, undurchsichtigen Algorithmen und aggressiven Tracking-Skripten überfrachtet, die sensible biometrische Daten erfassen. Viele Tools legen ihre Formelgrundlagen nicht offen oder nutzen veraltete Gleichungen, die bei unterschiedlichen Staturen verzerrte Ergebnisse liefern.</p>
-            <p>Gegründet von der Softwareentwicklerin <strong>Bhawanshi Dosi</strong> in Banswara (Rajasthan, Indien), wurde Real BMI ins Leben gerufen, um einen neuen Standard für digitale Gesundheitsreferenzwerkzeuge zu setzen. Durch die Verknüpfung testgetriebener Softwareentwicklung mit peer-reviewter Fachliteratur der Weltgesundheitsorganisation (WHO) und der CDC bietet unsere Plattform verlässliche, transparente und mathematisch nachvollziehbare Berechnungen ohne jeden Kompromiss beim Datenschutz.</p>
-
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Zentrale Entwicklungsprinzipien: Geschwindigkeit, Präzision &amp; Clientseitige Ausführung</h2>
-            <p>Alle 23 Werkzeuge auf Real BMI folgen einer kompromisslosen Zero-Retention-Philosophie. Anstatt Benutzereingaben an zentrale Webserver zu senden, führt unsere Plattform alle Rechenoperationen direkt lokal in der JavaScript-Umgebung Ihres Browsers aus. Daraus ergeben sich entscheidende Vorteile:</p>
-            <ul>
-              <li><strong>Vollkommene Datenanonymität:</strong> Größe, Gewicht, Alter und Taillenumfang verlassen niemals Ihr Endgerät. Es existieren keine externen Datenbanken, in denen Ihre Werte gespeichert werden.</li>
-              <li><strong>Maximale Rechengeschwindigkeit:</strong> Da die Berechnungen lokal auf dem Prozessor Ihres Geräts erfolgen, stehen Ergebnisse und grafische Visualisierungen in weniger als 16 Millisekunden latenzfrei zur Verfügung.</li>
-              <li><strong>Verlässliche Offline-Fähigkeit:</strong> Einmal geladen, funktionieren unsere Rechner auch bei instabiler oder unterbrochener Internetverbindung zuverlässig weiter.</li>
-            </ul>
-
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Wissenschaftliche Transparenz, Faktenprüfung &amp; Langfristiges Engagement</h2>
-            <p>Wir sind überzeugt, dass digitale Gesundheitshilfen absolut transparent sein müssen. Jeder unserer Rechner wird durch mathematische Schritt-für-Schritt-Erklärungen, detaillierte Berechnungsbeispiele und direkte Nachweise primärer medizinischer Fachliteratur ergänzt. Über 920 automatisierte Unittests sichern die kontinuierliche Genauigkeit aller Formeln.</p>
-            <p>Real BMI bleibt dauerhaft kostenfrei und für alle Menschen weltweit uneingeschränkt nutzbar. Fachliches Feedback, Forschungshinweise und methodische Anregungen aus der medizinischen Praxis nehmen wir über unsere Kontaktseite jederzeit gern entgegen.</p>
-
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Evidenzbasierte mathematische Standards</h2>
-            <p>Jede Formel auf Real BMI basiert unmittelbar auf publizierter medizinischer Fachliteratur und Richtlinien des öffentlichen Gesundheitswesens: dem technischen Bericht 854 der Weltgesundheitsorganisation (WHO), der in <em>The Lancet</em> veröffentlichten WHO-Konsultation für den asiatisch-pazifischen Raum, den Mifflin-St-Jeor-Berechnungsmodellen, der Mosteller-Körperoberflächenformel und den Devine-Idealgewichtsstandards.</p>
+            <p>Jeder Algorithmus auf Real BMI basiert unmittelbar auf publizierter medizinischer Fachliteratur und Richtlinien internationaler Gesundheitsorganisationen. Dazu gehören der technische Bericht 854 der Weltgesundheitsorganisation (WHO Technical Report Series 854), die in <em>The Lancet</em> veröffentlichte WHO-Konsultation zu populationsspezifischen BMI-Grenzbereichen für asiatische Bevölkerungsgruppen, die Mifflin-St-Jeor-Gleichung zur Ermittlung des Grundumsatzes (1990), die Mosteller-Formel zur Schätzung der Körperoberfläche (1987) sowie die klinische Devine-Formel für das ideale Körpergewicht (1974). Alle Algorithmen werden transparent offengelegt und mit detaillierten Rechenschritten versehen.</p>
 
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Datenschutz durch rein clientseitige Verarbeitung</h2>
-            <p>Im Gegensatz zu vielen kommerziellen Gesundheits-Apps speichert Real BMI keine biometrischen Daten. Sämtliche Eingaben wie Körpergröße, Gewicht oder Alter werden ausschließlich im lokalen Arbeitsspeicher Ihres Browsers verarbeitet und niemals an externe Server übertragen.</p>
+            <p>Im Gegensatz zu kommerziellen Wellness-Apps, die biometrische Daten erfassen und auf zentralen Cloud-Servern speichern, verarbeitet Real BMI sämtliche Eingaben ausschließlich lokal im Webbrowser Ihres Endgeräts via Client-Side-JavaScript. Daten wie Körpergröße, Körpergewicht, Lebensalter oder biologisches Geschlecht werden zu keinem Zeitpunkt über externe Netzwerke übertragen, in Remote-Datenbanken gespeichert oder auf Server-Festplatten protokolliert. Es existiert keine Nutzerverfolgung und keine serverseitige Profilerstellung.</p>
 
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Pädagogischer Zweck &amp; Medizinischer Hinweis</h2>
-            <p>Real BMI ist ein didaktisches Referenzwerkzeug und ersetzt keinesfalls eine ärztliche Konsultation, Diagnose oder Therapie. Die bereitgestellten Richtwerte dienen der persönlichen Orientierung und als fundierte Grundlage für das Gespräch mit qualifiziertem medizinischem Fachpersonal oder Ernährungsberatern.</p>
-          </div>
-        </div>
+            <p>Real BMI ist eine didaktische Rechen- und Informationsplattform für anthropometrische Schätzungen und kein medizinisches Diagnosezentrum, keine Arztpraxis und kein Krankenhaus. Die bereitgestellten Rechenwerte dienen ausschließlich der gesundheitlichen Orientierung und persönlichen Allgemeinbildung. Sie ersetzen zu keinem Zeitpunkt eine qualifizierte ärztliche Untersuchung, klinische Diagnose oder Ernährungsberatung durch approbierte Mediziner oder zertifizierte Diätassistenten. Bei gesundheitlichen Beschwerden sollte stets medizinisches Fachpersonal konsultiert werden.</p>
+                  </div>
 
-        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 sm:p-8 shadow-[var(--shadow-soft)] space-y-6">
-          <div class="space-y-2">
+        <!-- Platform Standards & Verification Summary (Open, Responsive Grid, No Line Dividers) -->
+        <div class="rounded-2xl border border-[var(--border)]/70 bg-[var(--card)]/60 p-6 sm:p-8 space-y-6">
+          <div class="space-y-1">
             <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Gründerin &amp; Verifikation</p>
             <h2 class="text-xl sm:text-2xl font-black text-[var(--foreground)] uppercase tracking-tight font-display">Unabhängige Plattform</h2>
             <p class="text-xs text-[var(--muted-foreground)] font-medium">Persönlich gepflegt von Bhawanshi Dosi</p>
           </div>
 
-          <div class="space-y-4 pt-3 border-t border-[var(--border)] text-xs">
-            <div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Gründerin &amp; Entwicklerin:</span>
               <span class="text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi (Software-Ingenieurin)</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Standort:</span>
               <span class="text-[var(--muted-foreground)] font-medium">Banswara, Rajasthan, Indien</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Verifikationsmethode:</span>
               <span class="text-[var(--muted-foreground)] font-medium">920+ automatisierte Softwaretests</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Ärztlicher Beirat:</span>
               <span class="text-[var(--muted-foreground)] font-medium">Keiner (rein didaktisches Webtool)</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Architektur:</span>
               <span class="text-[var(--muted-foreground)] font-medium">100 % Client-Side im Webbrowser</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Datenschutz:</span>
               <span class="text-[var(--muted-foreground)] font-medium">Keine Speicherung von Gesundheitsdaten</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1 sm:col-span-2 lg:col-span-3">
               <span class="font-bold text-[var(--foreground)] block">Wissenschaftliche Basis:</span>
               <span class="text-[var(--muted-foreground)] font-medium">WHO-, CDC- &amp; Fachstudien</span>
             </div>
           </div>
 
-          <div class="space-y-3 pt-4 border-t border-[var(--border)]">
-            <a href="/de/sources/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] hover:bg-[var(--accent)]/15 transition text-center">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+            <a href="/de/sources/" class="inline-flex items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] transition text-center">
               Wissenschaftliche Quellen (15 Studien) →
             </a>
-            <a href="/de/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition text-center">
+            <a href="/de/methodology/" class="inline-flex items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--muted)]/40 text-[var(--foreground)] hover:border-[var(--accent)] px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] transition text-center">
               Methodik &amp; Formeln einsehen (23) →
             </a>
-            <a href="/de/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15 text-center">
+            <a href="/de/contact/" class="inline-flex items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] transition text-center">
               Entwicklerin kontaktieren →
             </a>
           </div>
-        </aside>
+        </div>
       </div>
     </PageShell>
 </Layout>

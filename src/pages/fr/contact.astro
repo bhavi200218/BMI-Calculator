@@ -6,9 +6,9 @@ import ContactForm from '../../components/ContactForm.astro';
 const contactSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Contact Créatrice & Support | Real BMI Calculator",
+  "name": "Contacter la Créatrice & Support | Real BMI Calculator",
   "url": "https://realbmicalculator.com/fr/contact/",
-  "description": "Contactez la créatrice et développeuse de Real BMI pour toute assistance technique, retour sur les formules ou suggestions.",
+  "description": "Contactez Real BMI pour le support technique, les retours sur les formules mathématiques, les questions éditoriales ou vos suggestions sur nos calculateurs.",
   "mainEntity": {
     "@type": "Organization",
     "name": "Real BMI Calculator",
@@ -16,7 +16,7 @@ const contactSchema = {
     "founder": {
       "@type": "Person",
       "name": "Bhawanshi Dosi",
-      "jobTitle": "Ingénieur Logiciel et Développeur Principal",
+      "jobTitle": "Software Engineer & Lead Developer",
       "url": "https://realbmicalculator.com/fr/about/",
       "sameAs": [
         "https://www.linkedin.com/in/bhawanshi-dosi"
@@ -47,198 +47,173 @@ const contactSchema = {
 ---
 
 <Layout 
-    title="Contact Créatrice & Support | Real BMI Calculator" 
-    description="Contactez la créatrice et développeuse de Real BMI pour toute assistance technique, retour sur les formules ou suggestions."
+    title="Contacter la Créatrice & Support | Real BMI Calculator" 
+    description="Contactez Real BMI pour le support technique, les retours sur les formules mathématiques, les questions éditoriales ou vos suggestions sur nos calculateurs."
     canonicalURL="https://realbmicalculator.com/fr/contact/"
 >
     <script type="application/ld+json" is:inline set:html={JSON.stringify(contactSchema)} />
     <Navbar />
-    <main class="pt-36 md:pt-40 pb-20 px-4 md:px-6">
-        <div class="max-w-7xl mx-auto space-y-10">
+    <main class="pt-20 md:pt-24 pb-16 px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div class="max-w-7xl mx-auto space-y-8">
           <!-- Header block -->
-          <div class="space-y-4 max-w-4xl">
-            <a href="/fr/" class="inline-flex items-center gap-2 min-h-[48px] px-3 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)] hover:text-[var(--foreground)] transition-colors rounded-lg">
+          <div class="space-y-3">
+            <a href="/fr/" class="inline-flex items-center gap-2 min-h-[44px] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)] hover:text-[var(--foreground)] transition-colors rounded-lg">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
               Accueil
             </a>
-            <p class="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">Nous Contacter</p>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight leading-tight text-[var(--foreground)]">Contact Créatrice & Support</h1>
-            <p class="text-base sm:text-lg md:text-xl leading-relaxed text-[var(--muted-foreground)] font-medium pt-1">
-              Une question sur nos formules, un souci technique avec le visualiseur 3D ou des remarques sur nos guides santé ? Contactez directement la développeuse.
+            <p class="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">Contact Direct</p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-black uppercase tracking-tight leading-tight text-[var(--foreground)]">Contacter la Créatrice & Support</h1>
+            <p class="text-base sm:text-lg leading-relaxed text-[var(--muted-foreground)] font-medium max-w-4xl">
+              Une question sur nos formules mathématiques, un problème technique avec la visualisation 3D ou des remarques sur nos guides de santé ? Écrivez directement à Bhawanshi Dosi.
             </p>
           </div>
 
-          <!-- Prominent Founder & Transparency Banner (High-Authority Trust Signal) -->
-          <div class="rounded-2xl border-2 border-[var(--accent)]/40 bg-gradient-to-r from-[var(--card)] via-[var(--background)] to-[var(--card)] p-6 md:p-8 shadow-sm">
-            <div class="space-y-4">
+          <!-- Creator & Project Identity Card (Clean, Open, Modern) -->
+          <div class="rounded-2xl border border-[var(--border)]/70 bg-[var(--card)]/60 p-6 sm:p-7 space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-3">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-display font-bold uppercase tracking-widest border border-emerald-500/20">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                Site Web Individuel & Transparence</div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-1">
-                <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
-                  <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Fondateur et Créateur</span>
-                  <p class="text-base font-display font-black text-[var(--foreground)]">Bhawanshi Dosi</p>
-                  <p class="text-xs text-[var(--muted-foreground)] font-medium">Ingénieur Logiciel et Développeur Principal</p>
-                </div>
-                <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
-                  <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Type de Plateforme</span>
-                  <p class="text-base font-display font-black text-[var(--foreground)]">Site Web Individuel</p>
-                  <p class="text-xs text-[var(--muted-foreground)] font-medium">Initiative éducative indépendante en santé</p>
-                </div>
-                <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
-                  <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Siège et Opérations</span>
-                  <p class="text-base font-display font-black text-[var(--foreground)]">Banswara, Rajasthan, Inde</p>
-                  <p class="text-xs text-[var(--muted-foreground)] font-medium">Accessible dans le monde entier (6 langues)</p>
-                </div>
-                <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
-                  <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Support Officiel</span>
-                  <!--email_off--><a href="mailto:support@realbmicalculator.com" class="text-base font-mono font-bold text-[#464feb] hover:underline block break-all">support@realbmicalculator.com</a><!--/email_off-->
-                  <p class="text-xs text-emerald-500 font-semibold">Réponse sous 24 à 48 heures ouvrées</p>
-                </div>
-                <div class="p-4 rounded-xl bg-[var(--muted)]/30 border border-[var(--border)] space-y-1">
-                  <span class="text-xs uppercase tracking-wider font-bold text-[var(--muted-foreground)] block">Profil Professionnel</span>
-                  <a href="https://www.linkedin.com/in/bhawanshi-dosi" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-[#464feb] hover:underline flex items-center gap-1.5 pt-0.5">
-                    <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    Profil LinkedIn ↗
-                  </a>
-                  <p class="text-xs text-[var(--muted-foreground)] font-medium">Identité Vérifiée du Créateur</p>
-                </div>
+                Site Individuel et Transparence
+              </div>
+              <a href="https://www.linkedin.com/in/bhawanshi-dosi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#464feb] hover:underline">
+                <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                Profil LinkedIn ↗
+              </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs">
+              <div class="space-y-1">
+                <span class="font-bold uppercase tracking-wider text-[var(--muted-foreground)] block text-[11px]">Fondatrice & Développeuse Principale</span>
+                <p class="text-base font-display font-bold text-[var(--foreground)]">Bhawanshi Dosi</p>
+                <p class="text-xs text-[var(--muted-foreground)] font-medium">Ingénieure Logiciel & Administratrice Web</p>
+              </div>
+              <div class="space-y-1">
+                <span class="font-bold uppercase tracking-wider text-[var(--muted-foreground)] block text-[11px]">Siège Opérationnel</span>
+                <p class="text-base font-display font-bold text-[var(--foreground)]">Banswara, Rajasthan, Inde</p>
+                <p class="text-xs text-[var(--muted-foreground)] font-medium">Disponible mondialement (6 langues)</p>
+              </div>
+              <div class="space-y-1">
+                <span class="font-bold uppercase tracking-wider text-[var(--muted-foreground)] block text-[11px]">Architecture de la Plateforme</span>
+                <p class="text-base font-display font-bold text-[var(--foreground)]">Projet Éducatif Indépendant</p>
+                <p class="text-xs text-[var(--muted-foreground)] font-medium">23 Calculateurs de Santé Gratuits</p>
               </div>
             </div>
           </div>
 
-          <!-- Main Layout (Clean 2-Column: Form & Guidance on Left, Support Desk on Right) -->
-          <div class="grid gap-10 lg:grid-cols-[1.45fr_0.85fr] items-start pt-2">
-            <div class="space-y-10">
-              <div class="prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90 space-y-4">
-                <p>Real BMI est un site web individuel de calcul de santé fondé, développé et maintenu par <strong>Bhawanshi Dosi</strong>, basé à Banswara, Rajasthan, Inde. Dédié à fournir des outils transparents et respectueux de la vie privée basés sur des algorithmes publiés et évalués par des pairs.</p>
-                <p>Veuillez consulter nos directives de communication ci-dessous ou utiliser notre messagerie directe pour contacter directement Bhawanshi Dosi.</p>
-              </div>
+          <!-- Interactive Contact Form Component -->
+          <div id="contact-desk">
+            <ContactForm lang="fr" />
+          </div>
 
-              <!-- Interactive Contact Form -->
-              <div id="contact-form">
-                <ContactForm lang="fr" />
+          <!-- Communication Guidelines (3 Clear Cards, No Line Dividers) -->
+          <div class="space-y-4 pt-2">
+            <div class="space-y-1">
+              <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                Directives de Communication et Cadre Éditorial
+              </h2>
+              <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
+                Veuillez prendre connaissance de notre cadre d'assistance avant d'envoyer votre message.
+              </p>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-3">
+              <div class="rounded-xl border border-[var(--border)]/70 bg-[var(--card)]/60 p-5 space-y-2">
+                <h3 class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                  1. Absence de Conseil Médical Individuel
+                </h3>
+                <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                  Real BMI propose des outils éducatifs d'évaluation populationnelle basés sur des équations publiées. Nous ne pouvons pas analyser des bilans sanguins, poser de diagnostics ni prescrire de traitements. Veuillez consulter un médecin qualifié pour tout avis médical.
+                </p>
               </div>
-
-              <!-- Guidance & Editorial Sections (Consolidated, Non-Redundant) -->
-              <div class="space-y-4 pt-4 border-t border-[var(--border)]">
-                
-                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">1. Questions sur les Formules et Retours Académiques</h2>
-                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Nous vérifions en continu nos implémentations de modèles mathématiques établis (Mifflin-St Jeor, Oxford 2.5, seuils asiatiques de l'OMS). Si vous souhaitez nous suggérer une référence ou une mise à jour, Bhawanshi Dosi examinera attentivement vos remarques.</p>
-                  </div>
-                
-                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">2. Support Technique et Visualiseur 3D WebGL</h2>
-                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Si vous rencontrez un problème d'affichage avec le simulateur 3D ou les graphiques interactifs, merci de préciser votre système d'exploitation, votre modèle d'appareil et votre navigateur (Chrome, Safari, Edge ou Firefox).</p>
-                  </div>
-                
-                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">3. Absence de Conseil Médical Individuel</h2>
-                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Real BMI propose des outils éducatifs d'évaluation populationnelle et ne peut en aucun cas interpréter des analyses médicales personnelles, poser des diagnostics ou recommander des traitements. Aucune demande d'avis médical personnalisé ne pourra être traitée.</p>
-                  </div>
-                
-                  <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                    <h2 class="text-lg font-display font-bold uppercase tracking-tight text-[var(--foreground)]">4. Qualité du Contenu et Protection de la Vie Privée (Aucune Donnée Personnelle Stockée)</h2>
-                    <p class="text-sm md:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Pour protéger la confidentialité et maintenir la qualité du contenu, Real BMI applique une politique stricte garantissant qu'aucune donnée médicale n'est enregistrée sur nos serveurs. Nous n'hébergeons aucun forum public ni profil utilisateur. Tous les messages envoyés directement à notre adresse courriel de support restent strictement confidentiels.</p>
-                  </div>
-                
+              <div class="rounded-xl border border-[var(--border)]/70 bg-[var(--card)]/60 p-5 space-y-2">
+                <h3 class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                  2. Messagerie Privée Directe (Sans Contenu Public UGC)
+                </h3>
+                <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                  Afin de protéger la vie privée des utilisateurs et d'éviter les allégations médicales non vérifiées ou les spams, Real BMI n'héberge aucun espace de commentaires public ni forum. Tous les messages sont des échanges privés traités directement par la créatrice.
+                </p>
               </div>
-
-              <!-- Support FAQ Section -->
-              <div class="faq-support-section space-y-6 pt-6 border-t border-[var(--border)]">
-                <div class="space-y-2">
-                  <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-                    Questions Fréquentes sur le Support
-                  </h2>
-                  <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
-                    Interrogations courantes sur les sources scientifiques, le rendu 3D WebGL, la confidentialité et l'intégration des calculatrices.
-                  </p>
-                </div>
-                <div class="space-y-4">
-                  
-                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Comment signaler une erreur de calcul ou suggérer une mise à jour ?</h3>
-                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Envoyez votre message directement à notre adresse de support (<!--email_off-->support@realbmicalculator.com<!--/email_off-->) en indiquant l'URL de la calculatrice, la formule concernée et les références scientifiques (OMS, CDC ou PubMed). Bhawanshi Dosi étudie chaque remarque sous 24 à 48 heures ouvrées.</p>
-                    </div>
-                  
-                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Puis-je intégrer les calculatrices Real BMI sur mon site ou blog ?</h3>
-                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Oui. Vous pouvez utiliser librement notre widget iframe sur des sites commerciaux ou non commerciaux, en conservant le lien d'attribution vers realbmicalculator.com.</p>
-                    </div>
-                  
-                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Mes mesures de santé sont-elles enregistrées sur vos serveurs ?</h3>
-                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Non. Tous les calculs s'exécutent localement dans votre navigateur via JavaScript. Aucun poids, aucune taille ou pourcentage de graisse n'est envoyé à nos serveurs.</p>
-                    </div>
-                  
-                    <div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 space-y-2">
-                      <h3 class="text-base sm:text-lg font-bold text-[var(--foreground)]">Quel est le délai de réponse de Real BMI ?</h3>
-                      <p class="text-sm sm:text-base text-[var(--muted-foreground)] leading-relaxed font-medium">Nous traitons les demandes sous 24 à 48 heures ouvrées. Pour les rapports de bogues WebGL urgents, mentionnez votre appareil et navigateur pour faciliter la reproduction.</p>
-                    </div>
-                  
-                </div>
+              <div class="rounded-xl border border-[var(--border)]/70 bg-[var(--card)]/60 p-5 space-y-2">
+                <h3 class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                  3. Zéro Stockage de Données de Santé
+                </h3>
+                <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                  Toute la logique de calcul s'exécute exclusivement dans votre navigateur via JavaScript côté client. Vos mesures biologiques, poids ou tailles ne sont jamais envoyés à des serveurs ni conservés en base de données.
+                </p>
               </div>
             </div>
+          </div>
 
-            <!-- Sidebar Card (Streamlined, Non-Redundant Support Desk) -->
-            <aside class="sticky top-28 rounded-[var(--radius)] border-[1.5px] border-[var(--border)] bg-[var(--card)] p-8 shadow-[var(--shadow-soft)] space-y-6">
-              <div class="space-y-2">
-                <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Projet et Support</p>
-                <h2 class="text-2xl sm:text-3xl font-black text-[var(--foreground)] uppercase tracking-tight font-display">Real BMI</h2>
-                <p class="text-xs text-[var(--muted-foreground)] font-medium">Site Web Individuel — Bhawanshi Dosi</p>
+          <!-- Support FAQ Section -->
+          <div class="space-y-4 pt-2">
+            <div class="space-y-1">
+              <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+                Foire Aux Questions sur le Support
+              </h2>
+              <p class="text-xs sm:text-sm text-[var(--muted-foreground)] font-medium leading-relaxed">
+                Questions fréquentes sur les références scientifiques, les performances 3D WebGL, la confidentialité et l'intégration des calculateurs.
+              </p>
+            </div>
+            <div class="space-y-3.5">
+              <div class="rounded-xl border border-[var(--border)]/70 bg-[var(--card)]/60 p-5 space-y-1.5">
+                <h3 class="text-sm sm:text-base font-bold text-[var(--foreground)]">
+                  Comment signaler une erreur de calcul ou suggérer une mise à jour ?
+                </h3>
+                <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                  Envoyez votre demande directement à support@realbmicalculator.com en indiquant l'URL du calculateur, la formule ou variable concernée et les références scientifiques (articles PubMed, OMS ou CDC). Bhawanshi Dosi étudie directement chaque retour.
+                </p>
               </div>
-
-              <div class="space-y-4 pt-3 border-t border-[var(--border)] text-xs">
-                <div>
-                  <span class="font-bold text-[var(--foreground)] block">Siège Opérationnel :</span>
-                  <span class="text-[var(--muted-foreground)] font-medium">Banswara, Rajasthan, Inde</span>
-                </div>
-                <div>
-                  <span class="font-bold text-[var(--foreground)] block">Courriel Support :</span>
-                  <!--email_off--><a href="mailto:support@realbmicalculator.com" class="text-sm font-bold font-mono text-[#464feb] hover:underline block break-all mt-0.5">
-                    support@realbmicalculator.com
-                  </a><!--/email_off-->
-                  <p class="text-[11px] text-emerald-500 font-semibold mt-0.5">Réponse humaine sous 24 à 48 heures ouvrées</p>
-                </div>
-                <div>
-                  <span class="font-bold text-[var(--foreground)] block">Confidentialité :</span>
-                  <span class="text-[var(--muted-foreground)] font-medium">Calcul 100% dans le Navigateur (Aucune donnée de santé stockée)</span>
-                </div>
-                <div>
-                  <span class="font-bold text-[var(--foreground)] block">Périmètre du Projet :</span>
-                  <span class="text-[var(--muted-foreground)] font-medium">23 Outils de Santé Gratuits et Normes de Référence</span>
-                </div>
+              <div class="rounded-xl border border-[var(--border)]/70 bg-[var(--card)]/60 p-5 space-y-1.5">
+                <h3 class="text-sm sm:text-base font-bold text-[var(--foreground)]">
+                  Puis-je intégrer les calculateurs Real BMI sur mon blog ou site web ?
+                </h3>
+                <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                  Oui. Vous pouvez intégrer gratuitement nos calculateurs via un widget iFrame sur des sites éducatifs ou professionnels, en maintenant le lien d'attribution vers realbmicalculator.com afin que vos utilisateurs puissent consulter l'ensemble des sources.
+                </p>
               </div>
-
-              <div class="space-y-2 pt-4 border-t border-[var(--border)]">
-                <span class="text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)] block">Politiques et Références :</span>
-                <div class="flex flex-col gap-2 text-xs font-medium">
-                  <a href="/fr/editorial-policy/" class="text-[#464feb] hover:underline flex items-center gap-1">
-                    <span>Politique Éditoriale et Méthodologie</span>
-                    <span>&rarr;</span>
-                  </a>
-                  <a href="/fr/sources/" class="text-[#464feb] hover:underline flex items-center gap-1">
-                    <span>15 Citations Scientifiques Primaires</span>
-                    <span>&rarr;</span>
-                  </a>
-                  <a href="/fr/disclaimer/" class="text-[#464feb] hover:underline flex items-center gap-1">
-                    <span>Avertissement Médical</span>
-                    <span>&rarr;</span>
-                  </a>
-                  <a href="/fr/privacy-policy/" class="text-[#464feb] hover:underline flex items-center gap-1">
-                    <span>Politique de Confidentialité</span>
-                    <span>&rarr;</span>
-                  </a>
-                </div>
+              <div class="rounded-xl border border-[var(--border)]/70 bg-[var(--card)]/60 p-5 space-y-1.5">
+                <h3 class="text-sm sm:text-base font-bold text-[var(--foreground)]">
+                  Mes paramètres de santé ou mon poids sont-ils stockés sur vos serveurs ?
+                </h3>
+                <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                  Non. Tous les calculs sont traités localement dans votre navigateur en JavaScript. Aucune mesure biométrique n'est transmise à nos serveurs ni stockée en base de données.
+                </p>
               </div>
+              <div class="rounded-xl border border-[var(--border)]/70 bg-[var(--card)]/60 p-5 space-y-1.5">
+                <h3 class="text-sm sm:text-base font-bold text-[var(--foreground)]">
+                  Quel est le délai habituel de réponse de Real BMI ?
+                </h3>
+                <p class="text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed font-medium">
+                  Tous les messages sont examinés par Bhawanshi Dosi et reçoivent une réponse sous 24 à 48 heures ouvrées. Pour les bugs d'affichage 3D, merci de préciser votre modèle d'appareil et votre navigateur.
+                </p>
+              </div>
+            </div>
+          </div>
 
-              <div class="pt-4 border-t border-[var(--border)]">
-                <a href="#contact-form" class="inline-flex w-full items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] hover:bg-[var(--muted)] px-6 py-3 text-xs font-display font-bold uppercase tracking-[0.15em] text-[var(--foreground)] transition-all min-h-[44px]">
-                  Contacter par E-mail
+          <!-- Policy & Trust Links Strip (No Line Dividers) -->
+          <div class="pt-2">
+            <div class="rounded-xl border border-[var(--border)]/70 bg-[var(--muted)]/20 p-5 space-y-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)] block">
+                Normes Éditoriales et de Gouvernance
+              </span>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-medium">
+                <a href="/fr/editorial-policy/" class="text-[#464feb] hover:underline flex items-center gap-1">
+                  <span>Ligne Éditoriale & Méthodologie</span>
+                  <span>&rarr;</span>
+                </a>
+                <a href="/fr/sources/" class="text-[#464feb] hover:underline flex items-center gap-1">
+                  <span>15 Références Scientifiques</span>
+                  <span>&rarr;</span>
+                </a>
+                <a href="/fr/disclaimer/" class="text-[#464feb] hover:underline flex items-center gap-1">
+                  <span>Avis de Non-Responsabilité Médicale</span>
+                  <span>&rarr;</span>
+                </a>
+                <a href="/fr/privacy-policy/" class="text-[#464feb] hover:underline flex items-center gap-1">
+                  <span>Politique de Confidentialité</span>
+                  <span>&rarr;</span>
                 </a>
               </div>
-            </aside>
+            </div>
           </div>
         </div>
     </main>

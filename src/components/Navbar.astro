@@ -12,24 +12,25 @@ const langNames: Record<string, string> = {
 };
 
 const nav: Record<string, Record<string, string>> = {
-  en: { home: 'Home', blog: 'Blog', calculators: 'Calculators', insights: 'Insights', faq: 'FAQ' },
-  es: { home: 'Inicio', blog: 'Blog', calculators: 'Calculadoras', insights: 'Información', faq: 'FAQ' },
-  fr: { home: 'Accueil', blog: 'Blog', calculators: 'Calculateurs', insights: 'Santé', faq: 'FAQ' },
-  de: { home: 'Startseite', blog: 'Blog', calculators: 'Rechner', insights: 'Gesundheit', faq: 'FAQ' },
-  ko: { home: '홈', blog: '블로그', calculators: '계산기', insights: '건강 정보', faq: 'FAQ' },
-  hi: { home: 'होम', blog: 'ब्लॉग', calculators: 'कैलकुलेटर', insights: 'जानकारी', faq: 'FAQ' }
+  en: { home: 'Home', calculators: 'Calculators', blog: 'Articles', about: 'About Us', faq: 'FAQ' },
+  es: { home: 'Inicio', calculators: 'Calculadoras', blog: 'Artículos', about: 'Sobre Nosotros', faq: 'FAQ' },
+  fr: { home: 'Accueil', calculators: 'Calculateurs', blog: 'Articles', about: 'À Propos de Nous', faq: 'FAQ' },
+  de: { home: 'Startseite', calculators: 'Rechner', blog: 'Artikel', about: 'Über Uns', faq: 'FAQ' },
+  ko: { home: '홈', calculators: '계산기', blog: '아티클', about: '소개', faq: 'FAQ' },
+  hi: { home: 'होम', calculators: 'कैलकुलेटर', blog: 'लेख', about: 'हमारे बारे में', faq: 'FAQ' }
 };
 
 const t = nav[lang] || nav.en;
 const currentLangDisplay = langNames[lang] || lang;
-const homeUrl = lang === 'en' ? '/' : `/${lang}/`;
-const calcUrl = lang === 'en' ? '/#calculators' : `/${lang}/#calculators`;
-const insightsUrl = lang === 'en' ? '/#insights' : `/${lang}/#insights`;
-const faqUrl = lang === 'en' ? '/#faq' : `/${lang}/#faq`;
+const homeUrl = `/${lang}/`;
+const calcUrl = `/${lang}/#calculators`;
+const blogUrl = `/${lang}/blog/`;
+const aboutUrl = `/${lang}/about/`;
+const faqUrl = `/${lang}/#faq`;
 ---
 
-<header role="banner" class="site-header fixed inset-x-2 sm:inset-x-6 top-4 z-50 max-w-6xl mx-auto">
-  <nav class="w-full" aria-label="Main Navigation">
+<header role="banner" class="site-header fixed inset-x-2 sm:inset-x-6 lg:inset-x-8 top-4 z-50 max-w-[1600px] mx-auto">
+  <nav class="relative w-full" aria-label="Main Navigation">
     <div class="flex items-center justify-between px-3 sm:px-5 h-14 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)]">
 
       <!-- Logo & Site Title -->
@@ -46,76 +47,76 @@ const faqUrl = lang === 'en' ? '/#faq' : `/${lang}/#faq`;
     <div class="hidden lg:flex items-center gap-3 lg:gap-5">
       <a href={homeUrl} class="nav-link">{t.home}<span class="sr-only">. </span></a>
       <a href={calcUrl} class="nav-link">{t.calculators}<span class="sr-only">. </span></a>
-      <a href="/en/blog/" class="nav-link">{t.blog}<span class="sr-only">. </span></a>
-      <a href={insightsUrl} class="nav-link">{t.insights}<span class="sr-only">. </span></a>
+      <a href={blogUrl} class="nav-link">{t.blog}<span class="sr-only">. </span></a>
+      <a href={aboutUrl} class="nav-link">{t.about}<span class="sr-only">. </span></a>
       <a href={faqUrl} class="nav-link">{t.faq}<span class="sr-only">. </span></a>
     </div>
 
     <!-- Right Controls -->
     <div class="flex items-center gap-2 sm:gap-3">
-      <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Lang Dropdown -->
-        <div class="relative" id="langDropdownWrapper">
-          <button id="langDropdownBtn"
-            class="flex items-center gap-1.5 text-xs font-display font-semibold uppercase tracking-wider bg-[var(--muted)] px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-xl border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)] transition-colors duration-200 cursor-pointer min-h-[48px]"
-            aria-haspopup="menu" aria-expanded="false">
-            <span id="langCurrentLabel">{currentLangDisplay}</span>
-            <svg class="w-3 h-3 opacity-60 transition-transform duration-200" id="langChevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-
-          <div id="langDropdownMenu"
-            class="absolute right-0 top-full mt-2 w-48 rounded-xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)] p-2 space-y-1 hidden"
-            role="menu">
-            {Object.entries(langNames).map(([code, name]) => {
-              const currentPath = Astro.url.pathname;
-              const pathWithoutLang = currentPath.replace(/^\/(en|es|fr|de|ko|hi)(\/|$)/, '/');
-              const cleanPath = pathWithoutLang.startsWith('/') ? pathWithoutLang : `/${pathWithoutLang}`;
-              
-              let targetPath = `/${code}${cleanPath}`.replace(/\/+/g, '/');
-              if (code === 'en' && cleanPath === '/') {
-                targetPath = '/';
-              } else if (cleanPath.startsWith('/404') || cleanPath.startsWith('/500')) {
-                targetPath = `/${code}/`;
-              } else if (cleanPath.startsWith('/search')) {
-                targetPath = '/search/';
-              } else if (cleanPath.startsWith('/embed/')) {
-                targetPath = cleanPath;
-              } else if (cleanPath.startsWith('/author/') && code !== 'en') {
-                targetPath = `/${code}/about/`;
-              } else if (cleanPath.startsWith('/terms-of-service') || (cleanPath.startsWith('/terms') && !cleanPath.startsWith('/terms-conditions'))) {
-                targetPath = `/${code}/terms-conditions/`;
-              } else if (cleanPath.startsWith('/blog')) {
-                targetPath = `/en${cleanPath}`.replace(/\/+/g, '/');
-              }
-
-              return (
-                <a href={targetPath}
-                  class={`flex items-center gap-2.5 px-3.5 py-3 text-xs font-display font-semibold uppercase tracking-wider rounded-lg hover:bg-[var(--muted)] transition-colors text-[var(--foreground)] cursor-pointer min-h-[48px] ${code === lang ? 'bg-[var(--muted)]' : ''}`}
-                  role="menuitem">
-                  {name}
-                </a>
-              );
-            })}
-          </div>
-        </div>
-
-        <!-- Theme Toggle -->
-        <button id="themeToggleBtn"
-          class="hidden lg:flex w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 items-center justify-center cursor-pointer"
-          aria-label="Toggle Theme">
-          <svg id="sunIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
-          </svg>
-          <svg id="moonIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      <!-- Lang Dropdown -->
+      <div class="relative" id="langDropdownWrapper">
+        <button id="langDropdownBtn"
+          class="flex items-center gap-1 sm:gap-1.5 text-xs font-display font-semibold uppercase tracking-wider bg-[var(--muted)] px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-xl border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)] transition-colors duration-200 cursor-pointer min-h-[48px]"
+          aria-haspopup="menu" aria-expanded="false">
+          <span id="langCurrentLabel">{currentLangDisplay}</span>
+          <svg class="w-3 h-3 opacity-60 transition-transform duration-200" id="langChevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
+
+        <div id="langDropdownMenu"
+          class="absolute right-0 top-full mt-2 w-48 rounded-xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-2xl shadow-[var(--shadow-card)] p-2 space-y-1 hidden z-50"
+          role="menu">
+          {Object.entries(langNames).map(([code, name]) => {
+            const currentPath = Astro.url.pathname;
+            const pathWithoutLang = currentPath.replace(/^\/(en|es|fr|de|ko|hi)(\/|$)/, '/');
+            const cleanPath = pathWithoutLang.startsWith('/') ? pathWithoutLang : `/${pathWithoutLang}`;
+            
+            let targetPath = `/${code}${cleanPath}`.replace(/\/+/g, '/');
+            if (code === 'en' && cleanPath === '/') {
+              targetPath = '/';
+            } else if (cleanPath.startsWith('/404') || cleanPath.startsWith('/500')) {
+              targetPath = `/${code}/`;
+            } else if (cleanPath.startsWith('/search')) {
+              targetPath = '/search/';
+            } else if (cleanPath.startsWith('/embed/')) {
+              targetPath = cleanPath;
+            } else if (cleanPath.startsWith('/author/') && code !== 'en') {
+              targetPath = `/${code}/about/`;
+            } else if (cleanPath.startsWith('/terms-of-service') || (cleanPath.startsWith('/terms') && !cleanPath.startsWith('/terms-conditions'))) {
+              targetPath = `/${code}/terms-conditions/`;
+            } else if (cleanPath === '/blog' || cleanPath === '/blog/') {
+              targetPath = `/${code}/blog/`;
+            } else if (cleanPath.startsWith('/blog/')) {
+              targetPath = `/en${cleanPath}`.replace(/\/+/g, '/');
+            }
+
+            return (
+              <a href={targetPath}
+                class={`flex items-center gap-2.5 px-3.5 py-3 text-xs font-display font-semibold uppercase tracking-wider rounded-lg hover:bg-[var(--muted)] transition-colors text-[var(--foreground)] cursor-pointer min-h-[48px] ${code === lang ? 'bg-[var(--muted)]' : ''}`}
+                role="menuitem">
+                {name}
+              </a>
+            );
+          })}
+        </div>
       </div>
 
+      <!-- Desktop Theme Toggle -->
+      <button id="themeToggleBtn"
+        class="hidden lg:flex relative overflow-hidden w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 items-center justify-center cursor-pointer"
+        aria-label="Toggle Theme">
+        <svg id="sunIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
+        </svg>
+        <svg id="moonIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+
       <!-- Mobile Theme Toggle -->
-      <button id="mobileThemeToggleBtn" class="lg:hidden w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
+      <button id="mobileThemeToggleBtn" class="lg:hidden relative overflow-hidden w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] rounded-xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
         aria-label="Toggle Theme">
         <svg id="mobileSunIcon" class="w-4 h-4 absolute text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
@@ -126,35 +127,40 @@ const faqUrl = lang === 'en' ? '/#faq' : `/${lang}/#faq`;
       </button>
 
       <!-- Mobile Menu Button -->
-      <button id="mobileMenuBtn" class="lg:hidden w-12 h-12 min-w-[48px] min-h-[48px] rounded-2xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
+      <button id="mobileMenuBtn" class="lg:hidden w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] rounded-2xl border border-[var(--border)] bg-[var(--muted)] hover:border-[var(--accent)] transition-colors duration-200 flex items-center justify-center cursor-pointer"
         aria-label="Toggle Menu" aria-expanded="false">
         <svg class="w-5 h-5 text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 7h16M4 12h16M4 17h16" />
         </svg>
       </button>
     </div>
+    <!-- End of navbar bar -->
+    </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="lg:hidden absolute right-4 top-full z-40 w-[min(85vw,16rem)] rounded-3xl border border-[var(--border)] bg-[var(--background)]/98 backdrop-blur-xl hidden flex-col items-stretch gap-3 p-4 shadow-[var(--shadow-card)]">
-      <button id="closeMobileMenu" class="self-end w-12 h-12 min-w-[48px] min-h-[48px] rounded-full border border-[var(--border)] bg-[var(--muted)] flex items-center justify-center cursor-pointer" aria-label="Close menu">
-        <svg class="w-5 h-5 text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobileMenu" class="lg:hidden absolute right-0 top-full mt-2 z-50 w-[min(88vw,18rem)] rounded-3xl border border-[var(--border)] bg-[var(--card)]/98 backdrop-blur-2xl hidden flex-col items-stretch gap-2.5 p-4 shadow-[var(--shadow-card)]">
+      <div class="flex items-center justify-between pb-2 border-b border-[var(--border)]/60">
+        <span class="text-xs font-display font-bold uppercase tracking-wider text-[var(--muted-foreground)]">Navigation</span>
+        <button id="closeMobileMenu" class="w-9 h-9 min-w-[36px] min-h-[36px] rounded-full border border-[var(--border)] bg-[var(--muted)] flex items-center justify-center cursor-pointer hover:border-[var(--accent)] transition-colors" aria-label="Close menu">
+          <svg class="w-4 h-4 text-[var(--foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
       
-      <a href={homeUrl} class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+      <a href={homeUrl} class="w-full min-h-[44px] rounded-xl bg-[var(--muted)]/50 px-4 py-2.5 flex items-center justify-start text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] hover:bg-[var(--accent)]/15 hover:text-[var(--accent)] transition-colors">
         {t.home}<span class="sr-only">. </span>
       </a>
-      <a href={calcUrl} class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+      <a href={calcUrl} class="w-full min-h-[44px] rounded-xl bg-[var(--muted)]/50 px-4 py-2.5 flex items-center justify-start text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] hover:bg-[var(--accent)]/15 hover:text-[var(--accent)] transition-colors">
         {t.calculators}<span class="sr-only">. </span>
       </a>
-      <a href="/en/blog/" class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+      <a href={blogUrl} class="w-full min-h-[44px] rounded-xl bg-[var(--muted)]/50 px-4 py-2.5 flex items-center justify-start text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] hover:bg-[var(--accent)]/15 hover:text-[var(--accent)] transition-colors">
         {t.blog}<span class="sr-only">. </span>
       </a>
-      <a href={insightsUrl} class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
-        {t.insights}<span class="sr-only">. </span>
+      <a href={aboutUrl} class="w-full min-h-[44px] rounded-xl bg-[var(--muted)]/50 px-4 py-2.5 flex items-center justify-start text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] hover:bg-[var(--accent)]/15 hover:text-[var(--accent)] transition-colors">
+        {t.about}<span class="sr-only">. </span>
       </a>
-      <a href={faqUrl} class="w-full min-h-[48px] rounded-2xl bg-[var(--card)] px-4 py-3 flex items-center justify-center text-sm font-display font-bold uppercase tracking-[0.12em] text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+      <a href={faqUrl} class="w-full min-h-[44px] rounded-xl bg-[var(--muted)]/50 px-4 py-2.5 flex items-center justify-start text-xs font-display font-bold uppercase tracking-wider text-[var(--foreground)] hover:bg-[var(--accent)]/15 hover:text-[var(--accent)] transition-colors">
         {t.faq}<span class="sr-only">. </span>
       </a>
     </div>
@@ -178,7 +184,7 @@ const faqUrl = lang === 'en' ? '/#faq' : `/${lang}/#faq`;
     background: var(--muted);
   }
 
-  #sunIcon, #moonIcon {
+  #sunIcon, #moonIcon, #mobileSunIcon, #mobileMoonIcon {
     transition: opacity 0.2s ease, transform 0.25s ease;
   }
 
@@ -315,10 +321,10 @@ const faqUrl = lang === 'en' ? '/#faq' : `/${lang}/#faq`;
 
         if (isSamePage) {
           let target = document.getElementById(hash);
-          if (!target && hash === 'calculators') {
-            target = document.getElementById('all-calculators');
-          } else if (!target && hash === 'all-calculators') {
-            target = document.getElementById('calculators');
+          if (!target && (hash === 'calculators' || hash === 'all-calculators')) {
+            target = document.getElementById('calculators') || document.getElementById('all-calculators');
+          } else if (!target && (hash === 'faq' || hash === 'faq-standards')) {
+            target = document.getElementById('faq') || document.getElementById('faq-standards');
           }
 
           if (target) {
@@ -344,11 +350,16 @@ const faqUrl = lang === 'en' ? '/#faq' : `/${lang}/#faq`;
   function handleInitialHash() {
     if (window.location.hash) {
       const hash = window.location.hash.replace('#', '');
-      const target = document.getElementById(hash) || (hash === 'calculators' ? document.getElementById('all-calculators') : null);
+      let target = document.getElementById(hash);
+      if (!target && (hash === 'calculators' || hash === 'all-calculators')) {
+        target = document.getElementById('calculators') || document.getElementById('all-calculators');
+      } else if (!target && (hash === 'faq' || hash === 'faq-standards')) {
+        target = document.getElementById('faq') || document.getElementById('faq-standards');
+      }
       if (target) {
         setTimeout(() => {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
+        }, 120);
       }
     }
   }

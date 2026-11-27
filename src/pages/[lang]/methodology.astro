@@ -1461,25 +1461,13 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
     <div class="space-y-12">
       
       <!-- Intro & Product Statement Box -->
-      <div class="p-6 md:p-8 rounded-2xl border border-[var(--accent)]/20 bg-[var(--card)] space-y-4 shadow-sm">
+      <div class="p-6 md:p-8 rounded-2xl border border-[var(--accent)]/20 bg-[var(--card)] space-y-3 shadow-sm">
         <h2 class="text-2xl font-display font-bold text-[var(--foreground)] uppercase tracking-wide">
-          {lang === 'en' ? 'How We Calculate Your Health Numbers' : currentI18n.statementTitle}
+          {currentI18n.statementTitle}
         </h2>
-        {lang === 'en' ? (
-          <div class="space-y-3 text-sm text-[var(--muted-foreground)] leading-relaxed">
-            <p>We use simple, open math. Good tools help you learn. They give you clear facts about your body.</p>
-            <p>Our tools use tested formulas from trusted health groups. These include the World Health Organization and the CDC. Each math rule is well known and widely used.</p>
-            <p>You can check the numbers yourself. You can test each step on paper. We show you the exact math on every page.</p>
-            <p>Your privacy comes first. All math runs inside your web browser. No data goes to an outside server. We do not keep your age. We do not keep your height. We do not keep your weight. When you close the tab, your numbers are gone.</p>
-            <p>Each tool has clear limits. A BMI score tells you about total weight. It does not measure body fat directly. A muscular athlete may have a high BMI. An older adult may have more fat with a normal BMI. That is why we offer 23 different tools. You can check body fat. You can check waist size. You can check daily calories. This gives you a clear picture of your health.</p>
-            <p>We test our code each day. Automated tests check every formula. They verify metric math with kilograms and meters. They verify imperial math with pounds and inches. Both units give matching results. You can trust the numbers.</p>
-            <p>Our tools are for learning only. They do not replace a visit to a doctor. If you have questions about your health, talk to a qualified medical provider.</p>
-          </div>
-        ) : (
-          <p class="text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
-            {currentI18n.statementDesc}
-          </p>
-        )}
+        <p class="text-base text-[var(--muted-foreground)] font-medium leading-relaxed">
+          {currentI18n.statementDesc}
+        </p>
       </div>
 
       <!-- Core Pillars Grid -->
@@ -1492,19 +1480,38 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
         ))}
       </div>
 
-      <!-- Executive Algorithm & Formula Reference Table (Formula & Source Verification Table) -->
-      <div class="space-y-4">
-        <div class="space-y-1">
-          <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}</p>
-          <h2 class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
-            {currentI18n.tableViewTitle}
-          </h2>
-          <p class="text-sm text-[var(--muted-foreground)] font-medium">
-            {currentI18n.tableViewDesc}
-          </p>
+      <!-- Executive Algorithm & Formula Reference Section (Responsive: Table on Desktop/Tablet, Accordion on Mobile) -->
+      <div class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div class="space-y-1">
+            <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}</p>
+            <h2 class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
+              {currentI18n.tableViewTitle}
+            </h2>
+            <p class="text-sm text-[var(--muted-foreground)] font-medium">
+              {currentI18n.tableViewDesc}
+            </p>
+          </div>
+
+          <!-- Interactive Search Input -->
+          <div class="relative w-full sm:max-w-xs shrink-0">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[var(--muted-foreground)]">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <input 
+              type="search" 
+              id="methodologySearchInput" 
+              placeholder={searchPlaceholders[lang] || searchPlaceholders.en} 
+              autocomplete="off"
+              class="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--card)] text-xs text-[var(--foreground)] placeholder-[var(--muted-foreground)]/70 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] shadow-xs transition-all"
+            />
+          </div>
         </div>
 
-        <div class="methodology-table-wrap p-4 sm:p-6 shadow-xs">
+        <!-- Desktop / Tablet Table View (hidden on small mobile screens where wide tables require horizontal scrolling) -->
+        <div class="hidden md:block methodology-table-wrap p-4 sm:p-6 shadow-xs">
           <table class="methodology-matrix-table">
             <thead>
               <tr>
@@ -1527,11 +1534,10 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
                 const locLimitations = item.limitations[lang] || item.limitations.en;
 
                 return (
-                  <tr>
+                  <tr data-search={`${localizedName} ${locFormula} ${locSource} ${item.slug}`.toLowerCase()}>
                     <td>
                       <a href={`/${lang}/${item.slug}/`} class="font-bold">
                         {localizedName}</a><span class="sr-only">. </span>
-                      
                     </td>
                     <td class="font-mono text-xs">{locFormula}<span class="sr-only">. </span></td>
                     <td class="text-xs">{locSource}<span class="sr-only">. </span></td>
@@ -1544,40 +1550,9 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
             </tbody>
           </table>
         </div>
-      </div>
 
-      <!-- Interactive Detailed Methodology Accordion (23 Tools with Search) -->
-      <div class="space-y-6 pt-4 border-t border-[var(--border)]">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div class="space-y-1">
-            <p class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{currentI18n.matrixEyebrow}</p>
-            <h2 class="text-2xl md:text-3xl font-display font-bold text-[var(--foreground)] uppercase tracking-tight">
-              {currentI18n.matrixTitle}
-            </h2>
-            <p class="text-sm text-[var(--muted-foreground)] font-medium">
-              {currentI18n.matrixDesc}
-            </p>
-          </div>
-
-          <!-- Interactive Search Input -->
-          <div class="relative w-full sm:max-w-xs shrink-0">
-            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[var(--muted-foreground)]">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-            <input 
-              type="search" 
-              id="methodologySearchInput" 
-              placeholder={searchPlaceholders[lang] || searchPlaceholders.en} 
-              autocomplete="off"
-              class="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--card)] text-xs text-[var(--foreground)] placeholder-[var(--muted-foreground)]/70 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] shadow-xs transition-all"
-            />
-          </div>
-        </div>
-
-        <!-- Accordion List -->
-        <div class="space-y-3" id="methodologyAccordionList">
+        <!-- Mobile Accordion Cards View (block on mobile screens, hidden on md and up) -->
+        <div class="block md:hidden space-y-3" id="methodologyAccordionList">
           {activeMethodology.map((item) => {
             const foundCalc = calculators.find(c => c.slug === item.slug);
             const localizedName = foundCalc ? (foundCalc.name[lang] || foundCalc.name.en) : item.name;
@@ -1593,52 +1568,40 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
                 class="methodology-accordion group rounded-xl border border-[var(--border)] bg-[var(--card)] overflow-hidden transition-all duration-200 hover:border-[var(--accent)]/50 shadow-xs"
                 data-search={`${localizedName} ${locFormula} ${locSource} ${item.slug}`.toLowerCase()}
               >
-                <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer select-none list-none gap-4">
-                  <div class="flex items-center gap-3 min-w-0">
+                <summary class="flex items-center justify-between p-4 cursor-pointer select-none list-none gap-3">
+                  <div class="flex items-center gap-2.5 min-w-0">
                     <span class="w-2.5 h-2.5 rounded-full bg-[var(--accent)] shrink-0"></span>
-                    <h3 class="text-base sm:text-lg font-display font-bold text-[var(--foreground)] truncate">
+                    <h3 class="text-base font-display font-bold text-[var(--foreground)] truncate">
                       {localizedName}
                     </h3>
-                    <span class="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[var(--muted)] border border-[var(--border)] text-[var(--muted-foreground)] truncate max-w-[220px]">
-                      {locOutput}
-                    </span>
                   </div>
-                  <div class="flex items-center gap-3 shrink-0">
-                    <a 
-                      href={`/${lang}/${item.slug}/`} 
-                      class="hidden md:inline-flex items-center gap-1 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:underline"
-                    >
-                      {currentI18n.openTool}
-                      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    </a>
+                  <div class="flex items-center gap-2 shrink-0">
                     <span class="w-6 h-6 rounded-lg bg-[var(--muted)]/50 flex items-center justify-center text-[var(--muted-foreground)] group-open:rotate-180 transition-transform duration-200">
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </span>
                   </div>
                 </summary>
 
-                <div class="p-5 sm:p-6 pt-2 border-t border-[var(--border)]/60 bg-[var(--muted)]/10 space-y-4">
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                    <div class="space-y-1.5 p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.equationLabel}</span>
-                      <p class="font-mono text-[var(--foreground)] font-semibold break-words">{locFormula}<span class="sr-only">. </span></p>
-                    </div>
-                    <div class="space-y-1.5 p-3 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                      <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.sourceLabel}</span>
-                      <p class="text-[var(--foreground)] font-medium leading-relaxed">{locSource}<span class="sr-only">. </span></p>
-                    </div>
+                <div class="p-4 pt-2 border-t border-[var(--border)]/60 bg-[var(--muted)]/10 space-y-3">
+                  <div class="space-y-1.5 p-3 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs">
+                    <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.equationLabel}</span>
+                    <p class="font-mono text-[var(--foreground)] font-semibold break-words">{locFormula}<span class="sr-only">. </span></p>
+                  </div>
+                  <div class="space-y-1.5 p-3 rounded-lg bg-[var(--card)] border border-[var(--border)] text-xs">
+                    <span class="font-display font-bold uppercase tracking-wider text-[var(--accent)] text-[10px]">{currentI18n.sourceLabel}</span>
+                    <p class="text-[var(--foreground)] font-medium leading-relaxed">{locSource}<span class="sr-only">. </span></p>
                   </div>
 
-                  <div class="p-3.5 rounded-lg bg-[var(--card)] border border-[var(--border)] space-y-1.5 text-xs">
+                  <div class="p-3 rounded-lg bg-[var(--card)] border border-[var(--border)] space-y-1 text-xs">
                     <p><strong class="text-[var(--foreground)]">{currentI18n.inputsLabel}:</strong> <span class="text-[var(--muted-foreground)] font-medium">{locInputs}</span></p>
                     <p><strong class="text-[var(--foreground)]">{currentI18n.outputLabel}:</strong> <span class="text-[var(--muted-foreground)] font-medium">{locOutput}</span></p>
                     <p><strong class="text-[var(--foreground)]">{currentI18n.limitationsLabel}:</strong> <span class="text-[var(--muted-foreground)] font-medium leading-relaxed">{locLimitations}</span></p>
                   </div>
 
-                  <div class="pt-2 flex justify-end md:hidden">
+                  <div class="pt-1 flex justify-end">
                     <a 
                       href={`/${lang}/${item.slug}/`} 
-                      class="inline-flex items-center gap-1.5 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:underline"
+                      class="inline-flex items-center gap-1 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:underline"
                     >
                       {currentI18n.openTool} →
                     </a>
@@ -1652,13 +1615,22 @@ const activeMethodology = methodologyMatrix.filter(item => !aliasSlugs.has(item.
         <script is:inline>
           document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('methodologySearchInput');
+            const tableRows = document.querySelectorAll('.methodology-matrix-table tbody tr');
             const accordions = document.querySelectorAll('.methodology-accordion');
-            if (!searchInput || !accordions.length) return;
+            if (!searchInput) return;
 
             searchInput.addEventListener('input', (e) => {
               const q = e.target.value.trim().toLowerCase();
+              
+              // Filter desktop table rows
+              tableRows.forEach(row => {
+                const searchData = (row.getAttribute('data-search') || '') + ' ' + (row.textContent || '').toLowerCase();
+                row.style.display = (!q || searchData.includes(q)) ? '' : 'none';
+              });
+
+              // Filter mobile accordion items
               accordions.forEach(item => {
-                const searchData = item.getAttribute('data-search') || '';
+                const searchData = (item.getAttribute('data-search') || '') + ' ' + (item.textContent || '').toLowerCase();
                 if (!q || searchData.includes(q)) {
                   item.style.display = '';
                   if (q.length >= 2) {

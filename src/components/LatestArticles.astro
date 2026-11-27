@@ -14,61 +14,52 @@ const { lang: propLang, slugs: propSlugs, title: propTitle, subtitle: propSubtit
 const { currentLocale } = Astro;
 const lang = (propLang || currentLocale || 'en') as Locale;
 
-const labels: Record<string, any> = {
+const labels: Record<string, { latest: string; viewAll: string; readArticle: string }> = {
   en: {
-    library: "Articles & Health Library",
-    latest: "Latest Health Articles & Guides",
-    subtitle: "Evidence-based health guides, standard BMI reference ranges, and weight loss calculation formulas.",
+    latest: "Health Articles & Guides",
     viewAll: "View All Articles",
-    readArticle: "Read Article →",
-    guideBadge: "Guide"
+    readArticle: "Read Article →"
   },
   es: {
-    library: "Biblioteca de Salud y Artículos",
-    latest: "Últimos Artículos y Guías de Salud",
-    subtitle: "Guías de salud basadas en evidencia, estándares de referencia de IMC y fórmulas de cálculo para la pérdida de peso.",
+    latest: "Artículos y Guías de Salud",
     viewAll: "Ver Todos los Artículos",
-    readArticle: "Leer Artículo →",
-    guideBadge: "Guía"
+    readArticle: "Leer Artículo →"
   },
   fr: {
-    library: "Bibliothèque d'Articles et Santé",
-    latest: "Derniers Articles et Guides Santé",
-    subtitle: "Guides de santé basés sur des preuves, normes de référence de l'IMC et formules de calcul de perte de poids.",
+    latest: "Articles et Guides Santé",
     viewAll: "Voir Tous les Articles",
-    readArticle: "Lire l'Article →",
-    guideBadge: "Guide"
+    readArticle: "Lire l'Article →"
   },
   de: {
-    library: "Gesundheitsbibliothek & Artikel",
-    latest: "Neueste Gesundheitsartikel & Leitfäden",
-    subtitle: "Evidenzbasierte Gesundheitsleitfäden, BMI-Referenzstandards und Berechnungsformeln zur Gewichtsabnahme.",
+    latest: "Gesundheitsartikel & Leitfäden",
     viewAll: "Alle Artikel Anzeigen",
-    readArticle: "Artikel Lesen →",
-    guideBadge: "Leitfaden"
+    readArticle: "Artikel Lesen →"
   },
   ko: {
-    library: "아티클 및 건강 라이브러리",
-    latest: "최신 건강 아티클 및 가이드",
-    subtitle: "증거 기반 건강 가이드, 표준 BMI 참조 기준 및 체중 감량 계산 공식.",
+    latest: "건강 아티클 및 가이드",
     viewAll: "모든 아티클 보기",
-    readArticle: "아티클 읽기 →",
-    guideBadge: "가이드"
+    readArticle: "아티클 읽기 →"
   },
   hi: {
-    library: "लेख एवं स्वास्थ्य पुस्तकालय",
-    latest: "नवीनतम स्वास्थ्य लेख एवं गाइड",
-    subtitle: "प्रमाण-आधारित स्वास्थ्य गाइड, मानक बीएमआई संदर्भ सीमाएं और वजन घटाने के गणना फॉर्मूले।",
+    latest: "स्वास्थ्य लेख एवं गाइड",
     viewAll: "सभी लेख देखें",
-    readArticle: "लेख पढ़ें →",
-    guideBadge: "गाइड"
+    readArticle: "लेख पढ़ें →"
   }
 };
+
+const HOMEPAGE_ARTICLE_SLUGS = [
+  'what-is-bmi',
+  'is-bmi-accurate',
+  'bmi-chart',
+  'healthy-weight-chart',
+  'bmi-chart-for-men-women',
+  'bmi-by-age'
+];
 
 const allSlugs = Object.keys(blogArticles);
 const candidateSlugs = (propSlugs && propSlugs.length > 0)
   ? propSlugs.filter(s => blogArticles[s])
-  : allSlugs;
+  : HOMEPAGE_ARTICLE_SLUGS;
 
 const effectiveLimit = propLimit || (propSlugs ? propSlugs.length : 6);
 const selectedSlugs = candidateSlugs.slice(0, effectiveLimit);
@@ -85,49 +76,45 @@ const articlesList = selectedSlugs.map(slug => {
 
 const t = labels[lang] || labels.en;
 const sectionTitle = propTitle || t.latest;
-const sectionSubtitle = propSubtitle || t.subtitle;
+const blogIndexUrl = lang === 'en' ? '/en/blog/' : `/${lang}/blog/`;
 ---
 
-<section class="space-y-6 py-6" id="articles">
+<div class="space-y-6" id="articles">
   <!-- Section Header -->
-  <div class="flex items-center justify-between gap-4 flex-wrap pb-2">
-    <div class="space-y-1">
-      <p class="text-xs font-display font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">
-        {t.library}<span class="sr-only">. </span>
-      </p>
-      <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight uppercase text-[var(--foreground)] leading-tight">
+  <header class="flex items-center justify-between gap-4 pb-2">
+    <div>
+      <h2 class="text-xl md:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
         {sectionTitle}<span class="sr-only">. </span>
       </h2>
-      <p class="text-sm md:text-base text-[var(--muted-foreground)] max-w-2xl font-medium">
-        {sectionSubtitle}
-      </p>
+      {propSubtitle && (
+        <p class="text-sm text-[var(--muted-foreground)] font-medium pt-1">
+          {propSubtitle}
+        </p>
+      )}
     </div>
     
-    <a href="/en/blog/" class="inline-flex items-center gap-2 min-h-[44px] px-5 py-2.5 rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all duration-200 shadow-sm">
+    <a href={blogIndexUrl} class="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all duration-200 shadow-xs shrink-0">
       <span>{t.viewAll}<span class="sr-only">. </span></span>
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
       </svg>
     </a>
-  </div>
+  </header>
 
   <!-- Article Cards Grid -->
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
     {
       articlesList.map((article) => (
         <a href={isSubstantialArticle(article.slug, lang) ? `/${lang}/blog/${article.slug}/` : `/en/blog/${article.slug}/`} class="group block h-full">
-          <div class="h-full p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-4 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
-            <div class="space-y-3">
-              <div class="flex items-center justify-between gap-2">
-                <span class="inline-block px-2.5 py-1 rounded-md text-xs font-display font-semibold tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/20 max-w-[80%] truncate">
+          <div class="h-full p-5 sm:p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-4 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            <div class="space-y-2.5">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-display font-bold uppercase tracking-wider text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/20">
                   {article.category}<span class="sr-only">. </span>
-                </span>
-                <span class="text-xs font-sans font-medium text-[var(--muted-foreground)] shrink-0">
-                  {t.guideBadge}<span class="sr-only">. </span>
                 </span>
               </div>
 
-              <h3 class="text-lg md:text-xl font-display font-bold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors duration-200 line-clamp-2">
+              <h3 class="text-base sm:text-lg font-display font-bold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors duration-200 line-clamp-2">
                 {article.title}<span class="sr-only">. </span>
               </h3>
 
@@ -136,7 +123,7 @@ const sectionSubtitle = propSubtitle || t.subtitle;
               </p>
             </div>
 
-            <div class="flex items-center justify-between text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] pt-4 border-t border-[var(--border)]/40">
+            <div class="flex items-center justify-between text-xs font-display font-bold uppercase tracking-wider text-[var(--accent)] pt-2">
               <span>{t.readArticle}<span class="sr-only">. </span></span>
               <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -147,4 +134,4 @@ const sectionSubtitle = propSubtitle || t.subtitle;
       ))
     }
   </div>
-</section>
+</div>

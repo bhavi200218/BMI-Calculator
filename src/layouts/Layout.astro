@@ -296,29 +296,74 @@ const webSiteSchema = {
   }
 };
 
-// 2. SoftwareApplication Schema for Search Engines
-const softwareAppDescriptions: Record<string, string> = {
-  en: "Free evidence-based Real BMI Calculator for instant Body Mass Index, BMR, and TDEE estimates based on published WHO and CDC standards.",
-  es: "Calculadora de IMC Real gratuita basada en evidencia para estimaciones instantáneas de IMC, TMB y TDEE según estándares de la OMS y CDC.",
-  fr: "Calculateur d'IMC Réel gratuit fondé sur des preuves scientifiques pour des estimations instantanées de l'IMC, du BMR et du TDEE selon les normes OMS et CDC.",
-  de: "Kostenlose, evidenzbasierte Bildungs-Suite für Body-Mass-Index (BMI), BMR und TDEE nach anerkannten Standards der WHO und CDC.",
-  ko: "WHO 및 CDC 기준에 따른 체질량지수(BMI), 기초대사량(BMR), 총 에너지 소비량(TDEE) 추정치를 제공하는 신뢰할 수 있는 무료 건강 계산기.",
-  hi: "डब्ल्यूएचओ और सीडीसी मानकों पर आधारित बॉडी मास इंडेक्स (बीएमआई), बीएमआर और टीडीईई अनुमान के लिए साक्ष्य-आधारित निःशुल्क कैलकुलेटर।"
+// 2. Organization Schema for Search Engine Brand & E-E-A-T Authority
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Real BMI Calculator",
+  "alternateName": ["Real BMI Online", "Real BMI Health Tools"],
+  "url": "https://realbmicalculator.com",
+  "logo": "https://realbmicalculator.com/favicon-512x512.png",
+  "sameAs": [
+    "https://www.linkedin.com/in/bhawanshi-dosi"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Bhawanshi Dosi",
+    "jobTitle": "Founder & Lead Developer",
+    "url": `https://realbmicalculator.com/${currentLocale || 'en'}/about/`,
+    "sameAs": "https://www.linkedin.com/in/bhawanshi-dosi"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "support@realbmicalculator.com",
+    "contactType": "customer support"
+  },
+  "knowsAbout": [
+    "Body Mass Index (BMI)",
+    "Basal Metabolic Rate (BMR)",
+    "Total Daily Energy Expenditure (TDEE)",
+    "Body Fat Percentage",
+    "Lean Body Mass",
+    "Ideal Body Weight",
+    "Clinical Health Standards",
+    "WHO Guidelines",
+    "CDC Growth Metrics"
+  ]
 };
+
+// 3. Dynamic SoftwareApplication / WebApplication Schema for Every Health Calculator
+const currentCalcSlug = normalizedPath.replace(/^\//, '').replace(/\/$/, '');
+const matchedCalc = calculators.find((c: any) => c.slug === currentCalcSlug);
+const isCalculatorPage = normalizedPath === '/' || !!matchedCalc;
+const currentToolName = matchedCalc 
+  ? (matchedCalc.name[currentLocale || 'en'] || matchedCalc.name['en']) 
+  : 'Real BMI Calculator';
 
 const softwareAppSchema = {
   "@context": "https://schema.org",
   "@type": ["SoftwareApplication", "WebApplication"],
-  "name": "Real BMI Calculator",
+  "name": currentToolName,
   "operatingSystem": "All",
   "applicationCategory": "HealthApplication",
   "browserRequirements": "Requires JavaScript. Requires HTML5.",
-  "description": softwareAppDescriptions[currentLocale || 'en'] || softwareAppDescriptions['en'],
-  "url": normalizedPath === '/bmi-calculator/' ? canonicalURL : ((currentLocale === 'en' || !currentLocale) && normalizedPath === '/' ? 'https://realbmicalculator.com/' : `https://realbmicalculator.com/${currentLocale || 'en'}/`),
+  "description": seoDescription,
+  "url": canonicalURL,
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
+  },
+  "featureList": [
+    "100% Free client-side health calculation",
+    "Instant results with zero server data storage",
+    "Evidence-based equations from WHO, CDC, NIH, and peer-reviewed journals",
+    "Dual unit support: Metric (kg, cm) and Imperial (lbs, ft-in)"
+  ],
+  "creator": {
+    "@type": "Person",
+    "name": "Bhawanshi Dosi",
+    "url": `https://realbmicalculator.com/${currentLocale || 'en'}/about/`
   }
 };
 
@@ -392,31 +437,92 @@ const breadcrumbSchema = {
   ]
 };
 
-// HowTo Schema for BMI Calculation
-const howToSchema = {
+// HowTo Schema for Health Calculators
+const howToStepTranslations: Record<string, { s1Name: string; s1Text: string; s2Name: string; s2Text: string; s3Name: string; s3Text: string; time: string }> = {
+  en: {
+    s1Name: "Select Units",
+    s1Text: "Choose between Metric (cm, kg) or Imperial (ft/in, lbs) measurement units.",
+    s2Name: "Enter Biometric Measurements",
+    s2Text: "Enter your height, body weight, age, or activity level as required by the formula.",
+    s3Name: "View Clinical Results",
+    s3Text: "Click calculate to view instant evidence-based results, healthy ranges, and WHO/CDC classifications.",
+    time: "PT1M"
+  },
+  es: {
+    s1Name: "Seleccionar Unidades",
+    s1Text: "Elija entre unidades métricas (cm, kg) o imperiales (ft/in, lbs).",
+    s2Name: "Ingresar Mediciones",
+    s2Text: "Ingrese su estatura, peso corporal, edad o nivel de actividad.",
+    s3Name: "Obtener Resultados",
+    s3Text: "Haga clic en calcular para ver resultados inmediatos basados en normas de la OMS.",
+    time: "PT1M"
+  },
+  fr: {
+    s1Name: "Choisir les Unités",
+    s1Text: "Sélectionnez les unités métriques (cm, kg) ou impériales (pieds/pouces, livres).",
+    s2Name: "Saisir vos Mesures",
+    s2Text: "Entrez votre taille, poids, âge ou niveau d'activité physique.",
+    s3Name: "Consulter les Résultats",
+    s3Text: "Cliquez sur calculer pour obtenir une analyse immédiate selon les normes de l'OMS.",
+    time: "PT1M"
+  },
+  de: {
+    s1Name: "Einheiten Auswählen",
+    s1Text: "Wählen Sie zwischen metrischen (cm, kg) oder imperialen (ft/in, lbs) Einheiten.",
+    s2Name: "Messwerte Eingeben",
+    s2Text: "Geben Sie Ihre Körpergröße, Ihr Gewicht, Alter oder Aktivitätslevel ein.",
+    s3Name: "Ergebnis Anzeigen",
+    s3Text: "Klicken Sie auf Berechnen, um wissenschaftlich fundierte Richtwerte zu erhalten.",
+    time: "PT1M"
+  },
+  ko: {
+    s1Name: "단위 선택",
+    s1Text: "미터법(cm, kg) 또는 야드파운드법(ft/in, lbs) 단위를 선택합니다.",
+    s2Name: "신체 측정값 입력",
+    s2Text: "키, 체중, 나이 또는 활동 수준을 정확하게 입력합니다.",
+    s3Name: "결과 확인",
+    s3Text: "계산하기를 클릭하여 WHO 및 CDC 기준의 과학적 분석 결과를 즉시 확인합니다.",
+    time: "PT1M"
+  },
+  hi: {
+    s1Name: "इकाई चुनें",
+    s1Text: "मीट्रिक (सेमी, किग्रा) या इंपीरियल (फीट/इंच, पाउंड) इकाइयों का चयन करें।",
+    s2Name: "माप दर्ज करें",
+    s2Text: "अपनी ऊंचाई, वजन, आयु या गतिविधि स्तर दर्ज करें।",
+    s3Name: "परिणाम देखें",
+    s3Text: "डब्ल्यूएचओ और सीडीसी मानकों पर आधारित तुरंत सटीक परिणाम प्राप्त करें।",
+    time: "PT1M"
+  }
+};
+
+const ht = howToStepTranslations[currentLocale || 'en'] || howToStepTranslations.en;
+const howToSchema = isCalculatorPage ? {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to Calculate Real BMI",
-  "description": "Step-by-step guide on how to calculate your Real Body Mass Index (BMI).",
+  "name": `How to Calculate ${currentToolName}`,
+  "description": `Step-by-step guide to calculate ${currentToolName} with instant client-side privacy.`,
+  "totalTime": ht.time,
   "step": [
     {
       "@type": "HowToStep",
-      "text": "Select metric (cm/kg) or imperial (ft-in/lbs) units.",
-      "name": "Select Units"
+      "position": 1,
+      "name": ht.s1Name,
+      "text": ht.s1Text
     },
     {
       "@type": "HowToStep",
-      "text": "Enter your measured height and body weight.",
-      "name": "Enter Measurements"
+      "position": 2,
+      "name": ht.s2Name,
+      "text": ht.s2Text
     },
     {
       "@type": "HowToStep",
-      "text": "Click Calculate to receive your instant WHO/CDC Real BMI report.",
-      "name": "Get Results"
+      "position": 3,
+      "name": ht.s3Name,
+      "text": ht.s3Text
     }
-  ],
-  "totalTime": "PT1M"
-};
+  ]
+} : null;
 ---
 
 <!doctype html>
@@ -448,6 +554,12 @@ const howToSchema = {
 		<meta name="description" content={seoDescription} />
 		<meta name="keywords" content={seoKeywords} />
 		<meta name="robots" content={robots} />
+		<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content="Real BMI" />
+		<meta name="application-name" content="Real BMI Calculator" />
 		<link rel="canonical" href={canonicalURL} />
 
 		<!-- OpenGraph / Facebook Sharing Metadata -->
@@ -567,21 +679,6 @@ const howToSchema = {
 			})();
 		</script>
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={canonicalURL} />
-		<meta property="og:title" content={seoTitle} />
-		<meta property="og:description" content={seoDescription} />
-		<meta property="og:image" content={ogImageAbsolute} />
-		<meta property="og:site_name" content="Real BMI Calculator" />
-
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={canonicalURL} />
-		<meta property="twitter:title" content={seoTitle} />
-		<meta property="twitter:description" content={seoDescription} />
-		<meta property="twitter:image" content={ogImageAbsolute} />
-
 		<!-- Hreflang Tags for International SEO (Dynamic Path Matching) -->
 		{!['/404/', '/500/', '/search/'].includes(normalizedPath) && !normalizedPath.startsWith('/embed/') && !normalizedPath.startsWith('/author/') && (
 			normalizedPath.startsWith('/blog/') ? (
@@ -608,12 +705,13 @@ const howToSchema = {
 		{!isEmbed && (
 			<>
 				<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)}></script>
-				{(normalizedPath === '/' || normalizedPath === '/bmi-calculator/') && (
+				<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
+				{isCalculatorPage && (
 					<script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)}></script>
 				)}
 				<script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
 				<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
-				{((currentLocale === 'en' || !currentLocale) && (normalizedPath === '/' || normalizedPath === '/bmi-calculator/')) && (
+				{howToSchema && (
 					<script type="application/ld+json" set:html={JSON.stringify(howToSchema)}></script>
 				)}
 			</>

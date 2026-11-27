@@ -7,7 +7,6 @@ import LatestArticles from '../../components/LatestArticles.astro';
 import ToolSEOContent from '../../components/ToolSEOContent.astro';
 import ThreeDBodyVisualizer from '../../components/ThreeDBodyVisualizer.astro';
 import EmbedWidgetBox from '../../components/EmbedWidgetBox.astro';
-import MedicalEEATBanner from '../../components/MedicalEEATBanner.astro';
 import IndianBmiClinicalGuide from '../../components/IndianBmiClinicalGuide.astro';
 import { seoDatabase } from '../../data/seoDatabase';
 import { calculators, locales, type Locale, type CalculatorConfig } from '../../utils/calculators';
@@ -299,6 +298,118 @@ const calcKeywordsMap: Record<string, Record<string, string>> = {
     de: 'bmi rechner fuer inder, icmr bmi tabelle, asiatische bmi grenzwerte, normalgewicht fuer inder',
     ko: '인도인 전용 bmi 계산기, icmr 체질량지수 표, 인도 성인 비만 기준, 아시아인 bmi',
     hi: 'भारतीयों के लिए बीएमआई कैलकुलेटर, आईसीएमआर बीएमआई चार्ट, भारतीय वजन सीमा, एशियाई बीएमआई'
+  },
+  '3d-bmi-calculator': {
+    en: '3d bmi calculator, 3d body visualizer, 3d body model, visual bmi, oxford 2.5 bmi formula, interactive 3d avatar, body shape calculator',
+    es: 'calculadora de imc 3d, visualizador corporal 3d, modelo 3d de cuerpo, formula oxford bmi, avatar 3d interactivo',
+    fr: 'calculateur imc 3d, visualiseur corporel 3d, modele 3d du corps, formule oxford bmi, avatar 3d corporel',
+    de: '3d bmi rechner, 3d koerper visualisierer, 3d koerpermodell, oxford bmi formel, interaktiver 3d avatar',
+    ko: '3d bmi 계산기, 3d 체형 시각화, 3d 체형 모델, 옥스포드 2.5 bmi 공식, 3d 아바타 시뮬레이터',
+    hi: '3D बीएमआई कैलकुलेटर, 3D बॉडी विजुअलाइज़र, 3D शरीर मॉडल, ऑक्सफोर्ड 2.5 फॉर्मूला, 3D शारीरिक आकार'
+  },
+  '3d-body-visualizer': {
+    en: '3d body visualizer, 3d bmi calculator, 3d body shape, interactive 3d avatar, visual weight simulator, oxford bmi',
+    es: 'visualizador corporal 3d, calculadora imc 3d, forma del cuerpo 3d, avatar 3d interactivo',
+    fr: 'visualiseur corporel 3d, calculateur imc 3d, morphologie 3d, avatar corporel 3d interactif',
+    de: '3d koerper visualisierer, 3d bmi rechner, 3d koerperform, virtueller 3d avatar',
+    ko: '3d 체형 시각화 도구, 3d bmi 계산기, 3d 체형 시뮬레이션, 인터랙티브 3d 아바타',
+    hi: '3D बॉडी विजुअलाइज़र, 3D बीएमआई, 3D शारीरिक आकार, 3D अवतार'
+  },
+  'bmi-chart': {
+    en: 'bmi chart, bmi table, body mass index chart, bmi range chart, healthy bmi chart for adults, who bmi categories',
+    es: 'tabla de imc, tabla indice masa corporal, rangos de imc, clasificacion imc oms, tabla peso saludable',
+    fr: 'tableau imc, grille indice masse corporelle, plages imc, classification imc oms, tableau poids ideal',
+    de: 'bmi tabelle, body mass index tabelle, bmi bereiche, who gewichtsklassen, bmi referenztabelle',
+    ko: 'bmi 표, 체질량지수 조견표, 비만도 표, 정상 bmi 범위, who 비만 분류표',
+    hi: 'बीएमआई चार्ट, बॉडी मास इंडेक्स टेबल, बीएमआई श्रेणियां, स्वस्थ बीएमआई सीमा, डब्ल्यूएचओ तालिका'
+  },
+  'asian-bmi-calculator': {
+    en: 'asian bmi calculator, who wpro bmi cutoffs, east asian bmi, asian body mass index, asian obesity criteria',
+    es: 'calculadora de imc asiatico, valores imc oms wpro, imc asia oriental, criterios obesidad asiatica',
+    fr: 'calculateur imc asiatique, normes imc oms wpro, seuils surpoids asiatique, imc asie',
+    de: 'asiatischer bmi rechner, who wpro richtlinien, bmi grenzwerte ostasien, asiatischer body mass index',
+    ko: '아시아인 bmi 계산기, who 서태평양 비만 기준, 아시아 성인 체질량지수, 아시아 체형 비만도',
+    hi: 'एशियाई बीएमआई कैलकुलेटर, डब्ल्यूएचओ डब्ल्यूपीआरओ कटऑफ, एशियाई मोटापा मानक, बॉडी मास इंडेक्स'
+  },
+  'diabetes-risk-calculator': {
+    en: 'diabetes risk calculator, type 2 diabetes risk score, findrisc assessment, blood sugar risk screening, prediabetes check',
+    es: 'calculadora riesgo diabetes, puntuacion findrisc, riesgo diabetes tipo 2, evaluacion glucemia',
+    fr: 'calculateur risque diabete, score findrisc, depistage diabete type 2, evaluation risque sucre',
+    de: 'diabetes risiko rechner, findrisc fragebogen, typ 2 diabetes risiko, praediabetes screening',
+    ko: '당뇨 위험도 계산기, 2형 당뇨 위험 평가, 핀란드 당뇨 점수 findrisc, 혈당 위험 자가진단',
+    hi: 'डायबिटीज जोखिम कैलकुलेटर, टाइप 2 मधुमेह जोखिम, फाइंडरिस्क स्कोर, प्रीडायबिटीज जांच'
+  },
+  'maintenance-calorie-calculator': {
+    en: 'maintenance calorie calculator, how many calories to maintain weight, calorie equilibrium, daily maintenance burn',
+    es: 'calculadora calorias mantenimiento, cuantas calorias para mantener peso, balance energetico diario',
+    fr: 'calculateur calories maintien, calories pour stabiliser le poids, equilibre energetique quotidien',
+    de: 'erhaltungskalorien rechner, wie viel kalorien gewicht halten, taeglicher erhaltungsumsatz',
+    ko: '유지 칼로리 계산기, 현재 체중 유지 칼로리, 에너지 평형 칼로리, 하루 유지 열량',
+    hi: 'रखरखाव कैलोरी कैलकुलेटर, वजन बनाए रखने के लिए कैलोरी, दैनिक ऊर्जा संतुलन'
+  },
+  'macro-calculator': {
+    en: 'macro calculator, macronutrient calculator, flexible dieting macros, keto macros, bodybuilding macro split, protein carb fat ratio',
+    es: 'calculadora de macros, distribucion macronutrientes, macros dieta flexible, porcentaje proteinas carbohidratos grasas',
+    fr: 'calculateur macronutriments, repartition des macros, ratio proteines glucides lipides, macros perte de poids',
+    de: 'makronaehrstoff rechner, macro split rechner, verteilung kohlenhydrate eiweiss fett, fitness macros',
+    ko: '매크로 계산기, 탄단지 비율 계산기, 3대 영양소 분배, 식단 매크로 계산, 벌크업 다이어트 매크로',
+    hi: 'मैक्रो कैलकुलेटर, मैक्रोन्यूट्रिएंट्स अनुपात, प्रोटीन कार्ब फैट विभाजन, दैनिक पोषण कैलकुलेटर'
+  },
+  'lean-body-mass-calculator': {
+    en: 'lean body mass calculator, lbm calculator, boer formula, james formula, hume formula, fat free mass',
+    es: 'calculadora masa magra, masa libre de grasa, formula de boer, calcular masa muscular magra',
+    fr: 'calculateur masse maigre, masse sans graisse, formule de boer, calcul masse corporelle maigre',
+    de: 'magergewicht rechner, fettfreie masse berechnen, boer formel, lean body mass rechner',
+    ko: '제지방량 계산기, 근육량 및 체지방 제외 무게, 보어 공식, 제지방 체중 계산',
+    hi: 'लीन बॉडी मास कैलकुलेटर, वसा-मुक्त द्रव्यमान, बोअर फॉर्मूला, मांसपेशियों का वजन'
+  },
+  'waist-to-hip-ratio-calculator': {
+    en: 'waist to hip ratio calculator, whr calculator, waist circumference ratio, body shape index, visceral fat risk',
+    es: 'calculadora indice cintura cadera, relacion cintura cadera, distribucion grasa corporal, riesgo cardiovascular',
+    fr: 'calculateur rapport taille hanche, ratio tour de taille hanches, graisse viscerale, silhouette corporelle',
+    de: 'taille huefte verhaeltnis rechner, waist to hip ratio, thv rechner, viszeralfett risiko',
+    ko: '허리 엉덩이 둘레 비율 계산기, whr 계산기, 복부비만율 측정, 내장지방 위험도',
+    hi: 'कमर से कूल्हे का अनुपात कैलकुलेटर, डब्ल्यूएचआर गणना, पेट की चर्बी जोखिम, शारीरिक आकार'
+  },
+  'body-surface-area-calculator': {
+    en: 'body surface area calculator, bsa calculator, mosteller formula, du bois formula, medical dosage bsa',
+    es: 'calculadora superficie corporal, area superficie corporal, formula de mosteller, du bois bsa',
+    fr: 'calculateur surface corporelle, formule de mosteller, surface du corps m2, formule du bois',
+    de: 'koerperoberflaeche rechner, bsa rechner, mosteller formel, du bois formel, koerperflaeche',
+    ko: '체표면적 계산기, bsa 계산기, 모스텔러 공식, 듀보이스 공식, 신체 표면적 계산',
+    hi: 'बॉडी सरफेस एरिया कैलकुलेटर, बीएसए गणना, मोस्टेलर फॉर्मूला, शरीर की सतह का क्षेत्रफल'
+  },
+  'heart-rate-zone-calculator': {
+    en: 'heart rate zone calculator, target heart rate, cardio training zones, fat burning heart rate, max heart rate calculator',
+    es: 'calculadora zonas frecuencia cardiaca, pulsaciones quema grasa, frecuencia cardiaca maxima, zonas cardio',
+    fr: 'calculateur zones cardiaques, frequence cardiaque cible, zone bruleur de graisse, cardio training',
+    de: 'pulszonen rechner, zielherzfrequenz, fettverbrennung puls, maximale herzfrequenz berechnen',
+    ko: '심박수 구간 계산기, 목표 심박수, 지방 연소 심박수, 유산소 운동 심박수, 최대 심박수',
+    hi: 'हार्ट रेट ज़ोन कैलकुलेटर, लक्षित हृदय गति, वसा जलाने वाली हृदय गति, कार्डियो ज़ोन'
+  },
+  'karvonen-heart-rate-calculator': {
+    en: 'karvonen heart rate calculator, heart rate reserve, hrr formula, target heart rate karvonen, resting heart rate zones',
+    es: 'calculadora formula karvonen, reserva de frecuencia cardiaca, zonas de entrenamiento karvonen',
+    fr: 'calculateur formule karvonen, reserve cardiaque, frequence cardiaque de reserve, entrainement cible',
+    de: 'karvonen formel rechner, herzfrequenzreserve, hrr zielpuls, trainingsherzfrequenz',
+    ko: '카르보넨 심박수 계산기, 심박수 예비량, 카르보넨 공식, 운동 강도별 맞춤 심박수',
+    hi: 'कार्वोनेन हार्ट रेट कैलकुलेटर, हृदय गति रिजर्व, लक्षित हृदय गति फॉर्मूला, कसरत ज़ोन'
+  },
+  '1rm-calculator': {
+    en: '1rm calculator, one rep max calculator, bench press max calculator, squat max, deadlift max, epley formula, brzycki formula',
+    es: 'calculadora 1rm, repeticion maxima, calculadora press banca, formula de epley, brzycki',
+    fr: 'calculateur 1rm, repetition maximale, calcul charge maximale musculation, formule epley',
+    de: '1rm rechner, one rep max berechnen, bankdruecken maximalgewicht, epley formel, brzycki formel',
+    ko: '1rm 계산기, 1회 최대 중량 계산, 벤치프레스 1rm, 스쿼트 데드리프트 최대 무게, 에플리 브르지츠키 공식',
+    hi: '1RM कैलकुलेटर, अधिकतम एक पुनरावृत्ति वजन, बेंच प्रेस अधिकतम, एपली और ब्रिज़ीकी फॉर्मूला'
+  },
+  'one-rep-max-calculator': {
+    en: 'one rep max calculator, 1rm calculator, bench press max calculator, squat max, deadlift max, epley formula',
+    es: 'calculadora repeticion maxima, calculadora 1rm, calcular peso maximo, formula de epley',
+    fr: 'calculateur charge maximale, calculateur 1rm, repetition maximale musculation, formule epley',
+    de: 'one rep max rechner, 1rm rechner, maximalkraft berechnen, epley formel',
+    ko: '1rm 계산기, 1회 최대 반복 중량 계산기, 최대 리프팅 무게 계산, 에플리 공식',
+    hi: 'वन रेप मैक्स कैलकुलेटर, 1RM कैलकुलेटर, अधिकतम लिफ्टिंग वजन गणना'
   }
 };
 
@@ -318,8 +429,8 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
   
   <Navbar />
   
-  <main class="pt-20 md:pt-24 pb-16 px-4 md:px-6 relative overflow-x-hidden">
-    <div class="max-w-7xl mx-auto space-y-12">
+  <main class="pt-16 sm:pt-20 md:pt-22 pb-16 px-4 md:px-6 relative overflow-x-hidden">
+    <div class="max-w-7xl mx-auto space-y-8 sm:space-y-10">
       
       <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm font-medium text-[var(--muted-foreground)]">
         <a href={`/${lang}/`} class="hover:text-[var(--accent)] transition-colors">{bHome}</a><span class="sr-only">. </span>
@@ -357,8 +468,10 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
 
       <!-- Population & Regional Standards Notice (Disambiguation for Indian vs Asian WHO Standards) -->
       {calc.slug === 'bmi-calculator-for-indians' && (
-        <aside class="p-4 rounded-xl border border-amber-500/25 bg-amber-500/5 text-xs text-[var(--foreground)] max-w-3xl mx-auto flex items-start gap-3 text-left shadow-xs">
-          <div class="w-6 h-6 rounded-full bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">ℹ</div>
+        <aside class="p-3.5 sm:p-4 rounded-xl border border-amber-500/25 bg-amber-500/5 text-xs text-[var(--foreground)] max-w-3xl mx-auto flex items-start gap-3 text-left shadow-xs">
+          <div class="w-6 h-6 rounded-full bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
           <div class="space-y-1">
             <p class="font-bold text-amber-600 dark:text-amber-400">
               {{
@@ -396,8 +509,10 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
       )}
 
       {calc.slug === 'asian-bmi-calculator' && (
-        <aside class="p-4 rounded-xl border border-blue-500/25 bg-blue-500/5 text-xs text-[var(--foreground)] max-w-3xl mx-auto flex items-start gap-3 text-left shadow-xs">
-          <div class="w-6 h-6 rounded-full bg-blue-500/15 text-blue-500 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">ℹ</div>
+        <aside class="p-3.5 sm:p-4 rounded-xl border border-blue-500/25 bg-blue-500/5 text-xs text-[var(--foreground)] max-w-3xl mx-auto flex items-start gap-3 text-left shadow-xs">
+          <div class="w-6 h-6 rounded-full bg-blue-500/15 text-blue-500 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
           <div class="space-y-1">
             <p class="font-bold text-blue-600 dark:text-blue-400">
               {{
@@ -435,12 +550,14 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
       )}
 
       {calc.slug === 'bmi-calculator' && (
-        <aside class="p-4 sm:p-5 rounded-2xl border border-[var(--border)] bg-[var(--card)] text-xs text-[var(--foreground)] max-w-4xl mx-auto shadow-xs">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-              <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] font-bold shrink-0 text-base">🎯</span>
+        <aside class="p-3.5 sm:p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/80 text-xs text-[var(--foreground)] max-w-4xl mx-auto shadow-xs">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] shrink-0">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="1.75"/><circle cx="12" cy="12" r="3" stroke-width="2"/></svg>
+              </span>
               <div class="space-y-0.5">
-                <span class="font-bold text-[var(--foreground)] text-sm block">
+                <span class="font-bold text-[var(--foreground)] text-xs sm:text-sm block">
                   {{
                     en: 'Looking for a specialized BMI calculator?',
                     es: '¿Buscas una calculadora de IMC especializada?',
@@ -450,7 +567,7 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
                     hi: 'क्या आप किसी विशिष्ट बीएमआई कैलकुलेटर की तलाश कर रहे हैं?'
                   }[lang]}
                 </span>
-                <span class="text-[var(--muted-foreground)] text-xs">
+                <span class="text-[var(--muted-foreground)] text-[11px] sm:text-xs">
                   {{
                     en: 'Standard WHO cutoffs may not reflect ethnic differences or 3D body composition:',
                     es: 'Los cortes estándar de la OMS pueden no reflejar diferencias étnicas o composición 3D:',
@@ -462,9 +579,9 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
                 </span>
               </div>
             </div>
-            <div class="flex flex-wrap items-center gap-2 pt-1 md:pt-0 shrink-0">
-              <a href={`/${lang}/bmi-calculator-for-indians/`} class="px-3 py-1.5 rounded-lg bg-[var(--muted)]/70 hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
-                <span>🇮🇳</span>
+            <div class="flex flex-wrap items-center gap-1.5 shrink-0">
+              <a href={`/${lang}/bmi-calculator-for-indians/`} class="px-2.5 py-1.5 rounded-lg bg-[var(--muted)] hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="2"/></svg>
                 {{
                   en: 'BMI for Indians (ICMR)',
                   es: 'IMC para Indios (ICMR)',
@@ -474,8 +591,8 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
                   hi: 'भारतीयों के लिए BMI (ICMR)'
                 }[lang]}
               </a>
-              <a href={`/${lang}/asian-bmi-calculator/`} class="px-3 py-1.5 rounded-lg bg-[var(--muted)]/70 hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
-                <span>🌏</span>
+              <a href={`/${lang}/asian-bmi-calculator/`} class="px-2.5 py-1.5 rounded-lg bg-[var(--muted)] hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="1.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
                 {{
                   en: 'Asian BMI (WHO WPRO)',
                   es: 'IMC Asiático (OMS)',
@@ -485,8 +602,8 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
                   hi: 'एशियाई बीएमआई (WHO)'
                 }[lang]}
               </a>
-              <a href={`/${lang}/3d-bmi-calculator/`} class="px-3 py-1.5 rounded-lg bg-[var(--muted)]/70 hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
-                <span>🧍</span>
+              <a href={`/${lang}/3d-bmi-calculator/`} class="px-2.5 py-1.5 rounded-lg bg-[var(--muted)] hover:bg-[var(--accent)]/15 border border-[var(--border)] text-[var(--foreground)] hover:text-[var(--accent)] font-semibold text-xs transition-colors inline-flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
                 {{
                   en: '3D BMI Visualizer',
                   es: 'Visualizador IMC 3D',
@@ -503,14 +620,14 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
 
       <!-- Main Calculator Layout -->
       {calc.slug === '3d-bmi-calculator' ? (
-        <div class="space-y-10 animate-in" style="animation-delay:100ms">
-          <!-- Primary Highlight: 3D Body Visualizer Canvas Studio -->
+        <div class="space-y-8 animate-in" style="animation-delay:100ms">
+          {/* Primary Highlight: 3D Body Visualizer Canvas Studio */}
           <div class="w-full">
             <ThreeDBodyVisualizer lang={lang} />
           </div>
 
-          <!-- Featured Snippet SEO Checklist Box (Shifted below 3D studio for Google indexing) -->
-          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] text-left text-xs font-semibold text-[var(--foreground)] max-w-3xl mx-auto shadow-xs">
+          {/* Featured Snippet SEO Checklist Box (Shifted below 3D studio for Google indexing) */}
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 sm:p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] text-left text-xs font-semibold text-[var(--foreground)] max-w-3xl mx-auto shadow-xs">
             {items3D.map(item => (
               <li class="flex items-center gap-2.5">
                 <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -518,6 +635,56 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
               </li>
             ))}
           </ul>
+        </div>
+      ) : calc.slug === 'bmi-chart' ? (
+        <div class="p-5 md:p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 max-w-4xl mx-auto animate-in" style="animation-delay:100ms">
+          <div class="space-y-1">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-[11px] font-display font-bold uppercase tracking-wider">
+              {{
+                en: 'Official Reference Chart',
+                es: 'Tabla de Referencia Oficial',
+                fr: 'Tableau de Référence Officiel',
+                de: 'Offizielle Referenztabelle',
+                ko: '공식 표준 참조 차트',
+                hi: 'आधिकारिक संदर्भ चार्ट'
+              }[lang]}
+            </span>
+            <h2 class="text-base sm:text-lg font-display font-bold text-[var(--foreground)] uppercase">
+              {{
+                en: 'Looking to calculate your personalized BMI?',
+                es: '¿Deseas calcular tu IMC personalizado?',
+                fr: 'Vous souhaitez calculer votre IMC personnalisé ?',
+                de: 'Möchten Sie Ihren individuellen BMI berechnen?',
+                ko: '개인 맞춤형 BMI를 직접 계산하고 싶으신가요?',
+                hi: 'क्या आप अपना व्यक्तिगत बीएमआई कैलकुलेट करना चाहते हैं?'
+              }[lang]}
+            </h2>
+            <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+              {{
+                en: 'Use our free interactive calculator to instantly compute your exact BMI score, metabolic rates, and healthy weight targets.',
+                es: 'Usa nuestra calculadora interactiva para calcular tu puntuación exacta de IMC, tasas metabólicas y metas de peso saludable.',
+                fr: 'Utilisez notre calculateur interactif pour calculer votre score d\'IMC exact, vos taux métaboliques et vos objectifs de poids santé.',
+                de: 'Nutzen Sie unseren kostenlosen interaktiven Rechner, um Ihren genauen BMI, Grundumsatz und gesunde Zielgewichte zu berechnen.',
+                ko: '무료 대화형 계산기를 사용하여 정확한 BMI 점수, 기초대사량 및 권장 건강 체중 범위를 즉시 계산해 보세요.',
+                hi: 'अपने सटीक बीएमआई स्कोर, चयापचय दर और स्वस्थ वजन लक्ष्यों की तुरंत गणना करने के लिए हमारे मुफ़्त कैलकुलेटर का उपयोग करें।'
+              }[lang]}
+            </p>
+          </div>
+          <a
+            href={`/${lang}/bmi-calculator/`}
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--accent)] text-[var(--accent-foreground)] font-display font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity shrink-0 shadow-xs"
+          >
+            <span>
+              {{
+                en: 'Open BMI Calculator →',
+                es: 'Abrir Calculadora de IMC →',
+                fr: 'Ouvrir le Calculateur d\'IMC →',
+                de: 'BMI-Rechner öffnen →',
+                ko: 'BMI 계산기 바로가기 →',
+                hi: 'बीएमआई कैलकुलेटर खोलें →'
+              }[lang]}
+            </span>
+          </a>
         </div>
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch animate-in" style="animation-delay:100ms">
@@ -527,11 +694,10 @@ const calcKeywords = calcKeywordsMap[calc.slug]?.[lang]
       )}
 
       <!-- Extended Content & Educational Reference Knowledge Base for Search Indexing -->
-      <div class="pt-4 space-y-10">
+      <div class="pt-2 space-y-8 sm:space-y-10">
         <ToolSEOContent slug={calc.slug} lang={lang} calculator={calc} />
         {calc.slug === 'bmi-calculator-for-indians' && <IndianBmiClinicalGuide lang={lang} />}
         {calc.slug === 'bmi-calculator' && <EmbedWidgetBox lang={lang} />}
-        <MedicalEEATBanner lang={lang} />
         <LatestArticles 
           lang={lang} 
           slugs={relevantArticlesBySlug[calc.slug] || ['what-is-bmi', 'is-bmi-accurate']}

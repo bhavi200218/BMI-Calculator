@@ -661,9 +661,9 @@ const c = content[lang] || content.en;
     returnUrl={`/${lang}/`}
     returnLabel={c.homeLabel}
   >
-    <div class="space-y-8 text-[var(--muted-foreground)] leading-relaxed text-base md:text-lg font-medium">
+    <div class="max-w-5xl space-y-8 text-[var(--muted-foreground)] leading-relaxed text-base md:text-lg font-medium">
       
-      <div class="prose prose-zinc dark:prose-invert max-w-none space-y-6">
+      <div class="prose prose-zinc dark:prose-invert max-w-5xl space-y-6">
         {c.sections.map((section) => (
           <div>
             <h2 class="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight text-[var(--foreground)] mb-3">
@@ -679,7 +679,9 @@ const c = content[lang] || content.en;
         <h3 class="text-lg sm:text-xl font-bold font-display uppercase tracking-tight text-[var(--foreground)]">
           {c.storageTableTitle}
         </h3>
-        <div class="overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-sm">
+        
+        <!-- Desktop Table View -->
+        <div class="hidden md:block overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-sm">
           <table class="w-full text-left text-xs sm:text-sm border-collapse">
             <thead class="bg-[var(--muted)]/60 border-b border-[var(--border)] text-[var(--foreground)] font-display uppercase tracking-wider text-xs">
               <tr>
@@ -700,10 +702,30 @@ const c = content[lang] || content.en;
             </tbody>
           </table>
         </div>
+
+        <!-- Mobile Stacked Card View (100% Data Parity, Zero Horizontal Scroll) -->
+        <div class="md:hidden space-y-3">
+          {c.storageRows.map((row) => (
+            <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-xs space-y-2">
+              <div class="flex items-center justify-between gap-2 border-b border-[var(--border)]/60 pb-2">
+                <span class="font-mono text-xs font-semibold text-[var(--accent)] break-all">{row[0]}</span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-[var(--muted)] text-[var(--foreground)] shrink-0">{row[3]}</span>
+              </div>
+              <div class="text-xs">
+                <span class="text-[10px] font-display uppercase font-bold text-[var(--muted-foreground)] block mb-0.5">{c.tableHeaders[1]}</span>
+                <span class="font-medium text-[var(--foreground)]">{row[1]}</span>
+              </div>
+              <div class="text-xs pt-1">
+                <span class="text-[10px] font-display uppercase font-bold text-[var(--muted-foreground)] block mb-0.5">{c.tableHeaders[2]}</span>
+                <p class="text-[var(--muted-foreground)] leading-relaxed">{row[2]}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <!-- Live Preferences Action Box -->
-      <div class="p-6 rounded-2xl bg-gradient-to-br from-[var(--card)] to-[var(--background)] border border-[var(--border)] shadow-md flex flex-col sm:flex-row items-center justify-between gap-4 mt-8">
+      <div class="p-6 rounded-2xl bg-[var(--card)]/60 border border-[var(--border)]/60 flex flex-col sm:flex-row items-center justify-between gap-4 mt-8">
         <div>
           <h4 class="text-base font-bold font-display uppercase tracking-tight text-[var(--foreground)]">
             {lang === 'es' ? '¿Desea cambiar sus opciones?' :

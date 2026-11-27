@@ -1,8 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
-import PageShell from '../../../components/PageShell.astro';
-import { blogArticles, isSubstantialArticle } from '../../../utils/blogArticles';
+import { blogArticles } from '../../../utils/blogArticles';
 import { locales, type Locale } from '../../../utils/calculators';
 
 export function getStaticPaths() {
@@ -16,38 +15,38 @@ const lang = (params.lang || 'en') as Locale;
 
 const headers = {
   en: { 
-    title: "Health Articles & Guides", 
-    desc: "Explore clear guides on BMI, metabolism, nutrition, and heart health based on WHO and CDC standards." 
+    title: "Evidence-Based Health Articles", 
+    desc: "Explore educational articles on BMI interpretation, metabolic energy expenditure, body composition, and cardiovascular fitness based on published WHO and CDC standards." 
   },
   es: { 
-    title: "Artículos y Guías de Salud", 
-    desc: "Explore guías de investigación basadas en evidencia sobre IMC, metabolismo, nutrición y salud cardiovascular según estándares de la OMS y CDC." 
+    title: "Artículos de Salud Basados en Evidencia", 
+    desc: "Explore artículos educativos sobre interpretación del IMC, gasto metabólico, composición corporal y condición cardiovascular basados en estándares de la OMS y los CDC." 
   },
   fr: { 
-    title: "Articles & Guides de Santé", 
-    desc: "Explorez des guides de recherche fondés sur des preuves sur l'IMC, le métabolisme, la nutrition et le bien-être cardiovasculaire selon les normes OMS et CDC." 
+    title: "Articles de Santé Fondés sur des Preuves", 
+    desc: "Découvrez des articles éducatifs sur l'interprétation de l'IMC, les dépenses métaboliques, la composition corporelle et le cardio selon les normes de l'OMS et des CDC." 
   },
   de: { 
-    title: "Gesundheitsartikel & Leitfäden", 
-    desc: "Entdecken Sie evidenzbasierte Leitfäden zu BMI, Stoffwechsel, Ernährung und Herz-Kreislauf-Fitness auf Grundlage von WHO- und CDC-Standards." 
+    title: "Wissenschaftliche Gesundheitsartikel", 
+    desc: "Wissenschaftlich fundierte Bildungsartikel zu BMI-Werten, Grundumsatz, Körperzusammensetzung und Herz-Kreislauf-Fitness auf Basis von WHO- und CDC-Standards." 
   },
   ko: { 
-    title: "건강 정보 및 의학 가이드", 
-    desc: "WHO 및 CDC 기준에 따른 체질량지수(BMI), 기초대사량, 영양 섭취 및 심혈관 건강에 대한 근거 중심의 신뢰할 수 있는 가이드를 확인하세요." 
+    title: "근거 중심 건강 아티클", 
+    desc: "WHO 및 질병관리청(CDC) 표준에 기반한 BMI 분석, 기초대사량, 체성분 및 심혈관 건강 관련 신뢰할 수 있는 교육용 건강 아티클입니다." 
   },
   hi: { 
-    title: "स्वास्थ्य लेख एवं शोध गाइड", 
-    desc: "विश्व स्वास्थ्य संगठन (WHO) एवं सीडीसी मानकों पर आधारित बॉडी मास इंडेक्स (BMI), मेटाबॉलिज्म, पोषण और हृदय स्वास्थ्य पर साक्ष्य-आधारित गाइड।" 
+    title: "साक्ष्य-आधारित स्वास्थ्य लेख", 
+    desc: "डब्ल्यूएचओ और सीडीसी के वैज्ञानिक मानकों पर आधारित बीएमआई, बेसल मेटाबॉलिज्म, शारीरिक संरचना और हृदय स्वास्थ्य से जुड़े साक्ष्य-आधारित शैक्षिक लेख।" 
   }
 };
 
-const searchPlaceholders = {
-  en: "Search Health Guides...",
-  es: "Buscar Guías de Salud...",
-  fr: "Rechercher des Guides de Santé...",
-  de: "Gesundheitsleitfäden durchsuchen...",
-  ko: "건강 가이드 검색...",
-  hi: "स्वास्थ्य गाइड खोजें..."
+const articleBreadcrumbs: Record<string, string> = {
+  en: 'Articles',
+  es: 'Artículos',
+  fr: 'Articles',
+  de: 'Artikel',
+  ko: '아티클',
+  hi: 'लेख'
 };
 
 const homeLabels = {
@@ -92,10 +91,8 @@ function getArticleTopic(slug: string, cat: string): string {
 
 const h = headers[lang] || headers.en;
 
-const isEn = lang === 'en';
 const articleSlugs = Object.keys(blogArticles);
-// Suppress thin placeholder articles on non-English blog listings while preserving genuinely complete translated articles
-const visibleSlugs = isEn ? articleSlugs : articleSlugs.filter(slug => isSubstantialArticle(slug, lang));
+const visibleSlugs = articleSlugs;
 
 const articlesList = visibleSlugs.map(slug => {
   const item = blogArticles[slug];
@@ -116,17 +113,17 @@ const libraryEyebrows: Record<string, string> = {
   es: "Biblioteca de Salud Basada en Evidencia",
   fr: "Bibliothèque de Santé Fondée sur des Preuves",
   de: "Evidenzbasierte Gesundheitsbibliothek",
-  ko: "근거 기반 건강 연구 라이브러리",
-  hi: "प्रमाण-आधारित स्वास्थ्य अनुसंधान लाइब्रेरी"
+  ko: "근거 중심 건강 정보 라이브러리",
+  hi: "साक्ष्य-आधारित स्वास्थ्य लाइब्रेरी"
 };
 
-const moreCategoriesLabels: Record<string, string> = {
-  en: "More Categories ▾",
-  es: "Más Categorías ▾",
-  fr: "Plus de Catégories ▾",
-  de: "Weitere Kategorien ▾",
-  ko: "더 많은 카테고리 ▾",
-  hi: "अन्य श्रेणियां ▾"
+const trustBadges: Record<string, string[]> = {
+  en: ["WHO & CDC Standards", "Educational Reference", "Zero Data Stored"],
+  es: ["Estándares OMS y CDC", "Referencia Educativa", "Sin Retención de Datos"],
+  fr: ["Normes OMS et CDC", "Référence Éducative", "Zéro Donnée Enregistrée"],
+  de: ["WHO- & CDC-Standards", "Bildungsreferenz", "Keine Datenspeicherung"],
+  ko: ["WHO 및 CDC 표준", "교육용 건강 참고 자료", "데이터 미저장"],
+  hi: ["डब्ल्यूएचओ और सीडीसी मानक", "शैक्षिक संदर्भ सामग्री", "शून्य डेटा संग्रह"]
 };
 
 const emptyStates: Record<string, { title: string; desc: string; reset: string }> = {
@@ -170,67 +167,62 @@ const cardLabels: Record<string, { updated: string; readMore: string }> = {
   ko: { updated: "업데이트", readMore: "전체 아티클 읽기" },
   hi: { updated: "अद्यतित", readMore: "पूरा लेख पढ़ें" }
 };
-
-const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort();
 ---
 
 <Layout 
   title={`${h.title} | Real BMI`}
   description={h.desc}
-  canonicalURL={lang === 'en' ? 'https://realbmicalculator.com/en/blog/' : 'https://realbmicalculator.com/en/blog/'}
-  robots={lang === 'en' ? 'index, follow' : 'noindex, follow'}
+  canonicalURL={`https://realbmicalculator.com/${lang}/blog/`}
+  robots="index, follow"
 >
   <Navbar />
 
-  <PageShell
-    title={h.title}
-    eyebrow={libraryEyebrows[lang] || libraryEyebrows.en}
-    description={h.desc}
-    returnUrl={`/${lang}/`}
-    returnLabel={homeLabels[lang] || homeLabels.en}
-  >
-    <!-- Interactive Search Bar -->
-    <div class="relative w-full max-w-xl mx-auto mb-6">
-      <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[var(--muted-foreground)]">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </div>
-      <input 
-        type="search" 
-        id="blogSearchInput" 
-        placeholder={searchPlaceholders[lang] || "Search Health Guides..."} 
-        autocomplete="off"
-        class="w-full pl-11 pr-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--card)] text-sm text-[var(--foreground)] placeholder-[var(--muted-foreground)]/70 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] shadow-xs transition-all"
-      />
-    </div>
+  <main id="main-content" class="pt-20 md:pt-24 pb-16 px-4 sm:px-6 lg:px-8 xl:px-12 relative overflow-x-hidden">
+    <div class="w-full max-w-[1600px] mx-auto space-y-6">
 
-    <!-- Multilingual Library Notice for non-English -->
-    {lang !== 'en' && (
-      <div class="not-prose mb-6 p-3.5 rounded-xl bg-[var(--muted)]/40 border border-[var(--border)] text-xs text-[var(--muted-foreground)] flex items-center justify-between gap-3">
-        <span>{{
-          es: "Biblioteca completa de investigación en salud basada en evidencia en la edición oficial en inglés.",
-          fr: "Bibliothèque complète de recherche sur la santé fondée sur des preuves dans l'édition officielle en anglais.",
-          de: "Vollständige evidenzbasierte Gesundheitsforschungsbibliothek in der offiziellen englischen Ausgabe.",
-          ko: "공식 영문 에디션에서 전체 증거 기반 건강 연구 라이브러리를 확인하실 수 있습니다.",
-          hi: "संपूर्ण प्रमाण-आधारित स्वास्थ्य अनुसंधान लेख लाइब्रेरी आधिकारिक अंग्रेजी संस्करण में उपलब्ध है।"
-        }[lang]}</span>
-        <a href="/en/blog/" class="text-[var(--accent)] font-semibold underline shrink-0 hover:text-[var(--foreground)]">
-          {{
-            es: "Ver biblioteca en inglés →",
-            fr: "Voir la bibliothèque en anglais →",
-            de: "Englische Bibliothek ansehen →",
-            ko: "영문 라이브러리 보기 →",
-            hi: "अंग्रेजी लाइब्रेरी देखें →"
-          }[lang]}
-        </a>
-      </div>
-    )}
+      <!-- Breadcrumb & Top Hero Header -->
+      <header class="space-y-3.5 text-center sm:text-left max-w-4xl">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="flex items-center justify-center sm:justify-start gap-1.5 text-xs font-display font-medium text-[var(--muted-foreground)]">
+          <a href={`/${lang}/`} class="hover:text-[var(--accent)] transition-colors inline-flex items-center gap-1 py-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+            <span>{homeLabels[lang] || homeLabels.en}</span>
+          </a>
+          <span class="opacity-40" aria-hidden="true">/</span>
+          <span class="text-[var(--foreground)] font-semibold">{articleBreadcrumbs[lang] || articleBreadcrumbs.en}</span>
+        </nav>
 
-    <!-- Category Hub Navigation: 7 Core Pills + More Dropdown -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8 pb-4 border-b border-[var(--border)]" id="categoryHubNav">
-      <!-- Visible Core Pills -->
-      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2" id="topicPillsContainer">
+        <!-- Eyebrow Tag / Pill -->
+        <div class="pt-0.5">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)] shadow-2xs">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+            <span>{libraryEyebrows[lang] || libraryEyebrows.en}</span>
+          </div>
+        </div>
+
+        <!-- Main H1 Headline -->
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tight text-[var(--foreground)] leading-tight">
+          {h.title}
+        </h1>
+
+        <!-- Balanced SEO & AdSense Description -->
+        <p class="text-xs sm:text-sm md:text-base text-[var(--muted-foreground)] font-normal leading-relaxed max-w-3xl">
+          {h.desc}
+        </p>
+
+        <!-- Micro Trust Badges Strip -->
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 text-xs">
+          {(trustBadges[lang] || trustBadges.en).map(badge => (
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[var(--border)] bg-[var(--card)] text-[11px] font-display font-semibold uppercase tracking-wider text-[var(--muted-foreground)] shadow-2xs">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span>{badge}</span>
+            </div>
+          ))}
+        </div>
+      </header>
+
+      <!-- Category Hub Navigation: Core Topic Pills -->
+      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 pt-1 pb-2" id="topicPillsContainer">
         {coreTopics.map((topic, idx) => (
           <button 
             type="button" 
@@ -243,41 +235,25 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
         ))}
       </div>
 
-      <!-- More Categories Dropdown -->
-      <div class="shrink-0">
-        <select 
-          id="moreCategoriesDropdown" 
-          aria-label="Filter by specific category"
-          class="w-full sm:w-auto px-3 py-1.5 sm:py-2 rounded-xl text-xs font-semibold uppercase tracking-wider bg-[var(--card)] text-[var(--foreground)] border border-[var(--border)] hover:border-[var(--accent)] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40"
-        >
-          <option value="all">{moreCategoriesLabels[lang] || moreCategoriesLabels.en}.</option>
-          {detailedCategories.map(cat => (
-            <option value={cat}>{cat}.</option>
-          ))}
-        </select>
-      </div>
-    </div>
+      <!-- Empty Results Container (Populated dynamically via JavaScript only on zero-match filter) -->
+      <div 
+        id="noResultsMsg" 
+        class="hidden text-center py-12 space-y-2" 
+        style="display: none;" 
+        hidden
+        data-empty-title={(emptyStates[lang] || emptyStates.en).title}
+        data-empty-desc={(emptyStates[lang] || emptyStates.en).desc}
+        data-empty-reset={(emptyStates[lang] || emptyStates.en).reset}
+      ></div>
 
-    <!-- Empty Results Container (Populated dynamically via JavaScript only on zero-match search/filter) -->
-    <div 
-      id="noResultsMsg" 
-      class="hidden text-center py-12 space-y-2" 
-      style="display: none;" 
-      hidden
-      data-empty-title={(emptyStates[lang] || emptyStates.en).title}
-      data-empty-desc={(emptyStates[lang] || emptyStates.en).desc}
-      data-empty-reset={(emptyStates[lang] || emptyStates.en).reset}
-    ></div>
-
-    <!-- Articles Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="articlesGrid">
+      <!-- Articles Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6" id="articlesGrid">
       {articlesList.map(article => (
         <a 
           href={`/${lang}/blog/${article.slug}/`} 
           class="group block h-full article-item" 
           data-category={article.category}
           data-topic={article.topicGroup}
-          data-search={`${article.title} ${article.description} ${article.category}`.toLowerCase()}
         >
           <div class="h-full p-6 sm:p-7 rounded-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col justify-between space-y-4 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
             <div class="space-y-3">
@@ -307,17 +283,13 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
 
     <script is:inline>
       function initBlogFilters() {
-        const searchInput = document.getElementById('blogSearchInput');
         const pills = document.querySelectorAll('.topic-pill');
-        const dropdown = document.getElementById('moreCategoriesDropdown');
         const cards = document.querySelectorAll('.article-item');
         const noResults = document.getElementById('noResultsMsg');
 
         if (!cards.length) return;
 
         let activeTopic = 'all';
-        let activeCategory = 'all';
-        let searchQuery = '';
 
         function renderEmptyState() {
           if (!noResults) return;
@@ -343,14 +315,9 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
           let visibleCount = 0;
           cards.forEach(card => {
             const cardTopic = card.getAttribute('data-topic');
-            const cardCategory = card.getAttribute('data-category');
-            const cardSearchText = card.getAttribute('data-search') || '';
-
             const matchesTopic = activeTopic === 'all' || cardTopic === activeTopic;
-            const matchesCategory = activeCategory === 'all' || cardCategory === activeCategory;
-            const matchesSearch = !searchQuery || cardSearchText.includes(searchQuery);
 
-            if (matchesTopic && matchesCategory && matchesSearch) {
+            if (matchesTopic) {
               card.style.display = '';
               visibleCount++;
             } else {
@@ -373,11 +340,7 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
         }
 
         function handleReset() {
-          if (searchInput) searchInput.value = '';
-          searchQuery = '';
           activeTopic = 'all';
-          activeCategory = 'all';
-          if (dropdown) dropdown.value = 'all';
           pills.forEach((p, idx) => {
             if (idx === 0) {
               p.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
@@ -388,14 +351,6 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
             }
           });
           applyFilters();
-        }
-
-        // Search Input event
-        if (searchInput) {
-          searchInput.addEventListener('input', (e) => {
-            searchQuery = e.target.value.trim().toLowerCase();
-            applyFilters();
-          });
         }
 
         // Topic Pills click
@@ -409,32 +364,9 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
             pill.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
 
             activeTopic = pill.getAttribute('data-topic') || 'all';
-            activeCategory = 'all';
-            if (dropdown) dropdown.value = 'all';
             applyFilters();
           });
         });
-
-        // More Categories Dropdown change
-        if (dropdown) {
-          dropdown.addEventListener('change', (e) => {
-            activeCategory = e.target.value;
-            if (activeCategory !== 'all') {
-              activeTopic = 'all';
-              pills.forEach(p => {
-                p.classList.remove('bg-[var(--accent)]', 'text-white', 'shadow-xs');
-                p.classList.add('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
-              });
-            } else {
-              const allPill = document.querySelector('.topic-pill[data-topic="all"]');
-              if (allPill) {
-                allPill.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
-                allPill.classList.add('bg-[var(--accent)]', 'text-white', 'shadow-xs');
-              }
-            }
-            applyFilters();
-          });
-        }
 
         // Ensure filters and empty-state are correctly evaluated on initial page load
         applyFilters();
@@ -447,5 +379,6 @@ const detailedCategories = [...new Set(articlesList.map(a => a.category))].sort(
       }
       document.addEventListener('astro:page-load', initBlogFilters);
     </script>
-  </PageShell>
+    </div>
+  </main>
 </Layout>

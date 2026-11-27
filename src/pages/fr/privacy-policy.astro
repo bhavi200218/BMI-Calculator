@@ -17,10 +17,10 @@ import PageShell from '../../components/PageShell.astro';
       returnUrl="/fr/"
       returnLabel="Accueil"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+      <div class="max-w-5xl space-y-8 prose prose-zinc dark:prose-invert text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
         
         <!-- Privacy at a Glance (Quick Summary Card) -->
-        <div class="not-prose p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs space-y-4">
+        <div class="not-prose p-6 rounded-2xl bg-[var(--card)]/60 border border-[var(--border)]/60 space-y-4">
           <div class="flex items-center gap-2.5">
             <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -32,7 +32,7 @@ import PageShell from '../../components/PageShell.astro';
                 La Confidentialité en un Coup d'Œil
               </h2>
               <p class="text-xs text-[var(--muted-foreground)]">
-                Un résumé clair de la manière dont Real BMI protège votre vie privée
+                Un aperçu rapide de la manière dont Real BMI protège votre vie privée
               </p>
             </div>
           </div>
@@ -40,23 +40,19 @@ import PageShell from '../../components/PageShell.astro';
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
             <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
               <span class="text-emerald-500 text-base leading-none">✓</span>
-              <span>Nous ne stockons pas votre IMC ni vos données de santé</span>
+              <span><strong>Zéro Donnée Stockée :</strong> Les calculs s'exécutent localement dans votre navigateur</span>
             </div>
             <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
               <span class="text-emerald-500 text-base leading-none">✓</span>
-              <span>Tous les calculs s'exécutent localement dans votre navigateur</span>
+              <span><strong>Sans Inscription :</strong> Utilisez les 23 outils de santé sans créer de compte</span>
             </div>
             <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
               <span class="text-emerald-500 text-base leading-none">✓</span>
-              <span>Aucune création de compte ou inscription requise</span>
+              <span><strong>Aucune Vente de Données :</strong> Vos mesures ne sont jamais cédées ni louées</span>
             </div>
             <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
               <span class="text-emerald-500 text-base leading-none">✓</span>
-              <span>Aucune donnée de santé n'est jamais vendue ni cédée</span>
-            </div>
-            <div class="flex items-start gap-2 text-xs sm:text-sm text-[var(--foreground)] font-medium sm:col-span-2">
-              <span class="text-emerald-500 text-base leading-none">✓</span>
-              <span>Vous contrôlez à 100 % vos préférences de cookies et d'annonces</span>
+              <span><strong>Contrôle des Cookies :</strong> Gérez votre consentement à tout moment via le pied de page</span>
             </div>
           </div>
         </div>
@@ -64,127 +60,130 @@ import PageShell from '../../components/PageShell.astro';
         <!-- Core Trust Proposition Callout -->
         <div class="not-prose p-5 rounded-2xl bg-[var(--accent)]/5 border-l-4 border-[var(--accent)] text-[var(--foreground)] space-y-1">
           <p class="text-xs uppercase font-display font-bold tracking-wider text-[var(--accent)]">
-            Notre Engagement Fondamental
+            Notre Principe Fondamental de Confidentialité
           </p>
           <p class="text-sm sm:text-base font-semibold leading-relaxed">
-            Tous les calculs s'exécutent exclusivement côté client dans votre navigateur web.
+            Tous les calculs s'exécutent exclusivement côté client, dans votre navigateur web.
           </p>
           <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
-            Vos tailles, poids, âges et mensurations ne quittent jamais votre appareil et ne sont jamais transmis à des serveurs distants.
+            Votre taille, poids, âge et tour de taille ne quittent jamais votre appareil et ne sont jamais transmis à des serveurs distants ni enregistrés dans des bases de données.
           </p>
         </div>
 
         <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
-          Chez <strong>Real BMI</strong>, la protection de vos données personnelles et biométriques est un droit fondamental. Nos calculateurs sont conçus dès l'origine pour vous laisser l'entière maîtrise de vos informations.
+          Chez <strong>Real BMI</strong>, nous considérons la vie privée et la sécurité des données de santé comme des droits fondamentaux. Nos outils sont conçus dès l'origine selon une architecture respectueuse de votre vie privée où vos mesures biométriques restent sous votre contrôle exclusif.
         </p>
 
-        <!-- 1. Zéro Donnée de Santé Stockée -->
+        <!-- 1. Traitement Côté Client et Zéro Donnée de Santé Stockée -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            1. Zéro Donnée de Santé Stockée
+            1. Traitement Côté Client et Zéro Donnée de Santé Stockée
           </h2>
           <p>
-            Nous ne collectons, n'interceptons, ne conservons ni ne transmettons vos mesures corporelles individuelles.
+            Nous ne collectons, n'interceptons, ne stockons ni ne transmettons vos mesures biométriques individuelles.
           </p>
           <p>
-            Lorsque vous renseignez votre taille ou votre poids, tous les algorithmes s'exécutent localement dans votre navigateur grâce à JavaScript.
+            Lorsque vous saisissez vos informations de poids, taille ou âge, l'ensemble des formules mathématiques s'exécute directement dans le navigateur web de votre appareil via JavaScript.
           </p>
           <p>
-            Ces valeurs ne sont jamais envoyées à des serveurs distants ni enregistrées dans des bases de données.
+            Le traitement s'effectuant localement, vos données n'existent que dans la mémoire temporaire du navigateur pendant la consultation. Dès fermeture de l'onglet ou actualisation de la page, tous les chiffres saisis sont instantanément effacés.
           </p>
         </div>
 
-        <!-- 2. Traitement Local et Session Éphémère -->
+        <!-- 2. Journaux Techniques des Serveurs et Infrastructure d'Hébergement -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            2. Traitement Local et Session Éphémère
+            2. Journaux Techniques des Serveurs et Infrastructure d'Hébergement
           </h2>
           <p>
-            Vos données n'existent que le temps de votre visite.
+            Real BMI est généré de manière statique et distribué mondialement via le réseau de diffusion Cloudflare Pages. Les serveurs enregistrent des journaux de diagnostic technique standard.
           </p>
           <p>
-            Dès la fermeture de l'onglet ou l'actualisation de la page, tous les paramètres saisis sont immédiatement purgés de la mémoire temporaire.
+            Ceux-ci incluent les chaînes de l'agent utilisateur, le système d'exploitation et une géolocalisation approximative (pays/ville) exclusivement pour parer aux cyberattaques (DDoS), détecter le trafic malveillant et maintenir une réactivité optimale.
           </p>
           <p>
-            Real BMI ne requiert aucun compte utilisateur et n'associe aucun score à des adresses IP identifiables.
+            Ces journaux d'exploitation ne contiennent aucune métrique de santé et sont strictement cloisonnés de nos calculateurs.
           </p>
         </div>
 
-        <!-- 3. Diagnostics Techniques & Infrastructure Cloudflare -->
+        <!-- 3. Publicité Numérique et Déclarations Google AdSense -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            3. Diagnostics Techniques & Infrastructure Cloudflare
+            3. Publicité Numérique et Déclarations Google AdSense
           </h2>
           <p>
-            Real BMI est généré statiquement et hébergé à l'échelle mondiale sur le réseau périphérique Cloudflare Pages. Les journaux techniques opérationnels ne contiennent aucun identifiant personnel ni aucune métrique de santé.
-          </p>
-          <p>
-            Ces données opérationnelles sont totalement indépendantes des outils de calcul et servent exclusivement à prévenir les attaques DDoS et garantir une haute disponibilité.
-          </p>
-        </div>
-
-        <!-- 4. Publicité Numérique, Google Consent Mode v2 & CMP -->
-        <div class="space-y-3">
-          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            4. Publicité Numérique, Google Consent Mode v2 & CMP
-          </h2>
-          <p>
-            Real BMI est soutenu par des annonces numériques respectueuses afin de maintenir l'accès libre et gratuit à l'ensemble des calculateurs :
+            Real BMI s'appuie sur la publicité numérique pour assurer la gratuité d'accès à ses 23 calculateurs de santé :
           </p>
           <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Google AdSense :</strong> Des fournisseurs tiers utilisent des cookies pour diffuser des annonces adaptées aux visites antérieures.</li>
-            <li><strong>Désactivation :</strong> Vous pouvez désactiver les annonces personnalisées à tout moment sur <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Paramètres des annonces Google</a> ou <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">aboutads.info</a>.</li>
-            <li><strong>Google Consent Mode v2 :</strong> Nous appliquons le mode Consentement v2 avec refus par défaut (<code>ad_storage: 'denied'</code>, <code>analytics_storage: 'denied'</code>). Les cookies optionnels ne sont activés qu'après consentement explicite.</li>
-            <li><strong>Visiteurs EEE et Royaume-Uni (CMP Certifiée) :</strong> Le recueil du consentement est assuré par la plateforme officielle certifiée par Google (Funding Choices avec conformité IAB TCF v2.2).</li>
-            <li><strong>Révocation du Consentement :</strong> Vous pouvez à tout moment modifier ou révoquer vos choix en cliquant sur "Préférences de Cookies" en pied de page, ce qui supprime immédiatement les cookies non essentiels du navigateur.</li>
+            <li><strong>Google AdSense :</strong> Des fournisseurs tiers, dont Google, utilisent des cookies pour diffuser des annonces pertinentes basées sur les visites antérieures des internautes.</li>
+            <li><strong>Désactivation des Annonces Personnalisées :</strong> Vous pouvez désactiver à tout moment la personnalisation des annonces via les <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">Paramètres des annonces Google</a> ou <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline font-medium">aboutads.info</a>.</li>
+            <li><strong>Diffusion Non Personnalisée :</strong> En cas de refus du ciblage, seules des annonces contextuelles générales liées au contenu de la page s'affichent, sans cookies de suivi.</li>
           </ul>
         </div>
 
-        <!-- 5. Vos Droits (RGPD et Réglementations Internationales) -->
+        <!-- 4. Google Consent Mode v2 et Gestion des Cookies -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            5. Vos Droits (RGPD et Réglementations Internationales)
+            4. Google Consent Mode v2 et Gestion des Cookies
           </h2>
           <p>
-            Conformément au RGPD et aux normes de confidentialité :
+            Nous veillons au respect scrupuleux de vos choix grâce à des mécanismes techniques rigoureux :
           </p>
           <ul class="list-disc pl-6 space-y-1.5">
-            <li><strong>Aucune Vente de Données :</strong> Nous ne commercialisons aucune information de santé.</li>
-            <li><strong>Suppression de Plein Droit :</strong> Aucun enregistrement n'étant conservé sur nos serveurs, vos données sont automatiquement effacées dès la fin de votre session.</li>
-            <li><strong>Gestion Facile :</strong> Modifiez vos préférences à tout moment sur notre page <a href="/fr/cookie-policy/" class="text-[var(--accent)] underline font-medium">Gestion des Cookies</a>.</li>
+            <li><strong>Consent Mode v2 :</strong> Nous appliquons Google Consent Mode v2 avec des statuts refusés par défaut (<code>ad_storage: 'denied'</code>, <code>ad_user_data: 'denied'</code>, <code>ad_personalization: 'denied'</code>, <code>analytics_storage: 'denied'</code>). Les cookies non essentiels ne sont activés qu'après acceptation explicite.</li>
+            <li><strong>CMP Certifiée pour l'EEE et le Royaume-Uni :</strong> Pour les visiteurs de l'Espace Économique Européen (EEE) et du Royaume-Uni, le recueil du consentement est assuré par une plateforme certifiée par Google (Google Funding Choices conforme au standard IAB TCF v2.2).</li>
+            <li><strong>Révocation du Consentement :</strong> Vous pouvez modifier ou retirer votre accord à tout instant en cliquant sur « Préférences de cookies » dans le pied de page du site.</li>
           </ul>
         </div>
 
-        <!-- 6. Sécurité et Chiffrement -->
+        <!-- 5. Vos Droits Légaux (RGPD et CCPA) -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            6. Sécurité et Chiffrement
+            5. Vos Droits Légaux (RGPD et CCPA)
           </h2>
           <p>
-            Nous employons des protocoles de chiffrement TLS modernes et des en-têtes de sécurité stricts pour garantir des échanges fiables et protégés contre toute interception.
+            Que vous résidiez dans l'Union Européenne, en Californie ou ailleurs dans le monde, vous disposez de garanties claires :
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5">
+            <li><strong>Aucune Vente de Données :</strong> Real BMI ne commercialise, ne loue ni ne transfère aucune donnée personnelle de santé à des courtiers de données.</li>
+            <li><strong>Droit à l'Effacement :</strong> N'enregistrant aucune donnée sur nos serveurs, vos informations sont effacées dès la fin de votre session de calcul.</li>
+            <li><strong>Gestion des Préférences :</strong> Vous pouvez examiner et ajuster vos choix de traceurs à tout moment sur notre page <a href="/fr/cookie-policy/" class="text-[var(--accent)] underline font-medium">Politique de Cookies</a>.</li>
+          </ul>
+        </div>
+
+        <!-- 6. Sécurité du Site Web et Chiffrement TLS -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            6. Sécurité du Site Web et Chiffrement TLS
+          </h2>
+          <p>
+            Notre site utilise les protocoles de chiffrement modernes TLS 1.3, des en-têtes HTTP de sécurité stricts et une isolation côté navigateur pour préserver la confidentialité de votre session et vous prémunir contre toute interception illicite.
           </p>
         </div>
 
-        <!-- 7. Révision Éditoriale et Confidentialité Publique -->
+        <!-- 7. Protection de la Vie Privée des Enfants -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            7. Révision Éditoriale et Confidentialité Publique
+            7. Protection de la Vie Privée des Enfants
           </h2>
           <p>
-            Chaque outil et article est vérifié avant sa publication.
+            Real BMI s'adresse à un public adulte général. Nous ne recueillons pas sciemment de renseignements personnels auprès d'enfants de moins de 13 ans (ou moins de 16 ans au sein de l'Union Européenne).
           </p>
           <p>
-            Nous n'hébergeons aucun forum ouvert ni annuaire public d'utilisateurs où des données privées pourraient être exposées.
+            Les outils pédiatriques (notamment les courbes de croissance pour adolescents) constituent des repères informatifs devant être consultés en présence des parents, tuteurs ou professionnels de santé.
           </p>
         </div>
 
-        <!-- 8. Contact et Assistance -->
+        <!-- 8. Responsable du Traitement et Contact -->
         <div class="space-y-3">
           <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
-            8. Contact et Assistance
+            8. Responsable du Traitement et Contact
           </h2>
           <p>
-            Pour toute question concernant notre politique de confidentialité ou le fonctionnement de nos calculateurs, contactez-nous sur la page <a href="/fr/contact/" class="text-[var(--accent)] underline font-medium">Contact &amp; Support</a>.
+            Real BMI est un site internet indépendant développé et administré par <strong>Bhawanshi Dosi</strong> (Banswara, Rajasthan, Inde).
+          </p>
+          <p>
+            Pour toute interrogation concernant nos engagements de confidentialité ou le fonctionnement de nos calculateurs, veuillez consulter notre <a href="/fr/contact/" class="text-[var(--accent)] underline font-medium">Page de Contact</a>.
           </p>
         </div>
 

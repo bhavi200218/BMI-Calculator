@@ -50,34 +50,33 @@ import PageShell from '../../components/PageShell.astro';
     <PageShell
       title="Real BMI 소개"
       eyebrow="미션 및 근거 기반 연구 방법론"
-      description="설립자이자 소프트웨어 엔지니어인 Bhawanshi Dosi가 공인된 WHO 및 CDC 표준 지침을 기반으로 직접 제작 및 운영합니다."
+      description="설립자이자 소프트웨어 엔지니어인 바완시 도시(Bhawanshi Dosi)가 공인된 WHO 및 CDC 표준 지침을 기반으로 직접 제작 및 운영합니다."
       returnUrl="/ko/"
       returnLabel="홈"
     >
-      <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
-        <div class="space-y-8">
-          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
-            <p><strong>Real BMI</strong>는 인도 라자스탄주 반스와라에 거주하는 소프트웨어 엔지니어 <strong>Bhawanshi Dosi</strong>가 설립하고 개발 및 유지 관리하는 개인 건강 지표 및 생체 계측 참조 웹사이트입니다. 불투명한 수학적 알고리즘, 무분별한 광고, 그리고 민감한 개인 건강 정보의 서버 트래킹 문제를 해결하기 위해, 사용자의 기기 내부에서 100% 로컬 연산되는 투명한 계산 모델을 제공합니다.</p>
+      <div class="max-w-5xl space-y-10">
+        <div class="space-y-6 prose prose-zinc dark:prose-invert text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+            <p><strong>Real BMI</strong>는 인도 라자스탄주 반스와라에 거주하는 소프트웨어 엔지니어 <strong>바완시 도시(Bhawanshi Dosi)</strong>가 설립하고 개발 및 유지 관리하는 개인 건강 지표 및 생체 계측 참조 웹사이트입니다. 불투명한 수학적 알고리즘, 무분별한 광고, 그리고 민감한 개인 건강 정보의 서버 트래킹 문제를 해결하기 위해, 사용자의 기기 내부에서 100% 로컬 연산되는 투명한 계산 모델을 제공합니다.</p>
             
             <!-- Creator Profile Card -->
-            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start">
+            <div class="p-6 rounded-2xl rounded-2xl bg-[var(--card)]/60 border border-[var(--border)]/60 not-prose flex flex-col sm:flex-row gap-5 items-start">
               <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-black text-2xl shadow-md shrink-0">
-                BD
+                바
               </div>
               <div class="space-y-2 flex-grow">
                 <div class="flex flex-wrap items-center gap-2">
-                  <h3 class="text-xl font-bold text-[var(--foreground)]">Bhawanshi Dosi</h3>
+                  <h3 class="text-xl font-bold text-[var(--foreground)]">바완시 도시 (Bhawanshi Dosi)</h3>
                   <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--accent)]/15 text-[var(--accent)] border border-[var(--accent)]/30">설립자 겸 소프트웨어 엔지니어</span>
                 </div>
                 <p class="text-xs font-medium text-[var(--accent)]">인도 라자스탄 반스와라 &bull; 웹마스터 겸 개발자</p>
                 <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                  브라우저 로컬 무저장 건강 계산 엔진 개발을 전문으로 하는 소프트웨어 엔지니어입니다. Bhawanshi는 Real BMI에 탑재된 23개 계산기 전반의 알고리즘을 직접 연구·설계·구현·유지관리하며, 공식 공중보건 문헌(WHO, CDC, ICMR)과 동료 평가 학술 논문 기준에 엄격히 맞추어 보정합니다.
+                  브라우저 로컬 무저장 건강 계산 엔진 개발을 전문으로 하는 소프트웨어 엔지니어입니다. 바완시(Bhawanshi)는 Real BMI에 탑재된 23개 계산기 전반의 알고리즘을 직접 연구·설계·구현·유지관리하며, 공식 공중보건 문헌(WHO, CDC, ICMR)과 동료 평가 학술 논문 기준에 엄격히 맞추어 보정합니다.
                 </p>
               </div>
             </div>
 
             <!-- Non-Clinical Disclosure Banner -->
-            <div class="p-5 rounded-xl border border-amber-500/30 bg-amber-500/5 text-amber-200/90 text-sm leading-relaxed space-y-2 not-prose">
+            <div class="p-5 rounded-xl border border-amber-500/20 bg-amber-500/5 text-amber-200/90 text-sm leading-relaxed space-y-2 not-prose">
               <div class="flex items-center gap-2 font-bold text-amber-400">
                 <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -85,7 +84,7 @@ import PageShell from '../../components/PageShell.astro';
                 <span>투명한 프로젝트 운영 및 비임상 안내</span>
               </div>
               <p>
-                Real BMI는 Bhawanshi Dosi가 독립적으로 개발 및 운영하는 소프트웨어 엔지니어링 프로젝트입니다. 본 플랫폼은 <strong>의사로 구성된 임상 검토 위원회(Clinical Review Board), 다학제 자문 패널 또는 의료 위원회를 운영하지 않습니다</strong>. 사이트 내 모든 도구는 공인된 공중보건 문헌의 수학적 구현체로서 건강 교육 및 라이프스타일 참고용이며, 의학적 진단 목적으로 사용되지 않습니다.
+                Real BMI는 바완시 도시(Bhawanshi Dosi)가 독립적으로 개발 및 운영하는 소프트웨어 엔지니어링 프로젝트입니다. 본 플랫폼은 <strong>의사로 구성된 임상 검토 위원회(Clinical Review Board), 다학제 자문 패널 또는 의료 위원회를 운영하지 않습니다</strong>. 사이트 내 모든 도구는 공인된 공중보건 문헌의 수학적 구현체로서 건강 교육 및 라이프스타일 참고용이며, 의학적 진단 목적으로 사용되지 않습니다.
               </p>
             </div>
 
@@ -93,7 +92,7 @@ import PageShell from '../../components/PageShell.astro';
             <p>Real BMI는 주관적인 의료 위원회 대신 <strong>철저한 테스트 주도 소프트웨어 공학(TDD)</strong>을 통해 수식의 정확성과 무결성을 확보합니다. 모든 공식, 단위 환산 상수, 기준 경계값은 배포 전 920개 이상의 자동화된 단위 및 회귀 테스트 스위트를 통해 정밀하게 검증됩니다:</p>
 
             <div class="grid gap-4 sm:grid-cols-2 not-prose pt-1">
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   동료 평가 공식 정확도 검증
@@ -102,7 +101,7 @@ import PageShell from '../../components/PageShell.astro';
                   미플린-세인트 조어(1990), 모스텔러(1987), 디바인(1974), WHO 854 등 주요 공식을 임상 벤치마크 데이터셋과 직접 대조하여 검증합니다.
                 </p>
               </div>
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   미터법 및 야드파운드법 단위 일관성
@@ -111,7 +110,7 @@ import PageShell from '../../components/PageShell.astro';
                   미터법(kg/cm)과 야드파운드법(lbs/in) 간 계산은 정밀 환산 계수 703.06957964와 &plusmn;0.01 허용 오차 내에서 자동 일치 검증됩니다.
                 </p>
               </div>
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   경계값 및 분류 기준 테스트
@@ -120,7 +119,7 @@ import PageShell from '../../components/PageShell.astro';
                   WHO 표준 컷오프(18.5, 25.0, 30.0)와 아시아인 특화 위험 경계값(23.0, 27.5 kg/m&sup2;)을 극단적 입력값에 대해 단위 테스트합니다.
                 </p>
               </div>
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   제로 데이터 전송 격리 감사
@@ -132,83 +131,67 @@ import PageShell from '../../components/PageShell.astro';
             </div>
 
             
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Real BMI의 설립 배경: 프라이버시 중심 건강 도구의 새로운 기준</h2>
-            <p>Real BMI 프로젝트는 기존 온라인 건강 계산기들의 문제점에 대한 깊은 문제의식에서 출발했습니다. 수많은 피트니스 웹사이트들이 자극적인 광고와 사용자 추적 스크립트를 탑재하여 이용자의 민감한 신체 지표를 무단 수집하거나, 검증되지 않은 오래된 수식을 사용하여 잘못된 결과를 제공하고 있었습니다.</p>
-            <p>인도 라자스탄주 반스와라에 소재한 소프트웨어 엔지니어 <strong>Bhawanshi Dosi</strong>는 이러한 문제를 해결하고자 Real BMI를 설립했습니다. 세계보건기구(WHO) 및 질병통제예방센터(CDC)의 공인된 의학 학술 연구를 소프트웨어 공학적 엄밀함과 결합하여, 사용자의 개인정보를 침해하지 않는 투명하고 신뢰할 수 있는 건강 계산 도구를 완성했습니다.</p>
-
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">핵심 기술 원칙: 초고속 연산, 정밀도 및 클라이언트 브라우저 연산</h2>
-            <p>Real BMI의 23종 계산 도구는 전적으로 데이터 제로 보존(Zero-Retention) 원칙에 따라 설계되었습니다. 사용자 입력값을 외부 서버로 전송하는 기존 방식과 달리, 모든 계산은 사용자의 로컬 웹 브라우저 JavaScript 런타임 환경에서만 즉각 처리됩니다. 이로써 세 가지 핵심적인 이점을 제공합니다:</p>
-            <ul>
-              <li><strong>완벽한 신체 정보 보안:</strong> 신장, 체중, 연령, 허리둘레 등의 개인 건강 데이터가 이용자의 기기를 벗어나지 않으므로 서버 침해나 유출 위험이 원천적으로 차단됩니다.</li>
-              <li><strong>16밀리초 이하의 초저지연 연산:</strong> 로컬 CPU 자원을 활용하여 수식 연산 및 3D 시각화 피드백이 지연 없이 실시간으로 표출됩니다.</li>
-              <li><strong>안정적인 오프라인 구동:</strong> 초기 페이지 로드 후 인터넷 연결이 불안정하거나 끊긴 상태에서도 모든 계산 엔진이 정상적으로 동작합니다.</li>
-            </ul>
-
-            <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">학술적 투명성, 자동화 품질 검증 및 장기적 발전 로드맵</h2>
-            <p>당사는 건강 도구의 모든 알고리즘이 대중에게 투명하게 공개되어야 한다고 믿습니다. Real BMI의 모든 계산기는 단계별 연산 과정, 상세한 산출 예시 및 공인 의학 학술지 출처를 명확히 제시합니다. 또한 920개 이상의 자동화 단위 테스트를 구축하여 코드 변경 시에도 수식 정밀도를 완벽히 보장합니다.</p>
-            <p>Real BMI는 전 세계 누구나 차별 없이 이용할 수 있는 무료 공공 지식 플랫폼을 지향하며, 의료 전문가 및 연구자들의 학술적 피드백과 검증 의견을 언제나 환영합니다.</p>
-
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">동료 평가 기반 수학적 표준</h2>
-            <p>Real BMI의 모든 산출 공식은 세계보건기구(WHO Technical Report Series 854), <em>The Lancet</em>에 발표된 WHO 서태평양지역 아시아인 BMI 권고사항, 미플린-세인트 조어(Mifflin-St Jeor) 간접 열량 측정 공식, 모스텔러(Mosteller) 체표면적 공식, 디바인(Devine) 표준 체중 공식 등 학술적으로 검증된 표준 문헌을 직접 기반으로 구현되었습니다.</p>
+            <p>Real BMI의 모든 건강 지표 산출 알고리즘은 세계보건기구(WHO)와 미국 질병통제예방센터(CDC) 등 공인된 공중보건 기관의 표준 문헌 및 동료 평가 의학 저널을 기반으로 직접 구현되었습니다. 주요 적용 문헌에는 세계보건기구 기술 보고서(WHO Technical Report Series 854: 신체 상태 및 인체 계측학적 판정), <em>The Lancet</em>에 게재된 WHO 서태평양 아시아인 체질량지수 권고 기준, 미플린-세인트 조어(Mifflin-St Jeor 1990) 간접 열량 측정 기초대사량 방정식, 모스텔러(Mosteller 1987) 체표면적(BSA) 공식, 디바인(Devine 1974) 임상 적정 체중 공식이 포함됩니다. 모든 수학적 모델은 임상 논문의 원형 수식에 부합하도록 엄격하게 검증됩니다.</p>
 
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">서버 미전송 클라이언트 사이드 아키텍처</h2>
-            <p>사용자의 신체 데이터를 수집·저장하는 일반 상업용 헬스케어 플랫폼과 달리, Real BMI는 웹 브라우저 메모리 내 자바스크립트를 통해서만 연산을 수행합니다. 키, 몸무게, 연령 등 사용자가 입력한 어떠한 정보도 외부 서버로 전송되거나 데이터베이스에 기록되지 않습니다.</p>
+            <p>사용자의 민감한 생체 지표를 수집하고 원격 서버로 전송하는 일반 상업용 헬스케어 플랫폼과 달리, Real BMI는 웹 브라우저 메모리 내 자바스크립트(JavaScript) 환경에서만 100% 로컬 연산을 수행합니다. 신장, 체중, 나이, 허리둘레 등의 개인 건강 데이터는 네트워크를 통해 외부로 전송되거나 원격 데이터베이스에 저장되지 않으며, 사용자 기기에 로컬 쿠키로도 보관되지 않습니다. 사용자는 완전한 프라이버시가 보호되는 안전한 환경에서 건강 수치를 자유롭게 확인할 수 있습니다.</p>
 
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">교육 목적 및 의학적 면책 고지</h2>
-            <p>Real BMI는 일상 건강 지표를 이해하도록 돕는 교육용 참고 플랫폼이며, 의료기관이나 임상 진단 서비스를 제공하지 않습니다. 본 사이트의 수치는 개인의 웰빙 인식을 높이고 전문의나 공인 영양사와의 상담 시 유용한 참고 자료로 활용되도록 제작되었습니다.</p>
-          </div>
-        </div>
+            <p>Real BMI는 일상생활에서 신체 지표의 의미를 스스로 이해할 수 있도록 지원하는 교육용 참고 계산 웹사이트이며, 공인 의료기관이나 임상 진단 서비스를 대체하지 않습니다. 본 사이트에서 제공하는 모든 수치는 개인의 웰빙 관리 및 생활습관 인식을 돕기 위한 통계적 추정치입니다. 질병의 진단, 치료, 처방이 필요한 경우에는 반드시 전문의사나 임상영양사 등 공인된 의료 전문가의 진료와 상담을 받으셔야 합니다.</p>
+                  </div>
 
-        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 sm:p-8 shadow-[var(--shadow-soft)] space-y-6">
-          <div class="space-y-2">
+        <!-- Platform Standards & Verification Summary (Open, Responsive Grid, No Line Dividers) -->
+        <div class="rounded-2xl border border-[var(--border)]/70 bg-[var(--card)]/60 p-6 sm:p-8 space-y-6">
+          <div class="space-y-1">
             <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">제작자 및 검증</p>
             <h2 class="text-xl sm:text-2xl font-black text-[var(--foreground)] uppercase tracking-tight font-display">독립 참조 플랫폼</h2>
             <p class="text-xs text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi가 직접 운영 및 관리</p>
           </div>
 
-          <div class="space-y-4 pt-3 border-t border-[var(--border)] text-xs">
-            <div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">설립자 겸 개발자:</span>
               <span class="text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi (소프트웨어 엔지니어)</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">운영 소재지:</span>
               <span class="text-[var(--muted-foreground)] font-medium">인도 라자스탄 반스와라</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">검증 방식:</span>
               <span class="text-[var(--muted-foreground)] font-medium">920개 이상의 자동화 알고리즘 테스트</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">의료 위원회 운영:</span>
               <span class="text-[var(--muted-foreground)] font-medium">해당 없음 (비임상 교육용 도구)</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">연산 환경:</span>
               <span class="text-[var(--muted-foreground)] font-medium">100% 브라우저 로컬 연산</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">데이터 프라이버시:</span>
               <span class="text-[var(--muted-foreground)] font-medium">건강 데이터 무저장 (Zero-Retention)</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1 sm:col-span-2 lg:col-span-3">
               <span class="font-bold text-[var(--foreground)] block">학술적 근거:</span>
               <span class="text-[var(--muted-foreground)] font-medium">WHO, CDC 및 동료평가 문헌</span>
             </div>
           </div>
 
-          <div class="space-y-3 pt-4 border-t border-[var(--border)]">
-            <a href="/ko/sources/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] hover:bg-[var(--accent)]/15 transition text-center">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+            <a href="/ko/sources/" class="inline-flex items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] transition text-center">
               주요 학술 참고문헌 (15편) →
             </a>
-            <a href="/ko/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition text-center">
+            <a href="/ko/methodology/" class="inline-flex items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--muted)]/40 text-[var(--foreground)] hover:border-[var(--accent)] px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] transition text-center">
               방법론 및 공식 확인하기 (23개 도구) →
             </a>
-            <a href="/ko/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15 text-center">
+            <a href="/ko/contact/" class="inline-flex items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] transition text-center">
               제작자에게 문의하기 →
             </a>
           </div>
-        </aside>
+        </div>
       </div>
     </PageShell>
 </Layout>

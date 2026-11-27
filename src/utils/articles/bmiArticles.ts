@@ -6,28 +6,28 @@ export const bmiArticles: Record<string, BlogArticleData> = {
   datePublished: "2026-01-15",
   dateModified: "2026-10-25",
   title: {
-    en: "What is BMI? Complete Definition, Formula & WHO Standards",
-    hi: "बीएमआई क्या है? संपूर्ण परिभाषा, फॉर्मूला और स्वास्थ्य मानक",
-    ko: "BMI란 무엇인가? 체질량지수 정의와 세계보건기구 표준 기준표",
-    de: "Was ist der BMI? Definition, Formel & WHO-Grenzwerte",
-    es: "¿Qué es el IMC? Definición, Fórmulas y Estándares de la OMS",
-    fr: "Qu'est-ce que l'IMC ? Définition, Calcul et Normes OMS"
+    en: "What is BMI? Definition, Formula & Standards",
+    hi: "बीएमआई क्या है? परिभाषा, फॉर्मूला और मानक",
+    ko: "BMI란 무엇인가? 체질량지수 정의와 표준 기준",
+    de: "Was ist der BMI? Definition, Formel & Richtwerte",
+    es: "¿Qué es el IMC? Definición, Fórmula y Estándares",
+    fr: "Qu'est-ce que l'IMC ? Définition, Calcul et Normes"
   },
   category: {
-    en: "BMI & Health Basics",
-    hi: "बीएमआई और स्वास्थ्य मूल बातें",
+    en: "BMI Basics",
+    hi: "बीएमआई मूल बातें",
     ko: "BMI 기초",
-    de: "BMI & Grundlagen",
-    es: "Conceptos Básicos del IMC",
+    de: "BMI-Grundlagen",
+    es: "Bases del IMC",
     fr: "Bases de l'IMC"
   },
   description: {
-    en: "Learn how Body Mass Index works. Check your healthy weight range with clear WHO standards.",
-    hi: "बॉडी मास इंडेक्स (BMI) की संपूर्ण प्रमाण-आधारित गाइड। जानें इसका इतिहास, मीट्रिक और इंपीरियल फॉर्मूला, डब्ल्यूएचओ श्रेणियां, एशियाई मानक और स्वास्थ्य में इसका सही उपयोग।",
-    ko: "체질량지수(BMI)의 의학적 정의와 표준 계산 공식을 상세하게 확인하세요. 세계보건기구(WHO) 기준 및 아시아인 맞춤 비만 기준표, 단계별 계산 실례와 신체 측정 한계점을 완벽 안내합니다.",
-    de: "Umfassender evidenzbasierter Leitfaden zum Body-Mass-Index (BMI). Entdecken Sie Ursprung, metrische und imperiale Formeln, WHO-Klassifikation, asiatische Schwellenwerte, Rechenbeispiele und Grenzen.",
-    es: "Guía completa basada en evidencia sobre el Índice de Masa Corporal (IMC). Aprende sus orígenes históricos, fórmulas métricas e imperiales, rangos de la OMS, puntos de corte asiáticos, ejemplos prácticos de cálculo y limitaciones fisiológicas.",
-    fr: "Guide complet fondé sur des preuves sur l'Indice de Masse Corporelle (IMC). Découvrez son histoire, formules métriques et impériales, classifications OMS, seuils asiatiques, exemples de calcul et limites physiologiques."
+    en: "Understand how Body Mass Index is calculated, what your score means, and the official WHO classification ranges.",
+    hi: "जानें कि बॉडी मास इंडेक्स (BMI) की गणना कैसे होती है, आपके स्कोर का क्या अर्थ है और डब्ल्यूएचओ के मानक क्या हैं।",
+    ko: "체질량지수(BMI)의 계산 공식, 수치의 의미 및 세계보건기구(WHO) 표준 분류 기준을 확인하세요.",
+    de: "Erfahren Sie, wie der Body-Mass-Index berechnet wird, was Ihr Wert bedeutet und welche WHO-Klassen gelten.",
+    es: "Aprende cómo se calcula el IMC, qué significa tu puntuación y los rangos de clasificación oficiales de la OMS.",
+    fr: "Comprenez le calcul de l'IMC, la signification de votre score et les classifications officielles de l'OMS."
   },
   contentHtml: {
     en: `
@@ -674,28 +674,28 @@ export const bmiArticles: Record<string, BlogArticleData> = {
   datePublished: "2026-02-10",
   dateModified: "2026-10-28",
   title: {
-    en: "Is BMI Accurate? Research Analysis, Limitations & Better Metrics",
-    hi: "क्या बीएमआई सटीक है? अनुसंधान विश्लेषण, सीमाएं और बेहतर विकल्प",
-    ko: "BMI는 얼마나 정확한가? 비만도 측정의 연구 분석과 대안",
-    de: "Ist der BMI genau? Forschungsanalyse, Grenzen & moderne Alternativen",
-    es: "¿Es Preciso el IMC? Análisis de Investigación, Límites y Alternativas",
-    fr: "L'IMC est-il Précis ? Analyse Scientifique, Limites et Alternatives"
+    en: "Is BMI Accurate? Benefits, Limits & Better Metrics",
+    hi: "क्या बीएमआई सटीक है? लाभ, सीमाएं और बेहतर विकल्प",
+    ko: "BMI는 얼마나 정확한가? 장점, 한계 및 대안 지표",
+    de: "Ist der BMI genau? Vorteile, Grenzen & Alternativen",
+    es: "¿Es Preciso el IMC? Beneficios, Límites y Alternativas",
+    fr: "L'IMC est-il Précis ? Avantages, Limites et Alternatives"
   },
   category: {
-    en: "Research Evidence & Limitations",
-    hi: "अनुसंधान साक्ष्य और सीमाएं",
-    ko: "연구 근거 및 한계점",
-    de: "Forschungsevidenz & Grenzen",
-    es: "Evidencia de Investigación y Límites",
-    fr: "Évaluation & Limites Scientifiques"
+    en: "Accuracy & Limits",
+    hi: "सटीकता और सीमाएं",
+    ko: "정확도 및 한계",
+    de: "Genauigkeit & Grenzen",
+    es: "Precisión y Límites",
+    fr: "Précision et Limites"
   },
   description: {
-    en: "Find out when BMI works well and when it falls short. See better checks for muscle, fat, and age.",
-    hi: "बॉडी मास इंडेक्स की सटीकता का गहन वैज्ञानिक विश्लेषण। जानें कि बीएमआई एथलीटों, बुजुर्गों और एशियाई लोगों में क्यों अधूरा साबित होता है और इसके बेहतर साक्ष्य-आधारित विकल्प क्या हैं।",
-    ko: "체질량지수(BMI)의 정확도에 대한 심층 연구 분석. 근육형 운동선수, 고령층의 근감소증, 인종별 지방 분포 차이로 인한 왜곡 현상과 DEXA, 허리둘레-신장 비율(WHtR) 등 정밀 대체 지표를 상세히 안내합니다.",
-    de: "Detaillierte wissenschaftliche Analyse der Genauigkeit des Body-Mass-Index. Warum der BMI bei Sportlern und Senioren fehlerhaft sein kann und welche Alternativen wie WHtR und DEXA aussagekräftiger sind.",
-    es: "Evaluación científica rigurosa sobre la precisión del IMC. Por qué falla en atletas musculados y ancianos con sarcopenia, y qué métodos alternativos ofrecen una valoración superior.",
-    fr: "Examen scientifique approfondi de la fiabilité de l'Indice de Masse Corporelle. Découvrez les limites chez les sportifs et les seniors, ainsi que les alternatives fiables comme le DEXA et le ratio taille-hauteur."
+    en: "Explore where BMI succeeds as a screening tool and where factors like muscle mass, age, and body fat distribution require deeper metrics.",
+    hi: "जानें कि बीएमआई कहाँ उपयोगी है और कहाँ मांसपेशियों, उम्र व फैट वितरण के लिए अन्य जांचों की आवश्यकता होती है।",
+    ko: "BMI의 선별 검사로서의 유용성과 함께 근육량, 연령, 체지방 분포 등을 평가하기 위한 대안 지표를 알아봅니다.",
+    de: "Erfahren Sie, wann der BMI als Richtwert zuverlässig ist und wann Muskelmasse, Alter und Fettverteilung andere Kennzahlen erfordern.",
+    es: "Descubre cuándo el IMC funciona bien y cuándo la masa muscular, la edad y la grasa corporal requieren métricas complementarias.",
+    fr: "Découvrez quand l'IMC est utile et quand la masse musculaire, l'âge et la répartition des graisses exigent d'autres mesures."
   },
   contentHtml: {
     en: `
@@ -933,28 +933,28 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     "datePublished": "2026-03-01",
     "dateModified": "2026-10-25",
     "title": {
-      "en": "Official BMI Chart: Height to Weight Ratio Reference Guide",
-      "hi": "आधिकारिक बीएमआई चार्ट: लंबाई और वजन अनुपात संदर्भ गाइड",
-      "ko": "표준 BMI 차트: 신장별 체중 기준표 및 비만도 판정 가이드",
+      "en": "Official BMI Chart: Height & Weight Reference Guide",
+      "hi": "आधिकारिक बीएमआई चार्ट: लंबाई और वजन संदर्भ तालिका",
+      "ko": "표준 BMI 차트: 신장별 체중 기준표 및 판정 가이드",
       "de": "Offizielle BMI-Tabelle: Referenzwerte für Größe & Gewicht",
-      "es": "Tabla Oficial de IMC: Guía de Referencia Estatura y Peso",
-      "fr": "Tableau Officiel de l'IMC : Guide des Seuils Poids et Taille"
+      "es": "Tabla Oficial de IMC: Guía de Estatura y Peso",
+      "fr": "Tableau Officiel de l'IMC : Seuils Poids et Taille"
     },
     "category": {
-      "en": "BMI & Health Basics",
-      "hi": "बीएमआई और स्वास्थ्य मूल बातें",
-      "ko": "BMI 기초",
-      "de": "BMI & Grundlagen",
-      "es": "Conceptos Básicos del IMC",
-      "fr": "Bases de l'IMC"
+      "en": "BMI Charts",
+      "hi": "बीएमआई चार्ट",
+      "ko": "BMI 차트",
+      "de": "BMI-Tabellen",
+      "es": "Tablas de IMC",
+      "fr": "Tableaux IMC"
     },
     "description": {
-      "en": "Explore the official WHO body mass chart. Find your height and weight to see your health range.",
-      "hi": "विश्व स्वास्थ्य संगठन (WHO) का संपूर्ण बीएमआई संदर्भ चार्ट। अपनी लंबाई और वजन का मिलान करें, स्वास्थ्य श्रेणियों को समझें और एशियाई आबादी के विशेष मानक देखें।",
-      "ko": "세계보건기구(WHO) 표준 성인 BMI 대조표. 신장과 체중의 교차점을 통해 본인의 체질량지수를 즉시 확인하고 정상, 과체중, 비만 판정 기준과 아시아인 전용 기준을 비교 검토하세요.",
-      "de": "Offizielle WHO-Referenztabelle für den Body-Mass-Index. Finden Sie Ihre Schnittmenge aus Größe und Gewicht und verstehen Sie die klinischen Risikostufen.",
-      "es": "Tabla de referencia oficial de la OMS para el IMC. Encuentra la intersección exacta entre tu estatura y peso y comprende las categorías diagnósticas.",
-      "fr": "Tableau de référence officiel de l'OMS pour l'IMC. Repérez l'intersection exacte de votre taille et de votre poids et découvrez les seuils cardiométaboliques."
+      "en": "View standard WHO cutoffs for underweight, normal weight, overweight, and obesity with our complete height-weight chart.",
+      "hi": "कम वजन, सामान्य वजन, अधिक वजन और मोटापे के लिए डब्ल्यूएचओ के आधिकारिक कट-ऑफ और संदर्भ तालिका देखें।",
+      "ko": "저체중, 정상, 과체중, 비만 판정을 위한 세계보건기구(WHO) 표준 기준표와 신장별 체중 구간을 확인하세요.",
+      "de": "Sehen Sie die offiziellen WHO-Grenzwerte für Untergewicht, Normalgewicht, Übergewicht und Adipositas in unserer Tabelle.",
+      "es": "Consulta los puntos de corte de la OMS para bajo peso, peso normal, sobrepeso y obesidad en nuestra tabla completa.",
+      "fr": "Consultez les seuils de l'OMS pour l'insuffisance pondérale, le poids normal, le surpoids et l'obésité dans notre tableau complet."
     },
     "contentHtml": {
       "en": `
@@ -1197,14 +1197,75 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       <p>Aufgrund eines höheren Körperfettanteils und vermehrter viszeraler Fetteinlagerung empfiehlt die WHO für Menschen asiatischer Herkunft niedrigere Interventionsschwellen: <strong>Normalbereich 18,5 bis 22,9 kg/m²</strong>, Übergewicht ab 23,0 kg/m² und Adipositas ab 25,0 kg/m² (ICMR) bzw. 27,5 kg/m² (WHO WPRO).</p>
     `,
       "ko": `
-      <h2>세계보건기구(WHO) 표준 BMI 차트 가이드</h2>
-      <p><strong>표준 BMI 대조표</strong>는 성인의 신장과 체중이 만나는 지점을 통해 체형 범주를 판정하는 대표적인 시각 선별 도구입니다.</p>
-      <h2>4대 핵심 건강 구간</h2>
-      <ul>
-        <li><strong>저체중 (&lt; 18.5):</strong> 영양 결핍, 골다공증 및 면역 저하 위험 구간.</li>
-        <li><strong>정상 건강 체중 (18.5 – 24.9):</strong> 전체 사망률이 가장 낮은 이상적 구간.</li>
-        <li><strong>과체중 (25.0 – 29.9):</strong> 심혈관 및 대사 질환 발생 위험 완만 상승 구간.</li>
-        <li><strong>비만 (&ge; 30.0):</strong> 적극적인 생활 습관 교정 및 임상 치료 권장 구간.</li>
+      <h2>세계보건기구(WHO) 표준 성인 BMI 차트 및 체중 기준표</h2>
+      <p>표준 <strong>체질량지수(BMI) 대조표</strong>는 신장과 체중의 교차점을 통해 본인의 체형 범주와 대사 건강 위험도를 직관적으로 판정할 수 있도록 고안된 의학 선별 지표입니다. 세계보건기구(WHO), 미국 국립보건원(NIH) 및 대한비만학회에서 예방 의학적 일차 선별 도구로 채택하고 있습니다.</p>
+
+      <h2>신장별 성인 건강 체중 및 비만도 판정표</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">신장 (cm)</th>
+              <th class="p-3 text-amber-500 font-bold">저체중 (&lt; 18.5)</th>
+              <th class="p-3 text-emerald-500 font-bold">정상 체중 (18.5–24.9)</th>
+              <th class="p-3 text-amber-500 font-bold">과체중 (25.0–29.9)</th>
+              <th class="p-3 text-rose-500 font-bold">비만 (&ge; 30.0)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">155 cm</td>
+              <td class="p-3 text-amber-500">&lt; 44.4 kg</td>
+              <td class="p-3 text-emerald-500 font-bold">44.4 – 59.8 kg</td>
+              <td class="p-3 text-amber-500">59.9 – 71.8 kg</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 72.1 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">160 cm</td>
+              <td class="p-3 text-amber-500">&lt; 47.4 kg</td>
+              <td class="p-3 text-emerald-500 font-bold">47.4 – 63.7 kg</td>
+              <td class="p-3 text-amber-500">63.8 – 76.5 kg</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 76.8 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">165 cm</td>
+              <td class="p-3 text-amber-500">&lt; 50.4 kg</td>
+              <td class="p-3 text-emerald-500 font-bold">50.4 – 67.8 kg</td>
+              <td class="p-3 text-amber-500">67.9 – 81.4 kg</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 81.7 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">170 cm</td>
+              <td class="p-3 text-amber-500">&lt; 53.5 kg</td>
+              <td class="p-3 text-emerald-500 font-bold">53.5 – 72.0 kg</td>
+              <td class="p-3 text-amber-500">72.1 – 86.4 kg</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 86.7 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">175 cm</td>
+              <td class="p-3 text-amber-500">&lt; 56.7 kg</td>
+              <td class="p-3 text-emerald-500 font-bold">56.7 – 76.3 kg</td>
+              <td class="p-3 text-amber-500">76.4 – 91.6 kg</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 91.9 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">180 cm</td>
+              <td class="p-3 text-amber-500">&lt; 59.9 kg</td>
+              <td class="p-3 text-emerald-500 font-bold">59.9 – 80.7 kg</td>
+              <td class="p-3 text-amber-500">80.8 – 96.9 kg</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 97.2 kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>아시아인 및 한국인을 위한 세부 보정 기준</h2>
+      <p>한국인을 포함한 동아시아 인구는 동일한 체질량지수에서도 서양인에 비해 복부 내장지방 축적 비율이 높고 제2형 당뇨병 및 고혈압 발병 위험이 상대적으로 조기에 나타납니다. 이에 따라 대한비만학회(KSSO)는 다음과 같은 아시아-태평양 맞춤형 기준을 권고합니다:</p>
+      <ul class="list-disc pl-5 my-4 space-y-1.5 text-sm text-[var(--muted-foreground)]">
+        <li><strong>정상 체중:</strong> BMI 18.5 ~ 22.9 kg/m²</li>
+        <li><strong>비만 전단계 (과체중):</strong> BMI 23.0 ~ 24.9 kg/m²</li>
+        <li><strong>1단계 비만:</strong> BMI 25.0 ~ 29.9 kg/m²</li>
+        <li><strong>2단계 이상 고도비만:</strong> BMI 30.0 kg/m² 이상</li>
       </ul>
     `,
       "hi": `
@@ -1307,28 +1368,28 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     "datePublished": "2026-03-15",
     "dateModified": "2026-10-28",
     "title": {
-      "en": "Healthy Weight by Height: Evidence-Based Determination & Formula Guide",
-      "hi": "कद के अनुसार स्वस्थ वजन: प्रमाण-आधारित फॉर्मूला व संदर्भ तालिका",
-      "ko": "키별 적정 건강 체중: 근거 기반 공식 및 신장별 권장 체중 가이드",
-      "de": "Idealgewicht nach Größe: Evidenzbasierte Richtwerte & Formeln",
-      "es": "Peso Saludable por Estatura: Fórmulas Basadas en Evidencia y Rangos",
-      "fr": "Poids Idéal selon la Taille : Formules Fondées sur des Preuves et Seuils"
+      "en": "Healthy Weight by Height: Recommended Weight Ranges",
+      "hi": "कद के अनुसार स्वस्थ वजन: अनुशंसित वजन सीमा तालिका",
+      "ko": "키별 적정 체중: 신장 기준 권장 건강 체중 범위",
+      "de": "Normalgewicht nach Größe: Empfohlene Gewichtsbereiche",
+      "es": "Peso Saludable por Estatura: Rangos de Peso Recomendados",
+      "fr": "Poids Idéal selon la Taille : Plages Recommandées"
     },
     "category": {
-      "en": "Body Composition & Weight",
-      "hi": "शारीरिक संरचना और वजन",
-      "ko": "신체 구성 및 체중",
-      "de": "Körperzusammensetzung & Gewicht",
-      "es": "Composición Corporal y Peso",
-      "fr": "Composition Corporelle"
+      "en": "Healthy Weight",
+      "hi": "स्वस्थ वजन",
+      "ko": "적정 체중",
+      "de": "Normalgewicht",
+      "es": "Peso Saludable",
+      "fr": "Poids Santé"
     },
     "description": {
-      "en": "Find your healthy weight range by height. See how your height shapes your ideal body weight.",
-      "hi": "डब्ल्यूएचओ मानकों, क्वेटलेट फॉर्मूला और डिवाइन समीकरण के आधार पर अपनी लंबाई के अनुसार स्वस्थ वजन सीमा जानें। शारीरिक ढांचे के अनुसार सटीक मार्गदर्शन।",
-      "ko": "세계보건기구(WHO) 기준과 드바인(Devine) 공식을 활용하여 본인의 신장에 맞는 적정 건강 체중 범위를 확인하세요. 골격 크기 및 체지방률을 고려한 실천 지침을 제공합니다.",
-      "de": "Ermitteln Sie Ihren gesunden Gewichtsbereich nach der Körpergröße mit WHO-Standards, der Devine-Formel und Anpassungen an den individuellen Knochenbau.",
-      "es": "Descubre tu rango de peso saludable óptimo según tu estatura utilizando los estándares de la OMS, la fórmula de Devine y consideraciones sobre la constitución ósea.",
-      "fr": "Déterminez votre fourchette de poids santé selon votre taille avec les normes de l'OMS, la formule de Devine et les critères de corpulence osseuse."
+      "en": "Find your healthy weight range based on stature using WHO criteria and clinical Ideal Body Weight (IBW) formulas.",
+      "hi": "डब्ल्यूएचओ मानकों और नैदानिक आदर्श वजन सूत्रों के आधार पर अपनी लंबाई के अनुसार स्वस्थ वजन सीमा जानें।",
+      "ko": "세계보건기구(WHO) 기준과 임상 적정 체중 공식을 바탕으로 신장별 권장 건강 체중 범위를 확인하세요.",
+      "de": "Finden Sie Ihren gesunden Gewichtsbereich nach Körpergröße basierend auf WHO-Kriterien und klinischen Idealgewichtsformeln.",
+      "es": "Encuentra tu rango de peso saludable según tu estatura con criterios de la OMS y fórmulas clínicas de peso ideal.",
+      "fr": "Déterminez votre fourchette de poids santé selon votre taille grâce aux critères OMS et aux formules de poids idéal."
     },
     "contentHtml": {
       "en": `
@@ -1481,39 +1542,195 @@ export const bmiArticles: Record<string, BlogArticleData> = {
 `,
       "es": `
       <h2>Determinación Médica del Peso Saludable por Estatura</h2>
-      <p>El <strong>peso saludable</strong> no es una cifra estática única, sino un <em>rango de peso estadístico</em> que reduce al mínimo el riesgo de mortalidad cardiovascular, diabetes y desgaste articular.</p>
-      <h2>Fórmulas de Peso Saludable</h2>
+      <p>En medicina preventiva, el <strong>peso saludable</strong> no representa una cifra estática única en la báscula, sino un <em>rango de peso estadístico</em> óptimo para una estatura determinada que reduce al mínimo el riesgo de mortalidad cardiovascular, diabetes tipo 2 y desgaste osteoarticular.</p>
+
+      <h2>Fórmulas de Cálculo y Tabla de Referencia</h2>
+      <p>Según los criterios de la Organización Mundial de la Salud (OMS), el peso normal en adultos corresponde a un IMC entre <strong>18.5 y 24.9 kg/m²</strong>. Despejando la ecuación de Quetelet (<code>Peso = IMC &times; Estatura²</code>), obtenemos los límites:</p>
       <ul>
-        <li><strong>Peso Mínimo Saludable:</strong> <code>18.5 &times; [Estatura (m)]²</code></li>
-        <li><strong>Peso Máximo Saludable:</strong> <code>24.9 &times; [Estatura (m)]²</code></li>
+        <li><strong>Peso Mínimo Saludable (kg):</strong> <code>18.5 &times; [Estatura (m)]²</code></li>
+        <li><strong>Peso Máximo Saludable (kg):</strong> <code>24.9 &times; [Estatura (m)]²</code></li>
       </ul>
-      <p>La fórmula clásica de Devine estima el peso ideal para dosificación médica: 50 kg para hombres y 45.5 kg para mujeres para los primeros 5 pies, sumando 2.3 kg por cada pulgada adicional.</p>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Estatura</th>
+              <th class="p-3 text-emerald-500 font-bold">Rango Saludable OMS</th>
+              <th class="p-3 text-[var(--accent)] font-bold">Peso Ideal Devine (H / M)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">155 cm (5'1")</td>
+              <td class="p-3 text-emerald-500">44.4 – 59.8 kg</td>
+              <td class="p-3 text-[var(--accent)]">52.3 kg / 47.8 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">165 cm (5'5")</td>
+              <td class="p-3 text-emerald-500">50.4 – 67.8 kg</td>
+              <td class="p-3 text-[var(--accent)]">61.5 kg / 57.0 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">175 cm (5'9")</td>
+              <td class="p-3 text-emerald-500">56.7 – 76.3 kg</td>
+              <td class="p-3 text-[var(--accent)]">70.7 kg / 66.2 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">185 cm (6'1")</td>
+              <td class="p-3 text-emerald-500">63.3 – 85.2 kg</td>
+              <td class="p-3 text-[var(--accent)]">79.9 kg / 75.4 kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Factores que Modifican tu Peso Saludable Individual</h2>
+      <p>La constitución ósea (muñeca y codo) y el historial de entrenamiento de fuerza influyen significativamente en tu posición dentro del rango. Las personas con masa muscular desarrollada se situarán cómodamente en el percentil superior sin riesgo cardiometabólico añadido.</p>
     `,
       "fr": `
       <h2>Détermination Médicale du Poids Santé selon la Stature</h2>
-      <p>Le <strong>poids de forme</strong> représente une fourchette de référence réduisant les risques d'hypertension et de diabète de type 2.</p>
-      <h2>Formules de Calcul Fondamentales</h2>
+      <p>En médecine préventive, le <strong>poids de forme</strong> ne correspond pas à un chiffre rigide unique, mais à une <em>fourchette statistique optimale</em> adaptée à votre stature, réduisant au minimum les risques de maladies cardiovasculaires, de diabète de type 2 et de surcharge articulaire.</p>
+
+      <h2>Formules Fondamentales et Tableau de Référence</h2>
+      <p>Selon l'Organisation Mondiale de la Santé (OMS), la zone de poids santé correspond à un IMC compris entre <strong>18,5 et 24,9 kg/m²</strong>. En appliquant la formule de Quetelet (<code>Poids = IMC &times; Taille²</code>), on obtient :</p>
       <ul>
-        <li><strong>Poids minimal santé :</strong> <code>18,5 &times; [Taille (m)]²</code></li>
-        <li><strong>Poids maximal santé :</strong> <code>24,9 &times; [Taille (m)]²</code></li>
+        <li><strong>Poids minimal santé (kg) :</strong> <code>18,5 &times; [Taille (m)]²</code></li>
+        <li><strong>Poids maximal santé (kg) :</strong> <code>24,9 &times; [Taille (m)]²</code></li>
       </ul>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Taille</th>
+              <th class="p-3 text-emerald-500 font-bold">Fourchette Santé OMS</th>
+              <th class="p-3 text-[var(--accent)] font-bold">Poids Idéal Devine (H / F)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">155 cm</td>
+              <td class="p-3 text-emerald-500">44,4 – 59,8 kg</td>
+              <td class="p-3 text-[var(--accent)]">52,3 kg / 47,8 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">165 cm</td>
+              <td class="p-3 text-emerald-500">50,4 – 67,8 kg</td>
+              <td class="p-3 text-[var(--accent)]">61,5 kg / 57,0 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">175 cm</td>
+              <td class="p-3 text-emerald-500">56,7 – 76,3 kg</td>
+              <td class="p-3 text-[var(--accent)]">70,7 kg / 66,2 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">185 cm</td>
+              <td class="p-3 text-emerald-500">63,3 – 85,2 kg</td>
+              <td class="p-3 text-[var(--accent)]">79,9 kg / 75,4 kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Facteurs Modificateurs Individuels</h2>
+      <p>L'ossature (circonférence du poignet) et la masse musculaire influencent la position idéale dans l'intervalle. Les sportifs réguliers peuvent se situer naturellement dans le haut de la fourchette sans surpoids réel en matière de masse grasse.</p>
     `,
       "de": `
       <h2>Medizinische Bestimmung des Normalgewichts nach Körpergröße</h2>
-      <p>Ein <strong>gesundes Körpergewicht</strong> entspricht dem Bereich, in dem der BMI zwischen 18,5 und 24,9 kg/m² liegt.</p>
-      <h2>Berechnungsgrundlagen</h2>
+      <p>In der Präventivmedizin ist ein <strong>gesundes Körpergewicht</strong> keine starre Einzelzahl, sondern ein <em>statistischer Normalbereich</em>, der für eine gegebene Körpergröße das geringste Gesamtmortalitätsrisiko und minimalen kardiovaskulären Gefäßstress aufweist.</p>
+
+      <h2>Berechnungsgrundlagen und Referenztabelle</h2>
+      <p>Nach den Kriterien der Weltgesundheitsorganisation (WHO) entspricht das Normalgewicht einem BMI zwischen <strong>18,5 und 24,9 kg/m²</strong>. Daraus ergeben sich die Schwellenwerte:</p>
       <ul>
-        <li><strong>Minimales Normalgewicht:</strong> <code>18,5 &times; [Körpergröße (m)]²</code></li>
-        <li><strong>Maximales Normalgewicht:</strong> <code>24,9 &times; [Körpergröße (m)]²</code></li>
+        <li><strong>Minimales Normalgewicht (kg):</strong> <code>18,5 &times; [Körpergröße (m)]²</code></li>
+        <li><strong>Maximales Normalgewicht (kg):</strong> <code>24,9 &times; [Körpergröße (m)]²</code></li>
       </ul>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Körpergröße</th>
+              <th class="p-3 text-emerald-500 font-bold">WHO-Normalgewichtsbereich</th>
+              <th class="p-3 text-[var(--accent)] font-bold">Idealgewicht Devine (M / F)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">155 cm</td>
+              <td class="p-3 text-emerald-500">44,4 – 59,8 kg</td>
+              <td class="p-3 text-[var(--accent)]">52,3 kg / 47,8 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">165 cm</td>
+              <td class="p-3 text-emerald-500">50,4 – 67,8 kg</td>
+              <td class="p-3 text-[var(--accent)]">61,5 kg / 57,0 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">175 cm</td>
+              <td class="p-3 text-emerald-500">56,7 – 76,3 kg</td>
+              <td class="p-3 text-[var(--accent)]">70,7 kg / 66,2 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">185 cm</td>
+              <td class="p-3 text-emerald-500">63,3 – 85,2 kg</td>
+              <td class="p-3 text-[var(--accent)]">79,9 kg / 75,4 kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Individuelle Einflussfaktoren</h2>
+      <p>Knochenbau (Handgelenksumfang) und Muskelmasse bestimmen, wo innerhalb des Bereichs das persönliche Optimum liegt. Bei Kraftsportlern liegt das Gewicht oft im oberen Quartil, ohne dass metabolisches Fettgewebe vorliegt.</p>
     `,
       "ko": `
       <h2>신장별 적정 건강 체중의 의학적 산출법</h2>
-      <p><strong>건강 체중</strong>은 고정된 단일 숫자가 아니며, 성인의 신장에 따른 BMI 18.5~24.9 kg/m² 범위 내의 체중 구간을 의미합니다.</p>
+      <p>예방 의학에서 <strong>건강 체중</strong>은 고정된 단일 숫자가 아니며, 성인의 신장에 맞추어 심혈관 질환 및 제2형 당뇨병 발병 위험을 최소화하는 <em>통계적 최적 체중 범위</em>를 의미합니다.</p>
+
+      <h2>계산 공식 및 표준 신장별 체중 대조표</h2>
+      <p>세계보건기구(WHO) 기준 성인 표준 건강 체중은 BMI <strong>18.5 ~ 24.9 kg/m²</strong>에 해당합니다. 공식 산출식은 다음과 같습니다:</p>
       <ul>
         <li><strong>최소 건강 체중 (kg):</strong> <code>18.5 &times; [신장(m)]²</code></li>
         <li><strong>최대 건강 체중 (kg):</strong> <code>24.9 &times; [신장(m)]²</code></li>
       </ul>
+
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">신장 (cm)</th>
+              <th class="p-3 text-emerald-500 font-bold">WHO 건강 체중 범위</th>
+              <th class="p-3 text-[var(--accent)] font-bold">드바인 이상 체중 (남 / 여)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">155 cm</td>
+              <td class="p-3 text-emerald-500">44.4 – 59.8 kg</td>
+              <td class="p-3 text-[var(--accent)]">52.3 kg / 47.8 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">165 cm</td>
+              <td class="p-3 text-emerald-500">50.4 – 67.8 kg</td>
+              <td class="p-3 text-[var(--accent)]">61.5 kg / 57.0 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">175 cm</td>
+              <td class="p-3 text-emerald-500">56.7 – 76.3 kg</td>
+              <td class="p-3 text-[var(--accent)]">70.7 kg / 66.2 kg</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">185 cm</td>
+              <td class="p-3 text-emerald-500">63.3 – 85.2 kg</td>
+              <td class="p-3 text-[var(--accent)]">79.9 kg / 75.4 kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>개인별 적정 체중 조정 요인</h2>
+      <p>손목 둘레로 측정하는 골격 크기(소골격, 중골격, 대골격)와 근력 운동 이력에 따라 정상 체중 범위 내에서의 개인별 목표가 달라질 수 있습니다. 근육량이 풍부한 개인은 정상 범위의 상단에 위치하더라도 건강상 매우 안전합니다.</p>
     `,
       "hi": `
       <h2>कद के अनुसार स्वस्थ वजन: क्लिनिकल फॉर्मूला व संदर्भ तालिका</h2>
@@ -1612,28 +1829,28 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     "datePublished": "2026-04-01",
     "dateModified": "2026-10-25",
     "title": {
-      "en": "BMI Chart for Men & Women: Biological Differences & Adiposity Science",
-      "hi": "पुरुषों और महिलाओं के लिए बीएमआई: शारीरिक अंतर व फैट वितरण",
-      "ko": "남녀별 BMI 차트와 체지방 분포의 생리학적 차이 완벽 가이드",
-      "de": "BMI-Vergleich Männer & Frauen: Geschlechtsspezifische Unterschiede",
-      "es": "Tabla de IMC para Hombres y Mujeres: Diferencias y Fisiología",
-      "fr": "Tableau IMC Hommes et Femmes : Différences Biologiques et Graisse"
+      "en": "BMI for Men & Women: Body Fat Differences & Health",
+      "hi": "पुरुषों और महिलाओं के लिए बीएमआई: फैट वितरण में अंतर",
+      "ko": "남녀별 BMI: 성별 체지방률 차이와 건강 해석",
+      "de": "BMI für Männer & Frauen: Fettverteilung im Vergleich",
+      "es": "IMC en Hombres y Mujeres: Diferencias de Grasa Corporal",
+      "fr": "IMC Hommes et Femmes : Différences de Masse Grasse"
     },
     "category": {
-      "en": "Biological Differences & Adiposity",
-      "hi": "शारीरिक अंतर और फैट वितरण",
-      "ko": "성별 신체 지표",
-      "de": "Geschlecht & Fettverteilung",
-      "es": "Diferencias de Género y Grasa",
-      "fr": "Différences Hommes-Femmes"
+      "en": "Body Composition",
+      "hi": "शारीरिक संरचना",
+      "ko": "체성분 분석",
+      "de": "Körperzusammensetzung",
+      "es": "Composición Corporal",
+      "fr": "Composition Corporelle"
     },
     "description": {
-      "en": "See how body mass differs between men and women. Learn why body fat and muscle matter.",
-      "hi": "पुरुषों और महिलाओं के बीएमआई में शारीरिक अंतर। जानें कि महिलाओं में आवश्यक फैट 8-12% अधिक क्यों होता है और कमर का माप स्वास्थ्य में क्यों महत्वपूर्ण है।",
-      "ko": "남성과 여성의 체지방 분포 및 BMI 해석 차이를 의학적으로 분석합니다. 에스트로겐과 테스토스테론의 작용, 필수 지방률 차이, 허리둘레 기준치를 상세히 안내합니다.",
-      "de": "Erfahren Sie, warum Frauen biologisch 8–12 % mehr Fettgewebe benötigen, wie Hormone die Fettverteilung steuern und warum der Taillenumfang unverzichtbar ist.",
-      "es": "Comprende por qué las mujeres poseen entre un 8% y 12% más de grasa esencial, cómo los estrógenos y la testosterona determinan la grasa visceral y el papel de la cintura.",
-      "fr": "Comprenez pourquoi les femmes ont naturellement 8 à 12 % de graisse essentielle en plus et comment les hormones influencent la répartition abdominale."
+      "en": "Understand how body composition, essential fat levels, and adipose distribution differ between men and women with identical BMI scores.",
+      "hi": "जानें कि समान बीएमआई होने पर भी पुरुषों और महिलाओं में शारीरिक संरचना और फैट वितरण में क्या अंतर होता है।",
+      "ko": "동일한 BMI 수치라도 남성과 여성 간에 필수 체지방률과 지방 분포가 어떻게 다른지 비교 분석합니다.",
+      "de": "Verstehen Sie die Unterschiede in Körperzusammensetzung, essenziellem Fettanteil und Fettverteilung bei gleichem BMI.",
+      "es": "Comprende cómo varían la composición corporal, la grasa esencial y la distribución adiposa entre hombres y mujeres.",
+      "fr": "Comprenez les variations de composition corporelle, de graisse essentielle et de répartition adipeuse entre hommes et femmes."
     },
     "contentHtml": {
       "en": `
@@ -1746,16 +1963,82 @@ export const bmiArticles: Record<string, BlogArticleData> = {
 `,
       "es": `
       <h2>Diferencias Biológicas entre Hombres y Mujeres en el IMC</h2>
-      <p>Aunque los criterios de la OMS para adultos son unisex, la composición corporal presenta marcadas diferencias hormonales. Las mujeres necesitan biológicamente entre un 8% y un 12% más de grasa corporal esencial para la función reproductora y endocrina.</p>
-      <h2>Hormonas y Distribución de Grasa</h2>
+      <p>Aunque la Organización Mundial de la Salud (OMS) utiliza una escala de IMC unisex, los hombres y las mujeres presentan <strong>perfiles de composición corporal y endocrinos notablemente diferentes</strong> con un mismo índice numérico.</p>
+
+      <h2>Grasa Esencial y Patrones de Distribución</h2>
+      <p>Para la función hormonal y reproductora adecuada, los requerimientos mínimos de grasa difieren:</p>
       <ul>
-        <li><strong>Estrógenos:</strong> Favorecen el depósito subcutáneo en caderas y muslos (patrón ginoide protector).</li>
-        <li><strong>Testosterona:</strong> Desarrolla mayor masa muscular, pero ante el exceso calórico favorece la grasa visceral intraabdominal (patrón androide de mayor riesgo).</li>
+        <li><strong>Hombres:</strong> Grasa esencial de <strong>3% a 5%</strong>. La testosterona promueve mayor densidad ósea y masa muscular esquelética.</li>
+        <li><strong>Mujeres:</strong> Grasa esencial de <strong>10% a 13%</strong>. Los estrógenos favorecen un depósito protector subcutáneo en caderas y muslos (patrón ginoide).</li>
       </ul>
+      <p>Esto significa que ante un mismo IMC de 23 kg/m², una mujer sana tendrá de 8% a 12% más de grasa corporal total que un hombre, siendo biológicamente normal y metabólicamente protector.</p>
+
+      <h2>Puntos de Corte de Perímetro de Cintura (Riesgo Cardiometabólico)</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Población / Género</th>
+              <th class="p-3 text-emerald-500 font-bold">Rango Normal</th>
+              <th class="p-3 text-amber-500 font-bold">Riesgo Elevado</th>
+              <th class="p-3 text-rose-500 font-bold">Acción Médica</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">Hombres (Caucásicos)</td>
+              <td class="p-3 text-emerald-500">&lt; 94 cm</td>
+              <td class="p-3 text-amber-500">94 – 101 cm</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 102 cm</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">Mujeres (Caucásicas)</td>
+              <td class="p-3 text-emerald-500">&lt; 80 cm</td>
+              <td class="p-3 text-amber-500">80 – 87 cm</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 88 cm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     `,
       "fr": `
-      <h2>Différences Hommes-Femmes dans l'Interprétation de l'IMC</h2>
-      <p>Bien que les catégories de l'OMS soient unisexes, les femmes possèdent naturellement plus de tissu adipeux essentiel (10-13% contre 2-5% chez les hommes) sans que cela n'augmente leur risque cardiovasculaire.</p>
+      <h2>Différences Biologiques Hommes-Femmes dans l'IMC</h2>
+      <p>Bien que les catégories de l'OMS soient unisexes, hommes et femmes possèdent des <strong>profils de composition corporelle et hormonaux très différents</strong> pour un même score d'IMC.</p>
+
+      <h2>Masse Grasse Essentielle et Répartition Adipeuse</h2>
+      <ul>
+        <li><strong>Chez l'homme :</strong> La masse grasse essentielle n'est que de <strong>3% à 5%</strong>. La testostérone favorise la masse musculaire et la densité minérale osseuse.</li>
+        <li><strong>Chez la femme :</strong> La masse grasse essentielle est d'au moins <strong>10% à 13%</strong>. Les œstrogènes favorisent un stockage sous-cutané fémoro-fessier protecteur (silhouette gynoïde).</li>
+      </ul>
+      <p>Pour un IMC identique de 23 kg/m², une femme en bonne santé présente naturellement 8 à 12 % de tissu adipeux en plus qu'un homme, sans aucun sur-risque cardiométabolique.</p>
+
+      <h2>Seuils de Tour de Taille Recommandés (Risque Vasculaire)</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">Genre</th>
+              <th class="p-3 text-emerald-500 font-bold">Zone Normale</th>
+              <th class="p-3 text-amber-500 font-bold">Risque Accru</th>
+              <th class="p-3 text-rose-500 font-bold">Risque Élevé</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">Hommes</td>
+              <td class="p-3 text-emerald-500">&lt; 94 cm</td>
+              <td class="p-3 text-amber-500">94 – 101 cm</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 102 cm</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">Femmes</td>
+              <td class="p-3 text-emerald-500">&lt; 80 cm</td>
+              <td class="p-3 text-amber-500">80 – 87 cm</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 88 cm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     `,
       "de": `
       <h2>Geschlechtsspezifische Unterschiede: Warum der Unisex-BMI biologische Realitäten verschleiert</h2>
@@ -1814,7 +2097,39 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     `,
       "ko": `
       <h2>남녀별 BMI와 체지방 분포의 의학적 차이</h2>
-      <p>성인 BMI 공식은 남녀 공통으로 적용되지만, 여성은 생식 호르몬 기능 유지를 위해 남성보다 필수 체지방률이 약 8~12%포인트 더 높게 형성됩니다.</p>
+      <p>세계보건기구(WHO) 기준 성인 BMI 공식은 성별 구분 없이 체중을 신장의 제곱으로 나누어 계산하지만, <strong>남성과 여성은 동일한 BMI 수치에서도 호르몬 및 체성분 분포에서 뚜렷한 차이</strong>를 보입니다.</p>
+
+      <h2>필수 체지방률 및 호르몬 조절 기전</h2>
+      <ul>
+        <li><strong>남성 필수 체지방률:</strong> 약 <strong>3% ~ 5%</strong>. 테스토스테론 호르몬의 작용으로 근육량이 많고 골밀도가 높게 유지됩니다.</li>
+        <li><strong>여성 필수 체지방률:</strong> 최소 <strong>10% ~ 13%</strong>. 에스트로겐 및 프로게스테론의 작용으로 생식 기능 및 대사 유지를 위해 둔부와 대퇴부 중심의 피하지방(여성형 피하지방)이 필수적입니다.</li>
+      </ul>
+      <p>따라서 동일하게 BMI 23 kg/m²를 나타내는 건강한 성인이라도 여성은 남성보다 약 8~12%포인트 더 높은 체지방률을 지니는 것이 생리학적으로 정상입니다.</p>
+
+      <h2>대사증후군 예방을 위한 복부 허리둘레 기준</h2>
+      <div class="my-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--card)] p-4">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[var(--border)] bg-[var(--muted)] font-bold text-[var(--foreground)]">
+              <th class="p-3">성별 (한국인 기준)</th>
+              <th class="p-3 text-emerald-500 font-bold">정상 기준치</th>
+              <th class="p-3 text-rose-500 font-bold">복부비만 위험 기준</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono">
+            <tr>
+              <td class="p-3 font-sans font-semibold">성인 남성</td>
+              <td class="p-3 text-emerald-500">&lt; 90 cm (약 35.4인치)</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 90 cm</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-sans font-semibold">성인 여성</td>
+              <td class="p-3 text-emerald-500">&lt; 85 cm (약 33.5인치)</td>
+              <td class="p-3 text-rose-500 font-bold">&ge; 85 cm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     `,
       "hi": `
       <h2>पुरुषों और महिलाओं के लिए बीएमआई: शारीरिक अंतर व वसा वितरण</h2>
@@ -1888,28 +2203,28 @@ export const bmiArticles: Record<string, BlogArticleData> = {
     "datePublished": "2026-04-15",
     "dateModified": "2026-10-28",
     "title": {
-      "en": "Senior BMI Guidelines: Sarcopenia, Longevity Curves & Healthy Weight (65+)",
-      "hi": "बुजुर्गों के लिए बीएमआई गाइड: सार्कोपेनिया, दीर्घायु वक्र एवं 65+ स्वस्थ वजन",
-      "ko": "고령층 BMI 의학 가이드: 근감소증, 장수 곡선 및 65세 이상 권장 체중",
-      "de": "BMI-Richtwerte für Senioren: Sarkopenie, Langlebigkeitskurven & Idealgewicht (65+)",
-      "es": "Guía de IMC para Adultos Mayores: Sarcopenia, Curvas de Longevidad y Peso Saludable (65+)",
-      "fr": "IMC des Seniors : Sarcopénie, Courbes de Longévité et Poids Idéal (65+)"
+      "en": "BMI for Older Adults: Healthy Weight for Seniors (65+)",
+      "hi": "बुजुर्गों के लिए बीएमआई: 65+ आयु वर्ग में स्वस्थ वजन",
+      "ko": "고령층 BMI: 65세 이상 권장 적정 체중 가이드",
+      "de": "BMI für Senioren: Gesundes Gewicht ab 65 Jahren",
+      "es": "IMC en Adultos Mayores: Peso Saludable para Mayores de 65",
+      "fr": "IMC des Seniors : Poids Santé après 65 Ans"
     },
     "category": {
-      "en": "Senior Health & Longevity",
-      "hi": "उम्र और दीर्घायु स्वास्थ्य",
-      "ko": "연령 및 노년 건강",
-      "de": "Alter & Geriatrie",
-      "es": "Edad y Salud Geriátrica",
-      "fr": "Âge et Gériatrie"
+      "en": "Senior Health",
+      "hi": "वरिष्ठ स्वास्थ्य",
+      "ko": "시니어 건강",
+      "de": "Seniorengesundheit",
+      "es": "Salud en Adultos Mayores",
+      "fr": "Santé des Seniors"
     },
     "description": {
-      "en": "Learn how healthy body weight changes as you grow older. Check safe weight ranges for seniors.",
-      "hi": "जानें कि उम्र बढ़ने के साथ बीएमआई का आकलन कैसे बदलता है। जेरियाट्रिक ओबेसिटी पैराडॉक्स, मांसपेशियों का नुकसान (सार्कोपेनिया) और 65+ आयु वर्ग के लिए सुरक्षित वजन सीमा।",
-      "ko": "나이에 따른 체질량지수(BMI)의 의학적 해석 변화를 종합 분석합니다. 65세 이상 고령층의 '비만의 역설', 근감소성 비만 예방법 및 연령대별 최적 체중 목표를 확인하세요.",
-      "de": "Verstehen Sie, wie sich der BMI im Alter verändert, warum Senioren von einem leicht höheren BMI profitieren (Adipositas-Paradoxon) und wie Sarkopenie erkannt wird.",
-      "es": "Aprende cómo evoluciona la interpretación del IMC con la edad, la paradoja de la obesidad en la tercera edad y los objetivos de peso ideales para mayores de 65 años.",
-      "fr": "Découvrez comment l'âge modifie l'interprétation de l'IMC, le paradoxe de l'obésité chez les seniors et les cibles de poids adaptées pour préserver la masse musculaire."
+      "en": "Learn why clinical guidelines recommend slightly higher BMI ranges for seniors to protect against sarcopenia, bone density loss, and frailty.",
+      "hi": "जानें कि सार्कोपेनिया और कमजोरी से बचाव के लिए बुजुर्गों के लिए थोड़ा अधिक बीएमआई क्यों सुरक्षित माना जाता है।",
+      "ko": "근감소증 및 골다공증 예방을 위해 65세 이상 고령층에게 약간 더 높은 BMI 범위가 권장되는 이유를 알아봅니다.",
+      "de": "Erfahren Sie, warum geriatrische Richtlinien leicht höhere BMI-Werte für Senioren empfehlen, um Muskelverlust vorzubeugen.",
+      "es": "Descubre por qué las guías geriátricas sugieren rangos de IMC ligeramente mayores en adultos mayores para prevenir la sarcopenia.",
+      "fr": "Découvrez pourquoi les directives gériatriques recommandent un IMC légèrement supérieur chez les seniors contre la sarcopénie."
     },
     "contentHtml": {
       "en": `
@@ -2463,7 +2778,7 @@ export const bmiArticles: Record<string, BlogArticleData> = {
       "fr": "Santé des Adolescents"
     },
     "description": {
-      "en": "A clear guide to teen growth charts. Learn how growth percentiles help track healthy weight.",
+      "en": "Evidence-based guide to adolescent BMI evaluation: why static adult cutoffs fail during puberty, how to read CDC growth percentiles, and pubertal development dynamics.",
       "hi": "किशोरों (13-19 वर्ष) के बीएमआई की संपूर्ण प्रमाण-आधारित गाइड। जानें कि वयस्कों के कट-ऑफ किशोरों पर क्यों लागू नहीं होते, सीडीसी पर्सेंटाइल चार्ट कैसे देखें और स्वस्थ खानपान के नियम।",
       "ko": "청소년(13~19세) 체질량지수 평가를 위한 가이드. 성인 고정 기준 대신 연령별 백분위수를 사용하는 이유와 탠너(Tanner) 사춘기 성숙도 단계의 중요성을 안내합니다.",
       "de": "Evidenzbasierter Leitfaden zum BMI bei Jugendlichen. Warum feste Erwachsenen-Grenzwerte ungeeignet sind und wie CDC-Perzentilkurven Wachstumsphasen berücksichtigen.",

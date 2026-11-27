@@ -9,55 +9,276 @@
       "identifier": "urn:air:realbmicalculator.com:bmi-calculator",
       "displayName": "Real BMI Calculator",
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
-      "url": "https://realbmicalculator.com/llms.txt",
+      "url": "https://realbmicalculator.com/en/bmi-calculator/",
       "description": "Calculates Body Mass Index (BMI) using weight and height, returning official WHO and CDC weight categories and health risk guidance.",
       "representativeQueries": [
         "Calculate my BMI",
-        "What is healthy BMI range for my height and weight"
+        "What is healthy BMI range for my height and weight",
+        "Free body mass index calculator online"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:3d-bmi-calculator",
+      "displayName": "3D BMI Calculator & Body Visualizer",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/3d-bmi-calculator/",
+      "description": "Interactive 3D body visualizer and Oxford 2.5 BMI calculator comparing standard and height-adjusted body mass metrics.",
+      "representativeQueries": [
+        "3D body shape visualizer",
+        "Visual 3D BMI calculator avatar",
+        "Oxford 2.5 BMI formula calculator"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:bmi-chart",
+      "displayName": "Adult BMI Reference Chart",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/bmi-chart/",
+      "description": "Complete WHO classification reference chart detailing underweight, normal, overweight, and obesity classes I to III.",
+      "representativeQueries": [
+        "BMI chart for adults",
+        "Body mass index reference table",
+        "WHO BMI categories classification"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:bmi-calculator-for-indians",
+      "displayName": "BMI Calculator for Indians (ICMR)",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/bmi-calculator-for-indians/",
+      "description": "Calculates South Asian BMI based on Indian Council of Medical Research (ICMR) consensus cutoffs (overweight ≥ 23, obesity ≥ 25).",
+      "representativeQueries": [
+        "BMI calculator for Indians ICMR",
+        "Healthy BMI range for Indian adults",
+        "Indian body mass index chart"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:asian-bmi-calculator",
+      "displayName": "Asian BMI Calculator (WHO WPRO)",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/asian-bmi-calculator/",
+      "description": "WHO Western Pacific region BMI guidelines for East and Southeast Asian populations with elevated health risk cutoffs.",
+      "representativeQueries": [
+        "Asian BMI calculator WHO",
+        "East Asian body mass index cutoff",
+        "Asian obesity guidelines"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:healthy-weight-by-height",
+      "displayName": "Healthy Weight by Height Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/healthy-weight-by-height/",
+      "description": "Determines healthy body weight minimum and maximum bounds corresponding to BMI 18.5–24.9 kg/m² for any given height.",
+      "representativeQueries": [
+        "What is healthy weight for my height",
+        "Height weight chart normal range",
+        "Ideal weight range by height"
       ]
     },
     {
       "identifier": "urn:air:realbmicalculator.com:bmr-calculator",
       "displayName": "Accurate BMR Calculator",
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
-      "url": "https://realbmicalculator.com/llms.txt",
+      "url": "https://realbmicalculator.com/en/bmr-calculator/",
       "description": "Calculates basal metabolic rate using the clinical Mifflin-St Jeor equation to estimate resting energy expenditure.",
       "representativeQueries": [
         "Calculate my BMR",
-        "How many calories do I burn at rest"
+        "How many calories do I burn at rest",
+        "Basal metabolic rate calculator Mifflin"
       ]
     },
     {
       "identifier": "urn:air:realbmicalculator.com:tdee-calculator",
       "displayName": "TDEE Calculator",
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
-      "url": "https://realbmicalculator.com/llms.txt",
+      "url": "https://realbmicalculator.com/en/tdee-calculator/",
       "description": "Determines total daily energy expenditure by combining resting metabolism with physical activity multipliers.",
       "representativeQueries": [
         "Calculate daily maintenance calories",
-        "What is my TDEE for weight loss"
+        "What is my TDEE for weight loss",
+        "Total daily energy expenditure formula"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:maintenance-calorie-calculator",
+      "displayName": "Maintenance Calorie Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/maintenance-calorie-calculator/",
+      "description": "Calculates exact daily calorie requirement to maintain current weight without fat gain or muscle loss.",
+      "representativeQueries": [
+        "How many calories to maintain my weight",
+        "Maintenance calories calculator",
+        "Daily calorie equilibrium"
       ]
     },
     {
       "identifier": "urn:air:realbmicalculator.com:body-fat-calculator",
       "displayName": "US Navy Body Fat Calculator",
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
-      "url": "https://realbmicalculator.com/llms.txt",
+      "url": "https://realbmicalculator.com/en/body-fat-calculator/",
       "description": "Calculates body fat percentage and lean mass using validated US Navy anthropometric circumference equations.",
       "representativeQueries": [
         "Calculate my body fat percentage",
-        "Measure body fat with waist and neck circumference"
+        "US Navy body fat calculator formula",
+        "Measure body fat with waist and neck"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:lean-body-mass-calculator",
+      "displayName": "Lean Body Mass Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/lean-body-mass-calculator/",
+      "description": "Estimates fat-free mass using validated clinical Boer, James, and Hume anthropometric equations.",
+      "representativeQueries": [
+        "Calculate lean body mass",
+        "Boer formula fat free mass",
+        "How much muscle and bone do I weigh"
       ]
     },
     {
       "identifier": "urn:air:realbmicalculator.com:ideal-weight-calculator",
       "displayName": "Ideal Weight Calculator",
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
-      "url": "https://realbmicalculator.com/llms.txt",
+      "url": "https://realbmicalculator.com/en/ideal-weight-calculator/",
       "description": "Determines healthy body weight targets across Devine, Robinson, Miller, and Hamwi clinical formulas.",
       "representativeQueries": [
         "What is my ideal body weight",
+        "Devine formula ideal body weight",
         "Calculate healthy weight for height"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:calorie-calculator",
+      "displayName": "Calorie Target Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/calorie-calculator/",
+      "description": "Plans structured caloric deficits for fat loss or caloric surpluses for muscle gain based on individual expenditure.",
+      "representativeQueries": [
+        "How many calories should I eat to lose weight",
+        "Calorie deficit calculator",
+        "Target calories for weight loss"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:protein-intake-calculator",
+      "displayName": "Daily Protein Intake Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/protein-intake-calculator/",
+      "description": "Calculates evidence-based daily protein targets (grams) according to body weight, training intensity, and age.",
+      "representativeQueries": [
+        "How much protein do I need daily",
+        "Daily protein calculator for muscle building",
+        "Protein grams per kg body weight"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:water-intake-calculator",
+      "displayName": "Daily Water Intake Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/water-intake-calculator/",
+      "description": "Computes daily fluid hydration targets taking into account body weight, workout exertion, and environmental climate.",
+      "representativeQueries": [
+        "How much water should I drink a day",
+        "Daily hydration calculator by weight",
+        "Water intake calculator liters"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:macro-calculator",
+      "displayName": "Macro Split Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/macro-calculator/",
+      "description": "Distributes daily calories across proteins, carbohydrates, and fats for balanced, keto, or athletic diets.",
+      "representativeQueries": [
+        "Calculate my macros",
+        "Macronutrient calculator protein carb fat",
+        "Macro split for cutting or bulking"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:waist-to-hip-ratio-calculator",
+      "displayName": "Waist-to-Hip Ratio Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/waist-to-hip-ratio-calculator/",
+      "description": "Assesses visceral body fat distribution and cardiovascular health risk using WHO waist-to-hip ratio cutoffs.",
+      "representativeQueries": [
+        "Calculate waist to hip ratio",
+        "WHR cardiovascular risk calculator",
+        "Visceral fat waist ratio"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:body-surface-area-calculator",
+      "displayName": "Body Surface Area Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/body-surface-area-calculator/",
+      "description": "Estimates total body surface area in square meters using Mosteller and Du Bois clinical equations.",
+      "representativeQueries": [
+        "Calculate body surface area BSA",
+        "Mosteller BSA formula calculator",
+        "Body surface area in m2"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:heart-rate-zone-calculator",
+      "displayName": "Target Heart Rate Zone Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/heart-rate-zone-calculator/",
+      "description": "Determines 5 cardiovascular aerobic and anaerobic training zones based on age-predicted maximum heart rate.",
+      "representativeQueries": [
+        "Heart rate zones calculator",
+        "Fat burn cardio training zone",
+        "Target heart rate for my age"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:karvonen-heart-rate-calculator",
+      "displayName": "Karvonen Heart Rate Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/karvonen-heart-rate-calculator/",
+      "description": "Calculates precision cardiovascular training zones incorporating resting heart rate and heart rate reserve (HRR).",
+      "representativeQueries": [
+        "Karvonen formula calculator",
+        "Heart rate reserve HRR training zones",
+        "Target heart rate with resting pulse"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:1rm-calculator",
+      "displayName": "One Rep Max (1RM) Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/1rm-calculator/",
+      "description": "Estimates maximal lifting strength for bench press, squat, and deadlift using validated Epley and Brzycki equations.",
+      "representativeQueries": [
+        "Calculate one rep max 1RM",
+        "Bench press max calculator",
+        "Epley formula 1RM calculator"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:pregnancy-weight-gain-calculator",
+      "displayName": "Pregnancy Weight Gain Calculator",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/pregnancy-weight-gain-calculator/",
+      "description": "Tracks recommended gestational weight gain curves according to Institute of Medicine (IOM) pre-pregnancy BMI standards.",
+      "representativeQueries": [
+        "Pregnancy weight gain calculator",
+        "Recommended weight gain during pregnancy",
+        "Gestational weight gain by week"
+      ]
+    },
+    {
+      "identifier": "urn:air:realbmicalculator.com:diabetes-risk-calculator",
+      "displayName": "Type 2 Diabetes Risk Calculator (FINDRISC)",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://realbmicalculator.com/en/diabetes-risk-calculator/",
+      "description": "Evaluates 10-year risk of developing type 2 diabetes using the validated Finnish Diabetes Risk Score questionnaire.",
+      "representativeQueries": [
+        "Type 2 diabetes risk calculator",
+        "FINDRISC diabetes risk score",
+        "Am I at risk for diabetes screening"
       ]
     }
   ]

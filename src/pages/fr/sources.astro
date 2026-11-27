@@ -387,7 +387,7 @@ const categoryCounts = {
         </div>
 
         <!-- Evidence-Based Guarantee: Exact Studies vs Generic Claims -->
-        <section class="p-6 md:p-8 rounded-2xl border-2 border-indigo-500/30 bg-indigo-500/5 space-y-5 not-prose shadow-sm" aria-label="Politique de Transparence Scientifique">
+        <section class="p-6 md:p-8 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 space-y-5 not-prose" aria-label="Politique de Transparence Scientifique">
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div class="flex items-center gap-2">
               <span class="w-3 h-3 rounded-full bg-indigo-500"></span>
@@ -446,7 +446,30 @@ const categoryCounts = {
             </span>
           </div>
 
-          <div class="citation-table-wrap border border-[var(--border)] overflow-hidden">
+          <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2 pb-2 border-b border-[var(--border)]" id="sourcesFilterNav">
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-xs transition-all cursor-pointer" data-filter="all">
+            Toutes les Citations ({categoryCounts.all})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="anthropometry">
+            Anthropométrie & IMC ({categoryCounts.anthropometry})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="metabolism">
+            Métabolisme & MB ({categoryCounts.metabolism})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="composition">
+            Composition Corporelle ({categoryCounts.composition})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="cardiovascular">
+            Cardiologie & Effort ({categoryCounts.cardiovascular})
+          </button>
+          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="nutrition">
+            Nutrition & Hydratation ({categoryCounts.nutrition})
+          </button>
+        </div>
+
+        <!-- Desktop / Tablet Table View (hidden on mobile) -->
+        <div class="hidden md:block citation-table-wrap border border-[var(--border)] overflow-hidden shadow-xs">
             <div class="overflow-x-auto">
               <table class="citation-matrix-table">
                 <thead>
@@ -461,7 +484,7 @@ const categoryCounts = {
                 </thead>
                 <tbody>
                   {sources.map((src) => (
-                    <tr>
+                    <tr data-category={src.category}>
                       <td class="whitespace-nowrap font-medium">
                         <strong class="text-[var(--foreground)] block text-xs sm:text-sm">{src.citationId}</strong>
                         <span class="text-[11px] font-semibold text-[var(--muted-foreground)] uppercase tracking-wide">{src.categoryLabel}</span>
@@ -532,30 +555,10 @@ const categoryCounts = {
           </div>
         </section>
 
-        <!-- Category Filter Tabs -->
-        <div class="flex flex-wrap items-center gap-2 pb-2 border-b border-[var(--border)]" id="sourcesFilterNav">
-          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--accent)] text-white shadow-xs transition-all cursor-pointer" data-filter="all">
-            Toutes les Citations ({categoryCounts.all})
-          </button>
-          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="anthropometry">
-            Anthropométrie & IMC ({categoryCounts.anthropometry})
-          </button>
-          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="metabolism">
-            Métabolisme & MB ({categoryCounts.metabolism})
-          </button>
-          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="composition">
-            Composition Corporelle ({categoryCounts.composition})
-          </button>
-          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="cardiovascular">
-            Cardiologie & Effort ({categoryCounts.cardiovascular})
-          </button>
-          <button type="button" class="source-tab px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-[var(--card)] text-[var(--muted-foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--foreground)] transition-all cursor-pointer" data-filter="nutrition">
-            Nutrition & Hydratation ({categoryCounts.nutrition})
-          </button>
-        </div>
+        
 
-        <!-- Direct Citation Cards List -->
-        <div class="space-y-6" id="sourcesList">
+        <!-- Mobile Cards View (hidden on md and up) -->
+        <div class="block md:hidden space-y-4" id="sourcesList">
           {sources.map((src, index) => (
             <article class="source-card p-6 md:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4 shadow-xs hover:border-[var(--accent)]/50 transition-all" data-category={src.category}>
               <!-- Card Header -->
@@ -702,6 +705,8 @@ const categoryCounts = {
     const tabs = document.querySelectorAll('.source-tab');
     const cards = document.querySelectorAll('.source-card');
 
+    const tableRows = document.querySelectorAll('.citation-matrix-table tbody tr');
+
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const filter = tab.getAttribute('data-filter');
@@ -714,11 +719,21 @@ const categoryCounts = {
         tab.classList.remove('bg-[var(--card)]', 'text-[var(--muted-foreground)]', 'border', 'border-[var(--border)]');
         tab.classList.add('bg-[var(--accent)]', 'text-white');
 
-        // Filter cards
+        // Filter desktop table rows
+        tableRows.forEach(row => {
+          const category = row.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+
+        // Filter mobile cards
         cards.forEach(card => {
           const category = card.getAttribute('data-category');
           if (filter === 'all' || category === filter) {
-            card.style.display = 'block';
+            card.style.display = '';
           } else {
             card.style.display = 'none';
           }

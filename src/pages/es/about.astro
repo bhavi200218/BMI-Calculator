@@ -54,13 +54,12 @@ import PageShell from '../../components/PageShell.astro';
       returnUrl="/es/"
       returnLabel="Inicio"
     >
-      <div class="grid gap-10 lg:grid-cols-[1.4fr_0.85fr] items-start">
-        <div class="space-y-8">
-          <div class="space-y-6 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+      <div class="max-w-5xl space-y-10">
+        <div class="space-y-6 prose prose-zinc dark:prose-invert text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
             <p><strong>Real BMI</strong> es una plataforma individual de cálculo de salud y educación antropométrica fundada, desarrollada y administrada por <strong>Bhawanshi Dosi</strong>, una ingeniera de software establecida en Banswara, Rajastán, India. El proyecto nació para resolver un problema crítico en la web: herramientas de salud confusas, saturadas de rastreo invasivo, publicidad engañosa y fórmulas matemáticas opacas. Real BMI ofrece calculadoras transparentes y verificables que se ejecutan 100 % en el navegador local, con cero almacenamiento de datos de salud.</p>
             
             <!-- Creator Profile Card -->
-            <div class="p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] not-prose flex flex-col sm:flex-row gap-5 items-start">
+            <div class="p-6 rounded-2xl rounded-2xl bg-[var(--card)]/60 border border-[var(--border)]/60 not-prose flex flex-col sm:flex-row gap-5 items-start">
               <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[#d44f30] flex items-center justify-center text-white font-display font-black text-2xl shadow-md shrink-0">
                 BD
               </div>
@@ -77,7 +76,7 @@ import PageShell from '../../components/PageShell.astro';
             </div>
 
             <!-- Non-Clinical Disclosure Banner -->
-            <div class="p-5 rounded-xl border border-amber-500/30 bg-amber-500/5 text-amber-200/90 text-sm leading-relaxed space-y-2 not-prose">
+            <div class="p-5 rounded-xl border border-amber-500/20 bg-amber-500/5 text-amber-200/90 text-sm leading-relaxed space-y-2 not-prose">
               <div class="flex items-center gap-2 font-bold text-amber-400">
                 <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -93,7 +92,7 @@ import PageShell from '../../components/PageShell.astro';
             <p>Dado que Real BMI no cuenta con un comité médico subjetivo, la precisión y solidez se garantizan mediante una <strong>ingeniería de software rigurosa guiada por pruebas (TDD)</strong>. Cada fórmula, constante de conversión y umbral de referencia se valida mediante una suite de más de 920 pruebas unitarias y de regresión automatizadas que se ejecutan antes de cualquier despliegue:</p>
 
             <div class="grid gap-4 sm:grid-cols-2 not-prose pt-1">
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   Fidelidad a Fórmulas Científicas
@@ -102,7 +101,7 @@ import PageShell from '../../components/PageShell.astro';
                   Las ecuaciones (Mifflin-St Jeor 1990, Mosteller 1987, Devine 1974, OMS Informe 854) se contrastan con conjuntos de datos clínicos de referencia.
                 </p>
               </div>
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   Paridad Métrica e Imperial
@@ -111,7 +110,7 @@ import PageShell from '../../components/PageShell.astro';
                   Los cálculos métricos (kg/cm) e imperiales (lbs/in) se verifican mediante el factor exacto 703.06957964 con tolerancia estricta de &plusmn;0.01.
                 </p>
               </div>
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   Pruebas de Límites y Categorías
@@ -120,7 +119,7 @@ import PageShell from '../../components/PageShell.astro';
                   Se validan los umbrales estándar de la OMS (18.5, 25.0, 30.0) junto con los criterios de riesgo asiáticos (23.0, 27.5 kg/m&sup2;) en casos límite.
                 </p>
               </div>
-              <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)]/60 space-y-1.5">
+              <div class="p-4 rounded-xl border border-[var(--border)]/60 bg-[var(--card)]/40 space-y-1.5">
                 <h4 class="font-bold text-sm text-[var(--foreground)] flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                   Auditoría de Cero Almacenamiento
@@ -139,59 +138,59 @@ import PageShell from '../../components/PageShell.astro';
 
             <h2 class="text-2xl font-bold font-display text-[var(--foreground)] pt-2">Propósito Educativo y Descargo de Responsabilidad</h2>
             <p>Real BMI es una herramienta de orientación y cálculo educativo, no un centro médico, hospital o servicio de diagnóstico clínico. Los resultados obtenidos son estimaciones matemáticas para fomentar la conciencia personal sobre la salud y respaldar el diálogo informado con médicos, nutricionistas o profesionales sanitarios cualificados.</p>
-          </div>
-        </div>
+                  </div>
 
-        <aside class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 sm:p-8 shadow-[var(--shadow-soft)] space-y-6">
-          <div class="space-y-2">
+        <!-- Platform Standards & Verification Summary (Open, Responsive Grid, No Line Dividers) -->
+        <div class="rounded-2xl border border-[var(--border)]/70 bg-[var(--card)]/60 p-6 sm:p-8 space-y-6">
+          <div class="space-y-1">
             <p class="text-xs uppercase tracking-[0.32em] font-semibold text-[var(--accent)]">Creadora y Verificación</p>
             <h2 class="text-xl sm:text-2xl font-black text-[var(--foreground)] uppercase tracking-tight font-display">Plataforma Independiente</h2>
             <p class="text-xs text-[var(--muted-foreground)] font-medium">Mantenida personalmente por Bhawanshi Dosi</p>
           </div>
 
-          <div class="space-y-4 pt-3 border-t border-[var(--border)] text-xs">
-            <div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Fundadora y Desarrolladora:</span>
               <span class="text-[var(--muted-foreground)] font-medium">Bhawanshi Dosi (Ingeniera de Software)</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Sede Operativa:</span>
               <span class="text-[var(--muted-foreground)] font-medium">Banswara, Rajastán, India</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Método de Verificación:</span>
               <span class="text-[var(--muted-foreground)] font-medium">920+ Pruebas Algorítmicas Automatizadas</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Junta Médica:</span>
               <span class="text-[var(--muted-foreground)] font-medium">Ninguna (Herramienta Educativa No Clínica)</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Modelo de Ejecución:</span>
               <span class="text-[var(--muted-foreground)] font-medium">100 % en el Navegador del Cliente</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1">
               <span class="font-bold text-[var(--foreground)] block">Privacidad de Datos:</span>
               <span class="text-[var(--muted-foreground)] font-medium">Cero Almacenamiento de Datos de Salud</span>
             </div>
-            <div>
+            <div class="p-3.5 rounded-xl bg-[var(--muted)]/20 space-y-1 sm:col-span-2 lg:col-span-3">
               <span class="font-bold text-[var(--foreground)] block">Marco Científico:</span>
               <span class="text-[var(--muted-foreground)] font-medium">OMS, CDC y Estudios Científicos</span>
             </div>
           </div>
 
-          <div class="space-y-3 pt-4 border-t border-[var(--border)]">
-            <a href="/es/sources/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] hover:bg-[var(--accent)]/15 transition text-center">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+            <a href="/es/sources/" class="inline-flex items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] transition text-center">
               Citas Primarias (15 Estudios) →
             </a>
-            <a href="/es/methodology/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--border)] bg-[var(--muted)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--foreground)] hover:border-[var(--accent)] transition text-center">
+            <a href="/es/methodology/" class="inline-flex items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--muted)]/40 text-[var(--foreground)] hover:border-[var(--accent)] px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] transition text-center">
               Consultar Metodología y Fórmulas (23) →
             </a>
-            <a href="/es/contact/" class="inline-flex items-center justify-center w-full rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--accent)] transition hover:bg-[var(--accent)]/15 text-center">
+            <a href="/es/contact/" class="inline-flex items-center justify-center rounded-xl border border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] transition text-center">
               Contactar a la Desarrolladora →
             </a>
           </div>
-        </aside>
+        </div>
       </div>
     </PageShell>
 </Layout>

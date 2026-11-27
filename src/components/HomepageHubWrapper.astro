@@ -1,186 +1,134 @@
 ---
 import type { Locale } from '../utils/calculators';
-import { calculators, getCalculatorTranslations } from '../utils/calculators';
+import { calculators } from '../utils/calculators';
 
 interface Props {
   lang: Locale;
 }
 
 const { lang } = Astro.props;
-const t = getCalculatorTranslations(lang);
 
-const groupTitles: Record<string, Record<string, string>> = {
-  core: { en: 'Core Calculators', es: 'Calculadoras Principales', fr: 'Calculateurs Principaux', de: 'Haupt-Rechner', ko: '핵심 계산기', hi: 'मुख्य कैलकुलेटर' },
-  performance: { en: 'Performance & Goals', es: 'Rendimiento y Objetivos', fr: 'Performance et Objectifs', de: 'Leistung & Ziele', ko: '성능 및 목표', hi: 'प्रदर्शन और लक्ष्य' },
-  specialty: { en: 'Specialty Metrics', es: 'Métricas Especializadas', fr: 'Métriques Spécialisées', de: 'Spezial-Messwerte', ko: '전문 지표', hi: 'विशेषता मेट्रिक्स' },
-  regional: { en: 'Regional & Population Resources', es: 'Recursos Regionales y Poblacionales', fr: 'Ressources Régionales et Populationnelles', de: 'Regionale & Bevölkerungsspezifische Ressourcen', ko: '지역 및 인구 집단별 참고 도구', hi: 'क्षेत्रीय एवं जनसंख्या विशिष्ट संसाधन' }
+const groupTitles: Record<string, Record<Locale, string>> = {
+  bmi_weight: {
+    en: 'BMI & Weight Calculators',
+    es: 'Calculadoras de IMC y Peso',
+    fr: 'Calculateurs d\'IMC et de Poids',
+    de: 'BMI- & Gewichtsrechner',
+    ko: 'BMI 및 체중 계산기',
+    hi: 'बीएमआई एवं वजन कैलकुलेटर'
+  },
+  health_body: {
+    en: 'Health & Body Composition',
+    es: 'Salud y Composición Corporal',
+    fr: 'Santé et Composition Corporelle',
+    de: 'Gesundheit & Körperzusammensetzung',
+    ko: '건강 및 체성분',
+    hi: 'स्वास्थ्य एवं शारीरिक संरचना'
+  },
+  calories_nutrition: {
+    en: 'Calories & Nutrition',
+    es: 'Calorías y Nutrición',
+    fr: 'Calories et Nutrition',
+    de: 'Kalorien & Ernährung',
+    ko: '칼로리 및 영양',
+    hi: 'कैलोरी एवं पोषण'
+  },
+  fitness_specialized: {
+    en: 'Fitness & Specialized Calculators',
+    es: 'Calculadoras de Fitness y Especializadas',
+    fr: 'Calculateurs de Fitness et Spécialisés',
+    de: 'Fitness- & Spezialrechner',
+    ko: '피트니스 및 특수 계산기',
+    hi: 'फिटनेस एवं विशिष्ट कैलकुलेटर'
+  }
 };
 
 const gTitle = {
-  core: groupTitles.core[lang] || groupTitles.core.en,
-  performance: groupTitles.performance[lang] || groupTitles.performance.en,
-  specialty: groupTitles.specialty[lang] || groupTitles.specialty.en,
-  regional: groupTitles.regional[lang] || groupTitles.regional.en,
+  bmi_weight: groupTitles.bmi_weight[lang] || groupTitles.bmi_weight.en,
+  health_body: groupTitles.health_body[lang] || groupTitles.health_body.en,
+  calories_nutrition: groupTitles.calories_nutrition[lang] || groupTitles.calories_nutrition.en,
+  fitness_specialized: groupTitles.fitness_specialized[lang] || groupTitles.fitness_specialized.en,
 };
 
-const groupDescriptions: Record<string, Record<string, string>> = {
-  core: {
-    en: 'Foundational metabolic and anthropometric screening tools based on WHO and CDC reference standards.',
-    es: 'Herramientas fundamentales de cribado metabólico y antropométrico basadas en estándares de la OMS y los CDC.',
-    fr: "Outils fondamentaux de dépistage métabolique et anthropométrique basés sur les normes de l'OMS et du CDC.",
-    de: 'Grundlegende metabolische und anthropometrische Screening-Tools basierend auf WHO- und CDC-Referenzstandards.',
-    ko: 'WHO 및 CDC 참조 표준을 바탕으로 한 기본 대사 및 신체 계측 스크리닝 도구입니다.',
-    hi: 'WHO और CDC संदर्भ मानकों पर आधारित मौलिक चयापचय और शारीरिक माप स्क्रीनिंग उपकरण।'
+const groups = [
+  {
+    key: 'bmi_weight',
+    title: gTitle.bmi_weight,
+    gridClass: 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3',
+    slugs: [
+      'bmi-calculator',
+      '3d-bmi-calculator',
+      'bmi-chart',
+      'healthy-weight-by-height',
+      'ideal-weight-calculator',
+      'bmi-calculator-for-indians',
+      'asian-bmi-calculator'
+    ]
   },
-  performance: {
-    en: 'Body composition, energy balance, and evidence-based nutrition estimation formulas.',
-    es: 'Fórmulas de estimación de composición corporal, equilibrio energético y nutrición basadas en evidencia.',
-    fr: "Formules d'estimation de la composition corporelle, de l'équilibre énergétique et de la nutrition.",
-    de: 'Evidenzbasierte Schätzformeln für Körperzusammensetzung, Energiebilanz und Ernährung.',
-    ko: '체성분, 에너지 균형 및 근거 기반 영양 추정 공식 모음입니다.',
-    hi: 'शारीरिक संरचना, ऊर्जा संतुलन और साक्ष्य-आधारित पोषण अनुमान सूत्र।'
+  {
+    key: 'health_body',
+    title: gTitle.health_body,
+    gridClass: 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-3',
+    slugs: [
+      'diabetes-risk-calculator',
+      'body-fat-calculator',
+      'lean-body-mass-calculator',
+      'waist-to-hip-ratio-calculator',
+      'body-surface-area-calculator'
+    ]
   },
-  specialty: {
-    en: 'Specialized calculators for cardiovascular zones, training intensity, and clinical reference metrics.',
-    es: 'Calculadoras especializadas para zonas cardiovasculares, intensidad de entrenamiento y métricas clínicas.',
-    fr: "Calculateurs spécialisés pour les zones cardiovasculaires, l'intensité d'entraînement et les métriques de référence.",
-    de: 'Spezifische Rechner für kardiovaskuläre Zonen, Trainingsintensität und klinische Referenzwerte.',
-    ko: '심혈관 훈련 구간, 운동 강도 및 임상 참고 지표를 위한 전문 계산기입니다.',
-    hi: 'कार्डियोवैस्कुलर ज़ोन, प्रशिक्षण तीव्रता और नैदानिक संदर्भ मेट्रिक्स के लिए विशेष कैलकुलेटर।'
+  {
+    key: 'calories_nutrition',
+    title: gTitle.calories_nutrition,
+    gridClass: 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3',
+    slugs: [
+      'bmr-calculator',
+      'tdee-calculator',
+      'maintenance-calorie-calculator',
+      'calorie-calculator',
+      'macro-calculator',
+      'protein-intake-calculator',
+      'water-intake-calculator'
+    ]
   },
-  regional: {
-    en: 'Consensus cutoff thresholds adapted for Asian and South Asian population phenotypes.',
-    es: 'Umbrales de corte de consenso adaptados a los fenotipos de poblaciones asiáticas y del sur de Asia.',
-    fr: 'Seuils de consensus adaptés aux phénotypes des populations asiatiques et sud-asiatiques.',
-    de: 'Konsens-Grenzwerte angepasst an Phänotypen asiatischer und südasiatischer Bevölkerungen.',
-    ko: '아시아 및 남아시아 인구 집단의 신체적 특성에 맞춘 합의 기준치 도구입니다.',
-    hi: 'एशियाई और दक्षिण एशियाई जनसंख्या फेनोटाइप के लिए अनुकूलित सहमति कटऑफ सीमाएं।'
+  {
+    key: 'fitness_specialized',
+    title: gTitle.fitness_specialized,
+    gridClass: 'grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-3',
+    slugs: [
+      'heart-rate-zone-calculator',
+      'karvonen-heart-rate-calculator',
+      '1rm-calculator',
+      'pregnancy-weight-gain-calculator'
+    ]
   }
-};
-
-const gDesc = {
-  core: groupDescriptions.core[lang] || groupDescriptions.core.en,
-  performance: groupDescriptions.performance[lang] || groupDescriptions.performance.en,
-  specialty: groupDescriptions.specialty[lang] || groupDescriptions.specialty.en,
-  regional: groupDescriptions.regional[lang] || groupDescriptions.regional.en,
-};
-
-const regionalMeta: Record<string, Record<Locale, { tag: string; cutoff: string }>> = {
-  'bmi-calculator-for-indians': {
-    en: { tag: 'ICMR Consensus · South Asia', cutoff: 'Obesity threshold ≥ 25.0 kg/m² · Includes ICMR waist action cutoffs (90cm / 80cm)' },
-    es: { tag: 'Consenso ICMR · Sur de Asia', cutoff: 'Umbral de obesidad ≥ 25.0 kg/m² · Incluye puntos de corte de cintura ICMR (90/80 cm)' },
-    fr: { tag: 'Consensus ICMR · Asie du Sud', cutoff: 'Seuil d\'obésité ≥ 25,0 kg/m² · Inclut les repères de tour de taille ICMR (90/80 cm)' },
-    de: { tag: 'ICMR-Konsens · Südasien', cutoff: 'Adipositas-Schwelle ≥ 25,0 kg/m² · Beinhaltet ICMR-Taillen-Richtwerte (90/80 cm)' },
-    ko: { tag: 'ICMR 합의 · 남아시아', cutoff: '비만 기준점 ≥ 25.0 kg/m² · ICMR 허리둘레 위험 기준치 포함 (남 90cm / 여 80cm)' },
-    hi: { tag: 'ICMR सहमति मानक · दक्षिण एशिया', cutoff: 'मोटापा कटऑफ ≥ 25.0 kg/m² · ICMR कमर परिधि जोखिम सीमाएं (90 सेमी पुरुष / 80 सेमी महिला)' }
-  },
-  'asian-bmi-calculator': {
-    en: { tag: 'WHO WPRO Standard · East & SE Asia', cutoff: 'Obesity threshold ≥ 27.5 kg/m² · Cutoff standard for Chinese, Japanese, Korean & SE Asian populations' },
-    es: { tag: 'Norma OMS WPRO · Este y SE de Asia', cutoff: 'Umbral de obesidad ≥ 27.5 kg/m² · Pauta para poblaciones del Este y Sudeste Asiático' },
-    fr: { tag: 'Norme OMS WPRO · Asie de l\'Est', cutoff: 'Seuil d\'obésité ≥ 27,5 kg/m² · Recommandations pour les populations d\'Asie de l\'Est et du Sud-Est' },
-    de: { tag: 'WHO WPRO-Standard · Ost- & SO-Asien', cutoff: 'Adipositas-Schwelle ≥ 27,5 kg/m² · Richtlinien für ost- und südostasiatische Bevölkerungen' },
-    ko: { tag: 'WHO WPRO 표준 · 동아시아/동남아', cutoff: '비만 기준점 ≥ 27.5 kg/m² · 한국, 일본, 중국 및 동남아시아 인구 집단 기준' },
-    hi: { tag: 'WHO WPRO मानक · पूर्व एवं दक्षिण-पूर्व एशिया', cutoff: 'मोटापा कटऑफ ≥ 27.5 kg/m² · पूर्वी व दक्षिण-पूर्वी एशियाई (चीनी, जापानी, कोरियाई) दिशानिर्देश' }
-  }
-};
+];
 ---
 
-<div class="space-y-6 animate-in" style="animation-delay: 150ms;">
-  
-  <!-- Full Calculators Grid (Navigates directly to dedicated pages) -->
-  <div class="space-y-6">
-    <!-- Group 1: Core Calculators (Global Focus) -->
+<div class="space-y-8 animate-in" style="animation-delay: 150ms;">
+  {groups.map(group => (
     <div class="calc-group space-y-3">
-      <div class="space-y-0.5">
-        <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.core}<span class="sr-only">. </span></div>
-        <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">{gDesc.core}</p>
-      </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
-        {calculators.filter(c=>['bmi-calculator','3d-bmi-calculator','bmi-chart','bmr-calculator','tdee-calculator','maintenance-calorie-calculator','diabetes-risk-calculator'].includes(c.slug)).map(calc => (
-          <a
-            href={`/${lang}/${calc.slug}/`}
-            class={`calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline ${calc.slug === '3d-bmi-calculator' ? 'border-[var(--accent)]/50 bg-[var(--accent)]/[0.04]' : ''}`}
-          >
-            <span class="text-xs sm:text-sm font-display font-bold uppercase text-center tracking-tight leading-tight max-w-full text-balance break-words">
-              {calc.name[lang] || calc.name['en']}<span class="sr-only">. </span>
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-
-    <!-- Group 2: Performance & Goals -->
-    <div class="calc-group space-y-3">
-      <div class="space-y-0.5">
-        <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.performance}<span class="sr-only">. </span></div>
-        <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">{gDesc.performance}</p>
-      </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
-        {calculators.filter(c=>['healthy-weight-by-height','body-fat-calculator','lean-body-mass-calculator','ideal-weight-calculator','calorie-calculator','protein-intake-calculator','water-intake-calculator'].includes(c.slug)).map(calc => (
-          <a
-            href={`/${lang}/${calc.slug}/`}
-            class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline"
-          >
-            <span class="text-xs sm:text-sm font-display font-bold uppercase text-center tracking-tight leading-tight max-w-full text-balance break-words">
-              {calc.name[lang] || calc.name['en']}<span class="sr-only">. </span>
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-
-    <!-- Group 3: Specialty Metrics -->
-    <div class="calc-group space-y-3">
-      <div class="space-y-0.5">
-        <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.specialty}<span class="sr-only">. </span></div>
-        <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">{gDesc.specialty}</p>
-      </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3">
-        {calculators.filter(c=>['macro-calculator','waist-to-hip-ratio-calculator','body-surface-area-calculator','heart-rate-zone-calculator','karvonen-heart-rate-calculator','1rm-calculator','pregnancy-weight-gain-calculator'].includes(c.slug)).map(calc => (
-          <a
-            href={`/${lang}/${calc.slug}/`}
-            class="calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline"
-          >
-            <span class="text-xs sm:text-sm font-display font-bold uppercase text-center tracking-tight leading-tight max-w-full text-balance break-words">
-              {calc.name[lang] || calc.name['en']}<span class="sr-only">. </span>
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-
-    <!-- Group 4: Clearly Labelled Regional & Population Resources -->
-    <div class="calc-group space-y-3">
-      <div class="space-y-0.5">
-        <div class="text-xs font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">{gTitle.regional}<span class="sr-only">. </span></div>
-        <p class="text-xs text-[var(--muted-foreground)] font-medium leading-relaxed">{gDesc.regional}</p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-        {calculators.filter(c=>['bmi-calculator-for-indians','asian-bmi-calculator'].includes(c.slug)).map(calc => {
-          const meta = regionalMeta[calc.slug]?.[lang] || regionalMeta[calc.slug]?.['en'];
+      <h3 class="text-xs sm:text-sm font-display font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+        {group.title}<span class="sr-only">. </span>
+      </h3>
+      <div class={group.gridClass}>
+        {group.slugs.map(slug => {
+          const calc = calculators.find(c => c.slug === slug);
+          if (!calc) return null;
           return (
             <a
               href={`/${lang}/${calc.slug}/`}
-              class="calc-tab-btn flex flex-col items-start justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/5 transition-all duration-300 p-4 cursor-pointer shadow-xs no-underline group"
+              class={`calc-tab-btn flex items-center justify-center min-h-[56px] h-full rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-300 px-3 py-2.5 cursor-pointer shadow-xs no-underline ${calc.slug === '3d-bmi-calculator' ? 'border-[var(--accent)]/50 bg-[var(--accent)]/[0.04]' : ''}`}
             >
-              <div class="flex items-center gap-2 mb-1.5">
-                <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
-                  {meta?.tag}<span class="sr-only">. </span>
-                </span>
-              </div>
-              <span class="text-sm sm:text-base font-display font-bold uppercase tracking-tight text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
+              <span class="text-xs sm:text-sm font-display font-bold uppercase text-center tracking-tight leading-tight max-w-full text-balance break-words">
                 {calc.name[lang] || calc.name['en']}<span class="sr-only">. </span>
               </span>
-              <p class="text-xs text-[var(--muted-foreground)] mt-1 leading-relaxed">
-                {meta?.cutoff}
-              </p>
             </a>
           );
         })}
       </div>
     </div>
-  </div>
-
+  ))}
 </div>
 
 <style>

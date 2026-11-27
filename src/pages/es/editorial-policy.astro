@@ -6,62 +6,147 @@ import PageShell from '../../components/PageShell.astro';
 
 <Layout 
     title="Política Editorial y Estándares de Referencia | Real BMI"
-    description="Lea nuestra política editorial: metodología basada en evidencia médica, fórmulas revisadas por pares, transparencia científica y orientación educativa."
+    description="Consulte nuestra política editorial sobre contenidos de salud basados en evidencia, metodología revisada por pares y orientación transparente para usuarios."
+    canonicalURL="https://realbmicalculator.com/es/editorial-policy/"
 >
     <Navbar />
     <PageShell
       title="Política Editorial"
       eyebrow="Metodología y Transparencia"
-      description="Cómo Bhawanshi Dosi investiga, referencia y mantiene herramientas de salud basadas en evidencia."
+      description="Cómo Bhawanshi Dosi investiga, referencia y mantiene herramientas de salud basadas en evidencia y contenido educativo."
       returnUrl="/es/"
       returnLabel="Inicio"
     >
-      <div class="space-y-8 prose prose-zinc dark:prose-invert max-w-none text-[var(--muted-foreground)] leading-relaxed text-lg font-medium">
-        <p>En <strong>Real BMI</strong>, una plataforma individual de cálculo y educación en salud fundada, desarrollada y administrada por <strong>Bhawanshi Dosi</strong> (Banswara, Rajastán, India), el objetivo es proporcionar calculadoras claras, transparentes y basadas en referencias para ayudar a las personas a estimar su índice de masa corporal, tasa metabólica basal, gasto energético diario total y métricas corporales complementarias.</p>
+      <div class="max-w-5xl space-y-8 prose prose-zinc dark:prose-invert text-[var(--muted-foreground)] leading-relaxed text-base sm:text-lg font-medium opacity-90">
+        <p class="text-lg sm:text-xl font-normal text-[var(--foreground)] leading-relaxed">
+          En <strong>Real BMI</strong>, una plataforma digital independiente de cálculo y educación en salud fundada, desarrollada y administrada por <strong>Bhawanshi Dosi</strong> en Banswara, Rajastán, India, nuestro objetivo es proporcionar estimaciones transparentes, seguras y respaldadas científicamente de métricas corporales esenciales como el Índice de Masa Corporal (IMC), la Tasa Metabólica Basal (TMB) y el Gasto Energético Total Diario (TDEE).
+        </p>
 
-        <h2>1. Directrices de Referencia Basadas en Evidencia</h2>
-        <p>Todas las fórmulas, rangos de referencia y métricas publicadas en este portal provienen de ecuaciones matemáticas establecidas y directrices de salud pública de organizaciones reconocidas:</p>
-        <ul>
-          <li><strong>Organización Mundial de la Salud (OMS):</strong> Clasificaciones globales de obesidad y umbrales del índice de masa corporal.</li>
-          <li><strong>Centros para el Control y la Prevención de Enfermedades (CDC):</strong> Estándares de fórmulas de IMC y gráficos de percentiles.</li>
-          <li><strong>Investigación Publicada:</strong> Ecuaciones de investigadores reconocidos (como Mifflin-St Jeor, Harris-Benedict, Boer, Devine, Mosteller y Epley).</li>
-        </ul>
+        <!-- 1. Directrices de Referencia Basadas en Evidencia -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            1. Directrices de Referencia Basadas en Evidencia
+          </h2>
+          <p>
+            Todos los algoritmos de cálculo y rangos de referencia en Real BMI se basan directamente en la literatura médica publicada y en las directrices de organizaciones internacionales de salud:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5 text-sm sm:text-base">
+            <li><strong>Organización Mundial de la Salud (OMS):</strong> Clasificación estándar del IMC (TRS 854), puntos de corte regionales para poblaciones asiáticas (23.0 kg/m² sobrepeso, 27.5 kg/m² obesidad) y ratio cintura-cadera.</li>
+            <li><strong>Centros para el Control y la Prevención de Enfermedades (CDC):</strong> Métricas de referencia poblacionales, tablas de percentiles de crecimiento pediátrico y cribado en adultos.</li>
+            <li><strong>Consejo Indio de Investigación Médica (ICMR):</strong> Pautas específicas para poblaciones asiáticas que contemplan una mayor adiposidad visceral con menor IMC relativo.</li>
+            <li><strong>Modelos Matemáticos Publicados:</strong> Ecuaciones ampliamente validadas como Mifflin-St Jeor (metabolismo basal), Devine (peso corporal ideal), Mosteller (área de superficie corporal), Boer (masa magra) y Hodgdon (fórmula naval de grasa corporal).</li>
+          </ul>
+        </div>
 
-        <h2>2. Identidad de Autora Individual y Estándares Metodológicos</h2>
-        <p>Real BMI es un proyecto individual independiente que opera bajo una gobernanza de desarrollo transparente y personal:</p>
-        <ul>
-          <li><strong>Fundadora, Desarrolladora y Autora:</strong> <strong>Bhawanshi Dosi</strong> supervisa toda la ingeniería de software, la precisión algorítmica, la búsqueda de literatura primaria (OMS, CDC, NIH), las pruebas unitarias y los protocolos de privacidad sin retención en el cliente.</li>
-          <li><strong>Estándares Computacionales Basados en Evidencia:</strong> Cada calculadora es una implementación directa y verificada de fórmulas médicas y de salud pública publicadas y revisadas por pares (como Mifflin-St Jeor, Boer, Devine, Mosteller y OMS TRS 854).</li>
-          <li><strong>Declaración No Clínica:</strong> Real BMI es un sitio web individual y un recurso educativo, no un hospital, clínica médica ni servicio revisado por médicos. No afirmamos operar un comité médico de revisión clínica. Todas las calculadoras son herramientas computacionales estrictas para fines educativos y de concienciación general.</li>
-          <li><strong>Comentarios Académicos Abiertos:</strong> Agradecemos correcciones, consultas sobre fórmulas y citas académicas directamente a través de nuestra página de Contacto.</li>
-        </ul>
+        <!-- 2. Identidad de Autora y Estándares de Trabajo -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            2. Identidad de Autora y Estándares de Trabajo
+          </h2>
+          <p>
+            Real BMI opera bajo un modelo de desarrollo individual transparente y con plena responsabilidad personal:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5 text-sm sm:text-base">
+            <li><strong>Fundadora y Desarrolladora:</strong> <strong>Bhawanshi Dosi</strong> es la única responsable de la programación, formulación matemática, pruebas automáticas de unidad y arquitectura web.</li>
+            <li><strong>Privacidad del Lado del Cliente sin Retención:</strong> Todos los cálculos se ejecutan al 100% en su navegador mediante JavaScript. Sus medidas antropométricas nunca se envían a servidores remotos ni se almacenan en bases de datos.</li>
+            <li><strong>Recurso Educativo no Clínico:</strong> Real BMI es un sitio informativo independiente, no una clínica médica, hospital ni comité médico colegiado. Nuestras calculadoras ofrecen orientación general y no sustituyen el criterio de un médico.</li>
+          </ul>
+        </div>
 
-        <h2>3. Transparencia y Actualizaciones Continuas</h2>
-        <p>Las pautas de salud y los rangos de referencia se revisan periódicamente. Actualizamos nuestras calculadoras y artículos para reflejar consensos científicos publicados.</p>
+        <!-- 3. Transparencia y Actualizaciones Continuas -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            3. Transparencia y Actualizaciones Continuas
+          </h2>
+          <p>
+            Creemos que las herramientas de salud digital deben ser enteramente auditables. Cada página documenta la fórmula matemática exacta, la lógica de conversión, los datos requeridos, las limitaciones clínicas y enlaces directos a los estudios de referencia indexados (PubMed / DOI). No empleamos algoritmos opacos de tipo caja negra.
+          </p>
+          <p>
+            Para garantizar un acceso universal, las 23 calculadoras se mantienen en seis idiomas (inglés, español, francés, alemán, coreano e hindi) con idéntica lógica computacional.
+          </p>
+        </div>
 
-        <h2>4. Independencia e Integridad Comercial</h2>
-        <p>Esta plataforma opera como un proyecto independiente de calculadoras. Las decisiones de contenido se toman sin influencia publicitaria o farmacéutica.</p>
+        <!-- 4. Independencia Editorial y Publicidad Ética -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            4. Independencia Editorial y Publicidad Ética
+          </h2>
+          <p>
+            Para mantener el acceso totalmente gratuito y sin muros de pago, Real BMI se financia a través de publicidad digital no intrusiva gestionada por Google AdSense.
+          </p>
+          <p>
+            Mantenemos un estricto cortafuegos editorial: ningún anunciante, fabricante farmacéutico ni patrocinador tiene influencia alguna sobre nuestros algoritmos matemáticos, avisos clínicos o artículos explicativos. No admitimos clasificaciones patrocinadas ni resultados de pago.
+          </p>
+        </div>
 
-        <h2>5. Aviso Educativo</h2>
-        <p>Las métricas proporcionadas en este sitio son estimaciones educativas. Este portal no es una práctica médica, hospital ni clínica, y no proporciona diagnósticos ni tratamientos médicos. Consulte siempre a un profesional de la salud calificado.</p>
+        <!-- 5. Aviso Educativo y Límites Clínicos -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            5. Aviso Educativo y Límites Clínicos
+          </h2>
+          <p>
+            Todas las cifras proporcionadas son estimaciones educativas concebidas para la sensibilización general y la autoevaluación. No constituyen diagnósticos clínicos formales ni planes dietéticos prescritos.
+          </p>
+          <p>
+            Las medidas antropométricas básicas no pueden evaluar con precisión factores como la masa muscular magra, la densidad ósea, la hidratación o el historial médico. Consulte siempre a un médico colegiado o nutricionista titulado antes de realizar cambios drásticos en su dieta o estilo de vida.
+          </p>
+        </div>
 
-        <h2>6. Ciclo de Revisión Semestral y Verificación de Datos</h2>
-        <p>Mantenemos un estricto protocolo de auditoría semestral para cada fórmula, tabla y rango de referencia publicado. Cuando organizaciones internacionales como la OMS, los CDC o ministerios de salud emiten directrices clínicas actualizadas, nuestros modelos matemáticos se revisan y contrastan con los documentos oficiales. Cada implementación algorítmica pasa pruebas unitarias automatizadas para garantizar su precisión numérica.</p>
+        <!-- 6. Ciclo de Auditoría y Pruebas Automatizadas -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            6. Ciclo de Auditoría y Pruebas Automatizadas
+          </h2>
+          <p>
+            Seguimos un protocolo de revisión semestral para todas las ecuaciones y tablas de referencia. Cuando organismos oficiales (OMS, CDC, ICMR) publican nuevas directrices, nuestros modelos de cálculo se contrastan con la literatura primaria actualizada.
+          </p>
+          <p>
+            La fiabilidad técnica se garantiza mediante una batería de más de 500 pruebas unitarias automatizadas que comprueban la paridad entre unidades métricas e imperiales (con una tolerancia estricta de 0.01) y evalúan valores límite antes de cada publicación.
+          </p>
+        </div>
 
-        <h2>7. Compromiso con la Originalidad y Autoría Humana</h2>
-        <p>Todas las explicaciones, ejemplos paso a paso y respuestas a preguntas frecuentes son redactados de forma original por Bhawanshi Dosi consultando fuentes médicas de referencia primaria. Rechazamos el raspado de contenidos (scraping), la generación artificial masiva y la repetición artificial de palabras clave.</p>
+        <!-- 7. Originalidad y Autoría Humana -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            7. Originalidad y Autoría Humana
+          </h2>
+          <p>
+            Todas las guías escritas, ejemplos prácticos de cálculo y respuestas a preguntas frecuentes han sido redactados originalmente por Bhawanshi Dosi a partir de fuentes primarias contrastadas.
+          </p>
+          <p>
+            No publicamos contenido de salud generado automáticamente por inteligencia artificial sin supervisión humana. Cada texto se revisa minuciosamente para asegurar su rigor científico y claridad expositiva.
+          </p>
+        </div>
 
-        <h2>8. Política de Fe de Erratas y Correcciones</h2>
-        <p>Si identifica alguna inconsistencia en un cálculo, una cita desactualizada o una explicación mejorable, le invitamos a escribirnos a través de nuestra página de Contacto. Las observaciones fundamentadas se analizan con prontitud y se corrigen en el código fuente de forma transparente.</p>
+        <!-- 8. Política de Correcciones y Comentarios -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            8. Política de Correcciones y Comentarios
+          </h2>
+          <p>
+            El rigor científico es nuestro principal compromiso. Si detecta cualquier error de cálculo, definición confusa o enlace desactualizado, le invitamos a comunicárnoslo a través de nuestra <a href="/es/contact/" class="text-[var(--accent)] underline font-medium">Página de Contacto</a>.
+          </p>
+          <p>
+            Las observaciones fundamentadas se analizan con prontitud y se incorporan al código público en un plazo de 24 a 48 horas, quedando debidamente registradas en el historial del proyecto.
+          </p>
+        </div>
 
-        <h2>9. Revisión Previa a la Publicación y Protocolo de Privacidad</h2>
-        <p>Para proteger la privacidad de los usuarios y cumplir rigurosamente con las Políticas de Editores de Google, las directrices de AdSense y los estándares de protección de datos (RGPD, CCPA), Real BMI aplica una etapa obligatoria de revisión previa a la publicación:</p>
-        <ul>
-          <li><strong>Paso 1: Verificación de Evidencia y Fuentes:</strong> Todas las fórmulas médicas y rangos de referencia se contrastan con fuentes científicas primarias (OMS, CDC).</li>
-          <li><strong>Paso 2: Auditoría de Precisión Matemática:</strong> Las conversiones algorítmicas y el redondeo se validan con casos extremos tanto en sistema métrico como imperial.</li>
-          <li><strong>Paso 3: Filtrado de Datos y Privacidad:</strong> Una auditoría de privacidad estricta garantiza que ninguna información personal identificable (nombres, correos, teléfonos o identificadores privados) se exponga jamás en entradas públicas, calculadoras o parámetros URL.</li>
-          <li><strong>Paso 4: Revisión Final:</strong> Todo el contenido se revisa minuciosamente en cuanto a precisión, formato, referencias y privacidad antes de su publicación.</li>
-        </ul>
+        <!-- 9. Revisión Pre-Publicación y Protocolo de Privacidad -->
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight text-[var(--foreground)]">
+            9. Revisión Pre-Publicación y Protocolo de Privacidad
+          </h2>
+          <p>
+            Antes de publicar cualquier herramienta o artículo, se aplica un protocolo de garantía de calidad en cuatro fases:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5 text-sm sm:text-base">
+            <li><strong>Fase 1: Verificación Bibliográfica:</strong> Las fórmulas y tablas se cotejan directamente con monografías oficiales (OMS, CDC).</li>
+            <li><strong>Fase 2: Pruebas de Paridad Numérica:</strong> Se ejecutan pruebas de regresión en sistemas métrico (kg, cm) e imperial (libras, pulgadas).</li>
+            <li><strong>Fase 3: Auditoría de Seguridad y Privacidad:</strong> Se asegura que ningún dato personal sea capturado, transmitido ni almacenado.</li>
+            <li><strong>Fase 4: Revisión Editorial y de Claridad:</strong> Se comprueban el formato, los enlaces, las advertencias contextuales y la legibilidad.</li>
+          </ul>
+        </div>
+
       </div>
     </PageShell>
 </Layout>
